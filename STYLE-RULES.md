@@ -2025,3 +2025,35 @@ succeeds. Confirmed today: python urllib fails on that exact URL, `curl -sI`
 returns 200. It also explains an unrelated failure earlier in the session, when
 `urllib.request` could not fetch HeyGen preview images while `curl` could.
 **Machine-specific** — a clean Mac may not need the workaround at all.
+
+## 2026-08-14 (9) — private GitHub repo
+
+`https://github.com/dhvaneshadhiya-ui/ai-reel-engine` — **PRIVATE**, verified
+by API (`visibility: PRIVATE`), 646 paths, `main`.
+
+PRIVATE was not a default, it was a conclusion. The audit found four reasons:
+1. **Audio.** `public/sfx` carries meme sounds (`Among Us`, `Vine Boom`, `faah`)
+   plus 5.9 MB of music beds. Decisive: this engine's OWN original README says
+   *"SFX were removed from this public download for licensing reasons"* — its
+   authors stripped them before distributing, and publishing them publicly
+   would reverse that deliberate decision.
+2. **`styles/*.md`** are forensic teardowns of named creators' reels. Fine as
+   internal analysis; a public "how to replicate this creator" doc is not.
+3. **`STYLE-RULES.md`** — business context, credit balances, feedback history.
+4. **`jobs/`** — scripts and approvals, i.e. unpublished editorial.
+NO security risk: no keys or tokens anywhere; `config.json` holds only avatar
+and voice IDs.
+
+VERIFIED ON THE REMOTE, not assumed: `bin/`, `node_modules/`, `out/`,
+`_sources/`, `public/assets/` are **0 paths each**, while CLAUDE.md,
+MIGRATION.md, setup.sh, the gates, the showrunner, the skills and the sound
+library are all present.
+
+METHOD NOTE: my first exclusion check was WRONG and said all five were PRESENT.
+`gh api .../contents/<path>` returns an error *body* for a missing path, which
+a naive non-empty test reads as success. Re-checked against the actual git tree
+(`git/trees/main?recursive=1`). A verification that cannot fail is not a
+verification.
+
+THE ARCHIVE STILL HAS ONE ADVANTAGE: it carries `bin/ffmpeg` + `bin/ffprobe`,
+so it needs no Homebrew. A clone does. Both routes are documented.

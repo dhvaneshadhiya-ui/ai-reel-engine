@@ -122,7 +122,33 @@ tool. Bundled or installed automatically.
 
 ## PART 3 — Setup
 
-### 3.1 Copy the archive across
+### 3.0 The easiest route: clone from GitHub
+
+The engine now lives in a **private** repo:
+`https://github.com/dhvaneshadhiya-ui/ai-reel-engine`
+
+**APP** — in a conversation on any folder:
+> Clone my ai-reel-engine repo into ~/Movies and set it up.
+
+**CLI**
+```bash
+gh auth login                       # once per machine
+cd ~/Movies
+git clone https://github.com/dhvaneshadhiya-ui/ai-reel-engine.git
+cd ai-reel-engine && bash setup.sh
+```
+
+This replaces steps 3.1-3.2 and is preferable to the archive whenever the new
+machine can reach GitHub: you get history, and `git pull` keeps both Macs in
+step instead of drifting.
+
+**One difference from the archive:** `bin/` (the bundled ffmpeg + ffprobe) is
+NOT in the repo — 150 MB of binaries do not belong in git, and ffmpeg builds
+carry GPL obligations. On a clone, `setup.sh` installs ffmpeg via Homebrew
+instead, or tells you how. If the machine has no Homebrew and you want zero
+setup, use the tar.gz archive, which does carry the binaries.
+
+### 3.1 (archive route) Copy the archive across
 
 `ai-reel-engine-migrate.tar.gz` — AirDrop, USB, cloud. Same on both routes.
 
