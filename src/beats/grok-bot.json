@@ -1,0 +1,2649 @@
+{
+  "id": "grok-bot",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "varun-mayya",
+  "audio": "assets/grok-bot/avatar-master-169.mp4",
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 8.0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.15
+      },
+      {
+        "t": 10.7,
+        "vol": 0.15
+      },
+      {
+        "t": 12.44,
+        "vol": 0.08
+      },
+      {
+        "t": 57.08,
+        "vol": 0.07
+      },
+      {
+        "t": 61.48,
+        "vol": 0.14
+      },
+      {
+        "t": 85.7,
+        "vol": 0.09
+      },
+      {
+        "t": 96.01,
+        "vol": 0.13
+      },
+      {
+        "t": 105.94999999999999,
+        "vol": 0.13
+      },
+      {
+        "t": 106.85,
+        "vol": 0.02
+      }
+    ]
+  },
+  "captionStyle": "nick-display",
+  "emphasis": [
+    "Grok",
+    "Bot",
+    "Bots",
+    "SpaceXAI",
+    "Cursor",
+    "MCP",
+    "API",
+    "300",
+    "200",
+    "120",
+    "beta",
+    "macOS",
+    "iOS",
+    "24/7"
+  ],
+  "scenes": [
+    {
+      "type": "logoassemble",
+      "durationSec": 1.95,
+      "hideCaptions": true,
+      "viewBox": "0 0 1024 1024",
+      "paths": [
+        {
+          "d": "M395.479 633.828L735.91 381.105C752.599 368.715 776.454 373.548 784.406 392.792C826.26 494.285 807.561 616.253 724.288 699.996C641.016 783.739 525.151 802.104 419.247 760.277L303.556 814.143C469.49 928.202 670.987 899.995 796.901 773.282C896.776 672.843 927.708 535.937 898.785 412.476L899.047 412.739C857.105 231.37 909.358 158.874 1016.4 10.6326C1018.93 7.11771 1021.47 3.60279 1024 0L883.144 141.651V141.212L395.392 633.916",
+          "fill": "#0A0A0A"
+        },
+        {
+          "d": "M325.226 695.251C206.128 580.84 226.662 403.776 328.285 301.668C403.431 226.097 526.549 195.254 634.026 240.596L749.454 186.994C728.657 171.88 702.007 155.623 671.424 144.2C533.19 86.9942 367.693 115.465 255.323 228.382C147.234 337.081 113.244 504.215 171.613 646.833C215.216 753.423 143.739 828.818 71.7385 904.916C46.2237 931.893 20.6216 958.87 0 987.429L325.139 695.339",
+          "fill": "#0A0A0A"
+        }
+      ],
+      "size": 1050,
+      "y": 0.51,
+      "bg": "cream",
+      "fillOverride": "#141414",
+      "label": "GROK BOT \u00b7 SPACEXAI",
+      "labelAt": 0.35,
+      "headline": {
+        "lines": [
+          {
+            "text": "early beta",
+            "kind": "label",
+            "at": 0.12
+          }
+        ],
+        "y": 0.07,
+        "theme": "light",
+        "align": "center"
+      },
+      "sfx": [
+        {
+          "src": "sfx2/risers-01.mp3",
+          "vol": 0.15,
+          "at": 0.0
+        },
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "vol": 0.16,
+          "at": 0.35
+        }
+      ]
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-hired.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 1.94,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-hired"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-icons.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 1.95,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-icons"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/src-hero.png",
+      "bg": "gradient",
+      "aspect": 0.8,
+      "durationSec": 1.63,
+      "credit": "x.ai",
+      "headline": {
+        "lines": [
+          {
+            "text": "reported",
+            "kind": "label",
+            "at": 0.1
+          },
+          {
+            "text": "x.ai \u00b7 Aug 11",
+            "kind": "headline",
+            "at": 0.4,
+            "accent": false
+          }
+        ],
+        "y": 0.09,
+        "theme": "dark",
+        "align": "center"
+      },
+      "assetId": "src-hero"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-list.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 1.63,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-list"
+    },
+    {
+      "type": "split",
+      "durationSec": 1.6,
+      "captionBottom": 1000,
+      "topSrc": "assets/grok-bot/clips/v-office.mp4",
+      "topFrom": 0.0,
+      "topFocusX": 0.5,
+      "bottomSrc": "assets/grok-bot/avatar-master-169.mp4",
+      "bottomFrom": 9.1,
+      "bottomFocusX": 0.459,
+      "credit": "SpaceXAI",
+      "assetId": "clip-v-office"
+    },
+    {
+      "type": "sourceread",
+      "durationSec": 1.74,
+      "src": "assets/grok-bot/clips/src-hero.png",
+      "srcWidth": 1200,
+      "srcHeight": 1500,
+      "credit": "x.ai \u2014 the official announcement",
+      "follow": false,
+      "lines": [
+        {
+          "at": 0.15,
+          "x": 57,
+          "y": 628,
+          "w": 1080,
+          "h": 54
+        },
+        {
+          "at": 0.95,
+          "x": 57,
+          "y": 713,
+          "w": 1055,
+          "h": 54
+        },
+        {
+          "at": 1.7,
+          "x": 57,
+          "y": 798,
+          "w": 890,
+          "h": 54
+        }
+      ],
+      "assetId": "src-hero"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-meet.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 1.95,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-meet",
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "vol": 0.12,
+          "at": 0.0
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/clips/v-people.mp4",
+      "durationSec": 1.96,
+      "zoomDir": "in",
+      "credit": "SpaceXAI",
+      "assetId": "clip-v-people"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-ui4.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 1.95,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-ui4"
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/avatar-master-169.mp4",
+      "durationSec": 1.44,
+      "from": 18.3,
+      "focusX": 0.478,
+      "captionBottom": 300
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-code.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 1.6,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-code",
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "vol": 0.12,
+          "at": 0.0
+        }
+      ]
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-ui1.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 1.6,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-ui1"
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/clips/v-desk.mp4",
+      "durationSec": 2.82,
+      "zoomDir": "out",
+      "credit": "SpaceXAI",
+      "assetId": "clip-v-desk"
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/avatar-master-169.mp4",
+      "durationSec": 2.2,
+      "from": 25.76,
+      "focusX": 0.478,
+      "captionBottom": 300
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-ui2.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 1.95,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-ui2"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-ui5.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 1.94,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-ui5"
+    },
+    {
+      "type": "specsheet",
+      "bgSrc": "assets/grok-bot/clips/v-wide.mp4",
+      "bgFrom": 0.0,
+      "kicker": "how it reaches your tools",
+      "title": "No API required",
+      "columns": [
+        "GROK BOT"
+      ],
+      "rows": [
+        {
+          "label": "Formal API",
+          "values": [
+            "not needed"
+          ]
+        },
+        {
+          "label": "MCP connector",
+          "values": [
+            "not needed"
+          ]
+        },
+        {
+          "label": "Signs in and drives the UI",
+          "values": [
+            "yes"
+          ],
+          "accent": true
+        }
+      ],
+      "footnote": "x.ai, Aug 11, 2026",
+      "durationSec": 1.95,
+      "sfx": [
+        {
+          "src": "sfx2/ground-impact-352053.mp3",
+          "vol": 0.14,
+          "at": 0.3
+        }
+      ]
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-ui3.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 1.46,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-ui3"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-ui6.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 1.46,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-ui6"
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/clips/v-woman.mp4",
+      "durationSec": 1.8,
+      "zoomDir": "in",
+      "credit": "SpaceXAI",
+      "assetId": "clip-v-woman"
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/clips/v-wide.mp4",
+      "durationSec": 2.1,
+      "zoomDir": "in",
+      "credit": "SpaceXAI",
+      "assetId": "clip-v-wide"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-teach.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 2.25,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-teach"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-emails.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 2.26,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-emails"
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/clips/v-desk2.mp4",
+      "durationSec": 2.25,
+      "zoomDir": "in",
+      "credit": "SpaceXAI",
+      "assetId": "clip-v-desk2"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-phone.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 2.52,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-phone"
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/clips/v-talk.mp4",
+      "durationSec": 2.52,
+      "zoomDir": "in",
+      "credit": "SpaceXAI",
+      "assetId": "clip-v-talk"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-chat.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 2.33,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-chat"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-bots.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 2.33,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-bots"
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/avatar-master-169.mp4",
+      "durationSec": 2.58,
+      "from": 57.08,
+      "focusX": 0.478,
+      "captionBottom": 300
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/clips/v-pair.mp4",
+      "durationSec": 1.82,
+      "zoomDir": "in",
+      "credit": "SpaceXAI",
+      "assetId": "clip-v-pair"
+    },
+    {
+      "type": "chart",
+      "kicker": "monthly, per user",
+      "title": "The way in",
+      "unit": "$",
+      "max": 300,
+      "bg": "black",
+      "items": [
+        {
+          "label": "SuperGrok Heavy",
+          "value": 300,
+          "display": "300",
+          "sub": "SpaceXAI's own tier"
+        },
+        {
+          "label": "Cursor Ultra",
+          "value": 200,
+          "display": "200",
+          "sub": "per month"
+        },
+        {
+          "label": "Cursor Premium Teams",
+          "value": 120,
+          "display": "120",
+          "sub": "per seat",
+          "highlight": true
+        }
+      ],
+      "source": "implicator.ai \u00b7 VentureBeat",
+      "durationSec": 2.66,
+      "sfx": [
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "vol": 0.16,
+          "at": 0.3
+        }
+      ]
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-charts.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 2.02,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-charts"
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/clips/v-guy.mp4",
+      "durationSec": 2.02,
+      "zoomDir": "in",
+      "credit": "SpaceXAI",
+      "assetId": "clip-v-guy"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-draft.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 2.02,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-draft"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-tasks.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 2.02,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-tasks"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-brand.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 2.38,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-brand"
+    },
+    {
+      "type": "specsheet",
+      "kicker": "the cheapest door",
+      "title": "It runs on Cursor",
+      "columns": [
+        "ROLE"
+      ],
+      "rows": [
+        {
+          "label": "Lowest price tier",
+          "values": [
+            "Cursor Teams"
+          ]
+        },
+        {
+          "label": "Signs you in",
+          "values": [
+            "Cursor auth"
+          ],
+          "accent": true
+        }
+      ],
+      "footnote": "kingy.ai",
+      "durationSec": 2.38
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/clips/v-sofa.mp4",
+      "durationSec": 2.38,
+      "zoomDir": "in",
+      "credit": "SpaceXAI",
+      "assetId": "clip-v-sofa"
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/avatar-master-169.mp4",
+      "durationSec": 2.38,
+      "from": 79.36,
+      "focusX": 0.478,
+      "captionBottom": 300
+    },
+    {
+      "type": "checklist",
+      "bg": "gradient",
+      "headline": "Who does NOT get it",
+      "rows": [
+        {
+          "label": "Free Grok",
+          "state": "no"
+        },
+        {
+          "label": "Standard SuperGrok",
+          "state": "no"
+        },
+        {
+          "label": "Cursor Pro",
+          "state": "no"
+        }
+      ],
+      "durationSec": 1.98
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/clips/v-ipad.mp4",
+      "durationSec": 1.98,
+      "zoomDir": "in",
+      "credit": "SpaceXAI",
+      "assetId": "clip-v-ipad"
+    },
+    {
+      "type": "sourceread",
+      "durationSec": 1.76,
+      "src": "assets/grok-bot/clips/src-hero.png",
+      "srcWidth": 1200,
+      "srcHeight": 1500,
+      "credit": "x.ai",
+      "follow": false,
+      "tint": "#FFD2A8",
+      "lines": [
+        {
+          "at": 0.2,
+          "x": 845,
+          "y": 462,
+          "w": 232,
+          "h": 66
+        }
+      ]
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/src-body.png",
+      "bg": "gradient",
+      "aspect": 0.7692307692307693,
+      "durationSec": 1.76,
+      "credit": "x.ai",
+      "headline": {
+        "lines": [
+          {
+            "text": "the badge on the page",
+            "kind": "label",
+            "at": 0.1
+          },
+          {
+            "text": "EARLY BETA",
+            "kind": "headline",
+            "at": 0.4,
+            "accent": true
+          }
+        ],
+        "y": 0.09,
+        "theme": "dark",
+        "align": "center"
+      }
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/avatar-master-169.mp4",
+      "durationSec": 2.84,
+      "from": 89.22,
+      "focusX": 0.478,
+      "captionBottom": 300
+    },
+    {
+      "type": "wordcascade",
+      "bg": "cream",
+      "captionTheme": "dark",
+      "words": [
+        {
+          "text": "credential handling?",
+          "style": "serif",
+          "at": 0.1,
+          "size": 1.15
+        },
+        {
+          "text": "permission scope?",
+          "style": "serif",
+          "at": 0.85,
+          "size": 1.1
+        },
+        {
+          "text": "audit records?",
+          "style": "caps",
+          "at": 1.6,
+          "size": 1.2
+        }
+      ],
+      "durationSec": 1.97,
+      "sfx": [
+        {
+          "src": "sfx2/ground-impact-352053.mp3",
+          "vol": 0.14,
+          "at": 1.6
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/clips/v-team2.mp4",
+      "durationSec": 1.98,
+      "zoomDir": "in",
+      "credit": "SpaceXAI",
+      "assetId": "clip-v-team2"
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/avatar-master-169.mp4",
+      "durationSec": 1.97,
+      "from": 96.01,
+      "focusX": 0.478,
+      "captionBottom": 300
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-laptop.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 2.04,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-laptop"
+    },
+    {
+      "type": "checklist",
+      "bg": "gradient",
+      "headline": "Where it runs today",
+      "rows": [
+        {
+          "label": "macOS",
+          "state": "done"
+        },
+        {
+          "label": "Windows",
+          "state": "done"
+        },
+        {
+          "label": "Linux",
+          "state": "done"
+        },
+        {
+          "label": "iOS",
+          "state": "done"
+        },
+        {
+          "label": "Android \u2014 coming soon",
+          "state": "q"
+        }
+      ],
+      "durationSec": 2.04,
+      "sfx": [
+        {
+          "src": "sfx2/ground-impact-352053.mp3",
+          "vol": 0.14,
+          "at": 0.3
+        }
+      ]
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/grok-bot/clips/w-end.mp4",
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "durationSec": 2.04,
+      "credit": "SpaceXAI",
+      "assetId": "clip-w-end"
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/clips/v-women.mp4",
+      "durationSec": 1.37,
+      "zoomDir": "in",
+      "credit": "SpaceXAI",
+      "assetId": "clip-v-women"
+    },
+    {
+      "type": "footage",
+      "src": "assets/grok-bot/avatar-master-169.mp4",
+      "durationSec": 1.38,
+      "from": 105.47,
+      "focusX": 0.478,
+      "captionBottom": 300,
+      "headline": {
+        "lines": [
+          {
+            "text": "it signs in as you",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "would you hand it",
+            "kind": "headline",
+            "at": 0.5
+          },
+          {
+            "text": "your passwords?",
+            "kind": "headline",
+            "at": 0.8,
+            "accent": true
+          }
+        ],
+        "y": 0.07,
+        "theme": "light",
+        "align": "center"
+      }
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.64,
+      "text": "SpaceXAI just",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "SpaceX"
+        },
+        {
+          "t": 0.96,
+          "text": "AI"
+        },
+        {
+          "t": 1.38,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 1.64,
+      "end": 2.86,
+      "text": "shipped AI agents",
+      "words": [
+        {
+          "t": 1.64,
+          "text": "shipped"
+        },
+        {
+          "t": 2.02,
+          "text": "AI"
+        },
+        {
+          "t": 2.38,
+          "text": "agents"
+        }
+      ]
+    },
+    {
+      "start": 2.86,
+      "end": 3.76,
+      "text": "that log into",
+      "words": [
+        {
+          "t": 2.86,
+          "text": "that"
+        },
+        {
+          "t": 3.18,
+          "text": "log"
+        },
+        {
+          "t": 3.4,
+          "text": "into"
+        }
+      ]
+    },
+    {
+      "start": 3.76,
+      "end": 4.76,
+      "text": "your actual tools",
+      "words": [
+        {
+          "t": 3.76,
+          "text": "your"
+        },
+        {
+          "t": 3.96,
+          "text": "actual"
+        },
+        {
+          "t": 4.36,
+          "text": "tools"
+        }
+      ]
+    },
+    {
+      "start": 4.76,
+      "end": 5.42,
+      "text": "and do the",
+      "words": [
+        {
+          "t": 4.76,
+          "text": "and"
+        },
+        {
+          "t": 5.14,
+          "text": "do"
+        },
+        {
+          "t": 5.28,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 5.42,
+      "end": 6.48,
+      "text": "work. It's called",
+      "words": [
+        {
+          "t": 5.42,
+          "text": "work."
+        },
+        {
+          "t": 6.0,
+          "text": "It's"
+        },
+        {
+          "t": 6.28,
+          "text": "called"
+        }
+      ]
+    },
+    {
+      "start": 6.48,
+      "end": 8.1,
+      "text": "Grok Bot, and it",
+      "words": [
+        {
+          "t": 6.48,
+          "text": "Grok Bot,"
+        },
+        {
+          "t": 7.76,
+          "text": "and"
+        },
+        {
+          "t": 8.02,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 8.1,
+      "end": 8.98,
+      "text": "went live yesterday.",
+      "words": [
+        {
+          "t": 8.1,
+          "text": "went"
+        },
+        {
+          "t": 8.24,
+          "text": "live"
+        },
+        {
+          "t": 8.54,
+          "text": "yesterday."
+        }
+      ]
+    },
+    {
+      "start": 9.6,
+      "end": 10.32,
+      "text": "Here's the official",
+      "words": [
+        {
+          "t": 9.6,
+          "text": "Here's"
+        },
+        {
+          "t": 9.88,
+          "text": "the"
+        },
+        {
+          "t": 9.98,
+          "text": "official"
+        }
+      ]
+    },
+    {
+      "start": 10.32,
+      "end": 11.36,
+      "text": "line, your team",
+      "words": [
+        {
+          "t": 10.32,
+          "text": "line,"
+        },
+        {
+          "t": 11.0,
+          "text": "your"
+        },
+        {
+          "t": 11.12,
+          "text": "team"
+        }
+      ]
+    },
+    {
+      "start": 11.36,
+      "end": 12.32,
+      "text": "of always-on agents.",
+      "words": [
+        {
+          "t": 11.36,
+          "text": "of"
+        },
+        {
+          "t": 11.52,
+          "text": "always-on"
+        },
+        {
+          "t": 12.02,
+          "text": "agents."
+        }
+      ]
+    },
+    {
+      "start": 12.8,
+      "end": 13.38,
+      "text": "They have their",
+      "words": [
+        {
+          "t": 12.8,
+          "text": "They"
+        },
+        {
+          "t": 13.06,
+          "text": "have"
+        },
+        {
+          "t": 13.2,
+          "text": "their"
+        }
+      ]
+    },
+    {
+      "start": 13.38,
+      "end": 14.04,
+      "text": "own computer,",
+      "words": [
+        {
+          "t": 13.38,
+          "text": "own"
+        },
+        {
+          "t": 13.56,
+          "text": "computer,"
+        }
+      ]
+    },
+    {
+      "start": 14.3,
+      "end": 15.14,
+      "text": "work inside tools",
+      "words": [
+        {
+          "t": 14.3,
+          "text": "work"
+        },
+        {
+          "t": 14.44,
+          "text": "inside"
+        },
+        {
+          "t": 14.74,
+          "text": "tools"
+        }
+      ]
+    },
+    {
+      "start": 15.14,
+      "end": 15.86,
+      "text": "and apps like",
+      "words": [
+        {
+          "t": 15.14,
+          "text": "and"
+        },
+        {
+          "t": 15.34,
+          "text": "apps"
+        },
+        {
+          "t": 15.64,
+          "text": "like"
+        }
+      ]
+    },
+    {
+      "start": 15.86,
+      "end": 16.22,
+      "text": "you do,",
+      "words": [
+        {
+          "t": 15.86,
+          "text": "you"
+        },
+        {
+          "t": 16.04,
+          "text": "do,"
+        }
+      ]
+    },
+    {
+      "start": 16.62,
+      "end": 17.2,
+      "text": "and keep working",
+      "words": [
+        {
+          "t": 16.62,
+          "text": "and"
+        },
+        {
+          "t": 16.7,
+          "text": "keep"
+        },
+        {
+          "t": 16.88,
+          "text": "working"
+        }
+      ]
+    },
+    {
+      "start": 17.2,
+      "end": 19.14,
+      "text": "24/7. That computer",
+      "words": [
+        {
+          "t": 17.2,
+          "text": "24/7."
+        },
+        {
+          "t": 18.52,
+          "text": "That"
+        },
+        {
+          "t": 18.76,
+          "text": "computer"
+        }
+      ]
+    },
+    {
+      "start": 19.14,
+      "end": 19.62,
+      "text": "is real.",
+      "words": [
+        {
+          "t": 19.14,
+          "text": "is"
+        },
+        {
+          "t": 19.38,
+          "text": "real."
+        }
+      ]
+    },
+    {
+      "start": 20.06,
+      "end": 20.48,
+      "text": "All of your",
+      "words": [
+        {
+          "t": 20.06,
+          "text": "All"
+        },
+        {
+          "t": 20.2,
+          "text": "of"
+        },
+        {
+          "t": 20.36,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 20.48,
+      "end": 21.32,
+      "text": "Bots share one",
+      "words": [
+        {
+          "t": 20.48,
+          "text": "Bots"
+        },
+        {
+          "t": 20.74,
+          "text": "share"
+        },
+        {
+          "t": 21.06,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 21.32,
+      "end": 22.42,
+      "text": "persistent machine in",
+      "words": [
+        {
+          "t": 21.32,
+          "text": "persistent"
+        },
+        {
+          "t": 21.84,
+          "text": "machine"
+        },
+        {
+          "t": 22.22,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 22.42,
+      "end": 22.82,
+      "text": "the cloud,",
+      "words": [
+        {
+          "t": 22.42,
+          "text": "the"
+        },
+        {
+          "t": 22.54,
+          "text": "cloud,"
+        }
+      ]
+    },
+    {
+      "start": 23.2,
+      "end": 23.8,
+      "text": "so a job",
+      "words": [
+        {
+          "t": 23.2,
+          "text": "so"
+        },
+        {
+          "t": 23.46,
+          "text": "a"
+        },
+        {
+          "t": 23.6,
+          "text": "job"
+        }
+      ]
+    },
+    {
+      "start": 23.8,
+      "end": 24.7,
+      "text": "doesn't stall when",
+      "words": [
+        {
+          "t": 23.8,
+          "text": "doesn't"
+        },
+        {
+          "t": 24.16,
+          "text": "stall"
+        },
+        {
+          "t": 24.48,
+          "text": "when"
+        }
+      ]
+    },
+    {
+      "start": 24.7,
+      "end": 25.3,
+      "text": "you close your",
+      "words": [
+        {
+          "t": 24.7,
+          "text": "you"
+        },
+        {
+          "t": 24.84,
+          "text": "close"
+        },
+        {
+          "t": 25.04,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 25.3,
+      "end": 26.6,
+      "text": "laptop, and here's",
+      "words": [
+        {
+          "t": 25.3,
+          "text": "laptop,"
+        },
+        {
+          "t": 26.1,
+          "text": "and"
+        },
+        {
+          "t": 26.32,
+          "text": "here's"
+        }
+      ]
+    },
+    {
+      "start": 26.6,
+      "end": 27.08,
+      "text": "the part that",
+      "words": [
+        {
+          "t": 26.6,
+          "text": "the"
+        },
+        {
+          "t": 26.7,
+          "text": "part"
+        },
+        {
+          "t": 26.88,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 27.08,
+      "end": 27.84,
+      "text": "actually matters.",
+      "words": [
+        {
+          "t": 27.08,
+          "text": "actually"
+        },
+        {
+          "t": 27.46,
+          "text": "matters."
+        }
+      ]
+    },
+    {
+      "start": 27.84,
+      "end": 28.7,
+      "text": "They sign into",
+      "words": [
+        {
+          "t": 27.84,
+          "text": "They"
+        },
+        {
+          "t": 28.12,
+          "text": "sign"
+        },
+        {
+          "t": 28.36,
+          "text": "into"
+        }
+      ]
+    },
+    {
+      "start": 28.7,
+      "end": 29.64,
+      "text": "apps and websites,",
+      "words": [
+        {
+          "t": 28.7,
+          "text": "apps"
+        },
+        {
+          "t": 29.06,
+          "text": "and"
+        },
+        {
+          "t": 29.22,
+          "text": "websites,"
+        }
+      ]
+    },
+    {
+      "start": 29.64,
+      "end": 31.12,
+      "text": "including platforms with",
+      "words": [
+        {
+          "t": 29.64,
+          "text": "including"
+        },
+        {
+          "t": 30.22,
+          "text": "platforms"
+        },
+        {
+          "t": 30.8,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 31.12,
+      "end": 32.02,
+      "text": "no clean API",
+      "words": [
+        {
+          "t": 31.12,
+          "text": "no"
+        },
+        {
+          "t": 31.3,
+          "text": "clean"
+        },
+        {
+          "t": 31.58,
+          "text": "API"
+        }
+      ]
+    },
+    {
+      "start": 32.02,
+      "end": 33.68,
+      "text": "and no MCP.",
+      "words": [
+        {
+          "t": 32.02,
+          "text": "and"
+        },
+        {
+          "t": 32.68,
+          "text": "no"
+        },
+        {
+          "t": 32.86,
+          "text": "MCP."
+        }
+      ]
+    },
+    {
+      "start": 33.96,
+      "end": 34.94,
+      "text": "It drives the",
+      "words": [
+        {
+          "t": 33.96,
+          "text": "It"
+        },
+        {
+          "t": 34.22,
+          "text": "drives"
+        },
+        {
+          "t": 34.68,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 34.94,
+      "end": 35.84,
+      "text": "interface the way",
+      "words": [
+        {
+          "t": 34.94,
+          "text": "interface"
+        },
+        {
+          "t": 35.44,
+          "text": "the"
+        },
+        {
+          "t": 35.7,
+          "text": "way"
+        }
+      ]
+    },
+    {
+      "start": 35.84,
+      "end": 36.6,
+      "text": "a person would.",
+      "words": [
+        {
+          "t": 35.84,
+          "text": "a"
+        },
+        {
+          "t": 35.94,
+          "text": "person"
+        },
+        {
+          "t": 36.32,
+          "text": "would."
+        }
+      ]
+    },
+    {
+      "start": 37.06,
+      "end": 37.56,
+      "text": "You message a",
+      "words": [
+        {
+          "t": 37.06,
+          "text": "You"
+        },
+        {
+          "t": 37.08,
+          "text": "message"
+        },
+        {
+          "t": 37.36,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 37.56,
+      "end": 38.06,
+      "text": "Bot like a",
+      "words": [
+        {
+          "t": 37.56,
+          "text": "Bot"
+        },
+        {
+          "t": 37.7,
+          "text": "like"
+        },
+        {
+          "t": 37.9,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 38.06,
+      "end": 39.34,
+      "text": "colleague. It remembers",
+      "words": [
+        {
+          "t": 38.06,
+          "text": "colleague."
+        },
+        {
+          "t": 38.72,
+          "text": "It"
+        },
+        {
+          "t": 38.84,
+          "text": "remembers"
+        }
+      ]
+    },
+    {
+      "start": 39.34,
+      "end": 39.92,
+      "text": "how you like",
+      "words": [
+        {
+          "t": 39.34,
+          "text": "how"
+        },
+        {
+          "t": 39.6,
+          "text": "you"
+        },
+        {
+          "t": 39.76,
+          "text": "like"
+        }
+      ]
+    },
+    {
+      "start": 39.92,
+      "end": 40.5,
+      "text": "things done.",
+      "words": [
+        {
+          "t": 39.92,
+          "text": "things"
+        },
+        {
+          "t": 40.22,
+          "text": "done."
+        }
+      ]
+    },
+    {
+      "start": 40.84,
+      "end": 41.4,
+      "text": "Show it a",
+      "words": [
+        {
+          "t": 40.84,
+          "text": "Show"
+        },
+        {
+          "t": 41.18,
+          "text": "it"
+        },
+        {
+          "t": 41.34,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 41.4,
+      "end": 42.22,
+      "text": "workflow once,",
+      "words": [
+        {
+          "t": 41.4,
+          "text": "workflow"
+        },
+        {
+          "t": 41.62,
+          "text": "once,"
+        }
+      ]
+    },
+    {
+      "start": 42.6,
+      "end": 43.04,
+      "text": "and it saves",
+      "words": [
+        {
+          "t": 42.6,
+          "text": "and"
+        },
+        {
+          "t": 42.66,
+          "text": "it"
+        },
+        {
+          "t": 42.78,
+          "text": "saves"
+        }
+      ]
+    },
+    {
+      "start": 43.04,
+      "end": 43.62,
+      "text": "that as a",
+      "words": [
+        {
+          "t": 43.04,
+          "text": "that"
+        },
+        {
+          "t": 43.32,
+          "text": "as"
+        },
+        {
+          "t": 43.52,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 43.62,
+      "end": 44.86,
+      "text": "routine, takes your",
+      "words": [
+        {
+          "t": 43.62,
+          "text": "routine,"
+        },
+        {
+          "t": 44.48,
+          "text": "takes"
+        },
+        {
+          "t": 44.66,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 44.86,
+      "end": 46.12,
+      "text": "corrections, and runs",
+      "words": [
+        {
+          "t": 44.86,
+          "text": "corrections,"
+        },
+        {
+          "t": 45.72,
+          "text": "and"
+        },
+        {
+          "t": 45.9,
+          "text": "runs"
+        }
+      ]
+    },
+    {
+      "start": 46.12,
+      "end": 46.9,
+      "text": "it itself next",
+      "words": [
+        {
+          "t": 46.12,
+          "text": "it"
+        },
+        {
+          "t": 46.34,
+          "text": "itself"
+        },
+        {
+          "t": 46.62,
+          "text": "next"
+        }
+      ]
+    },
+    {
+      "start": 46.9,
+      "end": 47.96,
+      "text": "time. You can",
+      "words": [
+        {
+          "t": 46.9,
+          "text": "time."
+        },
+        {
+          "t": 47.7,
+          "text": "You"
+        },
+        {
+          "t": 47.82,
+          "text": "can"
+        }
+      ]
+    },
+    {
+      "start": 47.96,
+      "end": 48.74,
+      "text": "run several at",
+      "words": [
+        {
+          "t": 47.96,
+          "text": "run"
+        },
+        {
+          "t": 48.16,
+          "text": "several"
+        },
+        {
+          "t": 48.54,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 48.74,
+      "end": 49.68,
+      "text": "once, a chief",
+      "words": [
+        {
+          "t": 48.74,
+          "text": "once,"
+        },
+        {
+          "t": 49.4,
+          "text": "a"
+        },
+        {
+          "t": 49.46,
+          "text": "chief"
+        }
+      ]
+    },
+    {
+      "start": 49.68,
+      "end": 50.44,
+      "text": "of staff Bot",
+      "words": [
+        {
+          "t": 49.68,
+          "text": "of"
+        },
+        {
+          "t": 49.84,
+          "text": "staff"
+        },
+        {
+          "t": 50.1,
+          "text": "Bot"
+        }
+      ]
+    },
+    {
+      "start": 50.44,
+      "end": 50.88,
+      "text": "on top,",
+      "words": [
+        {
+          "t": 50.44,
+          "text": "on"
+        },
+        {
+          "t": 50.64,
+          "text": "top,"
+        }
+      ]
+    },
+    {
+      "start": 51.4,
+      "end": 52.3,
+      "text": "specialists underneath.",
+      "words": [
+        {
+          "t": 51.4,
+          "text": "specialists"
+        },
+        {
+          "t": 51.72,
+          "text": "underneath."
+        }
+      ]
+    },
+    {
+      "start": 52.84,
+      "end": 53.52,
+      "text": "They message each",
+      "words": [
+        {
+          "t": 52.84,
+          "text": "They"
+        },
+        {
+          "t": 52.96,
+          "text": "message"
+        },
+        {
+          "t": 53.22,
+          "text": "each"
+        }
+      ]
+    },
+    {
+      "start": 53.52,
+      "end": 54.7,
+      "text": "other, pass work,",
+      "words": [
+        {
+          "t": 53.52,
+          "text": "other,"
+        },
+        {
+          "t": 54.2,
+          "text": "pass"
+        },
+        {
+          "t": 54.32,
+          "text": "work,"
+        }
+      ]
+    },
+    {
+      "start": 54.96,
+      "end": 55.7,
+      "text": "and only pull",
+      "words": [
+        {
+          "t": 54.96,
+          "text": "and"
+        },
+        {
+          "t": 55.16,
+          "text": "only"
+        },
+        {
+          "t": 55.48,
+          "text": "pull"
+        }
+      ]
+    },
+    {
+      "start": 55.7,
+      "end": 56.22,
+      "text": "you in for",
+      "words": [
+        {
+          "t": 55.7,
+          "text": "you"
+        },
+        {
+          "t": 55.88,
+          "text": "in"
+        },
+        {
+          "t": 56.06,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 56.22,
+      "end": 56.96,
+      "text": "judgment calls.",
+      "words": [
+        {
+          "t": 56.22,
+          "text": "judgment"
+        },
+        {
+          "t": 56.56,
+          "text": "calls."
+        }
+      ]
+    },
+    {
+      "start": 56.96,
+      "end": 58.16,
+      "text": "Now, the part",
+      "words": [
+        {
+          "t": 56.96,
+          "text": "Now,"
+        },
+        {
+          "t": 57.8,
+          "text": "the"
+        },
+        {
+          "t": 57.9,
+          "text": "part"
+        }
+      ]
+    },
+    {
+      "start": 58.16,
+      "end": 59.54,
+      "text": "almost nobody noticed.",
+      "words": [
+        {
+          "t": 58.16,
+          "text": "almost"
+        },
+        {
+          "t": 58.56,
+          "text": "nobody"
+        },
+        {
+          "t": 59.02,
+          "text": "noticed."
+        }
+      ]
+    },
+    {
+      "start": 59.98,
+      "end": 60.36,
+      "text": "Look at how",
+      "words": [
+        {
+          "t": 59.98,
+          "text": "Look"
+        },
+        {
+          "t": 60.1,
+          "text": "at"
+        },
+        {
+          "t": 60.22,
+          "text": "how"
+        }
+      ]
+    },
+    {
+      "start": 60.36,
+      "end": 61.16,
+      "text": "you actually get",
+      "words": [
+        {
+          "t": 60.36,
+          "text": "you"
+        },
+        {
+          "t": 60.52,
+          "text": "actually"
+        },
+        {
+          "t": 60.9,
+          "text": "get"
+        }
+      ]
+    },
+    {
+      "start": 61.16,
+      "end": 62.62,
+      "text": "in. SuperGrok Heavy",
+      "words": [
+        {
+          "t": 61.16,
+          "text": "in."
+        },
+        {
+          "t": 61.84,
+          "text": "SuperGrok"
+        },
+        {
+          "t": 62.36,
+          "text": "Heavy"
+        }
+      ]
+    },
+    {
+      "start": 62.62,
+      "end": 63.78,
+      "text": "is $300 a",
+      "words": [
+        {
+          "t": 62.62,
+          "text": "is"
+        },
+        {
+          "t": 62.8,
+          "text": "$300"
+        },
+        {
+          "t": 63.34,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 63.78,
+      "end": 65.22,
+      "text": "month. But Cursor",
+      "words": [
+        {
+          "t": 63.78,
+          "text": "month."
+        },
+        {
+          "t": 64.5,
+          "text": "But"
+        },
+        {
+          "t": 64.76,
+          "text": "Cursor"
+        }
+      ]
+    },
+    {
+      "start": 65.22,
+      "end": 66.82,
+      "text": "Ultra is $200,",
+      "words": [
+        {
+          "t": 65.22,
+          "text": "Ultra"
+        },
+        {
+          "t": 65.64,
+          "text": "is"
+        },
+        {
+          "t": 66.0,
+          "text": "$200,"
+        }
+      ]
+    },
+    {
+      "start": 67.46,
+      "end": 68.82,
+      "text": "and Cursor Premium",
+      "words": [
+        {
+          "t": 67.46,
+          "text": "and"
+        },
+        {
+          "t": 67.82,
+          "text": "Cursor"
+        },
+        {
+          "t": 68.36,
+          "text": "Premium"
+        }
+      ]
+    },
+    {
+      "start": 68.82,
+      "end": 71.14,
+      "text": "Teams is $120",
+      "words": [
+        {
+          "t": 68.82,
+          "text": "Teams"
+        },
+        {
+          "t": 69.42,
+          "text": "is"
+        },
+        {
+          "t": 69.9,
+          "text": "$120"
+        }
+      ]
+    },
+    {
+      "start": 71.14,
+      "end": 72.1,
+      "text": "per seat.",
+      "words": [
+        {
+          "t": 71.14,
+          "text": "per"
+        },
+        {
+          "t": 71.8,
+          "text": "seat."
+        }
+      ]
+    },
+    {
+      "start": 72.64,
+      "end": 73.82,
+      "text": "The cheapest door",
+      "words": [
+        {
+          "t": 72.64,
+          "text": "The"
+        },
+        {
+          "t": 73.12,
+          "text": "cheapest"
+        },
+        {
+          "t": 73.44,
+          "text": "door"
+        }
+      ]
+    },
+    {
+      "start": 73.82,
+      "end": 75.96,
+      "text": "into SpaceXAI's",
+      "words": [
+        {
+          "t": 73.82,
+          "text": "into"
+        },
+        {
+          "t": 74.28,
+          "text": "SpaceX"
+        },
+        {
+          "t": 74.98,
+          "text": "AI's"
+        }
+      ]
+    },
+    {
+      "start": 75.96,
+      "end": 77.5,
+      "text": "flagship agent is",
+      "words": [
+        {
+          "t": 75.96,
+          "text": "flagship"
+        },
+        {
+          "t": 76.3,
+          "text": "agent"
+        },
+        {
+          "t": 76.84,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 77.5,
+      "end": 78.8,
+      "text": "a Cursor subscription,",
+      "words": [
+        {
+          "t": 77.5,
+          "text": "a"
+        },
+        {
+          "t": 77.64,
+          "text": "Cursor"
+        },
+        {
+          "t": 78.18,
+          "text": "subscription,"
+        }
+      ]
+    },
+    {
+      "start": 79.1,
+      "end": 80.06,
+      "text": "and Cursor is",
+      "words": [
+        {
+          "t": 79.1,
+          "text": "and"
+        },
+        {
+          "t": 79.24,
+          "text": "Cursor"
+        },
+        {
+          "t": 79.84,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 80.06,
+      "end": 80.78,
+      "text": "the thing that",
+      "words": [
+        {
+          "t": 80.06,
+          "text": "the"
+        },
+        {
+          "t": 80.28,
+          "text": "thing"
+        },
+        {
+          "t": 80.54,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 80.78,
+      "end": 81.62,
+      "text": "signs you in",
+      "words": [
+        {
+          "t": 80.78,
+          "text": "signs"
+        },
+        {
+          "t": 81.2,
+          "text": "you"
+        },
+        {
+          "t": 81.4,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 81.62,
+      "end": 82.78,
+      "text": "Free Grok does not",
+      "words": [
+        {
+          "t": 81.62,
+          "text": "Free Grok"
+        },
+        {
+          "t": 82.3,
+          "text": "does"
+        },
+        {
+          "t": 82.52,
+          "text": "not"
+        }
+      ]
+    },
+    {
+      "start": 82.78,
+      "end": 83.3,
+      "text": "get it.",
+      "words": [
+        {
+          "t": 82.78,
+          "text": "get"
+        },
+        {
+          "t": 83.06,
+          "text": "it."
+        }
+      ]
+    },
+    {
+      "start": 83.3,
+      "end": 84.88,
+      "text": "Standard SuperGrok does",
+      "words": [
+        {
+          "t": 83.3,
+          "text": "Standard"
+        },
+        {
+          "t": 83.96,
+          "text": "SuperGrok"
+        },
+        {
+          "t": 84.7,
+          "text": "does"
+        }
+      ]
+    },
+    {
+      "start": 84.88,
+      "end": 85.58,
+      "text": "not either.",
+      "words": [
+        {
+          "t": 84.88,
+          "text": "not"
+        },
+        {
+          "t": 85.1,
+          "text": "either."
+        }
+      ]
+    },
+    {
+      "start": 86.1,
+      "end": 87.24,
+      "text": "One honest caveat.",
+      "words": [
+        {
+          "t": 86.1,
+          "text": "One"
+        },
+        {
+          "t": 86.3,
+          "text": "honest"
+        },
+        {
+          "t": 86.76,
+          "text": "caveat."
+        }
+      ]
+    },
+    {
+      "start": 87.86,
+      "end": 88.7,
+      "text": "This is early",
+      "words": [
+        {
+          "t": 87.86,
+          "text": "This"
+        },
+        {
+          "t": 88.06,
+          "text": "is"
+        },
+        {
+          "t": 88.34,
+          "text": "early"
+        }
+      ]
+    },
+    {
+      "start": 88.7,
+      "end": 89.7,
+      "text": "beta. And for",
+      "words": [
+        {
+          "t": 88.7,
+          "text": "beta."
+        },
+        {
+          "t": 89.5,
+          "text": "And"
+        },
+        {
+          "t": 89.56,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 89.7,
+      "end": 90.6,
+      "text": "software, you are",
+      "words": [
+        {
+          "t": 89.7,
+          "text": "software,"
+        },
+        {
+          "t": 90.44,
+          "text": "you"
+        },
+        {
+          "t": 90.5,
+          "text": "are"
+        }
+      ]
+    },
+    {
+      "start": 90.6,
+      "end": 91.64,
+      "text": "handing your logins",
+      "words": [
+        {
+          "t": 90.6,
+          "text": "handing"
+        },
+        {
+          "t": 90.98,
+          "text": "your"
+        },
+        {
+          "t": 91.22,
+          "text": "logins"
+        }
+      ]
+    },
+    {
+      "start": 91.64,
+      "end": 92.68,
+      "text": "to. The launch",
+      "words": [
+        {
+          "t": 91.64,
+          "text": "to."
+        },
+        {
+          "t": 92.34,
+          "text": "The"
+        },
+        {
+          "t": 92.44,
+          "text": "launch"
+        }
+      ]
+    },
+    {
+      "start": 92.68,
+      "end": 93.7,
+      "text": "material does not",
+      "words": [
+        {
+          "t": 92.68,
+          "text": "material"
+        },
+        {
+          "t": 93.28,
+          "text": "does"
+        },
+        {
+          "t": 93.5,
+          "text": "not"
+        }
+      ]
+    },
+    {
+      "start": 93.7,
+      "end": 94.54,
+      "text": "spell out credential",
+      "words": [
+        {
+          "t": 93.7,
+          "text": "spell"
+        },
+        {
+          "t": 93.98,
+          "text": "out"
+        },
+        {
+          "t": 94.24,
+          "text": "credential"
+        }
+      ]
+    },
+    {
+      "start": 94.54,
+      "end": 96.84,
+      "text": "handling, permission granularity,",
+      "words": [
+        {
+          "t": 94.54,
+          "text": "handling,"
+        },
+        {
+          "t": 95.66,
+          "text": "permission"
+        },
+        {
+          "t": 95.98,
+          "text": "granularity,"
+        }
+      ]
+    },
+    {
+      "start": 96.98,
+      "end": 97.86,
+      "text": "or audit records.",
+      "words": [
+        {
+          "t": 96.98,
+          "text": "or"
+        },
+        {
+          "t": 97.12,
+          "text": "audit"
+        },
+        {
+          "t": 97.42,
+          "text": "records."
+        }
+      ]
+    },
+    {
+      "start": 98.42,
+      "end": 99.14,
+      "text": "It runs on",
+      "words": [
+        {
+          "t": 98.42,
+          "text": "It"
+        },
+        {
+          "t": 98.54,
+          "text": "runs"
+        },
+        {
+          "t": 98.78,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 99.14,
+      "end": 100.46,
+      "text": "macOS, Windows,",
+      "words": [
+        {
+          "t": 99.14,
+          "text": "macOS,"
+        },
+        {
+          "t": 100.22,
+          "text": "Windows,"
+        }
+      ]
+    },
+    {
+      "start": 100.92,
+      "end": 101.92,
+      "text": "Linux, and iOS",
+      "words": [
+        {
+          "t": 100.92,
+          "text": "Linux,"
+        },
+        {
+          "t": 101.4,
+          "text": "and"
+        },
+        {
+          "t": 101.52,
+          "text": "iOS"
+        }
+      ]
+    },
+    {
+      "start": 101.92,
+      "end": 103.7,
+      "text": "today. Android is",
+      "words": [
+        {
+          "t": 101.92,
+          "text": "today."
+        },
+        {
+          "t": 103.2,
+          "text": "Android"
+        },
+        {
+          "t": 103.5,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 103.7,
+      "end": 104.62,
+      "text": "coming. So,",
+      "words": [
+        {
+          "t": 103.7,
+          "text": "coming."
+        },
+        {
+          "t": 104.42,
+          "text": "So,"
+        }
+      ]
+    },
+    {
+      "start": 104.78,
+      "end": 105.32,
+      "text": "would you actually",
+      "words": [
+        {
+          "t": 104.78,
+          "text": "would"
+        },
+        {
+          "t": 104.92,
+          "text": "you"
+        },
+        {
+          "t": 105.02,
+          "text": "actually"
+        }
+      ]
+    },
+    {
+      "start": 105.32,
+      "end": 105.86,
+      "text": "give a Bot",
+      "words": [
+        {
+          "t": 105.32,
+          "text": "give"
+        },
+        {
+          "t": 105.56,
+          "text": "a"
+        },
+        {
+          "t": 105.68,
+          "text": "Bot"
+        }
+      ]
+    },
+    {
+      "start": 105.86,
+      "end": 106.5,
+      "text": "your passwords?",
+      "words": [
+        {
+          "t": 105.86,
+          "text": "your"
+        },
+        {
+          "t": 106.12,
+          "text": "passwords?"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "_comment": "Copy to config.json and fill in YOUR OWN ids. Never commit real API keys \u2014 those live in your shell env or the connector, never in this file.",
+  "avatar": {
+    "provider": "heygen",
+    "avatarId": "f55b0b7cb3b240298e9340a22d0265c2",
+    "voiceId": "bb79e8390b4340ce8793ea5f123dbba7",
+    "engine": "avatar_v",
+    "resolution": "1080p",
+    "aspectRatio": "9:16",
+    "voiceSpeed": 1.05,
+    "_note": "Generate ONE continuous master per reel. If your provider's vertical auto-crop misframes the face, generate 16:9 and crop with a measured face-x instead.",
+    "_engine_note": "ENGINE IS PER-LOOK, chosen by measurement \u2014 see avatarRegistry. Avatar V was locked on 2026-08-11, but the user's actual priority is GESTURES, and for the requested look (0aa05d6e, blue hoodie) Avatar V scores 0.48 (frozen) while avatar_iv + expressiveness:high + motionPrompt scores 6.01. expressiveness is avatar_iv ONLY (rejected on avatar_v) and motionPrompt needs a digital twin on avatar_v, which this group has none. So this look runs on avatar_iv. A look that gestures natively on avatar_v (48d4076, 5.32) keeps avatar_v. NEVER pick the engine by preference \u2014 measure.",
+    "_speed_note": "1.05 set 2026-08-11 on user note 'slow down the speed a little bit'. Supersedes the 2026-07-23 speed-1.2 preference.",
+    "useMotionPrompt": true,
+    "motionPrompt": "Confident tech presenter talking straight to camera, hands empty and visible. Gestures with open palms, counts points on fingers, lifts hands off the desk on emphasis, small forward lean on key numbers. IMPORTANT: hands hold nothing at any point - no pen, no phone, no papers, no props of any kind.",
+    "_switching": "Change presenter: `python3 tools/measure_avatar.py use <lookId>` (refuses anything measured frozen). Per-reel override: add \"avatar\": \"<lookId>\" to that reel's manifest.json.",
+    "_motion_note": "VERIFIED 2026-08-12 by probe, not by assertion.\n(#1) PROPS \u2014 FIXED. Probe be34b663 sampled every 0.4s (28 frames, hand region cropped): bare hands in every frame. The explicit prop ban works and stays verbatim in every motionPrompt.\n(#7) EXPRESSION PER SECTION \u2014 IMPOSSIBLE ON A PHOTO AVATAR, and the sentence that used to sit in this prompt ('expression tracks the script rather than holding a fixed smile...') has been DELETED because it demonstrably did nothing. Evidence: with that sentence present the avatar grinned widest on the most serious line. expressiveness:low did not remove the smile either and dropped motion 6.90 -> 1.02 (stiff). A photo avatar is a deformation of ONE still image; this look's still is a smile, so no prompt can reach a neutral face.\nWHAT ACTUALLY WORKS: pick the LOOK to match the reel's dominant register \u2014 avatarRegistry.register is 'warm' (0aa05d6e) or 'serious' (7123b3d0). One look per reel; the two looks have different wardrobe and background so cutting between them mid-reel reads as two different shoots.\nIF true per-sentence expression is ever needed, that requires a DIGITAL TWIN driven by real footage. That is the one thing a twin genuinely buys \u2014 unlike the 2026-08-12 claim that a twin was needed for gestures, which measurement disproved.",
+    "_render_note": "2026-08-13: `resolution` and `aspectRatio` were being left UNSET, so renders defaulted to 720p 16:9 and were then cropped+upscaled ~2.7x to 1080x1920. The API accepts resolution '4k'|'1080p'|'720p' and aspectRatio '9:16'. Digital twins are 4K-eligible; photo avatars never were. VERIFIED: aspectRatio 9:16 + resolution 1080p + fit cover renders NATIVE 1080x1920 with good framing \u2014 no crop, no upscale. USE IT for full-frame facecam beats. Keep generating 16:9 for `split` scenes, where the avatar occupies half the frame and the wider source is what you actually want. CAVEAT: both twin renders came back 25fps while the project is 30fps \u2014 conform on ingest; it is the render, not the source (preview is 30fps).",
+    "_default_note": "2026-08-13: default switched from the photo avatar 0aa05d6e90e74f9fa23b75d0d8c267c4 to digital twin f55b0b7c at the user's instruction. WHY IT IS BETTER: motion 4.41 (gestures) vs the photo avatar's fixed-smile problem; the face stays LEVEL through a caveat, which no photo avatar can do at any expressiveness; native 1080x1920 output with no crop/upscale; same blue-hoodie studio so no wardrobe break with shipped reels. `expressiveness` was REMOVED because the API rejects it with avatar_v \u2014 it is Avatar IV + photo avatar only. The old photo avatars stay in avatarRegistry for reference and for any reel that specifically needs the WARM register, which this twin has not been proven to hold."
+  },
+  "faceFraming": {
+    "faceXDefault": 0.41,
+    "_note": "Horizontal face-centre as a fraction of frame width. Measure it once per avatar on a mid frame (overlay a grid), save per reel to public/assets/<slug>/face-x.txt."
+  },
+  "voiceClone": {
+    "enabled": false,
+    "space": "vibingvoice/vibe-voice-custom-voices",
+    "referenceSample": "public/assets/voice/voice-ref.wav",
+    "_note": "Optional. A clean ~18s sample of your own voice. Free community GPU space with a daily quota."
+  },
+  "render": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "concurrency": 2,
+    "timeoutMs": 120000,
+    "loudnessTarget": "I=-14:TP=-1.2:LRA=7"
+  },
+  "defaults": {
+    "style": "varun-mayya",
+    "targetSeconds": 90,
+    "lengthRangeSeconds": [
+      60,
+      80
+    ],
+    "captionStyle": "nick-display",
+    "musicBed": "music/bed-02.mp3",
+    "_length_note": "User rule 2026-08-11: every reel runs 1-2 MINUTES, picked from the topic. 2026-08-13 MEASURED delivery on this voice at speed 1.05 is ~2.7 words/sec (grok-bot 2.69, apple-pay-india 2.72, iphone18-split 2.55) \u2014 so 60s = ~162 words, 80s = ~216, 90s = ~243, 120s = ~324. Supersedes the unmeasured 3.2 wps figures; script_approval.py enforces the band at propose time.",
+    "_caption_note": "nick-display is the production caption treatment (per-word reveal, emphasis list drives the accent keyword)."
+  },
+  "avatarRegistry": {
+    "48d407621ae64e4ba7dcfb63635f45e8": {
+      "name": "Man in black hoodie recording",
+      "motion": 5.32,
+      "peak": 11.79,
+      "engine": "avatar_v",
+      "verdict": "gestures",
+      "register": null,
+      "_register_note": "Expression never measured \u2014 do not use for a tone-sensitive reel until it is."
+    },
+    "0aa05d6e90e74f9fa23b75d0d8c267c4": {
+      "name": "Smiling podcaster in blue hoodie",
+      "motion": 6.9,
+      "peak": 15.89,
+      "engine": "avatar_iv",
+      "verdict": "gestures",
+      "needsMotionPrompt": true,
+      "register": "warm",
+      "_register_note": "MEASURED 2026-08-12 (probe be34b663 + 5492c2c0). Source still is a smile ('Smiling podcaster in blue hoodie'), so every driven frame is a smile. Cannot carry a caveat, a warning or bad news at any expressiveness setting. Use for launches, features, positive reveals."
+    },
+    "7123b3d03a3941538eac18fffc373aa8": {
+      "name": "Man with glasses in studio",
+      "motion": 2.97,
+      "peak": 9.24,
+      "engine": "avatar_iv",
+      "verdict": "gestures",
+      "register": "serious",
+      "needsMotionPrompt": true,
+      "_register_note": "MEASURED 2026-08-12 (probe 31699b25). Neutral source still -> level brows, no grin, mouth neutral except for speech, while still gesturing (2.97). This is the ONLY proven way to get a serious presenter. Wardrobe: grey sweater, blue/green desk studio \u2014 does NOT match the blue-hoodie look, so do not cut between the two inside one reel."
+    },
+    "8e49c9d1b7f04fb0b454f86327f36a61": {
+      "name": "Dhvanesh -- 55 (digital twin #1)",
+      "motion": 1.71,
+      "peak": 3.55,
+      "engine": "avatar_v",
+      "verdict": "stiff",
+      "register": "neutral",
+      "USABLE": false,
+      "_register_note": "MEASURED 2026-08-13 (probe 097841e1). GOOD NEWS: a digital twin BREAKS the fixed-smile problem \u2014 face stays level through the caveat, which no photo avatar can do at any expressiveness. BUT UNUSABLE FOR REELS: (1) 'iGeeksBlog' lower-third + social icons burned into 19/19 sampled frames plus a SUBSCRIBE button \u2014 trained on a PUBLISHED video, not raw footage; (2) 1280x640 @25fps, 2:1 aspect (source 1440x720) \u2014 a 9:16 crop off 640px height is 360x640 and needs ~3x upscale against our 1080x1920 @30fps; (3) head-and-shoulders framing puts the hands out of frame, so motion is 1.71 (stiff) and no motionPrompt can fix it. RETRAIN per references/digital-twin-recording-spec.md."
+    },
+    "f55b0b7cb3b240298e9340a22d0265c2": {
+      "name": "Dhvanesh -- 59 (digital twin #2)",
+      "motion": 4.41,
+      "peak": 8.75,
+      "engine": "avatar_v",
+      "verdict": "gestures",
+      "register": "neutral",
+      "USABLE": true,
+      "preferred": true,
+      "nativeVertical": true,
+      "renderFps": 25,
+      "_register_note": "MEASURED 2026-08-13 (probes d5006da2 + 768387f5). PASSES every source check that twin #1 failed: 16:9 30fps preview (not 2:1/25), NO burned-in branding (twin #1 had the iGeeksBlog lower-third in 19/19 frames), hands in frame and bare in 30/30 sampled frames, motion 4.41 (gestures) vs 1.71 (stiff). Face stays LEVEL through the caveat with no grin \u2014 the thing no photo avatar can do at any expressiveness. Same blue-hoodie studio as the shipped reels, so no wardrobe break. REGISTER: neutral-dominant. It does not grin through bad news, but it did not visibly warm up on the closing question either \u2014 treat it as a neutral/serious presenter, and do NOT claim a full warm-to-serious range until a probe proves one."
+    }
+  },
+  "account": {
+    "heygenPlan": "pro",
+    "_note": "Upgraded to HeyGen Pro ($49/mo) on 2026-08-12: 436 premium credits vs ~134 on Creator. At ~1 credit per 3s of avatar, a 107s reel costs ~36 credits, so ~12 full reels per cycle. CONSEQUENCE FOR PLANNING: script changes are now affordable. Previously only footage/beat changes were free re-renders and a re-record was a real cost; now a bad script can simply be redone. Short A/B probes (~3 credits for 7s) should be used to verify prompt-side changes BEFORE committing to a full reel. NOTE: 4K output is gated on avatar TYPE, not plan \u2014 photo avatars cannot do 4K on any tier, so the old 'probe resolution 4k' item stays closed for this look."
+  }
+}

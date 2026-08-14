@@ -1,0 +1,474 @@
+#!/usr/bin/env node
+/**
+ * capture.mjs — premium B-roll capture tool for the news-reels engine.
+ *
+ * Subcommands:
+ *   screenshot <url> --out file.png [--scale 3] [--width 1200] [--height 900]
+ *                    [--selector css] [--full] [--wait 2500] [--hide css,css]
+ *   record     <url> --out file.webm [--duration 8] [--width 1280] [--height 800]
+ *                    [--scale 2] [--wait 2500] [--script actions.json] [--hide css,css]
+ *   probe      <url> [--scale 3] [--width 1200] [--wait 2500]
+ *
+ * Produces high-DPI screenshots (deviceScaleFactor 2/3) and smooth scripted
+ * screen recordings of real websites, with best-effort cookie-banner removal.
+ */
+
+import { chromium } from "playwright";
+import fs from "node:fs";
+import path from "node:path";
+import os from "node:os";
+import { spawnSync } from "node:child_process";
+
+// ---------------------------------------------------------------- arg parsing
+
+const [, , cmd, url, ...rest] = process.argv;
+
+function usage(exit = 1) {
+  console.error(`Usage:
+  node tools/capture.mjs screenshot <url> --out shot.png [--scale 3] [--width 1200] [--height 900] [--selector "article"] [--full] [--wait 2500] [--hide "css,css"]
+  node tools/capture.mjs record     <url> --out clip.webm [--duration 8] [--width 1280] [--height 800] [--scale 2] [--script actions.json] [--wait 2500] [--hide "css,css"]
+  node tools/capture.mjs probe      <url> [--scale 3] [--width 1200] [--wait 2500]
+
+MOBILE IS THE DEFAULT (360x780 @3 = 1080x2340) because every reel is 9:16.
+Pass --desktop for pages with no mobile layout, wide dashboards, or
+side-by-side comparisons.`);
+  process.exit(exit);
+}
+
+if (!cmd || !url || !["screenshot", "record", "probe"].includes(cmd)) usage();
+
+const flags = {};
+for (let i = 0; i < rest.length; i++) {
+  const a = rest[i];
+  if (!a.startsWith("--")) usage();
+  const key = a.slice(2);
+  const boolFlags = new Set(["full", "mobile", "desktop"]);
+  if (boolFlags.has(key)) {
+    flags[key] = true;
+  } else {
+    flags[key] = rest[++i];
+    if (flags[key] === undefined) usage();
+  }
+}
+
+const num = (v, d) => (v === undefined ? d : Number(v));
+
+/*
+ * MOBILE IS THE DEFAULT (2026-08-13, user request).
+ *
+ * This engine only ever ships 9:16. A desktop capture at 1200x900 cropped to
+ * 9:16 keeps a 675px-wide sliver of a layout designed for 1200 — most of the
+ * page is thrown away and the surviving text is tiny on a phone. A real mobile
+ * viewport is already tall and narrow, its type is sized for a hand, and at
+ * DPR 3 it lands at 1080x2340 — a native fit for a 1080x1920 frame with room
+ * to pan.
+ *
+ * 360x780 @ scale 3 = 1080x2340 exactly. Pass --desktop to opt out (product
+ * pages with no mobile layout, wide dashboards, side-by-side comparisons).
+ */
+const MOBILE = !flags.desktop;   // --desktop opts out; --mobile is redundant but accepted
+
+const opts = {
+  out: flags.out,
+  mobile: MOBILE,
+  scale: num(flags.scale, MOBILE ? 3 : cmd === "record" ? 2 : 3),
+  width: num(flags.width, MOBILE ? 360 : cmd === "record" ? 1280 : 1200),
+  height: num(flags.height, MOBILE ? 780 : cmd === "record" ? 800 : 900),
+  wait: num(flags.wait, 2500),
+  duration: num(flags.duration, 8),
+  selector: flags.selector,
+  full: !!flags.full,
+  hide: flags.hide ? flags.hide.split(",").map((s) => s.trim()).filter(Boolean) : [],
+  script: flags.script,
+};
+
+if ((cmd === "screenshot" || cmd === "record") && !opts.out) {
+  console.error(`error: --out is required for ${cmd}`);
+  usage();
+}
+
+// ------------------------------------------------------------------- helpers
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/** Best-effort cookie/consent banner cleanup: click accept-ish buttons, then hide leftovers. */
+async function dismissBanners(page, extraHide = []) {
+  // 1) Try clicking well-known accept buttons (short timeouts; ignore failures).
+  const clickTargets = [
+    "#onetrust-accept-btn-handler",
+    "#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll",
+    "button#accept-cookies",
+    '[data-testid="cookie-banner-accept"]',
+    ".cc-allow",
+    ".cc-btn.cc-dismiss",
+    '[aria-label="Accept cookies"]',
+    '[aria-label="Accept all cookies"]',
+  ];
+  for (const sel of clickTargets) {
+    try {
+      const el = page.locator(sel).first();
+      if (await el.isVisible({ timeout: 250 })) {
+        await el.click({ timeout: 1000 });
+        await sleep(300);
+      }
+    } catch {}
+  }
+
+  // 2) Nuke common banner containers + any user-supplied selectors with CSS.
+  const hideSelectors = [
+    "#onetrust-consent-sdk",
+    "#onetrust-banner-sdk",
+    ".onetrust-pc-dark-filter",
+    "#CybotCookiebotDialog",
+    "#CybotCookiebotDialogBodyUnderlay",
+    "#cookie-banner",
+    "#cookie-notice",
+    "#cookieConsent",
+    ".cookie-banner",
+    ".cookie-notice",
+    ".cookie-consent",
+    '[class*="cookie-banner"]',
+    '[id*="cookie-banner"]',
+    '[class*="cookieBanner"]',
+    '[class*="consent-banner"]',
+    '[id*="consent-banner"]',
+    '[class*="gdpr-banner"]',
+    ".cc-window",
+    ".qc-cmp2-container",
+    "#usercentrics-root",
+    "#sp_message_container",
+    '[class*="js-consent-banner"]',
+    ...extraHide,
+  ];
+  try {
+    await page.addStyleTag({
+      content: hideSelectors
+        .map((s) => `${s}{display:none !important;visibility:hidden !important;}`)
+        .join("\n"),
+    });
+  } catch {}
+}
+
+async function newBrowser() {
+  return chromium.launch({
+    headless: true,
+    args: ["--hide-scrollbars", "--force-color-profile=srgb", "--disable-blink-features=AutomationControlled"],
+  });
+}
+
+const DESKTOP_UA =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36";
+const MOBILE_UA =
+  "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1";
+
+// isMobile makes Chromium honour the page's meta-viewport, which is what
+// actually triggers the mobile LAYOUT — a narrow window alone does not.
+const CONTEXT_BASE = {
+  userAgent: opts.mobile ? MOBILE_UA : DESKTOP_UA,
+  locale: "en-US",
+  reducedMotion: "no-preference",
+  colorScheme: "light",
+  ...(opts.mobile ? { isMobile: true, hasTouch: true } : {}),
+};
+
+async function settle(page) {
+  await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
+  await page.waitForLoadState("load", { timeout: 20000 }).catch(() => {});
+  await page.waitForLoadState("networkidle", { timeout: 10000 }).catch(() => {});
+  await dismissBanners(page, opts.hide);
+  // Nudge lazy-loaded images near the top of the page into loading.
+  await page.evaluate(() => {
+    document.querySelectorAll('img[loading="lazy"]').forEach((img) => (img.loading = "eager"));
+  }).catch(() => {});
+  await sleep(opts.wait);
+}
+
+function pngDimensions(file) {
+  const buf = fs.readFileSync(file);
+  // PNG IHDR: width @ byte 16, height @ byte 20 (big-endian).
+  return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
+}
+
+function ensureOutDir(file) {
+  fs.mkdirSync(path.dirname(path.resolve(file)), { recursive: true });
+}
+
+// -------------------------------------------------------------- screenshot
+
+async function screenshot() {
+  ensureOutDir(opts.out);
+  const browser = await newBrowser();
+  const context = await browser.newContext({
+    ...CONTEXT_BASE,
+    viewport: { width: opts.width, height: opts.height },
+    deviceScaleFactor: opts.scale,
+  });
+  const page = await context.newPage();
+  await settle(page);
+
+  if (opts.selector) {
+    const el = page.locator(opts.selector).first();
+    await el.waitFor({ state: "visible", timeout: 15000 });
+    await el.scrollIntoViewIfNeeded();
+    await sleep(400);
+    await el.screenshot({ path: opts.out, type: "png" });
+  } else {
+    await page.screenshot({ path: opts.out, type: "png", fullPage: opts.full });
+  }
+
+  await browser.close();
+  const { w, h } = pngDimensions(opts.out);
+  console.log(`saved ${path.resolve(opts.out)}  ${w}x${h}px  (scale ${opts.scale}x)`);
+}
+
+// ------------------------------------------------------------------ record
+//
+// Deterministic frame-stepped recorder. Real-time screen capture at hi-DPI sizes
+// tops out at ~4-5 fps (surface readback cost), which reads as janky B-roll.
+// Instead we advance the choreography EXACTLY 1/30s per output frame — scroll
+// positions and mouse moves are eased in small per-frame increments — and grab a
+// CDP screenshot for every frame. Capture runs slower than real time, but the
+// resulting clip is perfectly smooth 30fps with zero dropped frames.
+
+const FPS = 30;
+const easeInOutCubic = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+async function centerOf(page, selector) {
+  const box = await page.locator(selector).first().boundingBox();
+  if (!box) throw new Error(`record: selector not found/visible: ${selector}`);
+  return { x: box.x + box.width / 2, y: box.y + box.height / 2 };
+}
+
+/**
+ * Normalize a raw script entry. Times are seconds; px/x/y are authored in
+ * UNSCALED css px of the page (the numbers you would use at --scale 1) and are
+ * multiplied by --scale here because the recording viewport is zoomed.
+ * Selector targets are resolved lazily at the action's start frame (post-scroll
+ * layout), so they need no adjustment.
+ */
+function normalizeAction(a, S) {
+  const durDefault = { scroll: 1.5, move: 0.7, hover: 0.7, click: 0.15, type: 0 }[a.action] ?? 0.5;
+  return {
+    ...a,
+    t: a.t ?? 0,
+    dur: a.duration != null ? a.duration / 1000 : durDefault, // script durations are ms
+    px: a.px != null ? a.px * S : undefined,
+    x: a.x != null && !a.selector ? a.x * S : a.x,
+    y: a.y != null && !a.selector ? a.y * S : a.y,
+    started: false,
+    done: false,
+  };
+}
+
+async function record() {
+  ensureOutDir(opts.out);
+  const S = opts.scale;
+  const videoW = opts.width * S;
+  const videoH = opts.height * S;
+  const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "capture-video-"));
+
+  // Hi-DPI trick: viewport at full pixel size + CSS zoom — layout matches
+  // --width css px, but every frame renders at scale-x detail.
+  const browser = await newBrowser();
+  const context = await browser.newContext({
+    ...CONTEXT_BASE,
+    viewport: { width: videoW, height: videoH },
+    deviceScaleFactor: 1,
+  });
+  const page = await context.newPage();
+  await settle(page);
+  if (S !== 1) {
+    await page.evaluate((s) => (document.documentElement.style.zoom = String(s)), S);
+    await sleep(600); // let relayout + lazy images settle
+  }
+
+  // Build the timeline.
+  let actions;
+  if (opts.script) {
+    const raw = JSON.parse(fs.readFileSync(opts.script, "utf8"));
+    actions = raw.map((a) => normalizeAction(a, S)).sort((x, y) => x.t - y.t);
+  } else {
+    // Default: hold, one continuous slow scroll through the page, hold.
+    const scrollable = await page.evaluate(
+      () => document.documentElement.scrollHeight - window.innerHeight
+    );
+    const hold = Math.min(0.8, opts.duration * 0.1);
+    const scrollDur = opts.duration - 2 * hold;
+    const px = Math.max(0, Math.min(scrollable, scrollDur * 220 * S)); // ~220 content px/sec
+    actions = px > 0 ? [{ action: "scroll", t: hold, dur: scrollDur, px, started: false, done: false }] : [];
+  }
+
+  const cdp = await context.newCDPSession(page);
+  const totalFrames = Math.round(opts.duration * FPS);
+  let scrollBase = await page.evaluate(() => window.scrollY);
+  let mouse = { x: 0, y: 0 };
+  let mouseDirty = false;
+
+  for (let k = 0; k < totalFrames; k++) {
+    const t = k / FPS;
+    let scrollY = scrollBase;
+
+    for (const a of actions) {
+      if (a.done || t < a.t) continue;
+      if (!a.started) {
+        a.started = true;
+        // Resolve lazily so selector coordinates reflect the current scroll.
+        if ((a.action === "move" || a.action === "hover" || a.action === "click") ) {
+          if (a.selector) {
+            const c = await centerOf(page, a.selector);
+            a.tx = c.x; a.ty = c.y;
+          } else { a.tx = a.x; a.ty = a.y; }
+          a.fx = mouse.x; a.fy = mouse.y;
+        }
+        if (a.action === "scroll") a.from = scrollY;
+        if (a.action === "type") {
+          if (a.selector) await page.locator(a.selector).first().click();
+          a.chars = [...(a.text ?? "")];
+          a.typed = 0;
+          a.delay = (a.delay ?? 55) / 1000;
+        }
+      }
+      const p = a.dur > 0 ? Math.min(1, (t - a.t) / a.dur) : 1;
+      switch (a.action) {
+        case "scroll":
+          scrollY = a.from + a.px * easeInOutCubic(p);
+          scrollBase = scrollY;
+          if (p >= 1) a.done = true;
+          break;
+        case "move":
+        case "hover": {
+          const e = easeInOutCubic(p);
+          const nx = a.fx + (a.tx - a.fx) * e;
+          const ny = a.fy + (a.ty - a.fy) * e;
+          if (nx !== mouse.x || ny !== mouse.y) { mouse = { x: nx, y: ny }; mouseDirty = true; }
+          if (p >= 1) a.done = true;
+          break;
+        }
+        case "click": {
+          const e = easeInOutCubic(p);
+          mouse = { x: a.fx + (a.tx - a.fx) * e, y: a.fy + (a.ty - a.fy) * e };
+          mouseDirty = true;
+          if (p >= 1) { await page.mouse.click(a.tx, a.ty); a.done = true; }
+          break;
+        }
+        case "type": {
+          const want = Math.min(a.chars.length, Math.floor((t - a.t) / Math.max(a.delay, 1 / FPS)) + 1);
+          while (a.typed < want) await page.keyboard.type(a.chars[a.typed++]);
+          if (a.typed >= a.chars.length) a.done = true;
+          break;
+        }
+        default:
+          console.warn(`record: unknown action "${a.action}" — skipped`);
+          a.done = true;
+      }
+    }
+
+    await page.evaluate((y) => window.scrollTo(0, y), scrollY);
+    if (mouseDirty) { await page.mouse.move(mouse.x, mouse.y); mouseDirty = false; }
+
+    const shot = await cdp.send("Page.captureScreenshot", {
+      format: "jpeg",
+      quality: 92,
+      optimizeForSpeed: true,
+    });
+    fs.writeFileSync(path.join(tmpDir, `f-${String(k).padStart(5, "0")}.jpg`), Buffer.from(shot.data, "base64"));
+  }
+
+  await browser.close();
+
+  const ff = spawnSync(
+    "ffmpeg",
+    [
+      "-y", "-v", "error",
+      "-framerate", String(FPS),
+      "-i", path.join(tmpDir, "f-%05d.jpg"),
+      "-c:v", "libvpx-vp9", "-b:v", "0", "-crf", "26", "-deadline", "good", "-cpu-used", "4",
+      "-pix_fmt", "yuv420p",
+      "-an",
+      path.resolve(opts.out),
+    ],
+    { stdio: "inherit" }
+  );
+  if (ff.status !== 0) {
+    throw new Error("record: ffmpeg is required to assemble the video (brew install ffmpeg)");
+  }
+  fs.rmSync(tmpDir, { recursive: true, force: true });
+  console.log(
+    `saved ${path.resolve(opts.out)}  ${videoW}x${videoH}px  ${opts.duration}s @ ${FPS}fps  (scale ${S}x, ${totalFrames} frames)`
+  );
+}
+
+// ------------------------------------------------------------------- probe
+
+async function probe() {
+  const browser = await newBrowser();
+  const context = await browser.newContext({
+    ...CONTEXT_BASE,
+    viewport: { width: opts.width, height: opts.height },
+    deviceScaleFactor: 1, // measure in CSS px, then report scaled
+  });
+  const page = await context.newPage();
+  await settle(page);
+
+  const title = await page.title();
+  const items = await page.evaluate(() => {
+    const out = [];
+    const seen = new Set();
+    const nodes = document.querySelectorAll(
+      "h1, h2, h3, article, main, table, img, [role='article'], .markdown-body, video, pre"
+    );
+    const cssFor = (el) => {
+      if (el.id) return `#${CSS.escape(el.id)}`;
+      const tag = el.tagName.toLowerCase();
+      const cls = [...el.classList].slice(0, 2).map((c) => `.${CSS.escape(c)}`).join("");
+      let sel = tag + cls;
+      // Disambiguate if the selector matches several elements.
+      const matches = [...document.querySelectorAll(sel)];
+      if (matches.length > 1) sel += `:nth-of-type(${matches.indexOf(el) + 1})`.replace(":nth-of-type(0)", "");
+      return sel;
+    };
+    for (const el of nodes) {
+      const r = el.getBoundingClientRect();
+      if (r.width < 24 || r.height < 12) continue; // skip invisible/tiny
+      const key = `${el.tagName}|${Math.round(r.x)}|${Math.round(r.y + window.scrollY)}|${Math.round(r.width)}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const text = (el.tagName === "IMG" ? el.alt || el.src.split("/").pop() : el.textContent || "")
+        .trim()
+        .replace(/\s+/g, " ")
+        .slice(0, 60);
+      out.push({
+        tag: el.tagName.toLowerCase(),
+        selector: cssFor(el),
+        text,
+        x: r.x,
+        y: r.y + window.scrollY,
+        w: r.width,
+        h: r.height,
+      });
+    }
+    return out.slice(0, 80);
+  });
+
+  await browser.close();
+
+  const s = opts.scale;
+  console.log(`title: ${title}`);
+  console.log(`viewport: ${opts.width}css px wide, boxes reported at scale ${s}x (device px)\n`);
+  const pad = (v, n) => String(v).padEnd(n);
+  for (const it of items) {
+    console.log(
+      `${pad(it.tag, 8)} ${pad(it.selector.slice(0, 44), 46)} x=${Math.round(it.x * s)} y=${Math.round(
+        it.y * s
+      )} w=${Math.round(it.w * s)} h=${Math.round(it.h * s)}  ${it.text ? JSON.stringify(it.text) : ""}`
+    );
+  }
+}
+
+// -------------------------------------------------------------------- main
+
+const run = { screenshot, record, probe }[cmd];
+run().catch((err) => {
+  console.error(`capture ${cmd} failed: ${err.message}`);
+  process.exit(1);
+});

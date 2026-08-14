@@ -1,0 +1,27 @@
+{
+  "topic": "Cameron Trew quit senior-engineer job in London, moved back with parents, rebuilt Kleo to $62k MRR in ~90 days (user-provided angle: the nerve, not the tools)",
+  "verified_facts": [
+    "Founder Cameron Trew, technical co-founder/CTO — indiehackers.com/post/tech/from-0-to-62k-mrr-in-three-months",
+    "NOT solo: co-founders Jake Ward (180k LI), Lara Acosta (300k+ LI), Rob Hoffman; combined ~480k+ followers were the distribution — indiehackers",
+    "He was the only engineer; 6+ yrs senior eng in London, 33rd-floor Canary Wharf flat; quit + moved back with parents — indiehackers",
+    "Kleo v1: free Chrome extension, 60k users, got cease-and-desist from LinkedIn — indiehackers",
+    "Rebuilt v2 from scratch in 4 weeks; used Claude Code ('game changer for shipping fast') — indiehackers",
+    "$0 -> $62k MRR in 3 months; beta $59/mo 500 spots sold out in 4 days, $79 500 spots in 9 days, then $99 — indiehackers",
+    "No ads, no Product Hunt; distribution = co-founders' LinkedIn audience — indiehackers"
+  ],
+  "assets": [
+    { "id": "clip-canary", "kind": "footage", "source": "yt:r_1qfM1YYnU (DjiRafOfficial, Canary Wharf golden hour 4K)",
+      "shows": "cinematic drone of Canary Wharf towers at golden hour — 'senior engineer in London' visual",
+      "quality": "clean", "credit": "@DjiRafOfficial", "crop": "scan then 608:1080 center on towers" },
+    { "id": "clip-kleo-demo", "kind": "footage", "source": "yt:jCivECcJqQg (official Kleo channel product demo)",
+      "shows": "Kleo product UI in motion (AI writing LinkedIn posts) — scan for clean UI segments",
+      "quality": "verify-on-download", "credit": "@Kleo", "crop": "TBD after scan" },
+    { "id": "receipt-ih", "kind": "receipt", "source": "_sources/assets/kleo/ih-post.png (indiehackers)",
+      "shows": "headline 'From $0 to $62k MRR in three months' + founder photo + facts col (Founder: Cameron Trew / Revenue: $62k a month)",
+      "quality": "clean above y~900 (signup modal below)", "credit": "Indie Hackers", "crop": "top 1100x900 region" },
+    { "id": "receipt-kleo-home", "kind": "receipt", "source": "_sources/assets/kleo/kleo-home.png",
+      "shows": "kleo.so hero: '#1 PERSONAL BRAND TOOL', 'Writing like an industry expert has never been easier', Forbes/IndieHackers logos, 'Loved by 1,205 creators'",
+      "quality": "clean", "credit": "kleo.so", "crop": "hero region" }
+  ],
+  "mg_always_available": "SpecSheet(columns/units), HeadlineBuild serif, wordcascade, receipt, checklist, HCompare, XPost(credited), statcard, facecam+infocard"
+}

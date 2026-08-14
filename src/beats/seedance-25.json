@@ -1,0 +1,1594 @@
+{
+  "id": "seedance-25",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "varun-mayya",
+  "audio": "assets/seedance-25/avatar-master-169.mp4",
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 8.0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.15
+      },
+      {
+        "t": 1.3,
+        "vol": 0.15
+      },
+      {
+        "t": 2.0,
+        "vol": 0.08
+      },
+      {
+        "t": 18.6,
+        "vol": 0.07
+      },
+      {
+        "t": 20.6,
+        "vol": 0.1
+      },
+      {
+        "t": 31.24,
+        "vol": 0.14
+      },
+      {
+        "t": 37.1,
+        "vol": 0.13
+      },
+      {
+        "t": 37.1,
+        "vol": 0.07
+      },
+      {
+        "t": 42.26,
+        "vol": 0.15
+      },
+      {
+        "t": 46.71,
+        "vol": 0.13
+      },
+      {
+        "t": 47.61,
+        "vol": 0.02
+      }
+    ]
+  },
+  "captionStyle": "nick-display",
+  "emphasis": [
+    "TikTok",
+    "ByteDance",
+    "Seedance",
+    "2.5",
+    "30",
+    "50",
+    "15",
+    "10",
+    "nine",
+    "three",
+    "dozen",
+    "benchmark",
+    "seconds"
+  ],
+  "scenes": [
+    {
+      "type": "logoassemble",
+      "durationSec": 1.3,
+      "hideCaptions": true,
+      "viewBox": "0 0 352.28 398.67",
+      "paths": [
+        {
+          "d": "M137.17 156.98v-15.56c-5.34-.73-10.76-1.18-16.29-1.18C54.23 140.24 0 194.47 0 261.13c0 40.9 20.43 77.09 51.61 98.97-20.12-21.6-32.46-50.53-32.46-82.31 0-65.7 52.69-119.28 118.03-120.81Z",
+          "fill": "currentColor"
+        },
+        {
+          "d": "M140.02 333c29.74 0 54-23.66 55.1-53.13l.11-263.2h48.08c-1-5.41-1.55-10.97-1.55-16.67h-65.67l-.11 263.2c-1.1 29.47-25.36 53.13-55.1 53.13-9.24 0-17.95-2.31-25.61-6.34C105.3 323.9 121.6 333 140.02 333ZM333.13 106V91.37c-18.34 0-35.43-5.45-49.76-14.8 12.76 14.65 30.09 25.22 49.76 29.43Z",
+          "fill": "currentColor"
+        },
+        {
+          "d": "M283.38 76.57c-13.98-16.05-22.47-37-22.47-59.91h-17.59c4.63 25.02 19.48 46.49 40.06 59.91ZM120.88 205.92c-30.44 0-55.21 24.77-55.21 55.21 0 21.2 12.03 39.62 29.6 48.86-6.55-9.08-10.45-20.18-10.45-32.2 0-30.44 24.77-55.21 55.21-55.21 5.68 0 11.13.94 16.29 2.55v-67.05c-5.34-.73-10.76-1.18-16.29-1.18-.96 0-1.9.05-2.85.07v51.49c-5.16-1.61-10.61-2.55-16.29-2.55Z",
+          "fill": "currentColor"
+        },
+        {
+          "d": "M333.13 106v51.04c-34.05 0-65.61-10.89-91.37-29.38v133.47c0 66.66-54.23 120.88-120.88 120.88-25.76 0-49.64-8.12-69.28-21.91 22.08 23.71 53.54 38.57 88.42 38.57 66.66 0 120.88-54.23 120.88-120.88V144.33c25.76 18.49 57.32 29.38 91.37 29.38v-65.68c-6.57 0-12.97-.71-19.14-2.03Z",
+          "fill": "currentColor"
+        },
+        {
+          "d": "M241.76 261.13V127.66c25.76 18.49 57.32 29.38 91.37 29.38V106c-19.67-4.21-37-14.77-49.76-29.43-20.58-13.42-35.43-34.88-40.06-59.91h-48.08l-.11 263.2c-1.1 29.47-25.36 53.13-55.1 53.13-18.42 0-34.72-9.1-44.75-23.01-17.57-9.25-29.6-27.67-29.6-48.86 0-30.44 24.77-55.21 55.21-55.21 5.68 0 11.13.94 16.29 2.55v-51.49C71.83 158.5 19.14 212.08 19.14 277.78c0 31.78 12.34 60.71 32.46 82.31C71.23 373.87 95.12 382 120.88 382c66.65 0 120.88-54.23 120.88-120.88Z",
+          "fill": "currentColor"
+        }
+      ],
+      "size": 1000,
+      "y": 0.51,
+      "bg": "cream",
+      "fillOverride": "#FF0050",
+      "label": "BYTEDANCE",
+      "labelAt": 0.3,
+      "headline": {
+        "lines": [
+          {
+            "text": "SEEDANCE 2.5",
+            "kind": "headline",
+            "at": 0.12,
+            "accent": true
+          }
+        ],
+        "y": 0.07,
+        "theme": "light",
+        "align": "center"
+      },
+      "sfx": [
+        {
+          "src": "sfx2/risers-01.mp3",
+          "vol": 0.15,
+          "at": 0.0
+        },
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "vol": 0.16,
+          "at": 0.3
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "durationSec": 2.52,
+      "captionBottom": 1000,
+      "topSrc": "assets/seedance-25/clips/jellyfish.mp4",
+      "topFrom": 0.0,
+      "topFocusX": 0.5,
+      "bottomSrc": "assets/seedance-25/avatar-master-169.mp4",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.459,
+      "credit": "@Reel Rook \u00b7 Volcano Engine FORCE 2026",
+      "assetId": "clip-jellyfish"
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/clips/porthole-girl.mp4",
+      "durationSec": 1.78,
+      "zoomDir": "out",
+      "captionBottom": 300,
+      "assetId": "clip-porthole-girl"
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/clips/stained-glass.mp4",
+      "durationSec": 0.84,
+      "zoomDir": "in",
+      "assetId": "clip-stained-glass"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/seedance-25/clips/keynote-slide.jpg",
+      "bg": "gradient",
+      "aspect": 2.963,
+      "durationSec": 2.18,
+      "credit": "Volcano Engine FORCE 2026",
+      "assetId": "card-keynote",
+      "headline": {
+        "lines": [
+          {
+            "text": "ByteDance",
+            "kind": "label",
+            "at": 0.12
+          },
+          {
+            "text": "Seedance 2.5",
+            "kind": "headline",
+            "at": 0.45,
+            "accent": true
+          }
+        ],
+        "y": 0.11,
+        "theme": "dark",
+        "align": "center"
+      },
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "vol": 0.12,
+          "at": 0.0
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "durationSec": 2.58,
+      "kicker": "2026",
+      "title": "Shipped in stages",
+      "bgSrc": "assets/seedance-25/clips/paramedics.mp4",
+      "bgFrom": 0.0,
+      "items": [
+        {
+          "date": "Jun 23",
+          "name": "Announced",
+          "sub": "Volcano Engine FORCE",
+          "at": 0.12,
+          "minor": true
+        },
+        {
+          "date": "Jul 31",
+          "name": "Creator apps",
+          "sub": "Jimeng \u00b7 Doubao",
+          "at": 0.62
+        },
+        {
+          "date": "Aug 7",
+          "name": "Developer API",
+          "sub": "public",
+          "at": 1.12,
+          "accent": "#FFD84D"
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx2/ground-impact-352053.mp3",
+          "vol": 0.14,
+          "at": 1.12
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "durationSec": 2.66,
+      "kicker": "one generation",
+      "title": "How long a clip",
+      "unit": "sec",
+      "max": 30,
+      "bg": "black",
+      "items": [
+        {
+          "label": "Seedance 2.0",
+          "value": 15,
+          "display": "15",
+          "sub": "previous"
+        },
+        {
+          "label": "Seedance 2.5",
+          "value": 30,
+          "display": "30",
+          "sub": "now",
+          "highlight": true
+        }
+      ],
+      "source": "ByteDance launch specs"
+    },
+    {
+      "type": "specsheet",
+      "durationSec": 2.7,
+      "bgSrc": "assets/seedance-25/clips/debris-bw.mp4",
+      "bgFrom": 0.0,
+      "kicker": "one generation",
+      "title": "How long a clip",
+      "columns": [
+        "MAX LENGTH",
+        "NATIVE AUDIO"
+      ],
+      "rows": [
+        {
+          "label": "Seedance 2.0",
+          "values": [
+            "15 sec",
+            "yes"
+          ]
+        },
+        {
+          "label": "Gemini Omni Flash",
+          "values": [
+            "~10 sec",
+            "yes"
+          ]
+        },
+        {
+          "label": "Seedance 2.5",
+          "values": [
+            "30 sec",
+            "yes"
+          ],
+          "accent": true
+        }
+      ],
+      "footnote": "ByteDance launch specs \u00b7 the-decoder, Aug 2026"
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/clips/forest-stream.mp4",
+      "durationSec": 1.18,
+      "zoomDir": "in",
+      "assetId": "clip-forest-stream"
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/clips/clouds-plane.mp4",
+      "durationSec": 0.86,
+      "zoomDir": "out",
+      "assetId": "clip-clouds-plane"
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/avatar-master-169.mp4",
+      "durationSec": 2.0,
+      "from": 18.6,
+      "focusX": 0.478,
+      "captionBottom": 300
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/clips/refs-fan.mp4",
+      "durationSec": 2.66,
+      "zoomDir": "in",
+      "credit": "@Reel Rook \u00b7 Volcano Engine FORCE 2026",
+      "assetId": "clip-refs-fan",
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "vol": 0.12,
+          "at": 0.0
+        }
+      ]
+    },
+    {
+      "type": "specsheet",
+      "durationSec": 3.16,
+      "bgSrc": "assets/seedance-25/clips/champagne.mp4",
+      "bgFrom": 0.0,
+      "kicker": "references accepted",
+      "title": "In a single job",
+      "columns": [
+        "2.0",
+        "2.5"
+      ],
+      "rows": [
+        {
+          "label": "Images",
+          "values": [
+            "9",
+            "30"
+          ]
+        },
+        {
+          "label": "Video clips",
+          "values": [
+            "3",
+            "10"
+          ]
+        },
+        {
+          "label": "Audio tracks",
+          "values": [
+            "0",
+            "10"
+          ],
+          "accent": true
+        }
+      ],
+      "footnote": "50 references total \u00b7 morphic.com",
+      "sfx": [
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "vol": 0.16,
+          "at": 1.1
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/clips/ballroom-group.mp4",
+      "durationSec": 2.76,
+      "zoomDir": "in",
+      "credit": "@Reel Rook \u00b7 Volcano Engine FORCE 2026",
+      "assetId": "clip-ballroom-group"
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/avatar-master-169.mp4",
+      "durationSec": 2.06,
+      "from": 29.18,
+      "focusX": 0.478,
+      "captionBottom": 300
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/clips/red-dress.mp4",
+      "durationSec": 1.92,
+      "zoomDir": "out",
+      "credit": "@Reel Rook \u00b7 Volcano Engine FORCE 2026",
+      "assetId": "clip-red-dress"
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/clips/lipsync-en.mp4",
+      "durationSec": 1.88,
+      "zoomDir": "in",
+      "captionBottom": 560,
+      "assetId": "clip-lipsync-en"
+    },
+    {
+      "type": "comparesplit",
+      "durationSec": 1.14,
+      "leftSrc": "assets/seedance-25/clips/lipsync-en.mp4",
+      "rightSrc": "assets/seedance-25/clips/lipsync-jp.mp4",
+      "leftLabel": "ENGLISH",
+      "rightLabel": "\u65e5\u672c\u8a9e",
+      "topText": "ONE SHOT",
+      "finalText": "SAME TAKE \u2192 NEW VOICE, NEW LIPS",
+      "sfx": [
+        {
+          "src": "sfx2/ground-impact-352053.mp3",
+          "vol": 0.14,
+          "at": 0.2
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/clips/lipsync-jp.mp4",
+      "durationSec": 0.92,
+      "zoomDir": "out",
+      "captionBottom": 560,
+      "assetId": "clip-lipsync-jp"
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/avatar-master-169.mp4",
+      "durationSec": 2.86,
+      "from": 37.1,
+      "focusX": 0.478,
+      "captionBottom": 300
+    },
+    {
+      "type": "wordcascade",
+      "bg": "cream",
+      "durationSec": 2.3,
+      "captionTheme": "dark",
+      "words": [
+        {
+          "text": "no published benchmark.",
+          "style": "serif",
+          "at": 0.15
+        },
+        {
+          "text": "no third-party eval.",
+          "style": "serif",
+          "at": 0.95,
+          "size": 0.95
+        },
+        {
+          "text": "not yet.",
+          "style": "caps",
+          "at": 1.7,
+          "size": 1.1
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx2/ground-impact-352053.mp3",
+          "vol": 0.14,
+          "at": 1.7
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/clips/debris-bw.mp4",
+      "durationSec": 2.68,
+      "zoomDir": "in",
+      "credit": "@Reel Rook \u00b7 Volcano Engine FORCE 2026",
+      "assetId": "clip-debris-bw"
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/clips/arch-aerial.mp4",
+      "durationSec": 0.9,
+      "zoomDir": "out",
+      "credit": "@Reel Rook \u00b7 Volcano Engine FORCE 2026",
+      "assetId": "clip-arch-aerial"
+    },
+    {
+      "type": "footage",
+      "src": "assets/seedance-25/avatar-master-169.mp4",
+      "durationSec": 1.77,
+      "from": 45.84,
+      "focusX": 0.478,
+      "headline": {
+        "lines": [
+          {
+            "text": "30 sec \u00b7 one pass \u00b7 with sound",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "would you hand it",
+            "kind": "headline",
+            "at": 0.55
+          },
+          {
+            "text": "a client's brief?",
+            "kind": "headline",
+            "at": 0.85,
+            "accent": true
+          }
+        ],
+        "y": 0.07,
+        "theme": "light",
+        "align": "center"
+      },
+      "sfx": [
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "vol": 0.16,
+          "at": 0.6
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.58,
+      "text": "The company that",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "The"
+        },
+        {
+          "t": 0.18,
+          "text": "company"
+        },
+        {
+          "t": 0.38,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 0.58,
+      "end": 1.58,
+      "text": "owns TikTok just",
+      "words": [
+        {
+          "t": 0.58,
+          "text": "owns"
+        },
+        {
+          "t": 0.82,
+          "text": "TikTok"
+        },
+        {
+          "t": 1.18,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 1.58,
+      "end": 2.34,
+      "text": "shipped an AI",
+      "words": [
+        {
+          "t": 1.58,
+          "text": "shipped"
+        },
+        {
+          "t": 1.86,
+          "text": "an"
+        },
+        {
+          "t": 2.12,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 2.34,
+      "end": 3.36,
+      "text": "that generates 30",
+      "words": [
+        {
+          "t": 2.34,
+          "text": "that"
+        },
+        {
+          "t": 2.6,
+          "text": "generates"
+        },
+        {
+          "t": 2.94,
+          "text": "30"
+        }
+      ]
+    },
+    {
+      "start": 3.36,
+      "end": 4.12,
+      "text": "seconds of video",
+      "words": [
+        {
+          "t": 3.36,
+          "text": "seconds"
+        },
+        {
+          "t": 3.7,
+          "text": "of"
+        },
+        {
+          "t": 3.86,
+          "text": "video"
+        }
+      ]
+    },
+    {
+      "start": 4.12,
+      "end": 5.06,
+      "text": "and its own",
+      "words": [
+        {
+          "t": 4.12,
+          "text": "and"
+        },
+        {
+          "t": 4.64,
+          "text": "its"
+        },
+        {
+          "t": 4.8,
+          "text": "own"
+        }
+      ]
+    },
+    {
+      "start": 5.06,
+      "end": 5.78,
+      "text": "soundtrack in a",
+      "words": [
+        {
+          "t": 5.06,
+          "text": "soundtrack"
+        },
+        {
+          "t": 5.48,
+          "text": "in"
+        },
+        {
+          "t": 5.72,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 5.78,
+      "end": 6.32,
+      "text": "single pass.",
+      "words": [
+        {
+          "t": 5.78,
+          "text": "single"
+        },
+        {
+          "t": 6.04,
+          "text": "pass."
+        }
+      ]
+    },
+    {
+      "start": 6.78,
+      "end": 7.68,
+      "text": "It's called Seedance",
+      "words": [
+        {
+          "t": 6.78,
+          "text": "It's"
+        },
+        {
+          "t": 7.06,
+          "text": "called"
+        },
+        {
+          "t": 7.18,
+          "text": "Seedance"
+        }
+      ]
+    },
+    {
+      "start": 7.68,
+      "end": 8.5,
+      "text": "2.5.",
+      "words": [
+        {
+          "t": 7.68,
+          "text": "2"
+        },
+        {
+          "t": 8.02,
+          "text": ".5."
+        }
+      ]
+    },
+    {
+      "start": 9.06,
+      "end": 9.88,
+      "text": "The developer API",
+      "words": [
+        {
+          "t": 9.06,
+          "text": "The"
+        },
+        {
+          "t": 9.12,
+          "text": "developer"
+        },
+        {
+          "t": 9.42,
+          "text": "API"
+        }
+      ]
+    },
+    {
+      "start": 9.88,
+      "end": 11.08,
+      "text": "opened last Friday.",
+      "words": [
+        {
+          "t": 9.88,
+          "text": "opened"
+        },
+        {
+          "t": 10.34,
+          "text": "last"
+        },
+        {
+          "t": 10.62,
+          "text": "Friday."
+        }
+      ]
+    },
+    {
+      "start": 11.52,
+      "end": 12.16,
+      "text": "The old version",
+      "words": [
+        {
+          "t": 11.52,
+          "text": "The"
+        },
+        {
+          "t": 11.74,
+          "text": "old"
+        },
+        {
+          "t": 11.86,
+          "text": "version"
+        }
+      ]
+    },
+    {
+      "start": 12.16,
+      "end": 12.86,
+      "text": "capped out at",
+      "words": [
+        {
+          "t": 12.16,
+          "text": "capped"
+        },
+        {
+          "t": 12.52,
+          "text": "out"
+        },
+        {
+          "t": 12.66,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 12.86,
+      "end": 13.74,
+      "text": "15 seconds.",
+      "words": [
+        {
+          "t": 12.86,
+          "text": "15"
+        },
+        {
+          "t": 13.24,
+          "text": "seconds."
+        }
+      ]
+    },
+    {
+      "start": 14.2,
+      "end": 15.04,
+      "text": "Google's newest video",
+      "words": [
+        {
+          "t": 14.2,
+          "text": "Google's"
+        },
+        {
+          "t": 14.54,
+          "text": "newest"
+        },
+        {
+          "t": 14.76,
+          "text": "video"
+        }
+      ]
+    },
+    {
+      "start": 15.04,
+      "end": 15.82,
+      "text": "model tops out",
+      "words": [
+        {
+          "t": 15.04,
+          "text": "model"
+        },
+        {
+          "t": 15.32,
+          "text": "tops"
+        },
+        {
+          "t": 15.6,
+          "text": "out"
+        }
+      ]
+    },
+    {
+      "start": 15.82,
+      "end": 16.44,
+      "text": "around 10.",
+      "words": [
+        {
+          "t": 15.82,
+          "text": "around"
+        },
+        {
+          "t": 16.1,
+          "text": "10."
+        }
+      ]
+    },
+    {
+      "start": 16.68,
+      "end": 17.18,
+      "text": "This one runs",
+      "words": [
+        {
+          "t": 16.68,
+          "text": "This"
+        },
+        {
+          "t": 16.88,
+          "text": "one"
+        },
+        {
+          "t": 17.02,
+          "text": "runs"
+        }
+      ]
+    },
+    {
+      "start": 17.18,
+      "end": 18.48,
+      "text": "30, then extends.",
+      "words": [
+        {
+          "t": 17.18,
+          "text": "30,"
+        },
+        {
+          "t": 17.9,
+          "text": "then"
+        },
+        {
+          "t": 18.18,
+          "text": "extends."
+        }
+      ]
+    },
+    {
+      "start": 19.0,
+      "end": 19.38,
+      "text": "But here's the",
+      "words": [
+        {
+          "t": 19.0,
+          "text": "But"
+        },
+        {
+          "t": 19.1,
+          "text": "here's"
+        },
+        {
+          "t": 19.3,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 19.38,
+      "end": 20.18,
+      "text": "part almost nobody",
+      "words": [
+        {
+          "t": 19.38,
+          "text": "part"
+        },
+        {
+          "t": 19.58,
+          "text": "almost"
+        },
+        {
+          "t": 19.88,
+          "text": "nobody"
+        }
+      ]
+    },
+    {
+      "start": 20.18,
+      "end": 21.32,
+      "text": "noticed. You can",
+      "words": [
+        {
+          "t": 20.18,
+          "text": "noticed."
+        },
+        {
+          "t": 21.08,
+          "text": "You"
+        },
+        {
+          "t": 21.24,
+          "text": "can"
+        }
+      ]
+    },
+    {
+      "start": 21.32,
+      "end": 21.86,
+      "text": "feed it 50",
+      "words": [
+        {
+          "t": 21.32,
+          "text": "feed"
+        },
+        {
+          "t": 21.5,
+          "text": "it"
+        },
+        {
+          "t": 21.6,
+          "text": "50"
+        }
+      ]
+    },
+    {
+      "start": 21.86,
+      "end": 22.76,
+      "text": "reference assets in",
+      "words": [
+        {
+          "t": 21.86,
+          "text": "reference"
+        },
+        {
+          "t": 22.24,
+          "text": "assets"
+        },
+        {
+          "t": 22.52,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 22.76,
+      "end": 23.14,
+      "text": "one job,",
+      "words": [
+        {
+          "t": 22.76,
+          "text": "one"
+        },
+        {
+          "t": 22.92,
+          "text": "job,"
+        }
+      ]
+    },
+    {
+      "start": 23.64,
+      "end": 24.26,
+      "text": "30 images,",
+      "words": [
+        {
+          "t": 23.64,
+          "text": "30"
+        },
+        {
+          "t": 23.9,
+          "text": "images,"
+        }
+      ]
+    },
+    {
+      "start": 24.46,
+      "end": 25.1,
+      "text": "10 video clips,",
+      "words": [
+        {
+          "t": 24.46,
+          "text": "10"
+        },
+        {
+          "t": 24.58,
+          "text": "video"
+        },
+        {
+          "t": 24.88,
+          "text": "clips,"
+        }
+      ]
+    },
+    {
+      "start": 25.3,
+      "end": 25.98,
+      "text": "and 10 audio",
+      "words": [
+        {
+          "t": 25.3,
+          "text": "and"
+        },
+        {
+          "t": 25.4,
+          "text": "10"
+        },
+        {
+          "t": 25.62,
+          "text": "audio"
+        }
+      ]
+    },
+    {
+      "start": 25.98,
+      "end": 27.1,
+      "text": "tracks. The old",
+      "words": [
+        {
+          "t": 25.98,
+          "text": "tracks."
+        },
+        {
+          "t": 26.76,
+          "text": "The"
+        },
+        {
+          "t": 26.92,
+          "text": "old"
+        }
+      ]
+    },
+    {
+      "start": 27.1,
+      "end": 27.86,
+      "text": "model took nine",
+      "words": [
+        {
+          "t": 27.1,
+          "text": "model"
+        },
+        {
+          "t": 27.32,
+          "text": "took"
+        },
+        {
+          "t": 27.6,
+          "text": "nine"
+        }
+      ]
+    },
+    {
+      "start": 27.86,
+      "end": 28.8,
+      "text": "images and three",
+      "words": [
+        {
+          "t": 27.86,
+          "text": "images"
+        },
+        {
+          "t": 28.36,
+          "text": "and"
+        },
+        {
+          "t": 28.56,
+          "text": "three"
+        }
+      ]
+    },
+    {
+      "start": 28.8,
+      "end": 29.68,
+      "text": "clips, and that",
+      "words": [
+        {
+          "t": 28.8,
+          "text": "clips,"
+        },
+        {
+          "t": 29.06,
+          "text": "and"
+        },
+        {
+          "t": 29.52,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 29.68,
+      "end": 30.44,
+      "text": "audio slot is",
+      "words": [
+        {
+          "t": 29.68,
+          "text": "audio"
+        },
+        {
+          "t": 30.06,
+          "text": "slot"
+        },
+        {
+          "t": 30.32,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 30.44,
+      "end": 31.12,
+      "text": "the real unlock.",
+      "words": [
+        {
+          "t": 30.44,
+          "text": "the"
+        },
+        {
+          "t": 30.56,
+          "text": "real"
+        },
+        {
+          "t": 30.82,
+          "text": "unlock."
+        }
+      ]
+    },
+    {
+      "start": 31.62,
+      "end": 32.0,
+      "text": "Hand it a",
+      "words": [
+        {
+          "t": 31.62,
+          "text": "Hand"
+        },
+        {
+          "t": 31.82,
+          "text": "it"
+        },
+        {
+          "t": 31.88,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 32.0,
+      "end": 32.48,
+      "text": "song and it",
+      "words": [
+        {
+          "t": 32.0,
+          "text": "song"
+        },
+        {
+          "t": 32.18,
+          "text": "and"
+        },
+        {
+          "t": 32.36,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 32.48,
+      "end": 32.9,
+      "text": "cuts to the",
+      "words": [
+        {
+          "t": 32.48,
+          "text": "cuts"
+        },
+        {
+          "t": 32.62,
+          "text": "to"
+        },
+        {
+          "t": 32.8,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 32.9,
+      "end": 33.58,
+      "text": "beat, hand it",
+      "words": [
+        {
+          "t": 32.9,
+          "text": "beat,"
+        },
+        {
+          "t": 33.36,
+          "text": "hand"
+        },
+        {
+          "t": 33.5,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 33.58,
+      "end": 33.84,
+      "text": "a voice,",
+      "words": [
+        {
+          "t": 33.58,
+          "text": "a"
+        },
+        {
+          "t": 33.66,
+          "text": "voice,"
+        }
+      ]
+    },
+    {
+      "start": 34.04,
+      "end": 34.5,
+      "text": "and it syncs",
+      "words": [
+        {
+          "t": 34.04,
+          "text": "and"
+        },
+        {
+          "t": 34.06,
+          "text": "it"
+        },
+        {
+          "t": 34.18,
+          "text": "syncs"
+        }
+      ]
+    },
+    {
+      "start": 34.5,
+      "end": 35.38,
+      "text": "the lips in",
+      "words": [
+        {
+          "t": 34.5,
+          "text": "the"
+        },
+        {
+          "t": 34.68,
+          "text": "lips"
+        },
+        {
+          "t": 34.92,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 35.38,
+      "end": 36.06,
+      "text": "a dozen languages",
+      "words": [
+        {
+          "t": 35.38,
+          "text": "a"
+        },
+        {
+          "t": 35.44,
+          "text": "dozen"
+        },
+        {
+          "t": 35.7,
+          "text": "languages"
+        }
+      ]
+    },
+    {
+      "start": 36.06,
+      "end": 36.7,
+      "text": "from the same",
+      "words": [
+        {
+          "t": 36.06,
+          "text": "from"
+        },
+        {
+          "t": 36.36,
+          "text": "the"
+        },
+        {
+          "t": 36.48,
+          "text": "same"
+        }
+      ]
+    },
+    {
+      "start": 36.7,
+      "end": 37.54,
+      "text": "shot. Now,",
+      "words": [
+        {
+          "t": 36.7,
+          "text": "shot."
+        },
+        {
+          "t": 37.44,
+          "text": "Now,"
+        }
+      ]
+    },
+    {
+      "start": 37.64,
+      "end": 38.26,
+      "text": "ByteDance hasn't",
+      "words": [
+        {
+          "t": 37.64,
+          "text": "ByteDance"
+        },
+        {
+          "t": 37.94,
+          "text": "hasn't"
+        }
+      ]
+    },
+    {
+      "start": 38.26,
+      "end": 38.94,
+      "text": "published a single",
+      "words": [
+        {
+          "t": 38.26,
+          "text": "published"
+        },
+        {
+          "t": 38.48,
+          "text": "a"
+        },
+        {
+          "t": 38.66,
+          "text": "single"
+        }
+      ]
+    },
+    {
+      "start": 38.94,
+      "end": 39.84,
+      "text": "benchmark number,",
+      "words": [
+        {
+          "t": 38.94,
+          "text": "benchmark"
+        },
+        {
+          "t": 39.36,
+          "text": "number,"
+        }
+      ]
+    },
+    {
+      "start": 40.2,
+      "end": 40.92,
+      "text": "so every clip",
+      "words": [
+        {
+          "t": 40.2,
+          "text": "so"
+        },
+        {
+          "t": 40.42,
+          "text": "every"
+        },
+        {
+          "t": 40.72,
+          "text": "clip"
+        }
+      ]
+    },
+    {
+      "start": 40.92,
+      "end": 41.48,
+      "text": "you've seen is",
+      "words": [
+        {
+          "t": 40.92,
+          "text": "you've"
+        },
+        {
+          "t": 41.16,
+          "text": "seen"
+        },
+        {
+          "t": 41.32,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 41.48,
+      "end": 41.92,
+      "text": "a demo they",
+      "words": [
+        {
+          "t": 41.48,
+          "text": "a"
+        },
+        {
+          "t": 41.56,
+          "text": "demo"
+        },
+        {
+          "t": 41.76,
+          "text": "they"
+        }
+      ]
+    },
+    {
+      "start": 41.92,
+      "end": 42.64,
+      "text": "chose. Still,",
+      "words": [
+        {
+          "t": 41.92,
+          "text": "chose."
+        },
+        {
+          "t": 42.44,
+          "text": "Still,"
+        }
+      ]
+    },
+    {
+      "start": 43.0,
+      "end": 43.62,
+      "text": "30 seconds,",
+      "words": [
+        {
+          "t": 43.0,
+          "text": "30"
+        },
+        {
+          "t": 43.26,
+          "text": "seconds,"
+        }
+      ]
+    },
+    {
+      "start": 43.96,
+      "end": 44.58,
+      "text": "one pass with",
+      "words": [
+        {
+          "t": 43.96,
+          "text": "one"
+        },
+        {
+          "t": 44.12,
+          "text": "pass"
+        },
+        {
+          "t": 44.38,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 44.58,
+      "end": 45.44,
+      "text": "sound. That's a",
+      "words": [
+        {
+          "t": 44.58,
+          "text": "sound."
+        },
+        {
+          "t": 45.24,
+          "text": "That's"
+        },
+        {
+          "t": 45.4,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 45.44,
+      "end": 45.72,
+      "text": "whole ad.",
+      "words": [
+        {
+          "t": 45.44,
+          "text": "whole"
+        },
+        {
+          "t": 45.56,
+          "text": "ad."
+        }
+      ]
+    },
+    {
+      "start": 46.14,
+      "end": 46.48,
+      "text": "Would you trust",
+      "words": [
+        {
+          "t": 46.14,
+          "text": "Would"
+        },
+        {
+          "t": 46.22,
+          "text": "you"
+        },
+        {
+          "t": 46.28,
+          "text": "trust"
+        }
+      ]
+    },
+    {
+      "start": 46.48,
+      "end": 46.82,
+      "text": "it with a",
+      "words": [
+        {
+          "t": 46.48,
+          "text": "it"
+        },
+        {
+          "t": 46.62,
+          "text": "with"
+        },
+        {
+          "t": 46.72,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 46.82,
+      "end": 47.26,
+      "text": "client's brief?",
+      "words": [
+        {
+          "t": 46.82,
+          "text": "client's"
+        },
+        {
+          "t": 47.14,
+          "text": "brief?"
+        }
+      ]
+    }
+  ]
+}

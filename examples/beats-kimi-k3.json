@@ -1,0 +1,643 @@
+{
+  "id": "kimi-k3",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": "assets/kimi-k3/avatar-master-169.mp4",
+  "music": {
+    "src": "music/bed-184.mp3",
+    "from": 32.0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.15
+      },
+      {
+        "t": 4.78,
+        "vol": 0.15
+      },
+      {
+        "t": 5.38,
+        "vol": 0.08
+      },
+      {
+        "t": 20.7,
+        "vol": 0.09
+      },
+      {
+        "t": 32.56,
+        "vol": 0.13
+      },
+      {
+        "t": 36.18,
+        "vol": 0.08
+      },
+      {
+        "t": 41.62,
+        "vol": 0.15
+      },
+      {
+        "t": 42.480000000000004,
+        "vol": 0.15
+      },
+      {
+        "t": 43.28,
+        "vol": 0.02
+      }
+    ]
+  },
+  "captionStyle": "chip-small",
+  "emphasis": [
+    "Kimi K3",
+    "K3",
+    "3 cents",
+    "3¢",
+    "few cents",
+    "#1",
+    "open",
+    "10x",
+    "Fable 5",
+    "3D"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "durationSec": 4.78,
+      "captionBottom": 1000,
+      "topSrc": "assets/kimi-k3/clips/world.mp4",
+      "topFrom": 0.0,
+      "topFocusX": 0.5,
+      "bottomSrc": "assets/kimi-k3/avatar-master-169.mp4",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.255,
+      "headline": {
+        "lines": [
+          {
+            "text": "an open-source model",
+            "kind": "label",
+            "at": 0.2
+          },
+          {
+            "text": "beating tools\n10x its price",
+            "kind": "headline",
+            "at": 0.7
+          }
+        ],
+        "y": 0.34,
+        "theme": "light",
+        "align": "center"
+      },
+      "sfx": [
+        {
+          "src": "sfx2/riser-sweep.wav",
+          "vol": 0.16,
+          "at": 0.0
+        },
+        {
+          "src": "sfx2/impact-deep.mp3",
+          "vol": 0.17,
+          "at": 0.7
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/kimi-k3/clips/fps.mp4",
+      "durationSec": 5.86,
+      "zoomDir": "in",
+      "headline": {
+        "lines": [
+          {
+            "text": "everyone's building with",
+            "kind": "label",
+            "at": 0.2
+          },
+          {
+            "text": "Kimi K3",
+            "kind": "headline",
+            "at": 0.6
+          }
+        ],
+        "y": 0.12,
+        "theme": "light",
+        "align": "center"
+      },
+      "sfx": [
+        {
+          "src": "sfx2/tech-slide.mp3",
+          "vol": 0.12,
+          "at": 0.0
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/kimi-k3/clips/world.mp4",
+      "from": 1.6,
+      "durationSec": 2.2,
+      "zoomDir": "in",
+      "headline": {
+        "lines": [
+          {
+            "text": "a full 3D world —",
+            "kind": "label",
+            "at": 0.1
+          },
+          {
+            "text": "from a prompt",
+            "kind": "headline",
+            "at": 0.45
+          }
+        ],
+        "y": 0.12,
+        "theme": "light",
+        "align": "center"
+      },
+      "sfx": [
+        {
+          "src": "sfx2/pops.mp3",
+          "vol": 0.13,
+          "at": 0.1
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/kimi-k3/clips/fps.mp4",
+      "durationSec": 2.22,
+      "zoomDir": "out",
+      "headline": {
+        "lines": [
+          {
+            "text": "a first-person shooter",
+            "kind": "label",
+            "at": 0.1
+          },
+          {
+            "text": "that actually plays",
+            "kind": "headline",
+            "at": 0.45
+          }
+        ],
+        "y": 0.12,
+        "theme": "light",
+        "align": "center"
+      },
+      "sfx": [
+        {
+          "src": "sfx2/impact-deep.mp3",
+          "vol": 0.17,
+          "at": 0.1
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/kimi-k3/clips/blender.mp4",
+      "durationSec": 3.8,
+      "zoomDir": "in",
+      "captionBottom": 250,
+      "sfx": [
+        {
+          "src": "sfx2/pops.mp3",
+          "vol": 0.13,
+          "at": 0.1
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/kimi-k3/avatar-master-169.mp4",
+      "durationSec": 1.84,
+      "from": 18.86,
+      "focusX": 0.368
+    },
+    {
+      "type": "specsheet",
+      "durationSec": 7.58,
+      "bgSrc": "assets/kimi-k3/clips/fps.mp4",
+      "bgFrom": 1.0,
+      "kicker": "head-to-head, same task",
+      "title": "Kimi K3 vs Fable 5",
+      "columns": [
+        "Quality /10",
+        "Cost / run"
+      ],
+      "rows": [
+        {
+          "label": "Kimi K3",
+          "values": [
+            "9.5",
+            "3¢"
+          ],
+          "accent": true
+        },
+        {
+          "label": "Fable 5",
+          "values": [
+            "7.5",
+            "38¢"
+          ]
+        }
+      ],
+      "footnote": "source: @CommandCodeAI design benchmark",
+      "sfx": [
+        {
+          "src": "sfx2/tech-slide.mp3",
+          "vol": 0.12,
+          "at": 0.0
+        },
+        {
+          "src": "sfx2/pops.mp3",
+          "vol": 0.13,
+          "at": 0.6
+        },
+        {
+          "src": "sfx2/impact-cool.mp3",
+          "vol": 0.18,
+          "at": 1.2
+        }
+      ]
+    },
+    {
+      "type": "receipt",
+      "durationSec": 4.28,
+      "backdrop": "black",
+      "src": "assets/kimi-k3/clips/arena.png",
+      "srcWidth": 1000,
+      "srcHeight": 1008,
+      "credit": "Frontend Code Arena",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 100,
+          "y": 30,
+          "w": 570,
+          "h": 62
+        },
+        {
+          "at": 1.0,
+          "x": 112,
+          "y": 112,
+          "w": 745,
+          "h": 44
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx2/tech-slide.mp3",
+          "vol": 0.12,
+          "at": 0.0
+        },
+        {
+          "src": "sfx2/impact-cool.mp3",
+          "vol": 0.18,
+          "at": 0.5
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/kimi-k3/clips/blender.mp4",
+      "from": 0.2,
+      "durationSec": 3.62,
+      "zoomDir": "out",
+      "headline": {
+        "lines": [
+          {
+            "text": "full weights, open —",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "run it yourself",
+            "kind": "headline",
+            "at": 0.5
+          }
+        ],
+        "y": 0.12,
+        "theme": "light",
+        "align": "center"
+      },
+      "sfx": [
+        {
+          "src": "sfx2/impact-cool.mp3",
+          "vol": 0.18,
+          "at": 0.1
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/kimi-k3/clips/world.mp4",
+      "from": 1.6,
+      "durationSec": 5.44,
+      "zoomDir": "in",
+      "headline": {
+        "lines": [
+          {
+            "text": "the best model isn't the priciest —",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "it's the one you\ncan afford",
+            "kind": "headline",
+            "at": 0.6
+          }
+        ],
+        "y": 0.36,
+        "theme": "light",
+        "align": "center"
+      },
+      "sfx": [
+        {
+          "src": "sfx2/impact-deep.mp3",
+          "vol": 0.17,
+          "at": 0.1
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/kimi-k3/avatar-master-169.mp4",
+      "durationSec": 1.66,
+      "from": 41.62,
+      "focusX": 0.368,
+      "headline": {
+        "lines": [
+          {
+            "text": "what would you",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "build first?",
+            "kind": "headline",
+            "at": 0.5
+          }
+        ],
+        "y": 0.1,
+        "theme": "light",
+        "align": "center"
+      }
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.68,
+      "text": "A Chinese lab"
+    },
+    {
+      "start": 0.68,
+      "end": 1.42,
+      "text": "just dropped an"
+    },
+    {
+      "start": 1.42,
+      "end": 2.28,
+      "text": "open source model"
+    },
+    {
+      "start": 2.28,
+      "end": 3.34,
+      "text": "that's beating tools"
+    },
+    {
+      "start": 3.34,
+      "end": 4.42,
+      "text": "costing 10 times"
+    },
+    {
+      "start": 4.42,
+      "end": 5.2,
+      "text": "more. It's called"
+    },
+    {
+      "start": 5.2,
+      "end": 6.32,
+      "text": "Kimi K3 and"
+    },
+    {
+      "start": 6.32,
+      "end": 7.02,
+      "text": "this week people"
+    },
+    {
+      "start": 7.02,
+      "end": 8.18,
+      "text": "started building things"
+    },
+    {
+      "start": 8.18,
+      "end": 9.4,
+      "text": "nobody expected an"
+    },
+    {
+      "start": 9.4,
+      "end": 10.22,
+      "text": "open model to"
+    },
+    {
+      "start": 10.22,
+      "end": 10.96,
+      "text": "finish. A full"
+    },
+    {
+      "start": 10.96,
+      "end": 11.86,
+      "text": "3D game world"
+    },
+    {
+      "start": 11.86,
+      "end": 12.72,
+      "text": "from a prompt."
+    },
+    {
+      "start": 12.88,
+      "end": 13.52,
+      "text": "A first-person"
+    },
+    {
+      "start": 13.52,
+      "end": 14.62,
+      "text": "shooter that actually"
+    },
+    {
+      "start": 14.62,
+      "end": 16.04,
+      "text": "plays. Detailed 3D"
+    },
+    {
+      "start": 16.04,
+      "end": 16.94,
+      "text": "models in blender"
+    },
+    {
+      "start": 16.94,
+      "end": 17.88,
+      "text": "rendered for a"
+    },
+    {
+      "start": 17.88,
+      "end": 18.74,
+      "text": "few cents each."
+    },
+    {
+      "start": 18.88,
+      "end": 19.3,
+      "text": "And here's the"
+    },
+    {
+      "start": 19.3,
+      "end": 19.94,
+      "text": "part that broke"
+    },
+    {
+      "start": 19.94,
+      "end": 20.58,
+      "text": "people's brains."
+    },
+    {
+      "start": 20.98,
+      "end": 21.4,
+      "text": "In head to"
+    },
+    {
+      "start": 21.4,
+      "end": 21.94,
+      "text": "head tests,"
+    },
+    {
+      "start": 22.32,
+      "end": 23.36,
+      "text": "K3 builds beat"
+    },
+    {
+      "start": 23.36,
+      "end": 24.4,
+      "text": "Fable 5 and"
+    },
+    {
+      "start": 24.4,
+      "end": 25.14,
+      "text": "cost a fraction"
+    },
+    {
+      "start": 25.14,
+      "end": 25.68,
+      "text": "of the price."
+    },
+    {
+      "start": 26.06,
+      "end": 26.56,
+      "text": "3 cents a"
+    },
+    {
+      "start": 26.56,
+      "end": 27.42,
+      "text": "run. Fable 5"
+    },
+    {
+      "start": 27.42,
+      "end": 28.16,
+      "text": "cost 38."
+    },
+    {
+      "start": 28.16,
+      "end": 29.04,
+      "text": "Right now it's"
+    },
+    {
+      "start": 29.04,
+      "end": 29.7,
+      "text": "sitting at number"
+    },
+    {
+      "start": 29.7,
+      "end": 30.36,
+      "text": "1 on the"
+    },
+    {
+      "start": 30.36,
+      "end": 31.34,
+      "text": "coding arena about"
+    },
+    {
+      "start": 31.34,
+      "end": 32.44,
+      "text": "every closed model"
+    },
+    {
+      "start": 32.44,
+      "end": 33.4,
+      "text": "and today Moonshot"
+    },
+    {
+      "start": 33.4,
+      "end": 34.06,
+      "text": "released the full"
+    },
+    {
+      "start": 34.06,
+      "end": 34.94,
+      "text": "weights. Open."
+    },
+    {
+      "start": 35.2,
+      "end": 35.58,
+      "text": "You can run"
+    },
+    {
+      "start": 35.58,
+      "end": 36.06,
+      "text": "it yourself."
+    },
+    {
+      "start": 36.28,
+      "end": 36.8,
+      "text": "The best model"
+    },
+    {
+      "start": 36.8,
+      "end": 37.54,
+      "text": "this week is"
+    },
+    {
+      "start": 37.54,
+      "end": 38.02,
+      "text": "in the most"
+    },
+    {
+      "start": 38.02,
+      "end": 38.72,
+      "text": "expensive one."
+    },
+    {
+      "start": 38.98,
+      "end": 39.4,
+      "text": "It's the one"
+    },
+    {
+      "start": 39.4,
+      "end": 40.54,
+      "text": "everybody can actually"
+    },
+    {
+      "start": 40.54,
+      "end": 41.28,
+      "text": "afford to build"
+    },
+    {
+      "start": 41.28,
+      "end": 42.32,
+      "text": "with. What would"
+    },
+    {
+      "start": 42.32,
+      "end": 42.98,
+      "text": "you build first?"
+    }
+  ]
+}
