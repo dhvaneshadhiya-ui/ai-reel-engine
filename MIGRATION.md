@@ -124,23 +124,49 @@ tool. Bundled or installed automatically.
 
 ### 3.0 The easiest route: clone from GitHub
 
-The engine now lives in a **private** repo:
+The engine lives in a **private** repo:
 `https://github.com/dhvaneshadhiya-ui/ai-reel-engine`
 
-**APP** — in a conversation on any folder:
-> Clone my ai-reel-engine repo into ~/Movies and set it up.
+Because it is private, the new machine must authenticate **once** before it can
+clone. That is the only genuinely new step.
 
-**CLI**
+#### Using the Claude desktop app (least terminal)
+
+1. **Sign in to GitHub on the new Mac.** Easiest without a terminal: install
+   [GitHub Desktop](https://desktop.github.com), sign in, and use
+   *File → Clone repository → dhvaneshadhiya-ui/ai-reel-engine*, cloning into
+   `~/Movies`. That handles the private-repo auth with a normal login window.
+2. **Open the Claude desktop app** with a conversation whose folder is the
+   cloned `ai-reel-engine`.
+3. Say:
+   > Set this machine up — read MIGRATION.md and do it.
+
+**Alternative without GitHub Desktop:** open a Claude conversation on any
+folder (e.g. `~/Movies`) and say *"clone my ai-reel-engine repo here and set it
+up"*. The agent will find it cannot authenticate yet and will run
+`gh auth login` — a browser-based flow that shows you a one-time code to paste.
+Once that completes it clones and runs setup itself. Then move the conversation
+to the cloned folder.
+
+#### Using Terminal
+
 ```bash
-gh auth login                       # once per machine
+gh auth login                       # once per machine, browser flow
 cd ~/Movies
 git clone https://github.com/dhvaneshadhiya-ui/ai-reel-engine.git
 cd ai-reel-engine && bash setup.sh
 ```
 
-This replaces steps 3.1-3.2 and is preferable to the archive whenever the new
-machine can reach GitHub: you get history, and `git pull` keeps both Macs in
-step instead of drifting.
+Either way you get history, and `git pull` keeps both Macs in step instead of
+drifting.
+
+#### Keeping in sync afterwards
+
+**APP** — *"pull the latest and check the toolchain"*.
+**CLI** — `git pull && python3 scripts/doctor.py`
+
+Commits land at checkpoints and are pushed at the end of each session, so a
+`git pull` at the start of work on the other machine is usually all you need.
 
 **One difference from the archive:** `bin/` (the bundled ffmpeg + ffprobe) is
 NOT in the repo — 150 MB of binaries do not belong in git, and ffmpeg builds

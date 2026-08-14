@@ -147,6 +147,28 @@ python3 scripts/new_job.py <slug>
 
 Then follow `AGENT.md`.
 
+## Git — this repo is tracked, and how to commit
+
+Remote: **`https://github.com/dhvaneshadhiya-ui/ai-reel-engine`** — PRIVATE.
+
+**COMMIT/PUSH POLICY (user decision, 2026-08-14): commit at checkpoints, push
+at the end of a session.**
+
+- **Commit** whenever something meaningful lands: a gate added, a component
+  fixed, a rule recorded in the ledger, a measured finding. Granular enough
+  that the history explains itself.
+- **Push before the session ends**, so nothing important exists only on one
+  machine.
+- Do NOT push mid-task on a whim, and never force-push.
+- Every commit message says WHY, not just what. The ledger and the history are
+  the same record seen two ways.
+
+`gh` is authenticated on this machine (`repo` scope); pushes go through it via
+Bash. **No GitHub connector is needed in the Claude app.**
+
+`out/` and `public/assets/` are excluded and NEVER sync — a finished render
+stays on the machine that made it unless it is moved deliberately.
+
 ## Moving this repo to another machine
 
 VERIFIED 2026-08-14 by simulating a fresh copy: **11 MB, 465 files**, every
