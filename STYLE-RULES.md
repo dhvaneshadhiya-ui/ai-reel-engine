@@ -2057,3 +2057,78 @@ verification.
 
 THE ARCHIVE STILL HAS ONE ADVANTAGE: it carries `bin/ffmpeg` + `bin/ffprobe`,
 so it needs no Homebrew. A clone does. Both routes are documented.
+
+## 2026-08-17 — iphone-fold-ultra (foldable iPhone Ultra, dummy-led)
+
+- **"Be generic without mentioning any source in the script — we already credit
+  the sources in our footage."** Then, on the analyst line: **"Following one is
+  fine... Kuo is famous for rumors and leaks and most media refers him as a
+  source."**
+  ROOT: I had written "MacRumors puts the inner screen at 7.76 inches", citing
+  an AGGREGATOR by name for a figure that is not its exclusive.
+  RULE: split attribution by SOURCE TYPE, not by habit —
+  - **Aggregators (MacRumors, 9to5Mac, AppleInsider) are never spoken.** State
+    the figure bare; the credit rides the card footnote and the receipt. This
+    is what RULES.md §3 already said ("aggregator → never cite, go to the
+    original"); the script had drifted from it.
+  - **Original claimants (Kuo, UBS, IDC, Gurman) ARE named in the line**,
+    because they are the claim. "Nobody agrees on the price" is meaningless
+    unless the disagreeing parties are named.
+
+- **G13 EXISTED AND WAS NEVER FED — 7 beats would have frozen.**
+  `reel_gates.check_beats()` accepts `clip_durations`, but no build script has
+  ever passed it, so nothing checked a beat against the length of the clip
+  playing it. On this reel 7 of 22 footage beats outran their clip (worst:
+  2.84s beat on a 1.40s clip), which holds a frozen last frame — invisible in
+  logs, invisible to the frame linter, and only caught by diffing the sync
+  table against `ffprobe`.
+  RULE: **every build script MUST pass `clip_durations` to `check_beats`.**
+  `tools/build_iphonefoldultra.py` ffprobes `public/assets/<slug>/clips/*.mp4`
+  into a dict and passes it. Copy that block into every new build.
+
+- **Index-keyed caption fixes land on the wrong word.** I mapped positional
+  fixes by index into `words`, then applied them to
+  `normalise_words(words, CANON)`. normalise_words can change the token count,
+  so "two 48MP" was written two tokens late and the caption shipped as
+  `248 megapixel two 48MP`.
+  RULE: **key positional caption fixes by START TIME, not by index.** Word
+  start times survive normalisation; indices do not.
+
+- **A leaked-dummy hands-on is full of the reviewer's OWN real phones.** Two
+  clips (`back-cameras`, `bump-macro`) were cut, crops verified, and only on a
+  full-res side-by-side did it become clear they were a REAL iPhone's camera,
+  not the mockup's — and they were bound to the line "two 48-megapixel
+  cameras". They were deleted.
+  RULE: when the hero footage is a mockup shown NEXT TO real hardware,
+  identify the device in every frame before binding a claim to it. On this
+  mockup the tell is decisive: **the dummy's camera rings are BLANK; a real
+  iPhone has black glass lenses and an Apple logo.** Record the tell in the
+  manifest so the next reel does not re-derive it.
+
+- **ReceiptScene cannot hold a full-width mobile text column.** A 1170px-wide
+  MacRumors column cut mid-word at the right edge in `receipt` even after
+  padding, because the zoom floor (Z 1.35) always overflows.
+  RULE (sharpens the 2026-07-29 entry, which only covered >2.5:1 artefacts):
+  a text column survives `receipt` only if it occupies **<= 1/1.35 (74%) of
+  the source canvas width** — i.e. pad ~35% white on the horizontal. Anything
+  tighter goes in a `floatcard` at true aspect. Two of the three captures here
+  became floatcards; the third was padded 1170 -> 1580 and reads fully.
+
+- **yt-dlp's native downloader 403s mid-file; `--download-sections` does not.**
+  Every attempt at a full download died at ~8% with HTTP 403, on multiple
+  player clients. `--download-sections "*0-inf"` routes through ffmpeg and
+  completes. Merging video+audio that way exits 8, so request a **video-only
+  format** — b-roll needs no audio anyway.
+
+- **One text system, checked at the frame.** The closing cards shipped a
+  headline reading "SEPTEMBER 9" over a typecard reading "September 9", and a
+  "$3,000" headline over a caption chip already saying "$3,000". Both are
+  RULES.md §6 violations that no gate catches.
+  RULE: when a card carries a headline AND the caption chips are live, read
+  the actual frame and confirm they do not speak the same words.
+
+- Digital twin `f55b0b7c` measured **2.48 motion (peak 10.19) on this master**
+  against 4.41 in `avatarRegistry` — verdict "stiff, short pops only". The
+  beat plan already used 2.4-2.6s facecam pops, so it shipped, but the
+  registry figure is not reproducible run-to-run. Treat 4.41 as a ceiling, not
+  a guarantee, and keep facecam in short pops.

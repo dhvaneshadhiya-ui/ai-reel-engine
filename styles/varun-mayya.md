@@ -132,6 +132,27 @@ yellow #FFD84D accent, Fraunces serif) automatically:
   categorygrid / endquestion / timeline (all previous reel's). Master
   surgically shortened 86.2->79.8s.
 
+- iphone-fold-ultra (foldable iPhone Ultra — WHY it's shaped like that, not a
+  spec list): split hook (unfolded DUMMY / face, "NOT TALLER" caps), a leaked
+  dummy-unit hands-on as the ENTIRE footage spine — 22 clips from ONE credited
+  source, with "Source: Unbox Therapy — dummy unit" on every dummy beat; NEW
+  persistent DUMMY-UNIT infocard; NEW measurement-texture footage (digital
+  caliper + steel rule on the mockup, readouts deliberately never claimed);
+  cream serif typecards x7 for the numeric payoffs (one decision / 7.76 inches
+  / iPad geometry / 5.49 inches / 4.5mm unfolded / a 0.15mm fold / two 48MP
+  cameras / nothing confirmed); ONE black typecard, spent on the closing date;
+  cream `receipt` w/ highlight sweeps on the "regardless of cost" quote (2
+  passes); MacRumors floatcards x4 (Face ID x2 DIFFERENT crops, pricing x2);
+  `chart` with labelled analyst bars (UBS / Kuo / Fubon / IDC, $3,000 max);
+  serif headlines over footage (iPhone Ultra, 7.76", 5.49", Touch ID); face
+  CTA at y=0.46. Facecam 19%. Twin master 82.3->79.6s via 4 pause-tightenings.
+  No specsheet / sourceread / uidialog / checklist / statcard / wordcascade /
+  annotatezoom / timeline / categorygrid / endquestion.
+- → next reel must introduce at least one new treatment. Used here and NOT to
+  be repeated next: the DUMMY-UNIT chip + caliper-texture motif, the cream
+  serif numeric typecard run (7 of them — vary this), the analyst-bar chart,
+  and the receipt/floatcard split for web captures.
+
 ## 2026-07-26 — premium bar (from a Varun reference reel, Codex Micro)
 Reference showed the pack executed at a higher bar. RULES going forward:
 - TITLES = editorial serif that BUILDS line-by-line (label → bold headline →

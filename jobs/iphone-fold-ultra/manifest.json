@@ -1,0 +1,298 @@
+{
+  "topic": "Foldable iPhone Ultra — everything we know so far (Aug 2026)",
+  "format": "news",
+  "style": "varun-mayya",
+  "tone": "neutral",
+  "avatar": "f55b0b7c",
+  "verified_facts": [
+    "Inner (unfolded) display 7.76 inches, 2,713 x 1,920, 4:3 aspect ratio — per one leaker — https://www.macrumors.com/roundup/iphone-fold/",
+    "Outer (folded) cover display 5.49 inches, 2,088 x 1,422 — https://www.macrumors.com/roundup/iphone-fold/",
+    "Thickness ~4.5mm unfolded, 9-9.5mm folded; would be Apple's thinnest device — https://www.macrumors.com/roundup/iphone-fold/",
+    "Crease depth under 0.15mm, crease angle under 2.5 degrees, described as 'nearly invisible' unfolded — https://www.macrumors.com/roundup/iphone-fold/",
+    "Apple pursued eliminating the crease 'regardless of cost' (direct quote on MacRumors roundup) — https://www.macrumors.com/roundup/iphone-fold/",
+    "Hinge built from liquid metal (amorphous alloy Apple has held consumer-electronics rights to since 2010) — https://www.macrumors.com/roundup/iphone-fold/",
+    "No Face ID; Touch ID moves to the power button — no room for TrueDepth in the thin chassis — https://www.macrumors.com/roundup/iphone-fold/",
+    "Rear cameras: dual 48MP (main + ultra wide), no telephoto — https://www.macrumors.com/roundup/iphone-fold/",
+    "Pricing spread: Ming-Chi Kuo $2,000-$2,500; Bloomberg's Mark Gurman similar; UBS $1,800-$2,000; Fubon Research $2,400; IDC $2,500 average with some models up to $3,000 — https://www.macrumors.com/roundup/iphone-fold/",
+    "Expected announcement September 2026 alongside iPhone 18 Pro / Pro Max; event reported for September 8-9, 2026 — https://www.macrumors.com/roundup/iphone-fold/",
+    "Likely official name 'iPhone Ultra'; 'iPhone Fold' is a media placeholder Apple is unlikely to use (Samsung Galaxy Fold) — https://www.macrumors.com/roundup/iphone-fold/",
+    "A20 chip on TSMC 2nm; 12GB RAM — https://www.macrumors.com/roundup/iphone-fold/",
+    "Dual batteries, one per side, 5,400-5,800 mAh — largest capacity in any iPhone — https://www.macrumors.com/roundup/iphone-fold/",
+    "Dummy unit measured on camera by Unbox Therapy: 117mm tall, 84.27mm wide, 11.02mm thick closed (without camera bump) — https://www.youtube.com/watch?v=khefl5hYouM"
+  ],
+  "explicitly_NOT_claimed": [
+    "The DUMMY IS NOT THE PRODUCT. khefl5hYouM shows a non-functional shape mockup from an unidentified Chinese supplier. Never state or imply it is a real iPhone Ultra, a prototype, or Apple-sanctioned. Dummy beats carry a DUMMY UNIT label and the Unbox Therapy credit.",
+    "REAL iPhONES APPEAR IN THIS FOOTAGE AND MUST NEVER BE CAPTIONED AS THE FOLDABLE. Telling them apart: the dummy's camera bump has BLANK rings (no glass); a real iPhone has black glass lenses and an Apple logo. Clips cut and then DELETED for this reason: back-cameras (t216.5-218.0) and bump-macro (t222.6-225.0) are a real iPhone's camera, not the dummy's. Only clip-fold-back shows the dummy's own back.",
+    "The vertical seam on the dummy's printed face (t232-241) is a MOCKUP ARTEFACT, not the real device's crease. BANNED: pairing those frames with the 0.15mm crease claim or any line about how the crease looks.",
+    "The dummy's caliper readouts (46.0, 5.77 @t410-419) measure THE MOCKUP. BANNED as specifications. The footage runs as texture only; the sole thickness figure on screen is the sourced 4.5mm, footnoted.",
+    "BANNED SOURCE — youtube i2kck04-21A (AppleTrack) in its entirety: predominantly CGI concept renders plus a baked-in circular webcam PiP. Downloaded during scouting, used nowhere.",
+    "Apple has announced nothing: no name, no price, no date, no spec. Every figure is reported/leaked and carries on-screen attribution.",
+    "24MP under-display selfie camera — single-sourced and contradicted elsewhere. NOT claimed.",
+    "Two foldable sizes (7.9in / 8.3in, Jeff Pu) — uncorroborated. NOT claimed.",
+    "Colours, MagSafe and the Action Button — conflicting dummy data. NOT claimed.",
+    "October availability, staggered rollout, 10M unit target, A20/2nm, 12GB RAM, dual 5,400-5,800mAh batteries — real reports, cut for time. NOT claimed in this reel."
+  ],
+  "notation": {
+    "iphone ultra": "iPhone Ultra",
+    "iphone": "iPhone",
+    "ipad": "iPad",
+    "touch id": "Touch ID",
+    "face id": "Face ID",
+    "macrumors": "MacRumors"
+  },
+  "assets": [
+    {
+      "id": "clip-unfold-hero",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t232.8-235.4 -> clips/unfold-hero.mp4",
+      "shows": "Two hands holding the DUMMY fully unfolded; the wide 4:3 face fills the frame with an orange/purple flame image printed on it, mockup seam down the centre. White table. Verified head+tail: no shot change, no overlay.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-unfold-hero-b",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t237.8-240.2 -> clips/unfold-hero-b.mp4",
+      "shows": "The unfolded DUMMY held up, flame face toward camera, slight tilt. Distinct region from clip-unfold-hero. Verified head+tail clean.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-unfold-hold",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t267.8-269.5 -> clips/unfold-hold.mp4",
+      "shows": "Unfolded DUMMY held at an angle against a grey backdrop, edge and thinness readable. Verified head+tail clean.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-fold-cover",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t212.75-214.85 -> clips/fold-cover.mp4",
+      "shows": "Hands holding the DUMMY FOLDED, cover face toward camera with the flame image; squat, wide proportions against the fingers. Verified head+tail clean.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-fold-back",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t263.8-265.3 -> clips/fold-back.mp4",
+      "shows": "Hands holding the folded DUMMY, white back toward camera: a pill-shaped bump with TWO BLANK rings (mockup has no real lenses) and no third telephoto ring. This is the dummy's own back, not a real iPhone.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-footprint-flat",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t290.3-292.6 -> clips/footprint-flat.mp4",
+      "shows": "Overhead: two TALL, NARROW real iPhones at top (one back, one showing a flame wallpaper) and the SHORT, WIDE folded dummy below them on a white table. The reel's central shape argument in one frame.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-size-vs-iphone",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t285.8-288.3 -> clips/size-vs-iphone.mp4",
+      "shows": "Overhead: folded DUMMY (left, pill bump with blank rings) beside a real iPhone (right, black glass lenses + Apple logo), hands framing both. Direct footprint comparison.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-devices-hands",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t275.3-277.0 -> clips/devices-hands.mp4",
+      "shows": "Overhead: the DUMMY (left, blank camera rings) and a real iPhone (right, real lenses + Apple logo) side by side, hands moving between them.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-flame-close",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t291.6-292.8 -> clips/flame-close.mp4",
+      "shows": "Close on a real iPhone's flame wallpaper screen with the folded DUMMY's white back below it — used only as texture next to the comparison beats, never as the foldable's own screen.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-profile-thin",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t218.3-220.2 -> clips/profile-thin.mp4",
+      "shows": "The DUMMY edge-on, bottom edge and speaker grille toward camera, showing how thin each half is. Verified head+tail clean.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-hinge-spine",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t220.3-222.4 -> clips/hinge-spine.mp4",
+      "shows": "The DUMMY standing on the table edge-on: hinge spine, side buttons and the pill bump in profile. Distinct region from clip-profile-thin.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-caliper-edge",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t410.4-412.1 -> clips/caliper-edge.mp4",
+      "shows": "Hands closing a Mitutoyo digital caliper on the DUMMY's edge, LCD readout legible (46.0). TEXTURE ONLY — the readout measures the mockup and is never shown or spoken as an iPhone spec.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-caliper-hands",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t416.6-419.4 -> clips/caliper-hands.mp4",
+      "shows": "Macro of hands working the digital caliper, readout ~5.77 visible, white table. Same texture-only restriction as clip-caliper-edge.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "receipt-mr-crease",
+      "kind": "receipt",
+      "source": "MOBILE capture (390px CSS, scale 3) of the MacRumors iPhone Fold roundup, 'Minimal Crease' section, cropped to the text block -> clips/mr-crease.png 1170x700",
+      "shows": "MacRumors mobile column: heading 'Minimal Crease' and the paragraph containing 'Apple is said to have pursued eliminating the crease \"regardless of cost\"'. Fully legible, no ad slots in the crop.",
+      "quality": "clean",
+      "credit": "MacRumors",
+      "crop": "crop=1170:700:0:88"
+    },
+    {
+      "id": "receipt-mr-faceid",
+      "kind": "receipt",
+      "source": "MOBILE capture (390px CSS, scale 3), 'No Face ID' section, cropped -> clips/mr-faceid.png 1170x560",
+      "shows": "MacRumors 'No Face ID' heading and first paragraph: no room for a TrueDepth camera system, will instead have a Touch ID side button.",
+      "quality": "clean",
+      "credit": "MacRumors",
+      "crop": "crop=1170:560:0:95"
+    },
+    {
+      "id": "receipt-mr-pricing",
+      "kind": "receipt",
+      "source": "MOBILE capture (390px CSS, scale 3), 'Pricing' section, cropped past an unfilled ad slot -> clips/mr-pricing.png 1170x620",
+      "shows": "MacRumors pricing paragraph naming Ming-Chi Kuo $2,000-$2,500, Bloomberg's Mark Gurman, UBS $1,800-$2,000, Fubon $2,400, IDC $2,500 average and up to $3,000.",
+      "quality": "clean",
+      "credit": "MacRumors",
+      "crop": "crop=1170:620:0:1240"
+    },
+    {
+      "id": "clip-unfold-tilt",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t303.2-305.2 -> clips/unfold-tilt.mp4",
+      "shows": "Close on the unfolded DUMMY's printed face — the hole-punch camera cut-out and the flame image, a finger at the edge. Verified head+tail clean.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-unfold-hands",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t339.4-342.0 -> clips/unfold-hands.mp4",
+      "shows": "The unfolded DUMMY held in both hands against a grey backdrop, tilting so the light rakes across the face. Verified head+tail clean.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-cover-hold",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t319.2-321.8 -> clips/cover-hold.mp4",
+      "shows": "The folded DUMMY held cover-face-out, thumb resting on it, edge and squat proportions readable. Verified head+tail clean.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-overhead-backs",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t314.2-316.8 -> clips/overhead-backs.mp4",
+      "shows": "Overhead: the DUMMY (blank camera rings) beside a real iPhone (black glass lenses), both backs up on white. Comparison shot — the real iPhone is present and must never be captioned as the foldable.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-pair-backs",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t306.2-307.8 -> clips/pair-backs.mp4",
+      "shows": "Hands holding the folded DUMMY (left, blank rings) next to a real iPhone back (right, Apple logo). Comparison shot.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-pair-angled",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t316.2-317.3 -> clips/pair-angled.mp4",
+      "shows": "Macro where the two camera bumps meet: real iPhone lenses (black glass, left) against the DUMMY's blank rings (right). The clearest frame showing the mockup has no real optics. Trimmed to 1.1s to stop before the shot cuts to the presenter.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-tape-measure",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t382.4-385.0 -> clips/tape-measure.mp4",
+      "shows": "A steel rule laid across the unfolded DUMMY's face, mm graduations legible. TEXTURE ONLY — measures the mockup, never shown or spoken as an iPhone spec.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-caliper-wide",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t385.2-387.6 -> clips/caliper-wide.mp4",
+      "shows": "Rule and digital caliper together across the unfolded DUMMY. Same texture-only restriction.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-face-close",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t342.2-343.6 -> clips/face-close.mp4",
+      "shows": "Close on the unfolded DUMMY held in one hand, thumb on the printed face. The mockup SEAM is prominent in this shot, so it is deliberately placed on the price act-break and never on a crease line (see explicitly_NOT_claimed).",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "receipt-mr-faceid-b",
+      "kind": "receipt",
+      "source": "MOBILE capture (390px CSS, scale 3), 'No Face ID' section, SECOND paragraph -> clips/mr-faceid-b.png 1170x430",
+      "shows": "MacRumors: 'There could be a front-facing hole-punch camera for both the inner and outer displays for selfies, but unlocking the iPhone biometrically will be done with Touch ID.' A different crop from receipt-mr-faceid so the two cards are not twins.",
+      "quality": "clean",
+      "credit": "MacRumors",
+      "crop": "crop=1170:430:0:490"
+    },
+    {
+      "id": "clip-cam-pair",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t440.0-442.5 -> clips/cam-pair.mp4",
+      "shows": "A real iPhone's back (Apple logo, black glass lenses) held beside the DUMMY showing its printed face. The real iPhone is the prominent object here, so this clip is kept OFF every camera claim and used only on a neutral price-act line.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    },
+    {
+      "id": "clip-pair-stand",
+      "kind": "footage",
+      "source": "yt:khefl5hYouM @t480.0-482.6 -> clips/pair-stand.mp4",
+      "shows": "The folded DUMMY standing upright on the table, white back and blank-ringed camera pill facing camera, a real iPhone leaning behind it. Dummy-forward, so it can carry the 'no telephoto' line.",
+      "quality": "clean",
+      "credit": "Unbox Therapy",
+      "crop": "1215:2160 from 4K, centred"
+    }
+  ],
+  "mg_always_available": "SpecSheet, HeadlineBuild, receipt, CategoryGrid, Carousel, Checklist, HCompare, CompareSplit, wordcascade, statcard, chart, timeline, endquestion, deviceframe, priceladder, xpost"
+}
