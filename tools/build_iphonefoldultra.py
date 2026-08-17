@@ -445,3 +445,28 @@ except GateError as e:
 OUT.parent.mkdir(parents=True, exist_ok=True)
 OUT.write_text(json.dumps(beats, indent=2, ensure_ascii=False))
 print("wrote", OUT)
+
+# ── VO-only variant (user request 2026-08-17) ───────────────────────────────
+# Same picture, same SFX, no music bed. It is a DERIVATIVE of the approved
+# reel, so it re-runs every gate rather than skipping them; G09 now carries a
+# written opt-out (added with its own test cases) instead of being worked
+# around. The two sheets share one avatar master, so the audio stays identical
+# and the approval hash still governs both.
+nm = dict(beats)
+nm["id"] = f"{SLUG}-nomusic"
+nm.pop("music", None)
+nm["noMusic"] = True
+nm["noMusicReason"] = ("VO-only delivery requested by the user 2026-08-17 — a "
+                       "derivative of the approved reel for placements that "
+                       "supply their own bed or strip audio; the music version "
+                       "remains the primary master.")
+OUT_NM = ROOT / f"src/beats/{SLUG}-nomusic.json"
+try:
+    for w in check_beats(nm, vo_end=words[-1][1], manifest=MANIFEST,
+                         clip_durations=CLIP_DURS):
+        print(f"  warning (nomusic): {w}")
+    print("GATES (nomusic): PASSED")
+except GateError as e:
+    raise SystemExit(f"GATES FAILED on the no-music variant\n{e}")
+OUT_NM.write_text(json.dumps(nm, indent=2, ensure_ascii=False))
+print("wrote", OUT_NM)

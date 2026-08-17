@@ -2132,3 +2132,29 @@ so it needs no Homebrew. A clone does. Both routes are documented.
   beat plan already used 2.4-2.6s facecam pops, so it shipped, but the
   registry figure is not reproducible run-to-run. Treat 4.41 as a ceiling, not
   a guarantee, and keep facecam in short pops.
+
+## 2026-08-17 — iphone-fold-ultra, VO-only variant
+
+- **"I also want you to render video without background music."**
+  ROOT: G09 requires a music bed on every reel, so a VO-only cut could only be
+  produced by hand-editing a sheet and rendering outside the gates — exactly
+  the workaround this repo exists to prevent.
+  RULE: a no-music cut is a **derivative of an approved reel**, not an
+  exception to the rules. G09 now carries `noMusic` + `noMusicReason`, the same
+  shape as G02's `allowLong`: a bare boolean fails, the reason has to be
+  written down. Two cases added to `test_gates.py` (57 → 59 checks): the gate
+  still fires when `music` is dropped without the opt-out, and fires when
+  `noMusic` is set with no reason.
+  The variant is a SECOND beat sheet (`<slug>-nomusic`) emitted by the same
+  build script, re-running every gate — same picture, same SFX, same avatar
+  master, so the audio and the approval hash still govern both.
+
+- **Proving the music is gone needs a silence count, not a level meter.**
+  Comparing mean volume between the two masters showed only ~1-3 dB of
+  difference, because `loudnorm` lifts the quiet passages and hides the bed.
+  The measurement that actually settles it: **silences below -50dB.** The music
+  master has ZERO ≥0.30s (the bed never stops); the VO-only master has 12,
+  totalling 4.93s.
+  RULE: verify an audio-track change on the RAW render with `silencedetect`,
+  not on the mastered file with `volumedetect` — normalisation flattens exactly
+  the difference you are trying to see.

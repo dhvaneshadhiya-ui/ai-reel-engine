@@ -285,6 +285,11 @@ technical term appears on screen in standard notation. [GATE:G16]
 - Music bed on every reel, volume-automated, never flat: full at the hook →
   duck through explanation → rise at the reveal → up at the CTA → fade.
   [GATE:G09]
+- **A VO-only cut is a DERIVATIVE, not an exception.** If a placement supplies
+  its own bed or strips audio, build it as a second sheet with `noMusic` +
+  a written `noMusicReason` (same shape as `allowLong`), re-run every gate on
+  it, and keep the music version as the primary master. Dropping `music`
+  without the reason still fails. [GATE:G09]
 - **6–9 SFX cues**, vols 0.10–0.19. Ordinary cuts stay silent. [GATE:G08]
 - Master to −14 LUFS, verify with `ebur128`. [EYE]
 

@@ -279,10 +279,23 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 f"{SXV_MIN}-{SXV_MAX} for format {fmt_name!r}.")
 
     # G09 — music bed present and automated, never flat
+    #
+    # 2026-08-17: added `noMusic`, the same shape as G02's allowLong, because a
+    # VO-only cut is a legitimate DERIVATIVE of a finished reel (accessibility,
+    # a client's own bed, a broadcaster who strips audio anyway) rather than a
+    # reel that forgot its music. It has to be argued for in one line so it
+    # cannot be flipped on to silence a complaint — which is the whole reason
+    # the escape hatch is a written reason and not a bare boolean.
+    no_music = bool(beats.get("noMusic"))
+    if no_music and not str(beats.get("noMusicReason") or "").strip():
+        errors.append(
+            "G09 noMusic is set with no `noMusicReason` — shipping a reel with "
+            "no bed has to be argued for in one line, not just switched on.")
     music = beats.get("music")
-    if not music:
-        errors.append("G09 no music bed — every reel carries one (2026-07-22).")
-    elif len({p["vol"] for p in music.get("points", [])}) < 2:
+    if not music and not no_music:
+        errors.append("G09 no music bed — every reel carries one (2026-07-22). "
+                      "A deliberate VO-only cut sets noMusic + noMusicReason.")
+    elif music and len({p["vol"] for p in music.get("points", [])}) < 2:
         errors.append("G09 music bed is flat — volume must be automated "
                       "(hook full → duck → rise at the reveal → fade).")
 

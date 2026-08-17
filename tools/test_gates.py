@@ -309,6 +309,8 @@ CASES = [
      "G20", "last list row never lands"),
     (lambda s: chk(s).update(rows=[]), "G20", "empty checklist"),
     (lambda s: s.update(allowLong=True), "G02", "allowLong with no reason"),
+    (lambda s: s.update(noMusic=True), "G09", "noMusic with no reason"),
+    (lambda s: s.pop("music"), "G09", "music bed dropped without the opt-out"),
     (lambda s: s.update(captions=[{"start": 0, "end": 1, "text": "Windows ships"}]),
      "G21", "caption word never spoken"),
     (lambda s: s.update(emphasis=["macOS", "ships"]),
