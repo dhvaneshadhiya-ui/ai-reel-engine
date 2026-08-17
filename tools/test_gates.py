@@ -136,6 +136,7 @@ def vo_end_of(sheet: dict) -> float:
 # case did not move the number, so the suite under-reported its own coverage
 # (noticed 2026-08-16 while adding the style-rename checks).
 CHECKS = 0
+_fired: list[tuple[str, str]] = []
 
 
 def _counted(label: str) -> None:
@@ -163,6 +164,7 @@ def expect_fail(mutate, gate: str, label: str) -> None:
                     vo_words=VO_WORDS)
     except GateError as e:
         if gate in str(e):
+            _fired.append((gate, label))
             _counted(f"{gate} fires — {label}")
             return
         print(f"  FAIL {gate} did not fire for {label}; got:\n{e}")
@@ -307,6 +309,33 @@ _over.update(allowLong=True, allowLongReason="a genuinely enormous story")
 expect_gate(_over, "G02", True,
             f"G02 fires — allowLong cannot pass the {RUNTIME_CEILING:.0f}s wall")
 
+
+# --- G13 needs clip_durations, which the shared expect_fail does not pass ---
+def expect_fail_with_clips(sheet: dict, clips: dict, gate: str, label: str) -> None:
+    try:
+        check_beats(sheet, vo_end=vo_end_of(sheet), manifest=MANIFEST,
+                    vo_words=VO_WORDS, clip_durations=clips)
+    except GateError as e:
+        if gate in str(e):
+            _fired.append((gate, label))
+            _counted(f"{gate} fires — {label}")
+            return
+        print(f"  FAIL {gate} did not fire for {label}; got:\n{e}")
+        raise SystemExit(1)
+    print(f"  FAIL {gate} did not fire for {label} (no error raised)")
+    raise SystemExit(1)
+
+
+_short_clip = copy.deepcopy(BASE)
+_first_footage = next(
+    sc for sc in _short_clip["scenes"] if sc.get("src") and "avatar-master" not in str(sc["src"])
+)
+expect_fail_with_clips(
+    _short_clip,
+    {_first_footage["src"]: _first_footage["durationSec"] - 0.6},
+    "G13",
+    "clip shorter than the beat that plays it")
+
 TOP5 = top5(BASE)
 CMP = comparison(BASE)
 
@@ -408,6 +437,9 @@ CASES = [
      "G20", "last list row never lands"),
     (lambda s: chk(s).update(rows=[]), "G20", "empty checklist"),
     (lambda s: s.update(allowLong=True), "G02", "allowLong with no reason"),
+    (lambda s: s["captions"].append(
+        {"start": 1, "end": 2, "text": "it costs 85 % more"}),
+     "G16", "caption not in standard notation ('85 %')"),
     (lambda s: s.update(captions=[{"start": 0, "end": 1, "text": "Windows ships"}]),
      "G21", "caption word never spoken"),
     (lambda s: s.update(emphasis=["macOS", "ships"]),
@@ -452,5 +484,19 @@ CASES = [
 
 for mutate, gate, label in CASES:
     expect_fail(mutate, gate, label)
+
+# The suite printed "every gate fires on its violation" while G13 and G16 had
+# no failing case at all (found 2026-08-17). Uniqueness of ids was asserted;
+# COVERAGE never was. Assert the claim the last line makes.
+_declared = set(re.findall(r'^\s*# (G\d\d) — ', _src, re.M))
+_covered = {g for g, _l in _fired}
+_gap = sorted(_declared - _covered)
+if _gap:
+    raise SystemExit(
+        f"  FAIL {len(_gap)} gate(s) have no failing case: {_gap}\n"
+        f"  Every mechanical rule is a gate WITH a self-test (CLAUDE.md). A gate\n"
+        f"  that never fires in the suite is untested, and this line would\n"
+        f"  otherwise claim it was.")
+_counted(f"coverage: all {len(_declared)} gate ids have a failing case")
 
 print(f"\nall {CHECKS} checks passed — every gate fires on its violation.")

@@ -24,7 +24,7 @@ python3 tools/test_gates.py
 ```
 
 Expected: `doctor ok — toolchain complete.` and
-`all 67 checks passed — every gate fires on its violation.`
+`all 72 checks passed — every gate fires on its violation.`
 
 If either fails, fix it **before** building the archive.
 
@@ -32,7 +32,7 @@ If either fails, fix it **before** building the archive.
 
 | Thing | Canonical, 2026-08-17 |
 |---|---|
-| Gates | **33**, with **67** self-tests |
+| Gates | **35**, with **72** self-tests |
 | Skills | **29** in-repo + **5** global (see §6.3) |
 | Sound cues | **16** |
 | Scene types | **42** |
@@ -205,7 +205,7 @@ python3 scripts/doctor.py
 -- sfx library --
 [  ok  ] sfx catalogue  — 16 cues, all present.
 -- gates --
-[  ok  ] reel_gates self-test  — all 67 checks passed
+[  ok  ] reel_gates self-test  — all 72 checks passed
 
 doctor ok — toolchain complete.
 ```
@@ -221,7 +221,7 @@ python3 tools/test_gates.py
 ```
 
 Expect `33 gate ids, all unique`, then
-`all 67 checks passed — every gate fires on its violation.`
+`all 72 checks passed — every gate fires on its violation.`
 
 **Proves:** every gate still fires on its own violation. A gate that never
 triggers is worse than no gate.

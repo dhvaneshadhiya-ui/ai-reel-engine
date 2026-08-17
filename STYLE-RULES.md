@@ -2253,3 +2253,35 @@ STILL PROSE, so treat as unenforced:
   both would have rendered EMPTY and nothing checks MG shape against the union.
 - a lint check that output mtime > every referenced asset mtime.
 - a check that no `position: fixed|sticky` element survived into a capture.
+
+## 2026-08-17 — the self-test claimed coverage it did not have
+
+**Rule.** `test_gates.py` now asserts that **every declared gate id has a
+failing case**, and fails naming the gaps.
+
+**Why.** The suite's last line reads *"every gate fires on its violation."* That
+was not true. It asserted gate ids were UNIQUE and never asserted they were
+COVERED, so **G13** (a clip shorter than the beat that plays it) and **G16**
+(standard visual notation) had no failing case at all — two gates sitting in the
+build with nothing proving they still work, behind a green line saying they did.
+
+Exactly the failure this suite exists to prevent, one level up: the gates check
+the reel, and nothing was checking the gates.
+
+Both now have cases. G13 needed its own helper because it reads `clip_durations`,
+which the shared `expect_fail` does not pass — that missing parameter is likely
+why it was skipped originally.
+
+**The coverage check was itself verified** by injecting a `# G99 — ` header with
+no test and confirming the suite fails naming G99. A check that cannot fail is
+decoration.
+
+**Also corrected: the counts in the docs were wrong.** 35 gate ids, not 33; 72
+checks, not 67. The earlier figures were read off stale output and repeated into
+MIGRATION.md — the same prose-drift this repo keeps finding. The numbers now
+come from a live run.
+
+| | was documented | actual |
+|---|---|---|
+| gate ids | 33 | **35** |
+| self-tests | 67 | **72** |
