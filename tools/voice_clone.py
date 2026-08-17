@@ -100,11 +100,37 @@ torchaudio.save({str(dest)!r}, w, m.sr)
     return dur
 
 
-def cal_factor() -> tuple[float, str]:
-    if CAL_FILE.exists():
-        d = json.loads(CAL_FILE.read_text())
-        return float(d["factor"]), d.get("basis", "calibration.json")
-    return 1.0, "UNCALIBRATED — run `calibrate` first; duration is raw chatterbox"
+# Above this, a single multiplier is a lie and the tool reports a RANGE.
+SPREAD_LIMIT = 0.25
+
+
+def cal_factor() -> tuple[float, float, str]:
+    """(lo, hi, basis). lo == hi only when the calibration was tight.
+
+    Tolerates a calibration.json written by an OLDER build of this tool, which
+    stored a single `factor` and no lo/hi. Reading one used to raise
+    KeyError('lo') and take `speak` down — a stale artifact must degrade, never
+    crash, so the pre-range format is reconstructed and LABELLED as such.
+    """
+    if not CAL_FILE.exists():
+        return 1.0, 1.0, "UNCALIBRATED — run `calibrate`; duration is raw chatterbox"
+    d = json.loads(CAL_FILE.read_text())
+    basis = d.get("basis", "calibration.json")
+    if "lo" in d and "hi" in d:
+        return float(d["lo"]), float(d["hi"]), basis
+    if "factor" in d:
+        f = float(d["factor"])
+        spread = float(d.get("spread") or 0.0)
+        if spread > SPREAD_LIMIT:
+            # Only the mean and the spread survived; the true endpoints did not.
+            # Reconstruct symmetrically and say so, rather than quoting the mean
+            # as if it were tight.
+            return (f - spread / 2, f + spread / 2,
+                    basis + "  [pre-range file — endpoints RECONSTRUCTED from "
+                            "mean±spread/2; re-run `calibrate` for the real range]")
+        return f, f, basis + "  [pre-range file]"
+    return (1.0, 1.0,
+            f"UNREADABLE calibration.json (keys: {sorted(d)}) — re-run `calibrate`")
 
 
 def cmd_speak(slug: str, text: str | None) -> None:
@@ -115,13 +141,20 @@ def cmd_speak(slug: str, text: str | None) -> None:
     words = len(body.split())
     dest = OUT / f"{slug}-rehearsal.wav"
     dur = generate(body, ref, dest)
-    factor, basis = cal_factor()
+    lo, hi, basis = cal_factor()
     print(f"\n  words           {words}")
     print(f"  chatterbox      {dur:.1f}s  ({words/dur:.2f} wps)")
-    print(f"  HeyGen estimate {dur*factor:.1f}s   x{factor:.3f}")
+    if abs(hi - lo) < 1e-6:
+        print(f"  HeyGen estimate {dur*lo:.1f}s   x{lo:.3f}")
+    else:
+        print(f"  HeyGen RANGE    {dur*lo:.0f}-{dur*hi:.0f}s   "
+              f"x{lo:.3f}-{hi:.3f}")
     print(f"  basis           {basis}")
     print(f"  audio           {dest.relative_to(ROOT)}")
-    print("\n  This is an ESTIMATE from a local clone, not the HeyGen voice.")
+    print("\n  LISTEN to it. The duration is weak evidence — measured 2026-08-17,")
+    print("  chatterbox runs anywhere from 15% slower to 16% faster than HeyGen")
+    print("  on the same words, so use this to judge PHRASING, and keep the")
+    print("  approval gate's word budget for length.")
 
 
 def cmd_calibrate() -> None:
@@ -155,17 +188,28 @@ def cmd_calibrate() -> None:
               f"x{heygen_span/got:.3f}")
     if not rows:
         sys.exit("no masters with word timings found")
-    factor = sum(r[3] for r in rows) / len(rows)
-    spread = max(r[3] for r in rows) - min(r[3] for r in rows)
+    fs = [r[3] for r in rows]
+    lo, hi = min(fs), max(fs)
+    spread = hi - lo
     OUT.mkdir(parents=True, exist_ok=True)
+    tight = spread <= SPREAD_LIMIT
+    mean = sum(fs) / len(fs)
     CAL_FILE.write_text(json.dumps(
-        {"factor": round(factor, 4), "spread": round(spread, 4),
-         "n": len(rows),
-         "basis": f"{len(rows)} masters, first 40 words each, spread {spread:.3f}"},
+        {"lo": round(lo if not tight else mean, 4),
+         "hi": round(hi if not tight else mean, 4),
+         "mean": round(mean, 4), "spread": round(spread, 4), "n": len(rows),
+         "tight": tight,
+         "basis": (f"{len(rows)} masters, first 40 words each, spread "
+                   f"{spread:.3f}" + ("" if tight else
+                   " — TOO WIDE for a single multiplier, reported as a range"))},
         indent=2))
-    print(f"\n  factor {factor:.3f} across {len(rows)} masters, spread {spread:.3f}")
-    if spread > 0.25:
-        print("  WARNING: spread is wide — treat the estimate as a range, not a number.")
+    print(f"\n  n={len(rows)}  mean {mean:.3f}  range {lo:.3f}-{hi:.3f}  "
+          f"spread {spread:.3f}")
+    if not tight:
+        print(f"  SPREAD > {SPREAD_LIMIT} — a single factor would be a lie. The mean "
+              f"({mean:.3f}) hides\n  that chatterbox is SLOWER on some masters and "
+              "FASTER on others, so `speak`\n  will report a range and tell you to "
+              "trust the word budget for length.")
 
 
 def main() -> None:
