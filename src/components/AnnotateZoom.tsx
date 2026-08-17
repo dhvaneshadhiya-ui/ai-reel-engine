@@ -10,6 +10,7 @@ import {
 } from "remotion";
 import { useTheme } from "../theme/tokens";
 import { fitsZoom } from "../safeArea";
+import { Credit } from "./Credit";
 
 export interface AnnotateZoomAnnotation {
   kind: "box" | "underline" | "circle" | "arrow";
@@ -314,21 +315,10 @@ export const AnnotateZoom: React.FC<AnnotateZoomProps> = ({
         </svg>
       </div>
 
-      {credit && (
-        <div
-          style={{
-            position: "absolute",
-            bottom: 96,
-            width: "100%",
-            textAlign: "center",
-            fontFamily: theme.sans,
-            fontSize: 25,
-            color: dark ? theme.mutedOnDark : theme.muted,
-          }}
-        >
-          {credit}
-        </div>
-      )}
+      {/* ONE credit treatment. This used to be a hand-rolled block at
+          bottom: 96 (y 0.95) — inside Instagram's caption stack, so it shipped
+          invisible on every annotatezoom scene. */}
+      {credit && <Credit text={credit} onMedia plate />}
     </AbsoluteFill>
   );
 };

@@ -1,4 +1,5 @@
 import React from "react";
+import { Credit } from "./Credit";
 import {
   AbsoluteFill,
   Img,
@@ -336,21 +337,9 @@ export const DeviceFrame: React.FC<DeviceFrameProps> = ({
         )}
       </div>
 
-      {credit && (
-        <div
-          style={{
-            position: "absolute",
-            bottom: 96,
-            width: "100%",
-            textAlign: "center",
-            fontFamily: theme.sans,
-            fontSize: 25,
-            color: dark ? theme.mutedOnDark : theme.muted,
-          }}
-        >
-          {credit}
-        </div>
-      )}
+      {/* was a hand-rolled credit at bottom: 96 (y 0.95), which sits inside
+          Instagram's caption stack. One treatment, one safe position. */}
+      {credit && <Credit text={credit} onMedia plate />}
     </AbsoluteFill>
   );
 };

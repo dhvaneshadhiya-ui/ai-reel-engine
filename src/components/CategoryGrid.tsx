@@ -1,4 +1,7 @@
 import React from "react";
+
+/** y 0.79 — just inside the platform safe floor (platformSafeArea.ts). */
+const SAFE_LOW = 400;
 import {
   AbsoluteFill,
   useCurrentFrame,
@@ -94,7 +97,7 @@ export const CategoryGrid: React.FC<{ scene: Props }> = ({ scene }) => {
         })}
       </div>
       {sel != null && selP > 0.5 && (
-        <div style={{ position: "absolute", bottom: 340, fontSize: 44, fontWeight: 900, color: dark ? "#fff" : "#111", letterSpacing: 1, opacity: interpolate(selP, [0.5, 0.8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
+        <div style={{ position: "absolute", bottom: SAFE_LOW, fontSize: 44, fontWeight: 900, color: dark ? "#fff" : "#111", letterSpacing: 1, opacity: interpolate(selP, [0.5, 0.8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
           SELECTED: <span style={{ color: CYAN }}>{scene.cards[sel].label}</span>
         </div>
       )}

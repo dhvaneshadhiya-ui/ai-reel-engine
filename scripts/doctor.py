@@ -257,6 +257,27 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "sfx catalogue", str(e))
     problems.append("sfx")
 
+print("\n-- platform safe area --")
+# Credit.tsx used to CLAIM lint_frames.py enforced this. It did not, and two
+# components carried their own credit at y 0.95 for weeks as a result. Now the
+# check is real, and it runs here so nobody has to remember it.
+for args, label in (
+    (["--selftest"], "credit check can fail"),
+    ([], "credits + safe floor"),
+):
+    try:
+        r = subprocess.run([sys.executable, str(ROOT / "tools/check_credits.py"),
+                            *args], capture_output=True, text=True, timeout=60)
+        last = (r.stdout.strip().splitlines() or [""])[-1].strip()
+        if r.returncode == 0:
+            report(OK, label, last)
+        else:
+            report(BAD, label, last or r.stderr.strip()[:160])
+            problems.append("safe-area")
+    except Exception as e:  # noqa: BLE001
+        report(BAD, label, str(e))
+        problems.append("safe-area")
+
 print("\n-- gates --")
 try:
     r = subprocess.run([sys.executable, str(ROOT / "tools/test_gates.py")],

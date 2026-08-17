@@ -1,4 +1,7 @@
 import React from "react";
+
+/** y 0.79 — just inside the platform safe floor (see platformSafeArea.ts). */
+const SAFE_LOW = 400;
 import {
   AbsoluteFill,
   OffthreadVideo,
@@ -83,7 +86,7 @@ export const XPost: React.FC<{ scene: Props }> = ({ scene }) => {
       </div>
 
       {scene.stat && (
-        <div style={{ position: "absolute", bottom: 210, left: 90, opacity: en, transform: `translateY(${(1 - en) * 24}px)` }}>
+        <div style={{ position: "absolute", bottom: SAFE_LOW, left: 90, opacity: en, transform: `translateY(${(1 - en) * 24}px)` }}>
           <div style={{ fontFamily: "'FrauncesUp', Georgia, serif", fontSize: 118, fontWeight: 600, color: "#fff", lineHeight: 0.95, textShadow: "0 4px 30px rgba(0,0,0,0.8)" }}>{scene.stat}</div>
         </div>
       )}

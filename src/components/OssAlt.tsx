@@ -1,4 +1,5 @@
 import React from "react";
+import { SAFE_RECT } from "../platformSafeArea";
 import {
   AbsoluteFill,
   Video,
@@ -16,6 +17,9 @@ import type { Scene } from "../types";
 const CYAN = "#0aa9c2";
 const RED = "#e0244a";
 const GREEN = "#1fa864";
+/** y 0.80 of a 1920 frame — the platform safe floor. */
+const SAFE_FLOOR_PX = Math.round(1920 * (1 - SAFE_RECT.y1));
+
 const SANS = "-apple-system,'SF Pro Display','Helvetica Neue',Inter,sans-serif";
 
 const easeOut = (x: number) => 1 - Math.pow(1 - x, 3);
@@ -260,7 +264,7 @@ export const NotifStack: React.FC<{ scene: Extract<Scene, { type: "notifstack" }
       <div
         style={{
           position: "absolute",
-          bottom: 168,
+          bottom: SAFE_FLOOR_PX,
           width: "100%",
           textAlign: "center",
           fontFamily: SANS,
@@ -630,7 +634,9 @@ export const StackWindows: React.FC<{ scene: Extract<Scene, { type: "stackwindow
       <div
         style={{
           position: "absolute",
-          bottom: 260,
+          // y 0.80, the platform safe floor. Was 260 (y 0.865), which put an
+          // 84px headline under Instagram's account row and caption.
+          bottom: SAFE_FLOOR_PX,
           width: "100%",
           textAlign: "center",
           fontFamily: SANS,

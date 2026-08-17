@@ -1,4 +1,5 @@
 import React from "react";
+import { Credit } from "./Credit";
 import {
   Easing,
   AbsoluteFill,
@@ -133,23 +134,10 @@ export const SourceRead: React.FC<{ scene: SourceReadProps }> = ({ scene }) => {
         </div>
       </AbsoluteFill>
 
-      {credit ? (
-        <div
-          style={{
-            position: "absolute",
-            bottom: 26,
-            width: "100%",
-            textAlign: "center",
-            fontFamily: theme.sans,
-            fontSize: 24,
-            fontWeight: 600,
-            letterSpacing: 0.4,
-            color: "rgba(20,20,20,0.55)",
-          }}
-        >
-          {credit}
-        </div>
-      ) : null}
+      {/* was a hand-rolled credit at bottom: 26 — y 0.986, under Instagram's
+          "Add comment" bar. The size check could not see it (24px is below
+          display size); the hand-rolled-credit check did. */}
+      {credit ? <Credit text={credit} onMedia plate /> : null}
     </AbsoluteFill>
   );
 };

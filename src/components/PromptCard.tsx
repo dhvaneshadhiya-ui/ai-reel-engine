@@ -1,4 +1,7 @@
 import React from "react";
+
+/** y 0.79 — just inside the platform safe floor (platformSafeArea.ts). */
+const SAFE_LOW = 400;
 import {
   AbsoluteFill,
   useCurrentFrame,
@@ -160,7 +163,7 @@ export const PromptCard: React.FC<{ scene: Props }> = ({ scene }) => {
         </div>
       )}
       {scene.subtext && (
-        <div style={{ position: "absolute", bottom: 300, fontSize: 40, fontWeight: 800, color: CYAN, letterSpacing: 1, opacity: interpolate(t, [0.4, 0.7], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
+        <div style={{ position: "absolute", bottom: SAFE_LOW, fontSize: 40, fontWeight: 800, color: CYAN, letterSpacing: 1, opacity: interpolate(t, [0.4, 0.7], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
           {scene.subtext}
         </div>
       )}
