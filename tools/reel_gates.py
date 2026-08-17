@@ -237,6 +237,7 @@ BLOCKING_RULES: dict[str, str] = {
     "G31": "R1 platforms normalise loudness, so the master must hit the target",
     # RULE 2 — sources are scouted on mobile view first.
     "G29": "R2 sources are captured on mobile view first",
+    "G41": "R2 a desktop capture needs a recorded reason",
     # RULE 3 — what is on screen matches what the creator says.
     #
     # G18 is NOT here on purpose. Its principle is Rule 3 — a card must outlast
@@ -1246,6 +1247,59 @@ def check_beats(beats: dict, vo_end: float | None = None,
                         f"{_norm_words(spoken)[:64]!r}) — move the scene to the "
                         "line it illustrates, or point it at what is actually "
                         "being said.")
+
+    # G41 (Rule 2, blocking) + G42 (tier, advice) — WHERE EACH SOURCE CAME
+    # FROM, AND HOW IT WAS CAPTURED.
+    #
+    # TWO IDS ON PURPOSE. One id carrying both a blocking claim and an
+    # advisory one is the G28 mistake: taste ends up blocking under a
+    # borrowed badge, and classification cannot separate them.
+    #
+    # Two rules meet here, and they are deliberately split between blocking and
+    # advice because they are different KINDS of claim.
+    #
+    # RULE 2 is blocking, and this is the first time it is actually CHECKED
+    # rather than inferred. G29 guesses "was this mobile?" from the image aspect,
+    # which cannot tell a real 360x780 render from a tall crop of a desktop page.
+    # tools/capture.mjs now writes a provenance sidecar at capture time, so a
+    # desktop capture is a recorded fact — and one taken without a stated reason
+    # is a Rule 2 violation, not a matter of opinion.
+    #
+    # TIER is advice. "Official beats reliable beats merely-relevant" is real
+    # editorial craft, but an unannounced product is usually NOT on an official
+    # source, so a reel leaning on reliable outlets is normal work, not a defect.
+    # It gets counted and reported, and the author decides.
+    if manifest:
+        assets = manifest.get("assets") or manifest.get("items") or []
+        by_id = {str(a.get("id")): a for a in assets if a.get("id")}
+        used = [str(sc.get("assetId")) for sc in scenes if sc.get("assetId")]
+        tiers: dict[str, int] = {}
+        untiered: list[str] = []
+        for aid in dict.fromkeys(used):
+            a = by_id.get(aid) or {}
+            cap = a.get("capture") or {}
+            tier = a.get("tier") or cap.get("tier")
+            if tier:
+                tiers[tier] = tiers.get(tier, 0) + 1
+            else:
+                untiered.append(aid)
+            if cap and cap.get("mobile") is False and not cap.get("desktopReason"):
+                errors.append(
+                    f"G41 asset {aid!r} was captured on DESKTOP with no reason "
+                    f"recorded ({cap.get('viewport')}) — sources are scouted on "
+                    "mobile view first; if mobile genuinely could not show it, "
+                    "say so with --desktop-reason.")
+        if tiers.get("fallback"):
+            errors.append(
+                f"G42 {tiers['fallback']} source(s) are tier 'fallback' — merely "
+                "relevant, not the thing being said. Try official, then a named "
+                "reporter at an established outlet, before settling.")
+        if untiered:
+            errors.append(
+                f"G42 {len(untiered)} source(s) record no tier "
+                f"({', '.join(untiered[:5])}{'...' if len(untiered) > 5 else ''}) "
+                "— capture with --tier so how well-sourced the reel is can be "
+                "counted instead of guessed.")
 
     # ---- THE ONLY THINGS ALLOWED TO BLOCK A RENDER -------------------------
     #

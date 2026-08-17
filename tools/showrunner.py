@@ -82,10 +82,20 @@ def steps(slug: str) -> list[dict]:
              label="Assets scouted and manifest written",
              done=_p(f"public/assets/{slug}/manifest.json").exists(),
              auto=None,
-             human="Research the story, capture sources on MOBILE "
-                   "(tools/capture.mjs), cut clips, and write "
-                   f"public/assets/{slug}/manifest.json with credits. "
-                   "See AGENT.md STEP 1a."),
+             human="Plan the shots from the approved script FIRST "
+                   f"(python3 tools/plan_shots.py {slug}), then scout to satisfy "
+                   "each line. Capture on MOBILE and RECORD WHERE IT CAME FROM:\n"
+                   "        node tools/capture.mjs screenshot <url> --out <f.png> "
+                   "--tier official|reliable|fallback\n"
+                   "        --desktop needs --desktop-reason \"<why mobile could "
+                   "not show it>\" (G41 blocks without it)\n"
+                   "      Write a `shows` description concrete enough to prove "
+                   "the script link later — it is\n      what lets "
+                   "tools/link_shots.py justify a `covers` phrase, and thin "
+                   "`shows` text is why\n      grok-bot could only justify 4 of "
+                   "39 while iphone-fold-ultra managed 11 of 30.\n"
+                   f"      Then write public/assets/{slug}/manifest.json with "
+                   "credits and tiers. See AGENT.md STEP 1a."),
         dict(key="script",
              skills=["news-reel           owns structure; formats/<format>.md is the shape",
                      "viral-hook-writer   the first 2 seconds only",

@@ -650,10 +650,79 @@ else:
     raise SystemExit("  FAIL parse_ebur128 accepted output with no summary — "
                      "an unreadable measurement must never pass as clean")
 
+# ---- G41 / G42: capture provenance and source tier ------------------------
+# These need a MUTATED MANIFEST rather than a mutated sheet, because the facts
+# live with the asset, not the scene. Same block-vs-advise assertion as
+# expect_fail, so a gate cannot quietly change which side it is on.
+def expect_manifest(man: dict, gate: str, label: str, want_text: str = "") -> None:
+    sheet = copy.deepcopy(BASE)
+    try:
+        notes = check_beats(sheet, vo_end=vo_end_of(sheet), manifest=man,
+                            vo_words=VO_WORDS)
+    except GateError as e:
+        hit = [gate in str(e), any(gate in a for a in e.advice)]
+        if hit[0]:
+            if gate not in BLOCKING_RULES:
+                print(f"  FAIL {gate} blocked but is not in BLOCKING_RULES ({label})")
+                raise SystemExit(1)
+            if want_text and want_text not in str(e):
+                print(f"  FAIL {gate} fired without {want_text!r} ({label})")
+                raise SystemExit(1)
+            _fired.append((gate, label)); _counted(f"{gate} blocks — {label}"); return
+        if hit[1] and gate not in BLOCKING_RULES:
+            _fired.append((gate, label)); _counted(f"{gate} advises — {label}"); return
+        print(f"  FAIL {gate} did not fire for {label}; got:\n{e}")
+        raise SystemExit(1)
+    if any(gate in n for n in notes):
+        if gate in BLOCKING_RULES:
+            print(f"  FAIL {gate} is in BLOCKING_RULES but only advised ({label})")
+            raise SystemExit(1)
+        if want_text and not any(want_text in n for n in notes):
+            print(f"  FAIL {gate} advised without {want_text!r} ({label})")
+            raise SystemExit(1)
+        _fired.append((gate, label)); _counted(f"{gate} advises — {label}"); return
+    print(f"  FAIL {gate} did NOT detect {label}")
+    raise SystemExit(1)
+
+
+expect_manifest(
+    {"assets": [{"id": "clip-b", "tier": "official",
+                 "capture": {"mobile": False, "viewport": {"width": 1200},
+                             "desktopReason": None}},
+                {"id": "clip-banned"}],
+     "banned_assets": ["clip-banned"]},
+    "G41", "a desktop capture with no recorded reason")
+
+# No tier at all — a legitimate desktop capture, but nothing recorded about
+# WHERE it came from. (The first draft of this case gave the asset a tier and
+# then expected the "records no tier" message, which of course never came.)
+expect_manifest(
+    {"assets": [{"id": "clip-b",
+                 "capture": {"mobile": False, "viewport": {"width": 1200},
+                             "desktopReason": "spec table has no mobile layout"}},
+                {"id": "clip-banned"}],
+     "banned_assets": ["clip-banned"]},
+    "G42", "a source with no tier recorded", want_text="record no tier")
+
+expect_manifest(
+    {"assets": [{"id": "clip-b", "tier": "fallback",
+                 "capture": {"mobile": True, "desktopReason": None}},
+                {"id": "clip-banned"}],
+     "banned_assets": ["clip-banned"]},
+    "G42", "a fallback-tier source", want_text="fallback")
+
+
 # The suite printed "every gate fires on its violation" while G13 and G16 had
 # no failing case at all (found 2026-08-17). Uniqueness of ids was asserted;
 # COVERAGE never was. Assert the claim the last line makes.
+# Collect declared ids from the COMMENT convention *and* from every id the
+# module actually emits. The comment-only scan depended on a house style: adding
+# "# G41 (Rule 2) + G42 (advice) — ..." made BOTH ids invisible to coverage, so
+# they needed no test case and the suite still claimed full coverage. A gate must
+# not be able to hide by writing its comment differently.
 _declared = set(re.findall(r'^\s*# (G\d\d) — ', _src, re.M))
+_declared |= set(re.findall(r'["\']\s*(G\d\d) ', _src))
+_declared |= set(re.findall(r'f"(G\d\d) ', _src))
 _covered = {g for g, _l in _fired}
 _gap = sorted(_declared - _covered)
 if _gap:

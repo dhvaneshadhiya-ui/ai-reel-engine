@@ -30,6 +30,10 @@ function usage(exit = 1) {
   node tools/capture.mjs probe      <url> [--scale 3] [--width 1200] [--wait 2500]
 
 MOBILE IS THE DEFAULT (360x780 @3 = 1080x2340) because every reel is 9:16.
+Record where the source came from:
+  --tier official|reliable|fallback   which tier this source is (see TIERS below)
+  --desktop-reason "<why>"            required with --desktop: mobile could not show it
+
 Pass --desktop for pages with no mobile layout, wide dashboards, or
 side-by-side comparisons.`);
   process.exit(exit);
@@ -43,6 +47,7 @@ for (let i = 0; i < rest.length; i++) {
   if (!a.startsWith("--")) usage();
   const key = a.slice(2);
   const boolFlags = new Set(["full", "mobile", "desktop"]);
+  // --tier and --desktop-reason take VALUES, so they must not be bool flags.
   if (boolFlags.has(key)) {
     flags[key] = true;
   } else {
@@ -80,7 +85,30 @@ const opts = {
   full: !!flags.full,
   hide: flags.hide ? flags.hide.split(",").map((s) => s.trim()).filter(Boolean) : [],
   script: flags.script,
+  tier: flags.tier,
+  desktopReason: flags["desktop-reason"],
 };
+
+/**
+ * SOURCE TIER, recorded at capture time.
+ *
+ * The rule (2026-08-14): look for the EXACT thing being said, official source
+ * first; if it is not there — and for an unannounced product it usually is not —
+ * an established outlet with a named reporter is expected, not a failure; only
+ * then something merely relevant.
+ *
+ *   official   the maker's own newsroom, spec page, keynote
+ *   reliable   established outlet, named reporter
+ *   fallback   merely relevant. Recorded so it can be counted and argued with.
+ *
+ * Recorded HERE because the operator knows which it is at the moment they paste
+ * the URL, and nobody can recover it from the pixels afterwards.
+ */
+const TIERS = new Set(["official", "reliable", "fallback"]);
+if (opts.tier && !TIERS.has(opts.tier)) {
+  console.error(`error: --tier must be one of ${[...TIERS].join(" | ")}`);
+  process.exit(1);
+}
 
 if ((cmd === "screenshot" || cmd === "record") && !opts.out) {
   console.error(`error: --out is required for ${cmd}`);
@@ -189,6 +217,34 @@ function pngDimensions(file) {
   return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
 }
 
+/**
+ * Write a provenance sidecar next to the captured file.
+ *
+ * G29 has been inferring "was this captured on mobile?" from the IMAGE ASPECT —
+ * a portrait picture is assumed to be a phone capture. That proxy cannot tell a
+ * real 360x780 mobile render from a tall crop of a desktop page, and it says
+ * nothing at all about WHERE the source came from. Recording it at capture time
+ * turns Rule 2 and the tier rule from inferences into facts.
+ */
+function writeProvenance(outPath, url, o, cmd) {
+  const rec = {
+    url,
+    kind: cmd,
+    capturedAt: new Date().toISOString(),
+    viewport: { width: o.width, height: o.height, scale: o.scale },
+    mobile: !!o.mobile,
+    tier: o.tier || null,
+    desktopReason: o.mobile ? null : (o.desktopReason || null),
+  };
+  const side = outPath.replace(/\.[^.]+$/, "") + ".capture.json";
+  fs.writeFileSync(side, JSON.stringify(rec, null, 2) + "\n");
+  const warn = [];
+  if (!rec.tier) warn.push("no --tier recorded");
+  if (!rec.mobile && !rec.desktopReason) warn.push("--desktop with no --desktop-reason");
+  console.log(`provenance ${path.resolve(side)}${warn.length ? "  [" + warn.join("; ") + "]" : ""}`);
+}
+
+
 function ensureOutDir(file) {
   fs.mkdirSync(path.dirname(path.resolve(file)), { recursive: true });
 }
@@ -219,6 +275,7 @@ async function screenshot() {
   await browser.close();
   const { w, h } = pngDimensions(opts.out);
   console.log(`saved ${path.resolve(opts.out)}  ${w}x${h}px  (scale ${opts.scale}x)`);
+  writeProvenance(opts.out, url, opts, "screenshot");
 }
 
 // ------------------------------------------------------------------ record
