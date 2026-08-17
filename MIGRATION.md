@@ -295,36 +295,59 @@ they exist only on whichever machine made them. Copy a folder over the top and
 you destroy them. `.gitignore` already excludes all three plus `node_modules/`
 and `bin/`, so a git sync physically cannot touch them.
 
-### 6.2 Carrying changes across, with no account and no network
+### 6.2 Carrying changes across — no terminal needed
+
+**You do three things. The agent does the rest.**
+
+1. **On the machine with the new work**, tell Claude:
+
+   > Build a sync bundle for the other Mac.
+
+   It writes `ai-reel-engine-sync.bundle` (~6 MB) to your Desktop.
+
+2. **AirDrop that one file** to the other Mac. Leave it on the Desktop there.
+
+3. **Open Claude on the other Mac**, pointed at its `ai-reel-engine` folder, and
+   say:
+
+   > Sync this machine from the bundle on my Desktop — read MIGRATION.md §6.2.
+
+That is the whole procedure. Everything below is what the agent runs, recorded
+so it is reproducible — not instructions for a person.
+
+**Agent: making the bundle** (step 1)
 
 ```bash
-# on the machine that has the new work
 git bundle create ~/Desktop/ai-reel-engine-sync.bundle --all
+git bundle verify ~/Desktop/ai-reel-engine-sync.bundle
 ```
 
-One file, ~6 MB, full history. AirDrop or USB it across. Then on the other Mac:
+**Agent: applying it** (step 3)
 
 ```bash
-cd ~/Movies/ai-reel-engine          # wherever that copy lives
-git init -b main                    # only the first time
-git remote add sync ~/Desktop/ai-reel-engine-sync.bundle   # first time only
+cd <the repo>                       # wherever this copy lives
+git status --porcelain              # STOP if this is non-empty — see below
+git init -b main                    # only if not already a git repo
+git remote remove sync 2>/dev/null || true
+git remote add sync ~/Desktop/ai-reel-engine-sync.bundle
 git fetch sync
 git reset --hard FETCH_HEAD
-npm install                         # package.json may have moved
+npm install
 python3 scripts/doctor.py
 python3 tools/test_gates.py
 ```
 
-`reset --hard` replaces every TRACKED file with the incoming version and leaves
-ignored files alone — so the footage, renders and node_modules on that machine
-survive untouched.
+`reset --hard` replaces every TRACKED file and leaves ignored files alone, so
+`public/assets/`, `out/`, `_sources/` and `node_modules/` on that machine are
+untouched. That is the whole reason this is a git sync and not a folder copy.
 
-> **It also discards local edits to tracked files on that machine.** If work was
-> done there since the split, commit it first and `git merge FETCH_HEAD`
-> instead. Check with `git status` before resetting.
+> **Agent: if `git status` is non-empty, STOP and ask.** `reset --hard` discards
+> local edits to tracked files. Work done on that machine since the split must be
+> committed and merged (`git merge FETCH_HEAD`), not steamrollered. Say what
+> changed and let the user decide.
 
-For later syncs, `git bundle create` again and `git fetch sync && git merge
-FETCH_HEAD` — the remote path never changes.
+Then confirm against the baseline in §1.2, and tell the user what §6.3 still
+needs doing by hand.
 
 ### 6.3 What does NOT travel in git, and must be redone per machine
 

@@ -30,10 +30,18 @@ from reel_gates import check_beats, GateError  # noqa: E402
 
 SLUG = "ios27-tiers"
 
+# `--nomusic` emits a SIBLING sheet with the bed swapped for music/silence.mp3,
+# following september-preview-nomusic. The volume automation is kept identical so
+# G09 still fires on a flat bed; only the audio file is silent. Asset paths, the
+# manifest, the approved script and the approval record all stay on the parent
+# slug — only the composition id and the output filename change.
+NOMUSIC = "--nomusic" in sys.argv
+OUT_SLUG = f"{SLUG}-nomusic" if NOMUSIC else SLUG
+
 ROOT = Path(__file__).resolve().parent.parent
 A = f"assets/{SLUG}"
 C = f"{A}/clips"
-OUT = ROOT / f"src/beats/{SLUG}.json"
+OUT = ROOT / f"src/beats/{OUT_SLUG}.json"
 AVATAR = f"{A}/avatar-master.mp4"
 FACE_X = float((ROOT / f"public/{A}/face-x.txt").read_text().strip())
 MANIFEST = json.loads((ROOT / f"public/{A}/manifest.json").read_text())
@@ -507,7 +515,8 @@ for grp in chunk(words):
 # bed-184.mp3 from the style pack does not exist on this machine; every shipped
 # reel uses bed-02.mp3 from=8.0, which is 118.0s — enough for a 104.7s reel.
 music = {
-    "src": "music/bed-02.mp3", "from": 8.0,
+    "src": "music/silence.mp3" if NOMUSIC else "music/bed-02.mp3",
+    "from": 8.0,
     "points": [
         {"t": 0.0, "vol": 0.15},                  # full at the hook
         {"t": 7.5, "vol": 0.08},                  # duck through the tiers
@@ -520,7 +529,7 @@ music = {
 }
 
 beats = {
-    "id": SLUG, "fps": 30, "width": 1080, "height": 1920, "style": "editorial",
+    "id": OUT_SLUG, "fps": 30, "width": 1080, "height": 1920, "style": "editorial",
     "format": "news", "tone": "serious",
     # config.avatarRegistry["f55b0b7c..."].register — a serious script
     # accepts a serious OR neutral presenter (G19).
