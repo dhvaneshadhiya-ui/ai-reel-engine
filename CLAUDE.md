@@ -6,6 +6,43 @@ sourced b-roll → Remotion assembly → loudness master → QC.
 **This file is loaded automatically at the start of every session in this
 directory. Nothing you need lives in a past chat — it lives here.**
 
+## THE CONSTITUTION (user directive, 2026-08-17)
+
+**Three rules are law. Everything else is your judgement.**
+
+1. **We are making videos for Instagram Reels and YouTube Shorts.** 9:16,
+   watched on a phone, usually on mute, with the platform's own interface
+   painted over ours (`src/platformSafeArea.ts` has the measured overlay).
+2. **Sources are scouted on MOBILE view first.** Desktop only when mobile
+   genuinely cannot show the thing, and say why.
+3. **What is on screen must match what the creator is saying.** Every scene
+   that shows a source names the line it illustrates, and those words must be
+   spoken while it is up.
+
+Beyond those: research, scouting, story, script, effects, motion, sound, pacing,
+length, treatment — **all judgement**, aimed at videos that are visually
+appealing, add value, and keep viewers watching. There is no runtime band you
+must hit, no hook length you must respect, no sound-density quota, no required
+CTA. If a longer reel serves the story, make it longer.
+
+`reel_gates.py` still computes everything it used to, and the numbers came from
+real teardowns, so they are worth reading — but only `BLOCKING_RULES` stops a
+render. Everything else prints as `ADVICE`. Two categories block alongside the
+three rules, and neither is taste: **RENDER** (a still in a video slot renders
+black, a clip shorter than its beat, a missing file) and **RIGHTS** (credit the
+sources, numbers carry their source, the user approved this script).
+
+**Classification is the safe direction by default.** A new check is advisory
+unless it is named in `BLOCKING_RULES`, so forgetting to classify one cannot
+silently add a new law. The self-test asserts each check both detects its
+violation AND blocks-or-advises exactly as classified — a gate that promotes
+itself fails the suite.
+
+**When you add a rule, check the CHECK matches the RULE.** G18 was removed from
+blocking for exactly this reason: its principle is Rule 3 (a card must outlast
+the sentence it illustrates) but its test was a flat 2.0s minimum, which is
+taste wearing a rule's badge. A number is not a rule.
+
 ## First two commands, every session
 
 ```bash

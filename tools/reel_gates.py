@@ -37,7 +37,18 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 class GateError(Exception):
-    """A blocking rule was violated. The build must not continue."""
+    """A blocking rule was violated. The build must not continue.
+
+    Carries `advice` — the non-blocking findings from the same run. Without this
+    a blocking error DISCARDED every piece of craft advice computed alongside it,
+    so the author fixed one hard rule, re-ran, and only then saw the notes. Worse,
+    the self-test could not see an advisory gate whose case also tripped a
+    blocking one, and would have reported it as dead.
+    """
+
+    def __init__(self, message: str, advice: list[str] | None = None) -> None:
+        super().__init__(message)
+        self.advice = advice or []
 
 
 # ── tunables, every one traceable to a dated ledger entry ────────────────────
@@ -197,6 +208,85 @@ AZ_ASPECT_MAX = 2.5    # G36. NOT a fresh measurement: it is the SAME wide-
                        # (2.6, 3.1, 4.6:1); 16:9 sources have shipped fine on
                        # iphone18-split and made-by-google-26, so gating
                        # tighter than 2.5 would reject working precedent.
+# ---------------------------------------------------------------------------
+# WHAT MAY BLOCK A RENDER, AND UNDER WHICH RULE
+#
+# Read the long note at the end of check_beats first. In short: the pipeline used
+# to enforce 37 rules, most of them numbers taken from teardowns. Those numbers
+# were real, but taste is not law, and a gate that refuses to render a good video
+# because it runs 84 seconds instead of 80 is doing harm. Only these block.
+# ---------------------------------------------------------------------------
+BLOCKING_RULES: dict[str, str] = {
+    # RULE 1 — the output is an Instagram Reel / YouTube Short.
+    "G01": "R1 audio and scenes must stay in sync or the tail drifts",
+    "G05": "R1 display type must fit the phone frame, not wrap and orphan",
+    "G20": "R1 a row that never lands is unreadable on a phone",
+    "G25": "R1 a cue that never lands is unreadable on a phone",
+    "G30": "R1 an orphaned number fragment is unreadable",
+    "G32": "R1 the outro must clear the platform's own chrome",
+    "G34": "R1 an orphaned single letter is unreadable",
+    "G38": "R1 70-85% watch on mute, so the hook must carry words",
+    # RULE 2 — sources are scouted on mobile view first.
+    "G29": "R2 sources are captured on mobile view first",
+    # RULE 3 — what is on screen matches what the creator says.
+    #
+    # G18 is NOT here on purpose. Its principle is Rule 3 — a card must outlast
+    # the sentence it illustrates — but the CHECK is a flat 2.0s minimum, which
+    # is taste, not the rule: a 1.6s card over a 1.4s claim satisfies Rule 3 and
+    # a 2.1s card over a 3s claim breaks it. A fixed number wearing an R3 badge
+    # is exactly the thing this restructure exists to delete. Promote it back to
+    # blocking once it measures the claim's real length from word timings.
+    "G21": "R3 captions must be words that were actually spoken",
+    "G39": "R3 every scene must carry the script line it illustrates",
+    # RENDER — not opinion. These produce black frames or crash.
+    "G11": "RENDER an assetId that is not in the manifest cannot resolve",
+    "G13": "RENDER a clip shorter than its beat freezes or blacks out",
+    "G28": "RENDER a missing SFX file",
+    "G35": "RENDER a still in a video slot renders black",
+    # RIGHTS — attribution, and the user's control over their own work.
+    "G14": "RIGHTS we credit the sources we use",
+    "G15": "RIGHTS a stated number carries where it came from",
+    "G27": "RIGHTS the user approved THIS script",
+}
+
+
+def _norm_words(s: str) -> str:
+    """Lowercase, strip punctuation, collapse space — so a `covers` phrase can be
+    matched against spoken words without tripping over commas or casing."""
+    import re as _re
+    return _re.sub(r"\s+", " ", _re.sub(r"[^\w\s]", " ", s.lower())).strip()
+
+
+def _shows_source(sc: dict) -> bool:
+    """True when the scene puts BORROWED material on screen.
+
+    The presenter's own avatar footage is not evidence, so it never needs to
+    declare what line it illustrates.
+    """
+    src = str(sc.get("src") or sc.get("topSrc") or "")
+    if "avatar" in src.lower():
+        return False
+    return bool(sc.get("assetId")) or (
+        src.startswith("assets/") and not src.endswith("avatar-master.mp4"))
+
+
+def _partition(errors: list[str]) -> tuple[list[str], list[str]]:
+    """Split findings into blocking and advisory by their gate id.
+
+    Default is ADVICE. A check has to be named in BLOCKING_RULES to stop a
+    render, so forgetting to classify a new gate makes it advisory — the safe
+    direction — instead of silently adding a new law.
+    """
+    block, advise = [], []
+    for e in errors:
+        gid = e.split(" ", 1)[0].strip()
+        if gid in BLOCKING_RULES:
+            block.append(f"{e}\n      [{BLOCKING_RULES[gid]}]")
+        else:
+            advise.append(f"ADVICE {e}")
+    return block, advise
+
+
 MOTION_TYPES = {"footage", "split"}
 BUILDING_TYPES = {"specsheet", "chart", "timeline", "settingspane", "priceladder"}
 VIDEO_EXT = (".mp4", ".webm", ".mov")
@@ -758,26 +848,26 @@ def check_beats(beats: dict, vo_end: float | None = None,
             allowed = ROLE_FIT_TYPES.get(role)
             if allowed is not None and sc["type"] not in allowed:
                 errors.append(
-                    f"G28 scene {i:02d} ({sc['type']}) carries a {role!r} cue "
+                    f"G40 scene {i:02d} ({sc['type']}) carries a {role!r} cue "
                     f"({src}) — {role} belongs on {ROLE_FITS[role]}. "
                     "A cue on the wrong beat is noise, however good the sound.")
             # a cue longer than the beat it sits on bleeds into the next one
             if entry["dur"] > sc["durationSec"] + 0.35 and role != "suspense":
                 errors.append(
-                    f"G28 scene {i:02d} SFX {src} runs {entry['dur']:.2f}s on a "
+                    f"G40 scene {i:02d} SFX {src} runs {entry['dur']:.2f}s on a "
                     f"{sc['durationSec']:.2f}s scene — it bleeds into the next "
                     "beat. Pick a shorter cue.")
             # comedic stings undercut reporting
             if role == "comedic":
                 if fmt_name not in COMEDIC_OK_FORMATS:
                     errors.append(
-                        f"G28 scene {i:02d} uses a comedic sting ({src}) in a "
+                        f"G40 scene {i:02d} uses a comedic sting ({src}) in a "
                         f"{fmt_name!r} reel. Allowed formats: "
                         f"{sorted(COMEDIC_OK_FORMATS)} — a meme boom under a "
                         "factual claim reads as a joke about the claim.")
                 if beats.get("tone") in COMEDIC_BLOCKED_TONES:
                     errors.append(
-                        f"G28 scene {i:02d} uses a comedic sting ({src}) in a "
+                        f"G40 scene {i:02d} uses a comedic sting ({src}) in a "
                         "serious-tone reel.")
 
     # a riser PROMISES a payoff — it must be followed by a reveal or impact
@@ -793,14 +883,14 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 for s2 in nxt for cc in (s2.get("sfx") or []))
             if not paid:
                 errors.append(
-                    f"G28 scene {i:02d} builds suspense ({c.get('src')}) with "
+                    f"G40 scene {i:02d} builds suspense ({c.get('src')}) with "
                     "no payoff in the next 3 beats — a riser that does not "
                     "resolve into a reveal or an impact is a broken promise.")
 
     for role, cap in ROLE_MAX.items():
         if role_counts.get(role, 0) > cap:
             errors.append(
-                f"G28 {role_counts[role]} {role!r} cues, max {cap} per reel — "
+                f"G40 {role_counts[role]} {role!r} cues, max {cap} per reel — "
                 "punctuation stops being punctuation when it repeats.")
 
     # G29 — SOURCE PAGES ARE CAPTURED ON MOBILE (user rule 2026-08-13).
@@ -865,7 +955,11 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # only ever written down. A headline in the closing stretch of the reel is
     # the CTA; at the top of the frame it competes with nothing and gets
     # missed, and on Instagram the top band is where the UI chrome sits.
-    OUTRO_Y_MIN = 0.45
+    # Was 0.45 — an arbitrary "mid-frame or just below". The RULE is only that
+    # the outro must clear the platform's own furniture: Instagram's top header
+    # sits at y 0.100 and its account row at y 0.835 (src/platformSafeArea.ts).
+    # Anything inside that window is a composition choice, not a violation.
+    OUTRO_Y_MIN, OUTRO_Y_MAX = 0.12, 0.80
     with_head = [(i, sc) for i, sc in enumerate(scenes)
                  if isinstance(sc.get("headline"), dict)]
     if with_head:
@@ -873,13 +967,13 @@ def check_beats(beats: dict, vo_end: float | None = None,
         start = sum(s["durationSec"] for s in scenes[:li])
         if total and start >= total * 0.80:          # in the closing fifth
             y = lsc["headline"].get("y")
-            if y is None or y < OUTRO_Y_MIN:
+            if y is None or y < OUTRO_Y_MIN or y > OUTRO_Y_MAX:
                 errors.append(
                     f"G32 the closing headline (scene {li:02d}, at "
-                    f"{start:.1f}s of {total:.1f}s) sits at y={y} — the outro "
-                    f"goes at y>={OUTRO_Y_MIN} so it lands mid-frame or just "
-                    "below, where the viewer is looking and clear of the "
-                    "platform's top chrome.")
+                    f"{start:.1f}s of {total:.1f}s) sits at y={y} — put it "
+                    f"inside y {OUTRO_Y_MIN}-{OUTRO_Y_MAX}, clear of "
+                    "Instagram's top header (0.100) and its account row "
+                    "(0.835). Where it goes inside that window is your call.")
 
     # G33 — SOUND MUST BE DESIGNED, NOT JUST PRESENT (2026-08-14).
     # september-preview passed G08 with 7 cues that were only THREE distinct
@@ -1066,10 +1160,93 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 "watch on mute, so a hook with no words on screen says nothing. "
                 "Show the claim.")
 
-    if errors:
-        raise GateError(
-            f"{len(errors)} blocking rule violation(s):\n  - "
-            + "\n  - ".join(errors))
+    # G39 — WHAT IS ON SCREEN MUST BE WHAT IS BEING SAID (user rule 2026-08-17:
+    # "what we see on the video should match as much as possible with what
+    # creator says").
+    #
+    # This is the rule the engine has been missing since the September teardown,
+    # where the user wrote: "We must have scouted sources according the script and
+    # try to show the exact same thing in the video whenever possible." It stayed
+    # prose for five days.
+    #
+    # A gate cannot judge whether a picture means what a sentence means. What it
+    # CAN do is refuse the case where nobody ever stated the link: every scene
+    # that puts a SOURCE on screen must name the phrase it illustrates, and that
+    # phrase must actually be spoken WHILE the scene is up. That turns "show the
+    # same thing" from an intention into something with a right answer.
+    #
+    # The presenter's own footage is exempt — the avatar is not evidence.
+    if vo_words:
+        wt: list[tuple[str, float, float]] = []
+        for x in vo_words:
+            if isinstance(x, (list, tuple)) and len(x) >= 3:
+                try:
+                    wt.append((str(x[0]), float(x[1]), float(x[2])))
+                except (TypeError, ValueError):
+                    pass
+        if wt:
+            cursor = 0.0
+            for i, sc in enumerate(scenes):
+                start = cursor
+                cursor += sc["durationSec"]
+                end = cursor
+                if not _shows_source(sc):
+                    continue
+                spoken = " ".join(w for w, a, b in wt if b > start and a < end)
+                if not _norm_words(spoken):
+                    # Nothing is being said over this beat — a held image or a
+                    # deliberate musical pause. There is no line to match, so
+                    # demanding one would make a legitimate beat unfixable.
+                    continue
+                covers = str(sc.get("covers") or "").strip()
+                if not covers:
+                    errors.append(
+                        f"G39 scene {i:02d} ({sc['type']}) puts a source on "
+                        f"screen but never says WHICH line it illustrates. Add "
+                        f"`covers` — the phrase this visual proves. Spoken over "
+                        f"it: {_norm_words(spoken)[:72]!r}")
+                elif _norm_words(covers) not in _norm_words(spoken):
+                    errors.append(
+                        f"G39 scene {i:02d} ({sc['type']}) claims to cover "
+                        f"{covers!r}, but those words are not spoken while it is "
+                        f"on screen ({start:.1f}-{end:.1f}s says "
+                        f"{_norm_words(spoken)[:64]!r}) — move the scene to the "
+                        "line it illustrates, or point it at what is actually "
+                        "being said.")
+
+    # ---- THE ONLY THINGS ALLOWED TO BLOCK A RENDER -------------------------
+    #
+    # Directive, 2026-08-17: "Nothing should be hardcoded, behind the gates and
+    # rules except we are making videos for Instagram Reels and YouTube Shorts."
+    # Plus two more: sources are scouted on MOBILE view first, and what is on
+    # screen must match what the creator says.
+    #
+    # Everything else — runtime length, hook duration, facecam share, sound
+    # density, how many highlights a beat carries, whether a genre "needs" a CTA
+    # — is CRAFT JUDGEMENT and is now advice. It still gets computed and printed,
+    # with the evidence that produced it, because the measurements were real and
+    # throwing them away would be throwing away the teardowns behind them. It
+    # just no longer refuses to render.
+    #
+    # A gate earns BLOCKING status only by belonging to one of these five:
+    #   RULE 1  the output is an Instagram Reel / YouTube Short
+    #   RULE 2  sources are captured on mobile first
+    #   RULE 3  the picture matches the words
+    #   RENDER  it does not technically work (black frames, missing files)
+    #   RIGHTS  attribution and the user's own approval
+    #
+    # Anything not listed here is advice by DEFAULT — the safe direction. A new
+    # gate has to argue its way onto this list rather than land here by accident.
+    blocking, advice = _partition(errors)
+    warnings = advice + warnings
+
+    if blocking:
+        msg = (f"{len(blocking)} blocking violation(s) — these are the only "
+               f"rules that stop a render:\n  - " + "\n  - ".join(blocking))
+        if advice:
+            msg += (f"\n\n  {len(advice)} advisory note(s) from the same run — "
+                    "judgement, not law:\n  - " + "\n  - ".join(advice))
+        raise GateError(msg, advice=warnings)
     return warnings
 
 

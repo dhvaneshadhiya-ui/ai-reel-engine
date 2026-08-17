@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
-"""Self-test for reel_gates: prove every gate actually fires.
+"""Self-test for reel_gates: prove every check detects its violation, and that
+each one blocks or advises exactly as classified.
 
-A gate that never triggers is worse than no gate — it buys false confidence.
-This takes a known-good beat sheet, mutates it one rule at a time, and asserts
-the matching gate id appears in the raised error.
+A check that never triggers is worse than none — it buys false confidence. This
+takes a known-good beat sheet, mutates it one rule at a time, and asserts the
+matching id turns up.
+
+Since 2026-08-17 only three standing rules (plus render correctness and rights)
+may BLOCK; everything else is advice. So each case asserts two things: the check
+detected the violation, and its block-or-advise behaviour matches BLOCKING_RULES.
+A gate that quietly promoted itself to blocking now fails the suite.
 
     python3 tools/test_gates.py
 """
@@ -18,6 +24,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from reel_gates import (  # noqa: E402
+    BLOCKING_RULES,
     CAPTION_ALIASES,
     RUNTIME_CEILING,
     GateError,
@@ -45,6 +52,9 @@ def good() -> dict:
         # presenter at 0s made G17 ("presenter appears after 5s") unfireable.
         {"credit": "@src", "type": "footage", "durationSec": 2.0,
          "src": "assets/x/clips/hook.mp4",
+         # G39: a scene that shows a SOURCE must name the line it illustrates,
+         # and those words must be spoken while it is on screen.
+         "covers": "macOS ships",
          "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.15},
                  {"src": "sfx/Camera Shutter.MP3", "vol": 0.16}]},
         {"credit": "@src", "type": "split", "durationSec": 2.5, "topSrc": "assets/x/clips/a.mp4",
@@ -174,20 +184,49 @@ def expect_pass(sheet: dict, label: str) -> None:
 
 
 def expect_fail(mutate, gate: str, label: str) -> None:
+    """Assert the check DETECTS its violation.
+
+    Since 2026-08-17 only the three standing rules (plus render correctness and
+    rights) block a render; every other finding is advice. So "fires" now means
+    the gate id appears EITHER in the raised error OR in the returned advice —
+    detection is what is being tested, and whether it blocks is asserted
+    separately against BLOCKING_RULES. Without this split the suite would have
+    reported the advisory checks as dead the moment they stopped raising, and the
+    obvious "fix" would have been to delete them.
+    """
     sheet = copy.deepcopy(BASE)
     vo = vo_end_of(sheet)          # capture BEFORE mutation where relevant
     mutate(sheet)
     try:
-        check_beats(sheet, vo_end=vo, manifest=MANIFEST,
-                    vo_words=VO_WORDS)
+        notes = check_beats(sheet, vo_end=vo, manifest=MANIFEST,
+                            vo_words=VO_WORDS)
     except GateError as e:
-        if gate in str(e):
+        if gate in str(e) and gate in BLOCKING_RULES:
+            pass
+        elif any(gate in a for a in e.advice) and gate not in BLOCKING_RULES:
+            # detected as advice, while something ELSE blocked this sheet
             _fired.append((gate, label))
-            _counted(f"{gate} fires — {label}")
+            _counted(f"{gate} advises — {label}")
+            return
+        if gate in str(e):
+            if gate not in BLOCKING_RULES:
+                print(f"  FAIL {gate} BLOCKED a render but is not in "
+                      f"BLOCKING_RULES ({label})")
+                raise SystemExit(1)
+            _fired.append((gate, label))
+            _counted(f"{gate} blocks — {label}")
             return
         print(f"  FAIL {gate} did not fire for {label}; got:\n{e}")
         raise SystemExit(1)
-    print(f"  FAIL {gate} did NOT fire for {label} (no error raised)")
+    if any(gate in n for n in notes):
+        if gate in BLOCKING_RULES:
+            print(f"  FAIL {gate} is in BLOCKING_RULES but only advised "
+                  f"({label})")
+            raise SystemExit(1)
+        _fired.append((gate, label))
+        _counted(f"{gate} advises — {label}")
+        return
+    print(f"  FAIL {gate} did NOT detect {label} (no error, no advice)")
     raise SystemExit(1)
 
 
@@ -292,12 +331,13 @@ expect_pass(_legacy_style, "legacy style id 'varun-mayya' still passes")
 # reasons unrelated to runtime. A pass-the-whole-sheet test would be testing
 # the fixture, not the rule.
 def expect_gate(sheet: dict, gate: str, present: bool, label: str) -> None:
+    """Same detection semantics as expect_fail: raised OR advised both count."""
     try:
-        check_beats(sheet, vo_end=vo_end_of(sheet), manifest=MANIFEST,
-                    vo_words=VO_WORDS)
-        fired = False
+        notes = check_beats(sheet, vo_end=vo_end_of(sheet), manifest=MANIFEST,
+                            vo_words=VO_WORDS)
+        fired = any(gate in n for n in notes)
     except GateError as e:
-        fired = gate in str(e)
+        fired = gate in str(e) or any(gate in a for a in e.advice)
     if fired is present:
         _counted(label)
         return
@@ -380,13 +420,13 @@ CASES = [
     (lambda s: s["scenes"][2]["sfx"][0].update(src="sfx/Whoosh-typo.MP3"),
      "G28", "SFX filename not in the catalogue (would render silent)"),
     (lambda s: s["scenes"][2]["sfx"][0].update(src="sfx/Magic Reveal.MP3"),
-     "G28", "reveal cue on a plain footage beat"),
+     "G40", "reveal cue on a plain footage beat"),
     (lambda s: s["scenes"][4]["sfx"][0].update(src="sfx/Vine Boom.MP3"),
-     "G28", "comedic sting in a news reel"),
+     "G40", "comedic sting in a news reel"),
     # scene 9 is followed by wordcascade + plain footage — nothing to pay off
     (lambda s: s["scenes"][9].__setitem__(
         "sfx", [{"src": "sfx2/risers-01.mp3", "vol": 0.15}]),
-     "G28", "riser with no payoff in the next 3 beats"),
+     "G40", "riser with no payoff in the next 3 beats"),
     (lambda s: s.update(music=None), "G09", "no music bed"),
     (lambda s: s.update(music=None, noMusic=True),
      "G09", "noMusic switched on with no written reason"),
@@ -520,6 +560,11 @@ CASES = [
      "G38", "a logo-build opener instead of motion at frame 0"),
     (lambda s: s["scenes"][0].__setitem__("hideCaptions", True),
      "G38", "a hook with no words on screen (mute-blind)"),
+    # 2026-08-17, RULE 3: what is on screen must be what is being said.
+    (lambda s: s["scenes"][0].pop("covers"),
+     "G39", "a source on screen with no stated line"),
+    (lambda s: s["scenes"][0].__setitem__("covers", "quarterly revenue guidance"),
+     "G39", "a source claiming a line that is never spoken over it"),
 ]
 
 for mutate, gate, label in CASES:
@@ -539,4 +584,5 @@ if _gap:
         f"  otherwise claim it was.")
 _counted(f"coverage: all {len(_declared)} gate ids have a failing case")
 
-print(f"\nall {CHECKS} checks passed — every gate fires on its violation.")
+print(f"\nall {CHECKS} checks passed — every check detects its violation, "
+      "and blocks or advises exactly as BLOCKING_RULES classifies it.")
