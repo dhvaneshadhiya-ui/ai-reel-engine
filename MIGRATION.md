@@ -346,8 +346,18 @@ untouched. That is the whole reason this is a git sync and not a folder copy.
 > committed and merged (`git merge FETCH_HEAD`), not steamrollered. Say what
 > changed and let the user decide.
 
-Then confirm against the baseline in §1.2, and tell the user what §6.3 still
-needs doing by hand.
+Then confirm against the baseline in §1.2, and run:
+
+```bash
+bash tools/install_global_skills.sh
+```
+
+The 29 in-repo skills arrive with the repo and need nothing — 8 are real
+directories, 21 are symlinks into `.agents/skills/`, all relative, so they
+resolve wherever the folder lands. The 5 GLOBAL skills live in `~/.agents/skills`
+and can never be in a bundle; that script is the whole fix.
+
+Finally tell the user what else in §6.3 still needs doing by hand.
 
 ### 6.3 What does NOT travel in git, and must be redone per machine
 
@@ -356,7 +366,7 @@ lives outside the repo:
 
 | Not in git | Redo with |
 |---|---|
-| **5 global skills** — find-skills, humanizer, fact-check-workflow, youtube-seo, thumbnail-design | `npx skills add <owner/repo@skill> -g -y` (list in CLAUDE.md) |
+| **5 global skills** — find-skills, humanizer, fact-check-workflow, youtube-seo, thumbnail-design | `bash tools/install_global_skills.sh` — one command, idempotent, verifies afterwards |
 | **chatterbox venv** | `python3 -m venv ~/.venvs/chatterbox && ~/.venvs/chatterbox/bin/pip install chatterbox-tts` — NEVER system-wide, it downgrades torch under whisper |
 | **PATH in `~/.zshenv`** | §3.4 — `.zshrc` is interactive-only, so agent-run commands never see it |
 | **ffmpeg-full, manim, deno, yt-dlp-ejs** | §2.1 / §3.2 |
