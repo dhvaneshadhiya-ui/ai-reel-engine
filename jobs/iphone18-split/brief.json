@@ -1,0 +1,11 @@
+{
+  "slug": "iphone18-split",
+  "topic": "Apple skipping the iPhone 18 launch this year \u2014 Pro-only September, base model moves to spring 2027",
+  "details": "Ref: https://www.macrumors.com/2026/08/12/apple-skipping-iphone-18-launch-this-year/ \u2014 Pegatron earnings call confirmed split launch",
+  "style": "editorial",
+  "target_seconds": 90,
+  "cta_keyword": "IPHONE18",
+  "created_at": "2026-08-13T06:19:13.475766+00:00",
+  "status": "initialized",
+  "_style_note": "was 'nick-saraev' \u2014 new_job.py stamped that on every brief regardless of config.json (bug fixed 2026-08-16); the reel shipped editorial."
+}

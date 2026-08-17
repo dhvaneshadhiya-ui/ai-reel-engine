@@ -1,0 +1,37 @@
+{
+  "_comment": "Copy to config.json and fill in YOUR OWN ids. Never commit real API keys \u2014 those live in your shell env or the connector, never in this file.",
+  "avatar": {
+    "provider": "heygen",
+    "avatarId": "0aa05d6e90e74f9fa23b75d0d8c267c4",
+    "voiceId": "bb79e8390b4340ce8793ea5f123dbba7",
+    "engine": "avatar_v",
+    "resolution": "1080p",
+    "aspectRatio": "9:16",
+    "voiceSpeed": 1.2,
+    "_note": "Generate ONE continuous master per reel. If your provider's vertical auto-crop misframes the face, generate 16:9 and crop with a measured face-x instead."
+  },
+  "faceFraming": {
+    "faceXDefault": 0.41,
+    "_note": "Horizontal face-centre as a fraction of frame width. Measure it once per avatar on a mid frame (overlay a grid), save per reel to public/assets/<slug>/face-x.txt."
+  },
+  "voiceClone": {
+    "enabled": false,
+    "space": "vibingvoice/vibe-voice-custom-voices",
+    "referenceSample": "public/assets/voice/voice-ref.wav",
+    "_note": "Optional. A clean ~18s sample of your own voice. Free community GPU space with a daily quota."
+  },
+  "render": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "concurrency": 2,
+    "timeoutMs": 120000,
+    "loudnessTarget": "I=-14:TP=-1.2:LRA=7"
+  },
+  "defaults": {
+    "style": "editorial",
+    "targetSeconds": 42,
+    "captionStyle": "word-reveal",
+    "musicBed": "music/bed-02.mp3"
+  }
+}

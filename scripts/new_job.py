@@ -1,0 +1,127 @@
+#!/usr/bin/env python3
+"""Initialize a Nick-style reel job without overwriting existing work."""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+from datetime import datetime, timezone
+from pathlib import Path
+
+DEFAULT_ENGINE = Path(__file__).resolve().parent.parent  # repo root
+
+
+def locked_style(engine: Path = DEFAULT_ENGINE) -> str:
+    """Locked style pack from config.json — never hardcode it here.
+
+    This stamped "nick-saraev" on every new brief until 2026-08-16 while
+    config.json defaulted to the editorial pack, so the generic path opened
+    each job in the wrong style. Same failure as compile_shot_plan.py.
+    """
+    cfg = engine / "config.json"
+    locked = "editorial"
+    if cfg.exists():
+        try:
+            locked = json.loads(cfg.read_text()).get("defaults", {}).get(
+                "style", locked)
+        except Exception:
+            pass
+    return locked
+
+
+def slugify(value: str) -> str:
+    value = re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
+    return value[:64]
+
+
+def write_new(path: Path, content: str) -> None:
+    if path.exists():
+        raise SystemExit(f"refusing to overwrite existing file: {path}")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("slug", nargs="?")
+    parser.add_argument("--topic", required=True)
+    parser.add_argument("--details", default="")
+    parser.add_argument("--cta-keyword", default="")
+    parser.add_argument("--target-seconds", type=int, default=90)
+    parser.add_argument(
+        "--engine",
+        type=Path,
+        default=Path(os.environ.get("REEL_ENGINE", DEFAULT_ENGINE)),
+    )
+    args = parser.parse_args()
+
+    slug = slugify(args.slug or args.topic)
+    if not slug:
+        raise SystemExit("could not derive a safe slug")
+    # user rule 2026-08-11: reels run 1-2 minutes, length chosen by topic
+    if not 60 <= args.target_seconds <= 120:
+        raise SystemExit("--target-seconds must be between 60 and 120")
+
+    engine = args.engine.expanduser().resolve()
+    if not (engine / "package.json").exists():
+        raise SystemExit(f"news-reels engine not found: {engine}")
+
+    keyword = re.sub(r"[^A-Z0-9]", "", args.cta_keyword.upper())
+    if not keyword:
+        keyword = re.sub(r"[^A-Z0-9]", "", slug.split("-")[0].upper())[:14] or "GUIDE"
+
+    brief = {
+        "slug": slug,
+        "topic": args.topic,
+        "details": args.details,
+        "style": locked_style(engine),
+        "target_seconds": args.target_seconds,
+        "cta_keyword": keyword,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "status": "initialized",
+    }
+    manifest = {"slug": slug, "items": []}
+    shot_plan = {
+        "emphasis": [],
+        "caption_corrections": {},
+        "shots": [],
+    }
+
+    write_new(
+        engine / f"jobs/{slug}/brief.json",
+        json.dumps(brief, indent=2, ensure_ascii=False) + "\n",
+    )
+    write_new(
+        engine / f"jobs/{slug}/giveaway.md",
+        f"# {args.topic}\n\nResource promised for comment keyword **{keyword}**.\n",
+    )
+    write_new(
+        engine / f"public/assets/{slug}/manifest.json",
+        json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
+    )
+    write_new(
+        engine / f"jobs/{slug}/shot-plan.json",
+        json.dumps(shot_plan, indent=2, ensure_ascii=False) + "\n",
+    )
+    write_new(
+        engine / f"scripts/{slug}.md",
+        (
+            f"# {args.topic}\n\n"
+            "## Final spoken script\n\n"
+            "<write the final script here>\n\n"
+            "## Beat map\n\n"
+            "| VO phrase | Visual | Manifest ID / MG spec |\n"
+            "|---|---|---|\n"
+        ),
+    )
+    (engine / f"_sources/assets/{slug}").mkdir(parents=True, exist_ok=True)
+
+    print(f"initialized {slug}")
+    print(f"brief: {engine / f'jobs/{slug}/brief.json'}")
+    print(f"assets: {engine / f'public/assets/{slug}/'}")
+
+
+if __name__ == "__main__":
+    main()

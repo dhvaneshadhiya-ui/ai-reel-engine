@@ -1,0 +1,3024 @@
+{
+  "id": "made-by-google-26",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "varun",
+  "format": "news",
+  "allowLong": true,
+  "allowLongReason": "User explicitly requested an ~2-minute reel for this event roundup (2026-08-13). Target 100-115s.",
+  "script": "Google just refreshed every single piece of hardware it makes. Four new Pixels, a new watch, and a $29 tracker with a billion Android phones behind it. This is Made by Google 2026 — everything that actually matters, in two minutes. The Pixel 11 is $899 now, with a camera bar that's 40% thinner. Behind the glass is a new 48-megapixel sensor pulling in 56% more light. The Pro and Pro XL push a 3,600-nit display, and Pro Zoom hits 120x. Just look at this. The Pro XL also charges 15 hours of battery in 15 minutes. The Pixel 11 Pro Fold is nearly 10% lighter, almost a millimeter thinner, and 3 times more durable. Google says the new back is nearly impossible to crack. Here's the part almost nobody noticed. All of it runs on Tensor G6. 50% more AI compute, so Gemini runs 3.5 times faster on 3.5 times less energy. And the new Titan M3 chip is hardened against quantum computer attacks — Google is planning a decade ahead. Pixel Watch 5 is 20% faster, tracks GPS routes twice as accurately, and it's the only watch tracking insulin resistance trends. It can even detect a breathing emergency and call for help on its own. Then the Pixel Tag. $29, stainless steel, a one-year battery — and it finds your stuff through over a billion Android devices. The AirTag finally has a real fight. The camera now translates American Sign Language live. Just watch this. Magic Capture picks your best shot from around 500 frames. And Rambler turns your voice rambles into clean text. Now, the catch. Every single phone got a $100 price bump this year. And Pixel Buds Pro 2 only got a new color. Anyways — every phone gets 7 years of updates and starts at 256 gigs. They hit shelves August 20th. The Tag lands November 11th. So: a quantum-proof phone and a $29 tracker. Is that enough to pull you off your iPhone? Tell me in the comments.",
+  "approval": {
+    "sha256": "689f89be9e629d21ac331eac29e1db638092cacf21949dbf77e6fb0a38802812",
+    "approvedAt": "2026-08-13T07:23:26+00:00",
+    "words": 335,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+  },
+  "audio": "assets/made-by-google-26/avatar-master-169.mp4",
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 8.0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.15
+      },
+      {
+        "t": 10.12,
+        "vol": 0.09
+      },
+      {
+        "t": 35.76,
+        "vol": 0.14
+      },
+      {
+        "t": 37.06,
+        "vol": 0.08
+      },
+      {
+        "t": 53.3,
+        "vol": 0.12
+      },
+      {
+        "t": 74.4,
+        "vol": 0.08
+      },
+      {
+        "t": 101.08,
+        "vol": 0.13
+      },
+      {
+        "t": 109.58,
+        "vol": 0.1
+      },
+      {
+        "t": 127.78,
+        "vol": 0.14
+      },
+      {
+        "t": 134.41,
+        "vol": 0.1
+      },
+      {
+        "t": 135.21,
+        "vol": 0.02
+      }
+    ]
+  },
+  "captionStyle": "nick-display",
+  "emphasis": [
+    "$29",
+    "$899",
+    "40%",
+    "56%",
+    "48",
+    "3,600-nit",
+    "120x",
+    "15",
+    "10%",
+    "3x",
+    "G6",
+    "3.5x",
+    "Titan",
+    "quantum",
+    "20%",
+    "insulin",
+    "breathing",
+    "billion",
+    "500",
+    "Rambler",
+    "$100",
+    "7",
+    "256",
+    "August",
+    "November",
+    "iPhone"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "durationSec": 1.68,
+      "topSrc": "assets/made-by-google-26/clips/c-fam.mp4",
+      "topFrom": 0.0,
+      "topFocusX": 0.5,
+      "bottomSrc": "assets/made-by-google-26/avatar-master-169.mp4",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.527,
+      "credit": "Made by Google",
+      "assetId": "family-lineup",
+      "captionBottom": 1000,
+      "sfx": [
+        {
+          "src": "sfx2/risers-01.mp3",
+          "vol": 0.15
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-recycled.mp4",
+      "durationSec": 1.92,
+      "zoomDir": "out",
+      "credit": "Made by Google",
+      "assetId": "recycled-slide",
+      "from": 5.0
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-colors.mp4",
+      "durationSec": 2.24,
+      "bg": "gradient",
+      "aspect": 1.8556701030927836,
+      "credit": "Made by Google",
+      "assetId": "lineup-colors-slide"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-tagkeys.mp4",
+      "durationSec": 1.84,
+      "zoomDir": "in",
+      "credit": "Made by Google",
+      "assetId": "tag-keys-table"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-tagfind2.mp4",
+      "durationSec": 2.44,
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "credit": "Made by Google",
+      "assetId": "tag-find-ui"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-droplab.mp4",
+      "durationSec": 2.68,
+      "zoomDir": "out",
+      "credit": "Made by Google",
+      "assetId": "durability-lab",
+      "kinetic": {
+        "text": "MADE BY GOOGLE 2026",
+        "style": "caps",
+        "at": 0.25,
+        "y": 0.24
+      },
+      "sfx": [
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "vol": 0.16
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/avatar-master-169.mp4",
+      "durationSec": 2.76,
+      "from": 12.8,
+      "focusX": 0.515,
+      "zoomDir": "in"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-p11pro.mp4",
+      "durationSec": 1.5,
+      "zoomDir": "in",
+      "credit": "Made by Google",
+      "assetId": "p11pro-coral-render"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-p11pro2.mp4",
+      "durationSec": 1.66,
+      "zoomDir": "out",
+      "credit": "Made by Google",
+      "assetId": "p11pro-coral-render"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-cambar.mp4",
+      "durationSec": 2.76,
+      "zoomDir": "in",
+      "credit": "Made by Google",
+      "assetId": "camera-bar-macro"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-xray2.mp4",
+      "durationSec": 1.64,
+      "zoomDir": "out",
+      "credit": "Made by Google",
+      "assetId": "teardown-xray"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-xray.mp4",
+      "durationSec": 1.84,
+      "zoomDir": "in",
+      "credit": "Made by Google",
+      "assetId": "teardown-xray"
+    },
+    {
+      "type": "specsheet",
+      "durationSec": 2.38,
+      "kicker": "Pixel 11",
+      "title": "New main sensor",
+      "rows": [
+        {
+          "label": "MAIN SENSOR",
+          "value": "48MP"
+        },
+        {
+          "label": "LIGHT SENSITIVITY",
+          "value": "+56%",
+          "accent": true
+        }
+      ],
+      "footnote": "Source: blog.google"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-p11front2.mp4",
+      "durationSec": 2.75,
+      "zoomDir": "in",
+      "credit": "Made by Google",
+      "assetId": "p11-front-pink"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-p11front.mp4",
+      "durationSec": 2.82,
+      "zoomDir": "out",
+      "credit": "Made by Google",
+      "assetId": "p11-front-pink"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-zoom120.mp4",
+      "durationSec": 2.85,
+      "bg": "gradient",
+      "aspect": 1.6538461538461537,
+      "credit": "Made by Google",
+      "assetId": "zoom-120x-slide"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-zoomcity.mp4",
+      "durationSec": 1.3,
+      "zoomDir": "in",
+      "credit": "Made by Google",
+      "assetId": "zoom-city-demo",
+      "captionBottom": 260,
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "vol": 0.12
+        }
+      ]
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-battery.mp4",
+      "durationSec": 2.28,
+      "bg": "gradient",
+      "aspect": 1.724770642201835,
+      "credit": "Made by Google",
+      "assetId": "battery-slide",
+      "from": 3.0
+    },
+    {
+      "type": "statcard",
+      "durationSec": 2.54,
+      "title": "Pro XL · WIRED CHARGING",
+      "bg": "black",
+      "rows": [
+        {
+          "label": "TIME PLUGGED IN",
+          "value": "15 min",
+          "pct": 0.2
+        },
+        {
+          "label": "BATTERY GAINED",
+          "value": "15 hr",
+          "pct": 0.92
+        }
+      ],
+      "footnote": "Source: blog.google"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-foldstand.mp4",
+      "durationSec": 2.08,
+      "zoomDir": "in",
+      "credit": "Made by Google",
+      "assetId": "fold-standing"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-foldhinge.mp4",
+      "durationSec": 1.98,
+      "zoomDir": "out",
+      "credit": "Made by Google",
+      "assetId": "fold-hinge-macro",
+      "from": 0.6
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-foldedge.mp4",
+      "durationSec": 2.14,
+      "zoomDir": "in",
+      "credit": "Made by Google",
+      "assetId": "fold-hinge-macro"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/avatar-master-169.mp4",
+      "durationSec": 2.0,
+      "from": 48.08,
+      "focusX": 0.515,
+      "zoomDir": "in"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/avatar-master-169.mp4",
+      "durationSec": 1.48,
+      "from": 50.08,
+      "focusX": 0.515,
+      "zoomDir": "out"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/avatar-master-169.mp4",
+      "durationSec": 1.74,
+      "from": 51.56,
+      "focusX": 0.515,
+      "zoomDir": "in"
+    },
+    {
+      "type": "wordcascade",
+      "durationSec": 2.56,
+      "bg": "cream",
+      "words": [
+        {
+          "text": "the part",
+          "style": "caps",
+          "at": 0.2
+        },
+        {
+          "text": "NOBODY",
+          "style": "caps",
+          "at": 0.7,
+          "size": 1.5,
+          "accent": true
+        },
+        {
+          "text": "noticed",
+          "style": "caps",
+          "at": 1.2
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-tensor.mp4",
+      "durationSec": 2.75,
+      "zoomDir": "in",
+      "credit": "Made by Google",
+      "assetId": "tensor-g6-macro"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-tensor2.mp4",
+      "durationSec": 2.39,
+      "zoomDir": "out",
+      "credit": "Made by Google",
+      "assetId": "tensor-g6-macro"
+    },
+    {
+      "type": "chart",
+      "durationSec": 3.17,
+      "kicker": "Tensor G6 · ON-DEVICE AI",
+      "title": "Gemini Nano, uncorked",
+      "bg": "black",
+      "unit": "x",
+      "items": [
+        {
+          "label": "AI SPEED",
+          "value": 3.5,
+          "display": "3.5x faster",
+          "highlight": true
+        },
+        {
+          "label": "TENSOR G5",
+          "value": 1,
+          "display": "1x",
+          "sub": "previous chip"
+        }
+      ],
+      "source": "blog.google"
+    },
+    {
+      "type": "specsheet",
+      "durationSec": 2.81,
+      "kicker": "EFFICIENCY",
+      "title": "Energy per AI task",
+      "rows": [
+        {
+          "label": "Tensor G5",
+          "value": "3.5 units"
+        },
+        {
+          "label": "Tensor G6",
+          "value": "1 unit",
+          "accent": true
+        }
+      ],
+      "footnote": "Source: blog.google"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/avatar-master-169.mp4",
+      "durationSec": 2.02,
+      "from": 66.98,
+      "focusX": 0.515,
+      "zoomDir": "in"
+    },
+    {
+      "type": "specsheet",
+      "durationSec": 2.82,
+      "kicker": "SECURITY",
+      "title": "Titan M3",
+      "rows": [
+        {
+          "label": "THREAT MODEL",
+          "value": "quantum attacks"
+        },
+        {
+          "label": "DEFENSE",
+          "value": "post-quantum crypto",
+          "accent": true
+        },
+        {
+          "label": "SECURE BOOT",
+          "value": "yes"
+        }
+      ],
+      "footnote": "Source: blog.google"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/avatar-master-169.mp4",
+      "durationSec": 2.58,
+      "from": 71.82,
+      "focusX": 0.515,
+      "zoomDir": "out"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-watchfilm.mp4",
+      "durationSec": 2.72,
+      "zoomDir": "in",
+      "credit": "Made by Google",
+      "assetId": "watch-film",
+      "from": 1.2
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-gpsslide.mp4",
+      "durationSec": 1.9,
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "credit": "Made by Google",
+      "assetId": "gps-route-aerial"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-gpsaerial.mp4",
+      "durationSec": 1.9,
+      "bg": "gradient",
+      "aspect": 1.6111111111111112,
+      "credit": "Made by Google",
+      "assetId": "gps-route-aerial"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-insulin.mp4",
+      "durationSec": 2.8,
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "credit": "Made by Google",
+      "assetId": "watch-insulin-card"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-breathing.mp4",
+      "durationSec": 2.5,
+      "bg": "gradient",
+      "aspect": 1.9375,
+      "credit": "Made by Google",
+      "assetId": "breathing-emergency"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/clips/v-wrist.mp4",
+      "durationSec": 1.4,
+      "zoomDir": "out",
+      "credit": "Made by Google",
+      "assetId": "watch-wrist-demo",
+      "from": 1.5
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-tagmacro.mp4",
+      "durationSec": 1.34,
+      "bg": "gradient",
+      "aspect": 2.0535714285714284,
+      "credit": "Made by Google",
+      "assetId": "tag-macro",
+      "sfx": [
+        {
+          "src": "sfx2/mouse-click-01.mp3",
+          "vol": 0.12
+        }
+      ]
+    },
+    {
+      "type": "specsheet",
+      "durationSec": 3.04,
+      "kicker": "Pixel Tag",
+      "title": "The $29 tracker",
+      "rows": [
+        {
+          "label": "PRICE",
+          "value": "$29",
+          "accent": true
+        },
+        {
+          "label": "BODY",
+          "value": "stainless · IP67"
+        },
+        {
+          "label": "BATTERY",
+          "value": "1 yr, replaceable"
+        }
+      ],
+      "footnote": "Source: blog.google"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-tagfind.mp4",
+      "durationSec": 1.48,
+      "bg": "gradient",
+      "aspect": 1.7777777777777777,
+      "credit": "Made by Google",
+      "assetId": "tag-find-ui"
+    },
+    {
+      "type": "statcard",
+      "durationSec": 2.16,
+      "title": "Find Hub network",
+      "bg": "black",
+      "rows": [
+        {
+          "label": "ANDROID DEVICES",
+          "value": "1,000,000,000+",
+          "pct": 1.0,
+          "color": "#FFD84D"
+        }
+      ],
+      "footnote": "Source: blog.google"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/avatar-master-169.mp4",
+      "durationSec": 2.2,
+      "from": 95.64,
+      "focusX": 0.515,
+      "zoomDir": "in"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-asl.mp4",
+      "durationSec": 1.52,
+      "bg": "gradient",
+      "aspect": 2.0952380952380953,
+      "credit": "Made by Google",
+      "assetId": "asl-demo"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-asl2.mp4",
+      "durationSec": 1.72,
+      "bg": "black",
+      "aspect": 2.0952380952380953,
+      "credit": "Made by Google",
+      "assetId": "asl-demo"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-asl4.mp4",
+      "durationSec": 2.18,
+      "bg": "cream",
+      "aspect": 2.0952380952380953,
+      "credit": "Made by Google",
+      "assetId": "asl-demo",
+      "captionBottom": 260
+    },
+    {
+      "type": "chart",
+      "durationSec": 2.78,
+      "kicker": "Magic Capture",
+      "title": "Frames, not luck",
+      "bg": "cream",
+      "items": [
+        {
+          "label": "FRAMES ANALYZED",
+          "value": 500,
+          "display": "~500"
+        },
+        {
+          "label": "SHOTS YOU KEEP",
+          "value": 18,
+          "display": "1",
+          "highlight": true
+        }
+      ],
+      "source": "9to5Google"
+    },
+    {
+      "type": "wordcascade",
+      "durationSec": 2.48,
+      "bg": "black",
+      "words": [
+        {
+          "text": "so um basically",
+          "style": "caps",
+          "at": 0.15
+        },
+        {
+          "text": "like i was saying",
+          "style": "caps",
+          "at": 0.55
+        },
+        {
+          "text": "Rambler",
+          "style": "caps",
+          "at": 1.15,
+          "size": 1.6,
+          "accent": true
+        }
+      ]
+    },
+    {
+      "type": "promptcard",
+      "durationSec": 1.06,
+      "app": "Gboard",
+      "headline": "CLEAN TEXT",
+      "promptText": "Dinner at 7 works — see you there.",
+      "bg": "gradient"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/avatar-master-169.mp4",
+      "durationSec": 1.06,
+      "from": 109.58,
+      "focusX": 0.515,
+      "zoomDir": "in"
+    },
+    {
+      "type": "priceladder",
+      "durationSec": 3.14,
+      "kicker": "THE CATCH",
+      "title": "Every price, up $100",
+      "badge": "+$100",
+      "bg": "black",
+      "stagger": 0.45,
+      "rows": [
+        {
+          "label": "Pixel 11",
+          "oldPrice": "$799",
+          "newPrice": "$899"
+        },
+        {
+          "label": "Pixel 11 Pro",
+          "oldPrice": "$999",
+          "newPrice": "$1,099"
+        },
+        {
+          "label": "Pro XL",
+          "oldPrice": "$1,199",
+          "newPrice": "$1,299"
+        },
+        {
+          "label": "Pro Fold",
+          "oldPrice": "$1,799",
+          "newPrice": "$1,899"
+        }
+      ],
+      "footnote": "Source: blog.google · TechCrunch",
+      "sfx": [
+        {
+          "src": "sfx2/ground-impact-352053.mp3",
+          "vol": 0.14
+        }
+      ]
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-buds.mp4",
+      "durationSec": 2.32,
+      "bg": "gradient",
+      "aspect": 1.889908256880734,
+      "credit": "Made by Google",
+      "assetId": "buds-slides"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/made-by-google-26/clips/c-buds2.mp4",
+      "durationSec": 1.94,
+      "bg": "gradient",
+      "aspect": 1.889908256880734,
+      "credit": "Made by Google",
+      "assetId": "buds-slides"
+    },
+    {
+      "type": "checklist",
+      "durationSec": 2.52,
+      "bg": "cream",
+      "headline": "Every Pixel 11",
+      "rows": [
+        {
+          "label": "7 years of updates",
+          "state": "done"
+        },
+        {
+          "label": "6 months Google AI Pro (Pro)",
+          "state": "done"
+        }
+      ]
+    },
+    {
+      "type": "statcard",
+      "durationSec": 2.46,
+      "title": "BASE STORAGE",
+      "bg": "black",
+      "rows": [
+        {
+          "label": "Pixel 10",
+          "value": "128GB",
+          "pct": 0.5
+        },
+        {
+          "label": "Pixel 11",
+          "value": "256GB",
+          "pct": 1.0,
+          "color": "#FFD84D"
+        }
+      ],
+      "footnote": "Source: blog.google"
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.48,
+      "src": "assets/made-by-google-26/receipt-p11-price.png",
+      "srcWidth": 1170,
+      "srcHeight": 1520,
+      "bg": "cream",
+      "assetId": "receipt-p11-price",
+      "credit": "Source: blog.google",
+      "focus": {
+        "x": 40,
+        "y": 1030,
+        "w": 1080,
+        "h": 380
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 905,
+          "y": 1105,
+          "w": 185,
+          "h": 60
+        },
+        {
+          "kind": "underline",
+          "at": 1.2,
+          "x": 310,
+          "y": 1320,
+          "w": 260,
+          "h": 62
+        }
+      ]
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.28,
+      "src": "assets/made-by-google-26/receipt-tag-price.png",
+      "srcWidth": 1170,
+      "srcHeight": 930,
+      "bg": "black",
+      "assetId": "receipt-tag-price",
+      "credit": "Source: blog.google",
+      "focus": {
+        "x": 40,
+        "y": 400,
+        "w": 1080,
+        "h": 200
+      },
+      "annotations": [
+        {
+          "kind": "circle",
+          "at": 0.4,
+          "x": 720,
+          "y": 415,
+          "w": 110,
+          "h": 75
+        },
+        {
+          "kind": "underline",
+          "at": 1.0,
+          "x": 835,
+          "y": 500,
+          "w": 280,
+          "h": 60
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/avatar-master-169.mp4",
+      "durationSec": 2.04,
+      "from": 127.78,
+      "focusX": 0.515,
+      "zoomDir": "in",
+      "sfx": [
+        {
+          "src": "sfx2/risers-01.mp3",
+          "vol": 0.13
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/avatar-master-169.mp4",
+      "durationSec": 1.56,
+      "from": 129.82,
+      "focusX": 0.515,
+      "zoomDir": "out"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/avatar-master-169.mp4",
+      "durationSec": 2.22,
+      "from": 131.38,
+      "focusX": 0.515,
+      "zoomDir": "in"
+    },
+    {
+      "type": "footage",
+      "src": "assets/made-by-google-26/avatar-master-169.mp4",
+      "durationSec": 1.61,
+      "from": 133.6,
+      "focusX": 0.515,
+      "zoomDir": "out"
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.96,
+      "text": "Google just refreshed",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Google"
+        },
+        {
+          "t": 0.3,
+          "text": "just"
+        },
+        {
+          "t": 0.58,
+          "text": "refreshed"
+        }
+      ]
+    },
+    {
+      "start": 0.96,
+      "end": 2.34,
+      "text": "every single piece",
+      "words": [
+        {
+          "t": 0.96,
+          "text": "every"
+        },
+        {
+          "t": 1.56,
+          "text": "single"
+        },
+        {
+          "t": 2.02,
+          "text": "piece"
+        }
+      ]
+    },
+    {
+      "start": 2.34,
+      "end": 3.28,
+      "text": "of hardware it",
+      "words": [
+        {
+          "t": 2.34,
+          "text": "of"
+        },
+        {
+          "t": 2.6,
+          "text": "hardware"
+        },
+        {
+          "t": 3.02,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 3.28,
+      "end": 4.4,
+      "text": "makes. Four new",
+      "words": [
+        {
+          "t": 3.28,
+          "text": "makes."
+        },
+        {
+          "t": 4.08,
+          "text": "Four"
+        },
+        {
+          "t": 4.22,
+          "text": "new"
+        }
+      ]
+    },
+    {
+      "start": 4.4,
+      "end": 5.42,
+      "text": "pixels, a new",
+      "words": [
+        {
+          "t": 4.4,
+          "text": "pixels,"
+        },
+        {
+          "t": 5.14,
+          "text": "a"
+        },
+        {
+          "t": 5.22,
+          "text": "new"
+        }
+      ]
+    },
+    {
+      "start": 5.42,
+      "end": 6.3,
+      "text": "watch, and a",
+      "words": [
+        {
+          "t": 5.42,
+          "text": "watch,"
+        },
+        {
+          "t": 6.08,
+          "text": "and"
+        },
+        {
+          "t": 6.2,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 6.3,
+      "end": 7.96,
+      "text": "$29 tracker with",
+      "words": [
+        {
+          "t": 6.3,
+          "text": "$29"
+        },
+        {
+          "t": 6.86,
+          "text": "tracker"
+        },
+        {
+          "t": 7.56,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 7.96,
+      "end": 9.0,
+      "text": "a billion Android",
+      "words": [
+        {
+          "t": 7.96,
+          "text": "a"
+        },
+        {
+          "t": 8.08,
+          "text": "billion"
+        },
+        {
+          "t": 8.48,
+          "text": "Android"
+        }
+      ]
+    },
+    {
+      "start": 9.0,
+      "end": 10.0,
+      "text": "phones behind it.",
+      "words": [
+        {
+          "t": 9.0,
+          "text": "phones"
+        },
+        {
+          "t": 9.32,
+          "text": "behind"
+        },
+        {
+          "t": 9.7,
+          "text": "it."
+        }
+      ]
+    },
+    {
+      "start": 10.42,
+      "end": 10.96,
+      "text": "This is made",
+      "words": [
+        {
+          "t": 10.42,
+          "text": "This"
+        },
+        {
+          "t": 10.58,
+          "text": "is"
+        },
+        {
+          "t": 10.74,
+          "text": "made"
+        }
+      ]
+    },
+    {
+      "start": 10.96,
+      "end": 12.68,
+      "text": "by Google 2026.",
+      "words": [
+        {
+          "t": 10.96,
+          "text": "by"
+        },
+        {
+          "t": 11.2,
+          "text": "Google"
+        },
+        {
+          "t": 11.46,
+          "text": "2026."
+        }
+      ]
+    },
+    {
+      "start": 13.02,
+      "end": 14.06,
+      "text": "Everything that actually",
+      "words": [
+        {
+          "t": 13.02,
+          "text": "Everything"
+        },
+        {
+          "t": 13.42,
+          "text": "that"
+        },
+        {
+          "t": 13.68,
+          "text": "actually"
+        }
+      ]
+    },
+    {
+      "start": 14.06,
+      "end": 15.16,
+      "text": "matters in two",
+      "words": [
+        {
+          "t": 14.06,
+          "text": "matters"
+        },
+        {
+          "t": 14.38,
+          "text": "in"
+        },
+        {
+          "t": 14.8,
+          "text": "two"
+        }
+      ]
+    },
+    {
+      "start": 15.16,
+      "end": 16.3,
+      "text": "minutes. The pixel",
+      "words": [
+        {
+          "t": 15.16,
+          "text": "minutes."
+        },
+        {
+          "t": 15.94,
+          "text": "The"
+        },
+        {
+          "t": 16.02,
+          "text": "pixel"
+        }
+      ]
+    },
+    {
+      "start": 16.3,
+      "end": 17.88,
+      "text": "11 is $899",
+      "words": [
+        {
+          "t": 16.3,
+          "text": "11"
+        },
+        {
+          "t": 16.66,
+          "text": "is"
+        },
+        {
+          "t": 16.94,
+          "text": "$899"
+        }
+      ]
+    },
+    {
+      "start": 17.88,
+      "end": 19.2,
+      "text": "now, with a",
+      "words": [
+        {
+          "t": 17.88,
+          "text": "now,"
+        },
+        {
+          "t": 18.86,
+          "text": "with"
+        },
+        {
+          "t": 19.06,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 19.2,
+      "end": 20.22,
+      "text": "camera bar that's",
+      "words": [
+        {
+          "t": 19.2,
+          "text": "camera"
+        },
+        {
+          "t": 19.52,
+          "text": "bar"
+        },
+        {
+          "t": 19.8,
+          "text": "that's"
+        }
+      ]
+    },
+    {
+      "start": 20.22,
+      "end": 21.36,
+      "text": "40% thinner.",
+      "words": [
+        {
+          "t": 20.22,
+          "text": "40%"
+        },
+        {
+          "t": 20.92,
+          "text": "thinner."
+        }
+      ]
+    },
+    {
+      "start": 21.78,
+      "end": 22.46,
+      "text": "Behind the glass",
+      "words": [
+        {
+          "t": 21.78,
+          "text": "Behind"
+        },
+        {
+          "t": 22.04,
+          "text": "the"
+        },
+        {
+          "t": 22.26,
+          "text": "glass"
+        }
+      ]
+    },
+    {
+      "start": 22.46,
+      "end": 23.0,
+      "text": "is a new",
+      "words": [
+        {
+          "t": 22.46,
+          "text": "is"
+        },
+        {
+          "t": 22.7,
+          "text": "a"
+        },
+        {
+          "t": 22.82,
+          "text": "new"
+        }
+      ]
+    },
+    {
+      "start": 23.0,
+      "end": 24.84,
+      "text": "48 megapixel sensor",
+      "words": [
+        {
+          "t": 23.0,
+          "text": "48"
+        },
+        {
+          "t": 23.64,
+          "text": "megapixel"
+        },
+        {
+          "t": 24.36,
+          "text": "sensor"
+        }
+      ]
+    },
+    {
+      "start": 24.84,
+      "end": 26.6,
+      "text": "pulling in 56%",
+      "words": [
+        {
+          "t": 24.84,
+          "text": "pulling"
+        },
+        {
+          "t": 25.18,
+          "text": "in"
+        },
+        {
+          "t": 25.42,
+          "text": "56%"
+        }
+      ]
+    },
+    {
+      "start": 26.6,
+      "end": 27.22,
+      "text": "more light.",
+      "words": [
+        {
+          "t": 26.6,
+          "text": "more"
+        },
+        {
+          "t": 26.94,
+          "text": "light."
+        }
+      ]
+    },
+    {
+      "start": 27.22,
+      "end": 28.58,
+      "text": "The Pro and",
+      "words": [
+        {
+          "t": 27.22,
+          "text": "The"
+        },
+        {
+          "t": 27.86,
+          "text": "Pro"
+        },
+        {
+          "t": 28.22,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 28.58,
+      "end": 30.14,
+      "text": "Pro XL push",
+      "words": [
+        {
+          "t": 28.58,
+          "text": "Pro"
+        },
+        {
+          "t": 28.92,
+          "text": "XL"
+        },
+        {
+          "t": 29.58,
+          "text": "push"
+        }
+      ]
+    },
+    {
+      "start": 30.14,
+      "end": 32.96,
+      "text": "a 3600-nit display",
+      "words": [
+        {
+          "t": 30.14,
+          "text": "a"
+        },
+        {
+          "t": 30.5,
+          "text": "3600-nit"
+        },
+        {
+          "t": 32.46,
+          "text": "display"
+        }
+      ]
+    },
+    {
+      "start": 32.96,
+      "end": 33.94,
+      "text": "and Pro zoom",
+      "words": [
+        {
+          "t": 32.96,
+          "text": "and"
+        },
+        {
+          "t": 33.34,
+          "text": "Pro"
+        },
+        {
+          "t": 33.6,
+          "text": "zoom"
+        }
+      ]
+    },
+    {
+      "start": 33.94,
+      "end": 35.64,
+      "text": "hits 120x.",
+      "words": [
+        {
+          "t": 33.94,
+          "text": "hits"
+        },
+        {
+          "t": 34.22,
+          "text": "120x."
+        }
+      ]
+    },
+    {
+      "start": 36.02,
+      "end": 36.62,
+      "text": "Just look at",
+      "words": [
+        {
+          "t": 36.02,
+          "text": "Just"
+        },
+        {
+          "t": 36.2,
+          "text": "look"
+        },
+        {
+          "t": 36.44,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 36.62,
+      "end": 37.62,
+      "text": "this. The Pro",
+      "words": [
+        {
+          "t": 36.62,
+          "text": "this."
+        },
+        {
+          "t": 37.3,
+          "text": "The"
+        },
+        {
+          "t": 37.38,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 37.62,
+      "end": 39.22,
+      "text": "XL also charges",
+      "words": [
+        {
+          "t": 37.62,
+          "text": "XL"
+        },
+        {
+          "t": 38.12,
+          "text": "also"
+        },
+        {
+          "t": 38.76,
+          "text": "charges"
+        }
+      ]
+    },
+    {
+      "start": 39.22,
+      "end": 40.24,
+      "text": "15 hours of",
+      "words": [
+        {
+          "t": 39.22,
+          "text": "15"
+        },
+        {
+          "t": 39.7,
+          "text": "hours"
+        },
+        {
+          "t": 40.02,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 40.24,
+      "end": 41.44,
+      "text": "battery in 15",
+      "words": [
+        {
+          "t": 40.24,
+          "text": "battery"
+        },
+        {
+          "t": 40.64,
+          "text": "in"
+        },
+        {
+          "t": 41.0,
+          "text": "15"
+        }
+      ]
+    },
+    {
+      "start": 41.44,
+      "end": 42.58,
+      "text": "minutes. The pixel",
+      "words": [
+        {
+          "t": 41.44,
+          "text": "minutes."
+        },
+        {
+          "t": 42.16,
+          "text": "The"
+        },
+        {
+          "t": 42.24,
+          "text": "pixel"
+        }
+      ]
+    },
+    {
+      "start": 42.58,
+      "end": 43.84,
+      "text": "11 Pro Fold",
+      "words": [
+        {
+          "t": 42.58,
+          "text": "11"
+        },
+        {
+          "t": 43.04,
+          "text": "Pro"
+        },
+        {
+          "t": 43.48,
+          "text": "Fold"
+        }
+      ]
+    },
+    {
+      "start": 43.84,
+      "end": 45.36,
+      "text": "is nearly 10%",
+      "words": [
+        {
+          "t": 43.84,
+          "text": "is"
+        },
+        {
+          "t": 44.08,
+          "text": "nearly"
+        },
+        {
+          "t": 44.4,
+          "text": "10%"
+        }
+      ]
+    },
+    {
+      "start": 45.36,
+      "end": 46.92,
+      "text": "lighter, almost a",
+      "words": [
+        {
+          "t": 45.36,
+          "text": "lighter,"
+        },
+        {
+          "t": 46.3,
+          "text": "almost"
+        },
+        {
+          "t": 46.62,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 46.92,
+      "end": 47.96,
+      "text": "millimeter thinner,",
+      "words": [
+        {
+          "t": 46.92,
+          "text": "millimeter"
+        },
+        {
+          "t": 47.38,
+          "text": "thinner,"
+        }
+      ]
+    },
+    {
+      "start": 48.4,
+      "end": 49.54,
+      "text": "and 3x more",
+      "words": [
+        {
+          "t": 48.4,
+          "text": "and"
+        },
+        {
+          "t": 48.52,
+          "text": "3x"
+        },
+        {
+          "t": 49.24,
+          "text": "more"
+        }
+      ]
+    },
+    {
+      "start": 49.54,
+      "end": 50.84,
+      "text": "durable. Google says",
+      "words": [
+        {
+          "t": 49.54,
+          "text": "durable."
+        },
+        {
+          "t": 50.36,
+          "text": "Google"
+        },
+        {
+          "t": 50.52,
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "start": 50.84,
+      "end": 51.44,
+      "text": "the new back",
+      "words": [
+        {
+          "t": 50.84,
+          "text": "the"
+        },
+        {
+          "t": 51.08,
+          "text": "new"
+        },
+        {
+          "t": 51.24,
+          "text": "back"
+        }
+      ]
+    },
+    {
+      "start": 51.44,
+      "end": 52.64,
+      "text": "is nearly impossible",
+      "words": [
+        {
+          "t": 51.44,
+          "text": "is"
+        },
+        {
+          "t": 51.68,
+          "text": "nearly"
+        },
+        {
+          "t": 52.04,
+          "text": "impossible"
+        }
+      ]
+    },
+    {
+      "start": 52.64,
+      "end": 53.18,
+      "text": "to crack.",
+      "words": [
+        {
+          "t": 52.64,
+          "text": "to"
+        },
+        {
+          "t": 52.92,
+          "text": "crack."
+        }
+      ]
+    },
+    {
+      "start": 53.18,
+      "end": 54.24,
+      "text": "Here's the part",
+      "words": [
+        {
+          "t": 53.18,
+          "text": "Here's"
+        },
+        {
+          "t": 53.94,
+          "text": "the"
+        },
+        {
+          "t": 54.04,
+          "text": "part"
+        }
+      ]
+    },
+    {
+      "start": 54.24,
+      "end": 55.74,
+      "text": "almost nobody noticed.",
+      "words": [
+        {
+          "t": 54.24,
+          "text": "almost"
+        },
+        {
+          "t": 54.64,
+          "text": "nobody"
+        },
+        {
+          "t": 55.18,
+          "text": "noticed."
+        }
+      ]
+    },
+    {
+      "start": 56.1,
+      "end": 56.58,
+      "text": "All of it",
+      "words": [
+        {
+          "t": 56.1,
+          "text": "All"
+        },
+        {
+          "t": 56.24,
+          "text": "of"
+        },
+        {
+          "t": 56.42,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 56.58,
+      "end": 57.74,
+      "text": "runs on tensor",
+      "words": [
+        {
+          "t": 56.58,
+          "text": "runs"
+        },
+        {
+          "t": 56.86,
+          "text": "on"
+        },
+        {
+          "t": 57.3,
+          "text": "tensor"
+        }
+      ]
+    },
+    {
+      "start": 57.74,
+      "end": 60.04,
+      "text": "g6, 50% more",
+      "words": [
+        {
+          "t": 57.74,
+          "text": "g6,"
+        },
+        {
+          "t": 59.0,
+          "text": "50%"
+        },
+        {
+          "t": 59.7,
+          "text": "more"
+        }
+      ]
+    },
+    {
+      "start": 60.04,
+      "end": 60.88,
+      "text": "AI compute,",
+      "words": [
+        {
+          "t": 60.04,
+          "text": "AI"
+        },
+        {
+          "t": 60.38,
+          "text": "compute,"
+        }
+      ]
+    },
+    {
+      "start": 61.36,
+      "end": 62.26,
+      "text": "so Gemini runs",
+      "words": [
+        {
+          "t": 61.36,
+          "text": "so"
+        },
+        {
+          "t": 61.44,
+          "text": "Gemini"
+        },
+        {
+          "t": 61.88,
+          "text": "runs"
+        }
+      ]
+    },
+    {
+      "start": 62.26,
+      "end": 64.62,
+      "text": "3.5x faster on",
+      "words": [
+        {
+          "t": 62.26,
+          "text": "3.5x"
+        },
+        {
+          "t": 63.64,
+          "text": "faster"
+        },
+        {
+          "t": 64.32,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 64.62,
+      "end": 66.68,
+      "text": "3.5x less energy.",
+      "words": [
+        {
+          "t": 64.62,
+          "text": "3.5x"
+        },
+        {
+          "t": 65.9,
+          "text": "less"
+        },
+        {
+          "t": 66.14,
+          "text": "energy."
+        }
+      ]
+    },
+    {
+      "start": 67.02,
+      "end": 67.48,
+      "text": "And the new",
+      "words": [
+        {
+          "t": 67.02,
+          "text": "And"
+        },
+        {
+          "t": 67.12,
+          "text": "the"
+        },
+        {
+          "t": 67.26,
+          "text": "new"
+        }
+      ]
+    },
+    {
+      "start": 67.48,
+      "end": 68.88,
+      "text": "Titan M3 chip",
+      "words": [
+        {
+          "t": 67.48,
+          "text": "Titan"
+        },
+        {
+          "t": 67.86,
+          "text": "M3"
+        },
+        {
+          "t": 68.58,
+          "text": "chip"
+        }
+      ]
+    },
+    {
+      "start": 68.88,
+      "end": 70.22,
+      "text": "is hardened against",
+      "words": [
+        {
+          "t": 68.88,
+          "text": "is"
+        },
+        {
+          "t": 69.24,
+          "text": "hardened"
+        },
+        {
+          "t": 69.7,
+          "text": "against"
+        }
+      ]
+    },
+    {
+      "start": 70.22,
+      "end": 71.7,
+      "text": "quantum computer attacks.",
+      "words": [
+        {
+          "t": 70.22,
+          "text": "quantum"
+        },
+        {
+          "t": 70.72,
+          "text": "computer"
+        },
+        {
+          "t": 71.2,
+          "text": "attacks."
+        }
+      ]
+    },
+    {
+      "start": 72.1,
+      "end": 73.06,
+      "text": "Google is planning",
+      "words": [
+        {
+          "t": 72.1,
+          "text": "Google"
+        },
+        {
+          "t": 72.44,
+          "text": "is"
+        },
+        {
+          "t": 72.74,
+          "text": "planning"
+        }
+      ]
+    },
+    {
+      "start": 73.06,
+      "end": 74.28,
+      "text": "a decade ahead.",
+      "words": [
+        {
+          "t": 73.06,
+          "text": "a"
+        },
+        {
+          "t": 73.34,
+          "text": "decade"
+        },
+        {
+          "t": 73.74,
+          "text": "ahead."
+        }
+      ]
+    },
+    {
+      "start": 74.64,
+      "end": 75.46,
+      "text": "Pixel Watch 5",
+      "words": [
+        {
+          "t": 74.64,
+          "text": "Pixel"
+        },
+        {
+          "t": 74.84,
+          "text": "Watch"
+        },
+        {
+          "t": 75.08,
+          "text": "5"
+        }
+      ]
+    },
+    {
+      "start": 75.46,
+      "end": 77.0,
+      "text": "is 20% faster,",
+      "words": [
+        {
+          "t": 75.46,
+          "text": "is"
+        },
+        {
+          "t": 75.72,
+          "text": "20%"
+        },
+        {
+          "t": 76.44,
+          "text": "faster,"
+        }
+      ]
+    },
+    {
+      "start": 77.52,
+      "end": 78.9,
+      "text": "tracks GPS routes",
+      "words": [
+        {
+          "t": 77.52,
+          "text": "tracks"
+        },
+        {
+          "t": 77.8,
+          "text": "GPS"
+        },
+        {
+          "t": 78.4,
+          "text": "routes"
+        }
+      ]
+    },
+    {
+      "start": 78.9,
+      "end": 80.22,
+      "text": "twice as accurately,",
+      "words": [
+        {
+          "t": 78.9,
+          "text": "twice"
+        },
+        {
+          "t": 79.4,
+          "text": "as"
+        },
+        {
+          "t": 79.74,
+          "text": "accurately,"
+        }
+      ]
+    },
+    {
+      "start": 80.22,
+      "end": 80.92,
+      "text": "and it's the",
+      "words": [
+        {
+          "t": 80.22,
+          "text": "and"
+        },
+        {
+          "t": 80.6,
+          "text": "it's"
+        },
+        {
+          "t": 80.8,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 80.92,
+      "end": 81.98,
+      "text": "only watch tracking",
+      "words": [
+        {
+          "t": 80.92,
+          "text": "only"
+        },
+        {
+          "t": 81.26,
+          "text": "watch"
+        },
+        {
+          "t": 81.6,
+          "text": "tracking"
+        }
+      ]
+    },
+    {
+      "start": 81.98,
+      "end": 83.6,
+      "text": "insulin resistance trends.",
+      "words": [
+        {
+          "t": 81.98,
+          "text": "insulin"
+        },
+        {
+          "t": 82.52,
+          "text": "resistance"
+        },
+        {
+          "t": 83.08,
+          "text": "trends."
+        }
+      ]
+    },
+    {
+      "start": 83.9,
+      "end": 84.7,
+      "text": "It can even",
+      "words": [
+        {
+          "t": 83.9,
+          "text": "It"
+        },
+        {
+          "t": 84.3,
+          "text": "can"
+        },
+        {
+          "t": 84.44,
+          "text": "even"
+        }
+      ]
+    },
+    {
+      "start": 84.7,
+      "end": 85.42,
+      "text": "detect a breathing",
+      "words": [
+        {
+          "t": 84.7,
+          "text": "detect"
+        },
+        {
+          "t": 85.02,
+          "text": "a"
+        },
+        {
+          "t": 85.22,
+          "text": "breathing"
+        }
+      ]
+    },
+    {
+      "start": 85.42,
+      "end": 86.46,
+      "text": "emergency and call",
+      "words": [
+        {
+          "t": 85.42,
+          "text": "emergency"
+        },
+        {
+          "t": 86.1,
+          "text": "and"
+        },
+        {
+          "t": 86.3,
+          "text": "call"
+        }
+      ]
+    },
+    {
+      "start": 86.46,
+      "end": 87.08,
+      "text": "for help on",
+      "words": [
+        {
+          "t": 86.46,
+          "text": "for"
+        },
+        {
+          "t": 86.7,
+          "text": "help"
+        },
+        {
+          "t": 86.92,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 87.08,
+      "end": 87.5,
+      "text": "its own.",
+      "words": [
+        {
+          "t": 87.08,
+          "text": "its"
+        },
+        {
+          "t": 87.3,
+          "text": "own."
+        }
+      ]
+    },
+    {
+      "start": 87.9,
+      "end": 88.44,
+      "text": "Then the pixel",
+      "words": [
+        {
+          "t": 87.9,
+          "text": "Then"
+        },
+        {
+          "t": 88.04,
+          "text": "the"
+        },
+        {
+          "t": 88.18,
+          "text": "pixel"
+        }
+      ]
+    },
+    {
+      "start": 88.44,
+      "end": 89.72,
+      "text": "tag, $29,",
+      "words": [
+        {
+          "t": 88.44,
+          "text": "tag,"
+        },
+        {
+          "t": 89.14,
+          "text": "$29,"
+        }
+      ]
+    },
+    {
+      "start": 90.42,
+      "end": 91.32,
+      "text": "stainless steel,",
+      "words": [
+        {
+          "t": 90.42,
+          "text": "stainless"
+        },
+        {
+          "t": 90.88,
+          "text": "steel,"
+        }
+      ]
+    },
+    {
+      "start": 91.5,
+      "end": 92.38,
+      "text": "a one-year battery,",
+      "words": [
+        {
+          "t": 91.5,
+          "text": "a"
+        },
+        {
+          "t": 91.54,
+          "text": "one-year"
+        },
+        {
+          "t": 91.88,
+          "text": "battery,"
+        }
+      ]
+    },
+    {
+      "start": 92.74,
+      "end": 93.16,
+      "text": "and it finds",
+      "words": [
+        {
+          "t": 92.74,
+          "text": "and"
+        },
+        {
+          "t": 92.82,
+          "text": "it"
+        },
+        {
+          "t": 92.94,
+          "text": "finds"
+        }
+      ]
+    },
+    {
+      "start": 93.16,
+      "end": 93.84,
+      "text": "your stuff through",
+      "words": [
+        {
+          "t": 93.16,
+          "text": "your"
+        },
+        {
+          "t": 93.36,
+          "text": "stuff"
+        },
+        {
+          "t": 93.58,
+          "text": "through"
+        }
+      ]
+    },
+    {
+      "start": 93.84,
+      "end": 94.58,
+      "text": "over a billion",
+      "words": [
+        {
+          "t": 93.84,
+          "text": "over"
+        },
+        {
+          "t": 94.18,
+          "text": "a"
+        },
+        {
+          "t": 94.32,
+          "text": "billion"
+        }
+      ]
+    },
+    {
+      "start": 94.58,
+      "end": 95.52,
+      "text": "Android devices.",
+      "words": [
+        {
+          "t": 94.58,
+          "text": "Android"
+        },
+        {
+          "t": 95.02,
+          "text": "devices."
+        }
+      ]
+    },
+    {
+      "start": 95.92,
+      "end": 96.5,
+      "text": "The air tag",
+      "words": [
+        {
+          "t": 95.92,
+          "text": "The"
+        },
+        {
+          "t": 96.16,
+          "text": "air"
+        },
+        {
+          "t": 96.32,
+          "text": "tag"
+        }
+      ]
+    },
+    {
+      "start": 96.5,
+      "end": 97.28,
+      "text": "finally has a",
+      "words": [
+        {
+          "t": 96.5,
+          "text": "finally"
+        },
+        {
+          "t": 96.92,
+          "text": "has"
+        },
+        {
+          "t": 97.14,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 97.28,
+      "end": 97.72,
+      "text": "real fight.",
+      "words": [
+        {
+          "t": 97.28,
+          "text": "real"
+        },
+        {
+          "t": 97.46,
+          "text": "fight."
+        }
+      ]
+    },
+    {
+      "start": 98.18,
+      "end": 98.82,
+      "text": "The camera now",
+      "words": [
+        {
+          "t": 98.18,
+          "text": "The"
+        },
+        {
+          "t": 98.26,
+          "text": "camera"
+        },
+        {
+          "t": 98.58,
+          "text": "now"
+        }
+      ]
+    },
+    {
+      "start": 98.82,
+      "end": 100.16,
+      "text": "translates American Sign",
+      "words": [
+        {
+          "t": 98.82,
+          "text": "translates"
+        },
+        {
+          "t": 99.24,
+          "text": "American"
+        },
+        {
+          "t": 99.84,
+          "text": "Sign"
+        }
+      ]
+    },
+    {
+      "start": 100.16,
+      "end": 100.96,
+      "text": "Language Live.",
+      "words": [
+        {
+          "t": 100.16,
+          "text": "Language"
+        },
+        {
+          "t": 100.6,
+          "text": "Live."
+        }
+      ]
+    },
+    {
+      "start": 101.26,
+      "end": 101.96,
+      "text": "Just watch this.",
+      "words": [
+        {
+          "t": 101.26,
+          "text": "Just"
+        },
+        {
+          "t": 101.34,
+          "text": "watch"
+        },
+        {
+          "t": 101.64,
+          "text": "this."
+        }
+      ]
+    },
+    {
+      "start": 102.44,
+      "end": 103.38,
+      "text": "Magic Capture picks",
+      "words": [
+        {
+          "t": 102.44,
+          "text": "Magic"
+        },
+        {
+          "t": 102.66,
+          "text": "Capture"
+        },
+        {
+          "t": 103.14,
+          "text": "picks"
+        }
+      ]
+    },
+    {
+      "start": 103.38,
+      "end": 104.2,
+      "text": "your best shot",
+      "words": [
+        {
+          "t": 103.38,
+          "text": "your"
+        },
+        {
+          "t": 103.68,
+          "text": "best"
+        },
+        {
+          "t": 103.94,
+          "text": "shot"
+        }
+      ]
+    },
+    {
+      "start": 104.2,
+      "end": 105.54,
+      "text": "from around 500",
+      "words": [
+        {
+          "t": 104.2,
+          "text": "from"
+        },
+        {
+          "t": 104.42,
+          "text": "around"
+        },
+        {
+          "t": 104.68,
+          "text": "500"
+        }
+      ]
+    },
+    {
+      "start": 105.54,
+      "end": 107.04,
+      "text": "frames, and Rambler",
+      "words": [
+        {
+          "t": 105.54,
+          "text": "frames,"
+        },
+        {
+          "t": 106.5,
+          "text": "and"
+        },
+        {
+          "t": 106.64,
+          "text": "Rambler"
+        }
+      ]
+    },
+    {
+      "start": 107.04,
+      "end": 107.88,
+      "text": "turns your voice",
+      "words": [
+        {
+          "t": 107.04,
+          "text": "turns"
+        },
+        {
+          "t": 107.32,
+          "text": "your"
+        },
+        {
+          "t": 107.54,
+          "text": "voice"
+        }
+      ]
+    },
+    {
+      "start": 107.88,
+      "end": 109.04,
+      "text": "rambles into clean",
+      "words": [
+        {
+          "t": 107.88,
+          "text": "rambles"
+        },
+        {
+          "t": 108.4,
+          "text": "into"
+        },
+        {
+          "t": 108.72,
+          "text": "clean"
+        }
+      ]
+    },
+    {
+      "start": 109.04,
+      "end": 110.3,
+      "text": "text. Now the",
+      "words": [
+        {
+          "t": 109.04,
+          "text": "text."
+        },
+        {
+          "t": 109.46,
+          "text": "Now"
+        },
+        {
+          "t": 110.12,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 110.3,
+      "end": 111.44,
+      "text": "catch, every single",
+      "words": [
+        {
+          "t": 110.3,
+          "text": "catch,"
+        },
+        {
+          "t": 110.88,
+          "text": "every"
+        },
+        {
+          "t": 111.12,
+          "text": "single"
+        }
+      ]
+    },
+    {
+      "start": 111.44,
+      "end": 112.18,
+      "text": "phone got a",
+      "words": [
+        {
+          "t": 111.44,
+          "text": "phone"
+        },
+        {
+          "t": 111.76,
+          "text": "got"
+        },
+        {
+          "t": 112.02,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 112.18,
+      "end": 113.66,
+      "text": "$100 price bump",
+      "words": [
+        {
+          "t": 112.18,
+          "text": "$100"
+        },
+        {
+          "t": 112.76,
+          "text": "price"
+        },
+        {
+          "t": 113.4,
+          "text": "bump"
+        }
+      ]
+    },
+    {
+      "start": 113.66,
+      "end": 114.24,
+      "text": "this year,",
+      "words": [
+        {
+          "t": 113.66,
+          "text": "this"
+        },
+        {
+          "t": 113.98,
+          "text": "year,"
+        }
+      ]
+    },
+    {
+      "start": 114.68,
+      "end": 115.5,
+      "text": "and Pixel Buds",
+      "words": [
+        {
+          "t": 114.68,
+          "text": "and"
+        },
+        {
+          "t": 114.78,
+          "text": "Pixel"
+        },
+        {
+          "t": 115.1,
+          "text": "Buds"
+        }
+      ]
+    },
+    {
+      "start": 115.5,
+      "end": 116.4,
+      "text": "Pro 2 only",
+      "words": [
+        {
+          "t": 115.5,
+          "text": "Pro"
+        },
+        {
+          "t": 115.66,
+          "text": "2"
+        },
+        {
+          "t": 115.98,
+          "text": "only"
+        }
+      ]
+    },
+    {
+      "start": 116.4,
+      "end": 116.96,
+      "text": "got a new",
+      "words": [
+        {
+          "t": 116.4,
+          "text": "got"
+        },
+        {
+          "t": 116.62,
+          "text": "a"
+        },
+        {
+          "t": 116.82,
+          "text": "new"
+        }
+      ]
+    },
+    {
+      "start": 116.96,
+      "end": 117.92,
+      "text": "color. Anyways,",
+      "words": [
+        {
+          "t": 116.96,
+          "text": "color."
+        },
+        {
+          "t": 117.62,
+          "text": "Anyways,"
+        }
+      ]
+    },
+    {
+      "start": 118.42,
+      "end": 119.2,
+      "text": "every phone gets",
+      "words": [
+        {
+          "t": 118.42,
+          "text": "every"
+        },
+        {
+          "t": 118.66,
+          "text": "phone"
+        },
+        {
+          "t": 118.96,
+          "text": "gets"
+        }
+      ]
+    },
+    {
+      "start": 119.2,
+      "end": 120.12,
+      "text": "7 years of",
+      "words": [
+        {
+          "t": 119.2,
+          "text": "7"
+        },
+        {
+          "t": 119.64,
+          "text": "years"
+        },
+        {
+          "t": 119.88,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 120.12,
+      "end": 121.16,
+      "text": "updates and starts",
+      "words": [
+        {
+          "t": 120.12,
+          "text": "updates"
+        },
+        {
+          "t": 120.44,
+          "text": "and"
+        },
+        {
+          "t": 120.84,
+          "text": "starts"
+        }
+      ]
+    },
+    {
+      "start": 121.16,
+      "end": 122.9,
+      "text": "at 256 gigs.",
+      "words": [
+        {
+          "t": 121.16,
+          "text": "at"
+        },
+        {
+          "t": 121.4,
+          "text": "256"
+        },
+        {
+          "t": 122.2,
+          "text": "gigs."
+        }
+      ]
+    },
+    {
+      "start": 123.38,
+      "end": 124.12,
+      "text": "They hit shelves",
+      "words": [
+        {
+          "t": 123.38,
+          "text": "They"
+        },
+        {
+          "t": 123.56,
+          "text": "hit"
+        },
+        {
+          "t": 123.76,
+          "text": "shelves"
+        }
+      ]
+    },
+    {
+      "start": 124.12,
+      "end": 125.38,
+      "text": "August 20th,",
+      "words": [
+        {
+          "t": 124.12,
+          "text": "August"
+        },
+        {
+          "t": 124.56,
+          "text": "20th,"
+        }
+      ]
+    },
+    {
+      "start": 125.76,
+      "end": 126.38,
+      "text": "the tag lands",
+      "words": [
+        {
+          "t": 125.76,
+          "text": "the"
+        },
+        {
+          "t": 125.84,
+          "text": "tag"
+        },
+        {
+          "t": 126.16,
+          "text": "lands"
+        }
+      ]
+    },
+    {
+      "start": 126.38,
+      "end": 127.66,
+      "text": "November 11th.",
+      "words": [
+        {
+          "t": 126.38,
+          "text": "November"
+        },
+        {
+          "t": 126.9,
+          "text": "11th."
+        }
+      ]
+    },
+    {
+      "start": 127.86,
+      "end": 129.02,
+      "text": "So, a quantum",
+      "words": [
+        {
+          "t": 127.86,
+          "text": "So,"
+        },
+        {
+          "t": 128.5,
+          "text": "a"
+        },
+        {
+          "t": 128.64,
+          "text": "quantum"
+        }
+      ]
+    },
+    {
+      "start": 129.02,
+      "end": 129.94,
+      "text": "proof phone and",
+      "words": [
+        {
+          "t": 129.02,
+          "text": "proof"
+        },
+        {
+          "t": 129.34,
+          "text": "phone"
+        },
+        {
+          "t": 129.7,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 129.94,
+      "end": 131.26,
+      "text": "a $29 tracker.",
+      "words": [
+        {
+          "t": 129.94,
+          "text": "a"
+        },
+        {
+          "t": 130.04,
+          "text": "$29"
+        },
+        {
+          "t": 130.68,
+          "text": "tracker."
+        }
+      ]
+    },
+    {
+      "start": 131.68,
+      "end": 132.26,
+      "text": "Is that enough",
+      "words": [
+        {
+          "t": 131.68,
+          "text": "Is"
+        },
+        {
+          "t": 131.88,
+          "text": "that"
+        },
+        {
+          "t": 132.02,
+          "text": "enough"
+        }
+      ]
+    },
+    {
+      "start": 132.26,
+      "end": 132.82,
+      "text": "to pull you",
+      "words": [
+        {
+          "t": 132.26,
+          "text": "to"
+        },
+        {
+          "t": 132.46,
+          "text": "pull"
+        },
+        {
+          "t": 132.64,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 132.82,
+      "end": 133.48,
+      "text": "off your iPhone?",
+      "words": [
+        {
+          "t": 132.82,
+          "text": "off"
+        },
+        {
+          "t": 132.98,
+          "text": "your"
+        },
+        {
+          "t": 133.18,
+          "text": "iPhone?"
+        }
+      ]
+    },
+    {
+      "start": 134.04,
+      "end": 134.54,
+      "text": "Tell me in",
+      "words": [
+        {
+          "t": 134.04,
+          "text": "Tell"
+        },
+        {
+          "t": 134.3,
+          "text": "me"
+        },
+        {
+          "t": 134.44,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 134.54,
+      "end": 134.86,
+      "text": "the comments.",
+      "words": [
+        {
+          "t": 134.54,
+          "text": "the"
+        },
+        {
+          "t": 134.62,
+          "text": "comments."
+        }
+      ]
+    }
+  ]
+}

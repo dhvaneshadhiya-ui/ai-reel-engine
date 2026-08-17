@@ -1,0 +1,2334 @@
+{
+  "id": "iphone18-split",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "varun",
+  "format": "news",
+  "audio": "assets/iphone18-split/avatar-master-169.mp4",
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 8.0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.15
+      },
+      {
+        "t": 6.88,
+        "vol": 0.09
+      },
+      {
+        "t": 34.22,
+        "vol": 0.07
+      },
+      {
+        "t": 55.74,
+        "vol": 0.1
+      },
+      {
+        "t": 66.04,
+        "vol": 0.08
+      },
+      {
+        "t": 85.38,
+        "vol": 0.14
+      },
+      {
+        "t": 87.56,
+        "vol": 0.13
+      },
+      {
+        "t": 92.27,
+        "vol": 0.1
+      },
+      {
+        "t": 93.07,
+        "vol": 0.02
+      }
+    ]
+  },
+  "captionStyle": "nick-display",
+  "script": "Apple just skipped the iPhone 18.\nFor the first time in 7 years, there's no standard iPhone this September.\nPegatron — one of the companies that actually builds iPhones — just confirmed it on this week's earnings call.\nApple is splitting the iPhone 18 launch in two.\nWave 1, September 2026: the iPhone 18 Pro, the 18 Pro Max — and reportedly Apple's first foldable, the iPhone Ultra.\nWave 2, March 2027: the standard iPhone 18, the budget 18e, and the iPhone Air 2.\nEvery number iPhone from the iPhone 11 to the iPhone 17 launched in September. 7 generations straight.\nSo why break it now? Simply put, September becomes a pure premium show.\nPro models carry Apple's fattest margins, and they get the entire holiday quarter to themselves.\nOn top of it, Pegatron says component shortages — chips and memory — could run into 2028.\nAnd look, if parts are scarce, you don't want 6 new iPhones fighting for them at once.\nAnyways, this has been building for a year — analyst Ming-Chi Kuo called a spring 2027 iPhone 18 months ago.\nIt's just the first time the supply chain said it out loud.\nTo be fair, Apple hasn't confirmed a thing. And in leaks like this, dates are always the softest detail.\nIf it sticks, the iPhone becomes a twice-a-year event.\nSo — wait till March, or is Apple betting you'll just buy the Pro?\nTell me in the comments.\n",
+  "approval": {
+    "sha256": "02bc3f9e56c5c17c14c1b60813302f6ee4c0fd29b9601d50ceedd562ddfcf158",
+    "approvedAt": "2026-08-13T06:42:35+00:00",
+    "words": 242,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+  },
+  "allowLong": true,
+  "allowLongReason": "Approved 242-word script (hash 02bc3f9e56c5c17c) delivers at this voice's measured ~2.6 wps (grok-bot 2.69, apple-pay-india 2.72 on the same voice), running 93.2s. The 3.2 wps planning constant in the docs is wrong for this voice; word budgets re-derived in STYLE-RULES.md 2026-08-13. Cutting approved sentences without user sign-off was rejected; user offered a trim+re-record.",
+  "emphasis": [
+    "skipped",
+    "Pegatron",
+    "two",
+    "Ultra",
+    "2027",
+    "18e",
+    "margins",
+    "2028",
+    "six"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "durationSec": 1.68,
+      "captionBottom": 1000,
+      "topSrc": "assets/iphone18-split/clips/pro-camera.mp4",
+      "topFrom": 0.0,
+      "topFocusX": 0.5,
+      "bottomSrc": "assets/iphone18-split/avatar-master-169.mp4",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.554,
+      "credit": "Apple",
+      "assetId": "clip-pro-camera",
+      "sfx": [
+        {
+          "src": "sfx2/risers-01.mp3",
+          "vol": 0.14,
+          "at": 0.0
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/pro-molten.mp4",
+      "durationSec": 2.6,
+      "zoomDir": "in",
+      "credit": "Apple",
+      "assetId": "clip-pro-molten",
+      "headline": {
+        "lines": [
+          {
+            "text": "THIS SEPTEMBER",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "NO iPhone 18",
+            "kind": "headline",
+            "at": 0.5,
+            "accent": true
+          }
+        ],
+        "y": 0.1,
+        "theme": "light",
+        "align": "center"
+      },
+      "sfx": [
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "vol": 0.16,
+          "at": 0.4
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/ev-macro.mp4",
+      "durationSec": 2.6,
+      "zoomDir": "out",
+      "credit": "Apple",
+      "assetId": "clip-ev-macro"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/avatar-master-169.mp4",
+      "durationSec": 2.19,
+      "from": 6.88,
+      "focusX": 0.529,
+      "captionBottom": 300
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/iphone18-split/clips/pegatron-building.png",
+      "bg": "gradient",
+      "aspect": 1.3473684210526315,
+      "durationSec": 2.2,
+      "credit": "AppleInsider",
+      "assetId": "still-pegatron-building"
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.19,
+      "src": "assets/iphone18-split/clips/ai-hero.png",
+      "srcWidth": 2588,
+      "srcHeight": 2138,
+      "credit": "AppleInsider",
+      "bg": "cream",
+      "focus": {
+        "x": 15,
+        "y": 40,
+        "w": 2320,
+        "h": 480
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 20,
+          "y": 90,
+          "w": 2280,
+          "h": 250
+        }
+      ],
+      "assetId": "receipt-ai-hero"
+    },
+    {
+      "type": "categorygrid",
+      "bg": "gradient",
+      "headline": "ONE LAUNCH, SPLIT IN TWO",
+      "cards": [
+        {
+          "label": "SEPTEMBER 2026",
+          "sub": "18 Pro · Pro Max · “Ultra”"
+        },
+        {
+          "label": "MARCH 2027",
+          "sub": "iPhone 18 · 18e · Air 2"
+        }
+      ],
+      "durationSec": 2.08,
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "vol": 0.12,
+          "at": 0.0
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/pro-lineup.mp4",
+      "durationSec": 2.55,
+      "zoomDir": "in",
+      "credit": "Apple",
+      "assetId": "clip-pro-lineup"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/pro-trio-backs.mp4",
+      "durationSec": 2.54,
+      "zoomDir": "out",
+      "credit": "Apple",
+      "assetId": "clip-pro-trio-backs",
+      "headline": {
+        "lines": [
+          {
+            "text": "WAVE 1 · September 2026",
+            "kind": "label",
+            "at": 0.2
+          }
+        ],
+        "y": 0.09,
+        "theme": "light",
+        "align": "center"
+      }
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/pro-profile.mp4",
+      "durationSec": 2.55,
+      "zoomDir": "in",
+      "credit": "Apple",
+      "assetId": "clip-pro-profile",
+      "headline": {
+        "lines": [
+          {
+            "text": "18 PRO · PRO MAX",
+            "kind": "label",
+            "at": 0.2
+          }
+        ],
+        "y": 0.09,
+        "theme": "light",
+        "align": "center"
+      }
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/avatar-master-169.mp4",
+      "durationSec": 2.05,
+      "from": 23.18,
+      "focusX": 0.529,
+      "captionBottom": 300
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.05,
+      "src": "assets/iphone18-split/clips/mr-body.png",
+      "srcWidth": 1170,
+      "srcHeight": 1600,
+      "credit": "MacRumors",
+      "bg": "cream",
+      "focus": {
+        "x": 20,
+        "y": 150,
+        "w": 1130,
+        "h": 500
+      },
+      "annotations": [
+        {
+          "kind": "circle",
+          "at": 0.8,
+          "x": 140,
+          "y": 415,
+          "w": 580,
+          "h": 75
+        },
+        {
+          "kind": "underline",
+          "at": 1.6,
+          "x": 190,
+          "y": 555,
+          "w": 420,
+          "h": 55
+        }
+      ],
+      "assetId": "receipt-mr-body"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/ev-fan.mp4",
+      "durationSec": 2.42,
+      "zoomDir": "in",
+      "credit": "Apple",
+      "assetId": "clip-ev-fan",
+      "headline": {
+        "lines": [
+          {
+            "text": "WAVE 2 · March 2027",
+            "kind": "label",
+            "at": 0.2
+          }
+        ],
+        "y": 0.09,
+        "theme": "light",
+        "align": "center"
+      }
+    },
+    {
+      "type": "wordcascade",
+      "bg": "cream",
+      "captionTheme": "dark",
+      "words": [
+        {
+          "text": "iPhone 18",
+          "style": "serif",
+          "at": 0.1,
+          "size": 1.1
+        },
+        {
+          "text": "iPhone 18e",
+          "style": "serif",
+          "at": 0.75,
+          "size": 1.1
+        },
+        {
+          "text": "iPhone Air 2",
+          "style": "caps",
+          "at": 1.4,
+          "size": 1.2,
+          "accent": true
+        }
+      ],
+      "durationSec": 2.26
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/air-thin.mp4",
+      "durationSec": 2.26,
+      "zoomDir": "in",
+      "credit": "Apple",
+      "assetId": "clip-air-thin"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/ev-blue.mp4",
+      "durationSec": 2.35,
+      "zoomDir": "out",
+      "credit": "Apple",
+      "assetId": "clip-ev-blue"
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.36,
+      "src": "assets/iphone18-split/clips/mr-body.png",
+      "srcWidth": 1170,
+      "srcHeight": 1600,
+      "credit": "MacRumors",
+      "bg": "cream",
+      "focus": {
+        "x": 20,
+        "y": 640,
+        "w": 1130,
+        "h": 400
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 76,
+          "y": 680,
+          "w": 990,
+          "h": 52
+        },
+        {
+          "kind": "circle",
+          "at": 1.4,
+          "x": 695,
+          "y": 920,
+          "w": 230,
+          "h": 64
+        }
+      ],
+      "assetId": "receipt-mr-body"
+    },
+    {
+      "type": "timeline",
+      "title": "7 Septembers straight",
+      "kicker": "the standard iPhone",
+      "footnote": "MacRumors · Aug 12, 2026",
+      "items": [
+        {
+          "date": "2019",
+          "name": "iPhone 11",
+          "sub": "September",
+          "at": 0.2
+        },
+        {
+          "date": "2025",
+          "name": "iPhone 17",
+          "sub": "September",
+          "at": 0.85
+        },
+        {
+          "date": "2027",
+          "name": "iPhone 18",
+          "sub": "March — the break",
+          "accent": "MOVED",
+          "at": 1.5
+        }
+      ],
+      "durationSec": 2.35,
+      "sfx": [
+        {
+          "src": "sfx2/ground-impact-352053.mp3",
+          "vol": 0.13,
+          "at": 0.2
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/pro-unibody.mp4",
+      "durationSec": 2.5,
+      "zoomDir": "in",
+      "credit": "Apple",
+      "assetId": "clip-pro-unibody",
+      "headline": {
+        "lines": [
+          {
+            "text": "September 2026",
+            "kind": "label",
+            "at": 0.1
+          },
+          {
+            "text": "PRO-ONLY",
+            "kind": "headline",
+            "at": 0.45,
+            "accent": true
+          }
+        ],
+        "y": 0.1,
+        "theme": "light",
+        "align": "center"
+      }
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/ev-title.mp4",
+      "durationSec": 2.5,
+      "zoomDir": "out",
+      "credit": "Apple",
+      "assetId": "clip-ev-title"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/avatar-master-169.mp4",
+      "durationSec": 2.78,
+      "from": 46.28,
+      "focusX": 0.529,
+      "captionBottom": 300
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/pro-neon.mp4",
+      "durationSec": 2.26,
+      "zoomDir": "in",
+      "credit": "Apple",
+      "assetId": "clip-pro-neon"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/iphone18-split/clips/pegatron-gate.png",
+      "bg": "gradient",
+      "aspect": 1.5873015873015872,
+      "durationSec": 2.21,
+      "credit": "AppleInsider",
+      "assetId": "still-pegatron-gate"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/pro-chips.mp4",
+      "durationSec": 2.21,
+      "zoomDir": "in",
+      "credit": "Apple",
+      "assetId": "clip-pro-chips"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/pro-wafer.mp4",
+      "durationSec": 2.03,
+      "zoomDir": "out",
+      "credit": "Apple",
+      "assetId": "clip-pro-wafer"
+    },
+    {
+      "type": "specsheet",
+      "kicker": "Pegatron, on the same call",
+      "title": "The parts crunch",
+      "columns": [
+        "OUTLOOK"
+      ],
+      "rows": [
+        {
+          "label": "Semiconductors",
+          "values": [
+            "tight into 2028"
+          ]
+        },
+        {
+          "label": "Memory (RAM)",
+          "values": [
+            "tight into 2028"
+          ],
+          "accent": true
+        }
+      ],
+      "footnote": "Pegatron, via AppleInsider · Aug 12, 2026",
+      "durationSec": 2.03,
+      "sfx": [
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "vol": 0.16,
+          "at": 0.3
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/avatar-master-169.mp4",
+      "durationSec": 2.54,
+      "from": 59.8,
+      "focusX": 0.529,
+      "captionBottom": 300
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/air-internals.mp4",
+      "durationSec": 2.78,
+      "zoomDir": "in",
+      "credit": "Apple",
+      "assetId": "clip-air-internals"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/pro-glass.mp4",
+      "durationSec": 0.92,
+      "zoomDir": "out",
+      "credit": "Apple",
+      "assetId": "clip-pro-glass"
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.56,
+      "src": "assets/iphone18-split/clips/mr-hero.png",
+      "srcWidth": 1820,
+      "srcHeight": 1420,
+      "credit": "MacRumors",
+      "bg": "cream",
+      "focus": {
+        "x": 0,
+        "y": 0,
+        "w": 1820,
+        "h": 720
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 45,
+          "y": 26,
+          "w": 1310,
+          "h": 66
+        }
+      ],
+      "assetId": "receipt-mr-hero",
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "vol": 0.12,
+          "at": 0.0
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/avatar-master-169.mp4",
+      "durationSec": 2.25,
+      "from": 68.6,
+      "focusX": 0.529,
+      "captionBottom": 300
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.25,
+      "src": "assets/iphone18-split/clips/mr-body.png",
+      "srcWidth": 1170,
+      "srcHeight": 1600,
+      "credit": "MacRumors",
+      "bg": "cream",
+      "focus": {
+        "x": 20,
+        "y": 1100,
+        "w": 1130,
+        "h": 480
+      },
+      "annotations": [
+        {
+          "kind": "circle",
+          "at": 0.8,
+          "x": 225,
+          "y": 1295,
+          "w": 320,
+          "h": 70
+        },
+        {
+          "kind": "underline",
+          "at": 1.5,
+          "x": 780,
+          "y": 1370,
+          "w": 280,
+          "h": 50
+        }
+      ],
+      "assetId": "receipt-mr-body"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/air-mood.mp4",
+      "durationSec": 2.51,
+      "zoomDir": "out",
+      "credit": "Apple",
+      "assetId": "clip-air-mood"
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.51,
+      "src": "assets/iphone18-split/clips/ai-hero.png",
+      "srcWidth": 2588,
+      "srcHeight": 2138,
+      "credit": "AppleInsider",
+      "bg": "cream",
+      "focus": {
+        "x": 15,
+        "y": 40,
+        "w": 2320,
+        "h": 560
+      },
+      "annotations": [
+        {
+          "kind": "circle",
+          "at": 0.9,
+          "x": 480,
+          "y": 470,
+          "w": 660,
+          "h": 90
+        }
+      ],
+      "assetId": "receipt-ai-hero"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/avatar-master-169.mp4",
+      "durationSec": 2.54,
+      "from": 78.12,
+      "focusX": 0.529,
+      "captionBottom": 300
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/pro-rain.mp4",
+      "durationSec": 2.88,
+      "zoomDir": "in",
+      "credit": "Apple",
+      "assetId": "clip-pro-rain",
+      "headline": {
+        "lines": [
+          {
+            "text": "IN EVERY LEAK",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "DATES ARE THE",
+            "kind": "headline",
+            "at": 0.45
+          },
+          {
+            "text": "SOFTEST DETAIL",
+            "kind": "headline",
+            "at": 0.7,
+            "accent": true
+          }
+        ],
+        "y": 0.4,
+        "theme": "light",
+        "align": "center"
+      },
+      "captionBottom": 1500
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/pro-machine.mp4",
+      "durationSec": 1.84,
+      "zoomDir": "out",
+      "credit": "Apple",
+      "assetId": "clip-pro-machine"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/ev-splash.mp4",
+      "durationSec": 2.18,
+      "zoomDir": "in",
+      "credit": "Apple",
+      "assetId": "clip-ev-splash",
+      "headline": {
+        "lines": [
+          {
+            "text": "TWICE A YEAR",
+            "kind": "headline",
+            "at": 0.6,
+            "accent": true
+          }
+        ],
+        "y": 0.42,
+        "theme": "light",
+        "align": "center"
+      },
+      "sfx": [
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "vol": 0.16,
+          "at": 0.2
+        }
+      ],
+      "hideCaptions": true
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/clips/air-fingertip.mp4",
+      "durationSec": 1.84,
+      "zoomDir": "in",
+      "credit": "Apple",
+      "assetId": "clip-air-fingertip",
+      "sfx": [
+        {
+          "src": "sfx2/risers-01.mp3",
+          "vol": 0.14,
+          "at": 0.3
+        }
+      ]
+    },
+    {
+      "type": "endquestion",
+      "src": "assets/iphone18-split/clips/pro-lineup-still.jpg",
+      "question": "Wait till March — or buy the Pro?",
+      "bg": "gradient",
+      "assetId": "still-pro-lineup",
+      "durationSec": 1.83
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-split/avatar-master-169.mp4",
+      "durationSec": 1.84,
+      "from": 91.23,
+      "focusX": 0.529,
+      "captionBottom": 300,
+      "headline": {
+        "lines": [
+          {
+            "text": "MARCH — OR THE PRO?",
+            "kind": "label",
+            "at": 0.2
+          },
+          {
+            "text": "TELL ME BELOW",
+            "kind": "headline",
+            "at": 0.6,
+            "accent": true
+          }
+        ],
+        "y": 0.07,
+        "theme": "light",
+        "align": "center"
+      }
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.96,
+      "text": "Apple just skipped",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Apple"
+        },
+        {
+          "t": 0.28,
+          "text": "just"
+        },
+        {
+          "t": 0.54,
+          "text": "skipped"
+        }
+      ]
+    },
+    {
+      "start": 0.96,
+      "end": 2.24,
+      "text": "the iPhone 18.",
+      "words": [
+        {
+          "t": 0.96,
+          "text": "the"
+        },
+        {
+          "t": 1.18,
+          "text": "iPhone"
+        },
+        {
+          "t": 1.56,
+          "text": "18."
+        }
+      ]
+    },
+    {
+      "start": 2.86,
+      "end": 3.3,
+      "text": "For the first",
+      "words": [
+        {
+          "t": 2.86,
+          "text": "For"
+        },
+        {
+          "t": 2.94,
+          "text": "the"
+        },
+        {
+          "t": 3.06,
+          "text": "first"
+        }
+      ]
+    },
+    {
+      "start": 3.3,
+      "end": 4.04,
+      "text": "time in 7",
+      "words": [
+        {
+          "t": 3.3,
+          "text": "time"
+        },
+        {
+          "t": 3.5,
+          "text": "in"
+        },
+        {
+          "t": 3.66,
+          "text": "7"
+        }
+      ]
+    },
+    {
+      "start": 4.04,
+      "end": 4.88,
+      "text": "years there's no",
+      "words": [
+        {
+          "t": 4.04,
+          "text": "years"
+        },
+        {
+          "t": 4.4,
+          "text": "there's"
+        },
+        {
+          "t": 4.72,
+          "text": "no"
+        }
+      ]
+    },
+    {
+      "start": 4.88,
+      "end": 6.18,
+      "text": "standard iPhone this",
+      "words": [
+        {
+          "t": 4.88,
+          "text": "standard"
+        },
+        {
+          "t": 5.38,
+          "text": "iPhone"
+        },
+        {
+          "t": 5.92,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 6.18,
+      "end": 7.66,
+      "text": "September. Pegatron,",
+      "words": [
+        {
+          "t": 6.18,
+          "text": "September."
+        },
+        {
+          "t": 7.26,
+          "text": "Pegatron,"
+        }
+      ]
+    },
+    {
+      "start": 7.74,
+      "end": 8.3,
+      "text": "one of the",
+      "words": [
+        {
+          "t": 7.74,
+          "text": "one"
+        },
+        {
+          "t": 8.06,
+          "text": "of"
+        },
+        {
+          "t": 8.16,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 8.3,
+      "end": 9.44,
+      "text": "companies that actually",
+      "words": [
+        {
+          "t": 8.3,
+          "text": "companies"
+        },
+        {
+          "t": 8.7,
+          "text": "that"
+        },
+        {
+          "t": 8.94,
+          "text": "actually"
+        }
+      ]
+    },
+    {
+      "start": 9.44,
+      "end": 10.3,
+      "text": "builds iPhones,",
+      "words": [
+        {
+          "t": 9.44,
+          "text": "builds"
+        },
+        {
+          "t": 9.8,
+          "text": "iPhones,"
+        }
+      ]
+    },
+    {
+      "start": 10.94,
+      "end": 11.82,
+      "text": "just confirmed it",
+      "words": [
+        {
+          "t": 10.94,
+          "text": "just"
+        },
+        {
+          "t": 11.06,
+          "text": "confirmed"
+        },
+        {
+          "t": 11.6,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 11.82,
+      "end": 12.64,
+      "text": "on this week's",
+      "words": [
+        {
+          "t": 11.82,
+          "text": "on"
+        },
+        {
+          "t": 11.98,
+          "text": "this"
+        },
+        {
+          "t": 12.22,
+          "text": "week's"
+        }
+      ]
+    },
+    {
+      "start": 12.64,
+      "end": 13.34,
+      "text": "earnings call.",
+      "words": [
+        {
+          "t": 12.64,
+          "text": "earnings"
+        },
+        {
+          "t": 12.94,
+          "text": "call."
+        }
+      ]
+    },
+    {
+      "start": 13.88,
+      "end": 14.7,
+      "text": "Apple is splitting",
+      "words": [
+        {
+          "t": 13.88,
+          "text": "Apple"
+        },
+        {
+          "t": 14.1,
+          "text": "is"
+        },
+        {
+          "t": 14.3,
+          "text": "splitting"
+        }
+      ]
+    },
+    {
+      "start": 14.7,
+      "end": 16.02,
+      "text": "the iPhone 18",
+      "words": [
+        {
+          "t": 14.7,
+          "text": "the"
+        },
+        {
+          "t": 15.02,
+          "text": "iPhone"
+        },
+        {
+          "t": 15.42,
+          "text": "18"
+        }
+      ]
+    },
+    {
+      "start": 16.02,
+      "end": 16.88,
+      "text": "launch in two.",
+      "words": [
+        {
+          "t": 16.02,
+          "text": "launch"
+        },
+        {
+          "t": 16.32,
+          "text": "in"
+        },
+        {
+          "t": 16.62,
+          "text": "two."
+        }
+      ]
+    },
+    {
+      "start": 17.36,
+      "end": 17.84,
+      "text": "Wave 1,",
+      "words": [
+        {
+          "t": 17.36,
+          "text": "Wave"
+        },
+        {
+          "t": 17.52,
+          "text": "1,"
+        }
+      ]
+    },
+    {
+      "start": 18.08,
+      "end": 19.82,
+      "text": "September 2026,",
+      "words": [
+        {
+          "t": 18.08,
+          "text": "September"
+        },
+        {
+          "t": 18.58,
+          "text": "2026,"
+        }
+      ]
+    },
+    {
+      "start": 20.32,
+      "end": 21.26,
+      "text": "the iPhone 18",
+      "words": [
+        {
+          "t": 20.32,
+          "text": "the"
+        },
+        {
+          "t": 20.38,
+          "text": "iPhone"
+        },
+        {
+          "t": 20.7,
+          "text": "18"
+        }
+      ]
+    },
+    {
+      "start": 21.26,
+      "end": 22.42,
+      "text": "Pro, the 18",
+      "words": [
+        {
+          "t": 21.26,
+          "text": "Pro,"
+        },
+        {
+          "t": 21.94,
+          "text": "the"
+        },
+        {
+          "t": 22.04,
+          "text": "18"
+        }
+      ]
+    },
+    {
+      "start": 22.42,
+      "end": 23.06,
+      "text": "Pro Max,",
+      "words": [
+        {
+          "t": 22.42,
+          "text": "Pro"
+        },
+        {
+          "t": 22.76,
+          "text": "Max,"
+        }
+      ]
+    },
+    {
+      "start": 23.38,
+      "end": 24.72,
+      "text": "and reportedly Apple's",
+      "words": [
+        {
+          "t": 23.38,
+          "text": "and"
+        },
+        {
+          "t": 23.44,
+          "text": "reportedly"
+        },
+        {
+          "t": 23.88,
+          "text": "Apple's"
+        }
+      ]
+    },
+    {
+      "start": 24.72,
+      "end": 25.66,
+      "text": "first foldable,",
+      "words": [
+        {
+          "t": 24.72,
+          "text": "first"
+        },
+        {
+          "t": 25.08,
+          "text": "foldable,"
+        }
+      ]
+    },
+    {
+      "start": 26.06,
+      "end": 27.16,
+      "text": "the iPhone Ultra,",
+      "words": [
+        {
+          "t": 26.06,
+          "text": "the"
+        },
+        {
+          "t": 26.12,
+          "text": "iPhone"
+        },
+        {
+          "t": 26.48,
+          "text": "Ultra,"
+        }
+      ]
+    },
+    {
+      "start": 27.74,
+      "end": 28.16,
+      "text": "Wave 2,",
+      "words": [
+        {
+          "t": 27.74,
+          "text": "Wave"
+        },
+        {
+          "t": 27.88,
+          "text": "2,"
+        }
+      ]
+    },
+    {
+      "start": 28.38,
+      "end": 29.58,
+      "text": "March 2027,",
+      "words": [
+        {
+          "t": 28.38,
+          "text": "March"
+        },
+        {
+          "t": 28.5,
+          "text": "2027,"
+        }
+      ]
+    },
+    {
+      "start": 30.06,
+      "end": 30.84,
+      "text": "the standard iPhone",
+      "words": [
+        {
+          "t": 30.06,
+          "text": "the"
+        },
+        {
+          "t": 30.14,
+          "text": "standard"
+        },
+        {
+          "t": 30.5,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 30.84,
+      "end": 32.0,
+      "text": "18, the budget",
+      "words": [
+        {
+          "t": 30.84,
+          "text": "18,"
+        },
+        {
+          "t": 31.68,
+          "text": "the"
+        },
+        {
+          "t": 31.76,
+          "text": "budget"
+        }
+      ]
+    },
+    {
+      "start": 32.0,
+      "end": 33.14,
+      "text": "18e, and the",
+      "words": [
+        {
+          "t": 32.0,
+          "text": "18e,"
+        },
+        {
+          "t": 32.94,
+          "text": "and"
+        },
+        {
+          "t": 33.04,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 33.14,
+      "end": 34.1,
+      "text": "iPhone Air 2.",
+      "words": [
+        {
+          "t": 33.14,
+          "text": "iPhone"
+        },
+        {
+          "t": 33.52,
+          "text": "Air"
+        },
+        {
+          "t": 33.86,
+          "text": "2."
+        }
+      ]
+    },
+    {
+      "start": 34.7,
+      "end": 35.7,
+      "text": "Every number iPhone",
+      "words": [
+        {
+          "t": 34.7,
+          "text": "Every"
+        },
+        {
+          "t": 35.04,
+          "text": "number"
+        },
+        {
+          "t": 35.32,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 35.7,
+      "end": 36.44,
+      "text": "from the iPhone",
+      "words": [
+        {
+          "t": 35.7,
+          "text": "from"
+        },
+        {
+          "t": 36.0,
+          "text": "the"
+        },
+        {
+          "t": 36.14,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 36.44,
+      "end": 37.26,
+      "text": "11 to the",
+      "words": [
+        {
+          "t": 36.44,
+          "text": "11"
+        },
+        {
+          "t": 36.86,
+          "text": "to"
+        },
+        {
+          "t": 37.14,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 37.26,
+      "end": 38.5,
+      "text": "iPhone 17 launched",
+      "words": [
+        {
+          "t": 37.26,
+          "text": "iPhone"
+        },
+        {
+          "t": 37.54,
+          "text": "17"
+        },
+        {
+          "t": 38.18,
+          "text": "launched"
+        }
+      ]
+    },
+    {
+      "start": 38.5,
+      "end": 39.36,
+      "text": "in September.",
+      "words": [
+        {
+          "t": 38.5,
+          "text": "in"
+        },
+        {
+          "t": 38.86,
+          "text": "September."
+        }
+      ]
+    },
+    {
+      "start": 39.94,
+      "end": 41.16,
+      "text": "7 generations straight,",
+      "words": [
+        {
+          "t": 39.94,
+          "text": "7"
+        },
+        {
+          "t": 40.16,
+          "text": "generations"
+        },
+        {
+          "t": 40.62,
+          "text": "straight,"
+        }
+      ]
+    },
+    {
+      "start": 41.52,
+      "end": 42.46,
+      "text": "so why break",
+      "words": [
+        {
+          "t": 41.52,
+          "text": "so"
+        },
+        {
+          "t": 41.78,
+          "text": "why"
+        },
+        {
+          "t": 42.12,
+          "text": "break"
+        }
+      ]
+    },
+    {
+      "start": 42.46,
+      "end": 42.88,
+      "text": "it now?",
+      "words": [
+        {
+          "t": 42.46,
+          "text": "it"
+        },
+        {
+          "t": 42.6,
+          "text": "now?"
+        }
+      ]
+    },
+    {
+      "start": 43.32,
+      "end": 43.84,
+      "text": "Simply put,",
+      "words": [
+        {
+          "t": 43.32,
+          "text": "Simply"
+        },
+        {
+          "t": 43.58,
+          "text": "put,"
+        }
+      ]
+    },
+    {
+      "start": 44.32,
+      "end": 45.06,
+      "text": "September becomes a",
+      "words": [
+        {
+          "t": 44.32,
+          "text": "September"
+        },
+        {
+          "t": 44.32,
+          "text": "becomes"
+        },
+        {
+          "t": 44.74,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 45.06,
+      "end": 46.16,
+      "text": "pure premium show.",
+      "words": [
+        {
+          "t": 45.06,
+          "text": "pure"
+        },
+        {
+          "t": 45.38,
+          "text": "premium"
+        },
+        {
+          "t": 45.8,
+          "text": "show."
+        }
+      ]
+    },
+    {
+      "start": 46.7,
+      "end": 47.58,
+      "text": "Pro models carry",
+      "words": [
+        {
+          "t": 46.7,
+          "text": "Pro"
+        },
+        {
+          "t": 46.84,
+          "text": "models"
+        },
+        {
+          "t": 47.2,
+          "text": "carry"
+        }
+      ]
+    },
+    {
+      "start": 47.58,
+      "end": 48.94,
+      "text": "Apple's fattest margins",
+      "words": [
+        {
+          "t": 47.58,
+          "text": "Apple's"
+        },
+        {
+          "t": 48.14,
+          "text": "fattest"
+        },
+        {
+          "t": 48.52,
+          "text": "margins"
+        }
+      ]
+    },
+    {
+      "start": 48.94,
+      "end": 49.82,
+      "text": "and they get",
+      "words": [
+        {
+          "t": 48.94,
+          "text": "and"
+        },
+        {
+          "t": 49.54,
+          "text": "they"
+        },
+        {
+          "t": 49.66,
+          "text": "get"
+        }
+      ]
+    },
+    {
+      "start": 49.82,
+      "end": 50.88,
+      "text": "the entire holiday",
+      "words": [
+        {
+          "t": 49.82,
+          "text": "the"
+        },
+        {
+          "t": 50.02,
+          "text": "entire"
+        },
+        {
+          "t": 50.48,
+          "text": "holiday"
+        }
+      ]
+    },
+    {
+      "start": 50.88,
+      "end": 51.96,
+      "text": "quarter to themselves.",
+      "words": [
+        {
+          "t": 50.88,
+          "text": "quarter"
+        },
+        {
+          "t": 51.2,
+          "text": "to"
+        },
+        {
+          "t": 51.54,
+          "text": "themselves."
+        }
+      ]
+    },
+    {
+      "start": 52.58,
+      "end": 53.28,
+      "text": "On top of",
+      "words": [
+        {
+          "t": 52.58,
+          "text": "On"
+        },
+        {
+          "t": 52.9,
+          "text": "top"
+        },
+        {
+          "t": 53.1,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 53.28,
+      "end": 54.38,
+      "text": "it, Pegatron says",
+      "words": [
+        {
+          "t": 53.28,
+          "text": "it,"
+        },
+        {
+          "t": 53.7,
+          "text": "Pegatron"
+        },
+        {
+          "t": 54.04,
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "start": 54.38,
+      "end": 55.62,
+      "text": "component shortages,",
+      "words": [
+        {
+          "t": 54.38,
+          "text": "component"
+        },
+        {
+          "t": 54.98,
+          "text": "shortages,"
+        }
+      ]
+    },
+    {
+      "start": 56.24,
+      "end": 57.32,
+      "text": "chips and memory",
+      "words": [
+        {
+          "t": 56.24,
+          "text": "chips"
+        },
+        {
+          "t": 56.72,
+          "text": "and"
+        },
+        {
+          "t": 56.94,
+          "text": "memory"
+        }
+      ]
+    },
+    {
+      "start": 57.32,
+      "end": 58.4,
+      "text": "could run into",
+      "words": [
+        {
+          "t": 57.32,
+          "text": "could"
+        },
+        {
+          "t": 57.9,
+          "text": "run"
+        },
+        {
+          "t": 58.14,
+          "text": "into"
+        }
+      ]
+    },
+    {
+      "start": 58.4,
+      "end": 60.62,
+      "text": "2028. And look,",
+      "words": [
+        {
+          "t": 58.4,
+          "text": "2028."
+        },
+        {
+          "t": 60.32,
+          "text": "And"
+        },
+        {
+          "t": 60.46,
+          "text": "look,"
+        }
+      ]
+    },
+    {
+      "start": 61.12,
+      "end": 61.82,
+      "text": "if parts are",
+      "words": [
+        {
+          "t": 61.12,
+          "text": "if"
+        },
+        {
+          "t": 61.32,
+          "text": "parts"
+        },
+        {
+          "t": 61.56,
+          "text": "are"
+        }
+      ]
+    },
+    {
+      "start": 61.82,
+      "end": 63.16,
+      "text": "scarce, you don't",
+      "words": [
+        {
+          "t": 61.82,
+          "text": "scarce,"
+        },
+        {
+          "t": 62.76,
+          "text": "you"
+        },
+        {
+          "t": 62.86,
+          "text": "don't"
+        }
+      ]
+    },
+    {
+      "start": 63.16,
+      "end": 64.06,
+      "text": "want six new",
+      "words": [
+        {
+          "t": 63.16,
+          "text": "want"
+        },
+        {
+          "t": 63.38,
+          "text": "six"
+        },
+        {
+          "t": 63.7,
+          "text": "new"
+        }
+      ]
+    },
+    {
+      "start": 64.06,
+      "end": 65.22,
+      "text": "iPhones fighting for",
+      "words": [
+        {
+          "t": 64.06,
+          "text": "iPhones"
+        },
+        {
+          "t": 64.44,
+          "text": "fighting"
+        },
+        {
+          "t": 65.0,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 65.22,
+      "end": 65.92,
+      "text": "them at once.",
+      "words": [
+        {
+          "t": 65.22,
+          "text": "them"
+        },
+        {
+          "t": 65.4,
+          "text": "at"
+        },
+        {
+          "t": 65.58,
+          "text": "once."
+        }
+      ]
+    },
+    {
+      "start": 66.66,
+      "end": 67.92,
+      "text": "Anyways, this has",
+      "words": [
+        {
+          "t": 66.66,
+          "text": "Anyways,"
+        },
+        {
+          "t": 67.6,
+          "text": "this"
+        },
+        {
+          "t": 67.76,
+          "text": "has"
+        }
+      ]
+    },
+    {
+      "start": 67.92,
+      "end": 68.8,
+      "text": "been building for",
+      "words": [
+        {
+          "t": 67.92,
+          "text": "been"
+        },
+        {
+          "t": 68.14,
+          "text": "building"
+        },
+        {
+          "t": 68.48,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 68.8,
+      "end": 69.14,
+      "text": "a year.",
+      "words": [
+        {
+          "t": 68.8,
+          "text": "a"
+        },
+        {
+          "t": 68.94,
+          "text": "year."
+        }
+      ]
+    },
+    {
+      "start": 69.6,
+      "end": 70.92,
+      "text": "Analyst Ming-Chi Kuo",
+      "words": [
+        {
+          "t": 69.6,
+          "text": "Analyst"
+        },
+        {
+          "t": 69.98,
+          "text": "Ming-Chi"
+        },
+        {
+          "t": 70.58,
+          "text": "Kuo"
+        }
+      ]
+    },
+    {
+      "start": 70.92,
+      "end": 71.68,
+      "text": "called a spring",
+      "words": [
+        {
+          "t": 70.92,
+          "text": "called"
+        },
+        {
+          "t": 71.18,
+          "text": "a"
+        },
+        {
+          "t": 71.4,
+          "text": "spring"
+        }
+      ]
+    },
+    {
+      "start": 71.68,
+      "end": 74.0,
+      "text": "2027 iPhone 18",
+      "words": [
+        {
+          "t": 71.68,
+          "text": "2027"
+        },
+        {
+          "t": 72.98,
+          "text": "iPhone"
+        },
+        {
+          "t": 73.44,
+          "text": "18"
+        }
+      ]
+    },
+    {
+      "start": 74.0,
+      "end": 74.76,
+      "text": "months ago.",
+      "words": [
+        {
+          "t": 74.0,
+          "text": "months"
+        },
+        {
+          "t": 74.32,
+          "text": "ago."
+        }
+      ]
+    },
+    {
+      "start": 75.16,
+      "end": 75.82,
+      "text": "It's just the",
+      "words": [
+        {
+          "t": 75.16,
+          "text": "It's"
+        },
+        {
+          "t": 75.46,
+          "text": "just"
+        },
+        {
+          "t": 75.6,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 75.82,
+      "end": 76.56,
+      "text": "first time the",
+      "words": [
+        {
+          "t": 75.82,
+          "text": "first"
+        },
+        {
+          "t": 76.1,
+          "text": "time"
+        },
+        {
+          "t": 76.38,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 76.56,
+      "end": 77.62,
+      "text": "supply chain said",
+      "words": [
+        {
+          "t": 76.56,
+          "text": "supply"
+        },
+        {
+          "t": 76.9,
+          "text": "chain"
+        },
+        {
+          "t": 77.26,
+          "text": "said"
+        }
+      ]
+    },
+    {
+      "start": 77.62,
+      "end": 78.26,
+      "text": "it out loud.",
+      "words": [
+        {
+          "t": 77.62,
+          "text": "it"
+        },
+        {
+          "t": 77.78,
+          "text": "out"
+        },
+        {
+          "t": 78.0,
+          "text": "loud."
+        }
+      ]
+    },
+    {
+      "start": 78.7,
+      "end": 79.44,
+      "text": "To be fair,",
+      "words": [
+        {
+          "t": 78.7,
+          "text": "To"
+        },
+        {
+          "t": 79.04,
+          "text": "be"
+        },
+        {
+          "t": 79.16,
+          "text": "fair,"
+        }
+      ]
+    },
+    {
+      "start": 79.54,
+      "end": 80.54,
+      "text": "Apple hasn't confirmed",
+      "words": [
+        {
+          "t": 79.54,
+          "text": "Apple"
+        },
+        {
+          "t": 79.74,
+          "text": "hasn't"
+        },
+        {
+          "t": 80.12,
+          "text": "confirmed"
+        }
+      ]
+    },
+    {
+      "start": 80.54,
+      "end": 80.94,
+      "text": "a thing.",
+      "words": [
+        {
+          "t": 80.54,
+          "text": "a"
+        },
+        {
+          "t": 80.7,
+          "text": "thing."
+        }
+      ]
+    },
+    {
+      "start": 81.46,
+      "end": 81.96,
+      "text": "And in leaks",
+      "words": [
+        {
+          "t": 81.46,
+          "text": "And"
+        },
+        {
+          "t": 81.52,
+          "text": "in"
+        },
+        {
+          "t": 81.72,
+          "text": "leaks"
+        }
+      ]
+    },
+    {
+      "start": 81.96,
+      "end": 82.46,
+      "text": "like this,",
+      "words": [
+        {
+          "t": 81.96,
+          "text": "like"
+        },
+        {
+          "t": 82.2,
+          "text": "this,"
+        }
+      ]
+    },
+    {
+      "start": 82.64,
+      "end": 83.42,
+      "text": "dates are always",
+      "words": [
+        {
+          "t": 82.64,
+          "text": "dates"
+        },
+        {
+          "t": 82.86,
+          "text": "are"
+        },
+        {
+          "t": 83.04,
+          "text": "always"
+        }
+      ]
+    },
+    {
+      "start": 83.42,
+      "end": 84.58,
+      "text": "the softest detail.",
+      "words": [
+        {
+          "t": 83.42,
+          "text": "the"
+        },
+        {
+          "t": 83.64,
+          "text": "softest"
+        },
+        {
+          "t": 84.08,
+          "text": "detail."
+        }
+      ]
+    },
+    {
+      "start": 84.76,
+      "end": 85.26,
+      "text": "If it sticks,",
+      "words": [
+        {
+          "t": 84.76,
+          "text": "If"
+        },
+        {
+          "t": 84.9,
+          "text": "it"
+        },
+        {
+          "t": 85.02,
+          "text": "sticks,"
+        }
+      ]
+    },
+    {
+      "start": 85.44,
+      "end": 86.24,
+      "text": "the iPhone becomes",
+      "words": [
+        {
+          "t": 85.44,
+          "text": "the"
+        },
+        {
+          "t": 85.54,
+          "text": "iPhone"
+        },
+        {
+          "t": 85.86,
+          "text": "becomes"
+        }
+      ]
+    },
+    {
+      "start": 86.24,
+      "end": 86.9,
+      "text": "a twice a",
+      "words": [
+        {
+          "t": 86.24,
+          "text": "a"
+        },
+        {
+          "t": 86.46,
+          "text": "twice"
+        },
+        {
+          "t": 86.72,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 86.9,
+      "end": 87.44,
+      "text": "year event.",
+      "words": [
+        {
+          "t": 86.9,
+          "text": "year"
+        },
+        {
+          "t": 87.06,
+          "text": "event."
+        }
+      ]
+    },
+    {
+      "start": 87.9,
+      "end": 88.76,
+      "text": "So wait till",
+      "words": [
+        {
+          "t": 87.9,
+          "text": "So"
+        },
+        {
+          "t": 88.14,
+          "text": "wait"
+        },
+        {
+          "t": 88.56,
+          "text": "till"
+        }
+      ]
+    },
+    {
+      "start": 88.76,
+      "end": 89.54,
+      "text": "March or is",
+      "words": [
+        {
+          "t": 88.76,
+          "text": "March"
+        },
+        {
+          "t": 89.04,
+          "text": "or"
+        },
+        {
+          "t": 89.34,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 89.54,
+      "end": 90.5,
+      "text": "Apple betting you'll",
+      "words": [
+        {
+          "t": 89.54,
+          "text": "Apple"
+        },
+        {
+          "t": 89.84,
+          "text": "betting"
+        },
+        {
+          "t": 90.22,
+          "text": "you'll"
+        }
+      ]
+    },
+    {
+      "start": 90.5,
+      "end": 91.12,
+      "text": "just buy the",
+      "words": [
+        {
+          "t": 90.5,
+          "text": "just"
+        },
+        {
+          "t": 90.7,
+          "text": "buy"
+        },
+        {
+          "t": 90.92,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 91.12,
+      "end": 92.16,
+      "text": "Pro. Tell me",
+      "words": [
+        {
+          "t": 91.12,
+          "text": "Pro."
+        },
+        {
+          "t": 91.8,
+          "text": "Tell"
+        },
+        {
+          "t": 91.94,
+          "text": "me"
+        }
+      ]
+    },
+    {
+      "start": 92.16,
+      "end": 92.72,
+      "text": "in the comments.",
+      "words": [
+        {
+          "t": 92.16,
+          "text": "in"
+        },
+        {
+          "t": 92.3,
+          "text": "the"
+        },
+        {
+          "t": 92.4,
+          "text": "comments."
+        }
+      ]
+    }
+  ]
+}

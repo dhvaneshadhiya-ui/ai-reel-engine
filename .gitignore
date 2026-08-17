@@ -1,0 +1,28 @@
+# ── regenerable ──────────────────────────────────────────────────────────────
+node_modules/
+.DS_Store
+__pycache__/
+*.pyc
+
+# ── output: renders and masters, per reel ────────────────────────────────────
+out/
+
+# ── per-reel material, NOT the system ────────────────────────────────────────
+# Raw scouted footage and page grabs. Large, re-fetchable, and often
+# third-party — keep it out of the shared repo and off other people's disks.
+_sources/
+public/assets/
+
+# ── bundled binaries: shipped in the migration archive, never in git ──────────
+# ffmpeg + ffprobe are ~150 MB static x86_64 builds (they run on Apple Silicon
+# under Rosetta and natively on Intel), bundled so a new machine needs no
+# Homebrew and no terminal work. Too large for git; MIGRATION.md includes them.
+bin/
+
+# ── machine-local ────────────────────────────────────────────────────────────
+.claude/settings.local.json
+
+# ── kept ON PURPOSE (do not add these) ───────────────────────────────────────
+# public/sfx, public/sfx2, public/sfx-nick  — the sound library IS the system
+# public/fonts, public/music                — small, and the look depends on them
+# jobs/                                     — scripts + approvals are the record
