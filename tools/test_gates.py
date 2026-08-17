@@ -138,7 +138,10 @@ def good() -> dict:
 SCRIPT = "macOS ships today and that changes the maths."
 SCRIPT_SHA = hashlib.sha256(" ".join(SCRIPT.split()).encode()).hexdigest()
 
-VO_WORDS = [("macOS", 0.0, 0.3), ("ships", 0.3, 0.7)]
+# Leading spaces ON PURPOSE: this is how whisper actually returns words
+# (" Apple's"). The old clean-word fixture let a G21 bug hide for days — the
+# gate stripped punctuation but not whitespace, so nothing ever matched.
+VO_WORDS = [(" macOS", 0.0, 0.3), (" ships", 0.3, 0.7)]
 
 MANIFEST = {"assets": [{"id": "clip-b"}, {"id": "clip-banned"}],
             "banned_assets": ["clip-banned"]}

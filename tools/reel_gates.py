@@ -616,14 +616,37 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # uses the GENERATED voice track — if the script was edited after the
     # voice was made, captions silently drift from the audio.
     if vo_words:
-        spoken = {w.lower().strip(".,!?:;\"'—-") for w, *_ in
+        # .strip() FIRST for whitespace: whisper returns words with a LEADING
+        # SPACE (" Apple's"), and strip(punctuation) does not remove it, so every
+        # entry in this set carried a space and no caption token could ever match.
+        # G21 therefore flagged every alphabetic word in every reel. It went
+        # unnoticed because the CLI never passed vo_words (see the note at the
+        # bottom of this file) and because the self-test fixture used clean words
+        # that did not look like real whisper output.
+        spoken = {w.strip().lower().strip(".,!?:;\"'—-") for w, *_ in
                   (x if isinstance(x, (list, tuple)) else (x,) for x in vo_words)}
         spoken.discard("")
         missing = []
         for cap in (beats.get("captions") or []):
             for tok in str(cap.get("text", "")).split():
                 k = tok.lower().strip(".,!?:;\"'—-")
-                if k and not k.isdigit() and k not in spoken:
+                if not k:
+                    continue
+                # A token carrying a DIGIT is exempt, because the user's own
+                # notation rule requires captions to normalise what the voice
+                # says: the VO speaks "twenty nine dollars" and the caption must
+                # read "$29". The old test exempted only a bare `isdigit()`
+                # token, so every normalised form failed — "$29", "10%", "120x",
+                # "11th", '7.76"'. That reported 217 "defects" on one reel, all
+                # of them the notation rule working correctly, which made the
+                # gate worse than useless: it drowned the case it exists for.
+                #
+                # What it still catches, which is the real target: ALPHABETIC
+                # caption words that were never spoken, i.e. captions written
+                # against a script that was edited after the voice was made.
+                if any(c.isdigit() for c in k):
+                    continue
+                if k not in spoken:
                     missing.append(tok)
         if missing:
             uniq = sorted(set(missing))[:8]
@@ -631,7 +654,8 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 f"G21 {len(set(missing))} caption word(s) are not in the "
                 f"narration: {uniq} — the captions were written against a "
                 "different script than the voice track that will be rendered. "
-                "Re-derive captions from the whisper transcript.")
+                "Re-derive captions from the whisper transcript. (Numerals and "
+                "normalised forms like '$29' or '10%' are exempt by design.)")
 
     # G22 — ONE HIGHLIGHT PER BEAT (user rule 2026-08-12). Highlighting three
     # words in a four-word chunk highlights nothing.
@@ -1291,15 +1315,28 @@ def main() -> None:
     manifest = json.loads(man_path.read_text()) if man_path.exists() else None
 
     vo_end = None
+    vo_words: list[tuple[str, float, float]] | None = None
     vo_path = ROOT / f"public/assets/{slug}/vo.json"
     if vo_path.exists():
         raw = json.loads(vo_path.read_text())
         ws = [w for s in raw["segments"] for w in s["words"]]
         vo_end = ws[-1]["end"]
+        # THIS LINE WAS MISSING (found 2026-08-17). The CLI read vo.json, pulled
+        # the words out, and used them ONLY for vo_end — so `vo_words` was never
+        # passed and BOTH Rule 3 gates were dead in the one entry point anybody
+        # actually runs: G21 (captions must be words that were spoken, a user
+        # rule since 2026-08-12) and G39 (a source must carry the line it
+        # illustrates). The gates existed, had self-tests, and passed them,
+        # because the self-test passes vo_words and the CLI did not.
+        #
+        # Same failure as the missing Pillow, the invisible PATH, and the guard
+        # that could not see local commits: a check that cannot reach its data.
+        # It is the one worth checking twice, because it always looks green.
+        vo_words = [(w["word"], float(w["start"]), float(w["end"])) for w in ws]
 
     try:
         warnings = check_beats(beats, vo_end=vo_end, manifest=manifest,
-                               allow_short=allow_short)
+                               allow_short=allow_short, vo_words=vo_words)
     except GateError as e:
         print(f"GATES FAILED — {slug}\n{e}")
         sys.exit(1)
