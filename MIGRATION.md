@@ -24,22 +24,22 @@ python3 tools/test_gates.py
 ```
 
 Expected: `doctor ok — toolchain complete.` and
-`all 64 checks passed — every gate fires on its violation.`
+`all 67 checks passed — every gate fires on its violation.`
 
 If either fails, fix it **before** building the archive.
 
 ### 1.2 Write down the state you will compare against
 
-| Thing | This machine, 2026-08-14 |
+| Thing | Canonical, 2026-08-17 |
 |---|---|
-| Gates | **33**, with **64** self-tests |
-| Skills | **29** (20 + 9 hyperframes, added 2026-08-16) |
+| Gates | **33**, with **67** self-tests |
+| Skills | **29** in-repo + **5** global (see §6.3) |
 | Sound cues | **16** |
 | Scene types | **42** |
 | Formats | `news`, `top5`, `comparison` |
 | Default avatar | `f55b0b7c` · digital twin · motion 4.41 · `avatar_v` |
 | Voice speed | 1.05 |
-| Runtime band | 60–80s (news) |
+| Runtime band | 60–80s (news), hard ceiling 180s |
 | Archive | ~57 MB |
 
 ### 1.3 Decide what to do about past reels
@@ -205,7 +205,7 @@ python3 scripts/doctor.py
 -- sfx library --
 [  ok  ] sfx catalogue  — 16 cues, all present.
 -- gates --
-[  ok  ] reel_gates self-test  — all 64 checks passed
+[  ok  ] reel_gates self-test  — all 67 checks passed
 
 doctor ok — toolchain complete.
 ```
@@ -221,7 +221,7 @@ python3 tools/test_gates.py
 ```
 
 Expect `33 gate ids, all unique`, then
-`all 64 checks passed — every gate fires on its violation.`
+`all 67 checks passed — every gate fires on its violation.`
 
 **Proves:** every gate still fires on its own violation. A gate that never
 triggers is worse than no gate.
