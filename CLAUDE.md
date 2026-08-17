@@ -238,7 +238,7 @@ re-check both global paths.
 
 ### GLOBAL skills (2026-08-16) — outside the repo, at the user's call
 
-Four skills live in `~/.agents/skills/`, symlinked into `~/.claude/skills/`.
+Five skills live in `~/.agents/skills/`, symlinked into `~/.claude/skills/`.
 They are the ONLY things on this machine outside the repo. Each was READ before
 installing and none is a router: none claims to be a default or a mandatory
 entry point, so none can contend with `news-reel` for a reel request the way the
