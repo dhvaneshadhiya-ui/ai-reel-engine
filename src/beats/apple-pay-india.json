@@ -381,7 +381,8 @@
       "aspect": 1.7777777777777777,
       "durationSec": 2.22,
       "credit": "Apple Support",
-      "assetId": "clip-su-scan"
+      "assetId": "clip-su-scan",
+      "covers": "Mastercard credit"
     },
     {
       "type": "floatcard",
@@ -390,7 +391,8 @@
       "aspect": 1.7777777777777777,
       "durationSec": 0.76,
       "credit": "Apple Support",
-      "assetId": "clip-su-card"
+      "assetId": "clip-su-card",
+      "covers": "credit card to Apple"
     },
     {
       "type": "floatcard",
@@ -416,7 +418,8 @@
         "y": 0.11,
         "theme": "dark",
         "align": "center"
-      }
+      },
+      "covers": "Apple Wallet"
     },
     {
       "type": "floatcard",
@@ -441,7 +444,8 @@
       "aspect": 1.7777777777777777,
       "durationSec": 0.78,
       "credit": "Apple Support",
-      "assetId": "clip-su-devices"
+      "assetId": "clip-su-devices",
+      "covers": "your iPhone or"
     },
     {
       "type": "floatcard",
@@ -462,7 +466,8 @@
         "y": 0.11,
         "theme": "dark",
         "align": "center"
-      }
+      },
+      "covers": "your Apple Watch on"
     },
     {
       "type": "floatcard",
@@ -471,7 +476,8 @@
       "aspect": 1.7777777777777777,
       "durationSec": 1.74,
       "credit": "Apple Support",
-      "assetId": "clip-su-nfc"
+      "assetId": "clip-su-nfc",
+      "covers": "any contactless terminal"
     },
     {
       "type": "footage",
@@ -607,7 +613,8 @@
       "aspect": 1.7777777777777777,
       "durationSec": 1.51,
       "credit": "Apple Support",
-      "assetId": "clip-su-set2"
+      "assetId": "clip-su-set2",
+      "covers": "Apple needs clearance from"
     },
     {
       "type": "checklist",
@@ -1063,7 +1070,8 @@
       "aspect": 1.7777777777777777,
       "durationSec": 2.14,
       "credit": "Apple Support",
-      "assetId": "clip-su-txn"
+      "assetId": "clip-su-txn",
+      "covers": "card, October could be"
     },
     {
       "type": "floatcard",

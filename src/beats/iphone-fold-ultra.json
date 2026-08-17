@@ -367,7 +367,8 @@
         "heading": "DUMMY UNIT",
         "body": "a shape mockup \u2014 not the real device",
         "at": 0.3
-      }
+      },
+      "covers": "leaked dummy unit"
     },
     {
       "type": "footage",
@@ -414,7 +415,8 @@
         "y": 0.36,
         "theme": "light",
         "align": "center"
-      }
+      },
+      "covers": "Unfolded, the inner screen"
     },
     {
       "type": "typecard",
@@ -488,7 +490,8 @@
         "y": 0.36,
         "theme": "light",
         "align": "center"
-      }
+      },
+      "covers": "Folded, a 5"
     },
     {
       "type": "typecard",
@@ -587,7 +590,8 @@
           "vol": 0.13,
           "at": 0.08
         }
-      ]
+      ],
+      "covers": "for face ID"
     },
     {
       "type": "floatcard",
@@ -614,7 +618,8 @@
         "y": 0.09,
         "theme": "light",
         "align": "center"
-      }
+      },
+      "covers": "so touch ID moves"
     },
     {
       "type": "footage",
@@ -622,7 +627,8 @@
       "durationSec": 2.32,
       "zoomDir": "in",
       "credit": "Unbox Therapy \u2014 dummy unit",
-      "assetId": "clip-pair-stand"
+      "assetId": "clip-pair-stand",
+      "covers": "a telephoto either"
     },
     {
       "type": "footage",
@@ -693,7 +699,8 @@
           "vol": 0.13,
           "at": 0.08
         }
-      ]
+      ],
+      "covers": "The crease though"
     },
     {
       "type": "receipt",
@@ -719,7 +726,8 @@
       ],
       "credit": "MacRumors",
       "durationSec": 1.88,
-      "assetId": "receipt-mr-crease"
+      "assetId": "receipt-mr-crease",
+      "covers": "chased regardless of cost"
     },
     {
       "type": "footage",
@@ -727,7 +735,8 @@
       "durationSec": 1.66,
       "zoomDir": "out",
       "credit": "Unbox Therapy \u2014 dummy unit",
-      "assetId": "clip-hinge-spine"
+      "assetId": "clip-hinge-spine",
+      "covers": "metal hinge and"
     },
     {
       "type": "typecard",
@@ -836,7 +845,8 @@
           "vol": 0.13,
           "at": 0.08
         }
-      ]
+      ],
+      "covers": "UBS says"
     },
     {
       "type": "floatcard",
@@ -845,7 +855,8 @@
       "aspect": 1.8870967741935485,
       "durationSec": 1.58,
       "credit": "MacRumors",
-      "assetId": "receipt-mr-pricing"
+      "assetId": "receipt-mr-pricing",
+      "covers": "$1 ,800 IDC"
     },
     {
       "type": "footage",

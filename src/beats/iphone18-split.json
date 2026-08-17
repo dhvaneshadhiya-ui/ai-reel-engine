@@ -401,7 +401,8 @@
           "vol": 0.14,
           "at": 0.0
         }
-      ]
+      ],
+      "covers": "the iPhone 18"
     },
     {
       "type": "footage",
@@ -536,7 +537,8 @@
         "y": 0.09,
         "theme": "light",
         "align": "center"
-      }
+      },
+      "covers": "the iPhone"
     },
     {
       "type": "footage",
@@ -556,7 +558,8 @@
         "y": 0.09,
         "theme": "light",
         "align": "center"
-      }
+      },
+      "covers": "iPhone 18 Pro, the"
     },
     {
       "type": "footage",
@@ -598,7 +601,8 @@
           "h": 55
         }
       ],
-      "assetId": "receipt-mr-body"
+      "assetId": "receipt-mr-body",
+      "covers": "foldable, the iPhone Ultra"
     },
     {
       "type": "footage",
@@ -653,7 +657,8 @@
       "durationSec": 2.26,
       "zoomDir": "in",
       "credit": "Apple",
-      "assetId": "clip-air-thin"
+      "assetId": "clip-air-thin",
+      "covers": "the iPhone Air 2"
     },
     {
       "type": "footage",
@@ -661,7 +666,8 @@
       "durationSec": 2.35,
       "zoomDir": "out",
       "credit": "Apple",
-      "assetId": "clip-ev-blue"
+      "assetId": "clip-ev-blue",
+      "covers": "number iPhone from the"
     },
     {
       "type": "annotatezoom",
@@ -695,7 +701,8 @@
           "h": 64
         }
       ],
-      "assetId": "receipt-mr-body"
+      "assetId": "receipt-mr-body",
+      "covers": "in September"
     },
     {
       "type": "timeline",
@@ -936,7 +943,8 @@
           "h": 50
         }
       ],
-      "assetId": "receipt-mr-body"
+      "assetId": "receipt-mr-body",
+      "covers": "2027 iPhone"
     },
     {
       "type": "footage",
@@ -1047,7 +1055,8 @@
           "at": 0.2
         }
       ],
-      "hideCaptions": true
+      "hideCaptions": true,
+      "covers": "the iPhone becomes a"
     },
     {
       "type": "footage",

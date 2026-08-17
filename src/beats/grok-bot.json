@@ -376,7 +376,8 @@
       "aspect": 1.7777777777777777,
       "durationSec": 1.95,
       "credit": "SpaceXAI",
-      "assetId": "clip-w-icons"
+      "assetId": "clip-w-icons",
+      "covers": "actual tools and do"
     },
     {
       "type": "floatcard",
@@ -458,7 +459,8 @@
           "h": 54
         }
       ],
-      "assetId": "src-hero"
+      "assetId": "src-hero",
+      "covers": "-on agents"
     },
     {
       "type": "floatcard",
@@ -607,7 +609,8 @@
       "aspect": 1.7777777777777777,
       "durationSec": 1.46,
       "credit": "SpaceXAI",
-      "assetId": "clip-w-ui3"
+      "assetId": "clip-w-ui3",
+      "covers": "the interface"
     },
     {
       "type": "floatcard",
@@ -684,7 +687,8 @@
       "aspect": 1.7777777777777777,
       "durationSec": 2.33,
       "credit": "SpaceXAI",
-      "assetId": "clip-w-chat"
+      "assetId": "clip-w-chat",
+      "covers": "pass work"
     },
     {
       "type": "floatcard",

@@ -206,7 +206,8 @@
       "aspect": 2.0172413793103448,
       "durationSec": 1.68,
       "credit": "MacRumors",
-      "assetId": "receipt-mrs-hero"
+      "assetId": "receipt-mrs-hero",
+      "covers": "this September"
     },
     {
       "type": "footage",
@@ -226,7 +227,8 @@
         "y": 0.1,
         "theme": "light",
         "align": "center"
-      }
+      },
+      "covers": "First, iPhone 18 Pro"
     },
     {
       "type": "footage",
@@ -314,7 +316,8 @@
           "vol": 0.12,
           "at": 0.2
         }
-      ]
+      ],
+      "covers": "The catch, rumors put"
     },
     {
       "type": "footage",
@@ -386,7 +389,8 @@
           "h": 50
         }
       ],
-      "assetId": "receipt-mrs-fold"
+      "assetId": "receipt-mrs-fold",
+      "covers": "first foldable, the iPhone"
     },
     {
       "type": "sourceread",
@@ -412,7 +416,8 @@
           "h": 50
         }
       ],
-      "assetId": "receipt-mrs-fold"
+      "assetId": "receipt-mrs-fold",
+      "covers": "Ultra. 5 .5 inches"
     },
     {
       "type": "statcard",
@@ -516,7 +521,8 @@
         "y": 0.1,
         "theme": "light",
         "align": "center"
-      }
+      },
+      "covers": "watch Series"
     },
     {
       "type": "footage",
@@ -560,7 +566,8 @@
         "y": 0.1,
         "theme": "light",
         "align": "center"
-      }
+      },
+      "covers": "Fourth, watch"
     },
     {
       "type": "sourceread",
@@ -586,7 +593,8 @@
           "h": 48
         }
       ],
-      "assetId": "receipt-mrs-ultra"
+      "assetId": "receipt-mrs-ultra",
+      "covers": "watch Ultra 4"
     },
     {
       "type": "footage",
@@ -656,7 +664,8 @@
           "vol": 0.12,
           "at": 0.0
         }
-      ]
+      ],
+      "covers": "boss. John"
     },
     {
       "type": "floatcard",
@@ -665,7 +674,8 @@
       "aspect": 1.17,
       "durationSec": 2.24,
       "credit": "Apple Newsroom",
-      "assetId": "still-ceo-photo"
+      "assetId": "still-ceo-photo",
+      "covers": "John Ternus runs his"
     },
     {
       "type": "floatcard",
@@ -695,7 +705,8 @@
       },
       "primary": "Remind me",
       "assetId": "receipt-ceo-hero",
-      "durationSec": 1.92
+      "durationSec": 1.92,
+      "covers": "executive chairman on September"
     },
     {
       "type": "floatcard",
@@ -754,7 +765,8 @@
       "primary": "Accept",
       "cancel": "Decline",
       "assetId": "receipt-mrs-hero",
-      "durationSec": 2.54
+      "durationSec": 2.54,
+      "covers": "lands September 8th or"
     },
     {
       "type": "footage",

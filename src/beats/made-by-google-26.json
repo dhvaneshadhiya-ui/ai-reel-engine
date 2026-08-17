@@ -340,7 +340,8 @@
       "durationSec": 1.5,
       "zoomDir": "in",
       "credit": "Made by Google",
-      "assetId": "p11pro-coral-render"
+      "assetId": "p11pro-coral-render",
+      "covers": "The pixel 11 is"
     },
     {
       "type": "footage",
@@ -356,7 +357,8 @@
       "durationSec": 2.76,
       "zoomDir": "in",
       "credit": "Made by Google",
-      "assetId": "camera-bar-macro"
+      "assetId": "camera-bar-macro",
+      "covers": "camera bar that's 40"
     },
     {
       "type": "footage",
@@ -415,7 +417,8 @@
       "bg": "gradient",
       "aspect": 1.6538461538461537,
       "credit": "Made by Google",
-      "assetId": "zoom-120x-slide"
+      "assetId": "zoom-120x-slide",
+      "covers": "Pro zoom hits 120"
     },
     {
       "type": "footage",
@@ -467,7 +470,8 @@
       "durationSec": 2.08,
       "zoomDir": "in",
       "credit": "Made by Google",
-      "assetId": "fold-standing"
+      "assetId": "fold-standing",
+      "covers": "Pro Fold is"
     },
     {
       "type": "footage",
@@ -540,7 +544,8 @@
       "durationSec": 2.75,
       "zoomDir": "in",
       "credit": "Made by Google",
-      "assetId": "tensor-g6-macro"
+      "assetId": "tensor-g6-macro",
+      "covers": "on tensor g6"
     },
     {
       "type": "footage",
@@ -636,7 +641,8 @@
       "zoomDir": "in",
       "credit": "Made by Google",
       "assetId": "watch-film",
-      "from": 1.2
+      "from": 1.2,
+      "covers": "Pixel Watch 5 is"
     },
     {
       "type": "floatcard",
@@ -645,7 +651,8 @@
       "bg": "gradient",
       "aspect": 1.7777777777777777,
       "credit": "Made by Google",
-      "assetId": "gps-route-aerial"
+      "assetId": "gps-route-aerial",
+      "covers": "tracks GPS routes twice"
     },
     {
       "type": "floatcard",
@@ -663,7 +670,8 @@
       "bg": "gradient",
       "aspect": 1.7777777777777777,
       "credit": "Made by Google",
-      "assetId": "watch-insulin-card"
+      "assetId": "watch-insulin-card",
+      "covers": "insulin resistance trends"
     },
     {
       "type": "floatcard",
@@ -672,7 +680,8 @@
       "bg": "gradient",
       "aspect": 1.9375,
       "credit": "Made by Google",
-      "assetId": "breathing-emergency"
+      "assetId": "breathing-emergency",
+      "covers": "a breathing emergency and"
     },
     {
       "type": "footage",
@@ -696,7 +705,8 @@
           "src": "sfx2/mouse-click-01.mp3",
           "vol": 0.12
         }
-      ]
+      ],
+      "covers": "the pixel tag"
     },
     {
       "type": "specsheet",
@@ -768,7 +778,8 @@
       "bg": "black",
       "aspect": 2.0952380952380953,
       "credit": "Made by Google",
-      "assetId": "asl-demo"
+      "assetId": "asl-demo",
+      "covers": "Language Live"
     },
     {
       "type": "floatcard",
@@ -886,7 +897,8 @@
       "bg": "gradient",
       "aspect": 1.889908256880734,
       "credit": "Made by Google",
-      "assetId": "buds-slides"
+      "assetId": "buds-slides",
+      "covers": "and Pixel Buds Pro"
     },
     {
       "type": "floatcard",
@@ -965,7 +977,8 @@
           "w": 260,
           "h": 62
         }
-      ]
+      ],
+      "covers": "hit shelves August 20th"
     },
     {
       "type": "annotatezoom",
@@ -999,7 +1012,8 @@
           "w": 280,
           "h": 60
         }
-      ]
+      ],
+      "covers": "lands November 11th"
     },
     {
       "type": "footage",
