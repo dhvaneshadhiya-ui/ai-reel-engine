@@ -59,6 +59,8 @@ def steps(slug: str) -> list[dict]:
     """The pipeline, in order. `auto` is a command safe to run unattended."""
     return [
         dict(key="scout",
+             skills=["fact-check-workflow  verify each claim BEFORE it becomes a beat",
+                     "ffmpeg-ytdlp        yt-dlp to pull source video/subtitles, ffmpeg to cut clips"],
              label="Assets scouted and manifest written",
              done=_p(f"public/assets/{slug}/manifest.json").exists(),
              auto=None,
@@ -67,6 +69,9 @@ def steps(slug: str) -> list[dict]:
                    f"public/assets/{slug}/manifest.json with credits. "
                    "See AGENT.md STEP 1a."),
         dict(key="script",
+             skills=["news-reel           owns structure; formats/<format>.md is the shape",
+                     "viral-hook-writer   the first 2 seconds only",
+                     "humanizer           LAST pass, after the shape is right"],
              label="Narration written",
              done=_p(f"jobs/{slug}/script.md").exists(),
              auto=None,
@@ -74,6 +79,7 @@ def steps(slug: str) -> list[dict]:
                    "formats/<format>.md for structure and the style pack for "
                    f"voice. Put judgement calls in jobs/{slug}/questions.md."),
         dict(key="approval",
+             skills=["(none — this is the user's decision, not a skill's)"],
              label="Script approved by the user",
              done=_approved(slug),
              auto=None,
@@ -83,6 +89,7 @@ def steps(slug: str) -> list[dict]:
                    "open questions, wait for an explicit yes, then:\n"
                    f"      python3 tools/script_approval.py approve {slug}"),
         dict(key="voice",
+             skills=["(none — HeyGen MCP + tools/voice_clone.py to rehearse pace free)"],
              label="Voice + avatar master generated",
              done=_p(f"public/assets/{slug}/vo.json").exists(),
              auto=None,
@@ -91,6 +98,9 @@ def steps(slug: str) -> list[dict]:
                    "whisper word timings. THIS SPENDS CREDITS — check the "
                    "balance first, and never run it on an unapproved script."),
         dict(key="beats",
+             skills=["remotion-markup     animation/effects; frame-driven, never CSS transitions",
+                     "remotion-captions   caption timing and display",
+                     "remotion-docs       look up an API instead of guessing"],
              label="Beat sheet built",
              done=_p(f"src/beats/{slug}.json").exists(),
              auto=None,
@@ -98,24 +108,34 @@ def steps(slug: str) -> list[dict]:
                    "tools/build_template.py). It must carry `script` and "
                    "`approval` for G27."),
         dict(key="register",
+             skills=["(none — deterministic)"],
              label="Beat sheet registered with Remotion",
              done=_p("src/generatedBeatSheets.ts").exists()
                   and slug in _p("src/generatedBeatSheets.ts").read_text(),
              auto=[sys.executable, str(_p("scripts/register_beats.py"))]),
         dict(key="gates",
+             skills=["(none — gates are code and are not advisory)"],
              label="All gates pass",
              done=_gates_pass(slug),
              auto=[sys.executable, str(_p("tools/reel_gates.py")), slug],
              human="Fix what the gates report. They are not advisory."),
         dict(key="render",
+             skills=["remotion-render      export settings",
+                     "ffmpeg-ytdlp         mastering; two-pass loudnorm, measure the result"],
              label="Rendered and mastered",
              done=_p(f"out/{slug}-final.mp4").exists(),
              auto=[sys.executable, str(_p("scripts/render_job.py")), slug]),
         dict(key="qc",
+             skills=["reel-analyzer        watch the master back and find what went wrong",
+                     "ffmpeg-ytdlp         pull frames to inspect"],
              label="Frame lint clean",
              done=False,   # always re-run; it is cheap and catches regressions
              auto=[sys.executable, str(_p("tools/lint_frames.py")), slug]),
         dict(key="packaging",
+             skills=["social               titles, captions, cadence (Instagram 5 hashtags)",
+                     "youtube-seo          YouTube title/description/tags",
+                     "thumbnail-design     the thumbnail BRIEF (we render it ourselves)",
+                     "content-repurposer   spin the reel into other platforms afterwards"],
              label="Title, caption, hashtags, alt text",
              done=_p(f"jobs/{slug}/packaging.md").exists(),
              auto=None,
@@ -154,6 +174,11 @@ def cmd_next(slug: str) -> None:
             print("      " + " ".join(str(x) for x in s["auto"]))
         else:
             print("      " + s.get("human", "(manual step)"))
+        # Naming the skill HERE is the point: a stage-to-skill map in a doc gets
+        # skipped, the same way the script-approval rule got skipped while it was
+        # only prose. Say it at the moment it is needed.
+        for line in s.get("skills", []):
+            print(f"      skill: {line}")
         print()
         return
     print("\n  Nothing left.\n")
