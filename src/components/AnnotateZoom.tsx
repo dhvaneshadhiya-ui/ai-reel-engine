@@ -9,6 +9,7 @@ import {
   spring,
 } from "remotion";
 import { useTheme } from "../theme/tokens";
+import { fitsZoom } from "../safeArea";
 
 export interface AnnotateZoomAnnotation {
   kind: "box" | "underline" | "circle" | "arrow";
@@ -96,9 +97,24 @@ export const AnnotateZoom: React.FC<AnnotateZoomProps> = ({
 
   // fit the padded focus into a comfortable window of the 1080x1920 frame
   const fit = Math.min((cardW * 0.86) / uw, (cardH * 0.58) / uh);
-  const baseZ = clamp(fit, 1.15, 2.4);
+
+  // HARD CEILING — the zoom at which the padded focus exactly spans the frame.
+  //
+  // The 1.15 floor below is an aesthetic minimum ("a shot should always feel
+  // like a push-in"). It must NEVER win over this ceiling. When the focus is
+  // nearly as wide as the capture — which is the normal case for an article
+  // column — `fit` lands BELOW 1.0, meaning the camera needs to pull BACK, and
+  // forcing 1.15 pushes in on something that already did not fit. The focused
+  // text is then wider than the frame and gets sliced at BOTH edges.
+  //
+  // That shipped: 44 scenes across 4 reels, up to 113 source px lost per side,
+  // which is how published reels ended up showing "Phone 15" for "iPhone 15".
+  // Measure with tools/check_safe_area.py.
+  const zFits = fitsZoom(width, uw);
+
+  const baseZ = Math.min(clamp(fit, 1.15, 2.4), zFits);
   const pushIn = interpolate(frame, [0, durationInFrames], [0, 0.05]);
-  const Z = baseZ + pushIn;
+  const Z = Math.min(baseZ + pushIn, zFits);
 
   // settle from slightly wide to the focus framing over ~0.8s
   const settle = easeOut(t / 0.8);
@@ -112,8 +128,17 @@ export const AnnotateZoom: React.FC<AnnotateZoomProps> = ({
   if (cardW > 2 * halfVw) cx = clamp(cx, halfVw, cardW - halfVw);
   cy = clamp(cy, Math.min(cardH / 2, cardH * 0.18), cardH * 0.9);
 
-  const tx = -Zeased * (cx - cardW / 2) * settle;
+  const tx0 = -Zeased * (cx - cardW / 2) * settle;
   const ty = -Zeased * (cy - cardH / 2) * settle;
+
+  // Second way the same defect gets in: once the zoom is capped the card often
+  // fits the frame entirely, and then panning to centre the focus can still
+  // hang a card edge — and the text on it — off the side. When the card fits,
+  // keep it fully inside; only pan freely when the card is genuinely wider than
+  // the frame, where the off-frame part is by definition outside the focus.
+  const onScreenW = cardW * Zeased;
+  const slack = Math.max(0, (width - onScreenW) / 2);
+  const tx = onScreenW <= width ? clamp(tx0, -slack, slack) : tx0;
 
   const enter = spring({
     frame,

@@ -10,6 +10,7 @@ import {
   spring,
 } from "remotion";
 import { useTheme } from "../theme/tokens";
+import { fitsZoom } from "../safeArea";
 import type { Scene } from "../types";
 
 type ReceiptProps = Extract<Scene, { type: "receipt" }>;
@@ -43,6 +44,7 @@ export const ReceiptScene: React.FC<{ scene: ReceiptProps }> = ({ scene }) => {
   // relevant words dominate, not the surrounding wall of text), with a gentle
   // push-in. The highlight boxes still sweep on at their cue.
   let Z: number, cx: number, cy: number;
+  let zFits = Infinity; // no ceiling needed on the unzoomed ken-burns path
   if (hls.length) {
     let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
     hls.forEach((o) => {
@@ -58,9 +60,15 @@ export const ReceiptScene: React.FC<{ scene: ReceiptProps }> = ({ scene }) => {
     cy = ((minY + maxY) / 2) * sy;
     // fit the union to ~88% width / ~55% height, whichever is tighter
     const fit = Math.min((cardW * 0.88) / uw, (cardH * 0.55) / uh);
-    const baseZ = Math.max(1.35, Math.min(2.2, fit));
+    // HARD CEILING — see AnnotateZoom for the full story. The 1.35 floor is an
+    // aesthetic minimum and must never beat the zoom at which the padded
+    // highlight union still spans the frame; a floor that wins slices the
+    // highlighted words off BOTH edges. 1.35 is harsher than AnnotateZoom's
+    // 1.15, so this path cuts even more when it fires.
+    zFits = fitsZoom(width, uw);
+    const baseZ = Math.min(Math.max(1.35, Math.min(2.2, fit)), zFits);
     const push = interpolate(frame, [0, durationInFrames], [0, 0.05]);
-    Z = baseZ + push;
+    Z = Math.min(baseZ + push, zFits);
   } else {
     // no highlights: gentle ken-burns on the whole page
     Z = 1.0 + interpolate(frame, [0, durationInFrames], [0.02, 0.06]);
@@ -73,8 +81,17 @@ export const ReceiptScene: React.FC<{ scene: ReceiptProps }> = ({ scene }) => {
   const Zeased = Z - (Z - Math.max(1.0, Z - 0.22)) * (1 - settle);
 
   // translate so the focus center lands at frame center (origin = card center)
-  const tx = -Zeased * (cx - cardW / 2) * settle;
+  const tx0 = -Zeased * (cx - cardW / 2) * settle;
   const ty = -Zeased * (cy - cardH / 2) * settle;
+
+  // When the card fits the frame at this zoom, keep it fully inside: panning to
+  // centre the highlight could otherwise hang a card edge, and its text, off
+  // the side. Pan freely only when the card really is wider than the frame.
+  const onScreenW = cardW * Zeased;
+  const slackX = Math.max(0, (width - onScreenW) / 2);
+  const tx = onScreenW <= width
+    ? Math.max(-slackX, Math.min(slackX, tx0))
+    : tx0;
 
   const enter = spring({
     frame,
