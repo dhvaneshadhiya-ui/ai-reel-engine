@@ -24,6 +24,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
+import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
@@ -1021,6 +1023,116 @@ def check_beats(beats: dict, vo_end: float | None = None,
     return warnings
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# THE FINISHED MASTER
+#
+# Every gate above reads the beat sheet — a statement of INTENT. This one reads
+# the artifact, because the mastering step is where intent and result routinely
+# disagree and nothing was checking.
+# ─────────────────────────────────────────────────────────────────────────────
+
+LUFS_TARGET = -14.0        # Instagram / YouTube / Spotify normalisation target
+LUFS_TOL = 1.0             # two-pass lands ~0.5 LU short; ~1 LU is normal
+TRUE_PEAK_CEILING = -1.0   # dBFS. RULES.md master spec is TP -1.0 to -1.2.
+                           # MEASURED CAVEAT (2026-08-17): a real master asking
+                           # loudnorm for TP=-1.2 came back at exactly -1.0
+                           # after AAC encode — lossy encoding moves peaks, so
+                           # the headroom here is ZERO, not 0.2 dB. If this
+                           # trips on a clean reel, lower the loudnorm TP in
+                           # render_job.py; do NOT loosen the ceiling, which is
+                           # the number the platform actually applies.
+
+_EBUR_I = re.compile(r"^\s*I:\s*(-?[\d.]+|-inf)\s*LUFS", re.M)
+_EBUR_TP = re.compile(r"^\s*Peak:\s*(-?[\d.]+|-inf)\s*dBFS", re.M)
+
+
+def parse_ebur128(text: str) -> tuple[float, float]:
+    """Integrated loudness (LUFS) and true peak (dBFS) from an ebur128 summary.
+
+    Both patterns anchor on the SUMMARY block's indented labels. The per-frame
+    lines carry the same numbers under different labels (`t: ... I: ... TPK:`)
+    but are prefixed with `[Parsed_ebur128_0 @ ...]`, so they cannot match.
+    The last match wins in case a chain ever emits two summaries.
+    """
+    i_hits = _EBUR_I.findall(text)
+    tp_hits = _EBUR_TP.findall(text)
+    if not i_hits or not tp_hits:
+        raise GateError(
+            "G31 could not read an ebur128 summary from ffmpeg's output. A "
+            "check that cannot fail is not a check: treat this as a FAILURE, "
+            "not a skip. Most likely cause is `-v error`, which hides filter "
+            "statistics — the measurement needs `-hide_banner -nostats`.")
+    return float(i_hits[-1]), float(tp_hits[-1])
+
+
+# G31 — THE DELIVERED MASTER MUST ACTUALLY HIT -14 LUFS (2026-08-17).
+# Declared as a comment in this exact shape on purpose: test_gates.py scrapes
+# `# G\d\d — ` out of this file to build the list of gates it then demands a
+# failing case for. A gate documented only in a docstring is invisible to that
+# coverage assertion, i.e. untested while looking tested.
+def master_errors(integrated: float, true_peak: float) -> list[str]:
+    """Blocking loudness checks on a finished master.
+
+    Pure, so the self-test can exercise it without rendering anything.
+
+    WHY: `loudnorm` is adaptive and streaming, so a SINGLE pass ends carrying a
+    residual offset it never applies — it undershoots its own target and says
+    nothing. render_job.py ran exactly that chain from the day it was written.
+
+    Measured 2026-08-17 on out/apple-pay-india-raw.mp4 (100.8s full mix,
+    target I=-14):
+
+        single pass  -15.2 LUFS   1.2 LU short   <- outside this tolerance
+        two pass     -14.2 LUFS   0.2 LU short
+
+    and pass 1 of the single-pass chain reported the miss ITSELF as
+    `target_offset=1.18`, which is precisely what it then failed to apply.
+    Two LU quieter than target is not cosmetic: platform normalisation leaves
+    the reel quieter than everything around it in the feed.
+
+    The gate does NOT read loudnorm's own report. It re-measures the finished
+    file with ebur128 — measure the artifact, never the filter that produced
+    it — because a chain that lies about its output would otherwise pass by
+    quoting itself.
+    """
+    errors: list[str] = []
+    gap = integrated - LUFS_TARGET
+    if abs(gap) > LUFS_TOL:
+        errors.append(
+            f"G31 master is {integrated:.1f} LUFS, {abs(gap):.1f} LU "
+            f"{'over' if gap > 0 else 'under'} the {LUFS_TARGET:.0f} LUFS "
+            f"target (tolerance ±{LUFS_TOL:.1f} LU). A single loudnorm pass "
+            "undershoots by design — master with the TWO-pass chain in "
+            "scripts/render_job.py, which feeds pass 1's measured_* values "
+            "and offset back into pass 2.")
+    if true_peak > TRUE_PEAK_CEILING:
+        errors.append(
+            f"G31 master true peak is {true_peak:+.1f} dBFS, over the "
+            f"{TRUE_PEAK_CEILING:+.1f} dBFS ceiling — it will clip on lossy "
+            "re-encode. Lower the loudnorm TP target.")
+    return errors
+
+
+def check_master(path: Path) -> tuple[float, float]:
+    """Measure a finished master with ebur128 and raise on a G31 violation."""
+    path = Path(path)
+    if not path.exists():
+        raise GateError(f"G31 no master to measure at {path}")
+    # `-v error` would HIDE the filter's summary and this would silently read
+    # nothing. `-hide_banner -nostats` keeps the statistics and drops the noise.
+    proc = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-nostats", "-i", str(path),
+         "-filter_complex", "ebur128=peak=true", "-f", "null", "-"],
+        capture_output=True, text=True)
+    integrated, true_peak = parse_ebur128(proc.stderr)
+    errors = master_errors(integrated, true_peak)
+    if errors:
+        raise GateError(
+            f"{len(errors)} blocking rule violation(s):\n  - "
+            + "\n  - ".join(errors))
+    return integrated, true_peak
+
+
 def print_formats() -> None:
     """Single source of truth for the per-format numbers.
 
@@ -1048,8 +1160,22 @@ def main() -> None:
     if len(sys.argv) > 1 and sys.argv[1] == "--formats":
         print_formats()
         return
+    if len(sys.argv) > 1 and sys.argv[1] == "--master":
+        if len(sys.argv) < 3:
+            sys.exit("usage: python3 tools/reel_gates.py --master <file>")
+        path = Path(sys.argv[2])
+        try:
+            integrated, true_peak = check_master(path)
+        except GateError as e:
+            print(f"GATES FAILED — {path.name}\n{e}")
+            sys.exit(1)
+        print(f"G31 PASSED — {path.name}: {integrated:.1f} LUFS "
+              f"(target {LUFS_TARGET:.0f} ±{LUFS_TOL:.1f}), "
+              f"true peak {true_peak:+.1f} dBFS")
+        return
     if len(sys.argv) < 2:
         sys.exit("usage: python3 tools/reel_gates.py <slug> [--allow-short]\n"
+                 "       python3 tools/reel_gates.py --master <file>\n"
                  "       python3 tools/reel_gates.py --formats")
     slug = sys.argv[1]
     allow_short = "--allow-short" in sys.argv
