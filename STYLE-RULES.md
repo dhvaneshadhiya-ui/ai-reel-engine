@@ -2365,3 +2365,50 @@ rather than theoretical.
 - 35 gates, all ids unique, coverage complete, **73 self-tests pass**.
 - sfx 16, scene types 42, tsc clean, doctor ok with the two expected §6.3
   warnings (manim, chatterbox).
+
+## 2026-08-17 (3) — chatterbox installed, and it was broken until fixed
+
+User asked to install `resemble-ai/chatterbox` "as a skill" to clone the
+avatar's voice. **It is not a skill** — it is Resemble AI's Python TTS library
+(MIT). Our own §6.3 already listed it as a per-machine install; doctor had been
+warning about it since the merge.
+
+**THE VENV HAZARD IS REAL, now proven rather than warned about:**
+chatterbox-tts pins **torch 2.6.0**; the system runs **2.13.0** under whisper.
+Installed into `~/.venvs/chatterbox`, both survive — verified after the install
+that system torch was still 2.13.0 and whisper still imports. A system-wide
+install would have dragged torch back seven minor versions and broken the
+transcription the whole edit anchors to.
+
+**IT DID NOT WORK OUT OF THE BOX.** First generation died with
+`'NoneType' object is not callable` at `perth.PerthImplicitWatermarker()`.
+Root cause: `perth/perth_net/__init__.py` does
+`from pkg_resources import resource_filename`, **setuptools 81+ removed
+pkg_resources**, and the venv had 84.0.0 — so perth's submodule import failed
+SILENTLY, leaving the class as `None`. Fixed by pinning `setuptools<81` in the
+venv (80.10.2), which RESTORES the watermarker rather than bypassing it. Do not
+"fix" this by skipping the watermarker: it is the provenance mechanism.
+
+**CLONE QUALITY, MEASURED:** reference (real HeyGen VO) median f0 **170.2 Hz**,
+clone **170.2 Hz** — a **0-cent** difference, pitch sd 268 vs 240 cents. Same
+speaker. The clone took.
+
+**WATERMARK VERIFIED BOTH WAYS:** `cloned.wav` -> perth score **1.0**,
+`reference.wav` -> **0.0**. So chatterbox rehearsal audio is always
+distinguishable from real VO. It is NOT a substitute for the shipped voice.
+
+**PACE DIFFERS AND MUST BE CALIBRATED:** the clone ran **3.11 wps** against
+HeyGen's measured 2.35-2.75. A raw chatterbox duration is therefore NOT a
+HeyGen prediction. `tools/voice_clone.py calibrate` measures the ratio against
+real masters (first 40 words of each, compared to HeyGen's own word timings) and
+`speak` applies it and prints the basis. Uncalibrated, it says so.
+
+**`tools/voice_clone.py`** — `ref` / `speak` / `calibrate`. The point is that
+the approval gate blocks on the SLOWEST plausible pace, so borderline scripts
+get rejected that would have been fine; a free local rehearsal narrows that.
+
+**DOCTOR HARDENED.** It only checked that the venv DIRECTORY existed — which it
+did, while chatterbox was entirely broken. It now runs a probe in the venv
+asserting `perth.PerthImplicitWatermarker is not None`, the exact thing that was
+silently missing. Same class as the absent Pillow and the `.zshrc` PATH: the
+tool is installed, the check just never looked at it.

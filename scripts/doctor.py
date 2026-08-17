@@ -135,6 +135,28 @@ want_venv("chatterbox", Path.home() / ".venvs/chatterbox",
           "python3 -m venv ~/.venvs/chatterbox && "
           "~/.venvs/chatterbox/bin/pip install chatterbox-tts",
           "local TTS for rehearsing script timing without spending HeyGen credits")
+
+# 2026-08-17: the venv EXISTING is not the same as chatterbox WORKING. On this
+# machine the directory was present and every import succeeded, yet generation
+# died with `'NoneType' object is not callable` — because perth's package init
+# does `from pkg_resources import resource_filename`, setuptools 81+ removed
+# pkg_resources, so the submodule import failed SILENTLY and left
+# `perth.PerthImplicitWatermarker = None`. Same class as the missing Pillow and
+# the .zshrc PATH: the thing is installed, the check just never looked at it.
+_cb = Path.home() / ".venvs/chatterbox/bin/python"
+if _cb.exists():
+    probe = ("import perth; "
+             "assert perth.PerthImplicitWatermarker is not None, "
+             "'perth watermarker is None — pip install \"setuptools<81\" in the venv'")
+    r = subprocess.run([str(_cb), "-c", probe], capture_output=True, text=True,
+                       timeout=90)
+    if r.returncode == 0:
+        report(OK, "chatterbox:usable", "perth watermarker loads")
+    else:
+        detail = (r.stderr.strip().splitlines() or ["unknown"])[-1]
+        report(WARN, "chatterbox:usable",
+               f"venv exists but generation would FAIL — {detail[:120]}")
+        warnings.append("chatterbox-broken")
 want_filter("drawtext", "burn-in text via ffmpeg; lint_frames.py falls back to PIL")
 want_filter("subtitles", "burn-in .srt via ffmpeg (captions normally come from Remotion)")
 
