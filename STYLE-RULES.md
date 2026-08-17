@@ -2327,3 +2327,41 @@ LESSON: a sync procedure whose safety check cannot see the thing it is meant to
 protect is not a safety check. The same class as the earlier
 `gh api contents/<path>` test that reported five excluded directories as
 PRESENT — a verification that cannot fail is not a verification.
+
+## 2026-08-17 (2) — second sync, and the payoff for merging instead of resetting
+
+Applied Mac 2's second bundle. **Zero conflicts, where the first sync had 50.**
+
+The reason is the previous decision: because that sync was a MERGE and not a
+`reset --hard`, Mac 2's tip (`5e9a6cf`) is inside this history — so this time
+`git merge-base` found it and the merge was ordinary. Resetting would have
+thrown that ancestry away and left every future sync fighting 50 conflicts
+again. The corrected §6.2 checks worked exactly as written: (a) one uncommitted
+edit, committed first; (b) 8 local commits the bundle lacked; (c) merge-base
+present -> merge, not reset.
+
+**VERIFIED THAT BOTH SIDES SURVIVED THE AUTO-MERGE**, rather than trusting
+"0 conflicts" to mean "nothing lost". `MIGRATION.md` had changed on both sides:
+this machine's two §6.2 bug fixes (local-commits check, FETCH_HEAD
+not-for-merge warning) AND Mac 2's `install_global_skills.sh` reference are all
+present. A clean auto-merge can still silently drop one side's intent.
+
+One false alarm worth recording: `git ls-files | grep iphone-fold-ultra` showed
+11 files where 12 were expected, which read as a deleted build script. The file
+is `tools/build_iphonefoldultra.py` — no hyphens — so the hyphenated grep missed
+it. **The pattern, not the repo, was wrong.** Check the search before believing
+the absence.
+
+**GLOBAL SKILLS NOW INSTALLED HERE.** `tools/install_global_skills.sh` (from the
+bundle) installed all five — find-skills, humanizer, fact-check-workflow,
+youtube-seo, thumbnail-design — and verified each on disk. They had never
+existed on this machine: §6.3 says they cannot travel in git, and that was true
+rather than theoretical.
+
+**FULL INVENTORY, both machines now level:**
+- 29 in-repo skills: 12 Remotion, 9 HyperFrames (`hyperframes-*` + `media-use`),
+  8 pipeline/advisory. 8 real directories, 21 relative symlinks, **0 broken**.
+- 5 global skills in `~/.agents/skills`.
+- 35 gates, all ids unique, coverage complete, **73 self-tests pass**.
+- sfx 16, scene types 42, tsc clean, doctor ok with the two expected §6.3
+  warnings (manim, chatterbox).
