@@ -1,0 +1,2790 @@
+{
+  "id": "ios27-tiers-nomusic",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "format": "news",
+  "tone": "serious",
+  "avatarRegister": "neutral",
+  "script": "Every iPhone going back to 2019 gets iOS 27. Almost none of them get the part you've been reading about.\nIt lands next month with the new iPhones. Apple dropped zero devices — iPhone 11 and up, same list as iOS 26.\nBut supported now means three different phones.\nOnly three get the full Siri AI: iPhone 17 Pro, 17 Pro Max, and iPhone Air.\nThe 16 line and 15 Pro get standard Apple Intelligence — the new Siri look, not the whole assistant.\nAnd from the iPhone 15 down, no Apple Intelligence at all.\nThat line cuts through one model year. iPhone 15 Pro is in. iPhone 15 is out.\nAnd the Siri behind that top tier is genuinely rebuilt — on models Apple co-developed with Google, using the technology behind Gemini. They run on-device and on Apple's Private Cloud Compute. Google never handles your data.\nUnless you're in Europe. Siri AI won't ship in the EU at launch.\nBut the real story is underneath. Everyone gets the Liquid Glass slider — one continuous dial in Settings, Appearance, instead of iOS 26's two options.\nAnd Apple says app launches are up to 30% faster. Check the footnote: they measured that on an iPhone 11 Pro Max.\nThat matters, because iOS 26 stalled. 74% of recent iPhones after 150 days, against 76% for iOS 18 — which only had 127 days.\nBut iOS 26 dropped three phones. iOS 27 drops none. Apple just removed the variable.\nSo which tier does your iPhone land in?",
+  "approval": {
+    "sha256": "4eefbe517fb09f7ccf647d373cb75defef82369ade3b258635ccd29a00654d59",
+    "approvedAt": "2026-08-17T06:18:32+00:00",
+    "words": 254,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+  },
+  "allowLong": true,
+  "allowLongReason": "User-approved 2026-08-17. Keeps the three-tier device split, the EU regulatory gap, the Gemini architecture correction and the iOS 26 adoption comparison that closes the loop opened by 'zero devices dropped'. Each carries its own receipt and its own number; none is padding. 254 approved words at the measured 2.4-2.7 wps cannot fit the 60-80s news band; the master came back 104.65s. Well inside the 180s platform ceiling, and already trimmed once from 331 words.",
+  "audio": "assets/ios27-tiers/avatar-master.mp4",
+  "music": {
+    "src": "music/silence.mp3",
+    "from": 8.0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.15
+      },
+      {
+        "t": 7.5,
+        "vol": 0.08
+      },
+      {
+        "t": 47.1,
+        "vol": 0.1
+      },
+      {
+        "t": 75.36,
+        "vol": 0.14
+      },
+      {
+        "t": 98.67,
+        "vol": 0.15
+      },
+      {
+        "t": 103.87,
+        "vol": 0.13
+      },
+      {
+        "t": 104.67,
+        "vol": 0.02
+      }
+    ]
+  },
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "2019",
+    "zero",
+    "three",
+    "17",
+    "15",
+    "30%",
+    "74%",
+    "76%",
+    "150",
+    "127",
+    "none",
+    "11"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "durationSec": 1.74,
+      "captionBottom": 1000,
+      "topSrc": "assets/ios27-tiers/clips/hook-ios27.png",
+      "topFrom": 0.0,
+      "topFocusX": 0.5,
+      "bottomSrc": "assets/ios27-tiers/avatar-master.mp4",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.5,
+      "credit": "MacRumors",
+      "assetId": "hook-ios27",
+      "sfx": [
+        {
+          "src": "sfx/Riser.MP3",
+          "vol": 0.14,
+          "at": 0.0
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/ios27-tiers/avatar-master.mp4",
+      "durationSec": 1.29,
+      "from": 1.74,
+      "focusX": 0.5,
+      "captionBottom": 320
+    },
+    {
+      "type": "receipt",
+      "durationSec": 1.29,
+      "src": "assets/ios27-tiers/clips/compat-noai.png",
+      "srcWidth": 750,
+      "srcHeight": 1450,
+      "backdrop": "cream",
+      "credit": "Apple",
+      "assetId": "compat-noai",
+      "sfx": [
+        {
+          "src": "sfx2/ground-impact-352053.mp3",
+          "vol": 0.15,
+          "at": 0.0
+        }
+      ]
+    },
+    {
+      "type": "footage",
+      "src": "assets/ios27-tiers/avatar-master.mp4",
+      "durationSec": 1.55,
+      "from": 4.32,
+      "focusX": 0.5,
+      "captionBottom": 320
+    },
+    {
+      "type": "wordcascade",
+      "bg": "cream",
+      "words": [
+        {
+          "text": "SUPPORTED",
+          "style": "caps",
+          "at": 0.15
+        },
+        {
+          "text": "ISN'T THE SAME AS",
+          "style": "caps",
+          "at": 0.55
+        },
+        {
+          "text": "SUPPORTED",
+          "style": "caps",
+          "at": 0.95,
+          "size": 1.4,
+          "accent": true
+        }
+      ],
+      "durationSec": 1.55
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.58,
+      "src": "assets/ios27-tiers/clips/macrumors-lede.png",
+      "srcWidth": 1020,
+      "srcHeight": 1420,
+      "credit": "MacRumors",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 20,
+        "y": 380,
+        "w": 980,
+        "h": 420
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.6,
+          "x": 45,
+          "y": 722,
+          "w": 690,
+          "h": 40
+        }
+      ],
+      "assetId": "macrumors-lede"
+    },
+    {
+      "type": "wordcascade",
+      "bg": "cream",
+      "words": [
+        {
+          "text": "DEVICES",
+          "style": "caps",
+          "at": 0.12
+        },
+        {
+          "text": "DROPPED:",
+          "style": "caps",
+          "at": 0.5
+        },
+        {
+          "text": "ZERO",
+          "style": "caps",
+          "at": 0.9,
+          "size": 1.6,
+          "accent": true
+        }
+      ],
+      "durationSec": 2.42,
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "vol": 0.15,
+          "at": 0.55
+        }
+      ]
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.18,
+      "src": "assets/ios27-tiers/clips/compat-noai.png",
+      "srcWidth": 750,
+      "srcHeight": 1450,
+      "credit": "Apple",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 10,
+        "y": 10,
+        "w": 730,
+        "h": 430
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.55,
+          "x": 22,
+          "y": 20,
+          "w": 200,
+          "h": 40
+        }
+      ],
+      "assetId": "compat-noai"
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.18,
+      "src": "assets/ios27-tiers/clips/compat-noai.png",
+      "srcWidth": 750,
+      "srcHeight": 1450,
+      "credit": "Apple",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 10,
+        "y": 1010,
+        "w": 730,
+        "h": 430
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.55,
+          "x": 22,
+          "y": 1352,
+          "w": 700,
+          "h": 40
+        }
+      ],
+      "assetId": "compat-noai"
+    },
+    {
+      "type": "footage",
+      "src": "assets/ios27-tiers/avatar-master.mp4",
+      "durationSec": 2.72,
+      "from": 16.78,
+      "focusX": 0.5,
+      "captionBottom": 320
+    },
+    {
+      "type": "categorygrid",
+      "bg": "gradient",
+      "headline": "ONE UPDATE, THREE PHONES",
+      "cards": [
+        {
+          "label": "EVERYTHING",
+          "sub": "17 Pro · 17 Pro Max · Air"
+        },
+        {
+          "label": "STANDARD",
+          "sub": "16 line · 15 Pro"
+        },
+        {
+          "label": "NO AI",
+          "sub": "15 and older · SE"
+        }
+      ],
+      "durationSec": 1.98,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.13,
+          "at": 0.08
+        }
+      ]
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.22,
+      "src": "assets/ios27-tiers/clips/apple-notes.png",
+      "srcWidth": 1080,
+      "srcHeight": 2280,
+      "credit": "Apple",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 60,
+        "y": 180,
+        "w": 1000,
+        "h": 250
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.45,
+          "x": 100,
+          "y": 191,
+          "w": 778,
+          "h": 26
+        }
+      ],
+      "assetId": "apple-notes"
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.22,
+      "src": "assets/ios27-tiers/clips/apple-notes.png",
+      "srcWidth": 1080,
+      "srcHeight": 2280,
+      "credit": "Apple",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 60,
+        "y": 205,
+        "w": 700,
+        "h": 190
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 100,
+          "y": 239,
+          "w": 128,
+          "h": 26
+        }
+      ],
+      "assetId": "apple-notes",
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "vol": 0.15,
+          "at": 0.3
+        }
+      ]
+    },
+    {
+      "type": "specsheet",
+      "kicker": "the middle tier",
+      "title": "Standard Apple Intelligence",
+      "columns": [
+        "GETS"
+      ],
+      "rows": [
+        {
+          "label": "iPhone 16 line",
+          "values": [
+            "incl. 16e"
+          ]
+        },
+        {
+          "label": "iPhone 15 Pro",
+          "values": [
+            "Pro · Pro Max"
+          ]
+        },
+        {
+          "label": "Siri",
+          "values": [
+            "new look only"
+          ],
+          "accent": true
+        }
+      ],
+      "footnote": "Source: Apple — apple.com/os/ios",
+      "durationSec": 2.14
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 1.82,
+      "src": "assets/ios27-tiers/clips/apple-notes.png",
+      "srcWidth": 1080,
+      "srcHeight": 2280,
+      "credit": "Apple",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 60,
+        "y": 440,
+        "w": 1000,
+        "h": 260
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 100,
+          "y": 549,
+          "w": 705,
+          "h": 26
+        }
+      ],
+      "assetId": "apple-notes"
+    },
+    {
+      "type": "receipt",
+      "durationSec": 2.44,
+      "src": "assets/ios27-tiers/clips/glass-lockscreen.png",
+      "srcWidth": 1600,
+      "srcHeight": 960,
+      "backdrop": "black",
+      "credit": "Apple",
+      "assetId": "glass-lockscreen"
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 1.72,
+      "src": "assets/ios27-tiers/clips/compat-noai.png",
+      "srcWidth": 750,
+      "srcHeight": 1450,
+      "credit": "Apple",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 10,
+        "y": 430,
+        "w": 730,
+        "h": 430
+      },
+      "annotations": [],
+      "assetId": "compat-noai"
+    },
+    {
+      "type": "wordcascade",
+      "bg": "black",
+      "words": [
+        {
+          "text": "15 · 14 · 13 · 12 · 11 · SE",
+          "style": "caps",
+          "at": 0.12
+        },
+        {
+          "text": "NO Apple Intelligence",
+          "style": "caps",
+          "at": 0.7,
+          "size": 1.2,
+          "accent": true
+        }
+      ],
+      "durationSec": 1.72
+    },
+    {
+      "type": "footage",
+      "src": "assets/ios27-tiers/avatar-master.mp4",
+      "durationSec": 2.24,
+      "from": 35.76,
+      "focusX": 0.5,
+      "captionBottom": 320
+    },
+    {
+      "type": "categorygrid",
+      "bg": "black",
+      "headline": "SAME YEAR, SAME NAME",
+      "cards": [
+        {
+          "label": "iPhone 15 Pro",
+          "sub": "IN — Apple Intelligence"
+        },
+        {
+          "label": "iPhone 15",
+          "sub": "OUT — no AI"
+        }
+      ],
+      "selectIndex": 1,
+      "selectAt": 0.9,
+      "durationSec": 2.0,
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "vol": 0.12,
+          "at": 0.0
+        }
+      ]
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.0,
+      "src": "assets/ios27-tiers/clips/compat-noai.png",
+      "srcWidth": 750,
+      "srcHeight": 1450,
+      "credit": "Apple",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 10,
+        "y": 10,
+        "w": 730,
+        "h": 300
+      },
+      "annotations": [
+        {
+          "kind": "circle",
+          "at": 0.5,
+          "x": 20,
+          "y": 12,
+          "w": 230,
+          "h": 56
+        }
+      ],
+      "assetId": "compat-noai"
+    },
+    {
+      "type": "footage",
+      "src": "assets/ios27-tiers/avatar-master.mp4",
+      "durationSec": 1.82,
+      "from": 42.0,
+      "focusX": 0.5,
+      "captionBottom": 320
+    },
+    {
+      "type": "receipt",
+      "durationSec": 1.82,
+      "src": "assets/ios27-tiers/clips/gemini-lede.png",
+      "srcWidth": 1020,
+      "srcHeight": 880,
+      "backdrop": "cream",
+      "credit": "MacRumors",
+      "assetId": "gemini-lede"
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.54,
+      "src": "assets/ios27-tiers/clips/gemini-lede.png",
+      "srcWidth": 1020,
+      "srcHeight": 880,
+      "credit": "MacRumors",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 20,
+        "y": 440,
+        "w": 980,
+        "h": 400
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.55,
+          "x": 45,
+          "y": 728,
+          "w": 880,
+          "h": 44
+        }
+      ],
+      "assetId": "gemini-lede"
+    },
+    {
+      "type": "receipt",
+      "durationSec": 2.54,
+      "src": "assets/ios27-tiers/clips/gemini-diagram.png",
+      "srcWidth": 924,
+      "srcHeight": 520,
+      "backdrop": "cream",
+      "credit": "Apple via MacRumors",
+      "assetId": "gemini-diagram"
+    },
+    {
+      "type": "specsheet",
+      "kicker": "where it actually runs",
+      "title": "Apple Foundation Models",
+      "columns": [
+        "iOS 27"
+      ],
+      "rows": [
+        {
+          "label": "Co-developed with",
+          "values": [
+            "Google · Gemini"
+          ]
+        },
+        {
+          "label": "Runs",
+          "values": [
+            "on-device + PCC"
+          ]
+        },
+        {
+          "label": "Google data access",
+          "values": [
+            "none"
+          ],
+          "accent": true
+        }
+      ],
+      "footnote": "Source: MacRumors, Jun 8 2026",
+      "durationSec": 2.28
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.28,
+      "src": "assets/ios27-tiers/clips/note-pcc.png",
+      "srcWidth": 984,
+      "srcHeight": 560,
+      "credit": "MacRumors",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 15,
+        "y": 10,
+        "w": 950,
+        "h": 200
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 25,
+          "y": 64,
+          "w": 700,
+          "h": 35
+        }
+      ],
+      "assetId": "note-pcc"
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.28,
+      "src": "assets/ios27-tiers/clips/gemini-diagram.png",
+      "srcWidth": 924,
+      "srcHeight": 520,
+      "credit": "Apple via MacRumors",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 300,
+        "y": 150,
+        "w": 330,
+        "h": 250
+      },
+      "annotations": [],
+      "assetId": "gemini-diagram"
+    },
+    {
+      "type": "receipt",
+      "durationSec": 1.78,
+      "src": "assets/ios27-tiers/clips/apple-dma.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "credit": "Apple Newsroom",
+      "assetId": "apple-dma"
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 1.78,
+      "src": "assets/ios27-tiers/clips/apple-dma.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "credit": "Apple Newsroom",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 40,
+        "y": 440,
+        "w": 1000,
+        "h": 620
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 60,
+          "y": 680,
+          "w": 760,
+          "h": 85
+        }
+      ],
+      "assetId": "apple-dma"
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 1.78,
+      "src": "assets/ios27-tiers/clips/apple-dma.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "credit": "Apple Newsroom",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 40,
+        "y": 1660,
+        "w": 1000,
+        "h": 300
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 60,
+          "y": 1726,
+          "w": 900,
+          "h": 36
+        }
+      ],
+      "assetId": "apple-dma"
+    },
+    {
+      "type": "footage",
+      "src": "assets/ios27-tiers/avatar-master.mp4",
+      "durationSec": 2.0,
+      "from": 62.9,
+      "focusX": 0.5,
+      "captionBottom": 320
+    },
+    {
+      "type": "settingspane",
+      "title": "Appearance",
+      "back": "Settings",
+      "appearance": "light",
+      "groups": [
+        {
+          "header": "APPEARANCE",
+          "rows": [
+            {
+              "label": "Automatic",
+              "toggle": true,
+              "on": true
+            },
+            {
+              "label": "Light"
+            },
+            {
+              "label": "Dark"
+            }
+          ]
+        },
+        {
+          "header": "LIQUID GLASS",
+          "rows": [
+            {
+              "label": "Liquid Glass",
+              "value": "Ultraclear",
+              "tint": "#0aa9c2",
+              "glyph": "◎",
+              "chevron": true
+            },
+            {
+              "label": "Tint",
+              "value": "Off"
+            }
+          ],
+          "footer": "Ultraclear to fully tinted, with a live preview."
+        }
+      ],
+      "focus": "1.0",
+      "focusAt": 0.6,
+      "durationSec": 2.7
+    },
+    {
+      "type": "categorygrid",
+      "bg": "gradient",
+      "headline": "LIQUID GLASS CONTROL",
+      "cards": [
+        {
+          "label": "iOS 26",
+          "sub": "Clear or Tinted — two options"
+        },
+        {
+          "label": "iOS 27",
+          "sub": "continuous slider"
+        }
+      ],
+      "selectIndex": 1,
+      "selectAt": 1.0,
+      "durationSec": 2.14
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.14,
+      "src": "assets/ios27-tiers/clips/note-glass.png",
+      "srcWidth": 828,
+      "srcHeight": 600,
+      "credit": "Apple",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 20,
+        "y": 380,
+        "w": 790,
+        "h": 230
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.6,
+          "x": 60,
+          "y": 408,
+          "w": 690,
+          "h": 36
+        }
+      ],
+      "assetId": "note-glass"
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.14,
+      "src": "assets/ios27-tiers/clips/note-glass.png",
+      "srcWidth": 828,
+      "srcHeight": 600,
+      "credit": "Apple",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 20,
+        "y": 440,
+        "w": 790,
+        "h": 160
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.6,
+          "x": 60,
+          "y": 487,
+          "w": 580,
+          "h": 36
+        }
+      ],
+      "assetId": "note-glass"
+    },
+    {
+      "type": "statcard",
+      "title": "iOS 27 — Apple's own numbers",
+      "titleRight": "vs iOS 26.4.2",
+      "rows": [
+        {
+          "label": "App launches",
+          "value": "up to 30% faster",
+          "pct": 0.3
+        },
+        {
+          "label": "Photos load",
+          "value": "up to 70% faster",
+          "pct": 0.7
+        },
+        {
+          "label": "AirDrop",
+          "value": "up to 80% faster",
+          "pct": 0.8,
+          "color": "#2fb98a"
+        }
+      ],
+      "bg": "black",
+      "footnote": "Source: Apple — apple.com/os/ios",
+      "durationSec": 2.15
+    },
+    {
+      "type": "wordcascade",
+      "bg": "cream",
+      "words": [
+        {
+          "text": "FASTER — BUT",
+          "style": "caps",
+          "at": 0.15
+        },
+        {
+          "text": "ON WHICH PHONE?",
+          "style": "caps",
+          "at": 0.7,
+          "size": 1.35,
+          "accent": true
+        }
+      ],
+      "durationSec": 1.83
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.08,
+      "src": "assets/ios27-tiers/clips/apple-notes.png",
+      "srcWidth": 1080,
+      "srcHeight": 2280,
+      "credit": "Apple",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 60,
+        "y": 1810,
+        "w": 1000,
+        "h": 320
+      },
+      "annotations": [
+        {
+          "kind": "circle",
+          "at": 0.55,
+          "x": 165,
+          "y": 1858,
+          "w": 300,
+          "h": 50
+        }
+      ],
+      "assetId": "apple-notes",
+      "sfx": [
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "vol": 0.17,
+          "at": 0.5
+        }
+      ]
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.08,
+      "src": "assets/ios27-tiers/clips/apple-notes.png",
+      "srcWidth": 1080,
+      "srcHeight": 2280,
+      "credit": "Apple",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 60,
+        "y": 1880,
+        "w": 1000,
+        "h": 260
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 442,
+          "y": 1919,
+          "w": 376,
+          "h": 24
+        }
+      ],
+      "assetId": "apple-notes"
+    },
+    {
+      "type": "footage",
+      "src": "assets/ios27-tiers/avatar-master.mp4",
+      "durationSec": 1.87,
+      "from": 82.16,
+      "focusX": 0.5,
+      "captionBottom": 320
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 1.87,
+      "src": "assets/ios27-tiers/clips/9to5-notes.png",
+      "srcWidth": 1080,
+      "srcHeight": 1055,
+      "credit": "9to5Mac",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 30,
+        "y": 810,
+        "w": 1020,
+        "h": 230
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 48,
+          "y": 901,
+          "w": 944,
+          "h": 26
+        }
+      ],
+      "assetId": "9to5-notes"
+    },
+    {
+      "type": "chart",
+      "bg": "black",
+      "unit": "%",
+      "kicker": "% OF iPHONES FROM THE LAST 4 YEARS",
+      "title": "Adoption, at different ages",
+      "items": [
+        {
+          "label": "iOS 26",
+          "value": 74,
+          "display": "74%",
+          "sub": "150 days",
+          "highlight": true
+        },
+        {
+          "label": "iOS 18",
+          "value": 76,
+          "display": "76%",
+          "sub": "127 days"
+        },
+        {
+          "label": "iOS 17",
+          "value": 76,
+          "display": "76%",
+          "sub": "139 days"
+        }
+      ],
+      "source": "Apple via 9to5Mac, Feb 13 2026",
+      "durationSec": 2.34,
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "vol": 0.15,
+          "at": 0.1
+        }
+      ]
+    },
+    {
+      "type": "receipt",
+      "durationSec": 2.34,
+      "src": "assets/ios27-tiers/clips/note-adopt.png",
+      "srcWidth": 1044,
+      "srcHeight": 402,
+      "backdrop": "cream",
+      "credit": "9to5Mac",
+      "assetId": "note-adopt"
+    },
+    {
+      "type": "specsheet",
+      "kicker": "not a like-for-like loss",
+      "title": "Why iOS 26 trailed",
+      "columns": [
+        "FACTOR"
+      ],
+      "rows": [
+        {
+          "label": "Measured at",
+          "values": [
+            "150 days vs 127"
+          ]
+        },
+        {
+          "label": "Models dropped",
+          "values": [
+            "3 vs 0"
+          ],
+          "accent": true
+        },
+        {
+          "label": "iOS 18 supported",
+          "values": [
+            "same as iOS 17"
+          ]
+        }
+      ],
+      "footnote": "Source: 9to5Mac, Feb 13 2026",
+      "durationSec": 2.34
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.34,
+      "src": "assets/ios27-tiers/clips/9to5-notes.png",
+      "srcWidth": 1080,
+      "srcHeight": 1055,
+      "credit": "9to5Mac",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 30,
+        "y": 480,
+        "w": 1020,
+        "h": 280
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 48,
+          "y": 636,
+          "w": 522,
+          "h": 26
+        }
+      ],
+      "assetId": "9to5-notes"
+    },
+    {
+      "type": "wordcascade",
+      "bg": "cream",
+      "words": [
+        {
+          "text": "iOS 26 CUT 3 PHONES",
+          "style": "caps",
+          "at": 0.12
+        },
+        {
+          "text": "iOS 27 CUTS NONE",
+          "style": "caps",
+          "at": 0.7,
+          "size": 1.3,
+          "accent": true
+        }
+      ],
+      "durationSec": 2.27
+    },
+    {
+      "type": "categorygrid",
+      "bg": "gradient",
+      "headline": "THE REMOVED VARIABLE",
+      "cards": [
+        {
+          "label": "iOS 26",
+          "sub": "XS · XS Max · XR cut"
+        },
+        {
+          "label": "iOS 27",
+          "sub": "nothing cut"
+        }
+      ],
+      "selectIndex": 1,
+      "selectAt": 0.9,
+      "durationSec": 2.27
+    },
+    {
+      "type": "annotatezoom",
+      "durationSec": 2.26,
+      "src": "assets/ios27-tiers/clips/9to5-notes.png",
+      "srcWidth": 1080,
+      "srcHeight": 1055,
+      "credit": "9to5Mac",
+      "bg": "cream",
+      "captionBottom": 205,
+      "focus": {
+        "x": 30,
+        "y": 190,
+        "w": 1020,
+        "h": 280
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 48,
+          "y": 348,
+          "w": 590,
+          "h": 26
+        }
+      ],
+      "assetId": "9to5-notes"
+    },
+    {
+      "type": "footage",
+      "src": "assets/ios27-tiers/avatar-master.mp4",
+      "durationSec": 2.61,
+      "from": 102.06,
+      "focusX": 0.5,
+      "captionBottom": 320,
+      "headline": {
+        "lines": [
+          {
+            "text": "WHICH TIER IS",
+            "kind": "headline",
+            "at": 0.25
+          },
+          {
+            "text": "YOUR iPHONE?",
+            "kind": "headline",
+            "at": 0.7
+          }
+        ],
+        "y": 0.46,
+        "theme": "light",
+        "align": "center"
+      }
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.14,
+      "text": "Every iPhone going",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Every"
+        },
+        {
+          "t": 0.36,
+          "text": "iPhone"
+        },
+        {
+          "t": 0.82,
+          "text": "going"
+        }
+      ]
+    },
+    {
+      "start": 1.14,
+      "end": 2.2,
+      "text": "back to 2019",
+      "words": [
+        {
+          "t": 1.14,
+          "text": "back"
+        },
+        {
+          "t": 1.4,
+          "text": "to"
+        },
+        {
+          "t": 1.62,
+          "text": "2019"
+        }
+      ]
+    },
+    {
+      "start": 2.2,
+      "end": 4.2,
+      "text": "gets iOS 27.",
+      "words": [
+        {
+          "t": 2.2,
+          "text": "gets"
+        },
+        {
+          "t": 2.68,
+          "text": "iOS"
+        },
+        {
+          "t": 3.1,
+          "text": "27."
+        }
+      ]
+    },
+    {
+      "start": 4.8,
+      "end": 5.48,
+      "text": "Almost none of",
+      "words": [
+        {
+          "t": 4.8,
+          "text": "Almost"
+        },
+        {
+          "t": 5.0,
+          "text": "none"
+        },
+        {
+          "t": 5.32,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 5.48,
+      "end": 6.04,
+      "text": "them get the",
+      "words": [
+        {
+          "t": 5.48,
+          "text": "them"
+        },
+        {
+          "t": 5.66,
+          "text": "get"
+        },
+        {
+          "t": 5.86,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 6.04,
+      "end": 6.66,
+      "text": "part you've been",
+      "words": [
+        {
+          "t": 6.04,
+          "text": "part"
+        },
+        {
+          "t": 6.22,
+          "text": "you've"
+        },
+        {
+          "t": 6.52,
+          "text": "been"
+        }
+      ]
+    },
+    {
+      "start": 6.66,
+      "end": 7.3,
+      "text": "reading about.",
+      "words": [
+        {
+          "t": 6.66,
+          "text": "reading"
+        },
+        {
+          "t": 6.94,
+          "text": "about."
+        }
+      ]
+    },
+    {
+      "start": 7.9,
+      "end": 8.64,
+      "text": "It lands next",
+      "words": [
+        {
+          "t": 7.9,
+          "text": "It"
+        },
+        {
+          "t": 8.02,
+          "text": "lands"
+        },
+        {
+          "t": 8.26,
+          "text": "next"
+        }
+      ]
+    },
+    {
+      "start": 8.64,
+      "end": 9.3,
+      "text": "month with the",
+      "words": [
+        {
+          "t": 8.64,
+          "text": "month"
+        },
+        {
+          "t": 8.92,
+          "text": "with"
+        },
+        {
+          "t": 9.18,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 9.3,
+      "end": 9.88,
+      "text": "new iPhones.",
+      "words": [
+        {
+          "t": 9.3,
+          "text": "new"
+        },
+        {
+          "t": 9.48,
+          "text": "iPhones."
+        }
+      ]
+    },
+    {
+      "start": 10.68,
+      "end": 11.64,
+      "text": "Apple dropped zero",
+      "words": [
+        {
+          "t": 10.68,
+          "text": "Apple"
+        },
+        {
+          "t": 10.88,
+          "text": "dropped"
+        },
+        {
+          "t": 11.2,
+          "text": "zero"
+        }
+      ]
+    },
+    {
+      "start": 11.64,
+      "end": 13.72,
+      "text": "devices, iPhone 11",
+      "words": [
+        {
+          "t": 11.64,
+          "text": "devices,"
+        },
+        {
+          "t": 12.94,
+          "text": "iPhone"
+        },
+        {
+          "t": 13.26,
+          "text": "11"
+        }
+      ]
+    },
+    {
+      "start": 13.72,
+      "end": 14.76,
+      "text": "and up same",
+      "words": [
+        {
+          "t": 13.72,
+          "text": "and"
+        },
+        {
+          "t": 14.16,
+          "text": "up"
+        },
+        {
+          "t": 14.38,
+          "text": "same"
+        }
+      ]
+    },
+    {
+      "start": 14.76,
+      "end": 15.64,
+      "text": "list as iOS",
+      "words": [
+        {
+          "t": 14.76,
+          "text": "list"
+        },
+        {
+          "t": 14.98,
+          "text": "as"
+        },
+        {
+          "t": 15.2,
+          "text": "iOS"
+        }
+      ]
+    },
+    {
+      "start": 15.64,
+      "end": 17.88,
+      "text": "26, but supported",
+      "words": [
+        {
+          "t": 15.64,
+          "text": "26,"
+        },
+        {
+          "t": 17.2,
+          "text": "but"
+        },
+        {
+          "t": 17.38,
+          "text": "supported"
+        }
+      ]
+    },
+    {
+      "start": 17.88,
+      "end": 18.74,
+      "text": "now means three",
+      "words": [
+        {
+          "t": 17.88,
+          "text": "now"
+        },
+        {
+          "t": 18.16,
+          "text": "means"
+        },
+        {
+          "t": 18.36,
+          "text": "three"
+        }
+      ]
+    },
+    {
+      "start": 18.74,
+      "end": 19.38,
+      "text": "different phones,",
+      "words": [
+        {
+          "t": 18.74,
+          "text": "different"
+        },
+        {
+          "t": 19.04,
+          "text": "phones,"
+        }
+      ]
+    },
+    {
+      "start": 19.62,
+      "end": 20.22,
+      "text": "only three get",
+      "words": [
+        {
+          "t": 19.62,
+          "text": "only"
+        },
+        {
+          "t": 19.8,
+          "text": "three"
+        },
+        {
+          "t": 20.02,
+          "text": "get"
+        }
+      ]
+    },
+    {
+      "start": 20.22,
+      "end": 20.94,
+      "text": "the full Siri",
+      "words": [
+        {
+          "t": 20.22,
+          "text": "the"
+        },
+        {
+          "t": 20.36,
+          "text": "full"
+        },
+        {
+          "t": 20.6,
+          "text": "Siri"
+        }
+      ]
+    },
+    {
+      "start": 20.94,
+      "end": 22.7,
+      "text": "AI, iPhone 17",
+      "words": [
+        {
+          "t": 20.94,
+          "text": "AI,"
+        },
+        {
+          "t": 21.92,
+          "text": "iPhone"
+        },
+        {
+          "t": 22.14,
+          "text": "17"
+        }
+      ]
+    },
+    {
+      "start": 22.7,
+      "end": 24.36,
+      "text": "Pro, 17 Pro",
+      "words": [
+        {
+          "t": 22.7,
+          "text": "Pro,"
+        },
+        {
+          "t": 23.42,
+          "text": "17"
+        },
+        {
+          "t": 24.04,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 24.36,
+      "end": 25.36,
+      "text": "Max and iPhone",
+      "words": [
+        {
+          "t": 24.36,
+          "text": "Max"
+        },
+        {
+          "t": 24.62,
+          "text": "and"
+        },
+        {
+          "t": 25.04,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 25.36,
+      "end": 26.74,
+      "text": "Air. The 16",
+      "words": [
+        {
+          "t": 25.36,
+          "text": "Air."
+        },
+        {
+          "t": 26.28,
+          "text": "The"
+        },
+        {
+          "t": 26.36,
+          "text": "16"
+        }
+      ]
+    },
+    {
+      "start": 26.74,
+      "end": 27.58,
+      "text": "line and 15",
+      "words": [
+        {
+          "t": 26.74,
+          "text": "line"
+        },
+        {
+          "t": 27.06,
+          "text": "and"
+        },
+        {
+          "t": 27.26,
+          "text": "15"
+        }
+      ]
+    },
+    {
+      "start": 27.58,
+      "end": 28.86,
+      "text": "Pro gets standard",
+      "words": [
+        {
+          "t": 27.58,
+          "text": "Pro"
+        },
+        {
+          "t": 28.0,
+          "text": "gets"
+        },
+        {
+          "t": 28.32,
+          "text": "standard"
+        }
+      ]
+    },
+    {
+      "start": 28.86,
+      "end": 29.76,
+      "text": "Apple Intelligence,",
+      "words": [
+        {
+          "t": 28.86,
+          "text": "Apple"
+        },
+        {
+          "t": 29.2,
+          "text": "Intelligence,"
+        }
+      ]
+    },
+    {
+      "start": 30.26,
+      "end": 30.82,
+      "text": "the new Siri",
+      "words": [
+        {
+          "t": 30.26,
+          "text": "the"
+        },
+        {
+          "t": 30.38,
+          "text": "new"
+        },
+        {
+          "t": 30.54,
+          "text": "Siri"
+        }
+      ]
+    },
+    {
+      "start": 30.82,
+      "end": 31.54,
+      "text": "look not the",
+      "words": [
+        {
+          "t": 30.82,
+          "text": "look"
+        },
+        {
+          "t": 31.08,
+          "text": "not"
+        },
+        {
+          "t": 31.34,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 31.54,
+      "end": 32.74,
+      "text": "whole assistant and",
+      "words": [
+        {
+          "t": 31.54,
+          "text": "whole"
+        },
+        {
+          "t": 31.7,
+          "text": "assistant"
+        },
+        {
+          "t": 32.2,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 32.74,
+      "end": 33.32,
+      "text": "from the iPhone",
+      "words": [
+        {
+          "t": 32.74,
+          "text": "from"
+        },
+        {
+          "t": 32.88,
+          "text": "the"
+        },
+        {
+          "t": 33.06,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 33.32,
+      "end": 34.4,
+      "text": "15 down no",
+      "words": [
+        {
+          "t": 33.32,
+          "text": "15"
+        },
+        {
+          "t": 33.82,
+          "text": "down"
+        },
+        {
+          "t": 34.1,
+          "text": "no"
+        }
+      ]
+    },
+    {
+      "start": 34.4,
+      "end": 35.44,
+      "text": "Apple Intelligence at",
+      "words": [
+        {
+          "t": 34.4,
+          "text": "Apple"
+        },
+        {
+          "t": 34.64,
+          "text": "Intelligence"
+        },
+        {
+          "t": 35.16,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 35.44,
+      "end": 36.4,
+      "text": "all. That line",
+      "words": [
+        {
+          "t": 35.44,
+          "text": "all."
+        },
+        {
+          "t": 36.02,
+          "text": "That"
+        },
+        {
+          "t": 36.12,
+          "text": "line"
+        }
+      ]
+    },
+    {
+      "start": 36.4,
+      "end": 37.22,
+      "text": "cuts through one",
+      "words": [
+        {
+          "t": 36.4,
+          "text": "cuts"
+        },
+        {
+          "t": 36.68,
+          "text": "through"
+        },
+        {
+          "t": 36.98,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 37.22,
+      "end": 37.88,
+      "text": "model year.",
+      "words": [
+        {
+          "t": 37.22,
+          "text": "model"
+        },
+        {
+          "t": 37.6,
+          "text": "year."
+        }
+      ]
+    },
+    {
+      "start": 38.4,
+      "end": 39.6,
+      "text": "iPhone 15 Pro",
+      "words": [
+        {
+          "t": 38.4,
+          "text": "iPhone"
+        },
+        {
+          "t": 38.68,
+          "text": "15"
+        },
+        {
+          "t": 39.24,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 39.6,
+      "end": 40.18,
+      "text": "is in,",
+      "words": [
+        {
+          "t": 39.6,
+          "text": "is"
+        },
+        {
+          "t": 39.96,
+          "text": "in,"
+        }
+      ]
+    },
+    {
+      "start": 40.58,
+      "end": 41.6,
+      "text": "iPhone 15 is",
+      "words": [
+        {
+          "t": 40.58,
+          "text": "iPhone"
+        },
+        {
+          "t": 40.8,
+          "text": "15"
+        },
+        {
+          "t": 41.34,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 41.6,
+      "end": 42.64,
+      "text": "out and the",
+      "words": [
+        {
+          "t": 41.6,
+          "text": "out"
+        },
+        {
+          "t": 41.88,
+          "text": "and"
+        },
+        {
+          "t": 42.5,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 42.64,
+      "end": 43.62,
+      "text": "Siri behind that",
+      "words": [
+        {
+          "t": 42.64,
+          "text": "Siri"
+        },
+        {
+          "t": 42.94,
+          "text": "behind"
+        },
+        {
+          "t": 43.32,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 43.62,
+      "end": 44.44,
+      "text": "top tier is",
+      "words": [
+        {
+          "t": 43.62,
+          "text": "top"
+        },
+        {
+          "t": 43.88,
+          "text": "tier"
+        },
+        {
+          "t": 44.2,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 44.44,
+      "end": 45.52,
+      "text": "genuinely rebuilt.",
+      "words": [
+        {
+          "t": 44.44,
+          "text": "genuinely"
+        },
+        {
+          "t": 44.88,
+          "text": "rebuilt."
+        }
+      ]
+    },
+    {
+      "start": 45.94,
+      "end": 47.08,
+      "text": "On models Apple",
+      "words": [
+        {
+          "t": 45.94,
+          "text": "On"
+        },
+        {
+          "t": 46.24,
+          "text": "models"
+        },
+        {
+          "t": 46.58,
+          "text": "Apple"
+        }
+      ]
+    },
+    {
+      "start": 47.08,
+      "end": 48.42,
+      "text": "co-developed with Google",
+      "words": [
+        {
+          "t": 47.08,
+          "text": "co-developed"
+        },
+        {
+          "t": 47.92,
+          "text": "with"
+        },
+        {
+          "t": 48.1,
+          "text": "Google"
+        }
+      ]
+    },
+    {
+      "start": 48.42,
+      "end": 49.74,
+      "text": "using the technology",
+      "words": [
+        {
+          "t": 48.42,
+          "text": "using"
+        },
+        {
+          "t": 49.06,
+          "text": "the"
+        },
+        {
+          "t": 49.26,
+          "text": "technology"
+        }
+      ]
+    },
+    {
+      "start": 49.74,
+      "end": 50.6,
+      "text": "behind Gemini.",
+      "words": [
+        {
+          "t": 49.74,
+          "text": "behind"
+        },
+        {
+          "t": 50.14,
+          "text": "Gemini."
+        }
+      ]
+    },
+    {
+      "start": 51.22,
+      "end": 51.92,
+      "text": "They run on",
+      "words": [
+        {
+          "t": 51.22,
+          "text": "They"
+        },
+        {
+          "t": 51.42,
+          "text": "run"
+        },
+        {
+          "t": 51.64,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 51.92,
+      "end": 52.86,
+      "text": "device and on",
+      "words": [
+        {
+          "t": 51.92,
+          "text": "device"
+        },
+        {
+          "t": 52.24,
+          "text": "and"
+        },
+        {
+          "t": 52.66,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 52.86,
+      "end": 54.38,
+      "text": "Apple's Private Cloud",
+      "words": [
+        {
+          "t": 52.86,
+          "text": "Apple's"
+        },
+        {
+          "t": 53.42,
+          "text": "Private"
+        },
+        {
+          "t": 53.92,
+          "text": "Cloud"
+        }
+      ]
+    },
+    {
+      "start": 54.38,
+      "end": 56.22,
+      "text": "Compute. Google never",
+      "words": [
+        {
+          "t": 54.38,
+          "text": "Compute."
+        },
+        {
+          "t": 55.42,
+          "text": "Google"
+        },
+        {
+          "t": 55.68,
+          "text": "never"
+        }
+      ]
+    },
+    {
+      "start": 56.22,
+      "end": 57.44,
+      "text": "handles your data",
+      "words": [
+        {
+          "t": 56.22,
+          "text": "handles"
+        },
+        {
+          "t": 56.78,
+          "text": "your"
+        },
+        {
+          "t": 57.08,
+          "text": "data"
+        }
+      ]
+    },
+    {
+      "start": 57.44,
+      "end": 58.86,
+      "text": "unless you're in",
+      "words": [
+        {
+          "t": 57.44,
+          "text": "unless"
+        },
+        {
+          "t": 58.12,
+          "text": "you're"
+        },
+        {
+          "t": 58.7,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 58.86,
+      "end": 60.44,
+      "text": "Europe. Siri AI",
+      "words": [
+        {
+          "t": 58.86,
+          "text": "Europe."
+        },
+        {
+          "t": 59.76,
+          "text": "Siri"
+        },
+        {
+          "t": 59.96,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 60.44,
+      "end": 61.42,
+      "text": "won't ship in",
+      "words": [
+        {
+          "t": 60.44,
+          "text": "won't"
+        },
+        {
+          "t": 60.92,
+          "text": "ship"
+        },
+        {
+          "t": 61.18,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 61.42,
+      "end": 62.4,
+      "text": "the EU at",
+      "words": [
+        {
+          "t": 61.42,
+          "text": "the"
+        },
+        {
+          "t": 61.58,
+          "text": "EU"
+        },
+        {
+          "t": 62.0,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 62.4,
+      "end": 63.48,
+      "text": "launch, but the",
+      "words": [
+        {
+          "t": 62.4,
+          "text": "launch,"
+        },
+        {
+          "t": 63.04,
+          "text": "but"
+        },
+        {
+          "t": 63.32,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 63.48,
+      "end": 64.28,
+      "text": "real story is",
+      "words": [
+        {
+          "t": 63.48,
+          "text": "real"
+        },
+        {
+          "t": 63.68,
+          "text": "story"
+        },
+        {
+          "t": 63.98,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 64.28,
+      "end": 66.04,
+      "text": "underneath. Everyone gets",
+      "words": [
+        {
+          "t": 64.28,
+          "text": "underneath."
+        },
+        {
+          "t": 65.32,
+          "text": "Everyone"
+        },
+        {
+          "t": 65.76,
+          "text": "gets"
+        }
+      ]
+    },
+    {
+      "start": 66.04,
+      "end": 66.94,
+      "text": "the Liquid Glass",
+      "words": [
+        {
+          "t": 66.04,
+          "text": "the"
+        },
+        {
+          "t": 66.28,
+          "text": "Liquid"
+        },
+        {
+          "t": 66.54,
+          "text": "Glass"
+        }
+      ]
+    },
+    {
+      "start": 66.94,
+      "end": 68.48,
+      "text": "slider, one continuous",
+      "words": [
+        {
+          "t": 66.94,
+          "text": "slider,"
+        },
+        {
+          "t": 67.74,
+          "text": "one"
+        },
+        {
+          "t": 67.86,
+          "text": "continuous"
+        }
+      ]
+    },
+    {
+      "start": 68.48,
+      "end": 69.52,
+      "text": "dial in Settings",
+      "words": [
+        {
+          "t": 68.48,
+          "text": "dial"
+        },
+        {
+          "t": 68.76,
+          "text": "in"
+        },
+        {
+          "t": 69.1,
+          "text": "Settings"
+        }
+      ]
+    },
+    {
+      "start": 69.52,
+      "end": 71.08,
+      "text": "Appearance instead of",
+      "words": [
+        {
+          "t": 69.52,
+          "text": "Appearance"
+        },
+        {
+          "t": 70.26,
+          "text": "instead"
+        },
+        {
+          "t": 70.76,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 71.08,
+      "end": 73.12,
+      "text": "iOS 26 is",
+      "words": [
+        {
+          "t": 71.08,
+          "text": "iOS"
+        },
+        {
+          "t": 71.56,
+          "text": "26"
+        },
+        {
+          "t": 72.6,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 73.12,
+      "end": 74.74,
+      "text": "two options and",
+      "words": [
+        {
+          "t": 73.12,
+          "text": "two"
+        },
+        {
+          "t": 73.34,
+          "text": "options"
+        },
+        {
+          "t": 73.9,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 74.74,
+      "end": 75.64,
+      "text": "Apple says app",
+      "words": [
+        {
+          "t": 74.74,
+          "text": "Apple"
+        },
+        {
+          "t": 74.98,
+          "text": "says"
+        },
+        {
+          "t": 75.24,
+          "text": "app"
+        }
+      ]
+    },
+    {
+      "start": 75.64,
+      "end": 76.46,
+      "text": "launches are up",
+      "words": [
+        {
+          "t": 75.64,
+          "text": "launches"
+        },
+        {
+          "t": 76.02,
+          "text": "are"
+        },
+        {
+          "t": 76.28,
+          "text": "up"
+        }
+      ]
+    },
+    {
+      "start": 76.46,
+      "end": 77.88,
+      "text": "to 30% faster.",
+      "words": [
+        {
+          "t": 76.46,
+          "text": "to"
+        },
+        {
+          "t": 76.58,
+          "text": "30%"
+        },
+        {
+          "t": 77.34,
+          "text": "faster."
+        }
+      ]
+    },
+    {
+      "start": 78.42,
+      "end": 79.22,
+      "text": "Check the footnote.",
+      "words": [
+        {
+          "t": 78.42,
+          "text": "Check"
+        },
+        {
+          "t": 78.68,
+          "text": "the"
+        },
+        {
+          "t": 78.88,
+          "text": "footnote."
+        }
+      ]
+    },
+    {
+      "start": 79.64,
+      "end": 80.22,
+      "text": "They measured that",
+      "words": [
+        {
+          "t": 79.64,
+          "text": "They"
+        },
+        {
+          "t": 79.72,
+          "text": "measured"
+        },
+        {
+          "t": 80.0,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 80.22,
+      "end": 80.82,
+      "text": "on an iPhone",
+      "words": [
+        {
+          "t": 80.22,
+          "text": "on"
+        },
+        {
+          "t": 80.44,
+          "text": "an"
+        },
+        {
+          "t": 80.58,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 80.82,
+      "end": 82.04,
+      "text": "11 Pro Max.",
+      "words": [
+        {
+          "t": 80.82,
+          "text": "11"
+        },
+        {
+          "t": 81.38,
+          "text": "Pro"
+        },
+        {
+          "t": 81.72,
+          "text": "Max."
+        }
+      ]
+    },
+    {
+      "start": 82.62,
+      "end": 83.44,
+      "text": "That matters because",
+      "words": [
+        {
+          "t": 82.62,
+          "text": "That"
+        },
+        {
+          "t": 82.72,
+          "text": "matters"
+        },
+        {
+          "t": 83.06,
+          "text": "because"
+        }
+      ]
+    },
+    {
+      "start": 83.44,
+      "end": 85.78,
+      "text": "iOS 26 stalled.",
+      "words": [
+        {
+          "t": 83.44,
+          "text": "iOS"
+        },
+        {
+          "t": 83.94,
+          "text": "26"
+        },
+        {
+          "t": 85.02,
+          "text": "stalled."
+        }
+      ]
+    },
+    {
+      "start": 86.16,
+      "end": 87.66,
+      "text": "74% of recent",
+      "words": [
+        {
+          "t": 86.16,
+          "text": "74%"
+        },
+        {
+          "t": 87.1,
+          "text": "of"
+        },
+        {
+          "t": 87.36,
+          "text": "recent"
+        }
+      ]
+    },
+    {
+      "start": 87.66,
+      "end": 89.24,
+      "text": "iPhones after 150",
+      "words": [
+        {
+          "t": 87.66,
+          "text": "iPhones"
+        },
+        {
+          "t": 88.06,
+          "text": "after"
+        },
+        {
+          "t": 88.6,
+          "text": "150"
+        }
+      ]
+    },
+    {
+      "start": 89.24,
+      "end": 91.36,
+      "text": "days against 76%",
+      "words": [
+        {
+          "t": 89.24,
+          "text": "days"
+        },
+        {
+          "t": 89.64,
+          "text": "against"
+        },
+        {
+          "t": 90.2,
+          "text": "76%"
+        }
+      ]
+    },
+    {
+      "start": 91.36,
+      "end": 92.6,
+      "text": "for iOS 18,",
+      "words": [
+        {
+          "t": 91.36,
+          "text": "for"
+        },
+        {
+          "t": 91.58,
+          "text": "iOS"
+        },
+        {
+          "t": 91.88,
+          "text": "18,"
+        }
+      ]
+    },
+    {
+      "start": 92.82,
+      "end": 93.82,
+      "text": "which only had",
+      "words": [
+        {
+          "t": 92.82,
+          "text": "which"
+        },
+        {
+          "t": 93.28,
+          "text": "only"
+        },
+        {
+          "t": 93.6,
+          "text": "had"
+        }
+      ]
+    },
+    {
+      "start": 93.82,
+      "end": 95.14,
+      "text": "127 days,",
+      "words": [
+        {
+          "t": 93.82,
+          "text": "127"
+        },
+        {
+          "t": 94.56,
+          "text": "days,"
+        }
+      ]
+    },
+    {
+      "start": 95.6,
+      "end": 96.82,
+      "text": "but iOS 26",
+      "words": [
+        {
+          "t": 95.6,
+          "text": "but"
+        },
+        {
+          "t": 95.72,
+          "text": "iOS"
+        },
+        {
+          "t": 96.06,
+          "text": "26"
+        }
+      ]
+    },
+    {
+      "start": 96.82,
+      "end": 97.9,
+      "text": "dropped three phones.",
+      "words": [
+        {
+          "t": 96.82,
+          "text": "dropped"
+        },
+        {
+          "t": 97.14,
+          "text": "three"
+        },
+        {
+          "t": 97.5,
+          "text": "phones."
+        }
+      ]
+    },
+    {
+      "start": 98.28,
+      "end": 99.62,
+      "text": "iOS 27 drops",
+      "words": [
+        {
+          "t": 98.28,
+          "text": "iOS"
+        },
+        {
+          "t": 98.52,
+          "text": "27"
+        },
+        {
+          "t": 99.32,
+          "text": "drops"
+        }
+      ]
+    },
+    {
+      "start": 99.62,
+      "end": 100.96,
+      "text": "none. Apple just",
+      "words": [
+        {
+          "t": 99.62,
+          "text": "none."
+        },
+        {
+          "t": 100.52,
+          "text": "Apple"
+        },
+        {
+          "t": 100.72,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 100.96,
+      "end": 101.94,
+      "text": "removed the variable.",
+      "words": [
+        {
+          "t": 100.96,
+          "text": "removed"
+        },
+        {
+          "t": 101.28,
+          "text": "the"
+        },
+        {
+          "t": 101.54,
+          "text": "variable."
+        }
+      ]
+    },
+    {
+      "start": 102.44,
+      "end": 103.14,
+      "text": "So which tier",
+      "words": [
+        {
+          "t": 102.44,
+          "text": "So"
+        },
+        {
+          "t": 102.66,
+          "text": "which"
+        },
+        {
+          "t": 102.86,
+          "text": "tier"
+        }
+      ]
+    },
+    {
+      "start": 103.14,
+      "end": 103.78,
+      "text": "does your iPhone",
+      "words": [
+        {
+          "t": 103.14,
+          "text": "does"
+        },
+        {
+          "t": 103.28,
+          "text": "your"
+        },
+        {
+          "t": 103.46,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 103.78,
+      "end": 104.32,
+      "text": "land in?",
+      "words": [
+        {
+          "t": 103.78,
+          "text": "land"
+        },
+        {
+          "t": 104.14,
+          "text": "in?"
+        }
+      ]
+    }
+  ]
+}

@@ -818,8 +818,16 @@ Rules here override SKILL.md. Never repeat a mistake recorded here.
   NEW checklist for regulatory preconditions, two charts (share + the bps
   fight), three specsheets with units, two cream wordcascades, wide
   screenshot as a floatcard (not a receipt), facecam 19%.
+- ios27-tiers: split hook (Liquid Glass "27" / face), NEW `settingspane`
+  (first ship), Apple's own device list as receipt + 3 annotated regions, TWO
+  tall portrait footnote receipts each mined for 3 focus rects, Apple Siri-orb
+  lock screen, Apple Foundation Models radial, Apple Newsroom DMA receipt x3
+  framings, categorygrid x4, specsheet x3, statcard, chart (74/76% with both
+  day counts), cascades x5, facecam 15.4%. 50 scenes / 104.7s allowLong.
 - → next reel must introduce at least one new treatment and avoid the plain
-  black typecard entirely. Already used and not to be repeated next: the
+  black typecard entirely. Already used and not to be repeated next:
+  `settingspane` for a settings feature, and the tall-receipt-mined-for-three-
+  regions annotatezoom run. Already used and not to be repeated next: the
   language-pair comparesplit and the count-up duration chart.
 
 
@@ -1993,168 +2001,287 @@ whisper/yt-dlp resolved because they are installed here. On a genuinely new Mac
 those are missing; setup.sh installs all but ffmpeg, and doctor names whatever
 is left. The HeyGen connector is client-side and does not travel.
 
-## 2026-08-14 (8) — whisper health check, and a measured DON'T
+## 2026-08-16 — styles are named for what they ARE, not who they came from
 
-Asked whether whisper is genuinely installed, not just present. Tested end to
-end rather than trusting doctor's file check.
+**Rule.** A style id describes the style, the way a format id describes the
+genre. `editorial` and `utility`, not `varun-mayya` and `nick-saraev`. The
+caption treatment follows the same rule: `word-reveal`, not `nick-display`.
 
-**HEALTHY.** openai-whisper `20250625`; `base.pt` 139 MB with sha256
-**VERIFIED** against the URL's own path segment; `small.pt` 461 MB cached. A
-real 6s transcription returned correct text ("iPhone 18 Pro" spelled right) with
-word timings inside ~0.1s of HeyGen's own — which matters, because the whole
-edit anchors to those timings.
-
-**The `FP16 is not supported on CPU` warning is expected, not a fault.**
-
-**MEASURED DON'T — do not switch whisper to the GPU.** MPS *is* available on
-this Mac, so it looks like free speed. It is slower, at both lengths tested:
-
-| audio | CPU | MPS |
+| was | now | what it is |
 |---|---|---|
-| 6s clip | **5.0s** | 13.5s |
-| 79.8s reel VO | **19.2s** | 50.3s |
+| `varun-mayya` / `varun` | **`editorial`** | tech-news reporting: claim -> receipt -> demo -> take |
+| `nick-saraev` / `nick` | **`utility`** | tips and tools: designed artifacts, comment-gate CTA |
+| `nick-display` | **`word-reveal`** | per-word caption reveal, emphasis drives the accent |
+| `varun-script-playbook.md` | **`editorial-script-playbook.md`** | the WORDS for editorial |
 
-CPU is 2.6x faster on the real workload. Recorded so nobody "optimises" this
-later and makes every reel slower.
+**Why.** The creator names were a research artifact — they recorded whose reels
+we tore down, which mattered while deriving the numbers and stopped mattering
+once the numbers were in `FORMATS`. They cost us on two axes. They said nothing
+about when to reach for a style, so the choice had to be memorised rather than
+read. And they sat beside `news` / `top5` / `comparison`, which are named
+correctly, so the two axes looked like different kinds of thing when they are
+not. The teardown provenance is not lost: it stays in the pack headers and in
+`_derived` on each `FORMATS` profile, which is where provenance belongs.
 
-**SSL diagnosis refined.** The failure is
-`CERTIFICATE_VERIFY_FAILED: self-signed certificate` — not a generic TLS
-problem but **TLS interception** (proxy or security agent) whose root is absent
-from Python's bundled certifi store; `curl` uses the system keychain and
-succeeds. Confirmed today: python urllib fails on that exact URL, `curl -sI`
-returns 200. It also explains an unrelated failure earlier in the session, when
-`urllib.request` could not fetch HeyGen preview images while `curl` could.
-**Machine-specific** — a clean Mac may not need the workaround at all.
+**Legacy ids resolve forever.** Seven reels were published carrying
+`varun`/`varun-mayya`/`nick`/`nick-display`. `STYLE_ALIASES` and
+`CAPTION_ALIASES` in `tools/reel_gates.py` are the single source of truth;
+`validate_job.py` imports them rather than keeping a copy, and
+`src/theme/tokens.ts` and `tools/manim_theme.py` mirror them for their runtimes.
+Rewriting a shipped beat sheet to satisfy a rename is the retro-fixing RULES.md
+forbids. Do NOT add entries — a new style gets a canonical name, not an alias.
 
-## 2026-08-14 (9) — private GitHub repo
+**What the rename uncovered.** Three producers were stamping values their own
+validators rejected, all the same shape — the checker was fixed, the producer
+was not:
 
-`https://github.com/dhvaneshadhiya-ui/ai-reel-engine` — **PRIVATE**, verified
-by API (`visibility: PRIVATE`), 646 paths, `main`.
+- `compile_shot_plan.py` wrote `captionStyle: "chip-lg"`, retired 2026-07-30 and
+  rejected by both `validate_job.py` and G10. **The generic new-reel path had
+  been dead**, and nobody noticed because all seven reels were built by bespoke
+  `tools/build_*.py` scripts that set the value themselves.
+- `compile_shot_plan.py` also wrote `style: "nick"`, and `new_job.py` wrote
+  `style: "nick-saraev"`, while `config.json` defaulted to the editorial pack.
+- All three now read `config.json`, per the standing rule that locked settings
+  live there and never inline in a build script.
 
-PRIVATE was not a default, it was a conclusion. The audit found four reasons:
-1. **Audio.** `public/sfx` carries meme sounds (`Among Us`, `Vine Boom`, `faah`)
-   plus 5.9 MB of music beds. Decisive: this engine's OWN original README says
-   *"SFX were removed from this public download for licensing reasons"* — its
-   authors stripped them before distributing, and publishing them publicly
-   would reverse that deliberate decision.
-2. **`styles/*.md`** are forensic teardowns of named creators' reels. Fine as
-   internal analysis; a public "how to replicate this creator" doc is not.
-3. **`STYLE-RULES.md`** — business context, credit balances, feedback history.
-4. **`jobs/`** — scripts and approvals, i.e. unpublished editorial.
-NO security risk: no keys or tokens anywhere; `config.json` holds only avatar
-and voice IDs.
+**And the self-test was under-reporting.** The total was `len(CASES) + 1`, which
+counted only the failure cases — adding a passing case did not move the number.
+It printed 57 while running 61. Now every assertion increments a counter: **64**.
 
-VERIFIED ON THE REMOTE, not assumed: `bin/`, `node_modules/`, `out/`,
-`_sources/`, `public/assets/` are **0 paths each**, while CLAUDE.md,
-MIGRATION.md, setup.sh, the gates, the showrunner, the skills and the sound
-library are all present.
+**Rule going forward.** A new style pack is named for its editorial function.
+If the name would only make sense to someone who watched the reference reels,
+it is the wrong name.
 
-METHOD NOTE: my first exclusion check was WRONG and said all five were PRESENT.
-`gh api .../contents/<path>` returns an error *body* for a missing path, which
-a naive non-empty test reads as success. Re-checked against the actual git tree
-(`git/trees/main?recursive=1`). A verification that cannot fail is not a
-verification.
+## 2026-08-16 (2) — runtime is chosen from the topic, and 120s is the wall
 
-THE ARCHIVE STILL HAS ONE ADVANTAGE: it carries `bin/ffmpeg` + `bin/ffprobe`,
-so it needs no Homebrew. A clone does. Both routes are documented.
+**Rule.** A format's `runtime` band is the DEFAULT, not a cap. When the topic
+earns more time, set `allowLong: true` + `allowLongReason: "<one line>"`.
+**`RUNTIME_CEILING = 120s` is absolute** — `allowLong` cannot pass it.
 
-## 2026-08-17 — iphone-fold-ultra (foldable iPhone Ultra, dummy-led)
+**Why.** The bands are measured and worth keeping as the default: 60-80s for
+news came out of an 11-reel teardown, 26-48s for top5 out of twelve. But a band
+derived from someone else's reels should not decide how long OUR story needs to
+be when the story is genuinely bigger. Padding to reach a floor and amputating
+to meet a ceiling are the same error in opposite directions.
 
-- **"Be generic without mentioning any source in the script — we already credit
-  the sources in our footage."** Then, on the analyst line: **"Following one is
-  fine... Kuo is famous for rumors and leaks and most media refers him as a
-  source."**
-  ROOT: I had written "MacRumors puts the inner screen at 7.76 inches", citing
-  an AGGREGATOR by name for a figure that is not its exclusive.
-  RULE: split attribution by SOURCE TYPE, not by habit —
-  - **Aggregators (MacRumors, 9to5Mac, AppleInsider) are never spoken.** State
-    the figure bare; the credit rides the card footnote and the receipt. This
-    is what RULES.md §3 already said ("aggregator → never cite, go to the
-    original"); the script had drifted from it.
-  - **Original claimants (Kuo, UBS, IDC, Gurman) ARE named in the line**,
-    because they are the claim. "Nobody agrees on the price" is meaningless
-    unless the disagreeing parties are named.
+**What was actually missing.** `allowLong` already existed and already demanded
+a written reason — so topic-driven runtime was the design all along. What it did
+not have was a **ceiling**. Set the flag with any reason string and a "reel"
+could run ten minutes: an unbounded opt-out of the one gate that keeps these
+things short form. That hole existed from the day the flag was added and nothing
+caught it, because a gate with an escape hatch reads as governed.
 
-- **G13 EXISTED AND WAS NEVER FED — 7 beats would have frozen.**
-  `reel_gates.check_beats()` accepts `clip_durations`, but no build script has
-  ever passed it, so nothing checked a beat against the length of the clip
-  playing it. On this reel 7 of 22 footage beats outran their clip (worst:
-  2.84s beat on a 1.40s clip), which holds a frozen last frame — invisible in
-  logs, invisible to the frame linter, and only caught by diffing the sync
-  table against `ffprobe`.
-  RULE: **every build script MUST pass `clip_durations` to `check_beats`.**
-  `tools/build_iphonefoldultra.py` ffprobes `public/assets/<slug>/clips/*.mp4`
-  into a dict and passes it. Copy that block into every new build.
+`allowLong` was also **never declared in `src/types.ts`** — enforced by the gate,
+invisible to the type. Both fixed.
 
-- **Index-keyed caption fixes land on the wrong word.** I mapped positional
-  fixes by index into `words`, then applied them to
-  `normalise_words(words, CANON)`. normalise_words can change the token count,
-  so "two 48MP" was written two tokens late and the caption shipped as
-  `248 megapixel two 48MP`.
-  RULE: **key positional caption fixes by START TIME, not by index.** Word
-  start times survive normalisation; indices do not.
+**The ceiling is USER-SET, not derived** — recorded plainly so nobody later
+mistakes 120 for a measured number the way the comparison timings almost were.
+Reels and Shorts both allow 3 minutes, so the platform is not what binds here;
+retention is. The reason line exists to make the author say out loud what the
+viewer gets for the extra time.
 
-- **A leaked-dummy hands-on is full of the reviewer's OWN real phones.** Two
-  clips (`back-cameras`, `bump-macro`) were cut, crops verified, and only on a
-  full-res side-by-side did it become clear they were a REAL iPhone's camera,
-  not the mockup's — and they were bound to the line "two 48-megapixel
-  cameras". They were deleted.
-  RULE: when the hero footage is a mockup shown NEXT TO real hardware,
-  identify the device in every frame before binding a claim to it. On this
-  mockup the tell is decisive: **the dummy's camera rings are BLANK; a real
-  iPhone has black glass lenses and an Apple logo.** Record the tell in the
-  manifest so the next reel does not re-derive it.
+**Tests.** Three assertions, written against G02 specifically rather than a
+whole clean sheet — making BASE legitimately 100s means repeating scenes, which
+trips G06/G07/G08 for reasons unrelated to runtime, and a test that fails for
+the wrong reason is worse than no test:
 
-- **ReceiptScene cannot hold a full-width mobile text column.** A 1170px-wide
-  MacRumors column cut mid-word at the right edge in `receipt` even after
-  padding, because the zoom floor (Z 1.35) always overflows.
-  RULE (sharpens the 2026-07-29 entry, which only covered >2.5:1 artefacts):
-  a text column survives `receipt` only if it occupies **<= 1/1.35 (74%) of
-  the source canvas width** — i.e. pad ~35% white on the horizontal. Anything
-  tighter goes in a `floatcard` at true aspect. Two of the three captures here
-  became floatcards; the third was padded 1170 -> 1580 and reads fully.
+- 100s news with no `allowLong` -> G02 fires
+- 100s with `allowLong` + reason -> G02 silent
+- 125s with `allowLong` + reason -> G02 fires on the wall
 
-- **yt-dlp's native downloader 403s mid-file; `--download-sections` does not.**
-  Every attempt at a full download died at ~8% with HTTP 403, on multiple
-  player clients. `--download-sections "*0-inf"` routes through ffmpeg and
-  completes. Merging video+audio that way exits 8, so request a **video-only
-  format** — b-roll needs no audio anyway.
+Suite: 64 -> **67 checks**.
 
-- **One text system, checked at the frame.** The closing cards shipped a
-  headline reading "SEPTEMBER 9" over a typecard reading "September 9", and a
-  "$3,000" headline over a caption chip already saying "$3,000". Both are
-  RULES.md §6 violations that no gate catches.
-  RULE: when a card carries a headline AND the caption chips are live, read
-  the actual frame and confirm they do not speak the same words.
+## 2026-08-16 (3) — the ceiling is the PLATFORM limit: 180s
 
-- Digital twin `f55b0b7c` measured **2.48 motion (peak 10.19) on this master**
-  against 4.41 in `avatarRegistry` — verdict "stiff, short pops only". The
-  beat plan already used 2.4-2.6s facecam pops, so it shipped, but the
-  registry figure is not reproducible run-to-run. Treat 4.41 as a ceiling, not
-  a guarantee, and keep facecam in short pops.
+**Revises (2) the same day.** `RUNTIME_CEILING` 120s -> **180s**, per the user:
+Instagram Reels and YouTube Shorts both allow up to 3 minutes, so the wall
+should be the platform's, not a number we picked.
 
-## 2026-08-17 — iphone-fold-ultra, VO-only variant
+**What this changes, and it is not nothing.** At 120s the ceiling still carried
+an editorial opinion — it said "past this it stops being short form" in our
+voice. At 180s it says only "past this the platform refuses the upload". The
+ceiling has stopped being a brake. **`allowLongReason` is now the only editorial
+brake between the measured band and the wall**, which makes that one line the
+load-bearing part of the rule rather than a formality. A reason that would not
+survive being read aloud to a viewer is not a reason.
 
-- **"I also want you to render video without background music."**
-  ROOT: G09 requires a music bed on every reel, so a VO-only cut could only be
-  produced by hand-editing a sheet and rendering outside the gates — exactly
-  the workaround this repo exists to prevent.
-  RULE: a no-music cut is a **derivative of an approved reel**, not an
-  exception to the rules. G09 now carries `noMusic` + `noMusicReason`, the same
-  shape as G02's `allowLong`: a bare boolean fails, the reason has to be
-  written down. Two cases added to `test_gates.py` (57 → 59 checks): the gate
-  still fires when `music` is dropped without the opt-out, and fires when
-  `noMusic` is set with no reason.
-  The variant is a SECOND beat sheet (`<slug>-nomusic`) emitted by the same
-  build script, re-running every gate — same picture, same SFX, same avatar
-  master, so the audio and the approval hash still govern both.
+The bands are untouched and still measured: news 60-80s, top5 26-48s. The
+default is unchanged; only the outer limit moved.
 
-- **Proving the music is gone needs a silence count, not a level meter.**
-  Comparing mean volume between the two masters showed only ~1-3 dB of
-  difference, because `loudnorm` lifts the quiet passages and hides the bed.
-  The measurement that actually settles it: **silences below -50dB.** The music
-  master has ZERO ≥0.30s (the bed never stops); the VO-only master has 12,
-  totalling 4.93s.
-  RULE: verify an audio-track change on the RAW render with `silencedetect`,
-  not on the mastered file with `volumedetect` — normalisation flattens exactly
-  the difference you are trying to see.
+**Known scaling gap, recorded rather than quietly inherited.** G08 asks for 6-9
+SFX cues *no matter how long the reel is*. Measured on what we have actually
+shipped:
+
+| reel | runtime | cues | density |
+|---|---|---|---|
+| seedance-25 | 47.6s | 9 | 1 per 5.3s |
+| september-preview | 79.6s | 7 | 1 per 11.4s |
+| iphone18-split | 93.1s | 8 | 1 per 11.6s |
+| apple-pay-india | 100.8s | 8 | 1 per 12.6s |
+| grok-bot | 106.8s | 8 | 1 per 13.4s |
+| made-by-google-26 | 135.2s | 6 | 1 per 22.5s |
+
+Mean across all seven: **1 cue per 12.1s**. At 180s the same 6-9 rule permits 1
+per 20-30s — sparser than every reel we have made except the one that already
+ran longest. The number was derived on 60-80s reels; stretched to 180s it
+silently stops meaning "sparse but present" and starts meaning "nearly absent".
+
+**Do not fix this by guessing a bigger count.** Re-derive G08 as a per-minute
+density from a real teardown, the way every other number here was derived. Until
+then, anything past ~120s should be treated as carrying an unmeasured sound
+rule. Same class of debt as the comparison timings, and recorded the same way.
+
+## 2026-08-17 — the credit ceiling is a SCRIPT CONSTRAINT, and nothing checks it
+
+ios27-tiers reached the generation step with everything else green — doctor,
+67 gate self-tests, story verified from primary sources, 9 assets cropped and
+verified on frame, script approved (hash `a23c17909555a633`) — and then HeyGen
+refused it: `AVATAR_IV_VIDEO_GENERATION_OUT_OF_CREDIT`, 39 premium credits
+remaining against the ~42 a 123-132s master needs at the measured ~0.34
+credits/sec. Three credits short, after all the work that assumed it would run.
+
+ROOT CAUSE: **runtime is priced, and the price is invisible to every check we
+have.** G02 asks whether a runtime is editorially allowed (band, or `allowLong`
++ reason). Nothing asks whether it is affordable. `allowLong` therefore reads as
+"the user approved the length" when it also means "this now costs ~40% more
+credits than a band-compliant reel". The longer the approved script, the larger
+the unhedged bet.
+
+Sharpest form: **an approved script is a purchase order.** `script_approval.py`
+already computes words and a delivery range, so it already knows the credit
+cost; it just never says it.
+
+RULE (prose today, and prose is exactly what this ledger says gets skipped):
+- Before `approve`, state the credit cost of the runtime alongside the seconds,
+  and check it against the balance. `propose` prints "331 words -> 123-132s";
+  it should also print "~42-45 credits, balance 39 -> SHORT BY 3".
+- `allowLong` must carry its credit delta in the reason, not just an editorial
+  argument. A 125s reel is ~14 credits more than an 80s one — a third of a
+  monthly cycle's headroom at 436/month.
+- The balance cannot live in `doctor.py`: the HeyGen connector is configured in
+  the Claude client, not the repo, so no repo tool holds a key. The check has to
+  happen at the point where an agent CAN call the API — the approval step.
+
+NOT YET CODE, so treat it as unenforced: making this a gate needs the balance
+passed into `script_approval.py` by the agent that can read it. Until then it is
+the operator's job, which the 2026-08-14 (4) entry warns is where rules go to
+die.
+
+Credits reset 2026-08-22T09:06Z. The reel is complete up to the master and
+blocked only on generation.
+
+## 2026-08-17 (2) — ios27-tiers: the linter passed a reel with 14 broken scenes
+
+The reel passed doctor, all 67 gate self-tests, `check_beats`, `validate_job`
+AND `lint_frames.py` ("no blocking flags") — and 14 of its 50 scenes were
+defective. Every defect was caught by reading frames, none by automation. Same
+headline as 2026-08-14 (4): the gates approved it, so the gates were wrong.
+
+**DEFECT 1 — every underline was a strike-through, which inverts the meaning.**
+`AnnotateZoom` draws the bar at `a.y + a.h + barH*0.6` — BELOW the region you
+pass. I passed `h` as the LINE PITCH, so "below line 1" landed exactly on line
+2. On Apple's device list the accent bar struck through "iPhone 14 Pro Max"
+while the VO was about "iPhone 15"; on the tier footnote it struck through
+"iPhone Air, iPad models with M4…", dragging in the iPad clause the beat was
+written to exclude.
+RULE: **`h` is the GLYPH height (~0.6 x line pitch), never the pitch.** The bar
+then lands in the inter-line gap. RULES.md already said "highlights go around
+data, never over it" — it never said how the component computes that.
+
+**DEFECT 2 — a wide source makes AnnotateZoom 50-84% dead space.**
+`cardW = width*0.9; cardH = (srcHeight/srcWidth)*cardW`. The card inherits the
+SOURCE aspect, so a 942x205 footnote crop (4.6:1) becomes a thin horizontal
+band floating in a 1920-tall frame of blurred fill. Measured: 4.6:1 -> ~16%
+frame fill.
+RULE: **feed `annotatezoom` a PORTRAIT source (<=1:1.4) and let `focus` move the
+camera between paragraphs.** Do not crop one thin strip per quote. Crop ONE tall
+page region and mine it for 2-3 focus rects — that is also a different shot each
+time, so it satisfies the variety rule instead of fighting it. Five thin crops
+collapsed into two 1080x2280 receipts here. RULES.md carried the >2.5:1 warning
+for `receipt` only; it applies at least as hard to `annotatezoom`.
+
+**DEFECT 3 — page chrome rendered on screen, and dodging it did not work.**
+Apple's local nav (`Overview / iOS / macOS / iPad`) is STICKY and overlays the
+footnote block. Starting the focus rect below it was not enough: the camera
+zooms wider than the focus rect, so the bar came into frame anyway.
+RULE: **kill chrome AT CAPTURE, never by framing around it.** In the capture
+script, hide every `position: fixed|sticky` element before screenshotting. On
+apple.com that removed 5 elements and did NOT reflow the page, so measured
+coordinates survived.
+
+**AND THE SAME MISTAKE REPEATED ONE RENDER LATER**, which is why this is stated
+twice. After fixing Apple's sticky nav I left 9to5Mac's "Discover more"
+related-links widget in the 9to5-notes asset, reasoning that no `focus` rect
+pointed at it. It rendered on screen anyway: **AnnotateZoom's visible window is
+larger than the focus rect** — the card is positioned by the focus centre, and
+whatever else falls inside the 1080x1920 viewport comes with it. A focus rect is
+not a crop.
+SHARPEST FORM: **if chrome is anywhere in the asset, assume it will be on
+screen.** Cut it out of the file (here: 1080x2280 -> 1080x1055) or hide it at
+capture. Never rely on where the camera is pointed.
+
+**A PNG in `footage` or `floatcard` renders BLACK.** Both render a Remotion
+`<Video>`. Only `split` (branches on file extension), `receipt` and
+`annotatezoom` take an `<Img>`. Caught before the first render, but only by
+reading the component — nothing warns.
+
+**Two MG specs were silently wrong against `src/types.ts`:** `wordcascade` takes
+`words:[{text,style,at}]` (not `lines`), `chart` takes `items[]` + `source` (not
+`rows`/`footnote`). Both would have rendered EMPTY and no gate checks MG shape
+against the type union.
+
+**A stale-asset race produced a clean-looking render of the wrong file.**
+The corrected capture landed at 12:58:13; the render had finished at 12:56:07.
+The beat sheet was right, the PNG on disk was right, the MP4 was wrong, and
+nothing flagged it.
+RULE: after replacing any asset, **compare the asset mtime against the output
+mtime before believing a frame**. `ls -la` on both is cheap; a re-render is not.
+
+NOW CODE, with self-tests (suite went 67 -> 69 checks):
+- **G35** rejects a PNG `src` on `footage`/`floatcard` (the black-frame bug).
+- **G36** rejects an `annotatezoom` source wider than **2.5:1**. NOTE ON THAT
+  NUMBER: I first set it to 1.45 and `test_gates.py` immediately caught me —
+  1.45 rejects the baseline sheet's 16:9 source, a shape that shipped fine on
+  iphone18-split and made-by-google-26. I had only MEASURED failures at 2.6:1
+  and above, so the threshold is the 2.5:1 wide-artifact line RULES.md already
+  sets for `receipt`. G23 discipline applies to gate thresholds too, and the
+  suite enforced it on me within a minute.
+
+STILL PROSE, so treat as unenforced:
+- a gate validating MG scene shape against the `Scene` union — `wordcascade`
+  took `lines` instead of `words[]` and `chart` took `rows` instead of `items[]`;
+  both would have rendered EMPTY and nothing checks MG shape against the union.
+- a lint check that output mtime > every referenced asset mtime.
+- a check that no `position: fixed|sticky` element survived into a capture.
+
+## 2026-08-17 — the self-test claimed coverage it did not have
+
+**Rule.** `test_gates.py` now asserts that **every declared gate id has a
+failing case**, and fails naming the gaps.
+
+**Why.** The suite's last line reads *"every gate fires on its violation."* That
+was not true. It asserted gate ids were UNIQUE and never asserted they were
+COVERED, so **G13** (a clip shorter than the beat that plays it) and **G16**
+(standard visual notation) had no failing case at all — two gates sitting in the
+build with nothing proving they still work, behind a green line saying they did.
+
+Exactly the failure this suite exists to prevent, one level up: the gates check
+the reel, and nothing was checking the gates.
+
+Both now have cases. G13 needed its own helper because it reads `clip_durations`,
+which the shared `expect_fail` does not pass — that missing parameter is likely
+why it was skipped originally.
+
+**The coverage check was itself verified** by injecting a `# G99 — ` header with
+no test and confirming the suite fails naming G99. A check that cannot fail is
+decoration.
+
+**Also corrected: the counts in the docs were wrong.** 35 gate ids, not 33; 72
+checks, not 67. The earlier figures were read off stale output and repeated into
+MIGRATION.md — the same prose-drift this repo keeps finding. The numbers now
+come from a live run.
+
+| | was documented | actual |
+|---|---|---|
+| gate ids | 33 | **35** |
+| self-tests | 67 | **72** |

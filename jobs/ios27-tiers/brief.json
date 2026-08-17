@@ -1,0 +1,11 @@
+{
+ "slug": "ios27-tiers",
+ "topic": "iOS 27: Apple dropped zero devices, but the features are gated behind RAM \u2014 the three-tier split",
+ "details": "iOS 27 ships fall 2026 alongside the iPhone launch. Same device list as iOS 26 (iPhone 11+, SE 2nd gen+). But three tiers: full Siri AI needs 12GB RAM (17 Pro, 17 Pro Max, iPhone Air only); standard Apple Intelligence 8GB+; everyone else gets iOS 27 with no AI. Universal: continuous Liquid Glass transparency slider, rebuilt CPU scheduler, rebuilt system search. Siri AI blocked in the EU (DMA) and China at launch.",
+ "style": "editorial",
+ "target_seconds": 105,
+ "cta_keyword": "",
+ "created_at": "2026-08-17T05:35:38.323339+00:00",
+ "status": "built",
+ "cta_note": "question CTA: 'So which tier does your iPhone land in?' \u2014 comment-keyword CTAs are top5-only (CLAUDE.md), so this news reel deliberately carries no keyword."
+}

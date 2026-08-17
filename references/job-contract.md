@@ -26,7 +26,7 @@ Each job uses one slug consistently.
   "slug": "example-topic",
   "topic": "What the reel is about",
   "details": "Optional user facts, angle, links, or constraints",
-  "style": "nick-saraev",
+  "style": "utility",
   "target_seconds": 38,
   "cta_keyword": "GUIDE",
   "created_at": "ISO-8601 timestamp",

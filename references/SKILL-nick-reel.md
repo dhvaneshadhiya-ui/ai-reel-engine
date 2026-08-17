@@ -16,7 +16,7 @@ Engine: `<ENGINE_ROOT>`
 Before starting a reel:
 
 1. Read the engine's `FEEDBACK.md` completely.
-2. Read `styles/nick-saraev.md`.
+2. Read `styles/utility.md`.
 3. Read [references/style.md](references/style.md).
 4. Read [references/job-contract.md](references/job-contract.md).
 5. Read [references/qa.md](references/qa.md).

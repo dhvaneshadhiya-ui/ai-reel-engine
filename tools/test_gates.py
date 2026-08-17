@@ -17,7 +17,16 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from reel_gates import check_beats, GateError  # noqa: E402
+from reel_gates import (  # noqa: E402
+    CAPTION_ALIASES,
+    RUNTIME_CEILING,
+    GateError,
+    STYLE_ALIASES,
+    STYLE_CANON,
+    canon_caption,
+    canon_style,
+    check_beats,
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -86,7 +95,7 @@ def good() -> dict:
     ]
     return {
         "id": "selftest", "fps": 30, "width": 1080, "height": 1920,
-        "captionStyle": "nick-display",
+        "captionStyle": "word-reveal",
         "tone": "warm", "avatarRegister": "warm",
         "emphasis": ["30"],
         "captions": [{"start": 0, "end": 1, "text": "macOS ships"}],
@@ -122,11 +131,25 @@ def vo_end_of(sheet: dict) -> float:
     return round(sum(s["durationSec"] for s in sheet["scenes"]) - 0.35, 2)
 
 
+# Every assertion increments this. The old total was `len(CASES) + 1`, which
+# silently ignored the expect_pass cases and the gate-id check — adding a pass
+# case did not move the number, so the suite under-reported its own coverage
+# (noticed 2026-08-16 while adding the style-rename checks).
+CHECKS = 0
+_fired: list[tuple[str, str]] = []
+
+
+def _counted(label: str) -> None:
+    global CHECKS
+    CHECKS += 1
+    print(f"  ok   {label}")
+
+
 def expect_pass(sheet: dict, label: str) -> None:
     try:
         check_beats(sheet, vo_end=vo_end_of(sheet), manifest=MANIFEST,
                     vo_words=VO_WORDS)
-        print(f"  ok   {label}")
+        _counted(label)
     except GateError as e:
         print(f"  FAIL {label} — should have passed:\n{e}")
         raise SystemExit(1)
@@ -141,7 +164,8 @@ def expect_fail(mutate, gate: str, label: str) -> None:
                     vo_words=VO_WORDS)
     except GateError as e:
         if gate in str(e):
-            print(f"  ok   {gate} fires — {label}")
+            _fired.append((gate, label))
+            _counted(f"{gate} fires — {label}")
             return
         print(f"  FAIL {gate} did not fire for {label}; got:\n{e}")
         raise SystemExit(1)
@@ -160,7 +184,7 @@ def top5(sheet: dict) -> dict:
     s["scenes"] = s["scenes"][:14]
     for sc in s["scenes"]:
         for c in (sc.get("sfx") or []):
-            c["vol"] = 0.08                      # nick's pops are quieter
+            c["vol"] = 0.08                      # utility pops are quieter
     s["scenes"].append({"type": "commentcta", "durationSec": 2.0})
     return s
 
@@ -197,7 +221,7 @@ _ids = re.findall(r'^\s*# (G\d\d) — ', _src, re.M)
 _dupes = {i for i in _ids if _ids.count(i) > 1}
 if _dupes:
     raise SystemExit(f"  FAIL duplicate gate id(s): {sorted(_dupes)}")
-print(f"  ok   {len(_ids)} gate ids, all unique")
+_counted(f"{len(_ids)} gate ids, all unique")
 
 print("=== reel_gates self-test ===")
 expect_pass(BASE, "baseline sheet passes cleanly")
@@ -207,6 +231,110 @@ expect_pass(comparison(BASE), "comparison profile: labelled, balanced, 3+ compar
 _neutral = copy.deepcopy(BASE)
 _neutral.update(tone="serious", avatarRegister="neutral")
 expect_pass(_neutral, "G19: a neutral twin may deliver a serious script")
+
+# --- style / caption RENAME (2026-08-16) ---------------------------------
+# Ids describe the style, not its creator. The legacy creator ids must keep
+# resolving forever: seven reels were published carrying them, and rewriting a
+# shipped beat sheet to satisfy a rename is the retro-fixing RULES.md forbids.
+for _legacy_id, _want in STYLE_ALIASES.items():
+    if canon_style(_legacy_id) != _want:
+        raise SystemExit(f"  FAIL style alias {_legacy_id!r} -> "
+                         f"{canon_style(_legacy_id)!r}, expected {_want!r}")
+for _legacy_id, _want in CAPTION_ALIASES.items():
+    if canon_caption(_legacy_id) != _want:
+        raise SystemExit(f"  FAIL caption alias {_legacy_id!r} -> "
+                         f"{canon_caption(_legacy_id)!r}, expected {_want!r}")
+# Canonical ids must be fixed points, or a second canonicalise would move them.
+for _canon in STYLE_CANON:
+    if canon_style(_canon) != _canon:
+        raise SystemExit(f"  FAIL canonical style {_canon!r} is not idempotent")
+if canon_caption("word-reveal") != "word-reveal":
+    raise SystemExit("  FAIL canonical caption 'word-reveal' is not idempotent")
+# An alias must never point at another alias (one hop only).
+for _target in {**STYLE_ALIASES, **CAPTION_ALIASES}.values():
+    if _target in STYLE_ALIASES or _target in CAPTION_ALIASES:
+        raise SystemExit(f"  FAIL alias chain: {_target!r} is itself an alias")
+_counted(f"{len(STYLE_ALIASES) + len(CAPTION_ALIASES)} legacy style/caption "
+         f"ids resolve to canonical names")
+
+_legacy_caps = copy.deepcopy(BASE)
+_legacy_caps["captionStyle"] = "nick-display"
+expect_pass(_legacy_caps, "G10: legacy 'nick-display' still passes as word-reveal")
+
+_legacy_style = copy.deepcopy(BASE)
+_legacy_style["style"] = "varun-mayya"
+expect_pass(_legacy_style, "legacy style id 'varun-mayya' still passes")
+
+# --- G02 runtime is topic-driven, but walled (user rule 2026-08-16) ---------
+# The measured band is the DEFAULT; `allowLong` + a written reason buys room
+# past it; RUNTIME_CEILING is the wall allowLong cannot pass.
+#
+# These assert on G02 SPECIFICALLY rather than on a whole clean sheet: making
+# BASE legitimately 100s means repeating scenes, which trips G06/G07/G08 for
+# reasons unrelated to runtime. A pass-the-whole-sheet test would be testing
+# the fixture, not the rule.
+def expect_gate(sheet: dict, gate: str, present: bool, label: str) -> None:
+    try:
+        check_beats(sheet, vo_end=vo_end_of(sheet), manifest=MANIFEST,
+                    vo_words=VO_WORDS)
+        fired = False
+    except GateError as e:
+        fired = gate in str(e)
+    if fired is present:
+        _counted(label)
+        return
+    print(f"  FAIL {label} — {gate} {'did not fire' if present else 'fired'}")
+    raise SystemExit(1)
+
+
+def _at(seconds: float) -> dict:
+    """BASE with its last scene grown so the sheet totals `seconds`."""
+    sheet = copy.deepcopy(BASE)
+    sheet["scenes"][-1]["durationSec"] += seconds - sum(
+        sc["durationSec"] for sc in sheet["scenes"])
+    return sheet
+
+
+expect_gate(_at(100.0), "G02", True,
+            "G02 fires — 100s news reel with no allowLong")
+
+_argued = _at(100.0)
+_argued.update(allowLong=True,
+               allowLongReason="three rulings, each needing its own receipt")
+expect_gate(_argued, "G02", False,
+            "G02 silent — 100s is allowed once the topic is argued for")
+
+_over = _at(RUNTIME_CEILING + 5)
+_over.update(allowLong=True, allowLongReason="a genuinely enormous story")
+expect_gate(_over, "G02", True,
+            f"G02 fires — allowLong cannot pass the {RUNTIME_CEILING:.0f}s wall")
+
+
+# --- G13 needs clip_durations, which the shared expect_fail does not pass ---
+def expect_fail_with_clips(sheet: dict, clips: dict, gate: str, label: str) -> None:
+    try:
+        check_beats(sheet, vo_end=vo_end_of(sheet), manifest=MANIFEST,
+                    vo_words=VO_WORDS, clip_durations=clips)
+    except GateError as e:
+        if gate in str(e):
+            _fired.append((gate, label))
+            _counted(f"{gate} fires — {label}")
+            return
+        print(f"  FAIL {gate} did not fire for {label}; got:\n{e}")
+        raise SystemExit(1)
+    print(f"  FAIL {gate} did not fire for {label} (no error raised)")
+    raise SystemExit(1)
+
+
+_short_clip = copy.deepcopy(BASE)
+_first_footage = next(
+    sc for sc in _short_clip["scenes"] if sc.get("src") and "avatar-master" not in str(sc["src"])
+)
+expect_fail_with_clips(
+    _short_clip,
+    {_first_footage["src"]: _first_footage["durationSec"] - 0.6},
+    "G13",
+    "clip shorter than the beat that plays it")
 
 TOP5 = top5(BASE)
 CMP = comparison(BASE)
@@ -242,6 +370,8 @@ CASES = [
         "sfx", [{"src": "sfx2/risers-01.mp3", "vol": 0.15}]),
      "G28", "riser with no payoff in the next 3 beats"),
     (lambda s: s.update(music=None), "G09", "no music bed"),
+    (lambda s: s.update(music=None, noMusic=True),
+     "G09", "noMusic switched on with no written reason"),
     (lambda s: s["music"].update(points=[{"t": 0, "vol": 0.1},
                                          {"t": 60, "vol": 0.1}]), "G09", "flat bed"),
     (lambda s: s.update(emphasis=[]), "G10", "empty emphasis"),
@@ -295,7 +425,7 @@ CASES = [
      "G24", "top5 reel with no CTA"),
     (lambda s: s.clear() or s.update(copy.deepcopy(TOP5)) or
                [c.update(vol=0.15) for sc in s["scenes"] for c in (sc.get("sfx") or [])],
-     "G08", "varun-loud SFX in a top5 reel"),
+     "G08", "editorial-loud SFX in a top5 reel"),
     (lambda s: next(x for x in s["scenes"] if x["type"] == "annotatezoom")
                .pop("focus"),
      "G29", "wide desktop capture fitted whole instead of cropped"),
@@ -309,8 +439,9 @@ CASES = [
      "G20", "last list row never lands"),
     (lambda s: chk(s).update(rows=[]), "G20", "empty checklist"),
     (lambda s: s.update(allowLong=True), "G02", "allowLong with no reason"),
-    (lambda s: s.update(noMusic=True), "G09", "noMusic with no reason"),
-    (lambda s: s.pop("music"), "G09", "music bed dropped without the opt-out"),
+    (lambda s: s["captions"].append(
+        {"start": 1, "end": 2, "text": "it costs 85 % more"}),
+     "G16", "caption not in standard notation ('85 %')"),
     (lambda s: s.update(captions=[{"start": 0, "end": 1, "text": "Windows ships"}]),
      "G21", "caption word never spoken"),
     (lambda s: s.update(emphasis=["macOS", "ships"]),
@@ -338,9 +469,36 @@ CASES = [
                                             "bg": "black"}) or
                s["scenes"].__setitem__(11, {"type": "typecard", "durationSec": 2.5,
                                             "bg": "black"}), "G12", "two black typecards"),
+    # 2026-08-17, ios27-tiers: both of these shipped into a render that passed
+    # every existing gate AND the frame linter.
+    (lambda s: s["scenes"].__setitem__(2, dict(s["scenes"][2], type="footage",
+                                               src="assets/x/clips/still.png")),
+     "G35", "a still handed to `footage` (renders black)"),
+    (lambda s: s["scenes"].__setitem__(3, {
+        "type": "annotatezoom", "durationSec": 2.2,
+        "src": "assets/x/clips/strip.png", "srcWidth": 942, "srcHeight": 205,
+        "credit": "Apple", "assetId": "receipt-x",
+        "focus": {"x": 20, "y": 5, "w": 900, "h": 195},
+        "annotations": [{"kind": "underline", "at": 0.5,
+                         "x": 30, "y": 40, "w": 700, "h": 26}]}),
+     "G36", "a 4.6:1 strip in annotatezoom (84% dead space)"),
 ]
 
 for mutate, gate, label in CASES:
     expect_fail(mutate, gate, label)
 
-print(f"\nall {len(CASES) + 1} checks passed — every gate fires on its violation.")
+# The suite printed "every gate fires on its violation" while G13 and G16 had
+# no failing case at all (found 2026-08-17). Uniqueness of ids was asserted;
+# COVERAGE never was. Assert the claim the last line makes.
+_declared = set(re.findall(r'^\s*# (G\d\d) — ', _src, re.M))
+_covered = {g for g, _l in _fired}
+_gap = sorted(_declared - _covered)
+if _gap:
+    raise SystemExit(
+        f"  FAIL {len(_gap)} gate(s) have no failing case: {_gap}\n"
+        f"  Every mechanical rule is a gate WITH a self-test (CLAUDE.md). A gate\n"
+        f"  that never fires in the suite is untested, and this line would\n"
+        f"  otherwise claim it was.")
+_counted(f"coverage: all {len(_declared)} gate ids have a failing case")
+
+print(f"\nall {CHECKS} checks passed — every gate fires on its violation.")

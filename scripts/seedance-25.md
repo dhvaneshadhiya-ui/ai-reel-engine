@@ -1,4 +1,4 @@
-# seedance-25 — script + shot plan (varun-mayya)
+# seedance-25 — script + shot plan (editorial)
 
 Target ~45s @ HeyGen speed 1.2. 163 words.
 Every beat below binds to a manifest asset id or `MG:` spec. No beat is unbound.

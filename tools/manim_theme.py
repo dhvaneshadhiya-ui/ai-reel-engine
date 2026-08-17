@@ -2,8 +2,8 @@
 manim_theme.py — brand theming for Manim mechanism animations.
 
 Mirrors src/theme/tokens.ts exactly. Two style packs:
-  varun : cream #f4f0e6 / black #0a0a0a, ink #141414, accent yellow  #FFD84D
-  nick  : cream #efe9dc / black #0d0d0d, ink #181512, accent terracotta #E0785A
+  editorial : cream #f4f0e6 / black #0a0a0a, ink #141414, accent yellow  #FFD84D
+  utility   : cream #efe9dc / black #0d0d0d, ink #181512, accent terracotta #E0785A
 
 Aesthetic rules (keep it editorial, never default-Manim):
   - thin elegant strokes (2.5-3.5), rounded nodes, generous whitespace
@@ -68,8 +68,8 @@ class Palette:
 
 
 PALETTES: dict[str, Palette] = {
-    "varun": Palette(
-        id="varun",
+    "editorial": Palette(
+        id="editorial",
         cream="#f4f0e6",
         black="#0a0a0a",
         white="#ffffff",
@@ -77,8 +77,8 @@ PALETTES: dict[str, Palette] = {
         ink="#141414",
         ink_on_dark="#f5f2ea",
     ),
-    "nick": Palette(
-        id="nick",
+    "utility": Palette(
+        id="utility",
         cream="#efe9dc",
         black="#0d0d0d",
         white="#ffffff",
@@ -113,16 +113,28 @@ class ThemeCtx:
         # white cards on cream; slightly-lifted panel on black
         if self.bg_mode == "cream":
             return self.palette.white
-        return "#1a1a1a" if self.palette.id == "varun" else "#1d1916"
+        return "#1a1a1a" if self.palette.id == "editorial" else "#1d1916"
 
     @property
     def muted(self) -> str:
         return self.ink  # used with opacity by callers
 
 
-def theme(style: str = "varun", bg: str = "cream") -> ThemeCtx:
+# Pre-2026-08-16 creator ids, accepted so older scene scripts keep running.
+# reel_gates.STYLE_ALIASES is the authority; this mirrors it because
+# manim_theme must import cleanly without the repo on sys.path.
+_LEGACY_STYLES = {
+    "varun": "editorial",
+    "varun-mayya": "editorial",
+    "nick": "utility",
+    "nick-saraev": "utility",
+}
+
+
+def theme(style: str = "editorial", bg: str = "cream") -> ThemeCtx:
+    style = _LEGACY_STYLES.get(style, style)
     if style not in PALETTES:
-        raise ValueError(f"unknown style '{style}' (use varun|nick)")
+        raise ValueError(f"unknown style '{style}' (use editorial|utility)")
     if bg not in ("cream", "black"):
         raise ValueError(f"unknown bg '{bg}' (use cream|black)")
     return ThemeCtx(palette=PALETTES[style], bg_mode=bg)
@@ -255,7 +267,7 @@ class ReelScene(Scene):
     class attributes REEL_STYLE / REEL_BG before render.
     """
 
-    REEL_STYLE = "varun"
+    REEL_STYLE = "editorial"
     REEL_BG = "cream"
 
     def setup(self):

@@ -37,16 +37,17 @@
     "loudnessTarget": "I=-14:TP=-1.2:LRA=7"
   },
   "defaults": {
-    "style": "varun-mayya",
+    "style": "editorial",
     "targetSeconds": 90,
     "lengthRangeSeconds": [
       60,
       80
     ],
-    "captionStyle": "nick-display",
+    "captionStyle": "word-reveal",
     "musicBed": "music/bed-02.mp3",
     "_length_note": "User rule 2026-08-11: every reel runs 1-2 MINUTES, picked from the topic. 2026-08-13 MEASURED delivery on this voice at speed 1.05 is ~2.7 words/sec (grok-bot 2.69, apple-pay-india 2.72, iphone18-split 2.55) \u2014 so 60s = ~162 words, 80s = ~216, 90s = ~243, 120s = ~324. Supersedes the unmeasured 3.2 wps figures; script_approval.py enforces the band at propose time.",
-    "_caption_note": "nick-display is the production caption treatment (per-word reveal, emphasis list drives the accent keyword)."
+    "_caption_note": "word-reveal is the production caption treatment (per-word reveal, emphasis list drives the accent keyword). Renamed 2026-08-16 from \"nick-display\"; the old name is still accepted for the seven reels already published.",
+    "_style_note": "Style ids describe the style, not its creator (renamed 2026-08-16): editorial = tech-news reporting, utility = tips/tools. Legacy ids varun / varun-mayya / nick / nick-saraev still resolve."
   },
   "avatarRegistry": {
     "48d407621ae64e4ba7dcfb63635f45e8": {

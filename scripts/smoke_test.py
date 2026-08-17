@@ -11,6 +11,11 @@ from pathlib import Path
 
 SCRIPTS = Path(__file__).resolve().parent
 
+# reel_gates.py owns the style/caption alias map — import it rather than
+# keeping a second copy (two copies drift).
+sys.path.insert(0, str(SCRIPTS.parent / "tools"))
+from reel_gates import canon_caption  # noqa: E402
+
 
 def run(command: list[str], cwd: Path | None = None) -> None:
     subprocess.run(command, cwd=cwd, check=True)
@@ -188,7 +193,21 @@ def main() -> None:
             ]
         )
         beats = json.loads((engine / "src/beats/pipeline-smoke.json").read_text())
-        assert beats["captionStyle"] == "chip-lg"
+        # Assert against the LOCKED value, not a literal — this asserted the
+        # stale "chip-lg" and so agreed with the bug in compile_shot_plan.py
+        # instead of catching it (fixed 2026-08-16).
+        # Same fallback as validate_job.py / compile_shot_plan.py: the temp
+        # engine this test builds carries no config.json.
+        cfg = engine / "config.json"
+        locked_style = "word-reveal"
+        if cfg.exists():
+            locked_style = json.loads(cfg.read_text()).get("defaults", {}).get(
+                "captionStyle", locked_style)
+        # Compare canonically: a legacy id and its canonical name are the same
+        # treatment, so the assertion must not fail on the spelling alone.
+        assert canon_caption(beats["captionStyle"]) == canon_caption(locked_style), (
+            f'captionStyle {beats["captionStyle"]!r} != locked {locked_style!r}'
+        )
         assert len(beats["scenes"]) == 2
         assert abs(sum(scene["durationSec"] for scene in beats["scenes"]) - 6) < 0.01
         assert beats["scenes"][0]["assetId"] == "coded-proof"

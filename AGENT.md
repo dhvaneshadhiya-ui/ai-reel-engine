@@ -101,6 +101,29 @@ specific request (max 1–2 loops), or rewrite the line.
 confirm every visual id resolves. Fixing this on paper costs seconds; fixing it
 after voice + avatar generation costs credits and an hour.
 
+### STEP 1.5 — Rehearse the VO for free, FIRST
+
+```bash
+python3 tools/rehearse_vo.py <slug>      # local, no credits, no API key
+```
+
+Synthesises a throwaway VO with chatterbox, whisper-times it, and checks
+everything that only exists once a VO exists: that every `start_phrase` /
+`end_phrase` in the shot plan actually resolves (a miss kills
+`compile_shot_plan.py`), and which words the read mangles (feed those to
+`caption_corrections`).
+
+Do this BEFORE step 2. Generation costs credits and **freezes the audio**, so a
+phrase anchor discovered afterwards costs a second generation. Exits non-zero if
+any anchor is missing.
+
+It prints a runtime prediction from the **measured** 2.5–2.7 wps, and prints the
+synthetic audio's own duration marked as *not* the predictor — chatterbox's
+speaking rate is not the twin's, and swapping a measured number for an
+unmeasured one is what G23 exists to stop. Artifacts land in
+`_sources/<slug>/rehearsal/`, never `public/` (Remotion re-copies all of
+`public/` on every render).
+
 ### STEP 2 — Voice + face
 Generate one continuous avatar master from the final script (see
 `references/heygen.md`). Store as `public/assets/<slug>/avatar-master.mp4`.
@@ -152,6 +175,41 @@ viewer**. The linter catches geometry; only you catch meaning:
 Fix, re-render, re-verify. Only then deliver.
 
 ---
+
+### STEP 6 — Cover (Reels + Shorts)
+
+```bash
+python3 tools/make_thumbnail.py <slug> \
+    --frame "assets/<slug>/thumb-subject.png" \
+    --brand "APPLE" --line1 "TIM COOK'S" --line2 "LAST KEYNOTE"
+```
+
+**1080x1920, vertical.** Our reels are vertical; a 16:9 cover was the first
+version of this and was wrong (rejected 2026-08-17). `--format wide` still
+exists for any surface that wants a wide still.
+
+**The centre 1:1 crop is the whole game.** A profile grid centre-crops a 9:16
+cover, so read-critical content lives in y = 420..1500 and the rest is bleed.
+The tool always writes `<slug>-grid.png` alongside — that is how the grid
+actually shows it. **Judge the grid file, not the full-height one.**
+
+The look: near-black ground, ALL-CAPS heavy sans, subject in the middle, and a
+two-line headline whose SECOND line sits on a solid accent block. The block is
+the payoff and the loudest thing in frame. Default block is the style accent
+(editorial yellow); `--block "#E8112D" --block-text "#ffffff"` for the red
+convention. Yellow is more differentiated in a feed that is mostly red, and
+black-on-yellow carries a higher contrast ratio than white-on-red.
+
+Hard limit: **3 words per line**, enforced. At ~200px a longer line is a smear;
+cut words, never shrink the type.
+
+**No presenter face.** The reference creators anchor on their own face; we are a
+publication, so the anchor is the SUBJECT.
+
+**Choose the frame for its SHAPE, not its content.** At 200px a dense text card
+is just a bright rectangle — it reads as "a document" and nothing more. A
+product render, a device, one huge number: those still read. Crop the subject
+out of the reel frame first rather than passing the whole 9:16.
 
 ## 3. The beat-sheet contract
 

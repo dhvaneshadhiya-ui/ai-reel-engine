@@ -4,7 +4,7 @@ Tips, roundups, "top 5", free-tool reels. The evergreen counterpart to `news`:
 these keep earning long after a news reel is dead.
 
 **Numbers:** `python3 tools/reel_gates.py --formats`
-**Derived from:** `styles/nick-saraev.md` v2 — 12-reel teardown, 2026-07-24
+**Derived from:** `styles/utility.md` v2 — 12-reel teardown, 2026-07-24
 (full-res detail crops + 8fps motion bursts). Approved as-is by the user
 2026-08-12; do not re-derive it without being asked.
 

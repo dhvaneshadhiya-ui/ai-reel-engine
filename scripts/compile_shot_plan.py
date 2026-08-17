@@ -19,6 +19,47 @@ def normalize(value: str) -> list[str]:
     return re.findall(r"[a-z0-9]+", value.lower().replace("’", "'"))
 
 
+def locked_style(engine: Path) -> str:
+    """Read the locked STYLE pack from config.json.
+
+    Hardcoded "nick" until 2026-08-16 while config.json defaulted to the
+    editorial pack, so the generic new-reel path produced a utility-styled
+    beat sheet for every reel. Same failure as the caption style below:
+    validate_job.py was fixed on 2026-08-12, the producer was not.
+    """
+    cfg = engine / "config.json"
+    locked = "editorial"
+    if cfg.exists():
+        try:
+            locked = json.loads(cfg.read_text()).get("defaults", {}).get(
+                "style", locked)
+        except Exception:
+            pass
+    return locked
+
+
+def locked_caption_style(engine: Path) -> str:
+    """Read the locked caption treatment from config.json.
+
+    Never hardcode it here. This emitted the pre-2026-07-30 "chip-lg" value
+    long after the treatment was locked (now "word-reveal"), so every beat sheet
+    this script produced was rejected by validate_job.py and gate G10 — the
+    generic new-reel path was dead while the bespoke tools/build_*.py scripts
+    (which set it themselves) kept working and hid it.
+    validate_job.py already reads config.json; this mirrors it. Fixed
+    2026-08-16.
+    """
+    cfg = engine / "config.json"
+    locked = "word-reveal"
+    if cfg.exists():
+        try:
+            locked = json.loads(cfg.read_text()).get("defaults", {}).get(
+                "captionStyle", locked)
+        except Exception:
+            pass
+    return locked
+
+
 def load_words(path: Path) -> list[dict[str, Any]]:
     raw = json.loads(path.read_text())
     if isinstance(raw, dict) and isinstance(raw.get("words"), list):
@@ -182,6 +223,7 @@ def main() -> None:
     if not re.fullmatch(r"[a-z0-9-]+", slug):
         raise SystemExit("slug must use lowercase letters, numbers, and hyphens")
 
+
     engine = args.engine.expanduser().resolve()
     public = engine / "public"
     job_dir = engine / "jobs" / slug
@@ -328,10 +370,10 @@ def main() -> None:
         "fps": 30,
         "width": 1080,
         "height": 1920,
-        "style": "nick",
+        "style": locked_style(engine),
         "audio": avatar_rel,
         "music": music,
-        "captionStyle": "chip-lg",
+        "captionStyle": locked_caption_style(engine),
         "emphasis": plan.get("emphasis", []),
         "scenes": scenes,
         "captions": caption_words(words, corrections),

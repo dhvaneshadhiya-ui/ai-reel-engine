@@ -40,7 +40,7 @@ The topic (or short script) is ALWAYS user-provided. Before ANY scripting:
    (verified by looking at frames), quality, credit, crop}` + the always-
    available MG component list. Thin manifest = more MG/facecam-led reel.
 2. **SCRIPT DIRECTOR** — loads the requested style pack (for Nick reels,
-   `styles/nick-saraev.md`) + the manifest; writes script + beat map where
+   `styles/utility.md`) + the manifest; writes script + beat map where
    EVERY beat binds to a manifest id or an MG spec. Beats with unresolvable visuals are illegal:
    re-scout (specific request, max 1-2 loops) or rewrite the line.
 3. Validation gate before generating anything; CRITIC pass after render
@@ -84,11 +84,12 @@ news-reels/
     tighten_vo.py       # remove VO dead-air + tempo, whisper-free re-timing
     gen_pod_vo.py       # VibeVoice generation example (gradio_client)
   styles/
-    varun-mayya.md      # DEFAULT style pack (voice, scene grammar, captions, sound, treatment history)
-    nick-saraev.md      # 2nd style pack
+    editorial.md        # DEFAULT style pack (voice, scene grammar, captions, sound, treatment history)
+    editorial-script-playbook.md  # the WORDS for editorial (hook taxonomy, 6-act skeleton)
+    utility.md          # 2nd style pack
   public/
     fonts/  Fraunces-400/600/Italic.woff2, PressStart2P.ttf
-    sfx2/   varun SFX (impact-deep/cool, tech-slide, pops, riser-sweep.wav, whoosh-stutter)
+    sfx2/   editorial SFX (impact-deep/cool, tech-slide, pops, riser-sweep.wav, whoosh-stutter)
     sfx-nick/ nick SFX (word-pop, soft-click, bubble, card-slide)
     music/  bed-140/184/726.mp3 (+ spec pngs)
     assets/<slug>/  per-reel: avatar-master.mp4, vo*.json/wav, clips/, face-x.txt
@@ -170,7 +171,8 @@ footage. Rendered as an overlay by `Reel.tsx`, so ANY scene can carry one.
 - **face-x** = face-centre fraction on a mid avatar frame (≈0.41 here) →
   `public/assets/<slug>/face-x.txt`. `css_pos()` in the build script converts it
   per container (full-frame vs split half). Measure with a `drawgrid` overlay.
-- Reel output: **1080×1920, 30fps**. Length per style pack (varun 38–55s).
+- Reel output: **1080×1920, 30fps**. Length per FORMAT — run
+  `python3 tools/reel_gates.py --formats` (news 60–80s, top5 26–48s).
 
 ### Voice + face generation
 
@@ -292,7 +294,7 @@ union in `types.ts`, write `components/<Name>.tsx`, add a `case` in
 
 ## 9. Style packs & self-improvement
 
-- **Pick a style FIRST** (`styles/varun-mayya.md` default, or `nick-saraev.md`
+- **Pick a style FIRST** (`styles/editorial.md` default, or `utility.md`
   if named). The pack defines script voice, scene grammar, caption spec, sound
   recipe, and a **treatment history** — never repeat the previous reel's
   treatment for the same info type. A reference reel the user gives supplies the

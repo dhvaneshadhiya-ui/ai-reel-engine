@@ -3,7 +3,7 @@
 manim_scene.py — render brand-themed mechanism diagrams via Manim CE.
 
 Usage:
-  python3 tools/manim_scene.py <template> --style varun|nick --bg cream|black \
+  python3 tools/manim_scene.py <template> --style editorial|utility --bg cream|black \
       --out <path.mp4> [--args '<JSON>']
 
 Templates:
@@ -324,7 +324,7 @@ def main():
         description="Render a brand-themed Manim mechanism diagram."
     )
     p.add_argument("template", choices=sorted(TEMPLATES))
-    p.add_argument("--style", choices=["varun", "nick"], default="varun")
+    p.add_argument("--style", choices=["editorial", "utility"], default="editorial")
     p.add_argument("--bg", choices=["cream", "black"], default="cream")
     p.add_argument("--out", required=True, help="output .mp4 path")
     p.add_argument("--args", default="{}", help="JSON template arguments")

@@ -1,7 +1,20 @@
 # september-preview — script + beat map
 
-**Format:** top5 (first top5 reel through the engine) · **Style:** nick-saraev
+**Format:** top5 (first top5 reel through the engine) · **Style:** editorial
 **Look:** 0aa05d6e (warm) · **Target:** 123 words → ~46s at measured 2.7 wps (band 26-48s)
+
+> **HEADER IS STALE — corrected 2026-08-16.** Two fields above no longer
+> describe the reel that shipped.
+>
+> **Style** read `nick-saraev`, which was never true: `new_job.py` stamped that
+> on every brief regardless of `config.json` (bug fixed 2026-08-16). It shipped
+> `varun` → `editorial`.
+>
+> **Format** was deliberately changed to `news` on 2026-08-14 — see
+> `jobs/september-preview/questions.md` item 1, "Format now NEWS (60-80s) per
+> your note". The beat sheet is correct at `"format": "news"`, 79.6s. The
+> `top5 / 123 words / ~46s` line above is the pre-change plan and was never
+> updated, leaving two contradictory records in one job.
 **Refs:** MacRumors 2026-08-13 (Juli Clover) · Apple Newsroom 2026-04-20 (official)
 
 ## Script (spoken narration)

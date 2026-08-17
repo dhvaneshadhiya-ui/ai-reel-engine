@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Beat sheet for apple-pay-india (varun-mayya).
+"""Beat sheet for apple-pay-india (editorial).
 
 Treatment split, decided from verified frames (see manifest):
   apple-ad      = live-action, survives a 9:16 crop  -> FULL-BLEED footage
@@ -467,8 +467,8 @@ music = {
 }
 
 beats = {
-    "id": SLUG, "fps": 30, "width": 1080, "height": 1920, "style": "varun",
-    "audio": AVATAR, "music": music, "captionStyle": "nick-display",
+    "id": SLUG, "fps": 30, "width": 1080, "height": 1920, "style": "editorial",
+    "audio": AVATAR, "music": music, "captionStyle": "word-reveal",
     "emphasis": ["UPI", "Apple", "Visa", "Mastercard", "85", "23.2", "29.9",
                  "October", "India", "NPCI", "fifteen", "twenty", "ten",
                  "basis", "points", "credit"],

@@ -1,4 +1,4 @@
-# kleo — Cameron Trew / the nerve story (varun-mayya, VibeVoice, NEW pipeline)
+# kleo — Cameron Trew / the nerve story (editorial, VibeVoice, NEW pipeline)
 
 User-provided angle: the nerve, not the tools. Facts verified in
 public/assets/kleo/manifest.json (indiehackers canonical).

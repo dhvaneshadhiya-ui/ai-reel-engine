@@ -25,11 +25,11 @@ anything and the linter's pixel checks sat disabled behind an unread
 
 | Setting | Value | Enforced |
 |---|---|---|
-| Runtime | **60–80s**, chosen from the topic, never padded; `allowLong` needs a written reason | [GATE:G02] |
+| Runtime | per FORMAT (`--formats`), chosen from the topic, never padded. Past the band: `allowLong` + a written `allowLongReason`. **Hard ceiling 180s** (platform limit) — allowLong cannot pass it | [GATE:G02] |
 | Voice speed | **1.05** | `config.json` [EYE] |
 | HeyGen engine | **per-look, by measurement** — see `avatarRegistry` | `config.json` [EYE] |
-| Caption style | **`nick-display`** | [GATE:G10] |
-| Style pack | `varun-mayya` default, else `nick-saraev`. Never invent a third. | [EYE] |
+| Caption style | **`word-reveal`** (was `nick-display`) | [GATE:G10] |
+| Style pack | `editorial` default, else `utility`. Never invent a third. | [EYE] |
 | Master | **−14 LUFS**, TP −1.2 | [EYE] |
 
 **Source capture [GATE]:** web sources are captured on MOBILE —
@@ -59,7 +59,8 @@ to the user and approved BEFORE any avatar video is generated. Generation
 costs credits and freezes the audio; changing a word afterwards is a
 re-render. [EYE]
 
-**Story [GATE]:** runtime 60-80s (G02; `allowLong` needs a written reason).
+**Story [GATE]:** runtime per format (G02; `allowLong` + `allowLongReason` to
+exceed the band, hard-capped at 180s).
 Hook <= 2.0s and it opens on the actual tension, surprise or consequence —
 never a generic product announcement (G03). Every sentence must change the
 viewer's understanding; if it does not, cut it. [EYE for the cut, GATE for
@@ -76,7 +77,7 @@ the face is visible, a jump under b-roll is not (made-by-google-26:
 product spelling and capitalization exactly as the source uses it.
 
 **Design system [EYE]:** one series look — SF Pro, the registered palette
-(#0aa9c2 / #2fb98a / #C2410C accents), nick-display captions, the same chart
+(#0aa9c2 / #2fb98a / #C2410C accents), word-reveal captions, the same chart
 and transition vocabulary. Do not introduce a new hue or a new type family
 for a single scene. Every important visual must be readable on a phone.
 
@@ -285,11 +286,6 @@ technical term appears on screen in standard notation. [GATE:G16]
 - Music bed on every reel, volume-automated, never flat: full at the hook →
   duck through explanation → rise at the reveal → up at the CTA → fade.
   [GATE:G09]
-- **A VO-only cut is a DERIVATIVE, not an exception.** If a placement supplies
-  its own bed or strips audio, build it as a second sheet with `noMusic` +
-  a written `noMusicReason` (same shape as `allowLong`), re-run every gate on
-  it, and keep the music version as the primary master. Dropping `music`
-  without the reason still fails. [GATE:G09]
 - **6–9 SFX cues**, vols 0.10–0.19. Ordinary cuts stay silent. [GATE:G08]
 - Master to −14 LUFS, verify with `ebur128`. [EYE]
 

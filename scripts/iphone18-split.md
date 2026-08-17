@@ -1,6 +1,6 @@
 # iphone18-split — script + beat map
 
-**Format:** news · **Style:** varun-mayya · **Look:** 0aa05d6e (warm) · **Tone:** warm
+**Format:** news · **Style:** editorial · **Look:** 0aa05d6e (warm) · **Tone:** warm
 **Target:** ~250 words → ~75s at speed 1.05 (band 60-80s, G02)
 **Ref:** MacRumors 2026-08-12 (Joe Rossignol) + AppleInsider 2026-08-12 (Amber Neely)
 

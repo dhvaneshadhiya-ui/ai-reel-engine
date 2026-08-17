@@ -1,6 +1,6 @@
 # made-by-google-26 — Everything announced at Made by Google 2026
 
-Style: varun-mayya · Format: news · Target ~110s (~340 words @ speed 1.05)
+Style: editorial · Format: news · Target ~110s (~340 words @ speed 1.05)
 `allowLong: true` — user explicitly requested an ~2-minute reel (2026-08-13).
 Look: `0aa05d6e` (warm) — this is an upbeat product roundup, not a caveat piece.
 
@@ -83,7 +83,7 @@ me in the comments.
 Facecam beats: hook bottom (1), Titan pop (14), CTA (28) → ~13-15% runtime.
 Honesty beat: #24-25 (price hike + buds non-update).
 Hook ≤2.0s; face on screen by second 2 via split hook.
-NEW treatment this reel: `strikeswap` price ladder (never used in varun reels);
+NEW treatment this reel: `strikeswap` price ladder (never used in editorial reels);
 no plain black typecard anywhere; logoassemble NOT used (3-reel streak broken).
 Music: bed-184 from=32, automated. SFX: riser under hook, impact on hook land,
 tech-slide on receipts, deep impact on Tensor reveal, pop on strikeswap, riser

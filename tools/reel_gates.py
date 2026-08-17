@@ -58,7 +58,7 @@ FORMATS: dict[str, dict] = {
         "sfx": (6, 9),
         "sfx_vol": (0.10, 0.19),
         "requires_cta": False,
-        "_derived": "styles/varun-mayya.md — 11-reel teardown 2026-07-22; "
+        "_derived": "styles/editorial.md — 11-reel teardown 2026-07-22; "
                     "runtime + hook set by user rules 2026-08-12.",
     },
     "top5": {
@@ -69,7 +69,7 @@ FORMATS: dict[str, dict] = {
         "sfx": (6, 9),
         "sfx_vol": (0.06, 0.10),
         "requires_cta": True,
-        "_derived": "styles/nick-saraev.md v2 — 12-reel teardown 2026-07-24 "
+        "_derived": "styles/utility.md v2 — 12-reel teardown 2026-07-24 "
                     "(full-res crops + 8fps motion bursts). Runtime '26-48s', "
                     "SFX 'tiny click/pops vols .06-.10, ordinary cuts silent', "
                     "'comment-gate CTA' are all measured properties of that "
@@ -95,13 +95,50 @@ FORMATS: dict[str, dict] = {
         "sfx": (6, 9),
         "sfx_vol": (0.10, 0.19),
         "requires_cta": True,
-        "_derived": "INHERITED from news (varun-mayya 11-reel teardown) — NOT "
+        "_derived": "INHERITED from news (editorial 11-reel teardown) — NOT "
                     "measured for this genre. Only the structural rules in "
                     "G26 are specific to comparison. Do not present these "
                     "timings as derived; tighten them from a real teardown.",
     },
 }
 DEFAULT_FORMAT = "news"
+
+# ---------------------------------------------------------------- style names
+# Renamed 2026-08-16: style ids describe the STYLE, not its creator, so they
+# read like the format vocabulary (news / top5 / comparison).
+#   editorial = tech-news reporting  (was varun-mayya / varun)
+#   utility   = tips and tools       (was nick-saraev / nick)
+#   word-reveal = per-word caption reveal (was nick-display)
+#
+# THIS MODULE IS THE SINGLE SOURCE OF TRUTH for the mapping — validate_job.py
+# imports it rather than keeping a second copy, because two copies drift.
+# The legacy ids are accepted forever: seven reels were published carrying
+# them, and re-writing a shipped beat sheet to satisfy a rename is exactly the
+# retro-fixing RULES.md forbids. Do NOT add new entries — a new style gets a
+# canonical name, not an alias.
+STYLE_CANON = ("editorial", "utility")
+STYLE_ALIASES = {
+    "varun": "editorial",
+    "varun-mayya": "editorial",
+    "nick": "utility",
+    "nick-saraev": "utility",
+}
+CAPTION_ALIASES = {"nick-display": "word-reveal"}
+
+
+def canon_style(value: str | None) -> str | None:
+    """Canonical style id for a beat sheet / brief value."""
+    if value is None:
+        return None
+    return STYLE_ALIASES.get(value, value)
+
+
+def canon_caption(value: str | None) -> str | None:
+    """Canonical caption treatment for a beat sheet value."""
+    if value is None:
+        return None
+    return CAPTION_ALIASES.get(value, value)
+
 
 # Scenes that put the two sides in front of the viewer together.
 COMPARE_TYPES = {"comparesplit", "hcompare", "specsheet", "chart", "strikeswap"}
@@ -112,6 +149,29 @@ BALANCE = (0.40, 0.60)   # single-sided screen time share per side
 # and any older call site keep working.
 RUNTIME_MIN, RUNTIME_MAX = FORMATS["news"]["runtime"]
 HOOK_MAX = FORMATS["news"]["hook_max"]
+
+# Absolute wall = the PLATFORM limit (user rule 2026-08-16, revised same day
+# from 120s: "Instagram Reels and YouTube Shorts both allow up to 3 minutes,
+# so our cap should be 3 minutes").
+#
+# The per-format `runtime` band stays the DEFAULT and stays measured — it is
+# what a reel should be unless the topic argues otherwise. `allowLong` is the
+# argument, and it already required a written `allowLongReason`. What it did
+# NOT have was a ceiling: set the flag with any reason string and a "reel"
+# could run ten minutes, which is not a judgement call, it is an unbounded
+# opt-out of the one gate that keeps these things short.
+#
+# 180s is USER-SET, not derived from a teardown — recorded as such so nobody
+# later mistakes it for a measured number. It is now the PLATFORM ceiling
+# rather than an editorial one, which means the only editorial brake left
+# between the band and the wall is `allowLongReason`. Write it like it matters.
+#
+# CAVEAT — rules that count instead of measuring density do not scale with it.
+# G08 wants 6-9 SFX cues no matter how long the reel is: ~1 per 10s at the
+# 60-80s band, ~1 per 25s at 180s. The number was measured on 60-80s reels, so
+# past the band it quietly means something it was never measured to mean.
+# Re-derive G08 as a per-minute density before shipping anything near 180s.
+RUNTIME_CEILING = 180.0
 ROW_DWELL = 0.6      # a list row must be readable, not merely present
 DUR_MAX = {                                # 2026-07-28 / 2026-07-31
     "motion": 2.9,      # footage / split / video-backed cards
@@ -130,6 +190,13 @@ DATA_MIN = 2.0       # a card carrying a claim must outlast the claim           
 # Limits measured against the 1080px frame at the component's real font sizes.
 LINE_MAX_CHARS = {"label": 30, "headline": 18, "subtitle": 26}
 
+AZ_ASPECT_MAX = 2.5    # G36. NOT a fresh measurement: it is the SAME wide-
+                       # artifact line RULES.md already sets for `receipt`
+                       # ("wider than ~2.5:1 goes in a floatcard"). Every
+                       # source measured broken on ios27-tiers exceeded it
+                       # (2.6, 3.1, 4.6:1); 16:9 sources have shipped fine on
+                       # iphone18-split and made-by-google-26, so gating
+                       # tighter than 2.5 would reject working precedent.
 MOTION_TYPES = {"footage", "split"}
 BUILDING_TYPES = {"specsheet", "chart", "timeline", "settingspane", "priceladder"}
 VIDEO_EXT = (".mp4", ".webm", ".mov")
@@ -211,6 +278,15 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 f"{fmt_name!r}. Cut every sentence that does not change the "
                 "viewer's understanding. If the story genuinely needs longer, "
                 "set allowLong + allowLongReason.")
+    # The ceiling binds even with allowLong, and even with --allow-short:
+    # allowLong is permission to argue past the measured band, not permission
+    # to leave short form. Nothing enforced this before 2026-08-16.
+    if total > RUNTIME_CEILING:
+        errors.append(
+            f"G02 runtime {total:.1f}s over the {RUNTIME_CEILING:.0f}s hard "
+            f"ceiling (format {fmt_name!r}). allowLong cannot pass this — it "
+            "buys room to argue past the measured band, not an exit from "
+            "short form. Split the topic across two reels.")
 
     # G03 — the hook may not hold
     if scenes and scenes[0]["durationSec"] > HK_MAX:
@@ -286,6 +362,8 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # reel that forgot its music. It has to be argued for in one line so it
     # cannot be flipped on to silence a complaint — which is the whole reason
     # the escape hatch is a written reason and not a bare boolean.
+    # Re-applied 2026-08-17 after the two-machine merge: sync/main did not have
+    # it, and taking sync wholesale would have dropped the VO-only cut.
     no_music = bool(beats.get("noMusic"))
     if no_music and not str(beats.get("noMusicReason") or "").strip():
         errors.append(
@@ -300,14 +378,14 @@ def check_beats(beats: dict, vo_end: float | None = None,
                       "(hook full → duck → rise at the reveal → fade).")
 
     # G10 — production caption treatment
-    PROD_CAPTIONS = {"nick-display", "ink-circle"}
-    if beats.get("captionStyle") not in PROD_CAPTIONS:
+    PROD_CAPTIONS = {"word-reveal", "ink-circle"}
+    if canon_caption(beats.get("captionStyle")) not in PROD_CAPTIONS:
         warnings.append(
             f"G10 captionStyle is {beats.get('captionStyle')!r}; "
             f"production treatments are {sorted(PROD_CAPTIONS)} (2026-07-29).")
     if not beats.get("emphasis"):
         errors.append("G10 empty `emphasis` — it drives the accent keyword in "
-                      "nick-display captions.")
+                      "word-reveal captions.")
     if not beats.get("captions"):
         errors.append("G10 no captions array.")
 
@@ -520,7 +598,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
         break
 
     # G24 — formats that are DEFINED by their call to action must carry one.
-    # nick-saraev's teardown lists the comment-gate CTA as a defining property
+    # the utility teardown lists the comment-gate CTA as a defining property
     # of the tips/top-5 format, not a garnish: the reel exists to convert.
     if prof.get("requires_cta"):
         CTA_TYPES = {"commentcta", "endquestion", "instacta"}
@@ -530,7 +608,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
             errors.append(
                 f"G24 format {fmt_name!r} requires a call to action — add a "
                 f"{sorted(CTA_TYPES)} scene. The comment-gate CTA is a "
-                "defining property of this format (styles/nick-saraev.md).")
+                "defining property of this format (styles/utility.md).")
 
     # G25 — a settings pane's cues must LAND. Same failure as G20: an
     # animation scheduled past the end of its scene simply never happens, and
@@ -884,6 +962,49 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 errors.append(
                     f"G16 scene {i:02d} text {t!r} is not in standard notation "
                     f"-> {normalise(t, canon)!r}")
+
+    # G35 — A STILL IN `footage` OR `floatcard` RENDERS BLACK (2026-08-17,
+    # ios27-tiers). FootageScene and FloatingCard both render a Remotion
+    # <Video>; handed a PNG they produce nothing at all. Only `split` (which
+    # branches on file extension), `receipt` and `annotatezoom` take an <Img>.
+    # Caught by reading the components, not by any check — six scenes were
+    # already wired this way.
+    STILL_EXT = (".png", ".jpg", ".jpeg", ".webp", ".avif")
+    for i, sc in enumerate(scenes):
+        if sc["type"] not in ("footage", "floatcard"):
+            continue
+        for key in ("src", "mediaSrc"):
+            v = str(sc.get(key) or "").lower()
+            if v.endswith(STILL_EXT):
+                errors.append(
+                    f"G35 scene {i:02d} ({sc['type']}) plays a STILL "
+                    f"{str(sc.get(key)).split('/')[-1]!r} — {sc['type']} renders a "
+                    "<Video> and a still renders BLACK. Use receipt or "
+                    "annotatezoom for a PNG, or cut the still to an mp4.")
+
+    # G36 — A WIDE SOURCE TURNS `annotatezoom` INTO DEAD SPACE (2026-08-17,
+    # ios27-tiers). AnnotateZoom sizes its card as
+    #   cardW = width*0.9; cardH = (srcHeight/srcWidth)*cardW
+    # so the card inherits the SOURCE aspect. A 942x205 footnote strip (4.6:1)
+    # becomes a thin horizontal band in a 1920-tall frame: measured ~16% frame
+    # fill, i.e. ~84% blurred dead space, against a 30% ceiling. The fix is a
+    # PORTRAIT source mined for several `focus` rects, not one strip per quote.
+    for i, sc in enumerate(scenes):
+        if sc["type"] != "annotatezoom":
+            continue
+        sw, sh = sc.get("srcWidth"), sc.get("srcHeight")
+        if not sw or not sh:
+            continue
+        aspect = sw / sh
+        if aspect > AZ_ASPECT_MAX:
+            fill = min(1.0, (sh / sw) * 0.9 / (1920 / 1080))
+            errors.append(
+                f"G36 scene {i:02d} annotatezoom source is {sw}x{sh} "
+                f"({aspect:.2f}:1, over {AZ_ASPECT_MAX}:1) — the card inherits "
+                f"the source aspect, so it fills only ~{fill * 100:.0f}% of the "
+                "frame and the rest is blurred fill. Crop ONE TALL page region "
+                "and move the camera with `focus` instead of cropping a strip "
+                "per quote.")
 
     # G12 — the plain black typecard is a last resort, max once
     black_cards = sum(1 for s in scenes

@@ -2,13 +2,15 @@
 import type { BeatSheet } from "./types";
 import sheet0 from "./beats/apple-pay-india.json";
 import sheet1 from "./beats/grok-bot.json";
-import sheet2 from "./beats/iphone-fold-ultra-nomusic.json";
-import sheet3 from "./beats/iphone-fold-ultra.json";
-import sheet4 from "./beats/iphone18-split.json";
-import sheet5 from "./beats/made-by-google-26.json";
-import sheet6 from "./beats/seedance-25.json";
-import sheet7 from "./beats/september-preview-nomusic.json";
-import sheet8 from "./beats/september-preview.json";
+import sheet2 from "./beats/ios27-tiers-nomusic.json";
+import sheet3 from "./beats/ios27-tiers.json";
+import sheet4 from "./beats/iphone-fold-ultra-nomusic.json";
+import sheet5 from "./beats/iphone-fold-ultra.json";
+import sheet6 from "./beats/iphone18-split.json";
+import sheet7 from "./beats/made-by-google-26.json";
+import sheet8 from "./beats/seedance-25.json";
+import sheet9 from "./beats/september-preview-nomusic.json";
+import sheet10 from "./beats/september-preview.json";
 
 export const beatSheets = [
   sheet0,
@@ -20,4 +22,6 @@ export const beatSheets = [
   sheet6,
   sheet7,
   sheet8,
+  sheet9,
+  sheet10,
 ] as unknown as BeatSheet[];

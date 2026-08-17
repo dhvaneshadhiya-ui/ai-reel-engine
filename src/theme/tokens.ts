@@ -5,10 +5,16 @@ import React, { createContext, useContext } from "react";
  * type, radii and shadows. RULE (FEEDBACK 2026-07-29): no per-scene palette
  * drift; every component pulls from the active style pack's tokens only.
  *
- * varun  = cream/black + yellow accent, Fraunces italic serif (default)
- * nick   = cream/black + terracotta accent, Fraunces serif + Press Start 2P
+ * editorial = cream/black + yellow accent, Fraunces italic serif (default).
+ *             Tech-news reporting: claim -> receipt -> demo -> take.
+ * utility   = cream/black + terracotta accent, Fraunces serif + Press Start 2P.
+ *             Tips/tools: designed artifacts, comment-gate CTA.
+ *
+ * Renamed 2026-08-16 from the creator names (varun / nick) to what the style
+ * IS, matching the format vocabulary (news / top5 / comparison). Old ids are
+ * still accepted -- see STYLE_ALIASES below.
  */
-export type StyleId = "varun" | "nick";
+export type StyleId = "editorial" | "utility";
 
 export interface Theme {
   id: StyleId;
@@ -36,8 +42,8 @@ export interface Theme {
 }
 
 export const THEMES: Record<StyleId, Theme> = {
-  varun: {
-    id: "varun",
+  editorial: {
+    id: "editorial",
     cream: "#f4f0e6",
     black: "#0a0a0a",
     white: "#ffffff",
@@ -57,8 +63,8 @@ export const THEMES: Record<StyleId, Theme> = {
       cardOnDark: "0 30px 80px rgba(0,0,0,0.8)",
     },
   },
-  nick: {
-    id: "nick",
+  utility: {
+    id: "utility",
     cream: "#efe9dc",
     black: "#0d0d0d",
     white: "#ffffff",
@@ -80,25 +86,36 @@ export const THEMES: Record<StyleId, Theme> = {
   },
 };
 
-const ThemeContext = createContext<Theme>(THEMES.varun);
+const ThemeContext = createContext<Theme>(THEMES.editorial);
 
 /**
- * Beat sheets name their style with the STYLE-PACK id ("varun-mayya"), which
- * is the canonical id in config.json and styles/. The theme table is keyed by
- * the shorter runtime id ("varun"). Accept either, and never hand `undefined`
- * to a component — on 2026-08-12 an unmapped id crashed EVERY reel with
- * "Cannot read properties of undefined (reading 'accent')".
+ * Pre-2026-08-16 style ids, kept so the seven already-published beat sheets
+ * keep rendering untouched. They were creator names; the canonical ids now
+ * describe the style itself. Do NOT add new entries here — new styles get a
+ * canonical name in THEMES.
+ */
+export const STYLE_ALIASES: Record<string, StyleId> = {
+  varun: "editorial",
+  "varun-mayya": "editorial",
+  nick: "utility",
+  "nick-saraev": "utility",
+};
+
+/**
+ * Accept a canonical id, a legacy creator id, or nothing, and never hand
+ * `undefined` to a component — on 2026-08-12 an unmapped id crashed EVERY
+ * reel with "Cannot read properties of undefined (reading 'accent')".
  */
 export const resolveStyle = (style?: string): StyleId => {
-  if (!style) return "varun";
+  if (!style) return "editorial";
   if (style in THEMES) return style as StyleId;
-  const head = style.split("-")[0];
-  if (head in THEMES) return head as StyleId;
+  if (style in STYLE_ALIASES) return STYLE_ALIASES[style];
   console.warn(
-    `[theme] unknown style ${JSON.stringify(style)} — falling back to "varun". ` +
-      `Known: ${Object.keys(THEMES).join(", ")}`
+    `[theme] unknown style ${JSON.stringify(style)} — falling back to "editorial". ` +
+      `Known: ${Object.keys(THEMES).join(", ")}; ` +
+      `legacy: ${Object.keys(STYLE_ALIASES).join(", ")}`
   );
-  return "varun";
+  return "editorial";
 };
 
 export const ThemeProvider: React.FC<{

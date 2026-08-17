@@ -1,18 +1,8 @@
 # Setup guide — before, during, and after
 
 Moving the engine to another Mac, or standing it up for the first time.
-
-**Two equivalent routes, given side by side throughout.** Pick either, or mix
-them — setting up in Terminal and then working in the app is normal, and is
-what this project has mostly done.
-
-| | |
-|---|---|
-| **APP** — the Claude desktop app | You describe what you want; the agent runs the commands and reads results back. No paths to think about. |
-| **CLI** — Terminal | You run the same commands yourself. Useful for scripting the move or running it over SSH. Identical results — the agent runs exactly these commands. |
-
-Either way, **making a reel happens in a conversation**, so the app is involved
-eventually even if you set up entirely from Terminal.
+**You do not need the terminal.** Finder and the Claude desktop app are enough;
+the agent runs the commands.
 
 Every number and expected output below was captured from a working machine on
 2026-08-14, not written from memory.
@@ -21,37 +11,35 @@ Every number and expected output below was captured from a working machine on
 
 ## PART 1 — Before you start, on the CURRENT Mac
 
+Four things. In the Claude app, pointed at `~/Movies/ai-reel-engine`, say
+*"run the pre-migration checks"* and it will do all of them.
+
 ### 1.1 Confirm the source machine is actually healthy
 
 Never copy a broken install — whatever is wrong here travels.
 
-**APP** — with the conversation's folder set to the engine:
-> Run the pre-migration checks.
-
-**CLI**
 ```bash
-cd ~/Movies/ai-reel-engine
 python3 scripts/doctor.py
 python3 tools/test_gates.py
 ```
 
 Expected: `doctor ok — toolchain complete.` and
-`all 57 checks passed — every gate fires on its violation.`
+`all 72 checks passed — every gate fires on its violation.`
 
 If either fails, fix it **before** building the archive.
 
 ### 1.2 Write down the state you will compare against
 
-| Thing | This machine, 2026-08-14 |
+| Thing | Canonical, 2026-08-17 |
 |---|---|
-| Gates | **33**, with **57** self-tests |
-| Skills | **20** |
+| Gates | **35**, with **72** self-tests |
+| Skills | **29** in-repo + **5** global (see §6.3) |
 | Sound cues | **16** |
 | Scene types | **42** |
 | Formats | `news`, `top5`, `comparison` |
 | Default avatar | `f55b0b7c` · digital twin · motion 4.41 · `avatar_v` |
 | Voice speed | 1.05 |
-| Runtime band | 60–80s (news) |
+| Runtime band | 60–80s (news), hard ceiling 180s |
 | Archive | ~57 MB |
 
 ### 1.3 Decide what to do about past reels
@@ -65,10 +53,6 @@ Scripts, approvals and beat sheets DO travel.
 
 ### 1.4 Build the archive
 
-**APP**
-> Build the migration archive to my Desktop.
-
-**CLI**
 ```bash
 cd ~/Movies
 tar --exclude=node_modules --exclude=out --exclude=_sources \
@@ -88,9 +72,22 @@ either regenerable or per-reel.
 | `public/assets/` | 716 MB | per-reel b-roll, mostly third-party |
 | `.claude/settings.local.json` | — | this machine's permission list |
 
-**Included on purpose:** `bin/ffmpeg` and `bin/ffprobe`. Static x86_64 builds —
-native on Intel, Rosetta on Apple Silicon — so the new Mac needs no Homebrew
-and no password.
+**`bin/` no longer exists in this copy, and an archive built here will not
+contain it.** It once held static x86_64 `ffmpeg` and `ffprobe`, bundled so an
+Intel Mac needed no Homebrew and no password.
+
+> **That never worked on Apple Silicon.** Rosetta runs those builds, but they
+> are *unsigned*, and current macOS deletes an unsigned binary the first time it
+> executes — including the copy inside `bin/` itself. Verified 2026-08-16 on an
+> arm64 Mac (Darwin 25.3.0): `bin/ffmpeg` disappeared mid-setup, no error and no
+> log naming it. `bin/ffprobe` survived only because it was never run, and was
+> then deleted deliberately as a useless orphan.
+>
+> **ffmpeg now comes from Homebrew** — native arm64, adhoc-signed, and it stays
+> put. That costs **one password prompt** at Homebrew install (§2.1) and nothing
+> after. `setup.sh` still handles a bundled `bin/` if you reintroduce one for an
+> Intel target, but it now test-runs those binaries before trusting them and
+> falls through to Homebrew when they fail.
 
 ---
 
@@ -107,8 +104,19 @@ and no password.
 | **Disk space** | ~3 GB free (node_modules, models, renders) |
 | **Claude desktop app** | signed in to the same account |
 
-**You do NOT need:** Homebrew, ffmpeg, whisper, yt-dlp, Playwright, or any paid
-tool. Bundled or installed automatically.
+**You do NOT need:** whisper, yt-dlp, Playwright, or any paid tool — installed
+automatically.
+
+**Homebrew: needed on Apple Silicon, not on Intel.** The bundled ffmpeg is
+x86_64 and unsigned, so macOS removes it on an arm64 Mac (see §1.4). Check with
+`uname -m`; if it says `arm64`, install Homebrew first — it is the one step
+that asks for your Mac password:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+`setup.sh` then runs `brew install ffmpeg` for you.
 
 ### 2.2 What will not travel, and must be redone
 
@@ -122,99 +130,22 @@ tool. Bundled or installed automatically.
 
 ## PART 3 — Setup
 
-### 3.0 The easiest route: clone from GitHub
+### 3.1 The five steps
 
-The engine lives in a **private** repo:
-`https://github.com/dhvaneshadhiya-ui/ai-reel-engine`
+1. **Copy** `ai-reel-engine-migrate.tar.gz` across — AirDrop, USB, cloud.
+2. **Double-click it.** Finder unpacks `ai-reel-engine`.
+3. **Drag the folder to `Movies`** — or anywhere. No path is hardcoded.
+4. **Open the Claude desktop app**, start a conversation with its folder set to
+   that folder, and say:
 
-Because it is private, the new machine must authenticate **once** before it can
-clone. That is the only genuinely new step.
-
-#### Using the Claude desktop app (least terminal)
-
-1. **Sign in to GitHub on the new Mac.** Easiest without a terminal: install
-   [GitHub Desktop](https://desktop.github.com), sign in, and use
-   *File → Clone repository → dhvaneshadhiya-ui/ai-reel-engine*, cloning into
-   `~/Movies`. That handles the private-repo auth with a normal login window.
-2. **Open the Claude desktop app** with a conversation whose folder is the
-   cloned `ai-reel-engine`.
-3. Say:
    > Set this machine up — read MIGRATION.md and do it.
 
-**Alternative without GitHub Desktop:** open a Claude conversation on any
-folder (e.g. `~/Movies`) and say *"clone my ai-reel-engine repo here and set it
-up"*. The agent will find it cannot authenticate yet and will run
-`gh auth login` — a browser-based flow that shows you a one-time code to paste.
-Once that completes it clones and runs setup itself. Then move the conversation
-to the cloned folder.
+   Approve the permission prompts.
+5. **Reconnect HeyGen** in the app's connector settings.
 
-#### Using Terminal
+### 3.2 What the agent does, in order
 
-```bash
-gh auth login                       # once per machine, browser flow
-cd ~/Movies
-git clone https://github.com/dhvaneshadhiya-ui/ai-reel-engine.git
-cd ai-reel-engine && bash setup.sh
-```
-
-Either way you get history, and `git pull` keeps both Macs in step instead of
-drifting.
-
-#### Keeping in sync afterwards
-
-**APP** — *"pull the latest and check the toolchain"*.
-**CLI** — `git pull && python3 scripts/doctor.py`
-
-Commits land at checkpoints and are pushed at the end of each session, so a
-`git pull` at the start of work on the other machine is usually all you need.
-
-**One difference from the archive:** `bin/` (the bundled ffmpeg + ffprobe) is
-NOT in the repo — 150 MB of binaries do not belong in git, and ffmpeg builds
-carry GPL obligations. On a clone, `setup.sh` installs ffmpeg via Homebrew
-instead, or tells you how. If the machine has no Homebrew and you want zero
-setup, use the tar.gz archive, which does carry the binaries.
-
-### 3.1 (archive route) Copy the archive across
-
-`ai-reel-engine-migrate.tar.gz` — AirDrop, USB, cloud. Same on both routes.
-
-### 3.2 Unpack it and place it
-
-**APP / Finder** — double-click the file; Finder unpacks `ai-reel-engine`.
-Drag it into `Movies`, or anywhere. No path is hardcoded.
-
-**CLI**
-```bash
-mkdir -p ~/Movies && cd ~/Movies
-tar -xzf ~/Desktop/ai-reel-engine-migrate.tar.gz
-cd ai-reel-engine
-```
-
-### 3.3 Install everything
-
-**APP** — open a conversation with its folder set to that folder, and say:
-> Set this machine up — read MIGRATION.md and do it.
-
-Approve the permission prompts.
-
-**CLI**
-```bash
-bash setup.sh
-```
-
-Same script either way; it ends by running doctor and the full gate self-test.
-
-### 3.4 Reconnect HeyGen
-
-In the Claude app's connector settings. **Identical on both routes** — the
-connector belongs to the app, not the repo.
-
-### 3.5 Point Claude at the folder
-
-Even if you set up from Terminal, the work happens in a conversation whose
-folder is the engine. `CLAUDE.md` loads automatically. Then name a topic.
-
-### 3.6 What `setup.sh` does, in order
+`bash setup.sh`:
 
 1. `npm install` — Remotion and dependencies
 2. `pip install pillow openai-whisper yt-dlp`
@@ -222,47 +153,33 @@ folder is the engine. `CLAUDE.md` loads automatically. Then name a topic.
 4. **whisper `base` model**, fetched with `curl` and **checksum-verified** —
    the sha256 is the URL's own path segment, so a wrong or corrupt download
    fails loudly instead of silently degrading transcription
-5. **bundled ffmpeg + ffprobe** copied into `~/.local/bin`, and that path added
-   to `~/.zshrc` — no sudo, no Homebrew
+5. **ffmpeg + ffprobe** — the bundled pair is copied into `~/.local/bin` and
+   then *test-run*. On Intel that is the end of it: no sudo, no Homebrew. On
+   Apple Silicon the test fails (macOS has removed them), the dead copies are
+   cleaned up, and `brew install ffmpeg` takes over. That path is added to
+   **`~/.zshenv`, not `~/.zshrc`** — see §3.4
 6. `doctor.py`, then the full gate self-test
 
-### 3.7 Why whisper is fetched with curl
+### 3.3 Why whisper is fetched with curl
 
-On the source machine, whisper's own downloader fails with
-`CERTIFICATE_VERIFY_FAILED: self-signed certificate`. Diagnosed 2026-08-14:
-something on that Mac **intercepts TLS** (a proxy or security agent), and
-Python's bundled `certifi` store does not carry that root — while `curl` uses
-the system keychain and succeeds. Verified the same day: `python3 urllib` fails
-on that URL, `curl -sI` returns `200`.
+On the source machine, whisper's own model downloader fails with an SSL
+certificate-chain error; `curl` works. Recorded because it looks like a network
+problem and is not.
 
-**This is machine-specific.** A clean Mac may have no such interception and
-whisper's own downloader would work. `setup.sh` uses `curl` unconditionally
-because it is correct either way, and the sha256 in the URL makes it
-verifiable.
+### 3.4 Why PATH goes in `.zshenv` and not `.zshrc`
 
-It matters because the error *looks* like a network outage and is not — without
-this note it costs an afternoon.
+zsh reads `~/.zshrc` **only for interactive shells**. The agent runs every
+pipeline command non-interactively, so a PATH line living in `.zshrc` is
+invisible to it: `doctor.py` reports `ffmpeg not on PATH` even though ffmpeg is
+installed and a human typing `ffmpeg -version` in Terminal sees it work.
+`~/.zshenv` is read by *every* zsh. Same class of failure as the missing
+Pillow — the tool is there, the check just never sees it.
 
 ---
 
 ## PART 4 — After setup: verify it works
 
-Six checks.
-
-**APP**
-> Verify the setup.
-
-**CLI**
-```bash
-python3 scripts/doctor.py
-python3 tools/test_gates.py
-python3 tools/sfx_library.py --check
-python3 tools/reel_gates.py --formats
-ls .claude/skills | wc -l
-npx tsc --noEmit -p .
-```
-
-What each one is actually telling you:
+Six checks. Say *"verify the setup"* and the agent runs them.
 
 ### 4.1 The toolchain
 
@@ -288,7 +205,7 @@ python3 scripts/doctor.py
 -- sfx library --
 [  ok  ] sfx catalogue  — 16 cues, all present.
 -- gates --
-[  ok  ] reel_gates self-test  — all 57 checks passed
+[  ok  ] reel_gates self-test  — all 72 checks passed
 
 doctor ok — toolchain complete.
 ```
@@ -304,7 +221,7 @@ python3 tools/test_gates.py
 ```
 
 Expect `33 gate ids, all unique`, then
-`all 57 checks passed — every gate fires on its violation.`
+`all 72 checks passed — every gate fires on its violation.`
 
 **Proves:** every gate still fires on its own violation. A gate that never
 triggers is worse than no gate.
@@ -314,10 +231,10 @@ triggers is worse than no gate.
 ```bash
 python3 tools/sfx_library.py --check     # 16 cues, all present
 python3 tools/reel_gates.py --formats    # news / top5 / comparison
-ls .claude/skills                        # 20 entries
+ls .claude/skills                        # 29 entries
 ```
 
-**Proves:** the sound files, format profiles and all 20 skills arrived. A
+**Proves:** the sound files, format profiles and all 29 skills arrived. A
 missing skill means the agent silently does not know the rules it carries.
 
 ### 4.4 The renderer
@@ -353,8 +270,10 @@ no credits spent — it confirms the orchestrator can read the repo.
 | `DOCTOR FAILED — node_modules` | `npm install` did not run | Re-run `npm install` |
 | `python:PIL` FAIL | Pillow missing | `pip3 install pillow`. **Do not ignore** — frame checks skip silently without it |
 | `whisper:base missing` | model not fetched | Re-run `setup.sh`; it uses curl deliberately |
-| `ffmpeg not on PATH` | `~/.local/bin` not on PATH yet | New terminal session, or re-run `setup.sh` |
-| Skills missing in Claude | folder not set, or `.claude/` lost when unpacking | Confirm `.claude/skills` has 20 entries. Finder hides dot-folders — press ⌘⇧. |
+| `ffmpeg not on PATH` | `~/.local/bin` not on PATH yet | New terminal session, or re-run `setup.sh`. If a *human* sees ffmpeg work but doctor does not, the export is in `.zshrc` — move it to `.zshenv` (§3.4) |
+| `bin/ffmpeg` has vanished from the repo | Apple Silicon. macOS deleted the unsigned x86_64 binary when it ran — no error, no log naming it | Expected, not a copy failure. `brew install ffmpeg` (§2.1). Re-copying it from the source Mac just gets it deleted again |
+| ffmpeg "installed" but every command silently does nothing | same as above, caught mid-flight | `uname -m`; if `arm64`, use Homebrew |
+| Skills missing in Claude | folder not set, or `.claude/` lost when unpacking | Confirm `.claude/skills` has 29 entries. Finder hides dot-folders — press ⌘⇧. |
 | `news-reel` skill missing | unpacked from an archive older than 2026-08-14 | Skills are real directories now, not symlinks. Rebuild the archive |
 | HeyGen calls fail | connector not attached here | Reconnect in the Claude app settings |
 | `GATES FAILED` on an old reel | expected | Reels made before a gate existed can fail it. Do not retro-fix; the rule applies forward |
@@ -362,35 +281,113 @@ no credits spent — it confirms the orchestrator can read the repo.
 
 ---
 
-## PART 6 — Keeping two machines honest
+## PART 6 — Carrying work BACK, and keeping two machines honest
 
-**Two copies drift.** `STYLE-RULES.md`, `config.json` and the gates diverge
-silently — this project found **four stale-prose drifts in a single day on one
-machine**. If both Macs will make reels:
+**This repo is now a git repo** (initialised 2026-08-17, first commit is the
+full state of the second Mac). That is the carrier. Do not rsync or copy the
+folder between machines again.
 
-- Put the repo on a **private git remote** and pull, rather than copying twice.
-- `.gitignore` already excludes `node_modules/`, `out/`, `_sources/`,
-  `public/assets/` and `bin/`, so a clone is small.
-- `bin/` is excluded from git because 150 MB of binaries does not belong there;
-  it ships only in the migration archive.
+### 6.1 Why not just copy the folder
 
-If you keep two independent copies anyway, treat **one as canonical** and
-re-export the archive from it whenever the rules change.
+`public/assets/` (per-reel b-roll), `out/` (renders) and `_sources/` (scouted
+footage) are ~3 GB and were deliberately EXCLUDED from the original archive, so
+they exist only on whichever machine made them. Copy a folder over the top and
+you destroy them. `.gitignore` already excludes all three plus `node_modules/`
+and `bin/`, so a git sync physically cannot touch them.
 
----
+### 6.2 Carrying changes across — no terminal needed
+
+**You do three things. The agent does the rest.**
+
+1. **On the machine with the new work**, tell Claude:
+
+   > Build a sync bundle for the other Mac.
+
+   It writes `ai-reel-engine-sync.bundle` (~6 MB) to your Desktop.
+
+2. **AirDrop that one file** to the other Mac. Leave it on the Desktop there.
+
+3. **Open Claude on the other Mac**, pointed at its `ai-reel-engine` folder, and
+   say:
+
+   > Sync this machine from the bundle on my Desktop — read MIGRATION.md §6.2.
+
+That is the whole procedure. Everything below is what the agent runs, recorded
+so it is reproducible — not instructions for a person.
+
+**Agent: making the bundle** (step 1)
+
+```bash
+git bundle create ~/Desktop/ai-reel-engine-sync.bundle --all
+git bundle verify ~/Desktop/ai-reel-engine-sync.bundle
+```
+
+**Agent: applying it** (step 3)
+
+```bash
+cd <the repo>                       # wherever this copy lives
+git status --porcelain              # STOP if this is non-empty — see below
+git init -b main                    # only if not already a git repo
+git remote remove sync 2>/dev/null || true
+git remote add sync ~/Desktop/ai-reel-engine-sync.bundle
+git fetch sync
+git reset --hard FETCH_HEAD
+npm install
+python3 scripts/doctor.py
+python3 tools/test_gates.py
+```
+
+`reset --hard` replaces every TRACKED file and leaves ignored files alone, so
+`public/assets/`, `out/`, `_sources/` and `node_modules/` on that machine are
+untouched. That is the whole reason this is a git sync and not a folder copy.
+
+> **Agent: if `git status` is non-empty, STOP and ask.** `reset --hard` discards
+> local edits to tracked files. Work done on that machine since the split must be
+> committed and merged (`git merge FETCH_HEAD`), not steamrollered. Say what
+> changed and let the user decide.
+
+Then confirm against the baseline in §1.2, and tell the user what §6.3 still
+needs doing by hand.
+
+### 6.3 What does NOT travel in git, and must be redone per machine
+
+The repo is portable; the toolchain is not (§3), and neither is anything that
+lives outside the repo:
+
+| Not in git | Redo with |
+|---|---|
+| **5 global skills** — find-skills, humanizer, fact-check-workflow, youtube-seo, thumbnail-design | `npx skills add <owner/repo@skill> -g -y` (list in CLAUDE.md) |
+| **chatterbox venv** | `python3 -m venv ~/.venvs/chatterbox && ~/.venvs/chatterbox/bin/pip install chatterbox-tts` — NEVER system-wide, it downgrades torch under whisper |
+| **PATH in `~/.zshenv`** | §3.4 — `.zshrc` is interactive-only, so agent-run commands never see it |
+| **ffmpeg-full, manim, deno, yt-dlp-ejs** | §2.1 / §3.2 |
+| **The HeyGen connector** | the Claude app's connector settings |
+| **`public/assets/`, `out/`, `_sources/`** | per-reel; see §1.3 |
+
+`doctor.py` names everything in that list except the skills and the connector.
+
+### 6.4 The drift this prevents
+
+Two copies drift — this project found **four stale-prose drifts in a single day
+on one machine**, and the 2026-08-16 session found three more of the same shape:
+a rule was tightened in the checker and the producer that emits the value was
+never updated, so the generic new-reel path was dead for weeks behind green
+tests. Prose and constants drift silently; git history does not.
+
+Treat whichever machine last ran `doctor` + `test_gates` green as canonical, and
+sync from it rather than merging by hand.
 
 ## Answers to the obvious questions
 
 **Is everything installable on a new machine?** Yes, and most is automatic.
-ffmpeg and ffprobe are bundled; only Node and Python are installed by hand,
-both normal double-click installers. Nothing is licensed to a machine, and no
-credentials are stored in the repo.
+Node and Python are installed by hand, both normal double-click installers. On
+**Intel**, ffmpeg is bundled and nothing else is needed. On **Apple Silicon**,
+add Homebrew — one command, one password prompt (§2.1). Nothing is licensed to
+a machine, and no credentials are stored in the repo.
 
 **Windows?** The Python and Node parts are cross-platform, but the shell
 scripts and paths assume macOS or Linux. Use WSL, or port them.
 
 **Can I keep working on the old Mac too?** Yes — but see Part 6.
 
-**Do I need the terminal at all?** No — every command here can be run for you by
-the agent. But both routes are documented above because they are equally valid,
-and Terminal is better when you want to script the move or watch raw output.
+**Do I need the terminal at all?** No. Every command here can be run for you by
+the agent in the Claude app.

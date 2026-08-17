@@ -1,10 +1,11 @@
 {
   "slug": "september-preview",
-  "topic": "What's coming at Apple's September 2026 event: iPhone 18 Pro, foldable iPhone Ultra, Watch Series 12, Watch Ultra 4 — and John Ternus's first keynote",
-  "details": "Ref: https://www.macrumors.com/2026/08/13/apple-september-announcement-rumors/ (Juli Clover, Aug 13). Format: top5, nick-saraev pack.",
-  "style": "nick-saraev",
+  "topic": "What's coming at Apple's September 2026 event: iPhone 18 Pro, foldable iPhone Ultra, Watch Series 12, Watch Ultra 4 \u2014 and John Ternus's first keynote",
+  "details": "Ref: https://www.macrumors.com/2026/08/13/apple-september-announcement-rumors/ (Juli Clover, Aug 13). Format: top5, nick-saraev pack. [SUPERSEDED 2026-08-14: format changed to news per user note (questions.md item 1); style is editorial.]",
+  "style": "editorial",
   "target_seconds": 90,
   "cta_keyword": "SEPTEMBER",
   "created_at": "2026-08-14T05:37:16.353991+00:00",
-  "status": "initialized"
+  "status": "initialized",
+  "_style_note": "was 'nick-saraev' \u2014 new_job.py stamped that on every brief regardless of config.json (bug fixed 2026-08-16); the reel shipped editorial."
 }

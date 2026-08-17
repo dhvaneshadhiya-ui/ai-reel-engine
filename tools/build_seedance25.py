@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Beat sheet for seedance-25 (varun-mayya).
+"""Beat sheet for seedance-25 (editorial).
 
 Every scene binds to an id in public/assets/seedance-25/manifest.json or to an
 MG component. Scene durations are anchored to whisper word timings so cuts
@@ -367,10 +367,10 @@ music = {
 
 beats = {
     "id": "seedance-25", "fps": 30, "width": 1080, "height": 1920,
-    "style": "varun",
+    "style": "editorial",
     "audio": AVATAR,
     "music": music,
-    "captionStyle": "nick-display",
+    "captionStyle": "word-reveal",
     "emphasis": ["TikTok", "ByteDance", "Seedance", "2.5", "30", "50", "15",
                  "10", "nine", "three", "dozen", "benchmark", "seconds"],
     "scenes": scenes, "captions": captions,

@@ -1,4 +1,4 @@
-# apple-pay-india — script + shot plan (varun-mayya)
+# apple-pay-india — script + shot plan (editorial)
 
 ~95s @ HeyGen speed 1.05. ~300 words. Runtime band 60–120s (RULES.md §1).
 

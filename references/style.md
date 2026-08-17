@@ -1,7 +1,7 @@
 # Nick Saraev style measurements
 
 Use this as a compact directing reference. The engine's
-`styles/nick-saraev.md` remains the detailed style source.
+`styles/utility.md` remains the detailed style source.
 
 ## Format
 

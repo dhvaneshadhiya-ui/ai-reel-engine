@@ -13,6 +13,24 @@ from pathlib import Path
 DEFAULT_ENGINE = Path(__file__).resolve().parent.parent  # repo root
 
 
+def locked_style(engine: Path = DEFAULT_ENGINE) -> str:
+    """Locked style pack from config.json — never hardcode it here.
+
+    This stamped "nick-saraev" on every new brief until 2026-08-16 while
+    config.json defaulted to the editorial pack, so the generic path opened
+    each job in the wrong style. Same failure as compile_shot_plan.py.
+    """
+    cfg = engine / "config.json"
+    locked = "editorial"
+    if cfg.exists():
+        try:
+            locked = json.loads(cfg.read_text()).get("defaults", {}).get(
+                "style", locked)
+        except Exception:
+            pass
+    return locked
+
+
 def slugify(value: str) -> str:
     value = re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
     return value[:64]
@@ -58,7 +76,7 @@ def main() -> None:
         "slug": slug,
         "topic": args.topic,
         "details": args.details,
-        "style": "nick-saraev",
+        "style": locked_style(engine),
         "target_seconds": args.target_seconds,
         "cta_keyword": keyword,
         "created_at": datetime.now(timezone.utc).isoformat(),

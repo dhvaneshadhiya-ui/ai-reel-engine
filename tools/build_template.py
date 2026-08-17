@@ -122,7 +122,7 @@ scenes: list[dict] = [
 ]
 
 
-# ── captions: per-word reveal for nick-display ──────────────────────────────
+# ── captions: per-word reveal for word-reveal captions ──────────────────────────────
 def chunk(ws, size=3):
     out, buf = [], []
     for (s, e, w) in ws:
@@ -163,9 +163,9 @@ music = {
 }
 
 beats = {
-    "id": SLUG, "fps": 30, "width": 1080, "height": 1920, "style": "varun",
+    "id": SLUG, "fps": 30, "width": 1080, "height": 1920, "style": "editorial",
     "audio": AVATAR, "music": music,
-    "captionStyle": "nick-display",
+    "captionStyle": "word-reveal",
     "emphasis": [],          # numbers/brands — drives the accent keyword
     "scenes": scenes, "captions": captions,
 }

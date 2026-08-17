@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Beat sheet for september-preview (varun-mayya, news).
+"""Beat sheet for september-preview (editorial, news).
 
 Aggregate rumor roundup (user rule 2026-08-14: MacRumors never named in VO —
 attribution rides on-screen credits + "rumors say"/"DigiTimes"). Cook/Ternus
@@ -341,9 +341,9 @@ music = {"src": "music/bed-02.mp3", "from": 8.0, "points": [
     {"t": TOTAL - 0.8, "vol": 0.10},
     {"t": TOTAL, "vol": 0.02}]}
 
-beats = {"id": SLUG, "fps": 30, "width": 1080, "height": 1920, "style": "varun",
+beats = {"id": SLUG, "fps": 30, "width": 1080, "height": 1920, "style": "editorial",
          "format": "news",
-         "audio": AVATAR, "music": music, "captionStyle": "nick-display",
+         "audio": AVATAR, "music": music, "captionStyle": "word-reveal",
          "script": (ROOT / "jobs" / SLUG / "script.md").read_text(),
          "approval": json.loads((ROOT / "jobs" / SLUG / "approval.json").read_text()),
          "emphasis": ["five", "foldable", "Ultra", "Ternus", "March",

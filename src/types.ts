@@ -479,14 +479,33 @@ export interface BeatSheet {
   fps: number;
   width: number;
   height: number;
-  /** active style pack — drives theme tokens for every scene (default varun) */
-  style?: "varun" | "nick";
+  /** active style pack — drives theme tokens for every scene (default
+   * "editorial"). Legacy creator ids ("varun"/"varun-mayya"/"nick"/
+   * "nick-saraev") still resolve via STYLE_ALIASES in theme/tokens.ts. */
+  style?: "editorial" | "utility" | "varun" | "varun-mayya" | "nick" | "nick-saraev";
   /** optional VO track in public/ */
   audio?: string;
   /** optional ducked music bed */
   music?: MusicBed;
-  /** chip-lg is the production Nick-style caption treatment. */
-  captionStyle?: "sans" | "mono" | "chip-small" | "chip-lg" | "nick-display" | "ink-circle";
+  /** "word-reveal" is the production caption treatment (per-word reveal,
+   * emphasis list drives the accent keyword). "nick-display" is its pre-
+   * 2026-08-16 name, still accepted. chip-* are legacy fallbacks. */
+  captionStyle?:
+    | "word-reveal"
+    | "ink-circle"
+    | "nick-display"
+    | "sans"
+    | "mono"
+    | "chip-small"
+    | "chip-lg";
+  /** Run past the format's measured runtime band. Requires
+   * `allowLongReason` (G02). Capped by RUNTIME_CEILING = 120s in
+   * tools/reel_gates.py — allowLong cannot pass that wall. Was enforced by
+   * the gate but never declared here until 2026-08-16. */
+  allowLong?: boolean;
+  /** One line arguing why this topic needs the extra runtime. G02 rejects
+   * `allowLong` without it — the flag is an argument, not a switch. */
+  allowLongReason?: string;
   /** substrings rendered accented + larger inside caption chips */
   emphasis?: string[];
   scenes: Scene[];

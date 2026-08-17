@@ -46,6 +46,72 @@ def need_module(mod: str, fix: str, why: str) -> None:
         problems.append(mod)
 
 
+def want_module(mod: str, fix: str, why: str) -> None:
+    """Optional capability: WARN, never FAIL.
+
+    For tooling the repo ships an integration for but does not require on the
+    critical path. Manim sat in exactly this state until 2026-08-16 —
+    tools/manim_scene.py + manim_theme.py + MANIM.md were all present and the
+    library was not installed, so a whole themed capability was dark while
+    doctor still printed "toolchain complete". A missing optional tool must be
+    visible; it must not stop a build that never needed it.
+    """
+    try:
+        __import__(mod)
+        report(OK, f"python:{mod}")
+    except ImportError:
+        report(WARN, f"python:{mod}", f"missing — {why} — {fix}")
+        warnings.append(mod)
+
+
+def want_venv(mod: str, venv: Path, fix: str, why: str) -> None:
+    """Optional capability that MUST stay in its own venv. WARN, never FAIL."""
+    py = venv / "bin/python"
+    if not py.exists():
+        report(WARN, f"venv:{mod}", f"missing — {why} — {fix}")
+        warnings.append(mod)
+        return
+    r = subprocess.run([str(py), "-c", f"import {mod}"],
+                       capture_output=True, text=True)
+    if r.returncode == 0:
+        report(OK, f"venv:{mod}", str(venv).replace(str(Path.home()), "~"))
+    else:
+        report(WARN, f"venv:{mod}", f"venv exists but import fails — {fix}")
+        warnings.append(mod)
+    # The whole point of the venv: system python must NOT carry it.
+    leak = subprocess.run([sys.executable, "-c", f"import {mod}"],
+                          capture_output=True, text=True)
+    if leak.returncode == 0:
+        report(WARN, f"venv:{mod} leak",
+               "also installed in SYSTEM python — it downgrades torch under "
+               f"whisper. Remove with: pip3 uninstall {mod}")
+        warnings.append(f"{mod}-leak")
+
+
+def want_filter(name: str, why: str) -> None:
+    """An ffmpeg filter the repo may reach for. WARN, never FAIL.
+
+    Homebrew's default `ffmpeg` formula omits libfreetype/libass, so drawtext,
+    subtitles and ass are absent from it. `brew install ffmpeg-full` supplies
+    them. Recorded because the absence is silent: ffmpeg runs fine and the
+    filter simply does not exist.
+    """
+    ff = shutil.which("ffmpeg")
+    if not ff:
+        return
+    try:
+        out = subprocess.run([ff, "-hide_banner", "-filters"],
+                             capture_output=True, text=True, timeout=20).stdout
+    except Exception:
+        return
+    if any(line.split()[1:2] == [name] for line in out.splitlines() if line.strip()):
+        report(OK, f"ffmpeg:{name}")
+    else:
+        report(WARN, f"ffmpeg:{name}",
+               f"filter absent — {why} — brew install ffmpeg-full")
+        warnings.append(f"ffmpeg:{name}")
+
+
 print("=== ai-reel-engine doctor ===\n-- binaries --")
 need_bin("ffmpeg", "install ffmpeg")
 need_bin("ffprobe", "install ffmpeg")
@@ -58,6 +124,19 @@ print("\n-- python modules --")
 need_module("PIL", "pip3 install pillow",
             "frame-lint pixel checks SILENTLY SKIP without it")
 need_module("whisper", "pip3 install openai-whisper", "word timings")
+
+print("\n-- optional capabilities (warn only) --")
+want_module("manim", "pip3 install manim (needs: brew install cairo pango pkg-config)",
+            "tools/manim_scene.py + manim_theme.py render mechanism diagram clips")
+# chatterbox lives in its OWN venv on purpose: installing it into system
+# python downgraded torch 2.13 -> 2.6 under whisper, which is on the critical
+# path (captions, tighten_vo, gates). Never pip-install it system-wide again.
+want_venv("chatterbox", Path.home() / ".venvs/chatterbox",
+          "python3 -m venv ~/.venvs/chatterbox && "
+          "~/.venvs/chatterbox/bin/pip install chatterbox-tts",
+          "local TTS for rehearsing script timing without spending HeyGen credits")
+want_filter("drawtext", "burn-in text via ffmpeg; lint_frames.py falls back to PIL")
+want_filter("subtitles", "burn-in .srt via ffmpeg (captions normally come from Remotion)")
 
 print("\n-- whisper models (cached) --")
 cache = Path.home() / ".cache/whisper"
@@ -101,7 +180,7 @@ else:
     av, de = cfg.get("avatar", {}), cfg.get("defaults", {})
     checks = [
         ("avatar.voiceSpeed", av.get("voiceSpeed"), 1.05),
-        ("defaults.captionStyle", de.get("captionStyle"), "nick-display"),
+        ("defaults.captionStyle", de.get("captionStyle"), "word-reveal"),
     ]
     for name, got, want in checks:
         if got == want:

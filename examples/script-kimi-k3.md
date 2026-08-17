@@ -1,4 +1,4 @@
-# kimi-k3 — why it's going viral (varun-mayya, PREMIUM, VibeVoice audio)
+# kimi-k3 — why it's going viral (editorial, PREMIUM, VibeVoice audio)
 
 News (verified 2026-07-27): Moonshot released Kimi K3 full open weights TODAY
 (Jul 27). Open + cheap; demos went viral all week.

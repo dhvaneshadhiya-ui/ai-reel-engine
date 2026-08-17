@@ -9,10 +9,24 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
 DEFAULT_ENGINE = Path(__file__).resolve().parent.parent  # repo root
+
+# reel_gates.py owns the style/caption alias map; import it rather than keeping
+# a second copy here (two copies drift — see CLAUDE.md "Keeping two machines
+# honest"). Falls back to identity if tools/ is unavailable.
+sys.path.insert(0, str(DEFAULT_ENGINE / "tools"))
+try:
+    from reel_gates import canon_caption, canon_style  # noqa: E402
+except Exception:                                       # pragma: no cover
+    def canon_style(v):    # type: ignore[misc]
+        return v
+
+    def canon_caption(v):  # type: ignore[misc]
+        return v
 MEDIA_KEYS = {
     "src",
     "topSrc",
@@ -102,9 +116,11 @@ def main() -> None:
     # 2026-08-12: was hardcoded to "nick-saraev", which meant the job path
     # rejected every reel actually shipped (all varun-mayya) while config.json
     # defaulted to varun-mayya. A style is valid if it has a pack in styles/.
+    # 2026-08-16: packs renamed to editorial/utility; legacy creator ids are
+    # canonicalised first so old briefs still validate.
     known = sorted(p.stem for p in (DEFAULT_ENGINE / "styles").glob("*.md")
                    if not p.stem.endswith("-playbook"))
-    if brief.get("style") not in known:
+    if canon_style(brief.get("style")) not in known:
         errors.append(f"brief style {brief.get('style')!r} has no pack in "
                       f"styles/ — known: {known}")
     if beats.get("id") != slug:
@@ -112,18 +128,18 @@ def main() -> None:
     for key, expected in (("fps", 30), ("width", 1080), ("height", 1920)):
         if beats.get(key) != expected:
             errors.append(f"{key} must be {expected}")
-    # Locked caption style lives in config.json (user rule 2026-07-30:
-    # nick-display). reel_gates G10 is the primary gate; this mirrors it
-    # instead of hardcoding the pre-2026-07-30 chip-lg value.
+    # Locked caption style lives in config.json (user rule 2026-07-30;
+    # renamed to word-reveal 2026-08-16). reel_gates G10 is the primary gate;
+    # this mirrors it instead of hardcoding a literal.
     cfg = engine / "config.json"
-    locked_style = "nick-display"
+    locked_style = "word-reveal"
     if cfg.exists():
         try:
             locked_style = json.loads(cfg.read_text()).get("defaults", {}).get(
                 "captionStyle", locked_style)
         except Exception:
             pass
-    if beats.get("captionStyle") != locked_style:
+    if canon_caption(beats.get("captionStyle")) != canon_caption(locked_style):
         errors.append(f"captionStyle must be {locked_style}")
 
     scenes = beats.get("scenes")

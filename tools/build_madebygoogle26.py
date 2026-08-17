@@ -420,12 +420,12 @@ music = {
 }
 
 beats = {
-    "id": SLUG, "fps": 30, "width": 1080, "height": 1920, "style": "varun",
+    "id": SLUG, "fps": 30, "width": 1080, "height": 1920, "style": "editorial",
     "format": "news", "allowLong": True,
     "allowLongReason": MANIFEST["allowLongReason"],
     "script": SCRIPT, "approval": APPROVAL,
     "audio": AVATAR, "music": music,
-    "captionStyle": "nick-display",
+    "captionStyle": "word-reveal",
     "emphasis": ["$29", "$899", "40%", "56%", "48", "3,600-nit", "120x", "15",
                  "10%", "3x", "G6", "3.5x", "Titan", "quantum", "20%",
                  "insulin", "breathing", "billion", "500", "Rambler", "$100",

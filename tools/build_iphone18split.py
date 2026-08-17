@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Beat sheet for iphone18-split (varun-mayya, news).
+"""Beat sheet for iphone18-split (editorial, news).
 
 Pegatron's Aug 12 earnings call (via Economic Daily News / MacRumors +
 AppleInsider) — supplier-tier sourcing, so claims are attributed once
@@ -333,9 +333,9 @@ music = {"src": "music/bed-02.mp3", "from": 8.0, "points": [
     {"t": TOTAL - 0.8, "vol": 0.10},
     {"t": TOTAL, "vol": 0.02}]}
 
-beats = {"id": SLUG, "fps": 30, "width": 1080, "height": 1920, "style": "varun",
+beats = {"id": SLUG, "fps": 30, "width": 1080, "height": 1920, "style": "editorial",
          "format": "news",
-         "audio": AVATAR, "music": music, "captionStyle": "nick-display",
+         "audio": AVATAR, "music": music, "captionStyle": "word-reveal",
          "script": (ROOT / "jobs" / SLUG / "script.md").read_text(),
          "approval": json.loads((ROOT / "jobs" / SLUG / "approval.json").read_text()),
          "allowLong": True,

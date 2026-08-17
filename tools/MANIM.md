@@ -11,20 +11,20 @@ footage clip, or full-bleed-crop into the 1080x1920 canvas.
 ## Usage
 
 ```bash
-python3 tools/manim_scene.py <template> --style varun|nick --bg cream|black \
+python3 tools/manim_scene.py <template> --style editorial|utility --bg cream|black \
     --out <path.mp4> [--args '<JSON>']
 ```
 
 Examples (these are the verified sample commands):
 
 ```bash
-# model fan-out, varun cream
-python3 tools/manim_scene.py fanout --style varun --bg cream \
-  --out out/dev-manim/fanout-varun-cream.mp4 \
+# model fan-out, editorial cream
+python3 tools/manim_scene.py fanout --style editorial --bg cream \
+  --out out/dev-manim/fanout-editorial-cream.mp4 \
   --args '{"center": "Fable 5", "children": ["Kimi K2.7", "GLM 5.2", "Qwen 4", "DeepSeek V4"]}'
 
 # pipeline, nick cream
-python3 tools/manim_scene.py pipeline --style nick --bg cream \
+python3 tools/manim_scene.py pipeline --style utility --bg cream \
   --out out/dev-manim/pipeline-nick-cream.mp4 \
   --args '{"stages": ["script", "voice", "avatar", "render"]}'
 
@@ -56,9 +56,9 @@ Rules of thumb:
 `tools/manim_theme.py` is the single source of truth, mirroring
 `src/theme/tokens.ts`:
 
-- **varun** — cream `#f4f0e6` / black `#0a0a0a`, ink `#141414`
+- **editorial** — cream `#f4f0e6` / black `#0a0a0a`, ink `#141414`
   (`#f5f2ea` on dark), accent yellow `#FFD84D`
-- **nick** — cream `#efe9dc` / black `#0d0d0d`, ink `#181512`
+- **utility** — cream `#efe9dc` / black `#0d0d0d`, ink `#181512`
   (`#f2ede3` on dark), accent terracotta `#E0785A`
 
 Type: real **Fraunces** (converted from `public/fonts/*.woff2` into

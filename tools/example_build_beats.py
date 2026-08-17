@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Beat sheet for kleo (varun-mayya, VibeVoice) — Cameron Trew nerve story.
+"""Beat sheet for kleo (editorial, VibeVoice) — Cameron Trew nerve story.
 First reel through the Scout->Director pipeline: every beat pre-bound in
 scripts/kleo.md to manifest assets or MG specs."""
 import json

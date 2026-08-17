@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Beat sheet for grok-bot (varun-mayya).
+"""Beat sheet for grok-bot (editorial).
 
 Source is x.ai's own launch film (via the @bot X post) plus the announcement
 page. Tier-1 official source, so per RULES.md the claims are stated flat and
@@ -319,8 +319,8 @@ music = {"src": "music/bed-02.mp3", "from": 8.0, "points": [
     {"t": R["audit records"][0], "vol": 0.13},
     {"t": TOTAL - 0.9, "vol": 0.13}, {"t": TOTAL, "vol": 0.02}]}
 
-beats = {"id": SLUG, "fps": 30, "width": 1080, "height": 1920, "style": "varun",
-         "audio": AVATAR, "music": music, "captionStyle": "nick-display",
+beats = {"id": SLUG, "fps": 30, "width": 1080, "height": 1920, "style": "editorial",
+         "audio": AVATAR, "music": music, "captionStyle": "word-reveal",
          "emphasis": ["Grok", "Bot", "Bots", "SpaceXAI", "Cursor", "MCP", "API",
                       "300", "200", "120", "beta", "macOS", "iOS", "24/7"],
          "scenes": scenes, "captions": captions}

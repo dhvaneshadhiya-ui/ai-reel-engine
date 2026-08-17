@@ -41,7 +41,7 @@ const isEmph = (word: string, emphasis: string[]) => {
 };
 
 /**
- * "nick-display" caption: Nick Saraev's caption system, measured from his 12
+ * "word-reveal" caption (formerly "nick-display"): measured from the 12
  * reels (2026-07-30 teardown). Big free-floating text, NO pill: connective
  * words in italic, the KEY word (emphasis list) lands heavier + bigger +
  * accent-colored. Words accumulate as spoken (per-word reveal). Deep soft
@@ -127,7 +127,7 @@ const NickDisplay: React.FC<{
  * a hand-drawn ellipse looping that word — irregular, and overshooting where
  * the stroke crosses itself, like a real marker.
  *
- * It differs from `nick-display` on every axis: ink instead of white, sentence
+ * It differs from `word-reveal` on every axis: ink instead of white, sentence
  * case instead of caps, upright instead of italic, and the line BUILDS word by
  * word and stays up rather than replacing itself. Use it on light grounds.
  */
@@ -248,7 +248,14 @@ const HandCircle: React.FC<{ accent: string; draw: number }> = ({
 
 export const CaptionChips: React.FC<{
   captions: CaptionWord[];
-  mode?: "sans" | "mono" | "chip-small" | "chip-lg" | "nick-display" | "ink-circle";
+  mode?:
+    | "word-reveal"
+    | "ink-circle"
+    | "nick-display"
+    | "sans"
+    | "mono"
+    | "chip-small"
+    | "chip-lg";
   emphasis?: string[];
   /** time-ranged bottom offsets so chips never cover a face */
   positions?: { start: number; end: number; bottom: number }[];
@@ -288,7 +295,9 @@ export const CaptionChips: React.FC<{
     );
   }
 
-  if (mode === "nick-display") {
+  // "nick-display" is the pre-2026-08-16 name for "word-reveal"; the seven
+  // already-published beat sheets still carry it.
+  if (mode === "word-reveal" || mode === "nick-display") {
     const dark = darkRanges.some((r) => t >= r.start && t < r.end);
     return (
       <NickDisplay
