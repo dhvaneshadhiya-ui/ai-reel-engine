@@ -9,6 +9,7 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -269,8 +270,20 @@ def main() -> None:
     else:
         focus_full = focus_split = round(face_x, 4)
 
+    # Read `assets`, which is what every manifest in this repo actually writes.
+    #
+    # This said `manifest.get("items", [])` and nothing has ever used that key —
+    # all seven manifests carry `assets` and zero carry `items`. So the lookup was
+    # ALWAYS empty and any shot naming an asset_id died with "unknown manifest
+    # asset". That is why every jobs/*/shot-plan.json holds 0 shots and why the
+    # reels were hand-assembled by bespoke build_<slug>.py scripts instead: the
+    # phrase-anchored path was not rejected on merit, it was broken on first
+    # contact and quietly abandoned. `items` stays accepted in case an older
+    # manifest turns up.
     manifest_items = {
-        str(item.get("id")): item for item in manifest.get("items", []) if item.get("id")
+        str(item.get("id")): item
+        for item in (manifest.get("assets") or manifest.get("items") or [])
+        if item.get("id")
     }
     shots = plan.get("shots")
     if not isinstance(shots, list) or not shots:
@@ -329,6 +342,18 @@ def main() -> None:
         if asset:
             scene.setdefault("assetId", str(asset_id))
             scene.setdefault("claimId", str(shot.get("claim_id", asset_id)))
+            # RULE 3 / G39 — the line this visual illustrates.
+            #
+            # It is the shot's own anchor, and that is the whole point: a
+            # phrase-anchored shot was DEFINED by the words it sits under before
+            # anyone went looking for footage, so `covers` here is evidence, not
+            # a restatement of whatever happened to be said over a finished
+            # scene. That inversion is why deriving it is legitimate here and
+            # circular in tools/link_shots.py, which has to work backwards from
+            # reels that were hand-assembled without a plan.
+            anchor = str(shot.get("start_phrase", "")).strip()
+            if anchor:
+                scene.setdefault("covers", anchor)
             if asset.get("source_url"):
                 scene.setdefault("sourceUrl", asset["source_url"])
             if asset.get("credit") and scene["type"] in {
@@ -380,6 +405,28 @@ def main() -> None:
     }
     output = engine / f"src/beats/{slug}.json"
     output.parent.mkdir(parents=True, exist_ok=True)
+
+    # Refuse to shrink an existing beat sheet without being told to.
+    #
+    # Found the hard way 2026-08-17: compiling a 2-shot test plan silently
+    # replaced a finished 47-scene sheet, taking its `covers` links and its
+    # derived music curve with it. Recovering from git was luck — the sheet
+    # happened to be committed. A compile that can quietly delete an evening's
+    # work needs to say so first.
+    if output.exists() and "--force" not in sys.argv:
+        try:
+            prev = json.loads(output.read_text()).get("scenes", [])
+        except (OSError, json.JSONDecodeError):
+            prev = []
+        if len(prev) > len(scenes):
+            raise SystemExit(
+                f"{output.relative_to(engine)} already has {len(prev)} scenes and "
+                f"this plan compiles only {len(scenes)}.\n"
+                "Refusing to overwrite: the existing sheet may carry `covers` "
+                "links, a derived music curve, or hand-tuned beats.\n"
+                "Re-run with --force if replacing it is what you meant."
+            )
+
     output.write_text(json.dumps(beats, indent=2, ensure_ascii=False) + "\n")
     print(f"compiled {len(scenes)} shots, {audio_end:.3f}s: {output}")
 
