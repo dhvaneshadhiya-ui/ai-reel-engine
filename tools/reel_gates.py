@@ -228,6 +228,13 @@ BLOCKING_RULES: dict[str, str] = {
     "G32": "R1 the outro must clear the platform's own chrome",
     "G34": "R1 an orphaned single letter is unreadable",
     "G38": "R1 70-85% watch on mute, so the hook must carry words",
+    # G31 is RULE 1, not taste. Instagram and YouTube both normalise loudness,
+    # so a master 2 LU under target plays audibly quieter than everything around
+    # it in the feed — a platform-specific defect, the same category as content
+    # hidden under the platform's own chrome. The +/-1.0 LU tolerance was derived
+    # by measurement (two-pass lands ~0.5 LU short), not chosen; widen it if it
+    # ever rejects a master that sounds right.
+    "G31": "R1 platforms normalise loudness, so the master must hit the target",
     # RULE 2 — sources are scouted on mobile view first.
     "G29": "R2 sources are captured on mobile view first",
     # RULE 3 — what is on screen matches what the creator says.
@@ -1378,11 +1385,18 @@ def check_master(path: Path) -> tuple[float, float]:
          "-filter_complex", "ebur128=peak=true", "-f", "null", "-"],
         capture_output=True, text=True)
     integrated, true_peak = parse_ebur128(proc.stderr)
-    errors = master_errors(integrated, true_peak)
-    if errors:
+    # Route through the SAME classification as every other check. This function
+    # was written in a worktree before BLOCKING_RULES existed and raised
+    # directly, which meant G31 blocked unconditionally while everything else
+    # declared its status — one authority is the whole point, and an exception
+    # that quietly opts out of it is how the old 37-rule sprawl happened.
+    blocking, advice = _partition(master_errors(integrated, true_peak))
+    for note in advice:
+        print(f"  warning: {note}")
+    if blocking:
         raise GateError(
-            f"{len(errors)} blocking rule violation(s):\n  - "
-            + "\n  - ".join(errors))
+            f"{len(blocking)} blocking violation(s):\n  - "
+            + "\n  - ".join(blocking), advice=advice)
     return integrated, true_peak
 
 
