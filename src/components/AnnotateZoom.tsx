@@ -33,6 +33,26 @@ export interface AnnotateZoomProps {
   focus?: { x: number; y: number; w: number; h: number };
   annotations?: AnnotateZoomAnnotation[];
   credit?: string;
+  /**
+   * Present the focus region as its OWN card instead of a viewport onto the
+   * whole page.
+   *
+   * The zoom ceiling that stopped us slicing text off both edges has a cost: the
+   * card is the whole source, so a quote near the top of a long article shows as
+   * a thin slice of a tall page. Cropping to the focus fixes the composition and
+   * lets a TALL focus grow until it meets the frame height rather than being
+   * held back by the page's own aspect.
+   *
+   * What it does NOT do, so nobody expects it to: it does not make the text
+   * bigger when the focus is already near full page width — the width fit
+   * governs that either way — and it cannot remove the dead space around a
+   * LANDSCAPE source in a 9:16 frame. That is geometric. The fix there is a
+   * portrait source, which G36 already gates.
+   *
+   * Defaults on when the padded focus is under 70% of the page height, i.e.
+   * exactly when the page-as-card framing is wasteful.
+   */
+  crop?: boolean;
 }
 
 const clamp = (v: number, lo: number, hi: number) =>
@@ -53,10 +73,11 @@ export const AnnotateZoom: React.FC<AnnotateZoomProps> = ({
   focus,
   annotations = [],
   credit,
+  crop,
 }) => {
   const theme = useTheme();
   const frame = useCurrentFrame();
-  const { fps, width, durationInFrames } = useVideoConfig();
+  const { fps, width, height, durationInFrames } = useVideoConfig();
   const t = frame / fps;
   const dark = bg === "black";
 
@@ -113,9 +134,19 @@ export const AnnotateZoom: React.FC<AnnotateZoomProps> = ({
   // Measure with tools/check_safe_area.py.
   const zFits = fitsZoom(width, uw);
 
+  // CROP MODE — show the padded focus as its own card. Because the visible box
+  // is now the focus and not the page, the zoom may be limited by EITHER axis,
+  // so a tall focus can grow to meet the frame height instead of being pinned
+  // by the page aspect. Width still respects the same safe ceiling.
+  const cropAuto = uh < cardH * 0.7;
+  const cropping = crop ?? cropAuto;
+  const cropZ = Math.min(zFits, (height * 0.82) / uh);
+
   const baseZ = Math.min(clamp(fit, 1.15, 2.4), zFits);
   const pushIn = interpolate(frame, [0, durationInFrames], [0, 0.05]);
-  const Z = Math.min(baseZ + pushIn, zFits);
+  const Z = cropping
+    ? Math.min(cropZ + pushIn * 0.4, cropZ)
+    : Math.min(baseZ + pushIn, zFits);
 
   // settle from slightly wide to the focus framing over ~0.8s
   const settle = easeOut(t / 0.8);
@@ -286,33 +317,62 @@ export const AnnotateZoom: React.FC<AnnotateZoomProps> = ({
 
       <div
         style={{
-          width: cardW,
-          height: cardH,
+          // CROP MODE: the box is the padded focus, and the page slides inside
+          // it. Otherwise the box is the whole page, as before.
+          width: cropping ? uw : cardW,
+          height: cropping ? uh : cardH,
           position: "relative",
           borderRadius: theme.radius.card,
           overflow: "hidden",
           boxShadow: dark ? theme.shadow.cardOnDark : theme.shadow.card,
           opacity: enter,
-          transform: `translate(${tx}px, ${ty + (1 - enter) * 40}px) scale(${Zeased})`,
+          transform: cropping
+            ? `translateY(${(1 - enter) * 40}px) scale(${Zeased})`
+            : `translate(${tx}px, ${ty + (1 - enter) * 40}px) scale(${Zeased})`,
           transformOrigin: "50% 50%",
+          // A crop lands wherever the focus rect ends, which is usually mid-way
+          // through the NEXT line of body text — a sliced half-line reads as a
+          // rendering mistake. Fading the last few percent turns the cut into an
+          // intentional edge. Only the cropped edges fade; the sides are the
+          // safe-area boundary and must stay crisp.
+          ...(cropping
+            ? {
+                WebkitMaskImage:
+                  "linear-gradient(to bottom, transparent 0%, #000 5%, #000 93%, transparent 100%)",
+                maskImage:
+                  "linear-gradient(to bottom, transparent 0%, #000 5%, #000 93%, transparent 100%)",
+              }
+            : {}),
         }}
       >
-        <Img
-          src={staticFile(src)}
-          style={{ width: "100%", height: "100%", display: "block" }}
-        />
-        <svg
-          viewBox={`0 0 ${srcWidth} ${srcHeight}`}
+        {/* The page and its annotation overlay must move as ONE unit, offset by
+            the same amount, or the marks drift off the words they point at. */}
+        <div
           style={{
             position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            filter: glow,
+            width: cardW,
+            height: cardH,
+            left: cropping ? -(fx - FPAD) * s : 0,
+            top: cropping ? -(fy - FPAD) * s : 0,
           }}
         >
-          {annotations.map(renderAnnotation)}
-        </svg>
+          <Img
+            src={staticFile(src)}
+            style={{ width: "100%", height: "100%", display: "block" }}
+          />
+          <svg
+            viewBox={`0 0 ${srcWidth} ${srcHeight}`}
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              filter: glow,
+            }}
+          >
+            {annotations.map(renderAnnotation)}
+          </svg>
+        </div>
       </div>
 
       {/* ONE credit treatment. This used to be a hand-rolled block at
