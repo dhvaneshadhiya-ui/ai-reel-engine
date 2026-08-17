@@ -2285,3 +2285,45 @@ come from a live run.
 |---|---|---|
 | gate ids | 33 | **35** |
 | self-tests | 67 | **72** |
+
+## 2026-08-17 — two-machine merge, and two real bugs in the sync procedure
+
+Applied Mac 2's bundle to Mac 1. Did NOT follow §6.2 literally, because
+following it would have destroyed work.
+
+**THE HISTORIES WERE UNRELATED.** Mac 2 was set up from the tar.gz archive and
+then `git init`ed independently, so its root (`1ca11f1`) shares no ancestor with
+Mac 1's (`136b4b6`). `git merge-base` returned nothing.
+
+**BUG 1 IN §6.2 — the guard checked the wrong thing.** It ran
+`git status --porcelain` and stopped only on UNCOMMITTED edits. That was clean.
+Meanwhile Mac 1 held six local COMMITS the bundle had never seen, including the
+entire `iphone-fold-ultra` reel (12 files) and the G09 `noMusic` opt-out.
+`reset --hard` would have deleted all of it and reported success. The check that
+matters is `git log --oneline HEAD --not sync/main`, and it was absent.
+
+**BUG 2 — `git merge FETCH_HEAD` silently no-ops.** `git fetch sync` writes the
+tip to `refs/remotes/sync/main` and marks `.git/FETCH_HEAD` **`not-for-merge`**.
+`reset --hard FETCH_HEAD` works (reset reads the SHA), but `merge FETCH_HEAD`
+prints "Already up to date" and changes NOTHING. I hit exactly this: the merge
+appeared to succeed with zero conflicts, which contradicted the merge-base
+result and was the tell. Merge `sync/main`, never `FETCH_HEAD`.
+
+**RESOLUTION.** Pushed Mac 1 to GitHub first plus a `pre-sync-2026-08-17` tag,
+so the pre-merge state is recoverable. Then merged with
+`--allow-unrelated-histories`: 50 conflicts, resolved by taking sync/main
+wholesale (strictly ahead — 35 gates, editorial/utility rename, 180s ceiling,
+coverage assertion, Apple-Silicon ffmpeg finding, .zshenv fix) and re-applying
+Mac 1's one unique gate change, the G09 noMusic opt-out, plus a self-test case
+for it that sync did not have.
+
+**VERIFIED AFTER, NOT ASSUMED:** 35 gate ids all unique; coverage says all 35
+have a failing case; **73 self-tests pass**; skills 29, sfx 16, scene types 42 —
+matching the §1.2 baseline exactly; tsc clean; doctor ok with the two expected
+§6.3 warnings (manim, chatterbox venv); iphone-fold-ultra present and
+re-registered in generatedBeatSheets.
+
+LESSON: a sync procedure whose safety check cannot see the thing it is meant to
+protect is not a safety check. The same class as the earlier
+`gh api contents/<path>` test that reported five excluded directories as
+PRESENT — a verification that cannot fail is not a verification.

@@ -326,25 +326,59 @@ git bundle verify ~/Desktop/ai-reel-engine-sync.bundle
 
 ```bash
 cd <the repo>                       # wherever this copy lives
-git status --porcelain              # STOP if this is non-empty — see below
-git init -b main                    # only if not already a git repo
 git remote remove sync 2>/dev/null || true
 git remote add sync ~/Desktop/ai-reel-engine-sync.bundle
-git fetch sync
-git reset --hard FETCH_HEAD
-npm install
-python3 scripts/doctor.py
-python3 tools/test_gates.py
+git bundle verify ~/Desktop/ai-reel-engine-sync.bundle
+git fetch sync                      # safe; writes only refs/remotes/sync/main
+
+# ---- THE TWO CHECKS THAT DECIDE WHAT COMES NEXT ----
+git status --porcelain               # (a) uncommitted edits?
+git log --oneline HEAD --not sync/main   # (b) local COMMITS the bundle lacks?
+git merge-base HEAD sync/main        # empty output = UNRELATED histories
+
+# Only if (a) AND (b) are both empty, and a merge-base exists:
+git reset --hard sync/main
+
+# Otherwise MERGE — never reset:
+git merge sync/main --allow-unrelated-histories
+
+npm install && python3 scripts/register_beats.py
+python3 scripts/doctor.py && python3 tools/test_gates.py
 ```
+
+> **Two bugs in the earlier version of this procedure, both hit for real on
+> 2026-08-17. Do not reintroduce them.**
+>
+> **1. It only checked for uncommitted edits.** `git status --porcelain` was
+> clean, so the guard passed — while this machine held six local COMMITS the
+> bundle had never seen, including an entire reel (`iphone-fold-ultra`, 12
+> files) and the G09 `noMusic` opt-out. `reset --hard` would have deleted all
+> of it silently. **Check (b) is the one that matters**, and it is the check
+> that was missing.
+>
+> **2. `git merge FETCH_HEAD` silently does nothing.** `git fetch sync` writes
+> the bundle's tip into `refs/remotes/sync/main` and marks `.git/FETCH_HEAD`
+> **`not-for-merge`**. `reset --hard FETCH_HEAD` works because reset reads the
+> SHA directly, but `merge FETCH_HEAD` reports *"Already up to date"* and
+> changes nothing — so you believe you have synced when you have not. **Merge
+> `sync/main`, never `FETCH_HEAD`.**
+>
+> If the histories are unrelated, expect conflicts on every shared file (50 of
+> them in the real case). Resolving by taking the AHEAD side wholesale and then
+> re-applying the behind side's genuinely unique work is faster and safer than
+> hand-merging each file — but you must first know what "unique" is, which is
+> check (b) again.
 
 `reset --hard` replaces every TRACKED file and leaves ignored files alone, so
 `public/assets/`, `out/`, `_sources/` and `node_modules/` on that machine are
 untouched. That is the whole reason this is a git sync and not a folder copy.
 
-> **Agent: if `git status` is non-empty, STOP and ask.** `reset --hard` discards
-> local edits to tracked files. Work done on that machine since the split must be
-> committed and merged (`git merge FETCH_HEAD`), not steamrollered. Say what
-> changed and let the user decide.
+> **Agent: if EITHER check is non-empty, STOP and ask.** `reset --hard` discards
+> local edits *and* orphans local commits. Report exactly what would be lost —
+> which files, which commits, and whether the bundle contains that work at all
+> — then let the user choose. Push the local side somewhere first if it is not
+> already backed up; a tag (`git tag pre-sync-<date>`) makes the pre-merge state
+> findable no matter how the merge goes.
 
 Then confirm against the baseline in §1.2, and tell the user what §6.3 still
 needs doing by hand.
