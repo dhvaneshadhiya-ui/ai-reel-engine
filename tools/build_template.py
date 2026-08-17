@@ -154,6 +154,12 @@ for grp in chunk(words):
 music = {
     "src": "music/bed-02.mp3", "from": 8.0,
     "points": [
+        # DO NOT SHIP THESE. They are a placeholder so the sheet is valid while
+        # you build; G37 blocks a render until the curve is DERIVED from the
+        # voice:   python3 tools/duck_music.py <slug> --write
+        # Hardcoded clock times cannot hear the VO. Measured on six shipped
+        # reels, they ducked by +0.003 and three were inverted (music LOUDER
+        # under the voice than in the pauses).
         {"t": 0.0, "vol": 0.15},                 # full at the hook
         {"t": 8.0, "vol": 0.08},                 # duck through explanation
         {"t": TOTAL * 0.7, "vol": 0.14},         # rise at the reveal

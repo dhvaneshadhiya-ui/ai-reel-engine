@@ -12,25 +12,234 @@
     "points": [
       {
         "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 2.86,
+        "vol": 0.055
+      },
+      {
+        "t": 3.18,
         "vol": 0.15
       },
       {
-        "t": 9.0,
-        "vol": 0.08
+        "t": 3.36,
+        "vol": 0.055
       },
       {
-        "t": 54.01240000000001,
-        "vol": 0.14
+        "t": 15.08,
+        "vol": 0.055
+      },
+      {
+        "t": 15.42,
+        "vol": 0.15
+      },
+      {
+        "t": 15.58,
+        "vol": 0.15
+      },
+      {
+        "t": 15.76,
+        "vol": 0.055
+      },
+      {
+        "t": 21.58,
+        "vol": 0.055
+      },
+      {
+        "t": 21.9,
+        "vol": 0.15
+      },
+      {
+        "t": 22.08,
+        "vol": 0.055
+      },
+      {
+        "t": 23.22,
+        "vol": 0.055
+      },
+      {
+        "t": 23.56,
+        "vol": 0.15
+      },
+      {
+        "t": 23.74,
+        "vol": 0.15
+      },
+      {
+        "t": 23.92,
+        "vol": 0.055
+      },
+      {
+        "t": 29.96,
+        "vol": 0.055
+      },
+      {
+        "t": 30.3,
+        "vol": 0.15
+      },
+      {
+        "t": 30.34,
+        "vol": 0.15
+      },
+      {
+        "t": 30.52,
+        "vol": 0.055
+      },
+      {
+        "t": 43.04,
+        "vol": 0.055
+      },
+      {
+        "t": 43.38,
+        "vol": 0.15
+      },
+      {
+        "t": 43.56,
+        "vol": 0.055
+      },
+      {
+        "t": 48.02,
+        "vol": 0.055
+      },
+      {
+        "t": 48.36,
+        "vol": 0.15
+      },
+      {
+        "t": 48.42,
+        "vol": 0.15
+      },
+      {
+        "t": 48.6,
+        "vol": 0.055
+      },
+      {
+        "t": 50.2,
+        "vol": 0.055
+      },
+      {
+        "t": 50.54,
+        "vol": 0.15
+      },
+      {
+        "t": 50.74,
+        "vol": 0.15
+      },
+      {
+        "t": 50.92,
+        "vol": 0.055
+      },
+      {
+        "t": 53.54,
+        "vol": 0.055
+      },
+      {
+        "t": 53.84,
+        "vol": 0.15
+      },
+      {
+        "t": 53.88,
+        "vol": 0.15
+      },
+      {
+        "t": 54.02,
+        "vol": 0.055
+      },
+      {
+        "t": 58.68,
+        "vol": 0.055
+      },
+      {
+        "t": 59.02,
+        "vol": 0.15
+      },
+      {
+        "t": 59.1,
+        "vol": 0.15
+      },
+      {
+        "t": 59.28,
+        "vol": 0.055
+      },
+      {
+        "t": 59.72,
+        "vol": 0.055
+      },
+      {
+        "t": 60.02,
+        "vol": 0.15
+      },
+      {
+        "t": 60.06,
+        "vol": 0.15
+      },
+      {
+        "t": 60.2,
+        "vol": 0.055
+      },
+      {
+        "t": 61.52,
+        "vol": 0.055
+      },
+      {
+        "t": 61.86,
+        "vol": 0.15
+      },
+      {
+        "t": 61.96,
+        "vol": 0.15
+      },
+      {
+        "t": 62.14,
+        "vol": 0.055
+      },
+      {
+        "t": 65.5,
+        "vol": 0.055
+      },
+      {
+        "t": 65.84,
+        "vol": 0.15
+      },
+      {
+        "t": 66.24,
+        "vol": 0.15
+      },
+      {
+        "t": 66.42,
+        "vol": 0.055
+      },
+      {
+        "t": 73.98,
+        "vol": 0.055
+      },
+      {
+        "t": 74.32,
+        "vol": 0.15
+      },
+      {
+        "t": 74.42,
+        "vol": 0.15
+      },
+      {
+        "t": 74.6,
+        "vol": 0.055
       },
       {
         "t": 78.53,
-        "vol": 0.13
+        "vol": 0.15
       },
       {
-        "t": 79.43,
+        "t": 79.08,
+        "vol": 0.055
+      },
+      {
+        "t": 79.42,
         "vol": 0.02
       }
-    ]
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
   },
   "captionStyle": "nick-display",
   "emphasis": [
@@ -57,7 +266,7 @@
       "bottomSrc": "assets/iphone-fold-ultra/avatar-master-169.mp4",
       "bottomFrom": 0.0,
       "bottomFocusX": 0.473,
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-unfold-hero",
       "sfx": [
         {
@@ -78,7 +287,7 @@
       "src": "assets/iphone-fold-ultra/clips/footprint-flat.mp4",
       "durationSec": 1.42,
       "zoomDir": "out",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-footprint-flat"
     },
     {
@@ -86,7 +295,7 @@
       "src": "assets/iphone-fold-ultra/clips/size-vs-iphone.mp4",
       "durationSec": 2.02,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-size-vs-iphone"
     },
     {
@@ -115,7 +324,7 @@
       "src": "assets/iphone-fold-ultra/clips/cover-hold.mp4",
       "durationSec": 1.66,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-cover-hold",
       "headline": {
         "lines": [
@@ -152,11 +361,11 @@
       "src": "assets/iphone-fold-ultra/clips/devices-hands.mp4",
       "durationSec": 2.0,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-devices-hands",
       "infocard": {
         "heading": "DUMMY UNIT",
-        "body": "a shape mockup — not the real device",
+        "body": "a shape mockup \u2014 not the real device",
         "at": 0.3
       }
     },
@@ -165,7 +374,7 @@
       "src": "assets/iphone-fold-ultra/clips/pair-backs.mp4",
       "durationSec": 1.3,
       "zoomDir": "out",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-pair-backs"
     },
     {
@@ -181,7 +390,7 @@
       "src": "assets/iphone-fold-ultra/clips/unfold-hero-b.mp4",
       "durationSec": 2.58,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-unfold-hero-b",
       "headline": {
         "lines": [
@@ -191,13 +400,13 @@
             "at": 0.15
           },
           {
-            "text": "7.76″",
+            "text": "7.76\u2033",
             "kind": "headline",
             "at": 0.45,
             "accent": true
           },
           {
-            "text": "reported · MacRumors",
+            "text": "reported \u00b7 MacRumors",
             "kind": "subtitle",
             "at": 0.9
           }
@@ -226,7 +435,7 @@
       "src": "assets/iphone-fold-ultra/clips/unfold-tilt.mp4",
       "durationSec": 0.94,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-unfold-tilt"
     },
     {
@@ -247,7 +456,7 @@
       "src": "assets/iphone-fold-ultra/clips/unfold-hands.mp4",
       "durationSec": 1.64,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-unfold-hands"
     },
     {
@@ -255,7 +464,7 @@
       "src": "assets/iphone-fold-ultra/clips/fold-cover.mp4",
       "durationSec": 1.72,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-fold-cover",
       "headline": {
         "lines": [
@@ -265,13 +474,13 @@
             "at": 0.15
           },
           {
-            "text": "5.49″",
+            "text": "5.49\u2033",
             "kind": "headline",
             "at": 0.45,
             "accent": true
           },
           {
-            "text": "reported · MacRumors",
+            "text": "reported \u00b7 MacRumors",
             "kind": "subtitle",
             "at": 0.9
           }
@@ -300,7 +509,7 @@
       "src": "assets/iphone-fold-ultra/clips/flame-close.mp4",
       "durationSec": 1.34,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-flame-close"
     },
     {
@@ -316,7 +525,7 @@
       "src": "assets/iphone-fold-ultra/clips/profile-thin.mp4",
       "durationSec": 1.94,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-profile-thin"
     },
     {
@@ -345,7 +554,7 @@
       "src": "assets/iphone-fold-ultra/clips/tape-measure.mp4",
       "durationSec": 1.2,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-tape-measure"
     },
     {
@@ -353,7 +562,7 @@
       "src": "assets/iphone-fold-ultra/clips/caliper-wide.mp4",
       "durationSec": 1.2,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-caliper-wide"
     },
     {
@@ -412,7 +621,7 @@
       "src": "assets/iphone-fold-ultra/clips/pair-stand.mp4",
       "durationSec": 2.32,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-pair-stand"
     },
     {
@@ -420,7 +629,7 @@
       "src": "assets/iphone-fold-ultra/clips/fold-back.mp4",
       "durationSec": 1.1,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-fold-back"
     },
     {
@@ -442,7 +651,7 @@
       "src": "assets/iphone-fold-ultra/clips/overhead-backs.mp4",
       "durationSec": 1.32,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-overhead-backs"
     },
     {
@@ -450,7 +659,7 @@
       "src": "assets/iphone-fold-ultra/clips/pair-angled.mp4",
       "durationSec": 1.32,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-pair-angled"
     },
     {
@@ -517,7 +726,7 @@
       "src": "assets/iphone-fold-ultra/clips/hinge-spine.mp4",
       "durationSec": 1.66,
       "zoomDir": "out",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-hinge-spine"
     },
     {
@@ -554,7 +763,7 @@
       "src": "assets/iphone-fold-ultra/clips/unfold-hold.mp4",
       "durationSec": 1.84,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-unfold-hold"
     },
     {
@@ -562,7 +771,7 @@
       "src": "assets/iphone-fold-ultra/clips/caliper-hands.mp4",
       "durationSec": 1.0,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-caliper-hands"
     },
     {
@@ -570,7 +779,7 @@
       "src": "assets/iphone-fold-ultra/clips/cam-pair.mp4",
       "durationSec": 1.12,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-cam-pair"
     },
     {
@@ -584,12 +793,12 @@
         {
           "label": "UBS",
           "value": 2000,
-          "display": "$1,800–$2,000"
+          "display": "$1,800\u2013$2,000"
         },
         {
           "label": "Ming-Chi Kuo",
           "value": 2500,
-          "display": "$2,000–$2,500",
+          "display": "$2,000\u2013$2,500",
           "highlight": true
         },
         {
@@ -600,10 +809,10 @@
         {
           "label": "IDC",
           "value": 3000,
-          "display": "$2,500 avg · $3,000 top"
+          "display": "$2,500 avg \u00b7 $3,000 top"
         }
       ],
-      "source": "MacRumors roundup · Aug 2026",
+      "source": "MacRumors roundup \u00b7 Aug 2026",
       "durationSec": 2.86,
       "sfx": [
         {
@@ -643,7 +852,7 @@
       "src": "assets/iphone-fold-ultra/clips/caliper-edge.mp4",
       "durationSec": 1.18,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-caliper-edge"
     },
     {
@@ -651,7 +860,7 @@
       "src": "assets/iphone-fold-ultra/clips/face-close.mp4",
       "durationSec": 2.18,
       "zoomDir": "in",
-      "credit": "Unbox Therapy — dummy unit",
+      "credit": "Unbox Therapy \u2014 dummy unit",
       "assetId": "clip-face-close"
     },
     {
@@ -1836,11 +2045,11 @@
       ]
     }
   ],
-  "script": "Apple's first foldable isn't a taller iPhone. It's a shorter, wider one.\n\nAnd that one decision explains everything strange about it.\n\nIt's the iPhone Ultra. This is a leaked dummy unit — a shape mockup, not the real thing.\n\nUnfolded, the inner screen is 7.76 inches, 4:3. That's iPad geometry, not phone geometry.\n\nFolded, a 5.49-inch cover screen on a body so stubby people keep calling it a passport.\n\nApple's reportedly chasing 4.5 millimetres unfolded — the thinnest thing it has ever shipped.\n\nHere's what that shape costs you. No depth for Face ID, so Touch ID moves to the power button.\n\nNo room for a telephoto either — two 48-megapixel cameras, and that's the whole system.\n\nThe crease, though, Apple chased regardless of cost. A liquid metal hinge, and a fold under 0.15 millimetres deep.\n\nAnyways, nobody agrees on the price. Kuo says 2,000 to 2,500 dollars. UBS says 1,800. IDC thinks some configs touch 3,000.\n\nAnd every number there is a leak. Apple has confirmed none of it.\n\nSeptember 9th. Would you carry a passport?\n",
+  "script": "Apple's first foldable isn't a taller iPhone. It's a shorter, wider one.\n\nAnd that one decision explains everything strange about it.\n\nIt's the iPhone Ultra. This is a leaked dummy unit \u2014 a shape mockup, not the real thing.\n\nUnfolded, the inner screen is 7.76 inches, 4:3. That's iPad geometry, not phone geometry.\n\nFolded, a 5.49-inch cover screen on a body so stubby people keep calling it a passport.\n\nApple's reportedly chasing 4.5 millimetres unfolded \u2014 the thinnest thing it has ever shipped.\n\nHere's what that shape costs you. No depth for Face ID, so Touch ID moves to the power button.\n\nNo room for a telephoto either \u2014 two 48-megapixel cameras, and that's the whole system.\n\nThe crease, though, Apple chased regardless of cost. A liquid metal hinge, and a fold under 0.15 millimetres deep.\n\nAnyways, nobody agrees on the price. Kuo says 2,000 to 2,500 dollars. UBS says 1,800. IDC thinks some configs touch 3,000.\n\nAnd every number there is a leak. Apple has confirmed none of it.\n\nSeptember 9th. Would you carry a passport?\n",
   "approval": {
     "sha256": "2c6795454a04ee91f7cb148b1790c9839b9d4ca71593ed3276ef59201d164d57",
     "approvedAt": "2026-08-17T06:24:16+00:00",
     "words": 177,
-    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
   }
 }

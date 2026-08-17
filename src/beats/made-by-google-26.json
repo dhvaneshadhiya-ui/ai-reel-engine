@@ -7,12 +7,12 @@
   "format": "news",
   "allowLong": true,
   "allowLongReason": "User explicitly requested an ~2-minute reel for this event roundup (2026-08-13). Target 100-115s.",
-  "script": "Google just refreshed every single piece of hardware it makes. Four new Pixels, a new watch, and a $29 tracker with a billion Android phones behind it. This is Made by Google 2026 — everything that actually matters, in two minutes. The Pixel 11 is $899 now, with a camera bar that's 40% thinner. Behind the glass is a new 48-megapixel sensor pulling in 56% more light. The Pro and Pro XL push a 3,600-nit display, and Pro Zoom hits 120x. Just look at this. The Pro XL also charges 15 hours of battery in 15 minutes. The Pixel 11 Pro Fold is nearly 10% lighter, almost a millimeter thinner, and 3 times more durable. Google says the new back is nearly impossible to crack. Here's the part almost nobody noticed. All of it runs on Tensor G6. 50% more AI compute, so Gemini runs 3.5 times faster on 3.5 times less energy. And the new Titan M3 chip is hardened against quantum computer attacks — Google is planning a decade ahead. Pixel Watch 5 is 20% faster, tracks GPS routes twice as accurately, and it's the only watch tracking insulin resistance trends. It can even detect a breathing emergency and call for help on its own. Then the Pixel Tag. $29, stainless steel, a one-year battery — and it finds your stuff through over a billion Android devices. The AirTag finally has a real fight. The camera now translates American Sign Language live. Just watch this. Magic Capture picks your best shot from around 500 frames. And Rambler turns your voice rambles into clean text. Now, the catch. Every single phone got a $100 price bump this year. And Pixel Buds Pro 2 only got a new color. Anyways — every phone gets 7 years of updates and starts at 256 gigs. They hit shelves August 20th. The Tag lands November 11th. So: a quantum-proof phone and a $29 tracker. Is that enough to pull you off your iPhone? Tell me in the comments.",
+  "script": "Google just refreshed every single piece of hardware it makes. Four new Pixels, a new watch, and a $29 tracker with a billion Android phones behind it. This is Made by Google 2026 \u2014 everything that actually matters, in two minutes. The Pixel 11 is $899 now, with a camera bar that's 40% thinner. Behind the glass is a new 48-megapixel sensor pulling in 56% more light. The Pro and Pro XL push a 3,600-nit display, and Pro Zoom hits 120x. Just look at this. The Pro XL also charges 15 hours of battery in 15 minutes. The Pixel 11 Pro Fold is nearly 10% lighter, almost a millimeter thinner, and 3 times more durable. Google says the new back is nearly impossible to crack. Here's the part almost nobody noticed. All of it runs on Tensor G6. 50% more AI compute, so Gemini runs 3.5 times faster on 3.5 times less energy. And the new Titan M3 chip is hardened against quantum computer attacks \u2014 Google is planning a decade ahead. Pixel Watch 5 is 20% faster, tracks GPS routes twice as accurately, and it's the only watch tracking insulin resistance trends. It can even detect a breathing emergency and call for help on its own. Then the Pixel Tag. $29, stainless steel, a one-year battery \u2014 and it finds your stuff through over a billion Android devices. The AirTag finally has a real fight. The camera now translates American Sign Language live. Just watch this. Magic Capture picks your best shot from around 500 frames. And Rambler turns your voice rambles into clean text. Now, the catch. Every single phone got a $100 price bump this year. And Pixel Buds Pro 2 only got a new color. Anyways \u2014 every phone gets 7 years of updates and starts at 256 gigs. They hit shelves August 20th. The Tag lands November 11th. So: a quantum-proof phone and a $29 tracker. Is that enough to pull you off your iPhone? Tell me in the comments.",
   "approval": {
     "sha256": "689f89be9e629d21ac331eac29e1db638092cacf21949dbf77e6fb0a38802812",
     "approvedAt": "2026-08-13T07:23:26+00:00",
     "words": 335,
-    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
   },
   "audio": "assets/made-by-google-26/avatar-master-169.mp4",
   "music": {
@@ -21,49 +21,206 @@
     "points": [
       {
         "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 3.48,
+        "vol": 0.055
+      },
+      {
+        "t": 3.82,
         "vol": 0.15
       },
       {
-        "t": 10.12,
-        "vol": 0.09
+        "t": 3.9,
+        "vol": 0.15
       },
       {
-        "t": 35.76,
-        "vol": 0.14
+        "t": 4.08,
+        "vol": 0.055
       },
       {
-        "t": 37.06,
-        "vol": 0.08
+        "t": 15.44,
+        "vol": 0.055
       },
       {
-        "t": 53.3,
-        "vol": 0.12
+        "t": 15.76,
+        "vol": 0.15
       },
       {
-        "t": 74.4,
-        "vol": 0.08
+        "t": 15.94,
+        "vol": 0.055
       },
       {
-        "t": 101.08,
-        "vol": 0.13
+        "t": 45.82,
+        "vol": 0.055
       },
       {
-        "t": 109.58,
-        "vol": 0.1
+        "t": 46.12,
+        "vol": 0.15
       },
       {
-        "t": 127.78,
-        "vol": 0.14
+        "t": 46.16,
+        "vol": 0.15
       },
       {
-        "t": 134.41,
-        "vol": 0.1
+        "t": 46.3,
+        "vol": 0.055
       },
       {
-        "t": 135.21,
+        "t": 60.88,
+        "vol": 0.055
+      },
+      {
+        "t": 61.18,
+        "vol": 0.15
+      },
+      {
+        "t": 61.22,
+        "vol": 0.15
+      },
+      {
+        "t": 61.36,
+        "vol": 0.055
+      },
+      {
+        "t": 77.0,
+        "vol": 0.055
+      },
+      {
+        "t": 77.34,
+        "vol": 0.15
+      },
+      {
+        "t": 77.52,
+        "vol": 0.055
+      },
+      {
+        "t": 89.72,
+        "vol": 0.055
+      },
+      {
+        "t": 90.06,
+        "vol": 0.15
+      },
+      {
+        "t": 90.24,
+        "vol": 0.15
+      },
+      {
+        "t": 90.42,
+        "vol": 0.055
+      },
+      {
+        "t": 97.72,
+        "vol": 0.055
+      },
+      {
+        "t": 98.0,
+        "vol": 0.15
+      },
+      {
+        "t": 98.06,
+        "vol": 0.15
+      },
+      {
+        "t": 98.18,
+        "vol": 0.055
+      },
+      {
+        "t": 101.96,
+        "vol": 0.055
+      },
+      {
+        "t": 102.26,
+        "vol": 0.15
+      },
+      {
+        "t": 102.3,
+        "vol": 0.15
+      },
+      {
+        "t": 102.44,
+        "vol": 0.055
+      },
+      {
+        "t": 105.92,
+        "vol": 0.055
+      },
+      {
+        "t": 106.26,
+        "vol": 0.15
+      },
+      {
+        "t": 106.32,
+        "vol": 0.15
+      },
+      {
+        "t": 106.5,
+        "vol": 0.055
+      },
+      {
+        "t": 117.92,
+        "vol": 0.055
+      },
+      {
+        "t": 118.24,
+        "vol": 0.15
+      },
+      {
+        "t": 118.26,
+        "vol": 0.15
+      },
+      {
+        "t": 118.42,
+        "vol": 0.055
+      },
+      {
+        "t": 122.9,
+        "vol": 0.055
+      },
+      {
+        "t": 123.2,
+        "vol": 0.15
+      },
+      {
+        "t": 123.24,
+        "vol": 0.15
+      },
+      {
+        "t": 123.38,
+        "vol": 0.055
+      },
+      {
+        "t": 133.48,
+        "vol": 0.055
+      },
+      {
+        "t": 133.82,
+        "vol": 0.15
+      },
+      {
+        "t": 133.86,
+        "vol": 0.15
+      },
+      {
+        "t": 134.04,
+        "vol": 0.055
+      },
+      {
+        "t": 134.31,
+        "vol": 0.15
+      },
+      {
+        "t": 134.86,
+        "vol": 0.055
+      },
+      {
+        "t": 135.2,
         "vol": 0.02
       }
-    ]
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
   },
   "captionStyle": "nick-display",
   "emphasis": [
@@ -288,7 +445,7 @@
     {
       "type": "statcard",
       "durationSec": 2.54,
-      "title": "Pro XL · WIRED CHARGING",
+      "title": "Pro XL \u00b7 WIRED CHARGING",
       "bg": "black",
       "rows": [
         {
@@ -396,7 +553,7 @@
     {
       "type": "chart",
       "durationSec": 3.17,
-      "kicker": "Tensor G6 · ON-DEVICE AI",
+      "kicker": "Tensor G6 \u00b7 ON-DEVICE AI",
       "title": "Gemini Nano, uncorked",
       "bg": "black",
       "unit": "x",
@@ -554,7 +711,7 @@
         },
         {
           "label": "BODY",
-          "value": "stainless · IP67"
+          "value": "stainless \u00b7 IP67"
         },
         {
           "label": "BATTERY",
@@ -673,7 +830,7 @@
       "durationSec": 1.06,
       "app": "Gboard",
       "headline": "CLEAN TEXT",
-      "promptText": "Dinner at 7 works — see you there.",
+      "promptText": "Dinner at 7 works \u2014 see you there.",
       "bg": "gradient"
     },
     {
@@ -714,7 +871,7 @@
           "newPrice": "$1,899"
         }
       ],
-      "footnote": "Source: blog.google · TechCrunch",
+      "footnote": "Source: blog.google \u00b7 TechCrunch",
       "sfx": [
         {
           "src": "sfx2/ground-impact-352053.mp3",

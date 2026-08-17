@@ -12,49 +12,362 @@
     "points": [
       {
         "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 2.24,
+        "vol": 0.055
+      },
+      {
+        "t": 2.58,
         "vol": 0.15
       },
       {
-        "t": 6.88,
-        "vol": 0.09
+        "t": 2.68,
+        "vol": 0.15
       },
       {
-        "t": 34.22,
-        "vol": 0.07
+        "t": 2.86,
+        "vol": 0.055
       },
       {
-        "t": 55.74,
-        "vol": 0.1
+        "t": 6.76,
+        "vol": 0.055
       },
       {
-        "t": 66.04,
-        "vol": 0.08
+        "t": 7.08,
+        "vol": 0.15
       },
       {
-        "t": 85.38,
-        "vol": 0.14
+        "t": 7.26,
+        "vol": 0.055
       },
       {
-        "t": 87.56,
-        "vol": 0.13
+        "t": 10.3,
+        "vol": 0.055
       },
       {
-        "t": 92.27,
-        "vol": 0.1
+        "t": 10.64,
+        "vol": 0.15
       },
       {
-        "t": 93.07,
+        "t": 10.76,
+        "vol": 0.15
+      },
+      {
+        "t": 10.94,
+        "vol": 0.055
+      },
+      {
+        "t": 13.34,
+        "vol": 0.055
+      },
+      {
+        "t": 13.68,
+        "vol": 0.15
+      },
+      {
+        "t": 13.7,
+        "vol": 0.15
+      },
+      {
+        "t": 13.88,
+        "vol": 0.055
+      },
+      {
+        "t": 16.88,
+        "vol": 0.055
+      },
+      {
+        "t": 17.18,
+        "vol": 0.15
+      },
+      {
+        "t": 17.22,
+        "vol": 0.15
+      },
+      {
+        "t": 17.36,
+        "vol": 0.055
+      },
+      {
+        "t": 19.82,
+        "vol": 0.055
+      },
+      {
+        "t": 20.14,
+        "vol": 0.15
+      },
+      {
+        "t": 20.32,
+        "vol": 0.055
+      },
+      {
+        "t": 27.16,
+        "vol": 0.055
+      },
+      {
+        "t": 27.5,
+        "vol": 0.15
+      },
+      {
+        "t": 27.56,
+        "vol": 0.15
+      },
+      {
+        "t": 27.74,
+        "vol": 0.055
+      },
+      {
+        "t": 29.58,
+        "vol": 0.055
+      },
+      {
+        "t": 29.88,
+        "vol": 0.15
+      },
+      {
+        "t": 29.92,
+        "vol": 0.15
+      },
+      {
+        "t": 30.06,
+        "vol": 0.055
+      },
+      {
+        "t": 34.1,
+        "vol": 0.055
+      },
+      {
+        "t": 34.44,
+        "vol": 0.15
+      },
+      {
+        "t": 34.52,
+        "vol": 0.15
+      },
+      {
+        "t": 34.7,
+        "vol": 0.055
+      },
+      {
+        "t": 39.36,
+        "vol": 0.055
+      },
+      {
+        "t": 39.7,
+        "vol": 0.15
+      },
+      {
+        "t": 39.76,
+        "vol": 0.15
+      },
+      {
+        "t": 39.94,
+        "vol": 0.055
+      },
+      {
+        "t": 43.84,
+        "vol": 0.055
+      },
+      {
+        "t": 44.14,
+        "vol": 0.15
+      },
+      {
+        "t": 44.18,
+        "vol": 0.15
+      },
+      {
+        "t": 44.32,
+        "vol": 0.055
+      },
+      {
+        "t": 46.16,
+        "vol": 0.055
+      },
+      {
+        "t": 46.5,
+        "vol": 0.15
+      },
+      {
+        "t": 46.52,
+        "vol": 0.15
+      },
+      {
+        "t": 46.7,
+        "vol": 0.055
+      },
+      {
+        "t": 51.96,
+        "vol": 0.055
+      },
+      {
+        "t": 52.3,
+        "vol": 0.15
+      },
+      {
+        "t": 52.4,
+        "vol": 0.15
+      },
+      {
+        "t": 52.58,
+        "vol": 0.055
+      },
+      {
+        "t": 55.62,
+        "vol": 0.055
+      },
+      {
+        "t": 55.96,
+        "vol": 0.15
+      },
+      {
+        "t": 56.06,
+        "vol": 0.15
+      },
+      {
+        "t": 56.24,
+        "vol": 0.055
+      },
+      {
+        "t": 59.68,
+        "vol": 0.055
+      },
+      {
+        "t": 60.02,
+        "vol": 0.15
+      },
+      {
+        "t": 60.14,
+        "vol": 0.15
+      },
+      {
+        "t": 60.32,
+        "vol": 0.055
+      },
+      {
+        "t": 60.62,
+        "vol": 0.055
+      },
+      {
+        "t": 60.94,
+        "vol": 0.15
+      },
+      {
+        "t": 60.96,
+        "vol": 0.15
+      },
+      {
+        "t": 61.12,
+        "vol": 0.055
+      },
+      {
+        "t": 62.22,
+        "vol": 0.055
+      },
+      {
+        "t": 62.56,
+        "vol": 0.15
+      },
+      {
+        "t": 62.76,
+        "vol": 0.055
+      },
+      {
+        "t": 65.92,
+        "vol": 0.055
+      },
+      {
+        "t": 66.26,
+        "vol": 0.15
+      },
+      {
+        "t": 66.48,
+        "vol": 0.15
+      },
+      {
+        "t": 66.66,
+        "vol": 0.055
+      },
+      {
+        "t": 67.1,
+        "vol": 0.055
+      },
+      {
+        "t": 67.42,
+        "vol": 0.15
+      },
+      {
+        "t": 67.6,
+        "vol": 0.055
+      },
+      {
+        "t": 69.14,
+        "vol": 0.055
+      },
+      {
+        "t": 69.42,
+        "vol": 0.15
+      },
+      {
+        "t": 69.48,
+        "vol": 0.15
+      },
+      {
+        "t": 69.6,
+        "vol": 0.055
+      },
+      {
+        "t": 80.94,
+        "vol": 0.055
+      },
+      {
+        "t": 81.28,
+        "vol": 0.15
+      },
+      {
+        "t": 81.46,
+        "vol": 0.055
+      },
+      {
+        "t": 87.44,
+        "vol": 0.055
+      },
+      {
+        "t": 87.72,
+        "vol": 0.15
+      },
+      {
+        "t": 87.78,
+        "vol": 0.15
+      },
+      {
+        "t": 87.9,
+        "vol": 0.055
+      },
+      {
+        "t": 92.17,
+        "vol": 0.15
+      },
+      {
+        "t": 92.72,
+        "vol": 0.055
+      },
+      {
+        "t": 93.06,
         "vol": 0.02
       }
-    ]
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
   },
   "captionStyle": "nick-display",
-  "script": "Apple just skipped the iPhone 18.\nFor the first time in 7 years, there's no standard iPhone this September.\nPegatron — one of the companies that actually builds iPhones — just confirmed it on this week's earnings call.\nApple is splitting the iPhone 18 launch in two.\nWave 1, September 2026: the iPhone 18 Pro, the 18 Pro Max — and reportedly Apple's first foldable, the iPhone Ultra.\nWave 2, March 2027: the standard iPhone 18, the budget 18e, and the iPhone Air 2.\nEvery number iPhone from the iPhone 11 to the iPhone 17 launched in September. 7 generations straight.\nSo why break it now? Simply put, September becomes a pure premium show.\nPro models carry Apple's fattest margins, and they get the entire holiday quarter to themselves.\nOn top of it, Pegatron says component shortages — chips and memory — could run into 2028.\nAnd look, if parts are scarce, you don't want 6 new iPhones fighting for them at once.\nAnyways, this has been building for a year — analyst Ming-Chi Kuo called a spring 2027 iPhone 18 months ago.\nIt's just the first time the supply chain said it out loud.\nTo be fair, Apple hasn't confirmed a thing. And in leaks like this, dates are always the softest detail.\nIf it sticks, the iPhone becomes a twice-a-year event.\nSo — wait till March, or is Apple betting you'll just buy the Pro?\nTell me in the comments.\n",
+  "script": "Apple just skipped the iPhone 18.\nFor the first time in 7 years, there's no standard iPhone this September.\nPegatron \u2014 one of the companies that actually builds iPhones \u2014 just confirmed it on this week's earnings call.\nApple is splitting the iPhone 18 launch in two.\nWave 1, September 2026: the iPhone 18 Pro, the 18 Pro Max \u2014 and reportedly Apple's first foldable, the iPhone Ultra.\nWave 2, March 2027: the standard iPhone 18, the budget 18e, and the iPhone Air 2.\nEvery number iPhone from the iPhone 11 to the iPhone 17 launched in September. 7 generations straight.\nSo why break it now? Simply put, September becomes a pure premium show.\nPro models carry Apple's fattest margins, and they get the entire holiday quarter to themselves.\nOn top of it, Pegatron says component shortages \u2014 chips and memory \u2014 could run into 2028.\nAnd look, if parts are scarce, you don't want 6 new iPhones fighting for them at once.\nAnyways, this has been building for a year \u2014 analyst Ming-Chi Kuo called a spring 2027 iPhone 18 months ago.\nIt's just the first time the supply chain said it out loud.\nTo be fair, Apple hasn't confirmed a thing. And in leaks like this, dates are always the softest detail.\nIf it sticks, the iPhone becomes a twice-a-year event.\nSo \u2014 wait till March, or is Apple betting you'll just buy the Pro?\nTell me in the comments.\n",
   "approval": {
     "sha256": "02bc3f9e56c5c17c14c1b60813302f6ee4c0fd29b9601d50ceedd562ddfcf158",
     "approvedAt": "2026-08-13T06:42:35+00:00",
     "words": 242,
-    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
   },
   "allowLong": true,
   "allowLongReason": "Approved 242-word script (hash 02bc3f9e56c5c17c) delivers at this voice's measured ~2.6 wps (grok-bot 2.69, apple-pay-india 2.72 on the same voice), running 93.2s. The 3.2 wps planning constant in the docs is wrong for this voice; word budgets re-derived in STYLE-RULES.md 2026-08-13. Cutting approved sentences without user sign-off was rejected; user offered a trim+re-record.",
@@ -181,11 +494,11 @@
       "cards": [
         {
           "label": "SEPTEMBER 2026",
-          "sub": "18 Pro · Pro Max · “Ultra”"
+          "sub": "18 Pro \u00b7 Pro Max \u00b7 \u201cUltra\u201d"
         },
         {
           "label": "MARCH 2027",
-          "sub": "iPhone 18 · 18e · Air 2"
+          "sub": "iPhone 18 \u00b7 18e \u00b7 Air 2"
         }
       ],
       "durationSec": 2.08,
@@ -215,7 +528,7 @@
       "headline": {
         "lines": [
           {
-            "text": "WAVE 1 · September 2026",
+            "text": "WAVE 1 \u00b7 September 2026",
             "kind": "label",
             "at": 0.2
           }
@@ -235,7 +548,7 @@
       "headline": {
         "lines": [
           {
-            "text": "18 PRO · PRO MAX",
+            "text": "18 PRO \u00b7 PRO MAX",
             "kind": "label",
             "at": 0.2
           }
@@ -297,7 +610,7 @@
       "headline": {
         "lines": [
           {
-            "text": "WAVE 2 · March 2027",
+            "text": "WAVE 2 \u00b7 March 2027",
             "kind": "label",
             "at": 0.2
           }
@@ -388,7 +701,7 @@
       "type": "timeline",
       "title": "7 Septembers straight",
       "kicker": "the standard iPhone",
-      "footnote": "MacRumors · Aug 12, 2026",
+      "footnote": "MacRumors \u00b7 Aug 12, 2026",
       "items": [
         {
           "date": "2019",
@@ -405,7 +718,7 @@
         {
           "date": "2027",
           "name": "iPhone 18",
-          "sub": "March — the break",
+          "sub": "March \u2014 the break",
           "accent": "MOVED",
           "at": 1.5
         }
@@ -516,7 +829,7 @@
           "accent": true
         }
       ],
-      "footnote": "Pegatron, via AppleInsider · Aug 12, 2026",
+      "footnote": "Pegatron, via AppleInsider \u00b7 Aug 12, 2026",
       "durationSec": 2.03,
       "sfx": [
         {
@@ -754,7 +1067,7 @@
     {
       "type": "endquestion",
       "src": "assets/iphone18-split/clips/pro-lineup-still.jpg",
-      "question": "Wait till March — or buy the Pro?",
+      "question": "Wait till March \u2014 or buy the Pro?",
       "bg": "gradient",
       "assetId": "still-pro-lineup",
       "durationSec": 1.83
@@ -769,7 +1082,7 @@
       "headline": {
         "lines": [
           {
-            "text": "MARCH — OR THE PRO?",
+            "text": "MARCH \u2014 OR THE PRO?",
             "kind": "label",
             "at": 0.2
           },

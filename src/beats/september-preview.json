@@ -12,49 +12,162 @@
     "points": [
       {
         "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 5.8,
+        "vol": 0.055
+      },
+      {
+        "t": 6.1,
         "vol": 0.15
       },
       {
-        "t": 3.4,
-        "vol": 0.09
+        "t": 6.14,
+        "vol": 0.15
       },
       {
-        "t": 18.1,
-        "vol": 0.12
+        "t": 6.28,
+        "vol": 0.055
       },
       {
-        "t": 29.24,
-        "vol": 0.08
+        "t": 8.28,
+        "vol": 0.055
       },
       {
-        "t": 50.76,
-        "vol": 0.12
+        "t": 8.6,
+        "vol": 0.15
       },
       {
-        "t": 57.46,
-        "vol": 0.08
+        "t": 8.78,
+        "vol": 0.055
       },
       {
-        "t": 74.66,
-        "vol": 0.14
+        "t": 11.78,
+        "vol": 0.055
       },
       {
-        "t": 78.81,
-        "vol": 0.1
+        "t": 12.1,
+        "vol": 0.15
       },
       {
-        "t": 79.61,
+        "t": 12.28,
+        "vol": 0.055
+      },
+      {
+        "t": 31.68,
+        "vol": 0.055
+      },
+      {
+        "t": 32.02,
+        "vol": 0.15
+      },
+      {
+        "t": 32.14,
+        "vol": 0.15
+      },
+      {
+        "t": 32.32,
+        "vol": 0.055
+      },
+      {
+        "t": 35.56,
+        "vol": 0.055
+      },
+      {
+        "t": 35.88,
+        "vol": 0.15
+      },
+      {
+        "t": 35.9,
+        "vol": 0.15
+      },
+      {
+        "t": 36.06,
+        "vol": 0.055
+      },
+      {
+        "t": 39.48,
+        "vol": 0.055
+      },
+      {
+        "t": 39.82,
+        "vol": 0.15
+      },
+      {
+        "t": 39.9,
+        "vol": 0.15
+      },
+      {
+        "t": 40.08,
+        "vol": 0.055
+      },
+      {
+        "t": 44.78,
+        "vol": 0.055
+      },
+      {
+        "t": 45.12,
+        "vol": 0.15
+      },
+      {
+        "t": 45.3,
+        "vol": 0.055
+      },
+      {
+        "t": 53.94,
+        "vol": 0.055
+      },
+      {
+        "t": 54.22,
+        "vol": 0.15
+      },
+      {
+        "t": 54.28,
+        "vol": 0.15
+      },
+      {
+        "t": 54.4,
+        "vol": 0.055
+      },
+      {
+        "t": 59.1,
+        "vol": 0.055
+      },
+      {
+        "t": 59.44,
+        "vol": 0.15
+      },
+      {
+        "t": 59.54,
+        "vol": 0.15
+      },
+      {
+        "t": 59.72,
+        "vol": 0.055
+      },
+      {
+        "t": 78.71,
+        "vol": 0.15
+      },
+      {
+        "t": 79.26,
+        "vol": 0.055
+      },
+      {
+        "t": 79.6,
         "vol": 0.02
       }
-    ]
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
   },
   "captionStyle": "nick-display",
-  "script": "Apple is about to drop at least 5 new products this September.\nFirst: iPhone 18 Pro and Pro Max. A20 Pro chip on 2 nanometers, a variable-aperture camera, a smaller Dynamic Island, and a new Dark Cherry color.\nThe catch? Rumors put them up to $300 pricier.\nSecond: the headliner — Apple's first foldable, the iPhone Ultra.\n5.5 inches closed, 7.8 unfolded — basically an iPad mini that fits in your pocket.\nTouch ID instead of Face ID, dual batteries, and a hinge built to hide the crease.\nThe price? Somewhere between $2,000 and $2,500.\nThird: Watch Series 12 — faster chip, bigger battery, same look.\nFourth: Watch Ultra 4, possibly thinner with upgraded sensors — though that's a single source, so squint.\nAnd fifth, the real wildcard: a new boss.\nJohn Ternus runs his first keynote as CEO — Tim Cook officially becomes Executive Chairman on September 1. That part isn't a rumor.\nWhat you won't see: the standard iPhone 18. That one moved to March.\nThe event lands September 8 or 9; preorders the same week.\nSo — the $2,000 foldable, or the Pro: which one's your money on?\nTell me in the comments.\n",
+  "script": "Apple is about to drop at least 5 new products this September.\nFirst: iPhone 18 Pro and Pro Max. A20 Pro chip on 2 nanometers, a variable-aperture camera, a smaller Dynamic Island, and a new Dark Cherry color.\nThe catch? Rumors put them up to $300 pricier.\nSecond: the headliner \u2014 Apple's first foldable, the iPhone Ultra.\n5.5 inches closed, 7.8 unfolded \u2014 basically an iPad mini that fits in your pocket.\nTouch ID instead of Face ID, dual batteries, and a hinge built to hide the crease.\nThe price? Somewhere between $2,000 and $2,500.\nThird: Watch Series 12 \u2014 faster chip, bigger battery, same look.\nFourth: Watch Ultra 4, possibly thinner with upgraded sensors \u2014 though that's a single source, so squint.\nAnd fifth, the real wildcard: a new boss.\nJohn Ternus runs his first keynote as CEO \u2014 Tim Cook officially becomes Executive Chairman on September 1. That part isn't a rumor.\nWhat you won't see: the standard iPhone 18. That one moved to March.\nThe event lands September 8 or 9; preorders the same week.\nSo \u2014 the $2,000 foldable, or the Pro: which one's your money on?\nTell me in the comments.\n",
   "approval": {
     "sha256": "6569be722a491a1286cbf642882c85b84b34a24d503d08eb28c4931e054a0475",
     "approvedAt": "2026-08-14T06:34:40+00:00",
     "words": 196,
-    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
   },
   "emphasis": [
     "five",
@@ -105,7 +218,7 @@
       "headline": {
         "lines": [
           {
-            "text": "01 · iPhone 18 Pro · Pro Max",
+            "text": "01 \u00b7 iPhone 18 Pro \u00b7 Pro Max",
             "kind": "label",
             "at": 0.2
           }
@@ -134,7 +247,7 @@
     {
       "type": "specsheet",
       "kicker": "the flagships",
-      "title": "iPhone 18 Pro · Pro Max",
+      "title": "iPhone 18 Pro \u00b7 Pro Max",
       "columns": [
         "RUMORED"
       ],
@@ -142,7 +255,7 @@
         {
           "label": "Chip",
           "values": [
-            "A20 Pro · 2nm"
+            "A20 Pro \u00b7 2nm"
           ]
         },
         {
@@ -165,7 +278,7 @@
           "accent": true
         }
       ],
-      "footnote": "MacRumors · Aug 13, 2026",
+      "footnote": "MacRumors \u00b7 Aug 13, 2026",
       "durationSec": 2.75,
       "sfx": [
         {
@@ -239,7 +352,7 @@
       "headline": {
         "lines": [
           {
-            "text": "02 · iPhone Ultra",
+            "text": "02 \u00b7 iPhone Ultra",
             "kind": "label",
             "at": 0.2
           }
@@ -303,21 +416,21 @@
     },
     {
       "type": "statcard",
-      "title": "iPhone Ultra — two screens",
+      "title": "iPhone Ultra \u2014 two screens",
       "rows": [
         {
           "label": "Closed",
-          "value": "5.5″",
+          "value": "5.5\u2033",
           "pct": 0.71
         },
         {
           "label": "Unfolded",
-          "value": "7.8″",
+          "value": "7.8\u2033",
           "pct": 1.0,
           "color": "#E0785A"
         }
       ],
-      "footnote": "MacRumors · Aug 13, 2026",
+      "footnote": "MacRumors \u00b7 Aug 13, 2026",
       "bg": "black",
       "durationSec": 2.56,
       "sfx": [
@@ -350,7 +463,7 @@
       "headline": "iPhone Ultra hardware",
       "rows": [
         {
-          "label": "Touch ID — not Face ID",
+          "label": "Touch ID \u2014 not Face ID",
           "state": "done"
         },
         {
@@ -380,7 +493,7 @@
       "focusX": 0.515,
       "captionBottom": 300,
       "infocard": {
-        "heading": "$2,000–$2,500",
+        "heading": "$2,000\u2013$2,500",
         "body": "rumored price range",
         "at": 0.5
       }
@@ -395,7 +508,7 @@
       "headline": {
         "lines": [
           {
-            "text": "03 · Watch Series 12",
+            "text": "03 \u00b7 Watch Series 12",
             "kind": "label",
             "at": 0.15
           }
@@ -439,7 +552,7 @@
       "headline": {
         "lines": [
           {
-            "text": "04 · Watch Ultra 4",
+            "text": "04 \u00b7 Watch Ultra 4",
             "kind": "label",
             "at": 0.15
           }
@@ -519,7 +632,7 @@
       "headline": {
         "lines": [
           {
-            "text": "05 · A NEW BOSS",
+            "text": "05 \u00b7 A NEW BOSS",
             "kind": "label",
             "at": 0.2
           }
@@ -575,7 +688,7 @@
       "type": "uidialog",
       "app": "Reminders",
       "title": "New CEO takes over",
-      "body": "John Ternus becomes CEO · Tim Cook becomes Executive Chairman",
+      "body": "John Ternus becomes CEO \u00b7 Tim Cook becomes Executive Chairman",
       "field": {
         "label": "Date",
         "value": "Mon, September 1, 2026"
@@ -613,7 +726,7 @@
           "size": 1.1
         },
         {
-          "text": "→ March 2027",
+          "text": "\u2192 March 2027",
           "style": "caps",
           "at": 1.0,
           "size": 1.2,
@@ -633,10 +746,10 @@
       "type": "uidialog",
       "app": "Calendar",
       "title": "Apple Event (rumored)",
-      "body": "Apple Park · pre-orders the same week",
+      "body": "Apple Park \u00b7 pre-orders the same week",
       "field": {
         "label": "When",
-        "value": "Tue Sep 8 — or Wed Sep 9"
+        "value": "Tue Sep 8 \u2014 or Wed Sep 9"
       },
       "primary": "Accept",
       "cancel": "Decline",
@@ -689,7 +802,7 @@
       "headline": {
         "lines": [
           {
-            "text": "FOLDABLE — OR PRO?",
+            "text": "FOLDABLE \u2014 OR PRO?",
             "kind": "label",
             "at": 0.2
           },

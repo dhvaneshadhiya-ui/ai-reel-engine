@@ -1014,6 +1014,30 @@ def check_beats(beats: dict, vo_end: float | None = None,
             f"G12 {black_cards} plain black typecards — max 1 per reel, and "
             "it is a fallback of last resort (rule 2026-07-22).")
 
+    # G37 — A MUSIC BED THAT CANNOT HEAR THE VOICE (2026-08-17).
+    # Volume was five hardcoded clock times. Measured across six shipped reels,
+    # the bed sat at 0.118 under speech and 0.120 in the pauses — separation
+    # +0.003 — and on THREE of them the separation was NEGATIVE: the music was
+    # louder under the voice than in the gaps. It was a guess dressed as an edit.
+    # tools/duck_music.py derives the curve from whisper word timings, which we
+    # already hold, and stamps `derivedFrom`. Deriving it took separation to
+    # +0.031..+0.062. A hand-written curve is now a blocking error, because the
+    # hand-written ones were measurably wrong every single time.
+    music = beats.get("music")
+    if music:
+        pts = music.get("points") or []
+        if not music.get("derivedFrom"):
+            errors.append(
+                f"G37 music.points is hand-written ({len(pts)} points) — derive "
+                f"it from the voice: python3 tools/duck_music.py {beats.get('id', '<slug>')} "
+                "--write. Hardcoded clock times cannot hear the VO; measured "
+                "across six reels they ducked by +0.003, and three were inverted.")
+        elif len(pts) < 8:
+            errors.append(
+                f"G37 music.points claims to be derived but has only {len(pts)} "
+                "points — a real duck curve has 4 per speech run. Re-run "
+                "tools/duck_music.py.")
+
     if errors:
         raise GateError(
             f"{len(errors)} blocking rule violation(s):\n  - "

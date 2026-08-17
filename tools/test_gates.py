@@ -101,8 +101,17 @@ def good() -> dict:
         "captions": [{"start": 0, "end": 1, "text": "macOS ships"}],
         "script": SCRIPT,
         "approval": {"sha256": SCRIPT_SHA, "approvedAt": "2026-08-12T00:00:00+00:00"},
+        # A DERIVED curve (G37): the shape tools/duck_music.py emits — open in
+        # the gaps, ducked under each speech run, 4 points per run. The old
+        # two-point fixture was itself an example of the bug G37 now blocks.
         "music": {"src": "music/bed-02.mp3",
-                  "points": [{"t": 0, "vol": 0.15}, {"t": 60, "vol": 0.02}]},
+                  "derivedFrom": "vo.json word timings (tools/duck_music.py)",
+                  "points": [{"t": 0, "vol": 0.15},
+                             {"t": 1.8, "vol": 0.15}, {"t": 2.0, "vol": 0.055},
+                             {"t": 9.0, "vol": 0.055}, {"t": 9.34, "vol": 0.15},
+                             {"t": 20.0, "vol": 0.15}, {"t": 20.2, "vol": 0.055},
+                             {"t": 40.0, "vol": 0.055}, {"t": 40.34, "vol": 0.15},
+                             {"t": 59.1, "vol": 0.15}, {"t": 60, "vol": 0.02}]},
         "scenes": scenes,
     }
 
@@ -482,6 +491,18 @@ CASES = [
         "annotations": [{"kind": "underline", "at": 0.5,
                          "x": 30, "y": 40, "w": 700, "h": 26}]}),
      "G36", "a 4.6:1 strip in annotatezoom (84% dead space)"),
+    # 2026-08-17: the hand-written music curve. Every shipped reel had one, and
+    # every one of them was measurably not ducking.
+    (lambda s: s.__setitem__("music", {"src": "music/bed-02.mp3", "from": 0.0,
+                                       "points": [{"t": 0.0, "vol": 0.15},
+                                                  {"t": 8.0, "vol": 0.08},
+                                                  {"t": 40.0, "vol": 0.14}]}),
+     "G37", "a hand-written music curve (no derivedFrom)"),
+    (lambda s: s.__setitem__("music", {"src": "music/bed-02.mp3", "from": 0.0,
+                                       "derivedFrom": "vo.json word timings",
+                                       "points": [{"t": 0.0, "vol": 0.15},
+                                                  {"t": 40.0, "vol": 0.05}]}),
+     "G37", "a curve CLAIMING to be derived but with 2 points"),
 ]
 
 for mutate, gate, label in CASES:
