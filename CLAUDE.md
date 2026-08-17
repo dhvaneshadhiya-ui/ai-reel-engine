@@ -236,9 +236,9 @@ removed 2026-08-16 and reinstalled project-level so they travel with the repo
 and cannot override anything else. If `hyperframes init` is ever run again,
 re-check both global paths.
 
-### GLOBAL skills (2026-08-16) — outside the repo, at the user's call
+### GLOBAL skills (2026-08-17) — outside the repo, at the user's call
 
-Five skills live in `~/.agents/skills/`, symlinked into `~/.claude/skills/`.
+Six skills live in `~/.agents/skills/`, symlinked into `~/.claude/skills/`.
 They are the ONLY things on this machine outside the repo. Each was READ before
 installing and none is a router: none claims to be a default or a mandatory
 entry point, so none can contend with `news-reel` for a reel request the way the
@@ -251,6 +251,16 @@ entry point, so none can contend with `news-reel` for a reel request the way the
 | `fact-check-workflow` | verifying a claim BEFORE it becomes a beat with a receipt | jamditis/claude-skills-journalism |
 | `youtube-seo` | YouTube title / description / tags — the one packaging gap | kostja94/marketing-skills |
 | `thumbnail-design` | the thumbnail BRIEF: promise, CLICK framework, A/B plan | social-media-skills/skills |
+| `ffmpeg-ytdlp` | measured ffmpeg/ffprobe/yt-dlp recipes + the macOS arch trap | LOCAL — `skills-global/` |
+
+**Two kinds, and the difference matters.** The first five come from the skills
+registry, so `install_global_skills.sh` can refetch them anywhere. `ffmpeg-ytdlp`
+is ours: hand-written, so its SOURCE is committed at `skills-global/ffmpeg-ytdlp/`
+and the installer COPIES it into `~/.agents/skills/`. A hand-written global skill
+with no in-repo source silently does not exist on any other machine — that is why
+it lives in the repo and why the installer grew a local pass. Add future local
+globals the same way: drop `skills-global/<name>/SKILL.md` and the installer picks
+it up with no edit.
 
 **`humanizer` — chosen over `english-humanizer` for one clause:** *"The rewrite
 must not contain any fact, name, number, date, quote, or citation that isn't in
