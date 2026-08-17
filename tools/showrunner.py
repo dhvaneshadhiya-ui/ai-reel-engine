@@ -58,6 +58,24 @@ def _gates_pass(slug: str) -> bool:
 def steps(slug: str) -> list[dict]:
     """The pipeline, in order. `auto` is a command safe to run unattended."""
     return [
+        dict(key="goal",
+             label="ONE goal chosen (save / share / follow / lead)",
+             done=_p(f"jobs/{slug}/goal.md").exists(),
+             auto=None,
+             skills=["going-viral         pick the goal; it dictates emotion + mechanic"],
+             human="Pick ONE goal and write it to "
+                   f"jobs/{slug}/goal.md with the emotion and mechanic it "
+                   "implies:\n"
+                   "        SAVE   relief + fear-of-forgetting -> a finite "
+                   "numbered system, depth in the caption\n"
+                   "        SHARE  awe / indignation / status -> result first, "
+                   "then how; must make the SENDER look early\n"
+                   "        FOLLOW FOMO + aspiration -> show the gap, a real "
+                   "climbing number, a recognisable look\n"
+                   "        LEAD   greed + curiosity -> a named free "
+                   "deliverable behind a keyword\n"
+                   "      This comes FIRST, before scouting: the goal decides "
+                   "what evidence is worth finding."),
         dict(key="scout",
              skills=["fact-check-workflow  verify each claim BEFORE it becomes a beat",
                      "ffmpeg-ytdlp        yt-dlp to pull source video/subtitles, ffmpeg to cut clips"],

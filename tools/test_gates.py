@@ -35,7 +35,16 @@ def good() -> dict:
     """A minimal sheet that passes every gate."""
     face = "assets/x/avatar-master-169.mp4"
     scenes = [
-        {"type": "logoassemble", "durationSec": 2.0,
+        # G38: the hook opens on MOTION with words on screen. This fixture used
+        # to open on `logoassemble` — the same logo-build anti-pattern three
+        # shipped reels had, which is why the baseline failed the moment the
+        # gate existed.
+        # Duration stays 2.0: the fixture timeline is measured off it, and
+        # shortening it moved every later cue and broke the G17 case.
+        # `footage`, NOT `split`: a split carries the face, and putting the
+        # presenter at 0s made G17 ("presenter appears after 5s") unfireable.
+        {"credit": "@src", "type": "footage", "durationSec": 2.0,
+         "src": "assets/x/clips/hook.mp4",
          "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.15},
                  {"src": "sfx/Camera Shutter.MP3", "vol": 0.16}]},
         {"credit": "@src", "type": "split", "durationSec": 2.5, "topSrc": "assets/x/clips/a.mp4",
@@ -503,6 +512,14 @@ CASES = [
                                        "points": [{"t": 0.0, "vol": 0.15},
                                                   {"t": 40.0, "vol": 0.05}]}),
      "G37", "a curve CLAIMING to be derived but with 2 points"),
+    # 2026-08-17, from the going-viral skill. Three shipped reels opened this way.
+    (lambda s: s["scenes"].__setitem__(0, {"type": "logoassemble",
+                                           "durationSec": 1.9,
+                                           "viewBox": "0 0 1024 1024",
+                                           "paths": [{"d": "M0 0"}], "size": 500}),
+     "G38", "a logo-build opener instead of motion at frame 0"),
+    (lambda s: s["scenes"][0].__setitem__("hideCaptions", True),
+     "G38", "a hook with no words on screen (mute-blind)"),
 ]
 
 for mutate, gate, label in CASES:

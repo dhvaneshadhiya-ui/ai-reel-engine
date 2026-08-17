@@ -1038,6 +1038,34 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 "points — a real duck curve has 4 per speech run. Re-run "
                 "tools/duck_music.py.")
 
+    # G38 — FRAME ZERO MUST CARRY MOTION AND SOMETHING LEGIBLE ON MUTE.
+    # From the `going-viral` skill, which is research-grounded (Berger & Milkman:
+    # sharing tracks AROUSAL, not positivity) and states it plainly: "Frame 0 IS
+    # the hook. The biggest element is already on screen AND moving... legible on
+    # mute (70-85% watch sound-off). No fade-from-black, no slow logo build, no
+    # title card."
+    #
+    # Audited 2026-08-17: eight reels open on `split` (two live sources — right),
+    # but THREE open on `logoassemble` with `hideCaptions: true` — a logo drawing
+    # itself with no words on screen. That is the exact anti-pattern, and it
+    # shipped three times because the rule lived in a skill nobody was told to
+    # read at this stage.
+    #
+    # This DOES newly fail those three sheets. That is the point: they are the
+    # bug, not the precedent worth protecting.
+    if scenes:
+        s0 = scenes[0]
+        if s0["type"] not in MOTION_TYPES and s0["type"] not in BUILDING_TYPES:
+            errors.append(
+                f"G38 the hook (scene 00) is `{s0['type']}` — frame 0 needs a "
+                "moving element, not a card that assembles. Open on `split` or "
+                "`footage` and let the claim land on top.")
+        if s0.get("hideCaptions"):
+            errors.append(
+                "G38 the hook (scene 00) sets hideCaptions — 70-85% of viewers "
+                "watch on mute, so a hook with no words on screen says nothing. "
+                "Show the claim.")
+
     if errors:
         raise GateError(
             f"{len(errors)} blocking rule violation(s):\n  - "
