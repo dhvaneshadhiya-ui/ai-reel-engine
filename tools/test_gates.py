@@ -26,13 +26,17 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from reel_gates import (  # noqa: E402
     BLOCKING_RULES,
     CAPTION_ALIASES,
+    LUFS_TARGET,
     RUNTIME_CEILING,
+    TRUE_PEAK_CEILING,
     GateError,
     STYLE_ALIASES,
     STYLE_CANON,
     canon_caption,
     canon_style,
     check_beats,
+    master_errors,
+    parse_ebur128,
 )
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -572,6 +576,79 @@ CASES = [
 
 for mutate, gate, label in CASES:
     expect_fail(mutate, gate, label)
+
+
+# ── G31, the finished master ────────────────────────────────────────────────
+# The only gate that measures an ARTIFACT rather than the beat sheet, so it
+# gets its own harness: check_beats never sees it, and the numbers below are
+# real measurements off out/apple-pay-india-raw.mp4 (2026-08-17) rather than
+# invented ones.
+def expect_master_fail(integrated: float, true_peak: float, label: str) -> None:
+    errs = master_errors(integrated, true_peak)
+    if any("G31" in e for e in errs):
+        _fired.append(("G31", label))
+        _counted(f"G31 fires — {label}")
+        return
+    print(f"  FAIL G31 did NOT fire for {label} "
+          f"(I={integrated}, TP={true_peak}); got: {errs}")
+    raise SystemExit(1)
+
+
+def expect_master_pass(integrated: float, true_peak: float, label: str) -> None:
+    errs = master_errors(integrated, true_peak)
+    if errs:
+        print(f"  FAIL {label} — should have passed:\n    " +
+              "\n    ".join(errs))
+        raise SystemExit(1)
+    _counted(label)
+
+
+# This is the exact miss that was shipping: render_job.py mastered in ONE
+# loudnorm pass, which undershoots by design and never applies the offset it
+# has already measured.
+expect_master_fail(-15.2, -1.0, "single-pass master lands 1.2 LU under target")
+expect_master_fail(-12.5, -1.0, "master 1.5 LU OVER target (tolerance is both ways)")
+expect_master_fail(-14.2, -0.4, "true peak over the ceiling — clips on re-encode")
+expect_master_fail(float("-inf"), float("-inf"), "silent master")
+# What the two-pass chain actually delivered on the same raw file.
+expect_master_pass(-14.2, -1.0, "G31 silent — two-pass master at -14.2 LUFS")
+expect_master_pass(LUFS_TARGET, TRUE_PEAK_CEILING,
+                   "G31 silent — exactly on target, exactly at the TP ceiling")
+
+# The parser must read the SUMMARY, never the running per-frame line, which
+# carries the same label with a different (mid-file) value. Sample is real
+# ffmpeg output, trimmed.
+_EBUR_SAMPLE = """[Parsed_ebur128_0 @ 0x7f] t: 100.81 TARGET:-23 LUFS    M: -17.5 S: -13.7     I: -99.9 LUFS       LRA:   2.4 LU  FTPK: -37.2 dBFS  TPK:  -9.9  -9.9 dBFS
+[Parsed_ebur128_0 @ 0x7f] Summary:
+
+  Integrated loudness:
+    I:         -14.2 LUFS
+    Threshold: -24.7 LUFS
+
+  Loudness range:
+    LRA:         3.1 LU
+
+  True peak:
+    Peak:       -1.0 dBFS
+"""
+_i, _tp = parse_ebur128(_EBUR_SAMPLE)
+if (_i, _tp) != (-14.2, -1.0):
+    raise SystemExit(f"  FAIL parse_ebur128 read {(_i, _tp)}, want (-14.2, -1.0) "
+                     "— it must read the Summary block, not a per-frame line")
+_counted("parse_ebur128 reads the summary, not the running per-frame values")
+
+# `-v error` hides loudnorm/ebur128 statistics entirely. An unreadable
+# measurement must FAIL, never silently pass — that is the exact shape of the
+# Pillow bug this repo was rebuilt around.
+try:
+    parse_ebur128("ffmpeg version 8.0\nframe= 3025 fps=1163\n")
+except GateError as _e:
+    if "G31" not in str(_e):
+        raise SystemExit(f"  FAIL empty ebur128 output raised without G31: {_e}")
+    _counted("G31 fires — ffmpeg output carried no ebur128 summary to read")
+else:
+    raise SystemExit("  FAIL parse_ebur128 accepted output with no summary — "
+                     "an unreadable measurement must never pass as clean")
 
 # The suite printed "every gate fires on its violation" while G13 and G16 had
 # no failing case at all (found 2026-08-17). Uniqueness of ids was asserted;
