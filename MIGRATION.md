@@ -281,22 +281,77 @@ no credits spent — it confirms the orchestrator can read the repo.
 
 ---
 
-## PART 6 — Keeping two machines honest
+## PART 6 — Carrying work BACK, and keeping two machines honest
 
-**Two copies drift.** `STYLE-RULES.md`, `config.json` and the gates diverge
-silently — this project found **four stale-prose drifts in a single day on one
-machine**. If both Macs will make reels:
+**This repo is now a git repo** (initialised 2026-08-17, first commit is the
+full state of the second Mac). That is the carrier. Do not rsync or copy the
+folder between machines again.
 
-- Put the repo on a **private git remote** and pull, rather than copying twice.
-- `.gitignore` already excludes `node_modules/`, `out/`, `_sources/`,
-  `public/assets/` and `bin/`, so a clone is small.
-- `bin/` is excluded from git because 150 MB of binaries does not belong there;
-  it ships only in the migration archive.
+### 6.1 Why not just copy the folder
 
-If you keep two independent copies anyway, treat **one as canonical** and
-re-export the archive from it whenever the rules change.
+`public/assets/` (per-reel b-roll), `out/` (renders) and `_sources/` (scouted
+footage) are ~3 GB and were deliberately EXCLUDED from the original archive, so
+they exist only on whichever machine made them. Copy a folder over the top and
+you destroy them. `.gitignore` already excludes all three plus `node_modules/`
+and `bin/`, so a git sync physically cannot touch them.
 
----
+### 6.2 Carrying changes across, with no account and no network
+
+```bash
+# on the machine that has the new work
+git bundle create ~/Desktop/ai-reel-engine-sync.bundle --all
+```
+
+One file, ~6 MB, full history. AirDrop or USB it across. Then on the other Mac:
+
+```bash
+cd ~/Movies/ai-reel-engine          # wherever that copy lives
+git init -b main                    # only the first time
+git remote add sync ~/Desktop/ai-reel-engine-sync.bundle   # first time only
+git fetch sync
+git reset --hard FETCH_HEAD
+npm install                         # package.json may have moved
+python3 scripts/doctor.py
+python3 tools/test_gates.py
+```
+
+`reset --hard` replaces every TRACKED file with the incoming version and leaves
+ignored files alone — so the footage, renders and node_modules on that machine
+survive untouched.
+
+> **It also discards local edits to tracked files on that machine.** If work was
+> done there since the split, commit it first and `git merge FETCH_HEAD`
+> instead. Check with `git status` before resetting.
+
+For later syncs, `git bundle create` again and `git fetch sync && git merge
+FETCH_HEAD` — the remote path never changes.
+
+### 6.3 What does NOT travel in git, and must be redone per machine
+
+The repo is portable; the toolchain is not (§3), and neither is anything that
+lives outside the repo:
+
+| Not in git | Redo with |
+|---|---|
+| **5 global skills** — find-skills, humanizer, fact-check-workflow, youtube-seo, thumbnail-design | `npx skills add <owner/repo@skill> -g -y` (list in CLAUDE.md) |
+| **chatterbox venv** | `python3 -m venv ~/.venvs/chatterbox && ~/.venvs/chatterbox/bin/pip install chatterbox-tts` — NEVER system-wide, it downgrades torch under whisper |
+| **PATH in `~/.zshenv`** | §3.4 — `.zshrc` is interactive-only, so agent-run commands never see it |
+| **ffmpeg-full, manim, deno, yt-dlp-ejs** | §2.1 / §3.2 |
+| **The HeyGen connector** | the Claude app's connector settings |
+| **`public/assets/`, `out/`, `_sources/`** | per-reel; see §1.3 |
+
+`doctor.py` names everything in that list except the skills and the connector.
+
+### 6.4 The drift this prevents
+
+Two copies drift — this project found **four stale-prose drifts in a single day
+on one machine**, and the 2026-08-16 session found three more of the same shape:
+a rule was tightened in the checker and the producer that emits the value was
+never updated, so the generic new-reel path was dead for weeks behind green
+tests. Prose and constants drift silently; git history does not.
+
+Treat whichever machine last ran `doctor` + `test_gates` green as canonical, and
+sync from it rather than merging by hand.
 
 ## Answers to the obvious questions
 
