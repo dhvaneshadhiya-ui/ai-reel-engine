@@ -200,14 +200,15 @@
       ]
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/september-preview/clips/mrs-hero.png",
-      "bg": "gradient",
-      "aspect": 2.0172413793103448,
       "durationSec": 1.68,
       "credit": "MacRumors",
       "assetId": "receipt-mrs-hero",
-      "covers": "this September"
+      "covers": "this September",
+      "srcWidth": 1170,
+      "srcHeight": 580,
+      "backdrop": "cream"
     },
     {
       "type": "footage",
@@ -651,10 +652,8 @@
       }
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/september-preview/clips/ceo-hero.png",
-      "bg": "gradient",
-      "aspect": 1.1470588235294117,
       "durationSec": 2.23,
       "credit": "Apple Newsroom",
       "assetId": "receipt-ceo-hero",
@@ -665,26 +664,31 @@
           "at": 0.0
         }
       ],
-      "covers": "boss. John"
+      "covers": "boss. John",
+      "srcWidth": 1170,
+      "srcHeight": 1020,
+      "backdrop": "cream"
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/september-preview/clips/ceo-photo.png",
-      "bg": "gradient",
-      "aspect": 1.17,
       "durationSec": 2.24,
       "credit": "Apple Newsroom",
       "assetId": "still-ceo-photo",
-      "covers": "John Ternus runs his"
+      "covers": "John Ternus runs his",
+      "srcWidth": 1170,
+      "srcHeight": 1000,
+      "backdrop": "cream"
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/september-preview/clips/ceo-body.png",
-      "bg": "gradient",
-      "aspect": 1.17,
       "durationSec": 2.03,
       "credit": "Apple Newsroom",
-      "assetId": "still-ceo-body"
+      "assetId": "still-ceo-body",
+      "srcWidth": 1170,
+      "srcHeight": 1000,
+      "backdrop": "cream"
     },
     {
       "type": "footage",
@@ -709,13 +713,14 @@
       "covers": "executive chairman on September"
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/september-preview/clips/ceo-hero.png",
-      "bg": "gradient",
-      "aspect": 1.1470588235294117,
       "durationSec": 2.3,
       "credit": "Apple Newsroom",
-      "assetId": "receipt-ceo-hero"
+      "assetId": "receipt-ceo-hero",
+      "srcWidth": 1170,
+      "srcHeight": 1020,
+      "backdrop": "cream"
     },
     {
       "type": "footage",

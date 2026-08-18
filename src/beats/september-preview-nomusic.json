@@ -49,12 +49,12 @@
     ]
   },
   "captionStyle": "nick-display",
-  "script": "Apple is about to drop at least 5 new products this September.\nFirst: iPhone 18 Pro and Pro Max. A20 Pro chip on 2 nanometers, a variable-aperture camera, a smaller Dynamic Island, and a new Dark Cherry color.\nThe catch? Rumors put them up to $300 pricier.\nSecond: the headliner — Apple's first foldable, the iPhone Ultra.\n5.5 inches closed, 7.8 unfolded — basically an iPad mini that fits in your pocket.\nTouch ID instead of Face ID, dual batteries, and a hinge built to hide the crease.\nThe price? Somewhere between $2,000 and $2,500.\nThird: Watch Series 12 — faster chip, bigger battery, same look.\nFourth: Watch Ultra 4, possibly thinner with upgraded sensors — though that's a single source, so squint.\nAnd fifth, the real wildcard: a new boss.\nJohn Ternus runs his first keynote as CEO — Tim Cook officially becomes Executive Chairman on September 1. That part isn't a rumor.\nWhat you won't see: the standard iPhone 18. That one moved to March.\nThe event lands September 8 or 9; preorders the same week.\nSo — the $2,000 foldable, or the Pro: which one's your money on?\nTell me in the comments.\n",
+  "script": "Apple is about to drop at least 5 new products this September.\nFirst: iPhone 18 Pro and Pro Max. A20 Pro chip on 2 nanometers, a variable-aperture camera, a smaller Dynamic Island, and a new Dark Cherry color.\nThe catch? Rumors put them up to $300 pricier.\nSecond: the headliner \u2014 Apple's first foldable, the iPhone Ultra.\n5.5 inches closed, 7.8 unfolded \u2014 basically an iPad mini that fits in your pocket.\nTouch ID instead of Face ID, dual batteries, and a hinge built to hide the crease.\nThe price? Somewhere between $2,000 and $2,500.\nThird: Watch Series 12 \u2014 faster chip, bigger battery, same look.\nFourth: Watch Ultra 4, possibly thinner with upgraded sensors \u2014 though that's a single source, so squint.\nAnd fifth, the real wildcard: a new boss.\nJohn Ternus runs his first keynote as CEO \u2014 Tim Cook officially becomes Executive Chairman on September 1. That part isn't a rumor.\nWhat you won't see: the standard iPhone 18. That one moved to March.\nThe event lands September 8 or 9; preorders the same week.\nSo \u2014 the $2,000 foldable, or the Pro: which one's your money on?\nTell me in the comments.\n",
   "approval": {
     "sha256": "6569be722a491a1286cbf642882c85b84b34a24d503d08eb28c4931e054a0475",
     "approvedAt": "2026-08-14T06:34:40+00:00",
     "words": 196,
-    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
   },
   "emphasis": [
     "five",
@@ -87,13 +87,14 @@
       ]
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/september-preview/clips/mrs-hero.png",
-      "bg": "gradient",
-      "aspect": 2.0172413793103448,
       "durationSec": 1.68,
       "credit": "MacRumors",
-      "assetId": "receipt-mrs-hero"
+      "assetId": "receipt-mrs-hero",
+      "srcWidth": 1170,
+      "srcHeight": 580,
+      "backdrop": "cream"
     },
     {
       "type": "footage",
@@ -105,7 +106,7 @@
       "headline": {
         "lines": [
           {
-            "text": "01 · iPhone 18 Pro · Pro Max",
+            "text": "01 \u00b7 iPhone 18 Pro \u00b7 Pro Max",
             "kind": "label",
             "at": 0.2
           }
@@ -134,7 +135,7 @@
     {
       "type": "specsheet",
       "kicker": "the flagships",
-      "title": "iPhone 18 Pro · Pro Max",
+      "title": "iPhone 18 Pro \u00b7 Pro Max",
       "columns": [
         "RUMORED"
       ],
@@ -142,7 +143,7 @@
         {
           "label": "Chip",
           "values": [
-            "A20 Pro · 2nm"
+            "A20 Pro \u00b7 2nm"
           ]
         },
         {
@@ -165,7 +166,7 @@
           "accent": true
         }
       ],
-      "footnote": "MacRumors · Aug 13, 2026",
+      "footnote": "MacRumors \u00b7 Aug 13, 2026",
       "durationSec": 2.75,
       "sfx": [
         {
@@ -239,7 +240,7 @@
       "headline": {
         "lines": [
           {
-            "text": "02 · iPhone Ultra",
+            "text": "02 \u00b7 iPhone Ultra",
             "kind": "label",
             "at": 0.2
           }
@@ -303,21 +304,21 @@
     },
     {
       "type": "statcard",
-      "title": "iPhone Ultra — two screens",
+      "title": "iPhone Ultra \u2014 two screens",
       "rows": [
         {
           "label": "Closed",
-          "value": "5.5″",
+          "value": "5.5\u2033",
           "pct": 0.71
         },
         {
           "label": "Unfolded",
-          "value": "7.8″",
+          "value": "7.8\u2033",
           "pct": 1.0,
           "color": "#E0785A"
         }
       ],
-      "footnote": "MacRumors · Aug 13, 2026",
+      "footnote": "MacRumors \u00b7 Aug 13, 2026",
       "bg": "black",
       "durationSec": 2.56,
       "sfx": [
@@ -350,7 +351,7 @@
       "headline": "iPhone Ultra hardware",
       "rows": [
         {
-          "label": "Touch ID — not Face ID",
+          "label": "Touch ID \u2014 not Face ID",
           "state": "done"
         },
         {
@@ -380,7 +381,7 @@
       "focusX": 0.515,
       "captionBottom": 300,
       "infocard": {
-        "heading": "$2,000–$2,500",
+        "heading": "$2,000\u2013$2,500",
         "body": "rumored price range",
         "at": 0.5
       }
@@ -395,7 +396,7 @@
       "headline": {
         "lines": [
           {
-            "text": "03 · Watch Series 12",
+            "text": "03 \u00b7 Watch Series 12",
             "kind": "label",
             "at": 0.15
           }
@@ -439,7 +440,7 @@
       "headline": {
         "lines": [
           {
-            "text": "04 · Watch Ultra 4",
+            "text": "04 \u00b7 Watch Ultra 4",
             "kind": "label",
             "at": 0.15
           }
@@ -519,7 +520,7 @@
       "headline": {
         "lines": [
           {
-            "text": "05 · A NEW BOSS",
+            "text": "05 \u00b7 A NEW BOSS",
             "kind": "label",
             "at": 0.2
           }
@@ -530,10 +531,8 @@
       }
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/september-preview/clips/ceo-hero.png",
-      "bg": "gradient",
-      "aspect": 1.1470588235294117,
       "durationSec": 2.23,
       "credit": "Apple Newsroom",
       "assetId": "receipt-ceo-hero",
@@ -543,25 +542,30 @@
           "vol": 0.12,
           "at": 0.0
         }
-      ]
+      ],
+      "srcWidth": 1170,
+      "srcHeight": 1020,
+      "backdrop": "cream"
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/september-preview/clips/ceo-photo.png",
-      "bg": "gradient",
-      "aspect": 1.17,
       "durationSec": 2.24,
       "credit": "Apple Newsroom",
-      "assetId": "still-ceo-photo"
+      "assetId": "still-ceo-photo",
+      "srcWidth": 1170,
+      "srcHeight": 1000,
+      "backdrop": "cream"
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/september-preview/clips/ceo-body.png",
-      "bg": "gradient",
-      "aspect": 1.17,
       "durationSec": 2.03,
       "credit": "Apple Newsroom",
-      "assetId": "still-ceo-body"
+      "assetId": "still-ceo-body",
+      "srcWidth": 1170,
+      "srcHeight": 1000,
+      "backdrop": "cream"
     },
     {
       "type": "footage",
@@ -575,7 +579,7 @@
       "type": "uidialog",
       "app": "Reminders",
       "title": "New CEO takes over",
-      "body": "John Ternus becomes CEO · Tim Cook becomes Executive Chairman",
+      "body": "John Ternus becomes CEO \u00b7 Tim Cook becomes Executive Chairman",
       "field": {
         "label": "Date",
         "value": "Mon, September 1, 2026"
@@ -585,13 +589,14 @@
       "durationSec": 1.92
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/september-preview/clips/ceo-hero.png",
-      "bg": "gradient",
-      "aspect": 1.1470588235294117,
       "durationSec": 2.3,
       "credit": "Apple Newsroom",
-      "assetId": "receipt-ceo-hero"
+      "assetId": "receipt-ceo-hero",
+      "srcWidth": 1170,
+      "srcHeight": 1020,
+      "backdrop": "cream"
     },
     {
       "type": "footage",
@@ -613,7 +618,7 @@
           "size": 1.1
         },
         {
-          "text": "→ March 2027",
+          "text": "\u2192 March 2027",
           "style": "caps",
           "at": 1.0,
           "size": 1.2,
@@ -633,10 +638,10 @@
       "type": "uidialog",
       "app": "Calendar",
       "title": "Apple Event (rumored)",
-      "body": "Apple Park · pre-orders the same week",
+      "body": "Apple Park \u00b7 pre-orders the same week",
       "field": {
         "label": "When",
-        "value": "Tue Sep 8 — or Wed Sep 9"
+        "value": "Tue Sep 8 \u2014 or Wed Sep 9"
       },
       "primary": "Accept",
       "cancel": "Decline",
@@ -689,7 +694,7 @@
       "headline": {
         "lines": [
           {
-            "text": "FOLDABLE — OR PRO?",
+            "text": "FOLDABLE \u2014 OR PRO?",
             "kind": "label",
             "at": 0.2
           },

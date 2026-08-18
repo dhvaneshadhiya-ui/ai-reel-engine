@@ -454,13 +454,14 @@
       "captionBottom": 300
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/iphone18-split/clips/pegatron-building.png",
-      "bg": "gradient",
-      "aspect": 1.3473684210526315,
       "durationSec": 2.2,
       "credit": "AppleInsider",
-      "assetId": "still-pegatron-building"
+      "assetId": "still-pegatron-building",
+      "srcWidth": 1792,
+      "srcHeight": 1330,
+      "backdrop": "cream"
     },
     {
       "type": "annotatezoom",
@@ -790,13 +791,14 @@
       "assetId": "clip-pro-neon"
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/iphone18-split/clips/pegatron-gate.png",
-      "bg": "gradient",
-      "aspect": 1.5873015873015872,
       "durationSec": 2.21,
       "credit": "AppleInsider",
-      "assetId": "still-pegatron-gate"
+      "assetId": "still-pegatron-gate",
+      "srcWidth": 1000,
+      "srcHeight": 630,
+      "backdrop": "cream"
     },
     {
       "type": "footage",

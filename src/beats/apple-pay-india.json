@@ -319,10 +319,8 @@
       ]
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/apple-pay-india/clips/receipt-bt.png",
-      "bg": "gradient",
-      "aspect": 3.2660550458715596,
       "durationSec": 1.98,
       "credit": "Business Today",
       "headline": {
@@ -342,7 +340,10 @@
         "y": 0.11,
         "theme": "dark",
         "align": "center"
-      }
+      },
+      "srcWidth": 1780,
+      "srcHeight": 545,
+      "backdrop": "cream"
     },
     {
       "type": "split",
@@ -1010,10 +1011,8 @@
       ]
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/apple-pay-india/clips/receipt-bt.png",
-      "bg": "gradient",
-      "aspect": 3.2660550458715596,
       "durationSec": 1.36,
       "credit": "Business Today",
       "headline": {
@@ -1034,7 +1033,10 @@
         "theme": "dark",
         "align": "center"
       },
-      "assetId": "receipt-bt"
+      "assetId": "receipt-bt",
+      "srcWidth": 1780,
+      "srcHeight": 545,
+      "backdrop": "cream"
     },
     {
       "type": "floatcard",

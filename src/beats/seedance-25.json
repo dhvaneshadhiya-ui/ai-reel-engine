@@ -160,10 +160,8 @@
       "assetId": "clip-stained-glass"
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/seedance-25/clips/keynote-slide.jpg",
-      "bg": "gradient",
-      "aspect": 2.963,
       "durationSec": 2.18,
       "credit": "Volcano Engine FORCE 2026",
       "assetId": "card-keynote",
@@ -191,7 +189,10 @@
           "vol": 0.12,
           "at": 0.0
         }
-      ]
+      ],
+      "srcWidth": 1920,
+      "srcHeight": 648,
+      "backdrop": "cream"
     },
     {
       "type": "timeline",

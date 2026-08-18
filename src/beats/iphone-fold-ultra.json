@@ -577,10 +577,8 @@
       "captionBottom": 300
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/iphone-fold-ultra/clips/mr-faceid.png",
-      "bg": "gradient",
-      "aspect": 2.0892857142857144,
       "durationSec": 1.86,
       "credit": "MacRumors",
       "assetId": "receipt-mr-faceid",
@@ -591,13 +589,14 @@
           "at": 0.08
         }
       ],
-      "covers": "for face ID"
+      "covers": "for face ID",
+      "srcWidth": 1170,
+      "srcHeight": 560,
+      "backdrop": "cream"
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/iphone-fold-ultra/clips/mr-faceid-b.png",
-      "bg": "gradient",
-      "aspect": 2.7209302325581395,
       "durationSec": 2.38,
       "credit": "MacRumors",
       "assetId": "receipt-mr-faceid-b",
@@ -619,7 +618,10 @@
         "theme": "light",
         "align": "center"
       },
-      "covers": "so touch ID moves"
+      "covers": "so touch ID moves",
+      "srcWidth": 1170,
+      "srcHeight": 430,
+      "backdrop": "cream"
     },
     {
       "type": "footage",
@@ -832,10 +834,8 @@
       ]
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/iphone-fold-ultra/clips/mr-pricing.png",
-      "bg": "gradient",
-      "aspect": 1.8870967741935485,
       "durationSec": 1.58,
       "credit": "MacRumors",
       "assetId": "receipt-mr-pricing",
@@ -846,17 +846,21 @@
           "at": 0.08
         }
       ],
-      "covers": "UBS says"
+      "covers": "UBS says",
+      "srcWidth": 1170,
+      "srcHeight": 620,
+      "backdrop": "cream"
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/iphone-fold-ultra/clips/mr-pricing.png",
-      "bg": "gradient",
-      "aspect": 1.8870967741935485,
       "durationSec": 1.58,
       "credit": "MacRumors",
       "assetId": "receipt-mr-pricing",
-      "covers": "$1 ,800 IDC"
+      "covers": "$1 ,800 IDC",
+      "srcWidth": 1170,
+      "srcHeight": 620,
+      "backdrop": "cream"
     },
     {
       "type": "footage",

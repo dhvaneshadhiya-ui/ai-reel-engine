@@ -380,10 +380,8 @@
       "covers": "actual tools and do"
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/grok-bot/clips/src-hero.png",
-      "bg": "gradient",
-      "aspect": 0.8,
       "durationSec": 1.63,
       "credit": "x.ai",
       "headline": {
@@ -404,7 +402,10 @@
         "theme": "dark",
         "align": "center"
       },
-      "assetId": "src-hero"
+      "assetId": "src-hero",
+      "srcWidth": 1200,
+      "srcHeight": 1500,
+      "backdrop": "cream"
     },
     {
       "type": "floatcard",
@@ -886,10 +887,8 @@
       ]
     },
     {
-      "type": "floatcard",
+      "type": "receipt",
       "src": "assets/grok-bot/clips/src-body.png",
-      "bg": "gradient",
-      "aspect": 0.7692307692307693,
       "durationSec": 1.76,
       "credit": "x.ai",
       "headline": {
@@ -909,7 +908,10 @@
         "y": 0.09,
         "theme": "dark",
         "align": "center"
-      }
+      },
+      "srcWidth": 1200,
+      "srcHeight": 1560,
+      "backdrop": "cream"
     },
     {
       "type": "footage",
