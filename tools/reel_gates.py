@@ -627,45 +627,87 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # voice was made, captions silently drift from the audio.
     if vo_words:
         # .strip() FIRST for whitespace: whisper returns words with a LEADING
-        # SPACE (" Apple's"), and strip(punctuation) does not remove it, so every
-        # entry in this set carried a space and no caption token could ever match.
-        # G21 therefore flagged every alphabetic word in every reel. It went
-        # unnoticed because the CLI never passed vo_words (see the note at the
-        # bottom of this file) and because the self-test fixture used clean words
-        # that did not look like real whisper output.
-        spoken = {w.strip().lower().strip(".,!?:;\"'—-") for w, *_ in
-                  (x if isinstance(x, (list, tuple)) else (x,) for x in vo_words)}
-        spoken.discard("")
+        # SPACE (" Apple's"), and strip(punctuation) does not remove it.
+        raw = [w.strip().lower().strip(".,!?:;\"'—-") for w, *_ in
+               (x if isinstance(x, (list, tuple)) else (x,) for x in vo_words)]
+        raw = [w for w in raw if w]
+        spoken = set(raw)
+        # Whisper is NOT ground truth for what was said, and this gate treated it
+        # as if it were. Measured across the library on 2026-08-17, every single
+        # one of its 20 hits was a transcription artifact, not a caption defect:
+        #
+        #   hyphen splits   "device-specific" transcribed as "device" "-specific"
+        #                   also one-time, hold-up, always-on, pre-orders, Ming-Chi
+        #   name mishears   Kuo->"Quo", Seedance->"Seedense", ByteDance->"bite
+        #                   dance", stubby->"stabby", configs->"conflicts"
+        #   number mishears "two 48-megapixel" heard as "248 megapixel"
+        #
+        # A gate at 100% false positives is worse than none: it trains people to
+        # skip the output. The repo already knew whisper mishears — that is what
+        # `caption_corrections` is for. So compare with the tolerance the medium
+        # actually needs, and keep the case this exists for: captions written
+        # against a DIFFERENT script, which show up as words with no plausible
+        # match anywhere near them in time.
+        joined = {a + b for a, b in zip(raw, raw[1:])}          # "bite dance"
+        spoken |= joined
+        squashed = {w.replace("-", "").replace("'", "") for w in spoken}
+
+        def close(a: str, b: str) -> bool:
+            """Cheap edit-distance<=2 for same-ish length words."""
+            if abs(len(a) - len(b)) > 2:
+                return False
+            # The prefix/suffix guard is a speed trick, and for a SHORT word it
+            # is the whole word — so "kuo" vs "quo" (distance 1, a classic
+            # proper-noun mishear) was rejected before the distance was even
+            # computed. Skip the guard when there is nothing to guard.
+            if len(a) > 4 and a[:3] != b[:3] and a[-3:] != b[-3:]:
+                return False
+            prev = list(range(len(b) + 1))
+            for i, ca in enumerate(a, 1):
+                cur = [i]
+                for j, cb in enumerate(b, 1):
+                    cur.append(min(prev[j] + 1, cur[j - 1] + 1,
+                                   prev[j - 1] + (ca != cb)))
+                prev = cur
+            return prev[-1] <= 2
+
         missing = []
         for cap in (beats.get("captions") or []):
             for tok in str(cap.get("text", "")).split():
                 k = tok.lower().strip(".,!?:;\"'—-")
-                if not k:
+                if not k or any(c.isdigit() for c in k):
                     continue
-                # A token carrying a DIGIT is exempt, because the user's own
-                # notation rule requires captions to normalise what the voice
-                # says: the VO speaks "twenty nine dollars" and the caption must
-                # read "$29". The old test exempted only a bare `isdigit()`
-                # token, so every normalised form failed — "$29", "10%", "120x",
-                # "11th", '7.76"'. That reported 217 "defects" on one reel, all
-                # of them the notation rule working correctly, which made the
-                # gate worse than useless: it drowned the case it exists for.
-                #
-                # What it still catches, which is the real target: ALPHABETIC
-                # caption words that were never spoken, i.e. captions written
-                # against a script that was edited after the voice was made.
-                if any(c.isdigit() for c in k):
+                flat = k.replace("-", "").replace("'", "")
+                if k in spoken or flat in squashed:
                     continue
-                if k not in spoken:
-                    missing.append(tok)
-        if missing:
+                if any(close(flat, s) for s in squashed if abs(len(s) - len(flat)) <= 2):
+                    continue
+                # Whisper also RUNS WORDS TOGETHER: "Free Grok" comes back as
+                # "FreeGROK", so each caption word is a substring of one spoken
+                # token. Only for words long enough that containment means
+                # something.
+                if len(flat) >= 4 and any(flat in s for s in squashed):
+                    continue
+                missing.append(tok)
+        # BLOCK ON THE RATE, NOT ON A WORD. The failure this gate exists for —
+        # captions written against a script that was edited after the voice was
+        # made — is SYSTEMIC: most words stop matching at once. An isolated miss
+        # is a mishear whisper could not spell, and blocking a render for one of
+        # those is how a gate teaches people to ignore it. Measured: the whole
+        # library sits at ~1-3 stray words per reel out of 150-250 tokens, while
+        # a genuinely different script misses nearly everything.
+        total_tok = sum(len(str(c.get("text", "")).split())
+                        for c in (beats.get("captions") or [])) or 1
+        rate = len(set(missing)) / total_tok
+        if missing and (rate > 0.05 or len(set(missing)) >= 8):
             uniq = sorted(set(missing))[:8]
             errors.append(
-                f"G21 {len(set(missing))} caption word(s) are not in the "
-                f"narration: {uniq} — the captions were written against a "
-                "different script than the voice track that will be rendered. "
-                "Re-derive captions from the whisper transcript. (Numerals and "
-                "normalised forms like '$29' or '10%' are exempt by design.)")
+                f"G21 {len(set(missing))} of {total_tok} caption word(s) "
+                f"({rate:.0%}) have no match in the "
+                f"narration: {uniq} — not a mishear, not a hyphen split: no "
+                "similar word is spoken anywhere. The captions were written "
+                "against a different script than the voice track. Re-derive them "
+                "from the whisper transcript.")
 
     # G22 — ONE HIGHLIGHT PER BEAT (user rule 2026-08-12). Highlighting three
     # words in a four-word chunk highlights nothing.
