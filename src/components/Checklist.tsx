@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   useCurrentFrame,
@@ -143,8 +144,8 @@ export const Checklist: React.FC<{ scene: Props }> = ({ scene }) => {
             const en = spring({
               frame: frame - Math.round(at * fps),
               fps,
-              config: { damping: 15, stiffness: 160 },
-              durationInFrames: 12,
+              config: SPRING.enter,
+              durationInFrames: DUR.base,
             });
             const draw = interpolate(
               t,

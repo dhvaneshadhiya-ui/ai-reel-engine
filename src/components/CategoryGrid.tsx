@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 
 /** y 0.79 — just inside the platform safe floor (platformSafeArea.ts). */
 const SAFE_LOW = 400;
@@ -52,7 +53,7 @@ export const CategoryGrid: React.FC<{ scene: Props }> = ({ scene }) => {
       )}
       <div style={{ position: "relative", width: GW, height: GW * 0.72 }}>
         {scene.cards.map((c, i) => {
-          const enter = spring({ frame: frame - i * 5, fps, config: { damping: 16, stiffness: 150 }, durationInFrames: 14 });
+          const enter = spring({ frame: frame - i * 5, fps, config: SPRING.enter, durationInFrames: 14 });
           const isSel = sel === i;
           // selection transforms
           const toCenter = isSel ? selP : 0;

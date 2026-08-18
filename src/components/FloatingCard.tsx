@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   OffthreadVideo,
@@ -30,8 +31,8 @@ export const FloatingCard: React.FC<{ scene: CardProps }> = ({ scene }) => {
   const enter = spring({
     frame,
     fps,
-    config: { damping: 16, stiffness: 140, mass: 0.7 },
-    durationInFrames: 16,
+    config: SPRING.enter,
+    durationInFrames: DUR.base,
   });
   const float = interpolate(frame, [0, durationInFrames], [0, -26]);
   // card follows media aspect (FEEDBACK 2026-07-31: never re-crop a shot)

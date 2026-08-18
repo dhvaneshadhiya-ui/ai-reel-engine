@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   Img,
@@ -119,8 +120,8 @@ export const WordCascade: React.FC<{ scene: CascadeProps }> = ({ scene }) => {
         const pop = spring({
           frame: local,
           fps,
-          config: { damping: 13, stiffness: 240, mass: 0.5 },
-          durationInFrames: 10,
+          config: SPRING.pop,
+          durationInFrames: DUR.quick,
         });
         return (
           <div

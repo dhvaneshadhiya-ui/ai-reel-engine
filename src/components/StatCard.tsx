@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   useCurrentFrame,
@@ -33,8 +34,8 @@ export const StatCard: React.FC<{ scene: StatProps }> = ({ scene }) => {
   const enter = spring({
     frame,
     fps,
-    config: { damping: 18, stiffness: 130, mass: 0.7 },
-    durationInFrames: 16,
+    config: SPRING.enter,
+    durationInFrames: DUR.base,
   });
 
   return (

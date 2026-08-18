@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   useCurrentFrame,
@@ -72,7 +73,7 @@ export const LogoAssemble: React.FC<LogoAssembleProps> = ({
   const labelIn = spring({
     frame: frame - labelF,
     fps,
-    config: { damping: 16, stiffness: 180, mass: 0.5 },
+    config: SPRING.enter,
     durationInFrames: 14,
   });
   const count =
@@ -112,8 +113,8 @@ export const LogoAssemble: React.FC<LogoAssembleProps> = ({
           const en = spring({
             frame: frame - i * 3,
             fps,
-            config: { damping: 15, stiffness: 150, mass: 0.6 },
-            durationInFrames: 18,
+            config: SPRING.enter,
+            durationInFrames: DUR.base,
           });
           const { dx, dy, rot } = dirs[i];
           return (

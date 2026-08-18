@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   Img,
@@ -53,7 +54,7 @@ export const DesignReveal: React.FC<{ scene: Props }> = ({ scene }) => {
         const segDur = seg.end - seg.start;
         const inLocalF = frame - Math.round(seg.start * fps);
         // swipe-in from right
-        const slide = spring({ frame: inLocalF, fps, config: { damping: 20, stiffness: 170 }, durationInFrames: 8 });
+        const slide = spring({ frame: inLocalF, fps, config: SPRING.enter, durationInFrames: 8 });
         const x = (1 - slide) * 520;
         // subtle push-in across the whole hold
         const push = interpolate(local, [0, segDur], [1.0, 1.07]);

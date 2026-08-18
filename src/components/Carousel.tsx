@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   Img,
@@ -46,7 +47,7 @@ export const Carousel: React.FC<{ scene: Props }> = ({ scene }) => {
   const step = cardW + 70;
 
   const winnerPop = inWinner
-    ? spring({ frame: frame - Math.round((total - hold) * fps), fps, config: { damping: 12, stiffness: 200 }, durationInFrames: 12 })
+    ? spring({ frame: frame - Math.round((total - hold) * fps), fps, config: SPRING.pop, durationInFrames: DUR.base })
     : 0;
 
   return (

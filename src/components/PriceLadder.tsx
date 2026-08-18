@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   interpolate,
@@ -85,7 +86,7 @@ export const PriceLadder: React.FC<{
           const swapF = spring({
             frame: frame - Math.round((at + 0.4) * fps),
             fps,
-            config: { damping: 13, stiffness: 240 },
+            config: SPRING.pop,
             durationInFrames: 14,
           });
           return (

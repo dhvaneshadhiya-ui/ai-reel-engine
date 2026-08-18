@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   Img,
@@ -88,7 +89,7 @@ export const ToolStack: React.FC<ToolStackProps> = ({
         const enter = spring({
           frame: frame - index * 5,
           fps,
-          config: { damping: 15, stiffness: 145, mass: 0.72 },
+          config: SPRING.enter,
           durationInFrames: 22,
         });
         const cardW = index === 4 ? 450 : 420;

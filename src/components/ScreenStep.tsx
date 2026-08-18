@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   OffthreadVideo,
@@ -132,7 +133,7 @@ export const ScreenStep: React.FC<{ scene: ScreenStepProps }> = ({ scene }) => {
   const enter = spring({
     frame,
     fps,
-    config: { damping: 20, stiffness: 140, mass: 0.7 },
+    config: SPRING.enter,
     durationInFrames: 14,
   });
 

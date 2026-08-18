@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   OffthreadVideo,
@@ -20,7 +21,7 @@ const isVideo = (s: string) => /\.(mp4|webm|mov)$/i.test(s);
 export const EndQuestion: React.FC<{ scene: Props }> = ({ scene }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const en = spring({ frame, fps, config: { damping: 15, stiffness: 170 }, durationInFrames: 10 });
+  const en = spring({ frame, fps, config: SPRING.enter, durationInFrames: DUR.quick });
 
   return (
     <AbsoluteFill style={{ background: "#000", fontFamily: SANS, justifyContent: "center", alignItems: "center" }}>

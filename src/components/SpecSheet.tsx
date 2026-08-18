@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   OffthreadVideo,
@@ -55,7 +56,7 @@ export const SpecSheet: React.FC<{ scene: Props }> = ({ scene }) => {
       <div style={{ position: "relative", display: "flex", flexDirection: "column", borderRadius: 20, overflow: "hidden", boxShadow: "0 30px 80px rgba(0,0,0,0.5)" }}>
         {scene.rows.map((r, i) => {
           const at = 0.4 + i * 0.3;
-          const en = spring({ frame: frame - Math.round(at * fps), fps, config: { damping: 18, stiffness: 150 }, durationInFrames: 12 });
+          const en = spring({ frame: frame - Math.round(at * fps), fps, config: { damping: 18, stiffness: 150 }, durationInFrames: DUR.base });
           const vals = r.values ?? (r.value ? [r.value] : []);
           return (
             <div

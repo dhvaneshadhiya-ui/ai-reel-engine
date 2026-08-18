@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import { useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
 import type { Kinetic } from "../types";
 
@@ -20,8 +21,8 @@ export const KineticType: React.FC<{
   const enter = spring({
     frame: local,
     fps,
-    config: { damping: 16, stiffness: 160, mass: 0.6 },
-    durationInFrames: 16,
+    config: SPRING.enter,
+    durationInFrames: DUR.base,
   });
   const rise = interpolate(enter, [0, 1], [26, 0]);
 

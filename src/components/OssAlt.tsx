@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import { SAFE_RECT } from "../platformSafeArea";
 import {
   AbsoluteFill,
@@ -137,7 +138,7 @@ export const NotifStack: React.FC<{ scene: Extract<Scene, { type: "notifstack" }
         const p = spring({
           frame: frame - Math.round(delay * fps),
           fps,
-          config: { damping: 16, stiffness: 220 },
+          config: SPRING.pop,
           durationInFrames: 14,
         });
         const pos = positions[i];
@@ -189,7 +190,7 @@ export const NotifStack: React.FC<{ scene: Extract<Scene, { type: "notifstack" }
         const wp = spring({
           frame: frame - Math.round(0.5 * fps),
           fps,
-          config: { damping: 15, stiffness: 200 },
+          config: SPRING.pop,
           durationInFrames: 14,
         });
         return (
@@ -304,7 +305,7 @@ export const StrikeSwap: React.FC<{ scene: Extract<Scene, { type: "strikeswap" }
     frame: frame - Math.round(0.45 * fps),
     fps,
     config: { damping: 12, stiffness: 260 },
-    durationInFrames: 12,
+    durationInFrames: DUR.base,
   });
   return (
     <AbsoluteFill
@@ -475,8 +476,8 @@ export const SearchSpotlight: React.FC<{
         const p = spring({
           frame: frame - Math.round(l.at * fps),
           fps,
-          config: { damping: 14, stiffness: 240 },
-          durationInFrames: 12,
+          config: SPRING.pop,
+          durationInFrames: DUR.base,
         });
         if (p <= 0.01) return null;
         return (
@@ -577,8 +578,8 @@ export const StackWindows: React.FC<{ scene: Extract<Scene, { type: "stackwindow
         const p = spring({
           frame: frame - i * 3,
           fps,
-          config: { damping: 15, stiffness: 240 },
-          durationInFrames: 13,
+          config: SPRING.pop,
+          durationInFrames: DUR.base,
         });
         const slot = slots[i];
         return (
@@ -663,12 +664,12 @@ export const ProblemSolved: React.FC<{ scene: Extract<Scene, { type: "problemsol
   const frame = useCurrentFrame();
   const { fps, width } = useVideoConfig();
   const theme = useTheme();
-  const left = spring({ frame, fps, config: { damping: 15, stiffness: 220 }, durationInFrames: 13 });
+  const left = spring({ frame, fps, config: SPRING.pop, durationInFrames: DUR.base });
   const right = spring({
     frame: frame - 5,
     fps,
-    config: { damping: 15, stiffness: 220 },
-    durationInFrames: 13,
+    config: SPRING.pop,
+    durationInFrames: DUR.base,
   });
   const arrows = interpolate(frame / fps, [0.45, 0.72], [0, 1], {
     extrapolateLeft: "clamp",
@@ -679,7 +680,7 @@ export const ProblemSolved: React.FC<{ scene: Extract<Scene, { type: "problemsol
     frame: frame - Math.round(0.74 * fps),
     fps,
     config: { damping: 11, stiffness: 260 },
-    durationInFrames: 12,
+    durationInFrames: DUR.base,
   });
   const CW = 470;
   const row = (txt: string, ok: boolean, key: number) => (
@@ -957,8 +958,8 @@ export const ForkCustomize: React.FC<{ scene: Extract<Scene, { type: "forkcustom
   const headP = spring({
     frame: frame - Math.round(0.85 * fps),
     fps,
-    config: { damping: 13, stiffness: 240 },
-    durationInFrames: 12,
+    config: SPRING.pop,
+    durationInFrames: DUR.base,
   });
   const cardColor = custom < 0.5 ? CYAN : "#7c5cff";
   const CW = 620;
@@ -1148,8 +1149,8 @@ export const SelfHost: React.FC<{ scene: Extract<Scene, { type: "selfhost" }> }>
   const labels = spring({
     frame: frame - Math.round(0.95 * fps),
     fps,
-    config: { damping: 13, stiffness: 220 },
-    durationInFrames: 13,
+    config: SPRING.pop,
+    durationInFrames: DUR.base,
   });
   const LX = width / 2;
   const LY = 660;
@@ -1296,7 +1297,7 @@ export const CheckoutBlock: React.FC<{ scene: Extract<Scene, { type: "checkoutbl
   const cardIn = spring({
     frame: frame - Math.round(0.15 * fps),
     fps,
-    config: { damping: 15, stiffness: 200 },
+    config: SPRING.pop,
     durationInFrames: 14,
   });
   const freezeAt = scene.freezeAt ?? 1.15;
@@ -1461,7 +1462,7 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
           frame: frame - Math.round(growAt * fps),
           fps,
           config: { damping: 10, stiffness: 190 },
-          durationInFrames: 16,
+          durationInFrames: DUR.base,
         })
       : 1 - interpolate(t, [dropAt, dropAt + 0.3], [0, 1], {
           extrapolateLeft: "clamp",
@@ -1477,14 +1478,14 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
   const finalP = spring({
     frame: frame - Math.round((dropAt + 0.55) * fps),
     fps,
-    config: { damping: 13, stiffness: 200 },
+    config: SPRING.pop,
     durationInFrames: 14,
   });
   const wantP = spring({
     frame: frame - Math.round(0.2 * fps),
     fps,
     config: { damping: 14, stiffness: 220 },
-    durationInFrames: 13,
+    durationInFrames: DUR.base,
   });
   return (
     <AbsoluteFill style={{ background: "#000", fontFamily: SANS }}>

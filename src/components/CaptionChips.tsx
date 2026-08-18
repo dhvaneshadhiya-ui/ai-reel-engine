@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import { TYPE, SIZE } from "../theme/type";
 import {
   useCurrentFrame,
@@ -88,7 +89,7 @@ const NickDisplay: React.FC<{
           frame: local,
           fps,
           config: { damping: 14, stiffness: 320, mass: 0.4 },
-          durationInFrames: 6,
+          durationInFrames: DUR.quick,
         });
         const emph = isEmph(w.text, emphasis);
         return (
@@ -318,7 +319,7 @@ export const CaptionChips: React.FC<{
     frame: localFrame,
     fps,
     config: { damping: 13, stiffness: 300, mass: 0.35 },
-    durationInFrames: 7,
+    durationInFrames: DUR.quick,
   });
   const scale = 0.88 + 0.12 * pop;
 

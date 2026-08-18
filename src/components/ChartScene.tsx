@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   interpolate,
@@ -97,8 +98,8 @@ export const ChartScene: React.FC<ChartSceneProps> = ({
   const titleIn = spring({
     frame,
     fps,
-    config: { damping: 16, stiffness: 120, mass: 0.7 },
-    durationInFrames: 18,
+    config: SPRING.land,
+    durationInFrames: DUR.base,
   });
 
   // slow push-in across the whole scene
@@ -125,7 +126,7 @@ export const ChartScene: React.FC<ChartSceneProps> = ({
       frame: Math.max(0, done),
       fps,
       config: { damping: 10, stiffness: 260, mass: 0.5 },
-      durationInFrames: 12,
+      durationInFrames: DUR.base,
     });
     if (done < 0) return null;
     return (
@@ -170,7 +171,7 @@ export const ChartScene: React.FC<ChartSceneProps> = ({
         const rowIn = spring({
           frame: frame - rowInStart(i),
           fps,
-          config: { damping: 15, stiffness: 140, mass: 0.6 },
+          config: SPRING.enter,
           durationInFrames: 14,
         });
         const isHi = Boolean(r.highlight);

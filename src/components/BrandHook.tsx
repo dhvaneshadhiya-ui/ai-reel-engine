@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   Img,
@@ -72,7 +73,7 @@ export const BrandHook: React.FC<BrandHookProps> = ({
     spring({
       frame: frame - delay,
       fps,
-      config: { damping: 16, stiffness: 160, mass: 0.6 },
+      config: SPRING.enter,
       durationInFrames: dur,
     });
 
@@ -86,7 +87,7 @@ export const BrandHook: React.FC<BrandHookProps> = ({
   const markIn = spring({
     frame,
     fps,
-    config: { damping: 15, stiffness: 90, mass: 0.8 },
+    config: SPRING.land,
     durationInFrames: 22,
   });
   const draw = interpolate(frame, [0, 18], [1, 0], {
@@ -111,8 +112,8 @@ export const BrandHook: React.FC<BrandHookProps> = ({
     spring({
       frame: frame - (serifBase + i * 4),
       fps,
-      config: { damping: 13, stiffness: 200, mass: 0.5 },
-      durationInFrames: 12,
+      config: SPRING.pop,
+      durationInFrames: DUR.base,
     });
   const underline = interpolate(
     frame,
@@ -203,8 +204,8 @@ export const BrandHook: React.FC<BrandHookProps> = ({
             const s = spring({
               frame: frame - (2 + i * 2),
               fps,
-              config: { damping: 14, stiffness: 190, mass: 0.55 },
-              durationInFrames: 13,
+              config: SPRING.pop,
+              durationInFrames: DUR.base,
             });
             return (
               <span

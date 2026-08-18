@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   Img,
@@ -47,7 +48,7 @@ export const CompareSplit: React.FC<{ scene: Props }> = ({ scene }) => {
   const showQ = scene.question && t >= segT * phases.length;
   const banner = showQ ? scene.question! : phases[phaseIdx];
   const bannerKey = showQ ? "q" : String(phaseIdx);
-  const bIn = spring({ frame: frame - Math.round((showQ ? segT * phases.length : segT * phaseIdx) * fps), fps, config: { damping: 14, stiffness: 180 }, durationInFrames: 10 });
+  const bIn = spring({ frame: frame - Math.round((showQ ? segT * phases.length : segT * phaseIdx) * fps), fps, config: SPRING.pop, durationInFrames: DUR.quick });
 
   // cyan matching outline pulse
   const pulse = 0.5 + 0.5 * Math.sin(t * 4);

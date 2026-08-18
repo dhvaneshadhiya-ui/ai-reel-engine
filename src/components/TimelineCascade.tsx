@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   OffthreadVideo,
@@ -149,7 +150,7 @@ export const TimelineCascade: React.FC<{ scene: TimelineScene }> = ({
         const s = spring({
           frame: frame - Math.round(it.at * fps),
           fps,
-          config: { damping: 16, stiffness: 160, mass: 0.7 },
+          config: SPRING.enter,
         });
         const accent = it.accent ?? "#FFD84D";
         return (

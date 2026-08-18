@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   Img,
@@ -61,7 +62,7 @@ export const LogoBeat: React.FC<{ scene: LogoProps }> = ({ scene }) => {
   const enter = spring({
     frame,
     fps,
-    config: { damping: 15, stiffness: 170, mass: 0.6 },
+    config: SPRING.enter,
     durationInFrames: 14,
   });
 

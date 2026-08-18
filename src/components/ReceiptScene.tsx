@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import { Credit } from "./Credit";
 import {
   AbsoluteFill,
@@ -96,8 +97,8 @@ export const ReceiptScene: React.FC<{ scene: ReceiptProps }> = ({ scene }) => {
   const enter = spring({
     frame,
     fps,
-    config: { damping: 18, stiffness: 120, mass: 0.7 },
-    durationInFrames: 18,
+    config: SPRING.enter,
+    durationInFrames: DUR.base,
   });
 
   return (
@@ -152,7 +153,7 @@ export const ReceiptScene: React.FC<{ scene: ReceiptProps }> = ({ scene }) => {
             frame: local,
             fps,
             config: { damping: 20, stiffness: 200, mass: 0.5 },
-            durationInFrames: 12,
+            durationInFrames: DUR.base,
           });
           // Highlights must never obscure the data: cream keeps the classic
           // yellow marker tint (multiply never hides text); dark backdrops get

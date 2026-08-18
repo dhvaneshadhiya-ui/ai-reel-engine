@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   Img,
@@ -175,8 +176,8 @@ export const AnnotateZoom: React.FC<AnnotateZoomProps> = ({
   const enter = spring({
     frame,
     fps,
-    config: { damping: 18, stiffness: 120, mass: 0.7 },
-    durationInFrames: 18,
+    config: SPRING.enter,
+    durationInFrames: DUR.base,
   });
 
   // ---- annotation drawing ----

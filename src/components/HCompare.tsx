@@ -1,4 +1,5 @@
 import React from "react";
+import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
   Img,
@@ -28,7 +29,7 @@ export const HCompare: React.FC<{ scene: Props }> = ({ scene }) => {
   const topFrac = scene.topFrac ?? 0.42;
 
   const INTRO = 0.5; // design full-screen, then slides up
-  const split = spring({ frame: frame - Math.round(INTRO * fps), fps, config: { damping: 20, stiffness: 150 }, durationInFrames: 12 });
+  const split = spring({ frame: frame - Math.round(INTRO * fps), fps, config: SPRING.enter, durationInFrames: DUR.base });
   const topH = interpolate(split, [0, 1], [height, height * topFrac]);
   const botOpacity = interpolate(split, [0.3, 1], [0, 1], { extrapolateLeft: "clamp" });
 
@@ -42,7 +43,7 @@ export const HCompare: React.FC<{ scene: Props }> = ({ scene }) => {
   const per = (total - msgStart) / scene.messages.length;
   let mi = Math.floor((t - msgStart) / per);
   mi = Math.max(0, Math.min(scene.messages.length - 1, mi));
-  const mIn = spring({ frame: frame - Math.round((msgStart + mi * per) * fps), fps, config: { damping: 14, stiffness: 180 }, durationInFrames: 9 });
+  const mIn = spring({ frame: frame - Math.round((msgStart + mi * per) * fps), fps, config: SPRING.pop, durationInFrames: DUR.quick });
 
   // box centres (design detail ~ centre of top band; ad detail ~ centre of bottom band)
   const topCy = topH * 0.55;
