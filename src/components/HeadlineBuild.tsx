@@ -9,6 +9,10 @@ import {
 import type { Headline } from "../types";
 import { SAFE_RECT } from "../platformSafeArea";
 
+const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
+const easeOut = (x: number) => 1 - Math.pow(1 - clamp01(x), 3);
+
+const SERIF = "Fraunces, Georgia, serif";
 const SANS = "-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif";
 const ACCENT = "#d97757"; // Anthropic clay
 
@@ -38,6 +42,38 @@ const ACCENT = "#d97757"; // Anthropic clay
  * a structural fact about Reels, not a matter of taste. Composition inside the
  * band stays the author's call.
  */
+
+/**
+ * WHICH TREATMENT A LINE GETS, derived from what the line IS.
+ *
+ * `kind` (label/headline/subtitle) is a typed flag, the same shape of guess as
+ * `theme` was before contrast became a measurement. What a line NEEDS follows
+ * from its content:
+ *
+ *   payload   a number is the thing the beat exists to deliver — it should
+ *             land as one object, punched, with figures that do not jitter
+ *   claim     a sentence is READ, so it arrives per-word, synced to speech
+ *   label     an eyebrow is context, not content: it tracks in, quietly
+ *   question  a question is an invitation — italic, softer landing
+ *
+ * Per-word timing and the SLIDE DECAY come from the hyperframes-animation skill
+ * (techniques.md #4, "Per-Word Kinetic Typography"): the first word travels
+ * furthest and later words settle quicker, which is what makes it read as
+ * kinetic rather than as a queue. Implemented natively because that skill's
+ * recipes are GSAP, and Remotion renders nothing that is not frame-driven.
+ */
+type Treatment = "payload" | "claim" | "label" | "question";
+
+const treatmentOf = (text: string, kind: string): Treatment => {
+  const words = text.trim().split(/\s+/);
+  if (kind === "label") return "label";
+  if (text.trim().endsWith("?")) return "question";
+  // a line that is mostly a number, e.g. "7.76\u2033" or "$249" or "248 MP"
+  const numeric = words.filter((w) => /\d/.test(w)).length;
+  if (words.length <= 3 && numeric >= 1) return "payload";
+  return kind === "headline" ? "claim" : "label";
+};
+
 export const HeadlineBuild: React.FC<{ spec: Headline }> = ({ spec }) => {
   const frame = useCurrentFrame();
   const { fps, height } = useVideoConfig();
@@ -59,13 +95,18 @@ export const HeadlineBuild: React.FC<{ spec: Headline }> = ({ spec }) => {
       };
     if (kind === "subtitle")
       return {
-        fontFamily: SANS, fontStyle: "italic", fontWeight: 700, fontSize,
+        fontFamily: SERIF, fontStyle: "italic", fontWeight: 600, fontSize,
         opacity: 0.95, lineHeight: 1.2,
       };
     // 1.12, never 1.02: below ~1.1 the ink overflows its own box and the flex
     // gap — which measures boxes — stops keeping lines apart.
+    // THE DISPLAY VOICE IS THE SERIF. HeadlineBuild hardcoded its own SANS and
+    // never read the theme, so every headline rendered in the macOS UI font even
+    // after theme.serif was pointed at Fraunces. The eyebrow stays sans on
+    // purpose — sans label over serif display is the pairing the style pack has
+    // described since July.
     return {
-      fontFamily: SANS, fontWeight: 800, fontSize, lineHeight: 1.12,
+      fontFamily: SERIF, fontWeight: 700, fontSize, lineHeight: 1.12,
       letterSpacing: -1.5,
     };
   };
@@ -179,6 +220,17 @@ export const HeadlineBuild: React.FC<{ spec: Headline }> = ({ spec }) => {
               <div
                 style={{
                   ...styleFor(ln.kind),
+                  ...(treatmentOf(ln.text, ln.kind) === "payload"
+                    ? { fontVariantNumeric: "tabular-nums" as const,
+                        letterSpacing: -2.5,
+                        transform: `scale(${1 + 0.06 * (1 - easeOut((t - ln.at) / 0.34))})` }
+                    : {}),
+                  ...(treatmentOf(ln.text, ln.kind) === "label"
+                    ? { letterSpacing: 2 + 6 * (1 - easeOut((t - ln.at) / 0.5)) }
+                    : {}),
+                  ...(treatmentOf(ln.text, ln.kind) === "question"
+                    ? { fontStyle: "italic" as const }
+                    : {}),
                   color,
                   whiteSpace: "pre-line",
                   // dark ink got textShadow: "none", which removed its last
@@ -189,7 +241,30 @@ export const HeadlineBuild: React.FC<{ spec: Headline }> = ({ spec }) => {
                     : "0 3px 18px rgba(0,0,0,0.75), 0 1px 3px rgba(0,0,0,0.6)",
                 }}
               >
-                {ln.text}
+                {treatmentOf(ln.text, ln.kind) !== "claim"
+                  ? ln.text
+                  : ln.text.split(/(\s+)/).map((tok, wi) => {
+                      if (!tok.trim()) return tok;
+                      const idx = wi >> 1;
+                      // 80ms apart, and the SLIDE DECAYS: 80,60,50,25,12...
+                      // early words travel, later ones settle. Straight from
+                      // hyperframes-animation techniques.md #4.
+                      const at = ln.at + idx * 0.08;
+                      const slide = Math.max(10, 80 * Math.pow(0.72, idx));
+                      const p = easeOut((t - at) / 0.42);
+                      return (
+                        <span
+                          key={wi}
+                          style={{
+                            display: "inline-block",
+                            opacity: p,
+                            transform: `translateX(${(1 - p) * slide}px)`,
+                          }}
+                        >
+                          {tok}
+                        </span>
+                      );
+                    })}
               </div>
               {bar > 0 && (
                 <div
