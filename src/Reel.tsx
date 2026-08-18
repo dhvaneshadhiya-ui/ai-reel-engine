@@ -40,6 +40,7 @@ import { ParticleBurst } from "./components/ParticleBurst";
 import { DeviceFrame } from "./components/DeviceFrame";
 import { TerminalScene } from "./components/TerminalScene";
 import { AnnotateZoom } from "./components/AnnotateZoom";
+import { ScreenStep } from "./components/ScreenStep";
 import { PriceLadder } from "./components/PriceLadder";
 import { BrandHook } from "./components/BrandHook";
 import { LogoAssemble } from "./components/LogoAssemble";
@@ -115,6 +116,8 @@ const SceneSwitch: React.FC<{ scene: Scene }> = ({ scene }) => {
       return <TerminalScene {...scene} />;
     case "annotatezoom":
       return <AnnotateZoom {...scene} />;
+    case "screenstep":
+      return <ScreenStep scene={scene} />;
     case "brandhook":
       return <BrandHook {...scene} />;
     case "logoassemble":

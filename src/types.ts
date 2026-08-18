@@ -4,6 +4,7 @@ import type { ParticleBurstProps } from "./components/ParticleBurst";
 import type { DeviceFrameProps } from "./components/DeviceFrame";
 import type { TerminalSceneProps } from "./components/TerminalScene";
 import type { AnnotateZoomProps } from "./components/AnnotateZoom";
+import type { ScreenStepProps } from "./components/ScreenStep";
 import type { BrandHookProps } from "./components/BrandHook";
 import type { LogoAssembleProps } from "./components/LogoAssemble";
 import type { ToolStackProps } from "./components/ToolStack";
@@ -381,6 +382,8 @@ export type Scene =
   | (SceneBase & { type: "deviceframe" } & DeviceFrameProps)
   | (SceneBase & { type: "terminal" } & TerminalSceneProps)
   | (SceneBase & { type: "annotatezoom" } & AnnotateZoomProps)
+  // a how-to step: a screen recording, zoomed, with the control marked
+  | (SceneBase & { type: "screenstep" } & ScreenStepProps)
   | (SceneBase & { type: "brandhook" } & BrandHookProps)
   | (SceneBase & { type: "logoassemble" } & LogoAssembleProps)
   | (SceneBase & { type: "toolstack" } & ToolStackProps)
