@@ -54,6 +54,17 @@ visual point: "Just look at these yourself." (see Visual deixis).
 
 ## Rhythm + language rules (measured)
 
+> **These are MEASURED, not remembered.** Before you hand a script over:
+> `python3 tools/check_script.py <slug>` — it prints sentence-length spread,
+> repeated cadence shapes, stage-direction questions, when the viewer is first
+> addressed, business-speak, and number density.
+>
+> The rule below about "occasionally one long sentence" sat here for weeks and
+> was skipped on every script, including the best one the pipeline has produced
+> (170 words, longest sentence 20, zero gear changes). A style rule nobody
+> re-reads at 1am is not a rule. All of it is ADVICE and none of it blocks.
+
+
 - Short declaratives, ~8–14 words, ONE idea each. Then occasionally one long
   spec sentence deliberately PACKED with numbers (the "spec dump").
 - **Number density**: a number every 2–3 sentences ($3.24, 25 degrees of

@@ -133,6 +133,18 @@ def cmd_propose(slug: str) -> None:
                  "Trim it if the story does not need the room. Runtime is "
                  "judgement, not a rule — this is advice, and approval is "
                  "still yours to give.")
+    # Prose measurement, printed where the script is actually being read. The
+    # playbook's cadence rule existed for weeks and was skipped every time,
+    # because nobody re-reads a style guide at the moment they approve.
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from check_script import check as _prose  # noqa: E402
+        print("\nPROSE (advice — style is craft, none of this blocks):")
+        for _n in _prose(spoken) or ["  nothing to flag"]:
+            print(f"  - {_n}" if not _n.startswith("  ") else _n)
+    except Exception as _e:  # noqa: BLE001
+        print(f"\n  (prose check unavailable: {_e})")
+
     if q_p.exists():
         print("\nQUESTIONS THAT NEED AN ANSWER BEFORE WE BUILD:")
         print(q_p.read_text().rstrip())

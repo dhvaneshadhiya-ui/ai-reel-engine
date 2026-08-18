@@ -105,7 +105,11 @@ def steps(slug: str) -> list[dict]:
              auto=None,
              human=f"Write the narration to jobs/{slug}/script.md using "
                    "formats/<format>.md for structure and the style pack for "
-                   f"voice. Put judgement calls in jobs/{slug}/questions.md."),
+                   f"voice. Put judgement calls in jobs/{slug}/questions.md.\n"
+                   f"      Then measure the prose: python3 tools/check_script.py {slug}\n"
+                   "      (cadence, repeated shapes, stage-direction questions, "
+                   "when 'you' first appears,\n      business-speak, number "
+                   "density — advice, never blocking)"),
         dict(key="approval",
              skills=["(none — this is the user's decision, not a skill's)"],
              label="Script approved by the user",
