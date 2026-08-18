@@ -8,6 +8,7 @@ import {
 } from "remotion";
 import type { Headline } from "../types";
 import { SAFE_RECT } from "../platformSafeArea";
+import { TYPE, SIZE } from "../theme/type";
 
 const clamp01 = (x: number) => Math.max(0, Math.min(1, x));
 const easeOut = (x: number) => 1 - Math.pow(1 - clamp01(x), 3);
@@ -83,21 +84,13 @@ export const HeadlineBuild: React.FC<{ spec: Headline }> = ({ spec }) => {
   const ink = dark ? "#0f0f0f" : "#ffffff";
   const rgb = dark ? "15,15,15" : "255,255,255";
 
+  // sizes come from the ONE scale now (theme/type.ts), not from this file
   const sizeFor = (kind: string) =>
-    kind === "label" ? 46 : kind === "subtitle" ? 52 : 100;
+    kind === "label" ? SIZE.label : kind === "subtitle" ? SIZE.lead : SIZE.display;
 
   const styleFor = (kind: string): React.CSSProperties => {
-    const fontSize = sizeFor(kind);
-    if (kind === "label")
-      return {
-        fontFamily: SANS, fontWeight: 700, fontSize, letterSpacing: 2,
-        textTransform: "uppercase" as const, lineHeight: 1.16,
-      };
-    if (kind === "subtitle")
-      return {
-        fontFamily: SERIF, fontStyle: "italic", fontWeight: 600, fontSize,
-        opacity: 0.95, lineHeight: 1.2,
-      };
+    if (kind === "label") return TYPE.label;
+    if (kind === "subtitle") return { ...TYPE.lead, opacity: 0.95 };
     // 1.12, never 1.02: below ~1.1 the ink overflows its own box and the flex
     // gap — which measures boxes — stops keeping lines apart.
     // THE DISPLAY VOICE IS THE SERIF. HeadlineBuild hardcoded its own SANS and
@@ -105,10 +98,7 @@ export const HeadlineBuild: React.FC<{ spec: Headline }> = ({ spec }) => {
     // after theme.serif was pointed at Fraunces. The eyebrow stays sans on
     // purpose — sans label over serif display is the pairing the style pack has
     // described since July.
-    return {
-      fontFamily: SERIF, fontWeight: 700, fontSize, lineHeight: 1.12,
-      letterSpacing: -1.5,
-    };
+    return TYPE.display;
   };
 
   const biggest = Math.max(...spec.lines.map((l) => sizeFor(l.kind)), 46);

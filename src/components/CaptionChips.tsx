@@ -1,4 +1,5 @@
 import React from "react";
+import { TYPE, SIZE } from "../theme/type";
 import {
   useCurrentFrame,
   useVideoConfig,
@@ -94,13 +95,14 @@ const NickDisplay: React.FC<{
           <span
             key={i}
             style={{
-              fontFamily:
-                "-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif",
+              // ONE scale: the caption role, with emphasis a step up. 66/86
+              // were the proven pair; the scale keeps that relationship at
+              // 78 and 78*1.3.
+              ...TYPE.caption,
               fontStyle: emph ? "normal" : "italic",
-              fontWeight: emph ? 900 : 700,
-              fontSize: emph ? 86 : 66,
+              fontWeight: emph ? 900 : TYPE.caption.fontWeight,
+              fontSize: emph ? Math.round(SIZE.caption * 1.3) : SIZE.caption,
               letterSpacing: emph ? "-0.015em" : "0.005em",
-              lineHeight: 1.12,
               color: emph ? accent : base,
               textShadow: shadow,
               opacity: pop,
@@ -166,8 +168,7 @@ const InkCircle: React.FC<{
         padding: "0 78px",
         fontFamily:
           "-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif",
-        fontSize: 66,
-        fontWeight: 800,
+        ...TYPE.caption,
         letterSpacing: "-0.015em",
         lineHeight: 1.22,
         color: "#111417",

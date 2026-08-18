@@ -1,4 +1,5 @@
 import React from "react";
+import { TYPE } from "../theme/type";
 import { creditBottomPx } from "../platformSafeArea";
 
 /**
@@ -83,10 +84,7 @@ export const Credit: React.FC<CreditProps> = ({
     >
       <span
         style={{
-          fontFamily: CREDIT_FONT,
-          fontSize: 27,
-          fontWeight: 600,
-          letterSpacing: 0.2,
+          ...TYPE.micro,
           color: plated || onMedia
             ? "rgba(255,255,255,0.96)"
             : "rgba(20,20,22,0.72)",
