@@ -23,6 +23,8 @@ before/after frame, and tells you to look at them.
     ... --status-frac 0.055     # the top band to cover, as a fraction of height
     ... --keep-status           # DON'T scrub (you have already checked it)
     ... --trim 4.5:9.0          # seconds, in:out
+    ... --measure               # MEASURE the real status band and
+                                #   check the default against it
 
 GEOMETRY IS MEASURED, NOT ASSUMED. Devices differ (886x1920, 1170x2532,
 1179x2556, 1206x2622) and so does where iOS puts the status bar. This reads the
@@ -56,6 +58,58 @@ def probe(p: Path) -> dict:
     return {"w": st.get("width"), "h": st.get("height"), "fps": fps,
             "codec": st.get("codec_name"),
             "dur": float((d.get("format") or {}).get("duration") or 0)}
+
+
+def measure_status_band(src: Path, h: int) -> int | None:
+    """Find where the status bar actually ends, from the pixels.
+
+    The default 5.5% was a guess about somebody else's phone. This measures the
+    real thing: pull a frame, walk down from the top, and find the first run of
+    rows carrying no ink. The status glyphs sit in a thin strip with clear space
+    beneath them, so that gap IS the bottom of the bar.
+
+    Returns None rather than guessing when it cannot tell — a measurement that
+    silently falls back to the assumption it was meant to check is worthless.
+    """
+    try:
+        from PIL import Image
+    except ImportError:
+        print("    (--measure needs Pillow)")
+        return None
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        f = Path(td) / "f.png"
+        r = subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "0.3",
+                            "-i", str(src), "-frames:v", "1", str(f)],
+                           capture_output=True, text=True)
+        if r.returncode != 0 or not f.exists():
+            print("    (--measure could not extract a frame)")
+            return None
+        im = Image.open(f).convert("L")
+        W, H = im.size
+        px = im.load()
+        # background = the most common value in the top eighth
+        top = [px[x, y] for y in range(0, H // 8, 2) for x in range(0, W, 6)]
+        bg = max(set(top), key=top.count)
+        def inked(y: int) -> bool:
+            row = [px[x, y] for x in range(0, W, 3)]
+            return sum(1 for v in row if abs(v - bg) > 28) > W // 90
+        limit = int(H * 0.14)                 # never look past 14% down
+        rows = [y for y in range(limit) if inked(y)]
+        if not rows:
+            print("    (--measure found no status glyphs — a full-screen app, "
+                  "or a very dark UI)")
+            return None
+        # first clear gap of >= 12 rows after the ink starts
+        gap, last = 0, rows[0]
+        for y in range(rows[0], limit):
+            if inked(y):
+                gap, last = 0, y
+            else:
+                gap += 1
+                if gap >= 12:
+                    return last + 1
+    return None
 
 
 def main() -> None:
@@ -101,6 +155,29 @@ def main() -> None:
              "or crop it yourself first"
              if src_ar < out_ar else
              "wider than the frame: it will be fit to width"))
+
+    measured = measure_status_band(src, h) if flag("measure", False) else None
+    if measured is not None:
+        print(f"    MEASURED status band: ends at y={measured}px "
+              f"({measured / h:.1%} of height)")
+        d = measured / h
+        if abs(d - DEFAULT_STATUS_FRAC) > 0.012:
+            # describes the DEFAULT relative to what the device needs. The
+            # first version had this inverted and cheerfully reported 5.5% as
+            # "less than" a measured 3.2%.
+            print(f"    the built-in default {DEFAULT_STATUS_FRAC:.1%} is "
+                  f"{'MORE' if DEFAULT_STATUS_FRAC > d else 'LESS'} than this "
+                  f"device needs"
+                  + (" — it crops further than necessary, which is safe but "
+                     "loses picture."
+                     if DEFAULT_STATUS_FRAC > d else
+                     " — IT LEAVES PART OF THE STATUS BAR ON SCREEN.")
+                  + f"\n    Use --status-frac {d + 0.004:.3f} for this device, "
+                  "or change DEFAULT_STATUS_FRAC if every\n    recording you "
+                  "make looks like this one.")
+        else:
+            print(f"    the built-in default {DEFAULT_STATUS_FRAC:.1%} matches "
+                  "this device — geometry confirmed.")
 
     status_frac = float(flag("status-frac", DEFAULT_STATUS_FRAC))
     band = int(round(h * status_frac))
