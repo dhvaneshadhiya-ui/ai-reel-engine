@@ -564,7 +564,7 @@ CASES = [
                                            "durationSec": 1.9,
                                            "viewBox": "0 0 1024 1024",
                                            "paths": [{"d": "M0 0"}], "size": 500}),
-     "G38", "a logo-build opener instead of motion at frame 0"),
+     "G43", "a logo-build opener instead of motion at frame 0"),
     (lambda s: s["scenes"][0].__setitem__("hideCaptions", True),
      "G38", "a hook with no words on screen (mute-blind)"),
     # 2026-08-17, RULE 3: what is on screen must be what is being said.

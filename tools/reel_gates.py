@@ -1202,10 +1202,17 @@ def check_beats(beats: dict, vo_end: float | None = None,
     if scenes:
         s0 = scenes[0]
         if s0["type"] not in MOTION_TYPES and s0["type"] not in BUILDING_TYPES:
+            # G43, NOT G38 — split 2026-08-17. "Open on motion, never a logo
+            # build" is going-viral's craft advice and it is good advice, but it
+            # is TASTE: a short brand mark is a legitimate channel signature, and
+            # the constitution says only the three rules are law. Bundling it
+            # with the mute-legibility check meant a judgement call blocked three
+            # reels under Rule 1's badge — the same mistake as G28 and G41.
             errors.append(
-                f"G38 the hook (scene 00) is `{s0['type']}` — frame 0 needs a "
-                "moving element, not a card that assembles. Open on `split` or "
-                "`footage` and let the claim land on top.")
+                f"G43 the hook (scene 00) is `{s0['type']}` — going-viral says "
+                "frame 0 should already be MOVING and show the subject, not a "
+                "mark that assembles. Advice, not law: a brand opener is a "
+                "choice, and this one costs you the first ~2s of attention.")
         if s0.get("hideCaptions"):
             errors.append(
                 "G38 the hook (scene 00) sets hideCaptions — 70-85% of viewers "

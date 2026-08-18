@@ -75,7 +75,6 @@
     {
       "type": "logoassemble",
       "durationSec": 1.3,
-      "hideCaptions": true,
       "viewBox": "0 0 352.28 398.67",
       "paths": [
         {
@@ -512,7 +511,7 @@
             "accent": true
           }
         ],
-        "y": 0.07,
+        "y": 0.55,
         "theme": "light",
         "align": "center"
       },

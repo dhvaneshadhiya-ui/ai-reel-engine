@@ -1,0 +1,902 @@
+{
+  "id": "airpods-camera",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/airpods-camera/avatar-master.mp4",
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 8.0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 7.34,
+        "vol": 0.055
+      },
+      {
+        "t": 7.68,
+        "vol": 0.15
+      },
+      {
+        "t": 7.78,
+        "vol": 0.15
+      },
+      {
+        "t": 7.96,
+        "vol": 0.055
+      },
+      {
+        "t": 9.54,
+        "vol": 0.055
+      },
+      {
+        "t": 9.88,
+        "vol": 0.15
+      },
+      {
+        "t": 10.06,
+        "vol": 0.055
+      },
+      {
+        "t": 11.32,
+        "vol": 0.055
+      },
+      {
+        "t": 11.66,
+        "vol": 0.15
+      },
+      {
+        "t": 11.86,
+        "vol": 0.055
+      },
+      {
+        "t": 19.58,
+        "vol": 0.055
+      },
+      {
+        "t": 19.88,
+        "vol": 0.15
+      },
+      {
+        "t": 19.92,
+        "vol": 0.15
+      },
+      {
+        "t": 20.06,
+        "vol": 0.055
+      },
+      {
+        "t": 31.62,
+        "vol": 0.055
+      },
+      {
+        "t": 31.9,
+        "vol": 0.15
+      },
+      {
+        "t": 31.96,
+        "vol": 0.15
+      },
+      {
+        "t": 32.08,
+        "vol": 0.055
+      },
+      {
+        "t": 34.58,
+        "vol": 0.055
+      },
+      {
+        "t": 34.92,
+        "vol": 0.15
+      },
+      {
+        "t": 35.02,
+        "vol": 0.15
+      },
+      {
+        "t": 35.2,
+        "vol": 0.055
+      },
+      {
+        "t": 39.14,
+        "vol": 0.055
+      },
+      {
+        "t": 39.48,
+        "vol": 0.15
+      },
+      {
+        "t": 39.66,
+        "vol": 0.055
+      },
+      {
+        "t": 46.98,
+        "vol": 0.055
+      },
+      {
+        "t": 47.28,
+        "vol": 0.15
+      },
+      {
+        "t": 47.32,
+        "vol": 0.15
+      },
+      {
+        "t": 47.46,
+        "vol": 0.055
+      },
+      {
+        "t": 56.6,
+        "vol": 0.055
+      },
+      {
+        "t": 56.88,
+        "vol": 0.15
+      },
+      {
+        "t": 56.94,
+        "vol": 0.15
+      },
+      {
+        "t": 57.06,
+        "vol": 0.055
+      },
+      {
+        "t": 63.02,
+        "vol": 0.055
+      },
+      {
+        "t": 63.36,
+        "vol": 0.15
+      },
+      {
+        "t": 63.46,
+        "vol": 0.15
+      },
+      {
+        "t": 63.64,
+        "vol": 0.055
+      },
+      {
+        "t": 64.66,
+        "vol": 0.055
+      },
+      {
+        "t": 65.0,
+        "vol": 0.15
+      },
+      {
+        "t": 65.14,
+        "vol": 0.15
+      },
+      {
+        "t": 65.32,
+        "vol": 0.055
+      },
+      {
+        "t": 71.6,
+        "vol": 0.15
+      },
+      {
+        "t": 72.5,
+        "vol": 0.02
+      }
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+  },
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "B790",
+    "Visual Intelligence",
+    "macOS Tahoe 26.7",
+    "infrared",
+    "Face ID",
+    "$249",
+    "September",
+    "AirPods Ultra"
+  ],
+  "scenes": [
+    {
+      "type": "footage",
+      "src": "assets/airpods-camera/apple-holds-book.mp4",
+      "zoomDir": "in",
+      "headline": {
+        "lines": [
+          {
+            "text": "APPLE'S OWN DEMO",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "NEVER ANNOUNCED",
+            "kind": "headline",
+            "at": 0.45,
+            "accent": true
+          }
+        ],
+        "y": 0.09,
+        "theme": "dark"
+      },
+      "durationSec": 1.86,
+      "assetId": "apple-holds-book",
+      "claimId": "apple-holds-book",
+      "covers": "Apple made a demonstration",
+      "credit": "Apple, via @aaronp613"
+    },
+    {
+      "type": "footage",
+      "src": "assets/airpods-camera/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 2.74,
+      "from": 1.86,
+      "focusX": 0.5
+    },
+    {
+      "type": "footage",
+      "src": "assets/airpods-camera/apple-walkin.mp4",
+      "zoomDir": "out",
+      "durationSec": 1.44,
+      "assetId": "apple-walkin",
+      "claimId": "apple-walkin",
+      "covers": "then it shipped that",
+      "credit": "Apple, via @aaronp613"
+    },
+    {
+      "type": "logobeat",
+      "text": "macOS 26.7",
+      "label": "SHIPPED INSIDE",
+      "bg": "black",
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.15,
+          "vol": 0.16
+        }
+      ],
+      "durationSec": 1.92
+    },
+    {
+      "type": "footage",
+      "src": "assets/airpods-camera/apple-ear-tight.mp4",
+      "zoomDir": "in",
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.15
+        }
+      ],
+      "durationSec": 2.1,
+      "assetId": "apple-ear-tight",
+      "claimId": "apple-ear-tight",
+      "covers": "AirPods with cameras",
+      "credit": "Apple, via @aaronp613"
+    },
+    {
+      "type": "specsheet",
+      "kicker": "THE FILE",
+      "title": "B790",
+      "rows": [
+        {
+          "label": "PRODUCT",
+          "value": "AirPods with cameras",
+          "accent": true
+        },
+        {
+          "label": "FEATURE",
+          "value": "Visual Intelligence"
+        }
+      ],
+      "footnote": "Source: MacRumors",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.15,
+          "vol": 0.14
+        }
+      ],
+      "durationSec": 4.42
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/airpods-camera/tweet-mobile.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "lines": [
+        {
+          "at": 0.3,
+          "x": 45,
+          "y": 352,
+          "w": 965,
+          "h": 62
+        },
+        {
+          "at": 1.05,
+          "x": 45,
+          "y": 412,
+          "w": 730,
+          "h": 62
+        }
+      ],
+      "credit": "@aaronp613",
+      "durationSec": 2.62,
+      "assetId": "tweet-receipt",
+      "claimId": "tweet-receipt",
+      "covers": "MacRumors Aaron Perris found"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/airpods-camera/macrumors-mobile.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "credit": "MacRumors",
+      "highlights": [
+        {
+          "at": 0.35,
+          "x": 32,
+          "y": 661,
+          "w": 1018,
+          "h": 252
+        },
+        {
+          "at": 1.3,
+          "x": 80,
+          "y": 1330,
+          "w": 740,
+          "h": 62
+        }
+      ],
+      "durationSec": 2.96,
+      "assetId": "macrumors-receipt",
+      "claimId": "macrumors-receipt",
+      "covers": "in the macOS Tahoe"
+    },
+    {
+      "type": "footage",
+      "src": "assets/airpods-camera/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 1.82,
+      "from": 20.06,
+      "focusX": 0.5
+    },
+    {
+      "type": "footage",
+      "src": "assets/airpods-camera/apple-raise.mp4",
+      "zoomDir": "in",
+      "captionBottom": 6000,
+      "durationSec": 2.1,
+      "assetId": "apple-raise",
+      "claimId": "apple-raise",
+      "covers": "In it, a guy",
+      "credit": "Apple, via @aaronp613"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/airpods-camera/macrumors-quote.png",
+      "srcWidth": 1040,
+      "srcHeight": 440,
+      "backdrop": "cream",
+      "credit": "MacRumors",
+      "highlights": [
+        {
+          "at": 0.55,
+          "x": 30,
+          "y": 150,
+          "w": 980,
+          "h": 150
+        }
+      ],
+      "durationSec": 5.7,
+      "assetId": "macrumors-quote",
+      "claimId": "macrumors-quote",
+      "covers": "and Siri answers"
+    },
+    {
+      "type": "uidialog",
+      "app": "AirPods",
+      "title": "Make sure AirPods are not covered",
+      "body": "To get the most accurate information about things in your environment, make sure AirPods are not covered.",
+      "primary": "OK",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.2,
+          "vol": 0.14
+        }
+      ],
+      "durationSec": 2.4
+    },
+    {
+      "type": "footage",
+      "src": "assets/airpods-camera/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 0.96,
+      "from": 32.08,
+      "focusX": 0.5
+    },
+    {
+      "type": "specsheet",
+      "kicker": "WHAT'S IN THE STEM",
+      "title": "Infrared, not a lens",
+      "rows": [
+        {
+          "label": "SENSOR",
+          "value": "Tiny infrared cameras",
+          "accent": true
+        },
+        {
+          "label": "SAME TECH AS",
+          "value": "Face ID"
+        }
+      ],
+      "footnote": "Source: Mark Gurman, Bloomberg",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.2,
+          "vol": 0.14
+        }
+      ],
+      "durationSec": 6.62
+    },
+    {
+      "type": "typecard",
+      "bg": "#F4EFE6",
+      "fg": "#141414",
+      "kinetic": {
+        "text": "NO PHOTOS. NO RECORDING.",
+        "style": "serif",
+        "at": 0.1
+      },
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.1,
+          "vol": 0.16
+        }
+      ],
+      "durationSec": 4.1
+    },
+    {
+      "type": "footage",
+      "src": "assets/airpods-camera/apple-book-table.mp4",
+      "zoomDir": "in",
+      "durationSec": 1.7,
+      "assetId": "apple-book-table",
+      "claimId": "apple-book-table",
+      "covers": "They just feed Siri",
+      "credit": "Apple, via @aaronp613"
+    },
+    {
+      "type": "footage",
+      "src": "assets/airpods-camera/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 2.0,
+      "from": 45.46,
+      "focusX": 0.5
+    },
+    {
+      "type": "timeline",
+      "kicker": "EXPECTED",
+      "title": "As soon as September",
+      "items": [
+        {
+          "date": "SEP 2026",
+          "name": "B790",
+          "sub": "with iPhone 18 Pro",
+          "at": 0.3,
+          "accent": "#0aa9c2"
+        }
+      ],
+      "footnote": "Source: Mark Gurman, Bloomberg",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.3,
+          "vol": 0.14
+        }
+      ],
+      "durationSec": 4.96
+    },
+    {
+      "type": "wordcascade",
+      "bg": "black",
+      "words": [
+        {
+          "text": "AirPods Pro 4",
+          "style": "serif",
+          "at": 0.3
+        },
+        {
+          "text": "or",
+          "style": "serif",
+          "at": 0.95,
+          "size": 0.6
+        },
+        {
+          "text": "AirPods Ultra",
+          "style": "serif",
+          "at": 1.35,
+          "accent": true
+        }
+      ],
+      "durationSec": 4.64
+    },
+    {
+      "type": "priceladder",
+      "kicker": "THE PRICE",
+      "title": "North of $249",
+      "rows": [
+        {
+          "label": "AirPods Pro 3",
+          "oldPrice": "$249",
+          "newPrice": "more"
+        }
+      ],
+      "bg": "black",
+      "footnote": "Source: MacRumors / Mark Gurman, Bloomberg",
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.4,
+          "vol": 0.15
+        }
+      ],
+      "durationSec": 3.16
+    },
+    {
+      "type": "footage",
+      "src": "assets/airpods-camera/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 3.42,
+      "from": 60.22,
+      "focusX": 0.5
+    },
+    {
+      "type": "footage",
+      "src": "assets/airpods-camera/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 1.68,
+      "from": 63.64,
+      "focusX": 0.5
+    },
+    {
+      "type": "footage",
+      "src": "assets/airpods-camera/apple-outro-blur.mp4",
+      "zoomDir": "out",
+      "kinetic": {
+        "text": "NO CAMERA IN FRAME",
+        "style": "serif",
+        "at": 0.45,
+        "y": 0.44
+      },
+      "durationSec": 2.94,
+      "assetId": "apple-outro-blur",
+      "claimId": "apple-outro-blur",
+      "covers": "in Apple's own video",
+      "credit": "Apple, via @aaronp613"
+    },
+    {
+      "type": "footage",
+      "src": "assets/airpods-camera/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 2.74,
+      "from": 68.26,
+      "focusX": 0.5
+    },
+    {
+      "type": "endquestion",
+      "src": "assets/airpods-camera/apple-outro-blur.mp4",
+      "question": "Earbuds that watch the room?",
+      "bg": "gradient",
+      "covers": "Yes, or absolutely not",
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 0.15,
+          "vol": 0.15
+        }
+      ],
+      "durationSec": 1.5
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.96,
+      "text": "Apple made a"
+    },
+    {
+      "start": 0.96,
+      "end": 2.44,
+      "text": "demonstration video for"
+    },
+    {
+      "start": 2.44,
+      "end": 3.46,
+      "text": "a product it"
+    },
+    {
+      "start": 3.46,
+      "end": 4.34,
+      "text": "has never announced,"
+    },
+    {
+      "start": 4.6,
+      "end": 5.4,
+      "text": "then it shipped"
+    },
+    {
+      "start": 5.4,
+      "end": 6.6,
+      "text": "that video inside"
+    },
+    {
+      "start": 6.6,
+      "end": 7.34,
+      "text": "a Mac update."
+    },
+    {
+      "start": 7.96,
+      "end": 9.54,
+      "text": "AirPods with cameras,"
+    },
+    {
+      "start": 10.06,
+      "end": 11.32,
+      "text": "running Visual Intelligence,"
+    },
+    {
+      "start": 11.86,
+      "end": 15.02,
+      "text": "codename B790. MacRumors"
+    },
+    {
+      "start": 15.02,
+      "end": 16.24,
+      "text": "Aaron Perris found"
+    },
+    {
+      "start": 16.24,
+      "end": 17.1,
+      "text": "the file sitting"
+    },
+    {
+      "start": 17.1,
+      "end": 17.78,
+      "text": "in the macOS"
+    },
+    {
+      "start": 17.78,
+      "end": 19.18,
+      "text": "Tahoe 26.7 release"
+    },
+    {
+      "start": 19.18,
+      "end": 20.62,
+      "text": "candidate. Fully finished,"
+    },
+    {
+      "start": 21.06,
+      "end": 22.02,
+      "text": "Apple's own. In"
+    },
+    {
+      "start": 22.02,
+      "end": 22.68,
+      "text": "it, a guy"
+    },
+    {
+      "start": 22.68,
+      "end": 23.36,
+      "text": "lifts a book"
+    },
+    {
+      "start": 23.36,
+      "end": 23.98,
+      "text": "toward his ear"
+    },
+    {
+      "start": 23.98,
+      "end": 25.38,
+      "text": "and Siri answers,"
+    },
+    {
+      "start": 25.38,
+      "end": 27.1,
+      "text": "with Visual Intelligence,"
+    },
+    {
+      "start": 27.44,
+      "end": 28.4,
+      "text": "your world becomes"
+    },
+    {
+      "start": 28.4,
+      "end": 29.94,
+      "text": "savable. It even"
+    },
+    {
+      "start": 29.94,
+      "end": 30.62,
+      "text": "warns you when"
+    },
+    {
+      "start": 30.62,
+      "end": 31.38,
+      "text": "your hair covers"
+    },
+    {
+      "start": 31.38,
+      "end": 32.36,
+      "text": "them. So what's"
+    },
+    {
+      "start": 32.36,
+      "end": 33.84,
+      "text": "inside? Bloomberg's Mark"
+    },
+    {
+      "start": 33.84,
+      "end": 35.54,
+      "text": "Gurman says, tiny"
+    },
+    {
+      "start": 35.54,
+      "end": 37.04,
+      "text": "infrared cameras, the"
+    },
+    {
+      "start": 37.04,
+      "end": 38.42,
+      "text": "same sensor Face"
+    },
+    {
+      "start": 38.42,
+      "end": 39.92,
+      "text": "ID uses, which"
+    },
+    {
+      "start": 39.92,
+      "end": 41.02,
+      "text": "means these don't"
+    },
+    {
+      "start": 41.02,
+      "end": 42.1,
+      "text": "take pictures, no"
+    },
+    {
+      "start": 42.1,
+      "end": 43.32,
+      "text": "photos, no recording."
+    },
+    {
+      "start": 43.76,
+      "end": 44.92,
+      "text": "They just feed"
+    },
+    {
+      "start": 44.92,
+      "end": 46.5,
+      "text": "Siri whatever you're"
+    },
+    {
+      "start": 46.5,
+      "end": 47.84,
+      "text": "looking at. When"
+    },
+    {
+      "start": 47.84,
+      "end": 49.46,
+      "text": "Gurman says, as"
+    },
+    {
+      "start": 49.46,
+      "end": 50.2,
+      "text": "soon as September,"
+    },
+    {
+      "start": 50.64,
+      "end": 51.2,
+      "text": "next to the"
+    },
+    {
+      "start": 51.2,
+      "end": 52.42,
+      "text": "iPhone 18 Pro,"
+    },
+    {
+      "start": 52.42,
+      "end": 53.72,
+      "text": "the name isn't"
+    },
+    {
+      "start": 53.72,
+      "end": 54.9,
+      "text": "locked, AirPods Pro"
+    },
+    {
+      "start": 54.9,
+      "end": 56.16,
+      "text": "4 or AirPods"
+    },
+    {
+      "start": 56.16,
+      "end": 57.74,
+      "text": "Ultra. AirPods Pro"
+    },
+    {
+      "start": 57.74,
+      "end": 58.78,
+      "text": "3 sit at"
+    },
+    {
+      "start": 58.78,
+      "end": 61.54,
+      "text": "$249 and this"
+    },
+    {
+      "start": 61.54,
+      "end": 62.54,
+      "text": "tier goes north"
+    },
+    {
+      "start": 62.54,
+      "end": 63.98,
+      "text": "of that. One"
+    },
+    {
+      "start": 63.98,
+      "end": 65.4,
+      "text": "strange thing, in"
+    },
+    {
+      "start": 65.4,
+      "end": 66.48,
+      "text": "Apple's own video,"
+    },
+    {
+      "start": 66.88,
+      "end": 67.52,
+      "text": "you never once"
+    },
+    {
+      "start": 67.52,
+      "end": 68.26,
+      "text": "see the camera."
+    },
+    {
+      "start": 68.26,
+      "end": 69.8,
+      "text": "Earbuds that watch"
+    },
+    {
+      "start": 69.8,
+      "end": 70.42,
+      "text": "the room for"
+    },
+    {
+      "start": 70.42,
+      "end": 71.68,
+      "text": "you. Yes, or"
+    },
+    {
+      "start": 71.68,
+      "end": 72.5,
+      "text": "absolutely not."
+    }
+  ],
+  "script": "Apple made a demonstration video for a product it has never announced. Then it shipped that video inside a Mac update.\n\nAirPods with cameras, running Visual Intelligence. Codename B790.\n\nMacRumors' Aaron Perris found the file sitting in the macOS Tahoe 26.7 release candidate. Fully finished, Apple's own.\n\nIn it, a guy lifts a book toward his ear, and Siri answers: with Visual Intelligence, your world becomes savable.\n\nIt even warns you when your hair covers them.\n\nSo what's inside? Bloomberg's Mark Gurman says tiny infrared cameras \u2014 the same sensor Face ID uses.\n\nWhich means these don't take pictures. No photos, no recording. They just feed Siri whatever you're looking at.\n\nWhen? Gurman says as soon as September, next to the iPhone 18 Pro. The name isn't locked: AirPods Pro 4, or AirPods Ultra. AirPods Pro 3 sit at $249, and this tier goes north of that.\n\nOne strange thing. In Apple's own video, you never once see the camera.\n\nEarbuds that watch the room for you. Yes, or absolutely not?",
+  "approval": {
+    "sha256": "01d1d00fce9fc2ce79bd26c31c7643eff28f806b4eed2cf1f1cce67e51883225",
+    "approvedAt": "2026-08-18T05:45:59+00:00",
+    "words": 171,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}
