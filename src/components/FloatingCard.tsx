@@ -81,7 +81,7 @@ export const FloatingCard: React.FC<{ scene: CardProps }> = ({ scene }) => {
             textAlign: "left",
             fontFamily:
               "-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif",
-            fontSize: 27,
+            fontSize: 28,
             fontWeight: 600,
             letterSpacing: 0.2,
             opacity: enter,

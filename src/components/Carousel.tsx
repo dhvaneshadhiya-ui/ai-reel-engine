@@ -52,7 +52,7 @@ export const Carousel: React.FC<{ scene: Props }> = ({ scene }) => {
   return (
     <AbsoluteFill style={{ background: BGS[scene.bg ?? "gradient"], justifyContent: "center", alignItems: "center", fontFamily: SANS, overflow: "hidden" }}>
       {scene.headline && (
-        <div style={{ position: "absolute", top: 210, fontSize: 38, fontWeight: 800, color: dark ? "#fff" : "#111", letterSpacing: 1 }}>{scene.headline}</div>
+        <div style={{ position: "absolute", top: 210, fontSize: 36, fontWeight: 800, color: dark ? "#fff" : "#111", letterSpacing: 1 }}>{scene.headline}</div>
       )}
       <div style={{ position: "relative", width: cardW, height: cardH }}>
         {scene.items.map((it, i) => {
@@ -83,7 +83,7 @@ export const Carousel: React.FC<{ scene: Props }> = ({ scene }) => {
                 {`0${i + 1}`}
               </div>
               {isWin && winnerPop > 0.3 && (
-                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: CYAN, color: "#fff", fontSize: 44, fontWeight: 900, textAlign: "center", padding: "18px 0", letterSpacing: 2, transform: `translateY(${(1 - winnerPop) * 100}px)` }}>
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: CYAN, color: "#fff", fontSize: 46, fontWeight: 900, textAlign: "center", padding: "18px 0", letterSpacing: 2, transform: `translateY(${(1 - winnerPop) * 100}px)` }}>
                   SELECTED ✓
                 </div>
               )}

@@ -115,7 +115,7 @@ export const Checklist: React.FC<{ scene: Props }> = ({ scene }) => {
         {scene.headline && (
           <div
             style={{
-              fontSize: 44,
+              fontSize: 46,
               fontWeight: 800,
               color: dark ? "#c9c9c9" : "#5a5a5a",
               letterSpacing: 2,

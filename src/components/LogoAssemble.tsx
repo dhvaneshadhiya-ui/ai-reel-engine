@@ -148,7 +148,7 @@ export const LogoAssemble: React.FC<LogoAssembleProps> = ({
               style={{
                 fontFamily: theme.serif,
                 fontWeight: 800,
-                fontSize: 120,
+                fontSize: 130,
                 lineHeight: 1.05,
                 color: ink,
                 fontVariantNumeric: "tabular-nums",
@@ -163,7 +163,7 @@ export const LogoAssemble: React.FC<LogoAssembleProps> = ({
                 marginTop: 10,
                 fontFamily: theme.sans,
                 fontWeight: 700,
-                fontSize: 42,
+                fontSize: 46,
                 letterSpacing: "0.26em",
                 textTransform: "uppercase",
                 color: dark ? theme.mutedOnDark : theme.muted,

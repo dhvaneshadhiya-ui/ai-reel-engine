@@ -33,7 +33,19 @@ SIZES = {28, 36, 46, 60, 78, 100, 130}
 WEIGHTS = {400, 600, 700, 800, 900}
 # Files that legitimately define the system, or draw type as GRAPHICS rather
 # than set it as text.
-EXEMPT = {"Credit.tsx"}
+# Components that RECREATE another system's interface. Their type belongs to
+# that interface, not to us: forcing our scale onto a rebuilt iOS row or a tweet
+# would break the recreation, which is the only reason they exist. Kept in step
+# with tools/migrate_type.py.
+EXEMPT = {
+    "Credit.tsx",
+    "SettingsPane.tsx",     # an iOS Settings pane
+    "XPost.tsx",            # a tweet
+    "TerminalScene.tsx",    # a macOS terminal window
+    "UIDialog.tsx",         # an app dialog recreation
+    "DeviceFrame.tsx",      # device / browser chrome
+    "DesktopMockup.tsx",    # browser chrome
+}
 
 
 def main() -> None:

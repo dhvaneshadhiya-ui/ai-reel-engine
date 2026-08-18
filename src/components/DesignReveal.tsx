@@ -74,11 +74,11 @@ export const DesignReveal: React.FC<{ scene: Props }> = ({ scene }) => {
             }}
           >
             <Img src={staticFile(it.src)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-            <div style={{ position: "absolute", top: 22, left: 28, fontSize: 96, fontWeight: 900, color: "#111", lineHeight: 1, textShadow: "0 3px 14px rgba(255,255,255,0.85)" }}>
+            <div style={{ position: "absolute", top: 22, left: 28, fontSize: 100, fontWeight: 900, color: "#111", lineHeight: 1, textShadow: "0 3px 14px rgba(255,255,255,0.85)" }}>
               {`0${i + 1}`}
             </div>
             {isWin && winPop > 0.25 && (
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: CYAN, color: "#fff", fontSize: 50, fontWeight: 900, textAlign: "center", padding: "20px 0", letterSpacing: 3, transform: `translateY(${(1 - winPop) * 110}px)` }}>
+              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: CYAN, color: "#fff", fontSize: 46, fontWeight: 900, textAlign: "center", padding: "20px 0", letterSpacing: 3, transform: `translateY(${(1 - winPop) * 110}px)` }}>
                 SELECTED ✓
               </div>
             )}

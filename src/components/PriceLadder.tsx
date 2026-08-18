@@ -53,7 +53,7 @@ export const PriceLadder: React.FC<{
         {scene.kicker && (
           <div
             style={{
-              fontSize: 30,
+              fontSize: 28,
               fontWeight: 700,
               letterSpacing: "0.22em",
               color: dim,
@@ -100,10 +100,10 @@ export const PriceLadder: React.FC<{
                 transform: `translateY(${(1 - inT) * 26}px)`,
               }}
             >
-              <div style={{ fontSize: 40, fontWeight: 700, color: ink, width: 330 }}>
+              <div style={{ fontSize: 36, fontWeight: 700, color: ink, width: 330 }}>
                 {r.label}
               </div>
-              <div style={{ position: "relative", fontSize: 44, fontWeight: 700, color: dim }}>
+              <div style={{ position: "relative", fontSize: 46, fontWeight: 700, color: dim }}>
                 {r.oldPrice}
                 <div
                   style={{
@@ -120,7 +120,7 @@ export const PriceLadder: React.FC<{
               </div>
               <div
                 style={{
-                  fontSize: 56,
+                  fontSize: 60,
                   fontWeight: 900,
                   color: accent,
                   opacity: swapF,
@@ -133,7 +133,7 @@ export const PriceLadder: React.FC<{
               {scene.badge && (
                 <div
                   style={{
-                    fontSize: 26,
+                    fontSize: 28,
                     fontWeight: 800,
                     color: dark ? "#0e0d0b" : "#f4f0e6",
                     background: red,
@@ -149,7 +149,7 @@ export const PriceLadder: React.FC<{
           );
         })}
         {scene.footnote && (
-          <div style={{ fontSize: 24, fontWeight: 600, color: dim, marginTop: 8 }}>
+          <div style={{ fontSize: 28, fontWeight: 600, color: dim, marginTop: 8 }}>
             {scene.footnote}
           </div>
         )}

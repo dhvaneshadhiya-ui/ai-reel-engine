@@ -55,7 +55,7 @@ export const HCompare: React.FC<{ scene: Props }> = ({ scene }) => {
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: topH, overflow: "hidden", background: "#fff" }}>
         <Img src={staticFile(scene.topSrc)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         {split > 0.6 && scene.topLabel && (
-          <div style={{ position: "absolute", top: 20, left: 24, background: "rgba(0,0,0,0.72)", color: "#fff", fontSize: 26, fontWeight: 800, padding: "8px 18px", borderRadius: 10, letterSpacing: 1 }}>
+          <div style={{ position: "absolute", top: 20, left: 24, background: "rgba(0,0,0,0.72)", color: "#fff", fontSize: 28, fontWeight: 800, padding: "8px 18px", borderRadius: 10, letterSpacing: 1 }}>
             {scene.topLabel}
           </div>
         )}
@@ -68,7 +68,7 @@ export const HCompare: React.FC<{ scene: Props }> = ({ scene }) => {
           <Img src={staticFile(scene.bottomSrc)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         )}
         {scene.bottomLabel && (
-          <div style={{ position: "absolute", top: 20, left: 24, background: "rgba(0,0,0,0.72)", color: "#fff", fontSize: 26, fontWeight: 800, padding: "8px 18px", borderRadius: 10, letterSpacing: 1 }}>
+          <div style={{ position: "absolute", top: 20, left: 24, background: "rgba(0,0,0,0.72)", color: "#fff", fontSize: 28, fontWeight: 800, padding: "8px 18px", borderRadius: 10, letterSpacing: 1 }}>
             {scene.bottomLabel}
           </div>
         )}
@@ -87,7 +87,7 @@ export const HCompare: React.FC<{ scene: Props }> = ({ scene }) => {
 
       {/* banner (kept off the dividing line) */}
       <div style={{ position: "absolute", top: topH - 150, left: 0, right: 0, display: "flex", justifyContent: "center", opacity: mIn, transform: `translateY(${(1 - mIn) * 20}px)` }}>
-        <div style={{ background: "rgba(0,0,0,0.85)", border: `2px solid ${CYAN}`, color: "#fff", fontSize: 44, fontWeight: 900, padding: "18px 38px", borderRadius: 18, letterSpacing: 1, lineHeight: 1.15, whiteSpace: "pre-line", textAlign: "center" }}>
+        <div style={{ background: "rgba(0,0,0,0.85)", border: `2px solid ${CYAN}`, color: "#fff", fontSize: 46, fontWeight: 900, padding: "18px 38px", borderRadius: 18, letterSpacing: 1, lineHeight: 1.15, whiteSpace: "pre-line", textAlign: "center" }}>
           {scene.messages[mi]}
         </div>
       </div>

@@ -94,7 +94,7 @@ export const LogoBeat: React.FC<{ scene: LogoProps }> = ({ scene }) => {
                 style={{
                   marginTop: 18,
                   fontFamily: PIXEL,
-                  fontSize: 40,
+                  fontSize: 36,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
                   color: markColor,
@@ -143,7 +143,7 @@ export const LogoBeat: React.FC<{ scene: LogoProps }> = ({ scene }) => {
             style={{
               marginTop: 26,
               fontFamily: "'Menlo', monospace",
-              fontSize: 30,
+              fontSize: 28,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
               color: "rgba(255,255,255,0.55)",

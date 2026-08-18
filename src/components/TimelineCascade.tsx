@@ -109,7 +109,7 @@ export const TimelineCascade: React.FC<{ scene: TimelineScene }> = ({
           {scene.kicker && (
             <div
               style={{
-                fontSize: 30,
+                fontSize: 28,
                 letterSpacing: 6,
                 textTransform: "uppercase",
                 opacity: interpolate(t, [0.05, 0.35], [0, 0.75], {
@@ -126,7 +126,7 @@ export const TimelineCascade: React.FC<{ scene: TimelineScene }> = ({
           {scene.title && (
             <div
               style={{
-                fontSize: 84,
+                fontSize: 78,
                 fontWeight: 600,
                 marginTop: 10,
                 opacity: interpolate(t, [0.15, 0.5], [0, 1], {

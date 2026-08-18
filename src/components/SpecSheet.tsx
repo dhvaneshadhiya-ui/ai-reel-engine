@@ -37,18 +37,18 @@ export const SpecSheet: React.FC<{ scene: Props }> = ({ scene }) => {
         </AbsoluteFill>
       )}
       {scene.kicker && (
-        <div style={{ position: "relative", fontFamily: SERIF, fontSize: 40, color: ACCENT, marginBottom: 14, opacity: interpolate(t, [0, 0.3], [0, 1], { extrapolateRight: "clamp" }) }}>
+        <div style={{ position: "relative", fontFamily: SERIF, fontSize: 36, color: ACCENT, marginBottom: 14, opacity: interpolate(t, [0, 0.3], [0, 1], { extrapolateRight: "clamp" }) }}>
           {scene.kicker}
         </div>
       )}
-      <div style={{ position: "relative", fontFamily: SERIF, fontWeight: 600, fontSize: 92, color: "#fff", lineHeight: 1.0, marginBottom: 40, opacity: interpolate(t, [0.05, 0.4], [0, 1], { extrapolateRight: "clamp" }), transform: `translateY(${interpolate(t, [0.05, 0.4], [22, 0], { extrapolateRight: "clamp" })}px)` }}>
+      <div style={{ position: "relative", fontFamily: SERIF, fontWeight: 600, fontSize: 100, color: "#fff", lineHeight: 1.0, marginBottom: 40, opacity: interpolate(t, [0.05, 0.4], [0, 1], { extrapolateRight: "clamp" }), transform: `translateY(${interpolate(t, [0.05, 0.4], [22, 0], { extrapolateRight: "clamp" })}px)` }}>
         {scene.title}
       </div>
       {scene.columns && (
         <div style={{ position: "relative", display: "flex", alignItems: "flex-end", padding: "0 26px 16px", opacity: interpolate(t, [0.25, 0.5], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
           <span style={{ flex: 1 }} />
           {scene.columns.map((c, j) => (
-            <span key={j} style={{ width: 300, textAlign: "right", fontSize: 27, letterSpacing: 1.5, fontWeight: 700, color: "rgba(255,255,255,0.5)", textTransform: "uppercase" }}>{c}</span>
+            <span key={j} style={{ width: 300, textAlign: "right", fontSize: 28, letterSpacing: 1.5, fontWeight: 700, color: "rgba(255,255,255,0.5)", textTransform: "uppercase" }}>{c}</span>
           ))}
         </div>
       )}
@@ -70,17 +70,17 @@ export const SpecSheet: React.FC<{ scene: Props }> = ({ scene }) => {
             >
               <span style={{ flex: 1, fontSize: 46, color: r.accent ? "#fff" : "rgba(255,255,255,0.72)", fontWeight: 800 }}>
                 {r.label}
-                {r.accent && (r as { badge?: string }).badge && <span style={{ marginLeft: 14, fontSize: 26, color: ACCENT, fontWeight: 800, verticalAlign: "middle" }}>{(r as { badge?: string }).badge}</span>}
+                {r.accent && (r as { badge?: string }).badge && <span style={{ marginLeft: 14, fontSize: 28, color: ACCENT, fontWeight: 800, verticalAlign: "middle" }}>{(r as { badge?: string }).badge}</span>}
               </span>
               {vals.map((v, j) => (
-                <span key={j} style={{ width: 300, textAlign: "right", fontSize: 50, fontWeight: 800, color: r.accent ? "#fff" : "#dcdcdc", fontVariantNumeric: "tabular-nums" }}>{v}</span>
+                <span key={j} style={{ width: 300, textAlign: "right", fontSize: 46, fontWeight: 800, color: r.accent ? "#fff" : "#dcdcdc", fontVariantNumeric: "tabular-nums" }}>{v}</span>
               ))}
             </div>
           );
         })}
       </div>
       {scene.footnote && (
-        <div style={{ position: "relative", fontSize: 32, color: "rgba(255,255,255,0.5)", marginTop: 34, fontStyle: "italic", fontFamily: SERIF }}>{scene.footnote}</div>
+        <div style={{ position: "relative", fontSize: 28, color: "rgba(255,255,255,0.5)", marginTop: 34, fontStyle: "italic", fontFamily: SERIF }}>{scene.footnote}</div>
       )}
     </AbsoluteFill>
   );

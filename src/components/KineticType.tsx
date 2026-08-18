@@ -33,7 +33,7 @@ export const KineticType: React.FC<{
         fontFamily: "'HelveticaNeue-CondensedBlack', 'Arial Narrow', sans-serif",
         fontWeight: 900,
         textTransform: "uppercase",
-        fontSize: 92,
+        fontSize: 100,
         letterSpacing: "0.03em",
         lineHeight: 1.02,
       }
@@ -41,7 +41,7 @@ export const KineticType: React.FC<{
         fontFamily: "-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif",
         fontStyle: "italic",
         fontWeight: 700,
-        fontSize: 98,
+        fontSize: 100,
         lineHeight: 1.08,
       };
 

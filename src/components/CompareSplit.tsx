@@ -26,7 +26,7 @@ function Half({ src, label }: { src: string; label?: string }) {
         <Img src={staticFile(src)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       )}
       {label && (
-        <div style={{ position: "absolute", top: 28, left: 0, right: 0, textAlign: "center", fontSize: 30, fontWeight: 800, color: "#fff", textShadow: "0 2px 12px rgba(0,0,0,0.7)", letterSpacing: 1 }}>
+        <div style={{ position: "absolute", top: 28, left: 0, right: 0, textAlign: "center", fontSize: 28, fontWeight: 800, color: "#fff", textShadow: "0 2px 12px rgba(0,0,0,0.7)", letterSpacing: 1 }}>
           {label}
         </div>
       )}

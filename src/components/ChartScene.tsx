@@ -391,7 +391,7 @@ export const ChartScene: React.FC<ChartSceneProps> = ({
               style={{
                 fontFamily: t.sans,
                 fontWeight: 700,
-                fontSize: 27,
+                fontSize: 28,
                 letterSpacing: "0.22em",
                 textTransform: "uppercase",
                 color: dark ? t.accent : ink,

@@ -46,7 +46,7 @@ export const CategoryGrid: React.FC<{ scene: Props }> = ({ scene }) => {
   return (
     <AbsoluteFill style={{ background: BGS[scene.bg ?? "gradient"], justifyContent: "center", alignItems: "center", fontFamily: SANS }}>
       {scene.headline && (
-        <div style={{ position: "absolute", top: 230, fontSize: 40, fontWeight: 800, letterSpacing: 1, color: dark ? "#fff" : "#111" }}>
+        <div style={{ position: "absolute", top: 230, fontSize: 36, fontWeight: 800, letterSpacing: 1, color: dark ? "#fff" : "#111" }}>
           {scene.headline}
         </div>
       )}
@@ -86,7 +86,7 @@ export const CategoryGrid: React.FC<{ scene: Props }> = ({ scene }) => {
               <div style={{ fontSize: 46, fontWeight: 900, color: "#fff", textAlign: "center", letterSpacing: 1, lineHeight: 1.1, padding: "0 24px" }}>
                 {c.label}
               </div>
-              {c.sub && <div style={{ fontSize: 24, color: "rgba(255,255,255,0.85)", marginTop: 10 }}>{c.sub}</div>}
+              {c.sub && <div style={{ fontSize: 28, color: "rgba(255,255,255,0.85)", marginTop: 10 }}>{c.sub}</div>}
               {isSel && selP > 0.4 && (
                 <div style={{ position: "absolute", top: 18, right: 22, width: 56, height: 56, borderRadius: 30, background: CYAN, color: "#fff", fontSize: 36, fontWeight: 900, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${interpolate(selP, [0.4, 0.7], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })})` }}>
                   ✓
@@ -97,7 +97,7 @@ export const CategoryGrid: React.FC<{ scene: Props }> = ({ scene }) => {
         })}
       </div>
       {sel != null && selP > 0.5 && (
-        <div style={{ position: "absolute", bottom: SAFE_LOW, fontSize: 44, fontWeight: 900, color: dark ? "#fff" : "#111", letterSpacing: 1, opacity: interpolate(selP, [0.5, 0.8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
+        <div style={{ position: "absolute", bottom: SAFE_LOW, fontSize: 46, fontWeight: 900, color: dark ? "#fff" : "#111", letterSpacing: 1, opacity: interpolate(selP, [0.5, 0.8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
           SELECTED: <span style={{ color: CYAN }}>{scene.cards[sel].label}</span>
         </div>
       )}

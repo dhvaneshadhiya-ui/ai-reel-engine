@@ -59,7 +59,7 @@ export const ToolStack: React.FC<ToolStackProps> = ({
           fontFamily: "Fraunces",
           fontStyle: "italic",
           fontWeight: 700,
-          fontSize: 88,
+          fontSize: 78,
           lineHeight: 0.95,
           letterSpacing: -3,
           color: dark ? theme.white : theme.ink,
@@ -143,7 +143,7 @@ export const ToolStack: React.FC<ToolStackProps> = ({
                   justifyContent: "center",
                   fontFamily: theme.sans,
                   fontWeight: 900,
-                  fontSize: 24,
+                  fontSize: 28,
                 }}
               >
                 {String(index + 1).padStart(2, "0")}
@@ -153,7 +153,7 @@ export const ToolStack: React.FC<ToolStackProps> = ({
                   style={{
                     fontFamily: theme.sans,
                     fontWeight: 900,
-                    fontSize: 30,
+                    fontSize: 28,
                     lineHeight: 1,
                   }}
                 >

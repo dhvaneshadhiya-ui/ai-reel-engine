@@ -41,7 +41,7 @@ const wordStyle = (
         fontFamily: "-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif",
         fontStyle: "italic",
         fontWeight: 700,
-        fontSize: 96 * size,
+        fontSize: 100 * size,
         letterSpacing: "-0.01em",
       };
     case "caps":
@@ -50,7 +50,7 @@ const wordStyle = (
         fontFamily: "-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif",
         fontWeight: 900,
         textTransform: "uppercase",
-        fontSize: 96 * size,
+        fontSize: 100 * size,
         letterSpacing: "0.02em",
       };
     case "pixel":
@@ -59,7 +59,7 @@ const wordStyle = (
         fontFamily: "'Menlo', 'Courier New', monospace",
         fontWeight: 400,
         textTransform: "uppercase",
-        fontSize: 52 * size,
+        fontSize: 46 * size,
         lineHeight: 1.5,
         textShadow: dark
           ? "4px 4px 0 rgba(217,119,87,0.55)"

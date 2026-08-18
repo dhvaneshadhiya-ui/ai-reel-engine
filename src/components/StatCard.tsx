@@ -67,7 +67,7 @@ export const StatCard: React.FC<{ scene: StatProps }> = ({ scene }) => {
               fontFamily:
                 "-apple-system,'SF Pro Display','Helvetica Neue',sans-serif",
               fontWeight: 700,
-              fontSize: 40,
+              fontSize: 36,
               letterSpacing: "-0.02em",
               color: ink,
             }}
@@ -80,7 +80,7 @@ export const StatCard: React.FC<{ scene: StatProps }> = ({ scene }) => {
                 fontFamily:
                   "-apple-system,'SF Pro Display','Helvetica Neue',sans-serif",
                 fontWeight: 700,
-                fontSize: 34,
+                fontSize: 36,
                 color: PALETTE[0],
               }}
             >
@@ -106,7 +106,7 @@ export const StatCard: React.FC<{ scene: StatProps }> = ({ scene }) => {
                     fontFamily:
                       "-apple-system,'SF Pro Display','Helvetica Neue',sans-serif",
                     fontWeight: 600,
-                    fontSize: 27,
+                    fontSize: 28,
                     color: ink,
                     whiteSpace: "nowrap",
                   }}
@@ -136,7 +136,7 @@ export const StatCard: React.FC<{ scene: StatProps }> = ({ scene }) => {
                     width: 130,
                     textAlign: "right",
                     fontFamily: "ui-monospace,'SF Mono',Menlo,monospace",
-                    fontSize: 24,
+                    fontSize: 28,
                     color: sub,
                     opacity: grow,
                   }}

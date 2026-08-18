@@ -98,7 +98,7 @@ export const PromptCard: React.FC<{ scene: Props }> = ({ scene }) => {
           style={{
             position: "absolute",
             top: 250,
-            fontSize: 40,
+            fontSize: 36,
             fontWeight: 800,
             letterSpacing: 1,
             color: dark ? "#fff" : "#111",
@@ -117,7 +117,7 @@ export const PromptCard: React.FC<{ scene: Props }> = ({ scene }) => {
             const o = interpolate(t, [at, at + 0.25], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
             const y = interpolate(t, [at, at + 0.25], [24, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
             return (
-              <div key={i} style={{ fontSize: 74, fontWeight: 900, color: dark ? "#fff" : "#111", opacity: o, transform: `translateY(${y}px)`, letterSpacing: 1 }}>
+              <div key={i} style={{ fontSize: 78, fontWeight: 900, color: dark ? "#fff" : "#111", opacity: o, transform: `translateY(${y}px)`, letterSpacing: 1 }}>
                 {ln}
               </div>
             );
@@ -140,10 +140,10 @@ export const PromptCard: React.FC<{ scene: Props }> = ({ scene }) => {
             <span style={{ width: 15, height: 15, borderRadius: 8, background: "#febc2e" }} />
             <span style={{ width: 15, height: 15, borderRadius: 8, background: "#28c840" }} />
             {scene.app && (
-              <span style={{ marginLeft: "auto", fontSize: 24, color: dark ? "#888" : "#999", fontWeight: 600 }}>{scene.app}</span>
+              <span style={{ marginLeft: "auto", fontSize: 28, color: dark ? "#888" : "#999", fontWeight: 600 }}>{scene.app}</span>
             )}
           </div>
-          <div style={{ fontSize: 52, lineHeight: 1.3, fontWeight: 650, color: dark ? "#f2f2f2" : "#1a1a1a" }}>
+          <div style={{ fontSize: 46, lineHeight: 1.3, fontWeight: 650, color: dark ? "#f2f2f2" : "#1a1a1a" }}>
             {renderPrompt(typed, scene.highlights ?? [], Math.round(litCount))}
             {shown < full.length && <span style={{ opacity: (frame % 20) < 10 ? 1 : 0 }}>|</span>}
           </div>
@@ -154,7 +154,7 @@ export const PromptCard: React.FC<{ scene: Props }> = ({ scene }) => {
                 return (
                   <div key={i} style={{ flex: 1, height: 150, borderRadius: 16, background: dark ? "#242424" : "#eef1f5", position: "relative", overflow: "hidden" }}>
                     <div style={{ position: "absolute", inset: 0, background: `linear-gradient(90deg,transparent, rgba(10,169,194,${shimmer * 0.5}), transparent)`, transform: `translateX(${(shimmer - 0.5) * 300}px)` }} />
-                    <div style={{ position: "absolute", top: 12, left: 14, fontSize: 26, fontWeight: 800, color: dark ? "#666" : "#b8c0cc" }}>{`0${i + 1}`}</div>
+                    <div style={{ position: "absolute", top: 12, left: 14, fontSize: 28, fontWeight: 800, color: dark ? "#666" : "#b8c0cc" }}>{`0${i + 1}`}</div>
                   </div>
                 );
               })}
@@ -163,7 +163,7 @@ export const PromptCard: React.FC<{ scene: Props }> = ({ scene }) => {
         </div>
       )}
       {scene.subtext && (
-        <div style={{ position: "absolute", bottom: SAFE_LOW, fontSize: 40, fontWeight: 800, color: CYAN, letterSpacing: 1, opacity: interpolate(t, [0.4, 0.7], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
+        <div style={{ position: "absolute", bottom: SAFE_LOW, fontSize: 36, fontWeight: 800, color: CYAN, letterSpacing: 1, opacity: interpolate(t, [0.4, 0.7], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
           {scene.subtext}
         </div>
       )}

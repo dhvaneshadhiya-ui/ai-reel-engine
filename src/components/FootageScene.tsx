@@ -72,7 +72,7 @@ export const FootageScene: React.FC<{ scene: FootageProps }> = ({ scene }) => {
                 fontFamily:
                   "-apple-system,'SF Pro Display','Helvetica Neue',sans-serif",
                 fontWeight: 800,
-                fontSize: 58,
+                fontSize: 60,
                 letterSpacing: "-0.02em",
                 color: "#fff",
                 marginBottom: 16,
@@ -86,7 +86,7 @@ export const FootageScene: React.FC<{ scene: FootageProps }> = ({ scene }) => {
                 fontFamily:
                   "-apple-system,'SF Pro Display','Helvetica Neue',sans-serif",
                 fontWeight: 400,
-                fontSize: 34,
+                fontSize: 36,
                 lineHeight: 1.35,
                 color: "rgba(255,255,255,0.9)",
                 maxWidth: 900,

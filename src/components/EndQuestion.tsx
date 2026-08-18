@@ -31,7 +31,7 @@ export const EndQuestion: React.FC<{ scene: Props }> = ({ scene }) => {
       )}
       <AbsoluteFill style={{ background: "linear-gradient(180deg,rgba(0,0,0,0.15),rgba(0,0,0,0.55))" }} />
       <div style={{ position: "absolute", top: "34%", left: 0, right: 0, textAlign: "center", opacity: en, transform: `translateY(${(1 - en) * 24}px)` }}>
-        <div style={{ display: "inline-block", background: "rgba(0,0,0,0.7)", border: `2px solid ${CYAN}`, color: "#fff", fontSize: 58, fontWeight: 900, padding: "22px 40px", borderRadius: 18, letterSpacing: 1, lineHeight: 1.15, whiteSpace: "pre-line" }}>
+        <div style={{ display: "inline-block", background: "rgba(0,0,0,0.7)", border: `2px solid ${CYAN}`, color: "#fff", fontSize: 60, fontWeight: 900, padding: "22px 40px", borderRadius: 18, letterSpacing: 1, lineHeight: 1.15, whiteSpace: "pre-line" }}>
           {scene.question}
         </div>
         <div style={{ marginTop: 44, display: "flex", gap: 40, justifyContent: "center" }}>

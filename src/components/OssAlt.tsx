@@ -72,7 +72,7 @@ export const OssHook: React.FC<{ scene: Extract<Scene, { type: "osshook" }> }> =
           textAlign: "center",
           fontFamily: SANS,
           fontWeight: 900,
-          fontSize: 150,
+          fontSize: 130,
           letterSpacing: "-0.03em",
           lineHeight: 0.98,
           color: "#fff",
@@ -160,13 +160,13 @@ export const NotifStack: React.FC<{ scene: Extract<Scene, { type: "notifstack" }
             }}
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <div style={{ fontWeight: 800, fontSize: 40, color: "#141414" }}>{s.name}</div>
-              <div style={{ fontWeight: 900, fontSize: 40, color: RED }}>{s.price}</div>
+              <div style={{ fontWeight: 800, fontSize: 36, color: "#141414" }}>{s.name}</div>
+              <div style={{ fontWeight: 900, fontSize: 36, color: RED }}>{s.price}</div>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 10 }}>
               <div
                 style={{
-                  fontSize: 24,
+                  fontSize: 28,
                   fontWeight: 800,
                   letterSpacing: "0.06em",
                   color: "#fff",
@@ -177,7 +177,7 @@ export const NotifStack: React.FC<{ scene: Extract<Scene, { type: "notifstack" }
               >
                 RENEWED
               </div>
-              <div style={{ fontSize: 26, color: "rgba(20,20,20,0.5)", fontWeight: 600 }}>
+              <div style={{ fontSize: 28, color: "rgba(20,20,20,0.5)", fontWeight: 600 }}>
                 just now
               </div>
             </div>
@@ -233,7 +233,7 @@ export const NotifStack: React.FC<{ scene: Extract<Scene, { type: "notifstack" }
                     top: y,
                     fontFamily: SANS,
                     fontWeight: 900,
-                    fontSize: 52,
+                    fontSize: 46,
                     color: "#7ee081",
                     textShadow: "0 3px 14px rgba(0,0,0,0.5)",
                     opacity: 1 - p * 0.25,
@@ -269,7 +269,7 @@ export const NotifStack: React.FC<{ scene: Extract<Scene, { type: "notifstack" }
           textAlign: "center",
           fontFamily: SANS,
           fontWeight: 900,
-          fontSize: 56,
+          fontSize: 60,
           letterSpacing: "-0.01em",
           color: "#fff",
           textShadow: "0 6px 30px rgba(0,0,0,0.7)",
@@ -320,7 +320,7 @@ export const StrikeSwap: React.FC<{ scene: Extract<Scene, { type: "strikeswap" }
           <div
             style={{
               fontWeight: 900,
-              fontSize: 110,
+              fontSize: 100,
               letterSpacing: "-0.02em",
               color: "#fff",
             }}
@@ -350,7 +350,7 @@ export const StrikeSwap: React.FC<{ scene: Extract<Scene, { type: "strikeswap" }
             transform: `scale(${0.92 + 0.08 * swap})`,
           }}
         >
-          <div style={{ fontWeight: 900, fontSize: 96, letterSpacing: "-0.02em", lineHeight: 1.04 }}>
+          <div style={{ fontWeight: 900, fontSize: 100, letterSpacing: "-0.02em", lineHeight: 1.04 }}>
             <span style={{ color: CYAN }}>OPEN-SOURCE</span>
             <br />
             <span style={{ color: "#fff" }}>ALTERNATIVES</span>
@@ -377,7 +377,7 @@ export const StrikeSwap: React.FC<{ scene: Extract<Scene, { type: "strikeswap" }
                 strokeLinejoin="round"
               />
             </svg>
-            <div style={{ fontWeight: 800, fontSize: 54, color: "#fff" }}>LEGAL + FREE</div>
+            <div style={{ fontWeight: 800, fontSize: 60, color: "#fff" }}>LEGAL + FREE</div>
           </div>
         </div>
       )}
@@ -455,7 +455,7 @@ export const SearchSpotlight: React.FC<{
                 top: r.y - 84,
                 fontFamily: SANS,
                 fontWeight: 800,
-                fontSize: 40,
+                fontSize: 36,
                 letterSpacing: "0.04em",
                 color: "#fff",
                 background: CYAN,
@@ -491,7 +491,7 @@ export const SearchSpotlight: React.FC<{
               gap: 14,
               fontFamily: SANS,
               fontWeight: 900,
-              fontSize: 38,
+              fontSize: 36,
               color: "#141414",
               background: "rgba(255,255,255,0.96)",
               border: `4px solid ${CYAN}`,
@@ -615,7 +615,7 @@ export const StackWindows: React.FC<{ scene: Extract<Scene, { type: "stackwindow
                   marginLeft: 12,
                   fontFamily: SANS,
                   fontWeight: 700,
-                  fontSize: 24,
+                  fontSize: 28,
                   color: "rgba(20,20,20,0.6)",
                 }}
               >
@@ -641,7 +641,7 @@ export const StackWindows: React.FC<{ scene: Extract<Scene, { type: "stackwindow
           textAlign: "center",
           fontFamily: SANS,
           fontWeight: 900,
-          fontSize: 84,
+          fontSize: 78,
           letterSpacing: "-0.02em",
           lineHeight: 1.02,
           color: theme.ink,
@@ -685,7 +685,7 @@ export const ProblemSolved: React.FC<{ scene: Extract<Scene, { type: "problemsol
   const row = (txt: string, ok: boolean, key: number) => (
     <div
       key={key}
-      style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 18, fontSize: 33,
+      style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 18, fontSize: 36,
                fontWeight: 650, color: "rgba(20,20,20,0.78)" }}
     >
       <span style={{ color: ok ? CYAN : RED, fontWeight: 900, fontSize: 36 }}>
@@ -725,7 +725,7 @@ export const ProblemSolved: React.FC<{ scene: Extract<Scene, { type: "problemsol
             $
           </text>
         </svg>
-        <div style={{ fontWeight: 900, fontSize: 44, color: "#141414", marginTop: 16, lineHeight: 1.05 }}>
+        <div style={{ fontWeight: 900, fontSize: 46, color: "#141414", marginTop: 16, lineHeight: 1.05 }}>
           PAID TOOL
         </div>
         {row("Monthly subscription", false, 0)}
@@ -751,7 +751,7 @@ export const ProblemSolved: React.FC<{ scene: Extract<Scene, { type: "problemsol
           <rect x="10" y="22" width="28" height="20" rx="5" fill="none" stroke={CYAN} strokeWidth="5" />
           <path d="M16 22 v-5 a8 8 0 0 1 15 -3" fill="none" stroke={CYAN} strokeWidth="5" strokeLinecap="round" />
         </svg>
-        <div style={{ fontWeight: 900, fontSize: 44, color: "#141414", marginTop: 16, lineHeight: 1.05 }}>
+        <div style={{ fontWeight: 900, fontSize: 46, color: "#141414", marginTop: 16, lineHeight: 1.05 }}>
           OPEN-SOURCE ALTERNATIVE
         </div>
         {row("Free to use", true, 0)}
@@ -807,8 +807,8 @@ export const ProblemSolved: React.FC<{ scene: Extract<Scene, { type: "problemsol
             strokeLinejoin="round"
           />
         </svg>
-        <div style={{ fontWeight: 900, fontSize: 66, color: "#141414" }}>PROBLEM SOLVED</div>
-        <div style={{ fontWeight: 600, fontSize: 30, color: "rgba(20,20,20,0.55)" }}>
+        <div style={{ fontWeight: 900, fontSize: 60, color: "#141414" }}>PROBLEM SOLVED</div>
+        <div style={{ fontWeight: 600, fontSize: 28, color: "rgba(20,20,20,0.55)" }}>
           same need · different price tag
         </div>
       </div>
@@ -878,7 +878,7 @@ export const WalletAttack: React.FC<{ scene: Extract<Scene, { type: "walletattac
               top: y,
               fontFamily: SANS,
               fontWeight: 800,
-              fontSize: 30,
+              fontSize: 28,
               color: "#141414",
               background: "rgba(255,255,255,0.97)",
               borderLeft: `10px solid ${RED}`,
@@ -969,7 +969,7 @@ export const ForkCustomize: React.FC<{ scene: Extract<Scene, { type: "forkcustom
     const p = Math.min(1, Math.max(0, (custom - i * 0.18) * 2.2));
     return (
       <div key={label} style={{ marginTop: 26 }}>
-        <div style={{ fontSize: 26, fontWeight: 700, color: "rgba(20,20,20,0.6)", marginBottom: 10 }}>
+        <div style={{ fontSize: 28, fontWeight: 700, color: "rgba(20,20,20,0.6)", marginBottom: 10 }}>
           {label}
         </div>
         <div style={{ width: 340, height: 14, borderRadius: 7, background: "rgba(20,20,20,0.12)" }}>
@@ -994,7 +994,7 @@ export const ForkCustomize: React.FC<{ scene: Extract<Scene, { type: "forkcustom
           width: "100%",
           textAlign: "center",
           fontWeight: 900,
-          fontSize: 92,
+          fontSize: 100,
           color: theme.ink,
           opacity: headP,
           transform: `translateY(${(1 - headP) * 40}px)`,
@@ -1023,11 +1023,11 @@ export const ForkCustomize: React.FC<{ scene: Extract<Scene, { type: "forkcustom
             <circle cx="12" cy="19" r="3" fill="#141414" />
             <path d="M6 9 v3 a3 3 0 0 0 3 3 h6 a3 3 0 0 0 3 -3 V9 M12 15 v1" stroke="#141414" strokeWidth="2" fill="none" />
           </svg>
-          <div style={{ fontWeight: 800, fontSize: 40, color: "#141414" }}>the-project</div>
+          <div style={{ fontWeight: 800, fontSize: 36, color: "#141414" }}>the-project</div>
           <div
             style={{
               marginLeft: "auto",
-              fontSize: 26,
+              fontSize: 28,
               fontWeight: 800,
               color: click ? "#fff" : "#141414",
               background: click ? CYAN : "rgba(20,20,20,0.08)",
@@ -1063,10 +1063,10 @@ export const ForkCustomize: React.FC<{ scene: Extract<Scene, { type: "forkcustom
         >
           <div style={{ flex: 1 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-              <div style={{ fontWeight: 800, fontSize: 40, color: "#141414" }}>the-project</div>
+              <div style={{ fontWeight: 800, fontSize: 36, color: "#141414" }}>the-project</div>
               <div
                 style={{
-                  fontSize: 24,
+                  fontSize: 28,
                   fontWeight: 800,
                   color: "#fff",
                   background: cardColor,
@@ -1077,7 +1077,7 @@ export const ForkCustomize: React.FC<{ scene: Extract<Scene, { type: "forkcustom
                 YOUR COPY
               </div>
             </div>
-            <div style={{ marginTop: 8, fontSize: 26, color: "rgba(20,20,20,0.5)", fontWeight: 600 }}>
+            <div style={{ marginTop: 8, fontSize: 28, color: "rgba(20,20,20,0.5)", fontWeight: 600 }}>
               yours to edit — every file
             </div>
             {slider("COLOUR", 0)}
@@ -1089,7 +1089,7 @@ export const ForkCustomize: React.FC<{ scene: Extract<Scene, { type: "forkcustom
               return (
                 <div style={{ marginTop: 26 }}>
                   <div
-                    style={{ fontSize: 26, fontWeight: 700, color: "rgba(20,20,20,0.6)", marginBottom: 10 }}
+                    style={{ fontSize: 28, fontWeight: 700, color: "rgba(20,20,20,0.6)", marginBottom: 10 }}
                   >
                     FEATURES
                   </div>
@@ -1169,7 +1169,7 @@ export const SelfHost: React.FC<{ scene: Extract<Scene, { type: "selfhost" }> }>
           border: `6px solid #7c5cff`,
           padding: "14px 20px",
           fontWeight: 800,
-          fontSize: 30,
+          fontSize: 28,
           color: "#141414",
           textAlign: "center",
           opacity: 1 - move * 0.7,
@@ -1231,7 +1231,7 @@ export const SelfHost: React.FC<{ scene: Extract<Scene, { type: "selfhost" }> }>
           left: LX + 150,
           top: SY + 60,
           fontWeight: 800,
-          fontSize: 34,
+          fontSize: 36,
           color: "#fff",
           background: "rgba(10,169,194,0.2)",
           border: `4px solid ${CYAN}`,
@@ -1348,14 +1348,14 @@ export const CheckoutBlock: React.FC<{ scene: Extract<Scene, { type: "checkoutbl
           transformOrigin: "center",
         }}
       >
-        <div style={{ fontWeight: 900, fontSize: 44, color: "#141414" }}>UPGRADE TO PRO</div>
-        <div style={{ fontWeight: 900, fontSize: 76, color: "#141414", marginTop: 14 }}>
-          $20<span style={{ fontSize: 38, fontWeight: 700, color: "rgba(20,20,20,0.55)" }}>/month</span>
+        <div style={{ fontWeight: 900, fontSize: 46, color: "#141414" }}>UPGRADE TO PRO</div>
+        <div style={{ fontWeight: 900, fontSize: 78, color: "#141414", marginTop: 14 }}>
+          $20<span style={{ fontSize: 36, fontWeight: 700, color: "rgba(20,20,20,0.55)" }}>/month</span>
         </div>
         <div
           style={{
             marginTop: 6,
-            fontSize: 26,
+            fontSize: 28,
             fontWeight: 700,
             letterSpacing: "0.08em",
             color: "rgba(20,20,20,0.5)",
@@ -1392,7 +1392,7 @@ export const CheckoutBlock: React.FC<{ scene: Extract<Scene, { type: "checkoutbl
                 background: CYAN,
                 color: "#fff",
                 fontWeight: 900,
-                fontSize: 34,
+                fontSize: 36,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -1498,7 +1498,7 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
             width: "100%",
             textAlign: "center",
             fontWeight: 900,
-            fontSize: 72,
+            fontSize: 78,
             color: "#fff",
             textShadow: "0 6px 30px rgba(0,0,0,0.6)",
             opacity: wantP * (t > growAt ? 1 - (t - growAt) * 5 : 1),
@@ -1522,7 +1522,7 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
           display: "flex",
           alignItems: "center",
           padding: "0 44px",
-          fontSize: 38,
+          fontSize: 36,
           fontWeight: 600,
           color: word ? "#141414" : "rgba(20,20,20,0.4)",
         }}
@@ -1543,7 +1543,7 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
             opacity: t > typeAt - 0.35 && t < dropAt && Math.floor(t * 3) % 2 === 0 ? 1 : 0,
           }}
         />
-        <div style={{ marginLeft: "auto", fontWeight: 800, color: CYAN, fontSize: 34 }}>Post</div>
+        <div style={{ marginLeft: "auto", fontWeight: 800, color: CYAN, fontSize: 36 }}>Post</div>
       </div>
       {/* big bouncing word card */}
       {growP > 0.02 && t < dropAt + 0.3 && (
@@ -1569,7 +1569,7 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
             style={{
               marginTop: 26,
               fontWeight: 800,
-              fontSize: 34,
+              fontSize: 36,
               letterSpacing: "0.12em",
               color: "rgba(20,20,20,0.55)",
             }}
@@ -1613,7 +1613,7 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
           </div>
           <div>
             <div style={{ fontWeight: 800, fontSize: 36, color: "#141414" }}>Link sent ✓</div>
-            <div style={{ fontWeight: 600, fontSize: 27, color: "rgba(20,20,20,0.5)" }}>
+            <div style={{ fontWeight: 600, fontSize: 28, color: "rgba(20,20,20,0.5)" }}>
               check your DMs
             </div>
           </div>
@@ -1628,7 +1628,7 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
             width: "100%",
             textAlign: "center",
             fontWeight: 900,
-            fontSize: 96,
+            fontSize: 100,
             color: "#fff",
             textShadow: "0 8px 40px rgba(0,0,0,0.65)",
             opacity: finalP,
