@@ -2822,5 +2822,10 @@
         }
       ]
     }
-  ]
+  ],
+  "script": "Apple Pay is finally launching in India, reportedly, by October.\nBut the biggest deal isn't that it's arriving, it's what it's arriving without.\nHere's how it works.\nYou add a Visa or Mastercard credit card to Apple Wallet.\nThen you tap your iPhone or your Apple Watch on any contactless terminal.\nThat's it.\nApple never sees your real card number.\nYour bank issues a device-specific number and every tap uses a one-time code.\nNow, the part almost nobody noticed.\nThere is no UPI, not at launch, and that's not an oversight.\nTo route UPI payments, Apple needs clearance from the NPCI, the body that runs UPI, plus a sponsor bank, which matters because UPI is about 85% of India's digital payments.\nIn May alone, 23.2 billion transactions, nearly 30 trillion rupees.\nSo Apple isn't taking on UPI.\nIt's launching into the slice UPI doesn't own.\nPremium credit cards.\nBut here's the real story.\nThe hold-up was never the technology.\nIt was the money.\nApple has been negotiating with India's biggest banks for months.\nIt wants 15 to 20 basis points of the interchange on every credit card transaction.\nThe banks counted at 10, and that fee doesn't come from you or from the shopkeeper.\nIt comes out of the interchange the banks already earn.\nOne honest caveat.\nApple has confirmed none of this.\nNo date, no bank lists, no feature lists.\nThis is reporting.\nSo if you're waiting to replace your UPI app, keep waiting.\nBut if you carry a premium credit card, October could be interesting.\nWould you tap your watch instead of scanning a QR code?",
+  "approval": {
+    "sha256": "5500a5226e8f3d27e005d3b0784508a40990a48e510b1105207a8b3fbf26ae4d",
+    "approvedAt": "2026-08-18T06:40:00+00:00"
+  }
 }

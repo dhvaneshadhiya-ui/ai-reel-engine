@@ -2903,5 +2903,10 @@
         }
       ]
     }
-  ]
+  ],
+  "script": "SpaceX AI just shipped AI agents that log into your actual tools and do the work.\nIt's called GROKBOT, and it went live yesterday.\nHere's the official line, your team of always-on agents.\nThey have their own computer, work inside tools and apps like you do, and keep working 24-7.\nThat computer is real.\nAll of your bots share one persistent machine in the cloud, so a job doesn't stall when you close your laptop, and here's the part that actually matters.\nThey sign into apps and websites, including platforms with no clean API and no MCP.\nIt drives the interface the way a person would.\nYou message a bot like a colleague.\nIt remembers how you like things done.\nShow it a workflow once, and it saves that as a routine, takes your corrections, and runs it itself next time.\nYou can run several at once, a chief of staff bought on top, specialists underneath.\nThey message each other, pass work, and only pull you in for judgment calls.\nNow, the part almost nobody noticed.\nLook at how you actually get in.\nSuperGROK Heavy is $300 a month.\nBut Cursor Ultra is $200, and Cursor Premium Teams is $120 per seat.\nThe cheapest door into SpaceX AI's flagship agent is a Cursor subscription, and Cursor is the thing that signs you in FreeGROK does not get it.\nStandard SuperGROK does not either.\nOne honest caveat.\nThis is early beta.\nAnd for software, you are handing your logins to.\nThe launch material does not spell out credential handling, permission granularity, or audit records.\nIt runs on macOS, Windows, Linux, and iOS today.\nAndroid is coming.\nSo, would you actually give a bot your passwords?",
+  "approval": {
+    "sha256": "5aeaaeded5613e3a1511ee2bb1c37de81e826aaeafaf6288c401447f18cfd221",
+    "approvedAt": "2026-08-18T06:40:00+00:00"
+  }
 }
