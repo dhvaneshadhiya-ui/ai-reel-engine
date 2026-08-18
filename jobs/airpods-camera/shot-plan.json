@@ -1,0 +1,515 @@
+{
+ "emphasis": [
+  "B790",
+  "Visual Intelligence",
+  "macOS Tahoe 26.7",
+  "infrared",
+  "Face ID",
+  "$249",
+  "September",
+  "AirPods Ultra"
+ ],
+ "caption_corrections": {},
+ "music": {
+  "src": "music/bed-02.mp3",
+  "from": 8.0,
+  "points": [
+   {
+    "t": 0.0,
+    "vol": 0.15
+   },
+   {
+    "t": 30.0,
+    "vol": 0.055
+   },
+   {
+    "t": 72.0,
+    "vol": 0.0
+   }
+  ]
+ },
+ "shots": [
+  {
+   "start_phrase": "Apple made a demonstration",
+   "line": "Apple made a demonstration video...",
+   "tier": "official",
+   "asset_id": "apple-holds-book",
+   "scene": {
+    "type": "split",
+    "topSrc": "assets/airpods-camera/apple-holds-book.mp4",
+    "bottomSrc": "$AVATAR",
+    "kinetic": {
+     "text": "NEVER ANNOUNCED",
+     "style": "serif",
+     "at": 0.45
+    },
+    "captionBottom": 1000,
+    "headline": {
+     "lines": [
+      {
+       "text": "APPLE'S OWN DEMO",
+       "kind": "label",
+       "at": 0.15
+      }
+     ],
+     "y": 0.06,
+     "theme": "dark"
+    }
+   }
+  },
+  {
+   "start_phrase": "for a product it",
+   "line": "for a product it has never announced,",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "then it shipped that",
+   "line": "then it shipped that video",
+   "tier": "official",
+   "asset_id": "apple-walkin",
+   "scene": {
+    "type": "footage",
+    "src": "assets/airpods-camera/apple-walkin.mp4",
+    "zoomDir": "out"
+   }
+  },
+  {
+   "start_phrase": "inside a Mac update",
+   "line": "inside a Mac update.",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "logobeat",
+    "text": "macOS 26.7",
+    "label": "SHIPPED INSIDE",
+    "bg": "black",
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 0.15,
+      "vol": 0.16
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "AirPods with cameras",
+   "line": "AirPods with cameras,",
+   "tier": "official",
+   "asset_id": "apple-ear-tight",
+   "scene": {
+    "type": "footage",
+    "src": "assets/airpods-camera/apple-ear-tight.mp4",
+    "zoomDir": "in",
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.15
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "running Visual Intelligence",
+   "line": "running Visual Intelligence, codename B790.",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "specsheet",
+    "kicker": "THE FILE",
+    "title": "B790",
+    "rows": [
+     {
+      "label": "PRODUCT",
+      "value": "AirPods with cameras",
+      "accent": true
+     },
+     {
+      "label": "FEATURE",
+      "value": "Visual Intelligence"
+     }
+    ],
+    "footnote": "Source: MacRumors",
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 0.15,
+      "vol": 0.14
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "MacRumors Aaron Perris found",
+   "line": "MacRumors Aaron Perris found the file sitting",
+   "tier": "official",
+   "asset_id": "tweet-receipt",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/airpods-camera/tweet-mobile.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "lines": [
+     {
+      "at": 0.3,
+      "x": 45,
+      "y": 352,
+      "w": 965,
+      "h": 62
+     },
+     {
+      "at": 1.05,
+      "x": 45,
+      "y": 412,
+      "w": 730,
+      "h": 62
+     }
+    ],
+    "credit": "@aaronp613"
+   }
+  },
+  {
+   "start_phrase": "in the macOS Tahoe",
+   "line": "in the macOS Tahoe 26.7 release candidate.",
+   "tier": "reliable",
+   "asset_id": "macrumors-receipt",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/airpods-camera/macrumors-mobile.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "backdrop": "cream",
+    "credit": "MacRumors",
+    "highlights": [
+     {
+      "at": 0.35,
+      "x": 32,
+      "y": 661,
+      "w": 1018,
+      "h": 252
+     },
+     {
+      "at": 1.3,
+      "x": 80,
+      "y": 1330,
+      "w": 740,
+      "h": 62
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Fully finished",
+   "line": "Fully finished, Apple's own.",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "In it, a guy",
+   "line": "In it, a guy lifts a book toward his ear",
+   "tier": "official",
+   "asset_id": "apple-raise",
+   "scene": {
+    "type": "footage",
+    "src": "assets/airpods-camera/apple-raise.mp4",
+    "zoomDir": "in",
+    "captionBottom": 6000
+   }
+  },
+  {
+   "start_phrase": "and Siri answers",
+   "line": "and Siri answers, with Visual Intelligence, your world becomes savable.",
+   "tier": "reliable",
+   "asset_id": "macrumors-quote",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/airpods-camera/macrumors-quote.png",
+    "srcWidth": 1040,
+    "srcHeight": 440,
+    "backdrop": "cream",
+    "credit": "MacRumors",
+    "highlights": [
+     {
+      "at": 0.55,
+      "x": 30,
+      "y": 150,
+      "w": 980,
+      "h": 150
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "It even warns you",
+   "line": "It even warns you when your hair covers them.",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "uidialog",
+    "app": "AirPods",
+    "title": "Make sure AirPods are not covered",
+    "body": "To get the most accurate information about things in your environment, make sure AirPods are not covered.",
+    "primary": "OK",
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 0.2,
+      "vol": 0.14
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "So what's inside",
+   "line": "So what's inside?",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "Bloomberg's Mark Gurman says",
+   "line": "tiny infrared cameras, the same sensor Face ID uses,",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "specsheet",
+    "kicker": "WHAT'S IN THE STEM",
+    "title": "Infrared, not a lens",
+    "rows": [
+     {
+      "label": "SENSOR",
+      "value": "Tiny infrared cameras",
+      "accent": true
+     },
+     {
+      "label": "SAME TECH AS",
+      "value": "Face ID"
+     }
+    ],
+    "footnote": "Source: Mark Gurman, Bloomberg",
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 0.2,
+      "vol": 0.14
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "which means these don't",
+   "line": "no photos, no recording.",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "typecard",
+    "bg": "#F4EFE6",
+    "fg": "#141414",
+    "kinetic": {
+     "text": "NO PHOTOS. NO RECORDING.",
+     "style": "serif",
+     "at": 0.1
+    },
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 0.1,
+      "vol": 0.16
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "They just feed Siri",
+   "line": "They just feed Siri",
+   "tier": "official",
+   "asset_id": "apple-book-table",
+   "scene": {
+    "type": "footage",
+    "src": "assets/airpods-camera/apple-book-table.mp4",
+    "zoomDir": "in"
+   }
+  },
+  {
+   "start_phrase": "whatever you're looking at",
+   "line": "whatever you're looking at.",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "When Gurman says",
+   "line": "When Gurman says, as soon as September, next to the iPhone 18 Pro,",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "timeline",
+    "kicker": "EXPECTED",
+    "title": "As soon as September",
+    "items": [
+     {
+      "date": "SEP 2026",
+      "name": "B790",
+      "sub": "with iPhone 18 Pro",
+      "at": 0.3,
+      "accent": "#0aa9c2"
+     }
+    ],
+    "footnote": "Source: Mark Gurman, Bloomberg",
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 0.3,
+      "vol": 0.14
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "the name isn't locked",
+   "line": "the name isn't locked, AirPods Pro 4 or AirPods Ultra.",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "wordcascade",
+    "bg": "black",
+    "words": [
+     {
+      "text": "AirPods Pro 4",
+      "style": "serif",
+      "at": 0.3
+     },
+     {
+      "text": "or",
+      "style": "serif",
+      "at": 0.95,
+      "size": 0.6
+     },
+     {
+      "text": "AirPods Ultra",
+      "style": "serif",
+      "at": 1.35,
+      "accent": true
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "AirPods Pro 3 sit",
+   "line": "AirPods Pro 3 sit at $249",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "priceladder",
+    "kicker": "THE PRICE",
+    "title": "North of $249",
+    "rows": [
+     {
+      "label": "AirPods Pro 3",
+      "oldPrice": "$249",
+      "newPrice": "more"
+     }
+    ],
+    "bg": "black",
+    "footnote": "Source: MacRumors / Mark Gurman, Bloomberg",
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 0.4,
+      "vol": 0.15
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "and this tier goes",
+   "line": "and this tier goes north of that.",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "One strange thing",
+   "line": "One strange thing,",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "in Apple's own video",
+   "line": "in Apple's own video, you never once see the camera.",
+   "tier": "official",
+   "asset_id": "apple-outro-blur",
+   "scene": {
+    "type": "footage",
+    "src": "assets/airpods-camera/apple-outro-blur.mp4",
+    "zoomDir": "out",
+    "kinetic": {
+     "text": "NO CAMERA IN FRAME",
+     "style": "serif",
+     "at": 0.45,
+     "y": 0.44
+    }
+   }
+  },
+  {
+   "start_phrase": "Earbuds that watch the",
+   "line": "Earbuds that watch the room for you.",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "Yes, or absolutely not",
+   "line": "Yes, or absolutely not?",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "endquestion",
+    "src": "assets/airpods-camera/apple-outro-blur.mp4",
+    "question": "Earbuds that watch the room?",
+    "bg": "gradient",
+    "covers": "Yes, or absolutely not",
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "at": 0.15,
+      "vol": 0.15
+     }
+    ]
+   }
+  }
+ ]
+}

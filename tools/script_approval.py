@@ -110,16 +110,29 @@ def cmd_propose(slug: str) -> None:
     # Block when the SLOWEST measured pace overshoots the band, or the
     # fastest undershoots it — the voice varies 2.36-2.72 wps across real
     # masters, so a point estimate is not safe (2026-08-14).
+    # ADVISORY since 2026-08-17, not a block.
+    #
+    # The constitution says only three rules are law — Reels/Shorts format,
+    # mobile-first scouting, picture matches words — and runtime is explicitly
+    # judgement: "If a longer reel serves the story, make it longer." That change
+    # landed in reel_gates.py and NEVER PROPAGATED HERE, so the length band kept
+    # hard-blocking at the approval step while the same band merely advised at
+    # the gate. Found by trying to record the approval for two reels that had
+    # already SHIPPED at ~100s: the tool refused to let the user approve a script
+    # the audience has already watched.
+    #
+    # It still says its piece, loudly, because the measurement is real and a
+    # 130s news reel usually is too long. It just no longer refuses.
     if (slow > band_hi * 1.02 or fast < band_lo * 0.95) \
             and "allowLong" not in q_text:
-        sys.exit(f"PROPOSE BLOCKED: {words} words could run "
+        print(f"\n  LENGTH ADVICE: {words} words could run "
                  f"{fast:.0f}-{slow:.0f}s — outside the {band_lo:.0f}-"
                  f"{band_hi:.0f}s band for format {fmt!r} at the voice's "
                  f"measured pace range. Safe budget: "
                  f"{int(band_lo*WPS_MAX)}-{int(band_hi*WPS_MIN)} words. "
-                 "Trim the script, or argue the case in "
-                 f"{q_p} including the word 'allowLong' so the user "
-                 "explicitly approves the length.")
+                 "Trim it if the story does not need the room. Runtime is "
+                 "judgement, not a rule — this is advice, and approval is "
+                 "still yours to give.")
     if q_p.exists():
         print("\nQUESTIONS THAT NEED AN ANSWER BEFORE WE BUILD:")
         print(q_p.read_text().rstrip())

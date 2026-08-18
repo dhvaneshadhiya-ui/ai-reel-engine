@@ -178,11 +178,15 @@
         "vol": 0.055
       },
       {
-        "t": 71.6,
+        "t": 71.934,
         "vol": 0.15
       },
       {
         "t": 72.5,
+        "vol": 0.055
+      },
+      {
+        "t": 72.834,
         "vol": 0.02
       }
     ],
@@ -201,31 +205,33 @@
   ],
   "scenes": [
     {
-      "type": "footage",
-      "src": "assets/airpods-camera/apple-holds-book.mp4",
-      "zoomDir": "in",
+      "type": "split",
+      "topSrc": "assets/airpods-camera/apple-holds-book.mp4",
+      "bottomSrc": "assets/airpods-camera/avatar-master.mp4",
+      "kinetic": {
+        "text": "NEVER ANNOUNCED",
+        "style": "serif",
+        "at": 0.45
+      },
+      "captionBottom": 1000,
       "headline": {
         "lines": [
           {
             "text": "APPLE'S OWN DEMO",
             "kind": "label",
             "at": 0.15
-          },
-          {
-            "text": "NEVER ANNOUNCED",
-            "kind": "headline",
-            "at": 0.45,
-            "accent": true
           }
         ],
-        "y": 0.09,
+        "y": 0.06,
         "theme": "dark"
       },
       "durationSec": 1.86,
       "assetId": "apple-holds-book",
       "claimId": "apple-holds-book",
       "covers": "Apple made a demonstration",
-      "credit": "Apple, via @aaronp613"
+      "credit": "Apple, via @aaronp613",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.5
     },
     {
       "type": "footage",
@@ -602,7 +608,7 @@
           "vol": 0.15
         }
       ],
-      "durationSec": 1.5
+      "durationSec": 1.834
     }
   ],
   "captions": [
