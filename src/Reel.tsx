@@ -58,6 +58,7 @@ import {
   CommentCta,
 } from "./components/OssAlt";
 import { ThemeProvider } from "./theme/tokens";
+import { FontFaces } from "./theme/fonts";
 import type { BeatSheet, Scene } from "./types";
 
 const SceneSwitch: React.FC<{ scene: Scene }> = ({ scene }) => {
@@ -176,6 +177,9 @@ export const Reel: React.FC<{ beats: BeatSheet }> = ({ beats }) => {
   return (
     <ThemeProvider style={beats.style}>
     <AbsoluteFill style={{ background: "black" }}>
+      {/* Declared HERE, not in Root: a font load in Root reaches every
+          composition, which is what timed out renders in August. */}
+      <FontFaces />
       {beats.audio && <Audio src={staticFile(beats.audio)} />}
       {beats.music && (
         <Audio
