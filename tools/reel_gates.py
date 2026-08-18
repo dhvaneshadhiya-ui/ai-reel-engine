@@ -1093,10 +1093,26 @@ def check_beats(beats: dict, vo_end: float | None = None,
 
     # G35 — A STILL IN `footage` OR `floatcard` RENDERS BLACK (2026-08-17,
     # ios27-tiers). FootageScene and FloatingCard both render a Remotion
-    # <Video>; handed a PNG they produce nothing at all. Only `split` (which
-    # branches on file extension), `receipt` and `annotatezoom` take an <Img>.
-    # Caught by reading the components, not by any check — six scenes were
-    # already wired this way.
+    # <OffthreadVideo>. Only `split` (which branches on file extension),
+    # `receipt` and `annotatezoom` take an <Img>.
+    #
+    # CORRECTED 2026-08-17 by actually rendering the offenders. This said "a
+    # still renders BLACK", which was asserted from reading the components and
+    # never checked. The truth is worse and stranger:
+    #
+    #   iphone-fold-ultra scene 23   renders PERFECTLY — card, text, credit
+    #   september-preview scene 01   kills the render outright:
+    #     "Compositor error: No frame found at position 40 ... mrs-hero.png"
+    #
+    # ffmpeg decodes a PNG as a ONE-FRAME video, so OffthreadVideo succeeds at
+    # position 0 and fails at every later position. Whether a given scene works
+    # depends on which frame is requested, which is why these shipped: the reels
+    # rendered once and looked fine. It is a position-dependent hard failure,
+    # not a visual defect — the worst kind, because it passes until it doesn't.
+    #
+    # I nearly "fixed" 16 correctly-rendering scenes on the strength of the old
+    # wording, and nearly deleted the gate on the strength of the first render.
+    # Both would have been wrong.
     STILL_EXT = (".png", ".jpg", ".jpeg", ".webp", ".avif")
     for i, sc in enumerate(scenes):
         if sc["type"] not in ("footage", "floatcard"):
@@ -1106,9 +1122,11 @@ def check_beats(beats: dict, vo_end: float | None = None,
             if v.endswith(STILL_EXT):
                 errors.append(
                     f"G35 scene {i:02d} ({sc['type']}) plays a STILL "
-                    f"{str(sc.get(key)).split('/')[-1]!r} — {sc['type']} renders a "
-                    "<Video> and a still renders BLACK. Use receipt or "
-                    "annotatezoom for a PNG, or cut the still to an mp4.")
+                    f"{str(sc.get(key)).split('/')[-1]!r} — {sc['type']} renders "
+                    "an <OffthreadVideo>, and a still gives it exactly ONE "
+                    "frame. Asking for any later position KILLS THE RENDER: "
+                    "\"Compositor error: No frame found at position N\". Use "
+                    "receipt or annotatezoom for a still, or cut it to an mp4.")
 
     # G36 — A WIDE SOURCE TURNS `annotatezoom` INTO DEAD SPACE (2026-08-17,
     # ios27-tiers). AnnotateZoom sizes its card as
