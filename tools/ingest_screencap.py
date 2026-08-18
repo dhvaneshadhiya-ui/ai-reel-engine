@@ -40,9 +40,12 @@ from pathlib import Path
 
 FRAME_W, FRAME_H = 1080, 1920      # the only output shape we ship
 
-# The status bar sits in the top ~5% on every modern iPhone, but the exact
-# fraction moves with the notch/island. Default is deliberately generous.
-DEFAULT_STATUS_FRAC = 0.055
+# MEASURED, not guessed. On a real iPhone recording (1180x2556) the Dynamic
+# Island runs to y=143, i.e. 5.59% of height — so the previous 5.5% default
+# cropped at y=140 and left 3px of the island on screen. 6.5% clears it with
+# margin. Devices without an island need less; --measure reports the truth for
+# whatever you hand it.
+DEFAULT_STATUS_FRAC = 0.065
 
 
 def probe(p: Path) -> dict:
@@ -88,6 +91,21 @@ def measure_status_band(src: Path, h: int) -> int | None:
         im = Image.open(f).convert("L")
         W, H = im.size
         px = im.load()
+
+        # STRATEGY 1 — the Dynamic Island / notch. A near-black pill across the
+        # centre of the top strip, and it works on ANY wallpaper, which the gap
+        # method below does not: on a home screen with a photo behind it, every
+        # row carries "ink" and no clear gap is ever found. That is exactly how
+        # this returned None on the first real recording it was given.
+        cx0, cx1 = int(W * 0.33), int(W * 0.67)
+        span = max(1, (cx1 - cx0) // 4)
+        island = [y for y in range(int(H * 0.12))
+                  if sum(1 for x in range(cx0, cx1, 4) if px[x, y] < 28) / span > 0.9]
+        if island:
+            bottom = max(island) + 1
+            print(f"    (measured from the Dynamic Island / notch: "
+                  f"y {min(island)}..{max(island)})")
+            return bottom
         # background = the most common value in the top eighth
         top = [px[x, y] for y in range(0, H // 8, 2) for x in range(0, W, 6)]
         bg = max(set(top), key=top.count)
@@ -109,6 +127,10 @@ def measure_status_band(src: Path, h: int) -> int | None:
                 gap += 1
                 if gap >= 12:
                     return last + 1
+    print("    (--measure could not find a clear gap below the status bar — a "
+          "photo wallpaper\n     or a full-bleed app makes every row look "
+          "inked. Falling back to the default,\n     which may be wrong for "
+          "this device: check the before/after stills.)")
     return None
 
 
