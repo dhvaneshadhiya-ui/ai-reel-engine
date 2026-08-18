@@ -264,8 +264,16 @@ Contact sheet without ImageMagick font issues:
 ## 7. Render · master · verify
 
 ```bash
+python3 scripts/render_job.py <slug>   # render + TWO-PASS master + G31
+```
+
+Do NOT master with a bare `ffmpeg -af loudnorm=...` line. That is a SINGLE pass;
+loudnorm converges toward the target without reaching it and lands ~1 LU short,
+which G31 rejects. `render_job.py` measures first, then applies the measured
+values. It still runs the render below internally:
+
+```bash
 npx remotion render <slug> out/<slug>-raw.mp4 --concurrency=2 --timeout=120000
-ffmpeg -y -i out/<slug>-raw.mp4 -af "loudnorm=I=-14:TP=-1.2:LRA=7" -c:v copy out/<slug>-final.mp4
 ```
 - `--concurrency=2 --timeout=120000` avoids "delayRender timed out" on reels with
   many OffthreadVideo sources + 2 audio tracks (default 4× hits it; single frames

@@ -132,8 +132,15 @@ def steps(slug: str) -> list[dict]:
              label="Beat sheet built",
              done=_p(f"src/beats/{slug}.json").exists(),
              auto=None,
-             human=f"Build the beat sheet (tools/build_{slug}.py, modelled on "
-                   "tools/build_template.py). It must carry `script` and "
+             human="PREFERRED — compile the shot plan, which anchors every "
+                   "scene to the phrase it\n      illustrates, so `covers` is "
+                   "written for you and G39 is satisfied by construction:\n"
+                   f"        python3 scripts/compile_shot_plan.py {slug}\n"
+                   "      FALLBACK — a bespoke script, for a reel the shot plan "
+                   "cannot express. You then\n      owe `covers` by hand "
+                   f"(tools/link_shots.py {slug} justifies what it can):\n"
+                   f"        cp tools/build_template.py tools/build_{slug}.py\n"
+                   "      Either way the sheet must carry `script` and "
                    "`approval` for G27."),
         dict(key="register",
              skills=["(none — deterministic)"],

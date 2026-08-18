@@ -139,17 +139,39 @@ discover a problem while cutting (the shot drifted, chrome is visible), update
 the manifest *and* the beat map **before** building — not after rendering.
 
 ### STEP 4 — Build, register, render
+
+**Preferred: compile the shot plan.** Each shot is anchored to the phrase it
+illustrates, so `covers` is written for you and Rule 3 (G39) is satisfied by
+construction — the phrase existed before anyone went looking for footage.
+
+```bash
+python3 tools/plan_shots.py <slug> --write   # script -> one shot per clause
+# scout to satisfy each line, then fill asset_id + scene per shot
+python3 scripts/compile_shot_plan.py <slug>  # writes src/beats/<slug>.json
+python3 scripts/register_beats.py            # regenerates the composition index
+python3 scripts/render_job.py <slug>         # render + TWO-PASS master + G31
+```
+
+**Fallback: a bespoke build script**, for a reel whose structure the shot plan
+cannot express. You then owe `covers` by hand (`tools/link_shots.py <slug>`
+justifies what it can from the manifest and refuses to guess the rest).
+
 ```bash
 cp tools/build_template.py tools/build_<slug>.py   # then fill it in
-python3 tools/build_<slug>.py             # runs the GATES, writes src/beats/<slug>.json
-python3 scripts/register_beats.py         # regenerates the composition index
-npx remotion render <slug> out/<slug>-raw.mp4 --concurrency=2 --timeout=120000
-ffmpeg -y -i out/<slug>-raw.mp4 -af "loudnorm=I=-14:TP=-1.2:LRA=7" -c:v copy out/<slug>-final.mp4
+python3 tools/build_<slug>.py                      # writes src/beats/<slug>.json
 ```
-The build script calls `reel_gates.check_beats()`, which **raises** on any
-mechanical rule violation — runtime band, pacing ceilings, headline line
-lengths, facecam share, clip reuse, SFX count, manifest provenance. A failing
-sheet is never written, so it cannot reach the renderer.
+
+**Master through `render_job.py`, never a bare ffmpeg line.** This section used
+to end with `ffmpeg -af "loudnorm=I=-14:TP=-1.2:LRA=7"`, which is a SINGLE pass:
+loudnorm is adaptive and converges toward the target without reaching it, so it
+lands roughly 1 LU short and G31 rejects the result. `render_job.py` measures
+first, then applies the measured values.
+
+`check_beats()` raises only on the rules in `BLOCKING_RULES` — the three
+standing rules, plus render correctness and rights. Runtime length, pacing,
+headline lengths, facecam share, clip reuse and SFX count are **advice** now:
+they print with their evidence and stop nothing. (This paragraph claimed the
+opposite until 2026-08-17.)
 
 The concurrency/timeout flags are required — the default hits "delayRender
 timed out" on reels with many video sources plus two audio tracks.
