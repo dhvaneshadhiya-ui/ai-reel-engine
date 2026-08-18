@@ -100,13 +100,38 @@ def check(text: str) -> list[str]:
             f"appears {shape} times. By the third the ear predicts it and the "
             "fragments stop landing as emphasis.")
 
-    # 3. STAGE DIRECTIONS. "So what's inside?" announces a section.
+    # 3. QUESTIONS THE VIEWER CANNOT ANSWER YET.
+    #
+    # Two different faults, and the user drew the line 2026-08-18: being HOOKED
+    # and being CONFUSED are not the same thing.
+    #
+    #   "So what's inside?"  weak, but parseable — "inside" resolves to the
+    #                        product we were just told about
+    #   "When?"              nothing to resolve. When WHAT? The previous sentence
+    #                        was about function, not timing, so the word points at
+    #                        nothing. The viewer hears the ANSWER first and
+    #                        reconstructs the question backwards, losing the next
+    #                        sentence while they catch up.
+    #
+    # It is worse on mute, where the caption is one unanchored word, and it is a
+    # WRITTEN device: on a page "When?" reads as a subhead, spoken it is just a
+    # fragment with no typographic signal.
     stage = [s for s in ss if STAGE_DIRECTIONS.match(s.strip())]
-    if stage:
+    bare = [s for s in stage if len(s.split()) <= 2]
+    soft = [s for s in stage if s not in bare]
+    if bare:
         notes.append(
-            f"STAGE DIRECTIONS: {len(stage)} — {', '.join(repr(s) for s in stage[:3])}. "
-            "These announce structure the visual is already showing. Delete them; "
-            "the sentence after each one stands up alone.")
+            f"UNANCHORED QUESTION: {', '.join(repr(s) for s in bare)} — a bare "
+            "question word with no noun. The viewer cannot tell what is being "
+            "asked until they have heard the answer, so they parse it backwards "
+            "and lose the next line. Give it its subject ('So when do we get "
+            "them?') or make it a statement that still leans in ('They are closer "
+            "than you'd think.').")
+    if soft:
+        notes.append(
+            f"STAGE DIRECTION: {', '.join(repr(s) for s in soft)} — announces "
+            "structure the picture is already showing. Deletable: the sentence "
+            "after it stands up alone.")
 
     # 4. WHEN DOES THE VIEWER ENTER? Third-person reportage is happening to
     #    other people.

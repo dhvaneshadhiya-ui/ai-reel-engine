@@ -52,6 +52,27 @@ Rules: concrete noun + strong verb + a number or superlative. Zero throat-
 clearing. Frequently followed by "Here's how that's even possible." or a
 visual point: "Just look at these yourself." (see Visual deixis).
 
+## Questions: hooked is not the same as confused
+
+A question only works SPOKEN if the viewer can tell what is being asked at the
+moment they hear it. Test it with the previous sentence, not with the answer.
+
+    "They just feed Siri whatever you're looking at. When?"
+
+`When?` points at nothing — the line before it was about function, not timing. The
+viewer hears the answer first and rebuilds the question backwards, losing the next
+line while they catch up. On mute it is one unanchored word in a caption.
+
+It is a WRITTEN device: on a page it reads as a subhead, and the eye accepts it.
+Spoken, there is no typographic signal and it is just a fragment.
+
+  BAD    When?
+  OK     So when do we get them?          (carries its subject)
+  BEST   They're closer than you'd think. (still leans in, nothing to re-parse)
+
+Curiosity makes the viewer lean forward. Confusion makes them rewind. Only one of
+those is a hook.
+
 ## Rhythm + language rules (measured)
 
 > **These are MEASURED, not remembered.** Before you hand a script over:
