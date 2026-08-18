@@ -7,12 +7,12 @@
   "format": "news",
   "tone": "serious",
   "avatarRegister": "neutral",
-  "script": "Every iPhone going back to 2019 gets iOS 27. Almost none of them get the part you've been reading about.\nIt lands next month with the new iPhones. Apple dropped zero devices — iPhone 11 and up, same list as iOS 26.\nBut supported now means three different phones.\nOnly three get the full Siri AI: iPhone 17 Pro, 17 Pro Max, and iPhone Air.\nThe 16 line and 15 Pro get standard Apple Intelligence — the new Siri look, not the whole assistant.\nAnd from the iPhone 15 down, no Apple Intelligence at all.\nThat line cuts through one model year. iPhone 15 Pro is in. iPhone 15 is out.\nAnd the Siri behind that top tier is genuinely rebuilt — on models Apple co-developed with Google, using the technology behind Gemini. They run on-device and on Apple's Private Cloud Compute. Google never handles your data.\nUnless you're in Europe. Siri AI won't ship in the EU at launch.\nBut the real story is underneath. Everyone gets the Liquid Glass slider — one continuous dial in Settings, Appearance, instead of iOS 26's two options.\nAnd Apple says app launches are up to 30% faster. Check the footnote: they measured that on an iPhone 11 Pro Max.\nThat matters, because iOS 26 stalled. 74% of recent iPhones after 150 days, against 76% for iOS 18 — which only had 127 days.\nBut iOS 26 dropped three phones. iOS 27 drops none. Apple just removed the variable.\nSo which tier does your iPhone land in?",
+  "script": "Every iPhone going back to 2019 gets iOS 27. Almost none of them get the part you've been reading about.\nIt lands next month with the new iPhones. Apple dropped zero devices \u2014 iPhone 11 and up, same list as iOS 26.\nBut supported now means three different phones.\nOnly three get the full Siri AI: iPhone 17 Pro, 17 Pro Max, and iPhone Air.\nThe 16 line and 15 Pro get standard Apple Intelligence \u2014 the new Siri look, not the whole assistant.\nAnd from the iPhone 15 down, no Apple Intelligence at all.\nThat line cuts through one model year. iPhone 15 Pro is in. iPhone 15 is out.\nAnd the Siri behind that top tier is genuinely rebuilt \u2014 on models Apple co-developed with Google, using the technology behind Gemini. They run on-device and on Apple's Private Cloud Compute. Google never handles your data.\nUnless you're in Europe. Siri AI won't ship in the EU at launch.\nBut the real story is underneath. Everyone gets the Liquid Glass slider \u2014 one continuous dial in Settings, Appearance, instead of iOS 26's two options.\nAnd Apple says app launches are up to 30% faster. Check the footnote: they measured that on an iPhone 11 Pro Max.\nThat matters, because iOS 26 stalled. 74% of recent iPhones after 150 days, against 76% for iOS 18 \u2014 which only had 127 days.\nBut iOS 26 dropped three phones. iOS 27 drops none. Apple just removed the variable.\nSo which tier does your iPhone land in?",
   "approval": {
     "sha256": "4eefbe517fb09f7ccf647d373cb75defef82369ade3b258635ccd29a00654d59",
     "approvedAt": "2026-08-17T06:18:32+00:00",
     "words": 254,
-    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
   },
   "allowLong": true,
   "allowLongReason": "User-approved 2026-08-17. Keeps the three-tier device split, the EU regulatory gap, the Gemini architecture correction and the iOS 26 adoption comparison that closes the loop opened by 'zero devices dropped'. Each carries its own receipt and its own number; none is padding. 254 approved words at the measured 2.4-2.7 wps cannot fit the 60-80s news band; the master came back 104.65s. Well inside the 180s platform ceiling, and already trimmed once from 331 words.",
@@ -82,7 +82,7 @@
       "sfx": [
         {
           "src": "sfx/Riser.MP3",
-          "vol": 0.14,
+          "vol": 0.359,
           "at": 0.0
         }
       ]
@@ -107,7 +107,7 @@
       "sfx": [
         {
           "src": "sfx2/ground-impact-352053.mp3",
-          "vol": 0.15,
+          "vol": 0.394,
           "at": 0.0
         }
       ]
@@ -197,7 +197,7 @@
       "sfx": [
         {
           "src": "sfx/Magic Reveal.MP3",
-          "vol": 0.15,
+          "vol": 1.0,
           "at": 0.55
         }
       ]
@@ -271,22 +271,22 @@
       "cards": [
         {
           "label": "EVERYTHING",
-          "sub": "17 Pro · 17 Pro Max · Air"
+          "sub": "17 Pro \u00b7 17 Pro Max \u00b7 Air"
         },
         {
           "label": "STANDARD",
-          "sub": "16 line · 15 Pro"
+          "sub": "16 line \u00b7 15 Pro"
         },
         {
           "label": "NO AI",
-          "sub": "15 and older · SE"
+          "sub": "15 and older \u00b7 SE"
         }
       ],
       "durationSec": 1.98,
       "sfx": [
         {
           "src": "sfx/Pop.MP3",
-          "vol": 0.13,
+          "vol": 0.343,
           "at": 0.08
         }
       ]
@@ -347,7 +347,7 @@
       "sfx": [
         {
           "src": "sfx/Magic Reveal.MP3",
-          "vol": 0.15,
+          "vol": 1.0,
           "at": 0.3
         }
       ]
@@ -369,7 +369,7 @@
         {
           "label": "iPhone 15 Pro",
           "values": [
-            "Pro · Pro Max"
+            "Pro \u00b7 Pro Max"
           ]
         },
         {
@@ -380,7 +380,7 @@
           "accent": true
         }
       ],
-      "footnote": "Source: Apple — apple.com/os/ios",
+      "footnote": "Source: Apple \u2014 apple.com/os/ios",
       "durationSec": 2.14
     },
     {
@@ -443,7 +443,7 @@
       "bg": "black",
       "words": [
         {
-          "text": "15 · 14 · 13 · 12 · 11 · SE",
+          "text": "15 \u00b7 14 \u00b7 13 \u00b7 12 \u00b7 11 \u00b7 SE",
           "style": "caps",
           "at": 0.12
         },
@@ -472,11 +472,11 @@
       "cards": [
         {
           "label": "iPhone 15 Pro",
-          "sub": "IN — Apple Intelligence"
+          "sub": "IN \u2014 Apple Intelligence"
         },
         {
           "label": "iPhone 15",
-          "sub": "OUT — no AI"
+          "sub": "OUT \u2014 no AI"
         }
       ],
       "selectIndex": 1,
@@ -485,7 +485,7 @@
       "sfx": [
         {
           "src": "sfx2/whooshes-01.mp3",
-          "vol": 0.12,
+          "vol": 0.543,
           "at": 0.0
         }
       ]
@@ -583,7 +583,7 @@
         {
           "label": "Co-developed with",
           "values": [
-            "Google · Gemini"
+            "Google \u00b7 Gemini"
           ]
         },
         {
@@ -749,7 +749,7 @@
               "label": "Liquid Glass",
               "value": "Ultraclear",
               "tint": "#0aa9c2",
-              "glyph": "◎",
+              "glyph": "\u25ce",
               "chevron": true
             },
             {
@@ -771,7 +771,7 @@
       "cards": [
         {
           "label": "iOS 26",
-          "sub": "Clear or Tinted — two options"
+          "sub": "Clear or Tinted \u2014 two options"
         },
         {
           "label": "iOS 27",
@@ -838,7 +838,7 @@
     },
     {
       "type": "statcard",
-      "title": "iOS 27 — Apple's own numbers",
+      "title": "iOS 27 \u2014 Apple's own numbers",
       "titleRight": "vs iOS 26.4.2",
       "rows": [
         {
@@ -859,7 +859,7 @@
         }
       ],
       "bg": "black",
-      "footnote": "Source: Apple — apple.com/os/ios",
+      "footnote": "Source: Apple \u2014 apple.com/os/ios",
       "durationSec": 2.15
     },
     {
@@ -867,7 +867,7 @@
       "bg": "cream",
       "words": [
         {
-          "text": "FASTER — BUT",
+          "text": "FASTER \u2014 BUT",
           "style": "caps",
           "at": 0.15
         },
@@ -910,7 +910,7 @@
       "sfx": [
         {
           "src": "sfx2/impact-boom.mp3",
-          "vol": 0.17,
+          "vol": 0.452,
           "at": 0.5
         }
       ]
@@ -1009,7 +1009,7 @@
       "sfx": [
         {
           "src": "sfx/Core.MP3",
-          "vol": 0.15,
+          "vol": 0.556,
           "at": 0.1
         }
       ]
@@ -1108,7 +1108,7 @@
       "cards": [
         {
           "label": "iOS 26",
-          "sub": "XS · XS Max · XR cut"
+          "sub": "XS \u00b7 XS Max \u00b7 XR cut"
         },
         {
           "label": "iOS 27",

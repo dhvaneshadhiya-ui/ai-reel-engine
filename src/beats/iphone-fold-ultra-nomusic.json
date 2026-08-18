@@ -36,7 +36,7 @@
       "sfx": [
         {
           "src": "sfx2/whooshes-01.mp3",
-          "vol": 0.12,
+          "vol": 0.543,
           "at": 0.0
         }
       ],
@@ -116,7 +116,7 @@
       "sfx": [
         {
           "src": "sfx2/whooshes-01.mp3",
-          "vol": 0.12,
+          "vol": 0.543,
           "at": 0.0
         }
       ]
@@ -309,7 +309,7 @@
       "sfx": [
         {
           "src": "sfx/Core.MP3",
-          "vol": 0.16,
+          "vol": 0.556,
           "at": 0.3
         }
       ]
@@ -347,7 +347,7 @@
       "sfx": [
         {
           "src": "sfx/Camera Shutter.MP3",
-          "vol": 0.13,
+          "vol": 0.32,
           "at": 0.08
         }
       ],
@@ -457,7 +457,7 @@
       "sfx": [
         {
           "src": "sfx/Camera Shutter.MP3",
-          "vol": 0.13,
+          "vol": 0.32,
           "at": 0.08
         }
       ]
@@ -512,7 +512,7 @@
       "sfx": [
         {
           "src": "sfx/Core.MP3",
-          "vol": 0.16,
+          "vol": 0.556,
           "at": 0.3
         }
       ]
@@ -584,7 +584,7 @@
       "sfx": [
         {
           "src": "sfx/Pop.MP3",
-          "vol": 0.12,
+          "vol": 0.343,
           "at": 0.35
         }
       ]
@@ -598,7 +598,7 @@
       "sfx": [
         {
           "src": "sfx/Camera Shutter.MP3",
-          "vol": 0.13,
+          "vol": 0.32,
           "at": 0.08
         }
       ],
@@ -669,7 +669,7 @@
       "sfx": [
         {
           "src": "sfx/Magic Reveal.MP3",
-          "vol": 0.14,
+          "vol": 1.0,
           "at": 0.15
         }
       ]

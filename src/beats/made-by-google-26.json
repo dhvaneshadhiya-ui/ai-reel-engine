@@ -267,7 +267,7 @@
       "sfx": [
         {
           "src": "sfx2/risers-01.mp3",
-          "vol": 0.15
+          "vol": 0.367
         }
       ]
     },
@@ -322,7 +322,7 @@
       "sfx": [
         {
           "src": "sfx2/impact-boom.mp3",
-          "vol": 0.16
+          "vol": 0.452
         }
       ]
     },
@@ -431,7 +431,7 @@
       "sfx": [
         {
           "src": "sfx2/whooshes-01.mp3",
-          "vol": 0.12
+          "vol": 0.543
         }
       ]
     },
@@ -703,7 +703,7 @@
       "sfx": [
         {
           "src": "sfx2/mouse-click-01.mp3",
-          "vol": 0.12
+          "vol": 0.468
         }
       ],
       "covers": "the pixel tag"
@@ -886,7 +886,7 @@
       "sfx": [
         {
           "src": "sfx2/ground-impact-352053.mp3",
-          "vol": 0.14
+          "vol": 0.394
         }
       ]
     },
@@ -1025,7 +1025,7 @@
       "sfx": [
         {
           "src": "sfx2/risers-01.mp3",
-          "vol": 0.13
+          "vol": 0.367
         }
       ]
     },

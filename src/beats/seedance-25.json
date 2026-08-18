@@ -120,12 +120,12 @@
       "sfx": [
         {
           "src": "sfx2/risers-01.mp3",
-          "vol": 0.15,
+          "vol": 0.367,
           "at": 0.0
         },
         {
           "src": "sfx2/impact-boom.mp3",
-          "vol": 0.16,
+          "vol": 0.452,
           "at": 0.3
         }
       ]
@@ -185,7 +185,7 @@
       "sfx": [
         {
           "src": "sfx2/whooshes-01.mp3",
-          "vol": 0.12,
+          "vol": 0.543,
           "at": 0.0
         }
       ],
@@ -226,7 +226,7 @@
       "sfx": [
         {
           "src": "sfx2/ground-impact-352053.mp3",
-          "vol": 0.14,
+          "vol": 0.394,
           "at": 1.12
         }
       ]
@@ -325,7 +325,7 @@
       "sfx": [
         {
           "src": "sfx2/whooshes-01.mp3",
-          "vol": 0.12,
+          "vol": 0.543,
           "at": 0.0
         }
       ],
@@ -370,7 +370,7 @@
       "sfx": [
         {
           "src": "sfx2/impact-boom.mp3",
-          "vol": 0.16,
+          "vol": 0.452,
           "at": 1.1
         }
       ]
@@ -419,7 +419,7 @@
       "sfx": [
         {
           "src": "sfx2/ground-impact-352053.mp3",
-          "vol": 0.14,
+          "vol": 0.394,
           "at": 0.2
         }
       ]
@@ -468,7 +468,7 @@
       "sfx": [
         {
           "src": "sfx2/ground-impact-352053.mp3",
-          "vol": 0.14,
+          "vol": 0.394,
           "at": 1.7
         }
       ]
@@ -521,7 +521,7 @@
       "sfx": [
         {
           "src": "sfx2/impact-boom.mp3",
-          "vol": 0.16,
+          "vol": 0.452,
           "at": 0.6
         }
       ]

@@ -194,7 +194,7 @@
       "sfx": [
         {
           "src": "sfx2/whooshes-01.mp3",
-          "vol": 0.12,
+          "vol": 0.543,
           "at": 0.0
         }
       ]
@@ -286,7 +286,7 @@
       "sfx": [
         {
           "src": "sfx2/impact-boom.mp3",
-          "vol": 0.16,
+          "vol": 0.452,
           "at": 0.3
         }
       ]
@@ -314,7 +314,7 @@
       "sfx": [
         {
           "src": "sfx2/whooshes-01.mp3",
-          "vol": 0.12,
+          "vol": 0.543,
           "at": 0.2
         }
       ],
@@ -442,7 +442,7 @@
       "sfx": [
         {
           "src": "sfx2/mouse-click-01.mp3",
-          "vol": 0.12,
+          "vol": 0.468,
           "at": 0.4
         }
       ]
@@ -661,7 +661,7 @@
       "sfx": [
         {
           "src": "sfx2/whooshes-01.mp3",
-          "vol": 0.12,
+          "vol": 0.543,
           "at": 0.0
         }
       ],
@@ -756,7 +756,7 @@
       "sfx": [
         {
           "src": "sfx2/impact-boom.mp3",
-          "vol": 0.16,
+          "vol": 0.452,
           "at": 1.0
         }
       ]
@@ -807,7 +807,7 @@
       "sfx": [
         {
           "src": "sfx2/impact-boom.mp3",
-          "vol": 0.16,
+          "vol": 0.452,
           "at": 1.0
         }
       ]
