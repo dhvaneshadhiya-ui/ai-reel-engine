@@ -1277,6 +1277,18 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # same thing" from an intention into something with a right answer.
     #
     # The presenter's own footage is exempt — the avatar is not evidence.
+    # SCOPE, set by the user 2026-08-17 after measuring what this actually
+    # demanded: 154 scenes, of which only 14 put a DOCUMENT on screen and 140
+    # were b-roll cutaways — 88 of those sitting under a sentence FRAGMENT.
+    # "covers: 'cameras, and that's'" cannot fail meaningfully; it is
+    # box-ticking, and box-ticking teaches people to ignore the output (see G21,
+    # which reached 100% false positives before anyone noticed).
+    #
+    # So a source used as PROOF must name the claim it proves — that is Rule 3
+    # with teeth. B-roll gets G44, advisory, because the real risk there is a
+    # clip sitting against the wrong sentence, which is worth flagging and not
+    # worth blocking.
+    EVIDENCE_TYPES = {"receipt", "sourceread", "annotatezoom"}
     if vo_words:
         wt: list[tuple[str, float, float]] = []
         for x in vo_words:
@@ -1300,15 +1312,24 @@ def check_beats(beats: dict, vo_end: float | None = None,
                     # demanding one would make a legitimate beat unfixable.
                     continue
                 covers = str(sc.get("covers") or "").strip()
+                evidence = sc["type"] in EVIDENCE_TYPES
                 if not covers:
-                    errors.append(
-                        f"G39 scene {i:02d} ({sc['type']}) puts a source on "
-                        f"screen but never says WHICH line it illustrates. Add "
-                        f"`covers` — the phrase this visual proves. Spoken over "
-                        f"it: {_norm_words(spoken)[:72]!r}")
+                    if evidence:
+                        errors.append(
+                            f"G39 scene {i:02d} ({sc['type']}) puts a DOCUMENT on "
+                            f"screen but never says WHICH line it proves. Add "
+                            f"`covers` — the phrase this visual proves. Spoken "
+                            f"over it: {_norm_words(spoken)[:64]!r}")
+                    else:
+                        errors.append(
+                            f"G44 scene {i:02d} ({sc['type']}) is b-roll with no "
+                            f"stated line. Worth checking it is not sitting "
+                            f"against the wrong sentence — spoken over it: "
+                            f"{_norm_words(spoken)[:56]!r}")
                 elif _norm_words(covers) not in _norm_words(spoken):
                     errors.append(
-                        f"G39 scene {i:02d} ({sc['type']}) claims to cover "
+                        f"{'G39' if evidence else 'G44'} scene {i:02d} "
+                        f"({sc['type']}) claims to cover "
                         f"{covers!r}, but those words are not spoken while it is "
                         f"on screen ({start:.1f}-{end:.1f}s says "
                         f"{_norm_words(spoken)[:64]!r}) — move the scene to the "

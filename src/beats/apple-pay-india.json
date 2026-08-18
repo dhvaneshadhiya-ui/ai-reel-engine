@@ -342,7 +342,8 @@
       },
       "srcWidth": 1780,
       "srcHeight": 545,
-      "backdrop": "cream"
+      "backdrop": "cream",
+      "covers": "reportedly, by October"
     },
     {
       "type": "split",
@@ -1035,7 +1036,8 @@
       "assetId": "receipt-bt",
       "srcWidth": 1780,
       "srcHeight": 545,
-      "backdrop": "cream"
+      "backdrop": "cream",
+      "covers": "This is reporting"
     },
     {
       "type": "floatcard",

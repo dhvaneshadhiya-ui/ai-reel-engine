@@ -252,18 +252,32 @@
       "credit": "Apple, via @aaronp613"
     },
     {
-      "type": "logobeat",
-      "text": "macOS 26.7",
-      "label": "SHIPPED INSIDE",
+      "type": "wordcascade",
       "bg": "black",
+      "bottomSrc": "assets/airpods-camera/avatar-master.mp4",
+      "words": [
+        {
+          "text": "macOS Tahoe 26.7",
+          "style": "serif",
+          "at": 0.25
+        },
+        {
+          "text": "release candidate",
+          "style": "serif",
+          "at": 0.85,
+          "accent": true
+        }
+      ],
       "sfx": [
         {
           "src": "sfx/Core.MP3",
-          "at": 0.15,
+          "at": 0.25,
           "vol": 0.16
         }
       ],
-      "durationSec": 1.92
+      "durationSec": 1.92,
+      "bottomFrom": 6.04,
+      "bottomFocusX": 0.5
     },
     {
       "type": "footage",
@@ -305,6 +319,8 @@
           "vol": 0.14
         }
       ],
+      "bgSrc": "assets/airpods-camera/bg-loft-drift.mp4",
+      "bgFrom": 0,
       "durationSec": 4.42
     },
     {
@@ -336,30 +352,31 @@
     },
     {
       "type": "receipt",
-      "src": "assets/airpods-camera/macrumors-mobile.png",
-      "srcWidth": 1080,
-      "srcHeight": 2340,
+      "src": "assets/airpods-camera/macrumors-head.png",
+      "srcWidth": 1040,
+      "srcHeight": 860,
       "backdrop": "cream",
       "credit": "MacRumors",
       "highlights": [
         {
           "at": 0.35,
-          "x": 32,
-          "y": 661,
-          "w": 1018,
-          "h": 252
+          "x": 25,
+          "y": 50,
+          "w": 990,
+          "h": 220
         },
         {
           "at": 1.3,
-          "x": 80,
-          "y": 1330,
-          "w": 740,
-          "h": 62
+          "x": 30,
+          "y": 700,
+          "w": 900,
+          "h": 70
         }
       ],
+      "captionBottom": 300,
       "durationSec": 2.96,
-      "assetId": "macrumors-receipt",
-      "claimId": "macrumors-receipt",
+      "assetId": "macrumors-head",
+      "claimId": "macrumors-head",
       "covers": "in the macOS Tahoe"
     },
     {
@@ -397,25 +414,40 @@
           "h": 150
         }
       ],
+      "captionBottom": 300,
       "durationSec": 5.7,
       "assetId": "macrumors-quote",
       "claimId": "macrumors-quote",
       "covers": "and Siri answers"
     },
     {
-      "type": "uidialog",
-      "app": "AirPods",
-      "title": "Make sure AirPods are not covered",
-      "body": "To get the most accurate information about things in your environment, make sure AirPods are not covered.",
-      "primary": "OK",
+      "type": "receipt",
+      "src": "assets/airpods-camera/macrumors-alert.png",
+      "srcWidth": 1040,
+      "srcHeight": 340,
+      "backdrop": "cream",
+      "credit": "MacRumors",
+      "highlights": [
+        {
+          "at": 0.55,
+          "x": 25,
+          "y": 35,
+          "w": 990,
+          "h": 135
+        }
+      ],
       "sfx": [
         {
-          "src": "sfx/Pop.MP3",
-          "at": 0.2,
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 0.1,
           "vol": 0.14
         }
       ],
-      "durationSec": 2.4
+      "captionBottom": 300,
+      "durationSec": 2.4,
+      "assetId": "macrumors-alert",
+      "claimId": "macrumors-alert",
+      "covers": "It even warns you"
     },
     {
       "type": "footage",
@@ -448,25 +480,37 @@
           "vol": 0.14
         }
       ],
+      "bgSrc": "assets/airpods-camera/bg-loft-drift.mp4",
+      "bgFrom": 0,
       "durationSec": 6.62
     },
     {
-      "type": "typecard",
-      "bg": "#F4EFE6",
-      "fg": "#141414",
-      "kinetic": {
-        "text": "NO PHOTOS. NO RECORDING.",
-        "style": "serif",
-        "at": 0.1
-      },
+      "type": "wordcascade",
+      "bg": "cream",
+      "words": [
+        {
+          "text": "NO PHOTOS",
+          "style": "serif",
+          "at": 0.35
+        },
+        {
+          "text": "NO RECORDING",
+          "style": "serif",
+          "at": 1.1,
+          "accent": true
+        }
+      ],
       "sfx": [
         {
           "src": "sfx/Core.MP3",
-          "at": 0.1,
+          "at": 0.35,
           "vol": 0.16
         }
       ],
-      "durationSec": 4.1
+      "bottomSrc": "assets/airpods-camera/avatar-master.mp4",
+      "durationSec": 4.1,
+      "bottomFrom": 39.66,
+      "bottomFocusX": 0.5
     },
     {
       "type": "footage",
@@ -507,6 +551,8 @@
           "vol": 0.14
         }
       ],
+      "bgSrc": "assets/airpods-camera/bg-loft-drift.mp4",
+      "bgFrom": 0,
       "durationSec": 4.96
     },
     {
@@ -531,21 +577,29 @@
           "accent": true
         }
       ],
-      "durationSec": 4.64
+      "bottomSrc": "assets/airpods-camera/avatar-master.mp4",
+      "durationSec": 4.64,
+      "bottomFrom": 52.42,
+      "bottomFocusX": 0.5
     },
     {
-      "type": "priceladder",
+      "type": "specsheet",
       "kicker": "THE PRICE",
       "title": "North of $249",
       "rows": [
         {
           "label": "AirPods Pro 3",
-          "oldPrice": "$249",
-          "newPrice": "more"
+          "value": "$249"
+        },
+        {
+          "label": "With cameras",
+          "value": "More than that",
+          "accent": true
         }
       ],
-      "bg": "black",
       "footnote": "Source: MacRumors / Mark Gurman, Bloomberg",
+      "bgSrc": "assets/airpods-camera/bg-loft-drift.mp4",
+      "bgFrom": 0,
       "sfx": [
         {
           "src": "sfx/Core.MP3",

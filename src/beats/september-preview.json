@@ -629,7 +629,8 @@
           "h": 48
         }
       ],
-      "assetId": "receipt-mrs-ultra"
+      "assetId": "receipt-mrs-ultra",
+      "covers": "that's a single source"
     },
     {
       "type": "footage",
@@ -688,7 +689,8 @@
       "assetId": "still-ceo-body",
       "srcWidth": 1170,
       "srcHeight": 1000,
-      "backdrop": "cream"
+      "backdrop": "cream",
+      "covers": "keynote as CEO"
     },
     {
       "type": "footage",
@@ -720,7 +722,8 @@
       "assetId": "receipt-ceo-hero",
       "srcWidth": 1170,
       "srcHeight": 1020,
-      "backdrop": "cream"
+      "backdrop": "cream",
+      "covers": "That part isn't a rumor"
     },
     {
       "type": "footage",

@@ -191,7 +191,8 @@
       ],
       "srcWidth": 1920,
       "srcHeight": 648,
-      "backdrop": "cream"
+      "backdrop": "cream",
+      "covers": "It's called"
     },
     {
       "type": "timeline",
@@ -327,7 +328,8 @@
           "vol": 0.12,
           "at": 0.0
         }
-      ]
+      ],
+      "covers": "50 reference assets in"
     },
     {
       "type": "specsheet",
@@ -428,7 +430,8 @@
       "durationSec": 0.92,
       "zoomDir": "out",
       "captionBottom": 560,
-      "assetId": "clip-lipsync-jp"
+      "assetId": "clip-lipsync-jp",
+      "covers": "the same shot"
     },
     {
       "type": "footage",

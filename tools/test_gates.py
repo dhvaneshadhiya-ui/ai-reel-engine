@@ -568,10 +568,21 @@ CASES = [
     (lambda s: s["scenes"][0].__setitem__("hideCaptions", True),
      "G38", "a hook with no words on screen (mute-blind)"),
     # 2026-08-17, RULE 3: what is on screen must be what is being said.
+    # scene 0 is `footage` — b-roll, so these are G44 (advice) now.
     (lambda s: s["scenes"][0].pop("covers"),
-     "G39", "a source on screen with no stated line"),
+     "G44", "b-roll with no stated line"),
     (lambda s: s["scenes"][0].__setitem__("covers", "quarterly revenue guidance"),
-     "G39", "a source claiming a line that is never spoken over it"),
+     "G44", "b-roll claiming a line never spoken over it"),
+    # A DOCUMENT on screen still blocks. It has to be scene 0: the fixture's
+    # VO_WORDS covers only 0.0-0.7s, so a scene later in the timeline has no
+    # speech over it and G39 correctly skips it — the first draft of this case
+    # mutated the existing annotatezoom and could never fire.
+    (lambda s: s["scenes"].__setitem__(0, {
+        "credit": "@src", "type": "annotatezoom", "durationSec": 2.0,
+        "src": "assets/x/doc.png", "srcWidth": 1080, "srcHeight": 2000,
+        "focus": {"x": 40, "y": 100, "w": 900, "h": 500},
+        "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.15}]}),
+     "G39", "a document on screen with no stated claim"),
 ]
 
 for mutate, gate, label in CASES:

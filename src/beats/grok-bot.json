@@ -404,7 +404,8 @@
       "assetId": "src-hero",
       "srcWidth": 1200,
       "srcHeight": 1500,
-      "backdrop": "cream"
+      "backdrop": "cream",
+      "covers": "It's called"
     },
     {
       "type": "floatcard",
@@ -883,7 +884,8 @@
           "w": 232,
           "h": 66
         }
-      ]
+      ],
+      "covers": "One honest caveat"
     },
     {
       "type": "receipt",
@@ -910,7 +912,8 @@
       },
       "srcWidth": 1200,
       "srcHeight": 1560,
-      "backdrop": "cream"
+      "backdrop": "cream",
+      "covers": "This is early beta"
     },
     {
       "type": "footage",

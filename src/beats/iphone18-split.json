@@ -461,7 +461,8 @@
       "assetId": "still-pegatron-building",
       "srcWidth": 1792,
       "srcHeight": 1330,
-      "backdrop": "cream"
+      "backdrop": "cream",
+      "covers": "actually builds iPhones"
     },
     {
       "type": "annotatezoom",
@@ -487,7 +488,8 @@
           "h": 250
         }
       ],
-      "assetId": "receipt-ai-hero"
+      "assetId": "receipt-ai-hero",
+      "covers": "confirmed it on this week's earnings"
     },
     {
       "type": "categorygrid",
@@ -798,7 +800,8 @@
       "assetId": "still-pegatron-gate",
       "srcWidth": 1000,
       "srcHeight": 630,
-      "backdrop": "cream"
+      "backdrop": "cream",
+      "covers": "On top of it"
     },
     {
       "type": "footage",
@@ -903,7 +906,8 @@
           "vol": 0.12,
           "at": 0.0
         }
-      ]
+      ],
+      "covers": "this has been building for"
     },
     {
       "type": "footage",
@@ -980,7 +984,8 @@
           "h": 90
         }
       ],
-      "assetId": "receipt-ai-hero"
+      "assetId": "receipt-ai-hero",
+      "covers": "the supply chain said it out loud"
     },
     {
       "type": "footage",
