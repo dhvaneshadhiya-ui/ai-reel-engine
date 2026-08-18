@@ -402,7 +402,7 @@
           }
         ],
         "y": 0.1,
-        "theme": "light",
+        "theme": "dark",
         "align": "center"
       }
     },
@@ -446,7 +446,7 @@
           }
         ],
         "y": 0.1,
-        "theme": "light",
+        "theme": "dark",
         "align": "center"
       }
     },

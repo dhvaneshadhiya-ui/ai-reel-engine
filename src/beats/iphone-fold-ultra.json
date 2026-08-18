@@ -345,7 +345,7 @@
           }
         ],
         "y": 0.34,
-        "theme": "light",
+        "theme": "dark",
         "align": "center"
       },
       "sfx": [
@@ -488,7 +488,7 @@
           }
         ],
         "y": 0.36,
-        "theme": "light",
+        "theme": "dark",
         "align": "center"
       },
       "covers": "Folded, a 5"

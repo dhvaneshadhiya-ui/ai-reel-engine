@@ -119,7 +119,12 @@ export const HeadlineBuild: React.FC<{ spec: Headline }> = ({ spec }) => {
         {/* Its own ground. A drop-shadow cannot save type whose colour matches
             the footage in both hue and value, which is what happened to the
             clay accent over an orange wallpaper. */}
-        {!dark && (
+        {/* A scrim is needed whenever type sits over MEDIA — the question is
+            its COLOUR, not whether to draw it. This used to be `{!dark && ...}`,
+            so choosing dark ink switched the scrim off entirely: the airpods
+            hook rendered black, unscrimmed and unshadowed over a bright window.
+            Dark ink now gets a LIGHT scrim; light ink gets a dark one. */}
+        {true && (
           <div
             style={{
               position: "absolute",
@@ -131,8 +136,9 @@ export const HeadlineBuild: React.FC<{ spec: Headline }> = ({ spec }) => {
               right: -120,
               top: -gap * 5,
               bottom: -gap * 5,
-              background:
-                "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.46) 26%, rgba(0,0,0,0.5) 74%, rgba(0,0,0,0) 100%)",
+              background: dark
+                ? "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.62) 26%, rgba(255,255,255,0.66) 74%, rgba(255,255,255,0) 100%)"
+                : "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.46) 26%, rgba(0,0,0,0.5) 74%, rgba(0,0,0,0) 100%)",
               opacity: scrim,
               pointerEvents: "none",
             }}
@@ -175,8 +181,11 @@ export const HeadlineBuild: React.FC<{ spec: Headline }> = ({ spec }) => {
                   ...styleFor(ln.kind),
                   color,
                   whiteSpace: "pre-line",
+                  // dark ink got textShadow: "none", which removed its last
+                  // defence on busy footage. It needs a LIGHT halo, the mirror
+                  // of what light ink gets.
                   textShadow: dark
-                    ? "none"
+                    ? "0 2px 14px rgba(255,255,255,0.85), 0 1px 2px rgba(255,255,255,0.9)"
                     : "0 3px 18px rgba(0,0,0,0.75), 0 1px 3px rgba(0,0,0,0.6)",
                 }}
               >

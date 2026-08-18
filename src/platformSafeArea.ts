@@ -72,3 +72,34 @@ export const creditBottomPx = (frameH: number): number =>
 /** Left inset in px matching the safe rect. */
 export const safeLeftPx = (frameW: number): number =>
   Math.round(frameW * SAFE_RECT.x0);
+
+/**
+ * WHERE THINGS GO IN THE FRAME.
+ *
+ * Asked 2026-08-18: "what should be where and how?" Until now the answer lived
+ * in whoever was authoring the sheet, which is why a headline reached y 0.05 and
+ * a credit reached y 0.95 — both inside the platform's own furniture.
+ *
+ *   0.00 - 0.12   PLATFORM. Instagram's header. Put nothing here.
+ *   0.12 - 0.30   HEADLINE. The claim, over the subject.
+ *   0.30 - 0.62   SUBJECT. The footage, the screenshot, the control being marked.
+ *   0.62 - 0.72   CAPTION. The spoken word, burned in.
+ *   0.71 - 0.78   CREDIT. Secondary, plated, out of the caption's way.
+ *   0.78 - 1.00   PLATFORM. Account row 0.835, caption 0.881, comment bar 0.957.
+ *                 Put nothing here either.
+ *
+ * The bands overlap by design at 0.71-0.72: a credit and a caption never appear
+ * in the same beat, and pretending they might wastes 40px of a phone screen.
+ *
+ * CONTRAST IS NOT A BAND, IT IS A MEASUREMENT. Type over media always carries a
+ * scrim — the question is its colour, never whether to draw one. Pick the ink
+ * that needs the LEAST scrim (tools/auto_contrast.py measures the frame behind
+ * the headline) so the picture survives: light ink over dark footage, dark ink
+ * over bright footage. Choosing the other way works too, and costs you the shot.
+ */
+export const BANDS = {
+  headline: [0.12, 0.30],
+  subject: [0.30, 0.62],
+  caption: [0.62, 0.72],
+  credit: [0.71, 0.78],
+} as const;

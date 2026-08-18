@@ -520,7 +520,7 @@
           }
         ],
         "y": 0.1,
-        "theme": "light",
+        "theme": "dark",
         "align": "center"
       },
       "covers": "watch Series"
@@ -565,7 +565,7 @@
           }
         ],
         "y": 0.1,
-        "theme": "light",
+        "theme": "dark",
         "align": "center"
       },
       "covers": "Fourth, watch"
