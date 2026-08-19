@@ -8,6 +8,8 @@ import {
   useVideoConfig,
 } from "remotion";
 import { useTheme } from "../theme/tokens";
+import { Credit } from "./Credit";
+import { TYPE, SIZE } from "../theme/type";
 
 export interface ChartItem {
   label: string;
@@ -218,9 +220,10 @@ export const ChartScene: React.FC<ChartSceneProps> = ({
               {r.sub && (
                 <div
                   style={{
-                    fontFamily: t.sans,
-                    fontWeight: 500,
-                    fontSize: dense ? 19 : 21,
+                    // the row's sub-label: nano, the scale step this and two
+                    // other components were each approximating by hand
+                    ...TYPE.nano,
+                    fontSize: dense ? Math.round(SIZE.nano * 0.86) : SIZE.nano,
                     color: muted,
                     marginTop: 4,
                     whiteSpace: "nowrap",
@@ -431,21 +434,17 @@ export const ChartScene: React.FC<ChartSceneProps> = ({
 
         {orientation === "v" ? vertical : horizontal}
 
-        {source && (
-          <div
-            style={{
-              marginTop: 44,
-              fontFamily: t.sans,
-              fontWeight: 500,
-              fontSize: 22,
-              color: muted,
-              opacity: titleIn,
-            }}
-          >
-            {source}
-          </div>
-        )}
       </div>
+      {/* THE SOURCE GOES IN THE RESERVED LANE, via the shared component.
+          It used to be drawn in the card's own flow, which put it at y 0.70 —
+          inside the CAPTION band (0.62-0.74), not the credit lane (0.74-0.78).
+          Rendered proof: the chart frame showed the burned-in caption "to
+          $2,500." printed straight through "MacRumors roundup · Aug 2026",
+          while the credit lane sat empty. Every other component's credit was
+          moved out of the caption's way on 2026-08-17; this one was missed
+          because it spells attribution `source` rather than `credit`, so
+          neither the move nor tools/check_credits.py ever saw it. */}
+      {source && <Credit text={source} onMedia={dark} plate={false} />}
     </AbsoluteFill>
   );
 };

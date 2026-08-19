@@ -24,6 +24,12 @@ measure its luminance, and pick the ink that survives it.
 HANDLES `footage` and `split`, which is where headlines actually live. Anything
 else is reported and skipped rather than guessed at — a wrong sample is worse
 than no sample, because it looks authoritative.
+
+CAPTIONS TOO, added 2026-08-18. The headline got a measurement in the morning
+and the caption — which is on screen for the ENTIRE reel rather than for one
+beat — kept its hand-typed `captionTheme`, which nobody ever typed. So
+iphone-fold-ultra shipped the word "iPhone," in white, over a white phone on a
+white table, at 0:03. Same defect, same fix, one band lower.
 """
 from __future__ import annotations
 
@@ -70,13 +76,18 @@ def main() -> None:
     scenes = doc.get("scenes", [])
 
     changed = 0
+    cap_changed = 0
     cursor = 0.0
     with tempfile.TemporaryDirectory() as td:
         for i, sc in enumerate(scenes):
             start = cursor
             cursor += sc.get("durationSec", 0)
             hl = sc.get("headline")
-            if not isinstance(hl, dict):
+            hl = hl if isinstance(hl, dict) else None
+            # A caption is burned in for the whole reel, so EVERY media scene
+            # needs the caption band sampled — not only the ones carrying a
+            # headline, which is all the old loop looked at.
+            if hl is None and sc.get("hideCaptions"):
                 continue
 
             kind = sc.get("type")
@@ -110,39 +121,72 @@ def main() -> None:
             W, H = im.size
             px = im.load()
 
-            # the band the headline occupies, in FRAME fractions, mapped to source
-            ycen = float(hl.get("y", 0.5))
-            half = 0.055
-            fy0, fy1 = max(0.0, ycen - half), min(1.0, ycen + half)
-            sy0 = min(1.0, max(0.0, (fy0 - y_off) * y_scale))
-            sy1 = min(1.0, max(0.0, (fy1 - y_off) * y_scale))
-            if sy1 <= sy0:
-                print(f"  scene {i:02d} — headline sits outside this panel, skipped")
-                continue
-            lum = luminance(px, int(W * 0.06), int(H * sy0),
-                            int(W * 0.94), max(int(H * sy1), int(H * sy0) + 2))
+            def band_luminance(ycen: float, half: float):
+                """Mean luminance of a frame band, mapped onto this panel."""
+                fy0, fy1 = max(0.0, ycen - half), min(1.0, ycen + half)
+                sy0 = min(1.0, max(0.0, (fy0 - y_off) * y_scale))
+                sy1 = min(1.0, max(0.0, (fy1 - y_off) * y_scale))
+                if sy1 <= sy0:
+                    return None
+                return luminance(px, int(W * 0.06), int(H * sy0),
+                                 int(W * 0.94),
+                                 max(int(H * sy1), int(H * sy0) + 2))
 
-            want = "dark" if lum > BRIGHT else "light"
-            have = str(hl.get("theme") or "light")
-            mark = "  " if want == have else "->"
-            near = " (borderline — the scrim is carrying it)" if abs(lum - BRIGHT) < UNSURE else ""
-            print(f"  {mark} scene {i:02d} {kind:8} y={ycen:.2f}  "
-                  f"luminance {lum:.2f}  ink should be {want.upper():5} "
-                  f"(sheet says {have}){near}")
-            if want != have:
-                changed += 1
-                if write:
-                    if want == "dark":
-                        hl["theme"] = "dark"
-                    else:
-                        hl.pop("theme", None)
+            if hl is not None:
+                ycen = float(hl.get("y", 0.5))
+                lum = band_luminance(ycen, 0.055)
+                if lum is None:
+                    print(f"  scene {i:02d} — headline sits outside this panel, skipped")
+                else:
+                    want = "dark" if lum > BRIGHT else "light"
+                    have = str(hl.get("theme") or "light")
+                    mark = "  " if want == have else "->"
+                    near = (" (borderline — the scrim is carrying it)"
+                            if abs(lum - BRIGHT) < UNSURE else "")
+                    print(f"  {mark} scene {i:02d} {kind:8} headline y={ycen:.2f}  "
+                          f"luminance {lum:.2f}  ink should be {want.upper():5} "
+                          f"(sheet says {have}){near}")
+                    if want != have:
+                        changed += 1
+                        if write:
+                            if want == "dark":
+                                hl["theme"] = "dark"
+                            else:
+                                hl.pop("theme", None)
 
-    if write and changed:
+            # --- the caption band ---------------------------------------------
+            # Captions sit on ONE line for the whole reel now (bottom 500 of
+            # 1920, y 0.74 at the baseline), so the band is fixed rather than
+            # per-scene. A scene that raises its caption to clear a face gets
+            # sampled where it actually lands.
+            if not sc.get("hideCaptions"):
+                cb = sc.get("captionBottom")
+                cb = 500 if cb is None else max(int(cb), 500)
+                cap_y = 1.0 - (cb + 60) / 1920.0   # 60px up: the ink, not the baseline
+                clum = band_luminance(cap_y, 0.045)
+                if clum is not None:
+                    cwant = "dark" if clum > BRIGHT else "light"
+                    chave = str(sc.get("captionTheme") or "light")
+                    cmark = "  " if cwant == chave else "->"
+                    print(f"  {cmark} scene {i:02d} {kind:8} caption  y={cap_y:.2f}  "
+                          f"luminance {clum:.2f}  ink should be {cwant.upper():5} "
+                          f"(sheet says {chave})")
+                    if cwant != chave:
+                        cap_changed += 1
+                        if write:
+                            if cwant == "dark":
+                                sc["captionTheme"] = "dark"
+                            else:
+                                sc.pop("captionTheme", None)
+
+    if write and (changed or cap_changed):
         bp.write_text(json.dumps(doc, indent=2) + "\n")
-        print(f"\n  set `theme` on {changed} headline(s) from the pixels")
+        print(f"\n  set `theme` on {changed} headline(s) and `captionTheme` on "
+              f"{cap_changed} scene(s) from the pixels")
     else:
-        print(f"\n  {changed} headline(s) disagree with the footage"
-              + ("" if not changed else "  (--write to fix)"))
+        print(f"\n  {changed} headline(s) and {cap_changed} caption(s) disagree "
+              "with the footage"
+              + ("" if not (changed or cap_changed) else "  (--write to fix)"))
 
 
 if __name__ == "__main__":

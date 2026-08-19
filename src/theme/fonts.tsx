@@ -58,6 +58,35 @@ export const FontFaces: React.FC = () => (
   font-style: normal;
   font-display: block;
 }
+/* DISPLAY-FACE CANDIDATES (2026-08-18). The user's note: "Font style represents
+   the theme of our video, like our niche is tech." Fraunces is a magazine serif
+   — correct for an editorial voice, wrong for a hardware-news channel. All four
+   are OFL-1.1, so they ship with the repo rather than being fetched at render.
+   Whichever is chosen becomes theme/type.ts DISPLAY; the rest can be deleted. */
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('${staticFile("fonts/space-grotesk-700.woff2")}') format('woff2');
+  font-weight: 400 900;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Archivo';
+  src: url('${staticFile("fonts/archivo-800.woff2")}') format('woff2');
+  font-weight: 400 900;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Chakra Petch';
+  src: url('${staticFile("fonts/chakra-petch-700.woff2")}') format('woff2');
+  font-weight: 400 900;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Sora';
+  src: url('${staticFile("fonts/sora-800.woff2")}') format('woff2');
+  font-weight: 400 900;
+  font-display: block;
+}
 @font-face {
   font-family: 'Press Start 2P';
   src: url('${staticFile("fonts/PressStart2P.ttf")}') format('truetype');

@@ -1,4 +1,5 @@
 import React from "react";
+import { CYAN, TINT, TINT_GRADIENT } from "../theme/palette";
 import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
@@ -15,11 +16,10 @@ type Props = Extract<Scene, { type: "carousel" }>;
 
 const BGS: Record<string, string> = {
   black: "#0a0a0a",
-  cream: "#f2ecdf",
-  gradient: "linear-gradient(160deg,#e6edf7 0%,#f3e6dc 55%,#ecdcf1 100%)",
+  cream: TINT.sand,
+  gradient: TINT_GRADIENT,
 };
 const SANS = "-apple-system,'SF Pro Display','Helvetica Neue',Inter,sans-serif";
-const CYAN = "#0aa9c2";
 
 /** Fast horizontal card-swipe through N design cards, landing on the winner. */
 export const Carousel: React.FC<{ scene: Props }> = ({ scene }) => {

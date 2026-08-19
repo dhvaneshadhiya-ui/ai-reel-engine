@@ -198,6 +198,13 @@ const Wide: React.FC<InnerProps> = ({
       />
       <div
         style={{
+          // POSITIONED on purpose. The radial-gradient behind this is an
+          // <AbsoluteFill>, and a positioned element paints ABOVE a static one
+          // in the same stacking context — so with position:static these two
+          // columns rendered UNDER the gradient and the wide thumbnail came out
+          // black with a faint ghost of the image. Caught 2026-08-19; no wide
+          // thumbnail had ever been generated before, so it had never shown.
+          position: "relative",
           width: "62%",
           height: "100%",
           padding: 64,
@@ -260,6 +267,7 @@ const Wide: React.FC<InnerProps> = ({
       </div>
       <div
         style={{
+          position: "relative",
           width: "38%",
           height: "100%",
           display: "flex",

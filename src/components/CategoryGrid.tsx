@@ -1,4 +1,5 @@
 import React from "react";
+import { CYAN, TINT, TINT_GRADIENT } from "../theme/palette";
 import { SPRING, DUR } from "../theme/motion";
 
 /** y 0.79 — just inside the platform safe floor (platformSafeArea.ts). */
@@ -16,11 +17,10 @@ type Props = Extract<Scene, { type: "categorygrid" }>;
 
 const BGS: Record<string, string> = {
   black: "#0a0a0a",
-  cream: "#f2ecdf",
-  gradient: "linear-gradient(160deg,#e6edf7 0%,#f3e6dc 55%,#ecdcf1 100%)",
+  cream: TINT.sand,
+  gradient: TINT_GRADIENT,
 };
 const SANS = "-apple-system,'SF Pro Display','Helvetica Neue',Inter,sans-serif";
-const CYAN = "#0aa9c2";
 const CARDBG = ["#ff8a4c", "#7c6cf0", "#2fb98a", "#f05a8a"];
 
 export const CategoryGrid: React.FC<{ scene: Props }> = ({ scene }) => {

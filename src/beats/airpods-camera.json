@@ -5,193 +5,6 @@
   "height": 1920,
   "style": "editorial",
   "audio": "assets/airpods-camera/avatar-master.mp4",
-  "music": {
-    "src": "music/bed-02.mp3",
-    "from": 8.0,
-    "points": [
-      {
-        "t": 0.0,
-        "vol": 0.055
-      },
-      {
-        "t": 7.34,
-        "vol": 0.055
-      },
-      {
-        "t": 7.68,
-        "vol": 0.15
-      },
-      {
-        "t": 7.78,
-        "vol": 0.15
-      },
-      {
-        "t": 7.96,
-        "vol": 0.055
-      },
-      {
-        "t": 9.54,
-        "vol": 0.055
-      },
-      {
-        "t": 9.88,
-        "vol": 0.15
-      },
-      {
-        "t": 10.06,
-        "vol": 0.055
-      },
-      {
-        "t": 11.32,
-        "vol": 0.055
-      },
-      {
-        "t": 11.66,
-        "vol": 0.15
-      },
-      {
-        "t": 11.86,
-        "vol": 0.055
-      },
-      {
-        "t": 19.58,
-        "vol": 0.055
-      },
-      {
-        "t": 19.88,
-        "vol": 0.15
-      },
-      {
-        "t": 19.92,
-        "vol": 0.15
-      },
-      {
-        "t": 20.06,
-        "vol": 0.055
-      },
-      {
-        "t": 31.62,
-        "vol": 0.055
-      },
-      {
-        "t": 31.9,
-        "vol": 0.15
-      },
-      {
-        "t": 31.96,
-        "vol": 0.15
-      },
-      {
-        "t": 32.08,
-        "vol": 0.055
-      },
-      {
-        "t": 34.58,
-        "vol": 0.055
-      },
-      {
-        "t": 34.92,
-        "vol": 0.15
-      },
-      {
-        "t": 35.02,
-        "vol": 0.15
-      },
-      {
-        "t": 35.2,
-        "vol": 0.055
-      },
-      {
-        "t": 39.14,
-        "vol": 0.055
-      },
-      {
-        "t": 39.48,
-        "vol": 0.15
-      },
-      {
-        "t": 39.66,
-        "vol": 0.055
-      },
-      {
-        "t": 46.98,
-        "vol": 0.055
-      },
-      {
-        "t": 47.28,
-        "vol": 0.15
-      },
-      {
-        "t": 47.32,
-        "vol": 0.15
-      },
-      {
-        "t": 47.46,
-        "vol": 0.055
-      },
-      {
-        "t": 56.6,
-        "vol": 0.055
-      },
-      {
-        "t": 56.88,
-        "vol": 0.15
-      },
-      {
-        "t": 56.94,
-        "vol": 0.15
-      },
-      {
-        "t": 57.06,
-        "vol": 0.055
-      },
-      {
-        "t": 63.02,
-        "vol": 0.055
-      },
-      {
-        "t": 63.36,
-        "vol": 0.15
-      },
-      {
-        "t": 63.46,
-        "vol": 0.15
-      },
-      {
-        "t": 63.64,
-        "vol": 0.055
-      },
-      {
-        "t": 64.66,
-        "vol": 0.055
-      },
-      {
-        "t": 65.0,
-        "vol": 0.15
-      },
-      {
-        "t": 65.14,
-        "vol": 0.15
-      },
-      {
-        "t": 65.32,
-        "vol": 0.055
-      },
-      {
-        "t": 71.934,
-        "vol": 0.15
-      },
-      {
-        "t": 72.5,
-        "vol": 0.055
-      },
-      {
-        "t": 72.834,
-        "vol": 0.02
-      }
-    ],
-    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
-  },
   "captionStyle": "word-reveal",
   "emphasis": [
     "B790",
@@ -208,11 +21,6 @@
       "type": "split",
       "topSrc": "assets/airpods-camera/apple-holds-book.mp4",
       "bottomSrc": "assets/airpods-camera/avatar-master.mp4",
-      "kinetic": {
-        "text": "NEVER ANNOUNCED",
-        "style": "serif",
-        "at": 0.45
-      },
       "captionBottom": 1000,
       "headline": {
         "lines": [
@@ -220,9 +28,14 @@
             "text": "APPLE'S OWN DEMO",
             "kind": "label",
             "at": 0.15
+          },
+          {
+            "text": "NEVER ANNOUNCED",
+            "kind": "headline",
+            "at": 0.45
           }
         ],
-        "y": 0.06,
+        "y": 0.05,
         "theme": "dark"
       },
       "durationSec": 1.86,
@@ -245,6 +58,7 @@
       "type": "footage",
       "src": "assets/airpods-camera/apple-walkin.mp4",
       "zoomDir": "out",
+      "captionBottom": 520,
       "durationSec": 1.44,
       "assetId": "apple-walkin",
       "claimId": "apple-walkin",
@@ -290,6 +104,7 @@
           "vol": 0.15
         }
       ],
+      "captionBottom": 520,
       "durationSec": 2.1,
       "assetId": "apple-ear-tight",
       "claimId": "apple-ear-tight",
@@ -325,26 +140,27 @@
     },
     {
       "type": "sourceread",
-      "src": "assets/airpods-camera/tweet-mobile.png",
+      "src": "assets/airpods-camera/tweet-clean.png",
       "srcWidth": 1080,
-      "srcHeight": 2340,
+      "srcHeight": 2190,
       "lines": [
         {
           "at": 0.3,
           "x": 45,
-          "y": 352,
+          "y": 202,
           "w": 965,
           "h": 62
         },
         {
           "at": 1.05,
           "x": 45,
-          "y": 412,
+          "y": 262,
           "w": 730,
           "h": 62
         }
       ],
       "credit": "@aaronp613",
+      "captionBottom": 6000,
       "durationSec": 2.62,
       "assetId": "tweet-receipt",
       "claimId": "tweet-receipt",
@@ -373,7 +189,7 @@
           "h": 70
         }
       ],
-      "captionBottom": 300,
+      "captionBottom": 6000,
       "durationSec": 2.96,
       "assetId": "macrumors-head",
       "claimId": "macrumors-head",
@@ -414,7 +230,7 @@
           "h": 150
         }
       ],
-      "captionBottom": 300,
+      "captionBottom": 6000,
       "durationSec": 5.7,
       "assetId": "macrumors-quote",
       "claimId": "macrumors-quote",
@@ -443,7 +259,7 @@
           "vol": 0.14
         }
       ],
-      "captionBottom": 300,
+      "captionBottom": 6000,
       "durationSec": 2.4,
       "assetId": "macrumors-alert",
       "claimId": "macrumors-alert",
@@ -516,6 +332,7 @@
       "type": "footage",
       "src": "assets/airpods-camera/apple-book-table.mp4",
       "zoomDir": "in",
+      "captionBottom": 520,
       "durationSec": 1.7,
       "assetId": "apple-book-table",
       "claimId": "apple-book-table",
@@ -635,6 +452,7 @@
         "at": 0.45,
         "y": 0.44
       },
+      "captionBottom": 520,
       "durationSec": 2.94,
       "assetId": "apple-outro-blur",
       "claimId": "apple-outro-blur",
@@ -662,6 +480,7 @@
           "vol": 0.15
         }
       ],
+      "captionBottom": 520,
       "durationSec": 1.834
     }
   ],
@@ -952,11 +771,13 @@
       "text": "absolutely not."
     }
   ],
-  "script": "Apple made a demonstration video for a product it has never announced. Then it shipped that video inside a Mac update.\n\nAirPods with cameras, running Visual Intelligence. Codename B790.\n\nMacRumors' Aaron Perris found the file sitting in the macOS Tahoe 26.7 release candidate. Fully finished, Apple's own.\n\nIn it, a guy lifts a book toward his ear, and Siri answers: with Visual Intelligence, your world becomes savable.\n\nIt even warns you when your hair covers them.\n\nSo what's inside? Bloomberg's Mark Gurman says tiny infrared cameras \u2014 the same sensor Face ID uses.\n\nWhich means these don't take pictures. No photos, no recording. They just feed Siri whatever you're looking at.\n\nWhen? Gurman says as soon as September, next to the iPhone 18 Pro. The name isn't locked: AirPods Pro 4, or AirPods Ultra. AirPods Pro 3 sit at $249, and this tier goes north of that.\n\nOne strange thing. In Apple's own video, you never once see the camera.\n\nEarbuds that watch the room for you. Yes, or absolutely not?",
+  "script": "Apple made a demonstration video for a product it has never announced. Then it shipped that video inside a Mac update.\n\nAirPods with cameras, running Visual Intelligence. Codename B790.\n\nMacRumors' Aaron Perris found the file sitting in the macOS Tahoe 26.7 release candidate. Fully finished, Apple's own.\n\nIn it, a guy lifts a book toward his ear, and Siri answers: with Visual Intelligence, your world becomes savable.\n\nIt even warns you when your hair covers them.\n\nSo what's inside? Bloomberg's Mark Gurman says tiny infrared cameras — the same sensor Face ID uses.\n\nWhich means these don't take pictures. No photos, no recording. They just feed Siri whatever you're looking at.\n\nWhen? Gurman says as soon as September, next to the iPhone 18 Pro. The name isn't locked: AirPods Pro 4, or AirPods Ultra. AirPods Pro 3 sit at $249, and this tier goes north of that.\n\nOne strange thing. In Apple's own video, you never once see the camera.\n\nEarbuds that watch the room for you. Yes, or absolutely not?",
   "approval": {
     "sha256": "01d1d00fce9fc2ce79bd26c31c7643eff28f806b4eed2cf1f1cce67e51883225",
     "approvedAt": "2026-08-18T05:45:59+00:00",
     "words": 171,
-    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
-  }
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+  },
+  "noMusic": true,
+  "noMusicReason": "User call 2026-08-18: the bed read as too quiet to earn its place, so this cut runs voice + SFX only. The 9 SFX cues are kept and carry the punctuation the bed was doing. Re-derive a curve with tools/duck_music.py if a bed is ever wanted back."
 }

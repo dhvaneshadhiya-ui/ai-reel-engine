@@ -16,6 +16,9 @@ from typing import Any
 DEFAULT_ENGINE = Path(__file__).resolve().parent.parent  # repo root
 
 
+_CONTRACTION_TAILS = {"s", "t", "d", "ll", "re", "ve", "m"}
+
+
 def normalize(value: str) -> list[str]:
     return re.findall(r"[a-z0-9]+", value.lower().replace("’", "'"))
 
@@ -86,6 +89,23 @@ def load_words(path: Path) -> list[dict[str, Any]]:
             raise SystemExit(f"invalid word timing at index {index}: {word!r}")
         tokens = normalize(text)
         if not tokens:
+            # A PUNCTUATION-ONLY token. whisper emits "%" as its own word, and
+            # normalize() returns [] for it, so this loop used to `continue` and
+            # DROP IT — shipping "shrink about 35" and "reportedly 15" with no
+            # unit at all, against the standard-notation rule. Glue it onto the
+            # word it belongs to instead. Caught on the iphone-18-pro contact
+            # sheet; the gates do not see a missing symbol.
+            if out and text and out[-1].get("source_index") == index - 1:
+                out[-1]["text"] = f'{out[-1]["text"]}{text}'
+                out[-1]["end"] = end
+            continue
+        # A token whisper starts with a hyphen belongs to the word before it:
+        # "Ming" + "-Chi" shipped as "Ming -Chi". Documented in STYLE-RULES for
+        # build_template.py; this generic path never inherited it.
+        if text.startswith("-") and out:
+            out[-1]["text"] = f'{out[-1]["text"]}{text}'
+            out[-1]["norm"] = normalize(out[-1]["text"])[-1]
+            out[-1]["end"] = end
             continue
         # Whisper occasionally returns ".8" or punctuation as a separate word.
         if text.startswith(".") and out and tokens[0].isdigit():
@@ -93,7 +113,22 @@ def load_words(path: Path) -> list[dict[str, Any]]:
             out[-1]["norm"] = normalize(out[-1]["text"])[-1]
             out[-1]["end"] = end
             continue
+        # A possessive/contraction ("Apple's") normalises to ["apple","s"], and
+        # emitting each token separately ships a caption chip reading just "s".
+        # Gate G34 catches it; this merges the tail back onto the word it came
+        # from, restoring the ORIGINAL spelling for display. General fix, not a
+        # per-reel patch: every reel with a possessive hit this.
         for token_index, token in enumerate(tokens):
+            if (
+                token_index > 0
+                and token in _CONTRACTION_TAILS
+                and out
+                and out[-1].get("source_index") == index
+            ):
+                out[-1]["text"] = text
+                out[-1]["norm"] = out[-1]["norm"] + token
+                out[-1]["end"] = end
+                continue
             out.append(
                 {
                     "text": text if len(tokens) == 1 else token,
@@ -186,6 +221,13 @@ def substitute(value: Any, tokens: dict[str, Any]) -> Any:
     return value
 
 
+def _apply_phrases(text: str, phrase_fixes: dict[str, str]) -> str:
+    """Case-insensitive replacement of multi-word correction keys."""
+    for key, value in phrase_fixes.items():
+        text = re.sub(re.escape(key), value, text, flags=re.IGNORECASE)
+    return text
+
+
 def caption_words(
     words: list[dict[str, Any]], corrections: dict[str, str]
 ) -> list[dict[str, Any]]:
@@ -198,6 +240,13 @@ def caption_words(
             text = corrections[key] + punctuation
         corrected.append({"start": word["start"], "end": word["end"], "text": text})
 
+    # MULTI-WORD corrections. The per-word pass above keys on a single token
+    # with punctuation stripped, so a two-word product name ("dark cherry")
+    # silently did nothing — and mapping the words separately is wrong, because
+    # "dark" is also an ordinary word earlier in this script ("in the dark").
+    # Phrase keys are therefore applied to the CHUNK text, after chunking.
+    phrase_fixes = {k: v for k, v in corrections.items() if " " in k}
+
     chunks: list[dict[str, Any]] = []
     for index in range(0, len(corrected), 3):
         group = corrected[index : index + 3]
@@ -205,7 +254,9 @@ def caption_words(
             {
                 "start": round(group[0]["start"], 3),
                 "end": round(group[-1]["end"], 3),
-                "text": " ".join(item["text"] for item in group),
+                "text": _apply_phrases(
+                    " ".join(item["text"] for item in group), phrase_fixes
+                ),
             }
         )
     return chunks
@@ -377,8 +428,12 @@ def main() -> None:
             scene.setdefault("bottomFocusX", focus_split)
         scenes.append(scene)
 
+    # Keep INTERIOR SPACES when normalising the key. Stripping every non
+    # alphanumeric collapsed "dark cherry" to "darkcherry", which matches no
+    # single token and no chunk — so multi-word corrections silently did
+    # nothing. Single-word keys are unaffected (they contain no space).
     corrections = {
-        re.sub(r"[^a-z0-9]", "", str(key).lower()): str(value)
+        re.sub(r"[^a-z0-9 ]", "", str(key).lower()).strip(): str(value)
         for key, value in plan.get("caption_corrections", {}).items()
     }
     music = plan.get("music") or {

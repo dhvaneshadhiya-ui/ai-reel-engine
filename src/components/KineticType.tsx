@@ -1,6 +1,9 @@
 import React from "react";
-import { SPRING, DUR } from "../theme/motion";
+import { SPRING, DUR, easeOut } from "../theme/motion";
 import { useCurrentFrame, useVideoConfig, spring, interpolate } from "remotion";
+import { DISPLAY, SANS, SIZE } from "../theme/type";
+import { fitOneLine } from "../theme/fit";
+import { SAFE_RECT } from "../platformSafeArea";
 import type { Kinetic } from "../types";
 
 /**
@@ -13,37 +16,45 @@ export const KineticType: React.FC<{
   color?: string;
 }> = ({ kinetic, color = "white" }) => {
   const frame = useCurrentFrame();
-  const { fps, height } = useVideoConfig();
+  const { fps, width, height } = useVideoConfig();
   const startFrame = Math.round((kinetic.at ?? 0.15) * fps);
   const local = frame - startFrame;
   if (local < 0) return null;
 
-  const enter = spring({
-    frame: local,
-    fps,
-    config: SPRING.enter,
-    durationInFrames: DUR.base,
-  });
-  const rise = interpolate(enter, [0, 1], [26, 0]);
+  // waterfall-entry.md: an arrival is BINARY plus a whip, never a fade. This
+  // carried `opacity: enter` on a 26px hop — the same ramp removed from
+  // HeadlineBuild and CaptionChips, still live here because KineticType was
+  // the one text component nobody had migrated. It is used by FootageScene,
+  // SplitScene, FloatingCard and TypeCard, so it is on screen constantly.
+  const p = easeOut(local / fps / 0.19);
+  const rise = (1 - p) * 72;
 
   const lines = kinetic.text.split("\n");
   const isCaps = kinetic.style === "caps";
+  // FIT, don't type. 100px was hardcoded for both styles regardless of how much
+  // copy arrived, so a long kinetic line ran off the frame exactly the way the
+  // six G05 headlines did.
+  const boxW = width * (1 - 2 * SAFE_RECT.x0) - 90;
+  const longest = lines.reduce((a, b) => (b.length > a.length ? b : a), "");
+  const fitted = fitOneLine(longest, SIZE.display, boxW);
 
   const style: React.CSSProperties = isCaps
     ? {
-        fontFamily: "'HelveticaNeue-CondensedBlack', 'Arial Narrow', sans-serif",
+        // the condensed-black face was never loaded and silently fell back to
+        // Arial Narrow; the caps voice is the display face, tracked out
+        fontFamily: DISPLAY,
         fontWeight: 900,
         textTransform: "uppercase",
-        fontSize: 100,
-        letterSpacing: "0.03em",
-        lineHeight: 1.02,
+        fontSize: fitted,
+        letterSpacing: "0.02em",
+        lineHeight: 1.08,
       }
     : {
-        fontFamily: "-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif",
-        fontStyle: "italic",
+        fontFamily: DISPLAY,
         fontWeight: 700,
-        fontSize: 100,
-        lineHeight: 1.08,
+        fontSize: fitted,
+        letterSpacing: "-0.02em",
+        lineHeight: 1.1,
       };
 
   return (
@@ -54,7 +65,7 @@ export const KineticType: React.FC<{
         right: 0,
         top: (kinetic.y ?? 0.28) * height,
         textAlign: "center",
-        opacity: enter,
+        opacity: 1,
         transform: `translateY(${rise}px)`,
         pointerEvents: "none",
       }}

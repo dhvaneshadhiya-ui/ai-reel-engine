@@ -1,4 +1,5 @@
 import React from "react";
+import { CYAN } from "../theme/palette";
 import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
@@ -14,7 +15,6 @@ import type { Scene } from "../types";
 
 type Props = Extract<Scene, { type: "hcompare" }>;
 const SANS = "-apple-system,'SF Pro Display','Helvetica Neue',Inter,sans-serif";
-const CYAN = "#0aa9c2";
 const isVideo = (s: string) => /\.(mp4|webm|mov)$/i.test(s);
 
 /** Horizontal (top design / bottom ad) accuracy comparison.

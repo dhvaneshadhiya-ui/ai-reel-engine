@@ -152,7 +152,7 @@ scenes = [
     },
     {   # 3 porthole — payoff frame, plays clean (rule 7)
         "type": "footage", "src": f"{C}/porthole-girl.mp4", "durationSec": dur("porthole"),
-        "zoomDir": "out", "captionBottom": 300, "assetId": "clip-porthole-girl",
+        "zoomDir": "out", "assetId": "clip-porthole-girl",
     },
     {   # 4 stained glass — still inside the SAME continuous 30s generation
         "type": "footage", "src": f"{C}/stained-glass.mp4", "durationSec": dur("glass"),
@@ -162,8 +162,12 @@ scenes = [
         # cropped to 1920x648 (aspect 2.963): the source frame carried the
         # creator's PiP webcam at x 89-357 / y 714-960 — cropping the bottom
         # band removes it while keeping every line of slide text uncut.
-        "type": "floatcard", "src": f"{C}/keynote-slide.jpg", "bg": "gradient",
-        "aspect": 2.963,
+        # WAS floatcard, which crashes the renderer on a still (G35):
+        # floatcard is an <OffthreadVideo> and ffmpeg reads a JPG as
+        # one frame. `receipt` is an <Img>. Dimensions measured off
+        # the cropped file described above.
+        "type": "receipt", "src": f"{C}/keynote-slide.jpg",
+        "backdrop": "cream", "srcWidth": 1920, "srcHeight": 648,
         "durationSec": dur("keynote"), "credit": "Volcano Engine FORCE 2026",
         "assetId": "card-keynote",
         "headline": hl([
@@ -217,7 +221,7 @@ scenes = [
     },
     {   # 8 facecam — the bridge
         "type": "footage", "src": AVATAR, "durationSec": dur("face1"),
-        "from": B["face1"][0], "focusX": FOCUS_FULL, "captionBottom": 300,
+        "from": B["face1"][0], "focusX": FOCUS_FULL,
     },
     {   # 9 the reference fan, in the real UI
         "type": "footage", "src": f"{C}/refs-fan.mp4", "durationSec": dur("refsfan"),
@@ -243,7 +247,7 @@ scenes = [
     },
     {   # 12 facecam pop — the opinion
         "type": "footage", "src": AVATAR, "durationSec": dur("face2"),
-        "from": B["face2"][0], "focusX": FOCUS_FULL, "captionBottom": 300,
+        "from": B["face2"][0], "focusX": FOCUS_FULL,
     },
     {   # 13 dance cut on the music
         "type": "footage", "src": f"{C}/red-dress.mp4", "durationSec": dur("reddress"),
@@ -267,7 +271,7 @@ scenes = [
     },
     {   # 17 facecam — the honesty beat is an on-camera opinion (astra rule)
         "type": "footage", "src": AVATAR, "durationSec": dur("face3"),
-        "from": B["face3"][0], "focusX": FOCUS_FULL, "captionBottom": 300,
+        "from": B["face3"][0], "focusX": FOCUS_FULL,
     },
     {   # 18 what is NOT known
         "type": "wordcascade", "bg": "cream", "durationSec": dur("cascade"),

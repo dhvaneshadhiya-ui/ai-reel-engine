@@ -1,4 +1,10 @@
 import React from "react";
+import { CYAN } from "../theme/palette";
+// `typeAt` is aliased: this file already has a local `typeAt` at ~1456 —
+// a scene prop meaning "when the typing starts". Same word, one a
+// timestamp and one a type helper, and the local one silently shadowed
+// the import (tsc: "Type 'Number' has no call signatures").
+import { SIZE, typeAt as typeScale } from "../theme/type";
 import { SPRING, DUR } from "../theme/motion";
 import { SAFE_RECT } from "../platformSafeArea";
 import {
@@ -15,7 +21,6 @@ import type { Scene } from "../types";
 
 /* oss-alt bespoke scenes — user-storyboarded reel. Two-accent system on nick
  * tokens: CYAN = open-source/free, RED = paid/warning. */
-const CYAN = "#0aa9c2";
 const RED = "#e0244a";
 const GREEN = "#1fa864";
 /** y 0.80 of a 1920 frame — the platform safe floor. */
@@ -686,8 +691,10 @@ export const ProblemSolved: React.FC<{ scene: Extract<Scene, { type: "problemsol
   const row = (txt: string, ok: boolean, key: number) => (
     <div
       key={key}
-      style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 18, fontSize: 36,
-               fontWeight: 650, color: "rgba(20,20,20,0.78)" }}
+      // 650 -> 700. A 650 beside a 700 is a decision nobody made on purpose;
+      // the size (36) was already the label step.
+      style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 18, fontSize: SIZE.label,
+               fontWeight: 700, color: "rgba(20,20,20,0.78)" }}
     >
       <span style={{ color: ok ? CYAN : RED, fontWeight: 900, fontSize: 36 }}>
         {ok ? "✓" : "•"}
@@ -1563,7 +1570,10 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
             transform: `scale(${0.2 + 0.8 * growP}) translateY(${(1 - growP) * 500}px)`,
           }}
         >
-          <div style={{ fontWeight: 900, fontSize: 190, letterSpacing: "0.02em", color: CYAN, lineHeight: 0.95 }}>
+          {/* POSTER SCALE, ON PURPOSE. One word filling the frame is past the
+              scale's top step (hero 130) by design — typeAt says "hero, larger"
+              instead of leaving a bare 190 that reads as drift. */}
+          <div style={{ ...typeScale("hero", 1.46), fontWeight: 900, letterSpacing: "0.02em", color: CYAN, lineHeight: 0.95 }}>
             OPEN
           </div>
           <div

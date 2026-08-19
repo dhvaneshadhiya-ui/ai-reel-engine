@@ -61,12 +61,26 @@ export const ReceiptScene: React.FC<{ scene: ReceiptProps }> = ({ scene }) => {
     cy = ((minY + maxY) / 2) * sy;
     // fit the union to ~88% width / ~55% height, whichever is tighter
     const fit = Math.min((cardW * 0.88) / uw, (cardH * 0.55) / uh);
+    // A DOCUMENT MAY BE CROPPED VERTICALLY, NEVER HORIZONTALLY.
+    //
+    // You can read a page whose bottom is off-screen; you cannot read a line
+    // whose beginning is. Rendered 2026-08-18: the mr-pricing receipt at the
+    // 1.35 floor put the card 1254px wide inside a 1080px frame and served
+    // "ple analyst Ming-Chi Kuo believes that Ap" — 87px sliced off each side,
+    // mid-word, on a scene whose entire job is to let the viewer read the
+    // claim. zFits below was supposed to prevent exactly this and could not:
+    // it measures the HIGHLIGHT union against the frame, and a highlight can
+    // sit comfortably inside a card that is itself hanging off both edges.
+    const cardFits = width / cardW;
     // HARD CEILING — see AnnotateZoom for the full story. The 1.35 floor is an
     // aesthetic minimum and must never beat the zoom at which the padded
     // highlight union still spans the frame; a floor that wins slices the
     // highlighted words off BOTH edges. 1.35 is harsher than AnnotateZoom's
     // 1.15, so this path cuts even more when it fires.
-    zFits = fitsZoom(width, uw);
+    // The 1.35 floor is an aesthetic minimum — "don't show a page tiny" — and
+    // it yields to both ceilings. An aesthetic minimum that beats a legibility
+    // ceiling is not a minimum, it is a bug with a comment.
+    zFits = Math.min(fitsZoom(width, uw), cardFits);
     const baseZ = Math.min(Math.max(1.35, Math.min(2.2, fit)), zFits);
     const push = interpolate(frame, [0, durationInFrames], [0, 0.05]);
     Z = Math.min(baseZ + push, zFits);

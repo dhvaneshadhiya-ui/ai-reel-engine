@@ -29,6 +29,7 @@ from __future__ import annotations
 import json
 import subprocess
 import sys
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -96,10 +97,41 @@ def steps(slug: str) -> list[dict]:
                    "39 while iphone-fold-ultra managed 11 of 30.\n"
                    f"      Then write public/assets/{slug}/manifest.json with "
                    "credits and tiers. See AGENT.md STEP 1a."),
+        dict(key="structure",
+             label="Narrative structure + open loop chosen",
+             done=_p(f"jobs/{slug}/structure.md").exists(),
+             auto=None,
+             skills=["shortform-script-framework  S17 shapes, S2/S10 the loop"],
+             human="Write jobs/" + slug + "/structure.md BEFORE the first "
+                   "sentence. Three things, none retrofittable:\n"
+                   "        SHAPE   one of framework S17 — Discovery / News / "
+                   "Product announcement /\n"
+                   "                Explainer / Tutorial / Comparison / Story / "
+                   "List / Myth-busting /\n"
+                   "                Transformation — or one you invent for this "
+                   "topic. This is NOT\n"
+                   "                the `format` field: format is the runtime "
+                   "envelope, shape is the\n"
+                   "                telling. See formats/README-structure.md.\n"
+                   "        PROMISE what the viewer is told they will get (S2)\n"
+                   "        LOOP    what is withheld early and paid off later "
+                   "(S10), and WHERE\n"
+                   "                it pays off. An enumeration is not a loop — "
+                   "'three changes are\n"
+                   "                coming' announces the agenda and withholds "
+                   "nothing.\n"
+                   "      Escalation (S6) follows from the shape; name which "
+                   "progression you are using."),
         dict(key="script",
              skills=["news-reel           owns structure; formats/<format>.md is the shape",
-                     "viral-hook-writer   the first 2 seconds only",
-                     "humanizer           LAST pass, after the shape is right"],
+                     "shortform-script-framework  READ FIRST — styles/. Structure",
+                     "                    and open loop are chosen before sentence one",
+                     "viral-hook-writer   the first 2 seconds only — pair it with",
+                     "                    framework S1/S16 or it writes a hook with",
+                     "                    no context, which is what shipped 2026-08-19",
+                     "humanizer           LAST pass, SCOPED — see SKILL.md 2a. Three of",
+                     "                    its patterns collide with S20 hedging, the",
+                     "                    playbook's hook devices, and the payoff triad"],
              label="Narration written",
              done=_p(f"jobs/{slug}/script.md").exists(),
              auto=None,
@@ -184,8 +216,53 @@ def steps(slug: str) -> list[dict]:
     ]
 
 
+def _stamp(slug: str, st: list[dict]) -> dict:
+    """Record when each stage first showed as done, and report the gaps.
+
+    NOTHING HAS EVER MEASURED THIS. Asked on 2026-08-19 why a reel takes two
+    hours, the honest answer was an inference from artifact counts — 8 build
+    scripts, 22-51 assets per reel, 7 render cycles — not a measurement. The
+    machine half is timed to the second (a still is 3.3s, a render is ~8min);
+    the human half, which is 7 of the 12 stages, has never been timed at all.
+
+    So `showrunner status` now stamps the first moment each stage reads done
+    into jobs/<slug>/timing.json. It costs nothing, it cannot be gamed by
+    memory, and after one reel it replaces every estimate in this file with a
+    number.
+    """
+    import datetime as _dt
+    f = _p(f"jobs/{slug}/timing.json")
+    rec = json.loads(f.read_text()) if f.exists() else {}
+    changed = False
+    for step in st:
+        if step["done"] and step["key"] not in rec:
+            rec[step["key"]] = _dt.datetime.now().astimezone().isoformat(timespec="seconds")
+            changed = True
+    if changed and f.parent.exists():
+        f.write_text(json.dumps(rec, indent=2) + "\n")
+    return rec
+
+
+def _elapsed(rec: dict, st: list[dict]) -> None:
+    import datetime as _dt
+    done = [(s["key"], rec[s["key"]]) for s in st if s["key"] in rec]
+    if len(done) < 2:
+        return
+    print("  stage timings (first seen done — a floor, not a stopwatch):")
+    prev = None
+    for key, iso in done:
+        t = _dt.datetime.fromisoformat(iso)
+        gap = f"{(t - prev).total_seconds() / 60:6.0f} min" if prev else "     —"
+        print(f"    {key:12} {gap}")
+        prev = t
+    total = (_dt.datetime.fromisoformat(done[-1][1])
+             - _dt.datetime.fromisoformat(done[0][1])).total_seconds() / 60
+    print(f"    {'TOTAL':12} {total:6.0f} min across {len(done)} stages\n")
+
+
 def cmd_status(slug: str) -> None:
     st = steps(slug)
+    rec = _stamp(slug, st)
     print(f"\n  REEL: {slug}\n")
     nxt = None
     for s in st:
@@ -199,6 +276,7 @@ def cmd_status(slug: str) -> None:
             mark, tail = "  [ ]", ""
         print(f"{mark} {s['label']}{tail}")
     print()
+    _elapsed(rec, st)
     if nxt is None:
         print("  Everything done. Deliver the master and the packaging.\n")
     return

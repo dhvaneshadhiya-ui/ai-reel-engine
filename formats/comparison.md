@@ -43,6 +43,20 @@ the genre IS, not from measurement, so it is safe to rely on.
 | "This is dead, use this" | `strikeswap` |
 | One side's detail | `footage` / `deviceframe` + `side` tag |
 
+## Story standard
+
+`styles/shortform-script-framework.md` applies here too — it is universal by its
+own title, and the skeleton below is a SHAPE, not a story. A comparison reel can hit
+every beat of that skeleton and still be a list: the hook / name the two / rounds / the catch / verdict
+tells you what goes where, and the framework tells you whether the viewer has a
+reason to hear the next one.
+
+**One caveat, stated because it is true:** `tools/check_script.py`'s structural
+thresholds were calibrated on a matched pair of NEWS scripts, and no reel in
+this repo has ever used `comparison`. Its bridge-rate and spec-density numbers are
+orientation here, not a verdict — an enumerated list legitimately enumerates.
+The framework itself applies unchanged; only the arithmetic is unproven.
+
 ## Script skeleton
 
 1. **HOOK (<=2s)** — the *result*, not the matchup. "The cheaper one won." Not

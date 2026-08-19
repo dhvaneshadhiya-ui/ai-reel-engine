@@ -1,4 +1,5 @@
 import React from "react";
+import { CYAN, TINT, TINT_GRADIENT } from "../theme/palette";
 import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
@@ -13,17 +14,20 @@ type Props = Extract<Scene, { type: "checklist" }>;
 
 const BGS: Record<string, string> = {
   black: "#0a0a0a",
-  cream: "#f2ecdf",
-  gradient: "linear-gradient(160deg,#e6edf7 0%,#f3e6dc 55%,#ecdcf1 100%)",
+  cream: TINT.sand,
+  gradient: TINT_GRADIENT,
 };
 const SANS = "-apple-system,'SF Pro Display','Helvetica Neue',Inter,sans-serif";
 
 /** Series palette — do not introduce new hues here (RULES.md §design system). */
-const CYAN = "#0aa9c2";   // q  — genuinely unknown
 const GREEN = "#2fb98a";  // done — confirmed yes
 const RUST = "#C2410C";   // no — confirmed exclusion (the pack's accent)
 
-const TINT: Record<string, string> = { done: GREEN, no: RUST, q: CYAN };
+// Renamed from TINT 2026-08-18: this maps a ROW STATE to a colour, which is
+// a different thing from theme/palette.ts TINT (the shared card grounds).
+// The two collided when the shared palette was extracted — the second
+// same-word collision that day, after `typeAt` in OssAlt.
+const STATE_TINT: Record<string, string> = { done: GREEN, no: RUST, q: CYAN };
 
 /**
  * Drawn marks, not typed glyphs. USER FEEDBACK 2026-08-12: the old component
@@ -155,7 +159,7 @@ export const Checklist: React.FC<{ scene: Props }> = ({ scene }) => {
             );
             const hero = mixed && r.state === "q";
             const pulse = hero ? 1 + 0.02 * Math.sin(t * 5) : 1;
-            const tint = TINT[r.state] ?? CYAN;
+            const tint = STATE_TINT[r.state] ?? CYAN;
 
             return (
               <div

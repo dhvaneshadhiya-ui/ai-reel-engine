@@ -20,6 +20,13 @@ explicitly names the old one, follow that repo's own README instead.)
    contract, the failure-mode table.
 3. **`styles/<style>.md`** — default `varun-mayya`. Also load
    `styles/varun-script-playbook.md` when writing the script.
+3b. **`styles/shortform-script-framework.md`** — the STORY standard, and the
+   one to read before writing a word. The playbooks describe this creator's
+   VOICE (his connectives, his six acts, his openers); the framework describes
+   whether there is a story underneath the voice at all. A script can sound
+   exactly like him and still be a list of facts — that is the 2026-08-19
+   failure, and it scored "nothing to flag" on the prose checker because the
+   checker only measured sentence shape.
 4. **`STYLE-RULES.md`** — the dated ledger behind RULES.md. Read it for *why* a
    rule exists and for the **treatment history** (never repeat the last reel's
    treatment for the same kind of information). It is append-only and contains
@@ -126,10 +133,75 @@ presenters) and the leak is invisible except on frames; the linter's
 
 ### 2 — Script + beat map
 
+**Before writing: `styles/shortform-script-framework.md`.** Decide the STRUCTURE
+(§17) and the open loop (§2, §10) before the first sentence, because neither can
+be added afterwards by editing lines. The two failures it exists to stop, both
+of which the pipeline has shipped:
+
+- a hook with no context — "For the first time, an iPhone lens will physically
+  open and close" is the framework's own Weak example, and the pipeline
+  generated it verbatim. `viral-hook-writer` is scoped to the first two seconds
+  and optimises for the stop; §1 and §16 are what stop it optimising into
+  confusion. Load both or neither.
+- facts in source order — the playbook's PROOF STACK is 2-4 specs, not a queue.
+  Ask which fact EXPLAINS another (§3) before deciding the order.
+
+`python3 tools/check_script.py <slug>` measures six of the framework's sections
+and prints again at approval. It is advice; it is also the only thing that told
+anyone the last script was a list.
+
 Write `scripts/<slug>.md`: the spoken script **and** a beat table where every
 beat carries `visual: <manifest asset id>` or `visual: MG:<component + spec>`.
 A beat that resolves to neither is illegal — re-scout or rewrite the line.
 At the MEASURED ~2.7 words/sec (2026-08-13, three masters), 60s ≈ 162 words, 80s ≈ 216, 90s ≈ 243, 120s ≈ 324. script_approval.py refuses an out-of-band propose.
+
+### 2a — humanizer: scoped, not wholesale
+
+`humanizer` runs LAST, after the shape is right, and **not on the whole script**.
+Measured across all eight scripts in `jobs/` on 2026-08-19:
+
+- Its highest-value patterns find NOTHING here. Zero hits on delve, showcase,
+  leverage, robust, seamless, pivotal, testament, landscape, cutting-edge. The
+  style playbook already bans them by name ("No em-dash-speak, no 'delve', no
+  listicle voice"), so the words never arrive.
+- **Three of its patterns are load-bearing in this pipeline and must NOT be
+  applied:**
+
+| humanizer says | why it stays |
+|---|---|
+| §5 vague sources — name the source or cut the claim | framework S20 REQUIRES "reportedly" / "projected" for unreleased products, and the manifest's exclusions demand it by name ("15% / 30% are Jeff Pu's projections"). The user's 2026-08-14 rule also forbids naming the aggregator outlet in narration. The hedge IS the honest form here. |
+| §9 not X but Y | "It isn't the software. It's a piece of glass that can't move." is a spoken reveal, and the playbook's hook taxonomy is built on it. |
+| §10 forced groups of three | "no light, no battery, no bars" is the payoff triad tying three ideas the script spent 60s building. |
+
+**What it IS worth running for:** repeated sentence openings (§11), passive voice
+(§13), and crutch words. That last one is real — `grok-bot` uses "actually"
+three times in one script, and "actually" is on humanizer's list. A spoken
+intensifier once is register; three times is a tic.
+
+So: run it, read its suggestions, and reject the three above on sight. Applying
+it wholesale would strip the honesty language the gates require.
+
+### 2b — Script critic pass (mandatory, never skip)
+
+```bash
+python3 tools/check_script.py <slug>              # the six measured checks
+python3 tools/check_script.py --critic <slug>     # every transition, numbered
+python3 tools/check_script.py --checklist <slug>  # framework S25, 19 items
+```
+
+**The exact counterpart of stage 5, one layer earlier.** Stage 5 says "the
+linter catches geometry; only you catch meaning" and it is right — and the
+script had no equivalent, so a reel could pass every prose number and still be
+an article read aloud. Six of the framework's questions are measured; thirteen
+are not, and those thirteen are most of what makes a script good.
+
+**Read it aloud.** Not silently. The framework's S24 test only works out loud:
+if it sounds like "according to reports… another feature… another spec", the
+shape is wrong and no amount of editing individual lines will fix it — the
+order is what has to change.
+
+Do this BEFORE approval, because approval freezes the audio and every fix after
+it costs credits.
 
 ### 3 — Voice + face
 

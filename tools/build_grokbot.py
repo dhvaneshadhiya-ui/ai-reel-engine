@@ -46,6 +46,35 @@ TOTAL = round(words[-1][1] + 0.35, 2)
 print(f"{len(words)} words, VO ends {words[-1][1]:.2f}s, reel {TOTAL:.2f}s")
 
 
+# HELPERS COME FROM reelkit NOW (2026-08-19). This file used to define shot(),
+# face(), card() and mg() itself, as all eight build scripts did — 29 helper
+# definitions for 6 distinct helpers, each free to drift. `cb=300` had to be
+# fixed in six of them separately, and build_applepay's face() still contained
+# a NameError nobody had run into.
+#
+# Verified by regenerating this reel and diffing: byte-identical output.
+from reelkit import Reel
+
+_kit = Reel(slug=SLUG, avatar=AVATAR, clips=C, credit=CRED, focus_x=FOCUS_FULL)
+
+
+def card(name, headline=None, sfx=None):
+    return _kit.card(f"{name}.mp4", aspect=W16, bg="gradient",
+                     headline=headline, sfx=sfx, assetId=f"clip-{name}")
+
+
+def shot(name, zoom="in", cb=None, sfx=None):
+    return _kit.shot(name, zoom=zoom, cb=cb, sfx=sfx)
+
+
+def face(headline=None, cb=None):
+    return _kit.face(headline=headline, cb=cb)
+
+
+def mg(spec, sfx=None):
+    return _kit.mg(spec, sfx=sfx)
+
+
 def css_pos(fx, iw, ih, cw, ch):
     s = max(cw / iw, ch / ih); w = iw * s
     return 0.5 if w <= cw + 1 else round(max(0, min(1, (fx * w - cw / 2) / (w - cw))), 3)
@@ -93,42 +122,25 @@ hl = lambda lines, y=0.12, theme="light": {"lines": lines, "y": y, "theme": them
                                            "align": "center"}
 
 
-def card(name, headline=None, sfx=None):
-    def b(t0, d):
-        s = {"type": "floatcard", "src": f"{C}/{name}.mp4", "bg": "gradient",
-             "aspect": W16, "durationSec": d, "credit": CRED,
-             "assetId": f"clip-{name}"}
-        if headline: s["headline"] = headline
-        if sfx: s["sfx"] = sfx
-        return s
-    return b
 
 
-def shot(name, zoom="in", cb=None, sfx=None):
-    def b(t0, d):
-        s = {"type": "footage", "src": f"{C}/{name}.mp4", "durationSec": d,
-             "zoomDir": zoom, "credit": CRED, "assetId": f"clip-{name}"}
-        if cb: s["captionBottom"] = cb
-        if sfx: s["sfx"] = sfx
-        return s
-    return b
 
 
-def face(headline=None, cb=300):
-    def b(t0, d):
-        s = {"type": "footage", "src": AVATAR, "durationSec": d,
-             "from": round(t0, 2), "focusX": FOCUS_FULL, "captionBottom": cb}
-        if headline: s["headline"] = headline
-        return s
-    return b
+# CAPTION POSITION IS NOT A PIXEL A BUILD SCRIPT TYPES.
+#
+# Every one of these carried `cb=300` as a DEFAULT ARGUMENT, so every face shot
+# in every reel was born with captionBottom 300 — y 0.865, underneath the
+# Instagram account row measured at y 0.835. 52 scenes across six reels shipped
+# with captions the platform paints over, and the next reel built from this
+# script would have started the same way.
+#
+# The renderer derives the floor (src/platformSafeArea.ts captionFloorPx) and
+# clamps to it, so omitting the field gives the correct position for free. A
+# value is now passed ONLY to RAISE a caption above the default — clearing a
+# face, a lower third, a logo — which is composition and stays the author's
+# call. G45 blocks anything below the floor.
 
 
-def mg(spec, sfx=None):
-    def b(t0, d):
-        s = dict(spec, durationSec=d)
-        if sfx: s["sfx"] = sfx
-        return s
-    return b
 
 
 def page(label, head, accent=False, aid=None, src="src-hero"):

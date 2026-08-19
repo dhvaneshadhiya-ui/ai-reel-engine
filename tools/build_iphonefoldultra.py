@@ -62,6 +62,12 @@ TOTAL = round(words[-1][1] + 0.35, 2)
 print(f"{len(words)} words, VO ends {words[-1][1]:.2f}s, reel {TOTAL:.2f}s")
 
 
+from reelkit import Reel
+
+_kit = Reel(slug=SLUG, avatar=AVATAR, clips=C,
+           credit=DUMMY, focus_x=FOCUS_FULL)
+
+
 def css_pos(fx, iw, ih, cw, ch):
     s = max(cw / iw, ch / ih); w = iw * s
     return 0.5 if w <= cw + 1 else round(max(0, min(1, (fx * w - cw / 2) / (w - cw))), 3)
@@ -141,10 +147,24 @@ def shot(name, zoom="in", headline=None, cb=None, sfx=None, credit=DUMMY,
     return b
 
 
-def face(headline=None, cb=300, infocard=None):
+# CAPTION POSITION IS NOT A PIXEL A BUILD SCRIPT TYPES.
+#
+# Every one of these carried `cb=300` as a DEFAULT ARGUMENT, so every face shot
+# in every reel was born with captionBottom 300 — y 0.865, underneath the
+# Instagram account row measured at y 0.835. 52 scenes across six reels shipped
+# with captions the platform paints over, and the next reel built from this
+# script would have started the same way.
+#
+# The renderer derives the floor (src/platformSafeArea.ts captionFloorPx) and
+# clamps to it, so omitting the field gives the correct position for free. A
+# value is now passed ONLY to RAISE a caption above the default — clearing a
+# face, a lower third, a logo — which is composition and stays the author's
+# call. G45 blocks anything below the floor.
+def face(headline=None, cb=None, infocard=None):
     def b(t0, d):
         s = {"type": "footage", "src": AVATAR, "durationSec": d,
-             "from": round(t0, 2), "focusX": FOCUS_FULL, "captionBottom": cb}
+             "from": round(t0, 2), "focusX": FOCUS_FULL}
+        if cb: s["captionBottom"] = cb
         if headline: s["headline"] = headline
         if infocard: s["infocard"] = infocard
         return s
@@ -162,18 +182,17 @@ def rcpt(png, sw, sh, aid, highlights, sfx=None):
 
 
 def flo(png, aid, aspect, headline=None, sfx=None):
-    """Framed window at TRUE aspect. Used where `receipt` cannot be: the
-    faceid and pricing captures are wide enough that ReceiptScene's zoom
-    (Z floor 1.35) overflowed and cut their text mid-word — verified on
-    rendered frames, twice, before switching (RULES.md §5)."""
-    def b(t0, d):
-        s = {"type": "floatcard", "src": f"{C}/{png}.png", "bg": "gradient",
-             "aspect": aspect, "durationSec": d, "credit": "MacRumors",
-             "assetId": aid}
-        if headline: s["headline"] = headline
-        if sfx: s["sfx"] = sfx
-        return s
-    return b
+    """A still. Was `floatcard`, which crashes the renderer (G35).
+
+    The old docstring explained the choice: ReceiptScene's 1.35 zoom floor
+    overflowed these wide captures and cut their text mid-word, verified on
+    rendered frames, twice. That was true and is no longer — on 2026-08-18 the
+    floor was capped so a document may be cropped vertically and never
+    horizontally, and the mr-pricing frame was re-rendered to confirm the whole
+    page reads. `aspect` is now ignored; reelkit measures the file.
+    """
+    return _kit.doc(f"{png}.png", aid, credit="MacRumors",
+                    headline=headline, sfx=sfx)
 
 
 def mg(spec, sfx=None):

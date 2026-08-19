@@ -15,7 +15,14 @@ SKILL = Path(__file__).resolve().parent.parent
 DEFAULT_ENGINE = Path(__file__).resolve().parent.parent  # repo root
 
 # The master spec (RULES.md / CLAUDE.md): -14 LUFS, true peak -1.2 dBFS.
-LOUDNORM_TARGET = "I=-14:TP=-1.2:LRA=7"
+LOUDNORM_TARGET = "I=-14:TP=-1.5:LRA=7"
+# TRUE-PEAK BACKSTOP. loudnorm in `linear=true` applies ONE fixed gain, so it
+# can overshoot its own TP target on a peaky master: iphone-18-pro asked for
+# TP=-1.2 and landed -0.9, over G31's -1.0 ceiling. RULES section 11 prescribes a
+# limiter for exactly this. The target moved to -1.5 for headroom and the
+# limiter is a hard ceiling after it, so a peak can no longer clip on a lossy
+# re-encode. General fix: any reel can overshoot, not just this one.
+TRUE_PEAK_LIMITER = "alimiter=limit=0.83:level=disabled"
 
 
 def run(command: list[str], cwd: Path, dry_run: bool) -> None:
@@ -79,7 +86,7 @@ def master(raw: Path, final: Path, cwd: Path, dry_run: bool) -> None:
               f"({values}) — the input may be silent. Falling back to a "
               "single pass; G31 will measure the result and block if it "
               "misses.")
-        af = f"loudnorm={LOUDNORM_TARGET}"
+        af = f"loudnorm={LOUDNORM_TARGET},{TRUE_PEAK_LIMITER}"
     else:
         af = (f"loudnorm={LOUDNORM_TARGET}"
               f":measured_I={values['input_i']}"
@@ -87,7 +94,8 @@ def master(raw: Path, final: Path, cwd: Path, dry_run: bool) -> None:
               f":measured_LRA={values['input_lra']}"
               f":measured_thresh={values['input_thresh']}"
               f":offset={values['target_offset']}"
-              ":linear=true")
+              ":linear=true"
+              f",{TRUE_PEAK_LIMITER}")
 
     # `-ar 48000` is NOT cosmetic. loudnorm runs internally at 192kHz and hands
     # the encoder whatever it likes; with nothing pinned, the aac encoder chose
@@ -166,6 +174,86 @@ def main() -> None:
     run([sys.executable, str(SKILL / "tools/reel_gates.py"), args.slug],
         engine, args.dry_run)
 
+    # THE CRAFT PASSES — the ones that MAKE the reel better, not just report.
+    #
+    # Audited 2026-08-18: calibrate_sfx.py, sync_impacts.py and pace_reel.py
+    # existed and NOTHING called them. calibrate_sfx is the fix for the user's
+    # "sound effects are hardly noticeable" and it ran only when somebody
+    # remembered to type it; sync_impacts and pace_reel were written the same
+    # day and left equally unreachable. Building the capability and not the
+    # habit is the same failure as writing a check nobody runs, one layer up.
+    #
+    # These two WRITE to the beat sheet, and both are idempotent — a second run
+    # on a calibrated sheet changes nothing. They run before the render so the
+    # frame gets the benefit, and after the gates so a broken sheet is rejected
+    # before anything rewrites it.
+    #
+    # pace_reel.py is deliberately NOT here. It re-encodes the avatar master and
+    # rewrites every timing in the sheet; that is a decision with a listen-back,
+    # not a step that should fire unattended in a render. It is reported in the
+    # measurement block below and run by hand.
+    if not args.dry_run:
+        for tool in ("tools/calibrate_sfx.py", "tools/sync_impacts.py"):
+            print(f"\n+ {tool} {args.slug} --write")
+            subprocess.run([sys.executable, str(SKILL / tool), args.slug,
+                            "--write"], cwd=engine, check=False)
+
+    # THE MEASUREMENTS, run where somebody will actually see them.
+    #
+    # tools/auto_contrast.py, check_type.py, check_palette.py and
+    # check_safe_area.py were each written to answer a defect and then left as
+    # things a person runs by hand. Nobody ran them. iphone-fold-ultra shipped
+    # on 2026-08-18 with the word "iPhone," in white over a white phone at 0:03
+    # — a defect auto_contrast detects in two seconds and had never been asked
+    # about. A check nobody runs is worse than no check, because it lets people
+    # believe the question was asked.
+    #
+    # ADVISORY BY CONSTRUCTION: check=False, so none of them can stop a render.
+    # They report; the blocking authority stays with reel_gates and BLOCKING_RULES.
+    # auto_contrast runs in REPORT mode on purpose — it could write `theme` from
+    # the pixels, but silently rewriting a sheet the user approved (G27) during
+    # a render is not a measurement, it is an edit.
+    if not args.dry_run:
+        print("\n── measurements (advice — none of these block) " + "─" * 26)
+        for tool, tool_args in [
+            ("tools/check_frame_contract.py", [args.slug]),
+            ("tools/pace_reel.py", [args.slug]),      # report only — see above
+            ("tools/auto_contrast.py", [args.slug]),
+            ("tools/check_safe_area.py", [args.slug]),
+            ("tools/check_palette.py", ["--worst"]),
+            ("tools/check_type.py", ["--worst"]),
+        ]:
+            print(f"\n+ {tool} {' '.join(tool_args)}")
+            subprocess.run([sys.executable, str(SKILL / tool), *tool_args],
+                           cwd=engine, check=False)
+        print("─" * 70 + "\n")
+
+    # PREFLIGHT ON STILLS — catch on 5 frames what used to cost 2283.
+    #
+    # Measured 2026-08-19: one still is 3.3s, one full render + master + lint is
+    # ~8 minutes. iphone-fold-ultra was rendered SEVEN times in one session and
+    # every re-render was triggered by something visible in a single frame — a
+    # caption printed through the credit, white captions on white footage, a
+    # receipt sliced mid-word, two identical scenes, empty typecards.
+    #
+    # They were found late for one structural reason: lint_frames.py extracted
+    # its frames FROM THE FINISHED VIDEO, so nothing could be checked until
+    # everything had been rendered. Rendering the same frames straight from
+    # Remotion removes that dependency.
+    #
+    # ADVISORY, deliberately. It samples one frame per scene type, so it cannot
+    # see a defect that only exists in one scene of a type, and a hard failure
+    # here would block a render over an incomplete sample. It prints; the
+    # post-render lint still decides.
+    if not args.dry_run and not args.skip_render:
+        print("\n── preflight stills (advice — the post-render lint still decides) ──")
+        subprocess.run([sys.executable, str(SKILL / "tools/preflight_stills.py"),
+                        args.slug, "--types"], cwd=engine, check=False)
+        subprocess.run([sys.executable, str(SKILL / "tools/lint_frames.py"),
+                        args.slug, "--from-stills", "--soft"],
+                       cwd=engine, check=False)
+        print("── end preflight ──\n")
+
     if not args.skip_render:
         raw.parent.mkdir(parents=True, exist_ok=True)
         run(
@@ -176,7 +264,22 @@ def main() -> None:
                 "src/index.ts",
                 args.slug,
                 str(raw),
-                "--concurrency=2",
+                # CONCURRENCY 6, NOT 2 — measured 2026-08-19 on this machine
+                # (8 cores / 16 GB):
+                #
+                #     300 frames @ 2 -> 51.0s      full reel @ 2 -> ~390s
+                #     300 frames @ 6 -> 29.9s      full reel @ 6 ->  165s
+                #
+                # 2283 frames, 1080x1920, zero errors, byte-comparable output.
+                #
+                # The 2 was not arbitrary: AGENT.md records "the default hits
+                # delayRender timed out". That was the Fraunces loadFont() at
+                # module scope in a Root-imported file — fixed on 2026-08-16 by
+                # moving to @font-face, which carries no delayRender at all. The
+                # workaround outlived its cause, exactly like flo() and the
+                # receipt zoom floor. Re-measure if a component ever calls
+                # loadFont() again; that is the condition this depends on.
+                "--concurrency=6",
                 "--timeout=120000",
             ],
             engine,

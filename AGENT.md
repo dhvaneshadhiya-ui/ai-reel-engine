@@ -305,7 +305,7 @@ Key scene types — full table in `PIPELINE.md` §3:
 | Ghost sidebars / stray tabs | Crop bounds too wide | Re-crop to artifact bounds only |
 | Meaningless numbers | Missing units | Add column headers/labels |
 | Tail drift / audio desync | Scenes don't sum to audio | Enforce the sum in the build script |
-| "delayRender timed out" | Default render concurrency | `--concurrency=2 --timeout=120000` |
+| "delayRender timed out" | Default render concurrency | `--concurrency=6 --timeout=120000` |
 | Fonts 404 in render | Raw `/fonts/...` URL | Use `staticFile("fonts/...")` |
 | Misframed face | Vertical avatar auto-crop | Generate wide, crop with a measured face-x |
 

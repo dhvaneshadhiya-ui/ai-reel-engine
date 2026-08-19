@@ -26,15 +26,32 @@ def main() -> None:
         raise SystemExit(f"missing beat directory: {beat_dir}")
 
     entries: list[tuple[str, str]] = []
-    seen: set[str] = set()
+    # id -> the file that claimed it, so a collision can name BOTH sides.
+    seen: dict[str, Path] = {}
     for path in sorted(beat_dir.glob("*.json")):
         data = json.loads(path.read_text())
         reel_id = data.get("id")
         if not isinstance(reel_id, str) or not re.fullmatch(r"[A-Za-z0-9-]+", reel_id):
             raise SystemExit(f"invalid composition id in {path}: {reel_id!r}")
         if reel_id in seen:
-            raise SystemExit(f"duplicate composition id: {reel_id}")
-        seen.add(reel_id)
+            # NAME BOTH FILES. This used to say only "duplicate composition id:
+            # <id>", which is the id you already know and not the two files you
+            # need. It cost a render cycle on 2026-08-19: tools/pace_reel.py had
+            # written its backup to src/beats/<slug>.orig.json, every *.json here
+            # is registered as a composition, and the message gave no way to see
+            # that without going and looking. The machine failed in 0.02s; the
+            # diagnosis is what took the time.
+            first, second = seen[reel_id], path
+            hint = ""
+            if any(m in second.name for m in (".orig", ".bak", ".backup", "copy", "-old")):
+                hint = (f"\n  {second.name} looks like a BACKUP. Every *.json in "
+                        f"src/beats/ is registered as a composition, so a backup "
+                        f"kept here becomes a second reel with the same id. Move "
+                        f"it outside src/beats/ (out/ is fine).")
+            raise SystemExit(
+                f"duplicate composition id {reel_id!r}, claimed by two files:\n"
+                f"  {first}\n  {second}{hint}")
+        seen[reel_id] = path
         entries.append((path.stem, reel_id))
 
     lines = [

@@ -58,6 +58,7 @@ import {
   CommentCta,
 } from "./components/OssAlt";
 import { ThemeProvider } from "./theme/tokens";
+import { CreditPolicyProvider, firstUseByCredit } from "./components/Credit";
 import { FontFaces } from "./theme/fonts";
 import type { BeatSheet, Scene } from "./types";
 
@@ -172,6 +173,11 @@ const PunchIn: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
 export const Reel: React.FC<{ beats: BeatSheet }> = ({ beats }) => {
   const { fps } = useVideoConfig();
+  // The single scene that draws each source's credit — see Credit.tsx. The
+  // beat sheet keeps `credit` on EVERY scene so provenance and G14 are intact;
+  // only the drawing is deduplicated.
+  const creditOwners = firstUseByCredit(
+    beats.scenes as unknown as { credit?: string }[]);
   let cursor = 0;
 
   return (
@@ -210,9 +216,15 @@ export const Reel: React.FC<{ beats: BeatSheet }> = ({ beats }) => {
             durationInFrames={dur}
             premountFor={fps}
           >
-            <PunchIn>
-              <SceneSwitch scene={scene} />
-            </PunchIn>
+            <CreditPolicyProvider
+              firstFor={creditOwners}
+              sceneIndex={i}
+              suppressed={Boolean(beats.noCredits)}
+            >
+              <PunchIn>
+                <SceneSwitch scene={scene} />
+              </PunchIn>
+            </CreditPolicyProvider>
             {scene.headline &&
               typeof scene.headline === "object" &&
               "lines" in scene.headline &&

@@ -88,8 +88,15 @@ export const safeLeftPx = (frameW: number): number =>
  *   0.78 - 1.00   PLATFORM. Account row 0.835, caption 0.881, comment bar 0.957.
  *                 Put nothing here either.
  *
- * The bands overlap by design at 0.71-0.72: a credit and a caption never appear
- * in the same beat, and pretending they might wastes 40px of a phone screen.
+ * THE 0.71-0.72 OVERLAP WAS A FALSE ASSUMPTION, corrected 2026-08-18. It read
+ * "a credit and a caption never appear in the same beat". They almost always do:
+ * on iphone-fold-ultra, 37 of 47 scenes carry a credit, and the burned-in
+ * caption runs continuously across all of them. The bands were written from how
+ * the frame was imagined, not from what the sheets contain — so the caption
+ * default (bottom 400 = y 0.792) and the credit (bottom 422 = y 0.780) were
+ * printed 22px apart, and the reel shipped with "Source: Unbox Therapy" struck
+ * through by the word "iPhone,". The two are now laid out by ONE function that
+ * knows about both; see captionFloorPx below.
  *
  * CONTRAST IS NOT A BAND, IT IS A MEASUREMENT. Type over media always carries a
  * scrim — the question is its colour, never whether to draw one. Pick the ink
@@ -100,6 +107,49 @@ export const safeLeftPx = (frameW: number): number =>
 export const BANDS = {
   headline: [0.12, 0.30],
   subject: [0.30, 0.62],
-  caption: [0.62, 0.72],
-  credit: [0.71, 0.78],
+  caption: [0.62, 0.74],
+  credit: [0.74, 0.78],
 } as const;
+
+/**
+ * How tall the credit line actually is, in px at 1920.
+ *
+ * TYPE.micro is 28px at lineHeight 1.3 (36.4) inside 7px/8px plate padding —
+ * 52px of ink and ground. This is a MEASUREMENT of the component, not a
+ * reservation someone picked: change TYPE.micro or the plate padding and this
+ * has to move with it, which is why it names both inputs.
+ */
+export const CREDIT_H = Math.round(28 * 1.3) + 7 + 8;
+
+/** Clear air between the caption's descenders and the top of the credit plate. */
+const CAPTION_CREDIT_GAP = 26;
+
+/**
+ * The LOWEST a burned-in caption may sit, as a `bottom` offset in px.
+ *
+ * Derived from the credit's own geometry rather than typed, so the two can
+ * never drift apart again: the credit's plate top is creditBottomPx + CREDIT_H,
+ * and the caption floor is a gap above that. The caption band's own floor is
+ * the other constraint; whichever is higher up the frame wins.
+ *
+ * The credit lane is reserved on EVERY scene, not only credited ones. A caption
+ * that hops 78px between a credited shot and an uncredited one reads as a bug;
+ * a caption that holds one line for the whole reel reads as design.
+ */
+export const captionFloorPx = (frameH: number): number =>
+  Math.max(
+    Math.round(frameH * (1 - BANDS.caption[1])),
+    creditBottomPx(frameH) + CREDIT_H + CAPTION_CREDIT_GAP
+  );
+
+/**
+ * Push a caption `bottom` up out of the credit lane and the platform furniture.
+ *
+ * FLOOR ONLY. Beat sheets legitimately raise captions to clear a face — the
+ * split hook sets 1000 (y 0.48) so the chips miss the presenter — and that is
+ * composition, which stays the author's call. Sinking one to 300 (y 0.844, on
+ * top of Instagram's account row) is not composition, it is a frame the author
+ * could not see. Seven scenes of iphone-fold-ultra carried exactly that.
+ */
+export const clampCaptionBottom = (bottom: number, frameH: number): number =>
+  Math.max(bottom, captionFloorPx(frameH));

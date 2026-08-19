@@ -1,4 +1,5 @@
 import React from "react";
+import { MACOS_TRAFFIC } from "../theme/palette";
 import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
@@ -268,7 +269,7 @@ export const BrandHook: React.FC<BrandHookProps> = ({
             background: "#242424",
           }}
         >
-          {["#ff5f57", "#febc2e", "#28c840"].map((c) => (
+          {[MACOS_TRAFFIC.close, MACOS_TRAFFIC.minimise, MACOS_TRAFFIC.zoom].map((c) => (
             <div
               key={c}
               style={{ width: 12, height: 12, borderRadius: 6, background: c }}
@@ -325,7 +326,10 @@ export const BrandHook: React.FC<BrandHookProps> = ({
                 style={{
                   display: "inline-block",
                   marginRight: 18,
-                  color: accent ? "#E8A200" : theme.ink,
+                  // theme.ink means this sits on a LIGHT ground, so the accent
+                  // needs its dark variant — #E8A200 was a hand-darkened amber
+                  // doing the same job by eye. Derived now; see accentPair().
+                  color: accent ? theme.accentInk : theme.ink,
                   opacity: s,
                   transform: `translateY(${(1 - s) * 30}px) scale(${
                     0.7 + 0.3 * s

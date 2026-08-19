@@ -1,4 +1,5 @@
 import React from "react";
+import { TINT } from "../theme/palette";
 import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
@@ -10,28 +11,34 @@ import {
   spring,
 } from "remotion";
 import type { Scene } from "../types";
+import { useTheme, THEMES } from "../theme/tokens";
 
 type CascadeProps = Extract<Scene, { type: "wordcascade" }>;
 
 const BGS: Record<string, string> = {
-  cream: "#f2ecdf",
+  cream: TINT.sand,
   black: "#0c0c0c",
   white: "#ffffff",
 };
 
-const ACCENT_ON_LIGHT = "#C2410C";   // warm ink — reads on cream
-const ACCENT_ON_DARK = "#FFD84D";
-
+/**
+ * The accent pair used to live here as two hand-picked hexes — #C2410C "warm
+ * ink, reads on cream" and #FFD84D — the same shape of decision that put
+ * `const ACCENT = "#d97757"` at the top of HeadlineBuild and shipped an orange
+ * the user did not want (2026-08-18). Both are now derived from the style
+ * pack's ONE declared accent; see theme/tokens.ts accentPair().
+ */
 const wordStyle = (
   style: string,
   dark: boolean,
   size: number,
-  accent = false
+  accent = false,
+  theme = THEMES.editorial
 ): React.CSSProperties => {
   const base: React.CSSProperties = {
     lineHeight: 1.08,
     color: accent
-      ? (dark ? ACCENT_ON_LIGHT : ACCENT_ON_DARK)
+      ? (dark ? theme.accentInk : theme.accentOnDark)
       : (dark ? "#111111" : "#f5f1e8"),
   };
   switch (style) {
@@ -73,7 +80,9 @@ const wordStyle = (
           "-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif",
         fontWeight: 800,
         fontSize: 100 * size,
-        backgroundImage: "linear-gradient(135deg, #d97757, #e8a87c, #d97757)",
+        // the accent to its own lighter sibling and back — a gradient built
+        // from the palette rather than three clay stops from outside it
+        backgroundImage: `linear-gradient(135deg, ${theme.accentInk}, ${theme.accent}, ${theme.accentInk})`,
         WebkitBackgroundClip: "text",
         backgroundClip: "text",
         color: "transparent",
@@ -90,6 +99,7 @@ const wordStyle = (
 export const WordCascade: React.FC<{ scene: CascadeProps }> = ({ scene }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const theme = useTheme();
   const bg = BGS[scene.bg ?? "cream"];
   const dark = (scene.bg ?? "cream") !== "black";
   const hasFace = Boolean(scene.bottomSrc);
@@ -127,7 +137,7 @@ export const WordCascade: React.FC<{ scene: CascadeProps }> = ({ scene }) => {
           <div
             key={i}
             style={{
-              ...wordStyle(w.style, dark, w.size ?? 1, (w as {accent?: boolean}).accent ?? false),
+              ...wordStyle(w.style, dark, w.size ?? 1, (w as {accent?: boolean}).accent ?? false, theme),
               opacity: pop,
               transform: `scale(${0.86 + 0.14 * pop}) translateY(${(1 - pop) * 18}px)`,
             }}

@@ -1,4 +1,6 @@
 import React from "react";
+import { THEMES } from "../theme/tokens";
+import { DISPLAY } from "../theme/type";
 import {
   AbsoluteFill,
   useCurrentFrame,
@@ -10,7 +12,10 @@ import type { Scene } from "../types";
 
 type MockProps = Extract<Scene, { type: "desktopmockup" }>;
 
-const ACCENT = "#d97757";
+// The clay the user rejected on 2026-08-18, still here after it was removed
+// from HeadlineBuild and WordCascade. It belongs to no palette; the style
+// pack has an accent and it derives its own text-safe variants.
+const ACCENT = THEMES.editorial.accentOnDark;
 
 const FileIcon: React.FC<{ kind: string }> = ({ kind }) => {
   if (kind === "folder") {
@@ -82,7 +87,7 @@ export const DesktopMockup: React.FC<{ scene: MockProps }> = ({ scene }) => {
             >
               <div
                 style={{
-                  fontFamily: "Fraunces, Georgia, serif",
+                  fontFamily: DISPLAY,
                   fontStyle: "italic",
                   fontWeight: 700,
                   fontSize: 46,

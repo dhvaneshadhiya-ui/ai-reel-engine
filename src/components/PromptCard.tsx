@@ -1,4 +1,6 @@
 import React from "react";
+import { CYAN, MACOS_TRAFFIC, TINT, TINT_GRADIENT } from "../theme/palette";
+import { SIZE } from "../theme/type";
 
 /** y 0.79 — just inside the platform safe floor (platformSafeArea.ts). */
 const SAFE_LOW = 400;
@@ -15,12 +17,11 @@ type Props = Extract<Scene, { type: "promptcard" }>;
 
 const BGS: Record<string, string> = {
   black: "#0a0a0a",
-  cream: "#f2ecdf",
-  gradient: "linear-gradient(160deg,#e6edf7 0%,#f3e6dc 55%,#ecdcf1 100%)",
+  cream: TINT.sand,
+  gradient: TINT_GRADIENT,
 };
 const SANS =
   "-apple-system,'SF Pro Display','Helvetica Neue',Inter,sans-serif";
-const CYAN = "#0aa9c2";
 
 /** Renders prompt text with highlighted substrings wrapped in a cyan pill. */
 function renderPrompt(text: string, highlights: string[], lit: number) {
@@ -136,14 +137,14 @@ export const PromptCard: React.FC<{ scene: Props }> = ({ scene }) => {
           }}
         >
           <div style={{ display: "flex", gap: 10, marginBottom: 30 }}>
-            <span style={{ width: 15, height: 15, borderRadius: 8, background: "#ff5f57" }} />
-            <span style={{ width: 15, height: 15, borderRadius: 8, background: "#febc2e" }} />
-            <span style={{ width: 15, height: 15, borderRadius: 8, background: "#28c840" }} />
+            <span style={{ width: 15, height: 15, borderRadius: 8, background: MACOS_TRAFFIC.close }} />
+            <span style={{ width: 15, height: 15, borderRadius: 8, background: MACOS_TRAFFIC.minimise }} />
+            <span style={{ width: 15, height: 15, borderRadius: 8, background: MACOS_TRAFFIC.zoom }} />
             {scene.app && (
               <span style={{ marginLeft: "auto", fontSize: 28, color: dark ? "#888" : "#999", fontWeight: 600 }}>{scene.app}</span>
             )}
           </div>
-          <div style={{ fontSize: 46, lineHeight: 1.3, fontWeight: 650, color: dark ? "#f2f2f2" : "#1a1a1a" }}>
+          <div style={{ fontSize: SIZE.body, lineHeight: 1.3, fontWeight: 700, color: dark ? "#f2f2f2" : "#1a1a1a" }}>
             {renderPrompt(typed, scene.highlights ?? [], Math.round(litCount))}
             {shown < full.length && <span style={{ opacity: (frame % 20) < 10 ? 1 : 0 }}>|</span>}
           </div>

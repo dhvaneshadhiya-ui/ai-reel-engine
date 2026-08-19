@@ -1,4 +1,5 @@
 import React from "react";
+import { MACOS_TRAFFIC } from "../theme/palette";
 import { Credit } from "./Credit";
 import {
   AbsoluteFill,
@@ -108,7 +109,7 @@ export const DeviceFrame: React.FC<DeviceFrameProps> = ({
   const mediaH = isBrowser ? Math.round(cardW / aspect) : 922;
   const bezel = isBrowser ? 0 : 14;
 
-  const trafficColors = ["#ff5f57", "#febc2e", "#28c840"];
+  const trafficColors = [MACOS_TRAFFIC.close, MACOS_TRAFFIC.minimise, MACOS_TRAFFIC.zoom];
 
   const device = isBrowser ? (
     <div

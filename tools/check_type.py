@@ -29,7 +29,7 @@ ROOT = Path(__file__).resolve().parent.parent
 COMPONENTS = ROOT / "src/components"
 
 # Mirrors src/theme/type.ts. If the scale moves, move it here in the same commit.
-SIZES = {28, 36, 46, 60, 78, 100, 130}
+SIZES = {22, 28, 36, 46, 60, 78, 100, 130}   # 22 = nano, added 2026-08-18
 WEIGHTS = {400, 600, 700, 800, 900}
 # Files that legitimately define the system, or draw type as GRAPHICS rather
 # than set it as text.

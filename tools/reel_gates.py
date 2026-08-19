@@ -201,7 +201,19 @@ DATA_MIN = 2.0       # a card carrying a claim must outlast the claim           
 # HeadlineBuild.tsx renders these at fixed sizes with NO auto-fit, so an
 # over-long line wraps and orphans a word (user note 2026-08-11).
 # Limits measured against the 1080px frame at the component's real font sizes.
-LINE_MAX_CHARS = {"label": 30, "headline": 18, "subtitle": 26}
+# DERIVED from the type scale and the measured advance, not typed. These were
+# {"label": 30, "headline": 18, "subtitle": 26} — calibrated for Fraunces, and
+# silently wrong from the moment the display face became Space Grotesk on
+# 2026-08-18: the real headline budget fell to ~14 characters while the gate
+# kept passing 18, so six headlines already in the library overflow the frame
+# with a clean build. Mirrors src/theme/fit.ts ADVANCE; test_gates.py asserts
+# the two agree.
+_ADVANCE = 0.655                 # src/theme/fit.ts
+_BOX_W = 1080 * (1 - 2 * 0.06) - 140     # safe width, centred block padding
+_SIZE = {"label": 36, "subtitle": 60, "headline": 100}   # src/theme/type.ts
+LINE_MAX_CHARS = {
+    k: int(_BOX_W / (v * _ADVANCE)) for k, v in _SIZE.items()
+}
 
 AZ_ASPECT_MAX = 2.5    # G36. NOT a fresh measurement: it is the SAME wide-
                        # artifact line RULES.md already sets for `receipt`
@@ -221,10 +233,9 @@ AZ_ASPECT_MAX = 2.5    # G36. NOT a fresh measurement: it is the SAME wide-
 BLOCKING_RULES: dict[str, str] = {
     # RULE 1 — the output is an Instagram Reel / YouTube Short.
     "G01": "R1 audio and scenes must stay in sync or the tail drifts",
-    "G05": "R1 display type must fit the phone frame, not wrap and orphan",
     "G20": "R1 a row that never lands is unreadable on a phone",
     "G25": "R1 a cue that never lands is unreadable on a phone",
-    "G30": "R1 an orphaned number fragment is unreadable",
+    "G30": "R3 a split number makes the caption say what he did not",
     "G32": "R1 the outro must clear the platform's own chrome",
     "G34": "R1 an orphaned single letter is unreadable",
     "G38": "R1 70-85% watch on mute, so the hook must carry words",
@@ -235,17 +246,22 @@ BLOCKING_RULES: dict[str, str] = {
     # by measurement (two-pass lands ~0.5 LU short), not chosen; widen it if it
     # ever rejects a master that sounds right.
     "G31": "R1 platforms normalise loudness, so the master must hit the target",
+    # G46 is deliberately NOT here. A caption riding our own credit lane is our
+    # layout colliding with our layout — craft, not the Reels/Shorts rule. See
+    # the split note at the gate itself.
+    "G45": "R1 a caption under the account row is painted over by the platform",
     # RULE 2 — sources are scouted on mobile view first.
     "G29": "R2 sources are captured on mobile view first",
     "G41": "R2 a desktop capture needs a recorded reason",
     # RULE 3 — what is on screen matches what the creator says.
     #
-    # G18 is NOT here on purpose. Its principle is Rule 3 — a card must outlast
-    # the sentence it illustrates — but the CHECK is a flat 2.0s minimum, which
-    # is taste, not the rule: a 1.6s card over a 1.4s claim satisfies Rule 3 and
-    # a 2.1s card over a 3s claim breaks it. A fixed number wearing an R3 badge
-    # is exactly the thing this restructure exists to delete. Promote it back to
-    # blocking once it measures the claim's real length from word timings.
+    # G18 PROMOTED 2026-08-18, on the condition this note set: it now measures
+    # the claim's real length from word timings instead of asserting a flat 2.0s.
+    # A card that ends while the sentence explaining it is still being spoken
+    # contradicts what the viewer is hearing, which is Rule 3. The flat minimum
+    # survives as G18a — ADVICE — for cards with no speech over them at all,
+    # where there is no claim to outlast and the number is only taste.
+    "G18": "R3 a card must outlast the sentence it illustrates",
     "G21": "R3 captions must be words that were actually spoken",
     "G39": "R3 every scene must carry the script line it illustrates",
     # RENDER — not opinion. These produce black frames or crash.
@@ -404,7 +420,18 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 f"{sc['durationSec']:.2f}s > {lim}s — split the VO across 2-3 "
                 "distinct visuals.")
 
-    # G05 — display type does not auto-fit; long lines wrap and orphan a word
+    # G05 — a display line longer than the frame comfortably holds. ADVICE.
+    #
+    # DEMOTED FROM BLOCKING 2026-08-18. Its stated reason was "HeadlineBuild has
+    # no auto-fit; this wraps and orphans a word" — a RENDER defect, which is
+    # why it blocked. HeadlineBuild now shrinks to fit (src/theme/fit.ts), so
+    # the render is correct at any length and the defect no longer exists.
+    #
+    # What is left is real but is taste: a claim that has been shrunk to 62% of
+    # display size still fits, still reads, and is probably too wordy for a
+    # hook. That is a judgement about copy, not a fact about Reels, so it
+    # advises. Per RULES.md section 0, test (3): if the renderer fixes it, the
+    # frame is already right and the check is a lint, not a law.
     for i, sc in enumerate(scenes):
         hl = sc.get("headline")
         if not isinstance(hl, dict):
@@ -416,8 +443,10 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 if len(part) > limit:
                     errors.append(
                         f"G05 scene {i:02d} {kind} line is {len(part)} chars "
-                        f"(max {limit}): {part!r} — HeadlineBuild has no "
-                        "auto-fit; this wraps and orphans a word.")
+                        f"(comfortable max {limit} at this face and size): "
+                        f"{part!r} — it renders, because HeadlineBuild shrinks "
+                        f"to fit, but it lands smaller than the scale intends. "
+                        f"Shorter copy reads better than smaller type.")
 
     # G06 — facecam share of runtime
     avatar_scenes = [s for s in scenes
@@ -552,14 +581,52 @@ def check_beats(beats: dict, vo_end: float | None = None,
 
     # G18 — a card that states a claim must not vanish mid-sentence (user
     # 2026-08-12 #6: "motion graphics disappear before the creator finishes").
+    #
+    # NOW MEASURED, not assumed (2026-08-18). The rule had been a flat
+    # `durationSec < 2.0`, and the note in BLOCKING_RULES explained why that
+    # could not be law: "a 1.6s card over a 1.4s claim satisfies Rule 3 and a
+    # 2.1s card over a 3s claim breaks it". A fixed number cannot tell those
+    # apart, because the thing it is really about — the SENTENCE — was never in
+    # the check.
+    #
+    # With word timings the real question is answerable: does the card outlast
+    # the speech that runs under it? That is Rule 3 exactly — what is on screen
+    # matching what is being said — so when the measurement is available this
+    # blocks, and where it is not (no vo_words) it falls back to the flat
+    # minimum as ADVICE, which is all a guess was ever worth.
+    _wt: list[tuple[str, float, float]] = []
+    for x in (vo_words or []):
+        if isinstance(x, (list, tuple)) and len(x) >= 3:
+            try:
+                _wt.append((str(x[0]), float(x[1]), float(x[2])))
+            except (TypeError, ValueError):
+                pass
+    _cursor = 0.0
     for i, sc in enumerate(scenes):
-        if sc["type"] in ("specsheet", "chart", "timeline", "statcard") \
-                and sc["durationSec"] < DATA_MIN:
+        start = _cursor
+        _cursor += sc["durationSec"]
+        end = _cursor
+        if sc["type"] not in ("specsheet", "chart", "timeline", "statcard"):
+            continue
+        # The claim is the speech that STARTS while this card is up. A word that
+        # began before the card appeared belongs to the previous beat.
+        spoken = [(a, b) for _, a, b in _wt if start <= a < end]
+        if spoken:
+            claim_end = max(b for _, b in spoken)
+            if claim_end > end + 0.04:      # ~1 frame of tolerance at 30fps
+                errors.append(
+                    f"G18 scene {i:02d} ({sc['type']}) ends at {end:.2f}s but the "
+                    f"sentence it illustrates runs to {claim_end:.2f}s — the card "
+                    f"vanishes {claim_end - end:.2f}s before the creator finishes "
+                    f"saying it. Hold it to the LAST word of the claim.")
+        elif sc["durationSec"] < DATA_MIN:
+            # nothing spoken over it, so there is no claim to outlast; the flat
+            # minimum is taste and says so
             errors.append(
-                f"G18 scene {i:02d} ({sc['type']}) holds only "
-                f"{sc['durationSec']:.2f}s — a data card needs >={DATA_MIN}s so it "
-                "outlasts the sentence it illustrates. Anchor its region on the "
-                "LAST word of the claim, not the first.")
+                f"G18a scene {i:02d} ({sc['type']}) holds only "
+                f"{sc['durationSec']:.2f}s with no speech over it — under "
+                f"{DATA_MIN}s a data card is hard to read at all. Judgement, not "
+                "a rule: nothing is being contradicted, it is just quick.")
 
     # G19 — THE PRESENTER'S FACE MUST MATCH THE REEL'S REGISTER (2026-08-12).
     # Measured: a photo avatar's expression is fixed by its source still, so
@@ -1335,6 +1402,79 @@ def check_beats(beats: dict, vo_end: float | None = None,
                         f"{_norm_words(spoken)[:64]!r}) — move the scene to the "
                         "line it illustrates, or point it at what is actually "
                         "being said.")
+
+    # G47 — CREDITS SUPPRESSED FOR THIS REEL. Advice, and loud.
+    #
+    # The user can turn on-screen credits off per video (RULES.md 2c). The flag
+    # carries its own reason — `noCredits: {reason}` — so it cannot be set as a
+    # bare switch, the same shape as allowLong + allowLongReason and the capture
+    # tool's --desktop-reason.
+    #
+    # This does NOT block: it is the user's call, stated at topic time. What it
+    # refuses to do is happen quietly. A reel that ships with no attribution on
+    # screen should say so in the one place somebody reads before rendering.
+    nc = beats.get("noCredits")
+    if nc:
+        reason = (nc or {}).get("reason", "") if isinstance(nc, dict) else ""
+        n_sources = len({(sc.get("credit") or "").strip()
+                         for sc in scenes if sc.get("credit")})
+        if not reason.strip():
+            errors.append(
+                "G47 noCredits is set with no reason. It takes `{\"reason\": "
+                "\"...\"}` — the flag is an argument, not a switch.")
+        else:
+            errors.append(
+                f"G47 this reel draws NO source credits on screen ({n_sources} "
+                f"source(s) still recorded in the sheet). Reason: {reason!r}. "
+                f"The manifest and G14 are unaffected; the licence terms of any "
+                f"borrowed material are not — check them separately.")
+
+    # G45 (RULE 1, blocking) + G46 (craft, advice) — WHERE A CAPTION MAY SIT.
+    #
+    # SPLIT 2026-08-18, the day after G45 was written, because as first written
+    # it was the exact defect this whole restructure exists to delete.
+    #
+    # It blocked every caption below bottom 500 (y 0.740) with the reason "under
+    # the platform's own UI". But the platform's own UI is MEASURED, and it
+    # starts at y 0.835 — Instagram's account row, per src/platformSafeArea.ts.
+    # A caption at y 0.78 is not under anything Instagram draws. It is sitting
+    # on OUR source credit, which is our layout, our choice, and taste.
+    #
+    # So 183px of that band was craft wearing an R1 badge — the same fault the
+    # G18 note describes ("a fixed number wearing an R3 badge"), committed by
+    # the same hand that wrote the note. The user's constitution is that ONLY
+    # "we are making videos for Reels and Shorts" may block. Being covered by
+    # Instagram's chrome is that rule. Colliding with our own credit is not.
+    #
+    # G45 now blocks ONLY at the measured furniture. Everything above it is
+    # G46, advice — and src/platformSafeArea.ts still clamps at render time, so
+    # the frame is correct either way. The difference is that a person, not a
+    # gate, decides whether a caption riding the credit lane is wrong here.
+    #
+    # 317 = round(1920 * (1 - 0.835)): the caption's LOWEST ink must stay above
+    # the account row. 500 = platformSafeArea.captionFloorPx(1920). Both are
+    # asserted in tools/test_gates.py so neither can drift from its source.
+    PLATFORM_FLOOR = 317
+    CAPTION_FLOOR = 500
+    for i, sc in enumerate(scenes):
+        cb = sc.get("captionBottom")
+        if cb is None or sc.get("hideCaptions"):
+            continue
+        cb = int(cb)
+        y = 1 - cb / 1920
+        if cb < PLATFORM_FLOOR:
+            errors.append(
+                f"G45 scene {i:02d} sets captionBottom {cb} (y {y:.3f}) — under "
+                f"Instagram's own account row (measured y 0.835). The platform "
+                f"paints over this; the words cannot be read on either app. "
+                f"Raise it above {PLATFORM_FLOOR}, or drop the field.")
+        elif cb < CAPTION_FLOOR:
+            errors.append(
+                f"G46 scene {i:02d} sets captionBottom {cb} (y {y:.3f}) — clear "
+                f"of the platform, but inside our own credit lane (floor "
+                f"{CAPTION_FLOOR}, y 0.740). The renderer clamps it, so the "
+                f"frame is fine; worth deciding on purpose rather than "
+                f"inheriting the clamp.")
 
     # G41 (Rule 2, blocking) + G42 (tier, advice) — WHERE EACH SOURCE CAME
     # FROM, AND HOW IT WAS CAPTURED.

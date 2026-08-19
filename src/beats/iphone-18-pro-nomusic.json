@@ -1,0 +1,909 @@
+{
+ "id": "iphone-18-pro-nomusic",
+ "fps": 30,
+ "width": 1080,
+ "height": 1920,
+ "style": "editorial",
+ "audio": "assets/iphone-18-pro/avatar-master.mp4",
+ "captionStyle": "word-reveal",
+ "emphasis": [
+  "September",
+  "signal",
+  "iris",
+  "50%",
+  "35%",
+  "2nm",
+  "10%",
+  "satellite",
+  "upgrade"
+ ],
+ "scenes": [
+  {
+   "type": "split",
+   "topSrc": "assets/iphone-18-pro/hook-pair.jpg",
+   "bottomSrc": "assets/iphone-18-pro/avatar-master.mp4",
+   "captionBottom": 1000,
+   "credit": "MacRumors mockup",
+   "topFocusX": 0.5,
+   "bottomFocusX": 0.48,
+   "headline": {
+    "lines": [
+     {
+      "text": "EXPECTED SEPT 9",
+      "kind": "label",
+      "at": 0.15
+     },
+     {
+      "text": "iPHONE 18 PRO",
+      "kind": "headline",
+      "at": 0.45
+     }
+    ],
+    "y": 0.05,
+    "theme": "dark"
+   },
+   "durationSec": 1.64,
+   "bottomFrom": 0.0
+  },
+  {
+   "type": "wordcascade",
+   "bg": "black",
+   "words": [
+    {
+     "text": "SEPTEMBER 9",
+     "style": "serif",
+     "at": 0.2,
+     "accent": true
+    }
+   ],
+   "durationSec": 2.5
+  },
+  {
+   "type": "categorygrid",
+   "bg": "gradient",
+   "headline": "WHAT'S REPORTEDLY CHANGING",
+   "cards": [
+    {
+     "label": "CAMERA"
+    },
+    {
+     "label": "DISPLAY"
+    },
+    {
+     "label": "CHIP"
+    },
+    {
+     "label": "SIGNAL"
+    }
+   ],
+   "durationSec": 1.9
+  },
+  {
+   "type": "receipt",
+   "src": "assets/iphone-18-pro/rc-macrumors-head.jpg",
+   "srcWidth": 1080,
+   "srcHeight": 1370,
+   "backdrop": "cream",
+   "credit": "Source: MacRumors",
+   "captionBottom": 520,
+   "durationSec": 2.38,
+   "assetId": "rc-macrumors-head",
+   "claimId": "rc-macrumors-head",
+   "covers": "it changes more than"
+  },
+  {
+   "type": "categorygrid",
+   "bg": "gradient",
+   "headline": "WHAT'S REPORTEDLY CHANGING",
+   "cards": [
+    {
+     "label": "CAMERA"
+    },
+    {
+     "label": "DISPLAY"
+    },
+    {
+     "label": "CHIP"
+    },
+    {
+     "label": "SIGNAL",
+     "sub": "no service"
+    }
+   ],
+   "selectIndex": 3,
+   "selectAt": 0.5,
+   "sfx": [
+    {
+     "src": "sfx/Pop.MP3",
+     "at": 0.5,
+     "vol": 0.343
+    }
+   ],
+   "durationSec": 1.9
+  },
+  {
+   "type": "wordcascade",
+   "bg": "black",
+   "words": [
+    {
+     "text": "NO SIGNAL",
+     "style": "serif",
+     "at": 0.15,
+     "accent": true
+    }
+   ],
+   "durationSec": 1.74
+  },
+  {
+   "type": "footage",
+   "src": "assets/iphone-18-pro/avatar-master.mp4",
+   "zoomDir": "in",
+   "durationSec": 1.42,
+   "from": 12.06,
+   "focusX": 0.5
+  },
+  {
+   "type": "footage",
+   "src": "assets/iphone-18-pro/mg-aperture-iris.mp4",
+   "zoomDir": "none",
+   "captionBottom": 520,
+   "sfx": [
+    {
+     "src": "sfx/whoosh.MP3",
+     "at": 0.0,
+     "vol": 0.582
+    }
+   ],
+   "credit": "iGeeksBlog illustration",
+   "durationSec": 2.26
+  },
+  {
+   "type": "hcompare",
+   "topSrc": "assets/iphone-18-pro/iris-open.jpg",
+   "bottomSrc": "assets/iphone-18-pro/iris-closed.jpg",
+   "topLabel": "WIDE OPEN",
+   "bottomLabel": "STOPPED DOWN",
+   "topFrac": 0.5,
+   "messages": [
+    "MORE LIGHT IN THE DARK",
+    "EVERYTHING FRONT-TO-BACK SHARP"
+   ],
+   "credit": "iGeeksBlog illustration",
+   "durationSec": 2.6
+  },
+  {
+   "type": "specsheet",
+   "kicker": "THE CAMERA",
+   "title": "VARIABLE APERTURE",
+   "rows": [
+    {
+     "label": "Wide open",
+     "value": "more light in the dark"
+    },
+    {
+     "label": "Stopped down",
+     "value": "front-to-back sharp",
+     "accent": true
+    }
+   ],
+   "footnote": "First reported by analyst Ming-Chi Kuo, Dec 2024",
+   "durationSec": 2.02
+  },
+  {
+   "type": "categorygrid",
+   "bg": "gradient",
+   "headline": "TWO STATES, ONE LENS",
+   "cards": [
+    {
+     "label": "WIDE OPEN",
+     "sub": "low light"
+    },
+    {
+     "label": "STOPPED DOWN",
+     "sub": "all sharp"
+    }
+   ],
+   "selectIndex": 1,
+   "selectAt": 0.45,
+   "durationSec": 2.26
+  },
+  {
+   "type": "footage",
+   "src": "assets/iphone-18-pro/avatar-master.mp4",
+   "zoomDir": "in",
+   "durationSec": 1.52,
+   "from": 22.62,
+   "focusX": 0.5
+  },
+  {
+   "type": "statcard",
+   "bg": "black",
+   "title": "LENS UNIT COST",
+   "titleRight": "EST.",
+   "rows": [
+    {
+     "label": "iPhone 17 Pro",
+     "value": "7-element lens",
+     "pct": 66
+    },
+    {
+     "label": "iPhone 18 Pro",
+     "value": "about +50%",
+     "pct": 100
+    }
+   ],
+   "footnote": "Estimate: analyst Ming-Chi Kuo",
+   "sfx": [
+    {
+     "src": "sfx/Core.MP3",
+     "at": 0.35,
+     "vol": 0.556
+    }
+   ],
+   "durationSec": 1.62
+  },
+  {
+   "type": "wordcascade",
+   "bg": "black",
+   "words": [
+    {
+     "text": "+50%",
+     "style": "serif",
+     "at": 0.15,
+     "accent": true
+    },
+    {
+     "text": "ON THE LENS",
+     "style": "serif",
+     "at": 0.6
+    }
+   ],
+   "durationSec": 2.32
+  },
+  {
+   "type": "categorygrid",
+   "bg": "gradient",
+   "headline": "WHAT'S REPORTEDLY CHANGING",
+   "cards": [
+    {
+     "label": "CAMERA"
+    },
+    {
+     "label": "DISPLAY"
+    },
+    {
+     "label": "CHIP"
+    },
+    {
+     "label": "SIGNAL"
+    }
+   ],
+   "selectIndex": 1,
+   "selectAt": 0.4,
+   "durationSec": 2.12
+  },
+  {
+   "type": "footage",
+   "src": "assets/iphone-18-pro/mg-island-shrink.mp4",
+   "zoomDir": "none",
+   "captionBottom": 520,
+   "sfx": [
+    {
+     "src": "sfx2/whooshes-01.mp3",
+     "at": 0.0,
+     "vol": 0.543
+    }
+   ],
+   "credit": "Ice Universe",
+   "durationSec": 2.58
+  },
+  {
+   "type": "statcard",
+   "bg": "black",
+   "title": "CUTOUT WIDTH",
+   "rows": [
+    {
+     "label": "Now",
+     "value": "20.76mm",
+     "pct": 100
+    },
+    {
+     "label": "Reported",
+     "value": "13.49mm",
+     "pct": 65
+    }
+   ],
+   "footnote": "Leaker Ice Universe, Jan 2026",
+   "durationSec": 1.36
+  },
+  {
+   "type": "specsheet",
+   "kicker": "WHY IT SHRINKS",
+   "title": "DYNAMIC ISLAND",
+   "rows": [
+    {
+     "label": "Flood illuminator",
+     "value": "moves under the display"
+    },
+    {
+     "label": "Cutout width",
+     "value": "20.76mm to 13.49mm",
+     "accent": true
+    }
+   ],
+   "footnote": "Reported by leaker Ice Universe, Jan 2026",
+   "durationSec": 3.08
+  },
+  {
+   "type": "footage",
+   "src": "assets/iphone-18-pro/avatar-master.mp4",
+   "zoomDir": "in",
+   "durationSec": 2.24,
+   "from": 37.22,
+   "focusX": 0.5
+  },
+  {
+   "type": "wordcascade",
+   "bg": "black",
+   "words": [
+    {
+     "text": "A20 PRO",
+     "style": "serif",
+     "at": 0.15
+    },
+    {
+     "text": "2nm",
+     "style": "serif",
+     "at": 0.6,
+     "accent": true
+    }
+   ],
+   "durationSec": 2.04
+  },
+  {
+   "type": "statcard",
+   "bg": "black",
+   "title": "A20 PRO vs A19 PRO",
+   "rows": [
+    {
+     "label": "Speed",
+     "value": "+15%",
+     "pct": 100
+    },
+    {
+     "label": "Power draw",
+     "value": "-30%",
+     "pct": 70
+    }
+   ],
+   "footnote": "Projection for an unreleased chip: analyst Jeff Pu",
+   "sfx": [
+    {
+     "src": "sfx/Core.MP3",
+     "at": 0.3,
+     "vol": 0.556
+    }
+   ],
+   "durationSec": 1.84
+  },
+  {
+   "type": "specsheet",
+   "kicker": "THE TRADE",
+   "title": "A20 PRO",
+   "rows": [
+    {
+     "label": "Process",
+     "value": "2nm",
+     "accent": true
+    },
+    {
+     "label": "Power draw",
+     "value": "-30%"
+    }
+   ],
+   "footnote": "Projection: analyst Jeff Pu",
+   "durationSec": 2.48
+  },
+  {
+   "type": "footage",
+   "src": "assets/iphone-18-pro/avatar-master.mp4",
+   "zoomDir": "none",
+   "durationSec": 1.08,
+   "from": 45.82,
+   "focusX": 0.5
+  },
+  {
+   "type": "statcard",
+   "bg": "cream",
+   "title": "BATTERY",
+   "rows": [
+    {
+     "label": "iPhone 18 Pro Max",
+     "value": "about +10%",
+     "pct": 100
+    }
+   ],
+   "footnote": "Pro Max only. The smaller Pro is reported near flat.",
+   "durationSec": 2.48
+  },
+  {
+   "type": "footage",
+   "src": "assets/iphone-18-pro/avatar-master.mp4",
+   "zoomDir": "none",
+   "sfx": [
+    {
+     "src": "sfx/Riser.MP3",
+     "at": 0.0,
+     "vol": 0.359
+    }
+   ],
+   "durationSec": 2.64,
+   "from": 49.38,
+   "focusX": 0.5
+  },
+  {
+   "type": "specsheet",
+   "kicker": "THE PAYOFF",
+   "title": "5G VIA SATELLITE",
+   "rows": [
+    {
+     "label": "Apple C2 modem",
+     "value": "on board"
+    },
+    {
+     "label": "Wi-Fi",
+     "value": "not needed"
+    },
+    {
+     "label": "Cell tower",
+     "value": "not needed",
+     "accent": true
+    }
+   ],
+   "footnote": "Reported; not announced by Apple",
+   "sfx": [
+    {
+     "src": "sfx/Magic Reveal.MP3",
+     "at": 0.05,
+     "vol": 1.0
+    }
+   ],
+   "durationSec": 3.14
+  },
+  {
+   "type": "wordcascade",
+   "bg": "black",
+   "words": [
+    {
+     "text": "NO TOWER",
+     "style": "serif",
+     "at": 0.15
+    },
+    {
+     "text": "IN SIGHT",
+     "style": "serif",
+     "at": 0.6,
+     "accent": true
+    }
+   ],
+   "durationSec": 1.8
+  },
+  {
+   "type": "footage",
+   "src": "assets/iphone-18-pro/avatar-master.mp4",
+   "zoomDir": "in",
+   "sfx": [
+    {
+     "src": "sfx2/impact-boom.mp3",
+     "at": 0.1,
+     "vol": 0.452
+    }
+   ],
+   "durationSec": 2.88,
+   "from": 56.96,
+   "focusX": 0.5
+  },
+  {
+   "type": "wordcascade",
+   "bg": "black",
+   "words": [
+    {
+     "text": "CAMERA",
+     "style": "serif",
+     "at": 0.1
+    },
+    {
+     "text": "SCREEN",
+     "style": "serif",
+     "at": 0.4
+    },
+    {
+     "text": "SIGNAL",
+     "style": "serif",
+     "at": 0.7,
+     "accent": true
+    }
+   ],
+   "durationSec": 1.68
+  },
+  {
+   "type": "floatcard",
+   "src": "assets/iphone-18-pro/hero-lineup.mp4",
+   "aspect": 1.778,
+   "bg": "gradient",
+   "credit": "MacRumors mockup",
+   "captionBottom": 520,
+   "kinetic": {
+    "text": "MacRumors mockup",
+    "style": "chip",
+    "at": 0.15,
+    "scrim": false
+   },
+   "sfx": [
+    {
+     "src": "sfx/Camera Shutter.MP3",
+     "at": 0.08,
+     "vol": 0.32
+    }
+   ],
+   "durationSec": 2.38
+  },
+  {
+   "type": "floatcard",
+   "src": "assets/iphone-18-pro/crop-pair.mp4",
+   "aspect": 0.9,
+   "bg": "gradient",
+   "credit": "MacRumors mockup",
+   "captionBottom": 520,
+   "durationSec": 2.44
+  },
+  {
+   "type": "footage",
+   "src": "assets/iphone-18-pro/avatar-master.mp4",
+   "zoomDir": "none",
+   "durationSec": 1.56,
+   "from": 66.34,
+   "focusX": 0.5
+  },
+  {
+   "type": "floatcard",
+   "src": "assets/iphone-18-pro/crop-cherry.mp4",
+   "aspect": 0.4605263157894737,
+   "bg": "gradient",
+   "credit": "MacRumors mockup",
+   "captionBottom": 520,
+   "durationSec": 2.44
+  },
+  {
+   "type": "footage",
+   "src": "assets/iphone-18-pro/outro-cherry.mp4",
+   "zoomDir": "none",
+   "credit": "MacRumors mockup",
+   "captionBottom": 520,
+   "kinetic": {
+    "text": "WHICH ONE WOULD\nMAKE YOU UPGRADE?",
+    "style": "serif",
+    "at": 0.15,
+    "y": 0.2,
+    "scrim": true
+   },
+   "durationSec": 2.15
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 1.64,
+   "text": "Apple's iPhone 18"
+  },
+  {
+   "start": 1.64,
+   "end": 2.82,
+   "text": "Pro is expected"
+  },
+  {
+   "start": 2.82,
+   "end": 4.14,
+   "text": "on September 9th"
+  },
+  {
+   "start": 4.14,
+   "end": 4.86,
+   "text": "and if the"
+  },
+  {
+   "start": 4.86,
+   "end": 6.16,
+   "text": "reports hold, it"
+  },
+  {
+   "start": 6.16,
+   "end": 7.02,
+   "text": "changes more than"
+  },
+  {
+   "start": 7.02,
+   "end": 7.8,
+   "text": "any pro in"
+  },
+  {
+   "start": 7.8,
+   "end": 9.24,
+   "text": "years, including one"
+  },
+  {
+   "start": 9.24,
+   "end": 10.32,
+   "text": "that only matters"
+  },
+  {
+   "start": 10.32,
+   "end": 11.12,
+   "text": "when you have"
+  },
+  {
+   "start": 11.12,
+   "end": 12.26,
+   "text": "no signal. Start"
+  },
+  {
+   "start": 12.26,
+   "end": 12.84,
+   "text": "with the camera."
+  },
+  {
+   "start": 13.48,
+   "end": 14.86,
+   "text": "A mechanical iris"
+  },
+  {
+   "start": 14.86,
+   "end": 15.4,
+   "text": "on the main"
+  },
+  {
+   "start": 15.4,
+   "end": 16.82,
+   "text": "lens that physically"
+  },
+  {
+   "start": 16.82,
+   "end": 17.82,
+   "text": "opens and closes,"
+  },
+  {
+   "start": 18.34,
+   "end": 19.28,
+   "text": "wide open in"
+  },
+  {
+   "start": 19.28,
+   "end": 20.36,
+   "text": "the dark. Stop"
+  },
+  {
+   "start": 20.36,
+   "end": 21.2,
+   "text": "down when you"
+  },
+  {
+   "start": 21.2,
+   "end": 22.04,
+   "text": "want everything sharp."
+  },
+  {
+   "start": 22.62,
+   "end": 23.88,
+   "text": "Analyst Ming-Chi Kuo"
+  },
+  {
+   "start": 23.88,
+   "end": 24.92,
+   "text": "says that lens"
+  },
+  {
+   "start": 24.92,
+   "end": 26.02,
+   "text": "alone costs about"
+  },
+  {
+   "start": 26.02,
+   "end": 27.64,
+   "text": "50% more, but"
+  },
+  {
+   "start": 27.64,
+   "end": 28.56,
+   "text": "you'd notice this"
+  },
+  {
+   "start": 28.56,
+   "end": 29.82,
+   "text": "one more. The"
+  },
+  {
+   "start": 29.82,
+   "end": 31.04,
+   "text": "Dynamic Island could"
+  },
+  {
+   "start": 31.04,
+   "end": 32.78,
+   "text": "shrink about 35%"
+  },
+  {
+   "start": 32.78,
+   "end": 34.14,
+   "text": "as Face ID's"
+  },
+  {
+   "start": 34.14,
+   "end": 35.88,
+   "text": "illuminator moves under"
+  },
+  {
+   "start": 35.88,
+   "end": 37.22,
+   "text": "the display. Inside"
+  },
+  {
+   "start": 37.22,
+   "end": 38.34,
+   "text": "the A20 Pro"
+  },
+  {
+   "start": 38.34,
+   "end": 39.46,
+   "text": "would be Apple's"
+  },
+  {
+   "start": 39.46,
+   "end": 40.94,
+   "text": "first 2nm chip,"
+  },
+  {
+   "start": 41.5,
+   "end": 43.34,
+   "text": "reportedly 15% faster"
+  },
+  {
+   "start": 43.34,
+   "end": 44.72,
+   "text": "on 30% less"
+  },
+  {
+   "start": 44.72,
+   "end": 46.0,
+   "text": "power. Pair that"
+  },
+  {
+   "start": 46.0,
+   "end": 46.68,
+   "text": "with a Pro"
+  },
+  {
+   "start": 46.68,
+   "end": 47.86,
+   "text": "Max battery about"
+  },
+  {
+   "start": 47.86,
+   "end": 49.38,
+   "text": "10% bigger. Back"
+  },
+  {
+   "start": 49.38,
+   "end": 49.98,
+   "text": "to that signal."
+  },
+  {
+   "start": 50.38,
+   "end": 51.3,
+   "text": "Apple's own C2"
+  },
+  {
+   "start": 51.3,
+   "end": 52.44,
+   "text": "modem reportedly adds"
+  },
+  {
+   "start": 52.44,
+   "end": 53.76,
+   "text": "5G over satellite,"
+  },
+  {
+   "start": 54.26,
+   "end": 55.16,
+   "text": "coverage with no"
+  },
+  {
+   "start": 55.16,
+   "end": 55.9,
+   "text": "tower in sight."
+  },
+  {
+   "start": 56.22,
+   "end": 56.96,
+   "text": "So this isn't"
+  },
+  {
+   "start": 56.96,
+   "end": 57.88,
+   "text": "just a camera"
+  },
+  {
+   "start": 57.88,
+   "end": 59.2,
+   "text": "upgrade. The screen,"
+  },
+  {
+   "start": 59.84,
+   "end": 60.74,
+   "text": "the chip, the"
+  },
+  {
+   "start": 60.74,
+   "end": 61.82,
+   "text": "signal, even the"
+  },
+  {
+   "start": 61.82,
+   "end": 62.96,
+   "text": "frosted back. It's"
+  },
+  {
+   "start": 62.96,
+   "end": 64.34,
+   "text": "wrapped in, reportedly"
+  },
+  {
+   "start": 64.34,
+   "end": 65.04,
+   "text": "in a new"
+  },
+  {
+   "start": 65.04,
+   "end": 66.48,
+   "text": "Dark Cherry. None"
+  },
+  {
+   "start": 66.48,
+   "end": 66.88,
+   "text": "of it is"
+  },
+  {
+   "start": 66.88,
+   "end": 68.2,
+   "text": "official until Apple"
+  },
+  {
+   "start": 68.2,
+   "end": 69.52,
+   "text": "says so. But"
+  },
+  {
+   "start": 69.52,
+   "end": 70.74,
+   "text": "which one would"
+  },
+  {
+   "start": 70.74,
+   "end": 71.78,
+   "text": "actually make you"
+  },
+  {
+   "start": 71.78,
+   "end": 72.16,
+   "text": "upgrade?"
+  }
+ ],
+ "script": "Apple's iPhone 18 Pro is expected on September 9.\nAnd if the reports hold, it changes more than any Pro in years, including one that only matters when you have no signal.\nStart with the camera: a mechanical iris on the main lens that physically opens and closes.\nWide open in the dark. Stopped down when you want everything sharp.\nAnalyst Ming-Chi Kuo says that lens alone costs about 50% more.\nBut you'd notice this one more: the Dynamic Island could shrink about 35%, as Face ID's illuminator moves under the display.\nInside, the A20 Pro would be Apple's first 2nm chip: reportedly 15% faster, on 30% less power.\nPair that with a Pro Max battery about 10% bigger.\nBack to that signal.\nApple's own C2 modem reportedly adds 5G over satellite. Coverage with no tower in sight.\nSo this isn't just a camera upgrade.\nThe screen, the chip, the signal, even the frosted back it's wrapped in, reportedly in a new Dark Cherry.\nNone of it is official until Apple says so.\nBut which one would actually make you upgrade?",
+ "approval": {
+  "sha256": "da2b8b156653df8cde870d947ec49c65968fa45faaabe1a62ef1a8b8b46e868f",
+  "approvedAt": "2026-08-19T05:45:29+00:00",
+  "words": 181,
+  "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+ },
+ "noMusic": true,
+ "noMusicReason": "VO-only variant of the approved reel. On 2026-08-18 the user asked for the music bed to be dropped from airpods-camera while keeping the SFX; that was logged as a per-video call, so the canonical iphone-18-pro keeps its automated bed and this derivative ships alongside it. Scenes, captions, SFX and the approved narration are identical."
+}

@@ -114,10 +114,24 @@ def hl(lines, y=0.10, theme="light", align="center"):
 
 
 # ── scene builders ──────────────────────────────────────────────────────────
+# CAPTION POSITION IS NOT A PIXEL A BUILD SCRIPT TYPES.
+#
+# Every one of these carried `cb=300` as a DEFAULT ARGUMENT, so every face shot
+# in every reel was born with captionBottom 300 — y 0.865, underneath the
+# Instagram account row measured at y 0.835. 52 scenes across six reels shipped
+# with captions the platform paints over, and the next reel built from this
+# script would have started the same way.
+#
+# The renderer derives the floor (src/platformSafeArea.ts captionFloorPx) and
+# clamps to it, so omitting the field gives the correct position for free. A
+# value is now passed ONLY to RAISE a caption above the default — clearing a
+# face, a lower third, a logo — which is composition and stays the author's
+# call. G45 blocks anything below the floor.
 def face(headline=None, cb=320):
     def b(t0, d):
         s = {"type": "footage", "src": AVATAR, "durationSec": d,
-             "from": round(t0, 2), "focusX": FOCUS_FULL, "captionBottom": cb}
+             "from": round(t0, 2), "focusX": FOCUS_FULL}
+        if cb: s["captionBottom"] = cb
         if headline:
             s["headline"] = headline
         return s
@@ -135,7 +149,7 @@ def rec(png, aid, sw, sh, credit, backdrop="cream", sfx=None):
     return b
 
 
-def az(png, aid, sw, sh, credit, focus, annos, bg="cream", sfx=None, cb=205):
+def az(png, aid, sw, sh, credit, focus, annos, bg="cream", sfx=None, cb=None):
     def b(t0, d):
         s = {"type": "annotatezoom", "durationSec": d, "src": f"{C}/{png}.png",
              "srcWidth": sw, "srcHeight": sh, "credit": credit, "bg": bg,

@@ -1,4 +1,5 @@
 import React from "react";
+import { Credit } from "./Credit";
 import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,

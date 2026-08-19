@@ -1,4 +1,5 @@
 import React from "react";
+import { useTheme } from "../theme/tokens";
 import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
@@ -57,6 +58,7 @@ const Starburst: React.FC<{ color: string; progress: number; spin: number }> = (
 
 /** Nick-style beat separator: an animated logo/wordmark alone on a clean field. */
 export const LogoBeat: React.FC<{ scene: LogoProps }> = ({ scene }) => {
+  const theme = useTheme();
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
   const enter = spring({
@@ -67,7 +69,7 @@ export const LogoBeat: React.FC<{ scene: LogoProps }> = ({ scene }) => {
   });
 
   const isStar = scene.mark === "starburst";
-  const markColor = scene.markColor ?? scene.textColor ?? "#d97757";
+  const markColor = scene.markColor ?? scene.textColor ?? theme.accentOnDark;
   // starburst grows in over ~16f, then slowly spins the whole time
   const burst = interpolate(frame, [0, 16], [0, 1], { extrapolateRight: "clamp" });
   const spin = frame * 0.55;
@@ -131,7 +133,7 @@ export const LogoBeat: React.FC<{ scene: LogoProps }> = ({ scene }) => {
                 : "-apple-system,'SF Pro Display','Helvetica Neue',sans-serif",
               fontWeight: scene.pixel ? 400 : 700,
               fontSize: scene.pixel ? 64 : 130,
-              color: scene.textColor ?? "#d97757",
+              color: scene.textColor ?? theme.accentOnDark,
               letterSpacing: scene.pixel ? "0.04em" : "-0.02em",
               transform: `scale(${0.8 + 0.2 * enter})`,
             }}

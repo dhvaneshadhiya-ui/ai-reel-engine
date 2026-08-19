@@ -28,6 +28,13 @@ function usage(exit = 1) {
   node tools/capture.mjs screenshot <url> --out shot.png [--scale 3] [--width 1200] [--height 900] [--selector "article"] [--full] [--wait 2500] [--hide "css,css"]
   node tools/capture.mjs record     <url> --out clip.webm [--duration 8] [--width 1280] [--height 800] [--scale 2] [--script actions.json] [--wait 2500] [--hide "css,css"]
   node tools/capture.mjs probe      <url> [--scale 3] [--width 1200] [--wait 2500]
+  node tools/capture.mjs batch      <plan.json> [--workers 4]
+
+BATCH takes a plan — an array of {url, out, ...flags} — and captures them with
+ONE browser instead of one per asset. Measured 2026-08-19: a single invocation
+costs 1.2-1.5s of node+chromium startup before any network, and a reel scouts
+22-51 assets, so the launches alone were a minute of pure overhead on top of
+running them one at a time.
 
 MOBILE IS THE DEFAULT (360x780 @3 = 1080x2340) because every reel is 9:16.
 Record where the source came from:
@@ -39,7 +46,8 @@ side-by-side comparisons.`);
   process.exit(exit);
 }
 
-if (!cmd || !url || !["screenshot", "record", "probe"].includes(cmd)) usage();
+if (!cmd || !["screenshot", "record", "probe", "batch"].includes(cmd)) usage();
+if (cmd !== "batch" && !url) usage();
 
 const flags = {};
 for (let i = 0; i < rest.length; i++) {
@@ -199,16 +207,16 @@ const CONTEXT_BASE = {
   ...(opts.mobile ? { isMobile: true, hasTouch: true } : {}),
 };
 
-async function settle(page) {
-  await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
+async function settle(page, pageUrl = url, o = opts) {
+  await page.goto(pageUrl, { waitUntil: "domcontentloaded", timeout: 60000 });
   await page.waitForLoadState("load", { timeout: 20000 }).catch(() => {});
   await page.waitForLoadState("networkidle", { timeout: 10000 }).catch(() => {});
-  await dismissBanners(page, opts.hide);
+  await dismissBanners(page, o.hide);
   // Nudge lazy-loaded images near the top of the page into loading.
   await page.evaluate(() => {
     document.querySelectorAll('img[loading="lazy"]').forEach((img) => (img.loading = "eager"));
   }).catch(() => {});
-  await sleep(opts.wait);
+  await sleep(o.wait);
 }
 
 function pngDimensions(file) {
@@ -276,6 +284,82 @@ async function screenshot() {
   const { w, h } = pngDimensions(opts.out);
   console.log(`saved ${path.resolve(opts.out)}  ${w}x${h}px  (scale ${opts.scale}x)`);
   writeProvenance(opts.out, url, opts, "screenshot");
+}
+
+// ------------------------------------------------------------------- batch
+//
+// WHY (measured 2026-08-19, answering "why does a reel take two hours")
+// Scouting was the largest hand stage and the only one still running strictly
+// one asset at a time: `capture.mjs screenshot <url>` launches Chromium, takes
+// one picture and closes it. Reels carry 22-51 assets.
+//
+//     fixed cost per invocation   1.2-1.5s   (node + chromium, no network)
+//     assets per reel             22-51
+//
+// So the launches alone were ~60s, and every page's network wait was serialised
+// behind the one before it. One browser, N pages in parallel, same per-asset
+// provenance — the tier and desktop-reason rules are unchanged, because those
+// are Rule 2 and a faster tool must not make them easier to skip.
+
+async function batch() {
+  const planPath = url;                       // second positional arg
+  const plan = JSON.parse(fs.readFileSync(planPath, "utf8"));
+  if (!Array.isArray(plan)) {
+    console.error("batch: plan must be a JSON array of {url, out, ...} items");
+    process.exit(1);
+  }
+  const workers = Math.max(1, Number(flags.workers || 4));
+  const browser = await newBrowser();
+  let done = 0, failed = 0;
+  const started = Date.now();
+
+  const queue = plan.slice();
+  async function drain() {
+    for (;;) {
+      const item = queue.shift();
+      if (!item) return;
+      const o = { ...opts, ...item };          // item flags override defaults
+      try {
+        ensureOutDir(o.out);
+        const context = await browser.newContext({
+          ...CONTEXT_BASE,
+          viewport: { width: o.width, height: o.height },
+          deviceScaleFactor: o.scale,
+        });
+        const page = await context.newPage();
+        // The SAME settle() the single-shot path uses — lazy-image nudge,
+        // banner dismissal, network idle. A batch that reimplements it would
+        // drift from it, and then a page would capture differently depending
+        // on which command took it.
+        await settle(page, item.url, o);
+        if (o.selector) {
+          const el = page.locator(o.selector).first();
+          await el.waitFor({ state: "visible", timeout: 15000 });
+          await el.scrollIntoViewIfNeeded();
+          await sleep(400);
+          await el.screenshot({ path: o.out, type: "png" });
+        } else {
+          await page.screenshot({ path: o.out, type: "png", fullPage: !!o.full });
+        }
+        await context.close();
+        const { w, h } = pngDimensions(o.out);
+        console.log(`  ok    ${o.out}  ${w}x${h}`);
+        writeProvenance(o.out, item.url, o, "screenshot");
+        done++;
+      } catch (e) {
+        // One bad URL must not take the other fifty with it.
+        console.error(`  FAIL  ${item.out}  ${String(e).split("\n")[0].slice(0, 90)}`);
+        failed++;
+      }
+    }
+  }
+
+  await Promise.all(Array.from({ length: workers }, drain));
+  await browser.close();
+  const secs = ((Date.now() - started) / 1000).toFixed(0);
+  console.log(`\n  ${done} captured, ${failed} failed, ${secs}s with ${workers} workers ` +
+              `(one browser, not ${plan.length}).`);
+  if (failed) process.exitCode = 1;
 }
 
 // ------------------------------------------------------------------ record
@@ -524,7 +608,7 @@ async function probe() {
 
 // -------------------------------------------------------------------- main
 
-const run = { screenshot, record, probe }[cmd];
+const run = { screenshot, record, probe, batch }[cmd];
 run().catch((err) => {
   console.error(`capture ${cmd} failed: ${err.message}`);
   process.exit(1);

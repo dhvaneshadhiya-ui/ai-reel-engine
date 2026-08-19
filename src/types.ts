@@ -23,6 +23,21 @@ export interface Kinetic {
   /** dark radial scrim behind the type (default true) — set false for ink
    *  type on light cards, where the scrim reads as a grey smear */
   scrim?: boolean;
+  /**
+   * When a card carries MORE THAN ONE CLAIM: the second when each `\n`-separated
+   * line lands, measured from the scene start.
+   *
+   * Added 2026-08-18, merging two thin typecards into one. Two cards each
+   * holding a single phrase were 76% and 74% empty frame; one card holding both
+   * fills properly — but only if each line arrives when ITS OWN phrase is
+   * spoken. A merged card with one entrance would put "September 9" on screen
+   * 1.4s before the creator says it, which is Rule 3 broken in the name of
+   * fixing dead space.
+   *
+   * Derived from vo.json word onsets, never typed by feel. Falls back to the
+   * per-line stagger when absent.
+   */
+  ats?: number[];
 }
 
 export interface HighlightBox {
@@ -60,6 +75,16 @@ export interface Headline {
   align?: "left" | "center";
   /** force text colour theme when over dark/light footage (default light) */
   theme?: "light" | "dark";
+  /**
+   * Extra seconds within the scene at which the block is STRUCK — a visual
+   * transient matching a sound effect that lands away from a line's own `at`.
+   *
+   * Every line is already struck when it lands, so this is only for a cue with
+   * no text event of its own. Written by tools/sync_impacts.py from the scene's
+   * `sfx` cues, never typed: the whole point is that the hit you see and the
+   * hit you hear are the same instant. See src/theme/impact.ts.
+   */
+  impacts?: number[];
 }
 
 interface SceneBase {
@@ -125,6 +150,14 @@ export type Scene =
       kinetic: Kinetic;
       bg?: string;
       fg?: string;
+      /**
+       * ADDED 2026-08-18. Five typecards in iphone-fold-ultra already carried
+       * `"credit": "MacRumors"`; the variant never declared the field, so the
+       * value sat in the beat sheet, passed G14 (which reads the sheet), and
+       * reached no frame. Excess properties survive JSON.parse silently — the
+       * contract has to name a field for anything to be able to miss it.
+       */
+      credit?: string;
     })
   | (SceneBase & {
       type: "wordcascade";
@@ -377,6 +410,17 @@ export type Scene =
       bgSrc?: string;
       bgFrom?: number;
       topY?: number;
+      /**
+       * Attribution for the reporting this timeline is built from.
+       *
+       * ADDED 2026-08-18, the second field found declared-but-undeclared in one
+       * day (see `typecard.credit`). airpods-camera and iphone18-split both set
+       * it — "Source: Mark Gurman, Bloomberg" and "MacRumors · Aug 12, 2026" —
+       * and both shipped with it drawn nowhere, because the variant did not
+       * name the field and TypeScript cannot check a property that does not
+       * exist in the contract.
+       */
+      footnote?: string;
     })
   | (SceneBase & { type: "chart" } & ChartSceneProps)
   | (SceneBase & { type: "deviceframe" } & DeviceFrameProps)
@@ -509,6 +553,26 @@ export interface BeatSheet {
   /** One line arguing why this topic needs the extra runtime. G02 rejects
    * `allowLong` without it — the flag is an argument, not a switch. */
   allowLongReason?: string;
+  /**
+   * Draw NO source credits on screen for this reel (user, 2026-08-19: "if I
+   * don't want to credit any source in a particular video, our system won't
+   * credit any source for that video only").
+   *
+   * The REASON IS PART OF THE FLAG, not a sibling field, so it cannot be set
+   * without one. Same shape as `allowLong` + `allowLongReason` and the capture
+   * tool's `--desktop-reason`: this repo asks for an argument, not a switch,
+   * wherever a decision removes something a rule normally requires.
+   *
+   * `credit` STAYS on every scene. The manifest, the beat sheet and G14 are
+   * untouched — the reel still records where every asset came from, and the
+   * packaging can still list sources. Only the on-screen label is suppressed.
+   *
+   * This does not change what a source's licence requires. Where footage is
+   * borrowed under terms that ask for attribution, turning the label off does
+   * not satisfy those terms; it just moves the obligation somewhere the
+   * renderer cannot see.
+   */
+  noCredits?: { reason: string };
   /** substrings rendered accented + larger inside caption chips */
   emphasis?: string[];
   scenes: Scene[];

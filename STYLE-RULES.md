@@ -2412,3 +2412,311 @@ did, while chatterbox was entirely broken. It now runs a probe in the venv
 asserting `perth.PerthImplicitWatermarker is not None`, the exact thing that was
 silently missing. Same class as the absent Pillow and the `.zshrc` PATH: the
 tool is installed, the check just never looked at it.
+
+## 2026-08-18 — airpods-camera (Apple's camera AirPods demo found in macOS 26.7 RC)
+
+**RAW NOTE (user, mid-build):** "Apple never confirms or announce until unless
+their official events or press release. So you should not worry about official
+Apple announcement, just follow the news (rumors and leaks)."
+
+**ROOT CAUSE:** the script spent a beat saying "But Apple has announced none of
+this." Apple announces nothing before an event or a press release, so that
+sentence is a tautology dressed as diligence — it costs runtime and signals we
+do not trust our own sourcing. Same failure class as apple-pay-india v1's 10%
+hedging budget (2026-08-11), reached from the opposite direction: not hedging a
+weak source, but disclaiming a strong one.
+
+**DISTILLED RULE:** never spend a beat telling the viewer that Apple (or any
+company that only confirms at events) has not confirmed something. Report the
+leak, credit who reported it, move on. The honesty beat still belongs in the
+reel — make it an OBSERVATION about the evidence, not a disclaimer about its
+absence. Here it became "in Apple's own video, you never once see the camera",
+which is stronger reporting than the disclaimer it replaced.
+
+**SECOND USER NOTE:** "use demonstration video instead of ad". ROOT CAUSE: I
+called the file an "ad" three times. MacRumors and Macworld both call it a demo
+/ instructional video; "ad" was my characterisation and it was the only
+interpretive word in an otherwise fully sourced script. RULE: when outlets have
+a word for the artefact, use THEIR word. A synonym that upgrades the claim is a
+claim.
+
+### Findings from this build
+
+- **The two enforcers disagree about pacing, and the linter is the stale one.**
+  `reel_gates.py` classifies G04 (held-layout ceilings) as ADVICE, per the
+  2026-08-17 constitution: only the three rules plus RENDER and RIGHTS block.
+  `tools/lint_frames.py` still treats [PACING] as a HARD flag and exits 1. So a
+  sheet that passes the authority fails the linter on a rule the authority
+  demoted. Shipped with `--soft` and declared. **Someone should reconcile
+  lint_frames' hard-flag list with BLOCKING_RULES** — a check that blocks on
+  taste is exactly what the restructure removed from reel_gates.
+- **G13 does not fire from the CLI.** `reel_gates.py <slug>` never populates
+  `clip_durations`, so the gate that catches "clip shorter than its beat"
+  silently passes. Six of six footage beats outran their clips on the first
+  compile and the gates said nothing; it was caught by probing every clip by
+  hand. This is a RENDER-category rule (a short clip freezes on its last
+  frame), so it should not depend on the caller.
+- **`compile_shot_plan.py --force` does not exist.** The overwrite guard tells
+  you to re-run with `--force`, but the flag was never registered with argparse,
+  so it errors. The only way past is deleting the sheet by hand — the exact
+  destructive act the guard exists to prevent.
+- **The compiler's caption source is wrong.** It splits "Apple's" into
+  `apple` + `s` so phrase anchors can match, then builds captions from those
+  split tokens — rendering "apple s own." and tripping G34/G21. Captions must
+  come from the ORIGINAL whisper words. Handled here by
+  `tools/finalize_airpods_camera.py`; worth moving into the compiler.
+- **Whisper mishears are not mispronunciations, twice over.** The full-pass
+  transcript read "warns" as "wants" and "MacRumors Aaron Perris" as "Mac
+  rumors are in Paris". Re-running `small` on the isolated 2s slices returned
+  "warns" correctly, and biasing with `--initial_prompt` returned the name
+  correctly — proving the audio was right both times. **No credits were spent
+  on a re-record.** The rule works; use it before assuming the voice is wrong.
+- **A shot plan built on estimated word timings will not fit the footage.**
+  The first plan needed 18.2s of footage from a 13.2s source. Splitting long
+  beats across more visuals brought it to 12.1s against 10.5s usable, closed
+  with a 1.0-1.25x slowdown baked into the clips with `setpts`. Do the footage
+  BUDGET before cutting: sum the beats, compare to the usable source, and only
+  then choose windows.
+- **`-t` after `-i` truncates a slowed clip back to the source length.** With
+  `setpts`, the trim must be an INPUT option (`-ss X -t LEN -i src`) or ffmpeg
+  cuts the stretched output back down and the slowdown silently does nothing.
+- **PriceLadder is for a price CHANGE, not a price COMPARISON.** Given one
+  current price and "costs more", it struck through $249 on both rows, which
+  reads as a price cut that never happened. A component whose animation asserts
+  something the data does not is a factual error, not a styling choice. Used a
+  specsheet instead.
+- **A built `uidialog` invents UI.** Rendering Apple's alert string in a dialog
+  added Cancel/OK buttons no source describes, and read as 78% dead space
+  besides. Replaced with a credited crop of MacRumors' own paragraph. Build UI
+  only when the whole dialog is known.
+- **Dead space is what the dark MG components do at 1080x1920 with 2 rows.**
+  Six scenes flagged 75-83% flat. Fixed by giving `specsheet`/`timeline` a
+  `bgSrc` bed (a darkened, heavily-slowed plate of the source footage) and
+  giving `wordcascade` a `bottomSrc` facecam. Both fill the frame without
+  inventing content. `bottomSrc` does NOT count toward G06 facecam share.
+
+### Treatment history
+
+- airpods-camera (Apple's camera AirPods demo, found in macOS 26.7 RC): split
+  hook (Apple's OWN 2160x3840 vertical demo top / face bottom) with serif
+  headline build APPLE'S OWN DEMO -> NEVER ANNOUNCED; SIX distinct shots mined
+  from ONE 13.1s source (establishing loft, walk-in, the raise, the held book,
+  a 1.25x punch-in on the AirPod in-ear, a defocused outro plate), each cut to
+  its beat with a 1.0-1.25x `setpts` slowdown; NEW `sourceread` on the
+  @aaronp613 post (X app chrome cropped off the top); MacRumors receipts x3 as
+  SEPARATE CROPS of one full-page capture (headline+lede block, the Siri-quote
+  paragraph, the hair-alert paragraph) rather than one page mined for regions;
+  specsheets x3 (B790 / infrared-not-a-lens / the price) all on a darkened
+  slowed-footage `bgSrc` bed; timeline (SEP 2026 B790); cascades x3 (macOS
+  Tahoe 26.7 + release candidate / NO PHOTOS + NO RECORDING on cream / AirPods
+  Pro 4 or AirPods Ultra), two of them with facecam bottoms; endquestion over
+  the defocused plate. Facecam 21% in 8 pops. Digital twin, avatar_v, native
+  1080x1920. 25 scenes / 72.9s / -14.0 LUFS.
+- Used here, avoid repeating next reel: the `bgSrc` darkened-slowed-plate bed
+  behind data cards, the one-source-mined-into-six-shots structure, and the
+  cascade-with-facecam-bottom.
+- NOT used (available again): categorygrid, statcard, chart, annotatezoom,
+  settingspane, uidialog, priceladder, logoassemble, black typecard, hcompare,
+  comparesplit, checklist, xpost, floatcard.
+
+### 2026-08-18 — airpods-camera v2 (user feedback after first delivery)
+
+**RAW NOTE (user):** "1. Caption overlaps the credit (source across the video)
+2. Background music is too low. Let's remove background music from this video.
+However, use the sound effects."
+
+**FIX 1 — CAPTIONS vs CREDITS. This was systemic, not a one-off.**
+ROOT CAUSE: `Credit.tsx` sits at `CREDIT_Y` 0.78 = **422px** up from the
+bottom. `CaptionChips` defaults to **400px** up. The two are 22px apart, so the
+caption chip lands on the credit on EVERY credited scene of EVERY reel — not
+just this one. It shipped because a contact sheet at 150px wide does not
+resolve a 22px offset; it was only visible on a full-res crop of the credit
+band.
+
+**DISTILLED RULE:** a scene that renders a `credit` must set `captionBottom`.
+Push captions **UP** (520 works: chips occupy 520-584, clear of the credit's
+422-482), never DOWN. `captionBottom: 300` looks like it works and is a Rule 1
+violation — 300px up is y 0.844, and Instagram's account row is measured at
+y 0.835, so it puts the caption under the platform's own chrome.
+
+On `receipt` and `sourceread` scenes, set `captionBottom: 6000` (hidden)
+instead: the highlighted source text IS the sentence being spoken, so a chip
+repeating it breaks "one text system at a time" (RULES section 6) as well as
+colliding with the credit.
+
+**This deserves a gate.** Both numbers are known at build time — a scene with a
+`credit` and a `captionBottom` inside [credit-60, credit+60] is checkable, and
+so is a `captionBottom` below the account row at y 0.835.
+
+**FIX 2 — MUSIC OFF, SFX KEPT.** Set `noMusic` + `noMusicReason` on the sheet
+(G09's documented escape hatch, same shape as G02's `allowLong`) and drop the
+`music` key. The 9 SFX cues are untouched. VERIFIED BY MEASUREMENT, not by
+assertion: speech gaps read **-57.0 dB RMS** (a bed sits near -28), while the
+sampled cues read -10.6 to -18.9 dB — at or above the -17.3 dB speech
+reference. Master still lands -14.0 LUFS.
+
+**`scripts/validate_job.py` did not know about `noMusic` and hard-failed.**
+Same staleness as its opening-scene check: `reel_gates.py` added the hatch on
+2026-08-17 and this second, older validator was never updated, so a sheet that
+PASSED the authority failed here on a rule the authority already allows an
+argued exception to. Taught validate_job the same contract, reason string still
+mandatory, and checked both failure modes still bite (no music + no hatch
+fails; hatch with an empty reason fails). **Rule: when reel_gates grows an
+escape hatch, validate_job needs it too — two enforcers, one contract.**
+
+**PROCESS NOTE, and this one nearly shipped a wrong claim.** After the music
+change I measured loudness and pulled frames — and reported them — from a file
+that had NOT been re-rendered: `render_job.py` had aborted at validate_job, so
+`out/*-final.mp4` was 20 minutes stale. **Always check the output file's mtime
+against the clock before reading anything off it.** A render that fails early
+leaves a plausible, complete, WRONG artifact sitting exactly where the fresh
+one belongs.
+
+## 2026-08-19 — iphone-18-pro (iPhone 18 Pro feature roundup, 72.5s)
+
+First reel built to the user's **iGeeksBlog narrative framework** (supplied
+mid-session, after a first script was written and rejected). The framework's
+rule 1 — *never open with an isolated fact* — killed the original hook ("For the
+first time, an iPhone lens will physically open and close"), which was a good
+sentence and a bad opening: it named a mechanism before naming the product.
+
+**DISTILLED RULE — context before fact, promise before detail.** Beat 1 answers
+*what are we talking about and why now*; the curiosity gap is planted in the
+same breath and PAID OFF later. Here: "…including one that only matters when you
+have no signal" (0:08) → "Back to that signal." (0:49) → 5G via satellite. The
+user's own retention ladder is the acceptance test, not the word count.
+
+**The design beat moved because of that ladder.** v2 put the colours/back
+between the satellite payoff and the conclusion — a colour fact interrupting the
+climax. Folding it INTO the conclusion ("…even the frosted back it's wrapped in")
+turned a seventh feature into the evidence for "this isn't just a camera
+upgrade", and gave the supplied mockup its strongest placement.
+
+### Six engine bugs the CONTACT SHEET found that no gate did
+
+1. **Every "%" was dropped from captions.** whisper emits `%` as its own token;
+   `normalize()` returns `[]` for it, so the caption loop `continue`d and threw
+   it away — shipping "shrink about 35", "reportedly 15", "on 30". Numbers
+   without units, against standard notation, on five separate cards. FIXED in
+   `compile_shot_plan.py`: a punctuation-only token now glues onto the word
+   before it. **Every past reel with a percentage has this defect.**
+2. **Possessives split into an orphan chip.** "Apple's" normalises to
+   `["apple","s"]` and each token was emitted separately → a caption chip
+   reading just `s`. G34 caught it (it is the same class as the `,000` and
+   `Pegatron T` cases). Fixed generally: contraction tails re-merge and the
+   ORIGINAL spelling is restored for display.
+3. **`-Chi` shipped as "Ming -Chi".** The hyphen-merge loop documented for
+   `build_template.py` was never inherited by `compile_shot_plan.py`.
+4. **Multi-word `caption_corrections` silently did nothing.** The key normaliser
+   stripped every non-alphanumeric, so `"dark cherry"` became `"darkcherry"` and
+   matched no token and no chunk. Now keeps interior spaces and applies phrase
+   keys to the chunk text — which is also why `"dark"` alone must NEVER be
+   mapped: this script says "in the dark" 20s earlier.
+5. **`floatcard` renders `<OffthreadVideo>` — a still gives it ONE frame.** G35
+   blocked it before render (it would have crashed). Stills for a floatcard must
+   be cut to mp4; doing so also satisfies "nothing static".
+6. **`EndQuestion` hardcodes YES / NO chips.** It was built for "WOULD YOU RUN
+   THIS AD?". "Which one would make you upgrade?" cannot be answered yes/no, so
+   the buttons contradicted the question. **RULE: `endquestion` is only for a
+   binary question.** Anything else is a closing plate + kinetic type.
+
+### A generated MG clip must COMPLETE inside the beat that plays it
+The Dynamic Island clip animated 20.76mm → 13.49mm over 0.22–0.78 of a 4.6s
+file, finishing at 3.59s — but the beat was 2.58s. The viewer watched it stop
+near 17mm while the very next card claimed 13.49mm. Nothing flagged it; the clip
+was long enough to avoid a freeze, so it looked correct everywhere except on the
+frames. **RULE: time a generated animation to the BEAT, then leave tail; check
+the last frame the beat actually reaches, not the last frame of the file.**
+
+### loudnorm can overshoot its own true-peak target
+`linear=true` applies ONE fixed gain, so a peaky master asked for TP −1.2 and
+landed **−0.9**, over G31's −1.0 ceiling. Target moved to −1.5 and an
+`alimiter=limit=0.83` added AFTER loudnorm as a hard ceiling in
+`render_job.py` — the remedy RULES §11 already prescribed. General, not per-reel.
+
+### G20 vs the pacing cap — a real conflict, resolved by component choice
+A `checklist` is row-timed: G20 (blocking, R1) demands it be held long enough for
+the last row to land (~1.95s + stagger), while the card pacing cap is 2.6s. At
+3.28s it satisfied G20 and failed the linter; split to 1.46s it satisfied the
+linter and failed G20. **A `specsheet` carries the same content under the 3.3s
+BUILDING cap** — the fix was the component, not an override.
+
+### Phrase anchors: avoid apostrophes, hyphens and proper nouns
+`rehearse_vo --tts` reported 7 anchor misses, then a DIFFERENT 2 on a re-run —
+chatterbox is non-deterministic, so chasing 18/18 against a randomly-mangled
+synthetic transcript is chasing noise. What matters: an anchor is a BUILD-time
+lookup, not audio, so a real miss costs nothing to fix after generation. Anchor
+on plain words. And note the caption merges above CHANGE the matching stream —
+fixing "Ming -Chi" merged `ming`+`chi`, which broke the anchor `"Analyst Ming"`.
+
+### Pronounce-check a spec by WORD DURATION, not by whisper's text
+`2nm` was the one real TTS risk (september-preview spelled it "2 nanometers").
+whisper normalises numerals either way, so its transcript proves nothing. A ~3
+credit probe measured the word at **1.16s** — nearly double "Apple's" (0.68s) and
+consistent with a 5-syllable "two nanometer", not a 3-syllable "two-en-em".
+Approved script shipped unchanged. **RULE: to test a spec's pronunciation,
+measure the token's duration against a known neighbour.**
+
+Related: that probe sentence ran ~1.8 wps and would have predicted ~100s for the
+reel. The real master came back **72.49s (2.50 wps)**. A number-dense sentence is
+a worst case, not a pace — never extrapolate runtime from one probe line.
+
+### Derivative sheets and the two-enforcers rule (third time for validate_job)
+`<slug>-nomusic` is the sanctioned music-free export, but `validate_job.py` AND
+`script_approval.py` both resolved brief/script/manifest/approval against the
+DERIVATIVE slug — demanding a duplicate job folder and a second copy of every
+asset under `public/`. Both now fall back to the parent slug. This is the third
+logged instance of `validate_job` being stale against a contract `reel_gates`
+already accepted. **When a sheet variant becomes legal, every enforcer that
+reads a path by slug needs to know.**
+
+### Treatment history
+
+- iphone-18-pro (iPhone 18 Pro feature roundup): split hook on a STILL pair
+  (MacRumors mockup cropped tight to two camera plateaus, 1125x1000 so it fills
+  the top half with no upscale) over facecam; **two generated MG clips** built
+  with PIL+ffmpeg as scene assets, not engine components — an 8-blade aperture
+  iris opening and closing, and the Dynamic Island shrinking 20.76mm → 13.49mm
+  against a ghost outline of its original width; `hcompare` of two frames pulled
+  FROM that iris clip; categorygrid used three ways (the promise map, the same
+  map recalled with DISPLAY lit, and a two-state WIDE OPEN / STOPPED DOWN card);
+  statcard x4; specsheet x4; wordcascade x6 on black; MacRumors receipt under
+  "if the reports hold"; floatcard x3 on Ken-Burns mp4s of the mockup; closing
+  plate = blurred-fill cherry phone + kinetic question (NOT endquestion).
+  34 scenes / 72.49s / −14.0 LUFS / TP −1.6 / facecam 18.4% / 9 SFX cues.
+- Used here, avoid repeating next reel: the generated-iris/island MG pair, the
+  categorygrid-as-promise-map-then-callback device, and the blurred-fill closing
+  plate.
+- NOT used (available again): timeline, sourceread, annotatezoom, uidialog,
+  settingspane, priceladder, logoassemble, chart, carousel, xpost, comparesplit,
+  black typecard, checklist, designreveal.
+
+### 2026-08-19 (2) — packaging, and a thumbnail composition that had never run
+
+`--format wide` on `tools/make_thumbnail.py` produced a **black 1280x720 frame**
+with a faint ghost of the image. No error, exit 0, plausible file size. Root
+cause: in `Thumbnail.tsx`'s `Wide`, the radial-gradient backdrop is an
+`<AbsoluteFill>` (position: absolute) while the two content columns were
+`position: static` — and a POSITIONED element paints above a static one in the
+same stacking context, so the gradient covered the text and the image. Fixed by
+making both columns `position: relative`.
+
+**It had never shown because no reel had ever generated a wide thumbnail** —
+`out/thumbnails/` held only `-vertical` and `-grid` files. A code path with no
+output is not a working code path; it is an untested one. Same shape as the
+`[SKIP] PIL not installed` lesson: silence read as success.
+
+**RULE: a Short's cover is the VERTICAL file, judged on `-grid.png`.** The 1280x720
+is for the YouTube video page, not the Short. Generate both, look at both.
+
+**Packaging counts, enforced not remembered:** Instagram 5 hashtags (it ignores
+all of them past 5), YouTube 3-5 shipped against a 15 cap, hashtags in the FIRST
+COMMENT never the caption, ALT TEXT on every platform.
+`tools/packaging_check.py` is the authority.
+
+**The manifest's honesty constraints bind the COPY too, not just the reel.** The
+same five bans were carried into both captions: no "Apple announced/confirmed",
+the ~10% battery is Pro Max ONLY (the smaller Pro is reported near flat), no
+price, September 9 is expected not confirmed, and no f-stop range because the
+reports disagree. A caption is where an unhedged claim is most likely to leak
+back in, because it is written last and gated least.

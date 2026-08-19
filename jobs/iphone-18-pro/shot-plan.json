@@ -1,0 +1,742 @@
+{
+ "emphasis": [
+  "September",
+  "signal",
+  "iris",
+  "50%",
+  "35%",
+  "2nm",
+  "10%",
+  "satellite",
+  "upgrade"
+ ],
+ "caption_corrections": {
+  "dark cherry": "Dark Cherry",
+  "dynamic island": "Dynamic Island"
+ },
+ "shots": [
+  {
+   "start_phrase": "iPhone 18 Pro",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "split",
+    "topSrc": "assets/iphone-18-pro/hook-pair.jpg",
+    "bottomSrc": "$AVATAR",
+    "captionBottom": 520,
+    "credit": "MacRumors mockup",
+    "topFocusX": 0.5,
+    "bottomFocusX": 0.48,
+    "headline": {
+     "lines": [
+      {
+       "text": "EXPECTED SEPT 9",
+       "kind": "label",
+       "at": 0.15
+      },
+      {
+       "text": "iPHONE 18 PRO",
+       "kind": "headline",
+       "at": 0.45
+      }
+     ],
+     "y": 0.05,
+     "theme": "dark"
+    }
+   }
+  },
+  {
+   "start_phrase": "Pro is expected",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "wordcascade",
+    "bg": "black",
+    "words": [
+     {
+      "text": "SEPTEMBER 9",
+      "style": "serif",
+      "at": 0.2,
+      "accent": true
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "and if the reports",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "categorygrid",
+    "bg": "gradient",
+    "headline": "WHAT'S REPORTEDLY CHANGING",
+    "cards": [
+     {
+      "label": "CAMERA"
+     },
+     {
+      "label": "DISPLAY"
+     },
+     {
+      "label": "CHIP"
+     },
+     {
+      "label": "SIGNAL"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "it changes more than",
+   "line": "",
+   "tier": "reporting",
+   "asset_id": "rc-macrumors-head",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/iphone-18-pro/rc-macrumors-head.jpg",
+    "srcWidth": 1080,
+    "srcHeight": 1370,
+    "backdrop": "cream",
+    "credit": "Source: MacRumors",
+    "captionBottom": 520
+   }
+  },
+  {
+   "start_phrase": "including one that only",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "categorygrid",
+    "bg": "gradient",
+    "headline": "WHAT'S REPORTEDLY CHANGING",
+    "cards": [
+     {
+      "label": "CAMERA"
+     },
+     {
+      "label": "DISPLAY"
+     },
+     {
+      "label": "CHIP"
+     },
+     {
+      "label": "SIGNAL",
+      "sub": "no service"
+     }
+    ],
+    "selectIndex": 3,
+    "selectAt": 0.5,
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 0.5,
+      "vol": 0.14
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "when you have no signal",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "wordcascade",
+    "bg": "black",
+    "words": [
+     {
+      "text": "NO SIGNAL",
+      "style": "serif",
+      "at": 0.15,
+      "accent": true
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Start with the camera",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "in"
+   }
+  },
+  {
+   "start_phrase": "a mechanical iris",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-18-pro/mg-aperture-iris.mp4",
+    "zoomDir": "none",
+    "captionBottom": 520,
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.15
+     }
+    ],
+    "credit": "iGeeksBlog illustration"
+   }
+  },
+  {
+   "start_phrase": "that physically",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "hcompare",
+    "topSrc": "assets/iphone-18-pro/iris-open.jpg",
+    "bottomSrc": "assets/iphone-18-pro/iris-closed.jpg",
+    "topLabel": "WIDE OPEN",
+    "bottomLabel": "STOPPED DOWN",
+    "topFrac": 0.5,
+    "messages": [
+     "MORE LIGHT IN THE DARK",
+     "EVERYTHING FRONT-TO-BACK SHARP"
+    ],
+    "credit": "iGeeksBlog illustration"
+   }
+  },
+  {
+   "start_phrase": "wide open in the",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "specsheet",
+    "kicker": "THE CAMERA",
+    "title": "VARIABLE APERTURE",
+    "rows": [
+     {
+      "label": "Wide open",
+      "value": "more light in the dark"
+     },
+     {
+      "label": "Stopped down",
+      "value": "front-to-back sharp",
+      "accent": true
+     }
+    ],
+    "footnote": "First reported by analyst Ming-Chi Kuo, Dec 2024"
+   }
+  },
+  {
+   "start_phrase": "down when you want",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "categorygrid",
+    "bg": "gradient",
+    "headline": "TWO STATES, ONE LENS",
+    "cards": [
+     {
+      "label": "WIDE OPEN",
+      "sub": "low light"
+     },
+     {
+      "label": "STOPPED DOWN",
+      "sub": "all sharp"
+     }
+    ],
+    "selectIndex": 1,
+    "selectAt": 0.45
+   }
+  },
+  {
+   "start_phrase": "Analyst",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "in"
+   }
+  },
+  {
+   "start_phrase": "that lens alone costs",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "statcard",
+    "bg": "black",
+    "title": "LENS UNIT COST",
+    "titleRight": "EST.",
+    "rows": [
+     {
+      "label": "iPhone 17 Pro",
+      "value": "7-element lens",
+      "pct": 66
+     },
+     {
+      "label": "iPhone 18 Pro",
+      "value": "about +50%",
+      "pct": 100
+     }
+    ],
+    "footnote": "Estimate: analyst Ming-Chi Kuo",
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 0.35,
+      "vol": 0.16
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "about 50% more",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "wordcascade",
+    "bg": "black",
+    "words": [
+     {
+      "text": "+50%",
+      "style": "serif",
+      "at": 0.15,
+      "accent": true
+     },
+     {
+      "text": "ON THE LENS",
+      "style": "serif",
+      "at": 0.6
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "notice this one more",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "categorygrid",
+    "bg": "gradient",
+    "headline": "WHAT'S REPORTEDLY CHANGING",
+    "cards": [
+     {
+      "label": "CAMERA"
+     },
+     {
+      "label": "DISPLAY"
+     },
+     {
+      "label": "CHIP"
+     },
+     {
+      "label": "SIGNAL"
+     }
+    ],
+    "selectIndex": 1,
+    "selectAt": 0.4
+   }
+  },
+  {
+   "start_phrase": "island could",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-18-pro/mg-island-shrink.mp4",
+    "zoomDir": "none",
+    "captionBottom": 520,
+    "sfx": [
+     {
+      "src": "sfx2/whooshes-01.mp3",
+      "at": 0.0,
+      "vol": 0.15
+     }
+    ],
+    "credit": "Ice Universe"
+   }
+  },
+  {
+   "start_phrase": "as Face",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "statcard",
+    "bg": "black",
+    "title": "CUTOUT WIDTH",
+    "rows": [
+     {
+      "label": "Now",
+      "value": "20.76mm",
+      "pct": 100
+     },
+     {
+      "label": "Reported",
+      "value": "13.49mm",
+      "pct": 65
+     }
+    ],
+    "footnote": "Leaker Ice Universe, Jan 2026"
+   }
+  },
+  {
+   "start_phrase": "illuminator moves under",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "specsheet",
+    "kicker": "WHY IT SHRINKS",
+    "title": "DYNAMIC ISLAND",
+    "rows": [
+     {
+      "label": "Flood illuminator",
+      "value": "moves under the display"
+     },
+     {
+      "label": "Cutout width",
+      "value": "20.76mm to 13.49mm",
+      "accent": true
+     }
+    ],
+    "footnote": "Reported by leaker Ice Universe, Jan 2026"
+   }
+  },
+  {
+   "start_phrase": "the A20 Pro would",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "in"
+   }
+  },
+  {
+   "start_phrase": "first 2nm chip",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "wordcascade",
+    "bg": "black",
+    "words": [
+     {
+      "text": "A20 PRO",
+      "style": "serif",
+      "at": 0.15
+     },
+     {
+      "text": "2nm",
+      "style": "serif",
+      "at": 0.6,
+      "accent": true
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "reportedly 15% faster",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "statcard",
+    "bg": "black",
+    "title": "A20 PRO vs A19 PRO",
+    "rows": [
+     {
+      "label": "Speed",
+      "value": "+15%",
+      "pct": 100
+     },
+     {
+      "label": "Power draw",
+      "value": "-30%",
+      "pct": 70
+     }
+    ],
+    "footnote": "Projection for an unreleased chip: analyst Jeff Pu",
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 0.3,
+      "vol": 0.15
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "on 30% less power",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "specsheet",
+    "kicker": "THE TRADE",
+    "title": "A20 PRO",
+    "rows": [
+     {
+      "label": "Process",
+      "value": "2nm",
+      "accent": true
+     },
+     {
+      "label": "Power draw",
+      "value": "-30%"
+     }
+    ],
+    "footnote": "Projection: analyst Jeff Pu"
+   }
+  },
+  {
+   "start_phrase": "that with a",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "battery about",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "statcard",
+    "bg": "cream",
+    "title": "BATTERY",
+    "rows": [
+     {
+      "label": "iPhone 18 Pro Max",
+      "value": "about +10%",
+      "pct": 100
+     }
+    ],
+    "footnote": "Pro Max only. The smaller Pro is reported near flat."
+   }
+  },
+  {
+   "start_phrase": "to that signal",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "none",
+    "sfx": [
+     {
+      "src": "sfx/Riser.MP3",
+      "at": 0.0,
+      "vol": 0.13
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "adds 5G",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "specsheet",
+    "kicker": "THE PAYOFF",
+    "title": "5G VIA SATELLITE",
+    "rows": [
+     {
+      "label": "Apple C2 modem",
+      "value": "on board"
+     },
+     {
+      "label": "Wi-Fi",
+      "value": "not needed"
+     },
+     {
+      "label": "Cell tower",
+      "value": "not needed",
+      "accent": true
+     }
+    ],
+    "footnote": "Reported; not announced by Apple",
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "at": 0.05,
+      "vol": 0.16
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "tower in sight",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "wordcascade",
+    "bg": "black",
+    "words": [
+     {
+      "text": "NO TOWER",
+      "style": "serif",
+      "at": 0.15
+     },
+     {
+      "text": "IN SIGHT",
+      "style": "serif",
+      "at": 0.6,
+      "accent": true
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "just a camera upgrade",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "in",
+    "sfx": [
+     {
+      "src": "sfx2/impact-boom.mp3",
+      "at": 0.1,
+      "vol": 0.17
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "the chip, the signal",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "wordcascade",
+    "bg": "black",
+    "words": [
+     {
+      "text": "CAMERA",
+      "style": "serif",
+      "at": 0.1
+     },
+     {
+      "text": "SCREEN",
+      "style": "serif",
+      "at": 0.4
+     },
+     {
+      "text": "SIGNAL",
+      "style": "serif",
+      "at": 0.7,
+      "accent": true
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "even the frosted",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "floatcard",
+    "src": "assets/iphone-18-pro/hero-lineup.mp4",
+    "aspect": 1.778,
+    "bg": "gradient",
+    "credit": "MacRumors mockup",
+    "captionBottom": 520,
+    "kinetic": {
+     "text": "MacRumors mockup",
+     "style": "chip",
+     "at": 0.15,
+     "scrim": false
+    },
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "at": 0.08,
+      "vol": 0.13
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "reportedly in a new",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "floatcard",
+    "src": "assets/iphone-18-pro/crop-pair.mp4",
+    "aspect": 0.9,
+    "bg": "gradient",
+    "credit": "MacRumors mockup",
+    "captionBottom": 520
+   }
+  },
+  {
+   "start_phrase": "None of it is",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "Apple says so",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "floatcard",
+    "src": "assets/iphone-18-pro/crop-cherry.mp4",
+    "aspect": 0.4605263157894737,
+    "bg": "gradient",
+    "credit": "MacRumors mockup",
+    "captionBottom": 520
+   }
+  },
+  {
+   "start_phrase": "one would actually",
+   "line": "",
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-18-pro/outro-cherry.mp4",
+    "zoomDir": "none",
+    "credit": "MacRumors mockup",
+    "captionBottom": 520,
+    "kinetic": {
+     "text": "WHICH ONE WOULD\nMAKE YOU UPGRADE?",
+     "style": "serif",
+     "at": 0.15,
+     "y": 0.2,
+     "scrim": true
+    }
+   }
+  }
+ ]
+}

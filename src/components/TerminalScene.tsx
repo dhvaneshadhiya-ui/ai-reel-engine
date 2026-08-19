@@ -1,4 +1,5 @@
 import React from "react";
+import { MACOS_TRAFFIC } from "../theme/palette";
 import {
   AbsoluteFill,
   useCurrentFrame,
@@ -31,7 +32,7 @@ const FONT_SIZE = 27;
 // Semantic terminal status colors (not brand palette)
 const OK_GREEN = "#3fce8c";
 const ERR_RED = "#ff6f66";
-const TRAFFIC = ["#ff5f57", "#febc2e", "#28c840"];
+const TRAFFIC = [MACOS_TRAFFIC.close, MACOS_TRAFFIC.minimise, MACOS_TRAFFIC.zoom];
 
 const easeOut = (x: number) => 1 - Math.pow(1 - Math.min(Math.max(x, 0), 1), 3);
 

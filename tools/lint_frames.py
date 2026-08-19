@@ -155,13 +155,14 @@ def main():
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     slug = sys.argv[1]
+    from_stills = "--from-stills" in sys.argv
     video = ROOT / (
         sys.argv[sys.argv.index("--video") + 1]
         if "--video" in sys.argv
         else f"out/{slug}.mp4"
     )
     beats_path = ROOT / f"src/beats/{slug}.json"
-    if not video.exists():
+    if not video.exists() and not from_stills:
         sys.exit(f"missing video: {video}")
     if not beats_path.exists():
         sys.exit(f"missing beats: {beats_path}")
@@ -170,8 +171,13 @@ def main():
     scenes = beats["scenes"]
     lint_dir = ROOT / f"out/{slug}-lint"
     lint_dir.mkdir(parents=True, exist_ok=True)
-    for old in lint_dir.glob("*.png"):
-        old.unlink()
+    # --from-stills: the frames were rendered straight from Remotion by
+    # tools/preflight_stills.py, BEFORE any video exists. Extraction is the
+    # only step that needs a finished mp4; every check below works on pixels.
+    # Wiping the directory here would delete exactly what we were handed.
+    if not from_stills:
+        for old in lint_dir.glob("*.png"):
+            old.unlink()
 
     # -- 1. extract labeled stills ------------------------------------------
     stills = []  # (idx, type, phase, path, t)
@@ -183,7 +189,11 @@ def main():
         for phase, t in marks:
             label = f"{i:02d} {s['type']} {phase} @{t:.1f}s"
             p = lint_dir / f"{i:02d}-{s['type']}-{phase}.png"
-            extract(video, t, p, label)
+            if from_stills:
+                if not p.exists():
+                    continue          # preflight samples mids only
+            else:
+                extract(video, t, p, label)
             stills.append((i, s["type"], phase, p, t))
         cursor += dur
 

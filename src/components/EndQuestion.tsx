@@ -1,4 +1,5 @@
 import React from "react";
+import { CYAN } from "../theme/palette";
 import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
@@ -13,7 +14,6 @@ import type { Scene } from "../types";
 
 type Props = Extract<Scene, { type: "endquestion" }>;
 const SANS = "-apple-system,'SF Pro Display','Helvetica Neue',Inter,sans-serif";
-const CYAN = "#0aa9c2";
 const isVideo = (s: string) => /\.(mp4|webm|mov)$/i.test(s);
 
 /** Closing beat: strong ad freeze + "WOULD YOU RUN THIS AD?" + YES / NO.
@@ -24,7 +24,7 @@ export const EndQuestion: React.FC<{ scene: Props }> = ({ scene }) => {
   const en = spring({ frame, fps, config: SPRING.enter, durationInFrames: DUR.quick });
 
   return (
-    <AbsoluteFill style={{ background: "#000", fontFamily: SANS, justifyContent: "center", alignItems: "center" }}>
+    <AbsoluteFill style={{ background: scene.bg ?? "#000", fontFamily: SANS, justifyContent: "center", alignItems: "center" }}>
       {isVideo(scene.src) ? (
         <OffthreadVideo src={staticFile(scene.src)} muted style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       ) : (

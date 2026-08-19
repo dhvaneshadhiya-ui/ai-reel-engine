@@ -1,4 +1,7 @@
 import React from "react";
+import { Credit } from "./Credit";
+import { THEMES } from "../theme/tokens";
+import { DISPLAY } from "../theme/type";
 import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
@@ -13,8 +16,9 @@ import type { Scene } from "../types";
 
 type Props = Extract<Scene, { type: "specsheet" }>;
 const SANS = "-apple-system,'SF Pro Display','Helvetica Neue',Inter,sans-serif";
-const SERIF = "'FrauncesUp', Georgia, serif";
-const ACCENT = "#d97757";
+const SERIF = DISPLAY;
+// Same clay, same reason — see DesktopMockup.
+const ACCENT = THEMES.editorial.accentOnDark;
 
 /** Reference-style spec card: dark field, serif title, label→value rows that
  *  reveal one by one, one row highlighted in the brand accent. */
@@ -80,9 +84,12 @@ export const SpecSheet: React.FC<{ scene: Props }> = ({ scene }) => {
           );
         })}
       </div>
-      {scene.footnote && (
-        <div style={{ position: "relative", fontSize: 28, color: "rgba(255,255,255,0.5)", marginTop: 34, fontStyle: "italic", fontFamily: SERIF }}>{scene.footnote}</div>
-      )}
+      {/* Attribution under a third spelling. `footnote` bypassed the
+          once-per-source rule and the qualifier stripping simply by not being
+          called `credit` — the same blind spot that hid TimelineCascade's
+          footnote and ChartScene's source for weeks. One component, one
+          policy. */}
+      {scene.footnote && <Credit text={scene.footnote} />}
     </AbsoluteFill>
   );
 };

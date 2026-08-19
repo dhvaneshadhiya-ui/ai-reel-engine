@@ -10,24 +10,6 @@
   "AirPods Ultra"
  ],
  "caption_corrections": {},
- "music": {
-  "src": "music/bed-02.mp3",
-  "from": 8.0,
-  "points": [
-   {
-    "t": 0.0,
-    "vol": 0.15
-   },
-   {
-    "t": 30.0,
-    "vol": 0.055
-   },
-   {
-    "t": 72.0,
-    "vol": 0.0
-   }
-  ]
- },
  "shots": [
   {
    "start_phrase": "Apple made a demonstration",
@@ -38,11 +20,6 @@
     "type": "split",
     "topSrc": "assets/airpods-camera/apple-holds-book.mp4",
     "bottomSrc": "$AVATAR",
-    "kinetic": {
-     "text": "NEVER ANNOUNCED",
-     "style": "serif",
-     "at": 0.45
-    },
     "captionBottom": 1000,
     "headline": {
      "lines": [
@@ -50,9 +27,14 @@
        "text": "APPLE'S OWN DEMO",
        "kind": "label",
        "at": 0.15
+      },
+      {
+       "text": "NEVER ANNOUNCED",
+       "kind": "headline",
+       "at": 0.45
       }
      ],
-     "y": 0.06,
+     "y": 0.05,
      "theme": "dark"
     }
    }
@@ -76,7 +58,8 @@
    "scene": {
     "type": "footage",
     "src": "assets/airpods-camera/apple-walkin.mp4",
-    "zoomDir": "out"
+    "zoomDir": "out",
+    "captionBottom": 520
    }
   },
   {
@@ -125,7 +108,8 @@
       "at": 0.0,
       "vol": 0.15
      }
-    ]
+    ],
+    "captionBottom": 520
    }
   },
   {
@@ -167,26 +151,27 @@
    "asset_id": "tweet-receipt",
    "scene": {
     "type": "sourceread",
-    "src": "assets/airpods-camera/tweet-mobile.png",
+    "src": "assets/airpods-camera/tweet-clean.png",
     "srcWidth": 1080,
-    "srcHeight": 2340,
+    "srcHeight": 2190,
     "lines": [
      {
       "at": 0.3,
       "x": 45,
-      "y": 352,
+      "y": 202,
       "w": 965,
       "h": 62
      },
      {
       "at": 1.05,
       "x": 45,
-      "y": 412,
+      "y": 262,
       "w": 730,
       "h": 62
      }
     ],
-    "credit": "@aaronp613"
+    "credit": "@aaronp613",
+    "captionBottom": 6000
    }
   },
   {
@@ -217,7 +202,7 @@
       "h": 70
      }
     ],
-    "captionBottom": 300
+    "captionBottom": 6000
    }
   },
   {
@@ -264,7 +249,7 @@
       "h": 150
      }
     ],
-    "captionBottom": 300
+    "captionBottom": 6000
    }
   },
   {
@@ -295,7 +280,7 @@
       "vol": 0.14
      }
     ],
-    "captionBottom": 300
+    "captionBottom": 6000
    }
   },
   {
@@ -380,7 +365,8 @@
    "scene": {
     "type": "footage",
     "src": "assets/airpods-camera/apple-book-table.mp4",
-    "zoomDir": "in"
+    "zoomDir": "in",
+    "captionBottom": 520
    }
   },
   {
@@ -522,7 +508,8 @@
      "style": "serif",
      "at": 0.45,
      "y": 0.44
-    }
+    },
+    "captionBottom": 520
    }
   },
   {
@@ -553,7 +540,8 @@
       "at": 0.15,
       "vol": 0.15
      }
-    ]
+    ],
+    "captionBottom": 520
    }
   }
  ]

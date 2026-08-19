@@ -1,6 +1,6 @@
 import React from "react";
-import { SPRING, DUR } from "../theme/motion";
-import { TYPE, SIZE } from "../theme/type";
+import { SPRING, DUR, slideFor } from "../theme/motion";
+import { TYPE, SIZE, MONO, typeAt } from "../theme/type";
 import {
   useCurrentFrame,
   useVideoConfig,
@@ -9,7 +9,15 @@ import {
   Easing,
 } from "remotion";
 import { useTheme } from "../theme/tokens";
+import { clampCaptionBottom } from "../platformSafeArea";
 import type { CaptionWord } from "../types";
+
+/**
+ * power4.out — the whip ease waterfall-entry.md specifies for an arrival.
+ * Remotion renders nothing that is not frame-driven, so GSAP's named ease is
+ * reimplemented rather than imported.
+ */
+const easeOutQuart = (x: number): number => 1 - Math.pow(1 - Math.max(0, Math.min(1, x)), 4);
 
 /** Split chip text into plain/emphasized runs based on the emphasis list. */
 const tokenize = (
@@ -55,17 +63,68 @@ const NickDisplay: React.FC<{
   active: CaptionWord;
   emphasis: string[];
   bottom: number;
-  dark: boolean;
+  /** the measured ground is BRIGHT — white ink needs help to survive it */
+  bright: boolean;
   accent: string;
   fps: number;
   frame: number;
-}> = ({ active, emphasis, bottom, dark, accent, fps, frame }) => {
+}> = ({ active, emphasis, bottom, bright, accent, fps, frame }) => {
   const t = frame / fps;
   const words = active.words ?? [{ t: active.start, text: active.text }];
-  const base = dark ? "#141414" : "#ffffff";
-  const shadow = dark
-    ? "0 3px 10px rgba(0,0,0,0.22), 0 1px 3px rgba(0,0,0,0.18)"
+
+  // ONE INK FOR THE WHOLE REEL. `dark` used to flip the caption to #141414
+  // wherever the footage was bright — and tools/auto_contrast.py now measures
+  // that as 17 of the 33 caption scenes in iphone-fold-ultra. A caption that
+  // changes colour seventeen times in eighty seconds does not read as adaptive,
+  // it reads as broken. So the measurement drives the caption's GROUND instead:
+  // white always, and over a bright frame it gets a contour — a tight dark ring
+  // in eight directions plus a deeper drop — which is the treatment every
+  // platform's own captions use, and the reason they survive any footage.
+  const base = "#ffffff";
+
+  /**
+   * KARAOKE ENVELOPE — hyperframes-animation rules/asr-keyword-glow.md, the
+   * variation that rule marks "RECOMMENDED for video narration", with its
+   * stated reason: the subtle default "reads too subtle in video: inactive
+   * words still dominate".
+   *
+   * That was exactly this component's state. Every revealed word sat at full
+   * white, so a line of six words was six equal claims and the eye had nowhere
+   * to go — flat, in the way the user kept reporting, even after the type and
+   * motion systems landed.
+   *
+   * Attack -> sustain -> release -> REST, never back to zero. The rule is
+   * explicit that the envelope "decays to a rest level, leaving a breadcrumb of
+   * recent emphasis" — a word that fully extinguishes makes the line flicker;
+   * one that rests at 0.55 keeps the sentence readable while the live word owns
+   * the frame. At any instant one or two words are bright.
+   *
+   * Word ends come from the NEXT word's onset — whisper gives us onsets, and a
+   * word is being spoken until the next one starts. No hand-typed windows.
+   */
+  const ATTACK = 0.07;
+  const RELEASE = 0.20;
+  const REST = 0.55;
+  const envelopeAt = (i: number): number => {
+    const start = words[i].t;
+    const end = i + 1 < words.length ? words[i + 1].t : active.end;
+    if (t < start) return 0;
+    if (t < end) return Math.min((t - start) / ATTACK, 1);
+    const releaseEnd = end + RELEASE;
+    if (t < releaseEnd) return 1 - ((t - end) / RELEASE) * (1 - REST);
+    return REST;
+  };
+
+  const RING = 2.2;
+  const ring = bright
+    ? Array.from({ length: 8 }, (_, k) => {
+        const a = (k * Math.PI) / 4;
+        return `${(Math.cos(a) * RING).toFixed(1)}px ${(
+          Math.sin(a) * RING
+        ).toFixed(1)}px 0 rgba(10,10,12,0.92)`;
+      }).join(", ") + ", 0 6px 22px rgba(0,0,0,0.55)"
     : "0 4px 16px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.6)";
+  const shadow = ring;
   return (
     <div
       style={{
@@ -84,14 +143,22 @@ const NickDisplay: React.FC<{
     >
       {words.map((w, i) => {
         if (t < w.t - 0.02) return null;
-        const local = frame - Math.round(w.t * fps);
-        const pop = spring({
-          frame: local,
-          fps,
-          config: { damping: 14, stiffness: 320, mass: 0.4 },
-          durationInFrames: DUR.quick,
-        });
         const emph = isEmph(w.text, emphasis);
+        // WEIGHT, NOT INDEX — hyperframes-animation rules/waterfall-entry.md.
+        // Its table sets travel and settle time by what an element WEIGHS:
+        // anchor 60-80px over 0.16-0.20s, normal 40-50px over 0.13-0.16s,
+        // light 30-48px over 0.10-0.13s. This used to be slideFor(i, 34), a
+        // decay on POSITION IN THE LINE — so the emphasis word got a small hop
+        // purely for arriving late, and a throwaway "the" got the big one for
+        // arriving first. Weight is the thing the eye actually reads.
+        const heavy = emph || w.text.replace(/\W/g, "").length >= 7;
+        const light = w.text.replace(/\W/g, "").length <= 3;
+        const rise = heavy ? 72 : light ? 34 : 46;
+        const settle = heavy ? 0.19 : light ? 0.12 : 0.15;
+        // power4.out, never a spring and never .inOut on an entry — same rule.
+        // A spring's overshoot is a SETTLE; this is a WHIP, and the difference
+        // is what separates kinetic from bouncy.
+        const p = easeOutQuart(Math.min(1, (t - w.t) / settle));
         return (
           <span
             key={i}
@@ -106,9 +173,17 @@ const NickDisplay: React.FC<{
               letterSpacing: emph ? "-0.015em" : "0.005em",
               color: emph ? accent : base,
               textShadow: shadow,
-              opacity: pop,
-              transform: `translateY(${(1 - pop) * 14}px) scale(${
-                0.9 + 0.1 * pop
+              // BINARY, never a fade. waterfall-entry.md states it as a rule
+              // with no exception: "Opacity is BINARY 0->1 via tl.set — never
+              // fade an arrival." A word that fades in is a word arriving
+              // slowly; the MOTION is what should carry the arrival. This was
+              // `opacity: pop * 1.35` — a ramp on every single word.
+              opacity: 1,
+              // The karaoke envelope rides on top of the arrival: the live word
+              // is full white and a touch larger, spoken words rest dim.
+              filter: `brightness(${0.62 + 0.38 * envelopeAt(i)})`,
+              transform: `translateY(${(1 - p) * rise}px) scale(${
+                (0.94 + 0.06 * p) * (1 + 0.05 * envelopeAt(i))
               })`,
               display: "inline-block",
             }}
@@ -274,9 +349,8 @@ export const CaptionChips: React.FC<{
   darkRanges = [],
 }) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, height } = useVideoConfig();
   const theme = useTheme();
-  const ACCENT = theme.accent;
   const t = frame / fps;
 
   if (hidden.some((h) => t >= h.start && t < h.end)) return null;
@@ -284,13 +358,29 @@ export const CaptionChips: React.FC<{
   const active = captions.find((c) => t >= c.start && t < c.end);
   if (!active) return null;
 
+  // `darkRanges` is named for the ink it used to force; what the range actually
+  // marks is a BRIGHT ground (tools/auto_contrast.py sets captionTheme:"dark"
+  // where it measures luminance > 0.55). Reading it as what it measures.
+  const brightGround = darkRanges.some((r) => t >= r.start && t < r.end);
+  // ONE accent decision for every caption mode, from the theme and the measured
+  // ground — not three hardcoded hexes (#d86c48 / #E8A200 / theme.accent) that
+  // happened to sit in three branches of the same component.
+  const ACCENT = brightGround ? theme.accentInk : theme.accentOnDark;
+  // Authors raise captions to clear a face; nothing may sink one into the
+  // credit lane or Instagram's account row. See platformSafeArea.
+  const bottomAt = (fallback: number) =>
+    clampCaptionBottom(
+      positions.find((p) => t >= p.start && t < p.end)?.bottom ?? fallback,
+      height
+    );
+
   if (mode === "ink-circle") {
     return (
       <InkCircle
         active={active}
         emphasis={emphasis}
-        bottom={positions.find((p) => t >= p.start && t < p.end)?.bottom ?? 672}
-        accent="#d86c48"
+        bottom={bottomAt(672)}
+        accent={ACCENT}
         fps={fps}
         frame={frame}
       />
@@ -300,14 +390,13 @@ export const CaptionChips: React.FC<{
   // "nick-display" is the pre-2026-08-16 name for "word-reveal"; the seven
   // already-published beat sheets still carry it.
   if (mode === "word-reveal" || mode === "nick-display") {
-    const dark = darkRanges.some((r) => t >= r.start && t < r.end);
     return (
       <NickDisplay
         active={active}
         emphasis={emphasis}
-        bottom={positions.find((p) => t >= p.start && t < p.end)?.bottom ?? 400}
-        dark={dark}
-        accent={dark ? "#E8A200" : ACCENT}
+        bottom={bottomAt(560)}
+        bright={brightGround}
+        accent={theme.accentOnDark}
         fps={fps}
         frame={frame}
       />
@@ -318,41 +407,30 @@ export const CaptionChips: React.FC<{
   const pop = spring({
     frame: localFrame,
     fps,
-    config: { damping: 13, stiffness: 300, mass: 0.35 },
+    config: SPRING.pop,
     durationInFrames: DUR.quick,
   });
   const scale = 0.88 + 0.12 * pop;
 
+  // ON THE SCALE. These four modes carried 50 / 38 / 48 / 56 and re-declared the
+  // SF Pro stack four times — the exact sprawl theme/type.ts was built to end,
+  // in the one component that is on screen for the whole reel. A chip is the
+  // caption voice at a smaller size, so it scales the caption role rather than
+  // inventing sizes: chip-lg 0.64, mono 0.6, chip-small 0.46 of caption.
   const font =
     mode === "chip-lg"
-      ? {
-          fontFamily:
-            "-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif",
-          fontSize: 50,
-          fontWeight: 800 as const,
-          letterSpacing: "-0.01em",
-        }
+      ? { ...typeAt("caption", 0.64), letterSpacing: "-0.01em" }
       : mode === "chip-small"
-      ? {
-          fontFamily:
-            "-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif",
-          fontSize: 38,
-          fontWeight: 700 as const,
-        }
+      ? { ...typeAt("caption", 0.46), fontWeight: 700 as const }
       : mode === "mono"
       ? {
-          fontFamily: "'Menlo', 'Courier New', monospace",
+          ...typeAt("caption", 0.6),
+          fontFamily: MONO,
           textTransform: "uppercase" as const,
-          fontSize: 48,
           letterSpacing: "0.02em",
           fontWeight: 700 as const,
         }
-      : {
-          fontFamily:
-            "-apple-system, 'SF Pro Display', 'Helvetica Neue', sans-serif",
-          fontSize: 56,
-          fontWeight: 800 as const,
-        };
+      : typeAt("caption", 0.72);
 
   const runs = tokenize(active.text, emphasis);
   const hasEmph = runs.some((r) => r.emph);
@@ -363,7 +441,7 @@ export const CaptionChips: React.FC<{
         position: "absolute",
         left: 0,
         right: 0,
-        bottom: positions.find((p) => t >= p.start && t < p.end)?.bottom ?? 400,
+        bottom: bottomAt(560),
         display: "flex",
         justifyContent: "center",
         pointerEvents: "none",

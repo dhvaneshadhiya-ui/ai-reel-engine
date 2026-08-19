@@ -21,6 +21,46 @@ anything and the linter's pixel checks sat disabled behind an unread
 
 ---
 
+## 0. WHAT MAY BLOCK — the classification test
+
+**User instruction, 2026-08-18: "Make sure that everything we develop further
+remains advice unless it is genuinely required to be a blocking gate or
+hardcoded."**
+
+A new check is **ADVICE by default**. `_partition()` in `tools/reel_gates.py`
+already enforces this mechanically — a gate id absent from `BLOCKING_RULES`
+cannot stop a render — so the failure mode is not "forgot to classify", it is
+**classifying something as blocking that isn't**.
+
+Before adding an id to `BLOCKING_RULES`, it must pass all four:
+
+1. **It restates one of the three standing rules, or render-correctness, or
+   rights.** R1 Reels/Shorts · R2 mobile-first scouting · R3 picture matches
+   words · RENDER produces a black frame or a crash · RIGHTS attribution and
+   the user's approval. Nothing else is law.
+2. **Its threshold is a MEASUREMENT of something outside us**, not a number we
+   picked. Instagram's account row at y 0.835 is a fact about Instagram.
+   "Captions look better above y 0.74" is a fact about our taste.
+3. **A violation is unfixable downstream.** If the renderer clamps it, the
+   frame is already correct and the gate is a lint, not a law.
+4. **It fails a real case in `tools/test_gates.py`, AND a legitimate
+   neighbouring case stays silent.** A gate with no negative test will
+   eventually block good work — that is how G21 reached 100% false positives.
+
+**Worked example — the one that failed this test.** G45 was added 2026-08-18
+blocking every caption below y 0.740 as "under the platform's own UI". It
+passed (1), (3) and (4), and failed (2): the platform's UI starts at y 0.835,
+so 183px of the band was our own credit lane — craft wearing an R1 badge, the
+exact fault the G18 note warns about. Split the next day into **G45**
+(blocking, at the measured 0.835) and **G46** (advice, our credit lane).
+
+The same test applies to CONSTANTS. A number inside an advisory tool or a
+component is craft and may be typed — but prefer deriving it, and say in a
+comment what it was derived from. A number that decides whether a render
+happens must be traceable to a measurement.
+
+---
+
 ## 1. Locked user settings
 
 | Setting | Value | Enforced |
@@ -125,6 +165,69 @@ all. [EYE]
 
 **The one rule that matters most: never script a claim you cannot show.**
 Source the footage first, then write to it. [EYE]
+
+## 2b. Scripting — the story standard
+
+`styles/shortform-script-framework.md` is the standard a script is written to.
+Read it before writing, not after. Its one sentence, if you read nothing else:
+
+> **The goal is not to summarize information.**
+
+The failure it exists to prevent has a name and a shape — a source article
+turned into ordered facts, each true, none connected. It is not a shape you
+notice while writing; you notice it when the reel is cut and every beat lands
+the same way. [EYE]
+
+Four of its sections are now MEASURED by `tools/check_script.py`, which prints
+at approval time — where a script can still be changed. [LINT, advice]
+
+| Framework | Measured as | Weak / approved |
+|---|---|---|
+| §9, §22 transitions | sentences that bridge to the one before | 9% / 53% |
+| §21 density | sentences carrying a measurement | 58% / 31% |
+| §3 no bullet lists | longest run of consecutive spec lines | 5 / 4 |
+| §7 what → so what | spec lines that never say what the number does | 71% / 80% |
+| §2, §10 open loops | a promise in the first third, paid off later | none / two |
+| §1, §16 hook vs context | opening carries a version, date or time anchor | no / yes |
+
+Those numbers are a MATCHED PAIR — the same story (iPhone 18 Pro) written twice,
+once well and once as a list. The thresholds sit between the two, which is the
+only reason to believe them. `check_script.py --selftest` asserts the separation
+still holds; if it ever stops, the checker has stopped meaning anything.
+
+Everything here is ADVICE, per section 0: prose is craft, and a script that
+breaks all of it and reads brilliantly is a good script.
+
+## 2c. Credits on screen (user decision 2026-08-19)
+
+**Once per source, short label.** The first scene to use a source draws its
+credit; later scenes from the same source draw nothing. The drawn label stops at
+the first em dash: `Unbox Therapy — dummy unit` renders as `Source: Unbox
+Therapy`. [LINT — `tools/check_assumptions.py`]
+
+Measured before the change: iphone-fold-ultra drew a credit on 76% of its
+runtime, `Unbox Therapy — dummy unit` 24 times and `MacRumors` 12. It never
+flickered — the label does not animate and sits at a fixed position — it simply
+never left. After: two credits in the whole reel, at 0.8s and 18.2s.
+
+**The beat sheet keeps `credit` on every scene.** Only the DRAWING is
+deduplicated. G14 reads the sheet, and stripping credits there would lose which
+asset came from where.
+
+**Every component goes through `<Credit>`.** Four did not, and each silently
+opted out of both rules by drawing its own label — FloatingCard reimplemented
+the whole thing to anchor attribution under its card (Credit takes a `top`
+prop now, so the placement survives), and SpecSheet, StatCard and PriceLadder
+called it `footnote`. Attribution has three spellings in this repo — `credit`,
+`source`, `footnote` — and a rule that only knows one of them is a rule that
+holds for some components.
+
+**What this costs, recorded honestly.** On iphone-fold-ultra the stripped
+suffix was the only place the word "dummy" appeared in 46 scenes. The manifest
+asks for "a DUMMY UNIT label AND the Unbox Therapy credit"; the label was never
+built. Nothing on screen now tells a viewer that footage is a non-functional
+mockup. The fix the manifest already specifies is the LABEL on one dummy beat —
+not the suffix back on every credit.
 
 ## 3. Truth and provenance
 

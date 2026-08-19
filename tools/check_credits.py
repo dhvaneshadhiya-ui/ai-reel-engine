@@ -39,17 +39,35 @@ DISPLAY_PX = 40
 EXEMPT = {"Credit.tsx"}
 
 
+# ATTRIBUTION HAS THREE SPELLINGS IN THIS REPO, and this checker knew one.
+#
+# ChartScene drew "MacRumors roundup - Aug 2026" in its own card flow, with its
+# own type, at y 0.70 — inside the CAPTION band, so the burned-in caption
+# printed straight through it. It had been that way since the credit lane was
+# introduced on 2026-08-17, and this file reported "no hand-rolled credits" at
+# every run, because ChartScene calls the prop `source` and the regex looked
+# for `credit`. TimelineCascade's `footnote` was invisible for the same reason.
+#
+# A checker that knows one name for the thing it protects finds the components
+# that happened to use that name.
+ATTRIBUTION = ("credit", "source", "footnote")
+
+
 def hand_rolled_credits(text: str, name: str) -> list[str]:
-    """A file that outputs {credit} in JSX but never imports <Credit>."""
+    """A file that outputs an attribution in JSX but never imports <Credit>."""
     if name in EXEMPT:
         return []
-    renders = re.search(r"\{\s*credit\s*\}", text)
+    renders = None
+    for prop in ATTRIBUTION:
+        renders = re.search(r"\{\s*" + prop + r"\s*\}", text)
+        if renders:
+            break
     if not renders:
         return []
     if re.search(r'import\s*\{[^}]*\bCredit\b[^}]*\}\s*from\s*"\./Credit"', text):
         return []
     line = text[: renders.start()].count("\n") + 1
-    return [f"  {name}:{line}  renders {{credit}} without importing <Credit> — "
+    return [f"  {name}:{line}  renders {{{prop}}} without importing <Credit> — "
             f"hand-rolled credit treatment"]
 
 

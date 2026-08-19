@@ -90,16 +90,30 @@ def main() -> None:
     if not re.fullmatch(r"[a-z0-9-]+", slug):
         raise SystemExit("slug must use lowercase letters, numbers, and hyphens")
 
+    # A DERIVATIVE sheet (e.g. "<slug>-nomusic", the sanctioned music-free
+    # export) shares the parent's brief, script, manifest and assets — only the
+    # beat sheet differs. Resolving those against the derivative slug demanded a
+    # duplicate job folder and a second copy of every asset under public/, which
+    # the repo explicitly does not want. Same staleness the ledger records twice
+    # for this file: reel_gates already accepted these sheets, validate_job did not.
+    base = slug
+    for suffix in ("-nomusic",):
+        if slug.endswith(suffix):
+            candidate = slug[: -len(suffix)]
+            if (DEFAULT_ENGINE / f"jobs/{candidate}/brief.json").exists():
+                base = candidate
+            break
+
     engine = args.engine.expanduser().resolve()
     public = engine / "public"
     errors: list[str] = []
     warnings: list[str] = []
 
     required = {
-        "brief": engine / f"jobs/{slug}/brief.json",
-        "giveaway": engine / f"jobs/{slug}/giveaway.md",
-        "script": engine / f"scripts/{slug}.md",
-        "manifest": public / f"assets/{slug}/manifest.json",
+        "brief": engine / f"jobs/{base}/brief.json",
+        "giveaway": engine / f"jobs/{base}/giveaway.md",
+        "script": engine / f"scripts/{base}.md",
+        "manifest": public / f"assets/{base}/manifest.json",
         "beats": engine / f"src/beats/{slug}.json",
     }
     for label, path in required.items():
@@ -189,8 +203,18 @@ def main() -> None:
                     f"{scenes[index].get('type')} treatment"
                 )
 
+    # A VO-only cut is legitimate, and reel_gates.py (the authority on what
+    # blocks a render) has said so since 2026-08-17 via `noMusic` +
+    # `noMusicReason` — the same shape as G02's `allowLong`. This validator was
+    # never taught the escape hatch, so a sheet that passes the gates failed
+    # here on a rule the gates already allow an argued exception to. Same
+    # staleness as the opening-scene check above. The reason string is still
+    # mandatory: the hatch has to be argued for in one line, not switched on.
     music = beats.get("music")
-    if not isinstance(music, dict) or not music.get("points"):
+    if beats.get("noMusic"):
+        if not str(beats.get("noMusicReason") or "").strip():
+            errors.append("noMusic is set with no noMusicReason")
+    elif not isinstance(music, dict) or not music.get("points"):
         errors.append("music bed with automation points is required")
 
     missing_media: set[str] = set()

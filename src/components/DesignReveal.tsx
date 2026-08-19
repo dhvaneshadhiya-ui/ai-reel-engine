@@ -1,4 +1,5 @@
 import React from "react";
+import { CYAN, TINT, TINT_GRADIENT } from "../theme/palette";
 import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
@@ -14,11 +15,10 @@ import type { Scene } from "../types";
 type Props = Extract<Scene, { type: "designreveal" }>;
 const BGS: Record<string, string> = {
   black: "#0a0a0a",
-  cream: "#f2ecdf",
-  gradient: "linear-gradient(160deg,#e6edf7 0%,#f3e6dc 55%,#ecdcf1 100%)",
+  cream: TINT.sand,
+  gradient: TINT_GRADIENT,
 };
 const SANS = "-apple-system,'SF Pro Display','Helvetica Neue',Inter,sans-serif";
-const CYAN = "#0aa9c2";
 
 /** Each design shown nearly full-screen with a number badge + push-in.
  *  Cards 1-4 short, the winner held ~2x with a cyan border + SELECTED ✓. */

@@ -63,7 +63,7 @@ then write to it.
   - (optional) Higgsfield — AI b-roll generation.
 
 Render always with reliability flags (§7):
-`npx remotion render <slug> out/<slug>.mp4 --concurrency=2 --timeout=120000`
+`npx remotion render <slug> out/<slug>.mp4 --concurrency=6 --timeout=120000`
 
 ---
 
@@ -273,9 +273,10 @@ which G31 rejects. `render_job.py` measures first, then applies the measured
 values. It still runs the render below internally:
 
 ```bash
-npx remotion render <slug> out/<slug>-raw.mp4 --concurrency=2 --timeout=120000
+npx remotion render <slug> out/<slug>-raw.mp4 --concurrency=6 --timeout=120000
 ```
-- `--concurrency=2 --timeout=120000` avoids "delayRender timed out" on reels with
+- `--concurrency=6 --timeout=120000`. The 2 that used to be here was a workaround for the Fraunces `loadFont()` delayRender timeout, fixed 2026-08-16 by moving to @font-face. Measured 2026-08-19 on 8 cores: the full 2283-frame reel went 390s -> 165s, zero errors, identical frame count. Re-measure if any component calls `loadFont()` again.
+- (historical) it avoided "delayRender timed out" on reels with
   many OffthreadVideo sources + 2 audio tracks (default 4× hits it; single frames
   render fine, so it's parallel load, not content).
 - **Verify (mandatory before delivery):** frame strip across all beats
@@ -323,7 +324,7 @@ volume-automated; 6–9 sparse SFX; master −14 LUFS.
 ## 10. Gotchas (learned)
 
 - Scenes MUST sum to the audio length or the tail drifts.
-- Render with `--concurrency=2 --timeout=120000` (see §7).
+- Render with `--concurrency=6 --timeout=120000` (see §7).
 - Fonts: load via `staticFile("fonts/…")` in `loadFont`, not a raw `/fonts/…`
   URL (404s in render).
 - HeyGen: request the connector-required explicit `9:16` portrait aspect,

@@ -13,6 +13,14 @@ Written from `styles/editorial.md` (the look) plus
 `styles/editorial-script-playbook.md` (the words — hook taxonomy, 6-act skeleton,
 connectives, honesty beat, CTA menu). **Load both.**
 
+And `styles/shortform-script-framework.md` — the STORY. The division of labour:
+the playbook is how this creator SOUNDS, the framework is whether the thing he
+is saying goes anywhere. They overlap on purpose (the playbook's connective
+glossary is the framework's §9; "hooked is not the same as confused" is its
+§16) and the overlap is the evidence: two documents arrived at the same rules
+independently, and a script still shipped with 9% of its sentences connected to
+the one before.
+
 Budget: **160-215 words -> 60-80s at the measured 2.7 wps** (2026-08-13;
 supersedes 220-300, which assumed an unmeasured 3.2 wps).
 

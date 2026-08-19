@@ -145,7 +145,14 @@ SCRIPT_SHA = hashlib.sha256(" ".join(SCRIPT.split()).encode()).hexdigest()
 # Leading spaces ON PURPOSE: this is how whisper actually returns words
 # (" Apple's"). The old clean-word fixture let a G21 bug hide for days — the
 # gate stripped punctuation but not whitespace, so nothing ever matched.
-VO_WORDS = [(" macOS", 0.0, 0.3), (" ships", 0.3, 0.7)]
+VO_WORDS = [(" macOS", 0.0, 0.3), (" ships", 0.3, 0.7),
+            # A word spoken OVER the specsheet (scene 4, 9.5-12.5s in the
+            # baseline). G18 stopped being a flat 2.0s minimum on 2026-08-18 and
+            # now asks whether the card outlasts the sentence, so the fixture
+            # needs a sentence there to outlast. It ends at 12.0 — inside the
+            # baseline card, so the clean sheet stays clean — and the G18 case
+            # shortens the card to 1.2s so the claim outruns it.
+            (" benchmark", 9.6, 12.0)]
 
 MANIFEST = {"assets": [{"id": "clip-b"}, {"id": "clip-banned"}],
             "banned_assets": ["clip-banned"]}
@@ -375,6 +382,44 @@ expect_gate(_over, "G02", True,
             f"G02 fires — allowLong cannot pass the {RUNTIME_CEILING:.0f}s wall")
 
 
+# --- G05's budget is DERIVED, and must stay tied to what it mirrors ----------
+# It was a typed {"headline": 18} calibrated for Fraunces, and it went silently
+# wrong the day the display face changed. Asserting the derivation here is what
+# makes a future face change fail loudly instead of passing overflowing lines.
+from reel_gates import LINE_MAX_CHARS as _BUDGET
+_FIT_TS = (ROOT / "src/theme/fit.ts").read_text()
+assert "export const ADVANCE = 0.655;" in _FIT_TS, (
+    "src/theme/fit.ts ADVANCE changed — re-derive LINE_MAX_CHARS in reel_gates.py")
+assert _BUDGET["headline"] == int((1080 * 0.88 - 140) / (100 * 0.655)), (
+    "G05's headline budget no longer follows from the scale and the advance")
+_counted("G05's char budget is derived from theme/fit.ts, not typed")
+
+
+# --- G45 is a FLOOR, not a lane ---------------------------------------------
+# Raising a caption to clear a face is composition and stays the author's call;
+# the split hook of iphone-fold-ultra sets 1000 for exactly that reason. A gate
+# that punished it would be teaching people to stop composing, which is how G21
+# reached 100% false positives.
+_raised = copy.deepcopy(BASE)
+_raised["scenes"][1]["captionBottom"] = 1000
+expect_gate(_raised, "G45", False,
+            "G45 silent — a caption raised to 1000 to clear a face")
+
+_floor = copy.deepcopy(BASE)
+_floor["scenes"][1]["captionBottom"] = 500
+expect_gate(_floor, "G45", False,
+            "G45 silent — a caption exactly on the floor (500 = y 0.740)")
+expect_gate(_floor, "G46", False,
+            "G46 silent — a caption exactly on the floor is not advised against")
+
+# The numbers both gates use are DERIVED from measurements that live elsewhere.
+# Asserting them here is what stops the two copies drifting apart silently.
+_ACCOUNT_ROW_Y = 0.835           # src/platformSafeArea.ts, measured off-device
+assert round(1920 * (1 - _ACCOUNT_ROW_Y)) == 317, (
+    "G45's platform floor no longer matches the measured account row")
+_counted("G45's 317px floor still equals the measured account row at y 0.835")
+
+
 # --- G13 needs clip_durations, which the shared expect_fail does not pass ---
 def expect_fail_with_clips(sheet: dict, clips: dict, gate: str, label: str) -> None:
     try:
@@ -450,6 +495,12 @@ CASES = [
     (lambda s: s["scenes"][4].update(durationSec=1.2) or
                s["scenes"][-1].update(durationSec=s["scenes"][-1]["durationSec"] + 1.8),
      "G18", "data card vanishes mid-claim"),
+    # The other half of the split: a SHORT card with nothing spoken over it is
+    # not contradicting anything, so it advises rather than blocks. Without this
+    # case the promotion would have quietly re-created the flat-minimum law it
+    # was meant to replace.
+    (lambda s: s["scenes"][8].update(durationSec=1.1),
+     "G18a", "a short data card with no speech over it"),
     (lambda s: s["scenes"][-1].update(headline={"lines": [
         {"text": "TELL ME BELOW", "kind": "headline", "at": 0.3}], "y": 0.07}),
      "G32", "outro caption stranded at the top of the frame"),
@@ -583,6 +634,22 @@ CASES = [
         "focus": {"x": 40, "y": 100, "w": 900, "h": 500},
         "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.15}]}),
      "G39", "a document on screen with no stated claim"),
+    # 2026-08-18, RULE 1. Both of these were in the SHIPPED iphone-fold-ultra:
+    # seven scenes at 300, and the reel's own screenshot shows the caption
+    # struck through the source credit.
+    (lambda s: s["scenes"][1].__setitem__("captionBottom", 300),
+     "G45", "a caption at y 0.844 — on Instagram's account row"),
+    # 2026-08-19: credits can be turned off per reel, but never silently and
+    # never as a bare switch.
+    (lambda s: s.__setitem__("noCredits", {"reason": "client-supplied footage"}),
+     "G47", "a reel that draws no credits says so"),
+    (lambda s: s.__setitem__("noCredits", {"reason": "   "}),
+     "G47", "noCredits set as a bare switch with no reason"),
+    # 422 is the credit's own baseline: clear of the platform, on our credit.
+    # It must ADVISE, not block — asserted here because the first draft of G45
+    # blocked it, which put 183px of our own taste behind an R1 badge.
+    (lambda s: s["scenes"][1].__setitem__("captionBottom", 422),
+     "G46", "a caption on the credit lane but clear of the platform"),
 ]
 
 for mutate, gate, label in CASES:

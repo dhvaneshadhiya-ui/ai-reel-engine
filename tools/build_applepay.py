@@ -42,6 +42,12 @@ TOTAL = round(words[-1][1] + 0.35, 2)
 print(f"{len(words)} words, VO ends {words[-1][1]:.2f}s, reel {TOTAL:.2f}s")
 
 
+from reelkit import Reel
+
+_kit = Reel(slug=SLUG, avatar=AVATAR,
+           clips=C, credit=AD, focus_x=FOCUS_FULL)
+
+
 def css_pos(fx, iw, ih, cw, ch):
     s = max(cw / iw, ch / ih)
     w = iw * s
@@ -181,10 +187,24 @@ def shot(name, zoom="in", cb=None, credit=AD, sfx=None):
     return build
 
 
-def face(headline=None, cb=300):
+# CAPTION POSITION IS NOT A PIXEL A BUILD SCRIPT TYPES.
+#
+# Every one of these carried `cb=300` as a DEFAULT ARGUMENT, so every face shot
+# in every reel was born with captionBottom 300 — y 0.865, underneath the
+# Instagram account row measured at y 0.835. 52 scenes across six reels shipped
+# with captions the platform paints over, and the next reel built from this
+# script would have started the same way.
+#
+# The renderer derives the floor (src/platformSafeArea.ts captionFloorPx) and
+# clamps to it, so omitting the field gives the correct position for free. A
+# value is now passed ONLY to RAISE a caption above the default — clearing a
+# face, a lower third, a logo — which is composition and stays the author's
+# call. G45 blocks anything below the floor.
+def face(headline=None, cb=None):
     def build(t0, d):
         sc = {"type": "footage", "src": AVATAR, "durationSec": d,
-              "from": round(t0, 2), "focusX": FOCUS_FULL, "captionBottom": cb}
+              "from": round(t0, 2), "focusX": FOCUS_FULL}
+        if cb: s["captionBottom"] = cb
         if headline:
             sc["headline"] = headline
         return sc
@@ -201,17 +221,18 @@ def mg(spec, sfx=None):
 
 
 def receipt_card(label, head, accent=False, aid=None):
-    def build(t0, d):
-        sc = {"type": "floatcard", "src": f"{C}/receipt-bt.png", "bg": "gradient",
-              "aspect": 1780 / 545, "durationSec": d, "credit": "Business Today",
-              "headline": hl([
-                  {"text": label, "kind": "label", "at": 0.1},
-                  {"text": head, "kind": "headline", "at": 0.4, "accent": accent},
-              ], y=0.11, theme="dark")}
-        if aid:
-            sc["assetId"] = aid
-        return sc
-    return build
+    """The Business Today receipt. Was `floatcard`, which crashes the renderer (G35) —
+    floatcard is an <OffthreadVideo> and ffmpeg reads a PNG as one frame.
+    reelkit.doc() emits a `receipt` and measures the file. `aspect` is
+    ignored; it was the workaround for a zoom floor capped 2026-08-18.
+    """
+    return _kit.doc("receipt-bt.png", aid or "receipt-bt",
+                    credit="Business Today",
+                    headline=hl([
+                        {"text": label, "kind": "label", "at": 0.1},
+                        {"text": head, "kind": "headline", "at": 0.4,
+                         "accent": accent},
+                    ], y=0.11, theme="dark"))
 
 
 def logo_hook(t0, d):

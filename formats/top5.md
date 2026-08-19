@@ -18,6 +18,20 @@ CTA.
 comment-gate CTA is a defining property of the genre, not a garnish: the reel
 exists to convert. "Comment WORD and I'll DM the link."
 
+## Story standard
+
+`styles/shortform-script-framework.md` applies here too — it is universal by its
+own title, and the skeleton below is a SHAPE, not a story. A top5 reel can hit
+every beat of that skeleton and still be a list: the hook / what it is / the list / CTA
+tells you what goes where, and the framework tells you whether the viewer has a
+reason to hear the next one.
+
+**One caveat, stated because it is true:** `tools/check_script.py`'s structural
+thresholds were calibrated on a matched pair of NEWS scripts, and no reel in
+this repo has ever used `top5`. Its bridge-rate and spec-density numbers are
+orientation here, not a verdict — an enumerated list legitimately enumerates.
+The framework itself applies unchanged; only the arithmetic is unproven.
+
 ## Script skeleton
 
 1. **HOOK** — "You can now X for free" / "You don't need to pay for X anymore"

@@ -310,3 +310,20 @@ if warnings:
     print(f"doctor ok, {len(warnings)} warning(s): {', '.join(warnings)}")
 else:
     print("doctor ok — toolchain complete.")
+
+
+# ---------------------------------------------------------------- assumptions
+#
+# doctor proves the toolchain is whole. This asks a different question: is the
+# toolchain still shaped around problems that still exist? Four constraints cost
+# real time on 2026-08-19 after their reasons had been removed, and nothing
+# noticed because nothing re-reads a reason. ADVICE — it never fails doctor.
+try:
+    import subprocess as _sp
+    from pathlib import Path as _P
+    _sp.run([__import__("sys").executable,
+             str(_P(__file__).resolve().parent.parent / "tools/check_assumptions.py")],
+            check=False)
+except Exception as _e:  # noqa: BLE001
+    print(f"  (assumption register unavailable: {_e})")
+

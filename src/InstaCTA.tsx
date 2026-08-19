@@ -1,4 +1,5 @@
 import React from "react";
+import { DISPLAY } from "./theme/type";
 import {
   AbsoluteFill,
   OffthreadVideo,
@@ -192,7 +193,7 @@ export const InstaCTA: React.FC<{ background?: string }> = ({ background }) => {
             <Pop at={19}>
               <div
                 style={{
-                  fontFamily: "Fraunces, Georgia, serif",
+                  fontFamily: DISPLAY,
                   fontStyle: "italic",
                   fontWeight: 700,
                   fontSize: 76,

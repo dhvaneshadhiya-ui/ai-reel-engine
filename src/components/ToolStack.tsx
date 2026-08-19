@@ -1,4 +1,5 @@
 import React from "react";
+import { DISPLAY, TYPE, typeAt } from "../theme/type";
 import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
@@ -57,7 +58,7 @@ export const ToolStack: React.FC<ToolStackProps> = ({
           left: 68,
           right: 68,
           top: 122,
-          fontFamily: "Fraunces",
+          fontFamily: DISPLAY,
           fontStyle: "italic",
           fontWeight: 700,
           fontSize: 78,
@@ -164,10 +165,8 @@ export const ToolStack: React.FC<ToolStackProps> = ({
                   <div
                     style={{
                       marginTop: 7,
-                      fontFamily: theme.sans,
+                      ...TYPE.nano,
                       color: theme.muted,
-                      fontSize: 19,
-                      fontWeight: 650,
                     }}
                   >
                     {item.tagline}
@@ -184,7 +183,12 @@ export const ToolStack: React.FC<ToolStackProps> = ({
           right: 56,
           bottom: 90,
           fontFamily: theme.pixel,
-          fontSize: 17,
+          // PIXEL FACE, PIXEL METRICS. Press Start 2P draws far larger per em
+          // than a proportional sans — 17px of it sits at roughly the optical
+          // size of 28px SF Pro. So this is the MICRO role, scaled for the
+          // face, rather than an off-scale number: typeAt keeps the intent
+          // legible and keeps the literal out of the sprawl report.
+          ...typeAt("micro", 0.6),
           letterSpacing: 1,
           color: dark ? theme.mutedOnDark : theme.muted,
         }}

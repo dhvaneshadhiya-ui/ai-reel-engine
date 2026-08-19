@@ -45,6 +45,17 @@ WPS_MIN, WPS_MAX = 2.35, 2.75
 
 
 def paths(slug: str) -> tuple[Path, Path, Path]:
+    # A DERIVATIVE sheet ("<slug>-nomusic", the sanctioned music-free export)
+    # speaks the SAME approved narration — it differs only in the music block,
+    # and G27 re-hashes that narration off the sheet either way. It therefore
+    # resolves to the parent's approval record rather than demanding a second
+    # yes for words the user already approved.
+    for suffix in ("-nomusic",):
+        if slug.endswith(suffix):
+            parent = slug[: -len(suffix)]
+            if (ROOT / "jobs" / parent / "approval.json").exists():
+                slug = parent
+            break
     d = ROOT / "jobs" / slug
     return d / "script.md", d / "questions.md", d / "approval.json"
 
@@ -138,10 +149,15 @@ def cmd_propose(slug: str) -> None:
     # because nobody re-reads a style guide at the moment they approve.
     try:
         sys.path.insert(0, str(Path(__file__).resolve().parent))
-        from check_script import check as _prose  # noqa: E402
+        from check_script import check as _prose, checklist as _list  # noqa: E402
         print("\nPROSE (advice — style is craft, none of this blocks):")
         for _n in _prose(spoken) or ["  nothing to flag"]:
             print(f"  - {_n}" if not _n.startswith("  ") else _n)
+        # framework S25 at the ONE moment the script can still change. The
+        # measured half is answered; the rest is what the approver is for.
+        print()
+        for _n in _list(spoken):
+            print(_n)
     except Exception as _e:  # noqa: BLE001
         print(f"\n  (prose check unavailable: {_e})")
 

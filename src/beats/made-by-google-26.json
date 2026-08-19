@@ -427,7 +427,6 @@
       "zoomDir": "in",
       "credit": "Made by Google",
       "assetId": "zoom-city-demo",
-      "captionBottom": 260,
       "sfx": [
         {
           "src": "sfx2/whooshes-01.mp3",
@@ -788,8 +787,7 @@
       "bg": "cream",
       "aspect": 2.0952380952380953,
       "credit": "Made by Google",
-      "assetId": "asl-demo",
-      "captionBottom": 260
+      "assetId": "asl-demo"
     },
     {
       "type": "chart",

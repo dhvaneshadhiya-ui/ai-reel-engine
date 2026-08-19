@@ -1,4 +1,6 @@
 import React from "react";
+import { Credit } from "./Credit";
+import { DISPLAY } from "../theme/type";
 import { SPRING, DUR } from "../theme/motion";
 import {
   AbsoluteFill,
@@ -41,6 +43,16 @@ export interface TimelineScene {
   captionBottom?: number;
   sfx?: { src: string; at?: number; vol?: number }[];
   headline?: unknown;
+  /**
+   * Attribution for the reporting this timeline is built from.
+   *
+   * NOTE THE DUPLICATION, which is half the reason this field went missing:
+   * the timeline scene is described TWICE — here, and in src/types.ts under
+   * `type: "timeline"`. The component uses THIS one, so adding the field to
+   * types.ts alone changed nothing and TypeScript still rejected the render.
+   * Two contracts for one scene means a field can satisfy the one nobody reads.
+   */
+  footnote?: string;
 }
 
 /** Dated release cards sliding onto a vertical rail, one per `at`. */
@@ -104,7 +116,7 @@ export const TimelineCascade: React.FC<{ scene: TimelineScene }> = ({
             left: 90,
             right: 90,
             color: "#F5F0E8",
-            fontFamily: "Fraunces, Georgia, serif",
+            fontFamily: DISPLAY,
           }}
         >
           {scene.kicker && (
@@ -205,7 +217,7 @@ export const TimelineCascade: React.FC<{ scene: TimelineScene }> = ({
             <div style={{ minWidth: 0 }}>
               <div
                 style={{
-                  fontFamily: "Fraunces, Georgia, serif",
+                  fontFamily: DISPLAY,
                   fontWeight: 600,
                   fontSize: it.minor ? 40 : 52,
                   color: "#F5F0E8",
@@ -232,6 +244,15 @@ export const TimelineCascade: React.FC<{ scene: TimelineScene }> = ({
           </div>
         );
       })}
+      {/* THE FOOTNOTE WAS DECLARED AND NEVER DRAWN (found 2026-08-18 by
+          tools/check_frame_contract.py). Two shipped reels put reporting on
+          screen with the attribution sitting in the beat sheet and nowhere on
+          the frame: airpods-camera scene 17 "Source: Mark Gurman, Bloomberg",
+          iphone18-split scene 17 "MacRumors - Aug 12, 2026". G14 (RIGHTS,
+          blocking) passed both, because G14 reads the sheet. Same defect as
+          the typecard credit, same day, different component — which is exactly
+          why the check had to look at pixels instead of JSON. */}
+      {scene.footnote && <Credit text={scene.footnote} />}
     </AbsoluteFill>
   );
 };
