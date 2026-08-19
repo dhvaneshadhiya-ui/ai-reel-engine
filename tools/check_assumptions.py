@@ -123,7 +123,37 @@ def _all_credits_go_through_credit():
                        if not bad else "; ".join(bad))
 
 
+def _nothing_resolves_through_bin():
+    """doctor warns that a copy in bin/ is unreachable. True only while every
+    ffmpeg call is a bare name resolved on PATH — which is what makes bin/ a
+    transport rather than an install. A wrapper that prepends bin/ to PATH, or a
+    tool that invokes bin/ffmpeg directly, would make the warning false and send
+    people to `brew install` for a binary they already have working."""
+    hits = []
+    for d in ("tools", "scripts"):
+        for f in sorted((ROOT / d).rglob("*.py")) + sorted((ROOT / d).rglob("*.mjs")):
+            if f.name == "check_assumptions.py" or f.name == "doctor.py":
+                continue
+            src = f.read_text(errors="ignore")
+            if re.search(r'["\']?bin/ff(mpeg|probe)', src):
+                hits.append(f"{f.name} references bin/ffmpeg directly")
+            elif re.search(r'PATH.{0,40}(ROOT|repo|__file__).{0,20}bin', src):
+                hits.append(f"{f.name} puts bin/ on PATH")
+    return (not hits), ("every ffmpeg call still resolves on PATH; bin/ is "
+                        "transport only" if not hits else "; ".join(hits))
+
+
 ASSUMPTIONS = [
+    dict(
+        pay="doctor tells you plainly that copying bin/ is not an install",
+        because="all ~20 ffmpeg/ffprobe calls are bare names resolved on PATH, "
+                "and nothing puts bin/ on PATH — so bin/ holds 150 MB no tool "
+                "can reach",
+        where="scripts/doctor.py, MIGRATION.md PART 0",
+        check=_nothing_resolves_through_bin,
+        if_broken="bin/ is now reachable — drop the warning and the setup note, "
+                  "or they will send people to brew for a working binary",
+    ),
     dict(
         pay="one credit per source, short label",
         because="every component draws attribution through <Credit>, which is "
@@ -231,6 +261,25 @@ def selftest() -> int:
         fp.write_text(orig)
     check_("and they read as matching once restored",
            _g05_budget_matches_advance()[0])
+
+    # 4. a tool reaching into bin/ instead of PATH. Two probes, because the
+    # warning dies from either: a direct bin/ffmpeg call, or a wrapper that
+    # prepends bin/ to PATH and makes the bare name resolve there after all.
+    probe = ROOT / "tools/__probe_bin.py"
+    for label, body in (
+        ("a direct bin/ffmpeg call is detected",
+         'import subprocess\nsubprocess.run(["bin/ffmpeg", "-i", "x"])\n'),
+        ("a wrapper putting bin/ on PATH is detected",
+         'import os\nenv = {}\nenv["PATH"] = str(ROOT / "bin") + os.pathsep\n'),
+    ):
+        probe.write_text(body)
+        try:
+            holds, why = _nothing_resolves_through_bin()
+            check_(label, not holds and "__probe_bin" in why)
+        finally:
+            probe.unlink()
+    check_("and the clean tree reads as holding",
+           _nothing_resolves_through_bin()[0])
 
     print("\n  self-test PASSED\n" if ok else "\n  self-test FAILED\n")
     return 0 if ok else 1

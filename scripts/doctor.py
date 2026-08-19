@@ -114,8 +114,14 @@ def want_filter(name: str, why: str) -> None:
 
 
 print("=== ai-reel-engine doctor ===\n-- binaries --")
-need_bin("ffmpeg", "install ffmpeg")
-need_bin("ffprobe", "install ffmpeg")
+# PATH is the only thing that counts: every call in this repo is a bare
+# "ffmpeg". A copy sitting in bin/ is bytes, not an install — say so here, since
+# the setup guide tells people to carry bin/ across and they will land on this
+# line when it does not work.
+_FF_FIX = ("`brew install ffmpeg`, or if you copied bin/ across, link it onto "
+           "PATH: ln -s <repo>/bin/ffmpeg /usr/local/bin/ffmpeg")
+need_bin("ffmpeg", _FF_FIX)
+need_bin("ffprobe", _FF_FIX)
 need_bin("node", "install Node >= 18")
 need_bin("yt-dlp", "pip3 install yt-dlp && symlink it onto PATH "
                    "(the console script lands in ~/Library/Python/*/bin)")
@@ -310,24 +316,43 @@ except Exception as e:  # noqa: BLE001
 FRESH = "--fresh-clone" in sys.argv
 print("\n-- what git does not carry --")
 
-if (ROOT / "node_modules").is_dir():
+# node_modules is already checked under "-- node --", and checked HARDER there:
+# it looks for node_modules/remotion, so a half-finished npm install fails it.
+# Report it again here because this section is what a new machine reads top to
+# bottom, but do not append a second time — a problem counted twice makes the
+# summary line say "7 problems" about four, which is how the ffmpeg
+# contradiction below stayed hidden in the noise.
+if (ROOT / "node_modules/remotion").is_dir():
     report(OK, "node_modules", "present")
 else:
     report(BAD, "node_modules", "run: npm install")
-    problems.append("node_modules")
+    if "node_modules" not in problems:
+        problems.append("node_modules")
 
-# ffmpeg/ffprobe: either bundled in bin/ or on PATH. Either is fine; NEITHER is
-# not. bin/ is ~150 MB of static builds and is excluded from git on purpose.
-for tool in ("ffmpeg", "ffprobe"):
-    bundled = (ROOT / "bin" / tool).exists()
-    on_path = shutil.which(tool)
-    if bundled or on_path:
-        report(OK, tool, "bin/" if bundled else str(on_path))
-    else:
-        report(BAD, tool,
-               "not in bin/ and not on PATH. bin/ is excluded from git (~150 MB) "
-               "— copy it from the source machine, or `brew install ffmpeg`")
-        problems.append(tool)
+# ffmpeg/ffprobe are checked once, by need_bin, against PATH — see "-- binaries
+# --" above. This section used to check them a SECOND time and accept a copy in
+# bin/ as equally good ("either is fine"). That was false, and the two checks
+# contradicted each other in exactly the case the setup guide recommends.
+#
+# Every invocation in this repo is a bare "ffmpeg" / "ffprobe" through
+# subprocess.run — about twenty of them, across reel_gates, pace_reel,
+# lint_frames, capture.mjs and the rest — so the binary is resolved through
+# PATH, always. Nothing reads bin/, and nothing puts bin/ on PATH. A machine
+# with bin/ffmpeg and no ffmpeg on PATH therefore fails at the first ffmpeg call
+# while this check called it OK, and the remediation text told you to copy bin/
+# across, which produces exactly that machine.
+#
+# So: bin/ is a transport for the bytes, not an install. Copying it is fine —
+# but the copy has to be linked onto PATH before anything can use it, the same
+# way yt-dlp is handled above.
+bundled = [t for t in ("ffmpeg", "ffprobe") if (ROOT / "bin" / t).exists()]
+if bundled and not all(shutil.which(t) for t in ("ffmpeg", "ffprobe")):
+    report(WARN, "bin/ not on PATH",
+           f"bin/ holds {', '.join(bundled)} but nothing resolves through bin/ — "
+           f"every call in this repo is a bare `ffmpeg`. Link it: "
+           f"ln -s \"{ROOT}/bin/ffmpeg\" /usr/local/bin/ffmpeg (same for ffprobe), "
+           f"or `brew install ffmpeg`.")
+    warnings.append("bin/ not on PATH")
 
 # The display face. Space Grotesk became the display voice on 2026-08-19; a
 # clone missing it silently falls back to Helvetica and every headline in every
@@ -400,10 +425,11 @@ else:
     report(OK, "global skills", f"all {len(expected)} present in ~/.claude/skills")
 
 if FRESH:
-    print("\n  A fresh clone is ready when the four checks above pass. The "
-          "footage warning\n  is expected — scout a new reel, or copy "
-          "public/assets/<slug>/ for an old one.\n  The skills warning, if "
-          "any, is one command: bash tools/install_global_skills.sh")
+    print("\n  A fresh clone is ready when nothing above says FAIL — here, and "
+          "in\n  `-- binaries --` up top, where ffmpeg and ffprobe are checked "
+          "against PATH.\n  The footage warning is expected: scout a new reel, "
+          "or copy\n  public/assets/<slug>/ for an old one. The skills warning, "
+          "if any, is one\n  command: bash tools/install_global_skills.sh")
 
 print("\n-- hygiene --")
 stray = [p for p in (ROOT / "public/assets").glob("*/_sources") if p.is_dir()]
