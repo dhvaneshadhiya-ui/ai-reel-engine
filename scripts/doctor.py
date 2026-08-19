@@ -292,6 +292,76 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "reel_gates self-test", str(e))
     problems.append("gates")
 
+# ------------------------------------------------------------- fresh clone
+#
+# `git clone` does NOT give a working engine, and the gap is invisible until a
+# render fails. .gitignore deliberately excludes node_modules/, bin/,
+# public/assets/ and _sources/ — the first two are needed to render at all, the
+# last two are per-reel material that should never sit in a shared repo.
+#
+# This checks exactly what a clone is missing, and nothing else. Run it as the
+# first thing on a new machine:
+#
+#     python3 scripts/doctor.py --fresh-clone
+#
+# Without the flag these same checks still run, because a half-set-up machine
+# is a half-set-up machine whether or not you remembered the flag.
+FRESH = "--fresh-clone" in sys.argv
+print("\n-- what git does not carry --")
+
+if (ROOT / "node_modules").is_dir():
+    report(OK, "node_modules", "present")
+else:
+    report(BAD, "node_modules", "run: npm install")
+    problems.append("node_modules")
+
+# ffmpeg/ffprobe: either bundled in bin/ or on PATH. Either is fine; NEITHER is
+# not. bin/ is ~150 MB of static builds and is excluded from git on purpose.
+for tool in ("ffmpeg", "ffprobe"):
+    bundled = (ROOT / "bin" / tool).exists()
+    on_path = shutil.which(tool)
+    if bundled or on_path:
+        report(OK, tool, "bin/" if bundled else str(on_path))
+    else:
+        report(BAD, tool,
+               "not in bin/ and not on PATH. bin/ is excluded from git (~150 MB) "
+               "— copy it from the source machine, or `brew install ffmpeg`")
+        problems.append(tool)
+
+# The display face. Space Grotesk became the display voice on 2026-08-19; a
+# clone missing it silently falls back to Helvetica and every headline in every
+# reel renders in the wrong typeface — the exact failure theme/fonts.tsx
+# documents for Fraunces, which took weeks to notice.
+missing_fonts = [f for f in ("space-grotesk-700.woff2", "PressStart2P.ttf")
+                 if not (ROOT / "public/fonts" / f).exists()]
+if missing_fonts:
+    report(BAD, "display fonts", f"missing {', '.join(missing_fonts)} — these ARE "
+           f"tracked in git, so a clone should have them; check the clone completed")
+    problems.append("fonts")
+else:
+    report(OK, "display fonts", "Space Grotesk + Press Start 2P present")
+
+# Per-reel material. Its ABSENCE is normal and must not fail — a clone can
+# typecheck, gate and self-test without a single frame of footage. Say so
+# plainly so nobody goes looking for a bug that is a design decision.
+reels = sorted(p.stem for p in (ROOT / "src/beats").glob("*.json")
+               if not p.stem.endswith("-nomusic"))
+have = [r for r in reels if (ROOT / "public/assets" / r).is_dir()]
+if len(have) < len(reels):
+    report(WARN, "per-reel footage",
+           f"{len(have)}/{len(reels)} reels have assets on this machine. "
+           f"public/assets/ is excluded from git by design — the repo is the "
+           f"SYSTEM, not the material. You can build and check any reel; you "
+           f"can only RENDER the ones whose footage is here.")
+    warnings.append("footage")
+else:
+    report(OK, "per-reel footage", f"all {len(reels)} reels have assets")
+
+if FRESH:
+    print("\n  A fresh clone is ready when the four checks above pass. The "
+          "footage warning\n  is expected — scout a new reel, or copy "
+          "public/assets/<slug>/ for an old one.")
+
 print("\n-- hygiene --")
 stray = [p for p in (ROOT / "public/assets").glob("*/_sources") if p.is_dir()]
 if stray:
