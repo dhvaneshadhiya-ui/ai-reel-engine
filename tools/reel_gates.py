@@ -1762,7 +1762,29 @@ def main() -> None:
     except GateError as e:
         print(f"GATES FAILED — {slug}\n{e}")
         sys.exit(1)
-    print(f"GATES PASSED — {slug}")
+
+    # A PASS with no word timings is not the same verdict as a PASS with them,
+    # and until 2026-08-19 it printed identically. On a fresh clone —
+    # public/assets/ is excluded from git by design — made-by-google-26 reported
+    # 10 findings and exit 0 where the same commit with footage reported 36,
+    # because every word-level check simply did not run. One of them, G18, is
+    # BLOCKING: a clone could pass a reel this repo would refuse.
+    #
+    # The comment forty lines up already names this exact failure and calls it
+    # "the one worth checking twice, because it always looks green" — it was
+    # written about vo_words never being PASSED, and the neighbouring case of
+    # vo_words being ABSENT was left silent. So: say so. Not a failure — a clone
+    # legitimately has no footage, and checking a beat sheet without it is a
+    # supported workflow — but never a verdict that looks complete.
+    if vo_words is None:
+        print(f"GATES PASSED (PARTIAL) — {slug}")
+        print(f"  no word timings: {vo_path.relative_to(ROOT)} is absent, so "
+              f"every check that compares the PICTURE against the WORDS "
+              f"(Rule 3) was skipped, blocking ones included.")
+        print("  This verdict covers the beat sheet only. Re-run where the "
+              "reel's footage lives before trusting it.")
+    else:
+        print(f"GATES PASSED — {slug}")
     for w in warnings:
         print(f"  warning: {w}")
 

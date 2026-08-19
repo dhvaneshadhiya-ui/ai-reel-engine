@@ -19,10 +19,18 @@ first, not last.
 ```bash
 git clone https://github.com/dhvaneshadhiya-ui/ai-reel-engine.git
 cd ai-reel-engine
-npm install
+bash setup.sh
 bash tools/install_global_skills.sh
 python3 scripts/doctor.py --fresh-clone
 ```
+
+`setup.sh` is doing more than `npm install`, and on a genuinely new Mac that
+difference is the whole setup. Four of the things `doctor` checks — **whisper**,
+**yt-dlp**, **Playwright's chromium**, and the **whisper base model** — are
+machine-level and live outside the repo entirely (`~/.local/bin`,
+`~/Library/Caches/ms-playwright`, `~/.cache/whisper`). `npm install` gives you
+none of them; `setup.sh` installs all four and handles ffmpeg. Skip it and
+`doctor` fails on tools that a clone was never going to carry.
 
 ### What git carries
 
@@ -64,10 +72,20 @@ that carried it would be tens of gigabytes.
 
 ### What this means in practice
 
-A fresh clone can typecheck, run every gate, run all four self-test suites, and
-BUILD any beat sheet. It can only RENDER a reel whose footage is present. That
-is why `--fresh-clone` reports missing footage as a **warning, not a failure** —
-it is a design decision, not a broken setup.
+A fresh clone can typecheck, run all four self-test suites, and BUILD any beat
+sheet. It can only RENDER a reel whose footage is present. That is why
+`--fresh-clone` reports missing footage as a **warning, not a failure** — it is
+a design decision, not a broken setup.
+
+It can run the gates, but **not all of them**, and the difference is not
+cosmetic. Every check that compares the picture against the words reads
+`public/assets/<slug>/vo.json`, which a clone does not have. Measured on
+`made-by-google-26`: 36 findings where the footage lives, 10 in a clone — and
+the missing ones include **G18, which is blocking**. The same commit therefore
+reported PASS in a clone and FAILED, with three violations, on the machine that
+had the material. `reel_gates` now prints `GATES PASSED (PARTIAL)` and says
+which rule went unchecked, so a green verdict from a clone is never mistaken for
+a real one. Re-run gates where the footage lives before trusting them.
 
 ### The skills — 29 travel, 6 do not
 

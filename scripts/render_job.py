@@ -28,7 +28,19 @@ TRUE_PEAK_LIMITER = "alimiter=limit=0.83:level=disabled"
 def run(command: list[str], cwd: Path, dry_run: bool) -> None:
     print("+", " ".join(shlex.quote(part) for part in command))
     if not dry_run:
-        subprocess.run(command, cwd=cwd, check=True)
+        try:
+            subprocess.run(command, cwd=cwd, check=True)
+        except subprocess.CalledProcessError as e:
+            # The step already printed its own diagnosis — validate_job says
+            # exactly which manifest is missing, and that is the whole answer.
+            # Re-raising buried that one useful line under fourteen lines of
+            # Python internals ending in CalledProcessError, which is the first
+            # thing a fresh clone sees after doctor passes: footage is excluded
+            # from git by design, so the first render attempt is EXPECTED to
+            # stop here. It should read as a missing file, not a crash.
+            print(f"\nrender stopped — {Path(command[1]).name} exited "
+                  f"{e.returncode}. Its message is above.", file=sys.stderr)
+            sys.exit(e.returncode)
 
 
 def master(raw: Path, final: Path, cwd: Path, dry_run: bool) -> None:
