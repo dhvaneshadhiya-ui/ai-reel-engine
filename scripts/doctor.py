@@ -11,6 +11,7 @@ than one that crashes. This fails loudly instead.
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -357,10 +358,52 @@ if len(have) < len(reels):
 else:
     report(OK, "per-reel footage", f"all {len(reels)} reels have assets")
 
+# GLOBAL skills. The 29 in-repo skills travel in the clone — .claude/skills/
+# holds 8 real dirs plus 21 symlinks into .agents/skills/, and BOTH are tracked,
+# so a clone gets all 661 files with no install step. The global ones do not:
+# they live in ~/.agents/skills, outside any repo, and git cannot carry an
+# installed copy. That is the same premise as this whole section, and it was the
+# one item in the category nothing checked — so a new machine passed every check
+# here while showrunner's humanizer / youtube-seo / thumbnail-design stages
+# quietly had no skill to call.
+#
+# Read the expected set from the installer instead of retyping it. A list typed
+# here is a second source of truth that goes stale the first time the installer
+# gains a skill, which is the failure this check exists to catch.
+installer = ROOT / "tools/install_global_skills.sh"
+expected: list[str] = []
+if installer.exists():
+    body = installer.read_text()
+    block = re.search(r"^SKILLS=\((.*?)^\)", body, re.S | re.M)
+    if block:
+        expected += re.findall(r'"[^"]*@([^"@]+)"', block.group(1))
+expected += sorted(p.name for p in (ROOT / "skills-global").glob("*")
+                   if (p / "SKILL.md").exists())
+
+# ~/.claude/skills is the path the agent reads; ~/.agents/skills is where the
+# files sit. .exists() follows symlinks, so a dangling link counts as missing —
+# which is exactly right, and is how ffmpeg-ytdlp was found missing on the
+# machine that wrote it.
+read_path = Path.home() / ".claude/skills"
+absent = [s for s in expected if not (read_path / s / "SKILL.md").exists()]
+if not expected:
+    report(WARN, "global skills", "could not read tools/install_global_skills.sh")
+    warnings.append("global skills")
+elif absent:
+    report(WARN, "global skills",
+           f"{len(expected) - len(absent)}/{len(expected)} installed; missing "
+           f"{', '.join(absent)}. These are ADVISORY — every gate, self-test and "
+           f"render works without them, but the scripting and packaging stages "
+           f"lose the helpers they reach for. Fix: bash tools/install_global_skills.sh")
+    warnings.append("global skills")
+else:
+    report(OK, "global skills", f"all {len(expected)} present in ~/.claude/skills")
+
 if FRESH:
     print("\n  A fresh clone is ready when the four checks above pass. The "
           "footage warning\n  is expected — scout a new reel, or copy "
-          "public/assets/<slug>/ for an old one.")
+          "public/assets/<slug>/ for an old one.\n  The skills warning, if "
+          "any, is one command: bash tools/install_global_skills.sh")
 
 print("\n-- hygiene --")
 stray = [p for p in (ROOT / "public/assets").glob("*/_sources") if p.is_dir()]

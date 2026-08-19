@@ -20,6 +20,7 @@ first, not last.
 git clone https://github.com/dhvaneshadhiya-ui/ai-reel-engine.git
 cd ai-reel-engine
 npm install
+bash tools/install_global_skills.sh
 python3 scripts/doctor.py --fresh-clone
 ```
 
@@ -53,11 +54,44 @@ BUILD any beat sheet. It can only RENDER a reel whose footage is present. That
 is why `--fresh-clone` reports missing footage as a **warning, not a failure** —
 it is a design decision, not a broken setup.
 
+### The skills — 29 travel, 6 do not
+
+This is the part that looks fine and isn't, so it is worth being exact.
+
+**In-repo skills travel automatically.** `.claude/skills/` holds 29 entries: 8
+real directories, and 21 symlinks pointing at `.agents/skills/` — which is
+*also* inside the repo and *also* tracked, 647 files of it. Git stores a symlink
+as a symlink, the targets are relative (`../../.agents/skills/<name>`), and both
+ends land in the clone. So all 661 files of `hyperframes-*`, `remotion-*`,
+`media-use`, `news-reel`, `viral-hook-writer` and the rest arrive intact with no
+install step. Verified by cloning to a scratch folder and resolving every one.
+
+**Global skills do not.** Six of them — `find-skills`, `humanizer`,
+`fact-check-workflow`, `youtube-seo`, `thumbnail-design`, `ffmpeg-ytdlp` — live
+in `~/.agents/skills`, outside every repo, because they are useful in any
+project and not just this one. Git cannot carry an installed copy of something
+that sits outside the tree. One command puts them back:
+
+```bash
+bash tools/install_global_skills.sh
+```
+
+Five are fetched from the skills registry by `npx`; `ffmpeg-ytdlp` is
+hand-written, so its SOURCE is vendored at `skills-global/` and the script
+copies it into place. It is idempotent — re-running just refreshes.
+
+They are **advisory**. Every gate, self-test and render works without them; what
+you lose is the helpers the scripting and packaging stages reach for
+(`tools/showrunner.py` calls `humanizer`, `youtube-seo`, `thumbnail-design` and
+`ffmpeg-ytdlp` by name). `doctor.py` now reports them, as a warning rather than
+a failure, so a machine missing them says so instead of quietly degrading.
+
 ### What still will not travel
 
-The **HeyGen API key**. It lives in the Claude app's connector, not the repo —
-`config.json` holds only avatar and voice IDs, which cannot authenticate
-anything. Set the connector up on the new machine before generating an avatar.
+The **HeyGen API key**, and the other MCP connectors. They live in the Claude
+app, not the repo — `config.json` holds only avatar and voice IDs, which cannot
+authenticate anything. Set the connector up on the new machine before generating
+an avatar; see PART 2.3 for the Claude Desktop specifics.
 
 ---
 
@@ -177,6 +211,58 @@ that asks for your Mac password:
 2. **Your HeyGen credit balance** — one shared pool on the account, not
    per-machine. Check it before generating anything.
 3. **Per-reel footage and renders** — see 1.3.
+4. **The six global skills** — see PART 0. One command:
+   `bash tools/install_global_skills.sh`.
+
+### 2.3 Setting it up in the Claude desktop app
+
+The engine is driven from the Claude app, so the app has to be able to see the
+folder and the skills. Three things, in order.
+
+**1. Point the app at the folder.** Open the app, start a session, and add
+`ai-reel-engine` as the working directory (the folder picker, or drag the folder
+in). That one act does most of the work: skills under a project's
+`.claude/skills/` load automatically, so all 29 in-repo skills become available
+the moment the folder is attached. Nothing to copy, nothing to enable.
+
+`CLAUDE.md` and `RULES.md` sit at the repo root and load with it, which is what
+carries the constitution — R1 through R3, RENDER and RIGHTS — onto the new
+machine. Confirm by asking for the blocking rules; if they come back, the folder
+is attached correctly.
+
+**2. Install the global skills.** These live in `~/.claude/skills`, which the
+app reads for every project regardless of folder:
+
+```bash
+bash tools/install_global_skills.sh
+```
+
+Run it from inside the repo. Then **restart the app** — it enumerates skills at
+launch, so a skill installed mid-session will not appear until it does.
+
+> A caveat worth knowing, because it cost two days here. `~/.agents/skills` is
+> where the files sit; `~/.claude/skills` is where the app *looks*, via
+> symlinks. A skill can be perfectly installed in the first and invisible to the
+> app because nothing points at it from the second. The installer now creates
+> both and verifies through the read path, and `doctor.py` checks the same path
+> — but if you ever place a skill by hand, place it in `~/.agents/skills` and
+> link it into `~/.claude/skills`.
+
+**3. Authorize the connectors.** MCP connectors are per-account and per-machine,
+and none of them travel in the repo. HeyGen is the one the pipeline actually
+needs — the avatar stage cannot run without it. Authorize it in the app's
+connector settings; the OAuth flow has to be done by you, in an interactive
+session, and cannot be scripted.
+
+Then verify the whole machine at once:
+
+```bash
+python3 scripts/doctor.py --fresh-clone
+```
+
+Four checks must pass. Two warnings are expected and not faults: missing
+per-reel footage (by design — the repo is the system, not the material) and
+`manim`, which only the rare animated-diagram scene uses.
 
 ---
 
