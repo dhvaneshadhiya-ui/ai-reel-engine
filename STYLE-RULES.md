@@ -2720,3 +2720,55 @@ the ~10% battery is Pro Max ONLY (the smaller Pro is reported near flat), no
 price, September 9 is expected not confirmed, and no f-stop range because the
 reports disagree. A caption is where an unhedged claim is most likely to leak
 back in, because it is written last and gated least.
+
+## 2026-08-20 — camera-snap framing: `focusY`, `zoom`, and why one of the two gates advises
+
+Added `focusY` and `zoom` to the `footage` scene so a locked-off talking head can
+be re-framed BETWEEN cuts: consecutive scenes on one avatar clip, each a
+different `focusX`/`focusY`/`zoom`, `zoomDir: "none"`, cutting on vo.json word
+onsets. `from` carries the trim forward so lip sync never breaks. Before this,
+framing could move sideways only, and only at a fixed 1.1x push.
+
+**The idea came from evaluating a third-party skill we did NOT install**
+(`kinetic-multicam`). Its route was to send the avatar master through Seedance
+video-to-video — a second synthesis pass over a digital twin of a real face, a
+second paid platform, and a text-prompt handoff outside `render_job.py`. The
+technique underneath it — camera snaps timed to breath boundaries — was worth
+having; the delivery mechanism was not. Taking the idea and leaving the vendor
+cost two fields and two gates.
+
+**`zoom` is the BASE the push runs from, not a replacement for it.** So a sheet
+with no `zoom` renders byte-identical to before (base 1 -> 1 to 1.1). That
+compatibility is the whole reason it was built this way rather than as a new
+scene type.
+
+**G48 blocks; G49 advises. The split is the point.** Both were written the same
+afternoon, and only one earned a block:
+
+- **G48 (RENDER, blocking)** — `zoom < 1`, or a focus outside 0..1. Below 1 the
+  scaled layer stops covering the canvas; a focus past the slack `cover` gives
+  it pushes the image off an edge. Both paint the black backdrop. The bounds are
+  not a chosen number — they are exactly where the frame stops being covered,
+  which is the same category as G35, a still in a video slot rendering black.
+- **G49 (advice)** — `zoom` set together with a `zoomDir` push, so the scale
+  compounds to `zoom * 1.1`. Easy to hit by accident, because `zoomDir` defaults
+  to `"in"` when omitted and the field was added for locked-off snaps. But
+  wanting a push FROM a tight base is a legitimate choice, so it asks the
+  question instead of refusing the render.
+
+Had G49 been given a ceiling — "no zoom above 2.0x" — that would have been taste
+wearing a rule's badge, the exact fault the G18 note records. There is no
+defensible maximum without the source resolution, and the beat sheet does not
+carry it for footage.
+
+**`focusX` had never been validated.** It has existed since the footage variant
+did, and nothing checked its range; G48 covers it now because it fails the same
+way. All 101 focus values across the 14 shipped sheets were in range, so nothing
+was silently broken — but nothing would have caught it either.
+
+**Still unproven: how it LOOKS.** A 16:9 master cropped to 9:16 has finite
+headroom, and a hard snap can clip the face or push it under
+`platformSafeArea.ts`. That is an [EYE] question no gate answers. Check it with
+`tools/preflight_stills.py` (one frame per scene, ~36s) before committing a reel
+to the treatment. It could not be checked on the machine this was written on —
+a fresh clone with no footage.

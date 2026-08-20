@@ -19,14 +19,17 @@ export const FootageScene: React.FC<{ scene: FootageProps }> = ({ scene }) => {
   const { fps, durationInFrames } = useVideoConfig();
 
   const dir = scene.zoomDir ?? "in";
+  // `zoom` is the BASE the push runs from, not a replacement for it, so an old
+  // sheet with no `zoom` is byte-identical to before: base 1 => 1 -> 1.1.
+  const base = scene.zoom ?? 1;
   const zoom =
     dir === "none"
-      ? 1
+      ? base
       : dir === "in"
-        ? interpolate(frame, [0, durationInFrames], [1, 1.1], {
+        ? interpolate(frame, [0, durationInFrames], [base, base * 1.1], {
             extrapolateRight: "clamp",
           })
-        : interpolate(frame, [0, durationInFrames], [1.1, 1], {
+        : interpolate(frame, [0, durationInFrames], [base * 1.1, base], {
             extrapolateRight: "clamp",
           });
 
@@ -41,7 +44,8 @@ export const FootageScene: React.FC<{ scene: FootageProps }> = ({ scene }) => {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            objectPosition: `${(scene.focusX ?? 0.5) * 100}% 50%`,
+            objectPosition:
+              `${(scene.focusX ?? 0.5) * 100}% ${(scene.focusY ?? 0.5) * 100}%`,
           }}
         />
       </AbsoluteFill>

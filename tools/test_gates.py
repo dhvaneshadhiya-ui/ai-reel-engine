@@ -449,6 +449,12 @@ expect_fail_with_clips(
 TOP5 = top5(BASE)
 CMP = comparison(BASE)
 
+def _footage0(sheet: dict) -> dict:
+    """First `footage` scene in the sheet — the G48/G49 fields live only there,
+    so a case must not land on the `split` hook or it would never fire."""
+    return next(sc for sc in sheet["scenes"] if sc.get("type") == "footage")
+
+
 CASES = [
     (lambda s: s["scenes"][-1].update(durationSec=9.0), "G01", "tail runs past the VO"),
     (lambda s: s["scenes"].__setitem__(slice(3, None), []), "G02", "runtime under 60s"),
@@ -650,6 +656,19 @@ CASES = [
     # blocked it, which put 183px of our own taste behind an R1 badge.
     (lambda s: s["scenes"][1].__setitem__("captionBottom", 422),
      "G46", "a caption on the credit lane but clear of the platform"),
+    # 2026-08-20 — focusY + zoom, added for camera-snap cuts. G48 is RENDER:
+    # each of these paints the black backdrop rather than the picture, which is
+    # why it blocks. One case per failing field, since they are separate reads.
+    (lambda s: _footage0(s).update(zoom=0.8),
+     "G48", "zoom below 1 uncovers the canvas"),
+    (lambda s: _footage0(s).update(focusY=1.4),
+     "G48", "focusY outside 0..1"),
+    (lambda s: _footage0(s).update(focusX=-0.2),
+     "G48", "focusX outside 0..1"),
+    # ADVICE, not a block: the base scale and the push multiply, so a snap that
+    # meant to lock off at 1.6 drifts to 1.76. Legitimate if intended.
+    (lambda s: _footage0(s).update(zoom=1.6, zoomDir="in"),
+     "G49", "a locked-off zoom compounded by a push"),
 ]
 
 for mutate, gate, label in CASES:

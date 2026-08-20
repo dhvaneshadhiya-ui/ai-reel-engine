@@ -269,6 +269,12 @@ BLOCKING_RULES: dict[str, str] = {
     "G13": "RENDER a clip shorter than its beat freezes or blacks out",
     "G28": "RENDER a missing SFX file",
     "G35": "RENDER a still in a video slot renders black",
+    # G48 is RENDER, not framing taste: below 1 the layer stops covering the
+    # canvas, and a focus outside 0..1 pushes past the slack `cover` gives it.
+    # Both paint the black backdrop. G49 — the zoom/zoomDir compounding note —
+    # is deliberately NOT here: wanting a push from a tight base is a real
+    # choice, so it asks the question instead of refusing the render.
+    "G48": "RENDER framing that exposes the backdrop renders black bars",
     # RIGHTS — attribution, and the user's control over their own work.
     "G14": "RIGHTS we credit the sources we use",
     "G15": "RIGHTS a stated number carries where it came from",
@@ -1528,6 +1534,64 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 f"({', '.join(untiered[:5])}{'...' if len(untiered) > 5 else ''}) "
                 "— capture with --tier so how well-sourced the reel is can be "
                 "counted instead of guessed.")
+
+    # G48 — RENDER: framing that exposes frame the source cannot fill.
+    #
+    # ADDED 2026-08-20 with `focusY` and `zoom`, for camera-snap cuts. Both
+    # failures here paint the black backdrop, which is the same category as G35
+    # (a still in a video slot renders black) — not taste:
+    #
+    #   zoom < 1        scales the layer BELOW the canvas, so the backdrop shows
+    #                   around it. `scale(0.8)` is a 9:16 reel with black bars.
+    #   focus outside   objectPosition past 0..1 pushes the image beyond the
+    #   0..1            slack `cover` gives it, exposing the backdrop at an edge.
+    #
+    # The bounds are not a chosen number — they are where the frame stops being
+    # covered. That is why this one blocks and the compounding check below does
+    # not. focusX was never validated before; it is checked here for the same
+    # reason, since it fails the same way.
+    for i, sc in enumerate(scenes):
+        if sc.get("type") != "footage":
+            continue
+        for field in ("focusX", "focusY"):
+            v = sc.get(field)
+            if v is None:
+                continue
+            if not isinstance(v, (int, float)) or not (0.0 <= float(v) <= 1.0):
+                errors.append(
+                    f"G48 scene {i:02d} sets {field}={v!r} — outside 0..1, so "
+                    f"the frame is pushed past what `cover` can fill and the "
+                    f"black backdrop shows at an edge. 0 = flush left/top, "
+                    f"0.5 = centred, 1 = flush right/bottom.")
+        z = sc.get("zoom")
+        if z is not None:
+            if not isinstance(z, (int, float)) or float(z) < 1.0:
+                errors.append(
+                    f"G48 scene {i:02d} sets zoom={z!r} — below 1 the scaled "
+                    f"layer no longer covers the canvas and renders with black "
+                    f"bars. 1 = fill, above 1 = punch in.")
+
+    # G49 — the locked-off scale and the Ken Burns push COMPOUND.
+    #
+    # Advice, deliberately. `zoom` is the base the push runs from, so
+    # `zoom: 1.6` with the default `zoomDir: "in"` ends at 1.76x, not 1.6x —
+    # easy to hit by accident when `zoom` was added for locked-off snaps and
+    # `zoomDir` defaults to "in" when omitted. Wanting a push FROM a tight base
+    # is legitimate, so this cannot block; it only asks whether it was meant.
+    for i, sc in enumerate(scenes):
+        if sc.get("type") != "footage" or sc.get("zoom") is None:
+            continue
+        z = sc.get("zoom")
+        if not isinstance(z, (int, float)) or float(z) < 1.0:
+            continue                      # already a G48 failure; do not pile on
+        dir_ = sc.get("zoomDir", "in")
+        if dir_ != "none":
+            errors.append(
+                f"G49 scene {i:02d} sets zoom={z} AND zoomDir={dir_!r}, so the "
+                f"scale compounds to {float(z) * 1.1:.2f}x by the "
+                f"{'end' if dir_ == 'in' else 'start'} of the beat. For a "
+                f"locked-off snap set zoomDir: \"none\"; if the push is meant, "
+                f"this is only a note.")
 
     # ---- THE ONLY THINGS ALLOWED TO BLOCK A RENDER -------------------------
     #

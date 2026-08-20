@@ -133,6 +133,20 @@ export type Scene =
       zoomDir?: "in" | "out" | "none";
       /** horizontal focus 0..1 when source is wider than canvas (default 0.5) */
       focusX?: number;
+      /** vertical focus 0..1 when source is taller than canvas (default 0.5) */
+      focusY?: number;
+      /**
+       * ADDED 2026-08-20. Locked-off scale multiplier, default 1 — the base the
+       * `zoomDir` push runs from, so `zoom: 1.4` + `zoomDir: "none"` holds a
+       * tight frame dead still. Added for camera-snap cuts: consecutive scenes
+       * on ONE avatar clip, each a different `focusX`/`focusY`/`zoom`, cutting
+       * on vo.json word onsets. Before this, framing could only move sideways
+       * and only at a fixed 1.1x push.
+       *
+       * Below 1 the scaled layer no longer covers the canvas and the black
+       * backdrop shows through — that is G48, and it blocks.
+       */
+      zoom?: number;
       /** Nick-style info-card overlaid on the footage: bold heading + body */
       infocard?: { heading: string; body: string; at?: number };
     })
