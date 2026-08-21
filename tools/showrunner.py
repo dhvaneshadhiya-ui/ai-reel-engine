@@ -56,6 +56,43 @@ def _gates_pass(slug: str) -> bool:
     return r.returncode == 0
 
 
+# A stage whose artifact new_job.py SCAFFOLDS cannot use exists() as its done
+# test — the file is born, the work is not. Found 2026-08-21, the day the
+# scaffolds landed and three stages lit up green on an empty job. The done
+# tests below share their definitions with the tools that enforce them.
+
+def _structure_done(slug: str) -> bool:
+    sys.path.insert(0, str(_p("tools")))
+    from script_approval import structure_problems  # noqa: E402
+    return _p(f"jobs/{slug}/structure.md").exists() \
+        and not structure_problems(slug)
+
+
+def _research_done(slug: str) -> bool:
+    """Structural half only — SPOKEN is verified against the script at
+    propose, which may not exist yet at this stage."""
+    sys.path.insert(0, str(_p("tools")))
+    from research_check import check_research  # noqa: E402
+    errors, _ = check_research(slug, None)
+    return not errors
+
+
+def _scouted(slug: str) -> bool:
+    """new_job scaffolds an EMPTY manifest, so existence proves nothing.
+    Done = at least one asset recorded, or a deliberate thin-manifest call
+    recorded as `"thin": "<why>"` (AGENT.md: a thin manifest is a valid
+    outcome — it just means a graphics-led reel; valid decisions get
+    written down)."""
+    p = _p(f"public/assets/{slug}/manifest.json")
+    if not p.exists():
+        return False
+    try:
+        m = json.loads(p.read_text())
+    except Exception:
+        return False
+    return bool(m.get("assets") or m.get("items") or m.get("thin"))
+
+
 def steps(slug: str) -> list[dict]:
     """The pipeline, in order. `auto` is a command safe to run unattended."""
     return [
@@ -77,11 +114,27 @@ def steps(slug: str) -> list[dict]:
                    "deliverable behind a keyword\n"
                    "      This comes FIRST, before scouting: the goal decides "
                    "what evidence is worth finding."),
+        dict(key="research",
+             label="Research ledger started (claims tiered + sourced)",
+             done=_research_done(slug),
+             auto=None,
+             skills=["fact-check-workflow  verify each claim BEFORE it becomes a beat"],
+             human=f"Fill jobs/{slug}/research.md AS YOU RESEARCH, not after:\n"
+                   "        - CLAIM: <the claim>  /  TIER: official|multi|"
+                   "single|disputed\n"
+                   "          SPOKEN: (filled at script time)  /  SRC: <url "
+                   "you actually fetched>\n"
+                   "        plus a dated line in ## SEARCHED per query.\n"
+                   "      Two independent source domains minimum, or write "
+                   "ONE-SOURCE-OK: <why>.\n"
+                   "      propose verifies SPOKEN against the script later; "
+                   "this stage is the\n      structural half "
+                   f"(python3 tools/research_check.py {slug})."),
         dict(key="scout",
              skills=["fact-check-workflow  verify each claim BEFORE it becomes a beat",
                      "ffmpeg-ytdlp        yt-dlp to pull source video/subtitles, ffmpeg to cut clips"],
              label="Assets scouted and manifest written",
-             done=_p(f"public/assets/{slug}/manifest.json").exists(),
+             done=_scouted(slug),
              auto=None,
              human="Plan the shots from the approved script FIRST "
                    f"(python3 tools/plan_shots.py {slug}), then scout to satisfy "
@@ -99,7 +152,7 @@ def steps(slug: str) -> list[dict]:
                    "credits and tiers. See AGENT.md STEP 1a."),
         dict(key="structure",
              label="Narrative structure + open loop chosen",
-             done=_p(f"jobs/{slug}/structure.md").exists(),
+             done=_structure_done(slug),
              auto=None,
              skills=["shortform-script-framework  S17 shapes, S2/S10 the loop"],
              human="Write jobs/" + slug + "/structure.md BEFORE the first "

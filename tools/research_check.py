@@ -98,9 +98,16 @@ def parse_ledger(body: str) -> list[dict]:
     return claims
 
 
-def check_research(slug: str, script_text: str,
+def check_research(slug: str, script_text: str | None,
                    root: Path | None = None) -> tuple[list[str], list[str]]:
-    """Returns (errors, advice). Errors mean the ledger is not a record."""
+    """Returns (errors, advice). Errors mean the ledger is not a record.
+
+    `script_text=None` runs the STRUCTURAL half only — ledger exists, filled,
+    claims tiered and sourced, search log present — and skips the SPOKEN and
+    hedge checks, which need a script to check against. That is the honest
+    mid-pipeline state: the ledger is started at research time, SPOKEN is
+    filled at script time, and propose verifies the join.
+    """
     root = root or ROOT
     p = root / "jobs" / slug / "research.md"
     errors: list[str] = []
@@ -131,8 +138,8 @@ def check_research(slug: str, script_text: str,
                       "dated line per query. What was not searched is the "
                       "part the next session needs to know.")
 
-    script_norm = _norm(script_text)
-    script_words = script_norm.split()
+    script_norm = _norm(script_text) if script_text is not None else None
+    script_words = script_norm.split() if script_norm is not None else []
     domains: set[str] = set()
     for i, c in enumerate(claims):
         tag = f"claim {i + 1} ({c['claim'][:40]!r})"
@@ -146,6 +153,8 @@ def check_research(slug: str, script_text: str,
         for s in c["srcs"]:
             if s.startswith("http"):
                 domains.add(urlparse(s).netloc.removeprefix("www."))
+        if script_norm is None:
+            continue                      # structural pass — no script yet
         spoken = c["spoken"] or ""
         if not spoken:
             errors.append(f"{tag}: no SPOKEN phrase. The ledger must name the "

@@ -95,6 +95,23 @@ def review_path(slug: str) -> Path:
     return paths(slug)[2].with_name("review.json")
 
 
+def structure_problems(slug: str) -> list[str]:
+    """Why jobs/<slug>/structure.md is not yet a decision. Empty = it is.
+    Split out of require_structure so showrunner's stage display and the
+    refusal share one definition — a scaffolded template must not read as
+    'structure chosen' anywhere."""
+    st_p = paths(slug)[2].with_name("structure.md")
+    if not st_p.exists():
+        return ["missing"]
+    body = st_p.read_text()
+    out = []
+    if re.search(r"<[a-z][^>\n]{3,}>", body):
+        out.append("unfilled <placeholders>")
+    if not any(s in body.lower() for s in SHAPES):
+        out.append("no S17 shape named")
+    return out
+
+
 def require_structure(slug: str) -> Path:
     """The framework's one non-negotiable ORDER: shape before sentences.
 
@@ -110,7 +127,8 @@ def require_structure(slug: str) -> Path:
     decision at all.
     """
     st_p = paths(slug)[2].with_name("structure.md")
-    if not st_p.exists():
+    probs = structure_problems(slug)
+    if "missing" in probs:
         sys.exit(
             f"NO STRUCTURE DECLARED — {slug}\n"
             f"  missing {st_p}\n"
@@ -119,14 +137,13 @@ def require_structure(slug: str) -> Path:
             "  loop or escalation can be retrofitted by editing lines afterwards\n"
             "  (formats/README-structure.md). scripts/new_job.py scaffolds this\n"
             "  file; fill it in, then draft, then propose.")
-    body = st_p.read_text()
-    if "<" in body and ">" in body and re.search(r"<[a-z][^>\n]{3,}>", body):
+    if "unfilled <placeholders>" in probs:
         sys.exit(
             f"STRUCTURE STILL A TEMPLATE — {slug}\n"
             f"  {st_p} has unfilled <placeholders>.\n"
             "  Decide the shape, the promise and the loop before drafting —\n"
             "  that is the writing, not paperwork around it.")
-    if not any(s in body.lower() for s in SHAPES):
+    if probs:
         sys.exit(
             f"STRUCTURE NAMES NO SHAPE — {slug}\n"
             f"  {st_p} must name one of framework S17's shapes:\n"

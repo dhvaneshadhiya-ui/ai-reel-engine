@@ -2857,3 +2857,38 @@ happened, that a URL says what the ledger claims, or that a fact is true.
 It verifies the record exists, is internally consistent, and matches the
 script it describes. The last inch of research quality stays judgement —
 same as the writing.
+
+## 2026-08-21 (3) — the fresh-job path audited: three born-done stages and a manifest the blocking gate could not see
+
+"Make research and scouting work at their best for all upcoming videos" meant
+auditing the path every future reel actually takes — new_job.py -> showrunner
+-> propose — instead of adding more machinery. Four defects, all fixed and
+proven with a scaffold-to-propose dry run that left no trace:
+
+- **new_job scaffolded `manifest.items` — the LEGACY key.** G11, a BLOCKING
+  gate, resolves assetIds against `manifest["assets"]` only. Every fresh job
+  started life invisible to the gate that protects it. Now scaffolds
+  `assets`.
+- **Born-done stages.** Scaffolding structure.md/research.md (yesterday's
+  fix) defeated showrunner's `exists()` done-tests — three stages lit green
+  on an empty job, and "Assets scouted" was done the moment new_job created
+  the empty manifest. Done now means the WORK: structure filled and naming a
+  shape (shared definition with propose via `structure_problems`), ledger
+  structurally valid (`check_research(script_text=None)`), manifest carrying
+  >=1 asset or a recorded `"thin": "<why>"` decision.
+- **No research stage in the pipeline display.** Added between goal and
+  scout, with the structural-only contract stated: the ledger starts at
+  research time, SPOKEN fills at script time, propose verifies the join.
+- **AGENT.md's manifest template taught a shape without `tier`** — the
+  18/229 lesson, still being taught. Template now carries it, and names the
+  two tier axes so they stop being conflated: asset tier is PROVENANCE
+  (official/reliable/fallback, G42), claim tier is CORROBORATION
+  (official/multi/single/disputed, research_check).
+
+Two test-fixture lessons from the same pass, kept because they are the
+checker teaching its own tests: a hedge one clause away legitimately covers
+(the +/-12-word window), so an advisory case must isolate its claim from a
+neighbour's hedge; and parse_ledger reads claims only inside `## CLAIMS`, so
+a claim appended after `## SEARCHED` silently does not exist — the case
+failed on its own fixture, which is exactly the failure mode the suite
+exists to catch.

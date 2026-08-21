@@ -82,7 +82,11 @@ def main() -> None:
         "created_at": datetime.now(timezone.utc).isoformat(),
         "status": "initialized",
     }
-    manifest = {"slug": slug, "items": []}
+    # "assets", not the legacy "items": G11 — a BLOCKING gate — resolves
+    # assetIds against manifest["assets"] only (reel_gates.py). A fresh job
+    # scaffolded into the legacy key starts life invisible to the gate that
+    # protects it. Found 2026-08-21 auditing the fresh-job path.
+    manifest = {"slug": slug, "assets": []}
     shot_plan = {
         "emphasis": [],
         "caption_corrections": {},

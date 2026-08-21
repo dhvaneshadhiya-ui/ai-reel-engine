@@ -127,6 +127,21 @@ def run() -> int:
         expect_exit(lambda: sa.cmd_propose("selftest"),
                     "propose refuses with no research.md", "NO RESEARCH LEDGER")
 
+        # 3c. ledger still a template
+        (job / "research.md").write_text(
+            "# Research\n## CLAIMS\n- CLAIM: <the claim>\n  TIER: multi\n"
+            "  SPOKEN: \"x\"\n  SRC: https://a.com\n## SEARCHED\n- 2026 q\n")
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "propose refuses a template ledger", "TEMPLATE")
+
+        # 3d. SPOKEN words the script never says — a ledger describing a
+        # script that does not exist is fiction wearing a record's badge
+        (job / "research.md").write_text(RESEARCH.replace(
+            '"is expected on September 9"', '"ships worldwide tomorrow"'))
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "propose refuses SPOKEN words not in the script",
+                    "not in the script")
+
         # 4. filled structure + ledger -> propose runs and records the review
         (job / "research.md").write_text(RESEARCH)
         with contextlib.redirect_stdout(io.StringIO()):
@@ -136,6 +151,29 @@ def run() -> int:
         rev = json.loads(rev_p.read_text()) if rev_p.exists() else {}
         ok("review carries the script hash",
            rev.get("script_sha256") == sa.sha(sa.read_script("selftest")))
+        # An UNHEDGED single-source claim must ADVISE (recorded in the
+        # review) while propose still succeeds — advice, never a block.
+        # The claim sits at the script's tail, clear of the opening's
+        # "expected": the hedge window is +/-12 words on purpose (a hedge
+        # one clause away covers — "None of it's official ..."), so a test
+        # claim adjacent to someone else's hedge would never fire.
+        # INSERTED before ## SEARCHED, not appended: parse_ledger only reads
+        # claims inside the CLAIMS section, and the first draft of this case
+        # appended after the section boundary — the claim silently did not
+        # exist and the case failed on its own fixture.
+        (job / "research.md").write_text(RESEARCH.replace("## SEARCHED", """\
+- CLAIM: you will notice this on a bad day
+  TIER: single
+  SPOKEN: "notice the difference on a bad day"
+  SRC: https://www.macrumors.com/guide/iphone-18-pro/
+
+## SEARCHED"""))
+        with contextlib.redirect_stdout(io.StringIO()):
+            sa.cmd_propose("selftest")
+        rev = json.loads(rev_p.read_text())
+        ok("unhedged single-source claim ADVISES, does not refuse",
+           any("UNHEDGED" in a for a in rev.get("research_advice", [])))
+        (job / "research.md").write_text(RESEARCH)   # restore
 
         # 5. approve without a propose (fresh job, no review)
         job2 = tmp / "jobs" / "never-proposed"

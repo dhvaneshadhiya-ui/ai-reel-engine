@@ -60,11 +60,18 @@ data), then hunt visuals and write `public/assets/<slug>/manifest.json`:
 ```jsonc
 {
   "topic": "...",
-  "verified_facts": ["fact — source url", "..."],
+  // verified_facts is SUPERSEDED for claims: the authoritative record is
+  // jobs/<slug>/research.md (CLAIM/TIER/SPOKEN/SRC), which propose enforces.
+  // The manifest stays the truth about ASSETS.
   "assets": [
     { "id": "clip-demo",
       "kind": "footage|receipt|brand|still",
       "source": "yt:VIDEO_ID @t120-128 | url",
+      // asset tier = PROVENANCE (official|reliable|fallback) — G42 counts it,
+      // capture_plan refuses a line without it. Distinct axis from the
+      // research ledger's claim tier (official|multi|single|disputed),
+      // which is CORROBORATION.
+      "tier": "official|reliable|fallback",
       "shows": "what is LITERALLY on screen — written only after you looked at extracted frames",
       "quality": "clean|has-chrome|busy",
       "credit": "@handle | channel",
