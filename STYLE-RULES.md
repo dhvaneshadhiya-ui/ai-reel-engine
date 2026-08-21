@@ -2772,3 +2772,52 @@ headroom, and a hard snap can clip the face or push it under
 `tools/preflight_stills.py` (one frame per scene, ~36s) before committing a reel
 to the treatment. It could not be checked on the machine this was written on —
 a fresh clone with no footage.
+
+## 2026-08-21 — script writing, enforced: the third weak draft was the last unforced one
+
+The iphone18-colors first draft opened "Apple's new iPhone red isn't red" —
+the framework's S16 failure verbatim, a paradox with no premise — and reached
+the user raw. Same class as 2026-08-19, which is the second time, which is why
+this entry is about ENFORCEMENT and not about writing advice. The framework
+(`styles/shortform-script-framework.md`) was in the repo, named by the skill,
+the formats and README-structure.md; `check_script.py` was calibrated and
+FLAGS that exact opening. Everything existed. Nothing blocked. Prose for the
+third time, then code:
+
+- **`new_job.py` scaffolds `jobs/<slug>/structure.md`** — the S17
+  shape-before-sentences decision, plus PROMISE, OPEN LOOP, WHAT->WHY->SO
+  WHAT, WHAT WAS CUT, and SOURCES (two independent minimum, or say why one; a
+  one-source brief is how thin scripts start). A file that exists gets
+  filled; a file that must be remembered does not.
+- **`script_approval.py propose` refuses** without structure.md, with unfilled
+  placeholders, or with no S17 shape named. On success it writes
+  `review.json`: the script hash, the structure hash, and the prose findings
+  the user is being shown.
+- **`approve` refuses** without a review whose hash matches the current
+  script. "The user approved it" now provably means "the user saw THIS
+  script, with these findings" — RIGHTS territory, same family as G27, one
+  step earlier. The findings themselves stay advice; the constitution's craft
+  line is untouched.
+- **`check_script.py` gained the AI-tell scan** — the measurable half of
+  "feels human". 36 phrases, CALIBRATED: every candidate firing on any of the
+  9 approved scripts was dropped ("isn't just" is in approved iphone-18-pro;
+  "the catch?" is in september-preview — a tell the user's own approved
+  writing uses is their voice, not a tell). The unmeasurable half stays with
+  the humanizer pass, step 5 of the binding order in the news-reel skill.
+- **Self-test:** `tools/test_script_pipeline.py`, run by doctor — every
+  refusal above has a failing case, per the founding rule.
+
+**Registry search, documented verdict (user asked):** searched skills.sh for
+script/storytelling/retention skills. Top hit `jackyshen-gen-short-video-script`
+(2.5K installs) is a Hook->Content->CTA fill-in template — template-shaped
+scripting is the framework's own S3 failure mode, so installing it would
+codify the exact weakness being fixed. Nothing installed; what this repo has
+(framework + calibrated checker + humanizer) is stronger than anything found.
+
+**Cleanup in the same pass:** `references/writing-block-2.0.md` deleted — it
+was byte-identical to the tracked `styles/shortform-script-framework.md`, and
+two copies of a canonical text is how drift starts. The legacy
+`scripts/<slug>.md` beat-map scaffold in new_job.py is gone too: nothing reads
+that file, and the one it scaffolded for iphone18-colors sat unfilled in
+scripts/ while the real work happened in jobs/. The news-reel skill also
+stopped hardcoding one machine's absolute path as "the engine".

@@ -29,6 +29,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -83,7 +84,58 @@ def read_script(slug: str) -> str:
     return spoken
 
 
+# framework S17's ten shapes — structure.md must name the one it chose.
+SHAPES = ("discovery", "news", "product announcement", "explainer", "tutorial",
+          "comparison", "story", "list", "myth-busting", "transformation")
+
+
+def review_path(slug: str) -> Path:
+    """jobs/<slug>/review.json — written by propose, demanded by approve.
+    Rides the same -nomusic parent resolution as the approval record."""
+    return paths(slug)[2].with_name("review.json")
+
+
+def require_structure(slug: str) -> Path:
+    """The framework's one non-negotiable ORDER: shape before sentences.
+
+    ADDED 2026-08-21, the third time a weak first draft reached the user.
+    The framework was in the repo, named by the skill, the formats and this
+    repo's own README-structure.md — and the draft still opened on the S16
+    failure verbatim, because reading is optional and nothing blocked. Same
+    arc as approval itself in the docstring above: prose for a day, then code.
+
+    The check is deliberately shallow — file exists, placeholders filled, a
+    S17 shape named. Whether the structure is any GOOD stays the author's
+    craft; what can no longer happen is a script drafted with no structure
+    decision at all.
+    """
+    st_p = paths(slug)[2].with_name("structure.md")
+    if not st_p.exists():
+        sys.exit(
+            f"NO STRUCTURE DECLARED — {slug}\n"
+            f"  missing {st_p}\n"
+            "  The framework (styles/shortform-script-framework.md S17) chooses\n"
+            "  the narrative shape BEFORE the first sentence — none of promise,\n"
+            "  loop or escalation can be retrofitted by editing lines afterwards\n"
+            "  (formats/README-structure.md). scripts/new_job.py scaffolds this\n"
+            "  file; fill it in, then draft, then propose.")
+    body = st_p.read_text()
+    if "<" in body and ">" in body and re.search(r"<[a-z][^>\n]{3,}>", body):
+        sys.exit(
+            f"STRUCTURE STILL A TEMPLATE — {slug}\n"
+            f"  {st_p} has unfilled <placeholders>.\n"
+            "  Decide the shape, the promise and the loop before drafting —\n"
+            "  that is the writing, not paperwork around it.")
+    if not any(s in body.lower() for s in SHAPES):
+        sys.exit(
+            f"STRUCTURE NAMES NO SHAPE — {slug}\n"
+            f"  {st_p} must name one of framework S17's shapes:\n"
+            f"  {', '.join(SHAPES)}.")
+    return st_p
+
+
 def cmd_propose(slug: str) -> None:
+    st_p = require_structure(slug)
     spoken = read_script(slug)
     _, q_p, _ = paths(slug)
     words = len(spoken.split())
@@ -147,11 +199,13 @@ def cmd_propose(slug: str) -> None:
     # Prose measurement, printed where the script is actually being read. The
     # playbook's cadence rule existed for weeks and was skipped every time,
     # because nobody re-reads a style guide at the moment they approve.
+    findings: list[str] | None = None
     try:
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         from check_script import check as _prose, checklist as _list  # noqa: E402
+        findings = _prose(spoken) or []
         print("\nPROSE (advice — style is craft, none of this blocks):")
-        for _n in _prose(spoken) or ["  nothing to flag"]:
+        for _n in findings or ["  nothing to flag"]:
             print(f"  - {_n}" if not _n.startswith("  ") else _n)
         # framework S25 at the ONE moment the script can still change. The
         # measured half is answered; the rest is what the approver is for.
@@ -160,6 +214,19 @@ def cmd_propose(slug: str) -> None:
             print(_n)
     except Exception as _e:  # noqa: BLE001
         print(f"\n  (prose check unavailable: {_e})")
+
+    # The review RECORD. approve refuses without one whose hash matches the
+    # current script, so "the user approved it" now provably means "the user
+    # was shown THIS script, with these findings, and said yes to that" —
+    # the same RIGHTS territory as G27, one step earlier. The findings stay
+    # advice; what stops being possible is approving a script nobody proposed,
+    # or quietly editing between the showing and the yes.
+    review_path(slug).write_text(json.dumps({
+        "script_sha256": sha(spoken),
+        "structure_sha256": sha(st_p.read_text()),
+        "findings": findings,
+        "proposedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }, indent=2))
 
     if q_p.exists():
         print("\nQUESTIONS THAT NEED AN ANSWER BEFORE WE BUILD:")
@@ -175,6 +242,27 @@ def cmd_propose(slug: str) -> None:
 def cmd_approve(slug: str) -> None:
     spoken = read_script(slug)
     _, _, appr_p = paths(slug)
+    # An approval must sit on a propose of the SAME words. Without this, the
+    # 2026-08-21 path stays open: draft in chat, approve from chat, and the
+    # structure gate plus every printed finding is bypassed because propose
+    # simply never ran.
+    rev_p = review_path(slug)
+    if not rev_p.exists():
+        sys.exit(
+            f"NEVER PROPOSED — {slug}\n"
+            f"  no {rev_p}\n"
+            "  Approval records that the user saw THIS script with its "
+            "findings.\n  Run propose first:\n"
+            f"    python3 tools/script_approval.py propose {slug}")
+    rev = json.loads(rev_p.read_text())
+    if rev.get("script_sha256") != sha(spoken):
+        sys.exit(
+            f"SCRIPT CHANGED SINCE IT WAS PROPOSED — {slug}\n"
+            f"  proposed {rev.get('script_sha256', '')[:16]} at "
+            f"{rev.get('proposedAt')}\n"
+            f"  current  {sha(spoken)[:16]}\n"
+            "  The user would be approving words they were never shown. "
+            "Propose again.")
     appr_p.parent.mkdir(parents=True, exist_ok=True)
     rec = {
         "sha256": sha(spoken),

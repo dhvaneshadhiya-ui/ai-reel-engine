@@ -299,6 +299,26 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "reel_gates self-test", str(e))
     problems.append("gates")
 
+# The script pipeline's own mechanical rules — structure-before-draft, the
+# propose/approve review chain, and check_script's calibrated thresholds.
+# Added 2026-08-21: these rules exist because prose guidance was skipped three
+# times; a self-test that doctor never runs would be the same failure again.
+try:
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "tools/test_script_pipeline.py")],
+        capture_output=True, text=True, timeout=120)
+    if r.returncode == 0:
+        report(OK, "script pipeline self-test",
+               r.stdout.strip().splitlines()[-1])
+    else:
+        report(BAD, "script pipeline self-test",
+               "a rule does not refuse — see output")
+        print(r.stdout[-800:])
+        problems.append("script-pipeline")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "script pipeline self-test", str(e))
+    problems.append("script-pipeline")
+
 # ------------------------------------------------------------- fresh clone
 #
 # `git clone` does NOT give a working engine, and the gap is invisible until a

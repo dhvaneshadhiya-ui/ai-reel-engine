@@ -81,6 +81,29 @@ HEDGES = {
 }
 
 
+# The measurable half of "does this read like a person wrote it". The humanizer
+# skill judges the rest; these are the stock constructions with near-zero
+# false-positive risk in a spoken news script — drawn from its Wikipedia-derived
+# signs plus the framework's own S4 filler list.
+#
+# CALIBRATED 2026-08-21 against every approved script in the repo (9 jobs + the
+# shipped beat-sheet narrations): each phrase below fires on ZERO of them.
+# Two candidates were DROPPED by that run, not by taste — "isn't just" is in the
+# approved iphone-18-pro script and "the catch?" is in september-preview. A tell
+# the user's own approved writing uses is not a tell, it is their voice.
+AI_TELLS = [
+    "not just about", "here's the thing", "here's the kicker", "the kicker",
+    "let that sink in", "game-changer", "game changer", "a testament to",
+    "the world of", "in today's", "seamless", "seamlessly", "elevate", "delve",
+    "buckle up", "spoiler alert", "plot twist", "look no further",
+    "without further ado", "dive into", "let's dive", "the best part?",
+    "but that's not all", "another interesting thing", "and there's more",
+    "landscape", "arguably", "crucial", "in a world where", "say goodbye to",
+    "meet the new", "enter the", "revolutionary", "stunning", "sleek",
+    "but here's where",
+]
+
+
 def sentences(text: str) -> list[str]:
     body = " ".join(l.strip() for l in text.splitlines()
                     if l.strip() and not l.lstrip().startswith(("#", ">", "<!--")))
@@ -398,6 +421,19 @@ def check(text: str, shape: str | None = None) -> list[str]:
     if hits:
         notes.append("DICTION: " + "; ".join(f"{h!r} -> {p}" for h, p in hits))
 
+    # 5b. AI TELLS. Stock constructions that read as generated, calibrated so
+    #     that no approved script trips one (see AI_TELLS above). Advice like
+    #     everything here — but a script wearing three of these is not going to
+    #     "feel like a human wrote it" no matter how good its structure is.
+    tells = [t for t in AI_TELLS
+             if re.search(rf"\b{re.escape(t)}", low)]
+    if tells:
+        notes.append(
+            f"AI TELL: {', '.join(repr(t) for t in tells)} — stock phrasing that "
+            "reads as generated (humanizer skill / Wikipedia's signs of AI "
+            "writing). Zero approved scripts use any of these. Say it the way "
+            "you would say it out loud.")
+
     # 6. NUMBER DENSITY — also the playbook's own rule.
     nums = len(re.findall(r"\$?\d[\d.,]*", flat))
     per = len(ss) / nums if nums else 999
@@ -499,6 +535,24 @@ def selftest() -> int:
                not any("BRIDGES" in n for n in approved))
         check_("approved script does NOT trip NO OPEN LOOP",
                not any("NO OPEN LOOP" in n for n in approved))
+    # AI TELLS: the synthetic offender must fire, and the approved script — the
+    # calibration corpus's own member — must stay silent. Runs through check()
+    # because the tell scan lives there, not in structure().
+    import contextlib, io
+    def _notes_of(text: str) -> list[str]:
+        with contextlib.redirect_stdout(io.StringIO()):
+            return check(text)
+    telly = ("This seamless upgrade is a game-changer for the world of phones. "
+             "Here's the kicker: it could elevate everything. Let that sink in. "
+             "But that's not all — buckle up.")
+    fired = [n for n in _notes_of(telly) if n.startswith("AI TELL")]
+    check_("AI TELL fires on the synthetic offender", bool(fired))
+    check_("AI TELL names multiple phrases",
+           bool(fired) and fired[0].count("'") >= 6)
+    if approved_path.exists():
+        clean = [n for n in _notes_of(approved_path.read_text())
+                 if n.startswith("AI TELL")]
+        check_("AI TELL silent on the approved script", not clean)
     print("\n  self-test PASSED\n" if ok else "\n  self-test FAILED\n")
     return 0 if ok else 1
 

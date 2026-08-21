@@ -5,11 +5,13 @@ description: Produce a finished vertical news/explainer reel end to end — scri
 
 # News reel
 
-**The engine lives at `/Users/dhvaneshadhiya/Movies/ai-reel-engine`. Work from
-that directory.** (Set 2026-08-11 by the user. A second, older engine exists at
-`~/AI Videos/reel-engine` with a completely different `pipeline/make.mjs`
-workflow — do NOT use it, and do not mix its commands in here. If the user
-explicitly names the old one, follow that repo's own README instead.)
+**The engine is the repo this skill ships in — work from that repo's root.**
+(Hardcoding one machine's path here broke the moment the repo was cloned
+elsewhere; found 2026-08-21 on a fresh machine where the old path pointed at
+nothing. A second, older engine exists at `~/AI Videos/reel-engine` with a
+completely different `pipeline/make.mjs` workflow — do NOT use it, and do not
+mix its commands in here. If the user explicitly names the old one, follow
+that repo's own README instead.)
 
 ## Read these first, in this order
 
@@ -75,6 +77,37 @@ the catalogue, sits on the wrong beat type, outruns its scene, or breaks the
 per-role caps. Full reasoning and the lead-time table:
 `references/sfx-placement.md`.
 
+## Writing the script — this order is BINDING (enforced in code, 2026-08-21)
+
+Three times a weak first draft reached the user while the framework sat unread
+— it was in the repo, named by this skill, and skipped anyway, because reading
+is optional. The order below is now enforced: `propose` refuses to run without
+step 2's artifact, and `approve` refuses without a fresh `propose`.
+
+1. **Research first.** Two independent sources minimum, or record in
+   `structure.md` why one is enough. Run `fact-check-workflow` (global skill)
+   on any load-bearing claim BEFORE it becomes a beat. A one-source script
+   reads thin because it is thin.
+2. **Structure before the first sentence.** Fill `jobs/<slug>/structure.md`
+   (scaffolded by `new_job.py`): the S17 shape, the promise, the open loop,
+   what was cut, the sources. `propose` exits 1 while placeholders remain.
+3. **Draft to the framework** — `styles/shortform-script-framework.md` is the
+   story standard; the style playbook is only the voice on top of it.
+4. **Measure, then read.** `python3 tools/check_script.py <slug>` (calibrated
+   thresholds + AI-tell scan), then `--critic` and walk the S22/S23/S24 tests
+   aloud. Act on findings or write down why not.
+5. **Humanize.** Run the `humanizer` global skill on the draft with 2-3
+   approved scripts from `jobs/` as the voice sample — the sample outranks its
+   defaults. Never after approval: G27 hashes the approved words.
+6. **Propose.** `python3 tools/script_approval.py propose <slug>` — prints the
+   findings and the S25 checklist, and writes `review.json` recording exactly
+   what the user is being shown.
+
+**NEVER paste a draft to the user that has not been through step 4.** The
+2026-08-21 failure was a raw first draft shown in chat — it opened on the
+framework's own "Weak" example, and the checker would have caught it (it flags
+that exact opening) had it been run before the user ever saw the script.
+
 ## Order of operations
 
 **STEP 0, BEFORE ANYTHING IS GENERATED: get the script approved.**
@@ -82,7 +115,9 @@ per-role caps. Full reasoning and the lead-time table:
 the beat plan, ask the open questions, wait for an explicit yes, then
 `approve <slug>`. `check <slug>` exits 1 until that happens and gate G27
 re-checks the hash at build time. Never generate an avatar on an unapproved
-script.
+script. `propose` requires a filled `jobs/<slug>/structure.md`, and `approve`
+requires the current script to hash-match the last `propose` — the user always
+approves the exact words they were shown.
 
 
 Do not reorder. The expensive failure is writing a script about footage you

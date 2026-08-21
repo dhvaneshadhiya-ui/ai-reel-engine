@@ -1,0 +1,145 @@
+#!/usr/bin/env python3
+"""Self-test for the script pipeline's MECHANICAL rules.
+
+Covers the enforcement added 2026-08-21 — the third time a weak first draft
+reached the user while every piece of guidance sat unread:
+
+  1. propose refuses a job with no structure.md            (framework S17)
+  2. propose refuses a structure.md that is still template
+  3. propose refuses a structure.md naming no S17 shape
+  4. propose, on success, writes review.json with the script's hash
+  5. approve refuses when propose never ran
+  6. approve refuses when the script changed after propose
+  7. approve succeeds on a fresh propose
+  8. check_script's own selftest (structure thresholds + AI tells)
+
+Every rule here is a gate with a failing case, per CLAUDE.md. The suite runs
+against a THROWAWAY job in a temp dir by repointing script_approval.ROOT —
+nothing under jobs/ is touched.
+
+    python3 tools/test_script_pipeline.py
+"""
+from __future__ import annotations
+
+import contextlib
+import io
+import json
+import sys
+import tempfile
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import check_script  # noqa: E402
+import script_approval as sa  # noqa: E402
+
+REAL_ROOT = sa.ROOT
+CHECKS = 0
+FAILED = False
+
+
+def ok(label: str, cond: bool) -> None:
+    global CHECKS, FAILED
+    CHECKS += 1
+    print(f"  {'ok  ' if cond else 'FAIL'} {label}")
+    FAILED = FAILED or not cond
+
+
+def expect_exit(fn, label: str, want_text: str) -> None:
+    """The command must sys.exit with a message containing want_text."""
+    buf = io.StringIO()
+    try:
+        with contextlib.redirect_stdout(buf):
+            fn()
+    except SystemExit as e:
+        msg = str(e)
+        ok(f"{label} (mentions {want_text!r})", want_text in msg)
+        return
+    ok(f"{label} — DID NOT REFUSE", False)
+
+
+SCRIPT = ("Apple's iPhone 18 Pro is expected on September 9. And one rumored "
+          "change only matters when you have no signal. Start with the shape "
+          "of it. You will notice the difference on a bad day.")
+
+STRUCTURE = """# Structure — selftest
+## SHAPE (S17)
+Discovery — there is a real mystery in the material.
+## PROMISE (S2)
+The viewer learns what the change is and when it lands.
+## OPEN LOOP (S10)
+Planted: sentence two. Paid off: the ending returns to it.
+## SOURCES
+MacRumors guide; Ming-Chi Kuo note.
+"""
+
+
+def run() -> int:
+    tmp = Path(tempfile.mkdtemp(prefix="script-pipeline-selftest-"))
+    job = tmp / "jobs" / "selftest"
+    job.mkdir(parents=True)
+    sa.ROOT = tmp
+    try:
+        (job / "script.md").write_text(SCRIPT)
+
+        # 1. no structure.md at all
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "propose refuses with no structure.md", "NO STRUCTURE")
+
+        # 2. structure.md still a template
+        (job / "structure.md").write_text(
+            "# Structure\n## SHAPE (S17)\nDiscovery\n"
+            "## PROMISE\n<what the viewer gets>\n")
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "propose refuses unfilled placeholders", "TEMPLATE")
+
+        # 3. no S17 shape named
+        (job / "structure.md").write_text(
+            "# Structure\nA promise and a loop, but no shape word.\n")
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "propose refuses when no shape is named", "NO SHAPE")
+
+        # 4. filled structure -> propose runs and records the review
+        (job / "structure.md").write_text(STRUCTURE)
+        with contextlib.redirect_stdout(io.StringIO()):
+            sa.cmd_propose("selftest")
+        rev_p = job / "review.json"
+        ok("propose writes review.json", rev_p.exists())
+        rev = json.loads(rev_p.read_text()) if rev_p.exists() else {}
+        ok("review carries the script hash",
+           rev.get("script_sha256") == sa.sha(sa.read_script("selftest")))
+
+        # 5. approve without a propose (fresh job, no review)
+        job2 = tmp / "jobs" / "never-proposed"
+        job2.mkdir()
+        (job2 / "script.md").write_text(SCRIPT)
+        expect_exit(lambda: sa.cmd_approve("never-proposed"),
+                    "approve refuses when propose never ran", "NEVER PROPOSED")
+
+        # 6. script edited after propose -> stale review
+        (job / "script.md").write_text(SCRIPT + " One extra sentence.")
+        expect_exit(lambda: sa.cmd_approve("selftest"),
+                    "approve refuses a script edited after propose",
+                    "CHANGED SINCE IT WAS PROPOSED")
+
+        # 7. re-propose, then approve — the compliant path stays open
+        with contextlib.redirect_stdout(io.StringIO()):
+            sa.cmd_propose("selftest")
+            sa.cmd_approve("selftest")
+        ok("approve succeeds on a fresh propose",
+           (job / "approval.json").exists())
+    finally:
+        sa.ROOT = REAL_ROOT
+
+    # 8. check_script's own selftest — structure thresholds + AI tells.
+    print("\n  -- check_script selftest --")
+    rc = check_script.selftest()
+    ok("check_script selftest passes", rc == 0)
+
+    print(f"\nall {CHECKS} checks "
+          f"{'passed' if not FAILED else 'DID NOT pass'} — the script "
+          "pipeline's mechanical rules each refuse their violation.")
+    return 1 if FAILED else 0
+
+
+if __name__ == "__main__":
+    sys.exit(run())

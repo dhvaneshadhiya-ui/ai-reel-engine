@@ -1,0 +1,9 @@
+{
+  "script_sha256": "c35d4242aa9701d25f617ab67be4e1018484e06382e6c20d05397a9249b433ba",
+  "structure_sha256": "f2fb0930994ec5bd241a0994dd626ee2ad2b15a8af055fc4894ff84fbd9fef24",
+  "findings": [
+    "  WHAT WITHOUT SO WHAT 2/2 spec sentences never say what the number does for the viewer. \"2nm chip\" is information; \"faster without draining the battery\" is relevance. (framework S7)",
+    "NUMBERS: one every 12.0 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted."
+  ],
+  "proposedAt": "2026-08-21T06:09:36+00:00"
+}

@@ -105,15 +105,35 @@ def main() -> None:
         engine / f"jobs/{slug}/shot-plan.json",
         json.dumps(shot_plan, indent=2, ensure_ascii=False) + "\n",
     )
+    # structure.md — framework S17, the decision that comes BEFORE the first
+    # sentence (formats/README-structure.md). Scaffolded here because a file
+    # that exists gets filled and a file that must be remembered does not:
+    # the 2026-08-21 weak draft was written with no structure decision at all,
+    # and script_approval.py propose now refuses while the <placeholders>
+    # below are still in place.
     write_new(
-        engine / f"scripts/{slug}.md",
+        engine / f"jobs/{slug}/structure.md",
         (
-            f"# {args.topic}\n\n"
-            "## Final spoken script\n\n"
-            "<write the final script here>\n\n"
-            "## Beat map\n\n"
-            "| VO phrase | Visual | Manifest ID / MG spec |\n"
-            "|---|---|---|\n"
+            f"# Structure — {slug}\n\n"
+            "Written BEFORE the first sentence. Framework:\n"
+            "`styles/shortform-script-framework.md` (S17 shapes; S25 standard).\n"
+            "`script_approval.py propose` refuses while <placeholders> remain.\n\n"
+            "## SHAPE (S17)\n\n"
+            "Options: Discovery / News / Product announcement / Explainer /\n"
+            "Tutorial / Comparison / Story / List / Myth-busting / "
+            "Transformation.\n\n"
+            "<the shape chosen, and WHY it fits the material>\n\n"
+            "## PROMISE (S2)\n\n"
+            "<what the viewer is told they will get by watching>\n\n"
+            "## OPEN LOOP (S10)\n\n"
+            "Planted: <which sentence, and its words>\n"
+            "Paid off: <where, and how the ending returns to it per S18>\n\n"
+            "## WHAT -> WHY -> SO WHAT (S7)\n\n"
+            "<the translation that turns the headline fact into viewer meaning>\n\n"
+            "## WHAT WAS CUT (S11, S21)\n\n"
+            "<facts left out, each with why — momentum beats density>\n\n"
+            "## SOURCES\n\n"
+            "<every source consulted — two independent minimum, or why one>\n"
         ),
     )
     (engine / f"_sources/assets/{slug}").mkdir(parents=True, exist_ok=True)

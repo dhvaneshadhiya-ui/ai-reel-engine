@@ -26,3 +26,6 @@ bin/
 # public/sfx, public/sfx2, public/sfx-nick  — the sound library IS the system
 # public/fonts, public/music                — small, and the look depends on them
 # jobs/                                     — scripts + approvals are the record
+
+# per-machine stage timestamps written by showrunner status
+jobs/*/timing.json
