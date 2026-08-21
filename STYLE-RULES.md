@@ -2927,3 +2927,27 @@ replay attribution) runs inside doctor.
 tool prints exactly that, every run. Numbers move into reel_gates.FORMATS
 only via a dated entry here, after --aggregate shows several reels
 agreeing — G23 applied to our own output, not around it.
+
+## 2026-08-21 (5) — VIA: corroboration is the source count, not the domain count
+
+The claims ledger shipped with a hole its own first live use exposed: TIER
+"multi" measured DOMAINS, and the aggregator economy makes domains cheap.
+Two shapes of false corroboration, both advisory in research_check now, both
+found in real data the day the field existed:
+
+- **Domain-level.** Two articles from one outlet counted as "multi" — the
+  live iphone18-colors ledger did this on THREE claims (two MacRumors
+  pieces each). Fires as advice: add a second outlet or downgrade.
+- **Source-level.** Different outlets all citing the same ultimate origin.
+  MacRumors and PhoneArena both quoting Fixed Focus Digital is one Weibo
+  leaker dressed as two domains. Recorded with `VIA:` lines (one per
+  independent origin, optional); a multi-tier claim whose SRCs share one
+  VIA fires as advice. Distinct VIAs stay silent — that is what genuine
+  corroboration looks like.
+
+VIA is OPTIONAL, deliberately: requiring it would have refused every
+existing ledger the day it landed, and absence-nagging on every multi claim
+would teach people to fill it with noise. The tier is only as verifiable as
+the VIAs behind it, and the check says so exactly when it matters — when a
+claim wears "multi" it cannot demonstrate. Three failing cases in
+tools/test_script_pipeline.py (16 checks now), doctor-run.

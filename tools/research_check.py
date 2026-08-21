@@ -21,6 +21,11 @@ So research now leaves the same kind of record scouting does.
       TIER: single
       SPOKEN: "leaked back in April"
       SRC: https://www.macworld.com/article/...
+      VIA: Macworld exclusive           # optional: the ULTIMATE source the
+                                        # SRC cites — one VIA line per
+                                        # independent origin. A multi-tier
+                                        # claim whose SRCs share one VIA is
+                                        # one source dressed as many.
 
     ## SEARCHED
 
@@ -39,6 +44,10 @@ ADVISED (printed, recorded in review.json, never blocks):
     framework S20's own list; presenting a rumor as confirmed is the failure
     the user keeps catching by hand
   - fewer than two independent source domains with no ONE-SOURCE-OK line
+  - FALSE CORROBORATION, both shapes: a multi-tier claim whose SRCs sit on
+    one domain (two articles from the same outlet), and a multi-tier claim
+    whose SRCs all trace VIA one ultimate source (MacRumors and PhoneArena
+    both quoting the same Weibo leaker is ONE source dressed as two)
 
 WHAT THIS CANNOT DO, said plainly: verify that a search happened, that a URL
 says what the ledger claims, or that a fact is true. It verifies the record
@@ -95,6 +104,8 @@ def parse_ledger(body: str) -> list[dict]:
             cur["spoken"] = line[7:].strip().strip('"“”')
         elif cur is not None and line.startswith("SRC:"):
             cur["srcs"].append(line[4:].strip())
+        elif cur is not None and line.startswith("VIA:"):
+            cur.setdefault("vias", []).append(line[4:].strip())
     return claims
 
 
@@ -150,9 +161,37 @@ def check_research(slug: str, script_text: str | None,
         if not c["srcs"] or not any(s.startswith("http") for s in c["srcs"]):
             errors.append(f"{tag}: no SRC url. A claim with no source is an "
                           "assertion, and the ledger exists to kill those.")
+        claim_domains = set()
         for s in c["srcs"]:
             if s.startswith("http"):
-                domains.add(urlparse(s).netloc.removeprefix("www."))
+                d = urlparse(s).netloc.removeprefix("www.")
+                domains.add(d)
+                claim_domains.add(d)
+        # FALSE CORROBORATION — the tier says "multi", the sourcing says one.
+        # Two shapes, both advisory (2026-08-21, found in a LIVE ledger the
+        # day the tier field shipped):
+        #   * domain-level: two articles from the same outlet counted as two
+        #     sources ("multi" off two MacRumors pieces)
+        #   * source-level: different outlets all citing the same ultimate
+        #     origin — MacRumors and PhoneArena both quoting Fixed Focus
+        #     Digital is ONE leaker dressed as two domains. Recorded with
+        #     VIA: lines (one per ultimate source); optional, but the tier
+        #     is only as verifiable as the VIAs behind it.
+        if c["tier"] == "multi":
+            if len(claim_domains) < 2:
+                advice.append(
+                    f"{tag}: TIER multi but every SRC is on "
+                    f"{next(iter(claim_domains), 'one domain')} — two "
+                    "articles from one outlet corroborate less than they "
+                    "look. Add a second outlet or downgrade to single.")
+            vias = {v.strip().lower() for v in c.get("vias", []) if v.strip()}
+            if len(claim_domains) >= 2 and len(vias) == 1:
+                advice.append(
+                    f"{tag}: TIER multi across {len(claim_domains)} domains, "
+                    f"but every SRC traces VIA {c['vias'][0]!r} — one "
+                    "ultimate source dressed as many outlets. The source "
+                    "count is the VIA count, not the domain count. Downgrade "
+                    "to single, or find a SRC with a different origin.")
         if script_norm is None:
             continue                      # structural pass — no script yet
         spoken = c["spoken"] or ""

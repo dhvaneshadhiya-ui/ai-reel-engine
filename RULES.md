@@ -101,8 +101,9 @@ re-render. [EYE]
 Since 2026-08-21 the process has teeth upstream: `propose` exits non-zero
 without a filled `jobs/<slug>/structure.md` (shape before sentences) AND a
 valid `jobs/<slug>/research.md` — the claims ledger, where every load-bearing
-claim carries a TIER, a SRC url, and the SPOKEN words that carry it, verified
-to exist in the script. `approve` exits non-zero unless the current script
+claim carries a TIER, a SRC url, optionally the VIA (ultimate source) each
+SRC traces to, and the SPOKEN words that carry it, verified to exist in
+the script. `approve` exits non-zero unless the current script
 hash-matches the last propose. [LINT — `tools/research_check.py`, run inside
 `script_approval.py`; self-test `tools/test_script_pipeline.py`]
 A single/disputed-tier claim spoken unhedged prints as advice (framework

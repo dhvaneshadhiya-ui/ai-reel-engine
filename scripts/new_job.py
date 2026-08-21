@@ -126,7 +126,9 @@ def main() -> None:
             "- CLAIM: <the load-bearing claim, in your words>\n"
             "  TIER: <official|multi|single|disputed>\n"
             "  SPOKEN: \"<the exact script words that carry it>\"\n"
-            "  SRC: <https://...>\n\n"
+            "  SRC: <https://...>\n"
+            "  VIA: <the ULTIMATE source the SRC cites — leaker, agency, own\n"
+            "       testing; one line per independent origin, or delete>\n\n"
             "## SEARCHED\n\n"
             "- <YYYY-MM-DD  \"query\"  (what it settled)>\n"
         ),

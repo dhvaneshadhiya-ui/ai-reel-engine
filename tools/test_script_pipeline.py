@@ -175,6 +175,46 @@ def run() -> int:
            any("UNHEDGED" in a for a in rev.get("research_advice", [])))
         (job / "research.md").write_text(RESEARCH)   # restore
 
+        # FALSE CORROBORATION, both shapes — advisory, never a refusal.
+        # (a) "multi" off two articles on ONE domain
+        (job / "research.md").write_text(RESEARCH.replace(
+            "SRC: https://9to5mac.com/2026/08/10/iphone-18-pro/",
+            "SRC: https://www.macrumors.com/2026/08/10/other-piece/"))
+        with contextlib.redirect_stdout(io.StringIO()):
+            sa.cmd_propose("selftest")
+        rev = json.loads(rev_p.read_text())
+        ok("multi-tier on one domain ADVISES",
+           any("one outlet" in a for a in rev.get("research_advice", [])))
+        # (b) two domains, but every SRC traces VIA the same leaker
+        shared_via = RESEARCH.replace(
+            "  SRC: https://www.macrumors.com/guide/iphone-18-pro/\n"
+            "  SRC: https://9to5mac.com/2026/08/10/iphone-18-pro/",
+            "  SRC: https://www.macrumors.com/guide/iphone-18-pro/\n"
+            "  VIA: Fixed Focus Digital\n"
+            "  SRC: https://9to5mac.com/2026/08/10/iphone-18-pro/\n"
+            "  VIA: Fixed Focus Digital")
+        (job / "research.md").write_text(shared_via)
+        with contextlib.redirect_stdout(io.StringIO()):
+            sa.cmd_propose("selftest")
+        rev = json.loads(rev_p.read_text())
+        ok("multi-tier with one shared VIA ADVISES (one source, two domains)",
+           any("dressed as many" in a for a in rev.get("research_advice", [])))
+        # (c) distinct VIAs = genuine corroboration, no advisory
+        (job / "research.md").write_text(shared_via.replace(
+            "  VIA: Fixed Focus Digital\n"
+            "  SRC: https://9to5mac.com/2026/08/10/iphone-18-pro/\n"
+            "  VIA: Fixed Focus Digital",
+            "  VIA: Fixed Focus Digital\n"
+            "  SRC: https://9to5mac.com/2026/08/10/iphone-18-pro/\n"
+            "  VIA: Instant Digital"))
+        with contextlib.redirect_stdout(io.StringIO()):
+            sa.cmd_propose("selftest")
+        rev = json.loads(rev_p.read_text())
+        ok("distinct VIAs stay silent (genuine corroboration)",
+           not any("dressed as many" in a
+                   for a in rev.get("research_advice", [])))
+        (job / "research.md").write_text(RESEARCH)   # restore
+
         # 5. approve without a propose (fresh job, no review)
         job2 = tmp / "jobs" / "never-proposed"
         job2.mkdir()

@@ -90,7 +90,10 @@ step 2's artifact, and `approve` refuses without a fresh `propose`.
    fetched, and the SPOKEN words that carry it — plus a dated SEARCHED log.
    `propose` refuses a ledger that is missing, unfilled, unsourced, or that
    names words the script never says (`tools/research_check.py`). Two
-   independent source domains minimum, or write `ONE-SOURCE-OK: <why>`. A
+   independent source domains minimum, or write `ONE-SOURCE-OK: <why>`. Add
+   `VIA: <ultimate source>` per SRC — a multi-tier claim is only as multi as
+   its VIAs: two outlets quoting the same Weibo leaker is ONE source, and
+   two articles from one outlet is one outlet (both advise). A
    single/disputed claim must be SPOKEN hedged — that prints as advice, and
    ignoring it needs a reason. Run `fact-check-workflow` (global skill) on
    anything load-bearing BEFORE it becomes a beat. A one-source script reads
