@@ -337,6 +337,23 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "retention join self-test", str(e))
     problems.append("retention")
 
+# Scout contact sheets (2026-08-21) — also the live probe of the drawtext
+# capability ffmpeg-full was installed for: a plain ffmpeg build would pass
+# every PATH check above and still produce unlabeled sheets.
+try:
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "tools/scout_sheet.py"), "--selftest"],
+        capture_output=True, text=True, timeout=90)
+    if r.returncode == 0:
+        report(OK, "scout sheet self-test", r.stdout.strip().splitlines()[-1])
+    else:
+        report(BAD, "scout sheet self-test", "sheeting broke — see output")
+        print(r.stdout[-600:])
+        problems.append("scout-sheet")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "scout sheet self-test", str(e))
+    problems.append("scout-sheet")
+
 # ------------------------------------------------------------- fresh clone
 #
 # `git clone` does NOT give a working engine, and the gap is invisible until a

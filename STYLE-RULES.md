@@ -2951,3 +2951,165 @@ would teach people to fill it with noise. The tier is only as verifiable as
 the VIAs behind it, and the check says so exactly when it matters — when a
 claim wears "multi" it cannot demonstrate. Three failing cases in
 tools/test_script_pipeline.py (16 checks now), doctor-run.
+
+## 2026-08-21 — iphone18-colors: a colour reel, and the master that never hit its ceiling
+
+### THE MASTER BUG THAT SURVIVED THREE FIXES — it was the AAC encoder
+
+G31 kept failing on true peak. The two notes above this one both "fixed" it by
+moving a number, and both shipped over the ceiling. Splitting the chain finally
+showed why:
+
+    PCM out of loudnorm + limiter ....... -1.9 dBFS true peak   (clean)
+    the SAME audio encoded to AAC 192k .. -0.3 dBFS true peak   (over)
+
+**The overshoot is added by the lossy encode, after every filter has run.** So
+no limiter setting can hold the delivered file under the ceiling — and worse,
+tightening the limiter made it WORSE, because harder limiting sharpens
+transients and raises inter-sample peaks:
+
+    limit 0.85 -> -0.6 dBFS    limit 0.63 -> -2.9 dBFS  (passes)
+    limit 0.72 -> -0.6 dBFS    limit 0.56 -> -4.1 dBFS  (too quiet)
+
+Oversampling the limiter (4x, then back to 48k) is now in the chain because it
+is correct, but it is NOT what fixed this. **The master has to carry headroom
+THROUGH the encode.** RULE: when a delivered-file measurement disagrees with a
+filter setting, measure the file at each stage before touching the setting
+again. Three notes in this ledger moved a number without doing that.
+
+### THE SCRIPT ON DISK WAS NOT THE SCRIPT THAT WAS APPROVED
+
+Mid-build, `jobs/iphone18-colors/script.md` was found to be a different script
+from the approved one — carrying dates ("leaked back in April", "dummy units in
+May, a SIM tray in June") and a launch implication ("until next month") that
+were never written here, never sourced, and never shown to the user. Its
+`research.md` matched that other script and cited URLs this session never
+fetched. **G27 blocked the build.** That gate is the only reason it did not ship.
+
+Two rules come out of it:
+
+1. **Do not reconstruct an approved script from memory to make a hash match.**
+   Trying candidate texts until one matches an approval record is manufacturing
+   consent — it is the exact failure G27 exists to prevent. The recovery is
+   `git show <commit>:jobs/<slug>/script.md`, which matched `c35d4242…` byte for
+   byte on the first try.
+2. **The audio is the other witness.** Diffing `vo.json` against the restored
+   script left only known whisper artefacts, which proved the generated master
+   was the approved narration and that no credits had been wasted.
+
+### FOUR BUGS IN THE GENERIC COMPILE PATH — all found in one reel
+
+`scripts/compile_shot_plan.py` had never been exercised by a reel with a
+possessive in a start_phrase. Each is fixed with the failure recorded inline:
+
+- **`find_phrase` could not match any possessive.** The transcript merges
+  "Apple's" to one token (`apples`); the needle split it (`apple`,`s`). The
+  transcript half was fixed when G34 was added, the needle half was not.
+- **`,000` was not merged like `.8`**, so captions read `$2 ,000` (G30).
+- **Caption corrections collected punctuation from ANYWHERE in the token**, so a
+  hyphen-merged word came back as `purple-tinged-`. Trailing-only now.
+- **The sheet never carried `script`/`approval`**, so EVERY reel compiled by
+  this path failed G27. The bespoke `build_<slug>.py` scripts set it themselves,
+  which hid it — the same shape as the two earlier notes about `validate_job`
+  being stale against a contract `reel_gates` already accepted.
+
+Also: the compiler ended the video at the last WORD, leaving trailing silence
+uncovered (70.04s of scenes against a 70.44s master). The final beat now holds
+through it.
+
+### A GENERATED CLIP MUST FINISH INSIDE THE BEAT IT IS CUT TO
+
+`chip-ultra` landed its second chip at 0.70s and its caveat at 1.5s, on a 1.34s
+beat: the shot showed a half-built card for its whole duration, and the honesty
+line ("no code published") never appeared at all. `chip-lineup` had the same
+fault — four chips landing over 2.3s on a 2.6s beat left half the frame empty at
+the midpoint (57% dead space). **When you generate a scene asset, read its
+animation against the beat's DURATION, not against how it looks played alone.**
+
+### THE PLATFORM BAND APPLIES TO GENERATED CLIPS TOO
+
+All three original chip clips put content below y=1498, where
+`src/platformSafeArea.ts` says Instagram draws its own UI. The worst case was
+`chip-gap`'s caveat — the one line whose entire job is to stop a viewer reading
+outline chips as real colours — sitting under the account row. Nothing checks a
+generated MP4's interior; the safe floor is an [EYE] rule for anything we draw
+ourselves.
+
+### THE SPLIT COVER-CROPS ITS SOURCE — measure the window, do not guess it
+
+The hook's `topSrc` is not shown whole. Two rendered probes gave
+`composite ≈ (source − 500) × 0.52`, i.e. only a band of the source is visible,
+so a full-frame chip design was first sliced through the letters of its own
+label and then, over-corrected, had its code strip fall below the seam. A clip
+destined for a `split` needs composing for that window specifically.
+
+### ONE TEXT SYSTEM — a footage scene whose SOURCE contains type must say so
+
+`hideCaptions` defaults true for typecard/wordcascade and for any scene carrying
+a `kinetic`, because the engine can see those. It cannot see type baked into an
+MP4, so the karaoke chips printed straight through "A DARK PLUM" and
+"DARK CHERRY". Set `hideCaptions: true` on any footage beat whose clip carries
+its own display type.
+
+### DE-EMPHASIS ON A COLOUR REEL IS A LIFT, NEVER A BLEND
+
+`chip-lineup-b` first dimmed the un-named chips by blending toward cream. That
+turned Dark Cherry into a light mauve — misstating the exact thing the reel
+spends 70 seconds establishing. The named chips are lifted and underlined
+instead, and every swatch stays its published value. **Any treatment that alters
+a hue is off-limits on a reel whose claim IS the hue.**
+
+### Treatment history — iphone18-colors
+
+- iphone18-colors (every iPhone 18 Pro / Ultra colour rumour): **NEW — Pantone
+  chip motion graphics generated with PIL+ffmpeg** (8 clips: hook plate, hero
+  chip, punched-in chip, 4-up lineup, lineup with two named chips lifted and
+  underlined, Pro-vs-Ultra count card, Ultra-only card, closing plate), each
+  labelled `APPROX sRGB OF THE PUBLISHED CODE`; **the Ultra's chips drawn as
+  OUTLINES** because no code was published for them, captioned "no code
+  published"; Pantone's own colour-finder page as an official-tier `receipt`
+  with the "Color Family: Red-Purple" row highlighted — the reel's whole
+  argument settled by the source; MacRumors' four-up render used ONLY under
+  "every render you've seen leans red", labelled FAN RENDERS, where the render
+  is the subject and not evidence; `sourceread` on the MacRumors bullet list;
+  receipts on the leaked SIM tray (its own "alleged" caption highlighted as the
+  hedge), the 9to5Mac leaker headline, the MacRumors "could be dropped before
+  launch" caution, and the Ultra headline; two cream wordcascades; facecam 21%.
+  27 scenes / 70.5s / −14.4 LUFS / TP −2.9 / 9 SFX cues.
+- Used here, avoid repeating next reel: the Pantone-chip family as the primary
+  motion-graphic system, the outline-chip-means-no-data device, and the
+  official-spec-page-as-receipt move (Pantone).
+- NOT used (available again): timeline, uidialog, categorygrid, statcard,
+  chart, specsheet, checklist, comparesplit, endquestion, logoassemble.
+
+## 2026-08-21 (6) — scout contact sheets: the look, made one file
+
+The scout rule was always the honest one — extract frames and LOOK, write
+`shows` from what you saw — and always [EYE] and slow, which is the recipe
+for a rule that gets skipped. Thin `shows` text is why grok-bot could
+justify only 4 of 39 covers phrases while iphone-fold-ultra managed 11 of
+30: the description quality IS the Rule 3 evidence chain.
+
+**`tools/scout_sheet.py`** makes the look one file per candidate: 24 frames
+evenly spaced across the clip, timestamp burned on each tile (PressStart2P,
+shipped in public/fonts so it works on any machine), tiled into a single
+JPG. Takes a file, a directory, or a job slug (sheets everything under
+`_sources/` and `public/assets/` for the job). Sub-second clips get fewer
+frames instead of an error.
+
+Two design points worth the ink:
+
+- **It automates the scrubbing, not the seeing.** The scout still looks and
+  still writes; the tool's closing line says exactly that — write `shows`
+  from the SHEET, not the filename, and not from what the source claimed.
+  Same division of labour as preflight_stills at the other end.
+- **It degrades instead of failing.** Timestamps need drawtext, the filter
+  ffmpeg-full was installed for. On a plain build the tool produces
+  UNLABELED sheets and says so loudly — a sheet without timestamps still
+  beats no sheet. The selftest asserts drawtext WORKS, which makes doctor's
+  scout-sheet block a live probe of the ffmpeg-full capability: a plain
+  ffmpeg would pass every PATH check and fail exactly here.
+
+Verified by looking, not by exit code: a 12s vertical synthetic clip
+sheeted 6x4 with legible corner timestamps 0.2s-11.8s. Named in the
+showrunner scout stage and AGENT.md STEP 1a.

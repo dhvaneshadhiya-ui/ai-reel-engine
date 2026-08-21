@@ -85,7 +85,10 @@ Scout order: official channels/keynotes → creator demo compilations (credit
 them) → screenshot receipts (headless Chrome) → brand marks.
 
 **Verify every candidate by extracting frames and looking at them.** Write the
-`shows` field from what you actually see, never from what you assume. A thin
+`shows` field from what you actually see, never from what you assume.
+`python3 tools/scout_sheet.py <slug>` makes the look one file per clip — a
+timestamped contact sheet of every candidate under `_sources/` and
+`public/assets/` for the job. The looking and the writing stay yours. A thin
 manifest is a valid outcome — it just means a more graphics-led reel.
 
 Two vocabularies, and the distinction is the whole game:
