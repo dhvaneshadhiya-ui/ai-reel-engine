@@ -319,6 +319,24 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "script pipeline self-test", str(e))
     problems.append("script-pipeline")
 
+# The retention join (2026-08-21) — the tool that turns a published reel's
+# curve into per-scene-type numbers. Its math is exactly the kind of thing
+# that rots silently: a broken join would keep printing plausible tables.
+try:
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "tools/retention_ingest.py"),
+         "--selftest"], capture_output=True, text=True, timeout=60)
+    if r.returncode == 0:
+        report(OK, "retention join self-test",
+               r.stdout.strip().splitlines()[-1])
+    else:
+        report(BAD, "retention join self-test", "join math broke — see output")
+        print(r.stdout[-600:])
+        problems.append("retention")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "retention join self-test", str(e))
+    problems.append("retention")
+
 # ------------------------------------------------------------- fresh clone
 #
 # `git clone` does NOT give a working engine, and the gap is invisible until a

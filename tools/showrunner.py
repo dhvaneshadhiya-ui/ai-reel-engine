@@ -266,6 +266,24 @@ def steps(slug: str) -> list[dict]:
              human="Use the `social` skill. Hashtags per platform limits "
                    "(Instagram 5), hashtags in the FIRST COMMENT, and include "
                    "ALT TEXT. Then: python3 tools/packaging_check.py " + slug),
+        # POST-PUBLISH, and the only stage that feeds numbers BACK into the
+        # system. Every FORMATS number so far came from teardowns of other
+        # people's reels; this is where our own start to accumulate.
+        dict(key="retention",
+             skills=["(none — YouTube Studio and one command)"],
+             label="Retention ingested (post-publish; wait ~72h of views)",
+             done=_p(f"jobs/{slug}/performance.json").exists(),
+             auto=None,
+             human="After the reel has aged ~72h on YouTube:\n"
+                   "        Studio -> Analytics -> Advanced mode -> Audience "
+                   "retention -> Export -> CSV\n"
+                   f"        python3 tools/retention_ingest.py {slug} "
+                   "--csv <export.csv> --duration <published s> --views <n>\n"
+                   "      It joins the curve to this reel's beat timeline: "
+                   "which scene TYPES bleed\n      viewers, what got "
+                   "replayed. Across reels: retention_ingest.py --aggregate.\n"
+                   "      Instagram has no per-second export — note its "
+                   "aggregate numbers in packaging.md."),
     ]
 
 

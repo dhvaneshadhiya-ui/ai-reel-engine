@@ -2892,3 +2892,38 @@ neighbour's hedge; and parse_ledger reads claims only inside `## CLAIMS`, so
 a claim appended after `## SEARCHED` silently does not exist — the case
 failed on its own fixture, which is exactly the failure mode the suite
 exists to catch.
+
+## 2026-08-21 (4) — the retention loop: our own reels finally feed the numbers
+
+Every number in FORMATS came from teardowns of OTHER people's reels, because
+at the time that was the only data there was. Published reels are the ground
+truth nobody was using — and this pipeline holds an advantage no teardown
+has: the beat sheet knows what is on screen at every frame.
+
+**`tools/retention_ingest.py`** joins a published reel's retention curve to
+its beat timeline and writes `jobs/<slug>/performance.json`:
+
+- Input is the YouTube Studio "Audience retention" CSV export (zero setup)
+  or the Analytics API rows (`elapsedVideoTimeRatio` ×
+  `audienceWatchRatio`, 100 points/video). v1 does NOT do OAuth — the join
+  is the value, fetching is commodity. Instagram exposes no per-second
+  retention at all; its aggregates get noted by hand in packaging.md.
+- Output: per-scene watch-in/watch-out, pp lost per on-screen second,
+  ranked per-TYPE bleed table, worst single scenes, and REPLAY upticks
+  (audienceWatchRatio rising means people rewound — on a spec card that is
+  a compliment, not an anomaly). `--aggregate` sums across every ingested
+  reel.
+- Honest limits, in the tool's own docstring: the beat sheet is the
+  PRE-pace-cut timeline, so a pace-cut reel gets a proportional scale and a
+  loud APPROXIMATE warning (>2% mismatch); 100 points ≈ 0.75s resolution;
+  under ~500 views the curve is noise and it says so.
+
+**The ritual is a showrunner stage** ("Retention ingested, post-publish,
+wait ~72h"), because a ritual that lives in memory is a ritual that stops.
+Selftest (9 checks — parsers, join math, scale warning, noise warning,
+replay attribution) runs inside doctor.
+
+**FORMATS re-derivation stays a HUMAN step.** One curve is an anecdote; the
+tool prints exactly that, every run. Numbers move into reel_gates.FORMATS
+only via a dated entry here, after --aggregate shows several reels
+agreeing — G23 applied to our own output, not around it.
