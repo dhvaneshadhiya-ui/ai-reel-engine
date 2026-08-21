@@ -27,7 +27,9 @@ HONEST LIMITS — read before trusting a number
 2. **Every output is watermarked.** Chatterbox embeds Resemble's imperceptible
    Perth watermark in all generated audio. Fine for rehearsal; it means this
    audio is detectably synthetic and is NOT a substitute for the real VO.
-3. **It runs in its own venv on purpose.** chatterbox-tts pins torch 2.6.0;
+3. **It runs in its own venv on purpose.** chatterbox-tts brings its own
+   torch (2.13.0 as installed 2026-08-19 — the old 2.6.0 pin note here
+   was stale and hid the torchaudio/torchcodec save issue);
    the system has 2.13.0 under whisper. Installing it system-wide downgrades
    torch and breaks transcription — verified 2026-08-17, which is why
    MIGRATION.md §6.3 says NEVER system-wide.

@@ -3338,3 +3338,13 @@ viewer's terms.
 The closing line of the render is the rule itself: **if a SEE line is not
 understandable, the plan is not ready to approve.** Six cases in
 test_script_pipeline (33 checks), doctor-run.
+
+## 2026-08-21 (12) — the approval record proves what was SHOWN, both halves
+
+review.json carried the script hash — proof of which WORDS the user saw —
+but nothing recorded whether a beat plan was shown beside them. Now it
+carries `beatPlanShots`: the number of HEAR/SEE rows rendered at propose
+(zero when no shot plan existed, and propose says so out loud). An approval
+can no longer silently claim the plan half of informed consent. Also fixed
+in passing: voice_clone.py's stale "torch 2.6.0 pin" note, which had hidden
+the real torch 2.13 / torchcodec save issue for a day.

@@ -237,6 +237,7 @@ def cmd_propose(slug: str) -> None:
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         from beat_plan import render as _beats  # noqa: E402
         _rows = _beats(slug, root=ROOT)
+        beat_rows = len(_rows) // 2          # HEAR+SEE pairs
         if _rows:
             print("\nTHE BEAT PLAN — what is on screen while each line "
                   "is spoken:")
@@ -249,6 +250,7 @@ def cmd_propose(slug: str) -> None:
                   "what you see). Internal scene-type names are\nnot a "
                   "beat plan.")
     except Exception as _e:  # noqa: BLE001
+        beat_rows = 0
         print(f"\n  (beat plan unavailable: {_e})")
 
     findings: list[str] | None = None
@@ -283,6 +285,7 @@ def cmd_propose(slug: str) -> None:
         "structure_sha256": sha(st_p.read_text()),
         "findings": findings,
         "research_advice": research_advice,
+        "beatPlanShots": beat_rows,
         "proposedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }, indent=2))
 

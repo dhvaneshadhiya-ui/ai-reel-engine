@@ -297,6 +297,23 @@ def run() -> int:
         check_script.ROOT = cs_root
         sa.ROOT = REAL_ROOT
 
+    # 11b. Provenance: the review record proves whether a beat plan was
+    # shown at propose. The tmp job has no shot plan, so propose must both
+    # SAY so and record zero — an approval can then never claim a plan was
+    # seen when none existed.
+    buf = io.StringIO()
+    sa.ROOT = tmp
+    try:
+        with contextlib.redirect_stdout(buf):
+            sa.cmd_propose("selftest")
+        ok("propose SAYS when there is no shot plan",
+           "NO SHOT PLAN YET" in buf.getvalue())
+        rev = json.loads((tmp / "jobs/selftest/review.json").read_text())
+        ok("review records beatPlanShots: 0 for a plan-less propose",
+           rev.get("beatPlanShots") == 0)
+    finally:
+        sa.ROOT = REAL_ROOT
+
     # 11. The beat plan in the viewer's language (2026-08-21) — propose was
     # showing internal scene-type vocabulary ("generated MG", "✓ ✓ ?") as a
     # plan for the user to approve. beat_plan renders HEAR/SEE rows; the
