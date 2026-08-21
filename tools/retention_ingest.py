@@ -147,6 +147,86 @@ def watch_at(curve, ratio: float) -> float:
     return curve[-1][1]
 
 
+# ---------------------------------------------------------------- hooks
+
+HOOK_WINDOW = 2.5      # covers the G03 hook band plus the first cut
+
+
+def hook_treatment(sheet: dict) -> str:
+    """The cold-open treatment, DERIVED from the beat sheet — never a field
+    someone declares. The sheet already knows what the first 2.5s shows;
+    a hand-written label would drift from it, and a derived one cannot.
+
+    'footage+kinetic > split' reads: opens on footage carrying kinetic
+    type, cuts to a split inside the window."""
+    parts, t = [], 0.0
+    for sc in sheet.get("scenes", []):
+        if t >= HOOK_WINDOW:
+            break
+        label = sc.get("type", "?")
+        feats = [k for k in ("kinetic", "headline", "infocard")
+                 if sc.get(k)]
+        if sc.get("zoomDir") == "none" or sc.get("zoom"):
+            feats.append("locked")
+        parts.append(label + ("+" + "+".join(feats) if feats else ""))
+        t += float(sc.get("durationSec", 0) or 0)
+    return " > ".join(parts) or "?"
+
+
+def hooks_table() -> None:
+    """Every reel's cold open — what was TRIED (from the beat sheets) and
+    what is MEASURED (from performance.json, where a reel has published
+    numbers). The experiment ④ view: vary deliberately, then let the
+    curves talk. DATA BEFORE RULES — no hook gate gets written off this
+    table until several reels share a treatment and their curves agree;
+    when they do, the finding lands in STYLE-RULES first, as a dated
+    entry, like every other measured number."""
+    rows = []
+    for p in sorted(ROOT.glob("src/beats/*.json")):
+        slug = p.stem
+        if slug.endswith("-nomusic"):      # same hook as its parent
+            continue
+        try:
+            sheet = json.loads(p.read_text())
+        except Exception:
+            continue
+        row = dict(slug=slug, treatment=hook_treatment(sheet),
+                   at2s=None, lost3s=None)
+        perf = ROOT / f"jobs/{slug}/performance.json"
+        if perf.exists():
+            a = json.loads(perf.read_text()).get("latest", {})
+            curve = [tuple(pt) for pt in a.get("curve", [])]
+            secs = a.get("sheetSeconds") or 1
+            if curve:
+                row["at2s"] = watch_at(curve, 2.0 / secs)
+                row["lost3s"] = (watch_at(curve, 0.001)
+                                 - watch_at(curve, 3.0 / secs)) * 100
+        rows.append(row)
+    if not rows:
+        sys.exit("no beat sheets found under src/beats/")
+    by: dict[str, list[dict]] = {}
+    for r in rows:
+        by.setdefault(r["treatment"], []).append(r)
+    print(f"\n  cold-open treatments across {len(rows)} reel(s) — "
+          "measured columns fill in as reels publish:\n")
+    for t, rs in sorted(by.items(), key=lambda kv: -len(kv[1])):
+        meas = [r for r in rs if r["at2s"] is not None]
+        a2 = (f"{sum(r['at2s'] for r in meas) / len(meas) * 100:5.1f}%"
+              if meas else "    —")
+        l3 = (f"{sum(r['lost3s'] for r in meas) / len(meas):5.1f}pp"
+              if meas else "    —")
+        print(f"  {len(rs)}x  @2s {a2}  lost0-3s {l3}   {t}")
+        for r in rs:
+            print(f"        {'*' if r['at2s'] is not None else ' '} "
+                  f"{r['slug']}")
+    print("\n  * = has published retention. Vary the NEXT reel's open away "
+          "from the most-used\n  row unless its measured numbers earn the "
+          "repeat (STYLE-RULES: never repeat the\n  last reel's treatment "
+          "for the same kind of information). No hook gate exists,\n  and "
+          "none gets written until several reels share a treatment and "
+          "their curves\n  agree — data before rules.")
+
+
 # ---------------------------------------------------------------- the join
 
 def timeline(sheet: dict) -> list[dict]:
@@ -214,6 +294,7 @@ def analyze(sheet: dict, curve, video_secs: float | None,
     replays.sort(key=lambda r: -r["uptick"])
 
     return dict(
+        hookTreatment=hook_treatment(sheet),
         sheetSeconds=round(sheet_secs, 2),
         videoSeconds=round(secs, 2), timelineScaled=scaled,
         views=views, warnings=warnings,
@@ -337,6 +418,26 @@ def selftest() -> int:
     check("replay uptick detected in the right scene",
           a4["replays"] and a4["replays"][0]["type"] == "specsheet")
 
+    # hook treatment derivation — the ④ experiment key. Derived from the
+    # sheet, so a synthetic sheet must map to a stable string and every REAL
+    # sheet in the repo must derive without error (a treatment that crashes
+    # is a treatment the table silently omits).
+    check("hook treatment derives from the synthetic sheet",
+          hook_treatment({"scenes": [
+              {"type": "footage", "durationSec": 2.0,
+               "kinetic": {"lines": []}, "zoomDir": "none"},
+              {"type": "split", "durationSec": 3.0}]})
+          == "footage+kinetic+locked > split")
+    real = sorted(ROOT.glob("src/beats/*.json"))
+    derived = []
+    for rp in real:
+        try:
+            derived.append(hook_treatment(json.loads(rp.read_text())))
+        except Exception:
+            derived.append(None)
+    check(f"all {len(real)} real beat sheets derive a treatment",
+          bool(real) and all(d for d in derived))
+
     print("\n  retention selftest "
           + ("PASSED" if ok else "FAILED") + "\n")
     return 0 if ok else 1
@@ -350,6 +451,9 @@ def main() -> None:
         sys.exit(selftest())
     if "--aggregate" in argv:
         aggregate()
+        return
+    if "--hooks" in argv:
+        hooks_table()
         return
     args = [a for a in argv if not a.startswith("--")]
     if not args:

@@ -3113,3 +3113,32 @@ Two design points worth the ink:
 Verified by looking, not by exit code: a 12s vertical synthetic clip
 sheeted 6x4 with legible corner timestamps 0.2s-11.8s. Named in the
 showrunner scout stage and AGENT.md STEP 1a.
+
+## 2026-08-21 (7) — hook experiments: vary on purpose, measure before ruling
+
+The avatar master is the expensive frozen half of a reel; the cold open's
+VISUAL treatment is just Remotion, and re-renders are free. So hooks are
+now an experiment with a ledger instead of a habit:
+
+- **The treatment label is DERIVED, never declared.**
+  `retention_ingest.hook_treatment()` reads the first 2.5s of the beat
+  sheet (scene types + kinetic/headline/infocard/locked flags) into a
+  stable string — `split+kinetic > footage`. A hand-written label would
+  drift from what actually renders; a derived one cannot. Recorded in
+  every performance.json ingest.
+- **`retention_ingest.py --hooks`** is the experiment view: every reel's
+  derived treatment (tried), joined to hook watch @2s and pp lost 0-3s
+  (measured, filling in as reels publish). Named in the showrunner
+  structure stage, where the open gets designed.
+- **First run of the table already taught something:** 7 of 11 reels open
+  on a split, and logoassemble opens appear three times despite
+  going-viral's own no-logo-build warning. The variation discipline was
+  prose; now it has a scoreboard.
+- **Within-reel A/B was cut on purpose.** YouTube cannot A/B the video
+  (Test & Compare covers thumbnails only), and cross-platform splits
+  confound audience with treatment. Across-reel variation measured by the
+  retention loop is the honest experiment available.
+- **DATA BEFORE RULES, stated where it will be read:** the table's own
+  footer says no hook gate exists and none gets written until several
+  reels share a treatment and their curves agree — and then the finding
+  lands here first, dated, like every measured number before it.

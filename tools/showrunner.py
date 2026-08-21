@@ -178,7 +178,12 @@ def steps(slug: str) -> list[dict]:
                    "                coming' announces the agenda and withholds "
                    "nothing.\n"
                    "      Escalation (S6) follows from the shape; name which "
-                   "progression you are using."),
+                   "progression you are using.\n"
+                   "      Before designing the OPEN, see what has been tried "
+                   "and what measured:\n"
+                   "        python3 tools/retention_ingest.py --hooks\n"
+                   "      Vary away from the most-used treatment unless its "
+                   "numbers earn a repeat."),
         dict(key="script",
              skills=["news-reel           owns structure; formats/<format>.md is the shape",
                      "shortform-script-framework  READ FIRST — styles/. Structure",
