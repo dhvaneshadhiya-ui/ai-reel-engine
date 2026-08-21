@@ -81,7 +81,10 @@ silently disabled the frame checks for weeks.
   ```
 
   Show the user the script AND the beat plan, ask the open questions, and wait
-  for an explicit yes. Only then run `approve <slug>` and copy the record onto
+  for an explicit yes. **The beat plan is shown in the VIEWER'S language** —
+  `propose` prints HEAR/SEE rows via `tools/beat_plan.py` when a shot plan
+  exists; internal scene-type names ("generated MG", "✓ ✓ ?") are not a beat
+  plan, they are the jargon that made an approval unreadable on 2026-08-21. Only then run `approve <slug>` and copy the record onto
   the sheet as `approval`, with the narration as `script`.
   **Since 2026-08-21 the chain starts earlier:** `propose` refuses without a
   filled `jobs/<slug>/structure.md` (the framework's shape-before-sentences

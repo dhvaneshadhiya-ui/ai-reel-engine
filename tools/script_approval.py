@@ -228,6 +228,29 @@ def cmd_propose(slug: str) -> None:
     # Prose measurement, printed where the script is actually being read. The
     # playbook's cadence rule existed for weeks and was skipped every time,
     # because nobody re-reads a style guide at the moment they approve.
+    # THE BEAT PLAN, in the viewer's language. Added 2026-08-21 after the
+    # user was shown "chip with label withheld / generated MG" and "✓ ✓ ?"
+    # as a plan to approve — the pipeline's internal vocabulary, opaque to
+    # the person consenting to it. tools/beat_plan.py renders HEAR/SEE rows
+    # from the shot plan; type names survive only as trailing tags.
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from beat_plan import render as _beats  # noqa: E402
+        _rows = _beats(slug, root=ROOT)
+        if _rows:
+            print("\nTHE BEAT PLAN — what is on screen while each line "
+                  "is spoken:")
+            print("\n".join(_rows))
+            print("\n  If a SEE line is not understandable, the plan is "
+                  "not ready to approve.")
+        else:
+            print("\nNO SHOT PLAN YET — the beat plan must still be shown "
+                  "for approval, in the\nviewer's terms (what you hear / "
+                  "what you see). Internal scene-type names are\nnot a "
+                  "beat plan.")
+    except Exception as _e:  # noqa: BLE001
+        print(f"\n  (beat plan unavailable: {_e})")
+
     findings: list[str] | None = None
     try:
         sys.path.insert(0, str(Path(__file__).resolve().parent))

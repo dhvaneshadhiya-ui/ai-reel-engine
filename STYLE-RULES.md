@@ -3316,3 +3316,25 @@ now fires at the moment its decision happens:
 
 Two standing cases in test_script_pipeline (27 checks): the advisory fires
 on an un-rehearsed job and goes quiet once rehearsal artifacts exist.
+
+## 2026-08-21 (11) — the beat plan is shown in the viewer's language
+
+The user was asked to approve a beat table reading "chip with label
+withheld / generated MG" and "✓ ✓ ?" — the pipeline's internal vocabulary,
+meaningful to the session that wrote it, opaque to the person consenting.
+Approval is informed consent on script AND plan; a plan the approver cannot
+picture makes half that consent hollow.
+
+**`tools/beat_plan.py`** renders the shot plan as HEAR/SEE rows — the
+spoken line, then what is literally on screen, built from the plan's own
+content: the manifest's `shows` text instead of filenames, the avatar clip
+as "the presenter, on camera", checklist rows spelled out with their marks
+("Dark Cherry ✓, Dark Gray ?"), cascade words and headlines quoted. Scene
+types survive only as trailing [tags] for the builder. An unknown type
+degrades to a flagged name, never silence. `propose` prints it
+automatically; with no shot plan it says the plan must still be shown in
+viewer's terms.
+
+The closing line of the render is the rule itself: **if a SEE line is not
+understandable, the plan is not ready to approve.** Six cases in
+test_script_pipeline (33 checks), doctor-run.

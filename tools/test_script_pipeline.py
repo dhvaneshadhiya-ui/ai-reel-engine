@@ -297,6 +297,45 @@ def run() -> int:
         check_script.ROOT = cs_root
         sa.ROOT = REAL_ROOT
 
+    # 11. The beat plan in the viewer's language (2026-08-21) — propose was
+    # showing internal scene-type vocabulary ("generated MG", "✓ ✓ ?") as a
+    # plan for the user to approve. beat_plan renders HEAR/SEE rows; the
+    # cases pin the translations that make it readable.
+    import beat_plan
+    tmp3 = Path(tempfile.mkdtemp(prefix="beat-plan-selftest-"))
+    j3 = tmp3 / "jobs" / "bp"
+    j3.mkdir(parents=True)
+    (tmp3 / "public/assets/bp").mkdir(parents=True)
+    (tmp3 / "public/assets/bp/manifest.json").write_text(json.dumps(
+        {"assets": [{"id": "clip-x",
+                     "shows": "a red phone rotating on a turntable"}]}))
+    (j3 / "shot-plan.json").write_text(json.dumps({"shots": [
+        {"line": "The phone spins.",
+         "scene": {"type": "footage",
+                   "src": "assets/bp/clip-x.mp4", "credit": "@src"}},
+        {"line": "The presenter explains.",
+         "scene": {"type": "footage", "src": "assets/bp/avatar-master.mp4"}},
+        {"line": "Three checks.",
+         "scene": {"type": "checklist", "rows": [
+             {"label": "Dark Cherry", "state": "done"},
+             {"label": "Dark Gray", "state": "q"}]}},
+        {"line": "Something exotic.",
+         "scene": {"type": "walletattack"}},
+    ]}))
+    rows = "\n".join(beat_plan.render("bp", root=tmp3))
+    ok("beat plan quotes the spoken line",
+       "The phone spins." in rows)
+    ok("beat plan uses the manifest's `shows`, not the filename",
+       "a red phone rotating on a turntable" in rows)
+    ok("the avatar clip reads as the presenter on camera",
+       "the presenter, on camera" in rows)
+    ok("checklist rows are spelled out with their marks",
+       "Dark Cherry ✓" in rows and "Dark Gray ?" in rows)
+    ok("an unknown type degrades to a flagged name, not silence",
+       '"walletattack"' in rows)
+    ok("no shot plan renders as empty, not a crash",
+       beat_plan.render("nope", root=tmp3) == [])
+
     # 10. render_job's draft plumbing (2026-08-21) — dry-run only, since a
     # real render needs footage. The invariant that matters: a draft can
     # never become a deliverable (renders to -draft.mp4, skips the master),
