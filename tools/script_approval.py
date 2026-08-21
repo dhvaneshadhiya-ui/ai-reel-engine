@@ -334,6 +334,29 @@ def cmd_check(slug: str) -> None:
             "and get approval again.")
     print(f"script approved — {slug} ({rec['words']} words, "
           f"{rec['approvedAt']})")
+    # REHEARSAL ADVISORY — printed here because `check` is the documented
+    # last command before the avatar is generated, which is the one moment
+    # this information can still save money. A broken phrase anchor found
+    # AFTER generation costs credits and the queue wait a second time;
+    # rehearse_vo.py finds it for free. ADVICE, never a block: the
+    # constitution reserves blocking for the three rules, render
+    # correctness and rights — prudence about spend is judgement.
+    # (Same slug resolution as everything else: a -nomusic sibling shares
+    # its parent's rehearsal.)
+    base = slug
+    for suffix in ("-nomusic",):
+        if base.endswith(suffix):
+            base = base[: -len(suffix)]
+    reh = ROOT / "_sources" / base / "rehearsal"
+    if not (reh.exists() and any(reh.iterdir())):
+        print(f"\n  NOT REHEARSED — no artifacts under {reh}.\n"
+              "  Generation freezes the audio; a phrase anchor that does not "
+              "resolve is only\n  discoverable against a VO, and discovering "
+              "it after generation costs credits\n  plus the queue wait. The "
+              "rehearsal costs nothing:\n"
+              f"    python3 tools/rehearse_vo.py {base}\n"
+              "  Advice, not a block — but say so out loud if you generate "
+              "without it.")
 
 
 def main() -> None:

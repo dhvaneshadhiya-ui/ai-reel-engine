@@ -137,6 +137,10 @@ unmeasured one is what G23 exists to stop. Artifacts land in
 ### STEP 2 — Voice + face
 Generate one continuous avatar master from the final script (see
 `references/heygen.md`). Store as `public/assets/<slug>/avatar-master.mp4`.
+**Kick the generation, then go straight to STEP 3 while it renders** — the
+two share no data, so the queue wait is either hidden behind asset cutting
+or sat through doing nothing. `script_approval.py check` will remind you to
+rehearse first (STEP 1.5) if `_sources/<slug>/rehearsal/` is empty.
 Extract a 16k mono wav → whisper with word timestamps →
 `public/assets/<slug>/vo.json`.
 

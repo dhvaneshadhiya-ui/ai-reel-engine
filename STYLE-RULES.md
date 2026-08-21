@@ -3286,3 +3286,33 @@ phrase anchor never costs a second generation; preflight stills before any
 full render. The machine time after the avatar arrives is ~5 minutes —
 everything larger than that is process, and the process levers already
 exist.
+
+## 2026-08-21 (10) — the procedural savings, made structural
+
+The speed entry above ended with "the process levers already exist" — three
+bullets of prose advice, each tagged "the discipline is using it". That
+phrase is this repo's oldest alarm: calibrate_sfx existed and nothing
+called it; the framework was named everywhere and skipped. Advice that
+lives in a paragraph is advice that dies under a deadline. So each lever
+now fires at the moment its decision happens:
+
+- **Rehearse-before-generating** is an advisory inside
+  `script_approval.py check` — the documented LAST command before the
+  avatar is generated, the one moment the reminder can still save credits.
+  No rehearsal artifacts under `_sources/<slug>/rehearsal/` prints NOT
+  REHEARSED with the cost stated (credits + the queue wait, twice) and the
+  free alternative named. Advice, never a block: prudence about spend is
+  judgement, and the constitution keeps blocking for the three rules,
+  render correctness and rights. But generating without it now requires
+  saying so out loud.
+- **Cut-while-it-renders** lives in the showrunner avatar stage and
+  AGENT.md STEP 2, at the exact line that says to generate: kick the
+  generation, then go straight to asset cutting — the two share no data,
+  so the queue wait is hidden or it is wasted.
+- **Preflight stills** needed nothing: already wired into render_job
+  before every full render. The lesson generalises the other way — the
+  reason it never got skipped is precisely that it does not depend on
+  anyone remembering it.
+
+Two standing cases in test_script_pipeline (27 checks): the advisory fires
+on an un-rehearsed job and goes quiet once rehearsal artifacts exist.

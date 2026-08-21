@@ -236,6 +236,23 @@ def run() -> int:
             sa.cmd_approve("selftest")
         ok("approve succeeds on a fresh propose",
            (job / "approval.json").exists())
+
+        # 8b. The rehearsal advisory (2026-08-21) — printed by `check`, the
+        # documented last command before generation, because that is the one
+        # moment it can still save credits. Advice: check must still exit 0.
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            sa.cmd_check("selftest")
+        ok("check ADVISES when the reel was never rehearsed",
+           "NOT REHEARSED" in buf.getvalue())
+        reh = tmp / "_sources" / "selftest" / "rehearsal"
+        reh.mkdir(parents=True)
+        (reh / "rehearsal-vo.wav").write_bytes(b"x")
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            sa.cmd_check("selftest")
+        ok("check is quiet once rehearsal artifacts exist",
+           "NOT REHEARSED" not in buf.getvalue())
     finally:
         sa.ROOT = REAL_ROOT
 

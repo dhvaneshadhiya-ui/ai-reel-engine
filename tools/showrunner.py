@@ -220,9 +220,16 @@ def steps(slug: str) -> list[dict]:
              done=_p(f"public/assets/{slug}/vo.json").exists(),
              auto=None,
              stops=True,
-             human="Generate the avatar (HeyGen, native 9:16 @1080p) and the "
-                   "whisper word timings. THIS SPENDS CREDITS — check the "
-                   "balance first, and never run it on an unapproved script."),
+             human="FIRST, rehearse for free — a broken phrase anchor found "
+                   "AFTER generation costs\n      credits and the queue wait "
+                   "all over again:\n"
+                   f"        python3 tools/rehearse_vo.py {slug}\n"
+                   "      Then generate the avatar (HeyGen, native 9:16 "
+                   "@1080p). THIS SPENDS CREDITS —\n      check the balance "
+                   "first, and never run it on an unapproved script.\n"
+                   "      WHILE IT RENDERS, cut the assets (AGENT.md STEP 3) "
+                   "— generation and cutting\n      share no data, so the "
+                   "queue wait can be fully hidden instead of sat through."),
         dict(key="beats",
              skills=["remotion-markup     animation/effects; frame-driven, never CSS transitions",
                      "remotion-captions   caption timing and display",
