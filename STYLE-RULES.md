@@ -3203,3 +3203,86 @@ inverse of the "isn't just"/"the catch?" lesson that built the list.
   standard. Drift evidence, not verdicts; thresholds stay advice.
 
 Five failing cases in test_script_pipeline (21 checks now), doctor-run.
+
+## 2026-08-21 — the nomusic clone reported green on checks it never ran
+
+`iphone18-colors-nomusic` (music bed dropped, SFX kept) came back
+**"GATES PASSED (PARTIAL)"**. The word PARTIAL was carrying the whole warning:
+`reel_gates` resolves `vo.json` and the manifest by SLUG, found neither under
+the derivative, and skipped every check that compares the PICTURE against the
+WORDS — the blocking ones included. A clone can therefore look green on Rule 3
+while never having been tested against it.
+
+This is the **third** enforcer to need the parent fallback. The ledger already
+records it for `validate_job.py` and `script_approval.py`, and already states
+the rule: *when a sheet variant becomes legal, every enforcer that reads a path
+by slug needs to know.* It was written down and still missed, because the
+partial verdict reads like a pass at a glance.
+
+RULE: **a qualified pass is a fail until the qualifier is gone.** If a gate run
+says PARTIAL, find out which checks were skipped before believing the colour.
+
+### Verifying a music-free export — measure it, do not trust the flag
+
+`noMusic: true` proves the sheet asked for it, not that the delivered file
+obeyed. Measured mean volume in matched windows of both masters:
+
+    window                with music   no music
+    speech gap, no sfx      -22.8 dB    -26.1 dB
+    speech gap, no sfx      -25.9 dB    -33.1 dB
+    speech gap, no sfx      -25.6 dB    -34.4 dB
+    SFX Magic Reveal        -14.9 dB    -15.1 dB
+    SFX Camera Shutter      -17.0 dB    -17.1 dB
+    SFX whoosh              -15.1 dB    -15.1 dB
+    SFX Core                -10.1 dB    -10.0 dB
+
+The pauses drop 3-9 dB (the bed is gone; what remains is VO room tone) while
+every SFX window matches within 0.2 dB (the cues are untouched). That is the
+claim "music removed, effects kept" actually evidenced, and it takes one script.
+
+`volumedetect` writes its report at INFO level, so `-v error` silences the very
+line you are measuring — it returns nothing and reads as a failed probe.
+
+## 2026-08-21 (9) — render speed: measured levers, a draft lane, and one benchmark refused
+
+"Speed up the process" starts with the honest map of where a reel's time
+goes, because most of it is not the render:
+
+    research -> script -> approval   agent + human, the true bulk
+    HeyGen generation                external queue, minutes, unfixable
+    whisper vo.json                  ~1 min
+    build + gates                    seconds
+    RENDER                           ~165s for a 135s reel (measured)
+    master + lint                    ~1 min
+
+The render was ALREADY optimized by measurement: concurrency 2 -> 6 took a
+full reel from ~390s to 165s (2026-08-19, 8-core machine), and
+preflight_stills exists precisely because seven-render sessions were being
+triggered by defects visible in one frame. What was missing was an
+ITERATION lane:
+
+- **`render_job.py --draft`** — half scale, crf 28, renders to -draft.mp4,
+  skips doctor/master/G31/lint/measurements, KEEPS approval + gates (the
+  law applies to drafts; delivery QC re-runs on the final anyway). A draft
+  can never become a deliverable: -final.mp4 only exists through the full
+  pipeline.
+- **`--draft --frames A-B`** — re-render just the fixed scene's frames.
+  Refused without --draft: a partial final is a corrupt deliverable.
+- **`--concurrency N`** — the measured 6 came from the OLD 8-core machine;
+  this one has 10 cores. Re-measure on the first REAL render and record
+  here, per the invocation comment's own instruction.
+
+**A synthetic benchmark was considered and REFUSED.** No footage lives on
+this machine yet, and an MG-only scratch composition would measure a
+workload real reels do not have — their render cost is dominated by
+OffthreadVideo decoding 30+ clips. Numbers from a fake workload would be
+worse than no numbers (G23). The draft lane's actual speedup gets measured
+on the first real reel, and lands here dated.
+
+The bigger wall-clock saving is procedural and free: kick HeyGen
+generation, then cut assets during the wait (AGENT steps 2 and 3 have no
+data dependency); rehearse with chatterbox BEFORE generating so a broken
+phrase anchor never costs a second generation; preflight stills before any
+full render. The machine time after the avatar arrives is ~5 minutes —
+everything larger than that is process, and the process levers already
+exist.

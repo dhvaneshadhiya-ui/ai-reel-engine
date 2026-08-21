@@ -280,6 +280,32 @@ def run() -> int:
         check_script.ROOT = cs_root
         sa.ROOT = REAL_ROOT
 
+    # 10. render_job's draft plumbing (2026-08-21) — dry-run only, since a
+    # real render needs footage. The invariant that matters: a draft can
+    # never become a deliverable (renders to -draft.mp4, skips the master),
+    # a partial render is draft-only, and the normal path is untouched.
+    import subprocess
+    rj = str(REAL_ROOT / "scripts/render_job.py")
+    out = subprocess.run(
+        [sys.executable, rj, "september-preview", "--dry-run", "--draft"],
+        capture_output=True, text=True, cwd=REAL_ROOT).stdout
+    ok("draft renders to -draft.mp4 at half scale",
+       "-draft.mp4" in out and "--scale=0.5" in out)
+    ok("draft skips the loudness master and the lint",
+       "loudnorm" not in out and "lint_frames.py" not in out)
+    full = subprocess.run(
+        [sys.executable, rj, "september-preview", "--dry-run"],
+        capture_output=True, text=True, cwd=REAL_ROOT).stdout
+    ok("the full pipeline still masters and lints",
+       "loudnorm" in full and "lint_frames.py" in full
+       and "-final.mp4" in full)
+    part = subprocess.run(
+        [sys.executable, rj, "september-preview", "--dry-run",
+         "--frames", "1-10"],
+        capture_output=True, text=True, cwd=REAL_ROOT)
+    ok("--frames without --draft refuses (no partial deliverables)",
+       part.returncode != 0 and "partial" in (part.stderr + part.stdout))
+
     # 8. check_script's own selftest — structure thresholds + AI tells.
     print("\n  -- check_script selftest --")
     rc = check_script.selftest()
