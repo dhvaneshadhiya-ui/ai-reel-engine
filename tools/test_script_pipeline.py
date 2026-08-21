@@ -239,6 +239,47 @@ def run() -> int:
     finally:
         sa.ROOT = REAL_ROOT
 
+    # 9. Calibration staleness — the ⑤ mechanism. Runs against a THROWAWAY
+    # corpus by repointing BOTH module ROOTs (corpus() reads approvals via
+    # script_approval, the record lives under check_script.ROOT).
+    cs_root = check_script.ROOT
+    tmp2 = Path(tempfile.mkdtemp(prefix="calibration-selftest-"))
+    (tmp2 / "tools").mkdir()
+    check_script.ROOT = tmp2
+    sa.ROOT = tmp2
+    try:
+        def approve_job(slug, text):
+            j = tmp2 / "jobs" / slug
+            j.mkdir(parents=True, exist_ok=True)
+            (j / "script.md").write_text(text)
+            (j / "approval.json").write_text(json.dumps(
+                {"sha256": sa.sha(text)}))
+        approve_job("one", "Apple ships a thing. You will notice it.")
+        ok("status stale with no record",
+           check_script.calibration_status() == 2)
+        with contextlib.redirect_stdout(io.StringIO()):
+            check_script.recalibrate()
+        ok("status current after recalibrate",
+           check_script.calibration_status() == 0)
+        approve_job("two", "A second approved script. It says plain things.")
+        ok("corpus growth turns status stale",
+           check_script.calibration_status() == 2)
+        with contextlib.redirect_stdout(io.StringIO()):
+            check_script.recalibrate()
+        # an approved script that uses a tell = the checker flagging the
+        # user's own voice. Status must warn until a recalibration
+        # knowingly accepts it — and go quiet after.
+        approve_job("two", "This seamless upgrade is a plain thing.")
+        ok("tell collision on an approved script turns status stale",
+           check_script.calibration_status() == 2)
+        with contextlib.redirect_stdout(io.StringIO()):
+            check_script.recalibrate()
+        ok("an ACCEPTED collision is quiet (recorded, not nagged)",
+           check_script.calibration_status() == 0)
+    finally:
+        check_script.ROOT = cs_root
+        sa.ROOT = REAL_ROOT
+
     # 8. check_script's own selftest — structure thresholds + AI tells.
     print("\n  -- check_script selftest --")
     rc = check_script.selftest()

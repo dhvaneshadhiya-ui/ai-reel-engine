@@ -3077,8 +3077,37 @@ a hue is off-limits on a reel whose claim IS the hue.**
   launch" caution, and the Ultra headline; two cream wordcascades; facecam 21%.
   27 scenes / 70.5s / −14.4 LUFS / TP −2.9 / 9 SFX cues.
 - Used here, avoid repeating next reel: the Pantone-chip family as the primary
-  motion-graphic system, the outline-chip-means-no-data device, and the
-  official-spec-page-as-receipt move (Pantone).
+  motion-graphic system and the official-spec-page-as-receipt move (Pantone).
+
+### THE OUTLINE-CHIP DEVICE FAILED, AND IT FAILED AS A PICTURE
+
+The Ultra's two shades have no published code, so they were drawn as EMPTY
+OUTLINE chips to say precisely that. The reasoning was written into the
+manifest and into this ledger, and it was still wrong: on screen two blank
+boxes read as a BROKEN RENDER, not as honesty. The user's first note on the
+finished cut was "iPhone Ultra colors are not appearing, just blank".
+
+**A caveat that needs a caption to explain it is not working as a picture.**
+The shades are now filled with labelled approximations and the caveat lives in
+the chip's own label ("APPROX", "no Pantone code published"), where it is read
+as information rather than as a fault. RULE: an absence can be *stated*, but it
+cannot be *drawn as nothing* — the viewer has no way to tell your deliberate
+blank from a bug.
+
+### HIDING CAPTIONS TO FIX A COLLISION SILENCED A THIRD OF THE REEL
+
+`hideCaptions: true` went onto nine chip beats because the karaoke chips printed
+through type baked into the clips. It fixed the collision and created a worse
+one: with the receipts already at `captionBottom: 6000` (the repo's convention),
+captions were absent for most of the runtime — on reels watched on mute.
+
+The fix is a LANE, not a switch. `BANDS.caption` is [0.62, 0.74] and
+`captionFloorPx` puts the lowest legal caption at `bottom: 499`, so a caption
+occupies roughly y 1320-1420. Every generated clip now finishes above a
+`CONTENT_MAX` of 1300 and the captions are back on with `captionBottom: 500`.
+RULE: when generated artwork and captions collide, move the ARTWORK — a caption
+lane is fixed by the platform, and turning captions off is paying for a layout
+mistake with the mute viewer's comprehension.
 - NOT used (available again): timeline, uidialog, categorygrid, statcard,
   chart, specsheet, checklist, comparesplit, endquestion, logoassemble.
 
@@ -3142,3 +3171,35 @@ now an experiment with a ledger instead of a habit:
   footer says no hook gate exists and none gets written until several
   reels share a treatment and their curves agree — and then the finding
   lands here first, dated, like every measured number before it.
+
+## 2026-08-21 (8) — calibration is a record now, not a memory
+
+AI_TELLS and check_script's prose thresholds are frozen snapshots of the
+approved-script corpus on the day they were derived (9 scripts, this
+morning). The corpus grows with every approval, and a frozen calibration
+fails QUIETLY: the day an approved script legitimately uses one of the 36
+phrases, the checker starts flagging the user's own approved voice at every
+propose — forever, with nothing saying the list is stale. That is the exact
+inverse of the "isn't just"/"the catch?" lesson that built the list.
+
+- **`tools/script_calibration.json`** records what the calibration was run
+  against: each approved script's hash (approval-matching only — an edited
+  script is not the user's voice), the tell count, and any collisions
+  knowingly accepted.
+- **`check_script.py --calibration`** compares the record to reality; exits
+  2 when the corpus moved or a NEW tell fires on an approved script.
+  **Doctor runs it as a WARN, never a FAIL** — a grown corpus is progress,
+  not breakage, but a checker flagging the user's own voice must not stay
+  silent about it.
+- **`--recalibrate`** prints the evidence — tell collisions with the
+  remove-or-accept instruction, structural findings per approved script —
+  and refreshes the record. REMOVING a tell stays a human edit with a dated
+  comment; a collision left in place is recorded as accepted and stops
+  nagging. Same shape as FORMATS re-derivation: the tool gathers, the
+  human rules.
+- The bootstrap run's structural sweep doubled as history: pre-framework
+  approved scripts (apple-pay-india, ios27-tiers) trip NO OPEN LOOP and
+  SPEC RUN — the checks correctly date which scripts predate the story
+  standard. Drift evidence, not verdicts; thresholds stay advice.
+
+Five failing cases in test_script_pipeline (21 checks now), doctor-run.

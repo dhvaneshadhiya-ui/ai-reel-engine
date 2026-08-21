@@ -319,6 +319,27 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "script pipeline self-test", str(e))
     problems.append("script-pipeline")
 
+# Calibration staleness (2026-08-21) — AI_TELLS and the prose thresholds are
+# frozen snapshots of the approved-script corpus. WARN, never FAIL: a grown
+# corpus is progress, not breakage — but a checker flagging the user's own
+# approved voice must not stay silent about it.
+try:
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "tools/check_script.py"),
+         "--calibration"], capture_output=True, text=True, timeout=60)
+    detail = r.stdout.strip().splitlines()[-1] if r.stdout.strip() else ""
+    if r.returncode == 0:
+        report(OK, "script calibration", detail)
+    elif r.returncode == 2:
+        report(WARN, "script calibration", detail
+               + " — python3 tools/check_script.py --recalibrate")
+    else:
+        report(BAD, "script calibration", detail or "calibration check broke")
+        problems.append("calibration")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "script calibration", str(e))
+    problems.append("calibration")
+
 # The retention join (2026-08-21) — the tool that turns a published reel's
 # curve into per-scene-type numbers. Its math is exactly the kind of thing
 # that rots silently: a broken join would keep printing plausible tables.

@@ -635,9 +635,139 @@ def critic(text: str) -> list[str]:
     return out
 
 
+# ---------------------------------------------------------------- calibration
+#
+# AI_TELLS and the structural thresholds are CALIBRATED artifacts — frozen
+# snapshots of the approved-script corpus on the day they were derived. The
+# corpus grows with every approval, and the failure mode of a frozen
+# calibration is quiet: the day an approved script legitimately uses one of
+# the 36 phrases, the checker starts flagging the user's own approved voice
+# at every propose, forever, and nothing says the calibration is stale.
+#
+# So the calibration is now a RECORD (tools/script_calibration.json: which
+# scripts, which hashes, which collisions were knowingly accepted), and
+# doctor warns when reality has moved past it. Re-deriving stays human —
+# --recalibrate prints the evidence and refreshes the record; removing a
+# tell or accepting a collision is a judgement call with a dated comment,
+# same as every calibrated number in this repo.
+
+def _cal_path() -> Path:
+    return ROOT / "tools" / "script_calibration.json"
+
+
+def corpus() -> dict[str, dict]:
+    """Every approved script whose approval hash still matches — the only
+    scripts that count as 'the user's voice'. Uses script_approval's own
+    read/hash so 'approved' here can never drift from what approve wrote.
+    (Function-level import: script_approval imports this module at propose,
+    so a top-level import would be circular.)"""
+    import json as _json
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import script_approval as _sa
+    out: dict[str, dict] = {}
+    for appr in sorted((_sa.ROOT / "jobs").glob("*/approval.json")):
+        slug = appr.parent.name
+        try:
+            spoken = _sa.read_script(slug)
+        except SystemExit:
+            continue
+        h = _sa.sha(spoken)
+        if h == _json.loads(appr.read_text()).get("sha256"):
+            out[slug] = {"sha": h, "text": spoken}
+    return out
+
+
+def tell_collisions(corp: dict[str, dict]) -> list[tuple[str, str]]:
+    """(slug, phrase) for every AI tell that fires on an APPROVED script —
+    by definition not a tell but the user's voice, unless knowingly kept."""
+    hits = []
+    for slug, d in corp.items():
+        low = d["text"].lower()
+        for t in AI_TELLS:
+            if re.search(rf"\b{re.escape(t)}", low):
+                hits.append((slug, t))
+    return hits
+
+
+def recalibrate() -> int:
+    import json as _json
+    corp = corpus()
+    cols = tell_collisions(corp)
+    print(f"\n  corpus: {len(corp)} approved script(s) — "
+          + ", ".join(sorted(corp)))
+    if cols:
+        print("\n  TELL COLLISIONS — an approved script uses a phrase the "
+              "tell list calls AI:")
+        for slug, t in cols:
+            print(f"    {t!r} fires on {slug} — REMOVE it from AI_TELLS "
+                  "(their voice, not a tell),\n      with a dated comment, "
+                  "or leave it and this record accepts it knowingly.")
+    print("\n  structural findings across the corpus (thresholds are advice; "
+          "an approved\n  script MAY trip one deliberately — this is drift "
+          "evidence, not a verdict):")
+    any_notes = False
+    import contextlib as _ctx, io as _io
+    for slug, d in sorted(corp.items()):
+        with _ctx.redirect_stdout(_io.StringIO()):   # check() prints its
+            notes = check(d["text"])                 # own header line
+
+        for n in notes:
+            any_notes = True
+            print(f"    {slug}: {n.split(chr(10))[0][:76]}")
+    if not any_notes:
+        print("    (none — every approved script measures clean)")
+    _cal_path().write_text(_json.dumps({
+        "calibratedAt": __import__("datetime").datetime.now(
+            __import__("datetime").timezone.utc).isoformat(timespec="seconds"),
+        "corpus": {s: d["sha"] for s, d in corp.items()},
+        "tells": len(AI_TELLS),
+        "collisionsAccepted": [[s, t] for s, t in cols],
+    }, indent=2))
+    print(f"\n  wrote {_cal_path().name} — doctor is quiet until the corpus "
+          "moves again.")
+    return 0
+
+
+def calibration_status() -> int:
+    """0 = record matches reality. 2 = stale (doctor warns, never fails):
+    the corpus changed since calibration, or a NEW tell collision exists
+    that no recalibration has knowingly accepted."""
+    import json as _json
+    p = _cal_path()
+    corp = corpus()
+    if not p.exists():
+        print(f"  no calibration record — {len(corp)} approved script(s), "
+              "never snapshotted. Run: check_script.py --recalibrate")
+        return 2
+    rec = _json.loads(p.read_text())
+    now = {s: d["sha"] for s, d in corp.items()}
+    if now != rec.get("corpus", {}):
+        gained = sorted(set(now) - set(rec.get("corpus", {})))
+        print(f"  corpus moved since {rec.get('calibratedAt', '?')[:10]} "
+              f"({len(rec.get('corpus', {}))} -> {len(now)} scripts"
+              + (f"; new: {', '.join(gained)}" if gained else "")
+              + "). Run: check_script.py --recalibrate")
+        return 2
+    accepted = {tuple(x) for x in rec.get("collisionsAccepted", [])}
+    fresh = [c for c in tell_collisions(corp) if c not in accepted]
+    if fresh:
+        for slug, t in fresh:
+            print(f"  AI tell {t!r} fires on APPROVED {slug} — the checker "
+                  "is flagging the user's own voice. Recalibrate.")
+        return 2
+    print(f"  calibration current — {len(corp)} approved script(s), "
+          f"{rec.get('tells')} tells, snapshotted "
+          f"{rec.get('calibratedAt', '?')[:10]}")
+    return 0
+
+
 def main() -> None:
     if "--selftest" in sys.argv:
         sys.exit(selftest())
+    if "--recalibrate" in sys.argv:
+        sys.exit(recalibrate())
+    if "--calibration" in sys.argv:
+        sys.exit(calibration_status())
     if "--critic" in sys.argv:
         a = [x for x in sys.argv[1:] if not x.startswith("--")]
         src = (Path(a[0]).read_text() if a and Path(a[0]).exists()
