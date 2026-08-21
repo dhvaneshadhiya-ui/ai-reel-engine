@@ -9,6 +9,25 @@ npm install
 echo "== python deps =="
 python3 -m pip install --quiet --upgrade pillow openai-whisper yt-dlp
 
+echo "== console scripts on PATH =="
+# pip puts whisper/yt-dlp wherever the active python keeps its scripts dir —
+# the python.org framework's bin/ is NOT on PATH, so on 2026-08-21 a fresh
+# machine had both installed and doctor failing on both. Link them into
+# ~/.local/bin (which .zshenv carries) instead of hoping the layout is kind.
+mkdir -p "$HOME/.local/bin"
+if ! grep -q '.local/bin' "$HOME/.zshenv" 2>/dev/null; then
+  echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.zshenv"
+  echo "  added ~/.local/bin to PATH in ~/.zshenv"
+fi
+export PATH="$HOME/.local/bin:$PATH"
+SCRIPTS_DIR=$(python3 -c "import sysconfig; print(sysconfig.get_path('scripts'))")
+for t in whisper yt-dlp; do
+  if ! command -v "$t" >/dev/null && [ -x "$SCRIPTS_DIR/$t" ]; then
+    ln -sf "$SCRIPTS_DIR/$t" "$HOME/.local/bin/$t"
+    echo "  linked $t -> ~/.local/bin"
+  fi
+done
+
 echo "== playwright chromium (page capture) =="
 npx playwright install chromium
 

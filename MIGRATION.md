@@ -247,6 +247,24 @@ that asks for your Mac password:
 4. **The six global skills** — see PART 0. One command:
    `bash tools/install_global_skills.sh`.
 
+### 2.2b What the 2026-08-21 fresh setup actually hit (a real one, start to finish)
+
+This machine was set up from a bare Mac on 2026-08-19/21, following PART 0.
+Everything below either broke or needed a hand — now either fixed in the
+scripts or recorded here so the next machine reads it instead of rediscovering
+it:
+
+| Pothole | Status |
+|---|---|
+| **Node/Python missing entirely** | Install BEFORE cloning: nodejs.org LTS pkg + python.org pkg, then run `/Applications/Python*/Install Certificates.command` — skipping it breaks every pip download with SSL errors |
+| **Homebrew not on PATH after install** | Apple Silicon installs to `/opt/homebrew`, not on any default PATH. Add `eval "$(/opt/homebrew/bin/brew shellenv)"` to `~/.zshenv` (NOT `.zprofile` alone — §3.4; the agent runs non-interactive shells) |
+| **whisper/yt-dlp installed but invisible** | pip drops console scripts in the framework bin, off PATH. `setup.sh` now links them into `~/.local/bin` itself |
+| **Plain `ffmpeg` lacks drawtext/subtitles** | Homebrew split the formula. Optional but worth it: `brew install ffmpeg-full`, then prepend `/opt/homebrew/opt/ffmpeg-full/bin` to PATH in **both** `~/.zshenv` AND `~/.zprofile` — login shells run `path_helper`, which reorders PATH after `.zshenv`, so without the `.zprofile` line the plain build silently wins in login shells. Without ffmpeg-full: everything renders, scout sheets are unlabeled, doctor warns |
+| **chatterbox venv** (optional, rehearsal) | `python3 -m venv ~/.venvs/chatterbox && ~/.venvs/chatterbox/bin/pip install chatterbox-tts "setuptools<81" torchcodec` — setuptools 81 removed pkg_resources (perth dies), and torchaudio 2.11 saves through torchcodec, whose dylib has no rpath: add `export DYLD_FALLBACK_LIBRARY_PATH="/opt/homebrew/lib:${DYLD_FALLBACK_LIBRARY_PATH:-}"` to `~/.zshenv` |
+| **manim** (optional, diagrams) | `brew install cairo pango pkg-config` first, then `pip3 install manim`, then link the `manim` script per the whisper row |
+| **git push fails on HTTPS** | GitHub has not accepted passwords since 2021 regardless of sign-up method. Use SSH: `ssh-keygen -t ed25519`, add the public key at github.com/settings/keys, then `git remote set-url origin git@github.com:dhvaneshadhiya-ui/ai-reel-engine.git` |
+| **HeyGen + other connectors** | Live in the Claude app per machine, never in the repo. Re-add before generating |
+
 ### 2.3 Setting it up in the Claude desktop app
 
 The engine is driven from the Claude app, so the app has to be able to see the

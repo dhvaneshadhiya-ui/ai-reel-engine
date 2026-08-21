@@ -367,6 +367,9 @@ try:
         capture_output=True, text=True, timeout=90)
     if r.returncode == 0:
         report(OK, "scout sheet self-test", r.stdout.strip().splitlines()[-1])
+    elif r.returncode == 2:
+        report(WARN, "scout sheet self-test",
+               "sheets work but UNLABELED — brew install ffmpeg-full")
     else:
         report(BAD, "scout sheet self-test", "sheeting broke — see output")
         print(r.stdout[-600:])

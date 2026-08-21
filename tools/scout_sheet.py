@@ -172,13 +172,21 @@ def selftest() -> int:
         pi = probe(out) if out.exists() else None
         check("sheet is a valid image of tiled width",
               pi is not None and pi["width"] >= TILE_W * 2)
-        check("timestamps were drawable (ffmpeg-full drawtext)",
-              not _warned_label)
+        # drawtext is a CAPABILITY, not a requirement — plain ffmpeg still
+        # produces useful (unlabeled) sheets, and a missing nice-to-have must
+        # not fail doctor and thereby block renders (render_job runs doctor).
+        # Exit 2 = "works, unlabeled"; doctor reports it as a warn.
+        unlabeled = _warned_label or _font() is None
         short = Path(td) / "s.mp4"
         _run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi",
               "-i", "testsrc=duration=0.4:size=160x120:rate=10", str(short)])
         check("sub-second clip still sheets",
               sheet(short, Path(td) / "s.sheet.jpg") is not None)
+    if ok and unlabeled:
+        print("\n  scout sheet selftest PASSED — but sheets are UNLABELED "
+              "(no drawtext/font).\n  brew install ffmpeg-full restores "
+              "timestamps.\n")
+        return 2
     print("\n  scout sheet selftest " + ("PASSED" if ok else "FAILED") + "\n")
     return 0 if ok else 1
 
