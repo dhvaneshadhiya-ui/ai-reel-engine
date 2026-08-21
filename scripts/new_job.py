@@ -105,6 +105,28 @@ def main() -> None:
         engine / f"jobs/{slug}/shot-plan.json",
         json.dumps(shot_plan, indent=2, ensure_ascii=False) + "\n",
     )
+    # research.md — the words' answer to the manifest. Every load-bearing
+    # claim gets a source, a tier and the exact words that speak it, plus a
+    # log of what was actually searched. tools/research_check.py refuses a
+    # ledger that is missing, unfilled, unsourced, or describing words the
+    # script never says; script_approval.py propose runs it.
+    write_new(
+        engine / f"jobs/{slug}/research.md",
+        (
+            f"# Research — {slug}\n\n"
+            "Claims ledger + search log. `script_approval.py propose` refuses\n"
+            "while <placeholders> remain; format in tools/research_check.py.\n"
+            "Tiers: official / multi / single / disputed. A single or\n"
+            "disputed claim must be SPOKEN hedged (framework S20).\n\n"
+            "## CLAIMS\n\n"
+            "- CLAIM: <the load-bearing claim, in your words>\n"
+            "  TIER: <official|multi|single|disputed>\n"
+            "  SPOKEN: \"<the exact script words that carry it>\"\n"
+            "  SRC: <https://...>\n\n"
+            "## SEARCHED\n\n"
+            "- <YYYY-MM-DD  \"query\"  (what it settled)>\n"
+        ),
+    )
     # structure.md — framework S17, the decision that comes BEFORE the first
     # sentence (formats/README-structure.md). Scaffolded here because a file
     # that exists gets filled and a file that must be remembered does not:

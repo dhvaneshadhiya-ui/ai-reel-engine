@@ -84,10 +84,17 @@ Three times a weak first draft reached the user while the framework sat unread
 is optional. The order below is now enforced: `propose` refuses to run without
 step 2's artifact, and `approve` refuses without a fresh `propose`.
 
-1. **Research first.** Two independent sources minimum, or record in
-   `structure.md` why one is enough. Run `fact-check-workflow` (global skill)
-   on any load-bearing claim BEFORE it becomes a beat. A one-source script
-   reads thin because it is thin.
+1. **Research first, and it leaves a LEDGER.** Fill `jobs/<slug>/research.md`
+   (scaffolded by `new_job.py`) as you research, not after: every load-bearing
+   claim gets a TIER (official/multi/single/disputed), a SRC url you actually
+   fetched, and the SPOKEN words that carry it — plus a dated SEARCHED log.
+   `propose` refuses a ledger that is missing, unfilled, unsourced, or that
+   names words the script never says (`tools/research_check.py`). Two
+   independent source domains minimum, or write `ONE-SOURCE-OK: <why>`. A
+   single/disputed claim must be SPOKEN hedged — that prints as advice, and
+   ignoring it needs a reason. Run `fact-check-workflow` (global skill) on
+   anything load-bearing BEFORE it becomes a beat. A one-source script reads
+   thin because it is thin.
 2. **Structure before the first sentence.** Fill `jobs/<slug>/structure.md`
    (scaffolded by `new_job.py`): the S17 shape, the promise, the open loop,
    what was cut, the sources. `propose` exits 1 while placeholders remain.

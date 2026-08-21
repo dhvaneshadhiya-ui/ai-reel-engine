@@ -73,6 +73,27 @@ MacRumors guide; Ming-Chi Kuo note.
 """
 
 
+RESEARCH = """# Research — selftest
+
+## CLAIMS
+
+- CLAIM: the iPhone 18 Pro is expected in September
+  TIER: multi
+  SPOKEN: "is expected on September 9"
+  SRC: https://www.macrumors.com/guide/iphone-18-pro/
+  SRC: https://9to5mac.com/2026/08/10/iphone-18-pro/
+
+- CLAIM: one rumored change only matters with no signal
+  TIER: single
+  SPOKEN: "only matters when you have no signal"
+  SRC: https://www.macrumors.com/guide/iphone-18-pro/
+
+## SEARCHED
+
+- 2026-08-21  "iphone 18 pro september"  (freshness re-check)
+"""
+
+
 def run() -> int:
     tmp = Path(tempfile.mkdtemp(prefix="script-pipeline-selftest-"))
     job = tmp / "jobs" / "selftest"
@@ -98,8 +119,16 @@ def run() -> int:
         expect_exit(lambda: sa.cmd_propose("selftest"),
                     "propose refuses when no shape is named", "NO SHAPE")
 
-        # 4. filled structure -> propose runs and records the review
+        # 3b. structure is fine but there is no research ledger.
+        # The ledger rule shipped without a case here, so the suite failed on
+        # its own fixture instead of on a violation — doctor went red for a
+        # missing test file, not a broken rule. Added 2026-08-21.
         (job / "structure.md").write_text(STRUCTURE)
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "propose refuses with no research.md", "NO RESEARCH LEDGER")
+
+        # 4. filled structure + ledger -> propose runs and records the review
+        (job / "research.md").write_text(RESEARCH)
         with contextlib.redirect_stdout(io.StringIO()):
             sa.cmd_propose("selftest")
         rev_p = job / "review.json"
@@ -112,6 +141,8 @@ def run() -> int:
         job2 = tmp / "jobs" / "never-proposed"
         job2.mkdir()
         (job2 / "script.md").write_text(SCRIPT)
+        (job2 / "structure.md").write_text(STRUCTURE)
+        (job2 / "research.md").write_text(RESEARCH)
         expect_exit(lambda: sa.cmd_approve("never-proposed"),
                     "approve refuses when propose never ran", "NEVER PROPOSED")
 

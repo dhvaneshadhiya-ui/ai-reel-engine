@@ -98,6 +98,15 @@ balanced 40-60% (G26). Numbers come from teardowns, never from guesses.
 to the user and approved BEFORE any avatar video is generated. Generation
 costs credits and freezes the audio; changing a word afterwards is a
 re-render. [EYE]
+Since 2026-08-21 the process has teeth upstream: `propose` exits non-zero
+without a filled `jobs/<slug>/structure.md` (shape before sentences) AND a
+valid `jobs/<slug>/research.md` — the claims ledger, where every load-bearing
+claim carries a TIER, a SRC url, and the SPOKEN words that carry it, verified
+to exist in the script. `approve` exits non-zero unless the current script
+hash-matches the last propose. [LINT — `tools/research_check.py`, run inside
+`script_approval.py`; self-test `tools/test_script_pipeline.py`]
+A single/disputed-tier claim spoken unhedged prints as advice (framework
+S20), never blocks — sourcing depth is judgement, the record of it is not.
 
 **Story [GATE]:** runtime per format (G02; `allowLong` + `allowLongReason` to
 exceed the band, hard-capped at 180s).

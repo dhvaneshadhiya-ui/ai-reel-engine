@@ -2821,3 +2821,39 @@ two copies of a canonical text is how drift starts. The legacy
 that file, and the one it scaffolded for iphone18-colors sat unfilled in
 scripts/ while the real work happened in jobs/. The news-reel skill also
 stopped hardcoding one machine's absolute path as "the engine".
+
+## 2026-08-21 (2) — research hardened the way scouting was: a ledger, refused when dishonest
+
+Scouting got its discipline from a measurement — 229 assets carried `shows`,
+18 carried a tier, so capture_plan made tier REQUIRED. Research had less than
+that: `verified_facts` in the manifest is a convention no code reads, the
+fact-check skill is advisory (in this repo's history: skipped), and the
+iphone18-colors first draft was scripted off ONE source. Same recipe applied:
+
+- **`jobs/<slug>/research.md`** (scaffolded by new_job.py): a claims ledger —
+  CLAIM / TIER (official·multi·single·disputed) / SPOKEN / SRC — plus a dated
+  SEARCHED log. The SPOKEN field is the `covers` discipline applied to
+  research: the ledger names the exact script words each claim rides on, and
+  `tools/research_check.py` verifies those words exist in the script. A
+  ledger describing words nobody says is fiction wearing a record's badge.
+- **REFUSED at propose** (the G41 half): missing/template ledger, a claim
+  with no SRC url or invalid TIER, a SPOKEN phrase absent from the script,
+  an empty search log.
+- **ADVICE, never blocks** (the G42 half): a single/disputed claim spoken
+  unhedged (framework S20's own vocabulary — reportedly/leaked/says/…), and
+  fewer than two source domains without an `ONE-SOURCE-OK:` line. Sourcing
+  depth is judgement; the record of it is not.
+- **A known edge, kept on purpose:** "None of it's confirmed" trips the
+  unhedged-advice because "confirmed" is NOT in the hedge list — adding it
+  would silence "Apple confirmed X" spoken off one source, which is the
+  exact sentence the check exists for. The advisory costs a glance; the
+  blind spot would cost the rule.
+- Self-tests in `tools/test_script_pipeline.py` (doctor runs them); the live
+  example is jobs/iphone18-colors/research.md, written from sources fetched
+  the same session.
+
+What this cannot do, recorded so nobody oversells it: verify a search
+happened, that a URL says what the ledger claims, or that a fact is true.
+It verifies the record exists, is internally consistent, and matches the
+script it describes. The last inch of research quality stays judgement —
+same as the writing.

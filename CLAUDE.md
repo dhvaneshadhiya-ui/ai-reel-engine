@@ -85,10 +85,13 @@ silently disabled the frame checks for weeks.
   the sheet as `approval`, with the narration as `script`.
   **Since 2026-08-21 the chain starts earlier:** `propose` refuses without a
   filled `jobs/<slug>/structure.md` (the framework's shape-before-sentences
-  rule, scaffolded by `new_job.py`), and `approve` refuses unless the current
-  script hash-matches the last `propose` (`review.json`) — so a draft can no
-  longer skip the framework, and the user can no longer be asked to approve
-  words they were never shown. The full writing order is in the `news-reel`
+  rule, scaffolded by `new_job.py`) AND a valid `jobs/<slug>/research.md` —
+  the claims ledger (`tools/research_check.py`): every load-bearing claim
+  carries a TIER, a SRC url, and the SPOKEN script words that carry it, plus
+  a dated search log. `approve` refuses unless the current script
+  hash-matches the last `propose` (`review.json`) — so a draft can no
+  longer skip the framework or the research record, and the user can no
+  longer be asked to approve words they were never shown. The full writing order is in the `news-reel`
   skill; the self-test is `tools/test_script_pipeline.py`, run by doctor.
   **`check` must pass BEFORE the avatar is generated** — generation costs
   credits and freezes the audio. Gate **G27** re-checks the hash at build time,

@@ -137,6 +137,18 @@ def require_structure(slug: str) -> Path:
 def cmd_propose(slug: str) -> None:
     st_p = require_structure(slug)
     spoken = read_script(slug)
+    # The research ledger — hardened 2026-08-21, one day after structure, for
+    # the same reason and with the same split: a ledger that is structurally
+    # dishonest (missing, template, unsourced claim, SPOKEN words nobody says)
+    # refuses; judgement calls (unhedged single-source, one domain) advise.
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from research_check import check_research  # noqa: E402
+    research_errors, research_advice = check_research(
+        slug, spoken, root=ROOT)
+    if research_errors:
+        sys.exit("RESEARCH LEDGER REFUSED — " + slug + "\n  "
+                 + "\n  ".join(research_errors)
+                 + "\n  Fix jobs/" + slug + "/research.md, then propose again.")
     _, q_p, _ = paths(slug)
     words = len(spoken.split())
     secs = words / WPS
@@ -221,10 +233,16 @@ def cmd_propose(slug: str) -> None:
     # the same RIGHTS territory as G27, one step earlier. The findings stay
     # advice; what stops being possible is approving a script nobody proposed,
     # or quietly editing between the showing and the yes.
+    if research_advice:
+        print("\nRESEARCH (advice — sourcing depth is judgement, "
+              "none of this blocks):")
+        for _a in research_advice:
+            print(f"  - {_a}")
     review_path(slug).write_text(json.dumps({
         "script_sha256": sha(spoken),
         "structure_sha256": sha(st_p.read_text()),
         "findings": findings,
+        "research_advice": research_advice,
         "proposedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }, indent=2))
 
