@@ -43,6 +43,25 @@ blocking for exactly this reason: its principle is Rule 3 (a card must outlast
 the sentence it illustrates) but its test was a flat 2.0s minimum, which is
 taste wearing a rule's badge. A number is not a rule.
 
+## How the user works — binding on every machine
+
+**The user drives from the Claude desktop app and does not run terminal
+commands.** Recorded 2026-08-22 after three sessions handed them command
+blocks anyway. Concretely:
+
+- **Run it yourself.** Clone, install, setup.sh, doctor, git commit, git push,
+  bundling files, extracting archives — all of it is the agent's job. Never
+  end a task with "run this:" and a code block addressed to the user.
+- **Push to GitHub periodically** without being asked, after any coherent
+  piece of work lands green. Say what was pushed.
+- **When something genuinely needs the user** (an installer that asks for
+  the Mac password, signing in to an app, authorizing a connector, pasting a
+  key on a web page), describe it as CLICKS — what to download, what to
+  double-click, what to paste where — not as a command. If a step has a GUI
+  route (a .pkg installer, a browser code), prefer it over a terminal route.
+- MIGRATION.md §6.2 already has the shape: "you do three things, the agent
+  does the rest." Every setup or sync instruction should read like that.
+
 ## First two commands, every session
 
 ```bash
