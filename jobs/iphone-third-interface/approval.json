@@ -1,9 +1,8 @@
 {
-  "sha256": "c0c74f92e03ae4ea9ea9a3c12dfa3c27b261f9dd45cc2541d37b9048e91596be",
-  "approvedAt": "2026-08-22T09:09:01+00:00",
-  "words": 84,
+  "sha256": "1e8e32a4f9ba0d51467a739605b256d1d7b9a87ac56993916fb40bbaafb7a958",
+  "approvedAt": "2026-08-22T09:36:58+00:00",
+  "words": 90,
   "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build.",
-  "_provenance": "User wrote this script themselves in feedback on 2026-08-22 and approved it in chat with \"approve A\" after being shown the 12-row beat plan, a still mockup of the new floatcard treatment, and the open question about which of their two CTA lines was final. \"A\" is the CTA inside their revised script: \"Comment APP and we will send the exact one.\" They declined nothing else.",
-  "_overrides": "voiceSpeed 1.15 for this reel only (locked default 1.05 unchanged) at the user's request for livelier delivery; captionStyle chip-lg for this reel only (locked default word-reveal unchanged) to match the reference reel they sent.",
-  "_declined": "Offered to smooth the sentence bridges (checker measures 17% vs ~53% on approved reels) and to switch to CTA variant B with the setup link. User chose A and said nothing about the bridges, so their words stand unedited."
+  "_provenance": "CTA line dictated verbatim by the user on 2026-08-22: \"He must says Want the app? Comment app and we will send the exact one in your DM\". Everything else is the script they approved earlier the same day as variant A. Re-approved at the new hash because the words changed; the change is theirs, quoted.",
+  "_overrides": "voiceSpeed 1.10 for this reel only (locked default 1.05 unchanged) \u2014 down from 1.15 after the user reported the read was not clear. captionStyle chip-lg for this reel only."
 }

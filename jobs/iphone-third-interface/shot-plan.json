@@ -223,7 +223,7 @@
    }
   },
   {
-   "start_phrase": "once its set",
+   "start_phrase": "set up",
    "line": "— but once it's set up,",
    "asset_id": "desk-wide",
    "tier": "official",
@@ -283,8 +283,8 @@
    }
   },
   {
-   "start_phrase": "Comment app",
-   "line": "Comment APP and we'll send the exact one.",
+   "start_phrase": "Want the",
+   "line": "Want the app? Comment APP and we'll send the exact one in your DM.",
    "asset_id": "apps-wide",
    "tier": "official",
    "scene": {
@@ -293,13 +293,14 @@
     "focusX": 0.3537,
     "keyword": "APP",
     "question": "WANT THE APP?",
-    "typeAt": 0.55,
-    "growAt": 1.25,
-    "dropAt": 2.15,
-    "captionBottom": 6000
+    "typeAt": 1.15,
+    "growAt": 1.95,
+    "dropAt": 3.15,
+    "captionBottom": 6000,
+    "showFinal": false
    }
   }
  ],
  "captionStyleReason": "User feedback 2026-08-22: match the caption style to the topic's vibe. The locked default word-reveal renders small italic serif, which read as a documentary voice over a warm, playful app-discovery reel. chip-lg is SF Pro 50px/800 white on a dark pill — the bold high-contrast treatment the reference reel the user sent uses, and legible on mute at thumbnail size.",
- "_audio_tail_note": "vo-master.m4a carries 1.6s of silence after the last word. The CTA animation needs ~3.5s to type the keyword, show the card and land the \"link sent\" notification; the spoken line is 2.07s, so on the unpadded track the payoff never appeared. compile_shot_plan gives trailing silence to the final scene, so the pad buys the CTA its own time instead of cutting the reel the instant the voice stops."
+ "_cta_note": "The CTA line is spoken now, so the scene starts on 'Want the app?' and the component's own question lands under those words. showFinal is off: the scene already shows the keyword typed into the comment field and again on the card, and the closing display made it a third appearance in a different style."
 }

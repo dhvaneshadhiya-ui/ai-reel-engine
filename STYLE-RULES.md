@@ -3503,3 +3503,40 @@ could ever be constructed. Any tail case has to pin the VO end independently.
 - payoff: return to the OPENING shot, zoomed out, headline echoing the hook
 - CTA: `commentcta`, keyword-parameterised, over the opening desk shot
 - captions: `chip-lg` (per-reel override of the locked word-reveal)
+
+## 2026-08-22 (17) — the CTA that appeared twice, and the line nobody spoke
+
+Two user notes on the v2 cut, both about the same 5 seconds.
+
+**"Comment App appears twice at the last with two different style."** True.
+`CommentCta` shows the keyword three times by design: typed into a comment
+field, then on a big card reading COMMENT THIS WORD, then a closing display
+COMMENT "APP" in a different treatment. On the short beat it originally had,
+the third never rendered and nobody noticed. Give the scene the room it
+actually needs and the redundancy appears.
+
+**Distilled rule: a component's full animation is part of its contract.** If
+a beat is too short to play it, the bug is hidden, not absent — and lengthening
+the beat later surfaces a design fault that was always there. Added
+`showFinal` (default true, so shipped reels are untouched); this reel ends on
+the "link sent" notification instead.
+
+**"Voiceover skips saying Want the App."** Also true, and worse than a skip:
+the words were only ever ON SCREEN. `CommentCta` draws its own question,
+which made the CTA look complete in every frame check while the narration
+went straight to "Comment app". Nothing caught it, because every gate that
+compares picture to words checks that the PICTURE is justified by the
+speech — never that a promise made in the picture is spoken at all.
+
+**Distilled rule: a component that draws its own copy is writing script the
+script does not contain.** When a scene has built-in text, check it against
+the narration by hand; Rule 3's gates only run in one direction.
+
+The CTA is now spoken in full, the scene starts on "Want the app?" so the
+drawn question lands under those words, and speed came down 1.15 -> 1.10
+after the user said the read was not clear. 90 words, 33.7s.
+
+One mechanical note worth keeping: G18 kept firing as the specsheet boundary
+moved word by word, because the boundary word starts exactly where the card
+ends and 3dp rounding puts it 1ms INSIDE. Move a scene boundary a whole word,
+not to the edge of one.

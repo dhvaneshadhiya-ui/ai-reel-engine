@@ -10,4 +10,4 @@ You can even control windows with gestures.
 
 It needs a companion app on your Mac and the same Wi‑Fi—but once it's set up, your most-used actions live right beside your keyboard.
 
-Comment APP and we'll send the exact one.
+Want the app? Comment APP and we'll send the exact one in your DM.

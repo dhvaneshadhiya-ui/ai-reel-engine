@@ -509,6 +509,12 @@ export type Scene =
       keyword?: string;
       /** The question above the comment field. Defaults to "WANT THE WEBSITE?". */
       question?: string;
+      /** Draw the closing "COMMENT <word>" display after the notification.
+       *  Defaults true. The scene already shows the word twice before this —
+       *  typed into the field, then on the big card — so on a beat long enough
+       *  for all three to play it reads as the same CTA in two styles back to
+       *  back (user note 2026-08-22). Set false to end on the notification. */
+      showFinal?: boolean;
       typeAt?: number;
       growAt?: number;
       dropAt?: number;

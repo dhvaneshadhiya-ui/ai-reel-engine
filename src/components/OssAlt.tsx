@@ -1634,8 +1634,8 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
           </div>
         </div>
       )}
-      {/* final display */}
-      {finalP > 0.02 && (
+      {/* final display — see BeatSheet showFinal */}
+      {(scene.showFinal ?? true) && finalP > 0.02 && (
         <div
           style={{
             position: "absolute",

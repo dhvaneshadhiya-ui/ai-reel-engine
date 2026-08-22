@@ -1,12 +1,12 @@
 {
-  "script_sha256": "c0c74f92e03ae4ea9ea9a3c12dfa3c27b261f9dd45cc2541d37b9048e91596be",
+  "script_sha256": "1e8e32a4f9ba0d51467a739605b256d1d7b9a87ac56993916fb40bbaafb7a958",
   "structure_sha256": "21369f708d0f43da5c8777c45365258fe481be5a7b203f5c856e8c8d510d0224",
   "findings": [
-    "  BRIDGES 1/6 sentences (17%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  BRIDGES 1/7 sentences (14%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
     "  NO OPEN LOOP \u2014 nothing in the opening third points forward. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
     "  OPENING has no version, date or time anchor: \"Your Mac has a third input device\u2014and it's already in your hand.\". A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)"
   ],
   "research_advice": [],
   "beatPlanShots": 12,
-  "proposedAt": "2026-08-22T09:02:51+00:00"
+  "proposedAt": "2026-08-22T09:36:58+00:00"
 }
