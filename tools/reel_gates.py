@@ -1797,12 +1797,29 @@ def main() -> None:
         sys.exit(f"missing beats: {beats_path}")
     beats = json.loads(beats_path.read_text())
 
-    man_path = ROOT / f"public/assets/{slug}/manifest.json"
+    # A DERIVATIVE sheet ("<slug>-nomusic", the sanctioned music-free export)
+    # shares the parent's assets — only the music track differs. Resolving the
+    # manifest and vo.json against the DERIVATIVE slug found neither, and the
+    # run degraded to "GATES PASSED (PARTIAL)" with every Rule 3 check skipped:
+    # a clone reporting green on checks it never ran.
+    # This is the THIRD enforcer to need the parent fallback; the ledger already
+    # records it for validate_job.py and script_approval.py, with the note that
+    # when a sheet variant becomes legal every enforcer that reads a path by
+    # slug needs to know. Added 2026-08-21.
+    asset_slug = slug
+    for _suffix in ("-nomusic",):
+        if slug.endswith(_suffix):
+            _parent = slug[: -len(_suffix)]
+            if (ROOT / f"public/assets/{_parent}/vo.json").exists():
+                asset_slug = _parent
+            break
+
+    man_path = ROOT / f"public/assets/{asset_slug}/manifest.json"
     manifest = json.loads(man_path.read_text()) if man_path.exists() else None
 
     vo_end = None
     vo_words: list[tuple[str, float, float]] | None = None
-    vo_path = ROOT / f"public/assets/{slug}/vo.json"
+    vo_path = ROOT / f"public/assets/{asset_slug}/vo.json"
     if vo_path.exists():
         raw = json.loads(vo_path.read_text())
         ws = [w for s in raw["segments"] for w in s["words"]]

@@ -64,3 +64,38 @@ implication (a color range → what Apple believes about who buys each phone).
 - **Pantone codes for the other three (427, 426, 2121).** Numbers for their own
   sake. 6076 earns its place because the whole investigation turns on it; the
   other three would be density, not momentum.
+
+## REVISION — 2026-08-21 second pass (user asked for another)
+
+Shape, promise, loop and cuts above all stand. What changed and why:
+
+- **The mystery got its people.** "Nobody agrees" was an assertion; now the
+  script quotes the actual disagreement — one leaker's "purplish red" against
+  another's "burgundy, coffee, and deep purple" (both via MacRumors, Aug 10).
+- **The receipt got stronger.** Since the first research pass, dummy units
+  (Sonny Dickson, May) and the SIM tray (Ice Universe, June) both corroborate
+  the darker shade — the reveal now rests on leaked hardware, not one tray.
+- **Fixed the garbled lineup line.** "It's still the only risk in the lineup:
+  Silver, Dark Gray..." parsed the SAFE colors as the risk on a cold listen
+  (S8 orientation). Now: "The other three play it safe: ..."
+- **Cut "quieter and browner".** Brown fought the plum reveal one sentence
+  after making it.
+- **Hedge added** to the loop plant ("reportedly doesn't get it") — it was
+  bare in the approved version, an S20 slip.
+- **Time anchor added** ("official until next month") — the unveil is
+  reported for next month alongside the foldable; "why now" was missing.
+- **CTA verb order** — "Would you still pick it?" for "Still the one you'd
+  pick?", which presumed a pick.
+
+A 208-word tighter cut was measured and REJECTED: trimming the connective
+tissue dropped bridges 53%->29% and broke cadence. The words that made it
+shorter were the words making it a story.
+
+## SOURCES
+
+- MacRumors, Aug 10 — the shade disagreement, both leakers quoted; dummy
+  units and SIM tray provenance (Sonny Dickson May, Ice Universe June).
+- Macworld, April — the Pantone 6076 code (first report).
+- MacRumors color guide + 9to5Mac (first pass) — lineup, Dark Gray dispute,
+  Ultra colors via camera protectors, reported pricing.
+- Pantone's own 6076 C page — the Red-Purple filing the reveal turns on.

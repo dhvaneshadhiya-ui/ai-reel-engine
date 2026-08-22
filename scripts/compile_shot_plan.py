@@ -23,6 +23,35 @@ def normalize(value: str) -> list[str]:
     return re.findall(r"[a-z0-9]+", value.lower().replace("’", "'"))
 
 
+def normalize_phrase(value: str) -> list[str]:
+    """Normalise a start_phrase the way the TRANSCRIPT is normalised.
+
+    The transcript merges a possessive/contraction back onto its stem, so
+    "Apple's" is stored as ONE entry with norm "apples" (see the merge at the
+    top of `timed_words`). `normalize()` alone splits it into ["apple", "s"],
+    which can never equal ["apples"] — so every start_phrase containing a
+    possessive failed to resolve with "could not resolve shot N".
+
+    Found 2026-08-21 on iphone18-colors, whose first shot starts "Apple's
+    iPhone 18 Pro". The transcript half of this was fixed when gate G34 was
+    added; the needle half was not, and nothing had exercised it because the
+    earlier reels' start_phrases happened to begin on a plain word.
+
+    Merging is done PER WHITESPACE-WORD, exactly like the transcript: a tail
+    is only absorbed when it came from the same source word, so "it s" written
+    as two separate words is left alone.
+    """
+    out: list[str] = []
+    for word in value.split():
+        tokens = normalize(word)
+        for token_index, token in enumerate(tokens):
+            if token_index > 0 and token in _CONTRACTION_TAILS and out:
+                out[-1] = out[-1] + token
+            else:
+                out.append(token)
+    return out
+
+
 def locked_style(engine: Path) -> str:
     """Read the locked STYLE pack from config.json.
 
@@ -107,9 +136,14 @@ def load_words(path: Path) -> list[dict[str, Any]]:
             out[-1]["norm"] = normalize(out[-1]["text"])[-1]
             out[-1]["end"] = end
             continue
-        # Whisper occasionally returns ".8" or punctuation as a separate word.
-        if text.startswith(".") and out and tokens[0].isdigit():
-            out[-1]["text"] = f'{out[-1]["text"]}.{tokens[0]}'
+        # Whisper occasionally returns ".8" or ",000" as a separate word. Both
+        # must be merged back or the caption reads "$2 ,000" — gate G30, which
+        # calls it "an orphan numeric fragment": a split number makes the
+        # caption say something the creator did not.
+        # The comma case was missing until 2026-08-21 (iphone18-colors, "two
+        # thousand dollars" -> "$2" + ",000"); only "." was handled.
+        if text[:1] in (".", ",") and out and tokens and tokens[0].isdigit():
+            out[-1]["text"] = f'{out[-1]["text"]}{text[:1]}{tokens[0]}'
             out[-1]["norm"] = normalize(out[-1]["text"])[-1]
             out[-1]["end"] = end
             continue
@@ -147,7 +181,7 @@ def load_words(path: Path) -> list[dict[str, Any]]:
 def find_phrase(
     words: list[dict[str, Any]], phrase: str, cursor: int, label: str
 ) -> tuple[int, int]:
-    needle = normalize(phrase)
+    needle = normalize_phrase(phrase)
     if not needle:
         raise SystemExit(f"{label} cannot be empty")
     haystack = [word["norm"] for word in words]
@@ -236,8 +270,15 @@ def caption_words(
         text = word["text"].strip()
         key = re.sub(r"[^a-z0-9]", "", text.lower())
         if key in corrections:
-            punctuation = re.sub(r"[A-Za-z0-9.]+", "", text)
-            text = corrections[key] + punctuation
+            # TRAILING punctuation only. `re.sub(r"[A-Za-z0-9.]+", "", text)`
+            # collected punctuation from ANYWHERE in the token, so a token
+            # whisper had merged across a hyphen — "purple-tongued." — yielded
+            # "-" and the correction came out as "purple-tinged-".
+            # Found 2026-08-21 on iphone18-colors. Dots stay excluded from the
+            # class so the existing "drop the full stop" behaviour is unchanged;
+            # only interior punctuation stops leaking onto the end.
+            match = re.search(r"[^A-Za-z0-9.]+$", text)
+            text = corrections[key] + (match.group(0) if match else "")
         corrected.append({"start": word["start"], "end": word["end"], "text": text})
 
     # MULTI-WORD corrections. The per-word pass above keys on a single token
@@ -428,6 +469,19 @@ def main() -> None:
             scene.setdefault("bottomFocusX", focus_split)
         scenes.append(scene)
 
+    # THE VIDEO MUST COVER THE WHOLE AUDIO TRACK. `audio_end` is the last WORD
+    # onset, so any trailing silence in the master was left uncovered and the
+    # reel cut to black before the audio stopped — validate_job rejects a scene
+    # total that differs from the track by more than 0.20s.
+    # Found 2026-08-21 on iphone18-colors: last word 70.04s, master 70.44s.
+    # Only the FINAL beat is extended, so nothing else in the plan moves.
+    if avatar_info and scenes:
+        spare = float(avatar_info["duration"]) - audio_end
+        if spare > 0.01:
+            scenes[-1]["durationSec"] = round(
+                scenes[-1]["durationSec"] + spare, 3)
+            audio_end = float(avatar_info["duration"])
+
     # Keep INTERIOR SPACES when normalising the key. Stripping every non
     # alphanumeric collapsed "dark cherry" to "darkcherry", which matches no
     # single token and no chunk — so multi-word corrections silently did
@@ -458,6 +512,18 @@ def main() -> None:
         "scenes": scenes,
         "captions": caption_words(words, corrections),
     }
+    # G27 — the sheet carries the narration it was built from plus the approval
+    # hash. Without these the gate blocks, and it is right to: a sheet that
+    # cannot name the script it came from cannot prove the user approved it.
+    # The bespoke tools/build_<slug>.py scripts set this themselves; this
+    # generic path never did, so every reel compiled here failed G27.
+    # Found 2026-08-21 on iphone18-colors.
+    script_path = engine / f"jobs/{slug}/script.md"
+    approval_path = engine / f"jobs/{slug}/approval.json"
+    if script_path.exists():
+        beats["script"] = script_path.read_text().strip()
+    if approval_path.exists():
+        beats["approval"] = json.loads(approval_path.read_text())
     output = engine / f"src/beats/{slug}.json"
     output.parent.mkdir(parents=True, exist_ok=True)
 

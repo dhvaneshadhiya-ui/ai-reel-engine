@@ -1,0 +1,1078 @@
+{
+  "id": "iphone18-colors",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/iphone18-colors/avatar-master.mp4",
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 10.88,
+        "vol": 0.055
+      },
+      {
+        "t": 11.22,
+        "vol": 0.15
+      },
+      {
+        "t": 11.28,
+        "vol": 0.15
+      },
+      {
+        "t": 11.46,
+        "vol": 0.055
+      },
+      {
+        "t": 15.4,
+        "vol": 0.055
+      },
+      {
+        "t": 15.7,
+        "vol": 0.15
+      },
+      {
+        "t": 15.74,
+        "vol": 0.15
+      },
+      {
+        "t": 15.88,
+        "vol": 0.055
+      },
+      {
+        "t": 26.0,
+        "vol": 0.055
+      },
+      {
+        "t": 26.28,
+        "vol": 0.15
+      },
+      {
+        "t": 26.34,
+        "vol": 0.15
+      },
+      {
+        "t": 26.46,
+        "vol": 0.055
+      },
+      {
+        "t": 27.92,
+        "vol": 0.055
+      },
+      {
+        "t": 28.26,
+        "vol": 0.15
+      },
+      {
+        "t": 28.4,
+        "vol": 0.15
+      },
+      {
+        "t": 28.58,
+        "vol": 0.055
+      },
+      {
+        "t": 32.26,
+        "vol": 0.055
+      },
+      {
+        "t": 32.58,
+        "vol": 0.15
+      },
+      {
+        "t": 32.6,
+        "vol": 0.15
+      },
+      {
+        "t": 32.76,
+        "vol": 0.055
+      },
+      {
+        "t": 37.92,
+        "vol": 0.055
+      },
+      {
+        "t": 38.2,
+        "vol": 0.15
+      },
+      {
+        "t": 38.26,
+        "vol": 0.15
+      },
+      {
+        "t": 38.38,
+        "vol": 0.055
+      },
+      {
+        "t": 44.94,
+        "vol": 0.055
+      },
+      {
+        "t": 45.28,
+        "vol": 0.15
+      },
+      {
+        "t": 45.42,
+        "vol": 0.15
+      },
+      {
+        "t": 45.6,
+        "vol": 0.055
+      },
+      {
+        "t": 47.74,
+        "vol": 0.055
+      },
+      {
+        "t": 48.08,
+        "vol": 0.15
+      },
+      {
+        "t": 48.12,
+        "vol": 0.15
+      },
+      {
+        "t": 48.3,
+        "vol": 0.055
+      },
+      {
+        "t": 54.68,
+        "vol": 0.055
+      },
+      {
+        "t": 55.02,
+        "vol": 0.15
+      },
+      {
+        "t": 55.22,
+        "vol": 0.055
+      },
+      {
+        "t": 69.54,
+        "vol": 0.15
+      },
+      {
+        "t": 70.04,
+        "vol": 0.055
+      },
+      {
+        "t": 70.38,
+        "vol": 0.15
+      },
+      {
+        "t": 70.44,
+        "vol": 0.02
+      }
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+  },
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "6076",
+    "Red-Purple",
+    "plum",
+    "expensive",
+    "risk",
+    "unsold",
+    "two"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "topSrc": "assets/iphone18-colors/chip-hook.mp4",
+      "bottomSrc": "assets/iphone18-colors/avatar-master.mp4",
+      "captionBottom": 1000,
+      "headline": {
+        "lines": [
+          {
+            "text": "iPHONE 18 PRO",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "A NEW COLOR",
+            "kind": "headline",
+            "at": 0.5
+          }
+        ],
+        "y": 0.02,
+        "theme": "dark"
+      },
+      "credit": "Pantone 6076 C \u00b7 code via MacRumors",
+      "durationSec": 3.24,
+      "assetId": "chip-hook",
+      "claimId": "chip-hook",
+      "covers": "Apple's iPhone 18 Pro",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.5
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/chip-cherry.mp4",
+      "zoomDir": "none",
+      "credit": "Pantone 6076 C \u00b7 code via MacRumors",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 0.1,
+          "vol": 0.32
+        }
+      ],
+      "captionBottom": 500,
+      "durationSec": 3.42,
+      "assetId": "chip-cherry",
+      "claimId": "chip-cherry",
+      "covers": "It's called Dark Cherry",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "durationSec": 3.4,
+      "from": 6.66
+    },
+    {
+      "type": "wordcascade",
+      "bg": "cream",
+      "bottomSrc": "assets/iphone18-colors/avatar-master.mp4",
+      "words": [
+        {
+          "text": "THE CATCH",
+          "style": "serif",
+          "at": 0.25
+        },
+        {
+          "text": "THE PRICIEST iPHONE",
+          "style": "serif",
+          "at": 1.55
+        },
+        {
+          "text": "DOESN'T GET IT",
+          "style": "serif",
+          "at": 3.05,
+          "accent": true
+        }
+      ],
+      "durationSec": 4.86,
+      "assetId": "chip-cherry",
+      "claimId": "chip-cherry",
+      "covers": "And here's the catch:",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c",
+      "bottomFrom": 10.06,
+      "bottomFocusX": 0.5
+    },
+    {
+      "type": "typecard",
+      "kinetic": {
+        "text": "WHAT COLOR\nIS THIS?",
+        "style": "serif",
+        "at": 0.2,
+        "y": 0.4
+      },
+      "durationSec": 2.34,
+      "assetId": "chip-cherry",
+      "claimId": "chip-cherry",
+      "covers": "But first \u2014 what",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-colors/renders-four.png",
+      "srcWidth": 1080,
+      "srcHeight": 540,
+      "backdrop": "cream",
+      "credit": "Renders via MacRumors",
+      "highlights": [
+        {
+          "at": 0.35,
+          "x": 532,
+          "y": 30,
+          "w": 180,
+          "h": 470
+        }
+      ],
+      "captionBottom": 500,
+      "headline": {
+        "lines": [
+          {
+            "text": "FAN RENDERS",
+            "kind": "label",
+            "at": 0.15
+          }
+        ],
+        "y": 0.07,
+        "theme": "dark"
+      },
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 0.15,
+          "vol": 0.32
+        }
+      ],
+      "durationSec": 2.16,
+      "assetId": "renders-four",
+      "claimId": "renders-four",
+      "covers": "Every render you've seen",
+      "sourceUrl": "https://www.macrumors.com/2026/05/08/iphone-18-pros-four-color-options/"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-colors/9to5-head.png",
+      "srcWidth": 1080,
+      "srcHeight": 470,
+      "backdrop": "cream",
+      "credit": "9to5Mac",
+      "highlights": [
+        {
+          "at": 0.35,
+          "x": 20,
+          "y": 15,
+          "w": 1040,
+          "h": 300
+        }
+      ],
+      "captionBottom": 500,
+      "durationSec": 3.1,
+      "assetId": "9to5-head",
+      "claimId": "9to5-head",
+      "covers": "But the leaker who",
+      "sourceUrl": "https://9to5mac.com/2026/08/10/iphone-18-pros-flagship-new-color-detailed-by-leaker/"
+    },
+    {
+      "type": "wordcascade",
+      "bg": "cream",
+      "bottomSrc": "assets/iphone18-colors/avatar-master.mp4",
+      "words": [
+        {
+          "text": "NOT RED",
+          "style": "serif",
+          "at": 0.15
+        },
+        {
+          "text": "PURPLE-TINGED",
+          "style": "serif",
+          "at": 0.75,
+          "accent": true
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.7,
+          "vol": 0.556
+        }
+      ],
+      "durationSec": 1.22,
+      "assetId": "chip-cherry",
+      "claimId": "chip-cherry",
+      "covers": "It's",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c",
+      "bottomFrom": 22.52,
+      "bottomFocusX": 0.5
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/iphone18-colors/mr-bullets.png",
+      "srcWidth": 1080,
+      "srcHeight": 1160,
+      "credit": "MacRumors",
+      "lines": [
+        {
+          "at": 0.3,
+          "x": 40,
+          "y": 762,
+          "w": 1000,
+          "h": 125
+        }
+      ],
+      "captionBottom": 500,
+      "sfx": [
+        {
+          "src": "sfx/Riser.MP3",
+          "at": 3.35,
+          "vol": 0.359
+        }
+      ],
+      "durationSec": 4.84,
+      "assetId": "mr-bullets",
+      "claimId": "mr-bullets",
+      "covers": "And the reports pin",
+      "sourceUrl": "https://www.macrumors.com/2026/05/08/iphone-18-pros-four-color-options/"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-colors/pantone-6076.png",
+      "srcWidth": 1080,
+      "srcHeight": 1750,
+      "backdrop": "cream",
+      "credit": "Pantone",
+      "highlights": [
+        {
+          "at": 0.3,
+          "x": 20,
+          "y": 1568,
+          "w": 1040,
+          "h": 80
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 0.0,
+          "vol": 1.0
+        }
+      ],
+      "captionBottom": 500,
+      "durationSec": 1.92,
+      "assetId": "pantone-6076",
+      "claimId": "pantone-6076",
+      "covers": "Pantone files that",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/chip-cherry-tight.mp4",
+      "zoomDir": "none",
+      "credit": "Pantone 6076 C \u00b7 code via MacRumors",
+      "captionBottom": 500,
+      "durationSec": 2.26,
+      "assetId": "chip-cherry-tight",
+      "claimId": "chip-cherry-tight",
+      "covers": "In plain terms: a",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "durationSec": 2.42,
+      "from": 32.76
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-colors/simtray.png",
+      "srcWidth": 1080,
+      "srcHeight": 1000,
+      "backdrop": "cream",
+      "credit": "MacRumors",
+      "highlights": [
+        {
+          "at": 0.35,
+          "x": 355,
+          "y": 340,
+          "w": 300,
+          "h": 400
+        },
+        {
+          "at": 1.3,
+          "x": 20,
+          "y": 830,
+          "w": 1040,
+          "h": 110
+        }
+      ],
+      "captionBottom": 500,
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.35,
+          "vol": 0.556
+        }
+      ],
+      "durationSec": 3.2,
+      "assetId": "simtray",
+      "claimId": "simtray",
+      "covers": "the real one is",
+      "sourceUrl": "https://www.macrumors.com/guide/iphone-18-pro-ultra-colors/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/chip-lineup.mp4",
+      "zoomDir": "none",
+      "credit": "Pantone codes via MacRumors",
+      "captionBottom": 500,
+      "durationSec": 2.56,
+      "assetId": "chip-lineup",
+      "claimId": "chip-lineup",
+      "covers": "It's still the only",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/chip-lineup-b.mp4",
+      "zoomDir": "none",
+      "credit": "Pantone codes via MacRumors",
+      "captionBottom": 500,
+      "durationSec": 1.44,
+      "assetId": "chip-lineup-b",
+      "claimId": "chip-lineup-b",
+      "covers": "Dark Gray, and a",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-colors/mr-caution.png",
+      "srcWidth": 1080,
+      "srcHeight": 520,
+      "backdrop": "cream",
+      "credit": "MacRumors",
+      "highlights": [
+        {
+          "at": 0.35,
+          "x": 25,
+          "y": 328,
+          "w": 1030,
+          "h": 165
+        }
+      ],
+      "captionBottom": 500,
+      "durationSec": 3.22,
+      "assetId": "mr-caution",
+      "claimId": "mr-caution",
+      "covers": "And reports don't even",
+      "sourceUrl": "https://www.macrumors.com/2026/05/08/iphone-18-pros-four-color-options/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "kinetic": {
+        "text": "THE $2,000 ONE",
+        "style": "caps",
+        "at": 0.3,
+        "y": 0.24
+      },
+      "durationSec": 2.7,
+      "from": 45.6
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-colors/mr-ultra-head.png",
+      "srcWidth": 1080,
+      "srcHeight": 900,
+      "backdrop": "cream",
+      "credit": "MacRumors",
+      "highlights": [
+        {
+          "at": 0.3,
+          "x": 25,
+          "y": 20,
+          "w": 1030,
+          "h": 115
+        },
+        {
+          "at": 1.45,
+          "x": 25,
+          "y": 300,
+          "w": 1030,
+          "h": 190
+        }
+      ],
+      "captionBottom": 500,
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 0.1,
+          "vol": 0.32
+        }
+      ],
+      "durationSec": 2.82,
+      "assetId": "mr-ultra-head",
+      "claimId": "mr-ultra-head",
+      "covers": "The foldable iPhone Ultra",
+      "sourceUrl": "https://www.macrumors.com/2026/08/09/iphone-ultra-rumored-to-come-in-these-two-colors/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/chip-ultra.mp4",
+      "zoomDir": "none",
+      "credit": "Ultra shades via Sonny Dickson",
+      "captionBottom": 500,
+      "durationSec": 1.34,
+      "assetId": "chip-ultra",
+      "claimId": "chip-ultra",
+      "covers": "Silver, and a dark",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "durationSec": 2.76,
+      "from": 52.46
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "durationSec": 1.44,
+      "from": 55.22
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/chip-gap.mp4",
+      "zoomDir": "none",
+      "from": 0.2,
+      "credit": "Codes via MacRumors \u00b7 Ultra shades via Sonny Dickson",
+      "captionBottom": 500,
+      "durationSec": 4.16,
+      "assetId": "chip-gap",
+      "claimId": "chip-gap",
+      "covers": "Sell millions and a",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/chip-gap.mp4",
+      "zoomDir": "none",
+      "from": 2.9,
+      "credit": "Codes via MacRumors \u00b7 Ultra shades via Sonny Dickson",
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ],
+      "captionBottom": 500,
+      "durationSec": 1.22,
+      "assetId": "chip-gap",
+      "claimId": "chip-gap",
+      "covers": "it's just unsold stock.",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "durationSec": 2.0,
+      "from": 62.04
+    },
+    {
+      "type": "wordcascade",
+      "bg": "cream",
+      "bottomSrc": "assets/iphone18-colors/avatar-master.mp4",
+      "words": [
+        {
+          "text": "NOTHING CONFIRMED",
+          "style": "serif",
+          "at": 0.2
+        },
+        {
+          "text": "LIGHT CHANGES COLOR",
+          "style": "serif",
+          "at": 1.05,
+          "accent": true
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.2,
+          "vol": 0.556
+        }
+      ],
+      "durationSec": 3.44,
+      "assetId": "chip-cherry",
+      "claimId": "chip-cherry",
+      "covers": "None of it's confirmed",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c",
+      "bottomFrom": 64.04,
+      "bottomFocusX": 0.5
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/chip-cherry.mp4",
+      "zoomDir": "none",
+      "from": 2.4,
+      "credit": "Pantone 6076 C \u00b7 code via MacRumors",
+      "captionBottom": 500,
+      "durationSec": 1.66,
+      "assetId": "chip-cherry",
+      "claimId": "chip-cherry",
+      "covers": "So \u2014 plum, not",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-colors/chip-end.mp4",
+      "zoomDir": "none",
+      "credit": "Pantone 6076 C \u00b7 code via MacRumors",
+      "captionBottom": 500,
+      "durationSec": 1.3,
+      "assetId": "chip-end",
+      "claimId": "chip-end",
+      "covers": "Still the one you'd",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c"
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.2,
+      "text": "Apple's iPhone 18"
+    },
+    {
+      "start": 1.2,
+      "end": 1.98,
+      "text": "Pro has a"
+    },
+    {
+      "start": 1.98,
+      "end": 3.02,
+      "text": "new signature color,"
+    },
+    {
+      "start": 3.24,
+      "end": 3.82,
+      "text": "it's called dark"
+    },
+    {
+      "start": 3.82,
+      "end": 5.08,
+      "text": "cherry, and nobody"
+    },
+    {
+      "start": 5.08,
+      "end": 5.88,
+      "text": "agrees what it"
+    },
+    {
+      "start": 5.88,
+      "end": 6.88,
+      "text": "looks like. Which"
+    },
+    {
+      "start": 6.88,
+      "end": 7.64,
+      "text": "is odd because"
+    },
+    {
+      "start": 7.64,
+      "end": 8.28,
+      "text": "we know it's"
+    },
+    {
+      "start": 8.28,
+      "end": 9.66,
+      "text": "exact Pantone code,"
+    },
+    {
+      "start": 10.06,
+      "end": 10.7,
+      "text": "and here's the"
+    },
+    {
+      "start": 10.7,
+      "end": 12.1,
+      "text": "catch. Apple's most"
+    },
+    {
+      "start": 12.1,
+      "end": 13.78,
+      "text": "expensive iPhone ever"
+    },
+    {
+      "start": 13.78,
+      "end": 14.6,
+      "text": "doesn't get it."
+    },
+    {
+      "start": 14.92,
+      "end": 16.02,
+      "text": "But first, what"
+    },
+    {
+      "start": 16.02,
+      "end": 16.68,
+      "text": "color is this"
+    },
+    {
+      "start": 16.68,
+      "end": 17.82,
+      "text": "actually? Every render"
+    },
+    {
+      "start": 17.82,
+      "end": 18.7,
+      "text": "you've seen leans"
+    },
+    {
+      "start": 18.7,
+      "end": 19.82,
+      "text": "red, but the"
+    },
+    {
+      "start": 19.82,
+      "end": 20.7,
+      "text": "leaker who detailed"
+    },
+    {
+      "start": 20.7,
+      "end": 21.58,
+      "text": "it says those"
+    },
+    {
+      "start": 21.58,
+      "end": 22.76,
+      "text": "are wrong, it's"
+    },
+    {
+      "start": 22.76,
+      "end": 24.44,
+      "text": "purple-tinged And the"
+    },
+    {
+      "start": 24.44,
+      "end": 25.22,
+      "text": "reports pin it"
+    },
+    {
+      "start": 25.22,
+      "end": 26.0,
+      "text": "to one number,"
+    },
+    {
+      "start": 26.46,
+      "end": 28.9,
+      "text": "Pantone 6076, Pantone"
+    },
+    {
+      "start": 28.9,
+      "end": 30.14,
+      "text": "files that under Red"
+    },
+    {
+      "start": 30.14,
+      "end": 31.02,
+      "text": "purple in plain"
+    },
+    {
+      "start": 31.02,
+      "end": 31.9,
+      "text": "terms, a dark"
+    },
+    {
+      "start": 31.9,
+      "end": 33.14,
+      "text": "plum. So if"
+    },
+    {
+      "start": 33.14,
+      "end": 33.9,
+      "text": "you're picturing a"
+    },
+    {
+      "start": 33.9,
+      "end": 34.88,
+      "text": "rich red iPhone,"
+    },
+    {
+      "start": 35.18,
+      "end": 35.78,
+      "text": "the real one"
+    },
+    {
+      "start": 35.78,
+      "end": 36.78,
+      "text": "is quieter and"
+    },
+    {
+      "start": 36.78,
+      "end": 37.54,
+      "text": "browner than you"
+    },
+    {
+      "start": 37.54,
+      "end": 38.8,
+      "text": "expect. It's still"
+    },
+    {
+      "start": 38.8,
+      "end": 39.58,
+      "text": "the only risk"
+    },
+    {
+      "start": 39.58,
+      "end": 40.08,
+      "text": "in the lineup."
+    },
+    {
+      "start": 40.38,
+      "end": 41.32,
+      "text": "Silver, dark gray,"
+    },
+    {
+      "start": 41.54,
+      "end": 41.88,
+      "text": "and a light"
+    },
+    {
+      "start": 41.88,
+      "end": 42.98,
+      "text": "blue, and reports"
+    },
+    {
+      "start": 42.98,
+      "end": 43.9,
+      "text": "don't even agree"
+    },
+    {
+      "start": 43.9,
+      "end": 44.94,
+      "text": "dark gray survives."
+    },
+    {
+      "start": 45.6,
+      "end": 46.74,
+      "text": "Now, that most"
+    },
+    {
+      "start": 46.74,
+      "end": 48.42,
+      "text": "expensive iPhone. The"
+    },
+    {
+      "start": 48.42,
+      "end": 49.6,
+      "text": "foldable iPhone Ultra"
+    },
+    {
+      "start": 49.6,
+      "end": 50.72,
+      "text": "reportedly gets two."
+    },
+    {
+      "start": 51.12,
+      "end": 51.78,
+      "text": "Silver and a"
+    },
+    {
+      "start": 51.78,
+      "end": 52.62,
+      "text": "dark blue, both"
+    },
+    {
+      "start": 52.62,
+      "end": 53.44,
+      "text": "from leaked camera"
+    },
+    {
+      "start": 53.44,
+      "end": 54.48,
+      "text": "protectors, not the"
+    },
+    {
+      "start": 54.48,
+      "end": 55.52,
+      "text": "phone. A bold"
+    },
+    {
+      "start": 55.52,
+      "end": 56.26,
+      "text": "color is a"
+    },
+    {
+      "start": 56.26,
+      "end": 57.14,
+      "text": "bet, sell millions,"
+    },
+    {
+      "start": 57.36,
+      "end": 57.64,
+      "text": "and a miss"
+    },
+    {
+      "start": 57.64,
+      "end": 58.88,
+      "text": "gets absorbed, but"
+    },
+    {
+      "start": 58.88,
+      "end": 59.44,
+      "text": "at a reported"
+    },
+    {
+      "start": 59.44,
+      "end": 60.76,
+      "text": "$2,000 and up,"
+    },
+    {
+      "start": 60.82,
+      "end": 61.64,
+      "text": "it's just unsold"
+    },
+    {
+      "start": 61.64,
+      "end": 62.28,
+      "text": "stock, so the"
+    },
+    {
+      "start": 62.28,
+      "end": 62.94,
+      "text": "risk goes where"
+    },
+    {
+      "start": 62.94,
+      "end": 63.6,
+      "text": "the volume is."
+    },
+    {
+      "start": 64.04,
+      "end": 64.44,
+      "text": "None of it's"
+    },
+    {
+      "start": 64.44,
+      "end": 65.42,
+      "text": "confirmed, and lighting"
+    },
+    {
+      "start": 65.42,
+      "end": 66.48,
+      "text": "changes how any"
+    },
+    {
+      "start": 66.48,
+      "end": 67.68,
+      "text": "color reads. So"
+    },
+    {
+      "start": 67.68,
+      "end": 68.7,
+      "text": "plum, not red."
+    },
+    {
+      "start": 69.14,
+      "end": 69.66,
+      "text": "Still the one"
+    },
+    {
+      "start": 69.66,
+      "end": 70.04,
+      "text": "you'd pick?"
+    }
+  ],
+  "script": "Apple's iPhone 18 Pro has a new signature color.\n\nIt's called Dark Cherry \u2014 and nobody agrees what it looks like.\n\nWhich is odd, because we know its exact Pantone code.\n\nAnd here's the catch: Apple's most expensive iPhone ever doesn't get it.\n\nBut first \u2014 what color is this actually?\n\nEvery render you've seen leans red.\n\nBut the leaker who detailed it says those are wrong. It's purple-tinged.\n\nAnd the reports pin it to one number: Pantone 6076.\n\nPantone files that under Red-Purple. In plain terms: a dark plum.\n\nSo if you're picturing a rich red iPhone, the real one is quieter and browner than you expect.\n\nIt's still the only risk in the lineup: Silver, Dark Gray, and a Light Blue.\n\nAnd reports don't even agree Dark Gray survives.\n\nNow \u2014 that most expensive iPhone.\n\nThe foldable iPhone Ultra reportedly gets two. Silver, and a dark blue.\n\nBoth from leaked camera protectors, not the phone.\n\nA bold color is a bet. Sell millions and a miss gets absorbed \u2014 but at a reported two thousand dollars and up, it's just unsold stock.\n\nSo the risk goes where the volume is.\n\nNone of it's confirmed \u2014 and lighting changes how any color reads.\n\nSo \u2014 plum, not red. Still the one you'd pick?",
+  "approval": {
+    "sha256": "c35d4242aa9701d25f617ab67be4e1018484e06382e6c20d05397a9249b433ba",
+    "approvedAt": "2026-08-21T05:47:40+00:00",
+    "words": 214,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}
