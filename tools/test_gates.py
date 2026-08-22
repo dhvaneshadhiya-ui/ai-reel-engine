@@ -344,10 +344,18 @@ expect_pass(_legacy_style, "legacy style id 'varun-mayya' still passes")
 # BASE legitimately 100s means repeating scenes, which trips G06/G07/G08 for
 # reasons unrelated to runtime. A pass-the-whole-sheet test would be testing
 # the fixture, not the rule.
-def expect_gate(sheet: dict, gate: str, present: bool, label: str) -> None:
-    """Same detection semantics as expect_fail: raised OR advised both count."""
+def expect_gate(sheet: dict, gate: str, present: bool, label: str,
+                vo_end: float | None = None) -> None:
+    """Same detection semantics as expect_fail: raised OR advised both count.
+
+    `vo_end` defaults to vo_end_of(sheet), which is derived FROM the sheet — so
+    lengthening a scene moves the VO end with it and no tail is ever created.
+    Any case about the tail has to pin the VO end independently (2026-08-22).
+    """
     try:
-        notes = check_beats(sheet, vo_end=vo_end_of(sheet), manifest=MANIFEST,
+        notes = check_beats(sheet,
+                            vo_end=vo_end_of(sheet) if vo_end is None else vo_end,
+                            manifest=MANIFEST,
                             vo_words=VO_WORDS)
         fired = any(gate in n for n in notes)
     except GateError as e:
@@ -375,6 +383,42 @@ _argued.update(allowLong=True,
                allowLongReason="three rulings, each needing its own receipt")
 expect_gate(_argued, "G02", False,
             "G02 silent — 100s is allowed once the topic is argued for")
+
+# G01 — the tail rule is about a FROZEN PICTURE, not about silence. A final
+# scene drawn by code (a CTA card typing its keyword) cannot freeze, and a
+# comment-gate CTA needs a beat after the voice stops to be readable. Only
+# generated scene types earn the longer tail; footage still freezes.
+import copy as _copy
+_tail_base = _copy.deepcopy(BASE)
+_vo_end = sum(sc["durationSec"] for sc in _tail_base["scenes"]) - 0.45
+
+_anim = _copy.deepcopy(_tail_base)
+_anim["scenes"][-1] = {"type": "typecard", "durationSec":
+                       _anim["scenes"][-1]["durationSec"] + 1.5,
+                       "kinetic": {"text": "COMMENT APP", "style": "serif"}}
+expect_gate(_anim, "G01", False,
+            "G01 silent — a code-drawn final card may hold past the last word",
+            vo_end=_vo_end)
+
+_anim_far = _copy.deepcopy(_anim)
+_anim_far["scenes"][-1]["durationSec"] += 2.0
+expect_gate(_anim_far, "G01", True,
+            "G01 fires — even an animated tail stops at 2.5s past the last word",
+            vo_end=_vo_end)
+
+# BASE ends on a `checklist`, which is itself code-drawn — so this case has to
+# put a real footage scene last or it would be testing the animated branch again.
+_frozen = _copy.deepcopy(_tail_base)
+_frozen["scenes"][-1] = {"type": "footage",
+                         "src": "assets/x/b-roll.mp4",
+                         "zoomDir": "none",
+                         "credit": "Acme",
+                         "covers": "the last thing said",
+                         "durationSec":
+                         _tail_base["scenes"][-1]["durationSec"] + 1.5}
+expect_gate(_frozen, "G01", True,
+            "G01 fires — a FOOTAGE tail past the last word still freezes",
+            vo_end=_vo_end)
 
 _over = _at(RUNTIME_CEILING + 5)
 _over.update(allowLong=True, allowLongReason="a genuinely enormous story")

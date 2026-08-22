@@ -568,7 +568,8 @@ def main() -> None:
     # on-screen attribution (RULES.md 2c) and likewise had no way through.
     # Both are pass-throughs: absent from the plan, the sheet is unchanged.
     for passthrough in ("format", "noCredits", "sides", "allowLong",
-                        "allowLongReason", "captionStyle"):
+                        "allowLongReason", "captionStyle",
+                        "captionStyleReason"):
         if plan.get(passthrough) is not None:
             beats[passthrough] = plan[passthrough]
     # G27 — the sheet carries the narration it was built from plus the approval

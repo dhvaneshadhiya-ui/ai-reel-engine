@@ -58,15 +58,19 @@
         "vol": 0.055
       },
       {
-        "t": 25.51,
-        "vol": 0.15
-      },
-      {
         "t": 26.159,
         "vol": 0.055
       },
       {
-        "t": 26.41,
+        "t": 26.499,
+        "vol": 0.15
+      },
+      {
+        "t": 27.11,
+        "vol": 0.15
+      },
+      {
+        "t": 28.01,
         "vol": 0.02
       }
     ],
@@ -114,7 +118,7 @@
         {
           "src": "sfx/Camera Shutter.MP3",
           "at": 0.04,
-          "vol": 0.09
+          "vol": 0.32
         }
       ],
       "durationSec": 2.139,
@@ -133,7 +137,7 @@
         {
           "src": "sfx/Pop.MP3",
           "at": 0.05,
-          "vol": 0.08
+          "vol": 0.343
         }
       ],
       "covers": "already in your hand",
@@ -158,16 +162,16 @@
     {
       "type": "floatcard",
       "src": "assets/iphone-third-interface/web-demo.mp4",
-      "bg": "cream",
+      "bg": "blur",
       "headline": {
         "lines": [
           {
-            "text": "A CONTROL PANEL FOR YOUR MAC",
-            "kind": "label",
-            "at": 0.12
+            "text": "THE IDEA",
+            "kind": "headline",
+            "at": 0.1
           }
         ],
-        "y": 0.11
+        "y": 0.13
       },
       "durationSec": 2.82,
       "assetId": "web-demo",
@@ -179,22 +183,22 @@
     {
       "type": "floatcard",
       "src": "assets/iphone-third-interface/apps-demo.mp4",
-      "bg": "cream",
+      "bg": "blur",
       "headline": {
         "lines": [
           {
-            "text": "TAP ONCE \u2192 THE MAC APP OPENS",
-            "kind": "label",
-            "at": 0.12
+            "text": "LAUNCH",
+            "kind": "headline",
+            "at": 0.1
           }
         ],
-        "y": 0.11
+        "y": 0.13
       },
       "sfx": [
         {
           "src": "sfx/Click.MP3",
-          "at": 0.2,
-          "vol": 0.09
+          "at": 0.1,
+          "vol": 0.251
         }
       ],
       "durationSec": 2.64,
@@ -207,22 +211,25 @@
     {
       "type": "floatcard",
       "src": "assets/iphone-third-interface/sc-demo.mp4",
-      "bg": "cream",
+      "bg": "blur",
       "headline": {
         "lines": [
           {
-            "text": "ONE TAP RUNS THE WHOLE SHORTCUT",
-            "kind": "label",
-            "at": 0.12
+            "text": "AUTOMATE",
+            "kind": "headline",
+            "at": 0.1
           }
         ],
-        "y": 0.11
+        "y": 0.13,
+        "impacts": [
+          0.85
+        ]
       },
       "sfx": [
         {
           "src": "sfx/Click.MP3",
           "at": 0.85,
-          "vol": 0.09
+          "vol": 0.251
         }
       ],
       "durationSec": 3.46,
@@ -235,22 +242,22 @@
     {
       "type": "floatcard",
       "src": "assets/iphone-third-interface/gest-demo.mp4",
-      "bg": "cream",
+      "bg": "blur",
       "headline": {
         "lines": [
           {
-            "text": "SWIPE TO MOVE A MAC WINDOW",
-            "kind": "label",
-            "at": 0.12
+            "text": "GESTURES",
+            "kind": "headline",
+            "at": 0.1
           }
         ],
-        "y": 0.11
+        "y": 0.13
       },
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",
-          "at": 0.15,
-          "vol": 0.09
+          "at": 0.1,
+          "vol": 0.582
         }
       ],
       "durationSec": 2.821,
@@ -330,8 +337,8 @@
       "sfx": [
         {
           "src": "sfx/Core.MP3",
-          "at": 0.1,
-          "vol": 0.1
+          "at": 0.08,
+          "vol": 0.556
         }
       ],
       "durationSec": 2.121,
@@ -347,11 +354,11 @@
       "focusX": 0.3537,
       "keyword": "APP",
       "question": "WANT THE APP?",
-      "typeAt": 0.35,
-      "growAt": 0.95,
-      "dropAt": 1.55,
+      "typeAt": 0.55,
+      "growAt": 1.25,
+      "dropAt": 2.15,
       "captionBottom": 6000,
-      "durationSec": 2.07,
+      "durationSec": 3.67,
       "assetId": "apps-wide",
       "claimId": "apps-wide",
       "covers": "Comment app",
@@ -514,13 +521,15 @@
   "noCredits": {
     "reason": "User directive 2026-08-22: a clean editorial product-discovery reel with no on-screen credits, URLs or citations. Every frame is the developer's own product video used to show the product it depicts; per-scene credit strings stay recorded in this sheet, only the DRAWING is suppressed. The brand restriction also forbids the product name on screen, and the credit string carries it."
   },
+  "captionStyleReason": "User feedback 2026-08-22: match the caption style to the topic's vibe. The locked default word-reveal renders small italic serif, which read as a documentary voice over a warm, playful app-discovery reel. chip-lg is SF Pro 50px/800 white on a dark pill \u2014 the bold high-contrast treatment the reference reel the user sent uses, and legible on mute at thumbnail size.",
   "script": "Your Mac has a third input device\u2014and it's already in your hand.\n\nThis app turns your iPhone into a custom control panel for your Mac.\n\nTap once to open the apps you use every day.\n\nAdd a shortcut, and a whole workflow becomes one button.\n\nYou can even control windows with gestures.\n\nIt needs a companion app on your Mac and the same Wi\u2011Fi\u2014but once it's set up, your most-used actions live right beside your keyboard.\n\nComment APP and we'll send the exact one.",
   "approval": {
-    "sha256": "d90af6d0c96e3bdedc5dec6a9b82e5d3d7fff3be30b272519bbadd9f4dc1ee7f",
-    "approvedAt": "2026-08-22T07:25:25+00:00",
-    "words": 134,
+    "sha256": "c0c74f92e03ae4ea9ea9a3c12dfa3c27b261f9dd45cc2541d37b9048e91596be",
+    "approvedAt": "2026-08-22T09:09:01+00:00",
+    "words": 84,
     "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build.",
-    "_provenance": "The user WROTE these words. They sent the revised script in chat on 2026-08-22 with the instruction \"Revised script and use it as it is\", after being shown the previous draft, the 20-shot beat plan and the open questions. Their revision keeps the gestures line and the requirements line, which answers open questions 3 and 1. Approval here records their direction to use this exact text.",
-    "_runtime_flag": "Approved knowing it runs long: 134 words is 49-57s at this voice's measured pace, against the user's own 35-45s target and the 26-48s top5 band. The user was told and chose these words. Runtime is judgement, not law."
+    "_provenance": "User wrote this script themselves in feedback on 2026-08-22 and approved it in chat with \"approve A\" after being shown the 12-row beat plan, a still mockup of the new floatcard treatment, and the open question about which of their two CTA lines was final. \"A\" is the CTA inside their revised script: \"Comment APP and we will send the exact one.\" They declined nothing else.",
+    "_overrides": "voiceSpeed 1.15 for this reel only (locked default 1.05 unchanged) at the user's request for livelier delivery; captionStyle chip-lg for this reel only (locked default word-reveal unchanged) to match the reference reel they sent.",
+    "_declined": "Offered to smooth the sentence bridges (checker measures 17% vs ~53% on approved reels) and to switch to CTA variant B with the setup link. User chose A and said nothing about the bridges, so their words stand unedited."
   }
 }

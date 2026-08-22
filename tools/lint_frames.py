@@ -332,9 +332,31 @@ CRITIC CHECKLIST (review the lint sheets against the beat map):
   9. hook frame passes the sound-off test (names the subject visually)""")
 
     # -- 4. verdict ----------------------------------------------------------
-    HARD = ("[PACING]", "[CLIP REUSE]", "[EDGE TEXT]", "[DUPLICATE]",
-            "[HOOK DEAD SPACE]")
-    hard = [f for f in flags if f.startswith(HARD)]
+    # WHAT BLOCKS HERE MUST MATCH WHAT BLOCKS AT THE GATE (2026-08-22).
+    #
+    # The pacing block above already imports its THRESHOLDS from reel_gates,
+    # with the comment "the linter and the build gates disagreeing is how a
+    # rule quietly becomes optional". The classification never followed. The
+    # 2026-08-17 restructure demoted pacing and clip reuse to ADVICE — the
+    # constitution is explicit that there is "no hook length you must respect"
+    # — and reel_gates was updated while this list was not. So a reel could
+    # pass every gate and still be refused here by two rules the gates no
+    # longer enforce, which is the same defect in the other direction.
+    #
+    # [EDGE TEXT], [DUPLICATE] and [HOOK DEAD SPACE] stay hard: they are
+    # RENDER-correctness and mute-legibility faults with no gate equivalent,
+    # not taste.
+    from reel_gates import BLOCKING_RULES
+    _GATE_OF = {"[PACING]": ("G03", "G04"), "[CLIP REUSE]": ("G07",)}
+    HARD_ALWAYS = ("[EDGE TEXT]", "[DUPLICATE]", "[HOOK DEAD SPACE]")
+    def _is_hard(f: str) -> bool:
+        if f.startswith(HARD_ALWAYS):
+            return True
+        for tag, gates in _GATE_OF.items():
+            if f.startswith(tag):
+                return any(g in BLOCKING_RULES for g in gates)
+        return False
+    hard = [f for f in flags if _is_hard(f)]
     if hard and "--soft" not in sys.argv:
         print(f"\nFRAME-LINT FAILED — {len(hard)} blocking flag(s) above.")
         print("Fix the plan and rebuild, or re-run with --soft to override "

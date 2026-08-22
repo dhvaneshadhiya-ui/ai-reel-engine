@@ -560,6 +560,9 @@ export interface BeatSheet {
   /** "word-reveal" is the production caption treatment (per-word reveal,
    * emphasis list drives the accent keyword). "nick-display" is its pre-
    * 2026-08-16 name, still accepted. chip-* are legacy fallbacks. */
+  /** Why this reel departs from the locked caption treatment. Required by
+   *  validate_job whenever captionStyle is not the config default. */
+  captionStyleReason?: string;
   captionStyle?:
     | "word-reveal"
     | "ink-circle"

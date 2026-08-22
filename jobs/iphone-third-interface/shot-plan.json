@@ -2,7 +2,6 @@
  "audio": "assets/iphone-third-interface/vo-master.m4a",
  "format": "top5",
  "captionStyle": "chip-lg",
- "_captionStyle_reason": "User feedback 2026-08-22: match the caption style to the topic's vibe. The locked default word-reveal renders small italic serif, which read as a documentary voice over a warm, playful app-discovery reel. chip-lg is SF Pro 50px/800 white on a dark pill — the bold high-contrast treatment the reference reel the user sent uses, and legible on mute at thumbnail size.",
  "noCredits": {
   "reason": "User directive 2026-08-22: a clean editorial product-discovery reel with no on-screen credits, URLs or citations. Every frame is the developer's own product video used to show the product it depicts; per-scene credit strings stay recorded in this sheet, only the DRAWING is suppressed. The brand restriction also forbids the product name on screen, and the credit string carries it."
  },
@@ -104,12 +103,12 @@
     "headline": {
      "lines": [
       {
-       "text": "A CONTROL PANEL FOR YOUR MAC",
-       "kind": "label",
-       "at": 0.12
+       "text": "THE IDEA",
+       "kind": "headline",
+       "at": 0.1
       }
      ],
-     "y": 0.11
+     "y": 0.13
     }
    }
   },
@@ -125,12 +124,12 @@
     "headline": {
      "lines": [
       {
-       "text": "TAP ONCE → THE MAC APP OPENS",
-       "kind": "label",
-       "at": 0.12
+       "text": "LAUNCH",
+       "kind": "headline",
+       "at": 0.1
       }
      ],
-     "y": 0.11
+     "y": 0.13
     },
     "sfx": [
      {
@@ -153,12 +152,12 @@
     "headline": {
      "lines": [
       {
-       "text": "ONE TAP RUNS THE WHOLE SHORTCUT",
-       "kind": "label",
-       "at": 0.12
+       "text": "AUTOMATE",
+       "kind": "headline",
+       "at": 0.1
       }
      ],
-     "y": 0.11
+     "y": 0.13
     },
     "sfx": [
      {
@@ -181,12 +180,12 @@
     "headline": {
      "lines": [
       {
-       "text": "SWIPE TO MOVE A MAC WINDOW",
-       "kind": "label",
-       "at": 0.12
+       "text": "GESTURES",
+       "kind": "headline",
+       "at": 0.1
       }
      ],
-     "y": 0.11
+     "y": 0.13
     },
     "sfx": [
      {
@@ -294,11 +293,13 @@
     "focusX": 0.3537,
     "keyword": "APP",
     "question": "WANT THE APP?",
-    "typeAt": 0.35,
-    "growAt": 0.95,
-    "dropAt": 1.55,
+    "typeAt": 0.55,
+    "growAt": 1.25,
+    "dropAt": 2.15,
     "captionBottom": 6000
    }
   }
- ]
+ ],
+ "captionStyleReason": "User feedback 2026-08-22: match the caption style to the topic's vibe. The locked default word-reveal renders small italic serif, which read as a documentary voice over a warm, playful app-discovery reel. chip-lg is SF Pro 50px/800 white on a dark pill — the bold high-contrast treatment the reference reel the user sent uses, and legible on mute at thumbnail size.",
+ "_audio_tail_note": "vo-master.m4a carries 1.6s of silence after the last word. The CTA animation needs ~3.5s to type the keyword, show the card and land the \"link sent\" notification; the spoken line is 2.07s, so on the unpadded track the payoff never appeared. compile_shot_plan gives trailing silence to the final scene, so the pad buys the CTA its own time instead of cutting the reel the instant the voice stops."
 }

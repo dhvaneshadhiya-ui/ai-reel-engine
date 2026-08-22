@@ -371,12 +371,30 @@ def check_beats(beats: dict, vo_end: float | None = None,
 
     # G01 — scenes must sum to the audio, or the tail drifts out of sync
     if vo_end is not None:
-        reel_end = vo_end + TAIL_MAX
+        # THE DEFECT IS A FROZEN PICTURE, NOT A SILENT TAIL (2026-08-22).
+        #
+        # The gate's own message names it: "frozen face". It exists because an
+        # avatar clip held past its last word sits there staring. A tail whose
+        # final scene is DRAWN BY CODE cannot freeze — a CTA card is still
+        # typing its keyword and landing its notification — and a comment-gate
+        # CTA genuinely needs a beat after the voice stops for the viewer to
+        # read what to comment. Blocking that forced the CTA payoff to be cut
+        # off mid-animation on the first VO-only reel.
+        #
+        # Narrow on purpose: only generated scene types earn the longer tail.
+        # A `footage` or `split` scene held past its clip DOES freeze, and G13
+        # is about clip length, not this. Everything else still gets TAIL_MAX.
+        ANIMATED_TAIL = {"commentcta", "typecard", "endquestion", "logobeat",
+                         "specsheet", "statcard", "wordcascade", "checklist"}
+        last_type = str(scenes[-1].get("type", "")) if scenes else ""
+        tail_max = 2.5 if last_type in ANIMATED_TAIL else TAIL_MAX
+        reel_end = vo_end + tail_max
         if total > reel_end + 0.01:
             errors.append(
                 f"G01 tail freeze: scenes total {total:.2f}s but VO ends at "
-                f"{vo_end:.2f}s — a reel may not run more than {TAIL_MAX}s past "
-                "the last spoken word (frozen face).")
+                f"{vo_end:.2f}s — a reel may not run more than {tail_max}s past "
+                f"the last spoken word (frozen face). Final scene is "
+                f"{last_type!r}.")
         if total < vo_end - 0.01:
             errors.append(
                 f"G01 audio truncated: scenes total {total:.2f}s < VO "

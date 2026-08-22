@@ -3435,3 +3435,71 @@ critic pass exists to ask, and only eyes answer it.
 - requirements: `specsheet` dark card, 3 rows, one accent row
 - payoff: return to the OPENING shot, zoomed out, headline echoing the hook
 - CTA: `commentcta` (now keyword-parameterised) over the opening desk shot
+
+## 2026-08-22 (16) — five features listed beat three features shown, and why
+
+User feedback on the first cut: "the current mobile-view clips show fragments
+of the concept — icons, websites, emoji, gestures — but rarely make the app's
+capability immediately legible on a phone screen." Correct, and the cause was
+a treatment decision, not a scouting one.
+
+Tight 9:16 crops of this footage are *beautiful* and *uninformative*. The
+capability lives in the RELATIONSHIP — finger moves here, Mac changes there —
+and a 608px-wide window of a 1920px frame holds the iPhone or the Mac screen,
+never both. Every feature became two shots (cause, then effect), and two
+shots separated in time do not read as cause and effect at 3 words/second.
+
+**Distilled rule: when the claim is a relationship, the frame has to hold
+both ends of it.** Five capabilities named in narration lose to three
+demonstrated in one shot each. Cut the other two.
+
+The treatment that made it work is `floatcard` with the new `bg:"blur"`: the
+whole 16:9 frame, never re-cropped, on a field made from the shot's own
+colour. It is the documented answer for wide material in a vertical frame
+(references/source-capture-policy.md says crop and move, *or* card it) and
+the user's "desktop/native view where the Mac action and the iPhone trigger
+can be seen together" is exactly the G41 recorded-reason case.
+
+Two things this exposed:
+
+- A `split` of the SAME clip at two focus points looked obvious on paper and
+  read as a duplicated image, because both halves come from one 16:9 frame
+  and overlap. Rejected after previewing it, not after rendering it.
+- A 16:9 card centred in 9:16 leaves ~70% dead space. Flat cream read as
+  empty; the blurred-self background fills it and the linter's dead-space
+  rule stops applying.
+
+### The labels that deleted the captions
+
+The first pass labelled each card with what the beat did — "TAP ONCE → THE
+MAC APP OPENS" over "Tap once to open the apps you use every day" — and the
+captions silently vanished for 40% of the runtime. Reel.tsx `autoHide` drops
+the caption chips when a scene's headline shares two or more spoken words
+with the VO under it: ONE TEXT SYSTEM, working exactly as designed.
+
+**Distilled rule: an on-screen label must ADD a word, not repeat one.** The
+tags became LAUNCH / AUTOMATE / GESTURES — a category each, ≤1 shared word,
+captions intact. If a label and the narration say the same thing, one of
+them is decoration.
+
+### The tail rule was about a face, not about silence
+
+G01 refused any cut running more than 0.45s past the last spoken word. Its
+own message says why: "frozen face". But this reel's last scene is a
+comment-gate CTA drawn entirely in code, and it needs a beat after the voice
+stops for a viewer to read what to comment — the payoff card was being cut
+mid-animation. G01 now allows 2.5s when the final scene is a generated type
+and still 0.45s for footage, which genuinely does freeze. Three cases in
+test_gates (108 checks) pin both branches.
+
+The self-test harness needed fixing first: `expect_gate` derived `vo_end`
+from the sheet, so lengthening a scene moved the VO end with it and no tail
+could ever be constructed. Any tail case has to pin the VO end independently.
+
+### Treatments used (do not repeat next reel for the same kind of info)
+- hook: wide two-device desk, full-bleed, three-line `headline` build
+- feature demo: `floatcard` + `bg:"blur"`, one-word category tag above
+- requirements: `specsheet` dark card, 3 rows, one accent row
+- payoff: return to the OPENING shot, zoomed out, headline echoing the hook
+- CTA: `commentcta`, keyword-parameterised, over the opening desk shot
+- captions: `chip-lg` (per-reel override of the locked word-reveal)

@@ -163,7 +163,25 @@ def main() -> None:
         except Exception:
             pass
     if canon_caption(beats.get("captionStyle")) != canon_caption(locked_style):
-        errors.append(f"captionStyle must be {locked_style}")
+        # PER-REEL OVERRIDE, WITH A REASON — same shape as allowLong,
+        # noCredits and capture.mjs --desktop-reason (added 2026-08-22).
+        #
+        # This blocked outright while reel_gates only ADVISES the same thing
+        # (G10), so the two tools disagreed about whether the locked caption
+        # treatment is law. It is a DEFAULT: the user picks the treatment, and
+        # on 2026-08-22 asked for a bolder one to match a reel's subject. What
+        # the lock should stop is drifting off the production treatment by
+        # accident, so the override is an argument, not a switch.
+        reason = str(beats.get("captionStyleReason") or "").strip()
+        if reason:
+            warnings.append(
+                f"captionStyle is {beats.get('captionStyle')!r}, not the locked "
+                f"{locked_style!r}. Reason: {reason}")
+        else:
+            errors.append(
+                f"captionStyle must be {locked_style}, or set "
+                f"`captionStyleReason` on the beat sheet saying why this reel "
+                f"differs")
 
     scenes = beats.get("scenes")
     if not isinstance(scenes, list) or not scenes:
