@@ -3622,3 +3622,36 @@ write down:
 Also worth keeping: the API folds a word's FOLLOWING pause into that word's
 end timestamp. A word that looks stretched to 0.78s is often ~0.2s of speech
 and 0.58s of silence — check the tail RMS before believing the duration.
+
+## 2026-08-22 (20) — "zoomed out" is what a wide shot looks like full-bleed
+
+User on the finished cut: "first 10 seconds visuals seen completely zoomed
+out... same thing right from 0:27. Everything else is good." Precisely the
+full-bleed beats, and precisely not the floatcard demos between them.
+
+The cause is not the framing being wrong — the geometry was correct. It is
+that a WIDE ESTABLISHING SHOT played full-bleed puts the subject in a corner.
+In these shots the iPhone is one small object on a desk with a lamp, an
+ornament and a laptop; a 9:16 crop keeps all of that and the phone stays
+small. The floatcards read fine because the card IS the subject and the eye
+has nowhere else to go.
+
+**Distilled rule: full-bleed needs a shot whose subject already fills it. A
+wide shot used full-bleed must be PUSHED IN — `zoom` 1.4-1.6 with focusX on
+the subject — or it reads as distant no matter how correct the crop is.**
+
+Three things worth carrying:
+
+- The push has a ceiling set by the FOOTAGE, not by taste. apps-wide contains
+  its own aggressive dolly, so the same `zoom` that frames the phone nicely at
+  the clip's start is a single giant app icon 2s later. Check a scene's
+  framing at BOTH ends of the span it actually plays, not at one frame.
+- One of these beats had no subject at all: the clip cut for "but once it's
+  set up" was a Mac dock close-up with no iPhone anywhere in it. Pushing in
+  would not have saved it; it needed different footage. Check what is in the
+  frame before deciding the frame is too wide.
+- **`commentcta` takes no `zoom`**, so its backdrop cannot be pushed in from
+  the sheet. Pre-crop it to 1080x1920 instead. Doing that also caught the old
+  backdrop being 2.40s under a 3.74s scene — it had been freezing for the
+  tail, which nothing flags because the scene type is not `footage` and G13
+  only measures those.

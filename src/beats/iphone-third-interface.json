@@ -147,8 +147,8 @@
     {
       "type": "footage",
       "src": "assets/iphone-third-interface/apps-wide.mp4",
-      "zoomDir": "in",
-      "focusX": 0.3537,
+      "zoomDir": "none",
+      "focusX": 0.3244,
       "headline": {
         "lines": [
           {
@@ -177,6 +177,7 @@
           "vol": 0.32
         }
       ],
+      "zoom": 1.5,
       "durationSec": 2.24,
       "assetId": "apps-wide",
       "claimId": "apps-wide",
@@ -389,7 +390,8 @@
       "type": "footage",
       "src": "assets/iphone-third-interface/desk-wide.mp4",
       "zoomDir": "none",
-      "focusX": 0.5,
+      "focusX": 0.4122,
+      "zoom": 1.45,
       "durationSec": 1.32,
       "assetId": "desk-wide",
       "claimId": "desk-wide",
@@ -401,7 +403,8 @@
       "type": "footage",
       "src": "assets/iphone-third-interface/rec-mac.mp4",
       "zoomDir": "none",
-      "focusX": 0.5,
+      "focusX": 0.4415,
+      "zoom": 1.6,
       "durationSec": 1.44,
       "assetId": "rec-mac",
       "claimId": "rec-mac",
@@ -412,7 +415,7 @@
     {
       "type": "footage",
       "src": "assets/iphone-third-interface/apps-wide.mp4",
-      "zoomDir": "out",
+      "zoomDir": "none",
       "focusX": 0.2659,
       "headline": {
         "lines": [
@@ -437,6 +440,7 @@
           "vol": 0.556
         }
       ],
+      "zoom": 1.55,
       "durationSec": 1.74,
       "assetId": "apps-wide",
       "claimId": "apps-wide",
@@ -446,8 +450,7 @@
     },
     {
       "type": "commentcta",
-      "src": "assets/iphone-third-interface/apps-wide.mp4",
-      "focusX": 0.3537,
+      "src": "assets/iphone-third-interface/desk-cta.mp4",
       "keyword": "APP",
       "question": "WANT THE APP?",
       "showFinal": false,
@@ -456,8 +459,8 @@
       "dropAt": 2.55,
       "captionBottom": 6000,
       "durationSec": 3.741,
-      "assetId": "apps-wide",
-      "claimId": "apps-wide",
+      "assetId": "desk-cta",
+      "claimId": "desk-cta",
       "covers": "Want the",
       "sourceUrl": "https://choclift.com/"
     }

@@ -29,8 +29,8 @@
    "scene": {
     "type": "footage",
     "src": "assets/iphone-third-interface/apps-wide.mp4",
-    "zoomDir": "in",
-    "focusX": 0.3537,
+    "zoomDir": "none",
+    "focusX": 0.3244,
     "headline": {
      "lines": [
       {
@@ -58,7 +58,8 @@
       "at": 0.04,
       "vol": 0.09
      }
-    ]
+    ],
+    "zoom": 1.5
    }
   },
   {
@@ -272,7 +273,8 @@
     "type": "footage",
     "src": "assets/iphone-third-interface/desk-wide.mp4",
     "zoomDir": "none",
-    "focusX": 0.5
+    "focusX": 0.4122,
+    "zoom": 1.45
    }
   },
   {
@@ -284,7 +286,8 @@
     "type": "footage",
     "src": "assets/iphone-third-interface/rec-mac.mp4",
     "zoomDir": "none",
-    "focusX": 0.5
+    "focusX": 0.4415,
+    "zoom": 1.6
    }
   },
   {
@@ -295,7 +298,7 @@
    "scene": {
     "type": "footage",
     "src": "assets/iphone-third-interface/apps-wide.mp4",
-    "zoomDir": "out",
+    "zoomDir": "none",
     "focusX": 0.2659,
     "headline": {
      "lines": [
@@ -319,18 +322,18 @@
       "at": 0.1,
       "vol": 0.1
      }
-    ]
+    ],
+    "zoom": 1.55
    }
   },
   {
    "start_phrase": "Want the",
    "line": "Want the app? Comment APP and we'll send the exact one in your DM.",
-   "asset_id": "apps-wide",
+   "asset_id": "desk-cta",
    "tier": "official",
    "scene": {
     "type": "commentcta",
-    "src": "assets/iphone-third-interface/apps-wide.mp4",
-    "focusX": 0.3537,
+    "src": "assets/iphone-third-interface/desk-cta.mp4",
     "keyword": "APP",
     "question": "WANT THE APP?",
     "showFinal": false,
@@ -342,5 +345,6 @@
   }
  ],
  "measuredWps": 3.48,
- "_measuredWps_note": "MEASURED, not scaled: the 1.20 body take delivered 90 words in 25.84s = 3.48 wps. Raising speed also tightens the engine pauses, so the rate does not scale linearly with the speed number and must be taken from a real take."
+ "_measuredWps_note": "MEASURED, not scaled: the 1.20 body take delivered 90 words in 25.84s = 3.48 wps. Raising speed also tightens the engine pauses, so the rate does not scale linearly with the speed number and must be taken from a real take.",
+ "_framing_note": "User 2026-08-22: the first 10s and everything from 0:27 read as 'completely zoomed out'. Those were the full-bleed beats on wide establishing shots, where the iPhone — the whole subject — sat small in a corner. The floatcard demos between them were fine because the card IS the subject. Fixed by pushing in (scene `zoom` 1.45-1.60 with focusX on the phone) rather than by swapping footage, except beat 10, whose clip turned out to show only a Mac dock with no phone in it at all."
 }
