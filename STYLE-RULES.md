@@ -3540,3 +3540,43 @@ One mechanical note worth keeping: G18 kept firing as the specsheet boundary
 moved word by word, because the boundary word starts exactly where the card
 ends and 3dp rounding puts it 1ms INSIDE. Move a scene boundary a whole word,
 not to the edge of one.
+
+## 2026-08-22 (18) — energy is pause structure, not speed
+
+Shipped a voiceover the user called "completely flat, slow and low energy".
+Self-inflicted: an earlier note said the read "doesn't sound clearly", and the
+session answered it by lowering speed 1.15 -> 1.10. Wrong lever, and the
+clarity complaint had actually been about a skipped line and a spelled-out
+word, both already fixed by then. The `speed` dial got moved twice in opposite
+directions with no way to check either.
+
+Measuring four takes answered it immediately:
+
+| take | voiced | longest pause | pitch var | wps |
+|---|---|---|---|---|
+| 1.15 plain | 69% | 0.59s | 2.02 st | 3.18 |
+| 1.10 plain | 64% | 0.88s | 2.12 st | 2.67 |
+| 1.15 SSML + breaks | 67% | 0.78s | 2.15 st | 2.87 |
+| 1.20 plain | 71% | 0.49s | 2.04 st | 3.48 |
+
+**Pitch variation is identical across all four.** The take that sounded
+lifeless has the same inflection as the one that did not. What it has is DEAD
+AIR — nearly double the pauses, with 0.8-0.9s gaps landing mid-thought ("Add a
+shortcut … and", "one button … You can").
+
+**Distilled rule: perceived energy in a TTS read is the pause structure. Judge
+a take by `voiced %` and `longest pause`, not by the speed number.**
+
+Two things that fall out of it:
+
+- **SSML `<break>` ADDS to the engine's own sentence pause, it does not
+  replace it.** Tested at 0.12-0.22s and the resulting gaps measured
+  0.38-0.66s, making the read 5s longer. To tighten, remove sentence
+  boundaries or raise speed — never add breaks.
+- **`<emphasis>` parses and costs nothing** (tags are consumed, not spoken),
+  but moved pitch variation 2.02 -> 2.15 st, which is noise. Not the lever.
+
+`tools/voice_energy.py` does the measurement — pitch variation in semitones,
+loudness dynamics, voiced fraction and the pause histogram, from numpy alone.
+Compare VO-ONLY files: on a finished master the music bed fills every gap and
+the pause numbers stop meaning anything (the shipped master reads 0 pauses).

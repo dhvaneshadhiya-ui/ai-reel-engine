@@ -14,139 +14,35 @@
         "vol": 0.15
       },
       {
-        "t": 0.159,
+        "t": 0.099,
         "vol": 0.055
       },
       {
-        "t": 3.5,
+        "t": 2.939,
         "vol": 0.055
       },
       {
-        "t": 3.839,
+        "t": 3.219,
         "vol": 0.15
       },
       {
-        "t": 4.019,
-        "vol": 0.055
-      },
-      {
-        "t": 7.699,
-        "vol": 0.055
-      },
-      {
-        "t": 8.039,
+        "t": 3.279,
         "vol": 0.15
       },
       {
-        "t": 8.179,
+        "t": 3.399,
+        "vol": 0.055
+      },
+      {
+        "t": 24.935,
         "vol": 0.15
       },
       {
-        "t": 8.359,
+        "t": 25.679,
         "vol": 0.055
       },
       {
-        "t": 12.159,
-        "vol": 0.055
-      },
-      {
-        "t": 12.499,
-        "vol": 0.15
-      },
-      {
-        "t": 12.799,
-        "vol": 0.15
-      },
-      {
-        "t": 12.979,
-        "vol": 0.055
-      },
-      {
-        "t": 14.5,
-        "vol": 0.055
-      },
-      {
-        "t": 14.82,
-        "vol": 0.15
-      },
-      {
-        "t": 15.0,
-        "vol": 0.055
-      },
-      {
-        "t": 16.479,
-        "vol": 0.055
-      },
-      {
-        "t": 16.819,
-        "vol": 0.15
-      },
-      {
-        "t": 17.24,
-        "vol": 0.15
-      },
-      {
-        "t": 17.42,
-        "vol": 0.055
-      },
-      {
-        "t": 24.519,
-        "vol": 0.055
-      },
-      {
-        "t": 24.859,
-        "vol": 0.15
-      },
-      {
-        "t": 24.959,
-        "vol": 0.15
-      },
-      {
-        "t": 25.139,
-        "vol": 0.055
-      },
-      {
-        "t": 28.199,
-        "vol": 0.055
-      },
-      {
-        "t": 28.519,
-        "vol": 0.15
-      },
-      {
-        "t": 28.539,
-        "vol": 0.15
-      },
-      {
-        "t": 28.699,
-        "vol": 0.055
-      },
-      {
-        "t": 30.339,
-        "vol": 0.055
-      },
-      {
-        "t": 30.679,
-        "vol": 0.15
-      },
-      {
-        "t": 30.759,
-        "vol": 0.15
-      },
-      {
-        "t": 30.939,
-        "vol": 0.055
-      },
-      {
-        "t": 32.824,
-        "vol": 0.15
-      },
-      {
-        "t": 33.479,
-        "vol": 0.055
-      },
-      {
-        "t": 33.724,
+        "t": 25.835,
         "vol": 0.02
       }
     ],
@@ -197,7 +93,7 @@
           "vol": 0.32
         }
       ],
-      "durationSec": 2.159,
+      "durationSec": 1.919,
       "assetId": "apps-wide",
       "claimId": "apps-wide",
       "covers": "Your Mac has",
@@ -217,7 +113,7 @@
         }
       ],
       "covers": "already in your hand",
-      "durationSec": 1.86,
+      "durationSec": 1.48,
       "assetId": "gest-hand",
       "claimId": "gest-hand",
       "sourceUrl": "https://choclift.com/",
@@ -228,7 +124,7 @@
       "src": "assets/iphone-third-interface/apps-grid2.mp4",
       "zoomDir": "none",
       "focusX": 0.5,
-      "durationSec": 1.52,
+      "durationSec": 1.4,
       "assetId": "apps-grid2",
       "claimId": "apps-grid2",
       "covers": "This app turns",
@@ -249,7 +145,7 @@
         ],
         "y": 0.13
       },
-      "durationSec": 2.82,
+      "durationSec": 2.121,
       "assetId": "web-demo",
       "claimId": "web-demo",
       "covers": "into a custom",
@@ -277,7 +173,7 @@
           "vol": 0.251
         }
       ],
-      "durationSec": 2.76,
+      "durationSec": 2.259,
       "assetId": "apps-demo",
       "claimId": "apps-demo",
       "covers": "Tap once",
@@ -308,7 +204,7 @@
           "vol": 0.251
         }
       ],
-      "durationSec": 6.301,
+      "durationSec": 3.321,
       "assetId": "sc-demo",
       "claimId": "sc-demo",
       "covers": "Add a shortcut",
@@ -336,7 +232,7 @@
           "vol": 0.582
         }
       ],
-      "durationSec": 3.059,
+      "durationSec": 2.5,
       "assetId": "gest-demo",
       "claimId": "gest-demo",
       "covers": "You can even",
@@ -363,7 +259,7 @@
         }
       ],
       "footnote": "every action runs locally on the Mac",
-      "durationSec": 3.74
+      "durationSec": 3.379
     },
     {
       "type": "footage",
@@ -371,7 +267,7 @@
       "zoomDir": "none",
       "focusX": 0.5,
       "covers": "set up",
-      "durationSec": 0.92,
+      "durationSec": 0.66,
       "assetId": "desk-wide",
       "claimId": "desk-wide",
       "sourceUrl": "https://choclift.com/",
@@ -382,7 +278,7 @@
       "src": "assets/iphone-third-interface/rec-mac.mp4",
       "zoomDir": "none",
       "focusX": 0.5,
-      "durationSec": 1.38,
+      "durationSec": 1.26,
       "assetId": "rec-mac",
       "claimId": "rec-mac",
       "covers": "your most",
@@ -417,7 +313,7 @@
           "vol": 0.556
         }
       ],
-      "durationSec": 2.18,
+      "durationSec": 1.84,
       "assetId": "apps-wide",
       "claimId": "apps-wide",
       "covers": "live right beside",
@@ -431,11 +327,11 @@
       "keyword": "APP",
       "question": "WANT THE APP?",
       "typeAt": 1.15,
-      "growAt": 1.95,
-      "dropAt": 3.15,
+      "growAt": 1.85,
+      "dropAt": 2.75,
       "captionBottom": 6000,
       "showFinal": false,
-      "durationSec": 5.025,
+      "durationSec": 3.696,
       "assetId": "apps-wide",
       "claimId": "apps-wide",
       "covers": "Want the",
@@ -444,163 +340,163 @@
   ],
   "captions": [
     {
-      "start": 0.159,
-      "end": 0.819,
+      "start": 0.099,
+      "end": 0.639,
       "text": "Your Mac has"
     },
     {
-      "start": 0.859,
-      "end": 1.62,
+      "start": 0.719,
+      "end": 1.399,
       "text": "a third input"
     },
     {
-      "start": 1.699,
-      "end": 2.419,
+      "start": 1.459,
+      "end": 2.18,
       "text": "device and it's"
     },
     {
-      "start": 2.5,
-      "end": 3.199,
+      "start": 2.22,
+      "end": 2.72,
       "text": "already in your"
     },
     {
-      "start": 3.24,
-      "end": 4.48,
+      "start": 2.759,
+      "end": 3.879,
       "text": "hand. This app"
     },
     {
-      "start": 4.599,
-      "end": 5.48,
+      "start": 3.939,
+      "end": 4.719,
       "text": "turns your iPhone"
     },
     {
-      "start": 5.539,
-      "end": 6.219,
+      "start": 4.799,
+      "end": 5.359,
       "text": "into a custom"
     },
     {
-      "start": 6.319,
-      "end": 7.199,
+      "start": 5.44,
+      "end": 6.159,
       "text": "control panel for"
     },
     {
-      "start": 7.259,
-      "end": 8.579,
+      "start": 6.219,
+      "end": 7.099,
       "text": "your Mac. Tap"
     },
     {
-      "start": 8.699,
-      "end": 9.359,
+      "start": 7.159,
+      "end": 7.659,
       "text": "once to open"
     },
     {
-      "start": 9.399,
-      "end": 10.0,
+      "start": 7.699,
+      "end": 8.239,
       "text": "the apps you"
     },
     {
-      "start": 10.099,
-      "end": 10.8,
+      "start": 8.319,
+      "end": 8.899,
       "text": "use every day."
     },
     {
-      "start": 11.119,
-      "end": 12.159,
+      "start": 9.179,
+      "end": 9.84,
       "text": "Add a shortcut,"
     },
     {
-      "start": 12.979,
-      "end": 13.819,
+      "start": 10.239,
+      "end": 10.719,
       "text": "and a whole"
     },
     {
-      "start": 13.88,
-      "end": 15.939,
+      "start": 10.779,
+      "end": 11.659,
       "text": "workflow becomes one"
     },
     {
-      "start": 16.1,
-      "end": 17.659,
+      "start": 11.759,
+      "end": 12.779,
       "text": "button. You can"
     },
     {
-      "start": 17.719,
-      "end": 18.92,
+      "start": 12.859,
+      "end": 13.96,
       "text": "even control windows"
     },
     {
-      "start": 19.199,
-      "end": 20.579,
+      "start": 14.019,
+      "end": 15.079,
       "text": "with gestures. It"
     },
     {
-      "start": 20.639,
-      "end": 21.42,
+      "start": 15.139,
+      "end": 15.819,
       "text": "needs a companion"
     },
     {
-      "start": 21.52,
-      "end": 21.959,
+      "start": 15.899,
+      "end": 16.239,
       "text": "app on your"
     },
     {
-      "start": 22.02,
-      "end": 22.779,
+      "start": 16.279,
+      "end": 17.0,
       "text": "Mac and the"
     },
     {
-      "start": 22.84,
-      "end": 23.499,
+      "start": 17.039,
+      "end": 17.619,
       "text": "same Wi-Fi"
     },
     {
-      "start": 23.559,
-      "end": 24.18,
+      "start": 17.779,
+      "end": 18.34,
       "text": "but once it's"
     },
     {
-      "start": 24.219,
-      "end": 25.299,
+      "start": 18.379,
+      "end": 19.159,
       "text": "set up, your"
     },
     {
-      "start": 25.359,
-      "end": 26.439,
+      "start": 19.219,
+      "end": 20.219,
       "text": "most used actions"
     },
     {
-      "start": 26.519,
-      "end": 27.479,
+      "start": 20.299,
+      "end": 21.239,
       "text": "live right beside"
     },
     {
-      "start": 27.539,
-      "end": 28.879,
+      "start": 21.299,
+      "end": 22.379,
       "text": "your keyboard. Want"
     },
     {
-      "start": 28.92,
-      "end": 29.959,
+      "start": 22.42,
+      "end": 23.34,
       "text": "the app? Comment"
     },
     {
-      "start": 30.099,
-      "end": 31.239,
-      "text": "APP, and we'll"
+      "start": 23.379,
+      "end": 23.879,
+      "text": "APP and we'll"
     },
     {
-      "start": 31.299,
-      "end": 32.099,
+      "start": 23.939,
+      "end": 24.979,
       "text": "send the exact"
     },
     {
-      "start": 32.219,
-      "end": 33.04,
+      "start": 25.039,
+      "end": 25.379,
       "text": "one in your"
     },
     {
-      "start": 33.259,
-      "end": 33.479,
+      "start": 25.5,
+      "end": 25.679,
       "text": "DM."
     }
   ],

@@ -294,8 +294,8 @@
     "keyword": "APP",
     "question": "WANT THE APP?",
     "typeAt": 1.15,
-    "growAt": 1.95,
-    "dropAt": 3.15,
+    "growAt": 1.85,
+    "dropAt": 2.75,
     "captionBottom": 6000,
     "showFinal": false
    }
