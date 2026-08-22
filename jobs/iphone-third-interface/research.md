@@ -21,69 +21,60 @@ script, so nothing here needs an independent origin to be honest.
 - CLAIM: The iPhone acts as a third control interface for the Mac, after
   the keyboard and the trackpad.
   TIER: official
-  SPOKEN: "a third interface for your Mac"
+  SPOKEN: "a third input device"
   SRC: https://choclift.com/
-  VIA: developer's own site — its exact positioning line is "After the
-       keyboard and trackpad redefined how we interact with computers,
-       it's time for the next step: ... the third interface in your Mac
-       setup". The reel's central idea is the vendor's own framing.
+  VIA: developer's own site — its positioning line is "After the keyboard
+       and trackpad redefined how we interact with computers, it's time for
+       the next step: ... the third interface in your Mac setup".
+
+- CLAIM: The iPhone acts as a customizable touch control surface for the Mac.
+  TIER: official
+  SPOKEN: "into a custom control panel for your Mac"
+  SRC: https://choclift.com/
+  VIA: developer's own site — "Use your iPhone to access apps, Shortcuts,
+       websites and emojis on your Mac", with up to 8 customizable pages.
+       Demonstrated in official-websites (tap a tile, the Mac responds).
 
 - CLAIM: Tapping an icon on the iPhone launches or switches to a Mac app.
   TIER: official
-  SPOKEN: "Tap an icon, and your Mac app opens"
+  SPOKEN: "Tap once to open the apps you use every day"
   SRC: https://choclift.com/
-  VIA: developer's own site — "Launch and switch between Mac apps
-       instantly from your iPhone with up to 8 customizable pages."
-       Demonstrated in the developer's own product video (official-apps).
+  VIA: developer's own site — "Launch and switch between Mac apps instantly
+       from your iPhone". Demonstrated end to end in official-apps.
 
-- CLAIM: Apple Shortcuts can be added and triggered from the iPhone.
+- CLAIM: An Apple Shortcut can be added and triggered from the iPhone, so a
+  multi-step workflow runs from one tap.
   TIER: official
-  SPOKEN: "Add an Apple Shortcut, and a workflow becomes one tap"
+  SPOKEN: "Add a shortcut, and a whole workflow becomes one button"
   SRC: https://choclift.com/
   VIA: developer's own site — "Add shortcuts, customize them with emojis
-       and trigger them directly". Demonstrated in official-shortcuts.
+       and trigger them directly". Demonstrated in official-shortcuts,
+       where TILE LAST 4 WINDOWS is tapped and the Mac re-tiles.
 
-- CLAIM: Saved websites can be launched on the Mac with a single tap.
+- CLAIM: Finger gestures on the iPhone move and minimize Mac windows.
   TIER: official
-  SPOKEN: "open saved websites"
+  SPOKEN: "control windows with gestures"
   SRC: https://choclift.com/
-  VIA: developer's own site — "Save websites with custom names and launch
-       them with a single tap." Demonstrated in official-websites.
-
-- CLAIM: Recently opened Mac apps can be reached and switched to from the
-  iPhone.
-  TIER: official
-  SPOKEN: "jump to recent apps"
-  SRC: https://choclift.com/
-  VIA: developer's own site — "Jump back through a timeline of your recent
-       apps and pin favorites to the front. No more Cmd+Tab cycling."
-       Demonstrated in official-recents.
-
-- CLAIM: An emoji tapped on the iPhone is inserted into text being typed
-  on the Mac.
-  TIER: official
-  SPOKEN: "drop an emoji straight into your text"
-  SRC: https://choclift.com/
-  VIA: developer's own site — "When you're typing on Mac and need that one
-       favorite emoji, simply tap the Emoji Bar ... to instantly add it to
-       your text." Demonstrated on screen in official-emoji.
-
-- CLAIM: Finger gestures on the iPhone minimize and maximize Mac windows.
-  TIER: official
-  SPOKEN: "swipe, and a window moves aside"
-  SRC: https://choclift.com/
-  VIA: developer's own site — "Minimize and maximize apps with a swipe and
-       use a grab and throw gesture to copy and paste anything to your
-       clipboard." Demonstrated in official-gestures.
+  VIA: developer's own site — "Minimize and maximize apps with a swipe".
+       Demonstrated in official-gestures.
 
 - CLAIM: It needs a companion Mac app, and both devices on the same Wi-Fi;
   the actions run locally on the Mac.
   TIER: official
-  SPOKEN: "It does need a companion Mac app and the same"
+  SPOKEN: "It needs a companion app on your Mac and the same"
   SRC: https://apps.apple.com/us/app/choclift-workflow-sweetener/id6759246284
   VIA: developer's own App Store listing — "All actions are executed
-       locally on your Mac through the companion app"; Requires iOS 18.0
-       or later; Mac requires macOS 14 or later; same Wi-Fi network.
+       locally on your Mac through the companion app"; requires iOS 18.0+,
+       macOS 14+, both devices on the same Wi-Fi network.
+
+## CUT FROM THE SPOKEN SCRIPT (2026-08-22, user direction)
+
+Saved websites, the recent-apps timeline and the Emoji Bar are all real and
+all sourced, and all three were in the first cut. The user's note: five
+capabilities listed is worse than three demonstrated. They are gone from the
+narration, so they carry no claim here. official-websites footage still
+appears under "a custom control panel for your Mac", where it illustrates
+the panel acting on the Mac rather than the websites feature by name.
 
 ## NOT CLAIMED — and why (mirrored into the manifest)
 

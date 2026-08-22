@@ -329,6 +329,14 @@ def caption_words(
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("slug")
+    # The overwrite guard below tests `"--force" in sys.argv`, and argparse
+    # rejected the flag before that test could ever run — so the tool printed
+    # "Re-run with --force if replacing it is what you meant" and then refused
+    # that exact command. Declared here so the instruction is followable
+    # (found 2026-08-22).
+    parser.add_argument(
+        "--force", action="store_true",
+        help="replace an existing beat sheet instead of refusing")
     parser.add_argument(
         "--engine",
         type=Path,

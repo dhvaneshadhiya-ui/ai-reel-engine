@@ -42,7 +42,13 @@ export const FloatingCard: React.FC<{ scene: CardProps }> = ({ scene }) => {
   const cardW = aspect >= 1 ? width * 0.92 : Math.min(width * 0.7, 1560 * aspect);
   const cardH = cardW / aspect;
 
-  const bg = BGS[scene.bg ?? "gradient"];
+  const bg = BGS[scene.bg ?? "gradient"] ?? BGS.gradient;
+  // A 16:9 card centred in a 9:16 frame leaves ~70% of the picture empty. On a
+  // flat field that reads as dead space (and the frame linter counts it as
+  // such). "blur" fills it with the shot's own colour and light — the same
+  // clip, scaled to cover, blurred past legibility and dimmed so the sharp
+  // card stays the only thing the eye reads.
+  const blurBg = scene.bg === "blur";
 
   return (
     <AbsoluteFill
@@ -52,6 +58,23 @@ export const FloatingCard: React.FC<{ scene: CardProps }> = ({ scene }) => {
         alignItems: "center",
       }}
     >
+      {blurBg && (
+        <AbsoluteFill style={{ overflow: "hidden" }}>
+          <OffthreadVideo
+            src={staticFile(scene.src)}
+            startFrom={Math.round((scene.from ?? 0) * fps)}
+            muted
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              filter: "blur(48px) saturate(1.15) brightness(0.62)",
+              transform: "scale(1.25)",
+            }}
+          />
+          <AbsoluteFill style={{ background: "rgba(10,6,2,0.28)" }} />
+        </AbsoluteFill>
+      )}
       <div
         style={{
           width: cardW,

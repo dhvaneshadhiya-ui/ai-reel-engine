@@ -280,7 +280,10 @@ export type Scene =
       from?: number;
       /** media aspect ratio w/h — card adapts (default 16/9) */
       aspect?: number;
-      bg?: "black" | "cream" | "gradient";
+      /** "blur" fills the frame with the clip itself, scaled to cover and
+       *  heavily blurred, so a 16:9 card in a 9:16 frame does not leave ~70%
+       *  of the picture as flat dead space (added 2026-08-22). */
+      bg?: "black" | "cream" | "gradient" | "blur";
       credit?: string;
       /** MG text overlaid above the card (e.g. "TOP-SELLING · INDIA") */
       kinetic?: Kinetic;

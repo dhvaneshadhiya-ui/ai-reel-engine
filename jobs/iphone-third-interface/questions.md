@@ -1,51 +1,48 @@
-# Open questions — iphone-third-interface
+# Open questions — iphone-third-interface (v2)
 
-Answer these with your yes, or tell me to change them.
+## 1. Which CTA line? — the only thing I genuinely need from you
 
-## 1. Runtime: this will land ~45-52s, not 35-45s
+Your feedback gave two versions and I could not tell which is final:
 
-123 words. At this voice's measured pace range (2.35-2.75 words/sec) that
-is 45s at best and 52s at worst — over the 35-45s you asked for, and over
-the 26-48s band for this format.
+- **A (in the revised script):** "Comment APP and we'll send the exact one."
+- **B (in feedback point 1):** "Comment APP and we'll send the exact one and
+  the setup link."
 
-The CTA alone is 19 words / ~7s, and you asked for it verbatim, so the
-overrun is really in the body. The cheapest 4 seconds is beat 15, the
-requirements card ("Now, it does need a companion Mac app, same Wi-Fi").
+I built **A**, because it is the line inside the script you handed over.
+B adds ~1.5s and promises the setup link out loud, which is arguably the
+more useful promise. Say "B" and I will re-cut the VO tail.
 
-- **Keep it** (my recommendation) — it is the honest caveat, it is the one
-  thing a viewer must know before they comment APP, and dropping it means
-  the DM sends people to an app that will not work on its own.
-- **Cut it** — saves ~4s and lands the reel at ~41-48s.
+Either way, "APP" is now spoken as a word. The previous take spelled it
+A-P-P because the script had it in quotes; the token ran 0.66s. It now runs
+0.10s.
 
-## 2. No presenter, so the voice is text-to-speech
+## 2. Pace: I went to 1.15, above the locked 1.05
 
-You chose the pure-VO build, so there is no avatar render. I plan to
-generate the narration with **your digital twin's own voice** via HeyGen
-speech-only, so the reel still sounds like your channel. It costs no
-avatar credits. Say if you would rather use a different voice.
+Your locked voice speed is 1.05, set on 2026-08-11 when you asked to slow
+down. You have now asked for the opposite on this reel, so this is a
+per-reel override, not a config change — 1.05 is still the default for
+everything else.
 
-## 3. Your storyboard had a gesture beat; your script did not
+At 1.15 the read is **3.18 words/sec** against the 2.35-2.75 this voice
+normally runs, and the whole reel is **26.4s** instead of 51s. The first
+three sentences all land inside the first 10.4s. If it sounds clipped
+rather than energetic, 1.10 is one regeneration away.
 
-Your shot brief gave 25-30s to "gestures controlling Mac windows", but the
-script you wrote never mentioned gestures. On screen that breaks the rule
-that the picture matches the words, so I wrote the line in:
-*"It isn't only launching, either — swipe, and a window moves aside."*
-Say the word and I will drop both the line and the beat instead.
+## 3. What I cut, and what I did with the footage
 
-## 4. One beat is a graphic, not footage
+Five features became three, as you asked. **Saved websites, the recent-apps
+timeline and the Emoji Bar are gone from the narration.** The websites
+footage still appears once — under "a custom control panel for your Mac" —
+because it is the clearest single shot of a tap on the phone changing the
+Mac. It is not named as a feature.
 
-Beat 15 is a built card (WHAT IT TAKES: the app / a companion Mac app /
-same Wi-Fi). There is no official footage of the pairing flow that avoids
-the product name, and I will not invent product UI. Everything else in the
-reel — all 18 other beats — is the developer's own video.
+## 4. Treatment change you should look at
 
-## 5. Confirmations on your restrictions
+The three feature beats are now **floatcards**: the whole 16:9 frame on a
+warm cream field, never re-cropped, with a label above and the caption
+below. That is the only way to keep the iPhone trigger and the Mac result
+on screen together — a 9:16 crop of this footage holds one or the other,
+which is exactly the "rarely legible" problem you flagged.
 
-- **Name:** never spoken, never captioned, never on a card. The developer's
-  hero montage and the last 3.4s of the gestures clip both burn the wordmark
-  into the frame, so both are excluded at the source. I will audit the
-  finished render frame by frame before I hand it over.
-- **Credits:** nothing drawn on screen. Source attribution stays recorded
-  in the beat sheet only.
-- **Sources:** choclift.com and the App Store listing only. No Product Hunt,
-  no third-party footage, no AI-generated product imagery.
+Captions are now **chip-lg**: bold white SF Pro on a dark pill, matching the
+high-contrast style in the reel you sent, instead of the small italic serif.

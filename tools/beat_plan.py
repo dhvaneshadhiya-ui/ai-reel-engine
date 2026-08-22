@@ -45,12 +45,20 @@ PLAIN = {
     "typecard": "a full-screen text card: {texts}",
     "specsheet": "a spec sheet builds line by line",
     "statcard": "one big number on a card",
-    "floatcard": "a floating info card over the scene",
+    # floatcard said "a floating info card over the scene" — which describes the
+    # CONTAINER and not one thing inside it. An approver reading that learns
+    # nothing about what they are approving, the exact failure this file exists
+    # to prevent. It carries real footage, so it resolves its clip like
+    # `footage` does (found 2026-08-22, on a reel whose three feature beats were
+    # ALL floatcards).
+    "floatcard": "{clip}, shown whole on a card so nothing is cropped out",
     "receipt": "a screenshot 'receipt' slides through",
     "chart": "an animated chart",
     "headlinebuild": "a headline assembles on screen",
     "priceladder": "prices stack into a ladder",
     "endquestion": "the closing question on screen",
+    "commentcta": "the comment-gate call to action: the keyword types itself "
+                  "into a comment field, then a 'link sent' notification",
     "logobeat": "the brand mark, on the beat",
     "timeline": "a timeline sweeps through its entries",
 }
