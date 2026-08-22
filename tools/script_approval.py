@@ -195,9 +195,28 @@ def cmd_propose(slug: str) -> None:
         except Exception:
             pass
     band_lo, band_hi = FORMATS.get(fmt, FORMATS["news"])["runtime"]
-    slow, fast = words / WPS_MIN, words / WPS_MAX
+    # A REEL MAY RUN AT ITS OWN SPEED, AND THEN THIS BAND IS FOR THE WRONG VOICE.
+    # WPS_MIN/MAX were measured at the locked 1.05. A reel with a per-reel speed
+    # override delivers at a different rate — 1.20 measured 3.48 wps here, not
+    # 2.35-2.75 — so the advice printed a runtime half again too long and told
+    # the user to cut a script that was already the right length. The shot plan
+    # may declare `measuredWps`, which must be MEASURED from a real take of this
+    # voice at this speed, never scaled from the speed number: the engine changes
+    # its pauses too, so the relationship is not linear (2026-08-22).
+    plan_p = ROOT / "jobs" / slug / "shot-plan.json"
+    wmin, wmax = WPS_MIN, WPS_MAX
+    if plan_p.exists():
+        try:
+            mw = json.loads(plan_p.read_text()).get("measuredWps")
+            if mw:
+                wmin, wmax = float(mw) * 0.94, float(mw) * 1.06
+                print(f"pace: using this reel's MEASURED {float(mw):.2f} wps "
+                      f"(the locked-speed default is {WPS_MIN}-{WPS_MAX})")
+        except Exception:  # noqa: BLE001
+            pass
+    slow, fast = words / wmin, words / wmax
     print(f"delivery range: {fast:.0f}-{slow:.0f}s at measured "
-          f"{WPS_MIN}-{WPS_MAX} wps")
+          f"{wmin:.2f}-{wmax:.2f} wps")
     q_text = q_p.read_text() if q_p.exists() else ""
     # Block when the SLOWEST measured pace overshoots the band, or the
     # fastest undershoots it — the voice varies 2.36-2.72 wps across real
@@ -221,7 +240,7 @@ def cmd_propose(slug: str) -> None:
                  f"{fast:.0f}-{slow:.0f}s — outside the {band_lo:.0f}-"
                  f"{band_hi:.0f}s band for format {fmt!r} at the voice's "
                  f"measured pace range. Safe budget: "
-                 f"{int(band_lo*WPS_MAX)}-{int(band_hi*WPS_MIN)} words. "
+                 f"{int(band_lo*wmax)}-{int(band_hi*wmin)} words. "
                  "Trim it if the story does not need the room. Runtime is "
                  "judgement, not a rule — this is advice, and approval is "
                  "still yours to give.")

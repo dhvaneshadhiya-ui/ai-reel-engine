@@ -2,14 +2,15 @@
  "audio": "assets/iphone-third-interface/vo-master.m4a",
  "format": "top5",
  "captionStyle": "chip-lg",
+ "captionStyleReason": "User feedback 2026-08-22: match the caption style to the topic. The locked word-reveal renders small italic serif, which read as documentary over a warm app-discovery reel. chip-lg is bold white SF Pro on a dark pill — the treatment the reference reel the user sent uses, and legible on mute at thumbnail size.",
  "noCredits": {
-  "reason": "User directive 2026-08-22: a clean editorial product-discovery reel with no on-screen credits, URLs or citations. Every frame is the developer's own product video used to show the product it depicts; per-scene credit strings stay recorded in this sheet, only the DRAWING is suppressed. The brand restriction also forbids the product name on screen, and the credit string carries it."
+  "reason": "User directive 2026-08-22: a clean product-discovery reel with no on-screen credits, URLs or citations. Every frame is the developer's own product video; per-scene credit strings stay recorded here, only the DRAWING is suppressed. The brand restriction also forbids the product name on screen, and the credit string carries it."
  },
  "emphasis": [
   "third",
   "control panel",
-  "one tap",
   "one button",
+  "grid",
   "gestures",
   "third interface",
   "APP",
@@ -18,10 +19,11 @@
  "caption_corrections": {
   "wi fi": "Wi-Fi"
  },
+ "_vo_note": "Generated in TWO passes and concatenated: body at speed 1.20, CTA at 1.05. One global speed cannot serve both — at 1.20 the CTA measured RMS collapsing to a third of the body and the filler word 'the' stretched to 0.42s, which the user heard as the CTA being wrecked. See tools/voice_energy.py.",
  "shots": [
   {
    "start_phrase": "Your Mac has",
-   "line": "Your Mac has a third input device",
+   "line": "Your Mac has a third input device.",
    "asset_id": "apps-wide",
    "tier": "official",
    "scene": {
@@ -60,56 +62,46 @@
    }
   },
   {
-   "start_phrase": "and its",
-   "line": "— and it's already in your hand.",
+   "start_phrase": "Not the keyboard",
+   "line": "Not the keyboard. Not the trackpad.",
    "asset_id": "gest-hand",
    "tier": "official",
    "scene": {
     "type": "footage",
     "src": "assets/iphone-third-interface/gest-hand.mp4",
+    "zoomDir": "none",
+    "focusX": 0.4122
+   }
+  },
+  {
+   "start_phrase": "The one that",
+   "line": "The one that's already in your hand.",
+   "asset_id": "apps-hand",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/apps-hand.mp4",
     "zoomDir": "in",
-    "focusX": 0.4122,
+    "focusX": 0.5,
     "sfx": [
      {
       "src": "sfx/Pop.MP3",
       "at": 0.05,
       "vol": 0.08
      }
-    ],
-    "covers": "already in your hand"
+    ]
    }
   },
   {
    "start_phrase": "This app turns",
-   "line": "This app turns your iPhone",
-   "asset_id": "apps-grid2",
+   "line": "This app turns your iPhone into a custom control panel for your Mac.",
+   "asset_id": "apps-panel",
    "tier": "official",
    "scene": {
     "type": "footage",
-    "src": "assets/iphone-third-interface/apps-grid2.mp4",
-    "zoomDir": "none",
+    "src": "assets/iphone-third-interface/apps-panel.mp4",
+    "zoomDir": "in",
     "focusX": 0.5
-   }
-  },
-  {
-   "start_phrase": "into a custom",
-   "line": "into a custom control panel for your Mac.",
-   "asset_id": "web-demo",
-   "tier": "official",
-   "scene": {
-    "type": "floatcard",
-    "src": "assets/iphone-third-interface/web-demo.mp4",
-    "bg": "blur",
-    "headline": {
-     "lines": [
-      {
-       "text": "THE IDEA",
-       "kind": "headline",
-       "at": 0.1
-      }
-     ],
-     "y": 0.13
-    }
    }
   },
   {
@@ -134,7 +126,7 @@
     "sfx": [
      {
       "src": "sfx/Click.MP3",
-      "at": 0.2,
+      "at": 0.35,
       "vol": 0.09
      }
     ]
@@ -162,10 +154,59 @@
     "sfx": [
      {
       "src": "sfx/Click.MP3",
-      "at": 0.85,
+      "at": 0.95,
       "vol": 0.09
      }
     ]
+   }
+  },
+  {
+   "start_phrase": "Save the sites",
+   "line": "Save the sites you always open, and launch them from the same grid.",
+   "asset_id": "web-demo",
+   "tier": "official",
+   "scene": {
+    "type": "floatcard",
+    "src": "assets/iphone-third-interface/web-demo.mp4",
+    "bg": "blur",
+    "headline": {
+     "lines": [
+      {
+       "text": "WEBSITES",
+       "kind": "headline",
+       "at": 0.1
+      }
+     ],
+     "y": 0.13
+    },
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "at": 0.3,
+      "vol": 0.09
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Scroll back",
+   "line": "Scroll back through everything you had open, and jump straight to it.",
+   "asset_id": "rec-demo",
+   "tier": "official",
+   "scene": {
+    "type": "floatcard",
+    "src": "assets/iphone-third-interface/rec-demo.mp4",
+    "bg": "blur",
+    "headline": {
+     "lines": [
+      {
+       "text": "RECENT APPS",
+       "kind": "headline",
+       "at": 0.1
+      }
+     ],
+     "y": 0.13
+    }
    }
   },
   {
@@ -198,7 +239,7 @@
   },
   {
    "start_phrase": "It needs",
-   "line": "It needs a companion app on your Mac and the same Wi-Fi",
+   "line": "It needs a companion app on your Mac and the same Wi-Fi.",
    "tier": "generated",
    "scene": {
     "type": "specsheet",
@@ -223,16 +264,15 @@
    }
   },
   {
-   "start_phrase": "set up",
-   "line": "— but once it's set up,",
+   "start_phrase": "But once",
+   "line": "But once it's set up,",
    "asset_id": "desk-wide",
    "tier": "official",
    "scene": {
     "type": "footage",
     "src": "assets/iphone-third-interface/desk-wide.mp4",
     "zoomDir": "none",
-    "focusX": 0.5,
-    "covers": "set up"
+    "focusX": 0.5
    }
   },
   {
@@ -293,14 +333,14 @@
     "focusX": 0.3537,
     "keyword": "APP",
     "question": "WANT THE APP?",
-    "typeAt": 1.15,
-    "growAt": 1.85,
-    "dropAt": 2.75,
-    "captionBottom": 6000,
-    "showFinal": false
+    "showFinal": false,
+    "typeAt": 1.35,
+    "growAt": 2.15,
+    "dropAt": 3.35,
+    "captionBottom": 6000
    }
   }
  ],
- "captionStyleReason": "User feedback 2026-08-22: match the caption style to the topic's vibe. The locked default word-reveal renders small italic serif, which read as a documentary voice over a warm, playful app-discovery reel. chip-lg is SF Pro 50px/800 white on a dark pill — the bold high-contrast treatment the reference reel the user sent uses, and legible on mute at thumbnail size.",
- "_cta_note": "The CTA line is spoken now, so the scene starts on 'Want the app?' and the component's own question lands under those words. showFinal is off: the scene already shows the keyword typed into the comment field and again on the card, and the closing display made it a third appearance in a different style."
+ "measuredWps": 3.48,
+ "_measuredWps_note": "MEASURED, not scaled: the 1.20 body take delivered 90 words in 25.84s = 3.48 wps. Raising speed also tightens the engine pauses, so the rate does not scale linearly with the speed number and must be taken from a real take."
 }

@@ -1,48 +1,28 @@
-# Open questions — iphone-third-interface (v2)
+# Open questions — iphone-third-interface (v3, rebuilt)
 
-## 1. Which CTA line? — the only thing I genuinely need from you
+## Nothing is blocking. Three things to know before you say yes.
 
-Your feedback gave two versions and I could not tell which is final:
+**1. The CTA voiceover is generated separately, at a different speed.**
+One global speed cannot serve both halves of this script. Measured on the
+1.20 take you just heard: after "Comment", the voice drops to a third of its
+energy, "one / in / your" get swallowed at 0.06-0.10s each, and the filler
+word "the" stretches to 0.42s — four times its length two seconds earlier.
+That is the wreckage you heard. The body is now generated at 1.20 for energy
+and the CTA at 1.05 for clarity, then joined. Two files, one track.
 
-- **A (in the revised script):** "Comment APP and we'll send the exact one."
-- **B (in feedback point 1):** "Comment APP and we'll send the exact one and
-  the setup link."
+**2. Length is now a target, not a side-effect.**
+This is the thing I got wrong repeatedly: 51s, then 28s, then 33.8s, then
+25.9s, because every script edit and speed change moved it and I never fixed
+a number. Projected here: **~38s**, inside your original 35-45s.
 
-I built **A**, because it is the line inside the script you handed over.
-B adds ~1.5s and promises the setup link out loud, which is arguably the
-more useful promise. Say "B" and I will re-cut the VO tail.
+**3. Five features, every one demonstrated.**
+Websites and the recent-apps timeline are back, but as full tap-to-result
+demos like the other three — never the fragments you objected to. Only the
+Emoji Bar stays out; a sixth would cost every other one its room.
 
-Either way, "APP" is now spoken as a word. The previous take spelled it
-A-P-P because the script had it in quotes; the token ran 0.66s. It now runs
-0.10s.
+## The one thing I would still change if you want
 
-## 2. Pace: I went to 1.15, above the locked 1.05
-
-Your locked voice speed is 1.05, set on 2026-08-11 when you asked to slow
-down. You have now asked for the opposite on this reel, so this is a
-per-reel override, not a config change — 1.05 is still the default for
-everything else.
-
-At 1.15 the read is **3.18 words/sec** against the 2.35-2.75 this voice
-normally runs, and the whole reel is **26.4s** instead of 51s. The first
-three sentences all land inside the first 10.4s. If it sounds clipped
-rather than energetic, 1.10 is one regeneration away.
-
-## 3. What I cut, and what I did with the footage
-
-Five features became three, as you asked. **Saved websites, the recent-apps
-timeline and the Emoji Bar are gone from the narration.** The websites
-footage still appears once — under "a custom control panel for your Mac" —
-because it is the clearest single shot of a tap on the phone changing the
-Mac. It is not named as a feature.
-
-## 4. Treatment change you should look at
-
-The three feature beats are now **floatcards**: the whole 16:9 frame on a
-warm cream field, never re-cropped, with a label above and the caption
-below. That is the only way to keep the iPhone trigger and the Mac result
-on screen together — a 9:16 crop of this footage holds one or the other,
-which is exactly the "rarely legible" problem you flagged.
-
-Captions are now **chip-lg**: bold white SF Pro on a dark pill, matching the
-high-contrast style in the reel you sent, instead of the small italic serif.
+The hook is the same line it has been since the first cut. If the reel should
+open on the *problem* instead of the claim — reaching for the Dock, hunting
+Spotlight, cycling Command-Tab — say so and I will rewrite the opening two
+beats. It would cost about 3 seconds and I have footage for it.

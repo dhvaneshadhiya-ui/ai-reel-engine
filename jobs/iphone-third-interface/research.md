@@ -67,14 +67,29 @@ script, so nothing here needs an independent origin to be honest.
        locally on your Mac through the companion app"; requires iOS 18.0+,
        macOS 14+, both devices on the same Wi-Fi network.
 
+- CLAIM: Websites can be saved with custom names and launched on the Mac with
+  a single tap from the same grid.
+  TIER: official
+  SPOKEN: "Save the sites you always open"
+  SRC: https://choclift.com/
+  VIA: developer's own site — "Save websites with custom names and launch them
+       with a single tap." Demonstrated end to end in official-websites.
+
+- CLAIM: A timeline of recently opened Mac apps can be scrolled from the iPhone
+  and tapped to switch straight to one.
+  TIER: official
+  SPOKEN: "Scroll back through everything you had open"
+  SRC: https://choclift.com/
+  VIA: developer's own site — "Jump back through a timeline of your recent apps
+       and pin favorites to the front. No more Cmd+Tab cycling."
+       Demonstrated in official-recents.
+
 ## CUT FROM THE SPOKEN SCRIPT (2026-08-22, user direction)
 
-Saved websites, the recent-apps timeline and the Emoji Bar are all real and
-all sourced, and all three were in the first cut. The user's note: five
-capabilities listed is worse than three demonstrated. They are gone from the
-narration, so they carry no claim here. official-websites footage still
-appears under "a custom control panel for your Mac", where it illustrates
-the panel acting on the Mac rather than the websites feature by name.
+Only the **Emoji Bar** is left out. It is real and sourced, and it was in the
+first cut; the reel now demonstrates five features end to end and a sixth
+would cost every other one its room. Nothing about it is claimed here, and no
+emoji footage appears in the cut.
 
 ## NOT CLAIMED — and why (mirrored into the manifest)
 

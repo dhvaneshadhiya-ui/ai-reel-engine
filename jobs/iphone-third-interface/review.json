@@ -1,12 +1,13 @@
 {
-  "script_sha256": "1e8e32a4f9ba0d51467a739605b256d1d7b9a87ac56993916fb40bbaafb7a958",
+  "script_sha256": "02c0d357389678fd5ba5a54abff5c7f83d7a9bbbcc7c45b9c7e52b3bfa648dae",
   "structure_sha256": "21369f708d0f43da5c8777c45365258fe481be5a7b203f5c856e8c8d510d0224",
   "findings": [
-    "  BRIDGES 1/7 sentences (14%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
-    "  NO OPEN LOOP \u2014 nothing in the opening third points forward. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
-    "  OPENING has no version, date or time anchor: \"Your Mac has a third input device\u2014and it's already in your hand.\". A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)"
+    "  BRIDGES 2/13 sentences (15%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  NO OPEN LOOP \u2014 sentence 4 promises something (\"The one that's already in your hand.\") and nothing later returns to it. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "  OPENING has no version, date or time anchor: 'Your Mac has a third input device.'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "CADENCE: only 0 sentence reaches 18 words (longest 13). The playbook asks for 'occasionally one long spec sentence' \u2014 with everything short, nothing reads as short. Nothing to push against."
   ],
   "research_advice": [],
-  "beatPlanShots": 12,
-  "proposedAt": "2026-08-22T09:36:58+00:00"
+  "beatPlanShots": 14,
+  "proposedAt": "2026-08-22T10:04:49+00:00"
 }
