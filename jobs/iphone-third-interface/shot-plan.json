@@ -74,7 +74,7 @@
    }
   },
   {
-   "start_phrase": "The one that",
+   "start_phrase": "The one",
    "line": "The one that's already in your hand.",
    "asset_id": "apps-hand",
    "tier": "official",
@@ -334,9 +334,9 @@
     "keyword": "APP",
     "question": "WANT THE APP?",
     "showFinal": false,
-    "typeAt": 1.35,
-    "growAt": 2.15,
-    "dropAt": 3.35,
+    "typeAt": 0.8,
+    "growAt": 1.55,
+    "dropAt": 2.55,
     "captionBottom": 6000
    }
   }

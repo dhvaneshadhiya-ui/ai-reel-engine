@@ -1,8 +1,6 @@
 {
-  "sha256": "1e8e32a4f9ba0d51467a739605b256d1d7b9a87ac56993916fb40bbaafb7a958",
-  "approvedAt": "2026-08-22T09:36:58+00:00",
-  "words": 90,
-  "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build.",
-  "_provenance": "CTA line dictated verbatim by the user on 2026-08-22: \"He must says Want the app? Comment app and we will send the exact one in your DM\". Everything else is the script they approved earlier the same day as variant A. Re-approved at the new hash because the words changed; the change is theirs, quoted.",
-  "_overrides": "voiceSpeed 1.10 for this reel only (locked default 1.05 unchanged) \u2014 down from 1.15 after the user reported the read was not clear. captionStyle chip-lg for this reel only."
+  "sha256": "02c0d357389678fd5ba5a54abff5c7f83d7a9bbbcc7c45b9c7e52b3bfa648dae",
+  "approvedAt": "2026-08-22T10:21:18+00:00",
+  "words": 124,
+  "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
 }

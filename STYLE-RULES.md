@@ -3580,3 +3580,45 @@ Two things that fall out of it:
 loudness dynamics, voiced fraction and the pause histogram, from numpy alone.
 Compare VO-ONLY files: on a finished master the music bed fills every gap and
 the pause numbers stop meaning anything (the shipped master reads 0 pauses).
+
+## 2026-08-22 (19) — the CTA broke because of WHERE it sat, not how fast it was
+
+The user: "Voice over for Call to action at last is completely fucked up."
+Measured, and they were describing something real. In the 1.20 take, across
+the closing line:
+
+    Comment 0.30s rms 0.111 | and 0.08s 0.035 | we'll 0.18s 0.037
+    send 0.22s 0.045 | the 0.42s 0.045 | exact 0.28s 0.035 | one 0.10s 0.025
+
+Energy falls to a THIRD after "Comment", "one / in / your" are swallowed at
+0.06-0.10s, and the filler word "the" stretches to 0.42s — four times its own
+length two seconds earlier. The engine runs out of breath at the end of a long
+paragraph.
+
+The proof it is position and not speed: generate that identical line at an even
+FASTER 1.30, but as its OWN utterance, and the decay halves — 66% -> 32% — with
+"app" becoming the LOUDEST word in the line instead of a swallowed one.
+
+**Distilled rule: generate the VO in SECTIONS. A call to action is a separate
+utterance and must be synthesised as one.** Body and CTA want opposite
+settings anyway — the body wants speed for energy, the CTA wants to be
+understood — and one global `speed` cannot serve both. Shipped: body 1.30,
+CTA 1.15, joined with a 0.40s beat.
+
+Two smaller findings from the same pass, both counter-intuitive enough to
+write down:
+
+- **Punctuation edits do not buy energy.** Removing mid-sentence commas made
+  the read 1.6s LONGER (the engine redistributed into bigger sentence pauses);
+  joining sentences with commas also made it longer. Five body takes, all
+  64-65% voiced. Speed is the only lever that moved it: 1.30 gave the highest
+  pitch variation of any take measured (2.59 st) as well as the fastest rate.
+- **`silenceremove` is not a tail trim.** `stop_periods=-1` strips EVERY
+  silence, including the pauses between phrases, clipping them all to the
+  `stop_duration` stub — it took 3.5s out of the middle of a body take and
+  would have desynced every hand-written word timing. To trim a tail, cut to a
+  known timestamp.
+
+Also worth keeping: the API folds a word's FOLLOWING pause into that word's
+end timestamp. A word that looks stretched to 0.78s is often ~0.2s of speech
+and 0.58s of silence — check the tail RMS before believing the duration.
