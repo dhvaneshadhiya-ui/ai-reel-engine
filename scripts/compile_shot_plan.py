@@ -333,9 +333,18 @@ def main() -> None:
     manifest = json.loads(manifest_path.read_text())
     words = load_words(vo_path)
     audio_end = float(words[-1]["end"])
+    # THE AUDIO TRACK IS NOT ALWAYS AN AVATAR (added 2026-08-22).
+    # `audio` was hardcoded to assets/<slug>/avatar-master.mp4, which silently
+    # assumed every reel is avatar-led. A VO-only reel — no presenter, narration
+    # over footage — is a legitimate build (Scene.audio already documents "the
+    # video's audio OR a wav"), and it had no way through this compiler. The
+    # shot plan may now name its own `audio`; the avatar path is still the
+    # default, so every existing plan compiles identically.
+    audio_rel = str(plan.get("audio") or avatar_rel)
+    audio_info = media_info(public / audio_rel)
     avatar_info = media_info(public / avatar_rel)
-    if avatar_info is not None:
-        audio_end = min(audio_end, avatar_info["duration"])
+    if audio_info is not None:
+        audio_end = min(audio_end, audio_info["duration"])
     face_x = 0.5
     if face_path.exists():
         try:
@@ -475,12 +484,12 @@ def main() -> None:
     # total that differs from the track by more than 0.20s.
     # Found 2026-08-21 on iphone18-colors: last word 70.04s, master 70.44s.
     # Only the FINAL beat is extended, so nothing else in the plan moves.
-    if avatar_info and scenes:
-        spare = float(avatar_info["duration"]) - audio_end
+    if audio_info and scenes:
+        spare = float(audio_info["duration"]) - audio_end
         if spare > 0.01:
             scenes[-1]["durationSec"] = round(
                 scenes[-1]["durationSec"] + spare, 3)
-            audio_end = float(avatar_info["duration"])
+            audio_end = float(audio_info["duration"])
 
     # Keep INTERIOR SPACES when normalising the key. Stripping every non
     # alphanumeric collapsed "dark cherry" to "darkcherry", which matches no
@@ -505,13 +514,22 @@ def main() -> None:
         "width": 1080,
         "height": 1920,
         "style": locked_style(engine),
-        "audio": avatar_rel,
+        "audio": audio_rel,
         "music": music,
         "captionStyle": locked_caption_style(engine),
         "emphasis": plan.get("emphasis", []),
         "scenes": scenes,
         "captions": caption_words(words, corrections),
     }
+    # FORMAT changes the gate physics (news / top5 / comparison), and this
+    # compiler never emitted it — so every reel built here was judged as `news`
+    # whatever it actually was. noCredits is the user's per-reel call on
+    # on-screen attribution (RULES.md 2c) and likewise had no way through.
+    # Both are pass-throughs: absent from the plan, the sheet is unchanged.
+    for passthrough in ("format", "noCredits", "sides", "allowLong",
+                        "allowLongReason", "captionStyle"):
+        if plan.get(passthrough) is not None:
+            beats[passthrough] = plan[passthrough]
     # G27 — the sheet carries the narration it was built from plus the approval
     # hash. Without these the gate blocks, and it is right to: a sheet that
     # cannot name the script it came from cannot prove the user approved it.

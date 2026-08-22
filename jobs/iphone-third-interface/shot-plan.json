@@ -1,0 +1,415 @@
+{
+ "audio": "assets/iphone-third-interface/vo-master.m4a",
+ "format": "top5",
+ "noCredits": {
+  "reason": "User directive 2026-08-22: a clean editorial product-discovery reel with no on-screen credits, URLs or citations. Every frame is the developer's own product video used to show the product it depicts, and the per-scene credit strings stay recorded in this sheet \u2014 only the DRAWING is suppressed. The brand restriction also forbids the product name on screen, and the credit would carry it."
+ },
+ "emphasis": [
+  "third",
+  "touch surface",
+  "one tap",
+  "emoji",
+  "gestures",
+  "third interface",
+  "APP",
+  "Wi-Fi"
+ ],
+ "caption_corrections": {
+  "wi fi": "Wi-Fi",
+  "wifi": "Wi-Fi"
+ },
+ "shots": [
+  {
+   "start_phrase": "Your Mac has",
+   "line": "Your Mac has a third input device.",
+   "asset_id": "apps-wide",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/apps-wide.mp4",
+    "zoomDir": "in",
+    "focusX": 0.42,
+    "headline": {
+     "lines": [
+      {
+       "text": "YOUR MAC HAS",
+       "kind": "label",
+       "at": 0.1
+      },
+      {
+       "text": "A THIRD",
+       "kind": "headline",
+       "at": 0.35
+      },
+      {
+       "text": "INPUT DEVICE",
+       "kind": "headline",
+       "at": 0.6
+      }
+     ],
+     "y": 0.05,
+     "theme": "dark"
+    },
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "at": 0.05,
+      "vol": 0.09
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Not the keyboard",
+   "line": "Not the keyboard, not the trackpad \u2014",
+   "asset_id": "gest-hand",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/gest-hand.mp4",
+    "zoomDir": "none",
+    "focusX": 0.46,
+    "kinetic": {
+     "text": "not the keyboard",
+     "style": "chip",
+     "at": 0.15,
+     "y": 0.72
+    }
+   }
+  },
+  {
+   "start_phrase": "the one you're",
+   "line": "the one you're already holding.",
+   "asset_id": "apps-hand",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/apps-hand.mp4",
+    "zoomDir": "in",
+    "focusX": 0.5,
+    "kinetic": {
+     "text": "the one in your hand",
+     "style": "serif",
+     "at": 0.1,
+     "y": 0.7
+    },
+    "sfx": [
+     {
+      "src": "sfx/Ui Tap.MP3",
+      "at": 0.1,
+      "vol": 0.08
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "This one app",
+   "line": "This one app makes it",
+   "asset_id": "apps-page",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/apps-page.mp4",
+    "zoomDir": "none",
+    "focusX": 0.5
+   }
+  },
+  {
+   "start_phrase": "a touch surface",
+   "line": "a touch surface for the Mac.",
+   "asset_id": "apps-grid2",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/apps-grid2.mp4",
+    "zoomDir": "in",
+    "focusX": 0.5,
+    "kinetic": {
+     "text": "a touch surface for your Mac",
+     "style": "serif",
+     "at": 0.1,
+     "y": 0.7
+    }
+   }
+  },
+  {
+   "start_phrase": "Tap an icon",
+   "line": "Tap an icon,",
+   "asset_id": "apps-tap",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/apps-tap.mp4",
+    "zoomDir": "none",
+    "focusX": 0.55,
+    "sfx": [
+     {
+      "src": "sfx/Ui Tap.MP3",
+      "at": 0.05,
+      "vol": 0.09
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "and the Mac app opens",
+   "line": "and the Mac app opens.",
+   "asset_id": "web-open",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/web-open.mp4",
+    "zoomDir": "in",
+    "focusX": 0.5,
+    "kinetic": {
+     "text": "launch Mac apps",
+     "style": "chip",
+     "at": 0.15,
+     "y": 0.7
+    }
+   }
+  },
+  {
+   "start_phrase": "Then drop in",
+   "line": "Then drop in an Apple Shortcut,",
+   "asset_id": "sc-phone",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/sc-phone.mp4",
+    "zoomDir": "none",
+    "focusX": 0.42,
+    "sfx": [
+     {
+      "src": "sfx/Ui Tap.MP3",
+      "at": 0.55,
+      "vol": 0.08
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "and a workflow",
+   "line": "and a workflow is one tap.",
+   "asset_id": "sc-mac",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/sc-mac.mp4",
+    "zoomDir": "in",
+    "focusX": 0.5,
+    "kinetic": {
+     "text": "trigger Apple Shortcuts",
+     "style": "chip",
+     "at": 0.1,
+     "y": 0.7
+    }
+   }
+  },
+  {
+   "start_phrase": "And the same for",
+   "line": "And the same for saved websites,",
+   "asset_id": "web-page",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/web-page.mp4",
+    "zoomDir": "none",
+    "focusX": 0.5,
+    "kinetic": {
+     "text": "your saved sites",
+     "style": "chip",
+     "at": 0.1,
+     "y": 0.7
+    }
+   }
+  },
+  {
+   "start_phrase": "recent apps",
+   "line": "recent apps,",
+   "asset_id": "rec-swipe",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/rec-swipe.mp4",
+    "zoomDir": "none",
+    "focusX": 0.5,
+    "kinetic": {
+     "text": "recent apps",
+     "style": "chip",
+     "at": 0.05,
+     "y": 0.7
+    }
+   }
+  },
+  {
+   "start_phrase": "an emoji in your text",
+   "line": "an emoji in your text.",
+   "asset_id": "emoji-mac",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/emoji-mac.mp4",
+    "zoomDir": "in",
+    "focusX": 0.35,
+    "kinetic": {
+     "text": "even an emoji",
+     "style": "chip",
+     "at": 0.1,
+     "y": 0.7
+    },
+    "sfx": [
+     {
+      "src": "sfx/Ui Tap.MP3",
+      "at": 0.05,
+      "vol": 0.08
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "It isn't only launching",
+   "line": "It isn't only launching, either \u2014",
+   "asset_id": "gest-hand2",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/gest-hand2.mp4",
+    "zoomDir": "none",
+    "focusX": 0.46
+   }
+  },
+  {
+   "start_phrase": "swipe, and a window",
+   "line": "swipe, and a window moves aside.",
+   "asset_id": "gest-min",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/gest-min.mp4",
+    "zoomDir": "in",
+    "focusX": 0.5,
+    "kinetic": {
+     "text": "control it with gestures",
+     "style": "chip",
+     "at": 0.1,
+     "y": 0.7
+    },
+    "sfx": [
+     {
+      "src": "sfx/Whoosh.MP3",
+      "at": 0.2,
+      "vol": 0.09
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Now, it does need",
+   "line": "Now, it does need a companion Mac app, same Wi-Fi.",
+   "tier": "generated",
+   "scene": {
+    "type": "specsheet",
+    "title": "WHAT IT TAKES",
+    "kicker": "BEFORE YOU TRY IT",
+    "rows": [
+     {
+      "label": "On the iPhone",
+      "value": "the app"
+     },
+     {
+      "label": "On the Mac",
+      "value": "a companion app",
+      "accent": true
+     },
+     {
+      "label": "Both devices",
+      "value": "same Wi-Fi"
+     }
+    ],
+    "footnote": "every action runs locally on the Mac"
+   }
+  },
+  {
+   "start_phrase": "But after that",
+   "line": "But after that, everything you repeat all day",
+   "asset_id": "rec-mac",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/rec-mac.mp4",
+    "zoomDir": "none",
+    "focusX": 0.5
+   }
+  },
+  {
+   "start_phrase": "sits beside your keyboard",
+   "line": "sits beside your keyboard \u2014",
+   "asset_id": "rec-pin",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/rec-pin.mp4",
+    "zoomDir": "none",
+    "focusX": 0.5
+   }
+  },
+  {
+   "start_phrase": "a third interface",
+   "line": "a third interface your Mac never had.",
+   "asset_id": "apps-wide",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/apps-wide.mp4",
+    "zoomDir": "out",
+    "focusX": 0.34,
+    "headline": {
+     "lines": [
+      {
+       "text": "A THIRD INTERFACE",
+       "kind": "headline",
+       "at": 0.15
+      }
+     ],
+     "y": 0.06,
+     "theme": "dark"
+    },
+    "sfx": [
+     {
+      "src": "sfx/Impact.MP3",
+      "at": 0.1,
+      "vol": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Want to try it",
+   "line": "Want to try it?",
+   "asset_id": "web-tiles",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/iphone-third-interface/web-tiles.mp4",
+    "zoomDir": "in",
+    "focusX": 0.36
+   }
+  },
+  {
+   "start_phrase": "Follow us and comment",
+   "line": "Follow us and comment APP below, and we'll send you the link in DM.",
+   "tier": "generated",
+   "scene": {
+    "type": "typecard",
+    "kinetic": {
+     "text": "Follow + comment APP",
+     "style": "serif"
+    },
+    "bg": "#1A0C00",
+    "fg": "#FFEBD4",
+    "captionBottom": 6000
+   }
+  }
+ ]
+}

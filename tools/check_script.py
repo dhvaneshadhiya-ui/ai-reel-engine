@@ -222,7 +222,13 @@ def structure_of(slug: str) -> str | None:
     p = ROOT / f"jobs/{slug}/structure.md"
     if not p.exists():
         return None
-    m = _re.search(r"^##\s*SHAPE\s*\n+\**(\w[\w -]*)", p.read_text(), _re.M)
+    # The scaffold new_job.py writes the heading as "## SHAPE (S17)" — the
+    # section-number suffix is part of the template, so the parser has to
+    # tolerate it. Without the optional group this returned None for every
+    # job created by the scaffold, and the shape-specific thresholds
+    # silently fell back to the generic ones (found 2026-08-22).
+    m = _re.search(r"^##\s*SHAPE\s*(?:\([^)]*\))?\s*\n+\**(\w[\w -]*)",
+                   p.read_text(), _re.M)
     return m.group(1).strip() if m else None
 
 

@@ -1,0 +1,11 @@
+{
+  "script_sha256": "f9d9531116dd54899b88a3a912d56346badcb95dcdb273cb32ed8d1f3b4eee63",
+  "structure_sha256": "21369f708d0f43da5c8777c45365258fe481be5a7b203f5c856e8c8d510d0224",
+  "findings": [
+    "  OPENING has no version, date or time anchor: 'Your Mac has a third input device.'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "CADENCE: only 1 sentence reaches 18 words (longest 20). The playbook asks for 'occasionally one long spec sentence' \u2014 with everything short, nothing reads as short. Nothing to push against."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 20,
+  "proposedAt": "2026-08-22T07:05:15+00:00"
+}
