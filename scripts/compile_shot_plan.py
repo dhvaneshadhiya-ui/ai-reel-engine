@@ -229,6 +229,29 @@ def media_info(path: Path) -> dict[str, float] | None:
         return None
 
 
+def duration_of(path: Path) -> float | None:
+    """Duration of ANY media file, video stream or not.
+
+    media_info() insists on a video stream because it also returns width and
+    height for the avatar's face framing. An audio-only VO track has no video
+    stream, so media_info() returned None for it and the trailing-silence
+    extension below silently never ran — leaving the scene total 0.23s short of
+    the audio and tripping validate_job (found 2026-08-22 on the first VO-only
+    reel).
+    """
+    if not path.exists() or not shutil.which("ffprobe"):
+        return None
+    result = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "json", str(path)],
+        capture_output=True, text=True, check=False,
+    )
+    try:
+        return float(json.loads(result.stdout)["format"]["duration"])
+    except (KeyError, TypeError, ValueError, json.JSONDecodeError):
+        return None
+
+
 def css_focus_x(
     face_x: float, image_width: float, image_height: float, box_width: float, box_height: float
 ) -> float:
@@ -341,10 +364,10 @@ def main() -> None:
     # shot plan may now name its own `audio`; the avatar path is still the
     # default, so every existing plan compiles identically.
     audio_rel = str(plan.get("audio") or avatar_rel)
-    audio_info = media_info(public / audio_rel)
+    audio_dur = duration_of(public / audio_rel)
     avatar_info = media_info(public / avatar_rel)
-    if audio_info is not None:
-        audio_end = min(audio_end, audio_info["duration"])
+    if audio_dur is not None:
+        audio_end = min(audio_end, audio_dur)
     face_x = 0.5
     if face_path.exists():
         try:
@@ -484,12 +507,12 @@ def main() -> None:
     # total that differs from the track by more than 0.20s.
     # Found 2026-08-21 on iphone18-colors: last word 70.04s, master 70.44s.
     # Only the FINAL beat is extended, so nothing else in the plan moves.
-    if audio_info and scenes:
-        spare = float(audio_info["duration"]) - audio_end
+    if audio_dur and scenes:
+        spare = float(audio_dur) - audio_end
         if spare > 0.01:
             scenes[-1]["durationSec"] = round(
                 scenes[-1]["durationSec"] + spare, 3)
-            audio_end = float(audio_info["duration"])
+            audio_end = float(audio_dur)
 
     # Keep INTERIOR SPACES when normalising the key. Stripping every non
     # alphanumeric collapsed "dark cherry" to "darkcherry", which matches no
@@ -499,8 +522,18 @@ def main() -> None:
         re.sub(r"[^a-z0-9 ]", "", str(key).lower()).strip(): str(value)
         for key, value in plan.get("caption_corrections", {}).items()
     }
+    # The bed comes from config.json, not from a filename typed in here.
+    # This defaulted to "music/bed-726.mp3", which is not in public/music — so
+    # the generic path produced a sheet that validate_job rejected for a
+    # missing asset every time (found 2026-08-22).
+    default_bed = "music/bed-02.mp3"
+    try:
+        default_bed = json.loads((engine / "config.json").read_text()) \
+            .get("defaults", {}).get("musicBed", default_bed)
+    except Exception:  # noqa: BLE001
+        pass
     music = plan.get("music") or {
-        "src": "music/bed-726.mp3",
+        "src": default_bed,
         "from": 0,
         "points": [
             {"t": 0, "vol": 0.11},

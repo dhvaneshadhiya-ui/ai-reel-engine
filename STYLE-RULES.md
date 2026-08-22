@@ -3348,3 +3348,90 @@ carries `beatPlanShots`: the number of HEAR/SEE rows rendered at propose
 can no longer silently claim the plan half of informed consent. Also fixed
 in passing: voice_clone.py's stale "torch 2.6.0 pin" note, which had hidden
 the real torch 2.13 / torchcodec save issue for a day.
+
+## 2026-08-22 (13) — a VO-only reel, and the four tools that assumed a face
+
+First reel built with **no presenter at all**: narration over first-party
+product footage, at the user's choice. Nothing in the constitution requires
+a face — facecam share is ADVICE (G06/G17) — but four tools had the avatar
+baked in as an assumption, and each failed in a way that looked like a
+different bug:
+
+- `compile_shot_plan.py` hardcoded `audio` to `avatar-master.mp4`, so a reel
+  whose audio is a bare voice track had no way through the generic path —
+  even though the beat-sheet contract already documents audio as "the
+  video's audio OR a wav". The shot plan may now name its own `audio`.
+- Its `media_info()` insists on a video stream because it also returns the
+  width/height the avatar's face framing needs. An audio-only track returned
+  `None`, so the trailing-silence extension silently never ran and the scene
+  total came out 0.23s short of the audio. Added `duration_of()`.
+- `validate_job.py` **blocked** on "opening scene must visibly include the
+  presenter" — the same property `reel_gates` treats as advice. Two tools
+  disagreeing about whether a presenter is optional. Now: blocks only when
+  the reel HAS a presenter and the opening hides them.
+- `duck_music.py` and `reel_gates.py --master` both read `vo.json` as
+  whisper's `segments` shape only, while `load_words` has always accepted the
+  flat `{"words": [...]}` form. A TTS that returns its own word timings
+  produces the flat form, and both died on it — one with a bare `KeyError`.
+
+**Distilled rule: an assumption held by four tools and no gate is not a
+rule, it is a habit.** When a build legitimately departs from the usual
+shape, the tools that block should be exactly the ones a gate classifies as
+blocking. Everything else advises.
+
+Also fixed: `compile_shot_plan` never emitted `format`, so every reel built
+on the generic path was judged with **news** physics whatever it declared —
+a top5 reel silently measured against the 60-80s band. `format`,
+`noCredits`, `sides`, `allowLong`/`allowLongReason` and `captionStyle` are
+now pass-throughs. `rehearse_vo.py` had the same defect and now reads the
+manifest. And `check_script.py` could not parse the heading its own
+scaffold writes (`## SHAPE (S17)` vs a bare `## SHAPE`), so every scaffolded
+job silently fell back to generic thresholds.
+
+## 2026-08-22 (14) — focusX is object-position, not the window centre
+
+Every off-centre framing in this reel was verified on a real extracted
+frame before it went in the plan — and every one of them still came out
+wrong, pulled toward the middle. The scouting crops used
+`crop=608:1080:centre*1920-304`, i.e. focusX as the window CENTRE. Remotion
+passes focusX to CSS `object-position`, where it is a fraction of the
+**overflow**: the window's left edge in source pixels is
+`focusX * (1920 - 608)`. The two agree only at 0.5, which is why nothing
+looked broken in testing and the hook lost the iPhone in the render.
+
+    focusX_remotion = (centre * 1920 - 304) / 1312
+
+**Distilled rule: verifying a frame proves the CONTENT, not the framing.**
+A crop test is only evidence if it uses the renderer's own geometry. Check
+an off-centre focusX against the rendered output, never against a
+hand-rolled ffmpeg crop.
+
+## 2026-08-22 (15) — OCR is a screen, not a proof
+
+The brand restriction forbade the product name anywhere on screen. A
+tesseract sweep (4fps, 467 frames) over the seven official source clips
+found the wordmark in two of them — and MISSED a six-second title card in
+the hero montage where the name sits in small italic script under the
+title. A manual frame review caught it.
+
+Every subsequent name-safe window in the manifest carries `nameSafe`, and
+the finished render is audited twice: OCR at two page-segmentation modes on
+2x-upscaled frames, AND a full visual sweep of every frame at 5fps. The
+visual sweep is what caught three defects OCR cannot see:
+
+- a clip opening on the vendor's red promo card under the word "gestures"
+- a clip opening on the Mac's text composer under "a touch control surface"
+- a named YouTube creator's face filling the Mac screen for ~3s, inside
+  first-party footage — the sourcing rule was satisfied and the intent was
+  not
+
+**Distilled rule: a text detector answers "is this string present". It does
+not answer "is this frame right".** Only the second question is the one the
+critic pass exists to ask, and only eyes answer it.
+
+### Treatments used (do not repeat next reel for the same kind of info)
+- hook: wide two-device desk shot + `headline` label/headline build
+- feature labels: `chip` kinetic at y 0.70, one per feature beat
+- requirements: `specsheet` dark card, 3 rows, one accent row
+- payoff: return to the OPENING shot, zoomed out, headline echoing the hook
+- CTA: `commentcta` (now keyword-parameterised) over the opening desk shot

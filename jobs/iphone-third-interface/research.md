@@ -21,7 +21,7 @@ script, so nothing here needs an independent origin to be honest.
 - CLAIM: The iPhone acts as a third control interface for the Mac, after
   the keyboard and the trackpad.
   TIER: official
-  SPOKEN: "a third interface your Mac never had"
+  SPOKEN: "a third interface for your Mac"
   SRC: https://choclift.com/
   VIA: developer's own site — its exact positioning line is "After the
        keyboard and trackpad redefined how we interact with computers,
@@ -30,7 +30,7 @@ script, so nothing here needs an independent origin to be honest.
 
 - CLAIM: Tapping an icon on the iPhone launches or switches to a Mac app.
   TIER: official
-  SPOKEN: "Tap an icon, and the Mac app opens"
+  SPOKEN: "Tap an icon, and your Mac app opens"
   SRC: https://choclift.com/
   VIA: developer's own site — "Launch and switch between Mac apps
        instantly from your iPhone with up to 8 customizable pages."
@@ -38,14 +38,14 @@ script, so nothing here needs an independent origin to be honest.
 
 - CLAIM: Apple Shortcuts can be added and triggered from the iPhone.
   TIER: official
-  SPOKEN: "drop in an Apple Shortcut, and a workflow is one tap"
+  SPOKEN: "Add an Apple Shortcut, and a workflow becomes one tap"
   SRC: https://choclift.com/
   VIA: developer's own site — "Add shortcuts, customize them with emojis
        and trigger them directly". Demonstrated in official-shortcuts.
 
 - CLAIM: Saved websites can be launched on the Mac with a single tap.
   TIER: official
-  SPOKEN: "saved websites"
+  SPOKEN: "open saved websites"
   SRC: https://choclift.com/
   VIA: developer's own site — "Save websites with custom names and launch
        them with a single tap." Demonstrated in official-websites.
@@ -53,7 +53,7 @@ script, so nothing here needs an independent origin to be honest.
 - CLAIM: Recently opened Mac apps can be reached and switched to from the
   iPhone.
   TIER: official
-  SPOKEN: "recent apps"
+  SPOKEN: "jump to recent apps"
   SRC: https://choclift.com/
   VIA: developer's own site — "Jump back through a timeline of your recent
        apps and pin favorites to the front. No more Cmd+Tab cycling."
@@ -62,7 +62,7 @@ script, so nothing here needs an independent origin to be honest.
 - CLAIM: An emoji tapped on the iPhone is inserted into text being typed
   on the Mac.
   TIER: official
-  SPOKEN: "an emoji in your text"
+  SPOKEN: "drop an emoji straight into your text"
   SRC: https://choclift.com/
   VIA: developer's own site — "When you're typing on Mac and need that one
        favorite emoji, simply tap the Emoji Bar ... to instantly add it to
@@ -79,7 +79,7 @@ script, so nothing here needs an independent origin to be honest.
 - CLAIM: It needs a companion Mac app, and both devices on the same Wi-Fi;
   the actions run locally on the Mac.
   TIER: official
-  SPOKEN: "it does need a companion Mac app, same Wi-Fi"
+  SPOKEN: "It does need a companion Mac app and the same"
   SRC: https://apps.apple.com/us/app/choclift-workflow-sweetener/id6759246284
   VIA: developer's own App Store listing — "All actions are executed
        locally on your Mac through the companion app"; Requires iOS 18.0

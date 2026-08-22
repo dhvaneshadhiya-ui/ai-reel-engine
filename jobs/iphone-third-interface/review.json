@@ -1,11 +1,12 @@
 {
-  "script_sha256": "f9d9531116dd54899b88a3a912d56346badcb95dcdb273cb32ed8d1f3b4eee63",
+  "script_sha256": "d90af6d0c96e3bdedc5dec6a9b82e5d3d7fff3be30b272519bbadd9f4dc1ee7f",
   "structure_sha256": "21369f708d0f43da5c8777c45365258fe481be5a7b203f5c856e8c8d510d0224",
   "findings": [
-    "  OPENING has no version, date or time anchor: 'Your Mac has a third input device.'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
-    "CADENCE: only 1 sentence reaches 18 words (longest 20). The playbook asks for 'occasionally one long spec sentence' \u2014 with everything short, nothing reads as short. Nothing to push against."
+    "  BRIDGES 2/12 sentences (17%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  NO OPEN LOOP \u2014 sentence 4 promises something ('The one you\u2019re already holding.') and nothing later returns to it. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "  OPENING has no version, date or time anchor: 'Your Mac has a third input device.'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)"
   ],
   "research_advice": [],
-  "beatPlanShots": 20,
-  "proposedAt": "2026-08-22T07:05:15+00:00"
+  "beatPlanShots": 23,
+  "proposedAt": "2026-08-22T07:25:03+00:00"
 }

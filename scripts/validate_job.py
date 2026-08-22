@@ -112,7 +112,16 @@ def main() -> None:
     required = {
         "brief": engine / f"jobs/{base}/brief.json",
         "giveaway": engine / f"jobs/{base}/giveaway.md",
-        "script": engine / f"scripts/{base}.md",
+        # THE APPROVED NARRATION, not a second copy of it. This pointed at
+        # scripts/<slug>.md while script_approval.py hashes
+        # jobs/<slug>/script.md — so the CTA-keyword check ran against a file
+        # that G27 does not protect and that nothing keeps in step with the
+        # words actually spoken. Two copies drift; check the one that is
+        # binding (2026-08-22). Older reels that only have the scripts/ copy
+        # still validate through the fallback below.
+        "script": (engine / f"jobs/{base}/script.md"
+                   if (engine / f"jobs/{base}/script.md").exists()
+                   else engine / f"scripts/{base}.md"),
         "manifest": public / f"assets/{base}/manifest.json",
         "beats": engine / f"src/beats/{slug}.json",
     }
@@ -189,8 +198,22 @@ def main() -> None:
             or "avatar" in str(first.get("src", "")).lower()
             or "avatar" in str(first.get("bottomSrc", "")).lower()
         )
+        # A reel with NO presenter anywhere is a deliberate build (VO over
+        # footage), not an opening that forgot the face. reel_gates already
+        # treats facecam share as ADVICE (G06/G17); this blocked on it, so the
+        # two tools disagreed about whether a presenter is optional. Blocks
+        # only when the reel HAS a presenter and the opening hides them.
+        has_presenter = any(
+            "avatar" in str(sc.get(k, "")).lower()
+            for sc in scenes for k in ("src", "topSrc", "bottomSrc")
+        )
         if not face_ok:
-            errors.append("opening scene must visibly include the presenter")
+            if has_presenter:
+                errors.append("opening scene must visibly include the presenter")
+            else:
+                warnings.append(
+                    "no presenter anywhere — VO-only reel; opening face rule "
+                    "skipped")
         if first.get("durationSec", 0) > 2.8:
             warnings.append("opening face scene exceeds 2.8s")
         average = total / len(scenes)

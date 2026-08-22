@@ -1,0 +1,8 @@
+{
+  "sha256": "d90af6d0c96e3bdedc5dec6a9b82e5d3d7fff3be30b272519bbadd9f4dc1ee7f",
+  "approvedAt": "2026-08-22T07:25:25+00:00",
+  "words": 134,
+  "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build.",
+  "_provenance": "The user WROTE these words. They sent the revised script in chat on 2026-08-22 with the instruction \"Revised script and use it as it is\", after being shown the previous draft, the 20-shot beat plan and the open questions. Their revision keeps the gestures line and the requirements line, which answers open questions 3 and 1. Approval here records their direction to use this exact text.",
+  "_runtime_flag": "Approved knowing it runs long: 134 words is 49-57s at this voice's measured pace, against the user's own 35-45s target and the 26-48s top5 band. The user was told and chose these words. Runtime is judgement, not law."
+}

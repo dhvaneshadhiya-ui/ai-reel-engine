@@ -1,19 +1,17 @@
 Your Mac has a third input device.
 
-Not the keyboard, not the trackpad — the one you're already holding.
+Not the keyboard. Not the trackpad. The one you’re already holding.
 
-This one app makes it a touch surface for the Mac.
+There is an app that turns your iPhone into a touch control surface for your Mac.
 
-Tap an icon, and the Mac app opens.
+Tap an icon, and your Mac app opens.
 
-Then drop in an Apple Shortcut, and a workflow is one tap.
+Add an Apple Shortcut, and a workflow becomes one tap.
 
-And the same for saved websites, recent apps, an emoji in your text.
+You can also open saved websites, jump to recent apps, or drop an emoji straight into your text.
 
-It isn't only launching, either — swipe, and a window moves aside.
+And it’s not only for launching things—swipe, and a window moves aside.
 
-Now, it does need a companion Mac app, same Wi-Fi.
+It does need a companion Mac app and the same Wi‑Fi network. But once it’s set up, the actions you repeat all day sit right beside your keyboard: a third interface for your Mac.
 
-But after that, everything you repeat all day sits beside your keyboard — a third interface your Mac never had.
-
-Want to try it? Follow us and comment APP below, and we'll send you the link in DM.
+Want to try it? Follow us and comment “APP” below, and we’ll send you the link in DM.

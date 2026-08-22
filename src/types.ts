@@ -500,6 +500,12 @@ export type Scene =
       src: string;
       from?: number;
       focusX?: number;
+      /** The word the viewer is asked to comment. Defaults to "OPEN" — the
+       *  keyword was hardcoded in the component until 2026-08-22, which made
+       *  the only CTA scene type in the library usable by exactly one reel. */
+      keyword?: string;
+      /** The question above the comment field. Defaults to "WANT THE WEBSITE?". */
+      question?: string;
       typeAt?: number;
       growAt?: number;
       dropAt?: number;

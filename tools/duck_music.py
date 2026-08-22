@@ -52,8 +52,17 @@ def words_of(slug: str) -> list[tuple[float, float]]:
     if not p.exists():
         sys.exit(f"no word timings at {p} — the voice stage has not run")
     d = json.loads(p.read_text())
-    ws = [(float(w["start"]), float(w["end"]))
-          for s in d.get("segments", []) for w in s.get("words", [])]
+    # BOTH vo.json SHAPES, matching compile_shot_plan.load_words. The flat
+    # {"words": [...]} form has always been valid there; here it fell through
+    # to an empty list and exited with "no word-level timings", which reads
+    # like a broken voice stage rather than a shape this reader never handled.
+    # Third tool in this repo to disagree with the others about one file
+    # (found 2026-08-22).
+    ws = [(float(w["start"]), float(w["end"])) for w in d.get("words", [])
+          if isinstance(w, dict) and "start" in w and "end" in w]
+    if not ws:
+        ws = [(float(w["start"]), float(w["end"]))
+              for s in d.get("segments", []) for w in s.get("words", [])]
     if not ws:
         sys.exit(f"{p} has no word-level timings")
     return sorted(ws)

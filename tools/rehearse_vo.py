@@ -240,7 +240,21 @@ def main() -> None:
 
     script = read_narration(args.slug)
     nwords = len(script.split())
-    fmt = args.format or DEFAULT_FORMAT
+    # READ THE REEL'S DECLARED FORMAT, like script_approval.py already does.
+    # This defaulted straight to DEFAULT_FORMAT ("news"), so a top5 or
+    # comparison reel was rehearsed against the 60-80s news band and told to
+    # "rewrite before generating" on a runtime that was fine for its genre —
+    # or, worse, passed one that was not. Found 2026-08-22 on a top5 reel that
+    # propose() had correctly judged against 26-48s moments earlier.
+    fmt = args.format
+    if not fmt:
+        man_p = ROOT / "public" / "assets" / args.slug / "manifest.json"
+        if man_p.exists():
+            try:
+                fmt = json.loads(man_p.read_text()).get("format")
+            except Exception:  # noqa: BLE001
+                fmt = None
+    fmt = fmt or DEFAULT_FORMAT
     prof = FORMATS.get(fmt) or die(f"unknown format {fmt!r}")
     lo, hi = prof["runtime"]
 

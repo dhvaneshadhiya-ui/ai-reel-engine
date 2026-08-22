@@ -1461,8 +1461,12 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
   const growAt = scene.growAt ?? 1.5;
   const dropAt = scene.dropAt ?? 2.5;
   const FY = 1500;
-  const typed = Math.min(4, Math.max(0, Math.floor((t - typeAt) / 0.09)));
-  const word = "OPEN".slice(0, typed);
+  // Keyword and question are per-reel: a comment-gate CTA is only as good as
+  // the word it asks for. Defaults reproduce the original reel exactly.
+  const keyword = (scene.keyword ?? "OPEN").toUpperCase();
+  const question = scene.question ?? "WANT THE WEBSITE?";
+  const typed = Math.min(keyword.length, Math.max(0, Math.floor((t - typeAt) / 0.09)));
+  const word = keyword.slice(0, typed);
   const growP =
     t < dropAt
       ? spring({
@@ -1497,7 +1501,7 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
   return (
     <AbsoluteFill style={{ background: "#000", fontFamily: SANS }}>
       <Face src={scene.src} from={scene.from} focusX={scene.focusX} />
-      {/* WANT THE WEBSITE? */}
+      {/* the question */}
       {t < growAt + 0.2 && (
         <div
           style={{
@@ -1513,7 +1517,7 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
             transform: `translateY(${(1 - wantP) * 40}px)`,
           }}
         >
-          WANT THE WEBSITE?
+          {question}
         </div>
       )}
       {/* comment field */}
@@ -1536,7 +1540,7 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
         }}
       >
         {t >= dropAt + 0.3 ? (
-          <span style={{ fontWeight: 900, color: CYAN }}>OPEN</span>
+          <span style={{ fontWeight: 900, color: CYAN }}>{keyword}</span>
         ) : word && growP < 0.2 ? (
           <span style={{ fontWeight: 900 }}>{word}</span>
         ) : (
@@ -1574,7 +1578,7 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
               scale's top step (hero 130) by design — typeAt says "hero, larger"
               instead of leaving a bare 190 that reads as drift. */}
           <div style={{ ...typeScale("hero", 1.46), fontWeight: 900, letterSpacing: "0.02em", color: CYAN, lineHeight: 0.95 }}>
-            OPEN
+            {keyword}
           </div>
           <div
             style={{
@@ -1658,7 +1662,7 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
               padding: "10px 54px",
             }}
           >
-            “OPEN”
+            {`“${keyword}”`}
           </span>
         </div>
       )}

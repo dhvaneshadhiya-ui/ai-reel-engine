@@ -1822,7 +1822,19 @@ def main() -> None:
     vo_path = ROOT / f"public/assets/{asset_slug}/vo.json"
     if vo_path.exists():
         raw = json.loads(vo_path.read_text())
-        ws = [w for s in raw["segments"] for w in s["words"]]
+        # ACCEPT BOTH vo.json SHAPES, the way compile_shot_plan.load_words does.
+        # This read raw["segments"] only, so a vo.json in the flat {"words":[...]}
+        # form — which load_words has always accepted, and which a TTS that
+        # returns its own word timings produces directly — crashed the one entry
+        # point anybody runs, with a bare KeyError. Two tools reading the same
+        # file disagreed on its contract (found 2026-08-22).
+        if isinstance(raw.get("words"), list):
+            ws = raw["words"]
+        elif isinstance(raw.get("segments"), list):
+            ws = [w for s in raw["segments"] for w in s["words"]]
+        else:
+            raise SystemExit(
+                f"{vo_path} has neither a 'words' nor a 'segments' list")
         vo_end = ws[-1]["end"]
         # THIS LINE WAS MISSING (found 2026-08-17). The CLI read vo.json, pulled
         # the words out, and used them ONLY for vo_end — so `vo_words` was never
