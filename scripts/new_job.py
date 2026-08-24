@@ -50,11 +50,15 @@ def main() -> None:
     parser.add_argument("--details", default="")
     parser.add_argument("--cta-keyword", default="")
     parser.add_argument("--target-seconds", type=int, default=90)
-    # Background music is OPTIONAL per reel (user directive 2026-08-22);
-    # SFX remain the default sound layer either way. The flag flows to the
-    # shot plan, compile carries it onto the sheet, and G09 stays silent.
+    # STANDING RULE (2026-08-22/24, user directive): no music bed by default —
+    # every reel ships voice + SFX unless it opts back in. --music flows to
+    # the shot plan; compile builds the locked default bed from it. --no-music
+    # is kept as a no-op for muscle memory: it now names the default.
+    parser.add_argument("--music", action="store_true",
+                        help="opt this reel INTO a background music bed "
+                             "(default is voice + SFX only)")
     parser.add_argument("--no-music", action="store_true",
-                        help="VO + SFX only — no background music bed")
+                        help="(default — kept for compatibility)")
     parser.add_argument(
         "--engine",
         type=Path,
@@ -84,7 +88,7 @@ def main() -> None:
         "style": locked_style(engine),
         "target_seconds": args.target_seconds,
         "cta_keyword": keyword,
-        "music": not args.no_music,
+        "music": bool(args.music),
         "created_at": datetime.now(timezone.utc).isoformat(),
         "status": "initialized",
     }
@@ -98,8 +102,8 @@ def main() -> None:
         "caption_corrections": {},
         "shots": [],
     }
-    if args.no_music:
-        shot_plan["noMusic"] = True
+    if args.music:
+        shot_plan["music"] = True      # compile builds the locked default bed
 
     write_new(
         engine / f"jobs/{slug}/brief.json",
