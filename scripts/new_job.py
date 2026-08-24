@@ -50,6 +50,11 @@ def main() -> None:
     parser.add_argument("--details", default="")
     parser.add_argument("--cta-keyword", default="")
     parser.add_argument("--target-seconds", type=int, default=90)
+    # Background music is OPTIONAL per reel (user directive 2026-08-22);
+    # SFX remain the default sound layer either way. The flag flows to the
+    # shot plan, compile carries it onto the sheet, and G09 stays silent.
+    parser.add_argument("--no-music", action="store_true",
+                        help="VO + SFX only — no background music bed")
     parser.add_argument(
         "--engine",
         type=Path,
@@ -79,6 +84,7 @@ def main() -> None:
         "style": locked_style(engine),
         "target_seconds": args.target_seconds,
         "cta_keyword": keyword,
+        "music": not args.no_music,
         "created_at": datetime.now(timezone.utc).isoformat(),
         "status": "initialized",
     }
@@ -92,6 +98,8 @@ def main() -> None:
         "caption_corrections": {},
         "shots": [],
     }
+    if args.no_music:
+        shot_plan["noMusic"] = True
 
     write_new(
         engine / f"jobs/{slug}/brief.json",

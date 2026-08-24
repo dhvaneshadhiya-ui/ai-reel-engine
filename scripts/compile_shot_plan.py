@@ -540,15 +540,22 @@ def main() -> None:
             .get("defaults", {}).get("musicBed", default_bed)
     except Exception:  # noqa: BLE001
         pass
-    music = plan.get("music") or {
-        "src": default_bed,
-        "from": 0,
-        "points": [
-            {"t": 0, "vol": 0.11},
-            {"t": max(0, audio_end - 0.8), "vol": 0.11},
-            {"t": round(audio_end, 3), "vol": 0.0},
-        ],
-    }
+    # A shot plan that declares noMusic gets NO default bed, and the sheet
+    # carries the declaration — G09 treats it as the whole requirement
+    # (background music OPTIONAL, user directive 2026-08-22). SFX cues on the
+    # scenes are untouched: they are a different layer (G08/G28/G40).
+    if plan.get("noMusic"):
+        music = None
+    else:
+        music = plan.get("music") or {
+            "src": default_bed,
+            "from": 0,
+            "points": [
+                {"t": 0, "vol": 0.11},
+                {"t": max(0, audio_end - 0.8), "vol": 0.11},
+                {"t": round(audio_end, 3), "vol": 0.0},
+            ],
+        }
     beats = {
         "id": slug,
         "fps": 30,
@@ -556,12 +563,15 @@ def main() -> None:
         "height": 1920,
         "style": locked_style(engine),
         "audio": audio_rel,
-        "music": music,
         "captionStyle": locked_caption_style(engine),
         "emphasis": plan.get("emphasis", []),
         "scenes": scenes,
         "captions": caption_words(words, corrections),
     }
+    if music is not None:
+        beats["music"] = music
+    else:
+        beats["noMusic"] = True
     # FORMAT changes the gate physics (news / top5 / comparison), and this
     # compiler never emitted it — so every reel built here was judged as `news`
     # whatever it actually was. noCredits is the user's per-reel call on

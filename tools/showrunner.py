@@ -274,7 +274,6 @@ def steps(slug: str) -> list[dict]:
         dict(key="packaging",
              skills=["social               titles, captions, cadence (Instagram 5 hashtags)",
                      "youtube-seo          YouTube title/description/tags",
-                     "thumbnail-design     the thumbnail BRIEF (we render it ourselves)",
                      "content-repurposer   spin the reel into other platforms afterwards"],
              label="Title, caption, hashtags, alt text",
              done=_p(f"jobs/{slug}/packaging.md").exists(),

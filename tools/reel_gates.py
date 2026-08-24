@@ -507,25 +507,24 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 f"G08 SFX {c.get('src')} vol {v} outside "
                 f"{SXV_MIN}-{SXV_MAX} for format {fmt_name!r}.")
 
-    # G09 — music bed present and automated, never flat
+    # G09 — background music is OPTIONAL; the CHOICE is what gets declared.
     #
-    # 2026-08-17: added `noMusic`, the same shape as G02's allowLong, because a
-    # VO-only cut is a legitimate DERIVATIVE of a finished reel (accessibility,
-    # a client's own bed, a broadcaster who strips audio anyway) rather than a
-    # reel that forgot its music. It has to be argued for in one line so it
-    # cannot be flipped on to silence a complaint — which is the whole reason
-    # the escape hatch is a written reason and not a bare boolean.
-    # Re-applied 2026-08-17 after the two-machine merge: sync/main did not have
-    # it, and taking sync wholesale would have dropped the VO-only cut.
+    # INVERTED 2026-08-22 by user directive: "make it optional to make video
+    # without background music; sound effects stay the default." The
+    # 2026-08-17 design treated a music-free reel as an argued EXCEPTION
+    # (noMusic + a written noMusicReason); it is now a first-class choice and
+    # the reason is accepted but no longer demanded. What survives is the
+    # original 2026-07-22 problem this gate was born for: a reel that FORGOT
+    # its bed must still be distinguishable from a chosen VO-only cut — so a
+    # sheet with neither `music` nor `noMusic: true` still advises. SFX are a
+    # separate layer (G08/G28/G40) and remain the default, untouched.
     no_music = bool(beats.get("noMusic"))
-    if no_music and not str(beats.get("noMusicReason") or "").strip():
-        errors.append(
-            "G09 noMusic is set with no `noMusicReason` — shipping a reel with "
-            "no bed has to be argued for in one line, not just switched on.")
     music = beats.get("music")
     if not music and not no_music:
-        errors.append("G09 no music bed — every reel carries one (2026-07-22). "
-                      "A deliberate VO-only cut sets noMusic + noMusicReason.")
+        errors.append("G09 no music bed and no `noMusic: true` — background "
+                      "music is OPTIONAL (user directive 2026-08-22), but the "
+                      "choice is declared: set noMusic so a forgotten bed can "
+                      "be told apart from a chosen VO-only cut.")
     elif music and len({p["vol"] for p in music.get("points", [])}) < 2:
         errors.append("G09 music bed is flat — volume must be automated "
                       "(hook full → duck → rise at the reveal → fade).")

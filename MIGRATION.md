@@ -99,8 +99,8 @@ ends land in the clone. So all 661 files of `hyperframes-*`, `remotion-*`,
 `media-use`, `news-reel`, `viral-hook-writer` and the rest arrive intact with no
 install step. Verified by cloning to a scratch folder and resolving every one.
 
-**Global skills do not.** Six of them — `find-skills`, `humanizer`,
-`fact-check-workflow`, `youtube-seo`, `thumbnail-design`, `ffmpeg-ytdlp` — live
+**Global skills do not.** Five of them — `find-skills`, `humanizer`,
+`fact-check-workflow`, `youtube-seo`, `ffmpeg-ytdlp` — live
 in `~/.agents/skills`, outside every repo, because they are useful in any
 project and not just this one. Git cannot carry an installed copy of something
 that sits outside the tree. One command puts them back:
@@ -627,7 +627,7 @@ lives outside the repo:
 
 | Not in git | Redo with |
 |---|---|
-| **6 global skills** — find-skills, humanizer, fact-check-workflow, youtube-seo, thumbnail-design, ffmpeg-ytdlp | `bash tools/install_global_skills.sh` — one command, idempotent, verifies afterwards |
+| **5 global skills** — find-skills, humanizer, fact-check-workflow, youtube-seo, ffmpeg-ytdlp (thumbnail-design removed 2026-08-22, user directive) | `bash tools/install_global_skills.sh` — one command, idempotent, verifies afterwards |
 | **chatterbox venv** | `python3 -m venv ~/.venvs/chatterbox && ~/.venvs/chatterbox/bin/pip install chatterbox-tts` — NEVER system-wide, it downgrades torch under whisper |
 | **PATH in `~/.zshenv`** | §3.4 — `.zshrc` is interactive-only, so agent-run commands never see it |
 | **ffmpeg-full, manim, deno, yt-dlp-ejs** | §2.1 / §3.2 |

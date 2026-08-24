@@ -27,7 +27,21 @@ THE TEXT IS A PROMISE, NOT THE TITLE. The thumbnail SHOWS, the title TELLS —
 repeating the title wastes the only two seconds you get. Keep each line to <= 4
 words: at phone size (~120-210px wide) anything longer is a grey smear.
 """
+
 from __future__ import annotations
+
+
+# ── RETIRED, user directive 2026-08-22 ──────────────────────────────────────
+# "Drop making YouTube thumbnails." The pipeline no longer produces them; the
+# renderer below is kept intact so the decision is reversible by deleting this
+# guard, and the guard exists because a retired step that only lives in prose
+# gets un-retired by the next session that never read the prose.
+import sys as _sys
+if __name__ == "__main__" and "--i-know-its-retired" not in _sys.argv:
+    _sys.exit("RETIRED (user directive 2026-08-22): the pipeline no longer "
+              "makes YouTube thumbnails.\nSee STYLE-RULES.md. To run anyway "
+              "(e.g. the user reversed the call): --i-know-its-retired")
+
 
 import argparse
 import json

@@ -3655,3 +3655,27 @@ Three things worth carrying:
   backdrop being 2.40s under a 3.74s scene — it had been freezing for the
   tail, which nothing flags because the scene type is not `footage` and G13
   only measures those.
+
+## 2026-08-22 — two user directives: music is optional, thumbnails are dropped
+
+**1. Background music is OPTIONAL per reel; SFX stay the default.** G09
+inverted: the 2026-08-17 design treated a music-free reel as an argued
+exception (noMusic + a mandatory written reason); it is now a first-class
+choice. What survives is the gate's original 2026-07-22 purpose — a reel
+that FORGOT its bed must be distinguishable from a chosen VO-only cut — so
+`noMusic: true` still declares the choice, reason accepted but not
+demanded. Plumbed end to end: `new_job.py --no-music` → shot-plan
+`noMusic` → compile skips the default bed and stamps the sheet → G09
+silent. SFX untouched (G08/G28/G40). Suite: the old "noMusic without
+reason fires" case became its inverse — a declared music-free reel must
+stay SILENT — so a future merge cannot quietly restore the old law
+(108 gate checks).
+
+**2. YouTube thumbnails are DROPPED.** `tools/make_thumbnail.py` refuses
+with a dated pointer here (`--i-know-its-retired` overrides, for the day
+the call reverses; the Remotion renderer and `Thumbnail.tsx` stay in code
+for the same reason). The `thumbnail-design` global skill is removed from
+the installer and this machine — doctor reads the installer's list, so its
+count self-updates to 5. Every doc mention updated (CLAUDE.md, MIGRATION,
+showrunner packaging stage). The 2026-08-19 thumbnail entries above are
+superseded by this one; the ledger keeps them because it is append-only.

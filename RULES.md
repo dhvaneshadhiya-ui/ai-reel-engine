@@ -396,9 +396,12 @@ technical term appears on screen in standard notation. [GATE:G16]
 
 ## 8. Sound
 
-- Music bed on every reel, volume-automated, never flat: full at the hook →
-  duck through explanation → rise at the reveal → up at the CTA → fade.
-  [GATE:G09]
+- Background music is OPTIONAL per reel (user directive 2026-08-22).
+  When present: volume-automated, never flat — full at the hook →
+  duck under VO → rise at the reveal → fade. When absent: declare
+  `noMusic: true` so a forgotten bed is distinguishable from a chosen
+  VO-only cut; no reason required. SFX remain the default sound layer
+  (G08/G28/G40 unchanged). [G09, advice]
 - **6–9 SFX cues**, vols 0.10–0.19. Ordinary cuts stay silent. [GATE:G08]
 - Master to −14 LUFS, verify with `ebur128`. [EYE]
 

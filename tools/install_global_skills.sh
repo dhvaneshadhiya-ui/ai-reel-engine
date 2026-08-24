@@ -27,7 +27,8 @@ SKILLS=(
   "blader/humanizer@humanizer"                            # make an approved-shape script read human
   "jamditis/claude-skills-journalism@fact-check-workflow" # verify a claim before it becomes a beat
   "kostja94/marketing-skills@youtube-seo"                 # YouTube title / description / tags
-  "social-media-skills/skills@thumbnail-design"           # the thumbnail BRIEF (we render it ourselves)
+  # thumbnail-design REMOVED 2026-08-22 — user directive: no more YouTube
+  # thumbnails. doctor reads this list, so the count updates itself.
 )
 
 echo "== global skills =="

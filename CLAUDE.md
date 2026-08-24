@@ -256,7 +256,7 @@ This file wins over all of them:
 1. **`news-reel` — ALWAYS, for anything that produces a video here.** It is
    the only skill that knows this repo's pipeline, gates and locked settings.
 2. **`social`** — ONLY for packaging a finished reel: titles, captions,
-   hashtags, thumbnails, posting cadence.
+   hashtags, posting cadence.
 3. **`video`** — generic AI-video reference (Synthesia, Veo, Sora, Runway,
    Hyperframes). **Not this pipeline.** Do NOT follow its workflow advice for
    a reel; consult it only if the user asks about an external tool by name.
@@ -307,7 +307,7 @@ re-check both global paths.
 
 ### GLOBAL skills (2026-08-17) — outside the repo, at the user's call
 
-Six skills live in `~/.agents/skills/`, symlinked into `~/.claude/skills/`.
+Five skills live in `~/.agents/skills/`, symlinked into `~/.claude/skills/`.
 They are the ONLY things on this machine outside the repo. Each was READ before
 installing and none is a router: none claims to be a default or a mandatory
 entry point, so none can contend with `news-reel` for a reel request the way the
@@ -319,7 +319,6 @@ entry point, so none can contend with `news-reel` for a reel request the way the
 | `humanizer` | making an approved-shape script read like a person wrote it | blader/humanizer (35.9k★) |
 | `fact-check-workflow` | verifying a claim BEFORE it becomes a beat with a receipt | jamditis/claude-skills-journalism |
 | `youtube-seo` | YouTube title / description / tags — the one packaging gap | kostja94/marketing-skills |
-| `thumbnail-design` | the thumbnail BRIEF: promise, CLICK framework, A/B plan | social-media-skills/skills |
 | `ffmpeg-ytdlp` | measured ffmpeg/ffprobe/yt-dlp recipes + the macOS arch trap | LOCAL — `skills-global/` |
 
 **Two kinds, and the difference matters.** The first five come from the skills
@@ -346,12 +345,11 @@ narration, so a post-approval rewrite stops the build (correctly). Feed it our
 own shipped scripts as a voice sample — a sample outranks its own style rules,
 so calibrate rather than accept its defaults.
 
-**`thumbnail-design` briefs, it does not render.** Its own words: "a human or
-image tool creates the final raster". Ours is `tools/make_thumbnail.py` ->
-`src/Thumbnail.tsx`, a 1280x720 Remotion still built from a real frame of the
-reel. Chosen over `higgsfield-youtube-thumbnail` (16.4K installs) because that
+**`thumbnail-design` — REMOVED 2026-08-22, user directive: no more YouTube
+thumbnails.** `tools/make_thumbnail.py` now refuses with a pointer here; the
+Remotion renderer stays in code so the call is reversible. (Historical note: the skill had been chosen over `higgsfield-youtube-thumbnail` (16.4K installs) because that
 one wants `curl | sh` of a third-party CLI, a paid account, and returns an AI
-illustration — wrong on cost, on trust, and on substance for sourced reporting.
+illustration — wrong on cost, on trust, and on substance for sourced reporting.)
 
 **`youtube-seo` cites uncited stats** ("156% longer view durations", "89% better
 CTR"). Take its structure, ignore its numbers — G23 discipline applies to

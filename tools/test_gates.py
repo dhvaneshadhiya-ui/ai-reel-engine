@@ -529,9 +529,7 @@ CASES = [
     (lambda s: s["scenes"][9].__setitem__(
         "sfx", [{"src": "sfx2/risers-01.mp3", "vol": 0.15}]),
      "G40", "riser with no payoff in the next 3 beats"),
-    (lambda s: s.update(music=None), "G09", "no music bed"),
-    (lambda s: s.update(music=None, noMusic=True),
-     "G09", "noMusic switched on with no written reason"),
+    (lambda s: s.update(music=None), "G09", "no bed and no declared choice"),
     (lambda s: s["music"].update(points=[{"t": 0, "vol": 0.1},
                                          {"t": 60, "vol": 0.1}]), "G09", "flat bed"),
     (lambda s: s.update(emphasis=[]), "G10", "empty emphasis"),
@@ -717,6 +715,24 @@ CASES = [
 
 for mutate, gate, label in CASES:
     expect_fail(mutate, gate, label)
+
+# G09 INVERTED 2026-08-22 (user directive): background music is optional, so
+# `noMusic: true` ALONE — no reason — must now be silent. The old suite
+# asserted the opposite; this is the negative case that keeps the inversion
+# from quietly reverting in a future merge (the 2026-08-17 two-machine sync
+# nearly dropped the opt-out once already).
+_s = copy.deepcopy(BASE)
+_s.update(music=None, noMusic=True)
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST,
+                       vo_words=VO_WORDS)
+    _hits = [a for a in _adv if "G09" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G09" in str(a)]
+if _hits:
+    print(f"  FAIL G09 fired on a declared music-free reel: {_hits[0][:90]}")
+    raise SystemExit(1)
+_counted("G09 silent — noMusic:true needs no reason (music is optional)")
 
 
 # ── G31, the finished master ────────────────────────────────────────────────
