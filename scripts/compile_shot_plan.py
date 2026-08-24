@@ -540,15 +540,40 @@ def main() -> None:
             .get("defaults", {}).get("musicBed", default_bed)
     except Exception:  # noqa: BLE001
         pass
-    music = plan.get("music") or {
-        "src": default_bed,
-        "from": 0,
-        "points": [
-            {"t": 0, "vol": 0.11},
-            {"t": max(0, audio_end - 0.8), "vol": 0.11},
-            {"t": round(audio_end, 3), "vol": 0.0},
-        ],
-    }
+    # STANDING RULE (2026-08-24, user directive): reels ship voice + SFX only,
+    # no music bed, by default — this flips what used to sit here (a bed was
+    # always auto-built when the plan said nothing). Precedent: airpods-camera
+    # (2026-08-18, "logged as a per-video call, not a standing rule") and
+    # iphone18-colors-nomusic (2026-08-21) both shipped noMusic by request
+    # before this made it the default. See RULES.md §8 / STYLE-RULES.md.
+    # A plan opts a reel back into a bed with `"music": true` (locked default
+    # bed) or its own full music object; `plan["noMusic"]`/`noMusicReason` are
+    # still honoured verbatim if a plan sets them itself.
+    plan_music = plan.get("music")
+    music = None
+    if plan_music is True:
+        music = {
+            "src": default_bed,
+            "from": 0,
+            "points": [
+                {"t": 0, "vol": 0.11},
+                {"t": max(0, audio_end - 0.8), "vol": 0.11},
+                {"t": round(audio_end, 3), "vol": 0.0},
+            ],
+        }
+    elif isinstance(plan_music, dict):
+        music = plan_music
+
+    no_music = plan.get("noMusic")
+    no_music_reason = plan.get("noMusicReason")
+    if music is None and not no_music:
+        no_music = True
+        no_music_reason = no_music_reason or (
+            "Standing rule (2026-08-24 user directive): reels ship voice + "
+            "SFX only, no music bed by default. Set plan[\"music\"] = true "
+            "(or a full music object) to opt this reel back into a bed."
+        )
+
     beats = {
         "id": slug,
         "fps": 30,
@@ -556,12 +581,16 @@ def main() -> None:
         "height": 1920,
         "style": locked_style(engine),
         "audio": audio_rel,
-        "music": music,
         "captionStyle": locked_caption_style(engine),
         "emphasis": plan.get("emphasis", []),
         "scenes": scenes,
         "captions": caption_words(words, corrections),
     }
+    if music:
+        beats["music"] = music
+    elif no_music:
+        beats["noMusic"] = True
+        beats["noMusicReason"] = no_music_reason
     # FORMAT changes the gate physics (news / top5 / comparison), and this
     # compiler never emitted it — so every reel built here was judged as `news`
     # whatever it actually was. noCredits is the user's per-reel call on

@@ -1,10 +1,12 @@
 # Open questions — iphone-18-pro
 
-**1. Music bed: on or off?**
+**1. Music bed: on or off?** — RESOLVED 2026-08-24.
 On 2026-08-18 you asked me to drop the music from airpods-camera and keep the SFX.
-I logged that as a per-video call, not a standing rule. This reel is currently
+I logged that as a per-video call, not a standing rule. This reel was
 planned WITH a bed (automated per G09: full at hook → duck → rise at the reveal →
-fade). Say the word and I'll ship it `noMusic` + SFX only, same as the last one.
+fade). **You said the word 2026-08-24: no music bed on any upcoming reel, SFX
+only.** This one ships `noMusic: true` + SFX, same as `airpods-camera` and
+`iphone18-colors-nomusic`. See RULES.md §8 / STYLE-RULES.md 2026-08-24.
 
 **2. The lead is the camera, not the chip or the date.**
 I opened on the mechanical iris — "for the first time, an iPhone lens will

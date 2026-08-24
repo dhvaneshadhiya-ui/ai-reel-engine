@@ -212,7 +212,12 @@ Fix, re-render, re-verify. Only then deliver.
 
 ---
 
-### STEP 6 — Cover (Reels + Shorts)
+### STEP 6 — Cover (Reels + Shorts) — SKIPPED BY DEFAULT (user directive, 2026-08-24)
+
+**Do not run this step for a reel unless the user asks for a cover on that
+specific one.** Standing rule, not per-video: no thumbnail/cover generation
+going forward. The tool and the spec below stay documented for the rare
+explicit request.
 
 ```bash
 python3 tools/make_thumbnail.py <slug> \

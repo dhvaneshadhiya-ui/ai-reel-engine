@@ -396,10 +396,15 @@ technical term appears on screen in standard notation. [GATE:G16]
 
 ## 8. Sound
 
-- Music bed on every reel, volume-automated, never flat: full at the hook →
-  duck through explanation → rise at the reveal → up at the CTA → fade.
-  [GATE:G09]
-- **6–9 SFX cues**, vols 0.10–0.19. Ordinary cuts stay silent. [GATE:G08]
+- **No music bed by default** (user directive, 2026-08-24 — graduated from a
+  per-video call first made 2026-08-18 on `airpods-camera`). Every reel ships
+  voice + SFX only: set `noMusic: true` + a `noMusicReason` (still argued for
+  in one line, per G09). A reel that wants a bed back is now the exception —
+  ask for it explicitly and say why. [GATE:G09]
+- **SFX carries what the bed used to.** Run the top of the range — **9 SFX
+  cues**, not 6 — vols 0.10–0.19, drawing from the full 16-cue library rather
+  than repeating a narrow subset. Ordinary cuts still stay silent; the count
+  itself is not raised past the measured G08 ceiling. [GATE:G08]
 - Master to −14 LUFS, verify with `ebur128`. [EYE]
 
 ## 9. Variety

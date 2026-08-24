@@ -3655,3 +3655,37 @@ Three things worth carrying:
   backdrop being 2.40s under a 3.74s scene — it had been freezing for the
   tail, which nothing flags because the scene type is not `footage` and G13
   only measures those.
+
+## 2026-08-24 — no-music-by-default graduates from a per-video call to a standing rule, and covers stop by default
+
+Two separate user directives, given directly (not discovered mid-build), both
+now recorded in RULES.md §8 rather than left to live only in this chat.
+
+**Music.** The question had a paper trail already. `airpods-camera`
+(2026-08-18) dropped its bed on request, and the session that shipped it
+wrote down explicitly: *"I logged that as a per-video call, not a standing
+rule."* `iphone18-colors-nomusic` (2026-08-21) shipped a VO-only derivative
+alongside its scored parent for the same reason. The in-flight `iphone-18-pro`
+job was sitting on an open question asking exactly this — *"Say the word and
+I'll ship it `noMusic` + SFX only, same as the last one"* — when the user said
+it today: **no background music on any upcoming reel, use SFX fully instead.**
+That resolves `jobs/iphone-18-pro/questions.md` Q1 and every future job's
+version of it.
+
+Mechanically nothing new had to be built. G09 (`tools/reel_gates.py`) and
+`validate_job.py` have accepted `noMusic: true` + `noMusicReason` since
+2026-08-17 — the escape hatch just flips from rare exception to default.
+`scripts/compile_shot_plan.py`'s generic path used to auto-build a bed
+whenever a plan didn't say otherwise; that default now emits `noMusic` +
+a standing reason instead, and a plan opts back into a bed explicitly with
+`"music": true` or its own object. **SFX takes over the job the bed was
+doing** — run the top of G08's range (9 cues, not 6) and draw from the full
+16-cue catalogue rather than repeating the same 2-3. The measured 6-9
+ceiling itself is NOT raised without a fresh teardown; "use all the SFX" is
+variety and generosity within that range, not a request to blow past it.
+
+**Covers.** Second, unrelated directive: stop generating the 9:16
+Reels/Shorts cover (`tools/make_thumbnail.py`, AGENT.md STEP 6) for every
+reel. It was never gated — no RULES.md line, no G-number — purely a
+workflow step, so the only fix needed was marking it SKIPPED BY DEFAULT in
+AGENT.md. Runs again only if the user asks for a cover on a specific reel.
