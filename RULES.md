@@ -396,13 +396,19 @@ technical term appears on screen in standard notation. [GATE:G16]
 
 ## 8. Sound
 
-- Background music is OPTIONAL per reel (user directive 2026-08-22).
-  When present: volume-automated, never flat — full at the hook →
-  duck under VO → rise at the reveal → fade. When absent: declare
-  `noMusic: true` so a forgotten bed is distinguishable from a chosen
-  VO-only cut; no reason required. SFX remain the default sound layer
-  (G08/G28/G40 unchanged). [G09, advice]
-- **6–9 SFX cues**, vols 0.10–0.19. Ordinary cuts stay silent. [GATE:G08]
+- **No music bed by default** (user directive 2026-08-22/24; graduated from
+  the per-video call first made on `airpods-camera`). Every reel ships voice
+  + SFX only. `compile_shot_plan.py` stamps `noMusic: true` plus the
+  standing-rule reason automatically; a hand-built sheet declares
+  `noMusic: true` itself (reason welcome, not demanded — G09 advises only
+  when NEITHER music nor the declaration is present, so a forgotten bed
+  stays distinguishable from the default). Opting a reel back INTO a bed is
+  the exception: set `plan["music"] = true` (locked default bed) or a full
+  music object — and then it is volume-automated, never flat. [G09, advice]
+- **SFX carries what the bed used to.** Run the top of the range — **9 SFX
+  cues**, not 6 — vols 0.10–0.19, drawing from the full 16-cue library rather
+  than repeating a narrow subset. Ordinary cuts still stay silent; the count
+  itself is not raised past the measured G08 ceiling. [GATE:G08]
 - Master to −14 LUFS, verify with `ebur128`. [EYE]
 
 ## 9. Variety

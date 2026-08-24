@@ -169,6 +169,11 @@ def main() -> None:
             "# Synthetic resource\n\nComment **TEST** to receive this complete "
             "offline smoke-test checklist and reproducible fixture.\n"
         )
+        # Pre-existing gap (found 2026-08-24): unlike jobs/pipeline-smoke/
+        # above, which new_job.py creates, nothing ever made this dir — the
+        # write below has always thrown FileNotFoundError on a truly fresh
+        # temp engine.
+        (engine / "scripts").mkdir(parents=True, exist_ok=True)
         (engine / "scripts/pipeline-smoke.md").write_text(
             "# Synthetic script\n\nThis is a fast second proof that stays clear. "
             "Comment TEST for the checklist.\n"
