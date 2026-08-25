@@ -3961,3 +3961,34 @@ scan the script for written-form names and add each to the glossary; send
 `brandGlossaryId` on every create call. Note: rehearse_vo's TTS pass was
 skipped for RAM this session — its anchor pass cannot catch pronunciation,
 which is precisely the class of defect that cost a regeneration here.
+
+## 2026-08-25 — first ai-tools review round: seven user notes, each made structural
+
+The user reviewed the first claude-eating-tokens master. Every note is now a
+rule or a mechanism, not a memory:
+
+1. **No credit chip when the frame names itself.** A recorded page showing
+   its masthead/URL, a terminal showing its command — the chip repeats the
+   pixels ("Source: Claude Docs" under the Claude Docs masthead). Scene flag
+   `creditOnScreen: true` (G14 honours it, negative test in the suite).
+   CROPS that strip the chrome keep their credit.
+2. **A sourceread must highlight the sentence, not the region.** The first
+   pass put the sweep on a breadcrumb (y=300 was guessed, not measured).
+   Rects are measured from the capture, one per spoken claim, timed with
+   `at`. The component's follow-scroll only moves when there are >=2 lines.
+3. **Record responsive sites at REAL mobile.** capture.mjs record used a
+   width*scale viewport + CSS zoom — media queries saw 1080px, so GitHub
+   rendered its desktop breakpoint mangled into 360px. Now: real 360x780
+   viewport, deviceScaleFactor 3, Playwright screenshot scale:"device"
+   (raw CDP ignores DPR and had been saving 360x780 files labelled 1080).
+4. **Floatcards declare the clip's true aspect** — the default 16:9 +
+   objectFit:cover was silently cropping the 2:1 terminal tables.
+5. **Voice pace/energy is probed, then locked.** 1.05 read slow and flat;
+   probe before every full generation when the setting changes.
+6. **ai-tools CTA is the keyword variant** (`commentcta` `variant:
+   "keyword"`): verb-first pop over the face, no simulated comment UI. The
+   gate mock stays the top5 default.
+7. **Captions: auto_contrast --write is part of the compile sequence** (the
+   4 white-page scenes now carry captionTheme) and `emphasis` is REQUIRED
+   authoring — an empty list means no accent word anywhere, which is how the
+   locked "one highlight per beat" shipped as all-white captions.

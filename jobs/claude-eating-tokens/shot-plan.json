@@ -1,8 +1,20 @@
 {
  "format": "ai-tools",
  "emphasis": [
-  "1,000",
-  "100,000"
+  "reading",
+  "resends",
+  "fix",
+  "fewer",
+  "hundred",
+  "untouched",
+  "cheap",
+  "expensive",
+  "ccusage",
+  "claude-hud",
+  "ponytail",
+  "slash clear",
+  "re-reads",
+  "permissions"
  ],
  "caption_corrections": {
   "read me": "README",
@@ -20,7 +32,6 @@
     "type": "split",
     "topSrc": "assets/claude-eating-tokens/ccusage-hero.mp4",
     "bottomSrc": "assets/claude-eating-tokens/avatar-master.mp4",
-    "credit": "ccusage \u00b7 our own usage",
     "headline": {
      "lines": [
       {
@@ -47,7 +58,8 @@
       "vol": 0.452,
       "at": 0.35
      }
-    ]
+    ],
+    "creditOnScreen": true
    },
    "asset_id": "ccusage-hero",
    "tier": "official"
@@ -58,19 +70,26 @@
    "scene": {
     "type": "sourceread",
     "src": "assets/claude-eating-tokens/docs-context.png",
-    "srcWidth": 1080,
-    "srcHeight": 2340,
-    "credit": "Claude Docs",
+    "srcWidth": 1092,
+    "srcHeight": 3400,
     "covers": "remembers nothing between messages",
     "lines": [
      {
-      "at": 0.3,
-      "x": 40,
-      "y": 300,
-      "w": 980,
-      "h": 64
+      "at": 1.0,
+      "x": 55,
+      "y": 1630,
+      "w": 985,
+      "h": 230
+     },
+     {
+      "at": 4.4,
+      "x": 55,
+      "y": 1860,
+      "w": 830,
+      "h": 165
      }
-    ]
+    ],
+    "creditOnScreen": true
    },
    "asset_id": "docs-context",
    "tier": "official"
@@ -82,7 +101,6 @@
     "type": "footage",
     "src": "assets/claude-eating-tokens/caveman-page.mp4",
     "zoomDir": "none",
-    "credit": "github.com/JuliusBrussee/caveman",
     "covers": "popular fix",
     "sfx": [
      {
@@ -90,7 +108,8 @@
       "vol": 0.543,
       "at": 0.0
      }
-    ]
+    ],
+    "creditOnScreen": true
    },
    "asset_id": "caveman-page",
    "tier": "official"
@@ -103,8 +122,8 @@
     "src": "assets/claude-eating-tokens/caveman-page.mp4",
     "from": 3.0,
     "zoomDir": "none",
-    "credit": "github.com/JuliusBrussee/caveman",
-    "covers": "answer in fewer words"
+    "covers": "answer in fewer words",
+    "creditOnScreen": true
    },
    "asset_id": "caveman-page",
    "tier": "official"
@@ -172,8 +191,9 @@
    "scene": {
     "type": "floatcard",
     "src": "assets/claude-eating-tokens/ccusage-split.mp4",
-    "credit": "ccusage \u00b7 our own usage",
-    "covers": "the cheap half of your bill"
+    "covers": "the cheap half of your bill",
+    "creditOnScreen": true,
+    "aspect": 1.9737
    },
    "asset_id": "ccusage-split",
    "tier": "official"
@@ -201,7 +221,6 @@
    "scene": {
     "type": "floatcard",
     "src": "assets/claude-eating-tokens/term-ccusage.mp4",
-    "credit": "ccusage \u00b7 recorded live",
     "covers": "charts each session's cost",
     "sfx": [
      {
@@ -209,7 +228,9 @@
       "vol": 0.394,
       "at": 0.3
      }
-    ]
+    ],
+    "creditOnScreen": true,
+    "aspect": 1.9737
    },
    "asset_id": "term-ccusage",
    "tier": "official"
@@ -218,10 +239,10 @@
    "start_phrase": "claude",
    "line": "claude-hud is a live meter in your status line.",
    "scene": {
-    "type": "floatcard",
+    "type": "footage",
     "src": "assets/claude-eating-tokens/hud-statusline.mp4",
-    "credit": "claude-hud \u00b7 recorded live",
-    "covers": "live meter in your status line"
+    "zoomDir": "in",
+    "creditOnScreen": true
    },
    "asset_id": "hud-statusline",
    "tier": "official",
@@ -234,8 +255,8 @@
     "type": "footage",
     "src": "assets/claude-eating-tokens/ponytail-page.mp4",
     "zoomDir": "none",
-    "credit": "github.com/DietrichGebert/ponytail",
-    "covers": "checks the standard library first"
+    "covers": "checks the standard library first",
+    "creditOnScreen": true
    },
    "asset_id": "ponytail-page",
    "tier": "official"
@@ -246,7 +267,6 @@
    "scene": {
     "type": "floatcard",
     "src": "assets/claude-eating-tokens/term-clear.mp4",
-    "credit": "recorded live",
     "covers": "type slash-clear",
     "sfx": [
      {
@@ -254,7 +274,9 @@
       "vol": 0.394,
       "at": 0.3
      }
-    ]
+    ],
+    "creditOnScreen": true,
+    "aspect": 1.5714
    },
    "asset_id": "term-clear",
    "tier": "official"
@@ -267,14 +289,14 @@
     "src": "assets/claude-eating-tokens/docs-compact.png",
     "srcWidth": 1080,
     "srcHeight": 2340,
-    "credit": "Claude Docs",
     "covers": "re-reads everything",
     "focus": {
      "x": 40,
-     "y": 600,
+     "y": 1500,
      "w": 1000,
-     "h": 420
-    }
+     "h": 640
+    },
+    "creditOnScreen": true
    },
    "asset_id": "docs-compact",
    "tier": "official",
@@ -286,16 +308,16 @@
    "scene": {
     "type": "annotatezoom",
     "src": "assets/claude-eating-tokens/skill-hooks.png",
-    "srcWidth": 1080,
-    "srcHeight": 2600,
-    "credit": "GitHub",
+    "srcWidth": 1092,
+    "srcHeight": 2340,
     "covers": "your agent's permissions",
     "focus": {
-     "x": 40,
-     "y": 700,
-     "w": 1000,
-     "h": 460
-    }
+     "x": 30,
+     "y": 480,
+     "w": 1030,
+     "h": 560
+    },
+    "creditOnScreen": true
    },
    "asset_id": "skill-hooks",
    "tier": "official"
@@ -314,7 +336,8 @@
       "vol": 0.452,
       "at": 0.3
      }
-    ]
+    ],
+    "variant": "keyword"
    }
   }
  ],

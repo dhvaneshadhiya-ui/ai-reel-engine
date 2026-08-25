@@ -515,6 +515,12 @@ export type Scene =
        *  for all three to play it reads as the same CTA in two styles back to
        *  back (user note 2026-08-22). Set false to end on the notification. */
       showFinal?: boolean;
+      /** "gate" (default) = the comment-field mock + DM notification, the
+       *  top5/utility teardown's comment-gate. "keyword" = the ai-tools
+       *  corpus grammar (formats/ai-tools.md): a huge verb-first keyword pop
+       *  over the face, no simulated UI — user feedback 2026-08-25 that the
+       *  gate mock reads wrong on a reporting reel. */
+      variant?: "gate" | "keyword";
       typeAt?: number;
       growAt?: number;
       dropAt?: number;

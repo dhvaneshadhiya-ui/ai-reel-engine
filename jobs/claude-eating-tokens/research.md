@@ -140,3 +140,13 @@ levers are the spine of this script.
   nothing", reduce-token-usage strategies)
 - 2026-08-25  fetched https://code.claude.com/docs/en/plugins  (plugins ship
   hooks, MCP servers, bin/ on PATH; trust considerations)
+
+## SCOUT NOTE (2026-08-25, re-capture)
+
+The caveman README gained a "Caveman 2" hero ~11h before capture, claiming
+"33.2% fewer provider-reported input tokens in a pinned benchmark". The
+"Honest number warning" our beat quotes is STILL in the same README
+(verified live, line 227, verbatim: output-only, ~1-1.5k input added per
+turn, can go net-negative). The script quotes the admission, which remains
+true as written; the hero's competing v2 claim is the repo arguing with
+itself, not with us.

@@ -757,6 +757,24 @@ if _hits:
     raise SystemExit(1)
 _counted("G09 silent — noMusic:true needs no reason (music is optional)")
 
+# G14 creditOnScreen (user directive 2026-08-25): a scene whose frame shows
+# the source's own identity may declare it and skip the credit chip — but a
+# bare credit-less scene still blocks (the positive case lives in CASES).
+_s = copy.deepcopy(BASE)
+_s["scenes"][0].pop("credit", None)
+_s["scenes"][0]["creditOnScreen"] = True
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST,
+                       vo_words=VO_WORDS)
+    _hits = [a for a in _adv if "G14" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G14" in str(a)]
+if _hits:
+    print(f"  FAIL G14 fired though the scene declares its identity on "
+          f"screen: {_hits[0][:90]}")
+    raise SystemExit(1)
+_counted("G14 silent — creditOnScreen declares the frame names itself")
+
 # G39 vs whisper mishears (2026-08-25): whisper is NOT ground truth for what
 # was said — G21 learned this at 100% false positives. When `covers` is
 # missing from the raw transcript but present in the caption stream (which

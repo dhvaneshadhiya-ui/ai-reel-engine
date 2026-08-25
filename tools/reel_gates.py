@@ -1211,6 +1211,16 @@ def check_beats(beats: dict, vo_end: float | None = None,
         srcs = [str(sc.get(k) or "") for k in ("src", "topSrc", "leftSrc")]
         if any("avatar-master" in v for v in srcs):
             continue
+        # creditOnScreen (user directive 2026-08-25): when the SOURCE'S OWN
+        # IDENTITY is visible inside the frame — a recorded page showing its
+        # masthead or URL, a terminal showing the command being run — a credit
+        # chip repeats what the pixels already say and reads as clutter. The
+        # flag is a per-scene declaration that the scout LOOKED and the
+        # identity is in frame; a crop that strips the chrome must keep its
+        # credit. The rule stays: every borrowed frame names its source on
+        # screen — this only recognises frames that name it themselves.
+        if sc.get("creditOnScreen") is True:
+            continue
         if not str(sc.get("credit") or "").strip():
             errors.append(
                 f"G14 scene {i:02d} ({sc['type']}) borrows footage with no "

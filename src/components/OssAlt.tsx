@@ -1498,6 +1498,86 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
     config: { damping: 14, stiffness: 220 },
     durationInFrames: DUR.base,
   });
+  // "keyword" variant — the ai-tools corpus CTA (formats/ai-tools.md):
+  // verb-first keyword pop over the face, no simulated comment UI. The verb
+  // whips in first, the keyword lands bigger under it, and the pair keeps a
+  // low-amplitude idle pulse (nothing static, going-viral rule).
+  if (scene.variant === "keyword") {
+    const popP = spring({
+      frame: frame - Math.round(growAt * fps),
+      fps,
+      config: SPRING.pop,
+      durationInFrames: 16,
+    });
+    const kwP = spring({
+      frame: frame - Math.round((growAt + 0.22) * fps),
+      fps,
+      config: SPRING.pop,
+      durationInFrames: 16,
+    });
+    const idle = 1 + Math.sin(t * 2.1) * 0.006;
+    const ringShadow =
+      "0 0 34px rgba(0,0,0,0.55), 0 8px 30px rgba(0,0,0,0.6)";
+    return (
+      <AbsoluteFill style={{ background: "#000", fontFamily: SANS }}>
+        <Face src={scene.src} from={scene.from} focusX={scene.focusX} />
+        <div
+          style={{
+            position: "absolute",
+            top: 230,
+            width: "100%",
+            textAlign: "center",
+            fontWeight: 900,
+            fontSize: 74,
+            color: "#fff",
+            textShadow: ringShadow,
+            opacity: wantP,
+            transform: `translateY(${(1 - wantP) * 40}px)`,
+          }}
+        >
+          {question}
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            top: 1140,
+            width: "100%",
+            textAlign: "center",
+            transform: `scale(${idle})`,
+          }}
+        >
+          <div
+            style={{
+              fontWeight: 900,
+              fontSize: 120,
+              letterSpacing: "0.06em",
+              color: CYAN,
+              textShadow: ringShadow,
+              opacity: popP > 0.02 ? 1 : 0,
+              transform: `scale(${0.4 + 0.6 * popP}) translateY(${(1 - popP) * 90}px)`,
+            }}
+          >
+            COMMENT
+          </div>
+          <div
+            style={{
+              marginTop: 6,
+              fontWeight: 900,
+              fontSize: 200,
+              letterSpacing: "0.02em",
+              color: "#fff",
+              lineHeight: 0.95,
+              textShadow: ringShadow,
+              opacity: kwP > 0.02 ? 1 : 0,
+              transform: `scale(${0.4 + 0.6 * kwP}) translateY(${(1 - kwP) * 110}px)`,
+            }}
+          >
+            {keyword}
+          </div>
+        </div>
+      </AbsoluteFill>
+    );
+  }
   return (
     <AbsoluteFill style={{ background: "#000", fontFamily: SANS }}>
       <Face src={scene.src} from={scene.from} focusX={scene.focusX} />
