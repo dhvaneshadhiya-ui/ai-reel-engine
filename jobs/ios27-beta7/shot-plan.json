@@ -1,0 +1,331 @@
+{
+  "emphasis": [],
+  "caption_corrections": {},
+  "shots": [
+    {
+      "start_phrase": "Beta seven just landed.",
+      "line": "Beta seven just landed.",
+      "needs": [
+        "Beta",
+        "seven",
+        "landed"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "The one that decides",
+      "line": "The one that decides what actually ships to your phone next month.",
+      "needs": [
+        "decides",
+        "actually",
+        "ships",
+        "phone",
+        "next",
+        "month"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "It dropped August 24th,",
+      "line": "It dropped August 24th, one week after beta six.",
+      "needs": [
+        "dropped",
+        "August",
+        "24th",
+        "week",
+        "after",
+        "beta"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "And there's a pattern",
+      "line": "And there's a pattern in what's actually inside.",
+      "needs": [
+        "pattern",
+        "actually",
+        "inside"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "No new features this",
+      "line": "No new features this week.",
+      "needs": [
+        "features",
+        "week"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Just Apple finishing what",
+      "line": "Just Apple finishing what it already announced.",
+      "needs": [
+        "Apple",
+        "finishing",
+        "already",
+        "announced"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Because beta seven's release",
+      "line": "Because beta seven's release notes read like a fix list, not a feature list.",
+      "needs": [
+        "Because",
+        "beta",
+        "seven",
+        "release",
+        "notes",
+        "read"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Take the alarm bug:",
+      "line": "Take the alarm bug: you couldn't stop a ringing alarm without unlocking your phone.",
+      "needs": [
+        "Take",
+        "alarm",
+        "couldn",
+        "stop",
+        "ringing",
+        "without"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Or Portrait mode, where",
+      "line": "Or Portrait mode, where the blur was rendering wrong on photos.",
+      "needs": [
+        "Portrait",
+        "mode",
+        "where",
+        "blur",
+        "rendering",
+        "wrong"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Also fixed.",
+      "line": "Also fixed.",
+      "needs": [
+        "fixed"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Even the new Siri",
+      "line": "Even the new Siri voice",
+      "needs": [
+        "Even",
+        "Siri",
+        "voice"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "which was reverting to",
+      "line": "which was reverting to the old one whenever your phone overheated \u2014 patched.",
+      "needs": [
+        "which",
+        "reverting",
+        "whenever",
+        "phone",
+        "overheated",
+        "patched"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "And dictation's running on",
+      "line": "And dictation's running on a more accurate on-device model \u2014 there's a toggle waiting in Keyboard settings.",
+      "needs": [
+        "dictation",
+        "running",
+        "accurate",
+        "on-device",
+        "model",
+        "toggle"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "None of that is",
+      "line": "None of that is exciting.",
+      "needs": [
+        "None",
+        "exciting"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "That's exactly the point.",
+      "line": "That's exactly the point.",
+      "needs": [
+        "exactly",
+        "point"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Seven betas in, Apple",
+      "line": "Seven betas in, Apple isn't adding features anymore.",
+      "needs": [
+        "Seven",
+        "betas",
+        "Apple",
+        "adding",
+        "features",
+        "anymore"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "It's closing out what",
+      "line": "It's closing out what would've shipped broken in September.",
+      "needs": [
+        "closing",
+        "shipped",
+        "broken",
+        "September"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Every outlet watching this",
+      "line": "Every outlet watching this cycle says the same thing \u2014 no new features",
+      "needs": [
+        "Every",
+        "outlet",
+        "watching",
+        "cycle",
+        "says",
+        "same"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "just stability, weeks from",
+      "line": "just stability, weeks from release.",
+      "needs": [
+        "stability",
+        "weeks",
+        "release"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "So the number that",
+      "line": "So the number that matters here was never the features.",
+      "needs": [
+        "number",
+        "matters",
+        "never",
+        "features"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "It's the seven.",
+      "line": "It's the seven.",
+      "needs": [
+        "seven"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Because that's the number",
+      "line": "Because that's the number deciding what ships.",
+      "needs": [
+        "Because",
+        "number",
+        "deciding",
+        "ships"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "One more beta, maybe",
+      "line": "One more beta, maybe two.",
+      "needs": [
+        "beta",
+        "maybe"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Then the RC.",
+      "line": "Then the RC.",
+      "needs": [],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Then it's just...",
+      "line": "Then it's just...",
+      "needs": [],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "iOS 27.",
+      "line": "iOS 27.",
+      "needs": [
+        "27"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    }
+  ]
+}

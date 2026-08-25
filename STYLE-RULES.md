@@ -3723,3 +3723,112 @@ the user's "however, sound effects will be used by default" implies the bed
 is not — with the first session's G09 loosening kept (a declaration needs
 no argued reason). Final semantics live in RULES.md; compile stamps the
 declaration automatically, so the default path needs nothing from anyone.
+
+## 2026-08-25 — ios27-beta7: first reel built end-to-end under the no-music
+standing rule, and two real text collisions the gates could not see
+
+First reel scripted, scouted, generated and rendered since the 2026-08-24
+no-music-by-default rule landed — confirms the mechanics work as designed:
+`build_ios27beta7.py` set `noMusic: True` + a one-line reason and never
+touched a `music` object; `compile_shot_plan.py`'s auto-fallback was not
+needed since this reel used a bespoke build script (the shot-plan path is
+still preferred when the material fits it — this one did not, see below).
+9 SFX cues drawn from 5 of the library's 6 roles (transition, shutter x3,
+impact x2, suspense, reveal x2) — the "top of the range, full catalogue"
+instruction followed literally rather than repeating the same 2-3 cues.
+
+**Scope discipline, stated up front and held.** The topic (iOS 27 beta 7)
+sits one reel away from the published `ios27-tiers` (Siri AI / device
+tiers). `structure.md` recorded the exclusion BEFORE scripting — no Siri AI,
+no device tiers, scoped purely to what beta 7 itself is (a stability pass,
+proven with three consumer-relevant bugs pulled from Apple's own release
+notes) — and the research ledger's `explicitly_NOT_claimed` repeated it.
+Worth naming as a pattern: the treatment-history check this file already
+asks for is about VISUALS; this is the same discipline one level up, on the
+STORY itself, and it deserves the same explicit pre-declaration.
+
+**FloatingCard renders `<OffthreadVideo>` only — a PNG handed to it is a
+black frame, not a coincidence.** `build_ios27tiers.py`'s docstring already
+said so in a comment; this session re-derived it the hard way by reading
+`FloatingCard.tsx` line by line before trusting the comment. Four scraped
+release-notes crops (aspect 1.95:1 to 3.88:1, all over RULES.md's 2.5:1
+`receipt`-overflow line, so `floatcard` was the only legal home) were
+silent-looped into 4s MP4s with `ffmpeg -loop 1 -i x.png -t 4 -vf
+"format=yuv420p,pad=ceil(iw/2)*2:ceil(ih/2)*2" -c:v libx264 -pix_fmt
+yuv420p x.mp4` — the `pad` is required because libx264 refuses an odd
+dimension (885px source crops are common; refuse the temptation to
+special-case width, just pad every conversion). **Distilled rule: before
+handing a still to ANY scene type, check whether it imports `Img` or only
+`OffthreadVideo`/`Video` — `split`, `receipt`, `sourceread`, `annotatezoom`
+take stills directly; `floatcard` and `footage` do not, ever.**
+
+**Two text-on-text collisions that every gate passed clean — found only by
+pulling actual frames, exactly as RULES.md §11 says to.** `check_beats()`,
+`validate_job.py` and `lint_frames.py`'s AUTO FLAGS all passed this reel
+with zero blocking errors on both defects:
+
+1. The hook's `kinetic` "BETA 7" card defaulted to `y: 0.14` (Kinetic's
+   own default region), which is exactly where `src-hero.png`'s own
+   headline ("iOS & iPadOS 27 Beta 7 Release Notes") sits — the kinetic
+   text landed printed directly on top of the words it was echoing,
+   unreadable. Fixed by measuring the source image's actual empty band
+   (the white space between the tagline and the seam) and pointing `y`
+   there (0.42) instead of trusting the component default. **A `kinetic`
+   default `y` is tuned for a footage/avatar background, not for a
+   text-dense screenshot behind it — always eyeball the actual source
+   image before accepting the default.**
+2. A `floatcard` built from a TALL composite (three stacked outlet
+   receipts, aspect 0.545, 72% of frame height, vertically centred) pushed
+   the default caption position (`captionBottom` unset → ~y 0.71) into the
+   middle of the card, printing the caption word "says" directly across
+   the Macworld headline. No gate checks whether a card's own footprint
+   overlaps the caption band — `captionBottom` exists precisely for this
+   and is scene-level (`SceneBase`, not `split`-only, despite every prior
+   use of it being on a `split` hook), so the fix was one field:
+   `captionBottom: 1750` to park captions in the card's TOP gap. **The
+   bottom gap was NOT a safe alternative** — this card's own bottom edge
+   already sits at y 0.86, past the platform account-row line (y 0.835,
+   `platformSafeArea.ts`), so any caption placed further down would have
+   been a real G45 violation, not just a taste problem. **Distilled rule:
+   any card occupying more than ~60% of frame height needs its
+   `captionBottom` chosen by hand, and the choice must check BOTH gaps
+   against the platform safe floor, not just whichever one looks bigger
+   in a still.**
+
+**Four typecards, one script — G12 didn't fire, and it should have made me
+look harder, not accept the pass.** The gate checks `bg in (None,
+"black")`; this build used `bg: "#0a0a0a"` on all four (a deliberate
+near-black, not the literal string), which is a hex-string loophole in the
+letter of G12 while violating its entire point — four visually-identical
+black cards in one 78s reel. Caught on the contact sheet, not by any gate.
+Fixed by alternating two of the four to `bg: "#f2ecdf"` (the `TINT.sand`
+cream, matching `FloatingCard`'s cream) — not by filing a G12 fix, though
+one is owed (`bg` should be normalised/canonicalised before the equality
+check, the same class of gap as `STYLE_ALIASES` exists for style ids).
+
+### Treatment history — ios27-beta7
+
+- ios27-beta7 (iOS 27 beta 7 — stability-pass story, deliberately NOT the
+  Siri AI/tiers story already told): split hook (Apple's own beta-7
+  release-notes page / face, kinetic "BETA 7" card), TWO sourceread passes
+  on the same official hero receipt (headline region, then a second
+  region for "release notes read like a fix list"), FOUR floatcards built
+  from official release-notes text crops converted to silent MP4 loops
+  (alarm/Clock, Camera Portrait blur, Siri voice revert, Dictation
+  toggle — each floatcard's duration spans BOTH the lead-in clause and the
+  claim, not the claim alone), ONE floatcard built from a 3-outlet
+  composite receipt (9to5Mac + MacRumors + Macworld mastheads and
+  headlines, all dated the same day, stitched with PIL into one portrait
+  image), alternating cream/black typecards (2 of each) for the
+  "no features / seven betas / shipped broken / closing countdown" beats,
+  facecam 19.2% (within the news 10-20% band, four beats: stakes line,
+  bridge, opinion line, pivot line — all direct-address). No music
+  (noMusic + reason, standing rule). No CTA (format news, CTA optional,
+  argued in `questions.md` and confirmed at approval).
+- → next reel must introduce at least one new treatment. Already used and
+  not to be repeated as the SAME shape next: a multi-source composite
+  receipt built by stitching separate mobile captures with PIL (borrow the
+  TECHNIQUE for a different multi-source claim, but the specific "three
+  outlet mastheads stacked vertically" layout is now used); converting a
+  release-notes text crop straight into a silent floatcard loop for a
+  sequence of parallel bug-fix beats.
