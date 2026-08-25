@@ -332,9 +332,19 @@ def substitute(value: Any, tokens: dict[str, Any]) -> Any:
 
 
 def _apply_phrases(text: str, phrase_fixes: dict[str, str]) -> str:
-    """Case-insensitive replacement of multi-word correction keys."""
+    """Case-insensitive replacement of multi-word correction keys.
+
+    Punctuation-tolerant between words: whisper punctuates mishears
+    unpredictably, and a literal match of "see use it" can never find
+    "see, use it" — which is exactly how the ccusage correction silently
+    did nothing on claude-eating-tokens (found 2026-08-25 in a rendered
+    frame, after compile, validate and every gate passed). Spaces in the
+    key match any non-alphanumeric run in the text.
+    """
     for key, value in phrase_fixes.items():
-        text = re.sub(re.escape(key), value, text, flags=re.IGNORECASE)
+        pattern = r"[^A-Za-z0-9]+".join(
+            re.escape(part) for part in key.split())
+        text = re.sub(pattern, value, text, flags=re.IGNORECASE)
     return text
 
 

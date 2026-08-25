@@ -398,6 +398,16 @@ def run() -> int:
     ok("reverse join resolves (cc+usage == ccusage)", (s, e) == (1, 3))
     expect_exit(lambda: csp.find_phrase(tw, "words never spoken", 0, "x"),
                 "an absent phrase still refuses", "could not resolve")
+    # caption_corrections phrase keys must survive whisper's punctuation:
+    # "see use it" -> "ccusage" silently did nothing against the chunk
+    # "see, use it" (2026-08-25, found in a RENDERED frame).
+    fixed = csp._apply_phrases("One, see, use it charts.",
+                               {"see use it": "ccusage"})
+    ok("phrase fix tolerates punctuation inside the chunk",
+       fixed == "One, ccusage charts.")
+    ok("phrase fix leaves an honest chunk alone",
+       csp._apply_phrases("see it works", {"see use it": "x"})
+       == "see it works")
 
     # 8. check_script's own selftest — structure thresholds + AI tells.
     print("\n  -- check_script selftest --")
