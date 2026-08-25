@@ -382,13 +382,30 @@ def caption_words(
     chunks: list[dict[str, Any]] = []
     for index in range(0, len(corrected), 3):
         group = corrected[index : index + 3]
+        text = _apply_phrases(
+            " ".join(item["text"] for item in group), phrase_fixes
+        )
+        # PER-WORD TIMINGS — the caption component's word-reveal, karaoke
+        # envelope and EMPHASIS matching all key off `words`; without it the
+        # whole chunk falls back to one "word" whose concatenation matches no
+        # emphasis entry, so the accent highlight silently never fired on any
+        # generic-path reel (found 2026-08-25 — the bespoke build_*.py sheets
+        # all carry `words`, this compiler never did; same family as the
+        # style/captionBottom/G27 gaps). A phrase fix can merge or reword the
+        # chunk, so re-split its TEXT and map word starts positionally,
+        # padding with the group's last start if the fix grew the word count.
+        split = text.split()
+        starts = [item["start"] for item in group]
         chunks.append(
             {
                 "start": round(group[0]["start"], 3),
                 "end": round(group[-1]["end"], 3),
-                "text": _apply_phrases(
-                    " ".join(item["text"] for item in group), phrase_fixes
-                ),
+                "text": text,
+                "words": [
+                    {"t": round(starts[min(w, len(starts) - 1)], 3),
+                     "text": word}
+                    for w, word in enumerate(split)
+                ],
             }
         )
     return chunks
@@ -685,6 +702,16 @@ def main() -> None:
                         "captionStyleReason"):
         if plan.get(passthrough) is not None:
             beats[passthrough] = plan[passthrough]
+    # STYLE FOLLOWS FORMAT (CLAUDE.md locked table: editorial = news,
+    # comparison · utility = top5, ai-tools). locked_style() reads the
+    # config default (editorial), which silently mis-dressed every utility-
+    # format reel built on the generic path — claude-eating-tokens rendered
+    # a full ai-tools reel in the editorial pack before anyone noticed
+    # (2026-08-25). A plan may still pin "style" explicitly.
+    if plan.get("style"):
+        beats["style"] = plan["style"]
+    elif beats.get("format") in ("top5", "ai-tools"):
+        beats["style"] = "utility"
     # G27 — the sheet carries the narration it was built from plus the approval
     # hash. Without these the gate blocks, and it is right to: a sheet that
     # cannot name the script it came from cannot prove the user approved it.
