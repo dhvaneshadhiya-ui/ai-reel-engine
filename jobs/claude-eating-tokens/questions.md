@@ -1,17 +1,32 @@
-# Open questions — claude-eating-tokens
+# Open questions — claude-eating-tokens (ai-tools rebuild, 2026-08-25)
 
-1. **We tell viewers to install three third-party tools.** All four repos were
-   verified live via the GitHub API (ponytail 110,147★ · caveman 100,776★ ·
-   claude-hud 27,627★ · ccusage 18,151★). The reel carries an explicit warning
-   that these run with the agent's permissions. Happy to recommend them on the
-   brand account?
+## 1. Runtime — honest number
 
-2. **We use caveman as the example that gets corrected.** We credit it, quote
-   its own README fairly, and say plainly that it does cut output by 65%. It is
-   a fair reading, not a hit piece — but it does name one project. OK?
+159 words = 58-68s at the twin's measured range; the ai-tools band is
+40-60s. The overrun at the slow end buys the loop's verbatim payoff (+6
+words) and the permissions warning. Cheapest cuts if you want inside the
+band: the payoff echo ("— that's why it barely helps", -6) or the
+permissions line (-9, but it is the reel's only safety note). 
+**Default: ship as-is; pause-tightening recovers ~4-5% after generation.**
 
-3. **/pin, /rewind, /handoff and /doctor are cut for runtime.** /rewind is the
-   strongest of the four (jump back before a wrong turn instead of spending ten
-   messages correcting). Want it in, in place of one of the current three?
+## 2. Loop detector override (deliberate, per constitution)
 
-4. **The Uber news draft is parked, fully sourced.** Its own reel, or drop it?
+check_script still prints NO OPEN LOOP. The plant ("here's why the top fix
+barely helps"), the callback ("Back to that popular fix") and the verbatim
+payoff ("that's why it barely helps") are all in the script; the detector's
+heuristic does not credit this shape. Carried as advice deliberately —
+same class as iphone18-colors' recorded overrides.
+
+## 3. The recordings are the scout work
+
+Six assets must be RECORDED on this machine before build: ccusage monthly
+view + per-session split, a live claude-hud status line, /clear dropping
+the meter, caveman + Ponytail repo pages (mobile captures), the README
+warning section. No stock, no re-used screenshots. Confirm you're fine
+with our real usage numbers being on screen.
+
+## 4. Format numbers are day-one
+
+First reel of the ai-tools format: sfx band inherited from news
+(unmeasured), face band measured off Saraev only. This reel's retention
+becomes the format's first own data point.

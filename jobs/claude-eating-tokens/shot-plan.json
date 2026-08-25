@@ -1,718 +1,243 @@
 {
+ "format": "ai-tools",
+ "emphasis": [
+  "1,000",
+  "100,000"
+ ],
+ "caption_corrections": {},
  "shots": [
   {
-   "start_phrase": "Your Claude bill is mostly input",
-   "line": "Your Claude bill is mostly input",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-00",
+   "start_phrase": "Your Claude bill",
+   "line": "Your Claude bill is mostly the reading, not the writing \u2014 here's why the top fix barely helps.",
    "scene": {
-    "type": "typecard",
-    "bg": "#0b0b0c",
-    "kinetic": {
-     "text": "YOUR BILL IS\nMOSTLY INPUT",
-     "style": "serif",
-     "at": 0.05,
-     "y": 0.34
-    },
-    "sfx": [
+    "type": "split",
+    "topSrc": "assets/claude-eating-tokens/ccusage-hero.mp4",
+    "bottomSrc": "assets/claude-eating-tokens/avatar-master.mp4",
+    "credit": "ccusage \u00b7 our own usage",
+    "headline": {
+     "lines": [
+      {
+       "text": "YOUR CLAUDE BILL",
+       "kind": "label",
+       "at": 0.15
+      },
+      {
+       "text": "MOSTLY THE READING",
+       "kind": "headline",
+       "at": 0.6
+      }
+     ],
+     "y": 0.07
+    }
+   },
+   "asset_id": "ccusage-hero",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Anthropic's docs",
+   "line": "Anthropic's docs: the model remembers nothing between messages \u2014 every turn re-sends the whole conversation at input rates.",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/claude-eating-tokens/docs-context.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "credit": "Claude Docs",
+    "covers": "remembers nothing between messages",
+    "lines": [
      {
-      "src": "sfx/Camera Shutter.MP3",
-      "at": 0.03,
-      "vol": 0.09
+      "at": 0.3,
+      "x": 40,
+      "y": 300,
+      "w": 980,
+      "h": 64
      }
     ]
-   }
+   },
+   "asset_id": "docs-context",
+   "tier": "official"
   },
   {
-   "start_phrase": "not output",
-   "line": "not output",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-01",
-   "scene": {
-    "type": "typecard",
-    "bg": "#0b0b0c",
-    "kinetic": {
-     "text": "NOT OUTPUT",
-     "style": "caps",
-     "at": 0.05,
-     "y": 0.42
-    }
-   }
-  },
-  {
-   "start_phrase": "Here's why: almost every token-saving skill",
-   "line": "Here's why: almost every token-saving skill",
-   "needs": [],
-   "tier": "own",
-   "asset_id": "src-02",
+   "start_phrase": "Back to that popular fix",
+   "line": "Back to that popular fix.",
    "scene": {
     "type": "footage",
-    "src": "assets/claude-eating-tokens/avatar-master-169.mp4",
-    "zoomDir": "in",
+    "src": "assets/claude-eating-tokens/caveman-page.mp4",
+    "zoomDir": "none",
+    "credit": "github.com/JuliusBrussee/caveman",
+    "covers": "popular fix"
+   },
+   "asset_id": "caveman-page",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Caveman makes Claude answer",
+   "line": "Caveman makes Claude answer in fewer words.",
+   "scene": {
+    "type": "footage",
+    "src": "assets/claude-eating-tokens/caveman-page.mp4",
+    "from": 3.0,
+    "zoomDir": "none",
+    "credit": "github.com/JuliusBrussee/caveman",
+    "covers": "answer in fewer words"
+   },
+   "asset_id": "caveman-page",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "A hundred thousand stars",
+   "line": "A hundred thousand stars, and it does cut output.",
+   "scene": {
+    "type": "statcard",
+    "title": "caveman",
+    "stat": "100,000",
+    "unit": "stars",
+    "source": "GitHub"
+   }
+  },
+  {
+   "start_phrase": "But its README admits",
+   "line": "But its README admits: input is untouched, and it adds over a thousand input tokens a turn.",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/claude-eating-tokens/caveman-readme.png",
+    "srcWidth": 1080,
+    "srcHeight": 2600,
+    "credit": "caveman README",
+    "covers": "input is untouched",
+    "focus": {
+     "x": 40,
+     "y": 900,
+     "w": 1000,
+     "h": 500
+    }
+   },
+   "asset_id": "caveman-readme",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "So it trims the cheap half",
+   "line": "So it trims the cheap half of your bill \u2014 that's why it barely helps.",
+   "scene": {
+    "type": "footage",
+    "src": "assets/claude-eating-tokens/ccusage-split.mp4",
+    "zoomDir": "none",
+    "credit": "ccusage \u00b7 our own usage",
+    "covers": "the cheap half of your bill"
+   },
+   "asset_id": "ccusage-split",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "These three cut",
+   "line": "These three cut the expensive half.",
+   "scene": {
+    "type": "footage",
+    "src": "assets/claude-eating-tokens/avatar-master.mp4",
+    "zoomDir": "none",
     "focusX": 0.5
    }
   },
   {
-   "start_phrase": "cuts your cheapest tokens",
-   "line": "cuts your cheapest tokens",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-03",
+   "start_phrase": "One: see it",
+   "line": "One: see it \u2014 ccusage charts each session's cost;",
    "scene": {
-    "type": "typecard",
-    "bg": "#0b0b0c",
-    "kinetic": {
-     "text": "YOUR CHEAPEST\nTOKENS",
-     "style": "serif",
-     "at": 0.05,
-     "y": 0.36
-    }
-   }
+    "type": "footage",
+    "src": "assets/claude-eating-tokens/term-ccusage.mp4",
+    "zoomDir": "none",
+    "credit": "ccusage \u00b7 recorded live",
+    "covers": "charts each session's cost"
+   },
+   "asset_id": "term-ccusage",
+   "tier": "official"
   },
   {
-   "start_phrase": "Anthropic's own docs explain it",
-   "line": "Anthropic's own docs explain it",
-   "needs": [],
-   "tier": "official",
-   "asset_id": "src-04",
+   "start_phrase": "claude-hud is a live meter",
+   "line": "claude-hud is a live meter in your status line.",
    "scene": {
-    "src": "assets/claude-eating-tokens/src-organized.png",
+    "type": "footage",
+    "src": "assets/claude-eating-tokens/hud-statusline.mp4",
+    "zoomDir": "none",
+    "credit": "claude-hud \u00b7 recorded live",
+    "covers": "live meter in your status line"
+   },
+   "asset_id": "hud-statusline",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Two: Ponytail",
+   "line": "Two: Ponytail stops Claude rebuilding code that already exists \u2014 it checks the standard library first.",
+   "scene": {
+    "type": "footage",
+    "src": "assets/claude-eating-tokens/ponytail-page.mp4",
+    "zoomDir": "none",
+    "credit": "github.com/DietrichGebert/ponytail",
+    "covers": "checks the standard library first"
+   },
+   "asset_id": "ponytail-page",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Three: between unrelated tasks",
+   "line": "Three: between unrelated tasks, type slash-clear \u2014 free.",
+   "scene": {
+    "type": "footage",
+    "src": "assets/claude-eating-tokens/term-clear.mp4",
+    "zoomDir": "none",
+    "credit": "recorded live",
+    "covers": "type slash-clear"
+   },
+   "asset_id": "term-clear",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Compact re-reads",
+   "line": "Compact re-reads everything to summarise it.",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/claude-eating-tokens/docs-compact.png",
     "srcWidth": 1080,
     "srcHeight": 2340,
-    "type": "annotatezoom",
-    "credit": "Claude Code Docs",
-    "crop": true,
-    "focus": {
-     "x": 45,
-     "y": 400,
-     "w": 990,
-     "h": 300
-    }
-   }
-  },
-  {
-   "start_phrase": "the model remembers nothing between messages",
-   "line": "the model remembers nothing between messages",
-   "needs": [],
-   "tier": "official",
-   "asset_id": "src-05",
-   "scene": {
-    "src": "assets/claude-eating-tokens/src-organized.png",
-    "srcWidth": 1080,
-    "srcHeight": 2340,
-    "type": "sourceread",
-    "credit": "Claude Code Docs",
-    "follow": true,
-    "lines": [
-     {
-      "at": 0.12,
-      "x": 61,
-      "y": 800,
-      "w": 790,
-      "h": 66
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "so every turn re-sends your entire conversation",
-   "line": "so every turn re-sends your entire conversation",
-   "needs": [],
-   "tier": "official",
-   "asset_id": "src-06",
-   "scene": {
-    "src": "assets/claude-eating-tokens/src-organized.png",
-    "srcWidth": 1080,
-    "srcHeight": 2340,
-    "type": "sourceread",
-    "follow": true,
-    "lines": [
-     {
-      "at": 0.1,
-      "x": 61,
-      "y": 888,
-      "w": 950,
-      "h": 66
-     },
-     {
-      "at": 0.7,
-      "x": 61,
-      "y": 975,
-      "w": 950,
-      "h": 66
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "That history is the input",
-   "line": "That history is the input",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-07",
-   "scene": {
-    "type": "typecard",
-    "bg": "#0b0b0c",
-    "kinetic": {
-     "text": "THAT HISTORY\nIS THE INPUT",
-     "style": "serif",
-     "at": 0.05,
-     "y": 0.34
-    }
-   }
-  },
-  {
-   "start_phrase": "and most of your bill",
-   "line": "and most of your bill",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-08",
-   "scene": {
-    "type": "typecard",
-    "bg": "#0b0b0c",
-    "kinetic": {
-     "text": "AND MOST OF\nYOUR BILL",
-     "style": "serif",
-     "at": 0.05,
-     "y": 0.36
-    },
-    "sfx": [
-     {
-      "src": "sfx/Core.MP3",
-      "at": 0.05,
-      "vol": 0.1
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "So take caveman",
-   "line": "So take caveman",
-   "needs": [],
-   "tier": "official",
-   "asset_id": "src-09",
-   "scene": {
-    "src": "assets/claude-eating-tokens/repo-caveman-head.png",
-    "srcWidth": 1080,
-    "srcHeight": 321,
-    "type": "annotatezoom",
-    "credit": "GitHub",
-    "crop": true
-   }
-  },
-  {
-   "start_phrase": "A hundred thousand stars",
-   "line": "A hundred thousand stars",
-   "needs": [],
-   "tier": "official",
-   "asset_id": "src-10",
-   "scene": {
-    "type": "statcard",
-    "bg": "black",
-    "title": "caveman",
-    "titleRight": "GitHub",
-    "rows": [
-     {
-      "label": "Stars",
-      "value": "100,776",
-      "pct": 100,
-      "color": "#C2410C"
-     }
-    ],
-    "footnote": "github.com/JuliusBrussee/caveman"
-   }
-  },
-  {
-   "start_phrase": "and it does cut output",
-   "line": "and it does cut output",
-   "needs": [],
-   "tier": "official",
-   "asset_id": "src-11",
-   "scene": {
-    "type": "statcard",
-    "bg": "black",
-    "title": "caveman's own benchmark",
-    "rows": [
-     {
-      "label": "Output tokens saved",
-      "value": "65%",
-      "pct": 65,
-      "color": "#2fb98a"
-     }
-    ],
-    "footnote": "Average across the README's benchmark table"
-   }
-  },
-  {
-   "start_phrase": "But its README has an",
-   "line": "But its README has an",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-12",
-   "scene": {
-    "type": "typecard",
-    "bg": "#0b0b0c",
-    "kinetic": {
-     "text": "BUT READ THE\nREADME",
-     "style": "caps",
-     "at": 0.05,
-     "y": 0.36
-    },
-    "sfx": [
-     {
-      "src": "sfx/Riser.MP3",
-      "at": 0.0,
-      "vol": 0.09
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "honest number warning",
-   "line": "honest number warning",
-   "needs": [],
-   "tier": "official",
-   "asset_id": "src-13",
-   "scene": {
-    "src": "assets/claude-eating-tokens/repo-caveman-warning.png",
-    "srcWidth": 1176,
-    "srcHeight": 1540,
-    "type": "annotatezoom",
-    "credit": "GitHub",
-    "crop": true,
+    "credit": "Claude Docs",
+    "covers": "re-reads everything",
     "focus": {
      "x": 40,
-     "y": 20,
-     "w": 1100,
-     "h": 300
-    },
-    "sfx": [
-     {
-      "src": "sfx/Magic Reveal.MP3",
-      "at": 0.08,
-      "vol": 0.1
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "The skill only shrinks output",
-   "line": "The skill only shrinks output",
-   "needs": [],
-   "tier": "official",
-   "asset_id": "src-14",
-   "scene": {
-    "src": "assets/claude-eating-tokens/repo-caveman-warning.png",
-    "srcWidth": 1176,
-    "srcHeight": 1540,
-    "type": "sourceread",
-    "credit": "GitHub",
-    "follow": true,
-    "lines": [
-     {
-      "at": 0.1,
-      "x": 80,
-      "y": 265,
-      "w": 1010,
-      "h": 78
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "input is untouched",
-   "line": "input is untouched",
-   "needs": [],
-   "tier": "official",
-   "asset_id": "src-15",
-   "scene": {
-    "src": "assets/claude-eating-tokens/repo-caveman-warning.png",
-    "srcWidth": 1176,
-    "srcHeight": 1540,
-    "type": "sourceread",
-    "follow": true,
-    "lines": [
-     {
-      "at": 0.08,
-      "x": 80,
-      "y": 360,
-      "w": 900,
-      "h": 78
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "and it adds one to one and a half thousand",
-   "line": "and it adds one to one and a half thousand",
-   "needs": [],
-   "tier": "official",
-   "asset_id": "src-16",
-   "scene": {
-    "src": "assets/claude-eating-tokens/repo-caveman-warning.png",
-    "srcWidth": 1176,
-    "srcHeight": 1540,
-    "type": "sourceread",
-    "follow": true,
-    "lines": [
-     {
-      "at": 0.08,
-      "x": 80,
-      "y": 455,
-      "w": 1010,
-      "h": 78
-     },
-     {
-      "at": 0.6,
-      "x": 80,
-      "y": 552,
-      "w": 940,
-      "h": 78
-     }
-    ],
-    "sfx": [
-     {
-      "src": "sfx2/impact-boom.mp3",
-      "at": 0.55,
-      "vol": 0.1
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "It trims the cheapest half",
-   "line": "It trims the cheapest half",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-17",
-   "scene": {
-    "type": "typecard",
-    "bg": "#0b0b0c",
-    "kinetic": {
-     "text": "TRIMS THE\nCHEAPEST HALF",
-     "style": "caps",
-     "at": 0.05,
-     "y": 0.36
-    }
-   }
-  },
-  {
-   "start_phrase": "and adds to the expensive one",
-   "line": "and adds to the expensive one",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-18",
-   "scene": {
-    "type": "typecard",
-    "bg": "#0b0b0c",
-    "kinetic": {
-     "text": "ADDS TO THE\nEXPENSIVE ONE",
-     "style": "serif",
-     "at": 0.05,
-     "y": 0.36
-    }
-   }
-  },
-  {
-   "start_phrase": "So here are three that move the other half",
-   "line": "So here are three that move the other half",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-19",
-   "scene": {
-    "type": "typecard",
-    "bg": "#0b0b0c",
-    "kinetic": {
-     "text": "THREE THAT MOVE\nTHE OTHER HALF",
-     "style": "serif",
-     "at": 0.05,
-     "y": 0.34
-    }
-   }
-  },
-  {
-   "start_phrase": "One: see it",
-   "line": "One: see it",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-20",
-   "scene": {
-    "type": "terminal",
-    "bg": "black",
-    "title": "you \u2014 claude",
-    "lines": [
-     {
-      "text": "npx ccusage@latest",
-      "kind": "cmd",
-      "at": 0.05
-     }
-    ],
-    "headline": {
-     "lines": [
-      {
-       "text": "SEE IT",
-       "kind": "headline",
-       "at": 0.5,
-       "accent": true
-      }
-     ],
-     "y": 0.16,
-     "theme": "dark"
-    }
-   }
-  },
-  {
-   "start_phrase": "Run ccusage, or put claude-hud in your status line",
-   "line": "Run ccusage, or put claude-hud in your status line",
-   "needs": [],
-   "tier": "official",
-   "asset_id": "src-21",
-   "scene": {
-    "type": "statcard",
-    "bg": "black",
-    "title": "See the spend",
-    "titleRight": "GitHub",
-    "rows": [
-     {
-      "label": "ccusage",
-      "value": "18,151\u2605",
-      "pct": 60
-     },
-     {
-      "label": "claude-hud",
-      "value": "27,627\u2605",
-      "pct": 90,
-      "color": "#0aa9c2"
-     }
-    ],
-    "footnote": "ccusage/ccusage \u00b7 jarrodwatts/claude-hud"
-   }
-  },
-  {
-   "start_phrase": "You can't cut what you can't measure",
-   "line": "You can't cut what you can't measure",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-22",
-   "scene": {
-    "type": "typecard",
-    "bg": "#0b0b0c",
-    "kinetic": {
-     "text": "YOU CAN'T CUT\nWHAT YOU CAN'T MEASURE",
-     "style": "serif",
-     "at": 0.05,
-     "y": 0.34
-    }
-   }
-  },
-  {
-   "start_phrase": "Two: stop rebuilding what exists",
-   "line": "Two: stop rebuilding what exists",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-23",
-   "scene": {
-    "type": "terminal",
-    "bg": "black",
-    "title": "you \u2014 claude",
-    "lines": [
-     {
-      "text": "/plugin install ponytail@ponytail",
-      "kind": "cmd",
-      "at": 0.05
-     }
-    ],
-    "headline": {
-     "lines": [
-      {
-       "text": "STOP REBUILDING",
-       "kind": "headline",
-       "at": 0.5,
-       "accent": true
-      }
-     ],
-     "y": 0.16,
-     "theme": "dark"
-    }
-   }
-  },
-  {
-   "start_phrase": "Ponytail makes Claude check the standard library first",
-   "line": "Ponytail makes Claude check the standard library first",
-   "needs": [],
-   "tier": "official",
-   "asset_id": "src-24",
-   "scene": {
-    "type": "statcard",
-    "bg": "black",
-    "title": "ponytail",
-    "titleRight": "GitHub",
-    "rows": [
-     {
-      "label": "Stars",
-      "value": "110,147",
-      "pct": 100,
-      "color": "#C2410C"
-     }
-    ],
-    "footnote": "github.com/DietrichGebert/ponytail \u2014 checks stdlib and existing code first"
-   }
-  },
-  {
-   "start_phrase": "Three: between two unrelated tasks, clear",
-   "line": "Three: between two unrelated tasks, clear",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-25",
-   "scene": {
-    "type": "terminal",
-    "bg": "black",
-    "title": "you \u2014 claude",
-    "lines": [
-     {
-      "text": "/clear",
-      "kind": "cmd",
-      "at": 0.05
-     }
-    ],
-    "headline": {
-     "lines": [
-      {
-       "text": "COSTS NOTHING",
-       "kind": "headline",
-       "at": 0.5,
-       "accent": true
-      }
-     ],
-     "y": 0.16,
-     "theme": "dark"
-    },
-    "sfx": [
-     {
-      "src": "sfx/Core.MP3",
-      "at": 0.06,
-      "vol": 0.11
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "Compact re-reads everything to summarise it",
-   "line": "Compact re-reads everything to summarise it",
-   "needs": [],
-   "tier": "official",
-   "asset_id": "src-26",
-   "scene": {
-    "src": "assets/claude-eating-tokens/src-compact.png",
-    "srcWidth": 1080,
-    "srcHeight": 2340,
-    "type": "annotatezoom",
-    "credit": "Claude Code Docs",
-    "crop": true,
-    "focus": {
-     "x": 45,
-     "y": 1450,
-     "w": 990,
+     "y": 600,
+     "w": 1000,
      "h": 420
     }
-   }
+   },
+   "asset_id": "docs-compact",
+   "tier": "official"
   },
   {
-   "start_phrase": "Clear costs nothing",
-   "line": "Clear costs nothing",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-27",
+   "start_phrase": "They run with your agent's permissions",
+   "line": "They run with your agent's permissions \u2014 read them first.",
    "scene": {
-    "type": "typecard",
-    "bg": "#0b0b0c",
-    "kinetic": {
-     "text": "CLEAR COSTS\nNOTHING",
-     "style": "serif",
-     "at": 0.05,
-     "y": 0.36
+    "type": "annotatezoom",
+    "src": "assets/claude-eating-tokens/skill-hooks.png",
+    "srcWidth": 1080,
+    "srcHeight": 2600,
+    "credit": "GitHub",
+    "covers": "your agent's permissions",
+    "focus": {
+     "x": 40,
+     "y": 700,
+     "w": 1000,
+     "h": 460
     }
-   }
+   },
+   "asset_id": "skill-hooks",
+   "tier": "official"
   },
   {
-   "start_phrase": "These run with your agent's permissions",
-   "line": "These run with your agent's permissions",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-28",
+   "start_phrase": "Comment CLAUDE",
+   "line": "Comment CLAUDE, I'll send all four.",
    "scene": {
-    "type": "typecard",
-    "bg": "#0b0b0c",
-    "kinetic": {
-     "text": "THESE RUN WITH YOUR\nAGENT'S PERMISSIONS",
-     "style": "caps",
-     "at": 0.05,
-     "y": 0.34
-    },
-    "credit": "Claude Code Docs \u2014 plugins"
-   }
-  },
-  {
-   "start_phrase": "read them first",
-   "line": "read them first",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-29",
-   "scene": {
-    "type": "typecard",
-    "bg": "#0b0b0c",
-    "kinetic": {
-     "text": "READ THEM FIRST",
-     "style": "serif",
-     "at": 0.05,
-     "y": 0.42
-    }
-   }
-  },
-  {
-   "start_phrase": "Start with the expensive half",
-   "line": "Start with the expensive half",
-   "needs": [],
-   "tier": "mg",
-   "asset_id": "mg-30",
-   "scene": {
-    "type": "typecard",
-    "bg": "#0b0b0c",
-    "kinetic": {
-     "text": "START WITH THE\nEXPENSIVE HALF",
-     "style": "serif",
-     "at": 0.05,
-     "y": 0.34
-    },
-    "sfx": [
-     {
-      "src": "sfx2/impact-boom.mp3",
-      "at": 0.05,
-      "vol": 0.11
-     }
-    ]
+    "type": "commentcta",
+    "src": "assets/claude-eating-tokens/avatar-master.mp4",
+    "keyword": "CLAUDE",
+    "question": "WANT ALL FOUR TOOLS?"
    }
   }
- ],
- "emphasis": [
-  "input",
-  "output",
-  "cheapest",
-  "65%",
-  "honest number warning",
-  "untouched",
-  "adds",
-  "ccusage",
-  "claude-hud",
-  "Ponytail",
-  "clear",
-  "nothing",
-  "expensive half"
- ],
- "caption_corrections": {},
- "audio": "assets/claude-eating-tokens/avatar-master-169.mp4",
- "format": "news",
- "captionStyle": "word-reveal"
+ ]
 }

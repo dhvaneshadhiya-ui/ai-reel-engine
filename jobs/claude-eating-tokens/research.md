@@ -11,7 +11,7 @@ tool's OWN README, including the caveat that contradicts its headline number.
   result — on every turn. That resent history is input, and input dominates a
   long session's cost.
   TIER: official
-  SPOKEN: "the model remembers nothing between messages"
+  SPOKEN: "remembers nothing between messages"
   SRC: https://code.claude.com/docs/en/prompt-caching
   VIA: Anthropic product documentation
 
@@ -28,7 +28,7 @@ tool's OWN README, including the caveat that contradicts its headline number.
   ~1-1.5k INPUT TOKENS PER TURN; whole-session savings run smaller than the
   output number and can go net-negative on already-terse workloads.
   TIER: official
-  SPOKEN: "The skill only shrinks output, input is untouched, and it adds one to one and a half thousand input tokens every turn."
+  SPOKEN: "input is untouched, and it adds over a thousand input tokens a turn"
   SRC: https://github.com/JuliusBrussee/caveman
   VIA: the project's own README
 
@@ -36,7 +36,7 @@ tool's OWN README, including the caveat that contradicts its headline number.
   claude-hud is a Claude Code plugin that surfaces context usage and running
   tools in the status line.
   TIER: official
-  SPOKEN: "Run ccusage, or put claude-hud in your status line."
+  SPOKEN: "ccusage charts each session's cost"
   SRC: https://github.com/ccusage/ccusage
   VIA: the project's own README
   SRC: https://github.com/jarrodwatts/claude-hud
@@ -46,14 +46,14 @@ tool's OWN README, including the caveat that contradicts its headline number.
   decision ladder before code generation — does it exist already, can the
   standard library do it — so less new code is written.
   TIER: official
-  SPOKEN: "Ponytail makes Claude check the standard library first."
+  SPOKEN: "Ponytail stops Claude rebuilding code that already exists"
   SRC: https://github.com/DietrichGebert/ponytail
   VIA: the project's own README
 
 - CLAIM: /compact sends a request carrying the history it summarises, so it
   costs; /clear costs nothing.
   TIER: official
-  SPOKEN: "Clear costs nothing."
+  SPOKEN: "type slash-clear — free"
   SRC: https://code.claude.com/docs/en/costs
   VIA: Anthropic product documentation
   SRC: https://code.claude.com/docs/en/prompt-caching
@@ -64,7 +64,7 @@ tool's OWN README, including the caveat that contradicts its headline number.
   third-party code with the agent's permissions; Anthropic's docs direct users
   to trust considerations before installing.
   TIER: official
-  SPOKEN: "These run with your agent's permissions"
+  SPOKEN: "They run with your agent's permissions"
   SRC: https://code.claude.com/docs/en/plugins
   VIA: Anthropic product documentation
 

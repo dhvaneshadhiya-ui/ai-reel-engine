@@ -1,73 +1,54 @@
-# Structure — claude-eating-tokens
+# Structure — claude-eating-tokens (v2, ai-tools rebuild 2026-08-25)
+
+Format: **ai-tools** (formats/ai-tools.md — the Saraev-skeleton/Badar-evidence
+blend, user-approved 2026-08-25). v1's failure was not structure but EVIDENCE:
+a reel about tools where no tool ever ran — six text cards in fourteen beats.
+The myth-busting core survives; the treatment is rebuilt under the format's
+doctrine: a named tool is on screen, running or being itself, while named.
 
 ## SHAPE (S17)
 
-**Myth-busting, in service of a tutorial.** The viewer arrives believing the
-fix for a big Claude bill is a terse-output skill, because that is what the
-popular decks sell. The correction is mechanical and checkable: the model is
-stateless, so every turn re-sends the whole conversation, which makes INPUT the
-dominant cost — and terse-output skills cut OUTPUT. The reel overturns that,
-then spends its second half handing over four things the viewer can do tonight.
-
-Straight Tutorial was the alternative and was rejected: a bare list of four
-tools is what both references already are, and it gives the viewer no way to
-judge which one matters. The myth is what makes the list ordered.
+**Myth-busting, in service of a tutorial** — unchanged from v1 and still the
+differentiator: a bare tool list is what every reference reel already is; the
+input-vs-output mechanism is what makes our list ORDERED and checkable.
 
 ## PROMISE (S2)
 
-You will leave knowing which half of your token bill you are actually paying
-for, and the three moves that touch it.
+Why the most popular fix barely helps, and the three moves that touch the
+half of the bill it can't.
 
 ## OPEN LOOP (S10)
 
-Planted: sentence 2 — "almost every token-saving skill you've seen cuts your
-cheapest tokens." Distinctive word held back: *cheapest*.
-
-Paid off: at "It is cutting the cheapest half", and returned to per S18 in the
-final line — "And start with the expensive half, not the cheapest."
+Planted: sentence 1 — "here's why the top fix barely helps."
+Paid off: "So it trims the cheap half of your bill — that's why it barely
+helps" (verbatim return), with "Back to that popular fix" as the explicit
+S8 re-orientation beat. NOTE: check_script's loop detector does not credit
+this pair — recorded as a deliberate override in questions.md; the plant,
+callback and verbatim payoff are all present on the page.
 
 ## WHAT -> WHY -> SO WHAT (S7)
 
-WHAT: caveman claims 65% fewer output tokens and has ~100k stars.
-WHY: output is not where a long session's money goes. Anthropic's docs say the
-model remembers nothing between messages, so the entire conversation is re-sent
-every turn — and caveman's own README concedes the skill only shrinks output,
-that whole-session savings run smaller, and that it can go net negative.
-SO WHAT: the honest ordering is see it (ccusage / claude-hud), stop generating
-work you don't need (ponytail), and stop carrying history you don't need
-(/clear, which costs nothing, over /compact, which re-reads to summarise).
+WHAT: caveman cuts output 65% and has 100k stars. WHY it doesn't help much:
+statelessness makes input the dominant cost, and the skill adds input each
+turn. SO WHAT: see the spend (ccusage/claude-hud), stop paying for rebuilt
+code (Ponytail), stop carrying dead history (/clear over /compact).
 
-## WHY THIS DRAFT EXISTS
+## EVIDENCE PLAN (the format's rule 3)
 
-The previous draft was a well-sourced news story about Uber's AI budget with no
-takeaway for a viewer, and it reached that state because the reference posts
-were dismissed on a misreading. Both were read in full before this draft; see
-research.md -> CORRECTION TO THE RECORD.
+Every named tool appears as itself: real ccusage charts and terminal runs
+RECORDED ON THIS MACHINE (our own usage — tier official, no rights), the
+caveman README's actual "honest number warning" section (a receipt is
+legitimate exactly here: the claim is about the README), claude-hud live in
+a real status line, /clear typed in a real session with the meter dropping.
+Zero full-screen text cards.
 
 ## WHAT WAS CUT (S11, S21)
 
-- Every mock number from the reference graphics (88,100 tokens, 87% fewer,
-  "up to 85%") — promotional illustrations with no methodology.
-- OmniRoute and claude-mem — real, but not verified in this pass, so not
-  recommended on air.
-- The whole Uber story — no viewer takeaway. Its own reel.
-- /pin, /rewind, /handoff and /doctor — good levers, cut purely for runtime.
-  /rewind is the strongest of the four and the first thing to add if this runs
-  long enough for a fourth item.
-
-## THE SAFETY LINE IS NOT OPTIONAL
-
-The reel tells people to install three third-party things. Anthropic's plugin
-docs are explicit that a plugin can ship hooks that execute commands, MCP
-servers, and a bin/ directory on the Bash PATH. Recommending installs without
-saying that would be careless, so the line stays even though it costs runtime.
+- v1's "Start with the expensive half, not the cheapest" closer — replaced
+  by the verbatim loop return + CTA.
+- Cache-invalidation habits (the brief's second clause) — a whole reel of
+  its own; one reel, one mechanism.
 
 ## SOURCES
 
-- https://code.claude.com/docs/en/prompt-caching
-- https://code.claude.com/docs/en/costs
-- https://code.claude.com/docs/en/plugins
-- https://github.com/JuliusBrussee/caveman
-- https://github.com/DietrichGebert/ponytail
-- https://github.com/ccusage/ccusage
-- https://github.com/jarrodwatts/claude-hud
+See research.md — 7 claims, Anthropic docs + the tools' own repos.

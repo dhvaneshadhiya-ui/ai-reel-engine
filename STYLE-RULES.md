@@ -3832,3 +3832,31 @@ check, the same class of gap as `STYLE_ALIASES` exists for style ids).
   outlet mastheads stacked vertically" layout is now used); converting a
   release-notes text crop straight into a silent floatcard loop for a
   sequence of parallel bug-fix beats.
+
+## 2026-08-25 — the ai-tools format: an 8-reel measured teardown, and the blend
+
+The engine's first non-Apple genre, built the G23 way. Corpus: 5 Badar Munir
+YouTube shorts (26.5-48.6s · 1.6-5.4 s/cut · 217 wpm · ~60% on camera) and
+3 Nick Saraev Instagram reels (34.7-39.4s · 1.4-4.9 s/cut · 237 wpm ·
+bookend face ~20%), pulled with yt-dlp, measured with ffprobe/scene-detect/
+whisper, frames read via scout_sheet. Two sub-rhythms in both corpora:
+tool-LIST reels cut at 1.4-1.7s, single-story walkthroughs at 4-5s.
+
+**The blend (user decision): Saraev's skeleton, Badar's evidence.** Face
+bookends the reel — Badar's ~60% on-camera presence leans on a live human
+and was deliberately not asked of a HeyGen twin. The evidence doctrine is
+the format's own reading of Rule 3: *a named tool is on screen, running or
+being itself, while it is named* — its real page, real output, a real
+terminal. A README screenshot is evidence only for a claim ABOUT the
+README. Full-screen text cards standing in for demos are this format's
+logo-build anti-pattern: claude-eating-tokens v1 had six in fourteen beats
+and is the reel that forced the format to exist.
+
+**Runtime derived for OUR voice, not copied (user kept the pace).** The
+corpus speaks 217-237 wpm; the twin is locked at 2.35-2.75 wps. Corpus word
+counts mapped through our pace give the 40-60s band. sfx inherited from
+news, unmeasured — the comparison-format precedent, marked as such.
+
+**Recordable evidence is the genre's unfair advantage:** for Claude-topic
+reels the artifacts are our own machine's real output (ccusage, claude-hud,
+/clear) — tier official, zero rights friction. Record, don't screenshot.

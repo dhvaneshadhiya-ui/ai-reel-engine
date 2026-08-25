@@ -713,6 +713,11 @@ CASES = [
      "G49", "a locked-off zoom compounded by a push"),
 ]
 
+# ai-tools (added 2026-08-25): CTA is constitutive — all 8 teardown reels
+# carry a follow/comment gate — so declaring the format without one trips G24.
+CASES.append((lambda s: s.update(format="ai-tools"),
+              "G24", "ai-tools reel with no CTA scene"))
+
 for mutate, gate, label in CASES:
     expect_fail(mutate, gate, label)
 

@@ -92,6 +92,37 @@ FORMATS: dict[str, dict] = {
                     "measured separately for this format — measure it on the "
                     "first top5 reel and tighten this if it disagrees.",
     },
+    "ai-tools": {
+        # AI / Claude / automation tool reels — the 2026-08-25 expansion. The
+        # BLEND, chosen by the user: Saraev's SKELETON (face bookends the reel
+        # — hook and CTA — evidence owns the middle) with Badar Munir's
+        # EVIDENCE DOCTRINE (a named tool is ON SCREEN, running or being
+        # itself, while it is named: its real page, its real output, a real
+        # terminal — never a README screenshot standing in for a demo).
+        #
+        # RUNTIME IS DERIVED FOR OUR VOICE, not copied from the corpus. The
+        # corpus runs 26.5-48.6s at a measured 217-237 wpm; our twin is
+        # locked at 2.35-2.75 wps (~162 wpm, user kept the pace 2026-08-25).
+        # Corpus word counts (~95-176 words, median ~130-155) spoken at OUR
+        # pace land 40-66s; the band takes the working middle. A single-tool
+        # short sits at the bottom, a 3-tool list at the top.
+        "runtime": (40.0, 60.0),
+        "hook_max": 2.0,          # corpus hooks land the PROBLEM by ~2s,
+                                  # artifact already on frame 0
+        "face": (0.10, 0.25),     # bookend style, measured on Saraev IG
+                                  # (~20%: hook + one mid beat + CTA)
+        "sfx": (6, 9),            # INHERITED from news — not measurable from
+        "sfx_vol": (0.10, 0.19),  # stills; re-derive on the first shipped reel
+        "requires_cta": True,     # follow/comment gate is constitutive: all 8
+                                  # corpus reels carry one
+        "_derived": "8-reel teardown 2026-08-25 (STYLE-RULES entry of that "
+                    "date): 5x Badar Munir YT shorts (26.5-48.6s, 1.6-5.4 "
+                    "s/cut, 217 wpm, ~60%% face) + 3x Saraev IG (34.7-39.4s, "
+                    "1.4-4.9 s/cut, 237 wpm, bookend face ~20%%), measured "
+                    "with ffprobe/scene-detect/whisper, frames read via "
+                    "scout_sheet. Runtime mapped through OUR measured "
+                    "2.35-2.75 wps. sfx band inherited from news, unmeasured.",
+    },
     "comparison": {
         # "iPhone 18 vs 17", "Grok vs ChatGPT". Spikes at launch moments.
         # TIMING IS INHERITED FROM `news`, NOT MEASURED. There is no comparison
