@@ -1,0 +1,634 @@
+{
+ "emphasis": [
+  "ten percent",
+  "exact",
+  "full price",
+  "compact",
+  "Clear",
+  "nothing",
+  "entire conversation"
+ ],
+ "caption_corrections": {},
+ "shots": [
+  {
+   "start_phrase": "Your one-line question just",
+   "line": "Your one-line question just re-read the entire conversation.",
+   "needs": [
+    "one-line",
+    "question",
+    "re-read",
+    "entire",
+    "conversation"
+   ],
+   "tier": "mg",
+   "asset_id": "mg-hook",
+   "scene": {
+    "type": "terminal",
+    "bg": "black",
+    "zoomDir": "in",
+    "title": "you \u2014 claude",
+    "lines": [
+     {
+      "text": "why is this test failing?",
+      "kind": "cmd",
+      "at": 0.1
+     }
+    ],
+    "headline": {
+     "lines": [
+      {
+       "text": "YOUR ONE-LINE QUESTION",
+       "kind": "label",
+       "at": 0.05
+      },
+      {
+       "text": "JUST RE-READ",
+       "kind": "headline",
+       "at": 0.3
+      },
+      {
+       "text": "EVERYTHING",
+       "kind": "headline",
+       "at": 0.6,
+       "accent": true
+      }
+     ],
+     "y": 0.12,
+     "theme": "dark"
+    },
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "at": 0.04,
+      "vol": 0.09
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "And the habits you",
+   "line": "And the habits you use to save tokens are the ones making that expensive.",
+   "needs": [
+    "habits",
+    "save",
+    "tokens",
+    "ones",
+    "making",
+    "expensive"
+   ],
+   "tier": "own",
+   "asset_id": "facecam-a",
+   "scene": {
+    "type": "footage",
+    "src": "assets/claude-eating-tokens/avatar-master-169.mp4",
+    "zoomDir": "in",
+    "focusX": 0.5
+   }
+  },
+  {
+   "start_phrase": "Here's why: Claude remembers",
+   "line": "Here's why: Claude remembers nothing between messages., So every turn",
+   "needs": [
+    "Claude",
+    "remembers",
+    "nothing",
+    "between",
+    "messages",
+    "every"
+   ],
+   "tier": "official",
+   "asset_id": "src-organized",
+   "scene": {
+    "src": "assets/claude-eating-tokens/src-organized.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "type": "sourceread",
+    "credit": "Claude Code Docs",
+    "follow": true,
+    "lines": [
+     {
+      "at": 0.15,
+      "x": 61,
+      "y": 800,
+      "w": 790,
+      "h": 66
+     },
+     {
+      "at": 0.75,
+      "x": 61,
+      "y": 888,
+      "w": 950,
+      "h": 66
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Claude Code re-sends all",
+   "line": "Claude Code re-sends all of it \u2014 system prompt, project context, every reply, every tool result \u2014 just to answer the next line.",
+   "needs": [
+    "Claude",
+    "Code",
+    "re-sends",
+    "system",
+    "prompt",
+    "project"
+   ],
+   "tier": "mg",
+   "asset_id": "mg-stack",
+   "scene": {
+    "type": "wordcascade",
+    "bg": "black",
+    "words": [
+     {
+      "text": "SYSTEM PROMPT",
+      "style": "caps",
+      "at": 0.1
+     },
+     {
+      "text": "PROJECT CONTEXT",
+      "style": "caps",
+      "at": 0.6
+     },
+     {
+      "text": "EVERY REPLY",
+      "style": "caps",
+      "at": 1.1
+     },
+     {
+      "text": "EVERY TOOL RESULT",
+      "style": "caps",
+      "at": 1.6
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 0.07,
+      "vol": 0.08
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Caching is the only",
+   "line": "Caching is the only reason that's survivable: that re-read bills at roughly ten percent of the normal input rate.",
+   "needs": [
+    "Caching",
+    "only",
+    "reason",
+    "survivable",
+    "re-read",
+    "bills"
+   ],
+   "tier": "mg",
+   "asset_id": "mg-tenpct",
+   "scene": {
+    "type": "statcard",
+    "bg": "black",
+    "title": "What a re-read costs",
+    "titleRight": "cached",
+    "rows": [
+     {
+      "label": "Uncached input",
+      "value": "100%",
+      "pct": 100
+     },
+     {
+      "label": "Cache read",
+      "value": "~10%",
+      "pct": 10,
+      "color": "#2fb98a"
+     }
+    ],
+    "footnote": "Claude Code Docs \u2014 prompt caching",
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 0.1,
+      "vol": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "But the match has",
+   "line": "But the match has to be exact.",
+   "needs": [
+    "match",
+    "exact"
+   ],
+   "tier": "mg",
+   "asset_id": "mg-exact",
+   "scene": {
+    "type": "typecard",
+    "bg": "#0b0b0c",
+    "kinetic": {
+     "text": "THE MATCH\nHAS TO BE EXACT",
+     "style": "serif",
+     "at": 0.05,
+     "y": 0.34
+    }
+   }
+  },
+  {
+   "start_phrase": "Change anything near the",
+   "line": "Change anything near the top, and everything after it is recomputed at full price.",
+   "needs": [
+    "Change",
+    "anything",
+    "near",
+    "after",
+    "recomputed",
+    "full"
+   ],
+   "tier": "official",
+   "asset_id": "src-organized-prefix",
+   "scene": {
+    "src": "assets/claude-eating-tokens/src-organized.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "type": "annotatezoom",
+    "credit": "Claude Code Docs",
+    "crop": true,
+    "focus": {
+     "x": 45,
+     "y": 1690,
+     "w": 990,
+     "h": 420
+    },
+    "annotations": [
+     {
+      "kind": "underline",
+      "x": 61,
+      "y": 1700,
+      "w": 940,
+      "h": 60,
+      "at": 0.35
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "So switching models mid-task",
+   "line": "So switching models mid-task does it.",
+   "needs": [
+    "switching",
+    "models",
+    "mid-task",
+    "does"
+   ],
+   "tier": "mg",
+   "asset_id": "mg-model",
+   "scene": {
+    "type": "terminal",
+    "bg": "black",
+    "title": "you \u2014 claude",
+    "lines": [
+     {
+      "text": "/model opus",
+      "kind": "cmd",
+      "at": 0.05
+     }
+    ],
+    "headline": {
+     "lines": [
+      {
+       "text": "CACHE GONE",
+       "kind": "headline",
+       "at": 0.55,
+       "accent": true
+      }
+     ],
+     "y": 0.16,
+     "theme": "dark"
+    },
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Changing effort does it.",
+   "line": "Changing effort does it.",
+   "needs": [
+    "Changing",
+    "effort",
+    "does"
+   ],
+   "tier": "mg",
+   "asset_id": "mg-effort",
+   "scene": {
+    "type": "terminal",
+    "bg": "black",
+    "title": "you \u2014 claude",
+    "lines": [
+     {
+      "text": "/effort high",
+      "kind": "cmd",
+      "at": 0.05
+     }
+    ],
+    "headline": {
+     "lines": [
+      {
+       "text": "CACHE GONE",
+       "kind": "headline",
+       "at": 0.55,
+       "accent": true
+      }
+     ],
+     "y": 0.16,
+     "theme": "dark"
+    }
+   }
+  },
+  {
+   "start_phrase": "Toggling an MCP server",
+   "line": "Toggling an MCP server does it.",
+   "needs": [
+    "Toggling",
+    "server",
+    "does"
+   ],
+   "tier": "mg",
+   "asset_id": "mg-mcp",
+   "scene": {
+    "type": "terminal",
+    "bg": "black",
+    "title": "you \u2014 claude",
+    "lines": [
+     {
+      "text": "/mcp",
+      "kind": "cmd",
+      "at": 0.05
+     }
+    ],
+    "headline": {
+     "lines": [
+      {
+       "text": "CACHE GONE",
+       "kind": "headline",
+       "at": 0.55,
+       "accent": true
+      }
+     ],
+     "y": 0.16,
+     "theme": "dark"
+    }
+   }
+  },
+  {
+   "start_phrase": "And so does compact",
+   "line": "And so does compact \u2014 the command people run to save tokens.",
+   "needs": [
+    "does",
+    "compact",
+    "command",
+    "people",
+    "save",
+    "tokens"
+   ],
+   "tier": "official",
+   "asset_id": "src-compact",
+   "scene": {
+    "src": "assets/claude-eating-tokens/src-compact.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "type": "annotatezoom",
+    "credit": "Claude Code Docs",
+    "crop": true,
+    "focus": {
+     "x": 45,
+     "y": 1450,
+     "w": 990,
+     "h": 420
+    },
+    "annotations": [
+     {
+      "kind": "box",
+      "x": 55,
+      "y": 1470,
+      "w": 840,
+      "h": 90,
+      "at": 0.3
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Riser.MP3",
+      "at": 0.0,
+      "vol": 0.09
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "To write that summary",
+   "line": "To write that summary",
+   "needs": [
+    "write",
+    "summary"
+   ],
+   "tier": "official",
+   "asset_id": "src-compact-body",
+   "scene": {
+    "src": "assets/claude-eating-tokens/src-compact.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "type": "sourceread",
+    "credit": "Claude Code Docs",
+    "follow": true,
+    "lines": [
+     {
+      "at": 0.1,
+      "x": 55,
+      "y": 1630,
+      "w": 810,
+      "h": 62
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Claude re-reads the whole",
+   "line": "Claude re-reads the whole thing it's summarizing, so on a session you've come back to cold, that's the most expensive compact you'll run.",
+   "needs": [
+    "Claude",
+    "re-reads",
+    "whole",
+    "thing",
+    "summarizing",
+    "session"
+   ],
+   "tier": "mg",
+   "asset_id": "mg-payoff",
+   "scene": {
+    "type": "typecard",
+    "bg": "#0b0b0c",
+    "kinetic": {
+     "text": "THE MOST EXPENSIVE\nCOMPACT YOU'LL RUN",
+     "style": "serif",
+     "at": 0.1,
+     "y": 0.32
+    },
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "at": 0.08,
+      "vol": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Clear costs nothing.",
+   "line": "Clear costs nothing.",
+   "needs": [
+    "Clear",
+    "costs",
+    "nothing"
+   ],
+   "tier": "mg",
+   "asset_id": "mg-clear",
+   "scene": {
+    "type": "terminal",
+    "bg": "black",
+    "title": "you \u2014 claude",
+    "lines": [
+     {
+      "text": "/clear",
+      "kind": "cmd",
+      "at": 0.05
+     }
+    ],
+    "headline": {
+     "lines": [
+      {
+       "text": "COSTS NOTHING",
+       "kind": "headline",
+       "at": 0.55,
+       "accent": true
+      }
+     ],
+     "y": 0.16,
+     "theme": "dark"
+    },
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 0.06,
+      "vol": 0.11
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "So: check context before",
+   "line": "So: check context before you optimize.",
+   "needs": [
+    "check",
+    "context",
+    "before",
+    "optimize"
+   ],
+   "tier": "mg",
+   "asset_id": "mg-context",
+   "scene": {
+    "type": "terminal",
+    "bg": "black",
+    "title": "you \u2014 claude",
+    "lines": [
+     {
+      "text": "/context",
+      "kind": "cmd",
+      "at": 0.05
+     }
+    ],
+    "headline": {
+     "lines": [
+      {
+       "text": "SEE WHAT'S EATING IT",
+       "kind": "headline",
+       "at": 0.55,
+       "accent": false
+      }
+     ],
+     "y": 0.16,
+     "theme": "dark"
+    }
+   }
+  },
+  {
+   "start_phrase": "Pick your model at",
+   "line": "Pick your model at the start.",
+   "needs": [
+    "Pick",
+    "model",
+    "start"
+   ],
+   "tier": "mg",
+   "asset_id": "mg-pickmodel",
+   "scene": {
+    "type": "typecard",
+    "bg": "#0b0b0c",
+    "kinetic": {
+     "text": "PICK YOUR MODEL\nAT THE START",
+     "style": "serif",
+     "at": 0.08,
+     "y": 0.34
+    }
+   }
+  },
+  {
+   "start_phrase": "And between two unrelated",
+   "line": "And between two unrelated tasks, clear \u2014 don't compact.",
+   "needs": [
+    "between",
+    "unrelated",
+    "tasks",
+    "clear",
+    "compact"
+   ],
+   "tier": "mg",
+   "asset_id": "mg-clearnotcompact",
+   "scene": {
+    "type": "checklist",
+    "bg": "gradient",
+    "stagger": 0.7,
+    "headline": "BETWEEN TWO TASKS",
+    "rows": [
+     {
+      "label": "/clear",
+      "state": "done"
+     },
+     {
+      "label": "/compact",
+      "state": "no"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "at": 0.1,
+      "vol": 0.08
+     }
+    ]
+   }
+  }
+ ],
+ "audio": "assets/claude-eating-tokens/avatar-master-169.mp4",
+ "format": "news",
+ "captionStyle": "word-reveal"
+}
