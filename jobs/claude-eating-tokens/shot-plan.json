@@ -4,7 +4,14 @@
   "1,000",
   "100,000"
  ],
- "caption_corrections": {},
+ "caption_corrections": {
+  "read me": "README",
+  "see use it": "ccusage",
+  "claude hard": "claude-hud",
+  "reads": "re-reads",
+  "anthropics": "Anthropic's",
+  "agents": "agent's"
+ },
  "shots": [
   {
    "start_phrase": "Your Claude bill",
@@ -28,7 +35,19 @@
       }
      ],
      "y": 0.07
-    }
+    },
+    "sfx": [
+     {
+      "src": "sfx2/risers-01.mp3",
+      "vol": 0.367,
+      "at": 0.0
+     },
+     {
+      "src": "sfx2/impact-boom.mp3",
+      "vol": 0.452,
+      "at": 0.35
+     }
+    ]
    },
    "asset_id": "ccusage-hero",
    "tier": "official"
@@ -64,7 +83,14 @@
     "src": "assets/claude-eating-tokens/caveman-page.mp4",
     "zoomDir": "none",
     "credit": "github.com/JuliusBrussee/caveman",
-    "covers": "popular fix"
+    "covers": "popular fix",
+    "sfx": [
+     {
+      "src": "sfx2/whooshes-01.mp3",
+      "vol": 0.543,
+      "at": 0.0
+     }
+    ]
    },
    "asset_id": "caveman-page",
    "tier": "official"
@@ -91,7 +117,14 @@
     "title": "caveman",
     "stat": "100,000",
     "unit": "stars",
-    "source": "GitHub"
+    "source": "GitHub",
+    "sfx": [
+     {
+      "src": "sfx2/ground-impact-352053.mp3",
+      "vol": 0.394,
+      "at": 0.3
+     }
+    ]
    }
   },
   {
@@ -109,7 +142,14 @@
      "y": 60,
      "w": 1096,
      "h": 1411
-    }
+    },
+    "sfx": [
+     {
+      "src": "sfx2/whooshes-01.mp3",
+      "vol": 0.543,
+      "at": 0.0
+     }
+    ]
    },
    "asset_id": "caveman-warning",
    "tier": "official"
@@ -133,7 +173,14 @@
     "type": "footage",
     "src": "assets/claude-eating-tokens/avatar-master.mp4",
     "zoomDir": "none",
-    "focusX": 0.5
+    "focusX": 0.5,
+    "sfx": [
+     {
+      "src": "sfx2/whooshes-01.mp3",
+      "vol": 0.543,
+      "at": 0.0
+     }
+    ]
    }
   },
   {
@@ -143,13 +190,20 @@
     "type": "floatcard",
     "src": "assets/claude-eating-tokens/term-ccusage.mp4",
     "credit": "ccusage \u00b7 recorded live",
-    "covers": "charts each session's cost"
+    "covers": "charts each session's cost",
+    "sfx": [
+     {
+      "src": "sfx2/ground-impact-352053.mp3",
+      "vol": 0.394,
+      "at": 0.3
+     }
+    ]
    },
    "asset_id": "term-ccusage",
    "tier": "official"
   },
   {
-   "start_phrase": "claude-hud is a live meter",
+   "start_phrase": "claude",
    "line": "claude-hud is a live meter in your status line.",
    "scene": {
     "type": "floatcard",
@@ -158,7 +212,8 @@
     "covers": "live meter in your status line"
    },
    "asset_id": "hud-statusline",
-   "tier": "official"
+   "tier": "official",
+   "start_phrase_note": "anchors the first 'claude' after the ccusage beat = the 'claude-hud' word; whisper wrote the spoken name as 'claude hard' (audio verified correct via whisper medium: 'CloudHUD'), so the written compound cannot resolve"
   },
   {
    "start_phrase": "Two: Ponytail",
@@ -180,13 +235,20 @@
     "type": "floatcard",
     "src": "assets/claude-eating-tokens/term-clear.mp4",
     "credit": "recorded live",
-    "covers": "type slash-clear"
+    "covers": "type slash-clear",
+    "sfx": [
+     {
+      "src": "sfx2/ground-impact-352053.mp3",
+      "vol": 0.394,
+      "at": 0.3
+     }
+    ]
    },
    "asset_id": "term-clear",
    "tier": "official"
   },
   {
-   "start_phrase": "Compact re-reads",
+   "start_phrase": "Compact",
    "line": "Compact re-reads everything to summarise it.",
    "scene": {
     "type": "annotatezoom",
@@ -203,7 +265,8 @@
     }
    },
    "asset_id": "docs-compact",
-   "tier": "official"
+   "tier": "official",
+   "start_phrase_note": "whisper wrote 're-reads' as 'reads'; 'Compact' is unique in the transcript"
   },
   {
    "start_phrase": "They run with your agent's permissions",
@@ -232,8 +295,17 @@
     "type": "commentcta",
     "src": "assets/claude-eating-tokens/avatar-master.mp4",
     "keyword": "CLAUDE",
-    "question": "WANT ALL FOUR TOOLS?"
+    "question": "WANT ALL FOUR TOOLS?",
+    "sfx": [
+     {
+      "src": "sfx2/impact-boom.mp3",
+      "vol": 0.452,
+      "at": 0.3
+     }
+    ]
    }
   }
- ]
+ ],
+ "allowLong": true,
+ "allowLongReason": "user accepted the 159-word runtime in writing at approval 341019be (2026-08-25): 'Runtime \u2026 ship-as-is'; band 40-60s, actual 61.2s"
 }

@@ -1,0 +1,545 @@
+{
+  "id": "claude-eating-tokens",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/claude-eating-tokens/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "1,000",
+    "100,000"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "topSrc": "assets/claude-eating-tokens/ccusage-hero.mp4",
+      "bottomSrc": "assets/claude-eating-tokens/avatar-master.mp4",
+      "credit": "ccusage · our own usage",
+      "headline": {
+        "lines": [
+          {
+            "text": "YOUR CLAUDE BILL",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "MOSTLY THE READING",
+            "kind": "headline",
+            "at": 0.6
+          }
+        ],
+        "y": 0.07
+      },
+      "sfx": [
+        {
+          "src": "sfx2/risers-01.mp3",
+          "vol": 0.367,
+          "at": 0.0
+        },
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "vol": 0.452,
+          "at": 0.35
+        }
+      ],
+      "durationSec": 5.54,
+      "captionBottom": 1000,
+      "assetId": "ccusage-hero",
+      "claimId": "ccusage-hero",
+      "covers": "Your Claude bill",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.5
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/claude-eating-tokens/docs-context.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "credit": "Claude Docs",
+      "covers": "remembers nothing between messages",
+      "lines": [
+        {
+          "at": 0.3,
+          "x": 40,
+          "y": 300,
+          "w": 980,
+          "h": 64
+        }
+      ],
+      "durationSec": 7.58,
+      "assetId": "docs-context",
+      "claimId": "docs-context"
+    },
+    {
+      "type": "footage",
+      "src": "assets/claude-eating-tokens/caveman-page.mp4",
+      "zoomDir": "none",
+      "credit": "github.com/JuliusBrussee/caveman",
+      "covers": "popular fix",
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "vol": 0.543,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 1.42,
+      "assetId": "caveman-page",
+      "claimId": "caveman-page"
+    },
+    {
+      "type": "footage",
+      "src": "assets/claude-eating-tokens/caveman-page.mp4",
+      "from": 3.0,
+      "zoomDir": "none",
+      "credit": "github.com/JuliusBrussee/caveman",
+      "covers": "answer in fewer words",
+      "durationSec": 3.4,
+      "assetId": "caveman-page",
+      "claimId": "caveman-page"
+    },
+    {
+      "type": "statcard",
+      "title": "caveman",
+      "stat": "100,000",
+      "unit": "stars",
+      "source": "GitHub",
+      "sfx": [
+        {
+          "src": "sfx2/ground-impact-352053.mp3",
+          "vol": 0.394,
+          "at": 0.3
+        }
+      ],
+      "durationSec": 2.7
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/claude-eating-tokens/repo-caveman-warning.png",
+      "srcWidth": 1176,
+      "srcHeight": 1540,
+      "credit": "caveman README",
+      "covers": "input is untouched",
+      "focus": {
+        "x": 40,
+        "y": 60,
+        "w": 1096,
+        "h": 1411
+      },
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "vol": 0.543,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 5.74,
+      "assetId": "caveman-warning",
+      "claimId": "caveman-warning"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/claude-eating-tokens/ccusage-split.mp4",
+      "credit": "ccusage · our own usage",
+      "covers": "the cheap half of your bill",
+      "durationSec": 4.92,
+      "assetId": "ccusage-split",
+      "claimId": "ccusage-split"
+    },
+    {
+      "type": "footage",
+      "src": "assets/claude-eating-tokens/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "vol": 0.543,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 1.98,
+      "from": 31.3
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/claude-eating-tokens/term-ccusage.mp4",
+      "credit": "ccusage · recorded live",
+      "covers": "charts each session's cost",
+      "sfx": [
+        {
+          "src": "sfx2/ground-impact-352053.mp3",
+          "vol": 0.394,
+          "at": 0.3
+        }
+      ],
+      "durationSec": 4.38,
+      "assetId": "term-ccusage",
+      "claimId": "term-ccusage"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/claude-eating-tokens/hud-statusline.mp4",
+      "credit": "claude-hud · recorded live",
+      "covers": "live meter in your status line",
+      "durationSec": 2.22,
+      "assetId": "hud-statusline",
+      "claimId": "hud-statusline"
+    },
+    {
+      "type": "footage",
+      "src": "assets/claude-eating-tokens/ponytail-page.mp4",
+      "zoomDir": "none",
+      "credit": "github.com/DietrichGebert/ponytail",
+      "covers": "checks the standard library first",
+      "durationSec": 7.56,
+      "assetId": "ponytail-page",
+      "claimId": "ponytail-page"
+    },
+    {
+      "type": "floatcard",
+      "src": "assets/claude-eating-tokens/term-clear.mp4",
+      "credit": "recorded live",
+      "covers": "type slash-clear",
+      "sfx": [
+        {
+          "src": "sfx2/ground-impact-352053.mp3",
+          "vol": 0.394,
+          "at": 0.3
+        }
+      ],
+      "durationSec": 4.64,
+      "assetId": "term-clear",
+      "claimId": "term-clear"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/claude-eating-tokens/docs-compact.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "credit": "Claude Docs",
+      "covers": "re-reads everything",
+      "focus": {
+        "x": 40,
+        "y": 600,
+        "w": 1000,
+        "h": 420
+      },
+      "durationSec": 2.84,
+      "assetId": "docs-compact",
+      "claimId": "docs-compact"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/claude-eating-tokens/skill-hooks.png",
+      "srcWidth": 1080,
+      "srcHeight": 2600,
+      "credit": "GitHub",
+      "covers": "your agent's permissions",
+      "focus": {
+        "x": 40,
+        "y": 700,
+        "w": 1000,
+        "h": 460
+      },
+      "durationSec": 4.22,
+      "assetId": "skill-hooks",
+      "claimId": "skill-hooks"
+    },
+    {
+      "type": "commentcta",
+      "src": "assets/claude-eating-tokens/avatar-master.mp4",
+      "keyword": "CLAUDE",
+      "question": "WANT ALL FOUR TOOLS?",
+      "sfx": [
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "vol": 0.452,
+          "at": 0.3
+        }
+      ],
+      "durationSec": 2.108,
+      "from": 59.14
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.92,
+      "text": "Your Claude bill"
+    },
+    {
+      "start": 0.92,
+      "end": 1.74,
+      "text": "is mostly the"
+    },
+    {
+      "start": 1.74,
+      "end": 2.38,
+      "text": "reading, not the"
+    },
+    {
+      "start": 2.38,
+      "end": 3.38,
+      "text": "writing. Here's why"
+    },
+    {
+      "start": 3.38,
+      "end": 4.0,
+      "text": "the top fix"
+    },
+    {
+      "start": 4.0,
+      "end": 6.02,
+      "text": "barely helps. Anthropic's"
+    },
+    {
+      "start": 6.02,
+      "end": 7.24,
+      "text": "docs, the model"
+    },
+    {
+      "start": 7.24,
+      "end": 8.52,
+      "text": "remembers nothing between"
+    },
+    {
+      "start": 8.52,
+      "end": 10.06,
+      "text": "messages. Every turn"
+    },
+    {
+      "start": 10.06,
+      "end": 10.98,
+      "text": "resends the whole"
+    },
+    {
+      "start": 10.98,
+      "end": 12.44,
+      "text": "conversation at input"
+    },
+    {
+      "start": 12.44,
+      "end": 13.38,
+      "text": "rates. Back to"
+    },
+    {
+      "start": 13.38,
+      "end": 14.1,
+      "text": "that popular fix."
+    },
+    {
+      "start": 14.54,
+      "end": 16.04,
+      "text": "Caveman makes Claude"
+    },
+    {
+      "start": 16.04,
+      "end": 16.9,
+      "text": "answer in fewer"
+    },
+    {
+      "start": 16.9,
+      "end": 18.3,
+      "text": "words. A hundred"
+    },
+    {
+      "start": 18.3,
+      "end": 19.26,
+      "text": "thousand stars and"
+    },
+    {
+      "start": 19.26,
+      "end": 19.74,
+      "text": "it does cut"
+    },
+    {
+      "start": 19.74,
+      "end": 20.96,
+      "text": "output. But it's"
+    },
+    {
+      "start": 20.96,
+      "end": 21.76,
+      "text": "README admits"
+    },
+    {
+      "start": 21.76,
+      "end": 23.32,
+      "text": "input is untouched"
+    },
+    {
+      "start": 23.32,
+      "end": 24.3,
+      "text": "and it adds"
+    },
+    {
+      "start": 24.3,
+      "end": 25.0,
+      "text": "over a thousand"
+    },
+    {
+      "start": 25.0,
+      "end": 25.76,
+      "text": "input tokens a"
+    },
+    {
+      "start": 25.76,
+      "end": 26.74,
+      "text": "turn. So it"
+    },
+    {
+      "start": 26.74,
+      "end": 28.06,
+      "text": "trims the cheap"
+    },
+    {
+      "start": 28.06,
+      "end": 28.74,
+      "text": "half of your"
+    },
+    {
+      "start": 28.74,
+      "end": 29.96,
+      "text": "bill. That's why"
+    },
+    {
+      "start": 29.96,
+      "end": 30.76,
+      "text": "it barely helps."
+    },
+    {
+      "start": 31.3,
+      "end": 31.9,
+      "text": "These three cut"
+    },
+    {
+      "start": 31.9,
+      "end": 32.74,
+      "text": "the expensive half."
+    },
+    {
+      "start": 33.28,
+      "end": 34.48,
+      "text": "One, see it,"
+    },
+    {
+      "start": 34.5,
+      "end": 35.2,
+      "text": "see, use it"
+    },
+    {
+      "start": 35.2,
+      "end": 37.1,
+      "text": "charts. Each session's"
+    },
+    {
+      "start": 37.1,
+      "end": 37.94,
+      "text": "cost. claude-hud"
+    },
+    {
+      "start": 37.94,
+      "end": 38.36,
+      "text": "is a live"
+    },
+    {
+      "start": 38.36,
+      "end": 38.88,
+      "text": "meter in your"
+    },
+    {
+      "start": 38.88,
+      "end": 40.0,
+      "text": "status line. Two,"
+    },
+    {
+      "start": 41.08,
+      "end": 42.12,
+      "text": "ponytail stops Claude"
+    },
+    {
+      "start": 42.12,
+      "end": 43.58,
+      "text": "rebuilding code that"
+    },
+    {
+      "start": 43.58,
+      "end": 45.16,
+      "text": "already exists. It"
+    },
+    {
+      "start": 45.16,
+      "end": 45.98,
+      "text": "checks the standard"
+    },
+    {
+      "start": 45.98,
+      "end": 47.72,
+      "text": "library first. Three,"
+    },
+    {
+      "start": 48.46,
+      "end": 49.66,
+      "text": "between unrelated tasks"
+    },
+    {
+      "start": 49.66,
+      "end": 51.34,
+      "text": "type slash clear"
+    },
+    {
+      "start": 51.34,
+      "end": 52.86,
+      "text": "free. Compact re-reads"
+    },
+    {
+      "start": 52.86,
+      "end": 54.36,
+      "text": "everything to summarize"
+    },
+    {
+      "start": 54.36,
+      "end": 55.68,
+      "text": "it. They run"
+    },
+    {
+      "start": 55.68,
+      "end": 57.04,
+      "text": "with your agent's"
+    },
+    {
+      "start": 57.04,
+      "end": 58.48,
+      "text": "permissions. Read them"
+    },
+    {
+      "start": 58.48,
+      "end": 60.02,
+      "text": "first. Comment, Claude,"
+    },
+    {
+      "start": 60.14,
+      "end": 60.68,
+      "text": "I'll send all"
+    },
+    {
+      "start": 60.68,
+      "end": 60.96,
+      "text": "four."
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "format": "ai-tools",
+  "allowLong": true,
+  "allowLongReason": "user accepted the 159-word runtime in writing at approval 341019be (2026-08-25): 'Runtime … ship-as-is'; band 40-60s, actual 61.2s",
+  "script": "Your Claude bill is mostly the reading, not the writing — here's why the top fix barely helps.\nAnthropic's docs: the model remembers nothing between messages — every turn re-sends the whole conversation at input rates.\nBack to that popular fix.\nCaveman makes Claude answer in fewer words.\nA hundred thousand stars, and it does cut output.\nBut its README admits: input is untouched, and it adds over a thousand input tokens a turn.\nSo it trims the cheap half of your bill — that's why it barely helps.\nThese three cut the expensive half.\nOne: see it — ccusage charts each session's cost; claude-hud is a live meter in your status line.\nTwo: Ponytail stops Claude rebuilding code that already exists — it checks the standard library first.\nThree: between unrelated tasks, type slash-clear — free. Compact re-reads everything to summarise it.\nThey run with your agent's permissions — read them first.\nComment CLAUDE, I'll send all four.",
+  "approval": {
+    "sha256": "341019be42e5254769ab104ff0974e9602ebc0e128ae0b1c75c1d4c520f4df90",
+    "approvedAt": "2026-08-25T10:37:04+00:00",
+    "words": 159,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+  }
+}

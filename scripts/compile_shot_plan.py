@@ -524,6 +524,14 @@ def main() -> None:
         if not isinstance(scene, dict) or not scene.get("type"):
             raise SystemExit(f"shot {index} lacks a valid scene")
         scene["durationSec"] = round(end - start, 3)
+        # Split captions must clear the face seam (validate_job rejects
+        # captionBottom < 900). Every shipped split scene carries 1000, but
+        # only via the bespoke build_*.py scripts — the generic path emitted
+        # nothing and died in validation (found 2026-08-25, same
+        # generic-path-vs-bespoke-path family as the style/captionStyle
+        # hardcodes above). Default it; a shot may still override.
+        if scene.get("type") == "split":
+            scene.setdefault("captionBottom", 1000)
         if asset:
             scene.setdefault("assetId", str(asset_id))
             scene.setdefault("claimId", str(shot.get("claim_id", asset_id)))

@@ -1448,6 +1448,22 @@ def check_beats(beats: dict, vo_end: float | None = None,
                             f"against the wrong sentence — spoken over it: "
                             f"{_norm_words(spoken)[:56]!r}")
                 elif _norm_words(covers) not in _norm_words(spoken):
+                    # Whisper is NOT ground truth for what was said (G21's
+                    # lesson, measured at 100% false positives). The caption
+                    # stream in the same window has caption_corrections
+                    # applied — the declared record of what the voice
+                    # actually says where whisper miswrote it ("re-reads" ->
+                    # "reads", "agent's" -> "agents", both 2026-08-25). A
+                    # `covers` found there is spoken; only fail when BOTH
+                    # streams miss it.
+                    cap_spoken = " ".join(
+                        str(c.get("text", "")) for c in
+                        (beats.get("captions") or [])
+                        if isinstance(c, dict)
+                        and float(c.get("end", 0)) > start
+                        and float(c.get("start", 0)) < end)
+                    if _norm_words(covers) in _norm_words(cap_spoken):
+                        continue
                     errors.append(
                         f"{'G39' if evidence else 'G44'} scene {i:02d} "
                         f"({sc['type']}) claims to cover "

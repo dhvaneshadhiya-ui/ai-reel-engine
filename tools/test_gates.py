@@ -748,6 +748,50 @@ if _hits:
     raise SystemExit(1)
 _counted("G09 silent — noMusic:true needs no reason (music is optional)")
 
+# G39 vs whisper mishears (2026-08-25): whisper is NOT ground truth for what
+# was said — G21 learned this at 100% false positives. When `covers` is
+# missing from the raw transcript but present in the caption stream (which
+# carries caption_corrections, the declared record of the mishear), G39 must
+# stay silent. claude-eating-tokens: "re-reads" written as "reads",
+# "agent's" as "agents" — both would have blocked a correct render.
+_doc = {"credit": "@src", "type": "annotatezoom", "durationSec": 2.0,
+        "src": "assets/x/doc.png", "srcWidth": 1080, "srcHeight": 2000,
+        "focus": {"x": 40, "y": 100, "w": 900, "h": 500},
+        "covers": "macOS re-ships",
+        "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.15}]}
+_s = copy.deepcopy(BASE)
+_s["scenes"][0] = copy.deepcopy(_doc)
+_s["captions"] = [{"start": 0.0, "end": 0.7, "text": "macOS re-ships"}]
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST,
+                       vo_words=VO_WORDS)   # transcript says "macos ships"
+    _hits = [a for a in _adv if "G39" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G39" in str(a)]
+if _hits:
+    print(f"  FAIL G39 fired though the corrected captions carry the line: "
+          f"{_hits[0][:90]}")
+    raise SystemExit(1)
+_counted("G39 silent — covers found in corrected captions (whisper miswrote)")
+
+# ...and the hatch must not neuter the gate: words in NEITHER stream block.
+_s = copy.deepcopy(BASE)
+_s["scenes"][0] = copy.deepcopy(_doc)
+_s["scenes"][0]["covers"] = "quarterly revenue guidance"
+_s["captions"] = [{"start": 0.0, "end": 0.7, "text": "macOS ships"}]
+try:
+    check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST,
+                vo_words=VO_WORDS)
+    print("  FAIL G39 did not fire for covers absent from both streams")
+    raise SystemExit(1)
+except GateError as _e:
+    if "G39" not in str(_e):
+        print(f"  FAIL G39 did not fire for covers absent from both streams; "
+              f"got:\n{_e}")
+        raise SystemExit(1)
+_fired.append(("G39", "covers absent from transcript AND captions"))
+_counted("G39 still blocks — covers absent from both streams")
+
 
 # ── G31, the finished master ────────────────────────────────────────────────
 # The only gate that measures an ARTIFACT rather than the beat sheet, so it
