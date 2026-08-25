@@ -3992,3 +3992,39 @@ rule or a mechanism, not a memory:
    4 white-page scenes now carry captionTheme) and `emphasis` is REQUIRED
    authoring — an empty list means no accent word anywhere, which is how the
    locked "one highlight per beat" shipped as all-white captions.
+
+## 2026-08-25 — review round 2: the four remaining notes, all made structural
+
+Watched the render frame by frame, named four defects, fixed each as a rule:
+
+1. **A recording's `from` must point at the moment the claim is visible.**
+   The claude-hud beat said "a live meter in your status line" while playing
+   the repo header — the status-line demo only appeared at the clip's tail.
+   Scouting a recording now means noting WHEN the proof is on screen, and
+   the shot sets `from` to it (`from: 4.6` here). A clip is not evidence
+   because it contains the proof somewhere.
+2. **No single card holds the 4–9s drop-off zone alone.** The cream docs
+   page ran 7.58s across the exact window where viewers leave. Split into
+   two visuals: the sourceread keeps its highlight, then a live-cursor
+   scroll of the SAME page lands on "How the cache is organized" — whose
+   text ("the model doesn't remember anything between requests, so Claude
+   Code re-sends the full context") states the script's claim verbatim.
+   Same source, different treatment, motion where it was static.
+3. **A recreation is cropped to its content, never centred in dead space.**
+   `terminal_page.py --fit <viewport>` sizes the window AND its type from
+   the longest line (monospace is 0.6em, so this is arithmetic, not taste)
+   and prints the NATURAL VIEWPORT HEIGHT to record at. The /clear
+   before/after went from a small band in a dark 9:16 field to a card that
+   fills its own frame. A fixed 13.5px font had also been clipping
+   "66% of window" off the mobile version.
+4. **A scene that spells the spoken line out in display type suppresses the
+   caption.** `Reel.tsx` already did this for headlines; `commentcta`'s own
+   keyword/question were invisible to it, so "COMMENT CLAUDE" at 200px sat
+   over a caption reading "Comment Claude I'll".
+
+**And the capture contract became a suite.** `tools/test_capture_defaults.py`
+(run by doctor) asserts capture.mjs's six load-bearing defaults — cursor on,
+`--no-cursor` boolean, mobile default, real viewport, device-scale frames,
+even physical dimensions. Every one of those was a rule stated in prose, and
+two of them had silently broken and shipped a whole scout session. The
+"code, not habit" claim is now checked rather than believed.

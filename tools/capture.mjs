@@ -405,6 +405,17 @@ function normalizeAction(a, S) {
 async function record() {
   ensureOutDir(opts.out);
   const S = opts.scale;
+  // EVEN PHYSICAL DIMENSIONS. VP9 accepts odd sizes, so a recording looked
+  // fine here and then h264 refused it at the mp4 conform ("height not
+  // divisible by 2", 2026-08-25) — the failure landed a step away from its
+  // cause. Nudge the CSS viewport instead, so it can never reach ffmpeg odd.
+  for (const dim of ["width", "height"]) {
+    if ((opts[dim] * S) % 2 !== 0) {
+      opts[dim] += 1;
+      console.warn(`record: ${dim} ${opts[dim] - 1}x${S} is odd — using ` +
+                   `${opts[dim]} so h264 can encode the conform`);
+    }
+  }
   const videoW = opts.width * S;
   const videoH = opts.height * S;
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "capture-video-"));

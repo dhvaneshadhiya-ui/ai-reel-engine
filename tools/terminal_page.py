@@ -37,20 +37,21 @@ from pathlib import Path
 PAGE = """<!doctype html><html><head><meta charset="utf-8"><style>
   html,body {{ margin:0; padding:0; background:{canvas}; height:100%; }}
   body {{ display:flex; align-items:center; justify-content:center; }}
-  .win {{ width:{winw}px; background:#1a1b23; border-radius:14px;
+  .win {{ width:{winw}px; background:#1a1b23; border-radius:{radius}px;
          box-shadow:0 24px 70px rgba(0,0,0,.5); overflow:hidden;
          font-family:"SF Mono",Menlo,monospace; }}
-  .bar {{ height:38px; background:#2a2b35; display:flex; align-items:center;
-         padding:0 14px; gap:8px; }}
-  .dot {{ width:13px; height:13px; border-radius:50%; }}
-  .title {{ color:#9a9ba5; font-size:13px; margin-left:12px; }}
-  pre {{ margin:0; padding:18px 20px; font-size:13.5px; line-height:1.42;
-        color:#d6d7de; white-space:pre; overflow:hidden; }}
+  .bar {{ height:{barh}px; background:#2a2b35; display:flex; align-items:center;
+         padding:0 {barpad}px; gap:{dotgap}px; }}
+  .dot {{ width:{dot}px; height:{dot}px; border-radius:50%; }}
+  .title {{ color:#9a9ba5; font-size:{titlef}px; margin-left:12px; }}
+  pre {{ margin:0; padding:{prepad}px {prepadx}px; font-size:{font}px;
+        line-height:1.5; color:#d6d7de; white-space:pre; overflow:hidden; }}
   .prompt {{ color:#5bd6a2; }}
   .cmd {{ color:#fff; }}
   .hl {{ background:rgba(37,99,235,.35); color:#fff; border-radius:3px; }}
-  .cursor {{ display:inline-block; width:8px; height:16px; background:#d6d7de;
-            vertical-align:text-bottom; animation:blink 1s steps(1) infinite; }}
+  .cursor {{ display:inline-block; width:{caret}px; height:{careth}px;
+            background:#d6d7de; vertical-align:text-bottom;
+            animation:blink 1s steps(1) infinite; }}
   @keyframes blink {{ 50% {{ opacity:0; }} }}
 </style></head><body>
 <div class="win"><div class="bar">
@@ -95,6 +96,13 @@ def main() -> None:
     ap.add_argument("--no-type", action="store_true")
     ap.add_argument("--width", type=int, default=1180,
                     help="terminal window px width")
+    ap.add_argument("--fit", type=int, metavar="VIEWPORT_PX",
+                    help="size the window AND its type to fill a viewport of "
+                         "this CSS width (use the recorder's --width). The "
+                         "monospace column is measured from the longest line, "
+                         "so nothing clips — a fixed 13.5px font silently cut "
+                         "'66%% of window' off a mobile recreation on "
+                         "2026-08-25.")
     a = ap.parse_args()
 
     raw = Path(a.body).read_text().rstrip("\n").splitlines()
@@ -107,13 +115,46 @@ def main() -> None:
                 e = e.replace(eh, f'<span class="hl">{eh}</span>')
         lines.append(e)
 
+    # TYPE SIZE FROM THE CONTENT, not a constant. SF Mono's advance width is
+    # 0.6em, so the longest line decides how big the type can be inside the
+    # window — and the window decides how much of the frame the evidence owns.
+    font, winw = 13.5, a.width
+    if a.fit:
+        winw = int(a.fit * 0.94)
+        widest = max((len(ln) for ln in raw), default=1)
+        widest = max(widest, len(a.cmd) + 3)
+        pad = max(10, int(a.fit * 0.035))
+        font = round((winw - 2 * pad) / (widest * 0.6), 1)
+        prepad, prepadx = int(font * 1.3), pad
+    else:
+        prepad, prepadx = 18, 20
+    scale = font / 13.5
     Path(a.out).write_text(PAGE.format(
-        canvas="#101014", winw=a.width, title=html.escape(a.title),
+        canvas="#101014", winw=winw, title=html.escape(a.title),
+        font=font, prepad=prepad, prepadx=prepadx,
+        radius=max(10, int(10 * scale)), barh=max(28, int(30 * scale)),
+        barpad=max(10, int(12 * scale)), dot=max(9, int(11 * scale)),
+        dotgap=max(6, int(7 * scale)), titlef=max(10, round(11 * scale, 1)),
+        caret=max(5, int(6 * scale)), careth=max(11, int(13 * scale)),
         cmd_js=json.dumps(a.cmd), lines_js=json.dumps(lines),
         type_js="true" if not a.no_type else "false"))
     secs = (0 if a.no_type else len(a.cmd) * 0.046 + 0.42) + len(lines) * 0.042
-    print(f"wrote {a.out}  ({len(lines)} lines; animation ~{secs:.1f}s — "
-          f"record with duration >= {secs + 1.5:.0f}s)")
+    print(f"wrote {a.out}  ({len(lines)} lines, font {font}px, window {winw}px; "
+          f"animation ~{secs:.1f}s — record with duration >= {secs + 1.5:.0f}s)")
+    if a.fit:
+        # NATURAL HEIGHT, so the recorder crops the canvas to the evidence.
+        # A terminal centred in a 9:16 viewport is a small band in a sea of
+        # dark — the /clear before/after "undersold its own drama" (user,
+        # 2026-08-25). Record at this height and the window IS the frame;
+        # the scene (floatcard/footage) then decides how it sits in 9:16.
+        bar = max(28, int(30 * scale))
+        body = (len(lines) + 1) * 1.5 * font + 2 * prepad
+        # EVEN css px: h264 refuses odd pixel dimensions, and every recorder
+        # scale we use is a whole number, so an odd CSS height becomes an odd
+        # physical height and the mp4 conform dies (2026-08-25).
+        nat = int(bar + body + a.fit * 0.06)
+        print(f"  natural viewport for this content: "
+              f"--width {a.fit} --height {nat + (nat % 2)}")
 
 
 if __name__ == "__main__":

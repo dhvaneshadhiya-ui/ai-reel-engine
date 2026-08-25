@@ -75,18 +75,11 @@
     "covers": "remembers nothing between messages",
     "lines": [
      {
-      "at": 1.0,
+      "at": 0.8,
       "x": 55,
       "y": 1630,
       "w": 985,
       "h": 230
-     },
-     {
-      "at": 4.4,
-      "x": 55,
-      "y": 1860,
-      "w": 830,
-      "h": 165
      }
     ],
     "creditOnScreen": true
@@ -94,6 +87,19 @@
    "asset_id": "docs-context",
    "tier": "official",
    "start_phrase_note": "whisper wrote the spoken \"Anthropic's docs\" as 'Anthropic stocks' \u2014 'Anthropic' alone lands on the right word; caption_corrections restores the written form"
+  },
+  {
+   "start_phrase": "Every turn",
+   "line": "every turn re-sends the whole conversation at input rates.",
+   "asset_id": "docs-caching-scroll",
+   "scene": {
+    "type": "footage",
+    "src": "assets/claude-eating-tokens/docs-caching-scroll.mp4",
+    "from": 1.6,
+    "zoomDir": "in",
+    "creditOnScreen": true,
+    "covers": "resends the whole conversation"
+   }
   },
   {
    "start_phrase": "Back to that popular fix",
@@ -245,7 +251,8 @@
     "type": "footage",
     "src": "assets/claude-eating-tokens/hud-statusline.mp4",
     "zoomDir": "in",
-    "creditOnScreen": true
+    "creditOnScreen": true,
+    "from": 4.6
    },
    "asset_id": "hud-statusline",
    "tier": "official"
@@ -278,7 +285,7 @@
      }
     ],
     "creditOnScreen": true,
-    "aspect": 1.5714
+    "aspect": 1.3534
    },
    "asset_id": "term-clear",
    "tier": "official"

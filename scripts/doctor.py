@@ -342,6 +342,24 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "script calibration", str(e))
     problems.append("calibration")
 
+# The CAPTURE CONTRACT (2026-08-25). capture.mjs's defaults ARE rules —
+# mobile-first (R2), live cursor (the ai-tools evidence grammar), real
+# viewport, device-scale frames. Two of them had silently broken and shipped
+# a whole scout session before anyone looked at a file's real dimensions.
+try:
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "tools/test_capture_defaults.py")],
+        capture_output=True, text=True, timeout=60)
+    if r.returncode == 0:
+        report(OK, "capture defaults", r.stdout.strip().splitlines()[-1])
+    else:
+        report(BAD, "capture defaults", "a capture default changed")
+        print(r.stdout[-700:])
+        problems.append("capture")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "capture defaults", str(e))
+    problems.append("capture")
+
 # The retention join (2026-08-21) — the tool that turns a published reel's
 # curve into per-scene-type numbers. Its math is exactly the kind of thing
 # that rots silently: a broken join would keep printing plausible tables.

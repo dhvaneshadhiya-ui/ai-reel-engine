@@ -46,12 +46,12 @@
         {
           "src": "sfx2/risers-01.mp3",
           "vol": 0.367,
-          "at": 0.0
+          "at": 0.15
         },
         {
           "src": "sfx2/impact-boom.mp3",
           "vol": 0.452,
-          "at": 0.35
+          "at": 0.15
         }
       ],
       "creditOnScreen": true,
@@ -71,24 +71,29 @@
       "covers": "remembers nothing between messages",
       "lines": [
         {
-          "at": 1.0,
+          "at": 0.8,
           "x": 55,
           "y": 1630,
           "w": 985,
           "h": 230
-        },
-        {
-          "at": 4.4,
-          "x": 55,
-          "y": 1860,
-          "w": 830,
-          "h": 165
         }
       ],
       "creditOnScreen": true,
-      "durationSec": 7.9,
+      "durationSec": 3.98,
       "assetId": "docs-context",
       "claimId": "docs-context"
+    },
+    {
+      "type": "footage",
+      "src": "assets/claude-eating-tokens/docs-caching-scroll.mp4",
+      "from": 1.6,
+      "zoomDir": "in",
+      "creditOnScreen": true,
+      "covers": "resends the whole conversation",
+      "durationSec": 3.92,
+      "assetId": "docs-caching-scroll",
+      "claimId": "docs-caching-scroll",
+      "captionTheme": "dark"
     },
     {
       "type": "footage",
@@ -218,6 +223,7 @@
       "src": "assets/claude-eating-tokens/hud-statusline.mp4",
       "zoomDir": "in",
       "creditOnScreen": true,
+      "from": 4.6,
       "durationSec": 2.82,
       "assetId": "hud-statusline",
       "claimId": "hud-statusline",
@@ -247,7 +253,7 @@
         }
       ],
       "creditOnScreen": true,
-      "aspect": 1.5714,
+      "aspect": 1.3534,
       "durationSec": 4.8,
       "assetId": "term-clear",
       "claimId": "term-clear"
