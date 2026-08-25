@@ -3915,3 +3915,34 @@ And the last prose-only piece of the ai-tools doctrine became a gate:
 is ZERO: its text moments are chips over moving evidence. v1's six-cards-in-
 fourteen-beats can now never happen silently again. Deliberate exceptions
 override with a reason, which is why it advises rather than blocks.
+
+## 2026-08-25 — claude-eating-tokens scout session: the evidence stack for ai-tools
+
+The format's first real scout produced the doctrine's proof case. Every
+evidence asset is a RECORDING or a verified receipt; zero full-screen text
+cards (G50 satisfied by construction):
+
+- **Terminal recreations carry REAL data.** `tools/terminal_page.py` (new)
+  plays back a command's genuine output inside a styled terminal that
+  `capture.mjs` records deterministically — typed command, line-by-line
+  reveal, `--highlight`. Honesty line: the DATA is the machine's own
+  (`_sources/<slug>/` keeps the raw capture), and the manifest `shows` says
+  "recreation playing back real output". Sanctioned by the utility pack's
+  UIDialog precedent. Used for ccusage (real August table: 661,554,294
+  tokens, $585.82, cache-read 647,936,100 vs output 1,879,404 — the reel's
+  thesis proven on its maker's own bill) and /clear (66% → 1% at real
+  session scale).
+- **Repo pages are recorded with a live cursor** (capture.mjs now injects a
+  44px cursor + click ring by default; `--no-cursor` for recreations, where
+  a stray idle cursor otherwise photobombs the corner). Take-craft in
+  `styles/utility.md`: dwell where the claim lives — the caveman take holds
+  the About line "cuts 65% of tokens" through the opening 3s before
+  scrolling.
+- **A README screenshot is evidence only for a claim ABOUT the README.**
+  The caveman "Honest number warning" callout is captured verbatim as a
+  still because the script's claim IS that the README admits the catch.
+  (First attempt captured the full 48,561px README — unusable; crop to the
+  claim, don't capture the page.)
+- **HyperFrames pilot deferred:** the designed-artifact slot was beaten by
+  a real recording of the same fact. Queue it for a beat no real artifact
+  can show.

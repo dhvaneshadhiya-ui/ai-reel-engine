@@ -54,7 +54,7 @@ for (let i = 0; i < rest.length; i++) {
   const a = rest[i];
   if (!a.startsWith("--")) usage();
   const key = a.slice(2);
-  const boolFlags = new Set(["full", "mobile", "desktop"]);
+  const boolFlags = new Set(["full", "mobile", "desktop", "no-cursor"]);
   // --tier and --desktop-reason take VALUES, so they must not be bool flags.
   if (boolFlags.has(key)) {
     flags[key] = true;

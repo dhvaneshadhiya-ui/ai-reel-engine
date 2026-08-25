@@ -99,19 +99,19 @@
    "line": "But its README admits: input is untouched, and it adds over a thousand input tokens a turn.",
    "scene": {
     "type": "annotatezoom",
-    "src": "assets/claude-eating-tokens/caveman-readme.png",
-    "srcWidth": 1080,
-    "srcHeight": 2600,
+    "src": "assets/claude-eating-tokens/repo-caveman-warning.png",
+    "srcWidth": 1176,
+    "srcHeight": 1540,
     "credit": "caveman README",
     "covers": "input is untouched",
     "focus": {
      "x": 40,
-     "y": 900,
-     "w": 1000,
-     "h": 500
+     "y": 60,
+     "w": 1096,
+     "h": 1411
     }
    },
-   "asset_id": "caveman-readme",
+   "asset_id": "caveman-warning",
    "tier": "official"
   },
   {

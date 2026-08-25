@@ -40,3 +40,14 @@ designed animated chart — in OUR palette and type (the [EYE] one-series-look
 rule), to MP4, into assets, judged by the gates like any clip. If it beats
 StatCard on the preflight stills, it ships; either way the pilot verdict
 gets a STYLE-RULES entry. Never more than scene-scoped (CLAUDE.md).
+
+## HyperFrames pilot — verdict (2026-08-25, scout session)
+
+**Deferred, superseded for this reel.** The pilot slot was the cost-split
+beat; during scouting this machine's own August ccusage table turned out to
+prove the thesis outright (647.9M cache-read vs 1.88M output), so the beat
+now runs the REAL recorded table — stronger evidence than any designed
+artifact, per the format's own doctrine ("record, don't screenshot").
+HyperFrames stays queued for the first beat that genuinely needs a designed
+scene no real artifact can show. No verdict on quality was reached; nothing
+was rendered, so no cost was spent.
