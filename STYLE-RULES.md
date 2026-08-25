@@ -4022,6 +4022,18 @@ Watched the render frame by frame, named four defects, fixed each as a rule:
    keyword/question were invisible to it, so "COMMENT CLAUDE" at 200px sat
    over a caption reading "Comment Claude I'll".
 
+**A generated page must declare a viewport.** The first `--fit` recreation
+still rendered tiny: with no `<meta name="viewport">`, mobile Chromium lays
+a page out at 980px and scales it to the device — so a window sized to 94%
+of 360 CSS px arrived on screen at a third of the frame. Same family as the
+GitHub-breakpoint bug, and now asserted by the capture-contract suite. Any
+HTML this repo generates for capture carries the tag.
+
+**Frame a recording on its proof, not on its page.** The claude-hud beat at
+full width put the caption on the README's Install body text; `zoom 1.55 +
+focusY 0.30` makes the status-line demo own the frame and the caption land
+on quiet pixels.
+
 **And the capture contract became a suite.** `tools/test_capture_defaults.py`
 (run by doctor) asserts capture.mjs's six load-bearing defaults — cursor on,
 `--no-cursor` boolean, mobile default, real viewport, device-scale frames,

@@ -34,7 +34,9 @@ import html
 import json
 from pathlib import Path
 
-PAGE = """<!doctype html><html><head><meta charset="utf-8"><style>
+PAGE = """<!doctype html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
   html,body {{ margin:0; padding:0; background:{canvas}; height:100%; }}
   body {{ display:flex; align-items:center; justify-content:center; }}
   .win {{ width:{winw}px; background:#1a1b23; border-radius:{radius}px;

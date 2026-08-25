@@ -18,6 +18,7 @@ import sys
 from pathlib import Path
 
 SRC = Path(__file__).resolve().parent / "capture.mjs"
+TERM = Path(__file__).resolve().parent / "terminal_page.py"
 
 CHECKS: list[tuple[str, str, str]] = [
     # (label, regex that MUST match, why it matters)
@@ -48,6 +49,15 @@ CHECKS: list[tuple[str, str, str]] = [
 ]
 
 
+TERM_CHECKS: list[tuple[str, str, str]] = [
+    ("generated pages declare a viewport",
+     r'<meta name="viewport" content="width=device-width',
+     "without it mobile Chromium lays the page out at 980px and scales it "
+     "down — a 94%-wide terminal rendered at a third of the frame and the "
+     "recreation looked tiny (2026-08-25)"),
+]
+
+
 def run() -> int:
     if not SRC.exists():
         print(f"  FAIL capture.mjs not found at {SRC}")
@@ -60,7 +70,14 @@ def run() -> int:
         else:
             failed = True
             print(f"  FAIL {label}\n       {why}")
-    print(f"\n{len(CHECKS)} capture defaults checked — "
+    term = TERM.read_text() if TERM.exists() else ""
+    for label, pattern, why in TERM_CHECKS:
+        if re.search(pattern, term):
+            print(f"  ok   {label}")
+        else:
+            failed = True
+            print(f"  FAIL {label}\n       {why}")
+    print(f"\n{len(CHECKS) + len(TERM_CHECKS)} capture defaults checked — "
           f"{'all hold' if not failed else 'A DEFAULT CHANGED'}.")
     return 1 if failed else 0
 
