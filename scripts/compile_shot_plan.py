@@ -178,6 +178,58 @@ def load_words(path: Path) -> list[dict[str, Any]]:
     return out
 
 
+def _match_at(haystack: list[str], needle: list[str], start: int) -> int | None:
+    """Match `needle` at `start`, tolerating whisper's compound splits.
+
+    Whisper splits written compounds into their spoken words — "README" comes
+    back as "read me", "ccusage" as "cc usage" — so an exact window compare
+    can never resolve a start_phrase containing one (found 2026-08-25 on
+    claude-eating-tokens shot 5, "But its README admits"). Same class as the
+    possessive fix in normalize_phrase, mirrored: there the NEEDLE was split
+    too finely; here the TRANSCRIPT is. So allow one needle token to consume
+    up to 3 consecutive transcript tokens whose concatenation equals it, and
+    the reverse for the rare join. Returns the index of the last transcript
+    word consumed, or None.
+    """
+    i, j = start, 0
+    while j < len(needle):
+        if i >= len(haystack):
+            return None
+        if haystack[i] == needle[j]:
+            i += 1
+            j += 1
+            continue
+        joined = haystack[i]
+        for k in range(i + 1, min(i + 3, len(haystack))):
+            joined += haystack[k]
+            if joined == needle[j]:
+                break
+            if len(joined) >= len(needle[j]):
+                joined = None
+                break
+        else:
+            joined = None
+        if joined is not None:
+            i = k + 1
+            j += 1
+            continue
+        merged = needle[j]
+        for m in range(j + 1, min(j + 3, len(needle))):
+            merged += needle[m]
+            if merged == haystack[i]:
+                break
+            if len(merged) >= len(haystack[i]):
+                merged = None
+                break
+        else:
+            merged = None
+        if merged is None:
+            return None
+        i += 1
+        j = m + 1
+    return i - 1
+
+
 def find_phrase(
     words: list[dict[str, Any]], phrase: str, cursor: int, label: str
 ) -> tuple[int, int]:
@@ -185,9 +237,10 @@ def find_phrase(
     if not needle:
         raise SystemExit(f"{label} cannot be empty")
     haystack = [word["norm"] for word in words]
-    for start in range(cursor, len(haystack) - len(needle) + 1):
-        if haystack[start : start + len(needle)] == needle:
-            return start, start + len(needle) - 1
+    for start in range(cursor, len(haystack)):
+        end = _match_at(haystack, needle, start)
+        if end is not None:
+            return start, end
     preview = " ".join(haystack[cursor : cursor + 24])
     raise SystemExit(
         f"could not resolve {label} {phrase!r} after word {cursor}; "

@@ -3946,3 +3946,18 @@ cards (G50 satisfied by construction):
 - **HyperFrames pilot deferred:** the designed-artifact slot was beaten by
   a real recording of the same fact. Queue it for a beat no real artifact
   can show.
+
+## 2026-08-25 — tool names must go through the pronunciation glossary
+
+The first claude-eating-tokens master spoke "ccusage" as roughly "accusate"
+(whisper base heard "secluded", medium heard "accusate" — two models agree
+the audio was wrong, and the beat exists to NAME that tool). Written-form
+names — lowercase CLI tools, hyphenated repo names — are exactly what a TTS
+guesses at. Fix, verified by a ~3-credit probe before the ~20-credit regen:
+HeyGen brand glossary `262b0154…` (config.json `avatar.brandGlossaryId`),
+ccusage -> "see-see-usage", claude-hud -> "Claude hudd". Glossary affects
+audio only; captions keep the written form. RULE: before any generation,
+scan the script for written-form names and add each to the glossary; send
+`brandGlossaryId` on every create call. Note: rehearse_vo's TTS pass was
+skipped for RAM this session — its anchor pass cannot catch pronunciation,
+which is precisely the class of defect that cost a regeneration here.

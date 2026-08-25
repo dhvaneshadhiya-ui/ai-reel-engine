@@ -379,6 +379,26 @@ def run() -> int:
     ok("--frames without --draft refuses (no partial deliverables)",
        part.returncode != 0 and "partial" in (part.stderr + part.stdout))
 
+    # 11. find_phrase tolerates whisper's compound splits (2026-08-25:
+    # "README" transcribed as "read me" left shot 5 of claude-eating-tokens
+    # unresolvable). One needle token may span consecutive transcript tokens
+    # whose concatenation equals it — and the reverse join — while a phrase
+    # that genuinely is not in the transcript must still refuse.
+    print("\n  -- compile_shot_plan phrase matcher --")
+    sys.path.insert(0, str(REAL_ROOT / "scripts"))
+    import compile_shot_plan as csp
+    tw = [{"norm": n} for n in
+          "but its read me admits input is untouched".split()]
+    s, e = csp.find_phrase(tw, "But its README admits", 0, "selftest")
+    ok("compound split resolves (README == read+me)", (s, e) == (0, 4))
+    s, e = csp.find_phrase(tw, "read me admits", 0, "selftest")
+    ok("exact match still resolves at the right span", (s, e) == (2, 4))
+    tw2 = [{"norm": n} for n in "run npx ccusage monthly today".split()]
+    s, e = csp.find_phrase(tw2, "npx cc usage monthly", 0, "selftest")
+    ok("reverse join resolves (cc+usage == ccusage)", (s, e) == (1, 3))
+    expect_exit(lambda: csp.find_phrase(tw, "words never spoken", 0, "x"),
+                "an absent phrase still refuses", "could not resolve")
+
     # 8. check_script's own selftest — structure thresholds + AI tells.
     print("\n  -- check_script selftest --")
     rc = check_script.selftest()
