@@ -10,8 +10,7 @@
   "cheap",
   "expensive",
   "ccusage",
-  "claude",
-  "hud",
+  "claude-hud",
   "ponytail",
   "slash clear",
   "re-reads",
@@ -21,7 +20,9 @@
   "anthropic stocks": "Anthropic's docs",
   "read me": "README",
   "rereads": "re-reads",
-  "clear three": "clear \u2014 free"
+  "clear three": "clear \u2014 free",
+  "cc usage": "ccusage",
+  "claude hud": "claude-hud"
  },
  "shots": [
   {

@@ -16,8 +16,7 @@
     "cheap",
     "expensive",
     "ccusage",
-    "claude",
-    "hud",
+    "claude-hud",
     "ponytail",
     "slash clear",
     "re-reads",
@@ -61,7 +60,6 @@
       "assetId": "ccusage-hero",
       "claimId": "ccusage-hero",
       "covers": "Your Claude bill",
-      "credit": "ccusage \u00b7 our own usage",
       "bottomFrom": 0.0,
       "bottomFocusX": 0.5
     },
@@ -108,7 +106,6 @@
       "durationSec": 1.78,
       "assetId": "caveman-page",
       "claimId": "caveman-page",
-      "credit": "github.com/JuliusBrussee/caveman",
       "captionTheme": "dark"
     },
     {
@@ -121,7 +118,6 @@
       "durationSec": 2.2,
       "assetId": "caveman-page",
       "claimId": "caveman-page",
-      "credit": "github.com/JuliusBrussee/caveman",
       "captionTheme": "dark"
     },
     {
@@ -183,8 +179,7 @@
       "aspect": 1.9737,
       "durationSec": 3.82,
       "assetId": "ccusage-split",
-      "claimId": "ccusage-split",
-      "credit": "ccusage \u00b7 our own usage"
+      "claimId": "ccusage-split"
     },
     {
       "type": "footage",
@@ -216,8 +211,7 @@
       "aspect": 1.9737,
       "durationSec": 4.36,
       "assetId": "term-ccusage",
-      "claimId": "term-ccusage",
-      "credit": "ccusage \u00b7 our own usage"
+      "claimId": "term-ccusage"
     },
     {
       "type": "footage",
@@ -228,7 +222,6 @@
       "assetId": "hud-statusline",
       "claimId": "hud-statusline",
       "covers": "claude-hud is a live meter",
-      "credit": "github.com/jarrodwatts/claude-hud",
       "captionTheme": "dark"
     },
     {
@@ -240,7 +233,6 @@
       "durationSec": 6.92,
       "assetId": "ponytail-page",
       "claimId": "ponytail-page",
-      "credit": "github.com/DietrichGebert/ponytail",
       "captionTheme": "dark"
     },
     {
@@ -258,8 +250,7 @@
       "aspect": 1.5714,
       "durationSec": 4.8,
       "assetId": "term-clear",
-      "claimId": "term-clear",
-      "credit": "recreation \u00b7 real session scale"
+      "claimId": "term-clear"
     },
     {
       "type": "annotatezoom",
@@ -471,7 +462,7 @@
     {
       "start": 33.92,
       "end": 34.98,
-      "text": "CC usage charts"
+      "text": "ccusage charts"
     },
     {
       "start": 34.98,
@@ -481,7 +472,7 @@
     {
       "start": 36.86,
       "end": 37.48,
-      "text": "Claude HUD is"
+      "text": "claude-hud is"
     },
     {
       "start": 37.48,

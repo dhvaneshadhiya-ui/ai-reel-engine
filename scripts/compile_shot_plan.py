@@ -564,12 +564,20 @@ def main() -> None:
                 scene.setdefault("covers", anchor)
             if asset.get("source_url"):
                 scene.setdefault("sourceUrl", asset["source_url"])
-            if asset.get("credit") and scene["type"] in {
-                "footage",
-                "receipt",
-                "floatcard",
-                "split",
-            }:
+            if (
+                asset.get("credit")
+                and scene.get("creditOnScreen") is not True
+                and scene["type"] in {
+                    "footage",
+                    "receipt",
+                    "floatcard",
+                    "split",
+                }
+            ):
+                # creditOnScreen (2026-08-25): the scene declares its frame
+                # names the source itself, so the manifest credit must not be
+                # re-injected here — popping `credit` from the plan did
+                # nothing while this setdefault put it straight back.
                 scene.setdefault("credit", asset["credit"])
         for media_key, trim_key in (
             ("src", "from"),

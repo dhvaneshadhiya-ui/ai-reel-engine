@@ -92,11 +92,25 @@ def main() -> None:
     def one(job):
         i, typ, frame = job
         dest = out / f"{i:02d}-{typ}-mid.png"
-        r = subprocess.run(
-            ["npx", "remotion", "still", "src/index.ts", slug, str(dest),
-             f"--frame={frame}", "--timeout=120000"],
-            cwd=ROOT, capture_output=True, text=True)
-        return i, typ, frame, r.returncode, (r.stderr or r.stdout)
+        # HARD WALL-CLOCK TIMEOUT. `remotion still` sometimes finishes the
+        # PNG and then hangs forever in Chromium teardown (observed twice on
+        # 2026-08-25: a 27-minute stall, then a second one — process at 0%
+        # CPU with the still already on disk). --timeout only bounds
+        # delayRender, not exit. A still takes ~30s here; 150s is generous,
+        # and the PNG-on-disk check below keeps a teardown-hang from being
+        # reported as a failure.
+        try:
+            r = subprocess.run(
+                ["npx", "remotion", "still", "src/index.ts", slug, str(dest),
+                 f"--frame={frame}", "--timeout=120000"],
+                cwd=ROOT, capture_output=True, text=True, timeout=150)
+            rc, err = r.returncode, (r.stderr or r.stdout)
+        except subprocess.TimeoutExpired as e:
+            rc = 0 if dest.exists() else 1
+            err = (f"killed after 150s ({'PNG was already written — '
+                   'teardown hang, not a render failure' if rc == 0
+                   else 'no PNG produced'})")
+        return i, typ, frame, rc, err
 
     t0 = time.time()
     made = 0
