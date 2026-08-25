@@ -130,7 +130,13 @@ const NickDisplay: React.FC<{
   // caption sits in the content instead of on a band — measured by eye on the
   // first plated render, 2026-08-25. The reference's plate is visibly darker
   // than the dark page behind it.
-  const PLATE = bright ? "rgba(8,9,12,0.55)" : "rgba(8,9,12,0.62)";
+  // 0.72 over dark, not 0.62: the reference's plate sits over a SPARSE dark
+  // page, where the white type carries itself. Ours has to survive a terminal
+  // table that is white text edge to edge — at 0.62 the caption competed with
+  // the numbers behind it. Still translucent (the table reads through), just
+  // enough to knock the content back. Checked on the busiest frame in the
+  // reel, which is the right frame to tune a floor against.
+  const PLATE = bright ? "rgba(8,9,12,0.55)" : "rgba(8,9,12,0.72)";
   return (
     <div
       style={{
