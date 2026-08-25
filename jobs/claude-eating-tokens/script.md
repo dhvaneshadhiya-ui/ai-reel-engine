@@ -1,19 +1,23 @@
 # Script — claude-eating-tokens
 
-Your one-line question just re-read the entire conversation.
+Uber's own CTO says that this year he spent twelve hundred dollars in a two-hour coding session.
 
-And the habits you use to save tokens are the ones making that expensive.
+And the real reason has nothing to do with Claude — it's something you're probably rewarding.
 
-Here's why: Claude remembers nothing between messages. So every turn, Claude Code re-sends all of it — system prompt, project context, every reply, every tool result — just to answer the next line.
+Uber rolled Claude Code out to about five thousand engineers in December. Adoption reportedly went from thirty-two percent in February to eighty-four in March. The entire 2026 AI budget was gone by April.
 
-Caching is the only reason that's survivable: that re-read bills at roughly ten percent of the normal input rate.
+Four months.
 
-But the match has to be exact. Change anything near the top, and everything after it is recomputed at full price.
+But here's what was actually driving it. Uber was ranking its own teams on internal leaderboards by how much AI they used. More tokens, higher score.
 
-So switching models mid-task does it. Changing effort does it. Toggling an MCP server does it.
+So they didn't just allow the burn — they were scoring it.
 
-And so does compact — the command people run to save tokens. To write that summary, Claude re-reads the whole thing it's summarizing, so on a session you've come back to cold, that's the most expensive compact you'll run.
+And it worked: reportedly seventy percent of committed code came out of those tools.
 
-Clear costs nothing.
+This isn't a story about waste. It's a company that spent a year's budget in four months and still couldn't say what it bought.
 
-So: check context before you optimize. Pick your model at the start. And between two unrelated tasks, clear — don't compact.
+Uber's own COO said it out loud: if you can't link it to what you're shipping, that trade gets hard to justify.
+
+So before you blame the model, look at what you're rewarding.
+
+Claude isn't eating your tokens. Your scoreboard is.

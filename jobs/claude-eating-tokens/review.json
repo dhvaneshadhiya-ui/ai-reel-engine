@@ -1,8 +1,12 @@
 {
-  "script_sha256": "77e30f1f790a86025948272b91d4c613b42b02991d3a80025e573edd7e35a931",
-  "structure_sha256": "c15b62b112be94ec2cc31b799bb1cc682096c6228de22d92c076fea2e4a89331",
-  "findings": [],
+  "script_sha256": "ff031a2b65d30bc5e3e97157374b32ef53059b0c565634f20ba1fdb612340ada",
+  "structure_sha256": "218f5100c1dea81ae048321096be7927380e449fc67f83b79c8dc3cbda0557c5",
+  "findings": [
+    "  WHAT WITHOUT SO WHAT 1/1 spec sentences never say what the number does for the viewer. \"2nm chip\" is information; \"faster without draining the battery\" is relevance. (framework S7)",
+    "  OPENING has no version, date or time anchor: \"Uber's own CTO says that this year he spent twelve hundred dolla\". A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "NUMBERS: one every 17.0 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted."
+  ],
   "research_advice": [],
-  "beatPlanShots": 17,
-  "proposedAt": "2026-08-25T08:52:58+00:00"
+  "beatPlanShots": 20,
+  "proposedAt": "2026-08-25T09:09:47+00:00"
 }
