@@ -713,6 +713,15 @@ CASES = [
      "G49", "a locked-off zoom compounded by a push"),
 ]
 
+# G50 (2026-08-25): the ai-tools evidence doctrine, measured — the corpus
+# runs zero full-screen text scenes, so even one advises.
+CASES.append((lambda s: (s.update(format="ai-tools"),
+                         s["scenes"].__setitem__(10, {
+                             "type": "typecard", "durationSec": 2.5,
+                             "kinetic": {"lines": [{"text": "A CARD", "at": 0.2}]},
+                             "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]}))[0],
+              "G50", "an ai-tools reel with a full-screen text card"))
+
 # ai-tools (added 2026-08-25): CTA is constitutive — all 8 teardown reels
 # carry a follow/comment gate — so declaring the format without one trips G24.
 CASES.append((lambda s: s.update(format="ai-tools"),

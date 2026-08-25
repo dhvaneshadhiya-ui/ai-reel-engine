@@ -1641,6 +1641,28 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 f"locked-off snap set zoomDir: \"none\"; if the push is meant, "
                 f"this is only a note.")
 
+    # G50 — ai-tools: text cards standing in for demos. ADVICE.
+    #
+    # The format's evidence doctrine (formats/ai-tools.md): a named tool is on
+    # screen, running or being itself, while it is named. The 9-reel corpus
+    # (2026-08-25 observation study) contains ZERO full-screen text-only
+    # scenes — every "text moment" is a chip or label over something moving.
+    # claude-eating-tokens v1 had SIX in fourteen beats, and is the reel that
+    # forced the format to exist. The threshold is the corpus's own number
+    # (zero), so even one advises; craft can override with a reason, which is
+    # why this is advice and not law.
+    if fmt_name == "ai-tools":
+        texty = [i for i, sc in enumerate(scenes)
+                 if sc.get("type") in ("typecard", "wordcascade")]
+        if texty:
+            errors.append(
+                f"G50 ai-tools reel carries {len(texty)} full-screen text "
+                f"scene(s) (scenes {', '.join(f'{i:02d}' for i in texty[:5])})"
+                " — the 9-reel corpus runs ZERO: its text moments are chips "
+                "over moving evidence. Show the tool, not a card about the "
+                "tool (formats/ai-tools.md). Deliberate exceptions welcome — "
+                "with a reason in questions.md.")
+
     # ---- THE ONLY THINGS ALLOWED TO BLOCK A RENDER -------------------------
     #
     # Directive, 2026-08-17: "Nothing should be hardcoded, behind the gates and

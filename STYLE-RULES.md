@@ -3901,3 +3901,17 @@ Three decisions from the user's "how do we adapt this":
 3. **HyperFrames pilot authorized, scene-scoped** — one designed animated
    card for the cost-split beat, our palette, judged by gates and preflight
    against StatCard. Verdict to be recorded here.
+
+## 2026-08-25 (4) — the script approved, and the doctrine made mechanical
+
+The user approved the claude-eating-tokens script with all three carried
+advisories accepted in writing: runtime to 68s at the slow end (ship as-is,
+pause-tighten after generation), the loop-detector override, and their own
+real usage numbers on screen. Approval 341019be.
+
+And the last prose-only piece of the ai-tools doctrine became a gate:
+**G50 (advice)** — an ai-tools sheet carrying any full-screen text scene
+(typecard/wordcascade) advises, because the 9-reel corpus's measured number
+is ZERO: its text moments are chips over moving evidence. v1's six-cards-in-
+fourteen-beats can now never happen silently again. Deliberate exceptions
+override with a reason, which is why it advises rather than blocks.
