@@ -30,3 +30,13 @@ with our real usage numbers being on screen.
 First reel of the ai-tools format: sfx band inherited from news
 (unmeasured), face band measured off Saraev only. This reel's retention
 becomes the format's first own data point.
+
+## 5. HyperFrames pilot (user interest, 2026-08-25)
+
+Badar's HeyGen reel showcases HyperFrames OUTPUTS as evidence — and that
+framework is installed in this repo as a sanctioned scene source. Pilot at
+build stage: render ONE scene with it — the input-vs-output cost card as a
+designed animated chart — in OUR palette and type (the [EYE] one-series-look
+rule), to MP4, into assets, judged by the gates like any clip. If it beats
+StatCard on the preflight stills, it ships; either way the pilot verdict
+gets a STYLE-RULES entry. Never more than scene-scoped (CLAUDE.md).

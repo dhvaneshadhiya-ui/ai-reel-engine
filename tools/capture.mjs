@@ -423,6 +423,56 @@ async function record() {
     await sleep(600); // let relayout + lazy images settle
   }
 
+  // VISIBLE CURSOR (2026-08-25). page.mouse moves the real pointer but Chrome
+  // paints nothing for it, so every recording to date had invisible clicks.
+  // The ai-tools teardown (formats/ai-tools.md, observation study) found the
+  // live cursor is load-bearing in the genre: the viewer follows it to the
+  // button, the scroll, the field. Injected as a fixed SVG arrow with a soft
+  // shadow + a pulse ring on click; --no-cursor restores the old behaviour.
+  // Coordinates: mouse.x/y are viewport px on the zoomed page, and a fixed
+  // element's CSS px are multiplied by the root zoom — so we divide by S.
+  const showCursor = !flags["no-cursor"];
+  if (showCursor) {
+    await page.evaluate(() => {
+      const c = document.createElement("div");
+      c.id = "__cap_cursor";
+      c.style.cssText = "position:fixed;left:0;top:0;z-index:2147483647;" +
+        "pointer-events:none;width:44px;height:64px;transition:none;" +
+        "filter:drop-shadow(0 2px 5px rgba(0,0,0,.45));display:none;";
+      c.innerHTML = '<svg viewBox="0 0 26 38" width="44" height="64">' +
+        '<path d="M2 1 L2 30 L9 24 L14 36 L19 34 L14 22 L23 22 Z" ' +
+        'fill="#fff" stroke="#111" stroke-width="1.6"/></svg>';
+      const ring = document.createElement("div");
+      ring.id = "__cap_ring";
+      ring.style.cssText = "position:fixed;z-index:2147483646;" +
+        "pointer-events:none;width:14px;height:14px;border-radius:50%;" +
+        "border:3px solid rgba(37,99,235,.9);opacity:0;transition:none;";
+      document.documentElement.append(c, ring);
+    });
+  }
+  const paintCursor = async (mx, my, ringP = null) => {
+    if (!showCursor) return;
+    await page.evaluate(([x, y, s, rp]) => {
+      const c = document.getElementById("__cap_cursor");
+      if (!c) return;
+      c.style.display = "block";
+      c.style.left = (x / s) + "px";
+      c.style.top = (y / s) + "px";
+      const r = document.getElementById("__cap_ring");
+      if (r) {
+        if (rp === null) { r.style.opacity = "0"; }
+        else {
+          const grow = 14 + rp * 30;
+          r.style.width = r.style.height = grow + "px";
+          r.style.left = (x / s - grow / 2 + 3) + "px";
+          r.style.top = (y / s - grow / 2 + 2) + "px";
+          r.style.opacity = String(0.9 * (1 - rp));
+        }
+      }
+    }, [mx, my, S, ringP]);
+  };
+  let ringT = -1; // seconds since last click, -1 = no ring
+
   // Build the timeline.
   let actions;
   if (opts.script) {
@@ -489,7 +539,7 @@ async function record() {
           const e = easeInOutCubic(p);
           mouse = { x: a.fx + (a.tx - a.fx) * e, y: a.fy + (a.ty - a.fy) * e };
           mouseDirty = true;
-          if (p >= 1) { await page.mouse.click(a.tx, a.ty); a.done = true; }
+          if (p >= 1) { await page.mouse.click(a.tx, a.ty); ringT = 0; a.done = true; }
           break;
         }
         case "type": {
@@ -506,6 +556,8 @@ async function record() {
 
     await page.evaluate((y) => window.scrollTo(0, y), scrollY);
     if (mouseDirty) { await page.mouse.move(mouse.x, mouse.y); mouseDirty = false; }
+    if (ringT >= 0) { ringT += 1 / FPS; if (ringT > 0.45) ringT = -1; }
+    await paintCursor(mouse.x, mouse.y, ringT >= 0 ? ringT / 0.45 : null);
 
     const shot = await cdp.send("Page.captureScreenshot", {
       format: "jpeg",

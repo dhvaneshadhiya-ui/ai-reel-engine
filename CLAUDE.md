@@ -145,7 +145,7 @@ Live in `config.json` (`avatar.voiceSpeed`, `defaults.*`, `avatarRegistry`).
 | Hook | per FORMAT; opens on the actual tension/consequence |
 | Voice speed | 1.05 |
 | Captions | word-reveal, one highlight per beat, verified against narration |
-| Style pack | editorial (news, comparison) · utility (top5) |
+| Style pack | editorial (news, comparison) · utility (top5, ai-tools) |
 | Master | −14 LUFS |
 | Avatar | `f55b0b7c…` digital twin, `avatar_v`, native 9:16 — see below |
 

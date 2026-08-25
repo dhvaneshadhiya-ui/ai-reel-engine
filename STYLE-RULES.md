@@ -3881,3 +3881,23 @@ three that changed our plans:
    part / completely free ×3" sell; we report. We take the compression and
    the fused naming, leave the hype — and if a reel is ever sponsored, the
    disclosure line burns on screen like Saraev's.
+
+## 2026-08-25 (3) — the study adapted: no third style, a live cursor, and the first recorded asset
+
+Three decisions from the user's "how do we adapt this":
+
+1. **No third style pack** — RULES.md locks the count at two, and the
+   genre's look is this repo's own Saraev lineage anyway. The ai-tools
+   FORMAT renders under `utility` (mapping in CLAUDE.md locked settings);
+   the look vocabulary landed as an addendum in styles/utility.md.
+2. **capture.mjs record paints a VISIBLE CURSOR now** (+ click ring; on by
+   default, --no-cursor reverts). The recorder had eased mouse choreography
+   since day one but page.mouse renders nothing — every recording to date
+   had invisible clicks, and the observation study found the live cursor is
+   load-bearing in the genre. Proven same-day on the real caveman repo:
+   public/assets/claude-eating-tokens/caveman-page.webm, the reel's first
+   scouted asset, manifest entry with honest `shows` (the take over-scrolls
+   — re-record dwelling on the README; take-craft note in utility.md).
+3. **HyperFrames pilot authorized, scene-scoped** — one designed animated
+   card for the cost-split beat, our palette, judged by gates and preflight
+   against StatCard. Verdict to be recorded here.
