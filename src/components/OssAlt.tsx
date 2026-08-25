@@ -1503,78 +1503,47 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
   // whips in first, the keyword lands bigger under it, and the pair keeps a
   // low-amplitude idle pulse (nothing static, going-viral rule).
   if (scene.variant === "keyword") {
+    // MEASURED from the user's reference (fR8AkVkuM18, 2026-08-25): the
+    // keyword is ONE word in neon rgb(226,254,14), cap height 150px at
+    // 1080x1920 (font ~207), centred at 67% of frame height, and it PERSISTS
+    // while the ordinary captions keep running above it. No "COMMENT" label
+    // stacked over it, no question card, no simulated comment field — the
+    // spoken line and the burned-in captions already say "comment X".
+    //
+    // The first pass of this variant stacked COMMENT above the keyword and
+    // suppressed the captions, which made the last beat a title card. The
+    // reference keeps the reel's own caption rhythm to the final frame.
     const popP = spring({
       frame: frame - Math.round(growAt * fps),
       fps,
       config: SPRING.pop,
       durationInFrames: 16,
     });
-    const kwP = spring({
-      frame: frame - Math.round((growAt + 0.22) * fps),
-      fps,
-      config: SPRING.pop,
-      durationInFrames: 16,
-    });
-    const idle = 1 + Math.sin(t * 2.1) * 0.006;
-    const ringShadow =
-      "0 0 34px rgba(0,0,0,0.55), 0 8px 30px rgba(0,0,0,0.6)";
+    // Nothing static (going-viral): a low-amplitude breath, never a settle.
+    const idle = 1 + Math.sin(t * 2.1) * 0.008;
     return (
       <AbsoluteFill style={{ background: "#000", fontFamily: SANS }}>
         <Face src={scene.src} from={scene.from} focusX={scene.focusX} />
-        <div
-          style={{
-            position: "absolute",
-            top: 230,
-            width: "100%",
-            textAlign: "center",
-            fontWeight: 900,
-            fontSize: 74,
-            color: "#fff",
-            textShadow: ringShadow,
-            opacity: wantP,
-            transform: `translateY(${(1 - wantP) * 40}px)`,
-          }}
-        >
-          {question}
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            top: 1140,
-            width: "100%",
-            textAlign: "center",
-            transform: `scale(${idle})`,
-          }}
-        >
+        {popP > 0.02 && (
           <div
             style={{
+              position: "absolute",
+              top: 1286 - 104,          // cap centred on the measured 67%
+              width: "100%",
+              textAlign: "center",
               fontWeight: 900,
-              fontSize: 120,
-              letterSpacing: "0.06em",
-              color: CYAN,
-              textShadow: ringShadow,
-              opacity: popP > 0.02 ? 1 : 0,
-              transform: `scale(${0.4 + 0.6 * popP}) translateY(${(1 - popP) * 90}px)`,
-            }}
-          >
-            COMMENT
-          </div>
-          <div
-            style={{
-              marginTop: 6,
-              fontWeight: 900,
-              fontSize: 200,
-              letterSpacing: "0.02em",
-              color: "#fff",
-              lineHeight: 0.95,
-              textShadow: ringShadow,
-              opacity: kwP > 0.02 ? 1 : 0,
-              transform: `scale(${0.4 + 0.6 * kwP}) translateY(${(1 - kwP) * 110}px)`,
+              fontSize: 207,
+              lineHeight: 1,
+              letterSpacing: "-0.01em",
+              color: "rgb(226,254,14)",
+              textShadow: "0 6px 26px rgba(0,0,0,0.55)",
+              transform: `scale(${(0.55 + 0.45 * popP) * idle}) `
+                + `translateY(${(1 - popP) * 70}px)`,
             }}
           >
             {keyword}
           </div>
-        </div>
+        )}
       </AbsoluteFill>
     );
   }

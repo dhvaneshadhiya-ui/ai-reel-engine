@@ -564,6 +564,15 @@ def main() -> None:
         # hardcodes above). Default it; a shot may still override.
         if scene.get("type") == "split":
             scene.setdefault("captionBottom", 1000)
+        # A keyword CTA draws a 207px word centred at 67% of the frame, so the
+        # caption has to sit ABOVE it — at the default the two overlapped and
+        # the last beat rendered the caption THROUGH the keyword (2026-08-25).
+        # The reference keeps its caption near mid-frame with the keyword
+        # below; 880 puts the caption's bottom edge at y=1040 (54%), clear of
+        # the keyword's top edge at y=1182.
+        if (scene.get("type") == "commentcta"
+                and scene.get("variant") == "keyword"):
+            scene.setdefault("captionBottom", 880)
         if asset:
             scene.setdefault("assetId", str(asset_id))
             scene.setdefault("claimId", str(shot.get("claim_id", asset_id)))

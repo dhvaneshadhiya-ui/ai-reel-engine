@@ -49,6 +49,44 @@ CHECKS: list[tuple[str, str, str]] = [
 ]
 
 
+RENDER_SRC = {
+    "CaptionChips.tsx": Path(__file__).resolve().parent.parent
+                        / "src/components/CaptionChips.tsx",
+    "OssAlt.tsx": Path(__file__).resolve().parent.parent
+                  / "src/components/OssAlt.tsx",
+    "FootageScene.tsx": Path(__file__).resolve().parent.parent
+                        / "src/components/FootageScene.tsx",
+}
+
+# The three treatments measured off the user's reference shorts on 2026-08-25.
+# Each is a NUMBER taken from a real frame, so each can silently drift back to
+# taste in a later edit — which is precisely what a check is for.
+REF_CHECKS: list[tuple[str, str, str, str]] = [
+    ("CaptionChips.tsx", "captions sit on a translucent plate",
+     r"background: PLATE",
+     "reference vIAH9SaCNvo sets its caption on a translucent dark plate; "
+     "without a ground the type needs a heavy contour and still loses "
+     "against busy footage"),
+    ("CaptionChips.tsx", "caption type is the measured 0.88 of the role",
+     r"SIZE\.caption \* 0\.88",
+     "the reference measures a 60px cap height at 1080 wide; ours ran 78 "
+     "with a 1.3x emphasis step, so every accent word beat its whole line"),
+    ("CaptionChips.tsx", "emphasis is a small step, not a size jump",
+     r"0\.88 \* 1\.14",
+     "the reference carries emphasis on COLOUR at a uniform size"),
+    ("OssAlt.tsx", "CTA keyword is the measured neon",
+     r"rgb\(226,254,14\)",
+     "sampled from fR8AkVkuM18's final frames"),
+    ("OssAlt.tsx", "CTA keyword is the measured size",
+     r"fontSize: 207",
+     "cap height 150px at 1080x1920 in the reference"),
+    ("FootageScene.tsx", "oversized footage can travel instead of cropping",
+     r'slide === "left"',
+     "a static cover-crop throws most of an oversized asset away; the "
+     "reference travels across it"),
+]
+
+
 TERM_CHECKS: list[tuple[str, str, str]] = [
     ("generated pages declare a viewport",
      r'<meta name="viewport" content="width=device-width',
@@ -77,7 +115,15 @@ def run() -> int:
         else:
             failed = True
             print(f"  FAIL {label}\n       {why}")
-    print(f"\n{len(CHECKS) + len(TERM_CHECKS)} capture defaults checked — "
+    for fname, label, pattern, why in REF_CHECKS:
+        path = RENDER_SRC[fname]
+        text = path.read_text() if path.exists() else ""
+        if re.search(pattern, text):
+            print(f"  ok   {label}")
+        else:
+            failed = True
+            print(f"  FAIL {label} ({fname})\n       {why}")
+    print(f"\n{len(CHECKS) + len(TERM_CHECKS) + len(REF_CHECKS)} defaults checked — "
           f"{'all hold' if not failed else 'A DEFAULT CHANGED'}.")
     return 1 if failed else 0
 

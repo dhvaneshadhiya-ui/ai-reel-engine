@@ -147,6 +147,20 @@ export type Scene =
        * backdrop shows through — that is G48, and it blocks.
        */
       zoom?: number;
+      /**
+       * ADDED 2026-08-25, measured from the two reference shorts the user
+       * supplied. Footage that does not fit 9:16 TRAVELS instead of cropping:
+       * "up"/"down" for a tall page or poster (a read-speed scroll), and
+       * "left"/"right" for a wide desktop capture. The travel runs the
+       * asset's real overflow edge to edge over the scene's duration, eased.
+       * Without this the only options were a static crop — which throws most
+       * of an oversized asset away — or re-recording it.
+       */
+      slide?: "up" | "down" | "left" | "right";
+      /** fraction of the available travel to use, default 1 (edge to edge).
+       *  Below 1 the pan starts and ends inset, for a gentler move on a very
+       *  long page where a full sweep would race. */
+      slideSpan?: number;
       /** Nick-style info-card overlaid on the footage: bold heading + body */
       infocard?: { heading: string; body: string; at?: number };
     })

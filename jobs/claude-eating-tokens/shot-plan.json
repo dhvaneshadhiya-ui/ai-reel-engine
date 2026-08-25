@@ -96,9 +96,9 @@
     "type": "footage",
     "src": "assets/claude-eating-tokens/docs-caching-scroll.mp4",
     "from": 1.6,
-    "zoomDir": "in",
     "creditOnScreen": true,
-    "covers": "resends the whole conversation"
+    "covers": "resends the whole conversation",
+    "zoomDir": "in"
    }
   },
   {
@@ -107,7 +107,6 @@
    "scene": {
     "type": "footage",
     "src": "assets/claude-eating-tokens/caveman-page.mp4",
-    "zoomDir": "none",
     "covers": "popular fix",
     "sfx": [
      {
@@ -116,7 +115,8 @@
       "at": 0.0
      }
     ],
-    "creditOnScreen": true
+    "creditOnScreen": true,
+    "zoomDir": "in"
    },
    "asset_id": "caveman-page",
    "tier": "official"
@@ -128,9 +128,9 @@
     "type": "footage",
     "src": "assets/claude-eating-tokens/caveman-page.mp4",
     "from": 3.0,
-    "zoomDir": "none",
     "covers": "answer in fewer words",
-    "creditOnScreen": true
+    "creditOnScreen": true,
+    "zoomDir": "in"
    },
    "asset_id": "caveman-page",
    "tier": "official"
@@ -198,11 +198,13 @@
    "start_phrase": "So it trims the cheap half",
    "line": "So it trims the cheap half of your bill \u2014 that's why it barely helps.",
    "scene": {
-    "type": "floatcard",
+    "type": "footage",
     "src": "assets/claude-eating-tokens/ccusage-split.mp4",
-    "covers": "the cheap half of your bill",
+    "slide": "left",
+    "slideSpan": 0.9,
+    "zoomDir": "none",
     "creditOnScreen": true,
-    "aspect": 1.9737
+    "covers": "the cheap half of your bill"
    },
    "asset_id": "ccusage-split",
    "tier": "official"
@@ -250,11 +252,11 @@
    "scene": {
     "type": "footage",
     "src": "assets/claude-eating-tokens/hud-statusline.mp4",
-    "zoomDir": "in",
     "creditOnScreen": true,
     "from": 4.6,
     "_note": "full width so the demo reads whole; caption raised onto the demo's dark band \u2014 at the default it sat on the README's white Install body text, and zooming to dodge that cropped the proof (2026-08-25)",
-    "captionBottom": 1300
+    "captionBottom": 1300,
+    "zoomDir": "in"
    },
    "asset_id": "hud-statusline",
    "tier": "official"
@@ -265,9 +267,9 @@
    "scene": {
     "type": "footage",
     "src": "assets/claude-eating-tokens/ponytail-page.mp4",
-    "zoomDir": "none",
     "covers": "checks the standard library first",
-    "creditOnScreen": true
+    "creditOnScreen": true,
+    "zoomDir": "in"
    },
    "asset_id": "ponytail-page",
    "tier": "official"

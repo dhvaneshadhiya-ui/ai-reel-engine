@@ -115,16 +115,22 @@ const NickDisplay: React.FC<{
     return REST;
   };
 
-  const RING = 2.2;
-  const ring = bright
-    ? Array.from({ length: 8 }, (_, k) => {
-        const a = (k * Math.PI) / 4;
-        return `${(Math.cos(a) * RING).toFixed(1)}px ${(
-          Math.sin(a) * RING
-        ).toFixed(1)}px 0 rgba(10,10,12,0.92)`;
-      }).join(", ") + ", 0 6px 22px rgba(0,0,0,0.55)"
-    : "0 4px 16px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.6)";
-  const shadow = ring;
+  // A PLATE, not a contour (2026-08-25, user reference vIAH9SaCNvo, measured).
+  // The 8-direction ring was compensating for having no ground: over a bright
+  // page it thickened every glyph, and it still lost against busy content. The
+  // reference sets its caption on a translucent dark rounded plate that hugs
+  // the text — legible over anything, and the footage still reads through it.
+  // Alpha measured between 0.30 and 0.50 across two samples of that reel; 0.40
+  // is the middle, set deliberately and checked by eye rather than claimed as
+  // precise. The plate replaces the ring, so the type can go back to a normal
+  // weight of shadow.
+  const shadow = "0 2px 10px rgba(0,0,0,0.45)";
+  // Alpha by GROUND, not one value: a plate's job is separation, and over a
+  // dark page (a terminal, a repo) a 0.40 black plate is dark-on-dark and the
+  // caption sits in the content instead of on a band — measured by eye on the
+  // first plated render, 2026-08-25. The reference's plate is visibly darker
+  // than the dark page behind it.
+  const PLATE = bright ? "rgba(8,9,12,0.55)" : "rgba(8,9,12,0.62)";
   return (
     <div
       style={{
@@ -133,16 +139,30 @@ const NickDisplay: React.FC<{
         right: 40,
         bottom,
         display: "flex",
-        flexWrap: "wrap",
         justifyContent: "center",
-        alignItems: "baseline",
-        columnGap: 20,
-        rowGap: 2,
         pointerEvents: "none",
       }}
     >
+    <div
+      style={{
+        display: "inline-flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "baseline",
+        columnGap: 18,
+        rowGap: 2,
+        // hugs the line: inline-flex, so the plate is the text's own width
+        background: PLATE,
+        borderRadius: 26,
+        padding: "14px 30px 18px",
+        maxWidth: "100%",
+      }}
+    >
       {words.map((w, i) => {
-        if (t < w.t - 0.02) return null;
+        // RESERVE the slot instead of omitting the word. Omitting made the
+        // plate grow a word at a time, which jitters; the reference's plate is
+        // stable for the whole chunk while the words land inside it.
+        const pending = t < w.t - 0.02;
         const emph = isEmph(w.text, emphasis);
         // WEIGHT, NOT INDEX — hyperframes-animation rules/waterfall-entry.md.
         // Its table sets travel and settle time by what an element WEIGHS:
@@ -163,16 +183,24 @@ const NickDisplay: React.FC<{
           <span
             key={i}
             style={{
-              // ONE scale: the caption role, with emphasis a step up. 66/86
-              // were the proven pair; the scale keeps that relationship at
-              // 78 and 78*1.3.
+              // SIZED AGAINST THE REFERENCE (2026-08-25): its captions measure
+              // a 60px cap height at 1080 wide, uniform — no size jump on the
+              // emphasis word, which carries on COLOUR alone. Ours ran 78 with
+              // emphasis at 1.3x (a 73px cap), so every highlighted word was
+              // bigger than the reference's whole line and the line height
+              // changed mid-sentence. 0.88 of the caption role with a 1.14
+              // emphasis step lands the accent word on the reference's 60px
+              // and the rest just under it — "a little smaller", measured.
               ...TYPE.caption,
               fontStyle: emph ? "normal" : "italic",
               fontWeight: emph ? 900 : TYPE.caption.fontWeight,
-              fontSize: emph ? Math.round(SIZE.caption * 1.3) : SIZE.caption,
+              fontSize: emph
+                ? Math.round(SIZE.caption * 0.88 * 1.14)
+                : Math.round(SIZE.caption * 0.88),
               letterSpacing: emph ? "-0.015em" : "0.005em",
               color: emph ? accent : base,
               textShadow: shadow,
+              visibility: pending ? "hidden" : "visible",
               // BINARY, never a fade. waterfall-entry.md states it as a rule
               // with no exception: "Opacity is BINARY 0->1 via tl.set — never
               // fade an arrival." A word that fades in is a word arriving
@@ -192,6 +220,7 @@ const NickDisplay: React.FC<{
           </span>
         );
       })}
+    </div>
     </div>
   );
 };

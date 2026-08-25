@@ -308,6 +308,25 @@ export const Reel: React.FC<{ beats: BeatSheet }> = ({ beats }) => {
               ownText.push(...s.headline.lines.map((l) => l.text));
             }
             if (s.type === "commentcta") {
+              // The KEYWORD variant keeps the reel's caption rhythm to the
+              // last frame (reference fR8AkVkuM18) — so only the chunk that
+              // would print the keyword twice is dropped, not the whole beat.
+              // The gate variant draws a question card AND a word card AND a
+              // notification, so it still suppresses wholesale.
+              if (s.variant === "keyword") {
+                const kw = words(s.keyword ?? "OPEN");
+                for (const cap of beats.captions) {
+                  if (
+                    cap.start < c + s.durationSec &&
+                    cap.end > c &&
+                    words(cap.text).some((w) => kw.includes(w))
+                  ) {
+                    out.push({ start: cap.start, end: cap.end });
+                  }
+                }
+                c += s.durationSec;
+                continue;
+              }
               ownText.push(s.keyword ?? "OPEN", s.question ?? "");
             }
             if (!autoHide && ownText.length) {

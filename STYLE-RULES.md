@@ -4082,3 +4082,50 @@ The lesson is the repo's own founding one, arriving again: *"loaded every
 session", "the skill's binding read-order" and "the build session reads it"
 are all the same sentence — someone will read a file — and that sentence is
 what the gates exist to replace.*
+
+## 2026-08-25 — three treatments measured off user-supplied reference shorts
+
+The user named three shorts and three problems. Every number below came from
+a frame of those reels, not from taste (G23 discipline applied to look, not
+just timing). Assets in `scratchpad/refs`, measurements reproducible.
+
+**1. CAPTIONS — a plate, and smaller (ref vIAH9SaCNvo).** Measured: 40px cap
+height in its 720-wide frame = **60px at our 1080**, uniform, on a
+translucent dark rounded plate that hugs the line. Two findings:
+- Our BASE size was already close (57px cap). The visible problem was the
+  missing plate — we carried an 8-direction contour ring instead, which
+  thickens every glyph over a bright page and still loses to busy content.
+- Our EMPHASIS ran 1.3x (73px cap) — bigger than the reference's whole line,
+  and it changed the line height mid-sentence. The reference carries emphasis
+  on COLOUR at a uniform size. Ours is now 0.88 of the role with a 1.14 step.
+- Plate alpha measured 0.30-0.50 across two samples; set 0.62 over dark
+  grounds and 0.55 over bright, because a 0.40 plate on a terminal page is
+  dark-on-dark and provides no separation (found by eye on the first plated
+  render — the number the reference gave was for a plate over MIXED ground).
+- The plate is sized for the WHOLE chunk from the start (unrevealed words
+  hold their slot) — a plate that grows a word at a time jitters.
+
+**2. OVERSIZED FOOTAGE TRAVELS (refs GQfEc8FHA48, fR8AkVkuM18).** Wide desktop
+captures are fitted to the frame and moved sideways; tall pages and posters
+scroll vertically. New `slide: "up"|"down"|"left"|"right"` + `slideSpan` on
+footage, eased, implemented on objectPosition so `cover` still governs the
+fit and the travel is exactly the asset's overflow.
+**Do not stack it on a recording that already scrolls** — our mobile page
+recordings carry their own scripted scroll, and a slide on top is two
+motions fighting. It is for assets whose content is static: this reel's
+3000x1520 ccusage table, which as a card rendered at a third scale and now
+plays full-bleed with its columns legible.
+
+**3. CTA (ref fR8AkVkuM18).** Measured: one word, neon **rgb(226,254,14)**,
+cap height 150px (font ~207) at 1080x1920, centred at **67% of frame
+height**, PERSISTING while the ordinary captions keep running above it. No
+"COMMENT" label stacked over it, no question card, no simulated comment
+field. Our first keyword variant stacked a label and suppressed captions,
+which turned the closing beat into a title card. Now only the single caption
+chunk that would print the keyword twice is dropped, and compile defaults
+`captionBottom: 880` on a keyword CTA so the caption clears the keyword —
+without it they render through each other.
+
+All six numbers are asserted by `tools/test_capture_defaults.py` (13 checks,
+run by doctor): a measured treatment that lives only in a component can drift
+back to taste in one edit.
