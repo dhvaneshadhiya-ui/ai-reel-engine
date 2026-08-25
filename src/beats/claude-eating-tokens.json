@@ -89,7 +89,9 @@
       "from": 1.6,
       "creditOnScreen": true,
       "covers": "resends the whole conversation",
-      "zoomDir": "in",
+      "zoomDir": "none",
+      "zoom": 1.14,
+      "focusY": 0.42,
       "durationSec": 3.92,
       "assetId": "docs-caching-scroll",
       "claimId": "docs-caching-scroll",
@@ -108,6 +110,7 @@
       ],
       "creditOnScreen": true,
       "zoomDir": "in",
+      "zoom": 1.0,
       "durationSec": 1.78,
       "assetId": "caveman-page",
       "claimId": "caveman-page",
@@ -119,7 +122,9 @@
       "from": 3.0,
       "covers": "answer in fewer words",
       "creditOnScreen": true,
-      "zoomDir": "in",
+      "zoomDir": "none",
+      "zoom": 1.5,
+      "focusY": 0.3,
       "durationSec": 2.2,
       "assetId": "caveman-page",
       "claimId": "caveman-page",
@@ -181,9 +186,10 @@
       "src": "assets/claude-eating-tokens/ccusage-split.mp4",
       "slide": "left",
       "slideSpan": 0.9,
-      "zoomDir": "none",
+      "zoomDir": "in",
       "creditOnScreen": true,
       "covers": "the cheap half of your bill",
+      "zoom": 1.06,
       "durationSec": 3.82,
       "assetId": "ccusage-split",
       "claimId": "ccusage-split"
@@ -191,7 +197,7 @@
     {
       "type": "footage",
       "src": "assets/claude-eating-tokens/avatar-master.mp4",
-      "zoomDir": "none",
+      "zoomDir": "in",
       "focusX": 0.5,
       "sfx": [
         {
@@ -200,6 +206,8 @@
           "at": 0.0
         }
       ],
+      "zoom": 1.04,
+      "_note": "the pivot line \u2014 a slow push on the presenter builds into the three fixes; it was holding dead still (cut_sheet, 2026-08-25)",
       "durationSec": 2.06,
       "from": 30.44
     },
@@ -239,7 +247,22 @@
       "covers": "checks the standard library first",
       "creditOnScreen": true,
       "zoomDir": "in",
-      "durationSec": 6.92,
+      "zoom": 1.0,
+      "durationSec": 4.52,
+      "assetId": "ponytail-page",
+      "claimId": "ponytail-page",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/claude-eating-tokens/ponytail-page.mp4",
+      "from": 6.0,
+      "zoomDir": "none",
+      "zoom": 1.35,
+      "focusY": 0.62,
+      "creditOnScreen": true,
+      "covers": "checks the standard library",
+      "durationSec": 2.4,
       "assetId": "ponytail-page",
       "claimId": "ponytail-page",
       "captionTheme": "dark"
@@ -279,18 +302,21 @@
       "claimId": "docs-compact"
     },
     {
-      "type": "annotatezoom",
+      "type": "sourceread",
       "src": "assets/claude-eating-tokens/skill-hooks.png",
       "srcWidth": 1092,
       "srcHeight": 2340,
-      "covers": "your agent's permissions",
-      "focus": {
-        "x": 30,
-        "y": 480,
-        "w": 1030,
-        "h": 560
-      },
+      "lines": [
+        {
+          "at": 0.35,
+          "x": 55,
+          "y": 715,
+          "w": 975,
+          "h": 205
+        }
+      ],
       "creditOnScreen": true,
+      "covers": "your agent's permissions",
       "durationSec": 2.38,
       "assetId": "skill-hooks",
       "claimId": "skill-hooks"

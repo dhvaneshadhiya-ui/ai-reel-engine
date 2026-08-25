@@ -288,6 +288,50 @@ Key scene types — full table in `PIPELINE.md` §3:
 
 ---
 
+## 3b. THE EDITOR'S PASS — do this before every render
+
+Added 2026-08-25, user directive: *"think of yourself as a years-experienced
+video editor who is also expert in editing for reels and shorts, and edit as
+per the need of the topic and script."*
+
+The gates prove a reel is not BROKEN. They cannot tell you it is not EDITED.
+A sheet where every beat carries the same `zoomDir: "in"` passes everything
+and still watches like a slideshow — which is exactly what claude-eating-
+tokens was until this pass.
+
+So after compiling and before rendering, print the cut and read it:
+
+```bash
+python3 tools/cut_sheet.py <slug>      # every beat: time, duration, motion
+```
+
+Then ask these five questions and CHANGE something for each one that fails.
+None of them is a threshold; they are the questions an editor asks.
+
+1. **Does any two adjacent beats move the same way?** Two shots that both
+   push in read as one long shot with a glitch. Give one of them a different
+   job: establish wide, then hold tight. Same asset, two moves, is a CUT.
+2. **Where is the longest shot, and what time does it sit at?** A long hold
+   early is confidence; the same hold at 40s is a dropped viewer. Split it
+   on its own second clause — most sentences have one.
+3. **Does the motion fight the asset?** A recording that already scrolls
+   does not want a push on top; that is two motions arguing. Hold it and
+   crop tighter instead. A static oversized asset wants the opposite: let it
+   travel (`slide`), optionally with a slow push for depth (`zoom` +
+   `slide` compose — the slide reads the content, the push keeps it alive).
+4. **Does the shape follow the story?** A myth-buster should SLOW at its
+   turn and ACCELERATE through its fixes. Compare the beat durations either
+   side of the pivot; if they are the same, the edit is not telling the
+   story the script is telling.
+5. **Is every frame doing the job its line asks for?** A tool being NAMED
+   wants the tool visible; a claim being PROVED wants the sentence readable.
+   That decides zoom-vs-hold more reliably than any preference.
+
+Record what you changed and why in the STYLE-RULES entry for the reel. The
+next editor (you, in a month) needs the reasoning, not the values.
+
+---
+
 ## 4. Non-negotiable visual rules (learned the hard way)
 
 1. **Never open on a document, browser, file bin, black screen or loading

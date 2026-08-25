@@ -201,8 +201,8 @@ const NickDisplay: React.FC<{
               fontStyle: emph ? "normal" : "italic",
               fontWeight: emph ? 900 : TYPE.caption.fontWeight,
               fontSize: emph
-                ? Math.round(SIZE.caption * 0.88 * 1.14)
-                : Math.round(SIZE.caption * 0.88),
+                ? Math.round(SIZE.caption * 0.78 * 1.12)
+                : Math.round(SIZE.caption * 0.78),
               letterSpacing: emph ? "-0.015em" : "0.005em",
               color: emph ? accent : base,
               textShadow: shadow,

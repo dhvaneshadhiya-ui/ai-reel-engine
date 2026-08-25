@@ -98,7 +98,9 @@
     "from": 1.6,
     "creditOnScreen": true,
     "covers": "resends the whole conversation",
-    "zoomDir": "in"
+    "zoomDir": "none",
+    "zoom": 1.14,
+    "focusY": 0.42
    }
   },
   {
@@ -116,7 +118,8 @@
      }
     ],
     "creditOnScreen": true,
-    "zoomDir": "in"
+    "zoomDir": "in",
+    "zoom": 1.0
    },
    "asset_id": "caveman-page",
    "tier": "official"
@@ -130,7 +133,9 @@
     "from": 3.0,
     "covers": "answer in fewer words",
     "creditOnScreen": true,
-    "zoomDir": "in"
+    "zoomDir": "none",
+    "zoom": 1.5,
+    "focusY": 0.3
    },
    "asset_id": "caveman-page",
    "tier": "official"
@@ -202,9 +207,10 @@
     "src": "assets/claude-eating-tokens/ccusage-split.mp4",
     "slide": "left",
     "slideSpan": 0.9,
-    "zoomDir": "none",
+    "zoomDir": "in",
     "creditOnScreen": true,
-    "covers": "the cheap half of your bill"
+    "covers": "the cheap half of your bill",
+    "zoom": 1.06
    },
    "asset_id": "ccusage-split",
    "tier": "official"
@@ -215,7 +221,7 @@
    "scene": {
     "type": "footage",
     "src": "assets/claude-eating-tokens/avatar-master.mp4",
-    "zoomDir": "none",
+    "zoomDir": "in",
     "focusX": 0.5,
     "sfx": [
      {
@@ -223,7 +229,9 @@
       "vol": 0.543,
       "at": 0.0
      }
-    ]
+    ],
+    "zoom": 1.04,
+    "_note": "the pivot line \u2014 a slow push on the presenter builds into the three fixes; it was holding dead still (cut_sheet, 2026-08-25)"
    }
   },
   {
@@ -269,10 +277,26 @@
     "src": "assets/claude-eating-tokens/ponytail-page.mp4",
     "covers": "checks the standard library first",
     "creditOnScreen": true,
-    "zoomDir": "in"
+    "zoomDir": "in",
+    "zoom": 1.0
    },
    "asset_id": "ponytail-page",
    "tier": "official"
+  },
+  {
+   "start_phrase": "It checks the standard",
+   "line": "it checks the standard library first.",
+   "asset_id": "ponytail-page",
+   "scene": {
+    "type": "footage",
+    "src": "assets/claude-eating-tokens/ponytail-page.mp4",
+    "from": 6.0,
+    "zoomDir": "none",
+    "zoom": 1.35,
+    "focusY": 0.62,
+    "creditOnScreen": true,
+    "covers": "checks the standard library"
+   }
   },
   {
    "start_phrase": "Three: between unrelated tasks",
@@ -318,18 +342,21 @@
    "start_phrase": "They run with your agent's permissions",
    "line": "They run with your agent's permissions \u2014 read them first.",
    "scene": {
-    "type": "annotatezoom",
+    "type": "sourceread",
     "src": "assets/claude-eating-tokens/skill-hooks.png",
     "srcWidth": 1092,
     "srcHeight": 2340,
-    "covers": "your agent's permissions",
-    "focus": {
-     "x": 30,
-     "y": 480,
-     "w": 1030,
-     "h": 560
-    },
-    "creditOnScreen": true
+    "lines": [
+     {
+      "at": 0.35,
+      "x": 55,
+      "y": 715,
+      "w": 975,
+      "h": 205
+     }
+    ],
+    "creditOnScreen": true,
+    "covers": "your agent's permissions"
    },
    "asset_id": "skill-hooks",
    "tier": "official"

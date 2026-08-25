@@ -4129,3 +4129,44 @@ without it they render through each other.
 All six numbers are asserted by `tools/test_capture_defaults.py` (13 checks,
 run by doctor): a measured treatment that lives only in a component can drift
 back to taste in one edit.
+
+## 2026-08-25 — the EDITOR'S PASS becomes a step (user directive)
+
+*"Think of yourself as a years-experienced video editor... and edit as per
+the need of the topic, script."* The gates prove a reel is not BROKEN; they
+cannot tell you it is not EDITED. claude-eating-tokens passed every gate
+with sixteen beats that nearly all carried the same `zoomDir: "in"` — a
+slideshow with a green light.
+
+New step in AGENT.md §3b, with `tools/cut_sheet.py` to make the cut legible:
+every beat's duration and motion side by side, in order, plus the places an
+edit usually needs a decision (adjacent beats moving identically, the
+longest beat sitting late, beats declaring no movement at all). It asserts
+nothing — the five questions are in the manual, and the answers are
+judgement.
+
+What the pass changed on this reel, and why:
+
+- **Two caveman shots that both pushed in** -> the first ESTABLISHES (wide,
+  push), the second LANDS THE CLAIM (held at 1.5x on the About line, where
+  "cuts 65% of tokens" is readable). Same asset, two moves, is a cut.
+- **A push on a recording that already scrolls** -> held and cropped tighter
+  (1.14x). Two motions arguing is worse than one.
+- **The 6.9s ponytail shot at 40s**, the longest in the reel and sitting
+  where attention is thinnest -> split on its own second clause ("it checks
+  the standard library first"), the second half framed on the README's
+  "~54% less code". Longest beat is now 5.62s and it sits at 21s, which is
+  the reel's TURN — a hold there is confidence, not drift.
+- **Two annotatezooms back to back** -> the second is a `sourceread`,
+  because its line is a sentence being proved and that is the treatment
+  built for reading a sentence.
+- **The pivot line held dead still** — cut_sheet caught it on its first run,
+  three minutes after being written. "These three cut the expensive half" is
+  the hinge of the script; it now pushes in gently.
+- **zoom + slide compose** (user, same message): the wide table slides to
+  read its columns AND pushes 1.06x for depth. The slide reads; the push
+  keeps it alive.
+- **Captions down again** to 0.78 of the role (from 0.88). Stated as
+  judgement, not measurement: the reference's 60px cap is its line height,
+  but our plate makes the block read heavier, so matching its cap made ours
+  look bigger than it. The eye is the instrument for type size on a phone.

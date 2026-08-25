@@ -67,12 +67,12 @@ REF_CHECKS: list[tuple[str, str, str, str]] = [
      "reference vIAH9SaCNvo sets its caption on a translucent dark plate; "
      "without a ground the type needs a heavy contour and still loses "
      "against busy footage"),
-    ("CaptionChips.tsx", "caption type is the measured 0.88 of the role",
-     r"SIZE\.caption \* 0\.88",
+    ("CaptionChips.tsx", "caption type is the tuned 0.78 of the role",
+     r"SIZE\.caption \* 0\.78",
      "the reference measures a 60px cap height at 1080 wide; ours ran 78 "
      "with a 1.3x emphasis step, so every accent word beat its whole line"),
     ("CaptionChips.tsx", "emphasis is a small step, not a size jump",
-     r"0\.88 \* 1\.14",
+     r"0\.78 \* 1\.12",
      "the reference carries emphasis on COLOUR at a uniform size"),
     ("OssAlt.tsx", "CTA keyword is the measured neon",
      r"rgb\(226,254,14\)",
