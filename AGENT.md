@@ -315,10 +315,17 @@ None of them is a threshold; they are the questions an editor asks.
    early is confidence; the same hold at 40s is a dropped viewer. Split it
    on its own second clause — most sentences have one.
 3. **Does the motion fight the asset?** A recording that already scrolls
-   does not want a push on top; that is two motions arguing. Hold it and
-   crop tighter instead. A static oversized asset wants the opposite: let it
-   travel (`slide`), optionally with a slow push for depth (`zoom` +
-   `slide` compose — the slide reads the content, the push keeps it alive).
+   does not want a push on top; that is two motions arguing. A static
+   oversized asset wants the opposite: let it travel (`slide`), optionally
+   with a slow push for depth (`zoom` + `slide` compose — the slide reads
+   the content, the push keeps it alive).
+   **And check what the asset can afford.** A mobile capture is 1080 wide —
+   exactly the frame — so scale on it crops words off BOTH edges. A `zoom:
+   1.5` meant to make a README claim readable chopped that claim in half
+   (2026-08-25). Frame a full-width capture by choosing its SLICE (`focusY`)
+   and its MOMENT (`from`), at 1:1. Save scale for assets genuinely wider
+   than the frame. Compile prints an advisory when a zoom exceeds what the
+   source can afford.
 4. **Does the shape follow the story?** A myth-buster should SLOW at its
    turn and ACCELERATE through its fixes. Compare the beat durations either
    side of the pivot; if they are the same, the edit is not telling the

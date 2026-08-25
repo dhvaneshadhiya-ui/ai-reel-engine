@@ -95,12 +95,13 @@
    "scene": {
     "type": "footage",
     "src": "assets/claude-eating-tokens/docs-caching-scroll.mp4",
-    "from": 1.6,
+    "from": 2.2,
     "creditOnScreen": true,
     "covers": "resends the whole conversation",
     "zoomDir": "none",
-    "zoom": 1.14,
-    "focusY": 0.42
+    "zoom": 1.0,
+    "focusY": 0.46,
+    "_note": "no zoom: this capture is already frame-width, so any scale cuts its text off both edges. Frame it with `from`/focusY instead."
    }
   },
   {
@@ -130,12 +131,13 @@
    "scene": {
     "type": "footage",
     "src": "assets/claude-eating-tokens/caveman-page.mp4",
-    "from": 3.0,
+    "from": 6.4,
     "covers": "answer in fewer words",
     "creditOnScreen": true,
     "zoomDir": "none",
-    "zoom": 1.5,
-    "focusY": 0.3
+    "zoom": 1.0,
+    "focusY": 0.34,
+    "_note": "no zoom: this capture is already frame-width, so any scale cuts its text off both edges. Frame it with `from`/focusY instead."
    },
    "asset_id": "caveman-page",
    "tier": "official"
@@ -230,8 +232,8 @@
       "at": 0.0
      }
     ],
-    "zoom": 1.04,
-    "_note": "the pivot line \u2014 a slow push on the presenter builds into the three fixes; it was holding dead still (cut_sheet, 2026-08-25)"
+    "zoom": 1.0,
+    "_note": "no zoom: this capture is already frame-width, so any scale cuts its text off both edges. Frame it with `from`/focusY instead."
    }
   },
   {
@@ -290,12 +292,13 @@
    "scene": {
     "type": "footage",
     "src": "assets/claude-eating-tokens/ponytail-page.mp4",
-    "from": 6.0,
+    "from": 6.6,
     "zoomDir": "none",
-    "zoom": 1.35,
-    "focusY": 0.62,
+    "zoom": 1.0,
+    "focusY": 0.58,
     "creditOnScreen": true,
-    "covers": "checks the standard library"
+    "covers": "checks the standard library",
+    "_note": "no zoom: this capture is already frame-width, so any scale cuts its text off both edges. Frame it with `from`/focusY instead."
    }
   },
   {

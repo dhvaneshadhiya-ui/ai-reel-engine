@@ -613,6 +613,21 @@ def main() -> None:
         ):
             if scene.get(media_key) == avatar_rel and trim_key not in scene:
                 scene[trim_key] = round(start, 3)
+        # A SCALE ON A FRAME-WIDTH CAPTURE CUTS ITS TEXT (2026-08-25). A mobile
+        # capture is 1080 wide — exactly the frame — so any zoom above ~1.15
+        # pushes words off both edges. On the editor's pass a `zoom: 1.5` meant
+        # to make a README claim readable did the opposite: it chopped the
+        # claim in half. Frame a full-width capture with `from` and `focusY`
+        # (which slice, at 1:1) instead of scale. Advice at compile time, where
+        # the asset's real width is already known.
+        if (scene.get("type") == "footage" and float(scene.get("zoom", 1)) > 1.15
+                and scene.get("src") and scene["src"] != avatar_rel):
+            info = media_info(public / scene["src"])
+            if info and info.get("width", 0) and info["width"] <= 1080:
+                print(f"  ADVICE shot {index}: zoom {scene['zoom']} on a "
+                      f"{int(info['width'])}px-wide capture — at frame width, "
+                      f"scale crops text off both edges. Use `from`/`focusY` "
+                      f"to choose the slice instead.")
         if scene.get("src") == avatar_rel and scene.get("type") == "footage":
             scene.setdefault("focusX", focus_full)
         if scene.get("bottomSrc") == avatar_rel:

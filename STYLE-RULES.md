@@ -4170,3 +4170,14 @@ What the pass changed on this reel, and why:
   judgement, not measurement: the reference's 60px cap is its line height,
   but our plate makes the block read heavier, so matching its cap made ours
   look bigger than it. The eye is the instrument for type size on a phone.
+
+**Same-session correction: scale cuts text on a frame-width capture.** The
+editor's pass set `zoom: 1.5` on the caveman beat to make its README claim
+readable, and the render showed the opposite — a mobile capture is 1080 wide,
+exactly the frame, so the scale pushed half of every line off both edges.
+Four beats had it. A full-width capture is framed by SLICE (`focusY`) and
+MOMENT (`from`) at 1:1; scale is for assets wider than the frame. Compile now
+prints an advisory with the asset's real width, and AGENT.md §3b question 3
+carries the reasoning. Worth noting the sequence: the editorial judgement was
+right (that claim should be readable), the mechanism was wrong, and only
+looking at the rendered frame told the difference.
