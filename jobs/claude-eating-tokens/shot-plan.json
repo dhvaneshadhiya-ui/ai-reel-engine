@@ -253,9 +253,8 @@
     "zoomDir": "in",
     "creditOnScreen": true,
     "from": 4.6,
-    "zoom": 1.55,
-    "focusY": 0.3,
-    "_note": "framed on the status-line demo: at full width the caption landed on the README's Install body text"
+    "_note": "full width so the demo reads whole; caption raised onto the demo's dark band \u2014 at the default it sat on the README's white Install body text, and zooming to dodge that cropped the proof (2026-08-25)",
+    "captionBottom": 1300
    },
    "asset_id": "hud-statusline",
    "tier": "official"
