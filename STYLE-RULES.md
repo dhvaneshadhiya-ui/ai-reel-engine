@@ -3860,3 +3860,24 @@ news, unmeasured — the comparison-format precedent, marked as such.
 **Recordable evidence is the genre's unfair advantage:** for Claude-topic
 reels the artifacts are our own machine's real output (ccusage, claude-hud,
 /clear) — tier official, zero rights friction. Record, don't screenshot.
+
+## 2026-08-25 (2) — the observation study: how the ai-tools corpus scouts, animates, and writes
+
+The user picked 9 specific shorts (5 Badar, 4 Saraev YT — the four that his
+recent-uploads listing had hidden, all tool-format, one Anthropic-sponsored
+with a burned disclosure line). All pulled, 8 transcribed, 5 frame-read via
+scout_sheet. Findings live in formats/ai-tools.md "Observation study"; the
+three that changed our plans:
+
+1. **Recordings are WINDOWED, not full-bleed** — every demo in the corpus is
+   a card with a live cursor floating on a canvas. claude-eating-tokens'
+   four terminal/chart recordings moved from `footage` to `floatcard`.
+2. **The naming moment has a grammar**: plain-function sentence fused to the
+   name, the name lands on a designed logo/wordmark card (Badar sets
+   "CLAUDE CODE" in chunky pixel type — our Press Start 2P is already that
+   voice), then the real artifact. Meme/stock b-roll is legal exactly once,
+   at the hook.
+3. **Their hype register is not ours.** "Yes you heard it right / the crazy
+   part / completely free ×3" sell; we report. We take the compression and
+   the fused naming, leave the hype — and if a reel is ever sponsored, the
+   disclosure line burns on screen like Saraev's.

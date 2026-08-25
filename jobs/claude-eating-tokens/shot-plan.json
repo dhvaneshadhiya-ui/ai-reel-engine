@@ -118,9 +118,8 @@
    "start_phrase": "So it trims the cheap half",
    "line": "So it trims the cheap half of your bill \u2014 that's why it barely helps.",
    "scene": {
-    "type": "footage",
+    "type": "floatcard",
     "src": "assets/claude-eating-tokens/ccusage-split.mp4",
-    "zoomDir": "none",
     "credit": "ccusage \u00b7 our own usage",
     "covers": "the cheap half of your bill"
    },
@@ -141,9 +140,8 @@
    "start_phrase": "One: see it",
    "line": "One: see it \u2014 ccusage charts each session's cost;",
    "scene": {
-    "type": "footage",
+    "type": "floatcard",
     "src": "assets/claude-eating-tokens/term-ccusage.mp4",
-    "zoomDir": "none",
     "credit": "ccusage \u00b7 recorded live",
     "covers": "charts each session's cost"
    },
@@ -154,9 +152,8 @@
    "start_phrase": "claude-hud is a live meter",
    "line": "claude-hud is a live meter in your status line.",
    "scene": {
-    "type": "footage",
+    "type": "floatcard",
     "src": "assets/claude-eating-tokens/hud-statusline.mp4",
-    "zoomDir": "none",
     "credit": "claude-hud \u00b7 recorded live",
     "covers": "live meter in your status line"
    },
@@ -180,9 +177,8 @@
    "start_phrase": "Three: between unrelated tasks",
    "line": "Three: between unrelated tasks, type slash-clear \u2014 free.",
    "scene": {
-    "type": "footage",
+    "type": "floatcard",
     "src": "assets/claude-eating-tokens/term-clear.mp4",
-    "zoomDir": "none",
     "credit": "recorded live",
     "covers": "type slash-clear"
    },
