@@ -727,6 +727,15 @@ CASES.append((lambda s: (s.update(format="ai-tools"),
 CASES.append((lambda s: s.update(format="ai-tools"),
               "G24", "ai-tools reel with no CTA scene"))
 
+# G51 (2026-08-25): scene JSON bypasses tsc, so a statcard authored with an
+# invented stat/unit shape instead of `rows` passed everything and crashed
+# remotion at frame 538. The array the component maps over must exist.
+CASES.append((lambda s: s["scenes"].__setitem__(0, {
+                  "type": "statcard", "title": "caveman", "stat": "100,000",
+                  "unit": "stars", "durationSec": 2.0,
+                  "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.15}]}),
+              "G51", "a statcard with no rows (invented stat/unit shape)"))
+
 for mutate, gate, label in CASES:
     expect_fail(mutate, gate, label)
 

@@ -102,9 +102,6 @@
     {
       "type": "statcard",
       "title": "caveman",
-      "stat": "100,000",
-      "unit": "stars",
-      "source": "GitHub",
       "sfx": [
         {
           "src": "sfx2/ground-impact-352053.mp3",
@@ -112,6 +109,21 @@
           "at": 0.3
         }
       ],
+      "rows": [
+        {
+          "label": "GitHub stars",
+          "value": "100,000",
+          "pct": 1.0
+        },
+        {
+          "label": "Output tokens",
+          "value": "cut",
+          "pct": 0.35,
+          "color": "#E0785A"
+        }
+      ],
+      "footnote": "GitHub · JuliusBrussee/caveman",
+      "bg": "black",
       "durationSec": 2.7
     },
     {

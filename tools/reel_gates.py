@@ -306,6 +306,11 @@ BLOCKING_RULES: dict[str, str] = {
     # is deliberately NOT here: wanting a push from a tight base is a real
     # choice, so it asks the question instead of refusing the render.
     "G48": "RENDER framing that exposes the backdrop renders black bars",
+    # G51 (2026-08-25): scene JSON is invisible to tsc (the registry casts it),
+    # so a scene can ship without the one array its component `.map()`s over —
+    # claude-eating-tokens' statcard carried an invented stat/unit shape and
+    # crashed remotion at frame 538, AFTER every other gate had passed.
+    "G51": "RENDER a scene missing the array its component maps over crashes",
     # RIGHTS — attribution, and the user's control over their own work.
     "G14": "RIGHTS we credit the sources we use",
     "G15": "RIGHTS a stated number carries where it came from",
@@ -1381,6 +1386,26 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 "G38 the hook (scene 00) sets hideCaptions — 70-85% of viewers "
                 "watch on mute, so a hook with no words on screen says nothing. "
                 "Show the claim.")
+
+    # G51 — THE ARRAY THE COMPONENT MAPS OVER MUST EXIST (RENDER, 2026-08-25).
+    # The registry imports scene JSON with a cast, so TypeScript never checks
+    # it; a statcard authored with an invented stat/unit shape passed tsc,
+    # validate_job and every gate, then crashed remotion at frame 538 with
+    # "Cannot read properties of undefined (reading 'map')". Mirror each
+    # component's hard `.map()` contract here — fields with defaults are the
+    # component's business, fields it maps over unconditionally are ours.
+    MAPPED_FIELDS = {"statcard": "rows", "sourceread": "lines"}
+    for i, sc in enumerate(scenes):
+        field = MAPPED_FIELDS.get(sc.get("type", ""))
+        if field is None:
+            continue
+        rows = sc.get(field)
+        if not isinstance(rows, list) or not rows:
+            errors.append(
+                f"G51 scene {i:02d} ({sc['type']}) has no {field!r} — the "
+                f"component maps over it unconditionally, so the render "
+                f"crashes. Author the scene in the component's real shape "
+                f"(see src/types.ts / a shipped {sc['type']}).")
 
     # G39 — WHAT IS ON SCREEN MUST BE WHAT IS BEING SAID (user rule 2026-08-17:
     # "what we see on the video should match as much as possible with what
