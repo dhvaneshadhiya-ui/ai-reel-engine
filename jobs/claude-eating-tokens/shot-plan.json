@@ -5,24 +5,23 @@
   "resends",
   "fix",
   "fewer",
-  "hundred",
+  "100000",
   "untouched",
   "cheap",
   "expensive",
   "ccusage",
-  "claude-hud",
+  "claude",
+  "hud",
   "ponytail",
   "slash clear",
   "re-reads",
   "permissions"
  ],
  "caption_corrections": {
+  "anthropic stocks": "Anthropic's docs",
   "read me": "README",
-  "see use it": "ccusage",
-  "claude hard": "claude-hud",
-  "reads": "re-reads",
-  "anthropics": "Anthropic's",
-  "agents": "agent's"
+  "rereads": "re-reads",
+  "clear three": "clear \u2014 free"
  },
  "shots": [
   {
@@ -65,7 +64,7 @@
    "tier": "official"
   },
   {
-   "start_phrase": "Anthropic's docs",
+   "start_phrase": "Anthropic",
    "line": "Anthropic's docs: the model remembers nothing between messages \u2014 every turn re-sends the whole conversation at input rates.",
    "scene": {
     "type": "sourceread",
@@ -92,7 +91,8 @@
     "creditOnScreen": true
    },
    "asset_id": "docs-context",
-   "tier": "official"
+   "tier": "official",
+   "start_phrase_note": "whisper wrote the spoken \"Anthropic's docs\" as 'Anthropic stocks' \u2014 'Anthropic' alone lands on the right word; caption_corrections restores the written form"
   },
   {
    "start_phrase": "Back to that popular fix",
@@ -129,7 +129,7 @@
    "tier": "official"
   },
   {
-   "start_phrase": "A hundred thousand stars",
+   "start_phrase": "100,000 stars",
    "line": "A hundred thousand stars, and it does cut output.",
    "scene": {
     "type": "statcard",
@@ -156,10 +156,11 @@
     ],
     "footnote": "GitHub \u00b7 JuliusBrussee/caveman",
     "bg": "black"
-   }
+   },
+   "start_phrase_note": "spoken 'A hundred thousand stars'; whisper wrote the numeral \u2014 anchor matches its transcription, one token into the beat"
   },
   {
-   "start_phrase": "But its README admits",
+   "start_phrase": "admits",
    "line": "But its README admits: input is untouched, and it adds over a thousand input tokens a turn.",
    "scene": {
     "type": "annotatezoom",
@@ -183,7 +184,8 @@
     ]
    },
    "asset_id": "caveman-warning",
-   "tier": "official"
+   "tier": "official",
+   "start_phrase_note": "the README-warning card lands ON the word 'admits' \u2014 G18 needs the stars statcard to outlast its sentence (ended 0.32s early anchored at 'its'), and the reveal timed to the verb reads as intent"
   },
   {
    "start_phrase": "So it trims the cheap half",
@@ -236,7 +238,7 @@
    "tier": "official"
   },
   {
-   "start_phrase": "claude",
+   "start_phrase": "claude-hud is a live meter",
    "line": "claude-hud is a live meter in your status line.",
    "scene": {
     "type": "footage",
@@ -245,8 +247,7 @@
     "creditOnScreen": true
    },
    "asset_id": "hud-statusline",
-   "tier": "official",
-   "start_phrase_note": "anchors the first 'claude' after the ccusage beat = the 'claude-hud' word; whisper wrote the spoken name as 'claude hard' (audio verified correct via whisper medium: 'CloudHUD'), so the written compound cannot resolve"
+   "tier": "official"
   },
   {
    "start_phrase": "Two: Ponytail",
@@ -282,7 +283,7 @@
    "tier": "official"
   },
   {
-   "start_phrase": "Compact",
+   "start_phrase": "Compact re-reads",
    "line": "Compact re-reads everything to summarise it.",
    "scene": {
     "type": "annotatezoom",
@@ -299,8 +300,7 @@
     "creditOnScreen": true
    },
    "asset_id": "docs-compact",
-   "tier": "official",
-   "start_phrase_note": "whisper wrote 're-reads' as 'reads'; 'Compact' is unique in the transcript"
+   "tier": "official"
   },
   {
    "start_phrase": "They run with your agent's permissions",

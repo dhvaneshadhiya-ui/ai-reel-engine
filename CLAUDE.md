@@ -143,7 +143,7 @@ Live in `config.json` (`avatar.voiceSpeed`, `defaults.*`, `avatarRegistry`).
 |---|---|
 | Runtime | per FORMAT — `python3 tools/reel_gates.py --formats`. The band is the DEFAULT, not a cap: set `allowLong` + `allowLongReason` when the topic earns it. **Hard ceiling 180s (G02)** — the platform limit, not an editorial one |
 | Hook | per FORMAT; opens on the actual tension/consequence |
-| Voice speed | 1.05 |
+| Voice speed | 1.12 (style 0.35, stability 0.42 — 2026-08-25) |
 | Captions | word-reveal, one highlight per beat, verified against narration |
 | Style pack | editorial (news, comparison) · utility (top5, ai-tools) |
 | Master | −14 LUFS |

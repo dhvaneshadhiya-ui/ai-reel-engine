@@ -1,13 +1,13 @@
 {
-  "heygen_video_id": "68095c1f5b844b03bf4eef29d198f74d",
+  "heygen_video_id": "c930620b44e14ea5a66034346e4c3697",
   "heygen_status": "prepared",
   "slug": "claude-eating-tokens",
-  "updated_at": "2026-08-25T11:28:31.841093+00:00",
+  "updated_at": "2026-08-25T16:03:09.476191+00:00",
   "local_master": "/Users/dhvanesh/AI Reel Engine/public/assets/claude-eating-tokens/avatar-master.mp4",
   "transcript": "/Users/dhvanesh/AI Reel Engine/public/assets/claude-eating-tokens/vo.json",
   "calibration_frame": "/Users/dhvanesh/AI Reel Engine/_state/claude-eating-tokens-avatar-calibration.jpg",
   "media": {
-    "duration": 61.248,
+    "duration": 58.497688,
     "video": {
       "codec_name": "h264",
       "codec_type": "video",

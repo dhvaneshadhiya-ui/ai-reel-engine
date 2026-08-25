@@ -208,7 +208,9 @@ else:
     cfg = json.loads(cfg_path.read_text())
     av, de = cfg.get("avatar", {}), cfg.get("defaults", {})
     checks = [
-        ("avatar.voiceSpeed", av.get("voiceSpeed"), 1.05),
+        # 1.12 locked 2026-08-25 (user: 1.05 read "slow and flat"; probed
+        # fd83905a before the regen). Supersedes the 2026-08-11 1.05 lock.
+        ("avatar.voiceSpeed", av.get("voiceSpeed"), 1.12),
         ("defaults.captionStyle", de.get("captionStyle"), "word-reveal"),
     ]
     for name, got, want in checks:

@@ -66,7 +66,7 @@ happens must be traceable to a measurement.
 | Setting | Value | Enforced |
 |---|---|---|
 | Runtime | per FORMAT (`--formats`), chosen from the topic, never padded. Past the band: `allowLong` + a written `allowLongReason`. **Hard ceiling 180s** (platform limit) — allowLong cannot pass it | [GATE:G02] |
-| Voice speed | **1.05** | `config.json` [EYE] |
+| Voice speed | **1.12** (+ elevenlabs style 0.35 / stability 0.42) | `config.json` [EYE] |
 | HeyGen engine | **per-look, by measurement** — see `avatarRegistry` | `config.json` [EYE] |
 | Caption style | **`word-reveal`** (was `nick-display`) | [GATE:G10] |
 | Style pack | `editorial` default, else `utility`. Never invent a third. | [EYE] |

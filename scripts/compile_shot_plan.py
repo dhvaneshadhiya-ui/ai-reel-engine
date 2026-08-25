@@ -144,7 +144,12 @@ def load_words(path: Path) -> list[dict[str, Any]]:
         # thousand dollars" -> "$2" + ",000"); only "." was handled.
         if text[:1] in (".", ",") and out and tokens and tokens[0].isdigit():
             out[-1]["text"] = f'{out[-1]["text"]}{text[:1]}{tokens[0]}'
-            out[-1]["norm"] = normalize(out[-1]["text"])[-1]
+            # The WHOLE number, joined: [-1] kept only the last token, so
+            # "100,000" carried norm "000" and no anchor containing the
+            # number could ever resolve (found 2026-08-25 on claude-eating-
+            # tokens shot 4 — the display half of this merge was right, the
+            # matching half silently wasn't).
+            out[-1]["norm"] = "".join(normalize(out[-1]["text"]))
             out[-1]["end"] = end
             continue
         # A possessive/contraction ("Apple's") normalises to ["apple","s"], and

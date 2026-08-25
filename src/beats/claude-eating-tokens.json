@@ -11,12 +11,13 @@
     "resends",
     "fix",
     "fewer",
-    "hundred",
+    "100000",
     "untouched",
     "cheap",
     "expensive",
     "ccusage",
-    "claude-hud",
+    "claude",
+    "hud",
     "ponytail",
     "slash clear",
     "re-reads",
@@ -87,7 +88,7 @@
         }
       ],
       "creditOnScreen": true,
-      "durationSec": 7.58,
+      "durationSec": 7.9,
       "assetId": "docs-context",
       "claimId": "docs-context"
     },
@@ -104,7 +105,7 @@
         }
       ],
       "creditOnScreen": true,
-      "durationSec": 1.42,
+      "durationSec": 1.78,
       "assetId": "caveman-page",
       "claimId": "caveman-page",
       "credit": "github.com/JuliusBrussee/caveman",
@@ -117,7 +118,7 @@
       "zoomDir": "none",
       "covers": "answer in fewer words",
       "creditOnScreen": true,
-      "durationSec": 3.4,
+      "durationSec": 2.2,
       "assetId": "caveman-page",
       "claimId": "caveman-page",
       "credit": "github.com/JuliusBrussee/caveman",
@@ -148,7 +149,7 @@
       ],
       "footnote": "GitHub \u00b7 JuliusBrussee/caveman",
       "bg": "black",
-      "durationSec": 2.7
+      "durationSec": 3.58
     },
     {
       "type": "annotatezoom",
@@ -170,7 +171,7 @@
           "at": 0.0
         }
       ],
-      "durationSec": 5.74,
+      "durationSec": 5.62,
       "assetId": "caveman-warning",
       "claimId": "caveman-warning"
     },
@@ -180,7 +181,7 @@
       "covers": "the cheap half of your bill",
       "creditOnScreen": true,
       "aspect": 1.9737,
-      "durationSec": 4.92,
+      "durationSec": 3.82,
       "assetId": "ccusage-split",
       "claimId": "ccusage-split",
       "credit": "ccusage \u00b7 our own usage"
@@ -197,8 +198,8 @@
           "at": 0.0
         }
       ],
-      "durationSec": 1.98,
-      "from": 31.3
+      "durationSec": 2.06,
+      "from": 30.44
     },
     {
       "type": "floatcard",
@@ -213,7 +214,7 @@
       ],
       "creditOnScreen": true,
       "aspect": 1.9737,
-      "durationSec": 4.38,
+      "durationSec": 4.36,
       "assetId": "term-ccusage",
       "claimId": "term-ccusage",
       "credit": "ccusage \u00b7 our own usage"
@@ -223,10 +224,10 @@
       "src": "assets/claude-eating-tokens/hud-statusline.mp4",
       "zoomDir": "in",
       "creditOnScreen": true,
-      "durationSec": 2.22,
+      "durationSec": 2.82,
       "assetId": "hud-statusline",
       "claimId": "hud-statusline",
-      "covers": "claude",
+      "covers": "claude-hud is a live meter",
       "credit": "github.com/jarrodwatts/claude-hud",
       "captionTheme": "dark"
     },
@@ -236,7 +237,7 @@
       "zoomDir": "none",
       "covers": "checks the standard library first",
       "creditOnScreen": true,
-      "durationSec": 7.56,
+      "durationSec": 6.92,
       "assetId": "ponytail-page",
       "claimId": "ponytail-page",
       "credit": "github.com/DietrichGebert/ponytail",
@@ -255,7 +256,7 @@
       ],
       "creditOnScreen": true,
       "aspect": 1.5714,
-      "durationSec": 4.64,
+      "durationSec": 4.8,
       "assetId": "term-clear",
       "claimId": "term-clear",
       "credit": "recreation \u00b7 real session scale"
@@ -273,7 +274,7 @@
         "h": 640
       },
       "creditOnScreen": true,
-      "durationSec": 2.84,
+      "durationSec": 2.4,
       "assetId": "docs-compact",
       "claimId": "docs-compact"
     },
@@ -290,7 +291,7 @@
         "h": 560
       },
       "creditOnScreen": true,
-      "durationSec": 4.22,
+      "durationSec": 2.38,
       "assetId": "skill-hooks",
       "claimId": "skill-hooks"
     },
@@ -307,275 +308,265 @@
         }
       ],
       "variant": "keyword",
-      "durationSec": 2.108,
-      "from": 59.14
+      "durationSec": 2.318,
+      "from": 56.18
     }
   ],
   "captions": [
     {
       "start": 0.0,
-      "end": 0.92,
+      "end": 0.72,
       "text": "Your Claude bill"
     },
     {
-      "start": 0.92,
+      "start": 0.72,
       "end": 1.74,
       "text": "is mostly the"
     },
     {
       "start": 1.74,
-      "end": 2.38,
+      "end": 2.72,
       "text": "reading, not the"
     },
     {
-      "start": 2.38,
-      "end": 3.38,
+      "start": 2.72,
+      "end": 3.86,
       "text": "writing. Here's why"
     },
     {
-      "start": 3.38,
-      "end": 4.0,
+      "start": 3.86,
+      "end": 4.46,
       "text": "the top fix"
     },
     {
-      "start": 4.0,
-      "end": 6.02,
-      "text": "barely helps. Anthropic's"
+      "start": 4.46,
+      "end": 5.94,
+      "text": "barely helps. Anthropic"
     },
     {
-      "start": 6.02,
-      "end": 7.24,
-      "text": "docs, the model"
+      "start": 5.94,
+      "end": 7.1,
+      "text": "stocks. The model"
     },
     {
-      "start": 7.24,
-      "end": 8.52,
+      "start": 7.1,
+      "end": 8.44,
       "text": "remembers nothing between"
     },
     {
-      "start": 8.52,
+      "start": 8.44,
       "end": 10.06,
       "text": "messages. Every turn"
     },
     {
       "start": 10.06,
-      "end": 10.98,
+      "end": 11.1,
       "text": "resends the whole"
     },
     {
-      "start": 10.98,
-      "end": 12.44,
+      "start": 11.1,
+      "end": 12.56,
       "text": "conversation at input"
     },
     {
-      "start": 12.44,
-      "end": 13.38,
+      "start": 12.56,
+      "end": 13.74,
       "text": "rates. Back to"
     },
     {
-      "start": 13.38,
-      "end": 14.1,
+      "start": 13.74,
+      "end": 14.68,
       "text": "that popular fix."
     },
     {
-      "start": 14.54,
-      "end": 16.04,
+      "start": 15.22,
+      "end": 16.1,
       "text": "Caveman makes Claude"
     },
     {
-      "start": 16.04,
-      "end": 16.9,
+      "start": 16.1,
+      "end": 17.02,
       "text": "answer in fewer"
     },
     {
-      "start": 16.9,
-      "end": 18.3,
-      "text": "words. A hundred"
+      "start": 17.02,
+      "end": 18.4,
+      "text": "words. 100,000 stars"
     },
     {
-      "start": 18.3,
-      "end": 19.26,
-      "text": "thousand stars and"
+      "start": 18.4,
+      "end": 18.94,
+      "text": "and it does"
     },
     {
-      "start": 19.26,
-      "end": 19.74,
-      "text": "it does cut"
+      "start": 18.94,
+      "end": 20.2,
+      "text": "cut output. But"
     },
     {
-      "start": 19.74,
-      "end": 20.96,
-      "text": "output. But it's"
+      "start": 20.2,
+      "end": 21.0,
+      "text": "it's README"
     },
     {
-      "start": 20.96,
-      "end": 21.76,
-      "text": "README admits"
+      "start": 21.0,
+      "end": 22.82,
+      "text": "admits. Input is"
     },
     {
-      "start": 21.76,
-      "end": 23.32,
-      "text": "input is untouched"
+      "start": 22.82,
+      "end": 23.86,
+      "text": "untouched and it"
     },
     {
-      "start": 23.32,
-      "end": 24.3,
-      "text": "and it adds"
+      "start": 23.86,
+      "end": 25.06,
+      "text": "adds over 1,000"
     },
     {
-      "start": 24.3,
-      "end": 25.0,
-      "text": "over a thousand"
-    },
-    {
-      "start": 25.0,
-      "end": 25.76,
+      "start": 25.06,
+      "end": 26.1,
       "text": "input tokens a"
     },
     {
-      "start": 25.76,
-      "end": 26.74,
+      "start": 26.1,
+      "end": 26.9,
       "text": "turn. So it"
     },
     {
-      "start": 26.74,
-      "end": 28.06,
+      "start": 26.9,
+      "end": 27.72,
       "text": "trims the cheap"
     },
     {
-      "start": 28.06,
-      "end": 28.74,
+      "start": 27.72,
+      "end": 28.32,
       "text": "half of your"
     },
     {
-      "start": 28.74,
-      "end": 29.96,
+      "start": 28.32,
+      "end": 29.3,
       "text": "bill. That's why"
     },
     {
-      "start": 29.96,
-      "end": 30.76,
+      "start": 29.3,
+      "end": 30.0,
       "text": "it barely helps."
     },
     {
-      "start": 31.3,
-      "end": 31.9,
+      "start": 30.44,
+      "end": 31.18,
       "text": "These three cut"
     },
     {
-      "start": 31.9,
-      "end": 32.74,
+      "start": 31.18,
+      "end": 32.06,
       "text": "the expensive half."
     },
     {
-      "start": 33.28,
-      "end": 34.48,
-      "text": "One, see it,"
+      "start": 32.5,
+      "end": 33.5,
+      "text": "One, see it."
     },
     {
-      "start": 34.5,
-      "end": 35.2,
-      "text": "ccusage"
+      "start": 33.92,
+      "end": 34.98,
+      "text": "CC usage charts"
     },
     {
-      "start": 35.2,
-      "end": 37.1,
-      "text": "charts. Each session's"
+      "start": 34.98,
+      "end": 36.26,
+      "text": "each session's cost."
     },
     {
-      "start": 37.1,
-      "end": 37.94,
-      "text": "cost. claude-hud"
+      "start": 36.86,
+      "end": 37.48,
+      "text": "Claude HUD is"
     },
     {
-      "start": 37.94,
-      "end": 38.36,
-      "text": "is a live"
+      "start": 37.48,
+      "end": 38.1,
+      "text": "a live meter"
     },
     {
-      "start": 38.36,
-      "end": 38.88,
-      "text": "meter in your"
+      "start": 38.1,
+      "end": 38.8,
+      "text": "in your status"
     },
     {
-      "start": 38.88,
-      "end": 40.0,
-      "text": "status line. Two,"
+      "start": 38.8,
+      "end": 40.96,
+      "text": "line. Two, ponytail"
     },
     {
-      "start": 41.08,
-      "end": 42.12,
-      "text": "ponytail stops Claude"
+      "start": 40.96,
+      "end": 42.04,
+      "text": "stops Claude rebuilding"
     },
     {
-      "start": 42.12,
-      "end": 43.58,
-      "text": "rebuilding code that"
+      "start": 42.04,
+      "end": 43.2,
+      "text": "code that already"
     },
     {
-      "start": 43.58,
-      "end": 45.16,
-      "text": "already exists. It"
+      "start": 43.2,
+      "end": 44.62,
+      "text": "exists. It checks"
     },
     {
-      "start": 45.16,
-      "end": 45.98,
-      "text": "checks the standard"
+      "start": 44.62,
+      "end": 45.6,
+      "text": "the standard library"
     },
     {
-      "start": 45.98,
-      "end": 47.72,
-      "text": "library first. Three,"
+      "start": 45.6,
+      "end": 47.6,
+      "text": "first. Three, between"
     },
     {
-      "start": 48.46,
-      "end": 49.66,
-      "text": "between unrelated tasks"
+      "start": 47.6,
+      "end": 49.16,
+      "text": "unrelated tasks type"
     },
     {
-      "start": 49.66,
-      "end": 51.34,
-      "text": "type slash clear"
+      "start": 49.16,
+      "end": 50.7,
+      "text": "slash clear \u2014 free,"
     },
     {
-      "start": 51.34,
-      "end": 52.86,
-      "text": "free. Compact re-reads"
+      "start": 51.4,
+      "end": 52.54,
+      "text": "compact re-reads everything"
     },
     {
-      "start": 52.86,
-      "end": 54.36,
-      "text": "everything to summarize"
+      "start": 52.54,
+      "end": 53.5,
+      "text": "to summarize it."
     },
     {
-      "start": 54.36,
-      "end": 55.68,
-      "text": "it. They run"
+      "start": 53.8,
+      "end": 54.34,
+      "text": "They run with"
     },
     {
-      "start": 55.68,
-      "end": 57.04,
-      "text": "with your agent's"
+      "start": 54.34,
+      "end": 55.24,
+      "text": "your agent's permissions."
     },
     {
-      "start": 57.04,
-      "end": 58.48,
-      "text": "permissions. Read them"
+      "start": 55.64,
+      "end": 56.18,
+      "text": "Read them first."
     },
     {
-      "start": 58.48,
-      "end": 60.02,
-      "text": "first. Comment, Claude,"
+      "start": 56.18,
+      "end": 57.58,
+      "text": "Comment Claude I'll"
     },
     {
-      "start": 60.14,
-      "end": 60.68,
-      "text": "I'll send all"
-    },
-    {
-      "start": 60.68,
-      "end": 60.96,
-      "text": "four."
+      "start": 57.58,
+      "end": 58.18,
+      "text": "send all four."
     }
   ],
   "noMusic": true,
