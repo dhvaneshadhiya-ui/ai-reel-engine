@@ -1,93 +1,73 @@
 # Structure — claude-eating-tokens
 
-Written BEFORE the first sentence. Framework:
-`styles/shortform-script-framework.md` (S17 shapes; S25 standard).
-
 ## SHAPE (S17)
 
-**Myth-busting.** The premise handed to us — "Claude is eating your tokens" — is
-a real meme and it is wrong in its causation. The reporting says the tokens at
-Uber were eaten by an incentive: teams were ranked on internal leaderboards by
-how much AI they used. Myth-busting is the only shape that puts that inversion
-at the centre, and it earns the ending, which reverses the title outright.
+**Myth-busting, in service of a tutorial.** The viewer arrives believing the
+fix for a big Claude bill is a terse-output skill, because that is what the
+popular decks sell. The correction is mechanical and checkable: the model is
+stateless, so every turn re-sends the whole conversation, which makes INPUT the
+dominant cost — and terse-output skills cut OUTPUT. The reel overturns that,
+then spends its second half handing over four things the viewer can do tonight.
 
-News was the obvious alternative and was rejected. Told as News, this is "big
-company overspends", which the viewer files under Not Me. The Myth-busting
-frame makes the viewer's own incentives the subject, which is why the second
-sentence hands them the word they get back at the end: rewarding.
+Straight Tutorial was the alternative and was rejected: a bare list of four
+tools is what both references already are, and it gives the viewer no way to
+judge which one matters. The myth is what makes the list ordered.
 
 ## PROMISE (S2)
 
-You will find out why an AI coding bill explodes, and it will not be the thing
-you were about to blame.
+You will leave knowing which half of your token bill you are actually paying
+for, and the three moves that touch it.
 
 ## OPEN LOOP (S10)
 
-Planted: sentence 2 — "And the real reason has nothing to do with Claude — it's
-something you're probably rewarding." Forward reference plus a distinctive word
-(*rewarding*) held back for the ending.
+Planted: sentence 2 — "almost every token-saving skill you've seen cuts your
+cheapest tokens." Distinctive word held back: *cheapest*.
 
-Paid off twice: the mechanism lands at "Uber was ranking its own teams on
-internal leaderboards by how much AI they used", and the word itself returns per
-S18 at "So before you blame the model, look at what you're rewarding" — then the
-title inverts on "Claude isn't eating your tokens. Your scoreboard is."
+Paid off: at "It is cutting the cheapest half", and returned to per S18 in the
+final line — "And start with the expensive half, not the cheapest."
 
 ## WHAT -> WHY -> SO WHAT (S7)
 
-WHAT: Uber exhausted a full-year AI budget in four months, and its CTO says a
-single two-hour session cost $1,200.
-WHY: not model pricing — adoption was being gamified. Leaderboards ranked teams
-by usage volume, so consuming more tokens was the visibly rewarded behaviour and
-consuming fewer read as under-performing.
-SO WHAT: the counter-turn is the point. It WORKED — around 70% of committed code
-came out of those tools — so this is not an argument against the spend. It is an
-argument that measuring input while never measuring output is how a budget
-disappears without anyone able to say what it bought. Uber's own COO says the
-link to shipped features is not there yet. The viewer's takeaway is to check
-what their own team rewards, not to use Claude less.
+WHAT: caveman claims 65% fewer output tokens and has ~100k stars.
+WHY: output is not where a long session's money goes. Anthropic's docs say the
+model remembers nothing between messages, so the entire conversation is re-sent
+every turn — and caveman's own README concedes the skill only shrinks output,
+that whole-session savings run smaller, and that it can go net negative.
+SO WHAT: the honest ordering is see it (ccusage / claude-hud), stop generating
+work you don't need (ponytail), and stop carrying history you don't need
+(/clear, which costs nothing, over /compact, which re-reads to summarise).
+
+## WHY THIS DRAFT EXISTS
+
+The previous draft was a well-sourced news story about Uber's AI budget with no
+takeaway for a viewer, and it reached that state because the reference posts
+were dismissed on a misreading. Both were read in full before this draft; see
+research.md -> CORRECTION TO THE RECORD.
 
 ## WHAT WAS CUT (S11, S21)
 
-- The Kahn v. Anthropic Max class action — a genuinely newsworthy second story,
-  but every line of it needs allegation framing and it pulls the reel away from
-  the incentive thesis. See research.md -> EXCLUDED.
-- Uber's reported $1,500/month per-tool cap — the primary (Bloomberg) is
-  paywalled and returned 403; only aggregators carry it. Cut on sourcing, not
-  on interest. It would have made a cleaner ending, and its absence is why the
-  reel ends on the COO instead.
-- Per-engineer spend bands ($150-250 average, $500-2,000 power users) — cut
-  because stating either number invites the viewer to take it as typical, and
-  the reel's argument does not need it.
-- ~11% of live backend updates shipped by agents without human oversight — cut;
-  it opens a safety question the runtime cannot answer responsibly.
-- The whole prompt-caching mechanism (statelessness, exact prefix match, what
-  invalidates a cache). This was the entire previous draft of this reel. It is
-  accurate and useful, but it is an explainer about a tool, and this is a story
-  about a company. Kept as a candidate for its own reel.
+- Every mock number from the reference graphics (88,100 tokens, 87% fewer,
+  "up to 85%") — promotional illustrations with no methodology.
+- OmniRoute and claude-mem — real, but not verified in this pass, so not
+  recommended on air.
+- The whole Uber story — no viewer takeaway. Its own reel.
+- /pin, /rewind, /handoff and /doctor — good levers, cut purely for runtime.
+  /rewind is the strongest of the four and the first thing to add if this runs
+  long enough for a fourth item.
 
-## KNOWN CHECKER DISAGREEMENT (recorded, not chased)
+## THE SAFETY LINE IS NOT OPTIONAL
 
-`check_script.py` reports NUMBERS one every 17.0 sentences and flags 1/1 spec
-sentences as WHAT-WITHOUT-SO-WHAT. Both are artifacts: the detector counts
-DIGITS (`\$?\d[\d.,]*`) and this script spells its numbers out for TTS. The
-script actually carries eight numeric facts across seventeen sentences — one
-every ~2.1, which MEETS the playbook's one-every-2-3. Numerals are not written
-back in, because "$1,200" and "32%" are exactly what made whisper emit orphan
-caption fragments (G30). Worth fixing in the checker: count spelled-out numerals
-too.
-
-A third artifact, same root: OPENING-has-no-anchor fires on sentence 1 even
-though it opens "…says that this year he spent…". The detector accepts a digit
-or one of (today|tomorrow|this week|just|now|yesterday) — "this year", "this
-month" and every bare month name are missing from that list. The hook IS
-anchored, in the viewer's language; the word list is short. All three of these
-are advice and none blocks.
+The reel tells people to install three third-party things. Anthropic's plugin
+docs are explicit that a plugin can ship hooks that execute commands, MCP
+servers, and a bin/ directory on the Bash PATH. Recommending installs without
+saying that would be careless, so the line stays even though it costs runtime.
 
 ## SOURCES
 
-Reporting, not disclosure — see `research.md` for the per-claim ledger, the VIA
-chain, and what was excluded and why.
-
-- https://www.forbes.com/sites/janakirammsv/2026/05/17/uber-burns-its-2026-ai-budget-in-four-months-on-claude-code/
-- https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/
-- https://finance.yahoo.com/technology/ai/articles/uber-blew-entire-2026-ai-145000897.html
+- https://code.claude.com/docs/en/prompt-caching
+- https://code.claude.com/docs/en/costs
+- https://code.claude.com/docs/en/plugins
+- https://github.com/JuliusBrussee/caveman
+- https://github.com/DietrichGebert/ponytail
+- https://github.com/ccusage/ccusage
+- https://github.com/jarrodwatts/claude-hud

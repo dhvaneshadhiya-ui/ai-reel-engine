@@ -1,23 +1,29 @@
 # Script — claude-eating-tokens
 
-Uber's own CTO says that this year he spent twelve hundred dollars in a two-hour coding session.
+Your Claude bill is mostly input, not output.
 
-And the real reason has nothing to do with Claude — it's something you're probably rewarding.
+Here's why: almost every token-saving skill you've seen cuts your cheapest tokens.
 
-Uber rolled Claude Code out to about five thousand engineers in December. Adoption reportedly went from thirty-two percent in February to eighty-four in March. The entire 2026 AI budget was gone by April.
+Anthropic's own docs explain it: the model remembers nothing between messages, so every turn re-sends your entire conversation.
 
-Four months.
+That history is the input — and most of your bill.
 
-But here's what was actually driving it. Uber was ranking its own teams on internal leaderboards by how much AI they used. More tokens, higher score.
+So take caveman. A hundred thousand stars, and it does cut output — sixty-five percent on its own benchmark.
 
-So they didn't just allow the burn — they were scoring it.
+But its README has an "honest number warning."
 
-And it worked: reportedly seventy percent of committed code came out of those tools.
+The skill only shrinks output, input is untouched, and it adds one to one and a half thousand input tokens every turn.
 
-This isn't a story about waste. It's a company that spent a year's budget in four months and still couldn't say what it bought.
+It trims the cheapest half and adds to the expensive one.
 
-Uber's own COO said it out loud: if you can't link it to what you're shipping, that trade gets hard to justify.
+So here are three that move the other half.
 
-So before you blame the model, look at what you're rewarding.
+One: see it. Run ccusage, or put claude-hud in your status line. You can't cut what you can't measure.
 
-Claude isn't eating your tokens. Your scoreboard is.
+Two: stop rebuilding what exists. Ponytail makes Claude check the standard library first.
+
+Three: between two unrelated tasks, clear. Compact re-reads everything to summarise it. Clear costs nothing.
+
+These run with your agent's permissions — read them first.
+
+Start with the expensive half, not the cheapest.

@@ -1,122 +1,142 @@
 # Research — claude-eating-tokens
 
-Claims ledger + search log. Angle researched independently, 2026-08-25.
-
-Three source domains, three distinct VIAs: forbes.com (VIA The Information),
-fortune.com (VIA Andrew Macdonald's own remarks on the Rapid Response podcast),
-finance.yahoo.com (VIA Moneywise's own reporting). This is REPORTING, not an
-Uber disclosure — none of these outlets cites an Uber press release or a
-financial filing for the operational figures. Policy applies: attribute once,
-early, then state directly, and credit every outlet on screen.
+Claims ledger. Two domains: code.claude.com (Anthropic product docs) and
+github.com (each tool's own repository). Every tool claim is sourced to the
+tool's OWN README, including the caveat that contradicts its headline number.
 
 ## CLAIMS
 
-- CLAIM: Uber's CTO Praveen Neppalli Naga said he spent $1,200 in a two-hour
-  session with Claude Code.
-  TIER: multi
-  SPOKEN: "twelve hundred dollars in a two-hour coding session"
-  SRC: https://www.forbes.com/sites/janakirammsv/2026/05/17/uber-burns-its-2026-ai-budget-in-four-months-on-claude-code/
-  VIA: The Information (CTO confirmation), cited by Forbes
-  SRC: https://finance.yahoo.com/technology/ai/articles/uber-blew-entire-2026-ai-145000897.html
-  VIA: Moneywise (Clay Halton, 2026-07-15), syndicated by Yahoo Finance
+- CLAIM: The model is stateless between requests, so Claude Code re-sends the
+  full context — system prompt, project context, every prior message and tool
+  result — on every turn. That resent history is input, and input dominates a
+  long session's cost.
+  TIER: official
+  SPOKEN: "the model remembers nothing between messages"
+  SRC: https://code.claude.com/docs/en/prompt-caching
+  VIA: Anthropic product documentation
 
-- CLAIM: Uber rolled Claude Code out to an engineering org of roughly 5,000.
-  TIER: multi
-  SPOKEN: "about five thousand engineers"
-  SRC: https://www.forbes.com/sites/janakirammsv/2026/05/17/uber-burns-its-2026-ai-budget-in-four-months-on-claude-code/
-  VIA: The Information, cited by Forbes
-  SRC: https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/
-  VIA: Fortune (Jake Angelo, 2026-05-26)
+- CLAIM: caveman is a real Claude Code skill at github.com/JuliusBrussee/caveman
+  with ~100.8k stars, whose README claims 65% average output-token savings.
+  TIER: official
+  SPOKEN: "A hundred thousand stars, and it does cut output"
+  SRC: https://github.com/JuliusBrussee/caveman
+  VIA: the project's own README
 
-- CLAIM: Claude Code adoption at Uber went from 32% of engineers in February
-  2026 to 84% classified as agentic coding users in March 2026.
-  TIER: single
-  SPOKEN: "thirty-two percent in February to eighty-four in March"
-  SRC: https://www.forbes.com/sites/janakirammsv/2026/05/17/uber-burns-its-2026-ai-budget-in-four-months-on-claude-code/
-  VIA: The Information, cited by Forbes
+- CLAIM: caveman's README carries a section headed "Important - Honest number
+  warning" stating verbatim that the skill only shrinks OUTPUT tokens, that
+  input and reasoning tokens are untouched, and that THE SKILL ITSELF ADDS
+  ~1-1.5k INPUT TOKENS PER TURN; whole-session savings run smaller than the
+  output number and can go net-negative on already-terse workloads.
+  TIER: official
+  SPOKEN: "The skill only shrinks output, input is untouched, and it adds one to one and a half thousand input tokens every turn."
+  SRC: https://github.com/JuliusBrussee/caveman
+  VIA: the project's own README
 
-- CLAIM: Uber exhausted its full-year 2026 AI budget by April, four months in.
-  TIER: multi
-  SPOKEN: "The entire 2026 AI budget was gone by April."
-  SRC: https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/
-  VIA: Fortune's own reporting
-  SRC: https://www.forbes.com/sites/janakirammsv/2026/05/17/uber-burns-its-2026-ai-budget-in-four-months-on-claude-code/
-  VIA: The Information, cited by Forbes
-  SRC: https://finance.yahoo.com/technology/ai/articles/uber-blew-entire-2026-ai-145000897.html
-  VIA: Moneywise
+- CLAIM: ccusage reads local agent-CLI logs and reports token usage and cost;
+  claude-hud is a Claude Code plugin that surfaces context usage and running
+  tools in the status line.
+  TIER: official
+  SPOKEN: "Run ccusage, or put claude-hud in your status line."
+  SRC: https://github.com/ccusage/ccusage
+  VIA: the project's own README
+  SRC: https://github.com/jarrodwatts/claude-hud
+  VIA: the project's own README
 
-- CLAIM: Uber ranked teams/engineers on internal leaderboards by AI tool usage
-  volume, which incentivised consumption.
-  TIER: multi
-  SPOKEN: "ranking its own teams on internal leaderboards by how much AI they used"
-  SRC: https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/
-  VIA: Fortune's own reporting
-  SRC: https://www.forbes.com/sites/janakirammsv/2026/05/17/uber-burns-its-2026-ai-budget-in-four-months-on-claude-code/
-  VIA: The Information, cited by Forbes
+- CLAIM: ponytail (github.com/DietrichGebert/ponytail, ~110.1k stars) enforces a
+  decision ladder before code generation — does it exist already, can the
+  standard library do it — so less new code is written.
+  TIER: official
+  SPOKEN: "Ponytail makes Claude check the standard library first."
+  SRC: https://github.com/DietrichGebert/ponytail
+  VIA: the project's own README
 
-- CLAIM: Roughly 70% of code committed at Uber originated from AI tools.
-  TIER: single
-  SPOKEN: "seventy percent of committed code came out of those tools"
-  SRC: https://www.forbes.com/sites/janakirammsv/2026/05/17/uber-burns-its-2026-ai-budget-in-four-months-on-claude-code/
-  VIA: The Information, cited by Forbes
+- CLAIM: /compact sends a request carrying the history it summarises, so it
+  costs; /clear costs nothing.
+  TIER: official
+  SPOKEN: "Clear costs nothing."
+  SRC: https://code.claude.com/docs/en/costs
+  VIA: Anthropic product documentation
+  SRC: https://code.claude.com/docs/en/prompt-caching
+  VIA: Anthropic product documentation
 
-- CLAIM: Uber president and COO Andrew Macdonald questioned the AI spend,
-  saying that without a direct line to shipped features the trade is hard to
-  justify.
-  TIER: single
-  SPOKEN: "if you can't link it to what you're shipping, that trade gets hard to justify"
-  SRC: https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/
-  VIA: Andrew Macdonald, Rapid Response podcast, quoted by Fortune
+- CLAIM: Claude Code plugins can ship hooks that execute commands, MCP servers,
+  and a bin/ directory added to the Bash tool's PATH, so installing one runs
+  third-party code with the agent's permissions; Anthropic's docs direct users
+  to trust considerations before installing.
+  TIER: official
+  SPOKEN: "These run with your agent's permissions"
+  SRC: https://code.claude.com/docs/en/plugins
+  VIA: Anthropic product documentation
 
-## EXCLUDED — checked and deliberately NOT claimed
+## CORRECTION TO THE RECORD (2026-08-25)
 
-- The $1,500/month per-tool cap Uber reportedly imposed: the primary report is
-  Bloomberg (2026-06-02), which returned HTTP 403 and could not be read. Every
-  other page carrying it is an aggregator. Per the sourcing rule, an aggregator
-  is never cited — go to the original — so the cap is NOT spoken and NOT shown.
-- Kahn v. Anthropic, PBC (N.D. Cal., filed 2026-06-14/15), the Claude Max
-  usage-limits class action: real and reported (Qz, PYMNTS via WSJ; Anthropic
-  declined to comment). CUT, not disbelieved — it is a second story with its
-  own legal-framing burden, and every sentence of it would have to be marked as
-  an untested allegation. The reel is about Uber's own incentives.
-  The widely repeated "15% of a weekly allowance in one 5-hour session" detail
-  traces only to low-tier aggregators; PYMNTS does not carry it. Would have
-  needed the docket before it could ever be spoken.
-- "$500-$2,000 per engineer per month" as a HEADLINE average: this is wrong and
-  is exactly the distortion the search summaries repeat. Forbes gives $150-$250
-  as the average engineer and $500-$2,000 for POWER USERS. The reel states no
-  per-engineer average at all rather than imply the high band is typical.
-- ~11% of live backend updates written by agents with no human oversight
-  (Forbes, single) — true but cut for runtime; it opens a safety argument the
-  reel does not have time to handle responsibly.
-- Uber R&D $951M in Q1 2026, up ~17% YoY (Fortune) — cut; it is total R&D, not
-  AI spend, and putting it beside AI figures invites the viewer to conflate them.
-- The "roughly $500M single-month Claude invoice" story that surfaced in search:
-  traced only to Yahoo/Dallas Express aggregation of an unnamed company. No
-  primary source, no named company. NOT claimed.
+An earlier draft of this job asserted that six slash commands in the user's
+first reference post "do not exist", based on a single fetch of Anthropic's
+built-in command reference. **That was wrong, and the error was mine.** The post
+never claimed they were built-ins — its cover slide reads "STOP IT WITH 6
+SKILLS", and in Claude Code a skill or plugin defines its own slash command. On
+reading the actual slides:
+
+- /ponytail is github.com/DietrichGebert/ponytail, ~110.1k stars, verified live.
+- /caveman-equivalent terse-output skills are real and widely installed.
+- /pin, /handoff, /doctor, /rewind, /compact are the pack's other five skills,
+  presented as skills throughout.
+
+The mistake was checking the built-in command list and never opening the
+carousel. Both reference posts were read slide by slide before this draft.
+
+## WHAT THE REFERENCES ACTUALLY SAID (read in full, 2026-08-25)
+
+Ref 1 — @zero.canon_ / @piyush.glitch, 6 skills:
+  01 /doctor   — estimate what your context costs before prompting; names the
+                 biggest hogs (their mock: docs 42.3k, examples 28.6k, history
+                 17.2k = 88,100 tokens, 72% of the window)
+  02 /pin      — pin context that must survive; immune to compaction
+  03 /ponytail — terse answers (their mock: 12,840 -> 1,340 tokens, 87% fewer)
+  04 /rewind   — jump back before a wrong turn instead of correcting for ten messages
+  05 /compact  — condense to a checkpoint, "up to 85%" smaller
+  06 /handoff  — carry progress to a new session without the transcript
+
+Ref 2 — @charliehills, 5 repos chained, each sealing the last one's gap:
+  1-1 OmniRoute          — one endpoint over many providers (GIVES YOU ACCESS)
+  1-2 claude-mem         — compress a session, inject into the next (GIVES IT MEMORY)
+  1-3 claude-hud+ccusage — status line + cost report (SHOWS YOU THE BURN)
+  1-4 caveman            — terse output (CUTS THE TALK)
+  1-5 ponytail           — reuse/stdlib before writing (CUTS THE WORK)
+
+Both decks independently land on the same levers: SEE the spend, CUT the talk,
+CUT the work, CARRY state instead of history. That convergence is why those
+levers are the spine of this script.
+
+## EXCLUDED — deliberately NOT claimed
+
+- The per-skill mock numbers in ref 1 (88,100 tokens / 87% fewer / "up to 85%")
+  are illustrations inside a promotional graphic with no published methodology.
+  NOT spoken, NOT shown. The one savings figure we do speak (65%) is spoken as
+  the project's own CLAIM and is immediately followed by its own caveat.
+- OmniRoute and claude-mem: real slides, but not verified repo-by-repo in this
+  pass, so they are not recommended on air.
+- Uber's 2026 AI-budget story (Forbes/Fortune/Moneywise) — fully researched and
+  sourced in the previous draft, but it is a news story with no viewer takeaway,
+  which is exactly the failure this draft exists to correct. Kept for a
+  separate reel.
 
 ## SEARCHED
 
-- 2026-08-25  "Claude Code token usage complaints limits August 2026"  (surfaced
-  the Uber story, the Kahn suit, and conflicting claims about a temporary
-  weekly-limit boost)
-- 2026-08-25  "Anthropic Claude weekly usage limits change developers reaction"
-  (limit-change timeline; sources disagreed on the boost expiry date - Aug 19 vs
-  Aug 31 - so no limit-change claim entered the script)
-- 2026-08-25  fetched https://www.theregister.com/2026/01/05/claude_devs_usage_limits/
-  (Jan 2026 complaints traced to expiring holiday bonus; not used)
-- 2026-08-25  fetched https://explainx.ai/blog/claude-usage-limits-2026-timeline-explained
-  (low-tier SEO blog, contradicted the search summary on the boost date; treated
-  as unreliable and not used)
-- 2026-08-25  "Uber 5000 engineers Claude Code budget per engineer month AI spend"
-  (found Forbes, Fortune, Bloomberg, Moneywise)
-- 2026-08-25  fetched Forbes 2026-05-17 (adoption timeline, per-engineer bands,
-  CTO's $1,200 session, ~70% committed code, leaderboards, source attribution)
-- 2026-08-25  fetched https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/
-  (COO Macdonald's remarks verbatim, leaderboard confirmation, Q1 R&D figure)
-- 2026-08-25  fetched Bloomberg 2026-06-02 -> HTTP 403, unreadable; the $1,500
-  cap therefore stays out of the script
-- 2026-08-25  fetched https://www.pymnts.com/news/artificial-intelligence/2026/claude-max-customer-sues-anthropic-over-usage-limits/
-  (lawsuit basics via WSJ; no case number, no 15% detail, Anthropic declined to
-  comment)
-- 2026-08-25  fetched Qz lawsuit article -> HTTP 403, unreadable
+- 2026-08-25  read BOTH reference carousels slide by slide in-browser (ref 1:
+  cover + 6 skill slides + CTA; ref 2: all 7 slides). This is the step the
+  earlier draft skipped.
+- 2026-08-25  fetched https://github.com/DietrichGebert/ponytail  (exists,
+  110.1k stars, decision-ladder behaviour, install command)
+- 2026-08-25  fetched https://github.com/JuliusBrussee/caveman  (exists, 100.8k
+  stars, 65% output claim AND the net-negative caveat)
+- 2026-08-25  fetched https://github.com/ccusage/ccusage  (exists, 18.2k stars,
+  npx ccusage@latest)
+- 2026-08-25  fetched https://github.com/jarrodwatts/claude-hud  (exists, 27.6k
+  stars, statusline context usage)
+- 2026-08-25  fetched https://code.claude.com/docs/en/prompt-caching  (stateless
+  re-send, cached reads ~10%, /compact cost, /clear)
+- 2026-08-25  fetched https://code.claude.com/docs/en/costs  ("/clear costs
+  nothing", reduce-token-usage strategies)
+- 2026-08-25  fetched https://code.claude.com/docs/en/plugins  (plugins ship
+  hooks, MCP servers, bin/ on PATH; trust considerations)
