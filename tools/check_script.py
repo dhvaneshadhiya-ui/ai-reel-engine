@@ -103,6 +103,26 @@ AI_TELLS = [
     "but here's where",
 ]
 
+# HYPE MARKERS — the creator-sell register, measured off the ai-tools corpus
+# (formats/ai-tools.md, 8 transcripts, 2026-08-25). The teardown adopted that
+# corpus's COMPRESSION and its fused function-plus-name, and explicitly
+# rejected its SELL: "Their hype markers are NOT ours. The house register is
+# reporting."
+#
+# That rejection lived only in prose, so a future ai-tools script could carry
+# "completely free" three times and nothing would say a word — exactly the
+# failure mode this repo exists to prevent. Separate from AI_TELLS because
+# these are not signs of a machine writing; they are signs of a SALESMAN
+# writing, and a human would produce them enthusiastically.
+HYPE_MARKERS = [
+    "yes you heard it right", "you heard that right", "the crazy part",
+    "the craziest part", "the best part is", "completely free", "100% free",
+    "totally free", "for free", "insane", "insanely", "mind-blowing",
+    "mind blowing", "this is huge", "trust me", "i'm not kidding",
+    "no joke", "literally the best", "you won't believe", "wait till you see",
+    "wait until you see", "absolute game", "blew my mind",
+]
+
 
 def sentences(text: str) -> list[str]:
     body = " ".join(l.strip() for l in text.splitlines()
@@ -440,6 +460,19 @@ def check(text: str, shape: str | None = None) -> list[str]:
             "writing). Zero approved scripts use any of these. Say it the way "
             "you would say it out loud.")
 
+    # 5c. HYPE REGISTER. We are a PUBLISHER reporting a story, not an account
+    #     selling one — the line the ai-tools teardown drew when it adopted
+    #     that corpus's structure. "for free" is deliberately in the list and
+    #     deliberately narrow: naming a price is fine ("it's free"), selling
+    #     the price is not. Advice, like everything here.
+    hype = [h for h in HYPE_MARKERS if re.search(rf"\b{re.escape(h)}", low)]
+    if hype:
+        notes.append(
+            f"HYPE: {', '.join(repr(h) for h in hype)} — the creator-sell "
+            "register. formats/ai-tools.md took that corpus's compression and "
+            "rejected its sell; the house voice reports. Say what it does and "
+            "let the number carry the excitement.")
+
     # 6. NUMBER DENSITY — also the playbook's own rule.
     nums = len(re.findall(r"\$?\d[\d.,]*", flat))
     per = len(ss) / nums if nums else 999
@@ -559,6 +592,21 @@ def selftest() -> int:
         clean = [n for n in _notes_of(approved_path.read_text())
                  if n.startswith("AI TELL")]
         check_("AI TELL silent on the approved script", not clean)
+    # HYPE: same shape. The offender is the ai-tools corpus's own sell voice,
+    # which is enthusiastic HUMAN writing — so it must trip HYPE and NOT be
+    # caught by the AI-tell list, or the two checks are measuring one thing.
+    selly = ("Yes you heard it right — this tool is completely free. "
+             "The crazy part? It's insanely good. Trust me, this is huge.")
+    hype_fired = [n for n in _notes_of(selly) if n.startswith("HYPE")]
+    check_("HYPE fires on the creator-sell offender", bool(hype_fired))
+    check_("HYPE names multiple markers",
+           bool(hype_fired) and hype_fired[0].count("'") >= 6)
+    check_("the sell offender is NOT caught by the AI-tell list instead",
+           not [n for n in _notes_of(selly) if n.startswith("AI TELL")])
+    if approved_path.exists():
+        clean = [n for n in _notes_of(approved_path.read_text())
+                 if n.startswith("HYPE")]
+        check_("HYPE silent on the approved script", not clean)
     print("\n  self-test PASSED\n" if ok else "\n  self-test FAILED\n")
     return 0 if ok else 1
 

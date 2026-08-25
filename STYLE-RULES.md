@@ -4040,3 +4040,45 @@ on quiet pixels.
 even physical dimensions. Every one of those was a rule stated in prose, and
 two of them had silently broken and shipped a whole scout session. The
 "code, not habit" claim is now checked rather than believed.
+
+## 2026-08-25 — auditing the "all upcoming videos" table against its own standard
+
+The table claims "verified permanent, not promised". Audited row by row,
+asking only: *what code stops a future session from skipping this?*
+
+| Row | Verdict |
+|---|---|
+| Format physics | REAL — `FORMATS["ai-tools"]` measured, G23/G24 with failing cases |
+| Evidence doctrine (G50) | REAL — present, absent from `BLOCKING_RULES` (advises), self-tested |
+| Live-cursor recordings | REAL **as of today** — `tools/test_capture_defaults.py`, run by doctor |
+| The look | PARTIAL -> now REAL where measurable (style mapping + G52) |
+| Script grammar + hype | **WAS PROSE** -> now `HYPE_MARKERS` in check_script |
+| Style mapping | **WAS FALSE** -> now enforced in compile + tested |
+| HyperFrames pilot | prose, correctly — a per-reel judgement call |
+
+Two rows did not hold:
+
+- **"Script grammar + hype exclusion — read-order + check_script at propose"
+  was not true.** `check_script` had no knowledge of the hype register; the
+  rejection of the corpus's sell voice lived only in `formats/ai-tools.md`.
+  A future ai-tools script could carry "completely free" three times and
+  nothing would say a word. Now `HYPE_MARKERS` (23 markers, measured off the
+  same 8 transcripts) with its own self-test — and the offender fixture is
+  *enthusiastic human writing*, asserted NOT to be caught by `AI_TELLS`, so
+  the two checks stay distinct instead of quietly measuring one thing.
+- **"Style mapping — CLAUDE.md locked settings — loaded every session" was
+  false, and this reel is the proof.** claude-eating-tokens rendered in the
+  editorial pack across several renders while the locked table said
+  ai-tools -> utility. A document loaded every session is not enforcement;
+  it is a document. The mapping now lives in `compile_shot_plan.py` and the
+  pipeline suite asserts both the mapping and its presence in that file.
+
+**New: G52 (advice)** — an ai-tools reel closing on the simulated
+comment-field mock. All 9 corpus reels close on a verb-first keyword pop
+over the presenter; the mock is the top5 pack's comment-gate and read wrong
+on a reporting reel.
+
+The lesson is the repo's own founding one, arriving again: *"loaded every
+session", "the skill's binding read-order" and "the build session reads it"
+are all the same sentence — someone will read a file — and that sentence is
+what the gates exist to replace.*

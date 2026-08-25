@@ -398,6 +398,32 @@ def run() -> int:
     ok("reverse join resolves (cc+usage == ccusage)", (s, e) == (1, 3))
     expect_exit(lambda: csp.find_phrase(tw, "words never spoken", 0, "x"),
                 "an absent phrase still refuses", "could not resolve")
+    # STYLE FOLLOWS FORMAT. CLAUDE.md's locked table says editorial = news /
+    # comparison and utility = top5 / ai-tools, and "loaded every session"
+    # was treated as enforcement — it is not. claude-eating-tokens rendered
+    # its whole ai-tools reel in the editorial pack across several renders
+    # before anyone measured it (2026-08-25). The mapping now lives in
+    # compile_shot_plan; this is what keeps it there.
+    print("\n  -- style follows format --")
+    for fmt, want in (("ai-tools", "utility"), ("top5", "utility"),
+                      ("news", None), ("comparison", None)):
+        beats = {"style": "editorial", "format": fmt}
+        plan = {"format": fmt}
+        if plan.get("style"):
+            got = plan["style"]
+        elif beats.get("format") in ("top5", "ai-tools"):
+            got = "utility"
+        else:
+            got = beats["style"]
+        ok(f"{fmt} -> {want or 'editorial'} pack",
+           got == (want or "editorial"))
+    src = (REAL_ROOT / "scripts/compile_shot_plan.py").read_text()
+    ok("compile_shot_plan carries the mapping (not just this test)",
+       'beats.get("format") in ("top5", "ai-tools")' in src
+       and 'beats["style"] = "utility"' in src)
+    ok("an explicit plan style still wins",
+       'if plan.get("style"):' in src)
+
     # caption_corrections phrase keys must survive whisper's punctuation:
     # "see use it" -> "ccusage" silently did nothing against the chunk
     # "see, use it" (2026-08-25, found in a RENDERED frame).

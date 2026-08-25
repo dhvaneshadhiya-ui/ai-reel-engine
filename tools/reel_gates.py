@@ -1714,6 +1714,24 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 "tool (formats/ai-tools.md). Deliberate exceptions welcome — "
                 "with a reason in questions.md.")
 
+        # G52 — ai-tools: the CTA is a KEYWORD POP, not a simulated comment
+        # box. ADVICE. Measured in the same observation study: all 9 corpus
+        # reels close on one verb-first word in huge type over the presenter
+        # (INSTALL / COMMENT / FOLLOW / SETUP); none draws a fake comment
+        # field. The mock is the top5 pack's comment-gate, and it read wrong
+        # on a reporting reel (user, 2026-08-25). Advice because a reel that
+        # genuinely wants the gate should be able to take it.
+        gates = [i for i, sc in enumerate(scenes)
+                 if sc.get("type") == "commentcta"
+                 and sc.get("variant", "gate") != "keyword"]
+        if gates:
+            errors.append(
+                f"G52 ai-tools CTA scene(s) {', '.join(f'{i:02d}' for i in gates)}"
+                " draw the simulated comment field. The corpus closes on a "
+                "verb-first keyword pop over the face — set `variant: "
+                "\"keyword\"` (formats/ai-tools.md). The gate mock is the "
+                "top5 pack's treatment.")
+
     # ---- THE ONLY THINGS ALLOWED TO BLOCK A RENDER -------------------------
     #
     # Directive, 2026-08-17: "Nothing should be hardcoded, behind the gates and

@@ -722,6 +722,16 @@ CASES.append((lambda s: (s.update(format="ai-tools"),
                              "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]}))[0],
               "G50", "an ai-tools reel with a full-screen text card"))
 
+# G52 (2026-08-25): the ai-tools CTA is a keyword pop, not the top5 pack's
+# simulated comment field — measured across all 9 corpus reels.
+CASES.append((lambda s: (s.update(format="ai-tools"),
+                         s["scenes"].__setitem__(len(s["scenes"]) - 1, {
+                             "type": "commentcta", "durationSec": 2.5,
+                             "src": "assets/x/avatar-master.mp4",
+                             "keyword": "CLAUDE", "variant": "gate",
+                             "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]}))[0],
+              "G52", "an ai-tools reel closing on the comment-gate mock"))
+
 # ai-tools (added 2026-08-25): CTA is constitutive — all 8 teardown reels
 # carry a follow/comment gate — so declaring the format without one trips G24.
 CASES.append((lambda s: s.update(format="ai-tools"),
