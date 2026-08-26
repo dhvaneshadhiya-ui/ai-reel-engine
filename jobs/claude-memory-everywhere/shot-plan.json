@@ -165,9 +165,9 @@
     "bg": "cream",
     "focus": {
      "x": 60,
-     "y": 70,
+     "y": 60,
      "w": 990,
-     "h": 330
+     "h": 480
     },
     "covers": "Cowork \u2014 Claude's agent for real work",
     "creditOnScreen": true,
@@ -347,10 +347,10 @@
     "srcHeight": 1152,
     "bg": "cream",
     "focus": {
-     "x": 133,
-     "y": 440,
-     "w": 1790,
-     "h": 120
+     "x": 250,
+     "y": 380,
+     "w": 1670,
+     "h": 670
     },
     "covers": "open, correct, or throw out",
     "creditOnScreen": true,
@@ -386,10 +386,10 @@
     "srcHeight": 1152,
     "bg": "cream",
     "focus": {
-     "x": 270,
-     "y": 400,
-     "w": 900,
-     "h": 620
+     "x": 140,
+     "y": 390,
+     "w": 545,
+     "h": 640
     },
     "covers": "Half Marathon Training, Client Pitch, Childcare Schedule",
     "creditOnScreen": true,
@@ -415,10 +415,10 @@
     "srcHeight": 1152,
     "bg": "cream",
     "focus": {
-     "x": 390,
-     "y": 900,
-     "w": 1270,
-     "h": 170
+     "x": 363,
+     "y": 87,
+     "w": 1322,
+     "h": 978
     },
     "covers": "fix your company's old name in that file",
     "creditOnScreen": true,
@@ -591,10 +591,10 @@
     "srcHeight": 382,
     "bg": "cream",
     "focus": {
-     "x": 48,
-     "y": 248,
-     "w": 1026,
-     "h": 124
+     "x": 0,
+     "y": 0,
+     "w": 1100,
+     "h": 382
     },
     "covers": "a switch if you want them in",
     "creditOnScreen": true,
@@ -811,9 +811,9 @@
     "bg": "cream",
     "focus": {
      "x": 60,
-     "y": 210,
+     "y": 60,
      "w": 990,
-     "h": 300
+     "h": 440
     },
     "covers": "Free, Pro and Max, across web, desktop and mobile",
     "creditOnScreen": true,

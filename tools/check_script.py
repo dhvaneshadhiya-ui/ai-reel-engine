@@ -124,6 +124,80 @@ HYPE_MARKERS = [
 ]
 
 
+def house_tics(text: str, exclude_slug: str | None = None,
+               min_n: int = 3) -> list[str]:
+    """Phrases this repo has already used in another script.
+
+    THE CHECKER WAS MANUFACTURING THE TIC (2026-08-26, user). `FORWARD` above
+    is a phrase list, and NO OPEN LOOP punishes any script that does not match
+    it — so every writer reaches for the same recognised words. Measured
+    across the corpus when the user asked why every script sounds the same:
+
+        "here's the"                8 scripts
+        "the catch"                 4 scripts
+        "the part almost nobody noticed"   3 scripts, verbatim
+        "tell me in the comments"   3 scripts
+
+    A checker that rewards specific phrasing produces house style by
+    accident, and house style repeated verbatim is a tic. So this is the
+    OPPOSING FORCE: the loop detector still insists a loop exists, and this
+    makes reusing last reel's words cost something. You must open a loop —
+    in your own words, this time.
+
+    Same principle as STYLE-RULES' rule against repeating the previous reel's
+    visual treatment, applied to language.
+
+    Proper nouns and numbers are excluded: a subject recurring across scripts
+    about the same subject is not a tic, it is the subject.
+    """
+    def grams(t: str) -> set[str]:
+        body = " ".join(l for l in t.splitlines()
+                        if l.strip() and not l.lstrip().startswith("#"))
+        out: set[str] = set()
+        for sent in re.split(r"(?<=[.!?])\s+", body):
+            toks = sent.split()
+            for n in range(min_n, min_n + 3):
+                for i in range(len(toks) - n + 1):
+                    g = toks[i:i + n]
+                    if any(w[:1].isupper() for w in g[1:]):
+                        continue                      # carries a proper noun
+                    if any(any(c.isdigit() for c in w) for w in g):
+                        continue
+                    phrase = re.sub(r"[^a-z' ]", "", " ".join(g).lower()).strip()
+                    if len(phrase.split()) >= min_n:
+                        out.add(phrase)
+        return out
+
+    mine = grams(text)
+    if not mine:
+        return []
+    seen: dict[str, set[str]] = {}
+    for f in sorted((ROOT / "jobs").glob("*/script.md")):
+        slug = f.parent.name
+        if exclude_slug and slug == exclude_slug:
+            continue
+        try:
+            for g in grams(f.read_text()) & mine:
+                seen.setdefault(g, set()).add(slug)
+        except OSError:
+            continue
+    # keep the LONGEST form of each overlap: "here's the part that matters"
+    # rather than also reporting the four fragments inside it
+    phrases = sorted(seen, key=len, reverse=True)
+    kept: list[str] = []
+    for ph in phrases:
+        if not any(ph in longer for longer in kept):
+            kept.append(ph)
+    notes = []
+    for ph in sorted(kept, key=lambda p: -len(seen[p]))[:6]:
+        who = ", ".join(sorted(seen[ph])[:3])
+        notes.append(
+            f"HOUSE TIC: {ph!r} — already used in {len(seen[ph])} other "
+            f"script(s) ({who}). Say it a different way; a phrase the channel "
+            "reuses stops being a hook and becomes a verbal habit.")
+    return notes
+
+
 def sentences(text: str) -> list[str]:
     body = " ".join(l.strip() for l in text.splitlines()
                     if l.strip() and not l.lstrip().startswith(("#", ">", "<!--")))
@@ -677,6 +751,17 @@ def selftest() -> int:
         check_("ABANDONED LOOP silent on the approved script",
                not [n for n in _notes_of(approved_path.read_text())
                     if n.startswith("ABANDONED LOOP")])
+    # HOUSE TIC: a phrase lifted verbatim from another script in the repo must
+    # fire; original phrasing must not. Uses the real corpus on purpose — a
+    # fixture corpus would not catch the checker drifting from what shipped.
+    lifted = house_tics("But here's the part that matters most about this.",
+                        exclude_slug="__none__")
+    check_("HOUSE TIC fires on a phrase reused from another script",
+           bool(lifted))
+    fresh = house_tics(
+        "Quarterly forecasting collapsed into a spreadsheet nobody reconciles.",
+        exclude_slug="__none__")
+    check_("HOUSE TIC silent on original phrasing", not fresh)
     print("\n  self-test PASSED\n" if ok else "\n  self-test FAILED\n")
     return 0 if ok else 1
 
@@ -942,6 +1027,8 @@ def main() -> None:
         print("\n  NOTE: no jobs/<slug>/structure.md — the narrative shape was never "
               "declared,\n  so nothing here can know what rhythm to expect. See "
               "formats/README-structure.md.")
+    for _t in house_tics(text, exclude_slug=(args[0] if args else None)):
+        print(f"  - {_t}")
     if fmt and fmt != "news":
         print(f"\n  NOTE: this reel's format is {fmt!r}. The structural thresholds above\n"
               "  were calibrated on a matched pair of NEWS scripts and no reel in this\n"

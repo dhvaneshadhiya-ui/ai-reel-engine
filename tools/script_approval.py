@@ -290,7 +290,8 @@ def cmd_propose(slug: str) -> None:
     findings: list[str] | None = None
     try:
         sys.path.insert(0, str(Path(__file__).resolve().parent))
-        from check_script import check as _prose, checklist as _list  # noqa: E402
+        from check_script import (check as _prose, checklist as _list,  # noqa: E402
+                          house_tics as _tics)
         findings = _prose(spoken) or []
         print("\nPROSE (advice — style is craft, none of this blocks):")
         for _n in findings or ["  nothing to flag"]:
