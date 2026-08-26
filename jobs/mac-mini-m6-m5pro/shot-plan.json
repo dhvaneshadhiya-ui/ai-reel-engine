@@ -1,0 +1,472 @@
+{
+  "emphasis": [
+    "50%",
+    "$599",
+    "$699",
+    "$899",
+    "2nm",
+    "4x",
+    "40%",
+    "18",
+    "20",
+    "64GB",
+    "$300",
+    "256GB",
+    "expensive"
+  ],
+  "caption_corrections": {},
+  "shots": [
+    {
+      "start_phrase": "Apple just made your",
+      "line": "Apple just made your next Mac mini fifty percent more expensive. Twice, in under a year.",
+      "needs": [
+        "Apple",
+        "made",
+        "next",
+        "mini",
+        "fifty",
+        "percent"
+      ],
+      "tier": "official",
+      "asset_id": "hook-hero",
+      "scene": {
+        "type": "split",
+        "topSrc": "assets/mac-mini-m6-m5pro/hook-hero.png",
+        "bottomSrc": "assets/mac-mini-m6-m5pro/avatar-master.mp4",
+        "credit": "Apple",
+        "sfx": [
+          {
+            "src": "sfx2/whooshes-01.mp3",
+            "vol": 0.15,
+            "at": 0.0
+          }
+        ],
+        "captionBottom": 1000
+      }
+    },
+    {
+      "start_phrase": "So in June, the",
+      "line": "So in June, the base price jumped from $599 to $699.",
+      "needs": [
+        "June",
+        "base",
+        "price",
+        "jumped",
+        "$599",
+        "$699"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "priceladder",
+        "kicker": "TWICE IN ONE YEAR",
+        "title": "Mac mini BASE PRICE",
+        "rows": [
+          {
+            "label": "June 2026",
+            "oldPrice": "$599",
+            "newPrice": "$699"
+          }
+        ],
+        "bg": "black",
+        "sfx": [
+          {
+            "src": "sfx/Pop.MP3",
+            "vol": 0.13,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Wednesday, it jumped again,",
+      "line": "Wednesday, it jumped again, to $899.",
+      "needs": [
+        "Wednesday",
+        "jumped",
+        "again",
+        "$899"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "priceladder",
+        "kicker": "TWICE IN ONE YEAR",
+        "title": "Mac mini BASE PRICE",
+        "rows": [
+          {
+            "label": "June 2026",
+            "oldPrice": "$599",
+            "newPrice": "$699"
+          },
+          {
+            "label": "August 2026",
+            "oldPrice": "$699",
+            "newPrice": "$899"
+          }
+        ],
+        "badge": "+$300",
+        "bg": "black",
+        "sfx": [
+          {
+            "src": "sfx2/impact-boom.mp3",
+            "vol": 0.17,
+            "at": 0.3
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "That's because of the",
+      "line": "That's because of the memory shortage hitting every chipmaker, and Apple just passed that cost straight to you.",
+      "needs": [
+        "because",
+        "memory",
+        "shortage",
+        "hitting",
+        "every",
+        "chipmaker"
+      ],
+      "tier": "reliable",
+      "asset_id": "price-hike-receipt",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/mac-mini-m6-m5pro/price-hike-receipt.png",
+        "focus": {
+          "x": 20,
+          "y": 250,
+          "w": 1040,
+          "h": 520
+        },
+        "credit": "Macworld",
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "vol": 0.12,
+            "at": 0.0
+          }
+        ],
+        "srcWidth": 1080,
+        "srcHeight": 800
+      }
+    },
+    {
+      "start_phrase": "Now, here's what your",
+      "line": "Now, here's what your money's actually buying.",
+      "needs": [
+        "money",
+        "actually",
+        "buying"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/mac-mini-m6-m5pro/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "Here's the headline: the",
+      "line": "Here's the headline: the new M6 is Apple's first chip built on 2 nanometers.",
+      "needs": [
+        "headline",
+        "M6",
+        "Apple",
+        "first",
+        "chip",
+        "built"
+      ],
+      "tier": "reliable",
+      "asset_id": "m6-2nm-receipt",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/mac-mini-m6-m5pro/m6-2nm-receipt.png",
+        "focus": {
+          "x": 20,
+          "y": 860,
+          "w": 1040,
+          "h": 190
+        },
+        "credit": "9to5Mac",
+        "sfx": [
+          {
+            "src": "sfx/whoosh.MP3",
+            "vol": 0.13,
+            "at": 0.0
+          }
+        ],
+        "srcWidth": 1080,
+        "srcHeight": 1150
+      }
+    },
+    {
+      "start_phrase": "On top of that",
+      "line": "On top of that",
+      "needs": [],
+      "tier": "reliable",
+      "asset_id": "m6-2nm-receipt",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/mac-mini-m6-m5pro/m6-2nm-receipt.png",
+        "focus": {
+          "x": 0.5,
+          "y": 0.72,
+          "w": 0.85,
+          "h": 0.18
+        },
+        "credit": "9to5Mac"
+      }
+    },
+    {
+      "start_phrase": "12 CPU cores, 12",
+      "line": "On top of that, 12 CPU cores, 12 GPU cores, and up to 4 times the AI performance of the M4. Graphics: twice as fast. CPU: 40 percent faster.",
+      "needs": [
+        "12",
+        "cores",
+        "4",
+        "times",
+        "performance",
+        "M4"
+      ],
+      "tier": "official",
+      "asset_id": "m6-performance-receipt",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/mac-mini-m6-m5pro/m6-performance-receipt.png",
+        "focus": {
+          "x": 20,
+          "y": 1870,
+          "w": 1040,
+          "h": 330
+        },
+        "credit": "Apple Newsroom",
+        "sfx": [
+          {
+            "src": "sfx/Magic Reveal.MP3",
+            "vol": 0.14,
+            "at": 0.15
+          }
+        ],
+        "srcWidth": 1080,
+        "srcHeight": 2340
+      }
+    },
+    {
+      "start_phrase": "Want more?",
+      "line": "Want more?",
+      "needs": [
+        "Want"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/mac-mini-m6-m5pro/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "Step up to M5",
+      "line": "Step up to M5 Pro and you get 18 CPU cores",
+      "needs": [
+        "Step",
+        "M5",
+        "18",
+        "cores"
+      ],
+      "tier": "official",
+      "asset_id": "m5pro-cores-receipt",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/mac-mini-m6-m5pro/m5pro-cores-receipt.png",
+        "focus": {
+          "x": 20,
+          "y": 1090,
+          "w": 1040,
+          "h": 420
+        },
+        "credit": "Apple Newsroom",
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "vol": 0.12,
+            "at": 0.0
+          }
+        ],
+        "srcWidth": 1080,
+        "srcHeight": 2340
+      }
+    },
+    {
+      "start_phrase": "20 GPU cores, up",
+      "line": "20 GPU cores, up to 64 gigs of memory, and Thunderbolt 5.",
+      "needs": [
+        "20",
+        "cores",
+        "64",
+        "gigs",
+        "memory",
+        "Thunderbolt"
+      ],
+      "tier": "official",
+      "asset_id": "m5pro-memory-receipt",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/mac-mini-m6-m5pro/m5pro-memory-receipt.png",
+        "focus": {
+          "x": 20,
+          "y": 0,
+          "w": 1040,
+          "h": 340
+        },
+        "credit": "Apple Newsroom",
+        "srcWidth": 1080,
+        "srcHeight": 2340
+      }
+    },
+    {
+      "start_phrase": "That's another $300 jump",
+      "line": "That's another $300 jump from last generation, same story.",
+      "needs": [
+        "another",
+        "$300",
+        "jump",
+        "last",
+        "generation",
+        "same"
+      ],
+      "tier": "official",
+      "asset_id": "pricing-availability-receipt",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/mac-mini-m6-m5pro/pricing-availability-receipt.png",
+        "focus": {
+          "x": 20,
+          "y": 860,
+          "w": 1040,
+          "h": 220
+        },
+        "credit": "Apple Newsroom",
+        "sfx": [
+          {
+            "src": "sfx/Core.MP3",
+            "vol": 0.13,
+            "at": 0.1
+          }
+        ],
+        "srcWidth": 1080,
+        "srcHeight": 2340
+      }
+    },
+    {
+      "start_phrase": "But at the new",
+      "line": "But at the new higher price",
+      "needs": [
+        "higher",
+        "price"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/mac-mini-m6-m5pro/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "your storage is still",
+      "line": "your storage is still just 256 gigs on the base model.",
+      "needs": [
+        "storage",
+        "still",
+        "256",
+        "gigs",
+        "base",
+        "model"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/mac-mini-m6-m5pro/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "Meanwhile, orders are open",
+      "line": "Meanwhile, pre-orders are open now. It ships to you September 22nd.",
+      "needs": [
+        "Meanwhile",
+        "pre-orders",
+        "open"
+      ],
+      "tier": "official",
+      "asset_id": "quote-availability-receipt",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/mac-mini-m6-m5pro/quote-availability-receipt.png",
+        "focus": {
+          "x": 20,
+          "y": 1075,
+          "w": 1040,
+          "h": 200
+        },
+        "credit": "Apple Newsroom",
+        "covers": "pre-orders are open now it ships to you september 22nd",
+        "srcWidth": 1080,
+        "srcHeight": 2340
+      }
+    },
+    {
+      "start_phrase": "Anyways, so is the",
+      "line": "Anyways, so is the extra money worth it?",
+      "needs": [
+        "Anyways",
+        "extra",
+        "money",
+        "worth"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/mac-mini-m6-m5pro/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "The mini's never been",
+      "line": "The mini's never been this fast.",
+      "needs": [
+        "mini",
+        "never",
+        "been",
+        "fast"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/mac-mini-m6-m5pro/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "It's also never been",
+      "line": "It's also never been this expensive.",
+      "needs": [
+        "never",
+        "been",
+        "expensive"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/mac-mini-m6-m5pro/avatar-master.mp4",
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "vol": 0.15,
+            "at": 0.1
+          }
+        ]
+      }
+    }
+  ]
+}

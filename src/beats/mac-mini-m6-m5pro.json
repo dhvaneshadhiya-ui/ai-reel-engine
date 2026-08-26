@@ -1,0 +1,630 @@
+{
+  "id": "mac-mini-m6-m5pro",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/mac-mini-m6-m5pro/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "50%",
+    "$599",
+    "$699",
+    "$899",
+    "2nm",
+    "4x",
+    "40%",
+    "18",
+    "20",
+    "64GB",
+    "$300",
+    "256GB",
+    "expensive"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "topSrc": "assets/mac-mini-m6-m5pro/hook-hero.png",
+      "bottomSrc": "assets/mac-mini-m6-m5pro/avatar-master.mp4",
+      "credit": "Apple",
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "vol": 0.543,
+          "at": 0.0
+        }
+      ],
+      "captionBottom": 1000,
+      "durationSec": 6.52,
+      "assetId": "hook-hero",
+      "claimId": "hook-hero",
+      "covers": "Apple just made your",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.4728
+    },
+    {
+      "type": "priceladder",
+      "kicker": "TWICE IN ONE YEAR",
+      "title": "Mac mini BASE PRICE",
+      "rows": [
+        {
+          "label": "June 2026",
+          "oldPrice": "$599",
+          "newPrice": "$699"
+        }
+      ],
+      "bg": "black",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.343,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 4.68
+    },
+    {
+      "type": "priceladder",
+      "kicker": "TWICE IN ONE YEAR",
+      "title": "Mac mini BASE PRICE",
+      "rows": [
+        {
+          "label": "June 2026",
+          "oldPrice": "$599",
+          "newPrice": "$699"
+        },
+        {
+          "label": "August 2026",
+          "oldPrice": "$699",
+          "newPrice": "$899"
+        }
+      ],
+      "badge": "+$300",
+      "bg": "black",
+      "sfx": [
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "vol": 0.452,
+          "at": 0.3
+        }
+      ],
+      "durationSec": 4.98
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/mac-mini-m6-m5pro/price-hike-receipt.png",
+      "focus": {
+        "x": 20,
+        "y": 250,
+        "w": 1040,
+        "h": 520
+      },
+      "credit": "Macworld",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.0
+        }
+      ],
+      "srcWidth": 1080,
+      "srcHeight": 800,
+      "durationSec": 5.92,
+      "assetId": "price-hike-receipt",
+      "claimId": "price-hike-receipt",
+      "covers": "That's because of the"
+    },
+    {
+      "type": "footage",
+      "src": "assets/mac-mini-m6-m5pro/avatar-master.mp4",
+      "durationSec": 2.98,
+      "from": 22.1,
+      "focusX": 0.4854
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/mac-mini-m6-m5pro/m6-2nm-receipt.png",
+      "focus": {
+        "x": 20,
+        "y": 860,
+        "w": 1040,
+        "h": 190
+      },
+      "credit": "9to5Mac",
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.0
+        }
+      ],
+      "srcWidth": 1080,
+      "srcHeight": 1150,
+      "durationSec": 5.7,
+      "assetId": "m6-2nm-receipt",
+      "claimId": "m6-2nm-receipt",
+      "covers": "Here's the headline: the"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/mac-mini-m6-m5pro/m6-2nm-receipt.png",
+      "focus": {
+        "x": 0.5,
+        "y": 0.72,
+        "w": 0.85,
+        "h": 0.18
+      },
+      "credit": "9to5Mac",
+      "durationSec": 0.7,
+      "assetId": "m6-2nm-receipt",
+      "claimId": "m6-2nm-receipt",
+      "covers": "On top of that"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/mac-mini-m6-m5pro/m6-performance-receipt.png",
+      "focus": {
+        "x": 20,
+        "y": 1870,
+        "w": 1040,
+        "h": 330
+      },
+      "credit": "Apple Newsroom",
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "vol": 1.0,
+          "at": 0.15
+        }
+      ],
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "durationSec": 11.06,
+      "assetId": "m6-performance-receipt",
+      "claimId": "m6-performance-receipt",
+      "covers": "12 CPU cores, 12"
+    },
+    {
+      "type": "footage",
+      "src": "assets/mac-mini-m6-m5pro/avatar-master.mp4",
+      "durationSec": 1.34,
+      "from": 42.54,
+      "focusX": 0.4854
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/mac-mini-m6-m5pro/m5pro-cores-receipt.png",
+      "focus": {
+        "x": 20,
+        "y": 1090,
+        "w": 1040,
+        "h": 420
+      },
+      "credit": "Apple Newsroom",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.0
+        }
+      ],
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "durationSec": 3.18,
+      "assetId": "m5pro-cores-receipt",
+      "claimId": "m5pro-cores-receipt",
+      "covers": "Step up to M5"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/mac-mini-m6-m5pro/m5pro-memory-receipt.png",
+      "focus": {
+        "x": 20,
+        "y": 0,
+        "w": 1040,
+        "h": 340
+      },
+      "credit": "Apple Newsroom",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "durationSec": 4.2,
+      "assetId": "m5pro-memory-receipt",
+      "claimId": "m5pro-memory-receipt",
+      "covers": "20 GPU cores, up"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/mac-mini-m6-m5pro/pricing-availability-receipt.png",
+      "focus": {
+        "x": 20,
+        "y": 860,
+        "w": 1040,
+        "h": 220
+      },
+      "credit": "Apple Newsroom",
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "vol": 0.556,
+          "at": 0.1
+        }
+      ],
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "durationSec": 4.2,
+      "assetId": "pricing-availability-receipt",
+      "claimId": "pricing-availability-receipt",
+      "covers": "That's another $300 jump"
+    },
+    {
+      "type": "footage",
+      "src": "assets/mac-mini-m6-m5pro/avatar-master.mp4",
+      "durationSec": 2.18,
+      "from": 55.46,
+      "focusX": 0.4854
+    },
+    {
+      "type": "footage",
+      "src": "assets/mac-mini-m6-m5pro/avatar-master.mp4",
+      "durationSec": 4.7,
+      "from": 57.64,
+      "focusX": 0.4854
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/mac-mini-m6-m5pro/quote-availability-receipt.png",
+      "focus": {
+        "x": 20,
+        "y": 1075,
+        "w": 1040,
+        "h": 200
+      },
+      "credit": "Apple Newsroom",
+      "covers": "pre-orders are open now it ships to you september 22nd",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "durationSec": 4.26,
+      "assetId": "quote-availability-receipt",
+      "claimId": "quote-availability-receipt"
+    },
+    {
+      "type": "footage",
+      "src": "assets/mac-mini-m6-m5pro/avatar-master.mp4",
+      "durationSec": 3.56,
+      "from": 66.6,
+      "focusX": 0.4854
+    },
+    {
+      "type": "footage",
+      "src": "assets/mac-mini-m6-m5pro/avatar-master.mp4",
+      "durationSec": 2.66,
+      "from": 70.16,
+      "focusX": 0.4854
+    },
+    {
+      "type": "footage",
+      "src": "assets/mac-mini-m6-m5pro/avatar-master.mp4",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.1
+        }
+      ],
+      "durationSec": 2.593,
+      "from": 72.82,
+      "focusX": 0.4854
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.94,
+      "text": "Apple just made"
+    },
+    {
+      "start": 0.94,
+      "end": 1.62,
+      "text": "your next Mac"
+    },
+    {
+      "start": 1.62,
+      "end": 3.16,
+      "text": "mini 50% more"
+    },
+    {
+      "start": 3.16,
+      "end": 5.16,
+      "text": "expensive, twice in"
+    },
+    {
+      "start": 5.16,
+      "end": 5.88,
+      "text": "under a year,"
+    },
+    {
+      "start": 6.52,
+      "end": 6.96,
+      "text": "so in June"
+    },
+    {
+      "start": 6.96,
+      "end": 7.56,
+      "text": "the base price"
+    },
+    {
+      "start": 7.56,
+      "end": 8.98,
+      "text": "jumped from $599"
+    },
+    {
+      "start": 8.98,
+      "end": 11.74,
+      "text": "to $699. Wednesday"
+    },
+    {
+      "start": 11.74,
+      "end": 12.86,
+      "text": "it jumped again"
+    },
+    {
+      "start": 12.86,
+      "end": 16.5,
+      "text": "to $899. That's"
+    },
+    {
+      "start": 16.5,
+      "end": 16.98,
+      "text": "because of the"
+    },
+    {
+      "start": 16.98,
+      "end": 17.92,
+      "text": "memory shortage hitting"
+    },
+    {
+      "start": 17.92,
+      "end": 19.38,
+      "text": "every chipmaker and"
+    },
+    {
+      "start": 19.38,
+      "end": 20.18,
+      "text": "Apple just passed"
+    },
+    {
+      "start": 20.18,
+      "end": 21.18,
+      "text": "that cost straight"
+    },
+    {
+      "start": 21.18,
+      "end": 22.36,
+      "text": "to you. Now"
+    },
+    {
+      "start": 22.36,
+      "end": 23.58,
+      "text": "here's what your"
+    },
+    {
+      "start": 23.58,
+      "end": 24.3,
+      "text": "money is actually"
+    },
+    {
+      "start": 24.3,
+      "end": 25.38,
+      "text": "buying, here's the"
+    },
+    {
+      "start": 25.38,
+      "end": 26.76,
+      "text": "headline. The new"
+    },
+    {
+      "start": 26.76,
+      "end": 28.04,
+      "text": "M6 is Apple's"
+    },
+    {
+      "start": 28.04,
+      "end": 29.14,
+      "text": "first chip built"
+    },
+    {
+      "start": 29.14,
+      "end": 30.9,
+      "text": "on 2nm, on"
+    },
+    {
+      "start": 30.9,
+      "end": 31.48,
+      "text": "top of that"
+    },
+    {
+      "start": 31.48,
+      "end": 32.82,
+      "text": "12 CPU cores,"
+    },
+    {
+      "start": 33.12,
+      "end": 34.08,
+      "text": "12 GPU cores,"
+    },
+    {
+      "start": 34.44,
+      "end": 35.0,
+      "text": "and up to"
+    },
+    {
+      "start": 35.0,
+      "end": 36.26,
+      "text": "4x the AI"
+    },
+    {
+      "start": 36.26,
+      "end": 37.1,
+      "text": "performance of the"
+    },
+    {
+      "start": 37.1,
+      "end": 39.36,
+      "text": "M4. Graphics twice"
+    },
+    {
+      "start": 39.36,
+      "end": 40.7,
+      "text": "as fast, CPU"
+    },
+    {
+      "start": 40.7,
+      "end": 42.76,
+      "text": "40% faster. Want"
+    },
+    {
+      "start": 42.76,
+      "end": 44.34,
+      "text": "more? Step up"
+    },
+    {
+      "start": 44.34,
+      "end": 45.02,
+      "text": "to M5 Pro"
+    },
+    {
+      "start": 45.02,
+      "end": 45.72,
+      "text": "and you get"
+    },
+    {
+      "start": 45.72,
+      "end": 46.8,
+      "text": "18 CPU cores,"
+    },
+    {
+      "start": 47.06,
+      "end": 48.02,
+      "text": "20 GPU cores,"
+    },
+    {
+      "start": 48.38,
+      "end": 49.2,
+      "text": "up to 64GB"
+    },
+    {
+      "start": 49.2,
+      "end": 50.3,
+      "text": "of memory and"
+    },
+    {
+      "start": 50.3,
+      "end": 51.52,
+      "text": "Thunderbolt 5. That's"
+    },
+    {
+      "start": 51.52,
+      "end": 53.08,
+      "text": "another $300 jump"
+    },
+    {
+      "start": 53.08,
+      "end": 54.1,
+      "text": "from last generation."
+    },
+    {
+      "start": 54.1,
+      "end": 55.6,
+      "text": "Same story, but"
+    },
+    {
+      "start": 55.6,
+      "end": 56.42,
+      "text": "at the new"
+    },
+    {
+      "start": 56.42,
+      "end": 57.72,
+      "text": "higher price, your"
+    },
+    {
+      "start": 57.72,
+      "end": 58.58,
+      "text": "storage is still"
+    },
+    {
+      "start": 58.58,
+      "end": 60.74,
+      "text": "just 256GB on"
+    },
+    {
+      "start": 60.74,
+      "end": 61.38,
+      "text": "the base model."
+    },
+    {
+      "start": 62.34,
+      "end": 63.48,
+      "text": "Meanwhile, pre-orders are"
+    },
+    {
+      "start": 63.48,
+      "end": 64.26,
+      "text": "open now, it"
+    },
+    {
+      "start": 64.26,
+      "end": 64.84,
+      "text": "ships to you"
+    },
+    {
+      "start": 64.84,
+      "end": 66.94,
+      "text": "September 22nd. Anyways,"
+    },
+    {
+      "start": 67.5,
+      "end": 68.32,
+      "text": "so is the"
+    },
+    {
+      "start": 68.32,
+      "end": 69.48,
+      "text": "extra money worth"
+    },
+    {
+      "start": 69.48,
+      "end": 70.64,
+      "text": "it? The mini's"
+    },
+    {
+      "start": 70.64,
+      "end": 71.82,
+      "text": "never been this"
+    },
+    {
+      "start": 71.82,
+      "end": 73.3,
+      "text": "fast. It's also"
+    },
+    {
+      "start": 73.3,
+      "end": 74.42,
+      "text": "never been this"
+    },
+    {
+      "start": 74.42,
+      "end": 75.12,
+      "text": "expensive."
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "script": "Apple just made your next Mac mini fifty percent more expensive.\n\nTwice, in under a year.\n\nSo in June, the base price jumped from $599 to $699. Wednesday, it jumped again, to $899.\n\nThat's because of the memory shortage hitting every chipmaker, and Apple just passed that cost straight to you.\n\nNow, here's what your money's actually buying.\n\nHere's the headline: the new M6 is Apple's first chip built on 2 nanometers.\n\nOn top of that, 12 CPU cores, 12 GPU cores, and up to 4 times the AI performance of the M4. Graphics: twice as fast. CPU: 40 percent faster.\n\nWant more? Step up to M5 Pro and you get 18 CPU cores, 20 GPU cores, up to 64 gigs of memory, and Thunderbolt 5.\n\nThat's another $300 jump from last generation, same story.\n\nBut at the new higher price, your storage is still just 256 gigs on the base model.\n\nMeanwhile, pre-orders are open now. It ships to you September 22nd.\n\nAnyways, so is the extra money worth it? The mini's never been this fast. It's also never been this expensive.",
+  "approval": {
+    "sha256": "2b428346d07d1342f1a693e122abcaa27463a2624040814d79cadef0d445d6ac",
+    "approvedAt": "2026-08-26T06:14:30+00:00",
+    "words": 183,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

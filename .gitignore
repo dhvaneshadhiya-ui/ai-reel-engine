@@ -12,6 +12,9 @@ out/
 # third-party — keep it out of the shared repo and off other people's disks.
 _sources/
 public/assets/
+# Calibration frames, coordinate grids, avatar_handoff.py state — derived,
+# regenerable from public/assets/, and per-machine like _sources/.
+_state/
 
 # ── bundled binaries: shipped in the migration archive, never in git ──────────
 # ffmpeg + ffprobe are ~150 MB static x86_64 builds (they run on Apple Silicon

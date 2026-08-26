@@ -4365,6 +4365,85 @@ It earned itself immediately: first run on claude-eating-tokens reported the
 reel is rendered and **has no packaging.md** — true, and nothing else had
 said so.
 
+## 2026-08-26 — mac-mini-m6-m5pro: `annotatezoom.focus` is SOURCE PIXELS, not a fraction
+
+**RAW NOTE.** Every receipt in the first render came back as a near-blank
+cream card — a tiny caption and credit chip floating over flat background,
+zero source text visible. `lint_frames.py` correctly flagged 82-90% dead
+space on eight scenes and the render still passed every gate, because no
+gate inspects rendered pixels.
+
+**ROOT CAUSE.** `AnnotateZoomProps.focus` is typed `{x,y,w,h}` in **source
+pixels** (`src/components/AnnotateZoom.tsx`), not the 0-1 fraction used
+elsewhere in this codebase (`topFocusX`/`bottomFocusX` on `split`, CSS
+`objectPosition`). I wrote fractional values (`{x:0.5, y:0.72, w:0.85,
+h:0.18}`) by analogy with those other props. On a 1080x2340 source that
+focus rect is a ~1x1 pixel box near the top-left corner — the camera
+"settles" on a single pixel, which upscales to a flat, near-uniform colour
+field. `srcWidth`/`srcHeight` are also required props I had left unset
+entirely; nothing defaults them, and nothing in `compile_shot_plan.py`
+back-fills them from the actual image file.
+
+**Two lessons, not one:**
+1. **A component-local prop name that LOOKS like a pattern used elsewhere
+   is not evidence it follows that pattern.** `focus` reads exactly like
+   `topFocusX`/`face-x.txt` (both fractions of frame width) but is
+   documented, in the same file, as "region in SOURCE pixels" — the
+   docstring was right there and unread.
+2. **A broken visual can pass every mechanical gate.** G39 checks that the
+   *spoken words* match a scene's declared `covers` claim; nothing checks
+   that the *pixels* match the claim. The only thing that caught this was
+   pulling actual full-resolution frames and looking — exactly what
+   RULES.md's critic-pass step says to do, and exactly what gets skipped
+   under time pressure once the pipeline says "GATES PASSED".
+
+**DISTILLED RULE.** Before trusting any scene-prop shape, read the
+component's own TypeScript interface, not a sibling prop's convention —
+and after the first real render of any new receipt/annotatezoom asset,
+pull an actual full-resolution frame (not just the lint thumbnail sheet)
+before treating a green gate run as "done". Whole-page mobile captures
+(1080x2340 or taller) need their focus rect measured on a pixel grid
+(`ImageDraw` gridlines every 200px, as used for `face-x.txt`) — eyeballing
+proportions on a scaled-down preview is not precise enough at this scale.
+
+**Also fixed in the same pass:** four pairs of back-to-back scenes reusing
+one static image with no visual change (`split`/`annotatezoom` clauses of
+one sentence each getting their own scene) — `lint_frames.py`'s
+`[DUPLICATE]` check is hard-blocking regardless of gate classification.
+Fix was to MERGE the clauses into one scene per continuous visual, not to
+force artificial variation between them — a sentence spoken over one held
+image is one beat, not two.
+
+### Treatment history — mac-mini-m6-m5pro
+
+- mac-mini-m6-m5pro (Apple's Mac mini M6/M5 Pro refresh, framed as the
+  price-hike-vs-specs argument rather than a flat feature rundown, per
+  user direction): split hook (Apple's own mac-mini product page — "mini"
+  wordmark over the real device photo, "From $899" — / face); NEW
+  `priceladder` use for a genuine TWO-HOP price change ($599 to $699 in
+  June, $699 to $899 in August — two real rows, not one row overstating a
+  single jump); five official Apple Newsroom receipts (M6 2nm/cores,
+  M6 AI-performance paragraph, M5 Pro cores, M5 Pro memory/bandwidth,
+  pricing-and-availability, pre-order/Srouji-quote) plus one Macworld
+  headline receipt for the price-hike claim itself (Apple never states its
+  own price history, so that claim is carried by outlet reporting,
+  credited on screen); honesty beat on the unchanged 256GB base storage;
+  closing take reordered to land AFTER the availability beat, not before,
+  so the reel ends on the payoff line rather than trailing into logistics.
+  No music (standing rule), no CTA (user directive, dropped after the
+  first review pass — the reel closes on the facecam take instead).
+  9 SFX cues across 5 roles (transition/popup/impact/shutter/reveal).
+  18 scenes / 75.4s / facecam 26.5% (above the news 10-20% band — accepted
+  deliberately: the honesty beat + closing take is one continuous
+  direct-address run and splitting it for a percentage would have hurt the
+  ending more than the percentage helps). −14.5 LUFS, TP −3.9 dBFS.
+- → next reel must introduce at least one new treatment. Already used and
+  not to be repeated as the SAME shape next: `priceladder` for a
+  multi-hop price change (the technique is reusable, the exact "two
+  strikethrough rows, dated" layout is now used); a single Newsroom
+  paragraph mined for 2-3 separate annotatezoom regions across consecutive
+  clauses of one sentence.
+
 ## 2026-08-26 — a stale constant cost a reel a whole section of its source
 
 The engine predicted this reel's runtime with a words-per-second band measured
