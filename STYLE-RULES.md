@@ -4443,3 +4443,130 @@ image is one beat, not two.
   strikethrough rows, dated" layout is now used); a single Newsroom
   paragraph mined for 2-3 separate annotatezoom regions across consecutive
   clauses of one sentence.
+
+## 2026-08-26 — a stale constant cost a reel a whole section of its source
+
+The engine predicted this reel's runtime with a words-per-second band measured
+at voiceSpeed **1.05**. The locked speed has been **1.12** since 2026-08-25.
+Nobody re-measured, and nothing in the pipeline could notice, because the
+constant's own comment said "measured at the locked 1.05" — accurate, and
+therefore invisible, since the label lives in the source and the decision
+happens at the propose prompt.
+
+**What it cost, measured not guessed.** The first master delivered 199 script
+words in 67.50s = **2.95 wps** against a predicted 72-85s. Thirty-six words of
+headroom existed. At the rehearsal stage that phantom overrun had already
+caused a named section of Anthropic's announcement — "Memory updates as you
+chat" — to be cut from the script, and the cut was written up in questions.md
+as a deliberate editorial trade. It was not a trade. It was arithmetic from the
+wrong voice.
+
+**Distilled rule: a measured number must carry the CONDITIONS it was measured
+under, in a form the code can check — not in a comment.** `WPS_BY_SPEED` is
+now keyed by speed, each row carries its provenance, and a speed with no
+measurement resolves LOUDLY (`NO MEASUREMENT AT SPEED x`) instead of silently
+borrowing another speed's numbers. The per-reel `measuredWps` hatch had existed
+since 2026-08-22 for exactly this and went unused, because nobody knew the
+default had gone stale underneath them. An escape hatch does not help when the
+thing you would escape looks correct.
+
+Second-order note worth keeping: the 1.12 row is TWO masters (2.61 and 2.95)
+and is marked THIN in the table. Two points spanning 0.34 wps is not a band, it
+is a hint. Do not tighten it until there are four.
+
+## 2026-08-26 — whisper disagreeing with the script is evidence, but only when it survives priming
+
+RULES §11 says a whisper `base` misspelling is not proof of mispronunciation.
+This reel found the other half of that rule.
+
+Three deltas against the approved script. **"Cowork" heard as "call work"** was
+`base` being wrong: `medium` heard "co-work" cleanly at both instances, and the
+brand-glossary entry added before generating had done its job. **"25" heard as
+"25th"** is the TTS reading a date correctly and needs a caption correction,
+not a re-record. **"leaves alone" heard as "lives alone"** survived `base`,
+`small` at two window sizes, and `medium` — and flipped to "leaves" only when
+whisper was primed with a sentence containing the word.
+
+**Distilled rule: escalate the model AND test the prior.** A transcription that
+holds across model sizes is evidence about the audio; one that flips under
+priming is evidence about the language model. Run both before spending credits
+— and prefer rewording to re-recording, because a word the synthesiser fumbles
+once will fumble again. "leaves alone" became "stays out of": same meaning,
+unambiguous vowel.
+
+## 2026-08-26 — the approval beat plan named the camera move, not the frame
+
+`beat_plan.py` exists so the user approves a plan they can picture. Its
+`sourceread`, `annotatezoom` and `receipt` rows rendered FIXED strings — "a
+screenshot, zooming slowly into the highlighted region" — which describes the
+CAMERA and nothing on the page. On this reel 18 of 26 beats were one of those
+three types, so 70% of the plan said nothing about what was being approved.
+
+Same fault the file's own floatcard note recorded on 2026-08-22 ("describes the
+CONTAINER and not one thing inside it"), reintroduced in three sibling types.
+They now resolve the manifest asset, name the artefact by what it IS (a still
+says "a screenshot", never "a clip"), and print the claim the highlight proves.
+
+Two things learned while fixing it, both now tested: a `shows` field is written
+for the BUILDER and runs 60 words, which is unreadable inline, so it is cut to
+its gist; and one asset used across four beats printed itself four times, so
+repeats shorten — but a shortened repeat must still name WHICH asset, because
+"the same screenshot again" identifies nothing once a plan interleaves two.
+
+## 2026-08-26 — simulate the crop before the render, not after
+
+Every `annotatezoom` frame was composited in PIL — crop, fit, blur-fill,
+annotations drawn — and looked at, before anything was rendered. It caught four
+defects that no gate and no beat plan could:
+
+- a focus rect that sliced the highlighted row's "Meal Planning" into
+  "Planning". The HIGHLIGHTED row in that screenshot is inset further left than
+  its siblings, which is invisible until something crops it.
+- three rects that were 15:1 and 8:1 ribbons, filling **4-8% of frame height**.
+  In-bounds, geometrically valid, and nearly empty frames.
+- two rects ending mid-text-line, slicing glyphs horizontally.
+
+**Distilled rule: `focus` is in SOURCE pixels and every intuition about it is
+wrong.** A rect can be in bounds, land on the right words, and still render as
+a ribbon or a mid-word cut. The simulation is ~20 lines and runs in a second;
+the render is minutes. Do it first. The same pass also settled a judgement
+call by eye — beat 17's three candidate framings were composited side by side,
+and the two "tighter, more legible" options turned out to be a 7% ribbon and a
+left-edge mid-word cut.
+
+## 2026-08-26 — the framework's own lesson, applied to the framework
+
+User asked a third time whether the master rule was really in force. It was
+not, and the reason is the one this repo was built around:
+
+**The operating stance was in a FILE, not in CONTEXT.** `CLAUDE.md` loads
+automatically at the start of every session. `frameworks/short-form-master.md`
+was read-order item 0 — which still means *a session has to open it*. I had
+put the standard exactly where "loaded every session" had already failed
+twice before (the style mapping; the capture defaults), and then reported it
+as implemented. Grep settled it: zero occurrences of the master rule in
+auto-loaded context.
+
+Fixed: §12 now sits verbatim in CLAUDE.md, above the machine-facing sections,
+with the split stated — what is CODE (framework_check, prepublish) and what
+is YOU (the story, the escalation, the edit, the ending, which no gate will
+catch you skipping).
+
+**Two more clauses were prose.** Both are named in the user's own rule:
+
+- **The AutoDM flow** (VALUE → CURIOSITY → DESIRE → ASK → DELIVERY) was
+  checked by nothing. Now **F5**: the ask must not land in the opening third
+  (an ask before value is an advertisement with a story attached), it must
+  say what the viewer RECEIVES, and a brief whose goal is comment/follow but
+  whose script never asks for anything fails.
+- **`credit_instructions`** was scaffolded the same day and read by nothing —
+  a field nobody reads is a decision nobody made. It now sets `noCredits`
+  with the brief as the recorded reason, so G47 still refuses a silent
+  switch-off, and provenance stays in the manifest either way.
+
+And `prepublish.py` gained the framework's own reveal-handling questions:
+has authentic footage been left alone, and if branding is naturally visible,
+does the promised reveal still mean anything.
+
+The pattern worth keeping: **every time I said "it's implemented", the thing
+that made it true was a grep, not a memory.**

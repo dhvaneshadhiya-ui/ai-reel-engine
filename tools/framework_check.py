@@ -143,6 +143,41 @@ def check(brief: dict, script: str, claims: list[dict],
                 "a forecast but the words do not say whose it is. Framework "
                 "\u00a73.6: attribute the prediction and its basis.")
 
+    # ---- F5  the CTA flow: VALUE -> CURIOSITY -> DESIRE -> ASK -> DELIVERY
+    # Framework §6, named in the user's own master rule and checked by nothing
+    # until 2026-08-26. Three things here have a right answer:
+    #   (a) the ask comes AFTER the value, not before it — an ask in the
+    #       opening third is an advertisement with a story attached;
+    #   (b) the ask says what the viewer will RECEIVE, not just what to type;
+    #   (c) what is promised must be deliverable — a reel that offers "the
+    #       exact prompt" and has no prompt to send is a broken promise
+    #       (§6: do not promise one thing and deliver another).
+    ASK = re.compile(r"\b(comment|dm|follow|drop a|type)\b", re.I)
+    sents = [x.strip() for x in re.split(r"(?<=[.!?])\s+", script) if x.strip()]
+    if sents:
+        asks = [i for i, x in enumerate(sents) if ASK.search(x)]
+        if asks:
+            first = asks[0]
+            if first < len(sents) / 3:
+                fail.append(
+                    f"F5 CTA FLOW: the ask arrives at sentence {first + 1} of "
+                    f"{len(sents)} — inside the opening third, before any "
+                    "value is delivered. Framework \u00a76 is an ORDER: value, "
+                    "then curiosity, then desire, then the ask.")
+            tail = " ".join(sents[first:]).lower()
+            if not re.search(r"\b(send|i'?ll|you'?ll get|share|link|guide|"
+                             r"prompt|setup|list|template|steps)\b", tail):
+                note.append(
+                    "F5 the ask never says what the viewer RECEIVES. "
+                    "\u00a76: tell them exactly what they get, or the action has "
+                    "no reward attached.")
+        elif str(brief.get("goal", "")).lower() in ("comment", "follow",
+                                                     "autodm", "conversion"):
+            fail.append(
+                f"F5 the brief's goal is {brief.get('goal')!r} but the script "
+                "never asks for anything. A conversion goal with no ask is a "
+                "goal nobody told the viewer about.")
+
     # ---- F3  source policy ------------------------------------------------
     if policy not in POLICIES:
         note.append(
@@ -262,6 +297,16 @@ def selftest() -> int:
     claims_off = [{"claim": "x", "tier": "official", "spoken": "Apple will ship it"}]
     f, _ = check({}, "s", claims_off, [])
     t("F2 silent on an official-tier claim", not any("F2" in x for x in f))
+
+    early = ("Comment CLAUDE and I'll send it. " + "Then some value. " * 8)
+    f, _ = check({}, early, [], [])
+    t("F5 fires when the ask comes before the value", any("F5" in x for x in f))
+    late = ("Here is a real thing. " * 8) + "Comment CLAUDE and I'll send all four."
+    f, _ = check({}, late, [], [])
+    t("F5 silent when the ask follows the value",
+      not any("F5" in x for x in f))
+    f, _ = check({"goal": "comment"}, "A story with no ask at all. " * 6, [], [])
+    t("F5 fires on a conversion goal with no ask", any("F5" in x for x in f))
 
     f, _ = check({}, "s", [{"claim": "x", "tier": "prediction",
                             "spoken": "the price drops in March"}], [])
