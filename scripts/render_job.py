@@ -237,6 +237,15 @@ def main() -> None:
     # mp4 by any route.
     run([sys.executable, str(SKILL / "tools/script_approval.py"), "check",
          args.slug], engine, args.dry_run)
+    # FRAMEWORK CHECK, AGAIN, AT BUILD TIME (2026-08-25). It already runs at
+    # propose — but propose only ever sees the SCRIPT. Every on-screen
+    # surface (headlines, kinetic type, the CTA keyword card) is authored
+    # LATER, at compile, so the place a reveal target most plausibly leaks is
+    # the one place approval could not have audited. Same shape as G27
+    # re-checking the script hash at build time, and for the same reason: the
+    # artifact is what ships, not the plan.
+    run([sys.executable, str(SKILL / "tools/framework_check.py"), args.slug],
+        cwd=engine)
     run([sys.executable, str(SKILL / "tools/reel_gates.py"), args.slug],
         engine, args.dry_run)
 
