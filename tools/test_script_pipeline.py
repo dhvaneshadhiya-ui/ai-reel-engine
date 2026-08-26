@@ -398,7 +398,9 @@ def run() -> int:
        "running to the fold" not in joined4)
     ok("the SECOND beat on one asset shortens instead of repeating it",
        "the same screenshot again" in rows4[3]
-       and "the vendor changelog" not in rows4[3])
+       and "running to the fold" not in rows4[3])
+    ok("a shortened repeat still names WHICH asset it is",
+       "the vendor changelog" in rows4[3] and rows4[3].count("…") >= 1)
     ok("a DIFFERENT asset is still described in full",
        "the pricing table" in rows4[5])
     ok("the fixed camera-move string is gone",

@@ -19,12 +19,21 @@ conversation.
 consequence. Not the four-section feature list the announcement itself is
 organised as.
 
-Why this and not News-straight: the newsworthy fact (chat and Cowork share one
-memory) is not the fact a viewer cares about. What they care about is whether
-they can see and control it. So the reel leads on control, carries the
-unification as the second mechanism, and ends on the limit — the categories
-Claude refuses to store — because that is what decides whether any of the rest
-is trustworthy.
+**REBALANCED 2026-08-26 after a user challenge: does the script actually deliver
+the headline?** Measured, and it did not. The first draft spent 85% of its words
+on "you decide what's in it" and 10% on "memory works everywhere" — one sentence,
+two of twenty-five beats. The word "everywhere" never appeared; neither did web,
+desktop or mobile; "Cowork" appeared once behind a four-word gloss; and
+Anthropic's own stated benefit (less re-explaining) was absent. Both independent
+outlets led on the half the draft buried.
+
+The fix was structural, not cosmetic. The two halves are not separate facts —
+**the hinge that joins them is Anthropic's own line, "a fix pays off
+everywhere."** Correcting one file only matters BECAUSE the memory is
+everywhere. So: reach comes first (it is the news), control lands on top of it,
+and one sentence carries both — "fix your company's old name in that file, and
+every conversation after gets it right — in chat, and in Cowork." Reach is now
+27% of the script and seeded in the hook.
 
 ## PROMISE (S2)
 

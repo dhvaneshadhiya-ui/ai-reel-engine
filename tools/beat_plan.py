@@ -157,7 +157,13 @@ def _shot(scene: dict, shows: dict, seen: set | None = None) -> str:
     noun = "a clip" if kind == "footage" else "a screenshot"
     aid = (meta or {}).get("id")
     if seen is not None and aid and aid in seen:
+        # Name WHICH one. "the same screenshot again" is unambiguous only while
+        # a plan has one repeated asset; this reel has two interleaved, and the
+        # phrase silently stopped identifying anything (2026-08-26).
+        tag = _gist((meta or {}).get("shows", ""), 44)
         base = f"the same {noun.split()[-1]} again"
+        if tag:
+            base += f" ({tag}…)"
         if scene.get("credit"):
             base += f" — credited {scene['credit']}"
     else:

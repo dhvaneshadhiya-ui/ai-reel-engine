@@ -1,10 +1,11 @@
 {
-  "script_sha256": "980a55d50cbc9e1ad16170d7e962928d943e46aa52e73bf1aa2fe96e5c21a405",
-  "structure_sha256": "c63fb295948b664cc162260a8d9d6895ce6c3e51c3be4e15a603ad048c80d17f",
+  "script_sha256": "494e278e2ae504bc33c463c121048e1a79b3a6dc77cb5241b60feeb8f4a21b6c",
+  "structure_sha256": "131f66b379e1d2f35a8a43f32072c6518d86cffcea9bf23768897baca3ebd4d9",
   "findings": [
-    "NUMBERS: one every 16.0 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted."
+    "ABANDONED LOOP: sentence 13 steers back to something last said in sentence 4 \u2014 a 9-sentence detour, then a signpost admitting it ('Back to what it refuses to write down.'). No approved script in this repo does that. Either move the promise next to its payoff, or cut what came between; a loop the writer has to announce a return to was not held.",
+    "NUMBERS: one every 19.0 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted."
   ],
   "research_advice": [],
-  "beatPlanShots": 25,
-  "proposedAt": "2026-08-26T06:21:26+00:00"
+  "beatPlanShots": 26,
+  "proposedAt": "2026-08-26T06:30:26+00:00"
 }

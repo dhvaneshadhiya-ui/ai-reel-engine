@@ -10,7 +10,7 @@ hedged.
 
 - CLAIM: Claude's memory is now visible to the user as a readable, editable, deletable list
   TIER: official
-  SPOKEN: "Claude keeps a file on you, and now it shows you what's in it."
+  SPOKEN: "Claude keeps a file on you, and as of August 25 it's the same file everywhere you use Claude."
   SRC: https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it
   SRC: https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/
   VIA: Anthropic product announcement, 2026-08-25
@@ -18,7 +18,7 @@ hedged.
 
 - CLAIM: the announcement is dated August 25, 2026, and users can edit or delete any saved memory
   TIER: official
-  SPOKEN: "And as of August 25, you can change it, or throw it out."
+  SPOKEN: "one you can open, correct, or throw out"
   SRC: https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it
   VIA: dateline on Anthropic's own post ("Date — August 25, 2026")
 
@@ -30,7 +30,7 @@ hedged.
 
 - CLAIM: everything Claude remembers is stored as short files filed under Topics
   TIER: official
-  SPOKEN: "Because everything it knows about you is now a text file under a topic"
+  SPOKEN: "Everything it remembers is now a text file under a topic"
   SRC: https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it
   SRC: https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context
   VIA: Anthropic: "Everything Claude remembers is in a list of files under Topics in Memory settings"
@@ -43,13 +43,13 @@ hedged.
 
 - CLAIM: correcting one file propagates to every later conversation
   TIER: official
-  SPOKEN: "Correct your company's old name there, and every chat after gets it right."
+  SPOKEN: "So fix your company's old name in that file, and every conversation after gets it right"
   SRC: https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it
   VIA: Anthropic: "correct your company's old name in one file and every conversation from then on gets it right"
 
 - CLAIM: chat and Cowork now share one memory, in both directions
   TIER: official
-  SPOKEN: "And that memory stopped staying put — what Claude learns in chat, its cloud agent Cowork already has, and back again."
+  SPOKEN: "Tell it something in a chat, and Cowork — Claude's agent for real work — already knows, and it carries back."
   SRC: https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it
   SRC: https://www.engadget.com/2243753/claude-memory-now-works-across-both-chats-and-cowork-sessions/
   VIA: Anthropic: "When Cowork runs a task in the cloud, what Claude remembers from your chats is there, and vice versa"
@@ -58,13 +58,13 @@ hedged.
 
 - CLAIM: health, race, ethnicity, religious beliefs, politics and gender identity are excluded from memory by default
   TIER: official
-  SPOKEN: "Now, the subjects it leaves alone — health, race, religion, politics, gender identity — off by default."
+  SPOKEN: "Now, the subjects it leaves alone: health, race, religion, politics, gender identity."
   SRC: https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it
   VIA: Anthropic: "By default, Claude does not store topics related to personal or sensitive subject matter, like your health, race, ethnicity, religious beliefs, politics, gender identity"
 
 - CLAIM: an opt-in toggle exists, and each sensitive save shows the user a notice
   TIER: official
-  SPOKEN: "But there's a switch if you want them in, and a notice each time it saves one."
+  SPOKEN: "There's a switch if you want them in, and a notice each time it saves one."
   SRC: https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it
   VIA: Anthropic: "With the setting turned on, each time Claude saves something on one of these topics to memory, you'll see a notice"
 
@@ -84,11 +84,19 @@ hedged.
 
 - CLAIM: memory is on by default on Free, Pro and Max; Team and Enterprise admins control it
   TIER: official
-  SPOKEN: "It's all on by default on Free, Pro and Max. On Team and Enterprise, your admin decides."
+  SPOKEN: "On by default on Free, Pro and Max — web, desktop, mobile. On Team and Enterprise, your admin decides."
   SRC: https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it
   SRC: https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/
   VIA: Anthropic: "Memory is on by default on Free, Pro and Max plans across web, desktop, and mobile... For Team and Enterprise, admins control availability"
   VIA: TechCrunch reporting on the same announcement
+
+- CLAIM: the point of one shared memory is that the user stops re-explaining themselves
+  TIER: official
+  SPOKEN: "Which is the point: you stop re-explaining yourself."
+  SRC: https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it
+  SRC: https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/
+  VIA: Anthropic: "leading to less re-explaining and more picking up where you left off" and "wherever you work with Claude, it starts from what it already knows about you"
+  VIA: TechCrunch, which describes the previous split-memory experience as the thing being fixed
 
 ## SEARCHED
 

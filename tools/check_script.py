@@ -473,6 +473,52 @@ def check(text: str, shape: str | None = None) -> list[str]:
             "rejected its sell; the house voice reports. Say what it does and "
             "let the number carry the excitement.")
 
+    # 5d. ABANDONED LOOP — the script navigating its own structure aloud.
+    #
+    # DERIVED, not guessed (2026-08-25, from the whole approved corpus): a
+    # promise deferred a long way is a GOOD open loop — iphone18-colors holds
+    # one for 11 sentences and never mentions it again until the payoff. What
+    # no approved script does is say "back to X" after wandering away from X.
+    # claude-memory-everywhere promised "the part that matters most: some of
+    # it Claude refuses to write down", spent nine sentences on unrelated
+    # features, then wrote "Back to what it refuses to write down." The
+    # sentence is the writer admitting the detour on the record, and the
+    # viewer feels it as being lost.
+    #
+    # Measured across 13 scripts: approved ones return to nothing detectable
+    # (a forward reference or a two-sentence aside); the weak one returns 9
+    # sentences. The threshold sits at 5 — past a short, obviously deliberate
+    # aside, and well under the observed failure.
+    NAVBACK = ("back to", "as i said", "as mentioned", "returning to",
+               "like i said", "to recap")
+    _stop = {"the", "a", "an", "and", "or", "but", "of", "to", "in", "it",
+             "is", "was", "that", "this", "those", "these", "you", "your",
+             "what", "which", "now", "some", "its", "on", "off", "by", "for",
+             "they", "them", "then", "so"}
+
+    def _content(text: str) -> set[str]:
+        return {w for w in re.findall(r"[a-z']+", text.lower())
+                if w not in _stop and len(w) > 2}
+
+    for i, sentence in enumerate(ss):
+        low_s = sentence.lower()
+        # "going back to 2019" is a date, not a navigation
+        if not any(re.search(rf"{n}(?!\s+\d)", low_s) for n in NAVBACK):
+            continue
+        key = _content(sentence)
+        for j in range(i - 1, -1, -1):
+            if len(key & _content(ss[j])) >= 2:
+                if i - j >= 5:
+                    notes.append(
+                        f"ABANDONED LOOP: sentence {i + 1} steers back to "
+                        f"something last said in sentence {j + 1} — a "
+                        f"{i - j}-sentence detour, then a signpost admitting "
+                        f"it ({sentence[:48]!r}). No approved script in this "
+                        "repo does that. Either move the promise next to its "
+                        "payoff, or cut what came between; a loop the writer "
+                        "has to announce a return to was not held.")
+                break
+
     # 6. NUMBER DENSITY — also the playbook's own rule.
     nums = len(re.findall(r"\$?\d[\d.,]*", flat))
     per = len(ss) / nums if nums else 999
@@ -607,6 +653,30 @@ def selftest() -> int:
         clean = [n for n in _notes_of(approved_path.read_text())
                  if n.startswith("HYPE")]
         check_("HYPE silent on the approved script", not clean)
+    # ABANDONED LOOP: the fixture is the real 2026-08-25 draft that prompted
+    # the check — a promise, a nine-sentence detour, then a signpost back.
+    loopy = ("Claude keeps a file on you. "
+             "But here's the part that matters most: some of it Claude "
+             "refuses to write down. "
+             "Everything it knows is a text file under a topic. "
+             "A fix only has to happen once. "
+             "Correct your company's old name there. "
+             "Memory stopped staying put. "
+             "The subjects it leaves alone are off by default. "
+             "There's a switch if you want them in. "
+             "It sends a notice each time. "
+             "Back to what it refuses to write down.")
+    fired = [n for n in _notes_of(loopy) if n.startswith("ABANDONED LOOP")]
+    check_("ABANDONED LOOP fires on the real weak draft", bool(fired))
+    tight = ("Claude keeps a file on you. "
+             "Back to that file in a second. "
+             "First, what is in it.")
+    check_("a two-sentence aside does NOT trip it",
+           not [n for n in _notes_of(tight) if n.startswith("ABANDONED LOOP")])
+    if approved_path.exists():
+        check_("ABANDONED LOOP silent on the approved script",
+               not [n for n in _notes_of(approved_path.read_text())
+                    if n.startswith("ABANDONED LOOP")])
     print("\n  self-test PASSED\n" if ok else "\n  self-test FAILED\n")
     return 0 if ok else 1
 
