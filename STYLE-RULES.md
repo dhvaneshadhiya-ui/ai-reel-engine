@@ -4915,3 +4915,39 @@ it enough to justify the trade — the best alternative (CosyVoice, 3.00 vs
 concatenation seams, an untested HeyGen lip-sync path and re-derived anchors,
 for a gain nobody would hear. Write shorter hook sentences instead, and
 revisit the whole question once the re-clone exists.
+
+## 2026-08-26 — the short-sentence hook, and a caption bug it exposed
+
+**The rewrite worked for its stated purpose.** Hook split from one 16-word
+compound sentence into three (7 / 3 / 8 words), regenerated, and the stress
+inversion is GONE in the real audio: `'the'` 0.14s against `'reading'` 0.30s,
+where the shipped version had `'the'` 0.34s > `'reading'` 0.28s. The fumble
+the user heard was a script problem, and the script fixed it.
+
+**With an honest cost:** overall pitch variation fell 2.83 -> 2.22. Short
+declaratives give three small intonation arcs where a long sentence gives one
+big one. The opening no longer stumbles; the read is marginally more even.
+Worth it for the specific complaint, and it changes nothing about the clone
+being the real ceiling.
+
+**Keeping the open loop nearly got lost.** The first rewrite —
+"...mostly the reading. Not the writing. And the top fix barely helps." —
+reads well and KILLED the loop: the original's "here's why ... barely helps"
+was a promise paid off thirty seconds later at "that's why it barely helps."
+Dropping "here's why" turned a promise into a statement and the ending would
+have summarised instead of arriving. Caught by `open_loop`, fixed by keeping
+both halves inside the short sentences.
+
+**And it exposed a caption bug that would have shipped a broken reel.**
+Multi-word `caption_corrections` were applied to the CHUNK text AFTER words
+are grouped three at a time. That works only while a phrase happens to sit
+inside one chunk. The new read re-chunked as `"see it, CC"` / `"usage
+charts, it"`, so `"cc usage" -> "ccusage"` matched nothing and **three of the
+four tool names vanished from the captions of a reel whose whole job is
+naming those tools** — silently, with every gate green.
+
+Fixed at the word level: a matching run now collapses into ONE caption word
+spanning the run's timing, so a name cannot be split by any future chunk
+boundary. Same failure shape as the anchor matcher's compound splits — an
+arbitrary grouping deciding what counts as adjacent. Regenerating a voice
+moves every boundary, so this would have recurred on every re-render.
