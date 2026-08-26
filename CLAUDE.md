@@ -313,6 +313,47 @@ The skills DO travel: `.claude/skills/` holds real directories, not symlinks.
 They pointed at `~/Faceless YouTube Channel/` until 2026-08-14, which would
 have silently broken on any other machine.
 
+## Hooks — the only thing here that fires WITHOUT being remembered
+
+`.claude/settings.json` + `.claude/hooks/`, added 2026-08-26. Everything else
+in this repo can, at best, PRINT a reminder and hope the reader acts on it.
+That is how the humanizer sat documented for weeks and ran zero times. A hook
+is different: Claude Code executes it and injects its output as an
+instruction, with nobody needing to remember anything.
+
+- **`session_start.py`** (SessionStart) — runs `doctor.py` and reports it.
+  "First two commands, every session" was prose, and prose is skippable; a
+  missing dependency once disabled the frame checks for weeks.
+- **`reel_precedence.py`** (UserPromptSubmit) — on a reel-shaped prompt,
+  injects the precedence: `news-reel` owns the job, the HyperFrames router's
+  "mandatory entry point" claim is FALSE here, approval is blocking, and the
+  user runs no terminal commands.
+- **`skill_cue.py`** (PostToolUse on Bash) — reads `SKILL CUE:` out of our own
+  tools' stdout and turns it into an instruction naming the skill.
+  **This is the thing that actually triggers a skill.**
+- **`guard_bypass.py`** (PreToolUse on Bash) — denies the three documented
+  bypasses: a direct remotion render (skips the gates), a HyperFrames pipeline
+  command (skips everything), and hard-reset / force-push (the merge-never-
+  reset rule).
+
+**Be precise about what "auto-triggered" means.** Code cannot call the Skill
+tool. What a hook CAN do is put a naming instruction in front of the agent at
+the exact moment the need appears, which is the whole difference between a
+rule that holds and a rule that is merely written down. To make a new skill
+fire, print a `SKILL CUE:` line **with the skill name in backticks** — the
+hook parses backticks and discards any name that is not an installed skill.
+
+**Both guards learned the same lesson on the same day, three times.**
+`guard_bypass` blocked the commit writing its own test (the test quotes the
+commands it expects to block), then blocked this very section (a markdown
+table whose pipes and backticks split into perfect fake commands);
+`skill_cue` fired on a `sed` that was only displaying a cue. All three are one
+bug: text ABOUT a command is not a command. Matching is now positional and
+heredoc bodies are treated as data. `tools/test_hooks.py` (55 checks, run by
+doctor) pins every one of those cases, and `wiring_audit.py` fails if a hook
+script is not named in `settings.json` — an unwired hook silently removes a
+trigger while looking like nothing is wrong.
+
 ## Which skill — this precedence is binding
 
 Skills live in `.claude/skills/`, and their trigger descriptions OVERLAP.

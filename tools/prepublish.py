@@ -93,8 +93,8 @@ def main() -> int:
     if any("packaging" in f for f in failed):
         print("\n  SKILL CUE: packaging is written with the `social` and "
               "`caption-and-hashtags`\n  skills (and `youtube-seo` for the "
-              "Shorts title/description). Nothing\n  invokes them — naming "
-              "them here is the trigger.")
+              "Shorts title/description).\n  The PostToolUse hook turns this "
+              "line into an instruction, so it fires\n  on its own.")
 
     print("\n-- judgement (answer these; nothing here can) --")
     group = None

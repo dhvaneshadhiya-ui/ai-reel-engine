@@ -415,6 +415,25 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "capture defaults", str(e))
     problems.append("capture")
 
+# The HOOKS (2026-08-26). Hooks are the ONLY mechanism that can make a skill
+# run without a human remembering to — everything else in this repo can print
+# a reminder at best. A hook that quietly stops firing therefore removes a
+# trigger while looking exactly like nothing being wrong, which is the same
+# failure shape as the humanizer that was documented for weeks and never ran.
+try:
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "tools/test_hooks.py")],
+        capture_output=True, text=True, timeout=180)
+    if r.returncode == 0:
+        report(OK, "claude hooks", r.stdout.strip().splitlines()[-1])
+    else:
+        report(BAD, "claude hooks", "a hook stopped firing")
+        print(r.stdout[-900:])
+        problems.append("hooks")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "claude hooks", str(e))
+    problems.append("hooks")
+
 # The retention join (2026-08-21) — the tool that turns a published reel's
 # curve into per-scene-type numbers. Its math is exactly the kind of thing
 # that rots silently: a broken join would keep printing plausible tables.

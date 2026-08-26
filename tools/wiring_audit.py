@@ -53,6 +53,17 @@ def main() -> int:
     docs_blob = "\n".join((ROOT / d).read_text(errors="ignore")
                           for d in DOCS if (ROOT / d).exists())
 
+    # HOOKS (2026-08-26). A hook script that settings.json does not name is
+    # exactly the bug this tool exists for, one folder over: present,
+    # plausible, never executed. And a hook is the only thing here that can
+    # fire a SKILL, so an unwired one silently removes a trigger.
+    hooks_dir = ROOT / ".claude" / "hooks"
+    settings_f = ROOT / ".claude" / "settings.json"
+    settings_txt = settings_f.read_text(errors="ignore") if settings_f.exists() else ""
+    unwired = [h.name for h in sorted(hooks_dir.glob("*.py"))
+               if h.name not in settings_txt] if hooks_dir.exists() else []
+    hook_count = len(list(hooks_dir.glob("*.py"))) if hooks_dir.exists() else 0
+
     auto, manual, orphan, legacy = [], [], [], []
     for p in files:
         name = p.name
@@ -86,6 +97,15 @@ def main() -> int:
             print(f"\n  -- {label} --")
             for n in group:
                 print(f"     {n}")
+    print(f"\n  HOOKS  {hook_count:3}  in .claude/hooks, "
+          f"{hook_count - len(unwired)} wired into settings.json")
+    if unwired:
+        print("\n  UNWIRED HOOKS — present but never fired:")
+        for n in unwired:
+            print(f"     {n}")
+        print()
+        return 1
+
     if orphan:
         print("\n  ORPHANS — each is either dead code or a silent gap:")
         for n in orphan:

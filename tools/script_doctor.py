@@ -77,10 +77,10 @@ def main() -> int:
     else:
         print("\n  nothing to flag on shape, tics, reveal handling or "
               "certainty.")
-    # SKILL CUES — a skill cannot be invoked by code, so the next best thing
-    # is naming it at the exact moment its finding appears. The humanizer had
-    # a stated moment in CLAUDE.md for weeks and still never ran once
-    # (2026-08-26); a cue attached to the finding is what a doc line was not.
+    # SKILL CUES — code cannot invoke a skill directly, but .claude/hooks/
+    # skill_cue.py reads these lines out of our stdout and injects them as an
+    # instruction, so naming a skill here DOES fire it. Keep the name in
+    # backticks: that is what the hook parses.
     blob = " ".join(findings).lower()
     cues = []
     if "no open loop" in blob or "opening" in blob:

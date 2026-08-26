@@ -5041,3 +5041,42 @@ harness before reporting the finding.
 **One real open item:** claude-eating-tokens is rendered but has no
 `packaging.md`, so `prepublish` correctly refuses it. That is the last step
 before it can be posted.
+
+## 2026-08-26 — hooks: skills now fire without anyone remembering
+
+The user caught a real walk-back. Earlier in the day I said skills
+auto-trigger; by the audit I had redefined "auto" as "a tool prints a line
+naming the skill, and the agent notices." That is not a trigger, it is a
+reminder, and this repo's whole history says reminders get skipped.
+
+**What was actually missing: `.claude/settings.json` did not exist.** No hooks,
+project-level or user-level, had ever been configured. Claude Code has a real
+mechanism for running something at a defined moment and injecting the result
+as an instruction, and the engine had never used it. That is the gap, and it
+is now closed:
+
+| Hook | Fires on | Makes automatic |
+|---|---|---|
+| `session_start.py` | SessionStart | `doctor.py` — the "first two commands" prose rule |
+| `reel_precedence.py` | UserPromptSubmit | `news-reel` precedence + the anti-hijack rule |
+| `skill_cue.py` | PostToolUse (Bash) | reads our `SKILL CUE:` lines, names the skill as an instruction |
+| `guard_bypass.py` | PreToolUse (Bash) | denies direct remotion render, HyperFrames pipeline cmds, hard-reset/force-push |
+
+**Proof, not assertion:** `skill_cue` fired live in the session that wrote it,
+on a real `prepublish` run, and correctly pulled `social`,
+`caption-and-hashtags` and `youtube-seo` off wrapped lines. Hooks load without
+a session restart.
+
+**The guards bit their own author three times, all the same bug.**
+`guard_bypass` blocked the commit writing its own test (the test quotes the
+commands it blocks); `skill_cue` fired on a `sed` that was only DISPLAYING a
+cue; `guard_bypass` then blocked the CLAUDE.md section documenting itself,
+because a markdown table's pipes and backticks split into flawless fake
+commands. One lesson: **text about a command is not a command.** Matching is
+positional now, heredoc bodies are data, and inspection commands cannot raise
+a cue. Every one of those three incidents is a case in `tools/test_hooks.py`.
+
+**Guarding the guard.** 55 checks in `test_hooks.py`, run by doctor;
+`wiring_audit.py` now fails if a hook script is not named in settings.json,
+because an unwired hook removes a trigger while looking exactly like nothing
+is wrong — the identical failure shape as the tools it was built to find.
