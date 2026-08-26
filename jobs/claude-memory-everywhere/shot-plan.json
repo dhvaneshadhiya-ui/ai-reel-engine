@@ -1,0 +1,942 @@
+{
+ "format": "news",
+ "emphasis": [
+  "everywhere",
+  "Cowork",
+  "re-explaining",
+  "topic",
+  "throw out",
+  "one file",
+  "default",
+  "switch",
+  "refuses",
+  "never",
+  "Free",
+  "key"
+ ],
+ "caption_corrections": {
+  "co work": "Cowork",
+  "cowork": "Cowork",
+  "co-work": "Cowork",
+  "claude": "Claude",
+  "anthropic": "Anthropic",
+  "social security": "Social Security",
+  "i ds": "IDs",
+  "id s": "IDs",
+  "re explaining": "re-explaining"
+ },
+ "shots": [
+  {
+   "start_phrase": "Claude keeps a file",
+   "asset_id": "ui-topics-list",
+   "tier": "official",
+   "scene": {
+    "type": "split",
+    "topSrc": "assets/claude-memory-everywhere/ui-topics-list.png",
+    "bottomSrc": "assets/claude-memory-everywhere/avatar-master.mp4",
+    "topFocusX": 0.42,
+    "covers": "keeps a file on you",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "headline": {
+     "lines": [
+      {
+       "text": "CLAUDE KEEPS",
+       "kind": "label",
+       "at": 0.15
+      },
+      {
+       "text": "A FILE ON YOU",
+       "kind": "headline",
+       "at": 0.55
+      }
+     ],
+     "y": 0.07
+    },
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "vol": 0.17,
+      "at": 0.05
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "and as of August",
+   "asset_id": "blog-head",
+   "tier": "official",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/claude-memory-everywhere/blog-head.png",
+    "srcWidth": 1080,
+    "srcHeight": 2280,
+    "backdrop": "cream",
+    "covers": "as of August 25",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "highlights": [
+     {
+      "at": 0.6,
+      "x": 150,
+      "y": 1455,
+      "w": 470,
+      "h": 75
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "it's the same file",
+   "asset_id": "blog-intro",
+   "tier": "official",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/claude-memory-everywhere/blog-intro.png",
+    "srcWidth": 1080,
+    "srcHeight": 1940,
+    "lines": [
+     {
+      "at": 0.3,
+      "x": 90,
+      "y": 228,
+      "w": 930,
+      "h": 70
+     },
+     {
+      "at": 0.8,
+      "x": 90,
+      "y": 318,
+      "w": 930,
+      "h": 70
+     },
+     {
+      "at": 1.25,
+      "x": 90,
+      "y": 411,
+      "w": 700,
+      "h": 70
+     }
+    ],
+    "covers": "the same file everywhere you use Claude",
+    "creditOnScreen": true,
+    "credit": "Anthropic"
+   }
+  },
+  {
+   "start_phrase": "Tell it something in",
+   "asset_id": "blog-onememory",
+   "tier": "official",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/claude-memory-everywhere/blog-onememory.png",
+    "srcWidth": 1080,
+    "srcHeight": 2100,
+    "lines": [
+     {
+      "at": 0.4,
+      "x": 90,
+      "y": 466,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 1.0,
+      "x": 90,
+      "y": 559,
+      "w": 930,
+      "h": 68
+     }
+    ],
+    "covers": "Tell it something in a chat",
+    "creditOnScreen": true,
+    "credit": "Anthropic"
+   }
+  },
+  {
+   "start_phrase": "and Cowork",
+   "asset_id": "blog-onememory",
+   "tier": "official",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/claude-memory-everywhere/blog-onememory.png",
+    "srcWidth": 1080,
+    "srcHeight": 2100,
+    "bg": "cream",
+    "focus": {
+     "x": 60,
+     "y": 60,
+     "w": 990,
+     "h": 480
+    },
+    "covers": "Cowork \u2014 Claude's agent for real work",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "crop": true,
+    "annotations": [
+     {
+      "kind": "underline",
+      "at": 0.7,
+      "x": 88,
+      "y": 300,
+      "w": 600,
+      "h": 80
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "already knows",
+   "asset_id": "blog-onememory",
+   "tier": "official",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/claude-memory-everywhere/blog-onememory.png",
+    "srcWidth": 1080,
+    "srcHeight": 2100,
+    "lines": [
+     {
+      "at": 0.0,
+      "x": 90,
+      "y": 466,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 0.0,
+      "x": 90,
+      "y": 559,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 0.35,
+      "x": 90,
+      "y": 832,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 0.8,
+      "x": 90,
+      "y": 922,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 1.2,
+      "x": 90,
+      "y": 1015,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 1.6,
+      "x": 90,
+      "y": 1105,
+      "w": 700,
+      "h": 68
+     }
+    ],
+    "covers": "already knows, and it carries back",
+    "creditOnScreen": true,
+    "credit": "Anthropic"
+   }
+  },
+  {
+   "start_phrase": "And it's writing as",
+   "asset_id": "blog-live",
+   "tier": "official",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/claude-memory-everywhere/blog-live.png",
+    "srcWidth": 1080,
+    "srcHeight": 2400,
+    "bg": "cream",
+    "focus": {
+     "x": 60,
+     "y": 40,
+     "w": 990,
+     "h": 660
+    },
+    "crop": true,
+    "covers": "it's writing as you talk",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "annotations": [
+     {
+      "kind": "underline",
+      "at": 0.45,
+      "x": 88,
+      "y": 70,
+      "w": 900,
+      "h": 62
+     },
+     {
+      "kind": "underline",
+      "at": 0.85,
+      "x": 88,
+      "y": 160,
+      "w": 900,
+      "h": 62
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "vol": 0.14,
+      "at": 0.46
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "say your deadline moved",
+   "asset_id": "blog-live",
+   "tier": "official",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/claude-memory-everywhere/blog-live.png",
+    "srcWidth": 1080,
+    "srcHeight": 2400,
+    "covers": "your deadline moved to September",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "lines": [
+     {
+      "at": 0.25,
+      "x": 90,
+      "y": 342,
+      "w": 930,
+      "h": 62
+     },
+     {
+      "at": 0.7,
+      "x": 90,
+      "y": 432,
+      "w": 930,
+      "h": 62
+     },
+     {
+      "at": 1.1,
+      "x": 90,
+      "y": 525,
+      "w": 930,
+      "h": 62
+     },
+     {
+      "at": 1.5,
+      "x": 90,
+      "y": 615,
+      "w": 700,
+      "h": 62
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Which is the point",
+   "asset_id": "avatar-master",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/claude-memory-everywhere/avatar-master.mp4",
+    "zoomDir": "in",
+    "zoom": 1.0,
+    "covers": "you stop re-explaining yourself"
+   }
+  },
+  {
+   "start_phrase": "And now you can see",
+   "asset_id": "ui-topic-open",
+   "tier": "official",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/claude-memory-everywhere/ui-topic-open.png",
+    "srcWidth": 2048,
+    "srcHeight": 1152,
+    "bg": "cream",
+    "focus": {
+     "x": 380,
+     "y": 280,
+     "w": 1290,
+     "h": 420
+    },
+    "covers": "a text file under a topic",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "crop": true
+   }
+  },
+  {
+   "start_phrase": "one you can open",
+   "asset_id": "ui-topics-list",
+   "tier": "official",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/claude-memory-everywhere/ui-topics-list.png",
+    "srcWidth": 2048,
+    "srcHeight": 1152,
+    "bg": "cream",
+    "focus": {
+     "x": 250,
+     "y": 380,
+     "w": 1670,
+     "h": 670
+    },
+    "covers": "open, correct, or throw out",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "crop": true,
+    "annotations": [
+     {
+      "kind": "box",
+      "at": 0.55,
+      "x": 1826,
+      "y": 468,
+      "w": 72,
+      "h": 62
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx2/mouse-click-01.mp3",
+      "vol": 0.16,
+      "at": 0.57
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Half Marathon Training",
+   "asset_id": "ui-topics-list",
+   "tier": "official",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/claude-memory-everywhere/ui-topics-list.png",
+    "srcWidth": 2048,
+    "srcHeight": 1152,
+    "bg": "cream",
+    "focus": {
+     "x": 140,
+     "y": 390,
+     "w": 545,
+     "h": 640
+    },
+    "covers": "Half Marathon Training, Client Pitch, Childcare Schedule",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "crop": true,
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "vol": 0.15,
+      "at": 0.2
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "So fix your company's",
+   "asset_id": "ui-topic-open",
+   "tier": "official",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/claude-memory-everywhere/ui-topic-open.png",
+    "srcWidth": 2048,
+    "srcHeight": 1152,
+    "bg": "cream",
+    "focus": {
+     "x": 363,
+     "y": 87,
+     "w": 1322,
+     "h": 978
+    },
+    "covers": "fix your company's old name in that file",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "crop": true,
+    "annotations": [
+     {
+      "kind": "underline",
+      "at": 0.5,
+      "x": 410,
+      "y": 947,
+      "w": 1000,
+      "h": 72
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "and every conversation after",
+   "asset_id": "blog-live",
+   "tier": "official",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/claude-memory-everywhere/blog-live.png",
+    "srcWidth": 1080,
+    "srcHeight": 2400,
+    "lines": [
+     {
+      "at": 0.3,
+      "x": 90,
+      "y": 1820,
+      "w": 930,
+      "h": 70
+     },
+     {
+      "at": 0.75,
+      "x": 90,
+      "y": 1910,
+      "w": 930,
+      "h": 70
+     },
+     {
+      "at": 1.15,
+      "x": 90,
+      "y": 2003,
+      "w": 930,
+      "h": 70
+     },
+     {
+      "at": 1.55,
+      "x": 90,
+      "y": 2093,
+      "w": 600,
+      "h": 70
+     }
+    ],
+    "covers": "every conversation after gets it right",
+    "creditOnScreen": true,
+    "credit": "Anthropic"
+   }
+  },
+  {
+   "start_phrase": "But here's the part",
+   "asset_id": "avatar-master",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/claude-memory-everywhere/avatar-master.mp4",
+    "zoomDir": "in",
+    "zoom": 1.0,
+    "covers": "some of it Claude refuses to write down",
+    "_note": "one facecam beat for the whole sentence. No screenshot honestly illustrates 'refuses to write down' without spoiling the payoff list eight beats later; a take spoken to camera is the honest picture for a take. Check its length in the editor's pass."
+   }
+  },
+  {
+   "start_phrase": "the subjects it stays",
+   "asset_id": null,
+   "scene": {
+    "type": "wordcascade",
+    "bg": "cream",
+    "covers": "the subjects it stays out of",
+    "words": [
+     {
+      "text": "HEALTH",
+      "style": "caps",
+      "at": 0.55
+     },
+     {
+      "text": "RACE",
+      "style": "caps",
+      "at": 1.0
+     },
+     {
+      "text": "RELIGION",
+      "style": "caps",
+      "at": 1.42
+     },
+     {
+      "text": "POLITICS",
+      "style": "caps",
+      "at": 1.85
+     },
+     {
+      "text": "GENDER IDENTITY",
+      "style": "caps",
+      "at": 2.3,
+      "accent": true
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "vol": 0.15,
+      "at": 0.55
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Off by default",
+   "asset_id": "blog-sensitive",
+   "tier": "official",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/claude-memory-everywhere/blog-sensitive.png",
+    "srcWidth": 1080,
+    "srcHeight": 2570,
+    "lines": [
+     {
+      "at": 0.2,
+      "x": 90,
+      "y": 382,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 0.65,
+      "x": 90,
+      "y": 472,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 1.05,
+      "x": 90,
+      "y": 565,
+      "w": 930,
+      "h": 68
+     }
+    ],
+    "covers": "Off by default",
+    "creditOnScreen": true,
+    "credit": "Anthropic"
+   }
+  },
+  {
+   "start_phrase": "There's a switch if",
+   "asset_id": "ui-settings-top",
+   "tier": "official",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/claude-memory-everywhere/ui-settings-top.png",
+    "srcWidth": 1100,
+    "srcHeight": 382,
+    "bg": "cream",
+    "focus": {
+     "x": 0,
+     "y": 0,
+     "w": 1100,
+     "h": 382
+    },
+    "covers": "a switch if you want them in",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "crop": true,
+    "annotations": [
+     {
+      "kind": "box",
+      "at": 0.6,
+      "x": 978,
+      "y": 286,
+      "w": 66,
+      "h": 44
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "vol": 0.15,
+      "at": 0.61
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "and a notice each",
+   "asset_id": "blog-sensitive",
+   "tier": "official",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/claude-memory-everywhere/blog-sensitive.png",
+    "srcWidth": 1080,
+    "srcHeight": 2570,
+    "lines": [
+     {
+      "at": 0.3,
+      "x": 90,
+      "y": 1825,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 0.75,
+      "x": 90,
+      "y": 1918,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 1.15,
+      "x": 90,
+      "y": 2008,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 1.55,
+      "x": 90,
+      "y": 2098,
+      "w": 600,
+      "h": 68
+     }
+    ],
+    "covers": "a notice each time it saves one",
+    "creditOnScreen": true,
+    "credit": "Anthropic"
+   }
+  },
+  {
+   "start_phrase": "Back to what it",
+   "asset_id": "avatar-master",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/claude-memory-everywhere/avatar-master.mp4",
+    "zoomDir": "in",
+    "zoom": 1.0,
+    "covers": "refuses to write down",
+    "sfx": [
+     {
+      "src": "sfx/Riser.MP3",
+      "vol": 0.16,
+      "at": 0.55
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Social Security numbers",
+   "asset_id": null,
+   "scene": {
+    "type": "checklist",
+    "bg": "black",
+    "headline": "NEVER STORED",
+    "stagger": 0.5,
+    "covers": "Social Security numbers, government IDs",
+    "rows": [
+     {
+      "label": "Social Security numbers",
+      "state": "no"
+     },
+     {
+      "label": "Government ID numbers",
+      "state": "no"
+     },
+     {
+      "label": "Criminal history",
+      "state": "no"
+     },
+     {
+      "label": "Immigration status",
+      "state": "no"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "vol": 0.16,
+      "at": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Those never get saved",
+   "asset_id": "blog-refused",
+   "tier": "official",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/claude-memory-everywhere/blog-refused.png",
+    "srcWidth": 1080,
+    "srcHeight": 1240,
+    "lines": [
+     {
+      "at": 0.3,
+      "x": 90,
+      "y": 312,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 0.75,
+      "x": 90,
+      "y": 402,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 1.15,
+      "x": 90,
+      "y": 492,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 1.55,
+      "x": 90,
+      "y": 585,
+      "w": 930,
+      "h": 68
+     }
+    ],
+    "covers": "never get saved either way",
+    "creditOnScreen": true,
+    "credit": "Anthropic"
+   }
+  },
+  {
+   "start_phrase": "and Claude tells you",
+   "asset_id": "blog-refused",
+   "tier": "official",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/claude-memory-everywhere/blog-refused.png",
+    "srcWidth": 1080,
+    "srcHeight": 1240,
+    "lines": [
+     {
+      "at": 0.3,
+      "x": 90,
+      "y": 858,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 0.75,
+      "x": 90,
+      "y": 951,
+      "w": 930,
+      "h": 68
+     },
+     {
+      "at": 1.15,
+      "x": 90,
+      "y": 1041,
+      "w": 930,
+      "h": 68
+     }
+    ],
+    "covers": "Claude tells you when it refused",
+    "creditOnScreen": true,
+    "credit": "Anthropic"
+   }
+  },
+  {
+   "start_phrase": "On by default",
+   "asset_id": "blog-plans",
+   "tier": "official",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/claude-memory-everywhere/blog-plans.png",
+    "srcWidth": 1080,
+    "srcHeight": 1500,
+    "bg": "cream",
+    "focus": {
+     "x": 60,
+     "y": 60,
+     "w": 990,
+     "h": 440
+    },
+    "covers": "Free, Pro and Max, across web, desktop and mobile",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "crop": true,
+    "annotations": [
+     {
+      "kind": "underline",
+      "at": 0.5,
+      "x": 88,
+      "y": 238,
+      "w": 900,
+      "h": 68
+     },
+     {
+      "kind": "underline",
+      "at": 0.9,
+      "x": 88,
+      "y": 331,
+      "w": 900,
+      "h": 68
+     },
+     {
+      "kind": "underline",
+      "at": 1.3,
+      "x": 88,
+      "y": 421,
+      "w": 560,
+      "h": 68
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "On Team and Enterprise",
+   "asset_id": "blog-plans",
+   "tier": "official",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/claude-memory-everywhere/blog-plans.png",
+    "srcWidth": 1080,
+    "srcHeight": 1500,
+    "bg": "cream",
+    "focus": {
+     "x": 60,
+     "y": 950,
+     "w": 990,
+     "h": 450
+    },
+    "covers": "your admin decides",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "crop": true
+   }
+  },
+  {
+   "start_phrase": "The file on you",
+   "asset_id": "avatar-master",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/claude-memory-everywhere/avatar-master.mp4",
+    "zoomDir": "out",
+    "zoom": 1.0,
+    "covers": "didn't go away"
+   }
+  },
+  {
+   "start_phrase": "You just got the",
+   "asset_id": "ui-topics-list",
+   "tier": "official",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/claude-memory-everywhere/ui-topics-list.png",
+    "srcWidth": 2048,
+    "srcHeight": 1152,
+    "bg": "cream",
+    "focus": {
+     "x": 256,
+     "y": 90,
+     "w": 1578,
+     "h": 970
+    },
+    "covers": "You just got the key",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "crop": true,
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "vol": 0.14,
+      "at": 0.0
+     }
+    ]
+   }
+  }
+ ],
+ "measuredWps": 2.95,
+ "_measuredWps_note": "measured off THIS reel's own v1 master (9aeea702, 2026-08-26): 199 script words spoken in 67.50s. Same voice, same speed 1.12, same script style \u2014 the closest possible estimator for v2, which is the same script plus 32 words of the same kind."
+}

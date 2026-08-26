@@ -1498,6 +1498,55 @@ export const CommentCta: React.FC<{ scene: Extract<Scene, { type: "commentcta" }
     config: { damping: 14, stiffness: 220 },
     durationInFrames: DUR.base,
   });
+  // "keyword" variant — the ai-tools corpus CTA (formats/ai-tools.md):
+  // verb-first keyword pop over the face, no simulated comment UI. The verb
+  // whips in first, the keyword lands bigger under it, and the pair keeps a
+  // low-amplitude idle pulse (nothing static, going-viral rule).
+  if (scene.variant === "keyword") {
+    // MEASURED from the user's reference (fR8AkVkuM18, 2026-08-25): the
+    // keyword is ONE word in neon rgb(226,254,14), cap height 150px at
+    // 1080x1920 (font ~207), centred at 67% of frame height, and it PERSISTS
+    // while the ordinary captions keep running above it. No "COMMENT" label
+    // stacked over it, no question card, no simulated comment field — the
+    // spoken line and the burned-in captions already say "comment X".
+    //
+    // The first pass of this variant stacked COMMENT above the keyword and
+    // suppressed the captions, which made the last beat a title card. The
+    // reference keeps the reel's own caption rhythm to the final frame.
+    const popP = spring({
+      frame: frame - Math.round(growAt * fps),
+      fps,
+      config: SPRING.pop,
+      durationInFrames: 16,
+    });
+    // Nothing static (going-viral): a low-amplitude breath, never a settle.
+    const idle = 1 + Math.sin(t * 2.1) * 0.008;
+    return (
+      <AbsoluteFill style={{ background: "#000", fontFamily: SANS }}>
+        <Face src={scene.src} from={scene.from} focusX={scene.focusX} />
+        {popP > 0.02 && (
+          <div
+            style={{
+              position: "absolute",
+              top: 1286 - 104,          // cap centred on the measured 67%
+              width: "100%",
+              textAlign: "center",
+              fontWeight: 900,
+              fontSize: 207,
+              lineHeight: 1,
+              letterSpacing: "-0.01em",
+              color: "rgb(226,254,14)",
+              textShadow: "0 6px 26px rgba(0,0,0,0.55)",
+              transform: `scale(${(0.55 + 0.45 * popP) * idle}) `
+                + `translateY(${(1 - popP) * 70}px)`,
+            }}
+          >
+            {keyword}
+          </div>
+        )}
+      </AbsoluteFill>
+    );
+  }
   return (
     <AbsoluteFill style={{ background: "#000", fontFamily: SANS }}>
       <Face src={scene.src} from={scene.from} focusX={scene.focusX} />

@@ -54,7 +54,7 @@ for (let i = 0; i < rest.length; i++) {
   const a = rest[i];
   if (!a.startsWith("--")) usage();
   const key = a.slice(2);
-  const boolFlags = new Set(["full", "mobile", "desktop"]);
+  const boolFlags = new Set(["full", "mobile", "desktop", "no-cursor"]);
   // --tier and --desktop-reason take VALUES, so they must not be bool flags.
   if (boolFlags.has(key)) {
     flags[key] = true;
@@ -382,10 +382,11 @@ async function centerOf(page, selector) {
 
 /**
  * Normalize a raw script entry. Times are seconds; px/x/y are authored in
- * UNSCALED css px of the page (the numbers you would use at --scale 1) and are
- * multiplied by --scale here because the recording viewport is zoomed.
- * Selector targets are resolved lazily at the action's start frame (post-scroll
- * layout), so they need no adjustment.
+ * css px of the page (the numbers you would use at --scale 1) and are used
+ * AS-IS: since 2026-08-25 the recording viewport is real CSS size with
+ * deviceScaleFactor carrying the detail, so mouse, scroll and selector
+ * coordinates all live in one space. Selector targets are resolved lazily at
+ * the action's start frame (post-scroll layout).
  */
 function normalizeAction(a, S) {
   const durDefault = { scroll: 1.5, move: 0.7, hover: 0.7, click: 0.15, type: 0 }[a.action] ?? 0.5;
@@ -393,9 +394,9 @@ function normalizeAction(a, S) {
     ...a,
     t: a.t ?? 0,
     dur: a.duration != null ? a.duration / 1000 : durDefault, // script durations are ms
-    px: a.px != null ? a.px * S : undefined,
-    x: a.x != null && !a.selector ? a.x * S : a.x,
-    y: a.y != null && !a.selector ? a.y * S : a.y,
+    px: a.px,
+    x: a.x,
+    y: a.y,
     started: false,
     done: false,
   };
@@ -404,24 +405,87 @@ function normalizeAction(a, S) {
 async function record() {
   ensureOutDir(opts.out);
   const S = opts.scale;
+  // EVEN PHYSICAL DIMENSIONS. VP9 accepts odd sizes, so a recording looked
+  // fine here and then h264 refused it at the mp4 conform ("height not
+  // divisible by 2", 2026-08-25) — the failure landed a step away from its
+  // cause. Nudge the CSS viewport instead, so it can never reach ffmpeg odd.
+  for (const dim of ["width", "height"]) {
+    if ((opts[dim] * S) % 2 !== 0) {
+      opts[dim] += 1;
+      console.warn(`record: ${dim} ${opts[dim] - 1}x${S} is odd — using ` +
+                   `${opts[dim]} so h264 can encode the conform`);
+    }
+  }
   const videoW = opts.width * S;
   const videoH = opts.height * S;
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "capture-video-"));
 
-  // Hi-DPI trick: viewport at full pixel size + CSS zoom — layout matches
-  // --width css px, but every frame renders at scale-x detail.
+  // Real DPR, never CSS zoom (2026-08-25). The old "Hi-DPI trick" set the
+  // viewport to width*scale CSS px and zoomed the root — so every media query
+  // saw a 1080px viewport and responsive sites (GitHub) applied their DESKTOP
+  // breakpoint squeezed into 360 effective px: overlapping columns, mangled
+  // layout, found on the claude-eating-tokens repo recordings. Screenshot
+  // mode always did it right; this now matches it: 360x780 CSS viewport,
+  // deviceScaleFactor 3 → CDP captures 1080x2340 physical px natively, and
+  // every coordinate (mouse, scroll, cursor overlay) is uniformly CSS px.
   const browser = await newBrowser();
   const context = await browser.newContext({
     ...CONTEXT_BASE,
-    viewport: { width: videoW, height: videoH },
-    deviceScaleFactor: 1,
+    viewport: { width: opts.width, height: opts.height },
+    deviceScaleFactor: S,
   });
   const page = await context.newPage();
   await settle(page);
-  if (S !== 1) {
-    await page.evaluate((s) => (document.documentElement.style.zoom = String(s)), S);
-    await sleep(600); // let relayout + lazy images settle
+
+  // VISIBLE CURSOR (2026-08-25). page.mouse moves the real pointer but Chrome
+  // paints nothing for it, so every recording to date had invisible clicks.
+  // The ai-tools teardown (formats/ai-tools.md, observation study) found the
+  // live cursor is load-bearing in the genre: the viewer follows it to the
+  // button, the scroll, the field. Injected as a fixed SVG arrow with a soft
+  // shadow + a pulse ring on click; --no-cursor restores the old behaviour.
+  // Coordinates: mouse.x/y and the fixed cursor element share one CSS-px
+  // space now that the viewport is real-size (no zoom, DPR carries detail).
+  const showCursor = !flags["no-cursor"];
+  if (showCursor) {
+    await page.evaluate(() => {
+      const c = document.createElement("div");
+      c.id = "__cap_cursor";
+      c.style.cssText = "position:fixed;left:0;top:0;z-index:2147483647;" +
+        "pointer-events:none;width:44px;height:64px;transition:none;" +
+        "filter:drop-shadow(0 2px 5px rgba(0,0,0,.45));display:none;";
+      c.innerHTML = '<svg viewBox="0 0 26 38" width="44" height="64">' +
+        '<path d="M2 1 L2 30 L9 24 L14 36 L19 34 L14 22 L23 22 Z" ' +
+        'fill="#fff" stroke="#111" stroke-width="1.6"/></svg>';
+      const ring = document.createElement("div");
+      ring.id = "__cap_ring";
+      ring.style.cssText = "position:fixed;z-index:2147483646;" +
+        "pointer-events:none;width:14px;height:14px;border-radius:50%;" +
+        "border:3px solid rgba(37,99,235,.9);opacity:0;transition:none;";
+      document.documentElement.append(c, ring);
+    });
   }
+  const paintCursor = async (mx, my, ringP = null) => {
+    if (!showCursor) return;
+    await page.evaluate(([x, y, s, rp]) => {
+      const c = document.getElementById("__cap_cursor");
+      if (!c) return;
+      c.style.display = "block";
+      c.style.left = x + "px";
+      c.style.top = y + "px";
+      const r = document.getElementById("__cap_ring");
+      if (r) {
+        if (rp === null) { r.style.opacity = "0"; }
+        else {
+          const grow = 14 + rp * 30;
+          r.style.width = r.style.height = grow + "px";
+          r.style.left = (x - grow / 2 + 3) + "px";
+          r.style.top = (y - grow / 2 + 2) + "px";
+          r.style.opacity = String(0.9 * (1 - rp));
+        }
+      }
+    }, [mx, my, S, ringP]);
+  };
+  let ringT = -1; // seconds since last click, -1 = no ring
 
   // Build the timeline.
   let actions;
@@ -489,7 +553,7 @@ async function record() {
           const e = easeInOutCubic(p);
           mouse = { x: a.fx + (a.tx - a.fx) * e, y: a.fy + (a.ty - a.fy) * e };
           mouseDirty = true;
-          if (p >= 1) { await page.mouse.click(a.tx, a.ty); a.done = true; }
+          if (p >= 1) { await page.mouse.click(a.tx, a.ty); ringT = 0; a.done = true; }
           break;
         }
         case "type": {
@@ -506,13 +570,21 @@ async function record() {
 
     await page.evaluate((y) => window.scrollTo(0, y), scrollY);
     if (mouseDirty) { await page.mouse.move(mouse.x, mouse.y); mouseDirty = false; }
+    if (ringT >= 0) { ringT += 1 / FPS; if (ringT > 0.45) ringT = -1; }
+    await paintCursor(mouse.x, mouse.y, ringT >= 0 ? ringT / 0.45 : null);
 
-    const shot = await cdp.send("Page.captureScreenshot", {
-      format: "jpeg",
+    // Playwright screenshot with scale:"device", never raw CDP: CDP's
+    // Page.captureScreenshot returns CSS-pixel frames and silently ignores
+    // the context's deviceScaleFactor — the "1080x2340" recordings it saved
+    // were actually 360x780 (found 2026-08-25 by ffprobe, after the log's
+    // computed dimensions had claimed otherwise for a full scout session).
+    const shot = await page.screenshot({
+      type: "jpeg",
       quality: 92,
-      optimizeForSpeed: true,
+      scale: "device",
+      animations: "allow",
     });
-    fs.writeFileSync(path.join(tmpDir, `f-${String(k).padStart(5, "0")}.jpg`), Buffer.from(shot.data, "base64"));
+    fs.writeFileSync(path.join(tmpDir, `f-${String(k).padStart(5, "0")}.jpg`), shot);
   }
 
   await browser.close();

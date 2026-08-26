@@ -33,6 +33,37 @@ export const FootageScene: React.FC<{ scene: FootageProps }> = ({ scene }) => {
             extrapolateRight: "clamp",
           });
 
+  // SLIDE — the corpus answer for footage that does not fit a 9:16 frame
+  // (measured 2026-08-25 from the two reference shorts the user supplied): a
+  // wide desktop page is fitted to the frame HEIGHT and travelled sideways; a
+  // tall page or poster is fitted to the WIDTH and travelled vertically. Both
+  // read as reading, not as cropping — which is what a static `cover` does to
+  // an oversized asset, silently throwing most of it away.
+  //
+  // Implemented on objectPosition, so `cover` still governs the fit and the
+  // travel is exactly the overflow: 0%..100% IS "from one edge to the other",
+  // whatever the asset's real aspect. Eased, never linear — a constant-speed
+  // pan reads mechanical.
+  const slide = scene.slide;
+  const ease = (x: number) => (x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2);
+  const travel = slide
+    ? ease(interpolate(frame, [0, durationInFrames], [0, 1], {
+        extrapolateRight: "clamp",
+      }))
+    : 0;
+  const span = scene.slideSpan ?? 1;          // 1 = edge to edge
+  const start = (1 - span) / 2;
+  const along = (start + travel * span) * 100;
+  const objectPosition = slide === "left"
+    ? `${along}% ${(scene.focusY ?? 0.5) * 100}%`
+    : slide === "right"
+      ? `${100 - along}% ${(scene.focusY ?? 0.5) * 100}%`
+      : slide === "up"
+        ? `${(scene.focusX ?? 0.5) * 100}% ${along}%`
+        : slide === "down"
+          ? `${(scene.focusX ?? 0.5) * 100}% ${100 - along}%`
+          : `${(scene.focusX ?? 0.5) * 100}% ${(scene.focusY ?? 0.5) * 100}%`;
+
   return (
     <AbsoluteFill style={{ background: "black" }}>
       <AbsoluteFill style={{ transform: `scale(${zoom})` }}>
@@ -44,8 +75,7 @@ export const FootageScene: React.FC<{ scene: FootageProps }> = ({ scene }) => {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            objectPosition:
-              `${(scene.focusX ?? 0.5) * 100}% ${(scene.focusY ?? 0.5) * 100}%`,
+            objectPosition,
           }}
         />
       </AbsoluteFill>

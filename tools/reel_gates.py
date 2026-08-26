@@ -92,6 +92,37 @@ FORMATS: dict[str, dict] = {
                     "measured separately for this format — measure it on the "
                     "first top5 reel and tighten this if it disagrees.",
     },
+    "ai-tools": {
+        # AI / Claude / automation tool reels — the 2026-08-25 expansion. The
+        # BLEND, chosen by the user: Saraev's SKELETON (face bookends the reel
+        # — hook and CTA — evidence owns the middle) with Badar Munir's
+        # EVIDENCE DOCTRINE (a named tool is ON SCREEN, running or being
+        # itself, while it is named: its real page, its real output, a real
+        # terminal — never a README screenshot standing in for a demo).
+        #
+        # RUNTIME IS DERIVED FOR OUR VOICE, not copied from the corpus. The
+        # corpus runs 26.5-48.6s at a measured 217-237 wpm; our twin is
+        # locked at 2.35-2.75 wps (~162 wpm, user kept the pace 2026-08-25).
+        # Corpus word counts (~95-176 words, median ~130-155) spoken at OUR
+        # pace land 40-66s; the band takes the working middle. A single-tool
+        # short sits at the bottom, a 3-tool list at the top.
+        "runtime": (40.0, 60.0),
+        "hook_max": 2.0,          # corpus hooks land the PROBLEM by ~2s,
+                                  # artifact already on frame 0
+        "face": (0.10, 0.25),     # bookend style, measured on Saraev IG
+                                  # (~20%: hook + one mid beat + CTA)
+        "sfx": (6, 9),            # INHERITED from news — not measurable from
+        "sfx_vol": (0.10, 0.19),  # stills; re-derive on the first shipped reel
+        "requires_cta": True,     # follow/comment gate is constitutive: all 8
+                                  # corpus reels carry one
+        "_derived": "8-reel teardown 2026-08-25 (STYLE-RULES entry of that "
+                    "date): 5x Badar Munir YT shorts (26.5-48.6s, 1.6-5.4 "
+                    "s/cut, 217 wpm, ~60%% face) + 3x Saraev IG (34.7-39.4s, "
+                    "1.4-4.9 s/cut, 237 wpm, bookend face ~20%%), measured "
+                    "with ffprobe/scene-detect/whisper, frames read via "
+                    "scout_sheet. Runtime mapped through OUR measured "
+                    "2.35-2.75 wps. sfx band inherited from news, unmeasured.",
+    },
     "comparison": {
         # "iPhone 18 vs 17", "Grok vs ChatGPT". Spikes at launch moments.
         # TIMING IS INHERITED FROM `news`, NOT MEASURED. There is no comparison
@@ -275,6 +306,11 @@ BLOCKING_RULES: dict[str, str] = {
     # is deliberately NOT here: wanting a push from a tight base is a real
     # choice, so it asks the question instead of refusing the render.
     "G48": "RENDER framing that exposes the backdrop renders black bars",
+    # G51 (2026-08-25): scene JSON is invisible to tsc (the registry casts it),
+    # so a scene can ship without the one array its component `.map()`s over —
+    # claude-eating-tokens' statcard carried an invented stat/unit shape and
+    # crashed remotion at frame 538, AFTER every other gate had passed.
+    "G51": "RENDER a scene missing the array its component maps over crashes",
     # RIGHTS — attribution, and the user's control over their own work.
     "G14": "RIGHTS we credit the sources we use",
     "G15": "RIGHTS a stated number carries where it came from",
@@ -1175,6 +1211,16 @@ def check_beats(beats: dict, vo_end: float | None = None,
         srcs = [str(sc.get(k) or "") for k in ("src", "topSrc", "leftSrc")]
         if any("avatar-master" in v for v in srcs):
             continue
+        # creditOnScreen (user directive 2026-08-25): when the SOURCE'S OWN
+        # IDENTITY is visible inside the frame — a recorded page showing its
+        # masthead or URL, a terminal showing the command being run — a credit
+        # chip repeats what the pixels already say and reads as clutter. The
+        # flag is a per-scene declaration that the scout LOOKED and the
+        # identity is in frame; a crop that strips the chrome must keep its
+        # credit. The rule stays: every borrowed frame names its source on
+        # screen — this only recognises frames that name it themselves.
+        if sc.get("creditOnScreen") is True:
+            continue
         if not str(sc.get("credit") or "").strip():
             errors.append(
                 f"G14 scene {i:02d} ({sc['type']}) borrows footage with no "
@@ -1351,6 +1397,26 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 "watch on mute, so a hook with no words on screen says nothing. "
                 "Show the claim.")
 
+    # G51 — THE ARRAY THE COMPONENT MAPS OVER MUST EXIST (RENDER, 2026-08-25).
+    # The registry imports scene JSON with a cast, so TypeScript never checks
+    # it; a statcard authored with an invented stat/unit shape passed tsc,
+    # validate_job and every gate, then crashed remotion at frame 538 with
+    # "Cannot read properties of undefined (reading 'map')". Mirror each
+    # component's hard `.map()` contract here — fields with defaults are the
+    # component's business, fields it maps over unconditionally are ours.
+    MAPPED_FIELDS = {"statcard": "rows", "sourceread": "lines"}
+    for i, sc in enumerate(scenes):
+        field = MAPPED_FIELDS.get(sc.get("type", ""))
+        if field is None:
+            continue
+        rows = sc.get(field)
+        if not isinstance(rows, list) or not rows:
+            errors.append(
+                f"G51 scene {i:02d} ({sc['type']}) has no {field!r} — the "
+                f"component maps over it unconditionally, so the render "
+                f"crashes. Author the scene in the component's real shape "
+                f"(see src/types.ts / a shipped {sc['type']}).")
+
     # G39 — WHAT IS ON SCREEN MUST BE WHAT IS BEING SAID (user rule 2026-08-17:
     # "what we see on the video should match as much as possible with what
     # creator says").
@@ -1417,6 +1483,22 @@ def check_beats(beats: dict, vo_end: float | None = None,
                             f"against the wrong sentence — spoken over it: "
                             f"{_norm_words(spoken)[:56]!r}")
                 elif _norm_words(covers) not in _norm_words(spoken):
+                    # Whisper is NOT ground truth for what was said (G21's
+                    # lesson, measured at 100% false positives). The caption
+                    # stream in the same window has caption_corrections
+                    # applied — the declared record of what the voice
+                    # actually says where whisper miswrote it ("re-reads" ->
+                    # "reads", "agent's" -> "agents", both 2026-08-25). A
+                    # `covers` found there is spoken; only fail when BOTH
+                    # streams miss it.
+                    cap_spoken = " ".join(
+                        str(c.get("text", "")) for c in
+                        (beats.get("captions") or [])
+                        if isinstance(c, dict)
+                        and float(c.get("end", 0)) > start
+                        and float(c.get("start", 0)) < end)
+                    if _norm_words(covers) in _norm_words(cap_spoken):
+                        continue
                     errors.append(
                         f"{'G39' if evidence else 'G44'} scene {i:02d} "
                         f"({sc['type']}) claims to cover "
@@ -1609,6 +1691,46 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 f"{'end' if dir_ == 'in' else 'start'} of the beat. For a "
                 f"locked-off snap set zoomDir: \"none\"; if the push is meant, "
                 f"this is only a note.")
+
+    # G50 — ai-tools: text cards standing in for demos. ADVICE.
+    #
+    # The format's evidence doctrine (formats/ai-tools.md): a named tool is on
+    # screen, running or being itself, while it is named. The 9-reel corpus
+    # (2026-08-25 observation study) contains ZERO full-screen text-only
+    # scenes — every "text moment" is a chip or label over something moving.
+    # claude-eating-tokens v1 had SIX in fourteen beats, and is the reel that
+    # forced the format to exist. The threshold is the corpus's own number
+    # (zero), so even one advises; craft can override with a reason, which is
+    # why this is advice and not law.
+    if fmt_name == "ai-tools":
+        texty = [i for i, sc in enumerate(scenes)
+                 if sc.get("type") in ("typecard", "wordcascade")]
+        if texty:
+            errors.append(
+                f"G50 ai-tools reel carries {len(texty)} full-screen text "
+                f"scene(s) (scenes {', '.join(f'{i:02d}' for i in texty[:5])})"
+                " — the 9-reel corpus runs ZERO: its text moments are chips "
+                "over moving evidence. Show the tool, not a card about the "
+                "tool (formats/ai-tools.md). Deliberate exceptions welcome — "
+                "with a reason in questions.md.")
+
+        # G52 — ai-tools: the CTA is a KEYWORD POP, not a simulated comment
+        # box. ADVICE. Measured in the same observation study: all 9 corpus
+        # reels close on one verb-first word in huge type over the presenter
+        # (INSTALL / COMMENT / FOLLOW / SETUP); none draws a fake comment
+        # field. The mock is the top5 pack's comment-gate, and it read wrong
+        # on a reporting reel (user, 2026-08-25). Advice because a reel that
+        # genuinely wants the gate should be able to take it.
+        gates = [i for i, sc in enumerate(scenes)
+                 if sc.get("type") == "commentcta"
+                 and sc.get("variant", "gate") != "keyword"]
+        if gates:
+            errors.append(
+                f"G52 ai-tools CTA scene(s) {', '.join(f'{i:02d}' for i in gates)}"
+                " draw the simulated comment field. The corpus closes on a "
+                "verb-first keyword pop over the face — set `variant: "
+                "\"keyword\"` (formats/ai-tools.md). The gate mock is the "
+                "top5 pack's treatment.")
 
     # ---- THE ONLY THINGS ALLOWED TO BLOCK A RENDER -------------------------
     #

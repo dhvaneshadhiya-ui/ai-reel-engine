@@ -353,6 +353,89 @@ def run() -> int:
     ok("no shot plan renders as empty, not a crash",
        beat_plan.render("nope", root=tmp3) == [])
 
+    # 11a2. DELIVERY RATE IS KEYED TO THE LOCKED VOICE SPEED (2026-08-26).
+    # The old constants were measured at speed 1.05 and kept being applied
+    # after the locked speed moved to 1.12, which cost claude-memory-everywhere
+    # a whole section of its source announcement — cut at rehearsal to fit a
+    # runtime limit that did not exist. These pin that a speed with no
+    # measurement can never resolve SILENTLY to another speed's numbers.
+    import script_approval as _sa
+    lo105, hi105, why105 = _sa.WPS_BY_SPEED[1.05][0], _sa.WPS_BY_SPEED[1.05][1], ""
+    ok("the 1.05 measurements are unchanged", (lo105, hi105) == (2.35, 2.75))
+    ok("1.12 has its own measured row", 1.12 in _sa.WPS_BY_SPEED)
+    ok("the 1.12 row is faster than the 1.05 row",
+       _sa.WPS_BY_SPEED[1.12][0] > _sa.WPS_BY_SPEED[1.05][0])
+    ok("every row carries its provenance",
+       all(isinstance(v[2], str) and len(v[2]) > 20
+           for v in _sa.WPS_BY_SPEED.values()))
+    _speed = _sa.locked_speed
+    try:
+        _sa.locked_speed = lambda: 1.12
+        r = _sa.wps_range()
+        ok("a measured speed resolves to its own row and says so",
+           r[0] == 2.60 and "speed 1.12" in r[2] and "NO MEASUREMENT" not in r[2])
+        _sa.locked_speed = lambda: 1.40
+        r = _sa.wps_range()
+        ok("an UNMEASURED speed falls back LOUDLY, never silently",
+           "NO MEASUREMENT AT SPEED 1.4" in r[2])
+        ok("the loud fallback still returns a usable range",
+           r[0] > 0 and r[1] > r[0])
+    finally:
+        _sa.locked_speed = _speed
+
+    # 11b. SCREENSHOT BEATS MUST DESCRIBE THEMSELVES (2026-08-26). sourceread /
+    # annotatezoom / receipt rendered FIXED strings naming the camera move
+    # ("a screenshot, zooming slowly into the highlighted region") and nothing
+    # on the page — the same fault the floatcard note in beat_plan.py records,
+    # but reached 70% of one reel's beats. They now resolve the manifest asset
+    # and name the claim; and a repeat of one asset shortens instead of
+    # re-printing a 60-word `shows` four times.
+    tmp4 = Path(tempfile.mkdtemp(prefix="beat-plan-shot-selftest-"))
+    j4 = tmp4 / "jobs" / "bp2"
+    j4.mkdir(parents=True)
+    (tmp4 / "public/assets/bp2").mkdir(parents=True)
+    (tmp4 / "public/assets/bp2/manifest.json").write_text(json.dumps(
+        {"assets": [
+            {"id": "docs-page", "kind": "receipt",
+             "shows": ("the vendor changelog, headed 'What is new', with the "
+                       "deprecation notice printed directly under it, then a "
+                       "table of every removed flag with its replacement, its "
+                       "removal version and a migration note, running to the "
+                       "fold")},
+            {"id": "docs-page-two", "kind": "receipt",
+             "shows": "a different page entirely, showing the pricing table"},
+        ]}))
+    (j4 / "shot-plan.json").write_text(json.dumps({"shots": [
+        {"line": "They deprecated it.",
+         "scene": {"type": "sourceread", "src": "assets/bp2/docs-page.png",
+                   "covers": "they deprecated it", "credit": "@vendor"}},
+        {"line": "And here is the flag.",
+         "scene": {"type": "annotatezoom", "src": "assets/bp2/docs-page.png",
+                   "covers": "here is the flag"}},
+        {"line": "Pricing moved too.",
+         "scene": {"type": "receipt", "src": "assets/bp2/docs-page-two.png",
+                   "covers": "pricing moved"}},
+    ]}))
+    rows4 = beat_plan.render("bp2", root=tmp4)
+    joined4 = "\n".join(rows4)
+    ok("a sourceread names the artefact, not just the camera move",
+       "the vendor changelog" in rows4[1])
+    ok("a still reads as a screenshot, never as 'a clip'",
+       "a screenshot" in rows4[1] and "a clip" not in joined4)
+    ok("the beat names the claim its highlight proves",
+       "they deprecated it" in rows4[1] and "here is the flag" in rows4[3])
+    ok("a long `shows` is cut to its gist, not printed whole",
+       "running to the fold" not in joined4)
+    ok("the SECOND beat on one asset shortens instead of repeating it",
+       "the same screenshot again" in rows4[3]
+       and "running to the fold" not in rows4[3])
+    ok("a shortened repeat still names WHICH asset it is",
+       "the vendor changelog" in rows4[3] and rows4[3].count("…") >= 1)
+    ok("a DIFFERENT asset is still described in full",
+       "the pricing table" in rows4[5])
+    ok("the fixed camera-move string is gone",
+       "zooming slowly into the highlighted region" not in joined4)
+
     # 10. render_job's draft plumbing (2026-08-21) — dry-run only, since a
     # real render needs footage. The invariant that matters: a draft can
     # never become a deliverable (renders to -draft.mp4, skips the master),
@@ -378,6 +461,62 @@ def run() -> int:
         capture_output=True, text=True, cwd=REAL_ROOT)
     ok("--frames without --draft refuses (no partial deliverables)",
        part.returncode != 0 and "partial" in (part.stderr + part.stdout))
+
+    # 11. find_phrase tolerates whisper's compound splits (2026-08-25:
+    # "README" transcribed as "read me" left shot 5 of claude-eating-tokens
+    # unresolvable). One needle token may span consecutive transcript tokens
+    # whose concatenation equals it — and the reverse join — while a phrase
+    # that genuinely is not in the transcript must still refuse.
+    print("\n  -- compile_shot_plan phrase matcher --")
+    sys.path.insert(0, str(REAL_ROOT / "scripts"))
+    import compile_shot_plan as csp
+    tw = [{"norm": n} for n in
+          "but its read me admits input is untouched".split()]
+    s, e = csp.find_phrase(tw, "But its README admits", 0, "selftest")
+    ok("compound split resolves (README == read+me)", (s, e) == (0, 4))
+    s, e = csp.find_phrase(tw, "read me admits", 0, "selftest")
+    ok("exact match still resolves at the right span", (s, e) == (2, 4))
+    tw2 = [{"norm": n} for n in "run npx ccusage monthly today".split()]
+    s, e = csp.find_phrase(tw2, "npx cc usage monthly", 0, "selftest")
+    ok("reverse join resolves (cc+usage == ccusage)", (s, e) == (1, 3))
+    expect_exit(lambda: csp.find_phrase(tw, "words never spoken", 0, "x"),
+                "an absent phrase still refuses", "could not resolve")
+    # STYLE FOLLOWS FORMAT. CLAUDE.md's locked table says editorial = news /
+    # comparison and utility = top5 / ai-tools, and "loaded every session"
+    # was treated as enforcement — it is not. claude-eating-tokens rendered
+    # its whole ai-tools reel in the editorial pack across several renders
+    # before anyone measured it (2026-08-25). The mapping now lives in
+    # compile_shot_plan; this is what keeps it there.
+    print("\n  -- style follows format --")
+    for fmt, want in (("ai-tools", "utility"), ("top5", "utility"),
+                      ("news", None), ("comparison", None)):
+        beats = {"style": "editorial", "format": fmt}
+        plan = {"format": fmt}
+        if plan.get("style"):
+            got = plan["style"]
+        elif beats.get("format") in ("top5", "ai-tools"):
+            got = "utility"
+        else:
+            got = beats["style"]
+        ok(f"{fmt} -> {want or 'editorial'} pack",
+           got == (want or "editorial"))
+    src = (REAL_ROOT / "scripts/compile_shot_plan.py").read_text()
+    ok("compile_shot_plan carries the mapping (not just this test)",
+       'beats.get("format") in ("top5", "ai-tools")' in src
+       and 'beats["style"] = "utility"' in src)
+    ok("an explicit plan style still wins",
+       'if plan.get("style"):' in src)
+
+    # caption_corrections phrase keys must survive whisper's punctuation:
+    # "see use it" -> "ccusage" silently did nothing against the chunk
+    # "see, use it" (2026-08-25, found in a RENDERED frame).
+    fixed = csp._apply_phrases("One, see, use it charts.",
+                               {"see use it": "ccusage"})
+    ok("phrase fix tolerates punctuation inside the chunk",
+       fixed == "One, ccusage charts.")
+    ok("phrase fix leaves an honest chunk alone",
+       csp._apply_phrases("see it works", {"see use it": "x"})
+       == "see it works")
 
     # 8. check_script's own selftest — structure thresholds + AI tells.
     print("\n  -- check_script selftest --")

@@ -129,7 +129,45 @@ def main() -> None:
 
     script_p = ROOT / f"jobs/{slug}/script.md"
     if not script_p.exists():
-        sys.exit(f"no approved script at {script_p}")
+        sys.exit(f"no script at {script_p}")
+    # APPROVAL IS A PRECONDITION FOR --write, not a docstring claim
+    # (2026-08-26, user: "why does it build the shot plan before getting
+    # approval of the script?").
+    #
+    # This file has always SAID "turn an approved script into a shot plan"
+    # and only ever checked that the file existed. Every shot here is
+    # PHRASE-ANCHORED to exact wording, so a shot plan written before
+    # approval is invalidated by the first word the user changes — which is
+    # precisely the "repair the broken anchors" work that then looks like
+    # progress. Planning against unapproved words is not early work, it is
+    # work that has to be redone.
+    #
+    # Reading the plan without --write stays open: seeing the clause
+    # breakdown is often HOW you decide the script is ready.
+    if write:
+        import hashlib
+        appr_p = ROOT / f"jobs/{slug}/approval.json"
+        if not appr_p.exists():
+            sys.exit(
+                f"REFUSING to write a shot plan for {slug!r}: the script is "
+                "not approved.\n"
+                "  Every shot here anchors to exact wording, so this file "
+                "would be invalidated by the first edit.\n"
+                "  Approve first:  python3 tools/script_approval.py propose "
+                f"{slug}   (then approve)\n"
+                "  Or read the breakdown without writing: drop --write.")
+        try:
+            appr = json.loads(appr_p.read_text())
+            live = hashlib.sha256(
+                " ".join(script_p.read_text().split()).encode()).hexdigest()
+            if appr.get("sha256") and appr["sha256"] != live:
+                sys.exit(
+                    f"REFUSING: {slug!r} was approved at "
+                    f"{appr['sha256'][:8]} but script.md now hashes "
+                    f"{live[:8]}. The anchors would be written against words "
+                    "nobody approved. Re-propose and re-approve.")
+        except (ValueError, KeyError):
+            pass
     vo_p = ROOT / f"public/assets/{slug}/vo.json"
     vo_words: list[str] = []
     if vo_p.exists():

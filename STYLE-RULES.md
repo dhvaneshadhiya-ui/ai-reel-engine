@@ -3833,6 +3833,538 @@ check, the same class of gap as `STYLE_ALIASES` exists for style ids).
   release-notes text crop straight into a silent floatcard loop for a
   sequence of parallel bug-fix beats.
 
+## 2026-08-25 — the ai-tools format: an 8-reel measured teardown, and the blend
+
+The engine's first non-Apple genre, built the G23 way. Corpus: 5 Badar Munir
+YouTube shorts (26.5-48.6s · 1.6-5.4 s/cut · 217 wpm · ~60% on camera) and
+3 Nick Saraev Instagram reels (34.7-39.4s · 1.4-4.9 s/cut · 237 wpm ·
+bookend face ~20%), pulled with yt-dlp, measured with ffprobe/scene-detect/
+whisper, frames read via scout_sheet. Two sub-rhythms in both corpora:
+tool-LIST reels cut at 1.4-1.7s, single-story walkthroughs at 4-5s.
+
+**The blend (user decision): Saraev's skeleton, Badar's evidence.** Face
+bookends the reel — Badar's ~60% on-camera presence leans on a live human
+and was deliberately not asked of a HeyGen twin. The evidence doctrine is
+the format's own reading of Rule 3: *a named tool is on screen, running or
+being itself, while it is named* — its real page, real output, a real
+terminal. A README screenshot is evidence only for a claim ABOUT the
+README. Full-screen text cards standing in for demos are this format's
+logo-build anti-pattern: claude-eating-tokens v1 had six in fourteen beats
+and is the reel that forced the format to exist.
+
+**Runtime derived for OUR voice, not copied (user kept the pace).** The
+corpus speaks 217-237 wpm; the twin is locked at 2.35-2.75 wps. Corpus word
+counts mapped through our pace give the 40-60s band. sfx inherited from
+news, unmeasured — the comparison-format precedent, marked as such.
+
+**Recordable evidence is the genre's unfair advantage:** for Claude-topic
+reels the artifacts are our own machine's real output (ccusage, claude-hud,
+/clear) — tier official, zero rights friction. Record, don't screenshot.
+
+## 2026-08-25 (2) — the observation study: how the ai-tools corpus scouts, animates, and writes
+
+The user picked 9 specific shorts (5 Badar, 4 Saraev YT — the four that his
+recent-uploads listing had hidden, all tool-format, one Anthropic-sponsored
+with a burned disclosure line). All pulled, 8 transcribed, 5 frame-read via
+scout_sheet. Findings live in formats/ai-tools.md "Observation study"; the
+three that changed our plans:
+
+1. **Recordings are WINDOWED, not full-bleed** — every demo in the corpus is
+   a card with a live cursor floating on a canvas. claude-eating-tokens'
+   four terminal/chart recordings moved from `footage` to `floatcard`.
+2. **The naming moment has a grammar**: plain-function sentence fused to the
+   name, the name lands on a designed logo/wordmark card (Badar sets
+   "CLAUDE CODE" in chunky pixel type — our Press Start 2P is already that
+   voice), then the real artifact. Meme/stock b-roll is legal exactly once,
+   at the hook.
+3. **Their hype register is not ours.** "Yes you heard it right / the crazy
+   part / completely free ×3" sell; we report. We take the compression and
+   the fused naming, leave the hype — and if a reel is ever sponsored, the
+   disclosure line burns on screen like Saraev's.
+
+## 2026-08-25 (3) — the study adapted: no third style, a live cursor, and the first recorded asset
+
+Three decisions from the user's "how do we adapt this":
+
+1. **No third style pack** — RULES.md locks the count at two, and the
+   genre's look is this repo's own Saraev lineage anyway. The ai-tools
+   FORMAT renders under `utility` (mapping in CLAUDE.md locked settings);
+   the look vocabulary landed as an addendum in styles/utility.md.
+2. **capture.mjs record paints a VISIBLE CURSOR now** (+ click ring; on by
+   default, --no-cursor reverts). The recorder had eased mouse choreography
+   since day one but page.mouse renders nothing — every recording to date
+   had invisible clicks, and the observation study found the live cursor is
+   load-bearing in the genre. Proven same-day on the real caveman repo:
+   public/assets/claude-eating-tokens/caveman-page.webm, the reel's first
+   scouted asset, manifest entry with honest `shows` (the take over-scrolls
+   — re-record dwelling on the README; take-craft note in utility.md).
+3. **HyperFrames pilot authorized, scene-scoped** — one designed animated
+   card for the cost-split beat, our palette, judged by gates and preflight
+   against StatCard. Verdict to be recorded here.
+
+## 2026-08-25 (4) — the script approved, and the doctrine made mechanical
+
+The user approved the claude-eating-tokens script with all three carried
+advisories accepted in writing: runtime to 68s at the slow end (ship as-is,
+pause-tighten after generation), the loop-detector override, and their own
+real usage numbers on screen. Approval 341019be.
+
+And the last prose-only piece of the ai-tools doctrine became a gate:
+**G50 (advice)** — an ai-tools sheet carrying any full-screen text scene
+(typecard/wordcascade) advises, because the 9-reel corpus's measured number
+is ZERO: its text moments are chips over moving evidence. v1's six-cards-in-
+fourteen-beats can now never happen silently again. Deliberate exceptions
+override with a reason, which is why it advises rather than blocks.
+
+## 2026-08-25 — claude-eating-tokens scout session: the evidence stack for ai-tools
+
+The format's first real scout produced the doctrine's proof case. Every
+evidence asset is a RECORDING or a verified receipt; zero full-screen text
+cards (G50 satisfied by construction):
+
+- **Terminal recreations carry REAL data.** `tools/terminal_page.py` (new)
+  plays back a command's genuine output inside a styled terminal that
+  `capture.mjs` records deterministically — typed command, line-by-line
+  reveal, `--highlight`. Honesty line: the DATA is the machine's own
+  (`_sources/<slug>/` keeps the raw capture), and the manifest `shows` says
+  "recreation playing back real output". Sanctioned by the utility pack's
+  UIDialog precedent. Used for ccusage (real August table: 661,554,294
+  tokens, $585.82, cache-read 647,936,100 vs output 1,879,404 — the reel's
+  thesis proven on its maker's own bill) and /clear (66% → 1% at real
+  session scale).
+- **Repo pages are recorded with a live cursor** (capture.mjs now injects a
+  44px cursor + click ring by default; `--no-cursor` for recreations, where
+  a stray idle cursor otherwise photobombs the corner). Take-craft in
+  `styles/utility.md`: dwell where the claim lives — the caveman take holds
+  the About line "cuts 65% of tokens" through the opening 3s before
+  scrolling.
+- **A README screenshot is evidence only for a claim ABOUT the README.**
+  The caveman "Honest number warning" callout is captured verbatim as a
+  still because the script's claim IS that the README admits the catch.
+  (First attempt captured the full 48,561px README — unusable; crop to the
+  claim, don't capture the page.)
+- **HyperFrames pilot deferred:** the designed-artifact slot was beaten by
+  a real recording of the same fact. Queue it for a beat no real artifact
+  can show.
+
+## 2026-08-25 — tool names must go through the pronunciation glossary
+
+The first claude-eating-tokens master spoke "ccusage" as roughly "accusate"
+(whisper base heard "secluded", medium heard "accusate" — two models agree
+the audio was wrong, and the beat exists to NAME that tool). Written-form
+names — lowercase CLI tools, hyphenated repo names — are exactly what a TTS
+guesses at. Fix, verified by a ~3-credit probe before the ~20-credit regen:
+HeyGen brand glossary `262b0154…` (config.json `avatar.brandGlossaryId`),
+ccusage -> "see-see-usage", claude-hud -> "Claude hudd". Glossary affects
+audio only; captions keep the written form. RULE: before any generation,
+scan the script for written-form names and add each to the glossary; send
+`brandGlossaryId` on every create call. Note: rehearse_vo's TTS pass was
+skipped for RAM this session — its anchor pass cannot catch pronunciation,
+which is precisely the class of defect that cost a regeneration here.
+
+## 2026-08-25 — first ai-tools review round: seven user notes, each made structural
+
+The user reviewed the first claude-eating-tokens master. Every note is now a
+rule or a mechanism, not a memory:
+
+1. **No credit chip when the frame names itself.** A recorded page showing
+   its masthead/URL, a terminal showing its command — the chip repeats the
+   pixels ("Source: Claude Docs" under the Claude Docs masthead). Scene flag
+   `creditOnScreen: true` (G14 honours it, negative test in the suite).
+   CROPS that strip the chrome keep their credit.
+2. **A sourceread must highlight the sentence, not the region.** The first
+   pass put the sweep on a breadcrumb (y=300 was guessed, not measured).
+   Rects are measured from the capture, one per spoken claim, timed with
+   `at`. The component's follow-scroll only moves when there are >=2 lines.
+3. **Record responsive sites at REAL mobile.** capture.mjs record used a
+   width*scale viewport + CSS zoom — media queries saw 1080px, so GitHub
+   rendered its desktop breakpoint mangled into 360px. Now: real 360x780
+   viewport, deviceScaleFactor 3, Playwright screenshot scale:"device"
+   (raw CDP ignores DPR and had been saving 360x780 files labelled 1080).
+4. **Floatcards declare the clip's true aspect** — the default 16:9 +
+   objectFit:cover was silently cropping the 2:1 terminal tables.
+5. **Voice pace/energy is probed, then locked.** 1.05 read slow and flat;
+   probe before every full generation when the setting changes.
+6. **ai-tools CTA is the keyword variant** (`commentcta` `variant:
+   "keyword"`): verb-first pop over the face, no simulated comment UI. The
+   gate mock stays the top5 default.
+7. **Captions: auto_contrast --write is part of the compile sequence** (the
+   4 white-page scenes now carry captionTheme) and `emphasis` is REQUIRED
+   authoring — an empty list means no accent word anywhere, which is how the
+   locked "one highlight per beat" shipped as all-white captions.
+
+## 2026-08-25 — review round 2: the four remaining notes, all made structural
+
+Watched the render frame by frame, named four defects, fixed each as a rule:
+
+1. **A recording's `from` must point at the moment the claim is visible.**
+   The claude-hud beat said "a live meter in your status line" while playing
+   the repo header — the status-line demo only appeared at the clip's tail.
+   Scouting a recording now means noting WHEN the proof is on screen, and
+   the shot sets `from` to it (`from: 4.6` here). A clip is not evidence
+   because it contains the proof somewhere.
+2. **No single card holds the 4–9s drop-off zone alone.** The cream docs
+   page ran 7.58s across the exact window where viewers leave. Split into
+   two visuals: the sourceread keeps its highlight, then a live-cursor
+   scroll of the SAME page lands on "How the cache is organized" — whose
+   text ("the model doesn't remember anything between requests, so Claude
+   Code re-sends the full context") states the script's claim verbatim.
+   Same source, different treatment, motion where it was static.
+3. **A recreation is cropped to its content, never centred in dead space.**
+   `terminal_page.py --fit <viewport>` sizes the window AND its type from
+   the longest line (monospace is 0.6em, so this is arithmetic, not taste)
+   and prints the NATURAL VIEWPORT HEIGHT to record at. The /clear
+   before/after went from a small band in a dark 9:16 field to a card that
+   fills its own frame. A fixed 13.5px font had also been clipping
+   "66% of window" off the mobile version.
+4. **A scene that spells the spoken line out in display type suppresses the
+   caption.** `Reel.tsx` already did this for headlines; `commentcta`'s own
+   keyword/question were invisible to it, so "COMMENT CLAUDE" at 200px sat
+   over a caption reading "Comment Claude I'll".
+
+**A generated page must declare a viewport.** The first `--fit` recreation
+still rendered tiny: with no `<meta name="viewport">`, mobile Chromium lays
+a page out at 980px and scales it to the device — so a window sized to 94%
+of 360 CSS px arrived on screen at a third of the frame. Same family as the
+GitHub-breakpoint bug, and now asserted by the capture-contract suite. Any
+HTML this repo generates for capture carries the tag.
+
+**Frame a recording on its proof, not on its page.** The claude-hud beat at
+full width put the caption on the README's Install body text; `zoom 1.55 +
+focusY 0.30` makes the status-line demo own the frame and the caption land
+on quiet pixels.
+
+**And the capture contract became a suite.** `tools/test_capture_defaults.py`
+(run by doctor) asserts capture.mjs's six load-bearing defaults — cursor on,
+`--no-cursor` boolean, mobile default, real viewport, device-scale frames,
+even physical dimensions. Every one of those was a rule stated in prose, and
+two of them had silently broken and shipped a whole scout session. The
+"code, not habit" claim is now checked rather than believed.
+
+## 2026-08-25 — auditing the "all upcoming videos" table against its own standard
+
+The table claims "verified permanent, not promised". Audited row by row,
+asking only: *what code stops a future session from skipping this?*
+
+| Row | Verdict |
+|---|---|
+| Format physics | REAL — `FORMATS["ai-tools"]` measured, G23/G24 with failing cases |
+| Evidence doctrine (G50) | REAL — present, absent from `BLOCKING_RULES` (advises), self-tested |
+| Live-cursor recordings | REAL **as of today** — `tools/test_capture_defaults.py`, run by doctor |
+| The look | PARTIAL -> now REAL where measurable (style mapping + G52) |
+| Script grammar + hype | **WAS PROSE** -> now `HYPE_MARKERS` in check_script |
+| Style mapping | **WAS FALSE** -> now enforced in compile + tested |
+| HyperFrames pilot | prose, correctly — a per-reel judgement call |
+
+Two rows did not hold:
+
+- **"Script grammar + hype exclusion — read-order + check_script at propose"
+  was not true.** `check_script` had no knowledge of the hype register; the
+  rejection of the corpus's sell voice lived only in `formats/ai-tools.md`.
+  A future ai-tools script could carry "completely free" three times and
+  nothing would say a word. Now `HYPE_MARKERS` (23 markers, measured off the
+  same 8 transcripts) with its own self-test — and the offender fixture is
+  *enthusiastic human writing*, asserted NOT to be caught by `AI_TELLS`, so
+  the two checks stay distinct instead of quietly measuring one thing.
+- **"Style mapping — CLAUDE.md locked settings — loaded every session" was
+  false, and this reel is the proof.** claude-eating-tokens rendered in the
+  editorial pack across several renders while the locked table said
+  ai-tools -> utility. A document loaded every session is not enforcement;
+  it is a document. The mapping now lives in `compile_shot_plan.py` and the
+  pipeline suite asserts both the mapping and its presence in that file.
+
+**New: G52 (advice)** — an ai-tools reel closing on the simulated
+comment-field mock. All 9 corpus reels close on a verb-first keyword pop
+over the presenter; the mock is the top5 pack's comment-gate and read wrong
+on a reporting reel.
+
+The lesson is the repo's own founding one, arriving again: *"loaded every
+session", "the skill's binding read-order" and "the build session reads it"
+are all the same sentence — someone will read a file — and that sentence is
+what the gates exist to replace.*
+
+## 2026-08-25 — three treatments measured off user-supplied reference shorts
+
+The user named three shorts and three problems. Every number below came from
+a frame of those reels, not from taste (G23 discipline applied to look, not
+just timing). Assets in `scratchpad/refs`, measurements reproducible.
+
+**1. CAPTIONS — a plate, and smaller (ref vIAH9SaCNvo).** Measured: 40px cap
+height in its 720-wide frame = **60px at our 1080**, uniform, on a
+translucent dark rounded plate that hugs the line. Two findings:
+- Our BASE size was already close (57px cap). The visible problem was the
+  missing plate — we carried an 8-direction contour ring instead, which
+  thickens every glyph over a bright page and still loses to busy content.
+- Our EMPHASIS ran 1.3x (73px cap) — bigger than the reference's whole line,
+  and it changed the line height mid-sentence. The reference carries emphasis
+  on COLOUR at a uniform size. Ours is now 0.88 of the role with a 1.14 step.
+- Plate alpha measured 0.30-0.50 across two samples; set 0.62 over dark
+  grounds and 0.55 over bright, because a 0.40 plate on a terminal page is
+  dark-on-dark and provides no separation (found by eye on the first plated
+  render — the number the reference gave was for a plate over MIXED ground).
+- The plate is sized for the WHOLE chunk from the start (unrevealed words
+  hold their slot) — a plate that grows a word at a time jitters.
+
+**2. OVERSIZED FOOTAGE TRAVELS (refs GQfEc8FHA48, fR8AkVkuM18).** Wide desktop
+captures are fitted to the frame and moved sideways; tall pages and posters
+scroll vertically. New `slide: "up"|"down"|"left"|"right"` + `slideSpan` on
+footage, eased, implemented on objectPosition so `cover` still governs the
+fit and the travel is exactly the asset's overflow.
+**Do not stack it on a recording that already scrolls** — our mobile page
+recordings carry their own scripted scroll, and a slide on top is two
+motions fighting. It is for assets whose content is static: this reel's
+3000x1520 ccusage table, which as a card rendered at a third scale and now
+plays full-bleed with its columns legible.
+
+**3. CTA (ref fR8AkVkuM18).** Measured: one word, neon **rgb(226,254,14)**,
+cap height 150px (font ~207) at 1080x1920, centred at **67% of frame
+height**, PERSISTING while the ordinary captions keep running above it. No
+"COMMENT" label stacked over it, no question card, no simulated comment
+field. Our first keyword variant stacked a label and suppressed captions,
+which turned the closing beat into a title card. Now only the single caption
+chunk that would print the keyword twice is dropped, and compile defaults
+`captionBottom: 880` on a keyword CTA so the caption clears the keyword —
+without it they render through each other.
+
+All six numbers are asserted by `tools/test_capture_defaults.py` (13 checks,
+run by doctor): a measured treatment that lives only in a component can drift
+back to taste in one edit.
+
+## 2026-08-25 — the EDITOR'S PASS becomes a step (user directive)
+
+*"Think of yourself as a years-experienced video editor... and edit as per
+the need of the topic, script."* The gates prove a reel is not BROKEN; they
+cannot tell you it is not EDITED. claude-eating-tokens passed every gate
+with sixteen beats that nearly all carried the same `zoomDir: "in"` — a
+slideshow with a green light.
+
+New step in AGENT.md §3b, with `tools/cut_sheet.py` to make the cut legible:
+every beat's duration and motion side by side, in order, plus the places an
+edit usually needs a decision (adjacent beats moving identically, the
+longest beat sitting late, beats declaring no movement at all). It asserts
+nothing — the five questions are in the manual, and the answers are
+judgement.
+
+What the pass changed on this reel, and why:
+
+- **Two caveman shots that both pushed in** -> the first ESTABLISHES (wide,
+  push), the second LANDS THE CLAIM (held at 1.5x on the About line, where
+  "cuts 65% of tokens" is readable). Same asset, two moves, is a cut.
+- **A push on a recording that already scrolls** -> held and cropped tighter
+  (1.14x). Two motions arguing is worse than one.
+- **The 6.9s ponytail shot at 40s**, the longest in the reel and sitting
+  where attention is thinnest -> split on its own second clause ("it checks
+  the standard library first"), the second half framed on the README's
+  "~54% less code". Longest beat is now 5.62s and it sits at 21s, which is
+  the reel's TURN — a hold there is confidence, not drift.
+- **Two annotatezooms back to back** -> the second is a `sourceread`,
+  because its line is a sentence being proved and that is the treatment
+  built for reading a sentence.
+- **The pivot line held dead still** — cut_sheet caught it on its first run,
+  three minutes after being written. "These three cut the expensive half" is
+  the hinge of the script; it now pushes in gently.
+- **zoom + slide compose** (user, same message): the wide table slides to
+  read its columns AND pushes 1.06x for depth. The slide reads; the push
+  keeps it alive.
+- **Captions down again** to 0.78 of the role (from 0.88). Stated as
+  judgement, not measurement: the reference's 60px cap is its line height,
+  but our plate makes the block read heavier, so matching its cap made ours
+  look bigger than it. The eye is the instrument for type size on a phone.
+
+**Same-session correction: scale cuts text on a frame-width capture.** The
+editor's pass set `zoom: 1.5` on the caveman beat to make its README claim
+readable, and the render showed the opposite — a mobile capture is 1080 wide,
+exactly the frame, so the scale pushed half of every line off both edges.
+Four beats had it. A full-width capture is framed by SLICE (`focusY`) and
+MOMENT (`from`) at 1:1; scale is for assets wider than the frame. Compile now
+prints an advisory with the asset's real width, and AGENT.md §3b question 3
+carries the reasoning. Worth noting the sequence: the editorial judgement was
+right (that claim should be readable), the mechanism was wrong, and only
+looking at the rendered frame told the difference.
+
+## 2026-08-25 — the short-form master framework installed as the standard
+
+User supplied `frameworks/short-form-master.md` and asked for it in action.
+It is now read-order item 0 in CLAUDE.md: the STANDARD this repo builds to.
+Where it and RULES.md disagree, RULES.md wins — the gates encode failures we
+have actually had, and a framework cannot overrule evidence.
+
+**Most of it is judgement and stays a document** — story engine, escalation,
+pattern interrupts, information density, the editor's eye. Wiring judgement
+into a gate is how taste ends up wearing a rule's badge (the G18 lesson).
+
+**Three of its rules are not judgement.** They have a right answer, they fail
+silently, and each is a promise to the viewer rather than a matter of taste,
+so they are code: `tools/framework_check.py`, run by
+`script_approval.py propose` (a leak is caught BEFORE the user is asked to
+approve the words) and self-tested by doctor.
+
+- **F1 REVEAL TARGET.** A campaign that withholds an identity for a DM must
+  not disclose it in narration, on-screen text, or CTA/packaging copy — and
+  clues that COMBINE are a disclosure, so the check fires when every word of
+  the target appears across a surface. Leaking it spends the delivery and
+  makes the CTA a lie. **F4** is its other half: with a target withheld, the
+  SUBJECT must still be spoken, or curiosity has become confusion.
+- **F2 CERTAINTY.** "Never convert uncertain information into certainty."
+  The research ledger already recorded each claim's strength; nothing checked
+  that the SPOKEN words matched it. A `single`- or `disputed`-tier claim
+  carrying "will / confirmed / guaranteed" with no qualifier now fails.
+- **F3 SOURCE POLICY.** Research sources and footage sources are separate
+  categories and a restriction on one does not imply the other — the
+  framework is explicit, and the check honours it: `official-footage-only`
+  lets third-party RESEARCH through while refusing third-party MEDIA.
+
+Scaffolded so they cannot be forgotten: `new_job.py` writes `subject`,
+`reveal_target` and `source_policy` into every brief, and structure.md now
+opens with the STORY ENGINE sentence (§4A) — *a viewer who believes X
+discovers Y, which matters because Z*. If it cannot be filled there is no
+reel yet, only material.
+
+**Applied to claude-eating-tokens, and it changed two things:**
+1. `reveal_target: none`, recorded WITH ITS REASONING — the reel names every
+   tool it recommends, so nothing is withheld and the CTA delivers links for
+   four already-named tools. That is honest but it is also weaker curiosity
+   than the framework's §6 flow can produce, and writing it down makes the
+   trade a known choice rather than an oversight.
+2. Every asset now declares **proof** or **illustrative**. The one that
+   changed hands: `term-clear` is ILLUSTRATIVE — its figures are at this
+   machine's real session scale but the transcript is a recreation, not a
+   captured session. The ccusage terminals stay PROOF: the DATA is real
+   output (kept in `_sources/`), only the chrome is styled. That distinction
+   is the quiet way a sourced reel becomes untrue, and it now has a field.
+
+## 2026-08-26 — "our system still generates very poor scripts": the diagnosis
+
+User pasted the claude-memory-everywhere draft. Ran it through our own
+`check_script` first, before defending anything: it reported a NUMBERS note
+and nothing else. The user was right, and the checker was the reason.
+
+**What was actually wrong with that draft**, read as a writer:
+its structure.md was excellent — it declared the story engine, chose
+misconception -> reality -> proof -> limit -> consequence, and said in as many
+words "not the four-section feature list the announcement itself is organised
+as." Then the script was that feature list. **The plan was right and the
+writing ignored it, and nothing in the pipeline noticed.**
+
+The visible symptom was one sentence: *"Back to what it refuses to write
+down."* The draft promised that payoff in sentence 4, spent nine sentences on
+unrelated features, then wrote a signpost admitting the detour. A viewer
+feels that as being lost.
+
+**New check: ABANDONED LOOP** — derived, not invented. Measured the promise ->
+navigation-back distance across all 13 scripts in the repo:
+
+| script | navigates back to | detour |
+|---|---|---|
+| iphone18-colors (approved) | — (holds a loop 11 sentences, never signposts) | none |
+| claude-eating-tokens (approved) | short aside | 2 |
+| iphone-18-pro (approved) | forward reference | none |
+| **claude-memory-everywhere** | **sentence 4** | **9** |
+
+So a long deferral is a GOOD loop; what no approved script does is announce a
+return after wandering. Threshold 5 — past a deliberate aside, well under the
+observed failure. Fires on the real draft, silent on every approved script and
+on a two-sentence aside. `"going back to 2019"` is excluded: a date is not a
+navigation.
+
+**And the craft loop itself was missing.** The rewrite took five passes, each
+one driven by the checker's own output: v1 traded the abandoned loop for NO
+loop; v2 fixed bridges but broke cadence; v3 planted a loop the payoff never
+echoed (the detector wants a DISTINCTIVE word returned, which is also what
+makes a callback ring); v4 landed the callback but ran 232 words, 84-99s
+against a 60-80s band; v5 trimmed to 194. That is the loop that was never
+being run — writing, measuring, rewriting — and it is now written down as the
+expected number of passes, not a sign something went wrong.
+
+Rewrite lives at `jobs/claude-memory-everywhere/script-rewrite.md` — NOT over
+the other session's `script.md`, which is unapproved and theirs to merge.
+
+## 2026-08-26 — three root causes behind "every script sounds the same"
+
+User: *"Why does it follow the same structure instead of considering the
+topic? Every script says 'here's the part that matters most.' Why does it
+build the shot plan before approval? And it took twenty minutes."*
+
+**1. THE CHECKER WAS WRITING THE HOUSE TIC.** `check_script`'s NO OPEN LOOP
+test matched a phrase list (`FORWARD`), so a script that did not use a listed
+phrase was told it had no loop — and every writer, human or model, reached
+for the listed words. Measured across the corpus:
+
+| phrase | scripts |
+|---|---|
+| `here's the` | 8 |
+| `the catch` | 4 |
+| `the part almost nobody noticed` (verbatim) | 3 |
+| `tell me in the comments` | 3 |
+
+Two fixes, opposing forces:
+- **`house_tics()`** flags any 3-5 word rhetorical phrase already used in
+  another script (proper nouns and numbers excluded — a subject recurring
+  across scripts about that subject is the subject, not a tic). Reported by
+  `propose`, so reuse costs something.
+- **`open_loop` now reads STRUCTURE, not vocabulary**: a withheld
+  enumeration ("Four things it won't write at all") is a loop when the items
+  arrive later, and an agenda when they arrive at once — which is the exact
+  test the code already applied to "three changes are coming". All five
+  hand-judged cases still pass.
+  Together: you must open a loop, and you may not open it in last reel's
+  words. The rewrite of claude-memory-everywhere failed the tic check on my
+  own first draft ("the part that matters"), which is how I know it works.
+
+**2. THE SHOT PLAN WAS BUILT BEFORE APPROVAL.** `plan_shots.py` has always
+SAID "turn an approved script into a shot plan" and only ever checked that
+the file existed. Every shot is phrase-anchored, so a plan written before
+approval is invalidated by the first word changed — and the repair then looks
+like progress. `--write` now refuses without `approval.json`, and refuses
+again if the script has drifted from the approved hash. Reading without
+`--write` stays open, because that is often how you decide it is ready.
+
+**3. TWENTY MINUTES WAS ROUND TRIPS, NOT THINKING.** Each rewrite pass cost
+four or five commands. `tools/script_doctor.py` runs all of them in one call
+(0.12s). The craft loop itself — 3-5 passes — is correct and stays; it is now
+documented in AGENT.md §1c as the expected shape of the work rather than a
+sign something went wrong.
+
+Bonus catch: script_doctor's first run flagged `for Free, Pro and Max` as the
+sell phrase "for free". A plan tier is a proper noun; the marker is narrowed.
+
+## 2026-08-26 — framework implementation audit: three gaps found and closed
+
+Asked to confirm the framework was really implemented, so I audited its 12
+sections against what code actually enforces rather than asserting it was
+done. Three gaps were real.
+
+**1. §2 brief — 4 of 14 fields.** subject, reveal_target, source_policy and
+cta_keyword were scaffolded; audience, platform, goal, core_value,
+desired_action, target_duration, tone, footage_constraints,
+credit_instructions and deliverables were not. Each one DECIDES something
+downstream (platform decides packaging; tone decides diction; credit
+instructions decide whether a chip is drawn at all), so a brief missing ten
+of them is a brief that gets answered by default. `new_job.py` now writes all
+fourteen, each with the decision it drives noted beside it.
+
+**2. §3 claim taxonomy — two classes had no word.** Ours was
+official/multi/single/disputed, which covers CORROBORATION only. The
+framework's six classes add **Prediction or Analysis** (a forecast is not a
+report, and §3.6 requires naming whose it is) and **Unsupported** — the one
+class §3.5 says must be excluded. Now: `prediction` is a valid tier and
+**F2b** fails a forecast whose spoken words never say whose it is;
+`unsupported` is REFUSED by research_check with the framework's own remedy
+(narrow it, attribute it, reframe, or cut — §3.14: adding "reportedly" to an
+unsupported claim does not make it publishable).
+
+**3. §11 had no audit.** The pre-publish checklist existed as prose across a
+dozen tools. `tools/prepublish.py` runs the measured half — framework check,
+claim ledger, approval freshness, gates, packaging — and prints the
+judgement half as QUESTIONS: the confused-viewer, boring-article, payoff and
+removal tests, plus retention, visual, audio, CTA and coherence. The split is
+deliberate: a machine cannot answer whether this reads as one creative
+decision, and a checkbox that pretends otherwise is worse than the question.
+
+It earned itself immediately: first run on claude-eating-tokens reported the
+reel is rendered and **has no packaging.md** — true, and nothing else had
+said so.
+
 ## 2026-08-26 — mac-mini-m6-m5pro: `annotatezoom.focus` is SOURCE PIXELS, not a fraction
 
 **RAW NOTE.** Every receipt in the first render came back as a near-blank

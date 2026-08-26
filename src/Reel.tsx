@@ -292,16 +292,45 @@ export const Reel: React.FC<{ beats: BeatSheet }> = ({ beats }) => {
               s.type === "typecard" ||
               s.type === "wordcascade" ||
               ("kinetic" in s && s.kinetic !== undefined);
+            // BIG TYPE THE SCENE DRAWS ITSELF — headline lines, and a
+            // commentcta's own keyword/question. The CTA case was missing:
+            // the keyword variant paints "COMMENT CLAUDE" at 200px while the
+            // caption printed "Comment Claude I'll" underneath it, the same
+            // words twice (user, 2026-08-25). Any scene that spells the
+            // spoken line out in display type suppresses the caption.
+            const ownText: string[] = [];
             if (
-              !autoHide &&
               s.headline &&
               typeof s.headline === "object" &&
               "lines" in s.headline &&
               Array.isArray(s.headline.lines)
             ) {
-              const hw = new Set(
-                s.headline.lines.flatMap((l) => words(l.text))
-              );
+              ownText.push(...s.headline.lines.map((l) => l.text));
+            }
+            if (s.type === "commentcta") {
+              // The KEYWORD variant keeps the reel's caption rhythm to the
+              // last frame (reference fR8AkVkuM18) — so only the chunk that
+              // would print the keyword twice is dropped, not the whole beat.
+              // The gate variant draws a question card AND a word card AND a
+              // notification, so it still suppresses wholesale.
+              if (s.variant === "keyword") {
+                const kw = words(s.keyword ?? "OPEN");
+                for (const cap of beats.captions) {
+                  if (
+                    cap.start < c + s.durationSec &&
+                    cap.end > c &&
+                    words(cap.text).some((w) => kw.includes(w))
+                  ) {
+                    out.push({ start: cap.start, end: cap.end });
+                  }
+                }
+                c += s.durationSec;
+                continue;
+              }
+              ownText.push(s.keyword ?? "OPEN", s.question ?? "");
+            }
+            if (!autoHide && ownText.length) {
+              const hw = new Set(ownText.flatMap(words));
               const voWords = beats.captions
                 .filter((w) => w.start < c + s.durationSec && w.end > c)
                 .flatMap((w) => words(w.text));

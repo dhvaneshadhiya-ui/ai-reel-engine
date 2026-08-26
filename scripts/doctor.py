@@ -208,7 +208,9 @@ else:
     cfg = json.loads(cfg_path.read_text())
     av, de = cfg.get("avatar", {}), cfg.get("defaults", {})
     checks = [
-        ("avatar.voiceSpeed", av.get("voiceSpeed"), 1.05),
+        # 1.12 locked 2026-08-25 (user: 1.05 read "slow and flat"; probed
+        # fd83905a before the regen). Supersedes the 2026-08-11 1.05 lock.
+        ("avatar.voiceSpeed", av.get("voiceSpeed"), 1.12),
         ("defaults.captionStyle", de.get("captionStyle"), "word-reveal"),
     ]
     for name, got, want in checks:
@@ -340,6 +342,41 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "script calibration", str(e))
     problems.append("calibration")
 
+# The FRAMEWORK CHECK (2026-08-25) — the three rules of the short-form master
+# framework that have a right answer: reveal-target concealment, certainty
+# matching evidence, and source policy. Each one is a promise to the viewer.
+try:
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "tools/framework_check.py"), "--selftest"],
+        capture_output=True, text=True, timeout=60)
+    if r.returncode == 0:
+        report(OK, "framework self-test", "reveal / certainty / source policy")
+    else:
+        report(BAD, "framework self-test", "a framework rule stopped firing")
+        print(r.stdout[-700:])
+        problems.append("framework")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "framework self-test", str(e))
+    problems.append("framework")
+
+# The CAPTURE CONTRACT (2026-08-25). capture.mjs's defaults ARE rules —
+# mobile-first (R2), live cursor (the ai-tools evidence grammar), real
+# viewport, device-scale frames. Two of them had silently broken and shipped
+# a whole scout session before anyone looked at a file's real dimensions.
+try:
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "tools/test_capture_defaults.py")],
+        capture_output=True, text=True, timeout=60)
+    if r.returncode == 0:
+        report(OK, "capture defaults", r.stdout.strip().splitlines()[-1])
+    else:
+        report(BAD, "capture defaults", "a capture default changed")
+        print(r.stdout[-700:])
+        problems.append("capture")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "capture defaults", str(e))
+    problems.append("capture")
+
 # The retention join (2026-08-21) — the tool that turns a published reel's
 # curve into per-scene-type numbers. Its math is exactly the kind of thing
 # that rots silently: a broken join would keep printing plausible tables.
@@ -377,6 +414,25 @@ try:
 except Exception as e:  # noqa: BLE001
     report(BAD, "scout sheet self-test", str(e))
     problems.append("scout-sheet")
+
+# Avatar ingest (2026-08-26) — the 25fps trap. Twin renders come back 25fps
+# while the project is 30fps, and Remotion resolves the mismatch by REPEATING
+# FRAMES rather than erroring, so a skipped conform ships a micro-stuttering
+# facecam and nothing in any log says so. The self-test proves the conform
+# still fires, and that an already-correct master is left alone.
+try:
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "tools/ingest_avatar.py"), "--selftest"],
+        capture_output=True, text=True, timeout=120)
+    if r.returncode == 0:
+        report(OK, "avatar ingest self-test", r.stdout.strip().splitlines()[-1])
+    else:
+        report(BAD, "avatar ingest self-test", "fps conform broke — see output")
+        print(r.stdout[-600:])
+        problems.append("avatar-ingest")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "avatar ingest self-test", str(e))
+    problems.append("avatar-ingest")
 
 # ------------------------------------------------------------- fresh clone
 #

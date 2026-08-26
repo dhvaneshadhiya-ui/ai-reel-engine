@@ -1,0 +1,11 @@
+{
+  "script_sha256": "341019be42e5254769ab104ff0974e9602ebc0e128ae0b1c75c1d4c520f4df90",
+  "structure_sha256": "c72897d621ae9552548e9c6c3065f6f1cb8a5d4841161419db8ec27ec555ff06",
+  "findings": [
+    "  NO OPEN LOOP \u2014 sentence 1 promises something ('Your Claude bill is mostly the reading, not the ') and nothing later returns to it. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "  OPENING has no version, date or time anchor: \"Your Claude bill is mostly the reading, not the writing \u2014 here's\". A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)"
+  ],
+  "research_advice": [],
+  "beatPlanShots": 15,
+  "proposedAt": "2026-08-25T10:18:48+00:00"
+}

@@ -103,6 +103,100 @@ AI_TELLS = [
     "but here's where",
 ]
 
+# HYPE MARKERS — the creator-sell register, measured off the ai-tools corpus
+# (formats/ai-tools.md, 8 transcripts, 2026-08-25). The teardown adopted that
+# corpus's COMPRESSION and its fused function-plus-name, and explicitly
+# rejected its SELL: "Their hype markers are NOT ours. The house register is
+# reporting."
+#
+# That rejection lived only in prose, so a future ai-tools script could carry
+# "completely free" three times and nothing would say a word — exactly the
+# failure mode this repo exists to prevent. Separate from AI_TELLS because
+# these are not signs of a machine writing; they are signs of a SALESMAN
+# writing, and a human would produce them enthusiastically.
+HYPE_MARKERS = [
+    "yes you heard it right", "you heard that right", "the crazy part",
+    "the craziest part", "the best part is", "completely free", "100% free",
+    "totally free", "for free", "insane", "insanely", "mind-blowing",
+    "mind blowing", "this is huge", "trust me", "i'm not kidding",
+    "no joke", "literally the best", "you won't believe", "wait till you see",
+    "wait until you see", "absolute game", "blew my mind",
+]
+
+
+def house_tics(text: str, exclude_slug: str | None = None,
+               min_n: int = 3) -> list[str]:
+    """Phrases this repo has already used in another script.
+
+    THE CHECKER WAS MANUFACTURING THE TIC (2026-08-26, user). `FORWARD` above
+    is a phrase list, and NO OPEN LOOP punishes any script that does not match
+    it — so every writer reaches for the same recognised words. Measured
+    across the corpus when the user asked why every script sounds the same:
+
+        "here's the"                8 scripts
+        "the catch"                 4 scripts
+        "the part almost nobody noticed"   3 scripts, verbatim
+        "tell me in the comments"   3 scripts
+
+    A checker that rewards specific phrasing produces house style by
+    accident, and house style repeated verbatim is a tic. So this is the
+    OPPOSING FORCE: the loop detector still insists a loop exists, and this
+    makes reusing last reel's words cost something. You must open a loop —
+    in your own words, this time.
+
+    Same principle as STYLE-RULES' rule against repeating the previous reel's
+    visual treatment, applied to language.
+
+    Proper nouns and numbers are excluded: a subject recurring across scripts
+    about the same subject is not a tic, it is the subject.
+    """
+    def grams(t: str) -> set[str]:
+        body = " ".join(l for l in t.splitlines()
+                        if l.strip() and not l.lstrip().startswith("#"))
+        out: set[str] = set()
+        for sent in re.split(r"(?<=[.!?])\s+", body):
+            toks = sent.split()
+            for n in range(min_n, min_n + 3):
+                for i in range(len(toks) - n + 1):
+                    g = toks[i:i + n]
+                    if any(w[:1].isupper() for w in g[1:]):
+                        continue                      # carries a proper noun
+                    if any(any(c.isdigit() for c in w) for w in g):
+                        continue
+                    phrase = re.sub(r"[^a-z' ]", "", " ".join(g).lower()).strip()
+                    if len(phrase.split()) >= min_n:
+                        out.add(phrase)
+        return out
+
+    mine = grams(text)
+    if not mine:
+        return []
+    seen: dict[str, set[str]] = {}
+    for f in sorted((ROOT / "jobs").glob("*/script.md")):
+        slug = f.parent.name
+        if exclude_slug and slug == exclude_slug:
+            continue
+        try:
+            for g in grams(f.read_text()) & mine:
+                seen.setdefault(g, set()).add(slug)
+        except OSError:
+            continue
+    # keep the LONGEST form of each overlap: "here's the part that matters"
+    # rather than also reporting the four fragments inside it
+    phrases = sorted(seen, key=len, reverse=True)
+    kept: list[str] = []
+    for ph in phrases:
+        if not any(ph in longer for longer in kept):
+            kept.append(ph)
+    notes = []
+    for ph in sorted(kept, key=lambda p: -len(seen[p]))[:6]:
+        who = ", ".join(sorted(seen[ph])[:3])
+        notes.append(
+            f"HOUSE TIC: {ph!r} — already used in {len(seen[ph])} other "
+            f"script(s) ({who}). Say it a different way; a phrase the channel "
+            "reuses stops being a hook and becomes a verbal habit.")
+    return notes
+
 
 def sentences(text: str) -> list[str]:
     body = " ".join(l.strip() for l in text.splitlines()
@@ -189,9 +283,38 @@ def open_loop(ss: list[str]) -> tuple[bool, str]:
     # the mechanism." before its real loop was judged on the throwaway and
     # reported NO OPEN LOOP with an actual loop two sentences further down.
     # A detector that stops at the first candidate is testing sentence order.
+    # WITHHELD ENUMERATION — a forward reference written in the author's OWN
+    # words, which a phrase list can never see (2026-08-26).
+    #
+    # "Four things it won't write at all." names a count and withholds the
+    # items. That is a loop by structure, and FORWARD would miss it because
+    # the sentence contains none of its phrases. The repo's own note above
+    # warns against widening a phrase list to fit whatever was just written —
+    # so this is not another phrase. It is the test the code already
+    # articulates for the opposite case: "three changes are coming" is NOT a
+    # loop precisely because the items follow immediately. Withheld until
+    # later = loop; filled at once = agenda.
+    #
+    # This matters beyond one script. The phrase list was PRESCRIBING the
+    # house voice — "here's the" reached 8 scripts, "the part almost nobody
+    # noticed" appeared verbatim in 3 — because a script that did not use a
+    # listed phrase was told it had no loop. Reading structure instead is what
+    # lets every reel open its loop in its own language.
+    CARDINAL = re.compile(
+        r"\b(two|three|four|five|six|seven|eight|nine|ten)\s+"
+        r"([a-z]{3,})\b", re.I)
+
+    def withheld_enumeration(idx: int, sent: str) -> bool:
+        m = CARDINAL.search(sent)
+        if not m:
+            return False
+        near = " ".join(ss[idx + 1: idx + 3]).lower()
+        # if the items are spelled out immediately, it is an agenda, not a loop
+        return not re.search(r"\bfirst\b|\bone[:,]|\bstart with\b", near)
+
     unresolved: str | None = None
     for i, sent in enumerate(ss[:third]):
-        if not FORWARD.search(sent):
+        if not FORWARD.search(sent) and not withheld_enumeration(i, sent):
             continue
         distinctive = {w for w in re.findall(r"[a-z]{5,}", sent.lower())
                        if w not in _STOP and counts.get(w, 0) <= 3}
@@ -440,6 +563,74 @@ def check(text: str, shape: str | None = None) -> list[str]:
             "writing). Zero approved scripts use any of these. Say it the way "
             "you would say it out loud.")
 
+    # 5c. HYPE REGISTER. We are a PUBLISHER reporting a story, not an account
+    #     selling one — the line the ai-tools teardown drew when it adopted
+    #     that corpus's structure. "for free" is deliberately in the list and
+    #     deliberately narrow: naming a price is fine ("it's free"), selling
+    #     the price is not. Advice, like everything here.
+    hype = []
+    for h in HYPE_MARKERS:
+        if not re.search(rf"\b{re.escape(h)}", low):
+            continue
+        # "for Free, Pro and Max" names a plan tier. Capitalised in the
+        # ORIGINAL text means it is a proper noun, not the sell register
+        # (false positive found 2026-08-26 by script_doctor on its own output).
+        if h == "for free" and re.search(r"\bfor Free\b", flat):
+            continue
+        hype.append(h)
+    if hype:
+        notes.append(
+            f"HYPE: {', '.join(repr(h) for h in hype)} — the creator-sell "
+            "register. formats/ai-tools.md took that corpus's compression and "
+            "rejected its sell; the house voice reports. Say what it does and "
+            "let the number carry the excitement.")
+
+    # 5d. ABANDONED LOOP — the script navigating its own structure aloud.
+    #
+    # DERIVED, not guessed (2026-08-25, from the whole approved corpus): a
+    # promise deferred a long way is a GOOD open loop — iphone18-colors holds
+    # one for 11 sentences and never mentions it again until the payoff. What
+    # no approved script does is say "back to X" after wandering away from X.
+    # claude-memory-everywhere promised "the part that matters most: some of
+    # it Claude refuses to write down", spent nine sentences on unrelated
+    # features, then wrote "Back to what it refuses to write down." The
+    # sentence is the writer admitting the detour on the record, and the
+    # viewer feels it as being lost.
+    #
+    # Measured across 13 scripts: approved ones return to nothing detectable
+    # (a forward reference or a two-sentence aside); the weak one returns 9
+    # sentences. The threshold sits at 5 — past a short, obviously deliberate
+    # aside, and well under the observed failure.
+    NAVBACK = ("back to", "as i said", "as mentioned", "returning to",
+               "like i said", "to recap")
+    _stop = {"the", "a", "an", "and", "or", "but", "of", "to", "in", "it",
+             "is", "was", "that", "this", "those", "these", "you", "your",
+             "what", "which", "now", "some", "its", "on", "off", "by", "for",
+             "they", "them", "then", "so"}
+
+    def _content(text: str) -> set[str]:
+        return {w for w in re.findall(r"[a-z']+", text.lower())
+                if w not in _stop and len(w) > 2}
+
+    for i, sentence in enumerate(ss):
+        low_s = sentence.lower()
+        # "going back to 2019" is a date, not a navigation
+        if not any(re.search(rf"{n}(?!\s+\d)", low_s) for n in NAVBACK):
+            continue
+        key = _content(sentence)
+        for j in range(i - 1, -1, -1):
+            if len(key & _content(ss[j])) >= 2:
+                if i - j >= 5:
+                    notes.append(
+                        f"ABANDONED LOOP: sentence {i + 1} steers back to "
+                        f"something last said in sentence {j + 1} — a "
+                        f"{i - j}-sentence detour, then a signpost admitting "
+                        f"it ({sentence[:48]!r}). No approved script in this "
+                        "repo does that. Either move the promise next to its "
+                        "payoff, or cut what came between; a loop the writer "
+                        "has to announce a return to was not held.")
+                break
+
     # 6. NUMBER DENSITY — also the playbook's own rule.
     nums = len(re.findall(r"\$?\d[\d.,]*", flat))
     per = len(ss) / nums if nums else 999
@@ -559,6 +750,56 @@ def selftest() -> int:
         clean = [n for n in _notes_of(approved_path.read_text())
                  if n.startswith("AI TELL")]
         check_("AI TELL silent on the approved script", not clean)
+    # HYPE: same shape. The offender is the ai-tools corpus's own sell voice,
+    # which is enthusiastic HUMAN writing — so it must trip HYPE and NOT be
+    # caught by the AI-tell list, or the two checks are measuring one thing.
+    selly = ("Yes you heard it right — this tool is completely free. "
+             "The crazy part? It's insanely good. Trust me, this is huge.")
+    hype_fired = [n for n in _notes_of(selly) if n.startswith("HYPE")]
+    check_("HYPE fires on the creator-sell offender", bool(hype_fired))
+    check_("HYPE names multiple markers",
+           bool(hype_fired) and hype_fired[0].count("'") >= 6)
+    check_("the sell offender is NOT caught by the AI-tell list instead",
+           not [n for n in _notes_of(selly) if n.startswith("AI TELL")])
+    if approved_path.exists():
+        clean = [n for n in _notes_of(approved_path.read_text())
+                 if n.startswith("HYPE")]
+        check_("HYPE silent on the approved script", not clean)
+    # ABANDONED LOOP: the fixture is the real 2026-08-25 draft that prompted
+    # the check — a promise, a nine-sentence detour, then a signpost back.
+    loopy = ("Claude keeps a file on you. "
+             "But here's the part that matters most: some of it Claude "
+             "refuses to write down. "
+             "Everything it knows is a text file under a topic. "
+             "A fix only has to happen once. "
+             "Correct your company's old name there. "
+             "Memory stopped staying put. "
+             "The subjects it leaves alone are off by default. "
+             "There's a switch if you want them in. "
+             "It sends a notice each time. "
+             "Back to what it refuses to write down.")
+    fired = [n for n in _notes_of(loopy) if n.startswith("ABANDONED LOOP")]
+    check_("ABANDONED LOOP fires on the real weak draft", bool(fired))
+    tight = ("Claude keeps a file on you. "
+             "Back to that file in a second. "
+             "First, what is in it.")
+    check_("a two-sentence aside does NOT trip it",
+           not [n for n in _notes_of(tight) if n.startswith("ABANDONED LOOP")])
+    if approved_path.exists():
+        check_("ABANDONED LOOP silent on the approved script",
+               not [n for n in _notes_of(approved_path.read_text())
+                    if n.startswith("ABANDONED LOOP")])
+    # HOUSE TIC: a phrase lifted verbatim from another script in the repo must
+    # fire; original phrasing must not. Uses the real corpus on purpose — a
+    # fixture corpus would not catch the checker drifting from what shipped.
+    lifted = house_tics("But here's the part that matters most about this.",
+                        exclude_slug="__none__")
+    check_("HOUSE TIC fires on a phrase reused from another script",
+           bool(lifted))
+    fresh = house_tics(
+        "Quarterly forecasting collapsed into a spreadsheet nobody reconciles.",
+        exclude_slug="__none__")
+    check_("HOUSE TIC silent on original phrasing", not fresh)
     print("\n  self-test PASSED\n" if ok else "\n  self-test FAILED\n")
     return 0 if ok else 1
 
@@ -824,6 +1065,8 @@ def main() -> None:
         print("\n  NOTE: no jobs/<slug>/structure.md — the narrative shape was never "
               "declared,\n  so nothing here can know what rhythm to expect. See "
               "formats/README-structure.md.")
+    for _t in house_tics(text, exclude_slug=(args[0] if args else None)):
+        print(f"  - {_t}")
     if fmt and fmt != "news":
         print(f"\n  NOTE: this reel's format is {fmt!r}. The structural thresholds above\n"
               "  were calibrated on a matched pair of NEWS scripts and no reel in this\n"

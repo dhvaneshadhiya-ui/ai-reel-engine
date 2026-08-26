@@ -190,3 +190,27 @@ scene union):
   identity hidden for the comment gate), light theme = cream-adjacent. Accent
   system: cyan #0aa9c2 (open/free) vs red #e0244a (paid) on nick tokens.
   Synth SFX (ffmpeg): pitched ding ×5, cash-reverse, keys, unlock, chime.
+
+## ai-tools addendum (2026-08-25) — the look for the AI/Claude tool genre
+
+The ai-tools FORMAT (formats/ai-tools.md) renders under THIS pack — its
+Saraev DNA is this pack's own source, and RULES.md locks the style count at
+two, so the genre's look lands here as vocabulary, not as a third pack.
+From the 9-reel observation study (measured provenance in STYLE-RULES
+2026-08-25):
+
+- **Windowed recordings with a LIVE CURSOR are the evidence unit** — a real
+  page scrolled at reading speed, a button actually clicked. capture.mjs
+  record now paints a visible cursor + click ring (on by default,
+  --no-cursor to disable). Rendered as `floatcard` on the canvas.
+- **Logo/wordmark cards at naming moments** — the tool's name lands as a
+  designed card the instant it is spoken; Press Start 2P is the pixel voice
+  for it (Badar sets "CLAUDE CODE" in exactly this register).
+- **One neon-green keyword pop on the CTA verb** (COMMENT / FOLLOW) over
+  the face — commentcta's keyword plus `emphasis`.
+- **Take-craft for recordings:** dwell where the claim lives (the README
+  hero, the About panel), don't tour the page — the first cursor take of
+  caveman-page over-scrolled into the file listing and reads as noise at
+  inset scale. Choreograph 2-3 beats max per clip.
+- Hook may use meme/stock b-roll ONCE; nothing full-bleed after it except
+  demos. Everything else floats on the canvas with a soft shadow.

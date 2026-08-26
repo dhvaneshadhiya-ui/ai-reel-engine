@@ -47,6 +47,15 @@ re-scout for it specifically, or **rewrite the line** to something you can show.
 ## 2. Order of operations (do not reorder)
 
 ### STEP 0 — Load context
+0. Read `frameworks/short-form-master.md` and answer its §2 brief fields in
+   `jobs/<slug>/brief.json`: **subject**, **reveal_target** (the precise
+   identity withheld for a DM, or `none`), **source_policy** (facts and
+   footage are separate categories). `new_job.py` scaffolds all three, and
+   `script_approval.py propose` refuses on a leak, a claim spoken harder
+   than its evidence, or a source-policy violation.
+   Then state the STORY ENGINE in one sentence before writing anything:
+   *a viewer who believes/experiences X discovers Y, which matters because
+   Z.* If you cannot fill it, there is no reel yet — only material.
 1. Read `STYLE-RULES.md`. Its rules override this file.
 2. Pick the style pack in `styles/`. It defines the LOOK and the script voice.
    This file defines the PROCESS.
@@ -111,6 +120,27 @@ specific request (max 1–2 loops), or rewrite the line.
 confirm every visual id resolves. Fixing this on paper costs seconds; fixing it
 after voice + avatar generation costs credits and an hour.
 
+### STEP 1c — THE CRAFT LOOP (write -> measure -> rewrite)
+
+```bash
+python3 tools/script_doctor.py <slug>        # or --file draft.md --slug <s>
+```
+
+ONE call: prose shape, house tics, the framework's reveal/certainty/source
+rules, and the runtime prediction. A good script takes several passes — that
+is the job, not a defect. What was a defect is that each pass used to cost
+four or five separate commands, which is where "twenty minutes for a script"
+went (2026-08-26).
+
+Expect 3-5 passes. If the first draft measures clean, be suspicious rather
+than pleased.
+
+**A shot plan is NOT part of this loop.** `plan_shots.py --write` now refuses
+until the script is approved and hash-fresh: every shot anchors to exact
+wording, so a plan written against unapproved words is invalidated by the
+first edit. Reading the clause breakdown (no `--write`) is fine and often how
+you decide the script is ready.
+
 ### STEP 1.5 — Rehearse the VO for free, FIRST
 
 ```bash
@@ -151,6 +181,23 @@ Fix mishears (product names, numbers) in the build script's CORRECT/FIX map —
 Cut only what the beat map binds, at the noted timestamps and crops. If you
 discover a problem while cutting (the shot drifted, chrome is visible), update
 the manifest *and* the beat map **before** building — not after rendering.
+
+### STEP 3.9 — THE PRE-PUBLISH AUDIT (framework §11)
+
+```bash
+python3 tools/prepublish.py <slug>
+```
+
+The framework's closing instruction is *"approve only when facts, clarity,
+retention, visuals, audio, platform fit, CTA, reveal handling, and overall
+coherence pass a final audit."* Every piece of that existed in some tool; the
+AUDIT did not, so "it passed" meant "nobody found anything".
+
+It prints two halves and the split is the point: **measured** checks run and
+fail, **judgement** items print as questions — the confused-viewer,
+boring-article, payoff and removal tests, plus coherence. A machine cannot
+answer those, and pretending it can is how taste ends up wearing a rule's
+badge. Answer them out loud before shipping.
 
 ### STEP 4 — Build, register, render
 
@@ -285,6 +332,57 @@ Key scene types — full table in `PIPELINE.md` §3:
 | `wordcascade` | words stacking in sequence |
 | `hcompare` / `comparesplit` | before/after comparisons |
 | `statcard`, `checklist`, `categorygrid`, `carousel`, `xpost` | structured MG |
+
+---
+
+## 3b. THE EDITOR'S PASS — do this before every render
+
+Added 2026-08-25, user directive: *"think of yourself as a years-experienced
+video editor who is also expert in editing for reels and shorts, and edit as
+per the need of the topic and script."*
+
+The gates prove a reel is not BROKEN. They cannot tell you it is not EDITED.
+A sheet where every beat carries the same `zoomDir: "in"` passes everything
+and still watches like a slideshow — which is exactly what claude-eating-
+tokens was until this pass.
+
+So after compiling and before rendering, print the cut and read it:
+
+```bash
+python3 tools/cut_sheet.py <slug>      # every beat: time, duration, motion
+```
+
+Then ask these five questions and CHANGE something for each one that fails.
+None of them is a threshold; they are the questions an editor asks.
+
+1. **Does any two adjacent beats move the same way?** Two shots that both
+   push in read as one long shot with a glitch. Give one of them a different
+   job: establish wide, then hold tight. Same asset, two moves, is a CUT.
+2. **Where is the longest shot, and what time does it sit at?** A long hold
+   early is confidence; the same hold at 40s is a dropped viewer. Split it
+   on its own second clause — most sentences have one.
+3. **Does the motion fight the asset?** A recording that already scrolls
+   does not want a push on top; that is two motions arguing. A static
+   oversized asset wants the opposite: let it travel (`slide`), optionally
+   with a slow push for depth (`zoom` + `slide` compose — the slide reads
+   the content, the push keeps it alive).
+   **And check what the asset can afford.** A mobile capture is 1080 wide —
+   exactly the frame — so scale on it crops words off BOTH edges. A `zoom:
+   1.5` meant to make a README claim readable chopped that claim in half
+   (2026-08-25). Frame a full-width capture by choosing its SLICE (`focusY`)
+   and its MOMENT (`from`), at 1:1. Save scale for assets genuinely wider
+   than the frame. Compile prints an advisory when a zoom exceeds what the
+   source can afford.
+4. **Does the shape follow the story?** A myth-buster should SLOW at its
+   turn and ACCELERATE through its fixes. Compare the beat durations either
+   side of the pivot; if they are the same, the edit is not telling the
+   story the script is telling.
+5. **Is every frame doing the job its line asks for?** A tool being NAMED
+   wants the tool visible; a claim being PROVED wants the sentence readable.
+   That decides zoom-vs-hold more reliably than any preference.
+
+Record what you changed and why in the STYLE-RULES entry for the reel. The
+next editor (you, in a month) needs the reasoning, not the values.
 
 ---
 

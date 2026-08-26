@@ -144,7 +144,12 @@ def load_words(path: Path) -> list[dict[str, Any]]:
         # thousand dollars" -> "$2" + ",000"); only "." was handled.
         if text[:1] in (".", ",") and out and tokens and tokens[0].isdigit():
             out[-1]["text"] = f'{out[-1]["text"]}{text[:1]}{tokens[0]}'
-            out[-1]["norm"] = normalize(out[-1]["text"])[-1]
+            # The WHOLE number, joined: [-1] kept only the last token, so
+            # "100,000" carried norm "000" and no anchor containing the
+            # number could ever resolve (found 2026-08-25 on claude-eating-
+            # tokens shot 4 — the display half of this merge was right, the
+            # matching half silently wasn't).
+            out[-1]["norm"] = "".join(normalize(out[-1]["text"]))
             out[-1]["end"] = end
             continue
         # A possessive/contraction ("Apple's") normalises to ["apple","s"], and
@@ -178,6 +183,58 @@ def load_words(path: Path) -> list[dict[str, Any]]:
     return out
 
 
+def _match_at(haystack: list[str], needle: list[str], start: int) -> int | None:
+    """Match `needle` at `start`, tolerating whisper's compound splits.
+
+    Whisper splits written compounds into their spoken words — "README" comes
+    back as "read me", "ccusage" as "cc usage" — so an exact window compare
+    can never resolve a start_phrase containing one (found 2026-08-25 on
+    claude-eating-tokens shot 5, "But its README admits"). Same class as the
+    possessive fix in normalize_phrase, mirrored: there the NEEDLE was split
+    too finely; here the TRANSCRIPT is. So allow one needle token to consume
+    up to 3 consecutive transcript tokens whose concatenation equals it, and
+    the reverse for the rare join. Returns the index of the last transcript
+    word consumed, or None.
+    """
+    i, j = start, 0
+    while j < len(needle):
+        if i >= len(haystack):
+            return None
+        if haystack[i] == needle[j]:
+            i += 1
+            j += 1
+            continue
+        joined = haystack[i]
+        for k in range(i + 1, min(i + 3, len(haystack))):
+            joined += haystack[k]
+            if joined == needle[j]:
+                break
+            if len(joined) >= len(needle[j]):
+                joined = None
+                break
+        else:
+            joined = None
+        if joined is not None:
+            i = k + 1
+            j += 1
+            continue
+        merged = needle[j]
+        for m in range(j + 1, min(j + 3, len(needle))):
+            merged += needle[m]
+            if merged == haystack[i]:
+                break
+            if len(merged) >= len(haystack[i]):
+                merged = None
+                break
+        else:
+            merged = None
+        if merged is None:
+            return None
+        i += 1
+        j = m + 1
+    return i - 1
+
+
 def find_phrase(
     words: list[dict[str, Any]], phrase: str, cursor: int, label: str
 ) -> tuple[int, int]:
@@ -185,9 +242,10 @@ def find_phrase(
     if not needle:
         raise SystemExit(f"{label} cannot be empty")
     haystack = [word["norm"] for word in words]
-    for start in range(cursor, len(haystack) - len(needle) + 1):
-        if haystack[start : start + len(needle)] == needle:
-            return start, start + len(needle) - 1
+    for start in range(cursor, len(haystack)):
+        end = _match_at(haystack, needle, start)
+        if end is not None:
+            return start, end
     preview = " ".join(haystack[cursor : cursor + 24])
     raise SystemExit(
         f"could not resolve {label} {phrase!r} after word {cursor}; "
@@ -279,9 +337,19 @@ def substitute(value: Any, tokens: dict[str, Any]) -> Any:
 
 
 def _apply_phrases(text: str, phrase_fixes: dict[str, str]) -> str:
-    """Case-insensitive replacement of multi-word correction keys."""
+    """Case-insensitive replacement of multi-word correction keys.
+
+    Punctuation-tolerant between words: whisper punctuates mishears
+    unpredictably, and a literal match of "see use it" can never find
+    "see, use it" — which is exactly how the ccusage correction silently
+    did nothing on claude-eating-tokens (found 2026-08-25 in a rendered
+    frame, after compile, validate and every gate passed). Spaces in the
+    key match any non-alphanumeric run in the text.
+    """
     for key, value in phrase_fixes.items():
-        text = re.sub(re.escape(key), value, text, flags=re.IGNORECASE)
+        pattern = r"[^A-Za-z0-9]+".join(
+            re.escape(part) for part in key.split())
+        text = re.sub(pattern, value, text, flags=re.IGNORECASE)
     return text
 
 
@@ -314,13 +382,30 @@ def caption_words(
     chunks: list[dict[str, Any]] = []
     for index in range(0, len(corrected), 3):
         group = corrected[index : index + 3]
+        text = _apply_phrases(
+            " ".join(item["text"] for item in group), phrase_fixes
+        )
+        # PER-WORD TIMINGS — the caption component's word-reveal, karaoke
+        # envelope and EMPHASIS matching all key off `words`; without it the
+        # whole chunk falls back to one "word" whose concatenation matches no
+        # emphasis entry, so the accent highlight silently never fired on any
+        # generic-path reel (found 2026-08-25 — the bespoke build_*.py sheets
+        # all carry `words`, this compiler never did; same family as the
+        # style/captionBottom/G27 gaps). A phrase fix can merge or reword the
+        # chunk, so re-split its TEXT and map word starts positionally,
+        # padding with the group's last start if the fix grew the word count.
+        split = text.split()
+        starts = [item["start"] for item in group]
         chunks.append(
             {
                 "start": round(group[0]["start"], 3),
                 "end": round(group[-1]["end"], 3),
-                "text": _apply_phrases(
-                    " ".join(item["text"] for item in group), phrase_fixes
-                ),
+                "text": text,
+                "words": [
+                    {"t": round(starts[min(w, len(starts) - 1)], 3),
+                     "text": word}
+                    for w, word in enumerate(split)
+                ],
             }
         )
     return chunks
@@ -471,6 +556,23 @@ def main() -> None:
         if not isinstance(scene, dict) or not scene.get("type"):
             raise SystemExit(f"shot {index} lacks a valid scene")
         scene["durationSec"] = round(end - start, 3)
+        # Split captions must clear the face seam (validate_job rejects
+        # captionBottom < 900). Every shipped split scene carries 1000, but
+        # only via the bespoke build_*.py scripts — the generic path emitted
+        # nothing and died in validation (found 2026-08-25, same
+        # generic-path-vs-bespoke-path family as the style/captionStyle
+        # hardcodes above). Default it; a shot may still override.
+        if scene.get("type") == "split":
+            scene.setdefault("captionBottom", 1000)
+        # A keyword CTA draws a 207px word centred at 67% of the frame, so the
+        # caption has to sit ABOVE it — at the default the two overlapped and
+        # the last beat rendered the caption THROUGH the keyword (2026-08-25).
+        # The reference keeps its caption near mid-frame with the keyword
+        # below; 880 puts the caption's bottom edge at y=1040 (54%), clear of
+        # the keyword's top edge at y=1182.
+        if (scene.get("type") == "commentcta"
+                and scene.get("variant") == "keyword"):
+            scene.setdefault("captionBottom", 880)
         if asset:
             scene.setdefault("assetId", str(asset_id))
             scene.setdefault("claimId", str(shot.get("claim_id", asset_id)))
@@ -488,12 +590,20 @@ def main() -> None:
                 scene.setdefault("covers", anchor)
             if asset.get("source_url"):
                 scene.setdefault("sourceUrl", asset["source_url"])
-            if asset.get("credit") and scene["type"] in {
-                "footage",
-                "receipt",
-                "floatcard",
-                "split",
-            }:
+            if (
+                asset.get("credit")
+                and scene.get("creditOnScreen") is not True
+                and scene["type"] in {
+                    "footage",
+                    "receipt",
+                    "floatcard",
+                    "split",
+                }
+            ):
+                # creditOnScreen (2026-08-25): the scene declares its frame
+                # names the source itself, so the manifest credit must not be
+                # re-injected here — popping `credit` from the plan did
+                # nothing while this setdefault put it straight back.
                 scene.setdefault("credit", asset["credit"])
         for media_key, trim_key in (
             ("src", "from"),
@@ -503,6 +613,21 @@ def main() -> None:
         ):
             if scene.get(media_key) == avatar_rel and trim_key not in scene:
                 scene[trim_key] = round(start, 3)
+        # A SCALE ON A FRAME-WIDTH CAPTURE CUTS ITS TEXT (2026-08-25). A mobile
+        # capture is 1080 wide — exactly the frame — so any zoom above ~1.15
+        # pushes words off both edges. On the editor's pass a `zoom: 1.5` meant
+        # to make a README claim readable did the opposite: it chopped the
+        # claim in half. Frame a full-width capture with `from` and `focusY`
+        # (which slice, at 1:1) instead of scale. Advice at compile time, where
+        # the asset's real width is already known.
+        if (scene.get("type") == "footage" and float(scene.get("zoom", 1)) > 1.15
+                and scene.get("src") and scene["src"] != avatar_rel):
+            info = media_info(public / scene["src"])
+            if info and info.get("width", 0) and info["width"] <= 1080:
+                print(f"  ADVICE shot {index}: zoom {scene['zoom']} on a "
+                      f"{int(info['width'])}px-wide capture — at frame width, "
+                      f"scale crops text off both edges. Use `from`/`focusY` "
+                      f"to choose the slice instead.")
         if scene.get("src") == avatar_rel and scene.get("type") == "footage":
             scene.setdefault("focusX", focus_full)
         if scene.get("bottomSrc") == avatar_rel:
@@ -601,6 +726,16 @@ def main() -> None:
                         "captionStyleReason"):
         if plan.get(passthrough) is not None:
             beats[passthrough] = plan[passthrough]
+    # STYLE FOLLOWS FORMAT (CLAUDE.md locked table: editorial = news,
+    # comparison · utility = top5, ai-tools). locked_style() reads the
+    # config default (editorial), which silently mis-dressed every utility-
+    # format reel built on the generic path — claude-eating-tokens rendered
+    # a full ai-tools reel in the editorial pack before anyone noticed
+    # (2026-08-25). A plan may still pin "style" explicitly.
+    if plan.get("style"):
+        beats["style"] = plan["style"]
+    elif beats.get("format") in ("top5", "ai-tools"):
+        beats["style"] = "utility"
     # G27 — the sheet carries the narration it was built from plus the approval
     # hash. Without these the gate blocks, and it is right to: a sheet that
     # cannot name the script it came from cannot prove the user approved it.

@@ -713,6 +713,39 @@ CASES = [
      "G49", "a locked-off zoom compounded by a push"),
 ]
 
+# G50 (2026-08-25): the ai-tools evidence doctrine, measured — the corpus
+# runs zero full-screen text scenes, so even one advises.
+CASES.append((lambda s: (s.update(format="ai-tools"),
+                         s["scenes"].__setitem__(10, {
+                             "type": "typecard", "durationSec": 2.5,
+                             "kinetic": {"lines": [{"text": "A CARD", "at": 0.2}]},
+                             "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]}))[0],
+              "G50", "an ai-tools reel with a full-screen text card"))
+
+# G52 (2026-08-25): the ai-tools CTA is a keyword pop, not the top5 pack's
+# simulated comment field — measured across all 9 corpus reels.
+CASES.append((lambda s: (s.update(format="ai-tools"),
+                         s["scenes"].__setitem__(len(s["scenes"]) - 1, {
+                             "type": "commentcta", "durationSec": 2.5,
+                             "src": "assets/x/avatar-master.mp4",
+                             "keyword": "CLAUDE", "variant": "gate",
+                             "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]}))[0],
+              "G52", "an ai-tools reel closing on the comment-gate mock"))
+
+# ai-tools (added 2026-08-25): CTA is constitutive — all 8 teardown reels
+# carry a follow/comment gate — so declaring the format without one trips G24.
+CASES.append((lambda s: s.update(format="ai-tools"),
+              "G24", "ai-tools reel with no CTA scene"))
+
+# G51 (2026-08-25): scene JSON bypasses tsc, so a statcard authored with an
+# invented stat/unit shape instead of `rows` passed everything and crashed
+# remotion at frame 538. The array the component maps over must exist.
+CASES.append((lambda s: s["scenes"].__setitem__(0, {
+                  "type": "statcard", "title": "caveman", "stat": "100,000",
+                  "unit": "stars", "durationSec": 2.0,
+                  "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.15}]}),
+              "G51", "a statcard with no rows (invented stat/unit shape)"))
+
 for mutate, gate, label in CASES:
     expect_fail(mutate, gate, label)
 
@@ -733,6 +766,68 @@ if _hits:
     print(f"  FAIL G09 fired on a declared music-free reel: {_hits[0][:90]}")
     raise SystemExit(1)
 _counted("G09 silent — noMusic:true needs no reason (music is optional)")
+
+# G14 creditOnScreen (user directive 2026-08-25): a scene whose frame shows
+# the source's own identity may declare it and skip the credit chip — but a
+# bare credit-less scene still blocks (the positive case lives in CASES).
+_s = copy.deepcopy(BASE)
+_s["scenes"][0].pop("credit", None)
+_s["scenes"][0]["creditOnScreen"] = True
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST,
+                       vo_words=VO_WORDS)
+    _hits = [a for a in _adv if "G14" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G14" in str(a)]
+if _hits:
+    print(f"  FAIL G14 fired though the scene declares its identity on "
+          f"screen: {_hits[0][:90]}")
+    raise SystemExit(1)
+_counted("G14 silent — creditOnScreen declares the frame names itself")
+
+# G39 vs whisper mishears (2026-08-25): whisper is NOT ground truth for what
+# was said — G21 learned this at 100% false positives. When `covers` is
+# missing from the raw transcript but present in the caption stream (which
+# carries caption_corrections, the declared record of the mishear), G39 must
+# stay silent. claude-eating-tokens: "re-reads" written as "reads",
+# "agent's" as "agents" — both would have blocked a correct render.
+_doc = {"credit": "@src", "type": "annotatezoom", "durationSec": 2.0,
+        "src": "assets/x/doc.png", "srcWidth": 1080, "srcHeight": 2000,
+        "focus": {"x": 40, "y": 100, "w": 900, "h": 500},
+        "covers": "macOS re-ships",
+        "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.15}]}
+_s = copy.deepcopy(BASE)
+_s["scenes"][0] = copy.deepcopy(_doc)
+_s["captions"] = [{"start": 0.0, "end": 0.7, "text": "macOS re-ships"}]
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST,
+                       vo_words=VO_WORDS)   # transcript says "macos ships"
+    _hits = [a for a in _adv if "G39" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G39" in str(a)]
+if _hits:
+    print(f"  FAIL G39 fired though the corrected captions carry the line: "
+          f"{_hits[0][:90]}")
+    raise SystemExit(1)
+_counted("G39 silent — covers found in corrected captions (whisper miswrote)")
+
+# ...and the hatch must not neuter the gate: words in NEITHER stream block.
+_s = copy.deepcopy(BASE)
+_s["scenes"][0] = copy.deepcopy(_doc)
+_s["scenes"][0]["covers"] = "quarterly revenue guidance"
+_s["captions"] = [{"start": 0.0, "end": 0.7, "text": "macOS ships"}]
+try:
+    check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST,
+                vo_words=VO_WORDS)
+    print("  FAIL G39 did not fire for covers absent from both streams")
+    raise SystemExit(1)
+except GateError as _e:
+    if "G39" not in str(_e):
+        print(f"  FAIL G39 did not fire for covers absent from both streams; "
+              f"got:\n{_e}")
+        raise SystemExit(1)
+_fired.append(("G39", "covers absent from transcript AND captions"))
+_counted("G39 still blocks — covers absent from both streams")
 
 
 # ── G31, the finished master ────────────────────────────────────────────────
