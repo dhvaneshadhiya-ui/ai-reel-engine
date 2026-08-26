@@ -20,7 +20,8 @@
     "brandGlossaryId": "262b015424dd4d78a3399ace592eb447",
     "_glossary_note": "2026-08-25: HeyGen brand glossary 'ai-reel-engine tool names' \u2014 ccusage -> 'see-see-usage', claude-hud -> 'Claude hudd'. The v1 claude-eating-tokens master spoke 'ccusage' as ~'accusate' (verified by whisper medium on the master AND fixed by probe 2c039525, ~3 credits). SEND brandGlossaryId ON EVERY GENERATION; pronunciations affect audio only, captions keep the written term. ADD new tool/product names to the glossary BEFORE generating, whenever the script contains a written-form name (lowercase CLI names, hyphenated repo names).",
     "voiceStyle": 0.35,
-    "voiceStability": 0.42
+    "voiceStability": 0.42,
+    "_voice_note": "MEASURED 2026-08-26. The cloned voice 'iGeeks Blog' (bb79e839) is the reason the read sounds flat, and no setting fixes it. Same text, same speed, TTS only: clone = 1.86 semitones of pitch movement (range 4.6); HeyGen stock voice 'Shaun' = 3.27 (range 10.6). Real creator references measure 3.74-6.63. Two avatar probes moving stability 0.42->0.28 and style 0.35->0.62, plus an eleven_v3 probe, changed NOTHING (2.02 and 2.74 vs 2.83 baseline) \u2014 a clone reproduces the expressiveness of its training audio, and cannot be argued into energy it never learned. THE FIX IS A RE-CLONE from expressive source recordings: see references/voice-clone-recording-spec.md. Do not spend more credits tuning stability/style against this clone."
   },
   "faceFraming": {
     "faceXDefault": 0.41,

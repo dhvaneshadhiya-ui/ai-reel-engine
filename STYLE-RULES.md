@@ -4663,3 +4663,55 @@ crops that are wrong; render to find out how they look.
   the general answer to a wide UI screenshot in a 9:16 frame (borrow the
   TECHNIQUE freely — it is now the documented default — but not the specific
   "white card on black, box on the control" composition three times running).
+
+## 2026-08-26 — "the voiceover is flat": measured, and it is the CLONE
+
+User: *"Voiceover is still so flat, no energy, no emotion... the way it starts,
+like the creator is fumbling."* Correct on both counts, and both are now
+numbers rather than impressions.
+
+**FLAT — measured against the user's own reference reels.** Pitch standard
+deviation in semitones, same estimator on all four:
+
+| clip | pitch sd | range |
+|---|---|---|
+| creator reference #1 | 3.74 | 11.6 |
+| creator reference #2 | 5.00 | 16.3 |
+| creator reference #3 | 6.63 | 17.4 |
+| **our shipped master** | **2.83** | **9.1** |
+
+**FUMBLING — it is inverted stress.** In the flagged opening, `"the"` is held
+0.34s while `"reading"` — the word carrying the meaning — gets 0.28s; then
+"why the top" rushes past at 0.14s each. Function words longer than the
+content words beside them is a reader who does not know which word matters.
+Three instances in the reel.
+
+**THE CAUSE IS THE CLONE, and settings do not touch it.** Two avatar probes
+(stability 0.42→0.28 + style 0.35→0.62; and eleven_v3 at style 0.70) came
+back at 2.02 and 2.74 against a 2.83 baseline — one WORSE, one unchanged.
+Then the decisive test, TTS only, same text, same speed, only the voice
+different:
+
+    our clone "iGeeks Blog"    1.86 semitones   range  4.6
+    HeyGen stock voice "Shaun" 3.27 semitones   range 10.6
+
+A clone reproduces the expressiveness of its training audio. The source read
+was level, so the clone is level, and no stability/style value invents range
+that was never recorded. **Do not spend more credits tuning this clone** —
+recorded in `config.json` so a future session does not repeat the experiment.
+
+**What is now in place:**
+- `tools/vo_qc.py` measures the READ — pitch variation, pitch range, stress
+  inversion — with the 3.5-semitone floor taken from the flattest real
+  creator, not invented. Every check in this repo looked at the script;
+  nothing had ever listened to what came back.
+- It runs inside `avatar_handoff prepare`, so a flat read is caught where the
+  VO first exists — before a frame is rendered against it.
+- The master-rule audit gained a clause for it: *the READ is measured, not
+  just the words.*
+- `references/voice-clone-recording-spec.md` says what to record to fix it,
+  and sets the acceptance test: a new clone ships only if it clears 3.5.
+
+**The honest limit:** nothing here fixes the current reel's read. The fix
+needs new source recordings from the user, which is the one step no tool can
+do.
