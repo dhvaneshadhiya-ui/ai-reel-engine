@@ -344,6 +344,13 @@ def cmd_propose(slug: str) -> None:
         # open-loop detector's own phrase list is what drives writers to
         # reuse them (2026-08-26).
         findings += _tics(spoken, exclude_slug=slug)
+        # The humanizer is a MANUAL pass and nothing invokes it (2026-08-26).
+        # Said here because propose is the last moment before the user is
+        # asked to approve the words.
+        findings.append(
+            "HUMANIZER: this is the last stop before approval. Nothing runs "
+            "that pass for you — if it has not been done, the checks above "
+            "are only the measurable half.")
         print("\nPROSE (advice — style is craft, none of this blocks):")
         for _n in findings or ["  nothing to flag"]:
             print(f"  - {_n}" if not _n.startswith("  ") else _n)

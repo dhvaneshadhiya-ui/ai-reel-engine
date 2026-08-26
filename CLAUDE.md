@@ -405,7 +405,16 @@ own numbers — and its PERSONALITY section explicitly tells it NOT to inject
 opinions into reference-style text, which matches our reporting register.
 
 Run it **after** the script hits its word budget and **before**
-`script_approval.py propose`. Never after approval: G27 hashes the approved
+`script_approval.py propose`.
+
+**NOTHING RUNS IT FOR YOU — verified 2026-08-26.** Every mention of
+`humanizer` in this repo's code is a COMMENT. The user asked why em-dashes
+keep appearing "even though we have the humanizer skill", and the answer was
+that the pass had never once been executed: claude-eating-tokens carried six
+em-dashes in 159 words, one every 26. `check_script` now measures what a
+checker can (PAGE PUNCTUATION, AI TELLS, HYPE, HOUSE TIC); the rest — rhythm,
+whether a sentence sounds like a person — is a pass YOU perform, and its
+absence is invisible unless you look for it. Never after approval: G27 hashes the approved
 narration, so a post-approval rewrite stops the build (correctly). Feed it our
 own shipped scripts as a voice sample — a sample outranks its own style rules,
 so calibrate rather than accept its defaults.

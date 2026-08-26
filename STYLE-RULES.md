@@ -4951,3 +4951,41 @@ spanning the run's timing, so a name cannot be split by any future chunk
 boundary. Same failure shape as the anchor matcher's compound splits — an
 arbitrary grouping deciding what counts as adjacent. Regenerating a voice
 moves every boundary, so this would have recurred on every re-render.
+
+## 2026-08-26 — "is our script actually being humanized?" No. It never was.
+
+User asked why em-dashes keep appearing in scripts when the repo has a
+humanizer skill installed. Checked instead of answering: **every occurrence
+of `humanizer` in this repo's code is a comment.** `check_script.py` mentions
+it in a docstring, `showrunner.py` prints its name in a stage list,
+`doctor.py` refers to it in passing. Nothing has ever invoked it. CLAUDE.md
+said "run it after the word budget and before propose" — and that sentence
+was the entire mechanism.
+
+The em-dashes are the visible symptom, measured across the corpus:
+
+| script | em-dashes | words | one every |
+|---|---|---|---|
+| claude-eating-tokens | 6 | 159 | **26 words** |
+| iphone18-split | 7 | 242 | 35 |
+| september-preview | 6 | 196 | 33 |
+| grok-bot | 1 | 355 | 355 |
+| apple-pay-india | 1 | 339 | 339 |
+
+**New check: PAGE PUNCTUATION**, and it does NOT rest on the em-dash being an
+"AI tell". It rests on two facts about this medium:
+
+1. **A listener cannot hear one.** The voice renders it as a pause — exactly
+   the comma or full stop that could have been written. It is a mark for the
+   eye, in a medium with no eye.
+2. **It breaks the synthesis.** Probed: IndexTTS2 rejects em-dash, colon and
+   semicolon outright, and 8 of 13 beats failed on precisely this.
+
+Threshold 1-per-60 words, sitting between the corpus's clean end (~1 per 350)
+and its dense end (1 per 26). Advice, with a self-test both ways.
+
+**And the docs now say what is true.** CLAUDE.md records that nothing runs
+the pass, and `propose` prints a line at the last moment before approval
+saying so. A skill that is installed, documented, and never executed is
+indistinguishable from one that was never installed — except that it lets
+everyone believe the work was done.
