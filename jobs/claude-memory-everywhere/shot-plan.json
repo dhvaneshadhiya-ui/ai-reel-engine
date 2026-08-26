@@ -15,55 +15,47 @@
   "key"
  ],
  "caption_corrections": {
+  "cloud": "Claude",
+  "clouds": "Claude's",
   "co work": "Cowork",
-  "cowork": "Cowork",
   "co-work": "Cowork",
-  "claude": "Claude",
-  "anthropic": "Anthropic",
+  "cowork": "Cowork",
+  "child care": "Childcare",
+  "maxi": "Max",
+  "25th": "25",
+  "explaining": "re-explaining",
   "social security": "Social Security",
   "i ds": "IDs",
   "id s": "IDs",
-  "re explaining": "re-explaining"
+  "ids": "IDs",
+  "free": "Free",
+  "pro": "Pro",
+  "max": "Max"
  },
  "shots": [
   {
-   "start_phrase": "Claude keeps a file",
+   "start_phrase": "Cloud keeps a file",
    "asset_id": "ui-topics-list",
    "tier": "official",
    "scene": {
     "type": "split",
-    "topSrc": "assets/claude-memory-everywhere/ui-topics-list.png",
+    "topSrc": "assets/claude-memory-everywhere/ui-topics-list--c12.png",
     "bottomSrc": "assets/claude-memory-everywhere/avatar-master.mp4",
-    "topFocusX": 0.42,
     "covers": "keeps a file on you",
     "creditOnScreen": true,
     "credit": "Anthropic",
-    "headline": {
-     "lines": [
-      {
-       "text": "CLAUDE KEEPS",
-       "kind": "label",
-       "at": 0.15
-      },
-      {
-       "text": "A FILE ON YOU",
-       "kind": "headline",
-       "at": 0.55
-      }
-     ],
-     "y": 0.07
-    },
     "sfx": [
      {
-      "src": "sfx/Core.MP3",
+      "src": "sfx/Camera Shutter.MP3",
       "vol": 0.17,
       "at": 0.05
      }
     ]
-   }
+   },
+   "start_phrase_note": "whisper base wrote the spoken 'Claude' as 'Cloud' (medium confirms the audio IS 'Claude'); the anchor must match the transcript, and caption_corrections restores the written form on screen"
   },
   {
-   "start_phrase": "and as of August",
+   "start_phrase": "on you and as",
    "asset_id": "blog-head",
    "tier": "official",
    "scene": {
@@ -84,7 +76,8 @@
       "h": 75
      }
     ]
-   }
+   },
+   "start_phrase_note": "anchored inside the hook clause to hold the hook under the 2.0s hard limit; `covers` ('as of August 25') is still spoken in this beat's window."
   },
   {
    "start_phrase": "it's the same file",
@@ -120,8 +113,28 @@
     ],
     "covers": "the same file everywhere you use Claude",
     "creditOnScreen": true,
-    "credit": "Anthropic"
+    "credit": "Anthropic",
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "vol": 0.13,
+      "at": 0.0
+     }
+    ]
    }
+  },
+  {
+   "start_phrase": "Here's what it keeps",
+   "asset_id": "avatar-master",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/claude-memory-everywhere/avatar-master.mp4",
+    "zoomDir": "out",
+    "zoom": 1.0,
+    "covers": "what it keeps, and what it refuses"
+   },
+   "start_phrase_note": "the opening promise (S2). Was swallowed by the beat before it."
   },
   {
    "start_phrase": "Tell it something in",
@@ -155,17 +168,17 @@
   },
   {
    "start_phrase": "and Cowork",
-   "asset_id": "blog-onememory",
+   "asset_id": "blog-onememory--c05",
    "tier": "official",
    "scene": {
     "type": "annotatezoom",
-    "src": "assets/claude-memory-everywhere/blog-onememory.png",
-    "srcWidth": 1080,
-    "srcHeight": 2100,
-    "bg": "cream",
+    "src": "assets/claude-memory-everywhere/blog-onememory--c05.png",
+    "srcWidth": 990,
+    "srcHeight": 480,
+    "bg": "black",
     "focus": {
-     "x": 60,
-     "y": 60,
+     "x": 0,
+     "y": 0,
      "w": 990,
      "h": 480
     },
@@ -177,13 +190,14 @@
      {
       "kind": "underline",
       "at": 0.7,
-      "x": 88,
-      "y": 300,
+      "x": 28,
+      "y": 240,
       "w": 600,
       "h": 80
      }
     ]
-   }
+   },
+   "start_phrase_note": "the glossary makes the voice say 'co-work', which whisper emits as 'co' + '-work,'. load_words now merges that to a searchable 'cowork', so the written form resolves directly."
   },
   {
    "start_phrase": "already knows",
@@ -244,18 +258,18 @@
    }
   },
   {
-   "start_phrase": "And it's writing as",
-   "asset_id": "blog-live",
+   "start_phrase": "writing as you talk",
+   "asset_id": "blog-live--c07",
    "tier": "official",
    "scene": {
     "type": "annotatezoom",
-    "src": "assets/claude-memory-everywhere/blog-live.png",
-    "srcWidth": 1080,
-    "srcHeight": 2400,
-    "bg": "cream",
+    "src": "assets/claude-memory-everywhere/blog-live--c07.png",
+    "srcWidth": 990,
+    "srcHeight": 660,
+    "bg": "black",
     "focus": {
-     "x": 60,
-     "y": 40,
+     "x": 0,
+     "y": 0,
      "w": 990,
      "h": 660
     },
@@ -267,28 +281,29 @@
      {
       "kind": "underline",
       "at": 0.45,
-      "x": 88,
-      "y": 70,
+      "x": 28,
+      "y": 30,
       "w": 900,
       "h": 62
      },
      {
       "kind": "underline",
       "at": 0.85,
-      "x": 88,
-      "y": 160,
+      "x": 28,
+      "y": 120,
       "w": 900,
       "h": 62
      }
     ],
     "sfx": [
      {
-      "src": "sfx/Click.MP3",
-      "vol": 0.14,
-      "at": 0.46
+      "src": "sfx/whoosh.MP3",
+      "vol": 0.13,
+      "at": 0.0
      }
     ]
-   }
+   },
+   "start_phrase_note": "whisper dropped the sentence-initial 'And'; anchoring inside the clause is stable either way"
   },
   {
    "start_phrase": "say your deadline moved",
@@ -348,41 +363,51 @@
   },
   {
    "start_phrase": "And now you can see",
-   "asset_id": "ui-topic-open",
+   "asset_id": "ui-topic-open--c10",
    "tier": "official",
    "scene": {
     "type": "annotatezoom",
-    "src": "assets/claude-memory-everywhere/ui-topic-open.png",
-    "srcWidth": 2048,
-    "srcHeight": 1152,
-    "bg": "cream",
+    "src": "assets/claude-memory-everywhere/ui-topic-open--c10.png",
+    "srcWidth": 900,
+    "srcHeight": 880,
+    "bg": "black",
     "focus": {
-     "x": 380,
-     "y": 280,
-     "w": 1290,
-     "h": 420
+     "x": 0,
+     "y": 0,
+     "w": 900,
+     "h": 880
     },
     "covers": "a text file under a topic",
     "creditOnScreen": true,
     "credit": "Anthropic",
-    "crop": true
+    "crop": true,
+    "annotations": [
+     {
+      "kind": "box",
+      "at": 2.44,
+      "x": 8,
+      "y": 110,
+      "w": 880,
+      "h": 520
+     }
+    ]
    }
   },
   {
    "start_phrase": "one you can open",
-   "asset_id": "ui-topics-list",
+   "asset_id": "ui-topics-list--c11",
    "tier": "official",
    "scene": {
     "type": "annotatezoom",
-    "src": "assets/claude-memory-everywhere/ui-topics-list.png",
-    "srcWidth": 2048,
-    "srcHeight": 1152,
-    "bg": "cream",
+    "src": "assets/claude-memory-everywhere/ui-topics-list--c11.png",
+    "srcWidth": 1790,
+    "srcHeight": 640,
+    "bg": "black",
     "focus": {
-     "x": 250,
-     "y": 380,
-     "w": 1670,
-     "h": 670
+     "x": 0,
+     "y": 0,
+     "w": 1790,
+     "h": 640
     },
     "covers": "open, correct, or throw out",
     "creditOnScreen": true,
@@ -392,63 +417,56 @@
      {
       "kind": "box",
       "at": 0.55,
-      "x": 1826,
-      "y": 468,
+      "x": 1696,
+      "y": 68,
       "w": 72,
       "h": 62
      }
     ],
     "sfx": [
      {
-      "src": "sfx2/mouse-click-01.mp3",
-      "vol": 0.16,
-      "at": 0.57
+      "src": "sfx/Camera Shutter.MP3",
+      "vol": 0.15,
+      "at": 0.55
      }
     ]
    }
   },
   {
    "start_phrase": "Half Marathon Training",
-   "asset_id": "ui-topics-list",
+   "asset_id": "ui-topics-list--c12",
    "tier": "official",
    "scene": {
     "type": "annotatezoom",
-    "src": "assets/claude-memory-everywhere/ui-topics-list.png",
-    "srcWidth": 2048,
-    "srcHeight": 1152,
-    "bg": "cream",
+    "src": "assets/claude-memory-everywhere/ui-topics-list--c12.png",
+    "srcWidth": 545,
+    "srcHeight": 640,
+    "bg": "black",
     "focus": {
-     "x": 140,
-     "y": 390,
+     "x": 0,
+     "y": 0,
      "w": 545,
      "h": 640
     },
     "covers": "Half Marathon Training, Client Pitch, Childcare Schedule",
     "creditOnScreen": true,
     "credit": "Anthropic",
-    "crop": true,
-    "sfx": [
-     {
-      "src": "sfx/Pop.MP3",
-      "vol": 0.15,
-      "at": 0.2
-     }
-    ]
+    "crop": true
    }
   },
   {
    "start_phrase": "So fix your company's",
-   "asset_id": "ui-topic-open",
+   "asset_id": "ui-topic-open--c13",
    "tier": "official",
    "scene": {
     "type": "annotatezoom",
-    "src": "assets/claude-memory-everywhere/ui-topic-open.png",
-    "srcWidth": 2048,
-    "srcHeight": 1152,
-    "bg": "cream",
+    "src": "assets/claude-memory-everywhere/ui-topic-open--c13.png",
+    "srcWidth": 1322,
+    "srcHeight": 978,
+    "bg": "black",
     "focus": {
-     "x": 363,
-     "y": 87,
+     "x": 0,
+     "y": 0,
      "w": 1322,
      "h": 978
     },
@@ -460,8 +478,8 @@
      {
       "kind": "underline",
       "at": 0.5,
-      "x": 410,
-      "y": 947,
+      "x": 47,
+      "y": 860,
       "w": 1000,
       "h": 72
      }
@@ -536,35 +554,38 @@
      {
       "text": "HEALTH",
       "style": "caps",
-      "at": 0.55
+      "at": 1.68
      },
      {
       "text": "RACE",
       "style": "caps",
-      "at": 1.0
+      "at": 2.72
      },
      {
       "text": "RELIGION",
       "style": "caps",
-      "at": 1.42
+      "at": 3.32
      },
      {
       "text": "POLITICS",
       "style": "caps",
-      "at": 1.85
+      "at": 3.76
      },
      {
       "text": "GENDER IDENTITY",
       "style": "caps",
-      "at": 2.3,
+      "at": 4.42,
       "accent": true
      }
     ],
+    "bottomSrc": "assets/claude-memory-everywhere/avatar-master.mp4",
+    "bottomFrom": 45.2,
+    "_timing_note": "word `at`s derived from vo.json onsets 46.88/47.92/48.52/48.96/49.62 (beat starts 45.20). bottomSrc fills the 1.68s before the first word.",
     "sfx": [
      {
-      "src": "sfx/Pop.MP3",
-      "vol": 0.15,
-      "at": 0.55
+      "src": "sfx/Magic Reveal.MP3",
+      "vol": 0.16,
+      "at": 1.68
      }
     ]
    }
@@ -608,14 +629,14 @@
   },
   {
    "start_phrase": "There's a switch if",
-   "asset_id": "ui-settings-top",
+   "asset_id": "ui-settings-top--c18",
    "tier": "official",
    "scene": {
     "type": "annotatezoom",
-    "src": "assets/claude-memory-everywhere/ui-settings-top.png",
+    "src": "assets/claude-memory-everywhere/ui-settings-top--c18.png",
     "srcWidth": 1100,
     "srcHeight": 382,
-    "bg": "cream",
+    "bg": "black",
     "focus": {
      "x": 0,
      "y": 0,
@@ -634,13 +655,6 @@
       "y": 286,
       "w": 66,
       "h": 44
-     }
-    ],
-    "sfx": [
-     {
-      "src": "sfx/Click.MP3",
-      "vol": 0.15,
-      "at": 0.61
      }
     ]
    }
@@ -698,14 +712,7 @@
     "src": "assets/claude-memory-everywhere/avatar-master.mp4",
     "zoomDir": "in",
     "zoom": 1.0,
-    "covers": "refuses to write down",
-    "sfx": [
-     {
-      "src": "sfx/Riser.MP3",
-      "vol": 0.16,
-      "at": 0.55
-     }
-    ]
+    "covers": "refuses to write down"
    }
   },
   {
@@ -715,7 +722,6 @@
     "type": "checklist",
     "bg": "black",
     "headline": "NEVER STORED",
-    "stagger": 0.5,
     "covers": "Social Security numbers, government IDs",
     "rows": [
      {
@@ -735,11 +741,13 @@
       "state": "no"
      }
     ],
+    "stagger": 1.15,
+    "_timing_note": "stagger solved from vo.json onsets 57.70/59.38/60.50/61.40 (beat starts 57.70)",
     "sfx": [
      {
-      "src": "sfx/Magic Reveal.MP3",
-      "vol": 0.16,
-      "at": 0.0
+      "src": "sfx/Pop.MP3",
+      "vol": 0.15,
+      "at": 0.25
      }
     ]
    }
@@ -789,7 +797,7 @@
    }
   },
   {
-   "start_phrase": "and Claude tells you",
+   "start_phrase": "tells you when it",
    "asset_id": "blog-refused",
    "tier": "official",
    "scene": {
@@ -823,52 +831,60 @@
     "covers": "Claude tells you when it refused",
     "creditOnScreen": true,
     "credit": "Anthropic"
-   }
+   },
+   "start_phrase_note": "avoids the Claude/Cloud mishear entirely rather than encoding it"
   },
   {
    "start_phrase": "On by default",
-   "asset_id": "blog-plans",
+   "asset_id": "blog-plans--c24",
    "tier": "official",
    "scene": {
     "type": "annotatezoom",
-    "src": "assets/claude-memory-everywhere/blog-plans.png",
-    "srcWidth": 1080,
-    "srcHeight": 1500,
-    "bg": "cream",
+    "src": "assets/claude-memory-everywhere/blog-plans--c24.png",
+    "srcWidth": 990,
+    "srcHeight": 440,
+    "bg": "black",
     "focus": {
-     "x": 60,
-     "y": 60,
+     "x": 0,
+     "y": 0,
      "w": 990,
      "h": 440
     },
-    "covers": "Free, Pro and Max, across web, desktop and mobile",
+    "covers": "Free, Pro and Max",
     "creditOnScreen": true,
     "credit": "Anthropic",
     "crop": true,
     "annotations": [
      {
       "kind": "underline",
-      "at": 0.5,
-      "x": 88,
-      "y": 238,
+      "at": 1.0,
+      "x": 28,
+      "y": 178,
       "w": 900,
       "h": 68
      },
      {
       "kind": "underline",
-      "at": 0.9,
-      "x": 88,
-      "y": 331,
+      "at": 2.3,
+      "x": 28,
+      "y": 271,
       "w": 900,
       "h": 68
      },
      {
       "kind": "underline",
-      "at": 1.3,
-      "x": 88,
-      "y": 421,
+      "at": 2.8,
+      "x": 28,
+      "y": 361,
       "w": 560,
       "h": 68
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "vol": 0.16,
+      "at": 1.0
      }
     ]
    }
@@ -878,21 +894,50 @@
    "asset_id": "blog-plans",
    "tier": "official",
    "scene": {
-    "type": "annotatezoom",
+    "type": "sourceread",
     "src": "assets/claude-memory-everywhere/blog-plans.png",
     "srcWidth": 1080,
     "srcHeight": 1500,
-    "bg": "cream",
-    "focus": {
-     "x": 60,
-     "y": 950,
-     "w": 990,
-     "h": 450
-    },
     "covers": "your admin decides",
     "creditOnScreen": true,
     "credit": "Anthropic",
-    "crop": true
+    "lines": [
+     {
+      "at": 0.25,
+      "x": 90,
+      "y": 968,
+      "w": 930,
+      "h": 62
+     },
+     {
+      "at": 0.7,
+      "x": 90,
+      "y": 1058,
+      "w": 930,
+      "h": 62
+     },
+     {
+      "at": 1.1,
+      "x": 90,
+      "y": 1148,
+      "w": 930,
+      "h": 62
+     },
+     {
+      "at": 1.5,
+      "x": 90,
+      "y": 1241,
+      "w": 930,
+      "h": 62
+     },
+     {
+      "at": 1.9,
+      "x": 90,
+      "y": 1335,
+      "w": 420,
+      "h": 62
+     }
+    ]
    }
   },
   {
@@ -909,19 +954,19 @@
   },
   {
    "start_phrase": "You just got the",
-   "asset_id": "ui-topics-list",
+   "asset_id": "ui-topics-list--c12",
    "tier": "official",
    "scene": {
     "type": "annotatezoom",
-    "src": "assets/claude-memory-everywhere/ui-topics-list.png",
-    "srcWidth": 2048,
-    "srcHeight": 1152,
-    "bg": "cream",
+    "src": "assets/claude-memory-everywhere/ui-topics-list--c12.png",
+    "srcWidth": 545,
+    "srcHeight": 640,
+    "bg": "black",
     "focus": {
-     "x": 256,
-     "y": 90,
-     "w": 1578,
-     "h": 970
+     "x": 0,
+     "y": 0,
+     "w": 545,
+     "h": 640
     },
     "covers": "You just got the key",
     "creditOnScreen": true,
@@ -938,5 +983,7 @@
   }
  ],
  "measuredWps": 2.95,
- "_measuredWps_note": "measured off THIS reel's own v1 master (9aeea702, 2026-08-26): 199 script words spoken in 67.50s. Same voice, same speed 1.12, same script style \u2014 the closest possible estimator for v2, which is the same script plus 32 words of the same kind."
+ "_measuredWps_note": "measured off THIS reel's own v1 master (9aeea702, 2026-08-26): 199 script words spoken in 67.50s. Same voice, same speed 1.12, same script style \u2014 the closest possible estimator for v2, which is the same script plus 32 words of the same kind.",
+ "_caption_note": "every entry verified with whisper medium before being written: base heard 'Cloud' x4, 'maxi' and 'co -work', medium heard Claude / Max / co-work. 'explaining'->'re-explaining' is the one JUDGEMENT call: base and medium both drop the prefix and the word runs 0.50s (3 syllables), but priming recovers it and the meaning survives, so it is captioned as written rather than re-recorded.",
+ "_editor_note": "cut-sheet pass 2026-08-26: the opening promise had no beat of its own and was absorbed into the reel's longest shot (5.64s at 4.2s in); wordcascade, checklist and the plans underlines all had GUESSED `at` values that finished ~3s before their beats ended, leaving static frames. All re-derived from vo.json onsets."
 }

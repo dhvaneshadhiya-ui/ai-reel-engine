@@ -353,6 +353,40 @@ def run() -> int:
     ok("no shot plan renders as empty, not a crash",
        beat_plan.render("nope", root=tmp3) == [])
 
+    # 11a1. A HYPHEN-MERGED COMPOUND MUST STAY SEARCHABLE (2026-08-26).
+    # load_words glues whisper's "-Chi" onto "Ming" for DISPLAY, then set the
+    # searchable norm to normalize(text)[-1] — the last token only. So
+    # "Ming-Chi" was findable only as "chi", and "co" + "-work," (which is what
+    # the brand glossary's "co-work" pronunciation makes whisper emit for
+    # Cowork) carried norm "work". Any start_phrase naming the compound failed
+    # to resolve. Identical to the defect the comma branch directly below it
+    # already records and fixes; the two were never fixed together.
+    import importlib.util as _ilu
+    _spec = _ilu.spec_from_file_location(
+        "_csp", str(REAL_ROOT / "scripts" / "compile_shot_plan.py"))
+    _csp = _ilu.module_from_spec(_spec)
+    _spec.loader.exec_module(_csp)
+    tmp_hy = Path(tempfile.mkdtemp(prefix="hyphen-selftest-")) / "vo.json"
+    tmp_hy.write_text(json.dumps({"words": [
+        {"word": "and", "start": 0.0, "end": 0.1},
+        {"word": "co", "start": 0.1, "end": 0.2},
+        {"word": "-work,", "start": 0.2, "end": 0.4},
+        {"word": "Ming", "start": 0.5, "end": 0.6},
+        {"word": "-Chi", "start": 0.6, "end": 0.8},
+        {"word": "$2", "start": 1.0, "end": 1.1},
+        {"word": ",000", "start": 1.1, "end": 1.3},
+    ]}))
+    hw = _csp.load_words(tmp_hy)
+    norms = {w["text"]: w["norm"] for w in hw}
+    ok("a hyphen-merged compound keeps its WHOLE searchable form",
+       norms.get("co-work,") == "cowork")
+    ok("the leaked case is really fixed, not special-cased",
+       norms.get("Ming-Chi") == "mingchi")
+    ok("display text still shows the original spelling",
+       "co-work," in norms and "Ming-Chi" in norms)
+    ok("the comma-merge branch it was copied from still works",
+       norms.get("$2,000") == "2000")
+
     # 11a2. DELIVERY RATE IS KEYED TO THE LOCKED VOICE SPEED (2026-08-26).
     # The old constants were measured at speed 1.05 and kept being applied
     # after the locked speed moved to 1.12, which cost claude-memory-everywhere

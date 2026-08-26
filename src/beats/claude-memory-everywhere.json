@@ -1,0 +1,2394 @@
+{
+  "id": "claude-memory-everywhere",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/claude-memory-everywhere/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "everywhere",
+    "Cowork",
+    "re-explaining",
+    "topic",
+    "throw out",
+    "one file",
+    "default",
+    "switch",
+    "refuses",
+    "never",
+    "Free",
+    "key"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "topSrc": "assets/claude-memory-everywhere/ui-topics-list--c12.png",
+      "bottomSrc": "assets/claude-memory-everywhere/avatar-master.mp4",
+      "covers": "keeps a file on you",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.05
+        }
+      ],
+      "durationSec": 1.86,
+      "captionBottom": 1000,
+      "assetId": "ui-topics-list",
+      "claimId": "ui-topics-list",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.5
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-memory-everywhere/blog-head.png",
+      "srcWidth": 1080,
+      "srcHeight": 2280,
+      "backdrop": "cream",
+      "covers": "as of August 25",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "highlights": [
+        {
+          "at": 0.6,
+          "x": 150,
+          "y": 1455,
+          "w": 470,
+          "h": 75
+        }
+      ],
+      "durationSec": 2.36,
+      "assetId": "blog-head",
+      "claimId": "blog-head"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/claude-memory-everywhere/blog-intro.png",
+      "srcWidth": 1080,
+      "srcHeight": 1940,
+      "lines": [
+        {
+          "at": 0.3,
+          "x": 90,
+          "y": 228,
+          "w": 930,
+          "h": 70
+        },
+        {
+          "at": 0.8,
+          "x": 90,
+          "y": 318,
+          "w": 930,
+          "h": 70
+        },
+        {
+          "at": 1.25,
+          "x": 90,
+          "y": 411,
+          "w": 700,
+          "h": 70
+        }
+      ],
+      "covers": "the same file everywhere you use Claude",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 2.34,
+      "assetId": "blog-intro",
+      "claimId": "blog-intro"
+    },
+    {
+      "type": "footage",
+      "src": "assets/claude-memory-everywhere/avatar-master.mp4",
+      "zoomDir": "out",
+      "zoom": 1.0,
+      "covers": "what it keeps, and what it refuses",
+      "durationSec": 3.3,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "from": 6.56,
+      "focusX": 0.5
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/claude-memory-everywhere/blog-onememory.png",
+      "srcWidth": 1080,
+      "srcHeight": 2100,
+      "lines": [
+        {
+          "at": 0.4,
+          "x": 90,
+          "y": 466,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 1.0,
+          "x": 90,
+          "y": 559,
+          "w": 930,
+          "h": 68
+        }
+      ],
+      "covers": "Tell it something in a chat",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "durationSec": 1.26,
+      "assetId": "blog-onememory",
+      "claimId": "blog-onememory"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/claude-memory-everywhere/blog-onememory--c05.png",
+      "srcWidth": 990,
+      "srcHeight": 480,
+      "bg": "black",
+      "focus": {
+        "x": 0,
+        "y": 0,
+        "w": 990,
+        "h": 480
+      },
+      "covers": "Cowork \u2014 Claude's agent for real work",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "crop": true,
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.7,
+          "x": 28,
+          "y": 240,
+          "w": 600,
+          "h": 80
+        }
+      ],
+      "durationSec": 2.64,
+      "assetId": "blog-onememory--c05",
+      "claimId": "blog-onememory--c05"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/claude-memory-everywhere/blog-onememory.png",
+      "srcWidth": 1080,
+      "srcHeight": 2100,
+      "lines": [
+        {
+          "at": 0.0,
+          "x": 90,
+          "y": 466,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 0.0,
+          "x": 90,
+          "y": 559,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 0.35,
+          "x": 90,
+          "y": 832,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 0.8,
+          "x": 90,
+          "y": 922,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 1.2,
+          "x": 90,
+          "y": 1015,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 1.6,
+          "x": 90,
+          "y": 1105,
+          "w": 700,
+          "h": 68
+        }
+      ],
+      "covers": "already knows, and it carries back",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "durationSec": 2.7,
+      "assetId": "blog-onememory",
+      "claimId": "blog-onememory"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/claude-memory-everywhere/blog-live--c07.png",
+      "srcWidth": 990,
+      "srcHeight": 660,
+      "bg": "black",
+      "focus": {
+        "x": 0,
+        "y": 0,
+        "w": 990,
+        "h": 660
+      },
+      "crop": true,
+      "covers": "it's writing as you talk",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.45,
+          "x": 28,
+          "y": 30,
+          "w": 900,
+          "h": 62
+        },
+        {
+          "kind": "underline",
+          "at": 0.85,
+          "x": 28,
+          "y": 120,
+          "w": 900,
+          "h": 62
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 1.26,
+      "assetId": "blog-live--c07",
+      "claimId": "blog-live--c07"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/claude-memory-everywhere/blog-live.png",
+      "srcWidth": 1080,
+      "srcHeight": 2400,
+      "covers": "your deadline moved to September",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "lines": [
+        {
+          "at": 0.25,
+          "x": 90,
+          "y": 342,
+          "w": 930,
+          "h": 62
+        },
+        {
+          "at": 0.7,
+          "x": 90,
+          "y": 432,
+          "w": 930,
+          "h": 62
+        },
+        {
+          "at": 1.1,
+          "x": 90,
+          "y": 525,
+          "w": 930,
+          "h": 62
+        },
+        {
+          "at": 1.5,
+          "x": 90,
+          "y": 615,
+          "w": 700,
+          "h": 62
+        }
+      ],
+      "durationSec": 3.98,
+      "assetId": "blog-live",
+      "claimId": "blog-live"
+    },
+    {
+      "type": "footage",
+      "src": "assets/claude-memory-everywhere/avatar-master.mp4",
+      "zoomDir": "in",
+      "zoom": 1.0,
+      "covers": "you stop re-explaining yourself",
+      "durationSec": 2.22,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "from": 21.7,
+      "focusX": 0.5
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/claude-memory-everywhere/ui-topic-open--c10.png",
+      "srcWidth": 900,
+      "srcHeight": 880,
+      "bg": "black",
+      "focus": {
+        "x": 0,
+        "y": 0,
+        "w": 900,
+        "h": 880
+      },
+      "covers": "a text file under a topic",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "crop": true,
+      "annotations": [
+        {
+          "kind": "box",
+          "at": 2.44,
+          "x": 8,
+          "y": 110,
+          "w": 880,
+          "h": 520
+        }
+      ],
+      "durationSec": 4.28,
+      "assetId": "ui-topic-open--c10",
+      "claimId": "ui-topic-open--c10"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/claude-memory-everywhere/ui-topics-list--c11.png",
+      "srcWidth": 1790,
+      "srcHeight": 640,
+      "bg": "black",
+      "focus": {
+        "x": 0,
+        "y": 0,
+        "w": 1790,
+        "h": 640
+      },
+      "covers": "open, correct, or throw out",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "crop": true,
+      "annotations": [
+        {
+          "kind": "box",
+          "at": 0.55,
+          "x": 1696,
+          "y": 68,
+          "w": 72,
+          "h": 62
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.55
+        }
+      ],
+      "durationSec": 2.6,
+      "assetId": "ui-topics-list--c11",
+      "claimId": "ui-topics-list--c11"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/claude-memory-everywhere/ui-topics-list--c12.png",
+      "srcWidth": 545,
+      "srcHeight": 640,
+      "bg": "black",
+      "focus": {
+        "x": 0,
+        "y": 0,
+        "w": 545,
+        "h": 640
+      },
+      "covers": "Half Marathon Training, Client Pitch, Childcare Schedule",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "crop": true,
+      "durationSec": 3.72,
+      "assetId": "ui-topics-list--c12",
+      "claimId": "ui-topics-list--c12"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/claude-memory-everywhere/ui-topic-open--c13.png",
+      "srcWidth": 1322,
+      "srcHeight": 978,
+      "bg": "black",
+      "focus": {
+        "x": 0,
+        "y": 0,
+        "w": 1322,
+        "h": 978
+      },
+      "covers": "fix your company's old name in that file",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "crop": true,
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 47,
+          "y": 860,
+          "w": 1000,
+          "h": 72
+        }
+      ],
+      "durationSec": 1.92,
+      "assetId": "ui-topic-open--c13",
+      "claimId": "ui-topic-open--c13"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/claude-memory-everywhere/blog-live.png",
+      "srcWidth": 1080,
+      "srcHeight": 2400,
+      "lines": [
+        {
+          "at": 0.3,
+          "x": 90,
+          "y": 1820,
+          "w": 930,
+          "h": 70
+        },
+        {
+          "at": 0.75,
+          "x": 90,
+          "y": 1910,
+          "w": 930,
+          "h": 70
+        },
+        {
+          "at": 1.15,
+          "x": 90,
+          "y": 2003,
+          "w": 930,
+          "h": 70
+        },
+        {
+          "at": 1.55,
+          "x": 90,
+          "y": 2093,
+          "w": 600,
+          "h": 70
+        }
+      ],
+      "covers": "every conversation after gets it right",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "durationSec": 4.18,
+      "assetId": "blog-live",
+      "claimId": "blog-live"
+    },
+    {
+      "type": "footage",
+      "src": "assets/claude-memory-everywhere/avatar-master.mp4",
+      "zoomDir": "in",
+      "zoom": 1.0,
+      "covers": "some of it Claude refuses to write down",
+      "_note": "one facecam beat for the whole sentence. No screenshot honestly illustrates 'refuses to write down' without spoiling the payoff list eight beats later; a take spoken to camera is the honest picture for a take. Check its length in the editor's pass.",
+      "durationSec": 4.56,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "from": 40.62,
+      "focusX": 0.5
+    },
+    {
+      "type": "wordcascade",
+      "bg": "cream",
+      "covers": "the subjects it stays out of",
+      "words": [
+        {
+          "text": "HEALTH",
+          "style": "caps",
+          "at": 1.68
+        },
+        {
+          "text": "RACE",
+          "style": "caps",
+          "at": 2.72
+        },
+        {
+          "text": "RELIGION",
+          "style": "caps",
+          "at": 3.32
+        },
+        {
+          "text": "POLITICS",
+          "style": "caps",
+          "at": 3.76
+        },
+        {
+          "text": "GENDER IDENTITY",
+          "style": "caps",
+          "at": 4.42,
+          "accent": true
+        }
+      ],
+      "bottomSrc": "assets/claude-memory-everywhere/avatar-master.mp4",
+      "bottomFrom": 45.2,
+      "_timing_note": "word `at`s derived from vo.json onsets 46.88/47.92/48.52/48.96/49.62 (beat starts 45.20). bottomSrc fills the 1.68s before the first word.",
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "vol": 1.0,
+          "at": 1.68
+        }
+      ],
+      "durationSec": 5.44,
+      "bottomFocusX": 0.5
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/claude-memory-everywhere/blog-sensitive.png",
+      "srcWidth": 1080,
+      "srcHeight": 2570,
+      "lines": [
+        {
+          "at": 0.2,
+          "x": 90,
+          "y": 382,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 0.65,
+          "x": 90,
+          "y": 472,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 1.05,
+          "x": 90,
+          "y": 565,
+          "w": 930,
+          "h": 68
+        }
+      ],
+      "covers": "Off by default",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "durationSec": 1.34,
+      "assetId": "blog-sensitive",
+      "claimId": "blog-sensitive"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/claude-memory-everywhere/ui-settings-top--c18.png",
+      "srcWidth": 1100,
+      "srcHeight": 382,
+      "bg": "black",
+      "focus": {
+        "x": 0,
+        "y": 0,
+        "w": 1100,
+        "h": 382
+      },
+      "covers": "a switch if you want them in",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "crop": true,
+      "annotations": [
+        {
+          "kind": "box",
+          "at": 0.6,
+          "x": 978,
+          "y": 286,
+          "w": 66,
+          "h": 44
+        }
+      ],
+      "durationSec": 1.6,
+      "assetId": "ui-settings-top--c18",
+      "claimId": "ui-settings-top--c18"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/claude-memory-everywhere/blog-sensitive.png",
+      "srcWidth": 1080,
+      "srcHeight": 2570,
+      "lines": [
+        {
+          "at": 0.3,
+          "x": 90,
+          "y": 1825,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 0.75,
+          "x": 90,
+          "y": 1918,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 1.15,
+          "x": 90,
+          "y": 2008,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 1.55,
+          "x": 90,
+          "y": 2098,
+          "w": 600,
+          "h": 68
+        }
+      ],
+      "covers": "a notice each time it saves one",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "durationSec": 2.3,
+      "assetId": "blog-sensitive",
+      "claimId": "blog-sensitive"
+    },
+    {
+      "type": "footage",
+      "src": "assets/claude-memory-everywhere/avatar-master.mp4",
+      "zoomDir": "in",
+      "zoom": 1.0,
+      "covers": "refuses to write down",
+      "durationSec": 1.84,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "from": 55.86,
+      "focusX": 0.5
+    },
+    {
+      "type": "checklist",
+      "bg": "black",
+      "headline": "NEVER STORED",
+      "covers": "Social Security numbers, government IDs",
+      "rows": [
+        {
+          "label": "Social Security numbers",
+          "state": "no"
+        },
+        {
+          "label": "Government ID numbers",
+          "state": "no"
+        },
+        {
+          "label": "Criminal history",
+          "state": "no"
+        },
+        {
+          "label": "Immigration status",
+          "state": "no"
+        }
+      ],
+      "stagger": 1.15,
+      "_timing_note": "stagger solved from vo.json onsets 57.70/59.38/60.50/61.40 (beat starts 57.70)",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.343,
+          "at": 0.25
+        }
+      ],
+      "durationSec": 4.9
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/claude-memory-everywhere/blog-refused.png",
+      "srcWidth": 1080,
+      "srcHeight": 1240,
+      "lines": [
+        {
+          "at": 0.3,
+          "x": 90,
+          "y": 312,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 0.75,
+          "x": 90,
+          "y": 402,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 1.15,
+          "x": 90,
+          "y": 492,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 1.55,
+          "x": 90,
+          "y": 585,
+          "w": 930,
+          "h": 68
+        }
+      ],
+      "covers": "never get saved either way",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "durationSec": 2.04,
+      "assetId": "blog-refused",
+      "claimId": "blog-refused"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/claude-memory-everywhere/blog-refused.png",
+      "srcWidth": 1080,
+      "srcHeight": 1240,
+      "lines": [
+        {
+          "at": 0.3,
+          "x": 90,
+          "y": 858,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 0.75,
+          "x": 90,
+          "y": 951,
+          "w": 930,
+          "h": 68
+        },
+        {
+          "at": 1.15,
+          "x": 90,
+          "y": 1041,
+          "w": 930,
+          "h": 68
+        }
+      ],
+      "covers": "Claude tells you when it refused",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "durationSec": 1.62,
+      "assetId": "blog-refused",
+      "claimId": "blog-refused"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/claude-memory-everywhere/blog-plans--c24.png",
+      "srcWidth": 990,
+      "srcHeight": 440,
+      "bg": "black",
+      "focus": {
+        "x": 0,
+        "y": 0,
+        "w": 990,
+        "h": 440
+      },
+      "covers": "Free, Pro and Max",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "crop": true,
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 1.0,
+          "x": 28,
+          "y": 178,
+          "w": 900,
+          "h": 68
+        },
+        {
+          "kind": "underline",
+          "at": 2.3,
+          "x": 28,
+          "y": 271,
+          "w": 900,
+          "h": 68
+        },
+        {
+          "kind": "underline",
+          "at": 2.8,
+          "x": 28,
+          "y": 361,
+          "w": 560,
+          "h": 68
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "vol": 0.556,
+          "at": 1.0
+        }
+      ],
+      "durationSec": 4.46,
+      "assetId": "blog-plans--c24",
+      "claimId": "blog-plans--c24"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/claude-memory-everywhere/blog-plans.png",
+      "srcWidth": 1080,
+      "srcHeight": 1500,
+      "covers": "your admin decides",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "lines": [
+        {
+          "at": 0.25,
+          "x": 90,
+          "y": 968,
+          "w": 930,
+          "h": 62
+        },
+        {
+          "at": 0.7,
+          "x": 90,
+          "y": 1058,
+          "w": 930,
+          "h": 62
+        },
+        {
+          "at": 1.1,
+          "x": 90,
+          "y": 1148,
+          "w": 930,
+          "h": 62
+        },
+        {
+          "at": 1.5,
+          "x": 90,
+          "y": 1241,
+          "w": 930,
+          "h": 62
+        },
+        {
+          "at": 1.9,
+          "x": 90,
+          "y": 1335,
+          "w": 420,
+          "h": 62
+        }
+      ],
+      "durationSec": 3.04,
+      "assetId": "blog-plans",
+      "claimId": "blog-plans"
+    },
+    {
+      "type": "footage",
+      "src": "assets/claude-memory-everywhere/avatar-master.mp4",
+      "zoomDir": "out",
+      "zoom": 1.0,
+      "covers": "didn't go away",
+      "durationSec": 1.58,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "from": 73.76,
+      "focusX": 0.5
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/claude-memory-everywhere/ui-topics-list--c12.png",
+      "srcWidth": 545,
+      "srcHeight": 640,
+      "bg": "black",
+      "focus": {
+        "x": 0,
+        "y": 0,
+        "w": 545,
+        "h": 640
+      },
+      "covers": "You just got the key",
+      "creditOnScreen": true,
+      "credit": "Anthropic",
+      "crop": true,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 1.148,
+      "assetId": "ui-topics-list--c12",
+      "claimId": "ui-topics-list--c12"
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.6,
+      "text": "Claude keeps a",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Claude"
+        },
+        {
+          "t": 0.7,
+          "text": "keeps"
+        },
+        {
+          "t": 1.26,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 1.6,
+      "end": 2.34,
+      "text": "file on you",
+      "words": [
+        {
+          "t": 1.6,
+          "text": "file"
+        },
+        {
+          "t": 1.86,
+          "text": "on"
+        },
+        {
+          "t": 2.1,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 2.34,
+      "end": 3.18,
+      "text": "and as of",
+      "words": [
+        {
+          "t": 2.34,
+          "text": "and"
+        },
+        {
+          "t": 2.7,
+          "text": "as"
+        },
+        {
+          "t": 2.96,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 3.18,
+      "end": 4.36,
+      "text": "August 25, it's",
+      "words": [
+        {
+          "t": 3.18,
+          "text": "August"
+        },
+        {
+          "t": 3.4,
+          "text": "25,"
+        },
+        {
+          "t": 4.22,
+          "text": "it's"
+        }
+      ]
+    },
+    {
+      "start": 4.36,
+      "end": 4.98,
+      "text": "the same file",
+      "words": [
+        {
+          "t": 4.36,
+          "text": "the"
+        },
+        {
+          "t": 4.48,
+          "text": "same"
+        },
+        {
+          "t": 4.72,
+          "text": "file"
+        }
+      ]
+    },
+    {
+      "start": 4.98,
+      "end": 6.0,
+      "text": "everywhere you use",
+      "words": [
+        {
+          "t": 4.98,
+          "text": "everywhere"
+        },
+        {
+          "t": 5.44,
+          "text": "you"
+        },
+        {
+          "t": 5.72,
+          "text": "use"
+        }
+      ]
+    },
+    {
+      "start": 6.0,
+      "end": 7.3,
+      "text": "Claude Here's what",
+      "words": [
+        {
+          "t": 6.0,
+          "text": "Claude"
+        },
+        {
+          "t": 6.56,
+          "text": "Here's"
+        },
+        {
+          "t": 7.08,
+          "text": "what"
+        }
+      ]
+    },
+    {
+      "start": 7.3,
+      "end": 8.32,
+      "text": "it keeps and",
+      "words": [
+        {
+          "t": 7.3,
+          "text": "it"
+        },
+        {
+          "t": 7.56,
+          "text": "keeps"
+        },
+        {
+          "t": 7.86,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 8.32,
+      "end": 9.42,
+      "text": "what it refuses.",
+      "words": [
+        {
+          "t": 8.32,
+          "text": "what"
+        },
+        {
+          "t": 8.54,
+          "text": "it"
+        },
+        {
+          "t": 8.82,
+          "text": "refuses."
+        }
+      ]
+    },
+    {
+      "start": 9.86,
+      "end": 10.56,
+      "text": "Tell it something",
+      "words": [
+        {
+          "t": 9.86,
+          "text": "Tell"
+        },
+        {
+          "t": 10.1,
+          "text": "it"
+        },
+        {
+          "t": 10.22,
+          "text": "something"
+        }
+      ]
+    },
+    {
+      "start": 10.56,
+      "end": 11.12,
+      "text": "in a chat",
+      "words": [
+        {
+          "t": 10.56,
+          "text": "in"
+        },
+        {
+          "t": 10.8,
+          "text": "a"
+        },
+        {
+          "t": 10.92,
+          "text": "chat"
+        }
+      ]
+    },
+    {
+      "start": 11.12,
+      "end": 12.68,
+      "text": "and Cowork, Claude's",
+      "words": [
+        {
+          "t": 11.12,
+          "text": "and"
+        },
+        {
+          "t": 11.42,
+          "text": "Cowork,"
+        },
+        {
+          "t": 12.12,
+          "text": "Claude's"
+        }
+      ]
+    },
+    {
+      "start": 12.68,
+      "end": 13.46,
+      "text": "agent for real",
+      "words": [
+        {
+          "t": 12.68,
+          "text": "agent"
+        },
+        {
+          "t": 12.98,
+          "text": "for"
+        },
+        {
+          "t": 13.22,
+          "text": "real"
+        }
+      ]
+    },
+    {
+      "start": 13.46,
+      "end": 14.42,
+      "text": "work already knows",
+      "words": [
+        {
+          "t": 13.46,
+          "text": "work"
+        },
+        {
+          "t": 13.76,
+          "text": "already"
+        },
+        {
+          "t": 14.14,
+          "text": "knows"
+        }
+      ]
+    },
+    {
+      "start": 14.42,
+      "end": 15.12,
+      "text": "and it carries",
+      "words": [
+        {
+          "t": 14.42,
+          "text": "and"
+        },
+        {
+          "t": 14.7,
+          "text": "it"
+        },
+        {
+          "t": 14.82,
+          "text": "carries"
+        }
+      ]
+    },
+    {
+      "start": 15.12,
+      "end": 16.82,
+      "text": "back. It's writing",
+      "words": [
+        {
+          "t": 15.12,
+          "text": "back."
+        },
+        {
+          "t": 16.02,
+          "text": "It's"
+        },
+        {
+          "t": 16.46,
+          "text": "writing"
+        }
+      ]
+    },
+    {
+      "start": 16.82,
+      "end": 17.5,
+      "text": "as you talk,",
+      "words": [
+        {
+          "t": 16.82,
+          "text": "as"
+        },
+        {
+          "t": 17.18,
+          "text": "you"
+        },
+        {
+          "t": 17.32,
+          "text": "talk,"
+        }
+      ]
+    },
+    {
+      "start": 17.72,
+      "end": 18.28,
+      "text": "say your deadline",
+      "words": [
+        {
+          "t": 17.72,
+          "text": "say"
+        },
+        {
+          "t": 17.8,
+          "text": "your"
+        },
+        {
+          "t": 18.0,
+          "text": "deadline"
+        }
+      ]
+    },
+    {
+      "start": 18.28,
+      "end": 19.14,
+      "text": "moved to September",
+      "words": [
+        {
+          "t": 18.28,
+          "text": "moved"
+        },
+        {
+          "t": 18.6,
+          "text": "to"
+        },
+        {
+          "t": 18.78,
+          "text": "September"
+        }
+      ]
+    },
+    {
+      "start": 19.14,
+      "end": 19.96,
+      "text": "and the next",
+      "words": [
+        {
+          "t": 19.14,
+          "text": "and"
+        },
+        {
+          "t": 19.54,
+          "text": "the"
+        },
+        {
+          "t": 19.7,
+          "text": "next"
+        }
+      ]
+    },
+    {
+      "start": 19.96,
+      "end": 21.44,
+      "text": "chat already knows,",
+      "words": [
+        {
+          "t": 19.96,
+          "text": "chat"
+        },
+        {
+          "t": 20.28,
+          "text": "already"
+        },
+        {
+          "t": 21.1,
+          "text": "knows,"
+        }
+      ]
+    },
+    {
+      "start": 21.7,
+      "end": 22.22,
+      "text": "which is the",
+      "words": [
+        {
+          "t": 21.7,
+          "text": "which"
+        },
+        {
+          "t": 21.88,
+          "text": "is"
+        },
+        {
+          "t": 22.04,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 22.22,
+      "end": 22.96,
+      "text": "point. You stop",
+      "words": [
+        {
+          "t": 22.22,
+          "text": "point."
+        },
+        {
+          "t": 22.68,
+          "text": "You"
+        },
+        {
+          "t": 22.72,
+          "text": "stop"
+        }
+      ]
+    },
+    {
+      "start": 22.96,
+      "end": 24.56,
+      "text": "re-explaining yourself and",
+      "words": [
+        {
+          "t": 22.96,
+          "text": "re-explaining"
+        },
+        {
+          "t": 23.46,
+          "text": "yourself"
+        },
+        {
+          "t": 23.92,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 24.56,
+      "end": 25.02,
+      "text": "now you can",
+      "words": [
+        {
+          "t": 24.56,
+          "text": "now"
+        },
+        {
+          "t": 24.74,
+          "text": "you"
+        },
+        {
+          "t": 24.88,
+          "text": "can"
+        }
+      ]
+    },
+    {
+      "start": 25.02,
+      "end": 25.62,
+      "text": "see all of",
+      "words": [
+        {
+          "t": 25.02,
+          "text": "see"
+        },
+        {
+          "t": 25.24,
+          "text": "all"
+        },
+        {
+          "t": 25.48,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 25.62,
+      "end": 26.64,
+      "text": "it. Every memory,",
+      "words": [
+        {
+          "t": 25.62,
+          "text": "it."
+        },
+        {
+          "t": 26.04,
+          "text": "Every"
+        },
+        {
+          "t": 26.34,
+          "text": "memory,"
+        }
+      ]
+    },
+    {
+      "start": 26.78,
+      "end": 27.38,
+      "text": "a text file",
+      "words": [
+        {
+          "t": 26.78,
+          "text": "a"
+        },
+        {
+          "t": 26.86,
+          "text": "text"
+        },
+        {
+          "t": 27.06,
+          "text": "file"
+        }
+      ]
+    },
+    {
+      "start": 27.38,
+      "end": 28.2,
+      "text": "under a topic,",
+      "words": [
+        {
+          "t": 27.38,
+          "text": "under"
+        },
+        {
+          "t": 27.78,
+          "text": "a"
+        },
+        {
+          "t": 27.92,
+          "text": "topic,"
+        }
+      ]
+    },
+    {
+      "start": 28.2,
+      "end": 28.92,
+      "text": "one you can",
+      "words": [
+        {
+          "t": 28.2,
+          "text": "one"
+        },
+        {
+          "t": 28.52,
+          "text": "you"
+        },
+        {
+          "t": 28.76,
+          "text": "can"
+        }
+      ]
+    },
+    {
+      "start": 28.92,
+      "end": 30.08,
+      "text": "open, correct or",
+      "words": [
+        {
+          "t": 28.92,
+          "text": "open,"
+        },
+        {
+          "t": 29.52,
+          "text": "correct"
+        },
+        {
+          "t": 29.74,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 30.08,
+      "end": 31.08,
+      "text": "throw out, half",
+      "words": [
+        {
+          "t": 30.08,
+          "text": "throw"
+        },
+        {
+          "t": 30.32,
+          "text": "out,"
+        },
+        {
+          "t": 30.8,
+          "text": "half"
+        }
+      ]
+    },
+    {
+      "start": 31.08,
+      "end": 32.52,
+      "text": "marathon training, client",
+      "words": [
+        {
+          "t": 31.08,
+          "text": "marathon"
+        },
+        {
+          "t": 31.36,
+          "text": "training,"
+        },
+        {
+          "t": 32.36,
+          "text": "client"
+        }
+      ]
+    },
+    {
+      "start": 32.52,
+      "end": 33.66,
+      "text": "pitch, Childcare",
+      "words": [
+        {
+          "t": 32.52,
+          "text": "pitch,"
+        },
+        {
+          "t": 33.28,
+          "text": "Childcare"
+        }
+      ]
+    },
+    {
+      "start": 33.66,
+      "end": 34.82,
+      "text": "schedule. So fix",
+      "words": [
+        {
+          "t": 33.66,
+          "text": "schedule."
+        },
+        {
+          "t": 34.52,
+          "text": "So"
+        },
+        {
+          "t": 34.6,
+          "text": "fix"
+        }
+      ]
+    },
+    {
+      "start": 34.82,
+      "end": 35.64,
+      "text": "your company's old",
+      "words": [
+        {
+          "t": 34.82,
+          "text": "your"
+        },
+        {
+          "t": 35.0,
+          "text": "company's"
+        },
+        {
+          "t": 35.54,
+          "text": "old"
+        }
+      ]
+    },
+    {
+      "start": 35.64,
+      "end": 36.16,
+      "text": "name in that",
+      "words": [
+        {
+          "t": 35.64,
+          "text": "name"
+        },
+        {
+          "t": 35.84,
+          "text": "in"
+        },
+        {
+          "t": 36.02,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 36.16,
+      "end": 36.9,
+      "text": "file and every",
+      "words": [
+        {
+          "t": 36.16,
+          "text": "file"
+        },
+        {
+          "t": 36.44,
+          "text": "and"
+        },
+        {
+          "t": 36.68,
+          "text": "every"
+        }
+      ]
+    },
+    {
+      "start": 36.9,
+      "end": 37.96,
+      "text": "conversation after gets",
+      "words": [
+        {
+          "t": 36.9,
+          "text": "conversation"
+        },
+        {
+          "t": 37.34,
+          "text": "after"
+        },
+        {
+          "t": 37.68,
+          "text": "gets"
+        }
+      ]
+    },
+    {
+      "start": 37.96,
+      "end": 38.94,
+      "text": "it right in",
+      "words": [
+        {
+          "t": 37.96,
+          "text": "it"
+        },
+        {
+          "t": 38.14,
+          "text": "right"
+        },
+        {
+          "t": 38.36,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 38.94,
+      "end": 39.82,
+      "text": "chat and in",
+      "words": [
+        {
+          "t": 38.94,
+          "text": "chat"
+        },
+        {
+          "t": 39.22,
+          "text": "and"
+        },
+        {
+          "t": 39.64,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 39.82,
+      "end": 41.04,
+      "text": "Cowork But here's",
+      "words": [
+        {
+          "t": 39.82,
+          "text": "Cowork"
+        },
+        {
+          "t": 40.62,
+          "text": "But"
+        },
+        {
+          "t": 40.7,
+          "text": "here's"
+        }
+      ]
+    },
+    {
+      "start": 41.04,
+      "end": 41.66,
+      "text": "the part that",
+      "words": [
+        {
+          "t": 41.04,
+          "text": "the"
+        },
+        {
+          "t": 41.2,
+          "text": "part"
+        },
+        {
+          "t": 41.42,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 41.66,
+      "end": 42.78,
+      "text": "matters most. Some",
+      "words": [
+        {
+          "t": 41.66,
+          "text": "matters"
+        },
+        {
+          "t": 42.02,
+          "text": "most."
+        },
+        {
+          "t": 42.66,
+          "text": "Some"
+        }
+      ]
+    },
+    {
+      "start": 42.78,
+      "end": 43.24,
+      "text": "of it Claude",
+      "words": [
+        {
+          "t": 42.78,
+          "text": "of"
+        },
+        {
+          "t": 42.9,
+          "text": "it"
+        },
+        {
+          "t": 43.02,
+          "text": "Claude"
+        }
+      ]
+    },
+    {
+      "start": 43.24,
+      "end": 44.18,
+      "text": "refuses to write",
+      "words": [
+        {
+          "t": 43.24,
+          "text": "refuses"
+        },
+        {
+          "t": 43.76,
+          "text": "to"
+        },
+        {
+          "t": 44.04,
+          "text": "write"
+        }
+      ]
+    },
+    {
+      "start": 44.18,
+      "end": 45.32,
+      "text": "down. Now the",
+      "words": [
+        {
+          "t": 44.18,
+          "text": "down."
+        },
+        {
+          "t": 44.96,
+          "text": "Now"
+        },
+        {
+          "t": 45.18,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 45.32,
+      "end": 46.36,
+      "text": "subjects, it stays",
+      "words": [
+        {
+          "t": 45.32,
+          "text": "subjects,"
+        },
+        {
+          "t": 45.88,
+          "text": "it"
+        },
+        {
+          "t": 46.1,
+          "text": "stays"
+        }
+      ]
+    },
+    {
+      "start": 46.36,
+      "end": 47.46,
+      "text": "out of health,",
+      "words": [
+        {
+          "t": 46.36,
+          "text": "out"
+        },
+        {
+          "t": 46.68,
+          "text": "of"
+        },
+        {
+          "t": 46.88,
+          "text": "health,"
+        }
+      ]
+    },
+    {
+      "start": 47.92,
+      "end": 49.18,
+      "text": "race, religion, politics,",
+      "words": [
+        {
+          "t": 47.92,
+          "text": "race,"
+        },
+        {
+          "t": 48.52,
+          "text": "religion,"
+        },
+        {
+          "t": 48.96,
+          "text": "politics,"
+        }
+      ]
+    },
+    {
+      "start": 49.62,
+      "end": 50.92,
+      "text": "gender identity, off",
+      "words": [
+        {
+          "t": 49.62,
+          "text": "gender"
+        },
+        {
+          "t": 49.82,
+          "text": "identity,"
+        },
+        {
+          "t": 50.62,
+          "text": "off"
+        }
+      ]
+    },
+    {
+      "start": 50.92,
+      "end": 52.22,
+      "text": "by default. There's",
+      "words": [
+        {
+          "t": 50.92,
+          "text": "by"
+        },
+        {
+          "t": 51.14,
+          "text": "default."
+        },
+        {
+          "t": 51.96,
+          "text": "There's"
+        }
+      ]
+    },
+    {
+      "start": 52.22,
+      "end": 52.84,
+      "text": "a switch if",
+      "words": [
+        {
+          "t": 52.22,
+          "text": "a"
+        },
+        {
+          "t": 52.28,
+          "text": "switch"
+        },
+        {
+          "t": 52.48,
+          "text": "if"
+        }
+      ]
+    },
+    {
+      "start": 52.84,
+      "end": 53.32,
+      "text": "you want them",
+      "words": [
+        {
+          "t": 52.84,
+          "text": "you"
+        },
+        {
+          "t": 52.96,
+          "text": "want"
+        },
+        {
+          "t": 53.12,
+          "text": "them"
+        }
+      ]
+    },
+    {
+      "start": 53.32,
+      "end": 53.92,
+      "text": "in and a",
+      "words": [
+        {
+          "t": 53.32,
+          "text": "in"
+        },
+        {
+          "t": 53.56,
+          "text": "and"
+        },
+        {
+          "t": 53.82,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 53.92,
+      "end": 54.72,
+      "text": "notice each time",
+      "words": [
+        {
+          "t": 53.92,
+          "text": "notice"
+        },
+        {
+          "t": 54.14,
+          "text": "each"
+        },
+        {
+          "t": 54.5,
+          "text": "time"
+        }
+      ]
+    },
+    {
+      "start": 54.72,
+      "end": 55.46,
+      "text": "it saves one.",
+      "words": [
+        {
+          "t": 54.72,
+          "text": "it"
+        },
+        {
+          "t": 54.88,
+          "text": "saves"
+        },
+        {
+          "t": 55.14,
+          "text": "one."
+        }
+      ]
+    },
+    {
+      "start": 55.86,
+      "end": 56.36,
+      "text": "Back to what",
+      "words": [
+        {
+          "t": 55.86,
+          "text": "Back"
+        },
+        {
+          "t": 56.0,
+          "text": "to"
+        },
+        {
+          "t": 56.2,
+          "text": "what"
+        }
+      ]
+    },
+    {
+      "start": 56.36,
+      "end": 57.24,
+      "text": "it refuses to",
+      "words": [
+        {
+          "t": 56.36,
+          "text": "it"
+        },
+        {
+          "t": 56.52,
+          "text": "refuses"
+        },
+        {
+          "t": 56.96,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 57.24,
+      "end": 58.3,
+      "text": "write down. Social",
+      "words": [
+        {
+          "t": 57.24,
+          "text": "write"
+        },
+        {
+          "t": 57.42,
+          "text": "down."
+        },
+        {
+          "t": 57.7,
+          "text": "Social"
+        }
+      ]
+    },
+    {
+      "start": 58.3,
+      "end": 59.68,
+      "text": "security numbers, government",
+      "words": [
+        {
+          "t": 58.3,
+          "text": "security"
+        },
+        {
+          "t": 58.8,
+          "text": "numbers,"
+        },
+        {
+          "t": 59.38,
+          "text": "government"
+        }
+      ]
+    },
+    {
+      "start": 59.68,
+      "end": 61.18,
+      "text": "IDs, criminal history,",
+      "words": [
+        {
+          "t": 59.68,
+          "text": "IDs,"
+        },
+        {
+          "t": 60.5,
+          "text": "criminal"
+        },
+        {
+          "t": 60.68,
+          "text": "history,"
+        }
+      ]
+    },
+    {
+      "start": 61.4,
+      "end": 62.88,
+      "text": "immigration status. Those",
+      "words": [
+        {
+          "t": 61.4,
+          "text": "immigration"
+        },
+        {
+          "t": 61.6,
+          "text": "status."
+        },
+        {
+          "t": 62.6,
+          "text": "Those"
+        }
+      ]
+    },
+    {
+      "start": 62.88,
+      "end": 63.64,
+      "text": "never get saved",
+      "words": [
+        {
+          "t": 62.88,
+          "text": "never"
+        },
+        {
+          "t": 63.2,
+          "text": "get"
+        },
+        {
+          "t": 63.38,
+          "text": "saved"
+        }
+      ]
+    },
+    {
+      "start": 63.64,
+      "end": 64.44,
+      "text": "either way and",
+      "words": [
+        {
+          "t": 63.64,
+          "text": "either"
+        },
+        {
+          "t": 64.0,
+          "text": "way"
+        },
+        {
+          "t": 64.22,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 64.44,
+      "end": 65.16,
+      "text": "Claude tells you",
+      "words": [
+        {
+          "t": 64.44,
+          "text": "Claude"
+        },
+        {
+          "t": 64.64,
+          "text": "tells"
+        },
+        {
+          "t": 64.92,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 65.16,
+      "end": 65.82,
+      "text": "when it refused.",
+      "words": [
+        {
+          "t": 65.16,
+          "text": "when"
+        },
+        {
+          "t": 65.3,
+          "text": "it"
+        },
+        {
+          "t": 65.42,
+          "text": "refused."
+        }
+      ]
+    },
+    {
+      "start": 66.26,
+      "end": 67.02,
+      "text": "On by default",
+      "words": [
+        {
+          "t": 66.26,
+          "text": "On"
+        },
+        {
+          "t": 66.52,
+          "text": "by"
+        },
+        {
+          "t": 66.7,
+          "text": "default"
+        }
+      ]
+    },
+    {
+      "start": 67.02,
+      "end": 67.88,
+      "text": "on Free Pro",
+      "words": [
+        {
+          "t": 67.02,
+          "text": "on"
+        },
+        {
+          "t": 67.3,
+          "text": "Free"
+        },
+        {
+          "t": 67.56,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 67.88,
+      "end": 69.1,
+      "text": "and Max web",
+      "words": [
+        {
+          "t": 67.88,
+          "text": "and"
+        },
+        {
+          "t": 68.1,
+          "text": "Max"
+        },
+        {
+          "t": 68.6,
+          "text": "web"
+        }
+      ]
+    },
+    {
+      "start": 69.1,
+      "end": 70.82,
+      "text": "desktop mobile. On",
+      "words": [
+        {
+          "t": 69.1,
+          "text": "desktop"
+        },
+        {
+          "t": 69.66,
+          "text": "mobile."
+        },
+        {
+          "t": 70.72,
+          "text": "On"
+        }
+      ]
+    },
+    {
+      "start": 70.82,
+      "end": 71.9,
+      "text": "team and enterprise,",
+      "words": [
+        {
+          "t": 70.82,
+          "text": "team"
+        },
+        {
+          "t": 71.06,
+          "text": "and"
+        },
+        {
+          "t": 71.32,
+          "text": "enterprise,"
+        }
+      ]
+    },
+    {
+      "start": 72.24,
+      "end": 73.3,
+      "text": "your admin decides.",
+      "words": [
+        {
+          "t": 72.24,
+          "text": "your"
+        },
+        {
+          "t": 72.34,
+          "text": "admin"
+        },
+        {
+          "t": 72.8,
+          "text": "decides."
+        }
+      ]
+    },
+    {
+      "start": 73.76,
+      "end": 74.3,
+      "text": "The file on",
+      "words": [
+        {
+          "t": 73.76,
+          "text": "The"
+        },
+        {
+          "t": 73.84,
+          "text": "file"
+        },
+        {
+          "t": 74.1,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 74.3,
+      "end": 74.96,
+      "text": "you didn't go",
+      "words": [
+        {
+          "t": 74.3,
+          "text": "you"
+        },
+        {
+          "t": 74.46,
+          "text": "didn't"
+        },
+        {
+          "t": 74.82,
+          "text": "go"
+        }
+      ]
+    },
+    {
+      "start": 74.96,
+      "end": 75.62,
+      "text": "away. You just",
+      "words": [
+        {
+          "t": 74.96,
+          "text": "away."
+        },
+        {
+          "t": 75.34,
+          "text": "You"
+        },
+        {
+          "t": 75.4,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 75.62,
+      "end": 76.2,
+      "text": "got the key.",
+      "words": [
+        {
+          "t": 75.62,
+          "text": "got"
+        },
+        {
+          "t": 75.8,
+          "text": "the"
+        },
+        {
+          "t": 76.0,
+          "text": "key."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "format": "news",
+  "script": "Claude keeps a file on you, and as of August 25 it's the same file everywhere you use Claude.\nHere's what it keeps, and what it refuses.\nTell it something in a chat, and Cowork \u2014 Claude's agent for real work \u2014 already knows, and it carries back.\nAnd it's writing as you talk: say your deadline moved to September, and the next chat already knows.\nWhich is the point: you stop re-explaining yourself.\nAnd now you can see all of it \u2014 every memory a text file under a topic, one you can open, correct, or throw out.\nHalf Marathon Training. Client Pitch. Childcare Schedule.\nSo fix your company's old name in that file, and every conversation after gets it right \u2014 in chat, and in Cowork.\nBut here's the part that matters most: some of it Claude refuses to write down.\nNow, the subjects it stays out of: health, race, religion, politics, gender identity. Off by default.\nThere's a switch if you want them in, and a notice each time it saves one.\nBack to what it refuses to write down.\nSocial Security numbers, government IDs, criminal history, immigration status.\nThose never get saved either way, and Claude tells you when it refused.\nOn by default on Free, Pro and Max \u2014 web, desktop, mobile. On Team and Enterprise, your admin decides.\nThe file on you didn't go away. You just got the key.",
+  "approval": {
+    "sha256": "ee14030e7182dfdf95f1842069675795b5e0478235e01953f8d9375772329752",
+    "approvedAt": "2026-08-26T07:02:04+00:00",
+    "words": 236,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

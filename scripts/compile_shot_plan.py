@@ -133,7 +133,14 @@ def load_words(path: Path) -> list[dict[str, Any]]:
         # build_template.py; this generic path never inherited it.
         if text.startswith("-") and out:
             out[-1]["text"] = f'{out[-1]["text"]}{text}'
-            out[-1]["norm"] = normalize(out[-1]["text"])[-1]
+            # The WHOLE compound, joined — the SAME defect the comma branch
+            # below records, one block up and never fixed with it. `[-1]` kept
+            # only the last token, so whisper's "co" + "-work," carried norm
+            # "work" and an anchor on "Cowork" could never resolve; "Ming" +
+            # "-Chi" was searchable only as "chi". Found 2026-08-26 on
+            # claude-memory-everywhere, whose glossary makes the voice say
+            # "co-work" for Cowork, so every reel naming that product hits it.
+            out[-1]["norm"] = "".join(normalize(out[-1]["text"]))
             out[-1]["end"] = end
             continue
         # Whisper occasionally returns ".8" or ",000" as a separate word. Both

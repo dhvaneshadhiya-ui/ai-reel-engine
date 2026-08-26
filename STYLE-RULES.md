@@ -4603,3 +4603,63 @@ a real fragment rather than trusting a filename.
 
 doctor runs it, so a clause that quietly stops being enforced fails the first
 command of the session instead of waiting to be asked a fifth time.
+
+## 2026-08-26 — annotatezoom fits the SOURCE, so a `focus` inside a big sheet renders small
+
+The reel's UI evidence is three official Anthropic screenshots at 2048x1152.
+Ten beats framed regions of them with `annotatezoom` + `focus`. Every one
+rendered as a **small card adrift on a near-empty cream field** — eleven
+DEAD SPACE flags, and two adjacent beats hashed as near-identical and blocked
+the lint.
+
+The cause is that annotatezoom fits the SOURCE image and then settles toward
+the focus, so a 900x880 region inside a 2048x1152 sheet is drawn at the sheet's
+scale, not the region's. A PIL simulation had predicted 55% fill; the render
+gave about 20%. **The simulation was modelling the wrong component.**
+
+Two fixes, and the second only exists because of the first:
+
+1. **Bake the crop into its own asset** and point the beat at that, with
+   `focus` = the whole image. Now the component fits the region itself. The
+   topic-name column went from 36% to 61% of frame height.
+2. **Then set the field by measured brightness.** Baking removed the orange
+   margin, so annotatezoom's blurred-self fill became WHITE — a white card on a
+   white field. Every baked crop is now measured (`mean > 170` -> `bg: "black"`),
+   which put the white cards on the dark editorial field and took DEAD SPACE
+   from eleven flags to two.
+
+**Distilled rule: a simulation is evidence about the simulation.** It caught
+four real defects before the first render and then confidently mispredicted the
+fill, because it modelled the geometry and not the component. Simulate to find
+crops that are wrong; render to find out how they look.
+
+### Treatment history — claude-memory-everywhere
+
+- claude-memory-everywhere (Anthropic memory announcement — a news reel built
+  almost entirely on FIRST-PARTY evidence, which is new here: three official
+  product screenshots embedded in the announcement plus a mobile capture of the
+  post itself, no third-party footage at all): split hook (baked PORTRAIT crop
+  of the Topics file list above the presenter, NO display type — see below),
+  `receipt` on the post masthead with the highlight landing on "August 25,
+  2026", NINE `sourceread` read-alongs across four different regions of one
+  mobile capture (highlights accumulate forward down the page, never
+  backwards), EIGHT `annotatezoom` beats on BAKED crops of the official
+  screenshots on a `bg: "black"` field with box/underline marks timed to
+  vo.json onsets, `wordcascade` for the five sensitive categories with
+  `bottomSrc` facecam filling the 1.68s before the first word is spoken,
+  `checklist` with all four rows in the `no` state ("NEVER STORED") for the
+  refused list, four facecam beats (opening promise, the take, the loop plant,
+  the close), 8 SFX, no music, no CTA.
+- **The hook carries NO display type, deliberately.** Two passes proved it
+  should not: the type landed across the topic rows and was unreadable, and
+  because ONE TEXT SYSTEM saw the headline speak the narration's words it
+  suppressed the caption chips — so the frame carried two texts, one illegible
+  and one missing. Removing the headline gives the chips back, and the chips
+  name the brand on mute, which is what the headline was there to do.
+- -> next reel must introduce at least one new treatment. Already used and not
+  to be repeated as the SAME shape next: a `checklist` whose rows are ALL `no`
+  as the payoff of a withheld-list loop; `wordcascade` + `bottomSrc` to cover
+  the gap before its first spoken word; baked focus-crops on `bg: "black"` as
+  the general answer to a wide UI screenshot in a 9:16 frame (borrow the
+  TECHNIQUE freely — it is now the documented default — but not the specific
+  "white card on black, box on the control" composition three times running).
