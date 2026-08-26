@@ -84,6 +84,12 @@ the story decides the retention devices, the visuals, the edit and the audio;
 accuracy constrains every claim; the platform shapes the packaging; the CTA
 informs but never distorts.
 
+**Check it, do not remember it.** `python3 tools/framework_audit.py` maps
+every clause of the rule above to the thing that makes it true and runs each
+probe — 36 clauses, and it fails if any stops being enforced. doctor runs it
+first thing. The question "is this really implemented?" has a command now,
+because it was answered from memory four times and was wrong once.
+
 **What is CODE and what is YOU.** `tools/framework_check.py` holds the rules
 with a right answer (reveal target, certainty vs evidence, source policy,
 prediction attribution, CTA flow); `tools/prepublish.py` runs the §11 audit

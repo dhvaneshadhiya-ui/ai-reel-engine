@@ -4570,3 +4570,36 @@ does the promised reveal still mean anything.
 
 The pattern worth keeping: **every time I said "it's implemented", the thing
 that made it true was a grep, not a memory.**
+
+## 2026-08-26 — the master rule gets an audit, so the answer stops being mine
+
+Fourth time asked whether the framework is implemented. Three of those
+answers came from me and one was wrong — the operating stance was sitting in
+a file that loads only when opened, which a single grep would have disproved.
+An answer that depends on my memory is worth what my memory is worth.
+
+`tools/framework_audit.py` lists every clause of §12 with the thing that
+makes it true, and RUNS each probe. 36 clauses:
+
+| kind | n | meaning |
+|---|---|---|
+| CODE | 24 | a check with a right answer; delete it and the audit fails |
+| SCAFFOLD | 6 | a field or section a job cannot start without |
+| STANCE | 1 | text in AUTO-LOADED context, not a file that must be opened |
+| JUDGEMENT | 5 | no probe can decide it — the audit names WHERE it is exercised |
+
+The judgement rows are the important design decision. Escalation, a strong
+ending, pattern interrupts, selective silence, and leaving authentic footage
+alone cannot be settled by a machine. Listing them as "ok" with a pointer to
+where they are exercised keeps them visible WITHOUT pretending they are
+automated — the alternative is a green checkmark that means nothing, which is
+how taste ends up wearing a rule's badge.
+
+It earned itself on the first run by failing a clause: the
+"do not damage authentic footage" probe spanned a Python string break and
+matched nothing. The clause was fine; the PROBE was wrong — which is exactly
+the failure an audit is supposed to surface, and the reason each probe greps
+a real fragment rather than trusting a filename.
+
+doctor runs it, so a clause that quietly stops being enforced fails the first
+command of the session instead of waiting to be asked a fifth time.
