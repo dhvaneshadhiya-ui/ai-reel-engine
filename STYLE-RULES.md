@@ -4232,3 +4232,49 @@ reel yet, only material.
    captured session. The ccusage terminals stay PROOF: the DATA is real
    output (kept in `_sources/`), only the chrome is styled. That distinction
    is the quiet way a sourced reel becomes untrue, and it now has a field.
+
+## 2026-08-26 — "our system still generates very poor scripts": the diagnosis
+
+User pasted the claude-memory-everywhere draft. Ran it through our own
+`check_script` first, before defending anything: it reported a NUMBERS note
+and nothing else. The user was right, and the checker was the reason.
+
+**What was actually wrong with that draft**, read as a writer:
+its structure.md was excellent — it declared the story engine, chose
+misconception -> reality -> proof -> limit -> consequence, and said in as many
+words "not the four-section feature list the announcement itself is organised
+as." Then the script was that feature list. **The plan was right and the
+writing ignored it, and nothing in the pipeline noticed.**
+
+The visible symptom was one sentence: *"Back to what it refuses to write
+down."* The draft promised that payoff in sentence 4, spent nine sentences on
+unrelated features, then wrote a signpost admitting the detour. A viewer
+feels that as being lost.
+
+**New check: ABANDONED LOOP** — derived, not invented. Measured the promise ->
+navigation-back distance across all 13 scripts in the repo:
+
+| script | navigates back to | detour |
+|---|---|---|
+| iphone18-colors (approved) | — (holds a loop 11 sentences, never signposts) | none |
+| claude-eating-tokens (approved) | short aside | 2 |
+| iphone-18-pro (approved) | forward reference | none |
+| **claude-memory-everywhere** | **sentence 4** | **9** |
+
+So a long deferral is a GOOD loop; what no approved script does is announce a
+return after wandering. Threshold 5 — past a deliberate aside, well under the
+observed failure. Fires on the real draft, silent on every approved script and
+on a two-sentence aside. `"going back to 2019"` is excluded: a date is not a
+navigation.
+
+**And the craft loop itself was missing.** The rewrite took five passes, each
+one driven by the checker's own output: v1 traded the abandoned loop for NO
+loop; v2 fixed bridges but broke cadence; v3 planted a loop the payoff never
+echoed (the detector wants a DISTINCTIVE word returned, which is also what
+makes a callback ring); v4 landed the callback but ran 232 words, 84-99s
+against a 60-80s band; v5 trimmed to 194. That is the loop that was never
+being run — writing, measuring, rewriting — and it is now written down as the
+expected number of passes, not a sign something went wrong.
+
+Rewrite lives at `jobs/claude-memory-everywhere/script-rewrite.md` — NOT over
+the other session's `script.md`, which is unapproved and theirs to merge.
