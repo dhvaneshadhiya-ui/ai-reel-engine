@@ -342,6 +342,25 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "script calibration", str(e))
     problems.append("calibration")
 
+# THE MASTER RULE AUDIT (2026-08-26). Every clause of the framework's §12
+# mapped to the thing that makes it true, each probe run. Here because the
+# question "is it really implemented?" was asked four times and answered from
+# memory — once wrongly. A memory is not a check.
+try:
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "tools/framework_audit.py"), "--brief"],
+        capture_output=True, text=True, timeout=90)
+    tail = [l for l in r.stdout.splitlines() if "clauses:" in l]
+    if r.returncode == 0:
+        report(OK, "master rule audit", tail[-1].strip() if tail else "all clauses hold")
+    else:
+        report(BAD, "master rule audit", "a clause stopped being enforced")
+        print(r.stdout[-600:])
+        problems.append("framework-audit")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "master rule audit", str(e))
+    problems.append("framework-audit")
+
 # The FRAMEWORK CHECK (2026-08-25) — the three rules of the short-form master
 # framework that have a right answer: reveal-target concealment, certainty
 # matching evidence, and source policy. Each one is a promise to the viewer.
