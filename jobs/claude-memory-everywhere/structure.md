@@ -68,12 +68,14 @@ closing line, "The file on you didn't go away. You just got the key." (S18)
 - The three worked examples in the blog (manager update, conference agenda, QBR
   deck) — three illustrations of one point; kept none, since the Cowork beat
   needs one sentence, not three.
-- **"Memory updates as you chat"** — one of the announcement's four named
-  sections, and it was in the draft ("say your deadline moved to September, and
-  the next chat already knows"). Cut at the rehearsal stage: it was the only
-  beat that did not serve the spine (see it -> fix it -> it follows you -> what
-  it refuses), and it was the 15 words between a 79-85s prediction and the
-  60-80s band. Recorded because it is the one real fact this reel omits.
+- **"Memory updates as you chat" was cut, then RESTORED 2026-08-26.** It was
+  cut at the rehearsal stage for runtime — and the runtime was wrong. The first
+  master delivered 199 words in 67.5s (2.95 wps) against a predictor calibrated
+  at 2.35-2.75, which is a voiceSpeed-1.05 band still being applied at 1.12. So
+  36 words of headroom existed and a real section of the announcement was cut to
+  fit a limit that was not there. Restored, and placed in the REACH section
+  rather than where it originally sat: "writing as you talk" is about memory
+  being CURRENT everywhere, which serves the half this reel was under-serving.
 - Pause / reset memory, and the "files are short" clause — momentum over
   completeness.
 - The Team/Enterprise detail is kept to one clause because a business viewer

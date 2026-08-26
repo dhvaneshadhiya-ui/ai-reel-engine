@@ -3,7 +3,7 @@ Here's what it keeps, and what it refuses.
 Tell it something in a chat, and Cowork — Claude's agent for real work — already knows, and it carries back.
 And it's writing as you talk: say your deadline moved to September, and the next chat already knows.
 Which is the point: you stop re-explaining yourself.
-And now you can see all of it — every memory is a text file under a topic, one you can open, correct, or throw out.
+And now you can see all of it — every memory a text file under a topic, one you can open, correct, or throw out.
 Half Marathon Training. Client Pitch. Childcare Schedule.
 So fix your company's old name in that file, and every conversation after gets it right — in chat, and in Cowork.
 But here's the part that matters most: some of it Claude refuses to write down.

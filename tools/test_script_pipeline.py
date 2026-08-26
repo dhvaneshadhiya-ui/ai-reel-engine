@@ -353,6 +353,36 @@ def run() -> int:
     ok("no shot plan renders as empty, not a crash",
        beat_plan.render("nope", root=tmp3) == [])
 
+    # 11a2. DELIVERY RATE IS KEYED TO THE LOCKED VOICE SPEED (2026-08-26).
+    # The old constants were measured at speed 1.05 and kept being applied
+    # after the locked speed moved to 1.12, which cost claude-memory-everywhere
+    # a whole section of its source announcement — cut at rehearsal to fit a
+    # runtime limit that did not exist. These pin that a speed with no
+    # measurement can never resolve SILENTLY to another speed's numbers.
+    import script_approval as _sa
+    lo105, hi105, why105 = _sa.WPS_BY_SPEED[1.05][0], _sa.WPS_BY_SPEED[1.05][1], ""
+    ok("the 1.05 measurements are unchanged", (lo105, hi105) == (2.35, 2.75))
+    ok("1.12 has its own measured row", 1.12 in _sa.WPS_BY_SPEED)
+    ok("the 1.12 row is faster than the 1.05 row",
+       _sa.WPS_BY_SPEED[1.12][0] > _sa.WPS_BY_SPEED[1.05][0])
+    ok("every row carries its provenance",
+       all(isinstance(v[2], str) and len(v[2]) > 20
+           for v in _sa.WPS_BY_SPEED.values()))
+    _speed = _sa.locked_speed
+    try:
+        _sa.locked_speed = lambda: 1.12
+        r = _sa.wps_range()
+        ok("a measured speed resolves to its own row and says so",
+           r[0] == 2.60 and "speed 1.12" in r[2] and "NO MEASUREMENT" not in r[2])
+        _sa.locked_speed = lambda: 1.40
+        r = _sa.wps_range()
+        ok("an UNMEASURED speed falls back LOUDLY, never silently",
+           "NO MEASUREMENT AT SPEED 1.4" in r[2])
+        ok("the loud fallback still returns a usable range",
+           r[0] > 0 and r[1] > r[0])
+    finally:
+        _sa.locked_speed = _speed
+
     # 11b. SCREENSHOT BEATS MUST DESCRIBE THEMSELVES (2026-08-26). sourceread /
     # annotatezoom / receipt rendered FIXED strings naming the camera move
     # ("a screenshot, zooming slowly into the highlighted region") and nothing

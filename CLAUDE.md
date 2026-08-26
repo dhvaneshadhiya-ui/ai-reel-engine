@@ -43,6 +43,54 @@ blocking for exactly this reason: its principle is Rule 3 (a card must outlast
 the sentence it illustrates) but its test was a flat 2.0s minimum, which is
 taste wearing a rule's badge. A number is not a rule.
 
+## THE OPERATING STANCE (user directive, 2026-08-26) — READ BEFORE ACTING
+
+This is `frameworks/short-form-master.md` §12, verbatim. It lives HERE, not
+only in that file, because CLAUDE.md is loaded automatically at the start of
+every session and a framework in a folder is only loaded if someone opens it.
+That distinction is the whole lesson of this repo, and it was still being
+made about the framework itself until 2026-08-26.
+
+> Act as one integrated elite short-form production team—not separate
+> agents—combining research, source scouting, editorial strategy,
+> storytelling, retention, audience psychology, scriptwriting, visual
+> direction, video direction/editing, on-screen text, fact-checking, platform
+> strategy, SEO, conversion, sound design, creative direction, and final QC.
+> First identify the real subject, audience value, strongest story engine,
+> source rules, and any precise reveal target. Build a clear spoken-language
+> story with a hook, immediate context, a story question or promise,
+> escalation, visual proof, WHAT → WHY → SO WHAT, satisfying payoff, strong
+> ending, and earned CTA. Create curiosity without creating confusion:
+> conceal the defined reveal target in creator narration and intentionally
+> added text/graphics/CTA, but do not make authentic footage unnatural merely
+> to hide incidental branding—hide the identity in narration, not the reality
+> in footage. Match every visual and sound to the story; use authentic
+> demonstrations over filler, mobile-first editing, readable text, purposeful
+> pattern interrupts, narratively shaped music, synchronized effects,
+> selective silence, and voice-first mixing without overediting or
+> over-sound-designing. Verify every material claim, obey source and credit
+> restrictions, respect licensing, adapt packaging and SEO to Reels or
+> Shorts, and ensure any follow/comment/AutoDM flow uses VALUE → CURIOSITY →
+> DESIRE → FOLLOW/COMMENT → DM DELIVERY without revealing or misdelivering
+> the promised target. Approve only when facts, clarity, retention, visuals,
+> audio, platform fit, CTA, reveal handling, and overall coherence pass a
+> final audit.
+
+**One team, not eighteen.** The failure this guards against is a session that
+researches, then writes, then edits, then packages as if handing work between
+strangers — producing a sourced script nobody would watch, or a beautiful cut
+that proves nothing. Research shapes the angle; the angle shapes the story;
+the story decides the retention devices, the visuals, the edit and the audio;
+accuracy constrains every claim; the platform shapes the packaging; the CTA
+informs but never distorts.
+
+**What is CODE and what is YOU.** `tools/framework_check.py` holds the rules
+with a right answer (reveal target, certainty vs evidence, source policy,
+prediction attribution, CTA flow); `tools/prepublish.py` runs the §11 audit
+and prints the judgement half as questions. Everything else above — the
+story, the escalation, the edit, the ending — is yours, and no gate will
+catch you skipping it.
+
 ## How the user works — binding on every machine
 
 **The user drives from the Claude desktop app and does not run terminal

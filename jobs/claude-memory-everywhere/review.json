@@ -1,11 +1,13 @@
 {
-  "script_sha256": "494e278e2ae504bc33c463c121048e1a79b3a6dc77cb5241b60feeb8f4a21b6c",
-  "structure_sha256": "131f66b379e1d2f35a8a43f32072c6518d86cffcea9bf23768897baca3ebd4d9",
+  "script_sha256": "ee14030e7182dfdf95f1842069675795b5e0478235e01953f8d9375772329752",
+  "structure_sha256": "7ea6925f1982eebd75bdd5db13a33ed78046870a926a698aa4f810892ee2d8bb",
   "findings": [
-    "ABANDONED LOOP: sentence 13 steers back to something last said in sentence 4 \u2014 a 9-sentence detour, then a signpost admitting it ('Back to what it refuses to write down.'). No approved script in this repo does that. Either move the promise next to its payoff, or cut what came between; a loop the writer has to announce a return to was not held.",
-    "NUMBERS: one every 19.0 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted."
+    "NUMBERS: one every 21.0 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted.",
+    "HOUSE TIC: \"here's the part that\" \u2014 already used in 1 other script(s) (grok-bot). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HOUSE TIC: \"but here's the\" \u2014 already used in 1 other script(s) (apple-pay-india). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HOUSE TIC: 'all of it' \u2014 already used in 1 other script(s) (made-by-google-26). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit."
   ],
   "research_advice": [],
-  "beatPlanShots": 26,
-  "proposedAt": "2026-08-26T06:30:26+00:00"
+  "beatPlanShots": 27,
+  "proposedAt": "2026-08-26T07:03:28+00:00"
 }

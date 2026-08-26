@@ -35,14 +35,59 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-WPS = 2.7          # words/sec — CENTER of the measured range (see below)
-WPS_MIN, WPS_MAX = 2.35, 2.75
-# 2026-08-13: the old 3.2 was never measured. 2026-08-14: FIVE masters now —
-# grok-bot 2.69, apple-pay-india 2.72, iphone18-split 2.55,
-# september-preview 2.36 (pause-heavy punctuation runs slow: colons, dashes
-# and rhetorical questions are runtime). The voice VARIES, so the check
-# blocks on the SLOWEST pace: a script only passes if it fits the band even
-# at 2.35 wps. Band words for 60-80s: 141-188 safe (188 = 80x2.35).
+# DELIVERY RATE IS A PROPERTY OF THE VOICE *AT A SPEED*, so it is keyed by the
+# locked `avatar.voiceSpeed` and never by a bare constant.
+#
+# 2026-08-13: the old 3.2 was never measured. 2026-08-14: four masters at speed
+# 1.05 — grok-bot 2.69, apple-pay-india 2.72, iphone18-split 2.55,
+# september-preview 2.36 (pause-heavy punctuation runs slow: colons, dashes and
+# rhetorical questions are runtime). The voice VARIES, so the advice uses the
+# SLOWEST pace: a script is safe only if it fits the band even at the floor.
+#
+# 2026-08-26 — WHY THIS BECAME A TABLE. The constants above were measured at
+# speed 1.05 and kept being applied after the locked speed moved to 1.12 on
+# 2026-08-25. Nothing was wrong with the numbers; they were answering a
+# question about a different voice. The cost was real and specific: the first
+# claude-memory-everywhere master delivered 199 words in 67.5s (2.95 wps) while
+# this file predicted 72-85s, so a whole section of the announcement had been
+# cut at rehearsal to fit a limit that did not exist.
+#
+# A stale number that is LABELLED accurately still misleads, because the label
+# lives here and the decision happens at the propose prompt. Keying the table by
+# speed makes the mismatch impossible to carry silently: change the speed
+# without measuring and the resolver says so out loud.
+WPS_BY_SPEED = {
+    # speed: (floor, ceiling, provenance)
+    1.05: (2.35, 2.75, "4 masters 2026-08-14: grok-bot 2.69, apple-pay-india "
+                       "2.72, iphone18-split 2.55, september-preview 2.36"),
+    1.12: (2.60, 2.95, "2 masters 2026-08-26: claude-eating-tokens 2.61, "
+                       "claude-memory-everywhere 2.95 — THIN, add points"),
+}
+
+
+def locked_speed() -> float:
+    try:
+        cfg = json.loads((ROOT / "config.json").read_text())
+        return float(cfg.get("avatar", {}).get("voiceSpeed", 1.05))
+    except Exception:  # noqa: BLE001
+        return 1.05
+
+
+def wps_range() -> tuple[float, float, str]:
+    """The measured range for the LOCKED speed, or the nearest measured speed
+    with a loud note. Never silently reuse another speed's numbers."""
+    speed = locked_speed()
+    for s, (lo, hi, why) in WPS_BY_SPEED.items():
+        if abs(s - speed) < 0.005:
+            return lo, hi, f"speed {s}, {why}"
+    near = min(WPS_BY_SPEED, key=lambda s: abs(s - speed))
+    lo, hi, why = WPS_BY_SPEED[near]
+    return lo, hi, (f"NO MEASUREMENT AT SPEED {speed} — falling back to {near} "
+                    f"({why}). Measure a master at {speed} and add it.")
+
+
+WPS_MIN, WPS_MAX = wps_range()[0], wps_range()[1]
+WPS = round((WPS_MIN + WPS_MAX) / 2, 2)
 
 
 def paths(slug: str) -> tuple[Path, Path, Path]:
@@ -189,7 +234,7 @@ def cmd_propose(slug: str) -> None:
     print("=" * 68)
     print(spoken)
     print("-" * 68)
-    print(f"{words} words  ->  ~{secs:.0f}s at speed 1.05 (measured {WPS} wps)")
+    print(f"{words} words  ->  ~{secs:.0f}s at speed {locked_speed()} (measured {WPS} wps)")
     print(f"sha256: {sha(spoken)[:16]}")
     # 2026-08-13: BLOCK out-of-band scripts at propose time — the cheap
     # moment. A 242-word script sailed through at "~76s" under the old 3.2
@@ -219,14 +264,15 @@ def cmd_propose(slug: str) -> None:
     # voice at this speed, never scaled from the speed number: the engine changes
     # its pauses too, so the relationship is not linear (2026-08-22).
     plan_p = ROOT / "jobs" / slug / "shot-plan.json"
-    wmin, wmax = WPS_MIN, WPS_MAX
+    wmin, wmax, prov = wps_range()
+    print(f"pace: {prov}")
     if plan_p.exists():
         try:
             mw = json.loads(plan_p.read_text()).get("measuredWps")
             if mw:
                 wmin, wmax = float(mw) * 0.94, float(mw) * 1.06
                 print(f"pace: using this reel's MEASURED {float(mw):.2f} wps "
-                      f"(the locked-speed default is {WPS_MIN}-{WPS_MAX})")
+                      f"(the locked-speed default is {WPS_MIN:.2f}-{WPS_MAX:.2f})")
         except Exception:  # noqa: BLE001
             pass
     slow, fast = words / wmin, words / wmax
