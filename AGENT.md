@@ -168,7 +168,7 @@ any anchor is missing.
 It prints a runtime prediction from the **measured** 2.5–2.7 wps, and prints the
 synthetic audio's own duration marked as *not* the predictor — chatterbox's
 speaking rate is not the twin's, and swapping a measured number for an
-unmeasured one is what G23 exists to stop. Artifacts land in
+unmeasured one is what G23 flags (as advice — the discipline is yours). Artifacts land in
 `_sources/<slug>/rehearsal/`, never `public/` (Remotion re-copies all of
 `public/` on every render).
 

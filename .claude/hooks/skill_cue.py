@@ -59,9 +59,6 @@ def main() -> int:
         return 0
 
     blob = json.dumps(payload.get("tool_response", ""))
-    if "SKILL CUE" not in blob:
-        return 0
-
     # Unescape so backticked names survive the json.dumps round trip.
     text = blob.encode().decode("unicode_escape", "ignore")
 
@@ -82,6 +79,18 @@ def main() -> int:
                 for name in re.findall(r"`([a-z0-9][a-z0-9-]{2,40})`", follow):
                     if name in known and name not in cued:
                         cued.append(name)
+
+    # A FAILING media command is its own trigger. `ffmpeg-ytdlp` holds the
+    # measured recipes and the macOS arch trap, and no tool of ours prints a
+    # cue for it because the failure happens in ffmpeg, not in our code.
+    media = re.search(r"\b(ffmpeg|ffprobe|yt-dlp|youtube-dl)\b",
+                      payload.get("tool_input", {}).get("command", ""))
+    broke = re.search(r"(incompatible architecture|command not found|"
+                      r"Unknown encoder|Invalid argument|No such filter|"
+                      r"Conversion failed|Error opening|error while|"
+                      r"Unable to (find|extract))", text, re.I)
+    if media and broke and "ffmpeg-ytdlp" in known and "ffmpeg-ytdlp" not in cued:
+        cued.append("ffmpeg-ytdlp")
 
     if not cued:
         return 0

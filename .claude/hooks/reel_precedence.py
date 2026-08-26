@@ -12,14 +12,23 @@ import re
 import sys
 
 REEL = re.compile(
-    r"\b(reel|reels|short|shorts|video|voiceover|avatar|heygen|render|b-?roll|"
-    r"script|caption|hook|thumbnail|remotion|beat sheet|shot plan|storyboard)\b",
-    re.I)
+    r"\b(reels?|shorts?|videos?|voice ?overs?|avatars?|heygen|renders?|"
+    r"b-?roll|scripts?|captions?|hooks?|thumbnails?|remotion|beat ?sheets?|"
+    r"shot ?plans?|storyboards?|narration|footage|scenes?)\b", re.I)
 
-# Prompts that are about the machinery, not about producing a reel.
+# Prompts about the MACHINERY, not about producing a reel. The repo is itself
+# called "AI Reel Engine", so the word "reel" appears in maintenance requests
+# too — this fired on "go through our entire AI Reel Engine and make sure
+# everything works", which is housekeeping, not a brief.
 META = re.compile(
-    r"\b(audit|refactor|debug|gate|test|doctor|commit|push|repo|why did|"
-    r"explain|what is|how does|framework|wiring)\b", re.I)
+    r"\b(audit|refactor|debug|gate|test|tests|self-?test|doctor|commit|push|"
+    r"repo|repository|why did|explain|what is|how does|framework|wiring|"
+    r"engine|orphan|settings|precedence|hooks?\s+(fire|work|trigger)|"
+    r"works? fine|working fine|everything works|auto.?trigger|"
+    r"skills?\b.*\btrigger|trigger.*\bskills?\b)\b", re.I)
+
+# The repo's own name is not a request to make one.
+REPO_NAME = re.compile(r"\bai\s+reel\s+engine\b", re.I)
 
 BRIEF = (
     "STANDING ORDER for this repo (from CLAUDE.md, injected because the prompt "
@@ -42,7 +51,8 @@ def main() -> int:
         prompt = json.load(sys.stdin).get("prompt", "")
     except Exception:
         return 0
-    if not REEL.search(prompt) or META.search(prompt):
+    body = REPO_NAME.sub(" the repo ", prompt)
+    if not REEL.search(body) or META.search(body):
         return 0
     json.dump({"hookSpecificOutput": {
         "hookEventName": "UserPromptSubmit",

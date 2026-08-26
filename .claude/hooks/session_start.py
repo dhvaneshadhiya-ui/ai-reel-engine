@@ -7,17 +7,35 @@ runs doctor at session start and reports the result into context, so a broken
 toolchain is known before the first edit rather than after the first render.
 """
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 
+# RE-ENTRANCY GUARD. doctor runs tools/test_hooks.py, which exercises this
+# hook, which would run doctor again — an infinite loop that only ends on
+# nested timeouts. It shipped, and the very next session start reported
+# "doctor timed out (>110s)" for a check that takes 15 seconds alone.
+# The variable is set on the doctor we launch and inherited by everything
+# underneath it, so any nested copy of this hook reports instead of recursing.
+GUARD = "AIRE_PREFLIGHT_RUNNING"
+
 
 def main() -> int:
+    if os.environ.get(GUARD):
+        json.dump({"hookSpecificOutput": {
+            "hookEventName": "SessionStart",
+            "additionalContext": "Session preflight: already inside a doctor "
+                                 "run (re-entrancy guard) — not re-running.",
+        }}, sys.stdout)
+        return 0
+
+    env = {**os.environ, GUARD: "1"}
     try:
         proc = subprocess.run(
-            [sys.executable, "scripts/doctor.py"],
+            [sys.executable, "scripts/doctor.py"], env=env,
             cwd=REPO, capture_output=True, text=True, timeout=110)
         out = (proc.stdout or "") + (proc.stderr or "")
         summary = [ln.strip() for ln in out.splitlines()

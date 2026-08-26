@@ -53,6 +53,58 @@ def main() -> int:
     docs_blob = "\n".join((ROOT / d).read_text(errors="ignore")
                           for d in DOCS if (ROOT / d).exists())
 
+    # DOC/CODE DRIFT (2026-08-26). CLAUDE.md said "Gate G23 rejects an
+    # unmeasured format outright" and RULES.md said "Unknown format = G23
+    # blocks". G23 is ADVICE and always was — the constitution only lets the
+    # three rules, RENDER and RIGHTS block. A doc that promises enforcement
+    # the code does not perform is worse than no doc: it is why a rule gets
+    # trusted instead of checked. STYLE-RULES is excluded on purpose — it is
+    # an append-only dated ledger, so its old entries are records of what was
+    # true then, not live claims.
+    sys.path.insert(0, str(ROOT / "tools"))
+    try:
+        import reel_gates as _rg
+        blocking = set(_rg.BLOCKING_RULES)
+        every_gate = set(re.findall(r"\bG\d{2}\b",
+                                   (ROOT / "tools/reel_gates.py").read_text()))
+    except Exception:                                      # noqa: BLE001
+        blocking, every_gate = set(), set()
+    # The verb must sit right after the gate id, so "G48 blocks; G49 advises"
+    # and "never one long block. [GATE:G06]" are not mistaken for claims.
+    CLAIM = re.compile(r"\b(G\d{2})\b[^.;\n]{0,24}?"
+                       r"\b(blocks?|rejects?|refuses?|stops?)\b", re.I)
+    NEGATED = re.compile(r"\b(cannot|can not|never|does not|doesn't|"
+                         r"no longer|not)\b", re.I)
+    drift = []
+    for doc in ("CLAUDE.md", "RULES.md", "AGENT.md", "PIPELINE.md"):
+        f = ROOT / doc
+        if not f.exists():
+            continue
+        for n, line in enumerate(f.read_text(errors="ignore").splitlines(), 1):
+            for m in CLAIM.finditer(line):
+                gate = m.group(1)
+                # "G23 advises (it cannot block)" is a correct sentence, not a
+                # false claim. Skip a negated verb.
+                if NEGATED.search(m.group(0)):
+                    continue
+                if gate in every_gate and gate not in blocking:
+                    drift.append((doc, n, gate, line.strip()[:88]))
+
+    # SELF-TESTS NOBODY RUNS (2026-08-26). check_frame_contract and notation
+    # each had a working --selftest that no program called, found only by
+    # listing every selftest and diffing against doctor. A self-test nobody
+    # runs is identical to no self-test, while looking like coverage.
+    doctor_txt = (ROOT / "scripts" / "doctor.py").read_text(errors="ignore")
+    selftests, unrun = [], []
+    for p_ in files:
+        if p_.name.startswith("test_"):
+            continue                       # these ARE suites; AUTO covers them
+        if '"--selftest"' not in code_blob[p_]:
+            continue
+        selftests.append(p_.name)
+        if p_.stem not in doctor_txt:
+            unrun.append(p_.name)
+
     # HOOKS (2026-08-26). A hook script that settings.json does not name is
     # exactly the bug this tool exists for, one folder over: present,
     # plausible, never executed. And a hook is the only thing here that can
@@ -97,6 +149,25 @@ def main() -> int:
             print(f"\n  -- {label} --")
             for n in group:
                 print(f"     {n}")
+    print(f"\n  DOCS   {len(blocking):3}  gates block; binding docs checked "
+          f"for false 'this blocks' claims")
+    if drift:
+        print("\n  DOC/CODE DRIFT — a doc promises enforcement the code "
+              "does not perform:")
+        for doc, n, gate, line in drift:
+            print(f"     {doc}:{n}  {gate} is ADVICE — {line}")
+        print()
+        return 1
+
+    print(f"\n  SELFTEST {len(selftests):3}  tools with a --selftest, "
+          f"{len(selftests) - len(unrun)} of them run by doctor")
+    if unrun:
+        print("\n  SELF-TESTS NOBODY RUNS — coverage that never executes:")
+        for n in unrun:
+            print(f"     {n}")
+        print()
+        return 1
+
     print(f"\n  HOOKS  {hook_count:3}  in .claude/hooks, "
           f"{hook_count - len(unwired)} wired into settings.json")
     if unwired:

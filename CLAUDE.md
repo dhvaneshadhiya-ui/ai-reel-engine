@@ -240,8 +240,11 @@ not: they are news numbers, held deliberately identical rather than invented,
 and must be re-derived from 3-5 real comparison reels.
 
 **Adding a genre = adding a profile, not editing constants.** Every number in
-a profile must come from a real teardown of reference reels. Gate G23 rejects
-an unmeasured format outright — do not guess the numbers to unblock yourself.
+a profile must come from a real teardown of reference reels. Gate G23 flags
+an unmeasured format as ADVICE — it cannot block, because "we have not
+measured this genre" is not one of the three rules, RENDER or RIGHTS. Nothing
+stops you guessing the numbers; that discipline is yours. G23 also cues
+`reel-analyzer`, which is how the teardown gets done.
 
 ## Avatar — default is the DIGITAL TWIN (2026-08-13)
 

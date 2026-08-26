@@ -5080,3 +5080,59 @@ a cue. Every one of those three incidents is a case in `tools/test_hooks.py`.
 `wiring_audit.py` now fails if a hook script is not named in settings.json,
 because an unwired hook removes a trigger while looking exactly like nothing
 is wrong — the identical failure shape as the tools it was built to find.
+
+## 2026-08-26 — second full audit: the hooks themselves were broken
+
+Asked to verify the whole engine again. The session's own SessionStart hook
+reported "doctor timed out (>110s)" for a check that takes 15 seconds, which
+was the first finding and the worst one.
+
+**1. INFINITE RECURSION in the preflight (shipped, live).** doctor runs
+`test_hooks.py`, which exercises `session_start.py`, which runs doctor. Each
+layer only ended on a nested timeout. It was invisible when the hook was
+written because doctor was wired to the suite in the same commit as the suite
+was wired to the hook. Fixed with an inherited env guard
+(`AIRE_PREFLIGHT_RUNNING`): the nested copy reports instead of recursing.
+Real preflight now 14.2s. The guard is tested, not trusted — and the test
+runs UNDER the guard so it cannot re-enter doctor either.
+
+**Lesson: a hook that calls the thing that tests the hook is a cycle, and no
+individual review of either file shows it.** Only running the real entry point
+does.
+
+**2. The precedence hook fired on maintenance prompts.** The repo is NAMED
+"AI Reel Engine", so "go through our entire AI Reel Engine" tripped the reel
+matcher. Tightened, and the test corpus is now REAL prompts from this
+project's history — nine production, eight maintenance. Tightening it
+immediately exposed the opposite bug: `script` did not match "scripts" and
+`caption` did not match "captions", so two genuine production requests
+("our system still generates very poor scripts") had been missing the brief
+all along. A filter is only as good as the corpus you test it against.
+
+**3. Two self-tests existed that nothing ran.** `check_frame_contract` and
+`notation` both had working `--selftest` flags that no program called — found
+by listing every selftest in the repo and diffing against doctor's calls.
+Both now run; `wiring_audit` fails on any future one, so coverage that never
+executes cannot look like coverage.
+
+**4. Four skills had no trigger; two needed one.** `reel-analyzer` now cues
+off G23 (an unmeasured format is exactly what that skill is for), and
+`ffmpeg-ytdlp` cues off a FAILING ffmpeg/yt-dlp command — the failure happens
+inside ffmpeg, so no tool of ours could print a cue for it. `content-repurposer`
+and `find-skills` are user-initiated and correctly have none.
+
+**5. DOC/CODE DRIFT — docs promised enforcement the code never performed.**
+CLAUDE.md: "Gate G23 rejects an unmeasured format outright." RULES.md:
+"Unknown format = G23 blocks." G23 is ADVICE and always was; the constitution
+only lets the three rules, RENDER and RIGHTS block. **A doc that promises a
+block the code does not perform is worse than no doc — it is exactly how a
+rule gets trusted instead of checked.** Both corrected, AGENT.md too, and
+`wiring_audit` now scans the binding docs for the claim automatically.
+STYLE-RULES is deliberately excluded: it is an append-only dated ledger, so
+its old entries are records of what was true then.
+
+**State of the material, separate from the system:** 9 of 21 beat sheets are
+blocked, 85 of their 94 violations being G45 — captions sitting under
+Instagram's account row. Every one was last modified 2026-08-18, before that
+overlay was measured. The gates are working; the old sheets are stale. They
+are shipped reels, so they were left alone rather than rewritten.

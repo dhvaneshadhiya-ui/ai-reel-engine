@@ -6,8 +6,10 @@ remembering to run it, so a silently broken hook removes the trigger and looks
 exactly like nothing being wrong. Run by doctor.
 """
 import json
+import os
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
@@ -15,10 +17,11 @@ HOOKS = REPO / ".claude" / "hooks"
 fails, checks = [], 0
 
 
-def run(hook: str, payload: dict) -> dict:
+def run(hook: str, payload: dict, env: dict | None = None) -> dict:
     proc = subprocess.run([sys.executable, str(HOOKS / hook)],
                           input=json.dumps(payload), capture_output=True,
-                          text=True, timeout=130)
+                          text=True, timeout=130,
+                          env={**os.environ, **(env or {})})
     if proc.returncode != 0:
         return {"__exit__": proc.returncode, "__err__": proc.stderr[-300:]}
     if not proc.stdout.strip():
@@ -89,6 +92,22 @@ check("non-Bash ignored",
       ctx(run("skill_cue.py", {"tool_name": "Read",
                                "tool_response": "SKILL CUE: `humanizer`"})) == "")
 
+# A FAILING media command triggers ffmpeg-ytdlp. Nothing of ours prints a cue
+# for it, because the failure happens inside ffmpeg — including the macOS
+# arch trap that skill exists to document.
+check("failing ffmpeg cues ffmpeg-ytdlp",
+      "ffmpeg-ytdlp" in ctx(run("skill_cue.py", bash(
+          "ffmpeg -i a.mov -c:v libx264 out.mp4",
+          "dyld: incompatible architecture (have 'x86_64', need 'arm64e')"))))
+check("failing yt-dlp cues ffmpeg-ytdlp",
+      "ffmpeg-ytdlp" in ctx(run("skill_cue.py", bash(
+          "yt-dlp -f best https://x", "ERROR: Unable to extract video data"))))
+check("succeeding ffmpeg stays quiet",
+      ctx(run("skill_cue.py", bash("ffmpeg -i a.mov out.mp4",
+                                   "video:1024kB audio:96kB muxing overhead"))) == "")
+check("unrelated failure stays quiet",
+      ctx(run("skill_cue.py", bash("python3 x.py", "Error opening file"))) == "")
+
 # ---- reel_precedence -------------------------------------------------------
 def prompt(text: str) -> str:
     return ctx(run("reel_precedence.py", {"prompt": text}))
@@ -99,11 +118,40 @@ check("reel request fires", "news-reel" in fired, fired[:100])
 check("names the hijack", "hyperframes" in fired and "FALSE" in fired)
 check("carries approval rule", "G27" in fired)
 check("carries no-terminal rule", "does not run terminal" in fired)
-for text in ("write the script for the shorts video", "fix the voiceover"):
-    check(f"fires on {text[:18]!r}", "news-reel" in prompt(text))
-for text in ("audit the repo wiring", "why did the gate fail",
-             "explain how doctor works", "commit and push to github"):
-    check(f"quiet on {text[:18]!r}", prompt(text) == "", prompt(text)[:60])
+# PRODUCTION prompts — every one of these is a real request from this repo's
+# history. Missing one of these is the expensive failure: the job goes to
+# `social` or the hyperframes router and skips every gate.
+PRODUCTION = [
+    "write the script for the shorts video",
+    "fix the voiceover",
+    "make me a reel about the Gemini 3 launch",
+    "Go ahead with the avatar generation",
+    "Rewrite the hook as short sentences and re-render",
+    "our system still generates very poor scripts",
+    "Show me the final video when it's done",
+    "captions must have transparent background",
+    "Comment CTA should be like this video",
+]
+# MAINTENANCE prompts — also all real. The repo is NAMED "AI Reel Engine", so
+# the word reel is in the housekeeping too. This exact prompt fired the hook
+# before the filter was tightened.
+MAINTENANCE = [
+    "audit the repo wiring",
+    "why did the gate fail",
+    "explain how doctor works",
+    "commit and push to github",
+    "go through our entire AI Reel Engine thoroughly and make sure everything "
+    "works fine, and everything (including skills) gets auto triggered at the "
+    "right time",
+    "Everything pushed to github repo so far?",
+    "make sure the hooks fire at the right time",
+    "Run the framework audit",
+]
+for text in PRODUCTION:
+    check(f"fires on {text[:26]!r}", "news-reel" in prompt(text),
+          "MISSED a production request")
+for text in MAINTENANCE:
+    check(f"quiet on {text[:26]!r}", prompt(text) == "", prompt(text)[:50])
 
 # ---- guard_bypass ----------------------------------------------------------
 BLOCKED = [
@@ -154,8 +202,24 @@ reason = run("guard_bypass.py", bash("npx remotion render a b c")).get(
 check("block explains the fix", "render_job.py" in reason, reason[:80])
 
 # ---- session_start ---------------------------------------------------------
-started = ctx(run("session_start.py", {"hook_event_name": "SessionStart"}))
-check("session start reports doctor", "doctor" in started.lower(), started[:120])
+# RE-ENTRANCY. doctor runs this file, which runs this hook, which runs doctor.
+# That loop shipped and broke the next session's preflight, so the guard is
+# tested rather than trusted — and this test runs UNDER the guard so it stays
+# fast and cannot re-enter doctor itself.
+GUARD = "AIRE_PREFLIGHT_RUNNING"
+t0 = time.time()
+guarded = ctx(run("session_start.py", {"hook_event_name": "SessionStart"},
+                  env={GUARD: "1"}))
+elapsed = time.time() - t0
+check("guarded preflight does not re-run doctor", "re-entrancy" in guarded,
+      guarded[:120])
+check("guarded preflight returns immediately", elapsed < 10,
+      f"took {elapsed:.1f}s")
+src = (HOOKS / "session_start.py").read_text()
+check("hook passes the guard to doctor",
+      'GUARD: "1"' in src and "env=env" in src,
+      "doctor would be launched unguarded")
+check("hook checks the guard before running", "os.environ.get(GUARD)" in src)
 
 # ---- report ----------------------------------------------------------------
 if fails:

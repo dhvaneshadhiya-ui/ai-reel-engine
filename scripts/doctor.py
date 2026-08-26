@@ -415,6 +415,27 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "capture defaults", str(e))
     problems.append("capture")
 
+# Two self-tests that existed and were never run by anything (found
+# 2026-08-26 by listing every --selftest in the repo and diffing against what
+# doctor calls). check_frame_contract guards the safe-area/legibility contract;
+# notation guards how numbers and units are written on screen. A self-test
+# nobody runs is the same as no self-test, which is this repo's oldest bug.
+for _tool, _label in (("check_frame_contract", "frame contract"),
+                      ("notation", "on-screen notation")):
+    try:
+        r = subprocess.run(
+            [sys.executable, str(ROOT / f"tools/{_tool}.py"), "--selftest"],
+            capture_output=True, text=True, timeout=60)
+        if r.returncode == 0:
+            report(OK, _label, r.stdout.strip().splitlines()[-1].strip())
+        else:
+            report(BAD, _label, f"{_tool} self-test failed")
+            print(r.stdout[-600:])
+            problems.append(_label)
+    except Exception as e:  # noqa: BLE001
+        report(BAD, _label, str(e))
+        problems.append(_label)
+
 # The HOOKS (2026-08-26). Hooks are the ONLY mechanism that can make a skill
 # run without a human remembering to — everything else in this repo can print
 # a reminder at best. A hook that quietly stops firing therefore removes a

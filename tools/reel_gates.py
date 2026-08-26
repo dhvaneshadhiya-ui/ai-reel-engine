@@ -396,7 +396,12 @@ def check_beats(beats: dict, vo_end: float | None = None,
         errors.append(
             f"G23 unknown format {fmt_name!r} — known: {sorted(FORMATS)}. "
             "Add a profile to FORMATS derived from a real teardown before "
-            "shipping a new genre; do not guess the numbers.")
+            "shipping a new genre; do not guess the numbers. "
+            "SKILL CUE: the teardown is what the `reel-analyzer` skill does — "
+            "feed it 3-5 reference reels of the genre. Take its STRUCTURE; "
+            "measure the NUMBERS yourself with ffprobe and scene detection, "
+            "because its pacing read is an estimate and G23 exists to stop "
+            "guessed bands.")
         prof = FORMATS[DEFAULT_FORMAT]
     RT_MIN, RT_MAX = prof["runtime"]
     HK_MAX = prof["hook_max"]
