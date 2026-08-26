@@ -245,7 +245,7 @@ def main() -> None:
     # re-checking the script hash at build time, and for the same reason: the
     # artifact is what ships, not the plan.
     run([sys.executable, str(SKILL / "tools/framework_check.py"), args.slug],
-        cwd=engine)
+        engine, args.dry_run)
     run([sys.executable, str(SKILL / "tools/reel_gates.py"), args.slug],
         engine, args.dry_run)
 
