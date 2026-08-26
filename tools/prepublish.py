@@ -56,6 +56,11 @@ JUDGEMENT = [
               "any silence intentional rather than an error?"),
     ("CTA", "Is the ask earned by value already delivered, and does the "
             "delivery contain exactly what was promised?"),
+    ("REVEAL", "Has authentic footage been left alone? The rule is hide the "
+               "identity in NARRATION, never damage the reality in footage to "
+               "hide incidental branding."),
+    ("REVEAL", "If branding is naturally visible, does the promised reveal "
+               "still mean anything — or should the offer be redefined?"),
     ("COHERENCE", "Do research, story, edit, audio and CTA read as ONE "
                   "decision — or as departments that never spoke?"),
 ]

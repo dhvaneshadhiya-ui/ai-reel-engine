@@ -732,6 +732,21 @@ def main() -> None:
     # format reel built on the generic path — claude-eating-tokens rendered
     # a full ai-tools reel in the editorial pack before anyone noticed
     # (2026-08-25). A plan may still pin "style" explicitly.
+    # CREDIT INSTRUCTIONS (framework §2/§3) — the brief decides whether a
+    # credit is DRAWN; the manifest always records provenance either way.
+    # Scaffolded 2026-08-26 and read by nothing until now, which is the same
+    # defect as the style mapping: a field nobody reads is a decision nobody
+    # made. "internal"/"none" sets noCredits with the brief as its reason, so
+    # G47 still refuses a silent switch-off.
+    try:
+        _brief = json.loads((engine / f"jobs/{slug}/brief.json").read_text())
+        _ci = str(_brief.get("credit_instructions", "on-screen")).lower()
+        if _ci in ("internal", "none", "internal only") and "noCredits" not in beats:
+            beats["noCredits"] = {
+                "reason": f"brief.credit_instructions = {_ci!r} "
+                          "(framework §3: provenance stays in the manifest)"}
+    except (OSError, ValueError):
+        pass
     if plan.get("style"):
         beats["style"] = plan["style"]
     elif beats.get("format") in ("top5", "ai-tools"):

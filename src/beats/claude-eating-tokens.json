@@ -46,12 +46,12 @@
         {
           "src": "sfx2/risers-01.mp3",
           "vol": 0.367,
-          "at": 0.15
+          "at": 0.0
         },
         {
           "src": "sfx2/impact-boom.mp3",
           "vol": 0.452,
-          "at": 0.15
+          "at": 0.35
         }
       ],
       "creditOnScreen": true,
@@ -95,8 +95,7 @@
       "_note": "no zoom: this capture is already frame-width, so any scale cuts its text off both edges. Frame it with `from`/focusY instead.",
       "durationSec": 3.92,
       "assetId": "docs-caching-scroll",
-      "claimId": "docs-caching-scroll",
-      "captionTheme": "dark"
+      "claimId": "docs-caching-scroll"
     },
     {
       "type": "footage",
@@ -114,8 +113,7 @@
       "zoom": 1.0,
       "durationSec": 1.78,
       "assetId": "caveman-page",
-      "claimId": "caveman-page",
-      "captionTheme": "dark"
+      "claimId": "caveman-page"
     },
     {
       "type": "footage",
@@ -129,8 +127,7 @@
       "_note": "no zoom: this capture is already frame-width, so any scale cuts its text off both edges. Frame it with `from`/focusY instead.",
       "durationSec": 2.2,
       "assetId": "caveman-page",
-      "claimId": "caveman-page",
-      "captionTheme": "dark"
+      "claimId": "caveman-page"
     },
     {
       "type": "statcard",
@@ -155,7 +152,7 @@
           "color": "#E0785A"
         }
       ],
-      "footnote": "GitHub \u00b7 JuliusBrussee/caveman",
+      "footnote": "GitHub · JuliusBrussee/caveman",
       "bg": "black",
       "durationSec": 3.58
     },
@@ -235,7 +232,7 @@
       "src": "assets/claude-eating-tokens/hud-statusline.mp4",
       "creditOnScreen": true,
       "from": 4.6,
-      "_note": "full width so the demo reads whole; caption raised onto the demo's dark band \u2014 at the default it sat on the README's white Install body text, and zooming to dodge that cropped the proof (2026-08-25)",
+      "_note": "full width so the demo reads whole; caption raised onto the demo's dark band — at the default it sat on the README's white Install body text, and zooming to dodge that cropped the proof (2026-08-25)",
       "captionBottom": 1300,
       "zoomDir": "in",
       "durationSec": 2.82,
@@ -252,8 +249,7 @@
       "zoom": 1.0,
       "durationSec": 4.52,
       "assetId": "ponytail-page",
-      "claimId": "ponytail-page",
-      "captionTheme": "dark"
+      "claimId": "ponytail-page"
     },
     {
       "type": "footage",
@@ -267,8 +263,7 @@
       "_note": "no zoom: this capture is already frame-width, so any scale cuts its text off both edges. Frame it with `from`/focusY instead.",
       "durationSec": 2.4,
       "assetId": "ponytail-page",
-      "claimId": "ponytail-page",
-      "captionTheme": "dark"
+      "claimId": "ponytail-page"
     },
     {
       "type": "floatcard",
@@ -1151,7 +1146,7 @@
     {
       "start": 49.16,
       "end": 50.7,
-      "text": "slash clear \u2014 free,",
+      "text": "slash clear — free,",
       "words": [
         {
           "t": 49.16,
@@ -1163,7 +1158,7 @@
         },
         {
           "t": 50.54,
-          "text": "\u2014"
+          "text": "—"
         },
         {
           "t": 50.54,
@@ -1309,12 +1304,12 @@
   "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
   "format": "ai-tools",
   "allowLong": true,
-  "allowLongReason": "user accepted the 159-word runtime in writing at approval 341019be (2026-08-25): 'Runtime \u2026 ship-as-is'; band 40-60s, actual 61.2s",
-  "script": "Your Claude bill is mostly the reading, not the writing \u2014 here's why the top fix barely helps.\nAnthropic's docs: the model remembers nothing between messages \u2014 every turn re-sends the whole conversation at input rates.\nBack to that popular fix.\nCaveman makes Claude answer in fewer words.\nA hundred thousand stars, and it does cut output.\nBut its README admits: input is untouched, and it adds over a thousand input tokens a turn.\nSo it trims the cheap half of your bill \u2014 that's why it barely helps.\nThese three cut the expensive half.\nOne: see it \u2014 ccusage charts each session's cost; claude-hud is a live meter in your status line.\nTwo: Ponytail stops Claude rebuilding code that already exists \u2014 it checks the standard library first.\nThree: between unrelated tasks, type slash-clear \u2014 free. Compact re-reads everything to summarise it.\nThey run with your agent's permissions \u2014 read them first.\nComment CLAUDE, I'll send all four.",
+  "allowLongReason": "user accepted the 159-word runtime in writing at approval 341019be (2026-08-25): 'Runtime … ship-as-is'; band 40-60s, actual 61.2s",
+  "script": "Your Claude bill is mostly the reading, not the writing — here's why the top fix barely helps.\nAnthropic's docs: the model remembers nothing between messages — every turn re-sends the whole conversation at input rates.\nBack to that popular fix.\nCaveman makes Claude answer in fewer words.\nA hundred thousand stars, and it does cut output.\nBut its README admits: input is untouched, and it adds over a thousand input tokens a turn.\nSo it trims the cheap half of your bill — that's why it barely helps.\nThese three cut the expensive half.\nOne: see it — ccusage charts each session's cost; claude-hud is a live meter in your status line.\nTwo: Ponytail stops Claude rebuilding code that already exists — it checks the standard library first.\nThree: between unrelated tasks, type slash-clear — free. Compact re-reads everything to summarise it.\nThey run with your agent's permissions — read them first.\nComment CLAUDE, I'll send all four.",
   "approval": {
     "sha256": "341019be42e5254769ab104ff0974e9602ebc0e128ae0b1c75c1d4c520f4df90",
     "approvedAt": "2026-08-25T10:37:04+00:00",
     "words": 159,
-    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
   }
 }
