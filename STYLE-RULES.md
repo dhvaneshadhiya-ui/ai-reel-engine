@@ -4181,3 +4181,54 @@ prints an advisory with the asset's real width, and AGENT.md §3b question 3
 carries the reasoning. Worth noting the sequence: the editorial judgement was
 right (that claim should be readable), the mechanism was wrong, and only
 looking at the rendered frame told the difference.
+
+## 2026-08-25 — the short-form master framework installed as the standard
+
+User supplied `frameworks/short-form-master.md` and asked for it in action.
+It is now read-order item 0 in CLAUDE.md: the STANDARD this repo builds to.
+Where it and RULES.md disagree, RULES.md wins — the gates encode failures we
+have actually had, and a framework cannot overrule evidence.
+
+**Most of it is judgement and stays a document** — story engine, escalation,
+pattern interrupts, information density, the editor's eye. Wiring judgement
+into a gate is how taste ends up wearing a rule's badge (the G18 lesson).
+
+**Three of its rules are not judgement.** They have a right answer, they fail
+silently, and each is a promise to the viewer rather than a matter of taste,
+so they are code: `tools/framework_check.py`, run by
+`script_approval.py propose` (a leak is caught BEFORE the user is asked to
+approve the words) and self-tested by doctor.
+
+- **F1 REVEAL TARGET.** A campaign that withholds an identity for a DM must
+  not disclose it in narration, on-screen text, or CTA/packaging copy — and
+  clues that COMBINE are a disclosure, so the check fires when every word of
+  the target appears across a surface. Leaking it spends the delivery and
+  makes the CTA a lie. **F4** is its other half: with a target withheld, the
+  SUBJECT must still be spoken, or curiosity has become confusion.
+- **F2 CERTAINTY.** "Never convert uncertain information into certainty."
+  The research ledger already recorded each claim's strength; nothing checked
+  that the SPOKEN words matched it. A `single`- or `disputed`-tier claim
+  carrying "will / confirmed / guaranteed" with no qualifier now fails.
+- **F3 SOURCE POLICY.** Research sources and footage sources are separate
+  categories and a restriction on one does not imply the other — the
+  framework is explicit, and the check honours it: `official-footage-only`
+  lets third-party RESEARCH through while refusing third-party MEDIA.
+
+Scaffolded so they cannot be forgotten: `new_job.py` writes `subject`,
+`reveal_target` and `source_policy` into every brief, and structure.md now
+opens with the STORY ENGINE sentence (§4A) — *a viewer who believes X
+discovers Y, which matters because Z*. If it cannot be filled there is no
+reel yet, only material.
+
+**Applied to claude-eating-tokens, and it changed two things:**
+1. `reveal_target: none`, recorded WITH ITS REASONING — the reel names every
+   tool it recommends, so nothing is withheld and the CTA delivers links for
+   four already-named tools. That is honest but it is also weaker curiosity
+   than the framework's §6 flow can produce, and writing it down makes the
+   trade a known choice rather than an oversight.
+2. Every asset now declares **proof** or **illustrative**. The one that
+   changed hands: `term-clear` is ILLUSTRATIVE — its figures are at this
+   machine's real session scale but the transcript is a recreation, not a
+   captured session. The ccusage terminals stay PROOF: the DATA is real
+   output (kept in `_sources/`), only the chrome is styled. That distinction
+   is the quiet way a sourced reel becomes untrue, and it now has a field.

@@ -342,6 +342,23 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "script calibration", str(e))
     problems.append("calibration")
 
+# The FRAMEWORK CHECK (2026-08-25) — the three rules of the short-form master
+# framework that have a right answer: reveal-target concealment, certainty
+# matching evidence, and source policy. Each one is a promise to the viewer.
+try:
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "tools/framework_check.py"), "--selftest"],
+        capture_output=True, text=True, timeout=60)
+    if r.returncode == 0:
+        report(OK, "framework self-test", "reveal / certainty / source policy")
+    else:
+        report(BAD, "framework self-test", "a framework rule stopped firing")
+        print(r.stdout[-700:])
+        problems.append("framework")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "framework self-test", str(e))
+    problems.append("framework")
+
 # The CAPTURE CONTRACT (2026-08-25). capture.mjs's defaults ARE rules —
 # mobile-first (R2), live cursor (the ai-tools evidence grammar), real
 # viewport, device-scale frames. Two of them had silently broken and shipped

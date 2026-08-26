@@ -160,6 +160,21 @@ def cmd_propose(slug: str) -> None:
     # refuses; judgement calls (unhedged single-source, one domain) advise.
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from research_check import check_research  # noqa: E402
+    # FRAMEWORK CHECK (2026-08-25) — reveal-target concealment, certainty vs
+    # evidence, source policy. Runs HERE because every one of those is a
+    # promise made to the viewer, and the user is about to be asked to
+    # approve the words that make it.
+    import subprocess as _sp
+    _fw = _sp.run([sys.executable, str(Path(__file__).resolve().parent
+                                       / "framework_check.py"), slug],
+                  capture_output=True, text=True)
+    if _fw.stdout.strip():
+        print(_fw.stdout)
+    if _fw.returncode != 0:
+        raise SystemExit(
+            "FRAMEWORK CHECK FAILED — see above. A reveal target spoken out "
+            "loud, or a claim spoken harder than its evidence, is not a "
+            "taste call: fix it before asking for approval.")
     research_errors, research_advice = check_research(
         slug, spoken, root=ROOT)
     if research_errors:

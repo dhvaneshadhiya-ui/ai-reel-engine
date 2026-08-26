@@ -49,6 +49,13 @@ def main() -> None:
     parser.add_argument("--topic", required=True)
     parser.add_argument("--details", default="")
     parser.add_argument("--cta-keyword", default="")
+    parser.add_argument("--reveal-target", default="none",
+                        help="the precise identity withheld for a DM "
+                             "delivery, or 'none' (framework §5)")
+    parser.add_argument("--source-policy", default="official-preferred",
+                        help="official-facts-only | official-footage-only | "
+                             "official-preferred | approved-only | "
+                             "no-third-party-media | none (framework §3)")
     parser.add_argument("--target-seconds", type=int, default=90)
     # STANDING RULE (2026-08-22/24, user directive): no music bed by default —
     # every reel ships voice + SFX unless it opts back in. --music flows to
@@ -85,6 +92,19 @@ def main() -> None:
         "slug": slug,
         "topic": args.topic,
         "details": args.details,
+        # FRAMEWORK FIELDS (frameworks/short-form-master.md §2, 2026-08-25).
+        # Scaffolded because a field that must be remembered is a field that
+        # gets skipped — the same reason structure.md and research.md are
+        # written out empty rather than described in a manual.
+        # subject: the broad thing the viewer must understand.
+        # reveal_target: the PRECISE identity withheld for a DM, or "none".
+        #   These are different things: hide the identity in narration, never
+        #   the subject, or curiosity becomes confusion (§5).
+        # source_policy: research sources and footage sources are separate
+        #   categories — a restriction on one does not imply the other (§3).
+        "subject": args.topic,
+        "reveal_target": args.reveal_target,
+        "source_policy": args.source_policy,
         "style": locked_style(engine),
         "target_seconds": args.target_seconds,
         "cta_keyword": keyword,
@@ -158,6 +178,10 @@ def main() -> None:
             "Written BEFORE the first sentence. Framework:\n"
             "`styles/shortform-script-framework.md` (S17 shapes; S25 standard).\n"
             "`script_approval.py propose` refuses while <placeholders> remain.\n\n"
+            "## STORY ENGINE (framework \u00a74A)\n\n"
+            "One sentence, before anything else:\n"
+            "<a viewer who believes/experiences X discovers Y, which matters\n"
+            " because Z>\n\n"
             "## SHAPE (S17)\n\n"
             "Options: Discovery / News / Product announcement / Explainer /\n"
             "Tutorial / Comparison / Story / List / Myth-busting / "

@@ -47,6 +47,15 @@ re-scout for it specifically, or **rewrite the line** to something you can show.
 ## 2. Order of operations (do not reorder)
 
 ### STEP 0 — Load context
+0. Read `frameworks/short-form-master.md` and answer its §2 brief fields in
+   `jobs/<slug>/brief.json`: **subject**, **reveal_target** (the precise
+   identity withheld for a DM, or `none`), **source_policy** (facts and
+   footage are separate categories). `new_job.py` scaffolds all three, and
+   `script_approval.py propose` refuses on a leak, a claim spoken harder
+   than its evidence, or a source-policy violation.
+   Then state the STORY ENGINE in one sentence before writing anything:
+   *a viewer who believes/experiences X discovers Y, which matters because
+   Z.* If you cannot fill it, there is no reel yet — only material.
 1. Read `STYLE-RULES.md`. Its rules override this file.
 2. Pick the style pack in `styles/`. It defines the LOOK and the script voice.
    This file defines the PROCESS.

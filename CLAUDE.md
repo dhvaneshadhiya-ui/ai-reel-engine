@@ -74,6 +74,17 @@ silently disabled the frame checks for weeks.
 
 ## Read in this order
 
+0. **`frameworks/short-form-master.md`** — the production framework (user-
+   supplied 2026-08-25). It is the STANDARD this repo builds to: one
+   integrated team, curiosity without confusion, story engine before script,
+   evidence-calibrated language, subject vs reveal target, earned CTA.
+   Where it and RULES.md disagree, **RULES.md wins** — the gates encode
+   failures we have actually had. Three of its rules are mechanical and are
+   enforced by `tools/framework_check.py` (run by `propose`, self-tested by
+   doctor): a withheld reveal target must not be spoken, a claim must not be
+   spoken harder than its evidence, and source policy applies to facts and
+   footage as SEPARATE categories. Everything else in it is judgement, which
+   is why it is a document and not a gate.
 1. **`RULES.md`** — binding rules, each tagged **[GATE]** (code raises and
    stops the build), **[LINT]** (linter exits non-zero) or **[EYE]** (no
    automation — you are the only check).
