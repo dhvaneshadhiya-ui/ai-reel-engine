@@ -4989,3 +4989,55 @@ the pass, and `propose` prints a line at the last moment before approval
 saying so. A skill that is installed, documented, and never executed is
 indistinguishable from one that was never installed — except that it lets
 everyone believe the work was done.
+
+## 2026-08-26 — full engine audit: is everything wired, and does it fire?
+
+User asked for a thorough pass over the whole engine, with the emphasis on
+things "getting auto-triggered at the right time". Given how many
+documented-but-never-executed capabilities turned up today, the audit had to
+be mechanical rather than a read-through.
+
+**`tools/wiring_audit.py`** puts every tool in exactly one bucket:
+
+| bucket | n | meaning |
+|---|---|---|
+| AUTO | 55 | another program executes it |
+| MANUAL | 14 | a human runs it, and a doc names it |
+| LEGACY | 10 | one-off per-reel scripts, inert by design |
+| **ORPHAN** | **0** | nothing runs it, nothing mentions it |
+
+It found exactly ONE genuine orphan: **`ingest_screencap.py`** — a working
+tool that turns an iPhone screen recording into a reel-ready clip and scrubs
+the personal data out of it, mentioned in no document, so nobody would ever
+reach for it. Now written into AGENT.md's scout step, where a real OS
+demonstration is the thing you want. The legacy bucket exists so those ten
+inert build scripts cannot hide the next real one.
+
+Doctor runs the wiring audit every session.
+
+**SKILLS CANNOT BE AUTO-INVOKED — only cued.** No code can execute a skill,
+so "auto-trigger" means naming the skill at the exact moment its need
+appears. A moment stated in a document is NOT a trigger: the humanizer had
+one in CLAUDE.md for weeks and never ran once. Cues now fire off findings:
+
+- `script_doctor` -> `viral-hook-writer` / `going-viral` when the hook or the
+  loop is what failed; `humanizer` on a tic, an AI tell or page punctuation;
+  `fact-check-workflow` when a claim is spoken harder than its evidence.
+- `prepublish` -> `social` / `caption-and-hashtags` / `youtube-seo` when
+  packaging is missing.
+- `propose` -> `humanizer`, at the last moment before approval.
+
+**Everything green, verified rather than assumed:** 115 gate checks, 66
+script-pipeline checks, 13 capture defaults, 37 master-rule clauses,
+framework and check_script self-tests, TypeScript clean, doctor ok.
+
+**Two of my own test harnesses lied during this audit**, both from zsh not
+word-splitting an unquoted variable: the first orphan sweep reported all 79
+tools orphaned, and a suite loop reported two self-tests failing at exit=2
+when both pass. Neither was a repo defect. Recorded because a broken CHECK
+reads exactly like a broken SYSTEM, and the reflex has to be to verify the
+harness before reporting the finding.
+
+**One real open item:** claude-eating-tokens is rendered but has no
+`packaging.md`, so `prepublish` correctly refuses it. That is the last step
+before it can be posted.

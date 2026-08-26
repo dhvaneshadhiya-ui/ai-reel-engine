@@ -93,6 +93,14 @@ data), then hunt visuals and write `public/assets/<slug>/manifest.json`:
 Scout order: official channels/keynotes → creator demo compilations (credit
 them) → screenshot receipts (headless Chrome) → brand marks.
 
+**Your own device is a source.** `python3 tools/ingest_screencap.py` turns an
+iPhone screen recording into a reel-ready clip and scrubs the personal data
+out of it (the privacy pass is the point of the tool). Use it when the story
+needs real OS behaviour — a real Face ID prompt, a real carrier, a real
+setting being toggled — which the Simulator cannot license and a stock clip
+cannot prove. It was written, tested, and then mentioned in no document for
+weeks; found by `wiring_audit.py` on 2026-08-26.
+
 **Verify every candidate by extracting frames and looking at them.** Write the
 `shows` field from what you actually see, never from what you assume.
 `python3 tools/scout_sheet.py <slug>` makes the look one file per clip — a

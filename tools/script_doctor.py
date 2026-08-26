@@ -77,6 +77,21 @@ def main() -> int:
     else:
         print("\n  nothing to flag on shape, tics, reveal handling or "
               "certainty.")
+    # SKILL CUES — a skill cannot be invoked by code, so the next best thing
+    # is naming it at the exact moment its finding appears. The humanizer had
+    # a stated moment in CLAUDE.md for weeks and still never ran once
+    # (2026-08-26); a cue attached to the finding is what a doc line was not.
+    blob = " ".join(findings).lower()
+    cues = []
+    if "no open loop" in blob or "opening" in blob:
+        cues.append("`viral-hook-writer` for hook candidates, `going-viral` "
+                    "for the loop//payoff structure above it")
+    if "house tic" in blob or "ai tell" in blob or "page punctuation" in blob:
+        cues.append("`humanizer` — the pass nothing runs for you")
+    if "f2 certainty" in blob or "f2b" in blob:
+        cues.append("`fact-check-workflow` before that claim becomes a beat")
+    for c in cues:
+        print(f"  SKILL CUE: {c}")
     print("\n  Read it aloud. These measure shape, not whether it is good.\n")
     return 0
 

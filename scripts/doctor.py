@@ -342,6 +342,25 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "script calibration", str(e))
     problems.append("calibration")
 
+# WIRING (2026-08-26). A tool nobody calls and nobody is told to call is
+# indistinguishable from one that was never written — except that it lets
+# everyone believe the work is being done. That is how the humanizer pass
+# stayed invisible for weeks. Every tool must be executed by the pipeline,
+# named in a document, or explicitly legacy.
+try:
+    r = subprocess.run([sys.executable, str(ROOT / "tools/wiring_audit.py")],
+                       capture_output=True, text=True, timeout=90)
+    line = [l for l in r.stdout.splitlines() if "AUTO" in l]
+    if r.returncode == 0:
+        report(OK, "tool wiring", line[0].strip() if line else "no orphans")
+    else:
+        report(BAD, "tool wiring", "a tool is wired to nothing")
+        print(r.stdout[-500:])
+        problems.append("wiring")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "tool wiring", str(e))
+    problems.append("wiring")
+
 # THE MASTER RULE AUDIT (2026-08-26). Every clause of the framework's §12
 # mapped to the thing that makes it true, each probe run. Here because the
 # question "is it really implemented?" was asked four times and answered from
