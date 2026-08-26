@@ -30,7 +30,7 @@ hedged.
 
 - CLAIM: everything Claude remembers is stored as short files filed under Topics
   TIER: official
-  SPOKEN: "Everything it remembers is now a text file under a topic"
+  SPOKEN: "every memory a text file under a topic"
   SRC: https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it
   SRC: https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context
   VIA: Anthropic: "Everything Claude remembers is in a list of files under Topics in Memory settings"
@@ -58,7 +58,7 @@ hedged.
 
 - CLAIM: health, race, ethnicity, religious beliefs, politics and gender identity are excluded from memory by default
   TIER: official
-  SPOKEN: "Now, the subjects it leaves alone: health, race, religion, politics, gender identity."
+  SPOKEN: "Now, the subjects it stays out of: health, race, religion, politics, gender identity."
   SRC: https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it
   VIA: Anthropic: "By default, Claude does not store topics related to personal or sensitive subject matter, like your health, race, ethnicity, religious beliefs, politics, gender identity"
 
@@ -97,6 +97,14 @@ hedged.
   SRC: https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/
   VIA: Anthropic: "leading to less re-explaining and more picking up where you left off" and "wherever you work with Claude, it starts from what it already knows about you"
   VIA: TechCrunch, which describes the previous split-memory experience as the thing being fixed
+
+- CLAIM: memory is now written during the conversation instead of summarised after it
+  TIER: official
+  SPOKEN: "And it's writing as you talk: say your deadline moved to September, and the next chat already knows."
+  SRC: https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it
+  SRC: https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/
+  VIA: Anthropic: "Claude now adds topics to memory as you chat, instead of summarizing conversations after they end. Mention that your project deadline moved to September, and your next conversation already knows"
+  VIA: TechCrunch reporting on the same announcement
 
 ## SEARCHED
 

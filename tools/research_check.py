@@ -65,7 +65,20 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
 
-TIERS = {"official", "multi", "single", "disputed"}
+# The framework's six classes (frameworks/short-form-master.md §3.4), mapped
+# onto the vocabulary this repo already had. Ours covered corroboration but
+# had no word for a claim that is somebody's FORECAST rather than a report,
+# and no word for one that must not ship at all (2026-08-26 audit).
+#
+#   official   <- Confirmed                (primary/authoritative source)
+#   multi      <- Credibly Reported, corroborated
+#   single     <- Credibly Reported / Rumor or Leak, one origin
+#   prediction <- Prediction or Analysis   (must name WHOSE, and its basis)
+#   disputed   <- Disputed                 (sources materially disagree)
+#   unsupported<- Unsupported              (REFUSED — §3.5: the only class the
+#                                           framework says must be excluded)
+TIERS = {"official", "multi", "single", "prediction", "disputed"}
+REFUSED_TIERS = {"unsupported"}
 
 # framework S20's own hedging vocabulary, plus the attribution verbs that do
 # the same job ("Kuo says" hedges as hard as "reportedly") and the leak family
@@ -154,6 +167,14 @@ def check_research(slug: str, script_text: str | None,
     domains: set[str] = set()
     for i, c in enumerate(claims):
         tag = f"claim {i + 1} ({c['claim'][:40]!r})"
+        if c["tier"] in REFUSED_TIERS:
+            errors.append(
+                f"claim {i}: tier 'unsupported' — the framework's one hard "
+                "exclusion (§3.5). Narrow it, attribute it precisely, reframe "
+                "the story around what IS supported, or cut the claim. "
+                "Adding 'reportedly' to an unsupported claim does not make it "
+                "publishable (§3.14).")
+            continue
         if c["tier"] not in TIERS:
             errors.append(f"{tag}: TIER is {c['tier']!r} — must be one of "
                           f"{sorted(TIERS)}. An untiered claim is the 18/229 "

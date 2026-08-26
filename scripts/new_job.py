@@ -102,12 +102,27 @@ def main() -> None:
         #   the subject, or curiosity becomes confusion (§5).
         # source_policy: research sources and footage sources are separate
         #   categories — a restriction on one does not imply the other (§3).
-        "subject": args.topic,
-        "reveal_target": args.reveal_target,
-        "source_policy": args.source_policy,
+        # The framework's §2 brief, in full. Ten of these fourteen were
+        # missing until the 2026-08-26 audit — and a field that has to be
+        # remembered is a field that gets skipped, which is the whole reason
+        # structure.md and research.md are scaffolded rather than described.
+        # Each one DECIDES something downstream, noted beside it.
+        "subject": args.topic,               # what the viewer must understand
+        "audience": "<who should care, and what they already know>",
+        "platform": "both",                  # reels | shorts | both
+        "goal": "<awareness|education|engagement|follow|comment|conversion>",
+        "core_value": "<what the viewer learns, feels, sees or can do>",
+        "desired_action": "<if any>",
+        "reveal_target": args.reveal_target,  # withheld identity, or none
+        "cta_keyword": keyword,
+        "target_duration": f"{args.target_seconds}s",
+        "tone": "<voice, personality, boundaries>",
+        "source_policy": args.source_policy,  # facts vs footage are separate
+        "footage_constraints": "<assets, permissions, presenter, recordings>",
+        "credit_instructions": "on-screen",   # on-screen|caption|internal|none
+        "deliverables": ["script", "shot plan", "packaging"],
         "style": locked_style(engine),
         "target_seconds": args.target_seconds,
-        "cta_keyword": keyword,
         "music": bool(args.music),
         "created_at": datetime.now(timezone.utc).isoformat(),
         "status": "initialized",

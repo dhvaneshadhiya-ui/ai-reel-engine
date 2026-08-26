@@ -244,65 +244,98 @@
    }
   },
   {
-   "start_phrase": "Which is the point",
-   "asset_id": "blog-intro",
+   "start_phrase": "And it's writing as",
+   "asset_id": "blog-live",
    "tier": "official",
    "scene": {
-    "type": "sourceread",
-    "src": "assets/claude-memory-everywhere/blog-intro.png",
+    "type": "annotatezoom",
+    "src": "assets/claude-memory-everywhere/blog-live.png",
     "srcWidth": 1080,
-    "srcHeight": 1940,
-    "lines": [
+    "srcHeight": 2400,
+    "bg": "cream",
+    "focus": {
+     "x": 60,
+     "y": 40,
+     "w": 990,
+     "h": 660
+    },
+    "crop": true,
+    "covers": "it's writing as you talk",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "annotations": [
      {
-      "at": 0.0,
-      "x": 90,
-      "y": 228,
-      "w": 930,
-      "h": 70
+      "kind": "underline",
+      "at": 0.45,
+      "x": 88,
+      "y": 70,
+      "w": 900,
+      "h": 62
      },
      {
-      "at": 0.0,
-      "x": 90,
-      "y": 318,
-      "w": 930,
-      "h": 70
-     },
-     {
-      "at": 0.3,
-      "x": 90,
-      "y": 411,
-      "w": 930,
-      "h": 70
-     },
-     {
-      "at": 0.75,
-      "x": 90,
-      "y": 501,
-      "w": 930,
-      "h": 70
-     },
-     {
-      "at": 1.15,
-      "x": 90,
-      "y": 594,
-      "w": 930,
-      "h": 70
-     },
-     {
-      "at": 1.55,
-      "x": 90,
-      "y": 686,
-      "w": 560,
-      "h": 70
+      "kind": "underline",
+      "at": 0.85,
+      "x": 88,
+      "y": 160,
+      "w": 900,
+      "h": 62
      }
     ],
-    "covers": "you stop re-explaining yourself",
-    "creditOnScreen": true,
-    "credit": "Anthropic"
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "vol": 0.14,
+      "at": 0.46
+     }
+    ]
    }
   },
   {
-   "start_phrase": "But here's the part",
+   "start_phrase": "say your deadline moved",
+   "asset_id": "blog-live",
+   "tier": "official",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/claude-memory-everywhere/blog-live.png",
+    "srcWidth": 1080,
+    "srcHeight": 2400,
+    "covers": "your deadline moved to September",
+    "creditOnScreen": true,
+    "credit": "Anthropic",
+    "lines": [
+     {
+      "at": 0.25,
+      "x": 90,
+      "y": 342,
+      "w": 930,
+      "h": 62
+     },
+     {
+      "at": 0.7,
+      "x": 90,
+      "y": 432,
+      "w": 930,
+      "h": 62
+     },
+     {
+      "at": 1.1,
+      "x": 90,
+      "y": 525,
+      "w": 930,
+      "h": 62
+     },
+     {
+      "at": 1.5,
+      "x": 90,
+      "y": 615,
+      "w": 700,
+      "h": 62
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Which is the point",
    "asset_id": "avatar-master",
    "tier": "official",
    "scene": {
@@ -310,12 +343,11 @@
     "src": "assets/claude-memory-everywhere/avatar-master.mp4",
     "zoomDir": "in",
     "zoom": 1.0,
-    "covers": "some of it Claude refuses to write down",
-    "_note": "one facecam beat for the whole sentence. No screenshot honestly illustrates 'refuses to write down' without spoiling the payoff list eight beats later; a take spoken to camera is the honest picture for a take. Check its length in the editor's pass."
+    "covers": "you stop re-explaining yourself"
    }
   },
   {
-   "start_phrase": "Everything it remembers",
+   "start_phrase": "And now you can see",
    "asset_id": "ui-topic-open",
    "tier": "official",
    "scene": {
@@ -481,31 +513,25 @@
    }
   },
   {
-   "start_phrase": "in chat, and in",
+   "start_phrase": "But here's the part",
    "asset_id": "avatar-master",
    "tier": "official",
    "scene": {
     "type": "footage",
     "src": "assets/claude-memory-everywhere/avatar-master.mp4",
-    "zoomDir": "out",
+    "zoomDir": "in",
     "zoom": 1.0,
-    "covers": "in chat, and in Cowork",
-    "sfx": [
-     {
-      "src": "sfx2/ground-impact-352053.mp3",
-      "vol": 0.17,
-      "at": 0.1
-     }
-    ]
+    "covers": "some of it Claude refuses to write down",
+    "_note": "one facecam beat for the whole sentence. No screenshot honestly illustrates 'refuses to write down' without spoiling the payoff list eight beats later; a take spoken to camera is the honest picture for a take. Check its length in the editor's pass."
    }
   },
   {
-   "start_phrase": "the subjects it leaves",
+   "start_phrase": "the subjects it stays",
    "asset_id": null,
    "scene": {
     "type": "wordcascade",
     "bg": "cream",
-    "covers": "health, race, religion",
+    "covers": "the subjects it stays out of",
     "words": [
      {
       "text": "HEALTH",

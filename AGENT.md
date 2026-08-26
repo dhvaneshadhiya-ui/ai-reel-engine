@@ -182,6 +182,23 @@ Cut only what the beat map binds, at the noted timestamps and crops. If you
 discover a problem while cutting (the shot drifted, chrome is visible), update
 the manifest *and* the beat map **before** building — not after rendering.
 
+### STEP 3.9 — THE PRE-PUBLISH AUDIT (framework §11)
+
+```bash
+python3 tools/prepublish.py <slug>
+```
+
+The framework's closing instruction is *"approve only when facts, clarity,
+retention, visuals, audio, platform fit, CTA, reveal handling, and overall
+coherence pass a final audit."* Every piece of that existed in some tool; the
+AUDIT did not, so "it passed" meant "nobody found anything".
+
+It prints two halves and the split is the point: **measured** checks run and
+fail, **judgement** items print as questions — the confused-viewer,
+boring-article, payoff and removal tests, plus coherence. A machine cannot
+answer those, and pretending it can is how taste ends up wearing a rule's
+badge. Answer them out loud before shipping.
+
 ### STEP 4 — Build, register, render
 
 **Preferred: compile the shot plan.** Each shot is anchored to the phrase it

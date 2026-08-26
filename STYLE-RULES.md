@@ -4327,3 +4327,40 @@ sign something went wrong.
 
 Bonus catch: script_doctor's first run flagged `for Free, Pro and Max` as the
 sell phrase "for free". A plan tier is a proper noun; the marker is narrowed.
+
+## 2026-08-26 — framework implementation audit: three gaps found and closed
+
+Asked to confirm the framework was really implemented, so I audited its 12
+sections against what code actually enforces rather than asserting it was
+done. Three gaps were real.
+
+**1. §2 brief — 4 of 14 fields.** subject, reveal_target, source_policy and
+cta_keyword were scaffolded; audience, platform, goal, core_value,
+desired_action, target_duration, tone, footage_constraints,
+credit_instructions and deliverables were not. Each one DECIDES something
+downstream (platform decides packaging; tone decides diction; credit
+instructions decide whether a chip is drawn at all), so a brief missing ten
+of them is a brief that gets answered by default. `new_job.py` now writes all
+fourteen, each with the decision it drives noted beside it.
+
+**2. §3 claim taxonomy — two classes had no word.** Ours was
+official/multi/single/disputed, which covers CORROBORATION only. The
+framework's six classes add **Prediction or Analysis** (a forecast is not a
+report, and §3.6 requires naming whose it is) and **Unsupported** — the one
+class §3.5 says must be excluded. Now: `prediction` is a valid tier and
+**F2b** fails a forecast whose spoken words never say whose it is;
+`unsupported` is REFUSED by research_check with the framework's own remedy
+(narrow it, attribute it, reframe, or cut — §3.14: adding "reportedly" to an
+unsupported claim does not make it publishable).
+
+**3. §11 had no audit.** The pre-publish checklist existed as prose across a
+dozen tools. `tools/prepublish.py` runs the measured half — framework check,
+claim ledger, approval freshness, gates, packaging — and prints the
+judgement half as QUESTIONS: the confused-viewer, boring-article, payoff and
+removal tests, plus retention, visual, audio, CTA and coherence. The split is
+deliberate: a machine cannot answer whether this reads as one creative
+decision, and a checkbox that pretends otherwise is worse than the question.
+
+It earned itself immediately: first run on claude-eating-tokens reported the
+reel is rendered and **has no packaging.md** — true, and nothing else had
+said so.

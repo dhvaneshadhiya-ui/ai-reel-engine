@@ -128,6 +128,21 @@ def check(brief: dict, script: str, claims: list[dict],
                 "Framework §3.7: never convert 'may' into 'will'. Say who "
                 "reported it, or hedge it to its real strength.")
 
+    # ---- F2b  a prediction must name WHOSE it is --------------------------
+    # Framework §3.6: "[Analyst/source] expects..., based on...". A forecast
+    # with no owner is an assertion wearing a hedge.
+    for c in claims:
+        if str(c.get("tier", "")).lower() != "prediction":
+            continue
+        spoken = str(c.get("spoken", ""))
+        if spoken and not re.search(
+                r"\b(according to|expects?|predicts?|estimates?|analyst|"
+                r"reports?|says?|per |'s forecast|believes?)\b", spoken, re.I):
+            fail.append(
+                f"F2b PREDICTION with no owner: {spoken[:60]!r} is recorded as "
+                "a forecast but the words do not say whose it is. Framework "
+                "\u00a73.6: attribute the prediction and its basis.")
+
     # ---- F3  source policy ------------------------------------------------
     if policy not in POLICIES:
         note.append(
@@ -247,6 +262,14 @@ def selftest() -> int:
     claims_off = [{"claim": "x", "tier": "official", "spoken": "Apple will ship it"}]
     f, _ = check({}, "s", claims_off, [])
     t("F2 silent on an official-tier claim", not any("F2" in x for x in f))
+
+    f, _ = check({}, "s", [{"claim": "x", "tier": "prediction",
+                            "spoken": "the price drops in March"}], [])
+    t("F2b fires on an unattributed prediction", any("F2b" in x for x in f))
+    f, _ = check({}, "s", [{"claim": "x", "tier": "prediction",
+                            "spoken": "Kuo expects the price to drop"}], [])
+    t("F2b silent when the forecast names its owner",
+      not any("F2b" in x for x in f))
 
     f, _ = check({"source_policy": "official-facts-only"}, "s",
                  [{"claim": "c", "tier": "single", "spoken": "reportedly"}], [])
