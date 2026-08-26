@@ -4843,3 +4843,50 @@ closer to the control on identity.
 **The ceiling did not move.** Every correctly-configured run lands 2.5-3.0
 against a 3.5 floor, because all of them clone the same flat source. Doing it
 by the book improved fidelity and confirmed the diagnosis.
+
+## 2026-08-26 — per-beat voice direction: built, measured, and it did NOT work
+
+User's real goal, stated plainly: *"the idea is not going with a particular
+version. The idea is adapt the tempo, energy and emotions as and when
+required across the video."* Correct instinct — the framework already demands
+exactly this of music (hook / stable pulse / build / accent / release / CTA)
+and said nothing about voice because nobody had wired it.
+
+Built `tools/vo_direct.py`: seven registers (hook, context, build, turn,
+proof, payoff, cta), each with its own emotion, tempo and trailing silence,
+one voice reference throughout, assembled into a single VO. A line can be
+tagged `[turn]`; untagged lines get a register from their position in the arc.
+
+**Result: 2.81 semitones — no better than the 2.83 that already ships, and
+below the 3.00 of a single well-chosen setting.** Range 9.8, still under the
+10.0 floor. Identity held well (0.965 vs 0.938 control), and runtime landed
+at 57.4s against the master's 58.6s.
+
+**Why it failed is the useful part.** Directed registers DO land — probed on
+one line, IndexTTS2 gives hook 204Hz / turn 241Hz / payoff 202Hz, a real 3.0
+semitones of intentional spread. But stitching differently-directed beats
+does not raise the measure, because pitch sd is computed over the WHOLE file
+and each beat is internally flat. Splicing flat pieces at different pitches
+produces steps, not movement. **A voice that changes register between
+sentences is still monotone inside them**, and inside is where a listener
+hears energy.
+
+So per-beat direction is worth keeping — it is the right architecture, it
+costs nothing at runtime, and it will matter once the source has range — but
+it is NOT a substitute for an expressive clone. Nothing measured today beat
+3.00 against a 3.5 floor.
+
+**Two real bugs found on the way, both of which would have poisoned every
+future run silently:**
+
+1. **`synth()` treated a pre-existing file as success.** A failed beat kept
+   the previous run's audio and reported `ok`, so a "directed" VO assembled
+   from 5 new beats and 8 stale ones from a DIFFERENT ENGINE measured 3.45
+   and looked like a win. It now deletes the target first and prints the
+   engine's own error.
+2. **IndexTTS2's tokenizer rejects our house punctuation.** Proved by probe,
+   not inferred: `"One: see it works"` is rejected, `"One, see it works"` is
+   accepted; `"A test; another clause"` is rejected. Em-dash, colon and
+   semicolon all fail with `unencodableText` — and this repo's script style
+   uses all three constantly. `speakable()` maps them to commas, which is
+   what they mean out loud. Without it, 8 of 13 beats failed.
