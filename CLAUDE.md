@@ -175,10 +175,13 @@ silently disabled the frame checks for weeks.
   rule, scaffolded by `new_job.py`) AND a valid `jobs/<slug>/research.md` —
   the claims ledger (`tools/research_check.py`): every load-bearing claim
   carries a TIER, a SRC url, and the SPOKEN script words that carry it, plus
-  a dated search log. `approve` refuses unless the current script
+  a dated search log. **THIRD, since 2026-08-27: a recorded humanizer pass**
+  (`humanized.json`) whose hash matches the current script — the half of the
+  writing no checker can measure, previously cued only when something
+  measurable fired. `approve` refuses unless the current script
   hash-matches the last `propose` (`review.json`) — so a draft can no
-  longer skip the framework or the research record, and the user can no
-  longer be asked to approve words they were never shown. The full writing order is in the `news-reel`
+  longer skip the framework, the research record or the human ear, and the
+  user can no longer be asked to approve words they were never shown. The full writing order is in the `news-reel`
   skill; the self-test is `tools/test_script_pipeline.py`, run by doctor.
   **`check` must pass BEFORE the avatar is generated** — generation costs
   credits and freezes the audio. Gate **G27** re-checks the hash at build time,
@@ -451,11 +454,26 @@ opinions into reference-style text, which matches our reporting register.
 Run it **after** the script hits its word budget and **before**
 `script_approval.py propose`.
 
-**NOTHING RUNS IT FOR YOU — verified 2026-08-26.** Every mention of
-`humanizer` in this repo's code is a COMMENT. The user asked why em-dashes
-keep appearing "even though we have the humanizer skill", and the answer was
-that the pass had never once been executed: claude-eating-tokens carried six
-em-dashes in 159 words, one every 26. `check_script` now measures what a
+**IT IS NOW A REQUIRED STEP — 2026-08-27.** It used to be cued only when
+something MEASURABLE fired (a house tic, an AI tell, an em-dash), which is
+backwards: a script with nothing measurably wrong can still read like a
+machine wrote it, and rhythm is exactly what no checker can see. So the
+scripts that most needed a human ear were the ones never getting one.
+`propose` now REFUSES without a recorded pass, alongside structure.md and
+research.md, and the record is hash-bound like approval:
+
+```bash
+python3 tools/script_approval.py humanized <slug>   # after the pass, not before
+```
+
+Edit a word afterwards and propose refuses again, because the pass no longer
+covers the words being shown. `script_doctor` cues it on EVERY run now, not
+only when a tell fires. The refusal itself names the skill in backticks, so
+the PostToolUse hook fires on it. Run it over the WHOLE script, never the
+flagged lines only. (Historical note, and the reason for all of the above: the user asked why em-dashes
+kept appearing "even though we have the humanizer skill", and the answer was
+that the pass had never once been executed — claude-eating-tokens carried six
+em-dashes in 159 words, one every 26.) `check_script` now measures what a
 checker can (PAGE PUNCTUATION, AI TELLS, HYPE, HOUSE TIC); the rest — rhythm,
 whether a sentence sounds like a person — is a pass YOU perform, and its
 absence is invisible unless you look for it. Never after approval: G27 hashes the approved

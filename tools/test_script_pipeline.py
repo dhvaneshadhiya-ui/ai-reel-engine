@@ -142,8 +142,33 @@ def run() -> int:
                     "propose refuses SPOKEN words not in the script",
                     "not in the script")
 
-        # 4. filled structure + ledger -> propose runs and records the review
+        # 3e. THE HUMANIZER PASS (2026-08-27). Structure and ledger are now
+        # both valid, so the only thing left is the half no checker measures.
+        # It used to be cued only when a tic or an em-dash fired — meaning a
+        # script with nothing measurable wrong never got a human ear, which is
+        # exactly backwards. It is a precondition now, like the two above.
         (job / "research.md").write_text(RESEARCH)
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "propose refuses without a humanizer pass", "NOT HUMANIZED")
+
+        # The refusal must NAME the skill in backticks, or the PostToolUse
+        # hook cannot fire on it and the refusal is just a printed reminder.
+        _buf = io.StringIO()
+        with contextlib.redirect_stdout(_buf), contextlib.suppress(SystemExit):
+            sa.cmd_propose("selftest")
+        ok("the refusal cues `humanizer` so the hook fires",
+           "SKILL CUE" in _buf.getvalue() and "`humanizer`" in _buf.getvalue())
+
+        # 3f. stamping the pass binds it to THIS draft's hash
+        with contextlib.redirect_stdout(io.StringIO()):
+            sa.cmd_humanized("selftest")
+        rec_p = job / "humanized.json"
+        ok("humanized.json is written", rec_p.exists())
+        ok("the record hashes the script it covers",
+           json.loads(rec_p.read_text()).get("sha")
+           == sa.sha(sa.read_script("selftest")))
+
+        # 4. filled structure + ledger + humanized -> propose runs
         with contextlib.redirect_stdout(io.StringIO()):
             sa.cmd_propose("selftest")
         rev_p = job / "review.json"
@@ -151,6 +176,17 @@ def run() -> int:
         rev = json.loads(rev_p.read_text()) if rev_p.exists() else {}
         ok("review carries the script hash",
            rev.get("script_sha256") == sa.sha(sa.read_script("selftest")))
+
+        # 4b. edit a word and the pass no longer covers what is being shown.
+        # Same guarantee as approve-after-propose, one step earlier.
+        _orig = (job / "script.md").read_text()
+        (job / "script.md").write_text(_orig + "\nA sentence nobody read aloud.\n")
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "propose refuses an edit made after the humanizer pass",
+                    "CHANGED SINCE THE HUMANIZER PASS")
+        (job / "script.md").write_text(_orig)
+        with contextlib.redirect_stdout(io.StringIO()):
+            sa.cmd_propose("selftest")
         # An UNHEDGED single-source claim must ADVISE (recorded in the
         # review) while propose still succeeds — advice, never a block.
         # The claim sits at the script's tail, clear of the opening's
@@ -230,8 +266,14 @@ def run() -> int:
                     "approve refuses a script edited after propose",
                     "CHANGED SINCE IT WAS PROPOSED")
 
-        # 7. re-propose, then approve — the compliant path stays open
+        # 7. the compliant path after an edit: humanize the NEW words, record
+        # that, re-propose, approve. Editing the script invalidates the pass
+        # exactly as it invalidates the review — that is the point of both.
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "an edited script needs the pass run again",
+                    "CHANGED SINCE THE HUMANIZER PASS")
         with contextlib.redirect_stdout(io.StringIO()):
+            sa.cmd_humanized("selftest")
             sa.cmd_propose("selftest")
             sa.cmd_approve("selftest")
         ok("approve succeeds on a fresh propose",

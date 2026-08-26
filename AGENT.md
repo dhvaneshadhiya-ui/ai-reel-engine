@@ -143,6 +143,24 @@ went (2026-08-26).
 Expect 3-5 passes. If the first draft measures clean, be suspicious rather
 than pleased.
 
+**THE LAST PASS IS THE HUMANIZER, AND IT IS NOT OPTIONAL.** When the script
+measures clean and hits its word budget, run the `humanizer` skill over the
+WHOLE script — not the lines the checker flagged. What it fixes is rhythm and
+whether a sentence sounds like a person said it, which is precisely what
+`script_doctor` cannot see; a script with zero measurable tells can still read
+like a machine wrote it. Feed it our own shipped scripts as a voice sample (a
+sample outranks its own style rules), and hold it to its own clause: no fact,
+name, number, date or citation that is not already in the source text. Then:
+
+```bash
+python3 tools/script_approval.py humanized <slug>   # records the pass
+```
+
+`propose` refuses without that record, and refuses again if you edit a word
+afterwards — the pass no longer covers the words you are showing. Never run
+it AFTER approval: G27 hashes the approved narration, so a post-approval
+rewrite correctly stops the build.
+
 **A shot plan is NOT part of this loop.** `plan_shots.py --write` now refuses
 until the script is approved and hash-fresh: every shot anchors to exact
 wording, so a plan written against unapproved words is invalidated by the

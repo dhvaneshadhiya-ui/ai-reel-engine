@@ -5136,3 +5136,52 @@ blocked, 85 of their 94 violations being G45 — captions sitting under
 Instagram's account row. Every one was last modified 2026-08-18, before that
 overlay was measured. The gates are working; the old sheets are stale. They
 are shipped reels, so they were left alone rather than rewritten.
+
+## 2026-08-27 — the humanizer was cued CONDITIONALLY, which is backwards
+
+The user, reading the audit report's trigger table: *"humanizer skill only
+triggers if there are em-dashes in the script? actually entire script must be
+humanized."* Correct, and the fix is a rule change, not a wording change.
+
+**What was wrong.** `script_doctor` cued `humanizer` only when something
+MEASURABLE fired — a house tic, an AI tell, page punctuation. And
+`script_approval propose` printed a HUMANIZER reminder with **no backticks**,
+so the PostToolUse hook could not fire on it at all: the "last stop before
+approval" note was a printed line nobody was required to act on, which is the
+exact thing hooks exist to replace.
+
+**Why conditional is the wrong shape.** The humanizer's job is rhythm and
+whether a sentence sounds like a person said it. That is, by definition, the
+half a checker cannot measure. Firing it only when the checker DOES measure
+something means the scripts that most need a human ear — the ones that look
+clean — are the ones that never get one. A clean measurement is not the same
+as sounding human.
+
+**What it is now.** A third precondition of `propose`, sitting beside
+structure.md and research.md, and hash-bound the way approval is:
+
+```bash
+python3 tools/script_approval.py humanized <slug>
+```
+
+- `propose` refuses without the record: `NOT HUMANIZED`.
+- It refuses again if a word changed since: `SCRIPT CHANGED SINCE THE
+  HUMANIZER PASS`. The pass no longer covers the words being shown — the same
+  guarantee as approve-after-propose, one step earlier.
+- **The refusal IS the trigger**: it prints the cue with the skill in
+  backticks, so the hook injects it as an instruction at the moment of refusal.
+- `script_doctor` now cues it on EVERY run, with different wording when
+  nothing measurable fired — *"which is not the same as sounding like a
+  person."*
+
+**Two ordering bugs found while wiring it, both worth keeping.** The check
+was first placed before the research ledger check, so three ledger cases
+started failing with a humanizer message — a refusal naming the wrong cause
+is worse than no refusal. And it was briefly inside the prose section's
+best-effort `try/except`, where an unrelated ImportError would have silently
+skipped it. **A precondition that an exception can skip is not a
+precondition.** It now sits last of the three, outside the try.
+
+`test_script_pipeline` is 72 checks (was 66): the refusal, the backticked
+cue, the record's hash binding, the staleness refusal, and the compliant
+path after an edit (humanize the new words, re-record, propose, approve).
