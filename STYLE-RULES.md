@@ -4779,3 +4779,31 @@ New tool: `tools/voice_similarity.py` — MFCC fingerprint cosine similarity,
 which is how every number in the identity column above was produced. Its own
 output insists on a different-speaker CONTROL, because an absolute similarity
 score has no units worth trusting.
+
+**Second attempt, using the HeyGen voice ID directly as the clone source
+(2026-08-26).** The first reference had been extracted from a RENDERED reel,
+so it carried mp4 encoding and the loudness master; a clean 44.1kHz sample
+straight from `create_speech` should have been strictly better. It was worse
+on both axes:
+
+| clone source | source's own pitch sd | output pitch sd | identity |
+|---|---|---|---|
+| slice of the rendered reel | 3.13 | **2.99** | 0.952 |
+| raw TTS from the voice ID | 1.92 | 2.79 | **0.922** |
+| *different-speaker control* | — | 3.27 | *0.924* |
+
+**The reference's own expressiveness is both the ceiling AND the identity
+anchor.** Cloning from the flatter source produced a flatter read whose
+identity score fell BELOW the different-speaker control — i.e. it stopped
+sounding like him at all while still not gaining energy.
+
+Two independent attempts now put the ceiling at ~3.0 against a 3.5 floor, and
+both used a reference derived from the flat clone. There is no configuration
+of engine, emotion preset, or reference cleanliness that fixes this, because
+the range was never in the source. **Only a real expressive recording moves
+the ceiling** (`references/voice-clone-script.md`).
+
+Correction to an earlier note: `--clean-reference` (Sidon restoration) is
+**not wired for indextts2** — it applies to qwen3/cosyvoice/voxcpm2/f5/higgs/
+indic-mio. Cleaning a phone recording before cloning therefore means either
+using one of those engines or running the restoration as a separate pass.
