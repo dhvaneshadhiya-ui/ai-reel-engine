@@ -4715,3 +4715,67 @@ recorded in `config.json` so a future session does not repeat the experiment.
 **The honest limit:** nothing here fixes the current reel's read. The fix
 needs new source recordings from the user, which is the one step no tool can
 do.
+
+## 2026-08-26 — Soniqo / IndexTTS2 evaluated for emotion control: measured verdict
+
+User asked whether soniqo.audio could add emotion, tempo and pause control to
+the voiceover. Installed it (`brew install speech`, homebrew-core, on-device,
+Apple Silicon) and measured rather than speculated.
+
+**It does have the controls**: `--indextts2-emotion` (10 presets or an 8-value
+vector), `--indextts2-emotion-weight`, `--indextts2-speaking-rate` (0.5-1.5),
+`--indextts2-max-pause`, and `--indextts2-emotion-audio` — a SEPARATE emotion
+reference from the voice sample. Cloning needs 5-30s, not minutes. Runs
+locally: no per-use cost, no queue.
+
+**Measured, same voice sample and same line throughout:**
+
+| synthesis | pitch sd | identity vs his reference |
+|---|---|---|
+| HeyGen clone (what ships today) | 1.86 | 0.976 |
+| Soniqo, neutral | 2.25 | **0.984** |
+| Soniqo, `--emotion happy` | 2.43 | 0.936 |
+| Soniqo, emotion transferred from an expressive sample | 2.75 | 0.957 |
+| Soniqo, `--emotion eager` / `excited` | **2.99** | 0.952 |
+| *control: a genuinely different speaker* | 3.27 | *0.924* |
+| *target: the user's own creator references* | *3.74-6.63* | — |
+
+**Two findings, and the second is the one that matters.**
+
+1. Emotion control is real: 1.86 -> 2.99 is a **61% increase** in pitch
+   movement. But it still lands **below the 3.5 floor** taken from the
+   flattest real creator. It narrows the gap; it does not close it.
+2. **Expression is being bought with identity.** Neutral scores 0.984 —
+   better than the HeyGen clone itself. Every emotion preset moves it toward
+   the different-speaker control: eager 0.952, happy 0.936, against 0.924 for
+   a different person entirely. The more emotion asked for, the less it is
+   his voice.
+
+**The reason is the reference, and it invalidates nothing but explains
+everything: the 20-second sample was extracted from the existing FLAT clone's
+own output.** So the test cloned a flat voice and then asked it for energy.
+The emotion presets were fighting the source, which is exactly why they cost
+identity to make progress.
+
+**Therefore the recording script is still the fix, not the workaround.** With
+genuinely expressive source audio, the emotion controls would be adding to a
+voice that already moves rather than dragging one that does not. The correct
+sequence is: record -> re-clone -> measure -> only then decide whether emotion
+control is needed on top.
+
+**Identity caveat RESOLVED, favourably:** a 20-second reference preserved
+identity BETTER than the full HeyGen clone (0.984 vs 0.976). Short reference
+length is not a risk here.
+
+**Licence caveat RESOLVED, with a named risk:** IndexTTS2 ships under the
+**bilibili Model Use License** (not Apache 2.0, despite its HuggingFace card
+— the inconsistency is itself a smell). §2.1 grants royalty-free use; §2.2
+requires a separate licence only above 100M MAU or RMB 1B revenue, so
+commercial use at this scale is permitted. Governed by PRC law, Shanghai
+arbitration. **CosyVoice, in the same CLI, is true Apache 2.0** and is the
+clean fallback if that matters more than the finer controls.
+
+New tool: `tools/voice_similarity.py` — MFCC fingerprint cosine similarity,
+which is how every number in the identity column above was produced. Its own
+output insists on a different-speaker CONTROL, because an absolute similarity
+score has no units worth trusting.
