@@ -5219,3 +5219,48 @@ broken and shipped a whole scout session. `scout_sheet` self-tests.
 Rule 2 and Rule 3 are the two constitution rules these enforce, and both are
 enforced in code rather than remembered — which is the answer to "is scouting
 covered": yes, and here is the evidence rather than the assurance.
+
+## 2026-08-27 — "at what stage do you do research?" had no answer in the manual
+
+The user asked where research sits, and guessed correctly: right after the
+topic, before anything else. Checking rather than confirming from memory
+turned up four documentation defects, one of them a stage with no number.
+
+**1. RESEARCH WAS NOT A STEP.** `AGENT.md` runs STEP 0 -> 1a -> 1b -> 1c ...
+and research appeared exactly three times in the whole file: twice as a field
+reference inside STEP 1a (ASSET SCOUT), once as a general principle. The
+ledger it produces is a BLOCKING precondition of `propose`. **A stage that
+gates the pipeline and is named nowhere in the order of operations is the
+definition of a step that gets skipped.** Now `STEP 0.5 — RESEARCH`, placed
+before the scout, because you cannot capture a source until you know which
+claim it proves.
+
+**2. The skill carried two orderings that never met.** `news-reel` says
+"Research first, and it leaves a LEDGER" in its writing order, and "1 — Scout
+BEFORE scripting" in its order of operations, with nothing reconciling them.
+Both are correct; the full sequence is research -> scout -> script, and it is
+now stated.
+
+**3. The skill's propose preconditions were a step behind.** It named only
+`structure.md`. There are three: structure, research, and the recorded
+humanizer pass.
+
+**4. The humanizer section said the pass runs "not on the whole script".**
+Read fairly, that licenses running it over flagged lines only — the exact
+thing the user objected to. The section's REASONING is right and measured
+(three of humanizer's patterns would strip the hedging G14/G15 and framework
+S20 require), but it conflated two different scopes. Split explicitly now:
+
+> **INPUT is wholesale** — the entire script, every time, measured or not.
+> **OUTPUT is selective** — reject the three named patterns on sight.
+
+**The pattern across all four:** every one is a doc that was true when
+written and drifted as the code moved, and none would have been found by
+running anything. `wiring_audit` catches a doc claiming a gate blocks when it
+does not; it cannot catch a stage nobody wrote down. That class still needs a
+person to ask "where does X happen?" — which is what the user did.
+
+**And a note on the answer itself:** references the user supplies are INPUTS,
+not sourcing. The dated `## SEARCHED` log is mandatory precisely so a reel
+cannot be assembled out of whatever arrived in the prompt, and a topic given
+with no references changes nothing about what the ledger must contain.
