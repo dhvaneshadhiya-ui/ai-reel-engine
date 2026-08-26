@@ -4807,3 +4807,39 @@ Correction to an earlier note: `--clean-reference` (Sidon restoration) is
 **not wired for indextts2** — it applies to qwen3/cosyvoice/voxcpm2/f5/higgs/
 indic-mio. Cleaning a phone recording before cloning therefore means either
 using one of those engines or running the restoration as a separate pass.
+
+**Was Soniqo implemented as documented? No — three deviations, corrected
+2026-08-26.** Checked my own usage against their stated spec rather than
+defending it:
+
+1. **"No heavy compression"** — the reference that produced the best number
+   (2.99) was a slice of the RENDERED MASTER, i.e. after `loudnorm` + a
+   limiter. Directly against their spec, and the good score was partly an
+   artefact of it. Fixed by cutting the reference from
+   `avatar-master-raw-v3.mp4` — the avatar render BEFORE our mastering.
+2. **Never used two of the three controls.** Their own example passes
+   `--indextts2-speaking-rate 1.35` and `--indextts2-max-pause 0.05`. I had
+   only ever set `--indextts2-emotion` — while telling the user the toolkit
+   offered tempo and pause control.
+3. **Never tested CosyVoice**, the Apache-2.0 engine, which their docs say
+   *"Always pass the transcript... skipping it costs accuracy and produces
+   mid-utterance drifts."* Now tested with the reference's real transcript.
+
+**Doing it properly changed the answer on identity, not on the ceiling:**
+
+| configuration | pitch sd | identity |
+|---|---|---|
+| HeyGen clone (ships today) | 1.86 | 0.981 |
+| Soniqo, non-compliant compressed reference | 2.99 | 0.950 |
+| **Soniqo per spec** (pre-master, 16k, all three controls) | 2.54 | **0.973** |
+| **CosyVoice per spec**, with transcript | **3.00** | 0.954 |
+| *control — a different person* | *3.27* | *0.938* |
+
+Per-spec configuration bought a large identity gain (0.950 -> 0.973 against a
+0.938 control) at a small expression cost. CosyVoice reaches 3.00 — the best
+expression of any run — and carries the clean Apache-2.0 licence, but sits
+closer to the control on identity.
+
+**The ceiling did not move.** Every correctly-configured run lands 2.5-3.0
+against a 3.5 floor, because all of them clone the same flat source. Doing it
+by the book improved fidelity and confirmed the diagnosis.
