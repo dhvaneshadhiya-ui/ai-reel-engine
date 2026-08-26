@@ -283,9 +283,38 @@ def open_loop(ss: list[str]) -> tuple[bool, str]:
     # the mechanism." before its real loop was judged on the throwaway and
     # reported NO OPEN LOOP with an actual loop two sentences further down.
     # A detector that stops at the first candidate is testing sentence order.
+    # WITHHELD ENUMERATION — a forward reference written in the author's OWN
+    # words, which a phrase list can never see (2026-08-26).
+    #
+    # "Four things it won't write at all." names a count and withholds the
+    # items. That is a loop by structure, and FORWARD would miss it because
+    # the sentence contains none of its phrases. The repo's own note above
+    # warns against widening a phrase list to fit whatever was just written —
+    # so this is not another phrase. It is the test the code already
+    # articulates for the opposite case: "three changes are coming" is NOT a
+    # loop precisely because the items follow immediately. Withheld until
+    # later = loop; filled at once = agenda.
+    #
+    # This matters beyond one script. The phrase list was PRESCRIBING the
+    # house voice — "here's the" reached 8 scripts, "the part almost nobody
+    # noticed" appeared verbatim in 3 — because a script that did not use a
+    # listed phrase was told it had no loop. Reading structure instead is what
+    # lets every reel open its loop in its own language.
+    CARDINAL = re.compile(
+        r"\b(two|three|four|five|six|seven|eight|nine|ten)\s+"
+        r"([a-z]{3,})\b", re.I)
+
+    def withheld_enumeration(idx: int, sent: str) -> bool:
+        m = CARDINAL.search(sent)
+        if not m:
+            return False
+        near = " ".join(ss[idx + 1: idx + 3]).lower()
+        # if the items are spelled out immediately, it is an agenda, not a loop
+        return not re.search(r"\bfirst\b|\bone[:,]|\bstart with\b", near)
+
     unresolved: str | None = None
     for i, sent in enumerate(ss[:third]):
-        if not FORWARD.search(sent):
+        if not FORWARD.search(sent) and not withheld_enumeration(i, sent):
             continue
         distinctive = {w for w in re.findall(r"[a-z]{5,}", sent.lower())
                        if w not in _STOP and counts.get(w, 0) <= 3}
@@ -539,7 +568,16 @@ def check(text: str, shape: str | None = None) -> list[str]:
     #     that corpus's structure. "for free" is deliberately in the list and
     #     deliberately narrow: naming a price is fine ("it's free"), selling
     #     the price is not. Advice, like everything here.
-    hype = [h for h in HYPE_MARKERS if re.search(rf"\b{re.escape(h)}", low)]
+    hype = []
+    for h in HYPE_MARKERS:
+        if not re.search(rf"\b{re.escape(h)}", low):
+            continue
+        # "for Free, Pro and Max" names a plan tier. Capitalised in the
+        # ORIGINAL text means it is a proper noun, not the sell register
+        # (false positive found 2026-08-26 by script_doctor on its own output).
+        if h == "for free" and re.search(r"\bfor Free\b", flat):
+            continue
+        hype.append(h)
     if hype:
         notes.append(
             f"HYPE: {', '.join(repr(h) for h in hype)} — the creator-sell "

@@ -293,6 +293,11 @@ def cmd_propose(slug: str) -> None:
         from check_script import (check as _prose, checklist as _list,  # noqa: E402
                           house_tics as _tics)
         findings = _prose(spoken) or []
+        # HOUSE TICS: phrases already used in another script. Reported HERE
+        # because propose is where the words are judged, and because the
+        # open-loop detector's own phrase list is what drives writers to
+        # reuse them (2026-08-26).
+        findings += _tics(spoken, exclude_slug=slug)
         print("\nPROSE (advice — style is craft, none of this blocks):")
         for _n in findings or ["  nothing to flag"]:
             print(f"  - {_n}" if not _n.startswith("  ") else _n)

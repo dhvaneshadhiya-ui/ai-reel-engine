@@ -415,6 +415,25 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "scout sheet self-test", str(e))
     problems.append("scout-sheet")
 
+# Avatar ingest (2026-08-26) — the 25fps trap. Twin renders come back 25fps
+# while the project is 30fps, and Remotion resolves the mismatch by REPEATING
+# FRAMES rather than erroring, so a skipped conform ships a micro-stuttering
+# facecam and nothing in any log says so. The self-test proves the conform
+# still fires, and that an already-correct master is left alone.
+try:
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "tools/ingest_avatar.py"), "--selftest"],
+        capture_output=True, text=True, timeout=120)
+    if r.returncode == 0:
+        report(OK, "avatar ingest self-test", r.stdout.strip().splitlines()[-1])
+    else:
+        report(BAD, "avatar ingest self-test", "fps conform broke — see output")
+        print(r.stdout[-600:])
+        problems.append("avatar-ingest")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "avatar ingest self-test", str(e))
+    problems.append("avatar-ingest")
+
 # ------------------------------------------------------------- fresh clone
 #
 # `git clone` does NOT give a working engine, and the gap is invisible until a

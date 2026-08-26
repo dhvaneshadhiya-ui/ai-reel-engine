@@ -120,6 +120,27 @@ specific request (max 1–2 loops), or rewrite the line.
 confirm every visual id resolves. Fixing this on paper costs seconds; fixing it
 after voice + avatar generation costs credits and an hour.
 
+### STEP 1c — THE CRAFT LOOP (write -> measure -> rewrite)
+
+```bash
+python3 tools/script_doctor.py <slug>        # or --file draft.md --slug <s>
+```
+
+ONE call: prose shape, house tics, the framework's reveal/certainty/source
+rules, and the runtime prediction. A good script takes several passes — that
+is the job, not a defect. What was a defect is that each pass used to cost
+four or five separate commands, which is where "twenty minutes for a script"
+went (2026-08-26).
+
+Expect 3-5 passes. If the first draft measures clean, be suspicious rather
+than pleased.
+
+**A shot plan is NOT part of this loop.** `plan_shots.py --write` now refuses
+until the script is approved and hash-fresh: every shot anchors to exact
+wording, so a plan written against unapproved words is invalidated by the
+first edit. Reading the clause breakdown (no `--write`) is fine and often how
+you decide the script is ready.
+
 ### STEP 1.5 — Rehearse the VO for free, FIRST
 
 ```bash

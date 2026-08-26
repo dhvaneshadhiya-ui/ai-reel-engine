@@ -4278,3 +4278,52 @@ expected number of passes, not a sign something went wrong.
 
 Rewrite lives at `jobs/claude-memory-everywhere/script-rewrite.md` — NOT over
 the other session's `script.md`, which is unapproved and theirs to merge.
+
+## 2026-08-26 — three root causes behind "every script sounds the same"
+
+User: *"Why does it follow the same structure instead of considering the
+topic? Every script says 'here's the part that matters most.' Why does it
+build the shot plan before approval? And it took twenty minutes."*
+
+**1. THE CHECKER WAS WRITING THE HOUSE TIC.** `check_script`'s NO OPEN LOOP
+test matched a phrase list (`FORWARD`), so a script that did not use a listed
+phrase was told it had no loop — and every writer, human or model, reached
+for the listed words. Measured across the corpus:
+
+| phrase | scripts |
+|---|---|
+| `here's the` | 8 |
+| `the catch` | 4 |
+| `the part almost nobody noticed` (verbatim) | 3 |
+| `tell me in the comments` | 3 |
+
+Two fixes, opposing forces:
+- **`house_tics()`** flags any 3-5 word rhetorical phrase already used in
+  another script (proper nouns and numbers excluded — a subject recurring
+  across scripts about that subject is the subject, not a tic). Reported by
+  `propose`, so reuse costs something.
+- **`open_loop` now reads STRUCTURE, not vocabulary**: a withheld
+  enumeration ("Four things it won't write at all") is a loop when the items
+  arrive later, and an agenda when they arrive at once — which is the exact
+  test the code already applied to "three changes are coming". All five
+  hand-judged cases still pass.
+  Together: you must open a loop, and you may not open it in last reel's
+  words. The rewrite of claude-memory-everywhere failed the tic check on my
+  own first draft ("the part that matters"), which is how I know it works.
+
+**2. THE SHOT PLAN WAS BUILT BEFORE APPROVAL.** `plan_shots.py` has always
+SAID "turn an approved script into a shot plan" and only ever checked that
+the file existed. Every shot is phrase-anchored, so a plan written before
+approval is invalidated by the first word changed — and the repair then looks
+like progress. `--write` now refuses without `approval.json`, and refuses
+again if the script has drifted from the approved hash. Reading without
+`--write` stays open, because that is often how you decide it is ready.
+
+**3. TWENTY MINUTES WAS ROUND TRIPS, NOT THINKING.** Each rewrite pass cost
+four or five commands. `tools/script_doctor.py` runs all of them in one call
+(0.12s). The craft loop itself — 3-5 passes — is correct and stays; it is now
+documented in AGENT.md §1c as the expected shape of the work rather than a
+sign something went wrong.
+
+Bonus catch: script_doctor's first run flagged `for Free, Pro and Max` as the
+sell phrase "for free". A plan tier is a proper noun; the marker is narrowed.
