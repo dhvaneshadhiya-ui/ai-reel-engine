@@ -4890,3 +4890,28 @@ future run silently:**
    semicolon all fail with `unencodableText` — and this repo's script style
    uses all three constantly. `speakable()` maps them to commas, which is
    what they mean out loud. Without it, 8 of 13 beats failed.
+
+**The fumble is fixable in the SCRIPT, today, with the voice we already
+have.** Same words, same clone, same speed — the shipped hook as one compound
+sentence ("...mostly the reading, not the writing — here's why the top fix
+barely helps") versus three short ones ("...mostly the reading. Not the
+writing. And the top fix barely helps."):
+
+| | stress inversions | word-duration spread |
+|---|---|---|
+| one compound sentence | 1 (`'the'` 0.34s > `'reading'` 0.28s) | 0.26s |
+| three short sentences | **0** | **0.38s (+46%)** |
+
+A long compound line gives a TTS no clear stress target, so it lands weight on
+whatever it meets — which is what the user heard as "the creator is fumbling".
+Short declaratives hand it one idea per sentence and one obvious word to hit.
+This costs nothing, needs no re-clone and no new engine, and it is the ONE
+voice improvement available immediately.
+
+**Decision for the next reel: keep the HeyGen voice.** Nothing measured beats
+it enough to justify the trade — the best alternative (CosyVoice, 3.00 vs
+2.83, +6%) is inaudible against a 3.5 floor and costs identity (0.954 against
+0.981, with a stranger at 0.938). Switching would also add local synthesis,
+concatenation seams, an untested HeyGen lip-sync path and re-derived anchors,
+for a gain nobody would hear. Write shorter hook sentences instead, and
+revisit the whole question once the re-clone exists.
