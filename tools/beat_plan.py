@@ -36,9 +36,18 @@ ROOT = Path(__file__).resolve().parent.parent
 PLAIN = {
     "split": "screen split: {top} above the presenter on camera",
     "footage": "{clip}",
-    "sourceread": "the source article on screen — the quoted line lights up "
-                  "as it is read",
-    "annotatezoom": "a screenshot, zooming slowly into the highlighted region",
+    # sourceread / annotatezoom / receipt used to be FIXED strings — "a
+    # screenshot, zooming slowly into the highlighted region" — which names the
+    # CAMERA MOVE and not one thing on the page. Exactly the fault the floatcard
+    # note below records, and worse in practice: found 2026-08-26 on a reel
+    # where 18 of 26 beats were one of these three, so 70% of the plan the user
+    # was asked to approve said nothing about what they were approving. They now
+    # resolve their asset from the manifest like {clip} does, and name the claim
+    # the highlight is there to prove ({covers}, the spoken words the beat is
+    # anchored to).
+    "sourceread": "{shot}, the line proving it lights up as it is read",
+    "annotatezoom": "{shot}, zoomed in on the part that proves it",
+    "receipt": "{shot}, held while the highlight lands on the proof",
     "wordcascade": "big words land one by one: {words}",
     "checklist": "a checklist ticks through: {rows}",
     "comparesplit": "a side-by-side comparison",
@@ -51,8 +60,7 @@ PLAIN = {
     # to prevent. It carries real footage, so it resolves its clip like
     # `footage` does (found 2026-08-22, on a reel whose three feature beats were
     # ALL floatcards).
-    "floatcard": "{clip}, shown whole on a card so nothing is cropped out",
-    "receipt": "a screenshot 'receipt' slides through",
+    "floatcard": "{shot}, shown whole on a card so nothing is cropped out",
     "chart": "an animated chart",
     "headlinebuild": "a headline assembles on screen",
     "priceladder": "prices stack into a ladder",
@@ -87,26 +95,82 @@ def _texts(obj, cap=6) -> list[str]:
     return out
 
 
-def _clip(scene: dict, shows: dict) -> str:
+def _asset_for(scene: dict, shows: dict) -> dict | None:
+    """The manifest entry behind this scene's `src`, longest id first.
+
+    Longest-first because ids overlap: 'ui-topics-list' and 'ui-topic-open'
+    both substring-match a src containing the former, and dict order would
+    decide which one described the frame.
+    """
+    src = str(scene.get("src", ""))
+    for aid in sorted((a for a in shows if a), key=len, reverse=True):
+        if aid in src:
+            return shows[aid]
+    return None
+
+
+def _gist(text: str, cap: int = 130) -> str:
+    """The first idea in a manifest `shows` field.
+
+    `shows` is written for the BUILDER and is deliberately exhaustive — the
+    topics-list entry here runs 60 words. Printed in full it is accurate and
+    unreadable, and printed four times (one asset, four beats) it buries the
+    plan. The approver needs the gist plus the claim; the full text stays one
+    file away in the manifest.
+    """
+    text = " ".join(text.split())
+    if len(text) <= cap:
+        return text
+    head = text[:cap]
+    for sep in (". ", "; ", ": ", ", "):
+        i = head.rfind(sep)
+        if i > cap * 0.5:
+            return head[:i]
+    return head[:head.rfind(" ")] + "…"
+
+
+def _clip(scene: dict, shows: dict, noun: str = "a clip") -> str:
     src = str(scene.get("src", ""))
     if "avatar-master" in src:
         return "the presenter, on camera"
-    aid = None
-    for a, meta in shows.items():
-        if a and a in src:
-            aid = a
-            break
-    base = "a video clip"
-    if aid and shows[aid].get("shows"):
-        base = f"a clip showing {shows[aid]['shows']}"
+    meta = _asset_for(scene, shows)
+    base = f"{noun}"
+    if meta and meta.get("shows"):
+        base = f"{noun} showing {_gist(meta['shows'])}"
     elif src:
-        base = f"a clip ({Path(src).stem})"
+        base = f"{noun} ({Path(src).stem})"
     if scene.get("credit"):
         base += f" — credited {scene['credit']}"
     return base
 
 
-def describe(scene: dict, shows: dict) -> str:
+def _shot(scene: dict, shows: dict, seen: set | None = None) -> str:
+    """Like _clip, but names the artefact by what it IS — a still says
+    "a screenshot", not "a clip" — and appends the claim the beat proves.
+
+    An asset used across several beats is described once. Repeats say "the
+    same screenshot again", because a plan that re-prints the same 60 words
+    four times is as hard to approve as one that prints nothing.
+    """
+    meta = _asset_for(scene, shows)
+    kind = (meta or {}).get("kind", "")
+    noun = "a clip" if kind == "footage" else "a screenshot"
+    aid = (meta or {}).get("id")
+    if seen is not None and aid and aid in seen:
+        base = f"the same {noun.split()[-1]} again"
+        if scene.get("credit"):
+            base += f" — credited {scene['credit']}"
+    else:
+        base = _clip(scene, shows, noun=noun)
+        if seen is not None and aid:
+            seen.add(aid)
+    covers = (scene.get("covers") or "").strip()
+    if covers:
+        base += f" — proving “{covers}”"
+    return base
+
+
+def describe(scene: dict, shows: dict, seen: set | None = None) -> str:
     t = scene.get("type", "?")
     tpl = PLAIN.get(t)
     if tpl is None:
@@ -116,6 +180,8 @@ def describe(scene: dict, shows: dict) -> str:
     fills = {}
     if "{clip}" in tpl:
         fills["clip"] = _clip(scene, shows)
+    if "{shot}" in tpl:
+        fills["shot"] = _shot(scene, shows, seen)
     if "{top}" in tpl:
         top = str(scene.get("topSrc", ""))
         fills["top"] = ("the presenter, on camera" if "avatar-master" in top
@@ -158,11 +224,12 @@ def render(slug: str, root: Path | None = None) -> list[str]:
         except Exception:
             pass
     out = []
+    seen: set[str] = set()
     for i, s in enumerate(shots, 1):
         line = (s.get("line") or s.get("start_phrase") or "?").strip()
         scene = s.get("scene") or {}
         out.append(f"  {i:2}. HEAR  “{line}”")
-        out.append(f"      SEE   {describe(scene, shows)}"
+        out.append(f"      SEE   {describe(scene, shows, seen)}"
                    f"   [{scene.get('type', '?')}]")
     return out
 

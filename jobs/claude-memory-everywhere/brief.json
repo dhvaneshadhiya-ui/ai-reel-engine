@@ -1,0 +1,15 @@
+{
+  "slug": "claude-memory-everywhere",
+  "topic": "Claude's memory now works across chat and Cowork, and you can read, edit or delete every topic it saved",
+  "details": "Anthropic announcement 2026-08-25: one memory across chat + Cowork; Topics list you can read/edit/delete; sensitive categories excluded by default with an opt-in toggle; never stores SSNs/government IDs/immigration status; Free, Pro, Max default-on, Team/Enterprise admin-controlled and off by default",
+  "subject": "Claude's memory now works across chat and Cowork, and you can read, edit or delete every topic it saved",
+  "reveal_target": "none",
+  "source_policy": "official-preferred",
+  "style": "editorial",
+  "target_seconds": 75,
+  "cta_keyword": "CLAUDE",
+  "music": false,
+  "created_at": "2026-08-26T05:52:25.957391+00:00",
+  "status": "initialized",
+  "_source_policy_note": "Research: any credible source (Anthropic + TechCrunch + Engadget are all in the ledger). Footage: official Anthropic pages and first-party product screenshots only, as it happens \u2014 no third-party media is used, but none is forbidden either, so the policy is `official-preferred`, not `official-footage-only`."
+}

@@ -1,8 +1,10 @@
 {
-  "calibratedAt": "2026-08-25T08:37:16+00:00",
+  "calibratedAt": "2026-08-26T05:50:59+00:00",
   "corpus": {
     "apple-pay-india": "5500a5226e8f3d27e005d3b0784508a40990a48e510b1105207a8b3fbf26ae4d",
+    "claude-eating-tokens": "341019be42e5254769ab104ff0974e9602ebc0e128ae0b1c75c1d4c520f4df90",
     "grok-bot": "5aeaaeded5613e3a1511ee2bb1c37de81e826aaeafaf6288c401447f18cfd221",
+    "ios27-beta7": "dd59fef1aace3191e42b7e140a3674beab0398f2ba2030514322324c99c01860",
     "ios27-tiers": "4eefbe517fb09f7ccf647d373cb75defef82369ade3b258635ccd29a00654d59",
     "iphone-18-pro": "da2b8b156653df8cde870d947ec49c65968fa45faaabe1a62ef1a8b8b46e868f",
     "iphone-fold-ultra": "2c6795454a04ee91f7cb148b1790c9839b9d4ca71593ed3276ef59201d164d57",

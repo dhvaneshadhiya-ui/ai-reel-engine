@@ -353,6 +353,57 @@ def run() -> int:
     ok("no shot plan renders as empty, not a crash",
        beat_plan.render("nope", root=tmp3) == [])
 
+    # 11b. SCREENSHOT BEATS MUST DESCRIBE THEMSELVES (2026-08-26). sourceread /
+    # annotatezoom / receipt rendered FIXED strings naming the camera move
+    # ("a screenshot, zooming slowly into the highlighted region") and nothing
+    # on the page — the same fault the floatcard note in beat_plan.py records,
+    # but reached 70% of one reel's beats. They now resolve the manifest asset
+    # and name the claim; and a repeat of one asset shortens instead of
+    # re-printing a 60-word `shows` four times.
+    tmp4 = Path(tempfile.mkdtemp(prefix="beat-plan-shot-selftest-"))
+    j4 = tmp4 / "jobs" / "bp2"
+    j4.mkdir(parents=True)
+    (tmp4 / "public/assets/bp2").mkdir(parents=True)
+    (tmp4 / "public/assets/bp2/manifest.json").write_text(json.dumps(
+        {"assets": [
+            {"id": "docs-page", "kind": "receipt",
+             "shows": ("the vendor changelog, headed 'What is new', with the "
+                       "deprecation notice printed directly under it, then a "
+                       "table of every removed flag with its replacement, its "
+                       "removal version and a migration note, running to the "
+                       "fold")},
+            {"id": "docs-page-two", "kind": "receipt",
+             "shows": "a different page entirely, showing the pricing table"},
+        ]}))
+    (j4 / "shot-plan.json").write_text(json.dumps({"shots": [
+        {"line": "They deprecated it.",
+         "scene": {"type": "sourceread", "src": "assets/bp2/docs-page.png",
+                   "covers": "they deprecated it", "credit": "@vendor"}},
+        {"line": "And here is the flag.",
+         "scene": {"type": "annotatezoom", "src": "assets/bp2/docs-page.png",
+                   "covers": "here is the flag"}},
+        {"line": "Pricing moved too.",
+         "scene": {"type": "receipt", "src": "assets/bp2/docs-page-two.png",
+                   "covers": "pricing moved"}},
+    ]}))
+    rows4 = beat_plan.render("bp2", root=tmp4)
+    joined4 = "\n".join(rows4)
+    ok("a sourceread names the artefact, not just the camera move",
+       "the vendor changelog" in rows4[1])
+    ok("a still reads as a screenshot, never as 'a clip'",
+       "a screenshot" in rows4[1] and "a clip" not in joined4)
+    ok("the beat names the claim its highlight proves",
+       "they deprecated it" in rows4[1] and "here is the flag" in rows4[3])
+    ok("a long `shows` is cut to its gist, not printed whole",
+       "running to the fold" not in joined4)
+    ok("the SECOND beat on one asset shortens instead of repeating it",
+       "the same screenshot again" in rows4[3]
+       and "the vendor changelog" not in rows4[3])
+    ok("a DIFFERENT asset is still described in full",
+       "the pricing table" in rows4[5])
+    ok("the fixed camera-move string is gone",
+       "zooming slowly into the highlighted region" not in joined4)
+
     # 10. render_job's draft plumbing (2026-08-21) — dry-run only, since a
     # real render needs footage. The invariant that matters: a draft can
     # never become a deliverable (renders to -draft.mp4, skips the master),
