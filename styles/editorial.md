@@ -258,3 +258,17 @@ Reference showed the pack executed at a higher bar. RULES going forward:
   wordcascades, promptcard, annotatezoom receipts x2 (blog.google pricing);
   Daniel Durant ASL live demo as a 3-shot floatcard run; facecam ~17% in 8
   pops. HeyGen voice measured ~148 wpm — budget 2.5 w/s. Ledger 2026-08-13.
+- mac-mini-m6-m5pro (Mac mini M6/M5 Pro, framed as price-hike-vs-specs):
+  split hook (Apple's own mac-mini page, real device + "From $899" / face);
+  `priceladder` reused for a genuine two-hop price change ($599→$699→$899,
+  two dated rows — see STYLE-RULES 2026-08-26 for why one row would have
+  overstated it); five Apple Newsroom receipts + one Macworld headline
+  receipt for the (outlet-reported, not Apple-stated) price-hike claim;
+  honesty beat on unchanged 256GB storage; closing take moved AFTER the
+  availability beat so the reel ends on payoff, not logistics. No music,
+  no CTA (dropped post-review). 18 scenes / 75.4s / facecam 26.5% (news
+  band exceeded deliberately — see STYLE-RULES). **Distilled the same
+  session: `AnnotateZoom.focus` is SOURCE PIXELS, not a 0-1 fraction like
+  `topFocusX` — read the component's own prop interface before reusing a
+  sibling prop's convention, and pull a full-resolution frame after the
+  first render of any new receipt before trusting a green gate run.**
