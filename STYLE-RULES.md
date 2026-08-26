@@ -5185,3 +5185,37 @@ precondition.** It now sits last of the three, outside the try.
 `test_script_pipeline` is 72 checks (was 66): the refusal, the backticked
 cue, the record's hash binding, the staleness refusal, and the compliant
 path after an edit (humanize the new words, re-record, propose, approve).
+
+## 2026-08-27 — auditing the two stages the report had skipped
+
+The user, reading the audit report: *"There is nothing written about research
+and scouting in the report."* Correct — it covered the trigger machinery and
+the suites, and said nothing about two whole pipeline stages. Audited both
+properly rather than writing them up from memory.
+
+**RESEARCH — one real gap.** `research_check` has four refusal modes. The
+suite tested two of them plus the SPOKEN cross-check; **`NO CLAIMS RECORDED`
+and `NO SEARCH LOG` were never tested.** Both work — probed directly, both
+refuse — but an untested refusal is one edit away from silently becoming an
+acceptance, which is the whole reason this repo tests its refusals rather
+than its successes. Both are now cases in `test_script_pipeline` (74 checks,
+was 72).
+
+**RESEARCH — a missing trigger at the right moment.** `fact-check-workflow`
+was cued only by `script_doctor`, on a claim SPOKEN harder than its evidence.
+By then the sentence already exists and the fix is a rewrite. The cheaper
+moment is when `propose` reports thin sourcing — one source, or one domain
+wearing two names — because the claim is still a claim. Cued there now.
+
+**SCOUTING — nothing wrong, which is worth recording.** All ten
+sourcing/scouting gates BLOCK, and every one carries at least one case in
+`test_gates`: G29 mobile-first capture (3 cases), G41 desktop needs a
+recorded reason (1), G39 every scene carries the line it illustrates (5),
+G14 credit (3), G15 numbers carry their source (1), G45 caption safe area
+(3), G48 framing (3), G35/G11/G13 render integrity (4 between them).
+`capture.mjs` defaults hold at 13 checks, including the two that had silently
+broken and shipped a whole scout session. `scout_sheet` self-tests.
+
+Rule 2 and Rule 3 are the two constitution rules these enforce, and both are
+enforced in code rather than remembered — which is the answer to "is scouting
+covered": yes, and here is the evidence rather than the assurance.

@@ -449,6 +449,14 @@ def cmd_propose(slug: str) -> None:
               "none of this blocks):")
         for _a in research_advice:
             print(f"  - {_a}")
+        # The RESEARCH moment, not the script moment. script_doctor cues this
+        # skill when a claim is SPOKEN harder than its evidence; by then the
+        # sentence already exists. Here the ledger itself is thin — one
+        # source, or one domain wearing two names — which is the moment to
+        # verify rather than to rewrite (2026-08-27).
+        print("\n  SKILL CUE: thin sourcing is what `fact-check-workflow` is "
+              "for —\n  verify it now, while it is still a claim and not yet "
+              "a spoken line.")
     review_path(slug).write_text(json.dumps({
         "script_sha256": sha(spoken),
         "structure_sha256": sha(st_p.read_text()),

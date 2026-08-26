@@ -142,6 +142,20 @@ def run() -> int:
                     "propose refuses SPOKEN words not in the script",
                     "not in the script")
 
+        # 3d-ii. Two ledger refusals that WORKED and were never tested, found
+        # 2026-08-27 by listing research_check's refusal modes and diffing
+        # against the cases here. An untested refusal is one edit away from
+        # silently becoming an acceptance.
+        (job / "research.md").write_text(
+            "# Research\n## CLAIMS\n\n## SEARCHED\n- 2026-08-27 a query\n")
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "propose refuses a ledger with no claims at all",
+                    "NO CLAIMS RECORDED")
+        (job / "research.md").write_text(RESEARCH.split("## SEARCHED")[0])
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "propose refuses a ledger with no dated search log",
+                    "NO SEARCH LOG")
+
         # 3e. THE HUMANIZER PASS (2026-08-27). Structure and ledger are now
         # both valid, so the only thing left is the half no checker measures.
         # It used to be cued only when a tic or an em-dash fired — meaning a
