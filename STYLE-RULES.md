@@ -5456,3 +5456,37 @@ listens and decides**, and the config changes only after that.
 
 Pace is not an objection: E runs 3.29 w/s at speed 1.12, and our band is
 2.35-2.75. That is the `speed` parameter, roughly 0.85 instead of 1.12.
+
+### DECISION: the voice stays `bb79e839`. The user chose it by ear. (2026-08-27)
+
+Having measured five generations and found `fae1de1f` "Dhvanesh" clearing the
+3.5 floor at 3.51 against our shipping voice's 2.14, the user listened to all
+three and **chose the voice we already ship**.
+
+**That decision stands and is not to be relitigated by measurement.** Whose
+voice this channel has is an identity question, and a pitch statistic has no
+standing to answer it. A future session reading the probe table above will see
+that E is +64% more expressive and be tempted to "fix" the config. Do not.
+It was offered, listened to, and declined.
+
+**What the probe was still worth:** it killed three wrong theories — that the
+model was the lever (eleven_v3 moved it 0.01), that audio tags were the lever
+(stripped, not spoken), and that we were pointed at the wrong one of three
+same-named voices (we were on the best of them). And it corrected a
+provider-level conclusion that had been generalised from a single sample.
+
+**Speed: NOT changed, because nothing measurable is wrong.** The user asked to
+"fix the speed", but that instruction was premised on switching to the
+Dhvanesh voice, which runs 3.29 w/s. On the chosen voice at the locked speed
+of 1.12, probe A measures **2.65 w/s** — inside our measured band of
+2.35-2.75. Changing a setting that is in band would be motion, not work. Said
+so and left it.
+
+**CONSEQUENCE TO WATCH — `vo_qc` will now flag every reel FLAT, forever.** Its
+floor is 3.5 and the chosen voice generates 2.14. A check that fires on every
+single run and is correctly ignored every single time is worse than no check:
+it trains the reader to skim past the one time it means something. This needs
+resolving — either the floor is wrong for a deliberately-chosen voice, or the
+advisory needs to carry the decision. Not fixed unilaterally, because
+weakening a check to make a warning go away is exactly the move this repo
+exists to prevent.
