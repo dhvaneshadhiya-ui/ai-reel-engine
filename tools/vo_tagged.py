@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Turn the APPROVED script into a tagged script to paste into ElevenLabs v3.
+"""Turn the APPROVED script into a tagged script for ElevenLabs v3.
 
 WHY THIS IS A SEPARATE ARTEFACT FROM script.md
 ----------------------------------------------
@@ -94,9 +94,10 @@ def main() -> int:
     print(tagged)
     print(f"\n  wrote {out.relative_to(ROOT)}")
     print(f"  tags used: {', '.join(f'{t}x{n}' for t, n in used.items())}")
-    print("\n  Paste this into ElevenLabs v3 with your voice. Stability:\n"
-          "  Natural to start, Creative if the tags barely register.\n"
-          "  Then: python3 tools/vo_external.py " + slug + " <downloaded.mp3>\n")
+    print("\n  SKILL CUE: generate this with the `news-reel` flow — "
+          "creative_generate_speech,\n  model eleven_v3, voice id from "
+          "config.json voice.elevenLabsVoiceId.\n  Then: python3 "
+          "tools/vo_external.py " + slug + " <downloaded.mp3>\n")
     print("  The WORDS are identical to the approved script — only tags were\n"
           "  added — so G53 will still match the read against the approval.\n")
     return 0

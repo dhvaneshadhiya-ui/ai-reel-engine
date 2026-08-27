@@ -247,9 +247,21 @@ Same words as the approved script, positional tags from `vo_direct`'s own
 registers. Only documented ElevenLabs tags are emitted; an unrecognised tag is
 spoken aloud or silently dropped.
 
-**2. The user generates it.** Paste into ElevenLabs v3 with the brand voice.
-Stability **Natural** first, **Creative** if the tags barely register —
-**Robust ignores tags by design.** Download the mp3.
+**2. Generate it — no manual step (ElevenLabs MCP, connected 2026-08-27).**
+`creative_generate_speech` with `model_id: eleven_v3` and the voice id in
+`config.json` (`voice.elevenLabsVoiceId`). Poll
+`creative_get_flow_run_status`, download the mp3 from `media[].url`.
+
+Verified: tags are ACTED, not spoken — the transcript comes back clean, with
+no `[curious]` audible. 3.17 semitones against HeyGen's 2.14 on identical
+words, speaker similarity 0.991.
+
+**The API exposes no stability control**, where the web UI does. A hand-made
+175-second take measured 3.60 and this 9.6-second one 3.17 — length, emotional
+range and stability all differ, so do not conclude the API is worse without
+separating them. If a read comes back flatter than wanted, the web UI with
+Creative stability is still available and `vo_external.py` takes its file
+just the same.
 
 **3. Prepare it.**
 

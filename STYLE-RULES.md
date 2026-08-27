@@ -5647,3 +5647,39 @@ and `avatar.voiceId` / `voiceSpeed` are left in place and correct for it.
 `vo_external` and then `vo_tagged` both landed with self-tests doctor did not
 run, and `vo_tagged` sat as an ORPHAN until AGENT.md named it. The rule I
 added this morning has now caught its own author three times.
+
+### ElevenLabs MCP connected — the manual step is gone (2026-08-27)
+
+The user connected the hosted ElevenLabs MCP (`https://api.elevenlabs.io/v1/mcp`,
+OAuth). It is not limited to agent management as its docs implied:
+`creative_generate_speech` takes `model_id: eleven_v3` and a workspace voice
+id, so the agent can now generate the read itself.
+
+Verified on the same sentence as the six HeyGen probes, voice
+`5dh6l1ILwXHgGBApxztn`:
+
+| | pitch | range | median | length |
+|---|---|---|---|---|
+| HeyGen TTS (what we shipped) | 2.14 | 6.7 | 168 | 10.2s |
+| HeyGen + eleven_v3 + tags | 2.15 | 5.8 | 167 | 10.8s |
+| **ElevenLabs MCP, v3 + tags** | **3.17** | 10.8 | 163 | 9.6s |
+| user's hand-made take | 3.60 | 12.3 | 170 | 175s |
+
+**+48% over HeyGen on identical words, and the TAGS ARE ACTED, NOT SPOKEN** —
+the transcript comes back clean with no `[curious]` audible, which is exactly
+what failed when the same tags were sent through HeyGen's `script` field.
+Speaker similarity 0.991 against different-speaker controls at 0.959/0.964.
+
+**Do NOT read 3.17 vs 3.60 as "the API is worse."** Three things differ at
+once: length (9.6s vs 175s — a short clip has less room to move), emotional
+range (three news sentences vs a demo script that swings through a hundred
+states), and stability (**the MCP exposes no stability parameter; the web UI
+does**). Untangle those before concluding anything. The web UI remains
+available and `vo_external.py` accepts its file identically.
+
+**Cost, so it is not a surprise:** ~190 credits for 9.6s, so a 70s reel runs
+roughly 1,400 credits.
+
+**A duplicate voice named "Dhvanesh" exists** (`kjnHU2BEEUxL4teU1fAg`). The id
+in config is the one the user named. Same trap as the three "iGeeks Blog"
+voices on the HeyGen side — a name is not an identifier.
