@@ -51,16 +51,16 @@
         "type": "receipt",
         "src": "assets/apple-surprise-and-shine/invite-hero.png",
         "srcWidth": 1080,
-        "srcHeight": 533,
+        "srcHeight": 920,
         "backdrop": "black",
-        "credit": "Apple",
+        "credit": "MacRumors",
         "highlights": [
           {
             "at": 0.35,
-            "x": 0,
-            "y": 380,
-            "w": 1080,
-            "h": 130
+            "x": 30,
+            "y": 20,
+            "w": 1020,
+            "h": 280
           }
         ],
         "captionBottom": 460,
@@ -70,7 +70,8 @@
             "vol": 0.14,
             "at": 0.0
           }
-        ]
+        ],
+        "creditOnScreen": true
       }
     },
     {
@@ -89,12 +90,12 @@
         "type": "annotatezoom",
         "src": "assets/apple-surprise-and-shine/ceo-receipt.png",
         "srcWidth": 1080,
-        "srcHeight": 695,
+        "srcHeight": 1940,
         "focus": {
-          "x": 20,
-          "y": 480,
-          "w": 1040,
-          "h": 140
+          "x": 40,
+          "y": 40,
+          "w": 1000,
+          "h": 760
         },
         "credit": "Apple Newsroom",
         "sfx": [
@@ -126,7 +127,7 @@
         "type": "receipt",
         "src": "assets/apple-surprise-and-shine/ceo-photo.png",
         "srcWidth": 1080,
-        "srcHeight": 475,
+        "srcHeight": 1440,
         "backdrop": "black",
         "credit": "Apple",
         "sfx": [

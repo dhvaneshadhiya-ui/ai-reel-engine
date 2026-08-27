@@ -5683,3 +5683,66 @@ roughly 1,400 credits.
 **A duplicate voice named "Dhvanesh" exists** (`kjnHU2BEEUxL4teU1fAg`). The id
 in config is the one the user named. Same trap as the three "iGeeks Blog"
 voices on the HeyGen side — a name is not an identifier.
+
+## 2026-08-27 — apple-surprise-and-shine: first reel through the external-voice flow
+
+End to end on the new pipeline. It worked, and it found four things.
+
+**The flow, as run:** `vo_tagged` -> `creative_generate_speech` (eleven_v3,
+voice `5dh6l1ILwXHgGBApxztn`) -> `vo_external` -> HeyGen asset upload ->
+`create_video_from_avatar` with `audioAssetId` -> `ingest_avatar` ->
+`compile_shot_plan` -> gates -> render. **HeyGen never spoke a word.**
+
+70.4s VO, 3.25 semitones (vs 2.14 from HeyGen's TTS on this voice), master
+70.5s at -14.53 LUFS, gates passed, frame-lint clean.
+
+**G53 earned its place on its first real run.** Pre-checked the VO against the
+approved script before spending the avatar render: **0.955**, every difference
+a whisper artefact ("fifteen"/"15", "onstage"/"on stage", "10 am"/"10am"), no
+drift. The gate that replaced the by-construction guarantee did its job.
+
+### Four faults found, all in the INHERITED sheet or my own edits
+
+**1. A credit named the wrong source.** Scene 01 credited "Apple" for a
+MacRumors page. That is a RIGHTS error, not a typo — we credit the source we
+actually used.
+
+**2. Geometry written against a different capture.** The shot plan carried
+`srcHeight` 533 / 695 / 475 for images that are 920 / 1940 / 1440, and an
+`annotatezoom` focus rect pointing at y=480 — which on the real capture is the
+Newsroom nav bar, not the headline. **A rect is meaningless without the file
+it was measured on.** Re-measured all three.
+
+**3. MY OWN G18 FIX INTRODUCED A LIP-SYNC DRIFT, AND NO GATE CAUGHT IT.**
+Fixing "the card vanishes before the sentence ends" by shortening the NEXT
+scene left a footage scene starting at 56.43s while still seeking `from`
+56.08s — 0.35s of drift for the rest of the reel. Gates passed. G01 passed.
+It surfaced only because the `[DUPLICATE]` flag made me look at those scenes
+at all. **A fix that moves a boundary must move `from` with it**, and there is
+currently no check that a footage scene's `from` matches its timeline start.
+That check is worth adding.
+
+**4. The hook was 7.1s of talking head** — and the two rules that guard it
+disagree in a productive way. `lint_frames` blocks a hook layout over 2.0s;
+`validate_job` requires the presenter visible in the opening scene. A receipt
+opener satisfied one and failed the other. The answer was already written in
+RULES.md — *"Face on screen by second 2 — usually a split hook"* — and the
+split (invite receipt above, presenter below, "APPLE CONFIRMS / SEPTEMBER 9")
+satisfies both plus the sound-off test that 7 seconds of a man talking fails
+outright.
+
+### Treatment history (do not repeat next reel)
+
+split hook (receipt over presenter) · annotatezoom on a press release
+headline · CONFIRMED specsheet vs EXPECTED-NOT-CONFIRMED specsheet as an
+honesty pair · wordcascade "NOT ONE PRODUCT NAMED" · comparison table
+"WHO'S SHIPPED A FOLD" · kinetic serif date card outro.
+
+### Left honestly unfixed
+
+- **Pace 2.90 w/s against a 2.35-2.75 band.** `creative_generate_speech`
+  exposes no speed parameter; the web UI does. Runtime still lands at 70.5s,
+  inside the 60-80s band.
+- **Outro typecard is 76% dead space** (limit 70%) — advisory.
+- **The hook headline overlaps the receipt's own text.** Readable, not clean.
+- **No packaging yet** — caption, hashtags, first comment, alt text.
