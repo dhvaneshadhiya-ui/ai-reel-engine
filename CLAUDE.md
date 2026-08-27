@@ -309,8 +309,14 @@ cd ai-reel-engine && bash setup.sh      # deps, whisper model, then doctor
 in the folder. `setup.sh` installs all of them except ffmpeg, which it checks
 for and tells you to install. `doctor.py` then names anything still missing.
 
-Three things that do NOT travel and must be redone on the new machine:
+Four things that do NOT travel and must be redone on the new machine:
+0. **The ElevenLabs connector** (added 2026-08-27) — the voice is generated
+   there now, so without it the pipeline cannot make a voiceover at all.
+   Claude client -> Settings -> Connectors -> Add custom connector ->
+   `https://api.elevenlabs.io/v1/mcp`, then sign in. Voice id lives in
+   `config.json` under `voice.elevenLabsVoiceId`.
 1. **The HeyGen connector** — configured in the Claude client, not the repo.
+   Still required: it does the avatar lip-sync.
 2. **`public/assets/<slug>/`** — per-reel footage. Deliberately excluded; it is
    large, re-fetchable and often third-party.
 3. **`out/`** — finished renders.
