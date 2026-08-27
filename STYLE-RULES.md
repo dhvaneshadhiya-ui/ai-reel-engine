@@ -5404,3 +5404,55 @@ not.
 **Next step is one click for the user, not more credits from us:** generate
 this exact sentence in the HeyGen UI with ElevenLabs V3 selected, download it,
 and measure. If it lands near 3.4 the fix is the path, not the voice.
+
+### The lever was the VOICE, not the model — and today's earlier conclusion was wrong (2026-08-27)
+
+Five generations, identical words, same avatar, same speed, one variable each:
+
+| | condition | pitch sd | range | median | w/s |
+|---|---|---|---|---|---|
+| A | `bb79e839` iGeeks Blog — **what we ship** | **2.14** | 6.7 | 168 | 2.65 |
+| B | same voice + `eleven_v3` @ stability 0.5 | 2.15 | 7.1 | 168 | 2.87 |
+| C | same voice + `eleven_v3` @ 0 + audio tags | 2.15 | 5.8 | 167 | 2.51 |
+| D | `9ce667b7` "Dhvanesh -- 59" | 3.21 | 10.0 | 136 | 4.07 |
+| **E** | **`fae1de1f` "Dhvanesh"** | **3.51** | 10.3 | 150 | 3.29 |
+
+**E clears the 3.5 floor.** +64% over the voice we ship, from changing one
+field. Every engine-level lever moved the number by 0.01; the voice moved it
+by 1.37.
+
+**CORRECTION — this repo recorded the wrong conclusion earlier today.** The
+record said the CLONE is flat, that settings/engines/references/per-beat
+direction all top out around 3.0 against a 3.5 floor, and that the answer was
+to keep HeyGen and hold Soniqo as a future re-clone rig. That was measured on
+**one voice** and generalised to the provider. The correct statement is
+narrower and much more useful: **the particular voice we selected is flat, and
+another voice already sitting in the same account clears the floor on the same
+provider, same avatar, same API path.**
+
+The failure was not the measurement. It was the SCOPE of the conclusion — one
+sample, generalised to "HeyGen has topped out". The account held six private
+voices; five were never measured until asked to check which of three
+same-named voices the UI used.
+
+**Also settled by the same run:** the account has THREE voices named "iGeeks
+Blog" (2.06 / 3.00 / 1.79 on previews) and we were on the best of those three,
+so the duplicate-name theory was dead — but the two `Dhvanesh`-named voices
+were never in that comparison at all.
+
+**Previews overstate. Do not tune off them.** `bb79e839` previews at 3.00 and
+generates at 2.14. Predictions from preview minus that 0.86 gap put D at ~2.42
+and E at ~2.51; both actually came in ~0.8-1.0 HIGHER. The gap is not a
+constant, so a preview ranks candidates and nothing more.
+
+**NOT CHANGED IN CONFIG, DELIBERATELY.** E is acoustically distinguishable
+from the shipping voice — 0.945 against probe A, where two independent
+different-speaker controls sit at 0.959 and 0.964, and median pitch is 150 Hz
+vs 168 Hz. That may mean "a different voice", or it may mean "the user's ACTUAL
+voice, versus a brand clone that was never him" — note `bb79e839` is named
+"iGeeks Blog" and the API lists it as gender *female*, while `fae1de1f` is
+named "Dhvanesh". **A number cannot settle whose voice this is. The user
+listens and decides**, and the config changes only after that.
+
+Pace is not an objection: E runs 3.29 w/s at speed 1.12, and our band is
+2.35-2.75. That is the `speed` parameter, roughly 0.85 instead of 1.12.
