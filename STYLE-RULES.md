@@ -5264,3 +5264,50 @@ person to ask "where does X happen?" — which is what the user did.
 not sourcing. The dated `## SEARCHED` log is mandatory precisely so a reel
 cannot be assembled out of whatever arrived in the prompt, and a topic given
 with no references changes nothing about what the ledger must contain.
+
+## 2026-08-27 — HeyGen exposes ElevenLabs V3 and we were never asking for it
+
+The user sent two HeyGen UI screenshots showing a **Voice Engine** dropdown set
+to **ElevenLabs V3**, a Stability slider, and audio tags (`[curious]`,
+`[excited]`, `[pause]`) sitting inside one of our own scripts.
+
+**Checked what our pipeline actually sends: `voiceId` and `speed: 1.12`.
+Nothing else.** No engine, no model, no stability, no style. HeyGen therefore
+picks the default model for that voice, and there is no reason to think that
+default is v3.
+
+The API has supported this the whole time:
+
+```
+voiceSettings.engine_settings = {
+  engine_type: "elevenlabs",
+  model: "eleven_v3" | "eleven_multilingual_v2" | "eleven_turbo_v2_5"
+       | "eleven_flash_v2_5",
+  stability, style, similarity_boost, use_speaker_boost
+}
+```
+
+with one constraint that decodes the whole UI: **"When using eleven_v3,
+stability must be 0, 0.5, or 1"** — exactly the Creative / Natural / Robust
+presets in ElevenLabs' own docs.
+
+**This casts doubt on a conclusion recorded earlier today.** We measured the
+clone at 1.86 semitones, concluded the CLONE was flat and that HeyGen had
+topped out, and recorded a decision to keep HeyGen while treating Soniqo as a
+future re-clone rig. But the user's own v3 generations of a different script
+measured 3.22 and 3.41 — nearly double — on ElevenLabs. If the flatness was
+the MODEL rather than the voice, that conclusion was wrong about its cause.
+Probe running: identical words, same voice, control vs eleven_v3 @ 0.5 vs
+eleven_v3 @ 0 with tags, all measured by `vo_qc`.
+
+**Design constraint decided before any config change: TAGS DO NOT GO IN
+`script.md`.** G27 hashes the approved narration and G21 verifies captions
+against it, so markup in the script would mean the user approves `[curious]`
+as if it were words, and the caption check would compare against words nobody
+speaks. Tags are DELIVERY, like voiceSpeed — they belong in the beat sheet and
+are injected into the HeyGen payload at generation. `tools/vo_direct.py`
+already holds per-beat registers and is the right home.
+
+**HeyGen's "Enhance voice" toggle stays OFF.** It inserts tags automatically:
+the delivery stops being reproducible, and a tool starts editing text the user
+approved.
