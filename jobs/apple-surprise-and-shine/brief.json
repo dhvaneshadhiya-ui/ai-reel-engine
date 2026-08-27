@@ -1,0 +1,28 @@
+{
+  "slug": "apple-surprise-and-shine",
+  "topic": "Apple officially announces 'Surprise and Shine' event for September 9, 2026 — the first keynote under incoming CEO John Ternus, expected to unveil the iPhone 18 Pro lineup and Apple's first foldable iPhone",
+  "details": "",
+  "subject": "Apple officially announces 'Surprise and Shine' event for September 9, 2026 — the first keynote under incoming CEO John Ternus, expected to unveil the iPhone 18 Pro lineup and Apple's first foldable iPhone",
+  "audience": "iPhone/Apple watchers who already know the 18 Pro and foldable rumors were floating and want to know what just became official vs still guesswork",
+  "platform": "both",
+  "goal": "awareness",
+  "core_value": "what Apple actually confirmed today (date, time, tagline, first Ternus keynote) vs what's still rumor (foldable specs, pricing) — so viewer isn't fooled by rumor-as-fact",
+  "desired_action": "none",
+  "reveal_target": "none",
+  "cta_keyword": "",
+  "target_duration": "75s",
+  "tone": "editorial news register — measured, confident on confirmed facts, explicitly hedged on rumors, no hype-voice",
+  "source_policy": "official-preferred",
+  "footage_constraints": "no official product renders exist yet (nothing has shipped) — visuals are the real invite/tagline, official Apple newsroom CEO-transition material, and captioned on-screen stat cards for rumored specs; mobile captures of 9to5mac/MacRumors/AppleInsider coverage pages per capture policy",
+  "credit_instructions": "on-screen",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 75,
+  "music": false,
+  "created_at": "2026-08-27T04:57:04.841972+00:00",
+  "status": "initialized"
+}

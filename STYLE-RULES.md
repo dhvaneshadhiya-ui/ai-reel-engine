@@ -4603,3 +4603,50 @@ a real fragment rather than trusting a filename.
 
 doctor runs it, so a clause that quietly stops being enforced fails the first
 command of the session instead of waiting to be asked a fifth time.
+
+## 2026-08-27 — apple-surprise-and-shine: whisper writes spoken "AM"/"PM" as an orphan ".m." token, and it is not a TTS defect
+
+RAW NOTE: gate G34 blocked the render on `'.m. Pacific, Steve' carries an
+orphan single-letter token '.m.'`. The script says "10 AM Pacific" — whisper
+tokenized it as `"a"` then `".m."`, and the two landed in DIFFERENT caption
+chunks ("now. 10 a" / ".m. Pacific, Steve"), so no chunk-level phrase
+correction could ever bridge them.
+
+ROOT CAUSE, and the thing worth writing down: my first instinct was to treat
+this like the "Pegatron T" case (2026-08-13) — a stray TTS sound, fix by
+cutting the master and re-whispering. It was NOT. Isolated whisper on the
+2.3s slice, run at BOTH `base`/`small` AND `medium`, transcribed the SAME
+audio as `"9 to 5 Mac"` / `"10 a.m. Pacific"` cleanly every time. The
+smaller-model mis-hearing I chased first (`"925 Mac"`) across THREE HeyGen
+probe regenerations was itself a false positive of exactly the kind this
+skill already warns about ("a misspelling from whisper base is NOT proof of
+a mispronunciation") — I just hadn't yet hit the case where the SAME
+false-positive shape (an isolated short clip transcribing worse than the
+full-context original) also produces a gate-blocking artifact, which made it
+look load-bearing enough to chase. Two lessons compound into one: (1) always
+re-verify an isolated-slice transcription against the ORIGINAL full-context
+audio before spending credits on a fix, and (2) a confirmed orphan-token
+GATE is not by itself proof the audio is wrong — verify with the same
+isolated-medium-model check before concluding "cut it from the master."
+
+DISTILLED RULE: `scripts/compile_shot_plan.py` now merges a lone `"a"`/`"p"`
+token followed by a `".m."`-shaped token into one `"AM"`/`"PM"` caption word,
+the same class of fix as the existing hyphen-prefix and leading-punct+digit
+merges — general, not a per-reel patch, with a self-test in
+`tools/test_script_pipeline.py` (3 cases: AM merges, PM merges, an ordinary
+`"a"` with nothing after it is left alone). Any future reel that states a
+time this way inherits the fix for free.
+
+TREATMENT HISTORY (apple-surprise-and-shine, so the next Apple-event reel
+does not repeat it): hook = pure facecam, no card (2 sentences, ~8s — no
+split/BrandHook this time). `receipt` (not `floatcard`) used TWICE on real
+stills with no highlights, for a gentle ken-burns push-in on a photo —
+`floatcard` cannot play a still at all (G35: it renders via
+`<OffthreadVideo>`). `specsheet` used three times for confirmed-facts /
+expected-products / historical-comparison tables, no `statcard` and no
+`comparesplit`. One `wordcascade` stinger, two plain black `typecard`s
+(over G12's max-1 advice — the mid-reel one and the closing date card serve
+different jobs, judged worth it). Deliberately did NOT reuse
+`september-preview`'s `floatcard` treatment on the same Cook/Ternus official
+photo, or its `receipt`+`annotatezoom`-on-deviceframe treatment for the
+foldable-rumor beat.

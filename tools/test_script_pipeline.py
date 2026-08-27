@@ -481,6 +481,55 @@ def run() -> int:
     ok("reverse join resolves (cc+usage == ccusage)", (s, e) == (1, 3))
     expect_exit(lambda: csp.find_phrase(tw, "words never spoken", 0, "x"),
                 "an absent phrase still refuses", "could not resolve")
+    # whisper writes a spoken time-of-day "AM"/"PM" as TWO tokens — "a" (or
+    # "p") then ".m." — because it renders the sound as the written
+    # abbreviation "a.m.". Left unmerged, the second token is an orphan
+    # single-letter caption (gate G34). Found 2026-08-27 on
+    # apple-surprise-and-shine: confirmed by isolated whisper (base AND
+    # medium) that the AUDIO is clean ("10 a.m. Pacific") — this is
+    # whisper's own house style, not a TTS artifact, so it is a merge like
+    # the hyphen/leading-punct ones above it, not a re-record.
+    print("\n  -- 'a.m.'/'p.m.' orphan-token merge --")
+    am_json = {"words": [
+        {"start": 0.0, "end": 0.2, "word": "10"},
+        {"start": 0.2, "end": 0.3, "word": "a"},
+        {"start": 0.3, "end": 0.4, "word": ".m."},
+        {"start": 0.4, "end": 0.6, "word": "Pacific,"},
+    ]}
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        json.dump(am_json, f)
+        am_path = Path(f.name)
+    words = csp.load_words(am_path)
+    ok("'a' + '.m.' merge into one AM token",
+       [w["text"] for w in words] == ["10", "AM", "Pacific,"])
+    ok("merged AM token normalises to 'am' (still anchor-resolvable)",
+       words[1]["norm"] == "am")
+    pm_json = {"words": [
+        {"start": 0.0, "end": 0.2, "word": "5"},
+        {"start": 0.2, "end": 0.3, "word": "p"},
+        {"start": 0.3, "end": 0.4, "word": ".m."},
+    ]}
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        json.dump(pm_json, f)
+        pm_path = Path(f.name)
+    ok("'p' + '.m.' merges into PM (not just 'a')",
+       [w["text"] for w in csp.load_words(pm_path)] == ["5", "PM"])
+    # An ordinary "a" not followed by a lone ".m." token must NOT be touched
+    # — the merge is keyed on the SPECIFIC two-token pattern, not on any "a".
+    safe_json = {"words": [
+        {"start": 0.0, "end": 0.1, "word": "a"},
+        {"start": 0.1, "end": 0.3, "word": "date,"},
+        {"start": 0.3, "end": 0.4, "word": "not"},
+        {"start": 0.4, "end": 0.5, "word": "a"},
+        {"start": 0.5, "end": 0.7, "word": "lineup."},
+    ]}
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        json.dump(safe_json, f)
+        safe_path = Path(f.name)
+    ok("an ordinary 'a' with no '.m.' after it is left alone",
+       [w["text"] for w in csp.load_words(safe_path)]
+       == ["a", "date,", "not", "a", "lineup."])
+
     # STYLE FOLLOWS FORMAT. CLAUDE.md's locked table says editorial = news /
     # comparison and utility = top5 / ai-tools, and "loaded every session"
     # was treated as enforcement — it is not. claude-eating-tokens rendered

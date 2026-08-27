@@ -1,0 +1,447 @@
+{
+  "emphasis": [
+    "Tim Cook",
+    "Ternus",
+    "first-ever",
+    "expected",
+    "confirmed"
+  ],
+  "caption_corrections": {
+    "Theatre": "Theater",
+    "four": "4",
+    "five": "5"
+  },
+  "shots": [
+    {
+      "start_phrase": "On September 9th,",
+      "line": "On September 9th, the person walking out to reveal the new iPhone won't be Tim Cook \u2014 that hasn't happened in fifteen years.",
+      "needs": [
+        "September",
+        "9th",
+        "person",
+        "walking",
+        "iPhone",
+        "Tim",
+        "Cook",
+        "fifteen",
+        "years"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-surprise-and-shine/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "That's the event",
+      "line": "That's the event Apple just confirmed: \"Surprise and shine,\" and it's incoming CEO John Ternus's very first keynote.",
+      "needs": [
+        "event",
+        "Apple",
+        "confirmed",
+        "Surprise",
+        "shine",
+        "Ternus",
+        "keynote"
+      ],
+      "tier": "official",
+      "asset_id": "invite-hero",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-surprise-and-shine/invite-hero.png",
+        "srcWidth": 1080,
+        "srcHeight": 533,
+        "backdrop": "black",
+        "credit": "Apple",
+        "highlights": [
+          {
+            "at": 0.35,
+            "x": 0,
+            "y": 380,
+            "w": 1080,
+            "h": 130
+          }
+        ],
+        "captionBottom": 460,
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "vol": 0.14,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Here's why: Cook",
+      "line": "Here's why: Cook moves up to executive chairman on September 1st.",
+      "needs": [
+        "Cook",
+        "executive",
+        "chairman",
+        "September",
+        "1st"
+      ],
+      "tier": "official",
+      "asset_id": "ceo-receipt",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/apple-surprise-and-shine/ceo-receipt.png",
+        "srcWidth": 1080,
+        "srcHeight": 695,
+        "focus": {
+          "x": 20,
+          "y": 480,
+          "w": 1040,
+          "h": 140
+        },
+        "credit": "Apple Newsroom",
+        "sfx": [
+          {
+            "src": "sfx/whoosh.MP3",
+            "vol": 0.13,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Four days later,",
+      "line": "Four days later, Ternus steps up instead \u2014 not an outsider, but the guy who's run Apple's hardware engineering for the past five years.",
+      "needs": [
+        "Four",
+        "days",
+        "later",
+        "Ternus",
+        "outsider",
+        "hardware",
+        "engineering",
+        "five",
+        "years"
+      ],
+      "tier": "official",
+      "asset_id": "ceo-photo",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-surprise-and-shine/ceo-photo.png",
+        "srcWidth": 1080,
+        "srcHeight": 475,
+        "backdrop": "black",
+        "credit": "Apple",
+        "sfx": [
+          {
+            "src": "sfx2/whooshes-01.mp3",
+            "vol": 0.15,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Here's what's real",
+      "line": "Here's what's real right now: 10 AM Pacific, Steve Jobs Theater, one tagline.",
+      "needs": [
+        "real",
+        "10",
+        "AM",
+        "Pacific",
+        "Steve",
+        "Jobs",
+        "Theater",
+        "tagline"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "CONFIRMED",
+        "kicker": "WHAT APPLE ACTUALLY SAID",
+        "rows": [
+          {
+            "label": "Date & time",
+            "value": "Sep 9 \u00b7 10:00 AM PT"
+          },
+          {
+            "label": "Location",
+            "value": "Steve Jobs Theater"
+          },
+          {
+            "label": "Tagline",
+            "value": "\"Surprise and shine\"",
+            "accent": true
+          }
+        ],
+        "footnote": "MacRumors \u00b7 Apple's own invite",
+        "sfx": [
+          {
+            "src": "sfx/Pop.MP3",
+            "vol": 0.13,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Not one product",
+      "line": "Not one product named yet \u2014 you get a date, not a lineup.",
+      "needs": [
+        "product",
+        "named",
+        "yet",
+        "date",
+        "lineup"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "wordcascade",
+        "bg": "black",
+        "bottomSrc": "assets/apple-surprise-and-shine/avatar-master.mp4",
+        "words": [
+          {
+            "text": "NOT ONE",
+            "style": "serif",
+            "at": 0.2
+          },
+          {
+            "text": "PRODUCT NAMED",
+            "style": "serif",
+            "at": 1.1,
+            "accent": true
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx2/ground-impact-352053.mp3",
+            "vol": 0.16,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Reportedly on deck:",
+      "line": "Reportedly on deck: the iPhone 18 Pro and Pro Max,",
+      "needs": [
+        "Reportedly",
+        "iPhone",
+        "18",
+        "Pro",
+        "Max"
+      ],
+      "tier": "multi",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "EXPECTED \u2014 NOT CONFIRMED",
+        "kicker": "MACRUMORS \u00b7 9TO5MAC",
+        "rows": [
+          {
+            "label": "iPhone 18 Pro / Pro Max",
+            "value": "expected"
+          }
+        ],
+        "footnote": "Reported by name, not announced by Apple",
+        "sfx": [
+          {
+            "src": "sfx/Click.MP3",
+            "vol": 0.12,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "folding iPhone, one",
+      "line": "and Apple's first-ever folding iPhone, one that opens like a book into a tablet-sized screen, according to MacRumors and 9to5Mac.",
+      "needs": [
+        "Apple's",
+        "first-ever",
+        "folding",
+        "iPhone",
+        "book",
+        "tablet-sized",
+        "MacRumors",
+        "9to5Mac"
+      ],
+      "tier": "multi",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "EXPECTED \u2014 NOT CONFIRMED",
+        "kicker": "MACRUMORS \u00b7 9TO5MAC",
+        "rows": [
+          {
+            "label": "iPhone 18 Pro / Pro Max",
+            "value": "expected"
+          },
+          {
+            "label": "Folding iPhone",
+            "value": "Apple's first ever",
+            "accent": true
+          }
+        ],
+        "footnote": "Reported by name, not announced by Apple",
+        "sfx": [
+          {
+            "src": "sfx/Core.MP3",
+            "vol": 0.13,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Meaning, Apple's finally",
+      "line": "Meaning, Apple's finally moving off a slab shape it's kept since the very first iPhone.",
+      "needs": [
+        "Apple's",
+        "finally",
+        "slab",
+        "shape",
+        "kept",
+        "first",
+        "iPhone"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "typecard",
+        "kinetic": {
+          "text": "SAME SHAPE\nEVERY YEAR SINCE",
+          "style": "serif",
+          "at": 0.2,
+          "y": 0.4
+        },
+        "bg": "black",
+        "sfx": [
+          {
+            "src": "sfx/Whoosh (Reversed).MP3",
+            "vol": 0.12,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Samsung's had a",
+      "line": "Samsung's had a folding phone since 2019. Google since 2023. Apple never has \u2014 until, maybe, now.",
+      "needs": [
+        "Samsung's",
+        "folding",
+        "phone",
+        "2019",
+        "Google",
+        "2023",
+        "Apple",
+        "never"
+      ],
+      "tier": "single",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "WHO'S SHIPPED A FOLD",
+        "rows": [
+          {
+            "label": "Samsung",
+            "value": "2019"
+          },
+          {
+            "label": "Google",
+            "value": "2023"
+          },
+          {
+            "label": "Apple",
+            "value": "never \u2014 yet",
+            "accent": true
+          }
+        ],
+        "footnote": "Public launch record"
+      }
+    },
+    {
+      "start_phrase": "Still, nothing beyond",
+      "line": "Still, nothing beyond the date is confirmed.",
+      "needs": [
+        "Still",
+        "nothing",
+        "beyond",
+        "date",
+        "confirmed"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-surprise-and-shine/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "Underneath all that,",
+      "line": "Underneath all that, here's what you're actually watching for: what an Apple without Tim Cook onstage even looks like.",
+      "needs": [
+        "Underneath",
+        "watching",
+        "Apple",
+        "without",
+        "Tim",
+        "Cook",
+        "onstage"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-surprise-and-shine/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "Two firsts, one",
+      "line": "Two firsts, one morning.",
+      "needs": [
+        "Two",
+        "firsts",
+        "one",
+        "morning"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-surprise-and-shine/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "That's what's real",
+      "line": "That's what's real \u2014 everything else, September 9th tells us.",
+      "needs": [
+        "real",
+        "everything",
+        "else",
+        "September",
+        "9th",
+        "tells"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "typecard",
+        "kinetic": {
+          "text": "SEPTEMBER 9",
+          "style": "serif",
+          "at": 0.2,
+          "y": 0.45
+        },
+        "bg": "black",
+        "sfx": [
+          {
+            "src": "sfx2/impact-boom.mp3",
+            "vol": 0.18,
+            "at": 0.0
+          }
+        ]
+      }
+    }
+  ]
+}
