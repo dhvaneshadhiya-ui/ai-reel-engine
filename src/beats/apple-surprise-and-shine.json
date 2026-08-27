@@ -1,0 +1,1561 @@
+{
+  "id": "apple-surprise-and-shine",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/apple-surprise-and-shine/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "Tim Cook",
+    "Ternus",
+    "first-ever",
+    "expected",
+    "confirmed"
+  ],
+  "scenes": [
+    {
+      "type": "footage",
+      "src": "assets/apple-surprise-and-shine/avatar-master.mp4",
+      "durationSec": 8.12,
+      "from": 0.0,
+      "focusX": 0.5
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-surprise-and-shine/invite-hero.png",
+      "srcWidth": 1080,
+      "srcHeight": 533,
+      "backdrop": "black",
+      "credit": "Apple",
+      "highlights": [
+        {
+          "at": 0.35,
+          "x": 0,
+          "y": 380,
+          "w": 1080,
+          "h": 130
+        }
+      ],
+      "captionBottom": 460,
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 9.0,
+      "assetId": "invite-hero",
+      "claimId": "invite-hero",
+      "covers": "That's the event"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/apple-surprise-and-shine/ceo-receipt.png",
+      "srcWidth": 1080,
+      "srcHeight": 695,
+      "focus": {
+        "x": 20,
+        "y": 480,
+        "w": 1040,
+        "h": 140
+      },
+      "credit": "Apple Newsroom",
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 4.64,
+      "assetId": "ceo-receipt",
+      "claimId": "ceo-receipt",
+      "covers": "Here's why: Cook"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-surprise-and-shine/ceo-photo.png",
+      "srcWidth": 1080,
+      "srcHeight": 475,
+      "backdrop": "black",
+      "credit": "Apple",
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "vol": 0.543,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 8.4,
+      "assetId": "ceo-photo",
+      "claimId": "ceo-photo",
+      "covers": "Four days later,"
+    },
+    {
+      "type": "specsheet",
+      "title": "CONFIRMED",
+      "kicker": "WHAT APPLE ACTUALLY SAID",
+      "rows": [
+        {
+          "label": "Date & time",
+          "value": "Sep 9 \u00b7 10:00 AM PT"
+        },
+        {
+          "label": "Location",
+          "value": "Steve Jobs Theater"
+        },
+        {
+          "label": "Tagline",
+          "value": "\"Surprise and shine\"",
+          "accent": true
+        }
+      ],
+      "footnote": "MacRumors \u00b7 Apple's own invite",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.343,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 4.6
+    },
+    {
+      "type": "wordcascade",
+      "bg": "black",
+      "bottomSrc": "assets/apple-surprise-and-shine/avatar-master.mp4",
+      "words": [
+        {
+          "text": "NOT ONE",
+          "style": "serif",
+          "at": 0.2
+        },
+        {
+          "text": "PRODUCT NAMED",
+          "style": "serif",
+          "at": 1.1,
+          "accent": true
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx2/ground-impact-352053.mp3",
+          "vol": 0.394,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 3.1,
+      "bottomFrom": 34.76,
+      "bottomFocusX": 0.5
+    },
+    {
+      "type": "specsheet",
+      "title": "EXPECTED \u2014 NOT CONFIRMED",
+      "kicker": "MACRUMORS \u00b7 9TO5MAC",
+      "rows": [
+        {
+          "label": "iPhone 18 Pro / Pro Max",
+          "value": "expected"
+        }
+      ],
+      "footnote": "Reported by name, not announced by Apple",
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "vol": 0.251,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 4.54
+    },
+    {
+      "type": "specsheet",
+      "title": "EXPECTED \u2014 NOT CONFIRMED",
+      "kicker": "MACRUMORS \u00b7 9TO5MAC",
+      "rows": [
+        {
+          "label": "iPhone 18 Pro / Pro Max",
+          "value": "expected"
+        },
+        {
+          "label": "Folding iPhone",
+          "value": "Apple's first ever",
+          "accent": true
+        }
+      ],
+      "footnote": "Reported by name, not announced by Apple",
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "vol": 0.556,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 7.56
+    },
+    {
+      "type": "typecard",
+      "kinetic": {
+        "text": "SAME SHAPE\nEVERY YEAR SINCE",
+        "style": "serif",
+        "at": 0.2,
+        "y": 0.4
+      },
+      "bg": "black",
+      "sfx": [
+        {
+          "src": "sfx/Whoosh (Reversed).MP3",
+          "vol": 0.331,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 4.22
+    },
+    {
+      "type": "specsheet",
+      "title": "WHO'S SHIPPED A FOLD",
+      "rows": [
+        {
+          "label": "Samsung",
+          "value": "2019"
+        },
+        {
+          "label": "Google",
+          "value": "2023"
+        },
+        {
+          "label": "Apple",
+          "value": "never \u2014 yet",
+          "accent": true
+        }
+      ],
+      "footnote": "Public launch record",
+      "durationSec": 7.98
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-surprise-and-shine/avatar-master.mp4",
+      "durationSec": 2.4,
+      "from": 62.16,
+      "focusX": 0.5
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-surprise-and-shine/avatar-master.mp4",
+      "durationSec": 6.76,
+      "from": 64.56,
+      "focusX": 0.5
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-surprise-and-shine/avatar-master.mp4",
+      "durationSec": 1.6,
+      "from": 71.32,
+      "focusX": 0.5
+    },
+    {
+      "type": "typecard",
+      "kinetic": {
+        "text": "SEPTEMBER 9",
+        "style": "serif",
+        "at": 0.2,
+        "y": 0.45
+      },
+      "bg": "black",
+      "sfx": [
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "vol": 0.452,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 3.647
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 2.0,
+      "text": "On September 9th,",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "On"
+        },
+        {
+          "t": 0.86,
+          "text": "September"
+        },
+        {
+          "t": 1.24,
+          "text": "9th,"
+        }
+      ]
+    },
+    {
+      "start": 2.0,
+      "end": 2.82,
+      "text": "the person walking",
+      "words": [
+        {
+          "t": 2.0,
+          "text": "the"
+        },
+        {
+          "t": 2.2,
+          "text": "person"
+        },
+        {
+          "t": 2.52,
+          "text": "walking"
+        }
+      ]
+    },
+    {
+      "start": 2.82,
+      "end": 3.6,
+      "text": "out to reveal",
+      "words": [
+        {
+          "t": 2.82,
+          "text": "out"
+        },
+        {
+          "t": 3.06,
+          "text": "to"
+        },
+        {
+          "t": 3.28,
+          "text": "reveal"
+        }
+      ]
+    },
+    {
+      "start": 3.6,
+      "end": 4.46,
+      "text": "the new iPhone",
+      "words": [
+        {
+          "t": 3.6,
+          "text": "the"
+        },
+        {
+          "t": 3.94,
+          "text": "new"
+        },
+        {
+          "t": 4.08,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 4.46,
+      "end": 5.3,
+      "text": "won't be Tim",
+      "words": [
+        {
+          "t": 4.46,
+          "text": "won't"
+        },
+        {
+          "t": 4.88,
+          "text": "be"
+        },
+        {
+          "t": 5.02,
+          "text": "Tim"
+        }
+      ]
+    },
+    {
+      "start": 5.3,
+      "end": 6.52,
+      "text": "Cook. That hasn't",
+      "words": [
+        {
+          "t": 5.3,
+          "text": "Cook."
+        },
+        {
+          "t": 5.88,
+          "text": "That"
+        },
+        {
+          "t": 6.16,
+          "text": "hasn't"
+        }
+      ]
+    },
+    {
+      "start": 6.52,
+      "end": 7.4,
+      "text": "happened in 15",
+      "words": [
+        {
+          "t": 6.52,
+          "text": "happened"
+        },
+        {
+          "t": 6.82,
+          "text": "in"
+        },
+        {
+          "t": 7.06,
+          "text": "15"
+        }
+      ]
+    },
+    {
+      "start": 7.4,
+      "end": 8.6,
+      "text": "years. That's the",
+      "words": [
+        {
+          "t": 7.4,
+          "text": "years."
+        },
+        {
+          "t": 8.12,
+          "text": "That's"
+        },
+        {
+          "t": 8.46,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 8.6,
+      "end": 9.52,
+      "text": "event Apple just",
+      "words": [
+        {
+          "t": 8.6,
+          "text": "event"
+        },
+        {
+          "t": 8.88,
+          "text": "Apple"
+        },
+        {
+          "t": 9.26,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 9.52,
+      "end": 11.22,
+      "text": "confirmed. Surprise and",
+      "words": [
+        {
+          "t": 9.52,
+          "text": "confirmed."
+        },
+        {
+          "t": 10.5,
+          "text": "Surprise"
+        },
+        {
+          "t": 10.92,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 11.22,
+      "end": 12.28,
+      "text": "shine and its",
+      "words": [
+        {
+          "t": 11.22,
+          "text": "shine"
+        },
+        {
+          "t": 11.5,
+          "text": "and"
+        },
+        {
+          "t": 12.12,
+          "text": "its"
+        }
+      ]
+    },
+    {
+      "start": 12.28,
+      "end": 14.58,
+      "text": "incoming CEO, John",
+      "words": [
+        {
+          "t": 12.28,
+          "text": "incoming"
+        },
+        {
+          "t": 12.76,
+          "text": "CEO,"
+        },
+        {
+          "t": 14.2,
+          "text": "John"
+        }
+      ]
+    },
+    {
+      "start": 14.58,
+      "end": 16.36,
+      "text": "Ternus' very first",
+      "words": [
+        {
+          "t": 14.58,
+          "text": "Ternus'"
+        },
+        {
+          "t": 15.22,
+          "text": "very"
+        },
+        {
+          "t": 15.9,
+          "text": "first"
+        }
+      ]
+    },
+    {
+      "start": 16.36,
+      "end": 17.64,
+      "text": "keynote. Here's why.",
+      "words": [
+        {
+          "t": 16.36,
+          "text": "keynote."
+        },
+        {
+          "t": 17.12,
+          "text": "Here's"
+        },
+        {
+          "t": 17.42,
+          "text": "why."
+        }
+      ]
+    },
+    {
+      "start": 18.12,
+      "end": 18.76,
+      "text": "Cook moves up",
+      "words": [
+        {
+          "t": 18.12,
+          "text": "Cook"
+        },
+        {
+          "t": 18.16,
+          "text": "moves"
+        },
+        {
+          "t": 18.46,
+          "text": "up"
+        }
+      ]
+    },
+    {
+      "start": 18.76,
+      "end": 19.96,
+      "text": "to Executive Chairman",
+      "words": [
+        {
+          "t": 18.76,
+          "text": "to"
+        },
+        {
+          "t": 18.94,
+          "text": "Executive"
+        },
+        {
+          "t": 19.36,
+          "text": "Chairman"
+        }
+      ]
+    },
+    {
+      "start": 19.96,
+      "end": 21.44,
+      "text": "on September 1st.",
+      "words": [
+        {
+          "t": 19.96,
+          "text": "on"
+        },
+        {
+          "t": 20.24,
+          "text": "September"
+        },
+        {
+          "t": 20.66,
+          "text": "1st."
+        }
+      ]
+    },
+    {
+      "start": 21.76,
+      "end": 22.5,
+      "text": "4 days later,",
+      "words": [
+        {
+          "t": 21.76,
+          "text": "4"
+        },
+        {
+          "t": 21.96,
+          "text": "days"
+        },
+        {
+          "t": 22.16,
+          "text": "later,"
+        }
+      ]
+    },
+    {
+      "start": 22.68,
+      "end": 23.72,
+      "text": "Ternus steps up",
+      "words": [
+        {
+          "t": 22.68,
+          "text": "Ternus"
+        },
+        {
+          "t": 22.96,
+          "text": "steps"
+        },
+        {
+          "t": 23.24,
+          "text": "up"
+        }
+      ]
+    },
+    {
+      "start": 23.72,
+      "end": 24.88,
+      "text": "instead, not an",
+      "words": [
+        {
+          "t": 23.72,
+          "text": "instead,"
+        },
+        {
+          "t": 24.38,
+          "text": "not"
+        },
+        {
+          "t": 24.72,
+          "text": "an"
+        }
+      ]
+    },
+    {
+      "start": 24.88,
+      "end": 25.72,
+      "text": "outsider, but the",
+      "words": [
+        {
+          "t": 24.88,
+          "text": "outsider,"
+        },
+        {
+          "t": 25.32,
+          "text": "but"
+        },
+        {
+          "t": 25.54,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 25.72,
+      "end": 27.06,
+      "text": "guy who's run",
+      "words": [
+        {
+          "t": 25.72,
+          "text": "guy"
+        },
+        {
+          "t": 25.98,
+          "text": "who's"
+        },
+        {
+          "t": 26.44,
+          "text": "run"
+        }
+      ]
+    },
+    {
+      "start": 27.06,
+      "end": 28.5,
+      "text": "Apple's hardware engineering",
+      "words": [
+        {
+          "t": 27.06,
+          "text": "Apple's"
+        },
+        {
+          "t": 27.66,
+          "text": "hardware"
+        },
+        {
+          "t": 28.02,
+          "text": "engineering"
+        }
+      ]
+    },
+    {
+      "start": 28.5,
+      "end": 29.26,
+      "text": "for the past",
+      "words": [
+        {
+          "t": 28.5,
+          "text": "for"
+        },
+        {
+          "t": 28.86,
+          "text": "the"
+        },
+        {
+          "t": 29.0,
+          "text": "past"
+        }
+      ]
+    },
+    {
+      "start": 29.26,
+      "end": 30.48,
+      "text": "5 years. Here's",
+      "words": [
+        {
+          "t": 29.26,
+          "text": "5"
+        },
+        {
+          "t": 29.52,
+          "text": "years."
+        },
+        {
+          "t": 30.16,
+          "text": "Here's"
+        }
+      ]
+    },
+    {
+      "start": 30.48,
+      "end": 31.22,
+      "text": "what's real right",
+      "words": [
+        {
+          "t": 30.48,
+          "text": "what's"
+        },
+        {
+          "t": 30.76,
+          "text": "real"
+        },
+        {
+          "t": 30.96,
+          "text": "right"
+        }
+      ]
+    },
+    {
+      "start": 31.22,
+      "end": 32.1,
+      "text": "now. 10 AM",
+      "words": [
+        {
+          "t": 31.22,
+          "text": "now."
+        },
+        {
+          "t": 31.6,
+          "text": "10"
+        },
+        {
+          "t": 31.78,
+          "text": "AM"
+        }
+      ]
+    },
+    {
+      "start": 32.16,
+      "end": 33.18,
+      "text": "Pacific, Steve Jobs",
+      "words": [
+        {
+          "t": 32.16,
+          "text": "Pacific,"
+        },
+        {
+          "t": 32.68,
+          "text": "Steve"
+        },
+        {
+          "t": 32.9,
+          "text": "Jobs"
+        }
+      ]
+    },
+    {
+      "start": 33.18,
+      "end": 34.42,
+      "text": "Theater, one tagline.",
+      "words": [
+        {
+          "t": 33.18,
+          "text": "Theater,"
+        },
+        {
+          "t": 33.76,
+          "text": "one"
+        },
+        {
+          "t": 33.9,
+          "text": "tagline."
+        }
+      ]
+    },
+    {
+      "start": 34.76,
+      "end": 35.44,
+      "text": "Not one product",
+      "words": [
+        {
+          "t": 34.76,
+          "text": "Not"
+        },
+        {
+          "t": 34.96,
+          "text": "one"
+        },
+        {
+          "t": 35.16,
+          "text": "product"
+        }
+      ]
+    },
+    {
+      "start": 35.44,
+      "end": 36.28,
+      "text": "named yet. You",
+      "words": [
+        {
+          "t": 35.44,
+          "text": "named"
+        },
+        {
+          "t": 35.7,
+          "text": "yet."
+        },
+        {
+          "t": 36.2,
+          "text": "You"
+        }
+      ]
+    },
+    {
+      "start": 36.28,
+      "end": 36.72,
+      "text": "get a date,",
+      "words": [
+        {
+          "t": 36.28,
+          "text": "get"
+        },
+        {
+          "t": 36.42,
+          "text": "a"
+        },
+        {
+          "t": 36.52,
+          "text": "date,"
+        }
+      ]
+    },
+    {
+      "start": 36.9,
+      "end": 37.32,
+      "text": "not a lineup.",
+      "words": [
+        {
+          "t": 36.9,
+          "text": "not"
+        },
+        {
+          "t": 36.98,
+          "text": "a"
+        },
+        {
+          "t": 37.12,
+          "text": "lineup."
+        }
+      ]
+    },
+    {
+      "start": 37.86,
+      "end": 38.72,
+      "text": "Reportedly on deck.",
+      "words": [
+        {
+          "t": 37.86,
+          "text": "Reportedly"
+        },
+        {
+          "t": 38.38,
+          "text": "on"
+        },
+        {
+          "t": 38.54,
+          "text": "deck."
+        }
+      ]
+    },
+    {
+      "start": 39.2,
+      "end": 39.94,
+      "text": "The iPhone 18",
+      "words": [
+        {
+          "t": 39.2,
+          "text": "The"
+        },
+        {
+          "t": 39.24,
+          "text": "iPhone"
+        },
+        {
+          "t": 39.58,
+          "text": "18"
+        }
+      ]
+    },
+    {
+      "start": 39.94,
+      "end": 40.94,
+      "text": "Pro and Pro",
+      "words": [
+        {
+          "t": 39.94,
+          "text": "Pro"
+        },
+        {
+          "t": 40.36,
+          "text": "and"
+        },
+        {
+          "t": 40.68,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 40.94,
+      "end": 41.96,
+      "text": "Max and Apple's",
+      "words": [
+        {
+          "t": 40.94,
+          "text": "Max"
+        },
+        {
+          "t": 41.2,
+          "text": "and"
+        },
+        {
+          "t": 41.46,
+          "text": "Apple's"
+        }
+      ]
+    },
+    {
+      "start": 41.96,
+      "end": 43.34,
+      "text": "first-ever folding iPhone,",
+      "words": [
+        {
+          "t": 41.96,
+          "text": "first-ever"
+        },
+        {
+          "t": 42.4,
+          "text": "folding"
+        },
+        {
+          "t": 42.8,
+          "text": "iPhone,"
+        }
+      ]
+    },
+    {
+      "start": 43.74,
+      "end": 44.42,
+      "text": "one that opens",
+      "words": [
+        {
+          "t": 43.74,
+          "text": "one"
+        },
+        {
+          "t": 43.98,
+          "text": "that"
+        },
+        {
+          "t": 44.16,
+          "text": "opens"
+        }
+      ]
+    },
+    {
+      "start": 44.42,
+      "end": 45.02,
+      "text": "like a book",
+      "words": [
+        {
+          "t": 44.42,
+          "text": "like"
+        },
+        {
+          "t": 44.74,
+          "text": "a"
+        },
+        {
+          "t": 44.82,
+          "text": "book"
+        }
+      ]
+    },
+    {
+      "start": 45.02,
+      "end": 46.0,
+      "text": "into a tablet-sized",
+      "words": [
+        {
+          "t": 45.02,
+          "text": "into"
+        },
+        {
+          "t": 45.24,
+          "text": "a"
+        },
+        {
+          "t": 45.42,
+          "text": "tablet-sized"
+        }
+      ]
+    },
+    {
+      "start": 46.0,
+      "end": 47.52,
+      "text": "screen, according to",
+      "words": [
+        {
+          "t": 46.0,
+          "text": "screen,"
+        },
+        {
+          "t": 46.8,
+          "text": "according"
+        },
+        {
+          "t": 47.2,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 47.52,
+      "end": 49.32,
+      "text": "MacRumors and 9-5",
+      "words": [
+        {
+          "t": 47.52,
+          "text": "MacRumors"
+        },
+        {
+          "t": 48.1,
+          "text": "and"
+        },
+        {
+          "t": 48.58,
+          "text": "9-5"
+        }
+      ]
+    },
+    {
+      "start": 49.32,
+      "end": 50.84,
+      "text": "Mac, meaning Apple's",
+      "words": [
+        {
+          "t": 49.32,
+          "text": "Mac,"
+        },
+        {
+          "t": 49.96,
+          "text": "meaning"
+        },
+        {
+          "t": 50.3,
+          "text": "Apple's"
+        }
+      ]
+    },
+    {
+      "start": 50.84,
+      "end": 51.66,
+      "text": "finally moving off",
+      "words": [
+        {
+          "t": 50.84,
+          "text": "finally"
+        },
+        {
+          "t": 51.12,
+          "text": "moving"
+        },
+        {
+          "t": 51.4,
+          "text": "off"
+        }
+      ]
+    },
+    {
+      "start": 51.66,
+      "end": 52.2,
+      "text": "a slap shape",
+      "words": [
+        {
+          "t": 51.66,
+          "text": "a"
+        },
+        {
+          "t": 51.8,
+          "text": "slap"
+        },
+        {
+          "t": 51.94,
+          "text": "shape"
+        }
+      ]
+    },
+    {
+      "start": 52.2,
+      "end": 53.02,
+      "text": "it's kept since",
+      "words": [
+        {
+          "t": 52.2,
+          "text": "it's"
+        },
+        {
+          "t": 52.52,
+          "text": "kept"
+        },
+        {
+          "t": 52.72,
+          "text": "since"
+        }
+      ]
+    },
+    {
+      "start": 53.02,
+      "end": 53.74,
+      "text": "the very first",
+      "words": [
+        {
+          "t": 53.02,
+          "text": "the"
+        },
+        {
+          "t": 53.28,
+          "text": "very"
+        },
+        {
+          "t": 53.46,
+          "text": "first"
+        }
+      ]
+    },
+    {
+      "start": 53.74,
+      "end": 55.18,
+      "text": "iPhone. Samsung's had",
+      "words": [
+        {
+          "t": 53.74,
+          "text": "iPhone."
+        },
+        {
+          "t": 54.18,
+          "text": "Samsung's"
+        },
+        {
+          "t": 55.04,
+          "text": "had"
+        }
+      ]
+    },
+    {
+      "start": 55.18,
+      "end": 56.0,
+      "text": "a folding phone",
+      "words": [
+        {
+          "t": 55.18,
+          "text": "a"
+        },
+        {
+          "t": 55.3,
+          "text": "folding"
+        },
+        {
+          "t": 55.62,
+          "text": "phone"
+        }
+      ]
+    },
+    {
+      "start": 56.0,
+      "end": 57.74,
+      "text": "since 2019. Google",
+      "words": [
+        {
+          "t": 56.0,
+          "text": "since"
+        },
+        {
+          "t": 56.24,
+          "text": "2019."
+        },
+        {
+          "t": 57.44,
+          "text": "Google"
+        }
+      ]
+    },
+    {
+      "start": 57.74,
+      "end": 59.42,
+      "text": "since 2023. Apple",
+      "words": [
+        {
+          "t": 57.74,
+          "text": "since"
+        },
+        {
+          "t": 58.06,
+          "text": "2023."
+        },
+        {
+          "t": 59.24,
+          "text": "Apple"
+        }
+      ]
+    },
+    {
+      "start": 59.42,
+      "end": 60.76,
+      "text": "never has, until",
+      "words": [
+        {
+          "t": 59.42,
+          "text": "never"
+        },
+        {
+          "t": 59.66,
+          "text": "has,"
+        },
+        {
+          "t": 60.3,
+          "text": "until"
+        }
+      ]
+    },
+    {
+      "start": 60.76,
+      "end": 62.4,
+      "text": "maybe now. Still",
+      "words": [
+        {
+          "t": 60.76,
+          "text": "maybe"
+        },
+        {
+          "t": 61.22,
+          "text": "now."
+        },
+        {
+          "t": 62.16,
+          "text": "Still"
+        }
+      ]
+    },
+    {
+      "start": 62.4,
+      "end": 63.28,
+      "text": "nothing beyond the",
+      "words": [
+        {
+          "t": 62.4,
+          "text": "nothing"
+        },
+        {
+          "t": 62.72,
+          "text": "beyond"
+        },
+        {
+          "t": 63.04,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 63.28,
+      "end": 64.08,
+      "text": "date is confirmed.",
+      "words": [
+        {
+          "t": 63.28,
+          "text": "date"
+        },
+        {
+          "t": 63.52,
+          "text": "is"
+        },
+        {
+          "t": 63.68,
+          "text": "confirmed."
+        }
+      ]
+    },
+    {
+      "start": 64.56,
+      "end": 65.4,
+      "text": "Underneath all that,",
+      "words": [
+        {
+          "t": 64.56,
+          "text": "Underneath"
+        },
+        {
+          "t": 65.0,
+          "text": "all"
+        },
+        {
+          "t": 65.2,
+          "text": "that,"
+        }
+      ]
+    },
+    {
+      "start": 65.58,
+      "end": 66.26,
+      "text": "here's what you're",
+      "words": [
+        {
+          "t": 65.58,
+          "text": "here's"
+        },
+        {
+          "t": 65.88,
+          "text": "what"
+        },
+        {
+          "t": 66.04,
+          "text": "you're"
+        }
+      ]
+    },
+    {
+      "start": 66.26,
+      "end": 67.32,
+      "text": "actually watching for.",
+      "words": [
+        {
+          "t": 66.26,
+          "text": "actually"
+        },
+        {
+          "t": 66.58,
+          "text": "watching"
+        },
+        {
+          "t": 66.92,
+          "text": "for."
+        }
+      ]
+    },
+    {
+      "start": 67.72,
+      "end": 68.48,
+      "text": "What an Apple",
+      "words": [
+        {
+          "t": 67.72,
+          "text": "What"
+        },
+        {
+          "t": 67.9,
+          "text": "an"
+        },
+        {
+          "t": 68.06,
+          "text": "Apple"
+        }
+      ]
+    },
+    {
+      "start": 68.48,
+      "end": 69.38,
+      "text": "without Tim Cook",
+      "words": [
+        {
+          "t": 68.48,
+          "text": "without"
+        },
+        {
+          "t": 68.84,
+          "text": "Tim"
+        },
+        {
+          "t": 69.16,
+          "text": "Cook"
+        }
+      ]
+    },
+    {
+      "start": 69.38,
+      "end": 70.28,
+      "text": "on stage even",
+      "words": [
+        {
+          "t": 69.38,
+          "text": "on"
+        },
+        {
+          "t": 69.6,
+          "text": "stage"
+        },
+        {
+          "t": 69.86,
+          "text": "even"
+        }
+      ]
+    },
+    {
+      "start": 70.28,
+      "end": 71.44,
+      "text": "looks like. Two",
+      "words": [
+        {
+          "t": 70.28,
+          "text": "looks"
+        },
+        {
+          "t": 70.6,
+          "text": "like."
+        },
+        {
+          "t": 71.32,
+          "text": "Two"
+        }
+      ]
+    },
+    {
+      "start": 71.44,
+      "end": 72.5,
+      "text": "firsts, one morning.",
+      "words": [
+        {
+          "t": 71.44,
+          "text": "firsts,"
+        },
+        {
+          "t": 72.08,
+          "text": "one"
+        },
+        {
+          "t": 72.18,
+          "text": "morning."
+        }
+      ]
+    },
+    {
+      "start": 72.92,
+      "end": 73.58,
+      "text": "That's what's real.",
+      "words": [
+        {
+          "t": 72.92,
+          "text": "That's"
+        },
+        {
+          "t": 73.14,
+          "text": "what's"
+        },
+        {
+          "t": 73.44,
+          "text": "real."
+        }
+      ]
+    },
+    {
+      "start": 73.9,
+      "end": 75.14,
+      "text": "Everything else, September",
+      "words": [
+        {
+          "t": 73.9,
+          "text": "Everything"
+        },
+        {
+          "t": 74.2,
+          "text": "else,"
+        },
+        {
+          "t": 74.9,
+          "text": "September"
+        }
+      ]
+    },
+    {
+      "start": 75.14,
+      "end": 76.28,
+      "text": "9th tells us.",
+      "words": [
+        {
+          "t": 75.14,
+          "text": "9th"
+        },
+        {
+          "t": 75.82,
+          "text": "tells"
+        },
+        {
+          "t": 76.02,
+          "text": "us."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "script": "On September 9th, the person walking out to reveal the new iPhone won't be Tim Cook \u2014 that hasn't happened in fifteen years.\n\nThat's the event Apple just confirmed: \"Surprise and shine,\" and it's incoming CEO John Ternus's very first keynote.\n\nHere's why: Cook moves up to executive chairman on September 1st.\n\nFour days later, Ternus steps up instead \u2014 not an outsider, but the guy who's run Apple's hardware engineering for the past five years.\n\nHere's what's real right now: 10 AM Pacific, Steve Jobs Theater, one tagline.\n\nNot one product named yet \u2014 you get a date, not a lineup.\n\nReportedly on deck: the iPhone 18 Pro and Pro Max, and Apple's first-ever folding iPhone, one that opens like a book into a tablet-sized screen, according to MacRumors and 9to5Mac.\n\nMeaning, Apple's finally moving off a slab shape it's kept since the very first iPhone.\n\nSamsung's had a folding phone since 2019. Google since 2023. Apple never has \u2014 until, maybe, now.\n\nStill, nothing beyond the date is confirmed.\n\nUnderneath all that, here's what you're actually watching for: what an Apple without Tim Cook onstage even looks like.\n\nTwo firsts, one morning. That's what's real \u2014 everything else, September 9th tells us.",
+  "approval": {
+    "sha256": "54495fcbfb72eca0059ef42f7ba5102d2ecc8d1c601a1ce48d9878bd79c1a842",
+    "approvedAt": "2026-08-27T05:22:16+00:00",
+    "words": 204,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

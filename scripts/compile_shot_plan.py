@@ -159,6 +159,24 @@ def load_words(path: Path) -> list[dict[str, Any]]:
             out[-1]["norm"] = "".join(normalize(out[-1]["text"]))
             out[-1]["end"] = end
             continue
+        # Whisper writes a spoken time-of-day "AM"/"PM" as TWO tokens: "a"
+        # (or "p") then ".m." — the written abbreviation "a.m." with the
+        # space the TTS left between the letters treated as a word break.
+        # The second token alone is an orphan single-letter caption (gate
+        # G34: "'.m. Pacific, Steve' carries an orphan single-letter
+        # token"). CONFIRMED not a TTS artifact — isolated whisper (base
+        # AND medium) on apple-surprise-and-shine 2026-08-27 both transcribe
+        # the audio as "10 a.m. Pacific" cleanly; this is whisper's own
+        # house style for the sound, not a mispronunciation, so the fix is a
+        # merge like the ones above, not cutting the master. General fix:
+        # any reel that states a time this way hits it, not just this one.
+        if (out and out[-1].get("norm") in ("a", "p")
+                and re.fullmatch(r"\.?m\.?", text.lower())):
+            letter = out[-1]["norm"]
+            out[-1]["text"] = f"{letter.upper()}M"
+            out[-1]["norm"] = f"{letter}m"
+            out[-1]["end"] = end
+            continue
         # A possessive/contraction ("Apple's") normalises to ["apple","s"], and
         # emitting each token separately ships a caption chip reading just "s".
         # Gate G34 catches it; this merges the tail back onto the word it came

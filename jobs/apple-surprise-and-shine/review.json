@@ -1,0 +1,13 @@
+{
+  "script_sha256": "54495fcbfb72eca0059ef42f7ba5102d2ecc8d1c601a1ce48d9878bd79c1a842",
+  "structure_sha256": "1fcdc4752030b54737d77266838ab5895d956e528e16f3d5913301588356e456",
+  "findings": [
+    "  WHAT WITHOUT SO WHAT 3/4 spec sentences never say what the number does for the viewer. \"2nm chip\" is information; \"faster without draining the battery\" is relevance. (framework S7)",
+    "CADENCE: 5 of 15 sentences are long. The short ones stop being punctuation."
+  ],
+  "research_advice": [
+    "claim 6 ('Samsung has sold folding phones since 20'): tier single but spoken UNHEDGED near \"Samsung's had a folding phone since 2019. Google since 2023. Apple never has.\". framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source."
+  ],
+  "beatPlanShots": 13,
+  "proposedAt": "2026-08-27T05:17:38+00:00"
+}
