@@ -145,7 +145,15 @@ SCRIPT_SHA = hashlib.sha256(" ".join(SCRIPT.split()).encode()).hexdigest()
 # Leading spaces ON PURPOSE: this is how whisper actually returns words
 # (" Apple's"). The old clean-word fixture let a G21 bug hide for days — the
 # gate stripped punctuation but not whitespace, so nothing ever matched.
-VO_WORDS = [(" macOS", 0.0, 0.3), (" ships", 0.3, 0.7),
+# The transcript must actually COVER the script. It was three words against
+# an eight-word script until 2026-08-27, which was fine while nothing compared
+# the two — then G53 arrived, correctly read a 0.36 match as "the audio does
+# not say the approved script", and failed the clean baseline. A stub fixture
+# is not a smaller version of reality; it is a different thing that happens to
+# pass. Every word of SCRIPT now appears here, in order.
+VO_WORDS = [(" macOS", 0.0, 0.3), (" ships", 0.3, 0.7), (" today", 0.7, 1.1),
+            (" and", 1.1, 1.3), (" that", 1.3, 1.6), (" changes", 1.6, 2.1),
+            (" the", 2.1, 2.3), (" maths", 2.3, 2.8),
             # A word spoken OVER the specsheet (scene 4, 9.5-12.5s in the
             # baseline). G18 stopped being a flat 2.0s minimum on 2026-08-18 and
             # now asks whether the card outlasts the sentence, so the fixture
@@ -563,6 +571,18 @@ CASES = [
     (lambda s: s.update(script=SCRIPT + " Also, buy my course."),
      "G27", "script edited after approval"),
     (lambda s: s.pop("script"), "G27", "sheet carries no script"),
+    # G53 — the audio says something OTHER than the approved script. The
+    # approval hash is updated alongside the script on purpose, so G27 stays
+    # satisfied and G53 is the only thing standing between a correctly
+    # approved script and a voice track of different words. That is exactly
+    # the hole the external-VO flow opens: with HeyGen TTS the audio was
+    # synthesised FROM this text and could not diverge; an uploaded file can.
+    (lambda s: s.update(
+        script="An entirely different narration that nobody ever recorded.",
+        approval={"sha256": hashlib.sha256(
+            b"An entirely different narration that nobody ever recorded."
+        ).hexdigest(), "approvedAt": "2026-08-27T00:00:00+00:00"}),
+     "G53", "approved script, but the voice track says something else"),
     # ── comparison structure ─────────────────────────────────────────────
     (lambda s: s.clear() or s.update(copy.deepcopy(CMP)) or s.pop("sides"),
      "G26", "comparison with no declared sides"),

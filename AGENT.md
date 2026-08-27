@@ -224,9 +224,58 @@ unmeasured one is what G23 flags (as advice — the discipline is yours). Artifa
 `_sources/<slug>/rehearsal/`, never `public/` (Remotion re-copies all of
 `public/` on every render).
 
-### STEP 2 — Voice + face
-Generate one continuous avatar master from the final script (see
-`references/heygen.md`). Store as `public/assets/<slug>/avatar-master.mp4`.
+### STEP 2 — Voice + face — THE VOICE IS GENERATED OUTSIDE HEYGEN
+
+**Changed 2026-08-27. HeyGen no longer speaks; it only moves the mouth.**
+
+Measured, on the same cloned voice, same avatar, same words: **2.14 semitones
+of pitch movement through HeyGen's TTS, 3.60 through ElevenLabs v3 with audio
+tags.** Speaker similarity between them is 0.998 — the same voice — against
+different-speaker controls at 0.959 and 0.964. 3.60 is the only read this repo
+has ever measured above the 3.5 creator floor. Every HeyGen-side lever moved it
+by 0.01, because uploaded audio bypasses TTS and tags placed in the API
+`script` field are stripped before the voice ever sees them.
+
+**1. Emit the tagged script.** Tags never go in `script.md` — G27 hashes that
+as the approved narration and G21 checks captions against it.
+
+```bash
+python3 tools/vo_tagged.py <slug>        # -> jobs/<slug>/script-tagged.txt
+```
+
+Same words as the approved script, positional tags from `vo_direct`'s own
+registers. Only documented ElevenLabs tags are emitted; an unrecognised tag is
+spoken aloud or silently dropped.
+
+**2. The user generates it.** Paste into ElevenLabs v3 with the brand voice.
+Stability **Natural** first, **Creative** if the tags barely register —
+**Robust ignores tags by design.** Download the mp3.
+
+**3. Prepare it.**
+
+```bash
+python3 tools/vo_external.py <slug> <downloaded.mp3>
+```
+
+Re-encodes with metadata stripped — **the ElevenLabs download as-is is REFUSED
+by the upload** ("Stored file type not supported: application/octet-stream")
+even though it is a valid mp3 — and checks the pace against the measured band.
+
+**4. Upload and lip-sync.** `create_asset_upload` → PUT the bytes with the
+returned headers unchanged → `complete_asset_upload` →
+`create_video_from_avatar` with **`audioAssetId`**, never `script`/`voiceId`
+(they are mutually exclusive). Store as
+`public/assets/<slug>/avatar-master.mp4`.
+
+Verified end to end: expressiveness survives the render (3.40 in → 3.31 out),
+duration is preserved to 16ms, and the avatar gestures normally.
+
+**G53 is what replaces the guarantee this costs us.** With TTS the audio was
+synthesised FROM the approved script and could not diverge. An uploaded file
+can, so the whisper transcript must now match the approved script at ≥0.70 —
+threshold derived from real reels (legitimate 0.885–1.000, a different reel's
+audio 0.013–0.110).
+
 **Kick the generation, then go straight to STEP 3 while it renders** — the
 two share no data, so the queue wait is either hidden behind asset cutting
 or sat through doing nothing. `script_approval.py check` will remind you to

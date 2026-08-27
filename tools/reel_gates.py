@@ -315,7 +315,14 @@ BLOCKING_RULES: dict[str, str] = {
     "G14": "RIGHTS we credit the sources we use",
     "G15": "RIGHTS a stated number carries where it came from",
     "G27": "RIGHTS the user approved THIS script",
+    "G53": "RIGHTS the voice says the script the user approved",
 }
+
+
+# G53 floor. Derived 2026-08-27 from every reel on disk: legitimate
+# script-vs-own-audio scores 0.885-1.000, a different reel's audio scores
+# 0.013-0.110. 0.70 sits in the empty gap between the two bands.
+VO_SCRIPT_MATCH_FLOOR = 0.70
 
 
 def _norm_words(s: str) -> str:
@@ -980,6 +987,55 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 errors.append(
                     f"G26 scene {i:02d} hcompare is missing topLabel/"
                     "bottomLabel.")
+
+    # G53 — THE AUDIO MUST SAY THE APPROVED SCRIPT (2026-08-27).
+    #
+    # Until today the voice was SYNTHESISED FROM the sheet's script, so "what
+    # he says" and "what was approved" matched by construction and no gate was
+    # needed. The external-VO flow removes that: the read is generated in
+    # ElevenLabs, outside everything this repo enforces, and then uploaded.
+    # Nothing structural stops the wrong take, an older draft, or a file from
+    # a different reel reaching the render with a valid G27 hash on the sheet.
+    # G27 proves the TEXT was approved. G53 proves the AUDIO says it.
+    #
+    # THRESHOLD IS MEASURED, NOT INVENTED (G23 discipline). Every reel on this
+    # machine with both a script and word timings, script vs its OWN audio:
+    #
+    #     iphone-third-interface    1.000
+    #     iphone18-colors           0.962
+    #     claude-memory-everywhere  0.948
+    #     claude-eating-tokens      0.885   <- lowest legitimate
+    #
+    # The 0.885 is entirely whisper artefacts — "bill"/"bell", "100 000" for
+    # "a hundred thousand", "summarise"/"summarize" — not drift. The same
+    # scripts against a DIFFERENT reel's audio score 0.013 to 0.110. So the
+    # legitimate band starts at 0.885 and the wrong-audio band tops out at
+    # 0.110; 0.70 sits in the empty middle with margin on both sides.
+    if vo_words and beats.get("script"):
+        import difflib as _dl
+        _script = _norm_words(str(beats["script"])).split()
+        _spoken = _norm_words(" ".join(
+            (x[0] if isinstance(x, (list, tuple)) else str(x))
+            for x in vo_words)).split()
+        if _script and _spoken:
+            _ratio = _dl.SequenceMatcher(None, _script, _spoken).ratio()
+            if _ratio < VO_SCRIPT_MATCH_FLOOR:
+                _diff = []
+                for _t, _i1, _i2, _j1, _j2 in _dl.SequenceMatcher(
+                        None, _script, _spoken).get_opcodes():
+                    if _t != "equal" and len(_diff) < 3:
+                        _diff.append(
+                            f"script {' '.join(_script[_i1:_i2])!r} -> "
+                            f"heard {' '.join(_spoken[_j1:_j2])!r}")
+                errors.append(
+                    f"G53 the voice track does not say the approved script "
+                    f"— {_ratio:.2f} match against a {VO_SCRIPT_MATCH_FLOOR} "
+                    f"floor (real reels score 0.885-1.00; a different reel's "
+                    f"audio scores under 0.11). "
+                    + ("; ".join(_diff) if _diff else "")
+                    + " Either the wrong audio file is in place, or the "
+                    "script was edited after the read was generated. "
+                    "Re-generate the voice from the approved words.")
 
     # G27 — THE USER APPROVED *THIS* SCRIPT (user rule 2026-08-12).
     # The sheet carries the narration it was built from plus the approval

@@ -425,7 +425,8 @@ for _tool, _label in (("check_frame_contract", "frame contract"),
                       # 2026-08-27: added the same hour vo_external was
                       # written, because wiring_audit failed doctor for an
                       # unrun --selftest — the rule catching its own author.
-                      ("vo_external", "external VO prep")):
+                      ("vo_external", "external VO prep"),
+                      ("vo_tagged", "tagged VO script")):
     try:
         r = subprocess.run(
             [sys.executable, str(ROOT / f"tools/{_tool}.py"), "--selftest"],

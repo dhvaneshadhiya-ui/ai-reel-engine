@@ -38,9 +38,18 @@ connector's portrait crop is poorly framed, keep the result in a fitted
 portrait card/split treatment or use a connector-supported landscape request;
 never silently stretch or crop out the face.
 
-## Audio-driven flow
+## Audio-driven flow — THIS IS THE DEFAULT (2026-08-27)
 
-Use only when a separately generated voice is explicitly preferred:
+It was documented here for months as the exception, in prose, and never once
+run. It is now the standard path: the voice is generated in ElevenLabs v3 and
+HeyGen does lip-sync only. Reason, measured on one voice and one avatar:
+**2.14 semitones through HeyGen TTS, 3.60 through ElevenLabs** at 0.998
+speaker similarity. `tools/vo_external.py` automates step 2 and prints the
+values for step 3.
+
+**Step 2 is not optional.** The ElevenLabs download is refused by step 5 as
+`application/octet-stream` unless it is re-encoded with metadata stripped —
+twice, with two upload methods, on a file `file(1)` reports as audio/mpeg.
 
 1. Generate or obtain the final voice WAV.
 2. Convert it to a compatible MP3.
@@ -52,7 +61,17 @@ Use only when a separately generated voice is explicitly preferred:
 7. Poll and download the clean result.
 
 Audio-driven output can lip-sync less tightly. Keep facecam exposure short and
-regenerate a visibly failed section.
+regenerate a visibly failed section. (Checked 2026-08-27 on a 58s master: the
+avatar animates and gestures normally, audio duration is preserved to 16ms,
+and pitch variation survives at 3.40 -> 3.31. Watch it anyway — a still frame
+cannot show sync.)
+
+**With uploaded audio, `voiceId`, `voiceSpeed`, `engine_settings` and HeyGen's
+"Enhance voice" all stop applying.** Uploaded audio bypasses TTS entirely.
+Pace is set in ElevenLabs, not by `speed`.
+
+**The TTS flow below is now the FALLBACK** — set `voice.mode` to `heygen-tts`
+in config.json. Its settings are left intact and correct for that path.
 
 ## Verification
 

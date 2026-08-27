@@ -5594,3 +5594,56 @@ generation needs the ElevenLabs connector added in the Claude client.
 Until then the division is: **the user generates the read, the agent does
 everything else.** That is one manual step in exchange for the only voice
 we have measured above the floor.
+
+## 2026-08-27 — the pipeline now generates its own voice; HeyGen only lip-syncs
+
+Made the external-VO flow the default, on the measurement that the SAME voice
+reads at 2.14 semitones through HeyGen's TTS and 3.60 through ElevenLabs v3
+with tags (0.998 speaker similarity; different-speaker controls 0.959/0.964).
+3.60 is the only read this repo has measured above the 3.5 creator floor.
+
+**The new STEP 2:**
+
+1. `vo_tagged.py <slug>` — emits `script-tagged.txt` from the APPROVED script.
+   Same words, positional tags from `vo_direct`'s existing registers, only
+   documented ElevenLabs tags. Tags never enter `script.md`: G27 hashes that
+   as the approved narration and G21 checks captions against it.
+2. The user generates it in ElevenLabs (Natural stability first; **Robust
+   ignores tags by design**).
+3. `vo_external.py <slug> <file.mp3>` — re-encodes with metadata stripped and
+   checks pace. **Not optional**: the download as-is is refused by the upload.
+4. Upload → `create_video_from_avatar` with `audioAssetId`, never
+   `script`/`voiceId`.
+
+**WHAT THIS COSTS, AND THE GATE THAT PAYS FOR IT.** With HeyGen TTS the audio
+was synthesised FROM the sheet's script, so "what he says" and "what was
+approved" matched *by construction* and no gate was needed. An uploaded file
+has no such guarantee: the wrong take, an older draft, or another reel's
+audio can reach the render with a perfectly valid G27 hash on the sheet.
+**G27 proves the TEXT was approved; G53 now proves the AUDIO says it.**
+
+**G53's floor is derived, not chosen.** Every reel on disk, script vs its OWN
+audio: 1.000 / 0.962 / 0.948 / 0.885. The 0.885 is entirely whisper artefacts
+("bill"/"bell", "100 000" for "a hundred thousand"), not drift. The same
+scripts against a DIFFERENT reel's audio: 0.013-0.110. Floor set at 0.70, in
+the empty middle, with margin on both sides.
+
+**Adding G53 immediately failed the clean baseline fixture**, because
+`VO_WORDS` in test_gates was a three-word stub against an eight-word script —
+fine for years while nothing compared the two. **A stub fixture is not a
+smaller version of reality; it is a different thing that happens to pass.**
+The fixture now carries the whole script, and the failing case is an approved
+script whose audio says something else, with the approval hash updated so G27
+stays satisfied and G53 is the only thing standing in the way.
+
+**Verified end to end before any of this was written:** upload → lip-sync
+render, expressiveness 3.40 → 3.31, duration preserved to 16ms, avatar
+gesturing normally.
+
+**Reversible on purpose.** `voice.mode: "heygen-tts"` in config.json goes back,
+and `avatar.voiceId` / `voiceSpeed` are left in place and correct for it.
+
+**wiring_audit caught two omissions in the same hour it took to build this** —
+`vo_external` and then `vo_tagged` both landed with self-tests doctor did not
+run, and `vo_tagged` sat as an ORPHAN until AGENT.md named it. The rule I
+added this morning has now caught its own author three times.

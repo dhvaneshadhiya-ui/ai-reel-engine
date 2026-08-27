@@ -111,5 +111,19 @@
   "account": {
     "heygenPlan": "pro",
     "_note": "Upgraded to HeyGen Pro ($49/mo) on 2026-08-12: 436 premium credits vs ~134 on Creator. At ~1 credit per 3s of avatar, a 107s reel costs ~36 credits, so ~12 full reels per cycle. CONSEQUENCE FOR PLANNING: script changes are now affordable. Previously only footage/beat changes were free re-renders and a re-record was a real cost; now a bad script can simply be redone. Short A/B probes (~3 credits for 7s) should be used to verify prompt-side changes BEFORE committing to a full reel. NOTE: 4K output is gated on avatar TYPE, not plan \u2014 photo avatars cannot do 4K on any tier, so the old 'probe resolution 4k' item stays closed for this look."
+  },
+  "voice": {
+    "mode": "external",
+    "engine": "elevenlabs-v3",
+    "_why": "MEASURED 2026-08-27. The same cloned voice reads at 2.14 semitones through HeyGen's TTS and 3.60 through ElevenLabs v3 with audio tags \u2014 0.998 speaker similarity, so it is the same voice, and 3.60 is the only reading this repo has ever measured above the 3.5 creator floor. Every HeyGen-side lever (eleven_v3 engine_settings, stability, audio tags in the script) moved it by 0.01, because uploaded audio bypasses TTS and script-embedded tags are stripped before the voice sees them. The variable was never the voice; it was who renders it.",
+    "_flow": "vo_tagged.py -> generate in ElevenLabs -> vo_external.py -> upload asset -> create_video_from_avatar with audioAssetId. HeyGen then does LIP-SYNC ONLY.",
+    "_inactive_in_this_mode": [
+      "avatar.voiceId",
+      "avatar.voiceSpeed",
+      "engine_settings",
+      "HeyGen Enhance voice"
+    ],
+    "_guardrail": "G53 \u2014 the whisper transcript of the uploaded audio must match the approved script at >=0.70. With TTS the audio was synthesised FROM the script and could not diverge; an uploaded file can, so the guarantee is now enforced rather than structural.",
+    "_fallback": "Set mode to 'heygen-tts' to go back. avatar.voiceId and voiceSpeed are still correct for that path and are left in place deliberately."
   }
 }
