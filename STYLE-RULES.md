@@ -5533,3 +5533,64 @@ mirroring the script calibration.
 printed only `<parent>/<name>`, so `public/assets/x/vo.wav` and
 `_sources/x/vo.wav` rendered identically — which sent this session's own
 verification to a path that did not exist. Repo-relative paths now.
+
+## 2026-08-27 — the voice was never flat. HEYGEN'S TTS WAS.
+
+The user generated a read in ElevenLabs v3 with audio tags and asked for a
+system that produces our own voiceover and lip-syncs it with HeyGen. Measuring
+their file settles the entire day's investigation:
+
+| | pitch sd | range | median | identity vs shipped |
+|---|---|---|---|---|
+| HeyGen TTS, our voice (probe A) | 2.14 | 6.7 | 168 | — (this IS it) |
+| HeyGen + eleven_v3 + tags (probe C) | 2.15 | 5.8 | 167 | — |
+| user's ElevenLabs_v3.mp3 | **3.60** | **12.3** | 170 | **0.998** |
+| creator floor | 3.50 | 11.6 | | different speakers: 0.959, 0.964 |
+
+**Same voice — 0.998 similarity, the highest measured all day, against two
+independent different-speaker controls at 0.959 and 0.964. And it clears the
+3.5 floor**, the first thing this session that has, with range inside the
+reference band.
+
+**So the conclusion recorded twice today was wrong both times.** First it said
+the CLONE is flat and HeyGen had topped out (one voice, generalised to a
+provider). Then the probe corrected it to "the voice we picked is flat, a
+different voice clears the floor" — also wrong, because it kept assuming the
+voice determines the read. It does not. **The same voice reads at 2.14 through
+HeyGen's TTS and 3.60 through ElevenLabs v3.** The variable was never the
+voice; it was who renders it.
+
+Worth naming the pattern: three conclusions, each corrected by widening what
+was measured. The measurements were right every time. The inference from them
+kept outrunning the evidence.
+
+### The audio-driven path WORKS — verified end to end
+
+`references/heygen.md` documented this flow for months in prose and nothing
+ever ran it. Ran it:
+
+- **Upload refuses the ElevenLabs MP3 as downloaded** — "Stored file type not
+  supported: application/octet-stream", twice, with two upload methods, on a
+  file `file(1)` calls audio/mpeg and ffprobe decodes fine. An ffmpeg
+  re-encode with `-map_metadata -1` uploads and completes first try. Now in
+  `tools/vo_external.py` so it is never rediscovered.
+- **Expressiveness survives the render**: 3.40 in -> 3.31 out (-2.6%).
+- **Duration is preserved to 16ms** (58.514 -> 58.498), so HeyGen is not
+  time-stretching the audio.
+- **The avatar animates and gestures normally** on the frames sampled.
+
+With uploaded audio HeyGen does lip-sync ONLY. `voiceId`, `voiceSpeed`,
+`engine_settings` and Enhance voice all stop applying — which is why none of
+the engine experiments mattered and why this one does.
+
+### No ElevenLabs MCP is connected to this session
+
+The user linked ElevenLabs' MCP announcement. It is not connected here. What
+IS available is a third-party proxy (Higgsfield `generate_audio` with
+`variant: elevenlabs`) that draws on ITS voice library, not the user's
+ElevenLabs account — so it cannot reach the voice they built. Direct
+generation needs the ElevenLabs connector added in the Claude client.
+
+Until then the division is: **the user generates the read, the agent does
+everything else.** That is one manual step in exchange for the only voice
+we have measured above the floor.
