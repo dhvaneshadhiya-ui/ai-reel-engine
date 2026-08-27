@@ -106,7 +106,7 @@ step 2's artifact, and `approve` refuses without a fresh `propose`.
 4. **Measure, then read.** `python3 tools/check_script.py <slug>` (calibrated
    thresholds + AI-tell scan), then `--critic` and walk the S22/S23/S24 tests
    aloud. Act on findings or write down why not.
-5. **Humanize.** Run the `humanizer` global skill on the draft with 2-3
+5. **Humanize the WHOLE draft, then record it** (`script_approval.py humanized <slug>` — propose refuses without it). Run the `humanizer` global skill with 2-3
    approved scripts from `jobs/` as the voice sample — the sample outranks its
    defaults. Never after approval: G27 hashes the approved words.
 6. **Propose.** `python3 tools/script_approval.py propose <slug>` — prints the
@@ -125,13 +125,22 @@ that exact opening) had it been run before the user ever saw the script.
 the beat plan, ask the open questions, wait for an explicit yes, then
 `approve <slug>`. `check <slug>` exits 1 until that happens and gate G27
 re-checks the hash at build time. Never generate an avatar on an unapproved
-script. `propose` requires a filled `jobs/<slug>/structure.md`, and `approve`
-requires the current script to hash-match the last `propose` — the user always
+script. `propose` requires THREE artifacts — a filled `jobs/<slug>/structure.md`, a
+valid `jobs/<slug>/research.md`, and a recorded humanizer pass
+(`humanized.json`, hash-bound to the current draft) — and `approve` requires
+the current script to hash-match the last `propose`, so the user always
 approves the exact words they were shown.
 
 
 Do not reorder. The expensive failure is writing a script about footage you
 do not have.
+
+**Where research sits, since this file carried two orderings that never met
+(fixed 2026-08-27):** the writing order below says "research first", and this
+operations list starts at "scout before scripting". Both are right and the
+full sequence is **research -> scout -> script**. Research leads because you
+cannot capture a source until you know which claim it proves. See AGENT.md
+STEP 0.5, which had no number until the same day.
 
 ### 1 — Scout BEFORE scripting
 
@@ -200,10 +209,26 @@ beat carries `visual: <manifest asset id>` or `visual: MG:<component + spec>`.
 A beat that resolves to neither is illegal — re-scout or rewrite the line.
 At the MEASURED ~2.7 words/sec (2026-08-13, three masters), 60s ≈ 162 words, 80s ≈ 216, 90s ≈ 243, 120s ≈ 324. script_approval.py refuses an out-of-band propose.
 
-### 2a — humanizer: scoped, not wholesale
+### 2a — humanizer: reads the WHOLE script, applies SELECTIVELY
 
-`humanizer` runs LAST, after the shape is right, and **not on the whole script**.
-Measured across all eight scripts in `jobs/` on 2026-08-19:
+**Two different scopes, and conflating them caused a real contradiction
+(2026-08-27).** This section used to say the pass runs "not on the whole
+script", which was read — fairly — as licence to run it over flagged lines
+only. That is wrong, and it is the failure the user named: *"entire script
+must be humanized."* Rhythm, and whether a sentence sounds like a person, can
+only be judged across the whole thing.
+
+- **INPUT is wholesale.** Feed it the entire script, every time, whether or
+  not `script_doctor` measured anything. A clean measurement is not the same
+  as sounding human — that is precisely why the pass exists. `propose` now
+  refuses without a recorded pass (`humanized.json`), so this is a step, not
+  a suggestion.
+- **OUTPUT is selective.** You do not accept every suggestion it returns.
+  Three of its patterns are load-bearing here and must be rejected on sight,
+  because applying them would strip the honesty language the gates require.
+
+`humanizer` runs LAST, after the shape is right. Measured across all eight
+scripts in `jobs/` on 2026-08-19:
 
 - Its highest-value patterns find NOTHING here. Zero hits on delve, showcase,
   leverage, robust, seamless, pivotal, testament, landscape, cutting-edge. The
@@ -223,8 +248,11 @@ Measured across all eight scripts in `jobs/` on 2026-08-19:
 three times in one script, and "actually" is on humanizer's list. A spoken
 intensifier once is register; three times is a tic.
 
-So: run it, read its suggestions, and reject the three above on sight. Applying
-it wholesale would strip the honesty language the gates require.
+So: feed it the whole script, read every suggestion, and reject the three
+above on sight. Accepting its output wholesale would strip the honesty
+language the gates require — but reading only part of the script would miss
+the rhythm problems that are the entire reason to run it. Then record the
+pass: `python3 tools/script_approval.py humanized <slug>`.
 
 ### 2b — Script critic pass (mandatory, never skip)
 

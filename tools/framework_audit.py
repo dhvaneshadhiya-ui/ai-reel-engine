@@ -89,6 +89,8 @@ CLAUSES: list[tuple[str, str, tuple]] = [
               "'tools/sync_impacts.py').exists() else 1)"])),
     ("selective silence", "JUDGEMENT",
      ("grep", "tools/prepublish.py", r"silence")),
+    ("the READ is measured, not just the words", "CODE",
+     ("grep", "tools/vo_qc.py", r"PITCH_SD_FLOOR")),
     ("voice-first mixing at a real loudness target", "CODE",
      ("grep", "tools/reel_gates.py", r"G31")),
     ("verify every material claim", "CODE",

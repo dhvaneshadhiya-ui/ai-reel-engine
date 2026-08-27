@@ -77,6 +77,30 @@ def main() -> int:
     else:
         print("\n  nothing to flag on shape, tics, reveal handling or "
               "certainty.")
+    # SKILL CUES — code cannot invoke a skill directly, but .claude/hooks/
+    # skill_cue.py reads these lines out of our stdout and injects them as an
+    # instruction, so naming a skill here DOES fire it. Keep the name in
+    # backticks: that is what the hook parses.
+    blob = " ".join(findings).lower()
+    cues = []
+    if "no open loop" in blob or "opening" in blob:
+        cues.append("`viral-hook-writer` for hook candidates, `going-viral` "
+                    "for the loop//payoff structure above it")
+    # UNCONDITIONAL (2026-08-27). This was cued only when a tic, an AI tell or
+    # page punctuation fired — i.e. only when something was MEASURABLE. That is
+    # backwards: a script with no measurable tells can still read like a
+    # machine wrote it, and rhythm is exactly what no checker can see. The
+    # scripts that most need a human ear were the ones never getting one.
+    if "house tic" in blob or "ai tell" in blob or "page punctuation" in blob:
+        cues.append("`humanizer` over the WHOLE script — the tells below are "
+                    "only the measurable half")
+    else:
+        cues.append("`humanizer` over the WHOLE script — nothing measurable "
+                    "fired, which is not the same as sounding like a person")
+    if "f2 certainty" in blob or "f2b" in blob:
+        cues.append("`fact-check-workflow` before that claim becomes a beat")
+    for c in cues:
+        print(f"  SKILL CUE: {c}")
     print("\n  Read it aloud. These measure shape, not whether it is good.\n")
     return 0
 

@@ -179,6 +179,13 @@ def main() -> None:
     if generated_json.exists() and generated_json != vo_json:
         generated_json.replace(vo_json)
 
+    # MEASURE THE READ (2026-08-26). Every check in this repo looked at the
+    # script; nothing listened to what came back. A read the user called
+    # "flat, no energy" shipped through a green pipeline. This runs where the
+    # VO first exists — before a single frame is rendered against it.
+    subprocess.run([sys.executable, str(engine / "tools/vo_qc.py"), slug],
+                   cwd=engine, check=False)
+
     calibration = engine / "_state" / f"{slug}-avatar-calibration.jpg"
     calibration.parent.mkdir(parents=True, exist_ok=True)
     run(

@@ -196,6 +196,74 @@ def require_structure(slug: str) -> Path:
     return st_p
 
 
+def humanized_record(slug: str) -> Path:
+    return paths(slug)[2].with_name("humanized.json")
+
+
+def require_humanized(slug: str, spoken: str) -> None:
+    """The humanizer pass is MANDATORY and applies to the WHOLE script.
+
+    It was cued conditionally until 2026-08-27 — only when the checker found a
+    house tic, an AI tell or page punctuation. That is backwards. A script with
+    zero measurable tells can still read like a machine wrote it: rhythm,
+    sentence shape and whether a line sounds like a person are exactly the part
+    no checker can measure, which is why the pass exists at all. Cueing it only
+    when something IS measurable means the scripts that most need a human ear
+    are the ones that never get one.
+
+    So it is a precondition of propose, alongside structure.md and research.md,
+    and it is hash-bound the way approve is: the stamp records the sha of the
+    script the pass was performed on. Edit a word afterwards and propose
+    refuses again, because the pass no longer covers what you are showing.
+    """
+    rec_p = humanized_record(slug)
+    current = sha(spoken)
+    if rec_p.exists():
+        try:
+            rec = json.loads(rec_p.read_text())
+        except Exception:                                      # noqa: BLE001
+            rec = {}
+        if rec.get("sha") == current:
+            return
+        stale = True
+    else:
+        stale = False
+
+    # The refusal IS the trigger: skill_cue.py reads this line out of stdout
+    # and injects it as an instruction naming the skill.
+    print("\n  SKILL CUE: run the `humanizer` skill over the ENTIRE script, "
+          "not\n  the flagged lines. Feed it our own shipped scripts as a voice "
+          "sample —\n  a sample outranks its own style rules. Keep every fact, "
+          "name, number\n  and date exactly as written; it must not invent "
+          "detail.")
+    sys.exit(
+        (f"SCRIPT CHANGED SINCE THE HUMANIZER PASS — {slug}\n"
+         if stale else f"NOT HUMANIZED — {slug}\n")
+        + (f"  {rec_p} covers a different draft.\n"
+           if stale else f"  no {rec_p}\n")
+        + "  The humanizer is the half of the writing no checker can measure,\n"
+          "  so it is a step, not a suggestion. Run it over the whole script,\n"
+          "  apply the rewrite, then record it:\n"
+          f"    python3 tools/script_approval.py humanized {slug}\n"
+          "  Never AFTER approval — G27 hashes the approved narration, so a\n"
+          "  post-approval rewrite correctly stops the build.")
+
+
+def cmd_humanized(slug: str) -> None:
+    """Record that the humanizer pass was performed on THIS draft."""
+    spoken = read_script(slug)
+    rec_p = humanized_record(slug)
+    rec_p.write_text(json.dumps({
+        "sha": sha(spoken),
+        "when": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "words": len(spoken.split()),
+    }, indent=2) + "\n")
+    print(f"  humanizer pass recorded for {slug} "
+          f"({len(spoken.split())} words, sha {sha(spoken)[:12]})")
+    print("  propose will now accept this draft. Edit a word and it refuses "
+          "again,\n  because the pass no longer covers what you are showing.")
+
+
 def cmd_propose(slug: str) -> None:
     st_p = require_structure(slug)
     spoken = read_script(slug)
@@ -333,6 +401,14 @@ def cmd_propose(slug: str) -> None:
         beat_rows = 0
         print(f"\n  (beat plan unavailable: {_e})")
 
+    # LAST precondition: structure decided, ledger sound, words final.
+    # Ordered after those two on purpose — checked first, it pre-empted the
+    # research refusals and the suite reported a humanizer failure for a
+    # script whose real problem was a missing ledger. Kept OUTSIDE the prose
+    # try/except too: a precondition an unrelated ImportError can skip is not
+    # a precondition.
+    require_humanized(slug, spoken)
+
     findings: list[str] | None = None
     try:
         sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -344,6 +420,13 @@ def cmd_propose(slug: str) -> None:
         # open-loop detector's own phrase list is what drives writers to
         # reuse them (2026-08-26).
         findings += _tics(spoken, exclude_slug=slug)
+        # The humanizer is a MANUAL pass and nothing invokes it (2026-08-26).
+        # Said here because propose is the last moment before the user is
+        # asked to approve the words.
+        findings.append(
+            "HUMANIZER: recorded for this draft. The checks above are the "
+            "measurable half; the `humanizer` pass is the half that decides "
+            "whether it sounds like a person.")
         print("\nPROSE (advice — style is craft, none of this blocks):")
         for _n in findings or ["  nothing to flag"]:
             print(f"  - {_n}" if not _n.startswith("  ") else _n)
@@ -366,6 +449,14 @@ def cmd_propose(slug: str) -> None:
               "none of this blocks):")
         for _a in research_advice:
             print(f"  - {_a}")
+        # The RESEARCH moment, not the script moment. script_doctor cues this
+        # skill when a claim is SPOKEN harder than its evidence; by then the
+        # sentence already exists. Here the ledger itself is thin — one
+        # source, or one domain wearing two names — which is the moment to
+        # verify rather than to rewrite (2026-08-27).
+        print("\n  SKILL CUE: thin sourcing is what `fact-check-workflow` is "
+              "for —\n  verify it now, while it is still a claim and not yet "
+              "a spoken line.")
     review_path(slug).write_text(json.dumps({
         "script_sha256": sha(spoken),
         "structure_sha256": sha(st_p.read_text()),
@@ -472,11 +563,13 @@ def cmd_check(slug: str) -> None:
 
 
 def main() -> None:
-    if len(sys.argv) != 3 or sys.argv[1] not in ("propose", "approve", "check"):
+    if len(sys.argv) != 3 or sys.argv[1] not in ("propose", "approve", "check",
+                                                 "humanized"):
         sys.exit("usage: python3 tools/script_approval.py "
-                 "propose|approve|check <slug>")
+                 "propose|approve|check|humanized <slug>")
     {"propose": cmd_propose, "approve": cmd_approve,
-     "check": cmd_check}[sys.argv[1]](sys.argv[2])
+     "check": cmd_check,
+     "humanized": cmd_humanized}[sys.argv[1]](sys.argv[2])
 
 
 if __name__ == "__main__":

@@ -17,16 +17,19 @@
   "permissions"
  ],
  "caption_corrections": {
-  "anthropic stocks": "Anthropic's docs",
   "read me": "README",
   "rereads": "re-reads",
   "clear three": "clear \u2014 free",
   "cc usage": "ccusage",
-  "claude hud": "claude-hud"
+  "claude hud": "claude-hud",
+  "bell": "bill",
+  "agents permissions": "agent's permissions",
+  "sessions cost": "session's cost",
+  "anthropics": "Anthropic's"
  },
  "shots": [
   {
-   "start_phrase": "Your Claude bill",
+   "start_phrase": "Your Claude",
    "line": "Your Claude bill is mostly the reading, not the writing \u2014 here's why the top fix barely helps.",
    "scene": {
     "type": "split",
@@ -65,7 +68,7 @@
    "tier": "official"
   },
   {
-   "start_phrase": "Anthropic",
+   "start_phrase": "Anthropic's docs",
    "line": "Anthropic's docs: the model remembers nothing between messages \u2014 every turn re-sends the whole conversation at input rates.",
    "scene": {
     "type": "sourceread",
@@ -86,7 +89,7 @@
    },
    "asset_id": "docs-context",
    "tier": "official",
-   "start_phrase_note": "whisper wrote the spoken \"Anthropic's docs\" as 'Anthropic stocks' \u2014 'Anthropic' alone lands on the right word; caption_corrections restores the written form"
+   "start_phrase_note": "whisper now merges the possessive ('anthropics docs'); the bare 'Anthropic' no longer matches a token on its own"
   },
   {
    "start_phrase": "Every turn",

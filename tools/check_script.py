@@ -631,6 +631,36 @@ def check(text: str, shape: str | None = None) -> list[str]:
                         "has to announce a return to was not held.")
                 break
 
+    # 5e. PAGE PUNCTUATION IN A SPOKEN SCRIPT (2026-08-26, user: "why are
+    #     em-dashes getting added, even though we have the humanizer?").
+    #
+    # This is not a style preference, and it does not rest on the em-dash
+    # being an "AI tell" — it rests on two facts:
+    #
+    #   1. A LISTENER CANNOT HEAR ONE. The voice renders it as a pause,
+    #      exactly like the comma or full stop you could have written. It is
+    #      a mark for the eye in a medium with no eye.
+    #   2. IT BREAKS THE SYNTHESIS. Probed 2026-08-26: IndexTTS2 rejects
+    #      em-dash, colon and semicolon outright (`unencodableText`), and 8
+    #      of 13 beats failed on exactly this before `speakable()` existed.
+    #
+    # Measured across the corpus when the question was asked: grok-bot and
+    # apple-pay-india carry one em-dash in ~350 words, while
+    # claude-eating-tokens carried SIX in 159 — one every 26 words. Both ends
+    # were approved, so this is advice with a number attached, not a rule.
+    # The threshold is 1-per-60: past that they are load-bearing, and the
+    # writer is reaching for the mark instead of choosing the pause.
+    dashes = flat.count("\u2014") + flat.count("\u2013")
+    if dashes and len(flat.split()) / dashes < 60:
+        notes.append(
+            f"PAGE PUNCTUATION: {dashes} em/en-dashes in {len(flat.split())} "
+            f"words — one every {len(flat.split()) // dashes}. A listener "
+            "cannot hear a dash; it becomes whatever pause you would have "
+            "written anyway, and it breaks the local TTS outright. Write the "
+            "comma or the full stop you mean. (The humanizer skill's job is "
+            "the half of this a checker cannot measure — it is a MANUAL pass "
+            "and nothing runs it for you.)")
+
     # 6. NUMBER DENSITY — also the playbook's own rule.
     nums = len(re.findall(r"\$?\d[\d.,]*", flat))
     per = len(ss) / nums if nums else 999
@@ -800,6 +830,14 @@ def selftest() -> int:
         "Quarterly forecasting collapsed into a spreadsheet nobody reconciles.",
         exclude_slug="__none__")
     check_("HOUSE TIC silent on original phrasing", not fresh)
+    dashy = ("The phone ships Tuesday \u2014 and the price is the story "
+             "\u2014 which nobody expected \u2014 so here we are.")
+    check_("PAGE PUNCTUATION fires on a dash-dense script",
+           any(n.startswith("PAGE PUNCTUATION") for n in _notes_of(dashy)))
+    clean = ("The phone ships Tuesday. The price is the story. "
+             "Nobody expected it, so here we are.")
+    check_("PAGE PUNCTUATION silent when the pauses are written out",
+           not any(n.startswith("PAGE PUNCTUATION") for n in _notes_of(clean)))
     print("\n  self-test PASSED\n" if ok else "\n  self-test FAILED\n")
     return 0 if ok else 1
 

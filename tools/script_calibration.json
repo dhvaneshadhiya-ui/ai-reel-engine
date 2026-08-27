@@ -1,8 +1,9 @@
 {
-  "calibratedAt": "2026-08-26T05:50:59+00:00",
+  "calibratedAt": "2026-08-26T12:21:32+00:00",
   "corpus": {
     "apple-pay-india": "5500a5226e8f3d27e005d3b0784508a40990a48e510b1105207a8b3fbf26ae4d",
-    "claude-eating-tokens": "341019be42e5254769ab104ff0974e9602ebc0e128ae0b1c75c1d4c520f4df90",
+    "claude-eating-tokens": "11454c5208c34dcb090cfd657bf555247605dfa8c5ee59646da552dd7536854a",
+    "claude-memory-everywhere": "ee14030e7182dfdf95f1842069675795b5e0478235e01953f8d9375772329752",
     "grok-bot": "5aeaaeded5613e3a1511ee2bb1c37de81e826aaeafaf6288c401447f18cfd221",
     "ios27-beta7": "dd59fef1aace3191e42b7e140a3674beab0398f2ba2030514322324c99c01860",
     "ios27-tiers": "4eefbe517fb09f7ccf647d373cb75defef82369ade3b258635ccd29a00654d59",
@@ -11,6 +12,7 @@
     "iphone-third-interface": "02c0d357389678fd5ba5a54abff5c7f83d7a9bbbcc7c45b9c7e52b3bfa648dae",
     "iphone18-colors": "c35d4242aa9701d25f617ab67be4e1018484e06382e6c20d05397a9249b433ba",
     "iphone18-split": "02bc3f9e56c5c17c14c1b60813302f6ee4c0fd29b9601d50ceedd562ddfcf158",
+    "mac-mini-m6-m5pro": "2b428346d07d1342f1a693e122abcaa27463a2624040814d79cadef0d445d6ac",
     "made-by-google-26": "689f89be9e629d21ac331eac29e1db638092cacf21949dbf77e6fb0a38802812",
     "september-preview": "6569be722a491a1286cbf642882c85b84b34a24d503d08eb28c4931e054a0475"
   },

@@ -142,8 +142,47 @@ def run() -> int:
                     "propose refuses SPOKEN words not in the script",
                     "not in the script")
 
-        # 4. filled structure + ledger -> propose runs and records the review
+        # 3d-ii. Two ledger refusals that WORKED and were never tested, found
+        # 2026-08-27 by listing research_check's refusal modes and diffing
+        # against the cases here. An untested refusal is one edit away from
+        # silently becoming an acceptance.
+        (job / "research.md").write_text(
+            "# Research\n## CLAIMS\n\n## SEARCHED\n- 2026-08-27 a query\n")
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "propose refuses a ledger with no claims at all",
+                    "NO CLAIMS RECORDED")
+        (job / "research.md").write_text(RESEARCH.split("## SEARCHED")[0])
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "propose refuses a ledger with no dated search log",
+                    "NO SEARCH LOG")
+
+        # 3e. THE HUMANIZER PASS (2026-08-27). Structure and ledger are now
+        # both valid, so the only thing left is the half no checker measures.
+        # It used to be cued only when a tic or an em-dash fired — meaning a
+        # script with nothing measurable wrong never got a human ear, which is
+        # exactly backwards. It is a precondition now, like the two above.
         (job / "research.md").write_text(RESEARCH)
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "propose refuses without a humanizer pass", "NOT HUMANIZED")
+
+        # The refusal must NAME the skill in backticks, or the PostToolUse
+        # hook cannot fire on it and the refusal is just a printed reminder.
+        _buf = io.StringIO()
+        with contextlib.redirect_stdout(_buf), contextlib.suppress(SystemExit):
+            sa.cmd_propose("selftest")
+        ok("the refusal cues `humanizer` so the hook fires",
+           "SKILL CUE" in _buf.getvalue() and "`humanizer`" in _buf.getvalue())
+
+        # 3f. stamping the pass binds it to THIS draft's hash
+        with contextlib.redirect_stdout(io.StringIO()):
+            sa.cmd_humanized("selftest")
+        rec_p = job / "humanized.json"
+        ok("humanized.json is written", rec_p.exists())
+        ok("the record hashes the script it covers",
+           json.loads(rec_p.read_text()).get("sha")
+           == sa.sha(sa.read_script("selftest")))
+
+        # 4. filled structure + ledger + humanized -> propose runs
         with contextlib.redirect_stdout(io.StringIO()):
             sa.cmd_propose("selftest")
         rev_p = job / "review.json"
@@ -151,6 +190,17 @@ def run() -> int:
         rev = json.loads(rev_p.read_text()) if rev_p.exists() else {}
         ok("review carries the script hash",
            rev.get("script_sha256") == sa.sha(sa.read_script("selftest")))
+
+        # 4b. edit a word and the pass no longer covers what is being shown.
+        # Same guarantee as approve-after-propose, one step earlier.
+        _orig = (job / "script.md").read_text()
+        (job / "script.md").write_text(_orig + "\nA sentence nobody read aloud.\n")
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "propose refuses an edit made after the humanizer pass",
+                    "CHANGED SINCE THE HUMANIZER PASS")
+        (job / "script.md").write_text(_orig)
+        with contextlib.redirect_stdout(io.StringIO()):
+            sa.cmd_propose("selftest")
         # An UNHEDGED single-source claim must ADVISE (recorded in the
         # review) while propose still succeeds — advice, never a block.
         # The claim sits at the script's tail, clear of the opening's
@@ -230,8 +280,14 @@ def run() -> int:
                     "approve refuses a script edited after propose",
                     "CHANGED SINCE IT WAS PROPOSED")
 
-        # 7. re-propose, then approve — the compliant path stays open
+        # 7. the compliant path after an edit: humanize the NEW words, record
+        # that, re-propose, approve. Editing the script invalidates the pass
+        # exactly as it invalidates the review — that is the point of both.
+        expect_exit(lambda: sa.cmd_propose("selftest"),
+                    "an edited script needs the pass run again",
+                    "CHANGED SINCE THE HUMANIZER PASS")
         with contextlib.redirect_stdout(io.StringIO()):
+            sa.cmd_humanized("selftest")
             sa.cmd_propose("selftest")
             sa.cmd_approve("selftest")
         ok("approve succeeds on a fresh propose",
@@ -352,6 +408,40 @@ def run() -> int:
        '"walletattack"' in rows)
     ok("no shot plan renders as empty, not a crash",
        beat_plan.render("nope", root=tmp3) == [])
+
+    # 11a1. A HYPHEN-MERGED COMPOUND MUST STAY SEARCHABLE (2026-08-26).
+    # load_words glues whisper's "-Chi" onto "Ming" for DISPLAY, then set the
+    # searchable norm to normalize(text)[-1] — the last token only. So
+    # "Ming-Chi" was findable only as "chi", and "co" + "-work," (which is what
+    # the brand glossary's "co-work" pronunciation makes whisper emit for
+    # Cowork) carried norm "work". Any start_phrase naming the compound failed
+    # to resolve. Identical to the defect the comma branch directly below it
+    # already records and fixes; the two were never fixed together.
+    import importlib.util as _ilu
+    _spec = _ilu.spec_from_file_location(
+        "_csp", str(REAL_ROOT / "scripts" / "compile_shot_plan.py"))
+    _csp = _ilu.module_from_spec(_spec)
+    _spec.loader.exec_module(_csp)
+    tmp_hy = Path(tempfile.mkdtemp(prefix="hyphen-selftest-")) / "vo.json"
+    tmp_hy.write_text(json.dumps({"words": [
+        {"word": "and", "start": 0.0, "end": 0.1},
+        {"word": "co", "start": 0.1, "end": 0.2},
+        {"word": "-work,", "start": 0.2, "end": 0.4},
+        {"word": "Ming", "start": 0.5, "end": 0.6},
+        {"word": "-Chi", "start": 0.6, "end": 0.8},
+        {"word": "$2", "start": 1.0, "end": 1.1},
+        {"word": ",000", "start": 1.1, "end": 1.3},
+    ]}))
+    hw = _csp.load_words(tmp_hy)
+    norms = {w["text"]: w["norm"] for w in hw}
+    ok("a hyphen-merged compound keeps its WHOLE searchable form",
+       norms.get("co-work,") == "cowork")
+    ok("the leaked case is really fixed, not special-cased",
+       norms.get("Ming-Chi") == "mingchi")
+    ok("display text still shows the original spelling",
+       "co-work," in norms and "Ming-Chi" in norms)
+    ok("the comma-merge branch it was copied from still works",
+       norms.get("$2,000") == "2000")
 
     # 11a2. DELIVERY RATE IS KEYED TO THE LOCKED VOICE SPEED (2026-08-26).
     # The old constants were measured at speed 1.05 and kept being applied

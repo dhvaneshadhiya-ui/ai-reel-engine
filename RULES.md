@@ -90,7 +90,7 @@ may not outrun its beat; a riser must resolve. See
 
 **Format [GATE]:** the beat sheet declares `format` (`news` | `top5` | `comparison`); it
 selects the runtime band, hook ceiling, facecam share and SFX band from
-`FORMATS` in reel_gates. Unknown format = G23 blocks. `top5` and `comparison` require a CTA scene (G24); `comparison` must also
+`FORMATS` in reel_gates. Unknown format = G23 advises (it cannot block — see the constitution). `top5` and `comparison` require a CTA scene (G24); `comparison` must also
 declare its two `sides`, carry 3+ compare scenes, label every split and stay
 balanced 40-60% (G26). Numbers come from teardowns, never from guesses.
 

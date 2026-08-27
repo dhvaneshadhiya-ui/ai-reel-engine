@@ -4604,6 +4604,666 @@ a real fragment rather than trusting a filename.
 doctor runs it, so a clause that quietly stops being enforced fails the first
 command of the session instead of waiting to be asked a fifth time.
 
+## 2026-08-26 — annotatezoom fits the SOURCE, so a `focus` inside a big sheet renders small
+
+The reel's UI evidence is three official Anthropic screenshots at 2048x1152.
+Ten beats framed regions of them with `annotatezoom` + `focus`. Every one
+rendered as a **small card adrift on a near-empty cream field** — eleven
+DEAD SPACE flags, and two adjacent beats hashed as near-identical and blocked
+the lint.
+
+The cause is that annotatezoom fits the SOURCE image and then settles toward
+the focus, so a 900x880 region inside a 2048x1152 sheet is drawn at the sheet's
+scale, not the region's. A PIL simulation had predicted 55% fill; the render
+gave about 20%. **The simulation was modelling the wrong component.**
+
+Two fixes, and the second only exists because of the first:
+
+1. **Bake the crop into its own asset** and point the beat at that, with
+   `focus` = the whole image. Now the component fits the region itself. The
+   topic-name column went from 36% to 61% of frame height.
+2. **Then set the field by measured brightness.** Baking removed the orange
+   margin, so annotatezoom's blurred-self fill became WHITE — a white card on a
+   white field. Every baked crop is now measured (`mean > 170` -> `bg: "black"`),
+   which put the white cards on the dark editorial field and took DEAD SPACE
+   from eleven flags to two.
+
+**Distilled rule: a simulation is evidence about the simulation.** It caught
+four real defects before the first render and then confidently mispredicted the
+fill, because it modelled the geometry and not the component. Simulate to find
+crops that are wrong; render to find out how they look.
+
+### Treatment history — claude-memory-everywhere
+
+- claude-memory-everywhere (Anthropic memory announcement — a news reel built
+  almost entirely on FIRST-PARTY evidence, which is new here: three official
+  product screenshots embedded in the announcement plus a mobile capture of the
+  post itself, no third-party footage at all): split hook (baked PORTRAIT crop
+  of the Topics file list above the presenter, NO display type — see below),
+  `receipt` on the post masthead with the highlight landing on "August 25,
+  2026", NINE `sourceread` read-alongs across four different regions of one
+  mobile capture (highlights accumulate forward down the page, never
+  backwards), EIGHT `annotatezoom` beats on BAKED crops of the official
+  screenshots on a `bg: "black"` field with box/underline marks timed to
+  vo.json onsets, `wordcascade` for the five sensitive categories with
+  `bottomSrc` facecam filling the 1.68s before the first word is spoken,
+  `checklist` with all four rows in the `no` state ("NEVER STORED") for the
+  refused list, four facecam beats (opening promise, the take, the loop plant,
+  the close), 8 SFX, no music, no CTA.
+- **The hook carries NO display type, deliberately.** Two passes proved it
+  should not: the type landed across the topic rows and was unreadable, and
+  because ONE TEXT SYSTEM saw the headline speak the narration's words it
+  suppressed the caption chips — so the frame carried two texts, one illegible
+  and one missing. Removing the headline gives the chips back, and the chips
+  name the brand on mute, which is what the headline was there to do.
+- -> next reel must introduce at least one new treatment. Already used and not
+  to be repeated as the SAME shape next: a `checklist` whose rows are ALL `no`
+  as the payoff of a withheld-list loop; `wordcascade` + `bottomSrc` to cover
+  the gap before its first spoken word; baked focus-crops on `bg: "black"` as
+  the general answer to a wide UI screenshot in a 9:16 frame (borrow the
+  TECHNIQUE freely — it is now the documented default — but not the specific
+  "white card on black, box on the control" composition three times running).
+
+## 2026-08-26 — "the voiceover is flat": measured, and it is the CLONE
+
+User: *"Voiceover is still so flat, no energy, no emotion... the way it starts,
+like the creator is fumbling."* Correct on both counts, and both are now
+numbers rather than impressions.
+
+**FLAT — measured against the user's own reference reels.** Pitch standard
+deviation in semitones, same estimator on all four:
+
+| clip | pitch sd | range |
+|---|---|---|
+| creator reference #1 | 3.74 | 11.6 |
+| creator reference #2 | 5.00 | 16.3 |
+| creator reference #3 | 6.63 | 17.4 |
+| **our shipped master** | **2.83** | **9.1** |
+
+**FUMBLING — it is inverted stress.** In the flagged opening, `"the"` is held
+0.34s while `"reading"` — the word carrying the meaning — gets 0.28s; then
+"why the top" rushes past at 0.14s each. Function words longer than the
+content words beside them is a reader who does not know which word matters.
+Three instances in the reel.
+
+**THE CAUSE IS THE CLONE, and settings do not touch it.** Two avatar probes
+(stability 0.42→0.28 + style 0.35→0.62; and eleven_v3 at style 0.70) came
+back at 2.02 and 2.74 against a 2.83 baseline — one WORSE, one unchanged.
+Then the decisive test, TTS only, same text, same speed, only the voice
+different:
+
+    our clone "iGeeks Blog"    1.86 semitones   range  4.6
+    HeyGen stock voice "Shaun" 3.27 semitones   range 10.6
+
+A clone reproduces the expressiveness of its training audio. The source read
+was level, so the clone is level, and no stability/style value invents range
+that was never recorded. **Do not spend more credits tuning this clone** —
+recorded in `config.json` so a future session does not repeat the experiment.
+
+**What is now in place:**
+- `tools/vo_qc.py` measures the READ — pitch variation, pitch range, stress
+  inversion — with the 3.5-semitone floor taken from the flattest real
+  creator, not invented. Every check in this repo looked at the script;
+  nothing had ever listened to what came back.
+- It runs inside `avatar_handoff prepare`, so a flat read is caught where the
+  VO first exists — before a frame is rendered against it.
+- The master-rule audit gained a clause for it: *the READ is measured, not
+  just the words.*
+- `references/voice-clone-recording-spec.md` says what to record to fix it,
+  and sets the acceptance test: a new clone ships only if it clears 3.5.
+
+**The honest limit:** nothing here fixes the current reel's read. The fix
+needs new source recordings from the user, which is the one step no tool can
+do.
+
+## 2026-08-26 — Soniqo / IndexTTS2 evaluated for emotion control: measured verdict
+
+User asked whether soniqo.audio could add emotion, tempo and pause control to
+the voiceover. Installed it (`brew install speech`, homebrew-core, on-device,
+Apple Silicon) and measured rather than speculated.
+
+**It does have the controls**: `--indextts2-emotion` (10 presets or an 8-value
+vector), `--indextts2-emotion-weight`, `--indextts2-speaking-rate` (0.5-1.5),
+`--indextts2-max-pause`, and `--indextts2-emotion-audio` — a SEPARATE emotion
+reference from the voice sample. Cloning needs 5-30s, not minutes. Runs
+locally: no per-use cost, no queue.
+
+**Measured, same voice sample and same line throughout:**
+
+| synthesis | pitch sd | identity vs his reference |
+|---|---|---|
+| HeyGen clone (what ships today) | 1.86 | 0.976 |
+| Soniqo, neutral | 2.25 | **0.984** |
+| Soniqo, `--emotion happy` | 2.43 | 0.936 |
+| Soniqo, emotion transferred from an expressive sample | 2.75 | 0.957 |
+| Soniqo, `--emotion eager` / `excited` | **2.99** | 0.952 |
+| *control: a genuinely different speaker* | 3.27 | *0.924* |
+| *target: the user's own creator references* | *3.74-6.63* | — |
+
+**Two findings, and the second is the one that matters.**
+
+1. Emotion control is real: 1.86 -> 2.99 is a **61% increase** in pitch
+   movement. But it still lands **below the 3.5 floor** taken from the
+   flattest real creator. It narrows the gap; it does not close it.
+2. **Expression is being bought with identity.** Neutral scores 0.984 —
+   better than the HeyGen clone itself. Every emotion preset moves it toward
+   the different-speaker control: eager 0.952, happy 0.936, against 0.924 for
+   a different person entirely. The more emotion asked for, the less it is
+   his voice.
+
+**The reason is the reference, and it invalidates nothing but explains
+everything: the 20-second sample was extracted from the existing FLAT clone's
+own output.** So the test cloned a flat voice and then asked it for energy.
+The emotion presets were fighting the source, which is exactly why they cost
+identity to make progress.
+
+**Therefore the recording script is still the fix, not the workaround.** With
+genuinely expressive source audio, the emotion controls would be adding to a
+voice that already moves rather than dragging one that does not. The correct
+sequence is: record -> re-clone -> measure -> only then decide whether emotion
+control is needed on top.
+
+**Identity caveat RESOLVED, favourably:** a 20-second reference preserved
+identity BETTER than the full HeyGen clone (0.984 vs 0.976). Short reference
+length is not a risk here.
+
+**Licence caveat RESOLVED, with a named risk:** IndexTTS2 ships under the
+**bilibili Model Use License** (not Apache 2.0, despite its HuggingFace card
+— the inconsistency is itself a smell). §2.1 grants royalty-free use; §2.2
+requires a separate licence only above 100M MAU or RMB 1B revenue, so
+commercial use at this scale is permitted. Governed by PRC law, Shanghai
+arbitration. **CosyVoice, in the same CLI, is true Apache 2.0** and is the
+clean fallback if that matters more than the finer controls.
+
+New tool: `tools/voice_similarity.py` — MFCC fingerprint cosine similarity,
+which is how every number in the identity column above was produced. Its own
+output insists on a different-speaker CONTROL, because an absolute similarity
+score has no units worth trusting.
+
+**Second attempt, using the HeyGen voice ID directly as the clone source
+(2026-08-26).** The first reference had been extracted from a RENDERED reel,
+so it carried mp4 encoding and the loudness master; a clean 44.1kHz sample
+straight from `create_speech` should have been strictly better. It was worse
+on both axes:
+
+| clone source | source's own pitch sd | output pitch sd | identity |
+|---|---|---|---|
+| slice of the rendered reel | 3.13 | **2.99** | 0.952 |
+| raw TTS from the voice ID | 1.92 | 2.79 | **0.922** |
+| *different-speaker control* | — | 3.27 | *0.924* |
+
+**The reference's own expressiveness is both the ceiling AND the identity
+anchor.** Cloning from the flatter source produced a flatter read whose
+identity score fell BELOW the different-speaker control — i.e. it stopped
+sounding like him at all while still not gaining energy.
+
+Two independent attempts now put the ceiling at ~3.0 against a 3.5 floor, and
+both used a reference derived from the flat clone. There is no configuration
+of engine, emotion preset, or reference cleanliness that fixes this, because
+the range was never in the source. **Only a real expressive recording moves
+the ceiling** (`references/voice-clone-script.md`).
+
+Correction to an earlier note: `--clean-reference` (Sidon restoration) is
+**not wired for indextts2** — it applies to qwen3/cosyvoice/voxcpm2/f5/higgs/
+indic-mio. Cleaning a phone recording before cloning therefore means either
+using one of those engines or running the restoration as a separate pass.
+
+**Was Soniqo implemented as documented? No — three deviations, corrected
+2026-08-26.** Checked my own usage against their stated spec rather than
+defending it:
+
+1. **"No heavy compression"** — the reference that produced the best number
+   (2.99) was a slice of the RENDERED MASTER, i.e. after `loudnorm` + a
+   limiter. Directly against their spec, and the good score was partly an
+   artefact of it. Fixed by cutting the reference from
+   `avatar-master-raw-v3.mp4` — the avatar render BEFORE our mastering.
+2. **Never used two of the three controls.** Their own example passes
+   `--indextts2-speaking-rate 1.35` and `--indextts2-max-pause 0.05`. I had
+   only ever set `--indextts2-emotion` — while telling the user the toolkit
+   offered tempo and pause control.
+3. **Never tested CosyVoice**, the Apache-2.0 engine, which their docs say
+   *"Always pass the transcript... skipping it costs accuracy and produces
+   mid-utterance drifts."* Now tested with the reference's real transcript.
+
+**Doing it properly changed the answer on identity, not on the ceiling:**
+
+| configuration | pitch sd | identity |
+|---|---|---|
+| HeyGen clone (ships today) | 1.86 | 0.981 |
+| Soniqo, non-compliant compressed reference | 2.99 | 0.950 |
+| **Soniqo per spec** (pre-master, 16k, all three controls) | 2.54 | **0.973** |
+| **CosyVoice per spec**, with transcript | **3.00** | 0.954 |
+| *control — a different person* | *3.27* | *0.938* |
+
+Per-spec configuration bought a large identity gain (0.950 -> 0.973 against a
+0.938 control) at a small expression cost. CosyVoice reaches 3.00 — the best
+expression of any run — and carries the clean Apache-2.0 licence, but sits
+closer to the control on identity.
+
+**The ceiling did not move.** Every correctly-configured run lands 2.5-3.0
+against a 3.5 floor, because all of them clone the same flat source. Doing it
+by the book improved fidelity and confirmed the diagnosis.
+
+## 2026-08-26 — per-beat voice direction: built, measured, and it did NOT work
+
+User's real goal, stated plainly: *"the idea is not going with a particular
+version. The idea is adapt the tempo, energy and emotions as and when
+required across the video."* Correct instinct — the framework already demands
+exactly this of music (hook / stable pulse / build / accent / release / CTA)
+and said nothing about voice because nobody had wired it.
+
+Built `tools/vo_direct.py`: seven registers (hook, context, build, turn,
+proof, payoff, cta), each with its own emotion, tempo and trailing silence,
+one voice reference throughout, assembled into a single VO. A line can be
+tagged `[turn]`; untagged lines get a register from their position in the arc.
+
+**Result: 2.81 semitones — no better than the 2.83 that already ships, and
+below the 3.00 of a single well-chosen setting.** Range 9.8, still under the
+10.0 floor. Identity held well (0.965 vs 0.938 control), and runtime landed
+at 57.4s against the master's 58.6s.
+
+**Why it failed is the useful part.** Directed registers DO land — probed on
+one line, IndexTTS2 gives hook 204Hz / turn 241Hz / payoff 202Hz, a real 3.0
+semitones of intentional spread. But stitching differently-directed beats
+does not raise the measure, because pitch sd is computed over the WHOLE file
+and each beat is internally flat. Splicing flat pieces at different pitches
+produces steps, not movement. **A voice that changes register between
+sentences is still monotone inside them**, and inside is where a listener
+hears energy.
+
+So per-beat direction is worth keeping — it is the right architecture, it
+costs nothing at runtime, and it will matter once the source has range — but
+it is NOT a substitute for an expressive clone. Nothing measured today beat
+3.00 against a 3.5 floor.
+
+**Two real bugs found on the way, both of which would have poisoned every
+future run silently:**
+
+1. **`synth()` treated a pre-existing file as success.** A failed beat kept
+   the previous run's audio and reported `ok`, so a "directed" VO assembled
+   from 5 new beats and 8 stale ones from a DIFFERENT ENGINE measured 3.45
+   and looked like a win. It now deletes the target first and prints the
+   engine's own error.
+2. **IndexTTS2's tokenizer rejects our house punctuation.** Proved by probe,
+   not inferred: `"One: see it works"` is rejected, `"One, see it works"` is
+   accepted; `"A test; another clause"` is rejected. Em-dash, colon and
+   semicolon all fail with `unencodableText` — and this repo's script style
+   uses all three constantly. `speakable()` maps them to commas, which is
+   what they mean out loud. Without it, 8 of 13 beats failed.
+
+**The fumble is fixable in the SCRIPT, today, with the voice we already
+have.** Same words, same clone, same speed — the shipped hook as one compound
+sentence ("...mostly the reading, not the writing — here's why the top fix
+barely helps") versus three short ones ("...mostly the reading. Not the
+writing. And the top fix barely helps."):
+
+| | stress inversions | word-duration spread |
+|---|---|---|
+| one compound sentence | 1 (`'the'` 0.34s > `'reading'` 0.28s) | 0.26s |
+| three short sentences | **0** | **0.38s (+46%)** |
+
+A long compound line gives a TTS no clear stress target, so it lands weight on
+whatever it meets — which is what the user heard as "the creator is fumbling".
+Short declaratives hand it one idea per sentence and one obvious word to hit.
+This costs nothing, needs no re-clone and no new engine, and it is the ONE
+voice improvement available immediately.
+
+**Decision for the next reel: keep the HeyGen voice.** Nothing measured beats
+it enough to justify the trade — the best alternative (CosyVoice, 3.00 vs
+2.83, +6%) is inaudible against a 3.5 floor and costs identity (0.954 against
+0.981, with a stranger at 0.938). Switching would also add local synthesis,
+concatenation seams, an untested HeyGen lip-sync path and re-derived anchors,
+for a gain nobody would hear. Write shorter hook sentences instead, and
+revisit the whole question once the re-clone exists.
+
+## 2026-08-26 — the short-sentence hook, and a caption bug it exposed
+
+**The rewrite worked for its stated purpose.** Hook split from one 16-word
+compound sentence into three (7 / 3 / 8 words), regenerated, and the stress
+inversion is GONE in the real audio: `'the'` 0.14s against `'reading'` 0.30s,
+where the shipped version had `'the'` 0.34s > `'reading'` 0.28s. The fumble
+the user heard was a script problem, and the script fixed it.
+
+**With an honest cost:** overall pitch variation fell 2.83 -> 2.22. Short
+declaratives give three small intonation arcs where a long sentence gives one
+big one. The opening no longer stumbles; the read is marginally more even.
+Worth it for the specific complaint, and it changes nothing about the clone
+being the real ceiling.
+
+**Keeping the open loop nearly got lost.** The first rewrite —
+"...mostly the reading. Not the writing. And the top fix barely helps." —
+reads well and KILLED the loop: the original's "here's why ... barely helps"
+was a promise paid off thirty seconds later at "that's why it barely helps."
+Dropping "here's why" turned a promise into a statement and the ending would
+have summarised instead of arriving. Caught by `open_loop`, fixed by keeping
+both halves inside the short sentences.
+
+**And it exposed a caption bug that would have shipped a broken reel.**
+Multi-word `caption_corrections` were applied to the CHUNK text AFTER words
+are grouped three at a time. That works only while a phrase happens to sit
+inside one chunk. The new read re-chunked as `"see it, CC"` / `"usage
+charts, it"`, so `"cc usage" -> "ccusage"` matched nothing and **three of the
+four tool names vanished from the captions of a reel whose whole job is
+naming those tools** — silently, with every gate green.
+
+Fixed at the word level: a matching run now collapses into ONE caption word
+spanning the run's timing, so a name cannot be split by any future chunk
+boundary. Same failure shape as the anchor matcher's compound splits — an
+arbitrary grouping deciding what counts as adjacent. Regenerating a voice
+moves every boundary, so this would have recurred on every re-render.
+
+## 2026-08-26 — "is our script actually being humanized?" No. It never was.
+
+User asked why em-dashes keep appearing in scripts when the repo has a
+humanizer skill installed. Checked instead of answering: **every occurrence
+of `humanizer` in this repo's code is a comment.** `check_script.py` mentions
+it in a docstring, `showrunner.py` prints its name in a stage list,
+`doctor.py` refers to it in passing. Nothing has ever invoked it. CLAUDE.md
+said "run it after the word budget and before propose" — and that sentence
+was the entire mechanism.
+
+The em-dashes are the visible symptom, measured across the corpus:
+
+| script | em-dashes | words | one every |
+|---|---|---|---|
+| claude-eating-tokens | 6 | 159 | **26 words** |
+| iphone18-split | 7 | 242 | 35 |
+| september-preview | 6 | 196 | 33 |
+| grok-bot | 1 | 355 | 355 |
+| apple-pay-india | 1 | 339 | 339 |
+
+**New check: PAGE PUNCTUATION**, and it does NOT rest on the em-dash being an
+"AI tell". It rests on two facts about this medium:
+
+1. **A listener cannot hear one.** The voice renders it as a pause — exactly
+   the comma or full stop that could have been written. It is a mark for the
+   eye, in a medium with no eye.
+2. **It breaks the synthesis.** Probed: IndexTTS2 rejects em-dash, colon and
+   semicolon outright, and 8 of 13 beats failed on precisely this.
+
+Threshold 1-per-60 words, sitting between the corpus's clean end (~1 per 350)
+and its dense end (1 per 26). Advice, with a self-test both ways.
+
+**And the docs now say what is true.** CLAUDE.md records that nothing runs
+the pass, and `propose` prints a line at the last moment before approval
+saying so. A skill that is installed, documented, and never executed is
+indistinguishable from one that was never installed — except that it lets
+everyone believe the work was done.
+
+## 2026-08-26 — full engine audit: is everything wired, and does it fire?
+
+User asked for a thorough pass over the whole engine, with the emphasis on
+things "getting auto-triggered at the right time". Given how many
+documented-but-never-executed capabilities turned up today, the audit had to
+be mechanical rather than a read-through.
+
+**`tools/wiring_audit.py`** puts every tool in exactly one bucket:
+
+| bucket | n | meaning |
+|---|---|---|
+| AUTO | 55 | another program executes it |
+| MANUAL | 14 | a human runs it, and a doc names it |
+| LEGACY | 10 | one-off per-reel scripts, inert by design |
+| **ORPHAN** | **0** | nothing runs it, nothing mentions it |
+
+It found exactly ONE genuine orphan: **`ingest_screencap.py`** — a working
+tool that turns an iPhone screen recording into a reel-ready clip and scrubs
+the personal data out of it, mentioned in no document, so nobody would ever
+reach for it. Now written into AGENT.md's scout step, where a real OS
+demonstration is the thing you want. The legacy bucket exists so those ten
+inert build scripts cannot hide the next real one.
+
+Doctor runs the wiring audit every session.
+
+**SKILLS CANNOT BE AUTO-INVOKED — only cued.** No code can execute a skill,
+so "auto-trigger" means naming the skill at the exact moment its need
+appears. A moment stated in a document is NOT a trigger: the humanizer had
+one in CLAUDE.md for weeks and never ran once. Cues now fire off findings:
+
+- `script_doctor` -> `viral-hook-writer` / `going-viral` when the hook or the
+  loop is what failed; `humanizer` on a tic, an AI tell or page punctuation;
+  `fact-check-workflow` when a claim is spoken harder than its evidence.
+- `prepublish` -> `social` / `caption-and-hashtags` / `youtube-seo` when
+  packaging is missing.
+- `propose` -> `humanizer`, at the last moment before approval.
+
+**Everything green, verified rather than assumed:** 115 gate checks, 66
+script-pipeline checks, 13 capture defaults, 37 master-rule clauses,
+framework and check_script self-tests, TypeScript clean, doctor ok.
+
+**Two of my own test harnesses lied during this audit**, both from zsh not
+word-splitting an unquoted variable: the first orphan sweep reported all 79
+tools orphaned, and a suite loop reported two self-tests failing at exit=2
+when both pass. Neither was a repo defect. Recorded because a broken CHECK
+reads exactly like a broken SYSTEM, and the reflex has to be to verify the
+harness before reporting the finding.
+
+**One real open item:** claude-eating-tokens is rendered but has no
+`packaging.md`, so `prepublish` correctly refuses it. That is the last step
+before it can be posted.
+
+## 2026-08-26 — hooks: skills now fire without anyone remembering
+
+The user caught a real walk-back. Earlier in the day I said skills
+auto-trigger; by the audit I had redefined "auto" as "a tool prints a line
+naming the skill, and the agent notices." That is not a trigger, it is a
+reminder, and this repo's whole history says reminders get skipped.
+
+**What was actually missing: `.claude/settings.json` did not exist.** No hooks,
+project-level or user-level, had ever been configured. Claude Code has a real
+mechanism for running something at a defined moment and injecting the result
+as an instruction, and the engine had never used it. That is the gap, and it
+is now closed:
+
+| Hook | Fires on | Makes automatic |
+|---|---|---|
+| `session_start.py` | SessionStart | `doctor.py` — the "first two commands" prose rule |
+| `reel_precedence.py` | UserPromptSubmit | `news-reel` precedence + the anti-hijack rule |
+| `skill_cue.py` | PostToolUse (Bash) | reads our `SKILL CUE:` lines, names the skill as an instruction |
+| `guard_bypass.py` | PreToolUse (Bash) | denies direct remotion render, HyperFrames pipeline cmds, hard-reset/force-push |
+
+**Proof, not assertion:** `skill_cue` fired live in the session that wrote it,
+on a real `prepublish` run, and correctly pulled `social`,
+`caption-and-hashtags` and `youtube-seo` off wrapped lines. Hooks load without
+a session restart.
+
+**The guards bit their own author three times, all the same bug.**
+`guard_bypass` blocked the commit writing its own test (the test quotes the
+commands it blocks); `skill_cue` fired on a `sed` that was only DISPLAYING a
+cue; `guard_bypass` then blocked the CLAUDE.md section documenting itself,
+because a markdown table's pipes and backticks split into flawless fake
+commands. One lesson: **text about a command is not a command.** Matching is
+positional now, heredoc bodies are data, and inspection commands cannot raise
+a cue. Every one of those three incidents is a case in `tools/test_hooks.py`.
+
+**Guarding the guard.** 55 checks in `test_hooks.py`, run by doctor;
+`wiring_audit.py` now fails if a hook script is not named in settings.json,
+because an unwired hook removes a trigger while looking exactly like nothing
+is wrong — the identical failure shape as the tools it was built to find.
+
+## 2026-08-26 — second full audit: the hooks themselves were broken
+
+Asked to verify the whole engine again. The session's own SessionStart hook
+reported "doctor timed out (>110s)" for a check that takes 15 seconds, which
+was the first finding and the worst one.
+
+**1. INFINITE RECURSION in the preflight (shipped, live).** doctor runs
+`test_hooks.py`, which exercises `session_start.py`, which runs doctor. Each
+layer only ended on a nested timeout. It was invisible when the hook was
+written because doctor was wired to the suite in the same commit as the suite
+was wired to the hook. Fixed with an inherited env guard
+(`AIRE_PREFLIGHT_RUNNING`): the nested copy reports instead of recursing.
+Real preflight now 14.2s. The guard is tested, not trusted — and the test
+runs UNDER the guard so it cannot re-enter doctor either.
+
+**Lesson: a hook that calls the thing that tests the hook is a cycle, and no
+individual review of either file shows it.** Only running the real entry point
+does.
+
+**2. The precedence hook fired on maintenance prompts.** The repo is NAMED
+"AI Reel Engine", so "go through our entire AI Reel Engine" tripped the reel
+matcher. Tightened, and the test corpus is now REAL prompts from this
+project's history — nine production, eight maintenance. Tightening it
+immediately exposed the opposite bug: `script` did not match "scripts" and
+`caption` did not match "captions", so two genuine production requests
+("our system still generates very poor scripts") had been missing the brief
+all along. A filter is only as good as the corpus you test it against.
+
+**3. Two self-tests existed that nothing ran.** `check_frame_contract` and
+`notation` both had working `--selftest` flags that no program called — found
+by listing every selftest in the repo and diffing against doctor's calls.
+Both now run; `wiring_audit` fails on any future one, so coverage that never
+executes cannot look like coverage.
+
+**4. Four skills had no trigger; two needed one.** `reel-analyzer` now cues
+off G23 (an unmeasured format is exactly what that skill is for), and
+`ffmpeg-ytdlp` cues off a FAILING ffmpeg/yt-dlp command — the failure happens
+inside ffmpeg, so no tool of ours could print a cue for it. `content-repurposer`
+and `find-skills` are user-initiated and correctly have none.
+
+**5. DOC/CODE DRIFT — docs promised enforcement the code never performed.**
+CLAUDE.md: "Gate G23 rejects an unmeasured format outright." RULES.md:
+"Unknown format = G23 blocks." G23 is ADVICE and always was; the constitution
+only lets the three rules, RENDER and RIGHTS block. **A doc that promises a
+block the code does not perform is worse than no doc — it is exactly how a
+rule gets trusted instead of checked.** Both corrected, AGENT.md too, and
+`wiring_audit` now scans the binding docs for the claim automatically.
+STYLE-RULES is deliberately excluded: it is an append-only dated ledger, so
+its old entries are records of what was true then.
+
+**State of the material, separate from the system:** 9 of 21 beat sheets are
+blocked, 85 of their 94 violations being G45 — captions sitting under
+Instagram's account row. Every one was last modified 2026-08-18, before that
+overlay was measured. The gates are working; the old sheets are stale. They
+are shipped reels, so they were left alone rather than rewritten.
+
+## 2026-08-27 — the humanizer was cued CONDITIONALLY, which is backwards
+
+The user, reading the audit report's trigger table: *"humanizer skill only
+triggers if there are em-dashes in the script? actually entire script must be
+humanized."* Correct, and the fix is a rule change, not a wording change.
+
+**What was wrong.** `script_doctor` cued `humanizer` only when something
+MEASURABLE fired — a house tic, an AI tell, page punctuation. And
+`script_approval propose` printed a HUMANIZER reminder with **no backticks**,
+so the PostToolUse hook could not fire on it at all: the "last stop before
+approval" note was a printed line nobody was required to act on, which is the
+exact thing hooks exist to replace.
+
+**Why conditional is the wrong shape.** The humanizer's job is rhythm and
+whether a sentence sounds like a person said it. That is, by definition, the
+half a checker cannot measure. Firing it only when the checker DOES measure
+something means the scripts that most need a human ear — the ones that look
+clean — are the ones that never get one. A clean measurement is not the same
+as sounding human.
+
+**What it is now.** A third precondition of `propose`, sitting beside
+structure.md and research.md, and hash-bound the way approval is:
+
+```bash
+python3 tools/script_approval.py humanized <slug>
+```
+
+- `propose` refuses without the record: `NOT HUMANIZED`.
+- It refuses again if a word changed since: `SCRIPT CHANGED SINCE THE
+  HUMANIZER PASS`. The pass no longer covers the words being shown — the same
+  guarantee as approve-after-propose, one step earlier.
+- **The refusal IS the trigger**: it prints the cue with the skill in
+  backticks, so the hook injects it as an instruction at the moment of refusal.
+- `script_doctor` now cues it on EVERY run, with different wording when
+  nothing measurable fired — *"which is not the same as sounding like a
+  person."*
+
+**Two ordering bugs found while wiring it, both worth keeping.** The check
+was first placed before the research ledger check, so three ledger cases
+started failing with a humanizer message — a refusal naming the wrong cause
+is worse than no refusal. And it was briefly inside the prose section's
+best-effort `try/except`, where an unrelated ImportError would have silently
+skipped it. **A precondition that an exception can skip is not a
+precondition.** It now sits last of the three, outside the try.
+
+`test_script_pipeline` is 72 checks (was 66): the refusal, the backticked
+cue, the record's hash binding, the staleness refusal, and the compliant
+path after an edit (humanize the new words, re-record, propose, approve).
+
+## 2026-08-27 — auditing the two stages the report had skipped
+
+The user, reading the audit report: *"There is nothing written about research
+and scouting in the report."* Correct — it covered the trigger machinery and
+the suites, and said nothing about two whole pipeline stages. Audited both
+properly rather than writing them up from memory.
+
+**RESEARCH — one real gap.** `research_check` has four refusal modes. The
+suite tested two of them plus the SPOKEN cross-check; **`NO CLAIMS RECORDED`
+and `NO SEARCH LOG` were never tested.** Both work — probed directly, both
+refuse — but an untested refusal is one edit away from silently becoming an
+acceptance, which is the whole reason this repo tests its refusals rather
+than its successes. Both are now cases in `test_script_pipeline` (74 checks,
+was 72).
+
+**RESEARCH — a missing trigger at the right moment.** `fact-check-workflow`
+was cued only by `script_doctor`, on a claim SPOKEN harder than its evidence.
+By then the sentence already exists and the fix is a rewrite. The cheaper
+moment is when `propose` reports thin sourcing — one source, or one domain
+wearing two names — because the claim is still a claim. Cued there now.
+
+**SCOUTING — nothing wrong, which is worth recording.** All ten
+sourcing/scouting gates BLOCK, and every one carries at least one case in
+`test_gates`: G29 mobile-first capture (3 cases), G41 desktop needs a
+recorded reason (1), G39 every scene carries the line it illustrates (5),
+G14 credit (3), G15 numbers carry their source (1), G45 caption safe area
+(3), G48 framing (3), G35/G11/G13 render integrity (4 between them).
+`capture.mjs` defaults hold at 13 checks, including the two that had silently
+broken and shipped a whole scout session. `scout_sheet` self-tests.
+
+Rule 2 and Rule 3 are the two constitution rules these enforce, and both are
+enforced in code rather than remembered — which is the answer to "is scouting
+covered": yes, and here is the evidence rather than the assurance.
+
+## 2026-08-27 — "at what stage do you do research?" had no answer in the manual
+
+The user asked where research sits, and guessed correctly: right after the
+topic, before anything else. Checking rather than confirming from memory
+turned up four documentation defects, one of them a stage with no number.
+
+**1. RESEARCH WAS NOT A STEP.** `AGENT.md` runs STEP 0 -> 1a -> 1b -> 1c ...
+and research appeared exactly three times in the whole file: twice as a field
+reference inside STEP 1a (ASSET SCOUT), once as a general principle. The
+ledger it produces is a BLOCKING precondition of `propose`. **A stage that
+gates the pipeline and is named nowhere in the order of operations is the
+definition of a step that gets skipped.** Now `STEP 0.5 — RESEARCH`, placed
+before the scout, because you cannot capture a source until you know which
+claim it proves.
+
+**2. The skill carried two orderings that never met.** `news-reel` says
+"Research first, and it leaves a LEDGER" in its writing order, and "1 — Scout
+BEFORE scripting" in its order of operations, with nothing reconciling them.
+Both are correct; the full sequence is research -> scout -> script, and it is
+now stated.
+
+**3. The skill's propose preconditions were a step behind.** It named only
+`structure.md`. There are three: structure, research, and the recorded
+humanizer pass.
+
+**4. The humanizer section said the pass runs "not on the whole script".**
+Read fairly, that licenses running it over flagged lines only — the exact
+thing the user objected to. The section's REASONING is right and measured
+(three of humanizer's patterns would strip the hedging G14/G15 and framework
+S20 require), but it conflated two different scopes. Split explicitly now:
+
+> **INPUT is wholesale** — the entire script, every time, measured or not.
+> **OUTPUT is selective** — reject the three named patterns on sight.
+
+**The pattern across all four:** every one is a doc that was true when
+written and drifted as the code moved, and none would have been found by
+running anything. `wiring_audit` catches a doc claiming a gate blocks when it
+does not; it cannot catch a stage nobody wrote down. That class still needs a
+person to ask "where does X happen?" — which is what the user did.
+
+**And a note on the answer itself:** references the user supplies are INPUTS,
+not sourcing. The dated `## SEARCHED` log is mandatory precisely so a reel
+cannot be assembled out of whatever arrived in the prompt, and a topic given
+with no references changes nothing about what the ledger must contain.
 ## 2026-08-27 — apple-surprise-and-shine: whisper writes spoken "AM"/"PM" as an orphan ".m." token, and it is not a TTS defect
 
 RAW NOTE: gate G34 blocked the render on `'.m. Pacific, Steve' carries an

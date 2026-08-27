@@ -175,10 +175,13 @@ silently disabled the frame checks for weeks.
   rule, scaffolded by `new_job.py`) AND a valid `jobs/<slug>/research.md` —
   the claims ledger (`tools/research_check.py`): every load-bearing claim
   carries a TIER, a SRC url, and the SPOKEN script words that carry it, plus
-  a dated search log. `approve` refuses unless the current script
+  a dated search log. **THIRD, since 2026-08-27: a recorded humanizer pass**
+  (`humanized.json`) whose hash matches the current script — the half of the
+  writing no checker can measure, previously cued only when something
+  measurable fired. `approve` refuses unless the current script
   hash-matches the last `propose` (`review.json`) — so a draft can no
-  longer skip the framework or the research record, and the user can no
-  longer be asked to approve words they were never shown. The full writing order is in the `news-reel`
+  longer skip the framework, the research record or the human ear, and the
+  user can no longer be asked to approve words they were never shown. The full writing order is in the `news-reel`
   skill; the self-test is `tools/test_script_pipeline.py`, run by doctor.
   **`check` must pass BEFORE the avatar is generated** — generation costs
   credits and freezes the audio. Gate **G27** re-checks the hash at build time,
@@ -240,8 +243,11 @@ not: they are news numbers, held deliberately identical rather than invented,
 and must be re-derived from 3-5 real comparison reels.
 
 **Adding a genre = adding a profile, not editing constants.** Every number in
-a profile must come from a real teardown of reference reels. Gate G23 rejects
-an unmeasured format outright — do not guess the numbers to unblock yourself.
+a profile must come from a real teardown of reference reels. Gate G23 flags
+an unmeasured format as ADVICE — it cannot block, because "we have not
+measured this genre" is not one of the three rules, RENDER or RIGHTS. Nothing
+stops you guessing the numbers; that discipline is yours. G23 also cues
+`reel-analyzer`, which is how the teardown gets done.
 
 ## Avatar — default is the DIGITAL TWIN (2026-08-13)
 
@@ -312,6 +318,47 @@ Three things that do NOT travel and must be redone on the new machine:
 The skills DO travel: `.claude/skills/` holds real directories, not symlinks.
 They pointed at `~/Faceless YouTube Channel/` until 2026-08-14, which would
 have silently broken on any other machine.
+
+## Hooks — the only thing here that fires WITHOUT being remembered
+
+`.claude/settings.json` + `.claude/hooks/`, added 2026-08-26. Everything else
+in this repo can, at best, PRINT a reminder and hope the reader acts on it.
+That is how the humanizer sat documented for weeks and ran zero times. A hook
+is different: Claude Code executes it and injects its output as an
+instruction, with nobody needing to remember anything.
+
+- **`session_start.py`** (SessionStart) — runs `doctor.py` and reports it.
+  "First two commands, every session" was prose, and prose is skippable; a
+  missing dependency once disabled the frame checks for weeks.
+- **`reel_precedence.py`** (UserPromptSubmit) — on a reel-shaped prompt,
+  injects the precedence: `news-reel` owns the job, the HyperFrames router's
+  "mandatory entry point" claim is FALSE here, approval is blocking, and the
+  user runs no terminal commands.
+- **`skill_cue.py`** (PostToolUse on Bash) — reads `SKILL CUE:` out of our own
+  tools' stdout and turns it into an instruction naming the skill.
+  **This is the thing that actually triggers a skill.**
+- **`guard_bypass.py`** (PreToolUse on Bash) — denies the three documented
+  bypasses: a direct remotion render (skips the gates), a HyperFrames pipeline
+  command (skips everything), and hard-reset / force-push (the merge-never-
+  reset rule).
+
+**Be precise about what "auto-triggered" means.** Code cannot call the Skill
+tool. What a hook CAN do is put a naming instruction in front of the agent at
+the exact moment the need appears, which is the whole difference between a
+rule that holds and a rule that is merely written down. To make a new skill
+fire, print a `SKILL CUE:` line **with the skill name in backticks** — the
+hook parses backticks and discards any name that is not an installed skill.
+
+**Both guards learned the same lesson on the same day, three times.**
+`guard_bypass` blocked the commit writing its own test (the test quotes the
+commands it expects to block), then blocked this very section (a markdown
+table whose pipes and backticks split into perfect fake commands);
+`skill_cue` fired on a `sed` that was only displaying a cue. All three are one
+bug: text ABOUT a command is not a command. Matching is now positional and
+heredoc bodies are treated as data. `tools/test_hooks.py` (55 checks, run by
+doctor) pins every one of those cases, and `wiring_audit.py` fails if a hook
+script is not named in `settings.json` — an unwired hook silently removes a
+trigger while looking like nothing is wrong.
 
 ## Which skill — this precedence is binding
 
@@ -405,7 +452,31 @@ own numbers — and its PERSONALITY section explicitly tells it NOT to inject
 opinions into reference-style text, which matches our reporting register.
 
 Run it **after** the script hits its word budget and **before**
-`script_approval.py propose`. Never after approval: G27 hashes the approved
+`script_approval.py propose`.
+
+**IT IS NOW A REQUIRED STEP — 2026-08-27.** It used to be cued only when
+something MEASURABLE fired (a house tic, an AI tell, an em-dash), which is
+backwards: a script with nothing measurably wrong can still read like a
+machine wrote it, and rhythm is exactly what no checker can see. So the
+scripts that most needed a human ear were the ones never getting one.
+`propose` now REFUSES without a recorded pass, alongside structure.md and
+research.md, and the record is hash-bound like approval:
+
+```bash
+python3 tools/script_approval.py humanized <slug>   # after the pass, not before
+```
+
+Edit a word afterwards and propose refuses again, because the pass no longer
+covers the words being shown. `script_doctor` cues it on EVERY run now, not
+only when a tell fires. The refusal itself names the skill in backticks, so
+the PostToolUse hook fires on it. Run it over the WHOLE script, never the
+flagged lines only. (Historical note, and the reason for all of the above: the user asked why em-dashes
+kept appearing "even though we have the humanizer skill", and the answer was
+that the pass had never once been executed — claude-eating-tokens carried six
+em-dashes in 159 words, one every 26.) `check_script` now measures what a
+checker can (PAGE PUNCTUATION, AI TELLS, HYPE, HOUSE TIC); the rest — rhythm,
+whether a sentence sounds like a person — is a pass YOU perform, and its
+absence is invisible unless you look for it. Never after approval: G27 hashes the approved
 narration, so a post-approval rewrite stops the build (correctly). Feed it our
 own shipped scripts as a voice sample — a sample outranks its own style rules,
 so calibrate rather than accept its defaults.

@@ -46,20 +46,20 @@
         {
           "src": "sfx2/risers-01.mp3",
           "vol": 0.367,
-          "at": 0.0
+          "at": 0.15
         },
         {
           "src": "sfx2/impact-boom.mp3",
           "vol": 0.452,
-          "at": 0.35
+          "at": 0.15
         }
       ],
       "creditOnScreen": true,
-      "durationSec": 5.54,
+      "durationSec": 5.7,
       "captionBottom": 1000,
       "assetId": "ccusage-hero",
       "claimId": "ccusage-hero",
-      "covers": "Your Claude bill",
+      "covers": "Your Claude",
       "bottomFrom": 0.0,
       "bottomFocusX": 0.5
     },
@@ -79,7 +79,7 @@
         }
       ],
       "creditOnScreen": true,
-      "durationSec": 3.98,
+      "durationSec": 3.5,
       "assetId": "docs-context",
       "claimId": "docs-context"
     },
@@ -93,9 +93,10 @@
       "zoom": 1.0,
       "focusY": 0.46,
       "_note": "no zoom: this capture is already frame-width, so any scale cuts its text off both edges. Frame it with `from`/focusY instead.",
-      "durationSec": 3.92,
+      "durationSec": 3.6,
       "assetId": "docs-caching-scroll",
-      "claimId": "docs-caching-scroll"
+      "claimId": "docs-caching-scroll",
+      "captionTheme": "dark"
     },
     {
       "type": "footage",
@@ -111,9 +112,10 @@
       "creditOnScreen": true,
       "zoomDir": "in",
       "zoom": 1.0,
-      "durationSec": 1.78,
+      "durationSec": 1.82,
       "assetId": "caveman-page",
-      "claimId": "caveman-page"
+      "claimId": "caveman-page",
+      "captionTheme": "dark"
     },
     {
       "type": "footage",
@@ -125,9 +127,10 @@
       "zoom": 1.0,
       "focusY": 0.34,
       "_note": "no zoom: this capture is already frame-width, so any scale cuts its text off both edges. Frame it with `from`/focusY instead.",
-      "durationSec": 2.2,
+      "durationSec": 2.62,
       "assetId": "caveman-page",
-      "claimId": "caveman-page"
+      "claimId": "caveman-page",
+      "captionTheme": "dark"
     },
     {
       "type": "statcard",
@@ -152,9 +155,9 @@
           "color": "#E0785A"
         }
       ],
-      "footnote": "GitHub · JuliusBrussee/caveman",
+      "footnote": "GitHub \u00b7 JuliusBrussee/caveman",
       "bg": "black",
-      "durationSec": 3.58
+      "durationSec": 3.32
     },
     {
       "type": "annotatezoom",
@@ -176,7 +179,7 @@
           "at": 0.0
         }
       ],
-      "durationSec": 5.62,
+      "durationSec": 4.48,
       "assetId": "caveman-warning",
       "claimId": "caveman-warning"
     },
@@ -189,7 +192,7 @@
       "creditOnScreen": true,
       "covers": "the cheap half of your bill",
       "zoom": 1.06,
-      "durationSec": 3.82,
+      "durationSec": 3.26,
       "assetId": "ccusage-split",
       "claimId": "ccusage-split"
     },
@@ -207,8 +210,8 @@
       ],
       "zoom": 1.0,
       "_note": "no zoom: this capture is already frame-width, so any scale cuts its text off both edges. Frame it with `from`/focusY instead.",
-      "durationSec": 2.06,
-      "from": 30.44
+      "durationSec": 2.12,
+      "from": 28.3
     },
     {
       "type": "floatcard",
@@ -223,7 +226,7 @@
       ],
       "creditOnScreen": true,
       "aspect": 1.9737,
-      "durationSec": 4.36,
+      "durationSec": 4.08,
       "assetId": "term-ccusage",
       "claimId": "term-ccusage"
     },
@@ -232,10 +235,10 @@
       "src": "assets/claude-eating-tokens/hud-statusline.mp4",
       "creditOnScreen": true,
       "from": 4.6,
-      "_note": "full width so the demo reads whole; caption raised onto the demo's dark band — at the default it sat on the README's white Install body text, and zooming to dodge that cropped the proof (2026-08-25)",
+      "_note": "full width so the demo reads whole; caption raised onto the demo's dark band \u2014 at the default it sat on the README's white Install body text, and zooming to dodge that cropped the proof (2026-08-25)",
       "captionBottom": 1300,
       "zoomDir": "in",
-      "durationSec": 2.82,
+      "durationSec": 2.22,
       "assetId": "hud-statusline",
       "claimId": "hud-statusline",
       "covers": "claude-hud is a live meter"
@@ -247,9 +250,10 @@
       "creditOnScreen": true,
       "zoomDir": "in",
       "zoom": 1.0,
-      "durationSec": 4.52,
+      "durationSec": 4.7,
       "assetId": "ponytail-page",
-      "claimId": "ponytail-page"
+      "claimId": "ponytail-page",
+      "captionTheme": "dark"
     },
     {
       "type": "footage",
@@ -261,9 +265,10 @@
       "creditOnScreen": true,
       "covers": "checks the standard library",
       "_note": "no zoom: this capture is already frame-width, so any scale cuts its text off both edges. Frame it with `from`/focusY instead.",
-      "durationSec": 2.4,
+      "durationSec": 2.56,
       "assetId": "ponytail-page",
-      "claimId": "ponytail-page"
+      "claimId": "ponytail-page",
+      "captionTheme": "dark"
     },
     {
       "type": "floatcard",
@@ -278,7 +283,7 @@
       ],
       "creditOnScreen": true,
       "aspect": 1.3534,
-      "durationSec": 4.8,
+      "durationSec": 4.48,
       "assetId": "term-clear",
       "claimId": "term-clear"
     },
@@ -295,7 +300,7 @@
         "h": 640
       },
       "creditOnScreen": true,
-      "durationSec": 2.4,
+      "durationSec": 3.46,
       "assetId": "docs-compact",
       "claimId": "docs-compact"
     },
@@ -315,7 +320,7 @@
       ],
       "creditOnScreen": true,
       "covers": "your agent's permissions",
-      "durationSec": 2.38,
+      "durationSec": 3.02,
       "assetId": "skill-hooks",
       "claimId": "skill-hooks"
     },
@@ -332,9 +337,9 @@
         }
       ],
       "variant": "keyword",
-      "durationSec": 2.318,
+      "durationSec": 2.027,
       "captionBottom": 880,
-      "from": 56.18
+      "from": 54.94
     }
   ],
   "captions": [
@@ -348,18 +353,18 @@
           "text": "Your"
         },
         {
-          "t": 0.26,
+          "t": 0.24,
           "text": "Claude"
         },
         {
-          "t": 0.56,
+          "t": 0.58,
           "text": "bill"
         }
       ]
     },
     {
       "start": 0.72,
-      "end": 1.74,
+      "end": 1.5,
       "text": "is mostly the",
       "words": [
         {
@@ -367,934 +372,935 @@
           "text": "is"
         },
         {
-          "t": 0.98,
+          "t": 0.92,
           "text": "mostly"
         },
         {
-          "t": 1.4,
+          "t": 1.36,
           "text": "the"
         }
       ]
     },
     {
-      "start": 1.74,
-      "end": 2.72,
+      "start": 1.5,
+      "end": 2.54,
       "text": "reading, not the",
       "words": [
         {
-          "t": 1.74,
+          "t": 1.5,
           "text": "reading,"
         },
         {
-          "t": 2.22,
+          "t": 2.16,
           "text": "not"
         },
         {
-          "t": 2.44,
+          "t": 2.36,
           "text": "the"
         }
       ]
     },
     {
-      "start": 2.72,
-      "end": 3.86,
-      "text": "writing. Here's why",
+      "start": 2.54,
+      "end": 3.5,
+      "text": "writing and here's",
       "words": [
         {
-          "t": 2.72,
-          "text": "writing."
+          "t": 2.54,
+          "text": "writing"
         },
         {
-          "t": 3.48,
-          "text": "Here's"
+          "t": 2.84,
+          "text": "and"
+        },
+        {
+          "t": 3.12,
+          "text": "here's"
+        }
+      ]
+    },
+    {
+      "start": 3.5,
+      "end": 4.14,
+      "text": "why the top",
+      "words": [
+        {
+          "t": 3.5,
+          "text": "why"
         },
         {
           "t": 3.72,
-          "text": "why"
-        }
-      ]
-    },
-    {
-      "start": 3.86,
-      "end": 4.46,
-      "text": "the top fix",
-      "words": [
-        {
-          "t": 3.86,
           "text": "the"
         },
         {
-          "t": 4.0,
+          "t": 3.92,
           "text": "top"
-        },
-        {
-          "t": 4.18,
-          "text": "fix"
         }
       ]
     },
     {
-      "start": 4.46,
-      "end": 5.94,
-      "text": "barely helps. Anthropic",
+      "start": 4.14,
+      "end": 5.1,
+      "text": "fix barely helps.",
       "words": [
+        {
+          "t": 4.14,
+          "text": "fix"
+        },
         {
           "t": 4.46,
           "text": "barely"
         },
         {
-          "t": 4.84,
+          "t": 4.78,
           "text": "helps."
-        },
-        {
-          "t": 5.54,
-          "text": "Anthropic"
         }
       ]
     },
     {
-      "start": 5.94,
-      "end": 7.1,
-      "text": "stocks. The model",
+      "start": 5.7,
+      "end": 6.78,
+      "text": "Anthropic's docs, the",
       "words": [
         {
-          "t": 5.94,
-          "text": "stocks."
+          "t": 5.7,
+          "text": "Anthropic's"
         },
         {
-          "t": 6.76,
-          "text": "The"
+          "t": 6.16,
+          "text": "docs,"
         },
         {
-          "t": 6.84,
+          "t": 6.7,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 6.78,
+      "end": 7.86,
+      "text": "model remembers nothing",
+      "words": [
+        {
+          "t": 6.78,
           "text": "model"
-        }
-      ]
-    },
-    {
-      "start": 7.1,
-      "end": 8.44,
-      "text": "remembers nothing between",
-      "words": [
+        },
         {
-          "t": 7.1,
+          "t": 7.0,
           "text": "remembers"
         },
         {
-          "t": 7.58,
+          "t": 7.42,
           "text": "nothing"
-        },
-        {
-          "t": 8.04,
-          "text": "between"
         }
       ]
     },
     {
-      "start": 8.44,
-      "end": 10.06,
-      "text": "messages. Every turn",
+      "start": 7.86,
+      "end": 9.48,
+      "text": "between messages. Every",
       "words": [
         {
-          "t": 8.44,
+          "t": 7.86,
+          "text": "between"
+        },
+        {
+          "t": 8.18,
           "text": "messages."
         },
         {
-          "t": 9.52,
+          "t": 9.2,
           "text": "Every"
-        },
-        {
-          "t": 9.76,
-          "text": "turn"
         }
       ]
     },
     {
-      "start": 10.06,
-      "end": 11.1,
-      "text": "resends the whole",
+      "start": 9.48,
+      "end": 10.36,
+      "text": "turn resends the",
       "words": [
         {
-          "t": 10.06,
+          "t": 9.48,
+          "text": "turn"
+        },
+        {
+          "t": 9.7,
           "text": "resends"
         },
         {
-          "t": 10.68,
+          "t": 10.16,
           "text": "the"
-        },
-        {
-          "t": 10.94,
-          "text": "whole"
         }
       ]
     },
     {
-      "start": 11.1,
-      "end": 12.56,
-      "text": "conversation at input",
+      "start": 10.36,
+      "end": 11.46,
+      "text": "whole conversation at",
       "words": [
         {
-          "t": 11.1,
+          "t": 10.36,
+          "text": "whole"
+        },
+        {
+          "t": 10.54,
           "text": "conversation"
         },
         {
-          "t": 11.66,
+          "t": 11.08,
           "text": "at"
-        },
-        {
-          "t": 12.14,
-          "text": "input"
         }
       ]
     },
     {
-      "start": 12.56,
-      "end": 13.74,
-      "text": "rates. Back to",
+      "start": 11.46,
+      "end": 13.04,
+      "text": "input rates. Back",
       "words": [
         {
-          "t": 12.56,
+          "t": 11.46,
+          "text": "input"
+        },
+        {
+          "t": 11.86,
           "text": "rates."
         },
         {
-          "t": 13.44,
+          "t": 12.8,
           "text": "Back"
-        },
-        {
-          "t": 13.58,
-          "text": "to"
         }
       ]
     },
     {
-      "start": 13.74,
-      "end": 14.68,
-      "text": "that popular fix.",
+      "start": 13.04,
+      "end": 13.7,
+      "text": "to that popular",
       "words": [
         {
-          "t": 13.74,
+          "t": 13.04,
+          "text": "to"
+        },
+        {
+          "t": 13.24,
           "text": "that"
         },
         {
-          "t": 13.88,
+          "t": 13.38,
           "text": "popular"
-        },
-        {
-          "t": 14.26,
-          "text": "fix."
         }
       ]
     },
     {
-      "start": 15.22,
-      "end": 16.1,
-      "text": "Caveman makes Claude",
+      "start": 13.7,
+      "end": 15.14,
+      "text": "fix. Caveman makes",
       "words": [
         {
-          "t": 15.22,
+          "t": 13.7,
+          "text": "fix."
+        },
+        {
+          "t": 14.62,
           "text": "Caveman"
         },
         {
-          "t": 15.46,
+          "t": 14.9,
           "text": "makes"
-        },
-        {
-          "t": 15.64,
-          "text": "Claude"
         }
       ]
     },
     {
-      "start": 16.1,
-      "end": 17.02,
-      "text": "answer in fewer",
+      "start": 15.14,
+      "end": 16.12,
+      "text": "Claude answer in",
       "words": [
         {
-          "t": 16.1,
+          "t": 15.14,
+          "text": "Claude"
+        },
+        {
+          "t": 15.52,
           "text": "answer"
         },
         {
-          "t": 16.5,
+          "t": 15.86,
           "text": "in"
-        },
-        {
-          "t": 16.76,
-          "text": "fewer"
         }
       ]
     },
     {
-      "start": 17.02,
-      "end": 18.4,
-      "text": "words. 100,000 stars",
+      "start": 16.12,
+      "end": 17.98,
+      "text": "fewer words. 100,000",
       "words": [
         {
-          "t": 17.02,
+          "t": 16.12,
+          "text": "fewer"
+        },
+        {
+          "t": 16.44,
           "text": "words."
         },
         {
-          "t": 17.42,
+          "t": 17.24,
           "text": "100,000"
-        },
-        {
-          "t": 18.12,
-          "text": "stars"
         }
       ]
     },
     {
-      "start": 18.4,
-      "end": 18.94,
-      "text": "and it does",
+      "start": 17.98,
+      "end": 18.58,
+      "text": "stars and it",
       "words": [
         {
-          "t": 18.4,
+          "t": 17.98,
+          "text": "stars"
+        },
+        {
+          "t": 18.24,
           "text": "and"
         },
         {
-          "t": 18.68,
+          "t": 18.48,
           "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 18.58,
+      "end": 19.38,
+      "text": "does cut output.",
+      "words": [
+        {
+          "t": 18.58,
+          "text": "does"
         },
         {
           "t": 18.78,
-          "text": "does"
-        }
-      ]
-    },
-    {
-      "start": 18.94,
-      "end": 20.2,
-      "text": "cut output. But",
-      "words": [
-        {
-          "t": 18.94,
           "text": "cut"
         },
         {
-          "t": 19.16,
+          "t": 19.0,
           "text": "output."
-        },
-        {
-          "t": 20.08,
-          "text": "But"
         }
       ]
     },
     {
-      "start": 20.2,
-      "end": 21.0,
-      "text": "it's README",
+      "start": 19.76,
+      "end": 20.56,
+      "text": "But it's README",
       "words": [
         {
-          "t": 20.2,
+          "t": 19.76,
+          "text": "But"
+        },
+        {
+          "t": 19.88,
           "text": "it's"
         },
         {
-          "t": 20.52,
+          "t": 20.16,
           "text": "README"
         }
       ]
     },
     {
-      "start": 21.0,
-      "end": 22.82,
-      "text": "admits. Input is",
+      "start": 20.56,
+      "end": 21.74,
+      "text": "admits input is",
       "words": [
+        {
+          "t": 20.56,
+          "text": "admits"
+        },
         {
           "t": 21.0,
-          "text": "admits."
-        },
-        {
-          "t": 22.12,
-          "text": "Input"
-        },
-        {
-          "t": 22.44,
-          "text": "is"
-        }
-      ]
-    },
-    {
-      "start": 22.82,
-      "end": 23.86,
-      "text": "untouched and it",
-      "words": [
-        {
-          "t": 22.82,
-          "text": "untouched"
-        },
-        {
-          "t": 23.44,
-          "text": "and"
-        },
-        {
-          "t": 23.72,
-          "text": "it"
-        }
-      ]
-    },
-    {
-      "start": 23.86,
-      "end": 25.06,
-      "text": "adds over 1,000",
-      "words": [
-        {
-          "t": 23.86,
-          "text": "adds"
-        },
-        {
-          "t": 24.18,
-          "text": "over"
-        },
-        {
-          "t": 24.54,
-          "text": "1,000"
-        }
-      ]
-    },
-    {
-      "start": 25.06,
-      "end": 26.1,
-      "text": "input tokens a",
-      "words": [
-        {
-          "t": 25.06,
           "text": "input"
         },
         {
-          "t": 25.52,
-          "text": "tokens"
-        },
-        {
-          "t": 25.92,
-          "text": "a"
-        }
-      ]
-    },
-    {
-      "start": 26.1,
-      "end": 26.9,
-      "text": "turn. So it",
-      "words": [
-        {
-          "t": 26.1,
-          "text": "turn."
-        },
-        {
-          "t": 26.62,
-          "text": "So"
-        },
-        {
-          "t": 26.78,
-          "text": "it"
-        }
-      ]
-    },
-    {
-      "start": 26.9,
-      "end": 27.72,
-      "text": "trims the cheap",
-      "words": [
-        {
-          "t": 26.9,
-          "text": "trims"
-        },
-        {
-          "t": 27.38,
-          "text": "the"
-        },
-        {
-          "t": 27.5,
-          "text": "cheap"
-        }
-      ]
-    },
-    {
-      "start": 27.72,
-      "end": 28.32,
-      "text": "half of your",
-      "words": [
-        {
-          "t": 27.72,
-          "text": "half"
-        },
-        {
-          "t": 27.96,
-          "text": "of"
-        },
-        {
-          "t": 28.14,
-          "text": "your"
-        }
-      ]
-    },
-    {
-      "start": 28.32,
-      "end": 29.3,
-      "text": "bill. That's why",
-      "words": [
-        {
-          "t": 28.32,
-          "text": "bill."
-        },
-        {
-          "t": 28.56,
-          "text": "That's"
-        },
-        {
-          "t": 29.18,
-          "text": "why"
-        }
-      ]
-    },
-    {
-      "start": 29.3,
-      "end": 30.0,
-      "text": "it barely helps.",
-      "words": [
-        {
-          "t": 29.3,
-          "text": "it"
-        },
-        {
-          "t": 29.48,
-          "text": "barely"
-        },
-        {
-          "t": 29.74,
-          "text": "helps."
-        }
-      ]
-    },
-    {
-      "start": 30.44,
-      "end": 31.18,
-      "text": "These three cut",
-      "words": [
-        {
-          "t": 30.44,
-          "text": "These"
-        },
-        {
-          "t": 30.66,
-          "text": "three"
-        },
-        {
-          "t": 30.94,
-          "text": "cut"
-        }
-      ]
-    },
-    {
-      "start": 31.18,
-      "end": 32.06,
-      "text": "the expensive half.",
-      "words": [
-        {
-          "t": 31.18,
-          "text": "the"
-        },
-        {
-          "t": 31.38,
-          "text": "expensive"
-        },
-        {
-          "t": 31.78,
-          "text": "half."
-        }
-      ]
-    },
-    {
-      "start": 32.5,
-      "end": 33.5,
-      "text": "One, see it.",
-      "words": [
-        {
-          "t": 32.5,
-          "text": "One,"
-        },
-        {
-          "t": 33.08,
-          "text": "see"
-        },
-        {
-          "t": 33.16,
-          "text": "it."
-        }
-      ]
-    },
-    {
-      "start": 33.92,
-      "end": 34.98,
-      "text": "ccusage charts",
-      "words": [
-        {
-          "t": 33.92,
-          "text": "ccusage"
-        },
-        {
-          "t": 34.24,
-          "text": "charts"
-        }
-      ]
-    },
-    {
-      "start": 34.98,
-      "end": 36.26,
-      "text": "each session's cost.",
-      "words": [
-        {
-          "t": 34.98,
-          "text": "each"
-        },
-        {
-          "t": 35.38,
-          "text": "session's"
-        },
-        {
-          "t": 36.04,
-          "text": "cost."
-        }
-      ]
-    },
-    {
-      "start": 36.86,
-      "end": 37.48,
-      "text": "claude-hud is",
-      "words": [
-        {
-          "t": 36.86,
-          "text": "claude-hud"
-        },
-        {
-          "t": 37.06,
+          "t": 21.5,
           "text": "is"
         }
       ]
     },
     {
-      "start": 37.48,
-      "end": 38.1,
-      "text": "a live meter",
+      "start": 21.74,
+      "end": 22.54,
+      "text": "untouched and it",
       "words": [
         {
-          "t": 37.48,
+          "t": 21.74,
+          "text": "untouched"
+        },
+        {
+          "t": 22.18,
+          "text": "and"
+        },
+        {
+          "t": 22.4,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 22.54,
+      "end": 23.14,
+      "text": "adds over a",
+      "words": [
+        {
+          "t": 22.54,
+          "text": "adds"
+        },
+        {
+          "t": 22.78,
+          "text": "over"
+        },
+        {
+          "t": 23.02,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 23.14,
+      "end": 24.28,
+      "text": "thousand input tokens",
+      "words": [
+        {
+          "t": 23.14,
+          "text": "thousand"
+        },
+        {
+          "t": 23.54,
+          "text": "input"
+        },
+        {
+          "t": 23.86,
+          "text": "tokens"
+        }
+      ]
+    },
+    {
+      "start": 24.28,
+      "end": 25.28,
+      "text": "a turn. So",
+      "words": [
+        {
+          "t": 24.28,
           "text": "a"
         },
         {
-          "t": 37.58,
-          "text": "live"
+          "t": 24.5,
+          "text": "turn."
         },
         {
-          "t": 37.8,
-          "text": "meter"
+          "t": 25.04,
+          "text": "So"
         }
       ]
     },
     {
-      "start": 38.1,
-      "end": 38.8,
-      "text": "in your status",
+      "start": 25.28,
+      "end": 25.98,
+      "text": "it trims the",
       "words": [
         {
-          "t": 38.1,
-          "text": "in"
+          "t": 25.28,
+          "text": "it"
         },
         {
-          "t": 38.3,
+          "t": 25.38,
+          "text": "trims"
+        },
+        {
+          "t": 25.84,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 25.98,
+      "end": 26.62,
+      "text": "cheap half of",
+      "words": [
+        {
+          "t": 25.98,
+          "text": "cheap"
+        },
+        {
+          "t": 26.18,
+          "text": "half"
+        },
+        {
+          "t": 26.44,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 26.62,
+      "end": 27.58,
+      "text": "your bill. That's",
+      "words": [
+        {
+          "t": 26.62,
           "text": "your"
         },
         {
-          "t": 38.46,
-          "text": "status"
+          "t": 26.76,
+          "text": "bill."
+        },
+        {
+          "t": 27.26,
+          "text": "That's"
         }
       ]
     },
     {
-      "start": 38.8,
-      "end": 40.96,
-      "text": "line. Two, ponytail",
+      "start": 27.58,
+      "end": 28.08,
+      "text": "why it barely",
       "words": [
         {
-          "t": 38.8,
-          "text": "line."
+          "t": 27.58,
+          "text": "why"
         },
         {
-          "t": 39.68,
-          "text": "Two,"
+          "t": 27.7,
+          "text": "it"
         },
         {
-          "t": 40.74,
-          "text": "ponytail"
+          "t": 27.84,
+          "text": "barely"
         }
       ]
     },
     {
-      "start": 40.96,
-      "end": 42.04,
-      "text": "stops Claude rebuilding",
+      "start": 28.08,
+      "end": 28.86,
+      "text": "helps. These three",
       "words": [
         {
-          "t": 40.96,
-          "text": "stops"
+          "t": 28.08,
+          "text": "helps."
         },
         {
-          "t": 41.38,
-          "text": "Claude"
+          "t": 28.3,
+          "text": "These"
         },
         {
-          "t": 41.76,
-          "text": "rebuilding"
+          "t": 28.6,
+          "text": "three"
         }
       ]
     },
     {
-      "start": 42.04,
-      "end": 43.2,
-      "text": "code that already",
+      "start": 28.86,
+      "end": 29.66,
+      "text": "cut the expensive",
       "words": [
         {
-          "t": 42.04,
-          "text": "code"
+          "t": 28.86,
+          "text": "cut"
         },
         {
-          "t": 42.5,
-          "text": "that"
-        },
-        {
-          "t": 42.76,
-          "text": "already"
-        }
-      ]
-    },
-    {
-      "start": 43.2,
-      "end": 44.62,
-      "text": "exists. It checks",
-      "words": [
-        {
-          "t": 43.2,
-          "text": "exists."
-        },
-        {
-          "t": 44.2,
-          "text": "It"
-        },
-        {
-          "t": 44.38,
-          "text": "checks"
-        }
-      ]
-    },
-    {
-      "start": 44.62,
-      "end": 45.6,
-      "text": "the standard library",
-      "words": [
-        {
-          "t": 44.62,
+          "t": 29.1,
           "text": "the"
         },
         {
-          "t": 44.84,
-          "text": "standard"
-        },
-        {
-          "t": 45.18,
-          "text": "library"
+          "t": 29.3,
+          "text": "expensive"
         }
       ]
     },
     {
-      "start": 45.6,
-      "end": 47.6,
-      "text": "first. Three, between",
+      "start": 29.66,
+      "end": 30.96,
+      "text": "half. One, see",
       "words": [
         {
-          "t": 45.6,
+          "t": 29.66,
+          "text": "half."
+        },
+        {
+          "t": 30.42,
+          "text": "One,"
+        },
+        {
+          "t": 30.88,
+          "text": "see"
+        }
+      ]
+    },
+    {
+      "start": 30.96,
+      "end": 32.72,
+      "text": "it, ccusage charts,",
+      "words": [
+        {
+          "t": 30.96,
+          "text": "it,"
+        },
+        {
+          "t": 31.4,
+          "text": "ccusage"
+        },
+        {
+          "t": 32.2,
+          "text": "charts,"
+        }
+      ]
+    },
+    {
+      "start": 32.98,
+      "end": 34.76,
+      "text": "it session's cost claude-hud",
+      "words": [
+        {
+          "t": 32.98,
+          "text": "it"
+        },
+        {
+          "t": 33.08,
+          "text": "session's"
+        },
+        {
+          "t": 34.5,
+          "text": "cost"
+        },
+        {
+          "t": 34.5,
+          "text": "claude-hud"
+        }
+      ]
+    },
+    {
+      "start": 34.76,
+      "end": 35.22,
+      "text": "is a live",
+      "words": [
+        {
+          "t": 34.76,
+          "text": "is"
+        },
+        {
+          "t": 34.96,
+          "text": "a"
+        },
+        {
+          "t": 35.06,
+          "text": "live"
+        }
+      ]
+    },
+    {
+      "start": 35.22,
+      "end": 35.76,
+      "text": "meter in your",
+      "words": [
+        {
+          "t": 35.22,
+          "text": "meter"
+        },
+        {
+          "t": 35.46,
+          "text": "in"
+        },
+        {
+          "t": 35.64,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 35.76,
+      "end": 36.84,
+      "text": "status line. Two,",
+      "words": [
+        {
+          "t": 35.76,
+          "text": "status"
+        },
+        {
+          "t": 36.0,
+          "text": "line."
+        },
+        {
+          "t": 36.72,
+          "text": "Two,"
+        }
+      ]
+    },
+    {
+      "start": 37.62,
+      "end": 38.52,
+      "text": "ponytail stops, Claude",
+      "words": [
+        {
+          "t": 37.62,
+          "text": "ponytail"
+        },
+        {
+          "t": 37.62,
+          "text": "stops,"
+        },
+        {
+          "t": 38.32,
+          "text": "Claude"
+        }
+      ]
+    },
+    {
+      "start": 38.52,
+      "end": 39.68,
+      "text": "rebuilding code that",
+      "words": [
+        {
+          "t": 38.52,
+          "text": "rebuilding"
+        },
+        {
+          "t": 38.98,
+          "text": "code"
+        },
+        {
+          "t": 39.38,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 39.68,
+      "end": 41.66,
+      "text": "already exists. It",
+      "words": [
+        {
+          "t": 39.68,
+          "text": "already"
+        },
+        {
+          "t": 40.2,
+          "text": "exists."
+        },
+        {
+          "t": 41.42,
+          "text": "It"
+        }
+      ]
+    },
+    {
+      "start": 41.66,
+      "end": 42.64,
+      "text": "checks the standard",
+      "words": [
+        {
+          "t": 41.66,
+          "text": "checks"
+        },
+        {
+          "t": 42.04,
+          "text": "the"
+        },
+        {
+          "t": 42.24,
+          "text": "standard"
+        }
+      ]
+    },
+    {
+      "start": 42.64,
+      "end": 44.16,
+      "text": "library first. Three,",
+      "words": [
+        {
+          "t": 42.64,
+          "text": "library"
+        },
+        {
+          "t": 43.06,
           "text": "first."
         },
         {
-          "t": 46.6,
+          "t": 43.98,
           "text": "Three,"
-        },
-        {
-          "t": 47.46,
-          "text": "between"
         }
       ]
     },
     {
-      "start": 47.6,
-      "end": 49.16,
-      "text": "unrelated tasks type",
+      "start": 44.72,
+      "end": 45.88,
+      "text": "between unrelated tasks,",
       "words": [
         {
-          "t": 47.6,
+          "t": 44.72,
+          "text": "between"
+        },
+        {
+          "t": 44.76,
           "text": "unrelated"
         },
         {
-          "t": 48.16,
-          "text": "tasks"
-        },
-        {
-          "t": 48.64,
-          "text": "type"
+          "t": 45.34,
+          "text": "tasks,"
         }
       ]
     },
     {
-      "start": 49.16,
-      "end": 50.7,
-      "text": "slash clear — free,",
+      "start": 46.4,
+      "end": 47.96,
+      "text": "type slash clear \u2014 free",
       "words": [
         {
-          "t": 49.16,
+          "t": 46.4,
+          "text": "type"
+        },
+        {
+          "t": 46.52,
           "text": "slash"
         },
         {
-          "t": 49.58,
+          "t": 46.94,
           "text": "clear"
         },
         {
-          "t": 50.54,
-          "text": "—"
+          "t": 46.94,
+          "text": "\u2014"
         },
         {
-          "t": 50.54,
-          "text": "free,"
+          "t": 46.94,
+          "text": "free"
         }
       ]
     },
     {
-      "start": 51.4,
-      "end": 52.54,
-      "text": "compact re-reads everything",
+      "start": 48.46,
+      "end": 50.54,
+      "text": "Compact, re-reads everything",
       "words": [
         {
-          "t": 51.4,
-          "text": "compact"
+          "t": 48.46,
+          "text": "Compact,"
         },
         {
-          "t": 51.62,
+          "t": 49.5,
           "text": "re-reads"
         },
         {
-          "t": 52.14,
+          "t": 50.0,
           "text": "everything"
         }
       ]
     },
     {
-      "start": 52.54,
-      "end": 53.5,
+      "start": 50.54,
+      "end": 51.62,
       "text": "to summarize it.",
       "words": [
         {
-          "t": 52.54,
+          "t": 50.54,
           "text": "to"
         },
         {
-          "t": 52.8,
+          "t": 50.8,
           "text": "summarize"
         },
         {
-          "t": 53.14,
+          "t": 51.24,
           "text": "it."
         }
       ]
     },
     {
-      "start": 53.8,
-      "end": 54.34,
+      "start": 51.92,
+      "end": 52.6,
       "text": "They run with",
       "words": [
         {
-          "t": 53.8,
+          "t": 51.92,
           "text": "They"
         },
         {
-          "t": 53.98,
+          "t": 52.08,
           "text": "run"
         },
         {
-          "t": 54.16,
+          "t": 52.3,
           "text": "with"
         }
       ]
     },
     {
-      "start": 54.34,
-      "end": 55.24,
-      "text": "your agent's permissions.",
+      "start": 52.6,
+      "end": 54.2,
+      "text": "your agent's permissions read",
       "words": [
         {
-          "t": 54.34,
+          "t": 52.6,
           "text": "your"
         },
         {
-          "t": 54.52,
+          "t": 52.78,
           "text": "agent's"
         },
         {
-          "t": 54.96,
-          "text": "permissions."
+          "t": 53.98,
+          "text": "permissions"
+        },
+        {
+          "t": 53.98,
+          "text": "read"
         }
       ]
     },
     {
-      "start": 55.64,
-      "end": 56.18,
-      "text": "Read them first.",
+      "start": 54.2,
+      "end": 55.18,
+      "text": "them first, comment,",
       "words": [
         {
-          "t": 55.64,
-          "text": "Read"
-        },
-        {
-          "t": 55.72,
+          "t": 54.2,
           "text": "them"
         },
         {
-          "t": 55.9,
-          "text": "first."
+          "t": 54.44,
+          "text": "first,"
+        },
+        {
+          "t": 54.94,
+          "text": "comment,"
         }
       ]
     },
     {
-      "start": 56.18,
-      "end": 57.58,
-      "text": "Comment Claude I'll",
+      "start": 55.4,
+      "end": 56.1,
+      "text": "Claude, I'll send",
       "words": [
         {
-          "t": 56.18,
-          "text": "Comment"
+          "t": 55.4,
+          "text": "Claude,"
         },
         {
-          "t": 56.8,
-          "text": "Claude"
-        },
-        {
-          "t": 57.38,
+          "t": 55.7,
           "text": "I'll"
+        },
+        {
+          "t": 55.86,
+          "text": "send"
         }
       ]
     },
     {
-      "start": 57.58,
-      "end": 58.18,
-      "text": "send all four.",
+      "start": 56.1,
+      "end": 56.66,
+      "text": "all four.",
       "words": [
         {
-          "t": 57.58,
-          "text": "send"
-        },
-        {
-          "t": 57.74,
+          "t": 56.1,
           "text": "all"
         },
         {
-          "t": 57.94,
+          "t": 56.42,
           "text": "four."
         }
       ]
@@ -1304,12 +1310,12 @@
   "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
   "format": "ai-tools",
   "allowLong": true,
-  "allowLongReason": "user accepted the 159-word runtime in writing at approval 341019be (2026-08-25): 'Runtime … ship-as-is'; band 40-60s, actual 61.2s",
-  "script": "Your Claude bill is mostly the reading, not the writing — here's why the top fix barely helps.\nAnthropic's docs: the model remembers nothing between messages — every turn re-sends the whole conversation at input rates.\nBack to that popular fix.\nCaveman makes Claude answer in fewer words.\nA hundred thousand stars, and it does cut output.\nBut its README admits: input is untouched, and it adds over a thousand input tokens a turn.\nSo it trims the cheap half of your bill — that's why it barely helps.\nThese three cut the expensive half.\nOne: see it — ccusage charts each session's cost; claude-hud is a live meter in your status line.\nTwo: Ponytail stops Claude rebuilding code that already exists — it checks the standard library first.\nThree: between unrelated tasks, type slash-clear — free. Compact re-reads everything to summarise it.\nThey run with your agent's permissions — read them first.\nComment CLAUDE, I'll send all four.",
+  "allowLongReason": "user accepted the 159-word runtime in writing at approval 341019be (2026-08-25): 'Runtime \u2026 ship-as-is'; band 40-60s, actual 61.2s",
+  "script": "Your Claude bill is mostly the reading. Not the writing. And here's why the top fix barely helps.\nAnthropic's docs: the model remembers nothing between messages \u2014 every turn re-sends the whole conversation at input rates.\nBack to that popular fix.\nCaveman makes Claude answer in fewer words.\nA hundred thousand stars, and it does cut output.\nBut its README admits: input is untouched, and it adds over a thousand input tokens a turn.\nSo it trims the cheap half of your bill \u2014 that's why it barely helps.\nThese three cut the expensive half.\nOne: see it \u2014 ccusage charts each session's cost; claude-hud is a live meter in your status line.\nTwo: Ponytail stops Claude rebuilding code that already exists \u2014 it checks the standard library first.\nThree: between unrelated tasks, type slash-clear \u2014 free. Compact re-reads everything to summarise it.\nThey run with your agent's permissions \u2014 read them first.\nComment CLAUDE, I'll send all four.",
   "approval": {
-    "sha256": "341019be42e5254769ab104ff0974e9602ebc0e128ae0b1c75c1d4c520f4df90",
-    "approvedAt": "2026-08-25T10:37:04+00:00",
+    "sha256": "11454c5208c34dcb090cfd657bf555247605dfa8c5ee59646da552dd7536854a",
+    "approvedAt": "2026-08-26T11:28:35+00:00",
     "words": 159,
-    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
   }
 }

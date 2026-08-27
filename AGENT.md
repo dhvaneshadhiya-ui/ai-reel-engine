@@ -62,9 +62,43 @@ re-scout for it specifically, or **rewrite the line** to something you can show.
 3. Check the pack's *treatment history* — never repeat the previous reel's
    visual treatment for the same kind of information.
 
+### STEP 0.5 — RESEARCH (the ledger, before a source is captured)
+
+**This step had no number until 2026-08-27.** It was one parenthetical inside
+STEP 1a — "verify the story (web search)" — even though the ledger it produces
+is a BLOCKING precondition of `propose`. A stage that gates the pipeline and
+is named nowhere in the order of operations is the definition of a step that
+gets skipped. The user asked where research happens; the honest answer was
+that the manual did not say.
+
+It runs FIRST, before scouting, for a practical reason: you cannot capture a
+source until you know which claim it proves and where that claim was
+published. Fill `jobs/<slug>/research.md` (scaffolded by `new_job.py`) AS you
+research, never afterwards from memory:
+
+- every load-bearing claim gets a **CLAIM**, a **TIER**
+  (official/multi/single/disputed), a **SRC** url you actually fetched, the
+  **SPOKEN** words of the script that carry it, and a **VIA** naming the
+  ultimate source;
+- a dated **## SEARCHED** log of the queries you actually ran.
+
+`tools/research_check.py` refuses a ledger that is missing, still a template,
+carries no claims, has no search log, or names SPOKEN words the script never
+says. `propose` runs it and stops on any of those.
+
+**References the user hands you are INPUTS, not sourcing.** They tell you the
+angle; they do not discharge this step. The dated search log exists precisely
+so a reel cannot be built out of whatever arrived in the prompt, and a topic
+with no references given changes nothing about what the ledger must contain.
+Two independent source DOMAINS minimum, or write `ONE-SOURCE-OK: <why>` — and
+independence is judged on VIAs, so two outlets quoting one leaker is one
+source. `fact-check-workflow` is cued here, while a claim is still a claim and
+the fix is verification rather than a rewrite.
+
 ### STEP 1a — ASSET SCOUT (before writing a single script line)
-Verify the story (web search — topics are usually newer than your training
-data), then hunt visuals and write `public/assets/<slug>/manifest.json`:
+The story is already verified in STEP 0.5 and its claims are in the ledger;
+this step hunts the VISUALS that prove them. Write
+`public/assets/<slug>/manifest.json`:
 
 ```jsonc
 {
@@ -92,6 +126,14 @@ data), then hunt visuals and write `public/assets/<slug>/manifest.json`:
 
 Scout order: official channels/keynotes → creator demo compilations (credit
 them) → screenshot receipts (headless Chrome) → brand marks.
+
+**Your own device is a source.** `python3 tools/ingest_screencap.py` turns an
+iPhone screen recording into a reel-ready clip and scrubs the personal data
+out of it (the privacy pass is the point of the tool). Use it when the story
+needs real OS behaviour — a real Face ID prompt, a real carrier, a real
+setting being toggled — which the Simulator cannot license and a stock clip
+cannot prove. It was written, tested, and then mentioned in no document for
+weeks; found by `wiring_audit.py` on 2026-08-26.
 
 **Verify every candidate by extracting frames and looking at them.** Write the
 `shows` field from what you actually see, never from what you assume.
@@ -135,6 +177,24 @@ went (2026-08-26).
 Expect 3-5 passes. If the first draft measures clean, be suspicious rather
 than pleased.
 
+**THE LAST PASS IS THE HUMANIZER, AND IT IS NOT OPTIONAL.** When the script
+measures clean and hits its word budget, run the `humanizer` skill over the
+WHOLE script — not the lines the checker flagged. What it fixes is rhythm and
+whether a sentence sounds like a person said it, which is precisely what
+`script_doctor` cannot see; a script with zero measurable tells can still read
+like a machine wrote it. Feed it our own shipped scripts as a voice sample (a
+sample outranks its own style rules), and hold it to its own clause: no fact,
+name, number, date or citation that is not already in the source text. Then:
+
+```bash
+python3 tools/script_approval.py humanized <slug>   # records the pass
+```
+
+`propose` refuses without that record, and refuses again if you edit a word
+afterwards — the pass no longer covers the words you are showing. Never run
+it AFTER approval: G27 hashes the approved narration, so a post-approval
+rewrite correctly stops the build.
+
 **A shot plan is NOT part of this loop.** `plan_shots.py --write` now refuses
 until the script is approved and hash-fresh: every shot anchors to exact
 wording, so a plan written against unapproved words is invalidated by the
@@ -160,7 +220,7 @@ any anchor is missing.
 It prints a runtime prediction from the **measured** 2.5–2.7 wps, and prints the
 synthetic audio's own duration marked as *not* the predictor — chatterbox's
 speaking rate is not the twin's, and swapping a measured number for an
-unmeasured one is what G23 exists to stop. Artifacts land in
+unmeasured one is what G23 flags (as advice — the discipline is yours). Artifacts land in
 `_sources/<slug>/rehearsal/`, never `public/` (Remotion re-copies all of
 `public/` on every render).
 

@@ -133,7 +133,14 @@ def load_words(path: Path) -> list[dict[str, Any]]:
         # build_template.py; this generic path never inherited it.
         if text.startswith("-") and out:
             out[-1]["text"] = f'{out[-1]["text"]}{text}'
-            out[-1]["norm"] = normalize(out[-1]["text"])[-1]
+            # The WHOLE compound, joined — the SAME defect the comma branch
+            # below records, one block up and never fixed with it. `[-1]` kept
+            # only the last token, so whisper's "co" + "-work," carried norm
+            # "work" and an anchor on "Cowork" could never resolve; "Ming" +
+            # "-Chi" was searchable only as "chi". Found 2026-08-26 on
+            # claude-memory-everywhere, whose glossary makes the voice say
+            # "co-work" for Cowork, so every reel naming that product hits it.
+            out[-1]["norm"] = "".join(normalize(out[-1]["text"]))
             out[-1]["end"] = end
             continue
         # Whisper occasionally returns ".8" or ",000" as a separate word. Both
@@ -390,12 +397,34 @@ def caption_words(
             text = corrections[key] + (match.group(0) if match else "")
         corrected.append({"start": word["start"], "end": word["end"], "text": text})
 
-    # MULTI-WORD corrections. The per-word pass above keys on a single token
-    # with punctuation stripped, so a two-word product name ("dark cherry")
-    # silently did nothing — and mapping the words separately is wrong, because
-    # "dark" is also an ordinary word earlier in this script ("in the dark").
-    # Phrase keys are therefore applied to the CHUNK text, after chunking.
+    # MULTI-WORD corrections are applied to the WORD STREAM, before chunking.
+    #
+    # They used to run on the CHUNK text afterwards, which works only while a
+    # phrase happens to sit inside one three-word chunk. Regenerate the voice
+    # and the boundaries move: on 2026-08-26 the v4 read chunked as
+    # "see it, CC" / "usage charts, it", so "cc usage" -> "ccusage" matched
+    # nothing and THREE tool names silently vanished from the captions of a
+    # reel whose entire job is naming those tools. Same failure shape as the
+    # anchor matcher's compound splits: the fix is to stop letting an
+    # arbitrary grouping decide what is adjacent.
+    #
+    # A matched run collapses to ONE word entry spanning the run's timing, so
+    # the name can never be split by a later chunk boundary either.
     phrase_fixes = {k: v for k, v in corrections.items() if " " in k}
+    for key, value in sorted(phrase_fixes.items(), key=lambda kv: -len(kv[0])):
+        parts = key.split()
+        i = 0
+        while i <= len(corrected) - len(parts):
+            window = [re.sub(r"[^a-z0-9]", "", corrected[i + j]["text"].lower())
+                      for j in range(len(parts))]
+            if window == [re.sub(r"[^a-z0-9]", "", p) for p in parts]:
+                merged = {
+                    "start": corrected[i]["start"],
+                    "end": corrected[i + len(parts) - 1]["end"],
+                    "text": value,
+                }
+                corrected[i:i + len(parts)] = [merged]
+            i += 1
 
     chunks: list[dict[str, Any]] = []
     for index in range(0, len(corrected), 3):

@@ -1,4 +1,4 @@
-Your Claude bill is mostly the reading, not the writing — here's why the top fix barely helps.
+Your Claude bill is mostly the reading. Not the writing. And here's why the top fix barely helps.
 Anthropic's docs: the model remembers nothing between messages — every turn re-sends the whole conversation at input rates.
 Back to that popular fix.
 Caveman makes Claude answer in fewer words.

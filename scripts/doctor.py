@@ -342,6 +342,25 @@ except Exception as e:  # noqa: BLE001
     report(BAD, "script calibration", str(e))
     problems.append("calibration")
 
+# WIRING (2026-08-26). A tool nobody calls and nobody is told to call is
+# indistinguishable from one that was never written — except that it lets
+# everyone believe the work is being done. That is how the humanizer pass
+# stayed invisible for weeks. Every tool must be executed by the pipeline,
+# named in a document, or explicitly legacy.
+try:
+    r = subprocess.run([sys.executable, str(ROOT / "tools/wiring_audit.py")],
+                       capture_output=True, text=True, timeout=90)
+    line = [l for l in r.stdout.splitlines() if "AUTO" in l]
+    if r.returncode == 0:
+        report(OK, "tool wiring", line[0].strip() if line else "no orphans")
+    else:
+        report(BAD, "tool wiring", "a tool is wired to nothing")
+        print(r.stdout[-500:])
+        problems.append("wiring")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "tool wiring", str(e))
+    problems.append("wiring")
+
 # THE MASTER RULE AUDIT (2026-08-26). Every clause of the framework's §12
 # mapped to the thing that makes it true, each probe run. Here because the
 # question "is it really implemented?" was asked four times and answered from
@@ -395,6 +414,46 @@ try:
 except Exception as e:  # noqa: BLE001
     report(BAD, "capture defaults", str(e))
     problems.append("capture")
+
+# Two self-tests that existed and were never run by anything (found
+# 2026-08-26 by listing every --selftest in the repo and diffing against what
+# doctor calls). check_frame_contract guards the safe-area/legibility contract;
+# notation guards how numbers and units are written on screen. A self-test
+# nobody runs is the same as no self-test, which is this repo's oldest bug.
+for _tool, _label in (("check_frame_contract", "frame contract"),
+                      ("notation", "on-screen notation")):
+    try:
+        r = subprocess.run(
+            [sys.executable, str(ROOT / f"tools/{_tool}.py"), "--selftest"],
+            capture_output=True, text=True, timeout=60)
+        if r.returncode == 0:
+            report(OK, _label, r.stdout.strip().splitlines()[-1].strip())
+        else:
+            report(BAD, _label, f"{_tool} self-test failed")
+            print(r.stdout[-600:])
+            problems.append(_label)
+    except Exception as e:  # noqa: BLE001
+        report(BAD, _label, str(e))
+        problems.append(_label)
+
+# The HOOKS (2026-08-26). Hooks are the ONLY mechanism that can make a skill
+# run without a human remembering to — everything else in this repo can print
+# a reminder at best. A hook that quietly stops firing therefore removes a
+# trigger while looking exactly like nothing being wrong, which is the same
+# failure shape as the humanizer that was documented for weeks and never ran.
+try:
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "tools/test_hooks.py")],
+        capture_output=True, text=True, timeout=180)
+    if r.returncode == 0:
+        report(OK, "claude hooks", r.stdout.strip().splitlines()[-1])
+    else:
+        report(BAD, "claude hooks", "a hook stopped firing")
+        print(r.stdout[-900:])
+        problems.append("hooks")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "claude hooks", str(e))
+    problems.append("hooks")
 
 # The retention join (2026-08-21) — the tool that turns a published reel's
 # curve into per-scene-type numbers. Its math is exactly the kind of thing
