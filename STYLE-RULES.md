@@ -5358,3 +5358,49 @@ already holds per-beat registers and is the right home.
 **HeyGen's "Enhance voice" toggle stays OFF.** It inserts tags automatically:
 the delivery stops being reproducible, and a tool starts editing text the user
 approved.
+
+### The probe result — the hypothesis was WRONG (2026-08-27)
+
+Three avatar generations, identical words, same voice
+(`bb79e839`), same avatar, same speed 1.12, measured by `vo_qc`:
+
+| | condition | pitch sd | range | median | secs |
+|---|---|---|---|---|---|
+| A | control — what we send today | **2.14** | 6.7 | 168 | 10.2 |
+| B | + `eleven_v3` @ stability 0.5 | **2.15** | 7.1 | 168 | 9.4 |
+| C | + `eleven_v3` @ stability 0 + audio tags | **2.15** | 5.8 | 167 | 10.8 |
+
+**No difference. +0.01 semitones.** Sending `engine_settings` with
+`model: eleven_v3` through the API changes nothing measurable, and the audio
+tags were **stripped, not spoken** — whisper transcribes all three
+identically, with no `[curious]` audible. So the tags reached HeyGen and were
+discarded before the TTS ever saw them.
+
+**The request was NOT rejected**, even though the schema says "the request is
+rejected if the voice_id is not compatible with the selected engine". So
+either the validation does not fire, or the voice is eligible and the setting
+is silently dropped on this path. Either way the API accepted a parameter and
+did nothing with it, which is the worst of the three possibilities: it looks
+like it worked.
+
+**What this does and does not settle.** It settles that the API route does not
+deliver the UI's behaviour. It does NOT settle that v3 cannot help — the
+user's own ElevenLabs generations of a different script measured 3.22 and 3.41,
+and their HeyGen UI has V3 selected with a stability slider. The gap is now
+API-vs-UI, not v3-vs-not-v3.
+
+**A confound worth checking first: the account holds THREE private voices all
+named "iGeeks Blog"** — `9c7efdaf`, `bb79e839` (ours, listed gender *female*),
+and `faaffee3`. Our config points at one of them and the UI may be tuning
+another. A same-named voice is exactly the kind of thing that gets picked in a
+dropdown and never reconciled with a config file.
+
+**Earlier conclusion stands for now, with a footnote.** Today's record said the
+CLONE is flat and HeyGen has topped out. This probe supports that rather than
+overturning it: 2.14 through the API with every expressiveness lever we can
+reach. The open question is whether the UI path reaches a lever the API does
+not.
+
+**Next step is one click for the user, not more credits from us:** generate
+this exact sentence in the HeyGen UI with ElevenLabs V3 selected, download it,
+and measure. If it lands near 3.4 the fix is the path, not the voice.
