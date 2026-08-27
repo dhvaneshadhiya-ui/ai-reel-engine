@@ -421,7 +421,11 @@ except Exception as e:  # noqa: BLE001
 # notation guards how numbers and units are written on screen. A self-test
 # nobody runs is the same as no self-test, which is this repo's oldest bug.
 for _tool, _label in (("check_frame_contract", "frame contract"),
-                      ("notation", "on-screen notation")):
+                      ("notation", "on-screen notation"),
+                      # 2026-08-27: added the same hour vo_external was
+                      # written, because wiring_audit failed doctor for an
+                      # unrun --selftest — the rule catching its own author.
+                      ("vo_external", "external VO prep")):
     try:
         r = subprocess.run(
             [sys.executable, str(ROOT / f"tools/{_tool}.py"), "--selftest"],
