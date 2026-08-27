@@ -5490,3 +5490,46 @@ resolving — either the floor is wrong for a deliberately-chosen voice, or the
 advisory needs to carry the decision. Not fixed unilaterally, because
 weakening a check to make a warning go away is exactly the move this repo
 exists to prevent.
+
+### The VO alarm is now calibrated to OUR corpus, not the creator band (2026-08-27)
+
+Chosen by the user over retiring the check. The problem: with the voice
+deliberately kept at ~2.4 semitones and the floor at 3.5, `vo_qc` would have
+flagged FLAT on every reel forever. **A check that fires every run and is
+correctly ignored every run is worse than no check — it teaches the reader to
+skim past the one time it means something.**
+
+**What changed:** the ALARM is derived from our own shipped reads
+(`voice_calibration.json`, written by `vo_qc.py --recalibrate`, n=3, alarm
+2.02 pitch / 5.6 range). **What did NOT change:** the creator band is still
+printed on every single run, along with the gap to it. We do not get to stop
+knowing we sit below real creators; we stop treating a settled choice as a
+fresh defect.
+
+**Both measures had to move.** Calibrating pitch alone would have left NARROW
+RANGE firing on everything instead (our reads run 6.7-9.8 against a 10.0
+floor) — fixing one permanent alarm and leaving the other is not a fix, it
+just changes which line gets ignored.
+
+**THIS CHANGE IS SHAPED EXACTLY LIKE A DISHONEST ONE.** Lowering a threshold
+until the red light turns green is the move this repo exists to prevent. The
+only thing separating the two is whether the check can still fail, so
+`tools/test_vo_qc.py` (15 checks, run by doctor) asserts BOTH halves:
+
+- a read at our own mean stays quiet, and
+- **a genuinely flat read STILL alarms** — synthesised at 0.8 semitones below
+  the floor, and the alarm must fire.
+- the floor sits below every shipped read (or it fires forever) and above 0.5
+  (or it can never fire), and is not silently back at 3.5.
+- the creator band and the gap are still in the output.
+
+A calibration that cannot fail is not a calibration, it is a deletion.
+
+**Doctor warns while n < 5** — the threshold is PROVISIONAL on three reads and
+should be re-derived as reels ship. It also warns when the corpus moves,
+mirroring the script calibration.
+
+**One display bug found and fixed on the way:** the recalibration listing
+printed only `<parent>/<name>`, so `public/assets/x/vo.wav` and
+`_sources/x/vo.wav` rendered identically — which sent this session's own
+verification to a path that did not exist. Repo-relative paths now.

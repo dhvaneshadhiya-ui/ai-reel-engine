@@ -45,6 +45,104 @@ ROOT = Path(__file__).resolve().parent.parent
 
 PITCH_SD_FLOOR = 3.5          # flattest real creator = 3.74; ours was 2.83
 PITCH_RANGE_FLOOR = 10.0      # p95-p5 semitones; references 11.6-17.4
+CALIBRATION = ROOT / "voice_calibration.json"
+
+# WHY THIS GREW A CALIBRATION (2026-08-27)
+# ----------------------------------------
+# The 3.5 floor is real and stays visible: it is where the flattest measured
+# creator sits. But on 2026-08-27 the user listened to five generations —
+# including one that cleared 3.5 — and DELIBERATELY kept the voice that reads
+# at ~2.4. Whose voice the channel has is an identity decision, not a
+# statistic's call.
+#
+# That turned the floor into a permanent alarm: it would fire on every reel,
+# forever, and be correctly ignored every time. A check that is always ignored
+# is worse than no check, because it teaches the reader to skim past the one
+# run that matters.
+#
+# So the ALARM is now calibrated to our own corpus — it fires when a read is
+# unusually flat FOR US — while the creator band is still PRINTED on every
+# run. We do not get to stop knowing we sit below it. What we stop doing is
+# treating a settled decision as a fresh defect.
+#
+# This is the same pattern as check_script's calibration, deliberately: the
+# threshold is DERIVED from shipped work, recorded with its sample count, and
+# recalibrated by an explicit command rather than edited by hand.
+
+
+def load_calibration() -> dict | None:
+    try:
+        c = json.loads(CALIBRATION.read_text())
+        return c if c.get("floor") else None
+    except Exception:                                          # noqa: BLE001
+        return None
+
+
+def corpus_wavs() -> list[Path]:
+    seen, out = set(), []
+    for pat in ("_sources/*/vo.wav", "_sources/*/vo-directed.wav",
+                "public/assets/*/vo.wav"):
+        for w in sorted(ROOT.glob(pat)):
+            if w.stat().st_size > 0 and w.resolve() not in seen:
+                seen.add(w.resolve())
+                out.append(w)
+    return out
+
+
+def measure(wav: Path) -> tuple[float, float] | None:
+    f0 = f0_track(wav)
+    if len(f0) < 50:
+        return None
+    st = 12 * np.log2(f0 / np.median(f0))
+    st = st[np.abs(st) < 12]
+    return float(st.std()), float(np.percentile(st, 95) - np.percentile(st, 5))
+
+
+def recalibrate() -> int:
+    """Derive the alarm threshold from what this voice actually ships."""
+    rows = []
+    for w in corpus_wavs():
+        m = measure(w)
+        if m:
+            rel = str(w.relative_to(ROOT))
+            rows.append((rel, m[0], m[1]))
+            print(f"    {rel:<48} sd {m[0]:5.2f}  range {m[1]:5.1f}")
+    if not rows:
+        print("\n  no VO audio found to calibrate against.")
+        return 1
+    sds = [r[1] for r in rows]
+    rngs = [r[2] for r in rows]
+    mean = sum(sds) / len(sds)
+    sd = (sum((x - mean) ** 2 for x in sds) / (len(sds) - 1)) ** 0.5 \
+        if len(sds) > 1 else 0.0
+    # 1.5 SD below our own mean = "unusually flat for us". Never set the floor
+    # ABOVE the flattest thing we have already shipped, or history fails
+    # retroactively and the alarm is back to firing on everything.
+    floor = min(mean - 1.5 * sd, min(sds)) if len(sds) > 1 else min(sds) * 0.9
+    # Same treatment for RANGE. Our reads run 6.7-9.8 against a 10.0 floor, so
+    # leaving it uncalibrated would just move which line gets ignored daily.
+    rmean = sum(rngs) / len(rngs)
+    rsd = (sum((x - rmean) ** 2 for x in rngs) / (len(rngs) - 1)) ** 0.5 \
+        if len(rngs) > 1 else 0.0
+    rfloor = min(rmean - 1.5 * rsd, min(rngs)) if len(rngs) > 1 \
+        else min(rngs) * 0.9
+    CALIBRATION.write_text(json.dumps({
+        "voice_id": "bb79e8390b4340ce8793ea5f123dbba7",
+        "n": len(sds), "mean": round(mean, 3), "sd": round(sd, 3),
+        "floor": round(floor, 3),
+        "range_mean": round(rmean, 3), "range_floor": round(rfloor, 3),
+        "samples": {r[0]: round(r[1], 2) for r in rows},
+        "_why": "Alarm threshold derived from our own shipped reads. The 3.5 "
+                "creator floor is still printed every run; this is what FIRES. "
+                "See tools/vo_qc.py header and STYLE-RULES 2026-08-27.",
+    }, indent=2) + "\n")
+    tag = "  (PROVISIONAL — under 5 samples)" if len(sds) < 5 else ""
+    print(f"\n  n={len(sds)}  pitch mean={mean:.2f} -> alarm {floor:.2f}   "
+          f"range mean={rmean:.1f} -> alarm {rfloor:.1f}{tag}")
+    print(f"  wrote {CALIBRATION.name}\n")
+    return 0
+
+
 FUNCTION = {"the", "a", "an", "of", "to", "in", "is", "it", "and", "or",
             "that", "this", "for", "on", "at", "as", "but", "so", "your",
             "you", "its", "was", "are", "be", "by", "with", "from"}
@@ -94,6 +192,12 @@ def stress_inversions(vo_json: Path) -> list[tuple[str, str, float, float]]:
 
 def main() -> int:
     argv = sys.argv[1:]
+    if "--recalibrate" in argv:
+        return recalibrate()
+    if "--calibration" in argv:
+        c = load_calibration()
+        print(f"  {c}" if c else "  no calibration — run --recalibrate")
+        return 0
     if not argv:
         print(__doc__.split("    python3")[0].strip())
         return 1
@@ -119,25 +223,42 @@ def main() -> int:
     sd = float(st.std())
     rng = float(np.percentile(st, 95) - np.percentile(st, 5))
 
+    cal = load_calibration()
+    alarm = cal["floor"] if cal else PITCH_SD_FLOOR
+
     print(f"\n=== VO QC — {label} ===\n")
     print(f"  pitch variation   {sd:5.2f} semitones   "
-          f"(measured creator band 3.74-6.63, floor {PITCH_SD_FLOOR})")
+          f"(measured creator band 3.74-6.63)")
     print(f"  pitch range       {rng:5.1f} semitones   "
-          f"(references 11.6-17.4, floor {PITCH_RANGE_FLOOR})")
+          f"(references 11.6-17.4)")
     print(f"  median pitch      {np.median(f0):5.0f} Hz")
+    if cal:
+        prov = " PROVISIONAL," if cal["n"] < 5 else ""
+        print(f"  our own baseline  {cal['mean']:5.2f} mean over {cal['n']} "
+              f"shipped read(s) —{prov} alarm fires under {alarm:.2f}")
+        # The creator gap stays VISIBLE even though it no longer alarms. The
+        # voice was chosen deliberately (2026-08-27); that is a decision, not
+        # a defect. We still do not get to stop knowing where we sit.
+        print(f"  vs creators       {PITCH_SD_FLOOR - sd:+5.2f} to the 3.5 "
+              "floor — a settled choice of voice, not a per-reel defect")
 
     findings = []
-    if sd < PITCH_SD_FLOOR:
+    if sd < alarm:
         findings.append(
-            f"FLAT READ: {sd:.2f} semitones of pitch movement, under the "
-            f"{PITCH_SD_FLOOR} floor taken from the flattest real creator "
-            "reference (3.74). This is the 'no energy, no emotion' the user "
-            "hears. Raise expressiveness at generation (lower stability, "
-            "higher style) — do not fix it in the mix.")
-    if rng < PITCH_RANGE_FLOOR:
+            f"FLAT FOR US: {sd:.2f} semitones, under this voice's own "
+            f"{alarm:.2f} alarm floor derived from "
+            f"{cal['n'] if cal else 0} shipped read(s). Not the creator-band "
+            "gap — that is a known, chosen difference. This read is flat "
+            "even by our own standard, so something went wrong in THIS "
+            "generation. Re-generate before spending avatar credits.")
+    ralarm = cal["range_floor"] if cal and cal.get("range_floor") \
+        else PITCH_RANGE_FLOOR
+    if rng < ralarm:
         findings.append(
-            f"NARROW RANGE: {rng:.1f} semitones between the read's high and "
-            "low. Even a calm delivery moves more than this.")
+            f"NARROW RANGE FOR US: {rng:.1f} semitones between this read's "
+            f"high and low, under our own {ralarm:.1f}. The reference band is "
+            "11.6-17.4 and we have never been near it — this fires because "
+            "the read is narrow even by our standard.")
 
     if vj and vj.exists():
         inv = stress_inversions(vj)

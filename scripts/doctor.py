@@ -436,6 +436,51 @@ for _tool, _label in (("check_frame_contract", "frame contract"),
         report(BAD, _label, str(e))
         problems.append(_label)
 
+# The VO ALARM (2026-08-27). Its floor was lowered from the creator band to a
+# corpus-derived one after the user deliberately chose a voice that reads flat
+# by that band. Legitimate — and identical in shape to the illegitimate move of
+# lowering a bar until the light goes green. So the suite asserts BOTH that a
+# typical read stays quiet AND that a genuinely flat one still alarms.
+try:
+    r = subprocess.run(
+        [sys.executable, str(ROOT / "tools/test_vo_qc.py")],
+        capture_output=True, text=True, timeout=180)
+    if r.returncode == 0:
+        report(OK, "vo alarm", r.stdout.strip().splitlines()[-1])
+    else:
+        report(BAD, "vo alarm", "the calibrated VO alarm stopped working")
+        print(r.stdout[-700:])
+        problems.append("vo alarm")
+except Exception as e:  # noqa: BLE001
+    report(BAD, "vo alarm", str(e))
+    problems.append("vo alarm")
+
+# Has the VO corpus moved since we calibrated? Same reasoning as the script
+# calibration: a threshold derived from three reads should be re-derived once
+# more reads exist, or it silently stops describing what we ship.
+try:
+    import json as _json
+    _cal = ROOT / "voice_calibration.json"
+    if _cal.exists():
+        _c = _json.loads(_cal.read_text())
+        sys.path.insert(0, str(ROOT / "tools"))
+        import vo_qc as _vq
+        _now = len(_vq.corpus_wavs())
+        if _now != _c.get("n"):
+            report(WARN, "vo calibration",
+                   f"corpus moved since calibration ({_c.get('n')} -> {_now} "
+                   "reads). Run: vo_qc.py --recalibrate")
+            warnings.append("vo calibration")
+        elif _c.get("n", 0) < 5:
+            report(WARN, "vo calibration",
+                   f"PROVISIONAL — derived from only {_c['n']} read(s). "
+                   "Recalibrate as more reels ship.")
+            warnings.append("vo calibration")
+        else:
+            report(OK, "vo calibration", f"n={_c['n']}, alarm {_c['floor']}")
+except Exception as e:  # noqa: BLE001
+    report(WARN, "vo calibration", str(e))
+
 # The HOOKS (2026-08-26). Hooks are the ONLY mechanism that can make a skill
 # run without a human remembering to — everything else in this repo can print
 # a reminder at best. A hook that quietly stops firing therefore removes a
