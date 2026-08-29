@@ -384,6 +384,56 @@ triggers on "make me a video"/"Remotion"/"HeyGen"/"AI avatar". If either
 loads for a reel request, STOP and use `news-reel` instead — the generic
 skills will happily skip every gate in this repo.
 
+### The `/marketing` plugin (installed 2026-08-27) — 50 skills, ONE adopted
+
+Read before ruling, per the standing rule. **We are a PUBLISHER making reels,
+not a company selling software**, and roughly forty of these assume the
+opposite: pricing, paywalls, onboarding, signup, churn-prevention, referrals,
+cold-email, prospecting, revops, sales-enablement, ads, ab-testing,
+attribution, aso, launch, lead-magnets, free-tools, offers, competitors,
+programmatic-seo, schema, site-architecture, sms, events, co-marketing,
+community-marketing, influencer-marketing, directory-submissions,
+public-relations, marketing-plan, marketing-loops. None has a place in the
+video pipeline. That is not a criticism of them; it is a different business.
+
+**ADOPTED — `marketing-skills:customer-research`, Mode 2 only.** It fills the
+one real hole in this pipeline: **we have no systematic way to choose a
+topic.** Reels get picked off the news, and nothing reads what the audience
+actually asks. Its "digital watering hole" mode names exactly the right wells
+for a consumer-tech audience — App Store reviews filtered to 1-3 stars,
+YouTube and Instagram comments, topic subreddits — and its extraction shape
+(verbatim quote + platform + thread URL + date + theme tag) is already
+compatible with `research.md`.
+
+**Its output is AUDIENCE LANGUAGE, never evidence.** A Reddit comment tells
+you what people are confused about and in whose words; it does not establish
+a fact. It informs the ANGLE, the hook and the vocabulary. It never becomes a
+TIER, a SRC, or a spoken claim. Feeding a forum quote into the ledger as a
+source would drive straight through the tiering rules.
+
+**REJECTED — `marketing-skills:image`.** It is built around AI GENERATION
+(Flux, Nano Banana, Ideogram) for "blog heroes, social graphics, lifestyle".
+Our visuals are captured receipts, real footage, and motion graphics built
+from verified numbers. A generated image standing in for a source is the
+exact failure our capture and credit rules exist to prevent.
+
+**CONSIDERED, NOT ADOPTED — `marketing-council`.** A panel of Godin / Ogilvy /
+Sharp / Hormozi as script critics is a fun idea, but they are brand and
+direct-response advertisers, and we already run `check_script --critic` plus
+the framework's S22-S25 aloud tests. Adding a second opinion layer that knows
+nothing about short-form editorial would dilute, not sharpen.
+
+**OUT OF SCOPE HERE, POSSIBLY USEFUL TO THE BUSINESS — `ai-seo`.** Getting
+igeeksblog.com cited by LLMs is a real question. It has nothing to do with
+this repo.
+
+**THE PLUGIN DOUBLED THE HIJACK SURFACE.** It ships its own `video` and
+`social` — the same two skills this precedence list has always ruled on, now
+triggering under a second name (`marketing-skills:video`,
+`marketing-skills:social`). `reel_precedence.py` was widened to name
+`marketing-skills:*` explicitly, because a rule that names `social` does not
+obviously cover `marketing-skills:social` at 2am.
+
 ### HyperFrames (installed 2026-08-16) — a SCENE SOURCE, never the reel
 
 Nine `hyperframes-*` / `media-use` skills are installed, at the user's call, to
