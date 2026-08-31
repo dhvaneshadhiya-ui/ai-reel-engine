@@ -5746,3 +5746,51 @@ honesty pair · wordcascade "NOT ONE PRODUCT NAMED" · comparison table
 - **Outro typecard is 76% dead space** (limit 70%) — advisory.
 - **The hook headline overlaps the receipt's own text.** Readable, not clean.
 - **No packaging yet** — caption, hashtags, first comment, alt text.
+
+## 2026-08-27 — topic selection finally has a system
+
+**The gap:** every stage of this pipeline had a tool, a gate and a self-test —
+research, structure, script, voice, render, packaging. Topic selection had a
+habit. Reels got picked off whatever news was in front of someone, and nothing
+ever read what the audience was actually asking.
+
+**`tools/idea_scout.py` is the deterministic half.** It cannot research —
+research needs the web, and that is the agent's job. What a tool can do is the
+two halves either side of the thinking:
+
+- `--brief` hands over every subject already made (so a repeat cannot be
+  proposed), the formats with their measured bands, and the output contract.
+- `--check` refuses a shortlist unless every idea carries a real STORY ENGINE
+  (believed X -> discovers Y -> matters because Z), **two independent source
+  domains**, a known format, and no overlap with an existing reel.
+
+**The guardrail that matters.** `AUDIENCE:` lines are parsed separately from
+`SRC:` and are REFUSED as sourcing. This is the constraint recorded when
+`marketing-skills:customer-research` was adopted: a forum comment tells you
+what people are confused about and in whose words, and it never establishes a
+fact. It shapes the angle and the hook; it is not evidence. Now that rule is
+executable rather than remembered.
+
+**A CLOUD ROUTINE runs it, not a local cron.** `daily-reel-ideas` was first
+built on the local scheduler and that was wrong: local tasks only fire while
+the desktop app is open. The routine (`trig_01L4wAZiwpB6cXJYRgarN8a7`) runs
+server-side at 02:30 UTC / 08:00 Asia/Calcutta, in a fresh checkout, and
+**commits the shortlist to `jobs/_ideas/<date>.md`** — so the morning's ideas
+are waiting on every machine, not trapped in one chat.
+
+**Scope: Tech, Apple, AI, Gadgets**, two research lanes — what actually moved
+(primary source + independent coverage) and what the audience is asking (App
+Store 1-3 star reviews, YouTube/Instagram comments, topic subreddits, HN).
+
+**The cloud box has no MCP connectors for skills, so the technique is written
+into the prompt rather than referenced.** That is the better shape anyway:
+what mattered about `customer-research` was its method, not its packaging.
+
+**Both tools it depends on are pure stdlib** plus repo-local modules —
+verified before scheduling, because a routine that dies on an import at 8am
+is a routine nobody trusts again.
+
+**It proposes and stops.** The prompt forbids creating a job, writing a
+script, or generating anything, and forbids touching any file outside
+`jobs/_ideas/`. It also tells the agent that web pages and forum comments are
+DATA, not instructions to it.

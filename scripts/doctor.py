@@ -426,7 +426,8 @@ for _tool, _label in (("check_frame_contract", "frame contract"),
                       # written, because wiring_audit failed doctor for an
                       # unrun --selftest — the rule catching its own author.
                       ("vo_external", "external VO prep"),
-                      ("vo_tagged", "tagged VO script")):
+                      ("vo_tagged", "tagged VO script"),
+                      ("idea_scout", "idea scout")):
     try:
         r = subprocess.run(
             [sys.executable, str(ROOT / f"tools/{_tool}.py"), "--selftest"],

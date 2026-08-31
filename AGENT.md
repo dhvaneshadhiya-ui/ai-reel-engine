@@ -46,6 +46,36 @@ re-scout for it specifically, or **rewrite the line** to something you can show.
 
 ## 2. Order of operations (do not reorder)
 
+### STEP -1 — WHERE THE TOPIC COMES FROM (added 2026-08-27)
+
+Every other stage of this pipeline had a tool, a gate and a self-test. Topic
+selection had a habit: reels got picked off whatever news was in front of
+someone, and nothing ever read what the audience was actually asking.
+
+A scheduled task (`daily-reel-ideas`) runs each morning and writes
+`jobs/_ideas/<YYYY-MM-DD>.md` — a shortlist that has already passed:
+
+```bash
+python3 tools/idea_scout.py --brief          # what the researcher must know
+python3 tools/idea_scout.py --check <file>   # whether what came back is usable
+```
+
+`--brief` hands over every subject already made (so a repeat cannot be
+suggested), the formats with their measured bands, and the output contract.
+`--check` refuses a shortlist unless every idea carries a real STORY ENGINE
+(believed X -> discovers Y -> matters because Z), **two independent source
+domains**, a known format, and no overlap with an existing reel.
+
+**AUDIENCE lines are language, never evidence.** The watering-hole sources
+(App Store 1-3 star reviews, YouTube and Instagram comments, topic subreddits)
+tell you what people are confused about and in whose words. `--check` counts
+them separately from `SRC:` and REFUSES an idea supported only by them. A
+forum quote shapes the angle and the hook; it never becomes a claim.
+
+Pick one, then `scripts/new_job.py <slug>` and continue at STEP 0. The SRC
+lines are a head start, not the research — `research.md` still has to be
+filled properly.
+
 ### STEP 0 — Load context
 0. Read `frameworks/short-form-master.md` and answer its §2 brief fields in
    `jobs/<slug>/brief.json`: **subject**, **reveal_target** (the precise
