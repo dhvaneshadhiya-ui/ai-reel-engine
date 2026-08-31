@@ -72,6 +72,29 @@ tell you what people are confused about and in whose words. `--check` counts
 them separately from `SRC:` and REFUSES an idea supported only by them. A
 forum quote shapes the angle and the hook; it never becomes a claim.
 
+**LANE B RUNS HERE, NOT IN THE CLOUD (measured 2026-08-31).** The routine's
+sandbox blocks essentially all outbound web traffic — `curl` and `WebFetch`
+both 403 at the egress proxy, including hn.algolia.com, reddit.com,
+itunes.apple.com RSS and every news domain tested. Only `WebSearch` works
+there, because it runs server-side. So the morning shortlist is Lane A
+(what moved) plus whatever demand signal search snippets reveal.
+
+The audience pass happens on THIS machine, on the ONE topic you picked —
+which is better targeting anyway than shallow mining across five candidates.
+Confirmed reachable from here:
+
+| source | status | what it gives |
+|---|---|---|
+| `hn.algolia.com/api/v1/search?query=<q>&tags=comment` | **works** | verbatim comments with author + date |
+| WebSearch on "<topic> reddit / complaints / why does" | works | the question people keep asking |
+| reddit.com (any path) | **blocked here too** | — |
+| itunes.apple.com RSS | returns feed metadata, no reviews | — |
+
+Findings go into `research.md` as AUDIENCE lines: verbatim quote, platform,
+url, date. **They are LANGUAGE, not evidence** — they shape the angle, the
+hook and the vocabulary, and they never become a TIER, a SRC or a spoken
+claim.
+
 Pick one, then `scripts/new_job.py <slug>` and continue at STEP 0. The SRC
 lines are a head start, not the research — `research.md` still has to be
 filled properly.
