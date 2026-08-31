@@ -1,0 +1,338 @@
+{
+  "emphasis": [
+    "tested",
+    "buried",
+    "unsightly marks",
+    "not Apple's word",
+    "real reason",
+    "September 9th"
+  ],
+  "caption_corrections": {},
+  "shots": [
+    {
+      "start_phrase": "Apple's foldable iPhone debuts",
+      "line": "Apple's foldable iPhone debuts September 9th, about a week from now, it almost shipped with an accessory you will never get to buy.",
+      "needs": [
+        "Apple",
+        "foldable",
+        "iPhone",
+        "debuts",
+        "September",
+        "9th",
+        "almost",
+        "shipped",
+        "accessory",
+        "never"
+      ],
+      "tier": "reliable",
+      "asset_id": "hook-hero",
+      "scene": {
+        "type": "split",
+        "topSrc": "assets/apple-pencil-iphone-ultra/hook-hero.png",
+        "bottomSrc": "$AVATAR",
+        "captionBottom": 1000,
+        "credit": "9to5Mac",
+        "topFocusX": 0.5,
+        "bottomFocusX": 0.48,
+        "sfx": [
+          {
+            "src": "sfx/whoosh.MP3",
+            "vol": 0.14,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "That accessory is a",
+      "line": "That accessory is a Pencil, and the real reason it got buried says more about the phone than the pencil.",
+      "needs": [
+        "accessory",
+        "Pencil",
+        "real",
+        "reason",
+        "buried",
+        "says",
+        "phone",
+        "pencil"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-pencil-iphone-ultra/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "Bloomberg's Mark Gurman has",
+      "line": "Bloomberg's Mark Gurman has the receipt: he says Apple didn't just sketch this, it prototyped it and tested it.",
+      "needs": [
+        "Bloomberg",
+        "Mark",
+        "Gurman",
+        "receipt",
+        "says",
+        "Apple",
+        "prototyped",
+        "tested"
+      ],
+      "tier": "reliable",
+      "asset_id": "mr-headline",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-pencil-iphone-ultra/mr-headline.png",
+        "srcWidth": 1020,
+        "srcHeight": 380,
+        "backdrop": "black",
+        "credit": "MacRumors",
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "vol": 0.13,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "This one's shorter than",
+      "line": "This one's shorter than your iPad Pencil, magnets in the side, sized to match the phone once it folds shut.",
+      "needs": [
+        "shorter",
+        "iPad",
+        "Pencil",
+        "magnets",
+        "side",
+        "sized",
+        "match",
+        "phone",
+        "once"
+      ],
+      "tier": "official",
+      "asset_id": "pencil-pro-photo",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/apple-pencil-iphone-ultra/pencil-pro-photo.png",
+        "srcWidth": 1020,
+        "srcHeight": 540,
+        "focus": {
+          "x": 0,
+          "y": 150,
+          "w": 1020,
+          "h": 240
+        },
+        "credit": "Apple, via MacRumors",
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "vol": 0.12,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Close enough to have",
+      "line": "Close enough to have shipped.",
+      "needs": [
+        "Close",
+        "enough",
+        "have",
+        "shipped"
+      ],
+      "tier": "official",
+      "asset_id": "pencil-pro-photo",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/apple-pencil-iphone-ultra/pencil-pro-photo.png",
+        "srcWidth": 1020,
+        "srcHeight": 540,
+        "focus": {
+          "x": 550,
+          "y": 180,
+          "w": 400,
+          "h": 180
+        },
+        "credit": "Apple, via MacRumors"
+      }
+    },
+    {
+      "start_phrase": "So that killed it.",
+      "line": "So that killed it.",
+      "needs": [
+        "killed"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-pencil-iphone-ultra/avatar-master.mp4",
+        "sfx": [
+          {
+            "src": "sfx/Riser.MP3",
+            "vol": 0.15,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Stuck to the side,",
+      "line": "Stuck to the side, it made the phone awkward to even hold. And what's worse, Gurman says the tip would rest against Apple's most fragile screen yet and leave what he calls \"unsightly marks.\"",
+      "needs": [
+        "Stuck",
+        "side",
+        "made",
+        "phone",
+        "awkward",
+        "even",
+        "Gurman",
+        "says",
+        "rest",
+        "against",
+        "Apple",
+        "most",
+        "fragile",
+        "marks"
+      ],
+      "tier": "reliable",
+      "asset_id": "two-reasons-receipt",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-pencil-iphone-ultra/two-reasons-receipt.png",
+        "srcWidth": 1080,
+        "srcHeight": 620,
+        "backdrop": "black",
+        "credit": "9to5Mac",
+        "sfx": [
+          {
+            "src": "sfx/Magic Reveal.MP3",
+            "vol": 0.14,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "This is Gurman's",
+      "line": "This is Gurman's reporting, not Apple's word.",
+      "needs": [
+        "Gurman",
+        "reporting",
+        "Apple",
+        "word"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-pencil-iphone-ultra/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "One report, repeated everywhere,",
+      "line": "One report, repeated everywhere, verified nowhere else.",
+      "needs": [
+        "report",
+        "repeated",
+        "everywhere",
+        "verified",
+        "nowhere",
+        "else"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-pencil-iphone-ultra/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "But here's why Gurman",
+      "line": "But here's why Gurman says that matters more than the specs: Apple doesn't want to contradict Steve Jobs, who said back in 2007 that nobody wants a stylus.",
+      "needs": [
+        "Gurman",
+        "says",
+        "matters",
+        "specs",
+        "Apple",
+        "doesn",
+        "said",
+        "back",
+        "2007",
+        "nobody",
+        "wants",
+        "stylus"
+      ],
+      "tier": "reliable",
+      "asset_id": "jobs-quote-receipt",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-pencil-iphone-ultra/jobs-quote-receipt.png",
+        "srcWidth": 1080,
+        "srcHeight": 320,
+        "backdrop": "black",
+        "credit": "9to5Mac",
+        "sfx": [
+          {
+            "src": "sfx/whoosh.MP3",
+            "vol": 0.13,
+            "at": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Simply put, this was",
+      "line": "Simply put, this was never really about the pencil. It's Apple admitting its first folding screen might not survive a sharp tip touching it. That's the real reason you'll never hold one.",
+      "needs": [
+        "Simply",
+        "never",
+        "really",
+        "pencil",
+        "Apple",
+        "admitting",
+        "first",
+        "folding",
+        "screen",
+        "might",
+        "real",
+        "reason",
+        "never",
+        "hold"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-pencil-iphone-ultra/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "We'll know everything else",
+      "line": "We'll know everything else in a week.",
+      "needs": [
+        "know",
+        "else",
+        "week"
+      ],
+      "tier": "official",
+      "asset_id": "invite-hero",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-pencil-iphone-ultra/invite-hero.png",
+        "srcWidth": 1080,
+        "srcHeight": 533,
+        "backdrop": "black",
+        "credit": "Apple",
+        "sfx": [
+          {
+            "src": "sfx/whoosh.MP3",
+            "vol": 0.13,
+            "at": 0.0
+          }
+        ]
+      }
+    }
+  ]
+}

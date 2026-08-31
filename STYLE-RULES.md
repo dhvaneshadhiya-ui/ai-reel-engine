@@ -5746,3 +5746,80 @@ honesty pair · wordcascade "NOT ONE PRODUCT NAMED" · comparison table
 - **Outro typecard is 76% dead space** (limit 70%) — advisory.
 - **The hook headline overlaps the receipt's own text.** Readable, not clean.
 - **No packaging yet** — caption, hashtags, first comment, alt text.
+
+## 2026-08-31 — apple-pencil-iphone-ultra: fast VO, and a lint bug worth naming
+
+Single-source Gurman scoop (Apple tested and shelved a foldable-iPhone
+stylus). Built end to end on the external-voice flow; three issues, all
+worth recording.
+
+**1. ElevenLabs v3 read this script at 3.45 w/s, not the 2.35-2.75 band —
+and `[pause]` tags plus one-sentence-per-paragraph moved it to only 3.38.**
+Two full-price regenerations (~2,580 credits, ~$45) for a ~0.07 w/s
+improvement. **The lever this pipeline documents for pacing doesn't reliably
+work on this voice/script combination** — logged so the next reel doesn't
+re-spend credits re-discovering it. User chose to accept the fast take
+(advisory-only, G02 runtime band still cleared at 61s) rather than fall back
+to HeyGen's flatter TTS or risk an untested atempo time-stretch.
+
+**2. `plan_shots.py`'s clause-level auto-split plus per-clause identical
+scenes is a DUPLICATE-flag factory.** Binding two or three adjacent clauses
+to the SAME still image (because they're one sentence, one visual) produces
+back-to-back scenes whose mid-frames hash near-identical — `[DUPLICATE]` is
+HARD_ALWAYS in `lint_frames.py` regardless of BLOCKING_RULES. **The fix is
+structural, not cosmetic: merge same-visual adjacent shots into ONE shot
+before compiling**, every time a sentence spans multiple clauses bound to one
+asset. Seven merges did it here (20 shots -> 12). Worth teaching
+`plan_shots.py` to warn about this at write-time rather than finding out
+after a full render.
+
+**3. `annotatezoom` on a short, wide screenshot (not a big source image)
+makes dead space WORSE, not better.** Splitting a 1080x620 receipt into two
+310px-tall focus rects to show "scroll from paragraph 1 to paragraph 2"
+produced 37-43% dead space (limit 30%) — the wide-aspect focus rect, scaled
+to fill canvas WIDTH, left more vertical letterbox than the full image would
+have. **`receipt` (full image, no focus rect) is the right type for a short
+screenshot; `annotatezoom` is for zooming into a region of a LARGE source.**
+Switched back to `receipt` with both paragraphs in one merged shot — fixed
+the dead space AND the duplicate-scene problem in the same edit.
+
+**4. `[EDGE TEXT]` false-fired on a receipt with a blurred ambient
+backdrop.** The heuristic measures pixel variance in an 8px strip at the
+frame's L/R edges — it can't tell "cropped word" from "the app's own blurred
+backdrop-fill texture is naturally noisy at the edges." Verified by hand:
+ran the exact regex/variance check against the actual frame, and by eye
+against the rendered still — no cropped text, just backdrop noise crossing
+the score-34 threshold. Overridden with `--soft`, disclosed here and to the
+user. Not something a per-reel fix should chase; the false-positive risk is
+systemic to any receipt scene sitting on the app's blurred background, not
+specific to this asset.
+
+**5. Split hook, again — same fix as apple-surprise-and-shine, independently
+re-derived before reading that entry.** A receipt-only hook (headline image,
+no presenter) fails `validate_job.py`'s "opening scene must visibly include
+the presenter" the moment the reel HAS a presenter elsewhere. `split` (image
+top / avatar bottom) satisfies that, the sound-off test, AND reads better on
+frame 0 per G43. **This is now confirmed twice: image-led hook material on
+this pipeline should default to `split`, not a bare `receipt`, whenever a
+presenter exists.**
+
+### Treatment history (do not repeat next reel)
+
+split hook (real product-render screenshot over presenter, not an official
+invite) · receipt (not annotatezoom) on a short two-paragraph screenshot,
+BOTH paragraphs in one shot · annotatezoom used only on a real product photo
+(Apple Pencil Pro) with an on-screen "shown for scale, not the prototype"
+disclaimer · reused an official asset (Sept 9 invite art) VERBATIM from a
+prior job's `public/assets/` instead of re-capturing — new for this
+pipeline, since every prior reel re-scouted per slug even for the same
+event.
+
+### Left honestly unfixed
+
+- **Facecam 34% of runtime** (band 10-20% for `news`) — a side effect of
+  merging clause-pairs into single facecam shots; each merged shot now spans
+  more spoken time. Advisory only (G06 not in BLOCKING_RULES).
+- **Every held-layout PACING flag** (scene 0 hook 7.2s down to a scene at
+  9.9s) — all trace to the same fast VO read in #1, not to the shot
+  boundaries themselves; re-verified by eye against the lint sheets rather
+  than reflexively re-cut.

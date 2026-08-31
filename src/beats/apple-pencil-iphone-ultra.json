@@ -1,0 +1,1517 @@
+{
+  "id": "apple-pencil-iphone-ultra",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/apple-pencil-iphone-ultra/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "tested",
+    "buried",
+    "unsightly marks",
+    "not Apple's word",
+    "real reason",
+    "September 9th"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "topSrc": "assets/apple-pencil-iphone-ultra/hook-hero.png",
+      "bottomSrc": "assets/apple-pencil-iphone-ultra/avatar-master.mp4",
+      "captionBottom": 1000,
+      "credit": "9to5Mac",
+      "topFocusX": 0.5,
+      "bottomFocusX": 0.48,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 7.18,
+      "assetId": "hook-hero",
+      "claimId": "hook-hero",
+      "covers": "Apple's foldable iPhone debuts",
+      "bottomFrom": 0.0
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-pencil-iphone-ultra/avatar-master.mp4",
+      "durationSec": 5.4,
+      "from": 7.18,
+      "focusX": 0.5
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-pencil-iphone-ultra/mr-headline.png",
+      "srcWidth": 1020,
+      "srcHeight": 380,
+      "backdrop": "black",
+      "credit": "MacRumors",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 5.88,
+      "assetId": "mr-headline",
+      "claimId": "mr-headline",
+      "covers": "Bloomberg's Mark Gurman has"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/apple-pencil-iphone-ultra/pencil-pro-photo.png",
+      "srcWidth": 1020,
+      "srcHeight": 540,
+      "focus": {
+        "x": 0,
+        "y": 150,
+        "w": 1020,
+        "h": 240
+      },
+      "credit": "Apple, via MacRumors",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 5.72,
+      "assetId": "pencil-pro-photo",
+      "claimId": "pencil-pro-photo",
+      "covers": "This one's shorter than"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/apple-pencil-iphone-ultra/pencil-pro-photo.png",
+      "srcWidth": 1020,
+      "srcHeight": 540,
+      "focus": {
+        "x": 550,
+        "y": 180,
+        "w": 400,
+        "h": 180
+      },
+      "credit": "Apple, via MacRumors",
+      "durationSec": 1.28,
+      "assetId": "pencil-pro-photo",
+      "claimId": "pencil-pro-photo",
+      "covers": "Close enough to have"
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-pencil-iphone-ultra/avatar-master.mp4",
+      "sfx": [
+        {
+          "src": "sfx/Riser.MP3",
+          "vol": 0.359,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 1.16,
+      "from": 25.46,
+      "focusX": 0.5
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-pencil-iphone-ultra/two-reasons-receipt.png",
+      "srcWidth": 1080,
+      "srcHeight": 620,
+      "backdrop": "black",
+      "credit": "9to5Mac",
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "vol": 1.0,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 9.94,
+      "assetId": "two-reasons-receipt",
+      "claimId": "two-reasons-receipt",
+      "covers": "Stuck to the side,"
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-pencil-iphone-ultra/avatar-master.mp4",
+      "durationSec": 2.22,
+      "from": 36.56,
+      "focusX": 0.5
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-pencil-iphone-ultra/avatar-master.mp4",
+      "durationSec": 3.02,
+      "from": 38.78,
+      "focusX": 0.5
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-pencil-iphone-ultra/jobs-quote-receipt.png",
+      "srcWidth": 1080,
+      "srcHeight": 320,
+      "backdrop": "black",
+      "credit": "9to5Mac",
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 8.48,
+      "assetId": "jobs-quote-receipt",
+      "claimId": "jobs-quote-receipt",
+      "covers": "But here's why Gurman"
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-pencil-iphone-ultra/avatar-master.mp4",
+      "durationSec": 9.16,
+      "from": 50.28,
+      "focusX": 0.5
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-pencil-iphone-ultra/invite-hero.png",
+      "srcWidth": 1080,
+      "srcHeight": 533,
+      "backdrop": "black",
+      "credit": "Apple",
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 1.496,
+      "assetId": "invite-hero",
+      "claimId": "invite-hero",
+      "covers": "We'll know everything else"
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.52,
+      "text": "Apple's foldable iPhone",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Apple's"
+        },
+        {
+          "t": 0.76,
+          "text": "foldable"
+        },
+        {
+          "t": 1.24,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 1.52,
+      "end": 3.08,
+      "text": "debuts September 9th,",
+      "words": [
+        {
+          "t": 1.52,
+          "text": "debuts"
+        },
+        {
+          "t": 1.98,
+          "text": "September"
+        },
+        {
+          "t": 2.34,
+          "text": "9th,"
+        }
+      ]
+    },
+    {
+      "start": 3.08,
+      "end": 3.56,
+      "text": "about a week",
+      "words": [
+        {
+          "t": 3.08,
+          "text": "about"
+        },
+        {
+          "t": 3.28,
+          "text": "a"
+        },
+        {
+          "t": 3.44,
+          "text": "week"
+        }
+      ]
+    },
+    {
+      "start": 3.56,
+      "end": 4.44,
+      "text": "from now. It",
+      "words": [
+        {
+          "t": 3.56,
+          "text": "from"
+        },
+        {
+          "t": 3.76,
+          "text": "now."
+        },
+        {
+          "t": 4.36,
+          "text": "It"
+        }
+      ]
+    },
+    {
+      "start": 4.44,
+      "end": 5.18,
+      "text": "almost shipped with",
+      "words": [
+        {
+          "t": 4.44,
+          "text": "almost"
+        },
+        {
+          "t": 4.66,
+          "text": "shipped"
+        },
+        {
+          "t": 4.98,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 5.18,
+      "end": 5.96,
+      "text": "an accessory you",
+      "words": [
+        {
+          "t": 5.18,
+          "text": "an"
+        },
+        {
+          "t": 5.3,
+          "text": "accessory"
+        },
+        {
+          "t": 5.66,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 5.96,
+      "end": 6.56,
+      "text": "will never get",
+      "words": [
+        {
+          "t": 5.96,
+          "text": "will"
+        },
+        {
+          "t": 6.08,
+          "text": "never"
+        },
+        {
+          "t": 6.34,
+          "text": "get"
+        }
+      ]
+    },
+    {
+      "start": 6.56,
+      "end": 7.32,
+      "text": "to buy. That",
+      "words": [
+        {
+          "t": 6.56,
+          "text": "to"
+        },
+        {
+          "t": 6.72,
+          "text": "buy."
+        },
+        {
+          "t": 7.18,
+          "text": "That"
+        }
+      ]
+    },
+    {
+      "start": 7.32,
+      "end": 8.14,
+      "text": "accessory is a",
+      "words": [
+        {
+          "t": 7.32,
+          "text": "accessory"
+        },
+        {
+          "t": 7.74,
+          "text": "is"
+        },
+        {
+          "t": 8.02,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 8.14,
+      "end": 9.0,
+      "text": "pencil, and the",
+      "words": [
+        {
+          "t": 8.14,
+          "text": "pencil,"
+        },
+        {
+          "t": 8.78,
+          "text": "and"
+        },
+        {
+          "t": 8.9,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 9.0,
+      "end": 9.66,
+      "text": "real reason it",
+      "words": [
+        {
+          "t": 9.0,
+          "text": "real"
+        },
+        {
+          "t": 9.22,
+          "text": "reason"
+        },
+        {
+          "t": 9.5,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 9.66,
+      "end": 10.54,
+      "text": "got buried says",
+      "words": [
+        {
+          "t": 9.66,
+          "text": "got"
+        },
+        {
+          "t": 9.8,
+          "text": "buried"
+        },
+        {
+          "t": 10.16,
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "start": 10.54,
+      "end": 11.22,
+      "text": "more about the",
+      "words": [
+        {
+          "t": 10.54,
+          "text": "more"
+        },
+        {
+          "t": 10.8,
+          "text": "about"
+        },
+        {
+          "t": 11.02,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 11.22,
+      "end": 11.86,
+      "text": "phone than the",
+      "words": [
+        {
+          "t": 11.22,
+          "text": "phone"
+        },
+        {
+          "t": 11.52,
+          "text": "than"
+        },
+        {
+          "t": 11.72,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 11.86,
+      "end": 13.26,
+      "text": "pencil. Bloomberg's Mark",
+      "words": [
+        {
+          "t": 11.86,
+          "text": "pencil."
+        },
+        {
+          "t": 12.58,
+          "text": "Bloomberg's"
+        },
+        {
+          "t": 13.06,
+          "text": "Mark"
+        }
+      ]
+    },
+    {
+      "start": 13.26,
+      "end": 14.0,
+      "text": "Gurman has the",
+      "words": [
+        {
+          "t": 13.26,
+          "text": "Gurman"
+        },
+        {
+          "t": 13.6,
+          "text": "has"
+        },
+        {
+          "t": 13.86,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 14.0,
+      "end": 14.94,
+      "text": "receipt. He says",
+      "words": [
+        {
+          "t": 14.0,
+          "text": "receipt."
+        },
+        {
+          "t": 14.62,
+          "text": "He"
+        },
+        {
+          "t": 14.74,
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "start": 14.94,
+      "end": 15.74,
+      "text": "Apple didn't just",
+      "words": [
+        {
+          "t": 14.94,
+          "text": "Apple"
+        },
+        {
+          "t": 15.28,
+          "text": "didn't"
+        },
+        {
+          "t": 15.56,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 15.74,
+      "end": 16.72,
+      "text": "sketch this, it",
+      "words": [
+        {
+          "t": 15.74,
+          "text": "sketch"
+        },
+        {
+          "t": 16.0,
+          "text": "this,"
+        },
+        {
+          "t": 16.58,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 16.72,
+      "end": 17.64,
+      "text": "prototyped it and",
+      "words": [
+        {
+          "t": 16.72,
+          "text": "prototyped"
+        },
+        {
+          "t": 17.3,
+          "text": "it"
+        },
+        {
+          "t": 17.44,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 17.64,
+      "end": 18.62,
+      "text": "tested it. This",
+      "words": [
+        {
+          "t": 17.64,
+          "text": "tested"
+        },
+        {
+          "t": 17.94,
+          "text": "it."
+        },
+        {
+          "t": 18.46,
+          "text": "This"
+        }
+      ]
+    },
+    {
+      "start": 18.62,
+      "end": 19.36,
+      "text": "one's shorter than",
+      "words": [
+        {
+          "t": 18.62,
+          "text": "one's"
+        },
+        {
+          "t": 18.96,
+          "text": "shorter"
+        },
+        {
+          "t": 19.16,
+          "text": "than"
+        }
+      ]
+    },
+    {
+      "start": 19.36,
+      "end": 20.22,
+      "text": "your iPad pencil,",
+      "words": [
+        {
+          "t": 19.36,
+          "text": "your"
+        },
+        {
+          "t": 19.52,
+          "text": "iPad"
+        },
+        {
+          "t": 19.8,
+          "text": "pencil,"
+        }
+      ]
+    },
+    {
+      "start": 20.56,
+      "end": 21.18,
+      "text": "magnets in the",
+      "words": [
+        {
+          "t": 20.56,
+          "text": "magnets"
+        },
+        {
+          "t": 20.84,
+          "text": "in"
+        },
+        {
+          "t": 21.08,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 21.18,
+      "end": 22.22,
+      "text": "side, sized to",
+      "words": [
+        {
+          "t": 21.18,
+          "text": "side,"
+        },
+        {
+          "t": 21.74,
+          "text": "sized"
+        },
+        {
+          "t": 21.96,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 22.22,
+      "end": 22.88,
+      "text": "match the phone",
+      "words": [
+        {
+          "t": 22.22,
+          "text": "match"
+        },
+        {
+          "t": 22.42,
+          "text": "the"
+        },
+        {
+          "t": 22.58,
+          "text": "phone"
+        }
+      ]
+    },
+    {
+      "start": 22.88,
+      "end": 23.58,
+      "text": "once it folds",
+      "words": [
+        {
+          "t": 22.88,
+          "text": "once"
+        },
+        {
+          "t": 23.16,
+          "text": "it"
+        },
+        {
+          "t": 23.32,
+          "text": "folds"
+        }
+      ]
+    },
+    {
+      "start": 23.58,
+      "end": 24.62,
+      "text": "shut. Close enough",
+      "words": [
+        {
+          "t": 23.58,
+          "text": "shut."
+        },
+        {
+          "t": 24.18,
+          "text": "Close"
+        },
+        {
+          "t": 24.38,
+          "text": "enough"
+        }
+      ]
+    },
+    {
+      "start": 24.62,
+      "end": 25.18,
+      "text": "to have shipped,",
+      "words": [
+        {
+          "t": 24.62,
+          "text": "to"
+        },
+        {
+          "t": 24.8,
+          "text": "have"
+        },
+        {
+          "t": 24.92,
+          "text": "shipped,"
+        }
+      ]
+    },
+    {
+      "start": 25.46,
+      "end": 26.12,
+      "text": "so that killed",
+      "words": [
+        {
+          "t": 25.46,
+          "text": "so"
+        },
+        {
+          "t": 25.66,
+          "text": "that"
+        },
+        {
+          "t": 25.86,
+          "text": "killed"
+        }
+      ]
+    },
+    {
+      "start": 26.12,
+      "end": 26.98,
+      "text": "it. Stuck to",
+      "words": [
+        {
+          "t": 26.12,
+          "text": "it."
+        },
+        {
+          "t": 26.62,
+          "text": "Stuck"
+        },
+        {
+          "t": 26.82,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 26.98,
+      "end": 27.66,
+      "text": "the side, it",
+      "words": [
+        {
+          "t": 26.98,
+          "text": "the"
+        },
+        {
+          "t": 27.1,
+          "text": "side,"
+        },
+        {
+          "t": 27.56,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 27.66,
+      "end": 28.22,
+      "text": "made the phone",
+      "words": [
+        {
+          "t": 27.66,
+          "text": "made"
+        },
+        {
+          "t": 27.84,
+          "text": "the"
+        },
+        {
+          "t": 28.0,
+          "text": "phone"
+        }
+      ]
+    },
+    {
+      "start": 28.22,
+      "end": 29.02,
+      "text": "awkward to even",
+      "words": [
+        {
+          "t": 28.22,
+          "text": "awkward"
+        },
+        {
+          "t": 28.6,
+          "text": "to"
+        },
+        {
+          "t": 28.78,
+          "text": "even"
+        }
+      ]
+    },
+    {
+      "start": 29.02,
+      "end": 30.02,
+      "text": "hold. And what's",
+      "words": [
+        {
+          "t": 29.02,
+          "text": "hold."
+        },
+        {
+          "t": 29.34,
+          "text": "And"
+        },
+        {
+          "t": 29.76,
+          "text": "what's"
+        }
+      ]
+    },
+    {
+      "start": 30.02,
+      "end": 30.94,
+      "text": "worse, Gurman says",
+      "words": [
+        {
+          "t": 30.02,
+          "text": "worse,"
+        },
+        {
+          "t": 30.52,
+          "text": "Gurman"
+        },
+        {
+          "t": 30.7,
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "start": 30.94,
+      "end": 31.52,
+      "text": "the tip would",
+      "words": [
+        {
+          "t": 30.94,
+          "text": "the"
+        },
+        {
+          "t": 31.16,
+          "text": "tip"
+        },
+        {
+          "t": 31.34,
+          "text": "would"
+        }
+      ]
+    },
+    {
+      "start": 31.52,
+      "end": 32.58,
+      "text": "rest against Apple's",
+      "words": [
+        {
+          "t": 31.52,
+          "text": "rest"
+        },
+        {
+          "t": 31.78,
+          "text": "against"
+        },
+        {
+          "t": 32.1,
+          "text": "Apple's"
+        }
+      ]
+    },
+    {
+      "start": 32.58,
+      "end": 33.64,
+      "text": "most fragile screen",
+      "words": [
+        {
+          "t": 32.58,
+          "text": "most"
+        },
+        {
+          "t": 32.84,
+          "text": "fragile"
+        },
+        {
+          "t": 33.26,
+          "text": "screen"
+        }
+      ]
+    },
+    {
+      "start": 33.64,
+      "end": 34.44,
+      "text": "yet and leave",
+      "words": [
+        {
+          "t": 33.64,
+          "text": "yet"
+        },
+        {
+          "t": 33.96,
+          "text": "and"
+        },
+        {
+          "t": 34.26,
+          "text": "leave"
+        }
+      ]
+    },
+    {
+      "start": 34.44,
+      "end": 35.06,
+      "text": "what he calls",
+      "words": [
+        {
+          "t": 34.44,
+          "text": "what"
+        },
+        {
+          "t": 34.66,
+          "text": "he"
+        },
+        {
+          "t": 34.82,
+          "text": "calls"
+        }
+      ]
+    },
+    {
+      "start": 35.06,
+      "end": 36.7,
+      "text": "unsightly marks. This",
+      "words": [
+        {
+          "t": 35.06,
+          "text": "unsightly"
+        },
+        {
+          "t": 35.84,
+          "text": "marks."
+        },
+        {
+          "t": 36.56,
+          "text": "This"
+        }
+      ]
+    },
+    {
+      "start": 36.7,
+      "end": 37.52,
+      "text": "is Gurman's reporting,",
+      "words": [
+        {
+          "t": 36.7,
+          "text": "is"
+        },
+        {
+          "t": 36.84,
+          "text": "Gurman's"
+        },
+        {
+          "t": 37.24,
+          "text": "reporting,"
+        }
+      ]
+    },
+    {
+      "start": 37.74,
+      "end": 38.5,
+      "text": "not Apple's word.",
+      "words": [
+        {
+          "t": 37.74,
+          "text": "not"
+        },
+        {
+          "t": 37.82,
+          "text": "Apple's"
+        },
+        {
+          "t": 38.3,
+          "text": "word."
+        }
+      ]
+    },
+    {
+      "start": 38.78,
+      "end": 39.74,
+      "text": "One report, repeated",
+      "words": [
+        {
+          "t": 38.78,
+          "text": "One"
+        },
+        {
+          "t": 38.94,
+          "text": "report,"
+        },
+        {
+          "t": 39.5,
+          "text": "repeated"
+        }
+      ]
+    },
+    {
+      "start": 39.74,
+      "end": 41.12,
+      "text": "everywhere, verified nowhere",
+      "words": [
+        {
+          "t": 39.74,
+          "text": "everywhere,"
+        },
+        {
+          "t": 40.48,
+          "text": "verified"
+        },
+        {
+          "t": 40.74,
+          "text": "nowhere"
+        }
+      ]
+    },
+    {
+      "start": 41.12,
+      "end": 42.18,
+      "text": "else. But here's",
+      "words": [
+        {
+          "t": 41.12,
+          "text": "else."
+        },
+        {
+          "t": 41.8,
+          "text": "But"
+        },
+        {
+          "t": 41.9,
+          "text": "here's"
+        }
+      ]
+    },
+    {
+      "start": 42.18,
+      "end": 42.88,
+      "text": "why Gurman says",
+      "words": [
+        {
+          "t": 42.18,
+          "text": "why"
+        },
+        {
+          "t": 42.3,
+          "text": "Gurman"
+        },
+        {
+          "t": 42.6,
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "start": 42.88,
+      "end": 43.72,
+      "text": "that matters more",
+      "words": [
+        {
+          "t": 42.88,
+          "text": "that"
+        },
+        {
+          "t": 43.1,
+          "text": "matters"
+        },
+        {
+          "t": 43.42,
+          "text": "more"
+        }
+      ]
+    },
+    {
+      "start": 43.72,
+      "end": 44.28,
+      "text": "than the specs.",
+      "words": [
+        {
+          "t": 43.72,
+          "text": "than"
+        },
+        {
+          "t": 43.88,
+          "text": "the"
+        },
+        {
+          "t": 44.02,
+          "text": "specs."
+        }
+      ]
+    },
+    {
+      "start": 44.72,
+      "end": 45.38,
+      "text": "Apple doesn't want",
+      "words": [
+        {
+          "t": 44.72,
+          "text": "Apple"
+        },
+        {
+          "t": 44.92,
+          "text": "doesn't"
+        },
+        {
+          "t": 45.24,
+          "text": "want"
+        }
+      ]
+    },
+    {
+      "start": 45.38,
+      "end": 46.28,
+      "text": "to contradict Steve",
+      "words": [
+        {
+          "t": 45.38,
+          "text": "to"
+        },
+        {
+          "t": 45.54,
+          "text": "contradict"
+        },
+        {
+          "t": 45.9,
+          "text": "Steve"
+        }
+      ]
+    },
+    {
+      "start": 46.28,
+      "end": 47.18,
+      "text": "Jobs, who said",
+      "words": [
+        {
+          "t": 46.28,
+          "text": "Jobs,"
+        },
+        {
+          "t": 46.92,
+          "text": "who"
+        },
+        {
+          "t": 47.02,
+          "text": "said"
+        }
+      ]
+    },
+    {
+      "start": 47.18,
+      "end": 48.34,
+      "text": "back in 2007",
+      "words": [
+        {
+          "t": 47.18,
+          "text": "back"
+        },
+        {
+          "t": 47.38,
+          "text": "in"
+        },
+        {
+          "t": 47.58,
+          "text": "2007"
+        }
+      ]
+    },
+    {
+      "start": 48.34,
+      "end": 49.36,
+      "text": "that nobody wants",
+      "words": [
+        {
+          "t": 48.34,
+          "text": "that"
+        },
+        {
+          "t": 48.74,
+          "text": "nobody"
+        },
+        {
+          "t": 49.04,
+          "text": "wants"
+        }
+      ]
+    },
+    {
+      "start": 49.36,
+      "end": 50.58,
+      "text": "a stylus. Simply",
+      "words": [
+        {
+          "t": 49.36,
+          "text": "a"
+        },
+        {
+          "t": 49.54,
+          "text": "stylus."
+        },
+        {
+          "t": 50.28,
+          "text": "Simply"
+        }
+      ]
+    },
+    {
+      "start": 50.58,
+      "end": 51.38,
+      "text": "put, this was",
+      "words": [
+        {
+          "t": 50.58,
+          "text": "put,"
+        },
+        {
+          "t": 51.14,
+          "text": "this"
+        },
+        {
+          "t": 51.24,
+          "text": "was"
+        }
+      ]
+    },
+    {
+      "start": 51.38,
+      "end": 52.16,
+      "text": "never really about",
+      "words": [
+        {
+          "t": 51.38,
+          "text": "never"
+        },
+        {
+          "t": 51.66,
+          "text": "really"
+        },
+        {
+          "t": 51.96,
+          "text": "about"
+        }
+      ]
+    },
+    {
+      "start": 52.16,
+      "end": 53.24,
+      "text": "the pencil. It's",
+      "words": [
+        {
+          "t": 52.16,
+          "text": "the"
+        },
+        {
+          "t": 52.38,
+          "text": "pencil."
+        },
+        {
+          "t": 53.04,
+          "text": "It's"
+        }
+      ]
+    },
+    {
+      "start": 53.24,
+      "end": 54.06,
+      "text": "Apple admitting its",
+      "words": [
+        {
+          "t": 53.24,
+          "text": "Apple"
+        },
+        {
+          "t": 53.48,
+          "text": "admitting"
+        },
+        {
+          "t": 53.82,
+          "text": "its"
+        }
+      ]
+    },
+    {
+      "start": 54.06,
+      "end": 55.14,
+      "text": "first folding screen",
+      "words": [
+        {
+          "t": 54.06,
+          "text": "first"
+        },
+        {
+          "t": 54.34,
+          "text": "folding"
+        },
+        {
+          "t": 54.72,
+          "text": "screen"
+        }
+      ]
+    },
+    {
+      "start": 55.14,
+      "end": 55.94,
+      "text": "might not survive",
+      "words": [
+        {
+          "t": 55.14,
+          "text": "might"
+        },
+        {
+          "t": 55.38,
+          "text": "not"
+        },
+        {
+          "t": 55.6,
+          "text": "survive"
+        }
+      ]
+    },
+    {
+      "start": 55.94,
+      "end": 56.68,
+      "text": "a sharp tip",
+      "words": [
+        {
+          "t": 55.94,
+          "text": "a"
+        },
+        {
+          "t": 56.18,
+          "text": "sharp"
+        },
+        {
+          "t": 56.42,
+          "text": "tip"
+        }
+      ]
+    },
+    {
+      "start": 56.68,
+      "end": 57.7,
+      "text": "touching it. That's",
+      "words": [
+        {
+          "t": 56.68,
+          "text": "touching"
+        },
+        {
+          "t": 57.02,
+          "text": "it."
+        },
+        {
+          "t": 57.26,
+          "text": "That's"
+        }
+      ]
+    },
+    {
+      "start": 57.7,
+      "end": 58.3,
+      "text": "the real reason",
+      "words": [
+        {
+          "t": 57.7,
+          "text": "the"
+        },
+        {
+          "t": 57.82,
+          "text": "real"
+        },
+        {
+          "t": 58.04,
+          "text": "reason"
+        }
+      ]
+    },
+    {
+      "start": 58.3,
+      "end": 58.98,
+      "text": "you'll never hold",
+      "words": [
+        {
+          "t": 58.3,
+          "text": "you'll"
+        },
+        {
+          "t": 58.54,
+          "text": "never"
+        },
+        {
+          "t": 58.7,
+          "text": "hold"
+        }
+      ]
+    },
+    {
+      "start": 58.98,
+      "end": 59.78,
+      "text": "one. We'll know",
+      "words": [
+        {
+          "t": 58.98,
+          "text": "one."
+        },
+        {
+          "t": 59.44,
+          "text": "We'll"
+        },
+        {
+          "t": 59.64,
+          "text": "know"
+        }
+      ]
+    },
+    {
+      "start": 59.78,
+      "end": 60.56,
+      "text": "everything else in",
+      "words": [
+        {
+          "t": 59.78,
+          "text": "everything"
+        },
+        {
+          "t": 60.16,
+          "text": "else"
+        },
+        {
+          "t": 60.38,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 60.56,
+      "end": 60.8,
+      "text": "a week.",
+      "words": [
+        {
+          "t": 60.56,
+          "text": "a"
+        },
+        {
+          "t": 60.64,
+          "text": "week."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "script": "Apple's foldable iPhone debuts September 9th, about a week from now. It almost shipped with an accessory you will never get to buy.\n\nThat accessory is a Pencil, and the real reason it got buried says more about the phone than the pencil.\n\nBloomberg's Mark Gurman has the receipt: he says Apple didn't just sketch this, it prototyped it and tested it.\n\nThis one's shorter than your iPad Pencil, magnets in the side, sized to match the phone once it folds shut. Close enough to have shipped.\n\nSo that killed it.\n\nStuck to the side, it made the phone awkward to even hold.\n\nAnd what's worse, Gurman says the tip would rest against Apple's most fragile screen yet and leave what he calls \"unsightly marks.\"\n\nThis is Gurman's reporting, not Apple's word. One report, repeated everywhere, verified nowhere else.\n\nBut here's why Gurman says that matters more than the specs: Apple doesn't want to contradict Steve Jobs, who said back in 2007 that nobody wants a stylus.\n\nSimply put, this was never really about the pencil. It's Apple admitting its first folding screen might not survive a sharp tip touching it. That's the real reason you'll never hold one.\n\nWe'll know everything else in a week.",
+  "approval": {
+    "sha256": "1e7469b772c3f9481a82041c21371302719d3a5eac8b314b3826f956a248d608",
+    "approvedAt": "2026-08-31T05:03:34+00:00",
+    "words": 206,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "apple-pencil-iphone-ultra",
+  "topic": "Apple internally tested an Apple Pencil for the foldable iPhone Ultra — stubbier than the iPad version, magnetic side-attach — but Bloomberg's Mark Gurman reports it likely won't launch at the September 9 event",
+  "details": "Single-source Bloomberg (Gurman, Power On newsletter, Aug 30 2026) scoop, echoed by 9to5Mac, MacRumors, Forbes, iPhoneinCanada. Two reasons given for shelving it: (1) parking it on the long edge makes the foldable awkward to hold and to open — you'd have to peel it off to unfold; (2) the pointed tip risks marking the delicate internal foldable display, which would undercut the ultra-premium pitch. Historical irony: Steve Jobs mocked styluses in 2007 ('who wants a stylus'). iPhone Ultra name and Sept 9 event date are themselves still not 100% confirmed as the foldable's reveal, though the event itself is officially confirmed (established in apple-surprise-and-shine).",
+  "subject": "Apple internally tested an Apple Pencil for the foldable iPhone Ultra — stubbier than the iPad version, magnetic side-attach — but Bloomberg's Mark Gurman reports it likely won't launch at the September 9 event",
+  "audience": "iPhone/Apple watchers who already know Apple sells an Apple Pencil for iPad and are tracking the Sept 9 foldable-iPhone rumors",
+  "platform": "both",
+  "goal": "awareness",
+  "core_value": "what Apple actually tested and why it got killed — a durability tell about the foldable screen, not just an accessory footnote",
+  "desired_action": "none",
+  "reveal_target": "none",
+  "cta_keyword": "",
+  "target_duration": "70s",
+  "tone": "editorial news register — measured, confident on the reported facts, explicitly hedged as single-source Gurman reporting, no hype-voice",
+  "source_policy": "official-preferred",
+  "footage_constraints": "no real photo of the tested prototype exists — visuals are 9to5Mac's own headline/hero render, MacRumors' headline, the real Apple Pencil Pro product photo for scale comparison, both outlets' body-paragraph receipts, and the already-verified official Sept 9 invite art reused from apple-surprise-and-shine; mobile captures per capture policy",
+  "credit_instructions": "on-screen",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 70,
+  "music": false,
+  "created_at": "2026-08-31T04:35:34.574999+00:00",
+  "status": "initialized"
+}
