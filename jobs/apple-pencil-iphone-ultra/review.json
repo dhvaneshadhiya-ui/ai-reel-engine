@@ -1,0 +1,13 @@
+{
+  "script_sha256": "1e7469b772c3f9481a82041c21371302719d3a5eac8b314b3826f956a248d608",
+  "structure_sha256": "afcb092c6c084e09a0a26ab5c405f5d13b9db70290c331a7d99063f229f31abb",
+  "findings": [
+    "CADENCE: 5 of 15 sentences are long. The short ones stop being punctuation.",
+    "SECOND PERSON: the first 'you' arrives 41% of the way in. Until then the viewer is watching something happen to other people. Move one 'you' into the opening.",
+    "NUMBERS: one every 7.5 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-08-31T04:56:31+00:00"
+}

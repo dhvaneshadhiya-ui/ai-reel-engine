@@ -1,0 +1,21 @@
+Apple's foldable iPhone debuts September 9th, about a week from now. It almost shipped with an accessory you will never get to buy.
+
+That accessory is a Pencil, and the real reason it got buried says more about the phone than the pencil.
+
+Bloomberg's Mark Gurman has the receipt: he says Apple didn't just sketch this, it prototyped it and tested it.
+
+This one's shorter than your iPad Pencil, magnets in the side, sized to match the phone once it folds shut. Close enough to have shipped.
+
+So that killed it.
+
+Stuck to the side, it made the phone awkward to even hold.
+
+And what's worse, Gurman says the tip would rest against Apple's most fragile screen yet and leave what he calls "unsightly marks."
+
+This is Gurman's reporting, not Apple's word. One report, repeated everywhere, verified nowhere else.
+
+But here's why Gurman says that matters more than the specs: Apple doesn't want to contradict Steve Jobs, who said back in 2007 that nobody wants a stylus.
+
+Simply put, this was never really about the pencil. It's Apple admitting its first folding screen might not survive a sharp tip touching it. That's the real reason you'll never hold one.
+
+We'll know everything else in a week.
