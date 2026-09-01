@@ -502,7 +502,7 @@
       "durationSec": 2.26,
       "from": 18.92,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "floatcard",
@@ -561,7 +561,7 @@
       "durationSec": 2.3,
       "from": 26.5,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "wordcascade",
@@ -596,7 +596,7 @@
       "durationSec": 1.76,
       "from": 31.14,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "floatcard",
@@ -657,7 +657,7 @@
       "durationSec": 0.88,
       "from": 41.42,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "floatcard",
@@ -805,7 +805,7 @@
       "durationSec": 1.86,
       "from": 59.22,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "floatcard",
@@ -958,7 +958,7 @@
       "durationSec": 2.84,
       "from": 78.14,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "floatcard",
@@ -975,7 +975,7 @@
       "durationSec": 2.09,
       "from": 83.07,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "wordcascade",
@@ -1091,7 +1091,7 @@
       "durationSec": 1.89,
       "from": 98.94,
       "focusX": 0.478,
-      "captionBottom": 300,
+      "captionBottom": 500,
       "headline": {
         "lines": [
           {

@@ -148,7 +148,7 @@
       "src": "assets/seedance-25/clips/porthole-girl.mp4",
       "durationSec": 1.78,
       "zoomDir": "out",
-      "captionBottom": 300,
+      "captionBottom": 500,
       "assetId": "clip-porthole-girl"
     },
     {
@@ -313,7 +313,7 @@
       "durationSec": 2.0,
       "from": 18.6,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "footage",
@@ -389,7 +389,7 @@
       "durationSec": 2.06,
       "from": 29.18,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "footage",
@@ -439,7 +439,7 @@
       "durationSec": 2.86,
       "from": 37.1,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "wordcascade",

@@ -6662,3 +6662,32 @@ diff (checklist 7.56, statcard 7.87, statcard 4.58 mean delta between their
 first and last second, previously frozen). Its 6 receipts already carried
 highlights, so the receipt push changed nothing there — it is one of the
 hand-built reels, which is exactly why it had no gaps to fix.
+
+### G45 cleared on the 9 stale sheets (2026-09-01)
+
+85 captions across 9 sheets sat below the 317px floor — under Instagram's own
+account row, where the platform paints over the words. Two values only: 205
+(40 scenes) and 300 (45). All pre-2026-08-18, written before that overlay was
+measured.
+
+**Raised to 500, not to 317.** 317 is the bare minimum that satisfies G45; 500
+also clears G46, our own credit lane, and is the single most common value
+across healthy reels (32 uses). Same principle as the receipt push earlier
+today: reuse the house number rather than pick the value that just scrapes
+past the gate.
+
+**15 pass / 11 blocked this morning -> 25 pass / 1 blocked.**
+
+**NOT VISUALLY VERIFIED, and that matters.** None of the 9 have footage on this
+machine (`public/assets/` is excluded from git by design), so this is a
+gate-level verdict only. Raising a caption 200-300px could in principle land
+it against a headline or card in a scene nobody can render here. If any of
+these is ever re-cut, look at the frames.
+
+**seedance-25 stays blocked, deliberately.** Its remaining gates are RIGHTS,
+not geometry: G27 (no approved narration on the sheet) and G14 (five borrowed
+clips with no `credit`). There is no `jobs/seedance-25`, no `_sources` entry
+and no manifest — **nothing anywhere records where that footage came from.**
+Inventing an attribution to clear a rights gate is worse than leaving the reel
+blocked, which is the whole reason G14 exists. It needs the person who
+scouted it.
