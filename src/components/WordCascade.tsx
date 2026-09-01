@@ -28,6 +28,21 @@ const BGS: Record<string, string> = {
  * the user did not want (2026-08-18). Both are now derived from the style
  * pack's ONE declared accent; see theme/tokens.ts accentPair().
  */
+/**
+ * Is this field dark enough that light type is the readable choice?
+ * Relative luminance off the resolved colour; anything we cannot parse is
+ * treated as light, which is the safe direction — dark ink on an unknown
+ * field is legible far more often than light ink on one.
+ */
+const isDarkField = (colour: string): boolean => {
+  const hex = colour.trim().replace(/^#/, "");
+  const full =
+    hex.length === 3 ? hex.split("").map((c) => c + c).join("") : hex;
+  if (!/^[0-9a-f]{6}$/i.test(full)) return false;
+  const [r, g, b] = [0, 2, 4].map((i) => parseInt(full.slice(i, i + 2), 16) / 255);
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.5;
+};
+
 const wordStyle = (
   style: string,
   dark: boolean,
@@ -100,8 +115,23 @@ export const WordCascade: React.FC<{ scene: CascadeProps }> = ({ scene }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const theme = useTheme();
-  const bg = BGS[scene.bg ?? "cream"];
-  const dark = (scene.bg ?? "cream") !== "black";
+  /**
+   * RESOLVE THE BACKGROUND, THEN DERIVE THE POLARITY FROM WHAT WE RESOLVED
+   * (2026-09-01). This was `BGS[scene.bg ?? "cream"]` with `dark` computed as
+   * `scene.bg !== "black"`, and the two disagreed the moment `bg` was anything
+   * BGS does not name. A scene authored with `bg: "#0b0d10"` — a perfectly
+   * reasonable thing to write — resolved the background to `undefined` AND set
+   * dark=true, so the words rendered #111111 on a transparent field: near-black
+   * on black, invisible, with nothing in any log to say so. Proven by rendering
+   * the four cases side by side, not by reading the code.
+   *
+   * So: accept a literal colour as well as a named one, and read the polarity
+   * off the resolved value's luminance. An unnamed background can now be wrong
+   * about taste, but it can no longer be invisible.
+   */
+  const rawBg = scene.bg ?? "cream";
+  const bg = BGS[rawBg] ?? (/^#|^rgb|^hsl/i.test(rawBg) ? rawBg : BGS.cream);
+  const dark = !isDarkField(bg);
   const hasFace = Boolean(scene.bottomSrc);
 
   const stack = (
