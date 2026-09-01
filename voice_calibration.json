@@ -1,13 +1,15 @@
 {
   "voice_id": "bb79e8390b4340ce8793ea5f123dbba7",
-  "n": 1,
-  "mean": 2.389,
-  "sd": 0.0,
-  "floor": 2.15,
-  "range_mean": 7.313,
-  "range_floor": 6.582,
+  "n": 3,
+  "mean": 2.467,
+  "sd": 0.299,
+  "floor": 2.018,
+  "range_mean": 7.984,
+  "range_floor": 5.631,
   "samples": {
-    "_sources/iphone18-colors/vo.wav": 2.39
+    "_sources/iphone18-colors/vo.wav": 2.39,
+    "_sources/claude-eating-tokens/vo-directed.wav": 2.8,
+    "public/assets/claude-eating-tokens/vo.wav": 2.22
   },
   "_why": "Alarm threshold derived from our own shipped reads. The 3.5 creator floor is still printed every run; this is what FIRES. See tools/vo_qc.py header and STYLE-RULES 2026-08-27."
 }

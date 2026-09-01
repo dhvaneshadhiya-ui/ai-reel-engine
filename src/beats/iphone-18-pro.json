@@ -262,12 +262,12 @@
         {
           "label": "iPhone 17 Pro",
           "value": "7-element lens",
-          "pct": 66
+          "pct": 0.66
         },
         {
           "label": "iPhone 18 Pro",
           "value": "about +50%",
-          "pct": 100
+          "pct": 1.0
         }
       ],
       "footnote": "Estimate: analyst Ming-Chi Kuo",
@@ -343,12 +343,12 @@
         {
           "label": "Now",
           "value": "20.76mm",
-          "pct": 100
+          "pct": 1.0
         },
         {
           "label": "Reported",
           "value": "13.49mm",
-          "pct": 65
+          "pct": 0.65
         }
       ],
       "footnote": "Leaker Ice Universe, Jan 2026",
@@ -406,12 +406,12 @@
         {
           "label": "Speed",
           "value": "+15%",
-          "pct": 100
+          "pct": 1.0
         },
         {
           "label": "Power draw",
           "value": "-30%",
-          "pct": 70
+          "pct": 0.7
         }
       ],
       "footnote": "Projection for an unreleased chip: analyst Jeff Pu",
@@ -458,7 +458,7 @@
         {
           "label": "iPhone 18 Pro Max",
           "value": "about +10%",
-          "pct": 100
+          "pct": 1.0
         }
       ],
       "footnote": "Pro Max only. The smaller Pro is reported near flat.",
