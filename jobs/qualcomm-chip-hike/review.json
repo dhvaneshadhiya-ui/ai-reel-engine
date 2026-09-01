@@ -1,0 +1,12 @@
+{
+  "script_sha256": "1bae1234c2ec2f5c1f7b5761ef7aa47da443438197fbff6c527e0126c65d846a",
+  "structure_sha256": "f629d573a6a2b0748a68f5dfd95ce65b7ce7a309fd3aba0b99e5ded1a87aaf83",
+  "findings": [
+    "  WHAT WITHOUT SO WHAT 2/3 spec sentences never say what the number does for the viewer. \"2nm chip\" is information; \"faster without draining the battery\" is relevance. (framework S7)",
+    "NUMBERS: one every 5.2 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-09-01T05:35:36+00:00"
+}
