@@ -281,6 +281,54 @@ Retraining notes: `references/digital-twin-recording-spec.md` (raw footage,
 16:9 1080p+, 30fps, waist-up with hands visible) and
 `references/avatar-training-shotlist.md` for the photo-model route.
 
+## Daily idea scout (user directive, 2026-09-01)
+
+A scheduled Routine runs `tools/idea_scout.py` daily in a cloud session with
+a restricted network (WebSearch only — WebFetch/curl are blocked) to
+research and shortlist `jobs/_ideas/<date>.md`. **This session cannot edit
+that Routine's stored prompt directly** (it was created outside an agent
+session, so `update_trigger` refuses); this section is the durable place
+these standing requirements live instead — CLAUDE.md loads automatically
+every session, which is the whole reason it is the fallback here too.
+Whoever runs that Routine (this file, loaded fresh each firing) should
+follow all of this even if the Routine's own stored prompt text has not
+been edited to match:
+
+- **CATEGORY, always.** Every idea in `jobs/_ideas/<date>.md` carries a
+  `CATEGORY` — `Apple | AI | Tech | Gadgets | Gaming` — required by
+  `tools/idea_scout.py --check`. Aim for roughly two ideas per category,
+  8-10 total. That is a TARGET, never a floor: an empty category on a
+  quiet day is honest; padding it is the "five weak ideas" failure this
+  whole routine exists to avoid.
+- **Freshness first.** Search last-24-48h queries before falling back to
+  an older-but-still-live story. `--check` flags any idea whose newest
+  source is more than 5 days old as non-blocking ADVICE — read it as "are
+  you sure", not a rule you must satisfy; a still-escalating story can
+  legitimately cite an older announcement, but say so honestly in WHY NOW.
+- **Re-check after every merge, not just once.** A `git pull --no-rebase`
+  can pull in a job someone else started on the same subject after your
+  first `--check` ran clean — this actually happened 2026-09-01 (a
+  Qualcomm idea collided with a job scripted concurrently on another
+  machine). Re-run `--check` on the final, post-merge state before the
+  last push.
+- **Publish the shortlist as an Artifact — no approval needed, ever.**
+  Standing authorization, does not need to be re-asked for each run. Load
+  `artifact-design` first, then publish an HTML page organized into
+  sections by CATEGORY (skip empty ones), each idea showing its SUBJECT/
+  ANGLE gist, WHY NOW, and its SRC links as real clickable citations. Also
+  say the SRC links inline in the chat report itself, not only in the
+  Artifact — a report of headline titles with no links was explicitly
+  called out as incomplete once already.
+- **`--pick <file> <title-substring>`** logs which idea got made to
+  `jobs/_ideas/_picked.md` (date, title, category, format) — nothing
+  reads it back yet, but the day performance data exists, the log already
+  has what it needs to join against. Log it when the user says which
+  idea they picked.
+- Full mechanical detail (the dedupe fix, the corpus-generic-word filter,
+  the freshness regex, why the thresholds are what they are) lives in
+  `tools/idea_scout.py`'s module docstring — it is the source of truth,
+  this is the summary.
+
 ## Starting a new reel
 
 ```bash
