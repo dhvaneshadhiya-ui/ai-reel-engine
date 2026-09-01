@@ -340,6 +340,7 @@ BLOCKING_RULES: dict[str, str] = {
     "G13": "RENDER a clip shorter than its beat freezes or blacks out",
     "G28": "RENDER a missing SFX file",
     "G35": "RENDER a still in a video slot renders black",
+    "G55": "RENDER a wordcascade whose words never land draws a blank frame",
     # G48 is RENDER, not framing taste: below 1 the layer stops covering the
     # canvas, and a focus outside 0..1 pushes past the slack `cover` gives it.
     # Both paint the black backdrop. G49 — the zoom/zoomDir compounding note —
@@ -1042,6 +1043,66 @@ def check_beats(beats: dict, vo_end: float | None = None,
         rows = sum(len(g.get("rows") or []) for g in (sc.get("groups") or []))
         if rows == 0:
             errors.append(f"G25 scene {i:02d} settingspane has no rows.")
+
+    # G55 — A WORDCASCADE THAT DRAWS NOTHING IS A BLACK FRAME (2026-09-01).
+    #
+    # DIAGNOSED, NOT GUESSED. qualcomm-chip-hike shipped a wordcascade that
+    # rendered as a completely black frame; the STYLE-RULES entry that day
+    # recorded it as "not diagnosed" and replaced the beat. Reproduced on
+    # 2026-09-01 with a four-scene probe rendered through `remotion still`:
+    #
+    #   words with early `at`   max luminance 241  <- text on screen
+    #   every `at` past the end max luminance  12  <- UNIFORM #0c0c0c
+    #   words: []               max luminance  12  <- UNIFORM #0c0c0c
+    #   gradient + accent word  max luminance 212  <- fine, not the cause
+    #
+    # WordCascade.tsx returns null for any word whose `at` has not arrived
+    # (`local < 0`), so a scene whose words all land after it ends draws
+    # nothing at all — and Reel.tsx auto-hides the caption chips for the whole
+    # of a `wordcascade` ("one text system at a time"), so there is no second
+    # layer to fill the frame. That combination is what makes THIS scene type
+    # fail to pure black where others merely look empty.
+    #
+    # The likely author error is an `at` written in ABSOLUTE timeline seconds
+    # (41.2 on a scene starting at 41.0) instead of scene-local ones. The probe
+    # used exactly that.
+    #
+    # BLOCKING, RENDER — the same category as G35 ("a still in a video slot
+    # renders black"). This is not taste: the viewer sees an empty field for
+    # the whole beat. Note that DEAD SPACE cannot catch it — the control frame
+    # above is 98.6% near-black too, because a black cascade with two short
+    # words IS mostly black. Only the maths sees the difference.
+    #
+    # G55a is the G20/G25 dwell judgement, and it ADVISES: the last word
+    # landing with less than ROW_DWELL to read is a pacing call, and grok-bot
+    # shipped one at 0.37s. Blocking that would retroactively refuse a reel
+    # that reads fine.
+    for i, sc in enumerate(scenes):
+        if sc["type"] != "wordcascade":
+            continue
+        dur = sc["durationSec"]
+        words = sc.get("words")
+        if not isinstance(words, list) or not words:
+            errors.append(
+                f"G55 scene {i:02d} wordcascade has no words — it draws an "
+                f"empty {sc.get('bg', 'cream')} field for {dur:.2f}s, and the "
+                "scene type suppresses the caption chips, so the frame is "
+                "literally blank.")
+            continue
+        ats = [w.get("at", 0) for w in words]
+        if min(ats) > dur - 0.01:
+            errors.append(
+                f"G55 scene {i:02d} wordcascade: the FIRST word lands at "
+                f"{min(ats):.2f}s but the scene is {dur:.2f}s — not one word "
+                f"ever appears, so the whole beat renders as a blank "
+                f"{sc.get('bg', 'cream')} frame with no captions over it. "
+                "`at` is scene-LOCAL seconds, not a timeline position.")
+        elif max(ats) + ROW_DWELL > dur + 0.01:
+            errors.append(
+                f"G55a scene {i:02d} wordcascade: the last word lands at "
+                f"{max(ats):.2f}s, leaving {dur - max(ats):.2f}s of the "
+                f"{dur:.2f}s scene to read it ({ROW_DWELL}s is the dwell the "
+                "list gates use). It appears, but barely.")
 
     # G26 — A COMPARISON MUST ACTUALLY COMPARE, AND MUST BE FAIR.
     # Structural, not stylistic: these follow from what the genre is.

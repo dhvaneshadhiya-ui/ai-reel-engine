@@ -78,7 +78,12 @@ def good() -> dict:
         {"type": "chart", "source": "src", "durationSec": 3.0,
          "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/g.mp4"},
-        {"type": "wordcascade", "durationSec": 2.5, "bg": "cream"},
+        # The fixture carried a wordcascade with NO `words` until G55
+        # existed to notice — which is the defect itself, in the file
+        # that is supposed to be known-good.
+        {"type": "wordcascade", "durationSec": 2.5, "bg": "cream",
+         "words": [{"text": "SHIPS TODAY", "style": "caps", "at": 0.15},
+                   {"text": "on every Mac", "style": "serif", "at": 0.9}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/h.mp4"},
         # facecam block ~14% of a 65s runtime
         {"type": "footage", "durationSec": 2.5, "src": face},
@@ -507,6 +512,37 @@ expect_fail(_spec("Flagship phone price", ["$1,299", "$1,499"]), "G54",
 # for it. The budget has to move with the column count or it is a typed number.
 expect_gate(_sheet(_spec("Flagship phone price", ["$1,299"])), "G54", False,
             "G54 silent — the same label with one value column has 23 chars")
+
+
+# --- G55: the wordcascade that rendered black ------------------------------
+# Reproduced 2026-09-01 with `remotion still`: a cascade whose words all land
+# after the scene ends draws nothing, and the scene type suppresses the caption
+# chips, so the frame is uniform #0c0c0c (max luminance 12 against 241 for the
+# same scene with early `at`s). See the note at the gate.
+def _cascade(words: list[dict]):
+    def mutate(sheet: dict) -> None:
+        sheet["scenes"][4].update(type="wordcascade", bg="black", words=words,
+                                  durationSec=3.0)
+        sheet["scenes"][4].pop("rows", None)
+    return mutate
+
+
+# `at` written as an absolute timeline position instead of scene-local seconds
+# — the shape the probe used.
+expect_fail(_cascade([{"text": "PRICES UP", "style": "caps", "at": 41.2},
+                      {"text": "across the board", "style": "serif", "at": 42.0}]),
+            "G55", "a wordcascade whose words all land after the scene ends")
+expect_fail(_cascade([]), "G55", "a wordcascade with no words at all")
+# The dwell half advises: it APPEARS, it is just tight. grok-bot shipped one
+# with 0.37s and reads fine, which is why this cannot block.
+expect_fail(_cascade([{"text": "PRICES UP", "style": "caps", "at": 0.15},
+                      {"text": "across the board", "style": "serif", "at": 2.6}]),
+            "G55a", "a last word with 0.40s left to read it")
+# Quiet neighbour: the same cascade, timed the way every shipped one is.
+expect_gate(_sheet(_cascade([{"text": "PRICES UP", "style": "caps", "at": 0.15},
+                             {"text": "across the board", "style": "serif",
+                              "at": 0.9}])),
+            "G55", False, "G55 silent — words landing at 0.15s and 0.90s in 3.0s")
 
 
 # --- G45 is a FLOOR, not a lane ---------------------------------------------

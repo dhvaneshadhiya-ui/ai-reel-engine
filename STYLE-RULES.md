@@ -6194,3 +6194,52 @@ budget belongs where the copy is written, not only in the .tsx.** `PIPELINE.md`
 now carries it in the scene table; `test_gates.py` asserts the widths are still
 `220`/`130`/`300` in the components themselves, so changing a column there fails
 the suite instead of silently widening the gate. Detail goes in the `footnote`.
+
+## 2026-09-01 — the black wordcascade, diagnosed (G55)
+
+Closes point 4 of the qualcomm-chip-hike entry, which recorded "**Worth
+diagnosing before the next reel reaches for wordcascade**" and replaced the
+beat without finding out why.
+
+**REPRODUCED, NOT REASONED ABOUT.** A four-scene probe sheet rendered through
+`remotion still` at each scene's midpoint, measured on the pixels:
+
+| scene | max luminance | verdict |
+|---|---|---|
+| words with early `at` (control) | 241 | text on screen |
+| every `at` past the scene end | **12** | uniform #0c0c0c |
+| `words: []` | **12** | uniform #0c0c0c |
+| gradient style + accent word | 212 | fine — **not** the cause |
+
+The gradient hypothesis (`WebkitBackgroundClip: text` + `color: transparent`)
+was the obvious suspect and is innocent.
+
+**ROOT CAUSE.** `WordCascade.tsx` returns `null` for any word whose `at` has
+not arrived (`local < 0`). A cascade whose words all land after the scene ends
+therefore draws **nothing** — and `Reel.tsx` auto-hides the caption chips for
+the whole of a `wordcascade` under the "one text system at a time" rule, so
+there is no second layer to fill the frame. **That pairing is what makes this
+one scene type fail to pure black where others merely look empty.** The likely
+author error is an `at` written in ABSOLUTE timeline seconds (41.2 on a scene
+starting at 41.0) rather than scene-local ones; the probe used exactly that.
+
+**WHY NOTHING CAUGHT IT.** `checklist` has G20 and `settingspane` has G25 —
+both blocking, both saying a cue that never lands is unreadable on a phone.
+`wordcascade` had neither, and G51's mapped-array check covers `statcard` and
+`sourceread` only. And **DEAD SPACE cannot see this**: the CONTROL frame is
+98.6% near-black too, because a black cascade with two short words *is* mostly
+black. The 95% reading was not a signal, it was the scene type's normal. Only
+the arithmetic distinguishes them.
+
+**DISTILLED RULE: a scene type that suppresses the captions has no fallback
+layer, so its own content landing is a RENDER guarantee, not a pacing
+preference.** G55 blocks the blackout — no word lands before the scene ends,
+or no words at all — in the same category as G35 ("a still in a video slot
+renders black"). G55a advises the G20-style dwell case, because grok-bot
+shipped a last word with 0.37s to read and it reads fine; blocking that would
+retroactively refuse a good reel. Checked against every sheet on disk: zero
+trip the blocking half, three trip the advice.
+
+**The fixture was carrying the bug.** `tools/test_gates.py`'s known-good sheet
+had a `wordcascade` with no `words` at all — the exact defect, sitting in the
+file whose job is to be correct, invisible until a gate existed to look.
