@@ -180,9 +180,18 @@ def main() -> None:
     vo_p = ROOT / f"public/assets/{slug}/vo.json"
     vo_words: list[str] = []
     if vo_p.exists():
-        vo = json.loads(vo_p.read_text())
-        vo_words = [w["word"] for s in vo.get("segments", [])
-                    for w in s.get("words", [])]
+        # READ THE SHAPE THE PIPELINE ACTUALLY WRITES (2026-09-01). This used
+        # to reach only for raw Whisper's `segments[].words[]`, while
+        # ingest_avatar.py — the tool that writes this file — emits the
+        # flattened {"words": [...]}. So the anchor check silently found ZERO
+        # words on every reel ingested that way and printed "no vo.json yet",
+        # which reads as "not generated yet" rather than "I cannot read it".
+        # A check that cannot run is worse than one that fails: it is invisible.
+        # compile_shot_plan.load_words already tolerates both; reuse it rather
+        # than keeping a third opinion about the format.
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from compile_shot_plan import load_words
+        vo_words = [w["text"] for w in load_words(vo_p)]
 
     cl = clauses(script_p.read_text())
     shots, unresolved = [], []

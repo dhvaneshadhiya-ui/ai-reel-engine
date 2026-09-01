@@ -22,9 +22,9 @@ That last word is doing the work.
 
 [surprised] AI data centers buy memory faster than anyone makes it.
 
-TrendForce had conventional DRAM contract prices climbing 58 to 63 percent in a quarter.
+TrendForce had conventional D-RAM contract prices climbing 58 to 63 percent in a quarter.
 
-[calm] And JP Morgan has DRAM up over 400 percent by year end, on AI demand.
+[calm] And JP Morgan has D-RAM up over 400 percent by year end, on AI demand.
 
 So your phone's price moves with memory more than Snapdragon.
 

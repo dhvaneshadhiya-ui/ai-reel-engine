@@ -1,329 +1,356 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
-  "shots": [
-    {
-      "start_phrase": "Your next Android phone",
-      "line": "Your next Android phone is about to cost more, and it started today.",
-      "needs": [
-        "next",
-        "Android",
-        "phone",
-        "cost",
-        "started",
-        "today"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "Here's why.",
-      "line": "Here's why.",
-      "needs": [],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "Qualcomm raised Snapdragon prices,",
-      "line": "Qualcomm raised Snapdragon prices, and says it's double digits.",
-      "needs": [
-        "Qualcomm",
-        "raised",
-        "Snapdragon",
-        "prices",
-        "says",
-        "double"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "That's the chip in",
-      "line": "That's the chip in most premium Android phones",
-      "needs": [
-        "chip",
-        "most",
-        "premium",
-        "Android",
-        "phones"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "and CEO Cristiano Amon",
-      "line": "and CEO Cristiano Amon says it's across the board: watches, Arm laptops.",
-      "needs": [
-        "Cristiano",
-        "Amon",
-        "says",
-        "across",
-        "board",
-        "watches"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "You won't feel it",
-      "line": "You won't feel it in a shop yet.",
-      "needs": [
-        "feel",
-        "shop"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "It lands on whoever",
-      "line": "It lands on whoever builds your phone.",
-      "needs": [
-        "lands",
-        "whoever",
-        "builds",
-        "phone"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "And that phone's price",
-      "line": "And that phone's price has almost nothing to do with the chip.",
-      "needs": [
-        "phone",
-        "price",
-        "almost",
-        "nothing",
-        "chip"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "Amon put it plainly:",
-      "line": "Amon put it plainly: cost went up, prices are going to go up.",
-      "needs": [
-        "Amon",
-        "plainly",
-        "cost",
-        "went",
-        "prices",
-        "going"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "Qualcomm's release blames wafers,",
-      "line": "Qualcomm's release blames wafers, assembly, packaging.",
-      "needs": [
-        "Qualcomm",
-        "release",
-        "blames",
-        "wafers",
-        "assembly",
-        "packaging"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "And memory.",
-      "line": "And memory.",
-      "needs": [
-        "memory"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "That last word is",
-      "line": "That last word is doing the work.",
-      "needs": [
-        "last",
-        "word",
-        "doing",
-        "work"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "AI data centers buy",
-      "line": "AI data centers buy memory faster than anyone makes it.",
-      "needs": [
-        "data",
-        "centers",
-        "memory",
-        "faster",
-        "anyone",
-        "makes"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "TrendForce had conventional DRAM",
-      "line": "TrendForce had conventional DRAM contract prices climbing 58 to 63 percent in a quarter.",
-      "needs": [
-        "TrendForce",
-        "conventional",
-        "DRAM",
-        "contract",
-        "prices",
-        "climbing"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "And JP Morgan has",
-      "line": "And JP Morgan has DRAM up over 400 percent by year end, on AI demand.",
-      "needs": [
-        "Morgan",
-        "DRAM",
-        "over",
-        "400",
-        "percent",
-        "year"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "So your phone's price",
-      "line": "So your phone's price moves with memory more than Snapdragon.",
-      "needs": [
-        "phone",
-        "price",
-        "moves",
-        "memory",
-        "Snapdragon"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "Which makes double digits",
-      "line": "Which makes double digits the small number.",
-      "needs": [
-        "Which",
-        "makes",
-        "double",
-        "digits",
-        "small",
-        "number"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "On September 22, Qualcomm",
-      "line": "On September 22, Qualcomm unveils its next flagship chip.",
-      "needs": [
-        "September",
-        "22",
-        "Qualcomm",
-        "unveils",
-        "next",
-        "flagship"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "That's the first one",
-      "line": "That's the first one priced this way.",
-      "needs": [
-        "first",
-        "priced"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "It lands in next",
-      "line": "It lands in next year's phones.",
-      "needs": [
-        "lands",
-        "next",
-        "year",
-        "phones"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "No phone maker has",
-      "line": "No phone maker has named a figure.",
-      "needs": [
-        "phone",
-        "maker",
-        "named",
-        "figure"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "Qualcomm expects that in",
-      "line": "Qualcomm expects that in its margins within a couple of quarters.",
-      "needs": [
-        "Qualcomm",
-        "expects",
-        "margins",
-        "within",
-        "couple",
-        "quarters"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "Yours lands much later.",
-      "line": "Yours lands much later.",
-      "needs": [
-        "Yours",
-        "lands",
-        "much",
-        "later"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    },
-    {
-      "start_phrase": "Buying now, or waiting",
-      "line": "Buying now, or waiting it out?",
-      "needs": [
-        "Buying",
-        "waiting"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
-    }
-  ]
+ "emphasis": [
+  "double digits",
+  "memory",
+  "58-63%",
+  "400%",
+  "September 22",
+  "Snapdragon",
+  "across the board"
+ ],
+ "caption_corrections": {
+  "trend force": "TrendForce",
+  "Trend Force": "TrendForce",
+  "Trendforce": "TrendForce",
+  "JP Morgan": "J.P. Morgan",
+  "J P Morgan": "J.P. Morgan",
+  "Jay P Morgan": "J.P. Morgan",
+  "D RAM": "DRAM",
+  "dram": "DRAM",
+  "Dram": "DRAM",
+  "Ammon": "Amon",
+  "Aman": "Amon",
+  "Amen": "Amon",
+  "Christiano": "Cristiano",
+  "Cristiana": "Cristiano",
+  "Snap Dragon": "Snapdragon",
+  "snapdragon": "Snapdragon",
+  "Qualcom": "Qualcomm",
+  "arm": "Arm"
+ },
+ "shots": [
+  {
+   "start_phrase": "Your next Android phone",
+   "line": "Your next Android phone is about to cost more, and it started today.",
+   "needs": [
+    "next",
+    "Android",
+    "phone",
+    "cost",
+    "started",
+    "today"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "Here's why.",
+   "line": "Here's why.",
+   "needs": [],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "Qualcomm raised Snapdragon prices,",
+   "line": "Qualcomm raised Snapdragon prices, and says it's double digits.",
+   "needs": [
+    "Qualcomm",
+    "raised",
+    "Snapdragon",
+    "prices",
+    "says",
+    "double"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "That's the chip in",
+   "line": "That's the chip in most premium Android phones",
+   "needs": [
+    "chip",
+    "most",
+    "premium",
+    "Android",
+    "phones"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "and CEO Cristiano Amon",
+   "line": "and CEO Cristiano Amon says it's across the board: watches, Arm laptops.",
+   "needs": [
+    "Cristiano",
+    "Amon",
+    "says",
+    "across",
+    "board",
+    "watches"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "You won't feel it",
+   "line": "You won't feel it in a shop yet.",
+   "needs": [
+    "feel",
+    "shop"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "It lands on whoever",
+   "line": "It lands on whoever builds your phone.",
+   "needs": [
+    "lands",
+    "whoever",
+    "builds",
+    "phone"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "And that phone's price",
+   "line": "And that phone's price has almost nothing to do with the chip.",
+   "needs": [
+    "phone",
+    "price",
+    "almost",
+    "nothing",
+    "chip"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "Amon put it plainly:",
+   "line": "Amon put it plainly: cost went up, prices are going to go up.",
+   "needs": [
+    "Amon",
+    "plainly",
+    "cost",
+    "went",
+    "prices",
+    "going"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "Qualcomm's release blames wafers,",
+   "line": "Qualcomm's release blames wafers, assembly, packaging.",
+   "needs": [
+    "Qualcomm",
+    "release",
+    "blames",
+    "wafers",
+    "assembly",
+    "packaging"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "And memory.",
+   "line": "And memory.",
+   "needs": [
+    "memory"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "That last word is",
+   "line": "That last word is doing the work.",
+   "needs": [
+    "last",
+    "word",
+    "doing",
+    "work"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "AI data centers buy",
+   "line": "AI data centers buy memory faster than anyone makes it.",
+   "needs": [
+    "data",
+    "centers",
+    "memory",
+    "faster",
+    "anyone",
+    "makes"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "TrendForce had conventional DRAM",
+   "line": "TrendForce had conventional DRAM contract prices climbing 58 to 63 percent in a quarter.",
+   "needs": [
+    "TrendForce",
+    "conventional",
+    "DRAM",
+    "contract",
+    "prices",
+    "climbing"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "And JP Morgan has",
+   "line": "And JP Morgan has DRAM up over 400 percent by year end, on AI demand.",
+   "needs": [
+    "Morgan",
+    "DRAM",
+    "over",
+    "400",
+    "percent",
+    "year"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "So your phone's price",
+   "line": "So your phone's price moves with memory more than Snapdragon.",
+   "needs": [
+    "phone",
+    "price",
+    "moves",
+    "memory",
+    "Snapdragon"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "Which makes double digits",
+   "line": "Which makes double digits the small number.",
+   "needs": [
+    "Which",
+    "makes",
+    "double",
+    "digits",
+    "small",
+    "number"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "On September 22, Qualcomm",
+   "line": "On September 22, Qualcomm unveils its next flagship chip.",
+   "needs": [
+    "September",
+    "22",
+    "Qualcomm",
+    "unveils",
+    "next",
+    "flagship"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "That's the first one",
+   "line": "That's the first one priced this way.",
+   "needs": [
+    "first",
+    "priced"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "It lands in next",
+   "line": "It lands in next year's phones.",
+   "needs": [
+    "lands",
+    "next",
+    "year",
+    "phones"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "No phone maker has",
+   "line": "No phone maker has named a figure.",
+   "needs": [
+    "phone",
+    "maker",
+    "named",
+    "figure"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "Qualcomm expects that in",
+   "line": "Qualcomm expects that in its margins within a couple of quarters.",
+   "needs": [
+    "Qualcomm",
+    "expects",
+    "margins",
+    "within",
+    "couple",
+    "quarters"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "Yours lands much later.",
+   "line": "Yours lands much later.",
+   "needs": [
+    "Yours",
+    "lands",
+    "much",
+    "later"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  },
+  {
+   "start_phrase": "Buying now, or waiting",
+   "line": "Buying now, or waiting it out?",
+   "needs": [
+    "Buying",
+    "waiting"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {}
+  }
+ ]
 }
