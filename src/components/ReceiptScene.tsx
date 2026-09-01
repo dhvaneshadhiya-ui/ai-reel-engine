@@ -85,8 +85,14 @@ export const ReceiptScene: React.FC<{ scene: ReceiptProps }> = ({ scene }) => {
     const push = interpolate(frame, [0, durationInFrames], [0, 0.05]);
     Z = Math.min(baseZ + push, zFits);
   } else {
-    // no highlights: gentle ken-burns on the whole page
-    Z = 1.0 + interpolate(frame, [0, durationInFrames], [0.02, 0.06]);
+    // No highlights: ken-burns the whole page. Was [0.02, 0.06] — a 4% push,
+    // the flattest move in the codebase, on the one scene type that holds a
+    // full-page screenshot for 6-9s. It read as a still. 57% of receipts
+    // across the reels have no highlights (compile_shot_plan never sets any),
+    // so this fallback IS the treatment for most screenshots, not an edge case.
+    // Matched to FootageScene's house push (base -> base * 1.1) rather than a
+    // new invented number.
+    Z = 1.0 + interpolate(frame, [0, durationInFrames], [0.0, 0.1]);
     cx = cardW / 2;
     cy = cardH / 2;
   }

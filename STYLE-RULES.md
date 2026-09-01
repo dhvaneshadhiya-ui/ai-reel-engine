@@ -6103,7 +6103,15 @@ should.**
 replaced by letting the 9to5Google receipt carry the sentence, which was the
 better edit anyway: its headline literally prints the words "double digits",
 so the highlight moves from the headline to the phrase as it is spoken.
-**Worth diagnosing before the next reel reaches for wordcascade.**
+**Diagnosed the same day — see the G54 entry below.** It was TWO bugs, not
+one, and the diagnosis was done twice in parallel: once here and once in a
+spun-off session, which found strictly more (unknown `style` falls through
+to browser-default 16px; `pixel` has a 46px base, not 100) and split the
+physical bound from the corpus band the way G48/G49 do. That branch was
+merged and this session's narrower G54 was reverted in its favour.
+**The reusable lesson is about the split, not the bug:** a spun-off session
+on a well-specified prompt is not automatically the duplicate — check its
+commits before assuming, which is not what happened here first time.
 
 **5. A source's own title cards leak into b-roll two ways.** Scene-detect at
 threshold 0.3 misses slow dissolves, so a "single shot" by that measure held

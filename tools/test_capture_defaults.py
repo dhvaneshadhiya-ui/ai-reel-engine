@@ -50,6 +50,8 @@ CHECKS: list[tuple[str, str, str]] = [
 
 
 RENDER_SRC = {
+    "ReceiptScene.tsx": ROOT / "src/components/ReceiptScene.tsx",
+    "FootageScene.tsx": ROOT / "src/components/FootageScene.tsx",
     "CaptionChips.tsx": Path(__file__).resolve().parent.parent
                         / "src/components/CaptionChips.tsx",
     "OssAlt.tsx": Path(__file__).resolve().parent.parent
@@ -62,6 +64,19 @@ RENDER_SRC = {
 # Each is a NUMBER taken from a real frame, so each can silently drift back to
 # taste in a later edit — which is precisely what a check is for.
 REF_CHECKS: list[tuple[str, str, str, str]] = [
+    # MOTION DEFAULTS ARE RULES TOO (2026-09-01). A receipt with no
+    # `highlights` falls back to a ken-burns push, and 57% of receipts across
+    # the reels have none — so this constant IS the treatment for most
+    # screenshots, not an edge case. It sat at 4% (0.02 -> 0.06) and read as a
+    # still on a page held 6-9s.
+    ("ReceiptScene.tsx", "receipt fallback push is visible, not a 4% nudge",
+     r"\[0\.0, 0\.1\]",
+     "a full-page screenshot held 6-9s at a 4% push reads as a still; this is "
+     "matched to FootageScene's 1.1x house push, not a new invented number"),
+    ("FootageScene.tsx", "footage still pushes 1.1x (what receipt is matched to)",
+     r"base \* 1\.1",
+     "if the footage push changes, ReceiptScene's fallback must be re-matched "
+     "or the two silently drift apart"),
     ("CaptionChips.tsx", "captions sit on a translucent plate",
      r"background: PLATE",
      "reference vIAH9SaCNvo sets its caption on a translucent dark plate; "

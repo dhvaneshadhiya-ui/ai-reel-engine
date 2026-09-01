@@ -1,5 +1,289 @@
 {
   "emphasis": [],
   "caption_corrections": {},
-  "shots": []
+  "shots": [
+    {
+      "start_phrase": "Those aren't downloaded stickers.",
+      "line": "Those aren't downloaded stickers.",
+      "needs": [
+        "aren",
+        "downloaded",
+        "stickers"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "That's my face, and",
+      "line": "That's my face, and ChatGPT built the whole pack from one photo.",
+      "needs": [
+        "face",
+        "ChatGPT",
+        "built",
+        "whole",
+        "pack",
+        "photo"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "No cutting anything out,",
+      "line": "No cutting anything out, no third-party app.",
+      "needs": [
+        "cutting",
+        "anything",
+        "third-party"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "It's already inside ChatGPT.",
+      "line": "It's already inside ChatGPT.",
+      "needs": [
+        "already",
+        "inside",
+        "ChatGPT"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "It starts on the",
+      "line": "It starts on the chat screen.",
+      "needs": [
+        "starts",
+        "chat",
+        "screen"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Plus menu, Create image,",
+      "line": "Plus menu, Create image, then Stickers.",
+      "needs": [
+        "Plus",
+        "menu",
+        "Create",
+        "image",
+        "Stickers"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "There's no prompt box.",
+      "line": "There's no prompt box.",
+      "needs": [
+        "prompt"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "You fill in a",
+      "line": "You fill in a sentence: style, photo, reactions.",
+      "needs": [
+        "fill",
+        "sentence",
+        "style",
+        "photo",
+        "reactions"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "The style list is",
+      "line": "The style list is where it gets good.",
+      "needs": [
+        "style",
+        "list",
+        "where",
+        "gets",
+        "good"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Nineteen: 3D, Anime, Chrome,",
+      "line": "Nineteen: 3D, Anime, Chrome, Pixel Art, Traditional Tattoo.",
+      "needs": [
+        "Nineteen",
+        "3D",
+        "Anime",
+        "Chrome",
+        "Pixel",
+        "Traditional"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Pick one and it",
+      "line": "Pick one and it cuts the background out for you",
+      "needs": [
+        "Pick",
+        "cuts",
+        "background"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "the step that used",
+      "line": "the step that used to need a separate app.",
+      "needs": [
+        "step",
+        "used",
+        "need",
+        "separate"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "That checkerboard is a",
+      "line": "That checkerboard is a real transparent PNG.",
+      "needs": [
+        "checkerboard",
+        "real",
+        "transparent"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "And it doesn't make",
+      "line": "And it doesn't make one sticker.",
+      "needs": [
+        "doesn",
+        "make",
+        "sticker"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Nine, same face, nine",
+      "line": "Nine, same face, nine reactions.",
+      "needs": [
+        "Nine",
+        "same",
+        "face",
+        "reactions"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Then Add to chat",
+      "line": "Then Add to chat apps, choose WhatsApp.",
+      "needs": [
+        "chat",
+        "apps",
+        "choose",
+        "WhatsApp"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "This is where it",
+      "line": "This is where it stops people.",
+      "needs": [
+        "where",
+        "stops",
+        "people"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "You need at least",
+      "line": "You need at least three for that button to work.",
+      "needs": [
+        "need",
+        "least",
+        "three",
+        "button",
+        "work"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "That's WhatsApp's rule, not",
+      "line": "That's WhatsApp's rule, not ChatGPT's.",
+      "needs": [
+        "WhatsApp",
+        "rule",
+        "ChatGPT"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Name the pack, and",
+      "line": "Name the pack, and it's done.",
+      "needs": [
+        "Name",
+        "pack",
+        "done"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "One photo, nine stickers,",
+      "line": "One photo, nine stickers, in WhatsApp.",
+      "needs": [
+        "photo",
+        "nine",
+        "stickers",
+        "WhatsApp"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Comment STICKERS and I'll",
+      "line": "Comment STICKERS and I'll send you the exact setup I used.",
+      "needs": [
+        "Comment",
+        "STICKERS",
+        "send",
+        "exact",
+        "setup",
+        "used"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    }
+  ]
 }
