@@ -300,6 +300,8 @@ BLOCKING_RULES: dict[str, str] = {
     "G13": "RENDER a clip shorter than its beat freezes or blacks out",
     "G28": "RENDER a missing SFX file",
     "G35": "RENDER a still in a video slot renders black",
+    "G54": "RENDER a wordcascade off its field contract draws nothing",
+    "G55": "RENDER an MG card off its component contract kills or blanks the render",
     # G48 is RENDER, not framing taste: below 1 the layer stops covering the
     # canvas, and a focus outside 0..1 pushes past the slack `cover` gives it.
     # Both paint the black backdrop. G49 — the zoom/zoomDir compounding note —
@@ -416,6 +418,9 @@ def check_beats(beats: dict, vo_end: float | None = None,
     SX_MIN, SX_MAX = prof["sfx"]
     SXV_MIN, SXV_MAX = prof["sfx_vol"]
     total = round(sum(s["durationSec"] for s in scenes), 2)
+    # StatCard.tsx counts its row stagger in FRAMES, not seconds, so G20
+    # has to know the sheet's fps to compare it against a duration.
+    fps_of_sheet = float(beats.get("fps") or 30)
 
     # G01 — scenes must sum to the audio, or the tail drifts out of sync
     if vo_end is not None:
@@ -738,25 +743,79 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # 5-row list with stagger 0.55 put the last row at 2.45s inside a 2.04s
     # scene: the "iOS" row NEVER APPEARED, while the voiceover was already
     # saying "Linux, and iOS". A contact sheet cannot show this — only maths.
+    #
+    # WIDENED 2026-09-01 to every component that staggers rows, which is the
+    # rule this gate always stated and only ever enforced on one component.
+    # Each row of numbers below is read off the component, not chosen:
+    #
+    #   checklist  Checklist.tsx   0.25 + i*stagger        (stagger is a field)
+    #   specsheet  SpecSheet.tsx   at = 0.4 + i*0.3
+    #   statcard   StatCard.tsx    startF = 10 + i*6, bar grows over 20 frames
+    #   chart      ChartScene.tsx  firstFill 0.55, rowStagger 0.3, fill 0.8
+    #
+    # SETTLE is what has to finish AFTER the row enters, and it is not the same
+    # question in each: a checklist row is readable the moment it is up, but a
+    # chart bar COUNTS UP during its fill and only prints its final `display`
+    # text at the end. Cutting a chart mid-fill leaves a number on screen that
+    # is not the number — the same category as G14/G15, not impatience.
+    ROW_TIMING = {                     # (first row at, stagger, settle after)
+        "checklist": (0.25, None, 0.0),
+        "specsheet": (0.40, 0.30, 0.0),
+        "statcard": (10 / fps_of_sheet, 6 / fps_of_sheet, 20 / fps_of_sheet),
+        "chart": (0.55, 0.30, 0.80),
+    }
     for i, sc in enumerate(scenes):
-        if sc["type"] != "checklist":
+        timing = ROW_TIMING.get(sc["type"])
+        if timing is None:
             continue
-        rows = sc.get("rows") or []
+        key = "items" if sc["type"] == "chart" else "rows"
+        rows = sc.get(key) or []
         if not rows:
-            errors.append(f"G20 scene {i:02d} checklist has no rows.")
-            continue
-        stagger = sc.get("stagger", 0.55)
-        last_at = 0.25 + (len(rows) - 1) * stagger
-        need = last_at + ROW_DWELL
-        if need > sc["durationSec"] + 0.01:
-            fits = round(
-                (sc["durationSec"] - ROW_DWELL - 0.25) / max(len(rows) - 1, 1), 2)
             errors.append(
-                f"G20 scene {i:02d} checklist: last of {len(rows)} rows enters "
-                f"at {last_at:.2f}s and needs {need:.2f}s to read, but the "
-                f"scene is {sc['durationSec']:.2f}s — the final row(s) never "
-                f"land. Use stagger <= {max(fits, 0.05):.2f}, drop rows, or "
-                "hold the scene longer.")
+                f"G20 scene {i:02d} {sc['type']} has no {key} — the card draws "
+                "its title over an empty box for the whole beat.")
+            continue
+        first, stagger, settle = timing
+        if stagger is None:
+            stagger = sc.get("stagger", 0.55)
+        last_at = first + (len(rows) - 1) * stagger
+        fix = ("Use stagger <= %.2f, drop rows, " if sc["type"] == "checklist"
+               else "Drop %s " % key)
+        def _fix(pad: float) -> str:
+            if sc["type"] != "checklist":
+                return fix
+            return fix % max(round((sc["durationSec"] - pad - first)
+                                   / max(len(rows) - 1, 1), 2), 0.05)
+
+        # BLOCKING half: the row never finishes. `settle` is not read time —
+        # it is the bar still GROWING (statcard) or still counting up (chart),
+        # so cutting inside it leaves a number on screen that is not the
+        # number. Entry alone for a checklist row, which is complete when it
+        # arrives.
+        if last_at + settle > sc["durationSec"] + 0.01:
+            errors.append(
+                f"G20 scene {i:02d} {sc['type']}: last of {len(rows)} {key} "
+                f"enters at {last_at:.2f}s"
+                + (f" and finishes at {last_at + settle:.2f}s" if settle else "")
+                + f", but the scene is {sc['durationSec']:.2f}s — it never "
+                + ("lands" if not settle else "reaches its real value")
+                + ". " + _fix(settle) + "or hold the scene longer.")
+
+        # ADVISORY half — G20a, split out 2026-09-01 the way G18a was.
+        # ROW_DWELL is a flat 0.6s readability number, and CLAUDE.md's own
+        # warning applies to it: "a number is not a rule". Measured against the
+        # library before splitting, it rejects FIVE shipped scenes whose rows
+        # all plainly land (apple-pay-india 27/43, ios27-tiers 42,
+        # iphone-18-pro 12/16 — 0.16-0.38s of dwell instead of 0.6). Blocking a
+        # re-render of those would be taste wearing a rule's badge. The RULE is
+        # that a row must not be missing; how long it then sits is craft.
+        elif last_at + settle + ROW_DWELL > sc["durationSec"] + 0.01:
+            left = sc["durationSec"] - last_at - settle
+            errors.append(
+                f"G20a scene {i:02d} {sc['type']}: the last of {len(rows)} "
+                f"{key} lands, but with {left:.2f}s left to read it "
+                f"(ROW_DWELL is {ROW_DWELL}s). It is on screen; whether that "
+                "is long enough is your call.")
 
     # G21 — CAPTIONS MUST MATCH THE NARRATION THAT WAS ACTUALLY SPOKEN
     # (user rule 2026-08-12: "verify captions against the final narration
@@ -1752,6 +1811,199 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 f"{'end' if dir_ == 'in' else 'start'} of the beat. For a "
                 f"locked-off snap set zoomDir: \"none\"; if the push is meant, "
                 f"this is only a note.")
+
+    # G54 — RENDER: a `wordcascade` whose fields miss the component contract
+    # draws NOTHING. Same category as G35 and G48 — a black frame, not taste.
+    #
+    # From qualcomm-chip-hike (2026-09-01), where scene 03 shipped as
+    # `bg: "#0b0d10"` with `size: 150`, lint_frames flagged "95% of frame is
+    # flat/empty", and the reel shipped by replacing the beat rather than
+    # fixing it. Rendered both halves as stills to find out why, because the
+    # component reads as if either one alone would be survivable. Neither is:
+    #
+    #   bg: "#0b0d10"   BGS in WordCascade.tsx is a 3-key LOOKUP, not a colour
+    #                   field. An unknown key returns undefined, so nothing is
+    #                   painted AND `dark = bg !== "black"` comes back true —
+    #                   so the ink is #111111 on an unpainted (black) frame.
+    #                   Black on black. bg takes a NAME: cream/black/white.
+    #   size: 150       `size` is a MULTIPLIER (default 1); the component
+    #                   computes 100 * size px. 150 renders a 15000px glyph —
+    #                   one letter swallows the 1080x1920 canvas and the frame
+    #                   is a flat field of that letter's fill. (Verified: at
+    #                   frame 50 the probe render is uniform accent yellow.)
+    #
+    # The blocking bound is PHYSICAL, not the corpus band: a line taller than
+    # the canvas cannot be a word on screen, it can only be a flat field. The
+    # corpus (0.6-1.6 across 102 words on disk) is taste, so it only advises.
+    # An unknown `style` falls through wordStyle's default branch, which sets
+    # no fontSize and no family: browser-default 16px, invisible on a phone.
+    WC_BASE_PX = {"serif": 100, "caps": 100, "gradient": 100, "pixel": 46}
+    WC_BGS = ("cream", "black", "white")
+    canvas_h = int(beats.get("height", 1920))
+    for i, sc in enumerate(scenes):
+        if sc.get("type") != "wordcascade":
+            continue
+        bg = sc.get("bg", "cream")
+        if bg not in WC_BGS:
+            errors.append(
+                f"G54 scene {i:02d} wordcascade sets bg={bg!r} — `bg` is a "
+                f"NAME from {list(WC_BGS)}, not a colour. An unknown key paints "
+                "no background and still picks dark ink, so the words render "
+                "black on black (WordCascade.tsx BGS).")
+        words = sc.get("words") or []
+        if not words:
+            errors.append(
+                f"G54 scene {i:02d} wordcascade carries no `words` — the scene "
+                "draws an empty stack for its whole beat.")
+        for j, w in enumerate(words):
+            style = w.get("style")
+            if style not in WC_BASE_PX:
+                errors.append(
+                    f"G54 scene {i:02d} word {j} has style={style!r} — known: "
+                    f"{sorted(WC_BASE_PX)}. An unknown style gets no font size "
+                    "and no family, so it renders at the browser default 16px.")
+            size = w.get("size", 1)
+            if not isinstance(size, (int, float)) or float(size) <= 0:
+                errors.append(
+                    f"G54 scene {i:02d} word {j} has size={size!r} — `size` is "
+                    "a positive multiplier of the style's base px (default 1).")
+            elif style in WC_BASE_PX:
+                px = WC_BASE_PX[style] * float(size)
+                if px > canvas_h:
+                    errors.append(
+                        f"G54 scene {i:02d} word {j} ({w.get('text')!r}) sets "
+                        f"size={size} — {style} is {WC_BASE_PX[style]}px base, "
+                        f"so this is {px:.0f}px type on a {canvas_h}px canvas. "
+                        "One glyph fills the frame and the beat renders as a "
+                        "flat field. `size` is a MULTIPLIER, not pixels.")
+                elif not (0.6 <= float(size) <= 1.6):
+                    errors.append(
+                        f"G54a scene {i:02d} word {j} sets size={size} — every "
+                        "wordcascade word on disk sits in 0.6-1.6. Legible, "
+                        "just unlike anything shipped; only a note.")
+            at = w.get("at")
+            dur = sc.get("durationSec")
+            if isinstance(at, (int, float)) and isinstance(dur, (int, float)) \
+                    and float(at) >= float(dur):
+                errors.append(
+                    f"G54 scene {i:02d} word {j} ({w.get('text')!r}) lands at "
+                    f"{at}s in a {dur}s beat — it is never drawn. `at` is "
+                    "SECONDS from the start of the scene, not frames.")
+
+    # G55 — RENDER: chart / specsheet / statcard off their component contract.
+    #
+    # The sibling of G54, and the rest of the debt 2026-08-17 wrote down and
+    # left as prose: "a gate validating MG scene shape against the `Scene`
+    # union — `wordcascade` took `lines` instead of `words[]` and `chart` took
+    # `rows` instead of `items[]`; both would have rendered EMPTY and nothing
+    # checks MG shape against the union." G54 closed `wordcascade` after it
+    # cost a beat; this closes the other three before they do.
+    #
+    # Read off the components, and each entry either CRASHES the render or
+    # draws the wrong thing silently. Nothing here is taste:
+    #
+    #   chart, no title       ChartScene does `title.length > 26 ? 76 : 88`.
+    #                         Undefined throws — the render dies.
+    #   rows/items missing    `.map` / `.slice` on undefined. Same death. This
+    #                         is the `rows`-instead-of-`items` slip exactly.
+    #   chart value non-num   `Math.max(...values)` -> NaN -> `width: NaN%`,
+    #                         and `value.toLocaleString()` throws on undefined.
+    #   chart over 8 items    `rows = items.slice(0, 8)`. The 9th is not small,
+    #                         it is ABSENT, while the voice still names it —
+    #                         the same failure G20 exists for.
+    #   statcard pct          `Math.max(0, Math.min(1, pct))`: the field is a
+    #                         FRACTION. iphone-18-pro shipped four cards written
+    #                         on a 0-100 scale, so 66 and 100 both clamped to a
+    #                         full bar and drew IDENTICAL — the comparison the
+    #                         card exists to make, erased. Same class as G54's
+    #                         `size: 150` and G48's focus outside 0..1.
+    #   specsheet bgSrc still SpecSheet plays it through <OffthreadVideo>, and
+    #                         ffmpeg decodes a PNG as a ONE-frame video: "No
+    #                         frame found at position N" kills the render. G35
+    #                         is this exact failure, but only looks at `src`
+    #                         and `mediaSrc` on footage/floatcard.
+    #
+    # `bg` is only ADVICE here, unlike G54: ChartScene and StatCard both branch
+    # on `bg === "black"` and fall back to cream, so an unknown value renders a
+    # readable cream card. WordCascade's BGS is a LOOKUP, which is why the same
+    # mistake there is a black frame and blocks. Same field, different physics.
+    STILL_EXT_MG = (".png", ".jpg", ".jpeg", ".webp", ".avif")
+    for i, sc in enumerate(scenes):
+        ty = sc.get("type")
+        if ty not in ("chart", "specsheet", "statcard"):
+            continue
+        key = "items" if ty == "chart" else "rows"
+        if sc.get(key) is None:
+            errors.append(
+                f"G55 scene {i:02d} ({ty}) has no `{key}` — the component maps "
+                f"over it directly, so an absent `{key}` kills the render. "
+                + ("chart takes `items[{label, value}]`, NOT `rows`."
+                   if ty == "chart" else f"{ty} takes `{key}[{{label, ...}}]`."))
+        rows = sc.get(key) or []
+
+        if ty == "chart":
+            if not str(sc.get("title") or ""):
+                errors.append(
+                    f"G55 scene {i:02d} chart has no `title` — ChartScene sizes "
+                    "the headline off `title.length`, so an absent title throws "
+                    "and the render dies.")
+            for j, r in enumerate(rows):
+                if not isinstance(r.get("value"), (int, float)):
+                    errors.append(
+                        f"G55 scene {i:02d} chart item {j} "
+                        f"({r.get('label')!r}) has value={r.get('value')!r} — "
+                        "it must be a NUMBER (the bar length and the count-up "
+                        "are computed from it). Put the text you want printed "
+                        "in `display`.")
+            if len(rows) > 8:
+                errors.append(
+                    f"G55 scene {i:02d} chart carries {len(rows)} items — "
+                    "ChartScene renders `items.slice(0, 8)`, so items 9+ are "
+                    "not drawn at all while the narration still names them.")
+
+        if ty == "statcard":
+            for j, r in enumerate(rows):
+                pct = r.get("pct")
+                if not isinstance(pct, (int, float)):
+                    errors.append(
+                        f"G55 scene {i:02d} statcard row {j} "
+                        f"({r.get('label')!r}) has pct={pct!r} — the bar width "
+                        "is computed from it, so a non-number draws no bar at "
+                        "all.")
+                elif not (0.0 <= float(pct) <= 1.0):
+                    errors.append(
+                        f"G55 scene {i:02d} statcard row {j} "
+                        f"({r.get('label')!r}) has pct={pct} — `pct` is a "
+                        f"FRACTION (0..1) and the component clamps it, so this "
+                        f"draws a full bar. Two rows past 1 draw IDENTICAL "
+                        f"bars whatever their numbers say. Write "
+                        f"{float(pct) / 100:.2f}, not {pct}.")
+
+        if ty == "specsheet":
+            bg_src = str(sc.get("bgSrc") or "").lower()
+            if bg_src.endswith(STILL_EXT_MG):
+                errors.append(
+                    f"G55 scene {i:02d} specsheet plays a STILL "
+                    f"{str(sc.get('bgSrc')).split('/')[-1]!r} behind the card. "
+                    "SpecSheet renders an <OffthreadVideo>, and a still gives "
+                    "it exactly ONE frame: any later position KILLS the render "
+                    "(\"No frame found at position N\"). This is G35 on a "
+                    "field G35 does not look at. Cut it to an mp4.")
+            for j, r in enumerate(rows):
+                if not (r.get("values") or r.get("value")):
+                    errors.append(
+                        f"G55a scene {i:02d} specsheet row {j} "
+                        f"({r.get('label')!r}) carries no `value`/`values` — "
+                        "the row draws a label and an empty column. Legitimate "
+                        "for a heading row; only a note.")
+
+        if ty in ("chart", "statcard") and sc.get("bg") not in (None, "cream",
+                                                                "black"):
+            errors.append(
+                f"G55a scene {i:02d} ({ty}) sets bg={sc.get('bg')!r} — this "
+                "component takes cream or black and silently renders CREAM for "
+                "anything else. It is not the black frame G54 catches, because "
+                "this one branches instead of looking the value up.")
 
     # G50 — ai-tools: text cards standing in for demos. ADVICE.
     #

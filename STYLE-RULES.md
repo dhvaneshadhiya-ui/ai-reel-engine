@@ -6135,3 +6135,132 @@ two short b-roll shots concatenated into one clip file to cover one beat.
 - **[DEAD SPACE] on the wafer and die-grid shots (73%, 39%).** Inherent to
   footage of a wafer against black. Soft flag, left as shot.
 - **Facecam 20%**, at the top of the 10-20% band.
+
+## 2026-09-01 — G54: a `wordcascade` scene that cannot render (qualcomm-chip-hike)
+
+**Raw note.** Scene 03 of the qualcomm reel rendered an entirely empty frame.
+`lint_frames.py` caught it — "[DEAD SPACE] scene 03 (wordcascade): 95% of frame
+is flat/empty" — and the reel shipped by REPLACING the beat, so the bug stayed
+live for the next reel that reached for wordcascade.
+
+    {"type": "wordcascade", "bg": "#0b0d10", "words": [
+       {"text": "DOUBLE", "style": "caps",     "at": 0.06, "size": 150},
+       {"text": "DIGITS", "style": "gradient", "at": 0.42, "size": 150},
+       {"text": "from today", "style": "serif", "at": 0.95, "size": 64}]}
+
+**The component was right; the scene object was malformed, on two counts, and
+each one produces a blank frame ON ITS OWN.** Both were confirmed by rendering
+stills of a probe sheet rather than reasoning from the source, because the
+component reads as though either one alone would be survivable:
+
+1. **`bg` is a NAME, not a colour.** `BGS` in `WordCascade.tsx` is a three-key
+   lookup (cream / black / white). `BGS["#0b0d10"]` is `undefined`, so nothing
+   is painted — and the very next line, `dark = bg !== "black"`, comes back
+   TRUE, so the ink is `#111111`. Black type on an unpainted (black) frame.
+   Frame 8 of the probe render: uniform near-black.
+2. **`size` is a MULTIPLIER (default 1), not pixels.** The component computes
+   `100 * size` px. `150` renders a 15000px glyph: one letter swallows the
+   1080x1920 canvas. Frame 50 of the probe: a flat field of accent yellow —
+   the inside of the "D".
+
+The two suspects that were NOT the bug: `at` is already seconds (the component
+multiplies by fps), and `gradient` is a valid style. `mascot` and `bottomSrc`
+are genuinely optional.
+
+**Gate G54, RENDER-blocking** — the same category as G35 (a still in a video
+slot) and G48 (framing that exposes backdrop): it is a black frame, not taste.
+It refuses an unknown `bg`, an unknown `style` (which falls through
+`wordStyle`'s default branch to browser-default 16px with no font family),
+missing/empty `words`, a non-positive `size`, and an `at` at or past the end of
+its own beat (the frames-vs-seconds slip: the word is never drawn).
+
+**The blocking bound on `size` is PHYSICAL, not the corpus band.** It fires when
+`base_px * size` exceeds the canvas height — a line taller than the frame cannot
+be a word on screen, only a flat field. The corpus band (0.6-1.6 across all 102
+wordcascade words on disk) is taste, so it advises as **G54a**. Same split as
+G48/G49: what stops the frame rendering blocks; what merely looks unlike
+anything shipped is a note.
+
+**The fixture proved the gate before the reel did.** `test_gates.py`'s baseline
+sheet had carried `{"type": "wordcascade", "durationSec": 2.5, "bg": "cream"}`
+with **no `words` key at all** since it was written — a scene that draws an empty
+stack for its whole beat, sitting inside the sheet whose job is to pass every
+gate. It has words now.
+
+**The component also got a two-line hardening**, deliberately narrow: resolve
+the bg KEY first, then derive both the background and `dark` from it, so an
+unknown key can never again disagree with itself. G54 stops a bad beat sheet at
+build time, but Remotion Studio and `npx remotion still` run no gates, and a
+blank preview is how this got mistaken for a component bug in the first place.
+
+**This was a KNOWN open item, written down and left as prose.** 2026-08-17
+listed under STILL PROSE: *"a gate validating MG scene shape against the `Scene`
+union — `wordcascade` took `lines` instead of `words[]` … both would have
+rendered EMPTY and nothing checks MG shape against the union."* Two weeks later
+a wordcascade rendered empty for a different field on the same scene type. G54
+closes it for `wordcascade` only; `chart`, `specsheet` and `statcard` still have
+no shape gate, and the honest reading of this entry is that the next one will
+be found the same way.
+
+## 2026-09-01 — G55 + G20 widened: the other three MG cards, and a shipped defect
+
+Finishing what G54 started, and what 2026-08-17 wrote down and left as prose.
+`chart`, `specsheet` and `statcard` now have a shape gate. Every entry was read
+off the component, and each one either kills the render or draws the wrong
+thing silently:
+
+| what | what it does |
+|---|---|
+| chart with no `title` | `title.length > 26 ? 76 : 88` throws — the render dies |
+| `rows`/`items` absent | `.map` / `.slice` on undefined. This is the `rows`-instead-of-`items` slip from 2026-08-17, exactly |
+| chart `value` not a number | `Math.max(...)` goes NaN, `width: NaN%`, and `.toLocaleString()` throws on undefined |
+| more than 8 chart items | `items.slice(0, 8)`. The 9th is not small, it is absent, while the voice still names it |
+| `statcard` `pct` above 1 | clamped to a full bar — see below |
+| `specsheet` `bgSrc` still | `<OffthreadVideo>`, one frame, "No frame found at position N". G35 on a field G35 never looked at |
+
+**`bg` is only ADVICE here, and that is not an oversight.** ChartScene and
+StatCard branch on `bg === "black"` and fall back to cream, so an unknown value
+renders a readable cream card. WordCascade's `BGS` is a LOOKUP, which is why the
+identical mistake there is a black frame and blocks under G54. Same field name,
+different physics, different classification.
+
+**iphone-18-pro SHIPPED FOUR STATCARDS WITH FLAT BARS.** `pct` is a fraction and
+StatCard does `Math.max(0, Math.min(1, pct))`. Scenes 12, 16, 20 and 23 were
+written on a 0-100 scale, so:
+
+    {"label": "iPhone 17 Pro", "pct": 66}    ->  clamped to 1  ->  full bar
+    {"label": "iPhone 18 Pro", "pct": 100}   ->  clamped to 1  ->  full bar
+
+Rendered both to be sure rather than asserting it from the source (the G35
+lesson): the two bars are **pixel-identical**, one pink and one purple, running
+the full width of the track. The comparison the card exists to make was erased,
+and the value text beside it still says "7-element lens" vs "about +50%". Same
+class as G54's `size: 150` and G48's focus outside 0..1 — a scale misread that
+the component silently absorbs.
+
+**The four scenes are LEFT AS SHIPPED.** The reel is published; editing the beat
+sheet now would make it describe something other than what was rendered, and
+this ledger's value is that it records what happened. G55 blocks a re-render of
+that sheet, which is the correct outcome — anyone re-rendering it must fix the
+bars first, and the gate message names the number to write.
+
+**G20 was only ever enforced on `checklist`, though its own text claims every
+list row.** It now covers `specsheet`, `statcard` and `chart` too, with each
+component's stagger read out of its source, not chosen. And it split, the way
+G18/G18a did:
+
+- **G20 (blocks)** — the last row never finishes. For a chart or a statcard
+  "finishes" includes the bar's fill, because the value COUNTS UP during it: cut
+  mid-fill and the number on screen is not the number.
+- **G20a (advice)** — it finishes, but with less than `ROW_DWELL` (0.6s) left to
+  read. That number is flat readability, and CLAUDE.md's warning applies to it:
+  a number is not a rule. Measured before splitting, it rejects **five shipped
+  scenes** whose rows all plainly land — apple-pay-india 27/43, ios27-tiers 42,
+  iphone-18-pro 12/16, at 0.16-0.42s of dwell. Blocking a re-render of those
+  would be taste wearing a rule's badge.
+
+**The fixture was the third empty MG scene.** After `wordcascade`, `specsheet`
+and `chart` in `test_gates.py`'s baseline also carried no rows and no items —
+three cards drawing a title over an empty box, inside the sheet whose job is to
+pass every gate. Nothing in the suite could have caught them, because until
+today nothing checked that an MG card had anything in it.

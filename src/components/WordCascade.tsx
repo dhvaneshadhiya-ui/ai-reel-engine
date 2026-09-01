@@ -100,8 +100,14 @@ export const WordCascade: React.FC<{ scene: CascadeProps }> = ({ scene }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const theme = useTheme();
-  const bg = BGS[scene.bg ?? "cream"];
-  const dark = (scene.bg ?? "cream") !== "black";
+  // Resolve the KEY, then derive both values from it. An unknown key used to
+  // return an undefined background AND flip `dark` true, painting #111111 ink
+  // on an unpainted frame — black on black (qualcomm-chip-hike scene 03,
+  // 2026-09-01). G54 blocks that beat sheet; this keeps the studio and
+  // `remotion still`, which run no gates, from showing a blank frame instead.
+  const bgKey = scene.bg && BGS[scene.bg] ? scene.bg : "cream";
+  const bg = BGS[bgKey];
+  const dark = bgKey !== "black";
   const hasFace = Boolean(scene.bottomSrc);
 
   const stack = (
