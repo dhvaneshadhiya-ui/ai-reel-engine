@@ -1,0 +1,28 @@
+{
+  "slug": "chatgpt-stickers",
+  "topic": "ChatGPT can now make WhatsApp and iMessage sticker packs natively — 19 styles, transparent backgrounds, one-tap export",
+  "details": "utility/how-to reel built on three user-supplied iPhone screen recordings of the real feature",
+  "subject": "ChatGPT can now make WhatsApp and iMessage sticker packs natively — 19 styles, transparent backgrounds, one-tap export",
+  "audience": "<who should care, and what they already know>",
+  "platform": "both",
+  "goal": "<awareness|education|engagement|follow|comment|conversion>",
+  "core_value": "<what the viewer learns, feels, sees or can do>",
+  "desired_action": "<if any>",
+  "reveal_target": "none",
+  "cta_keyword": "STICKERS",
+  "target_duration": "60s",
+  "tone": "<voice, personality, boundaries>",
+  "source_policy": "official-preferred",
+  "footage_constraints": "<assets, permissions, presenter, recordings>",
+  "credit_instructions": "on-screen",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 60,
+  "music": false,
+  "created_at": "2026-09-01T06:30:05.035861+00:00",
+  "status": "initialized"
+}

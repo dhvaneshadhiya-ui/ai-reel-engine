@@ -6053,3 +6053,85 @@ the screenshot the previous two reels used · animated three-bar cost card
 two-row landing card whose rows arrive on the words that name them
 ("Qualcomm's margins" / "your phone price") · closing question card over
 product footage.
+
+
+## 2026-09-01 — qualcomm-chip-hike: three silent checks, and a component contract nobody wrote down
+
+Snapdragon price rise, 63.1s, -14.5 LUFS, gates green, lint clean.
+
+**1. THREE CHECKS WERE SILENT, AND TWO HAD ALWAYS BEEN.** All the same shape:
+a guard that could not run, reading as a guard that passed.
+
+- `plan_shots.py` refused an approved script because it sha256'd the WHOLE
+  script.md while `script_approval.py` hashes only the SPOKEN lines. They had
+  agreed on every prior reel purely because no script.md had ever carried a
+  markdown heading. Fixed by importing the shared function.
+- `plan_shots.py` read `segments[].words[]` from vo.json, while
+  `ingest_avatar.py` — the tool that WRITES vo.json — emits `{"words": [...]}`.
+  So the anchor check found zero words on every reel ever built and printed
+  "no vo.json yet", which reads as "not generated" rather than "cannot parse".
+  Turned on, it immediately caught 4 unresolvable anchors on this reel.
+- `check_script.py`'s PAGE PUNCTUATION fired only past one em-dash per 60
+  words. The user asked "why are there em dashes in our script?" for the
+  SECOND time about a draft at one per 104. Threshold is now zero.
+
+**The distilled rule: a check that cannot run is worse than a check that
+fails.** Two of these printed a cheerful line while doing nothing. When two
+tools guard one guarantee, they must read the same bytes — pin it in a
+self-test, not in a convention.
+
+**2. DRAM READ AS "drum".** whisper base AND small both transcribed "drum",
+which per RULES section 11 rules out a transcriber artefact — it was the
+audio. HeyGen's brand glossary used to catch this class of thing; moving the
+voice to ElevenLabs silently removed it, because a glossary only applies to
+audio HeyGen synthesises, never to an upload. `vo_tagged.py` now carries
+`PRONOUNCE`, applied only to `script-tagged.txt`. Probed before spending:
+16.8s / ~243 credits compared D-RAM, DEE-ram and D.R.A.M. — all transcribe as
+DRAM and all run 0.60-0.66s, so none spells the letters out.
+
+**3. StatCard's label column is 220px with `whiteSpace: nowrap`, and nothing
+says so anywhere.** A 45-character row label overflowed its box and ran under
+the bar — the pink bar appeared to be drawn through the words. Read off
+`17-statcard-mid.png`; invisible in every log. The fix was the LABELS, not the
+component (RULES section 10). Working sizes: statcard row label <= ~14 chars,
+value <= ~9 chars, detail goes in the footnote. `HeadlineBuild` already has
+G05 for exactly this class of limit; **StatCard and SpecSheet do not, and
+should.**
+
+**4. A `wordcascade` rendered as a completely black frame.** Caught by
+[DEAD SPACE] 95% and confirmed on the still. Not diagnosed — the beat was
+replaced by letting the 9to5Google receipt carry the sentence, which was the
+better edit anyway: its headline literally prints the words "double digits",
+so the highlight moves from the headline to the phrase as it is spoken.
+**Worth diagnosing before the next reel reaches for wordcascade.**
+
+**5. A source's own title cards leak into b-roll two ways.** Scene-detect at
+threshold 0.3 misses slow dissolves, so a "single shot" by that measure held
+three different framings; and a clip verified at its mid frame ran into a
+"Learns your home" title at 1.4s. Both were caught by checking 9:16 centre
+crops at 3 points per candidate before cutting. **Where two good phone shots
+were each too short for their beat, CUTTING THEM TOGETHER into one clip file
+was the answer** — one beat, one asset id, a hard cut inside it. New here.
+
+### Treatment history (do not repeat next reel)
+
+split hook with LIVE FOOTAGE on top (Snapdragon chip in circuitry) rather than
+the screenshot the previous two reels used - checklist "ACROSS THE BOARD" with
+rows landing on the words that name them - animated bar card built across
+THREE beats, one bar arriving per claim, each with its own source line -
+two-row "TWO CLOCKS" specsheet whose second row is the payoff - endquestion
+(BUY NOW / WAIT) over the same chip the reel opened on, as a bookend -
+two short b-roll shots concatenated into one clip file to cover one beat.
+
+### Left honestly unfixed
+
+- **Pace 3.25 w/s against the 2.35-2.75 band.** Same finding as
+  apple-pencil-iphone-ultra, whose entry records two regenerations for a
+  0.07 w/s gain. Not re-spent. Runtime still lands at 63.1s, inside the band.
+- **G04 held-layout advisories on 8 card scenes** (2.6-3.7s vs a 2.6s cap).
+  Every one of them has content ARRIVING during the hold — a highlight moving,
+  a bar growing, a row landing — which is the distinction the rule itself
+  draws. Accepted deliberately, not inherited.
+- **[DEAD SPACE] on the wafer and die-grid shots (73%, 39%).** Inherent to
+  footage of a wafer against black. Soft flag, left as shot.
+- **Facecam 20%**, at the top of the 10-20% band.

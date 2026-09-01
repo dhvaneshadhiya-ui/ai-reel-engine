@@ -26,331 +26,635 @@
   "Snap Dragon": "Snapdragon",
   "snapdragon": "Snapdragon",
   "Qualcom": "Qualcomm",
-  "arm": "Arm"
+  "arm": "Arm",
+  "price this way": "priced this way",
+  "Wafers": "wafers",
+  "Assembly": "assembly",
+  "Packaging": "packaging",
+  "Memory": "memory",
+  "22nd": "22",
+  "58 to 63%": "58-63%"
  },
  "shots": [
   {
-   "start_phrase": "Your next Android phone",
-   "line": "Your next Android phone is about to cost more, and it started today.",
-   "needs": [
-    "next",
-    "Android",
-    "phone",
-    "cost",
-    "started",
-    "today"
-   ],
-   "tier": null,
-   "asset_id": null,
-   "scene": {}
+   "start_phrase": "Your next Android",
+   "line": "Your next Android phone is about to cost more,",
+   "needs": [],
+   "tier": "official",
+   "asset_id": "chip-circuit",
+   "scene": {
+    "type": "split",
+    "topSrc": "assets/qualcomm-chip-hike/clips/chip-circuit.mp4",
+    "bottomSrc": "assets/qualcomm-chip-hike/avatar-master.mp4",
+    "bottomFocusX": 0.493,
+    "captionBottom": 6000,
+    "headline": {
+     "y": 0.06,
+     "theme": "dark",
+     "lines": [
+      {
+       "text": "SEPTEMBER 1, 2026",
+       "kind": "label",
+       "at": 0.05
+      },
+      {
+       "text": "ANDROID",
+       "kind": "headline",
+       "at": 0.35
+      },
+      {
+       "text": "COSTS MORE",
+       "kind": "headline",
+       "at": 0.85,
+       "accent": true
+      }
+     ]
+    }
+   }
   },
   {
-   "start_phrase": "Here's why.",
-   "line": "Here's why.",
+   "start_phrase": "cost more",
+   "line": "and it started today. Here's why.",
    "needs": [],
    "tier": null,
    "asset_id": null,
-   "scene": {}
+   "scene": {
+    "type": "footage",
+    "src": "assets/qualcomm-chip-hike/avatar-master.mp4",
+    "zoomDir": "none",
+    "captionBottom": 980
+   }
   },
   {
-   "start_phrase": "Qualcomm raised Snapdragon prices,",
+   "start_phrase": "Qualcomm raised",
    "line": "Qualcomm raised Snapdragon prices, and says it's double digits.",
-   "needs": [
-    "Qualcomm",
-    "raised",
-    "Snapdragon",
-    "prices",
-    "says",
-    "double"
-   ],
-   "tier": null,
-   "asset_id": null,
-   "scene": {}
+   "needs": [],
+   "tier": "official",
+   "asset_id": "src-9to5-headline",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/qualcomm-chip-hike/src-9to5-headline.png",
+    "srcWidth": 1080,
+    "srcHeight": 1430,
+    "backdrop": "black",
+    "credit": "9to5Google",
+    "highlights": [
+     {
+      "at": 0.25,
+      "x": 30,
+      "y": 150,
+      "w": 1020,
+      "h": 300
+     },
+     {
+      "at": 1.75,
+      "x": 30,
+      "y": 430,
+      "w": 1020,
+      "h": 200
+     }
+    ],
+    "captionBottom": 520,
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "at": 0.02,
+      "vol": 0.16
+     }
+    ]
+   }
   },
   {
-   "start_phrase": "That's the chip in",
+   "start_phrase": "That's the chip",
    "line": "That's the chip in most premium Android phones",
-   "needs": [
-    "chip",
-    "most",
-    "premium",
-    "Android",
-    "phones"
-   ],
-   "tier": null,
-   "asset_id": null,
-   "scene": {}
+   "needs": [],
+   "tier": "official",
+   "asset_id": "chip-circuit",
+   "scene": {
+    "type": "footage",
+    "src": "assets/qualcomm-chip-hike/clips/chip-circuit.mp4",
+    "zoomDir": "out",
+    "from": 0.6,
+    "credit": "Qualcomm"
+   }
   },
   {
-   "start_phrase": "and CEO Cristiano Amon",
-   "line": "and CEO Cristiano Amon says it's across the board: watches, Arm laptops.",
-   "needs": [
-    "Cristiano",
-    "Amon",
-    "says",
-    "across",
-    "board",
-    "watches"
-   ],
+   "start_phrase": "and CEO",
+   "line": "and CEO Cristiano Amon says it's across the board:",
+   "needs": [],
    "tier": null,
    "asset_id": null,
-   "scene": {}
+   "scene": {
+    "type": "checklist",
+    "headline": "ACROSS THE BOARD",
+    "rows": [
+     {
+      "label": "Snapdragon phone chips",
+      "state": "done"
+     },
+     {
+      "label": "Watches",
+      "state": "done"
+     },
+     {
+      "label": "Arm laptops",
+      "state": "done"
+     }
+    ],
+    "footnote": "Source: Cristiano Amon via CNBC, July 29 2026",
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "at": 0.55,
+      "vol": 0.13
+     }
+    ]
+   }
   },
   {
-   "start_phrase": "You won't feel it",
+   "start_phrase": "watches",
+   "line": "watches, Arm laptops.",
+   "needs": [],
+   "tier": "official",
+   "asset_id": "laptop-chip",
+   "scene": {
+    "type": "footage",
+    "src": "assets/qualcomm-chip-hike/clips/laptop-chip.mp4",
+    "zoomDir": "in",
+    "credit": "Qualcomm"
+   }
+  },
+  {
+   "start_phrase": "You won't feel",
    "line": "You won't feel it in a shop yet.",
-   "needs": [
-    "feel",
-    "shop"
-   ],
+   "needs": [],
    "tier": null,
    "asset_id": null,
-   "scene": {}
+   "scene": {
+    "type": "footage",
+    "src": "assets/qualcomm-chip-hike/avatar-master.mp4",
+    "zoomDir": "none",
+    "captionBottom": 980
+   }
   },
   {
-   "start_phrase": "It lands on whoever",
+   "start_phrase": "It lands on",
    "line": "It lands on whoever builds your phone.",
-   "needs": [
-    "lands",
-    "whoever",
-    "builds",
-    "phone"
-   ],
-   "tier": null,
-   "asset_id": null,
-   "scene": {}
+   "needs": [],
+   "tier": "official",
+   "asset_id": "cleanroom",
+   "scene": {
+    "type": "footage",
+    "src": "assets/qualcomm-chip-hike/clips/cleanroom.mp4",
+    "zoomDir": "in",
+    "credit": "Micron Technology",
+    "sfx": [
+     {
+      "src": "sfx2/whooshes-01.mp3",
+      "at": 0.0,
+      "vol": 0.13
+     }
+    ]
+   }
   },
   {
-   "start_phrase": "And that phone's price",
+   "start_phrase": "and that phone's",
    "line": "And that phone's price has almost nothing to do with the chip.",
-   "needs": [
-    "phone",
-    "price",
-    "almost",
-    "nothing",
-    "chip"
-   ],
+   "needs": [],
    "tier": null,
    "asset_id": null,
-   "scene": {}
+   "scene": {
+    "type": "footage",
+    "src": "assets/qualcomm-chip-hike/avatar-master.mp4",
+    "zoomDir": "none",
+    "captionBottom": 980
+   }
   },
   {
-   "start_phrase": "Amon put it plainly:",
+   "start_phrase": "Amon put it",
    "line": "Amon put it plainly: cost went up, prices are going to go up.",
-   "needs": [
-    "Amon",
-    "plainly",
-    "cost",
-    "went",
-    "prices",
-    "going"
-   ],
-   "tier": null,
-   "asset_id": null,
-   "scene": {}
+   "needs": [],
+   "tier": "official",
+   "asset_id": "src-cnbc-amon",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/qualcomm-chip-hike/src-cnbc-amon.png",
+    "srcWidth": 1080,
+    "srcHeight": 1150,
+    "backdrop": "black",
+    "credit": "CNBC",
+    "highlights": [
+     {
+      "at": 0.15,
+      "x": 30,
+      "y": 250,
+      "w": 1020,
+      "h": 300
+     },
+     {
+      "at": 1.55,
+      "x": 30,
+      "y": 940,
+      "w": 1020,
+      "h": 180
+     }
+    ],
+    "captionBottom": 6000,
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "at": 0.02,
+      "vol": 0.16
+     }
+    ]
+   }
   },
   {
-   "start_phrase": "Qualcomm's release blames wafers,",
+   "start_phrase": "Qualcomm's release",
    "line": "Qualcomm's release blames wafers, assembly, packaging.",
-   "needs": [
-    "Qualcomm",
-    "release",
-    "blames",
-    "wafers",
-    "assembly",
-    "packaging"
-   ],
-   "tier": null,
-   "asset_id": null,
-   "scene": {}
+   "needs": [],
+   "tier": "official",
+   "asset_id": "src-cnbc-inputcosts",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/qualcomm-chip-hike/src-cnbc-inputcosts.png",
+    "srcWidth": 1080,
+    "srcHeight": 880,
+    "backdrop": "black",
+    "credit": "CNBC",
+    "highlights": [
+     {
+      "at": 0.2,
+      "x": 30,
+      "y": 60,
+      "w": 1020,
+      "h": 330
+     },
+     {
+      "at": 1.35,
+      "x": 30,
+      "y": 390,
+      "w": 1020,
+      "h": 150
+     }
+    ],
+    "captionBottom": 6000
+   }
   },
   {
-   "start_phrase": "And memory.",
+   "start_phrase": "and Memory",
    "line": "And memory.",
-   "needs": [
-    "memory"
-   ],
+   "needs": [],
    "tier": null,
    "asset_id": null,
-   "scene": {}
+   "scene": {
+    "type": "typecard",
+    "bg": "#000000",
+    "fg": "#ffffff",
+    "kinetic": {
+     "text": "MEMORY",
+     "style": "caps"
+    },
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 0.0,
+      "vol": 0.17
+     }
+    ]
+   }
   },
   {
-   "start_phrase": "That last word is",
+   "start_phrase": "That last word",
    "line": "That last word is doing the work.",
-   "needs": [
-    "last",
-    "word",
-    "doing",
-    "work"
-   ],
-   "tier": null,
-   "asset_id": null,
-   "scene": {}
+   "needs": [],
+   "tier": "official",
+   "asset_id": "wafer",
+   "scene": {
+    "type": "footage",
+    "src": "assets/qualcomm-chip-hike/clips/wafer.mp4",
+    "zoomDir": "in",
+    "credit": "Micron Technology"
+   }
   },
   {
-   "start_phrase": "AI data centers buy",
-   "line": "AI data centers buy memory faster than anyone makes it.",
-   "needs": [
-    "data",
-    "centers",
-    "memory",
-    "faster",
-    "anyone",
-    "makes"
-   ],
-   "tier": null,
-   "asset_id": null,
-   "scene": {}
+   "start_phrase": "AI data centers",
+   "line": "AI data centers buy memory",
+   "needs": [],
+   "tier": "official",
+   "asset_id": "datacenter",
+   "scene": {
+    "type": "footage",
+    "src": "assets/qualcomm-chip-hike/clips/datacenter.mp4",
+    "zoomDir": "in",
+    "credit": "Micron Technology"
+   }
   },
   {
-   "start_phrase": "TrendForce had conventional DRAM",
-   "line": "TrendForce had conventional DRAM contract prices climbing 58 to 63 percent in a quarter.",
-   "needs": [
-    "TrendForce",
-    "conventional",
-    "DRAM",
-    "contract",
-    "prices",
-    "climbing"
-   ],
-   "tier": null,
-   "asset_id": null,
-   "scene": {}
+   "start_phrase": "faster than",
+   "line": "faster than anyone makes it.",
+   "needs": [],
+   "tier": "official",
+   "asset_id": "die-grid",
+   "scene": {
+    "type": "footage",
+    "src": "assets/qualcomm-chip-hike/clips/die-grid.mp4",
+    "zoomDir": "out"
+   }
   },
   {
-   "start_phrase": "And JP Morgan has",
-   "line": "And JP Morgan has DRAM up over 400 percent by year end, on AI demand.",
-   "needs": [
-    "Morgan",
-    "DRAM",
-    "over",
-    "400",
-    "percent",
-    "year"
-   ],
-   "tier": null,
-   "asset_id": null,
-   "scene": {}
+   "start_phrase": "had conventional DRAM",
+   "line": "TrendForce had conventional DRAM contract prices climbing",
+   "needs": [],
+   "tier": "official",
+   "asset_id": "src-trendforce-dram",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/qualcomm-chip-hike/src-trendforce-dram.png",
+    "srcWidth": 1080,
+    "srcHeight": 1840,
+    "backdrop": "black",
+    "credit": "TrendForce",
+    "highlights": [
+     {
+      "at": 0.2,
+      "x": 25,
+      "y": 30,
+      "w": 1030,
+      "h": 870
+     },
+     {
+      "at": 1.7,
+      "x": 25,
+      "y": 1400,
+      "w": 1030,
+      "h": 400
+     }
+    ],
+    "captionBottom": 6000,
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "at": 0.02,
+      "vol": 0.16
+     }
+    ]
+   }
   },
   {
-   "start_phrase": "So your phone's price",
+   "start_phrase": "58 to",
+   "line": "58 to 63% in a quarter.",
+   "needs": [],
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "statcard",
+    "title": "WHAT THE CHIP SITS ON",
+    "titleRight": "2Q26",
+    "rows": [
+     {
+      "label": "DRAM, 1 quarter",
+      "value": "+58-63%",
+      "pct": 0.58
+     }
+    ],
+    "footnote": "Conventional DRAM contract prices, 2Q26 - Source: TrendForce, March 31 2026"
+   }
+  },
+  {
+   "start_phrase": "And JP",
+   "line": "And JP Morgan has DRAM up",
+   "needs": [],
+   "tier": "official",
+   "asset_id": "src-jpm-headline",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/qualcomm-chip-hike/src-jpm-headline.png",
+    "srcWidth": 1080,
+    "srcHeight": 1260,
+    "backdrop": "black",
+    "credit": "J.P. Morgan Global Research",
+    "highlights": [
+     {
+      "at": 0.25,
+      "x": 30,
+      "y": 140,
+      "w": 1020,
+      "h": 700
+     }
+    ],
+    "captionBottom": 6000
+   }
+  },
+  {
+   "start_phrase": "over 400%",
+   "line": "over 400% by year end, on AI demand.",
+   "needs": [],
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "statcard",
+    "title": "WHAT THE CHIP SITS ON",
+    "titleRight": "2024 - 2026",
+    "rows": [
+     {
+      "label": "DRAM, 1 quarter",
+      "value": "+58-63%",
+      "pct": 0.58
+     },
+     {
+      "label": "DRAM, 3 years",
+      "value": "+400%",
+      "pct": 1.0
+     }
+    ],
+    "footnote": "TrendForce (2Q26) - J.P. Morgan Global Research (2024-2026)",
+    "sfx": [
+     {
+      "src": "sfx2/ground-impact-352053.mp3",
+      "at": 0.35,
+      "vol": 0.15
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "So your phone's",
    "line": "So your phone's price moves with memory more than Snapdragon.",
-   "needs": [
-    "phone",
-    "price",
-    "moves",
-    "memory",
-    "Snapdragon"
-   ],
+   "needs": [],
    "tier": null,
    "asset_id": null,
-   "scene": {}
+   "scene": {
+    "type": "statcard",
+    "title": "WHAT THE CHIP SITS ON",
+    "titleRight": "THE SMALL ONE",
+    "rows": [
+     {
+      "label": "DRAM, 1 quarter",
+      "value": "+58-63%",
+      "pct": 0.58
+     },
+     {
+      "label": "DRAM, 3 years",
+      "value": "+400%",
+      "pct": 1.0
+     },
+     {
+      "label": "Snapdragon",
+      "value": "10%+",
+      "pct": 0.12,
+      "color": "#0aa9c2",
+      "accent": true
+     }
+    ],
+    "footnote": "Conventional DRAM 2Q26 (TrendForce) - DRAM 2024-2026 (J.P. Morgan) - Qualcomm: 'double digit', from today",
+    "sfx": [
+     {
+      "src": "sfx2/impact-boom.mp3",
+      "at": 1.55,
+      "vol": 0.18
+     }
+    ]
+   }
   },
   {
-   "start_phrase": "Which makes double digits",
-   "line": "Which makes double digits the small number.",
-   "needs": [
-    "Which",
-    "makes",
-    "double",
-    "digits",
-    "small",
-    "number"
-   ],
+   "start_phrase": "which makes",
+   "line": "which makes double digits the small number.",
+   "needs": [],
    "tier": null,
    "asset_id": null,
-   "scene": {}
+   "scene": {
+    "type": "footage",
+    "src": "assets/qualcomm-chip-hike/avatar-master.mp4",
+    "zoomDir": "none",
+    "captionBottom": 980
+   }
   },
   {
-   "start_phrase": "On September 22, Qualcomm",
+   "start_phrase": "On September",
    "line": "On September 22, Qualcomm unveils its next flagship chip.",
-   "needs": [
-    "September",
-    "22",
-    "Qualcomm",
-    "unveils",
-    "next",
-    "flagship"
-   ],
-   "tier": null,
-   "asset_id": null,
-   "scene": {}
+   "needs": [],
+   "tier": "official",
+   "asset_id": "src-summit-date",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/qualcomm-chip-hike/src-summit-date.png",
+    "srcWidth": 1080,
+    "srcHeight": 950,
+    "backdrop": "black",
+    "credit": "Qualcomm",
+    "highlights": [
+     {
+      "at": 0.3,
+      "x": 40,
+      "y": 60,
+      "w": 1000,
+      "h": 480
+     },
+     {
+      "at": 2.1,
+      "x": 40,
+      "y": 560,
+      "w": 1000,
+      "h": 330
+     }
+    ],
+    "captionBottom": 560
+   }
   },
   {
-   "start_phrase": "That's the first one",
+   "start_phrase": "That's the first",
    "line": "That's the first one priced this way.",
-   "needs": [
-    "first",
-    "priced"
-   ],
-   "tier": null,
-   "asset_id": null,
-   "scene": {}
+   "needs": [],
+   "tier": "official",
+   "asset_id": "fab",
+   "scene": {
+    "type": "footage",
+    "src": "assets/qualcomm-chip-hike/clips/fab.mp4",
+    "zoomDir": "in",
+    "credit": "Micron Technology"
+   }
   },
   {
-   "start_phrase": "It lands in next",
+   "start_phrase": "It lands in",
    "line": "It lands in next year's phones.",
-   "needs": [
-    "lands",
-    "next",
-    "year",
-    "phones"
-   ],
-   "tier": null,
-   "asset_id": null,
-   "scene": {}
+   "needs": [],
+   "tier": "official",
+   "asset_id": "phones",
+   "scene": {
+    "type": "footage",
+    "src": "assets/qualcomm-chip-hike/clips/phones.mp4",
+    "zoomDir": "in",
+    "credit": "Qualcomm"
+   }
   },
   {
-   "start_phrase": "No phone maker has",
+   "start_phrase": "No phone maker",
    "line": "No phone maker has named a figure.",
-   "needs": [
-    "phone",
-    "maker",
-    "named",
-    "figure"
-   ],
+   "needs": [],
    "tier": null,
    "asset_id": null,
-   "scene": {}
+   "scene": {
+    "type": "footage",
+    "src": "assets/qualcomm-chip-hike/avatar-master.mp4",
+    "zoomDir": "none",
+    "captionBottom": 980
+   }
   },
   {
-   "start_phrase": "Qualcomm expects that in",
+   "start_phrase": "Qualcomm expects",
    "line": "Qualcomm expects that in its margins within a couple of quarters.",
-   "needs": [
-    "Qualcomm",
-    "expects",
-    "margins",
-    "within",
-    "couple",
-    "quarters"
-   ],
+   "needs": [],
    "tier": null,
    "asset_id": null,
-   "scene": {}
+   "scene": {
+    "type": "specsheet",
+    "title": "TWO CLOCKS",
+    "kicker": "WHO FEELS IT, AND WHEN",
+    "rows": [
+     {
+      "label": "Qualcomm's gross margins",
+      "value": "a couple of quarters"
+     }
+    ],
+    "footnote": "Source: Cristiano Amon, Qualcomm Q3 FY2026 earnings call"
+   }
   },
   {
-   "start_phrase": "Yours lands much later.",
+   "start_phrase": "Yours lands",
    "line": "Yours lands much later.",
-   "needs": [
-    "Yours",
-    "lands",
-    "much",
-    "later"
-   ],
+   "needs": [],
    "tier": null,
    "asset_id": null,
-   "scene": {}
+   "scene": {
+    "type": "specsheet",
+    "title": "TWO CLOCKS",
+    "kicker": "WHO FEELS IT, AND WHEN",
+    "rows": [
+     {
+      "label": "Qualcomm's gross margins",
+      "value": "a couple of quarters"
+     },
+     {
+      "label": "The phone you buy",
+      "value": "2027",
+      "accent": true
+     }
+    ],
+    "footnote": "Source: Cristiano Amon, Qualcomm Q3 FY2026 earnings call"
+   }
   },
   {
-   "start_phrase": "Buying now, or waiting",
+   "start_phrase": "Buying now",
    "line": "Buying now, or waiting it out?",
-   "needs": [
-    "Buying",
-    "waiting"
-   ],
+   "needs": [],
    "tier": null,
    "asset_id": null,
-   "scene": {}
+   "scene": {
+    "type": "endquestion",
+    "src": "assets/qualcomm-chip-hike/clips/chip-circuit.mp4",
+    "question": "BUY NOW  /  WAIT"
+   }
   }
  ]
 }
