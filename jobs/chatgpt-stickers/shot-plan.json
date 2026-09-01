@@ -76,9 +76,10 @@
       "tier": "official",
       "asset_id": "beat02",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat02-screencap-2.mp4",
-        "zoomDir": "in",
         "credit": "ChatGPT screen recording"
       }
     },
@@ -93,9 +94,10 @@
       "tier": "official",
       "asset_id": "beat03",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat03-screencap-2.mp4",
-        "zoomDir": "none",
         "credit": "ChatGPT screen recording"
       }
     },
@@ -110,9 +112,10 @@
       "tier": "official",
       "asset_id": "beat04",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat04-screencap-2.mp4",
-        "zoomDir": "none",
         "credit": "ChatGPT screen recording"
       }
     },
@@ -129,9 +132,10 @@
       "tier": "official",
       "asset_id": "beat05",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat05-screencap-2.mp4",
-        "zoomDir": "none",
         "credit": "ChatGPT screen recording"
       }
     },
@@ -144,9 +148,10 @@
       "tier": "official",
       "asset_id": "beat06",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat06-screencap-2.mp4",
-        "zoomDir": "in",
         "credit": "ChatGPT screen recording"
       }
     },
@@ -163,9 +168,10 @@
       "tier": "official",
       "asset_id": "beat07",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat07-screencap-2.mp4",
-        "zoomDir": "in",
         "credit": "ChatGPT screen recording"
       }
     },
@@ -182,9 +188,10 @@
       "tier": "official",
       "asset_id": "beat08",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat08-screencap-1.mp4",
-        "zoomDir": "none",
         "credit": "ChatGPT screen recording"
       }
     },
@@ -202,9 +209,10 @@
       "tier": "official",
       "asset_id": "beat09",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat09-screencap-1.mp4",
-        "zoomDir": "none",
         "credit": "ChatGPT screen recording"
       }
     },
@@ -219,9 +227,10 @@
       "tier": "official",
       "asset_id": "beat10",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat10-screencap-1.mp4",
-        "zoomDir": "in",
         "credit": "ChatGPT screen recording"
       }
     },
@@ -237,9 +246,10 @@
       "tier": "official",
       "asset_id": "beat11",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat11-screencap-3.mp4",
-        "zoomDir": "none",
         "credit": "ChatGPT screen recording"
       }
     },
@@ -254,9 +264,10 @@
       "tier": "official",
       "asset_id": "beat12",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat12-screencap-3.mp4",
-        "zoomDir": "in",
         "credit": "ChatGPT screen recording"
       }
     },
@@ -271,9 +282,10 @@
       "tier": "official",
       "asset_id": "beat13",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat13-screencap-3.mp4",
-        "zoomDir": "none",
         "credit": "ChatGPT screen recording"
       }
     },
@@ -289,9 +301,10 @@
       "tier": "official",
       "asset_id": "beat14",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat14-screencap-3.mp4",
-        "zoomDir": "out",
         "credit": "ChatGPT screen recording"
       }
     },
@@ -307,33 +320,20 @@
       "tier": "official",
       "asset_id": "beat15",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat15-screencap-3.mp4",
-        "zoomDir": "none",
         "credit": "ChatGPT screen recording"
       }
     },
     {
       "start_phrase": "This is where it",
-      "line": "This is where it stops people.",
+      "line": "This is where it stops people. You need at least three for that button to work.",
       "needs": [
         "where",
         "stops",
-        "people"
-      ],
-      "tier": "official",
-      "asset_id": "beat16",
-      "scene": {
-        "type": "footage",
-        "src": "assets/chatgpt-stickers/clips/beat16-screencap-3.mp4",
-        "zoomDir": "in",
-        "credit": "ChatGPT screen recording"
-      }
-    },
-    {
-      "start_phrase": "You need at least",
-      "line": "You need at least three for that button to work.",
-      "needs": [
+        "people",
         "need",
         "least",
         "three",
@@ -401,9 +401,10 @@
       "tier": "official",
       "asset_id": "beat19",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat19-screencap-3.mp4",
-        "zoomDir": "none",
         "credit": "ChatGPT screen recording"
       }
     },
@@ -419,9 +420,10 @@
       "tier": "official",
       "asset_id": "beat20",
       "scene": {
-        "type": "footage",
+        "type": "deviceframe",
+        "kind": "phone",
+        "bg": "black",
         "src": "assets/chatgpt-stickers/clips/beat20-screencap-3.mp4",
-        "zoomDir": "none",
         "credit": "ChatGPT screen recording"
       }
     },

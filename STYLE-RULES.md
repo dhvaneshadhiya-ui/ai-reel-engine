@@ -6732,3 +6732,77 @@ removed.
 **Also verified my own change is safe rather than assuming it:** the 2% scale
 could in principle clip type at the frame edge, and `[EDGE TEXT]` is a hard
 lint flag. Neither rendered reel trips it.
+
+## 2026-09-01 — chatgpt-stickers: a screen recording is not b-roll
+
+The user gave the system 18 phone screen recordings and got back a reel with
+two complaints: no real iPhone mockup, and footage that "appears zoomed and
+doesn't fit to screen". Both were true, and neither was a taste call.
+
+### The zoom was a default doing its job in the wrong place
+
+`FootageScene` defaults to `zoomDir ?? "in"` — a 1.1x push. That is right for
+b-roll, where a slow move keeps a static shot alive. It is wrong for a
+recording already delivered at exactly 1080x1920: the push cuts ~10% off every
+edge, and the first casualty is the header. Proved by stacking the source
+frame against the rendered frame — "Create an image" sliced in half on a clip
+that had fit the frame perfectly. `compile_shot_plan` now forces `zoomDir:
+"none"` on any exact-1080x1920 footage source. Forced, not advised: the whole
+point of a UI recording is to see the UI, and the crop is invisible in a beat
+sheet.
+
+### The mockup existed and had never been used
+
+`DeviceFrame` with `kind: "phone"` had been in the codebase the whole time.
+Its geometry was hardcoded at `cardW=470, mediaH=922`, so the phone occupied
+48% of frame height with the content side-cropped and the notch sitting over
+the app header. Rebuilt from an aspect-driven width — 940 wide, height derived
+from the media — putting the device at 86% of frame height with nothing
+cropped. The notch is suppressed over video sources, where it covered content
+it was only ever meant to decorate.
+
+### Then the fix for the first thing broke the second
+
+The 17 converted device shots were pinned to `zoomDir: "none"` by carrying the
+footage rule straight across. **The two rules are opposite.** A device push
+scales the phone CARD, which has no crop window, so it cannot cut the UI — and
+a frozen card makes consecutive shots of one screen render as identical
+frames. The frame linter caught it as `[DUPLICATE] 15 -> 16` and was right.
+`compile_shot_plan` now releases a deviceframe pinned to `none`, and
+`test_capture_defaults` pins both halves — confirmed to fail when either is
+removed.
+
+### The duplicate was also editorial, and motion could not fix it
+
+Restoring the push did not clear the flag, because the two shots showed the
+same screen state. "This is where it stops people" is the pivot into the
+3-sticker rule, and the rule is the statcard — so the line now lands on the
+reveal it introduces instead of on a third copy of the same grid. Rule 3, and
+one fewer shot.
+
+### G57 measured a defect instead of fixing it
+
+The statcard's bars painted through all three labels. This had already
+happened on qualcomm-chip-hike, and the response had been G57 — a character
+budget derived from StatCard's fixed 220px `nowrap` column. **The column was
+the defect, not the copy.** Every honest label ("Minimum to export", "One
+ChatGPT generation") blew the 15-character budget, so the gate fired on every
+row of every card and, being ADVICE, changed nothing — and the bars painted
+through the words anyway. A flex item does not clip.
+
+StatCard's rows are now a 3-column grid, `minmax(0, max-content) minmax(140px,
+1fr) max-content`. A label cannot overlap a bar at any length. G57 is
+re-derived from what actually constrains the layout now — the room the label
+has before the bar hits its 140px floor, 36 characters — and `test_gates`
+pins that `nowrap` has not come back, because ADVICE alone did not stop this
+once already.
+
+**The lesson worth keeping: when a gate fires on every single case, the gate
+is describing a broken component, not bad copy.**
+
+### A tool crash that only appears on some reels
+
+`lint_frames` built its contact sheet with `tile={cols}x{rows}` and did not
+pad the frame list, so 6 stills into a 4x2 grid made ffmpeg exit non-zero and
+took the whole render with it — after the render had already succeeded. Padded
+with the last still.

@@ -473,12 +473,20 @@ from reel_gates import (  # noqa: E402
 )
 _STATCARD_TS = (ROOT / "src/components/StatCard.tsx").read_text()
 _SPEC_TS = (ROOT / "src/components/SpecSheet.tsx").read_text()
-assert "width: 220," in _STATCARD_TS and "width: 130," in _STATCARD_TS, (
-    "StatCard.tsx column widths changed — re-derive G57 in reel_gates.py")
+assert ('"minmax(0, max-content) minmax(140px, 1fr) max-content"' in _STATCARD_TS
+        and "minWidth: 90," in _STATCARD_TS), (
+    "StatCard.tsx column geometry changed — re-derive G57 in reel_gates.py")
+# THE GRID IS WHAT MAKES THE OVERLAP IMPOSSIBLE, so pin its absence too: a
+# return to a fixed label column with nowrap brings back the bar-through-the-
+# words render that cost qualcomm-chip-hike and chatgpt-stickers a re-render
+# each. G57 would still fire, but it is ADVICE, and ADVICE did not stop it.
+assert 'whiteSpace: "nowrap"' not in _STATCARD_TS, (
+    "StatCard label column is nowrap again — a long label will clip out of "
+    "its box and render underneath the bar")
 assert "width: 300," in _SPEC_TS, (
     "SpecSheet.tsx value column changed — re-derive G57 in reel_gates.py")
 assert (STATCARD_LABEL_MAX, STATCARD_VALUE_MAX, SPECSHEET_VALUE_MAX,
-        _specsheet_label_max(1), _specsheet_label_max(2)) == (15, 7, 12, 23, 10), (
+        _specsheet_label_max(1), _specsheet_label_max(2)) == (36, 5, 12, 23, 10), (
     "G57's budgets no longer follow from the box widths and the measured advance")
 _counted("G57's char budgets are derived from the components' box widths")
 

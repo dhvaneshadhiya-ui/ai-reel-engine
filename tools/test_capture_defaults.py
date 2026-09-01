@@ -51,6 +51,10 @@ CHECKS: list[tuple[str, str, str]] = [
 
 RENDER_SRC = {
     "Reel.tsx": Path(__file__).resolve().parent.parent / "src/Reel.tsx",
+    "DeviceFrame.tsx": Path(__file__).resolve().parent.parent
+                       / "src/components/DeviceFrame.tsx",
+    "compile_shot_plan.py": Path(__file__).resolve().parent.parent
+                            / "scripts/compile_shot_plan.py",
     "ReceiptScene.tsx": Path(__file__).resolve().parent.parent
                         / "src/components/ReceiptScene.tsx",
     "CaptionChips.tsx": Path(__file__).resolve().parent.parent
@@ -65,6 +69,24 @@ RENDER_SRC = {
 # Each is a NUMBER taken from a real frame, so each can silently drift back to
 # taste in a later edit — which is precisely what a check is for.
 REF_CHECKS: list[tuple[str, str, str, str]] = [
+    # THE TWO ZOOM RULES ARE OPPOSITE, AND CARRYING ONE ACROSS BROKE A REEL
+    # (2026-09-01). A 1080x1920 source in FULL-BLEED footage must NOT push —
+    # the 1.1x cuts 10% off every edge and the header is the first casualty.
+    # The same source in a DEVICEFRAME MUST push: the move scales the phone
+    # CARD, which has no crop window, and a frozen card makes consecutive
+    # shots of one screen render as identical frames. chatgpt-stickers hit
+    # both failures in one day, the second caused by fixing the first too
+    # broadly. If the compiler stops telling them apart, one comes back.
+    ("compile_shot_plan.py", "exact-fit footage is pinned to zoomDir none",
+     r'scene\["zoomDir"\] = "none"',
+     "a push on a 1080x1920 recording crops the UI off every edge"),
+    ("compile_shot_plan.py", "a deviceframe pinned to none is released",
+     r'"deviceframe" and scene\.get\("zoomDir"\) == "none"[\s\S]{0,600}'
+     r'scene\.pop\("zoomDir"\)',
+     "a frozen device card makes two shots of one screen identical"),
+    ("DeviceFrame.tsx", "the device frame still defaults to a push",
+     r'zoomDir = "in"',
+     "releasing zoomDir only helps while the default is a push"),
     # IDLE MOTION (2026-09-01). 26 of 30 card components animate in and then
     # hold still, against `going-viral`'s "nothing static" rule. One wrapper at
     # the SceneSwitch dispatch point fixes all of them — and nothing failed if

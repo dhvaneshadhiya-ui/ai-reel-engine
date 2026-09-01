@@ -58,9 +58,10 @@
       "focusX": 0.5
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat02-screencap-2.mp4",
-      "zoomDir": "in",
       "credit": "ChatGPT screen recording",
       "durationSec": 2.62,
       "assetId": "beat02",
@@ -68,9 +69,10 @@
       "covers": "No cutting anything out,"
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat03-screencap-2.mp4",
-      "zoomDir": "none",
       "credit": "ChatGPT screen recording",
       "durationSec": 2.1,
       "assetId": "beat03",
@@ -78,9 +80,10 @@
       "covers": "It's already inside ChatGPT."
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat04-screencap-2.mp4",
-      "zoomDir": "none",
       "credit": "ChatGPT screen recording",
       "durationSec": 1.74,
       "assetId": "beat04",
@@ -88,9 +91,10 @@
       "covers": "It starts on the"
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat05-screencap-2.mp4",
-      "zoomDir": "none",
       "credit": "ChatGPT screen recording",
       "durationSec": 2.9,
       "assetId": "beat05",
@@ -98,9 +102,10 @@
       "covers": "Plus menu, Create image,"
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat06-screencap-2.mp4",
-      "zoomDir": "in",
       "credit": "ChatGPT screen recording",
       "durationSec": 1.26,
       "assetId": "beat06",
@@ -108,9 +113,10 @@
       "covers": "There's no prompt box."
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat07-screencap-2.mp4",
-      "zoomDir": "in",
       "credit": "ChatGPT screen recording",
       "durationSec": 3.76,
       "assetId": "beat07",
@@ -118,9 +124,10 @@
       "covers": "You fill in a"
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat08-screencap-1.mp4",
-      "zoomDir": "none",
       "credit": "ChatGPT screen recording",
       "durationSec": 1.92,
       "assetId": "beat08",
@@ -128,9 +135,10 @@
       "covers": "The style list is"
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat09-screencap-1.mp4",
-      "zoomDir": "none",
       "credit": "ChatGPT screen recording",
       "durationSec": 4.64,
       "assetId": "beat09",
@@ -138,9 +146,10 @@
       "covers": "Nineteen: 3D, Anime, Chrome,"
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat10-screencap-1.mp4",
-      "zoomDir": "in",
       "credit": "ChatGPT screen recording",
       "durationSec": 2.28,
       "assetId": "beat10",
@@ -148,9 +157,10 @@
       "covers": "Pick one and it"
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat11-screencap-3.mp4",
-      "zoomDir": "none",
       "credit": "ChatGPT screen recording",
       "durationSec": 2.82,
       "assetId": "beat11",
@@ -158,9 +168,10 @@
       "covers": "the step that used"
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat12-screencap-3.mp4",
-      "zoomDir": "in",
       "credit": "ChatGPT screen recording",
       "durationSec": 2.94,
       "assetId": "beat12",
@@ -168,9 +179,10 @@
       "covers": "That checkerboard is a"
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat13-screencap-3.mp4",
-      "zoomDir": "none",
       "credit": "ChatGPT screen recording",
       "durationSec": 1.64,
       "assetId": "beat13",
@@ -178,9 +190,10 @@
       "covers": "And it doesn't make"
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat14-screencap-3.mp4",
-      "zoomDir": "out",
       "credit": "ChatGPT screen recording",
       "durationSec": 2.94,
       "assetId": "beat14",
@@ -188,24 +201,15 @@
       "covers": "Nine, same face, nine"
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat15-screencap-3.mp4",
-      "zoomDir": "none",
       "credit": "ChatGPT screen recording",
       "durationSec": 2.32,
       "assetId": "beat15",
       "claimId": "beat15",
       "covers": "Then Add to chat"
-    },
-    {
-      "type": "footage",
-      "src": "assets/chatgpt-stickers/clips/beat16-screencap-3.mp4",
-      "zoomDir": "in",
-      "credit": "ChatGPT screen recording",
-      "durationSec": 1.66,
-      "assetId": "beat16",
-      "claimId": "beat16",
-      "covers": "This is where it"
     },
     {
       "type": "statcard",
@@ -236,7 +240,7 @@
           "vol": 0.251
         }
       ],
-      "durationSec": 2.54
+      "durationSec": 4.2
     },
     {
       "type": "footage",
@@ -251,9 +255,10 @@
       "focusX": 0.5
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat19-screencap-3.mp4",
-      "zoomDir": "none",
       "credit": "ChatGPT screen recording",
       "durationSec": 1.76,
       "assetId": "beat19",
@@ -261,9 +266,10 @@
       "covers": "Name the pack, and"
     },
     {
-      "type": "footage",
+      "type": "deviceframe",
+      "kind": "phone",
+      "bg": "black",
       "src": "assets/chatgpt-stickers/clips/beat20-screencap-3.mp4",
-      "zoomDir": "none",
       "credit": "ChatGPT screen recording",
       "durationSec": 2.7,
       "assetId": "beat20",

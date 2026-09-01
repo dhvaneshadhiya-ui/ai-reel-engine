@@ -270,8 +270,28 @@ LINE_MAX_CHARS = {
 # budget at ~9 from the still; the mono advance says 7. Trust the measurement.)
 _SANS_ADVANCE = 0.516
 _MONO_ADVANCE = 0.602
-STATCARD_LABEL_MAX = int(220 / (28 * _SANS_ADVANCE))    # 15
-STATCARD_VALUE_MAX = int(130 / (28 * _MONO_ADVANCE))    # 7
+# RE-DERIVED 2026-09-01 (chatgpt-stickers), because the COMPONENT changed.
+# The fixed 220px/nowrap column was the defect, not the copy: every honest
+# label ("Minimum to export", "One ChatGPT generation") blew a 15-character
+# budget, so the gate fired on all three rows of every card and, being ADVICE,
+# changed nothing — then the bars painted through the words anyway. StatCard's
+# rows are now a 3-column grid, `minmax(0, max-content) minmax(140px, 1fr)
+# max-content`, so a label CANNOT overlap a bar at any length.
+#
+# What remains is a real but softer failure: a long label starves the bar. The
+# budget is therefore the room the label column actually has before the bar
+# hits its 140px floor and the value its 90px floor:
+#
+#   inner = 1080 * 0.82 - 44*2 = 797.6      card width less its padding
+#   label = inner - 22*2 - 140 - 90 = 523.6 less both gaps and both floors
+#
+# The value column is `max-content` and can no longer clip, so its old budget
+# describes nothing; it is kept as the mirror of the label's — the mono chars
+# that fit once the label has taken its maximum — and stays ADVICE.
+_STATCARD_INNER = 1080 * 0.82 - 44 * 2                  # 797.6
+_STATCARD_LABEL_PX = _STATCARD_INNER - 22 * 2 - 140 - 90
+STATCARD_LABEL_MAX = int(_STATCARD_LABEL_PX / (28 * _SANS_ADVANCE))   # 36
+STATCARD_VALUE_MAX = int(90 / (28 * _MONO_ADVANCE))                   # 5
 SPECSHEET_VALUE_MAX = int(300 / (46 * _SANS_ADVANCE))   # 12
 # SpecSheet.tsx: 1080 frame, 90px page padding each side, 26px row padding each
 # side; every value column is a fixed 300px and the label takes what is left.
@@ -575,10 +595,11 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # widths, not about Reels or Shorts. It is the fix-the-copy lint G05 is.
     #
     # The two components fail differently and the message says which:
-    # StatCard's label column is `nowrap`, so it CLIPS OUT of the box and runs
-    # under the bar; SpecSheet's label is a flex child with no nowrap, so it
-    # WRAPS and grows the row instead. Both are the same defect at the source
-    # — copy written without knowing the column it has to live in.
+    # StatCard's row is a grid since 2026-09-01, so a label can no longer run
+    # under the bar — it wraps and squeezes the bar instead; SpecSheet's label
+    # is a flex child with no nowrap, so it WRAPS and grows the row. Both are
+    # the same defect at the source — copy written without knowing the column
+    # it has to live in.
     for i, sc in enumerate(scenes):
         rows = sc.get("rows")
         if not isinstance(rows, list):
@@ -589,19 +610,20 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 if len(lab) > STATCARD_LABEL_MAX:
                     errors.append(
                         f"G57 scene {i:02d} statcard row {j} label is "
-                        f"{len(lab)} chars, and the 220px column holds "
-                        f"{STATCARD_LABEL_MAX}: {lab!r} — the column is "
-                        f"`whiteSpace: nowrap`, so the overflow does not wrap, "
-                        f"it runs UNDER the bar and the bar reads as drawn "
-                        f"through the words. Shorten the label; the detail "
-                        f"belongs in the footnote.")
+                        f"{len(lab)} chars, and the label column holds "
+                        f"{STATCARD_LABEL_MAX} before the bar hits its 140px "
+                        f"floor: {lab!r} — the label will wrap to two lines "
+                        f"and the bar will be too short to compare against. "
+                        f"Shorten the label; the detail belongs in the "
+                        f"footnote.")
                 val = str((r or {}).get("value") or "")
                 if len(val) > STATCARD_VALUE_MAX:
                     errors.append(
                         f"G57 scene {i:02d} statcard row {j} value is "
-                        f"{len(val)} chars, and the 130px monospaced column "
-                        f"holds {STATCARD_VALUE_MAX}: {val!r} — it overflows "
-                        f"LEFT of its right-aligned box, into the bar.")
+                        f"{len(val)} chars, and the value column's 90px "
+                        f"floor holds {STATCARD_VALUE_MAX}: {val!r} — it will "
+                        f"widen its column and take the room from the label "
+                        f"and the bar.")
         elif sc["type"] == "specsheet":
             n_values = max(
                 [len(sc.get("columns") or [])]

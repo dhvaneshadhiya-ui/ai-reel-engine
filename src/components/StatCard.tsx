@@ -91,7 +91,26 @@ export const StatCard: React.FC<{ scene: StatProps }> = ({ scene }) => {
           )}
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+        {/* THE LABEL COLUMN IS SIZED BY THE LONGEST LABEL, NOT BY A CONSTANT
+            (2026-09-01). It was `width: 220` with `whiteSpace: nowrap` inside a
+            flex row — and a flex item does not clip, so every label wider than
+            220px painted straight through the bar next to it. All three rows of
+            chatgpt-stickers were unreadable: "Minimum to export" sat under the
+            pink bar, "One ChatGPT generation" under the blue one. A grid gives
+            every row the same three columns, sized to the widest label, so no
+            label length can collide with a bar. minmax(0, max-content) lets the
+            column shrink and the label wrap when a label is genuinely huge,
+            which keeps the bar at 140px instead of starving it. */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns:
+              "minmax(0, max-content) minmax(140px, 1fr) max-content",
+            columnGap: 22,
+            rowGap: 22,
+            alignItems: "center",
+          }}
+        >
           {scene.rows.map((r, i) => {
             const startF = 10 + i * 6; // stagger row by row
             const grow = interpolate(frame, [startF, startF + 20], [0, 1], {
@@ -101,23 +120,22 @@ export const StatCard: React.FC<{ scene: StatProps }> = ({ scene }) => {
             });
             const color = r.color ?? PALETTE[i % PALETTE.length];
             return (
-              <div key={i} style={{ display: "flex", alignItems: "center", gap: 22 }}>
+              <React.Fragment key={i}>
                 <div
                   style={{
-                    width: 220,
+                    minWidth: 0,
                     fontFamily:
                       "-apple-system,'SF Pro Display','Helvetica Neue',sans-serif",
                     fontWeight: 600,
                     fontSize: 28,
                     color: ink,
-                    whiteSpace: "nowrap",
+                    overflowWrap: "anywhere",
                   }}
                 >
                   {r.label}
                 </div>
                 <div
                   style={{
-                    flex: 1,
                     height: 18,
                     background: track,
                     borderRadius: 999,
@@ -135,7 +153,7 @@ export const StatCard: React.FC<{ scene: StatProps }> = ({ scene }) => {
                 </div>
                 <div
                   style={{
-                    width: 130,
+                    minWidth: 90,
                     textAlign: "right",
                     fontFamily: "ui-monospace,'SF Mono',Menlo,monospace",
                     fontSize: 28,
@@ -145,7 +163,7 @@ export const StatCard: React.FC<{ scene: StatProps }> = ({ scene }) => {
                 >
                   {r.value}
                 </div>
-              </div>
+              </React.Fragment>
             );
           })}
         </div>

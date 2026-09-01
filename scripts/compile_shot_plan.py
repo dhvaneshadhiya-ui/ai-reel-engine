@@ -683,6 +683,47 @@ def main() -> None:
         # asked for them. The rect cannot be inferred here: knowing WHERE on
         # the page the claim sits needs someone to look at the image, which is
         # what the scout step is for.
+        # A PUSH ON AN EXACT-FIT SCREEN RECORDING CROPS THE UI (2026-09-01).
+        # FootageScene defaults to `zoomDir ?? "in"`, a 1.1x push. That is right
+        # for b-roll, where a slow move keeps a static shot alive. It is WRONG
+        # for a screen recording already delivered at exactly 1080x1920: the
+        # push cuts ~10% off every edge, and the first casualty is the header
+        # or status bar at the top of the screen. Found on chatgpt-stickers,
+        # where "Create an image" was sliced in half on a recording that had
+        # fit the frame perfectly.
+        #
+        # Forced rather than advised: the whole point of a UI recording is to
+        # see the UI, and the crop is invisible in a beat sheet. Set an explicit
+        # `zoom` if a tighter frame is genuinely wanted.
+        if scene.get("type") == "footage" and scene.get("src") \
+                and scene["src"] != avatar_rel and scene.get("zoomDir") != "none":
+            info = media_info(public / scene["src"])
+            if info and (info.get("width"), info.get("height")) == (1080, 1920):
+                scene["zoomDir"] = "none"
+                print(f"  ADVICE shot {index}: {scene['src'].split('/')[-1]} is "
+                      f"exactly 1080x1920 — a push would crop the UI, so "
+                      f"zoomDir is held at 'none'. Use `zoom` to reframe "
+                      f"deliberately.")
+                print(f"  ADVICE shot {index}: a 1080x1920 source is a PHONE "
+                      f"SCREEN RECORDING. `deviceframe` (kind 'phone') reads "
+                      f"as a real handset and keeps its push, because the "
+                      f"push scales the device CARD and cannot crop the UI. "
+                      f"Full-bleed `footage` has to choose between motion and "
+                      f"a whole screen; the device frame does not.")
+
+        if scene.get("type") == "deviceframe" and scene.get("zoomDir") == "none":
+            # THE EXACT-FIT RULE ABOVE DOES NOT TRANSFER HERE (2026-09-01).
+            # A device push scales the phone CARD inside the frame, so it has
+            # no edge to crop — unlike full-bleed footage, where the same push
+            # eats 10% of the screen. chatgpt-stickers pinned all 17 device
+            # shots to 'none' by carrying the footage rule across, and the
+            # frame linter caught it as two identical consecutive scenes.
+            scene.pop("zoomDir")
+            print(f"  ADVICE shot {index}: deviceframe was pinned to "
+                  f"zoomDir 'none' — released. A device push moves the card, "
+                  f"not a crop window, so it cannot cut the UI. A frozen "
+                  f"device makes consecutive shots of one screen identical.")
+
         if scene.get("type") == "receipt" and not scene.get("highlights"):
             print(f"  ADVICE shot {index}: receipt with no `highlights` — the "
                   f"scene will push the whole page instead of pulling to the "

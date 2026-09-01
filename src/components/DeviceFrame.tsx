@@ -103,11 +103,26 @@ export const DeviceFrame: React.FC<DeviceFrameProps> = ({
   const isBrowser = kind === "browser";
   // Media area follows the source aspect: videos default to 16:9 (never
   // side-crop a clip); page screenshots keep the tall reading pane.
-  const aspect = mediaAspect ?? (isVideoSrc(src) ? 16 / 9 : 940 / 1050);
-  const cardW = isBrowser ? (aspect >= 1 ? 1000 : 940) : 470;
-  const chromeH = isBrowser ? 76 : 0;
-  const mediaH = isBrowser ? Math.round(cardW / aspect) : 922;
+  // PHONE GEOMETRY REBUILT 2026-09-01. It was cardW 470 / mediaH 922 — both
+  // hardcoded — so the device filled 43% of a 1080-wide frame and 48% of its
+  // height, a small phone floating in blur. On a mockup the whole point is the
+  // SCREEN, and shrinking a 1080x1920 recording to a 442px-wide pane makes the
+  // UI less readable than showing it full-bleed, which is the opposite of what
+  // a mockup is for. It also fixed the screen at 442x922 (ratio 0.479) while a
+  // 9:16 recording is 0.5625, so every phone take was side-cropped.
+  //
+  // Now: the device nearly fills the frame, and the SCREEN follows the source
+  // aspect so nothing is cropped. 940 wide leaves a ~70px margin each side at
+  // 1080; the 9:16 default is right for a phone the way 16:9 is for a browser.
   const bezel = isBrowser ? 0 : 14;
+  const aspect =
+    mediaAspect ??
+    (isBrowser ? (isVideoSrc(src) ? 16 / 9 : 940 / 1050) : 9 / 16);
+  const cardW = isBrowser ? (aspect >= 1 ? 1000 : 940) : 940;
+  const chromeH = isBrowser ? 76 : 0;
+  const mediaH = isBrowser
+    ? Math.round(cardW / aspect)
+    : Math.round((cardW - bezel * 2) / aspect);
 
   const trafficColors = [MACOS_TRAFFIC.close, MACOS_TRAFFIC.minimise, MACOS_TRAFFIC.zoom];
 
@@ -247,19 +262,26 @@ export const DeviceFrame: React.FC<DeviceFrameProps> = ({
             display: "block",
           }}
         />
-        {/* dynamic-island notch */}
-        <div
-          style={{
-            position: "absolute",
-            top: 16,
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: 128,
-            height: 36,
-            borderRadius: 20,
-            background: theme.black,
-          }}
-        />
+        {/* Dynamic-island notch — NOT drawn over a screen recording.
+            An iOS capture already contains the device's own top chrome, so
+            painting an island on top hides real content: on chatgpt-stickers
+            it covered the end of the app's "Create an image" header. A still
+            mockup has no such chrome and still wants the island to read as a
+            phone. */}
+        {!isVideoSrc(src) && (
+          <div
+            style={{
+              position: "absolute",
+              top: 16,
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: 128,
+              height: 36,
+              borderRadius: 20,
+              background: theme.black,
+            }}
+          />
+        )}
       </div>
     </div>
   );

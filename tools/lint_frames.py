@@ -202,12 +202,19 @@ def main():
     for si in range(0, len(mids), 12):
         chunk = mids[si:si + 12]
         sheet = lint_dir / f"lint-sheet-{si // 12}.jpg"
+        n = len(chunk)
+        cols = min(4, n)
+        rows = -(-n // cols)
+        # `tile` emits nothing until it has cols*rows frames, so a chunk that
+        # does not fill the grid makes ffmpeg exit non-zero and takes the whole
+        # render with it — 6 stills into a 4x2 grid killed chatgpt-stickers
+        # AFTER a clean render (2026-09-01). Pad with the last still so the
+        # grid is always full; the repeat is visibly a repeat.
+        chunk = list(chunk) + [chunk[-1]] * (cols * rows - n)
         inputs = []
         for p in chunk:
             inputs += ["-i", str(p)]
         n = len(chunk)
-        cols = min(4, n)
-        rows = -(-n // cols)
         run(["ffmpeg", "-y", "-v", "error", *inputs, "-filter_complex",
              f"concat=n={n}:v=1:a=0,tile={cols}x{rows}", "-frames:v", "1",
              str(sheet)])
