@@ -6135,3 +6135,69 @@ two short b-roll shots concatenated into one clip file to cover one beat.
 - **[DEAD SPACE] on the wafer and die-grid shots (73%, 39%).** Inherent to
   footage of a wafer against black. Soft flag, left as shot.
 - **Facecam 20%**, at the top of the 10-20% band.
+
+## 2026-09-01 — G54: a `wordcascade` scene that cannot render (qualcomm-chip-hike)
+
+**Raw note.** Scene 03 of the qualcomm reel rendered an entirely empty frame.
+`lint_frames.py` caught it — "[DEAD SPACE] scene 03 (wordcascade): 95% of frame
+is flat/empty" — and the reel shipped by REPLACING the beat, so the bug stayed
+live for the next reel that reached for wordcascade.
+
+    {"type": "wordcascade", "bg": "#0b0d10", "words": [
+       {"text": "DOUBLE", "style": "caps",     "at": 0.06, "size": 150},
+       {"text": "DIGITS", "style": "gradient", "at": 0.42, "size": 150},
+       {"text": "from today", "style": "serif", "at": 0.95, "size": 64}]}
+
+**The component was right; the scene object was malformed, on two counts, and
+each one produces a blank frame ON ITS OWN.** Both were confirmed by rendering
+stills of a probe sheet rather than reasoning from the source, because the
+component reads as though either one alone would be survivable:
+
+1. **`bg` is a NAME, not a colour.** `BGS` in `WordCascade.tsx` is a three-key
+   lookup (cream / black / white). `BGS["#0b0d10"]` is `undefined`, so nothing
+   is painted — and the very next line, `dark = bg !== "black"`, comes back
+   TRUE, so the ink is `#111111`. Black type on an unpainted (black) frame.
+   Frame 8 of the probe render: uniform near-black.
+2. **`size` is a MULTIPLIER (default 1), not pixels.** The component computes
+   `100 * size` px. `150` renders a 15000px glyph: one letter swallows the
+   1080x1920 canvas. Frame 50 of the probe: a flat field of accent yellow —
+   the inside of the "D".
+
+The two suspects that were NOT the bug: `at` is already seconds (the component
+multiplies by fps), and `gradient` is a valid style. `mascot` and `bottomSrc`
+are genuinely optional.
+
+**Gate G54, RENDER-blocking** — the same category as G35 (a still in a video
+slot) and G48 (framing that exposes backdrop): it is a black frame, not taste.
+It refuses an unknown `bg`, an unknown `style` (which falls through
+`wordStyle`'s default branch to browser-default 16px with no font family),
+missing/empty `words`, a non-positive `size`, and an `at` at or past the end of
+its own beat (the frames-vs-seconds slip: the word is never drawn).
+
+**The blocking bound on `size` is PHYSICAL, not the corpus band.** It fires when
+`base_px * size` exceeds the canvas height — a line taller than the frame cannot
+be a word on screen, only a flat field. The corpus band (0.6-1.6 across all 102
+wordcascade words on disk) is taste, so it advises as **G54a**. Same split as
+G48/G49: what stops the frame rendering blocks; what merely looks unlike
+anything shipped is a note.
+
+**The fixture proved the gate before the reel did.** `test_gates.py`'s baseline
+sheet had carried `{"type": "wordcascade", "durationSec": 2.5, "bg": "cream"}`
+with **no `words` key at all** since it was written — a scene that draws an empty
+stack for its whole beat, sitting inside the sheet whose job is to pass every
+gate. It has words now.
+
+**The component also got a two-line hardening**, deliberately narrow: resolve
+the bg KEY first, then derive both the background and `dark` from it, so an
+unknown key can never again disagree with itself. G54 stops a bad beat sheet at
+build time, but Remotion Studio and `npx remotion still` run no gates, and a
+blank preview is how this got mistaken for a component bug in the first place.
+
+**This was a KNOWN open item, written down and left as prose.** 2026-08-17
+listed under STILL PROSE: *"a gate validating MG scene shape against the `Scene`
+union — `wordcascade` took `lines` instead of `words[]` … both would have
+rendered EMPTY and nothing checks MG shape against the union."* Two weeks later
+a wordcascade rendered empty for a different field on the same scene type. G54
+closes it for `wordcascade` only; `chart`, `specsheet` and `statcard` still have
+no shape gate, and the honest reading of this entry is that the next one will
+be found the same way.

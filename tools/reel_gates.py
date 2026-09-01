@@ -300,6 +300,7 @@ BLOCKING_RULES: dict[str, str] = {
     "G13": "RENDER a clip shorter than its beat freezes or blacks out",
     "G28": "RENDER a missing SFX file",
     "G35": "RENDER a still in a video slot renders black",
+    "G54": "RENDER a wordcascade off its field contract draws nothing",
     # G48 is RENDER, not framing taste: below 1 the layer stops covering the
     # canvas, and a focus outside 0..1 pushes past the slack `cover` gives it.
     # Both paint the black backdrop. G49 — the zoom/zoomDir compounding note —
@@ -1752,6 +1753,84 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 f"{'end' if dir_ == 'in' else 'start'} of the beat. For a "
                 f"locked-off snap set zoomDir: \"none\"; if the push is meant, "
                 f"this is only a note.")
+
+    # G54 — RENDER: a `wordcascade` whose fields miss the component contract
+    # draws NOTHING. Same category as G35 and G48 — a black frame, not taste.
+    #
+    # From qualcomm-chip-hike (2026-09-01), where scene 03 shipped as
+    # `bg: "#0b0d10"` with `size: 150`, lint_frames flagged "95% of frame is
+    # flat/empty", and the reel shipped by replacing the beat rather than
+    # fixing it. Rendered both halves as stills to find out why, because the
+    # component reads as if either one alone would be survivable. Neither is:
+    #
+    #   bg: "#0b0d10"   BGS in WordCascade.tsx is a 3-key LOOKUP, not a colour
+    #                   field. An unknown key returns undefined, so nothing is
+    #                   painted AND `dark = bg !== "black"` comes back true —
+    #                   so the ink is #111111 on an unpainted (black) frame.
+    #                   Black on black. bg takes a NAME: cream/black/white.
+    #   size: 150       `size` is a MULTIPLIER (default 1); the component
+    #                   computes 100 * size px. 150 renders a 15000px glyph —
+    #                   one letter swallows the 1080x1920 canvas and the frame
+    #                   is a flat field of that letter's fill. (Verified: at
+    #                   frame 50 the probe render is uniform accent yellow.)
+    #
+    # The blocking bound is PHYSICAL, not the corpus band: a line taller than
+    # the canvas cannot be a word on screen, it can only be a flat field. The
+    # corpus (0.6-1.6 across 102 words on disk) is taste, so it only advises.
+    # An unknown `style` falls through wordStyle's default branch, which sets
+    # no fontSize and no family: browser-default 16px, invisible on a phone.
+    WC_BASE_PX = {"serif": 100, "caps": 100, "gradient": 100, "pixel": 46}
+    WC_BGS = ("cream", "black", "white")
+    canvas_h = int(beats.get("height", 1920))
+    for i, sc in enumerate(scenes):
+        if sc.get("type") != "wordcascade":
+            continue
+        bg = sc.get("bg", "cream")
+        if bg not in WC_BGS:
+            errors.append(
+                f"G54 scene {i:02d} wordcascade sets bg={bg!r} — `bg` is a "
+                f"NAME from {list(WC_BGS)}, not a colour. An unknown key paints "
+                "no background and still picks dark ink, so the words render "
+                "black on black (WordCascade.tsx BGS).")
+        words = sc.get("words") or []
+        if not words:
+            errors.append(
+                f"G54 scene {i:02d} wordcascade carries no `words` — the scene "
+                "draws an empty stack for its whole beat.")
+        for j, w in enumerate(words):
+            style = w.get("style")
+            if style not in WC_BASE_PX:
+                errors.append(
+                    f"G54 scene {i:02d} word {j} has style={style!r} — known: "
+                    f"{sorted(WC_BASE_PX)}. An unknown style gets no font size "
+                    "and no family, so it renders at the browser default 16px.")
+            size = w.get("size", 1)
+            if not isinstance(size, (int, float)) or float(size) <= 0:
+                errors.append(
+                    f"G54 scene {i:02d} word {j} has size={size!r} — `size` is "
+                    "a positive multiplier of the style's base px (default 1).")
+            elif style in WC_BASE_PX:
+                px = WC_BASE_PX[style] * float(size)
+                if px > canvas_h:
+                    errors.append(
+                        f"G54 scene {i:02d} word {j} ({w.get('text')!r}) sets "
+                        f"size={size} — {style} is {WC_BASE_PX[style]}px base, "
+                        f"so this is {px:.0f}px type on a {canvas_h}px canvas. "
+                        "One glyph fills the frame and the beat renders as a "
+                        "flat field. `size` is a MULTIPLIER, not pixels.")
+                elif not (0.6 <= float(size) <= 1.6):
+                    errors.append(
+                        f"G54a scene {i:02d} word {j} sets size={size} — every "
+                        "wordcascade word on disk sits in 0.6-1.6. Legible, "
+                        "just unlike anything shipped; only a note.")
+            at = w.get("at")
+            dur = sc.get("durationSec")
+            if isinstance(at, (int, float)) and isinstance(dur, (int, float)) \
+                    and float(at) >= float(dur):
+                errors.append(
+                    f"G54 scene {i:02d} word {j} ({w.get('text')!r}) lands at "
+                    f"{at}s in a {dur}s beat — it is never drawn. `at` is "
+                    "SECONDS from the start of the scene, not frames.")
 
     # G50 — ai-tools: text cards standing in for demos. ADVICE.
     #

@@ -78,7 +78,14 @@ def good() -> dict:
         {"type": "chart", "source": "src", "durationSec": 3.0,
          "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/g.mp4"},
-        {"type": "wordcascade", "durationSec": 2.5, "bg": "cream"},
+        # G54: `words` is not optional — an empty stack draws nothing for
+        # the whole beat. This fixture carried none until 2026-09-01.
+        {"type": "wordcascade", "durationSec": 2.5, "bg": "cream",
+         "words": [{"text": "DOUBLE", "style": "caps", "at": 0.1},
+                   {"text": "DIGITS", "style": "caps", "at": 0.6,
+                    "size": 1.2, "accent": True},
+                   {"text": "from today", "style": "serif", "at": 1.1,
+                    "size": 0.64}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/h.mp4"},
         # facecam block ~14% of a 65s runtime
         {"type": "footage", "durationSec": 2.5, "src": face},
@@ -983,6 +990,36 @@ expect_manifest(
      "banned_assets": ["clip-banned"]},
     "G42", "a fallback-tier source", want_text="fallback")
 
+
+
+# --- G54: a wordcascade off its field contract renders nothing --------------
+# qualcomm-chip-hike scene 03 (2026-09-01): bg "#0b0d10" + size 150 produced a
+# frame lint_frames called "95% flat/empty". Each half was rendered as a still
+# to confirm it fails ALONE, so each gets its own case here.
+def _wc(sheet: dict) -> dict:
+    return next(s for s in sheet["scenes"] if s["type"] == "wordcascade")
+
+
+def _wc_case(change, gate, label):
+    expect_fail(lambda sheet: change(_wc(sheet)), gate, label)
+
+
+_wc_case(lambda sc: sc.update(bg="#0b0d10"),
+         "G54", "wordcascade bg given as a HEX colour, not a name")
+_wc_case(lambda sc: sc.pop("words"),
+         "G54", "wordcascade with no words at all")
+_wc_case(lambda sc: sc["words"][0].update(size=150),
+         "G54", "size 150 read as pixels — a 15000px glyph fills the frame")
+_wc_case(lambda sc: sc["words"][0].update(style="gradient", size=64),
+         "G54", "size 64 on a gradient word — same pixels-not-multiplier slip")
+_wc_case(lambda sc: sc["words"][0].update(style="neon"),
+         "G54", "unknown word style falls to browser-default 16px")
+_wc_case(lambda sc: sc["words"][0].update(size=0),
+         "G54", "size 0 renders nothing")
+_wc_case(lambda sc: sc["words"][2].update(at=45),
+         "G54", "`at` given in FRAMES lands past the end of the beat")
+_wc_case(lambda sc: sc["words"][0].update(size=3.0),
+         "G54a", "size outside the 0.6-1.6 corpus band is only a note")
 
 # The suite printed "every gate fires on its violation" while G13 and G16 had
 # no failing case at all (found 2026-08-17). Uniqueness of ids was asserted;
