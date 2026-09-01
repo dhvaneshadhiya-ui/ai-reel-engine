@@ -302,6 +302,7 @@ BLOCKING_RULES: dict[str, str] = {
     "G35": "RENDER a still in a video slot renders black",
     "G54": "RENDER a wordcascade off its field contract draws nothing",
     "G55": "RENDER an MG card off its component contract kills or blanks the render",
+    "G56": "RENDER a scene whose list is absent or empty draws nothing",
     # G48 is RENDER, not framing taste: below 1 the layer stops covering the
     # canvas, and a focus outside 0..1 pushes past the slack `cover` gives it.
     # Both paint the black backdrop. G49 — the zoom/zoomDir compounding note —
@@ -1411,20 +1412,82 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # I nearly "fixed" 16 correctly-rendering scenes on the strength of the old
     # wording, and nearly deleted the gate on the strength of the first render.
     # Both would have been wrong.
+    # WIDENED 2026-09-01 from two scene types to every one-sided media slot in
+    # the project, and to the MIRROR failure. The rule was never about
+    # `footage` and `floatcard`; it is about a slot that does not branch on the
+    # file extension. Twelve more of those existed, unchecked, including three
+    # that had already been found the hard way one field at a time.
+    #
+    # A component with `isVideo(src) ? <OffthreadVideo/> : <Img/>` is SAFE and
+    # is deliberately absent from both tables below — brandhook.mediaSrc,
+    # comparesplit.src, deviceframe.src, endquestion.src, hcompare.bottomSrc,
+    # split.topSrc/bottomSrc, xpost.bgSrc/media all pick the right element.
     STILL_EXT = (".png", ".jpg", ".jpeg", ".webp", ".avif")
+    VIDEO_ONLY = {          # renders <Video>/<OffthreadVideo>, never an <Img>
+        "footage": ("src", "mediaSrc"),
+        "floatcard": ("src", "mediaSrc"),
+        "specsheet": ("bgSrc",),
+        "screenstep": ("src",),
+        "timeline": ("bgSrc",),
+        "wordcascade": ("bottomSrc",),
+        "brandhook": ("bottomSrc",),
+        "searchspotlight": ("src",),
+        # the OssAlt family all render the shared <Face>, which is a <Video>
+        "osshook": ("src",),
+        "notifstack": ("src",),
+        "walletattack": ("src",),
+        "checkoutblock": ("src",),
+        "commentcta": ("src",),
+    }
+    STILL_ONLY = {          # renders <Img>, which cannot play an mp4 at all
+        "annotatezoom": ("src",),
+        "receipt": ("src",),
+        "sourceread": ("src",),
+        "logobeat": ("src",),
+        "hcompare": ("topSrc",),
+        "wordcascade": ("mascot",),
+    }
+    # media that lives one level down, inside a list
+    VIDEO_ONLY_ROWS = {"stackwindows": ("shots", "src")}
+    STILL_ONLY_ROWS = {"carousel": ("items", "src"),
+                       "designreveal": ("items", "src"),
+                       "toolstack": ("items", "src")}
+
+    def _still_msg(i, ty, field, name):
+        return (f"G35 scene {i:02d} ({ty}) plays a STILL {name!r} in `{field}` "
+                f"— {ty} renders a <Video>/<OffthreadVideo> here and never an "
+                "<Img>, and a still gives it exactly ONE frame. Asking for any "
+                "later position KILLS THE RENDER: \"Compositor error: No frame "
+                "found at position N\". Use receipt or annotatezoom for a "
+                "still, or cut it to an mp4.")
+
+    def _video_msg(i, ty, field, name):
+        return (f"G35 scene {i:02d} ({ty}) puts a VIDEO {name!r} in `{field}` "
+                f"— {ty} renders an <Img> here and never a <Video>. An <Img> "
+                "cannot decode an mp4, so the slot draws NOTHING. Use a scene "
+                "type that plays video, or export a frame as a still.")
+
     for i, sc in enumerate(scenes):
-        if sc["type"] not in ("footage", "floatcard"):
-            continue
-        for key in ("src", "mediaSrc"):
-            v = str(sc.get(key) or "").lower()
-            if v.endswith(STILL_EXT):
-                errors.append(
-                    f"G35 scene {i:02d} ({sc['type']}) plays a STILL "
-                    f"{str(sc.get(key)).split('/')[-1]!r} — {sc['type']} renders "
-                    "an <OffthreadVideo>, and a still gives it exactly ONE "
-                    "frame. Asking for any later position KILLS THE RENDER: "
-                    "\"Compositor error: No frame found at position N\". Use "
-                    "receipt or annotatezoom for a still, or cut it to an mp4.")
+        ty = sc["type"]
+        for key in VIDEO_ONLY.get(ty, ()):
+            v = str(sc.get(key) or "")
+            if v.lower().endswith(STILL_EXT):
+                errors.append(_still_msg(i, ty, key, v.split("/")[-1]))
+        for key in STILL_ONLY.get(ty, ()):
+            v = str(sc.get(key) or "")
+            if v.lower().endswith(VIDEO_EXT):
+                errors.append(_video_msg(i, ty, key, v.split("/")[-1]))
+        for table, ext, msg in ((VIDEO_ONLY_ROWS, STILL_EXT, _still_msg),
+                                (STILL_ONLY_ROWS, VIDEO_EXT, _video_msg)):
+            if ty not in table:
+                continue
+            list_key, item_key = table[ty]
+            for j, r in enumerate(sc.get(list_key) or []):
+                v = str((r or {}).get(item_key) or "")
+                if v.lower().endswith(ext):
+                    errors.append(
+                        msg(i, ty, f"{list_key}[{j}].{item_key}",
+                            v.split("/")[-1]))
 
     # G36 — A WIDE SOURCE TURNS `annotatezoom` INTO DEAD SPACE (2026-08-17,
     # ios27-tiers). AnnotateZoom sizes its card as
@@ -1927,7 +1990,6 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # on `bg === "black"` and fall back to cream, so an unknown value renders a
     # readable cream card. WordCascade's BGS is a LOOKUP, which is why the same
     # mistake there is a black frame and blocks. Same field, different physics.
-    STILL_EXT_MG = (".png", ".jpg", ".jpeg", ".webp", ".avif")
     for i, sc in enumerate(scenes):
         ty = sc.get("type")
         if ty not in ("chart", "specsheet", "statcard"):
@@ -1980,15 +2042,10 @@ def check_beats(beats: dict, vo_end: float | None = None,
                         f"{float(pct) / 100:.2f}, not {pct}.")
 
         if ty == "specsheet":
-            bg_src = str(sc.get("bgSrc") or "").lower()
-            if bg_src.endswith(STILL_EXT_MG):
-                errors.append(
-                    f"G55 scene {i:02d} specsheet plays a STILL "
-                    f"{str(sc.get('bgSrc')).split('/')[-1]!r} behind the card. "
-                    "SpecSheet renders an <OffthreadVideo>, and a still gives "
-                    "it exactly ONE frame: any later position KILLS the render "
-                    "(\"No frame found at position N\"). This is G35 on a "
-                    "field G35 does not look at. Cut it to an mp4.")
+            # `bgSrc` used to be checked here. It moved into G35 when that gate
+            # was widened from two scene types to every one-sided media slot —
+            # one rule, one place. Finding it here was the thing that showed
+            # G35's table was the real defect, not its logic.
             for j, r in enumerate(rows):
                 if not (r.get("values") or r.get("value")):
                     errors.append(
@@ -2004,6 +2061,94 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 "component takes cream or black and silently renders CREAM for "
                 "anything else. It is not the black frame G54 catches, because "
                 "this one branches instead of looking the value up.")
+
+    # G56 — RENDER: the rest of the scene types, swept 2026-09-01.
+    #
+    # G54 (wordcascade) and G55 (chart/specsheet/statcard) each closed one card
+    # after it cost something. This closes the remaining thirty-odd BEFORE they
+    # do, and it is a table rather than thirty blocks because every entry is
+    # the same two failures:
+    #
+    #   the list is ABSENT   the component does `scene.<field>.map(...)` with
+    #                        no guard, so undefined throws and the render dies.
+    #                        This is the `rows`-vs-`items` slip, and it is
+    #                        possible in every row below.
+    #   the list is EMPTY    the component renders its chrome — a card, a
+    #                        window frame, a title — around nothing.
+    #
+    # Guarded fields are deliberately ABSENT from this table: promptcard does
+    # `scene.lines ? ... : ...` and logobeat branches text/src, so neither can
+    # fail this way. The table is what the components actually require, not
+    # what the type union marks required — where those two disagree, the
+    # component wins, because it is the thing that renders.
+    REQUIRED_LISTS = {
+        "carousel": ("items",),
+        "categorygrid": ("cards",),
+        "designreveal": ("items",),
+        "desktopmockup": ("files",),
+        "hcompare": ("messages",),
+        "logoassemble": ("paths",),
+        "priceladder": ("rows",),
+        "settingspane": ("groups",),
+        "sourceread": ("lines",),
+        "stackwindows": ("shots",),
+        "terminal": ("lines",),
+        "timeline": ("items",),
+        "toolstack": ("items",),
+    }
+    # Components that render a FIXED number of slots and silently drop the
+    # rest. Same defect as chart's slice(0, 8) in G55: the extra item is not
+    # small, it is absent, while the voice may still name it.
+    LIST_CAPS = {"toolstack": ("items", 5), "stackwindows": ("shots", 5)}
+    # An index into one of those lists. Out of range is not a crash — it
+    # silently selects nothing, so the "winner" a designreveal exists to crown
+    # is never crowned.
+    LIST_INDEX = {"designreveal": ("selectIndex", "items"),
+                  "desktopmockup": ("selected", "files")}
+
+    for i, sc in enumerate(scenes):
+        ty = sc["type"]
+        for key in REQUIRED_LISTS.get(ty, ()):
+            v = sc.get(key)
+            if v is None:
+                errors.append(
+                    f"G56 scene {i:02d} ({ty}) has no `{key}` — the component "
+                    f"maps over it with no guard, so an absent `{key}` throws "
+                    "and the render dies.")
+            elif not v:
+                errors.append(
+                    f"G56 scene {i:02d} ({ty}) has an empty `{key}` — it draws "
+                    "its chrome around nothing for the whole beat.")
+        if ty in LIST_CAPS:
+            key, cap = LIST_CAPS[ty]
+            rows = sc.get(key) or []
+            if len(rows) > cap:
+                errors.append(
+                    f"G56 scene {i:02d} ({ty}) carries {len(rows)} {key} — the "
+                    f"component renders `{key}.slice(0, {cap})`, so "
+                    f"{key}[{cap}]+ are not drawn at all.")
+        if ty in LIST_INDEX:
+            key, list_key = LIST_INDEX[ty]
+            idx = sc.get(key)
+            n = len(sc.get(list_key) or [])
+            if idx is not None and (not isinstance(idx, int)
+                                    or isinstance(idx, bool)
+                                    or not (0 <= idx < n)):
+                errors.append(
+                    f"G56 scene {i:02d} ({ty}) sets {key}={idx!r} against "
+                    f"{n} {list_key} — it indexes {list_key}, so this selects "
+                    "nothing and the scene draws no selection at all.")
+        # A typecard IS its words. TypeCard reads `scene.kinetic?.text ?? ""`,
+        # so an absent kinetic does not crash — it lays out the empty string
+        # and renders a completely empty card, which is exactly the blank frame
+        # G54 was built for. The union already marks `kinetic` required; only
+        # the gate makes that true of a JSON beat sheet.
+        if ty == "typecard" and not str(
+                (sc.get("kinetic") or {}).get("text") or "").strip():
+            errors.append(
+                f"G56 scene {i:02d} typecard carries no `kinetic.text` — the "
+                "card is nothing but its words, so it renders an empty field "
+                "for the whole beat.")
 
     # G50 — ai-tools: text cards standing in for demos. ADVICE.
     #

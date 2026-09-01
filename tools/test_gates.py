@@ -1091,7 +1091,7 @@ expect_fail(lambda sheet: _add_statcard(sheet, [
 _mg_case("specsheet", lambda sc: sc.pop("rows"),
          "G55", "specsheet with no `rows` — .map throws")
 _mg_case("specsheet", lambda sc: sc.update(bgSrc="assets/x/hero.png"),
-         "G55", "specsheet bgSrc is a STILL — OffthreadVideo kills the render")
+         "G35", "specsheet bgSrc is a STILL — OffthreadVideo kills the render")
 _mg_case("specsheet", lambda sc: sc["rows"][0].pop("value"),
          "G55a", "specsheet row with no value draws an empty column")
 
@@ -1101,6 +1101,117 @@ expect_fail(lambda sheet: _add_statcard(sheet, [
     {"label": "a", "value": "1", "pct": 0.5},
     {"label": "b", "value": "2", "pct": 0.9}], dur=1.4),
     "G20a", "statcard rows land, but with under ROW_DWELL left to read")
+
+
+# --- G35 widened + G56: the remaining thirty-odd scene types ---------------
+# One case per FAILURE CLASS, not per scene type — the gate is a table, so a
+# case per row would test the table, not the logic. Each class here is one a
+# component actually has.
+def _swap(sheet: dict, at: int, scene: dict) -> None:
+    """Replace a scene in place, keeping the sheet's runtime where it was."""
+    scene.setdefault("durationSec", sheet["scenes"][at]["durationSec"])
+    sheet["scenes"][at] = scene
+
+
+# G56 — the list is absent (the component maps over it with no guard)
+expect_fail(lambda sh: _swap(sh, 9, {"type": "toolstack", "headline": "Stack"}),
+            "G56", "toolstack with no `items` — .map throws")
+# G56 — the list is present but empty (chrome around nothing)
+expect_fail(lambda sh: _swap(sh, 9, {"type": "categorygrid", "cards": []}),
+            "G56", "categorygrid with an empty `cards` draws an empty grid")
+# G56 — a fixed slot count silently drops the rest
+expect_fail(lambda sh: _swap(sh, 9, {"type": "toolstack", "items": [
+                {"name": "t%d" % n, "src": "assets/x/%d.png" % n}
+                for n in range(7)]}),
+            "G56", "7 toolstack items — items.slice(0, 5) drops two silently")
+# G56 — an index that selects nothing
+expect_fail(lambda sh: _swap(sh, 9, {"type": "designreveal", "selectIndex": 4,
+                "items": [{"src": "assets/x/a.png"},
+                          {"src": "assets/x/b.png"}]}),
+            "G56", "designreveal selectIndex past the end crowns no winner")
+# G56 — a typecard with no words is an empty field
+expect_fail(lambda sh: _swap(sh, 9, {"type": "typecard",
+                "kinetic": {"text": "", "style": "serif"}}),
+            "G56", "typecard with empty kinetic.text renders a blank card")
+
+# G35 — a still in a video slot, on a slot G35 did not used to look at
+expect_fail(lambda sh: _swap(sh, 9, {"type": "screenstep",
+                "src": "assets/x/step.png", "srcWidth": 1080,
+                "srcHeight": 1920, "credit": "@src"}),
+            "G35", "screenstep src is a STILL — OffthreadVideo, one frame")
+# G35 — the MIRROR: a video in a slot that renders an <Img>
+expect_fail(lambda sh: _swap(sh, 9, {"type": "receipt",
+                "src": "assets/x/clips/a.mp4", "credit": "@src"}),
+            "G35", "receipt src is a VIDEO — an <Img> cannot decode an mp4")
+# G35 — the same mirror one level down, inside a list
+expect_fail(lambda sh: _swap(sh, 9, {"type": "carousel", "items": [
+                {"src": "assets/x/clips/a.mp4"}, {"src": "assets/x/b.png"}]}),
+            "G35", "carousel item src is a VIDEO in an <Img> slot")
+
+
+# --- G35's tables must keep matching the components -------------------------
+# The media tables are a claim ABOUT SOURCE CODE: "this slot renders a <Video>
+# and never an <Img>", or the reverse. Fourteen of the scene types in them
+# appear in no shipped reel, so nothing else on this machine would notice if a
+# component were later taught to branch on the file extension — the gate would
+# go on refusing a file the component had learned to handle.
+#
+# So re-derive the claim instead of trusting it. A slot that branches contains
+# `isVideo(<field>)`; a one-sided slot does not. If this fails, the component
+# changed and the table has to follow it.
+_REEL = (ROOT / "src" / "Reel.tsx").read_text()
+_DISPATCH = dict(re.findall(r'case "([a-z0-9]+)":\s*\n\s*return\s*<(\w+)', _REEL))
+_COMPONENT_SRC: dict[str, str] = {}
+for _f in (ROOT / "src" / "components").glob("*.tsx"):
+    _text = _f.read_text()
+    for _name in re.findall(r"export const (\w+):\s*React\.FC", _text):
+        _COMPONENT_SRC[_name] = _text
+
+
+def _tables_from_gate(name: str) -> dict:
+    """Read one table literal out of reel_gates.py without importing it."""
+    body = _src.split(f"{name} = {{", 1)[1].split("\n    }", 1)[0]
+    out = {}
+    for ty, fields in re.findall(r'"([a-z0-9]+)": \(([^)]*)\)', body):
+        out[ty] = re.findall(r'"(\w+)"', fields)
+    return out
+
+
+_drift = []
+for _table in ("VIDEO_ONLY", "STILL_ONLY"):
+    for _ty, _fields in _tables_from_gate(_table).items():
+        _comp = _DISPATCH.get(_ty)
+        _text = _COMPONENT_SRC.get(_comp or "", "")
+        if not _text:
+            _drift.append(f"{_ty}: no component source found for {_comp!r}")
+            continue
+        for _field in _fields:
+            if re.search(r"isVideo\w*\(\s*(?:scene\.)?" + _field + r"\s*\)",
+                         _text):
+                _drift.append(
+                    f"{_table}[{_ty}].{_field}: {_comp} now BRANCHES on the "
+                    "file extension, so this slot handles both and must come "
+                    "out of the table")
+if _drift:
+    raise SystemExit("  FAIL G35 media tables no longer match the components:\n    "
+                     + "\n    ".join(_drift))
+_counted("G35 media tables still match every component they name")
+
+# And the mirror: a slot that DOES branch must not be in either table, or the
+# gate refuses a file the component handles perfectly well.
+_both = _tables_from_gate("VIDEO_ONLY")
+for _ty, _fields in _tables_from_gate("STILL_ONLY").items():
+    _both.setdefault(_ty, []).extend(_fields)
+_wrong = []
+for _ty, _comp in _DISPATCH.items():
+    _text = _COMPONENT_SRC.get(_comp, "")
+    for _field in set(re.findall(r"isVideo\w*\(\s*(?:scene\.)?(\w+)\s*\)", _text)):
+        if _field in _both.get(_ty, []):
+            _wrong.append(f"{_ty}.{_field} branches but is listed one-sided")
+if _wrong:
+    raise SystemExit("  FAIL " + "; ".join(_wrong))
+_counted(f"{sum(len(v) for v in _both.values())} one-sided media slots, none of "
+         "them a branching one")
 
 # The suite printed "every gate fires on its violation" while G13 and G16 had
 # no failing case at all (found 2026-08-17). Uniqueness of ids was asserted;
