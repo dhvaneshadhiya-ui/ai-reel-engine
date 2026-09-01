@@ -156,6 +156,12 @@ value **7** (130px monospaced). `specsheet` label **23** with one value column,
 Derived from the components' own boxes and a measured advance; `reel_gates.py`
 carries the derivation. Detail goes in the `footnote`.
 
+**Type must LAND inside its scene (G55/G56).** `at` and `ats` are scene-LOCAL
+seconds. `wordcascade`, `typecard` and any scene carrying a `kinetic` overlay
+suppress the caption chips — so type that never arrives leaves the beat with no
+words at all, and on a typecard or a black cascade that is a blank frame.
+Blocking; the too-late-to-read half advises.
+
 **`kinetic`** (`{text, style, at?, y?}`): on-scene type. `style`:
 `caps`(condensed black), `serif`(Fraunces italic), `chip`. Prefer **serif** for
 titles (premium); caps for rare punch.

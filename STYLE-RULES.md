@@ -6243,3 +6243,47 @@ trip the blocking half, three trip the advice.
 **The fixture was carrying the bug.** `tools/test_gates.py`'s known-good sheet
 had a `wordcascade` with no `words` at all — the exact defect, sitting in the
 file whose job is to be correct, invisible until a gate existed to look.
+
+## 2026-09-01 — G56: the same land-check for typecard and kinetic overlays
+
+G55 generalised the same day it landed. `wordcascade` turned out not to be
+special: `Reel.tsx` suppresses the caption chips for a **`typecard`** and for
+**any scene carrying a `kinetic` overlay** under the identical "one text system
+at a time" rule. In all three cases the scene's own display type is the only
+words on screen, so type that never lands leaves the beat with none — and for
+the 70-85% watching on mute, a beat that says nothing.
+
+**TypeCard is the worse of the two.** Its `bg` defaults to `theme.black`, so a
+card whose first line never lands is the same uniform black frame the G55 probe
+reproduced. A kinetic overlay sits over footage, so the picture survives and
+only the words are lost.
+
+**THE CONTRACTS, READ OFF THE COMPONENTS, NOT REMEMBERED.**
+
+- `KineticType.tsx`: `startFrame = (kinetic.at ?? 0.15) * fps`, `null` before it.
+- `TypeCard.tsx`: per line, `start = kinetic.ats?.[claim] ?? at + li * 0.11`.
+
+`ats` is indexed by CLAIM (the `\n`-separated units) while `li` is the LINE
+index, and lines are chosen by TypeCard's own ink search. **The gate does not
+reimplement that search.** So the LAST landing is exact when `ats` is given and
+is `at` plus an unknown ≤0.11s-per-line stagger otherwise — under-reporting the
+dwell slightly rather than inventing a layout it cannot see. The FIRST landing
+is exact either way (`li = 0`), which is what the blocking half rests on. Where
+a check cannot be exact, say which half is exact and rest the law on that half.
+
+**CALIBRATED ON WHAT SHIPPED**, the G23 discipline: 26 typecards and 11 kinetic
+overlays on disk. **None** trips the blocking half. Exactly **one** trips the
+dwell advice — a deliberate 0.68s flash card on qualcomm-chip-hike — which is
+the same evidence that made G55a advisory, arriving independently.
+
+**DISTILLED RULE (now covering all three): a scene that suppresses the captions
+has no fallback layer, so its own type landing is a guarantee, not a pacing
+preference.** G56 blocks four shapes — no text, no `kinetic` block at all on a
+typecard, a first line that never lands, and a named `ats` claim that never
+lands while the voice says it. G56a advises the too-tight-to-read case.
+
+**Two more fixtures were carrying the defect.** The G12 case built two
+typecards with no `kinetic` at all, and the G50 case used an invented
+`{"lines": [...]}` shape that the `Kinetic` type has never had. Both were
+invisible until a gate existed to look — the third time in two days that the
+known-good sheet turned out to contain the thing being gated.

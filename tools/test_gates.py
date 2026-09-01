@@ -545,6 +545,46 @@ expect_gate(_sheet(_cascade([{"text": "PRICES UP", "style": "caps", "at": 0.15},
             "G55", False, "G55 silent — words landing at 0.15s and 0.90s in 3.0s")
 
 
+# --- G56: the same rule for typecard and kinetic overlays -------------------
+# Reel.tsx suppresses the caption chips for a typecard and for any scene
+# carrying a kinetic overlay, exactly as it does for a wordcascade — so type
+# that never lands leaves the beat with no words at all. TypeCard's bg defaults
+# to theme.black, so its version of the failure is the same uniform black frame
+# G55 reproduces.
+def _typecard(kinetic: dict | None, dur: float = 3.0):
+    def mutate(sheet: dict) -> None:
+        sc = {"type": "typecard", "durationSec": dur, "bg": "black",
+              "footnote": "src"}
+        if kinetic is not None:
+            sc["kinetic"] = kinetic
+        sheet["scenes"][4] = sc
+    return mutate
+
+
+expect_fail(_typecard({"text": "ACROSS THE BOARD", "style": "caps", "at": 41.2}),
+            "G56", "a typecard whose only line lands after the scene ends")
+expect_fail(_typecard({"text": "PRICES UP\nACROSS THE BOARD", "style": "caps",
+                       "at": 0.15, "ats": [0.15, 3.4]}),
+            "G56", "a typecard claim that lands after the scene ends")
+expect_fail(_typecard({"text": "", "style": "caps", "at": 0.15}),
+            "G56", "a typecard with no text at all")
+expect_fail(_typecard(None), "G56", "a typecard with no kinetic block")
+# A kinetic OVERLAY on footage: the picture survives, the words do not — and
+# the captions were hidden on their account.
+expect_fail(lambda s: s["scenes"][3].update(
+    kinetic={"text": "ACROSS THE BOARD", "style": "caps", "at": 9.0}),
+    "G56", "a footage kinetic overlay that lands after the scene ends")
+# The dwell half advises: qualcomm-chip-hike ships a deliberate 0.68s flash
+# card, so this cannot block.
+expect_fail(_typecard({"text": "PRICES UP", "style": "caps", "at": 0.15}, dur=0.68),
+            "G56a", "a 0.68s flash card with 0.53s to read it")
+# Quiet neighbour: the same card, given room.
+expect_gate(_sheet(_typecard({"text": "PRICES UP\nACROSS THE BOARD",
+                              "style": "caps", "at": 0.15, "ats": [0.15, 1.2]})),
+            "G56", False,
+            "G56 silent — two claims landing at 0.15s and 1.20s in 3.0s")
+
+
 # --- G45 is a FLOOR, not a lane ---------------------------------------------
 # Raising a caption to clear a face is composition and stays the author's call;
 # the split hook of iphone-fold-ultra sets 1000 for exactly that reason. A gate
@@ -747,10 +787,15 @@ CASES = [
                s["scenes"][2].update(credit=""), "G14", "borrowed footage with no credit"),
     (lambda s: s["scenes"][4].pop("footnote", None) or
                s["scenes"][4].update(source="", footnote=""), "G15", "data card with no source"),
+    # Both carry real `kinetic` text: a typecard's text is not optional, and
+    # a card with none is G56's own violation, not G12's.
     (lambda s: s["scenes"].__setitem__(10, {"type": "typecard", "durationSec": 2.5,
-                                            "bg": "black"}) or
+                                            "bg": "black",
+                                            "kinetic": {"text": "ONE", "style": "caps"}}) or
                s["scenes"].__setitem__(11, {"type": "typecard", "durationSec": 2.5,
-                                            "bg": "black"}), "G12", "two black typecards"),
+                                            "bg": "black",
+                                            "kinetic": {"text": "TWO", "style": "caps"}}),
+     "G12", "two black typecards"),
     # 2026-08-17, ios27-tiers: both of these shipped into a render that passed
     # every existing gate AND the frame linter.
     (lambda s: s["scenes"].__setitem__(2, dict(s["scenes"][2], type="footage",
@@ -836,7 +881,8 @@ CASES = [
 CASES.append((lambda s: (s.update(format="ai-tools"),
                          s["scenes"].__setitem__(10, {
                              "type": "typecard", "durationSec": 2.5,
-                             "kinetic": {"lines": [{"text": "A CARD", "at": 0.2}]},
+                             "kinetic": {"text": "A CARD", "style": "caps",
+                                         "at": 0.2},
                              "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]}))[0],
               "G50", "an ai-tools reel with a full-screen text card"))
 
