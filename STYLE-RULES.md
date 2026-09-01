@@ -6532,3 +6532,46 @@ two identical bars whatever its numbers said. That reel's charts have always
 been meaningless and no check saw it until G55. `apple-surprise-and-shine`
 fails G18 by 0.28s, which is pre-existing and minor. **Neither is a false
 positive; both are reels that shipped with the defect.**
+
+### Idle motion: one wrapper, not 26 component edits (2026-09-01)
+
+26 of 30 card components animated IN and then held perfectly still. The rule
+was already written — CLAUDE.md carries `going-viral`'s *"nothing static,
+every element keeps a low-amplitude idle motion"* — and was implemented
+nowhere.
+
+**Fixed at the single dispatch point.** Every scene routes through
+`SceneSwitch` in `Reel.tsx`, so the switch body became `SceneBody` and
+`SceneSwitch` now wraps it in `IdleMotion`: `translateY(-6px * t)` and
+`scale(1 -> 1.02)` across the beat. One file, one wrapper, all 26 card types.
+
+**Scale goes UP only** — the same reason G48 blocks a footage `zoom` below 1:
+scaling down pulls the card's own edge into frame.
+
+**`MOVES_ITSELF` excludes the eight types that animate themselves** —
+footage, receipt, sourceread, annotatezoom, deviceframe, terminal, chart,
+split. Stacking a second transform on FootageScene's 1.1x push or
+ReceiptScene's focus pull would fight the move the scene is already making
+rather than add to it.
+
+**Verified, not assumed:** two `remotion still` frames 3.1s apart inside
+claude-eating-tokens' statcard — previously byte-identical, now a mean pixel
+delta of 4.49 across the card region.
+
+### And a merge that had to be repaired first
+
+`tools/reel_gates.py` was found carrying **committed conflict markers** — the
+gates file, syntactically broken, with `test_gates` unable to import it. A
+parallel session had been landing G55/G56/G57/G58 while this one worked.
+
+The cause was an **ID collision**: two independent lines of work both claimed
+`G56` — "a scene whose list is absent or empty draws nothing" and "display
+type that never lands". The parallel session had already re-IDed the
+land-check to **G58**, so the repair was to keep their block whole rather than
+to pick a winner. 162 gate checks pass.
+
+**Lesson worth keeping: a recompile discards hand edits to a beat sheet.**
+Re-running `compile_shot_plan` to test the new receipt advisory wiped the
+manual G18 timing fixes, the split hook and the merged facecam scenes from
+apple-surprise-and-shine. The shot plan is the source of truth; anything fixed
+only on the sheet is temporary.
