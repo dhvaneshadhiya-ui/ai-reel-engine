@@ -156,14 +156,31 @@ def main():
         sys.exit(__doc__)
     slug = sys.argv[1]
     from_stills = "--from-stills" in sys.argv
-    video = ROOT / (
-        sys.argv[sys.argv.index("--video") + 1]
-        if "--video" in sys.argv
-        else f"out/{slug}.mp4"
-    )
+    # READ THE RENDER, NOT A COPY OF AN OLDER ONE (2026-09-01).
+    # This defaulted to out/<slug>.mp4, which only exists because the skill
+    # tells a human to `cp out/<slug>-final.mp4 out/<slug>.mp4` first. That
+    # copy is a ritual, and a skipped ritual is silent: after four re-renders
+    # of chatgpt-stickers every lint was still reading a 44-minute-old video
+    # and reporting flags for a cut that no longer existed. render_job writes
+    # -final.mp4, so prefer it and let the copy be optional.
+    if "--video" in sys.argv:
+        video = ROOT / sys.argv[sys.argv.index("--video") + 1]
+    else:
+        final, plain = ROOT / f"out/{slug}-final.mp4", ROOT / f"out/{slug}.mp4"
+        video = final if final.exists() else plain
     beats_path = ROOT / f"src/beats/{slug}.json"
     if not video.exists() and not from_stills:
         sys.exit(f"missing video: {video}")
+    # AND REFUSE A VIDEO OLDER THAN THE SHEET IT IS BEING CHECKED AGAINST.
+    # Preferring -final.mp4 fixes the copy, not the general case: editing beats
+    # and linting without re-rendering reads frames from the previous cut and
+    # calls them evidence. Nothing here can tell that from a real result.
+    if not from_stills and beats_path.exists() \
+            and video.stat().st_mtime < beats_path.stat().st_mtime:
+        sys.exit(
+            f"\n  {video.name} is OLDER than src/beats/{slug}.json — it is the "
+            f"previous cut.\n  Re-render before linting: python3 "
+            f"scripts/render_job.py {slug}\n")
     if not beats_path.exists():
         sys.exit(f"missing beats: {beats_path}")
 
@@ -285,8 +302,9 @@ def main():
         d = sc["durationSec"]
         if i == 0 and d > HOOK_MAX:
             flags.append(
-                f"[PACING] scene 00 ({sc['type']}): hook layout held {d:.1f}s"
-                f" — HARD LIMIT {HOOK_MAX}s (user rule, blocking)")
+                f"[PACING] scene 00 ({sc['type']}): hook layout held "
+                f"{d:.1f}s > {HOOK_MAX}s — the hook is one layout for longer "
+                f"than a scrolling thumb gives it")
             continue
         cls = _dur_class(sc)
         if d > DUR_MAX[cls]:
@@ -306,8 +324,9 @@ def main():
     for src, n in used.items():
         if n > 1:
             flags.append(
-                f"[CLIP REUSE] {src.split('/')[-1]} used in {n} beats — every "
-                "footage beat needs its OWN shot (blocking)")
+                f"[CLIP REUSE] {src.split('/')[-1]} used in {n} beats — "
+                "reusing one shot reads as limited footage; give each beat "
+                "its own")
 
     # caption-overlap advisory: display-type scenes that force chips ON
     for i, s in enumerate(scenes):
@@ -318,12 +337,25 @@ def main():
                 "but hideCaptions:false — verify chips don't duplicate it")
 
     # -- 3. report -----------------------------------------------------------
+    # Severity is DERIVED, never typed. See the verdict block below for why.
+    from reel_gates import BLOCKING_RULES
+    _GATE_OF = {"[PACING]": ("G03", "G04"), "[CLIP REUSE]": ("G07",)}
+    HARD_ALWAYS = ("[EDGE TEXT]", "[DUPLICATE]", "[HOOK DEAD SPACE]")
+
+    def _is_hard(f: str) -> bool:
+        if f.startswith(HARD_ALWAYS):
+            return True
+        for tag, gates in _GATE_OF.items():
+            if f.startswith(tag):
+                return any(g in BLOCKING_RULES for g in gates)
+        return False
+
     print(f"\n=== frame-lint: {slug} — {len(scenes)} scenes ===")
     print(f"stills + sheets: {lint_dir}/")
     if flags:
         print("\nAUTO FLAGS (hints, verify by eye):")
         for f in flags:
-            print("  " + f)
+            print(f"  [{'BLOCKS' if _is_hard(f) else 'advice'}] {f}")
     else:
         print("\nno auto flags.")
     print("""
@@ -353,16 +385,6 @@ CRITIC CHECKLIST (review the lint sheets against the beat map):
     # [EDGE TEXT], [DUPLICATE] and [HOOK DEAD SPACE] stay hard: they are
     # RENDER-correctness and mute-legibility faults with no gate equivalent,
     # not taste.
-    from reel_gates import BLOCKING_RULES
-    _GATE_OF = {"[PACING]": ("G03", "G04"), "[CLIP REUSE]": ("G07",)}
-    HARD_ALWAYS = ("[EDGE TEXT]", "[DUPLICATE]", "[HOOK DEAD SPACE]")
-    def _is_hard(f: str) -> bool:
-        if f.startswith(HARD_ALWAYS):
-            return True
-        for tag, gates in _GATE_OF.items():
-            if f.startswith(tag):
-                return any(g in BLOCKING_RULES for g in gates)
-        return False
     hard = [f for f in flags if _is_hard(f)]
     if hard and "--soft" not in sys.argv:
         print(f"\nFRAME-LINT FAILED — {len(hard)} blocking flag(s) above.")

@@ -6806,3 +6806,57 @@ is describing a broken component, not bad copy.**
 pad the frame list, so 6 stills into a 4x2 grid made ffmpeg exit non-zero and
 took the whole render with it — after the render had already succeeded. Padded
 with the last still.
+
+## 2026-09-01 — the hook, the message that lied, and the video nobody was reading
+
+### A hook can only be tightened where the silence is
+
+`chatgpt-stickers` held its opening split for 2.16s. The hook LINE ends at
+1.50s — the remaining 0.66s was a pause in the read, spent on one frozen
+layout at the exact moment a viewer decides whether to stay. The anchor could
+not move: 2.16s is when the next word is spoken.
+
+So the hook was split on its own payoff word. "Those aren't downloaded" holds
+the split (1.06s), then a hard cut to the phone mockup as "stickers." lands —
+1.06s, inside `going-viral`'s 1.2-1.6s claim window — and the pause is now
+covered by a scale-up instead of a freeze. **Where a hook runs long because of
+a pause, the fix is a second visual inside it, not a shorter line.**
+
+### A lint message that asserted a rule the constitution had abolished
+
+The linter printed `HARD LIMIT 2.0s (user rule, blocking)` on the hook and
+`(blocking)` on clip reuse. Neither blocks. The 2026-08-22 reclassification had
+already fixed the VERDICT — it derives from `BLOCKING_RULES` — but the message
+text was typed by hand, so nothing kept the two in sync, and for nine days the
+linter told the reader a hard limit existed that the constitution explicitly
+does not have ("no hook length you must respect").
+
+Severity is now printed from the same lookup that sets the exit code, so every
+flag reads `[advice]` or `[BLOCKS]` and a message cannot contradict the
+verdict. Proved by temporarily adding G03 to `BLOCKING_RULES`: the same flag
+flips to `[BLOCKS]` and the exit code follows. `test_gates` now fails if any
+flag message contains the word "blocking" at all.
+
+**The rule: a check may not assert its own severity. Severity has one home.**
+
+### Four renders were "verified" against a 44-minute-old video
+
+`lint_frames` defaulted to `out/<slug>.mp4` — a file that exists only because
+the `news-reel` skill tells a human to `cp out/<slug>-final.mp4` onto it first.
+The copy is a ritual, and a skipped ritual is silent. After the first copy,
+every re-render updated `-final.mp4` and every lint kept reading the original.
+
+It produced a false conclusion that survived three fixes: a `[DUPLICATE]` on
+the tightened hook that the current cut did not have, and — worse — a
+"restoring the push did not clear the flag" that was read entirely off the old
+video. The device-push conclusion happened to be right for other reasons, but
+the evidence for it was worthless.
+
+The linter now prefers `-final.mp4` and **refuses any video older than the beat
+sheet it is being checked against**, because preferring the right file only
+fixes the copy: editing beats and linting without re-rendering reads the
+previous cut and calls it a result.
+
+**Evidence read from a stale artifact is worse than no evidence, because it
+looks like a result.** Every "I verified it" in this repo is only as good as
+the freshness of the thing that was read.

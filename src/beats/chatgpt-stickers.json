@@ -39,11 +39,23 @@
         ]
       },
       "credit": "ChatGPT screen recording",
-      "durationSec": 2.16,
+      "durationSec": 1.06,
       "assetId": "beat00",
       "claimId": "beat00",
       "covers": "Those aren't downloaded stickers.",
       "bottomFrom": 0.0
+    },
+    {
+      "type": "deviceframe",
+      "kind": "phone",
+      "src": "assets/chatgpt-stickers/clips/beat00-screencap-3.mp4",
+      "from": 1.06,
+      "bg": "black",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 1.1,
+      "assetId": "beat00",
+      "claimId": "beat00",
+      "covers": "stickers."
     },
     {
       "type": "footage",
@@ -237,7 +249,7 @@
         {
           "src": "sfx/Click.MP3",
           "at": 0.35,
-          "vol": 0.251
+          "vol": 0.13
         }
       ],
       "durationSec": 4.2
@@ -282,7 +294,7 @@
       "zoomDir": "none",
       "captionBottom": 980,
       "kinetic": {
-        "text": "COMMENT \u201cSTICKERS\u201d",
+        "text": "COMMENT “STICKERS”",
         "style": "caps",
         "at": 0.5
       },
@@ -1288,6 +1300,6 @@
     "sha256": "afdd9a91f3fee676c3b3d1e3b5eee751d969898018dbd36ac2196a5c50b5074e",
     "approvedAt": "2026-09-01T07:09:42+00:00",
     "words": 155,
-    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
   }
 }

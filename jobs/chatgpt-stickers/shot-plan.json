@@ -12,11 +12,10 @@
   "shots": [
     {
       "start_phrase": "Those aren't downloaded stickers.",
-      "line": "Those aren't downloaded stickers.",
+      "line": "Those aren't downloaded",
       "needs": [
         "aren",
-        "downloaded",
-        "stickers"
+        "downloaded"
       ],
       "tier": "official",
       "asset_id": "beat00",
@@ -42,6 +41,23 @@
             }
           ]
         },
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "stickers.",
+      "line": "stickers.",
+      "needs": [
+        "stickers"
+      ],
+      "tier": "official",
+      "asset_id": "beat00",
+      "scene": {
+        "type": "deviceframe",
+        "kind": "phone",
+        "src": "assets/chatgpt-stickers/clips/beat00-screencap-3.mp4",
+        "from": 1.06,
+        "bg": "black",
         "credit": "ChatGPT screen recording"
       }
     },

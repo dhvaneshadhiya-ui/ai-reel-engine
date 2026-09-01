@@ -490,6 +490,42 @@ assert (STATCARD_LABEL_MAX, STATCARD_VALUE_MAX, SPECSHEET_VALUE_MAX,
     "G57's budgets no longer follow from the box widths and the measured advance")
 _counted("G57's char budgets are derived from the components' box widths")
 
+# --- the LINTER may not assert its own severity either ------------------------
+# lint_frames printed "HARD LIMIT 2.0s (user rule, blocking)" on the hook and
+# "(blocking)" on clip reuse for nine days after the 2026-08-22 reclassification
+# demoted both to ADVICE. The verdict was right the whole time — it derives from
+# BLOCKING_RULES — but the message text was typed, so nothing kept the two in
+# sync and the linter told the reader a hard limit existed that the constitution
+# had already abolished ("no hook length you must respect"). Severity is now
+# printed from the same lookup that sets the exit code. Pin both halves.
+_LINT_TS = (ROOT / "tools/lint_frames.py").read_text()
+_flag_msgs = _LINT_TS.split("flags.append(")[1:]
+for _m in _flag_msgs:
+    _body = _m[:_m.find(")\n")]
+    assert "blocking" not in _body and "HARD LIMIT" not in _body, (
+        "a lint flag message asserts its own severity: "
+        f"{_body.strip()[:90]!r} — severity belongs to BLOCKING_RULES, and a "
+        "typed claim drifts the moment a check is reclassified")
+assert "'BLOCKS' if _is_hard(f) else 'advice'" in _LINT_TS, (
+    "lint_frames no longer prints each flag's DERIVED severity — without it a "
+    "reader cannot tell advice from a blocker until the exit code")
+_counted("lint flag severity is derived from BLOCKING_RULES, never typed")
+
+# --- and it must lint the CURRENT render --------------------------------------
+# lint_frames defaulted to out/<slug>.mp4, a file that only exists because the
+# news-reel skill tells a human to copy -final.mp4 onto it first. The copy is a
+# ritual and a skipped ritual is silent: four re-renders of chatgpt-stickers
+# were each "verified" against a 44-minute-old video, and a [DUPLICATE] was
+# chased that the current cut did not have. Evidence read from the previous cut
+# is worse than no evidence, because it looks like a result.
+assert 'final if final.exists() else plain' in _LINT_TS, (
+    "lint_frames no longer prefers out/<slug>-final.mp4 — it will read a stale "
+    "copy whenever the cp ritual is skipped")
+assert "is OLDER than src/beats/" in _LINT_TS, (
+    "lint_frames no longer refuses a video older than its beat sheet — editing "
+    "beats and linting without re-rendering reads the previous cut")
+_counted("the frame linter reads the current render, not a stale copy")
+
 
 def _statcard(label: str, value: str = "$190"):
     """Turn the fixture's building-class scene into a one-row stat card."""
