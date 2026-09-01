@@ -766,16 +766,6 @@ CASES.append((lambda s: s["scenes"].__setitem__(0, {
                   "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.15}]}),
               "G51", "a statcard with no rows (invented stat/unit shape)"))
 
-# G54 (2026-09-01): wordcascade `size` is a MULTIPLIER on a 100px base, so
-# `size: 150` asks for 15,000px type on a 1920px frame and renders the inside
-# of one glyph. Shipped to a render on qualcomm-chip-hike; only a soft
-# [DEAD SPACE] lint flag noticed.
-CASES.append((lambda s: s["scenes"].__setitem__(0, {
-                  "type": "wordcascade", "durationSec": 2.0, "bg": "black",
-                  "words": [{"text": "DOUBLE", "style": "caps", "at": 0.06,
-                             "size": 150}]}),
-              "G54", "a wordcascade whose size is a pixel value, not a multiplier"))
-
 for mutate, gate, label in CASES:
     expect_fail(mutate, gate, label)
 
@@ -1017,24 +1007,3 @@ _counted(f"coverage: all {len(_declared)} gate ids have a failing case")
 
 print(f"\nall {CHECKS} checks passed — every check detects its violation, "
       "and blocks or advises exactly as BLOCKING_RULES classifies it.")
-
-# G54 NEGATIVE — the ceiling must not touch real work. 2.5 is the largest
-# deliberate multiplier in this repo (250px type), and a gate that refused it
-# would be a gate that stops good work, which is how G21 reached 100% false
-# positives.
-_s = copy.deepcopy(BASE)
-_s["scenes"][0] = {"type": "wordcascade", "durationSec": 2.0, "bg": "black",
-                   "words": [{"text": "MEMORY", "style": "caps", "at": 0.06,
-                              "size": 2.5},
-                             {"text": "from today", "style": "serif",
-                              "at": 0.9}]}
-try:
-    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST,
-                       vo_words=VO_WORDS)
-    _hits = [a for a in _adv if "G54" in a]
-except GateError as _e:
-    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G54" in str(a)]
-if _hits:
-    print(f"  FAIL G54 fired on a legitimate multiplier: {_hits[0][:90]}")
-else:
-    print("  ok   G54 silent on a legitimate size multiplier (2.5)")

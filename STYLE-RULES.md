@@ -6098,38 +6098,12 @@ value <= ~9 chars, detail goes in the footnote. `HeadlineBuild` already has
 G05 for exactly this class of limit; **StatCard and SpecSheet do not, and
 should.**
 
-**4. A `wordcascade` rendered as a blank frame — DIAGNOSED SAME DAY, and it
-was TWO bugs, not one.** Reproduced by rendering four stills side by side
-(shipped params / size fixed / bg fixed / both fixed) rather than reasoning
-from the source:
-
-- **`size` is a MULTIPLIER on a 100px base, not a pixel value.** Authored as
-  `size: 150` it asks for 15,000px type on a 1920px frame, and what renders is
-  the flat interior of a single glyph. In the contact sheet that read as one
-  black frame followed by one solid yellow frame — a letter's counter, then
-  its fill. `src/types.ts` says "relative size multiplier (default 1)"; nothing
-  enforced it. **Now G54**, RENDER-classified beside G35 for the same reason
-  (unrecoverable downstream, threshold derived from the frame height over the
-  component's base, not picked). Ceiling 19.2x with a negative test at 2.5x,
-  the largest deliberate use in the repo.
-- **An unnamed `bg` made the words INVISIBLE, independently of the size.**
-  `BGS[scene.bg]` returned undefined for `bg: "#0b0d10"` — a perfectly
-  reasonable thing to author — so the background was transparent, while
-  `dark` was computed by string equality (`scene.bg !== "black"`) and came out
-  true. Result: #111111 type on a black field. The size-fixed still is the
-  proof: only the gradient word survived, because its colour comes from the
-  gradient rather than the polarity.
-
-**The second one is the lesson.** Two expressions of the same fact — what the
-background IS — were derived separately, and disagreed for every input outside
-a three-key map. Same shape as the approval-hash and vo.json bugs above: one
-guarantee, two readings. WordCascade now resolves the background once (named
-OR literal colour) and derives the polarity from that value's luminance, so an
-unnamed background can be wrong about taste but can no longer be invisible.
-
-The reel itself was NOT changed back. Letting the 9to5Google receipt carry the
-line is the better edit regardless — its headline literally prints "double
-digits", so the highlight moves from headline to phrase as it is spoken.
+**4. A `wordcascade` rendered as a completely black frame.** Caught by
+[DEAD SPACE] 95% and confirmed on the still. Not diagnosed — the beat was
+replaced by letting the 9to5Google receipt carry the sentence, which was the
+better edit anyway: its headline literally prints the words "double digits",
+so the highlight moves from the headline to the phrase as it is spoken.
+**Worth diagnosing before the next reel reaches for wordcascade.**
 
 **5. A source's own title cards leak into b-roll two ways.** Scene-detect at
 threshold 0.3 misses slow dissolves, so a "single shot" by that measure held

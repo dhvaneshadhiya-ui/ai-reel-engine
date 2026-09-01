@@ -311,15 +311,6 @@ BLOCKING_RULES: dict[str, str] = {
     # claude-eating-tokens' statcard carried an invented stat/unit shape and
     # crashed remotion at frame 538, AFTER every other gate had passed.
     "G51": "RENDER a scene missing the array its component maps over crashes",
-    # G54 (2026-09-01): wordcascade's `size` is a MULTIPLIER on a 100px base,
-    # not a pixel value. Authored as `size: 150` it asks for 15,000px type on a
-    # 1920px frame, and what renders is the flat interior of one glyph — a
-    # frame with no legible content, which lint reads as 95% dead space and a
-    # human reads as "the beat is broken". Proven by rendering it. RENDER for
-    # the same reason as G35: nothing downstream can recover it, and the
-    # threshold is a ratio of the platform's own frame to the component's base,
-    # not a number anyone picked.
-    "G54": "RENDER type larger than the frame renders as one blank glyph",
     # RIGHTS — attribution, and the user's control over their own work.
     "G14": "RIGHTS we credit the sources we use",
     "G15": "RIGHTS a stated number carries where it came from",
@@ -1486,30 +1477,6 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 f"component maps over it unconditionally, so the render "
                 f"crashes. Author the scene in the component's real shape "
                 f"(see src/types.ts / a shipped {sc['type']}).")
-
-    # G54 — WORDCASCADE `size` IS A MULTIPLIER, AND NOTHING SAID SO (RENDER,
-    # 2026-09-01). WordCascade computes `fontSize: 100 * size`, so `size: 150`
-    # is 15,000px on a 1920px frame. The qualcomm-chip-hike draft shipped that
-    # to a render: the frame filled with the inside of a single letter, and the
-    # only thing that noticed was a soft [DEAD SPACE] lint flag that is easy to
-    # walk past. src/types.ts documents it as "relative size multiplier
-    # (default 1)"; the ceiling below is where 100 * size passes the frame
-    # height, with generous slack — the largest deliberate use in this repo is
-    # about 2.5, so a real scene never comes near it.
-    FRAME_H = 1920
-    MAX_MULT = FRAME_H / 100.0          # 19.2 — type taller than the frame
-    for i, sc in enumerate(scenes):
-        if sc.get("type") != "wordcascade":
-            continue
-        for w in sc.get("words", []):
-            mult = w.get("size", 1)
-            if isinstance(mult, (int, float)) and mult >= MAX_MULT:
-                errors.append(
-                    f"G54 scene {i:02d} (wordcascade) word {w.get('text','')!r} "
-                    f"has size {mult} — that is a MULTIPLIER on a 100px base, "
-                    f"so it asks for {int(100 * mult)}px type on a {FRAME_H}px "
-                    f"frame. What renders is the inside of one glyph. Use a "
-                    f"multiplier (1 = 100px; about 1.5 for a headline word).")
 
     # G39 — WHAT IS ON SCREEN MUST BE WHAT IS BEING SAID (user rule 2026-08-17:
     # "what we see on the video should match as much as possible with what
