@@ -124,14 +124,3 @@ sticker size in a chat.
   photo, and move toward 3D or Clay. Heavily stylised options are supposed to
   drift.
 - **No Stickers tile.** Update the app. It rolled out 24 August 2026.
-
----
-
-## Sources
-
-- OpenAI's announcement, 24 August 2026 — https://x.com/ChatGPT/status/2091996384954069032
-- 9to5Mac hands-on — https://9to5mac.com/2026/08/24/chatgpt-now-lets-users-create-custom-imessage-and-whatsapp-stickers/
-- WhatsApp's own developer documentation, for the 3-minimum / 30-maximum —
-  https://github.com/WhatsApp/stickers/blob/main/Android/README.md
-- The nineteen-style list and the exact settings: counted and read off our own
-  screen recordings, 2026-09-01.
