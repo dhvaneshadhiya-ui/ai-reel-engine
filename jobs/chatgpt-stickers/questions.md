@@ -1,24 +1,22 @@
 # Open questions — chatgpt-stickers
 
-## 1. The CTA promises something that does not exist yet (blocking for publish, not for approval)
+## 1. The CTA deliverable — RESOLVED 2026-09-01
 
 The script ends: *"Comment STICKERS and I'll send you the exact setup I used."*
 
-Your original draft promised "my complete guide and 24 copy-paste prompts."
-I deliberately did not promise 24 prompts, because there aren't 24 prompts —
-there is one template with three dropdowns, and inventing a number for a
-giveaway is the same failure as inventing one for a spec.
+That promise is now backed. `giveaway.md` holds the guide, and it is published
+as a shareable page for DM delivery:
+https://claude.ai/code/artifact/78ae7b9a-e87c-4512-82fa-1107419ea982
 
-What actually exists to send is the setup from your own recording: the style
-used (Retro / 3D), the photo choice, the emoji set, and the long prompt
-visible in Video 2 ("...grid, each showing a different expression, pose, or
-reaction. Separate the stickers with wide, fully transparent gaps. No
-background, shadows, or overlapping elements.").
+It contains the seven steps, the exact template settings read off the screen
+(style 3D, one portrait, emoji love-you / puzzle / rose / collision), the
+verifiable portion of the generated prompt, a reusable prompt clearly marked
+as ours rather than a transcript, all nineteen styles with a note on which
+three to start with, the WhatsApp rules, and four real failure modes.
 
-**Decide before publish:** do we write that up as the deliverable in
-`giveaway.md`, or do you want the CTA changed to something already in hand?
-A comment-gate that misdelivers is the one CTA failure the framework names
-outright.
+Deliberately NOT promised: the "24 copy-paste prompts" from the first draft.
+There is one template with three dropdowns. Inventing a number for a giveaway
+is the same failure as inventing one for a spec.
 
 ## 2. Which recording carries the style scroll
 
