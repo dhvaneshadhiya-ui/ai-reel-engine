@@ -6264,3 +6264,64 @@ and `chart` in `test_gates.py`'s baseline also carried no rows and no items —
 three cards drawing a title over an empty box, inside the sheet whose job is to
 pass every gate. Nothing in the suite could have caught them, because until
 today nothing checked that an MG card had anything in it.
+
+## 2026-09-01 — the sweep: G56, and G35 was never about `footage`
+
+Third and last pass on MG scene shape. G54 closed `wordcascade` after it cost a
+beat, G55 closed the three cards, and this closes the remaining thirty-odd
+scene types **before** they cost anything — which is the first time in this
+repo a defect class has been shut ahead of the reel that would have found it.
+
+**G35 was mis-scoped from the day it was written, and the scope was the bug.**
+It reads "a still in `footage` or `floatcard` renders black", so it grew a
+scene-type list. But the RULE has nothing to do with those two types: it is
+that **a slot which does not branch on the file extension cannot take the other
+kind of file**. Scanning every component for `isVideo(...)` found the real
+count — **21 one-sided media slots**, of which G35 was watching two and G55 a
+third (specsheet `bgSrc`, found the hard way six weeks later and moved into G35
+here, because one rule belongs in one place).
+
+The mirror was never checked at all. An `<Img>` handed an mp4 does not crash —
+it draws **nothing**, quietly, which is the same failure as every other entry
+in this ledger. Six still-only slots plus three inside lists now refuse a video.
+
+Safe slots are deliberately absent from both tables: `brandhook.mediaSrc`,
+`comparesplit.src`, `deviceframe.src`, `endquestion.src`, `hcompare.bottomSrc`,
+`split.topSrc/bottomSrc`, `xpost.bgSrc/media` all do
+`isVideo(src) ? <OffthreadVideo/> : <Img/>` and handle either kind.
+
+**G56 — the list is absent, or empty.** Thirteen scene types do
+`scene.<field>.map(...)` with no guard, so an absent field throws and the
+render dies; an empty one draws the chrome around nothing. Plus three smaller
+classes read off the same components: a fixed slot count that silently drops
+the rest (`toolstack` and `stackwindows` both render `slice(0, 5)`, the same
+defect as chart's `slice(0, 8)`), an index that selects nothing (`designreveal.
+selectIndex`, `desktopmockup.selected`), and a `typecard` with no
+`kinetic.text` — which does not crash, because TypeCard reads
+`scene.kinetic?.text ?? ""`, it just lays out the empty string and renders an
+empty field. That is G54's blank frame with different spelling.
+
+**Where the union and the component disagree, the COMPONENT wins.** `promptcard`
+marks `lines` optional and guards it (`scene.lines ? ... : ...`), so it is not
+in the table. `typecard` marks `kinetic` required and the component defaults it,
+so the gate has to be the thing that makes the union true of a JSON beat sheet.
+The table is what renders, not what is declared.
+
+**The tables are a claim about source code, so the suite re-derives them.**
+Fourteen of the scene types named in the media tables appear in NO shipped reel
+— nothing on this machine would have noticed if a component were later taught
+to branch, and the gate would have gone on refusing a file the component had
+learned to handle. `test_gates.py` now reads `Reel.tsx`'s dispatch, finds each
+component, and fails if a slot the table calls one-sided contains
+`isVideo(<field>)`, or if a branching slot is listed as one-sided. Verified by
+temporarily teaching `ReceiptScene` to branch: the suite failed, as it should.
+This is the `wiring_audit` idea applied to a lookup table — a table that
+describes other code has to be checked against that code, or it is a comment.
+
+**The corpus says the classification is right, not merely quiet.** Ten table
+rows are exercised by 545 real scenes across every shipped reel, and none
+fires. The other eleven rest on the source-drift check above, which is stated
+here rather than implied.
+
+**Nothing new blocks a shipped reel.** The only blocking hit anywhere in the
+library is still iphone-18-pro's `pct` scale, disclosed in the entry above.
