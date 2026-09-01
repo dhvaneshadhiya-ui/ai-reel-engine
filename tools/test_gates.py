@@ -447,6 +447,68 @@ assert _BUDGET["headline"] == int((1080 * 0.88 - 140) / (100 * 0.655)), (
 _counted("G05's char budget is derived from theme/fit.ts, not typed")
 
 
+# --- G54's budget is DERIVED TOO, from the components' own boxes -------------
+# Same failure mode as G05's: the numbers belong to StatCard.tsx and
+# SpecSheet.tsx, and a column width changed there without this file noticing
+# would leave the gate passing labels that overflow. Pin the boxes.
+from reel_gates import (  # noqa: E402
+    STATCARD_LABEL_MAX, STATCARD_VALUE_MAX, SPECSHEET_VALUE_MAX,
+    _specsheet_label_max,
+)
+_STATCARD_TS = (ROOT / "src/components/StatCard.tsx").read_text()
+_SPEC_TS = (ROOT / "src/components/SpecSheet.tsx").read_text()
+assert "width: 220," in _STATCARD_TS and "width: 130," in _STATCARD_TS, (
+    "StatCard.tsx column widths changed — re-derive G54 in reel_gates.py")
+assert "width: 300," in _SPEC_TS, (
+    "SpecSheet.tsx value column changed — re-derive G54 in reel_gates.py")
+assert (STATCARD_LABEL_MAX, STATCARD_VALUE_MAX, SPECSHEET_VALUE_MAX,
+        _specsheet_label_max(1), _specsheet_label_max(2)) == (15, 7, 12, 23, 10), (
+    "G54's budgets no longer follow from the box widths and the measured advance")
+_counted("G54's char budgets are derived from the components' box widths")
+
+
+def _statcard(label: str, value: str = "$190"):
+    """Turn the fixture's building-class scene into a one-row stat card."""
+    def mutate(sheet: dict) -> None:
+        sheet["scenes"][4].update(
+            type="statcard", title="Chip cost", footnote="src",
+            rows=[{"label": label, "value": value, "pct": 0.6}])
+    return mutate
+
+
+def _sheet(mutate) -> dict:
+    s = copy.deepcopy(BASE)
+    mutate(s)
+    return s
+
+
+# The reel that bought this gate: a 43-char label under a 15-char column,
+# which rendered UNDER the bar (qualcomm-chip-hike, 2026-09-01).
+expect_fail(_statcard("Snapdragon 8 Elite Gen 5 flagship chip cost"), "G54",
+            "a 43-char statcard row label in a 220px nowrap column")
+expect_fail(_statcard("Chip cost", "-14.5 LUFS"), "G54",
+            "a 10-char statcard value in a 7-char monospaced column")
+# The quiet neighbour: the same card, written to the column it lives in.
+expect_gate(_sheet(_statcard("Memory (DRAM)")), "G54", False,
+            "G54 silent — a 13-char label and a 4-char value both fit")
+
+
+def _spec(label: str, values: list[str]):
+    def mutate(sheet: dict) -> None:
+        sheet["scenes"][4].update(
+            rows=[{"label": label, "values": values}],
+            columns=["2024", "2025"][:len(values)])
+    return mutate
+
+
+expect_fail(_spec("Flagship phone price", ["$1,299", "$1,499"]), "G54",
+            "a 20-char specsheet label beside TWO 300px value columns")
+# Quiet neighbour: the same label with one value column, where 548px is left
+# for it. The budget has to move with the column count or it is a typed number.
+expect_gate(_sheet(_spec("Flagship phone price", ["$1,299"])), "G54", False,
+            "G54 silent — the same label with one value column has 23 chars")
+
+
 # --- G45 is a FLOOR, not a lane ---------------------------------------------
 # Raising a caption to clear a face is composition and stays the author's call;
 # the split hook of iphone-fold-ultra sets 1000 for exactly that reason. A gate

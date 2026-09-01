@@ -149,6 +149,13 @@ audio duration.
 | `floatcard` | `src, from?, bg?(black/cream/gradient), kinetic?, credit?` | 16:9 screen recording in a floating card |
 | `endquestion` | `src, question` | closing ad-freeze + YES/NO |
 
+**Row text has a column budget (G54).** `statcard` label **15 chars** (a fixed
+220px column with `whiteSpace: nowrap` — over it the label runs UNDER the bar),
+value **7** (130px monospaced). `specsheet` label **23** with one value column,
+**10** with two (the label takes what 300px-per-value leaves), value **12**.
+Derived from the components' own boxes and a measured advance; `reel_gates.py`
+carries the derivation. Detail goes in the `footnote`.
+
 **`kinetic`** (`{text, style, at?, y?}`): on-scene type. `style`:
 `caps`(condensed black), `serif`(Fraunces italic), `chip`. Prefer **serif** for
 titles (premium); caps for rare punch.

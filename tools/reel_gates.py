@@ -246,6 +246,46 @@ LINE_MAX_CHARS = {
     k: int(_BOX_W / (v * _ADVANCE)) for k, v in _SIZE.items()
 }
 
+# G54's budgets: StatCard / SpecSheet rows. Same class as G05 — a character
+# count that is a fact about OUR component, derived from its own box widths.
+#
+# WHY (2026-09-01, qualcomm-chip-hike): a 45-character statcard row label
+# overflowed its column and rendered UNDERNEATH the bar, so the pink bar
+# appeared to be drawn through the words. Read off a rendered still
+# (out/qualcomm-chip-hike-lint/17-statcard-mid.png) — invisible in every log,
+# and it cost a full re-render. StatCard.tsx has always fixed the label column
+# at 220px with `whiteSpace: "nowrap"` and the value column at 130px; nothing
+# in reel_gates.py, PIPELINE.md or the docs said so.
+#
+# ADVANCES ARE MEASURED, NOT TYPED (the G05 lesson). Mean glyph advance as a
+# fraction of em, from canvas measureText in headless chromium — the same
+# engine Remotion renders in — over ten real row labels and eight real values:
+#
+#   SF Pro Display 600/800 mixed case   0.430-0.602, mean 0.516
+#   SF Mono / Menlo (statcard value)    0.602 exactly — it is monospaced
+#
+# Yielding 15 / 7 / 12 characters below. Re-measure in the same commit if a
+# component's column width, font size or face changes; the numbers belong to
+# the typeface, not to this file. (STYLE-RULES 2026-09-01 eyeballed the value
+# budget at ~9 from the still; the mono advance says 7. Trust the measurement.)
+_SANS_ADVANCE = 0.516
+_MONO_ADVANCE = 0.602
+STATCARD_LABEL_MAX = int(220 / (28 * _SANS_ADVANCE))    # 15
+STATCARD_VALUE_MAX = int(130 / (28 * _MONO_ADVANCE))    # 7
+SPECSHEET_VALUE_MAX = int(300 / (46 * _SANS_ADVANCE))   # 12
+# SpecSheet.tsx: 1080 frame, 90px page padding each side, 26px row padding each
+# side; every value column is a fixed 300px and the label takes what is left.
+_SPEC_ROW_W, _SPEC_VALUE_COL = 1080 - 2 * 90 - 2 * 26, 300
+
+
+def _specsheet_label_max(n_values: int) -> int:
+    """Characters the label column holds once `n_values` 300px columns are cut
+    out of the row. One value column leaves 548px (23 chars); two leave 248px
+    (10), which is why a spec sheet that grows a column starts wrapping labels
+    that were fine the day before."""
+    box = _SPEC_ROW_W - _SPEC_VALUE_COL * max(1, n_values)
+    return max(0, int(box / (46 * _SANS_ADVANCE)))
+
 AZ_ASPECT_MAX = 2.5    # G36. NOT a fresh measurement: it is the SAME wide-
                        # artifact line RULES.md already sets for `receipt`
                        # ("wider than ~2.5:1 goes in a floatcard"). Every
@@ -519,6 +559,67 @@ def check_beats(beats: dict, vo_end: float | None = None,
                         f"{part!r} — it renders, because HeadlineBuild shrinks "
                         f"to fit, but it lands smaller than the scale intends. "
                         f"Shorter copy reads better than smaller type.")
+
+    # G54 — a row label or value longer than its fixed column. ADVICE.
+    #
+    # ADVISORY, and it fails the blocking test on both counts (RULES.md
+    # section 0): the renderer draws a frame — nothing is black, nothing
+    # crashes — and the threshold is a fact about our own component's box
+    # widths, not about Reels or Shorts. It is the fix-the-copy lint G05 is.
+    #
+    # The two components fail differently and the message says which:
+    # StatCard's label column is `nowrap`, so it CLIPS OUT of the box and runs
+    # under the bar; SpecSheet's label is a flex child with no nowrap, so it
+    # WRAPS and grows the row instead. Both are the same defect at the source
+    # — copy written without knowing the column it has to live in.
+    for i, sc in enumerate(scenes):
+        rows = sc.get("rows")
+        if not isinstance(rows, list):
+            continue
+        if sc["type"] == "statcard":
+            for j, r in enumerate(rows):
+                lab = str((r or {}).get("label") or "")
+                if len(lab) > STATCARD_LABEL_MAX:
+                    errors.append(
+                        f"G54 scene {i:02d} statcard row {j} label is "
+                        f"{len(lab)} chars, and the 220px column holds "
+                        f"{STATCARD_LABEL_MAX}: {lab!r} — the column is "
+                        f"`whiteSpace: nowrap`, so the overflow does not wrap, "
+                        f"it runs UNDER the bar and the bar reads as drawn "
+                        f"through the words. Shorten the label; the detail "
+                        f"belongs in the footnote.")
+                val = str((r or {}).get("value") or "")
+                if len(val) > STATCARD_VALUE_MAX:
+                    errors.append(
+                        f"G54 scene {i:02d} statcard row {j} value is "
+                        f"{len(val)} chars, and the 130px monospaced column "
+                        f"holds {STATCARD_VALUE_MAX}: {val!r} — it overflows "
+                        f"LEFT of its right-aligned box, into the bar.")
+        elif sc["type"] == "specsheet":
+            n_values = max(
+                [len(sc.get("columns") or [])]
+                + [len((r or {}).get("values")
+                       or ([(r or {}).get("value")] if (r or {}).get("value")
+                           else []))
+                   for r in rows] or [1])
+            lim = _specsheet_label_max(n_values)
+            for j, r in enumerate(rows):
+                lab = str((r or {}).get("label") or "")
+                if len(lab) > lim:
+                    errors.append(
+                        f"G54 scene {i:02d} specsheet row {j} label is "
+                        f"{len(lab)} chars against {lim} for a row with "
+                        f"{max(1, n_values)} value column(s) — it wraps to a "
+                        f"second line, growing the row and pushing the card "
+                        f"toward the frame edge: {lab!r}")
+                for v in ((r or {}).get("values")
+                          or ([(r or {}).get("value")]
+                              if (r or {}).get("value") else [])):
+                    if len(str(v)) > SPECSHEET_VALUE_MAX:
+                        errors.append(
+                            f"G54 scene {i:02d} specsheet row {j} value "
+                            f"{str(v)!r} is {len(str(v))} chars, and its 300px "
+                            f"column holds {SPECSHEET_VALUE_MAX}.")
 
     # G06 — facecam share of runtime
     avatar_scenes = [s for s in scenes
