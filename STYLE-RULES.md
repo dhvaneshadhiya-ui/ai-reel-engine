@@ -6575,3 +6575,48 @@ Re-running `compile_shot_plan` to test the new receipt advisory wiped the
 manual G18 timing fixes, the split hook and the merged facecam scenes from
 apple-surprise-and-shine. The shot plan is the source of truth; anything fixed
 only on the sheet is temporary.
+
+### G18's boundary was wrong, not the reel (2026-09-01)
+
+apple-surprise-and-shine failed G18 twice. Fixed it by hand on the sheet, then
+a recompile threw the fix away — which is how the real bug surfaced.
+
+**Measured instead of guessed.** Scene 7 ends at a cumulative
+`44.260000000000005`; the next word starts at exactly `44.26`. G18 selects
+`start <= a < end`, so `44.26 < 44.260000000000005` is **True** and the NEXT
+scene's opening word was charged to the outgoing card — whose own end then
+looked 0.28s short.
+
+Scene ends are a **cumulative sum of rounded durations**, and phrase-anchored
+compilation puts every cut on a word onset **by design**. So this was a
+systemic false positive firing on correct reels, not a fault in any sheet.
+
+**Fix:** one frame of slack on the upper bound (`a < end - 0.04`), symmetric
+with the +0.04 already allowed on `claim_end`. A word beginning inside a
+card's final frame belongs to the next beat.
+
+**The test almost wasn't a test.** The first fixture summed to exactly 1.1 with
+no drift and passed with the bug restored — a check that cannot fail. No
+two-term sum of round durations reproduces it either (real sheets need eight
+3-decimal ones). So the drift is now set explicitly with `+ 1e-12`, which IS
+the condition, and the case was confirmed to FAIL when the old bound is put
+back.
+
+**Also reverted:** a change to `compile_shot_plan` made on the first, wrong
+hypothesis (that whisper word timings overlap). They do not — "Mac." ends at
+44.04, "Meaning," starts at 44.26. It fired zero times and was deleted.
+
+### And the reel's own fixes moved to the shot plan
+
+The split hook and the three-into-one facecam merge now live in
+`shot-plan.json`, not the sheet, so a recompile keeps them. The plan is the
+source of truth; anything fixed only on the sheet is temporary. `compile`
+refusing to overwrite without `--force` is what caught this — a good guard.
+
+Rendered: 13 scenes, 70.5s, -14.53 LUFS, gates pass, frame-lint clean.
+Receipt scenes now measurably move (mean pixel delta 8.78 and 19.12 between
+their first and last seconds, previously a 4% nudge).
+
+**Left as advice:** the split hook runs 2.08s against the 2.0s guideline. G03
+is advisory by the constitution, and 0.08s did not justify another compile and
+render cycle.

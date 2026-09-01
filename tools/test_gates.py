@@ -541,6 +541,35 @@ def _typecard(kinetic: dict | None, dur: float = 3.0):
     return mutate
 
 
+# G18 BOUNDARY: a cut that lands exactly on a word onset is CORRECT, not a
+# violation. Scene ends are a cumulative sum of rounded durations, so the sum
+# lands a hair above the onset and the next scene's first word was being
+# charged to the outgoing card. Phrase-anchored compilation puts every cut on
+# a word onset by design, so this fired on correct reels.
+def _onset_cut() -> dict:
+    """A specsheet whose cumulative end lands exactly on the next word's onset.
+
+    VO_WORDS has 'and' starting at 1.1. Durations are rounded floats summed in
+    order, so the boundary computes to 1.1000000000000001 — and `1.1 < that` is
+    True, which charged 'and' to the outgoing card and made it look short.
+    """
+    sh = _sheet(lambda s: None)
+    sh["scenes"] = sh["scenes"][:2]
+    sh["scenes"][0] = {**sh["scenes"][0], "durationSec": 0.7}
+    # The drift is set EXPLICITLY rather than accumulated. Real sheets reach it
+    # by summing eight 3-decimal durations; no two-term sum of round numbers
+    # reproduces it, and a fixture that quietly failed to drift would be a test
+    # that cannot fail — which is worse than no test. 1e-12 IS the condition:
+    # a scene end a hair above the next word's onset.
+    sh["scenes"][1] = {**sh["scenes"][1], "type": "specsheet",
+                       "durationSec": 0.4 + 1e-12, "rows": [{"k": "a", "v": "b"}],
+                       "source": "Example"}
+    return sh
+
+
+expect_pass(_onset_cut(),
+            "a cut landing exactly on a word onset does not trip G18")
+
 expect_fail(_typecard({"text": "ACROSS THE BOARD", "style": "caps", "at": 41.2}),
             "G58", "a typecard whose only line lands after the scene ends")
 expect_fail(_typecard({"text": "PRICES UP\nACROSS THE BOARD", "style": "caps",
