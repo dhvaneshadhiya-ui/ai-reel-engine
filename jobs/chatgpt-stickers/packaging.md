@@ -83,6 +83,9 @@ Notes for posting
 - **Do not promise "24 copy-paste prompts"** anywhere. There is one template
   with three dropdowns; the number was dropped from the script for the same
   reason.
+- **AutoDM copy and keyword config live in `autodm.md`** — keyword STICKERS,
+  public reply without a link, and the mobile-only / three-minimum caveats
+  that must appear in the DM itself, not just the guide.
 - **The nineteen is a correction, not a flex.** If a commenter says their app
   shows a different count, that is worth checking rather than defending —
   the count was read off one build on one day.
