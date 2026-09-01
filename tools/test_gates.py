@@ -67,7 +67,13 @@ def good() -> dict:
          "assetId": "clip-b", "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.12}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/c.mp4",
          "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.12}]},
+        # G20/G55: `rows` and `items` are not optional either — this fixture
+        # catalogued THREE empty MG scenes (specsheet, chart, wordcascade),
+        # each drawing its title over an empty box (2026-09-01).
         {"type": "specsheet", "footnote": "src", "durationSec": 3.0,
+         "title": "What changed", "rows": [
+             {"label": "Chip", "value": "8 Elite"},
+             {"label": "Memory", "value": "+58%", "accent": True}],
          "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/d.mp4",
          "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.12}]},
@@ -76,6 +82,9 @@ def good() -> dict:
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/f.mp4",
          "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.16}]},
         {"type": "chart", "source": "src", "durationSec": 3.0,
+         "title": "Cost per unit", "unit": "%", "items": [
+             {"label": "Last year", "value": 12},
+             {"label": "Now", "value": 58, "highlight": True}],
          "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/g.mp4"},
         # G54: `words` is not optional — an empty stack draws nothing for
@@ -1020,6 +1029,78 @@ _wc_case(lambda sc: sc["words"][2].update(at=45),
          "G54", "`at` given in FRAMES lands past the end of the beat")
 _wc_case(lambda sc: sc["words"][0].update(size=3.0),
          "G54a", "size outside the 0.6-1.6 corpus band is only a note")
+
+
+# --- G20 widened + G55: the other three MG cards ---------------------------
+# Same debt as G54, written down 2026-08-17 and left as prose. Each case is a
+# failure mode read off the component, not a shape invented for the suite.
+def _scene(sheet: dict, ty: str) -> dict:
+    return next(s for s in sheet["scenes"] if s["type"] == ty)
+
+
+def _mg_case(ty, change, gate, label):
+    expect_fail(lambda sheet: change(_scene(sheet, ty)), gate, label)
+
+
+# chart
+_mg_case("chart", lambda sc: sc.pop("items"),
+         "G55", "chart given `rows` shape: no `items` at all — .slice throws")
+_mg_case("chart", lambda sc: sc.pop("title"),
+         "G55", "chart with no title — ChartScene reads title.length, throws")
+_mg_case("chart", lambda sc: sc["items"][0].update(value="58%"),
+         "G55", "chart item value as a STRING — bar width goes NaN")
+_mg_case("chart", lambda sc: sc.update(
+             items=[{"label": f"r{n}", "value": n} for n in range(9)],
+             durationSec=6.0),
+         "G55", "9 chart items — items.slice(0, 8) drops the ninth silently")
+_mg_case("chart", lambda sc: sc.update(items=[]),
+         "G20", "chart with an empty items list draws an empty box")
+_mg_case("chart", lambda sc: sc.update(
+             items=[{"label": f"r{n}", "value": n} for n in range(8)]),
+         "G20", "8 chart bars cannot finish filling inside a 3.0s beat")
+
+# statcard — the shipped defect: iphone-18-pro wrote pct on a 0-100 scale, so
+# 66 and 100 both clamped to a full bar and drew identical.
+def _add_statcard(sheet, rows, dur=3.0):
+    sheet["scenes"].insert(9, {"type": "statcard", "durationSec": dur,
+                               "title": "Cost", "footnote": "src",
+                               "rows": rows})
+    # keep the sheet's total runtime where the other gates expect it
+    sheet["scenes"][10]["durationSec"] = round(
+        sheet["scenes"][10]["durationSec"] - dur, 2)
+
+
+expect_fail(lambda sheet: _add_statcard(sheet, [
+    {"label": "iPhone 17 Pro", "value": "7-element", "pct": 66},
+    {"label": "iPhone 18 Pro", "value": "about +50%", "pct": 100}]),
+    "G55", "statcard pct on a 0-100 scale — both rows clamp to a full bar")
+expect_fail(lambda sheet: _add_statcard(sheet, [
+    {"label": "DRAM", "value": "+58%", "pct": None}]),
+    "G55", "statcard row with no pct draws no bar")
+expect_fail(lambda sheet: _add_statcard(sheet, [], dur=3.0),
+    "G20", "statcard with no rows draws an empty card")
+expect_fail(lambda sheet: _add_statcard(sheet, [
+    {"label": "a", "value": "1", "pct": 0.5}], dur=0.6),
+    "G20", "statcard row cannot enter and settle inside a 0.6s beat")
+expect_fail(lambda sheet: _add_statcard(sheet, [
+    {"label": "a", "value": "1", "pct": 0.5}], dur=3.0) or
+    _scene(sheet, "statcard").update(bg="#0b0d10"),
+    "G55a", "statcard bg as a hex — silently renders cream, only a note")
+
+# specsheet
+_mg_case("specsheet", lambda sc: sc.pop("rows"),
+         "G55", "specsheet with no `rows` — .map throws")
+_mg_case("specsheet", lambda sc: sc.update(bgSrc="assets/x/hero.png"),
+         "G55", "specsheet bgSrc is a STILL — OffthreadVideo kills the render")
+_mg_case("specsheet", lambda sc: sc["rows"][0].pop("value"),
+         "G55a", "specsheet row with no value draws an empty column")
+
+# G20a — the readability half, split off so it cannot block a re-render of the
+# five shipped scenes whose rows land with 0.16-0.38s of dwell.
+expect_fail(lambda sheet: _add_statcard(sheet, [
+    {"label": "a", "value": "1", "pct": 0.5},
+    {"label": "b", "value": "2", "pct": 0.9}], dur=1.4),
+    "G20a", "statcard rows land, but with under ROW_DWELL left to read")
 
 # The suite printed "every gate fires on its violation" while G13 and G16 had
 # no failing case at all (found 2026-08-17). Uniqueness of ids was asserted;
