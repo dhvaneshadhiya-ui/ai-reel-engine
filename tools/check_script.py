@@ -644,22 +644,36 @@ def check(text: str, shape: str | None = None) -> list[str]:
     #      em-dash, colon and semicolon outright (`unencodableText`), and 8
     #      of 13 beats failed on exactly this before `speakable()` existed.
     #
-    # Measured across the corpus when the question was asked: grok-bot and
-    # apple-pay-india carry one em-dash in ~350 words, while
+    # Measured across the corpus when the question was first asked: grok-bot
+    # and apple-pay-india carry one em-dash in ~350 words, while
     # claude-eating-tokens carried SIX in 159 — one every 26 words. Both ends
-    # were approved, so this is advice with a number attached, not a rule.
-    # The threshold is 1-per-60: past that they are load-bearing, and the
-    # writer is reaching for the mark instead of choosing the pause.
+    # had been approved, so the first version of this check was advice with a
+    # rate attached: 1-per-60.
+    #
+    # THE RATE WAS THE WRONG SHAPE (2026-09-01). The user asked the SAME
+    # question a second time — "if you are humanizing our script, why are
+    # there em dashes in our script?" — about a draft carrying TWO in 209
+    # words. That is one every 104, comfortably inside 1-per-60, so this
+    # check sat silent on exactly the thing it was built to catch. A
+    # threshold that passes the case that prompts the complaint is not
+    # calibrated, it is decorative.
+    #
+    # So the count is now ZERO, and the reasoning is unchanged and does not
+    # depend on taste: a listener cannot hear a dash, and the local TTS
+    # rejects it outright. There is no rate at which an inaudible mark earns
+    # its place in a script nobody reads. Still ADVICE per RULES.md §0 —
+    # prose is craft, and it fails none of the four blocking tests.
     dashes = flat.count("\u2014") + flat.count("\u2013")
-    if dashes and len(flat.split()) / dashes < 60:
+    if dashes:
         notes.append(
-            f"PAGE PUNCTUATION: {dashes} em/en-dashes in {len(flat.split())} "
-            f"words — one every {len(flat.split()) // dashes}. A listener "
-            "cannot hear a dash; it becomes whatever pause you would have "
-            "written anyway, and it breaks the local TTS outright. Write the "
-            "comma or the full stop you mean. (The humanizer skill's job is "
-            "the half of this a checker cannot measure — it is a MANUAL pass "
-            "and nothing runs it for you.)")
+            f"PAGE PUNCTUATION: {dashes} em/en-dash(es) in the narration. A "
+            "listener cannot hear one; it becomes whatever pause you would "
+            "have written anyway, and it breaks the local TTS outright. Write "
+            "the comma or the full stop you mean. Target is ZERO, not a low "
+            "rate — the rate version of this check stayed silent on the draft "
+            "that got asked about twice. (The humanizer skill's job is the "
+            "half of this a checker cannot measure — it is a MANUAL pass and "
+            "nothing runs it for you.)")
 
     # 6. NUMBER DENSITY — also the playbook's own rule.
     nums = len(re.findall(r"\$?\d[\d.,]*", flat))
@@ -834,6 +848,14 @@ def selftest() -> int:
              "\u2014 which nobody expected \u2014 so here we are.")
     check_("PAGE PUNCTUATION fires on a dash-dense script",
            any(n.startswith("PAGE PUNCTUATION") for n in _notes_of(dashy)))
+    # THE CASE THE RATE VERSION MISSED (2026-09-01). One dash in a script this
+    # long is 1-per-30 by the old arithmetic only if the script is short — so
+    # this pads to well past 1-per-60 and still must fire. Without this case,
+    # tightening the threshold to zero could be quietly reverted.
+    sparse = ("The phone ships Tuesday and the price is the story. " * 6
+              + "Nobody expected it \u2014 so here we are.")
+    check_("PAGE PUNCTUATION fires on a SINGLE dash in a long script",
+           any(n.startswith("PAGE PUNCTUATION") for n in _notes_of(sparse)))
     clean = ("The phone ships Tuesday. The price is the story. "
              "Nobody expected it, so here we are.")
     check_("PAGE PUNCTUATION silent when the pauses are written out",

@@ -4,9 +4,17 @@ Claims ledger + search log. Tiers: official / multi / single / disputed.
 
 ## CLAIMS
 
+- CLAIM: Android device prices are expected to rise as a result. THIS IS THE HOOK, AND IT IS AN INFERENCE, NOT A CONFIRMED FACT — no phone maker has announced an increase. It is carried by the chip rise (official) plus the memory rise (official) plus multi-outlet reporting that device prices will follow, and the script calibrates it explicitly with "No phone maker has named a figure."
+  TIER: multi
+  SPOKEN: "Your next Android phone is about to cost more, and it started today."
+  SRC: https://www.digitaltrends.com/phones/galaxy-s27-ultra-price-hike-looks-unavoidable-as-component-prices-continue-to-spiral/
+  VIA: Digital Trends, on component costs forcing flagship price rises
+  SRC: https://www.androidauthority.com/qualcomm-chip-price-increase-3691444/
+  VIA: Bloomberg's customer letter, reported as raising costs for phones, wearables and Windows laptops
+
 - CLAIM: Qualcomm raised chip prices effective September 1, 2026.
   TIER: official
-  SPOKEN: "Starting today, Snapdragon chips cost more."
+  SPOKEN: "Your next Android phone is about to cost more, and it started today."
   SRC: https://www.cnbc.com/2026/07/29/qualcomm-qcom-earnings-report-q3-2026-.html
   VIA: Cristiano Amon, on the record to CNBC, 2026-07-29
   SRC: https://www.fool.com/earnings/call-transcripts/2026/08/07/qualcomm-qcom-q3-2026-earnings-call-transcript/
@@ -14,7 +22,7 @@ Claims ledger + search log. Tiers: official / multi / single / disputed.
 
 - CLAIM: The increase is double-digit percent.
   TIER: official
-  SPOKEN: "Qualcomm says it's double digits."
+  SPOKEN: "Qualcomm raised Snapdragon prices, and says it's double digits."
   SRC: https://www.fool.com/earnings/call-transcripts/2026/08/07/qualcomm-qcom-q3-2026-earnings-call-transcript/
   VIA: Amon on the call — "The scale of the increase that we're looking at is double digit and consistent with some of the actions from other players."
   SRC: https://9to5google.com/2026/07/29/qualcomm-snapdragon-price-hike-september-2026/
@@ -22,7 +30,7 @@ Claims ledger + search log. Tiers: official / multi / single / disputed.
 
 - CLAIM: Snapdragon is the chip in most premium Android phones, and the increase is across the board including wearables and Windows-on-Arm laptop chips.
   TIER: official
-  SPOKEN: "That's the chip in most premium Android phones, and CEO Cristiano Amon says it's across the board — watches and Arm laptops."
+  SPOKEN: "That's the chip in most premium Android phones, and CEO Cristiano Amon says it's across the board: watches, Arm laptops."
   SRC: https://www.cnbc.com/2026/07/29/qualcomm-qcom-earnings-report-q3-2026-.html
   VIA: Amon — "raising prices across the board starting on September 1 for the company's chips, most of which currently go to smartphone makers"
   SRC: https://www.androidauthority.com/qualcomm-chip-price-increase-3691444/
@@ -36,7 +44,7 @@ Claims ledger + search log. Tiers: official / multi / single / disputed.
 
 - CLAIM: Qualcomm attributes the rise to input costs across wafer fabrication, assembly, test, advanced packaging and memory.
   TIER: official
-  SPOKEN: "Qualcomm's release blames wafers, assembly, packaging — and memory."
+  SPOKEN: "Qualcomm's release blames wafers, assembly, packaging. And memory."
   SRC: https://www.cnbc.com/2026/07/29/qualcomm-qcom-earnings-report-q3-2026-.html
   VIA: Qualcomm's own earnings release, quoted verbatim by CNBC
 
@@ -56,19 +64,19 @@ Claims ledger + search log. Tiers: official / multi / single / disputed.
 
 - CLAIM: J.P. Morgan attributes the memory shortage to AI demand and puts DRAM up more than 400% from the start of 2024 to the end of 2026 (part measured, part projection — the script says "by the end of this year").
   TIER: official
-  SPOKEN: "And JP Morgan has DRAM up over 400 percent by the end of this year, on AI demand."
+  SPOKEN: "And JP Morgan has DRAM up over 400 percent by year end, on AI demand."
   SRC: https://www.jpmorgan.com/insights/global-research/artificial-intelligence/dram-memory-shortage-from-ai
   VIA: J.P. Morgan Global Research headline, 2026-08-06 — "Overdrawn at the memory bank: How AI is creating memory shortage, and what happens next"
 
 - CLAIM: A double-digit chip rise is small next to the memory increase in a phone's bill of materials.
   TIER: official
-  SPOKEN: "So your phone's price now moves with memory more than Snapdragon."
+  SPOKEN: "So your phone's price moves with memory more than Snapdragon."
   SRC: https://www.fool.com/earnings/call-transcripts/2026/08/07/qualcomm-qcom-q3-2026-earnings-call-transcript/
   VIA: Amon on the call, describing the double-digit rise as a pass-through and small relative to the memory-driven rise in the bill of materials
 
-- CLAIM: Qualcomm's next flagship chip is unveiled at Snapdragon Summit, Maui, September 22-24, 2026.
+- CLAIM: Qualcomm's next flagship chip is unveiled at Snapdragon Summit, September 22-24, 2026 (Maui is shown on the receipt, not spoken).
   TIER: official
-  SPOKEN: "On September 22, Qualcomm unveils its next flagship chip in Maui."
+  SPOKEN: "On September 22, Qualcomm unveils its next flagship chip."
   SRC: https://www.qualcomm.com/company/events/snapdragon-summit
   VIA: Qualcomm's own event page — "Snapdragon Summit 2026 · Save the Date · Maui, Hawaii | September 22-24"
 
@@ -82,7 +90,7 @@ Claims ledger + search log. Tiers: official / multi / single / disputed.
 
 - CLAIM: Qualcomm expects the pricing benefit in its own gross margins over the next couple of quarters.
   TIER: official
-  SPOKEN: "Qualcomm expects that benefit in its margins in a couple of quarters. Yours lands much later."
+  SPOKEN: "Qualcomm expects that in its margins within a couple of quarters. Yours lands much later."
   SRC: https://www.fool.com/earnings/call-transcripts/2026/08/07/qualcomm-qcom-q3-2026-earnings-call-transcript/
   VIA: Amon on the call — "We expect this benefit to show up in our gross margins over the next couple of quarters."
 
