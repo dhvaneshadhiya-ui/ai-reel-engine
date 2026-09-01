@@ -1,5 +1,3 @@
-# Script — qualcomm-chip-hike
-
 Your next Android phone is about to cost more, and it started today. Here's why.
 Qualcomm raised Snapdragon prices, and says it's double digits.
 

@@ -158,8 +158,17 @@ def main() -> None:
                 "  Or read the breakdown without writing: drop --write.")
         try:
             appr = json.loads(appr_p.read_text())
-            live = hashlib.sha256(
-                " ".join(script_p.read_text().split()).encode()).hexdigest()
+            # HASH THE SAME BYTES script_approval DOES (2026-09-01). This
+            # used to sha256 the WHOLE file, while script_approval.py hashes
+            # only the SPOKEN lines — it strips markdown headings, quotes and
+            # comments first. The two agreed for every reel so far purely
+            # because no script.md had ever carried a heading. The first one
+            # that did was refused here with a hash the user had genuinely
+            # approved. Two functions guarding one guarantee must read the
+            # same input, or the guard is right by convention rather than by
+            # construction.
+            from script_approval import read_script, sha
+            live = sha(read_script(slug))
             if appr.get("sha256") and appr["sha256"] != live:
                 sys.exit(
                     f"REFUSING: {slug!r} was approved at "
