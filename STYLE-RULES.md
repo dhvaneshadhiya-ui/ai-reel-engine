@@ -6384,3 +6384,111 @@ here rather than implied.
 
 **Nothing new blocks a shipped reel.** The only blocking hit anywhere in the
 library is still iphone-18-pro's `pct` scale, disclosed in the entry above.
+**The fixture was carrying the bug.** `tools/test_gates.py`'s known-good sheet
+had a `wordcascade` with no `words` at all — the exact defect, sitting in the
+file whose job is to be correct, invisible until a gate existed to look.
+
+## 2026-09-01 — G56: the same land-check for typecard and kinetic overlays
+
+G55 generalised the same day it landed. `wordcascade` turned out not to be
+special: `Reel.tsx` suppresses the caption chips for a **`typecard`** and for
+**any scene carrying a `kinetic` overlay** under the identical "one text system
+at a time" rule. In all three cases the scene's own display type is the only
+words on screen, so type that never lands leaves the beat with none — and for
+the 70-85% watching on mute, a beat that says nothing.
+
+**TypeCard is the worse of the two.** Its `bg` defaults to `theme.black`, so a
+card whose first line never lands is the same uniform black frame the G55 probe
+reproduced. A kinetic overlay sits over footage, so the picture survives and
+only the words are lost.
+
+**THE CONTRACTS, READ OFF THE COMPONENTS, NOT REMEMBERED.**
+
+- `KineticType.tsx`: `startFrame = (kinetic.at ?? 0.15) * fps`, `null` before it.
+- `TypeCard.tsx`: per line, `start = kinetic.ats?.[claim] ?? at + li * 0.11`.
+
+`ats` is indexed by CLAIM (the `\n`-separated units) while `li` is the LINE
+index, and lines are chosen by TypeCard's own ink search. **The gate does not
+reimplement that search.** So the LAST landing is exact when `ats` is given and
+is `at` plus an unknown ≤0.11s-per-line stagger otherwise — under-reporting the
+dwell slightly rather than inventing a layout it cannot see. The FIRST landing
+is exact either way (`li = 0`), which is what the blocking half rests on. Where
+a check cannot be exact, say which half is exact and rest the law on that half.
+
+**CALIBRATED ON WHAT SHIPPED**, the G23 discipline: 26 typecards and 11 kinetic
+overlays on disk. **None** trips the blocking half. Exactly **one** trips the
+dwell advice — a deliberate 0.68s flash card on qualcomm-chip-hike — which is
+the same evidence that made G55a advisory, arriving independently.
+
+**DISTILLED RULE (now covering all three): a scene that suppresses the captions
+has no fallback layer, so its own type landing is a guarantee, not a pacing
+preference.** G56 blocks four shapes — no text, no `kinetic` block at all on a
+typecard, a first line that never lands, and a named `ats` claim that never
+lands while the voice says it. G56a advises the too-tight-to-read case.
+
+**Two more fixtures were carrying the defect.** The G12 case built two
+typecards with no `kinetic` at all, and the G50 case used an invented
+`{"lines": [...]}` shape that the `Kinetic` type has never had. Both were
+invisible until a gate existed to look — the third time in two days that the
+known-good sheet turned out to contain the thing being gated.
+
+---
+
+## 2026-09-01 — chatgpt-stickers (ai-tools, 56.7s)
+
+First reel built entirely on USER-SUPPLIED screen recordings rather than
+scouted third-party footage. Three lessons, all of which cost time here and
+will not next time.
+
+**RAW NOTE — the press was wrong and our own footage proved it.** Every
+outlet that names a style count for ChatGPT's sticker picker says 18. The app
+shows 19; the last row holds one orphan tile, which is what an odd count
+looks like in a two-column grid. The entry path was also wrong in coverage
+(sidebar -> Images -> Stickers) versus the shipped build (plus menu ->
+Plugins -> Create image -> Stickers).
+**ROOT CAUSE.** Both numbers came from outlets that did not open the app.
+`research.md` already models this: VIA "own testing" is a first-class origin.
+**DISTILLED RULE.** When the reel's own footage IS the primary source,
+count/read the thing on screen before writing a single number, and record the
+disagreement in the ledger rather than quietly siding with the press.
+
+**RAW NOTE — the VO came back 2.87 w/s, outside the 2.35-2.75 band, and the
+correct fix cost nothing.** Rather than regenerate (~973 credits), whisper
+word timings were measured on two SHIPPED masters:
+claude-eating-tokens 3.50 w/s SPEAKING with 21% gaps, iphone18-colors 3.63
+with 18%. Ours spoke at 3.60 with 20% — in family. Only the pause budget was
+short.
+**ROOT CAUSE.** The band is words / TOTAL runtime, so it conflates speaking
+rate with pause budget. A read can be perfectly in-voice and still miss it.
+**DISTILLED RULE.** Before regenerating a VO for pace, split the measurement:
+if SPEAKING w/s matches shipped masters, the fix is pauses, not a re-record.
+Extend sentence boundaries with room tone lifted from the read's own longest
+gap — never digital silence (audible dropout against a live noise floor) and
+never time-stretch (moves pitch, which is the whole reason we render at
+ElevenLabs). 13 boundaries x 215ms took 53.92s -> 56.72s, 2.73 w/s.
+`vo_external.py` should grow this measurement; today it only prints the
+overall figure.
+
+**RAW NOTE — `ingest_avatar.py` silently overwrote a hand-corrected
+vo.json, and its schema differs from raw whisper output.** Whisper hears
+"nineteen" as "19", which broke the shot-9 phrase anchor exactly as
+`rehearse_vo` predicted. The token was corrected, then ingest re-ran whisper
+and threw the correction away — and the regenerated file is `{"words": [...]}`
+where raw whisper is `{"segments": [{"words": [...]}]}`, so the re-fix script
+failed silently on a KeyError until the shape was checked.
+**DISTILLED RULE.** Correct vo.json AFTER `ingest_avatar.py`, never before,
+and write transcript patches against the shape actually on disk. A spoken
+number that whisper renders as digits will break its anchor every time —
+`rehearse_vo` catches it for free and was right here.
+
+**TREATMENT HISTORY (do not repeat next reel).** Cold-open split on the
+finished artifact with a two-line HeadlineBuild; screen-recording walkthrough
+carrying 18 of 22 beats; statcard for a rules trio; face bookends only at
+open, attribution and CTA (3 of 22 beats).
+
+**ACCEPTED ADVISORIES, disclosed.** Hook held 2.2s against the 2.0s advisory
+(the sentence takes 2.2s to say and the audio is frozen post-approval);
+scene 03 dead space 31% vs 30%; six scenes over the 2.9s single-visual
+ceiling, which the ai-tools playbook itself expects of walkthroughs
+("walkthroughs 4-5s/cut"). No blocking gate was overridden and `--soft` was
+not used.

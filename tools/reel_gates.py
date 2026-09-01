@@ -306,6 +306,7 @@ BLOCKING_RULES: dict[str, str] = {
     "G01": "R1 audio and scenes must stay in sync or the tail drifts",
     "G20": "R1 a row that never lands is unreadable on a phone",
     "G25": "R1 a cue that never lands is unreadable on a phone",
+    "G58": "R1 display type that never lands leaves a muted beat with no words",
     "G30": "R3 a split number makes the caption say what he did not",
     "G32": "R1 the outro must clear the platform's own chrome",
     "G34": "R1 an orphaned single letter is unreadable",
@@ -1102,6 +1103,83 @@ def check_beats(beats: dict, vo_end: float | None = None,
         rows = sum(len(g.get("rows") or []) for g in (sc.get("groups") or []))
         if rows == 0:
             errors.append(f"G25 scene {i:02d} settingspane has no rows.")
+
+    # G58 — TYPECARD AND KINETIC TYPE MUST LAND TOO (2026-09-01).
+    #
+    # G55 generalised. `wordcascade` was not special: Reel.tsx suppresses the
+    # caption chips for a `typecard` and for ANY scene carrying a `kinetic`
+    # overlay, under the same "one text system at a time" rule. So in all three
+    # cases the scene's own type is the only words on screen, and type that
+    # never lands leaves the beat with none — for the 70-85% who watch on mute,
+    # a beat that says nothing.
+    #
+    # TypeCard is the worse of the two: its `bg` defaults to theme.black, so a
+    # card whose first line never lands is the same uniform black frame G55
+    # reproduces, not merely a wordless one. A kinetic overlay sits over
+    # footage, so the picture survives and only the words are lost.
+    #
+    # THE TIMING CONTRACTS, read off the components:
+    #   KineticType.tsx   startFrame = (kinetic.at ?? 0.15) * fps; null before.
+    #   TypeCard.tsx      per line, start = kinetic.ats?.[claim] ?? at + li*0.11.
+    #
+    # `ats` is indexed by CLAIM (the \n-separated units); `li` is the LINE
+    # index, and lines are chosen by TypeCard's own ink search, which this file
+    # deliberately does not reimplement. So the LAST landing is exact when
+    # `ats` is given and is `at` plus an unknown stagger of at most ~0.11s per
+    # line otherwise — under-reporting the dwell slightly rather than inventing
+    # a layout. The FIRST landing is exact either way (li = 0), which is what
+    # the blocking half rests on.
+    #
+    # CALIBRATED ON WHAT SHIPPED: 26 typecards and 11 kinetic overlays on disk.
+    # None trips the blocking half. Exactly one trips the dwell advice — a
+    # deliberate 0.68s flash card on qualcomm-chip-hike — which is why the
+    # dwell half cannot block, the same finding as G55a.
+    for i, sc in enumerate(scenes):
+        kin = sc.get("kinetic")
+        is_card = sc["type"] == "typecard"
+        # A typecard is checked even with NO kinetic block: `kinetic` is
+        # required by its type, and a card without one is this gate's own
+        # violation — a blank black frame.
+        if not is_card and not isinstance(kin, dict):
+            continue
+        if not isinstance(kin, dict):
+            kin = {}
+        dur = sc["durationSec"]
+        at = kin.get("at", 0.15)
+        ats = kin.get("ats")
+        claims = [c for c in str(kin.get("text") or "").split("\n") if c.strip()]
+        what = "typecard" if is_card else f"{sc['type']} kinetic overlay"
+        blank = ("draws a blank card for the whole beat"
+                 if is_card else
+                 "leaves the beat with no words over the footage")
+        if not claims:
+            errors.append(
+                f"G58 scene {i:02d} {what} has no text — it {blank}, and the "
+                "scene suppresses the caption chips on its account.")
+            continue
+        first = ats[0] if isinstance(ats, list) and ats else at
+        if first > dur - 0.01:
+            errors.append(
+                f"G58 scene {i:02d} {what}: the first line lands at "
+                f"{first:.2f}s but the scene is {dur:.2f}s — nothing ever "
+                f"appears, so it {blank}. `at`/`ats` are scene-LOCAL seconds, "
+                "not timeline positions.")
+            continue
+        if isinstance(ats, list):
+            for c, a in enumerate(ats[:len(claims)]):
+                if a > dur - 0.01:
+                    errors.append(
+                        f"G58 scene {i:02d} {what}: claim {c} "
+                        f"({claims[c]!r}) lands at {a:.2f}s but the scene is "
+                        f"{dur:.2f}s — that line never appears, while the "
+                        "voice is saying it.")
+        last = max(ats) if isinstance(ats, list) and ats else at
+        if last + ROW_DWELL > dur + 0.01 and last <= dur - 0.01:
+            errors.append(
+                f"G58a scene {i:02d} {what}: the last line lands at "
+                f"{last:.2f}s, leaving {dur - last:.2f}s of the {dur:.2f}s "
+                f"scene to read it ({ROW_DWELL}s is the dwell the list gates "
+                "use). It appears, but barely.")
 
     # G26 — A COMPARISON MUST ACTUALLY COMPARE, AND MUST BE FAIR.
     # Structural, not stylistic: these follow from what the genre is.
