@@ -5995,3 +5995,61 @@ press screenshots and one official Apple page.
   screenshots, two facecam beats in sequence at the close) rather than a
   variety failure, but worth varying treatment more on the next reel that
   has this many same-type beats in a row.
+
+
+## 2026-09-01 — the em-dash check was asked about twice, so the rate went to zero
+
+**Raw note.** User, reading the qualcomm-chip-hike draft: *"If you are
+humanizing our script, why are there em dashes in our script?"* The draft
+carried two in 209 words.
+
+**Root cause, and it is not the writing.** `check_script.py` has had a PAGE
+PUNCTUATION check since 2026-08-26, added in answer to this same question the
+FIRST time the user asked it. It was built as advice with a rate: fire past
+one dash every 60 words. Two in 209 is one every 104. **The check stayed
+silent on the exact draft that produced the complaint** — and it would have
+stayed silent on the previous draft too, at one every 209. A threshold that
+passes the case which prompts the question is not calibrated, it is
+decorative, and the gap let a second identical conversation happen five days
+later.
+
+The 1-per-60 number was derived honestly (approved scripts sat at both ends of
+it), but it answered the wrong question. It measured *how often*, when the
+reason for the rule has no frequency term in it at all:
+
+1. **A listener cannot hear a dash.** It renders as whatever pause a comma or
+   full stop would have produced. It is a mark for the eye, in a medium with
+   no eye.
+2. **It breaks the synthesis.** Probed 2026-08-26: IndexTTS2 rejects em-dash,
+   colon and semicolon outright.
+
+Neither of those gets better at a lower rate. So the threshold is now **zero**,
+and `PAGE PUNCTUATION fires on a SINGLE dash in a long script` is a new case in
+`check_script.py --selftest` — without it, the tightening could be reverted to a
+rate by anyone who reads the old comment and not this entry.
+
+**Distilled rule: NO em or en dashes in narration. Write the comma or the full
+stop you mean.** Still ADVICE per RULES.md §0 — prose is craft and this fails
+all four blocking tests. It just no longer stays quiet.
+
+**What it cost, honestly.** Re-scanned the corpus after the change:
+apple-surprise-and-shine, claude-eating-tokens, iphone18-split and
+september-preview now all flag. Those reels shipped and were approved; the
+flag is retrospective advice, not a verdict on them.
+
+**The second lesson, which is the older one in this repo.** The humanizer skill
+was run on this script, and it did not remove these — because its own §14 says
+the dash ban lifts when *the writer's sample uses them*, and the approved
+scripts I fed it as the voice sample carry up to seven each. The sample taught
+it the habit. When a skill's rule is conditional on the corpus, a corpus with
+the defect in it will keep the defect. The checker has to hold that line, not
+the skill.
+
+### Treatment history (do not repeat next reel)
+
+split hook with LIVE FOOTAGE on top (Snapdragon chip in circuitry) rather than
+the screenshot the previous two reels used · animated three-bar cost card
+(double digits vs 58-63% vs 400%+), each bar carrying its own source line ·
+two-row landing card whose rows arrive on the words that name them
+("Qualcomm's margins" / "your phone price") · closing question card over
+product footage.

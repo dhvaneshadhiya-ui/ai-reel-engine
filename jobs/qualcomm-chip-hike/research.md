@@ -44,7 +44,7 @@ Claims ledger + search log. Tiers: official / multi / single / disputed.
 
 - CLAIM: Qualcomm attributes the rise to input costs across wafer fabrication, assembly, test, advanced packaging and memory.
   TIER: official
-  SPOKEN: "Qualcomm's release blames wafers, assembly, packaging — and memory."
+  SPOKEN: "Qualcomm's release blames wafers, assembly, packaging. And memory."
   SRC: https://www.cnbc.com/2026/07/29/qualcomm-qcom-earnings-report-q3-2026-.html
   VIA: Qualcomm's own earnings release, quoted verbatim by CNBC
 

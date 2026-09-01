@@ -9,7 +9,7 @@ You won't feel it in a shop yet. It lands on whoever builds your phone.
 And that phone's price has almost nothing to do with the chip.
 
 Amon put it plainly: cost went up, prices are going to go up.
-Qualcomm's release blames wafers, assembly, packaging — and memory.
+Qualcomm's release blames wafers, assembly, packaging. And memory.
 
 That last word is doing the work.
 AI data centers buy memory faster than anyone makes it.

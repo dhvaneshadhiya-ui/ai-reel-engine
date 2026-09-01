@@ -14,7 +14,7 @@ Format `news` · style `editorial` · no music bed (standing rule) · ~79s.
 | 6 | "It lands on whoever builds your phone." | Inside a chip fab, yellow lithography light, process tools (Micron) |
 | 7 | "And that phone's price has almost nothing to do with the chip." | Presenter. **This is the promise** — the line the ending comes back to |
 | 8 | "Amon put it plainly: cost went up, prices are going to go up." | CNBC's paragraph, with the quote lighting up: *"Cost went up, prices are going to go up," Amon said.* Above it: "raising prices across the board starting on September 1". *Source: CNBC* |
-| 9 | "Qualcomm's release blames wafers, assembly, packaging — and memory." | The same page, one paragraph down — Qualcomm's own release quoted. The highlight walks the list and stops on **memory**. *Source: CNBC* |
+| 9 | "Qualcomm's release blames wafers, assembly, packaging. And memory." | The same page, one paragraph down — Qualcomm's own release quoted. The highlight walks the list and stops on **memory**. *Source: CNBC* |
 | 10 | "That last word is doing the work." | A gold silicon wafer sliding out of a tool (Micron) |
 | 11 | "AI data centers buy memory faster than anyone makes it." | A technician walking a data-hall aisle, server racks blinking either side (Micron) |
 | 12 | "TrendForce had conventional DRAM contract prices climbing 58 to 63 percent in a quarter." | TrendForce's press release, 31 March 2026, with the bullet highlighted: "Conventional DRAM contract prices expected to rise **58-63% QoQ** in 2Q26". *Source: TrendForce* |
