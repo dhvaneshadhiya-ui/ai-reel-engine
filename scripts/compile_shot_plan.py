@@ -675,6 +675,19 @@ def main() -> None:
                       f"{int(info['width'])}px-wide capture — at frame width, "
                       f"scale crops text off both edges. Use `from`/`focusY` "
                       f"to choose the slice instead.")
+        # A RECEIPT WITHOUT `highlights` GETS A GENERIC PUSH, NOT A POINT
+        # (2026-09-01). ReceiptScene does a real focus pull — zooming onto the
+        # highlight cluster as it fires — but ONLY when highlights exist. With
+        # none it ken-burns the whole page, which frames nothing in particular.
+        # 57% of receipts across the reels have none, because nothing ever
+        # asked for them. The rect cannot be inferred here: knowing WHERE on
+        # the page the claim sits needs someone to look at the image, which is
+        # what the scout step is for.
+        if scene.get("type") == "receipt" and not scene.get("highlights"):
+            print(f"  ADVICE shot {index}: receipt with no `highlights` — the "
+                  f"scene will push the whole page instead of pulling to the "
+                  f"claim. Add a highlight rect around the words this beat "
+                  f"covers ({str(scene.get('covers',''))[:40]!r}).")
         if scene.get("src") == avatar_rel and scene.get("type") == "footage":
             scene.setdefault("focusX", focus_full)
         if scene.get("bottomSrc") == avatar_rel:

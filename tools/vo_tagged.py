@@ -34,6 +34,35 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 
+# PRONUNCIATION RESPELLINGS (2026-09-01). The same job HeyGen's brand glossary
+# used to do — and which the move to external voice (config.json voice.mode
+# 'external-mcp') silently took away, because a glossary only applies to audio
+# HeyGen synthesises, never to an uploaded file. So an initialism that reads
+# wrong now has nowhere to be recorded, and gets rediscovered per reel.
+#
+# EVERY ENTRY IS EARNED BY A PROBE, never by guessing how a word "should" sound.
+#   DRAM: the qualcomm-chip-hike take read it as "drum" on two load-bearing
+#   lines. whisper base AND small both transcribed "drum", so it was the audio,
+#   not the transcriber (RULES.md section 11). A 16.8s probe (~243 credits)
+#   compared D-RAM / DEE-ram / D.R.A.M.: all three transcribe as DRAM and all
+#   three run 0.60-0.66s, so none is spelled out letter by letter. D-RAM is the
+#   plainest and is what ships.
+#
+# The respelling lands ONLY in script-tagged.txt. script.md keeps the real
+# word, so G27's approved hash, G21's caption check and G53's transcript match
+# are all unaffected — whisper writes "DRAM" either way.
+PRONOUNCE = {
+    "DRAM": "D-RAM",
+}
+
+
+def respell(text: str) -> str:
+    """Apply PRONOUNCE to whole words only, preserving surrounding punctuation."""
+    for term, said in PRONOUNCE.items():
+        text = re.sub(rf"\b{re.escape(term)}\b", said, text)
+    return text
+
+
 # Documented in ElevenLabs' v3 prompting guide. Mapped from OUR register names
 # so the two engines describe the same performance.
 TAG_FOR_REGISTER = {
@@ -71,6 +100,7 @@ def tag_script(text: str) -> tuple[str, dict[str, int]]:
             used[tag] = used.get(tag, 0) + 1
     lines = []
     for tag, sent, show in out:
+        sent = respell(sent)
         lines.append(f"{tag} {sent}" if show else sent)
     return "\n\n".join(lines), used
 
@@ -124,6 +154,25 @@ def selftest() -> int:
     ok("words survive tagging unchanged",
        " ".join(stripped.split()) == " ".join(script.split()),
        "tagging altered the narration — this would break G53 and approval")
+
+    # PRONUNCIATION RESPELLINGS ARE THE ONE ALLOWED EXCEPTION, AND THEY ARE
+    # ONLY SAFE UNDER ONE CONDITION: the respelling must be the SAME LETTERS
+    # with punctuation inserted. "DRAM" -> "D-RAM" is safe because whisper
+    # transcribes it back to one token, DRAM, so G53's transcript match and
+    # G21's caption check never see it. "DRAM" -> "dee ram" would NOT be: it
+    # becomes two words in the transcript and drifts the approval match.
+    # Without this check, the next entry added here could quietly break the
+    # guarantee that the check above exists to protect.
+    for term, said in PRONOUNCE.items():
+        ok(f"respelling of {term!r} only inserts punctuation",
+           re.sub(r"[^A-Za-z0-9]", "", said).lower() == term.replace(" ", "").lower(),
+           f"{said!r} changes the letters of {term!r} — whisper would "
+           "transcribe something the approved script does not say")
+    ok("respell applies to a whole word only",
+       respell("DRAM and DRAMATIC") == "D-RAM and DRAMATIC",
+       "respell matched inside another word")
+    ok("respell leaves an untouched script alone",
+       respell("The phone ships Tuesday.") == "The phone ships Tuesday.")
 
     ok("something was tagged", bool(used), "no tags emitted at all")
     ok("only documented tags are used",

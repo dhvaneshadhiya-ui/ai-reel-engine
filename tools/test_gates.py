@@ -67,7 +67,13 @@ def good() -> dict:
          "assetId": "clip-b", "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.12}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/c.mp4",
          "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.12}]},
+        # G20/G55: `rows` and `items` are not optional either — this fixture
+        # catalogued THREE empty MG scenes (specsheet, chart, wordcascade),
+        # each drawing its title over an empty box (2026-09-01).
         {"type": "specsheet", "footnote": "src", "durationSec": 3.0,
+         "title": "What changed", "rows": [
+             {"label": "Chip", "value": "8 Elite"},
+             {"label": "Memory", "value": "+58%", "accent": True}],
          "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/d.mp4",
          "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.12}]},
@@ -76,9 +82,19 @@ def good() -> dict:
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/f.mp4",
          "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.16}]},
         {"type": "chart", "source": "src", "durationSec": 3.0,
+         "title": "Cost per unit", "unit": "%", "items": [
+             {"label": "Last year", "value": 12},
+             {"label": "Now", "value": 58, "highlight": True}],
          "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/g.mp4"},
-        {"type": "wordcascade", "durationSec": 2.5, "bg": "cream"},
+        # G54: `words` is not optional — an empty stack draws nothing for
+        # the whole beat. This fixture carried none until 2026-09-01.
+        {"type": "wordcascade", "durationSec": 2.5, "bg": "cream",
+         "words": [{"text": "DOUBLE", "style": "caps", "at": 0.1},
+                   {"text": "DIGITS", "style": "caps", "at": 0.6,
+                    "size": 1.2, "accent": True},
+                   {"text": "from today", "style": "serif", "at": 1.1,
+                    "size": 0.64}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/h.mp4"},
         # facecam block ~14% of a 65s runtime
         {"type": "footage", "durationSec": 2.5, "src": face},
@@ -447,6 +463,108 @@ assert _BUDGET["headline"] == int((1080 * 0.88 - 140) / (100 * 0.655)), (
 _counted("G05's char budget is derived from theme/fit.ts, not typed")
 
 
+# --- G57's budget is DERIVED TOO, from the components' own boxes -------------
+# Same failure mode as G05's: the numbers belong to StatCard.tsx and
+# SpecSheet.tsx, and a column width changed there without this file noticing
+# would leave the gate passing labels that overflow. Pin the boxes.
+from reel_gates import (  # noqa: E402
+    STATCARD_LABEL_MAX, STATCARD_VALUE_MAX, SPECSHEET_VALUE_MAX,
+    _specsheet_label_max,
+)
+_STATCARD_TS = (ROOT / "src/components/StatCard.tsx").read_text()
+_SPEC_TS = (ROOT / "src/components/SpecSheet.tsx").read_text()
+assert "width: 220," in _STATCARD_TS and "width: 130," in _STATCARD_TS, (
+    "StatCard.tsx column widths changed — re-derive G57 in reel_gates.py")
+assert "width: 300," in _SPEC_TS, (
+    "SpecSheet.tsx value column changed — re-derive G57 in reel_gates.py")
+assert (STATCARD_LABEL_MAX, STATCARD_VALUE_MAX, SPECSHEET_VALUE_MAX,
+        _specsheet_label_max(1), _specsheet_label_max(2)) == (15, 7, 12, 23, 10), (
+    "G57's budgets no longer follow from the box widths and the measured advance")
+_counted("G57's char budgets are derived from the components' box widths")
+
+
+def _statcard(label: str, value: str = "$190"):
+    """Turn the fixture's building-class scene into a one-row stat card."""
+    def mutate(sheet: dict) -> None:
+        sheet["scenes"][4].update(
+            type="statcard", title="Chip cost", footnote="src",
+            rows=[{"label": label, "value": value, "pct": 0.6}])
+    return mutate
+
+
+def _sheet(mutate) -> dict:
+    s = copy.deepcopy(BASE)
+    mutate(s)
+    return s
+
+
+# The reel that bought this gate: a 43-char label under a 15-char column,
+# which rendered UNDER the bar (qualcomm-chip-hike, 2026-09-01).
+expect_fail(_statcard("Snapdragon 8 Elite Gen 5 flagship chip cost"), "G57",
+            "a 43-char statcard row label in a 220px nowrap column")
+expect_fail(_statcard("Chip cost", "-14.5 LUFS"), "G57",
+            "a 10-char statcard value in a 7-char monospaced column")
+# The quiet neighbour: the same card, written to the column it lives in.
+expect_gate(_sheet(_statcard("Memory (DRAM)")), "G57", False,
+            "G57 silent — a 13-char label and a 4-char value both fit")
+
+
+def _spec(label: str, values: list[str]):
+    def mutate(sheet: dict) -> None:
+        sheet["scenes"][4].update(
+            rows=[{"label": label, "values": values}],
+            columns=["2024", "2025"][:len(values)])
+    return mutate
+
+
+expect_fail(_spec("Flagship phone price", ["$1,299", "$1,499"]), "G57",
+            "a 20-char specsheet label beside TWO 300px value columns")
+# Quiet neighbour: the same label with one value column, where 548px is left
+# for it. The budget has to move with the column count or it is a typed number.
+expect_gate(_sheet(_spec("Flagship phone price", ["$1,299"])), "G57", False,
+            "G57 silent — the same label with one value column has 23 chars")
+
+
+# --- G58: the same rule for typecard and kinetic overlays -------------------
+# Reel.tsx suppresses the caption chips for a typecard and for any scene
+# carrying a kinetic overlay, exactly as it does for a wordcascade — so type
+# that never lands leaves the beat with no words at all. TypeCard's bg defaults
+# to theme.black, so its version of the failure is the same uniform black frame
+# G55 reproduces.
+def _typecard(kinetic: dict | None, dur: float = 3.0):
+    def mutate(sheet: dict) -> None:
+        sc = {"type": "typecard", "durationSec": dur, "bg": "black",
+              "footnote": "src"}
+        if kinetic is not None:
+            sc["kinetic"] = kinetic
+        sheet["scenes"][4] = sc
+    return mutate
+
+
+expect_fail(_typecard({"text": "ACROSS THE BOARD", "style": "caps", "at": 41.2}),
+            "G58", "a typecard whose only line lands after the scene ends")
+expect_fail(_typecard({"text": "PRICES UP\nACROSS THE BOARD", "style": "caps",
+                       "at": 0.15, "ats": [0.15, 3.4]}),
+            "G58", "a typecard claim that lands after the scene ends")
+expect_fail(_typecard({"text": "", "style": "caps", "at": 0.15}),
+            "G58", "a typecard with no text at all")
+expect_fail(_typecard(None), "G58", "a typecard with no kinetic block")
+# A kinetic OVERLAY on footage: the picture survives, the words do not — and
+# the captions were hidden on their account.
+expect_fail(lambda s: s["scenes"][3].update(
+    kinetic={"text": "ACROSS THE BOARD", "style": "caps", "at": 9.0}),
+    "G58", "a footage kinetic overlay that lands after the scene ends")
+# The dwell half advises: qualcomm-chip-hike ships a deliberate 0.68s flash
+# card, so this cannot block.
+expect_fail(_typecard({"text": "PRICES UP", "style": "caps", "at": 0.15}, dur=0.68),
+            "G58a", "a 0.68s flash card with 0.53s to read it")
+# Quiet neighbour: the same card, given room.
+expect_gate(_sheet(_typecard({"text": "PRICES UP\nACROSS THE BOARD",
+                              "style": "caps", "at": 0.15, "ats": [0.15, 1.2]})),
+            "G58", False,
+            "G58 silent — two claims landing at 0.15s and 1.20s in 3.0s")
+
+
 # --- G45 is a FLOOR, not a lane ---------------------------------------------
 # Raising a caption to clear a face is composition and stays the author's call;
 # the split hook of iphone-fold-ultra sets 1000 for exactly that reason. A gate
@@ -649,10 +767,15 @@ CASES = [
                s["scenes"][2].update(credit=""), "G14", "borrowed footage with no credit"),
     (lambda s: s["scenes"][4].pop("footnote", None) or
                s["scenes"][4].update(source="", footnote=""), "G15", "data card with no source"),
+    # Both carry real `kinetic` text: a typecard's text is not optional, and
+    # a card with none is G56's own violation, not G12's.
     (lambda s: s["scenes"].__setitem__(10, {"type": "typecard", "durationSec": 2.5,
-                                            "bg": "black"}) or
+                                            "bg": "black",
+                                            "kinetic": {"text": "ONE", "style": "caps"}}) or
                s["scenes"].__setitem__(11, {"type": "typecard", "durationSec": 2.5,
-                                            "bg": "black"}), "G12", "two black typecards"),
+                                            "bg": "black",
+                                            "kinetic": {"text": "TWO", "style": "caps"}}),
+     "G12", "two black typecards"),
     # 2026-08-17, ios27-tiers: both of these shipped into a render that passed
     # every existing gate AND the frame linter.
     (lambda s: s["scenes"].__setitem__(2, dict(s["scenes"][2], type="footage",
@@ -738,7 +861,8 @@ CASES = [
 CASES.append((lambda s: (s.update(format="ai-tools"),
                          s["scenes"].__setitem__(10, {
                              "type": "typecard", "durationSec": 2.5,
-                             "kinetic": {"lines": [{"text": "A CARD", "at": 0.2}]},
+                             "kinetic": {"text": "A CARD", "style": "caps",
+                                         "at": 0.2},
                              "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]}))[0],
               "G50", "an ai-tools reel with a full-screen text card"))
 
@@ -983,6 +1107,219 @@ expect_manifest(
      "banned_assets": ["clip-banned"]},
     "G42", "a fallback-tier source", want_text="fallback")
 
+
+
+# --- G54: a wordcascade off its field contract renders nothing --------------
+# qualcomm-chip-hike scene 03 (2026-09-01): bg "#0b0d10" + size 150 produced a
+# frame lint_frames called "95% flat/empty". Each half was rendered as a still
+# to confirm it fails ALONE, so each gets its own case here.
+def _wc(sheet: dict) -> dict:
+    return next(s for s in sheet["scenes"] if s["type"] == "wordcascade")
+
+
+def _wc_case(change, gate, label):
+    expect_fail(lambda sheet: change(_wc(sheet)), gate, label)
+
+
+_wc_case(lambda sc: sc.update(bg="#0b0d10"),
+         "G54", "wordcascade bg given as a HEX colour, not a name")
+_wc_case(lambda sc: sc.pop("words"),
+         "G54", "wordcascade with no words at all")
+_wc_case(lambda sc: sc["words"][0].update(size=150),
+         "G54", "size 150 read as pixels — a 15000px glyph fills the frame")
+_wc_case(lambda sc: sc["words"][0].update(style="gradient", size=64),
+         "G54", "size 64 on a gradient word — same pixels-not-multiplier slip")
+_wc_case(lambda sc: sc["words"][0].update(style="neon"),
+         "G54", "unknown word style falls to browser-default 16px")
+_wc_case(lambda sc: sc["words"][0].update(size=0),
+         "G54", "size 0 renders nothing")
+_wc_case(lambda sc: sc["words"][2].update(at=45),
+         "G54", "`at` given in FRAMES lands past the end of the beat")
+_wc_case(lambda sc: sc["words"][0].update(size=3.0),
+         "G54a", "size outside the 0.6-1.6 corpus band is only a note")
+
+
+# --- G20 widened + G55: the other three MG cards ---------------------------
+# Same debt as G54, written down 2026-08-17 and left as prose. Each case is a
+# failure mode read off the component, not a shape invented for the suite.
+def _scene(sheet: dict, ty: str) -> dict:
+    return next(s for s in sheet["scenes"] if s["type"] == ty)
+
+
+def _mg_case(ty, change, gate, label):
+    expect_fail(lambda sheet: change(_scene(sheet, ty)), gate, label)
+
+
+# chart
+_mg_case("chart", lambda sc: sc.pop("items"),
+         "G55", "chart given `rows` shape: no `items` at all — .slice throws")
+_mg_case("chart", lambda sc: sc.pop("title"),
+         "G55", "chart with no title — ChartScene reads title.length, throws")
+_mg_case("chart", lambda sc: sc["items"][0].update(value="58%"),
+         "G55", "chart item value as a STRING — bar width goes NaN")
+_mg_case("chart", lambda sc: sc.update(
+             items=[{"label": f"r{n}", "value": n} for n in range(9)],
+             durationSec=6.0),
+         "G55", "9 chart items — items.slice(0, 8) drops the ninth silently")
+_mg_case("chart", lambda sc: sc.update(items=[]),
+         "G20", "chart with an empty items list draws an empty box")
+_mg_case("chart", lambda sc: sc.update(
+             items=[{"label": f"r{n}", "value": n} for n in range(8)]),
+         "G20", "8 chart bars cannot finish filling inside a 3.0s beat")
+
+# statcard — the shipped defect: iphone-18-pro wrote pct on a 0-100 scale, so
+# 66 and 100 both clamped to a full bar and drew identical.
+def _add_statcard(sheet, rows, dur=3.0):
+    sheet["scenes"].insert(9, {"type": "statcard", "durationSec": dur,
+                               "title": "Cost", "footnote": "src",
+                               "rows": rows})
+    # keep the sheet's total runtime where the other gates expect it
+    sheet["scenes"][10]["durationSec"] = round(
+        sheet["scenes"][10]["durationSec"] - dur, 2)
+
+
+expect_fail(lambda sheet: _add_statcard(sheet, [
+    {"label": "iPhone 17 Pro", "value": "7-element", "pct": 66},
+    {"label": "iPhone 18 Pro", "value": "about +50%", "pct": 100}]),
+    "G55", "statcard pct on a 0-100 scale — both rows clamp to a full bar")
+expect_fail(lambda sheet: _add_statcard(sheet, [
+    {"label": "DRAM", "value": "+58%", "pct": None}]),
+    "G55", "statcard row with no pct draws no bar")
+expect_fail(lambda sheet: _add_statcard(sheet, [], dur=3.0),
+    "G20", "statcard with no rows draws an empty card")
+expect_fail(lambda sheet: _add_statcard(sheet, [
+    {"label": "a", "value": "1", "pct": 0.5}], dur=0.6),
+    "G20", "statcard row cannot enter and settle inside a 0.6s beat")
+expect_fail(lambda sheet: _add_statcard(sheet, [
+    {"label": "a", "value": "1", "pct": 0.5}], dur=3.0) or
+    _scene(sheet, "statcard").update(bg="#0b0d10"),
+    "G55a", "statcard bg as a hex — silently renders cream, only a note")
+
+# specsheet
+_mg_case("specsheet", lambda sc: sc.pop("rows"),
+         "G55", "specsheet with no `rows` — .map throws")
+_mg_case("specsheet", lambda sc: sc.update(bgSrc="assets/x/hero.png"),
+         "G35", "specsheet bgSrc is a STILL — OffthreadVideo kills the render")
+_mg_case("specsheet", lambda sc: sc["rows"][0].pop("value"),
+         "G55a", "specsheet row with no value draws an empty column")
+
+# G20a — the readability half, split off so it cannot block a re-render of the
+# five shipped scenes whose rows land with 0.16-0.38s of dwell.
+expect_fail(lambda sheet: _add_statcard(sheet, [
+    {"label": "a", "value": "1", "pct": 0.5},
+    {"label": "b", "value": "2", "pct": 0.9}], dur=1.4),
+    "G20a", "statcard rows land, but with under ROW_DWELL left to read")
+
+
+# --- G35 widened + G56: the remaining thirty-odd scene types ---------------
+# One case per FAILURE CLASS, not per scene type — the gate is a table, so a
+# case per row would test the table, not the logic. Each class here is one a
+# component actually has.
+def _swap(sheet: dict, at: int, scene: dict) -> None:
+    """Replace a scene in place, keeping the sheet's runtime where it was."""
+    scene.setdefault("durationSec", sheet["scenes"][at]["durationSec"])
+    sheet["scenes"][at] = scene
+
+
+# G56 — the list is absent (the component maps over it with no guard)
+expect_fail(lambda sh: _swap(sh, 9, {"type": "toolstack", "headline": "Stack"}),
+            "G56", "toolstack with no `items` — .map throws")
+# G56 — the list is present but empty (chrome around nothing)
+expect_fail(lambda sh: _swap(sh, 9, {"type": "categorygrid", "cards": []}),
+            "G56", "categorygrid with an empty `cards` draws an empty grid")
+# G56 — a fixed slot count silently drops the rest
+expect_fail(lambda sh: _swap(sh, 9, {"type": "toolstack", "items": [
+                {"name": "t%d" % n, "src": "assets/x/%d.png" % n}
+                for n in range(7)]}),
+            "G56", "7 toolstack items — items.slice(0, 5) drops two silently")
+# G56 — an index that selects nothing
+expect_fail(lambda sh: _swap(sh, 9, {"type": "designreveal", "selectIndex": 4,
+                "items": [{"src": "assets/x/a.png"},
+                          {"src": "assets/x/b.png"}]}),
+            "G56", "designreveal selectIndex past the end crowns no winner")
+# G56 — a typecard with no words is an empty field
+expect_fail(lambda sh: _swap(sh, 9, {"type": "typecard",
+                "kinetic": {"text": "", "style": "serif"}}),
+            "G56", "typecard with empty kinetic.text renders a blank card")
+
+# G35 — a still in a video slot, on a slot G35 did not used to look at
+expect_fail(lambda sh: _swap(sh, 9, {"type": "screenstep",
+                "src": "assets/x/step.png", "srcWidth": 1080,
+                "srcHeight": 1920, "credit": "@src"}),
+            "G35", "screenstep src is a STILL — OffthreadVideo, one frame")
+# G35 — the MIRROR: a video in a slot that renders an <Img>
+expect_fail(lambda sh: _swap(sh, 9, {"type": "receipt",
+                "src": "assets/x/clips/a.mp4", "credit": "@src"}),
+            "G35", "receipt src is a VIDEO — an <Img> cannot decode an mp4")
+# G35 — the same mirror one level down, inside a list
+expect_fail(lambda sh: _swap(sh, 9, {"type": "carousel", "items": [
+                {"src": "assets/x/clips/a.mp4"}, {"src": "assets/x/b.png"}]}),
+            "G35", "carousel item src is a VIDEO in an <Img> slot")
+
+
+# --- G35's tables must keep matching the components -------------------------
+# The media tables are a claim ABOUT SOURCE CODE: "this slot renders a <Video>
+# and never an <Img>", or the reverse. Fourteen of the scene types in them
+# appear in no shipped reel, so nothing else on this machine would notice if a
+# component were later taught to branch on the file extension — the gate would
+# go on refusing a file the component had learned to handle.
+#
+# So re-derive the claim instead of trusting it. A slot that branches contains
+# `isVideo(<field>)`; a one-sided slot does not. If this fails, the component
+# changed and the table has to follow it.
+_REEL = (ROOT / "src" / "Reel.tsx").read_text()
+_DISPATCH = dict(re.findall(r'case "([a-z0-9]+)":\s*\n\s*return\s*<(\w+)', _REEL))
+_COMPONENT_SRC: dict[str, str] = {}
+for _f in (ROOT / "src" / "components").glob("*.tsx"):
+    _text = _f.read_text()
+    for _name in re.findall(r"export const (\w+):\s*React\.FC", _text):
+        _COMPONENT_SRC[_name] = _text
+
+
+def _tables_from_gate(name: str) -> dict:
+    """Read one table literal out of reel_gates.py without importing it."""
+    body = _src.split(f"{name} = {{", 1)[1].split("\n    }", 1)[0]
+    out = {}
+    for ty, fields in re.findall(r'"([a-z0-9]+)": \(([^)]*)\)', body):
+        out[ty] = re.findall(r'"(\w+)"', fields)
+    return out
+
+
+_drift = []
+for _table in ("VIDEO_ONLY", "STILL_ONLY"):
+    for _ty, _fields in _tables_from_gate(_table).items():
+        _comp = _DISPATCH.get(_ty)
+        _text = _COMPONENT_SRC.get(_comp or "", "")
+        if not _text:
+            _drift.append(f"{_ty}: no component source found for {_comp!r}")
+            continue
+        for _field in _fields:
+            if re.search(r"isVideo\w*\(\s*(?:scene\.)?" + _field + r"\s*\)",
+                         _text):
+                _drift.append(
+                    f"{_table}[{_ty}].{_field}: {_comp} now BRANCHES on the "
+                    "file extension, so this slot handles both and must come "
+                    "out of the table")
+if _drift:
+    raise SystemExit("  FAIL G35 media tables no longer match the components:\n    "
+                     + "\n    ".join(_drift))
+_counted("G35 media tables still match every component they name")
+
+# And the mirror: a slot that DOES branch must not be in either table, or the
+# gate refuses a file the component handles perfectly well.
+_both = _tables_from_gate("VIDEO_ONLY")
+for _ty, _fields in _tables_from_gate("STILL_ONLY").items():
+    _both.setdefault(_ty, []).extend(_fields)
+_wrong = []
+for _ty, _comp in _DISPATCH.items():
+    _text = _COMPONENT_SRC.get(_comp, "")
+    for _field in set(re.findall(r"isVideo\w*\(\s*(?:scene\.)?(\w+)\s*\)", _text)):
+        if _field in _both.get(_ty, []):
+            _wrong.append(f"{_ty}.{_field} branches but is listed one-sided")
+if _wrong:
+    raise SystemExit("  FAIL " + "; ".join(_wrong))
+_counted(f"{sum(len(v) for v in _both.values())} one-sided media slots, none of "
+         "them a branching one")
 
 # The suite printed "every gate fires on its violation" while G13 and G16 had
 # no failing case at all (found 2026-08-17). Uniqueness of ids was asserted;

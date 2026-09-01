@@ -94,6 +94,13 @@ RESEARCH = """# Research — selftest
 """
 
 
+
+def _spoken(body: str) -> str:
+    """The spoken half of a script.md, the way script_approval.read_script
+    extracts it — headings, blockquotes and comments are not narration."""
+    return "\n".join(l for l in body.splitlines()
+                      if l.strip() and not l.lstrip().startswith(("#", ">", "<!--")))
+
 def run() -> int:
     tmp = Path(tempfile.mkdtemp(prefix="script-pipeline-selftest-"))
     job = tmp / "jobs" / "selftest"
@@ -656,6 +663,30 @@ def run() -> int:
     ok("phrase fix leaves an honest chunk alone",
        csp._apply_phrases("see it works", {"see use it": "x"})
        == "see it works")
+
+    # 7b. TWO GUARDS, ONE GUARANTEE, SAME BYTES (2026-09-01).
+    #
+    # script_approval.py hashes only the SPOKEN lines — read_script() strips
+    # markdown headings, blockquotes and comments first. plan_shots.py had its
+    # own copy of the check that sha256'd the WHOLE file. They agreed for every
+    # reel in the repo purely because no script.md had ever carried a heading;
+    # the first one that did was refused with a hash the user had genuinely
+    # approved, at the exact moment the avatar was already rendering.
+    #
+    # A guard that is correct by file convention is not correct. This pins the
+    # shared function instead of the coincidence.
+    ps_src = (REAL_ROOT / "tools/plan_shots.py").read_text()
+    ok("plan_shots does not roll its own script hash",
+       '" ".join(script_p.read_text().split())' not in ps_src)
+    ok("plan_shots hashes what script_approval hashes",
+       "from script_approval import read_script, sha" in ps_src
+       and "sha(read_script(slug))" in ps_src)
+    # and the reason it matters, exercised rather than asserted:
+    with_heading = "# Script — demo\n\nThe phone ships Tuesday.\n"
+    without = "The phone ships Tuesday.\n"
+    ok("a markdown heading does not change the approved hash",
+       sa.sha(_spoken(with_heading))
+       == sa.sha(_spoken(without)))
 
     # 8. check_script's own selftest — structure thresholds + AI tells.
     print("\n  -- check_script selftest --")

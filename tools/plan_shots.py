@@ -158,8 +158,17 @@ def main() -> None:
                 "  Or read the breakdown without writing: drop --write.")
         try:
             appr = json.loads(appr_p.read_text())
-            live = hashlib.sha256(
-                " ".join(script_p.read_text().split()).encode()).hexdigest()
+            # HASH THE SAME BYTES script_approval DOES (2026-09-01). This
+            # used to sha256 the WHOLE file, while script_approval.py hashes
+            # only the SPOKEN lines — it strips markdown headings, quotes and
+            # comments first. The two agreed for every reel so far purely
+            # because no script.md had ever carried a heading. The first one
+            # that did was refused here with a hash the user had genuinely
+            # approved. Two functions guarding one guarantee must read the
+            # same input, or the guard is right by convention rather than by
+            # construction.
+            from script_approval import read_script, sha
+            live = sha(read_script(slug))
             if appr.get("sha256") and appr["sha256"] != live:
                 sys.exit(
                     f"REFUSING: {slug!r} was approved at "
@@ -171,9 +180,18 @@ def main() -> None:
     vo_p = ROOT / f"public/assets/{slug}/vo.json"
     vo_words: list[str] = []
     if vo_p.exists():
-        vo = json.loads(vo_p.read_text())
-        vo_words = [w["word"] for s in vo.get("segments", [])
-                    for w in s.get("words", [])]
+        # READ THE SHAPE THE PIPELINE ACTUALLY WRITES (2026-09-01). This used
+        # to reach only for raw Whisper's `segments[].words[]`, while
+        # ingest_avatar.py — the tool that writes this file — emits the
+        # flattened {"words": [...]}. So the anchor check silently found ZERO
+        # words on every reel ingested that way and printed "no vo.json yet",
+        # which reads as "not generated yet" rather than "I cannot read it".
+        # A check that cannot run is worse than one that fails: it is invisible.
+        # compile_shot_plan.load_words already tolerates both; reuse it rather
+        # than keeping a third opinion about the format.
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from compile_shot_plan import load_words
+        vo_words = [w["text"] for w in load_words(vo_p)]
 
     cl = clauses(script_p.read_text())
     shots, unresolved = [], []

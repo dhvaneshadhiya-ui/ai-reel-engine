@@ -1,0 +1,1563 @@
+{
+  "id": "ios-27-beta-8",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/ios-27-beta-8/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "Siri",
+    "iOS twenty-seven",
+    "beta eight",
+    "September ninth"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "topSrc": "assets/ios-27-beta-8/receipt-9to5mac-crop.png",
+      "bottomSrc": "assets/ios-27-beta-8/avatar-master.mp4",
+      "captionBottom": 1000,
+      "topFocusX": 0.5,
+      "bottomFocusX": 0.5,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 1.84,
+      "assetId": "hook-9to5mac",
+      "claimId": "hook-9to5mac",
+      "covers": "Siri just stopped being",
+      "credit": "9to5Mac",
+      "bottomFrom": 0.0
+    },
+    {
+      "type": "receipt",
+      "src": "assets/ios-27-beta-8/receipt-macrumors-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 930,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.3,
+          "x": 40,
+          "y": 370,
+          "w": 1000,
+          "h": 420
+        }
+      ],
+      "captionBottom": 460,
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.0
+        },
+        {
+          "src": "sfx/Core.MP3",
+          "vol": 0.556,
+          "at": 2.4
+        }
+      ],
+      "durationSec": 8.68,
+      "assetId": "release-macrumors",
+      "claimId": "release-macrumors",
+      "covers": "Apple just dropped beta",
+      "credit": "MacRumors"
+    },
+    {
+      "type": "specsheet",
+      "title": "SIRI AI",
+      "kicker": "What actually changed",
+      "rows": [
+        {
+          "label": "Conversation",
+          "value": "Real, back-and-forth"
+        },
+        {
+          "label": "On-screen",
+          "value": "Sees what you see"
+        },
+        {
+          "label": "Reads for you",
+          "value": "Messages & Mail",
+          "accent": true
+        }
+      ],
+      "footnote": "Apple's iOS 27, per MacRumors & 9to5Mac",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.343,
+          "at": 0.15
+        }
+      ],
+      "durationSec": 7.06
+    },
+    {
+      "type": "footage",
+      "src": "assets/ios-27-beta-8/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 4.5,
+      "from": 17.58,
+      "focusX": 0.5
+    },
+    {
+      "type": "specsheet",
+      "title": "VISUAL INTELLIGENCE",
+      "kicker": "New home",
+      "rows": [
+        {
+          "label": "Used to live",
+          "value": "Its own button"
+        },
+        {
+          "label": "Now lives",
+          "value": "Inside the Camera app",
+          "accent": true
+        }
+      ],
+      "footnote": "Apple's iOS 27, per MacRumors & 9to5Mac",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.343,
+          "at": 0.15
+        }
+      ],
+      "durationSec": 4.66
+    },
+    {
+      "type": "specsheet",
+      "title": "LIQUID GLASS",
+      "kicker": "Settings",
+      "rows": [
+        {
+          "label": "New control",
+          "value": "Transparency slider",
+          "accent": true
+        },
+        {
+          "label": "You decide",
+          "value": "How see-through it looks"
+        }
+      ],
+      "footnote": "Apple's iOS 27, per MacRumors, 9to5Mac & OSXDaily",
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "vol": 0.251,
+          "at": 0.15
+        }
+      ],
+      "durationSec": 7.78
+    },
+    {
+      "type": "categorygrid",
+      "headline": "UNDER THE HOOD",
+      "cards": [
+        {
+          "label": "App launches",
+          "sub": "Faster"
+        },
+        {
+          "label": "AirDrop",
+          "sub": "Quicker"
+        },
+        {
+          "label": "Wi-Fi to cellular",
+          "sub": "Smoother handoff"
+        }
+      ],
+      "durationSec": 7.04
+    },
+    {
+      "type": "receipt",
+      "src": "assets/ios-27-beta-8/receipt-apple-devnotes-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 930,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 40,
+          "y": 320,
+          "w": 1000,
+          "h": 500
+        }
+      ],
+      "captionBottom": 460,
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 3.38,
+      "assetId": "beta8-devnotes",
+      "claimId": "beta8-devnotes",
+      "covers": "itself is reportedly quiet",
+      "credit": "Apple Developer Documentation"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/ios-27-beta-8/receipt-osxdaily-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 930,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.3,
+          "x": 20,
+          "y": 140,
+          "w": 1040,
+          "h": 480
+        }
+      ],
+      "captionBottom": 460,
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 6.36,
+      "assetId": "smaller-stuff-osxdaily",
+      "claimId": "smaller-stuff-osxdaily",
+      "covers": "Still, the cycle's added",
+      "credit": "OSXDaily"
+    },
+    {
+      "type": "footage",
+      "src": "assets/ios-27-beta-8/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 4.7,
+      "from": 51.3,
+      "focusX": 0.5
+    },
+    {
+      "type": "footage",
+      "src": "assets/ios-27-beta-8/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 6.295,
+      "from": 56.0,
+      "focusX": 0.5
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.94,
+      "text": "Siri just stopped",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Siri"
+        },
+        {
+          "t": 0.36,
+          "text": "just"
+        },
+        {
+          "t": 0.7,
+          "text": "stopped"
+        }
+      ]
+    },
+    {
+      "start": 0.94,
+      "end": 2.04,
+      "text": "being broken. Apple",
+      "words": [
+        {
+          "t": 0.94,
+          "text": "being"
+        },
+        {
+          "t": 1.18,
+          "text": "broken."
+        },
+        {
+          "t": 1.84,
+          "text": "Apple"
+        }
+      ]
+    },
+    {
+      "start": 2.04,
+      "end": 2.88,
+      "text": "just dropped beta",
+      "words": [
+        {
+          "t": 2.04,
+          "text": "just"
+        },
+        {
+          "t": 2.28,
+          "text": "dropped"
+        },
+        {
+          "t": 2.62,
+          "text": "beta"
+        }
+      ]
+    },
+    {
+      "start": 2.88,
+      "end": 3.82,
+      "text": "eight of iOS",
+      "words": [
+        {
+          "t": 2.88,
+          "text": "eight"
+        },
+        {
+          "t": 3.28,
+          "text": "of"
+        },
+        {
+          "t": 3.52,
+          "text": "iOS"
+        }
+      ]
+    },
+    {
+      "start": 3.82,
+      "end": 5.16,
+      "text": "twenty-seven and here's",
+      "words": [
+        {
+          "t": 3.82,
+          "text": "twenty-seven"
+        },
+        {
+          "t": 4.54,
+          "text": "and"
+        },
+        {
+          "t": 4.86,
+          "text": "here's"
+        }
+      ]
+    },
+    {
+      "start": 5.16,
+      "end": 6.12,
+      "text": "what nobody expected.",
+      "words": [
+        {
+          "t": 5.16,
+          "text": "what"
+        },
+        {
+          "t": 5.3,
+          "text": "nobody"
+        },
+        {
+          "t": 5.58,
+          "text": "expected."
+        }
+      ]
+    },
+    {
+      "start": 6.44,
+      "end": 6.92,
+      "text": "The Siri they",
+      "words": [
+        {
+          "t": 6.44,
+          "text": "The"
+        },
+        {
+          "t": 6.54,
+          "text": "Siri"
+        },
+        {
+          "t": 6.74,
+          "text": "they"
+        }
+      ]
+    },
+    {
+      "start": 6.92,
+      "end": 7.84,
+      "text": "promised years ago",
+      "words": [
+        {
+          "t": 6.92,
+          "text": "promised"
+        },
+        {
+          "t": 7.22,
+          "text": "years"
+        },
+        {
+          "t": 7.54,
+          "text": "ago"
+        }
+      ]
+    },
+    {
+      "start": 7.84,
+      "end": 8.8,
+      "text": "is finally sitting",
+      "words": [
+        {
+          "t": 7.84,
+          "text": "is"
+        },
+        {
+          "t": 8.06,
+          "text": "finally"
+        },
+        {
+          "t": 8.46,
+          "text": "sitting"
+        }
+      ]
+    },
+    {
+      "start": 8.8,
+      "end": 9.32,
+      "text": "in a real",
+      "words": [
+        {
+          "t": 8.8,
+          "text": "in"
+        },
+        {
+          "t": 9.0,
+          "text": "a"
+        },
+        {
+          "t": 9.12,
+          "text": "real"
+        }
+      ]
+    },
+    {
+      "start": 9.32,
+      "end": 10.32,
+      "text": "build right now.",
+      "words": [
+        {
+          "t": 9.32,
+          "text": "build"
+        },
+        {
+          "t": 9.66,
+          "text": "right"
+        },
+        {
+          "t": 10.0,
+          "text": "now."
+        }
+      ]
+    },
+    {
+      "start": 10.52,
+      "end": 11.18,
+      "text": "And Siri doesn't",
+      "words": [
+        {
+          "t": 10.52,
+          "text": "And"
+        },
+        {
+          "t": 10.66,
+          "text": "Siri"
+        },
+        {
+          "t": 10.88,
+          "text": "doesn't"
+        }
+      ]
+    },
+    {
+      "start": 11.18,
+      "end": 12.06,
+      "text": "just answer anymore,",
+      "words": [
+        {
+          "t": 11.18,
+          "text": "just"
+        },
+        {
+          "t": 11.36,
+          "text": "answer"
+        },
+        {
+          "t": 11.7,
+          "text": "anymore,"
+        }
+      ]
+    },
+    {
+      "start": 12.22,
+      "end": 12.62,
+      "text": "it holds a",
+      "words": [
+        {
+          "t": 12.22,
+          "text": "it"
+        },
+        {
+          "t": 12.28,
+          "text": "holds"
+        },
+        {
+          "t": 12.5,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 12.62,
+      "end": 13.76,
+      "text": "conversation, knows what's",
+      "words": [
+        {
+          "t": 12.62,
+          "text": "conversation,"
+        },
+        {
+          "t": 13.38,
+          "text": "knows"
+        },
+        {
+          "t": 13.5,
+          "text": "what's"
+        }
+      ]
+    },
+    {
+      "start": 13.76,
+      "end": 14.34,
+      "text": "on your screen",
+      "words": [
+        {
+          "t": 13.76,
+          "text": "on"
+        },
+        {
+          "t": 13.88,
+          "text": "your"
+        },
+        {
+          "t": 14.0,
+          "text": "screen"
+        }
+      ]
+    },
+    {
+      "start": 14.34,
+      "end": 15.1,
+      "text": "and can actually",
+      "words": [
+        {
+          "t": 14.34,
+          "text": "and"
+        },
+        {
+          "t": 14.6,
+          "text": "can"
+        },
+        {
+          "t": 14.74,
+          "text": "actually"
+        }
+      ]
+    },
+    {
+      "start": 15.1,
+      "end": 15.76,
+      "text": "read your own",
+      "words": [
+        {
+          "t": 15.1,
+          "text": "read"
+        },
+        {
+          "t": 15.34,
+          "text": "your"
+        },
+        {
+          "t": 15.54,
+          "text": "own"
+        }
+      ]
+    },
+    {
+      "start": 15.76,
+      "end": 16.58,
+      "text": "messages and mail",
+      "words": [
+        {
+          "t": 15.76,
+          "text": "messages"
+        },
+        {
+          "t": 16.08,
+          "text": "and"
+        },
+        {
+          "t": 16.36,
+          "text": "mail"
+        }
+      ]
+    },
+    {
+      "start": 16.58,
+      "end": 17.38,
+      "text": "to answer you.",
+      "words": [
+        {
+          "t": 16.58,
+          "text": "to"
+        },
+        {
+          "t": 16.78,
+          "text": "answer"
+        },
+        {
+          "t": 17.12,
+          "text": "you."
+        }
+      ]
+    },
+    {
+      "start": 17.58,
+      "end": 18.36,
+      "text": "That's serious enough",
+      "words": [
+        {
+          "t": 17.58,
+          "text": "That's"
+        },
+        {
+          "t": 17.84,
+          "text": "serious"
+        },
+        {
+          "t": 18.06,
+          "text": "enough"
+        }
+      ]
+    },
+    {
+      "start": 18.36,
+      "end": 18.84,
+      "text": "to get its",
+      "words": [
+        {
+          "t": 18.36,
+          "text": "to"
+        },
+        {
+          "t": 18.54,
+          "text": "get"
+        },
+        {
+          "t": 18.66,
+          "text": "its"
+        }
+      ]
+    },
+    {
+      "start": 18.84,
+      "end": 19.66,
+      "text": "own app now",
+      "words": [
+        {
+          "t": 18.84,
+          "text": "own"
+        },
+        {
+          "t": 19.12,
+          "text": "app"
+        },
+        {
+          "t": 19.4,
+          "text": "now"
+        }
+      ]
+    },
+    {
+      "start": 19.66,
+      "end": 20.36,
+      "text": "just to hold",
+      "words": [
+        {
+          "t": 19.66,
+          "text": "just"
+        },
+        {
+          "t": 19.96,
+          "text": "to"
+        },
+        {
+          "t": 20.12,
+          "text": "hold"
+        }
+      ]
+    },
+    {
+      "start": 20.36,
+      "end": 21.48,
+      "text": "every conversation you've",
+      "words": [
+        {
+          "t": 20.36,
+          "text": "every"
+        },
+        {
+          "t": 20.62,
+          "text": "conversation"
+        },
+        {
+          "t": 21.08,
+          "text": "you've"
+        }
+      ]
+    },
+    {
+      "start": 21.48,
+      "end": 21.94,
+      "text": "had with it.",
+      "words": [
+        {
+          "t": 21.48,
+          "text": "had"
+        },
+        {
+          "t": 21.62,
+          "text": "with"
+        },
+        {
+          "t": 21.78,
+          "text": "it."
+        }
+      ]
+    },
+    {
+      "start": 22.08,
+      "end": 23.08,
+      "text": "Even the Camera app's",
+      "words": [
+        {
+          "t": 22.08,
+          "text": "Even"
+        },
+        {
+          "t": 22.28,
+          "text": "the"
+        },
+        {
+          "t": 22.44,
+          "text": "Camera"
+        },
+        {
+          "t": 22.44,
+          "text": "app's"
+        }
+      ]
+    },
+    {
+      "start": 23.08,
+      "end": 23.6,
+      "text": "in on it",
+      "words": [
+        {
+          "t": 23.08,
+          "text": "in"
+        },
+        {
+          "t": 23.32,
+          "text": "on"
+        },
+        {
+          "t": 23.46,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 23.6,
+      "end": 24.44,
+      "text": "now. Point it",
+      "words": [
+        {
+          "t": 23.6,
+          "text": "now."
+        },
+        {
+          "t": 24.1,
+          "text": "Point"
+        },
+        {
+          "t": 24.26,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 24.44,
+      "end": 25.24,
+      "text": "at anything and",
+      "words": [
+        {
+          "t": 24.44,
+          "text": "at"
+        },
+        {
+          "t": 24.58,
+          "text": "anything"
+        },
+        {
+          "t": 24.88,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 25.24,
+      "end": 25.9,
+      "text": "Siri tells you",
+      "words": [
+        {
+          "t": 25.24,
+          "text": "Siri"
+        },
+        {
+          "t": 25.46,
+          "text": "tells"
+        },
+        {
+          "t": 25.74,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 25.9,
+      "end": 26.42,
+      "text": "what it's looking",
+      "words": [
+        {
+          "t": 25.9,
+          "text": "what"
+        },
+        {
+          "t": 26.04,
+          "text": "it's"
+        },
+        {
+          "t": 26.22,
+          "text": "looking"
+        }
+      ]
+    },
+    {
+      "start": 26.42,
+      "end": 27.56,
+      "text": "at. Beyond Siri,",
+      "words": [
+        {
+          "t": 26.42,
+          "text": "at."
+        },
+        {
+          "t": 26.74,
+          "text": "Beyond"
+        },
+        {
+          "t": 27.22,
+          "text": "Siri,"
+        }
+      ]
+    },
+    {
+      "start": 27.82,
+      "end": 28.32,
+      "text": "there's the tweak",
+      "words": [
+        {
+          "t": 27.82,
+          "text": "there's"
+        },
+        {
+          "t": 27.96,
+          "text": "the"
+        },
+        {
+          "t": 28.1,
+          "text": "tweak"
+        }
+      ]
+    },
+    {
+      "start": 28.32,
+      "end": 29.28,
+      "text": "everyone will touch",
+      "words": [
+        {
+          "t": 28.32,
+          "text": "everyone"
+        },
+        {
+          "t": 28.72,
+          "text": "will"
+        },
+        {
+          "t": 29.0,
+          "text": "touch"
+        }
+      ]
+    },
+    {
+      "start": 29.28,
+      "end": 30.98,
+      "text": "first. Liquid Glass finally",
+      "words": [
+        {
+          "t": 29.28,
+          "text": "first."
+        },
+        {
+          "t": 29.94,
+          "text": "Liquid"
+        },
+        {
+          "t": 30.62,
+          "text": "Glass"
+        },
+        {
+          "t": 30.62,
+          "text": "finally"
+        }
+      ]
+    },
+    {
+      "start": 30.98,
+      "end": 31.76,
+      "text": "gets a slider",
+      "words": [
+        {
+          "t": 30.98,
+          "text": "gets"
+        },
+        {
+          "t": 31.26,
+          "text": "a"
+        },
+        {
+          "t": 31.46,
+          "text": "slider"
+        }
+      ]
+    },
+    {
+      "start": 31.76,
+      "end": 32.52,
+      "text": "so you decide",
+      "words": [
+        {
+          "t": 31.76,
+          "text": "so"
+        },
+        {
+          "t": 32.06,
+          "text": "you"
+        },
+        {
+          "t": 32.2,
+          "text": "decide"
+        }
+      ]
+    },
+    {
+      "start": 32.52,
+      "end": 33.56,
+      "text": "how see-through your",
+      "words": [
+        {
+          "t": 32.52,
+          "text": "how"
+        },
+        {
+          "t": 32.82,
+          "text": "see-through"
+        },
+        {
+          "t": 33.36,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 33.56,
+      "end": 34.52,
+      "text": "phone looks. So",
+      "words": [
+        {
+          "t": 33.56,
+          "text": "phone"
+        },
+        {
+          "t": 33.82,
+          "text": "looks."
+        },
+        {
+          "t": 34.52,
+          "text": "So"
+        }
+      ]
+    },
+    {
+      "start": 34.52,
+      "end": 35.08,
+      "text": "under the hood,",
+      "words": [
+        {
+          "t": 34.52,
+          "text": "under"
+        },
+        {
+          "t": 34.74,
+          "text": "the"
+        },
+        {
+          "t": 34.86,
+          "text": "hood,"
+        }
+      ]
+    },
+    {
+      "start": 35.34,
+      "end": 36.28,
+      "text": "apps open faster,",
+      "words": [
+        {
+          "t": 35.34,
+          "text": "apps"
+        },
+        {
+          "t": 35.46,
+          "text": "open"
+        },
+        {
+          "t": 35.76,
+          "text": "faster,"
+        }
+      ]
+    },
+    {
+      "start": 36.54,
+      "end": 37.84,
+      "text": "AirDrop's quicker and",
+      "words": [
+        {
+          "t": 36.54,
+          "text": "AirDrop's"
+        },
+        {
+          "t": 36.9,
+          "text": "quicker"
+        },
+        {
+          "t": 37.24,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 37.84,
+      "end": 38.46,
+      "text": "the phone hands",
+      "words": [
+        {
+          "t": 37.84,
+          "text": "the"
+        },
+        {
+          "t": 37.98,
+          "text": "phone"
+        },
+        {
+          "t": 38.18,
+          "text": "hands"
+        }
+      ]
+    },
+    {
+      "start": 38.46,
+      "end": 39.32,
+      "text": "off Wi-Fi to",
+      "words": [
+        {
+          "t": 38.46,
+          "text": "off"
+        },
+        {
+          "t": 38.66,
+          "text": "Wi-Fi"
+        },
+        {
+          "t": 39.14,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 39.32,
+      "end": 40.28,
+      "text": "cellular without you",
+      "words": [
+        {
+          "t": 39.32,
+          "text": "cellular"
+        },
+        {
+          "t": 39.66,
+          "text": "without"
+        },
+        {
+          "t": 40.02,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 40.28,
+      "end": 41.56,
+      "text": "noticing. Beta eight",
+      "words": [
+        {
+          "t": 40.28,
+          "text": "noticing."
+        },
+        {
+          "t": 41.08,
+          "text": "Beta"
+        },
+        {
+          "t": 41.26,
+          "text": "eight"
+        }
+      ]
+    },
+    {
+      "start": 41.56,
+      "end": 42.44,
+      "text": "itself is reportedly",
+      "words": [
+        {
+          "t": 41.56,
+          "text": "itself"
+        },
+        {
+          "t": 41.82,
+          "text": "is"
+        },
+        {
+          "t": 42.04,
+          "text": "reportedly"
+        }
+      ]
+    },
+    {
+      "start": 42.44,
+      "end": 43.8,
+      "text": "quiet though. Apple's",
+      "words": [
+        {
+          "t": 42.44,
+          "text": "quiet"
+        },
+        {
+          "t": 42.9,
+          "text": "though."
+        },
+        {
+          "t": 43.48,
+          "text": "Apple's"
+        }
+      ]
+    },
+    {
+      "start": 43.8,
+      "end": 44.68,
+      "text": "just polishing now.",
+      "words": [
+        {
+          "t": 43.8,
+          "text": "just"
+        },
+        {
+          "t": 43.94,
+          "text": "polishing"
+        },
+        {
+          "t": 44.3,
+          "text": "now."
+        }
+      ]
+    },
+    {
+      "start": 44.94,
+      "end": 46.04,
+      "text": "Still, the cycle's added",
+      "words": [
+        {
+          "t": 44.94,
+          "text": "Still,"
+        },
+        {
+          "t": 45.36,
+          "text": "the"
+        },
+        {
+          "t": 45.42,
+          "text": "cycle's"
+        },
+        {
+          "t": 45.42,
+          "text": "added"
+        }
+      ]
+    },
+    {
+      "start": 46.04,
+      "end": 47.22,
+      "text": "smaller stuff. New",
+      "words": [
+        {
+          "t": 46.04,
+          "text": "smaller"
+        },
+        {
+          "t": 46.42,
+          "text": "stuff."
+        },
+        {
+          "t": 47.1,
+          "text": "New"
+        }
+      ]
+    },
+    {
+      "start": 47.22,
+      "end": 48.24,
+      "text": "photo tools, a",
+      "words": [
+        {
+          "t": 47.22,
+          "text": "photo"
+        },
+        {
+          "t": 47.48,
+          "text": "tools,"
+        },
+        {
+          "t": 48.16,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 48.24,
+      "end": 49.28,
+      "text": "custom AirPods EQ",
+      "words": [
+        {
+          "t": 48.24,
+          "text": "custom"
+        },
+        {
+          "t": 48.48,
+          "text": "AirPods"
+        },
+        {
+          "t": 48.96,
+          "text": "EQ"
+        }
+      ]
+    },
+    {
+      "start": 49.28,
+      "end": 50.38,
+      "text": "and AI wallpaper",
+      "words": [
+        {
+          "t": 49.28,
+          "text": "and"
+        },
+        {
+          "t": 49.8,
+          "text": "AI"
+        },
+        {
+          "t": 50.06,
+          "text": "wallpaper"
+        }
+      ]
+    },
+    {
+      "start": 50.38,
+      "end": 51.84,
+      "text": "generator. Apple's already",
+      "words": [
+        {
+          "t": 50.38,
+          "text": "generator."
+        },
+        {
+          "t": 51.3,
+          "text": "Apple's"
+        },
+        {
+          "t": 51.64,
+          "text": "already"
+        }
+      ]
+    },
+    {
+      "start": 51.84,
+      "end": 52.7,
+      "text": "said it, expected",
+      "words": [
+        {
+          "t": 51.84,
+          "text": "said"
+        },
+        {
+          "t": 52.1,
+          "text": "it,"
+        },
+        {
+          "t": 52.36,
+          "text": "expected"
+        }
+      ]
+    },
+    {
+      "start": 52.7,
+      "end": 53.82,
+      "text": "within weeks probably",
+      "words": [
+        {
+          "t": 52.7,
+          "text": "within"
+        },
+        {
+          "t": 53.06,
+          "text": "weeks"
+        },
+        {
+          "t": 53.38,
+          "text": "probably"
+        }
+      ]
+    },
+    {
+      "start": 53.82,
+      "end": 54.82,
+      "text": "dated right at",
+      "words": [
+        {
+          "t": 53.82,
+          "text": "dated"
+        },
+        {
+          "t": 54.26,
+          "text": "right"
+        },
+        {
+          "t": 54.56,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 54.82,
+      "end": 55.8,
+      "text": "their September ninth",
+      "words": [
+        {
+          "t": 54.82,
+          "text": "their"
+        },
+        {
+          "t": 54.96,
+          "text": "September"
+        },
+        {
+          "t": 55.32,
+          "text": "ninth"
+        }
+      ]
+    },
+    {
+      "start": 55.8,
+      "end": 56.52,
+      "text": "event. So the",
+      "words": [
+        {
+          "t": 55.8,
+          "text": "event."
+        },
+        {
+          "t": 56.0,
+          "text": "So"
+        },
+        {
+          "t": 56.36,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 56.52,
+      "end": 57.34,
+      "text": "new Siri isn't",
+      "words": [
+        {
+          "t": 56.52,
+          "text": "new"
+        },
+        {
+          "t": 56.7,
+          "text": "Siri"
+        },
+        {
+          "t": 56.96,
+          "text": "isn't"
+        }
+      ]
+    },
+    {
+      "start": 57.34,
+      "end": 58.0,
+      "text": "a promise anymore",
+      "words": [
+        {
+          "t": 57.34,
+          "text": "a"
+        },
+        {
+          "t": 57.4,
+          "text": "promise"
+        },
+        {
+          "t": 57.68,
+          "text": "anymore"
+        }
+      ]
+    },
+    {
+      "start": 58.0,
+      "end": 59.06,
+      "text": "and that's exactly",
+      "words": [
+        {
+          "t": 58.0,
+          "text": "and"
+        },
+        {
+          "t": 58.42,
+          "text": "that's"
+        },
+        {
+          "t": 58.66,
+          "text": "exactly"
+        }
+      ]
+    },
+    {
+      "start": 59.06,
+      "end": 60.14,
+      "text": "what nobody expected.",
+      "words": [
+        {
+          "t": 59.06,
+          "text": "what"
+        },
+        {
+          "t": 59.3,
+          "text": "nobody"
+        },
+        {
+          "t": 59.6,
+          "text": "expected."
+        }
+      ]
+    },
+    {
+      "start": 60.48,
+      "end": 61.02,
+      "text": "It's sitting in",
+      "words": [
+        {
+          "t": 60.48,
+          "text": "It's"
+        },
+        {
+          "t": 60.68,
+          "text": "sitting"
+        },
+        {
+          "t": 60.86,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 61.02,
+      "end": 61.64,
+      "text": "a real build",
+      "words": [
+        {
+          "t": 61.02,
+          "text": "a"
+        },
+        {
+          "t": 61.1,
+          "text": "real"
+        },
+        {
+          "t": 61.32,
+          "text": "build"
+        }
+      ]
+    },
+    {
+      "start": 61.64,
+      "end": 62.2,
+      "text": "right now.",
+      "words": [
+        {
+          "t": 61.64,
+          "text": "right"
+        },
+        {
+          "t": 61.94,
+          "text": "now."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "script": "Siri just stopped being broken.\n\nApple just dropped beta eight of iOS twenty-seven, and here's what nobody expected: the Siri they promised years ago is finally sitting in a real build, right now.\n\nAnd Siri doesn't just answer anymore, it holds a conversation, knows what's on your screen, and can actually read your own Messages and Mail to answer you.\n\nThat's serious enough to get its own app now, just to hold every conversation you've had with it.\n\nEven the Camera app's in on it now: point it at anything, and Siri tells you what it's looking at.\n\nBeyond Siri, there's the tweak everyone will touch first. Liquid Glass finally gets a slider, so you decide how see-through your phone looks.\n\nSo under the hood, apps open faster, AirDrop's quicker, and the phone hands off Wi-Fi to cellular without you noticing.\n\nBeta eight itself is reportedly quiet, though. Apple's just polishing now.\n\nStill, the cycle's added smaller stuff: new photo tools, a custom AirPods EQ, an AI wallpaper generator.\n\nApple's already said it: expected within weeks, probably dated right at their September ninth event.\n\nSo the new Siri isn't a promise anymore, and that's exactly what nobody expected. It's sitting in a real build, right now.",
+  "approval": {
+    "sha256": "573d51e4e5a60476b864e9a2e677b7288ee2e2b355dccea745f59a0bf4747c61",
+    "approvedAt": "2026-09-01T05:07:00+00:00",
+    "words": 206,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

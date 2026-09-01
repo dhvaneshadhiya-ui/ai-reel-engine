@@ -1,0 +1,343 @@
+<title>ChatGPT Sticker Packs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+
+<style>
+  :root{
+    --ground:#F7F8FA;
+    --surface:#FFFFFF;
+    --sunken:#EFF1F5;
+    --ink:#15171B;
+    --muted:#61666F;
+    --line:#E1E4EA;
+    --accent:#2C5FD0;
+    --accent-soft:#E8EEFC;
+    --caution:#9C4221;
+    --caution-soft:#FBEDE4;
+    --check-a:#FFFFFF;
+    --check-b:#E8EAEF;
+    --shadow:0 1px 2px rgba(15,20,35,.05), 0 8px 24px -12px rgba(15,20,35,.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#101216;
+      --surface:#181B21;
+      --sunken:#1F232A;
+      --ink:#E7E9ED;
+      --muted:#99A0AB;
+      --line:#282D36;
+      --accent:#7CA3FF;
+      --accent-soft:#1B2436;
+      --caution:#E8A87C;
+      --caution-soft:#2A1F19;
+      --check-a:#1F232A;
+      --check-b:#171A20;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#101216;
+    --surface:#181B21;
+    --sunken:#1F232A;
+    --ink:#E7E9ED;
+    --muted:#99A0AB;
+    --line:#282D36;
+    --accent:#7CA3FF;
+    --accent-soft:#1B2436;
+    --caution:#E8A87C;
+    --caution-soft:#2A1F19;
+    --check-a:#1F232A;
+    --check-b:#171A20;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+
+  body{
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"Source Sans 3", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:40rem;margin:0 auto;padding:0 1.25rem 5rem;}
+
+  /* ---------- header: the one flourish, built from the subject ---------- */
+  .head{
+    position:relative;
+    margin:0 -1.25rem 2.75rem;
+    padding:3.5rem 1.25rem 2.25rem;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .head::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      repeating-conic-gradient(var(--check-a) 0% 25%, var(--check-b) 0% 50%)
+      0 0 / 22px 22px;
+    -webkit-mask-image:linear-gradient(200deg, rgba(0,0,0,.85), transparent 62%);
+    mask-image:linear-gradient(200deg, rgba(0,0,0,.85), transparent 62%);
+  }
+  .head > *{position:relative;}
+  .eyebrow{
+    font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size:.7rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--accent); margin:0 0 1rem;
+  }
+  h1{
+    font-family:"Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+    font-weight:700; font-size:clamp(2.1rem, 8vw, 3rem); line-height:1.04;
+    letter-spacing:-.025em; text-wrap:balance; margin:0 0 .85rem;
+  }
+  .standfirst{font-size:1.075rem;color:var(--muted);margin:0;max-width:34rem;}
+
+  /* ---------- structure ---------- */
+  h2{
+    font-family:"Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+    font-weight:700; font-size:1.4rem; letter-spacing:-.015em;
+    margin:3.25rem 0 .35rem; text-wrap:balance;
+  }
+  .sub{color:var(--muted);font-size:.95rem;margin:0 0 1.35rem;}
+  h3{
+    font-family:"Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+    font-weight:600;font-size:1.05rem;margin:1.9rem 0 .4rem;
+  }
+  p{margin:0 0 1rem;}
+  a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px;}
+  a:focus-visible, li:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px;}
+  strong{font-weight:600;}
+  em{font-style:italic;}
+
+  /* ---------- the seven steps: a real sequence, so it is numbered ---------- */
+  .steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.4rem;counter-reset:s;}
+  .steps li{display:grid;grid-template-columns:2rem 1fr;gap:1rem;align-items:start;counter-increment:s;}
+  .steps li::before{
+    content:counter(s);
+    font-family:"JetBrains Mono", ui-monospace, monospace;
+    font-size:.82rem;font-weight:600;
+    display:flex;align-items:center;justify-content:center;
+    width:2rem;height:2rem;border-radius:50%;
+    background:var(--accent-soft);color:var(--accent);
+    margin-top:.05rem;
+  }
+  .steps li > div > *:last-child{margin-bottom:0;}
+  .steps + p{margin-top:1.5rem;}
+
+  kbd{
+    font-family:"JetBrains Mono", ui-monospace, monospace;
+    font-size:.86em;font-weight:600;
+    background:var(--sunken);border:1px solid var(--line);
+    border-radius:5px;padding:.1em .4em;white-space:nowrap;color:var(--ink);
+  }
+
+  .template{
+    background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:1.15rem 1.25rem;margin:1rem 0;font-size:1.05rem;line-height:1.9;
+    box-shadow:var(--shadow);
+  }
+  .slot{
+    font-family:"JetBrains Mono", ui-monospace, monospace;
+    font-size:.85em;font-weight:600;color:var(--accent);
+    background:var(--accent-soft);border-radius:6px;padding:.18em .5em;
+    white-space:nowrap;
+  }
+
+  /* ---------- settings table ---------- */
+  .tablewrap{overflow-x:auto;margin:0 0 1.25rem;}
+  table{border-collapse:collapse;width:100%;font-size:.98rem;}
+  th,td{text-align:left;padding:.7rem .9rem;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{
+    font-family:"JetBrains Mono", ui-monospace, monospace;
+    font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;
+  }
+  td:first-child{white-space:nowrap;color:var(--muted);}
+  .emojiset{font-size:1.25rem;letter-spacing:.18em;}
+
+  pre{
+    background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:1.1rem 1.2rem;overflow-x:auto;margin:1rem 0;
+    box-shadow:var(--shadow);
+  }
+  code{font-family:"JetBrains Mono", ui-monospace, monospace;font-size:.87rem;line-height:1.75;}
+  blockquote{
+    margin:1rem 0;padding:.2rem 0 .2rem 1.1rem;
+    border-left:2px solid var(--line);color:var(--muted);font-style:italic;
+  }
+
+  /* ---------- styles: a set, not a sequence, so chips ---------- */
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.5rem;padding:0;list-style:none;}
+  .chips li{
+    font-family:"JetBrains Mono", ui-monospace, monospace;
+    font-size:.8rem;
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:999px;padding:.34rem .78rem;
+  }
+  .chips li.pick{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}
+  .legend{font-size:.86rem;color:var(--muted);margin:-.75rem 0 1.5rem;}
+  .legend .dot{
+    display:inline-block;width:.62rem;height:.62rem;border-radius:50%;
+    background:var(--accent-soft);border:1px solid var(--accent);
+    vertical-align:-1px;margin-right:.3rem;
+  }
+
+  /* ---------- rules ---------- */
+  .rules{list-style:none;margin:0 0 1rem;padding:0;display:flex;flex-direction:column;gap:1rem;}
+  .rules li{
+    background:var(--caution-soft);border:1px solid var(--line);
+    border-radius:10px;padding:.9rem 1.05rem;font-size:.97rem;
+  }
+  .rules strong{color:var(--caution);}
+
+  /* ---------- troubleshooting ---------- */
+  .fix{border-top:1px solid var(--line);padding:1.1rem 0;}
+  .fix:last-of-type{border-bottom:1px solid var(--line);}
+  .fix p{margin:0;}
+  .fix .problem{font-weight:600;margin-bottom:.25rem;}
+  .fix .answer{color:var(--muted);font-size:.97rem;}
+
+
+
+  /* ---------- print / PDF ---------- */
+  @media print{
+    :root{
+      --ground:#FFFFFF; --surface:#FFFFFF; --sunken:#F1F3F6;
+      --ink:#15171B; --muted:#5A606A; --line:#D8DCE3;
+      --accent:#2C5FD0; --accent-soft:#E8EEFC;
+      --caution:#9C4221; --caution-soft:#FBEDE4;
+      --check-a:#FFFFFF; --check-b:#ECEEF2;
+      --shadow:none;
+    }
+    body{background:#FFFFFF;font-size:10.5pt;line-height:1.5;}
+    .wrap{max-width:none;padding:0 0 0.5rem;}
+    .head{margin:0 0 1.75rem;padding:0 0 1.25rem;}
+    h1{font-size:26pt;}
+    .standfirst{font-size:11pt;}
+    h2{font-size:14pt;margin:1.6rem 0 .3rem;break-after:avoid;}
+    h3{font-size:11.5pt;break-after:avoid;}
+    .sub{break-after:avoid;}
+    .steps li,.rules li,.fix,.template,pre,blockquote,table{break-inside:avoid;}
+    .chips{break-inside:avoid;}
+    a{color:var(--ink);text-decoration:none;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="head">
+    <p class="eyebrow">The complete setup</p>
+    <h1>ChatGPT Sticker Packs</h1>
+    <p class="standfirst">One photo into nine WhatsApp stickers, without a cutout app or a single paid tool. Every step below was read off a real session, not a press release.</p>
+  </header>
+
+  <h2>What you need</h2>
+  <p class="sub">Three things, and you probably have all of them.</p>
+  <p>The <strong>ChatGPT app on your phone</strong> — not the website, this one is mobile only. A <strong>free account</strong>, no Plus required. And <strong>one photo</strong>: a clear, well-lit face shot works best, and it can be you, a friend, or a pet.</p>
+
+  <h2>The seven steps</h2>
+  <p class="sub">Order matters here, so they are numbered.</p>
+  <ol class="steps">
+    <li><div><p>Open ChatGPT and tap the <kbd>+</kbd> next to the message box.</p></div></li>
+    <li><div><p>Tap <kbd>Plugins</kbd>, then <kbd>Create image</kbd>.</p></div></li>
+    <li><div><p>On the <em>Create an image</em> panel, tap the <kbd>Stickers</kbd> tile.</p></div></li>
+    <li><div>
+      <p>You get a fill-in-the-blanks sentence, not a prompt box:</p>
+      <div class="template">Create a <span class="slot">style</span> sticker pack based on <span class="slot">photo</span>, remixing with <span class="slot">emoji</span>.</div>
+      <p>Tap each highlighted part in turn.</p>
+    </div></li>
+    <li><div><p>Tap the style slot to open <strong>Choose a style</strong>, and scroll. There are nineteen of them — the full list is below.</p></div></li>
+    <li><div><p>Tap the photo slot and pick your image. Tap the emoji slot and pick a few that match the moods you want.</p></div></li>
+    <li><div><p>Tap <kbd>Generate</kbd>. You get <strong>nine stickers</strong> in a 3×3 grid on a transparent background.</p></div></li>
+  </ol>
+  <p>Then: <kbd>Add to chat apps</kbd> → <kbd>WhatsApp</kbd> → name your pack → <kbd>Add to WhatsApp</kbd>. It lands in your sticker keyboard.</p>
+
+  <h2>The exact settings</h2>
+  <p class="sub">Read directly off the screen in the video.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Slot</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Style</td><td><strong>3D</strong></td></tr>
+        <tr><td>Photo</td><td>One portrait, upper body, plain indoor background</td></tr>
+        <tr><td>Emoji</td><td><span class="emojiset">🤟 🧩 🌹 💥</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>The emoji are doing more work than they look like they are. They are not decoration — each one steers a different reaction in the finished pack. 🤟 produced the confident thumbs-up poses, 💥 produced the <em>WOW</em> and <em>HA HA</em> comic bursts, 🌹 produced the offering-a-rose sticker.</p>
+  <p><strong>So pick emoji for the range of moods you want, not for how they look.</strong></p>
+
+  <h3>The prompt it generates</h3>
+  <p>When you tap Generate, ChatGPT expands that sentence into a full prompt and sends it. The part visible in the recording reads:</p>
+  <blockquote>…expression, pose, or reaction. Separate the stickers with wide, fully transparent gaps. No background, shadows, or overlapping elements.</blockquote>
+  <p>The opening scrolled off screen before it was captured, so it is not reproduced here.</p>
+
+  <h3>A version you can type yourself</h3>
+  <p>Written to match what the template produces. It is not a transcript of it.</p>
+  <pre><code>Create a 3D sticker pack based on this photo. Nine stickers
+in a 3x3 grid, each showing a different expression, pose, or
+reaction. Separate the stickers with wide, fully transparent
+gaps. No background, shadows, or overlapping elements.</code></pre>
+  <p>Swap <kbd>3D</kbd> for any style below.</p>
+
+  <h2>All nineteen styles</h2>
+  <p class="sub">Counted in the app. Most articles say eighteen.</p>
+  <ul class="chips">
+    <li class="pick">3D</li>
+    <li>Hand-drawn</li>
+    <li>Chibi</li>
+    <li class="pick">Meme</li>
+    <li>Holographic</li>
+    <li>Chrome</li>
+    <li>Comic Book</li>
+    <li>Anime</li>
+    <li class="pick">Clay</li>
+    <li>Pixel Art</li>
+    <li>Kawaii</li>
+    <li>Retro</li>
+    <li>Watercolor</li>
+    <li>Minimal</li>
+    <li>Riso Print</li>
+    <li>Paper Cut</li>
+    <li>Embroidered</li>
+    <li>Graffiti</li>
+    <li>Traditional Tattoo</li>
+  </ul>
+  <p class="legend"><span class="dot"></span>The three worth starting with.</p>
+  <p><strong>3D</strong> and <strong>Clay</strong> hold a face best. <strong>Chibi</strong> and <strong>Kawaii</strong> push toward cartoon and lose the likeness. <strong>Meme</strong> is the one that actually produces reaction stickers. <strong>Holographic</strong> and <strong>Chrome</strong> look great on their own and read poorly at sticker size in a chat.</p>
+
+  <h2>The rules that trip people up</h2>
+  <p class="sub">The first one stops most people's first export.</p>
+  <ul class="rules">
+    <li><strong>You need at least three stickers to export to WhatsApp.</strong> This is Meta's rule for every app that exports to WhatsApp, not a ChatGPT limit. A pack of nine clears it easily. A single sticker will not export.</li>
+    <li><strong>A WhatsApp pack maxes out at 30.</strong> One generation gives you nine, so this never binds unless you are combining packs.</li>
+    <li><strong>Export targets are iMessage, WhatsApp and Save to photos.</strong> Those three.</li>
+    <li><strong>Name the pack when it asks.</strong> That name is what shows in WhatsApp when you use or share it, so it is worth a moment.</li>
+  </ul>
+
+  <h2>If it goes wrong</h2>
+  <p class="sub">Four things that actually happen.</p>
+  <div class="fix">
+    <p class="problem">The background isn't transparent.</p>
+    <p class="answer">Say “make the background fully transparent” and regenerate. The checkerboard pattern behind the stickers is how you confirm it worked.</p>
+  </div>
+  <div class="fix">
+    <p class="problem">The stickers are touching or overlapping.</p>
+    <p class="answer">That is exactly what “wide, fully transparent gaps” in the prompt prevents. Add it and regenerate.</p>
+  </div>
+  <div class="fix">
+    <p class="problem">It doesn't look like the person.</p>
+    <p class="answer">Use a sharper, better-lit, front-facing photo, and move toward 3D or Clay. The heavily stylised options are supposed to drift.</p>
+  </div>
+  <div class="fix">
+    <p class="problem">There's no Stickers tile.</p>
+    <p class="answer">Update the app. The feature rolled out on 24 August 2026.</p>
+  </div>
+
+
+</div>

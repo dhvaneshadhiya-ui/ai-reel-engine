@@ -1,0 +1,455 @@
+{
+  "emphasis": [
+    "Nineteen",
+    "nine",
+    "three",
+    "transparent",
+    "STICKERS",
+    "WhatsApp",
+    "Stickers"
+  ],
+  "caption_corrections": {},
+  "shots": [
+    {
+      "start_phrase": "Those aren't downloaded stickers.",
+      "line": "Those aren't downloaded stickers.",
+      "needs": [
+        "aren",
+        "downloaded",
+        "stickers"
+      ],
+      "tier": "official",
+      "asset_id": "beat00",
+      "scene": {
+        "type": "split",
+        "topSrc": "assets/chatgpt-stickers/clips/beat00-screencap-3.mp4",
+        "bottomSrc": "assets/chatgpt-stickers/avatar-master.mp4",
+        "bottomFocusX": 0.5,
+        "captionBottom": 1000,
+        "headline": {
+          "y": 0.05,
+          "theme": "dark",
+          "lines": [
+            {
+              "text": "MADE IN CHATGPT",
+              "kind": "label",
+              "at": 0.05
+            },
+            {
+              "text": "MY OWN FACE",
+              "kind": "headline",
+              "at": 0.35
+            }
+          ]
+        },
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "That's my face, and",
+      "line": "That's my face, and ChatGPT built the whole pack from one photo.",
+      "needs": [
+        "face",
+        "ChatGPT",
+        "built",
+        "whole",
+        "pack",
+        "photo"
+      ],
+      "tier": null,
+      "asset_id": "avatar",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/avatar-master.mp4",
+        "zoomDir": "none",
+        "captionBottom": 980
+      }
+    },
+    {
+      "start_phrase": "No cutting anything out,",
+      "line": "No cutting anything out, no third-party app.",
+      "needs": [
+        "cutting",
+        "anything",
+        "third-party"
+      ],
+      "tier": "official",
+      "asset_id": "beat02",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat02-screencap-2.mp4",
+        "zoomDir": "in",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "It's already inside ChatGPT.",
+      "line": "It's already inside ChatGPT.",
+      "needs": [
+        "already",
+        "inside",
+        "ChatGPT"
+      ],
+      "tier": "official",
+      "asset_id": "beat03",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat03-screencap-2.mp4",
+        "zoomDir": "none",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "It starts on the",
+      "line": "It starts on the chat screen.",
+      "needs": [
+        "starts",
+        "chat",
+        "screen"
+      ],
+      "tier": "official",
+      "asset_id": "beat04",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat04-screencap-2.mp4",
+        "zoomDir": "none",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "Plus menu, Create image,",
+      "line": "Plus menu, Create image, then Stickers.",
+      "needs": [
+        "Plus",
+        "menu",
+        "Create",
+        "image",
+        "Stickers"
+      ],
+      "tier": "official",
+      "asset_id": "beat05",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat05-screencap-2.mp4",
+        "zoomDir": "none",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "There's no prompt box.",
+      "line": "There's no prompt box.",
+      "needs": [
+        "prompt"
+      ],
+      "tier": "official",
+      "asset_id": "beat06",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat06-screencap-2.mp4",
+        "zoomDir": "in",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "You fill in a",
+      "line": "You fill in a sentence: style, photo, reactions.",
+      "needs": [
+        "fill",
+        "sentence",
+        "style",
+        "photo",
+        "reactions"
+      ],
+      "tier": "official",
+      "asset_id": "beat07",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat07-screencap-2.mp4",
+        "zoomDir": "in",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "The style list is",
+      "line": "The style list is where it gets good.",
+      "needs": [
+        "style",
+        "list",
+        "where",
+        "gets",
+        "good"
+      ],
+      "tier": "official",
+      "asset_id": "beat08",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat08-screencap-1.mp4",
+        "zoomDir": "none",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "Nineteen: 3D, Anime, Chrome,",
+      "line": "Nineteen: 3D, Anime, Chrome, Pixel Art, Traditional Tattoo.",
+      "needs": [
+        "Nineteen",
+        "3D",
+        "Anime",
+        "Chrome",
+        "Pixel",
+        "Traditional"
+      ],
+      "tier": "official",
+      "asset_id": "beat09",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat09-screencap-1.mp4",
+        "zoomDir": "none",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "Pick one and it",
+      "line": "Pick one and it cuts the background out for you",
+      "needs": [
+        "Pick",
+        "cuts",
+        "background"
+      ],
+      "tier": "official",
+      "asset_id": "beat10",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat10-screencap-1.mp4",
+        "zoomDir": "in",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "the step that used",
+      "line": "the step that used to need a separate app.",
+      "needs": [
+        "step",
+        "used",
+        "need",
+        "separate"
+      ],
+      "tier": "official",
+      "asset_id": "beat11",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat11-screencap-3.mp4",
+        "zoomDir": "none",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "That checkerboard is a",
+      "line": "That checkerboard is a real transparent PNG.",
+      "needs": [
+        "checkerboard",
+        "real",
+        "transparent"
+      ],
+      "tier": "official",
+      "asset_id": "beat12",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat12-screencap-3.mp4",
+        "zoomDir": "in",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "And it doesn't make",
+      "line": "And it doesn't make one sticker.",
+      "needs": [
+        "doesn",
+        "make",
+        "sticker"
+      ],
+      "tier": "official",
+      "asset_id": "beat13",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat13-screencap-3.mp4",
+        "zoomDir": "none",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "Nine, same face, nine",
+      "line": "Nine, same face, nine reactions.",
+      "needs": [
+        "Nine",
+        "same",
+        "face",
+        "reactions"
+      ],
+      "tier": "official",
+      "asset_id": "beat14",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat14-screencap-3.mp4",
+        "zoomDir": "out",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "Then Add to chat",
+      "line": "Then Add to chat apps, choose WhatsApp.",
+      "needs": [
+        "chat",
+        "apps",
+        "choose",
+        "WhatsApp"
+      ],
+      "tier": "official",
+      "asset_id": "beat15",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat15-screencap-3.mp4",
+        "zoomDir": "none",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "This is where it",
+      "line": "This is where it stops people.",
+      "needs": [
+        "where",
+        "stops",
+        "people"
+      ],
+      "tier": "official",
+      "asset_id": "beat16",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat16-screencap-3.mp4",
+        "zoomDir": "in",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "You need at least",
+      "line": "You need at least three for that button to work.",
+      "needs": [
+        "need",
+        "least",
+        "three",
+        "button",
+        "work"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "statcard",
+        "title": "WHATSAPP STICKER PACK",
+        "rows": [
+          {
+            "label": "Minimum to export",
+            "value": "3",
+            "pct": 0.1
+          },
+          {
+            "label": "One ChatGPT generation",
+            "value": "9",
+            "pct": 0.3,
+            "color": "#2C5FD0"
+          },
+          {
+            "label": "Maximum per pack",
+            "value": "30",
+            "pct": 1.0
+          }
+        ],
+        "footnote": "Source: WhatsApp developer documentation",
+        "sfx": [
+          {
+            "src": "sfx/Click.MP3",
+            "at": 0.35,
+            "vol": 0.13
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "That's WhatsApp's rule, not",
+      "line": "That's WhatsApp's rule, not ChatGPT's.",
+      "needs": [
+        "WhatsApp",
+        "rule",
+        "ChatGPT"
+      ],
+      "tier": null,
+      "asset_id": "avatar",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/avatar-master.mp4",
+        "zoomDir": "none",
+        "captionBottom": 980
+      }
+    },
+    {
+      "start_phrase": "Name the pack, and",
+      "line": "Name the pack, and it's done.",
+      "needs": [
+        "Name",
+        "pack",
+        "done"
+      ],
+      "tier": "official",
+      "asset_id": "beat19",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat19-screencap-3.mp4",
+        "zoomDir": "none",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "One photo, nine stickers,",
+      "line": "One photo, nine stickers, in WhatsApp.",
+      "needs": [
+        "photo",
+        "nine",
+        "stickers",
+        "WhatsApp"
+      ],
+      "tier": "official",
+      "asset_id": "beat20",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/clips/beat20-screencap-3.mp4",
+        "zoomDir": "none",
+        "credit": "ChatGPT screen recording"
+      }
+    },
+    {
+      "start_phrase": "Comment STICKERS and I'll",
+      "line": "Comment STICKERS and I'll send you the exact setup I used.",
+      "needs": [
+        "Comment",
+        "STICKERS",
+        "send",
+        "exact",
+        "setup",
+        "used"
+      ],
+      "tier": null,
+      "asset_id": "avatar",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/avatar-master.mp4",
+        "zoomDir": "none",
+        "captionBottom": 980,
+        "kinetic": {
+          "text": "COMMENT \u201cSTICKERS\u201d",
+          "style": "caps",
+          "at": 0.5
+        }
+      }
+    }
+  ],
+  "format": "ai-tools"
+}

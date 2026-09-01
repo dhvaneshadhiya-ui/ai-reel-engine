@@ -1,0 +1,1287 @@
+{
+  "id": "chatgpt-stickers",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "utility",
+  "audio": "assets/chatgpt-stickers/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "Nineteen",
+    "nine",
+    "three",
+    "transparent",
+    "STICKERS",
+    "WhatsApp",
+    "Stickers"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "topSrc": "assets/chatgpt-stickers/clips/beat00-screencap-3.mp4",
+      "bottomSrc": "assets/chatgpt-stickers/avatar-master.mp4",
+      "bottomFocusX": 0.5,
+      "captionBottom": 1000,
+      "headline": {
+        "y": 0.05,
+        "theme": "dark",
+        "lines": [
+          {
+            "text": "MADE IN CHATGPT",
+            "kind": "label",
+            "at": 0.05
+          },
+          {
+            "text": "MY OWN FACE",
+            "kind": "headline",
+            "at": 0.35
+          }
+        ]
+      },
+      "credit": "ChatGPT screen recording",
+      "durationSec": 2.16,
+      "assetId": "beat00",
+      "claimId": "beat00",
+      "covers": "Those aren't downloaded stickers.",
+      "bottomFrom": 0.0
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/avatar-master.mp4",
+      "zoomDir": "none",
+      "captionBottom": 980,
+      "durationSec": 4.26,
+      "assetId": "avatar",
+      "claimId": "avatar",
+      "covers": "That's my face, and",
+      "from": 2.16,
+      "focusX": 0.5
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat02-screencap-2.mp4",
+      "zoomDir": "in",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 2.62,
+      "assetId": "beat02",
+      "claimId": "beat02",
+      "covers": "No cutting anything out,"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat03-screencap-2.mp4",
+      "zoomDir": "none",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 2.1,
+      "assetId": "beat03",
+      "claimId": "beat03",
+      "covers": "It's already inside ChatGPT."
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat04-screencap-2.mp4",
+      "zoomDir": "none",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 1.74,
+      "assetId": "beat04",
+      "claimId": "beat04",
+      "covers": "It starts on the"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat05-screencap-2.mp4",
+      "zoomDir": "none",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 2.9,
+      "assetId": "beat05",
+      "claimId": "beat05",
+      "covers": "Plus menu, Create image,"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat06-screencap-2.mp4",
+      "zoomDir": "in",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 1.26,
+      "assetId": "beat06",
+      "claimId": "beat06",
+      "covers": "There's no prompt box."
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat07-screencap-2.mp4",
+      "zoomDir": "in",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 3.76,
+      "assetId": "beat07",
+      "claimId": "beat07",
+      "covers": "You fill in a"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat08-screencap-1.mp4",
+      "zoomDir": "none",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 1.92,
+      "assetId": "beat08",
+      "claimId": "beat08",
+      "covers": "The style list is"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat09-screencap-1.mp4",
+      "zoomDir": "none",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 4.64,
+      "assetId": "beat09",
+      "claimId": "beat09",
+      "covers": "Nineteen: 3D, Anime, Chrome,"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat10-screencap-1.mp4",
+      "zoomDir": "in",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 2.28,
+      "assetId": "beat10",
+      "claimId": "beat10",
+      "covers": "Pick one and it"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat11-screencap-3.mp4",
+      "zoomDir": "none",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 2.82,
+      "assetId": "beat11",
+      "claimId": "beat11",
+      "covers": "the step that used"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat12-screencap-3.mp4",
+      "zoomDir": "in",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 2.94,
+      "assetId": "beat12",
+      "claimId": "beat12",
+      "covers": "That checkerboard is a"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat13-screencap-3.mp4",
+      "zoomDir": "none",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 1.64,
+      "assetId": "beat13",
+      "claimId": "beat13",
+      "covers": "And it doesn't make"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat14-screencap-3.mp4",
+      "zoomDir": "out",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 2.94,
+      "assetId": "beat14",
+      "claimId": "beat14",
+      "covers": "Nine, same face, nine"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat15-screencap-3.mp4",
+      "zoomDir": "none",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 2.32,
+      "assetId": "beat15",
+      "claimId": "beat15",
+      "covers": "Then Add to chat"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat16-screencap-3.mp4",
+      "zoomDir": "in",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 1.66,
+      "assetId": "beat16",
+      "claimId": "beat16",
+      "covers": "This is where it"
+    },
+    {
+      "type": "statcard",
+      "title": "WHATSAPP STICKER PACK",
+      "rows": [
+        {
+          "label": "Minimum to export",
+          "value": "3",
+          "pct": 0.1
+        },
+        {
+          "label": "One ChatGPT generation",
+          "value": "9",
+          "pct": 0.3,
+          "color": "#2C5FD0"
+        },
+        {
+          "label": "Maximum per pack",
+          "value": "30",
+          "pct": 1.0
+        }
+      ],
+      "footnote": "Source: WhatsApp developer documentation",
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "at": 0.35,
+          "vol": 0.251
+        }
+      ],
+      "durationSec": 2.54
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/avatar-master.mp4",
+      "zoomDir": "none",
+      "captionBottom": 980,
+      "durationSec": 2.8,
+      "assetId": "avatar",
+      "claimId": "avatar",
+      "covers": "That's WhatsApp's rule, not",
+      "from": 46.5,
+      "focusX": 0.5
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat19-screencap-3.mp4",
+      "zoomDir": "none",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 1.76,
+      "assetId": "beat19",
+      "claimId": "beat19",
+      "covers": "Name the pack, and"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/clips/beat20-screencap-3.mp4",
+      "zoomDir": "none",
+      "credit": "ChatGPT screen recording",
+      "durationSec": 2.7,
+      "assetId": "beat20",
+      "claimId": "beat20",
+      "covers": "One photo, nine stickers,"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-stickers/avatar-master.mp4",
+      "zoomDir": "none",
+      "captionBottom": 980,
+      "kinetic": {
+        "text": "COMMENT \u201cSTICKERS\u201d",
+        "style": "caps",
+        "at": 0.5
+      },
+      "durationSec": 2.946,
+      "assetId": "avatar",
+      "claimId": "avatar",
+      "covers": "Comment STICKERS and I'll",
+      "from": 53.76,
+      "focusX": 0.5
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.06,
+      "text": "Those aren't downloaded",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Those"
+        },
+        {
+          "t": 0.36,
+          "text": "aren't"
+        },
+        {
+          "t": 0.78,
+          "text": "downloaded"
+        }
+      ]
+    },
+    {
+      "start": 1.06,
+      "end": 2.44,
+      "text": "stickers. That's my",
+      "words": [
+        {
+          "t": 1.06,
+          "text": "stickers."
+        },
+        {
+          "t": 2.16,
+          "text": "That's"
+        },
+        {
+          "t": 2.3,
+          "text": "my"
+        }
+      ]
+    },
+    {
+      "start": 2.44,
+      "end": 4.06,
+      "text": "face. And ChatGPT",
+      "words": [
+        {
+          "t": 2.44,
+          "text": "face."
+        },
+        {
+          "t": 3.18,
+          "text": "And"
+        },
+        {
+          "t": 3.34,
+          "text": "ChatGPT"
+        }
+      ]
+    },
+    {
+      "start": 4.06,
+      "end": 4.8,
+      "text": "built the whole",
+      "words": [
+        {
+          "t": 4.06,
+          "text": "built"
+        },
+        {
+          "t": 4.36,
+          "text": "the"
+        },
+        {
+          "t": 4.54,
+          "text": "whole"
+        }
+      ]
+    },
+    {
+      "start": 4.8,
+      "end": 5.66,
+      "text": "pack from one",
+      "words": [
+        {
+          "t": 4.8,
+          "text": "pack"
+        },
+        {
+          "t": 5.14,
+          "text": "from"
+        },
+        {
+          "t": 5.44,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 5.66,
+      "end": 6.86,
+      "text": "photo. No cutting",
+      "words": [
+        {
+          "t": 5.66,
+          "text": "photo."
+        },
+        {
+          "t": 6.42,
+          "text": "No"
+        },
+        {
+          "t": 6.62,
+          "text": "cutting"
+        }
+      ]
+    },
+    {
+      "start": 6.86,
+      "end": 7.9,
+      "text": "anything out. No",
+      "words": [
+        {
+          "t": 6.86,
+          "text": "anything"
+        },
+        {
+          "t": 7.1,
+          "text": "out."
+        },
+        {
+          "t": 7.8,
+          "text": "No"
+        }
+      ]
+    },
+    {
+      "start": 7.9,
+      "end": 9.14,
+      "text": "third-party app. It's",
+      "words": [
+        {
+          "t": 7.9,
+          "text": "third-party"
+        },
+        {
+          "t": 8.42,
+          "text": "app."
+        },
+        {
+          "t": 9.04,
+          "text": "It's"
+        }
+      ]
+    },
+    {
+      "start": 9.14,
+      "end": 10.8,
+      "text": "already inside ChatGPT.",
+      "words": [
+        {
+          "t": 9.14,
+          "text": "already"
+        },
+        {
+          "t": 9.46,
+          "text": "inside"
+        },
+        {
+          "t": 9.92,
+          "text": "ChatGPT."
+        }
+      ]
+    },
+    {
+      "start": 11.14,
+      "end": 11.86,
+      "text": "It starts on",
+      "words": [
+        {
+          "t": 11.14,
+          "text": "It"
+        },
+        {
+          "t": 11.36,
+          "text": "starts"
+        },
+        {
+          "t": 11.62,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 11.86,
+      "end": 12.6,
+      "text": "the chat screen.",
+      "words": [
+        {
+          "t": 11.86,
+          "text": "the"
+        },
+        {
+          "t": 11.96,
+          "text": "chat"
+        },
+        {
+          "t": 12.18,
+          "text": "screen."
+        }
+      ]
+    },
+    {
+      "start": 12.88,
+      "end": 13.92,
+      "text": "Plus menu, create",
+      "words": [
+        {
+          "t": 12.88,
+          "text": "Plus"
+        },
+        {
+          "t": 13.1,
+          "text": "menu,"
+        },
+        {
+          "t": 13.66,
+          "text": "create"
+        }
+      ]
+    },
+    {
+      "start": 13.92,
+      "end": 15.08,
+      "text": "image, then stickers.",
+      "words": [
+        {
+          "t": 13.92,
+          "text": "image,"
+        },
+        {
+          "t": 14.52,
+          "text": "then"
+        },
+        {
+          "t": 14.74,
+          "text": "stickers."
+        }
+      ]
+    },
+    {
+      "start": 15.78,
+      "end": 16.38,
+      "text": "There's no prompt",
+      "words": [
+        {
+          "t": 15.78,
+          "text": "There's"
+        },
+        {
+          "t": 15.96,
+          "text": "no"
+        },
+        {
+          "t": 16.08,
+          "text": "prompt"
+        }
+      ]
+    },
+    {
+      "start": 16.38,
+      "end": 17.28,
+      "text": "box. You fill",
+      "words": [
+        {
+          "t": 16.38,
+          "text": "box."
+        },
+        {
+          "t": 17.04,
+          "text": "You"
+        },
+        {
+          "t": 17.12,
+          "text": "fill"
+        }
+      ]
+    },
+    {
+      "start": 17.28,
+      "end": 17.8,
+      "text": "in a sentence,",
+      "words": [
+        {
+          "t": 17.28,
+          "text": "in"
+        },
+        {
+          "t": 17.4,
+          "text": "a"
+        },
+        {
+          "t": 17.52,
+          "text": "sentence,"
+        }
+      ]
+    },
+    {
+      "start": 18.4,
+      "end": 20.08,
+      "text": "style, photo, reactions.",
+      "words": [
+        {
+          "t": 18.4,
+          "text": "style,"
+        },
+        {
+          "t": 19.08,
+          "text": "photo,"
+        },
+        {
+          "t": 19.7,
+          "text": "reactions."
+        }
+      ]
+    },
+    {
+      "start": 20.8,
+      "end": 21.5,
+      "text": "The style list",
+      "words": [
+        {
+          "t": 20.8,
+          "text": "The"
+        },
+        {
+          "t": 20.92,
+          "text": "style"
+        },
+        {
+          "t": 21.22,
+          "text": "list"
+        }
+      ]
+    },
+    {
+      "start": 21.5,
+      "end": 21.96,
+      "text": "is where it",
+      "words": [
+        {
+          "t": 21.5,
+          "text": "is"
+        },
+        {
+          "t": 21.68,
+          "text": "where"
+        },
+        {
+          "t": 21.86,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 21.96,
+      "end": 23.0,
+      "text": "gets good. Nineteen,",
+      "words": [
+        {
+          "t": 21.96,
+          "text": "gets"
+        },
+        {
+          "t": 22.14,
+          "text": "good."
+        },
+        {
+          "t": 22.72,
+          "text": "Nineteen,"
+        }
+      ]
+    },
+    {
+      "start": 23.46,
+      "end": 25.14,
+      "text": "3D, anime, chrome,",
+      "words": [
+        {
+          "t": 23.46,
+          "text": "3D,"
+        },
+        {
+          "t": 24.22,
+          "text": "anime,"
+        },
+        {
+          "t": 24.88,
+          "text": "chrome,"
+        }
+      ]
+    },
+    {
+      "start": 25.54,
+      "end": 26.62,
+      "text": "pixel art, traditional",
+      "words": [
+        {
+          "t": 25.54,
+          "text": "pixel"
+        },
+        {
+          "t": 25.72,
+          "text": "art,"
+        },
+        {
+          "t": 26.32,
+          "text": "traditional"
+        }
+      ]
+    },
+    {
+      "start": 26.62,
+      "end": 27.76,
+      "text": "tattoo. Pick one",
+      "words": [
+        {
+          "t": 26.62,
+          "text": "tattoo."
+        },
+        {
+          "t": 27.36,
+          "text": "Pick"
+        },
+        {
+          "t": 27.46,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 27.76,
+      "end": 28.36,
+      "text": "and it cuts",
+      "words": [
+        {
+          "t": 27.76,
+          "text": "and"
+        },
+        {
+          "t": 28.02,
+          "text": "it"
+        },
+        {
+          "t": 28.16,
+          "text": "cuts"
+        }
+      ]
+    },
+    {
+      "start": 28.36,
+      "end": 29.24,
+      "text": "the background out",
+      "words": [
+        {
+          "t": 28.36,
+          "text": "the"
+        },
+        {
+          "t": 28.6,
+          "text": "background"
+        },
+        {
+          "t": 28.94,
+          "text": "out"
+        }
+      ]
+    },
+    {
+      "start": 29.24,
+      "end": 30.14,
+      "text": "for you. The",
+      "words": [
+        {
+          "t": 29.24,
+          "text": "for"
+        },
+        {
+          "t": 29.48,
+          "text": "you."
+        },
+        {
+          "t": 29.64,
+          "text": "The"
+        }
+      ]
+    },
+    {
+      "start": 30.14,
+      "end": 30.94,
+      "text": "step that used",
+      "words": [
+        {
+          "t": 30.14,
+          "text": "step"
+        },
+        {
+          "t": 30.44,
+          "text": "that"
+        },
+        {
+          "t": 30.68,
+          "text": "used"
+        }
+      ]
+    },
+    {
+      "start": 30.94,
+      "end": 31.58,
+      "text": "to need a",
+      "words": [
+        {
+          "t": 30.94,
+          "text": "to"
+        },
+        {
+          "t": 31.12,
+          "text": "need"
+        },
+        {
+          "t": 31.36,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 31.58,
+      "end": 32.78,
+      "text": "separate app. That",
+      "words": [
+        {
+          "t": 31.58,
+          "text": "separate"
+        },
+        {
+          "t": 31.88,
+          "text": "app."
+        },
+        {
+          "t": 32.46,
+          "text": "That"
+        }
+      ]
+    },
+    {
+      "start": 32.78,
+      "end": 33.62,
+      "text": "checkerboard is a",
+      "words": [
+        {
+          "t": 32.78,
+          "text": "checkerboard"
+        },
+        {
+          "t": 33.3,
+          "text": "is"
+        },
+        {
+          "t": 33.54,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 33.62,
+      "end": 34.96,
+      "text": "real transparent PNG.",
+      "words": [
+        {
+          "t": 33.62,
+          "text": "real"
+        },
+        {
+          "t": 33.86,
+          "text": "transparent"
+        },
+        {
+          "t": 34.36,
+          "text": "PNG."
+        }
+      ]
+    },
+    {
+      "start": 35.4,
+      "end": 35.84,
+      "text": "And it doesn't",
+      "words": [
+        {
+          "t": 35.4,
+          "text": "And"
+        },
+        {
+          "t": 35.46,
+          "text": "it"
+        },
+        {
+          "t": 35.58,
+          "text": "doesn't"
+        }
+      ]
+    },
+    {
+      "start": 35.84,
+      "end": 36.56,
+      "text": "make one sticker.",
+      "words": [
+        {
+          "t": 35.84,
+          "text": "make"
+        },
+        {
+          "t": 36.0,
+          "text": "one"
+        },
+        {
+          "t": 36.22,
+          "text": "sticker."
+        }
+      ]
+    },
+    {
+      "start": 37.04,
+      "end": 38.32,
+      "text": "Nine, same face,",
+      "words": [
+        {
+          "t": 37.04,
+          "text": "Nine,"
+        },
+        {
+          "t": 37.76,
+          "text": "same"
+        },
+        {
+          "t": 37.94,
+          "text": "face,"
+        }
+      ]
+    },
+    {
+      "start": 38.58,
+      "end": 40.18,
+      "text": "nine reactions. Then",
+      "words": [
+        {
+          "t": 38.58,
+          "text": "nine"
+        },
+        {
+          "t": 38.8,
+          "text": "reactions."
+        },
+        {
+          "t": 39.98,
+          "text": "Then"
+        }
+      ]
+    },
+    {
+      "start": 40.18,
+      "end": 40.78,
+      "text": "add to chat",
+      "words": [
+        {
+          "t": 40.18,
+          "text": "add"
+        },
+        {
+          "t": 40.44,
+          "text": "to"
+        },
+        {
+          "t": 40.56,
+          "text": "chat"
+        }
+      ]
+    },
+    {
+      "start": 40.78,
+      "end": 41.98,
+      "text": "apps, choose WhatsApp.",
+      "words": [
+        {
+          "t": 40.78,
+          "text": "apps,"
+        },
+        {
+          "t": 41.36,
+          "text": "choose"
+        },
+        {
+          "t": 41.56,
+          "text": "WhatsApp."
+        }
+      ]
+    },
+    {
+      "start": 42.3,
+      "end": 42.96,
+      "text": "This is where",
+      "words": [
+        {
+          "t": 42.3,
+          "text": "This"
+        },
+        {
+          "t": 42.64,
+          "text": "is"
+        },
+        {
+          "t": 42.78,
+          "text": "where"
+        }
+      ]
+    },
+    {
+      "start": 42.96,
+      "end": 43.62,
+      "text": "it stops people.",
+      "words": [
+        {
+          "t": 42.96,
+          "text": "it"
+        },
+        {
+          "t": 43.04,
+          "text": "stops"
+        },
+        {
+          "t": 43.28,
+          "text": "people."
+        }
+      ]
+    },
+    {
+      "start": 43.96,
+      "end": 44.56,
+      "text": "You need at",
+      "words": [
+        {
+          "t": 43.96,
+          "text": "You"
+        },
+        {
+          "t": 44.22,
+          "text": "need"
+        },
+        {
+          "t": 44.4,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 44.56,
+      "end": 45.28,
+      "text": "least three for",
+      "words": [
+        {
+          "t": 44.56,
+          "text": "least"
+        },
+        {
+          "t": 44.74,
+          "text": "three"
+        },
+        {
+          "t": 45.08,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 45.28,
+      "end": 45.94,
+      "text": "that button to",
+      "words": [
+        {
+          "t": 45.28,
+          "text": "that"
+        },
+        {
+          "t": 45.44,
+          "text": "button"
+        },
+        {
+          "t": 45.76,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 45.94,
+      "end": 47.44,
+      "text": "work. That's WhatsApp's",
+      "words": [
+        {
+          "t": 45.94,
+          "text": "work."
+        },
+        {
+          "t": 46.5,
+          "text": "That's"
+        },
+        {
+          "t": 46.86,
+          "text": "WhatsApp's"
+        }
+      ]
+    },
+    {
+      "start": 47.44,
+      "end": 48.98,
+      "text": "rule, not ChatGPT's.",
+      "words": [
+        {
+          "t": 47.44,
+          "text": "rule,"
+        },
+        {
+          "t": 47.84,
+          "text": "not"
+        },
+        {
+          "t": 47.94,
+          "text": "ChatGPT's."
+        }
+      ]
+    },
+    {
+      "start": 49.3,
+      "end": 49.94,
+      "text": "Name the pack",
+      "words": [
+        {
+          "t": 49.3,
+          "text": "Name"
+        },
+        {
+          "t": 49.54,
+          "text": "the"
+        },
+        {
+          "t": 49.7,
+          "text": "pack"
+        }
+      ]
+    },
+    {
+      "start": 49.94,
+      "end": 50.64,
+      "text": "and it's done.",
+      "words": [
+        {
+          "t": 49.94,
+          "text": "and"
+        },
+        {
+          "t": 50.24,
+          "text": "it's"
+        },
+        {
+          "t": 50.44,
+          "text": "done."
+        }
+      ]
+    },
+    {
+      "start": 51.06,
+      "end": 52.24,
+      "text": "One photo, nine",
+      "words": [
+        {
+          "t": 51.06,
+          "text": "One"
+        },
+        {
+          "t": 51.32,
+          "text": "photo,"
+        },
+        {
+          "t": 52.04,
+          "text": "nine"
+        }
+      ]
+    },
+    {
+      "start": 52.24,
+      "end": 53.46,
+      "text": "stickers in WhatsApp.",
+      "words": [
+        {
+          "t": 52.24,
+          "text": "stickers"
+        },
+        {
+          "t": 52.6,
+          "text": "in"
+        },
+        {
+          "t": 53.12,
+          "text": "WhatsApp."
+        }
+      ]
+    },
+    {
+      "start": 53.76,
+      "end": 54.7,
+      "text": "Comment stickers and",
+      "words": [
+        {
+          "t": 53.76,
+          "text": "Comment"
+        },
+        {
+          "t": 54.0,
+          "text": "stickers"
+        },
+        {
+          "t": 54.34,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 54.7,
+      "end": 55.18,
+      "text": "I'll send you",
+      "words": [
+        {
+          "t": 54.7,
+          "text": "I'll"
+        },
+        {
+          "t": 54.84,
+          "text": "send"
+        },
+        {
+          "t": 55.06,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 55.18,
+      "end": 56.02,
+      "text": "the exact setup",
+      "words": [
+        {
+          "t": 55.18,
+          "text": "the"
+        },
+        {
+          "t": 55.3,
+          "text": "exact"
+        },
+        {
+          "t": 55.7,
+          "text": "setup"
+        }
+      ]
+    },
+    {
+      "start": 56.02,
+      "end": 56.5,
+      "text": "I used.",
+      "words": [
+        {
+          "t": 56.02,
+          "text": "I"
+        },
+        {
+          "t": 56.24,
+          "text": "used."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "format": "ai-tools",
+  "script": "Those aren't downloaded stickers. That's my face, and ChatGPT built the whole pack from one photo.\nNo cutting anything out, no third-party app. It's already inside ChatGPT.\n\nIt starts on the chat screen. Plus menu, Create image, then Stickers.\nThere's no prompt box. You fill in a sentence: style, photo, reactions.\n\nThe style list is where it gets good. Nineteen: 3D, Anime, Chrome, Pixel Art, Traditional Tattoo.\nPick one and it cuts the background out for you, the step that used to need a separate app.\nThat checkerboard is a real transparent PNG.\n\nAnd it doesn't make one sticker. Nine, same face, nine reactions.\n\nThen Add to chat apps, choose WhatsApp. This is where it stops people.\nYou need at least three for that button to work. That's WhatsApp's rule, not ChatGPT's.\n\nName the pack, and it's done. One photo, nine stickers, in WhatsApp.\n\nComment STICKERS and I'll send you the exact setup I used.",
+  "approval": {
+    "sha256": "afdd9a91f3fee676c3b3d1e3b5eee751d969898018dbd36ac2196a5c50b5074e",
+    "approvedAt": "2026-09-01T07:09:42+00:00",
+    "words": 155,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

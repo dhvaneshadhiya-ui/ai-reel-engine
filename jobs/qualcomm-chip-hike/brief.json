@@ -1,0 +1,28 @@
+{
+  "slug": "qualcomm-chip-hike",
+  "topic": "Qualcomm's double-digit Snapdragon price hike takes effect Sept 1 2026 \u2014 why 2027 Android flagships, watches and Arm laptops get more expensive",
+  "details": "Effective 2026-09-01. Announced by CEO Cristiano Amon on the Q3 FY2026 earnings call, 2026-07-29. Covers Snapdragon phone chips, wearables and Windows-on-Arm PC chips. Root cause: AI-driven memory/wafer/packaging input cost surge.",
+  "subject": "Qualcomm's double-digit Snapdragon price hike takes effect Sept 1 2026 \u2014 why 2027 Android flagships, watches and Arm laptops get more expensive",
+  "audience": "Android buyers and tech-curious viewers who follow phone launches but not chip supply chains",
+  "platform": "both",
+  "goal": "education",
+  "core_value": "why a 2027 Android flagship already costs more, and that the chip hike is the small half of it",
+  "desired_action": "comment: buying now or waiting",
+  "reveal_target": "none",
+  "cta_keyword": "QUALCOMM",
+  "target_duration": "79s",
+  "tone": "reporting, plain, no hype; explains a supply-chain story without jargon",
+  "source_policy": "official-preferred",
+  "footage_constraints": "official Qualcomm and Micron footage + mobile source captures, all credited on screen; no generated imagery",
+  "credit_instructions": "on-screen",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 79,
+  "music": false,
+  "created_at": "2026-09-01T05:10:10.409083+00:00",
+  "status": "initialized"
+}

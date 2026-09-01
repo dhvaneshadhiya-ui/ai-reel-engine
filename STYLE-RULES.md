@@ -5903,3 +5903,675 @@ on the ONE topic they picked — deep on one subject beats shallow across five.
 first run burned several turns discovering it. It also carries an explicit
 NEVER FABRICATE A QUOTE rule: an invented AUDIENCE line would enter the
 pipeline looking sourced, which is worse than an empty field.
+
+## 2026-09-01 — ios-27-beta-8: no source screenshot of the feature, so say so with a card
+
+Beta-8-as-checkpoint roundup ("what's actually new in iOS 27, now that it's
+basically done"), not a beta-8-specific changelog — corroborated across
+macrumors/9to5mac/osxdaily/appleinsider/ioshacker that the visible features
+(Siri AI, Liquid Glass slider, Visual Intelligence in Camera) shipped across
+the WHOLE cycle and beta 8 itself added nothing new; the script says that
+honestly ("Beta eight itself is reportedly quiet, though") instead of
+implying beta 8 introduced them.
+
+**No screenshot of the actual new Siri UI, the transparency slider, or
+Visual Intelligence-in-Camera exists anywhere (beta not installed on a
+capture device).** Rather than reuse an unrelated Apple hero image and
+imply it shows the feature, those three beats used a plain `specsheet`
+motion-graphic card (title + kicker + rows + footnote naming the sources) —
+honest about what it is (an explainer card, not a screenshot) and G15-
+compliant (every specsheet needs a `source`/`footnote`, found the hard way
+when the first pass shipped without one). Worth being a named pattern: when
+the visual doesn't exist, build the honest card instead of stretching an
+unrelated real image to stand in for it.
+
+**A receipt crop with NO margin below its last line of text clips that
+line when the scene zooms — even before the highlight animation starts.**
+Two receipts (Apple dev-notes at 1080x700, OSXDaily at 1080x1250) both hard-
+failed `[EDGE TEXT]` in `lint_frames.py`, and inspecting the actual frames
+(not just trusting the flag) showed two DIFFERENT failure shapes: the short
+700px crop clipped the LAST paragraph line at the bottom because there was
+no whitespace margin past it; the tall 1250px crop clipped the HEADLINE at
+the TOP because it started flush at the headline with zero margin above.
+The one receipt that rendered perfectly (MacRumors, 1080x930) had generous
+whitespace on both ends — a colored banner above, blank margin below the
+last line before the credit tag. Fix: **re-crop every receipt to ~930px
+tall with real margin on both ends, matching the size of the one that
+already works**, not by guessing new highlight-box coordinates against a
+tight source image. Confirmed by re-cropping both from fresh captures and
+re-rendering: both flags cleared with no highlight-box changes needed
+beyond adjusting for the new coordinates.
+
+**`[EDGE TEXT]` false-fired a second time, independently, on a receipt with
+a blurred colored backdrop** — same root cause as apple-pencil-iphone-
+ultra's #4 (the edge-pixel-variance heuristic can't tell a cropped word from
+the app's own blurred-gradient backdrop texture). Verified by eye against
+the actual frame (fully intact card, nothing cropped) before overriding with
+`--soft`, disclosed here. Two independent hits on the same false-positive
+class in two different reels is worth the heuristic maintainer knowing, not
+just re-verifying and moving on each time.
+
+**Tiering: "3 outlets" is not automatically `multi`.** `research_check.py`
+correctly downgraded 6 of this reel's claims from `multi` (3 domains) to
+`official`, because the reel's own VIA field said the same thing for all
+three: "Apple's own feature, relayed by the outlet" — a fact about Apple's
+own shipped product, independently observed in a beta anyone can install,
+is `official`, not `multi` dressed in three mastheads. `multi` should mean
+independent ORIGINS, not independent repeaters of one origin — matches the
+Weibo-leaker VIA discipline already in RULES.md, just not applied to a
+first-party feature claim before.
+
+**ElevenLabs v3 read this script at 3.31 w/s again** (206 words / 62.3s,
+outside the 2.35-2.75 w/s band, same as apple-pencil-iphone-ultra) — third
+time this exact model+voice combination has overshot on this pipeline.
+Runtime still cleared the 60-80s news band (62.3s), so accepted without a
+regeneration, per the precedent that a second full-price take buys ~0.1 w/s
+at best. Worth promoting from a per-reel note to an assumption: **budget
+this voice at ~3.3 w/s, not 2.6 w/s, when sizing a script for a target
+runtime**, rather than re-discovering the gap every time.
+
+### Treatment history (do not repeat next reel)
+
+split hook (real headline receipt over presenter) · `specsheet` motion-
+graphic cards (dark, footnoted) for three feature explainers with no real
+screenshot to show · `categorygrid` (3 colored cards) for a performance
+grab-bag · plain `receipt` (headline + margin, no annotatezoom) for three
+press screenshots and one official Apple page.
+
+### Left honestly unfixed
+
+- **Every G04 PACING advisory fired** (9 of 11 scenes held longer than
+  their type's typical band; average scene 5.66s vs the 2.5s guideline) —
+  a genuinely coarser cut rhythm than editorial style's usual "visual
+  change every 2-3s", accepted for a script this information-dense with
+  only 4 real source images and no per-clause b-roll. Splitting every
+  merged clause into its own visual was the alternative; not done here.
+- **Facecam 25% of runtime** (band 10%-20% for `news`) — three facecam
+  beats (an app-explainer beat, the hedge/honesty beat, the closing take)
+  in an 11-beat, 62s reel. Advisory only (G06 not in BLOCKING_RULES).
+- **Scenes 4/5 (specsheet), 7/8 (receipt) and 9/10 (footage) each repeat
+  their treatment back-to-back** (render_job.py's own validator flags
+  this) — content-driven (two Siri-adjacent feature cards, two press
+  screenshots, two facecam beats in sequence at the close) rather than a
+  variety failure, but worth varying treatment more on the next reel that
+  has this many same-type beats in a row.
+
+
+## 2026-09-01 — the em-dash check was asked about twice, so the rate went to zero
+
+**Raw note.** User, reading the qualcomm-chip-hike draft: *"If you are
+humanizing our script, why are there em dashes in our script?"* The draft
+carried two in 209 words.
+
+**Root cause, and it is not the writing.** `check_script.py` has had a PAGE
+PUNCTUATION check since 2026-08-26, added in answer to this same question the
+FIRST time the user asked it. It was built as advice with a rate: fire past
+one dash every 60 words. Two in 209 is one every 104. **The check stayed
+silent on the exact draft that produced the complaint** — and it would have
+stayed silent on the previous draft too, at one every 209. A threshold that
+passes the case which prompts the question is not calibrated, it is
+decorative, and the gap let a second identical conversation happen five days
+later.
+
+The 1-per-60 number was derived honestly (approved scripts sat at both ends of
+it), but it answered the wrong question. It measured *how often*, when the
+reason for the rule has no frequency term in it at all:
+
+1. **A listener cannot hear a dash.** It renders as whatever pause a comma or
+   full stop would have produced. It is a mark for the eye, in a medium with
+   no eye.
+2. **It breaks the synthesis.** Probed 2026-08-26: IndexTTS2 rejects em-dash,
+   colon and semicolon outright.
+
+Neither of those gets better at a lower rate. So the threshold is now **zero**,
+and `PAGE PUNCTUATION fires on a SINGLE dash in a long script` is a new case in
+`check_script.py --selftest` — without it, the tightening could be reverted to a
+rate by anyone who reads the old comment and not this entry.
+
+**Distilled rule: NO em or en dashes in narration. Write the comma or the full
+stop you mean.** Still ADVICE per RULES.md §0 — prose is craft and this fails
+all four blocking tests. It just no longer stays quiet.
+
+**What it cost, honestly.** Re-scanned the corpus after the change:
+apple-surprise-and-shine, claude-eating-tokens, iphone18-split and
+september-preview now all flag. Those reels shipped and were approved; the
+flag is retrospective advice, not a verdict on them.
+
+**The second lesson, which is the older one in this repo.** The humanizer skill
+was run on this script, and it did not remove these — because its own §14 says
+the dash ban lifts when *the writer's sample uses them*, and the approved
+scripts I fed it as the voice sample carry up to seven each. The sample taught
+it the habit. When a skill's rule is conditional on the corpus, a corpus with
+the defect in it will keep the defect. The checker has to hold that line, not
+the skill.
+
+### Treatment history (do not repeat next reel)
+
+split hook with LIVE FOOTAGE on top (Snapdragon chip in circuitry) rather than
+the screenshot the previous two reels used · animated three-bar cost card
+(double digits vs 58-63% vs 400%+), each bar carrying its own source line ·
+two-row landing card whose rows arrive on the words that name them
+("Qualcomm's margins" / "your phone price") · closing question card over
+product footage.
+
+
+## 2026-09-01 — qualcomm-chip-hike: three silent checks, and a component contract nobody wrote down
+
+Snapdragon price rise, 63.1s, -14.5 LUFS, gates green, lint clean.
+
+**1. THREE CHECKS WERE SILENT, AND TWO HAD ALWAYS BEEN.** All the same shape:
+a guard that could not run, reading as a guard that passed.
+
+- `plan_shots.py` refused an approved script because it sha256'd the WHOLE
+  script.md while `script_approval.py` hashes only the SPOKEN lines. They had
+  agreed on every prior reel purely because no script.md had ever carried a
+  markdown heading. Fixed by importing the shared function.
+- `plan_shots.py` read `segments[].words[]` from vo.json, while
+  `ingest_avatar.py` — the tool that WRITES vo.json — emits `{"words": [...]}`.
+  So the anchor check found zero words on every reel ever built and printed
+  "no vo.json yet", which reads as "not generated" rather than "cannot parse".
+  Turned on, it immediately caught 4 unresolvable anchors on this reel.
+- `check_script.py`'s PAGE PUNCTUATION fired only past one em-dash per 60
+  words. The user asked "why are there em dashes in our script?" for the
+  SECOND time about a draft at one per 104. Threshold is now zero.
+
+**The distilled rule: a check that cannot run is worse than a check that
+fails.** Two of these printed a cheerful line while doing nothing. When two
+tools guard one guarantee, they must read the same bytes — pin it in a
+self-test, not in a convention.
+
+**2. DRAM READ AS "drum".** whisper base AND small both transcribed "drum",
+which per RULES section 11 rules out a transcriber artefact — it was the
+audio. HeyGen's brand glossary used to catch this class of thing; moving the
+voice to ElevenLabs silently removed it, because a glossary only applies to
+audio HeyGen synthesises, never to an upload. `vo_tagged.py` now carries
+`PRONOUNCE`, applied only to `script-tagged.txt`. Probed before spending:
+16.8s / ~243 credits compared D-RAM, DEE-ram and D.R.A.M. — all transcribe as
+DRAM and all run 0.60-0.66s, so none spells the letters out.
+
+**3. StatCard's label column is 220px with `whiteSpace: nowrap`, and nothing
+says so anywhere.** A 45-character row label overflowed its box and ran under
+the bar — the pink bar appeared to be drawn through the words. Read off
+`17-statcard-mid.png`; invisible in every log. The fix was the LABELS, not the
+component (RULES section 10). Working sizes: statcard row label <= ~14 chars,
+value <= ~9 chars, detail goes in the footnote. `HeadlineBuild` already has
+G05 for exactly this class of limit; **StatCard and SpecSheet do not, and
+should.**
+
+**4. A `wordcascade` rendered as a completely black frame.** Caught by
+[DEAD SPACE] 95% and confirmed on the still. Not diagnosed — the beat was
+replaced by letting the 9to5Google receipt carry the sentence, which was the
+better edit anyway: its headline literally prints the words "double digits",
+so the highlight moves from the headline to the phrase as it is spoken.
+**Diagnosed the same day — see the G54 entry below.** It was TWO bugs, not
+one, and the diagnosis was done twice in parallel: once here and once in a
+spun-off session, which found strictly more (unknown `style` falls through
+to browser-default 16px; `pixel` has a 46px base, not 100) and split the
+physical bound from the corpus band the way G48/G49 do. That branch was
+merged and this session's narrower G54 was reverted in its favour.
+**The reusable lesson is about the split, not the bug:** a spun-off session
+on a well-specified prompt is not automatically the duplicate — check its
+commits before assuming, which is not what happened here first time.
+
+**5. A source's own title cards leak into b-roll two ways.** Scene-detect at
+threshold 0.3 misses slow dissolves, so a "single shot" by that measure held
+three different framings; and a clip verified at its mid frame ran into a
+"Learns your home" title at 1.4s. Both were caught by checking 9:16 centre
+crops at 3 points per candidate before cutting. **Where two good phone shots
+were each too short for their beat, CUTTING THEM TOGETHER into one clip file
+was the answer** — one beat, one asset id, a hard cut inside it. New here.
+
+### Treatment history (do not repeat next reel)
+
+split hook with LIVE FOOTAGE on top (Snapdragon chip in circuitry) rather than
+the screenshot the previous two reels used - checklist "ACROSS THE BOARD" with
+rows landing on the words that name them - animated bar card built across
+THREE beats, one bar arriving per claim, each with its own source line -
+two-row "TWO CLOCKS" specsheet whose second row is the payoff - endquestion
+(BUY NOW / WAIT) over the same chip the reel opened on, as a bookend -
+two short b-roll shots concatenated into one clip file to cover one beat.
+
+### Left honestly unfixed
+
+- **Pace 3.25 w/s against the 2.35-2.75 band.** Same finding as
+  apple-pencil-iphone-ultra, whose entry records two regenerations for a
+  0.07 w/s gain. Not re-spent. Runtime still lands at 63.1s, inside the band.
+- **G04 held-layout advisories on 8 card scenes** (2.6-3.7s vs a 2.6s cap).
+  Every one of them has content ARRIVING during the hold — a highlight moving,
+  a bar growing, a row landing — which is the distinction the rule itself
+  draws. Accepted deliberately, not inherited.
+- **[DEAD SPACE] on the wafer and die-grid shots (73%, 39%).** Inherent to
+  footage of a wafer against black. Soft flag, left as shot.
+- **Facecam 20%**, at the top of the 10-20% band.
+
+## 2026-09-01 — G54: a `wordcascade` scene that cannot render (qualcomm-chip-hike)
+
+**Raw note.** Scene 03 of the qualcomm reel rendered an entirely empty frame.
+`lint_frames.py` caught it — "[DEAD SPACE] scene 03 (wordcascade): 95% of frame
+is flat/empty" — and the reel shipped by REPLACING the beat, so the bug stayed
+live for the next reel that reached for wordcascade.
+
+    {"type": "wordcascade", "bg": "#0b0d10", "words": [
+       {"text": "DOUBLE", "style": "caps",     "at": 0.06, "size": 150},
+       {"text": "DIGITS", "style": "gradient", "at": 0.42, "size": 150},
+       {"text": "from today", "style": "serif", "at": 0.95, "size": 64}]}
+
+**The component was right; the scene object was malformed, on two counts, and
+each one produces a blank frame ON ITS OWN.** Both were confirmed by rendering
+stills of a probe sheet rather than reasoning from the source, because the
+component reads as though either one alone would be survivable:
+
+1. **`bg` is a NAME, not a colour.** `BGS` in `WordCascade.tsx` is a three-key
+   lookup (cream / black / white). `BGS["#0b0d10"]` is `undefined`, so nothing
+   is painted — and the very next line, `dark = bg !== "black"`, comes back
+   TRUE, so the ink is `#111111`. Black type on an unpainted (black) frame.
+   Frame 8 of the probe render: uniform near-black.
+2. **`size` is a MULTIPLIER (default 1), not pixels.** The component computes
+   `100 * size` px. `150` renders a 15000px glyph: one letter swallows the
+   1080x1920 canvas. Frame 50 of the probe: a flat field of accent yellow —
+   the inside of the "D".
+
+The two suspects that were NOT the bug: `at` is already seconds (the component
+multiplies by fps), and `gradient` is a valid style. `mascot` and `bottomSrc`
+are genuinely optional.
+
+**Gate G54, RENDER-blocking** — the same category as G35 (a still in a video
+slot) and G48 (framing that exposes backdrop): it is a black frame, not taste.
+It refuses an unknown `bg`, an unknown `style` (which falls through
+`wordStyle`'s default branch to browser-default 16px with no font family),
+missing/empty `words`, a non-positive `size`, and an `at` at or past the end of
+its own beat (the frames-vs-seconds slip: the word is never drawn).
+
+**The blocking bound on `size` is PHYSICAL, not the corpus band.** It fires when
+`base_px * size` exceeds the canvas height — a line taller than the frame cannot
+be a word on screen, only a flat field. The corpus band (0.6-1.6 across all 102
+wordcascade words on disk) is taste, so it advises as **G54a**. Same split as
+G48/G49: what stops the frame rendering blocks; what merely looks unlike
+anything shipped is a note.
+
+**The fixture proved the gate before the reel did.** `test_gates.py`'s baseline
+sheet had carried `{"type": "wordcascade", "durationSec": 2.5, "bg": "cream"}`
+with **no `words` key at all** since it was written — a scene that draws an empty
+stack for its whole beat, sitting inside the sheet whose job is to pass every
+gate. It has words now.
+
+**The component also got a two-line hardening**, deliberately narrow: resolve
+the bg KEY first, then derive both the background and `dark` from it, so an
+unknown key can never again disagree with itself. G54 stops a bad beat sheet at
+build time, but Remotion Studio and `npx remotion still` run no gates, and a
+blank preview is how this got mistaken for a component bug in the first place.
+
+**This was a KNOWN open item, written down and left as prose.** 2026-08-17
+listed under STILL PROSE: *"a gate validating MG scene shape against the `Scene`
+union — `wordcascade` took `lines` instead of `words[]` … both would have
+rendered EMPTY and nothing checks MG shape against the union."* Two weeks later
+a wordcascade rendered empty for a different field on the same scene type. G54
+closes it for `wordcascade` only; `chart`, `specsheet` and `statcard` still have
+no shape gate, and the honest reading of this entry is that the next one will
+be found the same way.
+
+## 2026-09-01 — G55 + G20 widened: the other three MG cards, and a shipped defect
+
+Finishing what G54 started, and what 2026-08-17 wrote down and left as prose.
+`chart`, `specsheet` and `statcard` now have a shape gate. Every entry was read
+off the component, and each one either kills the render or draws the wrong
+thing silently:
+
+| what | what it does |
+|---|---|
+| chart with no `title` | `title.length > 26 ? 76 : 88` throws — the render dies |
+| `rows`/`items` absent | `.map` / `.slice` on undefined. This is the `rows`-instead-of-`items` slip from 2026-08-17, exactly |
+| chart `value` not a number | `Math.max(...)` goes NaN, `width: NaN%`, and `.toLocaleString()` throws on undefined |
+| more than 8 chart items | `items.slice(0, 8)`. The 9th is not small, it is absent, while the voice still names it |
+| `statcard` `pct` above 1 | clamped to a full bar — see below |
+| `specsheet` `bgSrc` still | `<OffthreadVideo>`, one frame, "No frame found at position N". G35 on a field G35 never looked at |
+
+**`bg` is only ADVICE here, and that is not an oversight.** ChartScene and
+StatCard branch on `bg === "black"` and fall back to cream, so an unknown value
+renders a readable cream card. WordCascade's `BGS` is a LOOKUP, which is why the
+identical mistake there is a black frame and blocks under G54. Same field name,
+different physics, different classification.
+
+**iphone-18-pro SHIPPED FOUR STATCARDS WITH FLAT BARS.** `pct` is a fraction and
+StatCard does `Math.max(0, Math.min(1, pct))`. Scenes 12, 16, 20 and 23 were
+written on a 0-100 scale, so:
+
+    {"label": "iPhone 17 Pro", "pct": 66}    ->  clamped to 1  ->  full bar
+    {"label": "iPhone 18 Pro", "pct": 100}   ->  clamped to 1  ->  full bar
+
+Rendered both to be sure rather than asserting it from the source (the G35
+lesson): the two bars are **pixel-identical**, one pink and one purple, running
+the full width of the track. The comparison the card exists to make was erased,
+and the value text beside it still says "7-element lens" vs "about +50%". Same
+class as G54's `size: 150` and G48's focus outside 0..1 — a scale misread that
+the component silently absorbs.
+
+**The four scenes are LEFT AS SHIPPED.** The reel is published; editing the beat
+sheet now would make it describe something other than what was rendered, and
+this ledger's value is that it records what happened. G55 blocks a re-render of
+that sheet, which is the correct outcome — anyone re-rendering it must fix the
+bars first, and the gate message names the number to write.
+
+**G20 was only ever enforced on `checklist`, though its own text claims every
+list row.** It now covers `specsheet`, `statcard` and `chart` too, with each
+component's stagger read out of its source, not chosen. And it split, the way
+G18/G18a did:
+
+- **G20 (blocks)** — the last row never finishes. For a chart or a statcard
+  "finishes" includes the bar's fill, because the value COUNTS UP during it: cut
+  mid-fill and the number on screen is not the number.
+- **G20a (advice)** — it finishes, but with less than `ROW_DWELL` (0.6s) left to
+  read. That number is flat readability, and CLAUDE.md's warning applies to it:
+  a number is not a rule. Measured before splitting, it rejects **five shipped
+  scenes** whose rows all plainly land — apple-pay-india 27/43, ios27-tiers 42,
+  iphone-18-pro 12/16, at 0.16-0.42s of dwell. Blocking a re-render of those
+  would be taste wearing a rule's badge.
+
+**The fixture was the third empty MG scene.** After `wordcascade`, `specsheet`
+and `chart` in `test_gates.py`'s baseline also carried no rows and no items —
+three cards drawing a title over an empty box, inside the sheet whose job is to
+pass every gate. Nothing in the suite could have caught them, because until
+today nothing checked that an MG card had anything in it.
+
+## 2026-09-01 — the zoom WAS working. The receipt fallback was the dead half.
+
+User: "we adapted zoom and scrolling effects to apply whenever possible, I
+think our system is not adapting these." Traced it before touching anything,
+and the first read of the data was wrong in a useful way.
+
+**Counting `zoomDir` in the beat sheets says 330/809 scenes have motion, and
+the two newest reels look terrible (1/13, 2/12). That count is misleading.**
+`FootageScene` reads `scene.zoomDir ?? "in"` — absence means a 1.1x push, so
+every bare footage scene already moves. The sheets are not the source of truth
+for motion; the components are.
+
+**The real dead spot: `receipt` with no `highlights`.** ReceiptScene does a
+genuine focus pull — zoom onto the highlight cluster as it fires — but only
+when highlights exist. With none it fell back to
+`1.0 + interpolate(..., [0.02, 0.06])`: **a 4% push, the flattest move in the
+codebase**, on the one scene type that holds a full-page screenshot for 6-9s.
+
+**And 42 of 74 receipts across every reel have no highlights**, because
+`compile_shot_plan.py` has never set them. So the fallback was not an edge
+case — it was the treatment for most screenshots we ship. The reels with 0
+missing (iphone18-colors, qualcomm-chip-hike, airpods-camera) are the
+hand-built ones.
+
+**Fix, at the component so every caller gets it:** the fallback now pushes
+0 -> 0.10, **matched to FootageScene's existing 1.1x house push** rather than
+a newly invented number. One constant, one file, every past and future reel.
+Verified by re-rendering apple-surprise-and-shine and diffing the receipt
+scene's first and last frame.
+
+**Pinned:** two rows in `test_capture_defaults.py` — the receipt fallback must
+stay >=9%, and FootageScene must still be 1.1x so the two cannot silently
+drift apart. Confirmed the check FAILS when the old value is restored.
+
+**Cued, not inferred:** `compile_shot_plan` now prints an ADVICE when a
+receipt has no highlights, naming the covered line. The rect cannot be
+computed here — knowing where on the page the claim sits needs someone to look
+at the image, which is what the scout step is for. A generic push is the
+floor; a pull to the claim is the goal.
+
+### Found and NOT fixed: 26 of 30 card components are entry-only
+
+`SpecSheet`, `TypeCard`, `WordCascade`, `Checklist`, `StatCard`, `HCompare`,
+`Carousel`, `CategoryGrid` and the rest animate IN and then hold perfectly
+still for the rest of the beat. CLAUDE.md already carries the rule from
+`going-viral`: *"Nothing static — every element keeps a low-amplitude idle
+motion."* It is not implemented in the components.
+
+Left alone deliberately: a shared idle-drift wrapper across 26 components is a
+real build with real layout risk, and it is not what was asked for. Recorded
+here so it is a decision rather than an oversight.
+## 2026-09-01 — the sweep: G56, and G35 was never about `footage`
+
+Third and last pass on MG scene shape. G54 closed `wordcascade` after it cost a
+beat, G55 closed the three cards, and this closes the remaining thirty-odd
+scene types **before** they cost anything — which is the first time in this
+repo a defect class has been shut ahead of the reel that would have found it.
+
+**G35 was mis-scoped from the day it was written, and the scope was the bug.**
+It reads "a still in `footage` or `floatcard` renders black", so it grew a
+scene-type list. But the RULE has nothing to do with those two types: it is
+that **a slot which does not branch on the file extension cannot take the other
+kind of file**. Scanning every component for `isVideo(...)` found the real
+count — **21 one-sided media slots**, of which G35 was watching two and G55 a
+third (specsheet `bgSrc`, found the hard way six weeks later and moved into G35
+here, because one rule belongs in one place).
+
+The mirror was never checked at all. An `<Img>` handed an mp4 does not crash —
+it draws **nothing**, quietly, which is the same failure as every other entry
+in this ledger. Six still-only slots plus three inside lists now refuse a video.
+
+Safe slots are deliberately absent from both tables: `brandhook.mediaSrc`,
+`comparesplit.src`, `deviceframe.src`, `endquestion.src`, `hcompare.bottomSrc`,
+`split.topSrc/bottomSrc`, `xpost.bgSrc/media` all do
+`isVideo(src) ? <OffthreadVideo/> : <Img/>` and handle either kind.
+
+**G56 — the list is absent, or empty.** Thirteen scene types do
+`scene.<field>.map(...)` with no guard, so an absent field throws and the
+render dies; an empty one draws the chrome around nothing. Plus three smaller
+classes read off the same components: a fixed slot count that silently drops
+the rest (`toolstack` and `stackwindows` both render `slice(0, 5)`, the same
+defect as chart's `slice(0, 8)`), an index that selects nothing (`designreveal.
+selectIndex`, `desktopmockup.selected`), and a `typecard` with no
+`kinetic.text` — which does not crash, because TypeCard reads
+`scene.kinetic?.text ?? ""`, it just lays out the empty string and renders an
+empty field. That is G54's blank frame with different spelling.
+
+**Where the union and the component disagree, the COMPONENT wins.** `promptcard`
+marks `lines` optional and guards it (`scene.lines ? ... : ...`), so it is not
+in the table. `typecard` marks `kinetic` required and the component defaults it,
+so the gate has to be the thing that makes the union true of a JSON beat sheet.
+The table is what renders, not what is declared.
+
+**The tables are a claim about source code, so the suite re-derives them.**
+Fourteen of the scene types named in the media tables appear in NO shipped reel
+— nothing on this machine would have noticed if a component were later taught
+to branch, and the gate would have gone on refusing a file the component had
+learned to handle. `test_gates.py` now reads `Reel.tsx`'s dispatch, finds each
+component, and fails if a slot the table calls one-sided contains
+`isVideo(<field>)`, or if a branching slot is listed as one-sided. Verified by
+temporarily teaching `ReceiptScene` to branch: the suite failed, as it should.
+This is the `wiring_audit` idea applied to a lookup table — a table that
+describes other code has to be checked against that code, or it is a comment.
+
+**The corpus says the classification is right, not merely quiet.** Ten table
+rows are exercised by 545 real scenes across every shipped reel, and none
+fires. The other eleven rest on the source-drift check above, which is stated
+here rather than implied.
+
+**Nothing new blocks a shipped reel.** The only blocking hit anywhere in the
+library is still iphone-18-pro's `pct` scale, disclosed in the entry above.
+**The fixture was carrying the bug.** `tools/test_gates.py`'s known-good sheet
+had a `wordcascade` with no `words` at all — the exact defect, sitting in the
+file whose job is to be correct, invisible until a gate existed to look.
+
+## 2026-09-01 — G56: the same land-check for typecard and kinetic overlays
+
+G55 generalised the same day it landed. `wordcascade` turned out not to be
+special: `Reel.tsx` suppresses the caption chips for a **`typecard`** and for
+**any scene carrying a `kinetic` overlay** under the identical "one text system
+at a time" rule. In all three cases the scene's own display type is the only
+words on screen, so type that never lands leaves the beat with none — and for
+the 70-85% watching on mute, a beat that says nothing.
+
+**TypeCard is the worse of the two.** Its `bg` defaults to `theme.black`, so a
+card whose first line never lands is the same uniform black frame the G55 probe
+reproduced. A kinetic overlay sits over footage, so the picture survives and
+only the words are lost.
+
+**THE CONTRACTS, READ OFF THE COMPONENTS, NOT REMEMBERED.**
+
+- `KineticType.tsx`: `startFrame = (kinetic.at ?? 0.15) * fps`, `null` before it.
+- `TypeCard.tsx`: per line, `start = kinetic.ats?.[claim] ?? at + li * 0.11`.
+
+`ats` is indexed by CLAIM (the `\n`-separated units) while `li` is the LINE
+index, and lines are chosen by TypeCard's own ink search. **The gate does not
+reimplement that search.** So the LAST landing is exact when `ats` is given and
+is `at` plus an unknown ≤0.11s-per-line stagger otherwise — under-reporting the
+dwell slightly rather than inventing a layout it cannot see. The FIRST landing
+is exact either way (`li = 0`), which is what the blocking half rests on. Where
+a check cannot be exact, say which half is exact and rest the law on that half.
+
+**CALIBRATED ON WHAT SHIPPED**, the G23 discipline: 26 typecards and 11 kinetic
+overlays on disk. **None** trips the blocking half. Exactly **one** trips the
+dwell advice — a deliberate 0.68s flash card on qualcomm-chip-hike — which is
+the same evidence that made G55a advisory, arriving independently.
+
+**DISTILLED RULE (now covering all three): a scene that suppresses the captions
+has no fallback layer, so its own type landing is a guarantee, not a pacing
+preference.** G56 blocks four shapes — no text, no `kinetic` block at all on a
+typecard, a first line that never lands, and a named `ats` claim that never
+lands while the voice says it. G56a advises the too-tight-to-read case.
+
+**Two more fixtures were carrying the defect.** The G12 case built two
+typecards with no `kinetic` at all, and the G50 case used an invented
+`{"lines": [...]}` shape that the `Kinetic` type has never had. Both were
+invisible until a gate existed to look — the third time in two days that the
+known-good sheet turned out to contain the thing being gated.
+
+---
+
+## 2026-09-01 — chatgpt-stickers (ai-tools, 56.7s)
+
+First reel built entirely on USER-SUPPLIED screen recordings rather than
+scouted third-party footage. Three lessons, all of which cost time here and
+will not next time.
+
+**RAW NOTE — the press was wrong and our own footage proved it.** Every
+outlet that names a style count for ChatGPT's sticker picker says 18. The app
+shows 19; the last row holds one orphan tile, which is what an odd count
+looks like in a two-column grid. The entry path was also wrong in coverage
+(sidebar -> Images -> Stickers) versus the shipped build (plus menu ->
+Plugins -> Create image -> Stickers).
+**ROOT CAUSE.** Both numbers came from outlets that did not open the app.
+`research.md` already models this: VIA "own testing" is a first-class origin.
+**DISTILLED RULE.** When the reel's own footage IS the primary source,
+count/read the thing on screen before writing a single number, and record the
+disagreement in the ledger rather than quietly siding with the press.
+
+**RAW NOTE — the VO came back 2.87 w/s, outside the 2.35-2.75 band, and the
+correct fix cost nothing.** Rather than regenerate (~973 credits), whisper
+word timings were measured on two SHIPPED masters:
+claude-eating-tokens 3.50 w/s SPEAKING with 21% gaps, iphone18-colors 3.63
+with 18%. Ours spoke at 3.60 with 20% — in family. Only the pause budget was
+short.
+**ROOT CAUSE.** The band is words / TOTAL runtime, so it conflates speaking
+rate with pause budget. A read can be perfectly in-voice and still miss it.
+**DISTILLED RULE.** Before regenerating a VO for pace, split the measurement:
+if SPEAKING w/s matches shipped masters, the fix is pauses, not a re-record.
+Extend sentence boundaries with room tone lifted from the read's own longest
+gap — never digital silence (audible dropout against a live noise floor) and
+never time-stretch (moves pitch, which is the whole reason we render at
+ElevenLabs). 13 boundaries x 215ms took 53.92s -> 56.72s, 2.73 w/s.
+`vo_external.py` should grow this measurement; today it only prints the
+overall figure.
+
+**RAW NOTE — `ingest_avatar.py` silently overwrote a hand-corrected
+vo.json, and its schema differs from raw whisper output.** Whisper hears
+"nineteen" as "19", which broke the shot-9 phrase anchor exactly as
+`rehearse_vo` predicted. The token was corrected, then ingest re-ran whisper
+and threw the correction away — and the regenerated file is `{"words": [...]}`
+where raw whisper is `{"segments": [{"words": [...]}]}`, so the re-fix script
+failed silently on a KeyError until the shape was checked.
+**DISTILLED RULE.** Correct vo.json AFTER `ingest_avatar.py`, never before,
+and write transcript patches against the shape actually on disk. A spoken
+number that whisper renders as digits will break its anchor every time —
+`rehearse_vo` catches it for free and was right here.
+
+**TREATMENT HISTORY (do not repeat next reel).** Cold-open split on the
+finished artifact with a two-line HeadlineBuild; screen-recording walkthrough
+carrying 18 of 22 beats; statcard for a rules trio; face bookends only at
+open, attribution and CTA (3 of 22 beats).
+
+**ACCEPTED ADVISORIES, disclosed.** Hook held 2.2s against the 2.0s advisory
+(the sentence takes 2.2s to say and the audio is frozen post-approval);
+scene 03 dead space 31% vs 30%; six scenes over the 2.9s single-visual
+ceiling, which the ai-tools playbook itself expects of walkthroughs
+("walkthroughs 4-5s/cut"). No blocking gate was overridden and `--soft` was
+not used.
+
+
+## 2026-09-01 — two spun-off sessions, and the three ways that went wrong
+
+Three sessions ran against this repo at once: this one, plus two spun off to
+fix things it had found. Every problem below is about the SPLIT, not the code.
+
+**1. I called a spun-off session a duplicate without reading its commits.**
+Twice. Both times it had found MORE than I had. Its wordcascade gate also
+caught an unknown `style` (falls through `wordStyle`'s default to browser
+16px), used the real per-style base px (`pixel` is 46, not 100), and split the
+physical bound from the corpus band the way G48/G49 do. The second session's
+label-budget gate MEASURED glyph advances with canvas `measureText` in
+headless chromium — the same engine Remotion renders in — where I would have
+typed a number. **Check `git log main..<branch>` before writing one off.** An
+hour of my work was reverted because I did not.
+
+**2. Independent numbering collides, and a Python dict hides it.** Both
+sessions numbered from G54 up, for different checks. The raw cherry-pick left
+TWO `"G56"` keys in `BLOCKING_RULES` — and a duplicate key silently keeps the
+last, so the land-check would have lost its classification and quietly become
+advisory with nobody choosing that. Renumbered to G57/G58; the suite now
+asserts no id is registered twice. **A gate id is a shared namespace and
+nothing was allocating it.**
+
+**3. Sessions sharing one working tree will eat each other's staged work.**
+A fourth session (chatgpt-stickers) ran `git add -A && git commit` on main
+while G58 sat staged here, and swept it into its own commit. The code is
+correct and on main; the history says something else. Worktrees prevented this
+between the two spun-off sessions and would have prevented it here too.
+**If more than one session may touch main, they need worktrees or they need to
+not use `git add -A`.**
+
+**What the merged gates immediately found.** `iphone-18-pro`, published, has
+statcard rows with `pct` 66 / 100 / 65 / 70 where `pct` is a 0..1 fraction.
+The component clamps, so every bar rendered FULL WIDTH and a two-row card drew
+two identical bars whatever its numbers said. That reel's charts have always
+been meaningless and no check saw it until G55. `apple-surprise-and-shine`
+fails G18 by 0.28s, which is pre-existing and minor. **Neither is a false
+positive; both are reels that shipped with the defect.**
+
+### Idle motion: one wrapper, not 26 component edits (2026-09-01)
+
+26 of 30 card components animated IN and then held perfectly still. The rule
+was already written — CLAUDE.md carries `going-viral`'s *"nothing static,
+every element keeps a low-amplitude idle motion"* — and was implemented
+nowhere.
+
+**Fixed at the single dispatch point.** Every scene routes through
+`SceneSwitch` in `Reel.tsx`, so the switch body became `SceneBody` and
+`SceneSwitch` now wraps it in `IdleMotion`: `translateY(-6px * t)` and
+`scale(1 -> 1.02)` across the beat. One file, one wrapper, all 26 card types.
+
+**Scale goes UP only** — the same reason G48 blocks a footage `zoom` below 1:
+scaling down pulls the card's own edge into frame.
+
+**`MOVES_ITSELF` excludes the eight types that animate themselves** —
+footage, receipt, sourceread, annotatezoom, deviceframe, terminal, chart,
+split. Stacking a second transform on FootageScene's 1.1x push or
+ReceiptScene's focus pull would fight the move the scene is already making
+rather than add to it.
+
+**Verified, not assumed:** two `remotion still` frames 3.1s apart inside
+claude-eating-tokens' statcard — previously byte-identical, now a mean pixel
+delta of 4.49 across the card region.
+
+### And a merge that had to be repaired first
+
+`tools/reel_gates.py` was found carrying **committed conflict markers** — the
+gates file, syntactically broken, with `test_gates` unable to import it. A
+parallel session had been landing G55/G56/G57/G58 while this one worked.
+
+The cause was an **ID collision**: two independent lines of work both claimed
+`G56` — "a scene whose list is absent or empty draws nothing" and "display
+type that never lands". The parallel session had already re-IDed the
+land-check to **G58**, so the repair was to keep their block whole rather than
+to pick a winner. 162 gate checks pass.
+
+**Lesson worth keeping: a recompile discards hand edits to a beat sheet.**
+Re-running `compile_shot_plan` to test the new receipt advisory wiped the
+manual G18 timing fixes, the split hook and the merged facecam scenes from
+apple-surprise-and-shine. The shot plan is the source of truth; anything fixed
+only on the sheet is temporary.
