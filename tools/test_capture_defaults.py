@@ -50,6 +50,7 @@ CHECKS: list[tuple[str, str, str]] = [
 
 
 RENDER_SRC = {
+    "Reel.tsx": Path(__file__).resolve().parent.parent / "src/Reel.tsx",
     "ReceiptScene.tsx": Path(__file__).resolve().parent.parent
                         / "src/components/ReceiptScene.tsx",
     "CaptionChips.tsx": Path(__file__).resolve().parent.parent
@@ -64,6 +65,19 @@ RENDER_SRC = {
 # Each is a NUMBER taken from a real frame, so each can silently drift back to
 # taste in a later edit — which is precisely what a check is for.
 REF_CHECKS: list[tuple[str, str, str, str]] = [
+    # IDLE MOTION (2026-09-01). 26 of 30 card components animate in and then
+    # hold still, against `going-viral`'s "nothing static" rule. One wrapper at
+    # the SceneSwitch dispatch point fixes all of them — and nothing failed if
+    # it were deleted, which is the same unguarded shape as the 4% receipt push
+    # it was written alongside.
+    ("Reel.tsx", "card scenes are wrapped in idle motion",
+     r"IdleMotion",
+     "without the wrapper every card component animates in and then freezes "
+     "for the rest of the beat"),
+    ("Reel.tsx", "self-moving scene types are excluded from idle motion",
+     r"MOVES_ITSELF[\s\S]{0,200}\"footage\"[\s\S]{0,120}\"receipt\"",
+     "stacking idle motion on FootageScene's 1.1x push or ReceiptScene's "
+     "focus pull fights the move the scene already makes"),
     # MOTION DEFAULTS ARE RULES TOO (2026-09-01). A receipt with no
     # `highlights` falls back to a ken-burns push, and 57% of receipts across
     # the reels have none — so this constant IS the treatment for most

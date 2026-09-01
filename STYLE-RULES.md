@@ -6691,3 +6691,44 @@ and no manifest — **nothing anywhere records where that footage came from.**
 Inventing an attribution to clear a rights gate is worse than leaving the reel
 blocked, which is the whole reason G14 exists. It needs the person who
 scouted it.
+
+## 2026-09-01 — third sweep: two false leads rejected, one real gap closed
+
+Went looking for what is broken. Most of the engine is genuinely healthy, and
+the honest result of an audit is sometimes "this is fine" — so what follows is
+what was CHECKED, not a list of invented work.
+
+**Clean:** no scene type declared without a `SceneSwitch` case (either
+direction), no component file nothing imports, 13 SFX cues all present on
+disk, no missing music beds, format doc numbers match `FORMATS` in code,
+smoke test passes, 163 gate checks, 25/26 beat sheets passing.
+
+### Two things that LOOKED like defects and were not
+
+**The black final frame.** The contact sheet ends on a pure black tile. It is
+the tile grid padding — 11x6 = 66 cells for a 63-frame sheet. The real last
+frame measures 79.2 mean luma. Nearly filed as a defect.
+
+**"Footage scenes are letterboxed."** Three footage scenes flagged 34-73% dead
+space, all four sources 1920x1080 landscape in a 1080x1920 frame — and a
+fitted 16:9 clip occupies ~32% of a 9:16 frame, leaving ~68% black, which
+matches the measured 73% almost exactly. A compelling story. `FootageScene`
+sets `objectFit: "cover"`, so there is no letterboxing: that is dark wafer
+footage reading as flat to a variance metric. **The arithmetic agreeing with a
+hypothesis is not evidence for it.**
+
+### The real gap, and it was mine
+
+The receipt push got a check the day it was written. **The `IdleMotion`
+wrapper did not** — delete it and every card silently freezes again with every
+suite still green. Exactly the unguarded shape the receipt check exists to
+prevent, in work written the same hour.
+
+Two rows added to `test_capture_defaults`: the wrapper must be present, and
+`MOVES_ITSELF` must still exclude footage and receipt so idle motion never
+stacks on a scene that already moves. Confirmed to fail when the wrapper is
+removed.
+
+**Also verified my own change is safe rather than assuming it:** the 2% scale
+could in principle clip type at the frame edge, and `[EDGE TEXT]` is a hard
+lint flag. Neither rendered reel trips it.
