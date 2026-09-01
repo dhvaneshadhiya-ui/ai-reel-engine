@@ -704,12 +704,17 @@ def main() -> None:
                       f"exactly 1080x1920 — a push would crop the UI, so "
                       f"zoomDir is held at 'none'. Use `zoom` to reframe "
                       f"deliberately.")
-                print(f"  ADVICE shot {index}: a 1080x1920 source is a PHONE "
-                      f"SCREEN RECORDING. `deviceframe` (kind 'phone') reads "
-                      f"as a real handset and keeps its push, because the "
-                      f"push scales the device CARD and cannot crop the UI. "
-                      f"Full-bleed `footage` has to choose between motion and "
-                      f"a whole screen; the device frame does not.")
+                print(f"  ADVICE shot {index}: IF this is a phone SCREEN "
+                      f"RECORDING, `deviceframe` (kind 'phone') reads as a "
+                      f"real handset and keeps its push, because the push "
+                      f"scales the device CARD and cannot crop the UI. "
+                      f"Full-bleed footage has to choose between motion and a "
+                      f"whole screen; a device frame does not. IF it is a "
+                      f"full-frame motion graphic or vertical b-roll, leave "
+                      f"it full-bleed — 1080x1920 does NOT mean 'screen': "
+                      f"iphone18-colors has 8 Pantone chip graphics at "
+                      f"exactly this size, and a bezel around a colour swatch "
+                      f"would be a lie about what the viewer is looking at.")
 
         if scene.get("type") == "deviceframe" and scene.get("zoomDir") == "none":
             # THE EXACT-FIT RULE ABOVE DOES NOT TRANSFER HERE (2026-09-01).
