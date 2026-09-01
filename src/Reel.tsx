@@ -62,7 +62,44 @@ import { CreditPolicyProvider, firstUseByCredit } from "./components/Credit";
 import { FontFaces } from "./theme/fonts";
 import type { BeatSheet, Scene } from "./types";
 
+// IDLE MOTION (2026-09-01). 26 of 30 card components animate IN and then hold
+// perfectly still for the rest of the beat. CLAUDE.md already carries the rule
+// from `going-viral` — "nothing static, every element keeps a low-amplitude
+// idle motion" — and it was never implemented anywhere.
+//
+// One wrapper here instead of 26 component edits: every scene already routes
+// through this switch.
+//
+// EXCLUDED: the types that move themselves. Stacking a second transform on
+// FootageScene's 1.1x push or ReceiptScene's focus pull would fight the move
+// the scene is already making, not add to it.
+const MOVES_ITSELF = new Set([
+  "footage", "receipt", "sourceread", "annotatezoom",
+  "deviceframe", "terminal", "chart", "split",
+]);
+
+const IdleMotion: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const frame = useCurrentFrame();
+  const { durationInFrames } = useVideoConfig();
+  const t = durationInFrames > 0 ? frame / durationInFrames : 0;
+  // Scale only UPWARD so no edge of the card can be pulled into frame — the
+  // same reason G48 blocks a footage `zoom` below 1. 2% over the whole beat is
+  // below conscious notice and still reads as alive rather than frozen.
+  return (
+    <AbsoluteFill
+      style={{ transform: `translateY(${-6 * t}px) scale(${1 + 0.02 * t})` }}
+    >
+      {children}
+    </AbsoluteFill>
+  );
+};
+
 const SceneSwitch: React.FC<{ scene: Scene }> = ({ scene }) => {
+  const body = <SceneBody scene={scene} />;
+  return MOVES_ITSELF.has(scene.type) ? body : <IdleMotion>{body}</IdleMotion>;
+};
+
+const SceneBody: React.FC<{ scene: Scene }> = ({ scene }) => {
   switch (scene.type) {
     case "footage":
       return <FootageScene scene={scene} />;
