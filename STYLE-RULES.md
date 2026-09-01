@@ -6492,3 +6492,43 @@ scene 03 dead space 31% vs 30%; six scenes over the 2.9s single-visual
 ceiling, which the ai-tools playbook itself expects of walkthroughs
 ("walkthroughs 4-5s/cut"). No blocking gate was overridden and `--soft` was
 not used.
+
+
+## 2026-09-01 — two spun-off sessions, and the three ways that went wrong
+
+Three sessions ran against this repo at once: this one, plus two spun off to
+fix things it had found. Every problem below is about the SPLIT, not the code.
+
+**1. I called a spun-off session a duplicate without reading its commits.**
+Twice. Both times it had found MORE than I had. Its wordcascade gate also
+caught an unknown `style` (falls through `wordStyle`'s default to browser
+16px), used the real per-style base px (`pixel` is 46, not 100), and split the
+physical bound from the corpus band the way G48/G49 do. The second session's
+label-budget gate MEASURED glyph advances with canvas `measureText` in
+headless chromium — the same engine Remotion renders in — where I would have
+typed a number. **Check `git log main..<branch>` before writing one off.** An
+hour of my work was reverted because I did not.
+
+**2. Independent numbering collides, and a Python dict hides it.** Both
+sessions numbered from G54 up, for different checks. The raw cherry-pick left
+TWO `"G56"` keys in `BLOCKING_RULES` — and a duplicate key silently keeps the
+last, so the land-check would have lost its classification and quietly become
+advisory with nobody choosing that. Renumbered to G57/G58; the suite now
+asserts no id is registered twice. **A gate id is a shared namespace and
+nothing was allocating it.**
+
+**3. Sessions sharing one working tree will eat each other's staged work.**
+A fourth session (chatgpt-stickers) ran `git add -A && git commit` on main
+while G58 sat staged here, and swept it into its own commit. The code is
+correct and on main; the history says something else. Worktrees prevented this
+between the two spun-off sessions and would have prevented it here too.
+**If more than one session may touch main, they need worktrees or they need to
+not use `git add -A`.**
+
+**What the merged gates immediately found.** `iphone-18-pro`, published, has
+statcard rows with `pct` 66 / 100 / 65 / 70 where `pct` is a 0..1 fraction.
+The component clamps, so every bar rendered FULL WIDTH and a two-row card drew
+two identical bars whatever its numbers said. That reel's charts have always
+been meaningless and no check saw it until G55. `apple-surprise-and-shine`
+fails G18 by 0.28s, which is pre-existing and minor. **Neither is a false
+positive; both are reels that shipped with the defect.**
