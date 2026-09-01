@@ -39,7 +39,7 @@
       "captionBottom": 1000,
       "credit": "MacRumors",
       "creditOnScreen": true,
-      "durationSec": 2.08,
+      "durationSec": 1.76,
       "assetId": "invite-hero",
       "claimId": "invite-hero",
       "covers": "On September 9th,"
@@ -47,8 +47,8 @@
     {
       "type": "footage",
       "src": "assets/apple-surprise-and-shine/avatar-master.mp4",
-      "durationSec": 5.02,
-      "from": 2.08,
+      "durationSec": 5.34,
+      "from": 1.76,
       "focusX": 0.5
     },
     {

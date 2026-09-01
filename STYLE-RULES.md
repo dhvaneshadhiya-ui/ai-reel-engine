@@ -6620,3 +6620,8 @@ their first and last seconds, previously a 4% nudge).
 **Left as advice:** the split hook runs 2.08s against the 2.0s guideline. G03
 is advisory by the constitution, and 0.08s did not justify another compile and
 render cycle.
+
+**Hook tightened (2026-09-01):** anchor moved from "out to reveal" (2.08s) to
+"walking out to" (1.76s), so the split hook is inside the 2.0s guideline
+rather than 0.08s over. In the shot plan, so a recompile keeps it. Re-rendered:
+70.5s, -14.53 LUFS, gates pass, frame-lint clean, no HARD LIMIT flag.
