@@ -1,5 +1,13 @@
 {
-  "emphasis": [],
+  "emphasis": [
+    "Nineteen",
+    "nine",
+    "three",
+    "transparent",
+    "STICKERS",
+    "WhatsApp",
+    "Stickers"
+  ],
   "caption_corrections": {},
   "shots": [
     {
@@ -10,9 +18,32 @@
         "downloaded",
         "stickers"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-3",
+      "scene": {
+        "type": "split",
+        "topSrc": "assets/chatgpt-stickers/screencap-3.mp4",
+        "topFrom": 12.4,
+        "bottomSrc": "assets/chatgpt-stickers/avatar-master.mp4",
+        "bottomFocusX": 0.5,
+        "captionBottom": 1000,
+        "headline": {
+          "y": 0.05,
+          "theme": "dark",
+          "lines": [
+            {
+              "text": "MADE IN CHATGPT",
+              "kind": "label",
+              "at": 0.05
+            },
+            {
+              "text": "NOT DOWNLOADED",
+              "kind": "headline",
+              "at": 0.35
+            }
+          ]
+        }
+      }
     },
     {
       "start_phrase": "That's my face, and",
@@ -26,8 +57,13 @@
         "photo"
       ],
       "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "asset_id": "avatar",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/avatar-master.mp4",
+        "zoomDir": "none",
+        "captionBottom": 980
+      }
     },
     {
       "start_phrase": "No cutting anything out,",
@@ -37,9 +73,14 @@
         "anything",
         "third-party"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-2",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-2.mp4",
+        "from": 4.1,
+        "zoomDir": "in"
+      }
     },
     {
       "start_phrase": "It's already inside ChatGPT.",
@@ -49,9 +90,14 @@
         "inside",
         "ChatGPT"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-2",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-2.mp4",
+        "from": 4.6,
+        "zoomDir": "none"
+      }
     },
     {
       "start_phrase": "It starts on the",
@@ -61,9 +107,14 @@
         "chat",
         "screen"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-2",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-2.mp4",
+        "from": 0.2,
+        "zoomDir": "none"
+      }
     },
     {
       "start_phrase": "Plus menu, Create image,",
@@ -75,9 +126,14 @@
         "image",
         "Stickers"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-2",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-2.mp4",
+        "from": 1.3,
+        "zoomDir": "none"
+      }
     },
     {
       "start_phrase": "There's no prompt box.",
@@ -85,9 +141,14 @@
       "needs": [
         "prompt"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-2",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-2.mp4",
+        "from": 5.5,
+        "zoomDir": "in"
+      }
     },
     {
       "start_phrase": "You fill in a",
@@ -99,9 +160,14 @@
         "photo",
         "reactions"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-2",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-2.mp4",
+        "from": 6.2,
+        "zoomDir": "none"
+      }
     },
     {
       "start_phrase": "The style list is",
@@ -113,9 +179,14 @@
         "gets",
         "good"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-1",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-1.mp4",
+        "from": 2.8,
+        "zoomDir": "none"
+      }
     },
     {
       "start_phrase": "Nineteen: 3D, Anime, Chrome,",
@@ -128,9 +199,14 @@
         "Pixel",
         "Traditional"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-1",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-1.mp4",
+        "from": 3.6,
+        "zoomDir": "none"
+      }
     },
     {
       "start_phrase": "Pick one and it",
@@ -140,9 +216,14 @@
         "cuts",
         "background"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-1",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-1.mp4",
+        "from": 7.0,
+        "zoomDir": "in"
+      }
     },
     {
       "start_phrase": "the step that used",
@@ -153,9 +234,14 @@
         "need",
         "separate"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-3",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-3.mp4",
+        "from": 4.2,
+        "zoomDir": "none"
+      }
     },
     {
       "start_phrase": "That checkerboard is a",
@@ -165,9 +251,14 @@
         "real",
         "transparent"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-3",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-3.mp4",
+        "from": 11.4,
+        "zoomDir": "in"
+      }
     },
     {
       "start_phrase": "And it doesn't make",
@@ -177,9 +268,14 @@
         "make",
         "sticker"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-3",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-3.mp4",
+        "from": 12.0,
+        "zoomDir": "none"
+      }
     },
     {
       "start_phrase": "Nine, same face, nine",
@@ -190,9 +286,14 @@
         "face",
         "reactions"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-3",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-3.mp4",
+        "from": 12.6,
+        "zoomDir": "out"
+      }
     },
     {
       "start_phrase": "Then Add to chat",
@@ -203,9 +304,14 @@
         "choose",
         "WhatsApp"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-3",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-3.mp4",
+        "from": 13.9,
+        "zoomDir": "none"
+      }
     },
     {
       "start_phrase": "This is where it",
@@ -215,9 +321,14 @@
         "stops",
         "people"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-3",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-3.mp4",
+        "from": 14.9,
+        "zoomDir": "in"
+      }
     },
     {
       "start_phrase": "You need at least",
@@ -231,7 +342,36 @@
       ],
       "tier": null,
       "asset_id": null,
-      "scene": {}
+      "scene": {
+        "type": "statcard",
+        "title": "WHATSAPP STICKER PACK",
+        "rows": [
+          {
+            "label": "Minimum to export",
+            "value": "3",
+            "pct": 10
+          },
+          {
+            "label": "One ChatGPT generation",
+            "value": "9",
+            "pct": 30,
+            "color": "#2C5FD0"
+          },
+          {
+            "label": "Maximum per pack",
+            "value": "30",
+            "pct": 100
+          }
+        ],
+        "footnote": "Source: WhatsApp developer documentation",
+        "sfx": [
+          {
+            "src": "sfx/Click.MP3",
+            "at": 0.35,
+            "vol": 0.13
+          }
+        ]
+      }
     },
     {
       "start_phrase": "That's WhatsApp's rule, not",
@@ -242,8 +382,13 @@
         "ChatGPT"
       ],
       "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "asset_id": "avatar",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/avatar-master.mp4",
+        "zoomDir": "none",
+        "captionBottom": 980
+      }
     },
     {
       "start_phrase": "Name the pack, and",
@@ -253,9 +398,14 @@
         "pack",
         "done"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-3",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-3.mp4",
+        "from": 16.3,
+        "zoomDir": "none"
+      }
     },
     {
       "start_phrase": "One photo, nine stickers,",
@@ -266,9 +416,14 @@
         "stickers",
         "WhatsApp"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "screencap-3",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/screencap-3.mp4",
+        "from": 12.6,
+        "zoomDir": "none"
+      }
     },
     {
       "start_phrase": "Comment STICKERS and I'll",
@@ -282,8 +437,18 @@
         "used"
       ],
       "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "asset_id": "avatar",
+      "scene": {
+        "type": "footage",
+        "src": "assets/chatgpt-stickers/avatar-master.mp4",
+        "zoomDir": "none",
+        "captionBottom": 980,
+        "kinetic": {
+          "text": "COMMENT \u201cSTICKERS\u201d",
+          "style": "caps",
+          "at": 0.5
+        }
+      }
     }
   ]
 }

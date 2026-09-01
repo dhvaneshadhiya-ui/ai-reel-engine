@@ -6272,3 +6272,55 @@ and `chart` in `test_gates.py`'s baseline also carried no rows and no items —
 three cards drawing a title over an empty box, inside the sheet whose job is to
 pass every gate. Nothing in the suite could have caught them, because until
 today nothing checked that an MG card had anything in it.
+
+## 2026-09-01 — the zoom WAS working. The receipt fallback was the dead half.
+
+User: "we adapted zoom and scrolling effects to apply whenever possible, I
+think our system is not adapting these." Traced it before touching anything,
+and the first read of the data was wrong in a useful way.
+
+**Counting `zoomDir` in the beat sheets says 330/809 scenes have motion, and
+the two newest reels look terrible (1/13, 2/12). That count is misleading.**
+`FootageScene` reads `scene.zoomDir ?? "in"` — absence means a 1.1x push, so
+every bare footage scene already moves. The sheets are not the source of truth
+for motion; the components are.
+
+**The real dead spot: `receipt` with no `highlights`.** ReceiptScene does a
+genuine focus pull — zoom onto the highlight cluster as it fires — but only
+when highlights exist. With none it fell back to
+`1.0 + interpolate(..., [0.02, 0.06])`: **a 4% push, the flattest move in the
+codebase**, on the one scene type that holds a full-page screenshot for 6-9s.
+
+**And 42 of 74 receipts across every reel have no highlights**, because
+`compile_shot_plan.py` has never set them. So the fallback was not an edge
+case — it was the treatment for most screenshots we ship. The reels with 0
+missing (iphone18-colors, qualcomm-chip-hike, airpods-camera) are the
+hand-built ones.
+
+**Fix, at the component so every caller gets it:** the fallback now pushes
+0 -> 0.10, **matched to FootageScene's existing 1.1x house push** rather than
+a newly invented number. One constant, one file, every past and future reel.
+Verified by re-rendering apple-surprise-and-shine and diffing the receipt
+scene's first and last frame.
+
+**Pinned:** two rows in `test_capture_defaults.py` — the receipt fallback must
+stay >=9%, and FootageScene must still be 1.1x so the two cannot silently
+drift apart. Confirmed the check FAILS when the old value is restored.
+
+**Cued, not inferred:** `compile_shot_plan` now prints an ADVICE when a
+receipt has no highlights, naming the covered line. The rect cannot be
+computed here — knowing where on the page the claim sits needs someone to look
+at the image, which is what the scout step is for. A generic push is the
+floor; a pull to the claim is the goal.
+
+### Found and NOT fixed: 26 of 30 card components are entry-only
+
+`SpecSheet`, `TypeCard`, `WordCascade`, `Checklist`, `StatCard`, `HCompare`,
+`Carousel`, `CategoryGrid` and the rest animate IN and then hold perfectly
+still for the rest of the beat. CLAUDE.md already carries the rule from
+`going-viral`: *"Nothing static — every element keeps a low-amplitude idle
+motion."* It is not implemented in the components.
+
+Left alone deliberately: a shared idle-drift wrapper across 26 components is a
+real build with real layout risk, and it is not what was asked for. Recorded
+here so it is a decision rather than an oversight.

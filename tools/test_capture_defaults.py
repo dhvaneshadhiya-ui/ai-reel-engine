@@ -50,8 +50,8 @@ CHECKS: list[tuple[str, str, str]] = [
 
 
 RENDER_SRC = {
-    "ReceiptScene.tsx": ROOT / "src/components/ReceiptScene.tsx",
-    "FootageScene.tsx": ROOT / "src/components/FootageScene.tsx",
+    "ReceiptScene.tsx": Path(__file__).resolve().parent.parent
+                        / "src/components/ReceiptScene.tsx",
     "CaptionChips.tsx": Path(__file__).resolve().parent.parent
                         / "src/components/CaptionChips.tsx",
     "OssAlt.tsx": Path(__file__).resolve().parent.parent
