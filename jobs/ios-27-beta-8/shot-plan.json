@@ -1,0 +1,191 @@
+{
+  "emphasis": ["Siri", "iOS twenty-seven", "beta eight", "September ninth"],
+  "caption_corrections": {
+    "8": "eight",
+    "27": "twenty-seven",
+    "liquid blast": "Liquid Glass",
+    "9th": "ninth",
+    "camera apps": "Camera app's",
+    "air drops": "AirDrop's",
+    "cycles added": "cycle's added"
+  },
+  "shots": [
+    {
+      "start_phrase": "Siri just stopped being",
+      "line": "Siri just stopped being broken.",
+      "needs": ["Siri", "stopped", "being", "broken"],
+      "tier": "reliable",
+      "asset_id": "hook-9to5mac",
+      "scene": {
+        "type": "split",
+        "topSrc": "assets/ios-27-beta-8/receipt-9to5mac-crop.png",
+        "bottomSrc": "$AVATAR",
+        "captionBottom": 1000,
+        "topFocusX": 0.5,
+        "bottomFocusX": "$FOCUS_SPLIT",
+        "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.14, "at": 0.0}]
+      }
+    },
+    {
+      "start_phrase": "Apple just dropped beta",
+      "line": "Apple just dropped beta eight of iOS twenty-seven, and here's what nobody expected: the Siri they promised years ago is finally sitting in a real build, right now.",
+      "needs": ["Apple", "dropped", "beta", "eight", "twenty-seven", "nobody", "expected", "Siri", "promised", "years", "finally", "sitting", "real", "build"],
+      "tier": "reliable",
+      "asset_id": "release-macrumors",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/ios-27-beta-8/receipt-macrumors-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 930,
+        "backdrop": "cream",
+        "highlights": [{"at": 0.3, "x": 40, "y": 370, "w": 1000, "h": 420}],
+        "captionBottom": 460,
+        "sfx": [
+          {"src": "sfx/Camera Shutter.MP3", "vol": 0.13, "at": 0.0},
+          {"src": "sfx/Core.MP3", "vol": 0.14, "at": 2.4}
+        ]
+      }
+    },
+    {
+      "start_phrase": "And Siri doesn't just",
+      "line": "And Siri doesn't just answer anymore, it holds a conversation, knows what's on your screen, and can actually read your own Messages and Mail to answer you.",
+      "needs": ["Siri", "doesn", "answer", "anymore", "holds", "conversation", "knows", "screen", "actually", "read", "Messages", "Mail"],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "SIRI AI",
+        "kicker": "What actually changed",
+        "rows": [
+          {"label": "Conversation", "value": "Real, back-and-forth"},
+          {"label": "On-screen", "value": "Sees what you see"},
+          {"label": "Reads for you", "value": "Messages & Mail", "accent": true}
+        ],
+        "footnote": "Apple's iOS 27, per MacRumors & 9to5Mac",
+        "sfx": [{"src": "sfx/Pop.MP3", "vol": 0.12, "at": 0.15}]
+      }
+    },
+    {
+      "start_phrase": "That's serious enough to",
+      "line": "That's serious enough to get its own app now, just to hold every conversation you've had with it.",
+      "needs": ["serious", "enough", "hold", "every", "conversation"],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "$AVATAR",
+        "zoomDir": "none"
+      }
+    },
+    {
+      "start_phrase": "Even the Camera app's",
+      "line": "Even the Camera app's in on it now: point it at anything, and Siri tells you what it's looking at.",
+      "needs": ["Even", "Camera", "point", "anything", "Siri", "tells", "looking"],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "VISUAL INTELLIGENCE",
+        "kicker": "New home",
+        "rows": [
+          {"label": "Used to live", "value": "Its own button"},
+          {"label": "Now lives", "value": "Inside the Camera app", "accent": true}
+        ],
+        "footnote": "Apple's iOS 27, per MacRumors & 9to5Mac",
+        "sfx": [{"src": "sfx/Pop.MP3", "vol": 0.12, "at": 0.15}]
+      }
+    },
+    {
+      "start_phrase": "Beyond Siri, there's the",
+      "line": "Beyond Siri, there's the tweak everyone will touch first. Liquid Glass finally gets a slider, so you decide how see-through your phone looks.",
+      "needs": ["Beyond", "Siri", "tweak", "everyone", "touch", "first", "Liquid", "Glass", "finally", "gets", "slider", "decide", "see-through"],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "LIQUID GLASS",
+        "kicker": "Settings",
+        "rows": [
+          {"label": "New control", "value": "Transparency slider", "accent": true},
+          {"label": "You decide", "value": "How see-through it looks"}
+        ],
+        "footnote": "Apple's iOS 27, per MacRumors, 9to5Mac & OSXDaily",
+        "sfx": [{"src": "sfx/Click.MP3", "vol": 0.13, "at": 0.15}]
+      }
+    },
+    {
+      "start_phrase": "So under the hood",
+      "line": "So under the hood, apps open faster, AirDrop's quicker, and the phone hands off Wi-Fi to cellular without you noticing.",
+      "needs": ["under", "hood", "apps", "open", "faster", "AirDrop", "quicker", "phone", "hands", "off", "Wi-Fi", "cellular", "noticing"],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "categorygrid",
+        "headline": "UNDER THE HOOD",
+        "cards": [
+          {"label": "App launches", "sub": "Faster"},
+          {"label": "AirDrop", "sub": "Quicker"},
+          {"label": "Wi-Fi to cellular", "sub": "Smoother handoff"}
+        ]
+      }
+    },
+    {
+      "start_phrase": "itself is reportedly quiet",
+      "line": "Beta eight itself is reportedly quiet, though. Apple's just polishing now.",
+      "needs": ["Beta", "eight", "itself", "reportedly", "quiet", "though", "Apple", "polishing"],
+      "tier": "official",
+      "asset_id": "beta8-devnotes",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/ios-27-beta-8/receipt-apple-devnotes-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 930,
+        "backdrop": "cream",
+        "highlights": [{"at": 0.2, "x": 40, "y": 320, "w": 1000, "h": 500}],
+        "captionBottom": 460,
+        "sfx": [{"src": "sfx/Camera Shutter.MP3", "vol": 0.12, "at": 0.0}]
+      }
+    },
+    {
+      "start_phrase": "Still, the cycle's added",
+      "line": "Still, the cycle's added smaller stuff: new photo tools, a custom AirPods EQ, an AI wallpaper generator.",
+      "needs": ["Still", "cycle", "added", "smaller", "stuff", "photo", "tools", "AirPods", "wallpaper"],
+      "tier": "reliable",
+      "asset_id": "smaller-stuff-osxdaily",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/ios-27-beta-8/receipt-osxdaily-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 930,
+        "backdrop": "cream",
+        "highlights": [{"at": 0.3, "x": 20, "y": 140, "w": 1040, "h": 480}],
+        "captionBottom": 460,
+        "sfx": [{"src": "sfx/Camera Shutter.MP3", "vol": 0.12, "at": 0.0}]
+      }
+    },
+    {
+      "start_phrase": "Apple's already said it:",
+      "line": "Apple's already said it: expected within weeks, probably dated right at their September ninth event.",
+      "needs": ["Apple", "already", "said", "expected", "within", "weeks", "probably", "dated", "September", "ninth", "event"],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "$AVATAR",
+        "zoomDir": "none"
+      }
+    },
+    {
+      "start_phrase": "So the new Siri",
+      "line": "So the new Siri isn't a promise anymore, and that's exactly what nobody expected. It's sitting in a real build, right now.",
+      "needs": ["Siri", "promise", "anymore", "exactly", "nobody", "expected", "sitting", "real", "build", "right"],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "$AVATAR",
+        "zoomDir": "none"
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+Siri just stopped being broken.
+
+Apple just dropped beta eight of iOS twenty-seven, and here's what nobody expected: the Siri they promised years ago is finally sitting in a real build, right now.
+
+And Siri doesn't just answer anymore, it holds a conversation, knows what's on your screen, and can actually read your own Messages and Mail to answer you.
+
+That's serious enough to get its own app now, just to hold every conversation you've had with it.
+
+Even the Camera app's in on it now: point it at anything, and Siri tells you what it's looking at.
+
+Beyond Siri, there's the tweak everyone will touch first. Liquid Glass finally gets a slider, so you decide how see-through your phone looks.
+
+So under the hood, apps open faster, AirDrop's quicker, and the phone hands off Wi-Fi to cellular without you noticing.
+
+Beta eight itself is reportedly quiet, though. Apple's just polishing now.
+
+Still, the cycle's added smaller stuff: new photo tools, a custom AirPods EQ, an AI wallpaper generator.
+
+Apple's already said it: expected within weeks, probably dated right at their September ninth event.
+
+So the new Siri isn't a promise anymore, and that's exactly what nobody expected. It's sitting in a real build, right now.

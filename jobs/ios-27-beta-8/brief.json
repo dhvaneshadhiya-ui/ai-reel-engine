@@ -1,0 +1,28 @@
+{
+  "slug": "ios-27-beta-8",
+  "topic": "iOS 27 Beta 8 released - what's new",
+  "details": "Apple seeded iOS 27 beta 8 on Aug 31 2026, next expected step toward the public release; developer/coverage sources list what changed vs beta 7",
+  "subject": "iOS 27 Beta 8 released - what's new",
+  "audience": "iPhone owners who track iOS betas or are curious what's changing before the public release; assume they know iOS 27 exists but not what's actually in beta 8",
+  "platform": "both",
+  "goal": "awareness",
+  "core_value": "the real, sourced list of what's new in iOS 27 as of beta 8 -- the rebuilt Siri, the Liquid Glass slider, and the everyday upgrades -- plus an honest read on when it ships",
+  "desired_action": "none",
+  "reveal_target": "none",
+  "cta_keyword": "IOS",
+  "target_duration": "75s",
+  "tone": "editorial tech-news: confident, sourced, no hype words, treats Siri's history of overpromising honestly",
+  "source_policy": "official-preferred",
+  "footage_constraints": "mobile captures of macrumors.com, 9to5mac.com, osxdaily.com articles + developer.apple.com release notes; avatar presenter; no first-party Apple screen recordings available (beta not installed on a capture device)",
+  "credit_instructions": "on-screen",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 75,
+  "music": false,
+  "created_at": "2026-09-01T04:43:39.254918+00:00",
+  "status": "initialized"
+}
