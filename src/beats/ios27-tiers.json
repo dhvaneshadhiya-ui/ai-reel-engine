@@ -152,7 +152,7 @@
       "srcHeight": 1420,
       "credit": "MacRumors",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 20,
         "y": 380,
@@ -210,7 +210,7 @@
       "srcHeight": 1450,
       "credit": "Apple",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 10,
         "y": 10,
@@ -237,7 +237,7 @@
       "srcHeight": 1450,
       "credit": "Apple",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 10,
         "y": 1010,
@@ -299,7 +299,7 @@
       "srcHeight": 2280,
       "credit": "Apple",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 60,
         "y": 180,
@@ -326,7 +326,7 @@
       "srcHeight": 2280,
       "credit": "Apple",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 60,
         "y": 205,
@@ -391,7 +391,7 @@
       "srcHeight": 2280,
       "credit": "Apple",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 60,
         "y": 440,
@@ -428,7 +428,7 @@
       "srcHeight": 1450,
       "credit": "Apple",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 10,
         "y": 430,
@@ -498,7 +498,7 @@
       "srcHeight": 1450,
       "credit": "Apple",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 10,
         "y": 10,
@@ -543,7 +543,7 @@
       "srcHeight": 880,
       "credit": "MacRumors",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 20,
         "y": 440,
@@ -611,7 +611,7 @@
       "srcHeight": 560,
       "credit": "MacRumors",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 15,
         "y": 10,
@@ -638,7 +638,7 @@
       "srcHeight": 520,
       "credit": "Apple via MacRumors",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 300,
         "y": 150,
@@ -666,7 +666,7 @@
       "srcHeight": 2340,
       "credit": "Apple Newsroom",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 40,
         "y": 440,
@@ -693,7 +693,7 @@
       "srcHeight": 2340,
       "credit": "Apple Newsroom",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 40,
         "y": 1660,
@@ -790,7 +790,7 @@
       "srcHeight": 600,
       "credit": "Apple",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 20,
         "y": 380,
@@ -817,7 +817,7 @@
       "srcHeight": 600,
       "credit": "Apple",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 20,
         "y": 440,
@@ -889,7 +889,7 @@
       "srcHeight": 2280,
       "credit": "Apple",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 60,
         "y": 1810,
@@ -923,7 +923,7 @@
       "srcHeight": 2280,
       "credit": "Apple",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 60,
         "y": 1880,
@@ -958,7 +958,7 @@
       "srcHeight": 1055,
       "credit": "9to5Mac",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 30,
         "y": 810,
@@ -1063,7 +1063,7 @@
       "srcHeight": 1055,
       "credit": "9to5Mac",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 30,
         "y": 480,
@@ -1127,7 +1127,7 @@
       "srcHeight": 1055,
       "credit": "9to5Mac",
       "bg": "cream",
-      "captionBottom": 205,
+      "captionBottom": 500,
       "focus": {
         "x": 30,
         "y": 190,

@@ -15,10 +15,40 @@
   ],
   "scenes": [
     {
+      "type": "split",
+      "topSrc": "assets/apple-surprise-and-shine/invite-hero.png",
+      "bottomSrc": "assets/apple-surprise-and-shine/avatar-master.mp4",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "APPLE CONFIRMS",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "SEPTEMBER 9",
+            "kind": "headline",
+            "at": 0.45
+          }
+        ],
+        "y": 0.05,
+        "theme": "dark"
+      },
+      "captionBottom": 1000,
+      "credit": "MacRumors",
+      "creditOnScreen": true,
+      "durationSec": 1.76,
+      "assetId": "invite-hero",
+      "claimId": "invite-hero",
+      "covers": "On September 9th,"
+    },
+    {
       "type": "footage",
       "src": "assets/apple-surprise-and-shine/avatar-master.mp4",
-      "durationSec": 7.1,
-      "from": 0.0,
+      "durationSec": 5.34,
+      "from": 1.76,
       "focusX": 0.5
     },
     {
@@ -41,7 +71,7 @@
       "sfx": [
         {
           "src": "sfx/Camera Shutter.MP3",
-          "vol": 0.14,
+          "vol": 0.32,
           "at": 0.0
         }
       ],
@@ -66,7 +96,7 @@
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",
-          "vol": 0.13,
+          "vol": 0.582,
           "at": 0.0
         }
       ],
@@ -85,7 +115,7 @@
       "sfx": [
         {
           "src": "sfx2/whooshes-01.mp3",
-          "vol": 0.15,
+          "vol": 0.543,
           "at": 0.0
         }
       ],
@@ -101,7 +131,7 @@
       "rows": [
         {
           "label": "Date & time",
-          "value": "Sep 9 · 10:00 AM PT"
+          "value": "Sep 9 \u00b7 10:00 AM PT"
         },
         {
           "label": "Location",
@@ -113,11 +143,11 @@
           "accent": true
         }
       ],
-      "footnote": "MacRumors · Apple's own invite",
+      "footnote": "MacRumors \u00b7 Apple's own invite",
       "sfx": [
         {
           "src": "sfx/Pop.MP3",
-          "vol": 0.13,
+          "vol": 0.343,
           "at": 0.0
         }
       ],
@@ -143,7 +173,7 @@
       "sfx": [
         {
           "src": "sfx2/ground-impact-352053.mp3",
-          "vol": 0.16,
+          "vol": 0.394,
           "at": 0.0
         }
       ],
@@ -153,8 +183,8 @@
     },
     {
       "type": "specsheet",
-      "title": "EXPECTED — NOT CONFIRMED",
-      "kicker": "MACRUMORS · 9TO5MAC",
+      "title": "EXPECTED \u2014 NOT CONFIRMED",
+      "kicker": "MACRUMORS \u00b7 9TO5MAC",
       "rows": [
         {
           "label": "iPhone 18 Pro / Pro Max",
@@ -165,7 +195,7 @@
       "sfx": [
         {
           "src": "sfx/Click.MP3",
-          "vol": 0.12,
+          "vol": 0.251,
           "at": 0.0
         }
       ],
@@ -173,8 +203,8 @@
     },
     {
       "type": "specsheet",
-      "title": "EXPECTED — NOT CONFIRMED",
-      "kicker": "MACRUMORS · 9TO5MAC",
+      "title": "EXPECTED \u2014 NOT CONFIRMED",
+      "kicker": "MACRUMORS \u00b7 9TO5MAC",
       "rows": [
         {
           "label": "iPhone 18 Pro / Pro Max",
@@ -190,7 +220,7 @@
       "sfx": [
         {
           "src": "sfx/Core.MP3",
-          "vol": 0.13,
+          "vol": 0.556,
           "at": 0.0
         }
       ],
@@ -208,7 +238,7 @@
       "sfx": [
         {
           "src": "sfx/Whoosh (Reversed).MP3",
-          "vol": 0.12,
+          "vol": 0.331,
           "at": 0.0
         }
       ],
@@ -228,7 +258,7 @@
         },
         {
           "label": "Apple",
-          "value": "never — yet",
+          "value": "never \u2014 yet",
           "accent": true
         }
       ],
@@ -238,22 +268,8 @@
     {
       "type": "footage",
       "src": "assets/apple-surprise-and-shine/avatar-master.mp4",
-      "durationSec": 1.98,
+      "durationSec": 10.5,
       "from": 56.08,
-      "focusX": 0.5
-    },
-    {
-      "type": "footage",
-      "src": "assets/apple-surprise-and-shine/avatar-master.mp4",
-      "durationSec": 6.86,
-      "from": 58.06,
-      "focusX": 0.5
-    },
-    {
-      "type": "footage",
-      "src": "assets/apple-surprise-and-shine/avatar-master.mp4",
-      "durationSec": 1.66,
-      "from": 64.92,
       "focusX": 0.5
     },
     {
@@ -268,7 +284,7 @@
       "sfx": [
         {
           "src": "sfx2/impact-boom.mp3",
-          "vol": 0.18,
+          "vol": 0.452,
           "at": 0.0
         }
       ],
@@ -1567,11 +1583,11 @@
   ],
   "noMusic": true,
   "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
-  "script": "On September 9th, the person walking out to reveal the new iPhone won't be Tim Cook — that hasn't happened in fifteen years.\n\nThat's the event Apple just confirmed: \"Surprise and shine,\" and it's incoming CEO John Ternus's very first keynote.\n\nHere's why: Cook moves up to executive chairman on September 1st.\n\nFour days later, Ternus steps up instead — not an outsider, but the guy who's run Apple's hardware engineering for the past five years.\n\nHere's what's real right now: 10 AM Pacific, Steve Jobs Theater, one tagline.\n\nNot one product named yet — you get a date, not a lineup.\n\nReportedly on deck: the iPhone 18 Pro and Pro Max, and Apple's first-ever folding iPhone, one that opens like a book into a tablet-sized screen, according to MacRumors and 9to5Mac.\n\nMeaning, Apple's finally moving off a slab shape it's kept since the very first iPhone.\n\nSamsung's had a folding phone since 2019. Google since 2023. Apple never has — until, maybe, now.\n\nStill, nothing beyond the date is confirmed.\n\nUnderneath all that, here's what you're actually watching for: what an Apple without Tim Cook onstage even looks like.\n\nTwo firsts, one morning. That's what's real — everything else, September 9th tells us.",
+  "script": "On September 9th, the person walking out to reveal the new iPhone won't be Tim Cook \u2014 that hasn't happened in fifteen years.\n\nThat's the event Apple just confirmed: \"Surprise and shine,\" and it's incoming CEO John Ternus's very first keynote.\n\nHere's why: Cook moves up to executive chairman on September 1st.\n\nFour days later, Ternus steps up instead \u2014 not an outsider, but the guy who's run Apple's hardware engineering for the past five years.\n\nHere's what's real right now: 10 AM Pacific, Steve Jobs Theater, one tagline.\n\nNot one product named yet \u2014 you get a date, not a lineup.\n\nReportedly on deck: the iPhone 18 Pro and Pro Max, and Apple's first-ever folding iPhone, one that opens like a book into a tablet-sized screen, according to MacRumors and 9to5Mac.\n\nMeaning, Apple's finally moving off a slab shape it's kept since the very first iPhone.\n\nSamsung's had a folding phone since 2019. Google since 2023. Apple never has \u2014 until, maybe, now.\n\nStill, nothing beyond the date is confirmed.\n\nUnderneath all that, here's what you're actually watching for: what an Apple without Tim Cook onstage even looks like.\n\nTwo firsts, one morning. That's what's real \u2014 everything else, September 9th tells us.",
   "approval": {
     "sha256": "54495fcbfb72eca0059ef42f7ba5102d2ecc8d1c601a1ce48d9878bd79c1a842",
     "approvedAt": "2026-08-27T05:22:16+00:00",
     "words": 204,
-    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
   }
 }

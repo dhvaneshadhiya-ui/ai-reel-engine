@@ -502,7 +502,7 @@
       "durationSec": 1.44,
       "from": 18.3,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "floatcard",
@@ -543,7 +543,7 @@
       "durationSec": 2.2,
       "from": 25.76,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "floatcard",
@@ -706,7 +706,7 @@
       "durationSec": 2.58,
       "from": 57.08,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "footage",
@@ -837,7 +837,7 @@
       "durationSec": 2.38,
       "from": 79.36,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "checklist",
@@ -921,7 +921,7 @@
       "durationSec": 2.84,
       "from": 89.22,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "wordcascade",
@@ -970,7 +970,7 @@
       "durationSec": 1.97,
       "from": 96.01,
       "focusX": 0.478,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "floatcard",
@@ -1040,7 +1040,7 @@
       "durationSec": 1.38,
       "from": 105.47,
       "focusX": 0.478,
-      "captionBottom": 300,
+      "captionBottom": 500,
       "headline": {
         "lines": [
           {

@@ -69,7 +69,7 @@
       "durationSec": 2.26,
       "from": 5.0,
       "focusX": 0.485,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "typecard",
@@ -148,7 +148,7 @@
       "durationSec": 1.26,
       "from": 13.94,
       "focusX": 0.485,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "footage",
@@ -283,7 +283,7 @@
       "durationSec": 1.54,
       "from": 28.54,
       "focusX": 0.485,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "footage",
@@ -336,7 +336,7 @@
       "durationSec": 2.18,
       "from": 36.74,
       "focusX": 0.485,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "receipt",
@@ -523,7 +523,7 @@
       "durationSec": 1.74,
       "from": 57.06,
       "focusX": 0.485,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "footage",
@@ -638,7 +638,7 @@
       "durationSec": 1.96,
       "from": 72.14,
       "focusX": 0.485,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "typecard",
@@ -680,7 +680,7 @@
       "durationSec": 1.33,
       "from": 78.1,
       "focusX": 0.485,
-      "captionBottom": 300,
+      "captionBottom": 500,
       "headline": {
         "lines": [
           {

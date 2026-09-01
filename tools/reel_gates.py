@@ -789,7 +789,17 @@ def check_beats(beats: dict, vo_end: float | None = None,
             continue
         # The claim is the speech that STARTS while this card is up. A word that
         # began before the card appeared belongs to the previous beat.
-        spoken = [(a, b) for _, a, b in _wt if start <= a < end]
+        # The half-open bound needs a frame of slack. Scene ends are a
+        # CUMULATIVE SUM of rounded durations, so scene 7 ends at
+        # 44.260000000000005 while its successor's first word starts at exactly
+        # 44.26 — and `44.26 < 44.260000000000005` is True. That handed the
+        # NEXT scene's opening word to the outgoing card, whose own end then
+        # looked 0.28s short. Phrase-anchored compilation puts every cut on a
+        # word onset by design, so this fired on correct reels (found on
+        # apple-surprise-and-shine 2026-09-01, twice in one sheet). A word that
+        # begins inside the card's final frame belongs to the next beat —
+        # symmetric with the +0.04 tolerance already allowed on claim_end.
+        spoken = [(a, b) for _, a, b in _wt if start <= a < end - 0.04]
         if spoken:
             claim_end = max(b for _, b in spoken)
             if claim_end > end + 0.04:      # ~1 frame of tolerance at 30fps

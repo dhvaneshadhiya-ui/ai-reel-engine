@@ -343,7 +343,7 @@
       "durationSec": 2.56,
       "from": 29.24,
       "focusX": 0.515,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "checklist",
@@ -379,7 +379,7 @@
       "durationSec": 2.84,
       "from": 36.76,
       "focusX": 0.515,
-      "captionBottom": 300,
+      "captionBottom": 500,
       "infocard": {
         "heading": "$2,000\u2013$2,500",
         "body": "rumored price range",
@@ -482,7 +482,7 @@
       "durationSec": 2.62,
       "from": 46.32,
       "focusX": 0.515,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "sourceread",
@@ -517,7 +517,7 @@
       "durationSec": 2.23,
       "from": 50.76,
       "focusX": 0.515,
-      "captionBottom": 300,
+      "captionBottom": 500,
       "headline": {
         "lines": [
           {
@@ -575,7 +575,7 @@
       "durationSec": 2.03,
       "from": 59.49,
       "focusX": 0.515,
-      "captionBottom": 300
+      "captionBottom": 500
     },
     {
       "type": "uidialog",
@@ -693,7 +693,7 @@
       "durationSec": 2.49,
       "from": 77.12,
       "focusX": 0.515,
-      "captionBottom": 300,
+      "captionBottom": 500,
       "headline": {
         "lines": [
           {

@@ -14,6 +14,36 @@
   "shots": [
     {
       "start_phrase": "On September 9th,",
+      "asset_id": "invite-hero",
+      "scene": {
+        "type": "split",
+        "topSrc": "assets/apple-surprise-and-shine/invite-hero.png",
+        "bottomSrc": "$AVATAR",
+        "bottomFrom": 0.0,
+        "bottomFocusX": "$FOCUS_SPLIT",
+        "headline": {
+          "lines": [
+            {
+              "text": "APPLE CONFIRMS",
+              "kind": "label",
+              "at": 0.15
+            },
+            {
+              "text": "SEPTEMBER 9",
+              "kind": "headline",
+              "at": 0.45
+            }
+          ],
+          "y": 0.05,
+          "theme": "dark"
+        },
+        "captionBottom": 1000,
+        "credit": "MacRumors",
+        "creditOnScreen": true
+      }
+    },
+    {
+      "start_phrase": "walking out to",
       "line": "On September 9th, the person walking out to reveal the new iPhone won't be Tim Cook \u2014 that hasn't happened in fifteen years.",
       "needs": [
         "September",
@@ -370,41 +400,6 @@
         "beyond",
         "date",
         "confirmed"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {
-        "type": "footage",
-        "src": "assets/apple-surprise-and-shine/avatar-master.mp4"
-      }
-    },
-    {
-      "start_phrase": "Underneath all that,",
-      "line": "Underneath all that, here's what you're actually watching for: what an Apple without Tim Cook onstage even looks like.",
-      "needs": [
-        "Underneath",
-        "watching",
-        "Apple",
-        "without",
-        "Tim",
-        "Cook",
-        "onstage"
-      ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {
-        "type": "footage",
-        "src": "assets/apple-surprise-and-shine/avatar-master.mp4"
-      }
-    },
-    {
-      "start_phrase": "Two firsts, one",
-      "line": "Two firsts, one morning.",
-      "needs": [
-        "Two",
-        "firsts",
-        "one",
-        "morning"
       ],
       "tier": null,
       "asset_id": null,
