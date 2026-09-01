@@ -6135,3 +6135,62 @@ two short b-roll shots concatenated into one clip file to cover one beat.
 - **[DEAD SPACE] on the wafer and die-grid shots (73%, 39%).** Inherent to
   footage of a wafer against black. Soft flag, left as shot.
 - **Facecam 20%**, at the top of the 10-20% band.
+
+## 2026-09-01 — G54: the StatCard/SpecSheet column contract, written down at last
+
+Follow-up to point 3 of the qualcomm-chip-hike entry above, which ended
+"**StatCard and SpecSheet do not [have a gate], and should**". They do now.
+
+**RAW NOTE.** A 45-character statcard row label overflowed its column and
+rendered UNDERNEATH the bar — the pink bar looked drawn through the words.
+Caught only by opening `out/qualcomm-chip-hike-lint/17-statcard-mid.png` with
+human eyes. Every log was clean. It cost a full re-render.
+
+**ROOT CAUSE.** `StatCard.tsx` has always fixed the label column at 220px with
+`whiteSpace: "nowrap"` and the value column at 130px, and `SpecSheet.tsx` gives
+each value column a fixed 300px. **Nothing outside the components said so** —
+not `reel_gates.py`, not `PIPELINE.md`, not `RULES.md`. So the copy was written
+with no idea what box it had to live in, which is not a mistake anyone could
+have avoided by being careful. Same shape as the three silent checks in the
+entry above: a constraint that exists but cannot be consulted.
+
+**MEASURED, NOT TYPED.** This is the G05 lesson applied before it bites rather
+than after. G05's budget was a typed `{"headline": 18}` calibrated for
+Fraunces, and it went silently wrong the day the display face changed to Space
+Grotesk — passing overflowing headlines while looking like it worked. So the
+G54 numbers were measured with `canvas.measureText` in headless chromium (the
+same engine Remotion renders in), over ten real row labels and eight real
+values at each component's actual stack, weight and size:
+
+| | box | size | advance/em | budget |
+|---|---|---|---|---|
+| statcard label | 220px | 28 w600 | 0.516 (SF Pro, range 0.430-0.602) | **15** |
+| statcard value | 130px | 28 mono | 0.602 (SF Mono, exact) | **7** |
+| specsheet label | 848 − 300×n | 46 w800 | 0.516 | **23** (1 col) / **10** (2) |
+| specsheet value | 300px | 46 w800 | 0.516 | **12** |
+
+Two things the measurement corrected in the entry above. The statcard **value**
+budget is **7**, not the ~9 eyeballed off the still — mono has one advance and
+there is no arguing with it. And the specsheet **label** budget is not a number
+at all, it is a function of the column count: 20 characters sits fine beside one
+value column and wraps beside two. A fixed number there would have re-created
+G05's exact failure on day one.
+
+**THE TWO COMPONENTS FAIL DIFFERENTLY, AND THE MESSAGE SAYS WHICH.** StatCard's
+label column is `nowrap`, so overlong text CLIPS OUT of its box and runs under
+the bar. SpecSheet's label is a flex child with no nowrap, so it WRAPS, growing
+the row and pushing the card toward the frame edge. Same root cause, different
+symptom; a message that named only one would send you looking for the wrong
+thing.
+
+**ADVISORY, DELIBERATELY.** It fails the blocking test on both counts
+(RULES.md section 0): the renderer draws a frame — nothing black, nothing
+crashed — and the threshold is a fact about **our own component's box widths**,
+not about Reels or Shorts. It is the fix-the-copy lint that G05 became when
+`fit.ts` made it one. A number is not a rule.
+
+**DISTILLED RULE: a component with a fixed box has a character budget, and that
+budget belongs where the copy is written, not only in the .tsx.** `PIPELINE.md`
+now carries it in the scene table; `test_gates.py` asserts the widths are still
+`220`/`130`/`300` in the components themselves, so changing a column there fails
+the suite instead of silently widening the gate. Detail goes in the `footnote`.
