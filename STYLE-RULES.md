@@ -5823,3 +5823,95 @@ event.
   9.9s) — all trace to the same fast VO read in #1, not to the shot
   boundaries themselves; re-verified by eye against the lint sheets rather
   than reflexively re-cut.
+
+## 2026-09-01 — ios-27-beta-8: no source screenshot of the feature, so say so with a card
+
+Beta-8-as-checkpoint roundup ("what's actually new in iOS 27, now that it's
+basically done"), not a beta-8-specific changelog — corroborated across
+macrumors/9to5mac/osxdaily/appleinsider/ioshacker that the visible features
+(Siri AI, Liquid Glass slider, Visual Intelligence in Camera) shipped across
+the WHOLE cycle and beta 8 itself added nothing new; the script says that
+honestly ("Beta eight itself is reportedly quiet, though") instead of
+implying beta 8 introduced them.
+
+**No screenshot of the actual new Siri UI, the transparency slider, or
+Visual Intelligence-in-Camera exists anywhere (beta not installed on a
+capture device).** Rather than reuse an unrelated Apple hero image and
+imply it shows the feature, those three beats used a plain `specsheet`
+motion-graphic card (title + kicker + rows + footnote naming the sources) —
+honest about what it is (an explainer card, not a screenshot) and G15-
+compliant (every specsheet needs a `source`/`footnote`, found the hard way
+when the first pass shipped without one). Worth being a named pattern: when
+the visual doesn't exist, build the honest card instead of stretching an
+unrelated real image to stand in for it.
+
+**A receipt crop with NO margin below its last line of text clips that
+line when the scene zooms — even before the highlight animation starts.**
+Two receipts (Apple dev-notes at 1080x700, OSXDaily at 1080x1250) both hard-
+failed `[EDGE TEXT]` in `lint_frames.py`, and inspecting the actual frames
+(not just trusting the flag) showed two DIFFERENT failure shapes: the short
+700px crop clipped the LAST paragraph line at the bottom because there was
+no whitespace margin past it; the tall 1250px crop clipped the HEADLINE at
+the TOP because it started flush at the headline with zero margin above.
+The one receipt that rendered perfectly (MacRumors, 1080x930) had generous
+whitespace on both ends — a colored banner above, blank margin below the
+last line before the credit tag. Fix: **re-crop every receipt to ~930px
+tall with real margin on both ends, matching the size of the one that
+already works**, not by guessing new highlight-box coordinates against a
+tight source image. Confirmed by re-cropping both from fresh captures and
+re-rendering: both flags cleared with no highlight-box changes needed
+beyond adjusting for the new coordinates.
+
+**`[EDGE TEXT]` false-fired a second time, independently, on a receipt with
+a blurred colored backdrop** — same root cause as apple-pencil-iphone-
+ultra's #4 (the edge-pixel-variance heuristic can't tell a cropped word from
+the app's own blurred-gradient backdrop texture). Verified by eye against
+the actual frame (fully intact card, nothing cropped) before overriding with
+`--soft`, disclosed here. Two independent hits on the same false-positive
+class in two different reels is worth the heuristic maintainer knowing, not
+just re-verifying and moving on each time.
+
+**Tiering: "3 outlets" is not automatically `multi`.** `research_check.py`
+correctly downgraded 6 of this reel's claims from `multi` (3 domains) to
+`official`, because the reel's own VIA field said the same thing for all
+three: "Apple's own feature, relayed by the outlet" — a fact about Apple's
+own shipped product, independently observed in a beta anyone can install,
+is `official`, not `multi` dressed in three mastheads. `multi` should mean
+independent ORIGINS, not independent repeaters of one origin — matches the
+Weibo-leaker VIA discipline already in RULES.md, just not applied to a
+first-party feature claim before.
+
+**ElevenLabs v3 read this script at 3.31 w/s again** (206 words / 62.3s,
+outside the 2.35-2.75 w/s band, same as apple-pencil-iphone-ultra) — third
+time this exact model+voice combination has overshot on this pipeline.
+Runtime still cleared the 60-80s news band (62.3s), so accepted without a
+regeneration, per the precedent that a second full-price take buys ~0.1 w/s
+at best. Worth promoting from a per-reel note to an assumption: **budget
+this voice at ~3.3 w/s, not 2.6 w/s, when sizing a script for a target
+runtime**, rather than re-discovering the gap every time.
+
+### Treatment history (do not repeat next reel)
+
+split hook (real headline receipt over presenter) · `specsheet` motion-
+graphic cards (dark, footnoted) for three feature explainers with no real
+screenshot to show · `categorygrid` (3 colored cards) for a performance
+grab-bag · plain `receipt` (headline + margin, no annotatezoom) for three
+press screenshots and one official Apple page.
+
+### Left honestly unfixed
+
+- **Every G04 PACING advisory fired** (9 of 11 scenes held longer than
+  their type's typical band; average scene 5.66s vs the 2.5s guideline) —
+  a genuinely coarser cut rhythm than editorial style's usual "visual
+  change every 2-3s", accepted for a script this information-dense with
+  only 4 real source images and no per-clause b-roll. Splitting every
+  merged clause into its own visual was the alternative; not done here.
+- **Facecam 25% of runtime** (band 10%-20% for `news`) — three facecam
+  beats (an app-explainer beat, the hedge/honesty beat, the closing take)
+  in an 11-beat, 62s reel. Advisory only (G06 not in BLOCKING_RULES).
+- **Scenes 4/5 (specsheet), 7/8 (receipt) and 9/10 (footage) each repeat
+  their treatment back-to-back** (render_job.py's own validator flags
+  this) — content-driven (two Siri-adjacent feature cards, two press
+  screenshots, two facecam beats in sequence at the close) rather than a
+  variety failure, but worth varying treatment more on the next reel that
+  has this many same-type beats in a row.
