@@ -6936,3 +6936,88 @@ Cue counts cannot be recovered from a mixed master at all.
 is decoration.** `test_gates` now asserts that the same 5-second screen scene
 advises under `news` and is silent under `howto`, and both halves were
 confirmed to fail when the measured values are removed.
+
+## 2026-09-02 — claude-fable-5-1: a user-supplied script, and four bugs it found
+
+The user wrote this one themselves — a six-beat tech-thriller treatment with
+its own timings — and asked for it as-is. That changed my job from "write a
+reel" to "verify a reel", and verification is where the value was: four of the
+five load-bearing claims were ones this session had never checked.
+
+**RAW NOTE — I closed a first draft on "nobody outside has checked one yet".**
+It was false. Artificial Analysis had published a direct contradiction of
+Anthropic's cost claim the same day, and Vals had it benchmarked. I had
+fetched the announcement and two write-ups and stopped. The user caught it.
+**DISTILLED RULE.** For a launch-day reel, search for INDEPENDENT TESTING
+before choosing the angle, not after a draft exists. "No one has evaluated
+this yet" is a claim about the world and needs a search like any other; the
+absence of evidence in three tabs is not evidence of absence.
+
+**RAW NOTE — one unlucky query nearly killed a true claim.** My first search
+for the Jacobian conjecture returned only the maths literature, which says
+plainly that it is open, so I told the user their claim was false. It was not:
+Levent Alpoge used Fable 5 to produce a counterexample in July. The query was
+too generic and hit the corpus instead of the news.
+**DISTILLED RULE.** Before calling a user's claim false, search it a second
+way. A negative result on a generic query is a statement about the query.
+
+**RAW NOTE — the same regex was wrong in four files.** `re.split(r"(?<=[.!?])\s+")`
+treated "the U.S. Government" as two sentences, which put a hard pause
+mid-phrase into a paid ElevenLabs render, cut a shot boundary mid-noun-phrase,
+and moved the prose numbers check_script advises on.
+**DISTILLED RULE.** Now `tools/textsplit.py`, imported by all four. Line
+breaks are taken as hard boundaries FIRST, because script.md is authored one
+sentence per line — the author already answered the ambiguity a regex cannot.
+
+**RAW NOTE — a BLOCKING gate failed on correct work.** G39 stripped punctuation
+before matching, so `covers` "the U.S. Government literally" became "u s
+government" and could not match whisper's "us government". A blocking rule
+firing on a picture that matched its words is worse than a missed advisory: it
+stops a good render and tempts the next person to weaken the gate. `_norm_words`
+now collapses initialisms first; `test_gates.py` pins it.
+
+**RAW NOTE — three wrong diagnoses of one lint flag.** EDGE TEXT on the CNBC
+receipt: I blamed the crop, then the backdrop, then read the code. It measures
+the standard deviation of an 8px strip at the LEFT and RIGHT frame edges. A
+1080x600 source must scale 3.2x to cover a 1080x1920 frame, so the receipt's
+blurred self-fill put a hugely magnified slice of the headline against the
+edges. Padding the canvas to 1080x1700 drops the cover scale to 1.13x.
+**DISTILLED RULE.** Read the check before fixing the flag. Two guesses cost
+two full render cycles; the code took ninety seconds.
+
+**RAW NOTE — the split hook collided three text systems, again.** Display type
+set black over an equally black source headline, with a caption chip across
+"Mythos 5". This is the claude-memory-everywhere failure repeating on a
+different asset. Its fix there was to delete the display type; here the user
+had ASKED for the on-screen line, so the fix had to keep it.
+**DISTILLED RULE.** When a split hook must carry display type over a text
+receipt, build the plate with BANDS: inset the source to the exact half size
+(1080x960, no cover-crop) and leave a band above for the display line and one
+below for the caption chip. Captions cannot cross the face seam
+(validate_job), so the chip has to live in the top half — give it somewhere
+to live. Three text systems need three grounds.
+
+### Treatment history — claude-fable-5-1
+
+- Receipt-led news reel built almost entirely on DOCUMENTATION and news
+  mastheads rather than product screenshots: Anthropic's own suspension
+  statement and platform docs, CNBC, TechSpot, ScienceDaily, Artificial
+  Analysis. 26 scenes, mean 2.51s, split hook with a banded plate, hard-cut
+  loop ending mid-sentence, 8 SFX, no music, no CTA.
+- New here: the BANDED SPLIT PLATE above; and statcards used as the
+  frame-filling alternative to a long receipt hold, with rows drawn from the
+  same sourced sentence already on screen elsewhere.
+- -> next reel must introduce at least one new treatment. Already used and not
+  to be repeated as the SAME shape next: a news-masthead receipt with the
+  headline highlighted in yellow as the dominant treatment; a black statcard
+  with 2-3 bar rows as the payoff for a cost claim; "DISPROVED / IN 3+
+  DIMENSIONS" style wordcascade as a caveat carrier.
+
+**ACCEPTED ADVISORIES, disclosed.** Hook 2.08s vs the 2.0s advisory (the
+sentence takes that long and the audio is frozen post-approval); facecam 9% vs
+the 10-20% band (the user's script is receipt-led by design, and a 0.5s
+facecam inserted to hit a number would be worse filmmaking); ten scenes over
+the 2.6s single-visual ceiling, down from a first cut where one ran 8.14s;
+caption "1.7 times" rather than "1.7x" (G16 notation), kept because it is
+exactly what is spoken and the statcard beside it already reads 1.7x. No
+blocking gate was overridden and `--soft` was not used.
