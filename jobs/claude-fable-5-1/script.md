@@ -13,4 +13,4 @@ A mathematician at Anthropic used this exact AI family to disprove an 87-year-ol
 Anthropic just cut cache read costs by seventy-five percent.
 But here's the trap: running it at max effort actually costs twenty percent more per task, because the model thinks so much it spits out one point seven times more tokens.
 
-So, would you trust an AI this intense? Especially since...
+So, would you trust an AI this intense?

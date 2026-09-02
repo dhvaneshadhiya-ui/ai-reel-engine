@@ -7021,3 +7021,38 @@ the 2.6s single-visual ceiling, down from a first cut where one ran 8.14s;
 caption "1.7 times" rather than "1.7x" (G16 notation), kept because it is
 exactly what is spoken and the statcard beside it already reads 1.7x. No
 blocking gate was overridden and `--soft` was not used.
+
+## 2026-09-02 — the ElevenLabs retrieval gap
+
+`creative_generate_speech` works from this session: `prompt` + `voice_id` +
+`model_id: eleven_v3` starts a flow and returns a `flow_id`, `session_ids` and
+a set of pending generation ids. The US trade-in read was generated this way.
+
+**What does NOT work is getting the audio back.** Both
+`creative_get_flow_run_status` and `creative_show_flow_results` require
+`session_ids` as an ARRAY of strings, and this MCP server advertises an EMPTY
+parameter schema (`{"type": "object"}`, no properties). With no schema the
+harness cannot type a value as an array, so every attempt arrives as a string
+and the server rejects it:
+
+    session_ids must be an array of strings
+
+Tried and failed: a JSON-array literal, a comma-separated list, omitting the
+argument, `creative_get_available_assets` (returns unrelated workspace images,
+not the new generation), `get_more_tools` (answers "no additional tool exists
+for this yet"), and `read_widget_context` (no widget was published).
+
+AGENT.md's flow — "poll `creative_get_flow_run_status`, download the mp3 from
+`media[].url`" — is therefore only half-runnable from an agent session today.
+It was verified working on 2026-08-27; what changed is not the server but
+whether an array can be sent to a schema-less tool.
+
+**Until that is fixed, generation is automatic and retrieval is a click:** the
+call returns a flow URL, the user opens it, downloads the mp3, and
+`tools/vo_external.py <slug> <file>` takes over from there — it already exists
+for exactly this handoff and re-encodes for the HeyGen upload.
+
+**Do NOT quietly fall back to HeyGen TTS.** It is the flat read the external
+flow exists to escape: 2.14 semitones against ElevenLabs' 3.60 on the same
+cloned voice, measured 2026-08-27. Shipping it because retrieval was awkward
+would undo the reason for the whole path.

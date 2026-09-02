@@ -2,5 +2,314 @@
   "emphasis": [],
   "caption_corrections": {},
   "format": "news",
-  "shots": []
+  "shots": [
+    {
+      "start_phrase": "Apple will give you",
+      "line": "Apple will give you fifteen and a half thousand rupees for an iPhone 11 Pro Max.",
+      "needs": [
+        "Apple",
+        "give",
+        "fifteen",
+        "half",
+        "thousand",
+        "rupees"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "That was once their",
+      "line": "That was once their best phone.",
+      "needs": [
+        "once",
+        "best",
+        "phone"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "This isn't a bad",
+      "line": "This isn't a bad offer",
+      "needs": [
+        "offer"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "it's a curve, and",
+      "line": "it's a curve, and Apple publishes the whole thing on the same page it advertises the top number.",
+      "needs": [
+        "curve",
+        "Apple",
+        "publishes",
+        "whole",
+        "thing",
+        "same"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Same tier, one generation",
+      "line": "Same tier, one generation apart each time.",
+      "needs": [
+        "Same",
+        "tier",
+        "generation",
+        "apart",
+        "each",
+        "time"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Sixteen Pro Max, fifty-seven",
+      "line": "Sixteen Pro Max, fifty-seven thousand.",
+      "needs": [
+        "Sixteen",
+        "fifty-seven",
+        "thousand"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Fifteen, forty-eight.",
+      "line": "Fifteen, forty-eight.",
+      "needs": [
+        "Fifteen",
+        "forty-eight"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Fourteen, thirty-nine and a",
+      "line": "Fourteen, thirty-nine and a half.",
+      "needs": [
+        "Fourteen",
+        "thirty-nine",
+        "half"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Thirteen, thirty-two.",
+      "line": "Thirteen, thirty-two.",
+      "needs": [
+        "Thirteen",
+        "thirty-two"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Twelve, twenty-one and a",
+      "line": "Twelve, twenty-one and a half.",
+      "needs": [
+        "Twelve",
+        "twenty-one",
+        "half"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Eleven, fifteen and a",
+      "line": "Eleven, fifteen and a half.",
+      "needs": [
+        "Eleven",
+        "fifteen",
+        "half"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Five generations, forty-one and",
+      "line": "Five generations, forty-one and a half thousand rupees, gone.",
+      "needs": [
+        "Five",
+        "generations",
+        "forty-one",
+        "half",
+        "thousand",
+        "rupees"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "And the steepest year",
+      "line": "And the steepest year isn't the newest one.",
+      "needs": [
+        "steepest",
+        "year",
+        "newest"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "It's the step from",
+      "line": "It's the step from thirteen to twelve.",
+      "needs": [
+        "step",
+        "thirteen",
+        "twelve"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Ten and a half",
+      "line": "Ten and a half thousand, in a single generation.",
+      "needs": [
+        "half",
+        "thousand",
+        "single",
+        "generation"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "And every figure there",
+      "line": "And every figure there begins with the same two words.",
+      "needs": [
+        "every",
+        "figure",
+        "begins",
+        "same",
+        "words"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Up to.",
+      "line": "Up to.",
+      "needs": [],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Best condition, best configuration,",
+      "line": "Best condition, best configuration, nothing promised.",
+      "needs": [
+        "Best",
+        "condition",
+        "configuration",
+        "nothing",
+        "promised"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Apple's own footnote spells",
+      "line": "Apple's own footnote spells out the rest.",
+      "needs": [
+        "Apple",
+        "footnote",
+        "spells",
+        "rest"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "So whatever you're picturing,",
+      "line": "So whatever you're picturing, the real number sits below the line.",
+      "needs": [
+        "whatever",
+        "picturing",
+        "real",
+        "number",
+        "sits",
+        "below"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "If you're holding on",
+      "line": "If you're holding on for the right moment",
+      "needs": [
+        "holding",
+        "right",
+        "moment"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "that's roughly eight thousand",
+      "line": "that's roughly eight thousand rupees a year, used daily or forgotten in a drawer.",
+      "needs": [
+        "roughly",
+        "eight",
+        "thousand",
+        "rupees",
+        "year",
+        "used"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "How long have you",
+      "line": "How long have you been holding yours?",
+      "needs": [
+        "long",
+        "have",
+        "been",
+        "holding",
+        "yours"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Say the model below",
+      "line": "Say the model below and I'll pull Apple's number for it.",
+      "needs": [
+        "model",
+        "below",
+        "pull",
+        "Apple",
+        "number"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    }
+  ]
 }

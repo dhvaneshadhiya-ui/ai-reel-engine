@@ -189,23 +189,12 @@
         "model"
       ],
       "tier": "official",
-      "asset_id": "twin",
+      "asset_id": "turn",
       "scene": {
-        "type": "receipt",
-        "src": "assets/claude-fable-5-1/mythos-para.png",
-        "srcWidth": 936,
-        "srcHeight": 636,
-        "backdrop": "cream",
-        "highlights": [
-          {
-            "at": 0.4,
-            "x": 30,
-            "y": 20,
-            "w": 880,
-            "h": 180
-          }
-        ],
-        "credit": "Anthropic platform docs"
+        "type": "footage",
+        "src": "assets/claude-fable-5-1/avatar-master.mp4",
+        "zoomDir": "in",
+        "focusX": 0.5
       }
     },
     {
@@ -234,6 +223,30 @@
             "y": 190,
             "w": 880,
             "h": 230
+          }
+        ],
+        "credit": "Anthropic platform docs"
+      }
+    },
+    {
+      "start_phrase": "for vetted",
+      "line": "",
+      "needs": [],
+      "tier": "official",
+      "asset_id": "twin",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/mythos-para.png",
+        "srcWidth": 936,
+        "srcHeight": 636,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 30,
+            "y": 400,
+            "w": 880,
+            "h": 200
           }
         ],
         "credit": "Anthropic platform docs"
@@ -363,6 +376,19 @@
           }
         ],
         "credit": "CNBC, 10 April 2026"
+      }
+    },
+    {
+      "start_phrase": "Why?",
+      "line": "",
+      "needs": [],
+      "tier": "official",
+      "asset_id": "turn",
+      "scene": {
+        "type": "footage",
+        "src": "assets/claude-fable-5-1/avatar-master.mp4",
+        "zoomDir": "in",
+        "focusX": 0.5
       }
     },
     {
@@ -741,29 +767,6 @@
         "src": "assets/claude-fable-5-1/avatar-master.mp4",
         "zoomDir": "none",
         "focusX": 0.5
-      }
-    },
-    {
-      "start_phrase": "Especially since...",
-      "line": "Especially since...",
-      "needs": [
-        "Especially",
-        "since"
-      ],
-      "tier": "official",
-      "asset_id": "loop",
-      "scene": {
-        "type": "footage",
-        "src": "assets/claude-fable-5-1/avatar-master.mp4",
-        "zoomDir": "in",
-        "focusX": 0.5,
-        "sfx": [
-          {
-            "src": "sfx/whoosh.MP3",
-            "at": 0.0,
-            "vol": 0.16
-          }
-        ]
       }
     }
   ],

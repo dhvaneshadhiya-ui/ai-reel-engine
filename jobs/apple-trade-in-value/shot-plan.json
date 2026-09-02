@@ -2,5 +2,254 @@
   "emphasis": [],
   "caption_corrections": {},
   "format": "howto",
-  "shots": []
+  "shots": [
+    {
+      "start_phrase": "Apple says your old",
+      "line": "Apple says your old iPhone is worth seven hundred and twenty dollars.",
+      "needs": [
+        "Apple",
+        "says",
+        "iPhone",
+        "worth",
+        "seven",
+        "hundred"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Read that again.",
+      "line": "Read that again.",
+      "needs": [
+        "Read",
+        "again"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Open apple dot com",
+      "line": "Open apple dot com slash trade-in and scroll past the pitch to the values table.",
+      "needs": [
+        "Open",
+        "apple",
+        "slash",
+        "trade-in",
+        "scroll",
+        "past"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Most people stop right",
+      "line": "Most people stop right there.",
+      "needs": [
+        "Most",
+        "people",
+        "stop",
+        "right"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "But that table lists",
+      "line": "But that table lists four phones, and all four are iPhone 16s.",
+      "needs": [
+        "table",
+        "lists",
+        "four",
+        "phones",
+        "iPhone",
+        "16s"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Yours probably isn't one",
+      "line": "Yours probably isn't one of them.",
+      "needs": [
+        "Yours",
+        "probably",
+        "them"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "So tap See all",
+      "line": "So tap See all iPhone values.",
+      "needs": [
+        "iPhone",
+        "values"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "That opens the full",
+      "line": "That opens the full list",
+      "needs": [
+        "opens",
+        "full",
+        "list"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "thirty-two models, all the",
+      "line": "thirty-two models, all the way down to an iPhone 8 at forty dollars.",
+      "needs": [
+        "thirty-two",
+        "models",
+        "down",
+        "iPhone",
+        "8",
+        "forty"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Then look at what",
+      "line": "Then look at what every single row starts with.",
+      "needs": [
+        "look",
+        "every",
+        "single",
+        "starts"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Up to.",
+      "line": "Up to.",
+      "needs": [],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Apple says it plainly",
+      "line": "Apple says it plainly underneath: values vary by condition",
+      "needs": [
+        "Apple",
+        "says",
+        "plainly",
+        "underneath",
+        "values",
+        "vary"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "year and configuration, and",
+      "line": "year and configuration, and not every device is eligible.",
+      "needs": [
+        "year",
+        "configuration",
+        "every",
+        "device",
+        "eligible"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "So the list gives",
+      "line": "So the list gives you a ceiling.",
+      "needs": [
+        "list",
+        "gives",
+        "ceiling"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "For the number you'll",
+      "line": "For the number you'll actually be offered",
+      "needs": [
+        "number",
+        "actually",
+        "offered"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "tap Find your trade-in",
+      "line": "tap Find your trade-in value and answer the condition questions honestly.",
+      "needs": [
+        "Find",
+        "trade-in",
+        "value",
+        "answer",
+        "condition",
+        "questions"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Apple's full list is",
+      "line": "Apple's full list is linked below.",
+      "needs": [
+        "Apple",
+        "full",
+        "list",
+        "linked",
+        "below"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Comment your model and",
+      "line": "Comment your model and I'll reply with its ceiling",
+      "needs": [
+        "Comment",
+        "model",
+        "reply",
+        "ceiling"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "so you know the",
+      "line": "so you know the number before you walk in.",
+      "needs": [
+        "know",
+        "number",
+        "before",
+        "walk"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    }
+  ]
 }
