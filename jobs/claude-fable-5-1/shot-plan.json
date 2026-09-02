@@ -1,20 +1,40 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
   "shots": [
     {
       "start_phrase": "This AI was so",
-      "line": "This AI was so powerful, the U.S.",
+      "line": "This AI was so powerful",
       "needs": [
         "powerful"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "hook",
+      "scene": {
+        "type": "split",
+        "topSrc": "assets/claude-fable-5-1/rc-ban-head.png",
+        "bottomSrc": "assets/claude-fable-5-1/avatar-master.mp4",
+        "bottomFocusX": 0.5,
+        "headline": {
+          "y": 0.05,
+          "theme": "dark",
+          "lines": [
+            {
+              "text": "THIS AI GOT",
+              "kind": "label",
+              "at": 0.05
+            },
+            {
+              "text": "BANNED?!",
+              "kind": "headline",
+              "at": 0.3
+            }
+          ]
+        },
+        "credit": "Anthropic, 12 June 2026"
+      }
     },
     {
-      "start_phrase": "Government literally banned foreign",
-      "line": "Government literally banned foreign nationals from using it.",
+      "start_phrase": "the U.S. Government literally",
+      "line": "the U.S. Government literally banned foreign nationals from using it.",
       "needs": [
         "Government",
         "literally",
@@ -23,9 +43,25 @@
         "nationals",
         "using"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "ban",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/rc-ban.png",
+        "srcWidth": 1080,
+        "srcHeight": 1700,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.6,
+            "x": 95,
+            "y": 1272,
+            "w": 875,
+            "h": 165
+          }
+        ],
+        "credit": "Anthropic, 12 June 2026"
+      }
     },
     {
       "start_phrase": "And now, Anthropic just",
@@ -37,9 +73,25 @@
         "5.1",
         "upgrade"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "launch",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/anthropic-hero.png",
+        "srcWidth": 936,
+        "srcHeight": 240,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.5,
+            "x": 40,
+            "y": 10,
+            "w": 860,
+            "h": 220
+          }
+        ],
+        "credit": "Anthropic, 1 September 2026"
+      }
     },
     {
       "start_phrase": "Meet Claude Fable 5.1",
@@ -52,9 +104,16 @@
         "restricted",
         "cyber-focused"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "twin",
+      "scene": {
+        "type": "typecard",
+        "bg": "black",
+        "kinetic": {
+          "text": "1 MODEL\n2 FACES",
+          "style": "caps"
+        }
+      }
     },
     {
       "start_phrase": "They are the exact",
@@ -64,9 +123,25 @@
         "same",
         "model"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "twin",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/mythos-para.png",
+        "srcWidth": 936,
+        "srcHeight": 636,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.4,
+            "x": 30,
+            "y": 20,
+            "w": 880,
+            "h": 180
+          }
+        ],
+        "credit": "Anthropic platform docs"
+      }
     },
     {
       "start_phrase": "but Mythos runs looser",
@@ -79,26 +154,58 @@
         "guardrails",
         "vetted"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "twin",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/mythos-para.png",
+        "srcWidth": 936,
+        "srcHeight": 636,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.5,
+            "x": 30,
+            "y": 190,
+            "w": 880,
+            "h": 230
+          }
+        ],
+        "credit": "Anthropic platform docs"
+      }
     },
     {
-      "start_phrase": "When Mythos first launched,",
-      "line": "When Mythos first launched, the U.S.",
+      "start_phrase": "When Mythos first launched",
+      "line": "When Mythos first launched",
       "needs": [
         "When",
         "Mythos",
         "first",
         "launched"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "reliable",
+      "asset_id": "banks",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/rc-banks.png",
+        "srcWidth": 1080,
+        "srcHeight": 660,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.4,
+            "x": 55,
+            "y": 20,
+            "w": 220,
+            "h": 70
+          }
+        ],
+        "credit": "CNBC, 10 April 2026"
+      }
     },
     {
-      "start_phrase": "Treasury Secretary and the",
-      "line": "Treasury Secretary and the Fed Chair literally called an urgent meeting to warn bank CEOs about what it could do.",
+      "start_phrase": "the U.S. Treasury Secretary",
+      "line": "the U.S. Treasury Secretary and the Fed Chair literally called an urgent meeting to warn bank CEOs about what it could do.",
       "needs": [
         "Treasury",
         "Secretary",
@@ -107,9 +214,25 @@
         "called",
         "urgent"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "reliable",
+      "asset_id": "banks",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/rc-banks.png",
+        "srcWidth": 1080,
+        "srcHeight": 660,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.5,
+            "x": 55,
+            "y": 100,
+            "w": 960,
+            "h": 370
+          }
+        ],
+        "credit": "CNBC, 10 April 2026"
+      }
     },
     {
       "start_phrase": "Because in UK government",
@@ -119,9 +242,25 @@
         "government",
         "testing"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "reliable",
+      "asset_id": "rogue",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/rc-rogue.png",
+        "srcWidth": 1080,
+        "srcHeight": 1250,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.4,
+            "x": 35,
+            "y": 125,
+            "w": 960,
+            "h": 550
+          }
+        ],
+        "credit": "TechSpot, on the UK AI Security Institute evaluation"
+      }
     },
     {
       "start_phrase": "its agents went rogue",
@@ -134,9 +273,21 @@
         "internet",
         "nineteen"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "reliable",
+      "asset_id": "rogue",
+      "scene": {
+        "type": "statcard",
+        "title": "UK AI SECURITY INSTITUTE",
+        "bg": "black",
+        "rows": [
+          {
+            "label": "unauthorized actions, across 10 runs",
+            "value": "19",
+            "pct": 1.0
+          }
+        ],
+        "footnote": "Agents acting against real people on the live internet"
+      }
     },
     {
       "start_phrase": "But the intelligence is",
@@ -146,9 +297,14 @@
         "terrifyingly",
         "real"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "turn",
+      "scene": {
+        "type": "footage",
+        "src": "assets/claude-fable-5-1/avatar-master.mp4",
+        "zoomDir": "in",
+        "focusX": 0.5
+      }
     },
     {
       "start_phrase": "A mathematician at Anthropic",
@@ -161,9 +317,32 @@
         "family",
         "disprove"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "reliable",
+      "asset_id": "maths",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/rc-jacobian.png",
+        "srcWidth": 1080,
+        "srcHeight": 1150,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.5,
+            "x": 40,
+            "y": 150,
+            "w": 990,
+            "h": 260
+          },
+          {
+            "at": 2.6,
+            "x": 40,
+            "y": 420,
+            "w": 990,
+            "h": 240
+          }
+        ],
+        "credit": "ScienceDaily / The Conversation"
+      }
     },
     {
       "start_phrase": "Anthropic just cut cache",
@@ -176,9 +355,25 @@
         "seventy-five",
         "percent"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "price",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/cache-price-para.png",
+        "srcWidth": 936,
+        "srcHeight": 555,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.5,
+            "x": 25,
+            "y": 30,
+            "w": 890,
+            "h": 480
+          }
+        ],
+        "credit": "Anthropic, 1 September 2026"
+      }
     },
     {
       "start_phrase": "But here's the trap:",
@@ -191,9 +386,25 @@
         "costs",
         "twenty"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "reliable",
+      "asset_id": "trap",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/aa-cost-per-task.png",
+        "srcWidth": 984,
+        "srcHeight": 939,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.5,
+            "x": 35,
+            "y": 295,
+            "w": 915,
+            "h": 155
+          }
+        ],
+        "credit": "Artificial Analysis"
+      }
     },
     {
       "start_phrase": "because the model thinks",
@@ -206,9 +417,25 @@
         "spits",
         "point"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "reliable",
+      "asset_id": "trap",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/aa-cost-per-task.png",
+        "srcWidth": 984,
+        "srcHeight": 939,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.4,
+            "x": 35,
+            "y": 440,
+            "w": 915,
+            "h": 150
+          }
+        ],
+        "credit": "Artificial Analysis"
+      }
     },
     {
       "start_phrase": "So, would you trust",
@@ -217,9 +444,14 @@
         "trust",
         "intense"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "close",
+      "scene": {
+        "type": "footage",
+        "src": "assets/claude-fable-5-1/avatar-master.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5
+      }
     },
     {
       "start_phrase": "Especially since...",
@@ -228,9 +460,25 @@
         "Especially",
         "since"
       ],
-      "tier": null,
-      "asset_id": null,
-      "scene": {}
+      "tier": "official",
+      "asset_id": "loop",
+      "scene": {
+        "type": "footage",
+        "src": "assets/claude-fable-5-1/avatar-master.mp4",
+        "zoomDir": "in",
+        "focusX": 0.5
+      }
     }
-  ]
+  ],
+  "emphasis": [
+    "banned",
+    "Mythos",
+    "rogue",
+    "nineteen",
+    "disprove",
+    "trap",
+    "twenty",
+    "seven"
+  ],
+  "caption_corrections": {}
 }
