@@ -34,7 +34,13 @@ SEARCH TIERS, in order, per the user's rule 2026-08-14:
              often NOT on official sources, so this is expected, not a failure
   fallback   merely relevant. Recorded so it can be counted and argued with.
 """
+
 from __future__ import annotations
+
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+from textsplit import sentences as _split_sentences  # noqa: E402
 
 import json
 import re
@@ -59,11 +65,8 @@ MIN_CLAUSE_WORDS = 4    # shorter than this is not its own shot
 
 def clauses(script: str) -> list[str]:
     """Split into shot-sized units: sentences, then long ones at their comma."""
-    body = " ".join(
-        ln.strip() for ln in script.splitlines()
-        if ln.strip() and not ln.lstrip().startswith(("#", ">", "<!--")))
     out: list[str] = []
-    for sent in re.split(r"(?<=[.!?])\s+", body):
+    for sent in _split_sentences(script):
         sent = sent.strip()
         if not sent:
             continue

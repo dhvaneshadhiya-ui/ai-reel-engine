@@ -25,7 +25,13 @@ worse than no tag.
     python3 tools/vo_tagged.py <slug>
     python3 tools/vo_tagged.py --selftest
 """
+
 from __future__ import annotations
+
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+from textsplit import sentences as _split_sentences  # noqa: E402
 
 import re
 import sys
@@ -77,10 +83,12 @@ TAG_FOR_REGISTER = {
 
 
 def sentences(text: str) -> list[str]:
-    """Split on sentence ends, keeping the punctuation."""
-    body = " ".join(l for l in text.splitlines()
-                    if l.strip() and not l.lstrip().startswith("#"))
-    return [s.strip() for s in re.split(r"(?<=[.!?])\s+", body) if s.strip()]
+    """Split on sentence ends, keeping the punctuation.
+
+    Delegates to tools/textsplit.py so "the U.S. Government" is not read as
+    two sentences — which put a hard pause mid-phrase in the ElevenLabs take.
+    """
+    return _split_sentences(text)
 
 
 def tag_script(text: str) -> tuple[str, dict[str, int]]:

@@ -56,6 +56,11 @@ def main() -> None:
                         help="official-facts-only | official-footage-only | "
                              "official-preferred | approved-only | "
                              "no-third-party-media | none (framework §3)")
+    parser.add_argument("--format", default="news",
+                        help="genre profile: news | top5 | howto | ai-tools | "
+                             "comparison. It sets the runtime band and the "
+                             "held-layout ceilings — print them with "
+                             "`reel_gates.py --formats`.")
     parser.add_argument("--target-seconds", type=int, default=90)
     # STANDING RULE (2026-08-22/24, user directive): no music bed by default —
     # every reel ships voice + SFX unless it opts back in. --music flows to
@@ -76,9 +81,27 @@ def main() -> None:
     slug = slugify(args.slug or args.topic)
     if not slug:
         raise SystemExit("could not derive a safe slug")
-    # user rule 2026-08-11: reels run 1-2 minutes, length chosen by topic
-    if not 60 <= args.target_seconds <= 120:
-        raise SystemExit("--target-seconds must be between 60 and 120")
+    # THE RUNTIME BAND BELONGS TO THE FORMAT (2026-09-02). This was a flat
+    # 60-120 that matched no profile in FORMATS — not even news, which is
+    # 60-80 — so it refused a legitimate 58s `howto` (band 40-75) while
+    # happily accepting a 115s news reel the gates would then advise against.
+    # Third instance this week of a news-shaped constant governing every
+    # genre; see DUR_MAX and lint_frames' pacing block.
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
+    from reel_gates import FORMATS                              # noqa: E402
+    if args.format not in FORMATS:
+        raise SystemExit(
+            f"--format {args.format!r} is not a known genre: "
+            f"{sorted(FORMATS)}. A new genre needs a profile derived from a "
+            f"real teardown, not a guess (G23).")
+    _lo, _hi = FORMATS[args.format]["runtime"]
+    if not _lo <= args.target_seconds <= _hi:
+        raise SystemExit(
+            f"--target-seconds {args.target_seconds} is outside the "
+            f"{args.format} band {_lo:.0f}-{_hi:.0f}s. The band is a DEFAULT, "
+            f"not a cap — set allowLong + allowLongReason on the sheet if the "
+            f"topic earns a longer cut.")
 
     engine = args.engine.expanduser().resolve()
     if not (engine / "package.json").exists():
@@ -135,6 +158,10 @@ def main() -> None:
     shot_plan = {
         "emphasis": [],
         "caption_corrections": {},
+        # Carried from --format so the genre survives into compile and the
+        # gates. Omitting it silently means `news`, which is how a tutorial
+        # ends up judged by news pacing.
+        "format": args.format,
         "shots": [],
     }
     if args.music:

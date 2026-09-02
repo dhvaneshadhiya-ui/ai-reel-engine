@@ -430,7 +430,12 @@ for _tool, _label in (("check_frame_contract", "frame contract"),
                       ("idea_scout", "idea scout"),
                       # 2026-09-02, wired the same hour it was written — see
                       # the vo_external note above for why that matters.
-                      ("cut_clips", "screen-recording cutter")):
+                      ("cut_clips", "screen-recording cutter"),
+                      # 2026-09-02, same rule catching its author a third
+                      # time. textsplit is imported by vo_tagged, plan_shots
+                      # and check_script, so a regression there mis-splits the
+                      # VO, the shot boundaries AND the prose numbers at once.
+                      ("textsplit", "sentence splitter")):
     try:
         r = subprocess.run(
             [sys.executable, str(ROOT / f"tools/{_tool}.py"), "--selftest"],

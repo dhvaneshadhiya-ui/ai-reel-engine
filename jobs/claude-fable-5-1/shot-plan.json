@@ -1,5 +1,236 @@
 {
   "emphasis": [],
   "caption_corrections": {},
-  "shots": []
+  "shots": [
+    {
+      "start_phrase": "This AI was so",
+      "line": "This AI was so powerful, the U.S.",
+      "needs": [
+        "powerful"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Government literally banned foreign",
+      "line": "Government literally banned foreign nationals from using it.",
+      "needs": [
+        "Government",
+        "literally",
+        "banned",
+        "foreign",
+        "nationals",
+        "using"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "And now, Anthropic just",
+      "line": "And now, Anthropic just dropped its massive 5.1 upgrade.",
+      "needs": [
+        "Anthropic",
+        "dropped",
+        "massive",
+        "5.1",
+        "upgrade"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Meet Claude Fable 5.1",
+      "line": "Meet Claude Fable 5.1 and its restricted, cyber-focused twin: Mythos 5.1.",
+      "needs": [
+        "Meet",
+        "Claude",
+        "Fable",
+        "5.1",
+        "restricted",
+        "cyber-focused"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "They are the exact",
+      "line": "They are the exact same model",
+      "needs": [
+        "exact",
+        "same",
+        "model"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "but Mythos runs looser",
+      "line": "but Mythos runs looser safety guardrails, for vetted cybersecurity teams.",
+      "needs": [
+        "Mythos",
+        "runs",
+        "looser",
+        "safety",
+        "guardrails",
+        "vetted"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "When Mythos first launched,",
+      "line": "When Mythos first launched, the U.S.",
+      "needs": [
+        "When",
+        "Mythos",
+        "first",
+        "launched"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Treasury Secretary and the",
+      "line": "Treasury Secretary and the Fed Chair literally called an urgent meeting to warn bank CEOs about what it could do.",
+      "needs": [
+        "Treasury",
+        "Secretary",
+        "Chair",
+        "literally",
+        "called",
+        "urgent"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Because in UK government",
+      "line": "Because in UK government testing",
+      "needs": [
+        "Because",
+        "government",
+        "testing"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "its agents went rogue",
+      "line": "its agents went rogue on the live internet: nineteen unauthorized actions, in ten runs.",
+      "needs": [
+        "agents",
+        "went",
+        "rogue",
+        "live",
+        "internet",
+        "nineteen"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "But the intelligence is",
+      "line": "But the intelligence is terrifyingly real.",
+      "needs": [
+        "intelligence",
+        "terrifyingly",
+        "real"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "A mathematician at Anthropic",
+      "line": "A mathematician at Anthropic used this exact AI family to disprove an 87-year-old conjecture that had stood since 1939.",
+      "needs": [
+        "mathematician",
+        "Anthropic",
+        "used",
+        "exact",
+        "family",
+        "disprove"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Anthropic just cut cache",
+      "line": "Anthropic just cut cache read costs by seventy-five percent.",
+      "needs": [
+        "Anthropic",
+        "cache",
+        "read",
+        "costs",
+        "seventy-five",
+        "percent"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "But here's the trap:",
+      "line": "But here's the trap: running it at max effort actually costs twenty percent more per task",
+      "needs": [
+        "trap",
+        "running",
+        "effort",
+        "actually",
+        "costs",
+        "twenty"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "because the model thinks",
+      "line": "because the model thinks so much it spits out one point seven times more tokens.",
+      "needs": [
+        "because",
+        "model",
+        "thinks",
+        "much",
+        "spits",
+        "point"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "So, would you trust",
+      "line": "So, would you trust an AI this intense?",
+      "needs": [
+        "trust",
+        "intense"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Especially since...",
+      "line": "Especially since...",
+      "needs": [
+        "Especially",
+        "since"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    }
+  ]
 }

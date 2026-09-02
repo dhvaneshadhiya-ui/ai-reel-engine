@@ -44,7 +44,13 @@ the author: only the three standing rules may block a render. A script that
 breaks every guideline below and reads brilliantly is a good script — the numbers
 exist so the choice is deliberate rather than accidental.
 """
+
 from __future__ import annotations
+
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+from textsplit import sentences as _split_sentences  # noqa: E402
 
 import re
 import statistics
@@ -151,10 +157,8 @@ def house_tics(text: str, exclude_slug: str | None = None,
     about the same subject is not a tic, it is the subject.
     """
     def grams(t: str) -> set[str]:
-        body = " ".join(l for l in t.splitlines()
-                        if l.strip() and not l.lstrip().startswith("#"))
         out: set[str] = set()
-        for sent in re.split(r"(?<=[.!?])\s+", body):
+        for sent in _split_sentences(t):
             toks = sent.split()
             for n in range(min_n, min_n + 3):
                 for i in range(len(toks) - n + 1):
@@ -199,9 +203,7 @@ def house_tics(text: str, exclude_slug: str | None = None,
 
 
 def sentences(text: str) -> list[str]:
-    body = " ".join(l.strip() for l in text.splitlines()
-                    if l.strip() and not l.lstrip().startswith(("#", ">", "<!--")))
-    return [s.strip() for s in re.split(r"(?<=[.!?])\s+", body) if s.strip()]
+    return _split_sentences(text)
 
 
 # A sentence carrying a measurement — the raw material of a spec dump.
