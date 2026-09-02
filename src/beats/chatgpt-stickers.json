@@ -3,7 +3,7 @@
   "fps": 30,
   "width": 1080,
   "height": 1920,
-  "style": "utility",
+  "style": "editorial",
   "audio": "assets/chatgpt-stickers/avatar-master.mp4",
   "captionStyle": "word-reveal",
   "emphasis": [
@@ -1294,7 +1294,7 @@
   ],
   "noMusic": true,
   "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
-  "format": "ai-tools",
+  "format": "howto",
   "script": "Those aren't downloaded stickers. That's my face, and ChatGPT built the whole pack from one photo.\nNo cutting anything out, no third-party app. It's already inside ChatGPT.\n\nIt starts on the chat screen. Plus menu, Create image, then Stickers.\nThere's no prompt box. You fill in a sentence: style, photo, reactions.\n\nThe style list is where it gets good. Nineteen: 3D, Anime, Chrome, Pixel Art, Traditional Tattoo.\nPick one and it cuts the background out for you, the step that used to need a separate app.\nThat checkerboard is a real transparent PNG.\n\nAnd it doesn't make one sticker. Nine, same face, nine reactions.\n\nThen Add to chat apps, choose WhatsApp. This is where it stops people.\nYou need at least three for that button to work. That's WhatsApp's rule, not ChatGPT's.\n\nName the pack, and it's done. One photo, nine stickers, in WhatsApp.\n\nComment STICKERS and I'll send you the exact setup I used.",
   "approval": {
     "sha256": "afdd9a91f3fee676c3b3d1e3b5eee751d969898018dbd36ac2196a5c50b5074e",

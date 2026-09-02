@@ -6860,3 +6860,79 @@ previous cut and calls it a result.
 **Evidence read from a stale artifact is worse than no evidence, because it
 looks like a result.** Every "I verified it" in this repo is only as good as
 the freshness of the thing that was read.
+
+## 2026-09-02 — the `howto` format, measured from 7 reels
+
+`chatgpt-stickers` is a tutorial that shipped as `ai-tools`, and four of its
+seventeen screen scenes tripped a pacing ceiling derived from news reels. The
+ceiling was not wrong; it was measured on the wrong genre, and it was a module
+constant so no genre could escape it.
+
+### Structural half first
+
+`DUR_MAX` became `dur_max_for(fmt)` — a format's own overrides merged over the
+defaults. The note explaining why facecam and SFX had been moved per-format
+("that is exactly how a news-tuned number silently governs a genre it was never
+measured on") had been sitting directly beneath `DUR_MAX` since August.
+`lint_frames` read the module constants too, so a top5 or ai-tools reel was
+being linted against news; it now follows the sheet's format and names it.
+
+### References
+
+Found by searching YouTube directly rather than guessing channels — the first
+web search returned only listicles. Seven Shorts, three creators, downloaded to
+`_sources/_teardown-howto` (gitignored):
+
+Hayls World — WhatsApp usernames 63.0s, Samsung quick settings 63.9s, iOS 27
+photo tools 66.5s. Daniel About Tech — remove objects 52.7s, eSIM transfer
+58.7s, live wallpaper 75.1s. Payette Forward — hidden feature 24.5s.
+
+### THE SHOTS ARE LONG, and the measurement is threshold-sensitive
+
+Pooled shot length at four detector thresholds:
+
+| thr | n | p50 | p75 | p90 |
+|---|---|---|---|---|
+| 0.15 | 88 | 3.57 | 6.46 | 9.44 |
+| 0.20 | 73 | 4.09 | 7.24 | 11.39 |
+| 0.30 | 54 | 5.27 | 9.71 | 13.87 |
+| 0.40 | 36 | 7.57 | 14.02 | 35.47 |
+
+p50 swings from 3.57s to 7.57s depending on the threshold, so **no single
+reading is "the" measurement**. `motion` is set to 6.5s — p75 at 0.15, the most
+aggressive change detection and therefore the tightest of the four. Even
+counting every visual change, three quarters of reference shots fit under it.
+News allows 2.9s. The difference is not that tutorials are slower: in news a
+held image is dead air, in a tutorial the screen IS the content.
+
+Only `motion` was overridden. `building` and `card` were not measured
+separately and keep the news defaults — which is why `chatgpt-stickers` still
+carries an honest G04 advisory on its 4.2s statcard.
+
+### THE PRESENTER IS OFTEN ABSENT
+
+Face share, read frame by frame: 0%, 0%, 0%, ~8%, ~8%, ~17%, ~40%. **Three of
+seven have no presenter at all.** News floors facecam at 10%, which would
+forbid the commonest form of the genre, so `howto` floors at 0.
+
+### The finding I did not expect
+
+Both Hayls and Daniel shoot a **physical handset in hand**, finger operating
+it, in a real room. Neither composites a screen recording into a drawn bezel.
+The hand doing the tap is what makes a step legible — the viewer sees *where*
+to press, not only what changed. Our `deviceframe` draws a synthetic phone;
+that is a legitimate second-best and it is what `chatgpt-stickers` used, but
+where the choice exists, record the real device. Such footage is `surface:
+"world"`, not `"screen"` — it must not get a second bezel drawn around it.
+
+### What was NOT measured, and says so
+
+`hook_max`, `sfx` and `sfx_vol` are inherited from news. The teardown's "first
+cut" figures (median 9.4s) measure editorial cut rhythm, not how long an
+opening claim is held; separating those needs the frames, not the detector.
+Cue counts cannot be recovered from a mixed master at all.
+
+**The discipline that matters here: a profile that parses but governs nothing
+is decoration.** `test_gates` now asserts that the same 5-second screen scene
+advises under `news` and is silent under `howto`, and both halves were
+confirmed to fail when the measured values are removed.
