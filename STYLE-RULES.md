@@ -7056,3 +7056,30 @@ for exactly this handoff and re-encodes for the HeyGen upload.
 flow exists to escape: 2.14 semitones against ElevenLabs' 3.60 on the same
 cloned voice, measured 2026-08-27. Shipping it because retrieval was awkward
 would undo the reason for the whole path.
+
+## 2026-09-02 (later) — the mid-sentence loop cut reads as a broken file
+
+**RAW NOTE.** claude-fable-5-1's supplied script ended deliberately mid-clause
+— "So, would you trust an AI this intense? Especially since..." — so the last
+frame ran back into the hook. I flagged the mechanic before rendering and the
+user approved it explicitly ("go ahead, split hook and hard cut"). On seeing
+the master the same user reported it as a fault: *"Video is not completed."*
+
+**ROOT CAUSE.** The device only works if the viewer is already looping. The
+FIRST person to watch a reel — the person reviewing it, and anyone whose feed
+does not immediately replay — sees a file that stops mid-word, which is
+indistinguishable from a truncated render. Approving the mechanic in the
+abstract is not the same as recognising it in the cut.
+
+**DISTILLED RULE.** End on a complete sentence. If a loop is wanted, get it
+from a question the ending ASKS ("So, would you trust an AI this intense?"),
+not from a clause it abandons. A question loops just as hard, reads as
+finished, and doubles as the comment prompt. Ask before rendering whether the
+reviewer will see a loop or a bug — and if it costs nothing to end complete,
+end complete.
+
+**Cost of the fix here: zero.** The VO already contained a complete question
+0.38s before the fragment, so the master was trimmed at 64.16s, vo.json
+truncated to match, and the reel recompiled. No regeneration, no credits.
+Facecam recovered to 10.5% by putting "They are the exact same model" and
+"Why?" on camera — which also broke an 8s run of one white card.
