@@ -91,6 +91,73 @@ HEDGES = {
 }
 
 
+# ABSENCE AND SUPERLATIVE CLAIMS — the ones a two-source ledger cannot support.
+#
+# WHY (2026-09-02, claude-fable-5-1). The script asserted "Nobody outside has
+# checked one yet" about a model launched hours earlier that people were already
+# testing publicly. The user caught it; the ledger never could have. Two
+# separate holes met:
+#
+#   1. The ledger validates the claims you CHOSE to record. A confident
+#      assertion you never thought to write down is invisible to every check
+#      here, because they all start from the ledger and look outward.
+#   2. An ABSENCE claim is not the same shape as a presence claim. "X said Y"
+#      needs one source. "NOBODY has done Y" needs someone to have looked
+#      everywhere and come back empty, and no number of SRC urls establishes it.
+#
+# So this scans the SCRIPT, not the ledger, and demands that any claim of this
+# shape be recorded with real sourcing — or cut. Superlatives are here for the
+# same reason: "the first", "the only", "never before" are absence claims
+# wearing a positive grammar.
+# TWO TIERS, because one regex over both fires on every honest hedge.
+#
+# UNVERIFIABLE — a claim about what OTHER PEOPLE have or have not done. No
+# number of SRC urls establishes it; it needs someone to have looked
+# everywhere and come back empty. This is the shape that shipped:
+# "Nobody outside has checked one yet."
+UNVERIFIABLE = re.compile(
+    r"\b(nobody (?:else |outside )?(?:has|have|had|is|are)\b"
+    r"|no one (?:else |outside )?(?:has|have|had|is|are)\b"
+    r"|no-one (?:has|have|is)\b"
+    r"|(?:has|have) yet to be\b|yet to be (?:tested|verified|checked|"
+    r"confirmed|reviewed|benchmarked|independently)\b"
+    r"|nobody (?:has )?(?:tested|checked|verified|tried|seen)\b)", re.I)
+
+# SUPERLATIVE — "the first", "the only", "never been". Often perfectly
+# sourceable, and common in real reporting, so this ADVISES rather than
+# refusing. It is still worth a second look: each one is an absence claim
+# wearing positive grammar.
+SUPERLATIVE = re.compile(
+    r"\b(first ever|the first (?:time|one|model|phone|company|device)"
+    r"|for the first time|the only (?:one|way|phone|model|risk)"
+    r"|never been|has never|unprecedented)\b", re.I)
+
+# A sentence that is already flagging its own uncertainty is a HEDGE, not a
+# claim: "Apple has confirmed none of this", "None of it is official until
+# Apple says so". Those are the script being honest about sourcing, and an
+# earlier draft of this check refused all sixteen reels that contained one.
+HEDGE_CONTEXT = re.compile(
+    r"\b(confirm(?:ed|s)?|official|reportedly|rumou?r|leak|allegedly|"
+    r"claims?|says?|according to|until)\b", re.I)
+
+
+def _sentences(script_text: str) -> list[str]:
+    return [" ".join(x.split())
+            for x in re.split(r"(?<=[.!?])\s+", script_text) if x.strip()]
+
+
+def absence_claims(script_text: str) -> list[str]:
+    """Sentences asserting what nobody else has done — the unverifiable shape."""
+    return [t for t in _sentences(script_text)
+            if UNVERIFIABLE.search(t) and not HEDGE_CONTEXT.search(t)]
+
+
+def superlative_claims(script_text: str) -> list[str]:
+    """Sentences claiming a first/only/never — sourceable, but worth checking."""
+    return [t for t in _sentences(script_text)
+            if SUPERLATIVE.search(t) and not HEDGE_CONTEXT.search(t)]
+
+
 def _norm(s: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", " ", s.lower())).strip()
 
@@ -241,6 +308,36 @@ def check_research(slug: str, script_text: str | None,
                     "the script lying about its own sourcing. Add "
                     "'reportedly'/'leaked'/attribution, or upgrade the tier "
                     "with a second source.")
+
+    # EVERY ABSENCE CLAIM MUST BE LEDGERED. See the ABSENCE note above.
+    if script_norm is not None:
+        covered = [_norm(c["spoken"] or "") for c in claims if c["spoken"]]
+        for sent in absence_claims(script_text or ""):
+            n = _norm(sent)
+            if any(sp and sp in n for sp in covered):
+                continue
+            errors.append(
+                f"UNLEDGERED ABSENCE CLAIM: {sent!r}\n"
+                "  This asserts that something does NOT exist, or is a first "
+                "or an only. No number of sources proves an absence — it "
+                "needs someone to have LOOKED and come back empty, and this "
+                "one is not in the ledger at all.\n"
+                "  claude-fable-5-1 shipped \"Nobody outside has checked one "
+                "yet\" about a model launched hours earlier that people were "
+                "already testing in public. Record it as a CLAIM with the "
+                "search that establishes it, or cut the line."
+            )
+
+        for sent in superlative_claims(script_text or ""):
+            n = _norm(sent)
+            if any(sp and sp in n for sp in covered):
+                continue
+            advice.append(
+                f"UNLEDGERED SUPERLATIVE: {sent!r} — a first/only/never is an "
+                "absence claim in positive grammar, and it is the kind a "
+                "reader checks. Often perfectly sourceable, which is why this "
+                "advises rather than refusing; record it as a CLAIM if it is "
+                "load-bearing.")
 
     if claims and len(domains) < 2 and "ONE-SOURCE-OK:" not in body:
         advice.append(

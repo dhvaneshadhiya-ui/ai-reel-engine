@@ -688,6 +688,42 @@ def run() -> int:
        sa.sha(_spoken(with_heading))
        == sa.sha(_spoken(without)))
 
+    # 7b. ABSENCE CLAIMS — the claude-fable-5-1 failure, 2026-09-02.
+    #
+    # The script asserted "Nobody outside has checked one yet" about a model
+    # launched hours earlier that people were already testing in public. The
+    # ledger could never have caught it: every check there starts FROM the
+    # ledger, so an assertion nobody thought to record is invisible.
+    #
+    # The first draft of the detector fired on 26 sentences across 16 shipped
+    # reels, most of them honest hedges ("Apple has confirmed none of this").
+    # A check that fires on every good case is describing a broken check, so
+    # it is split: what OTHERS have not done REFUSES, a first/only ADVISES,
+    # and a sentence already hedging its own sourcing is neither.
+    print("\n  -- absence and superlative claims --")
+    import research_check as _rc
+    ok("catches the exact line that shipped",
+       bool(_rc.absence_claims("Nobody outside has checked one yet.")))
+    ok("catches 'no one has tested it'",
+       bool(_rc.absence_claims("No one has tested it independently.")))
+    ok("catches 'yet to be verified'",
+       bool(_rc.absence_claims("The numbers have yet to be verified by anyone.")))
+    for hedge in ("Apple has confirmed none of this.",
+                  "None of it is official until Apple says so.",
+                  "None of that is exciting."):
+        ok(f"hedge is not an absence claim: {hedge[:28]!r}",
+           not _rc.absence_claims(hedge))
+    ok("a first/only advises rather than refusing",
+       not _rc.absence_claims("It's the only way to do it.")
+       and bool(_rc.superlative_claims("It's the only way to do it.")))
+    # THE PROPERTY THAT KEEPS IT HONEST: it must stay quiet on work we shipped
+    # and were happy with, or it is noise that trains people to ignore it.
+    import glob
+    _fp = sum(len(_rc.absence_claims(Path(f).read_text()))
+              for f in glob.glob(str(Path(__file__).resolve().parent.parent
+                                     / "jobs/*/script.md")))
+    ok("no false refusals across every shipped script", _fp == 0)
+
     # 8. check_script's own selftest — structure thresholds + AI tells.
     print("\n  -- check_script selftest --")
     rc = check_script.selftest()
