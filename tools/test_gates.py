@@ -549,6 +549,44 @@ assert "dur_max_for(fmt)" in _LINT_TS and 'beats.get("format"' in _LINT_TS, (
     "gates disagreeing is how a rule quietly becomes optional")
 _counted("held-layout ceilings follow the sheet's format, in gates AND linter")
 
+# --- the howto profile must actually CHANGE what is allowed -------------------
+# A profile that parses but governs nothing is decoration. The whole point of
+# the 2026-09-02 teardown is that a tutorial may hold a screen far longer than
+# a news reel may hold an image: measured p75 6.46s against news's 2.9s. So the
+# same 5-second screen scene must ADVISE under news and be SILENT under howto,
+# and if that ever stops being true the teardown has been quietly undone.
+def _five_second_screen(sheet: dict, fmt: str) -> list[str]:
+    s = copy.deepcopy(sheet)
+    s["format"] = fmt
+    s["scenes"][4].update(type="footage", durationSec=5.0,
+                          src="assets/x/clips/b.mp4")
+    # check_beats RETURNS advice and RAISES GateError for blocking violations,
+    # carrying the advice along on the exception. Catching broadly and
+    # returning [] would make this whole comparison silently vacuous.
+    try:
+        return list(_rg.check_beats(s) or [])
+    except _rg.GateError as e:
+        return list(getattr(e, "advice", None) or [])
+
+
+_news_says = [e for e in _five_second_screen(BASE, "news") if "G04" in e]
+_howto_says = [e for e in _five_second_screen(BASE, "howto") if "G04" in e]
+assert _news_says, (
+    "a 5s motion scene no longer trips G04 under news — the baseline this "
+    "comparison rests on has moved")
+assert not _howto_says, (
+    "a 5s screen scene still trips G04 under howto — the measured 6.5s "
+    "ceiling is not reaching the gate, so the teardown governs nothing")
+assert _rg.FORMATS["howto"]["face"][0] == 0.0, (
+    "howto's facecam floor is not 0 — 3 of the 7 reference reels carry no "
+    "presenter at all, and a 10% floor forbids the commonest form of the genre")
+assert "teardown 2026-09-02" in _rg.FORMATS["howto"]["_derived"], (
+    "howto's profile no longer records where its numbers came from — G23 "
+    "exists to stop guessed bands, and an undated band is a guessed one")
+assert (ROOT / "formats/howto.md").exists(), (
+    "a format with no playbook is numbers with no genre behind them")
+_counted("the howto teardown actually governs: 5s screen passes, news does not")
+
 
 def _statcard(label: str, value: str = "$190"):
     """Turn the fixture's building-class scene into a one-row stat card."""

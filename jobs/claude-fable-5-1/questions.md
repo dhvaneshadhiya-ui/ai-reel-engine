@@ -1,50 +1,40 @@
 # Open questions — claude-fable-5-1
 
-Four judgement calls. I have taken a position on each; say so if you disagree.
+## 1. Runtime: 235 words, about 87s. The news band is 60-80s.
 
-## 1. Runtime: 245 words, about 90s. The news band is 60-80s.
+Every beat is doing work and I could not find fat that does not cost meaning.
+The one cut available is the honesty counterweight ("at low effort it searches
+less"), and removing it turns the reel into "just run it on low", which is bad
+advice. My position: ship at ~87s with `allowLong`. Say so if you want it at 80
+and I will find the seconds in the Millennium beat instead.
 
-I went over deliberately and want your call. The reel has three movements
-(capability, the price turn, why the price turn happened) and cutting to 80s
-means deleting one of these:
+## 2. One claim is single-origin.
 
-- **Venus (about 13s)** — the only proof of capability that is a picture rather
-  than a number, and the before/after is the strongest visual in the reel.
-- **The Financial Times adoption beat (about 11s)** — the WHY. Without it the
-  price cut is a spec, not a story.
+Artificial Analysis' $3.76-vs-$3.14 is their measurement alone. It is spoken
+with them named in the same sentence, and the reel also says they ran
+Anthropic's pre-release evaluation, which is the point: the number comes from
+a friendly witness. Vals AI corroborates the capability ranking but their page
+discloses no relationship with Anthropic either way, so I did not lean on them.
 
-My position: keep both, ship at ~90s, set `allowLong`. Say the word and I cut
-the FT beat instead.
+## 3. The reel says Anthropic's number and the outside number are BOTH right.
 
-## 2. The hook has no date anchor, on purpose.
+They measure different things: Anthropic's 25% is default effort on four weeks
+of real August usage; AA's 20%-more is max effort on their index. I have been
+careful not to say Anthropic is lying, because it is not. If you want the
+sharper "the marketing is wrong" framing, that is a different script and I do
+not think it is the honest one.
 
-It opens "One crash in every million runs. Five years, and nobody on the team
-could explain it." The subject and date land at second four. `check_script`
-flags this (framework S1/S16 want the WHEN up front) and I am overriding it:
-the crash is the reason to keep watching, and "Anthropic released a model on
-September first" is the announcement, not the story. Frame 0 still shows the
-Anthropic quote card, so the brand is legible on mute.
+## 4. "Yesterday" in the opening line.
 
-## 3. The hook is a testimonial Anthropic published about itself.
-
-The Millennium quote is real and attributed (Damien, Senior Portfolio Manager),
-but it sits on Anthropic's own launch page. I keep it AND say so out loud in
-the same breath, then close the reel on "every figure here is Anthropic's own."
-The alternative is opening on the benchmark instead, which is duller and no
-more independent. My position: keep it.
-
-## 4. One claim is not Anthropic's.
-
-The Financial Times / Ramp figure (Fable 5 at ~11% of Anthropic spend) is
-single-origin: one dataset, one outlet, everything else aggregates it. It is
-spoken with the outlet named and hedged with "reportedly". My position: keep,
-because it is the only outside check in the reel and it is what makes the
-price cut mean something.
+True for a 2 September publish. If this ships later the word has to change
+BEFORE the avatar is generated, not after, because G27 hashes the approved
+narration.
 
 ## Also worth knowing
 
-- The five x.com/claudeai links you sent could not be read. WebFetch gets HTTP
-  402 and the in-app browser hits X's error page. Nothing in the reel depends
-  on them; the announcement page carries the same launch content and is the
-  stronger source. Flagging it rather than quietly skipping it.
-- No CTA. News format makes it optional and nothing here earns one.
+- The x.com links still could not be read (HTTP 402, and X's site errors in
+  the browser). Nothing in the reel depends on them.
+- Dropped from the previous draft: Venus, the protein binders, the 52.6%
+  science benchmark, the FT adoption figure, Mythos entirely. All real; none
+  answers "what do I run on Tuesday", which is what this version promises.
+- No CTA. Nothing here earns one.

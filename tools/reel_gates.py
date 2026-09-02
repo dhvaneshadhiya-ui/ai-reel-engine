@@ -92,6 +92,63 @@ FORMATS: dict[str, dict] = {
                     "measured separately for this format — measure it on the "
                     "first top5 reel and tighten this if it disagrees.",
     },
+    "howto": {
+        # TASK TUTORIALS — teaching the viewer to DO something on their phone.
+        # 7-reel teardown 2026-09-02; every number below was measured on this
+        # machine with ffprobe and ffmpeg scene detection, frames read by eye.
+        #
+        # References (YouTube Shorts, in _sources/_teardown-howto, gitignored):
+        #   Hayls World      WhatsApp usernames 63.0s / Samsung quick settings
+        #                    63.9s / iOS 27 photo tools 66.5s
+        #   Daniel About Tech  remove objects 52.7s / eSIM transfer 58.7s /
+        #                    live wallpaper 75.1s
+        #   Payette Forward  hidden feature 24.5s
+        #
+        # WHAT THE GENRE ACTUALLY DOES, and it is not what news does:
+        #
+        # 1. THE SHOTS ARE LONG. Pooled shot lengths across all 7, at four
+        #    detector thresholds (the measurement is threshold-sensitive, so
+        #    the tightest reading is the one used):
+        #        thr 0.15  n=88  p50 3.57  p75 6.46  p90  9.44
+        #        thr 0.20  n=73  p50 4.09  p75 7.24  p90 11.39
+        #        thr 0.30  n=54  p50 5.27  p75 9.71  p90 13.87
+        #        thr 0.40  n=36  p50 7.57  p75 14.02 p90 35.47
+        #    `motion` is set to 6.5s from p75 at 0.15 — the most aggressive
+        #    change detection, so the most conservative ceiling. Even counting
+        #    every visual change, three quarters of reference shots fit under
+        #    it. News allows 2.9s, which is less than half, because in news a
+        #    held image is death and in a tutorial the screen IS the content.
+        #
+        # 2. THE PRESENTER IS OFTEN ABSENT. Face share read frame by frame:
+        #    0%, 0%, 0%, ~8%, ~8%, ~17%, ~40%. THREE of the seven have no
+        #    presenter at all. News floors face at 10%, which would forbid the
+        #    most common form of the genre outright, so the floor here is 0.
+        #
+        # NOT MEASURED, inherited, and flagged rather than invented:
+        #   hook_max  every format uses 2.0 and the constitution makes hook
+        #             length judgement anyway. The "first cut" figures from the
+        #             teardown (median 9.4s) measure editorial cut rhythm, NOT
+        #             how long the opening claim is held, and reading that
+        #             needs the frames, not the detector.
+        #   sfx, sfx_vol  inherited from news. Cue counts cannot be recovered
+        #             from a mixed master.
+        "runtime": (40.0, 75.0),
+        "hook_max": 2.0,
+        "face": (0.0, 0.25),
+        "sfx": (6, 9),
+        "sfx_vol": (0.1, 0.19),
+        "requires_cta": True,
+        "dur_max": {"motion": 6.5},
+        "_derived": (
+            "7-reel teardown 2026-09-02 (STYLE-RULES entry of that date): "
+            "3x Hayls World (63.0-66.5s), 3x Daniel About Tech (52.7-75.1s), "
+            "1x Payette Forward (24.5s), measured with ffprobe + ffmpeg scene "
+            "detection, frames read by eye. motion ceiling 6.5s = p75 of "
+            "pooled shot length at the most aggressive detector threshold "
+            "(0.15, n=88), deliberately the tightest of four readings. face "
+            "floor 0.0 because 3 of 7 references carry no presenter at all. "
+            "hook_max, sfx and sfx_vol INHERITED from news and unmeasured."),
+    },
     "ai-tools": {
         # AI / Claude / automation tool reels — the 2026-08-25 expansion. The
         # BLEND, chosen by the user: Saraev's SKELETON (face bookends the reel

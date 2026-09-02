@@ -1,11 +1,11 @@
 {
-  "script_sha256": "f916e3e54f0dd4fd0b9d566b8ff9775db32ffe14074dcf20626aa9370a3a9f2a",
-  "structure_sha256": "90cb6be0366d722d50a72b7a07de4816c9e6ac39cb7c0682f8400649ae168920",
+  "script_sha256": "ac04ef938d8f32bd38e5d82644c61f1ecddab96c4832f943d612b01fd9c74e68",
+  "structure_sha256": "ff2f4cfa930a4859724b89771107df824afc384d8aecd70c2ea4b214dc1dbf78",
   "findings": [
-    "  OPENING has no version, date or time anchor: 'One crash in every million runs.'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "NUMBERS: one every 6.2 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted.",
     "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
   ],
   "research_advice": [],
   "beatPlanShots": 0,
-  "proposedAt": "2026-09-02T05:37:03+00:00"
+  "proposedAt": "2026-09-02T05:58:10+00:00"
 }

@@ -1,26 +1,24 @@
-One crash in every million runs.
-Five years, and nobody on the team could explain it.
-Every model they tried missed it, including Anthropic's own Fable 5.
-Then Fable 5.1 shipped on September first, and found it.
+Anthropic shipped its most capable model yesterday.
+Its own documentation tells you not to make it your default.
 
-That's a Millennium portfolio manager, quoted on Anthropic's own launch page. So are the benchmarks.
-Here's what Anthropic buried further down that page. One line there changes your bill.
+Those are their words, on the new model's page: for most workloads, start with Claude Opus 5.
 
-Take the headline number. On agentic science work, Fable 5.1 more than doubled Fable 5: twenty-four point seven percent, to fifty-two point six.
+Because Fable 5.1 isn't an upgrade, it's a specialist.
 
-Then Venus, where it redrew a third of the planet.
-The old map's resolution was ten to twenty kilometres, so a volcano fifteen kilometres wide came out as a smudge.
-Here it is.
+Still, everyone's repeating twenty-five percent cheaper.
+That discount is real, and verbosity just eats it.
+Artificial Analysis, which ran Anthropic's own pre-release evals, says it goes the other way: three dollars seventy-six a task, against three fourteen. Twenty percent more, on roughly one point seven times the output tokens.
+And Anthropic's docs say why. Editing a file, it rewrites the whole thing instead of the lines that moved.
 
-Back to the bottom of that page. It's the price of a cache read.
-Down seventy-five percent, to twenty-five cents a million tokens. Input and output didn't move.
+Now, the setting that decides it.
+Claude Code runs it on high by default. Step three of the migration guide: re-tune effort from that default.
+So drop it: Artificial Analysis says one notch down scores sixty-five instead of sixty-six, at a dollar four less a task.
+Go lower still, and Anthropic reckons you match Fable 5 for much less.
+But the trade: at low effort it searches less, answering from memory more.
 
-So if you leave an agent running against the API, you now pay roughly twenty-five percent less than on Fable 5, and closer to forty-five on the heaviest jobs.
+Remember that line in the docs. It isn't saying the model is weak. It's saying don't leave it running.
 
-Which says what went wrong last time.
-The Financial Times put Fable 5 near eleven percent of Anthropic spend. Anthropic's best model, and reportedly almost nobody left it running.
+Then Millennium. A crash in one run per million, five years unexplained. Every model missed it, including Fable 5.
+This one took apart a vendor library and found it.
 
-Meanwhile Mythos 5.1 is the same model on a looser leash: vetted US cyberdefence and life sciences only.
-
-But every figure here is Anthropic's own, measured with its safeguards switched on.
-Nobody outside has checked one yet.
+That's what you buy max effort for. Not your Tuesday afternoon.
