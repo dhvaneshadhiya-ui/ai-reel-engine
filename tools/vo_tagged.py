@@ -61,6 +61,12 @@ PRONOUNCE = {
     "DRAM": "D-RAM",
 }
 
+# The beat separator in the DELIVERY file. Must contain no letters or
+# digits — that is what makes it invisible to whisper, and the self-test
+# asserts it rather than trusting this comment.
+# Kept only so the self-test can assert it is NOT emitted. See tag_script.
+PACE_MARK = "…"
+
 
 def respell(text: str) -> str:
     """Apply PRONOUNCE to whole words only, preserving surrounding punctuation."""
@@ -110,6 +116,22 @@ def tag_script(text: str) -> tuple[str, dict[str, int]]:
     for tag, sent, show in out:
         sent = respell(sent)
         lines.append(f"{tag} {sent}" if show else sent)
+    # PACE CANNOT BE SET FROM THIS FILE. MEASURED AND REJECTED 2026-09-02.
+    #
+    # eleven_v3 exposes no speed parameter and the one speed-ish tag that would
+    # fit ([slowly]) is not in ElevenLabs' documented list. The words are frozen
+    # by G27 at approval. That left punctuation, so this file briefly separated
+    # every beat with an ellipsis — legitimate in principle, because an ellipsis
+    # is not a word and whisper never transcribes one.
+    #
+    # IT DOES NOT WORK. Same script, same voice, same model, one variable:
+    #     without pace marks   47.60s   3.26 w/s
+    #     with 14 pace marks   46.48s   3.33 w/s
+    # Slightly FASTER. The lever was removed rather than left in place looking
+    # like a control, which is what the comment written alongside it promised.
+    #
+    # What the pace actually tracks is SENTENCE LENGTH, and that is a script
+    # decision made before approval — see STYLE-RULES 2026-09-02.
     return "\n\n".join(lines), used
 
 
@@ -158,10 +180,21 @@ def selftest() -> int:
 
     # THE ONE THAT MATTERS: stripping the tags must give back the exact words.
     # If tagging can alter a word, it breaks G53 and the approval chain.
-    stripped = re.sub(r"\[[a-z ]+\]\s*", "", tagged)
+    stripped = re.sub(r"\[[a-z ]+\]\s*", "", tagged).replace(PACE_MARK, " ")
     ok("words survive tagging unchanged",
        " ".join(stripped.split()) == " ".join(script.split()),
        "tagging altered the narration — this would break G53 and approval")
+    # The line above only stays honest while the pace mark cannot BE a word.
+    # Without this, someone could set PACE_MARK to "pause" and the check would
+    # dutifully strip a real spoken word out of the comparison.
+    ok("the pace mark is not a word",
+       not re.search(r"[A-Za-z0-9]", PACE_MARK),
+       f"PACE_MARK {PACE_MARK!r} contains letters or digits — whisper would "
+       f"transcribe it and the check above would hide that")
+    ok("no pace mark is emitted",
+       PACE_MARK not in tagged,
+       "the ellipsis pace lever was MEASURED not to work (47.60s -> 46.48s, "
+       "slightly faster) and was removed; re-adding it needs new evidence")
 
     # PRONUNCIATION RESPELLINGS ARE THE ONE ALLOWED EXCEPTION, AND THEY ARE
     # ONLY SAFE UNDER ONE CONDITION: the respelling must be the SAME LETTERS

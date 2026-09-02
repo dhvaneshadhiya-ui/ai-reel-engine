@@ -7022,45 +7022,78 @@ caption "1.7 times" rather than "1.7x" (G16 notation), kept because it is
 exactly what is spoken and the statcard beside it already reads 1.7x. No
 blocking gate was overridden and `--soft` was not used.
 
-## 2026-09-02 — the ElevenLabs retrieval gap, and a misdiagnosis
+## 2026-09-02 — I broke the ElevenLabs flow myself, twice, then blamed it
 
-`creative_generate_speech` works from this session: `prompt` + `voice_id` +
-`model_id: eleven_v3` starts a flow and the takes render. The US trade-in read
-was generated this way and PLAYED FINE in the user's view.
+The read generated fine and the takes played in the user's view. I then
+reported a broken connector to them. Both diagnoses were wrong and the second
+one was worse than the first.
 
-**FIRST, THE PART THAT WAS MY MISTAKE.** The call's own response said: *"If a
-generation view is shown it tracks progress and polls by itself, so there is
-nothing to do here. Only call `creative_get_flow_run_status` yourself if no
-view appeared."* A view DID appear. I polled anyway, hit an argument error, and
-reported a broken connector to the user. The tool told me not to poll and I
-did not read it. Read the `notes` field before treating a result as a failure.
+**MISTAKE 1 — I polled when the tool said not to.** The generate response
+carries a `notes` field: *"If a generation view is shown it tracks progress and
+polls by itself, so there is nothing to do here."* A view had appeared. Read
+the response you were given before deciding something failed.
 
-**SECOND, A REAL LIMIT, on the fallback path only.** If you ever do need to
-poll, `creative_get_flow_run_status` and `creative_show_flow_results` require
-`session_ids` as an ARRAY, and this server advertises an EMPTY parameter schema
-(`{"type": "object"}`). With no schema the harness cannot type a value as an
-array, so it arrives as a string and the server rejects it:
+**MISTAKE 2 — I invented an "empty schema" and built a theory on it.**
+`creative_get_flow_run_status` rejected my call with:
 
     session_ids must be an array of strings
 
-Tried: a JSON-array literal, a comma list, `session_id` singular, omitting it,
-`creative_get_available_assets` (returns unrelated workspace images; rejects a
-`mime_type` filter), `creative_get_flow` (returns status `completed` but no
-media urls), `get_more_tools` ("no additional tool exists for this yet"), and
-`read_widget_context` under two names (nothing published).
+I concluded the server published no parameter schema, so the harness could not
+type an array, so retrieval was impossible for an agent — and wrote that into
+this ledger as fact. **The schema was fully specified all along**
+(`session_ids: {type: array, items: {type: string}}`). What I had actually done
+was omit `context`, which is REQUIRED on every tool of this server. The error
+message names the wrong field, which is what made the wrong theory plausible.
 
-So: the audio reaches the USER's view, and there is currently no path for the
-AGENT to pull the bytes onto disk. AGENT.md's "download the mp3 from
-`media[].url`" is the fallback path, and it is the one that is blocked.
+The correct call is flow_id + session_ids + **context**, and it returns
+`media[].url`: a signed mp3, valid two hours. `curl` it, then `vo_external.py`.
+Recorded in `config.json -> voice._call_shape` so it is a value the next
+session reads, not a paragraph it has to find.
 
-**ONE CALL GENERATES FOUR TAKES, and nothing asked for that.** The request sent
-exactly prompt + voice_id + model_id. The server fanned out to four
-generations and offered a voice switcher. That is roughly 4x the credits for a
-read we already knew the voice for. No parameter to control it is documented
-and the empty schema hides any that exists. Try a count parameter on the next
-run and record what the server accepts.
+**THE LESSON, and it is not about ElevenLabs.** An error message that points at
+field A when the fault is a missing field B will send you somewhere false. When
+a diagnosis implies "this integration is fundamentally impossible", that is the
+moment to re-read the schema, not the moment to write it down as a limitation.
+I told the user their connector was broken and asked them to do manual work
+because I had not passed a required argument.
 
-**Do NOT quietly fall back to HeyGen TTS.** It is the flat read the external
-flow exists to escape: 2.14 semitones against ElevenLabs 3.60 on the same
-cloned voice, measured 2026-08-27. Shipping it because retrieval was awkward
-would undo the reason for the whole path.
+**ONE CALL COSTS FOUR.** `generations_count` defaults to **4** and costs scale
+with it. This 45.6s read billed 943.88 credits PER TAKE — 3,775 credits, about
+Rs 5,537 — for a voice that was never in question, and one of the four failed
+and was priced anyway. Pass `generations_count: 1` unless choosing between
+takes is the actual goal.
+
+**AND THE READ CAME BACK TOO FAST — the lever I reached for did nothing.**
+155 words over 47.6s is 3.26 w/s against our measured 2.35-2.75 band.
+
+I added ellipsis beat separators to `script-tagged.txt`, which is the right
+FILE for a pace change (delivery, not narration; whisper never transcribes an
+ellipsis) and regenerated one take to measure it:
+
+| | duration | pace |
+|---|---|---|
+| no pace marks | 47.60s | 3.26 w/s |
+| 14 pace marks | 46.48s | 3.33 w/s |
+
+**Slightly faster.** The lever was removed, because the comment written
+alongside it promised to delete it rather than leave a decoration that looks
+like a control. `vo_tagged`'s self-test now asserts the mark is NOT emitted.
+
+**What the pace does track is the SCRIPT.** Every past ElevenLabs read on this
+voice landed in band — claude-fable-5-1 at 2.61 w/s, chatgpt-stickers at 2.73.
+chatgpt-stickers is the same 155 words as this one and came back 56.7s against
+46.5s. Same engine, same voice, same length; the difference is that this script
+is built from short clipped sentences ("Read that again." "Up to." "Most people
+stop right there.") and short sentences give the model nothing to slow down
+for.
+
+So pace is decided BEFORE approval, in the sentence profile, and it cannot be
+recovered afterwards without paying for another take. That is worth a check at
+script time rather than a discovery at audio time. NOT built yet, and n=2 is
+too thin for a threshold — record the next few reads' words/duration against
+their sentence stats before drawing a line.
+
+(Config also records a known API-vs-UI gap: `creative_generate_speech` exposes
+no stability parameter where the web UI does, and a hand-made take measured
+3.60 semitones where an API take measured 3.17. Untangled from pace, but a
+second reason the API read is not identical to a hand-made one.)
