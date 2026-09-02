@@ -1,11 +1,18 @@
 {
-  "script_sha256": "ac04ef938d8f32bd38e5d82644c61f1ecddab96c4832f943d612b01fd9c74e68",
-  "structure_sha256": "ff2f4cfa930a4859724b89771107df824afc384d8aecd70c2ea4b214dc1dbf78",
+  "script_sha256": "6b9750bbc45637b43b52c1140f970cd28397a48684d99debc63d44ceae12b44c",
+  "structure_sha256": "eff73118f074119e6d7124a1afedaa8dc2c1090b6339ca7414b6b92a20738d93",
   "findings": [
-    "NUMBERS: one every 6.2 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted.",
+    "  WHAT WITHOUT SO WHAT 1/1 spec sentences never say what the number does for the viewer. \"2nm chip\" is information; \"faster without draining the battery\" is relevance. (framework S7)",
+    "  NO OPEN LOOP \u2014 nothing in the opening third points forward. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "  OPENING has no version, date or time anchor: 'This AI was so powerful, the U.S.'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "CADENCE: 4 of 15 sentences are long. The short ones stop being punctuation.",
+    "UNANCHORED QUESTION: 'Why?' \u2014 a bare question word with no noun. The viewer cannot tell what is being asked until they have heard the answer, so they parse it backwards and lose the next line. Give it its subject ('So when do we get them?') or make it a statement that still leans in ('They are closer than you'd think.').",
+    "SECOND PERSON: the first 'you' arrives 77% of the way in. Until then the viewer is watching something happen to other people. Move one 'you' into the opening.",
+    "HOUSE TIC: \"but here's the\" \u2014 already used in 2 other script(s) (apple-pay-india, claude-memory-everywhere). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HOUSE TIC: 'so would you' \u2014 already used in 1 other script(s) (grok-bot). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
     "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
   ],
   "research_advice": [],
   "beatPlanShots": 0,
-  "proposedAt": "2026-09-02T05:58:10+00:00"
+  "proposedAt": "2026-09-02T06:04:51+00:00"
 }

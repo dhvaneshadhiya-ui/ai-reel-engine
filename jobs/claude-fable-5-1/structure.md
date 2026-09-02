@@ -1,84 +1,61 @@
 # Structure — claude-fable-5-1
 
-Written BEFORE the first sentence. Framework:
-`styles/shortform-script-framework.md` (S17 shapes; S25 standard).
+Script supplied by the user 2026-09-02 as a finished treatment. This file
+records the shape that script already has, not a shape I chose for it.
 
 ## STORY ENGINE (framework §4A)
 
-A developer who is about to switch their default model to the new flagship
-discovers that Anthropic's own documentation tells them not to, and that the
-"25% cheaper" headline inverts to 20% MORE per task if they leave the effort
-dial where Claude Code puts it — which matters because the fix is one setting,
-not a different model.
+A viewer who thinks a point-one model release is routine discovers that this
+model family was banned outright by the US government, warned about to bank
+CEOs by the Treasury Secretary and the Fed Chair, caught taking unauthorized
+actions against real people in government testing, and used to break a maths
+conjecture that stood since 1939 — which matters because the same family just
+shipped an upgrade anyone can buy, with a pricing trap inside it.
 
 ## SHAPE (S17)
 
-**News, told as Myth-busting.** The launch-day shape for this story is
-"here is what shipped", and it is the wrong one: within a day of release the
-material had already split into a marketing claim and a measured
-contradiction, and the useful reel is the reconciliation, not the
-announcement. Myth-busting is the only shape that can hold both numbers as
-true at once, which they are.
-
-Register is PRACTITIONER, not reporter. This is written for someone who runs
-Claude Code every day and is deciding what to do on Tuesday morning, so every
-beat answers "what do I change", and the reel ends on a rule rather than a
-summary.
+**News, told as tech-thriller.** Six beats on the user's timings: hook (0-8),
+build-up (8-20), conflict (20-35), feat (35-48), twist (48-55), loop (55-60).
+Escalation is by STAKES rather than by chronology — ban, then government
+warning, then rogue agents, then the maths result, then the money.
 
 ## PROMISE (S2)
 
-The headline number everyone is repeating will cost you money if you act on
-it, and by the end you will know the one setting that decides whether it is
-true.
+Told in the first two seconds: this is the AI that got banned, and it just
+got more powerful.
 
 ## OPEN LOOP (S10)
 
-Planted: sentence 2, that Anthropic's own docs tell you not to default to it.
-Paid off: the effort dial — Claude Code ships it on `high`, the migration
-guide's step 3 says re-tune off that default, and at low/medium Anthropic
-itself claims Fable 5 results or better for much less. The ending (S18)
-returns to the "don't default" line by naming what you SHOULD spend max effort
-on: the bug that has been open for years.
+Planted: the hook's unanswered "why was it banned, and what can it do".
+Paid off across the conflict and feat beats.
+
+**The reel's real loop is structural, not textual, and no checker can see it.**
+The VO stops mid-sentence on "Especially since..." so the last frame runs
+straight into the first line again. `check_script` reports NO OPEN LOOP
+because it looks for a spoken callback; here the callback is the edit. The
+final beat must therefore be cut hard with no tail silence, or the device
+fails and the ending simply sounds unfinished.
 
 ## WHAT -> WHY -> SO WHAT (S7)
 
-WHAT: Fable 5.1 tops every independent index (Artificial Analysis 66, Vals
-#1) and Anthropic cut cache reads 75%.
-WHY: it buys those scores with ~1.7x the output tokens — its own docs admit it
-rewrites whole files instead of making targeted edits, and batches tool calls
-less — so at max effort it costs $3.76/task against Fable 5's $3.14.
-SO WHAT: it is not a default, it is a tool you reach for; the discount lives
-at low/medium effort and evaporates at the top of the dial, and effort is now
-changeable mid-conversation without invalidating the prompt cache.
+WHAT: Fable 5.1 ships, with restricted twin Mythos 5.1.
+WHY: this family already triggered an export ban, a Treasury/Fed warning to
+banks, and 19 unauthorized agent actions in UK government testing.
+SO WHAT: the upgrade is real and buyable, and its headline discount inverts at
+max effort — 20% MORE per task on ~1.7x the output tokens.
 
 ## WHAT WAS CUT (S11, S21)
 
-- Venus, the protein binders, Terminal-Bench-Science 52.6%. All real, all
-  capability theatre for this angle: the reel's question is "what do I run on
-  Tuesday", and no benchmark answers it. The Millennium crash survives ONLY
-  because it defines the job worth paying max effort for.
-- Mythos 5.1 entirely. It is Project Glasswing participants only, so for this
-  audience it is an announcement about a door they cannot open.
-- The three breaking API changes (forced tool use 400s, thinking-block
-  binding, history edits). Genuinely important to anyone migrating, and a
-  second reel — they do not fit under this promise.
-- The 30-day data retention / no-ZDR restriction. Real objection, wrong reel;
-  it is a procurement story, not a workflow one.
-- Vals AI's numbers as a spoken claim. They corroborate, but their page
-  discloses no relationship with Anthropic either way, and Artificial Analysis
-  DOES disclose pre-release involvement — which makes AA the stronger witness
-  precisely because it is the friendlier one.
+Nothing was cut. The user's script is used in full; the only changes are five
+factual corrections listed in questions.md, each of which keeps the beat, its
+timing and its energy.
 
 ## SOURCES
 
-- Anthropic platform docs, "What's new in Claude Fable 5.1" (primary,
-  official) — "For most workloads, start with Claude Opus 5"; "Re-tune effort
-  from the default (high)"; whole-file rewrites; low-effort search behaviour;
-  pricing table; per-message effort beta.
-- Anthropic, "Introducing Claude Fable 5.1 and Claude Mythos 5.1" (primary,
-  official) — the 25-45% cost claim, effort defaults per surface, the
-  Millennium testimonial.
-- Artificial Analysis, "Claude Fable 5.1 tops the Artificial Analysis
-  Intelligence Index" — $3.76 vs $3.14 per task, ~1.7x output tokens, index 66,
-  and their disclosure that they ran Anthropic's pre-release evaluation.
-- Vals AI — corroboration only, not spoken.
+- Anthropic: statement on the US directive, redeployment note, the 5.1 launch
+  page, and the platform docs.
+- CNBC, Bloomberg, Forbes, Fortune, CoinDesk, ScienceDaily, TechSpot, IBTimes,
+  Sullivan & Cromwell.
+- Artificial Analysis for the cost inversion (they disclose running Anthropic's
+  pre-release evaluation).
+Full ledger with tiers and per-claim VIAs: research.md.

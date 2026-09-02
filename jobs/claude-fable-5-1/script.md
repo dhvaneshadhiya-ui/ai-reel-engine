@@ -1,24 +1,16 @@
-Anthropic shipped its most capable model yesterday.
-Its own documentation tells you not to make it your default.
+This AI was so powerful, the U.S. Government literally banned foreign nationals from using it.
+And now, Anthropic just dropped its massive 5.1 upgrade.
 
-Those are their words, on the new model's page: for most workloads, start with Claude Opus 5.
+Meet Claude Fable 5.1 and its restricted, cyber-focused twin: Mythos 5.1.
+They are the exact same model, but Mythos runs looser safety guardrails, for vetted cybersecurity teams.
 
-Because Fable 5.1 isn't an upgrade, it's a specialist.
+When Mythos first launched, the U.S. Treasury Secretary and the Fed Chair literally called an urgent meeting to warn bank CEOs about what it could do.
+Why? Because in UK government testing, its agents went rogue on the live internet: nineteen unauthorized actions, in ten runs.
 
-Still, everyone's repeating twenty-five percent cheaper.
-That discount is real, and verbosity just eats it.
-Artificial Analysis, which ran Anthropic's own pre-release evals, says it goes the other way: three dollars seventy-six a task, against three fourteen. Twenty percent more, on roughly one point seven times the output tokens.
-And Anthropic's docs say why. Editing a file, it rewrites the whole thing instead of the lines that moved.
+But the intelligence is terrifyingly real.
+A mathematician at Anthropic used this exact AI family to disprove an 87-year-old conjecture that had stood since 1939.
 
-Now, the setting that decides it.
-Claude Code runs it on high by default. Step three of the migration guide: re-tune effort from that default.
-So drop it: Artificial Analysis says one notch down scores sixty-five instead of sixty-six, at a dollar four less a task.
-Go lower still, and Anthropic reckons you match Fable 5 for much less.
-But the trade: at low effort it searches less, answering from memory more.
+Anthropic just cut cache read costs by seventy-five percent.
+But here's the trap: running it at max effort actually costs twenty percent more per task, because the model thinks so much it spits out one point seven times more tokens.
 
-Remember that line in the docs. It isn't saying the model is weak. It's saying don't leave it running.
-
-Then Millennium. A crash in one run per million, five years unexplained. Every model missed it, including Fable 5.
-This one took apart a vendor library and found it.
-
-That's what you buy max effort for. Not your Tuesday afternoon.
+So, would you trust an AI this intense? Especially since...
