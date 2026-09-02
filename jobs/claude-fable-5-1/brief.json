@@ -1,0 +1,28 @@
+{
+  "slug": "claude-fable-5-1",
+  "topic": "Anthropic ships Claude Fable 5.1 and Mythos 5.1",
+  "details": "Sept 1 2026 launch. Terminal-Bench-Science 24.7% -> 52.6%. Cache reads cut 75% to $0.25/M, ~25% cheaper typical, ~45% agentic. Mythos 5.1 same model, looser safeguards, US trusted-access only. 1M context, 128k output.",
+  "subject": "Anthropic ships Claude Fable 5.1 and Mythos 5.1",
+  "audience": "<who should care, and what they already know>",
+  "platform": "both",
+  "goal": "<awareness|education|engagement|follow|comment|conversion>",
+  "core_value": "<what the viewer learns, feels, sees or can do>",
+  "desired_action": "<if any>",
+  "reveal_target": "none",
+  "cta_keyword": "CLAUDE",
+  "target_duration": "70s",
+  "tone": "<voice, personality, boundaries>",
+  "source_policy": "official-preferred",
+  "footage_constraints": "<assets, permissions, presenter, recordings>",
+  "credit_instructions": "on-screen",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 70,
+  "music": false,
+  "created_at": "2026-09-02T05:17:56.012801+00:00",
+  "status": "initialized"
+}

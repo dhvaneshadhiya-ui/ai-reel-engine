@@ -249,7 +249,7 @@
         {
           "src": "sfx/Click.MP3",
           "at": 0.35,
-          "vol": 0.13
+          "vol": 0.251
         }
       ],
       "durationSec": 4.2
@@ -294,7 +294,7 @@
       "zoomDir": "none",
       "captionBottom": 980,
       "kinetic": {
-        "text": "COMMENT “STICKERS”",
+        "text": "COMMENT \u201cSTICKERS\u201d",
         "style": "caps",
         "at": 0.5
       },
@@ -1300,6 +1300,6 @@
     "sha256": "afdd9a91f3fee676c3b3d1e3b5eee751d969898018dbd36ac2196a5c50b5074e",
     "approvedAt": "2026-09-01T07:09:42+00:00",
     "words": 155,
-    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
   }
 }

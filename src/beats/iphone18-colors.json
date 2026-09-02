@@ -5,173 +5,6 @@
   "height": 1920,
   "style": "editorial",
   "audio": "assets/iphone18-colors/avatar-master.mp4",
-  "music": {
-    "src": "music/bed-02.mp3",
-    "from": 0,
-    "points": [
-      {
-        "t": 0.0,
-        "vol": 0.055
-      },
-      {
-        "t": 10.88,
-        "vol": 0.055
-      },
-      {
-        "t": 11.22,
-        "vol": 0.15
-      },
-      {
-        "t": 11.28,
-        "vol": 0.15
-      },
-      {
-        "t": 11.46,
-        "vol": 0.055
-      },
-      {
-        "t": 15.4,
-        "vol": 0.055
-      },
-      {
-        "t": 15.7,
-        "vol": 0.15
-      },
-      {
-        "t": 15.74,
-        "vol": 0.15
-      },
-      {
-        "t": 15.88,
-        "vol": 0.055
-      },
-      {
-        "t": 26.0,
-        "vol": 0.055
-      },
-      {
-        "t": 26.28,
-        "vol": 0.15
-      },
-      {
-        "t": 26.34,
-        "vol": 0.15
-      },
-      {
-        "t": 26.46,
-        "vol": 0.055
-      },
-      {
-        "t": 27.92,
-        "vol": 0.055
-      },
-      {
-        "t": 28.26,
-        "vol": 0.15
-      },
-      {
-        "t": 28.4,
-        "vol": 0.15
-      },
-      {
-        "t": 28.58,
-        "vol": 0.055
-      },
-      {
-        "t": 32.26,
-        "vol": 0.055
-      },
-      {
-        "t": 32.58,
-        "vol": 0.15
-      },
-      {
-        "t": 32.6,
-        "vol": 0.15
-      },
-      {
-        "t": 32.76,
-        "vol": 0.055
-      },
-      {
-        "t": 37.92,
-        "vol": 0.055
-      },
-      {
-        "t": 38.2,
-        "vol": 0.15
-      },
-      {
-        "t": 38.26,
-        "vol": 0.15
-      },
-      {
-        "t": 38.38,
-        "vol": 0.055
-      },
-      {
-        "t": 44.94,
-        "vol": 0.055
-      },
-      {
-        "t": 45.28,
-        "vol": 0.15
-      },
-      {
-        "t": 45.42,
-        "vol": 0.15
-      },
-      {
-        "t": 45.6,
-        "vol": 0.055
-      },
-      {
-        "t": 47.74,
-        "vol": 0.055
-      },
-      {
-        "t": 48.08,
-        "vol": 0.15
-      },
-      {
-        "t": 48.12,
-        "vol": 0.15
-      },
-      {
-        "t": 48.3,
-        "vol": 0.055
-      },
-      {
-        "t": 54.68,
-        "vol": 0.055
-      },
-      {
-        "t": 55.02,
-        "vol": 0.15
-      },
-      {
-        "t": 55.22,
-        "vol": 0.055
-      },
-      {
-        "t": 69.54,
-        "vol": 0.15
-      },
-      {
-        "t": 70.04,
-        "vol": 0.055
-      },
-      {
-        "t": 70.38,
-        "vol": 0.15
-      },
-      {
-        "t": 70.44,
-        "vol": 0.02
-      }
-    ],
-    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
-  },
   "captionStyle": "word-reveal",
   "emphasis": [
     "6076",
@@ -204,7 +37,7 @@
         "y": 0.02,
         "theme": "dark"
       },
-      "credit": "Pantone 6076 C \u00b7 code via MacRumors",
+      "credit": "Pantone 6076 C · code via MacRumors",
       "durationSec": 3.24,
       "assetId": "chip-hook",
       "claimId": "chip-hook",
@@ -217,12 +50,12 @@
       "type": "footage",
       "src": "assets/iphone18-colors/chip-cherry.mp4",
       "zoomDir": "none",
-      "credit": "Pantone 6076 C \u00b7 code via MacRumors",
+      "credit": "Pantone 6076 C · code via MacRumors",
       "sfx": [
         {
           "src": "sfx/Camera Shutter.MP3",
           "at": 0.1,
-          "vol": 0.32
+          "vol": 0.14
         }
       ],
       "captionBottom": 500,
@@ -281,7 +114,7 @@
       "durationSec": 2.34,
       "assetId": "chip-cherry",
       "claimId": "chip-cherry",
-      "covers": "But first \u2014 what",
+      "covers": "But first — what",
       "sourceUrl": "https://www.pantone.com/color-finder/6076-c"
     },
     {
@@ -315,8 +148,8 @@
       "sfx": [
         {
           "src": "sfx/Camera Shutter.MP3",
-          "at": 0.15,
-          "vol": 0.32
+          "at": 0.1,
+          "vol": 0.14
         }
       ],
       "durationSec": 2.16,
@@ -369,7 +202,7 @@
         {
           "src": "sfx/Core.MP3",
           "at": 0.7,
-          "vol": 0.556
+          "vol": 0.16
         }
       ],
       "durationSec": 1.22,
@@ -400,7 +233,7 @@
         {
           "src": "sfx/Riser.MP3",
           "at": 3.35,
-          "vol": 0.359
+          "vol": 0.13
         }
       ],
       "durationSec": 4.84,
@@ -429,7 +262,7 @@
         {
           "src": "sfx/Magic Reveal.MP3",
           "at": 0.0,
-          "vol": 1.0
+          "vol": 0.16
         }
       ],
       "captionBottom": 500,
@@ -443,7 +276,7 @@
       "type": "footage",
       "src": "assets/iphone18-colors/chip-cherry-tight.mp4",
       "zoomDir": "none",
-      "credit": "Pantone 6076 C \u00b7 code via MacRumors",
+      "credit": "Pantone 6076 C · code via MacRumors",
       "captionBottom": 500,
       "durationSec": 2.26,
       "assetId": "chip-cherry-tight",
@@ -487,7 +320,7 @@
         {
           "src": "sfx/Core.MP3",
           "at": 0.35,
-          "vol": 0.556
+          "vol": 0.15
         }
       ],
       "durationSec": 3.2,
@@ -585,7 +418,7 @@
         {
           "src": "sfx/Camera Shutter.MP3",
           "at": 0.1,
-          "vol": 0.32
+          "vol": 0.13
         }
       ],
       "durationSec": 2.82,
@@ -627,7 +460,7 @@
       "src": "assets/iphone18-colors/chip-gap.mp4",
       "zoomDir": "none",
       "from": 0.2,
-      "credit": "Codes via MacRumors \u00b7 Ultra shades via Sonny Dickson",
+      "credit": "Codes via MacRumors · Ultra shades via Sonny Dickson",
       "captionBottom": 500,
       "durationSec": 4.16,
       "assetId": "chip-gap",
@@ -640,12 +473,12 @@
       "src": "assets/iphone18-colors/chip-gap.mp4",
       "zoomDir": "none",
       "from": 2.9,
-      "credit": "Codes via MacRumors \u00b7 Ultra shades via Sonny Dickson",
+      "credit": "Codes via MacRumors · Ultra shades via Sonny Dickson",
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",
           "at": 0.0,
-          "vol": 0.582
+          "vol": 0.15
         }
       ],
       "captionBottom": 500,
@@ -684,7 +517,7 @@
         {
           "src": "sfx/Core.MP3",
           "at": 0.2,
-          "vol": 0.556
+          "vol": 0.15
         }
       ],
       "durationSec": 3.44,
@@ -700,19 +533,19 @@
       "src": "assets/iphone18-colors/chip-cherry.mp4",
       "zoomDir": "none",
       "from": 2.4,
-      "credit": "Pantone 6076 C \u00b7 code via MacRumors",
+      "credit": "Pantone 6076 C · code via MacRumors",
       "captionBottom": 500,
       "durationSec": 1.66,
       "assetId": "chip-cherry",
       "claimId": "chip-cherry",
-      "covers": "So \u2014 plum, not",
+      "covers": "So — plum, not",
       "sourceUrl": "https://www.pantone.com/color-finder/6076-c"
     },
     {
       "type": "footage",
       "src": "assets/iphone18-colors/chip-end.mp4",
       "zoomDir": "none",
-      "credit": "Pantone 6076 C \u00b7 code via MacRumors",
+      "credit": "Pantone 6076 C · code via MacRumors",
       "captionBottom": 500,
       "durationSec": 1.3,
       "assetId": "chip-end",
@@ -725,354 +558,1325 @@
     {
       "start": 0.0,
       "end": 1.2,
-      "text": "Apple's iPhone 18"
+      "text": "Apple's iPhone 18",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Apple's"
+        },
+        {
+          "t": 0.46,
+          "text": "iPhone"
+        },
+        {
+          "t": 0.8,
+          "text": "18"
+        }
+      ]
     },
     {
       "start": 1.2,
       "end": 1.98,
-      "text": "Pro has a"
+      "text": "Pro has a",
+      "words": [
+        {
+          "t": 1.2,
+          "text": "Pro"
+        },
+        {
+          "t": 1.52,
+          "text": "has"
+        },
+        {
+          "t": 1.84,
+          "text": "a"
+        }
+      ]
     },
     {
       "start": 1.98,
       "end": 3.02,
-      "text": "new signature color,"
+      "text": "new signature color,",
+      "words": [
+        {
+          "t": 1.98,
+          "text": "new"
+        },
+        {
+          "t": 2.16,
+          "text": "signature"
+        },
+        {
+          "t": 2.6,
+          "text": "color,"
+        }
+      ]
     },
     {
       "start": 3.24,
       "end": 3.82,
-      "text": "it's called dark"
+      "text": "it's called dark",
+      "words": [
+        {
+          "t": 3.24,
+          "text": "it's"
+        },
+        {
+          "t": 3.38,
+          "text": "called"
+        },
+        {
+          "t": 3.5,
+          "text": "dark"
+        }
+      ]
     },
     {
       "start": 3.82,
       "end": 5.08,
-      "text": "cherry, and nobody"
+      "text": "cherry, and nobody",
+      "words": [
+        {
+          "t": 3.82,
+          "text": "cherry,"
+        },
+        {
+          "t": 4.52,
+          "text": "and"
+        },
+        {
+          "t": 4.84,
+          "text": "nobody"
+        }
+      ]
     },
     {
       "start": 5.08,
       "end": 5.88,
-      "text": "agrees what it"
+      "text": "agrees what it",
+      "words": [
+        {
+          "t": 5.08,
+          "text": "agrees"
+        },
+        {
+          "t": 5.44,
+          "text": "what"
+        },
+        {
+          "t": 5.72,
+          "text": "it"
+        }
+      ]
     },
     {
       "start": 5.88,
       "end": 6.88,
-      "text": "looks like. Which"
+      "text": "looks like. Which",
+      "words": [
+        {
+          "t": 5.88,
+          "text": "looks"
+        },
+        {
+          "t": 6.08,
+          "text": "like."
+        },
+        {
+          "t": 6.66,
+          "text": "Which"
+        }
+      ]
     },
     {
       "start": 6.88,
       "end": 7.64,
-      "text": "is odd because"
+      "text": "is odd because",
+      "words": [
+        {
+          "t": 6.88,
+          "text": "is"
+        },
+        {
+          "t": 7.02,
+          "text": "odd"
+        },
+        {
+          "t": 7.24,
+          "text": "because"
+        }
+      ]
     },
     {
       "start": 7.64,
       "end": 8.28,
-      "text": "we know it's"
+      "text": "we know it's",
+      "words": [
+        {
+          "t": 7.64,
+          "text": "we"
+        },
+        {
+          "t": 7.86,
+          "text": "know"
+        },
+        {
+          "t": 8.02,
+          "text": "it's"
+        }
+      ]
     },
     {
       "start": 8.28,
       "end": 9.66,
-      "text": "exact Pantone code,"
+      "text": "exact Pantone code,",
+      "words": [
+        {
+          "t": 8.28,
+          "text": "exact"
+        },
+        {
+          "t": 8.64,
+          "text": "Pantone"
+        },
+        {
+          "t": 9.3,
+          "text": "code,"
+        }
+      ]
     },
     {
       "start": 10.06,
       "end": 10.7,
-      "text": "and here's the"
+      "text": "and here's the",
+      "words": [
+        {
+          "t": 10.06,
+          "text": "and"
+        },
+        {
+          "t": 10.26,
+          "text": "here's"
+        },
+        {
+          "t": 10.58,
+          "text": "the"
+        }
+      ]
     },
     {
       "start": 10.7,
       "end": 12.1,
-      "text": "catch. Apple's most"
+      "text": "catch. Apple's most",
+      "words": [
+        {
+          "t": 10.7,
+          "text": "catch."
+        },
+        {
+          "t": 11.46,
+          "text": "Apple's"
+        },
+        {
+          "t": 11.88,
+          "text": "most"
+        }
+      ]
     },
     {
       "start": 12.1,
       "end": 13.78,
-      "text": "expensive iPhone ever"
+      "text": "expensive iPhone ever",
+      "words": [
+        {
+          "t": 12.1,
+          "text": "expensive"
+        },
+        {
+          "t": 12.68,
+          "text": "iPhone"
+        },
+        {
+          "t": 13.2,
+          "text": "ever"
+        }
+      ]
     },
     {
       "start": 13.78,
       "end": 14.6,
-      "text": "doesn't get it."
+      "text": "doesn't get it.",
+      "words": [
+        {
+          "t": 13.78,
+          "text": "doesn't"
+        },
+        {
+          "t": 14.14,
+          "text": "get"
+        },
+        {
+          "t": 14.36,
+          "text": "it."
+        }
+      ]
     },
     {
       "start": 14.92,
       "end": 16.02,
-      "text": "But first, what"
+      "text": "But first, what",
+      "words": [
+        {
+          "t": 14.92,
+          "text": "But"
+        },
+        {
+          "t": 15.08,
+          "text": "first,"
+        },
+        {
+          "t": 15.88,
+          "text": "what"
+        }
+      ]
     },
     {
       "start": 16.02,
       "end": 16.68,
-      "text": "color is this"
+      "text": "color is this",
+      "words": [
+        {
+          "t": 16.02,
+          "text": "color"
+        },
+        {
+          "t": 16.36,
+          "text": "is"
+        },
+        {
+          "t": 16.56,
+          "text": "this"
+        }
+      ]
     },
     {
       "start": 16.68,
       "end": 17.82,
-      "text": "actually? Every render"
+      "text": "actually? Every render",
+      "words": [
+        {
+          "t": 16.68,
+          "text": "actually?"
+        },
+        {
+          "t": 17.26,
+          "text": "Every"
+        },
+        {
+          "t": 17.48,
+          "text": "render"
+        }
+      ]
     },
     {
       "start": 17.82,
       "end": 18.7,
-      "text": "you've seen leans"
+      "text": "you've seen leans",
+      "words": [
+        {
+          "t": 17.82,
+          "text": "you've"
+        },
+        {
+          "t": 18.16,
+          "text": "seen"
+        },
+        {
+          "t": 18.38,
+          "text": "leans"
+        }
+      ]
     },
     {
       "start": 18.7,
       "end": 19.82,
-      "text": "red, but the"
+      "text": "red, but the",
+      "words": [
+        {
+          "t": 18.7,
+          "text": "red,"
+        },
+        {
+          "t": 19.42,
+          "text": "but"
+        },
+        {
+          "t": 19.66,
+          "text": "the"
+        }
+      ]
     },
     {
       "start": 19.82,
       "end": 20.7,
-      "text": "leaker who detailed"
+      "text": "leaker who detailed",
+      "words": [
+        {
+          "t": 19.82,
+          "text": "leaker"
+        },
+        {
+          "t": 20.16,
+          "text": "who"
+        },
+        {
+          "t": 20.36,
+          "text": "detailed"
+        }
+      ]
     },
     {
       "start": 20.7,
       "end": 21.58,
-      "text": "it says those"
+      "text": "it says those",
+      "words": [
+        {
+          "t": 20.7,
+          "text": "it"
+        },
+        {
+          "t": 20.96,
+          "text": "says"
+        },
+        {
+          "t": 21.24,
+          "text": "those"
+        }
+      ]
     },
     {
       "start": 21.58,
       "end": 22.76,
-      "text": "are wrong, it's"
+      "text": "are wrong, it's",
+      "words": [
+        {
+          "t": 21.58,
+          "text": "are"
+        },
+        {
+          "t": 21.8,
+          "text": "wrong,"
+        },
+        {
+          "t": 22.52,
+          "text": "it's"
+        }
+      ]
     },
     {
       "start": 22.76,
       "end": 24.44,
-      "text": "purple-tinged And the"
+      "text": "purple-tinged And the",
+      "words": [
+        {
+          "t": 22.76,
+          "text": "purple-tinged"
+        },
+        {
+          "t": 23.74,
+          "text": "And"
+        },
+        {
+          "t": 24.32,
+          "text": "the"
+        }
+      ]
     },
     {
       "start": 24.44,
       "end": 25.22,
-      "text": "reports pin it"
+      "text": "reports pin it",
+      "words": [
+        {
+          "t": 24.44,
+          "text": "reports"
+        },
+        {
+          "t": 24.74,
+          "text": "pin"
+        },
+        {
+          "t": 25.1,
+          "text": "it"
+        }
+      ]
     },
     {
       "start": 25.22,
       "end": 26.0,
-      "text": "to one number,"
+      "text": "to one number,",
+      "words": [
+        {
+          "t": 25.22,
+          "text": "to"
+        },
+        {
+          "t": 25.4,
+          "text": "one"
+        },
+        {
+          "t": 25.6,
+          "text": "number,"
+        }
+      ]
     },
     {
       "start": 26.46,
       "end": 28.9,
-      "text": "Pantone 6076, Pantone"
+      "text": "Pantone 6076, Pantone",
+      "words": [
+        {
+          "t": 26.46,
+          "text": "Pantone"
+        },
+        {
+          "t": 26.8,
+          "text": "6076,"
+        },
+        {
+          "t": 28.58,
+          "text": "Pantone"
+        }
+      ]
     },
     {
       "start": 28.9,
       "end": 30.14,
-      "text": "files that under Red"
+      "text": "files that under Red",
+      "words": [
+        {
+          "t": 28.9,
+          "text": "files"
+        },
+        {
+          "t": 29.26,
+          "text": "that"
+        },
+        {
+          "t": 29.54,
+          "text": "under"
+        },
+        {
+          "t": 29.54,
+          "text": "Red"
+        }
+      ]
     },
     {
       "start": 30.14,
       "end": 31.02,
-      "text": "purple in plain"
+      "text": "purple in plain",
+      "words": [
+        {
+          "t": 30.14,
+          "text": "purple"
+        },
+        {
+          "t": 30.5,
+          "text": "in"
+        },
+        {
+          "t": 30.76,
+          "text": "plain"
+        }
+      ]
     },
     {
       "start": 31.02,
       "end": 31.9,
-      "text": "terms, a dark"
+      "text": "terms, a dark",
+      "words": [
+        {
+          "t": 31.02,
+          "text": "terms,"
+        },
+        {
+          "t": 31.56,
+          "text": "a"
+        },
+        {
+          "t": 31.62,
+          "text": "dark"
+        }
+      ]
     },
     {
       "start": 31.9,
       "end": 33.14,
-      "text": "plum. So if"
+      "text": "plum. So if",
+      "words": [
+        {
+          "t": 31.9,
+          "text": "plum."
+        },
+        {
+          "t": 32.76,
+          "text": "So"
+        },
+        {
+          "t": 32.96,
+          "text": "if"
+        }
+      ]
     },
     {
       "start": 33.14,
       "end": 33.9,
-      "text": "you're picturing a"
+      "text": "you're picturing a",
+      "words": [
+        {
+          "t": 33.14,
+          "text": "you're"
+        },
+        {
+          "t": 33.28,
+          "text": "picturing"
+        },
+        {
+          "t": 33.74,
+          "text": "a"
+        }
+      ]
     },
     {
       "start": 33.9,
       "end": 34.88,
-      "text": "rich red iPhone,"
+      "text": "rich red iPhone,",
+      "words": [
+        {
+          "t": 33.9,
+          "text": "rich"
+        },
+        {
+          "t": 34.18,
+          "text": "red"
+        },
+        {
+          "t": 34.42,
+          "text": "iPhone,"
+        }
+      ]
     },
     {
       "start": 35.18,
       "end": 35.78,
-      "text": "the real one"
+      "text": "the real one",
+      "words": [
+        {
+          "t": 35.18,
+          "text": "the"
+        },
+        {
+          "t": 35.24,
+          "text": "real"
+        },
+        {
+          "t": 35.52,
+          "text": "one"
+        }
+      ]
     },
     {
       "start": 35.78,
       "end": 36.78,
-      "text": "is quieter and"
+      "text": "is quieter and",
+      "words": [
+        {
+          "t": 35.78,
+          "text": "is"
+        },
+        {
+          "t": 36.06,
+          "text": "quieter"
+        },
+        {
+          "t": 36.52,
+          "text": "and"
+        }
+      ]
     },
     {
       "start": 36.78,
       "end": 37.54,
-      "text": "browner than you"
+      "text": "browner than you",
+      "words": [
+        {
+          "t": 36.78,
+          "text": "browner"
+        },
+        {
+          "t": 37.24,
+          "text": "than"
+        },
+        {
+          "t": 37.38,
+          "text": "you"
+        }
+      ]
     },
     {
       "start": 37.54,
       "end": 38.8,
-      "text": "expect. It's still"
+      "text": "expect. It's still",
+      "words": [
+        {
+          "t": 37.54,
+          "text": "expect."
+        },
+        {
+          "t": 38.38,
+          "text": "It's"
+        },
+        {
+          "t": 38.64,
+          "text": "still"
+        }
+      ]
     },
     {
       "start": 38.8,
       "end": 39.58,
-      "text": "the only risk"
+      "text": "the only risk",
+      "words": [
+        {
+          "t": 38.8,
+          "text": "the"
+        },
+        {
+          "t": 38.98,
+          "text": "only"
+        },
+        {
+          "t": 39.26,
+          "text": "risk"
+        }
+      ]
     },
     {
       "start": 39.58,
       "end": 40.08,
-      "text": "in the lineup."
+      "text": "in the lineup.",
+      "words": [
+        {
+          "t": 39.58,
+          "text": "in"
+        },
+        {
+          "t": 39.72,
+          "text": "the"
+        },
+        {
+          "t": 39.8,
+          "text": "lineup."
+        }
+      ]
     },
     {
       "start": 40.38,
       "end": 41.32,
-      "text": "Silver, dark gray,"
+      "text": "Silver, dark gray,",
+      "words": [
+        {
+          "t": 40.38,
+          "text": "Silver,"
+        },
+        {
+          "t": 40.94,
+          "text": "dark"
+        },
+        {
+          "t": 41.04,
+          "text": "gray,"
+        }
+      ]
     },
     {
       "start": 41.54,
       "end": 41.88,
-      "text": "and a light"
+      "text": "and a light",
+      "words": [
+        {
+          "t": 41.54,
+          "text": "and"
+        },
+        {
+          "t": 41.62,
+          "text": "a"
+        },
+        {
+          "t": 41.72,
+          "text": "light"
+        }
+      ]
     },
     {
       "start": 41.88,
       "end": 42.98,
-      "text": "blue, and reports"
+      "text": "blue, and reports",
+      "words": [
+        {
+          "t": 41.88,
+          "text": "blue,"
+        },
+        {
+          "t": 42.38,
+          "text": "and"
+        },
+        {
+          "t": 42.66,
+          "text": "reports"
+        }
+      ]
     },
     {
       "start": 42.98,
       "end": 43.9,
-      "text": "don't even agree"
+      "text": "don't even agree",
+      "words": [
+        {
+          "t": 42.98,
+          "text": "don't"
+        },
+        {
+          "t": 43.36,
+          "text": "even"
+        },
+        {
+          "t": 43.6,
+          "text": "agree"
+        }
+      ]
     },
     {
       "start": 43.9,
       "end": 44.94,
-      "text": "dark gray survives."
+      "text": "dark gray survives.",
+      "words": [
+        {
+          "t": 43.9,
+          "text": "dark"
+        },
+        {
+          "t": 44.2,
+          "text": "gray"
+        },
+        {
+          "t": 44.46,
+          "text": "survives."
+        }
+      ]
     },
     {
       "start": 45.6,
       "end": 46.74,
-      "text": "Now, that most"
+      "text": "Now, that most",
+      "words": [
+        {
+          "t": 45.6,
+          "text": "Now,"
+        },
+        {
+          "t": 46.26,
+          "text": "that"
+        },
+        {
+          "t": 46.44,
+          "text": "most"
+        }
+      ]
     },
     {
       "start": 46.74,
       "end": 48.42,
-      "text": "expensive iPhone. The"
+      "text": "expensive iPhone. The",
+      "words": [
+        {
+          "t": 46.74,
+          "text": "expensive"
+        },
+        {
+          "t": 47.32,
+          "text": "iPhone."
+        },
+        {
+          "t": 48.3,
+          "text": "The"
+        }
+      ]
     },
     {
       "start": 48.42,
       "end": 49.6,
-      "text": "foldable iPhone Ultra"
+      "text": "foldable iPhone Ultra",
+      "words": [
+        {
+          "t": 48.42,
+          "text": "foldable"
+        },
+        {
+          "t": 48.78,
+          "text": "iPhone"
+        },
+        {
+          "t": 49.18,
+          "text": "Ultra"
+        }
+      ]
     },
     {
       "start": 49.6,
       "end": 50.72,
-      "text": "reportedly gets two."
+      "text": "reportedly gets two.",
+      "words": [
+        {
+          "t": 49.6,
+          "text": "reportedly"
+        },
+        {
+          "t": 50.02,
+          "text": "gets"
+        },
+        {
+          "t": 50.38,
+          "text": "two."
+        }
+      ]
     },
     {
       "start": 51.12,
       "end": 51.78,
-      "text": "Silver and a"
+      "text": "Silver and a",
+      "words": [
+        {
+          "t": 51.12,
+          "text": "Silver"
+        },
+        {
+          "t": 51.48,
+          "text": "and"
+        },
+        {
+          "t": 51.68,
+          "text": "a"
+        }
+      ]
     },
     {
       "start": 51.78,
       "end": 52.62,
-      "text": "dark blue, both"
+      "text": "dark blue, both",
+      "words": [
+        {
+          "t": 51.78,
+          "text": "dark"
+        },
+        {
+          "t": 51.96,
+          "text": "blue,"
+        },
+        {
+          "t": 52.46,
+          "text": "both"
+        }
+      ]
     },
     {
       "start": 52.62,
       "end": 53.44,
-      "text": "from leaked camera"
+      "text": "from leaked camera",
+      "words": [
+        {
+          "t": 52.62,
+          "text": "from"
+        },
+        {
+          "t": 52.86,
+          "text": "leaked"
+        },
+        {
+          "t": 53.04,
+          "text": "camera"
+        }
+      ]
     },
     {
       "start": 53.44,
       "end": 54.48,
-      "text": "protectors, not the"
+      "text": "protectors, not the",
+      "words": [
+        {
+          "t": 53.44,
+          "text": "protectors,"
+        },
+        {
+          "t": 54.2,
+          "text": "not"
+        },
+        {
+          "t": 54.28,
+          "text": "the"
+        }
+      ]
     },
     {
       "start": 54.48,
       "end": 55.52,
-      "text": "phone. A bold"
+      "text": "phone. A bold",
+      "words": [
+        {
+          "t": 54.48,
+          "text": "phone."
+        },
+        {
+          "t": 55.22,
+          "text": "A"
+        },
+        {
+          "t": 55.28,
+          "text": "bold"
+        }
+      ]
     },
     {
       "start": 55.52,
       "end": 56.26,
-      "text": "color is a"
+      "text": "color is a",
+      "words": [
+        {
+          "t": 55.52,
+          "text": "color"
+        },
+        {
+          "t": 55.9,
+          "text": "is"
+        },
+        {
+          "t": 56.14,
+          "text": "a"
+        }
+      ]
     },
     {
       "start": 56.26,
       "end": 57.14,
-      "text": "bet, sell millions,"
+      "text": "bet, sell millions,",
+      "words": [
+        {
+          "t": 56.26,
+          "text": "bet,"
+        },
+        {
+          "t": 56.66,
+          "text": "sell"
+        },
+        {
+          "t": 56.76,
+          "text": "millions,"
+        }
+      ]
     },
     {
       "start": 57.36,
       "end": 57.64,
-      "text": "and a miss"
+      "text": "and a miss",
+      "words": [
+        {
+          "t": 57.36,
+          "text": "and"
+        },
+        {
+          "t": 57.4,
+          "text": "a"
+        },
+        {
+          "t": 57.5,
+          "text": "miss"
+        }
+      ]
     },
     {
       "start": 57.64,
       "end": 58.88,
-      "text": "gets absorbed, but"
+      "text": "gets absorbed, but",
+      "words": [
+        {
+          "t": 57.64,
+          "text": "gets"
+        },
+        {
+          "t": 57.88,
+          "text": "absorbed,"
+        },
+        {
+          "t": 58.7,
+          "text": "but"
+        }
+      ]
     },
     {
       "start": 58.88,
       "end": 59.44,
-      "text": "at a reported"
+      "text": "at a reported",
+      "words": [
+        {
+          "t": 58.88,
+          "text": "at"
+        },
+        {
+          "t": 59.02,
+          "text": "a"
+        },
+        {
+          "t": 59.1,
+          "text": "reported"
+        }
+      ]
     },
     {
       "start": 59.44,
       "end": 60.76,
-      "text": "$2,000 and up,"
+      "text": "$2,000 and up,",
+      "words": [
+        {
+          "t": 59.44,
+          "text": "$2,000"
+        },
+        {
+          "t": 60.38,
+          "text": "and"
+        },
+        {
+          "t": 60.6,
+          "text": "up,"
+        }
+      ]
     },
     {
       "start": 60.82,
       "end": 61.64,
-      "text": "it's just unsold"
+      "text": "it's just unsold",
+      "words": [
+        {
+          "t": 60.82,
+          "text": "it's"
+        },
+        {
+          "t": 61.0,
+          "text": "just"
+        },
+        {
+          "t": 61.16,
+          "text": "unsold"
+        }
+      ]
     },
     {
       "start": 61.64,
       "end": 62.28,
-      "text": "stock, so the"
+      "text": "stock, so the",
+      "words": [
+        {
+          "t": 61.64,
+          "text": "stock,"
+        },
+        {
+          "t": 62.04,
+          "text": "so"
+        },
+        {
+          "t": 62.18,
+          "text": "the"
+        }
+      ]
     },
     {
       "start": 62.28,
       "end": 62.94,
-      "text": "risk goes where"
+      "text": "risk goes where",
+      "words": [
+        {
+          "t": 62.28,
+          "text": "risk"
+        },
+        {
+          "t": 62.54,
+          "text": "goes"
+        },
+        {
+          "t": 62.72,
+          "text": "where"
+        }
+      ]
     },
     {
       "start": 62.94,
       "end": 63.6,
-      "text": "the volume is."
+      "text": "the volume is.",
+      "words": [
+        {
+          "t": 62.94,
+          "text": "the"
+        },
+        {
+          "t": 63.06,
+          "text": "volume"
+        },
+        {
+          "t": 63.32,
+          "text": "is."
+        }
+      ]
     },
     {
       "start": 64.04,
       "end": 64.44,
-      "text": "None of it's"
+      "text": "None of it's",
+      "words": [
+        {
+          "t": 64.04,
+          "text": "None"
+        },
+        {
+          "t": 64.16,
+          "text": "of"
+        },
+        {
+          "t": 64.28,
+          "text": "it's"
+        }
+      ]
     },
     {
       "start": 64.44,
       "end": 65.42,
-      "text": "confirmed, and lighting"
+      "text": "confirmed, and lighting",
+      "words": [
+        {
+          "t": 64.44,
+          "text": "confirmed,"
+        },
+        {
+          "t": 65.08,
+          "text": "and"
+        },
+        {
+          "t": 65.16,
+          "text": "lighting"
+        }
+      ]
     },
     {
       "start": 65.42,
       "end": 66.48,
-      "text": "changes how any"
+      "text": "changes how any",
+      "words": [
+        {
+          "t": 65.42,
+          "text": "changes"
+        },
+        {
+          "t": 65.94,
+          "text": "how"
+        },
+        {
+          "t": 66.22,
+          "text": "any"
+        }
+      ]
     },
     {
       "start": 66.48,
       "end": 67.68,
-      "text": "color reads. So"
+      "text": "color reads. So",
+      "words": [
+        {
+          "t": 66.48,
+          "text": "color"
+        },
+        {
+          "t": 66.74,
+          "text": "reads."
+        },
+        {
+          "t": 67.48,
+          "text": "So"
+        }
+      ]
     },
     {
       "start": 67.68,
       "end": 68.7,
-      "text": "plum, not red."
+      "text": "plum, not red.",
+      "words": [
+        {
+          "t": 67.68,
+          "text": "plum,"
+        },
+        {
+          "t": 68.24,
+          "text": "not"
+        },
+        {
+          "t": 68.4,
+          "text": "red."
+        }
+      ]
     },
     {
       "start": 69.14,
       "end": 69.66,
-      "text": "Still the one"
+      "text": "Still the one",
+      "words": [
+        {
+          "t": 69.14,
+          "text": "Still"
+        },
+        {
+          "t": 69.36,
+          "text": "the"
+        },
+        {
+          "t": 69.54,
+          "text": "one"
+        }
+      ]
     },
     {
       "start": 69.66,
       "end": 70.04,
-      "text": "you'd pick?"
+      "text": "you'd pick?",
+      "words": [
+        {
+          "t": 69.66,
+          "text": "you'd"
+        },
+        {
+          "t": 69.92,
+          "text": "pick?"
+        }
+      ]
     }
   ],
-  "script": "Apple's iPhone 18 Pro has a new signature color.\n\nIt's called Dark Cherry \u2014 and nobody agrees what it looks like.\n\nWhich is odd, because we know its exact Pantone code.\n\nAnd here's the catch: Apple's most expensive iPhone ever doesn't get it.\n\nBut first \u2014 what color is this actually?\n\nEvery render you've seen leans red.\n\nBut the leaker who detailed it says those are wrong. It's purple-tinged.\n\nAnd the reports pin it to one number: Pantone 6076.\n\nPantone files that under Red-Purple. In plain terms: a dark plum.\n\nSo if you're picturing a rich red iPhone, the real one is quieter and browner than you expect.\n\nIt's still the only risk in the lineup: Silver, Dark Gray, and a Light Blue.\n\nAnd reports don't even agree Dark Gray survives.\n\nNow \u2014 that most expensive iPhone.\n\nThe foldable iPhone Ultra reportedly gets two. Silver, and a dark blue.\n\nBoth from leaked camera protectors, not the phone.\n\nA bold color is a bet. Sell millions and a miss gets absorbed \u2014 but at a reported two thousand dollars and up, it's just unsold stock.\n\nSo the risk goes where the volume is.\n\nNone of it's confirmed \u2014 and lighting changes how any color reads.\n\nSo \u2014 plum, not red. Still the one you'd pick?",
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": []
+  },
+  "script": "Apple's iPhone 18 Pro has a new signature color.\n\nIt's called Dark Cherry — and nobody agrees what it looks like.\n\nWhich is odd, because we know its exact Pantone code.\n\nAnd here's the catch: Apple's most expensive iPhone ever doesn't get it.\n\nBut first — what color is this actually?\n\nEvery render you've seen leans red.\n\nBut the leaker who detailed it says those are wrong. It's purple-tinged.\n\nAnd the reports pin it to one number: Pantone 6076.\n\nPantone files that under Red-Purple. In plain terms: a dark plum.\n\nSo if you're picturing a rich red iPhone, the real one is quieter and browner than you expect.\n\nIt's still the only risk in the lineup: Silver, Dark Gray, and a Light Blue.\n\nAnd reports don't even agree Dark Gray survives.\n\nNow — that most expensive iPhone.\n\nThe foldable iPhone Ultra reportedly gets two. Silver, and a dark blue.\n\nBoth from leaked camera protectors, not the phone.\n\nA bold color is a bet. Sell millions and a miss gets absorbed — but at a reported two thousand dollars and up, it's just unsold stock.\n\nSo the risk goes where the volume is.\n\nNone of it's confirmed — and lighting changes how any color reads.\n\nSo — plum, not red. Still the one you'd pick?",
   "approval": {
     "sha256": "c35d4242aa9701d25f617ab67be4e1018484e06382e6c20d05397a9249b433ba",
     "approvedAt": "2026-08-21T05:47:40+00:00",
     "words": 214,
-    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this — the hash stops matching and G27 blocks the build."
   }
 }

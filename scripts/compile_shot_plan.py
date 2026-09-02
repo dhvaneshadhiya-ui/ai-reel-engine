@@ -620,6 +620,51 @@ def main() -> None:
         if (scene.get("type") == "commentcta"
                 and scene.get("variant") == "keyword"):
             scene.setdefault("captionBottom", 880)
+        # WHAT IS THE VIEWER LOOKING AT? (2026-09-02)
+        #
+        # `surface` answers the one question that decides whether an asset
+        # belongs inside a device frame, and it is DECLARED because it cannot
+        # be measured. The obvious guess — "1080x1920 means a phone screen
+        # recording" — is wrong: 8 of the 32 exactly-1080x1920 clips in this
+        # repo are iphone18-colors' Pantone chip graphics, and a bezel around
+        # a colour swatch lies about what is on screen. The manifest's existing
+        # `kind` could not carry this: it is already a mix of media type and
+        # provenance (clip / receipt / still / coded-graphic / brand /
+        # first-party-product-video), so a new asset's `kind` says nothing
+        # about how it should be framed.
+        #
+        #   screen   a device UI recording -> deviceframe. "go do this."
+        #   graphic  full-frame designed art -> full bleed. "look at this."
+        #   world    real-world footage -> full bleed. "look at this."
+        #
+        # FORCED, with an explicit escape hatch, exactly like the zoomDir hold
+        # above: the whole reason to record a screen is to show the phone, and
+        # a full-bleed UI recording was the user's own complaint on
+        # chatgpt-stickers ("didn't use real iPhone mockup"). An author who
+        # genuinely wants a screen recording full-bleed writes
+        # `"fullBleed": true` on the scene and this leaves it alone. Advice was
+        # tried for exactly one reel and ignored, which is this repo's whole
+        # recurring lesson.
+        surface = str((asset or {}).get("surface") or "")
+        if surface and surface not in ("screen", "graphic", "world"):
+            raise SystemExit(
+                f"shot {index}: asset {asset_id!r} declares surface "
+                f"{surface!r} — must be 'screen', 'graphic' or 'world'")
+        if surface == "screen" and scene.get("type") == "footage" \
+                and not scene.get("fullBleed"):
+            src_keep = scene.get("src")
+            scene["type"] = "deviceframe"
+            scene["kind"] = "phone"
+            scene.pop("zoomDir", None)      # a device card keeps its push
+            if src_keep:
+                scene["src"] = src_keep
+            print(f"  shot {index}: asset {asset_id!r} is a screen recording "
+                  f"-> deviceframe(phone). Set \"fullBleed\": true on the "
+                  f"scene to keep it full-frame.")
+        if scene.pop("fullBleed", None) and surface == "screen":
+            print(f"  shot {index}: screen recording held FULL BLEED by "
+                  f"explicit fullBleed — the UI will not sit in a phone.")
+
         if asset:
             scene.setdefault("assetId", str(asset_id))
             scene.setdefault("claimId", str(shot.get("claim_id", asset_id)))
@@ -704,17 +749,21 @@ def main() -> None:
                       f"exactly 1080x1920 — a push would crop the UI, so "
                       f"zoomDir is held at 'none'. Use `zoom` to reframe "
                       f"deliberately.")
-                print(f"  ADVICE shot {index}: IF this is a phone SCREEN "
-                      f"RECORDING, `deviceframe` (kind 'phone') reads as a "
-                      f"real handset and keeps its push, because the push "
-                      f"scales the device CARD and cannot crop the UI. "
-                      f"Full-bleed footage has to choose between motion and a "
-                      f"whole screen; a device frame does not. IF it is a "
-                      f"full-frame motion graphic or vertical b-roll, leave "
-                      f"it full-bleed — 1080x1920 does NOT mean 'screen': "
-                      f"iphone18-colors has 8 Pantone chip graphics at "
-                      f"exactly this size, and a bezel around a colour swatch "
-                      f"would be a lie about what the viewer is looking at.")
+                # Once `surface` is declared the author has ANSWERED this
+                # question, and repeating it is noise — which is how a repo
+                # full of advisories teaches people to skip advisories.
+                if not surface:
+                    print(f"  ADVICE shot {index}: IF this is a phone SCREEN "
+                        f"RECORDING, `deviceframe` (kind 'phone') reads as "
+                        f"a real handset and keeps its push, because the push "
+                        f"scales the device CARD and cannot crop the UI. "
+                        f"Full-bleed footage has to choose between motion and "
+                        f"a whole screen; a device frame does not. IF it is a "
+                        f"full-frame motion graphic or vertical b-roll, leave "
+                        f"it full-bleed — 1080x1920 does NOT mean 'screen': "
+                        f"iphone18-colors has 8 Pantone chip graphics at "
+                        f"exactly this size, and a bezel around a colour "
+                        f"swatch would be a lie about what is on screen.")
 
         if scene.get("type") == "deviceframe" and scene.get("zoomDir") == "none":
             # THE EXACT-FIT RULE ABOVE DOES NOT TRANSFER HERE (2026-09-01).
