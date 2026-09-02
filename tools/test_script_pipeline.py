@@ -29,6 +29,7 @@ import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+ROOT_DIR = Path(__file__).resolve().parent.parent
 import check_script  # noqa: E402
 import script_approval as sa  # noqa: E402
 
@@ -736,6 +737,23 @@ def run() -> int:
               for f in glob.glob(str(Path(__file__).resolve().parent.parent
                                      / "jobs/*/script.md")))
     ok("no false refusals across every shipped script", _fp == 0)
+
+    # 7c. ANGLE FINDINGS MUST BE PROMOTED, not buried among style notes.
+    #
+    # claude-fable-5-1's script produced "the first 'you' arrives 78% of the
+    # way in", WHAT WITHOUT SO WHAT and NO OPEN LOOP before it was ever made.
+    # All three describe whether the reel is about anybody; all three printed
+    # as item six of nine under "none of this blocks". The user's verdict
+    # afterwards was that they did not like the angle. The check existed; the
+    # presentation buried it.
+    print("\n  -- angle findings are surfaced --")
+    _sa = (ROOT_DIR / "tools" / "script_approval.py").read_text()
+    ok("propose separates angle from style",
+       "IS THIS REEL ABOUT THE VIEWER?" in _sa)
+    for _k in ("SECOND PERSON", "WHAT WITHOUT SO WHAT", "NO OPEN LOOP"):
+        ok(f"angle key promoted: {_k}", f'"{_k}"' in _sa or _k in _sa)
+    ok("style notes still print separately",
+       "PROSE (advice — style is craft" in _sa)
 
     # 8. check_script's own selftest — structure thresholds + AI tells.
     print("\n  -- check_script selftest --")

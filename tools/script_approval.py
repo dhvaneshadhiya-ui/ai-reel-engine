@@ -438,8 +438,38 @@ def cmd_propose(slug: str) -> None:
             "HUMANIZER: recorded for this draft. The checks above are the "
             "measurable half; the `humanizer` pass is the half that decides "
             "whether it sounds like a person.")
+        # ANGLE IS NOT STYLE, AND FILING IT UNDER STYLE IS HOW A BAD REEL
+        # SHIPPED (2026-09-02).
+        #
+        # claude-fable-5-1's script produced this finding before it was ever
+        # made: "the first 'you' arrives 78% of the way in — until then the
+        # viewer is watching something happen to other people". Alongside
+        # WHAT WITHOUT SO WHAT and NO OPEN LOOP. All three describe whether the
+        # reel is ABOUT anybody. All three were printed as item six of nine
+        # under a heading that says "none of this blocks", between a cadence
+        # note and a list of repeated phrases — so they were skimmed, the reel
+        # was approved, and the user's verdict afterwards was that they did not
+        # like the angle. The system knew. The presentation buried it.
+        #
+        # Still advice, because the constitution is explicit that taste does
+        # not block. But taste that decides whether anyone watches gets its own
+        # heading, above the rest, in the approver's language.
+        ANGLE_KEYS = ("SECOND PERSON", "WHAT WITHOUT SO WHAT", "NO OPEN LOOP",
+                      "OPENING has no", "UNANCHORED QUESTION")
+        angle = [f for f in findings if any(k in f for k in ANGLE_KEYS)]
+        rest = [f for f in findings if f not in angle]
+        if angle:
+            print("\n" + "=" * 68)
+            print("IS THIS REEL ABOUT THE VIEWER?  <- read these before approving")
+            print("=" * 68)
+            for _n in angle:
+                print(f"  - {_n}" if not _n.startswith("  ") else _n)
+            print("\n  These are not style notes. They are whether anybody\n"
+                  "  watching has a reason to keep watching. The last reel the\n"
+                  "  user rejected on 'the angle' had all of these, printed\n"
+                  "  further down a list headed 'none of this blocks'.")
         print("\nPROSE (advice — style is craft, none of this blocks):")
-        for _n in findings or ["  nothing to flag"]:
+        for _n in rest or ["  nothing to flag"]:
             print(f"  - {_n}" if not _n.startswith("  ") else _n)
         # framework S25 at the ONE moment the script can still change. The
         # measured half is answered; the rest is what the approver is for.
