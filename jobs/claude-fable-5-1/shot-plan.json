@@ -29,7 +29,14 @@
             }
           ]
         },
-        "credit": "Anthropic, 12 June 2026"
+        "credit": "Anthropic, 12 June 2026",
+        "sfx": [
+          {
+            "src": "sfx/whoosh.MP3",
+            "at": 0.0,
+            "vol": 0.16
+          }
+        ]
       }
     },
     {
@@ -90,7 +97,14 @@
             "h": 220
           }
         ],
-        "credit": "Anthropic, 1 September 2026"
+        "credit": "Anthropic, 1 September 2026",
+        "sfx": [
+          {
+            "src": "sfx/Magic Reveal.MP3",
+            "at": 0.0,
+            "vol": 0.15
+          }
+        ]
       }
     },
     {
@@ -112,7 +126,14 @@
         "kinetic": {
           "text": "1 MODEL\n2 FACES",
           "style": "caps"
-        }
+        },
+        "sfx": [
+          {
+            "src": "sfx/Pop.MP3",
+            "at": 0.0,
+            "vol": 0.14
+          }
+        ]
       }
     },
     {
@@ -200,7 +221,14 @@
             "h": 70
           }
         ],
-        "credit": "CNBC, 10 April 2026"
+        "credit": "CNBC, 10 April 2026",
+        "sfx": [
+          {
+            "src": "sfx/Click.MP3",
+            "at": 0.0,
+            "vol": 0.13
+          }
+        ]
       }
     },
     {
@@ -286,7 +314,14 @@
             "pct": 1.0
           }
         ],
-        "footnote": "Agents acting against real people on the live internet"
+        "footnote": "Agents acting against real people on the live internet",
+        "sfx": [
+          {
+            "src": "sfx/Core.MP3",
+            "at": 0.0,
+            "vol": 0.17
+          }
+        ]
       }
     },
     {
@@ -341,7 +376,14 @@
             "h": 240
           }
         ],
-        "credit": "ScienceDaily / The Conversation"
+        "credit": "ScienceDaily / The Conversation",
+        "sfx": [
+          {
+            "src": "sfx2/impact-boom.mp3",
+            "at": 0.0,
+            "vol": 0.19
+          }
+        ]
       }
     },
     {
@@ -403,7 +445,14 @@
             "h": 155
           }
         ],
-        "credit": "Artificial Analysis"
+        "credit": "Artificial Analysis",
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "at": 0.0,
+            "vol": 0.15
+          }
+        ]
       }
     },
     {
@@ -466,7 +515,14 @@
         "type": "footage",
         "src": "assets/claude-fable-5-1/avatar-master.mp4",
         "zoomDir": "in",
-        "focusX": 0.5
+        "focusX": 0.5,
+        "sfx": [
+          {
+            "src": "sfx/whoosh.MP3",
+            "at": 0.0,
+            "vol": 0.16
+          }
+        ]
       }
     }
   ],
