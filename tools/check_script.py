@@ -530,7 +530,14 @@ def check(text: str, shape: str | None = None) -> list[str]:
     # Strip quoted matter first. A "you" inside a quote is the SOURCE addressing
     # the viewer — Apple's ad copy saying "your world becomes savable" is not the
     # script speaking to anyone, and counting it hides a late entrance.
-    unquoted = re.sub(r"[\"“”'][^\"“”']{8,}[\"“”']", " ", flat)
+    #
+    # The lookarounds are load-bearing (2026-09-02). Without them a straight
+    # apostrophe INSIDE a word opens a quote: "Anthropic's ... map's" deleted
+    # everything between two possessives, and a script that said "you" twice
+    # was reported as never saying it. A quote delimiter never sits flush
+    # against word characters on the inside of a word; an apostrophe always
+    # does. Test: selftest()'s apostrophe case.
+    unquoted = re.sub(r"(?<!\w)[\"“”'][^\"“”']{8,}[\"“”'](?!\w)", " ", flat)
     unquoted = re.sub(r":\s*[a-z][^.!?]*", " ", unquoted)   # "Siri answers: ..."
     m = re.search(r"\byou\b|\byour\b|\byou're\b|\byou'll\b", unquoted, re.I)
     if not m:
@@ -860,6 +867,23 @@ def selftest() -> int:
              "Nobody expected it, so here we are.")
     check_("PAGE PUNCTUATION silent when the pauses are written out",
            not any(n.startswith("PAGE PUNCTUATION") for n in _notes_of(clean)))
+    # APOSTROPHES ARE NOT QUOTE MARKS (2026-09-02). The quote-stripper ran
+    # before the second-person check, and a straight apostrophe inside a word
+    # opened a quote it then closed at the next possessive — deleting every
+    # sentence in between. A script saying "you" twice was reported as never
+    # saying it, and the deletion silently reached the checks downstream too.
+    apos = ("Anthropic's model shipped Tuesday and the price is the story. "
+            "So if you leave an agent running, you pay less than before. "
+            "The map's resolution didn't move at all.")
+    check_("SECOND PERSON does not claim 'never' when 'you' sits between two possessives",
+           not any("never says" in n for n in _notes_of(apos)))
+    # ...and the behaviour it exists for still works: a real quoted 'you' is
+    # the SOURCE addressing the viewer, not the script, so it must NOT count.
+    quoted = ("The phone ships Tuesday and the price is the story. "
+              "Apple's own copy reads \"your world becomes savable now\". "
+              "Nobody expected it, so here we are.")
+    check_("SECOND PERSON still fires when the only 'your' is inside a quote",
+           any(n.startswith("SECOND PERSON") for n in _notes_of(quoted)))
     print("\n  self-test PASSED\n" if ok else "\n  self-test FAILED\n")
     return 0 if ok else 1
 

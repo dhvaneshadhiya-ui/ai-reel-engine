@@ -427,7 +427,10 @@ for _tool, _label in (("check_frame_contract", "frame contract"),
                       # unrun --selftest — the rule catching its own author.
                       ("vo_external", "external VO prep"),
                       ("vo_tagged", "tagged VO script"),
-                      ("idea_scout", "idea scout")):
+                      ("idea_scout", "idea scout"),
+                      # 2026-09-02, wired the same hour it was written — see
+                      # the vo_external note above for why that matters.
+                      ("cut_clips", "screen-recording cutter")):
     try:
         r = subprocess.run(
             [sys.executable, str(ROOT / f"tools/{_tool}.py"), "--selftest"],

@@ -387,9 +387,51 @@ python3 scripts/register_beats.py            # regenerates the composition index
 python3 scripts/render_job.py <slug>         # render + TWO-PASS master + G31
 ```
 
+**When the footage is ONE long screen recording**, do not cut it by hand. The
+shot plan already knows how long every beat runs — it is anchored to spoken
+phrases and the whisper timings — so only the *which moment goes where*
+decision needs a person:
+
+```bash
+python3 tools/cut_clips.py --scan _sources/<slug>/<recording>.mov
+# read out/<recording>-scan/scan-sheet.jpg, write the moments you chose into
+# jobs/<slug>/clip-map.json  ->  {"shots": {"<shot index>": <seconds>}}
+python3 tools/cut_clips.py --cut <slug> _sources/<slug>/<recording>.mov
+```
+
+It cuts each beat to the exact length its line needs, and REFUSES any clip that
+would come out shorter than its beat — a short clip freezes on its last frame,
+which is a blocking RENDER fault. A shot with no entry in the map is skipped,
+never guessed: matching a moment to a line is a judgement about content, and
+scene detection cannot make it. chatgpt-stickers' 18 clips were cut by hand
+before this existed.
+
+Then declare the assets `"surface": "screen"` in the manifest so the compiler
+frames them as a phone rather than full-bleed (see **Surface** below).
+
 **Fallback: a bespoke build script**, for a reel whose structure the shot plan
 cannot express. You then owe `covers` by hand (`tools/link_shots.py <slug>`
 justifies what it can from the manifest and refuses to guess the rest).
+
+### Surface — what is the viewer looking at?
+
+Every manifest asset may declare `surface`, and it decides the framing:
+
+| surface | means | treatment |
+|---|---|---|
+| `screen` | a device UI recording | `deviceframe` — "go do this on your phone" |
+| `graphic` | full-frame designed art | full bleed — "look at this" |
+| `world` | real-world footage | full bleed — "look at this" |
+
+A `screen` asset in a plain `footage` shot is **forced** into
+`deviceframe(phone)` at compile. Write `"fullBleed": true` on the scene to
+opt out deliberately.
+
+**It is declared because it cannot be measured.** The obvious guess — 1080x1920
+means a phone screen recording — is wrong: 8 of this repo's 32 exactly-1080x1920
+clips are `iphone18-colors`' Pantone chip graphics, and a bezel around a colour
+swatch lies about what is on screen. A document you want READ is neither: that
+is `sourceread` / `receipt`, full bleed, because a bezel only shrinks the words.
 
 ```bash
 cp tools/build_template.py tools/build_<slug>.py   # then fill it in
