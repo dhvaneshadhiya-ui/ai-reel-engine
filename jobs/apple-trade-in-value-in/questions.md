@@ -24,3 +24,10 @@
 4. **Same CTA question as the US cut.** It now asks for a comment without
    promising a personal reply. `jobs/apple-trade-in-value/values-reference.md`
    has all 32 models in both currencies, so you *can* answer them if you want.
+
+5. **Platform: Instagram Reels.** No link anywhere, in the script or the
+   caption, because Instagram captions are not clickable — promising one would
+   be a lie. Hashtags are three, in the first comment, per the cap
+   `packaging_check.py` enforces (Instagram ignores everything past five since
+   August 2025). The render geometry is identical to the YouTube cut:
+   `SAFE_RECT` already clears both platforms' overlays.

@@ -30,3 +30,12 @@
    faceless is a channel decision, not a format one. My default: presenter on
    the CTA only (~15%), which keeps the face on the ask and gives the whole
    middle to the page. Say if you want a normal presenter open too.
+
+6. **Platform: YouTube Shorts.** The CTA now points at the description, where
+   Apple's full 32-model list is linked, because a YouTube description carries
+   a real clickable link. The India cut cannot do this and asks for a comment
+   instead. Nothing else about the render changes: `SAFE_RECT` in
+   `src/platformSafeArea.ts` is deliberately the INTERSECTION of both
+   platforms' overlays ("the rect below clears both"), so one geometry is
+   already correct for either. I did not add a platform switch to the
+   renderer, because there is nothing for it to switch.

@@ -12,4 +12,4 @@ Apple says it plainly underneath: values vary by condition, year and configurati
 
 So the list gives you a ceiling. For the number you'll actually be offered, tap Find your trade-in value and answer the condition questions honestly.
 
-Comment your model and I'll reply with its ceiling off Apple's full list, so you know the number before you walk in.
+Apple's full list is linked below. Comment your model and I'll reply with its ceiling, so you know the number before you walk in.

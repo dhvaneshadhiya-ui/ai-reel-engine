@@ -10,22 +10,17 @@
       "asset_id": "hook",
       "scene": {
         "type": "split",
-        "topSrc": "assets/claude-fable-5-1/rc-ban-head.png",
+        "topSrc": "assets/claude-fable-5-1/rc-ban-hook.png",
         "bottomSrc": "assets/claude-fable-5-1/avatar-master.mp4",
         "bottomFocusX": 0.5,
         "headline": {
-          "y": 0.05,
-          "theme": "dark",
+          "y": 0.045,
+          "theme": "light",
           "lines": [
             {
-              "text": "THIS AI GOT",
-              "kind": "label",
-              "at": 0.05
-            },
-            {
-              "text": "BANNED?!",
+              "text": "THIS AI GOT BANNED?!",
               "kind": "headline",
-              "at": 0.3
+              "at": 0.1
             }
           ]
         },
@@ -258,13 +253,13 @@
         "type": "receipt",
         "src": "assets/claude-fable-5-1/rc-banks.png",
         "srcWidth": 1080,
-        "srcHeight": 600,
-        "backdrop": "black",
+        "srcHeight": 1700,
+        "backdrop": "cream",
         "highlights": [
           {
             "at": 0.4,
             "x": 55,
-            "y": 20,
+            "y": 570,
             "w": 220,
             "h": 70
           }
@@ -296,20 +291,20 @@
         "type": "receipt",
         "src": "assets/claude-fable-5-1/rc-banks.png",
         "srcWidth": 1080,
-        "srcHeight": 600,
-        "backdrop": "black",
+        "srcHeight": 1700,
+        "backdrop": "cream",
         "highlights": [
           {
             "at": 0.5,
             "x": 55,
-            "y": 100,
+            "y": 650,
             "w": 960,
             "h": 370
           },
           {
             "at": 3.6,
             "x": 55,
-            "y": 490,
+            "y": 1040,
             "w": 760,
             "h": 100
           }
@@ -355,13 +350,13 @@
         "type": "receipt",
         "src": "assets/claude-fable-5-1/rc-banks.png",
         "srcWidth": 1080,
-        "srcHeight": 600,
-        "backdrop": "black",
+        "srcHeight": 1700,
+        "backdrop": "cream",
         "highlights": [
           {
             "at": 0.2,
             "x": 55,
-            "y": 300,
+            "y": 850,
             "w": 960,
             "h": 170
           }
