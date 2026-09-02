@@ -293,14 +293,28 @@ def main() -> None:
         for tool, tool_args in [
             ("tools/check_frame_contract.py", [args.slug]),
             ("tools/pace_reel.py", [args.slug]),      # report only — see above
-            ("tools/auto_contrast.py", [args.slug]),
+            # --check: this one REFUSES. See the note in auto_contrast.py —
+            # report mode was right that a render must not rewrite an approved
+            # sheet, and wrong that it therefore cannot stop one. 30 ink
+            # choices in this repo disagree with the pixels and all of them
+            # shipped, including the grey band across claude-fable-5-1's hook.
+            ("tools/auto_contrast.py", [args.slug, "--check"]),
             ("tools/check_safe_area.py", [args.slug]),
             ("tools/check_palette.py", ["--worst"]),
             ("tools/check_type.py", ["--worst"]),
         ]:
             print(f"\n+ {tool} {' '.join(tool_args)}")
-            subprocess.run([sys.executable, str(SKILL / tool), *tool_args],
-                           cwd=engine, check=False)
+            r = subprocess.run([sys.executable, str(SKILL / tool), *tool_args],
+                               cwd=engine, check=False)
+            # ONE of these refuses. auto_contrast --check compares the ink on
+            # the sheet against the luminance of the pixels behind it, and a
+            # measured-wrong choice is not advice: light type on a bright frame
+            # is illegible on a phone on mute, which is Rule 1. It refuses
+            # rather than rewriting, so the approved sheet is never edited
+            # behind the user's back.
+            if "--check" in tool_args and r.returncode != 0:
+                sys.exit(
+                    f"\nrender stopped — {tool} refused. Its message is above.\n")
         print("─" * 70 + "\n")
 
     # PREFLIGHT ON STILLS — catch on 5 frames what used to cost 2283.

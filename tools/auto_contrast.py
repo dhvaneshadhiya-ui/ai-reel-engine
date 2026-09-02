@@ -108,7 +108,24 @@ def main() -> None:
                 print(f"  scene {i:02d} — media missing on disk, skipped")
                 continue
 
-            at = float(sc.get("from", 0)) + min(0.4, sc.get("durationSec", 1) / 2)
+            # A STILL HAS NO 0.4s TO SEEK TO (2026-09-02).
+            #
+            # This seeked 0.4s into every source. On a video that lands mid-shot;
+            # on a PNG it seeks past the end of a one-frame stream, ffmpeg exits
+            # 0 having written nothing, and the scene was reported as "could not
+            # read a frame, skipped". Silently — so a tool built to replace a
+            # hand-typed flag with a measurement was blind to every still-image
+            # backdrop, which is precisely where the typed flag is most likely
+            # to be wrong.
+            #
+            # Found on claude-fable-5-1, whose HOOK is a split over a still: the
+            # one frame the user complained about first was the one frame this
+            # never measured.
+            is_still = f.suffix.lower() in (
+                ".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp", ".tif", ".tiff")
+            at = 0.0 if is_still else (
+                float(sc.get("from", 0) or 0)
+                + min(0.4, sc.get("durationSec", 1) / 2))
             shot = Path(td) / f"{i}.png"
             r = subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(at),
                                 "-i", str(f), "-frames:v", "1", str(shot)],
@@ -187,6 +204,29 @@ def main() -> None:
         print(f"\n  {changed} headline(s) and {cap_changed} caption(s) disagree "
               "with the footage"
               + ("" if not (changed or cap_changed) else "  (--write to fix)"))
+
+    # --check MAKES THIS A LINT (2026-09-02, RULES.md's middle category).
+    #
+    # Report mode is right about one thing and wrong about the consequence.
+    # Right: silently rewriting a sheet the user approved under G27 during a
+    # render is an edit, not a measurement, and it should never happen. Wrong:
+    # that is an argument against WRITING, not against REFUSING. A measurement
+    # nobody has to act on is a measurement nobody acts on — 30 headline and
+    # caption ink choices across this repo disagree with the pixels behind
+    # them, against 58 that agree, and every one of them shipped.
+    #
+    # claude-fable-5-1's hook is the case that matters: light ink measured
+    # against luminance 0.98, near-white. That forced the legibility scrim to
+    # 46% black over a white document, which is the grey band across the first
+    # frame of the reel. Fix the ink and the band has nothing to do.
+    if "--check" in sys.argv and (changed or cap_changed):
+        sys.exit(
+            f"\n  INK DISAGREES WITH THE PIXELS — {changed} headline(s), "
+            f"{cap_changed} caption(s).\n"
+            "  Light type on a bright frame is illegible on a phone on mute, "
+            "and it drags\n  a heavy scrim in behind it to compensate. Fix "
+            "`theme` / `captionTheme` on the\n  sheet, or re-run with --write "
+            "and re-approve. This refuses; it does not edit.\n")
 
 
 if __name__ == "__main__":
