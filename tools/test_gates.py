@@ -675,6 +675,29 @@ def _onset_cut() -> dict:
 expect_pass(_onset_cut(),
             "a cut landing exactly on a word onset does not trip G18")
 
+def _receipt(w: int, h: int, allow: bool = False):
+    """Turn the fixture's scene 4 into a receipt of a given source geometry."""
+    def mutate(sheet: dict) -> None:
+        sc = sheet["scenes"][4]
+        sc.clear()
+        sc.update(type="receipt", durationSec=2.4, src="assets/x/rc.png",
+                  srcWidth=w, srcHeight=h, credit="@src", covers="benchmark",
+                  highlights=[{"x": 40, "y": 40, "w": 200, "h": 60}])
+        if allow:
+            sc["allowSmallReceipt"] = "a one-line quote; no capture makes it taller"
+    return mutate
+
+
+# G59 — the format rule, measured. 936x240 is claude-fable-5-1's real
+# anthropic-hero.png: a card that fills 14% of the frame and blurs the other
+# 86%. 1080x1920 is a mobile capture and fills it completely.
+expect_fail(_receipt(936, 240), "G59",
+            "a receipt whose card fills 14% of a 9:16 frame")
+expect_pass(_sheet(_receipt(1080, 1920)),
+            "a receipt captured at 9:16 fills the frame and passes G59")
+expect_pass(_sheet(_receipt(936, 240, allow=True)),
+            "allowSmallReceipt lets a genuinely short artefact through")
+
 expect_fail(_typecard({"text": "ACROSS THE BOARD", "style": "caps", "at": 41.2}),
             "G58", "a typecard whose only line lands after the scene ends")
 expect_fail(_typecard({"text": "PRICES UP\nACROSS THE BOARD", "style": "caps",

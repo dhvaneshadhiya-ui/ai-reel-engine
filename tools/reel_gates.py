@@ -296,6 +296,45 @@ DUR_MAX = {                                # 2026-07-28 / 2026-07-31
 # changes nothing until a teardown says it should.
 
 
+# G59's floor: how much of a 1080x1920 frame a receipt card actually fills.
+#
+# ReceiptScene sizes a card at 86% of frame WIDTH and takes its height from the
+# source aspect, then caps the zoom at width/cardW so a document is never
+# cropped horizontally — you can read a page whose bottom is off-screen, you
+# cannot read a line whose beginning is. That rule is right and stays.
+#
+# The consequence nobody measured: a card only reaches the full 1920 when its
+# source is at least 9:16 (aspect >= 1.78). Below that, the remainder of the
+# frame is the blurred backdrop, and NOTHING checked how much remainder there
+# was. Measured across every beat sheet in the repo on 2026-09-02:
+#
+#   69 of 117 receipt scenes fill under 60% of frame height
+#   17 of 23 reels contain at least one
+#   worst: claude-fable-5-1's anthropic-hero.png, 936x240 -> 277px of 1920,
+#          14% picture and 86% blur, held for 1.8s
+#
+# Several of those sources are 936px wide, which is not the mobile capture
+# tools/capture.mjs produces by default (1080x2340) — they are desktop-ish
+# crops. So this is a CAPTURE fault surfacing at render time, and the fix is
+# to capture taller, not to crop the document sideways.
+#
+# 0.60 is not a taste threshold: below it the blurred backdrop is the majority
+# of the frame, and the thing the viewer is supposed to read is the minority.
+RECEIPT_FILL_MIN = 0.60
+
+
+def receipt_fill(scene: dict, frame_w: int = 1080, frame_h: int = 1920) -> float:
+    """Fraction of frame HEIGHT the receipt card can occupy at most.
+
+    Mirrors ReceiptScene: cardW = 0.86 * width, height from the source aspect,
+    zoom capped at width / cardW so the card never exceeds the frame width.
+    """
+    w, h = scene.get("srcWidth"), scene.get("srcHeight")
+    if not w or not h:
+        return 1.0                      # unknown geometry is not this gate's call
+    return (frame_w * (h / w)) / frame_h
+
+
 def dur_max_for(fmt: str) -> dict[str, float]:
     """The held-layout ceilings for a format: the defaults, plus its overrides."""
     return {**DUR_MAX, **((FORMATS.get(fmt) or {}).get("dur_max") or {})}
@@ -401,6 +440,7 @@ BLOCKING_RULES: dict[str, str] = {
     "G20": "R1 a row that never lands is unreadable on a phone",
     "G25": "R1 a cue that never lands is unreadable on a phone",
     "G58": "R1 display type that never lands leaves a muted beat with no words",
+    "G59": "R1 a receipt that fills a sliver of a 9:16 frame is mostly blur",
     "G30": "R3 a split number makes the caption say what he did not",
     "G32": "R1 the outro must clear the platform's own chrome",
     "G34": "R1 an orphaned single letter is unreadable",
@@ -1221,6 +1261,41 @@ def check_beats(beats: dict, vo_end: float | None = None,
         rows = sum(len(g.get("rows") or []) for g in (sc.get("groups") or []))
         if rows == 0:
             errors.append(f"G25 scene {i:02d} settingspane has no rows.")
+
+    # G59 — A RECEIPT MUST ACTUALLY FILL THE 9:16 FRAME (2026-09-02).
+    #
+    # BLOCKING, under Rule 1. The constitution's first rule is that we make
+    # videos for Reels and Shorts, 9:16, watched on a phone. A document
+    # occupying 14% of that frame with 86% blurred backdrop around it is not a
+    # judgement call about taste; it is the format rule being broken by the
+    # thing the viewer is supposed to read.
+    #
+    # It stayed invisible because every layer was individually correct:
+    # capture.mjs defaults to mobile, ReceiptScene refuses to crop a document
+    # horizontally, and the frame linter reads pixels rather than geometry. No
+    # one multiplied the source aspect by the card rule. 69 of 117 receipt
+    # scenes in this repo fail it.
+    #
+    # THE FIX IS TO RE-CAPTURE TALLER, not to loosen this. A source at 9:16 or
+    # taller fills the frame completely. `allowSmallReceipt` exists for the
+    # genuinely short artefact — a one-line quote that no capture can make
+    # taller — and like allowLong it demands a written reason.
+    for i, sc in enumerate(scenes):
+        if sc["type"] not in ("receipt", "sourceread"):
+            continue
+        fill = receipt_fill(sc)
+        if fill >= RECEIPT_FILL_MIN or sc.get("allowSmallReceipt"):
+            continue
+        w, h = sc.get("srcWidth"), sc.get("srcHeight")
+        src = str(sc.get("src") or "?").split("/")[-1]
+        errors.append(
+            f"G59 scene {i:02d} {sc['type']} {src} is {w}x{h} (aspect "
+            f"{h / w:.2f}) — its card can fill only {fill:.0%} of frame "
+            f"height, so {1 - fill:.0%} of the frame is blurred backdrop. "
+            f"Re-capture at 9:16 or taller (tools/capture.mjs is mobile by "
+            f"default, 1080x2340); a taller source fills the frame with no "
+            f"other change. If the artefact genuinely cannot be taller, set "
+            f"`allowSmallReceipt` with a reason and say why on the sheet.")
 
     # G58 — TYPECARD AND KINETIC TYPE MUST LAND TOO (2026-09-01).
     #
