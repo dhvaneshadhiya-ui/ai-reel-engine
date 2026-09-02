@@ -319,6 +319,15 @@ been edited to match:
   say the SRC links inline in the chat report itself, not only in the
   Artifact — a report of headline titles with no links was explicitly
   called out as incomplete once already.
+  **REDEPLOY, don't recreate — read `jobs/_ideas/.artifact-url` first.**
+  2026-09-02's run had no way to know 2026-09-01's Artifact URL (that
+  context doesn't survive a compaction or a fresh session the way a repo
+  file does) and published a second, disconnected Artifact instead of
+  updating the first — exactly the kind of thing this file exists to
+  prevent. If `jobs/_ideas/.artifact-url` exists, publish with that URL as
+  `url` so it updates in place; after any publish (first time or not),
+  write the resulting URL back into that file so tomorrow's run has it.
+  One stable link, always current, is the whole point of a daily page.
 - **`--pick <file> <title-substring>`** logs which idea got made to
   `jobs/_ideas/_picked.md` (date, title, category, format) — nothing
   reads it back yet, but the day performance data exists, the log already
