@@ -339,6 +339,38 @@ def check_research(slug: str, script_text: str | None,
                 "advises rather than refusing; record it as a CLAIM if it is "
                 "load-bearing.")
 
+    # DID ANYONE LOOK BEYOND THE ANNOUNCEMENT? (2026-09-02)
+    #
+    # The absence check above catches the SENTENCE. This catches the HABIT that
+    # produced it. In the agent's own words on claude-fable-5-1: "I fetched the
+    # announcement and two write-ups and stopped." Every existing rule was
+    # satisfied by that — two independent DOMAINS is an announcement plus a
+    # rewrite of the announcement, and the VIA advice only fires when the SRCs
+    # literally name one origin.
+    #
+    # Nothing anywhere asked the one question a reader asks: what do people who
+    # have actually USED it say? For a product that launched hours ago and was
+    # being tested publicly, that is the whole story, and the ledger had no
+    # place to record having looked.
+    #
+    # So the log must carry an explicit line. It is a checkbox, and a checkbox
+    # can be ticked dishonestly — but it cannot be ticked ABSENTLY, and absence
+    # is what happened here. "N/A" is allowed and must say why: a reel about
+    # what a vendor's own page says has no independent test to find.
+    if "INDEPENDENT-CHECK:" not in body:
+        errors.append(
+            "NO INDEPENDENT CHECK RECORDED. Add one line to ## SEARCHED:\n"
+            "    INDEPENDENT-CHECK: <date> searched <what> for hands-on / "
+            "independent testing / reaction — found <what, or nothing>\n"
+            "  or, when the subject makes it meaningless:\n"
+            "    INDEPENDENT-CHECK: N/A — <why, e.g. the claim is what this "
+            "vendor's own page says>\n"
+            "  WHY: on claude-fable-5-1 the research was 'the announcement and "
+            "two write-ups', which satisfied every rule here, and the script "
+            "then asserted nobody had tested a model people were already "
+            "testing in public. Two independent DOMAINS can still be one "
+            "independent LOOK.")
+
     if claims and len(domains) < 2 and "ONE-SOURCE-OK:" not in body:
         advice.append(
             f"only {len(domains)} source domain(s) across the whole ledger "

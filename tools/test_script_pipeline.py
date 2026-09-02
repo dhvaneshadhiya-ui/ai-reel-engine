@@ -91,6 +91,9 @@ RESEARCH = """# Research — selftest
 ## SEARCHED
 
 - 2026-08-21  "iphone 18 pro september"  (freshness re-check)
+
+INDEPENDENT-CHECK: 2026-08-21 searched for hands-on coverage — none exists
+  yet for an unreleased phone, and the script says "reportedly" throughout.
 """
 
 

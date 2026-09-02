@@ -204,7 +204,15 @@ def main() -> None:
             "  VIA: <the ULTIMATE source the SRC cites — leaker, agency, own\n"
             "       testing; one line per independent origin, or delete>\n\n"
             "## SEARCHED\n\n"
-            "- <YYYY-MM-DD  \"query\"  (what it settled)>\n"
+            "- <YYYY-MM-DD  \"query\"  (what it settled)>\n\n"
+            "INDEPENDENT-CHECK: <date> searched <what> for hands-on /\n"
+            "  independent testing / reaction — found <what, or nothing>.\n"
+            "  Or: N/A — <why, e.g. the claim is what this vendor's own page\n"
+            "  says, so there is no independent test to find>.\n"
+            "  REQUIRED. claude-fable-5-1's research was \"the announcement\n"
+            "  and two write-ups\", which satisfied every other rule, and the\n"
+            "  script then said nobody had tested a model people were already\n"
+            "  testing in public.\n"
         ),
     )
     # structure.md — framework S17, the decision that comes BEFORE the first

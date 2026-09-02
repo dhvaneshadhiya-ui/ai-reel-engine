@@ -83,11 +83,23 @@ const IdleMotion: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { durationInFrames } = useVideoConfig();
   const t = durationInFrames > 0 ? frame / durationInFrames : 0;
   // Scale only UPWARD so no edge of the card can be pulled into frame — the
-  // same reason G48 blocks a footage `zoom` below 1. 2% over the whole beat is
-  // below conscious notice and still reads as alive rather than frozen.
+  // same reason G48 blocks a footage `zoom` below 1.
+  //
+  // 2% WAS INDISTINGUISHABLE FROM FROZEN. Measured 2026-09-02 on the rendered
+  // pixels, mean per-frame change mid-beat with the entry animation excluded:
+  //
+  //   footage with its 1.1x push      0.010 - 0.013
+  //   cards under 2% idle motion      0.00105 - 0.00253
+  //   a scene the linter calls static 0.00105
+  //
+  // A card carrying idle motion measured the same as a frozen one, so the
+  // comment that used to sit here — "below conscious notice and still reads as
+  // alive" — was half right and the wrong half was the half that mattered.
+  // 7% lands between the no-op and a full footage push: a slow drift rather
+  // than a zoom. The after-figures are in STYLE-RULES 2026-09-02.
   return (
     <AbsoluteFill
-      style={{ transform: `translateY(${-6 * t}px) scale(${1 + 0.02 * t})` }}
+      style={{ transform: `translateY(${-18 * t}px) scale(${1 + 0.07 * t})` }}
     >
       {children}
     </AbsoluteFill>

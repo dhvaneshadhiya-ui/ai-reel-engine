@@ -85,3 +85,8 @@ static fetch of the same URL returns no table at all.
   (settled that it is USELESS here: it returned "the webpage content does not
    include a trade-in values table" because the table is JavaScript-rendered.
    Anything read only through a static fetch would have missed the payoff.)
+
+INDEPENDENT-CHECK: N/A — every figure in this reel is a fact about
+what Apple publishes on Apple's own page. There is no independent test
+of "what does this page say"; the page is the primary record, and it
+was read from the live DOM rather than a static fetch.

@@ -79,3 +79,8 @@ JavaScript-rendered and a static fetch returns nothing.
    layout even at 360px, putting 32 rows on one screen at unreadable size.
    The ladder is therefore a coded graphic built from the verified numbers,
    with the readable four-row table as its receipt.)
+
+INDEPENDENT-CHECK: N/A — same as the USD cut: the claims are what
+Apple India's own page and value overlay say, read from the live DOM
+2026-09-02. No third party can be more authoritative about Apple's
+published prices than Apple's published prices.

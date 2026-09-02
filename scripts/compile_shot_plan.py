@@ -620,6 +620,46 @@ def main() -> None:
         if (scene.get("type") == "commentcta"
                 and scene.get("variant") == "keyword"):
             scene.setdefault("captionBottom", 880)
+        # SEVERAL THINGS TO READ IS A READ, NOT A FRAME (2026-09-02).
+        #
+        # Two document components exist and nothing ever chose between them.
+        # ReceiptScene frames ONE region and pushes 5%. SourceRead fits the
+        # page to frame width and SCROLLS between the lines as they land.
+        # Measured on the rendered pixels, displacement over one second
+        # mid-scene:
+        #
+        #     sourceread   15.0 - 16.5      (footage reference: 12.9 - 17.3)
+        #     receipt       0.97 - 4.7
+        #
+        # claude-fable-5-1 used `receipt` sixteen times and `sourceread` never,
+        # which is why it reads as a slideshow of stills — the user's "no
+        # zooming or scrolling effects", measured.
+        #
+        # The principled line: a document carrying TWO OR MORE highlights has
+        # two or more things to read, and a component that frames one region
+        # can only shrink to fit both. Reading them in sequence is what
+        # SourceRead is for. 17 of 90 receipt scenes in this repo are that
+        # shape. `keepReceipt` opts out for a page where the two marks really
+        # are one glance.
+        hls = scene.get("highlights") or []
+        if scene.get("type") == "receipt" and len(hls) >= 2 \
+                and not scene.get("keepReceipt"):
+            dur = float(scene.get("durationSec") or 0) or 2.5
+            # spread the landings across the beat, leaving the tail to settle
+            span = max(0.6, dur - 0.9)
+            scene["type"] = "sourceread"
+            scene["lines"] = [
+                {"at": round(0.5 + (span * n / max(1, len(hls) - 1)), 2),
+                 "x": h.get("x", 0), "y": h.get("y", 0),
+                 "w": h.get("w", 0), "h": h.get("h", 0)}
+                for n, h in enumerate(hls)
+            ]
+            scene.pop("highlights", None)
+            scene.setdefault("follow", True)
+            print(f"  shot {index}: receipt with {len(hls)} highlights -> "
+                  f"sourceread, read in sequence. It scrolls; a receipt does "
+                  f"not. Set \"keepReceipt\": true to frame it as one glance.")
+
         # A CAPTION MUST NOT SIT ON THE WORDS THE RECEIPT IS HIGHLIGHTING
         # (2026-09-02). Only `split` and `commentcta` ever got a caption lane,
         # so a receipt used the global fallback and landed wherever that put
