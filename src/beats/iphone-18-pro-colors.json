@@ -1,0 +1,1755 @@
+{
+  "id": "iphone-18-pro-colors",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/iphone-18-pro-colors/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "leaker",
+    "seven",
+    "four",
+    "three",
+    "silver",
+    "two",
+    "CAD",
+    "cherry",
+    "contradicted",
+    "official",
+    "survives"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "topSrc": "assets/iphone-18-pro-colors/receipt-9to5mac-sept1-crop.png",
+      "bottomSrc": "assets/iphone-18-pro-colors/avatar-master.mp4",
+      "captionBottom": 1000,
+      "headline": {
+        "lines": [
+          {
+            "text": "IPHONE 18 PRO",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "LIST FLIPPED",
+            "kind": "headline",
+            "at": 0.55
+          }
+        ],
+        "y": 0.06,
+        "theme": "dark"
+      },
+      "credit": "Report, Sep 1 2026",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 0.15,
+          "vol": 0.32
+        }
+      ],
+      "durationSec": 4.66,
+      "assetId": "hook-9to5mac",
+      "claimId": "hook-9to5mac",
+      "covers": "A leaker just flipped",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.5
+    },
+    {
+      "type": "typecard",
+      "bg": "black",
+      "kinetic": {
+        "text": "7 DAYS",
+        "style": "caps",
+        "at": 0.3,
+        "y": 0.4
+      },
+      "durationSec": 5.16,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "covers": "What nobody's flagging yet:"
+    },
+    {
+      "type": "categorygrid",
+      "headline": "THE OLD STORY",
+      "cards": [
+        {
+          "label": "DARK CHERRY"
+        },
+        {
+          "label": "SILVER"
+        },
+        {
+          "label": "DARK GRAY"
+        },
+        {
+          "label": "LIGHT BLUE"
+        }
+      ],
+      "bg": "cream",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.1,
+          "vol": 0.343
+        }
+      ],
+      "durationSec": 5.0,
+      "assetId": "grid-old-story",
+      "claimId": "grid-old-story",
+      "covers": "the accepted story was"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone-18-pro-colors/receipt-macrumors-sept1-crop.png",
+      "srcWidth": 1020,
+      "srcHeight": 1300,
+      "backdrop": "cream",
+      "credit": "Report, Sep 1 2026",
+      "durationSec": 3.5,
+      "assetId": "proof-macrumors-corroboration",
+      "claimId": "proof-macrumors-corroboration",
+      "covers": "Now a leaker who"
+    },
+    {
+      "type": "categorygrid",
+      "headline": "THE NEW CLAIM",
+      "cards": [
+        {
+          "label": "DARK CHERRY"
+        },
+        {
+          "label": "SKY BLUE"
+        },
+        {
+          "label": "BLACK"
+        }
+      ],
+      "bg": "cream",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.1,
+          "vol": 0.343
+        }
+      ],
+      "durationSec": 4.14,
+      "assetId": "grid-new-claim",
+      "claimId": "grid-new-claim",
+      "covers": "Their replacement is just"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/iphone-18-pro-colors/receipt-macrumors-sept1-crop.png",
+      "srcWidth": 1020,
+      "srcHeight": 1300,
+      "bg": "cream",
+      "crop": true,
+      "focus": {
+        "x": 0,
+        "y": 0,
+        "w": 1020,
+        "h": 260
+      },
+      "annotations": [
+        {
+          "kind": "circle",
+          "at": 0.15,
+          "x": 40,
+          "y": 125,
+          "w": 320,
+          "h": 95
+        }
+      ],
+      "credit": "Report, Sep 1 2026",
+      "durationSec": 1.96,
+      "assetId": "proof-macrumors-corroboration",
+      "claimId": "proof-macrumors-corroboration",
+      "covers": "Silver was the color"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/iphone-18-pro-colors/receipt-macrumors-sept1-crop.png",
+      "srcWidth": 1020,
+      "srcHeight": 1300,
+      "bg": "cream",
+      "crop": true,
+      "focus": {
+        "x": 0,
+        "y": 395,
+        "w": 1020,
+        "h": 300
+      },
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.1,
+          "x": 40,
+          "y": 545,
+          "w": 900,
+          "h": 80
+        }
+      ],
+      "credit": "Report, Sep 1 2026",
+      "durationSec": 1.18,
+      "assetId": "proof-macrumors-corroboration",
+      "claimId": "proof-macrumors-corroboration",
+      "covers": "It's reportedly gone."
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone-18-pro-colors/receipt-macrumors-sept1-crop.png",
+      "srcWidth": 1020,
+      "srcHeight": 1300,
+      "backdrop": "cream",
+      "credit": "Report, Sep 1 2026",
+      "durationSec": 2.98,
+      "assetId": "proof-macrumors-corroboration",
+      "claimId": "proof-macrumors-corroboration",
+      "covers": "They say they found"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone-18-pro-colors/receipt-9to5mac-sept1-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 1390,
+      "backdrop": "cream",
+      "credit": "Second report, same day",
+      "durationSec": 3.68,
+      "assetId": "hook-9to5mac",
+      "claimId": "hook-9to5mac",
+      "covers": "And two separate outlets"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone-18-pro-colors/receipt-macworld-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 1030,
+      "backdrop": "cream",
+      "credit": "Independent report",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 0.05,
+          "vol": 0.32
+        }
+      ],
+      "durationSec": 4.06,
+      "assetId": "proof-macworld-darkcherry",
+      "claimId": "proof-macworld-darkcherry",
+      "covers": "But a second leak,"
+    },
+    {
+      "type": "categorygrid",
+      "headline": "THE OTHER LEAK",
+      "cards": [
+        {
+          "label": "DARK CHERRY"
+        },
+        {
+          "label": "SILVER"
+        },
+        {
+          "label": "DARK GRAY"
+        },
+        {
+          "label": "LIGHT BLUE"
+        }
+      ],
+      "bg": "cream",
+      "durationSec": 0.98,
+      "assetId": "grid-other-leak",
+      "claimId": "grid-other-leak",
+      "covers": "It keeps silver alive"
+    },
+    {
+      "type": "categorygrid",
+      "headline": "THE OTHER LEAK",
+      "cards": [
+        {
+          "label": "DARK CHERRY"
+        },
+        {
+          "label": "SILVER"
+        },
+        {
+          "label": "DARK GRAY"
+        },
+        {
+          "label": "LIGHT BLUE"
+        }
+      ],
+      "bg": "cream",
+      "durationSec": 3.04,
+      "assetId": "grid-other-leak",
+      "claimId": "grid-other-leak",
+      "covers": "and pairs a dark"
+    },
+    {
+      "type": "categorygrid",
+      "headline": "ONLY ONE SURVIVES",
+      "cards": [
+        {
+          "label": "DARK CHERRY"
+        },
+        {
+          "label": "SILVER"
+        },
+        {
+          "label": "DARK GRAY"
+        },
+        {
+          "label": "LIGHT BLUE"
+        }
+      ],
+      "selectIndex": 0,
+      "selectAt": 1.4,
+      "bg": "cream",
+      "sfx": [
+        {
+          "src": "sfx/Riser.MP3",
+          "at": 2.35,
+          "vol": 0.359
+        }
+      ],
+      "durationSec": 3.84,
+      "assetId": "grid-survivor",
+      "claimId": "grid-survivor",
+      "covers": "So out of those"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone-18-pro-colors/receipt-macworld-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 1030,
+      "backdrop": "cream",
+      "credit": "Independent report",
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.05,
+          "vol": 0.556
+        }
+      ],
+      "durationSec": 4.44,
+      "assetId": "proof-macworld-darkcherry",
+      "claimId": "proof-macworld-darkcherry",
+      "covers": "That one's a deep,"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone-18-pro-colors/avatar-master.mp4",
+      "durationSec": 2.86,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "covers": "Meaning, the rest of",
+      "from": 48.62,
+      "focusX": 0.5
+    },
+    {
+      "type": "categorygrid",
+      "headline": "ONLY ONE SURVIVES",
+      "cards": [
+        {
+          "label": "DARK CHERRY"
+        },
+        {
+          "label": "SILVER"
+        },
+        {
+          "label": "DARK GRAY"
+        },
+        {
+          "label": "LIGHT BLUE"
+        }
+      ],
+      "selectIndex": 0,
+      "bg": "cream",
+      "durationSec": 3.24,
+      "assetId": "grid-survivor",
+      "claimId": "grid-survivor",
+      "covers": "That's usually a sign"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone-18-pro-colors/avatar-master.mp4",
+      "durationSec": 3.32,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "covers": "and even people with",
+      "from": 54.72,
+      "focusX": 0.5
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone-18-pro-colors/receipt-event-official-crop.png",
+      "srcWidth": 1020,
+      "srcHeight": 820,
+      "backdrop": "cream",
+      "credit": "Apple's official event announcement",
+      "sfx": [
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "at": 0.05,
+          "vol": 0.452
+        }
+      ],
+      "durationSec": 3.7,
+      "assetId": "event-official",
+      "claimId": "event-official",
+      "covers": "That's real, official, and"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone-18-pro-colors/avatar-master.mp4",
+      "headline": {
+        "lines": [
+          {
+            "text": "YOUR CALL?",
+            "kind": "headline",
+            "at": 0.3,
+            "accent": true
+          }
+        ],
+        "y": 0.16,
+        "theme": "light"
+      },
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.3,
+          "vol": 0.582
+        }
+      ],
+      "durationSec": 3.516,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "covers": "So remember what nobody",
+      "from": 61.74,
+      "focusX": 0.5
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.86,
+      "text": "A leaker just",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "A"
+        },
+        {
+          "t": 0.26,
+          "text": "leaker"
+        },
+        {
+          "t": 0.54,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 0.86,
+      "end": 1.84,
+      "text": "flipped everything you",
+      "words": [
+        {
+          "t": 0.86,
+          "text": "flipped"
+        },
+        {
+          "t": 1.14,
+          "text": "everything"
+        },
+        {
+          "t": 1.58,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 1.84,
+      "end": 2.42,
+      "text": "thought you knew",
+      "words": [
+        {
+          "t": 1.84,
+          "text": "thought"
+        },
+        {
+          "t": 2.04,
+          "text": "you"
+        },
+        {
+          "t": 2.24,
+          "text": "knew"
+        }
+      ]
+    },
+    {
+      "start": 2.42,
+      "end": 3.12,
+      "text": "about the iPhone",
+      "words": [
+        {
+          "t": 2.42,
+          "text": "about"
+        },
+        {
+          "t": 2.68,
+          "text": "the"
+        },
+        {
+          "t": 2.86,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 3.12,
+      "end": 4.24,
+      "text": "18 Pro's colors.",
+      "words": [
+        {
+          "t": 3.12,
+          "text": "18"
+        },
+        {
+          "t": 3.5,
+          "text": "Pro's"
+        },
+        {
+          "t": 3.94,
+          "text": "colors."
+        }
+      ]
+    },
+    {
+      "start": 4.66,
+      "end": 5.64,
+      "text": "What nobody's flagging",
+      "words": [
+        {
+          "t": 4.66,
+          "text": "What"
+        },
+        {
+          "t": 4.8,
+          "text": "nobody's"
+        },
+        {
+          "t": 5.24,
+          "text": "flagging"
+        }
+      ]
+    },
+    {
+      "start": 5.64,
+      "end": 6.74,
+      "text": "yet, Apple reveals",
+      "words": [
+        {
+          "t": 5.64,
+          "text": "yet,"
+        },
+        {
+          "t": 6.04,
+          "text": "Apple"
+        },
+        {
+          "t": 6.3,
+          "text": "reveals"
+        }
+      ]
+    },
+    {
+      "start": 6.74,
+      "end": 7.66,
+      "text": "the actual lineup",
+      "words": [
+        {
+          "t": 6.74,
+          "text": "the"
+        },
+        {
+          "t": 6.94,
+          "text": "actual"
+        },
+        {
+          "t": 7.34,
+          "text": "lineup"
+        }
+      ]
+    },
+    {
+      "start": 7.66,
+      "end": 8.4,
+      "text": "in just seven",
+      "words": [
+        {
+          "t": 7.66,
+          "text": "in"
+        },
+        {
+          "t": 7.92,
+          "text": "just"
+        },
+        {
+          "t": 8.1,
+          "text": "seven"
+        }
+      ]
+    },
+    {
+      "start": 8.4,
+      "end": 9.48,
+      "text": "days. Until this",
+      "words": [
+        {
+          "t": 8.4,
+          "text": "days."
+        },
+        {
+          "t": 9.04,
+          "text": "Until"
+        },
+        {
+          "t": 9.24,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 9.48,
+      "end": 10.24,
+      "text": "week, the accepted",
+      "words": [
+        {
+          "t": 9.48,
+          "text": "week,"
+        },
+        {
+          "t": 9.82,
+          "text": "the"
+        },
+        {
+          "t": 9.88,
+          "text": "accepted"
+        }
+      ]
+    },
+    {
+      "start": 10.24,
+      "end": 11.14,
+      "text": "story was four",
+      "words": [
+        {
+          "t": 10.24,
+          "text": "story"
+        },
+        {
+          "t": 10.66,
+          "text": "was"
+        },
+        {
+          "t": 10.86,
+          "text": "four"
+        }
+      ]
+    },
+    {
+      "start": 11.14,
+      "end": 12.32,
+      "text": "colors, dark cherry,",
+      "words": [
+        {
+          "t": 11.14,
+          "text": "colors,"
+        },
+        {
+          "t": 11.86,
+          "text": "dark"
+        },
+        {
+          "t": 12.04,
+          "text": "cherry,"
+        }
+      ]
+    },
+    {
+      "start": 12.66,
+      "end": 13.78,
+      "text": "silver, dark gray,",
+      "words": [
+        {
+          "t": 12.66,
+          "text": "silver,"
+        },
+        {
+          "t": 13.36,
+          "text": "dark"
+        },
+        {
+          "t": 13.5,
+          "text": "gray,"
+        }
+      ]
+    },
+    {
+      "start": 14.02,
+      "end": 14.54,
+      "text": "and light blue.",
+      "words": [
+        {
+          "t": 14.02,
+          "text": "and"
+        },
+        {
+          "t": 14.1,
+          "text": "light"
+        },
+        {
+          "t": 14.3,
+          "text": "blue."
+        }
+      ]
+    },
+    {
+      "start": 14.82,
+      "end": 15.32,
+      "text": "Now a leaker",
+      "words": [
+        {
+          "t": 14.82,
+          "text": "Now"
+        },
+        {
+          "t": 14.9,
+          "text": "a"
+        },
+        {
+          "t": 15.08,
+          "text": "leaker"
+        }
+      ]
+    },
+    {
+      "start": 15.32,
+      "end": 16.2,
+      "text": "who tracks Apple's",
+      "words": [
+        {
+          "t": 15.32,
+          "text": "who"
+        },
+        {
+          "t": 15.46,
+          "text": "tracks"
+        },
+        {
+          "t": 15.74,
+          "text": "Apple's"
+        }
+      ]
+    },
+    {
+      "start": 16.2,
+      "end": 17.04,
+      "text": "supply chain says",
+      "words": [
+        {
+          "t": 16.2,
+          "text": "supply"
+        },
+        {
+          "t": 16.42,
+          "text": "chain"
+        },
+        {
+          "t": 16.72,
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "start": 17.04,
+      "end": 17.8,
+      "text": "that list is",
+      "words": [
+        {
+          "t": 17.04,
+          "text": "that"
+        },
+        {
+          "t": 17.32,
+          "text": "list"
+        },
+        {
+          "t": 17.56,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 17.8,
+      "end": 18.84,
+      "text": "wrong. Their replacement",
+      "words": [
+        {
+          "t": 17.8,
+          "text": "wrong."
+        },
+        {
+          "t": 18.32,
+          "text": "Their"
+        },
+        {
+          "t": 18.44,
+          "text": "replacement"
+        }
+      ]
+    },
+    {
+      "start": 18.84,
+      "end": 19.64,
+      "text": "is just three",
+      "words": [
+        {
+          "t": 18.84,
+          "text": "is"
+        },
+        {
+          "t": 19.18,
+          "text": "just"
+        },
+        {
+          "t": 19.38,
+          "text": "three"
+        }
+      ]
+    },
+    {
+      "start": 19.64,
+      "end": 20.82,
+      "text": "colors, dark cherry,",
+      "words": [
+        {
+          "t": 19.64,
+          "text": "colors,"
+        },
+        {
+          "t": 20.34,
+          "text": "dark"
+        },
+        {
+          "t": 20.52,
+          "text": "cherry,"
+        }
+      ]
+    },
+    {
+      "start": 21.1,
+      "end": 21.88,
+      "text": "sky blue, and",
+      "words": [
+        {
+          "t": 21.1,
+          "text": "sky"
+        },
+        {
+          "t": 21.28,
+          "text": "blue,"
+        },
+        {
+          "t": 21.8,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 21.88,
+      "end": 22.9,
+      "text": "black. Silver was",
+      "words": [
+        {
+          "t": 21.88,
+          "text": "black."
+        },
+        {
+          "t": 22.46,
+          "text": "Silver"
+        },
+        {
+          "t": 22.66,
+          "text": "was"
+        }
+      ]
+    },
+    {
+      "start": 22.9,
+      "end": 23.58,
+      "text": "the color everyone",
+      "words": [
+        {
+          "t": 22.9,
+          "text": "the"
+        },
+        {
+          "t": 23.02,
+          "text": "color"
+        },
+        {
+          "t": 23.24,
+          "text": "everyone"
+        }
+      ]
+    },
+    {
+      "start": 23.58,
+      "end": 24.96,
+      "text": "expected. It's reportedly",
+      "words": [
+        {
+          "t": 23.58,
+          "text": "expected."
+        },
+        {
+          "t": 24.42,
+          "text": "It's"
+        },
+        {
+          "t": 24.56,
+          "text": "reportedly"
+        }
+      ]
+    },
+    {
+      "start": 24.96,
+      "end": 25.92,
+      "text": "gone. They say",
+      "words": [
+        {
+          "t": 24.96,
+          "text": "gone."
+        },
+        {
+          "t": 25.6,
+          "text": "They"
+        },
+        {
+          "t": 25.72,
+          "text": "say"
+        }
+      ]
+    },
+    {
+      "start": 25.92,
+      "end": 27.02,
+      "text": "they've found zero evidence",
+      "words": [
+        {
+          "t": 25.92,
+          "text": "they've"
+        },
+        {
+          "t": 26.38,
+          "text": "found"
+        },
+        {
+          "t": 26.68,
+          "text": "zero"
+        },
+        {
+          "t": 26.68,
+          "text": "evidence"
+        }
+      ]
+    },
+    {
+      "start": 27.02,
+      "end": 27.58,
+      "text": "of it in",
+      "words": [
+        {
+          "t": 27.02,
+          "text": "of"
+        },
+        {
+          "t": 27.28,
+          "text": "it"
+        },
+        {
+          "t": 27.42,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 27.58,
+      "end": 28.58,
+      "text": "China's supply chain.",
+      "words": [
+        {
+          "t": 27.58,
+          "text": "China's"
+        },
+        {
+          "t": 28.0,
+          "text": "supply"
+        },
+        {
+          "t": 28.22,
+          "text": "chain."
+        }
+      ]
+    },
+    {
+      "start": 28.58,
+      "end": 29.48,
+      "text": "And two separate",
+      "words": [
+        {
+          "t": 28.58,
+          "text": "And"
+        },
+        {
+          "t": 28.86,
+          "text": "two"
+        },
+        {
+          "t": 29.12,
+          "text": "separate"
+        }
+      ]
+    },
+    {
+      "start": 29.48,
+      "end": 30.54,
+      "text": "outlets reported that",
+      "words": [
+        {
+          "t": 29.48,
+          "text": "outlets"
+        },
+        {
+          "t": 29.84,
+          "text": "reported"
+        },
+        {
+          "t": 30.32,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 30.54,
+      "end": 31.76,
+      "text": "exact claim same",
+      "words": [
+        {
+          "t": 30.54,
+          "text": "exact"
+        },
+        {
+          "t": 30.94,
+          "text": "claim"
+        },
+        {
+          "t": 31.32,
+          "text": "same"
+        }
+      ]
+    },
+    {
+      "start": 31.76,
+      "end": 32.46,
+      "text": "day. But a",
+      "words": [
+        {
+          "t": 31.76,
+          "text": "day."
+        },
+        {
+          "t": 32.26,
+          "text": "But"
+        },
+        {
+          "t": 32.32,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 32.46,
+      "end": 33.44,
+      "text": "second leak working",
+      "words": [
+        {
+          "t": 32.46,
+          "text": "second"
+        },
+        {
+          "t": 32.72,
+          "text": "leak"
+        },
+        {
+          "t": 33.0,
+          "text": "working"
+        }
+      ]
+    },
+    {
+      "start": 33.44,
+      "end": 34.34,
+      "text": "from actual CAD",
+      "words": [
+        {
+          "t": 33.44,
+          "text": "from"
+        },
+        {
+          "t": 33.68,
+          "text": "actual"
+        },
+        {
+          "t": 34.06,
+          "text": "CAD"
+        }
+      ]
+    },
+    {
+      "start": 34.34,
+      "end": 36.0,
+      "text": "drawings disagrees completely.",
+      "words": [
+        {
+          "t": 34.34,
+          "text": "drawings"
+        },
+        {
+          "t": 34.82,
+          "text": "disagrees"
+        },
+        {
+          "t": 35.44,
+          "text": "completely."
+        }
+      ]
+    },
+    {
+      "start": 36.32,
+      "end": 36.94,
+      "text": "It keeps silver",
+      "words": [
+        {
+          "t": 36.32,
+          "text": "It"
+        },
+        {
+          "t": 36.42,
+          "text": "keeps"
+        },
+        {
+          "t": 36.66,
+          "text": "silver"
+        }
+      ]
+    },
+    {
+      "start": 36.94,
+      "end": 37.9,
+      "text": "alive and pairs",
+      "words": [
+        {
+          "t": 36.94,
+          "text": "alive"
+        },
+        {
+          "t": 37.3,
+          "text": "and"
+        },
+        {
+          "t": 37.66,
+          "text": "pairs"
+        }
+      ]
+    },
+    {
+      "start": 37.9,
+      "end": 38.54,
+      "text": "a dark gray",
+      "words": [
+        {
+          "t": 37.9,
+          "text": "a"
+        },
+        {
+          "t": 38.06,
+          "text": "dark"
+        },
+        {
+          "t": 38.32,
+          "text": "gray"
+        }
+      ]
+    },
+    {
+      "start": 38.54,
+      "end": 39.0,
+      "text": "with a light",
+      "words": [
+        {
+          "t": 38.54,
+          "text": "with"
+        },
+        {
+          "t": 38.72,
+          "text": "a"
+        },
+        {
+          "t": 38.82,
+          "text": "light"
+        }
+      ]
+    },
+    {
+      "start": 39.0,
+      "end": 39.74,
+      "text": "blue instead of",
+      "words": [
+        {
+          "t": 39.0,
+          "text": "blue"
+        },
+        {
+          "t": 39.26,
+          "text": "instead"
+        },
+        {
+          "t": 39.58,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 39.74,
+      "end": 40.64,
+      "text": "black. So out",
+      "words": [
+        {
+          "t": 39.74,
+          "text": "black."
+        },
+        {
+          "t": 40.34,
+          "text": "So"
+        },
+        {
+          "t": 40.46,
+          "text": "out"
+        }
+      ]
+    },
+    {
+      "start": 40.64,
+      "end": 41.22,
+      "text": "of those four",
+      "words": [
+        {
+          "t": 40.64,
+          "text": "of"
+        },
+        {
+          "t": 40.76,
+          "text": "those"
+        },
+        {
+          "t": 40.92,
+          "text": "four"
+        }
+      ]
+    },
+    {
+      "start": 41.22,
+      "end": 42.48,
+      "text": "original colors, only",
+      "words": [
+        {
+          "t": 41.22,
+          "text": "original"
+        },
+        {
+          "t": 41.62,
+          "text": "colors,"
+        },
+        {
+          "t": 42.3,
+          "text": "only"
+        }
+      ]
+    },
+    {
+      "start": 42.48,
+      "end": 43.46,
+      "text": "one survives both",
+      "words": [
+        {
+          "t": 42.48,
+          "text": "one"
+        },
+        {
+          "t": 42.74,
+          "text": "survives"
+        },
+        {
+          "t": 43.18,
+          "text": "both"
+        }
+      ]
+    },
+    {
+      "start": 43.46,
+      "end": 44.64,
+      "text": "leaks. That one's",
+      "words": [
+        {
+          "t": 43.46,
+          "text": "leaks."
+        },
+        {
+          "t": 44.18,
+          "text": "That"
+        },
+        {
+          "t": 44.34,
+          "text": "one's"
+        }
+      ]
+    },
+    {
+      "start": 44.64,
+      "end": 45.82,
+      "text": "a deep, wine-toned",
+      "words": [
+        {
+          "t": 44.64,
+          "text": "a"
+        },
+        {
+          "t": 44.76,
+          "text": "deep,"
+        },
+        {
+          "t": 45.16,
+          "text": "wine-toned"
+        }
+      ]
+    },
+    {
+      "start": 45.82,
+      "end": 46.86,
+      "text": "dark cherry replacing",
+      "words": [
+        {
+          "t": 45.82,
+          "text": "dark"
+        },
+        {
+          "t": 46.02,
+          "text": "cherry"
+        },
+        {
+          "t": 46.36,
+          "text": "replacing"
+        }
+      ]
+    },
+    {
+      "start": 46.86,
+      "end": 47.92,
+      "text": "last year's cosmic",
+      "words": [
+        {
+          "t": 46.86,
+          "text": "last"
+        },
+        {
+          "t": 47.24,
+          "text": "year's"
+        },
+        {
+          "t": 47.58,
+          "text": "cosmic"
+        }
+      ]
+    },
+    {
+      "start": 47.92,
+      "end": 49.22,
+      "text": "orange. Meaning the",
+      "words": [
+        {
+          "t": 47.92,
+          "text": "orange."
+        },
+        {
+          "t": 48.62,
+          "text": "Meaning"
+        },
+        {
+          "t": 48.88,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 49.22,
+      "end": 49.74,
+      "text": "rest of this",
+      "words": [
+        {
+          "t": 49.22,
+          "text": "rest"
+        },
+        {
+          "t": 49.44,
+          "text": "of"
+        },
+        {
+          "t": 49.56,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 49.74,
+      "end": 50.56,
+      "text": "story is currently",
+      "words": [
+        {
+          "t": 49.74,
+          "text": "story"
+        },
+        {
+          "t": 50.02,
+          "text": "is"
+        },
+        {
+          "t": 50.22,
+          "text": "currently"
+        }
+      ]
+    },
+    {
+      "start": 50.56,
+      "end": 52.02,
+      "text": "contradicted. That's usually",
+      "words": [
+        {
+          "t": 50.56,
+          "text": "contradicted."
+        },
+        {
+          "t": 51.48,
+          "text": "That's"
+        },
+        {
+          "t": 51.72,
+          "text": "usually"
+        }
+      ]
+    },
+    {
+      "start": 52.02,
+      "end": 52.62,
+      "text": "a sign the",
+      "words": [
+        {
+          "t": 52.02,
+          "text": "a"
+        },
+        {
+          "t": 52.26,
+          "text": "sign"
+        },
+        {
+          "t": 52.48,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 52.62,
+      "end": 53.6,
+      "text": "lineup isn't locked",
+      "words": [
+        {
+          "t": 52.62,
+          "text": "lineup"
+        },
+        {
+          "t": 52.92,
+          "text": "isn't"
+        },
+        {
+          "t": 53.32,
+          "text": "locked"
+        }
+      ]
+    },
+    {
+      "start": 53.6,
+      "end": 54.56,
+      "text": "yet inside Apple.",
+      "words": [
+        {
+          "t": 53.6,
+          "text": "yet"
+        },
+        {
+          "t": 53.86,
+          "text": "inside"
+        },
+        {
+          "t": 54.18,
+          "text": "Apple."
+        }
+      ]
+    },
+    {
+      "start": 54.72,
+      "end": 55.38,
+      "text": "And even people",
+      "words": [
+        {
+          "t": 54.72,
+          "text": "And"
+        },
+        {
+          "t": 54.88,
+          "text": "even"
+        },
+        {
+          "t": 55.06,
+          "text": "people"
+        }
+      ]
+    },
+    {
+      "start": 55.38,
+      "end": 56.2,
+      "text": "with real access",
+      "words": [
+        {
+          "t": 55.38,
+          "text": "with"
+        },
+        {
+          "t": 55.6,
+          "text": "real"
+        },
+        {
+          "t": 55.84,
+          "text": "access"
+        }
+      ]
+    },
+    {
+      "start": 56.2,
+      "end": 57.06,
+      "text": "are still guessing",
+      "words": [
+        {
+          "t": 56.2,
+          "text": "are"
+        },
+        {
+          "t": 56.48,
+          "text": "still"
+        },
+        {
+          "t": 56.72,
+          "text": "guessing"
+        }
+      ]
+    },
+    {
+      "start": 57.06,
+      "end": 57.74,
+      "text": "this close to",
+      "words": [
+        {
+          "t": 57.06,
+          "text": "this"
+        },
+        {
+          "t": 57.3,
+          "text": "close"
+        },
+        {
+          "t": 57.54,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 57.74,
+      "end": 58.9,
+      "text": "launch. That's real,",
+      "words": [
+        {
+          "t": 57.74,
+          "text": "launch."
+        },
+        {
+          "t": 58.04,
+          "text": "That's"
+        },
+        {
+          "t": 58.6,
+          "text": "real,"
+        }
+      ]
+    },
+    {
+      "start": 59.08,
+      "end": 59.86,
+      "text": "official, and just",
+      "words": [
+        {
+          "t": 59.08,
+          "text": "official,"
+        },
+        {
+          "t": 59.6,
+          "text": "and"
+        },
+        {
+          "t": 59.66,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 59.86,
+      "end": 60.62,
+      "text": "days away on",
+      "words": [
+        {
+          "t": 59.86,
+          "text": "days"
+        },
+        {
+          "t": 60.1,
+          "text": "away"
+        },
+        {
+          "t": 60.4,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 60.62,
+      "end": 61.82,
+      "text": "September 9th. So",
+      "words": [
+        {
+          "t": 60.62,
+          "text": "September"
+        },
+        {
+          "t": 60.92,
+          "text": "9th."
+        },
+        {
+          "t": 61.74,
+          "text": "So"
+        }
+      ]
+    },
+    {
+      "start": 61.82,
+      "end": 62.6,
+      "text": "remember what nobody",
+      "words": [
+        {
+          "t": 61.82,
+          "text": "remember"
+        },
+        {
+          "t": 62.1,
+          "text": "what"
+        },
+        {
+          "t": 62.34,
+          "text": "nobody"
+        }
+      ]
+    },
+    {
+      "start": 62.6,
+      "end": 63.66,
+      "text": "flagged. Which list",
+      "words": [
+        {
+          "t": 62.6,
+          "text": "flagged."
+        },
+        {
+          "t": 63.26,
+          "text": "Which"
+        },
+        {
+          "t": 63.4,
+          "text": "list"
+        }
+      ]
+    },
+    {
+      "start": 63.66,
+      "end": 64.06,
+      "text": "do you think",
+      "words": [
+        {
+          "t": 63.66,
+          "text": "do"
+        },
+        {
+          "t": 63.84,
+          "text": "you"
+        },
+        {
+          "t": 63.94,
+          "text": "think"
+        }
+      ]
+    },
+    {
+      "start": 64.06,
+      "end": 64.84,
+      "text": "actually survives?",
+      "words": [
+        {
+          "t": 64.06,
+          "text": "actually"
+        },
+        {
+          "t": 64.46,
+          "text": "survives?"
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "script": "A leaker just flipped everything you thought you knew about the iPhone 18 Pro's colors.\n\nWhat nobody's flagging yet: Apple reveals the actual lineup in just 7 days.\n\nUntil this week, the accepted story was 4 colors: dark cherry, silver, dark gray, and light blue.\n\nNow a leaker who tracks Apple's supply chain says that list is wrong.\n\nTheir replacement is just 3 colors: dark cherry, sky blue, and black.\n\nSilver was the color everyone expected.\n\nIt's reportedly gone.\n\nThey say they've found zero evidence of it in China's supply chain.\n\nAnd 2 separate outlets reported that exact claim, same day.\n\nBut a second leak, working from actual CAD drawings, disagrees completely.\n\nIt keeps silver alive, and pairs a dark gray with a light blue instead of black.\n\nSo out of those 4 original colors, only 1 survives both leaks.\n\nThat one's a deep, wine-toned dark cherry, replacing last year's cosmic orange.\n\nMeaning, the rest of this story is currently contradicted.\n\nThat's usually a sign the lineup isn't locked yet inside Apple, and even people with real access are still guessing this close to launch.\n\nThat's real, official, and just days away, on September 9th.\n\nSo remember what nobody flagged: which list do you think actually survives?",
+  "approval": {
+    "sha256": "cb2a995f5f5283c4ff759ae9cea31d228b2ff0dca42d0474678ed038874c6a20",
+    "approvedAt": "2026-09-02T05:30:14+00:00",
+    "words": 207,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "script_sha256": "cb2a995f5f5283c4ff759ae9cea31d228b2ff0dca42d0474678ed038874c6a20",
+  "structure_sha256": "761142b2ddc15d36c83e823606567fb3336975d352dabde86bf60e4e759c4ec1",
+  "findings": [
+    "CADENCE: only 1 sentence reaches 18 words (longest 24). The playbook asks for 'occasionally one long spec sentence' \u2014 with everything short, nothing reads as short. Nothing to push against.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-09-02T05:08:25+00:00"
+}

@@ -6053,3 +6053,89 @@ the screenshot the previous two reels used · animated three-bar cost card
 two-row landing card whose rows arrive on the words that name them
 ("Qualcomm's margins" / "your phone price") · closing question card over
 product footage.
+
+## 2026-09-02 — iphone-18-pro-colors: user directive, no outlet name on screen
+
+RAW NOTE (user, mid-approval): "Don't mention source name in video (reel)
+like 9to5Mac, MacRumors, MacWorld. Rest of good to go."
+
+ROOT CAUSE: the 2026-08-14 convention (`Credit.tsx`, `creditLabel()`) renders
+"Source: <outlet>" on every borrowed frame by default, and this repo's
+history is full of reels that show "9to5Mac", "MacRumors", "AppleInsider" etc.
+on screen. Narration already had a NARROWER version of this rule since
+2026-08-14 (don't name the aggregator outlet IN SPEECH) — this is the user
+extending the same instinct to the visual credit line, for this reel.
+
+WHAT WAS DONE: the three source receipts for this reel (originally captured
+with `tools/capture.mjs`, which by default frames the outlet's own masthead/
+byline as the proof) were re-cropped to exclude the literal outlet name —
+the 9to5Mac hero-image watermark, the Macworld ad-banner logo, and the
+MacRumors label on an embedded video thumbnail. The headline/byline/body text
+kept in each crop never spelled the outlet name in the first place, so no
+further redaction was needed there. `public/assets/iphone-18-pro-colors/
+manifest.json`'s `credit` field (what actually reaches the on-screen
+`<Credit>` component) was changed from the literal outlet name to generic,
+dated phrasing ("Report, Sep 1 2026" / "Second report, same day" /
+"Independent report" / "Apple, official event announcement") — G14 only
+requires a non-empty credit string, not the outlet's name, so this stays
+inside the RIGHTS gate while honoring the request. The real URLs and outlet
+identities stay in `research.md`'s SRC/VIA ledger and the manifest's
+`source` field — our own record, never rendered.
+
+DISTILLED RULE, scoped to THIS reel only (not yet promoted repo-wide — do
+that only if the user says this is a standing preference, not a one-off):
+when a user says "no outlet name on screen," the fix is (1) recrop receipts
+to exclude the outlet's own branding/watermark, keeping the headline/byline/
+body text as the actual proof, and (2) set the beat's `credit` to something
+generic-but-real (what kind of report, and when) rather than leaving it
+empty — an empty credit would trip G14, and a fabricated one would be
+dishonest. Do not silently apply this to future reels without asking; the
+2026-08-14 default (name the outlet on screen) is still what `Credit.tsx`
+does for everyone else.
+
+### Treatment history — iphone-18-pro-colors
+
+- iphone-18-pro-colors (a fresh leak contradicts the widely-reported color
+  guide, days before Apple's own event): split hook (real mobile capture of
+  the exact 9to5Mac article named in the brief, headline watermark cropped
+  out per the no-outlet-name directive above / facecam), black typecard
+  "7 DAYS" (serif-era ban on plain black typecards was about REPEATING an
+  earlier reel's card-as-filler; a single bold countdown numeral is a
+  different device, kept once), FOUR NEW categorygrid uses in one reel —
+  "THE OLD STORY" (4 cards), "THE NEW CLAIM" (3 cards), "THE OTHER LEAK" (4
+  cards), "ONLY ONE SURVIVES" (same 4 cards, `selectIndex` highlighting the
+  one color both leaks agree on) — as the comparison spine instead of this
+  repo's usual Pantone-chip motion graphics (deliberately not reused from
+  `iphone18-colors`, which already owns that device for this topic);
+  annotatezoom on the real MacRumors receipt x2 (circle "Skip Silver",
+  underline "unlikely to make the final lineup" — two DIFFERENT regions of
+  the same source, not a repeated crop); receipts on the real Macworld
+  "Dark Cherry" render (credited to Foundry, the illustrator, not the
+  outlet) and the real MacRumans event-announcement capture (official tier);
+  facecam ~19% (news band). HeyGen digital twin, ElevenLabs eleven_v3 VO
+  (read faster than this voice's calibrated 2.35-2.75 wps band on this take —
+  accepted since the measured final duration, not the wps proxy, is what the
+  60-80s band actually governs, and 65.4s sits mid-band).
+- **User directive mid-approval: no outlet name on screen** (9to5Mac,
+  MacRumors, Macworld) — see the dated entry above for the full mechanism
+  (recrop to exclude masthead/watermark/ad-banner branding; manifest
+  `credit` set to generic dated phrasing, not the outlet name). Applies to
+  THIS reel; not yet promoted to a repo-wide rule.
+- **EDGE TEXT fired on all 6 receipt-type scenes, uniformly, regardless of
+  content** — verified by eye on every flagged frame (generous margin, no
+  truncated words, real credits visible); rendered with `--soft` and
+  disclosed. Root cause suspected: the receipt backdrop's blurred glow
+  bleeding to the true frame edge reads as "busy pixels" to the naive
+  edge-contrast heuristic — worth a look at `lint_frames.py`'s EDGE TEXT
+  detector if this repeats on the next receipt-heavy reel; two false
+  positives in a row on the same check would be a calibration problem, not
+  a coincidence.
+- **DUPLICATE (real, fixed twice)**: two consecutive annotatezoom shots on
+  the identical crop, and two consecutive receipt shots on the identical
+  image — both genuinely repeated treatment back-to-back. Fixed by moving
+  the second annotatezoom to a DIFFERENT region of the same source, and by
+  swapping the second receipt for the OTHER real outlet's actual capture
+  (more honest than reusing one image for a "two separate outlets" claim,
+  and visually distinct for free).
+- Used here, avoid repeating next reel: the "leak vs leak, one point of
+  agreement" categorygrid-comparison spine (four grid variants in one reel).

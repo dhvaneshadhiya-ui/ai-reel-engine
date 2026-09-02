@@ -11,19 +11,20 @@ import sheet7 from "./beats/ios-27-beta-8.json";
 import sheet8 from "./beats/ios27-beta7.json";
 import sheet9 from "./beats/ios27-tiers-nomusic.json";
 import sheet10 from "./beats/ios27-tiers.json";
-import sheet11 from "./beats/iphone-18-pro-nomusic.json";
-import sheet12 from "./beats/iphone-18-pro.json";
-import sheet13 from "./beats/iphone-fold-ultra-nomusic.json";
-import sheet14 from "./beats/iphone-fold-ultra.json";
-import sheet15 from "./beats/iphone-third-interface.json";
-import sheet16 from "./beats/iphone18-colors-nomusic.json";
-import sheet17 from "./beats/iphone18-colors.json";
-import sheet18 from "./beats/iphone18-split.json";
-import sheet19 from "./beats/mac-mini-m6-m5pro.json";
-import sheet20 from "./beats/made-by-google-26.json";
-import sheet21 from "./beats/seedance-25.json";
-import sheet22 from "./beats/september-preview-nomusic.json";
-import sheet23 from "./beats/september-preview.json";
+import sheet11 from "./beats/iphone-18-pro-colors.json";
+import sheet12 from "./beats/iphone-18-pro-nomusic.json";
+import sheet13 from "./beats/iphone-18-pro.json";
+import sheet14 from "./beats/iphone-fold-ultra-nomusic.json";
+import sheet15 from "./beats/iphone-fold-ultra.json";
+import sheet16 from "./beats/iphone-third-interface.json";
+import sheet17 from "./beats/iphone18-colors-nomusic.json";
+import sheet18 from "./beats/iphone18-colors.json";
+import sheet19 from "./beats/iphone18-split.json";
+import sheet20 from "./beats/mac-mini-m6-m5pro.json";
+import sheet21 from "./beats/made-by-google-26.json";
+import sheet22 from "./beats/seedance-25.json";
+import sheet23 from "./beats/september-preview-nomusic.json";
+import sheet24 from "./beats/september-preview.json";
 
 export const beatSheets = [
   sheet0,
@@ -50,4 +51,5 @@ export const beatSheets = [
   sheet21,
   sheet22,
   sheet23,
+  sheet24,
 ] as unknown as BeatSheet[];

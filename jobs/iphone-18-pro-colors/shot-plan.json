@@ -1,0 +1,601 @@
+{
+  "emphasis": [
+    "leaker",
+    "seven",
+    "four",
+    "three",
+    "silver",
+    "two",
+    "CAD",
+    "cherry",
+    "contradicted",
+    "official",
+    "survives"
+  ],
+  "caption_corrections": {
+    "they found": "they've found",
+    "wine toned": "wine-toned"
+  },
+  "shots": [
+    {
+      "start_phrase": "A leaker just flipped",
+      "line": "A leaker just flipped everything you thought you knew about the iPhone 18 Pro's colors.",
+      "needs": [
+        "leaker",
+        "flipped",
+        "thought",
+        "knew",
+        "iPhone",
+        "18"
+      ],
+      "tier": "reliable",
+      "asset_id": "hook-9to5mac",
+      "scene": {
+        "type": "split",
+        "topSrc": "assets/iphone-18-pro-colors/receipt-9to5mac-sept1-crop.png",
+        "bottomSrc": "assets/iphone-18-pro-colors/avatar-master.mp4",
+        "captionBottom": 1000,
+        "headline": {
+          "lines": [
+            {
+              "text": "IPHONE 18 PRO",
+              "kind": "label",
+              "at": 0.15
+            },
+            {
+              "text": "LIST FLIPPED",
+              "kind": "headline",
+              "at": 0.55
+            }
+          ],
+          "y": 0.06,
+          "theme": "dark"
+        },
+        "credit": "Report, Sep 1 2026",
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "at": 0.05,
+            "vol": 0.15
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "What nobody's flagging yet:",
+      "line": "What nobody's flagging yet: Apple reveals the actual lineup in just 7 days., Until this week",
+      "needs": [
+        "nobody",
+        "flagging",
+        "Apple",
+        "reveals",
+        "actual",
+        "lineup"
+      ],
+      "tier": "generated",
+      "asset_id": "avatar-master",
+      "scene": {
+        "type": "typecard",
+        "bg": "black",
+        "kinetic": {
+          "text": "7 DAYS",
+          "style": "caps",
+          "at": 0.3,
+          "y": 0.4
+        }
+      }
+    },
+    {
+      "start_phrase": "the accepted story was",
+      "line": "the accepted story was 4 colors: dark cherry, silver, dark gray, and light blue.",
+      "needs": [
+        "accepted",
+        "story",
+        "4",
+        "colors",
+        "dark",
+        "cherry"
+      ],
+      "tier": "generated",
+      "asset_id": "grid-old-story",
+      "scene": {
+        "type": "categorygrid",
+        "headline": "THE OLD STORY",
+        "cards": [
+          {
+            "label": "DARK CHERRY"
+          },
+          {
+            "label": "SILVER"
+          },
+          {
+            "label": "DARK GRAY"
+          },
+          {
+            "label": "LIGHT BLUE"
+          }
+        ],
+        "bg": "cream",
+        "sfx": [
+          {
+            "src": "sfx/Pop.MP3",
+            "at": 0.1,
+            "vol": 0.13
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Now a leaker who",
+      "line": "Now a leaker who tracks Apple's supply chain says that list is wrong.",
+      "needs": [
+        "leaker",
+        "tracks",
+        "Apple",
+        "supply",
+        "chain",
+        "says"
+      ],
+      "tier": "reliable",
+      "asset_id": "proof-macrumors-corroboration",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone-18-pro-colors/receipt-macrumors-sept1-crop.png",
+        "srcWidth": 1020,
+        "srcHeight": 1300,
+        "backdrop": "cream",
+        "credit": "Report, Sep 1 2026"
+      }
+    },
+    {
+      "start_phrase": "Their replacement is just",
+      "line": "Their replacement is just 3 colors: dark cherry, sky blue, and black.",
+      "needs": [
+        "replacement",
+        "3",
+        "colors",
+        "dark",
+        "cherry",
+        "blue"
+      ],
+      "tier": "generated",
+      "asset_id": "grid-new-claim",
+      "scene": {
+        "type": "categorygrid",
+        "headline": "THE NEW CLAIM",
+        "cards": [
+          {
+            "label": "DARK CHERRY"
+          },
+          {
+            "label": "SKY BLUE"
+          },
+          {
+            "label": "BLACK"
+          }
+        ],
+        "bg": "cream",
+        "sfx": [
+          {
+            "src": "sfx/Pop.MP3",
+            "at": 0.1,
+            "vol": 0.13
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Silver was the color",
+      "line": "Silver was the color everyone expected.",
+      "needs": [
+        "Silver",
+        "color",
+        "everyone",
+        "expected"
+      ],
+      "tier": "reliable",
+      "asset_id": "proof-macrumors-corroboration",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/iphone-18-pro-colors/receipt-macrumors-sept1-crop.png",
+        "srcWidth": 1020,
+        "srcHeight": 1300,
+        "bg": "cream",
+        "crop": true,
+        "focus": {
+          "x": 0,
+          "y": 0,
+          "w": 1020,
+          "h": 260
+        },
+        "annotations": [
+          {
+            "kind": "circle",
+            "at": 0.15,
+            "x": 40,
+            "y": 125,
+            "w": 320,
+            "h": 95
+          }
+        ],
+        "credit": "Report, Sep 1 2026"
+      }
+    },
+    {
+      "start_phrase": "It's reportedly gone.",
+      "line": "It's reportedly gone.",
+      "needs": [
+        "reportedly",
+        "gone"
+      ],
+      "tier": "generated",
+      "asset_id": "proof-macrumors-corroboration",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/iphone-18-pro-colors/receipt-macrumors-sept1-crop.png",
+        "srcWidth": 1020,
+        "srcHeight": 1300,
+        "bg": "cream",
+        "crop": true,
+        "focus": {
+          "x": 0,
+          "y": 395,
+          "w": 1020,
+          "h": 300
+        },
+        "annotations": [
+          {
+            "kind": "underline",
+            "at": 0.1,
+            "x": 40,
+            "y": 545,
+            "w": 900,
+            "h": 80
+          }
+        ],
+        "credit": "Report, Sep 1 2026"
+      }
+    },
+    {
+      "start_phrase": "They say they found",
+      "line": "They say they've found zero evidence of it in China's supply chain.",
+      "needs": [
+        "found",
+        "zero",
+        "evidence",
+        "China",
+        "supply",
+        "chain"
+      ],
+      "tier": "generated",
+      "asset_id": "proof-macrumors-corroboration",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone-18-pro-colors/receipt-macrumors-sept1-crop.png",
+        "srcWidth": 1020,
+        "srcHeight": 1300,
+        "backdrop": "cream",
+        "credit": "Report, Sep 1 2026"
+      }
+    },
+    {
+      "start_phrase": "And two separate outlets",
+      "line": "And 2 separate outlets reported that exact claim, same day.",
+      "needs": [
+        "2",
+        "separate",
+        "outlets",
+        "reported",
+        "exact",
+        "claim"
+      ],
+      "tier": "reliable",
+      "asset_id": "hook-9to5mac",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone-18-pro-colors/receipt-9to5mac-sept1-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 1390,
+        "backdrop": "cream",
+        "credit": "Second report, same day"
+      }
+    },
+    {
+      "start_phrase": "But a second leak,",
+      "line": "But a second leak, working from actual CAD drawings, disagrees completely.",
+      "needs": [
+        "second",
+        "leak",
+        "working",
+        "actual",
+        "drawings",
+        "disagrees"
+      ],
+      "tier": "reliable",
+      "asset_id": "proof-macworld-darkcherry",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone-18-pro-colors/receipt-macworld-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 1030,
+        "backdrop": "cream",
+        "credit": "Independent report",
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "at": 0.05,
+            "vol": 0.15
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "It keeps silver alive",
+      "line": "It keeps silver alive",
+      "needs": [
+        "silver",
+        "alive"
+      ],
+      "tier": "generated",
+      "asset_id": "grid-other-leak",
+      "scene": {
+        "type": "categorygrid",
+        "headline": "THE OTHER LEAK",
+        "cards": [
+          {
+            "label": "DARK CHERRY"
+          },
+          {
+            "label": "SILVER"
+          },
+          {
+            "label": "DARK GRAY"
+          },
+          {
+            "label": "LIGHT BLUE"
+          }
+        ],
+        "bg": "cream"
+      }
+    },
+    {
+      "start_phrase": "and pairs a dark",
+      "line": "and pairs a dark gray with a light blue instead of black.",
+      "needs": [
+        "pairs",
+        "dark",
+        "gray",
+        "light",
+        "blue",
+        "instead"
+      ],
+      "tier": "generated",
+      "asset_id": "grid-other-leak",
+      "scene": {
+        "type": "categorygrid",
+        "headline": "THE OTHER LEAK",
+        "cards": [
+          {
+            "label": "DARK CHERRY"
+          },
+          {
+            "label": "SILVER"
+          },
+          {
+            "label": "DARK GRAY"
+          },
+          {
+            "label": "LIGHT BLUE"
+          }
+        ],
+        "bg": "cream"
+      }
+    },
+    {
+      "start_phrase": "So out of those",
+      "line": "So out of those 4 original colors, only 1 survives both leaks.",
+      "needs": [
+        "4",
+        "original",
+        "colors",
+        "only",
+        "1",
+        "survives"
+      ],
+      "tier": "generated",
+      "asset_id": "grid-survivor",
+      "scene": {
+        "type": "categorygrid",
+        "headline": "ONLY ONE SURVIVES",
+        "cards": [
+          {
+            "label": "DARK CHERRY"
+          },
+          {
+            "label": "SILVER"
+          },
+          {
+            "label": "DARK GRAY"
+          },
+          {
+            "label": "LIGHT BLUE"
+          }
+        ],
+        "selectIndex": 0,
+        "selectAt": 1.4,
+        "bg": "cream",
+        "sfx": [
+          {
+            "src": "sfx/Riser.MP3",
+            "at": 2.35,
+            "vol": 0.14
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "That one's a deep,",
+      "line": "That one's a deep, wine-toned dark cherry, replacing last year's cosmic orange.",
+      "needs": [
+        "deep",
+        "wine-toned",
+        "dark",
+        "cherry",
+        "replacing",
+        "last"
+      ],
+      "tier": "reliable",
+      "asset_id": "proof-macworld-darkcherry",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone-18-pro-colors/receipt-macworld-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 1030,
+        "backdrop": "cream",
+        "credit": "Independent report",
+        "sfx": [
+          {
+            "src": "sfx/Core.MP3",
+            "at": 0.05,
+            "vol": 0.15
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Meaning, the rest of",
+      "line": "Meaning, the rest of this story is currently contradicted.",
+      "needs": [
+        "Meaning",
+        "rest",
+        "story",
+        "currently",
+        "contradicted"
+      ],
+      "tier": "generated",
+      "asset_id": "avatar-master",
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone-18-pro-colors/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "That's usually a sign",
+      "line": "That's usually a sign the lineup isn't locked yet inside Apple",
+      "needs": [
+        "usually",
+        "sign",
+        "lineup",
+        "locked",
+        "inside",
+        "Apple"
+      ],
+      "tier": "generated",
+      "asset_id": "grid-survivor",
+      "scene": {
+        "type": "categorygrid",
+        "headline": "ONLY ONE SURVIVES",
+        "cards": [
+          {
+            "label": "DARK CHERRY"
+          },
+          {
+            "label": "SILVER"
+          },
+          {
+            "label": "DARK GRAY"
+          },
+          {
+            "label": "LIGHT BLUE"
+          }
+        ],
+        "selectIndex": 0,
+        "bg": "cream"
+      }
+    },
+    {
+      "start_phrase": "and even people with",
+      "line": "and even people with real access are still guessing this close to launch.",
+      "needs": [
+        "even",
+        "people",
+        "real",
+        "access",
+        "still",
+        "guessing"
+      ],
+      "tier": "generated",
+      "asset_id": "avatar-master",
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone-18-pro-colors/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "That's real, official, and",
+      "line": "That's real, official, and just days away, on September 9th.",
+      "needs": [
+        "real",
+        "official",
+        "days",
+        "away",
+        "September",
+        "9th"
+      ],
+      "tier": "official",
+      "asset_id": "event-official",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone-18-pro-colors/receipt-event-official-crop.png",
+        "srcWidth": 1020,
+        "srcHeight": 820,
+        "backdrop": "cream",
+        "credit": "Apple's official event announcement",
+        "sfx": [
+          {
+            "src": "sfx2/impact-boom.mp3",
+            "at": 0.05,
+            "vol": 0.17
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "So remember what nobody",
+      "line": "So remember what nobody flagged: which list do you think actually survives?",
+      "needs": [
+        "remember",
+        "nobody",
+        "flagged",
+        "which",
+        "list",
+        "think"
+      ],
+      "tier": "generated",
+      "asset_id": "avatar-master",
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone-18-pro-colors/avatar-master.mp4",
+        "headline": {
+          "lines": [
+            {
+              "text": "YOUR CALL?",
+              "kind": "headline",
+              "at": 0.3,
+              "accent": true
+            }
+          ],
+          "y": 0.16,
+          "theme": "light"
+        },
+        "sfx": [
+          {
+            "src": "sfx/whoosh.MP3",
+            "at": 0.05,
+            "vol": 0.13
+          }
+        ]
+      }
+    }
+  ]
+}
