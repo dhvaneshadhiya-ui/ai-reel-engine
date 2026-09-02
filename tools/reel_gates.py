@@ -225,6 +225,23 @@ DUR_MAX = {                                # 2026-07-28 / 2026-07-31
 # NOTE: facecam share, SFX count and SFX volume are PER-FORMAT — see FORMATS.
 # They used to be module constants here; that is exactly how a news-tuned
 # number silently governs a genre it was never measured on.
+#
+# DUR_MAX IS NOW OVERRIDABLE PER FORMAT, for the same reason, noticed
+# 2026-09-02 while the note directly above it had been true since August.
+# These ceilings were measured on NEWS reels, where holding one image is death.
+# They are not a fact about video: in a tutorial the screen IS the content, and
+# cutting away every 2.9s destroys the thing the viewer came for. chatgpt-
+# stickers is a how-to filed as `ai-tools`, and 4 of its 17 screen scenes
+# tripped a ceiling derived from a genre it has nothing in common with.
+#
+# A format overrides only what it has MEASURED, in a `dur_max` key; everything
+# it does not name keeps the value above. No existing format sets one, so this
+# changes nothing until a teardown says it should.
+
+
+def dur_max_for(fmt: str) -> dict[str, float]:
+    """The held-layout ceilings for a format: the defaults, plus its overrides."""
+    return {**DUR_MAX, **((FORMATS.get(fmt) or {}).get("dur_max") or {})}
 TAIL_MAX = 0.45
 FACE_BY = 5.0        # user rule 2026-08-12: presenter on screen by 5s
 DATA_MIN = 2.0       # a card carrying a claim must outlast the claim                            # 2026-08-03 oss-alt tail-trim rule
@@ -550,9 +567,10 @@ def check_beats(beats: dict, vo_end: float | None = None,
             f"({scenes[0]['type']}) — Instagram retention rule 2026-07-31.")
 
     # G04 — per-type held-layout ceilings
+    fmt_dur_max = dur_max_for(fmt_name)
     for i, sc in enumerate(scenes):
         cls = _dur_class(sc)
-        lim = DUR_MAX[cls]
+        lim = fmt_dur_max[cls]
         if sc["durationSec"] > lim:
             errors.append(
                 f"G04 scene {i:02d} ({sc['type']}, {cls}) held "

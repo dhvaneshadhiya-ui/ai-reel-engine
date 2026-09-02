@@ -526,6 +526,29 @@ assert "is OLDER than src/beats/" in _LINT_TS, (
     "beats and linting without re-rendering reads the previous cut")
 _counted("the frame linter reads the current render, not a stale copy")
 
+# --- pacing ceilings belong to the FORMAT, not to news ------------------------
+# DUR_MAX was a module constant measured on news reels, where holding one image
+# is death. In a tutorial the screen IS the content. chatgpt-stickers is a
+# how-to filed as ai-tools and 4 of its 17 screen scenes tripped a ceiling
+# derived from a genre it has nothing in common with. The same note has sat
+# under DUR_MAX since August explaining why facecam and SFX were moved
+# per-format; DUR_MAX itself was not.
+import reel_gates as _rg                                      # noqa: E402
+assert _rg.dur_max_for("news") == _rg.DUR_MAX, (
+    "a format with no dur_max override must keep the measured defaults")
+assert _rg.dur_max_for("__nope__") == _rg.DUR_MAX, (
+    "an unknown format must fall back to the defaults, not raise")
+_probe = dict(_rg.FORMATS["news"]); _probe["dur_max"] = {"motion": 9.9}
+assert {**_rg.FORMATS, "__probe__": _probe} and \
+    _rg.dur_max_for("news")["motion"] == 2.9, "override leaked across formats"
+assert "fmt_dur_max[cls]" in (ROOT / "tools/reel_gates.py").read_text(), (
+    "G04 no longer reads the per-format ceiling — a news number would govern "
+    "every genre again")
+assert "dur_max_for(fmt)" in _LINT_TS and 'beats.get("format"' in _LINT_TS, (
+    "lint_frames no longer follows the sheet's own format — the linter and the "
+    "gates disagreeing is how a rule quietly becomes optional")
+_counted("held-layout ceilings follow the sheet's format, in gates AND linter")
+
 
 def _statcard(label: str, value: str = "$190"):
     """Turn the fixture's building-class scene into a one-row stat card."""

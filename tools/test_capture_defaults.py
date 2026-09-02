@@ -69,6 +69,24 @@ RENDER_SRC = {
 # Each is a NUMBER taken from a real frame, so each can silently drift back to
 # taste in a later edit — which is precisely what a check is for.
 REF_CHECKS: list[tuple[str, str, str, str]] = [
+    # SURFACE IS DECLARED, NOT GUESSED (2026-09-02). Whether an asset belongs
+    # in a phone frame cannot be measured: 8 of this repo's 32 exactly-
+    # 1080x1920 clips are iphone18-colors' Pantone chip graphics, and a bezel
+    # around a colour swatch lies about what is on screen. So the manifest
+    # declares screen/graphic/world and the compiler FORCES the device frame
+    # for `screen` — advice was tried for one reel and ignored, which is the
+    # failure that produced "our system didn't use real iPhone mockup".
+    ("compile_shot_plan.py", "a declared screen recording becomes a device frame",
+     r'surface == "screen" and scene\.get\("type"\) == "footage"[\s\S]{0,400}'
+     r'scene\["type"\] = "deviceframe"',
+     "without this the phone frame is a judgement call nobody makes"),
+    ("compile_shot_plan.py", "fullBleed is an explicit escape hatch",
+     r'not scene\.get\("fullBleed"\)',
+     "forcing with no opt-out means a deliberate full-frame UI shot is "
+     "impossible to author"),
+    ("compile_shot_plan.py", "an unknown surface value is refused",
+     r'surface not in \("screen", "graphic", "world"\)',
+     "a typo'd surface would silently mean 'not a screen'"),
     # THE TWO ZOOM RULES ARE OPPOSITE, AND CARRYING ONE ACROSS BROKE A REEL
     # (2026-09-01). A 1080x1920 source in FULL-BLEED footage must NOT push —
     # the 1.1x cuts 10% off every edge and the header is the first casualty.

@@ -82,6 +82,20 @@ for reader in ("sed -n '92,98p' tools/prepublish.py",
                "cat tools/script_doctor.py | head -40"):
     check(f"inspection ignored: {reader[:22]!r}",
           ctx(run("skill_cue.py", bash(reader, real_cue))) == "")
+# EVERY command in this repo is written as `cd "<repo>"` then the real work, and
+# `cd` is not a reader — so the whole guard above was dead for the commands it
+# was actually written to cover. It fired for real on 2026-09-02, on a `sed`
+# printing G23's help text, cueing `reel-analyzer` when no gate had run.
+for reader in ("sed -n '92,98p' tools/prepublish.py",
+               "grep -rn 'SKILL CUE' tools/"):
+    check(f"cd-prefixed inspection ignored: {reader[:18]!r}",
+          ctx(run("skill_cue.py",
+                  bash(f'cd "/repo"\n{reader}', real_cue))) == "")
+# ...and the neutral prefix must not swallow a REAL cue behind it.
+check("cd-prefixed real run still cues",
+      "social" in ctx(run("skill_cue.py", bash(
+          'cd "/repo"\npython3 tools/prepublish.py x', real_cue))))
+
 # ...but a real run that happens to pipe through a reader still counts.
 check("run piped to grep still cues",
       "social" in ctx(run("skill_cue.py", bash(
