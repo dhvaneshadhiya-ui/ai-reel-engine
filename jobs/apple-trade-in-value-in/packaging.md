@@ -1,24 +1,23 @@
 # Packaging — apple-trade-in-value-in
 
-**Instagram Reels only.** This is the INR cut; the USD cut
-(`apple-trade-in-value`) goes to YouTube and has its own file.
+**Instagram Reels only.** Hashtags in the FIRST COMMENT, never the caption,
+capped at the five Instagram actually reads (official, Aug 2025). No link
+anywhere: Instagram captions are not clickable, which is why this cut's CTA
+asks for a comment rather than pointing at a description.
 
-Hashtags live in the FIRST COMMENT, never the caption, and there are three of
-them: Instagram has ignored everything past five since August 2025, and
-`packaging_check.py` enforces the cap in code rather than trusting the
-`caption-and-hashtags` skill, which still says 12-15.
-
-No link anywhere. Instagram captions are not clickable, which is exactly why
-this cut's spoken CTA asks for a comment instead of pointing at a description.
+This is the DEPRECIATION cut. The how-to on the same subject is
+`apple-trade-in-value`, and it goes to YouTube.
 
 ## instagram
-CAPTION: Apple India says your old iPhone is worth up to ₹57,000. That figure belongs to one phone in the best possible condition, and the table on the page only lists four models, all of them iPhone 16s.
+CAPTION: Apple India will give you ₹15,500 for an iPhone 11 Pro Max. Six generations ago that was the best phone they made.
 
-Tap "See all iPhone values" and the real list opens: 32 models, down to an iPhone 8 at ₹5,500. Every row starts with the same two words. Up to.
+The whole curve is published on the same page that advertises the top number: 16 Pro Max ₹57,000, then ₹48,000, ₹39,500, ₹32,000, ₹21,500, ₹15,500.
 
-Worth knowing before you walk into a store: India's headline ties the credit to buying a new iPhone, and the button under that table says Shop iPhone. Apple's own note underneath says values vary by condition, year and configuration, and that not every device is eligible.
+Five generations, ₹41,500 gone. And the steepest single year isn't the newest one — it's 13 Pro Max to 12 Pro Max, ₹10,500 in one generation.
+
+Every figure begins with the same two words: up to. Best condition, best configuration, nothing promised.
 
 Figures read from Apple India on 2 September 2026.
-HASHTAGS: #iPhone #AppleIndia #iPhone18
-FIRST COMMENT: Which iPhone are you exchanging? Comment the model and I'll reply with what it tops out at on Apple's list.
-ALT TEXT: A phone screen scrolls Apple India's Exchange Offer page to the iPhone values table, where every row reads "Up to".
+HASHTAGS: #iPhone #AppleIndia #Depreciation
+FIRST COMMENT: How long have you been holding yours? Say the model and I'll pull Apple's current number for it.
+ALT TEXT: A falling bar chart of Apple India trade-in ceilings across six iPhone Pro Max generations, from ₹57,000 down to ₹15,500.

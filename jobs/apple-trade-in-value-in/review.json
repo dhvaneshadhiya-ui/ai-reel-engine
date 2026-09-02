@@ -1,17 +1,11 @@
 {
-  "script_sha256": "fe7cf3986b733dd1be720bceaf6502d70db649357c79c1b5ea18c51c73329171",
-  "structure_sha256": "a23fb2b55f8ae557af0c94b5e0dc0ec678f6d725d402125b2df77f5fcaee1149",
+  "script_sha256": "657e62eb0a9fc5d772eee5abedbc4482d024c331ea6594924dee1da5ff865845",
+  "structure_sha256": "dd7d0a1b666a86ac8ce58aea3d94bbacac679202caea9d403be83efccd95710c",
   "findings": [
-    "  OPENING has no version, date or time anchor: 'Apple says your old iPhone is worth fifty-seven thousand rupees.'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
-    "HOUSE TIC: 'condition year and configuration and' \u2014 already used in 1 other script(s) (apple-trade-in-value). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
-    "HOUSE TIC: 'underneath values vary by condition' \u2014 already used in 1 other script(s) (apple-trade-in-value). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
-    "HOUSE TIC: 'by condition year and configuration' \u2014 already used in 1 other script(s) (apple-trade-in-value). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
-    "HOUSE TIC: 'configuration and not every device' \u2014 already used in 1 other script(s) (apple-trade-in-value). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
-    "HOUSE TIC: 'and configuration and not every' \u2014 already used in 1 other script(s) (apple-trade-in-value). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
-    "HOUSE TIC: 'the full list thirtytwo models' \u2014 already used in 1 other script(s) (apple-trade-in-value). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "  BRIDGES 5/21 sentences (24%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
     "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
   ],
   "research_advice": [],
   "beatPlanShots": 0,
-  "proposedAt": "2026-09-02T06:58:36+00:00"
+  "proposedAt": "2026-09-02T07:09:51+00:00"
 }

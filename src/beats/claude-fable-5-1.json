@@ -41,8 +41,8 @@
           "vol": 0.582
         }
       ],
-      "durationSec": 2.08,
       "captionBottom": 1000,
+      "durationSec": 2.08,
       "assetId": "hook",
       "claimId": "hook",
       "covers": "This AI was so",
@@ -364,12 +364,17 @@
       "bg": "black",
       "rows": [
         {
-          "label": "unauthorized actions, across 10 runs",
+          "label": "unauthorized actions",
           "value": "19",
           "pct": 1.0
+        },
+        {
+          "label": "runs they happened in",
+          "value": "10",
+          "pct": 0.53
         }
       ],
-      "footnote": "Agents acting against real people on the live internet",
+      "footnote": "Against real people and organisations, on the live internet",
       "durationSec": 2.8,
       "assetId": "rogue",
       "claimId": "rogue",
@@ -517,9 +522,14 @@
       "bg": "black",
       "rows": [
         {
+          "label": "Opus 5 (max)",
+          "value": "$2.34",
+          "pct": 0.62
+        },
+        {
           "label": "Fable 5 (max)",
           "value": "$3.14",
-          "pct": 0.83
+          "pct": 0.84
         },
         {
           "label": "Fable 5.1 (max)",
@@ -560,12 +570,17 @@
       "bg": "black",
       "rows": [
         {
-          "label": "Fable 5.1 vs Fable 5",
-          "value": "1.7x",
+          "label": "Median model",
+          "value": "71M",
+          "pct": 0.51
+        },
+        {
+          "label": "Fable 5.1",
+          "value": "140M",
           "pct": 1.0
         }
       ],
-      "footnote": "Artificial Analysis",
+      "footnote": "Artificial Analysis \u2014 tokens to run the Intelligence Index",
       "durationSec": 3.02,
       "assetId": "trap",
       "claimId": "trap",

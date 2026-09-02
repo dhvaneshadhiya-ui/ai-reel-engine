@@ -5,74 +5,77 @@ A single or disputed claim must be SPOKEN hedged (framework S20).
 
 ## CLAIMS
 
-- CLAIM: Apple India's published iPhone ceiling is Rs 57,000 (iPhone 16 Pro Max).
+- CLAIM: Apple India's ceiling for an iPhone 11 Pro Max is Rs 15,500.
   TIER: official
-  SPOKEN: "Apple says your old iPhone is worth fifty-seven thousand rupees."
-  SRC: https://www.apple.com/in/shop/trade-in
-  VIA: Apple India, own published page - table.dd-table read from the live DOM
-       2026-09-02: 16 Pro Max "Up to Rs57000.00", 16 Pro "Rs51500.00",
-       16 Plus "Rs36000.00", 16 "Rs36000.00".
-
-- CLAIM: The visible table lists only four models, all iPhone 16 variants.
-  TIER: official
-  SPOKEN: "that table lists four phones, and all four are iPhone 16s"
-  SRC: https://www.apple.com/in/shop/trade-in
-  VIA: Apple India, own published page - the table has exactly four data rows.
-
-- CLAIM: "See all iPhone values" opens the full list of 32 models, the lowest
-    being an iPhone 8 at Rs 5,500.
-  TIER: official
-  SPOKEN: "tap See all iPhone values. That opens the full list, thirty-two models, down to an iPhone 8 at five and a half thousand"
+  SPOKEN: "Apple will give you fifteen and a half thousand rupees for an iPhone 11 Pro Max."
   SRC: https://www.apple.com/in/shop/browse/overlay/tradein_landing/iphone_values
-  VIA: Apple India, own overlay - 32 unique models read from the live DOM
-       2026-09-02; iPhone 8 = "Up to Rs5500.00" is the lowest.
+  VIA: Apple India, own value overlay - read from the live DOM 2026-09-02,
+       "iPhone 11 Pro Max = Up to Rs15500.00".
 
-- CLAIM: India frames the credit as tied to buying a new iPhone.
+- CLAIM: Across six Pro Max generations Apple India lists 57,000 / 48,000 /
+    39,500 / 32,000 / 21,500 / 15,500.
   TIER: official
-  SPOKEN: "Buy a new iPhone today and get four and a half thousand to fifty-seven thousand credit when you exchange."
-  SRC: https://www.apple.com/in/shop/trade-in
-  VIA: Apple India, own published page - h2 read verbatim from the live DOM
-       2026-09-02: "Buy a new iPhone today and get Rs4500.00-Rs57000.00 credit
-       when you exchange."
+  SPOKEN: "Sixteen Pro Max, fifty-seven thousand. Fifteen, forty-eight. Fourteen, thirty-nine and a half. Thirteen, thirty-two. Twelve, twenty-one and a half. Eleven, fifteen and a half."
+  SRC: https://www.apple.com/in/shop/browse/overlay/tradein_landing/iphone_values
+  VIA: Apple India, own value overlay - all six read from the live DOM
+       2026-09-02 in one pass.
 
-- CLAIM: The button under the India values card reads "Shop iPhone".
+- CLAIM: The span from 16 Pro Max to 11 Pro Max is Rs 41,500.
   TIER: official
-  SPOKEN: "the button under that table says Shop iPhone"
-  SRC: https://www.apple.com/in/shop/trade-in
-  VIA: Apple India, own published page - read from a 1080x1920 screen
-       recording of the page, 2026-09-02. The US card carries "Find your
-       trade-in value" in the same position.
+  SPOKEN: "Five generations, forty-one and a half thousand rupees, gone."
+  VIA: arithmetic on the row above - 57,000 minus 15,500. No outside source
+       needed or claimed; it is subtraction on Apple's own published figures.
+  SRC: https://www.apple.com/in/shop/browse/overlay/tradein_landing/iphone_values
 
-- CLAIM: Apple states value varies by condition, year and configuration, and
-    that not all devices are eligible.
+- CLAIM: The largest single-generation drop in that ladder is 13 Pro Max to
+    12 Pro Max, Rs 10,500 - larger than the newest step.
   TIER: official
-  SPOKEN: "values vary by condition, year and configuration, and not every device is eligible"
+  SPOKEN: "It's the step from thirteen to twelve. Ten and a half thousand, in a single generation."
+  VIA: arithmetic on the same six figures. Steps are 9,000 / 8,500 / 7,500 /
+       10,500 / 6,000, so 10,500 is the maximum and it is not the newest.
+  SRC: https://www.apple.com/in/shop/browse/overlay/tradein_landing/iphone_values
+
+- CLAIM: Every figure in Apple's list is prefixed "Up to".
+  TIER: official
+  SPOKEN: "every figure there begins with the same two words. Up to."
   SRC: https://www.apple.com/in/shop/trade-in
-  VIA: Apple India, own published page - footnote read verbatim 2026-09-02.
-       Wording is identical to the US page.
+  VIA: Apple India, own page and overlay - every row of both reads "Up to".
+
+- CLAIM: Averaged over those five generations the ceiling falls about
+    Rs 8,300 a year.
+  TIER: official
+  SPOKEN: "that's roughly eight thousand rupees a year"
+  VIA: arithmetic - 41,500 over 5 generations = 8,300. SPOKEN deliberately
+       rounds DOWN to "roughly eight thousand" rather than up, and says
+       "roughly", because one generation is not exactly one year.
+  SRC: https://www.apple.com/in/shop/browse/overlay/tradein_landing/iphone_values
 
 ONE-SOURCE-OK: every figure is a fact about what Apple India publishes on its
-own page, so Apple is the primary record, not merely the best source. A second
-outlet reporting this table would be quoting this page. Verified against the
-LIVE DOM: the table is JavaScript-rendered and a static fetch returns nothing.
+own page, so Apple is the primary record. A second outlet reporting this table
+would be quoting it. Verified against the LIVE DOM - the values are
+JavaScript-rendered and a static fetch returns nothing.
 
 ## NOT CLAIMED
 
-- We do NOT attribute the Rs 4,500 floor to any model. The lowest iPhone on
-  the full list is Rs 5,500, so Rs 4,500 belongs to something not on it, and
-  what that is could not be verified.
-- We do NOT say what any individual will be offered.
-- We do NOT cover the Android exchange line (Rs 3,000-Rs 37,000), which is a
-  different device class and a different reel.
-- We do NOT claim values change at the September 9 launch.
+- We do NOT state what any iPhone originally cost. A launch-price comparison
+  would make the depreciation figure far more dramatic, and it is exactly the
+  claim this ledger cannot support: no launch price was verified this session,
+  so none is spoken.
+- We do NOT say a generation equals a year. The script says "roughly" and
+  "a single generation" for that reason.
+- We do NOT claim these values drop at the September 9 launch.
+- We do NOT cover the Android exchange line, or the purchase-tied framing -
+  that is the other cut's material.
 
 ## SEARCHED
 
+- 2026-09-02  live DOM read of the Apple India iPhone values overlay
+  (settled: all 32 models, including the six Pro Max generations this reel is
+   built on.)
 - 2026-09-02  live DOM read of https://www.apple.com/in/shop/trade-in
-  (settled: every figure, both headlines, the button labels and the footnote.)
-- 2026-09-02  live DOM read of the India iPhone values overlay
-  (settled: the full 32-model list and the Rs 5,500 floor.)
-- 2026-09-02  same two reads against the US pages
-  (settled: the differences - "Exchange" branding, purchase-tied credit,
-   "Shop iPhone" vs "Find your trade-in value", and 16 Plus/16 sharing one
-   price in India but not in the US.)
+  (settled: the "Up to" prefix and the footnote.)
+- 2026-09-02  attempted screen capture of the values overlay at mobile width
+  (settled that it is UNUSABLE as footage: the overlay renders a desktop
+   layout even at 360px, putting 32 rows on one screen at unreadable size.
+   The ladder is therefore a coded graphic built from the verified numbers,
+   with the readable four-row table as its receipt.)
