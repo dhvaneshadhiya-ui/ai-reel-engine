@@ -620,6 +620,38 @@ def main() -> None:
         if (scene.get("type") == "commentcta"
                 and scene.get("variant") == "keyword"):
             scene.setdefault("captionBottom", 880)
+        # A SPLIT NEEDS THE 16:9 MASTER, NOT THE PORTRAIT ONE (2026-09-02).
+        #
+        # CLAUDE.md has always said "native 9:16 for full-frame facecam, keep
+        # 16:9 for split scenes", and both halves are right for a reason:
+        #
+        #   full frame  the panel IS 1080x1920. A 16:9 source would have to be
+        #               side-cropped to 607px wide, which slices the hands off
+        #               horizontally. Portrait is the only way to fill it.
+        #   split       the panel is 1080x960, WIDER than tall. A portrait
+        #               source can only show ~47% of its height, and measured
+        #               on the master the eyes sit at 23% and the hands at
+        #               74-92% — so the panel gets a head and nothing else.
+        #               A 16:9 source fills that panel by height and crops the
+        #               sides, keeping the whole body and the gesture.
+        #
+        # Practice drifted from the doctrine: 73 scenes across the repo still
+        # reference avatar-master-169.mp4, and every reel made recently points
+        # its split at the portrait master instead. That drift is the whole
+        # reason the presenter never gestures in a split beat.
+        if scene.get("type") == "split" and "avatar" in str(scene.get("bottomSrc") or ""):
+            bsrc = str(scene["bottomSrc"])
+            info = media_info(public / bsrc) if bsrc else None
+            if info and info.get("height", 0) > info.get("width", 0):
+                alt = bsrc.replace("avatar-master", "avatar-master-169")
+                print(f"  ADVICE shot {index}: split uses the PORTRAIT master "
+                      f"({int(info['width'])}x{int(info['height'])}). A "
+                      f"1080x960 panel can show ~47% of it, and the hands sit "
+                      f"at 74-92% — this beat will crop to a head. Render a "
+                      f"16:9 master to {alt.split('/')[-1]} and point "
+                      f"bottomSrc at it, or move the beat to full-frame "
+                      f"footage where the gesture fits.")
+
         # SEVERAL THINGS TO READ IS A READ, NOT A FRAME (2026-09-02).
         #
         # Two document components exist and nothing ever chose between them.

@@ -493,6 +493,27 @@ obviously cover `marketing-skills:social` at 2am.
 
 ### HyperFrames (installed 2026-08-16) — a SCENE SOURCE, never the reel
 
+**MEASURED 2026-09-02: it has produced ZERO assets in 23 reels.** No manifest
+names a HyperFrames asset, no beat sheet references one, and every mention of
+it anywhere in this repo is defensive — two hooks and three documents that
+exist only to stop its router hijacking a reel request. Nine skills, nine
+guards, no output. Either use it for the scene assets it was admitted for, or
+remove it and delete the guards with it; today it is pure hijack surface with
+nothing on the other side of the trade. This is a note, not a decision — the
+skills were installed at the user's call and removing them is the user's call
+too.
+
+**AND WE DO NOT USE THE REMOTION WE ALREADY HAVE.** Also measured that day:
+**19 of 43 scene components have never appeared in a single reel** — among them
+`screenstep`, `stackwindows`, `notifstack`, `strikeswap`, `desktopmockup`,
+`problemsolved`. `deviceframe` was in that list until 2026-09-01, when the user
+asked why a reel of screen recordings had no phone mockup; the component had
+been sitting there the whole time. Meanwhile six types carry everything
+(footage 347, receipt 90, floatcard 82, annotatezoom 70, wordcascade 46,
+specsheet 43) and **21 of 27 reels give 40% or more of their scenes to one
+component**. Reaching for a new component is cheaper than building one, and
+nobody is reaching.
+
 Nine `hyperframes-*` / `media-use` skills are installed, at the user's call, to
 widen the supply of designed scenes. **Remotion remains the assembler.**
 

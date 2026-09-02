@@ -823,17 +823,30 @@ def check_beats(beats: dict, vo_end: float | None = None,
             f"G06 facecam {share:.0%} of runtime, outside "
             f"{FC_MIN:.0%}-{FC_MAX:.0%} for format {fmt_name!r}.")
 
-    # G07 — one source clip may carry only one footage beat
+    # G07 — one source ASSET may carry only one beat
+    #
+    # SCOPE WIDENED 2026-09-02. This counted `footage` only, so a reel could
+    # replay the same DOCUMENT as often as it liked and nothing said a word.
+    # claude-fable-5-1 did exactly that: 8 distinct receipt images across 16
+    # receipt scenes, several of them the same page twice in a row, on a reel
+    # whose 27 scenes were 59% one component. Repo-wide, 76 scenes replay an
+    # asset already shown in the same reel.
+    #
+    # Replaying an asset is what a reel does when the scouting did not find
+    # enough material, which is the user's "scouting is weak" made countable.
+    # The avatar is exempt: the presenter is SUPPOSED to recur.
     used = Counter()
     for sc in scenes:
-        src = str(sc.get("src") or "")
-        if sc["type"] == "footage" and src and "avatar-master" not in src:
+        src = str(sc.get("src") or sc.get("topSrc") or "")
+        if src and "avatar-master" not in src and sc["type"] not in ("commentcta",):
             used[src] += 1
     for src, n in used.items():
         if n > 1:
             errors.append(
-                f"G07 clip reuse: {src.split('/')[-1]} carries {n} footage "
-                "beats — cut a DISTINCT shot for every slot (rule 2026-07-31).")
+                f"G07 asset reuse: {src.split('/')[-1]} carries {n} beats — "
+                f"scout a DISTINCT asset for every slot (rule 2026-07-31, "
+                f"widened past `footage` 2026-09-02). Showing one thing twice "
+                f"is what a reel does when the scouting ran out.")
 
     # G08 — sound design: sparse, and never louder than the band
     cues = [c for s in scenes for c in (s.get("sfx") or [])]
