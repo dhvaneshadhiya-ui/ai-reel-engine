@@ -90,6 +90,7 @@ const opts = {
   wait: num(flags.wait, 2500),
   duration: num(flags.duration, 8),
   selector: flags.selector,
+  tight: "tight" in flags,
   full: !!flags.full,
   hide: flags.hide ? flags.hide.split(",").map((s) => s.trim()).filter(Boolean) : [],
   script: flags.script,
@@ -275,7 +276,46 @@ async function screenshot() {
     await el.waitFor({ state: "visible", timeout: 15000 });
     await el.scrollIntoViewIfNeeded();
     await sleep(400);
-    await el.screenshot({ path: opts.out, type: "png" });
+
+    // AN ELEMENT CAPTURE IS THE WRONG SHAPE FOR A 9:16 REEL (2026-09-02).
+    //
+    // `--selector` crops tight to one element, which is exactly what you want
+    // for accuracy and exactly wrong for the frame it has to live in. A card
+    // is sized at 86% of frame WIDTH and takes its height from the source
+    // aspect, so a wide, short element fills a sliver and the rest of the
+    // 1080x1920 frame is blurred backdrop. Measured across the repo: 69 of 117
+    // receipt scenes filled under 60% of frame height, worst case 14%.
+    //
+    // So the crop now GROWS around the element until it is at least 9:16,
+    // taking in whatever page sits above and below it. The element stays
+    // centred and nothing is cut — there is simply more context around it,
+    // which is what a reader sees anyway. Clamped to the page, so a short page
+    // gives back what it has. --tight opts out for the rare case where the
+    // surrounding page is genuinely misleading.
+    const box = await el.boundingBox();
+    const page9x16 = await page.evaluate(() => ({
+      w: document.documentElement.scrollWidth,
+      h: document.documentElement.scrollHeight,
+    }));
+    const wantH = box ? box.width * (16 / 9) : 0;
+    if (box && !opts.tight && box.height < wantH && page9x16.h > box.height) {
+      const grow = Math.min(wantH, page9x16.h);
+      const cy = box.y + box.height / 2;
+      let y = Math.max(0, cy - grow / 2);
+      if (y + grow > page9x16.h) y = Math.max(0, page9x16.h - grow);
+      const h = Math.min(grow, page9x16.h - y);
+      await page.screenshot({
+        path: opts.out, type: "png",
+        clip: { x: box.x, y, width: box.width, height: h },
+      });
+      console.error(
+        `  grew the crop to fill the frame: ${Math.round(box.width)}x` +
+        `${Math.round(box.height)} -> ${Math.round(box.width)}x${Math.round(h)} ` +
+        `(aspect ${(h / box.width).toFixed(2)}; a 9:16 reel wants 1.78+). ` +
+        `--tight to keep the element alone.`);
+    } else {
+      await el.screenshot({ path: opts.out, type: "png" });
+    }
   } else {
     await page.screenshot({ path: opts.out, type: "png", fullPage: opts.full });
   }

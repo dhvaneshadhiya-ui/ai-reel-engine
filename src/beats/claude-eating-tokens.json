@@ -46,12 +46,12 @@
         {
           "src": "sfx2/risers-01.mp3",
           "vol": 0.367,
-          "at": 0.15
+          "at": 0.0
         },
         {
           "src": "sfx2/impact-boom.mp3",
           "vol": 0.452,
-          "at": 0.15
+          "at": 0.35
         }
       ],
       "creditOnScreen": true,
@@ -80,6 +80,7 @@
       ],
       "creditOnScreen": true,
       "durationSec": 3.5,
+      "captionBottom": 620,
       "assetId": "docs-context",
       "claimId": "docs-context"
     },
@@ -321,6 +322,7 @@
       "creditOnScreen": true,
       "covers": "your agent's permissions",
       "durationSec": 3.02,
+      "captionBottom": 620,
       "assetId": "skill-hooks",
       "claimId": "skill-hooks"
     },

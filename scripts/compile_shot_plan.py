@@ -706,6 +706,7 @@ def main() -> None:
         # that geometry and test_gates pins the two together.
         if scene.get("type") in ("receipt", "sourceread") \
                 and "captionBottom" not in scene:
+            sys.path.insert(0, str(DEFAULT_ENGINE / "tools"))
             from reel_gates import receipt_caption_bottom
             scene["captionBottom"] = receipt_caption_bottom(scene)
         # WHAT IS THE VIEWER LOOKING AT? (2026-09-02)
@@ -1032,6 +1033,30 @@ def main() -> None:
 
     output.write_text(json.dumps(beats, indent=2, ensure_ascii=False) + "\n")
     print(f"compiled {len(scenes)} shots, {audio_end:.3f}s: {output}")
+
+    # PICK THE TEXT COLOUR FROM THE PIXELS, HERE, AUTOMATICALLY (2026-09-02).
+    #
+    # auto_contrast has always been able to do this; it ran in report mode
+    # because rewriting a sheet DURING A RENDER, after the user approved it, is
+    # an edit rather than a measurement. That objection is about WHEN, not
+    # about whether. Here is the right when: the beat sheet is being GENERATED
+    # from the shot plan, nothing has been approved yet, and G27 hashes the
+    # narration rather than this file. So the ink is simply chosen correctly
+    # instead of being reported as wrong later.
+    #
+    # It matters because 30 headline and caption ink choices across this repo
+    # disagreed with the pixels behind them and every one shipped — including
+    # light type on a 0.98-luminance frame, which is what dragged a 46% black
+    # scrim across the first frame of claude-fable-5-1 and read as a grey band.
+    try:
+        r = subprocess.run(
+            [sys.executable, str(DEFAULT_ENGINE / "tools" / "auto_contrast.py"), slug,
+             "--write"], capture_output=True, text=True, timeout=180)
+        tail = [l for l in r.stdout.splitlines() if "set `theme`" in l]
+        if tail:
+            print("  " + tail[-1].strip())
+    except Exception as e:                                      # noqa: BLE001
+        print(f"  note: could not auto-pick text colour ({e})")
 
 
 if __name__ == "__main__":
