@@ -587,6 +587,29 @@ assert (ROOT / "formats/howto.md").exists(), (
     "a format with no playbook is numbers with no genre behind them")
 _counted("the howto teardown actually governs: 5s screen passes, news does not")
 
+# --- the receipt caption lane must mirror the component ----------------------
+# reel_gates computes where a receipt's highlight lands so a caption can be put
+# below it. That arithmetic is a COPY of ReceiptScene's, and a copy that drifts
+# puts the caption back on top of the words — which is exactly what shipped on
+# claude-fable-5-1. Pin both numbers to the component.
+_RC_TS = (ROOT / "src/components/ReceiptScene.tsx").read_text()
+assert "width * 0.86" in _RC_TS, (
+    "ReceiptScene's card width changed — re-derive RECEIPT_CARD_W_FRAC and "
+    "RECEIPT_FILL_MIN, which both assume 0.86")
+assert "cardH * 0.55" in _RC_TS, (
+    "ReceiptScene's highlight fit changed — re-derive RECEIPT_UNION_H_FRAC, "
+    "or the caption lane stops clearing the highlight")
+assert (_rg.RECEIPT_CARD_W_FRAC, _rg.RECEIPT_UNION_H_FRAC) == (0.86, 0.55), (
+    "the mirrored constants no longer match the component")
+_band = _rg.receipt_highlight_band({"srcWidth": 1080, "srcHeight": 1920,
+                                    "highlights": [{"x": 0, "y": 0, "w": 9, "h": 9}]})
+assert _band[0] < 960 < _band[1], "the band must straddle frame centre"
+assert _rg.receipt_caption_bottom(
+    {"srcWidth": 1080, "srcHeight": 1920,
+     "highlights": [{"x": 0, "y": 0, "w": 9, "h": 9}]}) >= 384, (
+    "a caption lane below SAFE_RECT's floor is eaten by the platform's own UI")
+_counted("the receipt caption lane mirrors ReceiptScene and clears the highlight")
+
 
 def _statcard(label: str, value: str = "$190"):
     """Turn the fixture's building-class scene into a one-row stat card."""

@@ -335,6 +335,43 @@ def receipt_fill(scene: dict, frame_w: int = 1080, frame_h: int = 1920) -> float
     return (frame_w * (h / w)) / frame_h
 
 
+# WHERE A RECEIPT'S HIGHLIGHT LANDS ON SCREEN, so a caption can be kept off it.
+#
+# ReceiptScene centres the highlight union at frame centre and fits it to at
+# most 55% of the card height. These constants MIRROR that component and are
+# pinned by test_gates — if ReceiptScene's numbers move and these do not, the
+# caption goes back on top of the words it is supposed to sit beside.
+RECEIPT_CARD_W_FRAC = 0.86       # cardW = 0.86 * frame width
+RECEIPT_UNION_H_FRAC = 0.55      # union fitted to <= 55% of card height
+
+
+def receipt_highlight_band(scene: dict, frame_h: int = 1920) -> tuple[float, float]:
+    """(top, bottom) in px of the on-screen band the highlights can occupy.
+
+    Worst case, not typical: the union is centred and may fill 55% of the card,
+    so a caption placed outside this band cannot cover a highlight however the
+    zoom settles.
+    """
+    if not scene.get("highlights"):
+        return (frame_h / 2, frame_h / 2)
+    fill = min(1.0, receipt_fill(scene, frame_h=frame_h))
+    half = (fill * frame_h * RECEIPT_UNION_H_FRAC) / 2
+    mid = frame_h / 2
+    return (mid - half, mid + half)
+
+
+def receipt_caption_bottom(scene: dict, frame_h: int = 1920) -> int:
+    """A caption offset that clears both the highlight band and the credit lane.
+
+    Returns a `captionBottom` (px from the frame bottom). Kept inside
+    SAFE_RECT's floor so the platform's own furniture does not eat it either.
+    """
+    _, band_bottom = receipt_highlight_band(scene, frame_h)
+    # sit BELOW the highlight, with a gap, but never below the safe floor
+    want = frame_h - band_bottom - 70
+    return int(max(384, min(want, 620)))
+
+
 def dur_max_for(fmt: str) -> dict[str, float]:
     """The held-layout ceilings for a format: the defaults, plus its overrides."""
     return {**DUR_MAX, **((FORMATS.get(fmt) or {}).get("dur_max") or {})}

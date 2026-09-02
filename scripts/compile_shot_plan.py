@@ -620,6 +620,22 @@ def main() -> None:
         if (scene.get("type") == "commentcta"
                 and scene.get("variant") == "keyword"):
             scene.setdefault("captionBottom", 880)
+        # A CAPTION MUST NOT SIT ON THE WORDS THE RECEIPT IS HIGHLIGHTING
+        # (2026-09-02). Only `split` and `commentcta` ever got a caption lane,
+        # so a receipt used the global fallback and landed wherever that put
+        # it — on claude-fable-5-1 that meant "banned" printed across the
+        # yellow highlight it was describing, and the credit chip printed
+        # across the line under it. Two text systems fighting over the same
+        # band, which is the failure G58's "one text system at a time" note
+        # already describes for typecards.
+        #
+        # ReceiptScene centres the highlight union at frame centre, so the
+        # clear lane is below it; reel_gates.receipt_caption_bottom mirrors
+        # that geometry and test_gates pins the two together.
+        if scene.get("type") in ("receipt", "sourceread") \
+                and "captionBottom" not in scene:
+            from reel_gates import receipt_caption_bottom
+            scene["captionBottom"] = receipt_caption_bottom(scene)
         # WHAT IS THE VIEWER LOOKING AT? (2026-09-02)
         #
         # `surface` answers the one question that decides whether an asset
