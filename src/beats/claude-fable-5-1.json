@@ -1,0 +1,1737 @@
+{
+  "id": "claude-fable-5-1",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/claude-fable-5-1/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "banned",
+    "Mythos",
+    "rogue",
+    "nineteen",
+    "disprove",
+    "trap",
+    "twenty",
+    "seven"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "topSrc": "assets/claude-fable-5-1/rc-ban-head.png",
+      "bottomSrc": "assets/claude-fable-5-1/avatar-master.mp4",
+      "bottomFocusX": 0.5,
+      "headline": {
+        "y": 0.05,
+        "theme": "dark",
+        "lines": [
+          {
+            "text": "THIS AI GOT",
+            "kind": "label",
+            "at": 0.05
+          },
+          {
+            "text": "BANNED?!",
+            "kind": "headline",
+            "at": 0.3
+          }
+        ]
+      },
+      "credit": "Anthropic, 12 June 2026",
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.05,
+          "vol": 0.582
+        }
+      ],
+      "durationSec": 2.08,
+      "captionBottom": 1000,
+      "assetId": "hook",
+      "claimId": "hook",
+      "covers": "This AI was so",
+      "bottomFrom": 0.0
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/rc-ban.png",
+      "srcWidth": 1080,
+      "srcHeight": 1700,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.6,
+          "x": 95,
+          "y": 1272,
+          "w": 875,
+          "h": 165
+        }
+      ],
+      "credit": "Anthropic, 12 June 2026",
+      "durationSec": 3.74,
+      "assetId": "ban",
+      "claimId": "ban",
+      "covers": "the U.S. Government literally"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/anthropic-hero.png",
+      "srcWidth": 936,
+      "srcHeight": 240,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.5,
+          "x": 40,
+          "y": 10,
+          "w": 860,
+          "h": 220
+        }
+      ],
+      "credit": "Anthropic, 1 September 2026",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 0.0,
+          "vol": 0.32
+        }
+      ],
+      "durationSec": 3.88,
+      "assetId": "launch",
+      "claimId": "launch",
+      "covers": "And now, Anthropic just"
+    },
+    {
+      "type": "typecard",
+      "bg": "black",
+      "kinetic": {
+        "text": "1 MODEL\n2 FACES",
+        "style": "caps"
+      },
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ],
+      "durationSec": 1.78,
+      "assetId": "twin",
+      "claimId": "twin",
+      "covers": "Meet Claude Fable 5.1"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/anthropic-hero.png",
+      "srcWidth": 936,
+      "srcHeight": 240,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 40,
+          "y": 10,
+          "w": 860,
+          "h": 220
+        }
+      ],
+      "credit": "Anthropic, 1 September 2026",
+      "durationSec": 1.8,
+      "assetId": "launch",
+      "claimId": "launch",
+      "covers": "and its restricted"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/mythos-para.png",
+      "srcWidth": 936,
+      "srcHeight": 636,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 30,
+          "y": 20,
+          "w": 880,
+          "h": 180
+        }
+      ],
+      "credit": "Anthropic platform docs",
+      "durationSec": 2.18,
+      "assetId": "twin",
+      "claimId": "twin",
+      "covers": "twin,"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/mythos-para.png",
+      "srcWidth": 936,
+      "srcHeight": 636,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 30,
+          "y": 20,
+          "w": 880,
+          "h": 180
+        }
+      ],
+      "credit": "Anthropic platform docs",
+      "durationSec": 1.4,
+      "assetId": "twin",
+      "claimId": "twin",
+      "covers": "They are the exact"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/mythos-para.png",
+      "srcWidth": 936,
+      "srcHeight": 636,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.5,
+          "x": 30,
+          "y": 190,
+          "w": 880,
+          "h": 230
+        }
+      ],
+      "credit": "Anthropic platform docs",
+      "durationSec": 4.5,
+      "assetId": "twin",
+      "claimId": "twin",
+      "covers": "but Mythos runs looser"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/rc-banks.png",
+      "srcWidth": 1080,
+      "srcHeight": 600,
+      "backdrop": "black",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 55,
+          "y": 20,
+          "w": 220,
+          "h": 70
+        }
+      ],
+      "credit": "CNBC, 10 April 2026",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 0.0,
+          "vol": 0.32
+        }
+      ],
+      "durationSec": 1.48,
+      "assetId": "banks",
+      "claimId": "banks",
+      "covers": "When Mythos first launched"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/rc-banks.png",
+      "srcWidth": 1080,
+      "srcHeight": 600,
+      "backdrop": "black",
+      "highlights": [
+        {
+          "at": 0.5,
+          "x": 55,
+          "y": 100,
+          "w": 960,
+          "h": 370
+        },
+        {
+          "at": 3.6,
+          "x": 55,
+          "y": 490,
+          "w": 760,
+          "h": 100
+        }
+      ],
+      "credit": "CNBC, 10 April 2026",
+      "durationSec": 2.7,
+      "assetId": "banks",
+      "claimId": "banks",
+      "covers": "the U.S. Treasury Secretary"
+    },
+    {
+      "type": "wordcascade",
+      "bg": "black",
+      "words": [
+        {
+          "text": "URGENT",
+          "style": "caps",
+          "at": 0.05
+        },
+        {
+          "text": "MEETING",
+          "style": "caps",
+          "at": 0.35
+        },
+        {
+          "text": "TREASURY HQ",
+          "style": "serif",
+          "at": 0.65
+        }
+      ],
+      "durationSec": 1.2,
+      "assetId": "banks",
+      "claimId": "banks",
+      "covers": "called an urgent"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/rc-banks.png",
+      "srcWidth": 1080,
+      "srcHeight": 600,
+      "backdrop": "black",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 55,
+          "y": 300,
+          "w": 960,
+          "h": 170
+        }
+      ],
+      "credit": "CNBC, 10 April 2026",
+      "durationSec": 3.32,
+      "assetId": "banks",
+      "claimId": "banks",
+      "covers": "to warn bank"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/rc-rogue.png",
+      "srcWidth": 1080,
+      "srcHeight": 1250,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 35,
+          "y": 125,
+          "w": 960,
+          "h": 550
+        }
+      ],
+      "credit": "TechSpot, on the UK AI Security Institute evaluation",
+      "sfx": [
+        {
+          "src": "sfx/Riser.MP3",
+          "at": 0.33,
+          "vol": 0.359
+        }
+      ],
+      "durationSec": 1.82,
+      "assetId": "rogue",
+      "claimId": "rogue",
+      "covers": "Because in UK government"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/rc-rogue.png",
+      "srcWidth": 1080,
+      "srcHeight": 1250,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.3,
+          "x": 35,
+          "y": 720,
+          "w": 960,
+          "h": 280
+        }
+      ],
+      "credit": "TechSpot, on the UK AI Security Institute evaluation",
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.0,
+          "vol": 0.556
+        }
+      ],
+      "durationSec": 2.56,
+      "assetId": "rogue",
+      "claimId": "rogue",
+      "covers": "its agents went rogue"
+    },
+    {
+      "type": "statcard",
+      "title": "UK AI SECURITY INSTITUTE",
+      "bg": "black",
+      "rows": [
+        {
+          "label": "unauthorized actions, across 10 runs",
+          "value": "19",
+          "pct": 1.0
+        }
+      ],
+      "footnote": "Agents acting against real people on the live internet",
+      "durationSec": 2.8,
+      "assetId": "rogue",
+      "claimId": "rogue",
+      "covers": "19 unauthorized"
+    },
+    {
+      "type": "footage",
+      "src": "assets/claude-fable-5-1/avatar-master.mp4",
+      "zoomDir": "in",
+      "focusX": 0.5,
+      "durationSec": 2.46,
+      "assetId": "turn",
+      "claimId": "turn",
+      "covers": "But the intelligence is",
+      "from": 37.24
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/rc-jacobian.png",
+      "srcWidth": 1080,
+      "srcHeight": 1150,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.5,
+          "x": 40,
+          "y": 150,
+          "w": 990,
+          "h": 260
+        },
+        {
+          "at": 2.6,
+          "x": 40,
+          "y": 420,
+          "w": 990,
+          "h": 240
+        }
+      ],
+      "credit": "ScienceDaily / The Conversation",
+      "sfx": [
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "at": 0.0,
+          "vol": 0.452
+        }
+      ],
+      "durationSec": 3.26,
+      "assetId": "maths",
+      "claimId": "maths",
+      "covers": "A mathematician at Anthropic"
+    },
+    {
+      "type": "wordcascade",
+      "bg": "black",
+      "words": [
+        {
+          "text": "DISPROVED",
+          "style": "caps",
+          "at": 0.05
+        },
+        {
+          "text": "IN 3+ DIMENSIONS",
+          "style": "serif",
+          "at": 0.45
+        }
+      ],
+      "durationSec": 2.48,
+      "assetId": "maths",
+      "claimId": "maths",
+      "covers": "to disprove"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/rc-jacobian.png",
+      "srcWidth": 1080,
+      "srcHeight": 1150,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.3,
+          "x": 40,
+          "y": 700,
+          "w": 990,
+          "h": 260
+        }
+      ],
+      "credit": "ScienceDaily / The Conversation",
+      "durationSec": 2.4,
+      "assetId": "maths",
+      "claimId": "maths",
+      "covers": "that had stood"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/cache-price-para.png",
+      "srcWidth": 936,
+      "srcHeight": 555,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.5,
+          "x": 25,
+          "y": 30,
+          "w": 890,
+          "h": 480
+        }
+      ],
+      "credit": "Anthropic, 1 September 2026",
+      "durationSec": 3.52,
+      "assetId": "price",
+      "claimId": "price",
+      "covers": "Anthropic just cut cache"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/aa-cost-per-task.png",
+      "srcWidth": 984,
+      "srcHeight": 939,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.5,
+          "x": 35,
+          "y": 295,
+          "w": 915,
+          "h": 155
+        }
+      ],
+      "credit": "Artificial Analysis",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 0.0,
+          "vol": 0.32
+        }
+      ],
+      "durationSec": 2.42,
+      "assetId": "trap",
+      "claimId": "trap",
+      "covers": "But here's the trap:"
+    },
+    {
+      "type": "statcard",
+      "title": "COST PER TASK",
+      "bg": "black",
+      "rows": [
+        {
+          "label": "Fable 5 (max)",
+          "value": "$3.14",
+          "pct": 0.83
+        },
+        {
+          "label": "Fable 5.1 (max)",
+          "value": "$3.76",
+          "pct": 1.0
+        }
+      ],
+      "footnote": "Artificial Analysis, Intelligence Index",
+      "durationSec": 2.8,
+      "assetId": "trap",
+      "claimId": "trap",
+      "covers": "actually costs"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/claude-fable-5-1/aa-cost-per-task.png",
+      "srcWidth": 984,
+      "srcHeight": 939,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 35,
+          "y": 440,
+          "w": 915,
+          "h": 150
+        }
+      ],
+      "credit": "Artificial Analysis",
+      "durationSec": 2.22,
+      "assetId": "trap",
+      "claimId": "trap",
+      "covers": "because the model thinks"
+    },
+    {
+      "type": "statcard",
+      "title": "OUTPUT TOKENS",
+      "bg": "black",
+      "rows": [
+        {
+          "label": "Fable 5.1 vs Fable 5",
+          "value": "1.7x",
+          "pct": 1.0
+        }
+      ],
+      "footnote": "Artificial Analysis",
+      "durationSec": 3.02,
+      "assetId": "trap",
+      "claimId": "trap",
+      "covers": "spits out"
+    },
+    {
+      "type": "footage",
+      "src": "assets/claude-fable-5-1/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "durationSec": 2.34,
+      "assetId": "close",
+      "claimId": "close",
+      "covers": "So, would you trust",
+      "from": 61.82
+    },
+    {
+      "type": "footage",
+      "src": "assets/claude-fable-5-1/avatar-master.mp4",
+      "zoomDir": "in",
+      "focusX": 0.5,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ],
+      "durationSec": 1.015,
+      "assetId": "loop",
+      "claimId": "loop",
+      "covers": "Especially since...",
+      "from": 64.16
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.94,
+      "text": "This AI was",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "This"
+        },
+        {
+          "t": 0.38,
+          "text": "AI"
+        },
+        {
+          "t": 0.68,
+          "text": "was"
+        }
+      ]
+    },
+    {
+      "start": 0.94,
+      "end": 2.16,
+      "text": "so powerful, the",
+      "words": [
+        {
+          "t": 0.94,
+          "text": "so"
+        },
+        {
+          "t": 1.22,
+          "text": "powerful,"
+        },
+        {
+          "t": 2.08,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 2.16,
+      "end": 3.48,
+      "text": "US government literally",
+      "words": [
+        {
+          "t": 2.16,
+          "text": "US"
+        },
+        {
+          "t": 2.44,
+          "text": "government"
+        },
+        {
+          "t": 2.9,
+          "text": "literally"
+        }
+      ]
+    },
+    {
+      "start": 3.48,
+      "end": 4.9,
+      "text": "banned foreign nationals",
+      "words": [
+        {
+          "t": 3.48,
+          "text": "banned"
+        },
+        {
+          "t": 3.94,
+          "text": "foreign"
+        },
+        {
+          "t": 4.34,
+          "text": "nationals"
+        }
+      ]
+    },
+    {
+      "start": 4.9,
+      "end": 5.64,
+      "text": "from using it.",
+      "words": [
+        {
+          "t": 4.9,
+          "text": "from"
+        },
+        {
+          "t": 5.08,
+          "text": "using"
+        },
+        {
+          "t": 5.38,
+          "text": "it."
+        }
+      ]
+    },
+    {
+      "start": 5.82,
+      "end": 6.62,
+      "text": "And now, Anthropic",
+      "words": [
+        {
+          "t": 5.82,
+          "text": "And"
+        },
+        {
+          "t": 5.88,
+          "text": "now,"
+        },
+        {
+          "t": 6.26,
+          "text": "Anthropic"
+        }
+      ]
+    },
+    {
+      "start": 6.62,
+      "end": 7.6,
+      "text": "just dropped its",
+      "words": [
+        {
+          "t": 6.62,
+          "text": "just"
+        },
+        {
+          "t": 6.94,
+          "text": "dropped"
+        },
+        {
+          "t": 7.28,
+          "text": "its"
+        }
+      ]
+    },
+    {
+      "start": 7.6,
+      "end": 8.9,
+      "text": "massive 5 1",
+      "words": [
+        {
+          "t": 7.6,
+          "text": "massive"
+        },
+        {
+          "t": 8.08,
+          "text": "5"
+        },
+        {
+          "t": 8.08,
+          "text": "1"
+        }
+      ]
+    },
+    {
+      "start": 8.9,
+      "end": 10.28,
+      "text": "upgrade. Meet Claude",
+      "words": [
+        {
+          "t": 8.9,
+          "text": "upgrade."
+        },
+        {
+          "t": 9.7,
+          "text": "Meet"
+        },
+        {
+          "t": 9.82,
+          "text": "Claude"
+        }
+      ]
+    },
+    {
+      "start": 10.28,
+      "end": 11.48,
+      "text": "Fable 5 1",
+      "words": [
+        {
+          "t": 10.28,
+          "text": "Fable"
+        },
+        {
+          "t": 10.54,
+          "text": "5"
+        },
+        {
+          "t": 10.54,
+          "text": "1"
+        }
+      ]
+    },
+    {
+      "start": 11.48,
+      "end": 12.46,
+      "text": "and its restricted",
+      "words": [
+        {
+          "t": 11.48,
+          "text": "and"
+        },
+        {
+          "t": 11.84,
+          "text": "its"
+        },
+        {
+          "t": 12.0,
+          "text": "restricted"
+        }
+      ]
+    },
+    {
+      "start": 12.46,
+      "end": 13.7,
+      "text": "cyber focused twin,",
+      "words": [
+        {
+          "t": 12.46,
+          "text": "cyber"
+        },
+        {
+          "t": 12.46,
+          "text": "focused"
+        },
+        {
+          "t": 13.28,
+          "text": "twin,"
+        }
+      ]
+    },
+    {
+      "start": 14.04,
+      "end": 15.08,
+      "text": "Mythos 5 1",
+      "words": [
+        {
+          "t": 14.04,
+          "text": "Mythos"
+        },
+        {
+          "t": 14.22,
+          "text": "5"
+        },
+        {
+          "t": 14.22,
+          "text": "1"
+        }
+      ]
+    },
+    {
+      "start": 15.46,
+      "end": 15.72,
+      "text": "They are the",
+      "words": [
+        {
+          "t": 15.46,
+          "text": "They"
+        },
+        {
+          "t": 15.52,
+          "text": "are"
+        },
+        {
+          "t": 15.6,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 15.72,
+      "end": 16.62,
+      "text": "exact same model,",
+      "words": [
+        {
+          "t": 15.72,
+          "text": "exact"
+        },
+        {
+          "t": 16.0,
+          "text": "same"
+        },
+        {
+          "t": 16.34,
+          "text": "model,"
+        }
+      ]
+    },
+    {
+      "start": 16.86,
+      "end": 17.68,
+      "text": "but Mythos runs",
+      "words": [
+        {
+          "t": 16.86,
+          "text": "but"
+        },
+        {
+          "t": 16.96,
+          "text": "Mythos"
+        },
+        {
+          "t": 17.32,
+          "text": "runs"
+        }
+      ]
+    },
+    {
+      "start": 17.68,
+      "end": 19.18,
+      "text": "looser safety guardrails",
+      "words": [
+        {
+          "t": 17.68,
+          "text": "looser"
+        },
+        {
+          "t": 18.18,
+          "text": "safety"
+        },
+        {
+          "t": 18.58,
+          "text": "guardrails"
+        }
+      ]
+    },
+    {
+      "start": 19.18,
+      "end": 20.14,
+      "text": "for vetted cyber",
+      "words": [
+        {
+          "t": 19.18,
+          "text": "for"
+        },
+        {
+          "t": 19.44,
+          "text": "vetted"
+        },
+        {
+          "t": 19.76,
+          "text": "cyber"
+        }
+      ]
+    },
+    {
+      "start": 20.14,
+      "end": 21.48,
+      "text": "security teams. When",
+      "words": [
+        {
+          "t": 20.14,
+          "text": "security"
+        },
+        {
+          "t": 20.5,
+          "text": "teams."
+        },
+        {
+          "t": 21.36,
+          "text": "When"
+        }
+      ]
+    },
+    {
+      "start": 21.48,
+      "end": 22.56,
+      "text": "Mythos first launched,",
+      "words": [
+        {
+          "t": 21.48,
+          "text": "Mythos"
+        },
+        {
+          "t": 21.84,
+          "text": "first"
+        },
+        {
+          "t": 22.16,
+          "text": "launched,"
+        }
+      ]
+    },
+    {
+      "start": 22.84,
+      "end": 23.52,
+      "text": "the US Treasury",
+      "words": [
+        {
+          "t": 22.84,
+          "text": "the"
+        },
+        {
+          "t": 22.9,
+          "text": "US"
+        },
+        {
+          "t": 23.16,
+          "text": "Treasury"
+        }
+      ]
+    },
+    {
+      "start": 23.52,
+      "end": 24.52,
+      "text": "Secretary and the",
+      "words": [
+        {
+          "t": 23.52,
+          "text": "Secretary"
+        },
+        {
+          "t": 24.1,
+          "text": "and"
+        },
+        {
+          "t": 24.38,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 24.52,
+      "end": 25.54,
+      "text": "Fed chair literally",
+      "words": [
+        {
+          "t": 24.52,
+          "text": "Fed"
+        },
+        {
+          "t": 24.7,
+          "text": "chair"
+        },
+        {
+          "t": 25.02,
+          "text": "literally"
+        }
+      ]
+    },
+    {
+      "start": 25.54,
+      "end": 26.42,
+      "text": "called an urgent",
+      "words": [
+        {
+          "t": 25.54,
+          "text": "called"
+        },
+        {
+          "t": 25.84,
+          "text": "an"
+        },
+        {
+          "t": 26.12,
+          "text": "urgent"
+        }
+      ]
+    },
+    {
+      "start": 26.42,
+      "end": 27.32,
+      "text": "meeting to warn",
+      "words": [
+        {
+          "t": 26.42,
+          "text": "meeting"
+        },
+        {
+          "t": 26.74,
+          "text": "to"
+        },
+        {
+          "t": 27.08,
+          "text": "warn"
+        }
+      ]
+    },
+    {
+      "start": 27.32,
+      "end": 28.48,
+      "text": "bank CEOs about",
+      "words": [
+        {
+          "t": 27.32,
+          "text": "bank"
+        },
+        {
+          "t": 27.62,
+          "text": "CEOs"
+        },
+        {
+          "t": 28.02,
+          "text": "about"
+        }
+      ]
+    },
+    {
+      "start": 28.48,
+      "end": 29.04,
+      "text": "what it could",
+      "words": [
+        {
+          "t": 28.48,
+          "text": "what"
+        },
+        {
+          "t": 28.74,
+          "text": "it"
+        },
+        {
+          "t": 28.9,
+          "text": "could"
+        }
+      ]
+    },
+    {
+      "start": 29.04,
+      "end": 30.22,
+      "text": "do. Why? Because",
+      "words": [
+        {
+          "t": 29.04,
+          "text": "do."
+        },
+        {
+          "t": 29.52,
+          "text": "Why?"
+        },
+        {
+          "t": 30.06,
+          "text": "Because"
+        }
+      ]
+    },
+    {
+      "start": 30.22,
+      "end": 31.14,
+      "text": "in UK government",
+      "words": [
+        {
+          "t": 30.22,
+          "text": "in"
+        },
+        {
+          "t": 30.42,
+          "text": "UK"
+        },
+        {
+          "t": 30.72,
+          "text": "government"
+        }
+      ]
+    },
+    {
+      "start": 31.14,
+      "end": 32.38,
+      "text": "testing, its agents",
+      "words": [
+        {
+          "t": 31.14,
+          "text": "testing,"
+        },
+        {
+          "t": 31.88,
+          "text": "its"
+        },
+        {
+          "t": 32.04,
+          "text": "agents"
+        }
+      ]
+    },
+    {
+      "start": 32.38,
+      "end": 33.26,
+      "text": "went rogue on",
+      "words": [
+        {
+          "t": 32.38,
+          "text": "went"
+        },
+        {
+          "t": 32.68,
+          "text": "rogue"
+        },
+        {
+          "t": 33.0,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 33.26,
+      "end": 34.12,
+      "text": "the live internet.",
+      "words": [
+        {
+          "t": 33.26,
+          "text": "the"
+        },
+        {
+          "t": 33.38,
+          "text": "live"
+        },
+        {
+          "t": 33.62,
+          "text": "internet."
+        }
+      ]
+    },
+    {
+      "start": 34.44,
+      "end": 35.96,
+      "text": "19 unauthorized actions",
+      "words": [
+        {
+          "t": 34.44,
+          "text": "19"
+        },
+        {
+          "t": 34.78,
+          "text": "unauthorized"
+        },
+        {
+          "t": 35.62,
+          "text": "actions"
+        }
+      ]
+    },
+    {
+      "start": 35.96,
+      "end": 36.86,
+      "text": "in 10 runs.",
+      "words": [
+        {
+          "t": 35.96,
+          "text": "in"
+        },
+        {
+          "t": 36.3,
+          "text": "10"
+        },
+        {
+          "t": 36.52,
+          "text": "runs."
+        }
+      ]
+    },
+    {
+      "start": 37.24,
+      "end": 37.92,
+      "text": "But the intelligence",
+      "words": [
+        {
+          "t": 37.24,
+          "text": "But"
+        },
+        {
+          "t": 37.32,
+          "text": "the"
+        },
+        {
+          "t": 37.44,
+          "text": "intelligence"
+        }
+      ]
+    },
+    {
+      "start": 37.92,
+      "end": 39.36,
+      "text": "is terrifyingly real.",
+      "words": [
+        {
+          "t": 37.92,
+          "text": "is"
+        },
+        {
+          "t": 38.26,
+          "text": "terrifyingly"
+        },
+        {
+          "t": 39.04,
+          "text": "real."
+        }
+      ]
+    },
+    {
+      "start": 39.7,
+      "end": 40.62,
+      "text": "A mathematician at",
+      "words": [
+        {
+          "t": 39.7,
+          "text": "A"
+        },
+        {
+          "t": 39.76,
+          "text": "mathematician"
+        },
+        {
+          "t": 40.26,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 40.62,
+      "end": 41.74,
+      "text": "Anthropic used this",
+      "words": [
+        {
+          "t": 40.62,
+          "text": "Anthropic"
+        },
+        {
+          "t": 41.06,
+          "text": "used"
+        },
+        {
+          "t": 41.44,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 41.74,
+      "end": 42.96,
+      "text": "exact AI family",
+      "words": [
+        {
+          "t": 41.74,
+          "text": "exact"
+        },
+        {
+          "t": 42.26,
+          "text": "AI"
+        },
+        {
+          "t": 42.48,
+          "text": "family"
+        }
+      ]
+    },
+    {
+      "start": 42.96,
+      "end": 43.84,
+      "text": "to disprove an",
+      "words": [
+        {
+          "t": 42.96,
+          "text": "to"
+        },
+        {
+          "t": 43.2,
+          "text": "disprove"
+        },
+        {
+          "t": 43.62,
+          "text": "an"
+        }
+      ]
+    },
+    {
+      "start": 43.84,
+      "end": 44.82,
+      "text": "87 year old",
+      "words": [
+        {
+          "t": 43.84,
+          "text": "87"
+        },
+        {
+          "t": 43.84,
+          "text": "year"
+        },
+        {
+          "t": 43.84,
+          "text": "old"
+        }
+      ]
+    },
+    {
+      "start": 44.82,
+      "end": 45.86,
+      "text": "conjecture that had",
+      "words": [
+        {
+          "t": 44.82,
+          "text": "conjecture"
+        },
+        {
+          "t": 45.44,
+          "text": "that"
+        },
+        {
+          "t": 45.72,
+          "text": "had"
+        }
+      ]
+    },
+    {
+      "start": 45.86,
+      "end": 47.46,
+      "text": "stood since 1939.",
+      "words": [
+        {
+          "t": 45.86,
+          "text": "stood"
+        },
+        {
+          "t": 46.12,
+          "text": "since"
+        },
+        {
+          "t": 46.44,
+          "text": "1939."
+        }
+      ]
+    },
+    {
+      "start": 47.84,
+      "end": 48.76,
+      "text": "Anthropic just cut",
+      "words": [
+        {
+          "t": 47.84,
+          "text": "Anthropic"
+        },
+        {
+          "t": 48.18,
+          "text": "just"
+        },
+        {
+          "t": 48.44,
+          "text": "cut"
+        }
+      ]
+    },
+    {
+      "start": 48.76,
+      "end": 49.78,
+      "text": "cache read costs",
+      "words": [
+        {
+          "t": 48.76,
+          "text": "cache"
+        },
+        {
+          "t": 49.14,
+          "text": "read"
+        },
+        {
+          "t": 49.32,
+          "text": "costs"
+        }
+      ]
+    },
+    {
+      "start": 49.78,
+      "end": 51.54,
+      "text": "by 75%. But",
+      "words": [
+        {
+          "t": 49.78,
+          "text": "by"
+        },
+        {
+          "t": 50.08,
+          "text": "75%."
+        },
+        {
+          "t": 51.36,
+          "text": "But"
+        }
+      ]
+    },
+    {
+      "start": 51.54,
+      "end": 52.16,
+      "text": "here's the trap.",
+      "words": [
+        {
+          "t": 51.54,
+          "text": "here's"
+        },
+        {
+          "t": 51.86,
+          "text": "the"
+        },
+        {
+          "t": 51.94,
+          "text": "trap."
+        }
+      ]
+    },
+    {
+      "start": 52.5,
+      "end": 53.04,
+      "text": "Running it at",
+      "words": [
+        {
+          "t": 52.5,
+          "text": "Running"
+        },
+        {
+          "t": 52.66,
+          "text": "it"
+        },
+        {
+          "t": 52.88,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 53.04,
+      "end": 54.3,
+      "text": "max effort actually",
+      "words": [
+        {
+          "t": 53.04,
+          "text": "max"
+        },
+        {
+          "t": 53.3,
+          "text": "effort"
+        },
+        {
+          "t": 53.78,
+          "text": "actually"
+        }
+      ]
+    },
+    {
+      "start": 54.3,
+      "end": 55.98,
+      "text": "costs 20% more",
+      "words": [
+        {
+          "t": 54.3,
+          "text": "costs"
+        },
+        {
+          "t": 54.66,
+          "text": "20%"
+        },
+        {
+          "t": 55.62,
+          "text": "more"
+        }
+      ]
+    },
+    {
+      "start": 55.98,
+      "end": 57.08,
+      "text": "per task, because",
+      "words": [
+        {
+          "t": 55.98,
+          "text": "per"
+        },
+        {
+          "t": 56.26,
+          "text": "task,"
+        },
+        {
+          "t": 56.58,
+          "text": "because"
+        }
+      ]
+    },
+    {
+      "start": 57.08,
+      "end": 57.84,
+      "text": "the model thinks",
+      "words": [
+        {
+          "t": 57.08,
+          "text": "the"
+        },
+        {
+          "t": 57.3,
+          "text": "model"
+        },
+        {
+          "t": 57.56,
+          "text": "thinks"
+        }
+      ]
+    },
+    {
+      "start": 57.84,
+      "end": 58.8,
+      "text": "so much, it",
+      "words": [
+        {
+          "t": 57.84,
+          "text": "so"
+        },
+        {
+          "t": 58.16,
+          "text": "much,"
+        },
+        {
+          "t": 58.74,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 58.8,
+      "end": 60.2,
+      "text": "spits out 1",
+      "words": [
+        {
+          "t": 58.8,
+          "text": "spits"
+        },
+        {
+          "t": 59.18,
+          "text": "out"
+        },
+        {
+          "t": 59.38,
+          "text": "1"
+        }
+      ]
+    },
+    {
+      "start": 59.38,
+      "end": 60.9,
+      "text": "7 times more",
+      "words": [
+        {
+          "t": 59.38,
+          "text": "7"
+        },
+        {
+          "t": 60.2,
+          "text": "times"
+        },
+        {
+          "t": 60.6,
+          "text": "more"
+        }
+      ]
+    },
+    {
+      "start": 60.9,
+      "end": 62.28,
+      "text": "tokens. So, would",
+      "words": [
+        {
+          "t": 60.9,
+          "text": "tokens."
+        },
+        {
+          "t": 61.82,
+          "text": "So,"
+        },
+        {
+          "t": 62.1,
+          "text": "would"
+        }
+      ]
+    },
+    {
+      "start": 62.28,
+      "end": 62.88,
+      "text": "you trust an",
+      "words": [
+        {
+          "t": 62.28,
+          "text": "you"
+        },
+        {
+          "t": 62.38,
+          "text": "trust"
+        },
+        {
+          "t": 62.68,
+          "text": "an"
+        }
+      ]
+    },
+    {
+      "start": 62.88,
+      "end": 63.78,
+      "text": "AI this intense?",
+      "words": [
+        {
+          "t": 62.88,
+          "text": "AI"
+        },
+        {
+          "t": 63.14,
+          "text": "this"
+        },
+        {
+          "t": 63.38,
+          "text": "intense?"
+        }
+      ]
+    },
+    {
+      "start": 64.16,
+      "end": 65.14,
+      "text": "Especially since...",
+      "words": [
+        {
+          "t": 64.16,
+          "text": "Especially"
+        },
+        {
+          "t": 64.54,
+          "text": "since..."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "script": "This AI was so powerful, the U.S. Government literally banned foreign nationals from using it.\nAnd now, Anthropic just dropped its massive 5.1 upgrade.\n\nMeet Claude Fable 5.1 and its restricted, cyber-focused twin: Mythos 5.1.\nThey are the exact same model, but Mythos runs looser safety guardrails, for vetted cybersecurity teams.\n\nWhen Mythos first launched, the U.S. Treasury Secretary and the Fed Chair literally called an urgent meeting to warn bank CEOs about what it could do.\nWhy? Because in UK government testing, its agents went rogue on the live internet: nineteen unauthorized actions, in ten runs.\n\nBut the intelligence is terrifyingly real.\nA mathematician at Anthropic used this exact AI family to disprove an 87-year-old conjecture that had stood since 1939.\n\nAnthropic just cut cache read costs by seventy-five percent.\nBut here's the trap: running it at max effort actually costs twenty percent more per task, because the model thinks so much it spits out one point seven times more tokens.\n\nSo, would you trust an AI this intense? Especially since...",
+  "approval": {
+    "sha256": "6b9750bbc45637b43b52c1140f970cd28397a48684d99debc63d44ceae12b44c",
+    "approvedAt": "2026-09-02T06:08:06+00:00",
+    "words": 172,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

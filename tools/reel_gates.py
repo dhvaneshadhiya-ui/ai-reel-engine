@@ -465,8 +465,19 @@ VO_SCRIPT_MATCH_FLOOR = 0.70
 
 def _norm_words(s: str) -> str:
     """Lowercase, strip punctuation, collapse space — so a `covers` phrase can be
-    matched against spoken words without tripping over commas or casing."""
+    matched against spoken words without tripping over commas or casing.
+
+    INITIALISMS COLLAPSE FIRST (2026-09-02). Blanket punctuation-stripping turns
+    "U.S." into two tokens, "u s", while whisper transcribes the same syllables
+    as one, "us". G39 then reported that "the U.S. Government literally" was not
+    spoken while its scene was on screen — over a transcript that reads "the us
+    government literally". That is a BLOCKING rule failing on a picture that
+    matched its words perfectly, which is worse than a missed advisory: it
+    stops a correct render and invites someone to weaken the gate.
+    """
     import re as _re
+    # "U.S." -> "US", "e.g." -> "eg", before the generic strip splits them.
+    s = _re.sub(r"\b(?:[A-Za-z]\.){2,}", lambda m: m.group(0).replace(".", ""), s)
     return _re.sub(r"\s+", " ", _re.sub(r"[^\w\s]", " ", s.lower())).strip()
 
 

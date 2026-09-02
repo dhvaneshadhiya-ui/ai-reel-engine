@@ -1089,6 +1089,28 @@ if _hits:
     raise SystemExit(1)
 _counted("G39 silent — covers found in corrected captions (whisper miswrote)")
 
+# G39 vs INITIALISMS (2026-09-02). Blanket punctuation-stripping turned "U.S."
+# into two tokens ("u s") while whisper transcribes it as one ("us"), so G39
+# blocked claude-fable-5-1 for a scene whose picture matched its words exactly.
+# A BLOCKING rule failing on correct work is worse than a missed advisory: it
+# stops the render and tempts the next person to weaken the gate.
+_s = copy.deepcopy(BASE)
+_s["scenes"][0] = copy.deepcopy(_doc)
+_s["scenes"][0]["covers"] = "the U.S. Government literally"
+_s["captions"] = [{"start": 0.0, "end": 0.7,
+                   "text": "the US Government literally banned"}]
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST,
+                       vo_words=VO_WORDS)
+    _hits = [a for a in _adv if "G39" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G39" in str(a)]
+if _hits:
+    print(f"  FAIL G39 fired on an initialism the transcript spells without "
+          f"periods: {_hits[0][:90]}")
+    raise SystemExit(1)
+_counted("G39 silent — 'U.S.' in covers matches 'US' as spoken")
+
 # ...and the hatch must not neuter the gate: words in NEITHER stream block.
 _s = copy.deepcopy(BASE)
 _s["scenes"][0] = copy.deepcopy(_doc)

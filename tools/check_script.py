@@ -685,7 +685,27 @@ def check(text: str, shape: str | None = None) -> list[str]:
             "nothing runs it for you.)")
 
     # 6. NUMBER DENSITY — also the playbook's own rule.
-    nums = len(re.findall(r"\$?\d[\d.,]*", flat))
+    #
+    # COUNT SPELLED-OUT NUMBERS TOO (2026-09-02). This matched digits only,
+    # and a script for a VOICE must spell numerals out — "seven hundred and
+    # twenty", not "720" — or the read is wrong. So the check misfired on
+    # every correctly-written script: apple-trade-in-value quotes six figures
+    # and was told it had "one number every 16 sentences". A check that
+    # penalises the correct form of the thing it is measuring is worse than
+    # no check.
+    #
+    # A run of number words counts ONCE, so "seven hundred and twenty" is one
+    # number rather than three. "one" is included because it is genuinely a
+    # spoken quantity here ("one photo, nine stickers"), at the cost of
+    # occasionally counting "one of those" — over-counting on the safe side,
+    # since this check only ever ADVISES that there are too few.
+    _units = (r"one|two|three|four|five|six|seven|eight|nine|ten|eleven|"
+              r"twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|"
+              r"nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|"
+              r"ninety|hundred|thousand|million|billion")
+    _word_num = rf"\b(?:{_units})(?:[\s-]+(?:and[\s-]+)?(?:{_units}))*\b"
+    nums = (len(re.findall(r"\$?\d[\d.,]*", flat))
+            + len(re.findall(_word_num, flat, re.I)))
     per = len(ss) / nums if nums else 999
     if nums and per > 3.5:
         notes.append(f"NUMBERS: one every {per:.1f} sentences. The playbook asks "

@@ -100,7 +100,7 @@
         "credit": "Anthropic, 1 September 2026",
         "sfx": [
           {
-            "src": "sfx/Magic Reveal.MP3",
+            "src": "sfx/Camera Shutter.MP3",
             "at": 0.0,
             "vol": 0.15
           }
@@ -129,11 +129,59 @@
         },
         "sfx": [
           {
-            "src": "sfx/Pop.MP3",
+            "src": "sfx/whoosh.MP3",
             "at": 0.0,
             "vol": 0.14
           }
         ]
+      }
+    },
+    {
+      "start_phrase": "and its restricted",
+      "line": "",
+      "needs": [],
+      "tier": "official",
+      "asset_id": "launch",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/anthropic-hero.png",
+        "srcWidth": 936,
+        "srcHeight": 240,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 40,
+            "y": 10,
+            "w": 860,
+            "h": 220
+          }
+        ],
+        "credit": "Anthropic, 1 September 2026"
+      }
+    },
+    {
+      "start_phrase": "twin,",
+      "line": "",
+      "needs": [],
+      "tier": "official",
+      "asset_id": "twin",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/mythos-para.png",
+        "srcWidth": 936,
+        "srcHeight": 636,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 30,
+            "y": 20,
+            "w": 880,
+            "h": 180
+          }
+        ],
+        "credit": "Anthropic platform docs"
       }
     },
     {
@@ -210,8 +258,8 @@
         "type": "receipt",
         "src": "assets/claude-fable-5-1/rc-banks.png",
         "srcWidth": 1080,
-        "srcHeight": 660,
-        "backdrop": "cream",
+        "srcHeight": 600,
+        "backdrop": "black",
         "highlights": [
           {
             "at": 0.4,
@@ -224,7 +272,7 @@
         "credit": "CNBC, 10 April 2026",
         "sfx": [
           {
-            "src": "sfx/Click.MP3",
+            "src": "sfx/Camera Shutter.MP3",
             "at": 0.0,
             "vol": 0.13
           }
@@ -248,8 +296,8 @@
         "type": "receipt",
         "src": "assets/claude-fable-5-1/rc-banks.png",
         "srcWidth": 1080,
-        "srcHeight": 660,
-        "backdrop": "cream",
+        "srcHeight": 600,
+        "backdrop": "black",
         "highlights": [
           {
             "at": 0.5,
@@ -257,6 +305,65 @@
             "y": 100,
             "w": 960,
             "h": 370
+          },
+          {
+            "at": 3.6,
+            "x": 55,
+            "y": 490,
+            "w": 760,
+            "h": 100
+          }
+        ],
+        "credit": "CNBC, 10 April 2026"
+      }
+    },
+    {
+      "start_phrase": "called an urgent",
+      "line": "",
+      "needs": [],
+      "tier": "reliable",
+      "asset_id": "banks",
+      "scene": {
+        "type": "wordcascade",
+        "bg": "black",
+        "words": [
+          {
+            "text": "URGENT",
+            "style": "caps",
+            "at": 0.05
+          },
+          {
+            "text": "MEETING",
+            "style": "caps",
+            "at": 0.35
+          },
+          {
+            "text": "TREASURY HQ",
+            "style": "serif",
+            "at": 0.65
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "to warn bank",
+      "line": "",
+      "needs": [],
+      "tier": "reliable",
+      "asset_id": "banks",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/rc-banks.png",
+        "srcWidth": 1080,
+        "srcHeight": 600,
+        "backdrop": "black",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 55,
+            "y": 300,
+            "w": 960,
+            "h": 170
           }
         ],
         "credit": "CNBC, 10 April 2026"
@@ -287,7 +394,14 @@
             "h": 550
           }
         ],
-        "credit": "TechSpot, on the UK AI Security Institute evaluation"
+        "credit": "TechSpot, on the UK AI Security Institute evaluation",
+        "sfx": [
+          {
+            "src": "sfx/Riser.MP3",
+            "at": 0.33,
+            "vol": 0.15
+          }
+        ]
       }
     },
     {
@@ -304,6 +418,37 @@
       "tier": "reliable",
       "asset_id": "rogue",
       "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/rc-rogue.png",
+        "srcWidth": 1080,
+        "srcHeight": 1250,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.3,
+            "x": 35,
+            "y": 720,
+            "w": 960,
+            "h": 280
+          }
+        ],
+        "credit": "TechSpot, on the UK AI Security Institute evaluation",
+        "sfx": [
+          {
+            "src": "sfx/Core.MP3",
+            "at": 0.0,
+            "vol": 0.17
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "19 unauthorized",
+      "line": "",
+      "needs": [],
+      "tier": "reliable",
+      "asset_id": "rogue",
+      "scene": {
         "type": "statcard",
         "title": "UK AI SECURITY INSTITUTE",
         "bg": "black",
@@ -314,14 +459,7 @@
             "pct": 1.0
           }
         ],
-        "footnote": "Agents acting against real people on the live internet",
-        "sfx": [
-          {
-            "src": "sfx/Core.MP3",
-            "at": 0.0,
-            "vol": 0.17
-          }
-        ]
+        "footnote": "Agents acting against real people on the live internet"
       }
     },
     {
@@ -384,6 +522,53 @@
             "vol": 0.19
           }
         ]
+      }
+    },
+    {
+      "start_phrase": "to disprove",
+      "line": "",
+      "needs": [],
+      "tier": "reliable",
+      "asset_id": "maths",
+      "scene": {
+        "type": "wordcascade",
+        "bg": "black",
+        "words": [
+          {
+            "text": "DISPROVED",
+            "style": "caps",
+            "at": 0.05
+          },
+          {
+            "text": "IN 3+ DIMENSIONS",
+            "style": "serif",
+            "at": 0.45
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "that had stood",
+      "line": "",
+      "needs": [],
+      "tier": "reliable",
+      "asset_id": "maths",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/claude-fable-5-1/rc-jacobian.png",
+        "srcWidth": 1080,
+        "srcHeight": 1150,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.3,
+            "x": 40,
+            "y": 700,
+            "w": 990,
+            "h": 260
+          }
+        ],
+        "credit": "ScienceDaily / The Conversation"
       }
     },
     {
@@ -456,6 +641,31 @@
       }
     },
     {
+      "start_phrase": "actually costs",
+      "line": "",
+      "needs": [],
+      "tier": "reliable",
+      "asset_id": "trap",
+      "scene": {
+        "type": "statcard",
+        "title": "COST PER TASK",
+        "bg": "black",
+        "rows": [
+          {
+            "label": "Fable 5 (max)",
+            "value": "$3.14",
+            "pct": 0.83
+          },
+          {
+            "label": "Fable 5.1 (max)",
+            "value": "$3.76",
+            "pct": 1.0
+          }
+        ],
+        "footnote": "Artificial Analysis, Intelligence Index"
+      }
+    },
+    {
       "start_phrase": "because the model thinks",
       "line": "because the model thinks so much it spits out one point seven times more tokens.",
       "needs": [
@@ -484,6 +694,26 @@
           }
         ],
         "credit": "Artificial Analysis"
+      }
+    },
+    {
+      "start_phrase": "spits out",
+      "line": "",
+      "needs": [],
+      "tier": "reliable",
+      "asset_id": "trap",
+      "scene": {
+        "type": "statcard",
+        "title": "OUTPUT TOKENS",
+        "bg": "black",
+        "rows": [
+          {
+            "label": "Fable 5.1 vs Fable 5",
+            "value": "1.7x",
+            "pct": 1.0
+          }
+        ],
+        "footnote": "Artificial Analysis"
       }
     },
     {
