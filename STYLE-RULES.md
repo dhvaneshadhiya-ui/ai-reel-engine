@@ -7022,64 +7022,45 @@ caption "1.7 times" rather than "1.7x" (G16 notation), kept because it is
 exactly what is spoken and the statcard beside it already reads 1.7x. No
 blocking gate was overridden and `--soft` was not used.
 
-## 2026-09-02 — the ElevenLabs retrieval gap
+## 2026-09-02 — the ElevenLabs retrieval gap, and a misdiagnosis
 
 `creative_generate_speech` works from this session: `prompt` + `voice_id` +
-`model_id: eleven_v3` starts a flow and returns a `flow_id`, `session_ids` and
-a set of pending generation ids. The US trade-in read was generated this way.
+`model_id: eleven_v3` starts a flow and the takes render. The US trade-in read
+was generated this way and PLAYED FINE in the user's view.
 
-**What does NOT work is getting the audio back.** Both
-`creative_get_flow_run_status` and `creative_show_flow_results` require
-`session_ids` as an ARRAY of strings, and this MCP server advertises an EMPTY
-parameter schema (`{"type": "object"}`, no properties). With no schema the
-harness cannot type a value as an array, so every attempt arrives as a string
-and the server rejects it:
+**FIRST, THE PART THAT WAS MY MISTAKE.** The call's own response said: *"If a
+generation view is shown it tracks progress and polls by itself, so there is
+nothing to do here. Only call `creative_get_flow_run_status` yourself if no
+view appeared."* A view DID appear. I polled anyway, hit an argument error, and
+reported a broken connector to the user. The tool told me not to poll and I
+did not read it. Read the `notes` field before treating a result as a failure.
+
+**SECOND, A REAL LIMIT, on the fallback path only.** If you ever do need to
+poll, `creative_get_flow_run_status` and `creative_show_flow_results` require
+`session_ids` as an ARRAY, and this server advertises an EMPTY parameter schema
+(`{"type": "object"}`). With no schema the harness cannot type a value as an
+array, so it arrives as a string and the server rejects it:
 
     session_ids must be an array of strings
 
-Tried and failed: a JSON-array literal, a comma-separated list, omitting the
-argument, `creative_get_available_assets` (returns unrelated workspace images,
-not the new generation), `get_more_tools` (answers "no additional tool exists
-for this yet"), and `read_widget_context` (no widget was published).
+Tried: a JSON-array literal, a comma list, `session_id` singular, omitting it,
+`creative_get_available_assets` (returns unrelated workspace images; rejects a
+`mime_type` filter), `creative_get_flow` (returns status `completed` but no
+media urls), `get_more_tools` ("no additional tool exists for this yet"), and
+`read_widget_context` under two names (nothing published).
 
-AGENT.md's flow — "poll `creative_get_flow_run_status`, download the mp3 from
-`media[].url`" — is therefore only half-runnable from an agent session today.
-It was verified working on 2026-08-27; what changed is not the server but
-whether an array can be sent to a schema-less tool.
+So: the audio reaches the USER's view, and there is currently no path for the
+AGENT to pull the bytes onto disk. AGENT.md's "download the mp3 from
+`media[].url`" is the fallback path, and it is the one that is blocked.
 
-**Until that is fixed, generation is automatic and retrieval is a click:** the
-call returns a flow URL, the user opens it, downloads the mp3, and
-`tools/vo_external.py <slug> <file>` takes over from there — it already exists
-for exactly this handoff and re-encodes for the HeyGen upload.
+**ONE CALL GENERATES FOUR TAKES, and nothing asked for that.** The request sent
+exactly prompt + voice_id + model_id. The server fanned out to four
+generations and offered a voice switcher. That is roughly 4x the credits for a
+read we already knew the voice for. No parameter to control it is documented
+and the empty schema hides any that exists. Try a count parameter on the next
+run and record what the server accepts.
 
 **Do NOT quietly fall back to HeyGen TTS.** It is the flat read the external
-flow exists to escape: 2.14 semitones against ElevenLabs' 3.60 on the same
+flow exists to escape: 2.14 semitones against ElevenLabs 3.60 on the same
 cloned voice, measured 2026-08-27. Shipping it because retrieval was awkward
 would undo the reason for the whole path.
-
-## 2026-09-02 (later) — the mid-sentence loop cut reads as a broken file
-
-**RAW NOTE.** claude-fable-5-1's supplied script ended deliberately mid-clause
-— "So, would you trust an AI this intense? Especially since..." — so the last
-frame ran back into the hook. I flagged the mechanic before rendering and the
-user approved it explicitly ("go ahead, split hook and hard cut"). On seeing
-the master the same user reported it as a fault: *"Video is not completed."*
-
-**ROOT CAUSE.** The device only works if the viewer is already looping. The
-FIRST person to watch a reel — the person reviewing it, and anyone whose feed
-does not immediately replay — sees a file that stops mid-word, which is
-indistinguishable from a truncated render. Approving the mechanic in the
-abstract is not the same as recognising it in the cut.
-
-**DISTILLED RULE.** End on a complete sentence. If a loop is wanted, get it
-from a question the ending ASKS ("So, would you trust an AI this intense?"),
-not from a clause it abandons. A question loops just as hard, reads as
-finished, and doubles as the comment prompt. Ask before rendering whether the
-reviewer will see a loop or a bug — and if it costs nothing to end complete,
-end complete.
-
-**Cost of the fix here: zero.** The VO already contained a complete question
-0.38s before the fragment, so the master was trimmed at 64.16s, vo.json
-truncated to match, and the reel recompiled. No regeneration, no credits.
-Facecam recovered to 10.5% by putting "They are the exact same model" and
-"Why?" on camera — which also broke an 8s run of one white card.
