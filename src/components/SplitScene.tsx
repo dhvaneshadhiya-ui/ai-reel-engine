@@ -42,6 +42,30 @@ export const SplitScene: React.FC<{ scene: SplitProps }> = ({ scene }) => {
             style={{
               width: "100%",
               height: "100%",
+              // THE HANDS WERE BEING CROPPED OUT (2026-09-02).
+              //
+              // This was hardcoded to 20%, anchoring a half-height panel near
+              // the TOP of a 1080x1920 source. The digital twin is recorded
+              // waist-up with hands in frame on purpose
+              // (references/digital-twin-recording-spec.md), and measured on
+              // the shipped masters it gestures hard: 7.6 to 11.4 against the
+              // registry's 4.41 for a look that "gestures". Compared frame to
+              // frame, the master showed both hands raised in an open-palm
+              // gesture and the rendered split showed head and shoulders only.
+              // Every gesture in a split beat was thrown away by the crop.
+              //
+              // AND NO ANCHOR CAN FIX IT. Measured on the master at the
+              // same timestamp: eyes at 23% of frame height, hands at 74-92%.
+              // Containing both needs a 69% span; a half-height panel over a
+              // 9:16 source shows ~47% after the 1.07 push. Anchoring at 45%
+              // was tried and rendered: it cut the eyes AND still missed the
+              // hands, which is worse than where it started.
+              //
+              // So the default stays at 20% — face-first, which is the right
+              // call for a panel that cannot hold the whole gesture — and
+              // `bottomFocusY` exists for a presenter framed differently.
+              // The gestures belong to FULL-FRAME footage beats, and the real
+              // fault is how few of those a reel gets: see G60.
               objectFit: "cover",
               objectPosition: `${(scene.topFocusX ?? 0.5) * 100}% 50%`,
               transform: `scale(${zoom})`,
@@ -70,7 +94,8 @@ export const SplitScene: React.FC<{ scene: SplitProps }> = ({ scene }) => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              objectPosition: `${(scene.bottomFocusX ?? 0.5) * 100}% 20%`,
+              objectPosition: `${(scene.bottomFocusX ?? 0.5) * 100}% ${
+                (scene.bottomFocusY ?? 0.20) * 100}%`,
               transform: `scale(${zoom})`,
             }}
           />
@@ -81,7 +106,8 @@ export const SplitScene: React.FC<{ scene: SplitProps }> = ({ scene }) => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              objectPosition: `${(scene.bottomFocusX ?? 0.5) * 100}% 20%`,
+              objectPosition: `${(scene.bottomFocusX ?? 0.5) * 100}% ${
+                (scene.bottomFocusY ?? 0.20) * 100}%`,
               transform: `scale(${zoom})`,
             }}
           />

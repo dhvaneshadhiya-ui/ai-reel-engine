@@ -206,6 +206,9 @@ export type Scene =
       bottomSrc?: string;
       bottomFrom?: number;
       bottomFocusX?: number;
+      /** vertical crop anchor for the bottom panel, 0..1. Defaults to 0.45 —
+       *  20% cropped the presenter's hands out of every split beat. */
+      bottomFocusY?: number;
     })
   | (SceneBase & {
       type: "desktopmockup";
@@ -549,6 +552,9 @@ export type Scene =
       bottomSrc: string;
       bottomFrom?: number;
       bottomFocusX?: number;
+      /** vertical crop anchor for the bottom panel, 0..1. Defaults to 0.45 —
+       *  20% cropped the presenter's hands out of every split beat. */
+      bottomFocusY?: number;
       kinetic?: Kinetic;
       credit?: string;
     });

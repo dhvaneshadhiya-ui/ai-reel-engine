@@ -711,6 +711,29 @@ def _receipt(w: int, h: int, allow: bool = False):
     return mutate
 
 
+def _split_led():
+    """A reel whose presenter time is mostly a split panel — no gestures."""
+    def mutate(sheet: dict) -> None:
+        sc = sheet["scenes"][4]
+        sc.clear()
+        sc.update(type="split", durationSec=6.0, captionBottom=1000,
+                  topSrc="assets/x/rc.png",
+                  bottomSrc="assets/x/avatar-master.mp4",
+                  covers="benchmark", credit="@src")
+        # The fixture is footage-led by design, so the split can only dominate
+        # once the OTHER presenter beats stop being presenter beats. Point them
+        # at b-roll; the point of the case is the split/full-frame ratio.
+        for i, other in enumerate(sheet["scenes"]):
+            if i != 4 and other.get("type") == "footage" \
+                    and "avatar" in str(other.get("src", "")):
+                other["src"] = "assets/x/clips/b.mp4"
+    return mutate
+
+
+# G60 — a split crops the hands out; measured, no anchor fixes it. ADVISES.
+expect_fail(_split_led(), "G60",
+            "a reel whose presenter time is mostly split panels")
+
 # G59 — the format rule, measured. 936x240 is claude-fable-5-1's real
 # anthropic-hero.png: a card that fills 14% of the frame and blurs the other
 # 86%. 1080x1920 is a mobile capture and fills it completely.

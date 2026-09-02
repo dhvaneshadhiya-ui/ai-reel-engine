@@ -1299,6 +1299,37 @@ def check_beats(beats: dict, vo_end: float | None = None,
         if rows == 0:
             errors.append(f"G25 scene {i:02d} settingspane has no rows.")
 
+    # G60 — A SPLIT CANNOT SHOW THE PRESENTER'S HANDS (2026-09-02). ADVICE.
+    #
+    # MEASURED, not assumed. On the master at the same timestamp the presenter
+    # has both hands raised in an open-palm gesture; the rendered split panel
+    # shows head and shoulders and nothing else. Eyes sit at 23% of frame
+    # height and hands at 74-92%, so containing both needs a 69% span, and a
+    # half-height panel over a 9:16 source shows about 47% after the push.
+    # Anchoring lower was tried and rendered: it cut the eyes AND still missed
+    # the hands. No anchor fixes it; the geometry forbids it.
+    #
+    # So gestures live in FULL-FRAME beats, and a reel that spends its
+    # presenter time in splits has a presenter who never gestures. The shipped
+    # masters score 7.6 to 11.4 on measure_avatar against a registry that calls
+    # 4.41 "gestures" — the movement is there and the frame throws it away.
+    #
+    # ADVICE, not blocking: a split-led reel can be a deliberate choice, and
+    # only 1 of 26 reels in this repo trips it. It is here so the choice is
+    # made rather than discovered afterwards.
+    _full = sum(s.get("durationSec", 0) for s in scenes
+                if s["type"] == "footage" and "avatar" in str(s.get("src", "")))
+    _spl = sum(s.get("durationSec", 0) for s in scenes
+               if s["type"] == "split" and "avatar" in str(s.get("bottomSrc", "")))
+    if _spl > _full and (_spl + _full) > 0:
+        errors.append(
+            f"G60 the presenter is on screen {_spl:.1f}s in splits against "
+            f"{_full:.1f}s full-frame. A split panel crops to head and "
+            f"shoulders — measured, the hands sit at 74-92% of the source and "
+            f"the panel can only show ~47% of it — so most of this reel's "
+            f"presenter time shows no gesture at all. Give the beats that "
+            f"carry emphasis a full-frame footage scene.")
+
     # G59 — A RECEIPT MUST ACTUALLY FILL THE 9:16 FRAME (2026-09-02).
     #
     # BLOCKING, under Rule 1. The constitution's first rule is that we make
