@@ -1,0 +1,28 @@
+{
+  "slug": "apple-trade-in-value",
+  "topic": "What your old iPhone is actually worth on Apple Trade In, and why the number on the page is a ceiling not a quote",
+  "details": "Apple's US trade-in page publishes a values table: iPhone 16 Pro Max up to $720, 16 Pro $630, 16 Plus $485, 16 $480. Headline reads 'Get $40-$720'. Every row says 'Up to'. Apple's own disclaimer: values vary by condition, year and configuration, and not all devices are eligible for credit. The real quote comes from the 'Find your trade-in value' flow. Timely: iPhone 18 launches Sept 9.",
+  "subject": "What your old iPhone is actually worth on Apple Trade In, and why the number on the page is a ceiling not a quote",
+  "audience": "<who should care, and what they already know>",
+  "platform": "both",
+  "goal": "<awareness|education|engagement|follow|comment|conversion>",
+  "core_value": "<what the viewer learns, feels, sees or can do>",
+  "desired_action": "<if any>",
+  "reveal_target": "none",
+  "cta_keyword": "TRADE",
+  "target_duration": "58s",
+  "tone": "<voice, personality, boundaries>",
+  "source_policy": "official-preferred",
+  "footage_constraints": "<assets, permissions, presenter, recordings>",
+  "credit_instructions": "on-screen",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 58,
+  "music": false,
+  "created_at": "2026-09-02T06:20:46.619512+00:00",
+  "status": "initialized"
+}

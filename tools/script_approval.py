@@ -315,13 +315,24 @@ def cmd_propose(slug: str) -> None:
     # 60-80s (bug caught 2026-08-13 before the first top5 reel).
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "tools"))
     from reel_gates import FORMATS
+    # THE SHOT PLAN IS THE COMPILER'S SOURCE OF TRUTH FOR FORMAT, so it is read
+    # FIRST here (2026-09-02). This looked only at manifest.json, while
+    # compile_shot_plan and the gates read jobs/<slug>/shot-plan.json — two
+    # places to declare one thing, and nothing keeping them equal. A `howto`
+    # job scaffolded by new_job.py was judged against the news 60-80s band at
+    # propose and against its own 40-75s band at compile. Fourth instance this
+    # week of a news default quietly governing another genre.
     fmt = "news"
-    man_p = ROOT / "public" / "assets" / slug / "manifest.json"
-    if man_p.exists():
-        try:
-            fmt = json.loads(man_p.read_text()).get("format", "news")
-        except Exception:
-            pass
+    for _p, _k in ((ROOT / "jobs" / slug / "shot-plan.json", "format"),
+                   (ROOT / "public" / "assets" / slug / "manifest.json", "format")):
+        if _p.exists():
+            try:
+                _v = json.loads(_p.read_text()).get(_k)
+            except Exception:                                  # noqa: BLE001
+                _v = None
+            if _v:
+                fmt = _v
+                break
     band_lo, band_hi = FORMATS.get(fmt, FORMATS["news"])["runtime"]
     # A REEL MAY RUN AT ITS OWN SPEED, AND THEN THIS BAND IS FOR THE WRONG VOICE.
     # WPS_MIN/MAX were measured at the locked 1.05. A reel with a per-reel speed

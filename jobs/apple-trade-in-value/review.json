@@ -1,0 +1,11 @@
+{
+  "script_sha256": "2bb115a768e254dc72b11118d738ed4219a940aef01196df33ce3d88ea7db440",
+  "structure_sha256": "6200aa7361eb7ad64147d6d67ccca10c773f1f3411e818e8da21b350b994f17e",
+  "findings": [
+    "  OPENING has no version, date or time anchor: 'Apple says your old iPhone is worth seven hundred and twenty dol'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-09-02T06:30:35+00:00"
+}
