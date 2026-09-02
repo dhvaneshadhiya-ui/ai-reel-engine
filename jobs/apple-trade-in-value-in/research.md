@@ -69,18 +69,23 @@ JavaScript-rendered and a static fetch returns nothing.
 
 ## SEARCHED
 
-- 2026-09-02  live DOM read of the Apple India iPhone values overlay
-  (settled: all 32 models, including the six Pro Max generations this reel is
-   built on.)
-- 2026-09-02  live DOM read of https://www.apple.com/in/shop/trade-in
-  (settled: the "Up to" prefix and the footnote.)
-- 2026-09-02  attempted screen capture of the values overlay at mobile width
-  (settled that it is UNUSABLE as footage: the overlay renders a desktop
-   layout even at 360px, putting 32 rows on one screen at unreadable size.
-   The ladder is therefore a coded graphic built from the verified numbers,
-   with the readable four-row table as its receipt.)
+### 1. WHAT HAPPENED — the official record
+- 2026-09-02  live DOM read of https://www.apple.com/in/shop/trade-in and its
+  iPhone values overlay (settled every figure in this reel).
 
-INDEPENDENT-CHECK: N/A — same as the USD cut: the claims are what
-Apple India's own page and value overlay say, read from the live DOM
-2026-09-02. No third party can be more authoritative about Apple's
-published prices than Apple's published prices.
+### 2. WHO ELSE TRIED IT — hands-on, by someone who is not the vendor
+- 2026-09-02  NOT YET RUN for India specifically. The US search found values
+  revised down after inspection; whether India's exchange programme behaves
+  the same is unverified and is NOT claimed in the script.
+
+### 3. WHAT ARE PEOPLE SAYING — the ones actually using it
+- 2026-09-02  NOT YET RUN. Recorded as a gap rather than filled with the US
+  findings, which would be a different market.
+
+### 4. WHAT WOULD CONTRADICT THIS — the search to prove the story wrong
+- 2026-09-02  NOT YET RUN.
+
+INDEPENDENT-CHECK: 2026-09-02 the depreciation figures are arithmetic on
+  Apple India's own published ceilings, so no third party can be more
+  authoritative about them. The reception question above is a real gap and is
+  marked as one.

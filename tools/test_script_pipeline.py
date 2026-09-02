@@ -90,7 +90,17 @@ RESEARCH = """# Research — selftest
 
 ## SEARCHED
 
+### 1. WHAT HAPPENED
 - 2026-08-21  "iphone 18 pro september"  (freshness re-check)
+
+### 2. WHO ELSE TRIED IT
+- 2026-08-21  N/A — the phone is unreleased; nobody outside Apple has one.
+
+### 3. WHAT ARE PEOPLE SAYING
+- 2026-08-21  "iphone 18 pro rumour reaction"  (settled the leak consensus)
+
+### 4. WHAT WOULD CONTRADICT THIS
+- 2026-08-21  "iphone 18 pro delayed"  (nothing credible against the date)
 
 INDEPENDENT-CHECK: 2026-08-21 searched for hands-on coverage — none exists
   yet for an unreleased phone, and the script says "reportedly" throughout.

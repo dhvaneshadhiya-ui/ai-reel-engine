@@ -339,6 +339,42 @@ def check_research(slug: str, script_text: str | None,
                 "advises rather than refusing; record it as a CLAIM if it is "
                 "load-bearing.")
 
+    # FOUR QUESTIONS, NOT ONE (2026-09-02).
+    #
+    # claude-fable-5-1 ran SIX searches across TWELVE source domains, more than
+    # any other reel in this repo, and still asserted that nobody had tested a
+    # model people were testing publicly. The searches were:
+    #
+    #     export controls / the Treasury meeting / the red-team count / the
+    #     maths conjecture
+    #
+    # Every one asks WHAT HAPPENED. None asks who else tried it, what users are
+    # saying, or what would contradict the story. Volume was never the problem
+    # and "search more" would not have helped — a whole CATEGORY was missing.
+    #
+    # So the log is asked for four things, and a heading may be answered "N/A"
+    # with a reason. A category you consciously skipped is fine; a category you
+    # never considered is how this happened.
+    CATEGORIES = [
+        ("WHAT HAPPENED", "the official record"),
+        ("WHO ELSE TRIED IT", "hands-on or testing by someone who is not the vendor"),
+        ("WHAT ARE PEOPLE SAYING", "the ones actually using it"),
+        ("WHAT WOULD CONTRADICT THIS", "the search that would prove the story wrong"),
+    ]
+    log = body.split("## SEARCHED")[-1] if "## SEARCHED" in body else ""
+    missing = [name for name, _ in CATEGORIES if name.lower() not in log.lower()]
+    if missing and log:
+        errors.append(
+            "SEARCH LOG DOES NOT COVER THE FOUR QUESTIONS. Missing: "
+            + ", ".join(missing) + ".\n"
+            "  Add a heading per question under ## SEARCHED with the searches "
+            "you ran, or\n  the heading and 'N/A — <why>' if it genuinely does "
+            "not apply.\n"
+            "  claude-fable-5-1 ran six searches across twelve domains — the "
+            "most of any\n  reel here — and still missed that people were "
+            "already testing the thing,\n  because all six asked WHAT "
+            "HAPPENED. The gap was a category, not a count.")
+
     # DID ANYONE LOOK BEYOND THE ANNOUNCEMENT? (2026-09-02)
     #
     # The absence check above catches the SENTENCE. This catches the HABIT that

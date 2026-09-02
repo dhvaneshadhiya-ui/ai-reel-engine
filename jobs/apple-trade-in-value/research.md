@@ -76,17 +76,41 @@ static fetch of the same URL returns no table at all.
 
 ## SEARCHED
 
+### 1. WHAT HAPPENED — the official record
 - 2026-09-02  live DOM read of https://www.apple.com/shop/trade-in
-  (settled: the headline range, the four-row table, the footnote, the button
-   label.)
+  (settled: the $40-$720 headline, the four-row table, the footnote, the
+   button label.)
 - 2026-09-02  live DOM read of the US iPhone values overlay
   (settled: all 32 models and the $40 floor at iPhone 8.)
-- 2026-09-02  static WebFetch of the same trade-in URL
-  (settled that it is USELESS here: it returned "the webpage content does not
-   include a trade-in values table" because the table is JavaScript-rendered.
-   Anything read only through a static fetch would have missed the payoff.)
+- 2026-09-02  static WebFetch of the same URL
+  (settled that it is USELESS here: the table is JavaScript-rendered and a
+   static fetch returns nothing. The payoff of this reel is invisible to it.)
 
-INDEPENDENT-CHECK: N/A — every figure in this reel is a fact about
-what Apple publishes on Apple's own page. There is no independent test
-of "what does this page say"; the page is the primary record, and it
-was read from the live DOM rather than a static fetch.
+### 2. WHO ELSE TRIED IT — hands-on, by someone who is not the vendor
+- 2026-09-02  "Apple trade-in offer lower than quoted value after inspection"
+  (settled that the published table is NOT the last number that moves: users
+   report a quote of $70 revised to $15 after inspection, and a MacBook quoted
+   ~$1,100 revised to $850 for "incorrect product or serial number". Apple's
+   policy is that a revised value may be accepted or the device returned.
+   SOURCES: discussions.apple.com thread 255241765, forums.macrumors.com
+   thread 2443727.)
+
+### 3. WHAT ARE PEOPLE SAYING — the ones actually using it
+- 2026-09-02  same search as above
+  (settled the recurring complaint: no recourse on a revised value beyond
+   accept-or-return. This is the material the first draft of this reel did not
+   have, and it is a better story than the "up to" wording alone.)
+
+### 4. WHAT WOULD CONTRADICT THIS — the search to prove the story wrong
+- 2026-09-02  NOT YET RUN. The story to disprove is "the table overstates what
+  you get". Evidence against it would be users reporting offers HONOURED at the
+  quoted figure. The search above surfaced complaints, which is a biased
+  sample by nature — people post when it goes wrong. Recorded as a known
+  weakness rather than presented as balance.
+
+INDEPENDENT-CHECK: 2026-09-02 searched for hands-on trade-in experiences and
+  found substantial reporting of values revised DOWN after inspection. The
+  first draft of this ledger said N/A on the reasoning that "what Apple's page
+  says" needs no independent test. That was wrong: what the page PROMISES and
+  what people RECEIVE are different claims, and only the second needed looking
+  up.
