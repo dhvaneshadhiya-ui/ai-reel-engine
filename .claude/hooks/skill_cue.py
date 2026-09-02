@@ -25,11 +25,24 @@ READERS = re.compile(
     r"diff|wc|strings|open)\b")
 
 
+# Commands that produce NO stdout of their own, so they cannot be the source of
+# a cue and must not count against an otherwise-inspection command.
+#
+# `cd` is the one that mattered (2026-09-02). Every command in this repo is
+# written as `cd "<repo>"` followed by the real work, so `cd` failed the
+# all-readers test and EVERY inspection command defeated the guard — the very
+# false positive this function was written for fired routinely for a week, most
+# recently on a `sed` that printed G23's help text and cued `reel-analyzer`
+# when no gate had fired. `echo` is deliberately NOT here: it emits arbitrary
+# text and so could legitimately carry a cue.
+NEUTRAL = re.compile(r"^(?:cd|pwd|true|:)\b|^cd$")
+
+
 def is_inspection(command: str) -> bool:
     """True when the command only READS files that may quote a cue."""
     segments = [s.strip().lstrip("({ \t")
                 for s in re.split(r"(?:\n|;|&&|\|\||\|)", command)]
-    runnable = [s for s in segments if s]
+    runnable = [s for s in segments if s and not NEUTRAL.match(s)]
     return bool(runnable) and all(READERS.match(s) for s in runnable)
 
 

@@ -1,0 +1,11 @@
+{
+  "script_sha256": "f916e3e54f0dd4fd0b9d566b8ff9775db32ffe14074dcf20626aa9370a3a9f2a",
+  "structure_sha256": "90cb6be0366d722d50a72b7a07de4816c9e6ac39cb7c0682f8400649ae168920",
+  "findings": [
+    "  OPENING has no version, date or time anchor: 'One crash in every million runs.'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-09-02T05:37:03+00:00"
+}

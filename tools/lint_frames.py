@@ -296,22 +296,30 @@ def main():
     # PACING (universal rule 2026-07-31). Thresholds come from reel_gates so
     # there is exactly ONE definition — the linter and the build gates
     # disagreeing is how a rule quietly becomes optional.
+    # ...and from the SHEET'S OWN FORMAT, not from news. This read the module
+    # constants, which are news values, so a top5 or ai-tools reel was linted
+    # against a genre it is not — the exact drift the comment above warns about,
+    # one level down (2026-09-02).
     sys.path.insert(0, str(Path(__file__).resolve().parent))
-    from reel_gates import DUR_MAX, HOOK_MAX, _dur_class
+    from reel_gates import FORMATS, DEFAULT_FORMAT, dur_max_for, _dur_class
+    fmt = beats.get("format", DEFAULT_FORMAT)
+    prof = FORMATS.get(fmt) or FORMATS[DEFAULT_FORMAT]
+    hook_max = prof["hook_max"]
+    limits = dur_max_for(fmt)
     for i, sc in enumerate(scenes):
         d = sc["durationSec"]
-        if i == 0 and d > HOOK_MAX:
+        if i == 0 and d > hook_max:
             flags.append(
                 f"[PACING] scene 00 ({sc['type']}): hook layout held "
-                f"{d:.1f}s > {HOOK_MAX}s — the hook is one layout for longer "
-                f"than a scrolling thumb gives it")
+                f"{d:.1f}s > {hook_max}s ({fmt}) — the hook is one layout for "
+                f"longer than a scrolling thumb gives it")
             continue
         cls = _dur_class(sc)
-        if d > DUR_MAX[cls]:
+        if d > limits[cls]:
             flags.append(
                 f"[PACING] scene {i:02d} ({sc['type']}, {cls}): held layout "
-                f"{d:.1f}s > {DUR_MAX[cls]}s — split across visuals or cut to "
-                "footage")
+                f"{d:.1f}s > {limits[cls]}s ({fmt}) — split across visuals or "
+                "cut to footage")
 
     # CLIP REUSE (universal rule 2026-08-01): no source clip may carry more
     # than one footage beat — reusing the same shot reads as "limited footage".
