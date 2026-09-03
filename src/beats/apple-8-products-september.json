@@ -1,0 +1,1782 @@
+{
+  "id": "apple-8-products-september",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/apple-8-products-september/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "eight new Apple products",
+    "$899",
+    "$5,499",
+    "September 22nd",
+    "September 9th",
+    "foldable",
+    "locked in",
+    "still leaks",
+    "SEPTEMBER"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "topSrc": "assets/apple-8-products-september/hook-headline-crop.png",
+      "bottomSrc": "assets/apple-8-products-september/avatar-master.mp4",
+      "bottomFocusX": 0.5,
+      "captionBottom": 1000,
+      "headline": {
+        "lines": [
+          {
+            "text": "SEPTEMBER 2026",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "EIGHT NEW PRODUCTS",
+            "kind": "headline",
+            "at": 0.5
+          }
+        ],
+        "y": 0.06
+      },
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.15,
+          "vol": 0.582
+        }
+      ],
+      "durationSec": 3.74,
+      "assetId": "hook-headline",
+      "claimId": "hook-headline",
+      "covers": "You've now got eight",
+      "credit": "Report, Sep 2 2026 (not rendered \u2014 noCredits)",
+      "bottomFrom": 0.0
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-8-products-september/hook-logo-tall-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 1500,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 0,
+          "w": 1080,
+          "h": 330
+        }
+      ],
+      "durationSec": 1.58,
+      "captionBottom": 477,
+      "assetId": "hook-logo",
+      "claimId": "hook-logo",
+      "covers": "And two of them",
+      "credit": "Report, Sep 2 2026 (not rendered \u2014 noCredits)"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-8-products-september/receipt-event-official-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 905,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 350,
+          "w": 1080,
+          "h": 250
+        }
+      ],
+      "allowSmallReceipt": {
+        "reason": "Apple's own confirmed event date/time is a two-sentence paragraph; the only way to extend this source taller is into the page's embedded YouTube video thumbnail, which carries the MacRumors logo/name baked into the thumbnail art itself \u2014 showing it would violate this reel's no-outlet-branding standard. Kept short rather than picking up a branded thumbnail."
+      },
+      "durationSec": 3.42,
+      "captionBottom": 620,
+      "assetId": "official-event",
+      "claimId": "official-event",
+      "covers": "two weeks before the",
+      "credit": "Report of Apple's own invite, Aug 26 2026 (not rendered \u2014 noCredits)"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-8-products-september/receipt-macmini-official-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 1295,
+      "backdrop": "cream",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 0.05,
+          "vol": 0.32
+        }
+      ],
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 280,
+          "w": 1080,
+          "h": 400
+        }
+      ],
+      "durationSec": 3.3,
+      "captionBottom": 533,
+      "assetId": "official-macmini",
+      "claimId": "official-macmini",
+      "covers": "The M6 Mac mini",
+      "credit": "Apple Newsroom, Aug 25 2026 (not rendered \u2014 noCredits)"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-8-products-september/receipt-macstudio-official-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 1295,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 280,
+          "w": 1080,
+          "h": 400
+        }
+      ],
+      "durationSec": 4.92,
+      "captionBottom": 533,
+      "assetId": "official-macstudio",
+      "claimId": "official-macstudio",
+      "covers": "The Mac Studio with",
+      "credit": "Apple Newsroom, Aug 25 2026 (not rendered \u2014 noCredits)"
+    },
+    {
+      "type": "specsheet",
+      "title": "SHIPS SEPTEMBER 22",
+      "kicker": "PRE-ORDERS OPEN NOW",
+      "rows": [
+        {
+          "label": "Mac mini (M6)",
+          "value": "$899",
+          "accent": true
+        },
+        {
+          "label": "Mac Studio (M5 Ultra)",
+          "value": "$5,499"
+        }
+      ],
+      "footnote": "Apple Newsroom, Aug 25 2026",
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 0.1,
+          "vol": 1.0
+        }
+      ],
+      "durationSec": 4.2
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-8-products-september/receipt-event-official-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 905,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 0,
+          "w": 1080,
+          "h": 260
+        }
+      ],
+      "allowSmallReceipt": {
+        "reason": "Apple's own confirmed event date/time is a two-sentence paragraph; the only way to extend this source taller is into the page's embedded YouTube video thumbnail, which carries the MacRumors logo/name baked into the thumbnail art itself \u2014 showing it would violate this reel's no-outlet-branding standard. Kept short rather than picking up a branded thumbnail."
+      },
+      "durationSec": 3.9,
+      "captionBottom": 620,
+      "assetId": "official-event",
+      "claimId": "official-event",
+      "covers": "The other six all",
+      "credit": "Report of Apple's own invite, Aug 26 2026 (not rendered \u2014 noCredits)"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-8-products-september/receipt-iphone18pro-tall-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 1490,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 0,
+          "w": 1080,
+          "h": 560
+        }
+      ],
+      "durationSec": 3.1,
+      "captionBottom": 480,
+      "assetId": "rumor-iphone18pro",
+      "claimId": "rumor-iphone18pro",
+      "covers": "First, iPhone 18 Pro",
+      "credit": "Report, Aug 26 2026 (not rendered \u2014 noCredits)"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-8-products-september/receipt-iphone18pro-tall-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 1490,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 700,
+          "w": 1080,
+          "h": 560
+        }
+      ],
+      "durationSec": 3.36,
+      "captionBottom": 480,
+      "assetId": "rumor-iphone18pro",
+      "claimId": "rumor-iphone18pro",
+      "covers": "The Pro Max alone",
+      "credit": "Report, Aug 26 2026 (not rendered \u2014 noCredits)"
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-8-products-september/avatar-master.mp4",
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "headline": {
+        "lines": [
+          {
+            "text": "NOT JUST SIZE",
+            "kind": "headline",
+            "at": 0.2,
+            "accent": true
+          }
+        ],
+        "y": 0.16,
+        "theme": "light"
+      },
+      "durationSec": 3.6,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "covers": "so the gap between",
+      "from": 31.52
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-8-products-september/receipt-foldable-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 1024,
+      "backdrop": "cream",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 0.05,
+          "vol": 0.32
+        }
+      ],
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 0,
+          "w": 1080,
+          "h": 560
+        }
+      ],
+      "allowSmallReceipt": {
+        "reason": "The only content past this point on the source page is a stock photo of Tim Cook and John Ternus walking (real named executives, unrelated to the foldable claim) followed by an ad banner. Manifest already documents this photo was deliberately excluded as not illustrating the foldable-iPhone claim; kept short rather than including it just to pass a fill ratio."
+      },
+      "durationSec": 4.3,
+      "captionBottom": 608,
+      "assetId": "rumor-foldable",
+      "claimId": "rumor-foldable",
+      "covers": "Then Apple's first-ever foldable",
+      "credit": "Report, Aug 26 2026 (not rendered \u2014 noCredits)"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-8-products-september/receipt-foldable-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 1024,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 560,
+          "w": 1080,
+          "h": 464
+        }
+      ],
+      "allowSmallReceipt": {
+        "reason": "The only content past this point on the source page is a stock photo of Tim Cook and John Ternus walking (real named executives, unrelated to the foldable claim) followed by an ad banner. Manifest already documents this photo was deliberately excluded as not illustrating the foldable-iPhone claim; kept short rather than including it just to pass a fill ratio."
+      },
+      "durationSec": 5.3,
+      "captionBottom": 608,
+      "assetId": "rumor-foldable",
+      "claimId": "rumor-foldable",
+      "covers": "7.8 unfolded, so it",
+      "credit": "Report, Aug 26 2026 (not rendered \u2014 noCredits)"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-8-products-september/receipt-watch-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 1420,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 0,
+          "w": 1080,
+          "h": 260
+        }
+      ],
+      "durationSec": 8.22,
+      "captionBottom": 499,
+      "assetId": "rumor-watch",
+      "claimId": "rumor-watch",
+      "covers": "Apple Watch Series 12",
+      "credit": "Report citing Bloomberg's Mark Gurman, Aug 30 2026 (not rendered \u2014 noCredits)"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-8-products-september/receipt-airpods5-tall-crop.png",
+      "srcWidth": 1080,
+      "srcHeight": 1200,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 40,
+          "y": 400,
+          "w": 520,
+          "h": 300
+        }
+      ],
+      "durationSec": 6.04,
+      "captionBottom": 560,
+      "assetId": "rumor-airpods5",
+      "claimId": "rumor-airpods5",
+      "covers": "standard and noise-cancelling, already",
+      "credit": "Code-evidence report, Aug 18 2026 (not rendered \u2014 noCredits)"
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-8-products-september/avatar-master.mp4",
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "durationSec": 2.4,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "covers": "So don't get excited",
+      "from": 58.98
+    },
+    {
+      "type": "statcard",
+      "title": "THE SCORE SO FAR",
+      "rows": [
+        {
+          "label": "CONFIRMED",
+          "value": "2",
+          "pct": 0.25,
+          "color": "#34C759"
+        },
+        {
+          "label": "STILL RUMORED",
+          "value": "6",
+          "pct": 0.75,
+          "color": "#FF9F0A"
+        }
+      ],
+      "bg": "cream",
+      "footnote": "8 products total",
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.05,
+          "vol": 0.556
+        }
+      ],
+      "durationSec": 1.74
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-8-products-september/avatar-master.mp4",
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "headline": {
+        "lines": [
+          {
+            "text": "SEPT 9 DECIDES",
+            "kind": "headline",
+            "at": 0.2,
+            "accent": true
+          }
+        ],
+        "y": 0.16,
+        "theme": "light"
+      },
+      "durationSec": 3.4,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "covers": "Six are still leaks",
+      "from": 63.12
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-8-products-september/avatar-master.mp4",
+      "focusX": 0.5,
+      "zoomDir": "out",
+      "zoom": 1.18,
+      "durationSec": 1.68,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "covers": "Which one are you",
+      "from": 66.52
+    },
+    {
+      "type": "commentcta",
+      "src": "assets/apple-8-products-september/avatar-master.mp4",
+      "keyword": "SEPTEMBER",
+      "question": "WANT THE UPDATE?",
+      "variant": "keyword",
+      "durationSec": 2.735,
+      "captionBottom": 880,
+      "from": 68.2
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.74,
+      "text": "You've now got",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "You've"
+        },
+        {
+          "t": 0.32,
+          "text": "now"
+        },
+        {
+          "t": 0.48,
+          "text": "got"
+        }
+      ]
+    },
+    {
+      "start": 0.74,
+      "end": 1.48,
+      "text": "eight new Apple",
+      "words": [
+        {
+          "t": 0.74,
+          "text": "eight"
+        },
+        {
+          "t": 1.02,
+          "text": "new"
+        },
+        {
+          "t": 1.24,
+          "text": "Apple"
+        }
+      ]
+    },
+    {
+      "start": 1.48,
+      "end": 2.64,
+      "text": "products landing before",
+      "words": [
+        {
+          "t": 1.48,
+          "text": "products"
+        },
+        {
+          "t": 1.94,
+          "text": "landing"
+        },
+        {
+          "t": 2.3,
+          "text": "before"
+        }
+      ]
+    },
+    {
+      "start": 2.64,
+      "end": 3.48,
+      "text": "September is over,",
+      "words": [
+        {
+          "t": 2.64,
+          "text": "September"
+        },
+        {
+          "t": 2.96,
+          "text": "is"
+        },
+        {
+          "t": 3.28,
+          "text": "over,"
+        }
+      ]
+    },
+    {
+      "start": 3.74,
+      "end": 4.22,
+      "text": "and two of",
+      "words": [
+        {
+          "t": 3.74,
+          "text": "and"
+        },
+        {
+          "t": 3.92,
+          "text": "two"
+        },
+        {
+          "t": 4.12,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 4.22,
+      "end": 5.32,
+      "text": "them already shipped",
+      "words": [
+        {
+          "t": 4.22,
+          "text": "them"
+        },
+        {
+          "t": 4.44,
+          "text": "already"
+        },
+        {
+          "t": 4.86,
+          "text": "shipped"
+        }
+      ]
+    },
+    {
+      "start": 5.32,
+      "end": 6.28,
+      "text": "two weeks before",
+      "words": [
+        {
+          "t": 5.32,
+          "text": "two"
+        },
+        {
+          "t": 5.76,
+          "text": "weeks"
+        },
+        {
+          "t": 6.0,
+          "text": "before"
+        }
+      ]
+    },
+    {
+      "start": 6.28,
+      "end": 7.42,
+      "text": "the September 9th",
+      "words": [
+        {
+          "t": 6.28,
+          "text": "the"
+        },
+        {
+          "t": 6.42,
+          "text": "September"
+        },
+        {
+          "t": 6.78,
+          "text": "9th"
+        }
+      ]
+    },
+    {
+      "start": 7.42,
+      "end": 8.3,
+      "text": "keynote even starts.",
+      "words": [
+        {
+          "t": 7.42,
+          "text": "keynote"
+        },
+        {
+          "t": 7.6,
+          "text": "even"
+        },
+        {
+          "t": 7.96,
+          "text": "starts."
+        }
+      ]
+    },
+    {
+      "start": 8.74,
+      "end": 9.56,
+      "text": "The M6 Mac",
+      "words": [
+        {
+          "t": 8.74,
+          "text": "The"
+        },
+        {
+          "t": 8.86,
+          "text": "M6"
+        },
+        {
+          "t": 9.28,
+          "text": "Mac"
+        }
+      ]
+    },
+    {
+      "start": 9.56,
+      "end": 10.38,
+      "text": "Mini starts at",
+      "words": [
+        {
+          "t": 9.56,
+          "text": "Mini"
+        },
+        {
+          "t": 9.78,
+          "text": "starts"
+        },
+        {
+          "t": 10.1,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 10.38,
+      "end": 12.4,
+      "text": "$899. The Mac",
+      "words": [
+        {
+          "t": 10.38,
+          "text": "$899."
+        },
+        {
+          "t": 12.04,
+          "text": "The"
+        },
+        {
+          "t": 12.2,
+          "text": "Mac"
+        }
+      ]
+    },
+    {
+      "start": 12.4,
+      "end": 13.56,
+      "text": "Studio with M5",
+      "words": [
+        {
+          "t": 12.4,
+          "text": "Studio"
+        },
+        {
+          "t": 12.8,
+          "text": "with"
+        },
+        {
+          "t": 13.14,
+          "text": "M5"
+        }
+      ]
+    },
+    {
+      "start": 13.56,
+      "end": 14.6,
+      "text": "Ultra starts at",
+      "words": [
+        {
+          "t": 13.56,
+          "text": "Ultra"
+        },
+        {
+          "t": 13.9,
+          "text": "starts"
+        },
+        {
+          "t": 14.38,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 14.6,
+      "end": 17.48,
+      "text": "$5,499 Both ship",
+      "words": [
+        {
+          "t": 14.6,
+          "text": "$5,499"
+        },
+        {
+          "t": 16.96,
+          "text": "Both"
+        },
+        {
+          "t": 17.24,
+          "text": "ship"
+        }
+      ]
+    },
+    {
+      "start": 17.48,
+      "end": 18.94,
+      "text": "September 22nd, so",
+      "words": [
+        {
+          "t": 17.48,
+          "text": "September"
+        },
+        {
+          "t": 17.86,
+          "text": "22nd,"
+        },
+        {
+          "t": 18.8,
+          "text": "so"
+        }
+      ]
+    },
+    {
+      "start": 18.94,
+      "end": 19.44,
+      "text": "the wait for",
+      "words": [
+        {
+          "t": 18.94,
+          "text": "the"
+        },
+        {
+          "t": 19.06,
+          "text": "wait"
+        },
+        {
+          "t": 19.26,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 19.44,
+      "end": 20.24,
+      "text": "either one is",
+      "words": [
+        {
+          "t": 19.44,
+          "text": "either"
+        },
+        {
+          "t": 19.66,
+          "text": "one"
+        },
+        {
+          "t": 19.94,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 20.24,
+      "end": 21.24,
+      "text": "nearly over. The",
+      "words": [
+        {
+          "t": 20.24,
+          "text": "nearly"
+        },
+        {
+          "t": 20.5,
+          "text": "over."
+        },
+        {
+          "t": 21.16,
+          "text": "The"
+        }
+      ]
+    },
+    {
+      "start": 21.24,
+      "end": 22.02,
+      "text": "other six all",
+      "words": [
+        {
+          "t": 21.24,
+          "text": "other"
+        },
+        {
+          "t": 21.44,
+          "text": "six"
+        },
+        {
+          "t": 21.7,
+          "text": "all"
+        }
+      ]
+    },
+    {
+      "start": 22.02,
+      "end": 22.68,
+      "text": "ride on one",
+      "words": [
+        {
+          "t": 22.02,
+          "text": "ride"
+        },
+        {
+          "t": 22.26,
+          "text": "on"
+        },
+        {
+          "t": 22.44,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 22.68,
+      "end": 24.38,
+      "text": "keynote, September 9th,",
+      "words": [
+        {
+          "t": 22.68,
+          "text": "keynote,"
+        },
+        {
+          "t": 23.42,
+          "text": "September"
+        },
+        {
+          "t": 23.64,
+          "text": "9th,"
+        }
+      ]
+    },
+    {
+      "start": 24.38,
+      "end": 25.06,
+      "text": "10 AM Pacific.",
+      "words": [
+        {
+          "t": 24.38,
+          "text": "10"
+        },
+        {
+          "t": 24.54,
+          "text": "AM"
+        },
+        {
+          "t": 24.88,
+          "text": "Pacific."
+        }
+      ]
+    },
+    {
+      "start": 25.06,
+      "end": 26.68,
+      "text": "First, iPhone 18",
+      "words": [
+        {
+          "t": 25.06,
+          "text": "First,"
+        },
+        {
+          "t": 26.06,
+          "text": "iPhone"
+        },
+        {
+          "t": 26.24,
+          "text": "18"
+        }
+      ]
+    },
+    {
+      "start": 26.68,
+      "end": 27.46,
+      "text": "Pro and Pro",
+      "words": [
+        {
+          "t": 26.68,
+          "text": "Pro"
+        },
+        {
+          "t": 27.04,
+          "text": "and"
+        },
+        {
+          "t": 27.24,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 27.46,
+      "end": 28.46,
+      "text": "Max. The Pro",
+      "words": [
+        {
+          "t": 27.46,
+          "text": "Max."
+        },
+        {
+          "t": 28.16,
+          "text": "The"
+        },
+        {
+          "t": 28.26,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 28.46,
+      "end": 29.52,
+      "text": "Max alone reportedly",
+      "words": [
+        {
+          "t": 28.46,
+          "text": "Max"
+        },
+        {
+          "t": 28.7,
+          "text": "alone"
+        },
+        {
+          "t": 29.02,
+          "text": "reportedly"
+        }
+      ]
+    },
+    {
+      "start": 29.52,
+      "end": 30.2,
+      "text": "gets a bigger",
+      "words": [
+        {
+          "t": 29.52,
+          "text": "gets"
+        },
+        {
+          "t": 29.88,
+          "text": "a"
+        },
+        {
+          "t": 30.04,
+          "text": "bigger"
+        }
+      ]
+    },
+    {
+      "start": 30.2,
+      "end": 31.22,
+      "text": "camera and battery,",
+      "words": [
+        {
+          "t": 30.2,
+          "text": "camera"
+        },
+        {
+          "t": 30.6,
+          "text": "and"
+        },
+        {
+          "t": 30.84,
+          "text": "battery,"
+        }
+      ]
+    },
+    {
+      "start": 31.52,
+      "end": 31.94,
+      "text": "so the gap",
+      "words": [
+        {
+          "t": 31.52,
+          "text": "so"
+        },
+        {
+          "t": 31.62,
+          "text": "the"
+        },
+        {
+          "t": 31.74,
+          "text": "gap"
+        }
+      ]
+    },
+    {
+      "start": 31.94,
+      "end": 32.56,
+      "text": "between the two",
+      "words": [
+        {
+          "t": 31.94,
+          "text": "between"
+        },
+        {
+          "t": 32.24,
+          "text": "the"
+        },
+        {
+          "t": 32.4,
+          "text": "two"
+        }
+      ]
+    },
+    {
+      "start": 32.56,
+      "end": 33.32,
+      "text": "models is going",
+      "words": [
+        {
+          "t": 32.56,
+          "text": "models"
+        },
+        {
+          "t": 32.88,
+          "text": "is"
+        },
+        {
+          "t": 33.14,
+          "text": "going"
+        }
+      ]
+    },
+    {
+      "start": 33.32,
+      "end": 34.0,
+      "text": "to matter more",
+      "words": [
+        {
+          "t": 33.32,
+          "text": "to"
+        },
+        {
+          "t": 33.46,
+          "text": "matter"
+        },
+        {
+          "t": 33.72,
+          "text": "more"
+        }
+      ]
+    },
+    {
+      "start": 34.0,
+      "end": 34.78,
+      "text": "than just size.",
+      "words": [
+        {
+          "t": 34.0,
+          "text": "than"
+        },
+        {
+          "t": 34.2,
+          "text": "just"
+        },
+        {
+          "t": 34.42,
+          "text": "size."
+        }
+      ]
+    },
+    {
+      "start": 35.12,
+      "end": 36.04,
+      "text": "Then Apple's first",
+      "words": [
+        {
+          "t": 35.12,
+          "text": "Then"
+        },
+        {
+          "t": 35.3,
+          "text": "Apple's"
+        },
+        {
+          "t": 35.8,
+          "text": "first"
+        }
+      ]
+    },
+    {
+      "start": 36.04,
+      "end": 37.22,
+      "text": "ever foldable iPhone.",
+      "words": [
+        {
+          "t": 36.04,
+          "text": "ever"
+        },
+        {
+          "t": 36.36,
+          "text": "foldable"
+        },
+        {
+          "t": 36.88,
+          "text": "iPhone."
+        }
+      ]
+    },
+    {
+      "start": 37.64,
+      "end": 39.0,
+      "text": "5.5 inches closed,",
+      "words": [
+        {
+          "t": 37.64,
+          "text": "5.5"
+        },
+        {
+          "t": 38.36,
+          "text": "inches"
+        },
+        {
+          "t": 38.6,
+          "text": "closed,"
+        }
+      ]
+    },
+    {
+      "start": 39.42,
+      "end": 41.12,
+      "text": "7.8 unfolded, so",
+      "words": [
+        {
+          "t": 39.42,
+          "text": "7.8"
+        },
+        {
+          "t": 40.14,
+          "text": "unfolded,"
+        },
+        {
+          "t": 41.0,
+          "text": "so"
+        }
+      ]
+    },
+    {
+      "start": 41.12,
+      "end": 41.78,
+      "text": "it closes like",
+      "words": [
+        {
+          "t": 41.12,
+          "text": "it"
+        },
+        {
+          "t": 41.26,
+          "text": "closes"
+        },
+        {
+          "t": 41.52,
+          "text": "like"
+        }
+      ]
+    },
+    {
+      "start": 41.78,
+      "end": 42.42,
+      "text": "a phone and",
+      "words": [
+        {
+          "t": 41.78,
+          "text": "a"
+        },
+        {
+          "t": 41.94,
+          "text": "phone"
+        },
+        {
+          "t": 42.18,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 42.42,
+      "end": 43.14,
+      "text": "opens into a",
+      "words": [
+        {
+          "t": 42.42,
+          "text": "opens"
+        },
+        {
+          "t": 42.72,
+          "text": "into"
+        },
+        {
+          "t": 42.96,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 43.14,
+      "end": 44.44,
+      "text": "small tablet. Meanwhile,",
+      "words": [
+        {
+          "t": 43.14,
+          "text": "small"
+        },
+        {
+          "t": 43.36,
+          "text": "tablet."
+        },
+        {
+          "t": 44.08,
+          "text": "Meanwhile,"
+        }
+      ]
+    },
+    {
+      "start": 44.72,
+      "end": 45.44,
+      "text": "Apple Watch Series",
+      "words": [
+        {
+          "t": 44.72,
+          "text": "Apple"
+        },
+        {
+          "t": 44.9,
+          "text": "Watch"
+        },
+        {
+          "t": 45.18,
+          "text": "Series"
+        }
+      ]
+    },
+    {
+      "start": 45.44,
+      "end": 46.4,
+      "text": "12 and Ultra",
+      "words": [
+        {
+          "t": 45.44,
+          "text": "12"
+        },
+        {
+          "t": 45.88,
+          "text": "and"
+        },
+        {
+          "t": 46.12,
+          "text": "Ultra"
+        }
+      ]
+    },
+    {
+      "start": 46.4,
+      "end": 47.34,
+      "text": "4 are expected",
+      "words": [
+        {
+          "t": 46.4,
+          "text": "4"
+        },
+        {
+          "t": 46.7,
+          "text": "are"
+        },
+        {
+          "t": 46.9,
+          "text": "expected"
+        }
+      ]
+    },
+    {
+      "start": 47.34,
+      "end": 48.62,
+      "text": "too, possibly bringing",
+      "words": [
+        {
+          "t": 47.34,
+          "text": "too,"
+        },
+        {
+          "t": 47.92,
+          "text": "possibly"
+        },
+        {
+          "t": 48.3,
+          "text": "bringing"
+        }
+      ]
+    },
+    {
+      "start": 48.62,
+      "end": 49.48,
+      "text": "back a ceramic",
+      "words": [
+        {
+          "t": 48.62,
+          "text": "back"
+        },
+        {
+          "t": 48.96,
+          "text": "a"
+        },
+        {
+          "t": 49.18,
+          "text": "ceramic"
+        }
+      ]
+    },
+    {
+      "start": 49.48,
+      "end": 50.54,
+      "text": "case Apple hasn't",
+      "words": [
+        {
+          "t": 49.48,
+          "text": "case"
+        },
+        {
+          "t": 49.82,
+          "text": "Apple"
+        },
+        {
+          "t": 50.16,
+          "text": "hasn't"
+        }
+      ]
+    },
+    {
+      "start": 50.54,
+      "end": 51.6,
+      "text": "sold since 2019.",
+      "words": [
+        {
+          "t": 50.54,
+          "text": "sold"
+        },
+        {
+          "t": 50.8,
+          "text": "since"
+        },
+        {
+          "t": 51.0,
+          "text": "2019."
+        }
+      ]
+    },
+    {
+      "start": 51.98,
+      "end": 52.94,
+      "text": "And AirPods 5,",
+      "words": [
+        {
+          "t": 51.98,
+          "text": "And"
+        },
+        {
+          "t": 52.18,
+          "text": "AirPods"
+        },
+        {
+          "t": 52.48,
+          "text": "5,"
+        }
+      ]
+    },
+    {
+      "start": 52.94,
+      "end": 54.06,
+      "text": "standard and noise",
+      "words": [
+        {
+          "t": 52.94,
+          "text": "standard"
+        },
+        {
+          "t": 53.52,
+          "text": "and"
+        },
+        {
+          "t": 53.82,
+          "text": "noise"
+        }
+      ]
+    },
+    {
+      "start": 54.06,
+      "end": 55.46,
+      "text": "cancelling, already spotted",
+      "words": [
+        {
+          "t": 54.06,
+          "text": "cancelling,"
+        },
+        {
+          "t": 54.76,
+          "text": "already"
+        },
+        {
+          "t": 55.02,
+          "text": "spotted"
+        }
+      ]
+    },
+    {
+      "start": 55.46,
+      "end": 56.76,
+      "text": "sitting inside Apple's",
+      "words": [
+        {
+          "t": 55.46,
+          "text": "sitting"
+        },
+        {
+          "t": 55.82,
+          "text": "inside"
+        },
+        {
+          "t": 56.24,
+          "text": "Apple's"
+        }
+      ]
+    },
+    {
+      "start": 56.76,
+      "end": 57.78,
+      "text": "own software before",
+      "words": [
+        {
+          "t": 56.76,
+          "text": "own"
+        },
+        {
+          "t": 56.94,
+          "text": "software"
+        },
+        {
+          "t": 57.46,
+          "text": "before"
+        }
+      ]
+    },
+    {
+      "start": 57.78,
+      "end": 58.46,
+      "text": "Apple said a",
+      "words": [
+        {
+          "t": 57.78,
+          "text": "Apple"
+        },
+        {
+          "t": 58.14,
+          "text": "said"
+        },
+        {
+          "t": 58.36,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 58.46,
+      "end": 59.36,
+      "text": "word. So don't",
+      "words": [
+        {
+          "t": 58.46,
+          "text": "word."
+        },
+        {
+          "t": 58.98,
+          "text": "So"
+        },
+        {
+          "t": 59.08,
+          "text": "don't"
+        }
+      ]
+    },
+    {
+      "start": 59.36,
+      "end": 60.12,
+      "text": "get excited about",
+      "words": [
+        {
+          "t": 59.36,
+          "text": "get"
+        },
+        {
+          "t": 59.44,
+          "text": "excited"
+        },
+        {
+          "t": 59.86,
+          "text": "about"
+        }
+      ]
+    },
+    {
+      "start": 60.12,
+      "end": 61.04,
+      "text": "all eight yet.",
+      "words": [
+        {
+          "t": 60.12,
+          "text": "all"
+        },
+        {
+          "t": 60.5,
+          "text": "eight"
+        },
+        {
+          "t": 60.76,
+          "text": "yet."
+        }
+      ]
+    },
+    {
+      "start": 61.38,
+      "end": 62.02,
+      "text": "That's two locked",
+      "words": [
+        {
+          "t": 61.38,
+          "text": "That's"
+        },
+        {
+          "t": 61.56,
+          "text": "two"
+        },
+        {
+          "t": 61.74,
+          "text": "locked"
+        }
+      ]
+    },
+    {
+      "start": 62.02,
+      "end": 62.88,
+      "text": "in and priced",
+      "words": [
+        {
+          "t": 62.02,
+          "text": "in"
+        },
+        {
+          "t": 62.2,
+          "text": "and"
+        },
+        {
+          "t": 62.36,
+          "text": "priced"
+        }
+      ]
+    },
+    {
+      "start": 63.12,
+      "end": 63.78,
+      "text": "Six are still",
+      "words": [
+        {
+          "t": 63.12,
+          "text": "Six"
+        },
+        {
+          "t": 63.34,
+          "text": "are"
+        },
+        {
+          "t": 63.58,
+          "text": "still"
+        }
+      ]
+    },
+    {
+      "start": 63.78,
+      "end": 64.86,
+      "text": "leaks until September",
+      "words": [
+        {
+          "t": 63.78,
+          "text": "leaks"
+        },
+        {
+          "t": 64.12,
+          "text": "until"
+        },
+        {
+          "t": 64.5,
+          "text": "September"
+        }
+      ]
+    },
+    {
+      "start": 64.86,
+      "end": 65.96,
+      "text": "9th proves them",
+      "words": [
+        {
+          "t": 64.86,
+          "text": "9th"
+        },
+        {
+          "t": 65.44,
+          "text": "proves"
+        },
+        {
+          "t": 65.68,
+          "text": "them"
+        }
+      ]
+    },
+    {
+      "start": 65.96,
+      "end": 66.86,
+      "text": "right. Which one",
+      "words": [
+        {
+          "t": 65.96,
+          "text": "right."
+        },
+        {
+          "t": 66.52,
+          "text": "Which"
+        },
+        {
+          "t": 66.66,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 66.86,
+      "end": 67.38,
+      "text": "are you actually",
+      "words": [
+        {
+          "t": 66.86,
+          "text": "are"
+        },
+        {
+          "t": 66.96,
+          "text": "you"
+        },
+        {
+          "t": 67.08,
+          "text": "actually"
+        }
+      ]
+    },
+    {
+      "start": 67.38,
+      "end": 68.44,
+      "text": "waiting on? Comment",
+      "words": [
+        {
+          "t": 67.38,
+          "text": "waiting"
+        },
+        {
+          "t": 67.7,
+          "text": "on?"
+        },
+        {
+          "t": 68.2,
+          "text": "Comment"
+        }
+      ]
+    },
+    {
+      "start": 68.44,
+      "end": 69.42,
+      "text": "September and I'll",
+      "words": [
+        {
+          "t": 68.44,
+          "text": "September"
+        },
+        {
+          "t": 68.86,
+          "text": "and"
+        },
+        {
+          "t": 69.26,
+          "text": "I'll"
+        }
+      ]
+    },
+    {
+      "start": 69.42,
+      "end": 69.84,
+      "text": "tell you the",
+      "words": [
+        {
+          "t": 69.42,
+          "text": "tell"
+        },
+        {
+          "t": 69.58,
+          "text": "you"
+        },
+        {
+          "t": 69.7,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 69.84,
+      "end": 70.64,
+      "text": "second it's confirmed.",
+      "words": [
+        {
+          "t": 69.84,
+          "text": "second"
+        },
+        {
+          "t": 70.1,
+          "text": "it's"
+        },
+        {
+          "t": 70.36,
+          "text": "confirmed."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "noCredits": {
+    "reason": "user directive 2026-09-03: no on-screen source credits for this reel"
+  },
+  "script": "You've now got eight new Apple products landing before September's over. And two of them already shipped, two weeks before the September 9th keynote even starts.\n\nThe M6 Mac mini starts at $899. The Mac Studio with M5 Ultra starts at $5,499. Both ship September 22nd, so the wait for either one is nearly over.\n\nThe other six all ride on one keynote: September 9th, 10 AM Pacific.\n\nFirst, iPhone 18 Pro and Pro Max. The Pro Max alone reportedly gets a bigger camera and battery, so the gap between the two models is going to matter more than just size.\n\nThen Apple's first-ever foldable iPhone. 5.5 inches closed, 7.8 unfolded, so it closes like a phone and opens into a small tablet.\n\nMeanwhile, Apple Watch Series 12 and Ultra 4 are expected too, possibly bringing back a ceramic case Apple hasn't sold since 2019.\n\nAnd AirPods 5, standard and noise-cancelling, already spotted sitting inside Apple's own software before Apple said a word.\n\nSo don't get excited about all eight yet. That's two locked in and priced. Six are still leaks until September 9th proves them right.\n\nWhich one are you actually waiting on? Comment SEPTEMBER and I'll tell you the second it's confirmed.",
+  "approval": {
+    "sha256": "26097196e75419ae9f4da0ac8fd119e0e5503feb9f934884f295d84975e90747",
+    "approvedAt": "2026-09-03T07:29:12+00:00",
+    "words": 204,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

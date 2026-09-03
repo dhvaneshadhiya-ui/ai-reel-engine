@@ -1,0 +1,28 @@
+{
+  "slug": "apple-8-products-september",
+  "topic": "Apple is launching eight new products before the end of September 2026: Mac mini (M6/M5 Pro) and Mac Studio (M5 Max/Ultra) ship Sept 22; iPhone 18 Pro, iPhone 18 Pro Max, the first foldable iPhone, Apple Watch Series 12, Apple Watch Ultra 4 and AirPods 5 are expected at the Sept 9 'Surprise and shine' event",
+  "details": "Primary trigger: MacRumors (Tim Hardwick), Sept 2 2026, https://www.macrumors.com/2026/09/02/apple-launching-eight-new-products-next-month/ . Mac mini/Studio are OFFICIAL (Apple already announced + priced + dated, shipping Sept 22). The Sept 9 event lineup is RUMOR/multi-sourced (MacRumors/9to5Mac), not yet confirmed by Apple beyond the date+tagline. Do not conflate confirmed Mac launches with rumored Sept 9 lineup in narration.",
+  "subject": "Apple is launching eight new products before the end of September 2026: Mac mini (M6/M5 Pro) and Mac Studio (M5 Max/Ultra) ship Sept 22; iPhone 18 Pro, iPhone 18 Pro Max, the first foldable iPhone, Apple Watch Series 12, Apple Watch Ultra 4 and AirPods 5 are expected at the Sept 9 'Surprise and shine' event",
+  "audience": "iGeeksBlog's regular Apple-news viewer — already knows the September event exists, doesn't yet know Apple already shipped Mac hardware ahead of it or which of the eight products are confirmed vs. rumored",
+  "platform": "both",
+  "goal": "engagement",
+  "core_value": "a clear split of Apple's eight incoming products into what's already confirmed (priced, dated) and what's still rumor riding on the Sept 9 keynote",
+  "desired_action": "comment SEPTEMBER to get notified when the Sept 9 lineup is confirmed",
+  "reveal_target": "none",
+  "cta_keyword": "SEPTEMBER",
+  "target_duration": "75s",
+  "tone": "editorial, matter-of-fact, skeptical of hype — reporting the count, not selling it",
+  "source_policy": "official-preferred",
+  "footage_constraints": "avatar facecam + captured mobile screenshots of MacRumors/9to5Mac/Apple Newsroom coverage + Apple's own Mac mini/Mac Studio product pages; no third-party renders presented as real photography",
+  "credit_instructions": "none",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 75,
+  "music": false,
+  "created_at": "2026-09-03T05:23:05.190888+00:00",
+  "status": "initialized"
+}

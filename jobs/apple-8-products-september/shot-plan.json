@@ -1,0 +1,606 @@
+{
+  "emphasis": [
+    "eight new Apple products",
+    "$899",
+    "$5,499",
+    "September 22nd",
+    "September 9th",
+    "foldable",
+    "locked in",
+    "still leaks",
+    "SEPTEMBER"
+  ],
+  "caption_corrections": {
+    "triced": "priced"
+  },
+  "shots": [
+    {
+      "start_phrase": "You've now got eight",
+      "line": "You've now got eight new Apple products landing before September's over.",
+      "needs": [
+        "eight",
+        "Apple",
+        "products",
+        "landing",
+        "before",
+        "September"
+      ],
+      "tier": "reliable",
+      "asset_id": "hook-headline",
+      "scene": {
+        "type": "split",
+        "topSrc": "assets/apple-8-products-september/hook-headline-crop.png",
+        "bottomSrc": "$AVATAR",
+        "bottomFocusX": "$FOCUS_SPLIT",
+        "captionBottom": 1000,
+        "headline": {
+          "lines": [
+            {
+              "text": "SEPTEMBER 2026",
+              "kind": "label",
+              "at": 0.15
+            },
+            {
+              "text": "EIGHT NEW PRODUCTS",
+              "kind": "headline",
+              "at": 0.5
+            }
+          ],
+          "y": 0.06,
+          "theme": "dark"
+        },
+        "sfx": [
+          {
+            "src": "sfx/whoosh.MP3",
+            "at": 0.05,
+            "vol": 0.13
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "And two of them",
+      "line": "And two of them already shipped",
+      "needs": [
+        "them",
+        "already",
+        "shipped"
+      ],
+      "tier": "reliable",
+      "asset_id": "hook-logo",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-8-products-september/hook-logo-tall-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 1500,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 0,
+            "w": 1080,
+            "h": 330
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "two weeks before the",
+      "line": "two weeks before the September 9th keynote even starts.",
+      "needs": [
+        "weeks",
+        "before",
+        "September",
+        "9th",
+        "keynote",
+        "even"
+      ],
+      "tier": "official",
+      "asset_id": "official-event",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-8-products-september/receipt-event-official-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 905,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 350,
+            "w": 1080,
+            "h": 250
+          }
+        ],
+        "allowSmallReceipt": {
+          "reason": "Apple's own confirmed event date/time is a two-sentence paragraph; the only way to extend this source taller is into the page's embedded YouTube video thumbnail, which carries the MacRumors logo/name baked into the thumbnail art itself \u2014 showing it would violate this reel's no-outlet-branding standard. Kept short rather than picking up a branded thumbnail."
+        }
+      }
+    },
+    {
+      "start_phrase": "The M6 Mac mini",
+      "line": "The M6 Mac mini starts at $899.",
+      "needs": [
+        "M6",
+        "mini",
+        "starts",
+        "$899"
+      ],
+      "tier": "official",
+      "asset_id": "official-macmini",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-8-products-september/receipt-macmini-official-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 1295,
+        "backdrop": "cream",
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "at": 0.05,
+            "vol": 0.15
+          }
+        ],
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 280,
+            "w": 1080,
+            "h": 400
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "The Mac Studio with",
+      "line": "The Mac Studio with M5 Ultra starts at $5,499.",
+      "needs": [
+        "Mac",
+        "Studio",
+        "M5",
+        "Ultra",
+        "starts",
+        "$5",
+        "499"
+      ],
+      "tier": "official",
+      "asset_id": "official-macstudio",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-8-products-september/receipt-macstudio-official-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 1295,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 280,
+            "w": 1080,
+            "h": 400
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Both ship September 22nd,",
+      "line": "Both ship September 22nd, so the wait for either one is nearly over.",
+      "needs": [
+        "Both",
+        "ship",
+        "September",
+        "22nd",
+        "wait",
+        "either"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "SHIPS SEPTEMBER 22",
+        "kicker": "PRE-ORDERS OPEN NOW",
+        "rows": [
+          {
+            "label": "Mac mini (M6)",
+            "value": "$899",
+            "accent": true
+          },
+          {
+            "label": "Mac Studio (M5 Ultra)",
+            "value": "$5,499"
+          }
+        ],
+        "footnote": "Apple Newsroom, Aug 25 2026",
+        "sfx": [
+          {
+            "src": "sfx/Magic Reveal.MP3",
+            "at": 0.1,
+            "vol": 0.16
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "The other six all",
+      "line": "The other six all ride on one keynote: September 9th, 10 AM Pacific.",
+      "needs": [
+        "other",
+        "ride",
+        "keynote",
+        "September",
+        "9th",
+        "10"
+      ],
+      "tier": "official",
+      "asset_id": "official-event",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-8-products-september/receipt-event-official-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 905,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 0,
+            "w": 1080,
+            "h": 260
+          }
+        ],
+        "allowSmallReceipt": {
+          "reason": "Apple's own confirmed event date/time is a two-sentence paragraph; the only way to extend this source taller is into the page's embedded YouTube video thumbnail, which carries the MacRumors logo/name baked into the thumbnail art itself \u2014 showing it would violate this reel's no-outlet-branding standard. Kept short rather than picking up a branded thumbnail."
+        }
+      }
+    },
+    {
+      "start_phrase": "First, iPhone 18 Pro",
+      "line": "First, iPhone 18 Pro and Pro Max.",
+      "needs": [
+        "First",
+        "iPhone",
+        "18"
+      ],
+      "tier": "reliable",
+      "asset_id": "rumor-iphone18pro",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-8-products-september/receipt-iphone18pro-tall-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 1490,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 0,
+            "w": 1080,
+            "h": 560
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "The Pro Max alone",
+      "line": "The Pro Max alone reportedly gets a bigger camera and battery",
+      "needs": [
+        "alone",
+        "reportedly",
+        "gets",
+        "bigger",
+        "camera",
+        "battery"
+      ],
+      "tier": "reliable",
+      "asset_id": "rumor-iphone18pro",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-8-products-september/receipt-iphone18pro-tall-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 1490,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 700,
+            "w": 1080,
+            "h": 560
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "so the gap between",
+      "line": "so the gap between the two models is going to matter more than just size.",
+      "needs": [
+        "between",
+        "models",
+        "going",
+        "matter",
+        "size"
+      ],
+      "tier": "generated",
+      "asset_id": "avatar-master",
+      "scene": {
+        "type": "footage",
+        "src": "$AVATAR",
+        "focusX": "$FOCUS_FULL",
+        "zoomDir": "in",
+        "headline": {
+          "lines": [
+            {
+              "text": "NOT JUST SIZE",
+              "kind": "headline",
+              "at": 0.2,
+              "accent": true
+            }
+          ],
+          "y": 0.16,
+          "theme": "light"
+        }
+      }
+    },
+    {
+      "start_phrase": "Then Apple's first-ever foldable",
+      "line": "Then Apple's first-ever foldable iPhone., 5.5 inches closed",
+      "needs": [
+        "Apple",
+        "first-ever",
+        "foldable",
+        "iPhone",
+        "5.5",
+        "inches"
+      ],
+      "tier": "reliable",
+      "asset_id": "rumor-foldable",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-8-products-september/receipt-foldable-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 1024,
+        "backdrop": "cream",
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "at": 0.05,
+            "vol": 0.15
+          }
+        ],
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 0,
+            "w": 1080,
+            "h": 560
+          }
+        ],
+        "allowSmallReceipt": {
+          "reason": "The only content past this point on the source page is a stock photo of Tim Cook and John Ternus walking (real named executives, unrelated to the foldable claim) followed by an ad banner. Manifest already documents this photo was deliberately excluded as not illustrating the foldable-iPhone claim; kept short rather than including it just to pass a fill ratio."
+        }
+      }
+    },
+    {
+      "start_phrase": "7.8 unfolded, so it",
+      "line": "7.8 unfolded, so it closes like a phone and opens into a small tablet., Meanwhile",
+      "needs": [
+        "7.8",
+        "unfolded",
+        "closes",
+        "like",
+        "phone",
+        "opens"
+      ],
+      "tier": "reliable",
+      "asset_id": "rumor-foldable",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-8-products-september/receipt-foldable-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 1024,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 560,
+            "w": 1080,
+            "h": 464
+          }
+        ],
+        "allowSmallReceipt": {
+          "reason": "The only content past this point on the source page is a stock photo of Tim Cook and John Ternus walking (real named executives, unrelated to the foldable claim) followed by an ad banner. Manifest already documents this photo was deliberately excluded as not illustrating the foldable-iPhone claim; kept short rather than including it just to pass a fill ratio."
+        }
+      }
+    },
+    {
+      "start_phrase": "Apple Watch Series 12",
+      "line": "Apple Watch Series 12 and Ultra 4 are expected too, possibly bringing back a ceramic case Apple hasn't sold since 2019., And AirPods 5",
+      "needs": [
+        "Apple",
+        "Watch",
+        "Series",
+        "12",
+        "Ultra",
+        "4"
+      ],
+      "tier": "single",
+      "asset_id": "rumor-watch",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-8-products-september/receipt-watch-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 1420,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 0,
+            "w": 1080,
+            "h": 260
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "standard and noise-cancelling, already",
+      "line": "standard and noise-cancelling, already spotted sitting inside Apple's own software before Apple said a word.",
+      "needs": [
+        "standard",
+        "noise-cancelling",
+        "already",
+        "spotted",
+        "sitting",
+        "inside"
+      ],
+      "tier": "single",
+      "asset_id": "rumor-airpods5",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-8-products-september/receipt-airpods5-tall-crop.png",
+        "srcWidth": 1080,
+        "srcHeight": 1200,
+        "backdrop": "cream",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 40,
+            "y": 400,
+            "w": 520,
+            "h": 300
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "So don't get excited",
+      "line": "So don't get excited about all eight yet.",
+      "needs": [
+        "excited",
+        "eight"
+      ],
+      "tier": "generated",
+      "asset_id": "avatar-master",
+      "scene": {
+        "type": "footage",
+        "src": "$AVATAR",
+        "focusX": "$FOCUS_FULL",
+        "zoomDir": "in"
+      }
+    },
+    {
+      "start_phrase": "That's two locked in",
+      "line": "That's two locked in and priced.",
+      "needs": [
+        "locked",
+        "priced"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "statcard",
+        "title": "THE SCORE SO FAR",
+        "rows": [
+          {
+            "label": "CONFIRMED",
+            "value": "2",
+            "pct": 0.25,
+            "color": "#34C759"
+          },
+          {
+            "label": "STILL RUMORED",
+            "value": "6",
+            "pct": 0.75,
+            "color": "#FF9F0A"
+          }
+        ],
+        "bg": "cream",
+        "footnote": "8 products total",
+        "sfx": [
+          {
+            "src": "sfx/Core.MP3",
+            "at": 0.05,
+            "vol": 0.18
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Six are still leaks",
+      "line": "Six are still leaks until September 9th proves them right.",
+      "needs": [
+        "still",
+        "leaks",
+        "until",
+        "September",
+        "9th",
+        "proves"
+      ],
+      "tier": "generated",
+      "asset_id": "avatar-master",
+      "scene": {
+        "type": "footage",
+        "src": "$AVATAR",
+        "focusX": "$FOCUS_FULL",
+        "zoomDir": "in",
+        "headline": {
+          "lines": [
+            {
+              "text": "SEPT 9 DECIDES",
+              "kind": "headline",
+              "at": 0.2,
+              "accent": true
+            }
+          ],
+          "y": 0.16,
+          "theme": "light"
+        }
+      }
+    },
+    {
+      "start_phrase": "Which one are you",
+      "line": "Which one are you actually waiting on?",
+      "needs": [
+        "Which",
+        "actually",
+        "waiting"
+      ],
+      "tier": "generated",
+      "asset_id": "avatar-master",
+      "scene": {
+        "type": "footage",
+        "src": "$AVATAR",
+        "focusX": "$FOCUS_FULL",
+        "zoomDir": "out",
+        "zoom": 1.18
+      }
+    },
+    {
+      "start_phrase": "Comment SEPTEMBER and I'll",
+      "line": "Comment SEPTEMBER and I'll tell you the second it's confirmed.",
+      "needs": [
+        "Comment",
+        "SEPTEMBER",
+        "tell",
+        "second",
+        "confirmed"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "commentcta",
+        "src": "$AVATAR",
+        "keyword": "SEPTEMBER",
+        "question": "WANT THE UPDATE?",
+        "variant": "keyword"
+      }
+    }
+  ],
+  "noCredits": {
+    "reason": "user directive 2026-09-03: no on-screen source credits for this reel"
+  }
+}

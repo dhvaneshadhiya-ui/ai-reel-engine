@@ -7097,3 +7097,65 @@ their sentence stats before drawing a line.
 no stability parameter where the web UI does, and a hand-made take measured
 3.60 semitones where an API take measured 3.17. Untangled from pace, but a
 second reason the API read is not identical to a hand-made one.)
+
+## 2026-09-03 — apple-8-products-september: a credit ceiling that looked like an outage, and a word that reliably lied
+
+**The failure looked like a service outage.** Every full-script `eleven_v3`
+generation (~200 words, ~70s) failed with the generic `"Failed to generate
+audio."` — no code, no detail. A binary-search through prompt lengths found a
+real-looking pattern: a 1-sentence test succeeded, a 2-sentence test
+succeeded, everything from 6 sentences up failed, consistently, across a
+fresh flow, tag-free, and even a byte-for-byte repeat of the 2-sentence
+prompt that had *just* succeeded. That looked like conclusive evidence of a
+length-triggered service bug, and it was reported to the user as exactly
+that — "wait it out or switch providers."
+
+**It was neither.** The user said "I upgraded the plan, there was hardly
+any credit left." One clean retry post-upgrade succeeded first try, at
+71.28s, no chunking, no tag changes. The diagnostic pattern (short/cheap
+prompts survive, long/expensive ones fail) is EXACTLY what a credit ceiling
+looks like — it is also exactly what a length-triggered outage looks like,
+because generation cost scales with length. Two different causes produce
+identical symptoms, and the wrong one was picked because it was the one
+answerable from inside the tool: nothing in `creative_generate_speech`'s
+response ever names remaining balance or a quota reason on failure, so
+"insufficient credit" was invisible and "service is flaky" was not. **Ask
+about account/plan/credit state before diagnosing a pattern that a credit
+ceiling would produce identically** — it is the cheaper hypothesis to rule
+out first, and the user is the fastest oracle for it, not the API.
+
+**Real cost of chasing the wrong hypothesis:** roughly a dozen ElevenLabs
+attempts before the user's question reframed it — most billed even on
+failure (`price` is populated on `"status":"failed"` generations same as on
+success). Diagnostic short clips are cheap (30-170 credits); the actual
+mistake was retrying the FULL script repeatedly on a hypothesis that had
+already failed to explain the previous retry.
+
+**Separately, a real pronunciation bug, found only by cross-checking whisper
+against the approved script line by line — the STEP 3 rule ("verify every
+number and date in the whisper transcript") is not optional for exactly this
+reason.** The approved line "The M5 Ultra Mac Studio starts at $5,499" was
+mispronounced as "...Max Studio..." in 3 of 3 takes, isolated single-sentence
+tests included, commas around the phrase included. It was NOT random: "Mac
+Studio" alone (no "Ultra" adjacent) read correctly every time; "Ultra Mac
+Studio" or "Ultra, Mac Studio," did not, ever. The trigger is specifically
+the word "Ultra" immediately before "Mac" — a collocation this voice seems to
+default toward a more common one ("Ultra Max"). **Fix: reorder, don't
+rephrase** — "The Mac Studio with M5 Ultra starts at $5,499" (which also
+happens to match Apple's own official phrasing order) read correctly every
+time it was tested. This required touching the APPROVED, G27-hashed script —
+re-propose, re-approve (user explicitly signed off on the one-line diff
+before either happened), fresh humanizer pass, fresh tagged script. A second,
+much milder slip ("priced" heard as "triced" by whisper small AND medium, at
+moderate-to-high confidence) tested clean in isolation on a fresh take —
+concluded to be a one-off take-level slip, not a systemic pattern like Mac
+Studio, and shipped as-is on the user's call rather than spending another
+~1,240 credits chasing a single already-close word.
+
+**THE GENERAL RULE, not just about this reel:** a mispronunciation that
+recurs identically across independent isolated tests is not TTS noise, it is
+a trigram the model mishandles — and the fix belongs in WORD ORDER, tested
+cheap (a few dozen credits on a 1-sentence probe) before touching the
+expensive full-script take. A mispronunciation that does NOT recur when
+retried in isolation is noise, and is not worth a regeneration cycle by
+itself.
