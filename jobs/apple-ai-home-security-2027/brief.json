@@ -1,0 +1,28 @@
+{
+  "slug": "apple-ai-home-security-2027",
+  "topic": "Apple planning an AI-powered home security camera and subscription service for 2027",
+  "details": "",
+  "subject": "Apple planning an AI-powered home security camera and subscription service for 2027",
+  "audience": "<who should care, and what they already know>",
+  "platform": "both",
+  "goal": "<awareness|education|engagement|follow|comment|conversion>",
+  "core_value": "<what the viewer learns, feels, sees or can do>",
+  "desired_action": "<if any>",
+  "reveal_target": "none",
+  "cta_keyword": "APPLE",
+  "target_duration": "70s",
+  "tone": "<voice, personality, boundaries>",
+  "source_policy": "official-preferred",
+  "footage_constraints": "<assets, permissions, presenter, recordings>",
+  "credit_instructions": "on-screen",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 70,
+  "music": false,
+  "created_at": "2026-09-07T04:42:22.930638+00:00",
+  "status": "initialized"
+}

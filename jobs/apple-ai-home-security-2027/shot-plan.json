@@ -1,0 +1,257 @@
+{
+  "emphasis": [],
+  "caption_corrections": {},
+  "format": "news",
+  "shots": [
+    {
+      "start_phrase": "Bloomberg reported Apple's next",
+      "line": "Bloomberg reported Apple's next security camera is built to not record you.",
+      "needs": [
+        "Bloomberg",
+        "reported",
+        "Apple",
+        "next",
+        "security",
+        "camera"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "What makes it different",
+      "line": "What makes it different is the trade at the center of it.",
+      "needs": [
+        "makes",
+        "different",
+        "trade",
+        "center"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "This is coming under",
+      "line": "This is coming under Apple's new CEO, John Ternus, targeting 2027.",
+      "needs": [
+        "coming",
+        "under",
+        "Apple",
+        "John",
+        "Ternus",
+        "targeting"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Instead of recording continuously,",
+      "line": "Instead of recording continuously, it's expected to use on-device AI to watch the room.",
+      "needs": [
+        "Instead",
+        "recording",
+        "continuously",
+        "expected",
+        "on-device",
+        "watch"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Mostly it just sends",
+      "line": "Mostly it just sends a timestamp when it sees something move.",
+      "needs": [
+        "Mostly",
+        "sends",
+        "timestamp",
+        "when",
+        "sees",
+        "something"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "No constant video feed.",
+      "line": "No constant video feed.",
+      "needs": [
+        "constant",
+        "video",
+        "feed"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Just: something happened, right",
+      "line": "Just: something happened, right here, right now.",
+      "needs": [
+        "something",
+        "happened",
+        "right"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "It's reportedly set to",
+      "line": "It's reportedly set to plug into a new home security service.",
+      "needs": [
+        "reportedly",
+        "plug",
+        "home",
+        "security",
+        "service"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "That service could eventually",
+      "line": "That service could eventually fold into Apple One.",
+      "needs": [
+        "service",
+        "could",
+        "eventually",
+        "fold",
+        "Apple"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "The logic is simple:",
+      "line": "The logic is simple: less footage stored means less footage that can ever leak",
+      "needs": [
+        "logic",
+        "simple",
+        "less",
+        "footage",
+        "stored",
+        "means"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "or get subpoenaed, or",
+      "line": "or get subpoenaed, or end up somewhere it shouldn't.",
+      "needs": [
+        "subpoenaed",
+        "somewhere",
+        "shouldn"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "This timeline has reportedly",
+      "line": "This timeline has reportedly already slipped twice",
+      "needs": [
+        "timeline",
+        "reportedly",
+        "already",
+        "slipped",
+        "twice"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "from 2025 to late",
+      "line": "from 2025 to late 2026 to now 2027.",
+      "needs": [
+        "2025",
+        "late",
+        "2026",
+        "2027"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "And this is the",
+      "line": "And this is the same company that reportedly walked away from HomeKit's smart routers.",
+      "needs": [
+        "same",
+        "company",
+        "reportedly",
+        "walked",
+        "away",
+        "HomeKit"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "That same trade is",
+      "line": "That same trade is the whole pitch.",
+      "needs": [
+        "same",
+        "trade",
+        "whole",
+        "pitch"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "A camera engineered to",
+      "line": "A camera engineered to barely watch you",
+      "needs": [
+        "camera",
+        "engineered",
+        "barely",
+        "watch"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "while every other security",
+      "line": "while every other security camera on the market sells you the opposite.",
+      "needs": [
+        "while",
+        "every",
+        "other",
+        "security",
+        "camera",
+        "market"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Is that still security",
+      "line": "Is that still security to you, or does a camera need to actually watch?",
+      "needs": [
+        "still",
+        "security",
+        "does",
+        "camera",
+        "need",
+        "actually"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    }
+  ]
+}

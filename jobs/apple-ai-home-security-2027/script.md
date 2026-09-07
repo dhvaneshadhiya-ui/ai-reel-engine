@@ -1,0 +1,15 @@
+On September 4th, Bloomberg reported Apple's next security camera is built to not record you.
+
+What makes it different is the trade at the center of it. This is coming under Apple's new CEO, John Ternus, targeting 2027.
+
+Instead of recording continuously, it's expected to use on-device AI to watch the room. Mostly it just sends a timestamp when it sees something move. No constant video feed. Just: something happened, right here, right now.
+
+It's reportedly set to plug into a new home security service. That service could eventually fold into Apple One.
+
+The logic is simple: less footage stored means less footage that can ever leak, or get pulled into a lawsuit, or end up somewhere it shouldn't.
+
+This timeline has reportedly already slipped twice, from 2025 to late 2026 to now 2027. And this is the same company that reportedly walked away from HomeKit's smart routers.
+
+That same trade is the whole pitch. A camera engineered to barely watch you, while every other security camera on the market sells you the opposite.
+
+Is that still security to you, or does a camera need to actually watch?
