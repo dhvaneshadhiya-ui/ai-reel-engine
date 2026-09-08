@@ -771,6 +771,25 @@ def run() -> int:
     ok("style notes still print separately",
        "PROSE (advice — style is craft" in _sa)
 
+    # 7d. THE CAPTION NEEDS A HUMAN EAR TOO (2026-09-08).
+    #
+    # propose refuses a script without a recorded humanizer pass, on the
+    # reasoning that a script with nothing measurably wrong can still read
+    # like a machine wrote it. The CAPTION is the prose a reader actually
+    # meets first, and it had no such requirement — the shipped
+    # whatsapp-agents caption is 174 words in one unbroken paragraph carrying
+    # an em-dash, which is the exact tell that made the pass mandatory for
+    # scripts in the first place.
+    print("\n  -- the caption's humanizer pass --")
+    import packaging_check as _pc
+    _pcs = (Path(__file__).resolve().parent / "packaging_check.py").read_text()
+    ok("packaging refuses without a caption pass", "NO HUMANIZER PASS" in _pcs)
+    ok("the record is hash-bound to the caption", "_caption_hash" in _pcs)
+    ok("a changed caption invalidates the pass",
+       "CAPTION CHANGED SINCE ITS HUMANIZER PASS" in _pcs)
+    ok("the refusal cues the skill so the hook fires",
+       "SKILL CUE: run the `humanizer` skill" in _pcs)
+
     # 8. check_script's own selftest — structure thresholds + AI tells.
     print("\n  -- check_script selftest --")
     rc = check_script.selftest()

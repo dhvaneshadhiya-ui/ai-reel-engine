@@ -413,6 +413,26 @@ frames them as a phone rather than full-bleed (see **Surface** below).
 cannot express. You then owe `covers` by hand (`tools/link_shots.py <slug>`
 justifies what it can from the manifest and refuses to guess the rest).
 
+### Capture — how was this document grabbed?
+
+Every `receipt` / `sourceread` manifest asset should carry `capture`:
+
+| capture | means |
+|---|---|
+| `mobile` | grabbed at a phone viewport (what `tools/capture.mjs` does by default) |
+| `desktop` | grabbed wide — say why; the type will be small on a phone |
+| `handmade` | built by us, already phone-sized |
+
+**Why it lives in the MANIFEST and not beside the image.** capture.mjs writes a
+`.capture.json` sidecar, and 30 of 45 document assets on one machine had none —
+but those sidecars sit in `public/assets`, which is gitignored, so a check
+reading them is inert everywhere else. The manifest travels with the repo.
+
+**Why it matters.** SourceRead fits a page to frame WIDTH and never zooms, so
+the source's own text size is the size the viewer reads. A desktop capture puts
+desktop type on a phone. G29 catches only the landscape half of Rule 2; G61
+advises on this half.
+
 ### Surface — what is the viewer looking at?
 
 Every manifest asset may declare `surface`, and it decides the framing:

@@ -57,10 +57,67 @@ def parse(text: str) -> dict[str, dict[str, str]]:
     return blocks
 
 
+
+# THE CAPTION IS PROSE A HUMAN READS, AND IT NEVER GOT A HUMAN EAR (2026-09-08).
+#
+# script_approval refuses to propose without a recorded humanizer pass, because
+# "a script with nothing measurably wrong can still read like a machine wrote
+# it". Every word of that applies to the CAPTION, which is the writing an actual
+# reader meets first on Instagram — and packaging.md had no such requirement.
+#
+# It shows. The shipped whatsapp-agents caption is 174 words in ONE unbroken
+# paragraph carrying an em-dash, on a platform that truncates at ~125
+# characters. The em-dash is the exact tell CLAUDE.md records as the reason the
+# humanizer became mandatory for scripts in the first place.
+#
+# Hash-bound like the script record: edit the caption afterwards and this
+# refuses again, because the pass no longer covers the words being published.
+def _caption_hash(slug: str) -> str:
+    import hashlib
+    body = (ROOT / "jobs" / slug / "packaging.md").read_text()
+    caps = re.findall(r"^CAPTION:\s*(.+)$", body, re.M)
+    return hashlib.sha256("\n".join(caps).encode()).hexdigest()[:16]
+
+
+def record_humanized(slug: str) -> int:
+    import json
+    rec = ROOT / "jobs" / slug / "packaging-humanized.json"
+    rec.write_text(json.dumps({"caption_sha256": _caption_hash(slug)}, indent=2) + "\n")
+    print(f"  humanizer pass recorded for {slug}'s caption "
+          f"(sha {_caption_hash(slug)})")
+    print("  packaging_check will accept it until the caption changes.")
+    return 0
+
+
+def humanized_ok(slug: str) -> str | None:
+    """None if fine, else the reason it is not."""
+    import json
+    rec = ROOT / "jobs" / slug / "packaging-humanized.json"
+    if not rec.exists():
+        return ("NO HUMANIZER PASS ON THE CAPTION. The script gets one and "
+                "refuses without it; the caption is the prose a reader "
+                "actually meets and got none.\n"
+                "  Run the `humanizer` skill over the CAPTION text, then:\n"
+                "    python3 tools/packaging_check.py " + slug + " --humanized\n"
+                "  SKILL CUE: run the `humanizer` skill on this caption.")
+    try:
+        got = json.loads(rec.read_text()).get("caption_sha256")
+    except Exception:                                          # noqa: BLE001
+        got = None
+    if got != _caption_hash(slug):
+        return ("THE CAPTION CHANGED SINCE ITS HUMANIZER PASS. The record no "
+                "longer covers the words being published — re-run the pass.\n"
+                "  SKILL CUE: run the `humanizer` skill on this caption.")
+    return None
+
+
 def main() -> None:
-    if len(sys.argv) != 2:
-        sys.exit("usage: python3 tools/packaging_check.py <slug>")
-    slug = sys.argv[1]
+    argv = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if len(argv) != 1:
+        sys.exit("usage: python3 tools/packaging_check.py <slug> [--humanized]")
+    slug = argv[0]
+    if "--humanized" in sys.argv:
+        sys.exit(record_humanized(slug))
     p = ROOT / "jobs" / slug / "packaging.md"
     if not p.exists():
         sys.exit(f"no packaging at {p}\n"
@@ -72,6 +129,9 @@ def main() -> None:
         sys.exit(f"{p} has no '## <platform>' sections.")
 
     errors: list[str] = []
+    _h = humanized_ok(slug)
+    if _h:
+        errors.append(_h)
     for plat, fields in blocks.items():
         lim = LIMITS.get(plat)
         if lim is None:

@@ -1326,6 +1326,50 @@ def check_beats(beats: dict, vo_end: float | None = None,
         if rows == 0:
             errors.append(f"G25 scene {i:02d} settingspane has no rows.")
 
+    # G61 — WAS THIS DOCUMENT CAPTURED MOBILE-FIRST? (2026-09-08) ADVICE.
+    #
+    # Rule 2 says sources are scouted on MOBILE view first, and G29 enforces
+    # the half that shows up in geometry: no landscape capture in a sourceread.
+    # But a PORTRAIT desktop capture passes G29 and still puts desktop-sized
+    # type on a phone. SourceRead fits a page to frame WIDTH and never zooms —
+    # "a document that needs zooming to read is the wrong asset for this
+    # treatment" — so the source's own text size IS the size the viewer reads,
+    # and nothing checked it. On the shipped whatsapp-agents, glyph heights
+    # ranged 21px to 38px within one reel: the "at certain places" the user saw.
+    #
+    # RECORDED IN THE MANIFEST, NOT BESIDE THE IMAGE. The first version of this
+    # gate looked for capture.mjs's .capture.json sidecar and found 30 of 45
+    # document assets had none. But those sidecars live in public/assets, which
+    # is GITIGNORED — so the check would have been inert on every machine
+    # except this one, which is the same class of mistake as a rule that only
+    # exists in prose. The manifest travels with the repo, so the claim travels
+    # with it.
+    #
+    # ADVICE: a missing record is not proof of a bad asset, it is proof we
+    # cannot tell, and "we cannot verify" is not one of the three rules.
+    _undeclared = []
+    _items = {str(a.get("id")): a
+              for a in ((manifest or {}).get("assets") or [])}
+    for i, sc in enumerate(scenes):
+        if sc["type"] not in ("sourceread", "receipt"):
+            continue
+        if sc.get("mobileCaptureOk"):
+            continue
+        a = _items.get(str(sc.get("assetId") or ""), {})
+        if not str(a.get("capture") or "").strip():
+            _undeclared.append((i, str(sc.get("src") or "?").split("/")[-1]))
+    if _undeclared:
+        names = ", ".join(f"{n} (scene {i:02d})" for i, n in _undeclared[:4])
+        errors.append(
+            f"G61 {len(_undeclared)} document asset(s) do not say how they "
+            f"were captured: {names}"
+            + (" ..." if len(_undeclared) > 4 else "")
+            + '. Add `"capture": "mobile"` (or "desktop", or "handmade") to '
+            "the manifest asset. SourceRead fits a page to frame width and "
+            "never zooms, so a desktop capture puts desktop type on a phone — "
+            "Rule 2 exists to stop that, and G29 only catches the landscape "
+            "half of it.")
+
     # G60 — A SPLIT CANNOT SHOW THE PRESENTER'S HANDS (2026-09-02). ADVICE.
     #
     # MEASURED, not assumed. On the master at the same timestamp the presenter

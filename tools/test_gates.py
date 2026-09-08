@@ -752,6 +752,23 @@ def _split_led():
     return mutate
 
 
+def _undeclared_capture():
+    """A sourceread whose manifest entry never says how it was captured."""
+    def mutate(sheet: dict) -> None:
+        sc = sheet["scenes"][4]
+        sc.clear()
+        sc.update(type="sourceread", durationSec=2.4, src="assets/x/rc.png",
+                  srcWidth=1080, srcHeight=3400, credit="@src",
+                  covers="benchmark", assetId="clip-b",
+                  lines=[{"at": 0.5, "x": 40, "y": 40, "w": 200, "h": 60}])
+    return mutate
+
+
+# G61 — Rule 2's other half. G29 catches a LANDSCAPE capture; a portrait
+# DESKTOP capture passes it and still puts desktop type on a phone.
+expect_fail(_undeclared_capture(), "G61",
+            "a document asset that never says how it was captured")
+
 # G60 — a split crops the hands out; measured, no anchor fixes it. ADVISES.
 expect_fail(_split_led(), "G60",
             "a reel whose presenter time is mostly split panels")
