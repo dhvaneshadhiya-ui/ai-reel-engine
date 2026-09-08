@@ -897,18 +897,56 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # Replaying an asset is what a reel does when the scouting did not find
     # enough material, which is the user's "scouting is weak" made countable.
     # The avatar is exempt: the presenter is SUPPOSED to recur.
+    #
+    # NARROWED AGAIN 2026-09-08 — the widening above was right about footage
+    # and WRONG about documents. It took the gate from 4 of 28 reels to 21,
+    # and the extra 17 are the sourceread treatment working as designed:
+    # walking DOWN one article, highlighting a different claim each time.
+    # Measured on whatsapp-agents, where all three "reuses" of wabeta-e2ee.png
+    # highlight non-overlapping bands — y257, y977, y1289. Returning to a page
+    # for a new line is not scouting exhaustion; it is reading the source. So
+    # a document beat is keyed by (file, REGION SHOWN), and only the same file
+    # at the same place twice counts. Footage is keyed by file alone, because
+    # a clip has no regions and replaying it is filler.
+    #
+    # KEYED ON THE REGION, NOT ON A TYPE LIST. The first version of this
+    # narrowing named `sourceread` and `receipt`, and left `annotatezoom` out —
+    # which is the SAME treatment (a different crop of one page each time) and
+    # is the single most-used component in the repo at 70 regioned scenes.
+    # ios27-tiers kept 7 advisories for walking down two documents properly.
+    # Only three types ever declare a region (annotatezoom 70, sourceread 38,
+    # settingspane 4) and none of them is footage, so "declares a region" IS
+    # the condition — with no list to fall behind the components again.
+    def _region_key(sc: dict) -> str:
+        lines = sc.get("lines")
+        if isinstance(lines, list) and lines:
+            return ",".join(str(l.get("y")) for l in lines)
+        f = sc.get("focus")
+        return json.dumps(f, sort_keys=True) if f else ""
+
     used = Counter()
     for sc in scenes:
         src = str(sc.get("src") or sc.get("topSrc") or "")
-        if src and "avatar-master" not in src and sc["type"] not in ("commentcta",):
-            used[src] += 1
-    for src, n in used.items():
+        if not src or "avatar-master" in src or sc["type"] in ("commentcta",):
+            continue
+        # No region declared is not an exemption — a document shown whole
+        # twice IS the same picture twice.
+        reg = _region_key(sc)
+        key = f"{src}#{reg}" if reg else src
+        used[key] += 1
+    for key, n in used.items():
         if n > 1:
+            src = key.split("#")[0]
+            same_place = "#" in key
             errors.append(
-                f"G07 asset reuse: {src.split('/')[-1]} carries {n} beats — "
-                f"scout a DISTINCT asset for every slot (rule 2026-07-31, "
-                f"widened past `footage` 2026-09-02). Showing one thing twice "
-                f"is what a reel does when the scouting ran out.")
+                f"G07 asset reuse: {src.split('/')[-1]} carries {n} beats"
+                + (" showing the SAME region each time" if same_place else "")
+                + " — scout a DISTINCT asset for every slot (rule 2026-07-31; "
+                "widened past `footage` 2026-09-02, narrowed back for "
+                "documents 2026-09-08 — a page revisited for a NEW line is "
+                "reading the source, not running out of material). Showing "
+                "one thing twice is what a reel does when the scouting ran "
+                "out.")
 
     # G08 — sound design: sparse, and never louder than the band
     cues = [c for s in scenes for c in (s.get("sfx") or [])]

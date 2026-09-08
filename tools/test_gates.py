@@ -812,6 +812,33 @@ if _hits:
     raise SystemExit(1)
 _counted("G61 silent — a document matched by src whose capture is declared")
 
+# G07 SILENT — walking DOWN one article is not running out of material.
+# The 2026-09-02 widening past `footage` took this gate from 4 of 28 reels to
+# 21, and the extra 17 were the sourceread and annotatezoom treatments working
+# as designed: a different band of one page each time. Keyed on the REGION now,
+# and this is the case that keeps it honest — without it, a re-widening would
+# pass on the failing case alone, exactly as G61 did.
+_s = copy.deepcopy(BASE)
+for _i, _y in ((4, 260), (5, 980), (6, 1290)):
+    _s["scenes"][_i].clear()
+    _s["scenes"][_i].update(
+        type="sourceread", durationSec=2.4, src="assets/x/article.png",
+        srcWidth=1080, srcHeight=3400, credit="@src", covers="benchmark",
+        mobileCaptureOk=True,
+        lines=[{"at": 0.4, "x": 40, "y": _y, "w": 200, "h": 60}])
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST,
+                       vo_words=VO_WORDS)
+    _hits = [a for a in _adv if "G07" in a and "article.png" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)])
+             if "G07" in str(a) and "article.png" in str(a)]
+if _hits:
+    print(f"  FAIL G07 fired on one page read at three DIFFERENT bands: "
+          f"{_hits[0][:90]}")
+    raise SystemExit(1)
+_counted("G07 silent — one article read at three different bands")
+
 # G60 — a split crops the hands out; measured, no anchor fixes it. ADVISES.
 expect_fail(_split_led(), "G60",
             "a reel whose presenter time is mostly split panels")
@@ -924,6 +951,14 @@ CASES = [
                 for sc in s["scenes"][:12] if sc["type"] == "footage"],
      "G06", "facecam over 20%"),
     (lambda s: s["scenes"][3].update(src="assets/x/clips/b.mp4"), "G07", "clip reused"),
+    # The same PAGE at the same PLACE twice is the same picture twice, and
+    # still counts — narrowing G07 for documents must not open this hole.
+    (lambda s: [s["scenes"][i].update(
+        type="sourceread", src="assets/x/doc.png", srcWidth=1080,
+        srcHeight=3400, credit="@src", covers="benchmark",
+        lines=[{"at": 0.4, "x": 40, "y": 300, "w": 200, "h": 60}])
+        for i in (4, 5)],
+     "G07", "one page shown at the SAME region twice"),
     (lambda s: [sc.pop("sfx", None) for sc in s["scenes"][:6]],
      "G08", "too few SFX cues"),
     (lambda s: [sc.update(sfx=[{"src": "sfx/Pop.MP3", "vol": 0.343}])

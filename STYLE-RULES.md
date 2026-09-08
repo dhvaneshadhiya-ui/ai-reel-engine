@@ -7336,3 +7336,40 @@ Second correction from the same hour: G61's own comment claimed the manifest
 travels. The real reason to read the manifest is that the sidecar only exists
 when `capture.mjs` made the file, and 30 of 45 document assets were not made
 that way.
+
+## 2026-09-08 — G07 called reading a source "running out of material"
+
+**RAW NOTE.** After G61 was found inert, every gate was measured across all 28
+beat sheets in the repo to see whether any other one fires indiscriminately.
+Nothing fired on all 28 — but G07 fired on **21**, and it had fired on 4
+before its scope was widened past `footage` six days earlier.
+
+**ROOT CAUSE.** The widening was right about footage and wrong about
+documents. Measured on whatsapp-agents: all three "reuses" of
+`wabeta-e2ee.png` highlight **non-overlapping bands of the page** — y257,
+y977, y1289. That is the sourceread treatment doing exactly what it is for,
+walking down one article and highlighting a different claim each time. The
+same is true of `annotatezoom`, which crops to a different part of one image
+per beat and is the most-used component in the repo. Returning to a page for a
+NEW line is reading the source; it is not scouting exhaustion.
+
+**DISTILLED RULE.** *A document beat is keyed by (file, region shown).* The
+same page at the same place twice is still the same picture twice and still
+advises; a different band is not reuse at all. Footage keeps the file-only
+key, because a clip has no regions and replaying one is filler.
+
+**KEYED ON THE REGION, NOT ON A TYPE LIST** — the first attempt at this named
+`sourceread` and `receipt` and forgot `annotatezoom`, leaving ios27-tiers with
+7 advisories for walking down two documents correctly. Only three types ever
+declare a region (annotatezoom 70, sourceread 38, settingspane 4) and none is
+footage, so "declares a region" is the condition, with no list to fall behind
+the components.
+
+**MEASURED AFTER.** 21 of 28 reels to 15. ios27-tiers 7 advisories to 0,
+whatsapp-agents 3 to 0, grok-bot 1 to 0. One reel — claude-memory-everywhere —
+still shows an identical region twice, which is the case this gate is for.
+
+**And it got the silent case G61 taught us to write.** `expect_fail` alone
+could not have caught either of these: a gate that fires on everything detects
+its own violation trivially. G07 now has both — one page at three different
+bands draws nothing, one page at the same band twice still advises.
