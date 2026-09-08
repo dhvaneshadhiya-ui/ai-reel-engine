@@ -39,6 +39,9 @@ import subprocess
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from reel_gates import FORMATS, DEFAULT_FORMAT, SFX_PEAKS_FILE  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_TARGET = -12.0     # dBFS, effective peak of a punctuation cue
 GAIN_MAX = 1.0             # never amplify past the file itself
@@ -63,11 +66,16 @@ def peak_dbfs(f: Path) -> float | None:
 
 def main() -> None:
     write = "--write" in sys.argv
-    target = DEFAULT_TARGET
+    # The target is PER FORMAT, read from the same profile G08 checks
+    # against — `utility` mixes its cues quieter than `editorial` does, and
+    # calibrating every sheet to one number would put the top5 sheets
+    # permanently outside their own gate. An explicit --target overrides.
+    target = None
     if "--target" in sys.argv:
         i = sys.argv.index("--target")
         if i + 1 < len(sys.argv):
             target = float(sys.argv[i + 1])
+    forced = target
 
     # Optional slug filter. Added because another session was editing a sheet
     # in the same working tree: rewriting it would have collided with work in
@@ -82,6 +90,9 @@ def main() -> None:
 
     for p in sheets:
         doc = json.loads(p.read_text())
+        fmt = FORMATS.get(doc.get("format") or DEFAULT_FORMAT,
+                          FORMATS[DEFAULT_FORMAT])
+        target = forced if forced is not None else fmt["sfx_peak"]
         touched = False
         for sc in doc.get("scenes", []):
             for cue in (sc.get("sfx") or []):
@@ -97,7 +108,7 @@ def main() -> None:
                 old = float(cue.get("vol", 0))
                 want = round(min(GAIN_MAX, max(GAIN_MIN,
                                                10 ** ((target - pk) / 20))), 3)
-                rows.append((p.stem, src, pk, old, want))
+                rows.append((p.stem, src, pk, old, want, target))
                 if abs(want - old) > 0.005:
                     touched = True
                     if write:
@@ -110,9 +121,10 @@ def main() -> None:
         sys.exit("no sfx cues found")
 
     seen: dict[str, tuple] = {}
-    for _slug, src, pk, old, want in rows:
+    for _slug, src, pk, old, want, _t in rows:
         seen.setdefault(src, (pk, old, want))
-    print(f"\n  target {target:.0f} dBFS effective peak\n")
+    tg = ", ".join(f"{t:.1f}" for t in sorted({r[5] for r in rows}))
+    print(f"\n  target {tg} dBFS effective peak (per format)\n")
     print(f"  {'cue':34}{'peak':>8}{'was':>7}{'now':>7}{'change':>9}")
     for src, (pk, old, want) in sorted(seen.items()):
         db = 20 * math.log10(want / old) if old > 0 else 0
@@ -128,8 +140,35 @@ def main() -> None:
           "\n  peak is already below it — the gain is capped at 1.0 and it cannot"
           "\n  be made louder without distorting. Replace the sound, do not push it.")
 
+    # G08 cannot shell out to ffmpeg on every run, so the peaks live in a
+    # committed sidecar. `bytes` is the staleness check: swap the file and the
+    # cached peak stops applying, which the gate says out loud instead of
+    # silently grading the new sound against the old one's number.
+    #
+    # Written on a plain report run too, not only under --write: measuring is
+    # read-only, and rewriting 27 shipped beat sheets just to refresh a cache
+    # would be the tail wagging the dog. MERGED rather than replaced, because
+    # the cache is keyed by FILE and a single-slug run only sees that reel's
+    # cues — replacing would delete every peak it did not happen to touch.
+    cached = {}
+    if SFX_PEAKS_FILE.exists():
+        try:
+            cached = json.loads(SFX_PEAKS_FILE.read_text()).get("peaks", {})
+        except Exception:                                       # noqa: BLE001
+            cached = {}
+    cached.update({
+        src: {"peak": pk,
+              "bytes": (ROOT / "public" / src).stat().st_size}
+        for src, pk in peaks.items()
+        if pk is not None and (ROOT / "public" / src).exists()})
+    SFX_PEAKS_FILE.write_text(json.dumps({
+            "_": "measured peaks, dBFS — written by tools/calibrate_sfx.py, "
+             "read by G08. Do not hand-edit.",
+        "peaks": dict(sorted(cached.items())),
+    }, indent=2) + "\n")
+    print(f"\n  wrote {SFX_PEAKS_FILE.name} ({len(cached)} cues)")
     if write:
-        print(f"\n  rewrote {changed_files} beat sheet(s)")
+        print(f"  rewrote {changed_files} beat sheet(s)")
     else:
         print("\n  (--write to apply)")
 

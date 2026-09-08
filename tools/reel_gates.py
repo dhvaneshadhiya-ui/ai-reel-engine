@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import math
 import re
 import subprocess
 import sys
@@ -36,6 +37,48 @@ from sfx_library import (CATALOGUE as SFX_CAT, ROLE_FITS, ROLE_MAX,  # noqa: E40
                          COMEDIC_OK_FORMATS, COMEDIC_BLOCKED_TONES, SFX_DIR)
 
 ROOT = Path(__file__).resolve().parent.parent
+
+# ── SFX effective loudness ───────────────────────────────────────────────────
+# `vol` in a beat sheet is a MULTIPLIER, not a level: the same 0.14 on a file
+# peaking at -2.1 dBFS and one at -12.4 lands 10 dB apart. calibrate_sfx.py has
+# derived each cue's gain from its own measured peak since 2026-08-18, which
+# means the multiplier stopped being comparable between cues that day — and G08
+# went on checking a flat 0.10-0.19 band anyway, so a correctly calibrated reel
+# failed it on EVERY cue (9 of 25 advisories on whatsapp-agents, 2026-09-08).
+# A check that fires on every case is describing a broken check. G08 now
+# measures what the rule is actually about: where the cue LANDS.
+SFX_PEAKS_FILE = ROOT / "tools/sfx_peaks.json"
+SFX_PEAK_TOL = 3.0      # dB either side of the format's target. Wide enough
+                        # for craft (a cue deliberately tucked down), tight
+                        # enough to catch the 7-16 dB errors calibration found.
+_SFX_PEAKS: dict | None = None
+
+
+def sfx_peaks() -> dict:
+    """Measured peak dBFS per cue file, written by `calibrate_sfx.py --write`."""
+    global _SFX_PEAKS
+    if _SFX_PEAKS is None:
+        try:
+            _SFX_PEAKS = json.loads(SFX_PEAKS_FILE.read_text())["peaks"]
+        except Exception:
+            _SFX_PEAKS = {}
+    return _SFX_PEAKS
+
+
+def sfx_effective_db(src: str, vol: float) -> tuple[float | None, str]:
+    """Where this cue actually lands, in dBFS. Returns (level, why-not)."""
+    ent = sfx_peaks().get(src)
+    if ent is None:
+        return None, (f"no measured peak for {src} — run `python3 "
+                      "tools/calibrate_sfx.py --write` to measure it")
+    f = ROOT / "public" / src
+    if f.exists() and f.stat().st_size != ent.get("bytes"):
+        return None, (f"{src} has changed since its peak was measured — "
+                      "re-run `python3 tools/calibrate_sfx.py --write`")
+    if vol <= 0:
+        return None, f"{src} vol {vol} is silent"
+    return ent["peak"] + 20 * math.log10(vol), ""
+
 
 
 class GateError(Exception):
@@ -69,7 +112,7 @@ FORMATS: dict[str, dict] = {
         "hook_max": 2.0,
         "face": (0.10, 0.20),
         "sfx": (6, 9),
-        "sfx_vol": (0.10, 0.19),
+        "sfx_peak": -12.0,
         "requires_cta": False,
         "_derived": "styles/editorial.md — 11-reel teardown 2026-07-22; "
                     "runtime + hook set by user rules 2026-08-12.",
@@ -80,7 +123,12 @@ FORMATS: dict[str, dict] = {
         "hook_max": 2.0,
         "face": (0.10, 0.20),
         "sfx": (6, 9),
-        "sfx_vol": (0.06, 0.10),
+        # -17.5 dBFS: the utility pack's measured flat-multiplier band
+        # was 0.06-0.10 against news's 0.10-0.19, i.e. 5.5 dB quieter at
+        # the midpoints. Converted, not re-derived, when G08 moved off
+        # raw multipliers 2026-09-08 — a quieter mix is a real property
+        # of the pack; the multiplier it was expressed in was not.
+        "sfx_peak": -17.5,
         "requires_cta": True,
         "_derived": "styles/utility.md v2 — 12-reel teardown 2026-07-24 "
                     "(full-res crops + 8fps motion bursts). Runtime '26-48s', "
@@ -130,13 +178,13 @@ FORMATS: dict[str, dict] = {
         #             teardown (median 9.4s) measure editorial cut rhythm, NOT
         #             how long the opening claim is held, and reading that
         #             needs the frames, not the detector.
-        #   sfx, sfx_vol  inherited from news. Cue counts cannot be recovered
+        #   sfx, sfx_peak inherited from news. Cue counts cannot be recovered
         #             from a mixed master.
         "runtime": (40.0, 75.0),
         "hook_max": 2.0,
         "face": (0.0, 0.25),
         "sfx": (6, 9),
-        "sfx_vol": (0.1, 0.19),
+        "sfx_peak": -12.0,
         "requires_cta": True,
         "dur_max": {"motion": 6.5},
         "_derived": (
@@ -147,7 +195,7 @@ FORMATS: dict[str, dict] = {
             "pooled shot length at the most aggressive detector threshold "
             "(0.15, n=88), deliberately the tightest of four readings. face "
             "floor 0.0 because 3 of 7 references carry no presenter at all. "
-            "hook_max, sfx and sfx_vol INHERITED from news and unmeasured."),
+            "hook_max, sfx and sfx_peak INHERITED from news and unmeasured."),
     },
     "ai-tools": {
         # AI / Claude / automation tool reels — the 2026-08-25 expansion. The
@@ -169,7 +217,7 @@ FORMATS: dict[str, dict] = {
         "face": (0.10, 0.25),     # bookend style, measured on Saraev IG
                                   # (~20%: hook + one mid beat + CTA)
         "sfx": (6, 9),            # INHERITED from news — not measurable from
-        "sfx_vol": (0.10, 0.19),  # stills; re-derive on the first shipped reel
+        "sfx_peak": -12.0,        # stills; re-derive on the first shipped reel
         "requires_cta": True,     # follow/comment gate is constitutive: all 8
                                   # corpus reels carry one
         "_derived": "8-reel teardown 2026-08-25 (STYLE-RULES entry of that "
@@ -194,7 +242,7 @@ FORMATS: dict[str, dict] = {
         "hook_max": 2.0,
         "face": (0.10, 0.20),
         "sfx": (6, 9),
-        "sfx_vol": (0.10, 0.19),
+        "sfx_peak": -12.0,
         "requires_cta": True,
         "_derived": "INHERITED from news (editorial 11-reel teardown) — NOT "
                     "measured for this genre. Only the structural rules in "
@@ -654,7 +702,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
     HK_MAX = prof["hook_max"]
     FC_MIN, FC_MAX = prof["face"]
     SX_MIN, SX_MAX = prof["sfx"]
-    SXV_MIN, SXV_MAX = prof["sfx_vol"]
+    SFX_TARGET = prof["sfx_peak"]
     total = round(sum(s["durationSec"] for s in scenes), 2)
     # StatCard.tsx counts its row stagger in FRAMES, not seconds, so G20
     # has to know the sheet's fps to compare it against a duration.
@@ -869,11 +917,25 @@ def check_beats(beats: dict, vo_end: float | None = None,
             f"G08 {len(cues)} SFX cues, outside {SX_MIN}-{SX_MAX} — ordinary "
             "cuts stay silent (rule 2026-07-22).")
     for c in cues:
-        v = c.get("vol")
-        if v is not None and not (SXV_MIN <= v <= SXV_MAX):
+        v, src = c.get("vol"), str(c.get("src") or "")
+        if v is None or not src:
+            continue
+        eff, why = sfx_effective_db(src, float(v))
+        if eff is None:
+            errors.append(f"G08 {why}.")
+            continue
+        # A cue capped at gain 1.0 that still falls short is a QUIET FILE, not
+        # a mixing error — it cannot be pushed further without distorting.
+        # calibrate_sfx says replace the sound; that is craft, not a gate.
+        if float(v) >= 1.0 and eff < SFX_TARGET:
+            continue
+        if abs(eff - SFX_TARGET) > SFX_PEAK_TOL:
             errors.append(
-                f"G08 SFX {c.get('src')} vol {v} outside "
-                f"{SXV_MIN}-{SXV_MAX} for format {fmt_name!r}.")
+                f"G08 SFX {src} lands at {eff:.1f} dBFS (vol {v}), off the "
+                f"{SFX_TARGET:.1f} dBFS target for format {fmt_name!r} by "
+                f"{eff - SFX_TARGET:+.1f} dB — `vol` is a multiplier, so run "
+                "`python3 tools/calibrate_sfx.py --write` rather than typing "
+                "a number.")
 
     # G09 — background music is OPTIONAL; the CHOICE is what gets declared.
     #
@@ -2895,13 +2957,13 @@ def print_formats() -> None:
     that had since moved.
     """
     w = max(len(k) for k in FORMATS)
-    print(f"{'format'.ljust(w)}  runtime    hook   facecam  sfx   sfx-vol"
-          "      cta")
+    print(f"{'format'.ljust(w)}  runtime    hook   facecam  sfx   sfx-peak"
+          "     cta")
     for name, pr in FORMATS.items():
         rt = f"{pr['runtime'][0]:.0f}-{pr['runtime'][1]:.0f}s"
         fc = f"{pr['face'][0]:.0%}-{pr['face'][1]:.0%}"
         sx = f"{pr['sfx'][0]}-{pr['sfx'][1]}"
-        sv = f"{pr['sfx_vol'][0]}-{pr['sfx_vol'][1]}"
+        sv = f"{pr['sfx_peak']:.1f} dBFS"
         print(f"{name.ljust(w)}  {rt:<9}  {pr['hook_max']:.1f}s   {fc:<7}  "
               f"{sx:<4}  {sv:<11}  "
               f"{'required' if pr['requires_cta'] else 'optional'}")

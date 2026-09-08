@@ -7206,3 +7206,55 @@ NOT regenerated, because 2026-09-02 measured that pace tracks the script's
 sentence profile and cannot be recovered after approval (14 pace marks made a
 read *faster*), so a second take at ~Rs 2,100 would very likely return the same
 number. No blocking gate was overridden and `--soft` was not used.
+
+## 2026-09-08 — G08 was checking a number that stopped meaning anything
+
+**RAW NOTE.** `reel_gates.py whatsapp-agents` printed 25 advisories. Nine of
+them were G08 SFX volume — *every single cue in the reel*, at 0.251, 0.32,
+0.343, 0.452, 0.468, 0.543, 0.556 and 1.0, against a band of 0.10–0.19.
+
+**ROOT CAUSE.** `vol` is a MULTIPLIER, not a level. On 2026-08-18
+`calibrate_sfx.py` started deriving each cue's gain from that file's own
+measured peak so every cue lands at the same effective loudness (−12 dBFS,
+about 11 dB under the voice). From that day a quiet file legitimately needs
+`vol 0.556` and a hot one `vol 0.32` — the multiplier stopped being comparable
+between cues, and comparing it to a fixed band stopped measuring anything.
+G08 went on comparing it for three weeks. A correctly calibrated reel failed
+its own gate on every cue, which is the same signature as G57: *a check that
+fires on every case is describing a broken check, not bad work.*
+
+Worse, the FIXTURES had never been calibrated either, so `test_gates` was
+green while asserting nothing: BASE raised nine G08 advisories before any
+mutation was applied, so "G08 advises — SFX too loud" would have passed with
+the mutation deleted. Two of the 176 checks were decorative.
+
+**DISTILLED RULE.** *The gate measures where the cue LANDS, not what was
+typed.* `sfx_vol` (a multiplier band) is replaced by `sfx_peak` (a dBFS
+target) in every format profile; G08 computes `file peak + 20·log10(vol)` and
+allows ±3 dB — wide enough for a cue deliberately tucked down, tight enough to
+catch the 7–16 dB errors calibration actually found. A cue at gain 1.0 that
+still falls short is a quiet FILE, not a mixing error, and is exempt: replace
+the sound, do not push it.
+
+Three supporting changes, because a rule nobody runs is prose:
+
+- Peaks live in `tools/sfx_peaks.json`, written by `calibrate_sfx.py` (the gate
+  cannot shell out to ffmpeg on every run). Each entry carries the file's byte
+  size; swap the file and G08 says the peak is stale instead of silently
+  grading the new sound against the old one's number.
+- `calibrate_sfx.py` reads the TARGET from the sheet's own format profile.
+  Utility mixes 5.5 dB under editorial, so calibrating every sheet to one
+  number would have put every top5 sheet permanently outside its own gate —
+  the exact bug being fixed, reintroduced from the other end.
+- `compile_shot_plan.py` runs the calibration at the tail, next to
+  `auto_contrast`. Same reasoning as that one: the sheet is being GENERATED,
+  nothing is approved yet, so the gains are simply correct rather than
+  reported as wrong later. This is the humanizer lesson — a step that only
+  runs when somebody remembers it runs zero times.
+
+**MEASURED AFTER.** 202 of 227 cues across every sheet in the repo now land on
+target. The 25 that do not are three sheets that predate calibration
+(`airpods-camera`, `iphone18-colors` at 7–17 dB under) and one top5 sheet
+calibrated to the editorial target (`iphone-third-interface`, 5.5 dB hot) —
+all true statements about those old mixes, left as advice rather than
+retro-edited, since the renders they describe have shipped.

@@ -1,0 +1,57 @@
+{
+  "_": "measured peaks, dBFS \u2014 written by tools/calibrate_sfx.py, read by G08. Do not hand-edit.",
+  "peaks": {
+    "sfx/Camera Shutter.MP3": {
+      "peak": -2.1,
+      "bytes": 5483
+    },
+    "sfx/Click.MP3": {
+      "peak": 0.0,
+      "bytes": 4647
+    },
+    "sfx/Core.MP3": {
+      "peak": -6.9,
+      "bytes": 10916
+    },
+    "sfx/Magic Reveal.MP3": {
+      "peak": -12.4,
+      "bytes": 23873
+    },
+    "sfx/Pop.MP3": {
+      "peak": -2.7,
+      "bytes": 2975
+    },
+    "sfx/Riser.MP3": {
+      "peak": -3.1,
+      "bytes": 23873
+    },
+    "sfx/Whoosh (Reversed).MP3": {
+      "peak": -2.4,
+      "bytes": 6737
+    },
+    "sfx/whoosh.MP3": {
+      "peak": -7.3,
+      "bytes": 10081
+    },
+    "sfx2/ground-impact-352053.mp3": {
+      "peak": -3.9,
+      "bytes": 46080
+    },
+    "sfx2/impact-boom.mp3": {
+      "peak": -5.1,
+      "bytes": 66816
+    },
+    "sfx2/mouse-click-01.mp3": {
+      "peak": -5.4,
+      "bytes": 11702
+    },
+    "sfx2/risers-01.mp3": {
+      "peak": -3.3,
+      "bytes": 198112
+    },
+    "sfx2/whooshes-01.mp3": {
+      "peak": -6.7,
+      "bytes": 28421
+    }
+  }
+}

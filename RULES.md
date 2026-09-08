@@ -406,9 +406,15 @@ technical term appears on screen in standard notation. [GATE:G16]
   the exception: set `plan["music"] = true` (locked default bed) or a full
   music object — and then it is volume-automated, never flat. [G09, advice]
 - **SFX carries what the bed used to.** Run the top of the range — **9 SFX
-  cues**, not 6 — vols 0.10–0.19, drawing from the full 16-cue library rather
-  than repeating a narrow subset. Ordinary cuts still stay silent; the count
-  itself is not raised past the measured G08 ceiling. [GATE:G08]
+  cues**, not 6 — drawing from the full 16-cue library rather than repeating a
+  narrow subset. Ordinary cuts still stay silent; the count itself is not
+  raised past the measured G08 ceiling. **Never type a `vol`**: it is a
+  MULTIPLIER, so the same number on a loud and a quiet file lands 10 dB apart.
+  `compile_shot_plan` derives every gain from the file's own measured peak, and
+  G08 checks where the cue LANDS against the format's target in dBFS
+  (`python3 tools/reel_gates.py --formats`). Corrected 2026-09-08: the rule had
+  said "vols 0.10–0.19" since before gains became per-file in 2026-08-18, so a
+  correctly calibrated reel failed its own gate on every cue. [GATE:G08]
 - Master to −14 LUFS, verify with `ebur128`. [EYE]
 
 ## 9. Variety

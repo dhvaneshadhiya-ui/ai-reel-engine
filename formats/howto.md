@@ -93,7 +93,7 @@ reveal — the promise is stated, then kept, step by step.
 
 ## What was NOT measured
 
-`hook_max` (2.0s), `sfx` (6-9) and `sfx_vol` are inherited from `news`. The
+`hook_max` (2.0s), `sfx` (6-9) and `sfx_peak` are inherited from `news`. The
 teardown's "first cut" figures — median 9.4s — measure editorial cut rhythm,
 not how long the opening claim is held, and separating those needs the frames
 rather than the detector. Re-measure before treating any of the three as a

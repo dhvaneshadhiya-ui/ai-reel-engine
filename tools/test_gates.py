@@ -25,6 +25,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from reel_gates import (  # noqa: E402
     BLOCKING_RULES,
+    FORMATS,
+    sfx_peaks,
     CAPTION_ALIASES,
     LUFS_TARGET,
     RUNTIME_CEILING,
@@ -59,14 +61,14 @@ def good() -> dict:
          # G39: a scene that shows a SOURCE must name the line it illustrates,
          # and those words must be spoken while it is on screen.
          "covers": "macOS ships",
-         "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.15},
-                 {"src": "sfx/Camera Shutter.MP3", "vol": 0.16}]},
+         "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.582},
+                 {"src": "sfx/Camera Shutter.MP3", "vol": 0.32}]},
         {"credit": "@src", "type": "split", "durationSec": 2.5, "topSrc": "assets/x/clips/a.mp4",
          "bottomSrc": face},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/b.mp4",
-         "assetId": "clip-b", "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.12}]},
+         "assetId": "clip-b", "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.543}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/c.mp4",
-         "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.12}]},
+         "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.543}]},
         # G20/G55: `rows` and `items` are not optional either — this fixture
         # catalogued THREE empty MG scenes (specsheet, chart, wordcascade),
         # each drawing its title over an empty box (2026-09-01).
@@ -74,18 +76,18 @@ def good() -> dict:
          "title": "What changed", "rows": [
              {"label": "Chip", "value": "8 Elite"},
              {"label": "Memory", "value": "+58%", "accent": True}],
-         "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]},
+         "sfx": [{"src": "sfx/Core.MP3", "vol": 0.556}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/d.mp4",
-         "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.12}]},
+         "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.543}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/e.mp4",
          },
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/f.mp4",
-         "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.16}]},
+         "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.582}]},
         {"type": "chart", "source": "src", "durationSec": 3.0,
          "title": "Cost per unit", "unit": "%", "items": [
              {"label": "Last year", "value": 12},
              {"label": "Now", "value": 58, "highlight": True}],
-         "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]},
+         "sfx": [{"src": "sfx/Core.MP3", "vol": 0.556}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/g.mp4"},
         # G54: `words` is not optional — an empty stack draws nothing for
         # the whole beat. This fixture carried none until 2026-09-01.
@@ -127,7 +129,7 @@ def good() -> dict:
          "src": "assets/x/src.png", "srcWidth": 1080, "srcHeight": 2340,
          "lines": [{"at": 0.2, "x": 40, "y": 200, "w": 900, "h": 60}]},
         {"type": "checklist", "durationSec": 2.5, "stagger": 0.5,
-         "sfx": [{"src": "sfx/Pop.MP3", "vol": 0.12}],
+         "sfx": [{"src": "sfx/Pop.MP3", "vol": 0.343}],
          "rows": [{"label": "macOS", "state": "done"},
                   {"label": "Free Grok", "state": "no"},
                   {"label": "Android", "state": "q"}]},
@@ -271,15 +273,24 @@ def expect_fail(mutate, gate: str, label: str) -> None:
 BASE = good()
 
 
+def sfx_gain(src: str, target_db: float) -> float:
+    """The gain calibrate_sfx.py would derive for this cue at this target."""
+    return round(min(1.0, 10 ** ((target_db - sfx_peaks()[src]["peak"]) / 20)), 3)
+
+
 def top5(sheet: dict) -> dict:
     """The baseline re-cut as a top5 reel: shorter, quieter cues, with a CTA."""
     s = copy.deepcopy(sheet)
     s["format"] = "top5"
     # trim to the 26-48s band
     s["scenes"] = s["scenes"][:14]
+    # Utility pops are quieter — 5.5 dB under editorial, per the profile. The
+    # gain is DERIVED from the file's own peak (G08 checks where a cue lands,
+    # not what multiplier was typed), so the fixture derives it the same way
+    # the pipeline does rather than hard-coding a number that means nothing.
     for sc in s["scenes"]:
         for c in (sc.get("sfx") or []):
-            c["vol"] = 0.08                      # utility pops are quieter
+            c["vol"] = sfx_gain(c["src"], FORMATS["top5"]["sfx_peak"])
     s["scenes"].append({"type": "commentcta", "durationSec": 2.0})
     return s
 
@@ -296,7 +307,7 @@ def comparison(sheet: dict) -> dict:
                       "rightSrc": "assets/x/clips/c.mp4",
                       "leftLabel": "iPhone 18", "rightLabel": "iPhone 17",
                       "side": "both",
-                      "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.12}]}
+                      "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.543}]}
     for sc in s["scenes"]:
         if sc["type"] == "footage" and face not in str(sc.get("src", "")):
             sc.setdefault("side", "a")
@@ -883,9 +894,13 @@ CASES = [
     (lambda s: s["scenes"][3].update(src="assets/x/clips/b.mp4"), "G07", "clip reused"),
     (lambda s: [sc.pop("sfx", None) for sc in s["scenes"][:6]],
      "G08", "too few SFX cues"),
-    (lambda s: [sc.update(sfx=[{"src": "sfx/Pop.MP3", "vol": 0.13}])
+    (lambda s: [sc.update(sfx=[{"src": "sfx/Pop.MP3", "vol": 0.343}])
                 for sc in s["scenes"]], "G08", "a cue on every cut"),
-    (lambda s: s["scenes"][2]["sfx"][0].update(vol=0.45), "G08", "SFX too loud"),
+    # 1.0 on a file peaking at -6.7 dBFS lands 5.3 dB over the target. Was
+    # `vol=0.45` until 2026-09-08, which stopped meaning "loud" the day gains
+    # became per-file: 0.45 on THIS cue is quieter than its calibrated 0.543.
+    (lambda s: s["scenes"][2]["sfx"][0].update(vol=1.0),
+     "G08", "SFX 5 dB over the format's target"),
     # ── SFX placement (G28) ──────────────────────────────────────────────
     (lambda s: s["scenes"][2]["sfx"][0].update(src="sfx/Whoosh-typo.MP3"),
      "G28", "SFX filename not in the catalogue (would render silent)"),
@@ -895,7 +910,7 @@ CASES = [
      "G40", "comedic sting in a news reel"),
     # scene 9 is followed by wordcascade + plain footage — nothing to pay off
     (lambda s: s["scenes"][9].__setitem__(
-        "sfx", [{"src": "sfx2/risers-01.mp3", "vol": 0.15}]),
+        "sfx", [{"src": "sfx2/risers-01.mp3", "vol": 0.367}]),
      "G40", "riser with no payoff in the next 3 beats"),
     (lambda s: s.update(music=None), "G09", "no bed and no declared choice"),
     (lambda s: s["music"].update(points=[{"t": 0, "vol": 0.1},
@@ -967,8 +982,11 @@ CASES = [
                s.clear() or s.update(copy.deepcopy(TOP5)) or
                s.__setitem__("scenes", s["scenes"][:-1]),
      "G24", "top5 reel with no CTA"),
+    # Every cue calibrated to the EDITORIAL target in a utility reel: correct
+    # arithmetic, wrong destination, 5.5 dB hot for the format.
     (lambda s: s.clear() or s.update(copy.deepcopy(TOP5)) or
-               [c.update(vol=0.15) for sc in s["scenes"] for c in (sc.get("sfx") or [])],
+               [c.update(vol=sfx_gain(c["src"], FORMATS["news"]["sfx_peak"]))
+                for sc in s["scenes"] for c in (sc.get("sfx") or [])],
      "G08", "editorial-loud SFX in a top5 reel"),
     (lambda s: next(x for x in s["scenes"] if x["type"] == "annotatezoom")
                .pop("focus"),
@@ -1065,7 +1083,7 @@ CASES = [
         "credit": "@src", "type": "annotatezoom", "durationSec": 2.0,
         "src": "assets/x/doc.png", "srcWidth": 1080, "srcHeight": 2000,
         "focus": {"x": 40, "y": 100, "w": 900, "h": 500},
-        "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.15}]}),
+        "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.582}]}),
      "G39", "a document on screen with no stated claim"),
     # 2026-08-18, RULE 1. Both of these were in the SHIPPED iphone-fold-ultra:
     # seven scenes at 300, and the reel's own screenshot shows the caption
@@ -1105,7 +1123,7 @@ CASES.append((lambda s: (s.update(format="ai-tools"),
                              "type": "typecard", "durationSec": 2.5,
                              "kinetic": {"text": "A CARD", "style": "caps",
                                          "at": 0.2},
-                             "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]}))[0],
+                             "sfx": [{"src": "sfx/Core.MP3", "vol": 0.556}]}))[0],
               "G50", "an ai-tools reel with a full-screen text card"))
 
 # G52 (2026-08-25): the ai-tools CTA is a keyword pop, not the top5 pack's
@@ -1115,7 +1133,7 @@ CASES.append((lambda s: (s.update(format="ai-tools"),
                              "type": "commentcta", "durationSec": 2.5,
                              "src": "assets/x/avatar-master.mp4",
                              "keyword": "CLAUDE", "variant": "gate",
-                             "sfx": [{"src": "sfx/Core.MP3", "vol": 0.14}]}))[0],
+                             "sfx": [{"src": "sfx/Core.MP3", "vol": 0.556}]}))[0],
               "G52", "an ai-tools reel closing on the comment-gate mock"))
 
 # ai-tools (added 2026-08-25): CTA is constitutive — all 8 teardown reels
@@ -1129,7 +1147,7 @@ CASES.append((lambda s: s.update(format="ai-tools"),
 CASES.append((lambda s: s["scenes"].__setitem__(0, {
                   "type": "statcard", "title": "caveman", "stat": "100,000",
                   "unit": "stars", "durationSec": 2.0,
-                  "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.15}]}),
+                  "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.582}]}),
               "G51", "a statcard with no rows (invented stat/unit shape)"))
 
 for mutate, gate, label in CASES:
@@ -1204,7 +1222,7 @@ _doc = {"credit": "@src", "type": "annotatezoom", "durationSec": 2.0,
         "src": "assets/x/doc.png", "srcWidth": 1080, "srcHeight": 2000,
         "focus": {"x": 40, "y": 100, "w": 900, "h": 500},
         "covers": "macOS re-ships",
-        "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.15}]}
+        "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.582}]}
 _s = copy.deepcopy(BASE)
 _s["scenes"][0] = copy.deepcopy(_doc)
 _s["captions"] = [{"start": 0.0, "end": 0.7, "text": "macOS re-ships"}]

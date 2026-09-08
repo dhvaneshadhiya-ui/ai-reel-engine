@@ -1058,6 +1058,24 @@ def main() -> None:
     except Exception as e:                                      # noqa: BLE001
         print(f"  note: could not auto-pick text colour ({e})")
 
+    # AND PICK THE SFX GAIN FROM THE FILE, for the same reason (2026-09-08).
+    #
+    # `vol` is a MULTIPLIER, so the same number on a file peaking at -2.1 dBFS
+    # and one at -12.4 lands 10 dB apart. calibrate_sfx has derived the gain
+    # from each file's own peak since 2026-08-18 — but only when somebody
+    # remembered to run it, which is the same shape of failure as the humanizer
+    # sitting documented and unrun for weeks. Here it is not remembered: the
+    # sheet is being generated, so the gains are simply correct in it.
+    try:
+        r = subprocess.run(
+            [sys.executable, str(DEFAULT_ENGINE / "tools" / "calibrate_sfx.py"),
+             slug, "--write"], capture_output=True, text=True, timeout=300)
+        tail = [l for l in r.stdout.splitlines() if "rewrote" in l]
+        if tail:
+            print("  sfx: " + tail[-1].strip())
+    except Exception as e:                                      # noqa: BLE001
+        print(f"  note: could not calibrate SFX gains ({e})")
+
 
 if __name__ == "__main__":
     main()
