@@ -1,0 +1,22 @@
+{
+  "script_sha256": "1f693479ea7a57c281f2af55d28e38a11f6d5264a4e96ab5eec7717d0184a9dd",
+  "structure_sha256": "b4a77a2ca6e62c3e2a8c9901359c073b3d440b6e198410384547d268633ec96d",
+  "findings": [
+    "  BRIDGES 5/22 sentences (23%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  NO OPEN LOOP \u2014 nothing in the opening third points forward. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "  OPENING has no version, date or time anchor: 'WhatsApp is building a chat that WhatsApp itself says is not end'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "NUMBERS: one every 4.6 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [
+    "claim 2 ('The feature is present in WhatsApp beta '): tier single but spoken UNHEDGED near 'WABetaInfo found them in the Android beta.'. framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source.",
+    "claim 3 ('Agents are configured from a new Agents '): tier single but spoken UNHEDGED near \"You generate an API key and paste it into whatever's running the AI.\". framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source.",
+    "claim 4 ('The account limit is five agents.'): tier single but spoken UNHEDGED near 'Up to five.'. framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source.",
+    "claim 5 ('Each agent is given a name and profile p'): tier single but spoken UNHEDGED near 'You name each one and give it a photo.'. framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source.",
+    "claim 6 ('The agent developer can access the messa'): tier single but spoken UNHEDGED near 'so the developer can read what you send'. framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source.",
+    "claim 7 ('An agent can only read what is shared in'): tier single but spoken UNHEDGED near 'Not your contacts, not your media, not one other conversation.'. framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source.",
+    "claim 8 ('Personal messages and calls between peop'): tier single but spoken UNHEDGED near 'Your personal chats stay encrypted exactly as before.'. framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source."
+  ],
+  "beatPlanShots": 26,
+  "proposedAt": "2026-09-08T06:14:42+00:00"
+}
