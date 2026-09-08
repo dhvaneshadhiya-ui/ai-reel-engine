@@ -136,7 +136,27 @@ const NickDisplay: React.FC<{
   // the numbers behind it. Still translucent (the table reads through), just
   // enough to knock the content back. Checked on the busiest frame in the
   // reel, which is the right frame to tune a floor against.
-  const PLATE = bright ? "rgba(8,9,12,0.55)" : "rgba(8,9,12,0.72)";
+  // 0.85 OVER BRIGHT, MEASURED 2026-09-08. The note above says the right
+  // thing — "checked on the busiest frame in the reel, which is the right
+  // frame to tune a floor against" — and that method was only ever applied to
+  // the DARK branch, which is why dark went 0.62 -> 0.72. The bright branch
+  // kept 0.55 and was never tuned, and "bright" in this pipeline means a
+  // DOCUMENT PAGE, which is the busiest content we ever put a caption over.
+  //
+  // Measured off the shipped whatsapp-agents frame at 47.0s, a TechCrunch
+  // article under a word-reveal chip. Article paper reads luminance 1.000;
+  // white caption text against the composite:
+  //
+  //     alpha 0.55 (shipped)  ->  2.09:1     the body text reads straight
+  //     alpha 0.72            ->  3.16:1     through the plate; both the
+  //     alpha 0.80            ->  4.16:1     caption and the article lose
+  //     alpha 0.85            ->  5.19:1  <- first to clear 4.5:1
+  //
+  // 4.5:1 is the WCAG floor for text this size. At 0.55 the caption
+  // "platform? Last" printed over "Perplexity, and Microsoft have" and
+  // neither could be read. The dark branch is left alone: over a dark page
+  // 0.72 already measures about 14:1.
+  const PLATE = bright ? "rgba(8,9,12,0.85)" : "rgba(8,9,12,0.72)";
   return (
     <div
       style={{
@@ -488,7 +508,7 @@ export const CaptionChips: React.FC<{
           color: "white",
           background:
             mode === "chip-small"
-              ? "rgba(0,0,0,0.55)"
+              ? "rgba(0,0,0,0.85)"   // same measurement as PLATE above
               : mode === "chip-lg"
               ? "rgba(0,0,0,0.82)"
               : "rgba(0,0,0,0.94)",

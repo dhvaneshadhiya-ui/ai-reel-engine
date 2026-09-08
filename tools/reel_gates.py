@@ -345,13 +345,27 @@ RECEIPT_CARD_W_FRAC = 0.86       # cardW = 0.86 * frame width
 RECEIPT_UNION_H_FRAC = 0.55      # union fitted to <= 55% of card height
 
 
+# SourceRead does NOT centre its read — it parks the newest landed line 58%
+# down the frame ("follow the read"). ReceiptScene centres its highlight union
+# at 50%. Modelling both as centred puts the caption 8% of frame height too
+# high on every scrolling document, which is 154px at 1920 — enough to crowd
+# the exact line the viewer is reading. Found on the shipped whatsapp-agents,
+# where the caption sat directly under the read line on three sourceread beats.
+SOURCEREAD_READ_Y = 0.58
+
+
 def receipt_highlight_band(scene: dict, frame_h: int = 1920) -> tuple[float, float]:
     """(top, bottom) in px of the on-screen band the highlights can occupy.
 
-    Worst case, not typical: the union is centred and may fill 55% of the card,
-    so a caption placed outside this band cannot cover a highlight however the
-    zoom settles.
+    Worst case, not typical: a caption placed outside this band cannot cover
+    the marked line however the scroll or zoom settles.
     """
+    if scene.get("type") == "sourceread":
+        # the read line is ANCHORED, not centred; the band is that line plus
+        # the generous half-line either side that the follow easing allows.
+        mid = frame_h * SOURCEREAD_READ_Y
+        half = frame_h * 0.10
+        return (mid - half, mid + half)
     if not scene.get("highlights"):
         return (frame_h / 2, frame_h / 2)
     fill = min(1.0, receipt_fill(scene, frame_h=frame_h))

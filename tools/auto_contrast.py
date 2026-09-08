@@ -97,9 +97,29 @@ def main() -> None:
             elif kind == "split":
                 # top panel fills the upper half, so frame-y 0..0.5 -> source 0..1
                 src, y_scale, y_off = sc.get("topSrc"), 2.0, 0.0
+            elif kind in ("receipt", "sourceread"):
+                # DOCUMENT SCENES ARE WHERE CAPTIONS ACTUALLY COLLIDE
+                # (2026-09-08). This branch used to be the "skipped rather
+                # than guessed" arm, and skipping was defensible for a
+                # geometry we could not map — but the consequence was that
+                # the caption ground went unmeasured on precisely the scenes
+                # made of dense text.
+                #
+                # whatsapp-agents shipped with "platform? Last" printed over
+                # "Perplexity, and Microsoft have" on a TechCrunch article,
+                # and neither could be read. captionTheme was unset, so the
+                # plate took the DARK branch (0.72) over white paper, which
+                # measures 3.16:1 against a 4.5:1 floor.
+                #
+                # A document page has ONE dominant ground — white paper or a
+                # dark page — over its whole height, so sampling the image as
+                # a whole is a fair estimate of what sits behind the caption,
+                # and far better than not measuring at all. y_scale 1.0: we
+                # judge the page, not a band of it.
+                src, y_scale, y_off = sc.get("src"), 1.0, 0.0
             else:
-                print(f"  scene {i:02d} ({kind}) — not footage/split, skipped "
-                      "rather than guessed")
+                print(f"  scene {i:02d} ({kind}) — not footage/split/document, "
+                      "skipped rather than guessed")
                 continue
             if not src:
                 continue

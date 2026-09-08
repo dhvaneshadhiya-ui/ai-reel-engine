@@ -51,6 +51,8 @@ CHECKS: list[tuple[str, str, str]] = [
 
 RENDER_SRC = {
     "Reel.tsx": Path(__file__).resolve().parent.parent / "src/Reel.tsx",
+    "Credit.tsx": Path(__file__).resolve().parent.parent
+                  / "src/components/Credit.tsx",
     "DeviceFrame.tsx": Path(__file__).resolve().parent.parent
                        / "src/components/DeviceFrame.tsx",
     "compile_shot_plan.py": Path(__file__).resolve().parent.parent
@@ -69,6 +71,21 @@ RENDER_SRC = {
 # Each is a NUMBER taken from a real frame, so each can silently drift back to
 # taste in a later edit — which is precisely what a check is for.
 REF_CHECKS: list[tuple[str, str, str, str]] = [
+    # A CAPTION PLATE MUST BEAT THE PAGE BEHIND IT (2026-09-08). The bright
+    # branch shipped at 0.55, measured 2.09:1 against an article page — under
+    # the 4.5:1 floor for text — so a word-reveal chip printed over body copy
+    # and neither could be read. It was never tuned the way the dark branch
+    # was; 0.85 measures 5.19:1 on the same frame.
+    ("CaptionChips.tsx", "the bright caption plate clears the contrast floor",
+     r'bright \? "rgba\(8,9,12,0\.8[5-9]\)"',
+     "a plate under 0.85 over a document page falls below 4.5:1 and the body "
+     "text reads straight through the caption"),
+    ("CaptionChips.tsx", "the small chip plate matches it",
+     r'"chip-small"\s*\n\s*\? "rgba\(0,0,0,0\.8[5-9]\)"',
+     "chip-small carried the same 0.55 and the same failure"),
+    ("Credit.tsx", "the credit plate clears it too",
+     r'plated \? "rgba\(12,12,14,0\.8[5-9]\)"',
+     "the credit printed over article body text at 2.43:1"),
     # SURFACE IS DECLARED, NOT GUESSED (2026-09-02). Whether an asset belongs
     # in a phone frame cannot be measured: 8 of this repo's 32 exactly-
     # 1080x1920 clips are iphone18-colors' Pantone chip graphics, and a bezel

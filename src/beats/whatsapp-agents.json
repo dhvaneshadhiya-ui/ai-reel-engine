@@ -290,7 +290,8 @@
       "credit": "Source: 9to5Mac",
       "covers": "Up to five",
       "durationSec": 0.94,
-      "captionBottom": 620
+      "captionBottom": 620,
+      "captionTheme": "dark"
     },
     {
       "type": "settingspane",
@@ -570,7 +571,8 @@
       "credit": "Source: TechCrunch",
       "covers": "barred general-purpose chatbots",
       "durationSec": 3.14,
-      "captionBottom": 620
+      "captionBottom": 620,
+      "captionTheme": "dark"
     },
     {
       "type": "sourceread",
@@ -610,7 +612,8 @@
       "credit": "Source: TechCrunch",
       "covers": "ChatGPT and Perplexity had stopped working there",
       "durationSec": 3.72,
-      "captionBottom": 620
+      "captionBottom": 620,
+      "captionTheme": "dark"
     },
     {
       "type": "sourceread",
@@ -643,7 +646,8 @@
       "credit": "Source: TechCrunch",
       "covers": "opened antitrust probes",
       "durationSec": 3.7,
-      "captionBottom": 620
+      "captionBottom": 620,
+      "captionTheme": "dark"
     },
     {
       "type": "timeline",

@@ -177,7 +177,11 @@ export const Credit: React.FC<CreditProps> = ({
           textShadow: onMedia && !plated
             ? "0 2px 10px rgba(0,0,0,0.75)"
             : "none",
-          background: plated ? "rgba(12,12,14,0.62)" : "transparent",
+          // 0.62 measured 2.43:1 against an article page — the credit
+          // "Source: TechCrunch" printed over "working. Regulators from" on
+          // whatsapp-agents and neither read. Same measurement as the caption
+          // plate in CaptionChips: 0.85 clears the 4.5:1 floor at 5.16:1.
+          background: plated ? "rgba(12,12,14,0.85)" : "transparent",
           padding: plated ? "7px 15px 8px" : 0,
           borderRadius: plated ? 8 : 0,
         }}

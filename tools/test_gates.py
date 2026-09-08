@@ -610,6 +610,28 @@ assert _rg.receipt_caption_bottom(
     "a caption lane below SAFE_RECT's floor is eaten by the platform's own UI")
 _counted("the receipt caption lane mirrors ReceiptScene and clears the highlight")
 
+# --- and a sourceread is NOT a receipt ---------------------------------------
+# SourceRead parks the newest landed line 58% down the frame; ReceiptScene
+# centres its union at 50%. The caption lane was written for the receipt and
+# applied to both, putting the caption 154px too high on every scrolling
+# document — measured on the shipped whatsapp-agents, where it crowded the
+# exact line being read on three beats.
+_SR_TS = (ROOT / "src/components/SourceRead.tsx").read_text()
+assert "height * 0.58" in _SR_TS, (
+    "SourceRead's read anchor moved — re-derive SOURCEREAD_READ_Y, or the "
+    "caption lane goes back to modelling the wrong component")
+assert _rg.SOURCEREAD_READ_Y == 0.58, "the mirrored anchor drifted"
+_sr = {"type": "sourceread", "srcWidth": 1092, "srcHeight": 3400,
+       "lines": [{"at": 1, "x": 0, "y": 0, "w": 9, "h": 9}]}
+_rc = {"type": "receipt", "srcWidth": 1080, "srcHeight": 1920,
+       "highlights": [{"x": 0, "y": 0, "w": 9, "h": 9}]}
+assert _rg.receipt_highlight_band(_sr)[0] > _rg.receipt_highlight_band(_rc)[0], (
+    "a sourceread's read band must sit LOWER than a centred receipt's")
+assert _rg.receipt_caption_bottom(_sr) > _rg.receipt_caption_bottom(_rc), (
+    "a sourceread caption must sit lower than a receipt caption, because the "
+    "line it must clear is lower")
+_counted("a sourceread caption clears the 58% read line, not a centred one")
+
 
 def _statcard(label: str, value: str = "$190"):
     """Turn the fixture's building-class scene into a one-row stat card."""
