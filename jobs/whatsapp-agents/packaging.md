@@ -15,17 +15,17 @@ caption that blurs that is a bigger problem than a caption that underperforms.
 
 ## youtube
 
-TITLE: WhatsApp's New Chat Is Not End-to-End Encrypted
-CAPTION: WABetaInfo found a new Agents section in the WhatsApp beta for Android: you generate an API key, paste it into whatever is running an outside AI, and it gets its own chat with a name and a photo you choose. Up to five per account. Those chats run through a Meta service on the developer's behalf, which is why WhatsApp does not call them end-to-end encrypted — the developer can read what you send. Your personal chats are untouched and stay fully encrypted, and an agent only ever sees its own conversation, not your contacts or media. The timing is the interesting part: in October 2025 WhatsApp changed its terms to bar general-purpose chatbots, by 15 January 2026 ChatGPT and Perplexity had stopped working there, and the EU, Italy and Brazil opened antitrust probes over it. Eight months later there is a door back in, built by Meta. Nobody has said those two things are connected. Sources: WABetaInfo, 9to5Mac, TechCrunch.
-HASHTAGS: #WhatsApp #Meta #AI #Privacy #Encryption
+TITLE: WhatsApp Is Testing AI Agent Chats. Not Encrypted.
+CAPTION: WhatsApp is rolling out chats with third-party AI agents. Up to five per account, each in its own chat with a name and profile photo you choose, set up from a new Agents section in settings: you generate an API key and paste it into whatever is running the agent. WABetaInfo found it in the WhatsApp beta for Android. Those chats run through a Meta service on the developer's behalf, which is why WhatsApp does not call them end-to-end encrypted — the developer can read what you send. Your personal chats are untouched and stay fully encrypted, and an agent only ever sees its own conversation, not your contacts or media. The timing is the interesting part: in October 2025 WhatsApp changed its terms to bar general-purpose chatbots, by 15 January 2026 ChatGPT and Perplexity had stopped working there, and the EU, Italy and Brazil opened antitrust probes over it. Eight months later there is a door back in, built by Meta. Nobody has said those two things are connected. Sources: WABetaInfo, 9to5Mac, TechCrunch.
+HASHTAGS: #WhatsApp #AIAgents #Meta #Privacy #Encryption
 FIRST COMMENT: Would you actually put an outside AI in your WhatsApp, knowing that one chat is not end-to-end encrypted?
 ALT TEXT: A presenter explains that WhatsApp is testing chats with third-party AI agents, alongside WABetaInfo's article stating those chats are not end-to-end encrypted, WhatsApp's own "Secure by design" page, rendered mockups of the new Agents settings pane and a chat list, and a TechCrunch report on the 2025 chatbot ban and the antitrust probes that followed.
 
 ## instagram
 
-CAPTION: WhatsApp is building a chat that WhatsApp itself says is not end-to-end encrypted. Those are their words, found by WABetaInfo in the Android beta. There is a new Agents section in settings: generate an API key, paste it into whatever is running an outside AI, and it gets its own chat with a name and photo you pick. Up to five. So it sits in your list looking like everybody else — except that one runs through a Meta service on the developer's behalf, so the developer can read what you send. The fence is real, though: an agent sees its own chat and nothing else, and your personal chats stay encrypted exactly as before. Last October WhatsApp barred general-purpose chatbots. By January, ChatGPT and Perplexity had stopped working there, and the EU, Italy and Brazil opened antitrust probes. Eight months later, there is a door back in, built by Meta. Nobody has said those two are connected.
-HASHTAGS: #WhatsApp #Meta #AI #Privacy #Encryption
-FIRST COMMENT: Would you put an outside AI in your WhatsApp knowing that chat is not end-to-end encrypted? #WhatsApp #Meta #AI #Privacy #Encryption
+CAPTION: WhatsApp is adding chats with third-party AI agents, and it says those agent chats are not end-to-end encrypted. Those are their words, found by WABetaInfo in the Android beta. There is a new Agents section in settings: generate an API key, paste it into whatever is running an outside AI, and it gets its own chat with a name and photo you pick. Up to five. So it sits in your list looking like everybody else — except that one runs through a Meta service on the developer's behalf, so the developer can read what you send. The fence is real, though: an agent sees its own chat and nothing else, and your personal chats stay encrypted exactly as before. Last October WhatsApp barred general-purpose chatbots. By January, ChatGPT and Perplexity had stopped working there, and the EU, Italy and Brazil opened antitrust probes. Eight months later, there is a door back in, built by Meta. Nobody has said those two are connected.
+HASHTAGS: #WhatsApp #AIAgents #Meta #Privacy #Encryption
+FIRST COMMENT: Would you put an outside AI in your WhatsApp knowing that chat is not end-to-end encrypted? #WhatsApp #AIAgents #Meta #Privacy #Encryption
 ALT TEXT: A presenter explains WhatsApp's beta feature for chatting with third-party AI agents, with WABetaInfo's article stating those chats are not end-to-end encrypted, WhatsApp's own "Secure by design" page, rendered mockups of the Agents settings pane and a chat list, and TechCrunch's report on the 2025 chatbot ban and the antitrust probes.
 
 ---
@@ -72,3 +72,14 @@ Notes for posting
   Do not let a shorter edit of this caption drop the words "with agents".
   "WhatsApp chats are not encrypted" is false and is the single most
   likely way this gets miswritten.
+
+  THE FIRST DRAFT OF THIS FILE BROKE ITS OWN RULE (fixed 2026-09-08, on the
+  user's challenge). The YouTube title read "WhatsApp's New Chat Is Not
+  End-to-End Encrypted" and the Instagram caption opened "WhatsApp is
+  building a chat that WhatsApp itself says is not end-to-end encrypted" —
+  neither contained the words "AI agents". Those two strings are the only
+  text most people ever read: the title in search and suggested, and the
+  first caption line before "more". Both therefore delivered exactly the
+  false generalisation the paragraph above forbids, and neither told anyone
+  what the video is about. The subject now comes first in both, and the
+  encryption angle second, where it is a consequence instead of a headline.
