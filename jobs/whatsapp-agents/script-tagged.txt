@@ -1,0 +1,45 @@
+[curious] WhatsApp is building a chat that WhatsApp itself says is not end-to-end encrypted.
+
+Those are WhatsApp's words, not mine.
+
+WABetaInfo found them in the Android beta.
+
+[calm] Strange thing for the encryption app to build.
+
+It makes more sense once you know what WhatsApp threw off the platform first.
+
+It starts with a new Agents section in settings.
+
+[curious] You generate an API key and paste it into whatever's running the AI.
+
+Up to five.
+
+You name each one and give it a photo.
+
+So it sits in your chat list looking like everybody else.
+
+But that chat runs through a Meta service on the developer's behalf, so the developer can read what you send.
+
+[surprised] The fence is real, though.
+
+The agent sees its own chat.
+
+[calm] Not your contacts, not your media, not one other conversation.
+
+Your personal chats stay encrypted exactly as before.
+
+Now, what WhatsApp threw off the platform.
+
+Last October it barred general-purpose chatbots.
+
+By January, ChatGPT and Perplexity had stopped working there, and the EU, Italy and Brazil opened antitrust probes.
+
+[excited] Eight months later, there's a door back in.
+
+Built by Meta, on Meta's servers.
+
+Nobody has said those two are connected.
+
+It's still a handful of testers in a few countries.
+
+But if it ships, the only thing you need to know is which chat is which.

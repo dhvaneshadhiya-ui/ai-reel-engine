@@ -18,11 +18,20 @@
         "type": "brandhook",
         "title": "WHATSAPP",
         "subtitle": "THIRD-PARTY AGENTS",
+        "logoPaths": [
+          {
+            "d": "M307.546 52.566C273.709 18.684 228.706.017 180.756 0 81.951 0 1.538 80.404 1.504 179.235c-.017 31.594 8.242 62.432 23.928 89.609L0 361.736l95.024-24.925c26.179 14.285 55.659 21.805 85.655 21.814h.077c98.788 0 179.21-80.413 179.244-179.244.017-47.898-18.608-92.926-52.454-126.807v-.008Zm-126.79 275.788h-.06c-26.73-.008-52.952-7.194-75.831-20.765l-5.44-3.231-56.391 14.791 15.05-54.981-3.542-5.638c-14.912-23.721-22.793-51.139-22.776-79.286.035-82.14 66.867-148.973 149.051-148.973 39.793.017 77.198 15.53 105.328 43.695 28.131 28.157 43.61 65.596 43.593 105.398-.035 82.149-66.867 148.982-148.982 148.982v.008Zm81.719-111.577c-4.478-2.243-26.497-13.073-30.606-14.568-4.108-1.496-7.09-2.243-10.073 2.243-2.982 4.487-11.568 14.577-14.181 17.559-2.613 2.991-5.226 3.361-9.704 1.117-4.477-2.243-18.908-6.97-36.02-22.226-13.313-11.878-22.304-26.54-24.916-31.027-2.613-4.486-.275-6.91 1.959-9.136 2.011-2.011 4.478-5.234 6.721-7.847 2.244-2.613 2.983-4.486 4.478-7.469 1.496-2.991.748-5.603-.369-7.847-1.118-2.243-10.073-24.289-13.812-33.253-3.636-8.732-7.331-7.546-10.073-7.692-2.613-.13-5.595-.155-8.586-.155-2.991 0-7.839 1.118-11.947 5.604-4.108 4.486-15.677 15.324-15.677 37.361s16.047 43.344 18.29 46.335c2.243 2.991 31.585 48.225 76.51 67.632 10.684 4.615 19.029 7.374 25.535 9.437 10.727 3.412 20.49 2.931 28.208 1.779 8.604-1.289 26.498-10.838 30.228-21.298 3.73-10.46 3.73-19.433 2.613-21.298-1.117-1.865-4.108-2.991-8.586-5.234l.008-.017Z",
+            "fill": "#25D366"
+          }
+        ],
+        "logoViewBox": "0 0 360 362",
+        "markColor": "#25D366",
         "serifLine": "NOT ENCRYPTED",
+        "serifAt": 0.9,
         "mediaSrc": "assets/whatsapp-agents/wabeta-e2ee.png",
-        "bottomSrc": "assets/whatsapp-agents/avatar-master.mp4"
-      },
-      "tier": null
+        "bottomSrc": "assets/whatsapp-agents/avatar-master.mp4",
+        "bottomFocusX": 0.5
+      }
     },
     {
       "start_phrase": "a chat that WhatsApp itself says",
@@ -31,20 +40,32 @@
         "src": "assets/whatsapp-agents/wabeta-e2ee.png",
         "srcWidth": 1080,
         "srcHeight": 2340,
-        "lines": [],
-        "credit": "Source: WABetaInfo",
-        "_shows": "the heading 'Chats with agents are not end-to-end encrypted', highlighted"
-      },
-      "tier": null
+        "lines": [
+          {
+            "at": 0.25,
+            "x": 69,
+            "y": 257,
+            "w": 857,
+            "h": 86
+          },
+          {
+            "at": 0.85,
+            "x": 69,
+            "y": 352,
+            "w": 751,
+            "h": 84
+          }
+        ],
+        "credit": "Source: WABetaInfo"
+      }
     },
     {
       "start_phrase": "Those are WhatsApp's words",
       "scene": {
         "type": "footage",
         "src": "assets/whatsapp-agents/avatar-master.mp4",
-        "_shows": "presenter, on camera"
-      },
-      "tier": null
+        "zoomDir": "in"
+      }
     },
     {
       "start_phrase": "WABetaInfo found them",
@@ -53,29 +74,54 @@
         "src": "assets/whatsapp-agents/wabetainfo.png",
         "srcWidth": 1080,
         "srcHeight": 2340,
-        "lines": [],
-        "credit": "Source: WABetaInfo",
-        "_shows": "the WABetaInfo headline and its Sep 4, 2026 byline, highlighted"
-      },
-      "tier": null
+        "lines": [
+          {
+            "at": 0.2,
+            "x": 112,
+            "y": 509,
+            "w": 852,
+            "h": 106
+          },
+          {
+            "at": 0.62,
+            "x": 94,
+            "y": 611,
+            "w": 887,
+            "h": 90
+          },
+          {
+            "at": 1.04,
+            "x": 258,
+            "y": 721,
+            "w": 564,
+            "h": 98
+          },
+          {
+            "at": 1.46,
+            "x": 176,
+            "y": 886,
+            "w": 725,
+            "h": 59
+          }
+        ],
+        "credit": "Source: WABetaInfo"
+      }
     },
     {
       "start_phrase": "Strange thing for the",
       "scene": {
         "type": "footage",
         "src": "assets/whatsapp-agents/avatar-master.mp4",
-        "_shows": "presenter, on camera"
-      },
-      "tier": null
+        "zoomDir": "in"
+      }
     },
     {
       "start_phrase": "It makes more sense",
       "scene": {
         "type": "footage",
         "src": "assets/whatsapp-agents/avatar-master.mp4",
-        "_shows": "presenter, on camera"
-      },
-      "tier": null
+        "zoomDir": "in"
+      }
     },
     {
       "start_phrase": "It starts with a new Agents",
@@ -87,21 +133,32 @@
           {
             "rows": [
               {
-                "label": "Account"
+                "label": "Account",
+                "tint": "#3B82F6",
+                "glyph": "\u25ce"
               },
               {
-                "label": "Privacy"
+                "label": "Privacy",
+                "tint": "#6366F1",
+                "glyph": "\u25a3"
+              },
+              {
+                "label": "Chats",
+                "tint": "#22C55E",
+                "glyph": "\u25d7"
               },
               {
                 "label": "Agents",
-                "value": "New"
+                "value": "New",
+                "tint": "#0aa9c2",
+                "glyph": "\u25c6"
               }
             ]
           }
         ],
-        "_shows": "a rendered WhatsApp settings pane, the new Agents row landing last"
-      },
-      "tier": null
+        "focus": "0.3",
+        "focusAt": 0.9
+      }
     },
     {
       "start_phrase": "You generate an API key",
@@ -109,24 +166,25 @@
         "type": "uidialog",
         "app": "WhatsApp",
         "title": "Connect an agent",
+        "body": "Paste this key into the service running your agent.",
         "field": {
           "label": "API key",
-          "value": "wa-agent-7f2c-\u2022\u2022\u2022\u2022-\u2022\u2022\u2022\u2022"
+          "value": "wa-agent-7f2c-4b91-a03e"
         },
         "primary": "Copy key",
-        "cancel": "Cancel",
-        "_shows": "the key dialog, the key typing itself in"
-      },
-      "tier": null
+        "cancel": "Cancel"
+      }
     },
     {
       "start_phrase": "Up to five.",
       "scene": {
-        "type": "statcard",
-        "_shows": "a single figure, 5, counting up: the per-account cap",
+        "type": "logobeat",
+        "text": "5",
+        "textColor": "#0aa9c2",
+        "bg": "#0B1220",
+        "label": "AGENTS PER ACCOUNT",
         "credit": "Source: 9to5Mac"
-      },
-      "tier": null
+      }
     },
     {
       "start_phrase": "You name each one",
@@ -139,20 +197,24 @@
             "header": "CONNECTED",
             "rows": [
               {
-                "label": "Research"
+                "label": "Research",
+                "tint": "#8B5CF6",
+                "glyph": "\u25c6"
               },
               {
-                "label": "Recipes"
+                "label": "Recipes",
+                "tint": "#F59E0B",
+                "glyph": "\u25c6"
               },
               {
-                "label": "Trip planner"
+                "label": "Trip planner",
+                "tint": "#0aa9c2",
+                "glyph": "\u25c6"
               }
             ]
           }
-        ],
-        "_shows": "three agents in a list, each with a name and a photo the user picked"
-      },
-      "tier": null
+        ]
+      }
     },
     {
       "start_phrase": "So it sits in your chat list",
@@ -164,23 +226,35 @@
           {
             "rows": [
               {
-                "label": "Mum"
+                "label": "Mum",
+                "value": "9:41",
+                "tint": "#EC4899",
+                "glyph": "M"
               },
               {
-                "label": "Rahul"
+                "label": "Rahul",
+                "value": "9:12",
+                "tint": "#3B82F6",
+                "glyph": "R"
               },
               {
-                "label": "Research"
+                "label": "Research",
+                "value": "8:57",
+                "tint": "#8B5CF6",
+                "glyph": "R"
               },
               {
-                "label": "Building group"
+                "label": "Building group",
+                "value": "Yesterday",
+                "tint": "#22C55E",
+                "glyph": "B"
               }
             ]
           }
         ],
-        "_shows": "a rendered chat list where the agent row is indistinguishable from the people"
-      },
-      "tier": null
+        "focus": "0.2",
+        "focusAt": 1.4
+      }
     },
     {
       "start_phrase": "But that chat runs through",
@@ -189,11 +263,38 @@
         "src": "assets/whatsapp-agents/wabeta-e2ee.png",
         "srcWidth": 1080,
         "srcHeight": 2340,
-        "lines": [],
-        "credit": "Source: WABetaInfo",
-        "_shows": "the same paragraph, now highlighting 'managed by a Meta service on behalf of the agent developer'"
-      },
-      "tier": null
+        "lines": [
+          {
+            "at": 0.2,
+            "x": 69,
+            "y": 977,
+            "w": 866,
+            "h": 71
+          },
+          {
+            "at": 0.7,
+            "x": 69,
+            "y": 1055,
+            "w": 792,
+            "h": 71
+          },
+          {
+            "at": 1.2,
+            "x": 71,
+            "y": 1133,
+            "w": 881,
+            "h": 71
+          },
+          {
+            "at": 1.7,
+            "x": 71,
+            "y": 1211,
+            "w": 883,
+            "h": 71
+          }
+        ],
+        "credit": "Source: WABetaInfo"
+      }
     },
     {
       "start_phrase": "so the developer can read",
@@ -202,20 +303,39 @@
         "src": "assets/whatsapp-agents/wabeta-e2ee.png",
         "srcWidth": 1080,
         "srcHeight": 2340,
-        "lines": [],
-        "credit": "Source: WABetaInfo",
-        "_shows": "the highlight moves to 'the agent developer can access the messages'"
-      },
-      "tier": null
+        "lines": [
+          {
+            "at": 0.15,
+            "x": 69,
+            "y": 1289,
+            "w": 862,
+            "h": 71
+          },
+          {
+            "at": 0.7,
+            "x": 69,
+            "y": 1367,
+            "w": 908,
+            "h": 71
+          },
+          {
+            "at": 1.25,
+            "x": 69,
+            "y": 1445,
+            "w": 910,
+            "h": 71
+          }
+        ],
+        "credit": "Source: WABetaInfo"
+      }
     },
     {
       "start_phrase": "The fence is real",
       "scene": {
         "type": "footage",
         "src": "assets/whatsapp-agents/avatar-master.mp4",
-        "_shows": "presenter, on camera"
-      },
-      "tier": null
+        "zoomDir": "in"
+      }
     },
     {
       "start_phrase": "The agent sees its own chat",
@@ -224,37 +344,74 @@
         "src": "assets/whatsapp-agents/wabeta-scope.png",
         "srcWidth": 1080,
         "srcHeight": 2340,
-        "lines": [],
-        "credit": "Source: WABetaInfo",
-        "_shows": "'the agent can only read what the user shared in the chat with it', highlighted"
-      },
-      "tier": null
+        "lines": [
+          {
+            "at": 0.25,
+            "x": 69,
+            "y": 67,
+            "w": 879,
+            "h": 71
+          },
+          {
+            "at": 0.85,
+            "x": 68,
+            "y": 145,
+            "w": 897,
+            "h": 62
+          }
+        ],
+        "credit": "Source: WABetaInfo"
+      }
     },
     {
       "start_phrase": "Not your contacts",
       "scene": {
         "type": "checklist",
-        "_shows": "three struck-through rows landing one at a time: other conversations, contacts, media"
-      },
-      "tier": null
+        "headline": "THE AGENT CANNOT SEE",
+        "rows": [
+          {
+            "label": "Your other conversations",
+            "state": "no"
+          },
+          {
+            "label": "Your contacts",
+            "state": "no"
+          },
+          {
+            "label": "Your media",
+            "state": "no"
+          }
+        ],
+        "bg": "black",
+        "stagger": 0.5
+      }
     },
     {
       "start_phrase": "Your personal chats stay encrypted",
       "scene": {
-        "type": "headlinebuild",
-        "_shows": "a card reading PERSONAL CHATS / STILL ENCRYPTED",
+        "type": "typecard",
+        "bg": "#0B1220",
+        "fg": "#E8F5EE",
+        "kinetic": {
+          "text": "PERSONAL CHATS\nSTILL END-TO-END ENCRYPTED",
+          "style": "caps",
+          "y": 0.44,
+          "at": 0.2,
+          "lineAt": [
+            0.2,
+            0.95
+          ]
+        },
         "credit": "Source: WABetaInfo"
-      },
-      "tier": null
+      }
     },
     {
       "start_phrase": "Now, what WhatsApp threw off",
       "scene": {
         "type": "footage",
         "src": "assets/whatsapp-agents/avatar-master.mp4",
-        "_shows": "presenter, on camera"
-      },
-      "tier": null
+        "zoomDir": "in"
+      }
     },
     {
       "start_phrase": "Last October it barred",
@@ -263,11 +420,38 @@
         "src": "assets/whatsapp-agents/techcrunch-ban.png",
         "srcWidth": 1080,
         "srcHeight": 2340,
-        "lines": [],
-        "credit": "Source: TechCrunch",
-        "_shows": "the TechCrunch headline 'WhatsApp changes its terms to bar general-purpose chatbots', highlighted"
-      },
-      "tier": null
+        "lines": [
+          {
+            "at": 0.15,
+            "x": 36,
+            "y": -6,
+            "w": 954,
+            "h": 78
+          },
+          {
+            "at": 0.55,
+            "x": 36,
+            "y": 83,
+            "w": 954,
+            "h": 79
+          },
+          {
+            "at": 0.95,
+            "x": 36,
+            "y": 173,
+            "w": 954,
+            "h": 78
+          },
+          {
+            "at": 1.35,
+            "x": 36,
+            "y": 262,
+            "w": 678,
+            "h": 78
+          }
+        ],
+        "credit": "Source: TechCrunch"
+      }
     },
     {
       "start_phrase": "By January, ChatGPT and Perplexity",
@@ -276,11 +460,38 @@
         "src": "assets/whatsapp-agents/techcrunch-ban.png",
         "srcWidth": 1080,
         "srcHeight": 2340,
-        "lines": [],
-        "credit": "Source: TechCrunch",
-        "_shows": "the Jan 15 2026 update line naming OpenAI, Perplexity and Microsoft"
-      },
-      "tier": null
+        "lines": [
+          {
+            "at": 0.2,
+            "x": 83,
+            "y": 1115,
+            "w": 800,
+            "h": 73
+          },
+          {
+            "at": 0.65,
+            "x": 83,
+            "y": 1193,
+            "w": 792,
+            "h": 73
+          },
+          {
+            "at": 1.1,
+            "x": 82,
+            "y": 1274,
+            "w": 775,
+            "h": 73
+          },
+          {
+            "at": 1.55,
+            "x": 86,
+            "y": 1352,
+            "w": 724,
+            "h": 73
+          }
+        ],
+        "credit": "Source: TechCrunch"
+      }
     },
     {
       "start_phrase": "and the EU, Italy and Brazil",
@@ -289,57 +500,73 @@
         "src": "assets/whatsapp-agents/techcrunch-ban.png",
         "srcWidth": 1080,
         "srcHeight": 2340,
-        "lines": [],
-        "credit": "Source: TechCrunch",
-        "_shows": "the antitrust sentence highlighted: EU, Italy, Brazil"
-      },
-      "tier": null
+        "lines": [
+          {
+            "at": 0.15,
+            "x": 84,
+            "y": 1433,
+            "w": 859,
+            "h": 73
+          },
+          {
+            "at": 0.65,
+            "x": 82,
+            "y": 1511,
+            "w": 758,
+            "h": 73
+          },
+          {
+            "at": 1.15,
+            "x": 82,
+            "y": 1592,
+            "w": 847,
+            "h": 73
+          }
+        ],
+        "credit": "Source: TechCrunch"
+      }
     },
     {
       "start_phrase": "Eight months later",
       "scene": {
         "type": "timeline",
-        "title": "",
+        "kicker": "HOW WE GOT HERE",
         "items": [
           {
             "date": "OCT 2025",
             "name": "Terms bar general-purpose chatbots",
-            "at": 0.1
+            "at": 0.15
           },
           {
             "date": "JAN 2026",
             "name": "Rivals stop working. Probes open.",
-            "at": 0.4
+            "at": 0.9
           },
           {
             "date": "SEP 2026",
             "name": "Third-party agents, in beta",
-            "at": 0.75,
+            "at": 1.7,
             "accent": "#0aa9c2"
           }
         ],
-        "footnote": "TechCrunch \u00b7 WABetaInfo",
-        "_shows": "the three dates cascading in, the last one landing on the accent"
-      },
-      "tier": null
+        "footnote": "TechCrunch \u00b7 WABetaInfo"
+      }
     },
     {
       "start_phrase": "Built by Meta",
       "scene": {
         "type": "footage",
         "src": "assets/whatsapp-agents/avatar-master.mp4",
-        "_shows": "presenter, on camera"
-      },
-      "tier": null
+        "zoomDir": "in"
+      }
     },
     {
       "start_phrase": "Nobody has said those two",
       "scene": {
         "type": "footage",
         "src": "assets/whatsapp-agents/avatar-master.mp4",
-        "_shows": "presenter, on camera"
-      },
-      "tier": null
+        "zoomDir": "in"
+      }
     },
     {
       "start_phrase": "It's still a handful of testers",
@@ -348,19 +575,40 @@
         "src": "assets/whatsapp-agents/wabetainfo.png",
         "srcWidth": 1080,
         "srcHeight": 2340,
-        "lines": [],
-        "credit": "Source: WABetaInfo",
-        "_shows": "'testing this feature with a very limited number of users in select countries', highlighted"
-      },
-      "tier": null
+        "lines": [
+          {
+            "at": 0.2,
+            "x": 69,
+            "y": 1410,
+            "w": 903,
+            "h": 71
+          },
+          {
+            "at": 0.7,
+            "x": 71,
+            "y": 1488,
+            "w": 747,
+            "h": 62
+          },
+          {
+            "at": 1.2,
+            "x": 69,
+            "y": 1566,
+            "w": 245,
+            "h": 62
+          }
+        ],
+        "credit": "Source: WABetaInfo"
+      }
     },
     {
       "start_phrase": "But if it ships",
       "scene": {
         "type": "endquestion",
-        "_shows": "the closing card: WHICH CHAT / IS WHICH"
-      },
-      "tier": null
+        "src": "assets/whatsapp-agents/avatar-master.mp4",
+        "question": "Which chat is which?",
+        "bg": "black"
+      }
     }
   ],
   "noMusic": true
