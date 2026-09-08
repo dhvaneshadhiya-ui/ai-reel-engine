@@ -64,7 +64,7 @@ def good() -> dict:
          "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.582},
                  {"src": "sfx/Camera Shutter.MP3", "vol": 0.32}]},
         {"credit": "@src", "type": "split", "durationSec": 2.5, "topSrc": "assets/x/clips/a.mp4",
-         "bottomSrc": face},
+         "bottomSrc": face, "covers": "changes the maths"},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/b.mp4",
          "assetId": "clip-b", "sfx": [{"src": "sfx2/whooshes-01.mp3", "vol": 0.543}]},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/c.mp4",
@@ -105,7 +105,7 @@ def good() -> dict:
         {"type": "footage", "durationSec": 2.4, "src": face,
          "headline": {"lines": [
              {"text": "30 sec · one pass · with sound", "kind": "label", "at": 0.1},
-             {"text": "would you hand it", "kind": "headline", "at": 0.5},
+             {"text": "hand it over", "kind": "headline", "at": 0.5},
          ], "y": 0.07}},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/i.mp4"},
         {"credit": "@src", "type": "footage", "durationSec": 2.5, "src": "assets/x/clips/j.mp4"},
@@ -127,6 +127,7 @@ def good() -> dict:
          "focus": {"x": 900, "y": 500, "w": 700, "h": 420}},
         {"credit": "@src", "type": "sourceread", "durationSec": 2.5,
          "src": "assets/x/src.png", "srcWidth": 1080, "srcHeight": 2340,
+         "mobileCaptureOk": True,
          "lines": [{"at": 0.2, "x": 40, "y": 200, "w": 900, "h": 60}]},
         {"type": "checklist", "durationSec": 2.5, "stagger": 0.5,
          "sfx": [{"src": "sfx/Pop.MP3", "vol": 0.343}],
@@ -180,7 +181,8 @@ VO_WORDS = [(" macOS", 0.0, 0.3), (" ships", 0.3, 0.7), (" today", 0.7, 1.1),
             # shortens the card to 1.2s so the claim outruns it.
             (" benchmark", 9.6, 12.0)]
 
-MANIFEST = {"assets": [{"id": "clip-b"}, {"id": "clip-banned"}],
+MANIFEST = {"assets": [{"id": "clip-b", "tier": "official"},
+                       {"id": "clip-banned", "tier": "official"}],
             "banned_assets": ["clip-banned"]}
 
 
@@ -838,6 +840,41 @@ if _hits:
           f"{_hits[0][:90]}")
     raise SystemExit(1)
 _counted("G07 silent — one article read at three different bands")
+
+# ── THE GUARD THAT WOULD HAVE CAUGHT ALL THREE OF TODAY'S BUGS ──────────────
+#
+# 2026-09-08 turned up three gates measuring the wrong thing, and every one of
+# them passed this suite the whole time:
+#
+#   G08  checked a raw `vol` multiplier after gains became per-file, so it
+#        fired on every correctly calibrated cue in every reel.
+#   G61  looked assets up by `assetId`, which the compiler does not emit, so
+#        it fired on every document in every reel.
+#   G07  counted a document revisited for a NEW line as reuse, so it fired on
+#        21 of 28 reels for the treatment working as designed.
+#
+# `expect_fail` cannot see any of that: a gate that fires on EVERYTHING
+# trivially detects its own violation. What separates a working check from a
+# broken one is whether it can be SILENT, and the cheapest possible statement
+# of that is this — a clean sheet draws nothing at all.
+#
+# So: no new check may fire on the baseline. If one does, either the fixture
+# is genuinely missing something (add it — the four gaps closed on this date
+# were a headline over budget, an undeclared capture, b-roll with no stated
+# line, and a source with no tier) or the check is describing itself rather
+# than the work. Both are worth stopping for.
+try:
+    _base_adv = check_beats(copy.deepcopy(BASE), vo_end=vo_end_of(BASE),
+                            manifest=MANIFEST, vo_words=VO_WORDS)
+except GateError as _e:
+    _base_adv = list(_e.advice) + [str(_e)]
+if _base_adv:
+    print(f"  FAIL {len(_base_adv)} gate(s) fire on the CLEAN baseline — a "
+          f"check that cannot be silent cannot be trusted to be right:")
+    for _a in _base_adv[:6]:
+        print(f"       - {str(_a)[:110]}")
+    raise SystemExit(1)
+_counted("no gate fires on a clean baseline — every check can go silent")
 
 # G60 — a split crops the hands out; measured, no anchor fixes it. ADVISES.
 expect_fail(_split_led(), "G60",

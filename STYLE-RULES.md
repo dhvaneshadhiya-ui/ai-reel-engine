@@ -7373,3 +7373,38 @@ still shows an identical region twice, which is the case this gate is for.
 could not have caught either of these: a gate that fires on everything detects
 its own violation trivially. G07 now has both — one page at three different
 bands draws nothing, one page at the same band twice still advises.
+
+## 2026-09-08 — the guard: a check that cannot be silent cannot be trusted
+
+**RAW NOTE.** Three gates were found measuring the wrong thing in one day —
+G08 (a multiplier after gains went per-file), G61 (an `assetId` the compiler
+never emits), G07 (a document revisited for a new line). **All three passed
+this repo's self-test the entire time.**
+
+**ROOT CAUSE.** `expect_fail` proves a check CAN fire. It cannot tell "fires
+on the fault" from "fires on everything", and a gate that fires on everything
+detects its own violation trivially. Every rule in this repo had a failing
+case and the suite's coverage check counted them — 61 of 61 — while three of
+them were incapable of passing.
+
+**DISTILLED RULE.** *No gate may fire on a clean baseline.* The suite now runs
+`check_beats` over the untouched BASE fixture and fails if a single advisory
+comes back. It is the cheapest possible statement of "this check can be
+silent", it is one assertion, and it would have caught all three bugs on the
+day each was written.
+
+Closing the four gaps it exposed in the fixture was the work: a headline 17
+chars against a 12-char comfortable max, a sourceread that never said how it
+was captured, a `split` with no stated line, and a manifest source with no
+tier. Every one of those was the fixture being sloppier than a real reel, and
+each was hiding the corresponding gate's silence behind a permanent advisory.
+
+**VERIFIED BY BREAKING IT.** An unconditional `errors.append` at the top of
+`check_beats` makes the suite fail with `1 gate(s) fire on the CLEAN
+baseline`; removing it makes it pass. The guard was also confirmed against a
+reintroduction of G61's exact `assetId` lookup, which its silent case catches
+first.
+
+**The general shape, for the next rule anybody writes here:** a failing case
+says what the gate rejects. A silent case says what it accepts. Only the pair
+says what it MEANS.
