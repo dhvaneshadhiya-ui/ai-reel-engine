@@ -780,6 +780,38 @@ def _undeclared_capture():
 expect_fail(_undeclared_capture(), "G61",
             "a document asset that never says how it was captured")
 
+# ...AND IT MUST GO QUIET WHEN THE ANSWER IS THERE. G61 shipped INERT on
+# 2026-09-08: it looked assets up by `assetId`, which the compiler does not
+# emit on a scene, so every lookup missed and every document was reported
+# undeclared on every reel. The failing case above passed the whole time,
+# because a gate that always fires trivially detects its own violation. Only a
+# SILENT case can tell the two apart — this is that case, and it is the reason
+# to write one for anything that reads a value out of another file.
+_s = copy.deepcopy(BASE)
+_undeclared_capture()(_s)
+# no assetId: this is the shape the COMPILER emits — a src and nothing else,
+# which is precisely the shape the inert lookup could not resolve.
+_s["scenes"][4]["src"] = "assets/x/clips/declared.png"
+_s["scenes"][4].pop("assetId", None)
+# every document in the sheet declared, so a single leak is visible
+_MANI_OK = {**MANIFEST, "assets": MANIFEST["assets"] + [
+    {"id": "declared-doc", "src": "assets/x/clips/declared.png",
+     "capture": "mobile"}] + [
+    {"id": f"doc-{i}", "src": str(sc.get("src") or ""), "capture": "mobile"}
+    for i, sc in enumerate(_s["scenes"])
+    if sc["type"] in ("sourceread", "receipt") and sc.get("src")]}
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=_MANI_OK,
+                       vo_words=VO_WORDS)
+    _hits = [a for a in _adv if "G61" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G61" in str(a)]
+if _hits:
+    print(f"  FAIL G61 fired on a document whose capture IS declared: "
+          f"{_hits[0][:90]}")
+    raise SystemExit(1)
+_counted("G61 silent — a document matched by src whose capture is declared")
+
 # G60 — a split crops the hands out; measured, no anchor fixes it. ADVISES.
 expect_fail(_split_led(), "G60",
             "a reel whose presenter time is mostly split panels")

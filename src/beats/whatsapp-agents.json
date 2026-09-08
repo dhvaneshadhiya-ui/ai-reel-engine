@@ -76,7 +76,7 @@
       ],
       "covers": "is not end-to-end encrypted",
       "durationSec": 3.0,
-      "captionBottom": 620
+      "captionBottom": 544
     },
     {
       "type": "footage",
@@ -124,7 +124,7 @@
       "credit": "Source: WABetaInfo",
       "covers": "found them in the Android beta",
       "durationSec": 2.04,
-      "captionBottom": 620
+      "captionBottom": 544
     },
     {
       "type": "sourceread",
@@ -164,7 +164,7 @@
       "credit": "Source: WhatsApp",
       "covers": "the encryption app",
       "durationSec": 2.38,
-      "captionBottom": 620
+      "captionBottom": 544
     },
     {
       "type": "footage",
@@ -290,7 +290,7 @@
       "credit": "Source: 9to5Mac",
       "covers": "Up to five",
       "durationSec": 0.94,
-      "captionBottom": 620,
+      "captionBottom": 544,
       "captionTheme": "dark"
     },
     {
@@ -404,7 +404,7 @@
       "credit": "Source: WABetaInfo",
       "covers": "runs through a Meta service on the developer's behalf",
       "durationSec": 3.86,
-      "captionBottom": 620
+      "captionBottom": 544
     },
     {
       "type": "sourceread",
@@ -437,7 +437,7 @@
       "credit": "Source: WABetaInfo",
       "covers": "the developer can read what you send",
       "durationSec": 1.94,
-      "captionBottom": 620
+      "captionBottom": 544
     },
     {
       "type": "footage",
@@ -471,7 +471,7 @@
       "credit": "Source: WABetaInfo",
       "covers": "The agent sees its own chat",
       "durationSec": 1.9,
-      "captionBottom": 620
+      "captionBottom": 544
     },
     {
       "type": "checklist",
@@ -571,7 +571,7 @@
       "credit": "Source: TechCrunch",
       "covers": "barred general-purpose chatbots",
       "durationSec": 3.14,
-      "captionBottom": 620,
+      "captionBottom": 544,
       "captionTheme": "dark"
     },
     {
@@ -612,7 +612,7 @@
       "credit": "Source: TechCrunch",
       "covers": "ChatGPT and Perplexity had stopped working there",
       "durationSec": 3.72,
-      "captionBottom": 620,
+      "captionBottom": 544,
       "captionTheme": "dark"
     },
     {
@@ -646,7 +646,7 @@
       "credit": "Source: TechCrunch",
       "covers": "opened antitrust probes",
       "durationSec": 3.7,
-      "captionBottom": 620,
+      "captionBottom": 544,
       "captionTheme": "dark"
     },
     {
@@ -722,7 +722,7 @@
       "credit": "Source: WABetaInfo",
       "covers": "a handful of testers in a few countries",
       "durationSec": 2.46,
-      "captionBottom": 620
+      "captionBottom": 544
     },
     {
       "type": "wordcascade",

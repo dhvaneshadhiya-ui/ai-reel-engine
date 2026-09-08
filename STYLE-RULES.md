@@ -7295,3 +7295,44 @@ present and nothing about whether the rule fires. The per-platform rules are
 now a function taking a dict, with eight cases that run them, including the
 one that would have caught this: a clean Instagram block passes, and the same
 block with a `HASHTAGS:` field does not.
+
+## 2026-09-08 — G61 shipped inert, and the failing case could not tell
+
+**RAW NOTE.** After teaching `compile_shot_plan` to copy capture provenance
+into the manifest, three of whatsapp-agents' document assets gained
+`"capture": "mobile"` — and G61's count did not move. Still 11.
+
+**ROOT CAUSE.** G61 looked its assets up by `assetId`. **The compiler does not
+emit one on a scene.** All eleven sourcereads carry a `src` and nothing else,
+so every lookup missed, every asset came back `{}`, and every document on
+every reel was reported undeclared no matter what the manifest said. The gate
+could not pass. It had been that way since it was written, earlier the same
+day.
+
+Its self-test passed the whole time, because **a gate that always fires
+trivially detects its own violation.** `expect_fail` proves a check is capable
+of firing; it cannot distinguish "fires on the fault" from "fires on
+everything". Only a SILENT case separates those two, and G61 had none.
+
+**DISTILLED RULE.** *Any check that reads a value out of another file needs a
+silent case as well as a failing one.* G61 now matches on `src` — the field
+both the scene and the manifest actually share — with `assetId` still winning
+when a sheet carries one, and `tools/test_gates.py` has the silent case that
+would have caught this on the day it was written: a document whose capture IS
+declared draws no advice. 11 advisories became 5, and the 5 are exactly the
+assets with no provenance to read.
+
+**And the provenance was already on disk.** `capture.mjs` has written a
+`.capture.json` beside every file it captures since it gained provenance, and
+nothing ever read it back. `compile_shot_plan` now copies the answer into the
+manifest when there is one, never overwriting a hand-declared value — an asset
+that was cropped, mocked up or drawn by hand has no sidecar and stays
+undeclared, which is correct: it cannot be inferred, and guessing is the thing
+the gate exists to stop.
+
+Second correction from the same hour: G61's own comment claimed the manifest
+"travels with the repo, so the claim travels with it". It does not —
+`public/assets/` is gitignored entirely, manifest included. Neither file
+travels. The real reason to read the manifest is that the sidecar only exists
+when `capture.mjs` made the file, and 30 of 45 document assets were not made
+that way.

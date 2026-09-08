@@ -1404,20 +1404,46 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # document assets had none. But those sidecars live in public/assets, which
     # is GITIGNORED — so the check would have been inert on every machine
     # except this one, which is the same class of mistake as a rule that only
-    # exists in prose. The manifest travels with the repo, so the claim travels
-    # with it.
+    # exists in prose.
+    #
+    # CORRECTION 2026-09-08: that reasoning was half wrong. `public/assets/` is
+    # gitignored in its entirety, so the MANIFEST does not travel either — both
+    # files live only on the machine that built the reel, which is also the
+    # machine the gate runs on, so neither is inert. The real reason to read
+    # the manifest is different and still holds: the sidecar exists only when
+    # capture.mjs made the file, and 30 of 45 document assets were crops,
+    # mockups or handmade. The manifest is where a human states the fact for
+    # ALL of them. compile_shot_plan now copies the sidecar's answer in when
+    # there is one, so the declaration is only asked for where it cannot be
+    # measured.
     #
     # ADVICE: a missing record is not proof of a bad asset, it is proof we
     # cannot tell, and "we cannot verify" is not one of the three rules.
+    # MATCHED ON `src`, NOT `assetId` — this gate was INERT until 2026-09-08.
+    # It looked assets up by `assetId`, and the compiler does not emit one on a
+    # scene: all 11 sourcereads in whatsapp-agents carry a `src` and no id, so
+    # every lookup missed and every document was reported undeclared no matter
+    # what the manifest said. It could not pass on any reel. Found by filling
+    # three of those declarations from capture provenance and watching the
+    # count not move — the same "fires on every case" signature as G08 that
+    # same day. `src` is the thing both files actually share.
     _undeclared = []
-    _items = {str(a.get("id")): a
-              for a in ((manifest or {}).get("assets") or [])}
+    _items: dict[str, dict] = {}
+    for _a in ((manifest or {}).get("assets") or []):
+        _items[str(_a.get("id") or "")] = _a
+        _src = str(_a.get("src") or "")
+        if _src:
+            _items[_src] = _a
+            _items[_src.split("/")[-1]] = _a
+    _items.pop("", None)
     for i, sc in enumerate(scenes):
         if sc["type"] not in ("sourceread", "receipt"):
             continue
         if sc.get("mobileCaptureOk"):
             continue
-        a = _items.get(str(sc.get("assetId") or ""), {})
+        _s = str(sc.get("src") or "")
+        a = (_items.get(str(sc.get("assetId") or ""))
+             or _items.get(_s) or _items.get(_s.split("/")[-1]) or {})
         if not str(a.get("capture") or "").strip():
             _undeclared.append((i, str(sc.get("src") or "?").split("/")[-1]))
     if _undeclared:

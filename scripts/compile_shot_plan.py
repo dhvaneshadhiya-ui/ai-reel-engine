@@ -494,6 +494,40 @@ def main() -> None:
 
     plan = json.loads(plan_path.read_text())
     manifest = json.loads(manifest_path.read_text())
+
+    # THE TOOL THAT CAPTURED IT ALREADY KNOWS (2026-09-08).
+    #
+    # G61 asks every document asset to say how it was captured, because
+    # SourceRead fits a page to frame width and never zooms — so a desktop
+    # capture puts desktop-sized type on a phone, and G29 only catches the
+    # landscape half of that. capture.mjs has recorded exactly this in a
+    # `.capture.json` sidecar since it gained provenance, and nothing read it
+    # back: on whatsapp-agents, three assets had the fact sitting on disk while
+    # the gate advised that we could not tell.
+    #
+    # Copied in, never overwritten — a hand-declared value outranks the sidecar,
+    # because a manifest can honestly say "handmade" about a file that was also
+    # screenshotted at some point. Assets with no sidecar stay undeclared and
+    # G61 keeps advising, which is correct: it cannot be inferred for a crop or
+    # a mockup, and guessing is what the gate exists to stop.
+    _filled = []
+    for _a in (manifest.get("assets") or []):
+        if str(_a.get("capture") or "").strip():
+            continue
+        _side = public / (str(_a.get("src") or "").rsplit(".", 1)[0]
+                          + ".capture.json")
+        if not _side.exists():
+            continue
+        try:
+            _rec = json.loads(_side.read_text())
+        except Exception:                                       # noqa: BLE001
+            continue
+        _a["capture"] = "mobile" if _rec.get("mobile") else "desktop"
+        _filled.append(f"{_a.get('id')}={_a['capture']}")
+    if _filled:
+        manifest_path.write_text(json.dumps(manifest, indent=2,
+                                            ensure_ascii=False) + "\n")
+        print(f"  capture recorded from provenance: {', '.join(_filled)}")
     words = load_words(vo_path)
     audio_end = float(words[-1]["end"])
     # THE AUDIO TRACK IS NOT ALWAYS AN AVATAR (added 2026-08-22).
