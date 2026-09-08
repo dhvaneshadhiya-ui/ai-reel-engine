@@ -790,6 +790,45 @@ def run() -> int:
     ok("the refusal cues the skill so the hook fires",
        "SKILL CUE: run the `humanizer` skill" in _pcs)
 
+    # WHERE THE HASHTAGS GO IS PART OF THE FIELD NAME (2026-09-08).
+    #
+    # whatsapp-agents published with its tags inside the Instagram caption and
+    # no first comment at all — while packaging_check had rejected `#` in a
+    # caption since 2026-08-14. The file was RIGHT and the pasting was wrong,
+    # because a homeless `HASHTAGS:` line sat directly under `CAPTION:` and
+    # read like part of it. These run the rules instead of grepping for them.
+    print("\n  -- hashtags land where they are posted --")
+    IG_OK = {"CAPTION": "The one line that does the work.",
+             "FIRST COMMENT": "Would you? #WhatsApp #Meta #Privacy",
+             "ALT TEXT": "A presenter beside the article."}
+    YT_OK = {"TITLE": "A title", "CAPTION": "The description.",
+             "HASHTAGS": "#WhatsApp #Meta #Privacy", "ALT TEXT": "As above."}
+    ok("a clean instagram block passes",
+       _pc.platform_errors("instagram", IG_OK) == [])
+    ok("a clean youtube block passes",
+       _pc.platform_errors("youtube", YT_OK) == [])
+    ok("instagram rejects a standalone HASHTAGS field — it names no destination",
+       any("not where they go" in e for e in _pc.platform_errors(
+           "instagram", {**IG_OK, "HASHTAGS": "#WhatsApp #Meta #Privacy"})))
+    ok("instagram rejects tags in the caption",
+       any("not where they go" in e for e in _pc.platform_errors(
+           "instagram", {**IG_OK, "CAPTION": "Work. #WhatsApp #Meta"})))
+    ok("instagram rejects a missing first comment — the tags lose their home",
+       any("FIRST COMMENT" in e for e in _pc.platform_errors(
+           "instagram", {k: v for k, v in IG_OK.items()
+                         if k != "FIRST COMMENT"})))
+    ok("youtube rejects tags in the description field",
+       any("not where they go" in e for e in _pc.platform_errors(
+           "youtube", {**YT_OK, "CAPTION": "The description. #Meta"})))
+    ok("6 instagram tags still trip the Aug-2025 cap of 5",
+       any("max 5" in e for e in _pc.platform_errors(
+           "instagram", {**IG_OK, "FIRST COMMENT":
+                         "Q? #a #b #c #d #e #f"})))
+    ok("the cap counts them where they live, not in a field nobody pastes",
+       any("max 5" in e for e in _pc.platform_errors(
+           "instagram", {**IG_OK, "FIRST COMMENT": "Q? #a #b #c #d #e #f"}))
+       and _pc.platform_errors("instagram", IG_OK) == [])
+
     # 8. check_script's own selftest — structure thresholds + AI tells.
     print("\n  -- check_script selftest --")
     rc = check_script.selftest()

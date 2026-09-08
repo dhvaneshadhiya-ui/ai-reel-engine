@@ -672,8 +672,18 @@ None of them renders, publishes, or replaces a step of the pipeline.**
    structure only. **The count is enforced, not remembered:**
    `python3 tools/packaging_check.py <slug>` validates
    `jobs/<slug>/packaging.md` against the real per-platform limits, requires
-   ALT TEXT on every post, and rejects hashtags placed in the caption instead
-   of the first comment.
+   ALT TEXT on every post, and counts the hashtags IN THE FIELD THEY ARE
+   POSTED FROM.
+   **Every field in packaging.md names where it is pasted, verbatim
+   (2026-09-08).** Instagram has no `HASHTAGS:` field at all — its tags sit at
+   the end of `FIRST COMMENT:`, which is the thing actually posted; YouTube
+   keeps one, because YouTube reads them out of the description. The old shape
+   put a homeless `HASHTAGS:` line directly under `CAPTION:` on every platform,
+   and whatsapp-agents published with the tags inside the Instagram caption and
+   no first comment at all — while this checker had rejected `#` in a caption
+   for three weeks. The file was right and the PASTING was wrong, which no rule
+   can reach but a layout can. `new_job.py` scaffolds the shape so it is not
+   rebuilt from memory.
 7. **`going-viral`: TAKE THE MECHANICS, LEAVE THE BAIT.** Added 2026-08-14
    after a proper read (the first dismissal was made off the README and was
    wrong). ADOPT:

@@ -264,6 +264,43 @@ def main() -> None:
             "<every source consulted — two independent minimum, or why one>\n"
         ),
     )
+    # packaging.md — scaffolded 2026-09-08, for the same reason as the two
+    # above and one more: EVERY FIELD HERE NAMES WHERE IT IS PASTED. The old
+    # shape was described in a docstring and rebuilt from memory each time,
+    # and it put a homeless `HASHTAGS:` line under `CAPTION:` on every
+    # platform. whatsapp-agents published with the tags inside the Instagram
+    # caption and no first comment at all. packaging_check had rejected `#` in
+    # a caption for three weeks — the file was right and the PASTING was
+    # wrong, which no rule can reach but a layout can.
+    write_new(
+        engine / f"jobs/{slug}/packaging.md",
+        (
+            f"# {slug} — packaging\n\n"
+            "Validated with `python3 tools/packaging_check.py "
+            f"{slug}`.\n\n"
+            "**Every field below is pasted VERBATIM into the place it names.**\n"
+            "There is no assembly step. Instagram has no HASHTAGS field: its\n"
+            "tags go at the END OF THE FIRST COMMENT, because that is where\n"
+            "they are posted. YouTube keeps one, because YouTube reads them\n"
+            "out of the description.\n\n"
+            "Instagram's hashtag maximum is **5** (past that it ignores all of\n"
+            "them, official since Aug 2025); YouTube's cap is 15 and the\n"
+            "recommended band is **3-5** on both.\n\n"
+            "## instagram\n\n"
+            "CAPTION: <the caption box. First line does the work — it is the\n"
+            " only line shown before 'more'. No hashtags.>\n"
+            "FIRST COMMENT: <posted as its own comment: the question, then the\n"
+            " 3-5 hashtags at the end>\n"
+            "ALT TEXT: <one line describing the video for people who cannot\n"
+            " see it>\n\n"
+            "## youtube\n\n"
+            "TITLE: <under 100 chars>\n"
+            "CAPTION: <the description. No hashtags in this field.>\n"
+            "HASHTAGS: <3-5, appended to the description; the first three show\n"
+            " above the title>\n"
+            "ALT TEXT: <as above>\n"
+        ),
+    )
     (engine / f"_sources/assets/{slug}").mkdir(parents=True, exist_ok=True)
 
     print(f"initialized {slug}")

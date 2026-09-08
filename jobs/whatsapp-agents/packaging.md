@@ -4,7 +4,10 @@ Validated with `python3 tools/packaging_check.py whatsapp-agents`.
 
 Instagram's hashtag maximum is **5** (past that Instagram ignores all of them,
 official since Aug 2025); YouTube's hard cap is 15 but the recommended band is
-also **3-5**. Hashtags live in the FIRST COMMENT, not the caption.
+also **3-5**. Every field below is pasted VERBATIM into the place it names.
+Instagram has no HASHTAGS field: its tags sit at the END OF THE
+FIRST COMMENT, because that is where they are posted. YouTube
+keeps one, because YouTube reads them out of the description.
 
 **Accuracy note for whoever posts this, and it is the whole story:** the reel
 does NOT say ordinary WhatsApp chats lose encryption, and neither may the
@@ -24,7 +27,6 @@ ALT TEXT: A presenter explains that WhatsApp is testing chats with third-party A
 ## instagram
 
 CAPTION: WhatsApp is adding chats with third-party AI agents, and it says those agent chats are not end-to-end encrypted. Those are their words, found by WABetaInfo in the Android beta. There is a new Agents section in settings: generate an API key, paste it into whatever is running an outside AI, and it gets its own chat with a name and photo you pick. Up to five. So it sits in your list looking like everybody else — except that one runs through a Meta service on the developer's behalf, so the developer can read what you send. The fence is real, though: an agent sees its own chat and nothing else, and your personal chats stay encrypted exactly as before. Last October WhatsApp barred general-purpose chatbots. By January, ChatGPT and Perplexity had stopped working there, and the EU, Italy and Brazil opened antitrust probes. Eight months later, there is a door back in, built by Meta. Nobody has said those two are connected.
-HASHTAGS: #WhatsApp #AIAgents #Meta #Privacy #Encryption
 FIRST COMMENT: Would you put an outside AI in your WhatsApp knowing that chat is not end-to-end encrypted? #WhatsApp #AIAgents #Meta #Privacy #Encryption
 ALT TEXT: A presenter explains WhatsApp's beta feature for chatting with third-party AI agents, with WABetaInfo's article stating those chats are not end-to-end encrypted, WhatsApp's own "Secure by design" page, rendered mockups of the Agents settings pane and a chat list, and TechCrunch's report on the 2025 chatbot ban and the antitrust probes.
 

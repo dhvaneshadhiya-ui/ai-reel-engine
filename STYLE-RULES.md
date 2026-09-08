@@ -7258,3 +7258,40 @@ target. The 25 that do not are three sheets that predate calibration
 calibrated to the editorial target (`iphone-third-interface`, 5.5 dB hot) —
 all true statements about those old mixes, left as advice rather than
 retro-edited, since the renders they describe have shipped.
+
+## 2026-09-08 — the packaging file was right and the paste was wrong
+
+**RAW NOTE.** The published whatsapp-agents reel has its hashtags inside the
+Instagram caption, and no first comment at all. `packaging_check.py` had
+rejected `#` in a caption since 2026-08-14 and `jobs/whatsapp-agents/
+packaging.md` passed it cleanly: the tags were on their own `HASHTAGS:` line,
+and the `FIRST COMMENT:` line carried them again at its end, correctly.
+
+**ROOT CAUSE.** The file was correct and the *pasting* was wrong, so no rule
+in the checker could ever have reached it. The layout invited the error:
+`HASHTAGS:` sat directly under `CAPTION:` and named no destination, on every
+platform. Three fields, four things to paste, and the one with no home sitting
+under the caption as though it belonged to it. The first comment, which is a
+separate post and takes a deliberate second action, was the easiest thing in
+the file to skip.
+
+**DISTILLED RULE.** *Every field in packaging.md names where it is pasted, and
+its value goes there verbatim. There is no assembly step.* Instagram has no
+`HASHTAGS:` field: the tags live at the END OF `FIRST COMMENT:`, because that
+is the text actually posted. YouTube keeps one, because YouTube genuinely
+reads them out of the description and prints the first three above the title.
+`LIMITS` gained `tags_in` per platform, and the checker counts, caps and
+places them there — a `#` in any other field is now an error naming where it
+belongs, and a missing `FIRST COMMENT` on Instagram is an error in its own
+right (it never was before, which is why an absent one shipped silently).
+
+`new_job.py` scaffolds the file, for the same reason it scaffolds
+`structure.md` and `research.md`: the shape had lived in a docstring and been
+rebuilt from memory every time.
+
+**And the tests were grep.** The four existing packaging assertions searched
+this source for strings like `"NO HUMANIZER PASS"` — proving the words are
+present and nothing about whether the rule fires. The per-platform rules are
+now a function taking a dict, with eight cases that run them, including the
+one that would have caught this: a clean Instagram block passes, and the same
+block with a `HASHTAGS:` field does not.
