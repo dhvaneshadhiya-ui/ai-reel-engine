@@ -2027,11 +2027,44 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 "frame 0 should already be MOVING and show the subject, not a "
                 "mark that assembles. Advice, not law: a brand opener is a "
                 "choice, and this one costs you the first ~2s of attention.")
-        if s0.get("hideCaptions"):
+        # THE CHECK NOW MATCHES THE RULE (2026-09-08). The rule is "the hook
+        # must carry words on screen". The check was "hideCaptions must be
+        # false" — a proxy that holds only for a hook whose ONLY words are the
+        # karaoke chips. The three reels this gate was written against were
+        # exactly that: `logoassemble` with hideCaptions and no text at all.
+        # whatsapp-agents opens on a `brandhook` reading AGENTS / INSIDE
+        # WHATSAPP / NOT ENCRYPTED and was told it says nothing on mute, while
+        # the alternative — chips forced on over a layout with no empty band —
+        # printed the caption straight through the receipt behind it.
+        # RULES.md 0: "When you add a rule, check the CHECK matches the RULE."
+        # This is G18's lesson on a different gate.
+        #
+        # Display type already counts as the reel's words everywhere else: the
+        # caption system auto-hides chips while a display-type scene is on
+        # screen ("ONE TEXT SYSTEM AT A TIME", Reel.tsx), so a hook that hides
+        # chips BECAUSE it carries its own type is following that rule, not
+        # breaking this one.
+        def _hook_words(sc: dict) -> str:
+            bits = [sc.get(k) for k in
+                    ("title", "subtitle", "serifLine", "label", "text",
+                     "headline1", "headline2", "question")]
+            kin = sc.get("kinetic") or {}
+            if isinstance(kin, dict):
+                bits.append(kin.get("text"))
+            hl = sc.get("headline") or {}
+            if isinstance(hl, dict):
+                bits += [ln.get("text") for ln in (hl.get("lines") or [])
+                         if isinstance(ln, dict)]
+            for w in (sc.get("words") or []):
+                if isinstance(w, dict):
+                    bits.append(w.get("text"))
+            return " ".join(str(b) for b in bits if b).strip()
+
+        if s0.get("hideCaptions") and not _hook_words(s0):
             errors.append(
-                "G38 the hook (scene 00) sets hideCaptions — 70-85% of viewers "
-                "watch on mute, so a hook with no words on screen says nothing. "
-                "Show the claim.")
+                "G38 the hook (scene 00) sets hideCaptions and carries no "
+                "display text — 70-85% of viewers watch on mute, so a hook "
+                "with no words on screen says nothing. Show the claim.")
 
     # G51 — THE ARRAY THE COMPONENT MAPS OVER MUST EXIST (RENDER, 2026-08-25).
     # The registry imports scene JSON with a cast, so TypeScript never checks

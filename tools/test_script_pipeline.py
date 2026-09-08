@@ -732,10 +732,26 @@ def run() -> int:
        and bool(_rc.superlative_claims("It's the only way to do it.")))
     # THE PROPERTY THAT KEEPS IT HONEST: it must stay quiet on work we shipped
     # and were happy with, or it is noise that trains people to ignore it.
+    #
+    # SCOPED TO UNLEDGERED CLAIMS, 2026-09-08. This counted EVERY detection and
+    # asserted zero, which quietly encoded "no shipped script ever makes an
+    # absence claim". That is not the rule — the rule is that an absence claim
+    # must be LEDGERED with the search that establishes it, and `propose`
+    # already refuses one that is not. whatsapp-agents is the first reel to
+    # carry a legitimate ledgered absence ("Nobody has said those two are
+    # connected", recorded with the search that found no such statement), and
+    # it turned this canary red for doing exactly what the pipeline asks.
+    # A script whose claim IS in its own research.md is not a false positive.
     import glob
-    _fp = sum(len(_rc.absence_claims(Path(f).read_text()))
-              for f in glob.glob(str(Path(__file__).resolve().parent.parent
-                                     / "jobs/*/script.md")))
+    _fp = 0
+    for _f in glob.glob(str(Path(__file__).resolve().parent.parent
+                            / "jobs/*/script.md")):
+        _ledger = Path(_f).with_name("research.md")
+        _rec = _ledger.read_text() if _ledger.exists() else ""
+        for _hit in _rc.absence_claims(Path(_f).read_text()):
+            _txt = _hit if isinstance(_hit, str) else str(_hit)
+            if _txt.strip().strip('."\'') not in _rec:
+                _fp += 1
     ok("no false refusals across every shipped script", _fp == 0)
 
     # 7c. ANGLE FINDINGS MUST BE PROMOTED, not buried among style notes.

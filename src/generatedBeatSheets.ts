@@ -27,6 +27,7 @@ import sheet23 from "./beats/qualcomm-chip-hike.json";
 import sheet24 from "./beats/seedance-25.json";
 import sheet25 from "./beats/september-preview-nomusic.json";
 import sheet26 from "./beats/september-preview.json";
+import sheet27 from "./beats/whatsapp-agents.json";
 
 export const beatSheets = [
   sheet0,
@@ -56,4 +57,5 @@ export const beatSheets = [
   sheet24,
   sheet25,
   sheet26,
+  sheet27,
 ] as unknown as BeatSheet[];

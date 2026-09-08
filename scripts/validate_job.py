@@ -40,7 +40,13 @@ MEDIA_KEYS = {
     "audio",
 }
 DISPLAY_TYPES = {"typecard", "wordcascade"}
-FACE_TYPES = {"split", "footage", "wordcascade"}
+# `brandhook` draws a facecam card from `bottomSrc` (BrandHook.tsx: "facecam
+# video for the rounded bottom card"), so a brandhook opener DOES show the
+# presenter. It was missing here until 2026-09-08, when whatsapp-agents
+# became the first reel to open on one and was told its opening hid a face
+# that was on screen. The `bottomSrc` test below was already written and
+# simply unreachable for this type.
+FACE_TYPES = {"split", "footage", "wordcascade", "brandhook"}
 
 
 def iter_media(value: Any, key: str | None = None):

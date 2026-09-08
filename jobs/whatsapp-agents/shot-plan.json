@@ -9,15 +9,26 @@
     "Meta",
     "which"
   ],
-  "caption_corrections": {},
+  "caption_corrections": {
+    "end to end": "end-to-end",
+    "wi beta info": "WABetaInfo",
+    "agent section": "Agents section",
+    "meta service": "Meta service",
+    "general purpose": "general-purpose",
+    "chatpots": "chatbots",
+    "chat gpt": "ChatGPT",
+    "perplexity": "Perplexity",
+    "meta": "Meta",
+    "eight months": "8 months"
+  },
   "format": "news",
   "shots": [
     {
       "start_phrase": "WhatsApp is building",
       "scene": {
         "type": "brandhook",
-        "title": "WHATSAPP",
-        "subtitle": "THIRD-PARTY AGENTS",
+        "title": "AGENTS",
+        "subtitle": "INSIDE WHATSAPP",
         "logoPaths": [
           {
             "d": "M307.546 52.566C273.709 18.684 228.706.017 180.756 0 81.951 0 1.538 80.404 1.504 179.235c-.017 31.594 8.242 62.432 23.928 89.609L0 361.736l95.024-24.925c26.179 14.285 55.659 21.805 85.655 21.814h.077c98.788 0 179.21-80.413 179.244-179.244.017-47.898-18.608-92.926-52.454-126.807v-.008Zm-126.79 275.788h-.06c-26.73-.008-52.952-7.194-75.831-20.765l-5.44-3.231-56.391 14.791 15.05-54.981-3.542-5.638c-14.912-23.721-22.793-51.139-22.776-79.286.035-82.14 66.867-148.973 149.051-148.973 39.793.017 77.198 15.53 105.328 43.695 28.131 28.157 43.61 65.596 43.593 105.398-.035 82.149-66.867 148.982-148.982 148.982v.008Zm81.719-111.577c-4.478-2.243-26.497-13.073-30.606-14.568-4.108-1.496-7.09-2.243-10.073 2.243-2.982 4.487-11.568 14.577-14.181 17.559-2.613 2.991-5.226 3.361-9.704 1.117-4.477-2.243-18.908-6.97-36.02-22.226-13.313-11.878-22.304-26.54-24.916-31.027-2.613-4.486-.275-6.91 1.959-9.136 2.011-2.011 4.478-5.234 6.721-7.847 2.244-2.613 2.983-4.486 4.478-7.469 1.496-2.991.748-5.603-.369-7.847-1.118-2.243-10.073-24.289-13.812-33.253-3.636-8.732-7.331-7.546-10.073-7.692-2.613-.13-5.595-.155-8.586-.155-2.991 0-7.839 1.118-11.947 5.604-4.108 4.486-15.677 15.324-15.677 37.361s16.047 43.344 18.29 46.335c2.243 2.991 31.585 48.225 76.51 67.632 10.684 4.615 19.029 7.374 25.535 9.437 10.727 3.412 20.49 2.931 28.208 1.779 8.604-1.289 26.498-10.838 30.228-21.298 3.73-10.46 3.73-19.433 2.613-21.298-1.117-1.865-4.108-2.991-8.586-5.234l.008-.017Z",
@@ -27,14 +38,22 @@
         "logoViewBox": "0 0 360 362",
         "markColor": "#25D366",
         "serifLine": "NOT ENCRYPTED",
-        "serifAt": 0.9,
+        "serifAt": 0.85,
         "mediaSrc": "assets/whatsapp-agents/wabeta-e2ee.png",
         "bottomSrc": "assets/whatsapp-agents/avatar-master.mp4",
-        "bottomFocusX": 0.5
+        "bottomFocusX": 0.5,
+        "sfx": [
+          {
+            "src": "sfx/Core.MP3",
+            "at": 0.85,
+            "vol": 0.16
+          }
+        ],
+        "hideCaptions": true
       }
     },
     {
-      "start_phrase": "a chat that WhatsApp itself says",
+      "start_phrase": "itself says",
       "scene": {
         "type": "sourceread",
         "src": "assets/whatsapp-agents/wabeta-e2ee.png",
@@ -43,20 +62,28 @@
         "lines": [
           {
             "at": 0.25,
-            "x": 69,
+            "x": 53,
             "y": 257,
-            "w": 857,
+            "w": 889,
             "h": 86
           },
           {
             "at": 0.85,
-            "x": 69,
+            "x": 53,
             "y": 352,
-            "w": 751,
+            "w": 783,
             "h": 84
           }
         ],
-        "credit": "Source: WABetaInfo"
+        "credit": "Source: WABetaInfo",
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "at": 0.05,
+            "vol": 0.12
+          }
+        ],
+        "covers": "is not end-to-end encrypted"
       }
     },
     {
@@ -68,7 +95,7 @@
       }
     },
     {
-      "start_phrase": "WABetaInfo found them",
+      "start_phrase": "found them in the Android beta",
       "scene": {
         "type": "sourceread",
         "src": "assets/whatsapp-agents/wabetainfo.png",
@@ -77,42 +104,76 @@
         "lines": [
           {
             "at": 0.2,
-            "x": 112,
+            "x": 96,
             "y": 509,
-            "w": 852,
+            "w": 884,
             "h": 106
           },
           {
             "at": 0.62,
-            "x": 94,
+            "x": 78,
             "y": 611,
-            "w": 887,
+            "w": 919,
             "h": 90
           },
           {
             "at": 1.04,
-            "x": 258,
+            "x": 242,
             "y": 721,
-            "w": 564,
+            "w": 596,
             "h": 98
           },
           {
             "at": 1.46,
-            "x": 176,
+            "x": 160,
             "y": 886,
-            "w": 725,
+            "w": 757,
             "h": 59
           }
         ],
-        "credit": "Source: WABetaInfo"
+        "credit": "Source: WABetaInfo",
+        "covers": "found them in the Android beta"
       }
     },
     {
       "start_phrase": "Strange thing for the",
       "scene": {
-        "type": "footage",
-        "src": "assets/whatsapp-agents/avatar-master.mp4",
-        "zoomDir": "in"
+        "type": "sourceread",
+        "src": "assets/whatsapp-agents/whatsapp-security.png",
+        "srcWidth": 1080,
+        "srcHeight": 2340,
+        "lines": [
+          {
+            "at": 0.15,
+            "x": 45,
+            "y": 347,
+            "w": 661,
+            "h": 148
+          },
+          {
+            "at": 0.65,
+            "x": 46,
+            "y": 481,
+            "w": 455,
+            "h": 146
+          },
+          {
+            "at": 1.15,
+            "x": 42,
+            "y": 811,
+            "w": 705,
+            "h": 69
+          },
+          {
+            "at": 1.65,
+            "x": 42,
+            "y": 877,
+            "w": 706,
+            "h": 69
+          }
+        ],
+        "credit": "Source: WhatsApp",
+        "covers": "the encryption app"
       }
     },
     {
@@ -124,7 +185,32 @@
       }
     },
     {
-      "start_phrase": "It starts with a new Agents",
+      "start_phrase": "what WhatsApp threw off the platform first",
+      "scene": {
+        "type": "wordcascade",
+        "bg": "black",
+        "words": [
+          {
+            "text": "WHAT IT",
+            "style": "caps",
+            "at": 0.1
+          },
+          {
+            "text": "THREW OFF",
+            "style": "caps",
+            "at": 0.5
+          },
+          {
+            "text": "FIRST",
+            "style": "caps",
+            "at": 0.9,
+            "accent": true
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "It starts with a new",
       "scene": {
         "type": "settingspane",
         "title": "Settings",
@@ -157,7 +243,14 @@
           }
         ],
         "focus": "0.3",
-        "focusAt": 0.9
+        "focusAt": 0.9,
+        "sfx": [
+          {
+            "src": "sfx/Pop.MP3",
+            "at": 0.9,
+            "vol": 0.13
+          }
+        ]
       }
     },
     {
@@ -172,18 +265,48 @@
           "value": "wa-agent-7f2c-4b91-a03e"
         },
         "primary": "Copy key",
-        "cancel": "Cancel"
+        "cancel": "Cancel",
+        "sfx": [
+          {
+            "src": "sfx2/mouse-click-01.mp3",
+            "at": 0.4,
+            "vol": 0.12
+          }
+        ]
       }
     },
     {
       "start_phrase": "Up to five.",
       "scene": {
-        "type": "logobeat",
-        "text": "5",
-        "textColor": "#0aa9c2",
-        "bg": "#0B1220",
-        "label": "AGENTS PER ACCOUNT",
-        "credit": "Source: 9to5Mac"
+        "type": "sourceread",
+        "src": "assets/whatsapp-agents/9to5mac.png",
+        "srcWidth": 1080,
+        "srcHeight": 2340,
+        "lines": [
+          {
+            "at": 0.15,
+            "x": 23,
+            "y": 366,
+            "w": 981,
+            "h": 106
+          },
+          {
+            "at": 0.5,
+            "x": 18,
+            "y": 471,
+            "w": 921,
+            "h": 107
+          },
+          {
+            "at": 0.85,
+            "x": 20,
+            "y": 584,
+            "w": 350,
+            "h": 99
+          }
+        ],
+        "credit": "Source: 9to5Mac",
+        "covers": "Up to five"
       }
     },
     {
@@ -253,7 +376,14 @@
           }
         ],
         "focus": "0.2",
-        "focusAt": 1.4
+        "focusAt": 1.4,
+        "sfx": [
+          {
+            "src": "sfx/Pop.MP3",
+            "at": 1.4,
+            "vol": 0.15
+          }
+        ]
       }
     },
     {
@@ -266,34 +396,35 @@
         "lines": [
           {
             "at": 0.2,
-            "x": 69,
+            "x": 53,
             "y": 977,
-            "w": 866,
+            "w": 898,
             "h": 71
           },
           {
             "at": 0.7,
-            "x": 69,
+            "x": 53,
             "y": 1055,
-            "w": 792,
+            "w": 824,
             "h": 71
           },
           {
             "at": 1.2,
-            "x": 71,
+            "x": 55,
             "y": 1133,
-            "w": 881,
+            "w": 913,
             "h": 71
           },
           {
             "at": 1.7,
-            "x": 71,
+            "x": 55,
             "y": 1211,
-            "w": 883,
+            "w": 915,
             "h": 71
           }
         ],
-        "credit": "Source: WABetaInfo"
+        "credit": "Source: WABetaInfo",
+        "covers": "runs through a Meta service on the developer's behalf"
       }
     },
     {
@@ -306,27 +437,28 @@
         "lines": [
           {
             "at": 0.15,
-            "x": 69,
+            "x": 53,
             "y": 1289,
-            "w": 862,
+            "w": 894,
             "h": 71
           },
           {
             "at": 0.7,
-            "x": 69,
+            "x": 53,
             "y": 1367,
-            "w": 908,
+            "w": 940,
             "h": 71
           },
           {
             "at": 1.25,
-            "x": 69,
+            "x": 53,
             "y": 1445,
-            "w": 910,
+            "w": 942,
             "h": 71
           }
         ],
-        "credit": "Source: WABetaInfo"
+        "credit": "Source: WABetaInfo",
+        "covers": "the developer can read what you send"
       }
     },
     {
@@ -347,20 +479,21 @@
         "lines": [
           {
             "at": 0.25,
-            "x": 69,
+            "x": 53,
             "y": 67,
-            "w": 879,
+            "w": 911,
             "h": 71
           },
           {
             "at": 0.85,
-            "x": 68,
+            "x": 52,
             "y": 145,
-            "w": 897,
+            "w": 929,
             "h": 62
           }
         ],
-        "credit": "Source: WABetaInfo"
+        "credit": "Source: WABetaInfo",
+        "covers": "The agent sees its own chat"
       }
     },
     {
@@ -383,7 +516,14 @@
           }
         ],
         "bg": "black",
-        "stagger": 0.5
+        "stagger": 0.5,
+        "sfx": [
+          {
+            "src": "sfx/Click.MP3",
+            "at": 0.3,
+            "vol": 0.11
+          }
+        ]
       }
     },
     {
@@ -402,7 +542,14 @@
             0.95
           ]
         },
-        "credit": "Source: WABetaInfo"
+        "credit": "Source: WABetaInfo",
+        "sfx": [
+          {
+            "src": "sfx/Magic Reveal.MP3",
+            "at": 0.2,
+            "vol": 0.13
+          }
+        ]
       }
     },
     {
@@ -423,38 +570,39 @@
         "lines": [
           {
             "at": 0.15,
-            "x": 36,
+            "x": 20,
             "y": -6,
-            "w": 954,
+            "w": 986,
             "h": 78
           },
           {
             "at": 0.55,
-            "x": 36,
+            "x": 20,
             "y": 83,
-            "w": 954,
+            "w": 986,
             "h": 79
           },
           {
             "at": 0.95,
-            "x": 36,
+            "x": 20,
             "y": 173,
-            "w": 954,
+            "w": 986,
             "h": 78
           },
           {
             "at": 1.35,
-            "x": 36,
+            "x": 20,
             "y": 262,
-            "w": 678,
+            "w": 710,
             "h": 78
           }
         ],
-        "credit": "Source: TechCrunch"
+        "credit": "Source: TechCrunch",
+        "covers": "barred general-purpose chatbots"
       }
     },
     {
-      "start_phrase": "By January, ChatGPT and Perplexity",
+      "start_phrase": "By January",
       "scene": {
         "type": "sourceread",
         "src": "assets/whatsapp-agents/techcrunch-ban.png",
@@ -463,34 +611,35 @@
         "lines": [
           {
             "at": 0.2,
-            "x": 83,
+            "x": 67,
             "y": 1115,
-            "w": 800,
+            "w": 832,
             "h": 73
           },
           {
             "at": 0.65,
-            "x": 83,
+            "x": 67,
             "y": 1193,
-            "w": 792,
+            "w": 824,
             "h": 73
           },
           {
             "at": 1.1,
-            "x": 82,
+            "x": 66,
             "y": 1274,
-            "w": 775,
+            "w": 807,
             "h": 73
           },
           {
             "at": 1.55,
-            "x": 86,
+            "x": 70,
             "y": 1352,
-            "w": 724,
+            "w": 756,
             "h": 73
           }
         ],
-        "credit": "Source: TechCrunch"
+        "credit": "Source: TechCrunch",
+        "covers": "ChatGPT and Perplexity had stopped working there"
       }
     },
     {
@@ -503,27 +652,28 @@
         "lines": [
           {
             "at": 0.15,
-            "x": 84,
+            "x": 68,
             "y": 1433,
-            "w": 859,
+            "w": 891,
             "h": 73
           },
           {
             "at": 0.65,
-            "x": 82,
+            "x": 66,
             "y": 1511,
-            "w": 758,
+            "w": 790,
             "h": 73
           },
           {
             "at": 1.15,
-            "x": 82,
+            "x": 66,
             "y": 1592,
-            "w": 847,
+            "w": 879,
             "h": 73
           }
         ],
-        "credit": "Source: TechCrunch"
+        "credit": "Source: TechCrunch",
+        "covers": "opened antitrust probes"
       }
     },
     {
@@ -534,30 +684,32 @@
         "items": [
           {
             "date": "OCT 2025",
-            "name": "Terms bar general-purpose chatbots",
+            "name": "Chatbots barred",
+            "sub": "OpenAI, Perplexity, Microsoft",
             "at": 0.15
           },
           {
             "date": "JAN 2026",
-            "name": "Rivals stop working. Probes open.",
+            "name": "Rules in force",
+            "sub": "EU, Italy, Brazil open probes",
             "at": 0.9
           },
           {
             "date": "SEP 2026",
-            "name": "Third-party agents, in beta",
+            "name": "Agents return",
+            "sub": "In beta. Not encrypted.",
             "at": 1.7,
             "accent": "#0aa9c2"
           }
         ],
-        "footnote": "TechCrunch \u00b7 WABetaInfo"
-      }
-    },
-    {
-      "start_phrase": "Built by Meta",
-      "scene": {
-        "type": "footage",
-        "src": "assets/whatsapp-agents/avatar-master.mp4",
-        "zoomDir": "in"
+        "footnote": "TechCrunch \u00b7 WABetaInfo",
+        "sfx": [
+          {
+            "src": "sfx2/impact-boom.mp3",
+            "at": 1.7,
+            "vol": 0.17
+          }
+        ]
       }
     },
     {
@@ -578,38 +730,59 @@
         "lines": [
           {
             "at": 0.2,
-            "x": 69,
+            "x": 53,
             "y": 1410,
-            "w": 903,
+            "w": 935,
             "h": 71
           },
           {
             "at": 0.7,
-            "x": 71,
+            "x": 55,
             "y": 1488,
-            "w": 747,
+            "w": 779,
             "h": 62
           },
           {
             "at": 1.2,
-            "x": 69,
+            "x": 53,
             "y": 1566,
-            "w": 245,
+            "w": 277,
             "h": 62
           }
         ],
-        "credit": "Source: WABetaInfo"
+        "credit": "Source: WABetaInfo",
+        "covers": "a handful of testers in a few countries"
       }
     },
     {
       "start_phrase": "But if it ships",
       "scene": {
-        "type": "endquestion",
-        "src": "assets/whatsapp-agents/avatar-master.mp4",
-        "question": "Which chat is which?",
-        "bg": "black"
+        "type": "wordcascade",
+        "bg": "black",
+        "words": [
+          {
+            "text": "WHICH CHAT",
+            "style": "caps",
+            "at": 0.9
+          },
+          {
+            "text": "IS WHICH",
+            "style": "caps",
+            "at": 1.5,
+            "accent": true
+          }
+        ],
+        "bottomSrc": "assets/whatsapp-agents/avatar-master.mp4",
+        "sfx": [
+          {
+            "src": "sfx2/whooshes-01.mp3",
+            "at": 0.0,
+            "vol": 0.12
+          }
+        ]
       }
     }
   ],
-  "noMusic": true
+  "noMusic": true,
+  "noMusicReason": "Standing rule (user directive 2026-08-22/24): reels ship voice + SFX only. 9 cues carry what a bed used to."
 }

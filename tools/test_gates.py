@@ -1114,6 +1114,29 @@ if _hits:
     raise SystemExit(1)
 _counted("G09 silent — noMusic:true needs no reason (music is optional)")
 
+# G38 NEGATIVE CASE (2026-09-08). RULES.md 0(4): "A gate with no negative test
+# will eventually block good work." G38's RULE is that the hook carries words on
+# mute. Its CHECK was `hideCaptions is true`, which is only a proxy for that
+# rule when the chips are the hook's ONLY words — true of the three
+# `logoassemble` reels it was written against, false of a hook drawing its own
+# display type. whatsapp-agents opens on a `brandhook` reading AGENTS / INSIDE
+# WHATSAPP / NOT ENCRYPTED; forcing chips back on printed the caption straight
+# through the receipt behind it, because that layout has no empty band. The
+# positive case (hideCaptions with NO text) still lives in CASES above.
+_s = copy.deepcopy(BASE)
+_s["scenes"][0]["hideCaptions"] = True
+_s["scenes"][0]["serifLine"] = "NOT ENCRYPTED"
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST,
+                       vo_words=VO_WORDS)
+    _hits = [a for a in _adv if "G38" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G38" in str(a)]
+if _hits:
+    print(f"  FAIL G38 fired on a hook that shows its claim as type: {_hits[0][:90]}")
+    raise SystemExit(1)
+_counted("G38 silent — a hook may hide chips when it carries its own display type")
+
 # G14 creditOnScreen (user directive 2026-08-25): a scene whose frame shows
 # the source's own identity may declare it and skip the credit chip — but a
 # bare credit-less scene still blocks (the positive case lives in CASES).

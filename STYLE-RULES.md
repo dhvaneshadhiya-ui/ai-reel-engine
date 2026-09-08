@@ -7097,3 +7097,112 @@ their sentence stats before drawing a line.
 no stability parameter where the web UI does, and a hand-made take measured
 3.60 semitones where an API take measured 3.17. Untangled from pace, but a
 second reason the API read is not identical to a hand-made one.)
+
+## 2026-09-08 — whatsapp-agents: the gate was right about the hook, twice
+
+**RAW NOTE.** A news reel on WhatsApp testing third-party AI agent chats. The
+build hit four separate problems at the hook alone, and three of them were the
+same problem wearing different clothes.
+
+**1. BrandHook clips a product name, still.** RULES.md §10 already records this
+("BrandHook could not fit a 12-character product name — the correct fix was a
+different treatment, not a wider component"). `title: "WhatsApp"` — eight
+characters — ran off the right edge anyway. The fix was to stop asking the
+title to carry the brand: the green WhatsApp mark is already in the frame, so
+the title became `AGENTS` with `subtitle: INSIDE WHATSAPP`. **DISTILLED RULE:
+in BrandHook the MARK carries the brand and the TITLE carries the news. Budget
+~7 characters for the title, not a product name.**
+
+**2. `captionBottom` is a FLOOR, and I read it as a position.** A caption chip
+landed across the presenter's eyes in the hook. I set `captionBottom: 340` to
+push it down; `clampCaptionBottom` silently raised it straight back, because it
+is `Math.max(bottom, floor)`. Then I set 1180 to lift it clear of the face, and
+it printed through the receipt behind it instead — BrandHook's layout has no
+empty band for a chip at all. The function's own docstring says the split hook
+uses 1000 "so the chips miss the presenter", i.e. captions clear a face by
+going UP. **DISTILLED RULE: captions clear a face by moving UP the frame. A
+smaller `captionBottom` cannot move a caption down past the floor, and on a
+layout with no empty band, moving it up only trades a face collision for a text
+collision.**
+
+**3. G38's CHECK did not match G38's RULE.** Its rule is "the hook must carry
+words on screen, because 70-85% watch on mute". Its check was `hideCaptions is
+true` — a proxy that holds only when the karaoke chips are the hook's ONLY
+words. That was exactly true of the three `logoassemble` reels it was written
+against, and false of a hook drawing `AGENTS / INSIDE WHATSAPP / NOT
+ENCRYPTED`. So the gate demanded chips on a layout with nowhere to put them,
+and the reel had to choose between breaking R1 and printing a caption through
+its own receipt. G38 now asks whether the hook carries ANY on-screen text —
+display type included — and `tools/test_gates.py` gained the negative case
+RULES.md §0(4) requires: hideCaptions WITH display type must stay silent, while
+hideCaptions with no text still blocks. **This is G18's lesson on a second
+gate: a number, or a boolean, is not a rule.**
+
+**4. `validate_job` did not know `brandhook` shows a face.** BrandHook.tsx
+draws "facecam video for the rounded bottom card" from `bottomSrc`, and the
+validator's opening-scene check already tested `bottomSrc` — but `brandhook`
+was absent from `FACE_TYPES`, so that test was unreachable and the reel was
+told its opening hid a presenter who was on screen. No prior reel had opened on
+a brandhook, which is why it survived 23 reels. **DISTILLED RULE: when a rule
+is keyed on a TYPE SET, adding a component means adding it to the set — a
+contract cannot check a type it does not name.** Same shape as `typecard.credit`
+(2026-08-18) and `timeline.footnote`.
+
+**5. TimelineCascade has no auto-fit either.** All three rows ran off the right
+edge — `name` renders at 52px in a card of `width-150-84` minus the date chip,
+so past ~20 characters it clips mid-phrase. The detail moved to `sub` (26px),
+which had room and reads better. **DISTILLED RULE: `timeline.name` <= 20 chars;
+put the substance in `sub`.** Add to the HeadlineBuild line-limit family.
+
+**6. The research gate paid for itself twice.** `research_check` refused the
+first propose because every SPOKEN line had drifted from the script during
+editing — a ledger describing words nobody says. It then refused again over
+"Nobody has said those two are connected", correctly: that is an absence claim
+and no number of sources proves an absence. Recording it with the search that
+establishes it (searched for any Meta statement on the feature; none exists)
+made it a claim rather than an assertion. **But the same success turned
+`test_script_pipeline` red**, because that suite asserted ZERO absence claims
+across every shipped script — quietly encoding "no reel ever makes one", when
+the actual rule is "an absence claim must be ledgered". Scoped to UNLEDGERED
+claims; the false-positive canary still works.
+
+**7. Seven "single tier, spoken unhedged" advisories, one attribution beat.**
+Every feature claim traces VIA WABetaInfo — two outlets quoting one teardown is
+one source, and the tiers were corrected from multi to single. The fix was NOT
+seven hedges: RULES.md §3 budgets 3% of runtime on qualifying language and
+seven would have spent about ten, which is the apple-pay-india failure. Sentence
+two names WABetaInfo out loud and its credit sits under every receipt.
+
+### Treatment history — whatsapp-agents
+
+- A UI story told with BUILT interfaces rather than screenshots, because nobody
+  outside a limited beta can screenshot the feature and a fabricated screen is
+  the failure our capture rules exist to prevent. `settingspane` x3 (Settings,
+  the Agents list, and a chat list where the agent row is deliberately
+  indistinguishable from the people) and `uidialog` — both components had
+  produced ZERO scenes in 23 reels. `timeline` carries the reversal payoff.
+- Receipts are read PROGRESSIVELY: one WABetaInfo paragraph highlighted across
+  three beats as the argument moves down it, rather than the same image shown
+  three times. Highlight rectangles were MEASURED — a horizontal projection
+  over each capture returns every text line's bounding box — not eyeballed.
+- WhatsApp's own `whatsapp.com/security` "Secure by design" page is used as the
+  claim the story is measured against, placed immediately before the exception.
+  It also solved a blocking DUPLICATE flag (two facecam beats back to back).
+- 26 scenes, 70.5s, facecam 14%, 9 SFX, no music, no CTA, hook 1.94s.
+- -> next reel must introduce at least one new treatment. Already used and not
+  to be repeated as the SAME shape next: a rendered `settingspane` standing in
+  for an unshippable UI; a three-row dated `timeline` as the reversal payoff; a
+  `checklist` of `state: "no"` rows as the scope caveat.
+
+**ACCEPTED ADVISORIES, disclosed.** Ten scenes over the G04 hold ceiling (the
+sourcereads animate genuine content — the highlight moves down the paragraph —
+and the endquestion-replacement cascade is the closing card); G07 asset reuse
+on three documents, which is what progressive reading IS; G43 (the hook is a
+brandhook, not motion at frame 0) — going-viral's advice, and RULES.md §5 wants
+the most recognisable brand mark animated in the hook, so RULES.md wins per the
+stated precedence; three DEAD SPACE advisories on deliberately sparse type
+cards. The ElevenLabs read came back at 3.12 w/s against the 2.35-2.75 band —
+NOT regenerated, because 2026-09-02 measured that pace tracks the script's
+sentence profile and cannot be recovered after approval (14 pace marks made a
+read *faster*), so a second take at ~Rs 2,100 would very likely return the same
+number. No blocking gate was overridden and `--soft` was not used.
