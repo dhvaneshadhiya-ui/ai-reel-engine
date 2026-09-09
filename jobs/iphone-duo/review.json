@@ -1,0 +1,12 @@
+{
+  "script_sha256": "04f6a1336a9afbe64f7e3667d4f81de7a1b4453084f2c1cedb122f5b1e7b441e",
+  "structure_sha256": "44d99cdd241856f629fac3611acfdcd8b216a528840b0a6e0db3165dd44c29fc",
+  "findings": [
+    "CADENCE: only 1 sentence reaches 18 words (longest 22). The playbook asks for 'occasionally one long spec sentence' \u2014 with everything short, nothing reads as short. Nothing to push against.",
+    "HOUSE TIC: 'apple says it' \u2014 already used in 1 other script(s) (apple-trade-in-value). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 14,
+  "proposedAt": "2026-09-09T19:02:35+00:00"
+}

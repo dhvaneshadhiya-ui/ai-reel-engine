@@ -7458,3 +7458,65 @@ scripts is starting to look like a pattern rather than noise.
   claim" reveal; alternating receipt/facecam specifically to avoid a
   same-image duplicate-frame flag (a technique, not a look — fine to reuse
   when the same constraint recurs, but don't reach for it as decoration).
+
+## 2026-09-10 — iphone-duo: a receipt's blurred backdrop can trip EDGE TEXT with no text involved
+
+**Raw note.** `lint_frames.py`'s EDGE TEXT check flagged six receipt scenes on
+the first render. Backdrop tuning (`backdrop: "cream"`) and taller re-crops
+(pushing G59 fill from ~30-44% up to 66-100%) genuinely fixed four of them.
+Two (a receipt showing Apple's own product photo above a pricing/date block)
+stayed flagged through three rounds of re-cropping.
+
+**Root cause, confirmed by zooming the actual 8px edge strip the checker
+reads:** `ReceiptScene` always fills the backdrop margin with a blurred,
+scaled copy of the receipt image itself (`blur(48px)` + a brightness/
+saturation tweak keyed to `backdrop`, never a flat fill — see
+`src/components/ReceiptScene.tsx` around the "blurred fill of the receipt
+itself" comment). When the source screenshot contains a warm, high-contrast
+photo (here: hands holding the device), that photo's own colour reaches the
+image edges, and blurring it does not remove enough contrast to drop the
+strip below the EDGE TEXT threshold — even though there is no text there at
+all and the checker's message ("screenshot likely cropped mid-word") does not
+describe what is actually happening.
+
+**Distilled rule.** EDGE TEXT is a real, worth-checking heuristic, but it is
+named for its most common cause, not its only one — a receipt built from a
+source with a busy PHOTO (not just busy text) can trip it purely from the
+backdrop blur, and no `backdrop` value or crop-height change removes a
+photo's own edge colour. Before reaching for `--soft`, actually zoom the
+flagged frame's edge column (both the lint contact sheet and, better, the 8px
+strip the score function reads) to tell a genuine cropped-word case from a
+photo-backdrop case — they need different fixes and only one of them has one.
+
+**Treatment for this reel:** no music, 20 scenes, mean ~3.2s, facecam 21%
+(news band is 10-20%, one point over — three deliberate facecam beats: the
+hook, the honesty beat, and the CTA, none replaceable by an asset per the
+playbook's own rule). Six real mobile receipts, all Apple's own newsroom/
+product pages (no third-party outlet), two SpecSheet builds, two TypeCard
+reveals (the "wrong guesses" payoff — "IPHONE ULTRA" / "IPHONE FOLD, UP TO
+$3,000" — split across two consecutive cards rather than crammed into one).
+Payoff structure: this reel closes the loop opened by two earlier rumor-stage
+reels (`iphone-fold-ultra`, `apple-8-products-september`), which guessed the
+device's name and price before the keynote — the hook and the mid-reel
+"remember those wrong guesses" beat both depend on that prior coverage
+existing, which is why the research ledger cites those two jobs' own sourced
+claims rather than re-deriving the rumor figures from scratch.
+
+**`--soft` used, disclosed here per the tool's own instruction:** two receipt
+scenes (the pricing footer and the release-date card, both built from crops
+that include Apple's product photo) still trip EDGE TEXT after backdrop
+tuning and three rounds of taller re-cropping, for the photo-backdrop reason
+above. Confirmed by direct pixel inspection that no actual text is cropped in
+either frame — the receipt cards are fully legible with normal margins; the
+flagged pixels are the blurred hand/skin-tone edge of the product photo
+sitting in the backdrop margin. Overridden with `--soft` rather than chasing
+a fourth crop, since the two prior fixes (which worked on four other scenes)
+already demonstrated diminishing returns on this specific cause.
+
+**-> next reel must introduce at least one new treatment.** Already used and
+not to be repeated as the SAME shape next: two TypeCard reveals in a row for
+a "list of things that turned out wrong" beat; a SpecSheet card immediately
+following a receipt that already showed the same numbers in prose (Touch
+ID/Face ID after the display-size receipt); breaking up three consecutive
+facecam beats with a single-word TypeCard ("UNCONFIRMED.") rather than a new
+asset.

@@ -1,0 +1,570 @@
+{
+  "emphasis": [
+    "Duo",
+    "1,999",
+    "IP68",
+    "Ultra",
+    "Fold",
+    "Ternus"
+  ],
+  "caption_corrections": {
+    "call": "called",
+    "-orders": "orders",
+    "$19": "nineteen",
+    ".99.": "ninety-nine.",
+    "Ternes": "Ternus"
+  },
+  "format": "news",
+  "shots": [
+    {
+      "start_phrase": "Yesterday you finally found",
+      "line": "Yesterday you finally found out this phone's real name.",
+      "needs": [
+        "Yesterday",
+        "finally",
+        "found",
+        "phone",
+        "real",
+        "name"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone-duo/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "What nobody guessed right:",
+      "line": "What nobody guessed right: not the name, not the price.",
+      "needs": [
+        "nobody",
+        "guessed",
+        "right",
+        "name",
+        "price"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "typecard",
+        "bg": "black",
+        "kinetic": {
+          "text": "NOT THE NAME.\nNOT THE PRICE.",
+          "style": "caps",
+          "at": 0.2,
+          "y": 0.4
+        },
+        "sfx": [
+          {
+            "src": "sfx/Magic Reveal.MP3",
+            "at": 0.08,
+            "vol": 0.16
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Meet the iPhone Duo,",
+      "line": "Meet the iPhone Duo, Apple's first phone that folds.",
+      "needs": [
+        "Meet",
+        "iPhone",
+        "Apple",
+        "first",
+        "phone",
+        "folds"
+      ],
+      "tier": "official",
+      "asset_id": "hook-headline",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone-duo/hook-headline.png",
+        "srcWidth": 1080,
+        "srcHeight": 1350,
+        "covers": "Apple's first phone that folds",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 200,
+            "y": 190,
+            "w": 680,
+            "h": 210
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx/Core.MP3",
+            "at": 0.05,
+            "vol": 0.15
+          }
+        ],
+        "backdrop": "cream"
+      }
+    },
+    {
+      "start_phrase": "Unfolded, the screen measures",
+      "line": "Unfolded, the screen measures 7.6 inches.",
+      "needs": [
+        "Unfolded",
+        "screen",
+        "measures",
+        "7.6",
+        "inches"
+      ],
+      "tier": "official",
+      "asset_id": "hook-photo",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone-duo/hook-photo.png",
+        "srcWidth": 1080,
+        "srcHeight": 1920,
+        "covers": "the screen measures 7.6 inches",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 40,
+            "y": 20,
+            "w": 1000,
+            "h": 600
+          }
+        ],
+        "backdrop": "cream"
+      }
+    },
+    {
+      "start_phrase": "Folded, it's 5.4, so",
+      "line": "Folded, it's 5.4, so it still fits like a normal iPhone.",
+      "needs": [
+        "Folded",
+        "5.4",
+        "still",
+        "fits",
+        "like",
+        "normal"
+      ],
+      "tier": "official",
+      "asset_id": "displays-spec",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone-duo/displays-spec.png",
+        "srcWidth": 1080,
+        "srcHeight": 1400,
+        "covers": "it's 5.4, so it still fits like a normal iPhone",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 60,
+            "y": 540,
+            "w": 960,
+            "h": 180
+          }
+        ],
+        "backdrop": "cream"
+      }
+    },
+    {
+      "start_phrase": "Instead, Touch ID moved",
+      "line": "Instead, Touch ID moved into the side button, and Face ID is gone completely.",
+      "needs": [
+        "Instead",
+        "Touch",
+        "moved",
+        "side",
+        "button",
+        "Face"
+      ],
+      "tier": "multi",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "rows": [
+          {
+            "label": "TOUCH ID",
+            "value": "side button"
+          },
+          {
+            "label": "FACE ID",
+            "value": "none"
+          }
+        ],
+        "footnote": "Apple Newsroom, Sep 9 2026",
+        "sfx": [
+          {
+            "src": "sfx/Pop.MP3",
+            "at": 0.1,
+            "vol": 0.15
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "IP68 rated, running the",
+      "line": "It's also titanium, IP68 rated, running the new A20 Pro with a dual battery and a vapor chamber to keep it cool.",
+      "needs": [
+        "IP68",
+        "rated",
+        "running",
+        "A20",
+        "dual",
+        "battery"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "rows": [
+          {
+            "label": "BODY",
+            "value": "titanium"
+          },
+          {
+            "label": "WATER/DUST",
+            "value": "IP68"
+          },
+          {
+            "label": "CHIP",
+            "value": "A20 Pro"
+          },
+          {
+            "label": "BATTERY",
+            "value": "vapor-cooled"
+          }
+        ],
+        "footnote": "Apple Newsroom, Sep 9 2026",
+        "sfx": [
+          {
+            "src": "sfx/Click.MP3",
+            "at": 0.1,
+            "vol": 0.14
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Nothing Apple's launched at",
+      "line": "Nothing Apple's launched at a higher price, and this one starts at nineteen ninety-nine.",
+      "needs": [
+        "Nothing",
+        "Apple",
+        "launched",
+        "higher",
+        "price",
+        "starts"
+      ],
+      "tier": "official",
+      "asset_id": "price-footer",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone-duo/price-footer.png",
+        "srcWidth": 1080,
+        "srcHeight": 1690,
+        "covers": "Nothing Apple's launched at a higher price",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 40,
+            "y": 1480,
+            "w": 650,
+            "h": 160
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx2/impact-boom.mp3",
+            "at": 0.06,
+            "vol": 0.18
+          }
+        ],
+        "backdrop": "cream"
+      }
+    },
+    {
+      "start_phrase": "Here's the fix Apple",
+      "line": "Here's the fix Apple says it chased harder than cost: a crease you genuinely can't see.",
+      "needs": [
+        "Apple",
+        "says",
+        "chased",
+        "harder",
+        "cost",
+        "crease"
+      ],
+      "tier": "single",
+      "asset_id": "displays-spec",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone-duo/displays-spec.png",
+        "srcWidth": 1080,
+        "srcHeight": 1400,
+        "covers": "Apple says it chased harder than cost: a crease you genuinely can't see",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 60,
+            "y": 360,
+            "w": 960,
+            "h": 180
+          }
+        ],
+        "backdrop": "cream"
+      }
+    },
+    {
+      "start_phrase": "Nano-texture glass, plus a",
+      "line": "Nano-texture glass, plus a titanium plate underneath the display.",
+      "needs": [
+        "Nano-texture",
+        "glass",
+        "plus",
+        "titanium",
+        "plate",
+        "underneath"
+      ],
+      "tier": "single",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "rows": [
+          {
+            "label": "DISPLAY",
+            "value": "nano-texture"
+          },
+          {
+            "label": "HINGE PLATE",
+            "value": "titanium"
+          }
+        ],
+        "footnote": "Apple Newsroom, Sep 9 2026"
+      }
+    },
+    {
+      "start_phrase": "Still, only Apple has",
+      "line": "Still, only Apple has actually held one.",
+      "needs": [
+        "Still",
+        "only",
+        "Apple",
+        "actually",
+        "held"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone-duo/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "Nobody outside the company",
+      "line": "Nobody outside the company has confirmed that crease is really gone.",
+      "needs": [
+        "Nobody",
+        "outside",
+        "company",
+        "confirmed",
+        "crease",
+        "really"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "typecard",
+        "bg": "#0a2540",
+        "kinetic": {
+          "text": "UNCONFIRMED.",
+          "style": "caps",
+          "at": 0.15,
+          "y": 0.45
+        }
+      }
+    },
+    {
+      "start_phrase": "Remember those wrong guesses?",
+      "line": "Remember those wrong guesses?",
+      "needs": [
+        "Remember",
+        "wrong",
+        "guesses"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone-duo/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "Analysts call this thing",
+      "line": "Analysts called this thing the Ultra",
+      "needs": [
+        "Analysts",
+        "call",
+        "thing",
+        "Ultra"
+      ],
+      "tier": "multi",
+      "asset_id": null,
+      "scene": {
+        "type": "typecard",
+        "bg": "#0a2540",
+        "kinetic": {
+          "text": "\"IPHONE ULTRA\"",
+          "style": "caps",
+          "at": 0.2,
+          "y": 0.4
+        },
+        "sfx": [
+          {
+            "src": "sfx/Core.MP3",
+            "at": 0.05,
+            "vol": 0.15
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "or the Fold, and",
+      "line": "or the Fold, and priced it up to three grand.",
+      "needs": [
+        "Fold",
+        "priced",
+        "three",
+        "grand"
+      ],
+      "tier": "multi",
+      "asset_id": null,
+      "scene": {
+        "type": "typecard",
+        "bg": "#0a2540",
+        "kinetic": {
+          "text": "\"IPHONE FOLD\"\nUP TO $3,000",
+          "style": "caps",
+          "at": 0.2,
+          "y": 0.4
+        },
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "at": 0.04,
+            "vol": 0.16
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Then Apple beat every",
+      "line": "Then Apple beat every one of those guesses.",
+      "needs": [
+        "Apple",
+        "beat",
+        "every",
+        "guesses"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone-duo/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "Now, this was also",
+      "line": "Now, this was also the first keynote from Apple's new CEO.",
+      "needs": [
+        "first",
+        "keynote",
+        "Apple"
+      ],
+      "tier": "multi",
+      "asset_id": "quote-receipt",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone-duo/quote-receipt.png",
+        "srcWidth": 1080,
+        "srcHeight": 1250,
+        "covers": "the first keynote from Apple's new CEO",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 60,
+            "y": 1030,
+            "w": 940,
+            "h": 90
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "at": 0.05,
+            "vol": 0.16
+          }
+        ],
+        "backdrop": "cream"
+      }
+    },
+    {
+      "start_phrase": "Tim Cook handed the",
+      "line": "Tim Cook handed the job to John Ternus nine days ago.",
+      "needs": [
+        "Cook",
+        "handed",
+        "John",
+        "Ternus",
+        "nine",
+        "days"
+      ],
+      "tier": "multi",
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone-duo/avatar-master.mp4"
+      }
+    },
+    {
+      "start_phrase": "So pre orders open",
+      "line": "So preorders open October 16th.",
+      "needs": [
+        "pre",
+        "orders",
+        "open",
+        "October",
+        "16th"
+      ],
+      "tier": "official",
+      "asset_id": "release-date",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone-duo/release-date.png",
+        "srcWidth": 1080,
+        "srcHeight": 1760,
+        "covers": "pre orders open October 16th",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 130,
+            "y": 420,
+            "w": 850,
+            "h": 130
+          }
+        ],
+        "backdrop": "cream"
+      }
+    },
+    {
+      "start_phrase": "Could a fold win",
+      "line": "Could a fold win you over?",
+      "needs": [
+        "Could",
+        "fold",
+        "over"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone-duo/avatar-master.mp4"
+      }
+    }
+  ]
+}

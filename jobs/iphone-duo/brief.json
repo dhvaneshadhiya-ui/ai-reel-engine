@@ -1,0 +1,28 @@
+{
+  "slug": "iphone-duo",
+  "topic": "Apple unveils iPhone Duo, its first foldable iPhone",
+  "details": "Confirmed at Apple's Sept 9 2026 'Surprise and Shine' keynote (Ternus's first as CEO). Payoff to our earlier rumor reels (iphone-fold-ultra, apple-surprise-and-shine, apple-8-products-september) which all guessed at name/price/specs. Now official: name is iPhone Duo (not Ultra/Fold as rumored), 7.6in inner + 5.4in outer displays, A20 Pro, Touch ID in side button, dual battery, titanium, eSIM-only, starts $1999, preorder Oct 16, ships Oct 23.",
+  "subject": "Apple unveils iPhone Duo, its first foldable iPhone",
+  "audience": "<who should care, and what they already know>",
+  "platform": "both",
+  "goal": "<awareness|education|engagement|follow|comment|conversion>",
+  "core_value": "<what the viewer learns, feels, sees or can do>",
+  "desired_action": "<if any>",
+  "reveal_target": "none",
+  "cta_keyword": "IPHONE",
+  "target_duration": "75s",
+  "tone": "<voice, personality, boundaries>",
+  "source_policy": "official-preferred",
+  "footage_constraints": "<assets, permissions, presenter, recordings>",
+  "credit_instructions": "on-screen",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 75,
+  "music": false,
+  "created_at": "2026-09-09T18:44:48.498428+00:00",
+  "status": "initialized"
+}
