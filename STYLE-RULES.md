@@ -7408,3 +7408,132 @@ first.
 **The general shape, for the next rule anybody writes here:** a failing case
 says what the gate rejects. A silent case says what it accepts. Only the pair
 says what it MEANS.
+
+## 2026-09-08 — Wisdom Loom teardown: what a 401K reel actually does
+
+Reference: `@wisdomloom-wm8sh`, 355 shorts, 36.5K subs. Four downloaded and
+watched frame by frame (`_sources/_teardown-wisdomloom`, gitignored): two hits
+(401K Apple Pay India, 234K IIT flying taxi) and two flops (2.6K Claude
+watermark, 2.6K 1X robotic hand). Channel-wide view data from the listing.
+
+### THE SUBJECT IS THE LEVER, AND IT IS NOT CLOSE
+
+Median short on that channel: **1,900 views**. Top 10% carry 86% of all views.
+Same presenter, same wall, same editor throughout — so the variance is subject,
+not craft. Classified by title across all 355:
+
+    abstract, non-India (n=78)             median  2,900
+    a physical thing you can photograph    median  4,700
+    India (n=48)                           median  6,100
+    India AND photographable (n=10)        median 57,000
+
+The two effects MULTIPLY. All six of their recent hits are Indian and are
+objects or things happening to people: a hydrogen stove, a self-driving
+tractor, Apple Pay vs UPI, a flying taxi, a drone founder, a state prototype.
+
+**Their best-written script got 2,600 views.** The Claude watermark reel opens
+"Half the internet is canceling Claude subscriptions this week", carries real
+second-person stakes ("You ask Claude to fix punctuation. That entire document
+now carries an AI watermark — not because Claude wrote it, because it touched
+it"), sources the claim to Anthropic's own page, and ends fair-mindedly. It is
+better writing than most of ours. It is about an American software abstraction
+and nobody watched it. Script quality is the floor, not the lever.
+
+### TWO CONCLUSIONS THIS SESSION REACHED AND THEN MEASURED AWAY
+
+Recorded because both were stated confidently before being checked, and both
+were wrong.
+
+**1. "They cut twice as fast as us."** From `ffmpeg select='gt(scene,0.15)'`:
+0.85s per shot against our 2.9s ceiling. FALSE. Scene score is a CUT detector
+and it was firing on animation inside a held beat. Read frame by frame, their
+beats run **~2.7s** — the same as ours. This is the SECOND time scene-detection
+has misled this repo (see 2026-09-02, "three scenes effectively frozen").
+
+**2. "Their document cards stay alive; ours go static."** The reason offered
+for their 8-second Bloomberg hold was intra-beat motion, and a rule was nearly
+written from it. Measured by frame displacement instead:
+
+    their Bloomberg quote card, 8s     83% near-static, median 0.93
+    their Visa/Mastercard logo card    75% near-static, median 0.60
+    OUR sourceread across a whole reel 68% near-static, median 1.53
+
+Their celebrated card is MORE static than ours. And we already had every
+mechanic: `SourceRead` accumulates highlights, sweeps them, pushes in slowly
+and scrolls to follow. Our corpus carries a **median 2.5 highlights per
+sourceread beat, one every 0.92s** — denser than their 2.7s. Nothing was
+missing.
+
+### WHAT IS ACTUALLY DIFFERENT: THE MIX
+
+Whole-reel motion, measured as mean per-pixel change between frames sampled at
+6fps (`tools/motion_mix.py`, which exists because scene score cannot answer
+this):
+
+    Wisdom Loom, n=4 (2 hits AND 2 flops)   near-static  8%-34%
+    ours, 10 renders on disk                near-static 15%-69%
+
+Even their WORST reel is more alive than eight of our ten. This is not a
+hit/flop discriminator for them — it is a floor of the medium that we sit
+below. On `whatsapp-agents`: 61% near-static against their 34% ceiling, and
+the cause is composition, not settings — **41% of that reel is `sourceread`**,
+one document at a time, plus settingspane 10.5% and timeline 6.5%.
+
+Across our 28 beat sheets, share of runtime in near-static scene types runs a
+median of 42%, and the two reels the user complained about hardest are the top
+two: **claude-fable-5-1 at 78%, whatsapp-agents at 69%**. The felt complaint
+("no zooming or scrolling effects", videos feel dead) lands exactly on the
+measurement.
+
+**And the fix is editorial, not a setting.** A third of their runtime is real
+footage — an auto-rickshaw with a Paytm QR on the dashboard, a shopkeeper
+taking ₹144, a Kashmir shawl shop. You can only shoot that if the story is
+about people doing something. Their Claude watermark reel had no such footage
+available and fell back on AI-generated stock — which is why it looks like
+ours. Subject choice decides whether live material EXISTS.
+
+**NO GATE, DELIBERATELY.** A check set at their 34% ceiling would fire on eight
+of our ten reels, and per this same day's lesson that is a check describing a
+house style rather than a fault. `motion_mix.py` reports the number and names
+the reference band; the judgement stays with whoever is planning the shots.
+
+### THE ONE STRUCTURAL RULE WORTH TAKING
+
+**Evidence gets the graphics. Judgement gets the face.** Their presenter is
+removed entirely when a document needs the frame (the Business Standard
+article owns all 1080px for two seconds), and takes the WHOLE frame for every
+judgement line — four unbroken seconds at 44-48s for the thesis, with no
+graphic at all. Full-frame presenter totals ~18% of runtime, inside our own
+10-20% news band. We cut away from the face for evidence and never cut back to
+it for the verdict.
+
+Also worth noting, not copying: their hook IS a logo build (Apple mark, "Pay"
+typing in, a rounded card outline drawing itself, 0-1.8s) — the thing G43 and
+`going-viral` both forbid. It survives because the presenter is already
+mid-sentence at frame 0 so the frame is never static, the claim lands at
+**0.9s**, and the rectangle resolves into a CARD, which is the video's whole
+thesis. The animation is the argument, not decoration.
+
+### DO NOT MODEL THEIR SOURCING
+
+The 401K reel contains **fabricated evidence**. At 15s a phone shows a UPI
+"Payment Failed" screen, ₹2,000 debited, red alert, transaction ID. Zoomed: the
+UPI logo reads "CHNAE MENTTOIR" (the real mark says *Unified Payments
+Interface*), plus "Reardvy", "Bank Menber / Numbed", and a timestamp of
+"22:17:30 am". AI-generated — correct layout, garbage text. Worse, it argues
+something the script never claims: the reel says Apple Pay launches WITHOUT
+UPI, not that UPI payments fail.
+
+At 33-34s, "and a sponsor bank partnership" — a claim about Indian banks — is
+illustrated with stock footage of TÜRKIYE İŞ BANKASI in Ankara, Turkish flags
+and Ankara street signs in shot.
+
+G39 (a document must name the line it proves) and CLAUDE.md's rejection of
+generated imagery standing in for a source would both have caught these. That
+is what our gates are for, and this is what it looks like when a 401K video
+skips them. Take their mix and their presenter discipline; take none of this.
+
+(A third suspected fake at 58s was checked and CLEARED — the BHIM payee reads
+"Noor-e-Kashmir Shawl House" and matches the shop sign above it. Recorded
+because the first read of the contact sheet called it gibberish and a proper
+zoom said otherwise.)

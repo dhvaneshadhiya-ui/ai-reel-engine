@@ -435,7 +435,14 @@ for _tool, _label in (("check_frame_contract", "frame contract"),
                       # time. textsplit is imported by vo_tagged, plan_shots
                       # and check_script, so a regression there mis-splits the
                       # VO, the shot boundaries AND the prose numbers at once.
-                      ("textsplit", "sentence splitter")):
+                      ("textsplit", "sentence splitter"),
+                      # 2026-09-08, and the rule caught its author a FOURTH
+                      # time: motion_mix was written, wiring_audit failed
+                      # doctor for the unrun --selftest, and it got wired in
+                      # the same hour. Its bands are what separate "a card is
+                      # holding" from "something is moving", and that
+                      # distinction is the one scene-detection got wrong twice.
+                      ("motion_mix", "motion mix bands")):
     try:
         r = subprocess.run(
             [sys.executable, str(ROOT / f"tools/{_tool}.py"), "--selftest"],

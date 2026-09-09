@@ -424,6 +424,22 @@ technical term appears on screen in standard notation. [GATE:G16]
   treatments after. [EYE]
 - Plain black typecard: fallback of last resort, **max one per reel**.
   [GATE:G12]
+- **Ask what fraction of this reel will actually MOVE, while the shot plan is
+  still changeable.** `python3 tools/motion_mix.py --all` reports the split
+  (near-static / animating / live) for every render; the 4-reel Wisdom Loom
+  reference sits at 8-34% near-static and our own renders run 15-69%, with
+  claude-fable-5-1 at 78% and whatsapp-agents at 69% — the two the user called
+  dead. The cause is composition, not settings: 41% of whatsapp-agents is
+  `sourceread`, one document at a time. Deliberately NOT a gate — a threshold
+  at the reference ceiling would fire on eight of our ten reels, which
+  describes a house style rather than a fault. The fix is editorial: pick
+  stories that have something live to show, and get real footage of it.
+  See STYLE-RULES 2026-09-08. [EYE]
+- **Evidence gets the graphics, judgement gets the face.** Take the presenter
+  OUT of the frame when a document needs it, and give the presenter the WHOLE
+  frame for the verdict line. Measured on a 401K reference reel: the article
+  owns all 1080px for two seconds, and the thesis gets four unbroken seconds of
+  face with no graphic. [EYE]
 
 ## 10. Engine discipline
 
