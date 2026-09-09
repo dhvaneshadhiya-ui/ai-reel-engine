@@ -7343,3 +7343,118 @@ WordCascade for the mechanism payoff and the logic beat. No black typecard.
   date-slip rail with one accent card; Checklist with a "?" (unknown) row
   state alongside two "done" rows; the specific WordCascade-as-logic-beat
   pairing (short paraphrase driving a reasoning sentence, not a payoff).
+
+## 2026-09-09 — meta-muse-ai-agent: a receipt zoom ceiling that no highlight box can beat
+
+**Raw note.** Frame-lint blocked twice on the same reel for two different
+receipt problems: first EDGE TEXT on two beats (a caption chip landing on
+the App Store badges) plus a DUPLICATE flag between two adjacent icon-grid
+highlights; after re-cropping tighter, the EDGE TEXT cleared but the
+DUPLICATE flag came right back on a different adjacent pair.
+
+**Root cause.** `ReceiptScene.tsx` fits the card to a fixed 86% of frame
+width (`cardW = width * 0.86`) and then hard-caps the push-in zoom at
+`cardFits = width / cardW` — algebraically **1/0.86 ≈ 1.16x**, a CONSTANT
+that has nothing to do with the highlight box. A highlight tight enough to
+compute `fit > 2` (the union-fit math) never gets there: `zFits =
+min(fitsZoom(...), cardFits)` and `cardFits` is the smaller term every time,
+because it depends only on the fixed 86% card width, never on the source
+image or the highlight. Four beats that each tried to "zoom into a
+different icon" on the same 1080x2100 capture therefore all rendered as
+nearly the same barely-pushed-in full card, with only a small yellow marker
+box moving — which is exactly what an adjacent-frame hash comparison reads
+as a duplicate when two markers happen to sit close together on the grid
+(175px apart, same row, was the specific failure).
+
+**The EDGE TEXT half had a different, compounding cause**: the SAME 2100px-
+tall source made `cardH` fill ~94% of the 1920px canvas at the ~1.16x
+ceiling, leaving almost no vertical room for the caption chip below the
+card — it landed on the App Store badges. Both problems trace to the same
+fact: this component was never going to zoom this source enough to change
+its footprint, no matter how the highlight was drawn.
+
+**Distilled rule.** A receipt's push-in is bounded by the 86%-card-width
+constant, not by the highlight box — do not spend a render cycle tightening
+a highlight rectangle to "fix" a duplicate-frame or dead-space flag on a
+receipt; it cannot move the ceiling. When one source image needs to carry
+several consecutive beats, ALTERNATE it with a different scene type
+(facecam, a headline overlay, an MG card) so no two receipt beats naming
+the same file are ever adjacent — the frame-lint's duplicate check flags
+*adjacent same-type* frames, so breaking adjacency is a complete fix and a
+tighter crop is not. Reserve highlight boxes for what they are actually
+for: marking WHERE on the page the claim sits, not for manufacturing a
+zoom the component's own width contract does not allow.
+
+**A second, unrelated boundary bug found the same session, worth its own
+line:** `region_bounds`'s default 0.12s post-anchor buffer assumes a small
+gap before the next word. On a run-on sentence with NO internal pauses
+(every word's end == the next word's start, measured directly from
+`vo.json`), that buffer pushes the beat's end PAST the next word's start,
+so G18 (a card must outlast the sentence it illustrates) sees that next
+word as "starting during this card" and demands the card hold through ITS
+end too — which then does the same to the word after that, cascading
+indefinitely if you keep extending the anchor to chase it. The fix is not a
+longer anchor; it is a buffer of `0.0` for exactly that one region, so the
+cut lands precisely on the word boundary with nothing bleeding across it.
+Added a per-region buffer override to `region_bounds` for this.
+
+**A third: `validate_job.py`'s presenter check is UNCONDITIONAL on
+`scenes[0]`, not on Rule 1/2/3 content.** A reel that opens on a receipt
+(here: Meta's own "world's first" headline, arguably the single strongest
+possible hook frame) still fails "opening scene must visibly include the
+presenter" the moment the avatar appears ANYWHERE later in the sheet — the
+check has no notion of "the hook doesn't need the face, scene 4 does."
+Fixed here by opening on a bare facecam micro-beat (1.66s, under the format's
+2.0s hook cap) before cutting to the receipt, rather than treating this as
+a rule to argue with.
+
+Treatment for this reel: no music (declared via noMusic+noMusicReason,
+matches the 2026-08-24 voice+SFX default), facecam ~72% (high for news'
+10-20% band — driven by the SAME root cause as apple-ai-home-security-2027's
+72%, but for a different reason this time: not "no photographable subject"
+but "G04's per-type duration caps forced most of a fast, comma-light script
+onto facecam+headline-overlay rather than held MG cards", since this
+script's sentences run 10-20 words at the read's measured 3.15-3.51 w/s —
+faster than the 2.35-2.75 band the caps assume, so more of the runtime
+lands in facecam-sized slices than a same-length script at typical pace
+would). Two real mobile receipts (Meta's own press-release headline,
+ai.meta.com/muse), one specsheet (Secure VM claim), one statcard (the FTC
+$5B fine) — no logo assets: `LogoAssemble`/`ToolStack` both need per-item
+image or path assets, and the plain "Amazon" wordmark does not exist in the
+svgl library (only AWS/Amazon-Q sub-brand marks, which would misattribute
+Nova Act's branding), so the four-competitor beat is a plain facecam
+headline instead of a logo card.
+
+**Another data point for the still-unbuilt pace-vs-sentence-length
+correlation** (STYLE-RULES 2026-09-02 already flagged n=2 as too thin):
+this ElevenLabs v3 read measured 3.13-3.51 w/s against the 2.35-2.75 band —
+short, comma-heavy declaratives throughout (mean 12 words/sentence,
+matching the playbook's own "short declaratives" rule), consistent with
+the theory that short sentences give the model nothing to slow down for.
+n=3 now (claude-fable-5-1, chatgpt-stickers, this one) — still short of a
+real threshold, but three fast reads and zero slow ones on short-sentence
+scripts is starting to look like a pattern rather than noise.
+
+### Treatment history — meta-muse-ai-agent
+
+- Skeptical single-launch news reel (Meta's Muse agent), no music, 34
+  scenes, mean ~1.91s, facecam 71% (see root-cause note above — a fast read
+  plus G04's caps, not a missing subject this time). Receipts: Meta's own
+  press-release headline (the "world's first" claim, hook), ai.meta.com/muse
+  product page (2 non-adjacent icon-grid pulls). One SpecSheet (Secure VM),
+  one StatCard (FTC $5B fine, pct expressed as a 0-1 fraction per G55, not
+  a percent). No CategoryGrid/LogoAssemble this reel (see logo-library gap,
+  above) — the four-competitor beat is a facecam headline overlay instead.
+- New here: opened on a 1.66s facecam micro-beat purely to satisfy
+  `validate_job.py`'s presenter-in-scene-0 check before cutting to the
+  receipt hook — the shortest possible "clear the gate" beat, not a
+  storytelling choice; worth folding into `kit`/build-template guidance so
+  the next receipt-hook reel does not rediscover this by a failed render.
+  Per-region buffer override on `region_bounds` (0.0 for a beat immediately
+  followed by a contiguous, no-gap word) — see the G18 cascade note above.
+- -> next reel must introduce at least one new treatment. Already used and
+  not to be repeated as the SAME shape next: SpecSheet as a single-row
+  "META'S OWN CLAIM" architecture card; StatCard as a single-row "biggest
+  claim" reveal; alternating receipt/facecam specifically to avoid a
+  same-image duplicate-frame flag (a technique, not a look — fine to reuse
+  when the same constraint recurs, but don't reach for it as decoration).

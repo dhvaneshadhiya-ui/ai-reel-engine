@@ -1,0 +1,283 @@
+{
+  "emphasis": [],
+  "caption_corrections": {},
+  "format": "news",
+  "shots": [
+    {
+      "start_phrase": "Meta just called its",
+      "line": "Meta just called its new AI agent the world's first personal AI agent.",
+      "needs": [
+        "Meta",
+        "called",
+        "agent",
+        "world",
+        "first",
+        "personal"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "But the catch is",
+      "line": "But the catch is bigger than that.",
+      "needs": [
+        "catch",
+        "bigger"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "It's called Muse, and",
+      "line": "It's called Muse, and Zuckerberg says it'll work 24/7 so you don't have to.",
+      "needs": [
+        "called",
+        "Muse",
+        "Zuckerberg",
+        "says",
+        "work",
+        "24"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Meaning it doesn't just",
+      "line": "Meaning it doesn't just chat back.",
+      "needs": [
+        "Meaning",
+        "doesn",
+        "chat",
+        "back"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "It emails people, books",
+      "line": "It emails people, books your flights, and haggles your bill down.",
+      "needs": [
+        "emails",
+        "people",
+        "books",
+        "flights",
+        "haggles",
+        "bill"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "It'll even turn a",
+      "line": "It'll even turn a recipe you saved off Instagram into a grocery list.",
+      "needs": [
+        "even",
+        "turn",
+        "recipe",
+        "saved",
+        "Instagram",
+        "grocery"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "All of that needs",
+      "line": "All of that needs real access to your accounts.",
+      "needs": [
+        "needs",
+        "real",
+        "access",
+        "accounts"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "So Muse runs inside",
+      "line": "So Muse runs inside its own secure computer",
+      "needs": [
+        "Muse",
+        "runs",
+        "inside",
+        "secure",
+        "computer"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "walled off from the",
+      "line": "walled off from the rest of the internet.",
+      "needs": [
+        "walled",
+        "rest",
+        "internet"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "And a separate watchdog",
+      "line": "And a separate watchdog called Sentinel has to approve anything before it leaves that computer.",
+      "needs": [
+        "separate",
+        "watchdog",
+        "called",
+        "Sentinel",
+        "approve",
+        "anything"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Meta says Muse never",
+      "line": "Meta says Muse never even sees your password or your card.",
+      "needs": [
+        "Meta",
+        "says",
+        "Muse",
+        "never",
+        "even",
+        "sees"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "The catch: Muse isn't",
+      "line": "The catch: Muse isn't the first personal AI agent.",
+      "needs": [
+        "catch",
+        "Muse",
+        "first",
+        "personal",
+        "agent"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Four other companies already",
+      "line": "Four other companies already shipped agents like this before Meta did: Google",
+      "needs": [
+        "Four",
+        "other",
+        "companies",
+        "already",
+        "shipped",
+        "agents"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "OpenAI, Amazon and Anthropic.,",
+      "line": "OpenAI, Amazon and Anthropic., Not to mention",
+      "needs": [
+        "OpenAI",
+        "Amazon",
+        "Anthropic",
+        "mention"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "the FTC once fined",
+      "line": "the FTC once fined this same company five billion dollars over how it handled people's data., For now",
+      "needs": [
+        "once",
+        "fined",
+        "same",
+        "company",
+        "five",
+        "billion"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Muse launches in the",
+      "line": "Muse launches in the US only, on the phone or the web, free to start.",
+      "needs": [
+        "Muse",
+        "launches",
+        "only",
+        "phone",
+        "free",
+        "start"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "Want more?",
+      "line": "Want more?",
+      "needs": [
+        "Want"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "That's $20 or $100",
+      "line": "That's $20 or $100 a month.",
+      "needs": [
+        "$20",
+        "$100",
+        "month"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "So before you let",
+      "line": "So before you let Muse work 24/7 on your behalf",
+      "needs": [
+        "before",
+        "Muse",
+        "work",
+        "24",
+        "7",
+        "behalf"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    },
+    {
+      "start_phrase": "is Meta really who",
+      "line": "is Meta really who you want holding the keys?",
+      "needs": [
+        "Meta",
+        "really",
+        "want",
+        "holding",
+        "keys"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {}
+    }
+  ]
+}

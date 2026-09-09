@@ -1,0 +1,1928 @@
+{
+  "id": "meta-muse-ai-agent",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "format": "news",
+  "audio": "assets/meta-muse-ai-agent/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "noMusic": true,
+  "noMusicReason": "brief.json set music:false \u2014 voice + SFX only, per the 2026-08-24 standing default; a skeptical editorial piece needs no bed under the receipts.",
+  "script": "Meta just called its new AI agent the world's first personal AI agent. But the catch is bigger than that.\n\nIt's called Muse, and Zuckerberg says it'll work 24/7 so you don't have to.\n\nMeaning it doesn't just chat back. It emails people, books your flights, and haggles your bill down. It'll even turn a recipe you saved off Instagram into a grocery list.\n\nAll of that needs real access to your accounts. So Muse runs inside its own secure computer, walled off from the rest of the internet. And a separate watchdog called Sentinel has to approve anything before it leaves that computer. Meta says Muse never even sees your password or your card.\n\nThe catch: Muse isn't the first personal AI agent. Four other companies already shipped agents like this before Meta did: Google, OpenAI, Amazon and Anthropic.\n\nNot to mention, the FTC once fined this same company five billion dollars over how it handled people's data.\n\nFor now, Muse launches in the US only, on the phone or the web, free to start. Want more? That's $20 or $100 a month.\n\nSo before you let Muse work 24/7 on your behalf, is Meta really who you want holding the keys?",
+  "approval": {
+    "sha256": "927a9ee9a23131ce1501659e0f0fabf060bb8285ef66fdea1ae05b62ddeec3d9",
+    "approvedAt": "2026-09-09T05:24:48+00:00"
+  },
+  "captionCorrections": {
+    "build": "bill"
+  },
+  "emphasis": [
+    "Meta",
+    "Muse",
+    "24/7",
+    "Google",
+    "OpenAI",
+    "Amazon",
+    "Anthropic",
+    "$5,000,000,000",
+    "$20",
+    "$100"
+  ],
+  "scenes": [
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 1.78,
+      "from": 0.0,
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "SEPT 8, 2026",
+            "kind": "label",
+            "at": 0.1
+          }
+        ],
+        "y": 0.06,
+        "theme": "light",
+        "align": "center"
+      },
+      "zoomDir": "in",
+      "zoom": 1.0
+    },
+    {
+      "type": "receipt",
+      "src": "assets/meta-muse-ai-agent/receipt-press-headline-crop.png",
+      "durationSec": 1.36,
+      "srcWidth": 1080,
+      "srcHeight": 1350,
+      "backdrop": "cream",
+      "assetId": "receipt-press-headline",
+      "credit": "Meta Newsroom",
+      "highlights": [
+        {
+          "x": 20,
+          "y": 610,
+          "w": 1040,
+          "h": 480,
+          "at": 0.1
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.05
+        }
+      ],
+      "covers": "agent the world's"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/meta-muse-ai-agent/receipt-press-headline-crop.png",
+      "durationSec": 1.48,
+      "srcWidth": 1080,
+      "srcHeight": 1350,
+      "backdrop": "cream",
+      "assetId": "receipt-press-headline",
+      "credit": "Meta Newsroom",
+      "highlights": [
+        {
+          "x": 20,
+          "y": 630,
+          "w": 1040,
+          "h": 300,
+          "at": 0.05
+        }
+      ],
+      "covers": "first personal AI agent"
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 1.68,
+      "from": 4.62,
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "THE CATCH",
+            "kind": "headline",
+            "at": 0.15,
+            "accent": true
+          }
+        ],
+        "y": 0.14,
+        "theme": "light",
+        "align": "center"
+      },
+      "zoomDir": "in",
+      "zoom": 1.12
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 2.36,
+      "from": 6.3,
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "zoom": 1.0
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 2.34,
+      "from": 8.66,
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "ZUCKERBERG, ON X",
+            "kind": "label",
+            "at": 0.1
+          },
+          {
+            "text": "WORKS 24/7",
+            "kind": "headline",
+            "at": 0.4,
+            "accent": true
+          }
+        ],
+        "y": 0.07,
+        "theme": "light",
+        "align": "center"
+      },
+      "zoomDir": "in",
+      "zoom": 1.12
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 1.68,
+      "from": 11.0,
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "zoom": 1.0
+    },
+    {
+      "type": "receipt",
+      "src": "assets/meta-muse-ai-agent/receipt-muse-product-page-crop.png",
+      "durationSec": 2.12,
+      "srcWidth": 1080,
+      "srcHeight": 2100,
+      "backdrop": "cream",
+      "assetId": "receipt-muse-product-page",
+      "credit": "Meta / ai.meta.com",
+      "highlights": [
+        {
+          "x": 650,
+          "y": 1800,
+          "w": 180,
+          "h": 150,
+          "at": 0.05
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.05
+        }
+      ],
+      "covers": "it emails people books your flights"
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 1.6,
+      "from": 14.8,
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "HAGGLES YOUR BILL",
+            "kind": "label",
+            "at": 0.1
+          }
+        ],
+        "y": 0.14,
+        "theme": "light",
+        "align": "center"
+      },
+      "zoomDir": "in",
+      "zoom": 1.0
+    },
+    {
+      "type": "receipt",
+      "src": "assets/meta-muse-ai-agent/receipt-muse-product-page-crop.png",
+      "durationSec": 2.46,
+      "srcWidth": 1080,
+      "srcHeight": 2100,
+      "backdrop": "cream",
+      "assetId": "receipt-muse-product-page",
+      "credit": "Meta / ai.meta.com",
+      "highlights": [
+        {
+          "x": 95,
+          "y": 1615,
+          "w": 180,
+          "h": 150,
+          "at": 0.05
+        }
+      ],
+      "covers": "turn a recipe you saved off Instagram"
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 1.38,
+      "from": 18.86,
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "GROCERY LIST",
+            "kind": "label",
+            "at": 0.1
+          }
+        ],
+        "y": 0.14,
+        "theme": "light",
+        "align": "center"
+      },
+      "zoomDir": "in",
+      "zoom": 1.0
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 2.48,
+      "from": 20.24,
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "zoom": 1.12
+    },
+    {
+      "type": "specsheet",
+      "kicker": "META'S OWN CLAIM",
+      "title": "WHERE MUSE RUNS",
+      "rows": [
+        {
+          "label": "Runs in",
+          "value": "Secure VM",
+          "accent": true
+        }
+      ],
+      "footnote": "Source: about.fb.com, Sept 2026",
+      "durationSec": 2.86,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.05
+        }
+      ],
+      "covers": "Muse runs inside its own secure computer"
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 1.88,
+      "from": 25.58,
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "WALLED OFF",
+            "kind": "headline",
+            "at": 0.15,
+            "accent": true
+          }
+        ],
+        "y": 0.14,
+        "theme": "light",
+        "align": "center"
+      },
+      "zoomDir": "in",
+      "zoom": 1.12
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 1.88,
+      "from": 27.46,
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "SENTINEL WATCHDOG",
+            "kind": "label",
+            "at": 0.1
+          }
+        ],
+        "y": 0.14,
+        "theme": "light",
+        "align": "center"
+      },
+      "zoomDir": "in",
+      "zoom": 1.0
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 2.86,
+      "from": 29.34,
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "zoom": 1.12
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 1.88,
+      "from": 32.2,
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "META SAYS:",
+            "kind": "label",
+            "at": 0.1
+          }
+        ],
+        "y": 0.14,
+        "theme": "light",
+        "align": "center"
+      },
+      "zoomDir": "in",
+      "zoom": 1.0
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 1.54,
+      "from": 34.08,
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "NO PASSWORD. NO CARD.",
+            "kind": "label",
+            "at": 0.1,
+            "accent": true
+          }
+        ],
+        "y": 0.14,
+        "theme": "light",
+        "align": "center"
+      },
+      "zoomDir": "in",
+      "zoom": 1.12
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 1.5,
+      "from": 35.62,
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "THE CATCH",
+            "kind": "headline",
+            "at": 0.15,
+            "accent": true
+          }
+        ],
+        "y": 0.14,
+        "theme": "light",
+        "align": "center"
+      },
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.15
+        }
+      ],
+      "zoomDir": "in",
+      "zoom": 1.0
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 1.7,
+      "from": 37.12,
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "zoom": 1.12
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 2.26,
+      "from": 38.82,
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "zoom": 1.0
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 1.36,
+      "from": 41.08,
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "zoom": 1.12
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 2.9,
+      "from": 42.44,
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "GOOGLE \u00b7 OPENAI",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "AMAZON \u00b7 ANTHROPIC",
+            "kind": "label",
+            "at": 1.3
+          }
+        ],
+        "y": 0.14,
+        "theme": "light",
+        "align": "center"
+      },
+      "zoomDir": "in",
+      "zoom": 1.0
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 2.84,
+      "from": 45.34,
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "META'S OWN RECORD",
+            "kind": "label",
+            "at": 0.15
+          }
+        ],
+        "y": 0.14,
+        "theme": "light",
+        "align": "center"
+      },
+      "zoomDir": "in",
+      "zoom": 1.12
+    },
+    {
+      "type": "statcard",
+      "title": "META'S PRIVACY RECORD",
+      "titleRight": "2019",
+      "rows": [
+        {
+          "label": "FTC penalty",
+          "value": "$5B",
+          "pct": 1.0,
+          "color": "#E4572E"
+        }
+      ],
+      "footnote": "Source: FTC.gov",
+      "durationSec": 1.02,
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "vol": 0.556,
+          "at": 0.05
+        }
+      ],
+      "covers": "company 5 billion"
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 2.3,
+      "from": 49.2,
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "zoom": 1.12
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 2.42,
+      "from": 51.5,
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "US ONLY",
+            "kind": "headline",
+            "at": 0.15,
+            "accent": true
+          }
+        ],
+        "y": 0.14,
+        "theme": "light",
+        "align": "center"
+      },
+      "zoomDir": "in",
+      "zoom": 1.0
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 1.46,
+      "from": 53.92,
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "zoom": 1.12
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 0.84,
+      "from": 55.38,
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "zoom": 1.0
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 0.68,
+      "from": 56.22,
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "zoom": 1.12
+    },
+    {
+      "type": "specsheet",
+      "kicker": "LAUNCHING NOW",
+      "title": "MUSE PRICING",
+      "rows": [
+        {
+          "label": "Power",
+          "value": "$20/mo"
+        },
+        {
+          "label": "Maximum",
+          "value": "$100/mo",
+          "accent": true
+        }
+      ],
+      "footnote": "Source: about.fb.com, Sept 2026",
+      "durationSec": 2.48,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.343,
+          "at": 0.05
+        }
+      ],
+      "covers": "thats 20 or 100 a month"
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 2.44,
+      "from": 59.38,
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "zoom": 1.12
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 0.66,
+      "from": 61.82,
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "zoom": 1.0
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-muse-ai-agent/avatar-master.mp4",
+      "durationSec": 2.53,
+      "from": 62.48,
+      "focusX": 0.5,
+      "zoomDir": "in",
+      "zoom": 1.12
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.86,
+      "text": "Meta just called",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Meta"
+        },
+        {
+          "t": 0.42,
+          "text": "just"
+        },
+        {
+          "t": 0.6,
+          "text": "called"
+        }
+      ]
+    },
+    {
+      "start": 0.86,
+      "end": 1.66,
+      "text": "its new AI",
+      "words": [
+        {
+          "t": 0.86,
+          "text": "its"
+        },
+        {
+          "t": 1.06,
+          "text": "new"
+        },
+        {
+          "t": 1.36,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 1.66,
+      "end": 3.02,
+      "text": "agent the world's",
+      "words": [
+        {
+          "t": 1.66,
+          "text": "agent"
+        },
+        {
+          "t": 2.1,
+          "text": "the"
+        },
+        {
+          "t": 2.44,
+          "text": "world's"
+        }
+      ]
+    },
+    {
+      "start": 3.02,
+      "end": 4.02,
+      "text": "first personal AI",
+      "words": [
+        {
+          "t": 3.02,
+          "text": "first"
+        },
+        {
+          "t": 3.18,
+          "text": "personal"
+        },
+        {
+          "t": 3.72,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 4.02,
+      "end": 4.84,
+      "text": "agent. But the",
+      "words": [
+        {
+          "t": 4.02,
+          "text": "agent."
+        },
+        {
+          "t": 4.64,
+          "text": "But"
+        },
+        {
+          "t": 4.72,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 4.84,
+      "end": 5.7,
+      "text": "catch is bigger",
+      "words": [
+        {
+          "t": 4.84,
+          "text": "catch"
+        },
+        {
+          "t": 5.14,
+          "text": "is"
+        },
+        {
+          "t": 5.44,
+          "text": "bigger"
+        }
+      ]
+    },
+    {
+      "start": 5.7,
+      "end": 6.18,
+      "text": "than that.",
+      "words": [
+        {
+          "t": 5.7,
+          "text": "than"
+        },
+        {
+          "t": 5.92,
+          "text": "that."
+        }
+      ]
+    },
+    {
+      "start": 6.36,
+      "end": 6.94,
+      "text": "It's called Muse",
+      "words": [
+        {
+          "t": 6.36,
+          "text": "It's"
+        },
+        {
+          "t": 6.52,
+          "text": "called"
+        },
+        {
+          "t": 6.7,
+          "text": "Muse"
+        }
+      ]
+    },
+    {
+      "start": 6.94,
+      "end": 8.16,
+      "text": "and Zuckerberg says",
+      "words": [
+        {
+          "t": 6.94,
+          "text": "and"
+        },
+        {
+          "t": 7.44,
+          "text": "Zuckerberg"
+        },
+        {
+          "t": 7.86,
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "start": 8.16,
+      "end": 9.68,
+      "text": "it'll work 24-7",
+      "words": [
+        {
+          "t": 8.16,
+          "text": "it'll"
+        },
+        {
+          "t": 8.54,
+          "text": "work"
+        },
+        {
+          "t": 8.78,
+          "text": "24-7"
+        }
+      ]
+    },
+    {
+      "start": 9.68,
+      "end": 10.46,
+      "text": "so you don't",
+      "words": [
+        {
+          "t": 9.68,
+          "text": "so"
+        },
+        {
+          "t": 10.1,
+          "text": "you"
+        },
+        {
+          "t": 10.24,
+          "text": "don't"
+        }
+      ]
+    },
+    {
+      "start": 10.46,
+      "end": 10.88,
+      "text": "have to.",
+      "words": [
+        {
+          "t": 10.46,
+          "text": "have"
+        },
+        {
+          "t": 10.68,
+          "text": "to."
+        }
+      ]
+    },
+    {
+      "start": 11.0,
+      "end": 11.84,
+      "text": "Meaning it doesn't",
+      "words": [
+        {
+          "t": 11.0,
+          "text": "Meaning"
+        },
+        {
+          "t": 11.22,
+          "text": "it"
+        },
+        {
+          "t": 11.54,
+          "text": "doesn't"
+        }
+      ]
+    },
+    {
+      "start": 11.84,
+      "end": 12.56,
+      "text": "just chat back,",
+      "words": [
+        {
+          "t": 11.84,
+          "text": "just"
+        },
+        {
+          "t": 12.0,
+          "text": "chat"
+        },
+        {
+          "t": 12.26,
+          "text": "back,"
+        }
+      ]
+    },
+    {
+      "start": 12.86,
+      "end": 13.68,
+      "text": "it emails people,",
+      "words": [
+        {
+          "t": 12.86,
+          "text": "it"
+        },
+        {
+          "t": 12.94,
+          "text": "emails"
+        },
+        {
+          "t": 13.26,
+          "text": "people,"
+        }
+      ]
+    },
+    {
+      "start": 13.98,
+      "end": 14.68,
+      "text": "books your flights",
+      "words": [
+        {
+          "t": 13.98,
+          "text": "books"
+        },
+        {
+          "t": 14.14,
+          "text": "your"
+        },
+        {
+          "t": 14.34,
+          "text": "flights"
+        }
+      ]
+    },
+    {
+      "start": 14.68,
+      "end": 15.78,
+      "text": "and haggles your",
+      "words": [
+        {
+          "t": 14.68,
+          "text": "and"
+        },
+        {
+          "t": 15.2,
+          "text": "haggles"
+        },
+        {
+          "t": 15.6,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 15.78,
+      "end": 16.28,
+      "text": "bill down.",
+      "words": [
+        {
+          "t": 15.78,
+          "text": "bill"
+        },
+        {
+          "t": 16.0,
+          "text": "down."
+        }
+      ]
+    },
+    {
+      "start": 16.5,
+      "end": 17.1,
+      "text": "It'll even turn",
+      "words": [
+        {
+          "t": 16.5,
+          "text": "It'll"
+        },
+        {
+          "t": 16.68,
+          "text": "even"
+        },
+        {
+          "t": 16.86,
+          "text": "turn"
+        }
+      ]
+    },
+    {
+      "start": 17.1,
+      "end": 17.76,
+      "text": "a recipe you",
+      "words": [
+        {
+          "t": 17.1,
+          "text": "a"
+        },
+        {
+          "t": 17.28,
+          "text": "recipe"
+        },
+        {
+          "t": 17.6,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 17.76,
+      "end": 18.74,
+      "text": "saved off Instagram",
+      "words": [
+        {
+          "t": 17.76,
+          "text": "saved"
+        },
+        {
+          "t": 18.08,
+          "text": "off"
+        },
+        {
+          "t": 18.26,
+          "text": "Instagram"
+        }
+      ]
+    },
+    {
+      "start": 18.74,
+      "end": 19.7,
+      "text": "into a grocery",
+      "words": [
+        {
+          "t": 18.74,
+          "text": "into"
+        },
+        {
+          "t": 19.28,
+          "text": "a"
+        },
+        {
+          "t": 19.44,
+          "text": "grocery"
+        }
+      ]
+    },
+    {
+      "start": 19.7,
+      "end": 20.6,
+      "text": "list. All of",
+      "words": [
+        {
+          "t": 19.7,
+          "text": "list."
+        },
+        {
+          "t": 20.3,
+          "text": "All"
+        },
+        {
+          "t": 20.48,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 20.6,
+      "end": 21.42,
+      "text": "that needs real",
+      "words": [
+        {
+          "t": 20.6,
+          "text": "that"
+        },
+        {
+          "t": 20.78,
+          "text": "needs"
+        },
+        {
+          "t": 21.1,
+          "text": "real"
+        }
+      ]
+    },
+    {
+      "start": 21.42,
+      "end": 22.18,
+      "text": "access to your",
+      "words": [
+        {
+          "t": 21.42,
+          "text": "access"
+        },
+        {
+          "t": 21.82,
+          "text": "to"
+        },
+        {
+          "t": 22.06,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 22.18,
+      "end": 23.26,
+      "text": "accounts. So Muse",
+      "words": [
+        {
+          "t": 22.18,
+          "text": "accounts."
+        },
+        {
+          "t": 22.88,
+          "text": "So"
+        },
+        {
+          "t": 23.08,
+          "text": "Muse"
+        }
+      ]
+    },
+    {
+      "start": 23.26,
+      "end": 24.26,
+      "text": "runs inside its",
+      "words": [
+        {
+          "t": 23.26,
+          "text": "runs"
+        },
+        {
+          "t": 23.64,
+          "text": "inside"
+        },
+        {
+          "t": 24.04,
+          "text": "its"
+        }
+      ]
+    },
+    {
+      "start": 24.26,
+      "end": 25.46,
+      "text": "own secure computer,",
+      "words": [
+        {
+          "t": 24.26,
+          "text": "own"
+        },
+        {
+          "t": 24.54,
+          "text": "secure"
+        },
+        {
+          "t": 24.86,
+          "text": "computer,"
+        }
+      ]
+    },
+    {
+      "start": 25.76,
+      "end": 26.38,
+      "text": "walled off from",
+      "words": [
+        {
+          "t": 25.76,
+          "text": "walled"
+        },
+        {
+          "t": 26.06,
+          "text": "off"
+        },
+        {
+          "t": 26.18,
+          "text": "from"
+        }
+      ]
+    },
+    {
+      "start": 26.38,
+      "end": 26.88,
+      "text": "the rest of",
+      "words": [
+        {
+          "t": 26.38,
+          "text": "the"
+        },
+        {
+          "t": 26.54,
+          "text": "rest"
+        },
+        {
+          "t": 26.72,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 26.88,
+      "end": 27.34,
+      "text": "the internet.",
+      "words": [
+        {
+          "t": 26.88,
+          "text": "the"
+        },
+        {
+          "t": 27.0,
+          "text": "internet."
+        }
+      ]
+    },
+    {
+      "start": 27.54,
+      "end": 28.02,
+      "text": "And a separate",
+      "words": [
+        {
+          "t": 27.54,
+          "text": "And"
+        },
+        {
+          "t": 27.64,
+          "text": "a"
+        },
+        {
+          "t": 27.76,
+          "text": "separate"
+        }
+      ]
+    },
+    {
+      "start": 28.02,
+      "end": 29.22,
+      "text": "watchdog called Sentinel",
+      "words": [
+        {
+          "t": 28.02,
+          "text": "watchdog"
+        },
+        {
+          "t": 28.6,
+          "text": "called"
+        },
+        {
+          "t": 28.86,
+          "text": "Sentinel"
+        }
+      ]
+    },
+    {
+      "start": 29.22,
+      "end": 30.24,
+      "text": "has to approve",
+      "words": [
+        {
+          "t": 29.22,
+          "text": "has"
+        },
+        {
+          "t": 29.74,
+          "text": "to"
+        },
+        {
+          "t": 29.88,
+          "text": "approve"
+        }
+      ]
+    },
+    {
+      "start": 30.24,
+      "end": 31.2,
+      "text": "anything before it",
+      "words": [
+        {
+          "t": 30.24,
+          "text": "anything"
+        },
+        {
+          "t": 30.62,
+          "text": "before"
+        },
+        {
+          "t": 31.0,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 31.2,
+      "end": 32.08,
+      "text": "leaves that computer.",
+      "words": [
+        {
+          "t": 31.2,
+          "text": "leaves"
+        },
+        {
+          "t": 31.46,
+          "text": "that"
+        },
+        {
+          "t": 31.66,
+          "text": "computer."
+        }
+      ]
+    },
+    {
+      "start": 32.28,
+      "end": 33.06,
+      "text": "Meta says Muse",
+      "words": [
+        {
+          "t": 32.28,
+          "text": "Meta"
+        },
+        {
+          "t": 32.54,
+          "text": "says"
+        },
+        {
+          "t": 32.74,
+          "text": "Muse"
+        }
+      ]
+    },
+    {
+      "start": 33.06,
+      "end": 33.96,
+      "text": "never even sees",
+      "words": [
+        {
+          "t": 33.06,
+          "text": "never"
+        },
+        {
+          "t": 33.46,
+          "text": "even"
+        },
+        {
+          "t": 33.74,
+          "text": "sees"
+        }
+      ]
+    },
+    {
+      "start": 33.96,
+      "end": 35.0,
+      "text": "your password or",
+      "words": [
+        {
+          "t": 33.96,
+          "text": "your"
+        },
+        {
+          "t": 34.18,
+          "text": "password"
+        },
+        {
+          "t": 34.62,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 35.0,
+      "end": 35.5,
+      "text": "your card.",
+      "words": [
+        {
+          "t": 35.0,
+          "text": "your"
+        },
+        {
+          "t": 35.16,
+          "text": "card."
+        }
+      ]
+    },
+    {
+      "start": 35.72,
+      "end": 36.06,
+      "text": "The catch,",
+      "words": [
+        {
+          "t": 35.72,
+          "text": "The"
+        },
+        {
+          "t": 35.82,
+          "text": "catch,"
+        }
+      ]
+    },
+    {
+      "start": 36.4,
+      "end": 37.18,
+      "text": "Muse isn't the",
+      "words": [
+        {
+          "t": 36.4,
+          "text": "Muse"
+        },
+        {
+          "t": 36.6,
+          "text": "isn't"
+        },
+        {
+          "t": 37.0,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 37.18,
+      "end": 38.22,
+      "text": "first personal AI",
+      "words": [
+        {
+          "t": 37.18,
+          "text": "first"
+        },
+        {
+          "t": 37.48,
+          "text": "personal"
+        },
+        {
+          "t": 37.94,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 38.22,
+      "end": 39.34,
+      "text": "agent. Four other",
+      "words": [
+        {
+          "t": 38.22,
+          "text": "agent."
+        },
+        {
+          "t": 38.96,
+          "text": "Four"
+        },
+        {
+          "t": 39.14,
+          "text": "other"
+        }
+      ]
+    },
+    {
+      "start": 39.34,
+      "end": 40.58,
+      "text": "companies already shipped",
+      "words": [
+        {
+          "t": 39.34,
+          "text": "companies"
+        },
+        {
+          "t": 39.76,
+          "text": "already"
+        },
+        {
+          "t": 40.22,
+          "text": "shipped"
+        }
+      ]
+    },
+    {
+      "start": 40.58,
+      "end": 41.48,
+      "text": "agents like this",
+      "words": [
+        {
+          "t": 40.58,
+          "text": "agents"
+        },
+        {
+          "t": 40.96,
+          "text": "like"
+        },
+        {
+          "t": 41.22,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 41.48,
+      "end": 42.32,
+      "text": "before Meta did.",
+      "words": [
+        {
+          "t": 41.48,
+          "text": "before"
+        },
+        {
+          "t": 41.78,
+          "text": "Meta"
+        },
+        {
+          "t": 42.16,
+          "text": "did."
+        }
+      ]
+    },
+    {
+      "start": 42.58,
+      "end": 43.54,
+      "text": "Google, OpenAI,",
+      "words": [
+        {
+          "t": 42.58,
+          "text": "Google,"
+        },
+        {
+          "t": 43.12,
+          "text": "OpenAI,"
+        }
+      ]
+    },
+    {
+      "start": 43.96,
+      "end": 45.22,
+      "text": "Amazon and Anthropic.",
+      "words": [
+        {
+          "t": 43.96,
+          "text": "Amazon"
+        },
+        {
+          "t": 44.28,
+          "text": "and"
+        },
+        {
+          "t": 44.78,
+          "text": "Anthropic."
+        }
+      ]
+    },
+    {
+      "start": 45.52,
+      "end": 46.08,
+      "text": "Not to mention,",
+      "words": [
+        {
+          "t": 45.52,
+          "text": "Not"
+        },
+        {
+          "t": 45.64,
+          "text": "to"
+        },
+        {
+          "t": 45.8,
+          "text": "mention,"
+        }
+      ]
+    },
+    {
+      "start": 46.4,
+      "end": 47.2,
+      "text": "the FTC once",
+      "words": [
+        {
+          "t": 46.4,
+          "text": "the"
+        },
+        {
+          "t": 46.46,
+          "text": "FTC"
+        },
+        {
+          "t": 46.82,
+          "text": "once"
+        }
+      ]
+    },
+    {
+      "start": 47.2,
+      "end": 48.06,
+      "text": "fined the same",
+      "words": [
+        {
+          "t": 47.2,
+          "text": "fined"
+        },
+        {
+          "t": 47.7,
+          "text": "the"
+        },
+        {
+          "t": 47.8,
+          "text": "same"
+        }
+      ]
+    },
+    {
+      "start": 48.06,
+      "end": 49.2,
+      "text": "company $5 billion",
+      "words": [
+        {
+          "t": 48.06,
+          "text": "company"
+        },
+        {
+          "t": 48.46,
+          "text": "$5"
+        },
+        {
+          "t": 48.86,
+          "text": "billion"
+        }
+      ]
+    },
+    {
+      "start": 49.2,
+      "end": 50.38,
+      "text": "over how it",
+      "words": [
+        {
+          "t": 49.2,
+          "text": "over"
+        },
+        {
+          "t": 49.98,
+          "text": "how"
+        },
+        {
+          "t": 50.26,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 50.38,
+      "end": 51.38,
+      "text": "handled people's data.",
+      "words": [
+        {
+          "t": 50.38,
+          "text": "handled"
+        },
+        {
+          "t": 50.68,
+          "text": "people's"
+        },
+        {
+          "t": 51.16,
+          "text": "data."
+        }
+      ]
+    },
+    {
+      "start": 51.62,
+      "end": 51.96,
+      "text": "For now,",
+      "words": [
+        {
+          "t": 51.62,
+          "text": "For"
+        },
+        {
+          "t": 51.74,
+          "text": "now,"
+        }
+      ]
+    },
+    {
+      "start": 52.28,
+      "end": 53.1,
+      "text": "Muse launches in",
+      "words": [
+        {
+          "t": 52.28,
+          "text": "Muse"
+        },
+        {
+          "t": 52.4,
+          "text": "launches"
+        },
+        {
+          "t": 52.86,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 53.1,
+      "end": 53.8,
+      "text": "the US only",
+      "words": [
+        {
+          "t": 53.1,
+          "text": "the"
+        },
+        {
+          "t": 53.2,
+          "text": "US"
+        },
+        {
+          "t": 53.44,
+          "text": "only"
+        }
+      ]
+    },
+    {
+      "start": 53.8,
+      "end": 54.64,
+      "text": "on the phone",
+      "words": [
+        {
+          "t": 53.8,
+          "text": "on"
+        },
+        {
+          "t": 54.16,
+          "text": "the"
+        },
+        {
+          "t": 54.3,
+          "text": "phone"
+        }
+      ]
+    },
+    {
+      "start": 54.64,
+      "end": 55.26,
+      "text": "or the web",
+      "words": [
+        {
+          "t": 54.64,
+          "text": "or"
+        },
+        {
+          "t": 54.88,
+          "text": "the"
+        },
+        {
+          "t": 55.0,
+          "text": "web"
+        }
+      ]
+    },
+    {
+      "start": 55.26,
+      "end": 56.1,
+      "text": "free to start.",
+      "words": [
+        {
+          "t": 55.26,
+          "text": "free"
+        },
+        {
+          "t": 55.62,
+          "text": "to"
+        },
+        {
+          "t": 55.78,
+          "text": "start."
+        }
+      ]
+    },
+    {
+      "start": 56.36,
+      "end": 56.78,
+      "text": "Want more?",
+      "words": [
+        {
+          "t": 56.36,
+          "text": "Want"
+        },
+        {
+          "t": 56.5,
+          "text": "more?"
+        }
+      ]
+    },
+    {
+      "start": 57.06,
+      "end": 58.08,
+      "text": "That's $20 or",
+      "words": [
+        {
+          "t": 57.06,
+          "text": "That's"
+        },
+        {
+          "t": 57.22,
+          "text": "$20"
+        },
+        {
+          "t": 57.5,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 58.08,
+      "end": 59.26,
+      "text": "$100 a month.",
+      "words": [
+        {
+          "t": 58.08,
+          "text": "$100"
+        },
+        {
+          "t": 58.58,
+          "text": "a"
+        },
+        {
+          "t": 59.02,
+          "text": "month."
+        }
+      ]
+    },
+    {
+      "start": 59.56,
+      "end": 60.06,
+      "text": "So before you",
+      "words": [
+        {
+          "t": 59.56,
+          "text": "So"
+        },
+        {
+          "t": 59.6,
+          "text": "before"
+        },
+        {
+          "t": 59.86,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 60.06,
+      "end": 60.88,
+      "text": "let Muse work",
+      "words": [
+        {
+          "t": 60.06,
+          "text": "let"
+        },
+        {
+          "t": 60.26,
+          "text": "Muse"
+        },
+        {
+          "t": 60.52,
+          "text": "work"
+        }
+      ]
+    },
+    {
+      "start": 60.88,
+      "end": 62.02,
+      "text": "24-7 on your",
+      "words": [
+        {
+          "t": 60.88,
+          "text": "24-7"
+        },
+        {
+          "t": 61.7,
+          "text": "on"
+        },
+        {
+          "t": 61.9,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 62.02,
+      "end": 63.06,
+      "text": "behalf, is Meta",
+      "words": [
+        {
+          "t": 62.02,
+          "text": "behalf,"
+        },
+        {
+          "t": 62.62,
+          "text": "is"
+        },
+        {
+          "t": 62.72,
+          "text": "Meta"
+        }
+      ]
+    },
+    {
+      "start": 63.06,
+      "end": 63.74,
+      "text": "really who you",
+      "words": [
+        {
+          "t": 63.06,
+          "text": "really"
+        },
+        {
+          "t": 63.34,
+          "text": "who"
+        },
+        {
+          "t": 63.64,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 63.74,
+      "end": 64.42,
+      "text": "want holding the",
+      "words": [
+        {
+          "t": 63.74,
+          "text": "want"
+        },
+        {
+          "t": 63.94,
+          "text": "holding"
+        },
+        {
+          "t": 64.24,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 64.42,
+      "end": 64.66,
+      "text": "keys?",
+      "words": [
+        {
+          "t": 64.42,
+          "text": "keys?"
+        }
+      ]
+    }
+  ]
+}
