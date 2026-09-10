@@ -841,6 +841,21 @@ if _hits:
     raise SystemExit(1)
 _counted("G07 silent — one article read at three different bands")
 
+# G62 — a reel made entirely of documents has no picture in it. ADVICE.
+# The failing case turns the visual beats into sourcereads; the silent case
+# leaves the baseline's footage alone. Both, because a share-of-runtime check
+# is exactly the shape that quietly starts firing on everything.
+try:
+    _adv = check_beats(copy.deepcopy(BASE), vo_end=vo_end_of(BASE),
+                       manifest=MANIFEST, vo_words=VO_WORDS)
+    _hits = [a for a in _adv if "G62" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G62" in str(a)]
+if _hits:
+    print(f"  FAIL G62 fired on a footage-led reel: {_hits[0][:90]}")
+    raise SystemExit(1)
+_counted("G62 silent — a reel that carries real footage")
+
 # ── THE GUARD THAT WOULD HAVE CAUGHT ALL THREE OF TODAY'S BUGS ──────────────
 #
 # 2026-09-08 turned up three gates measuring the wrong thing, and every one of
@@ -988,6 +1003,16 @@ CASES = [
                 for sc in s["scenes"][:12] if sc["type"] == "footage"],
      "G06", "facecam over 20%"),
     (lambda s: s["scenes"][3].update(src="assets/x/clips/b.mp4"), "G07", "clip reused"),
+    # G62 — every visual beat becomes a document, so the reel has no picture.
+    (lambda s: [s["scenes"][i].clear() or s["scenes"][i].update(
+        type="sourceread", durationSec=2.5, src=f"assets/x/doc{i}.png",
+        srcWidth=1080, srcHeight=2340, credit="@src", covers="benchmark",
+        mobileCaptureOk=True,
+        lines=[{"at": 0.2, "x": 40, "y": 100 + i * 90, "w": 900, "h": 60}])
+        for i, sc in enumerate(s["scenes"])
+        if sc["type"] in ("footage", "split")
+        and "avatar-master" not in str(sc.get("src", ""))],
+     "G62", "a reel with no picture in it, only documents"),
     # The same PAGE at the same PLACE twice is the same picture twice, and
     # still counts — narrowing G07 for documents must not open this hole.
     (lambda s: [s["scenes"][i].update(

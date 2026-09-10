@@ -7537,3 +7537,95 @@ skips them. Take their mix and their presenter discipline; take none of this.
 "Noor-e-Kashmir Shawl House" and matches the shop sign above it. Recorded
 because the first read of the contact sheet called it gibberish and a proper
 zoom said otherwise.)
+
+## 2026-09-10 — we scout proof, not pictures, and it costs us twice
+
+**RAW NOTE.** The user asked why thumbnails cannot be made the way the
+carousel playbook makes carousels — references, research, scouting, real images
+from the sources.
+
+**THE ANSWER WAS NOT A MISSING TOOL.** `tools/make_thumbnail.py` was built on
+exactly that principle and says so in its own docstring: *"Every off-the-shelf
+thumbnail skill wraps a paid image model and returns an AI illustration. Our
+reels are sourced reporting: the strongest possible thumbnail asset is a REAL
+FRAME."* Its `--frame` argument already accepts ANY image under `public/`, not
+only a grab from our own master, so a scouted press-kit still drops straight
+in. It renders through Remotion on the reel's own theme tokens and emits
+1280x720, 1080x1920 and the 1:1 grid crop. The scouting layer is ALREADY
+shared with the carousel playbook, which adopts our manifest format,
+`capture.mjs`, `get_logo.mjs` and `scout_sheet.py` by name.
+
+Two things were genuinely in the way, and only one mattered.
+
+**1. The retirement's escape hatch never worked.** Thumbnails were dropped by
+user directive 2026-08-22 with the renderer kept "so the decision is
+reversible" via `--i-know-its-retired`. The guard reads `sys.argv`, but
+argparse did not know the flag and rejected it as unrecognized. The documented
+reversal was impossible to run — found the first time anyone tried, today.
+One line. Both formats then rendered correctly from a scouted asset, including
+the wide composition that STYLE-RULES 2026-08-19 recorded as producing a black
+frame.
+
+**2. THE REAL ONE: there was nothing to build a thumbnail FROM.** Every asset
+`whatsapp-agents` scouted:
+
+    wabeta-e2ee, wabeta-scope, wabetainfo, techcrunch-ban,
+    whatsapp-security, 9to5mac   — six web-page captures
+    avatar                       — the presenter
+
+Not one product shot, logo, person or place. The rendered thumbnail's image
+panel is a full article at ~210px in the YouTube grid, which is a grey smear.
+
+**ROOT CAUSE, and it is the same one as 2026-09-08.** AGENT.md STEP 1a's scout
+order ran *official channels → creator demos → screenshot receipts → brand
+marks*. **There was no rung for an official still that fills a frame** — a
+product shot is not footage and not a receipt, so it fell in no category and
+nobody ever went and got one. The step then ended by calling a thin manifest
+"a valid outcome, it just means a more graphics-led reel", which licensed the
+failure outright.
+
+**MEASURED across the ten reels rendered on this machine** (`motion_mix.py` for
+the render, beat-sheet types for the plan):
+
+    chatgpt-stickers           7% doc-led -> 15% near-static
+    iphone-third-interface    50%         -> 38%
+    qualcomm-chip-hike        54%         -> 50%
+    apple-surprise-and-shine  75%         -> 69%
+    claude-memory-everywhere  80%         -> 62%
+    whatsapp-agents           83%         -> 61%
+    claude-fable-5-1          86%         -> 69%
+
+    document-led share vs near-static   r = +0.79
+    live-footage share vs near-static   r = -0.75
+
+The spread is 7% to 86%, so this discriminates rather than describing a house
+style. **One habit, two symptoms:** it is why reels sit at twice the reference
+channel's near-static ceiling, AND why there is no thumbnail-worthy asset in
+the manifest. Fixing the scouting fixes both; fixing the thumbnail tool alone
+would have fixed neither.
+
+**DISTILLED RULE.** *Scout a PICTURE, not only proof.* AGENT.md STEP 1a now
+carries the full seven-rung ladder with official product stills at rung 2 and
+real source paths for Apple, Samsung, Google, the App Store and gaming
+platforms — lifted from the carousel playbook, which has had them all along.
+Every asset answers one more question, also borrowed: **does the subject fill
+the frame?** *A small phone floating in a tile is a defect.* The "thin manifest
+is fine" sentence is replaced by the measurement above.
+
+**G62, ADVICE.** A reel 75%+ document-and-graphics by runtime. The floor is
+where the OBSERVED cases turn — all four reels at or above it came back
+61-69% near-static — which is a statement about cases seen, not a prediction,
+and is why it advises. It fires on 6 of 28 sheets. The message says outright
+that relabelling scenes is not the fix; re-scouting is.
+
+**Not decided here:** whether thumbnails come back at all. That was the user's
+call to drop and remains theirs. For Shorts the cover shows only in the channel
+grid and in search, never in the feed, so it is worth materially less than for
+long-form — a plausible reason the call was made, though the ledger records the
+directive without a rationale.
+
+**Note for anyone re-deriving this:** the carousel playbook lives at
+`Claude outputs/carousel-playbook.md` and is UNTRACKED. The ladder was
+therefore copied INTO AGENT.md rather than referenced, so the rule survives on
+a machine that does not have that file — the same reason `skills-global/`
+exists.

@@ -47,6 +47,17 @@ ROOT = Path(__file__).resolve().parent.parent
 # failed it on EVERY cue (9 of 25 advisories on whatsapp-agents, 2026-09-08).
 # A check that fires on every case is describing a broken check. G08 now
 # measures what the rule is actually about: where the cue LANDS.
+# G62: scene types that hold a document or a drawn graphic rather than a
+# picture of something. Derived by measuring each type's real frame-to-frame
+# displacement on a finished render (STYLE-RULES 2026-09-08) — every type here
+# ran 68-96% low-motion; `footage`, `split` and the device treatments did not.
+DOC_LED_TYPES = frozenset({
+    "sourceread", "receipt", "annotatezoom", "settingspane", "uidialog",
+    "checklist", "timeline", "specsheet", "statcard", "chart", "floatcard",
+    "toolstack", "categorygrid", "typecard", "wordcascade",
+})
+DOC_LED_MAX = 0.75
+
 SFX_PEAKS_FILE = ROOT / "tools/sfx_peaks.json"
 SFX_PEAK_TOL = 3.0      # dB either side of the format's target. Wide enough
                         # for craft (a cue deliberately tucked down), tight
@@ -1495,6 +1506,49 @@ def check_beats(beats: dict, vo_end: float | None = None,
             "never zooms, so a desktop capture puts desktop type on a phone — "
             "Rule 2 exists to stop that, and G29 only catches the landscape "
             "half of it.")
+
+    # G62 — IS THERE A PICTURE IN THIS REEL AT ALL? (2026-09-10) ADVICE.
+    #
+    # The user asked why thumbnails could not be built the way carousels are.
+    # The answer turned out to be that there was nothing to build one FROM:
+    # whatsapp-agents scouted seven assets and six were web-page captures.
+    # Not one product shot, logo, person or place. The scout ladder in AGENT.md
+    # had no rung for "an official still that fills a frame", so nobody ever
+    # went and got one, and the step ended by calling a thin manifest "a valid
+    # outcome".
+    #
+    # MEASURED over the ten reels rendered on this machine (tools/motion_mix.py
+    # for the render, beat-sheet scene types for the plan): the share of
+    # runtime given to document-and-graphics scenes tracks how little the
+    # finished reel moves at r = +0.79, and live footage at r = -0.75. The
+    # spread is real, 7% to 86%, so this is not describing a house style.
+    #
+    #   chatgpt-stickers          7% doc-led -> 15% near-static
+    #   iphone-third-interface   50%         -> 38%
+    #   qualcomm-chip-hike       54%         -> 50%
+    #   apple-surprise-and-shine 75%         -> 69%
+    #   claude-memory-everywhere 80%         -> 62%
+    #   whatsapp-agents          83%         -> 61%
+    #   claude-fable-5-1         86%         -> 69%
+    #
+    # The floor is set at 75% because that is where the OBSERVED cases turn:
+    # all four reels at or above it came back at 61-69% near-static, roughly
+    # twice the 34% ceiling measured on the reference channel. That is a
+    # statement about cases seen, not a prediction — which is why this ADVISES.
+    # It is also not a number to satisfy by re-typing scene types: the remedy
+    # is to go back up the ladder and scout a picture.
+    _doc = sum(sc["durationSec"] for sc in scenes if sc["type"] in DOC_LED_TYPES)
+    if total > 0:
+        _share = _doc / total
+        if _share >= DOC_LED_MAX:
+            errors.append(
+                f"G62 {_share:.0%} of this reel is documents and graphics "
+                f"(ceiling {DOC_LED_MAX:.0%}) — every reel measured at this "
+                "level came back 61-69% near-static, about twice the "
+                "reference. Re-scout for something that FILLS a frame: an "
+                "official product still, a real device, a place, a person "
+                "(AGENT.md STEP 1a ladder rung 2). Do not fix this by "
+                "relabelling scenes.")
 
     # G60 — A SPLIT CANNOT SHOW THE PRESENTER'S HANDS (2026-09-02). ADVICE.
     #

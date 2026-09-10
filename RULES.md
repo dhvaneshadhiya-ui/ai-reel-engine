@@ -424,6 +424,18 @@ technical term appears on screen in standard notation. [GATE:G16]
   treatments after. [EYE]
 - Plain black typecard: fallback of last resort, **max one per reel**.
   [GATE:G12]
+- **Scout a PICTURE, not only proof.** The ladder is AGENT.md STEP 1a: official
+  motion → **official product stills that fill a frame** → our own device →
+  creator demos → screenshot receipts → brand marks → generated (abstract only,
+  never a product, logo or person). Rung 2 did not exist until 2026-09-10,
+  which is why `whatsapp-agents` scouted seven assets and six were web
+  captures. Every asset answers one extra question borrowed from the carousel
+  playbook: **does the subject fill the frame?** A full article page is a good
+  `sourceread` and a bad picture. A reel that is 75%+ documents and graphics
+  advises — measured at r = +0.79 against how little the finished reel moves,
+  and every reel observed at that level came back 61-69% near-static, twice
+  the reference. The remedy is to re-scout, never to relabel scenes.
+  [GATE:G62]
 - **Ask what fraction of this reel will actually MOVE, while the shot plan is
   still changeable.** `python3 tools/motion_mix.py --all` reports the split
   (near-static / animating / live) for every render; the 4-reel Wisdom Loom

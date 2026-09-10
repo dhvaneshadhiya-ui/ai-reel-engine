@@ -177,8 +177,46 @@ this step hunts the VISUALS that prove them. Write
 }
 ```
 
-Scout order: official channels/keynotes → creator demo compilations (credit
-them) → screenshot receipts (headless Chrome) → brand marks.
+**THE LADDER — stop at the first clean asset, and note where receipts sit.**
+Widened 2026-09-10 after measuring that our scouting produces DOCUMENTS and
+almost nothing else:
+
+1. **Official motion** — keynotes, product films, press-kit video. The brands
+   host MP4s on the same CDNs as their images.
+2. **Official product stills that FILL A FRAME** — press kit and product page.
+   *This rung did not exist here until 2026-09-10 and it is the one that was
+   missing.* Apple: `apple.com/newsroom` images (`*_inline.jpg.large_2x.jpg`,
+   1300px+), then `apple.com/in/<product>/` (`product-viewer/`, `media-hero/`,
+   `highlights/`, `design/` — skip `*_startframe`, `icon_*`). Samsung:
+   `news.samsung.com/global` press kit. Google: `store.google.com` →
+   `lh3.googleusercontent.com/<id>=w1600`. Apps: iTunes Search API
+   `artworkUrl512` + `screenshotUrls`. Gaming: platform press sites, Steam
+   `appdetails`. A product shot is NOT a receipt and NOT footage — it is the
+   category we had no rung for, which is why we never went and got one.
+3. **Our own device** — `ingest_screencap.py` (see below). Real OS behaviour.
+4. **Creator demo compilations** — credit them.
+5. **Screenshot receipts** — headless Chrome. These PROVE a claim; they are
+   not pictures. See the warning below.
+6. **Brand marks** — `node tools/get_logo.mjs <name>` pulls the official SVG.
+7. **Generated** — abstract topics only, and never a product, a logo or a
+   person. CLAUDE.md rejects generated imagery standing in for a source, and a
+   401K reference reel was caught doing exactly that (STYLE-RULES 2026-09-08).
+
+**Every asset gets asked one more question: does the subject FILL the frame?**
+Borrowed from the carousel playbook, which has had this rule the whole time:
+*a small phone floating in a tile is a defect.* Trim to the subject's bounding
+box. A full article page is a fine `sourceread` asset and a terrible picture —
+it is legible only at full frame and turns to grey at any smaller size.
+
+**A THIN MANIFEST IS NOT A NEUTRAL OUTCOME — MEASURED 2026-09-10.** This step
+used to say "a thin manifest is a valid outcome, it just means a more
+graphics-led reel." That sentence licensed the failure. Across the ten reels
+rendered on this machine, the share of runtime given to document-and-graphics
+scenes correlates with how little the finished reel MOVES at **r = +0.79**,
+and every reel at 75%+ document-led came back at 61-69% near-static — roughly
+twice the 34% ceiling of the reference channel we tore down. `whatsapp-agents`
+scouted six assets and all six were web captures. Graphics being infinite is
+exactly why they are the easy wrong answer. Go and get a picture.
 
 **Your own device is a source.** `python3 tools/ingest_screencap.py` turns an
 iPhone screen recording into a reel-ready clip and scrubs the personal data
