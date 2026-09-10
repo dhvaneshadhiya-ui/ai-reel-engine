@@ -111,6 +111,12 @@ def main() -> None:
     ap.add_argument("--frame", default=None,
                     help="use this image instead of grabbing one (path under public/)")
     ap.add_argument("--style", default="editorial")
+    # The retirement guard at the top of this file reads sys.argv directly, so
+    # argparse has to know the flag exists or it rejects it as unrecognized —
+    # which made the documented escape hatch impossible to actually use.
+    # Found 2026-09-10 the first time anyone tried to reverse the call.
+    ap.add_argument("--i-know-its-retired", action="store_true",
+                    help="run despite the 2026-08-22 retirement")
     args = ap.parse_args()
 
     for name, val in (("--line1", args.line1), ("--line2", args.line2)):
