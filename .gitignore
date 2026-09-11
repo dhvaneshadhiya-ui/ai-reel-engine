@@ -32,3 +32,12 @@ bin/
 
 # per-machine stage timestamps written by showrunner status
 jobs/*/timing.json
+
+# ── working folders: the engine's OUTPUT, not the engine ─────────────────────
+# Claude outputs/ holds finished carousels, covers and PDFs. This repo is PUBLIC
+# and holds the system, so all of that stays local — EXCEPT the carousel
+# playbook, which IS the carousel system. It is tracked in place rather than
+# copied, because every carousel appends a row to its log; a copy would go stale
+# the next time one is made. (2026-09-11)
+Claude outputs/*
+!Claude outputs/carousel-playbook.md
