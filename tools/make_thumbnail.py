@@ -161,17 +161,22 @@ def main() -> None:
     print(f"  wrote  {out.relative_to(ROOT)}  ({out.stat().st_size // 1024} KB, {dims})")
 
     # The check that matters: a profile grid CENTRE-CROPS a 9:16 cover, so
-    # preview the centre square. Anything unreadable here is invisible where
+    # preview exactly that crop. Anything unreadable here is invisible where
     # people actually browse.
+    #
+    # 3:4, NOT 1:1, since 2026-09-11. Instagram moved its profile grid to 3:4
+    # tiles (1080x1440) in January 2025; this preview kept cropping a square,
+    # so it showed LESS than viewers see and the cover was judged on the wrong
+    # picture. Kept in step with GRID_H in src/Thumbnail.tsx.
     if args.fmt == "vertical" and shutil.which("ffmpeg"):
         grid = outdir / f"{args.slug}-grid.png"
         subprocess.run(
             ["ffmpeg", "-y", "-v", "error", "-i", str(out),
-             "-vf", "crop=1080:1080:0:420,scale=400:400", str(grid)],
+             "-vf", "crop=1080:1440:0:240,scale=300:400", str(grid)],
             check=False)
         if grid.exists():
-            print(f"  wrote  {grid.relative_to(ROOT)}  (centre 1:1 crop — how the "
-                  f"profile grid shows it)")
+            print(f"  wrote  {grid.relative_to(ROOT)}  (centre 3:4 crop — how the "
+                  f"Instagram profile grid shows it)")
 
     print("\nUpload as the Reel cover / Shorts custom thumbnail.")
 

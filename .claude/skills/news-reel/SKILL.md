@@ -169,9 +169,14 @@ coverage. Then hunt visuals and write
 - `assets[]` — each with `shows` written **only after looking at extracted
   frames**, plus `quality` and the exact `crop`
 
-Scout order: official channels/keynotes → creator demo compilations (credit
+Scout order — the full ladder lives in AGENT.md STEP 1a, and this line is
+only its summary: official motion → **official product stills that fill a
+frame** (press kit, product page) → our own device → creator demos (credit
 them) → screenshot receipts (`tools/capture.mjs`) → brand marks
-(`tools/get_logo.mjs`).
+(`tools/get_logo.mjs`) → generated, abstract only. Rung 2 was added
+2026-09-10; this copy still carried the old four-rung order a day later,
+which is the one this skill actually loads. Every asset also answers: does
+the subject FILL the frame? A reel 75%+ documents advises (G62).
 
 Keep raw downloads in `<repo>/_sources/<slug>/`, **never** under `public/` —
 Remotion copies all of `public/` on every render.

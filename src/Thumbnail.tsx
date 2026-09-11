@@ -15,14 +15,20 @@ import { ThemeProvider, useTheme } from "./theme/tokens";
  * line sits on a solid accent block. The block is the payoff and the single
  * loudest thing in the frame.
  *
- * THE SAFE SQUARE IS THE WHOLE GAME
- * ---------------------------------
+ * THE SAFE AREA IS THE WHOLE GAME
+ * -------------------------------
  * A 9:16 cover is almost never seen as 9:16 first. In a profile grid it is
- * CENTRE-CROPPED, so anything outside the middle square is invisible exactly
- * where people browse. Everything that must be read therefore lives inside
- * y = 420..1500 (the centre 1080x1080). Above and below is deliberate bleed: it
- * keeps the full-height view composed in the Shorts feed and is allowed to
- * carry nothing but ground.
+ * CENTRE-CROPPED, so anything outside the crop is invisible exactly where
+ * people browse. Everything that must be read lives inside y = 240..1680 — the
+ * centre 1080x1440, a 3:4 tile. Above and below is deliberate bleed: it keeps
+ * the full-height view composed in the Shorts feed and carries only ground.
+ *
+ * WAS A 1:1 SQUARE UNTIL 2026-09-11. Instagram replaced its square profile
+ * grid with 3:4 tiles in January 2025, twenty months before anyone here
+ * checked. Nothing was being cut off — a square fits inside a 3:4 crop — but
+ * 360px of VISIBLE height went unused, and that is the space the subject is
+ * supposed to fill. The preview make_thumbnail.py writes was also cropping 1:1,
+ * so it showed less than viewers actually see.
  *
  * NO PRESENTER FACE. The reference look leans on a creator's face as its
  * anchor; we are a publication, not a personality, so the anchor is the
@@ -31,9 +37,11 @@ import { ThemeProvider, useTheme } from "./theme/tokens";
 
 const W = 1080;
 const H = 1920;
-/** Centre 1:1 crop — the tightest common grid crop. Read-critical content only. */
-const SAFE_TOP = (H - W) / 2; // 420
-const SAFE_H = W; // 1080
+/** Instagram's profile grid tile since Jan 2025: 3:4, i.e. 1080x1440. */
+const GRID_H = 1440;
+/** Centre 3:4 crop — what the grid shows. Read-critical content only. */
+const SAFE_TOP = (H - GRID_H) / 2; // 240
+const SAFE_H = GRID_H; // 1440
 
 export type ThumbnailProps = {
   /** subject wordmark, e.g. "APPLE" — the authority cue, top of the safe square */
@@ -127,7 +135,11 @@ const Vertical: React.FC<InnerProps> = ({
                 maxHeight: "100%",
                 objectFit: "contain",
                 borderRadius: 22,
-                boxShadow: "0 26px 70px rgba(0,0,0,0.65)",
+                // drop-shadow, not box-shadow (2026-09-11): box-shadow shadows the
+                // element's BOX, so a transparent subject (a logo) got a faint
+                // dark rectangle under it. drop-shadow follows the alpha, and
+                // on an opaque photo it is indistinguishable from box-shadow.
+                filter: "drop-shadow(0 26px 40px rgba(0,0,0,0.65))",
               }}
             />
           ) : null}
@@ -284,7 +296,8 @@ const Wide: React.FC<InnerProps> = ({
               maxHeight: "100%",
               objectFit: "contain",
               borderRadius: 18,
-              boxShadow: "0 24px 60px rgba(0,0,0,0.7)",
+              // drop-shadow for the same reason as the vertical layout above.
+              filter: "drop-shadow(0 24px 34px rgba(0,0,0,0.7))",
             }}
           />
         ) : null}

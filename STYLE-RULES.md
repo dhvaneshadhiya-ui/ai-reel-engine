@@ -7629,3 +7629,58 @@ directive without a rationale.
 therefore copied INTO AGENT.md rather than referenced, so the rule survives on
 a machine that does not have that file — the same reason `skills-global/`
 exists.
+
+## 2026-09-11 — the first cover under the new ladder, and three things it found
+
+The user asked for one thumbnail. Made for `whatsapp-agents` (already
+published on Instagram), as a 1080x1920 Reel cover with the image scouted by
+the AGENT.md STEP 1a ladder instead of lifted from a document capture.
+
+**The ladder worked, and the answer was rung 6, not rung 2.** Five official
+WhatsApp press images were pulled from the Meta newsroom and every one failed
+on CONTENT, not looks:
+
+- the group-chat screenshot would put NOT ENCRYPTED over an ordinary birthday
+  chat — the one thing the manifest's `explicitly_NOT_claimed` forbids;
+- "Feature Roundup" is a typographic card that would print Meta's headline on
+  our cover;
+- the Strict Account Settings illustration is a padlock, a check-marked shield
+  and a toggle switched ON — it says *secure*, and under NOT ENCRYPTED it read
+  as a contradiction even at phone size (and the first crop clipped slivers of
+  the neighbouring shapes, which is its own lesson: crop to a bounding box you
+  have LOOKED at, with margin);
+- the security-features header is three panels of UI text, grey at 200px.
+
+So the cover uses the official mark (`get_logo.mjs`, rasterised at 900px).
+Stopping at the first CLEAN asset sometimes means going further down, and a
+rung-2 image that argues against the headline is worse than a logo. All five
+rejections are recorded on the asset in the manifest.
+
+**The words come from the reviewed title, not from scratch.** "AI AGENT CHATS
+/ NOT ENCRYPTED" matches the published YouTube title, which commit 1008b05
+settled after the first packaging said "not encrypted" without "AI agents" —
+the subject goes first so it can never read as "WhatsApp chats aren't
+encrypted". No WHATSAPP wordmark: over the WhatsApp logo it was redundant and
+cost the subject 130px.
+
+**Found 1 — Instagram's grid has been 3:4 since January 2025.** `Thumbnail.tsx`
+kept everything readable in the centre 1080x1080 square and
+`make_thumbnail.py` previewed a 1:1 crop. Nothing was being cut — a square
+fits inside a 3:4 tile — but 360px of VISIBLE height went unused and the
+preview showed less than viewers see, so covers were judged on the wrong
+picture. Safe area is now the centre 1080x1440 (`GRID_H`), and the preview
+crops 3:4. Twenty months stale; nobody had checked the platform.
+
+**Found 2 — `box-shadow` on the subject image drew a rectangle under a
+transparent PNG.** It shadows the element's box, not its shape, so the logo
+sat on a faint dark slab. `filter: drop-shadow()` follows the alpha and is
+identical on an opaque photo, so it replaces box-shadow in BOTH layouts —
+every cover with a cut-out subject had this, not just this one.
+
+**Found 3 — the `news-reel` skill still carried the old four-rung scout
+order** a day after AGENT.md gained rung 2. The skill is the copy that
+actually loads, so the ladder change had not reached the place it needed to
+be. Synced; the skill now names AGENT.md as the source and only summarises.
+
+Thumbnails remain RETIRED as a pipeline step (2026-08-22); this was a single
+cover on request, run through `--i-know-its-retired`.
