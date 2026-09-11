@@ -7761,3 +7761,21 @@ approved source, since the user had already been told to upload it.
 what this machine can*, not *git status is clean*. Before saying it, check that
 nothing the work depended on lives only outside git — `git status --ignored`
 minus the material folders, plus anything run from /tmp.
+
+## 2026-09-11 (4) — the only proof that another machine can do it is another machine
+
+Asked "and on another machine too, right?", the answer was about to be yes: all
+the cover code was on GitHub and `git status` was clean. The repo was cloned
+from GitHub into a scratch folder and asked to make a cover instead. **It
+crashed.** `make_thumbnail.py` writes every frame it prepares into
+`public/assets/<slug>/`, which is gitignored and so absent on a fresh clone; on
+this Mac the folder had always existed, so the bug had never shown. Fixed with
+one mkdir before all three writes, pushed, pulled into the clone, and the cover
+rendered there from nothing but GitHub's version and a logo fetched by
+`get_logo.mjs`.
+
+**Distilled rule:** "it works on another machine" is a claim about a clone,
+and the cheapest honest check is a clone. `git clone` into a scratch folder,
+symlink `node_modules` to skip the reinstall (the code under test is still the
+clone's), run the tool. Twelve seconds, and it found what three careful reviews
+of "what is outside git" had not: a folder the code assumed rather than made.
