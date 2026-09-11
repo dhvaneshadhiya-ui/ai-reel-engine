@@ -1,0 +1,1736 @@
+{
+  "id": "apple-october-lineup",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/apple-october-lineup/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [],
+  "scenes": [
+    {
+      "type": "split",
+      "topSrc": "assets/apple-october-lineup/sept9-invite.png",
+      "bottomSrc": "assets/apple-october-lineup/avatar-master.mp4",
+      "covers": "September 9th",
+      "durationSec": 1.74,
+      "captionBottom": 1000,
+      "assetId": "sept9-invite",
+      "claimId": "sept9-invite",
+      "credit": "Apple",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.5,
+      "captionTheme": "dark"
+    },
+    {
+      "type": "split",
+      "topSrc": "assets/apple-october-lineup/sept9-invite.png",
+      "bottomSrc": "assets/apple-october-lineup/avatar-master.mp4",
+      "covers": "wasn't the finale",
+      "durationSec": 1.24,
+      "captionBottom": 1000,
+      "assetId": "sept9-invite",
+      "claimId": "sept9-invite",
+      "credit": "Apple",
+      "bottomFrom": 1.74,
+      "bottomFocusX": 0.5,
+      "captionTheme": "dark"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-october-lineup/duo-release-date.png",
+      "srcWidth": 1080,
+      "srcHeight": 1760,
+      "backdrop": "cream",
+      "covers": "iPhone Duo ships October 23",
+      "creditOnScreen": true,
+      "credit": "Apple",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 65,
+          "y": 620,
+          "w": 950,
+          "h": 380
+        }
+      ],
+      "durationSec": 4.2,
+      "captionBottom": 406,
+      "assetId": "duo-release-date",
+      "claimId": "duo-release-date",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-october-lineup/nine5mac-roundup.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "black",
+      "covers": "seven more products landing",
+      "creditOnScreen": true,
+      "credit": "9to5Mac / Ryan Christoffel",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 45,
+          "y": 690,
+          "w": 950,
+          "h": 400
+        }
+      ],
+      "durationSec": 2.9,
+      "captionBottom": 384,
+      "assetId": "nine5mac-roundup",
+      "claimId": "nine5mac-roundup"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-october-lineup/m6-schedule.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "covers": "M6 chip",
+      "creditOnScreen": true,
+      "credit": "9to5Mac / Ryan Christoffel",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 45,
+          "y": 700,
+          "w": 950,
+          "h": 320
+        }
+      ],
+      "durationSec": 4.2,
+      "captionBottom": 384,
+      "assetId": "m6-schedule",
+      "claimId": "m6-schedule"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-october-lineup/m6-schedule.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "black",
+      "covers": "without pulling more power",
+      "creditOnScreen": true,
+      "credit": "9to5Mac / Ryan Christoffel",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 45,
+          "y": 1360,
+          "w": 950,
+          "h": 270
+        }
+      ],
+      "durationSec": 1.36,
+      "captionBottom": 384,
+      "assetId": "m6-schedule",
+      "claimId": "m6-schedule"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-october-lineup/appletv-siri.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "covers": "redesigned Apple TV 4K",
+      "creditOnScreen": true,
+      "credit": "MacRumors / Joe Rossignol",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 45,
+          "y": 700,
+          "w": 950,
+          "h": 300
+        }
+      ],
+      "durationSec": 1.78,
+      "captionBottom": 384,
+      "assetId": "appletv-siri",
+      "claimId": "appletv-siri",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-october-lineup/appletv-siri.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "black",
+      "covers": "AI Siri",
+      "creditOnScreen": true,
+      "credit": "MacRumors / Joe Rossignol",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 45,
+          "y": 1300,
+          "w": 950,
+          "h": 550
+        }
+      ],
+      "durationSec": 3.1,
+      "captionBottom": 384,
+      "assetId": "appletv-siri",
+      "claimId": "appletv-siri",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-october-lineup/ipadmini-oled.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "covers": "iPad mini's first OLED screen",
+      "creditOnScreen": true,
+      "credit": "MacRumors / Joe Rossignol",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 45,
+          "y": 700,
+          "w": 950,
+          "h": 350
+        }
+      ],
+      "durationSec": 1.92,
+      "captionBottom": 384,
+      "assetId": "ipadmini-oled",
+      "claimId": "ipadmini-oled"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/apple-october-lineup/ipadmini-oled.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "bg": "black",
+      "focus": {
+        "x": 45,
+        "y": 1100,
+        "w": 950,
+        "h": 350
+      },
+      "covers": "reportedly water resistant, expected before Halloween",
+      "creditOnScreen": true,
+      "credit": "MacRumors / Joe Rossignol",
+      "crop": true,
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 65,
+          "y": 1420,
+          "w": 910,
+          "h": 40
+        }
+      ],
+      "durationSec": 4.54,
+      "assetId": "ipadmini-oled",
+      "claimId": "ipadmini-oled"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/apple-october-lineup/home-hub.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "bg": "black",
+      "focus": {
+        "x": 45,
+        "y": 680,
+        "w": 950,
+        "h": 300
+      },
+      "covers": "touchscreen home hub around 350 dollars",
+      "creditOnScreen": true,
+      "credit": "MacRumors / Juli Clover",
+      "crop": true,
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 65,
+          "y": 950,
+          "w": 910,
+          "h": 40
+        }
+      ],
+      "durationSec": 5.62,
+      "assetId": "home-hub",
+      "claimId": "home-hub"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-october-lineup/home-hub.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "black",
+      "covers": "HomePod mini, refreshed full-size HomePod",
+      "creditOnScreen": true,
+      "credit": "MacRumors / Juli Clover",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 45,
+          "y": 1000,
+          "w": 950,
+          "h": 300
+        }
+      ],
+      "durationSec": 3.3,
+      "captionBottom": 384,
+      "assetId": "home-hub",
+      "claimId": "home-hub"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-october-lineup/home-hub.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "covers": "reportedly been sitting nearly ready for months",
+      "creditOnScreen": true,
+      "credit": "MacRumors / Juli Clover",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 45,
+          "y": 1000,
+          "w": 950,
+          "h": 300
+        }
+      ],
+      "durationSec": 3.18,
+      "captionBottom": 384,
+      "assetId": "home-hub",
+      "claimId": "home-hub"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-october-lineup/home-hub.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "black",
+      "covers": "held back until that same AI Siri was ready",
+      "creditOnScreen": true,
+      "credit": "MacRumors / Juli Clover",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 45,
+          "y": 1000,
+          "w": 950,
+          "h": 300
+        }
+      ],
+      "durationSec": 3.24,
+      "captionBottom": 384,
+      "assetId": "home-hub",
+      "claimId": "home-hub"
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-october-lineup/avatar-master.mp4",
+      "zoomDir": "in",
+      "zoom": 1.04,
+      "covers": "That's seven",
+      "durationSec": 0.7,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "credit": "n/a",
+      "from": 42.32,
+      "focusX": 0.5
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-october-lineup/avatar-master.mp4",
+      "zoomDir": "in",
+      "zoom": 1.04,
+      "covers": "the product that might not make it",
+      "durationSec": 1.86,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "credit": "n/a",
+      "from": 43.02,
+      "focusX": 0.5
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-october-lineup/macbook-delay.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "covers": "touchscreen MacBook people have wanted for years",
+      "creditOnScreen": true,
+      "credit": "MacRumors / Joe Rossignol",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 45,
+          "y": 690,
+          "w": 950,
+          "h": 350
+        }
+      ],
+      "durationSec": 4.58,
+      "captionBottom": 384,
+      "assetId": "macbook-delay",
+      "claimId": "macbook-delay",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/apple-october-lineup/macbook-delay.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "bg": "black",
+      "focus": {
+        "x": 45,
+        "y": 1420,
+        "w": 950,
+        "h": 500
+      },
+      "covers": "Bloomberg now reports a memory chip shortage",
+      "creditOnScreen": true,
+      "credit": "MacRumors / Joe Rossignol",
+      "crop": true,
+      "annotations": [
+        {
+          "kind": "underline",
+          "at": 0.5,
+          "x": 65,
+          "y": 1890,
+          "w": 910,
+          "h": 40
+        }
+      ],
+      "durationSec": 2.48,
+      "assetId": "macbook-delay",
+      "claimId": "macbook-delay"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-october-lineup/macbook-delay.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "covers": "driven by AI server demand, pushed it into 2027",
+      "creditOnScreen": true,
+      "credit": "MacRumors / Joe Rossignol",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 45,
+          "y": 1420,
+          "w": 950,
+          "h": 500
+        }
+      ],
+      "durationSec": 3.74,
+      "captionBottom": 384,
+      "assetId": "macbook-delay",
+      "claimId": "macbook-delay",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-october-lineup/macbook-delay.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "black",
+      "covers": "smaller refreshes to land right on schedule",
+      "creditOnScreen": true,
+      "credit": "MacRumors / Joe Rossignol",
+      "highlights": [
+        {
+          "at": 0.4,
+          "x": 45,
+          "y": 1420,
+          "w": 950,
+          "h": 500
+        }
+      ],
+      "durationSec": 3.52,
+      "captionBottom": 384,
+      "assetId": "macbook-delay",
+      "claimId": "macbook-delay",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-october-lineup/avatar-master.mp4",
+      "zoomDir": "out",
+      "zoom": 1.04,
+      "covers": "the one you wait longest for",
+      "durationSec": 3.22,
+      "assetId": "avatar-master",
+      "claimId": "avatar-master",
+      "credit": "n/a",
+      "from": 59.2,
+      "focusX": 0.5
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.72,
+      "text": "You think September",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "You"
+        },
+        {
+          "t": 0.2,
+          "text": "think"
+        },
+        {
+          "t": 0.34,
+          "text": "September"
+        }
+      ]
+    },
+    {
+      "start": 0.72,
+      "end": 1.48,
+      "text": "9th was it?",
+      "words": [
+        {
+          "t": 0.72,
+          "text": "9th"
+        },
+        {
+          "t": 1.22,
+          "text": "was"
+        },
+        {
+          "t": 1.32,
+          "text": "it?"
+        }
+      ]
+    },
+    {
+      "start": 1.74,
+      "end": 2.34,
+      "text": "It wasn't the",
+      "words": [
+        {
+          "t": 1.74,
+          "text": "It"
+        },
+        {
+          "t": 1.86,
+          "text": "wasn't"
+        },
+        {
+          "t": 2.2,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 2.34,
+      "end": 3.6,
+      "text": "finale. Apple already",
+      "words": [
+        {
+          "t": 2.34,
+          "text": "finale."
+        },
+        {
+          "t": 2.98,
+          "text": "Apple"
+        },
+        {
+          "t": 3.16,
+          "text": "already"
+        }
+      ]
+    },
+    {
+      "start": 3.6,
+      "end": 4.34,
+      "text": "locked in one",
+      "words": [
+        {
+          "t": 3.6,
+          "text": "locked"
+        },
+        {
+          "t": 3.88,
+          "text": "in"
+        },
+        {
+          "t": 4.12,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 4.34,
+      "end": 5.46,
+      "text": "date. iPhone Duo",
+      "words": [
+        {
+          "t": 4.34,
+          "text": "date."
+        },
+        {
+          "t": 4.94,
+          "text": "iPhone"
+        },
+        {
+          "t": 5.16,
+          "text": "Duo"
+        }
+      ]
+    },
+    {
+      "start": 5.46,
+      "end": 7.08,
+      "text": "ships October 23rd.",
+      "words": [
+        {
+          "t": 5.46,
+          "text": "ships"
+        },
+        {
+          "t": 5.76,
+          "text": "October"
+        },
+        {
+          "t": 6.24,
+          "text": "23rd."
+        }
+      ]
+    },
+    {
+      "start": 7.18,
+      "end": 7.72,
+      "text": "That's only one",
+      "words": [
+        {
+          "t": 7.18,
+          "text": "That's"
+        },
+        {
+          "t": 7.38,
+          "text": "only"
+        },
+        {
+          "t": 7.52,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 7.72,
+      "end": 8.32,
+      "text": "of seven more",
+      "words": [
+        {
+          "t": 7.72,
+          "text": "of"
+        },
+        {
+          "t": 7.84,
+          "text": "seven"
+        },
+        {
+          "t": 8.12,
+          "text": "more"
+        }
+      ]
+    },
+    {
+      "start": 8.32,
+      "end": 9.22,
+      "text": "products landing this",
+      "words": [
+        {
+          "t": 8.32,
+          "text": "products"
+        },
+        {
+          "t": 8.66,
+          "text": "landing"
+        },
+        {
+          "t": 8.98,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 9.22,
+      "end": 10.14,
+      "text": "same month. A",
+      "words": [
+        {
+          "t": 9.22,
+          "text": "same"
+        },
+        {
+          "t": 9.48,
+          "text": "month."
+        },
+        {
+          "t": 10.08,
+          "text": "A"
+        }
+      ]
+    },
+    {
+      "start": 10.14,
+      "end": 11.34,
+      "text": "14-inch MacBook Pro",
+      "words": [
+        {
+          "t": 10.14,
+          "text": "14-inch"
+        },
+        {
+          "t": 10.68,
+          "text": "MacBook"
+        },
+        {
+          "t": 10.94,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 11.34,
+      "end": 12.04,
+      "text": "and an iMac",
+      "words": [
+        {
+          "t": 11.34,
+          "text": "and"
+        },
+        {
+          "t": 11.6,
+          "text": "an"
+        },
+        {
+          "t": 11.74,
+          "text": "iMac"
+        }
+      ]
+    },
+    {
+      "start": 12.04,
+      "end": 12.98,
+      "text": "move to Apple's",
+      "words": [
+        {
+          "t": 12.04,
+          "text": "move"
+        },
+        {
+          "t": 12.34,
+          "text": "to"
+        },
+        {
+          "t": 12.52,
+          "text": "Apple's"
+        }
+      ]
+    },
+    {
+      "start": 12.98,
+      "end": 14.28,
+      "text": "M6 chip, faster",
+      "words": [
+        {
+          "t": 12.98,
+          "text": "M6"
+        },
+        {
+          "t": 13.4,
+          "text": "chip,"
+        },
+        {
+          "t": 13.96,
+          "text": "faster"
+        }
+      ]
+    },
+    {
+      "start": 14.28,
+      "end": 15.1,
+      "text": "without pulling more",
+      "words": [
+        {
+          "t": 14.28,
+          "text": "without"
+        },
+        {
+          "t": 14.58,
+          "text": "pulling"
+        },
+        {
+          "t": 14.88,
+          "text": "more"
+        }
+      ]
+    },
+    {
+      "start": 15.1,
+      "end": 15.92,
+      "text": "power. Plus a",
+      "words": [
+        {
+          "t": 15.1,
+          "text": "power."
+        },
+        {
+          "t": 15.64,
+          "text": "Plus"
+        },
+        {
+          "t": 15.76,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 15.92,
+      "end": 16.9,
+      "text": "redesigned Apple TV",
+      "words": [
+        {
+          "t": 15.92,
+          "text": "redesigned"
+        },
+        {
+          "t": 16.36,
+          "text": "Apple"
+        },
+        {
+          "t": 16.64,
+          "text": "TV"
+        }
+      ]
+    },
+    {
+      "start": 16.9,
+      "end": 18.04,
+      "text": "4K built around",
+      "words": [
+        {
+          "t": 16.9,
+          "text": "4K"
+        },
+        {
+          "t": 17.42,
+          "text": "built"
+        },
+        {
+          "t": 17.78,
+          "text": "around"
+        }
+      ]
+    },
+    {
+      "start": 18.04,
+      "end": 18.9,
+      "text": "the AI series",
+      "words": [
+        {
+          "t": 18.04,
+          "text": "the"
+        },
+        {
+          "t": 18.26,
+          "text": "AI"
+        },
+        {
+          "t": 18.5,
+          "text": "series"
+        }
+      ]
+    },
+    {
+      "start": 18.9,
+      "end": 19.76,
+      "text": "that's finally close",
+      "words": [
+        {
+          "t": 18.9,
+          "text": "that's"
+        },
+        {
+          "t": 19.22,
+          "text": "finally"
+        },
+        {
+          "t": 19.48,
+          "text": "close"
+        }
+      ]
+    },
+    {
+      "start": 19.76,
+      "end": 20.7,
+      "text": "to ready. iPad",
+      "words": [
+        {
+          "t": 19.76,
+          "text": "to"
+        },
+        {
+          "t": 20.0,
+          "text": "ready."
+        },
+        {
+          "t": 20.52,
+          "text": "iPad"
+        }
+      ]
+    },
+    {
+      "start": 20.7,
+      "end": 21.38,
+      "text": "Mini gets its",
+      "words": [
+        {
+          "t": 20.7,
+          "text": "Mini"
+        },
+        {
+          "t": 20.94,
+          "text": "gets"
+        },
+        {
+          "t": 21.18,
+          "text": "its"
+        }
+      ]
+    },
+    {
+      "start": 21.38,
+      "end": 22.44,
+      "text": "first OLED screen",
+      "words": [
+        {
+          "t": 21.38,
+          "text": "first"
+        },
+        {
+          "t": 21.8,
+          "text": "OLED"
+        },
+        {
+          "t": 22.06,
+          "text": "screen"
+        }
+      ]
+    },
+    {
+      "start": 22.44,
+      "end": 23.32,
+      "text": "so blacks look",
+      "words": [
+        {
+          "t": 22.44,
+          "text": "so"
+        },
+        {
+          "t": 22.76,
+          "text": "blacks"
+        },
+        {
+          "t": 23.06,
+          "text": "look"
+        }
+      ]
+    },
+    {
+      "start": 23.32,
+      "end": 24.72,
+      "text": "properly black, reportedly",
+      "words": [
+        {
+          "t": 23.32,
+          "text": "properly"
+        },
+        {
+          "t": 23.74,
+          "text": "black,"
+        },
+        {
+          "t": 24.4,
+          "text": "reportedly"
+        }
+      ]
+    },
+    {
+      "start": 24.72,
+      "end": 25.84,
+      "text": "water resistant and",
+      "words": [
+        {
+          "t": 24.72,
+          "text": "water"
+        },
+        {
+          "t": 25.1,
+          "text": "resistant"
+        },
+        {
+          "t": 25.58,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 25.84,
+      "end": 26.98,
+      "text": "expected before Halloween.",
+      "words": [
+        {
+          "t": 25.84,
+          "text": "expected"
+        },
+        {
+          "t": 26.18,
+          "text": "before"
+        },
+        {
+          "t": 26.6,
+          "text": "Halloween."
+        }
+      ]
+    },
+    {
+      "start": 26.98,
+      "end": 28.0,
+      "text": "Then Apple's whole",
+      "words": [
+        {
+          "t": 26.98,
+          "text": "Then"
+        },
+        {
+          "t": 27.36,
+          "text": "Apple's"
+        },
+        {
+          "t": 27.82,
+          "text": "whole"
+        }
+      ]
+    },
+    {
+      "start": 28.0,
+      "end": 28.8,
+      "text": "smart home line",
+      "words": [
+        {
+          "t": 28.0,
+          "text": "smart"
+        },
+        {
+          "t": 28.3,
+          "text": "home"
+        },
+        {
+          "t": 28.54,
+          "text": "line"
+        }
+      ]
+    },
+    {
+      "start": 28.8,
+      "end": 29.94,
+      "text": "resets together. A",
+      "words": [
+        {
+          "t": 28.8,
+          "text": "resets"
+        },
+        {
+          "t": 29.2,
+          "text": "together."
+        },
+        {
+          "t": 29.9,
+          "text": "A"
+        }
+      ]
+    },
+    {
+      "start": 29.94,
+      "end": 30.88,
+      "text": "touchscreen home hub",
+      "words": [
+        {
+          "t": 29.94,
+          "text": "touchscreen"
+        },
+        {
+          "t": 30.24,
+          "text": "home"
+        },
+        {
+          "t": 30.66,
+          "text": "hub"
+        }
+      ]
+    },
+    {
+      "start": 30.88,
+      "end": 32.72,
+      "text": "around $350. A",
+      "words": [
+        {
+          "t": 30.88,
+          "text": "around"
+        },
+        {
+          "t": 31.16,
+          "text": "$350."
+        },
+        {
+          "t": 32.6,
+          "text": "A"
+        }
+      ]
+    },
+    {
+      "start": 32.72,
+      "end": 33.82,
+      "text": "stronger HomePod mini,",
+      "words": [
+        {
+          "t": 32.72,
+          "text": "stronger"
+        },
+        {
+          "t": 33.06,
+          "text": "HomePod"
+        },
+        {
+          "t": 33.54,
+          "text": "mini,"
+        }
+      ]
+    },
+    {
+      "start": 34.1,
+      "end": 35.1,
+      "text": "a refreshed full-size",
+      "words": [
+        {
+          "t": 34.1,
+          "text": "a"
+        },
+        {
+          "t": 34.16,
+          "text": "refreshed"
+        },
+        {
+          "t": 34.54,
+          "text": "full-size"
+        }
+      ]
+    },
+    {
+      "start": 35.1,
+      "end": 36.3,
+      "text": "HomePod All three",
+      "words": [
+        {
+          "t": 35.1,
+          "text": "HomePod"
+        },
+        {
+          "t": 35.9,
+          "text": "All"
+        },
+        {
+          "t": 36.02,
+          "text": "three"
+        }
+      ]
+    },
+    {
+      "start": 36.3,
+      "end": 37.26,
+      "text": "have reportedly been",
+      "words": [
+        {
+          "t": 36.3,
+          "text": "have"
+        },
+        {
+          "t": 36.5,
+          "text": "reportedly"
+        },
+        {
+          "t": 36.9,
+          "text": "been"
+        }
+      ]
+    },
+    {
+      "start": 37.26,
+      "end": 38.2,
+      "text": "sitting nearly ready",
+      "words": [
+        {
+          "t": 37.26,
+          "text": "sitting"
+        },
+        {
+          "t": 37.54,
+          "text": "nearly"
+        },
+        {
+          "t": 37.86,
+          "text": "ready"
+        }
+      ]
+    },
+    {
+      "start": 38.2,
+      "end": 39.22,
+      "text": "for months, held",
+      "words": [
+        {
+          "t": 38.2,
+          "text": "for"
+        },
+        {
+          "t": 38.4,
+          "text": "months,"
+        },
+        {
+          "t": 39.08,
+          "text": "held"
+        }
+      ]
+    },
+    {
+      "start": 39.22,
+      "end": 40.0,
+      "text": "back until that",
+      "words": [
+        {
+          "t": 39.22,
+          "text": "back"
+        },
+        {
+          "t": 39.44,
+          "text": "until"
+        },
+        {
+          "t": 39.8,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 40.0,
+      "end": 41.08,
+      "text": "same AI series",
+      "words": [
+        {
+          "t": 40.0,
+          "text": "same"
+        },
+        {
+          "t": 40.4,
+          "text": "AI"
+        },
+        {
+          "t": 40.7,
+          "text": "series"
+        }
+      ]
+    },
+    {
+      "start": 41.08,
+      "end": 41.64,
+      "text": "was ready to",
+      "words": [
+        {
+          "t": 41.08,
+          "text": "was"
+        },
+        {
+          "t": 41.26,
+          "text": "ready"
+        },
+        {
+          "t": 41.48,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 41.64,
+      "end": 42.54,
+      "text": "power them. That's",
+      "words": [
+        {
+          "t": 41.64,
+          "text": "power"
+        },
+        {
+          "t": 41.9,
+          "text": "them."
+        },
+        {
+          "t": 42.32,
+          "text": "That's"
+        }
+      ]
+    },
+    {
+      "start": 42.54,
+      "end": 43.32,
+      "text": "seven. Here's the",
+      "words": [
+        {
+          "t": 42.54,
+          "text": "seven."
+        },
+        {
+          "t": 43.02,
+          "text": "Here's"
+        },
+        {
+          "t": 43.24,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 43.32,
+      "end": 44.02,
+      "text": "product that might",
+      "words": [
+        {
+          "t": 43.32,
+          "text": "product"
+        },
+        {
+          "t": 43.58,
+          "text": "that"
+        },
+        {
+          "t": 43.82,
+          "text": "might"
+        }
+      ]
+    },
+    {
+      "start": 44.02,
+      "end": 44.74,
+      "text": "not make it.",
+      "words": [
+        {
+          "t": 44.02,
+          "text": "not"
+        },
+        {
+          "t": 44.22,
+          "text": "make"
+        },
+        {
+          "t": 44.5,
+          "text": "it."
+        }
+      ]
+    },
+    {
+      "start": 44.88,
+      "end": 45.7,
+      "text": "The touchscreen MacBook",
+      "words": [
+        {
+          "t": 44.88,
+          "text": "The"
+        },
+        {
+          "t": 44.96,
+          "text": "touchscreen"
+        },
+        {
+          "t": 45.28,
+          "text": "MacBook"
+        }
+      ]
+    },
+    {
+      "start": 45.7,
+      "end": 46.46,
+      "text": "people have wanted",
+      "words": [
+        {
+          "t": 45.7,
+          "text": "people"
+        },
+        {
+          "t": 46.04,
+          "text": "have"
+        },
+        {
+          "t": 46.2,
+          "text": "wanted"
+        }
+      ]
+    },
+    {
+      "start": 46.46,
+      "end": 47.2,
+      "text": "for years were",
+      "words": [
+        {
+          "t": 46.46,
+          "text": "for"
+        },
+        {
+          "t": 46.7,
+          "text": "years"
+        },
+        {
+          "t": 46.98,
+          "text": "were"
+        }
+      ]
+    },
+    {
+      "start": 47.2,
+      "end": 47.94,
+      "text": "supposed to headline",
+      "words": [
+        {
+          "t": 47.2,
+          "text": "supposed"
+        },
+        {
+          "t": 47.48,
+          "text": "to"
+        },
+        {
+          "t": 47.7,
+          "text": "headline"
+        }
+      ]
+    },
+    {
+      "start": 47.94,
+      "end": 48.9,
+      "text": "this exact wave",
+      "words": [
+        {
+          "t": 47.94,
+          "text": "this"
+        },
+        {
+          "t": 48.26,
+          "text": "exact"
+        },
+        {
+          "t": 48.56,
+          "text": "wave"
+        }
+      ]
+    },
+    {
+      "start": 48.9,
+      "end": 49.86,
+      "text": "two. But Bloomberg",
+      "words": [
+        {
+          "t": 48.9,
+          "text": "two."
+        },
+        {
+          "t": 49.46,
+          "text": "But"
+        },
+        {
+          "t": 49.54,
+          "text": "Bloomberg"
+        }
+      ]
+    },
+    {
+      "start": 49.86,
+      "end": 50.72,
+      "text": "now reports a",
+      "words": [
+        {
+          "t": 49.86,
+          "text": "now"
+        },
+        {
+          "t": 50.14,
+          "text": "reports"
+        },
+        {
+          "t": 50.46,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 50.72,
+      "end": 51.66,
+      "text": "memory chip shortage,",
+      "words": [
+        {
+          "t": 50.72,
+          "text": "memory"
+        },
+        {
+          "t": 50.98,
+          "text": "chip"
+        },
+        {
+          "t": 51.26,
+          "text": "shortage,"
+        }
+      ]
+    },
+    {
+      "start": 51.94,
+      "end": 52.64,
+      "text": "driven by AI",
+      "words": [
+        {
+          "t": 51.94,
+          "text": "driven"
+        },
+        {
+          "t": 52.1,
+          "text": "by"
+        },
+        {
+          "t": 52.32,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 52.64,
+      "end": 53.74,
+      "text": "server demand. Just",
+      "words": [
+        {
+          "t": 52.64,
+          "text": "server"
+        },
+        {
+          "t": 53.02,
+          "text": "demand."
+        },
+        {
+          "t": 53.34,
+          "text": "Just"
+        }
+      ]
+    },
+    {
+      "start": 53.74,
+      "end": 54.46,
+      "text": "pushed it into",
+      "words": [
+        {
+          "t": 53.74,
+          "text": "pushed"
+        },
+        {
+          "t": 54.08,
+          "text": "it"
+        },
+        {
+          "t": 54.28,
+          "text": "into"
+        }
+      ]
+    },
+    {
+      "start": 54.46,
+      "end": 55.98,
+      "text": "2027. So expect",
+      "words": [
+        {
+          "t": 54.46,
+          "text": "2027."
+        },
+        {
+          "t": 55.68,
+          "text": "So"
+        },
+        {
+          "t": 55.74,
+          "text": "expect"
+        }
+      ]
+    },
+    {
+      "start": 55.98,
+      "end": 57.04,
+      "text": "the smaller refreshes",
+      "words": [
+        {
+          "t": 55.98,
+          "text": "the"
+        },
+        {
+          "t": 56.18,
+          "text": "smaller"
+        },
+        {
+          "t": 56.5,
+          "text": "refreshes"
+        }
+      ]
+    },
+    {
+      "start": 57.04,
+      "end": 57.64,
+      "text": "to land right",
+      "words": [
+        {
+          "t": 57.04,
+          "text": "to"
+        },
+        {
+          "t": 57.16,
+          "text": "land"
+        },
+        {
+          "t": 57.36,
+          "text": "right"
+        }
+      ]
+    },
+    {
+      "start": 57.64,
+      "end": 58.52,
+      "text": "on schedule this",
+      "words": [
+        {
+          "t": 57.64,
+          "text": "on"
+        },
+        {
+          "t": 57.9,
+          "text": "schedule"
+        },
+        {
+          "t": 58.26,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 58.52,
+      "end": 59.54,
+      "text": "October. The product",
+      "words": [
+        {
+          "t": 58.52,
+          "text": "October."
+        },
+        {
+          "t": 59.2,
+          "text": "The"
+        },
+        {
+          "t": 59.26,
+          "text": "product"
+        }
+      ]
+    },
+    {
+      "start": 59.54,
+      "end": 60.62,
+      "text": "everyone wants might",
+      "words": [
+        {
+          "t": 59.54,
+          "text": "everyone"
+        },
+        {
+          "t": 60.0,
+          "text": "wants"
+        },
+        {
+          "t": 60.4,
+          "text": "might"
+        }
+      ]
+    },
+    {
+      "start": 60.62,
+      "end": 61.14,
+      "text": "end up the",
+      "words": [
+        {
+          "t": 60.62,
+          "text": "end"
+        },
+        {
+          "t": 60.9,
+          "text": "up"
+        },
+        {
+          "t": 61.02,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 61.14,
+      "end": 61.68,
+      "text": "one you wait",
+      "words": [
+        {
+          "t": 61.14,
+          "text": "one"
+        },
+        {
+          "t": 61.3,
+          "text": "you"
+        },
+        {
+          "t": 61.48,
+          "text": "wait"
+        }
+      ]
+    },
+    {
+      "start": 61.68,
+      "end": 62.42,
+      "text": "longest for.",
+      "words": [
+        {
+          "t": 61.68,
+          "text": "longest"
+        },
+        {
+          "t": 62.08,
+          "text": "for."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "format": "news",
+  "script": "You think September 9th was it?\n\nIt wasn't the finale. Apple already locked in one date: iPhone Duo ships October 23. That's only one of seven more products landing this same month.\n\nA 14-inch MacBook Pro and an iMac move to Apple's M6 chip: faster, without pulling more power.\n\nPlus a redesigned Apple TV 4K, built around the AI Siri that's finally close to ready.\n\niPad mini gets its first OLED screen, so blacks look properly black, reportedly water resistant, and expected before Halloween.\n\nThen Apple's whole smart home line resets together: a touchscreen home hub around 350 dollars, a stronger HomePod mini, a refreshed full-size HomePod.\n\nAll three have reportedly been sitting nearly ready for months, held back until that same AI Siri was ready to power them.\n\nThat's seven. Here's the product that might not make it.\n\nThe touchscreen MacBook people have wanted for years was supposed to headline this exact wave too. But Bloomberg now reports a memory chip shortage, driven by AI server demand, just pushed it into 2027.\n\nSo expect the smaller refreshes to land right on schedule this October.\n\nThe product everyone wants might end up the one you wait longest for.",
+  "approval": {
+    "sha256": "87a779ba6dfe7a363119125f82614a59284d9c8fe2e5280c079ab528c068467d",
+    "approvedAt": "2026-09-11T06:37:43+00:00",
+    "words": 198,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}
