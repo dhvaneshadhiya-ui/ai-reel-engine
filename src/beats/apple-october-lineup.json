@@ -13,7 +13,7 @@
       "topSrc": "assets/apple-october-lineup/sept9-invite.png",
       "bottomSrc": "assets/apple-october-lineup/avatar-master.mp4",
       "covers": "September 9th",
-      "durationSec": 1.74,
+      "durationSec": 1.78,
       "captionBottom": 1000,
       "assetId": "sept9-invite",
       "claimId": "sept9-invite",
@@ -27,12 +27,12 @@
       "topSrc": "assets/apple-october-lineup/sept9-invite.png",
       "bottomSrc": "assets/apple-october-lineup/avatar-master.mp4",
       "covers": "wasn't the finale",
-      "durationSec": 1.24,
+      "durationSec": 1.22,
       "captionBottom": 1000,
       "assetId": "sept9-invite",
       "claimId": "sept9-invite",
       "credit": "Apple",
-      "bottomFrom": 1.74,
+      "bottomFrom": 1.78,
       "bottomFocusX": 0.5,
       "captionTheme": "dark"
     },
@@ -40,7 +40,7 @@
       "type": "receipt",
       "src": "assets/apple-october-lineup/duo-release-date.png",
       "srcWidth": 1080,
-      "srcHeight": 1760,
+      "srcHeight": 1400,
       "backdrop": "cream",
       "covers": "iPhone Duo ships October 23",
       "creditOnScreen": true,
@@ -48,14 +48,14 @@
       "highlights": [
         {
           "at": 0.4,
-          "x": 65,
+          "x": 130,
           "y": 620,
-          "w": 950,
+          "w": 820,
           "h": 380
         }
       ],
       "durationSec": 4.2,
-      "captionBottom": 406,
+      "captionBottom": 505,
       "assetId": "duo-release-date",
       "claimId": "duo-release-date",
       "captionTheme": "dark"
@@ -183,7 +183,7 @@
       "srcWidth": 1080,
       "srcHeight": 2340,
       "backdrop": "cream",
-      "covers": "iPad mini's first OLED screen",
+      "covers": "iPad Mini gets its first OLED screen",
       "creditOnScreen": true,
       "credit": "MacRumors / Joe Rossignol",
       "highlights": [
@@ -195,7 +195,7 @@
           "h": 350
         }
       ],
-      "durationSec": 1.92,
+      "durationSec": 2.18,
       "captionBottom": 384,
       "assetId": "ipadmini-oled",
       "claimId": "ipadmini-oled"
@@ -212,7 +212,7 @@
         "w": 950,
         "h": 350
       },
-      "covers": "reportedly water resistant, expected before Halloween",
+      "covers": "reportedly water resistant and expected before Halloween",
       "creditOnScreen": true,
       "credit": "MacRumors / Joe Rossignol",
       "crop": true,
@@ -226,7 +226,7 @@
           "h": 40
         }
       ],
-      "durationSec": 4.54,
+      "durationSec": 4.56,
       "assetId": "ipadmini-oled",
       "claimId": "ipadmini-oled"
     },
@@ -234,7 +234,7 @@
       "type": "annotatezoom",
       "src": "assets/apple-october-lineup/home-hub.png",
       "srcWidth": 1080,
-      "srcHeight": 2340,
+      "srcHeight": 2011,
       "bg": "black",
       "focus": {
         "x": 45,
@@ -256,7 +256,7 @@
           "h": 40
         }
       ],
-      "durationSec": 5.62,
+      "durationSec": 5.34,
       "assetId": "home-hub",
       "claimId": "home-hub"
     },
@@ -264,18 +264,18 @@
       "type": "receipt",
       "src": "assets/apple-october-lineup/home-hub.png",
       "srcWidth": 1080,
-      "srcHeight": 2340,
+      "srcHeight": 2011,
       "backdrop": "black",
-      "covers": "HomePod mini, refreshed full-size HomePod",
+      "covers": "HomePod mini, a refreshed full-size HomePod",
       "creditOnScreen": true,
       "credit": "MacRumors / Juli Clover",
       "highlights": [
         {
           "at": 0.4,
-          "x": 45,
-          "y": 1000,
-          "w": 950,
-          "h": 300
+          "x": 110,
+          "y": 480,
+          "w": 820,
+          "h": 170
         }
       ],
       "durationSec": 3.3,
@@ -287,7 +287,7 @@
       "type": "receipt",
       "src": "assets/apple-october-lineup/home-hub.png",
       "srcWidth": 1080,
-      "srcHeight": 2340,
+      "srcHeight": 2011,
       "backdrop": "cream",
       "covers": "reportedly been sitting nearly ready for months",
       "creditOnScreen": true,
@@ -296,9 +296,9 @@
         {
           "at": 0.4,
           "x": 45,
-          "y": 1000,
+          "y": 875,
           "w": 950,
-          "h": 300
+          "h": 210
         }
       ],
       "durationSec": 3.18,
@@ -310,7 +310,7 @@
       "type": "receipt",
       "src": "assets/apple-october-lineup/home-hub.png",
       "srcWidth": 1080,
-      "srcHeight": 2340,
+      "srcHeight": 2011,
       "backdrop": "black",
       "covers": "held back until that same AI Siri was ready",
       "creditOnScreen": true,
@@ -319,9 +319,9 @@
         {
           "at": 0.4,
           "x": 45,
-          "y": 1000,
+          "y": 1150,
           "w": 950,
-          "h": 300
+          "h": 450
         }
       ],
       "durationSec": 3.24,
@@ -339,7 +339,7 @@
       "assetId": "avatar-master",
       "claimId": "avatar-master",
       "credit": "n/a",
-      "from": 42.32,
+      "from": 42.34,
       "focusX": 0.5
     },
     {
@@ -352,7 +352,7 @@
       "assetId": "avatar-master",
       "claimId": "avatar-master",
       "credit": "n/a",
-      "from": 43.02,
+      "from": 43.04,
       "focusX": 0.5
     },
     {
@@ -415,16 +415,16 @@
       "srcWidth": 1080,
       "srcHeight": 2340,
       "backdrop": "cream",
-      "covers": "driven by AI server demand, pushed it into 2027",
+      "covers": "driven by AI server demand, just pushed it into 2027",
       "creditOnScreen": true,
       "credit": "MacRumors / Joe Rossignol",
       "highlights": [
         {
           "at": 0.4,
           "x": 45,
-          "y": 1420,
+          "y": 1150,
           "w": 950,
-          "h": 500
+          "h": 450
         }
       ],
       "durationSec": 3.74,
@@ -445,13 +445,13 @@
       "highlights": [
         {
           "at": 0.4,
-          "x": 45,
-          "y": 1420,
-          "w": 950,
-          "h": 500
+          "x": 110,
+          "y": 1850,
+          "w": 820,
+          "h": 450
         }
       ],
-      "durationSec": 3.52,
+      "durationSec": 3.54,
       "captionBottom": 384,
       "assetId": "macbook-delay",
       "claimId": "macbook-delay",
@@ -463,18 +463,18 @@
       "zoomDir": "out",
       "zoom": 1.04,
       "covers": "the one you wait longest for",
-      "durationSec": 3.22,
+      "durationSec": 3.304,
       "assetId": "avatar-master",
       "claimId": "avatar-master",
       "credit": "n/a",
-      "from": 59.2,
+      "from": 59.24,
       "focusX": 0.5
     }
   ],
   "captions": [
     {
       "start": 0.0,
-      "end": 0.72,
+      "end": 0.74,
       "text": "You think September",
       "words": [
         {
@@ -482,102 +482,102 @@
           "text": "You"
         },
         {
-          "t": 0.2,
+          "t": 0.22,
           "text": "think"
         },
         {
-          "t": 0.34,
+          "t": 0.38,
           "text": "September"
         }
       ]
     },
     {
-      "start": 0.72,
-      "end": 1.48,
+      "start": 0.74,
+      "end": 1.52,
       "text": "9th was it?",
       "words": [
         {
-          "t": 0.72,
+          "t": 0.74,
           "text": "9th"
         },
         {
-          "t": 1.22,
+          "t": 1.24,
           "text": "was"
         },
         {
-          "t": 1.32,
+          "t": 1.34,
           "text": "it?"
         }
       ]
     },
     {
-      "start": 1.74,
-      "end": 2.34,
+      "start": 1.78,
+      "end": 2.36,
       "text": "It wasn't the",
       "words": [
         {
-          "t": 1.74,
+          "t": 1.78,
           "text": "It"
         },
         {
-          "t": 1.86,
+          "t": 1.88,
           "text": "wasn't"
         },
         {
-          "t": 2.2,
+          "t": 2.24,
           "text": "the"
         }
       ]
     },
     {
-      "start": 2.34,
-      "end": 3.6,
+      "start": 2.36,
+      "end": 3.62,
       "text": "finale. Apple already",
       "words": [
         {
-          "t": 2.34,
+          "t": 2.36,
           "text": "finale."
         },
         {
-          "t": 2.98,
+          "t": 3.0,
           "text": "Apple"
         },
         {
-          "t": 3.16,
+          "t": 3.18,
           "text": "already"
         }
       ]
     },
     {
-      "start": 3.6,
-      "end": 4.34,
+      "start": 3.62,
+      "end": 4.36,
       "text": "locked in one",
       "words": [
         {
-          "t": 3.6,
+          "t": 3.62,
           "text": "locked"
         },
         {
-          "t": 3.88,
+          "t": 3.9,
           "text": "in"
         },
         {
-          "t": 4.12,
+          "t": 4.14,
           "text": "one"
         }
       ]
     },
     {
-      "start": 4.34,
-      "end": 5.46,
+      "start": 4.36,
+      "end": 5.48,
       "text": "date. iPhone Duo",
       "words": [
         {
-          "t": 4.34,
+          "t": 4.36,
           "text": "date."
         },
         {
-          "t": 4.94,
+          "t": 4.96,
           "text": "iPhone"
         },
         {
@@ -587,1137 +587,1134 @@
       ]
     },
     {
-      "start": 5.46,
-      "end": 7.08,
+      "start": 5.48,
+      "end": 7.16,
       "text": "ships October 23rd.",
       "words": [
         {
-          "t": 5.46,
+          "t": 5.48,
           "text": "ships"
         },
         {
-          "t": 5.76,
+          "t": 5.8,
           "text": "October"
         },
         {
-          "t": 6.24,
+          "t": 6.26,
           "text": "23rd."
         }
       ]
     },
     {
-      "start": 7.18,
-      "end": 7.72,
+      "start": 7.2,
+      "end": 7.74,
       "text": "That's only one",
       "words": [
         {
-          "t": 7.18,
+          "t": 7.2,
           "text": "That's"
         },
         {
-          "t": 7.38,
+          "t": 7.4,
           "text": "only"
         },
         {
-          "t": 7.52,
+          "t": 7.54,
           "text": "one"
         }
       ]
     },
     {
-      "start": 7.72,
-      "end": 8.32,
+      "start": 7.74,
+      "end": 8.34,
       "text": "of seven more",
       "words": [
         {
-          "t": 7.72,
+          "t": 7.74,
           "text": "of"
         },
         {
-          "t": 7.84,
+          "t": 7.86,
           "text": "seven"
         },
         {
-          "t": 8.12,
+          "t": 8.14,
           "text": "more"
         }
       ]
     },
     {
-      "start": 8.32,
-      "end": 9.22,
+      "start": 8.34,
+      "end": 9.26,
       "text": "products landing this",
       "words": [
         {
-          "t": 8.32,
+          "t": 8.34,
           "text": "products"
         },
         {
-          "t": 8.66,
+          "t": 8.68,
           "text": "landing"
         },
         {
-          "t": 8.98,
+          "t": 9.0,
           "text": "this"
         }
       ]
     },
     {
-      "start": 9.22,
-      "end": 10.14,
+      "start": 9.26,
+      "end": 10.18,
       "text": "same month. A",
       "words": [
         {
-          "t": 9.22,
+          "t": 9.26,
           "text": "same"
         },
         {
-          "t": 9.48,
+          "t": 9.5,
           "text": "month."
         },
         {
-          "t": 10.08,
+          "t": 10.1,
           "text": "A"
         }
       ]
     },
     {
-      "start": 10.14,
-      "end": 11.34,
+      "start": 10.18,
+      "end": 11.36,
       "text": "14-inch MacBook Pro",
       "words": [
         {
-          "t": 10.14,
+          "t": 10.18,
           "text": "14-inch"
         },
         {
-          "t": 10.68,
+          "t": 10.72,
           "text": "MacBook"
         },
         {
-          "t": 10.94,
+          "t": 10.98,
           "text": "Pro"
         }
       ]
     },
     {
-      "start": 11.34,
-      "end": 12.04,
+      "start": 11.36,
+      "end": 12.06,
       "text": "and an iMac",
       "words": [
         {
-          "t": 11.34,
+          "t": 11.36,
           "text": "and"
         },
         {
-          "t": 11.6,
+          "t": 11.62,
           "text": "an"
         },
         {
-          "t": 11.74,
+          "t": 11.76,
           "text": "iMac"
         }
       ]
     },
     {
-      "start": 12.04,
-      "end": 12.98,
+      "start": 12.06,
+      "end": 13.0,
       "text": "move to Apple's",
       "words": [
         {
-          "t": 12.04,
+          "t": 12.06,
           "text": "move"
         },
         {
-          "t": 12.34,
+          "t": 12.36,
           "text": "to"
         },
         {
-          "t": 12.52,
+          "t": 12.56,
           "text": "Apple's"
         }
       ]
     },
     {
-      "start": 12.98,
-      "end": 14.28,
+      "start": 13.0,
+      "end": 14.3,
       "text": "M6 chip, faster",
       "words": [
         {
-          "t": 12.98,
+          "t": 13.0,
           "text": "M6"
         },
         {
-          "t": 13.4,
+          "t": 13.42,
           "text": "chip,"
         },
         {
-          "t": 13.96,
+          "t": 13.98,
           "text": "faster"
         }
       ]
     },
     {
-      "start": 14.28,
-      "end": 15.1,
+      "start": 14.3,
+      "end": 15.14,
       "text": "without pulling more",
       "words": [
         {
-          "t": 14.28,
+          "t": 14.3,
           "text": "without"
         },
         {
-          "t": 14.58,
+          "t": 14.6,
           "text": "pulling"
         },
         {
-          "t": 14.88,
+          "t": 14.9,
           "text": "more"
         }
       ]
     },
     {
-      "start": 15.1,
-      "end": 15.92,
+      "start": 15.14,
+      "end": 15.96,
       "text": "power. Plus a",
       "words": [
         {
-          "t": 15.1,
+          "t": 15.14,
           "text": "power."
         },
         {
-          "t": 15.64,
+          "t": 15.66,
           "text": "Plus"
         },
         {
-          "t": 15.76,
+          "t": 15.78,
           "text": "a"
         }
       ]
     },
     {
-      "start": 15.92,
-      "end": 16.9,
+      "start": 15.96,
+      "end": 16.92,
       "text": "redesigned Apple TV",
       "words": [
         {
-          "t": 15.92,
+          "t": 15.96,
           "text": "redesigned"
         },
         {
-          "t": 16.36,
+          "t": 16.38,
           "text": "Apple"
         },
         {
-          "t": 16.64,
+          "t": 16.66,
           "text": "TV"
         }
       ]
     },
     {
-      "start": 16.9,
-      "end": 18.04,
+      "start": 16.92,
+      "end": 18.06,
       "text": "4K built around",
       "words": [
         {
-          "t": 16.9,
+          "t": 16.92,
           "text": "4K"
         },
         {
-          "t": 17.42,
+          "t": 17.44,
           "text": "built"
         },
         {
-          "t": 17.78,
+          "t": 17.8,
           "text": "around"
         }
       ]
     },
     {
-      "start": 18.04,
-      "end": 18.9,
-      "text": "the AI series",
+      "start": 18.06,
+      "end": 19.24,
+      "text": "the AI Siri that's",
       "words": [
         {
-          "t": 18.04,
+          "t": 18.06,
           "text": "the"
         },
         {
-          "t": 18.26,
+          "t": 18.28,
           "text": "AI"
         },
         {
-          "t": 18.5,
-          "text": "series"
+          "t": 18.92,
+          "text": "Siri"
+        },
+        {
+          "t": 18.92,
+          "text": "that's"
         }
       ]
     },
     {
-      "start": 18.9,
-      "end": 19.76,
-      "text": "that's finally close",
+      "start": 19.24,
+      "end": 20.02,
+      "text": "finally close to",
       "words": [
         {
-          "t": 18.9,
-          "text": "that's"
-        },
-        {
-          "t": 19.22,
+          "t": 19.24,
           "text": "finally"
         },
         {
-          "t": 19.48,
+          "t": 19.5,
           "text": "close"
+        },
+        {
+          "t": 19.78,
+          "text": "to"
         }
       ]
     },
     {
-      "start": 19.76,
-      "end": 20.7,
-      "text": "to ready. iPad",
+      "start": 20.02,
+      "end": 20.96,
+      "text": "ready. iPad Mini",
       "words": [
         {
-          "t": 19.76,
-          "text": "to"
-        },
-        {
-          "t": 20.0,
+          "t": 20.02,
           "text": "ready."
         },
         {
-          "t": 20.52,
+          "t": 20.54,
           "text": "iPad"
+        },
+        {
+          "t": 20.72,
+          "text": "Mini"
         }
       ]
     },
     {
-      "start": 20.7,
-      "end": 21.38,
-      "text": "Mini gets its",
+      "start": 20.96,
+      "end": 21.82,
+      "text": "gets its first",
       "words": [
         {
-          "t": 20.7,
-          "text": "Mini"
-        },
-        {
-          "t": 20.94,
+          "t": 20.96,
           "text": "gets"
         },
         {
-          "t": 21.18,
+          "t": 21.2,
           "text": "its"
+        },
+        {
+          "t": 21.4,
+          "text": "first"
         }
       ]
     },
     {
-      "start": 21.38,
-      "end": 22.44,
-      "text": "first OLED screen",
+      "start": 21.82,
+      "end": 22.8,
+      "text": "OLED screen, so",
       "words": [
         {
-          "t": 21.38,
-          "text": "first"
-        },
-        {
-          "t": 21.8,
+          "t": 21.82,
           "text": "OLED"
         },
         {
-          "t": 22.06,
-          "text": "screen"
+          "t": 22.1,
+          "text": "screen,"
+        },
+        {
+          "t": 22.72,
+          "text": "so"
         }
       ]
     },
     {
-      "start": 22.44,
-      "end": 23.32,
-      "text": "so blacks look",
+      "start": 22.8,
+      "end": 23.76,
+      "text": "blacks look properly",
       "words": [
         {
-          "t": 22.44,
-          "text": "so"
-        },
-        {
-          "t": 22.76,
+          "t": 22.8,
           "text": "blacks"
         },
         {
-          "t": 23.06,
+          "t": 23.08,
           "text": "look"
+        },
+        {
+          "t": 23.34,
+          "text": "properly"
         }
       ]
     },
     {
-      "start": 23.32,
-      "end": 24.72,
-      "text": "properly black, reportedly",
+      "start": 23.76,
+      "end": 25.14,
+      "text": "black, reportedly water",
       "words": [
         {
-          "t": 23.32,
-          "text": "properly"
-        },
-        {
-          "t": 23.74,
+          "t": 23.76,
           "text": "black,"
         },
         {
-          "t": 24.4,
+          "t": 24.42,
           "text": "reportedly"
+        },
+        {
+          "t": 24.68,
+          "text": "water"
         }
       ]
     },
     {
-      "start": 24.72,
-      "end": 25.84,
-      "text": "water resistant and",
+      "start": 25.14,
+      "end": 26.2,
+      "text": "resistant and expected",
       "words": [
         {
-          "t": 24.72,
-          "text": "water"
-        },
-        {
-          "t": 25.1,
+          "t": 25.14,
           "text": "resistant"
         },
         {
-          "t": 25.58,
+          "t": 25.6,
           "text": "and"
+        },
+        {
+          "t": 25.88,
+          "text": "expected"
         }
       ]
     },
     {
-      "start": 25.84,
-      "end": 26.98,
-      "text": "expected before Halloween.",
+      "start": 26.2,
+      "end": 27.4,
+      "text": "before Halloween. Then",
       "words": [
         {
-          "t": 25.84,
-          "text": "expected"
-        },
-        {
-          "t": 26.18,
+          "t": 26.2,
           "text": "before"
         },
         {
-          "t": 26.6,
+          "t": 26.62,
           "text": "Halloween."
+        },
+        {
+          "t": 27.28,
+          "text": "Then"
         }
       ]
     },
     {
-      "start": 26.98,
-      "end": 28.0,
-      "text": "Then Apple's whole",
+      "start": 27.4,
+      "end": 28.32,
+      "text": "Apple's whole smart",
       "words": [
         {
-          "t": 26.98,
-          "text": "Then"
-        },
-        {
-          "t": 27.36,
+          "t": 27.4,
           "text": "Apple's"
         },
         {
           "t": 27.82,
           "text": "whole"
+        },
+        {
+          "t": 27.98,
+          "text": "smart"
         }
       ]
     },
     {
-      "start": 28.0,
-      "end": 28.8,
-      "text": "smart home line",
+      "start": 28.32,
+      "end": 29.26,
+      "text": "home line resets",
       "words": [
         {
-          "t": 28.0,
-          "text": "smart"
-        },
-        {
-          "t": 28.3,
+          "t": 28.32,
           "text": "home"
         },
         {
-          "t": 28.54,
+          "t": 28.6,
           "text": "line"
+        },
+        {
+          "t": 28.84,
+          "text": "resets"
         }
       ]
     },
     {
-      "start": 28.8,
-      "end": 29.94,
-      "text": "resets together. A",
+      "start": 29.26,
+      "end": 30.26,
+      "text": "together. A touchscreen",
       "words": [
         {
-          "t": 28.8,
-          "text": "resets"
-        },
-        {
-          "t": 29.2,
+          "t": 29.26,
           "text": "together."
         },
         {
           "t": 29.9,
           "text": "A"
+        },
+        {
+          "t": 29.96,
+          "text": "touchscreen"
         }
       ]
     },
     {
-      "start": 29.94,
-      "end": 30.88,
-      "text": "touchscreen home hub",
+      "start": 30.26,
+      "end": 31.2,
+      "text": "home hub around",
       "words": [
         {
-          "t": 29.94,
-          "text": "touchscreen"
-        },
-        {
-          "t": 30.24,
+          "t": 30.26,
           "text": "home"
         },
         {
-          "t": 30.66,
+          "t": 30.72,
           "text": "hub"
-        }
-      ]
-    },
-    {
-      "start": 30.88,
-      "end": 32.72,
-      "text": "around $350. A",
-      "words": [
+        },
         {
-          "t": 30.88,
+          "t": 30.9,
           "text": "around"
-        },
-        {
-          "t": 31.16,
-          "text": "$350."
-        },
-        {
-          "t": 32.6,
-          "text": "A"
         }
       ]
     },
     {
-      "start": 32.72,
-      "end": 33.82,
-      "text": "stronger HomePod mini,",
+      "start": 31.2,
+      "end": 33.1,
+      "text": "350 dollars A stronger",
       "words": [
         {
-          "t": 32.72,
-          "text": "stronger"
+          "t": 31.2,
+          "text": "350"
         },
         {
-          "t": 33.06,
+          "t": 32.62,
+          "text": "dollars"
+        },
+        {
+          "t": 32.74,
+          "text": "A"
+        },
+        {
+          "t": 32.74,
+          "text": "stronger"
+        }
+      ]
+    },
+    {
+      "start": 33.1,
+      "end": 34.2,
+      "text": "HomePod mini, a",
+      "words": [
+        {
+          "t": 33.1,
           "text": "HomePod"
         },
         {
-          "t": 33.54,
+          "t": 33.56,
           "text": "mini,"
+        },
+        {
+          "t": 34.14,
+          "text": "a"
         }
       ]
     },
     {
-      "start": 34.1,
-      "end": 35.1,
-      "text": "a refreshed full-size",
+      "start": 34.2,
+      "end": 35.74,
+      "text": "refreshed full-size HomePod",
       "words": [
         {
-          "t": 34.1,
-          "text": "a"
-        },
-        {
-          "t": 34.16,
+          "t": 34.2,
           "text": "refreshed"
         },
         {
-          "t": 34.54,
+          "t": 34.58,
           "text": "full-size"
+        },
+        {
+          "t": 35.12,
+          "text": "HomePod"
         }
       ]
     },
     {
-      "start": 35.1,
-      "end": 36.3,
-      "text": "HomePod All three",
+      "start": 35.92,
+      "end": 36.52,
+      "text": "All three have",
       "words": [
         {
-          "t": 35.1,
-          "text": "HomePod"
-        },
-        {
-          "t": 35.9,
+          "t": 35.92,
           "text": "All"
         },
         {
-          "t": 36.02,
+          "t": 36.04,
           "text": "three"
+        },
+        {
+          "t": 36.32,
+          "text": "have"
         }
       ]
     },
     {
-      "start": 36.3,
-      "end": 37.26,
-      "text": "have reportedly been",
+      "start": 36.52,
+      "end": 37.56,
+      "text": "reportedly been sitting",
       "words": [
         {
-          "t": 36.3,
-          "text": "have"
-        },
-        {
-          "t": 36.5,
+          "t": 36.52,
           "text": "reportedly"
         },
         {
-          "t": 36.9,
+          "t": 36.94,
           "text": "been"
+        },
+        {
+          "t": 37.28,
+          "text": "sitting"
         }
       ]
     },
     {
-      "start": 37.26,
-      "end": 38.2,
-      "text": "sitting nearly ready",
+      "start": 37.56,
+      "end": 38.44,
+      "text": "nearly ready for",
       "words": [
         {
-          "t": 37.26,
-          "text": "sitting"
-        },
-        {
-          "t": 37.54,
+          "t": 37.56,
           "text": "nearly"
         },
         {
-          "t": 37.86,
+          "t": 37.84,
           "text": "ready"
+        },
+        {
+          "t": 38.22,
+          "text": "for"
         }
       ]
     },
     {
-      "start": 38.2,
-      "end": 39.22,
-      "text": "for months, held",
+      "start": 38.44,
+      "end": 39.46,
+      "text": "months, held back",
       "words": [
         {
-          "t": 38.2,
-          "text": "for"
-        },
-        {
-          "t": 38.4,
+          "t": 38.44,
           "text": "months,"
         },
         {
-          "t": 39.08,
+          "t": 39.1,
           "text": "held"
+        },
+        {
+          "t": 39.24,
+          "text": "back"
         }
       ]
     },
     {
-      "start": 39.22,
-      "end": 40.0,
-      "text": "back until that",
+      "start": 39.46,
+      "end": 40.44,
+      "text": "until that same",
       "words": [
         {
-          "t": 39.22,
-          "text": "back"
-        },
-        {
-          "t": 39.44,
+          "t": 39.46,
           "text": "until"
         },
         {
-          "t": 39.8,
+          "t": 39.82,
           "text": "that"
+        },
+        {
+          "t": 40.02,
+          "text": "same"
         }
       ]
     },
     {
-      "start": 40.0,
-      "end": 41.08,
-      "text": "same AI series",
+      "start": 40.44,
+      "end": 41.5,
+      "text": "AI Siri was ready",
       "words": [
         {
-          "t": 40.0,
-          "text": "same"
-        },
-        {
-          "t": 40.4,
+          "t": 40.44,
           "text": "AI"
         },
         {
-          "t": 40.7,
-          "text": "series"
-        }
-      ]
-    },
-    {
-      "start": 41.08,
-      "end": 41.64,
-      "text": "was ready to",
-      "words": [
+          "t": 41.1,
+          "text": "Siri"
+        },
         {
-          "t": 41.08,
+          "t": 41.28,
           "text": "was"
         },
         {
-          "t": 41.26,
+          "t": 41.28,
           "text": "ready"
-        },
-        {
-          "t": 41.48,
-          "text": "to"
         }
       ]
     },
     {
-      "start": 41.64,
-      "end": 42.54,
-      "text": "power them. That's",
+      "start": 41.5,
+      "end": 42.16,
+      "text": "to power them.",
       "words": [
         {
-          "t": 41.64,
+          "t": 41.5,
+          "text": "to"
+        },
+        {
+          "t": 41.68,
           "text": "power"
         },
         {
-          "t": 41.9,
+          "t": 41.92,
           "text": "them."
-        },
-        {
-          "t": 42.32,
-          "text": "That's"
         }
       ]
     },
     {
-      "start": 42.54,
-      "end": 43.32,
-      "text": "seven. Here's the",
+      "start": 42.34,
+      "end": 43.26,
+      "text": "That's seven. Here's",
       "words": [
         {
-          "t": 42.54,
+          "t": 42.34,
+          "text": "That's"
+        },
+        {
+          "t": 42.56,
           "text": "seven."
         },
         {
-          "t": 43.02,
+          "t": 43.04,
           "text": "Here's"
-        },
-        {
-          "t": 43.24,
-          "text": "the"
         }
       ]
     },
     {
-      "start": 43.32,
-      "end": 44.02,
-      "text": "product that might",
+      "start": 43.26,
+      "end": 43.84,
+      "text": "the product that",
       "words": [
         {
-          "t": 43.32,
+          "t": 43.26,
+          "text": "the"
+        },
+        {
+          "t": 43.34,
           "text": "product"
         },
         {
-          "t": 43.58,
+          "t": 43.6,
           "text": "that"
-        },
-        {
-          "t": 43.82,
-          "text": "might"
         }
       ]
     },
     {
-      "start": 44.02,
-      "end": 44.74,
-      "text": "not make it.",
+      "start": 43.84,
+      "end": 44.52,
+      "text": "might not make",
       "words": [
         {
-          "t": 44.02,
+          "t": 43.84,
+          "text": "might"
+        },
+        {
+          "t": 44.04,
           "text": "not"
         },
         {
-          "t": 44.22,
+          "t": 44.26,
           "text": "make"
-        },
-        {
-          "t": 44.5,
-          "text": "it."
         }
       ]
     },
     {
-      "start": 44.88,
-      "end": 45.7,
-      "text": "The touchscreen MacBook",
+      "start": 44.52,
+      "end": 45.32,
+      "text": "it. The touchscreen",
       "words": [
         {
-          "t": 44.88,
+          "t": 44.52,
+          "text": "it."
+        },
+        {
+          "t": 44.9,
           "text": "The"
         },
         {
-          "t": 44.96,
+          "t": 44.98,
           "text": "touchscreen"
-        },
-        {
-          "t": 45.28,
-          "text": "MacBook"
         }
       ]
     },
     {
-      "start": 45.7,
-      "end": 46.46,
-      "text": "people have wanted",
+      "start": 45.32,
+      "end": 46.22,
+      "text": "MacBook people have",
       "words": [
         {
-          "t": 45.7,
+          "t": 45.32,
+          "text": "MacBook"
+        },
+        {
+          "t": 45.72,
           "text": "people"
         },
         {
-          "t": 46.04,
+          "t": 46.06,
           "text": "have"
-        },
-        {
-          "t": 46.2,
-          "text": "wanted"
         }
       ]
     },
     {
-      "start": 46.46,
-      "end": 47.2,
-      "text": "for years were",
+      "start": 46.22,
+      "end": 47.0,
+      "text": "wanted for years",
       "words": [
         {
-          "t": 46.46,
+          "t": 46.22,
+          "text": "wanted"
+        },
+        {
+          "t": 46.48,
           "text": "for"
         },
         {
-          "t": 46.7,
+          "t": 46.72,
           "text": "years"
-        },
-        {
-          "t": 46.98,
-          "text": "were"
         }
       ]
     },
     {
-      "start": 47.2,
-      "end": 47.94,
-      "text": "supposed to headline",
+      "start": 47.0,
+      "end": 47.72,
+      "text": "were supposed to",
       "words": [
         {
-          "t": 47.2,
+          "t": 47.0,
+          "text": "were"
+        },
+        {
+          "t": 47.22,
           "text": "supposed"
         },
         {
-          "t": 47.48,
+          "t": 47.5,
           "text": "to"
-        },
-        {
-          "t": 47.7,
-          "text": "headline"
         }
       ]
     },
     {
-      "start": 47.94,
-      "end": 48.9,
-      "text": "this exact wave",
+      "start": 47.72,
+      "end": 48.62,
+      "text": "headline this exact",
       "words": [
         {
-          "t": 47.94,
+          "t": 47.72,
+          "text": "headline"
+        },
+        {
+          "t": 47.98,
           "text": "this"
         },
         {
-          "t": 48.26,
+          "t": 48.28,
           "text": "exact"
-        },
+        }
+      ]
+    },
+    {
+      "start": 48.62,
+      "end": 49.56,
+      "text": "wave too, but",
+      "words": [
         {
-          "t": 48.56,
+          "t": 48.62,
           "text": "wave"
+        },
+        {
+          "t": 48.92,
+          "text": "too,"
+        },
+        {
+          "t": 49.48,
+          "text": "but"
         }
       ]
     },
     {
-      "start": 48.9,
-      "end": 49.86,
-      "text": "two. But Bloomberg",
+      "start": 49.56,
+      "end": 50.5,
+      "text": "Bloomberg now reports",
       "words": [
         {
-          "t": 48.9,
-          "text": "two."
-        },
-        {
-          "t": 49.46,
-          "text": "But"
-        },
-        {
-          "t": 49.54,
+          "t": 49.56,
           "text": "Bloomberg"
-        }
-      ]
-    },
-    {
-      "start": 49.86,
-      "end": 50.72,
-      "text": "now reports a",
-      "words": [
+        },
         {
           "t": 49.86,
           "text": "now"
         },
         {
-          "t": 50.14,
+          "t": 50.18,
           "text": "reports"
-        },
-        {
-          "t": 50.46,
-          "text": "a"
         }
       ]
     },
     {
-      "start": 50.72,
-      "end": 51.66,
-      "text": "memory chip shortage,",
+      "start": 50.5,
+      "end": 51.3,
+      "text": "a memory chip",
       "words": [
         {
-          "t": 50.72,
+          "t": 50.5,
+          "text": "a"
+        },
+        {
+          "t": 50.74,
           "text": "memory"
         },
         {
-          "t": 50.98,
+          "t": 51.0,
           "text": "chip"
-        },
-        {
-          "t": 51.26,
-          "text": "shortage,"
         }
       ]
     },
     {
-      "start": 51.94,
-      "end": 52.64,
-      "text": "driven by AI",
+      "start": 51.3,
+      "end": 52.34,
+      "text": "shortage, driven by",
       "words": [
         {
-          "t": 51.94,
+          "t": 51.3,
+          "text": "shortage,"
+        },
+        {
+          "t": 51.96,
           "text": "driven"
         },
         {
-          "t": 52.1,
+          "t": 52.12,
           "text": "by"
-        },
-        {
-          "t": 52.32,
-          "text": "AI"
         }
       ]
     },
     {
-      "start": 52.64,
-      "end": 53.74,
-      "text": "server demand. Just",
+      "start": 52.34,
+      "end": 53.38,
+      "text": "AI server demand,",
       "words": [
+        {
+          "t": 52.34,
+          "text": "AI"
+        },
         {
           "t": 52.64,
           "text": "server"
         },
         {
-          "t": 53.02,
-          "text": "demand."
-        },
-        {
-          "t": 53.34,
-          "text": "Just"
+          "t": 53.06,
+          "text": "demand,"
         }
       ]
     },
     {
-      "start": 53.74,
-      "end": 54.46,
-      "text": "pushed it into",
+      "start": 53.68,
+      "end": 54.3,
+      "text": "just pushed it",
       "words": [
         {
-          "t": 53.74,
+          "t": 53.68,
+          "text": "just"
+        },
+        {
+          "t": 53.78,
           "text": "pushed"
         },
         {
-          "t": 54.08,
+          "t": 54.1,
           "text": "it"
-        },
-        {
-          "t": 54.28,
-          "text": "into"
         }
       ]
     },
     {
-      "start": 54.46,
-      "end": 55.98,
-      "text": "2027. So expect",
+      "start": 54.3,
+      "end": 55.76,
+      "text": "into 2027. So",
       "words": [
         {
-          "t": 54.46,
+          "t": 54.3,
+          "text": "into"
+        },
+        {
+          "t": 54.5,
           "text": "2027."
         },
         {
-          "t": 55.68,
+          "t": 55.7,
           "text": "So"
-        },
-        {
-          "t": 55.74,
-          "text": "expect"
         }
       ]
     },
     {
-      "start": 55.98,
-      "end": 57.04,
-      "text": "the smaller refreshes",
+      "start": 55.76,
+      "end": 56.54,
+      "text": "expect the smaller",
       "words": [
         {
-          "t": 55.98,
+          "t": 55.76,
+          "text": "expect"
+        },
+        {
+          "t": 56.02,
           "text": "the"
         },
         {
-          "t": 56.18,
+          "t": 56.2,
           "text": "smaller"
-        },
-        {
-          "t": 56.5,
-          "text": "refreshes"
         }
       ]
     },
     {
-      "start": 57.04,
-      "end": 57.64,
-      "text": "to land right",
+      "start": 56.54,
+      "end": 57.4,
+      "text": "refreshes to land",
       "words": [
         {
-          "t": 57.04,
+          "t": 56.54,
+          "text": "refreshes"
+        },
+        {
+          "t": 57.08,
           "text": "to"
         },
         {
-          "t": 57.16,
+          "t": 57.18,
           "text": "land"
-        },
-        {
-          "t": 57.36,
-          "text": "right"
         }
       ]
     },
     {
-      "start": 57.64,
-      "end": 58.52,
-      "text": "on schedule this",
+      "start": 57.4,
+      "end": 58.28,
+      "text": "right on schedule",
       "words": [
         {
-          "t": 57.64,
+          "t": 57.4,
+          "text": "right"
+        },
+        {
+          "t": 57.66,
           "text": "on"
         },
         {
-          "t": 57.9,
+          "t": 57.92,
           "text": "schedule"
-        },
-        {
-          "t": 58.26,
-          "text": "this"
         }
       ]
     },
     {
-      "start": 58.52,
-      "end": 59.54,
-      "text": "October. The product",
+      "start": 58.28,
+      "end": 59.28,
+      "text": "this October. The",
       "words": [
         {
-          "t": 58.52,
+          "t": 58.28,
+          "text": "this"
+        },
+        {
+          "t": 58.54,
           "text": "October."
         },
         {
-          "t": 59.2,
+          "t": 59.24,
           "text": "The"
-        },
-        {
-          "t": 59.26,
-          "text": "product"
         }
       ]
     },
     {
-      "start": 59.54,
-      "end": 60.62,
-      "text": "everyone wants might",
+      "start": 59.28,
+      "end": 60.42,
+      "text": "product everyone wants",
       "words": [
         {
-          "t": 59.54,
+          "t": 59.28,
+          "text": "product"
+        },
+        {
+          "t": 59.56,
           "text": "everyone"
         },
         {
           "t": 60.0,
           "text": "wants"
-        },
-        {
-          "t": 60.4,
-          "text": "might"
         }
       ]
     },
     {
-      "start": 60.62,
-      "end": 61.14,
-      "text": "end up the",
+      "start": 60.42,
+      "end": 61.06,
+      "text": "might end up",
       "words": [
         {
-          "t": 60.62,
+          "t": 60.42,
+          "text": "might"
+        },
+        {
+          "t": 60.64,
           "text": "end"
         },
         {
-          "t": 60.9,
+          "t": 60.92,
           "text": "up"
-        },
-        {
-          "t": 61.02,
-          "text": "the"
         }
       ]
     },
     {
-      "start": 61.14,
-      "end": 61.68,
-      "text": "one you wait",
+      "start": 61.06,
+      "end": 61.5,
+      "text": "the one you",
       "words": [
         {
-          "t": 61.14,
+          "t": 61.06,
+          "text": "the"
+        },
+        {
+          "t": 61.16,
           "text": "one"
         },
         {
-          "t": 61.3,
+          "t": 61.32,
           "text": "you"
-        },
-        {
-          "t": 61.48,
-          "text": "wait"
         }
       ]
     },
     {
-      "start": 61.68,
-      "end": 62.42,
-      "text": "longest for.",
+      "start": 61.5,
+      "end": 62.44,
+      "text": "wait longest for.",
       "words": [
         {
-          "t": 61.68,
+          "t": 61.5,
+          "text": "wait"
+        },
+        {
+          "t": 61.7,
           "text": "longest"
         },
         {
-          "t": 62.08,
+          "t": 62.1,
           "text": "for."
         }
       ]

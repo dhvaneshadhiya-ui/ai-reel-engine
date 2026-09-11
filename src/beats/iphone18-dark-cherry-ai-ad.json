@@ -1,0 +1,1799 @@
+{
+  "id": "iphone18-dark-cherry-ai-ad",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/iphone18-dark-cherry-ai-ad/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "real",
+    "AI",
+    "outselling",
+    "6076",
+    "sold",
+    "confirmed",
+    "beat"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "topSrc": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-hook.mp4",
+      "bottomSrc": "assets/iphone18-dark-cherry-ai-ad/avatar-master.mp4",
+      "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+      "bottomFocusX": 0.489,
+      "durationSec": 1.74,
+      "captionBottom": 1000,
+      "assetId": "kaye-ad-hook",
+      "claimId": "kaye-ad-hook",
+      "covers": "This iPhone isn't real.",
+      "sourceUrl": "https://www.instagram.com/reel/Dc4JrM4z_Xx/",
+      "bottomFrom": 0.0
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-hook.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+      "durationSec": 1.38,
+      "assetId": "kaye-ad-hook",
+      "claimId": "kaye-ad-hook",
+      "covers": "Neither is this color.",
+      "sourceUrl": "https://www.instagram.com/reel/Dc4JrM4z_Xx/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-hook.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+      "durationSec": 2.14,
+      "assetId": "kaye-ad-hook",
+      "claimId": "kaye-ad-hook",
+      "covers": "And it's about to",
+      "sourceUrl": "https://www.instagram.com/reel/Dc4JrM4z_Xx/"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-dark-cherry-ai-ad/src-ig-embed.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+      "captionBottom": 500,
+      "headline": {
+        "lines": [
+          {
+            "text": "AI-GENERATED AD",
+            "kind": "label",
+            "at": 0.15
+          }
+        ],
+        "y": 0.15,
+        "theme": "dark"
+      },
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 0,
+          "w": 1080,
+          "h": 900
+        }
+      ],
+      "durationSec": 2.46,
+      "assetId": "receipt-ig-embed",
+      "claimId": "receipt-ig-embed",
+      "covers": "It's an AI-made ad",
+      "sourceUrl": "https://www.instagram.com/reel/Dc4JrM4z_Xx/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-phone-closeup.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+      "durationSec": 3.44,
+      "assetId": "kaye-ad-phone-closeup",
+      "claimId": "kaye-ad-phone-closeup",
+      "covers": "in a shade called",
+      "sourceUrl": "https://www.instagram.com/reel/Dc4JrM4z_Xx/",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "durationSec": 3.72,
+      "from": 11.16
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-reactions.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+      "durationSec": 3.84,
+      "assetId": "kaye-ad-reactions",
+      "claimId": "kaye-ad-reactions",
+      "covers": "built the phone",
+      "sourceUrl": "https://www.instagram.com/reel/Dc4JrM4z_Xx/"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-dark-cherry-ai-ad/src-ig-embed.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+      "captionBottom": 500,
+      "headline": {
+        "lines": [
+          {
+            "text": "\"NOT A LEAK. JUST AI.\"",
+            "kind": "label",
+            "at": 0.15
+          }
+        ],
+        "y": 0.15,
+        "theme": "dark"
+      },
+      "highlights": [
+        {
+          "at": 0.1,
+          "x": 0,
+          "y": 0,
+          "w": 1080,
+          "h": 900
+        }
+      ],
+      "durationSec": 2.3,
+      "assetId": "receipt-ig-embed",
+      "claimId": "receipt-ig-embed",
+      "covers": "And they said so",
+      "sourceUrl": "https://www.instagram.com/reel/Dc4JrM4z_Xx/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-crowd.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+      "durationSec": 3.86,
+      "assetId": "kaye-ad-crowd",
+      "claimId": "kaye-ad-crowd",
+      "covers": "just AI, labeled as",
+      "sourceUrl": "https://www.instagram.com/reel/Dc4JrM4z_Xx/"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-dark-cherry-ai-ad/receipt-9to5mac.png",
+      "srcWidth": 1080,
+      "srcHeight": 2450,
+      "backdrop": "cream",
+      "credit": "9to5Mac \u00b7 Zac Hall",
+      "captionBottom": 500,
+      "headline": {
+        "lines": [
+          {
+            "text": "9TO5MAC",
+            "kind": "label",
+            "at": 0.15
+          }
+        ],
+        "y": 0.15,
+        "theme": "dark"
+      },
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 700,
+          "w": 1080,
+          "h": 550
+        }
+      ],
+      "durationSec": 0.8,
+      "assetId": "receipt-9to5mac",
+      "claimId": "receipt-9to5mac",
+      "covers": "watched it",
+      "sourceUrl": "https://9to5mac.com/2026/09/06/this-ai-generated-iphone-18-pro-mock-ad-makes-me-actually-love-dark-cherry-color/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "durationSec": 1.26,
+      "from": 25.68
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-dark-cherry-ai-ad/receipt-9to5mac.png",
+      "srcWidth": 1080,
+      "srcHeight": 2450,
+      "backdrop": "cream",
+      "credit": "9to5Mac \u00b7 Zac Hall",
+      "captionBottom": 500,
+      "highlights": [
+        {
+          "at": 0.1,
+          "x": 0,
+          "y": 700,
+          "w": 1080,
+          "h": 550
+        }
+      ],
+      "durationSec": 1.5,
+      "assetId": "receipt-9to5mac",
+      "claimId": "receipt-9to5mac",
+      "covers": "This changed that.",
+      "sourceUrl": "https://9to5mac.com/2026/09/06/this-ai-generated-iphone-18-pro-mock-ad-makes-me-actually-love-dark-cherry-color/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-crowd.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+      "durationSec": 3.74,
+      "assetId": "kaye-ad-crowd",
+      "claimId": "kaye-ad-crowd",
+      "covers": "That should worry Apple:",
+      "sourceUrl": "https://www.instagram.com/reel/Dc4JrM4z_Xx/"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-dark-cherry-ai-ad/receipt-macrumors-shade.png",
+      "srcWidth": 1020,
+      "srcHeight": 2450,
+      "backdrop": "cream",
+      "credit": "MacRumors \u00b7 Hartley Charlton",
+      "captionBottom": 500,
+      "headline": {
+        "lines": [
+          {
+            "text": "MACRUMORS",
+            "kind": "label",
+            "at": 0.15
+          }
+        ],
+        "y": 0.15,
+        "theme": "dark"
+      },
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 0,
+          "w": 1020,
+          "h": 300
+        }
+      ],
+      "durationSec": 1.62,
+      "assetId": "receipt-macrumors-shade",
+      "claimId": "receipt-macrumors-shade",
+      "covers": "Because Dark Cherry is",
+      "sourceUrl": "https://www.macrumors.com/2026/08/10/correct-iphone-18-pro-dark-cherry-shade/"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-dark-cherry-ai-ad/receipt-macrumors-shade.png",
+      "srcWidth": 1020,
+      "srcHeight": 2450,
+      "backdrop": "cream",
+      "credit": "MacRumors \u00b7 Hartley Charlton",
+      "captionBottom": 500,
+      "highlights": [
+        {
+          "at": 0.1,
+          "x": 0,
+          "y": 1140,
+          "w": 1020,
+          "h": 750
+        }
+      ],
+      "durationSec": 3.48,
+      "assetId": "receipt-macrumors-shade",
+      "claimId": "receipt-macrumors-shade",
+      "covers": "and the leaker who's",
+      "sourceUrl": "https://www.macrumors.com/2026/08/10/correct-iphone-18-pro-dark-cherry-shade/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/chip-cherry.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "credit": "Pantone 6076 C \u00b7 code via MacRumors",
+      "durationSec": 1.36,
+      "assetId": "chip-cherry",
+      "claimId": "chip-cherry",
+      "covers": "It's a deep purplish",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/chip-cherry-tight.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "credit": "Pantone 6076 C \u00b7 code via MacRumors",
+      "durationSec": 4.58,
+      "assetId": "chip-cherry-tight",
+      "claimId": "chip-cherry-tight",
+      "covers": "not the bright red",
+      "sourceUrl": "https://www.pantone.com/color-finder/6076-c",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-dark-cherry-ai-ad/receipt-cosmic-orange.png",
+      "srcWidth": 1080,
+      "srcHeight": 1560,
+      "backdrop": "cream",
+      "credit": "Apple.com",
+      "captionBottom": 500,
+      "headline": {
+        "lines": [
+          {
+            "text": "COSMIC ORANGE",
+            "kind": "label",
+            "at": 0.15
+          }
+        ],
+        "y": 0.15,
+        "theme": "dark"
+      },
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 0,
+          "w": 1080,
+          "h": 1560
+        }
+      ],
+      "durationSec": 2.22,
+      "assetId": "receipt-cosmic-orange",
+      "claimId": "receipt-cosmic-orange",
+      "covers": "So it's reportedly replacing",
+      "sourceUrl": "https://www.apple.com/iphone-17-pro/"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-dark-cherry-ai-ad/receipt-cosmic-orange.png",
+      "srcWidth": 1080,
+      "srcHeight": 1560,
+      "backdrop": "cream",
+      "credit": "Apple.com",
+      "captionBottom": 500,
+      "highlights": [
+        {
+          "at": 0.1,
+          "x": 0,
+          "y": 0,
+          "w": 1080,
+          "h": 1560
+        }
+      ],
+      "durationSec": 3.36,
+      "assetId": "receipt-cosmic-orange",
+      "claimId": "receipt-cosmic-orange",
+      "covers": "Cosmic Orange",
+      "sourceUrl": "https://www.apple.com/iphone-17-pro/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-endcard.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+      "durationSec": 2.12,
+      "assetId": "kaye-ad-endcard",
+      "claimId": "kaye-ad-endcard",
+      "covers": "And a color Apple",
+      "sourceUrl": "https://www.instagram.com/reel/Dc4JrM4z_Xx/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-endcard2.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+      "durationSec": 1.78,
+      "assetId": "kaye-ad-endcard2",
+      "claimId": "kaye-ad-endcard2",
+      "covers": "made by somebody who",
+      "sourceUrl": "https://www.instagram.com/reel/Dc4JrM4z_Xx/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "durationSec": 2.54,
+      "from": 52.7
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-hook.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+      "durationSec": 1.88,
+      "assetId": "kaye-ad-hook",
+      "claimId": "kaye-ad-hook",
+      "covers": "on a phone that",
+      "sourceUrl": "https://www.instagram.com/reel/Dc4JrM4z_Xx/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "durationSec": 2.36,
+      "from": 57.12
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-dark-cherry-ai-ad/receipt-event-invite.png",
+      "srcWidth": 1020,
+      "srcHeight": 1450,
+      "backdrop": "cream",
+      "credit": "Apple \u00b7 via MacRumors",
+      "captionBottom": 500,
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 0,
+          "w": 1020,
+          "h": 680
+        }
+      ],
+      "durationSec": 2.14,
+      "assetId": "receipt-event-invite",
+      "claimId": "receipt-event-invite",
+      "covers": "That's three days out,",
+      "sourceUrl": "https://www.macrumors.com/2026/08/26/apple-iphone-event-2026/"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone18-dark-cherry-ai-ad/receipt-event-invite.png",
+      "srcWidth": 1020,
+      "srcHeight": 1450,
+      "backdrop": "cream",
+      "credit": "Apple \u00b7 via MacRumors",
+      "captionBottom": 500,
+      "highlights": [
+        {
+          "at": 0.1,
+          "x": 0,
+          "y": 690,
+          "w": 1020,
+          "h": 470
+        }
+      ],
+      "durationSec": 2.12,
+      "assetId": "receipt-event-invite",
+      "claimId": "receipt-event-invite",
+      "covers": "The real phone has",
+      "sourceUrl": "https://www.macrumors.com/2026/08/26/apple-iphone-event-2026/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/iphone18-dark-cherry-ai-ad/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "durationSec": 0.556,
+      "from": 63.74
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.18,
+      "text": "This iPhone isn't",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "This"
+        },
+        {
+          "t": 0.32,
+          "text": "iPhone"
+        },
+        {
+          "t": 0.78,
+          "text": "isn't"
+        }
+      ]
+    },
+    {
+      "start": 1.18,
+      "end": 2.38,
+      "text": "real. Neither is",
+      "words": [
+        {
+          "t": 1.18,
+          "text": "real."
+        },
+        {
+          "t": 1.74,
+          "text": "Neither"
+        },
+        {
+          "t": 1.96,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 2.38,
+      "end": 3.22,
+      "text": "this color, and",
+      "words": [
+        {
+          "t": 2.38,
+          "text": "this"
+        },
+        {
+          "t": 2.58,
+          "text": "color,"
+        },
+        {
+          "t": 3.12,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 3.22,
+      "end": 3.78,
+      "text": "it's about to",
+      "words": [
+        {
+          "t": 3.22,
+          "text": "it's"
+        },
+        {
+          "t": 3.36,
+          "text": "about"
+        },
+        {
+          "t": 3.6,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 3.78,
+      "end": 4.56,
+      "text": "try selling you",
+      "words": [
+        {
+          "t": 3.78,
+          "text": "try"
+        },
+        {
+          "t": 4.02,
+          "text": "selling"
+        },
+        {
+          "t": 4.32,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 4.56,
+      "end": 5.54,
+      "text": "anyway. It's an",
+      "words": [
+        {
+          "t": 4.56,
+          "text": "anyway."
+        },
+        {
+          "t": 5.26,
+          "text": "It's"
+        },
+        {
+          "t": 5.42,
+          "text": "an"
+        }
+      ]
+    },
+    {
+      "start": 5.54,
+      "end": 6.3,
+      "text": "AI made ad",
+      "words": [
+        {
+          "t": 5.54,
+          "text": "AI"
+        },
+        {
+          "t": 5.74,
+          "text": "made"
+        },
+        {
+          "t": 6.02,
+          "text": "ad"
+        }
+      ]
+    },
+    {
+      "start": 6.3,
+      "end": 6.98,
+      "text": "for the iPhone",
+      "words": [
+        {
+          "t": 6.3,
+          "text": "for"
+        },
+        {
+          "t": 6.5,
+          "text": "the"
+        },
+        {
+          "t": 6.6,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 6.98,
+      "end": 8.02,
+      "text": "18 Pro in",
+      "words": [
+        {
+          "t": 6.98,
+          "text": "18"
+        },
+        {
+          "t": 7.32,
+          "text": "Pro"
+        },
+        {
+          "t": 7.72,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 8.02,
+      "end": 8.64,
+      "text": "a shade called",
+      "words": [
+        {
+          "t": 8.02,
+          "text": "a"
+        },
+        {
+          "t": 8.14,
+          "text": "shade"
+        },
+        {
+          "t": 8.36,
+          "text": "called"
+        }
+      ]
+    },
+    {
+      "start": 8.64,
+      "end": 9.72,
+      "text": "Dark Cherry that",
+      "words": [
+        {
+          "t": 8.64,
+          "text": "Dark"
+        },
+        {
+          "t": 9.04,
+          "text": "Cherry"
+        },
+        {
+          "t": 9.32,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 9.72,
+      "end": 10.86,
+      "text": "Apple hasn't announced.",
+      "words": [
+        {
+          "t": 9.72,
+          "text": "Apple"
+        },
+        {
+          "t": 10.02,
+          "text": "hasn't"
+        },
+        {
+          "t": 10.44,
+          "text": "announced."
+        }
+      ]
+    },
+    {
+      "start": 11.16,
+      "end": 11.92,
+      "text": "Only one thing",
+      "words": [
+        {
+          "t": 11.16,
+          "text": "Only"
+        },
+        {
+          "t": 11.4,
+          "text": "one"
+        },
+        {
+          "t": 11.74,
+          "text": "thing"
+        }
+      ]
+    },
+    {
+      "start": 11.92,
+      "end": 12.6,
+      "text": "about it is",
+      "words": [
+        {
+          "t": 11.92,
+          "text": "about"
+        },
+        {
+          "t": 12.16,
+          "text": "it"
+        },
+        {
+          "t": 12.4,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 12.6,
+      "end": 13.3,
+      "text": "real. So the",
+      "words": [
+        {
+          "t": 12.6,
+          "text": "real."
+        },
+        {
+          "t": 13.12,
+          "text": "So"
+        },
+        {
+          "t": 13.18,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 13.3,
+      "end": 15.16,
+      "text": "creator kaye.creatives built",
+      "words": [
+        {
+          "t": 13.3,
+          "text": "creator"
+        },
+        {
+          "t": 13.62,
+          "text": "kaye.creatives"
+        },
+        {
+          "t": 14.88,
+          "text": "built"
+        }
+      ]
+    },
+    {
+      "start": 15.16,
+      "end": 15.92,
+      "text": "the phone, the",
+      "words": [
+        {
+          "t": 15.16,
+          "text": "the"
+        },
+        {
+          "t": 15.32,
+          "text": "phone,"
+        },
+        {
+          "t": 15.9,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 15.92,
+      "end": 16.88,
+      "text": "lighting, the camera",
+      "words": [
+        {
+          "t": 15.92,
+          "text": "lighting,"
+        },
+        {
+          "t": 16.56,
+          "text": "the"
+        },
+        {
+          "t": 16.6,
+          "text": "camera"
+        }
+      ]
+    },
+    {
+      "start": 16.88,
+      "end": 18.04,
+      "text": "moves using AI",
+      "words": [
+        {
+          "t": 16.88,
+          "text": "moves"
+        },
+        {
+          "t": 17.2,
+          "text": "using"
+        },
+        {
+          "t": 17.7,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 18.04,
+      "end": 18.94,
+      "text": "alone. And they",
+      "words": [
+        {
+          "t": 18.04,
+          "text": "alone."
+        },
+        {
+          "t": 18.72,
+          "text": "And"
+        },
+        {
+          "t": 18.84,
+          "text": "they"
+        }
+      ]
+    },
+    {
+      "start": 18.94,
+      "end": 19.52,
+      "text": "said so in",
+      "words": [
+        {
+          "t": 18.94,
+          "text": "said"
+        },
+        {
+          "t": 19.16,
+          "text": "so"
+        },
+        {
+          "t": 19.38,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 19.52,
+      "end": 20.42,
+      "text": "the caption, not",
+      "words": [
+        {
+          "t": 19.52,
+          "text": "the"
+        },
+        {
+          "t": 19.58,
+          "text": "caption,"
+        },
+        {
+          "t": 20.36,
+          "text": "not"
+        }
+      ]
+    },
+    {
+      "start": 20.42,
+      "end": 21.24,
+      "text": "a leak, just",
+      "words": [
+        {
+          "t": 20.42,
+          "text": "a"
+        },
+        {
+          "t": 20.6,
+          "text": "leak,"
+        },
+        {
+          "t": 21.02,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 21.24,
+      "end": 22.5,
+      "text": "AI. Labeled as",
+      "words": [
+        {
+          "t": 21.24,
+          "text": "AI."
+        },
+        {
+          "t": 21.88,
+          "text": "Labeled"
+        },
+        {
+          "t": 22.22,
+          "text": "as"
+        }
+      ]
+    },
+    {
+      "start": 22.5,
+      "end": 25.28,
+      "text": "AI. 9to5Mac's Zac Hall watched",
+      "words": [
+        {
+          "t": 22.5,
+          "text": "AI."
+        },
+        {
+          "t": 23.28,
+          "text": "9to5Mac's"
+        },
+        {
+          "t": 24.88,
+          "text": "Zac"
+        },
+        {
+          "t": 24.88,
+          "text": "Hall"
+        },
+        {
+          "t": 24.88,
+          "text": "watched"
+        }
+      ]
+    },
+    {
+      "start": 25.28,
+      "end": 26.08,
+      "text": "it. He'd never",
+      "words": [
+        {
+          "t": 25.28,
+          "text": "it."
+        },
+        {
+          "t": 25.68,
+          "text": "He'd"
+        },
+        {
+          "t": 25.84,
+          "text": "never"
+        }
+      ]
+    },
+    {
+      "start": 26.08,
+      "end": 26.66,
+      "text": "cared for this",
+      "words": [
+        {
+          "t": 26.08,
+          "text": "cared"
+        },
+        {
+          "t": 26.34,
+          "text": "for"
+        },
+        {
+          "t": 26.5,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 26.66,
+      "end": 27.92,
+      "text": "color. This changed",
+      "words": [
+        {
+          "t": 26.66,
+          "text": "color."
+        },
+        {
+          "t": 26.94,
+          "text": "This"
+        },
+        {
+          "t": 27.44,
+          "text": "changed"
+        }
+      ]
+    },
+    {
+      "start": 27.92,
+      "end": 28.9,
+      "text": "that. That should",
+      "words": [
+        {
+          "t": 27.92,
+          "text": "that."
+        },
+        {
+          "t": 28.44,
+          "text": "That"
+        },
+        {
+          "t": 28.7,
+          "text": "should"
+        }
+      ]
+    },
+    {
+      "start": 28.9,
+      "end": 29.96,
+      "text": "worry Apple. A",
+      "words": [
+        {
+          "t": 28.9,
+          "text": "worry"
+        },
+        {
+          "t": 29.2,
+          "text": "Apple."
+        },
+        {
+          "t": 29.86,
+          "text": "A"
+        }
+      ]
+    },
+    {
+      "start": 29.96,
+      "end": 30.66,
+      "text": "fake ad is",
+      "words": [
+        {
+          "t": 29.96,
+          "text": "fake"
+        },
+        {
+          "t": 30.22,
+          "text": "ad"
+        },
+        {
+          "t": 30.48,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 30.66,
+      "end": 31.58,
+      "text": "outselling the real",
+      "words": [
+        {
+          "t": 30.66,
+          "text": "outselling"
+        },
+        {
+          "t": 31.1,
+          "text": "the"
+        },
+        {
+          "t": 31.34,
+          "text": "real"
+        }
+      ]
+    },
+    {
+      "start": 31.58,
+      "end": 32.68,
+      "text": "color. Because Dark",
+      "words": [
+        {
+          "t": 31.58,
+          "text": "color."
+        },
+        {
+          "t": 32.18,
+          "text": "Because"
+        },
+        {
+          "t": 32.4,
+          "text": "Dark"
+        }
+      ]
+    },
+    {
+      "start": 32.68,
+      "end": 33.34,
+      "text": "Cherry is a",
+      "words": [
+        {
+          "t": 32.68,
+          "text": "Cherry"
+        },
+        {
+          "t": 32.96,
+          "text": "is"
+        },
+        {
+          "t": 33.22,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 33.34,
+      "end": 34.06,
+      "text": "rumor, and the",
+      "words": [
+        {
+          "t": 33.34,
+          "text": "rumor,"
+        },
+        {
+          "t": 33.8,
+          "text": "and"
+        },
+        {
+          "t": 33.94,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 34.06,
+      "end": 34.82,
+      "text": "leaker who's seen",
+      "words": [
+        {
+          "t": 34.06,
+          "text": "leaker"
+        },
+        {
+          "t": 34.32,
+          "text": "who's"
+        },
+        {
+          "t": 34.64,
+          "text": "seen"
+        }
+      ]
+    },
+    {
+      "start": 34.82,
+      "end": 35.62,
+      "text": "the hardware says",
+      "words": [
+        {
+          "t": 34.82,
+          "text": "the"
+        },
+        {
+          "t": 34.96,
+          "text": "hardware"
+        },
+        {
+          "t": 35.28,
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "start": 35.62,
+      "end": 36.62,
+      "text": "most renders have",
+      "words": [
+        {
+          "t": 35.62,
+          "text": "most"
+        },
+        {
+          "t": 35.94,
+          "text": "renders"
+        },
+        {
+          "t": 36.38,
+          "text": "have"
+        }
+      ]
+    },
+    {
+      "start": 36.62,
+      "end": 37.44,
+      "text": "it wrong. It's",
+      "words": [
+        {
+          "t": 36.62,
+          "text": "it"
+        },
+        {
+          "t": 36.74,
+          "text": "wrong."
+        },
+        {
+          "t": 37.28,
+          "text": "It's"
+        }
+      ]
+    },
+    {
+      "start": 37.44,
+      "end": 38.18,
+      "text": "a deep purplish",
+      "words": [
+        {
+          "t": 37.44,
+          "text": "a"
+        },
+        {
+          "t": 37.52,
+          "text": "deep"
+        },
+        {
+          "t": 37.78,
+          "text": "purplish"
+        }
+      ]
+    },
+    {
+      "start": 38.18,
+      "end": 38.92,
+      "text": "red, not the",
+      "words": [
+        {
+          "t": 38.18,
+          "text": "red,"
+        },
+        {
+          "t": 38.64,
+          "text": "not"
+        },
+        {
+          "t": 38.78,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 38.92,
+      "end": 39.72,
+      "text": "bright red everyone",
+      "words": [
+        {
+          "t": 38.92,
+          "text": "bright"
+        },
+        {
+          "t": 39.14,
+          "text": "red"
+        },
+        {
+          "t": 39.4,
+          "text": "everyone"
+        }
+      ]
+    },
+    {
+      "start": 39.72,
+      "end": 41.1,
+      "text": "keeps drawing. tagged as",
+      "words": [
+        {
+          "t": 39.72,
+          "text": "keeps"
+        },
+        {
+          "t": 40.14,
+          "text": "drawing."
+        },
+        {
+          "t": 40.76,
+          "text": "tagged"
+        },
+        {
+          "t": 40.76,
+          "text": "as"
+        }
+      ]
+    },
+    {
+      "start": 41.1,
+      "end": 43.34,
+      "text": "Pantone 6076. So",
+      "words": [
+        {
+          "t": 41.1,
+          "text": "Pantone"
+        },
+        {
+          "t": 41.6,
+          "text": "6076."
+        },
+        {
+          "t": 43.22,
+          "text": "So"
+        }
+      ]
+    },
+    {
+      "start": 43.34,
+      "end": 44.46,
+      "text": "it's reportedly replacing",
+      "words": [
+        {
+          "t": 43.34,
+          "text": "it's"
+        },
+        {
+          "t": 43.5,
+          "text": "reportedly"
+        },
+        {
+          "t": 43.9,
+          "text": "replacing"
+        }
+      ]
+    },
+    {
+      "start": 44.46,
+      "end": 45.44,
+      "text": "last year's hit",
+      "words": [
+        {
+          "t": 44.46,
+          "text": "last"
+        },
+        {
+          "t": 44.82,
+          "text": "year's"
+        },
+        {
+          "t": 45.26,
+          "text": "hit"
+        }
+      ]
+    },
+    {
+      "start": 45.44,
+      "end": 46.74,
+      "text": "Cosmic Orange as",
+      "words": [
+        {
+          "t": 45.44,
+          "text": "Cosmic"
+        },
+        {
+          "t": 45.98,
+          "text": "Orange"
+        },
+        {
+          "t": 46.38,
+          "text": "as"
+        }
+      ]
+    },
+    {
+      "start": 46.74,
+      "end": 48.06,
+      "text": "the one bold color choice",
+      "words": [
+        {
+          "t": 46.74,
+          "text": "the"
+        },
+        {
+          "t": 47.32,
+          "text": "one"
+        },
+        {
+          "t": 47.6,
+          "text": "bold"
+        },
+        {
+          "t": 47.6,
+          "text": "color"
+        },
+        {
+          "t": 47.6,
+          "text": "choice"
+        }
+      ]
+    },
+    {
+      "start": 48.06,
+      "end": 48.92,
+      "text": "this year. And",
+      "words": [
+        {
+          "t": 48.06,
+          "text": "this"
+        },
+        {
+          "t": 48.26,
+          "text": "year."
+        },
+        {
+          "t": 48.8,
+          "text": "And"
+        }
+      ]
+    },
+    {
+      "start": 48.92,
+      "end": 49.62,
+      "text": "a color Apple",
+      "words": [
+        {
+          "t": 48.92,
+          "text": "a"
+        },
+        {
+          "t": 49.02,
+          "text": "color"
+        },
+        {
+          "t": 49.24,
+          "text": "Apple"
+        }
+      ]
+    },
+    {
+      "start": 49.62,
+      "end": 50.5,
+      "text": "hasn't shipped has",
+      "words": [
+        {
+          "t": 49.62,
+          "text": "hasn't"
+        },
+        {
+          "t": 50.0,
+          "text": "shipped"
+        },
+        {
+          "t": 50.24,
+          "text": "has"
+        }
+      ]
+    },
+    {
+      "start": 50.5,
+      "end": 51.24,
+      "text": "an ad made",
+      "words": [
+        {
+          "t": 50.5,
+          "text": "an"
+        },
+        {
+          "t": 50.66,
+          "text": "ad"
+        },
+        {
+          "t": 50.92,
+          "text": "made"
+        }
+      ]
+    },
+    {
+      "start": 51.24,
+      "end": 52.06,
+      "text": "by somebody who",
+      "words": [
+        {
+          "t": 51.24,
+          "text": "by"
+        },
+        {
+          "t": 51.4,
+          "text": "somebody"
+        },
+        {
+          "t": 51.74,
+          "text": "who"
+        }
+      ]
+    },
+    {
+      "start": 52.06,
+      "end": 53.1,
+      "text": "isn't Apple. That",
+      "words": [
+        {
+          "t": 52.06,
+          "text": "isn't"
+        },
+        {
+          "t": 52.44,
+          "text": "Apple."
+        },
+        {
+          "t": 52.7,
+          "text": "That"
+        }
+      ]
+    },
+    {
+      "start": 53.1,
+      "end": 53.9,
+      "text": "one thing was",
+      "words": [
+        {
+          "t": 53.1,
+          "text": "one"
+        },
+        {
+          "t": 53.4,
+          "text": "thing"
+        },
+        {
+          "t": 53.66,
+          "text": "was"
+        }
+      ]
+    },
+    {
+      "start": 53.9,
+      "end": 55.24,
+      "text": "real. It sold you too",
+      "words": [
+        {
+          "t": 53.9,
+          "text": "real."
+        },
+        {
+          "t": 54.48,
+          "text": "It"
+        },
+        {
+          "t": 54.58,
+          "text": "sold"
+        },
+        {
+          "t": 54.58,
+          "text": "you"
+        },
+        {
+          "t": 54.58,
+          "text": "too"
+        }
+      ]
+    },
+    {
+      "start": 55.24,
+      "end": 55.98,
+      "text": "on a phone",
+      "words": [
+        {
+          "t": 55.24,
+          "text": "on"
+        },
+        {
+          "t": 55.6,
+          "text": "a"
+        },
+        {
+          "t": 55.72,
+          "text": "phone"
+        }
+      ]
+    },
+    {
+      "start": 55.98,
+      "end": 56.86,
+      "text": "that doesn't exist.",
+      "words": [
+        {
+          "t": 55.98,
+          "text": "that"
+        },
+        {
+          "t": 56.16,
+          "text": "doesn't"
+        },
+        {
+          "t": 56.5,
+          "text": "exist."
+        }
+      ]
+    },
+    {
+      "start": 57.12,
+      "end": 57.9,
+      "text": "Nothing here is",
+      "words": [
+        {
+          "t": 57.12,
+          "text": "Nothing"
+        },
+        {
+          "t": 57.42,
+          "text": "here"
+        },
+        {
+          "t": 57.72,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 57.9,
+      "end": 59.02,
+      "text": "confirmed until Apple's",
+      "words": [
+        {
+          "t": 57.9,
+          "text": "confirmed"
+        },
+        {
+          "t": 58.28,
+          "text": "until"
+        },
+        {
+          "t": 58.58,
+          "text": "Apple's"
+        }
+      ]
+    },
+    {
+      "start": 59.02,
+      "end": 59.98,
+      "text": "event. That's three",
+      "words": [
+        {
+          "t": 59.02,
+          "text": "event."
+        },
+        {
+          "t": 59.48,
+          "text": "That's"
+        },
+        {
+          "t": 59.76,
+          "text": "three"
+        }
+      ]
+    },
+    {
+      "start": 59.98,
+      "end": 60.8,
+      "text": "days out, September",
+      "words": [
+        {
+          "t": 59.98,
+          "text": "days"
+        },
+        {
+          "t": 60.2,
+          "text": "out,"
+        },
+        {
+          "t": 60.6,
+          "text": "September"
+        }
+      ]
+    },
+    {
+      "start": 60.8,
+      "end": 61.98,
+      "text": "9th. The real",
+      "words": [
+        {
+          "t": 60.8,
+          "text": "9th."
+        },
+        {
+          "t": 61.62,
+          "text": "The"
+        },
+        {
+          "t": 61.7,
+          "text": "real"
+        }
+      ]
+    },
+    {
+      "start": 61.98,
+      "end": 62.62,
+      "text": "phone has to",
+      "words": [
+        {
+          "t": 61.98,
+          "text": "phone"
+        },
+        {
+          "t": 62.26,
+          "text": "has"
+        },
+        {
+          "t": 62.48,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 62.62,
+      "end": 63.24,
+      "text": "beat the fake",
+      "words": [
+        {
+          "t": 62.62,
+          "text": "beat"
+        },
+        {
+          "t": 62.8,
+          "text": "the"
+        },
+        {
+          "t": 62.98,
+          "text": "fake"
+        }
+      ]
+    },
+    {
+      "start": 63.24,
+      "end": 64.0,
+      "text": "one. Think it",
+      "words": [
+        {
+          "t": 63.24,
+          "text": "one."
+        },
+        {
+          "t": 63.74,
+          "text": "Think"
+        },
+        {
+          "t": 63.84,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 64.0,
+      "end": 64.2,
+      "text": "can.",
+      "words": [
+        {
+          "t": 64.0,
+          "text": "can."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "format": "news",
+  "script": "This iPhone isn't real. Neither is this color. And it's about to try selling you anyway.\n\nIt's an AI-made ad for the iPhone 18 Pro, in a shade called Dark Cherry that Apple hasn't announced. Only one thing about it is real.\n\nSo the creator, kaye dot creatives, built the phone, the lighting, the camera moves, using AI alone.\n\nAnd they said so in the caption: not a leak, just AI, labeled as AI.\n\n9to5Mac's Zac Hall watched it. He'd never cared for this color. This changed that.\n\nThat should worry Apple: a fake ad is outselling the real color.\n\nBecause Dark Cherry is a rumor, and the leaker who's seen the hardware says most renders have it wrong.\n\nIt's a deep purplish red, not the bright red everyone keeps drawing, tagged as Pantone 6076.\n\nSo it's reportedly replacing last year's hit, Cosmic Orange, as the one bold color choice this year.\n\nAnd a color Apple hasn't shipped has an ad, made by somebody who isn't Apple.\n\nThat one thing was real: it sold you too, on a phone that doesn't exist.\n\nNothing here is confirmed until Apple's event.\n\nThat's three days out, September 9th. The real phone has to beat the fake one. Think it can?",
+  "approval": {
+    "sha256": "5183416f5a225278e14c1ba707dedd62a61e61c54a8049fda03980240f777024",
+    "approvedAt": "2026-09-07T06:25:54+00:00",
+    "words": 207,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

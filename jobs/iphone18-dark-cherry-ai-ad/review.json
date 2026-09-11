@@ -1,0 +1,11 @@
+{
+  "script_sha256": "5183416f5a225278e14c1ba707dedd62a61e61c54a8049fda03980240f777024",
+  "structure_sha256": "84f1d451ecdeee49e23f5e6992c466ee621dcb9d77c8640a65fbf5e25fa6d68e",
+  "findings": [
+    "  OPENING has no version, date or time anchor: \"This iPhone isn't real.\". A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-09-07T06:23:15+00:00"
+}

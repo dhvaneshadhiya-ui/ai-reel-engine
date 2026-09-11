@@ -1,0 +1,683 @@
+{
+  "emphasis": [
+    "real",
+    "AI",
+    "outselling",
+    "6076",
+    "sold",
+    "confirmed",
+    "beat"
+  ],
+  "caption_corrections": {
+    "k creatives": "kaye.creatives",
+    "9to5 max zach hall": "9to5Mac's Zac Hall",
+    "tag this": "tagged as",
+    "sold you two": "sold you too",
+    "a one bold": "the one bold"
+  },
+  "format": "news",
+  "shots": [
+    {
+      "start_phrase": "This iPhone isn't real.",
+      "line": "This iPhone isn't real.",
+      "needs": [
+        "iPhone",
+        "real"
+      ],
+      "tier": "reliable",
+      "asset_id": "kaye-ad-hook",
+      "scene": {
+        "type": "split",
+        "topSrc": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-hook.mp4",
+        "bottomSrc": "assets/iphone18-dark-cherry-ai-ad/avatar-master.mp4",
+        "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+        "bottomFocusX": 0.489
+      }
+    },
+    {
+      "start_phrase": "Neither is this color.",
+      "line": "Neither is this color.",
+      "needs": [
+        "Neither",
+        "color"
+      ],
+      "tier": "reliable",
+      "asset_id": "kaye-ad-hook",
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-hook.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5,
+        "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated"
+      }
+    },
+    {
+      "start_phrase": "And it's about to",
+      "line": "And it's about to try selling you anyway.",
+      "needs": [
+        "selling",
+        "anyway"
+      ],
+      "tier": "reliable",
+      "asset_id": "kaye-ad-hook",
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-hook.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5,
+        "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated"
+      }
+    },
+    {
+      "start_phrase": "It's an AI-made ad",
+      "line": "It's an AI-made ad for the iPhone 18 Pro",
+      "needs": [
+        "AI-made",
+        "iPhone",
+        "18"
+      ],
+      "tier": "reliable",
+      "asset_id": "receipt-ig-embed",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone18-dark-cherry-ai-ad/src-ig-embed.png",
+        "srcWidth": 1080,
+        "srcHeight": 2340,
+        "backdrop": "cream",
+        "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+        "captionBottom": 500,
+        "headline": {
+          "lines": [
+            {
+              "text": "AI-GENERATED AD",
+              "kind": "label",
+              "at": 0.15
+            }
+          ],
+          "y": 0.15,
+          "theme": "dark"
+        },
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 0,
+            "w": 1080,
+            "h": 900
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "in a shade called",
+      "line": "in a shade called Dark Cherry that Apple hasn't announced.",
+      "needs": [
+        "shade",
+        "called",
+        "Dark",
+        "Cherry",
+        "Apple",
+        "hasn"
+      ],
+      "tier": "reliable",
+      "asset_id": "kaye-ad-phone-closeup",
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-phone-closeup.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5,
+        "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated"
+      }
+    },
+    {
+      "start_phrase": "Only one thing about",
+      "line": "Only one thing about it is real., So the creator",
+      "needs": [
+        "Only",
+        "thing",
+        "real",
+        "creator"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/avatar-master.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5
+      }
+    },
+    {
+      "start_phrase": "built the phone",
+      "line": "kaye dot creatives, built the phone, the lighting, the camera moves, using AI alone.",
+      "needs": [
+        "kaye",
+        "creatives",
+        "built",
+        "phone",
+        "lighting",
+        "camera"
+      ],
+      "tier": "reliable",
+      "asset_id": "kaye-ad-reactions",
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-reactions.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5,
+        "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated"
+      }
+    },
+    {
+      "start_phrase": "And they said so",
+      "line": "And they said so in the caption: not a leak",
+      "needs": [
+        "said",
+        "caption",
+        "leak"
+      ],
+      "tier": "reliable",
+      "asset_id": "receipt-ig-embed",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone18-dark-cherry-ai-ad/src-ig-embed.png",
+        "srcWidth": 1080,
+        "srcHeight": 2340,
+        "backdrop": "cream",
+        "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated",
+        "captionBottom": 500,
+        "headline": {
+          "lines": [
+            {
+              "text": "\"NOT A LEAK. JUST AI.\"",
+              "kind": "label",
+              "at": 0.15
+            }
+          ],
+          "y": 0.15,
+          "theme": "dark"
+        },
+        "highlights": [
+          {
+            "at": 0.1,
+            "x": 0,
+            "y": 0,
+            "w": 1080,
+            "h": 900
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "just AI, labeled as",
+      "line": "just AI, labeled as AI.",
+      "needs": [
+        "labeled"
+      ],
+      "tier": "reliable",
+      "asset_id": "kaye-ad-crowd",
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-crowd.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5,
+        "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated"
+      }
+    },
+    {
+      "start_phrase": "watched it",
+      "line": "9to5Mac's Zac Hall watched it.",
+      "needs": [
+        "9to5Mac",
+        "Hall",
+        "watched"
+      ],
+      "tier": "reliable",
+      "asset_id": "receipt-9to5mac",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone18-dark-cherry-ai-ad/receipt-9to5mac.png",
+        "srcWidth": 1080,
+        "srcHeight": 2450,
+        "backdrop": "cream",
+        "credit": "9to5Mac \u00b7 Zac Hall",
+        "captionBottom": 500,
+        "headline": {
+          "lines": [
+            {
+              "text": "9TO5MAC",
+              "kind": "label",
+              "at": 0.15
+            }
+          ],
+          "y": 0.15,
+          "theme": "dark"
+        },
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 700,
+            "w": 1080,
+            "h": 550
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "He'd never cared for",
+      "line": "He'd never cared for this color.",
+      "needs": [
+        "never",
+        "cared",
+        "color"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/avatar-master.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5
+      }
+    },
+    {
+      "start_phrase": "This changed that.",
+      "line": "This changed that.",
+      "needs": [
+        "changed"
+      ],
+      "tier": "reliable",
+      "asset_id": "receipt-9to5mac",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone18-dark-cherry-ai-ad/receipt-9to5mac.png",
+        "srcWidth": 1080,
+        "srcHeight": 2450,
+        "backdrop": "cream",
+        "credit": "9to5Mac \u00b7 Zac Hall",
+        "captionBottom": 500,
+        "highlights": [
+          {
+            "at": 0.1,
+            "x": 0,
+            "y": 700,
+            "w": 1080,
+            "h": 550
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "That should worry Apple:",
+      "line": "That should worry Apple: a fake ad is outselling the real color.",
+      "needs": [
+        "should",
+        "worry",
+        "Apple",
+        "fake",
+        "outselling",
+        "real"
+      ],
+      "tier": "reliable",
+      "asset_id": "kaye-ad-crowd",
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-crowd.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5,
+        "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated"
+      }
+    },
+    {
+      "start_phrase": "Because Dark Cherry is",
+      "line": "Because Dark Cherry is a rumor",
+      "needs": [
+        "Because",
+        "Dark",
+        "Cherry",
+        "rumor"
+      ],
+      "tier": "reliable",
+      "asset_id": "receipt-macrumors-shade",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone18-dark-cherry-ai-ad/receipt-macrumors-shade.png",
+        "srcWidth": 1020,
+        "srcHeight": 2450,
+        "backdrop": "cream",
+        "credit": "MacRumors \u00b7 Hartley Charlton",
+        "captionBottom": 500,
+        "headline": {
+          "lines": [
+            {
+              "text": "MACRUMORS",
+              "kind": "label",
+              "at": 0.15
+            }
+          ],
+          "y": 0.15,
+          "theme": "dark"
+        },
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 0,
+            "w": 1020,
+            "h": 300
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "and the leaker who's",
+      "line": "and the leaker who's seen the hardware says most renders have it wrong.",
+      "needs": [
+        "leaker",
+        "seen",
+        "hardware",
+        "says",
+        "most",
+        "renders"
+      ],
+      "tier": "reliable",
+      "asset_id": "receipt-macrumors-shade",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone18-dark-cherry-ai-ad/receipt-macrumors-shade.png",
+        "srcWidth": 1020,
+        "srcHeight": 2450,
+        "backdrop": "cream",
+        "credit": "MacRumors \u00b7 Hartley Charlton",
+        "captionBottom": 500,
+        "highlights": [
+          {
+            "at": 0.1,
+            "x": 0,
+            "y": 1140,
+            "w": 1020,
+            "h": 750
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "It's a deep purplish",
+      "line": "It's a deep purplish red",
+      "needs": [
+        "deep",
+        "purplish"
+      ],
+      "tier": "generated",
+      "asset_id": "chip-cherry",
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/chip-cherry.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5,
+        "credit": "Pantone 6076 C \u00b7 code via MacRumors"
+      }
+    },
+    {
+      "start_phrase": "not the bright red",
+      "line": "not the bright red everyone keeps drawing, tagged as Pantone 6076.",
+      "needs": [
+        "bright",
+        "everyone",
+        "drawing",
+        "tagged",
+        "Pantone",
+        "6076"
+      ],
+      "tier": "generated",
+      "asset_id": "chip-cherry-tight",
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/chip-cherry-tight.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5,
+        "credit": "Pantone 6076 C \u00b7 code via MacRumors"
+      }
+    },
+    {
+      "start_phrase": "So it's reportedly replacing",
+      "line": "So it's reportedly replacing last year's hit",
+      "needs": [
+        "reportedly",
+        "replacing",
+        "last",
+        "year"
+      ],
+      "tier": "official",
+      "asset_id": "receipt-cosmic-orange",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone18-dark-cherry-ai-ad/receipt-cosmic-orange.png",
+        "srcWidth": 1080,
+        "srcHeight": 1560,
+        "backdrop": "cream",
+        "credit": "Apple.com",
+        "captionBottom": 500,
+        "headline": {
+          "lines": [
+            {
+              "text": "COSMIC ORANGE",
+              "kind": "label",
+              "at": 0.15
+            }
+          ],
+          "y": 0.15,
+          "theme": "dark"
+        },
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 0,
+            "w": 1080,
+            "h": 1560
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Cosmic Orange",
+      "line": "Cosmic Orange, as the one bold color choice this year.",
+      "needs": [
+        "Cosmic",
+        "Orange",
+        "bold",
+        "color",
+        "choice",
+        "year"
+      ],
+      "tier": "official",
+      "asset_id": "receipt-cosmic-orange",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone18-dark-cherry-ai-ad/receipt-cosmic-orange.png",
+        "srcWidth": 1080,
+        "srcHeight": 1560,
+        "backdrop": "cream",
+        "credit": "Apple.com",
+        "captionBottom": 500,
+        "highlights": [
+          {
+            "at": 0.1,
+            "x": 0,
+            "y": 0,
+            "w": 1080,
+            "h": 1560
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "And a color Apple",
+      "line": "And a color Apple hasn't shipped has an ad",
+      "needs": [
+        "color",
+        "Apple",
+        "hasn",
+        "shipped"
+      ],
+      "tier": "reliable",
+      "asset_id": "kaye-ad-endcard",
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-endcard.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5,
+        "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated"
+      }
+    },
+    {
+      "start_phrase": "made by somebody who",
+      "line": "made by somebody who isn't Apple.",
+      "needs": [
+        "made",
+        "somebody",
+        "Apple"
+      ],
+      "tier": "reliable",
+      "asset_id": "kaye-ad-endcard2",
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-endcard2.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5,
+        "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated"
+      }
+    },
+    {
+      "start_phrase": "That one thing was",
+      "line": "That one thing was real: it sold you too",
+      "needs": [
+        "thing",
+        "real",
+        "sold"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/avatar-master.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5
+      }
+    },
+    {
+      "start_phrase": "on a phone that",
+      "line": "on a phone that doesn't exist.",
+      "needs": [
+        "phone",
+        "doesn",
+        "exist"
+      ],
+      "tier": "reliable",
+      "asset_id": "kaye-ad-hook",
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/kaye-ad-hook.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5,
+        "credit": "@kaye.creatives on Instagram \u00b7 labeled AI-generated"
+      }
+    },
+    {
+      "start_phrase": "Nothing here is confirmed",
+      "line": "Nothing here is confirmed until Apple's event.",
+      "needs": [
+        "Nothing",
+        "confirmed",
+        "until",
+        "Apple",
+        "event"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/avatar-master.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5
+      }
+    },
+    {
+      "start_phrase": "That's three days out,",
+      "line": "That's three days out, September 9th.",
+      "needs": [
+        "three",
+        "days",
+        "September",
+        "9th"
+      ],
+      "tier": "official",
+      "asset_id": "receipt-event-invite",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone18-dark-cherry-ai-ad/receipt-event-invite.png",
+        "srcWidth": 1020,
+        "srcHeight": 1450,
+        "backdrop": "cream",
+        "credit": "Apple \u00b7 via MacRumors",
+        "captionBottom": 500,
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 0,
+            "y": 0,
+            "w": 1020,
+            "h": 680
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "The real phone has",
+      "line": "The real phone has to beat the fake one.",
+      "needs": [
+        "real",
+        "phone",
+        "beat",
+        "fake"
+      ],
+      "tier": "official",
+      "asset_id": "receipt-event-invite",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone18-dark-cherry-ai-ad/receipt-event-invite.png",
+        "srcWidth": 1020,
+        "srcHeight": 1450,
+        "backdrop": "cream",
+        "credit": "Apple \u00b7 via MacRumors",
+        "captionBottom": 500,
+        "highlights": [
+          {
+            "at": 0.1,
+            "x": 0,
+            "y": 690,
+            "w": 1020,
+            "h": 470
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Think it can?",
+      "line": "Think it can?",
+      "needs": [
+        "Think"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/iphone18-dark-cherry-ai-ad/avatar-master.mp4",
+        "zoomDir": "none",
+        "focusX": 0.5
+      }
+    }
+  ]
+}

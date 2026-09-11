@@ -1,641 +1,643 @@
 {
-  "emphasis": [],
-  "caption_corrections": {
-    "home pod": "HomePod"
+ "emphasis": [],
+ "caption_corrections": {
+  "home pod": "HomePod",
+  "ai series": "AI Siri",
+  "$350": "350 dollars"
+ },
+ "format": "news",
+ "shots": [
+  {
+   "start_phrase": "You think September 9th",
+   "line": "You think September 9th was it?",
+   "needs": [
+    "think",
+    "September",
+    "9th"
+   ],
+   "tier": "official",
+   "asset_id": "sept9-invite",
+   "scene": {
+    "type": "split",
+    "topSrc": "assets/apple-october-lineup/sept9-invite.png",
+    "bottomSrc": "assets/apple-october-lineup/avatar-master.mp4",
+    "covers": "September 9th"
+   }
   },
-  "format": "news",
-  "shots": [
-    {
-      "start_phrase": "You think September 9th",
-      "line": "You think September 9th was it?",
-      "needs": [
-        "think",
-        "September",
-        "9th"
-      ],
-      "tier": "official",
-      "asset_id": "sept9-invite",
-      "scene": {
-        "type": "split",
-        "topSrc": "assets/apple-october-lineup/sept9-invite.png",
-        "bottomSrc": "assets/apple-october-lineup/avatar-master.mp4",
-        "covers": "September 9th"
-      }
+  {
+   "start_phrase": "It wasn't the finale.",
+   "line": "It wasn't the finale.",
+   "needs": [
+    "wasn",
+    "finale"
+   ],
+   "tier": "official",
+   "asset_id": "sept9-invite",
+   "scene": {
+    "type": "split",
+    "topSrc": "assets/apple-october-lineup/sept9-invite.png",
+    "bottomSrc": "assets/apple-october-lineup/avatar-master.mp4",
+    "covers": "wasn't the finale"
+   }
+  },
+  {
+   "start_phrase": "Apple already locked in",
+   "line": "Apple already locked in one date: iPhone Duo ships October 23.",
+   "needs": [
+    "Apple",
+    "already",
+    "locked",
+    "date",
+    "iPhone",
+    "ships"
+   ],
+   "tier": "official",
+   "asset_id": "duo-release-date",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/apple-october-lineup/duo-release-date.png",
+    "srcWidth": 1080,
+    "srcHeight": 1400,
+    "backdrop": "cream",
+    "covers": "iPhone Duo ships October 23",
+    "creditOnScreen": true,
+    "credit": "Apple",
+    "highlights": [
+     {
+      "at": 0.4,
+      "x": 130,
+      "y": 620,
+      "w": 820,
+      "h": 380
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "That's only one of",
+   "line": "That's only one of seven more products landing this same month.",
+   "needs": [
+    "only",
+    "seven",
+    "products",
+    "landing",
+    "same",
+    "month"
+   ],
+   "tier": "reliable",
+   "asset_id": "nine5mac-roundup",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/apple-october-lineup/nine5mac-roundup.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "backdrop": "black",
+    "covers": "seven more products landing",
+    "creditOnScreen": true,
+    "credit": "9to5Mac / Ryan Christoffel",
+    "highlights": [
+     {
+      "at": 0.4,
+      "x": 45,
+      "y": 690,
+      "w": 950,
+      "h": 400
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "A 14-inch MacBook Pro",
+   "line": "A 14-inch MacBook Pro and an iMac move to Apple's M6 chip: faster",
+   "needs": [
+    "14-inch",
+    "MacBook",
+    "iMac",
+    "move",
+    "Apple",
+    "M6"
+   ],
+   "tier": "reliable",
+   "asset_id": "m6-schedule",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/apple-october-lineup/m6-schedule.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "backdrop": "cream",
+    "covers": "M6 chip",
+    "creditOnScreen": true,
+    "credit": "9to5Mac / Ryan Christoffel",
+    "highlights": [
+     {
+      "at": 0.4,
+      "x": 45,
+      "y": 700,
+      "w": 950,
+      "h": 320
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "without pulling more power.",
+   "line": "without pulling more power.",
+   "needs": [
+    "without",
+    "pulling",
+    "power"
+   ],
+   "tier": "reliable",
+   "asset_id": "m6-schedule",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/apple-october-lineup/m6-schedule.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "backdrop": "black",
+    "covers": "without pulling more power",
+    "creditOnScreen": true,
+    "credit": "9to5Mac / Ryan Christoffel",
+    "highlights": [
+     {
+      "at": 0.4,
+      "x": 45,
+      "y": 1360,
+      "w": 950,
+      "h": 270
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Plus a redesigned Apple",
+   "line": "Plus a redesigned Apple TV 4K",
+   "needs": [
+    "Plus",
+    "redesigned",
+    "Apple",
+    "4K"
+   ],
+   "tier": "reliable",
+   "asset_id": "appletv-siri",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/apple-october-lineup/appletv-siri.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "backdrop": "cream",
+    "covers": "redesigned Apple TV 4K",
+    "creditOnScreen": true,
+    "credit": "MacRumors / Joe Rossignol",
+    "highlights": [
+     {
+      "at": 0.4,
+      "x": 45,
+      "y": 700,
+      "w": 950,
+      "h": 300
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "built around the AI",
+   "line": "built around the AI Siri that's finally close to ready.",
+   "needs": [
+    "built",
+    "around",
+    "Siri",
+    "finally",
+    "close",
+    "ready"
+   ],
+   "tier": "reliable",
+   "asset_id": "appletv-siri",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/apple-october-lineup/appletv-siri.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "backdrop": "black",
+    "covers": "AI Siri",
+    "creditOnScreen": true,
+    "credit": "MacRumors / Joe Rossignol",
+    "highlights": [
+     {
+      "at": 0.4,
+      "x": 45,
+      "y": 1300,
+      "w": 950,
+      "h": 550
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "iPad mini gets its",
+   "line": "iPad mini gets its first OLED screen",
+   "needs": [
+    "iPad",
+    "mini",
+    "gets",
+    "first",
+    "OLED",
+    "screen"
+   ],
+   "tier": "reliable",
+   "asset_id": "ipadmini-oled",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/apple-october-lineup/ipadmini-oled.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "backdrop": "cream",
+    "covers": "iPad Mini gets its first OLED screen",
+    "creditOnScreen": true,
+    "credit": "MacRumors / Joe Rossignol",
+    "highlights": [
+     {
+      "at": 0.4,
+      "x": 45,
+      "y": 700,
+      "w": 950,
+      "h": 350
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "so blacks look properly",
+   "line": "so blacks look properly black, reportedly water resistant, and expected before Halloween.",
+   "needs": [
+    "blacks",
+    "look",
+    "properly",
+    "black",
+    "reportedly",
+    "water"
+   ],
+   "tier": "reliable",
+   "asset_id": "ipadmini-oled",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/apple-october-lineup/ipadmini-oled.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "bg": "black",
+    "focus": {
+     "x": 45,
+     "y": 1100,
+     "w": 950,
+     "h": 350
     },
-    {
-      "start_phrase": "It wasn't the finale.",
-      "line": "It wasn't the finale.",
-      "needs": [
-        "wasn",
-        "finale"
-      ],
-      "tier": "official",
-      "asset_id": "sept9-invite",
-      "scene": {
-        "type": "split",
-        "topSrc": "assets/apple-october-lineup/sept9-invite.png",
-        "bottomSrc": "assets/apple-october-lineup/avatar-master.mp4",
-        "covers": "wasn't the finale"
-      }
+    "covers": "reportedly water resistant and expected before Halloween",
+    "creditOnScreen": true,
+    "credit": "MacRumors / Joe Rossignol",
+    "crop": true,
+    "annotations": [
+     {
+      "kind": "underline",
+      "at": 0.5,
+      "x": 65,
+      "y": 1420,
+      "w": 910,
+      "h": 40
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Then Apple's whole smart",
+   "line": "Then Apple's whole smart home line resets together: a touchscreen home hub around 350 dollars",
+   "needs": [
+    "Apple",
+    "whole",
+    "smart",
+    "home",
+    "line",
+    "resets"
+   ],
+   "tier": "reliable",
+   "asset_id": "home-hub",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/apple-october-lineup/home-hub.png",
+    "srcWidth": 1080,
+    "srcHeight": 2011,
+    "bg": "black",
+    "focus": {
+     "x": 45,
+     "y": 680,
+     "w": 950,
+     "h": 300
     },
-    {
-      "start_phrase": "Apple already locked in",
-      "line": "Apple already locked in one date: iPhone Duo ships October 23.",
-      "needs": [
-        "Apple",
-        "already",
-        "locked",
-        "date",
-        "iPhone",
-        "ships"
-      ],
-      "tier": "official",
-      "asset_id": "duo-release-date",
-      "scene": {
-        "type": "receipt",
-        "src": "assets/apple-october-lineup/duo-release-date.png",
-        "srcWidth": 1080,
-        "srcHeight": 1760,
-        "backdrop": "cream",
-        "covers": "iPhone Duo ships October 23",
-        "creditOnScreen": true,
-        "credit": "Apple",
-        "highlights": [
-          {
-            "at": 0.4,
-            "x": 65,
-            "y": 620,
-            "w": 950,
-            "h": 380
-          }
-        ]
-      }
+    "covers": "touchscreen home hub around 350 dollars",
+    "creditOnScreen": true,
+    "credit": "MacRumors / Juli Clover",
+    "crop": true,
+    "annotations": [
+     {
+      "kind": "underline",
+      "at": 0.5,
+      "x": 65,
+      "y": 950,
+      "w": 910,
+      "h": 40
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "a stronger home pod mini,",
+   "line": "a stronger HomePod mini, a refreshed full-size HomePod.",
+   "needs": [
+    "stronger",
+    "HomePod",
+    "mini",
+    "refreshed",
+    "full-size"
+   ],
+   "tier": "reliable",
+   "asset_id": "home-hub",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/apple-october-lineup/home-hub.png",
+    "srcWidth": 1080,
+    "srcHeight": 2011,
+    "backdrop": "black",
+    "covers": "HomePod mini, a refreshed full-size HomePod",
+    "creditOnScreen": true,
+    "credit": "MacRumors / Juli Clover",
+    "highlights": [
+     {
+      "at": 0.4,
+      "x": 110,
+      "y": 480,
+      "w": 820,
+      "h": 170
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "All three have reportedly",
+   "line": "All three have reportedly been sitting nearly ready for months",
+   "needs": [
+    "three",
+    "have",
+    "reportedly",
+    "been",
+    "sitting",
+    "nearly"
+   ],
+   "tier": "reliable",
+   "asset_id": "home-hub",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/apple-october-lineup/home-hub.png",
+    "srcWidth": 1080,
+    "srcHeight": 2011,
+    "backdrop": "cream",
+    "covers": "reportedly been sitting nearly ready for months",
+    "creditOnScreen": true,
+    "credit": "MacRumors / Juli Clover",
+    "highlights": [
+     {
+      "at": 0.4,
+      "x": 45,
+      "y": 875,
+      "w": 950,
+      "h": 210
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "held back until that",
+   "line": "held back until that same AI Siri was ready to power them.",
+   "needs": [
+    "held",
+    "back",
+    "until",
+    "same",
+    "Siri",
+    "ready"
+   ],
+   "tier": "reliable",
+   "asset_id": "home-hub",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/apple-october-lineup/home-hub.png",
+    "srcWidth": 1080,
+    "srcHeight": 2011,
+    "backdrop": "black",
+    "covers": "held back until that same AI Siri was ready",
+    "creditOnScreen": true,
+    "credit": "MacRumors / Juli Clover",
+    "highlights": [
+     {
+      "at": 0.4,
+      "x": 45,
+      "y": 1150,
+      "w": 950,
+      "h": 450
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "That's seven.",
+   "line": "That's seven.",
+   "needs": [
+    "seven"
+   ],
+   "tier": "generated",
+   "asset_id": "avatar-master",
+   "scene": {
+    "type": "footage",
+    "src": "assets/apple-october-lineup/avatar-master.mp4",
+    "zoomDir": "in",
+    "zoom": 1.04,
+    "covers": "That's seven"
+   }
+  },
+  {
+   "start_phrase": "Here's the product that",
+   "line": "Here's the product that might not make it.",
+   "needs": [
+    "product",
+    "might",
+    "make"
+   ],
+   "tier": "generated",
+   "asset_id": "avatar-master",
+   "scene": {
+    "type": "footage",
+    "src": "assets/apple-october-lineup/avatar-master.mp4",
+    "zoomDir": "in",
+    "zoom": 1.04,
+    "covers": "the product that might not make it"
+   }
+  },
+  {
+   "start_phrase": "The touchscreen MacBook people",
+   "line": "The touchscreen MacBook people have wanted for years was supposed to headline this exact wave too.",
+   "needs": [
+    "touchscreen",
+    "MacBook",
+    "people",
+    "have",
+    "wanted",
+    "years"
+   ],
+   "tier": "reliable",
+   "asset_id": "macbook-delay",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/apple-october-lineup/macbook-delay.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "backdrop": "cream",
+    "covers": "touchscreen MacBook people have wanted for years",
+    "creditOnScreen": true,
+    "credit": "MacRumors / Joe Rossignol",
+    "highlights": [
+     {
+      "at": 0.4,
+      "x": 45,
+      "y": 690,
+      "w": 950,
+      "h": 350
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "But Bloomberg now reports",
+   "line": "But Bloomberg now reports a memory chip shortage",
+   "needs": [
+    "Bloomberg",
+    "reports",
+    "memory",
+    "chip",
+    "shortage"
+   ],
+   "tier": "reliable",
+   "asset_id": "macbook-delay",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/apple-october-lineup/macbook-delay.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "bg": "black",
+    "focus": {
+     "x": 45,
+     "y": 1420,
+     "w": 950,
+     "h": 500
     },
-    {
-      "start_phrase": "That's only one of",
-      "line": "That's only one of seven more products landing this same month.",
-      "needs": [
-        "only",
-        "seven",
-        "products",
-        "landing",
-        "same",
-        "month"
-      ],
-      "tier": "reliable",
-      "asset_id": "nine5mac-roundup",
-      "scene": {
-        "type": "receipt",
-        "src": "assets/apple-october-lineup/nine5mac-roundup.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "backdrop": "black",
-        "covers": "seven more products landing",
-        "creditOnScreen": true,
-        "credit": "9to5Mac / Ryan Christoffel",
-        "highlights": [
-          {
-            "at": 0.4,
-            "x": 45,
-            "y": 690,
-            "w": 950,
-            "h": 400
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "A 14-inch MacBook Pro",
-      "line": "A 14-inch MacBook Pro and an iMac move to Apple's M6 chip: faster",
-      "needs": [
-        "14-inch",
-        "MacBook",
-        "iMac",
-        "move",
-        "Apple",
-        "M6"
-      ],
-      "tier": "reliable",
-      "asset_id": "m6-schedule",
-      "scene": {
-        "type": "receipt",
-        "src": "assets/apple-october-lineup/m6-schedule.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "backdrop": "cream",
-        "covers": "M6 chip",
-        "creditOnScreen": true,
-        "credit": "9to5Mac / Ryan Christoffel",
-        "highlights": [
-          {
-            "at": 0.4,
-            "x": 45,
-            "y": 700,
-            "w": 950,
-            "h": 320
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "without pulling more power.",
-      "line": "without pulling more power.",
-      "needs": [
-        "without",
-        "pulling",
-        "power"
-      ],
-      "tier": "reliable",
-      "asset_id": "m6-schedule",
-      "scene": {
-        "type": "receipt",
-        "src": "assets/apple-october-lineup/m6-schedule.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "backdrop": "black",
-        "covers": "without pulling more power",
-        "creditOnScreen": true,
-        "credit": "9to5Mac / Ryan Christoffel",
-        "highlights": [
-          {
-            "at": 0.4,
-            "x": 45,
-            "y": 1360,
-            "w": 950,
-            "h": 270
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "Plus a redesigned Apple",
-      "line": "Plus a redesigned Apple TV 4K",
-      "needs": [
-        "Plus",
-        "redesigned",
-        "Apple",
-        "4K"
-      ],
-      "tier": "reliable",
-      "asset_id": "appletv-siri",
-      "scene": {
-        "type": "receipt",
-        "src": "assets/apple-october-lineup/appletv-siri.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "backdrop": "cream",
-        "covers": "redesigned Apple TV 4K",
-        "creditOnScreen": true,
-        "credit": "MacRumors / Joe Rossignol",
-        "highlights": [
-          {
-            "at": 0.4,
-            "x": 45,
-            "y": 700,
-            "w": 950,
-            "h": 300
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "built around the AI",
-      "line": "built around the AI Siri that's finally close to ready.",
-      "needs": [
-        "built",
-        "around",
-        "Siri",
-        "finally",
-        "close",
-        "ready"
-      ],
-      "tier": "reliable",
-      "asset_id": "appletv-siri",
-      "scene": {
-        "type": "receipt",
-        "src": "assets/apple-october-lineup/appletv-siri.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "backdrop": "black",
-        "covers": "AI Siri",
-        "creditOnScreen": true,
-        "credit": "MacRumors / Joe Rossignol",
-        "highlights": [
-          {
-            "at": 0.4,
-            "x": 45,
-            "y": 1300,
-            "w": 950,
-            "h": 550
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "iPad mini gets its",
-      "line": "iPad mini gets its first OLED screen",
-      "needs": [
-        "iPad",
-        "mini",
-        "gets",
-        "first",
-        "OLED",
-        "screen"
-      ],
-      "tier": "reliable",
-      "asset_id": "ipadmini-oled",
-      "scene": {
-        "type": "receipt",
-        "src": "assets/apple-october-lineup/ipadmini-oled.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "backdrop": "cream",
-        "covers": "iPad mini's first OLED screen",
-        "creditOnScreen": true,
-        "credit": "MacRumors / Joe Rossignol",
-        "highlights": [
-          {
-            "at": 0.4,
-            "x": 45,
-            "y": 700,
-            "w": 950,
-            "h": 350
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "so blacks look properly",
-      "line": "so blacks look properly black, reportedly water resistant, and expected before Halloween.",
-      "needs": [
-        "blacks",
-        "look",
-        "properly",
-        "black",
-        "reportedly",
-        "water"
-      ],
-      "tier": "reliable",
-      "asset_id": "ipadmini-oled",
-      "scene": {
-        "type": "annotatezoom",
-        "src": "assets/apple-october-lineup/ipadmini-oled.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "bg": "black",
-        "focus": {
-          "x": 45,
-          "y": 1100,
-          "w": 950,
-          "h": 350
-        },
-        "covers": "reportedly water resistant, expected before Halloween",
-        "creditOnScreen": true,
-        "credit": "MacRumors / Joe Rossignol",
-        "crop": true,
-        "annotations": [
-          {
-            "kind": "underline",
-            "at": 0.5,
-            "x": 65,
-            "y": 1420,
-            "w": 910,
-            "h": 40
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "Then Apple's whole smart",
-      "line": "Then Apple's whole smart home line resets together: a touchscreen home hub around 350 dollars",
-      "needs": [
-        "Apple",
-        "whole",
-        "smart",
-        "home",
-        "line",
-        "resets"
-      ],
-      "tier": "reliable",
-      "asset_id": "home-hub",
-      "scene": {
-        "type": "annotatezoom",
-        "src": "assets/apple-october-lineup/home-hub.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "bg": "black",
-        "focus": {
-          "x": 45,
-          "y": 680,
-          "w": 950,
-          "h": 300
-        },
-        "covers": "touchscreen home hub around 350 dollars",
-        "creditOnScreen": true,
-        "credit": "MacRumors / Juli Clover",
-        "crop": true,
-        "annotations": [
-          {
-            "kind": "underline",
-            "at": 0.5,
-            "x": 65,
-            "y": 950,
-            "w": 910,
-            "h": 40
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "a stronger home pod mini,",
-      "line": "a stronger HomePod mini, a refreshed full-size HomePod.",
-      "needs": [
-        "stronger",
-        "HomePod",
-        "mini",
-        "refreshed",
-        "full-size"
-      ],
-      "tier": "reliable",
-      "asset_id": "home-hub",
-      "scene": {
-        "type": "receipt",
-        "src": "assets/apple-october-lineup/home-hub.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "backdrop": "black",
-        "covers": "HomePod mini, refreshed full-size HomePod",
-        "creditOnScreen": true,
-        "credit": "MacRumors / Juli Clover",
-        "highlights": [
-          {
-            "at": 0.4,
-            "x": 45,
-            "y": 1000,
-            "w": 950,
-            "h": 300
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "All three have reportedly",
-      "line": "All three have reportedly been sitting nearly ready for months",
-      "needs": [
-        "three",
-        "have",
-        "reportedly",
-        "been",
-        "sitting",
-        "nearly"
-      ],
-      "tier": "reliable",
-      "asset_id": "home-hub",
-      "scene": {
-        "type": "receipt",
-        "src": "assets/apple-october-lineup/home-hub.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "backdrop": "cream",
-        "covers": "reportedly been sitting nearly ready for months",
-        "creditOnScreen": true,
-        "credit": "MacRumors / Juli Clover",
-        "highlights": [
-          {
-            "at": 0.4,
-            "x": 45,
-            "y": 1000,
-            "w": 950,
-            "h": 300
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "held back until that",
-      "line": "held back until that same AI Siri was ready to power them.",
-      "needs": [
-        "held",
-        "back",
-        "until",
-        "same",
-        "Siri",
-        "ready"
-      ],
-      "tier": "reliable",
-      "asset_id": "home-hub",
-      "scene": {
-        "type": "receipt",
-        "src": "assets/apple-october-lineup/home-hub.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "backdrop": "black",
-        "covers": "held back until that same AI Siri was ready",
-        "creditOnScreen": true,
-        "credit": "MacRumors / Juli Clover",
-        "highlights": [
-          {
-            "at": 0.4,
-            "x": 45,
-            "y": 1000,
-            "w": 950,
-            "h": 300
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "That's seven.",
-      "line": "That's seven.",
-      "needs": [
-        "seven"
-      ],
-      "tier": "generated",
-      "asset_id": "avatar-master",
-      "scene": {
-        "type": "footage",
-        "src": "assets/apple-october-lineup/avatar-master.mp4",
-        "zoomDir": "in",
-        "zoom": 1.04,
-        "covers": "That's seven"
-      }
-    },
-    {
-      "start_phrase": "Here's the product that",
-      "line": "Here's the product that might not make it.",
-      "needs": [
-        "product",
-        "might",
-        "make"
-      ],
-      "tier": "generated",
-      "asset_id": "avatar-master",
-      "scene": {
-        "type": "footage",
-        "src": "assets/apple-october-lineup/avatar-master.mp4",
-        "zoomDir": "in",
-        "zoom": 1.04,
-        "covers": "the product that might not make it"
-      }
-    },
-    {
-      "start_phrase": "The touchscreen MacBook people",
-      "line": "The touchscreen MacBook people have wanted for years was supposed to headline this exact wave too.",
-      "needs": [
-        "touchscreen",
-        "MacBook",
-        "people",
-        "have",
-        "wanted",
-        "years"
-      ],
-      "tier": "reliable",
-      "asset_id": "macbook-delay",
-      "scene": {
-        "type": "receipt",
-        "src": "assets/apple-october-lineup/macbook-delay.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "backdrop": "cream",
-        "covers": "touchscreen MacBook people have wanted for years",
-        "creditOnScreen": true,
-        "credit": "MacRumors / Joe Rossignol",
-        "highlights": [
-          {
-            "at": 0.4,
-            "x": 45,
-            "y": 690,
-            "w": 950,
-            "h": 350
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "But Bloomberg now reports",
-      "line": "But Bloomberg now reports a memory chip shortage",
-      "needs": [
-        "Bloomberg",
-        "reports",
-        "memory",
-        "chip",
-        "shortage"
-      ],
-      "tier": "reliable",
-      "asset_id": "macbook-delay",
-      "scene": {
-        "type": "annotatezoom",
-        "src": "assets/apple-october-lineup/macbook-delay.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "bg": "black",
-        "focus": {
-          "x": 45,
-          "y": 1420,
-          "w": 950,
-          "h": 500
-        },
-        "covers": "Bloomberg now reports a memory chip shortage",
-        "creditOnScreen": true,
-        "credit": "MacRumors / Joe Rossignol",
-        "crop": true,
-        "annotations": [
-          {
-            "kind": "underline",
-            "at": 0.5,
-            "x": 65,
-            "y": 1890,
-            "w": 910,
-            "h": 40
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "driven by AI server",
-      "line": "driven by AI server demand, just pushed it into 2027.",
-      "needs": [
-        "driven",
-        "server",
-        "demand",
-        "pushed",
-        "2027"
-      ],
-      "tier": "reliable",
-      "asset_id": "macbook-delay",
-      "scene": {
-        "type": "receipt",
-        "src": "assets/apple-october-lineup/macbook-delay.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "backdrop": "cream",
-        "covers": "driven by AI server demand, pushed it into 2027",
-        "creditOnScreen": true,
-        "credit": "MacRumors / Joe Rossignol",
-        "highlights": [
-          {
-            "at": 0.4,
-            "x": 45,
-            "y": 1420,
-            "w": 950,
-            "h": 500
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "So expect the smaller",
-      "line": "So expect the smaller refreshes to land right on schedule this October.",
-      "needs": [
-        "expect",
-        "smaller",
-        "refreshes",
-        "land",
-        "right",
-        "schedule"
-      ],
-      "tier": "reliable",
-      "asset_id": "macbook-delay",
-      "scene": {
-        "type": "receipt",
-        "src": "assets/apple-october-lineup/macbook-delay.png",
-        "srcWidth": 1080,
-        "srcHeight": 2340,
-        "backdrop": "black",
-        "covers": "smaller refreshes to land right on schedule",
-        "creditOnScreen": true,
-        "credit": "MacRumors / Joe Rossignol",
-        "highlights": [
-          {
-            "at": 0.4,
-            "x": 45,
-            "y": 1420,
-            "w": 950,
-            "h": 500
-          }
-        ]
-      }
-    },
-    {
-      "start_phrase": "The product everyone wants",
-      "line": "The product everyone wants might end up the one you wait longest for.",
-      "needs": [
-        "product",
-        "everyone",
-        "wants",
-        "might",
-        "wait",
-        "longest"
-      ],
-      "tier": "generated",
-      "asset_id": "avatar-master",
-      "scene": {
-        "type": "footage",
-        "src": "assets/apple-october-lineup/avatar-master.mp4",
-        "zoomDir": "out",
-        "zoom": 1.04,
-        "covers": "the one you wait longest for"
-      }
-    }
-  ]
+    "covers": "Bloomberg now reports a memory chip shortage",
+    "creditOnScreen": true,
+    "credit": "MacRumors / Joe Rossignol",
+    "crop": true,
+    "annotations": [
+     {
+      "kind": "underline",
+      "at": 0.5,
+      "x": 65,
+      "y": 1890,
+      "w": 910,
+      "h": 40
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "driven by AI server",
+   "line": "driven by AI server demand, just pushed it into 2027.",
+   "needs": [
+    "driven",
+    "server",
+    "demand",
+    "pushed",
+    "2027"
+   ],
+   "tier": "reliable",
+   "asset_id": "macbook-delay",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/apple-october-lineup/macbook-delay.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "backdrop": "cream",
+    "covers": "driven by AI server demand, just pushed it into 2027",
+    "creditOnScreen": true,
+    "credit": "MacRumors / Joe Rossignol",
+    "highlights": [
+     {
+      "at": 0.4,
+      "x": 45,
+      "y": 1150,
+      "w": 950,
+      "h": 450
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "So expect the smaller",
+   "line": "So expect the smaller refreshes to land right on schedule this October.",
+   "needs": [
+    "expect",
+    "smaller",
+    "refreshes",
+    "land",
+    "right",
+    "schedule"
+   ],
+   "tier": "reliable",
+   "asset_id": "macbook-delay",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/apple-october-lineup/macbook-delay.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "backdrop": "black",
+    "covers": "smaller refreshes to land right on schedule",
+    "creditOnScreen": true,
+    "credit": "MacRumors / Joe Rossignol",
+    "highlights": [
+     {
+      "at": 0.4,
+      "x": 110,
+      "y": 1850,
+      "w": 820,
+      "h": 450
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "The product everyone wants",
+   "line": "The product everyone wants might end up the one you wait longest for.",
+   "needs": [
+    "product",
+    "everyone",
+    "wants",
+    "might",
+    "wait",
+    "longest"
+   ],
+   "tier": "generated",
+   "asset_id": "avatar-master",
+   "scene": {
+    "type": "footage",
+    "src": "assets/apple-october-lineup/avatar-master.mp4",
+    "zoomDir": "out",
+    "zoom": 1.04,
+    "covers": "the one you wait longest for"
+   }
+  }
+ ]
 }
