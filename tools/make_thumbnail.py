@@ -150,7 +150,29 @@ def main() -> None:
     # wide in a 972px box. Enlarging here, to at least the largest box either
     # layout can offer (the full 1080 width x the 1440 3:4 safe area), means the
     # cap always binds and the subject always fills. LANCZOS, and only ever up.
-    if frame_rel:
+    # AN SVG IS ENLARGED BY SAYING SO, NOT BY RESAMPLING (2026-09-11).
+    # get_logo.mjs only ever writes SVG, and PIL cannot open one — so the
+    # enlarge step below CRASHED on the official logo that ladder rung 6 fetches.
+    # The WhatsApp cover only worked because a throwaway script outside the repo
+    # turned the SVG into a PNG first, which meant another machine could not make
+    # it. A vector needs no rasteriser: give its root element a width and height
+    # big enough for the cap to bind, and the browser draws it at that size, sharp.
+    if frame_rel.lower().endswith(".svg"):
+        import re
+        svg = (ROOT / "public" / frame_rel).read_text()
+        vb = re.search(r'viewBox="\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)', svg)
+        if not vb:
+            die(f"{frame_rel} has no viewBox, so its size cannot be derived")
+        vw, vh = float(vb.group(1)), float(vb.group(2))
+        k = max(1080 / vw, 1440 / vh)
+        root = re.search(r"<svg\b[^>]*>", svg).group(0)
+        sized = re.sub(r'\s(width|height)="[^"]*"', "", root)
+        sized = sized.replace("<svg", f'<svg width="{vw * k:.0f}" height="{vh * k:.0f}"', 1)
+        fit_rel = f"assets/{args.slug}/thumb-frame-fit.svg"
+        (ROOT / "public" / fit_rel).write_text(svg.replace(root, sized, 1))
+        print(f"  frame  vector sized to {vw * k:.0f}x{vh * k:.0f} -> public/{fit_rel}")
+        frame_rel = fit_rel
+    elif frame_rel:
         from PIL import Image
         src_img = ROOT / "public" / frame_rel
         with Image.open(src_img) as im:

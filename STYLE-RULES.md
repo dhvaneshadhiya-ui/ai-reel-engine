@@ -7731,3 +7731,33 @@ unchanged.
 
 Still true: the wide (long-form) layout wraps a 14-character line onto two. It
 is the retired format and was not asked for.
+
+## 2026-09-11 (3) — "everything is pushed" was true of git and false of the engine
+
+The user asked for everything to be pushed, then gave the rule: **push whatever
+is developed or improved, so the engine can be updated on another machine;
+never the whole folder.** `main` matched GitHub exactly (75d3df4), and still the
+engine on GitHub could not do something this machine had just done.
+
+The WhatsApp cover used the official logo from `get_logo.mjs`, which only ever
+writes SVG. The enlarge step added to `make_thumbnail.py` that same day opens
+every frame with PIL, and **PIL cannot open SVG** (UnidentifiedImageError). The
+cover only rendered because a throwaway script in `/tmp` had turned the SVG
+into a PNG first. So a fresh clone had the tool, the rule and the ladder rung
+that says "use the official mark" — and would have crashed on the first one it
+tried.
+
+**Fix, in the tool, stdlib only.** A vector needs no rasteriser: when the frame
+is an SVG, `make_thumbnail.py` writes a copy whose root `<svg>` carries a width
+and height large enough for the renderer's cap to bind (derived from the
+viewBox, same 1080 x 1440 target as the raster path), and the browser draws it
+at that size, sharp. Proved by rendering the cover straight from
+`assets/logos/whatsapp.svg`. It comes out ~10% larger than the delivered cover,
+because the old /tmp conversion had silently added a 5% transparent margin;
+both sit inside the safe area. The delivered file was restored from its
+approved source, since the user had already been told to upload it.
+
+**Distilled rule, now also in memory:** "pushed" means *a fresh clone can do
+what this machine can*, not *git status is clean*. Before saying it, check that
+nothing the work depended on lives only outside git — `git status --ignored`
+minus the material folders, plus anything run from /tmp.
