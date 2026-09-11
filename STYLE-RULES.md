@@ -7941,3 +7941,44 @@ have been on public GitHub since, including `Among Us.MP3`, `Vine Boom.MP3` and
 download for licensing reasons" — written for a stripped download that was
 never what got pushed. No change made: removing them from history is a
 force-push, which this repo forbids by design, and the fix is the user's call.
+
+## 2026-09-11 (9) — five emphasis effects from the talkcraft library, built as options
+
+The user asked for five effects plus anything else useful from video-talkcraft's
+108. Built from its written descriptions only — its code is non-commercial and
+was not read. Built as OPTIONS on the components we already use, not as new
+components: 19 of 43 of ours have never shipped, so adding more only increases
+that count.
+
+| effect | where | why it earns a place |
+|---|---|---|
+| hand-drawn underline / circle / arrow | `marks` on sourceread + receipt | a mark drawn ON the spoken word ties picture to voice (Rule 3) more tightly than a tint |
+| dim the rest | `dimRest` on sourceread | a highlight with nothing subtracted around it is half an emphasis |
+| magnifier | `magnify` on sourceread | the one small number the voice reads is otherwise ~40px tall on a phone |
+| news card on a desk | `desk` on receipt | 1.5° + a deeper shadow reads as a clipping, upright reads as a pop-up |
+| number counter | new `counter` scene | counted up, the viewer feels the size; pasted, they only see it |
+| push-through / whip | `exit` on any scene | the entry half already existed (6-frame settle from 1.09); only the exit half was missing |
+
+Also taken: the highlighter sweep went 0.28s -> 0.45s with pen-stroke corners
+(their card: under 0.3s "looks like a render bug"). This one is NOT opt-in —
+every page read changes. Nothing pinned 0.28.
+
+Left out, on purpose: 3D and particle effects, typewriter/glitch type, and most
+of the transitions. They are decoration, not proof, and a reel that treats every
+cut as a transition has none.
+
+Verified on 11 stills of a demo sheet on claude-memory-everywhere's pages
+(counter rolling and landing, push out/in, dim, underline, lens, whip out/in,
+desk + circle, counter on cream). Two notes from looking at them:
+- **The first lens was clipped.** Its box was a whole line (420px), and at
+  1.8x only ~260px fits inside the lens, so it read "e in chat is". The lens
+  now shrinks its zoom until the box fits, and G63 advises when that leaves
+  almost no magnification: box the number, not the line.
+- **On a text page there is no empty space for the lens.** It lands on
+  body text, and only the dim keeps it readable.
+- **The push-out is concentrated in the last two frames**, by design. It
+  is invisible as a still and reads as momentum at speed.
+
+G63 (advice) catches a mark or lens that never draws, or that draws off the
+image. G15/G55 cover the counter's source, value and label. Each has a failing
+case and a silent case.

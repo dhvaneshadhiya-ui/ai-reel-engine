@@ -1,6 +1,7 @@
 import React from "react";
 import { SPRING, DUR } from "../theme/motion";
 import { Credit } from "./Credit";
+import { InkMarks } from "./InkMarks";
 import {
   AbsoluteFill,
   Img,
@@ -153,12 +154,16 @@ export const ReceiptScene: React.FC<{ scene: ReceiptProps }> = ({ scene }) => {
           position: "relative",
           borderRadius: 24,
           overflow: "hidden",
-          boxShadow:
-            backdrop === "cream"
+          // `desk` (2026-09-11, talkcraft's news-card-desk): a card tilted
+          // 1.5deg with a deeper shadow reads as a physical clipping placed on
+          // a desk; bolt upright it reads as a software pop-up.
+          boxShadow: scene.desk
+            ? (backdrop === "cream" ? "0 44px 100px rgba(0,0,0,0.42)" : "0 44px 110px rgba(0,0,0,0.9)")
+            : backdrop === "cream"
               ? "0 30px 80px rgba(0,0,0,0.25)"
               : "0 30px 80px rgba(0,0,0,0.8)",
           opacity: enter,
-          transform: `translate(${tx}px, ${ty + (1 - enter) * 40}px) scale(${Zeased})`,
+          transform: `translate(${tx}px, ${ty + (1 - enter) * 40}px) scale(${Zeased}) rotate(${scene.desk ? -1.5 : 0}deg)`,
           transformOrigin: "50% 50%",
         }}
       >
@@ -166,6 +171,8 @@ export const ReceiptScene: React.FC<{ scene: ReceiptProps }> = ({ scene }) => {
           src={staticFile(scene.src)}
           style={{ width: "100%", height: "100%" }}
         />
+        {/* ink marks ride the card; the underline lands on the spoken word */}
+        <InkMarks marks={scene.marks} scale={sx} />
         {hls.map((h, idx) => {
           const local = Math.round((t - h.at) * fps);
           if (local < 0) return null;

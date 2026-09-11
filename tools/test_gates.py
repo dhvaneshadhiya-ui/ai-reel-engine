@@ -856,6 +856,28 @@ if _hits:
     raise SystemExit(1)
 _counted("G62 silent — a reel that carries real footage")
 
+# COUNTER, MARKS, LENS, EXIT — SILENT when used correctly (2026-09-11). A new
+# check that cannot say nothing is describing itself, not the reel.
+_s = copy.deepcopy(BASE)
+_s["scenes"][4].clear()
+_s["scenes"][4].update(type="counter", durationSec=3.0, value=18, suffix="B",
+                       label="UPI payments a month", source="NPCI")
+_s["scenes"][5].clear()
+_s["scenes"][5].update(type="sourceread", durationSec=2.5, src="assets/x/src.png", srcWidth=1080, srcHeight=2340, credit="@src", covers="benchmark", mobileCaptureOk=True, lines=[{"at": 0.2, "x": 40, "y": 200, "w": 900, "h": 60}],
+    dimRest=True, exit="push",
+    marks=[{"kind": "circle", "at": 0.8, "x": 40, "y": 200, "w": 300, "h": 60}],
+    magnify={"at": 1.0, "x": 40, "y": 200, "w": 300, "h": 60})
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS)
+    _hits = [a for a in _adv if any(g in a for g in ("G15", "G55", "G63"))]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)])
+             if any(g in str(a) for g in ("G15", "G55", "G63"))]
+if _hits:
+    print(f"  FAIL a correct counter / mark / lens / exit drew a complaint: {_hits[0][:100]}")
+    raise SystemExit(1)
+_counted("G15/G55/G63 silent — a sourced counter, a mark, a lens and a push exit, in bounds")
+
 # ── THE GUARD THAT WOULD HAVE CAUGHT ALL THREE OF TODAY'S BUGS ──────────────
 #
 # 2026-09-08 turned up three gates measuring the wrong thing, and every one of
@@ -1003,6 +1025,36 @@ CASES = [
                 for sc in s["scenes"][:12] if sc["type"] == "footage"],
      "G06", "facecam over 20%"),
     (lambda s: s["scenes"][3].update(src="assets/x/clips/b.mp4"), "G07", "clip reused"),
+    # counter (2026-09-11): a number that is not a number, no noun, no source
+    (lambda s: s["scenes"][4].clear() or s["scenes"][4].update(
+        type="counter", durationSec=3.0, value="18B", label="payments", source="NPCI"),
+     "G55", "counter value given as a string draws NaN"),
+    (lambda s: s["scenes"][4].clear() or s["scenes"][4].update(
+        type="counter", durationSec=3.0, value=18, label="", source="NPCI"),
+     "G55", "counter with no label"),
+    (lambda s: s["scenes"][4].clear() or s["scenes"][4].update(
+        type="counter", durationSec=3.0, value=18, label="billion a month"),
+     "G15", "counter with no source"),
+    # G63 — ink marks / magnifier / exit that can never land (advice)
+    (lambda s: s["scenes"][5].clear() or s["scenes"][5].update(
+        type="sourceread", durationSec=2.5, src="assets/x/src.png", srcWidth=1080,
+        srcHeight=2340, credit="@src", covers="benchmark", mobileCaptureOk=True,
+        lines=[{"at": 0.2, "x": 40, "y": 200, "w": 900, "h": 60}],
+        marks=[{"kind": "underline", "at": 9.0, "x": 40, "y": 200, "w": 300, "h": 60}]),
+     "G63", "an underline scheduled after its scene ends"),
+    (lambda s: s["scenes"][5].clear() or s["scenes"][5].update(
+        type="sourceread", durationSec=2.5, src="assets/x/src.png", srcWidth=1080,
+        srcHeight=2340, credit="@src", covers="benchmark", mobileCaptureOk=True,
+        lines=[{"at": 0.2, "x": 40, "y": 200, "w": 900, "h": 60}],
+        magnify={"at": 0.5, "x": 1000, "y": 200, "w": 300, "h": 60}),
+     "G63", "a magnifier box hanging off the source image"),
+    (lambda s: s["scenes"][5].clear() or s["scenes"][5].update(
+        type="sourceread", durationSec=2.5, src="assets/x/src.png", srcWidth=1080,
+        srcHeight=2340, credit="@src", covers="benchmark", mobileCaptureOk=True,
+        lines=[{"at": 0.2, "x": 40, "y": 200, "w": 900, "h": 60}],
+        magnify={"at": 0.5, "x": 40, "y": 200, "w": 900, "h": 60}),
+     "G63", "a magnifier boxing a whole line — nothing left to enlarge"),
+    (lambda s: s["scenes"][2].update(exit="zoom"), "G63", "an exit that is not push or whip"),
     # G62 — every visual beat becomes a document, so the reel has no picture.
     (lambda s: [s["scenes"][i].clear() or s["scenes"][i].update(
         type="sourceread", durationSec=2.5, src=f"assets/x/doc{i}.png",

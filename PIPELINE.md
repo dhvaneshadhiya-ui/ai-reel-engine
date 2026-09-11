@@ -131,7 +131,7 @@ audio duration.
 |---|---|---|
 | `footage` | `src, from?, zoomDir(in/out/none), focusX?, kinetic?, credit?, infocard?{heading,body,at}` | full-bleed clip (b-roll or facecam) |
 | `split` | `topSrc, topFrom?, topFocusX?, bottomSrc, bottomFrom?, bottomFocusX?, kinetic?` | hook: footage top / face bottom |
-| `receipt` | `src, srcWidth, srcHeight, backdrop(cream/black), highlights[{at,x,y,w,h}], credit?` | screenshot proof; zooms to highlight |
+| `receipt` | `src, srcWidth, srcHeight, backdrop(cream/black), highlights[{at,x,y,w,h}], credit?, desk?, marks?` | screenshot proof; zooms to highlight. `desk: true` tilts it 1.5° with a deeper shadow (a clipping on a desk) |
 | `typecard` | `kinetic{text,style}, bg?, fg?` | full-screen statement card |
 | `wordcascade` | `words[{text,style(serif/caps/pixel/gradient),at,size?}], bg?, mascot?, bottomSrc?` | words stacking in sequence |
 | `promptcard` | `promptText, highlights[], headline?, subtext?, loaders?(n), lines?[], app?, bg?` | AI-prompt UI card, keyword highlights |
@@ -143,6 +143,7 @@ audio duration.
 | `hcompare` | `topSrc, bottomSrc, topLabel?, bottomLabel?, topFrac?, messages[]` | horizontal top/bottom compare, cyan match boxes |
 | `specsheet` | `title, kicker?, rows[{label,value,accent?}], footnote?` | dark spec card, 1 accent row (premium MG) |
 | `statcard` | `title, titleRight?, rows[{label,value,pct,color?}], footnote?, bg?` | animated bar stats |
+| `counter` | `value(number), label, source, from?, decimals?, prefix?, suffix?, at?, rollSec?, bg?` | ONE number rolling up to its value, one pulse on landing. G55 needs a numeric value + label; G15 needs source |
 | `desktopmockup` | `files[{name,kind}], selected?, bg?` | fake desktop with file icons |
 | `uidialog` | `app?, title, body?, field?, select?, primary?, cancel?` | fake app dialog |
 | `logobeat` | `src?/text?, mark?(starburst), markColor?, pixel?, bg?, label?` | animated logo/mark beat |
@@ -308,7 +309,19 @@ Renderers: `FootageScene, SplitScene, ReceiptScene, TypeCard, WordCascade,
 PromptCard, CategoryGrid, Carousel, DesignReveal, Checklist, CompareSplit,
 HCompare, SpecSheet, StatCard, DesktopMockup, UIDialog, LogoBeat, FloatingCard,
 EndQuestion, KineticType (on-scene type), HeadlineBuild (serif title overlay),
-CaptionChips (caption bar)`. Add a new scene type by: add it to the `Scene`
+CaptionChips (caption bar), CounterScene, InkMarks (shared hand-drawn marks)`.
+
+**Options added 2026-09-11 (from video-talkcraft's effect descriptions; our own code):**
+- any scene: `exit: "push"|"whip"` — the handover to the NEXT scene. Push accelerates in and the
+  next settles from larger; whip smears sideways. Default is a cut. No timing moves.
+- `sourceread` + `receipt`: `marks[{kind: underline|circle|arrow, at, x, y, w, h, color?, dur?}]` —
+  a hand-drawn mark in source px, drawn on at `at` (the spoken word). Default red.
+- `sourceread`: `dimRest: true` — everything but the line being read goes dark;
+  `magnify{at, x, y, w, h, zoom?, until?}` — a round lens for the one small number the voice reads.
+  The highlighter sweep is now 0.45s with pen-stroke corners (was 0.28s: read as a glitch).
+- G63 (advice) flags a mark or lens that lands after its scene ends or off the image, and an unknown exit.
+
+Add a new scene type by: add it to the `Scene`
 union in `types.ts`, write `components/<Name>.tsx`, add a `case` in
 `Reel.tsx`'s `SceneSwitch`.
 

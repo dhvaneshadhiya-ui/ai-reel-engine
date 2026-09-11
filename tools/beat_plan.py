@@ -54,6 +54,7 @@ PLAIN = {
     "typecard": "a full-screen text card: {texts}",
     "specsheet": "a spec sheet builds line by line",
     "statcard": "one big number on a card",
+    "counter": "one big number rolls up to its final value, with what it counts underneath",
     # floatcard said "a floating info card over the scene" — which describes the
     # CONTAINER and not one thing inside it. An approver reading that learns
     # nothing about what they are approving, the exact failure this file exists

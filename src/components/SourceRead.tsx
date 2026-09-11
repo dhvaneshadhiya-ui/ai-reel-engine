@@ -1,6 +1,9 @@
 import React from "react";
+import { InkMarks, type InkMark } from "./InkMarks";
+import { SPRING } from "../theme/motion";
 import { Credit } from "./Credit";
 import {
+  spring,
   Easing,
   AbsoluteFill,
   Img,
@@ -54,6 +57,21 @@ export interface SourceReadProps {
    * 41% of its runtime in sourceread and measured 61% near-static.
    */
   film?: boolean;
+  /**
+   * DIM THE REST (2026-09-11, talkcraft's focus-dim-spotlight / highlighter
+   * rule): the line being read stays lit and everything else goes dark, the
+   * lit band sliding from line to line and restoring as the scene ends. A
+   * highlight with nothing subtracted around it is half an emphasis.
+   */
+  dimRest?: boolean;
+  /** hand-drawn underline / circle / arrow, drawn on at `at` (see InkMarks) */
+  marks?: InkMark[];
+  /**
+   * MAGNIFIER for the one number the voice reads out (2026-09-11). A round
+   * lens lands in empty space, pixel-true to the source, the page dims, and a
+   * line points back to where it came from. Source-px box; zoom default 1.8.
+   */
+  magnify?: { at: number; x: number; y: number; w: number; h: number; zoom?: number; until?: number };
 }
 
 // film mode — every number is a fraction of the frame, so it scales with it
@@ -86,13 +104,17 @@ function filmY(t: number, stops: { at: number; y: number }[], h: number,
 
 export const SourceRead: React.FC<{ scene: SourceReadProps }> = ({ scene }) => {
   const frame = useCurrentFrame();
-  const { fps, width, height } = useVideoConfig();
+  const { fps, width, height, durationInFrames } = useVideoConfig();
+  const sceneDur = durationInFrames / fps;
   const theme = useTheme();
   const t = frame / fps;
 
   const {
     src, srcWidth, srcHeight, lines, credit,
-    tint = "#B7E4C7", follow = true, sweepSec = 0.28, film = false,
+    // sweep 0.45s, was 0.28 — talkcraft's highlighter card measures under 0.3s
+    // as "looks like a render bug" and 0.4-0.8 as a pen following the voice.
+    tint = "#B7E4C7", follow = true, sweepSec = 0.45, film = false,
+    dimRest = false, marks, magnify,
   } = scene;
 
   // fit to frame WIDTH — the page stays at reading size, never zoomed. A
@@ -136,6 +158,84 @@ export const SourceRead: React.FC<{ scene: SourceReadProps }> = ({ scene }) => {
     ? filmY(t, ordered.map((l) => ({ at: l.at, y: offsetFor(l) })), height, clampY)
     : offsetFor(prev) + (offsetFor(active) - offsetFor(prev)) * p;
 
+  // ── dim the rest ────────────────────────────────────────────────────────
+  let dimEls: React.ReactNode = null;
+  if (dimRest && landed.length && ordered.length) {
+    const band = (l: { y: number; h: number }) => [l.y * scale - 12, (l.y + l.h) * scale + 12];
+    const [a0, a1] = band(active), [b0, b1] = band(prev);
+    const q = interpolate(t, [active.at, active.at + 0.22], [0, 1], {
+      extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.cubic),
+    });
+    const top = b0 + (a0 - b0) * q, bot = b1 + (a1 - b1) * q;
+    const on = interpolate(t, [ordered[0].at, ordered[0].at + 0.25], [0, 1], {
+      extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+    const off = interpolate(t, [sceneDur - 0.35, sceneDur], [1, 0], {
+      extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+    const o = 0.46 * Math.min(on, off);
+    dimEls = (
+      <>
+        <div style={{ position: "absolute", left: 0, top: 0, width, height: Math.max(0, top),
+          background: "linear-gradient(to bottom, rgb(8,9,12) calc(100% - 24px), transparent)", opacity: o }} />
+        <div style={{ position: "absolute", left: 0, top: bot, width, height: Math.max(0, pageH - bot),
+          background: "linear-gradient(to top, rgb(8,9,12) calc(100% - 24px), transparent)", opacity: o }} />
+      </>
+    );
+  }
+
+  // ── magnifier ───────────────────────────────────────────────────────────
+  let lens: React.ReactNode = null;
+  if (magnify && t >= magnify.at) {
+    const until = magnify.until ?? sceneDur - 0.25;
+    const inP = spring({ frame: Math.max(0, frame - Math.round(magnify.at * fps)), fps,
+                         config: SPRING.pop, durationInFrames: 12 });
+    const outP = interpolate(t, [until, until + 0.22], [1, 0], {
+      extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+    const vis = Math.min(inP, outP);
+    if (vis > 0.001) {
+      // where the box is ON SCREEN: the page layer is translateY(smoothY)
+      // scale(zoom) about 50% 40%, so p' = o + zoom * (p - o) + (0, smoothY)
+      const ox = width * 0.5, oy = height * 0.4;
+      const sxy = (px: number, py: number) =>
+        [ox + zoom * (px * scale - ox), oy + zoom * (py * scale - oy) + smoothY];
+      const [bx0, by0] = sxy(magnify.x, magnify.y);
+      const [bx1, by1] = sxy(magnify.x + magnify.w, magnify.y + magnify.h);
+      const tcx = (bx0 + bx1) / 2, tcy = (by0 + by1) / 2;
+      const D = width * 0.44;
+      // never wider than the lens: a clipped box shows half a word (seen on
+      // the first stills, 2026-09-11). G63 advises when this leaves ~no zoom.
+      const zl = Math.min(magnify.zoom ?? 1.8, (D * 0.9) / Math.max(1, bx1 - bx0));
+      const above = tcy > height * 0.45;          // land in empty space
+      const lcx = Math.max(D / 2 + 40, Math.min(width - D / 2 - 40, tcx));
+      const lcy = Math.max(height * 0.06 + D / 2,
+                  Math.min(height * 0.8 - D / 2, above ? tcy - height * 0.3 : tcy + height * 0.3));
+      const k = scale * zoom * zl;                // source px -> lens px
+      const scan = 7 * Math.sin(t * 1.4);         // keep-alive: a lens never sits as a sticker
+      const imgLeft = D / 2 - (magnify.x + magnify.w / 2) * k + scan;
+      const imgTop = D / 2 - (magnify.y + magnify.h / 2) * k;
+      const ax = tcx, ay = above ? by0 : by1;     // connector: box edge -> lens rim
+      const ang = Math.atan2(lcy - ay, lcx - ax);
+      const ex = lcx - Math.cos(ang) * (D / 2), ey = lcy - Math.sin(ang) * (D / 2);
+      lens = (
+        <>
+          <AbsoluteFill style={{ background: "rgba(8,9,12,0.42)", opacity: vis }} />
+          <div style={{ position: "absolute", left: bx0 - 6, top: by0 - 6,
+            width: bx1 - bx0 + 12, height: by1 - by0 + 12, border: "3px solid #fff",
+            borderRadius: 10, opacity: vis }} />
+          <svg width={width} height={height} style={{ position: "absolute", left: 0, top: 0, opacity: vis }}>
+            <line x1={ax} y1={ay} x2={ex} y2={ey} stroke="#fff" strokeWidth={3} strokeLinecap="round" />
+          </svg>
+          <div style={{ position: "absolute", left: lcx - D / 2, top: lcy - D / 2, width: D, height: D,
+            borderRadius: "50%", overflow: "hidden", border: "5px solid #fff", background: theme.cream,
+            boxShadow: "0 24px 60px rgba(0,0,0,0.55)", opacity: vis,
+            transform: `scale(${0.6 + 0.4 * vis})` }}>
+            <Img src={staticFile(src)} style={{ position: "absolute", left: imgLeft, top: imgTop,
+              width: srcWidth * k, height: srcHeight * k, maxWidth: "none" }} />
+          </div>
+        </>
+      );
+    }
+  }
+
   return (
     <AbsoluteFill style={{ background: theme.cream, overflow: "hidden" }}>
       <AbsoluteFill
@@ -152,7 +252,8 @@ export const SourceRead: React.FC<{ scene: SourceReadProps }> = ({ scene }) => {
           {lines.map((l, i) => {
             const p = interpolate(
               t, [l.at, l.at + sweepSec], [0, 1],
-              { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+              { extrapolateLeft: "clamp", extrapolateRight: "clamp",
+                easing: Easing.inOut(Easing.quad) }   // pen-down, pen-up
             );
             if (p <= 0) return null;
             return (
@@ -160,21 +261,25 @@ export const SourceRead: React.FC<{ scene: SourceReadProps }> = ({ scene }) => {
                 key={i}
                 style={{
                   position: "absolute",
-                  left: l.x * scale,
+                  left: l.x * scale - 4,
                   top: l.y * scale,
-                  width: l.w * scale * p,
+                  width: (l.w * scale + 8) * p,
                   height: l.h * scale,
                   background: tint,
                   // multiply keeps the words readable THROUGH the marker —
                   // a solid fill would cover the very text being proved
                   mixBlendMode: "multiply",
-                  borderRadius: 3,
+                  // irregular corners read as a marker stroke, not a box
+                  borderRadius: "10px 4px 8px 3px / 6px 10px 4px 8px",
                 }}
               />
             );
           })}
+          {dimEls}
+          <InkMarks marks={marks} scale={scale} />
         </div>
       </AbsoluteFill>
+      {lens}
 
       {/* was a hand-rolled credit at bottom: 26 — y 0.986, under Instagram's
           "Add comment" bar. The size check could not see it (24px is below

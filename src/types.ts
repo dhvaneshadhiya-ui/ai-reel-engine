@@ -9,6 +9,8 @@ import type { BrandHookProps } from "./components/BrandHook";
 import type { LogoAssembleProps } from "./components/LogoAssemble";
 import type { ToolStackProps } from "./components/ToolStack";
 import type { SourceReadProps } from "./components/SourceRead";
+import type { InkMark } from "./components/InkMarks";
+import type { CounterProps } from "./components/CounterScene";
 import type { PriceLadderProps } from "./components/PriceLadder";
 
 export type KineticStyle = "serif" | "caps" | "chip";
@@ -89,6 +91,9 @@ export interface Headline {
 
 interface SceneBase {
   durationSec: number;
+  /** how this scene hands over to the NEXT one (2026-09-11): "push" accelerates
+   *  in and the next settles from larger; "whip" smears sideways. Default: cut. */
+  exit?: "push" | "whip";
   /**
    * Which product this beat is about, in a `comparison` reel.
    * "a" / "b" = the two sides as declared in the sheet's `sides`;
@@ -122,6 +127,7 @@ interface SceneBase {
 }
 
 export type Scene =
+  | (SceneBase & { type: "counter" } & CounterProps)
   | (SceneBase & {
       type: "footage";
       src: string;
@@ -167,6 +173,10 @@ export type Scene =
   | (SceneBase & {
       type: "receipt";
       src: string;
+      /** news-card-on-a-desk treatment: 1.5deg tilt, deeper shadow */
+      desk?: boolean;
+      /** hand-drawn underline / circle / arrow at `at` (source px) */
+      marks?: InkMark[];
       backdrop?: "cream" | "black";
       srcWidth: number;
       srcHeight: number;

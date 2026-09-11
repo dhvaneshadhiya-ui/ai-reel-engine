@@ -11,6 +11,7 @@ import {
 } from "remotion";
 import { FootageScene } from "./components/FootageScene";
 import { ReceiptScene } from "./components/ReceiptScene";
+import { CounterScene } from "./components/CounterScene";
 import { SourceRead } from "./components/SourceRead";
 import { TypeCard } from "./components/TypeCard";
 import { SplitScene } from "./components/SplitScene";
@@ -116,6 +117,8 @@ const SceneBody: React.FC<{ scene: Scene }> = ({ scene }) => {
   switch (scene.type) {
     case "footage":
       return <FootageScene scene={scene} />;
+    case "counter":
+      return <CounterScene scene={scene} />;
     case "receipt":
       return <ReceiptScene scene={scene} />;
     case "sourceread":
@@ -208,14 +211,52 @@ const SceneBody: React.FC<{ scene: Scene }> = ({ scene }) => {
 };
 
 /** Quick punch-in on every cut so nothing ever feels static. */
-const PunchIn: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+// SCENE HANDOVER. Every scene has always entered with a 6-frame settle from
+// 1.09 — the INCOMING half of a push-through. 2026-09-11 adds the outgoing
+// half, per scene via `exit` (from video-talkcraft's push-through and whip-pan
+// descriptions; our own code). Both halves move the SAME way, so momentum
+// carries across the cut instead of the frame being swapped: a direction break
+// reads worse than a hard cut. No overlap is needed, so no scene's timing — and
+// no word's sync — moves.
+//   push  out: last 6 frames accelerate in to 1.14; in: settle from 1.14
+//   whip  out: smear left; in: arrive from the right. Held at 1.2x throughout so
+//         the 8% travel never uncovers a black edge.
+const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
+const PunchIn: React.FC<{
+  children: React.ReactNode;
+  enter?: "push" | "whip";
+  exit?: "push" | "whip";
+}> = ({ children, enter, exit }) => {
   const frame = useCurrentFrame();
-  const scale = interpolate(frame, [0, 6], [1.09, 1], {
-    extrapolateRight: "clamp",
-    easing: (t) => 1 - Math.pow(1 - t, 2),
-  });
+  const { durationInFrames, width } = useVideoConfig();
+  let scale: number;
+  let tx = 0;
+  let blur = 0;
+  if (enter === "whip") {
+    const k = interpolate(frame, [0, 8], [1, 0], { ...CLAMP, easing: (t) => 1 - Math.pow(1 - t, 3) });
+    scale = 1 + 0.2 * k;
+    tx = width * 0.08 * k;
+    blur = 16 * k;
+  } else {
+    const push = enter === "push";
+    scale = interpolate(frame, [0, push ? 8 : 6], [push ? 1.14 : 1.09, 1], {
+      ...CLAMP, easing: (t) => 1 - Math.pow(1 - t, push ? 3 : 2) });
+  }
+  if (exit && durationInFrames > 10) {
+    const e = interpolate(frame, [durationInFrames - 6, durationInFrames], [0, 1], {
+      ...CLAMP, easing: (t) => t * t * t });
+    if (exit === "push") scale *= 1 + 0.14 * e;
+    else {
+      scale = Math.max(scale, 1 + 0.2 * e);
+      tx -= width * 0.08 * e;
+      blur = Math.max(blur, 16 * e);
+    }
+  }
   return (
-    <AbsoluteFill style={{ transform: `scale(${scale})` }}>
+    <AbsoluteFill style={{
+      transform: `translateX(${tx}px) scale(${scale})`,
+      filter: blur > 0.1 ? `blur(${blur.toFixed(2)}px)` : undefined,
+    }}>
       {children}
     </AbsoluteFill>
   );
@@ -281,7 +322,7 @@ export const Reel: React.FC<{ beats: BeatSheet }> = ({ beats }) => {
               sceneIndex={i}
               suppressed={Boolean(beats.noCredits)}
             >
-              <PunchIn>
+              <PunchIn enter={i > 0 ? beats.scenes[i - 1].exit : undefined} exit={scene.exit}>
                 <SceneSwitch scene={scene} />
               </PunchIn>
             </CreditPolicyProvider>

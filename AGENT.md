@@ -641,6 +641,12 @@ Key scene types — full table in `PIPELINE.md` §3:
 | `wordcascade` | words stacking in sequence |
 | `hcompare` / `comparesplit` | before/after comparisons |
 | `statcard`, `checklist`, `categorygrid`, `carousel`, `xpost` | structured MG |
+| `counter` | one big number rolling up — the number the whole line is about |
+
+**Emphasis options, 2026-09-11** (full list in `PIPELINE.md` §8): underline / circle / arrow
+marks on the spoken word, dim-the-rest and a magnifier on page reads, a desk tilt on
+receipts, and `exit: push|whip` between scenes. Use them where the line earns it: one
+mark per beat, not a mark on every beat.
 
 ---
 

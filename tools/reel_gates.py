@@ -1550,6 +1550,44 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 "(AGENT.md STEP 1a ladder rung 2). Do not fix this by "
                 "relabelling scenes.")
 
+    # G63 — A MARK OR LENS THAT NEVER LANDS (2026-09-11). ADVICE.
+    # `marks` (underline / circle / arrow, on sourceread and receipt) and
+    # sourceread `magnify` draw at their `at`. Scheduled at or past the scene's
+    # end they never draw; placed outside the source image they draw off the
+    # page; an unknown kind draws nothing. An `exit` other than push/whip is
+    # ignored and the scene simply cuts.
+    for i, sc in enumerate(scenes):
+        dur = float(sc.get("durationSec") or 0)
+        ex = sc.get("exit")
+        if ex is not None and ex not in ("push", "whip"):
+            errors.append(f"G63 scene {i:02d} exit {ex!r} is not push or whip "
+                          "— it is ignored and the scene cuts.")
+        if sc.get("type") not in ("sourceread", "receipt"):
+            continue
+        sw, sh = float(sc.get("srcWidth") or 0), float(sc.get("srcHeight") or 0)
+        items = [("mark", m) for m in (sc.get("marks") or [])]
+        if sc.get("magnify"):
+            items.append(("magnify", sc["magnify"]))
+        for what, m in items:
+            if what == "mark" and m.get("kind") not in ("underline", "circle", "arrow"):
+                errors.append(f"G63 scene {i:02d} mark kind {m.get('kind')!r} is not "
+                              "underline, circle or arrow — it draws nothing.")
+            at = float(m.get("at") or 0)
+            if at >= dur:
+                errors.append(f"G63 scene {i:02d} {what} at {at}s lands after the "
+                              f"{dur}s scene ends — it never draws.")
+            x, y, w, h = (float(m.get(k) or 0) for k in ("x", "y", "w", "h"))
+            # the lens shrinks its zoom until the box fits (0.9 of a 0.44-frame
+            # lens, on a page fitted to width). Under ~1.3x it magnifies nothing:
+            # the box is a line, and a lens is for the one number in it.
+            if what == "magnify" and sw and w and 0.9 * 0.44 * sw / w < 1.3:
+                errors.append(f"G63 scene {i:02d} magnify box is {w:.0f}px of a "
+                              f"{sw:.0f}px page — too wide for the lens to enlarge. "
+                              "Box the number, not the line.")
+            if sw and sh and (x < 0 or y < 0 or x + w > sw or y + h > sh):
+                errors.append(f"G63 scene {i:02d} {what} box sits outside the "
+                              f"{sw:.0f}x{sh:.0f} source — it would draw off the page.")
+
     # G60 — A SPLIT CANNOT SHOW THE PRESENTER'S HANDS (2026-09-02). ADVICE.
     #
     # MEASURED, not assumed. On the master at the same timestamp the presenter
@@ -2041,7 +2079,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # G15 — every card that states a NUMBER carries where the number came from.
     # A data card without a source is an assertion; with one it is reporting.
     for i, sc in enumerate(scenes):
-        if sc["type"] not in ("specsheet", "chart", "timeline", "statcard"):
+        if sc["type"] not in ("specsheet", "chart", "timeline", "statcard", "counter"):
             continue
         attribution = (str(sc.get("source") or "") + str(sc.get("footnote") or "")).strip()
         if not attribution:
@@ -2676,6 +2714,23 @@ def check_beats(beats: dict, vo_end: float | None = None,
                     f"G54 scene {i:02d} word {j} ({w.get('text')!r}) lands at "
                     f"{at}s in a {dur}s beat — it is never drawn. `at` is "
                     "SECONDS from the start of the scene, not frames.")
+
+    # G55 (counter, 2026-09-11). CounterScene rolls to `value` with
+    # toLocaleString and interpolation: a missing or non-numeric value draws
+    # "NaN", and a counter with no `label` is a number with no noun — on mute,
+    # it says nothing. Same class as a chart value given as a string.
+    for i, sc in enumerate(scenes):
+        if sc.get("type") != "counter":
+            continue
+        v = sc.get("value")
+        if not isinstance(v, (int, float)) or isinstance(v, bool) or v != v:
+            errors.append(
+                f"G55 scene {i:02d} counter `value` is {v!r} — it must be a number; "
+                "the component rolls to it and anything else draws NaN.")
+        if not str(sc.get("label") or "").strip():
+            errors.append(
+                f"G55 scene {i:02d} counter has no `label` — a number with no noun "
+                "says nothing on mute.")
 
     # G55 — RENDER: chart / specsheet / statcard off their component contract.
     #
