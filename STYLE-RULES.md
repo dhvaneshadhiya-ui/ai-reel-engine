@@ -7843,3 +7843,42 @@ cover's version of Rule 3. And the first crop of B ran into the next row of the
 picker and left the tops of two heads at the bottom edge; the grid showed the
 cards end at y~1670 and the next heads start at ~1722, and the crop was cut
 between them.
+
+## 2026-09-11 (7) — video-talkcraft: its ideas tested on our renders, and two metrics that broke
+
+The user asked whether `video-talkcraft` would help. The ruling (do not
+install) is in CLAUDE.md. What is recorded here is the measurement, because
+four of its claims were testable against our own reels, and three were not
+worth adopting once tested.
+
+- **"No frozen 0.8s stretch"** (`ffmpeg freezedetect n=0.003 d=0.8`, their gate):
+  whatsapp-agents 0 frozen stretches, chatgpt-stickers 0, the 401K Wisdom Loom
+  reel 2 (2.6s). Our problem is NEAR-static (motion_mix, 2026-09-08), not
+  frozen; the slow push keeps every frame technically moving, so this gate
+  would never fire on us.
+- **25-to-30fps duplicate frames** (our avatar arrives at 25fps): no 6-frame
+  repeat pattern in a presenter stretch. The conform is clean.
+- **Text shimmer from `--concurrency>1`** (we render at 6): still text in a
+  sourceread peaks at 0.18 frame-to-frame (their clean render: under 0.15, a
+  visible shimmer 1.5-3). A settingspane shows a faint rhythm at exactly lag
+  6 (autocorrelation +0.44) at 0.17 — real, and about ten times below visible.
+  No action.
+- **Are our sound effects audible over the voice?** Unanswered, and the way it
+  went unanswered is the lesson. Metric one: whisper's word timings put cues
+  "inside a word" 9 of 9 times — but whisper runs 193 of 225 word pairs back to
+  back, and one cue counted as both inside a word and inside a pause, so it
+  measured nothing. Metric two: subtract the voice (avatar-master) from the
+  final mix at each cue. It first aligned at r = 0.05-0.20 (wrong lag step) and
+  called every cue audible; fixed to r = 0.80-0.89, it called 12 of 12 measurable
+  cues audible. **The control killed it**: the same measure at 41 plain-speech
+  moments with no cue nearby gave residuals as high or higher (median +12.6 and
+  +11.1 dB over the voice, against +10.0 and +9.6 at the cues). At r ~0.85 the
+  subtraction leaks voice, and the metric cannot tell a sound effect from the
+  leak.
+
+**Distilled rule:** a measurement needs a control exactly as a gate needs a
+silent case — both answer "what does this say when there is nothing to find?".
+The exact way to answer the SFX question needs no alignment at all: render the
+same beat sheet with the voice muted, and read each cue's level against the
+voice at that moment. That is the one talkcraft idea with an open question
+behind it, and the one worth building.

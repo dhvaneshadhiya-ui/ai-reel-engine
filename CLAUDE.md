@@ -741,3 +741,26 @@ Reddit/community trend discovery. The file is something else:
   session already.
 
 `content-calendar` is plausible LATER, once output is weekly. Not installed.
+
+**`video-talkcraft` — REVIEWED 2026-09-11, DO NOT INSTALL; ideas only.**
+(github.com/Vincentwei1021/video-talkcraft — SKILL.md, licence and scripts read
+in full, not just the README.) A complete, careful Remotion pipeline for
+narrated explainers. Not for this repo:
+- **Licence: PolyForm Noncommercial 1.0.0.** Commercial use of the toolkit
+  needs the author's authorization. iGeeksBlog is commercial, and copying its
+  code into this PUBLIC repo would redistribute it. Its ideas are free to use;
+  its code is not.
+- **Its description competes with `news-reel`** ("终极口播视频 skill" — the
+  ultimate talking-head video skill — triggering on "make a talking-head video"
+  and "turn copy into video"): the same class of problem as `social`/`video`.
+- **Landscape 1920x1080 by default, Chinese-first** (scripts must write numbers
+  as hanzi for its FireRedASR2 aligner). Installs by symlinking into
+  `~/.claude/skills`; 64 MB repo plus a 767 MB model.
+
+Its ideas were TESTED against our own renders rather than adopted on its word
+(STYLE-RULES 2026-09-11 (7)). Three catch nothing in our reels. One — is each
+sound effect actually audible over the voice? — could not be answered by
+measuring the final mix, and needs an SFX-only render, which our pipeline can
+do exactly: the one worth building. Its "film the page, don't paste it" idea (a
+continuous slow scroll that decelerates and stops on the key line) is the other
+worth trying against our static `sourceread` holds. Untested.
