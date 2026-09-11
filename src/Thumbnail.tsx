@@ -131,6 +131,12 @@ const Vertical: React.FC<InnerProps> = ({
             <Img
               src={staticFile(frameSrc)}
               style={{
+                // Caps, never enlarges — so the element HUGS the picture and the
+                // radius and shadow land on the image itself. Filling the box is
+                // done upstream: make_thumbnail.py enlarges any frame smaller than
+                // the largest possible box before it gets here (2026-09-11). Doing
+                // it here with width/height 100% + objectFit drew the picture
+                // inside a larger box, and the corners rounded the box instead.
                 maxWidth: "100%",
                 maxHeight: "100%",
                 objectFit: "contain",
@@ -292,6 +298,7 @@ const Wide: React.FC<InnerProps> = ({
           <Img
             src={staticFile(frameSrc)}
             style={{
+              // caps only — see the vertical layout; filling is done upstream.
               maxWidth: "100%",
               maxHeight: "100%",
               objectFit: "contain",

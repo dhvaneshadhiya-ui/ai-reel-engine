@@ -7684,3 +7684,50 @@ be. Synced; the skill now names AGENT.md as the source and only summarises.
 
 Thumbnails remain RETIRED as a pipeline step (2026-08-22); this was a single
 cover on request, run through `--i-know-its-retired`.
+
+## 2026-09-11 (2) — second cover: the renderer never enlarged a picture
+
+Second cover on request, for `qualcomm-chip-hike`. This time the ladder
+stopped where it should: **rung 1**. The reel had already scouted `chip-circuit`,
+Qualcomm's own CG render of the Snapdragon 8 Elite Gen 5 package, so a single
+frame (1.7s) became the subject — a physical object with its own wordmark on
+it. The laptop X2 chip was the wrong device and the Micron wafer is the reel's
+twist, not its subject.
+
+**The words are the official claim, not the hook.** The reel opens on "your next
+Android phone is about to cost more", and its own research.md logs that as an
+INFERENCE the script calibrates out loud ("no phone maker has named a figure").
+A cover cannot calibrate. So it says **CHIP PRICES UP / DOUBLE DIGITS** —
+Qualcomm's own words, about chips, not phones. It also had to FIT: at 104px
+heavy caps a line holds ~14 characters (measured off "NOT ENCRYPTED", ~66px per
+character), and "SNAPDRAGON PRICES" / "DOUBLE-DIGIT HIKE" at 17 would have
+wrapped. `make_thumbnail.py` limits WORDS per line, which is the wrong unit for
+this constraint — a known gap, noted rather than fixed here.
+
+**The crop was checked on a pixel grid before it was cut.** The source is
+1920x1010 landscape with the chip in the middle fifth; whole, it would have
+rendered ~195px wide. The first box left 150px above the package and 50px
+below; re-centred on the package (586,140-1346,970) for ~100px each way.
+
+**FOUND — tight crops landed SMALL.** `Thumbnail.tsx` styled the subject
+`maxWidth/maxHeight: 100%`, which CAPS an image and never scales it up, so a
+picture rendered at its own pixel size: the 760px chip crop sat 760px wide in a
+972px box. The tighter and more correct the crop, the smaller the subject. The
+WhatsApp logo had only looked big because it happened to be rasterised at
+1000px. The rule is "the subject fills the frame"; the renderer was enforcing
+the opposite.
+
+The FIRST fix was wrong and is recorded because it looked right in the format
+that was asked for: `width/height: 100%` + `objectFit: contain` filled the
+vertical cover, but draws the picture inside a larger box, so in the wide
+layout the border radius rounded the BOX and the chip came out square-cornered.
+The fix that held is upstream: `make_thumbnail.py` now enlarges any frame
+smaller than the largest box either layout can offer (1080 wide x the 1440 3:4
+safe area, LANCZOS, only ever up), and the component goes back to hugging the
+image — so the cap always binds, the subject fills, and the radius and shadow
+land on the picture. Re-rendered all three to prove it: the chip fills, the wide
+corners are rounded again, and the WhatsApp cover already delivered is visually
+unchanged.
+
+Still true: the wide (long-form) layout wraps a 14-character line onto two. It
+is the retired format and was not asked for.

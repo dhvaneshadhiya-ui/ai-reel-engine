@@ -143,6 +143,25 @@ def main() -> None:
         frame_rel = ""
         print("  frame  none (solid background)")
 
+    # ENLARGE A SMALL FRAME SO IT FILLS ITS BOX (2026-09-11). Thumbnail.tsx
+    # only CAPS the image (maxWidth/maxHeight), which keeps the radius and the
+    # shadow on the picture itself but never scales UP — so a tightly cropped
+    # subject, which is the correct crop, landed small: a 760px chip sat 760px
+    # wide in a 972px box. Enlarging here, to at least the largest box either
+    # layout can offer (the full 1080 width x the 1440 3:4 safe area), means the
+    # cap always binds and the subject always fills. LANCZOS, and only ever up.
+    if frame_rel:
+        from PIL import Image
+        src_img = ROOT / "public" / frame_rel
+        with Image.open(src_img) as im:
+            k = max(1.0, 1080 / im.width, 1440 / im.height)
+            if k > 1.0:
+                fit_rel = f"assets/{args.slug}/thumb-frame-fit.png"
+                im.resize((round(im.width * k), round(im.height * k)),
+                          Image.LANCZOS).save(ROOT / "public" / fit_rel)
+                print(f"  frame  enlarged x{k:.2f} to fill its box -> public/{fit_rel}")
+                frame_rel = fit_rel
+
     props = {
         "brand": args.brand,
         "frameSrc": frame_rel,
