@@ -356,7 +356,9 @@ Fix, re-render, re-verify. Only then deliver.
 
 ### 5b — Cover (every reel, user directive 2026-09-11)
 
-Every reel gets a 1080x1920 cover; no presenter face for now. The full step
+Every reel gets a 1080x1920 cover; no presenter face for now. A face that
+IS the reel's subject (the stickers in chatgpt-stickers) is fine — the user
+chose exactly that on 2026-09-11. The full step
 is AGENT.md STEP 6 — this is the summary, because this skill is the copy
 that loads and a rule only in AGENT.md did not reach it on 2026-09-10.
 

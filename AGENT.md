@@ -537,7 +537,9 @@ Fix, re-render, re-verify. Only then deliver.
 
 **Every reel gets a cover.** Dropped 2026-08-22, skipped by default from
 2026-08-24, reinstated for every reel on 2026-09-11 — and **no presenter face
-for now** (same directive), so the anchor is the SUBJECT. `showrunner.py`
+for now** (same directive), so the anchor is the SUBJECT. A face that IS
+the subject is fine: for chatgpt-stickers the user chose the grid of
+stickers ChatGPT made of their own face over a no-face option (2026-09-11). `showrunner.py`
 shows it as a stage and `prepublish.py` fails a reel that has none.
 
 ```bash

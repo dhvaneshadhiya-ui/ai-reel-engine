@@ -7822,3 +7822,24 @@ for is carried by what sits on it.
 **No face, for now.** The template's own rule ("we are a publication, not a
 personality") stands by the user's call — even though the reels carry a
 presenter, which leaves the cover the only surface without one.
+
+## 2026-09-11 (6) — what "no face" means, settled by the user's own choice
+
+The first cover made under the every-reel rule was for `chatgpt-stickers`,
+whose script opens "That's my face, and ChatGPT built the whole pack from one
+photo". Its strongest subject — the 3x3 grid of stickers the reel produces,
+52% against a dark feed — is nine cartoon versions of the user's face, the same
+day the user said "without face". Rather than reinterpret that, both were
+rendered: A the sticker grid (1 PHOTO / 9 STICKERS) and B ChatGPT's style
+picker with its own sample illustrations (1 PHOTO / 19 STYLES, 47%). **The
+user chose A.** So "no face" means *no presenter photo*; a face that IS the
+reel's subject or result is allowed. Recorded in AGENT.md STEP 6 and the
+news-reel skill's step 5b so the question is not asked again or answered the
+wrong way.
+
+Two craft notes from the same cover. Each option's words matched its own
+picture (stickers under "9 STICKERS", the style list under "19 STYLES") — the
+cover's version of Rule 3. And the first crop of B ran into the next row of the
+picker and left the tops of two heads at the bottom edge; the grid showed the
+cards end at y~1670 and the next heads start at ~1722, and the crop was cut
+between them.
