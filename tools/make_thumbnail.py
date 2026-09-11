@@ -125,6 +125,13 @@ def main() -> None:
                 f"{MAX_WORDS_PER_LINE}. In a grid this is ~200px wide — a "
                 f"longer line is a smear. Cut words, never shrink the type.")
 
+    # The reel's asset folder is gitignored, so on a FRESH CLONE it does not
+    # exist — and every write below (a grabbed frame, an enlarged PNG, a sized
+    # SVG) went there, so the first cover made on another machine crashed with
+    # FileNotFoundError. Found 2026-09-11 by cloning from GitHub and running
+    # the tool, the day after "everything is pushed" had been said.
+    (ROOT / "public" / "assets" / args.slug).mkdir(parents=True, exist_ok=True)
+
     # frame: supplied, or pulled from the master
     if args.frame:
         frame_rel = args.frame
