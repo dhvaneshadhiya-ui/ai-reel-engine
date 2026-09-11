@@ -1,0 +1,21 @@
+You think September 9th was it?
+
+It wasn't the finale. Apple already locked in one date: iPhone Duo ships October 23. That's only one of seven more products landing this same month.
+
+A 14-inch MacBook Pro and an iMac move to Apple's M6 chip: faster, without pulling more power.
+
+Plus a redesigned Apple TV 4K, built around the AI Siri that's finally close to ready.
+
+iPad mini gets its first OLED screen, so blacks look properly black, reportedly water resistant, and expected before Halloween.
+
+Then Apple's whole smart home line resets together: a touchscreen home hub around 350 dollars, a stronger HomePod mini, a refreshed full-size HomePod.
+
+All three have reportedly been sitting nearly ready for months, held back until that same AI Siri was ready to power them.
+
+That's seven. Here's the product that might not make it.
+
+The touchscreen MacBook people have wanted for years was supposed to headline this exact wave too. But Bloomberg now reports a memory chip shortage, driven by AI server demand, just pushed it into 2027.
+
+So expect the smaller refreshes to land right on schedule this October.
+
+The product everyone wants might end up the one you wait longest for.

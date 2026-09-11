@@ -1,0 +1,11 @@
+{
+  "script_sha256": "87a779ba6dfe7a363119125f82614a59284d9c8fe2e5280c079ab528c068467d",
+  "structure_sha256": "25d01d19b0df74693bc0b5c68ac7b33262ce8ab003356f3b053019771e734a29",
+  "findings": [
+    "CADENCE: 4 of 15 sentences are long. The short ones stop being punctuation.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-09-11T06:33:28+00:00"
+}
