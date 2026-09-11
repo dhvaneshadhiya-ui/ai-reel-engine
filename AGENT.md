@@ -528,6 +528,12 @@ viewer**. The linter catches geometry; only you catch meaning:
 - Every number carrying its unit/label?
 - No app chrome (browser tabs, sidebars) anywhere?
 - Integrated loudness ≈ −14 to −15 LUFS?
+- **Is every sound effect actually heard?** `python3 tools/sfx_audibility.py <slug>`
+  renders the reel twice, audio only — the effects alone and everything else —
+  and reads each cue against what is under it: UNMASKED, AUDIBLE, MASKED, or
+  MISSING (a cue that renders silent; exits 1). Added 2026-09-11 after two
+  attempts to answer this from the final mix could not beat their own control.
+  Thresholds are borrowed from video-talkcraft, not yet calibrated on ours.
 
 Fix, re-render, re-verify. Only then deliver.
 

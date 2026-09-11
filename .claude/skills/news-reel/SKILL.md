@@ -352,6 +352,15 @@ does each frame show what the VO claims at that second; no text cropped
 mid-word at frame edges; no app chrome or PiP anywhere; every number carries
 its unit; captions clear of the face; integrated loudness ≈ −14 to −15 LUFS.
 
+**Then ask whether the sound effects are actually HEARD** (2026-09-11):
+`python3 tools/sfx_audibility.py <slug>` renders the reel twice, audio only —
+effects alone, and everything else — and reads each cue against what is under
+it: UNMASKED (in a pause), AUDIBLE (over speech), MASKED (buried), MISSING
+(renders silent — exits 1). ~2 minutes. The thresholds are borrowed from
+video-talkcraft and not yet calibrated on our reels; MASKED is advice, MISSING
+is a render fault. First measured: whatsapp-agents 9/9 audible, 4-17 dB above
+the voice, none in a pause.
+
 Fix, re-render, re-verify. Only then deliver.
 
 ### 5b — Cover (every reel, user directive 2026-09-11)

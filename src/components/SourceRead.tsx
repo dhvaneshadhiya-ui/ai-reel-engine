@@ -44,6 +44,44 @@ export interface SourceReadProps {
   follow?: boolean;
   /** seconds each highlight takes to sweep across (default 0.28) */
   sweepSec?: number;
+  /**
+   * FILM THE PAGE, don't paste it (2026-09-11, idea from video-talkcraft;
+   * our own implementation — its code is non-commercial). Instead of jumping
+   * to each line and holding still until the next, the page keeps moving:
+   * it glides onto the first line, ARRIVES on each line as that line lands
+   * (decelerating, so the eye catches it as the sweep starts), holds briefly,
+   * travels to the next, and drifts on after the last. whatsapp-agents spent
+   * 41% of its runtime in sourceread and measured 61% near-static.
+   */
+  film?: boolean;
+}
+
+// film mode — every number is a fraction of the frame, so it scales with it
+const FILM_ENTRY = 0.06;    // the page arrives from this far below its first stop
+const FILM_DRIFT = 0.03;    // per second, after the last stop
+const FILM_HOLD_MAX = 0.5;  // s; a hold never takes more than 40% of a gap
+
+function filmY(t: number, stops: { at: number; y: number }[], h: number,
+               clampY: (y: number) => number): number {
+  const glide = Easing.inOut(Easing.cubic);
+  const first = stops[0];
+  if (t <= first.at) {
+    if (first.at <= 0.05) return first.y;
+    const from = clampY(first.y + FILM_ENTRY * h);
+    return from + (first.y - from) * Easing.out(Easing.cubic)(t / first.at);
+  }
+  for (let i = 0; i < stops.length - 1; i++) {
+    const a = stops[i], b = stops[i + 1];
+    if (t < b.at) {
+      const hold = Math.min(FILM_HOLD_MAX, 0.4 * (b.at - a.at));
+      if (t <= a.at + hold) return a.y;
+      const k = (t - a.at - hold) / Math.max(1e-6, b.at - a.at - hold);
+      return a.y + (b.y - a.y) * glide(Math.min(1, k));
+    }
+  }
+  const last = stops[stops.length - 1];
+  if (t <= last.at + FILM_HOLD_MAX) return last.y;
+  return clampY(last.y - FILM_DRIFT * h * (t - last.at - FILM_HOLD_MAX));
 }
 
 export const SourceRead: React.FC<{ scene: SourceReadProps }> = ({ scene }) => {
@@ -54,7 +92,7 @@ export const SourceRead: React.FC<{ scene: SourceReadProps }> = ({ scene }) => {
 
   const {
     src, srcWidth, srcHeight, lines, credit,
-    tint = "#B7E4C7", follow = true, sweepSec = 0.28,
+    tint = "#B7E4C7", follow = true, sweepSec = 0.28, film = false,
   } = scene;
 
   // fit to frame WIDTH — the page stays at reading size, never zoomed. A
@@ -92,7 +130,11 @@ export const SourceRead: React.FC<{ scene: SourceReadProps }> = ({ scene }) => {
         easing: Easing.out(Easing.cubic),
       })
     : 1;
-  const smoothY = offsetFor(prev) + (offsetFor(active) - offsetFor(prev)) * p;
+  const clampY = (y: number) => Math.max(-(pageH - height), Math.min(0, y));
+  const ordered = [...lines].sort((a, b) => a.at - b.at);
+  const smoothY = film && follow && pageH > height && ordered.length
+    ? filmY(t, ordered.map((l) => ({ at: l.at, y: offsetFor(l) })), height, clampY)
+    : offsetFor(prev) + (offsetFor(active) - offsetFor(prev)) * p;
 
   return (
     <AbsoluteFill style={{ background: theme.cream, overflow: "hidden" }}>

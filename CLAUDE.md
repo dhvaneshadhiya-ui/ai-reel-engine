@@ -763,4 +763,8 @@ sound effect actually audible over the voice? — could not be answered by
 measuring the final mix, and needs an SFX-only render, which our pipeline can
 do exactly: the one worth building. Its "film the page, don't paste it" idea (a
 continuous slow scroll that decelerates and stops on the key line) is the other
-worth trying against our static `sourceread` holds. Untested.
+worth trying against our static `sourceread` holds.
+**Both BUILT the same day:** `tools/sfx_audibility.py` (17 of 17 cues audible
+across two reels, 3.4-17 dB over the voice, none in a pause) and `SourceRead`'s
+`film` mode (A/B on whatsapp-agents: near-static 62% -> 47%, readability at
+the stops unchanged). `film` stays OFF by default until the user decides.

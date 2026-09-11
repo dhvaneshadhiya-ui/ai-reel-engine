@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  getInputProps,
   AbsoluteFill,
   Audio,
   Sequence,
@@ -229,14 +230,24 @@ export const Reel: React.FC<{ beats: BeatSheet }> = ({ beats }) => {
     beats.scenes as unknown as { credit?: string }[]);
   let cursor = 0;
 
+  // STEMS for tools/sfx_audibility.py (2026-09-11). The same timeline rendered
+  // twice, audio only: `stem: "sfx"` plays only the sound effects, `stem:
+  // "rest"` plays everything else (voice, music). Because both come from one
+  // timeline they line up by construction, so each cue can be measured against
+  // what is under it with no alignment step — the step that broke two attempts
+  // to measure this from the final mix. Default renders pass no stem.
+  const stem = (getInputProps() as { stem?: "sfx" | "rest" }).stem;
+  const playRest = stem !== "sfx";
+  const playSfx = stem !== "rest";
+
   return (
     <ThemeProvider style={beats.style}>
     <AbsoluteFill style={{ background: "black" }}>
       {/* Declared HERE, not in Root: a font load in Root reaches every
           composition, which is what timed out renders in August. */}
       <FontFaces />
-      {beats.audio && <Audio src={staticFile(beats.audio)} />}
-      {beats.music && (
+      {playRest && beats.audio && <Audio src={staticFile(beats.audio)} />}
+      {playRest && beats.music && (
         <Audio
           src={staticFile(beats.music.src)}
           startFrom={Math.round((beats.music.from ?? 0) * fps)}
@@ -284,7 +295,7 @@ export const Reel: React.FC<{ beats: BeatSheet }> = ({ beats }) => {
               <PixelMascot key={`sprite-${j}`} {...sp} />
             ))}
             {scene.burst && <ParticleBurst {...scene.burst} />}
-            {(scene.sfx ?? []).map((cue, j) => (
+            {playSfx && (scene.sfx ?? []).map((cue, j) => (
               <Sequence
                 key={`sfx-${j}`}
                 from={Math.round((cue.at ?? 0) * fps)}

@@ -446,7 +446,10 @@ for _tool, _label in (("check_frame_contract", "frame contract"),
                       # 2026-09-11: covers are a standard step again, and the
                       # tool's checks (character budget, sourced numbers, the
                       # dark-feed measure) are what stop a bad one shipping.
-                      ("make_thumbnail", "cover checks")):
+                      ("make_thumbnail", "cover checks"),
+                      # 2026-09-11: renders an SFX-only and an everything-else
+                      # stem and reads each cue against what is under it.
+                      ("sfx_audibility", "SFX audibility bands")):
     try:
         r = subprocess.run(
             [sys.executable, str(ROOT / f"tools/{_tool}.py"), "--selftest"],

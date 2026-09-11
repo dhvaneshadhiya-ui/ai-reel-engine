@@ -7882,3 +7882,62 @@ The exact way to answer the SFX question needs no alignment at all: render the
 same beat sheet with the voice muted, and read each cue's level against the
 voice at that moment. That is the one talkcraft idea with an open question
 behind it, and the one worth building.
+
+## 2026-09-11 (8) — two talkcraft ideas built and measured, and what their library is really worth
+
+**1. Are our sound effects heard? Yes — 17 of 17.** `tools/sfx_audibility.py`
+renders the reel twice, audio only, through a new `stem` switch in
+`src/Reel.tsx` (`sfx` = effects alone, `rest` = everything else), so the two
+line up by construction and each cue is read against what plays under it —
+the alignment step that broke both earlier attempts is simply gone. Before
+building it, every video-playing component was checked: all 15 are muted, and
+no scouted clip carries audio, so nothing leaks into the effects stem (and
+nothing has been playing under the voice in published reels either).
+
+    whatsapp-agents     9/9 AUDIBLE  effects -7.9..-11.6 dBFS over -14.7..-25.7 under
+    qualcomm-chip-hike  8/8 AUDIBLE  effects -7.9..-11.8 dBFS over -11.5..-26.3 under
+    closest calls       ground-impact +3.4 dB, a Camera Shutter +3.6 dB, Magic Reveal +4.2 dB
+
+Talkcraft's own failure ("57 of 57 present, not one audible") does not happen
+here: the 2026-08-18 peak calibration keeps every cue well above the speech.
+What its rule WOULD flag is that **none of the 17 lands in a pause** — every
+cue sits on top of speech, where talkcraft wants at least max(3, runtime/30s)
+in the gaps. That is its taste, calibrated on its reels, and it stays advice
+here. ~2 minutes per reel; exits 1 only for a MISSING cue.
+
+**2. Filming the page. Near-static 62% -> 47% on the same frames.**
+`SourceRead` gained `film: true`: the page glides onto the first line, arrives
+on each line as that line lands (decelerating as the sweep starts), holds
+briefly, travels on, and drifts after the last. The read line stays at 58% of
+the frame, so the caption-lane checks still hold. A/B on whatsapp-agents'
+three TechCrunch scenes, draft renders of frames 1400-1725:
+
+    before   near-static 62%   animating 11%   live 27%
+    film     near-static 47%   animating  6%   live 47%
+
+Frames sampled at the same instants are identical in both — at every stop the
+page is exactly where it used to hold, so readability there is unchanged; the
+difference is entirely in the travel between stops, where the old version sat
+still. Still above the 34% reference ceiling: a page of text is still a page of
+text. OFF by default; the published sheet was left as shipped.
+
+**3. Their library, read for what it is.** 108 effects, every one with a sound
+cue table (`demos/_lib/sfx-map.js`). The idea worth taking is the SOUND
+VOCABULARY, not a component: their sounds are the sound of the ACTION on
+screen — marker pen for a highlight (18 effects), paper slide for a card or
+page (20), mechanical lock for a snap (27), UI pop (31), keyboard for typing,
+data-load for a counter, lens zoom for a magnifier. Ours are genre sounds
+(whoosh, impact, riser, reveal) and have none of those — Rule 3 applied to
+audio. Their sounds are all Mixkit, and Mixkit's Sound Effects Free License
+(read on mixkit.co, 2026-09-11) allows commercial use in finished videos but
+says: *"You can't redistribute the Item on its own, as stock, in a tool or
+template, or with source files."* This repo is a tool, and public — so if we
+adopt them, each machine fetches them by script and git ignores the files.
+
+**4. Found on the way — our own sounds are public and should not be.** All 23
+files in `public/sfx*` entered git in the very first commit (2026-08-14) and
+have been on public GitHub since, including `Among Us.MP3`, `Vine Boom.MP3` and
+`faah.MP3`. Both folders' README says "SFX were removed from this public
+download for licensing reasons" — written for a stripped download that was
+never what got pushed. No change made: removing them from history is a
+force-push, which this repo forbids by design, and the fix is the user's call.
