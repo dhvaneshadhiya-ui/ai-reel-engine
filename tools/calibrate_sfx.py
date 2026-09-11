@@ -140,6 +140,13 @@ def main() -> None:
           "\n  peak is already below it — the gain is capped at 1.0 and it cannot"
           "\n  be made louder without distorting. Replace the sound, do not push it.")
 
+    # Every catalogue file gets a cached peak, not only the ones a sheet uses
+    # today — otherwise a new cue has no number until its first reel.
+    from sfx_library import CATALOGUE  # noqa: E402
+    for src in CATALOGUE:
+        if src not in peaks and (ROOT / "public" / src).exists():
+            peaks[src] = peak_dbfs(ROOT / "public" / src)
+
     # G08 cannot shell out to ffmpeg on every run, so the peaks live in a
     # committed sidecar. `bytes` is the staleness check: swap the file and the
     # cached peak stops applying, which the gate says out loud instead of

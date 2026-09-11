@@ -1909,6 +1909,11 @@ def check_beats(beats: dict, vo_end: float | None = None,
                    # all three shipped reels chose this independently
                    "logoassemble", "brandhook", "logobeat", "osshook"},
         "comedic": None,
+        # the thing on screen makes the sound — only where there IS a thing
+        "action": {"sourceread", "receipt", "annotatezoom", "counter", "statcard",
+                   "chart", "specsheet", "timeline", "typecard", "promptcard",
+                   "terminal", "floatcard", "deviceframe", "xpost", "checklist",
+                   "uidialog", "settingspane", "screenstep"},
     }
     role_counts: Counter = Counter()
     for i, sc in enumerate(scenes):
@@ -1924,7 +1929,9 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 continue
             if not (SFX_DIR / src).exists():
                 errors.append(
-                    f"G28 scene {i:02d} SFX file is missing on disk: {src}")
+                    f"G28 scene {i:02d} SFX file is missing on disk: {src}"
+                    + (" — action sounds are fetched per machine: "
+                       "`python3 tools/fetch_sfx.py`" if src.startswith("sfx-action/") else ""))
                 continue
             role = entry["role"]
             role_counts[role] += 1

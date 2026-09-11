@@ -41,6 +41,7 @@ REVEAL = "reveal"           # "to reveal something unexpected"
 IMPACT = "impact"           # "to make the statement more important"
 SHUTTER = "shutter"         # "use camera shutter for transitions"
 COMEDIC = "comedic"         # "to make the statement more comedic"
+ACTION = "action"           # the sound OF the thing on screen (2026-09-11)
 
 CATALOGUE: dict[str, dict] = {
     # ── transitions: ride the CUT ───────────────────────────────────────────
@@ -109,6 +110,40 @@ CATALOGUE: dict[str, dict] = {
     "sfx/faah.MP3": dict(
         role=COMEDIC, dur=1.12, low=0.03, lead=0.05,
         note="Vocal meme sting."),
+
+    # ── action: the sound OF the thing happening (2026-09-11) ──────────────
+    # Mixkit, fetched per machine by tools/fetch_sfx.py — never committed (their
+    # licence forbids redistribution in a tool). Idea from video-talkcraft: a
+    # highlight SOUNDS like a pen, a card like paper. `lead` includes the file's
+    # own leading silence, so start the cue `lead` before the action lands.
+    # Measured 2026-09-11 (onset at 10% of peak).
+    "sfx-action/marker.mp3": dict(
+        role=ACTION, dur=0.29, low=0.00, lead=0.01,
+        note="Pen marker line. An ink mark or highlighter sweep: cue AT the "
+             "mark's `at` — it starts on the pen-down."),
+    "sfx-action/paper-slide.mp3": dict(
+        role=ACTION, dur=0.42, low=0.16, lead=0.36,
+        note="Paper slide; 0.31s of silence, then a 0.11s slide. A receipt or "
+             "desk card landing: start 0.36s before it settles."),
+    "sfx-action/paper-quick.mp3": dict(
+        role=ACTION, dur=0.73, low=0.00, lead=0.42,
+        note="Paper quick movement. A page arriving or turning under a read."),
+    "sfx-action/lens-zoom.mp3": dict(
+        role=ACTION, dur=0.57, low=0.00, lead=0.40,
+        note="UI zoom in, rising 8.8k->9.8k. The magnifier opening: start 0.4s "
+             "before `magnify.at`. Quiet file (-16.9 dBFS) and gain never passes "
+             "1.0, so it sits ~5 dB under the -12 target: soft, which suits a lens."),
+    "sfx-action/lock.mp3": dict(
+        role=ACTION, dur=0.10, low=0.01, lead=0.00,
+        note="Quick lock, instant attack. The counter landing (at + rollSec), "
+             "or anything snapping into place."),
+    "sfx-action/tick.mp3": dict(
+        role=ACTION, dur=0.68, low=0.02, lead=0.37,
+        note="Clock ticker single. A counter starting to roll, a timeline step. "
+             "-13.9 dBFS: ~2 dB under target at full gain."),
+    "sfx-action/typekey.mp3": dict(
+        role=ACTION, dur=0.38, low=0.06, lead=0.17,
+        note="Typewriter key. Text typing on: a typecard, a prompt, a terminal."),
 }
 
 # WHERE EACH ROLE BELONGS — the scene-level rule.
@@ -122,6 +157,7 @@ ROLE_FITS = {
     REVEAL: "the payoff itself: the answer, the number, the product",
     IMPACT: "a data card or the single biggest claim in the reel",
     COMEDIC: "a punchline — never a factual claim",
+    ACTION: "the thing on screen making its own sound: a mark drawn, a card landing, a lens opening, a counter settling, text typing",
 }
 
 # Comedic stings undercut a news claim. iGeeksBlog reels are reporting, so
@@ -146,7 +182,9 @@ def main() -> None:
     miss = missing_files()
     if "--check" in sys.argv:
         if miss:
-            sys.exit("MISSING SFX FILES:\n  " + "\n  ".join(miss))
+            hint = ("\n  (sfx-action/ is fetched per machine: "
+                    "`python3 tools/fetch_sfx.py`)") if any(m.startswith("sfx-action/") for m in miss) else ""
+            sys.exit("MISSING SFX FILES:\n  " + "\n  ".join(miss) + hint)
         print(f"sfx library ok — {len(CATALOGUE)} cues, all present.")
         return
     by_role: dict[str, list[str]] = {}

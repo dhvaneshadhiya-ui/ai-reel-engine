@@ -7999,3 +7999,24 @@ case and a silent case.
    tick, typewriter key. Titles were matched to ids card by card on mixkit.co
    (a first pass read them off by one).
 3. **The repo stays public for now.** No change to `public/sfx*`.
+
+**Action sounds, landed the same day.** Seven Mixkit files fetched by
+`tools/fetch_sfx.py` (sizes verified against mixkit.co), catalogued under a new
+`action` role that G28/G40 allow only on scenes where something is happening
+(page reads, receipts, counters, cards, typed text), measured like the rest:
+
+| effect | cue | start it |
+|---|---|---|
+| ink mark / highlighter | `sfx-action/marker.mp3` | at the mark's `at` |
+| receipt / desk card landing | `sfx-action/paper-slide.mp3` | 0.36s before it settles |
+| page arriving | `sfx-action/paper-quick.mp3` | 0.42s before |
+| magnifier opening | `sfx-action/lens-zoom.mp3` | 0.40s before `magnify.at` |
+| counter landing | `sfx-action/lock.mp3` | at `at + rollSec` |
+| counter starting | `sfx-action/tick.mp3` | 0.37s before |
+| text typing on | `sfx-action/typekey.mp3` | 0.17s before |
+
+Five files open on 0.1-0.3s of silence; the catalogue's `lead` absorbs it
+rather than editing a file we may not redistribute. Two are quiet (lens -16.9,
+tick -13.9 dBFS) and calibration never amplifies past 1.0, so they sit a few
+dB under the other cues. Not yet heard in a finished reel: the first reel that
+uses them gets `tools/sfx_audibility.py`.

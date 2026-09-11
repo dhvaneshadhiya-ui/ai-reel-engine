@@ -1,6 +1,38 @@
 {
   "_": "measured peaks, dBFS \u2014 written by tools/calibrate_sfx.py, read by G08. Do not hand-edit.",
   "peaks": {
+    "sfx-action/lens-zoom.mp3": {
+      "peak": -16.9,
+      "bytes": 20458
+    },
+    "sfx-action/lock.mp3": {
+      "peak": -0.3,
+      "bytes": 37894
+    },
+    "sfx-action/marker.mp3": {
+      "peak": -4.4,
+      "bytes": 39045
+    },
+    "sfx-action/paper-quick.mp3": {
+      "peak": -1.8,
+      "bytes": 31682
+    },
+    "sfx-action/paper-slide.mp3": {
+      "peak": -0.5,
+      "bytes": 37161
+    },
+    "sfx-action/tick.mp3": {
+      "peak": -13.9,
+      "bytes": 20508
+    },
+    "sfx-action/typekey.mp3": {
+      "peak": -0.3,
+      "bytes": 21398
+    },
+    "sfx/Among Us.MP3": {
+      "peak": -6.1,
+      "bytes": 47279
+    },
     "sfx/Camera Shutter.MP3": {
       "peak": -2.1,
       "bytes": 5483
@@ -25,9 +57,17 @@
       "peak": -3.1,
       "bytes": 23873
     },
+    "sfx/Vine Boom.MP3": {
+      "peak": -6.9,
+      "bytes": 20947
+    },
     "sfx/Whoosh (Reversed).MP3": {
       "peak": -2.4,
       "bytes": 6737
+    },
+    "sfx/faah.MP3": {
+      "peak": -6.3,
+      "bytes": 18022
     },
     "sfx/whoosh.MP3": {
       "peak": -7.3,

@@ -72,7 +72,7 @@ spacing. A contact sheet is too coarse to catch a prop.
 Run `python3 tools/sfx_library.py` to see the catalogue grouped by role. Place
 cues by ROLE, not by taste: transition on a cut, popup on an element entering,
 suspense before a reveal (and it MUST resolve), reveal on the payoff, impact on
-a data card or the single biggest claim. Gate G28 blocks a cue that is not in
+a data card or the single biggest claim, and **action** on the thing that makes its own sound (a marker for an ink mark, paper for a card landing, a lens for the magnifier, a lock for a counter settling — `sfx-action/`, fetched per machine by `tools/fetch_sfx.py`). Gate G28 blocks a cue that is not in
 the catalogue, sits on the wrong beat type, outruns its scene, or breaks the
 per-role caps. Full reasoning and the lead-time table:
 `references/sfx-placement.md`.
