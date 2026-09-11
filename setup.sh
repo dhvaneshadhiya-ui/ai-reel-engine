@@ -28,6 +28,9 @@ for t in whisper yt-dlp; do
   fi
 done
 
+echo "== action sounds (Mixkit, fetched per machine, never committed) =="
+python3 tools/fetch_sfx.py
+
 echo "== playwright chromium (page capture) =="
 npx playwright install chromium
 

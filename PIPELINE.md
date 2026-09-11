@@ -319,6 +319,9 @@ CaptionChips (caption bar), CounterScene, InkMarks (shared hand-drawn marks)`.
 - `sourceread`: `dimRest: true` — everything but the line being read goes dark;
   `magnify{at, x, y, w, h, zoom?, until?}` — a round lens for the one small number the voice reads.
   The highlighter sweep is now 0.45s with pen-stroke corners (was 0.28s: read as a glitch).
+- `sourceread` `film: true` glides the page between lines. Not the default, but
+  `compile_shot_plan` turns it on wherever `film_fits` (page taller than the frame,
+  2+ lines, 2s+); G64 advises a hand-built sheet that left it unset.
 - G63 (advice) flags a mark or lens that lands after its scene ends or off the image, and an unknown exit.
 
 Add a new scene type by: add it to the `Scene`

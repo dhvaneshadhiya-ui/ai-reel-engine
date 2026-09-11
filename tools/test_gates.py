@@ -878,6 +878,26 @@ if _hits:
     raise SystemExit(1)
 _counted("G15/G55/G63 silent — a sourced counter, a mark, a lens and a push exit, in bounds")
 
+# G64 SILENT — film chosen either way, or a page that cannot travel.
+for _film, _h, _why in ((True, 2340, "film: true"), (False, 2340, "film: false, an editor's call"),
+                        (None, 1500, "a page shorter than the frame")):
+    _s = copy.deepcopy(BASE)
+    _s["scenes"][5].clear()
+    _s["scenes"][5].update(type="sourceread", durationSec=2.5, src="assets/x/src.png",
+        srcWidth=1080, srcHeight=_h, credit="@src", covers="benchmark", mobileCaptureOk=True,
+        lines=[{"at": 0.2, "x": 40, "y": 200, "w": 900, "h": 60},
+               {"at": 1.2, "x": 40, "y": 1300, "w": 900, "h": 60}])
+    if _film is not None:
+        _s["scenes"][5]["film"] = _film
+    try:
+        _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS)
+    except GateError as _e:
+        _adv = list(_e.advice) + [str(_e)]
+    if any("G64" in str(a) for a in _adv):
+        print(f"  FAIL G64 fired on {_why}")
+        raise SystemExit(1)
+    _counted(f"G64 silent — {_why}")
+
 # ── THE GUARD THAT WOULD HAVE CAUGHT ALL THREE OF TODAY'S BUGS ──────────────
 #
 # 2026-09-08 turned up three gates measuring the wrong thing, and every one of
@@ -1055,6 +1075,13 @@ CASES = [
         magnify={"at": 0.5, "x": 40, "y": 200, "w": 900, "h": 60}),
      "G63", "a magnifier boxing a whole line — nothing left to enlarge"),
     (lambda s: s["scenes"][2].update(exit="zoom"), "G63", "an exit that is not push or whip"),
+    # G64 — a long page read line by line, film left unset (advice)
+    (lambda s: s["scenes"][5].clear() or s["scenes"][5].update(
+        type="sourceread", durationSec=2.5, src="assets/x/src.png", srcWidth=1080,
+        srcHeight=2340, credit="@src", covers="benchmark", mobileCaptureOk=True,
+        lines=[{"at": 0.2, "x": 40, "y": 200, "w": 900, "h": 60},
+               {"at": 1.2, "x": 40, "y": 1400, "w": 900, "h": 60}]),
+     "G64", "a page taller than the frame, read in two stops, not filmed"),
     # G62 — every visual beat becomes a document, so the reel has no picture.
     (lambda s: [s["scenes"][i].clear() or s["scenes"][i].update(
         type="sourceread", durationSec=2.5, src=f"assets/x/doc{i}.png",

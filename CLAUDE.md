@@ -767,4 +767,12 @@ worth trying against our static `sourceread` holds.
 **Both BUILT the same day:** `tools/sfx_audibility.py` (17 of 17 cues audible
 across two reels, 3.4-17 dB over the voice, none in a pause) and `SourceRead`'s
 `film` mode (A/B on whatsapp-agents: near-static 62% -> 47%, readability at
-the stops unchanged). `film` stays OFF by default until the user decides.
+the stops unchanged). **Decided by the user 2026-09-11: `film` is NOT every
+reel's default, but it is used wherever it fits and is possible.**
+`reel_gates.film_fits` defines that (page taller than the frame, 2+ lines,
+2s+); `compile_shot_plan` switches it on for those scenes and G64 advises a
+hand-built sheet that left it unset. `film: false` is an editor's opt-out.
+**Action sounds, also approved 2026-09-11:** Mixkit's licence forbids
+redistributing them in a tool, so they are never committed —
+`tools/fetch_sfx.py` downloads them per machine into `public/sfx-action/`
+(gitignored) and `setup.sh` runs it.

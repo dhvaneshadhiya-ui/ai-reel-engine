@@ -22,6 +22,10 @@ _state/
 # Homebrew and no terminal work. Too large for git; MIGRATION.md includes them.
 bin/
 
+# ── fetched per machine: Mixkit licence forbids redistributing them in a tool
+#    (tools/fetch_sfx.py downloads them; setup.sh runs it) ──
+public/sfx-action/
+
 # ── machine-local ────────────────────────────────────────────────────────────
 .claude/settings.local.json
 

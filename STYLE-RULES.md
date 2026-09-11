@@ -7982,3 +7982,20 @@ desk + circle, counter on cream). Two notes from looking at them:
 G63 (advice) catches a mark or lens that never draws, or that draws off the
 image. G15/G55 cover the counter's source, value and label. Each has a failing
 case and a silent case.
+
+## 2026-09-11 (10) — the user's three calls on the talkcraft work
+
+1. **Page filming: not the default, but used wherever it fits and is possible.**
+   A per-scene rule, not a per-reel switch. `reel_gates.film_fits` is the one
+   definition: `follow` on, a page taller than the frame (else nothing
+   travels), 2+ lines (else no journey between stops), 2s+ (else the glide and
+   holds squeeze into a lurch). `compile_shot_plan` sets `film: true` on those
+   scenes; G64 advises a hand-built sheet that left it unset; `film: false`
+   is an editor's opt-out and stays silent. Shipped sheets were not touched.
+2. **Action-matched sounds: yes, fetched per machine.** `tools/fetch_sfx.py`
+   holds the list (Mixkit id, title, size) and downloads into
+   `public/sfx-action/`, which git ignores; `setup.sh` runs it. The list is
+   ours: marker pen, paper slide, paper quick, UI zoom in, quick lock, clock
+   tick, typewriter key. Titles were matched to ids card by card on mixkit.co
+   (a first pass read them off by one).
+3. **The repo stays public for now.** No change to `public/sfx*`.

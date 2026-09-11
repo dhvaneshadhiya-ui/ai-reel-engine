@@ -681,6 +681,24 @@ def _dur_class(sc: dict) -> str:
     return "card"
 
 
+def film_fits(sc: dict, frame_w: int = 1080, frame_h: int = 1920) -> bool:
+    """Would SourceRead's `film` mode actually move this page? (2026-09-11)
+
+    The user's rule: film is not the default, but it is used wherever it is
+    relevant and possible. POSSIBLE is what the component needs to do anything:
+    `follow` on, a page taller than the frame (else there is nothing to travel),
+    and two or more lines (else there is no journey between stops). RELEVANT is
+    time to travel in: under 2s the glide and the holds squeeze into a lurch.
+    Measured win it rests on: whatsapp-agents, near-static 62% -> 47%.
+    """
+    if sc.get("type") != "sourceread" or sc.get("follow") is False:
+        return False
+    sw, sh = float(sc.get("srcWidth") or 0), float(sc.get("srcHeight") or 0)
+    if not sw or sh * frame_w / sw <= frame_h:
+        return False
+    return len(sc.get("lines") or []) >= 2 and float(sc.get("durationSec") or 0) >= 2.0
+
+
 def check_beats(beats: dict, vo_end: float | None = None,
                 manifest: dict | None = None,
                 allow_short: bool = False,
@@ -1549,6 +1567,19 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 "official product still, a real device, a place, a person "
                 "(AGENT.md STEP 1a ladder rung 2). Do not fix this by "
                 "relabelling scenes.")
+
+    # G64 — A PAGE THAT TRAVELS BUT DOES NOT FILM (2026-09-11). ADVICE.
+    # User rule: `film` is not every reel's default, but it is used wherever it
+    # fits and is possible (film_fits). compile_shot_plan switches it on for
+    # those scenes; this catches a hand-built sheet that left it unset. An
+    # explicit `film: false` is an editor's decision and stays silent.
+    for i, sc in enumerate(scenes):
+        if "film" not in sc and film_fits(sc, int(beats.get("width") or 1080),
+                                          int(beats.get("height") or 1920)):
+            errors.append(
+                f"G64 scene {i:02d} sourceread travels a page taller than the "
+                "frame across several lines — set `film: true` to glide between "
+                "them, or `film: false` if the still holds are the point.")
 
     # G63 — A MARK OR LENS THAT NEVER LANDS (2026-09-11). ADVICE.
     # `marks` (underline / circle / arrow, on sourceread and receipt) and

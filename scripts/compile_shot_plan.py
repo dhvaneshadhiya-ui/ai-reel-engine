@@ -743,6 +743,17 @@ def main() -> None:
             sys.path.insert(0, str(DEFAULT_ENGINE / "tools"))
             from reel_gates import receipt_caption_bottom
             scene["captionBottom"] = receipt_caption_bottom(scene)
+        # FILM THE PAGE WHERE IT FITS (user rule 2026-09-11): not every reel's
+        # default, but on wherever the page actually travels. A shot that says
+        # `film: false` keeps its still holds.
+        if "film" not in scene:
+            sys.path.insert(0, str(DEFAULT_ENGINE / "tools"))
+            from reel_gates import film_fits
+            if film_fits(scene):
+                scene["film"] = True
+                print(f"  shot {index}: page taller than the frame, "
+                      f"{len(scene['lines'])} lines -> film: true (glides "
+                      f"between them). Set \"film\": false to hold instead.")
         # WHAT IS THE VIEWER LOOKING AT? (2026-09-02)
         #
         # `surface` answers the one question that decides whether an asset
