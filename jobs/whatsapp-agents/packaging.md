@@ -68,8 +68,10 @@ Notes for posting
   No in-video CTA and no comment-keyword — this is a straight news reel.
   The engagement question lives in the FIRST COMMENT.
 
-  No custom thumbnail — removed from the pipeline per standing user
-  directive (2026-08-22); YouTube Shorts pulls a frame automatically.
+  Cover: out/thumbnails/whatsapp-agents-vertical.png, made 2026-09-11 when
+  covers became a standard step for every reel (the choice is recorded in
+  jobs/whatsapp-agents/cover.json). Instagram: open the reel, then More,
+  Edit, Edit cover, Add from camera roll, and compare it with the -grid.png.
 
   Do not let a shorter edit of this caption drop the words "with agents".
   "WhatsApp chats are not encrypted" is false and is the single most

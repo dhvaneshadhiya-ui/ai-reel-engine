@@ -7779,3 +7779,46 @@ and the cheapest honest check is a clone. `git clone` into a scratch folder,
 symlink `node_modules` to skip the reinstall (the code under test is still the
 clone's), run the tool. Twelve seconds, and it found what three careful reviews
 of "what is outside git" had not: a folder the code assumed rather than made.
+
+## 2026-09-11 (5) — covers are a standard step again, and they are checked
+
+**USER DIRECTIVE.** "Yes, I want our system to create covers as per our latest
+development. Let's go without face as of now for all the reels." Reverses
+2026-08-22 (thumbnails dropped) and 2026-08-24 (covers skipped by default).
+
+**The lock came off and the checks went on.** Deleting the retirement guard
+would have made covers *possible*; it would not have made them *happen*, nor
+stopped a bad one — a step that lives only in AGENT.md is the shape of the
+humanizer that sat unused for weeks. So:
+
+- `showrunner.py` has a **cover** stage after packaging, and `prepublish.py`
+  runs `make_thumbnail.py --check`, which fails a reel with no cover.
+- `jobs/<slug>/cover.json` records the chosen frame and words. `jobs/` is
+  tracked, so the record travels; a re-render is `make_thumbnail.py <slug>`.
+  (The frame itself lives in gitignored `public/assets/`, so an OLD reel's
+  cover on a new machine needs that reel's assets fetched again.)
+- The tool refuses a **number** that is not already in the reel's `script.md`
+  or `research.md` (scripts spell numbers for TTS, so "5" is matched by
+  "five"), and a line over **14 characters** — at 104px heavy caps, 17 wraps.
+  It prints the reel's NOT CLAIMED list while the words are being chosen.
+- The news-reel skill gained step 5b, because the skill is the copy that
+  loads; AGENT.md STEP 6 carries the full rule.
+
+**vidIQ's checklist, checked rather than nodded at.** Four of its five points
+the template already met — bold phone-readable type, a clear subject, image
+and text in separate zones, a pattern borrowed from the niche. The fifth,
+"high-contrast colours that stand out against YouTube's dark feed", it did not
+meet and nothing measured it: **our near-black ground is 1.05:1 against
+YouTube's dark theme (1.04:1 against Instagram's)**. In dark mode the cover has
+no edge; only the subject and the type are visible. That is fine while the
+subject is large and bright, and fatal for the most common Apple press shot —
+a black iPhone on our ground. The tool now prints how much of the 3:4 tile
+stands out >= 3:1 from the dark feed and warns under **12%**, derived at full
+resolution: text alone 6.8%, WhatsApp's thin green ring 23.9%, the Snapdragon
+chip 64.3% (the tool's downscaled measure reports 24% and 64%). The ground was
+left as it is: it came from the reference look, and the contrast vidIQ asks
+for is carried by what sits on it.
+
+**No face, for now.** The template's own rule ("we are a publication, not a
+personality") stands by the user's call — even though the reels carry a
+presenter, which leaves the cover the only surface without one.

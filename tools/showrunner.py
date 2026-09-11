@@ -281,6 +281,21 @@ def steps(slug: str) -> list[dict]:
              human="Use the `social` skill. Hashtags per platform limits "
                    "(Instagram 5), hashtags in the FIRST COMMENT, and include "
                    "ALT TEXT. Then: python3 tools/packaging_check.py " + slug),
+        # COVER — every reel, user directive 2026-09-11 (reversing 2026-08-24).
+        # Not `auto`: the subject and the words are judgement (AGENT.md STEP 6);
+        # once jobs/<slug>/cover.json exists, a re-render is one command.
+        dict(key="cover",
+             skills=["(none — tools/make_thumbnail.py; AGENT.md STEP 6)"],
+             label="Reel cover (1080x1920, checked on the 3:4 grid)",
+             done=_p(f"out/thumbnails/{slug}-vertical.png").exists(),
+             auto=None,
+             human="Pick the subject by the AGENT.md STEP 1a ladder (it must "
+                   "FILL the frame; no presenter face), take the words from "
+                   "research.md at official tier, <=14 characters a line, "
+                   "then:\n        python3 tools/make_thumbnail.py " + slug +
+                   " --frame <asset> --line1 \"...\" --line2 \"...\"\n"
+                   "      Read the printed dark-feed number and look at the "
+                   "-grid.png before calling it done."),
         # POST-PUBLISH, and the only stage that feeds numbers BACK into the
         # system. Every FORMATS number so far came from teardowns of other
         # people's reels; this is where our own start to accumulate.

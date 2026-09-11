@@ -34,6 +34,7 @@ MEASURED = [
     ("script approval is fresh", "tools/script_approval.py", ["check"]),
     ("gates (render + rights + the three rules)", "tools/reel_gates.py", []),
     ("packaging limits", "tools/packaging_check.py", []),
+    ("cover exists, its numbers sourced", "tools/make_thumbnail.py", ["--check"]),
 ]
 
 # The framework's §11 items no tool can answer. Phrased as the question, not

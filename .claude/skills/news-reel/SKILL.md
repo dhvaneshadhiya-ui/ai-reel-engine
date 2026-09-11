@@ -354,6 +354,24 @@ its unit; captions clear of the face; integrated loudness ≈ −14 to −15 LUF
 
 Fix, re-render, re-verify. Only then deliver.
 
+### 5b — Cover (every reel, user directive 2026-09-11)
+
+Every reel gets a 1080x1920 cover; no presenter face for now. The full step
+is AGENT.md STEP 6 — this is the summary, because this skill is the copy
+that loads and a rule only in AGENT.md did not reach it on 2026-09-10.
+
+- **Image** by the STEP 1a ladder. The subject must FILL the frame; crop on a
+  pixel grid; reject any image whose content argues against the words (a
+  padlock under NOT ENCRYPTED reads as a contradiction).
+- **Words** from `research.md` at official tier — never the hook if the hook
+  is logged as an inference. <=14 characters a line (17 wraps). A number must
+  already be in the script or the ledger; the tool refuses otherwise.
+- `python3 tools/make_thumbnail.py <slug> --frame <asset> --line1 "..." --line2 "..."`
+  records `jobs/<slug>/cover.json`; a re-render is `make_thumbnail.py <slug>`.
+- Read the printed **dark-feed** number (under 12%, the subject vanishes in
+  dark mode) and look at `out/thumbnails/<slug>-grid.png`, the 3:4 tile
+  Instagram's grid shows. `prepublish.py` fails a reel with no cover.
+
 ### 6 — Log it
 
 Append to `STYLE-RULES.md` as *raw note → root cause → distilled rule*, and add

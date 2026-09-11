@@ -615,9 +615,14 @@ narration, so a post-approval rewrite stops the build (correctly). Feed it our
 own shipped scripts as a voice sample — a sample outranks its own style rules,
 so calibrate rather than accept its defaults.
 
-**`thumbnail-design` — REMOVED 2026-08-22, user directive: no more YouTube
-thumbnails.** `tools/make_thumbnail.py` now refuses with a pointer here; the
-Remotion renderer stays in code so the call is reversible. (Historical note: the skill had been chosen over `higgsfield-youtube-thumbnail` (16.4K installs) because that
+**Covers: EVERY reel, made by our own tool (user directive 2026-09-11).**
+Dropped 2026-08-22, skipped by default from 2026-08-24, reinstated for every
+reel on 2026-09-11 with **no presenter face for now**. `tools/make_thumbnail.py`
+builds them from the reel's own sourced assets (AGENT.md STEP 6), refuses
+unsourced numbers and over-long lines, reports how the cover holds up in a dark
+feed, and records the choice in `jobs/<slug>/cover.json`; `prepublish.py` fails
+a reel with no cover. **The `thumbnail-design` global skill stays REMOVED** —
+it is not how covers are made here. (Historical note: the skill had been chosen over `higgsfield-youtube-thumbnail` (16.4K installs) because that
 one wants `curl | sh` of a third-party CLI, a paid account, and returns an AI
 illustration — wrong on cost, on trust, and on substance for sourced reporting.)
 

@@ -442,7 +442,11 @@ for _tool, _label in (("check_frame_contract", "frame contract"),
                       # the same hour. Its bands are what separate "a card is
                       # holding" from "something is moving", and that
                       # distinction is the one scene-detection got wrong twice.
-                      ("motion_mix", "motion mix bands")):
+                      ("motion_mix", "motion mix bands"),
+                      # 2026-09-11: covers are a standard step again, and the
+                      # tool's checks (character budget, sourced numbers, the
+                      # dark-feed measure) are what stop a bad one shipping.
+                      ("make_thumbnail", "cover checks")):
     try:
         r = subprocess.run(
             [sys.executable, str(ROOT / f"tools/{_tool}.py"), "--selftest"],

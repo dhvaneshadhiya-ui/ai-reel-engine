@@ -33,6 +33,7 @@ import { ThemeProvider, useTheme } from "./theme/tokens";
  * NO PRESENTER FACE. The reference look leans on a creator's face as its
  * anchor; we are a publication, not a personality, so the anchor is the
  * SUBJECT — the product shot or the receipt we actually put on screen.
+ * User directive 2026-09-11: every reel gets a cover, and no face for now.
  */
 
 const W = 1080;

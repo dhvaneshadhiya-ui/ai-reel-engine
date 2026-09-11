@@ -533,45 +533,72 @@ Fix, re-render, re-verify. Only then deliver.
 
 ---
 
-### STEP 6 — Cover (Reels + Shorts) — SKIPPED BY DEFAULT (user directive, 2026-08-24)
+### STEP 6 — Cover (Reels + Shorts) — EVERY REEL (user directive, 2026-09-11)
 
-**Do not run this step for a reel unless the user asks for a cover on that
-specific one.** Standing rule, not per-video: no thumbnail/cover generation
-going forward. The tool and the spec below stay documented for the rare
-explicit request.
+**Every reel gets a cover.** Dropped 2026-08-22, skipped by default from
+2026-08-24, reinstated for every reel on 2026-09-11 — and **no presenter face
+for now** (same directive), so the anchor is the SUBJECT. `showrunner.py`
+shows it as a stage and `prepublish.py` fails a reel that has none.
 
 ```bash
+# first time: records the choice in jobs/<slug>/cover.json (tracked — it travels)
 python3 tools/make_thumbnail.py <slug> \
     --frame "assets/<slug>/thumb-subject.png" \
-    --brand "APPLE" --line1 "TIM COOK'S" --line2 "LAST KEYNOTE"
+    --line1 "CHIP PRICES UP" --line2 "DOUBLE DIGITS"
+# afterwards, on any machine that has the reel's assets
+python3 tools/make_thumbnail.py <slug>
 ```
+
+**1. The subject, by the STEP 1a ladder.** Frames of official motion and
+official stills first; the official logo (`node tools/get_logo.mjs <name>`, the
+SVG works as a frame directly) when nothing higher is clean. The subject must
+FILL the frame: crop to its bounding box on a pixel grid, with margin, before
+cutting. **Reject any image whose content argues against the words** — on
+2026-09-11 a padlock-and-shield illustration read as "secure" under NOT
+ENCRYPTED, and a group-chat screenshot would have put NOT ENCRYPTED over an
+ordinary chat, the one thing that reel says it does not claim.
+
+**2. The words, from the ledger.** Take them from `research.md` at official
+tier. Never the hook when the hook is logged as an inference: a script can
+calibrate a claim out loud, a cover cannot. Subject first — "AI AGENT CHATS /
+NOT ENCRYPTED", never "WHATSAPP / NOT ENCRYPTED". The tool prints the reel's
+NOT CLAIMED list while you choose, refuses **any number not already in
+`script.md` or `research.md`**, and refuses a line over **14 characters** (at
+104px heavy caps, 17 wraps to two) or **3 words**. Cut words, never shrink the
+type.
+
+**3. Judge it where it lives.** `out/thumbnails/<slug>-grid.png` is the centre
+**3:4** crop Instagram's profile grid has shown since January 2025, so
+read-critical content lives in y = 240..1680 and the rest is bleed. **Judge the
+grid file, not the full-height one.** The tool also prints how much of that
+tile stands out (>= 3:1) from YouTube's dark theme: our near-black ground
+measures 1.05:1 against it, so in dark mode ONLY the subject and the text are
+visible. **Under 12% the subject has vanished** — a black iPhone on our
+ground. Brighter asset or tighter crop. Derived at full resolution
+2026-09-11: text alone 6.8%, WhatsApp's thin green ring 23.9%, the Snapdragon
+chip 64.3%.
 
 **1080x1920, vertical.** Our reels are vertical; a 16:9 cover was the first
 version of this and was wrong (rejected 2026-08-17). `--format wide` still
-exists for any surface that wants a wide still.
-
-**The centre 1:1 crop is the whole game.** A profile grid centre-crops a 9:16
-cover, so read-critical content lives in y = 420..1500 and the rest is bleed.
-The tool always writes `<slug>-grid.png` alongside — that is how the grid
-actually shows it. **Judge the grid file, not the full-height one.**
+exists for a surface that wants a wide still, and it wraps a 14-character line.
 
 The look: near-black ground, ALL-CAPS heavy sans, subject in the middle, and a
 two-line headline whose SECOND line sits on a solid accent block. The block is
 the payoff and the loudest thing in frame. Default block is the style accent
 (editorial yellow); `--block "#E8112D" --block-text "#ffffff"` for the red
 convention. Yellow is more differentiated in a feed that is mostly red, and
-black-on-yellow carries a higher contrast ratio than white-on-red.
-
-Hard limit: **3 words per line**, enforced. At ~200px a longer line is a smear;
-cut words, never shrink the type.
-
-**No presenter face.** The reference creators anchor on their own face; we are a
-publication, so the anchor is the SUBJECT.
+black-on-yellow carries a higher contrast ratio than white-on-red. Against
+vidIQ's checklist it scores on every point but the face, deliberately:
+contrast carried by the subject and the type (not the ground — hence the
+dark-feed number), bold phone-readable text, a clear subject, image and text in
+separate zones, and a pattern borrowed from the niche (Saraev's covers).
 
 **Choose the frame for its SHAPE, not its content.** At 200px a dense text card
 is just a bright rectangle — it reads as "a document" and nothing more. A
-product render, a device, one huge number: those still read. Crop the subject
-out of the reel frame first rather than passing the whole 9:16.
+product render, a device, one huge number: those still read.
+
+**Upload:** Instagram — open the reel → ⋯ → Edit → Edit cover → Add from camera
+roll, then compare it with the grid file.
 
 ## 3. The beat-sheet contract
 
