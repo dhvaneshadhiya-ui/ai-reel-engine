@@ -4,8 +4,26 @@
     {
       "name": "public",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["--yes", "http-server", "public", "-c-1"],
+      "runtimeArgs": [
+        "--yes",
+        "http-server",
+        "public",
+        "-c-1"
+      ],
       "autoPort": true
+    },
+    {
+      "name": "remotion-studio",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "remotion",
+        "studio",
+        "src/index.ts",
+        "--port",
+        "3100",
+        "--no-open"
+      ],
+      "port": 3100
     }
   ]
 }

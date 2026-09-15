@@ -143,6 +143,7 @@ audio duration.
 | `hcompare` | `topSrc, bottomSrc, topLabel?, bottomLabel?, topFrac?, messages[]` | horizontal top/bottom compare, cyan match boxes |
 | `specsheet` | `title, kicker?, rows[{label,value,accent?}], footnote?` | dark spec card, 1 accent row (premium MG) |
 | `statcard` | `title, titleRight?, rows[{label,value,pct,color?}], footnote?, bg?` | animated bar stats |
+| `stage` | `elements[], moves[], set?, layout?, presenter?, punch?, credit?` | graphics that ACT OUT the spoken line, built from the topic's own things — see §8 |
 | `counter` | `value(number), label, source, from?, decimals?, prefix?, suffix?, at?, rollSec?, bg?` | ONE number rolling up to its value, one pulse on landing. G55 needs a numeric value + label; G15 needs source |
 | `desktopmockup` | `files[{name,kind}], selected?, bg?` | fake desktop with file icons |
 | `uidialog` | `app?, title, body?, field?, select?, primary?, cancel?` | fake app dialog |
@@ -323,6 +324,24 @@ CaptionChips (caption bar), CounterScene, InkMarks (shared hand-drawn marks)`.
   `compile_shot_plan` turns it on wherever `film_fits` (page taller than the frame,
   2+ lines, 2s+); G64 advises a hand-built sheet that left it unset.
 - G63 (advice) flags a mark or lens that lands after its scene ends or off the image, and an unknown exit.
+
+**`stage` (2026-09-15) — graphics that act out the sentence.** It has no picture of its
+own; the sheet supplies one per line, from the topic's world:
+- `elements`: `card` (title, lines, tone light|dark|accent), `image` (a real still: product
+  shot, logo; `label` names it in the beat plan), `text` (big label, `size` 1 = 76px),
+  `number` (value, from, prefix, suffix, decimals, label, `source` required by G15).
+  Placed as fractions of the stage: `x`, `y` = centre, `w` = width. Card type scales with `w`.
+- `moves`, each `at` seconds into the scene, on the spoken word: `arrive` (dir left | right |
+  up | down | pop), `exit`, `dim`, `focus` (camera leans in), `highlight`, `stamp` (text),
+  `strike`, `count`, `connect` (from, to, weight, repeat — a line with pulses travelling it).
+- `set`: light | dark | brand. `layout`: full (clear of the caption band) | split (graphic in
+  the top 42%, `presenter: {src, from}` below, optional `punch` words).
+Checks: G65 RENDER (no elements, unknown kind or verb, a move naming a missing element, a video
+in an image slot, a non-numeric number, split with no presenter video); G66 advice (a move
+after the scene ends, an element within 3% of an edge); G15 (number source); G67 advice (one
+meaningful verb carries most moves, or a stage repeats a recent reel's exact picture). The
+beat plan reads a stage out in plain words. Lab: `src/lab/qualcomm-stage.json`, composition
+`lab-qualcomm-stage`.
 
 Add a new scene type by: add it to the `Scene`
 union in `types.ts`, write `components/<Name>.tsx`, add a `case` in

@@ -8020,3 +8020,46 @@ rather than editing a file we may not redistribute. Two are quiet (lens -16.9,
 tick -13.9 dBFS) and calibration never amplifies past 1.0, so they sit a few
 dB under the other cues. Not yet heard in a finished reel: the first reel that
 uses them gets `tools/sfx_audibility.py`.
+
+## 2026-09-15 — woke_engineer's graphics: a grammar, not a template
+
+**Teardown (8 reels, measured, not estimated).** Split frame with the seam at 42.2% of the
+height in all 8; ~75% of runtime in the split (59-92%); 223 wpm pooled, first word at 0.00s
+every reel; no word captions, only punch words and logo chips; a comment-to-DM box held 4-5s
+at the end of all 8. The graphic panel is near-still in only 1-15% of quarter-second steps
+(median ~4.5%). Most panels are AI-generated video — gibberish text ("CLADE CODE", fake code)
+is the tell — plus a few real captures.
+
+**What makes it work is the grammar:** nearly every sentence gets its own picture that acts
+it out. Numbers become that many things; a cause becomes a line with a pulse; a negative
+becomes a no-entry sign or a red X; a process builds box by box; an action is mimed with a
+cursor; an abstraction gets a character. The face layer NAMES things (number + title, punch
+word, logo chip); the panel shows HOW they work.
+
+**The user's rule, after a one-off prototype in his look:** *"It is just one style that you
+tried. We going to have different topic and you have to create different things in different
+ways from video to video."* So the reusable part is the verbs, never the pictures.
+
+**Built:** `stage` (PIPELINE.md §8) — elements are the topic's own things, moves are verbs
+timed to the spoken word, sets and layouts vary. G65 (RENDER contract), G66 (moves that never
+show, elements at the edge), G15 on stage numbers, G67 (one verb for everything, or a recent
+reel's exact picture again). The beat plan reads a stage in plain words. Existing styles are
+untouched: nothing renders a stage unless a sheet asks for one. The prototype component was
+deleted in favour of it.
+
+**Tested on qualcomm-chip-hike** (`src/lab/qualcomm-stage.json`), three lines rebuilt, three
+different pictures from the chip story itself: the cost list with Memory pulled forward and
+stamped; data centres pulling memory in a fast pulse stream while makers trickle (presenter
+below); memory and the real Snapdragon chip image feeding the phone's price with unequal lines.
+The receipts around them stay — they prove, the stages explain.
+
+**What the stills caught (each fixed before this entry):** titles a flat 44px regardless of
+card width, so a wide card whispered — type now scales with the card; the brand set washed the
+frame olive with the theme's ink colour — now near-black with an accent glow; cards at 0.98 of
+the width lost their ends to the camera's lean-in — G66 now wants a 3% margin; and G67 counted
+`arrive`, which every element needs, so a varied plan read as a template (11 of 21) — it now
+counts only the verbs that say something.
+
+**Not done:** the organic pieces of his look (caped mascots, particle swirls, photoreal people)
+are video generation, not code, and are not attempted. Nothing here has been heard or seen in a
+published reel yet; the first real use should get a contact sheet before render.

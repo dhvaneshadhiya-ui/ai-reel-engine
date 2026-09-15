@@ -11,6 +11,7 @@ import type { ToolStackProps } from "./components/ToolStack";
 import type { SourceReadProps } from "./components/SourceRead";
 import type { InkMark } from "./components/InkMarks";
 import type { CounterProps } from "./components/CounterScene";
+import type { StageProps } from "./components/Stage";
 import type { PriceLadderProps } from "./components/PriceLadder";
 
 export type KineticStyle = "serif" | "caps" | "chip";
@@ -127,6 +128,7 @@ interface SceneBase {
 }
 
 export type Scene =
+  | (SceneBase & { type: "stage" } & StageProps)
   | (SceneBase & { type: "counter" } & CounterProps)
   | (SceneBase & {
       type: "footage";

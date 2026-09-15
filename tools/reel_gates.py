@@ -588,6 +588,7 @@ BLOCKING_RULES: dict[str, str] = {
     "G54": "RENDER a wordcascade off its field contract draws nothing",
     "G55": "RENDER an MG card off its component contract kills or blanks the render",
     "G56": "RENDER a scene whose list is absent or empty draws nothing",
+    "G65": "RENDER a stage off its contract draws nothing or crashes",
     # G48 is RENDER, not framing taste: below 1 the layer stops covering the
     # canvas, and a focus outside 0..1 pushes past the slack `cover` gives it.
     # Both paint the black backdrop. G49 — the zoom/zoomDir compounding note —
@@ -679,6 +680,45 @@ def _dur_class(sc: dict) -> str:
     if sc["type"] in BUILDING_TYPES:
         return "building"
     return "card"
+
+
+def stage_signatures(beats: dict) -> set:
+    """What a reel's stage scenes LOOK like, with their words stripped (2026-09-15).
+
+    A stage is a picture of one sentence: which set, which kinds of things,
+    which moves. Two reels whose stages share a signature showed different
+    subjects the same way, which is the template the user ruled out ("different
+    things in different ways from video to video"). A stage with fewer than
+    three moves is too small to call a treatment and is left out.
+    """
+    out = set()
+    for sc in beats.get("scenes") or []:
+        mv = [str(m.get("do")) for m in (sc.get("moves") or [])]
+        if sc.get("type") != "stage" or len(mv) < 3:
+            continue
+        out.add((sc.get("set") or "light", sc.get("layout") or "full",
+                 tuple(sorted(str(e.get("kind")) for e in (sc.get("elements") or []))),
+                 tuple(sorted(mv))))
+    return out
+
+
+def _recent_stage_signatures(slug: str | None, n: int = 5) -> dict:
+    """Stage signatures of the n most recently edited OTHER beat sheets."""
+    base = (slug or "").replace("-nomusic", "")
+    out: dict = {}
+    for p in sorted((ROOT / "src" / "beats").glob("*.json"),
+                    key=lambda q: q.stat().st_mtime, reverse=True):
+        if p.stem.replace("-nomusic", "") == base:
+            continue
+        try:
+            sigs = stage_signatures(json.loads(p.read_text()))
+        except (OSError, ValueError):
+            continue
+        if sigs:
+            out[p.stem] = sigs
+        if len(out) >= n:
+            break
+    return out
 
 
 def film_fits(sc: dict, frame_w: int = 1080, frame_h: int = 1920) -> bool:
@@ -1619,6 +1659,93 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 errors.append(f"G63 scene {i:02d} {what} box sits outside the "
                               f"{sw:.0f}x{sh:.0f} source — it would draw off the page.")
 
+    # G65 — A STAGE OFF ITS CONTRACT (2026-09-15). RENDER.
+    # A stage draws only what its elements and moves name. No elements is an
+    # empty set; an unknown kind or a move naming a missing element draws
+    # nothing where the plan promised a picture; an image slot is an <Img>, so
+    # a video there is blank; a non-numeric number rolls to NaN; a split stage
+    # with no presenter video leaves 58% of the frame black.
+    STAGE_KINDS = {"card", "image", "text", "number"}
+    STAGE_VERBS = {"arrive", "exit", "dim", "focus", "highlight", "stamp",
+                   "strike", "count", "connect"}
+    STAGE_STILL = (".png", ".jpg", ".jpeg", ".webp", ".avif")
+    for i, sc in enumerate(scenes):
+        if sc.get("type") != "stage":
+            continue
+        els = sc.get("elements") or []
+        if not els:
+            errors.append(f"G65 scene {i:02d} stage has no `elements` — it draws an empty set.")
+            continue
+        ids = {e.get("id") for e in els}
+        for e in els:
+            eid, kind = e.get("id"), e.get("kind")
+            if kind not in STAGE_KINDS:
+                errors.append(f"G65 scene {i:02d} stage element {eid!r} kind {kind!r} is "
+                              "not card, image, text or number — it draws nothing.")
+            if kind == "image" and not str(e.get("src") or "").lower().endswith(STAGE_STILL):
+                errors.append(f"G65 scene {i:02d} stage image {eid!r} src {e.get('src')!r} is "
+                              "not a still — an <Img> cannot play a video.")
+            v = e.get("value")
+            if kind == "number" and (not isinstance(v, (int, float)) or isinstance(v, bool)):
+                errors.append(f"G65 scene {i:02d} stage number {eid!r} value {v!r} is not a "
+                              "number — it rolls to NaN.")
+        for m in sc.get("moves") or []:
+            verb = m.get("do")
+            if verb not in STAGE_VERBS:
+                errors.append(f"G65 scene {i:02d} stage move {verb!r} is not one of "
+                              f"{', '.join(sorted(STAGE_VERBS))}.")
+                continue
+            for ref in ((m.get("from"), m.get("to")) if verb == "connect" else (m.get("target"),)):
+                if ref not in ids:
+                    errors.append(f"G65 scene {i:02d} stage `{verb}` names element {ref!r}, "
+                                  "which does not exist — the move never shows.")
+        if sc.get("layout") == "split":
+            ps = str((sc.get("presenter") or {}).get("src") or "")
+            if not ps or ps.lower().endswith(STAGE_STILL):
+                errors.append(f"G65 scene {i:02d} split stage needs a presenter video in "
+                              f"`presenter.src` (got {ps!r}) — the bottom 58% renders black.")
+
+    # G66 — A STAGE MOVE THAT NEVER SHOWS (2026-09-15). ADVICE.
+    for i, sc in enumerate(scenes):
+        if sc.get("type") != "stage":
+            continue
+        dur = float(sc.get("durationSec") or 0)
+        for m in sc.get("moves") or []:
+            if float(m.get("at") or 0) >= dur:
+                errors.append(f"G66 scene {i:02d} stage `{m.get('do')}` at {m.get('at')}s lands "
+                              f"after the {dur}s scene ends — it never shows.")
+        for e in sc.get("elements") or []:
+            x, y, w = (float(e.get(k) or 0) for k in ("x", "y", "w"))
+            # 3% margin, not "on the stage": the camera leans in up to ~1.11x,
+            # and the first Qualcomm stills lost both ends of a card at 0.98
+            if not 0 <= y <= 1 or x - w / 2 < 0.03 or x + w / 2 > 0.97:
+                errors.append(f"G66 scene {i:02d} stage element {e.get('id')!r} sits outside the "
+                              f"stage (x {x}, y {y}, w {w}) — part of it is cut off.")
+
+    # G67 — THE SAME PICTURE FOR EVERY IDEA (2026-09-15). ADVICE.
+    # The user's rule: graphics are invented per topic and per sentence, never a
+    # template. Two ways a stage plan drifts into one: a single verb carries
+    # most of the reel's moves, or a stage repeats a recent reel's exact
+    # picture (same set, same kinds of things, same moves).
+    # `arrive` and `exit` are how things get on and off, not an idea about
+    # them: every element arrives, so counting them flagged a varied plan
+    # (the Qualcomm lab, 11 of 21) as a template. Only the verbs that SAY
+    # something are counted.
+    stage_verbs = [str(m.get("do")) for sc in scenes if sc.get("type") == "stage"
+                   for m in (sc.get("moves") or []) if m.get("do") not in ("arrive", "exit")]
+    if len(stage_verbs) >= 6:
+        top, n = Counter(stage_verbs).most_common(1)[0]
+        if n / len(stage_verbs) > 0.5:
+            errors.append(f"G67 {n} of {len(stage_verbs)} stage moves are `{top}` — one move "
+                          "carrying every idea is a template, not a picture of each sentence.")
+    mine = stage_signatures(beats)
+    if mine:
+        for other, sigs in _recent_stage_signatures(beats.get("id")).items():
+            same = mine & sigs
+            if same:
+                errors.append(f"G67 {len(same)} stage scene(s) repeat {other}'s exact picture "
+                              "(same set, things and moves) — the same idea shown the same way twice.")
+
     # G60 — A SPLIT CANNOT SHOW THE PRESENTER'S HANDS (2026-09-02). ADVICE.
     #
     # MEASURED, not assumed. On the master at the same timestamp the presenter
@@ -2117,6 +2244,13 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # G15 — every card that states a NUMBER carries where the number came from.
     # A data card without a source is an assertion; with one it is reporting.
     for i, sc in enumerate(scenes):
+        if sc["type"] == "stage":
+            for e in sc.get("elements") or []:
+                if e.get("kind") == "number" and not str(e.get("source") or "").strip():
+                    errors.append(
+                        f"G15 scene {i:02d} stage number {e.get('id')!r} shows data "
+                        "with no `source` — name who reported the number.")
+            continue
         if sc["type"] not in ("specsheet", "chart", "timeline", "statcard", "counter"):
             continue
         attribution = (str(sc.get("source") or "") + str(sc.get("footnote") or "")).strip()

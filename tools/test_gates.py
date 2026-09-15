@@ -275,6 +275,23 @@ def expect_fail(mutate, gate: str, label: str) -> None:
 BASE = good()
 
 
+def _stage(s, **over):
+    """Scene 5 -> a stage: three things, varied moves, a sourced number."""
+    st = dict(type="stage", durationSec=2.5, set="light", layout="full", covers="benchmark",
+              elements=[{"id": "a", "kind": "card", "x": 0.3, "y": 0.4, "w": 0.3, "title": "Wafers"},
+                        {"id": "b", "kind": "card", "x": 0.7, "y": 0.4, "w": 0.3, "title": "Memory"},
+                        {"id": "n", "kind": "number", "x": 0.5, "y": 0.75, "w": 0.5,
+                         "value": 58, "suffix": "%", "source": "TrendForce"}],
+              moves=[{"do": "arrive", "target": "a", "at": 0.1},
+                     {"do": "arrive", "target": "b", "at": 0.3},
+                     {"do": "connect", "from": "a", "to": "b", "at": 0.6},
+                     {"do": "count", "target": "n", "at": 0.9}])
+    st.update(over)
+    s["scenes"][5].clear()
+    s["scenes"][5].update(st)
+
+
+
 def sfx_gain(src: str, target_db: float) -> float:
     """The gain calibrate_sfx.py would derive for this cue at this target."""
     return round(min(1.0, 10 ** ((target_db - sfx_peaks()[src]["peak"]) / 20)), 3)
@@ -898,6 +915,37 @@ for _film, _h, _why in ((True, 2340, "film: true"), (False, 2340, "film: false, 
         raise SystemExit(1)
     _counted(f"G64 silent — {_why}")
 
+# STAGE — SILENT when built right, and G67 across reels (2026-09-15). The
+# repetition check reads other beat sheets from disk, so the test swaps that
+# reader for a fixed answer: hermetic, and it cannot pass by accident on
+# whatever sheets this machine happens to have.
+import reel_gates as _rg  # noqa: E402
+_orig_recent = _rg._recent_stage_signatures
+try:
+    _s = copy.deepcopy(BASE)
+    _stage(_s)
+    _rg._recent_stage_signatures = lambda slug, n=5: {}
+    try:
+        _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS)
+    except GateError as _e:
+        _adv = list(_e.advice) + [str(_e)]
+    _hits = [a for a in _adv if any(g in str(a) for g in ("G15", "G65", "G66", "G67"))]
+    if _hits:
+        print(f"  FAIL a correct stage drew a complaint: {str(_hits[0])[:110]}")
+        raise SystemExit(1)
+    _counted("G15/G65/G66/G67 silent — a sourced, in-bounds stage with varied moves")
+    _rg._recent_stage_signatures = lambda slug, n=5: {"last-reel": _rg.stage_signatures(_s)}
+    try:
+        _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS)
+    except GateError as _e:
+        _adv = list(_e.advice) + [str(_e)]
+    if not any("G67" in str(a) and "last-reel" in str(a) for a in _adv):
+        print("  FAIL G67 did not notice a stage repeating the last reel's exact picture")
+        raise SystemExit(1)
+    _counted("G67 advises — a stage that repeats a recent reel's exact picture")
+finally:
+    _rg._recent_stage_signatures = _orig_recent
+
 # ── THE GUARD THAT WOULD HAVE CAUGHT ALL THREE OF TODAY'S BUGS ──────────────
 #
 # 2026-09-08 turned up three gates measuring the wrong thing, and every one of
@@ -1082,6 +1130,21 @@ CASES = [
         lines=[{"at": 0.2, "x": 40, "y": 200, "w": 900, "h": 60},
                {"at": 1.2, "x": 40, "y": 1400, "w": 900, "h": 60}]),
      "G64", "a page taller than the frame, read in two stops, not filmed"),
+    # stage (2026-09-15): the grammar has a contract, a clock and a variety rule
+    (lambda s: _stage(s, elements=[]), "G65", "a stage with no elements draws an empty set"),
+    (lambda s: _stage(s, moves=[{"do": "arrive", "target": "ghost", "at": 0.1}]),
+     "G65", "a stage move naming an element that does not exist"),
+    (lambda s: _stage(s, elements=[{"id": "a", "kind": "image", "x": 0.5, "y": 0.5, "w": 0.4,
+                                    "src": "assets/x/clip.mp4"}], moves=[]),
+     "G65", "a stage image slot given a video"),
+    (lambda s: _stage(s, elements=[{"id": "n", "kind": "number", "x": 0.5, "y": 0.5, "w": 0.5,
+                                    "value": 58}], moves=[]),
+     "G15", "a stage number with no source"),
+    (lambda s: _stage(s, moves=[{"do": "arrive", "target": "a", "at": 4.0}]),
+     "G66", "a stage move after its scene ends"),
+    (lambda s: _stage(s, moves=[{"do": "connect", "from": "a", "to": "b", "at": 0.1 * k} for k in range(6)]
+                      + [{"do": "highlight", "target": "a", "at": 1.0}]),
+     "G67", "one move carrying a whole reel's stages"),
     # G62 — every visual beat becomes a document, so the reel has no picture.
     (lambda s: [s["scenes"][i].clear() or s["scenes"][i].update(
         type="sourceread", durationSec=2.5, src=f"assets/x/doc{i}.png",

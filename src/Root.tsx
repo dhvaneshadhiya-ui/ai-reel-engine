@@ -4,10 +4,23 @@ import { Reel, totalDurationInFrames } from "./Reel";
 import { beatSheets } from "./generatedBeatSheets";
 import { InstaCTA } from "./InstaCTA";
 import { Thumbnail } from "./Thumbnail";
+import type { BeatSheet } from "./types";
+import labQualcommStage from "./lab/qualcomm-stage.json";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      {/* LAB 2026-09-15: qualcomm-chip-hike with three lines rebuilt as `stage`
+          scenes — the test of the stage grammar. Not a publishable reel. */}
+      <Composition
+        id="lab-qualcomm-stage"
+        component={Reel}
+        durationInFrames={totalDurationInFrames(labQualcommStage as unknown as BeatSheet)}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ beats: labQualcommStage as unknown as BeatSheet }}
+      />
       <Composition
         id="insta-cta"
         component={InstaCTA}

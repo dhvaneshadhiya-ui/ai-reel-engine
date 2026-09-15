@@ -212,6 +212,9 @@ anyone the last script was a list.
 Write `scripts/<slug>.md`: the spoken script **and** a beat table where every
 beat carries `visual: <manifest asset id>` or `visual: MG:<component + spec>`.
 A beat that resolves to neither is illegal — re-scout or rewrite the line.
+A line that EXPLAINS rather than proves may resolve to `visual: MG:stage <verb + thing>`
+(2026-09-15): write the picture in plain words from the topic's own world, and never the
+last reel's picture — AGENT.md and PIPELINE.md §8 have the grammar, G67 the repetition check.
 At the MEASURED ~2.7 words/sec (2026-08-13, three masters), 60s ≈ 162 words, 80s ≈ 216, 90s ≈ 243, 120s ≈ 324. script_approval.py refuses an out-of-band propose.
 
 ### 2a — humanizer: reads the WHOLE script, applies SELECTIVELY

@@ -177,8 +177,71 @@ def _shot(scene: dict, shows: dict, seen: set | None = None) -> str:
     return base
 
 
+# A stage has no fixed picture, so it cannot be one PLAIN line: it is read out
+# as its own things and what happens to them, in order (2026-09-15). This is
+# the visual plan the user approves alongside the script.
+_VERB_WORDS = {
+    "arrive": "{a} comes in", "exit": "{a} leaves", "dim": "{a} fades back",
+    "focus": "the camera pushes in on {a}", "highlight": "{a} gets highlighted",
+    "stamp": "{a} is stamped “{text}”", "strike": "{a} is struck out",
+    "count": "{a} counts up", "connect": "a line runs from {f} to {to}, pulses travelling along it",
+}
+
+
+def _stage_words(scene: dict) -> str:
+    def name(e):
+        if not e:
+            return "something"
+        if e.get("kind") == "number":
+            return f"“{e.get('prefix', '')}{e.get('value', '?')}{e.get('suffix', '')}”"
+        label = e.get("title") or e.get("text") or e.get("label")
+        if label:
+            return f"“{label}”"
+        return "a picture of " + str(e.get("src", "")).rsplit("/", 1)[-1].rsplit(".", 1)[0].replace("-", " ")
+    els = {e.get("id"): e for e in scene.get("elements") or []}
+    steps, run = [], []   # a run of the same one-target verb reads as one step
+
+    def flush():
+        if not run:
+            return
+        verb, names = run[0][0], [n for _, n in run]
+        joined = names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+        phrase = _VERB_WORDS[verb].format(a=joined, f="", to="", text="✓")
+        if len(names) > 1:   # plural verb
+            phrase = (phrase.replace(" comes in", " come in").replace(" leaves", " leave")
+                      .replace(" fades back", " fade back").replace(" gets ", " get ")
+                      .replace(" counts up", " count up").replace(" is struck", " are struck"))
+        steps.append(phrase)
+        run.clear()
+
+    for m in sorted(scene.get("moves") or [], key=lambda m: float(m.get("at") or 0)):
+        verb = m.get("do")
+        if verb not in _VERB_WORDS:
+            continue
+        if verb in ("arrive", "exit", "dim", "count", "strike", "highlight"):
+            if run and run[0][0] != verb:
+                flush()
+            run.append((verb, name(els.get(m.get("target")))))
+            continue
+        flush()
+        steps.append(_VERB_WORDS[verb].format(a=name(els.get(m.get("target"))), f=name(els.get(m.get("from"))),
+                                              to=name(els.get(m.get("to"))), text=m.get("text", "✓")))
+    flush()
+    where = {"dark": "dark", "brand": "brand-colour"}.get(scene.get("set") or "", "light")
+    line = f"an animated graphic on a {where} set"
+    if scene.get("layout") == "split":
+        line += ", the presenter below"
+    if steps:
+        line += ": " + "; ".join(steps)
+    if scene.get("credit"):
+        line += f" — credited {scene['credit']}"
+    return line
+
+
 def describe(scene: dict, shows: dict, seen: set | None = None) -> str:
     t = scene.get("type", "?")
+    if t == "stage":
+        return _stage_words(scene)
     tpl = PLAIN.get(t)
     if tpl is None:
         extras = _texts(scene, 3)

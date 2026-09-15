@@ -12,6 +12,7 @@ import {
 import { FootageScene } from "./components/FootageScene";
 import { ReceiptScene } from "./components/ReceiptScene";
 import { CounterScene } from "./components/CounterScene";
+import { Stage } from "./components/Stage";
 import { SourceRead } from "./components/SourceRead";
 import { TypeCard } from "./components/TypeCard";
 import { SplitScene } from "./components/SplitScene";
@@ -77,7 +78,7 @@ import type { BeatSheet, Scene } from "./types";
 // the scene is already making, not add to it.
 const MOVES_ITSELF = new Set([
   "footage", "receipt", "sourceread", "annotatezoom",
-  "deviceframe", "terminal", "chart", "split",
+  "deviceframe", "terminal", "chart", "split", "stage",
 ]);
 
 const IdleMotion: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -119,6 +120,8 @@ const SceneBody: React.FC<{ scene: Scene }> = ({ scene }) => {
       return <FootageScene scene={scene} />;
     case "counter":
       return <CounterScene scene={scene} />;
+    case "stage":
+      return <Stage scene={scene} />;
     case "receipt":
       return <ReceiptScene scene={scene} />;
     case "sourceread":

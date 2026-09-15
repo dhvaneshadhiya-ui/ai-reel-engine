@@ -642,11 +642,24 @@ Key scene types — full table in `PIPELINE.md` §3:
 | `hcompare` / `comparesplit` | before/after comparisons |
 | `statcard`, `checklist`, `categorygrid`, `carousel`, `xpost` | structured MG |
 | `counter` | one big number rolling up — the number the whole line is about |
+| `stage` | graphics that act out the spoken line, built from the topic's own things |
 
 **Emphasis options, 2026-09-11** (full list in `PIPELINE.md` §8): underline / circle / arrow
 marks on the spoken word, dim-the-rest and a magnifier on page reads, a desk tilt on
 receipts, and `exit: push|whip` between scenes. Use them where the line earns it: one
 mark per beat, not a mark on every beat.
+
+**Graphics that act out the line — `stage` (2026-09-15).** User directive: *"different
+topic and you have to create different things in different ways from video to video."*
+Receipts and real footage PROVE a claim; a stage EXPLAINS one. Reach for it where a line
+describes a mechanism, a cause, a quantity, a comparison or a change, and no footage shows
+it better. For each such line, write the picture in plain words FIRST — a verb plus a thing
+from the topic's own world (a chip for silicon, a map for a rollout, a price tag for pricing,
+a queue for a waitlist) — then build it from `elements` and `moves` (PIPELINE.md §8). Never
+reuse the last reel's picture: G67 advises when a stage repeats a recent reel exactly, or when
+one verb carries most of the moves. The beat plan reads every stage out in plain words, so the
+user approves the pictures with the script. Nothing about the existing styles changes: a
+stage appears only where a sheet asks for one.
 
 ---
 
