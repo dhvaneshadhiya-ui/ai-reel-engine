@@ -1,0 +1,1800 @@
+{
+  "id": "siri-ai-ios-27-requirements",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/siri-ai-ios-27-requirements/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "Siri AI",
+    "15 Pro",
+    "17 Pro",
+    "iPhone Air",
+    "China",
+    "13"
+  ],
+  "scenes": [
+    {
+      "type": "footage",
+      "src": "assets/siri-ai-ios-27-requirements/avatar-master.mp4",
+      "focusX": 0.481,
+      "captionBottom": 500,
+      "durationSec": 4.72,
+      "from": 0.0
+    },
+    {
+      "type": "receipt",
+      "src": "assets/siri-ai-ios-27-requirements/9to5mac-headline.png",
+      "srcWidth": 1080,
+      "srcHeight": 1300,
+      "backdrop": "cream",
+      "covers": "headline mentioned is the fine print",
+      "creditOnScreen": true,
+      "credit": "9to5Mac",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 40,
+          "y": 700,
+          "w": 1000,
+          "h": 300
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.02
+        }
+      ],
+      "durationSec": 3.0,
+      "captionBottom": 532,
+      "assetId": "9to5mac-headline",
+      "claimId": "9to5mac-headline",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/siri-ai-ios-27-requirements/apple-newsroom-hero.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "covers": "landed on September 14th",
+      "creditOnScreen": true,
+      "credit": "Apple",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 40,
+          "y": 380,
+          "w": 1000,
+          "h": 900
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.02
+        }
+      ],
+      "durationSec": 3.04,
+      "captionBottom": 384,
+      "assetId": "apple-newsroom-hero",
+      "claimId": "apple-newsroom-hero",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "specsheet",
+      "title": "GETTING SIRI AI",
+      "kicker": "Two separate gates",
+      "rows": [
+        {
+          "label": "Gate 1",
+          "value": "Installs"
+        },
+        {
+          "label": "Gate 2",
+          "value": "Runs Siri",
+          "accent": true
+        }
+      ],
+      "footnote": "iOS 27, Sep 14 2026",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.343,
+          "at": 0.1
+        }
+      ],
+      "durationSec": 2.68
+    },
+    {
+      "type": "specsheet",
+      "title": "GATE 1",
+      "kicker": "The software itself",
+      "rows": [
+        {
+          "label": "Difficulty",
+          "value": "Easy",
+          "accent": true
+        }
+      ],
+      "footnote": "Apple",
+      "durationSec": 1.94
+    },
+    {
+      "type": "specsheet",
+      "title": "iOS 27 INSTALLS ON",
+      "kicker": "No Siri AI included",
+      "rows": [
+        {
+          "label": "iPhone 11 - 14",
+          "value": "Installs"
+        },
+        {
+          "label": "iPhone 15 / 15 Plus",
+          "value": "Installs"
+        }
+      ],
+      "footnote": "9to5Mac + Business Today, Sep 2026",
+      "durationSec": 5.02
+    },
+    {
+      "type": "specsheet",
+      "title": "GATE 2",
+      "kicker": "Siri AI itself",
+      "rows": [
+        {
+          "label": "Difficulty",
+          "value": "Filters most",
+          "accent": true
+        }
+      ],
+      "footnote": "Apple",
+      "durationSec": 2.82
+    },
+    {
+      "type": "receipt",
+      "src": "assets/siri-ai-ios-27-requirements/siri-requirements-list.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "covers": "Siri AI itself needs an iPhone 15 Pro",
+      "creditOnScreen": true,
+      "credit": "Apple Support",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 40,
+          "y": 560,
+          "w": 1000,
+          "h": 420
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.02
+        }
+      ],
+      "durationSec": 3.78,
+      "captionBottom": 384,
+      "assetId": "siri-requirements-list",
+      "claimId": "siri-requirements-list",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/siri-ai-ios-27-requirements/settings-try-siri-ai.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "covers": "15 Pro Max, or any 16 and up",
+      "creditOnScreen": true,
+      "credit": "Apple",
+      "highlights": [
+        {
+          "at": 0.15,
+          "x": 60,
+          "y": 620,
+          "w": 960,
+          "h": 420
+        }
+      ],
+      "durationSec": 3.76,
+      "captionBottom": 384,
+      "assetId": "settings-try-siri-ai",
+      "claimId": "settings-try-siri-ai",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "specsheet",
+      "title": "CLEARING GATE 2",
+      "kicker": "Only buys you the base Siri",
+      "rows": [
+        {
+          "label": "Tier",
+          "value": "Base",
+          "accent": true
+        }
+      ],
+      "footnote": "Apple",
+      "durationSec": 2.82
+    },
+    {
+      "type": "specsheet",
+      "title": "EXPRESSIVE VOICES",
+      "kicker": "Adjustable pace + expressiveness",
+      "rows": [
+        {
+          "label": "Adjustable voice",
+          "value": "Extra tier",
+          "accent": true
+        }
+      ],
+      "footnote": "MacRumors + Business Today",
+      "durationSec": 2.32
+    },
+    {
+      "type": "specsheet",
+      "title": "RUNS ONLY ON",
+      "kicker": "The heavier on-device model",
+      "rows": [
+        {
+          "label": "iPhone 17 Pro",
+          "value": "Yes",
+          "accent": true
+        },
+        {
+          "label": "iPhone Air",
+          "value": "Yes",
+          "accent": true
+        }
+      ],
+      "footnote": "MacRumors + Business Today, Sep 2026",
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "vol": 0.556,
+          "at": 0.05
+        }
+      ],
+      "durationSec": 7.3
+    },
+    {
+      "type": "specsheet",
+      "title": "GATE 3",
+      "kicker": "Region",
+      "rows": [
+        {
+          "label": "Not just the phone",
+          "value": "Two blocked",
+          "accent": true
+        }
+      ],
+      "footnote": "Apple",
+      "durationSec": 2.38
+    },
+    {
+      "type": "receipt",
+      "src": "assets/siri-ai-ios-27-requirements/apple-support-region-language.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "covers": "the EU and China, don't get it",
+      "creditOnScreen": true,
+      "credit": "Apple Support",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 40,
+          "y": 780,
+          "w": 1000,
+          "h": 1100
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.02
+        }
+      ],
+      "durationSec": 5.96,
+      "captionBottom": 384,
+      "assetId": "apple-support-region-language",
+      "claimId": "apple-support-region-language",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/siri-ai-ios-27-requirements/apple-support-region-language.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "cream",
+      "covers": "English-only for now",
+      "creditOnScreen": true,
+      "credit": "Apple Support",
+      "highlights": [
+        {
+          "at": 0.15,
+          "x": 40,
+          "y": 60,
+          "w": 1000,
+          "h": 620
+        }
+      ],
+      "durationSec": 2.36,
+      "captionBottom": 384,
+      "assetId": "apple-support-region-language",
+      "claimId": "apple-support-region-language",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "specsheet",
+      "title": "ARRIVING NEXT MONTH",
+      "kicker": "iOS 27.1",
+      "rows": [
+        {
+          "label": "French, Japanese",
+          "value": "Next month"
+        },
+        {
+          "label": "Korean + 2 more",
+          "value": "Next month"
+        }
+      ],
+      "footnote": "Apple",
+      "durationSec": 3.7
+    },
+    {
+      "type": "specsheet",
+      "title": "GATE 4",
+      "kicker": "Nothing to do with hardware",
+      "rows": [
+        {
+          "label": "Age",
+          "value": "Last gate",
+          "accent": true
+        }
+      ],
+      "footnote": "Apple",
+      "durationSec": 2.46
+    },
+    {
+      "type": "statcard",
+      "title": "MINIMUM AGE",
+      "rows": [
+        {
+          "label": "Siri AI",
+          "value": "13+",
+          "pct": 1.0
+        }
+      ],
+      "footnote": "9to5Mac + MacObserver, citing Apple's own footnote",
+      "durationSec": 2.9
+    },
+    {
+      "type": "checklist",
+      "headline": "FOUR GATES, NOT ONE",
+      "rows": [
+        {
+          "label": "Not just the phone",
+          "state": "done"
+        }
+      ],
+      "footnote": "Recap",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.343,
+          "at": 0.05
+        }
+      ],
+      "durationSec": 2.9
+    },
+    {
+      "type": "checklist",
+      "headline": "CLEAR ALL FOUR",
+      "rows": [
+        {
+          "label": "Phone",
+          "state": "done"
+        },
+        {
+          "label": "Region",
+          "state": "done"
+        },
+        {
+          "label": "Language",
+          "state": "done"
+        },
+        {
+          "label": "Age",
+          "state": "done"
+        }
+      ],
+      "footnote": "iOS 27, Sep 2026",
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "vol": 0.251,
+          "at": 0.1
+        }
+      ],
+      "durationSec": 2.42
+    },
+    {
+      "type": "footage",
+      "src": "assets/siri-ai-ios-27-requirements/avatar-master.mp4",
+      "focusX": 0.481,
+      "captionBottom": 500,
+      "durationSec": 2.736,
+      "from": 68.28
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.86,
+      "text": "Your iPhone will",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Your"
+        },
+        {
+          "t": 0.18,
+          "text": "iPhone"
+        },
+        {
+          "t": 0.62,
+          "text": "will"
+        }
+      ]
+    },
+    {
+      "start": 0.86,
+      "end": 2.62,
+      "text": "install iOS 27.",
+      "words": [
+        {
+          "t": 0.86,
+          "text": "install"
+        },
+        {
+          "t": 1.26,
+          "text": "iOS"
+        },
+        {
+          "t": 1.68,
+          "text": "27."
+        }
+      ]
+    },
+    {
+      "start": 2.9,
+      "end": 3.46,
+      "text": "That doesn't mean",
+      "words": [
+        {
+          "t": 2.9,
+          "text": "That"
+        },
+        {
+          "t": 3.04,
+          "text": "doesn't"
+        },
+        {
+          "t": 3.3,
+          "text": "mean"
+        }
+      ]
+    },
+    {
+      "start": 3.46,
+      "end": 3.88,
+      "text": "you get the",
+      "words": [
+        {
+          "t": 3.46,
+          "text": "you"
+        },
+        {
+          "t": 3.62,
+          "text": "get"
+        },
+        {
+          "t": 3.74,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 3.88,
+      "end": 4.86,
+      "text": "new Siri. What",
+      "words": [
+        {
+          "t": 3.88,
+          "text": "new"
+        },
+        {
+          "t": 4.1,
+          "text": "Siri."
+        },
+        {
+          "t": 4.72,
+          "text": "What"
+        }
+      ]
+    },
+    {
+      "start": 4.86,
+      "end": 6.1,
+      "text": "nobody's headline mentioned",
+      "words": [
+        {
+          "t": 4.86,
+          "text": "nobody's"
+        },
+        {
+          "t": 5.38,
+          "text": "headline"
+        },
+        {
+          "t": 5.62,
+          "text": "mentioned"
+        }
+      ]
+    },
+    {
+      "start": 6.1,
+      "end": 6.9,
+      "text": "is the fine",
+      "words": [
+        {
+          "t": 6.1,
+          "text": "is"
+        },
+        {
+          "t": 6.5,
+          "text": "the"
+        },
+        {
+          "t": 6.66,
+          "text": "fine"
+        }
+      ]
+    },
+    {
+      "start": 6.9,
+      "end": 8.12,
+      "text": "print. So iOS",
+      "words": [
+        {
+          "t": 6.9,
+          "text": "print."
+        },
+        {
+          "t": 7.72,
+          "text": "So"
+        },
+        {
+          "t": 7.78,
+          "text": "iOS"
+        }
+      ]
+    },
+    {
+      "start": 8.12,
+      "end": 9.58,
+      "text": "27 landed on",
+      "words": [
+        {
+          "t": 8.12,
+          "text": "27"
+        },
+        {
+          "t": 8.92,
+          "text": "landed"
+        },
+        {
+          "t": 9.3,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 9.58,
+      "end": 10.9,
+      "text": "September 14th and",
+      "words": [
+        {
+          "t": 9.58,
+          "text": "September"
+        },
+        {
+          "t": 9.82,
+          "text": "14th"
+        },
+        {
+          "t": 10.76,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 10.9,
+      "end": 11.78,
+      "text": "Apple split it",
+      "words": [
+        {
+          "t": 10.9,
+          "text": "Apple"
+        },
+        {
+          "t": 11.26,
+          "text": "split"
+        },
+        {
+          "t": 11.58,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 11.78,
+      "end": 12.66,
+      "text": "into two separate",
+      "words": [
+        {
+          "t": 11.78,
+          "text": "into"
+        },
+        {
+          "t": 11.96,
+          "text": "two"
+        },
+        {
+          "t": 12.26,
+          "text": "separate"
+        }
+      ]
+    },
+    {
+      "start": 12.66,
+      "end": 13.8,
+      "text": "gates. Here's the",
+      "words": [
+        {
+          "t": 12.66,
+          "text": "gates."
+        },
+        {
+          "t": 13.44,
+          "text": "Here's"
+        },
+        {
+          "t": 13.7,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 13.8,
+      "end": 14.56,
+      "text": "first gate and",
+      "words": [
+        {
+          "t": 13.8,
+          "text": "first"
+        },
+        {
+          "t": 14.0,
+          "text": "gate"
+        },
+        {
+          "t": 14.28,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 14.56,
+      "end": 15.46,
+      "text": "it's easy. That",
+      "words": [
+        {
+          "t": 14.56,
+          "text": "it's"
+        },
+        {
+          "t": 14.76,
+          "text": "easy."
+        },
+        {
+          "t": 15.38,
+          "text": "That"
+        }
+      ]
+    },
+    {
+      "start": 15.46,
+      "end": 16.72,
+      "text": "includes every iPhone",
+      "words": [
+        {
+          "t": 15.46,
+          "text": "includes"
+        },
+        {
+          "t": 15.82,
+          "text": "every"
+        },
+        {
+          "t": 16.26,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 16.72,
+      "end": 17.26,
+      "text": "back to the",
+      "words": [
+        {
+          "t": 16.72,
+          "text": "back"
+        },
+        {
+          "t": 16.98,
+          "text": "to"
+        },
+        {
+          "t": 17.16,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 17.26,
+      "end": 18.02,
+      "text": "11. So the",
+      "words": [
+        {
+          "t": 17.26,
+          "text": "11."
+        },
+        {
+          "t": 17.82,
+          "text": "So"
+        },
+        {
+          "t": 17.9,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 18.02,
+      "end": 19.4,
+      "text": "software installs almost",
+      "words": [
+        {
+          "t": 18.02,
+          "text": "software"
+        },
+        {
+          "t": 18.4,
+          "text": "installs"
+        },
+        {
+          "t": 19.08,
+          "text": "almost"
+        }
+      ]
+    },
+    {
+      "start": 19.4,
+      "end": 20.7,
+      "text": "everywhere. Then the",
+      "words": [
+        {
+          "t": 19.4,
+          "text": "everywhere."
+        },
+        {
+          "t": 20.4,
+          "text": "Then"
+        },
+        {
+          "t": 20.58,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 20.7,
+      "end": 21.48,
+      "text": "second gate is",
+      "words": [
+        {
+          "t": 20.7,
+          "text": "second"
+        },
+        {
+          "t": 20.96,
+          "text": "gate"
+        },
+        {
+          "t": 21.24,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 21.48,
+      "end": 22.32,
+      "text": "where most phones",
+      "words": [
+        {
+          "t": 21.48,
+          "text": "where"
+        },
+        {
+          "t": 21.68,
+          "text": "most"
+        },
+        {
+          "t": 22.0,
+          "text": "phones"
+        }
+      ]
+    },
+    {
+      "start": 22.32,
+      "end": 23.36,
+      "text": "drop out. That's",
+      "words": [
+        {
+          "t": 22.32,
+          "text": "drop"
+        },
+        {
+          "t": 22.6,
+          "text": "out."
+        },
+        {
+          "t": 23.22,
+          "text": "That's"
+        }
+      ]
+    },
+    {
+      "start": 23.36,
+      "end": 24.32,
+      "text": "because Siri AI",
+      "words": [
+        {
+          "t": 23.36,
+          "text": "because"
+        },
+        {
+          "t": 23.6,
+          "text": "Siri"
+        },
+        {
+          "t": 23.98,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 24.32,
+      "end": 25.48,
+      "text": "itself needs an",
+      "words": [
+        {
+          "t": 24.32,
+          "text": "itself"
+        },
+        {
+          "t": 24.8,
+          "text": "needs"
+        },
+        {
+          "t": 25.28,
+          "text": "an"
+        }
+      ]
+    },
+    {
+      "start": 25.48,
+      "end": 26.56,
+      "text": "iPhone 15 Pro",
+      "words": [
+        {
+          "t": 25.48,
+          "text": "iPhone"
+        },
+        {
+          "t": 25.78,
+          "text": "15"
+        },
+        {
+          "t": 26.18,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 26.56,
+      "end": 27.38,
+      "text": "or newer. So",
+      "words": [
+        {
+          "t": 26.56,
+          "text": "or"
+        },
+        {
+          "t": 26.74,
+          "text": "newer."
+        },
+        {
+          "t": 27.0,
+          "text": "So"
+        }
+      ]
+    },
+    {
+      "start": 27.38,
+      "end": 28.48,
+      "text": "15 Pro, 15",
+      "words": [
+        {
+          "t": 27.38,
+          "text": "15"
+        },
+        {
+          "t": 27.76,
+          "text": "Pro,"
+        },
+        {
+          "t": 28.24,
+          "text": "15"
+        }
+      ]
+    },
+    {
+      "start": 28.48,
+      "end": 29.44,
+      "text": "Pro Max or",
+      "words": [
+        {
+          "t": 28.48,
+          "text": "Pro"
+        },
+        {
+          "t": 28.78,
+          "text": "Max"
+        },
+        {
+          "t": 29.02,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 29.44,
+      "end": 30.3,
+      "text": "any 16 and",
+      "words": [
+        {
+          "t": 29.44,
+          "text": "any"
+        },
+        {
+          "t": 29.66,
+          "text": "16"
+        },
+        {
+          "t": 30.08,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 30.3,
+      "end": 31.32,
+      "text": "up. Even clearing",
+      "words": [
+        {
+          "t": 30.3,
+          "text": "up."
+        },
+        {
+          "t": 30.76,
+          "text": "Even"
+        },
+        {
+          "t": 30.96,
+          "text": "clearing"
+        }
+      ]
+    },
+    {
+      "start": 31.32,
+      "end": 32.36,
+      "text": "that only buys",
+      "words": [
+        {
+          "t": 31.32,
+          "text": "that"
+        },
+        {
+          "t": 31.62,
+          "text": "only"
+        },
+        {
+          "t": 32.0,
+          "text": "buys"
+        }
+      ]
+    },
+    {
+      "start": 32.36,
+      "end": 32.92,
+      "text": "you the base",
+      "words": [
+        {
+          "t": 32.36,
+          "text": "you"
+        },
+        {
+          "t": 32.52,
+          "text": "the"
+        },
+        {
+          "t": 32.66,
+          "text": "base"
+        }
+      ]
+    },
+    {
+      "start": 32.92,
+      "end": 33.88,
+      "text": "Siri. The version",
+      "words": [
+        {
+          "t": 32.92,
+          "text": "Siri."
+        },
+        {
+          "t": 33.58,
+          "text": "The"
+        },
+        {
+          "t": 33.64,
+          "text": "version"
+        }
+      ]
+    },
+    {
+      "start": 33.88,
+      "end": 34.82,
+      "text": "that actually sounds",
+      "words": [
+        {
+          "t": 33.88,
+          "text": "that"
+        },
+        {
+          "t": 34.1,
+          "text": "actually"
+        },
+        {
+          "t": 34.46,
+          "text": "sounds"
+        }
+      ]
+    },
+    {
+      "start": 34.82,
+      "end": 35.44,
+      "text": "like it's paying",
+      "words": [
+        {
+          "t": 34.82,
+          "text": "like"
+        },
+        {
+          "t": 35.08,
+          "text": "it's"
+        },
+        {
+          "t": 35.3,
+          "text": "paying"
+        }
+      ]
+    },
+    {
+      "start": 35.44,
+      "end": 36.74,
+      "text": "attention with adjustable",
+      "words": [
+        {
+          "t": 35.44,
+          "text": "attention"
+        },
+        {
+          "t": 35.9,
+          "text": "with"
+        },
+        {
+          "t": 36.34,
+          "text": "adjustable"
+        }
+      ]
+    },
+    {
+      "start": 36.74,
+      "end": 37.98,
+      "text": "pace and expressiveness",
+      "words": [
+        {
+          "t": 36.74,
+          "text": "pace"
+        },
+        {
+          "t": 37.12,
+          "text": "and"
+        },
+        {
+          "t": 37.32,
+          "text": "expressiveness"
+        }
+      ]
+    },
+    {
+      "start": 37.98,
+      "end": 39.54,
+      "text": "needs extra processing",
+      "words": [
+        {
+          "t": 37.98,
+          "text": "needs"
+        },
+        {
+          "t": 38.56,
+          "text": "extra"
+        },
+        {
+          "t": 39.06,
+          "text": "processing"
+        }
+      ]
+    },
+    {
+      "start": 39.54,
+      "end": 40.58,
+      "text": "only the iPhone",
+      "words": [
+        {
+          "t": 39.54,
+          "text": "only"
+        },
+        {
+          "t": 40.08,
+          "text": "the"
+        },
+        {
+          "t": 40.24,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 40.58,
+      "end": 41.78,
+      "text": "17 Pro or",
+      "words": [
+        {
+          "t": 40.58,
+          "text": "17"
+        },
+        {
+          "t": 41.08,
+          "text": "Pro"
+        },
+        {
+          "t": 41.5,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 41.78,
+      "end": 42.72,
+      "text": "iPhone Air can",
+      "words": [
+        {
+          "t": 41.78,
+          "text": "iPhone"
+        },
+        {
+          "t": 42.16,
+          "text": "Air"
+        },
+        {
+          "t": 42.46,
+          "text": "can"
+        }
+      ]
+    },
+    {
+      "start": 42.72,
+      "end": 43.54,
+      "text": "run. That's not",
+      "words": [
+        {
+          "t": 42.72,
+          "text": "run."
+        },
+        {
+          "t": 43.2,
+          "text": "That's"
+        },
+        {
+          "t": 43.42,
+          "text": "not"
+        }
+      ]
+    },
+    {
+      "start": 43.54,
+      "end": 43.98,
+      "text": "the end of",
+      "words": [
+        {
+          "t": 43.54,
+          "text": "the"
+        },
+        {
+          "t": 43.68,
+          "text": "end"
+        },
+        {
+          "t": 43.86,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 43.98,
+      "end": 44.86,
+      "text": "it either. Then",
+      "words": [
+        {
+          "t": 43.98,
+          "text": "it"
+        },
+        {
+          "t": 44.12,
+          "text": "either."
+        },
+        {
+          "t": 44.66,
+          "text": "Then"
+        }
+      ]
+    },
+    {
+      "start": 44.86,
+      "end": 45.66,
+      "text": "two regions, the",
+      "words": [
+        {
+          "t": 44.86,
+          "text": "two"
+        },
+        {
+          "t": 45.06,
+          "text": "regions,"
+        },
+        {
+          "t": 45.58,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 45.66,
+      "end": 46.52,
+      "text": "EU and China",
+      "words": [
+        {
+          "t": 45.66,
+          "text": "EU"
+        },
+        {
+          "t": 45.92,
+          "text": "and"
+        },
+        {
+          "t": 46.18,
+          "text": "China"
+        }
+      ]
+    },
+    {
+      "start": 46.52,
+      "end": 47.3,
+      "text": "don't get it",
+      "words": [
+        {
+          "t": 46.52,
+          "text": "don't"
+        },
+        {
+          "t": 47.0,
+          "text": "get"
+        },
+        {
+          "t": 47.14,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 47.3,
+      "end": 47.98,
+      "text": "at launch at",
+      "words": [
+        {
+          "t": 47.3,
+          "text": "at"
+        },
+        {
+          "t": 47.46,
+          "text": "launch"
+        },
+        {
+          "t": 47.74,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 47.98,
+      "end": 48.9,
+      "text": "all. Both stuck",
+      "words": [
+        {
+          "t": 47.98,
+          "text": "all."
+        },
+        {
+          "t": 48.38,
+          "text": "Both"
+        },
+        {
+          "t": 48.64,
+          "text": "stuck"
+        }
+      ]
+    },
+    {
+      "start": 48.9,
+      "end": 50.1,
+      "text": "behind regulatory hurdles,",
+      "words": [
+        {
+          "t": 48.9,
+          "text": "behind"
+        },
+        {
+          "t": 49.22,
+          "text": "regulatory"
+        },
+        {
+          "t": 49.72,
+          "text": "hurdles,"
+        }
+      ]
+    },
+    {
+      "start": 50.32,
+      "end": 51.22,
+      "text": "Apple hasn't cleared.",
+      "words": [
+        {
+          "t": 50.32,
+          "text": "Apple"
+        },
+        {
+          "t": 50.54,
+          "text": "hasn't"
+        },
+        {
+          "t": 50.96,
+          "text": "cleared."
+        }
+      ]
+    },
+    {
+      "start": 51.54,
+      "end": 52.52,
+      "text": "Meanwhile, it's English",
+      "words": [
+        {
+          "t": 51.54,
+          "text": "Meanwhile,"
+        },
+        {
+          "t": 52.08,
+          "text": "it's"
+        },
+        {
+          "t": 52.26,
+          "text": "English"
+        }
+      ]
+    },
+    {
+      "start": 52.52,
+      "end": 53.36,
+      "text": "only for now",
+      "words": [
+        {
+          "t": 52.52,
+          "text": "only"
+        },
+        {
+          "t": 52.9,
+          "text": "for"
+        },
+        {
+          "t": 53.14,
+          "text": "now"
+        }
+      ]
+    },
+    {
+      "start": 53.36,
+      "end": 54.64,
+      "text": "too. French, Japanese,",
+      "words": [
+        {
+          "t": 53.36,
+          "text": "too."
+        },
+        {
+          "t": 53.9,
+          "text": "French,"
+        },
+        {
+          "t": 54.64,
+          "text": "Japanese,"
+        }
+      ]
+    },
+    {
+      "start": 54.84,
+      "end": 55.84,
+      "text": "Korean, Portuguese and",
+      "words": [
+        {
+          "t": 54.84,
+          "text": "Korean,"
+        },
+        {
+          "t": 55.18,
+          "text": "Portuguese"
+        },
+        {
+          "t": 55.52,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 55.84,
+      "end": 56.9,
+      "text": "Spanish arrive next",
+      "words": [
+        {
+          "t": 55.84,
+          "text": "Spanish"
+        },
+        {
+          "t": 56.24,
+          "text": "arrive"
+        },
+        {
+          "t": 56.62,
+          "text": "next"
+        }
+      ]
+    },
+    {
+      "start": 56.9,
+      "end": 57.86,
+      "text": "month. And one",
+      "words": [
+        {
+          "t": 56.9,
+          "text": "month."
+        },
+        {
+          "t": 57.6,
+          "text": "And"
+        },
+        {
+          "t": 57.68,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 57.86,
+      "end": 58.76,
+      "text": "more gate skips",
+      "words": [
+        {
+          "t": 57.86,
+          "text": "more"
+        },
+        {
+          "t": 58.08,
+          "text": "gate"
+        },
+        {
+          "t": 58.32,
+          "text": "skips"
+        }
+      ]
+    },
+    {
+      "start": 58.76,
+      "end": 60.38,
+      "text": "hardware completely. 13",
+      "words": [
+        {
+          "t": 58.76,
+          "text": "hardware"
+        },
+        {
+          "t": 59.08,
+          "text": "completely."
+        },
+        {
+          "t": 60.06,
+          "text": "13"
+        }
+      ]
+    },
+    {
+      "start": 60.38,
+      "end": 61.14,
+      "text": "and up only,",
+      "words": [
+        {
+          "t": 60.38,
+          "text": "and"
+        },
+        {
+          "t": 60.66,
+          "text": "up"
+        },
+        {
+          "t": 60.84,
+          "text": "only,"
+        }
+      ]
+    },
+    {
+      "start": 61.46,
+      "end": 62.32,
+      "text": "no parental work",
+      "words": [
+        {
+          "t": 61.46,
+          "text": "no"
+        },
+        {
+          "t": 61.58,
+          "text": "parental"
+        },
+        {
+          "t": 61.98,
+          "text": "work"
+        }
+      ]
+    },
+    {
+      "start": 62.32,
+      "end": 63.2,
+      "text": "around. So the",
+      "words": [
+        {
+          "t": 62.32,
+          "text": "around."
+        },
+        {
+          "t": 62.96,
+          "text": "So"
+        },
+        {
+          "t": 63.06,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 63.2,
+      "end": 63.94,
+      "text": "fine print is",
+      "words": [
+        {
+          "t": 63.2,
+          "text": "fine"
+        },
+        {
+          "t": 63.44,
+          "text": "print"
+        },
+        {
+          "t": 63.72,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 63.94,
+      "end": 65.04,
+      "text": "four separate gates,",
+      "words": [
+        {
+          "t": 63.94,
+          "text": "four"
+        },
+        {
+          "t": 64.26,
+          "text": "separate"
+        },
+        {
+          "t": 64.64,
+          "text": "gates,"
+        }
+      ]
+    },
+    {
+      "start": 65.22,
+      "end": 66.18,
+      "text": "not one. Phone,",
+      "words": [
+        {
+          "t": 65.22,
+          "text": "not"
+        },
+        {
+          "t": 65.32,
+          "text": "one."
+        },
+        {
+          "t": 65.86,
+          "text": "Phone,"
+        }
+      ]
+    },
+    {
+      "start": 66.46,
+      "end": 67.92,
+      "text": "region, language, age.",
+      "words": [
+        {
+          "t": 66.46,
+          "text": "region,"
+        },
+        {
+          "t": 67.06,
+          "text": "language,"
+        },
+        {
+          "t": 67.7,
+          "text": "age."
+        }
+      ]
+    },
+    {
+      "start": 68.28,
+      "end": 69.0,
+      "text": "Then clear all",
+      "words": [
+        {
+          "t": 68.28,
+          "text": "Then"
+        },
+        {
+          "t": 68.44,
+          "text": "clear"
+        },
+        {
+          "t": 68.74,
+          "text": "all"
+        }
+      ]
+    },
+    {
+      "start": 69.0,
+      "end": 69.86,
+      "text": "four and that's",
+      "words": [
+        {
+          "t": 69.0,
+          "text": "four"
+        },
+        {
+          "t": 69.3,
+          "text": "and"
+        },
+        {
+          "t": 69.56,
+          "text": "that's"
+        }
+      ]
+    },
+    {
+      "start": 69.86,
+      "end": 70.24,
+      "text": "when you get",
+      "words": [
+        {
+          "t": 69.86,
+          "text": "when"
+        },
+        {
+          "t": 69.98,
+          "text": "you"
+        },
+        {
+          "t": 70.1,
+          "text": "get"
+        }
+      ]
+    },
+    {
+      "start": 70.24,
+      "end": 70.82,
+      "text": "the new Siri.",
+      "words": [
+        {
+          "t": 70.24,
+          "text": "the"
+        },
+        {
+          "t": 70.38,
+          "text": "new"
+        },
+        {
+          "t": 70.56,
+          "text": "Siri."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "format": "news",
+  "script": "Your iPhone will install iOS 27.\n\nThat doesn't mean you get the new Siri. What nobody's headline mentioned is the fine print.\n\nSo iOS 27 landed on September 14th, and Apple split it into two separate gates.\n\nHere's the first gate, and it's easy. That includes every iPhone back to the 11, so the software installs almost everywhere.\n\nThen the second gate is where most phones drop out. That's because Siri AI itself needs an iPhone 15 Pro or newer, so 15 Pro, 15 Pro Max, or any 16 and up.\n\nEven clearing that only buys you the base Siri. The version that actually sounds like it's paying attention, with adjustable pace and expressiveness, needs extra processing only the iPhone 17 Pro or iPhone Air can run.\n\nThat's not the end of it either. Then two regions, the EU and China, don't get it at launch at all, both stuck behind regulatory hurdles Apple hasn't cleared.\n\nMeanwhile, it's English-only for now too. French, Japanese, Korean, Portuguese and Spanish arrive next month.\n\nAnd one more gate skips hardware completely. Thirteen and up only, no parental workaround.\n\nSo the fine print is four separate gates, not one. Phone, region, language, age.\n\nThen clear all four, and that's when you get the new Siri.",
+  "approval": {
+    "sha256": "41bbb512109a3db3970aa2b24ecc42d1051c1c5bd4e3cef11da17ec6232dce58",
+    "approvedAt": "2026-09-15T05:18:13+00:00",
+    "words": 211,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

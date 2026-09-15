@@ -1,0 +1,10 @@
+{
+  "script_sha256": "41bbb512109a3db3970aa2b24ecc42d1051c1c5bd4e3cef11da17ec6232dce58",
+  "structure_sha256": "5ba6ab708ba67cd69c2866a73d7c1c56af6a9f3e52f210cac1d8ecb9ab785b7d",
+  "findings": [
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-09-15T05:17:16+00:00"
+}

@@ -1,0 +1,651 @@
+{
+  "emphasis": [
+    "Siri AI",
+    "15 Pro",
+    "17 Pro",
+    "iPhone Air",
+    "China",
+    "13"
+  ],
+  "caption_corrections": {},
+  "format": "news",
+  "shots": [
+    {
+      "start_phrase": "Your iPhone will install",
+      "line": "Your iPhone will install iOS 27. That doesn't mean you get the new Siri.",
+      "needs": [
+        "iPhone",
+        "install",
+        "27",
+        "doesn",
+        "mean",
+        "Siri"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/siri-ai-ios-27-requirements/avatar-master.mp4",
+        "focusX": 0.481,
+        "captionBottom": 500
+      }
+    },
+    {
+      "start_phrase": "What nobody's headline mentioned",
+      "line": "What nobody's headline mentioned is the fine print.",
+      "needs": [
+        "nobody",
+        "headline",
+        "mentioned",
+        "fine",
+        "print"
+      ],
+      "tier": "reliable",
+      "asset_id": "9to5mac-headline",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/siri-ai-ios-27-requirements/9to5mac-headline.png",
+        "srcWidth": 1080,
+        "srcHeight": 1300,
+        "backdrop": "cream",
+        "covers": "headline mentioned is the fine print",
+        "creditOnScreen": true,
+        "credit": "9to5Mac",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 40,
+            "y": 700,
+            "w": 1000,
+            "h": 300
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx/whoosh.MP3",
+            "vol": 0.12,
+            "at": 0.02
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "So iOS 27 landed",
+      "line": "So iOS 27 landed on September 14th",
+      "needs": [
+        "27",
+        "landed",
+        "September",
+        "14th"
+      ],
+      "tier": "official",
+      "asset_id": "apple-newsroom-hero",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/siri-ai-ios-27-requirements/apple-newsroom-hero.png",
+        "srcWidth": 1080,
+        "srcHeight": 2340,
+        "backdrop": "cream",
+        "covers": "landed on September 14th",
+        "creditOnScreen": true,
+        "credit": "Apple",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 40,
+            "y": 380,
+            "w": 1000,
+            "h": 900
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "vol": 0.13,
+            "at": 0.02
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "and Apple split it",
+      "line": "and Apple split it into two separate gates.",
+      "needs": [
+        "Apple",
+        "split",
+        "separate",
+        "gates"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "GETTING SIRI AI",
+        "kicker": "Two separate gates",
+        "rows": [
+          {
+            "label": "Gate 1",
+            "value": "Installs"
+          },
+          {
+            "label": "Gate 2",
+            "value": "Runs Siri",
+            "accent": true
+          }
+        ],
+        "footnote": "iOS 27, Sep 14 2026",
+        "sfx": [
+          {
+            "src": "sfx/Pop.MP3",
+            "vol": 0.12,
+            "at": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Here's the first gate,",
+      "line": "Here's the first gate, and it's easy.",
+      "needs": [
+        "first",
+        "gate",
+        "easy"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "GATE 1",
+        "kicker": "The software itself",
+        "rows": [
+          {
+            "label": "Difficulty",
+            "value": "Easy",
+            "accent": true
+          }
+        ],
+        "footnote": "Apple"
+      }
+    },
+    {
+      "start_phrase": "That includes every iPhone",
+      "line": "That includes every iPhone back to the 11, so the software installs almost everywhere.",
+      "needs": [
+        "includes",
+        "every",
+        "iPhone",
+        "back",
+        "11",
+        "software"
+      ],
+      "tier": "multi",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "iOS 27 INSTALLS ON",
+        "kicker": "No Siri AI included",
+        "rows": [
+          {
+            "label": "iPhone 11 - 14",
+            "value": "Installs"
+          },
+          {
+            "label": "iPhone 15 / 15 Plus",
+            "value": "Installs"
+          }
+        ],
+        "footnote": "9to5Mac + Business Today, Sep 2026"
+      }
+    },
+    {
+      "start_phrase": "Then the second gate",
+      "line": "Then the second gate is where most phones drop out.",
+      "needs": [
+        "second",
+        "gate",
+        "where",
+        "most",
+        "phones",
+        "drop"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "GATE 2",
+        "kicker": "Siri AI itself",
+        "rows": [
+          {
+            "label": "Difficulty",
+            "value": "Filters most",
+            "accent": true
+          }
+        ],
+        "footnote": "Apple"
+      }
+    },
+    {
+      "start_phrase": "That's because Siri AI",
+      "line": "That's because Siri AI itself needs an iPhone 15 Pro or newer",
+      "needs": [
+        "because",
+        "Siri",
+        "itself",
+        "needs",
+        "iPhone",
+        "15"
+      ],
+      "tier": "official",
+      "asset_id": "siri-requirements-list",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/siri-ai-ios-27-requirements/siri-requirements-list.png",
+        "srcWidth": 1080,
+        "srcHeight": 2340,
+        "backdrop": "cream",
+        "covers": "Siri AI itself needs an iPhone 15 Pro",
+        "creditOnScreen": true,
+        "credit": "Apple Support",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 40,
+            "y": 560,
+            "w": 1000,
+            "h": 420
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "vol": 0.13,
+            "at": 0.02
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "so 15 Pro, 15",
+      "line": "so 15 Pro, 15 Pro Max, or any 16 and up.",
+      "needs": [
+        "15",
+        "16"
+      ],
+      "tier": "official",
+      "asset_id": "settings-try-siri-ai",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/siri-ai-ios-27-requirements/settings-try-siri-ai.png",
+        "srcWidth": 1080,
+        "srcHeight": 2340,
+        "backdrop": "cream",
+        "covers": "15 Pro Max, or any 16 and up",
+        "creditOnScreen": true,
+        "credit": "Apple",
+        "highlights": [
+          {
+            "at": 0.15,
+            "x": 60,
+            "y": 620,
+            "w": 960,
+            "h": 420
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Even clearing that only",
+      "line": "Even clearing that only buys you the base Siri.",
+      "needs": [
+        "Even",
+        "clearing",
+        "only",
+        "buys",
+        "base",
+        "Siri"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "CLEARING GATE 2",
+        "kicker": "Only buys you the base Siri",
+        "rows": [
+          {
+            "label": "Tier",
+            "value": "Base",
+            "accent": true
+          }
+        ],
+        "footnote": "Apple"
+      }
+    },
+    {
+      "start_phrase": "The version that actually",
+      "line": "The version that actually sounds like it's paying attention",
+      "needs": [
+        "version",
+        "actually",
+        "sounds",
+        "like",
+        "paying",
+        "attention"
+      ],
+      "tier": "multi",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "EXPRESSIVE VOICES",
+        "kicker": "Adjustable pace + expressiveness",
+        "rows": [
+          {
+            "label": "Adjustable voice",
+            "value": "Extra tier",
+            "accent": true
+          }
+        ],
+        "footnote": "MacRumors + Business Today"
+      }
+    },
+    {
+      "start_phrase": "with adjustable pace and",
+      "line": "with adjustable pace and expressiveness, needs extra processing only the iPhone 17 Pro or iPhone Air can run.",
+      "needs": [
+        "adjustable",
+        "pace",
+        "expressiveness",
+        "needs",
+        "extra",
+        "processing"
+      ],
+      "tier": "multi",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "RUNS ONLY ON",
+        "kicker": "The heavier on-device model",
+        "rows": [
+          {
+            "label": "iPhone 17 Pro",
+            "value": "Yes",
+            "accent": true
+          },
+          {
+            "label": "iPhone Air",
+            "value": "Yes",
+            "accent": true
+          }
+        ],
+        "footnote": "MacRumors + Business Today, Sep 2026",
+        "sfx": [
+          {
+            "src": "sfx/Core.MP3",
+            "vol": 0.14,
+            "at": 0.05
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "That's not the end",
+      "line": "That's not the end of it either., Then two regions",
+      "needs": [
+        "either",
+        "regions"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "GATE 3",
+        "kicker": "Region",
+        "rows": [
+          {
+            "label": "Not just the phone",
+            "value": "Two blocked",
+            "accent": true
+          }
+        ],
+        "footnote": "Apple"
+      }
+    },
+    {
+      "start_phrase": "the EU and China,",
+      "line": "the EU and China, don't get it at launch at all, both stuck behind regulatory hurdles Apple hasn't cleared.",
+      "needs": [
+        "China",
+        "launch",
+        "both",
+        "stuck",
+        "behind",
+        "regulatory"
+      ],
+      "tier": "official",
+      "asset_id": "apple-support-region-language",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/siri-ai-ios-27-requirements/apple-support-region-language.png",
+        "srcWidth": 1080,
+        "srcHeight": 2340,
+        "backdrop": "cream",
+        "covers": "the EU and China, don't get it",
+        "creditOnScreen": true,
+        "credit": "Apple Support",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 40,
+            "y": 780,
+            "w": 1000,
+            "h": 1100
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "vol": 0.13,
+            "at": 0.02
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Meanwhile, it's English-only for",
+      "line": "Meanwhile, it's English-only for now too.",
+      "needs": [
+        "Meanwhile",
+        "English-only"
+      ],
+      "tier": "official",
+      "asset_id": "apple-support-region-language",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/siri-ai-ios-27-requirements/apple-support-region-language.png",
+        "srcWidth": 1080,
+        "srcHeight": 2340,
+        "backdrop": "cream",
+        "covers": "English-only for now",
+        "creditOnScreen": true,
+        "credit": "Apple Support",
+        "highlights": [
+          {
+            "at": 0.15,
+            "x": 40,
+            "y": 60,
+            "w": 1000,
+            "h": 620
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "French, Japanese, Korean, Portuguese",
+      "line": "French, Japanese, Korean, Portuguese and Spanish arrive next month.",
+      "needs": [
+        "French",
+        "Japanese",
+        "Korean",
+        "Portuguese",
+        "Spanish",
+        "arrive"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "ARRIVING NEXT MONTH",
+        "kicker": "iOS 27.1",
+        "rows": [
+          {
+            "label": "French, Japanese",
+            "value": "Next month"
+          },
+          {
+            "label": "Korean + 2 more",
+            "value": "Next month"
+          }
+        ],
+        "footnote": "Apple"
+      }
+    },
+    {
+      "start_phrase": "And one more gate",
+      "line": "And one more gate skips hardware completely.",
+      "needs": [
+        "gate",
+        "skips",
+        "hardware",
+        "completely"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "GATE 4",
+        "kicker": "Nothing to do with hardware",
+        "rows": [
+          {
+            "label": "Age",
+            "value": "Last gate",
+            "accent": true
+          }
+        ],
+        "footnote": "Apple"
+      }
+    },
+    {
+      "start_phrase": "13 and up only,",
+      "line": "Thirteen and up only, no parental workaround.",
+      "needs": [
+        "Thirteen",
+        "only",
+        "parental",
+        "workaround"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "statcard",
+        "title": "MINIMUM AGE",
+        "rows": [
+          {
+            "label": "Siri AI",
+            "value": "13+",
+            "pct": 1.0
+          }
+        ],
+        "footnote": "9to5Mac + MacObserver, citing Apple's own footnote"
+      }
+    },
+    {
+      "start_phrase": "So the fine print",
+      "line": "So the fine print is four separate gates, not one.",
+      "needs": [
+        "fine",
+        "print",
+        "four",
+        "separate",
+        "gates"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "checklist",
+        "headline": "FOUR GATES, NOT ONE",
+        "rows": [
+          {
+            "label": "Not just the phone",
+            "state": "done"
+          }
+        ],
+        "footnote": "Recap",
+        "sfx": [
+          {
+            "src": "sfx/Pop.MP3",
+            "vol": 0.14,
+            "at": 0.05
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Phone, region, language, age.",
+      "line": "Phone, region, language, age.",
+      "needs": [
+        "Phone",
+        "region",
+        "language"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "checklist",
+        "headline": "CLEAR ALL FOUR",
+        "rows": [
+          {
+            "label": "Phone",
+            "state": "done"
+          },
+          {
+            "label": "Region",
+            "state": "done"
+          },
+          {
+            "label": "Language",
+            "state": "done"
+          },
+          {
+            "label": "Age",
+            "state": "done"
+          }
+        ],
+        "footnote": "iOS 27, Sep 2026",
+        "sfx": [
+          {
+            "src": "sfx/Click.MP3",
+            "vol": 0.12,
+            "at": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Then clear all four,",
+      "line": "Then clear all four, and that's when you get the new Siri.",
+      "needs": [
+        "clear",
+        "four",
+        "when",
+        "Siri"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/siri-ai-ios-27-requirements/avatar-master.mp4",
+        "focusX": 0.481,
+        "captionBottom": 500
+      }
+    }
+  ]
+}
