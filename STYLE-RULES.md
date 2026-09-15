@@ -7629,3 +7629,66 @@ directive without a rationale.
 therefore copied INTO AGENT.md rather than referenced, so the rule survives on
 a machine that does not have that file — the same reason `skills-global/`
 exists.
+
+## 2026-09-15 — `type: "avatar"` is not a scene type, and the pipeline said nothing until render
+
+**Raw note.** Building `siri-ai-ios-27-requirements`'s shot plan by hand, the
+hook/closer beats were written as `{"type": "avatar"}` — a reasonable-looking
+label nobody had told me was wrong. `tools/reel_gates.py` passed clean.
+`scripts/compile_shot_plan.py` compiled it clean, `from`/`durationSec` and all.
+It was only `scripts/validate_job.py` — the THIRD checker in the render
+chain, after gates and register — that raised `opening scene must visibly
+include the presenter`, because its `FACE_TYPES` set is `{split, footage,
+wordcascade, brandhook}` and `"avatar"` is in none of the Remotion scene
+components (`grep` for a `case "avatar"` anywhere in `src/` returns nothing —
+it would have silently rendered as whatever the default/fallback scene is).
+
+**Root cause.** A full-frame facecam beat is `type: "footage"` with `src`
+pointing at `avatar-master.mp4` plus `focusX` (from `face-x.txt`) and
+`captionBottom` — exactly like any other footage clip, because an avatar
+master IS footage once it exists on disk. There is no dedicated "avatar"
+scene component; the convention lives only in existing shot-plans
+(`grok-bot.json` scene 10 is the pattern) and nowhere is it written down.
+`reel_gates.py`'s own G06 facecam-share gate reads `"avatar-master" in
+str(scene.get("src"))` — it does not look at `type` at all — so a wrong
+`type` with the right `src` still passes gates while reporting 0% facecam,
+which is itself a second silent symptom of the same mislabel (fixed the
+same fix: `type: "footage"`, not a G06 bug).
+
+**Distilled rule.** For any beat where the presenter is on camera, full
+frame, use `"type": "footage"` with `src` set to the avatar master and
+`focusX`/`captionBottom` set from that job's `face-x.txt` — never invent a
+`"type": "avatar"`. If a new scene-shape genuinely doesn't exist yet, check
+`src/components/` for the real name before hand-writing a shot-plan entry;
+`reel_gates.py` passing is not proof the type exists, only `validate_job.py`
+(FACE_TYPES) and a real Remotion render check that.
+
+## 2026-09-15 — a `ReceiptScene` card fit to width still crops if the source PNG runs past the frame
+
+**Raw note.** Same job: a receipt beat highlighting a headline block ended up,
+in the rendered frame, showing the WHOLE source screenshot — nav bar down
+through a photo below the headline — with that trailing photo sliced off
+hard at the very bottom edge of the 1920px frame. `lint_frames.py` correctly
+flagged it as `[BLOCKS] [EDGE TEXT] busy pixels at frame edge — screenshot
+likely cropped mid-word`, and it was right despite the flagged content being
+a photo, not a word: the card (`cardH = srcHeight/srcWidth * cardW`) was
+taller than the frame even before any highlight-driven zoom, and the
+highlight's centroid sat high enough in the image that the auto pan/zoom
+left the bottom of the card — including a photo the capture never meant to
+end there — hanging off the visible frame.
+
+**Root cause.** `ReceiptScene` shows the FULL card at `~86%` width and its
+native aspect ratio; it never crops the source file itself, only pans/zooms
+within it. A tall mobile capture (nav + tags + headline + byline + comments
++ a hero photo, easily 2000px+) will not fit an 1920px frame at low zoom, and
+if the requested highlight sits in the upper half, the excess gets cut from
+the bottom — including whatever is down there, highlighted or not.
+
+**Distilled rule.** Before writing a receipt beat's `highlights` rect, crop
+the SOURCE PNG itself to end right after the content that beat actually
+needs (here: cut the file after the byline/comment-count line, well before
+the hero photo, then set `srcHeight` to match) — don't rely on the
+highlight-driven zoom to hide content the card doesn't need to show. A
+receipt card is allowed to show less of the page than was captured; it is
+not allowed to show a truncated slice of something that would have
+continued off-screen.
