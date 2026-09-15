@@ -178,7 +178,7 @@ Source the footage first, then write to it. [EYE]
 
 ## 2b. Scripting — the story standard
 
-`styles/shortform-script-framework.md` is the standard a script is written to.
+`frameworks/shortform-script-framework.md` is the standard a script is written to.
 Read it before writing, not after. Its one sentence, if you read nothing else:
 
 > **The goal is not to summarize information.**

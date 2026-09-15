@@ -177,7 +177,7 @@ def require_structure(slug: str) -> Path:
         sys.exit(
             f"NO STRUCTURE DECLARED — {slug}\n"
             f"  missing {st_p}\n"
-            "  The framework (styles/shortform-script-framework.md S17) chooses\n"
+            "  The framework (frameworks/shortform-script-framework.md S17) chooses\n"
             "  the narrative shape BEFORE the first sentence — none of promise,\n"
             "  loop or escalation can be retrofitted by editing lines afterwards\n"
             "  (formats/README-structure.md). scripts/new_job.py scaffolds this\n"

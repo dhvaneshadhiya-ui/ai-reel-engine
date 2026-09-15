@@ -13,7 +13,7 @@ Written from `styles/editorial.md` (the look) plus
 `styles/editorial-script-playbook.md` (the words — hook taxonomy, 6-act skeleton,
 connectives, honesty beat, CTA menu). **Load both.**
 
-And `styles/shortform-script-framework.md` — the STORY. The division of labour:
+And `frameworks/shortform-script-framework.md` — the STORY. The division of labour:
 the playbook is how this creator SOUNDS, the framework is whether the thing he
 is saying goes anywhere. They overlap on purpose (the playbook's connective
 glossary is the framework's §9; "hooked is not the same as confused" is its

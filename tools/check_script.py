@@ -21,7 +21,7 @@ STRUCTURE, ADDED 2026-08-19. The checks above measure sentence SHAPE — length,
 fragments, whether the viewer is addressed. They passed a script the user called
 weak with "nothing to flag", because shape was never the problem: the problem
 was that the script is a LIST OF FACTS rather than a story, which is what
-styles/shortform-script-framework.md is about.
+frameworks/shortform-script-framework.md is about.
 
 CALIBRATED ON A MATCHED PAIR, which is why these thresholds are not invented.
 Two scripts on the SAME topic (iPhone 18 Pro), one the approved script in
@@ -372,7 +372,7 @@ def format_of(slug: str) -> str:
 def structure(ss: list[str], shape: str | None = None) -> list[str]:
     """The framework's structural failures, made countable.
 
-    styles/shortform-script-framework.md, sections 1, 3, 7, 9 and 21.
+    frameworks/shortform-script-framework.md, sections 1, 3, 7, 9 and 21.
     """
     notes: list[str] = []
     n = len(ss)

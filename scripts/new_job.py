@@ -240,7 +240,7 @@ def main() -> None:
         (
             f"# Structure — {slug}\n\n"
             "Written BEFORE the first sentence. Framework:\n"
-            "`styles/shortform-script-framework.md` (S17 shapes; S25 standard).\n"
+            "`frameworks/shortform-script-framework.md` (S17 shapes; S25 standard).\n"
             "`script_approval.py propose` refuses while <placeholders> remain.\n\n"
             "## STORY ENGINE (framework \u00a74A)\n\n"
             "One sentence, before anything else:\n"

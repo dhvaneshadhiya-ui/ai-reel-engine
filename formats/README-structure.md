@@ -15,7 +15,7 @@ seem to reach past tech news.
 Every column is a **production envelope** — how long, how loud, how much face.
 None of it is a story shape. `format` is the box the reel has to fit in.
 
-`styles/shortform-script-framework.md` S17 is the **narrative structure** — the
+`frameworks/shortform-script-framework.md` S17 is the **narrative structure** — the
 shape of the telling. It lists ten:
 
     Discovery · News · Product announcement · Explainer · Tutorial

@@ -20,9 +20,11 @@ that repo's own README instead.)
    non-zero), or **[EYE]** (no automation — you are the only check). Start here.
 2. **`AGENT.md`** — the operating manual: order of operations, the beat-sheet
    contract, the failure-mode table.
-3. **`styles/<style>.md`** — default `varun-mayya`. Also load
-   `styles/varun-script-playbook.md` when writing the script.
-3b. **`styles/shortform-script-framework.md`** — the STORY standard, and the
+3. **`styles/<style>.md`** — `editorial` (news, comparison) or `utility` (top5,
+   ai-tools). With editorial, also load `styles/editorial-script-playbook.md`
+   when writing the script. (The old `varun-mayya` / `nick-saraev` names still
+   resolve in beat sheets; their files were removed 2026-09-15.)
+3b. **`frameworks/shortform-script-framework.md`** — the STORY standard, and the
    one to read before writing a word. The playbooks describe this creator's
    VOICE (his connectives, his six acts, his openers); the framework describes
    whether there is a story underneath the voice at all. A script can sound
@@ -101,7 +103,7 @@ step 2's artifact, and `approve` refuses without a fresh `propose`.
 2. **Structure before the first sentence.** Fill `jobs/<slug>/structure.md`
    (scaffolded by `new_job.py`): the S17 shape, the promise, the open loop,
    what was cut, the sources. `propose` exits 1 while placeholders remain.
-3. **Draft to the framework** — `styles/shortform-script-framework.md` is the
+3. **Draft to the framework** — `frameworks/shortform-script-framework.md` is the
    story standard; the style playbook is only the voice on top of it.
 4. **Measure, then read.** `python3 tools/check_script.py <slug>` (calibrated
    thresholds + AI-tell scan), then `--critic` and walk the S22/S23/S24 tests
@@ -192,7 +194,7 @@ presenters) and the leak is invisible except on frames; the linter's
 
 ### 2 — Script + beat map
 
-**Before writing: `styles/shortform-script-framework.md`.** Decide the STRUCTURE
+**Before writing: `frameworks/shortform-script-framework.md`.** Decide the STRUCTURE
 (§17) and the open loop (§2, §10) before the first sentence, because neither can
 be added afterwards by editing lines. The two failures it exists to stop, both
 of which the pipeline has shipped:

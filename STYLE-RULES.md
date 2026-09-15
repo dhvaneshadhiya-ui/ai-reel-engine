@@ -8063,3 +8063,25 @@ counts only the verbs that say something.
 **Not done:** the organic pieces of his look (caped mascots, particle swirls, photoreal people)
 are video generation, not code, and are not attempted. Nothing here has been heard or seen in a
 published reel yet; the first real use should get a contact sheet before render.
+
+## 2026-09-15 (2) — styles/ holds looks only
+
+The user asked the difference between `formats/` and `styles/`, and the folder answered
+wrongly: seven files for two looks.
+
+- **Removed** `styles/varun-mayya.md`, `styles/varun-script-playbook.md` and
+  `styles/nick-saraev.md` — the pre-2026-08-16 copies of `editorial.md`,
+  `editorial-script-playbook.md` and `utility.md`. The old ids still resolve through
+  `STYLE_ALIASES` / `canon_style`, so older beat sheets and briefs are unaffected.
+- **Rescued first:** `varun-mayya.md` carried one real entry the renamed file never got — the
+  iphone-fold-ultra treatment history, written 2026-08-17 into the old file the day after the
+  rename. It now sits in `styles/editorial.md` after ios27-tiers. Diffed line by line before
+  deleting; the other two old copies differed only in their titles.
+- **Moved** `styles/shortform-script-framework.md` to `frameworks/`, beside
+  `short-form-master.md`. It is the story standard for every format and style, not a look —
+  and `validate_job.py` lists every `styles/*.md` as a valid style, so it was being accepted
+  as one. Live references repointed (skill, RULES.md, four format docs, check_script,
+  script_approval, new_job, showrunner); past job records and earlier ledger entries keep the
+  path they were written with.
+
+`styles/` is now `editorial.md`, `editorial-script-playbook.md`, `utility.md`.

@@ -20,7 +20,7 @@ exists to convert. "Comment WORD and I'll DM the link."
 
 ## Story standard
 
-`styles/shortform-script-framework.md` applies here too — it is universal by its
+`frameworks/shortform-script-framework.md` applies here too — it is universal by its
 own title, and the skeleton below is a SHAPE, not a story. A top5 reel can hit
 every beat of that skeleton and still be a list: the hook / what it is / the list / CTA
 tells you what goes where, and the framework tells you whether the viewer has a

@@ -186,7 +186,7 @@ def steps(slug: str) -> list[dict]:
                    "numbers earn a repeat."),
         dict(key="script",
              skills=["news-reel           owns structure; formats/<format>.md is the shape",
-                     "shortform-script-framework  READ FIRST — styles/. Structure",
+                     "shortform-script-framework  READ FIRST — frameworks/. Structure",
                      "                    and open loop are chosen before sentence one",
                      "viral-hook-writer   the first 2 seconds only — pair it with",
                      "                    framework S1/S16 or it writes a hook with",
