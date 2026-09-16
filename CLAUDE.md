@@ -203,7 +203,13 @@ silently disabled the frame checks for weeks.
 - **Animated (voiceover) reels use the `slide` scene — the Carousel Playbook
   look** (2026-09-16). Presenter bookends are generated natively from the VO
   slice, never lip-synced onto footage of other words. G69 blocks a logo its
-  background swallows.
+  background swallows. **Trigger:** the user says "animated format" (or
+  "carousel style" / "like the free AI tools reel"). Defaults unless they say
+  otherwise: opens on a slide with the presenter in a corner circle, face CTA
+  close, music on, no credits, no series label or page counter. Ask only what
+  is missing: topic, CTA keyword + what the DM delivers. Blocks are chosen per
+  topic — the look is one family, the layout is never a template.
+  Reference build: jobs/five-free-ai-tools.
 - **Capture web sources on MOBILE.** `tools/capture.mjs` defaults to it
   (1080x2340). A desktop grab fills 42% of a 9:16 frame with unreadable text.
   `--desktop` is the exception, not the default. Gate G29.
