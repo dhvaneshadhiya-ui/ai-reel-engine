@@ -478,7 +478,7 @@ def resolve_stage_timings(beats: dict, words: list[dict[str, Any]]) -> list[str]
     for index, scene in enumerate(beats.get("scenes") or []):
         dur = float(scene.get("durationSec") or 0)
         first = next((k for k, w in enumerate(words) if float(w["start"]) >= at_t - 0.05), len(words))
-        for move in (scene.get("moves") or []) if scene.get("type") == "stage" else []:
+        for move in (scene.get("moves") or []) if scene.get("type") in ("stage", "slide") else []:
             phrase = str(move.get("on") or "").strip()
             if not phrase:
                 continue
@@ -1053,7 +1053,7 @@ def main() -> None:
     # whatever it actually was. noCredits is the user's per-reel call on
     # on-screen attribution (RULES.md 2c) and likewise had no way through.
     # Both are pass-throughs: absent from the plan, the sheet is unchanged.
-    for passthrough in ("format", "noCredits", "sides", "allowLong",
+    for passthrough in ("format", "showCredits", "sides", "allowLong",
                         "allowLongReason", "captionStyle",
                         "captionStyleReason"):
         if plan.get(passthrough) is not None:
@@ -1072,11 +1072,11 @@ def main() -> None:
     # G47 still refuses a silent switch-off.
     try:
         _brief = json.loads((engine / f"jobs/{slug}/brief.json").read_text())
-        _ci = str(_brief.get("credit_instructions", "on-screen")).lower()
-        if _ci in ("internal", "none", "internal only") and "noCredits" not in beats:
-            beats["noCredits"] = {
-                "reason": f"brief.credit_instructions = {_ci!r} "
-                          "(framework §3: provenance stays in the manifest)"}
+        # Credits are drawn ONLY when asked (user directive 2026-09-16);
+        # the brief says "on-screen-requested" when the user asked for them.
+        _ci = str(_brief.get("credit_instructions", "internal")).lower()
+        if _ci == "on-screen-requested" and "showCredits" not in beats:
+            beats["showCredits"] = True
     except (OSError, ValueError):
         pass
     if plan.get("style"):
@@ -1118,6 +1118,18 @@ def main() -> None:
                 "links, a derived music curve, or hand-tuned beats.\n"
                 "Re-run with --force if replacing it is what you meant."
             )
+
+    # Logo tiles on slides are picked by measured contrast, never by eye
+    # (user review 2026-09-16); a plan may still pin `tile`, and G69 checks it.
+    sys.path.insert(0, str(DEFAULT_ENGINE / "tools"))
+    from reel_gates import best_tile  # noqa: E402
+    for scene in beats.get("scenes") or []:
+        if scene.get("type") != "slide":
+            continue
+        for b in scene.get("blocks") or []:
+            for s in [b.get("side"), b.get("left"), b.get("right")] + list(b.get("items") or []):
+                if isinstance(s, dict) and s.get("logo") and not s.get("tile"):
+                    s["tile"] = best_tile(s["logo"])
 
     unresolved = resolve_stage_timings(beats, words)
     if unresolved:

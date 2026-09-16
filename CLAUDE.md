@@ -196,8 +196,14 @@ silently disabled the frame checks for weeks.
   entire reason this repo is built this way.
 - **Never claim a fix landed without evidence.** Probe it (a ~7s HeyGen clip
   is ~3 credits), inspect frames, and report honestly if it still fails.
-- **We make the video regardless of topic, and we credit our sources on
-  screen.** Source quality is a framing dial, never a gate.
+- **We make the video regardless of topic.** Source quality is a framing dial,
+  never a gate. **On-screen source credits are OFF unless the user asks**
+  (directive 2026-09-16): set `showCredits: true` only on request; provenance
+  always stays in the manifest `source_url`.
+- **Animated (voiceover) reels use the `slide` scene — the Carousel Playbook
+  look** (2026-09-16). Presenter bookends are generated natively from the VO
+  slice, never lip-synced onto footage of other words. G69 blocks a logo its
+  background swallows.
 - **Capture web sources on MOBILE.** `tools/capture.mjs` defaults to it
   (1080x2340). A desktop grab fills 42% of a 9:16 frame with unreadable text.
   `--desktop` is the exception, not the default. Gate G29.

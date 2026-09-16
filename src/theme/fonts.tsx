@@ -64,6 +64,12 @@ export const FontFaces: React.FC = () => (
    are OFL-1.1, so they ship with the repo rather than being fetched at render.
    Whichever is chosen becomes theme/type.ts DISPLAY; the rest can be deleted. */
 @font-face {
+  font-family: 'Inter';
+  src: url('${staticFile("fonts/inter-var-latin.woff2")}') format('woff2');
+  font-weight: 400 800;
+  font-display: block;
+}
+@font-face {
   font-family: 'Space Grotesk';
   src: url('${staticFile("fonts/space-grotesk-700.woff2")}') format('woff2');
   font-weight: 400 900;

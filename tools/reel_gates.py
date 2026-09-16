@@ -596,6 +596,7 @@ BLOCKING_RULES: dict[str, str] = {
     "G56": "RENDER a scene whose list is absent or empty draws nothing",
     "G65": "RENDER a stage off its contract draws nothing or crashes",
     "G68": "RIGHTS a number on screen must be in the script or the ledger",
+    "G69": "RENDER a logo its background swallows is not visible",
     # G48 is RENDER, not framing taste: below 1 the layer stops covering the
     # canvas, and a focus outside 0..1 pushes past the slack `cover` gives it.
     # Both paint the black backdrop. G49 — the zoom/zoomDir compounding note —
@@ -781,6 +782,76 @@ def film_fits(sc: dict, frame_w: int = 1080, frame_h: int = 1920) -> bool:
     if not sw or sh * frame_w / sw <= frame_h:
         return False
     return len(sc.get("lines") or []) >= 2 and float(sc.get("durationSec") or 0) >= 2.0
+
+
+# LOGO CONTRAST (user review 2026-09-16: "you didn't take fine judgement when
+# logo or text will get proper visibility" — Suno's black mark on a navy stage
+# was all but invisible, and every gate passed it). A logo's colours are read
+# from the file itself: SVG fill/stroke/stop colours (no colour at all, or
+# currentColor, draws black), a raster's opaque pixels. The median luminance
+# stands for the mark, and its WCAG contrast against what it sits on decides.
+TILE_BG = {"light": "#E5E5EA", "dark": "#2C2C30"}
+STAGE_BG = {"light": "#E6E8EC", "dark": "#10131B", "brand": "#0E0F14"}
+LOGO_MIN_CONTRAST = 2.0
+_NAMED = {"white": "#FFFFFF", "black": "#000000"}
+
+
+def _lum(hexcol: str) -> float:
+    h = hexcol.lstrip("#")
+    if len(h) == 3:
+        h = "".join(c * 2 for c in h)
+    ch = [int(h[i:i + 2], 16) / 255 for i in (0, 2, 4)]
+    ch = [c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4 for c in ch]
+    return 0.2126 * ch[0] + 0.7152 * ch[1] + 0.0722 * ch[2]
+
+
+def contrast_ratio(l1: float, l2: float) -> float:
+    return (max(l1, l2) + 0.05) / (min(l1, l2) + 0.05)
+
+
+def logo_luminance(src: str) -> float | None:
+    """Median luminance of a logo under public/, or None if unreadable."""
+    path = ROOT / "public" / src
+    if not path.exists():
+        return None
+    if path.suffix.lower() == ".svg":
+        text = path.read_text(errors="ignore")
+        found = re.findall(r'(?:fill|stroke|stop-color)\s*[=:]\s*"?\s*(#[0-9a-fA-F]{3,6}\b|white|black|currentColor|none)',
+                           text)
+        lums = sorted(_lum(_NAMED.get(c.lower(), c)) for c in found
+                      if c.lower() not in ("none", "currentcolor"))
+        if not lums:
+            return 0.0            # no colour anywhere: SVG draws it black
+        return lums[len(lums) // 2]
+    try:
+        from PIL import Image
+        im = Image.open(path).convert("RGBA").resize((64, 64))
+        px = [p for p in im.getdata() if p[3] > 128]
+        if not px:
+            return None
+        lums = sorted(_lum("#%02x%02x%02x" % p[:3]) for p in px)
+        return lums[len(lums) // 2]
+    except Exception:
+        return None
+
+
+def best_tile(src: str) -> str:
+    """The tile ('light'|'dark') this logo reads best on."""
+    lum = logo_luminance(src)
+    if lum is None:
+        return "dark"
+    return max(TILE_BG, key=lambda k: contrast_ratio(lum, _lum(TILE_BG[k])))
+
+
+def slide_logos(sc: dict) -> list[tuple[str, str | None]]:
+    """(src, tile) for every logo a slide draws."""
+    out = []
+    for b in sc.get("blocks") or []:
+        sides = [b.get("side")] if b.get("kind") == "hero" else \
+            [b.get("left"), b.get("right")] if b.get("kind") == "swap" else \
+            (b.get("items") or []) if b.get("kind") == "logos" else []
+        out += [(s["logo"], s.get("tile")) for s in sides if isinstance(s, dict) and s.get("logo")]
+    return out
 
 
 def check_beats(beats: dict, vo_end: float | None = None,
@@ -1847,6 +1918,76 @@ def check_beats(beats: dict, vo_end: float | None = None,
                     "not in the approved script or the claims ledger. A number on "
                     "screen is a claim, whether or not the voice says it.")
 
+    # G65 (slide) — the carousel-look slide off its contract draws nothing.
+    SLIDE_BLOCKS = {"hero", "swap", "rows", "text", "tips", "logos"}
+    for i, sc in enumerate(scenes):
+        if sc.get("type") != "slide":
+            continue
+        blocks = sc.get("blocks") or []
+        if not str(sc.get("headline") or "").strip() or not blocks:
+            errors.append(f"G65 scene {i:02d} slide needs a `headline` and `blocks` — it draws an empty page.")
+        targets = set()
+        for b in blocks:
+            if b.get("kind") not in SLIDE_BLOCKS:
+                errors.append(f"G65 scene {i:02d} slide block {b.get('id')!r} kind {b.get('kind')!r} "
+                              f"is not one of {', '.join(sorted(SLIDE_BLOCKS))} — it draws nothing.")
+            bid = b.get("id")
+            targets |= {bid, f"{bid}.left", f"{bid}.right", f"{bid}.best", f"{bid}.watch"}
+            targets |= {f"{bid}.{k}" for k in range(len(b.get("rows") or []))}
+        for m in sc.get("moves") or []:
+            if m.get("do") not in ("show", "strike", "highlight"):
+                errors.append(f"G65 scene {i:02d} slide move {m.get('do')!r} is not show, strike or highlight.")
+            if m.get("at") is None:
+                errors.append(f"G65 scene {i:02d} slide `{m.get('do')}` on {m.get('target')!r} has no `at`"
+                              + (" — recompile so its words become seconds." if m.get("on") else "."))
+            if m.get("target") not in targets:
+                errors.append(f"G65 scene {i:02d} slide `{m.get('do')}` names {m.get('target')!r}, "
+                              "which is not a block or part of one — the move never shows.")
+
+    # G68 (slide) — every number a slide prints is a claim, same as a stage card.
+    if sourced_text:
+        for i, sc in enumerate(scenes):
+            if sc.get("type") != "slide":
+                continue
+            texts = [sc.get("headline"), sc.get("eyebrow")]
+            for b in sc.get("blocks") or []:
+                for s in [b.get("side"), b.get("left"), b.get("right")] + list(b.get("items") or []):
+                    if isinstance(s, dict):
+                        texts += [s.get("name"), s.get("price"), s.get("note")]
+                texts += [b.get("text"), b.get("best"), b.get("watch")]
+                texts += [x for r in b.get("rows") or [] for x in (r.get("k"), r.get("v"))]
+            bad = unsourced_in([str(t).replace("[[", "").replace("]]", "") for t in texts if t], sourced_text)
+            if bad:
+                errors.append(f"G68 scene {i:02d} slide shows {', '.join(sorted(set(bad)))} — not in the "
+                              "approved script or the claims ledger.")
+
+    # G69 — A LOGO ITS BACKGROUND SWALLOWS (2026-09-16). RENDER.
+    # The user's own screenshot: Suno's black mark on a navy stage, contrast
+    # 1.13:1, passed every gate and was invisible. A logo that cannot be seen
+    # has not rendered, whatever the pixels say — so this blocks. Slide tiles
+    # are picked by compile_shot_plan; this catches a hand-pinned wrong one and
+    # any stage image dropped on a set that hides it.
+    def _logo_low(src: str, bg: str) -> float | None:
+        lum = logo_luminance(src)
+        if lum is None:
+            return None
+        r = contrast_ratio(lum, _lum(bg))
+        return r if r < LOGO_MIN_CONTRAST else None
+    for i, sc in enumerate(scenes):
+        checks = []
+        if sc.get("type") == "slide":
+            checks = [(src, TILE_BG[tile or best_tile(src)], f"{tile or best_tile(src)} tile")
+                      for src, tile in slide_logos(sc) if (tile or "dark") in TILE_BG]
+        elif sc.get("type") == "stage":
+            bg = STAGE_BG.get(sc.get("set") or "light", STAGE_BG["light"])
+            checks = [(e["src"], bg, f"{sc.get('set') or 'light'} stage") for e in sc.get("elements") or []
+                      if e.get("kind") == "image" and str(e.get("src") or "").lower().endswith((".svg", ".png"))]
+        for src, bg, where in checks:
+            r = _logo_low(src, bg)
+            if r is not None:
+                errors.append(f"G69 scene {i:02d} logo {src} on the {where} has contrast {r:.2f}:1 "
+                              f"(needs {LOGO_MIN_CONTRAST}:1) — it will be close to invisible.")
+
     mine = stage_signatures(beats)
     if mine:
         for other, sigs in _recent_stage_signatures(beats.get("id")).items():
@@ -2149,7 +2290,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
         # `stage` added 2026-09-16: the animated scene is where things land,
         # count and get marked — the action role's home, flagged by its own
         # list on the first reel to use both
-        "action": {"stage", "sourceread", "receipt", "annotatezoom", "counter", "statcard",
+        "action": {"stage", "slide", "sourceread", "receipt", "annotatezoom", "counter", "statcard",
                    "chart", "specsheet", "timeline", "typecard", "promptcard",
                    "terminal", "floatcard", "deviceframe", "xpost", "checklist",
                    "uidialog", "settingspane", "screenstep"},
@@ -2330,9 +2471,14 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # Every borrowed frame names where it came from, on screen. This is what
     # replaces hedging: we do not qualify a claim to death, we say who
     # reported it. Avatar scenes are ours and need no credit.
+    #
+    # OPT-IN SINCE 2026-09-16 (user directive): "I don't want you to use
+    # source (credit) across the videos until unless I ask to." Nothing is
+    # drawn unless the sheet sets `showCredits: true`, so the check only runs
+    # then. Provenance still lives in the manifest (source_url) either way.
     CREDIT_TYPES = {"footage", "floatcard", "split", "receipt", "comparesplit",
                     "hcompare", "deviceframe", "annotatezoom"}
-    for i, sc in enumerate(scenes):
+    for i, sc in enumerate(scenes if beats.get("showCredits") else []):
         if sc["type"] not in CREDIT_TYPES:
             continue
         srcs = [str(sc.get(k) or "") for k in ("src", "topSrc", "leftSrc")]
@@ -2737,31 +2883,17 @@ def check_beats(beats: dict, vo_end: float | None = None,
                         "line it illustrates, or point it at what is actually "
                         "being said.")
 
-    # G47 — CREDITS SUPPRESSED FOR THIS REEL. Advice, and loud.
+    # G47 — CREDITS ASKED FOR, NONE TO DRAW. Advice.
     #
-    # The user can turn on-screen credits off per video (RULES.md 2c). The flag
-    # carries its own reason — `noCredits: {reason}` — so it cannot be set as a
-    # bare switch, the same shape as allowLong + allowLongReason and the capture
-    # tool's --desktop-reason.
-    #
-    # This does NOT block: it is the user's call, stated at topic time. What it
-    # refuses to do is happen quietly. A reel that ships with no attribution on
-    # screen should say so in the one place somebody reads before rendering.
-    nc = beats.get("noCredits")
-    if nc:
-        reason = (nc or {}).get("reason", "") if isinstance(nc, dict) else ""
-        n_sources = len({(sc.get("credit") or "").strip()
-                         for sc in scenes if sc.get("credit")})
-        if not reason.strip():
-            errors.append(
-                "G47 noCredits is set with no reason. It takes `{\"reason\": "
-                "\"...\"}` — the flag is an argument, not a switch.")
-        else:
-            errors.append(
-                f"G47 this reel draws NO source credits on screen ({n_sources} "
-                f"source(s) still recorded in the sheet). Reason: {reason!r}. "
-                f"The manifest and G14 are unaffected; the licence terms of any "
-                f"borrowed material are not — check them separately.")
+    # On-screen credits are OFF unless the user asks (directive 2026-09-16,
+    # which replaced the per-reel `noCredits` opt-out of 2026-08-19). When a
+    # reel does ask with `showCredits: true` but no scene carries a `credit`,
+    # the request would silently render nothing — say so.
+    if beats.get("showCredits") and not any(
+            str(sc.get("credit") or "").strip() for sc in scenes):
+        errors.append(
+            "G47 showCredits is on but no scene carries a `credit` — the "
+            "requested on-screen credits would draw nothing.")
 
     # G45 (RULE 1, blocking) + G46 (craft, advice) — WHERE A CAPTION MAY SIT.
     #

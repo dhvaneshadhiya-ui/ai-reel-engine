@@ -43,7 +43,12 @@ OPEN_VOL = 0.150   # bed alone — hook, pauses, tail
 DUCK_VOL = 0.055   # bed under speech; low enough that consonants stay crisp
 ATTACK = 0.18      # duck DOWN fast: late attack lets a word start on loud music
 RELEASE = 0.34     # come UP slow: fast release pumps audibly between phrases
-MIN_GAP = 0.45     # a gap shorter than this stays ducked
+# A gap shorter than this stays ducked. Was 0.45 until 2026-09-16: a 0.5-0.8s
+# sentence pause then lifted the bed for 0.34s and dropped it 0.18s later — a
+# 3x swell-and-fall between nearly every sentence of five-free-ai-tools, which
+# is the pumping this file exists to prevent. A lift must be able to HOLD, so
+# the gap has to cover the release, the attack and ~0.5s at full level.
+MIN_GAP = 1.0
 TAIL_FADE = 0.9    # fade to near-silence over the last of the reel
 
 
@@ -90,7 +95,12 @@ def curve(slug: str, total: float) -> list[dict]:
         pts.append((en, DUCK_VOL))
         pts.append((min(total, en + RELEASE), OPEN_VOL))
 
-    pts.append((max(0.0, total - TAIL_FADE), OPEN_VOL))
+    # the tail opens only after the last word: placed inside speech it
+    # became the curve's next point after the duck, so the bed rose under
+    # the whole voice (a one-run reel, 2026-09-16)
+    last_end = spans[-1][1] if spans else 0.0
+    if total - TAIL_FADE > last_end + RELEASE:
+        pts.append((total - TAIL_FADE, OPEN_VOL))
     pts.append((total, 0.02))
 
     # keep it monotonic in t and drop points that collide after clamping

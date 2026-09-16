@@ -12,6 +12,7 @@ import type { SourceReadProps } from "./components/SourceRead";
 import type { InkMark } from "./components/InkMarks";
 import type { CounterProps } from "./components/CounterScene";
 import type { StageProps } from "./components/Stage";
+import type { SlideProps } from "./components/Slide";
 import type { PriceLadderProps } from "./components/PriceLadder";
 
 export type KineticStyle = "serif" | "caps" | "chip";
@@ -129,6 +130,7 @@ interface SceneBase {
 
 export type Scene =
   | (SceneBase & { type: "stage" } & StageProps)
+  | (SceneBase & { type: "slide" } & SlideProps)
   | (SceneBase & { type: "counter" } & CounterProps)
   | (SceneBase & {
       type: "footage";
@@ -649,7 +651,10 @@ export interface BeatSheet {
    * not satisfy those terms; it just moves the obligation somewhere the
    * renderer cannot see.
    */
+  /** legacy opt-out; credits are off unless showCredits (2026-09-16) */
   noCredits?: { reason: string };
+  /** draw on-screen source credits — only when the user asks (2026-09-16) */
+  showCredits?: boolean;
   /** substrings rendered accented + larger inside caption chips */
   emphasis?: string[];
   scenes: Scene[];

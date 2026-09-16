@@ -142,7 +142,7 @@ def main() -> None:
         "tone": "<voice, personality, boundaries>",
         "source_policy": args.source_policy,  # facts vs footage are separate
         "footage_constraints": "<assets, permissions, presenter, recordings>",
-        "credit_instructions": "on-screen",   # on-screen|caption|internal|none
+        "credit_instructions": "internal",   # internal (default: no on-screen credits, user 2026-09-16) | on-screen-requested
         "deliverables": ["script", "shot plan", "packaging"],
         "style": locked_style(engine),
         "target_seconds": args.target_seconds,

@@ -976,6 +976,59 @@ if any("G68" in str(a) for a in _adv):
     raise SystemExit(1)
 _counted("G68 silent — the same number, once the ledger carries it")
 
+# SLIDE (2026-09-16) — the carousel-look scene, and G69, the logo its background
+# swallows. The test logo is written here and removed after, so a fresh clone
+# (where public/assets is absent) still exercises the gate.
+_black = _rg.ROOT / "public" / "_gatetest-black.svg"
+_black.write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><path d="M0 0h10v10H0z"/></svg>')
+def _slide(s, **over):
+    sl = dict(type="slide", durationSec=2.5, covers="benchmark", series="5 tools", index="1 / 5",
+              eyebrow="#1 · Tool", headline="A [[free]] tool",
+              blocks=[{"id": "h", "kind": "hero", "side": {"logo": "_gatetest-black.svg", "tile": "light",
+                                                         "name": "Tool", "price": "$0", "tone": "free"}},
+                      {"id": "r", "kind": "rows", "rows": [{"k": "Chats", "v": "50 / day"}]}],
+              moves=[{"do": "show", "target": "h", "at": 0.2}, {"do": "highlight", "target": "r.0", "at": 1.0}])
+    sl.update(over)
+    s["scenes"][5].clear()
+    s["scenes"][5].update(sl)
+def _gate_hits(sheet, ids):
+    try:
+        adv = check_beats(sheet, vo_end=vo_end_of(sheet), manifest=MANIFEST, vo_words=VO_WORDS)
+        return [a for a in adv if any(g in a for g in ids)], False
+    except GateError as e:
+        return [a for a in list(e.advice) + [str(e)] if any(g in str(a) for g in ids)], True
+try:
+    _s = copy.deepcopy(BASE); _slide(_s)
+    _h, _ = _gate_hits(_s, ("G65", "G69"))
+    if _h:
+        print(f"  FAIL a sound slide tripped a gate: {_h[0][:120]}"); raise SystemExit(1)
+    _counted("G65/G69 silent — a slide with a dark logo on a light tile")
+
+    _s = copy.deepcopy(BASE)
+    _slide(_s, blocks=[{"id": "h", "kind": "hero", "side": {"logo": "_gatetest-black.svg", "tile": "dark", "name": "Tool"}}],
+           moves=[])
+    _h, _blk = _gate_hits(_s, ("G69",))
+    if not (_h and _blk):
+        print("  FAIL G69 let a black logo onto a dark tile"); raise SystemExit(1)
+    _fired.append(("G69", "a black logo pinned to a dark tile"))
+    _counted("G69 blocks — a black logo on a dark slide tile")
+
+    _s = copy.deepcopy(BASE)
+    _stage(_s, set="dark", elements=[{"id": "l", "kind": "image", "x": 0.5, "y": 0.3, "w": 0.3, "src": "_gatetest-black.svg"}],
+           moves=[{"do": "arrive", "target": "l", "at": 0.1}])
+    _h, _blk = _gate_hits(_s, ("G69",))
+    if not (_h and _blk):
+        print("  FAIL G69 let a black logo onto a dark stage (the Suno screenshot)"); raise SystemExit(1)
+    _counted("G69 blocks — a black logo on a dark stage")
+
+    _s = copy.deepcopy(BASE); _slide(_s, moves=[{"do": "show", "target": "nope", "at": 0.2}])
+    _h, _blk = _gate_hits(_s, ("G65",))
+    if not (_h and _blk):
+        print("  FAIL G65 let a slide move name a block that does not exist"); raise SystemExit(1)
+    _counted("G65 blocks — a slide move naming nothing")
+finally:
+    _black.unlink(missing_ok=True)
+
 # FACE PLAN (2026-09-16): a reel may declare that the presenter only bookends it,
 # or is absent. Without the declaration the band still bites.
 def _thin_face(sheet, keep=1):
@@ -1410,8 +1463,8 @@ CASES = [
     (lambda s: s.pop("avatarRegister", None),
      "G19", "tone declared with no look register"),
     (lambda s: s.update(tone="wry"), "G19", "unknown tone"),
-    (lambda s: s["scenes"][2].pop("credit", None) or
-               s["scenes"][2].update(credit=""), "G14", "borrowed footage with no credit"),
+    (lambda s: s.update(showCredits=True) or
+               s["scenes"][2].update(credit=""), "G14", "borrowed footage with no credit, credits requested"),
     (lambda s: s["scenes"][4].pop("footnote", None) or
                s["scenes"][4].update(source="", footnote=""), "G15", "data card with no source"),
     # Both carry real `kinetic` text: a typecard's text is not optional, and
@@ -1479,10 +1532,9 @@ CASES = [
      "G45", "a caption at y 0.844 — on Instagram's account row"),
     # 2026-08-19: credits can be turned off per reel, but never silently and
     # never as a bare switch.
-    (lambda s: s.__setitem__("noCredits", {"reason": "client-supplied footage"}),
-     "G47", "a reel that draws no credits says so"),
-    (lambda s: s.__setitem__("noCredits", {"reason": "   "}),
-     "G47", "noCredits set as a bare switch with no reason"),
+    (lambda s: s.update(showCredits=True) or
+               [sc.pop("credit", None) for sc in s["scenes"]],
+     "G47", "credits requested but no scene carries one"),
     # 422 is the credit's own baseline: clear of the platform, on our credit.
     # It must ADVISE, not block — asserted here because the first draft of G45
     # blocked it, which put 183px of our own taste behind an R1 badge.
@@ -1585,6 +1637,7 @@ _counted("G38 silent — a hook may hide chips when it carries its own display t
 # the source's own identity may declare it and skip the credit chip — but a
 # bare credit-less scene still blocks (the positive case lives in CASES).
 _s = copy.deepcopy(BASE)
+_s["showCredits"] = True
 _s["scenes"][0].pop("credit", None)
 _s["scenes"][0]["creditOnScreen"] = True
 try:
@@ -1598,6 +1651,22 @@ if _hits:
           f"screen: {_hits[0][:90]}")
     raise SystemExit(1)
 _counted("G14 silent — creditOnScreen declares the frame names itself")
+
+# Credits are opt-in (user directive 2026-09-16): a reel that never asked for
+# them may carry no credit anywhere and G14 stays silent.
+_s = copy.deepcopy(BASE)
+_s.pop("showCredits", None)
+for _sc in _s["scenes"]:
+    _sc.pop("credit", None)
+try:
+    _hits = [a for a in check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST,
+                                    vo_words=VO_WORDS) if "G14" in a or "G47" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G14" in str(a) or "G47" in str(a)]
+if _hits:
+    print(f"  FAIL credits fired on a reel that never asked for them: {_hits[0][:90]}")
+    raise SystemExit(1)
+_counted("G14/G47 silent — credits are off unless the user asks")
 
 # G39 vs whisper mishears (2026-08-25): whisper is NOT ground truth for what
 # was said — G21 learned this at 100% false positives. When `covers` is

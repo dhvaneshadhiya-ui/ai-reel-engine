@@ -8164,3 +8164,37 @@ bookends -> Stage scenes -> master). 58.6s, 16 scenes, face on 2 of them. What i
 Treatment history: stage (light/dark/brand sets per tool), one sourceread (Gemini Notebook's
 usage table), strike swap for the limits change, price cards for every paid step, a dated card
 stack for "these ceilings move". Next list reel: do not open on logo + card + FREE stamp again.
+
+## 2026-09-16 (4) — five-free-ai-tools rebuilt after the user's review
+
+The user watched (3) and listed what every gate had passed: the voice did not
+match the presenter's lips, the reel was "not even close to Carousel Playbook
+style", a black Suno logo sat invisible on navy, and no credits unless asked.
+My own full-frame review added 14 more: 🚫 icons hiding the words they struck,
+five near-empty frames, grey loading boxes on empty screens, lines landing 2-5s
+after they were said, the bottom half of most frames unused, music pumping in
+every sentence gap.
+
+What changed, and why each is now structural rather than remembered:
+- **Bookends are generated natively from the VO slice** (create_video_from_avatar
+  with the audio asset), never lip-synced onto footage of other words. The old
+  clips were HeyGen lipsync over a recording of different speech; on "free stops"
+  the mouth barely moved. The native clip forms f, rounds o, closes on p.
+- **`slide` scene = the carousel look** (src/components/Slide.tsx): black, Inter,
+  top bar with "n / N", blue eyebrow, word-by-word headline with one yellow pill,
+  shapes present from frame 0 that fill on the spoken word, paid/free card pair
+  with a thin red strike, rows, BEST FOR / WATCH OUT. Moves are word-timed like
+  stage moves. Placeholders must hold ~1-2s, not most of a slide.
+- **G69 (RENDER, blocking): logo contrast.** Colours are read from the file; a
+  logo under 2:1 against its tile or stage blocks. The compiler picks each slide
+  tile (light/dark) by measurement. The Suno screenshot scored 1.13:1.
+- **Credits opt-in** (`showCredits`), G14 runs only then, G47 now warns when
+  credits are requested but none recorded.
+- **duck_music MIN_GAP 0.45 -> 1.0s** and the tail fade can no longer land inside
+  speech (it had made the bed rise under the whole voice on a one-run reel).
+- Count-up only animates a bare number or price — "Every 5 hours" had rendered
+  "Every 4 hours" mid-count.
+
+Lesson for review: a 150px contact sheet is not a critic pass. Review at >=300px
+every 0.5s against the word timings, or the failures above stay invisible.
+Treatment history: slides (hero, swap, rows, tips, logo grid), presenter bookends.

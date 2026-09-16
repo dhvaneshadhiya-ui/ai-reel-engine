@@ -27,788 +27,588 @@
         ],
         "y": 0.74
       },
-      "durationSec": 4.04,
+      "durationSec": 2.12,
       "zoomDir": "none"
     },
     {
-      "type": "footage",
-      "src": "assets/five-free-ai-tools/avatar-master-hook.mp4",
-      "from": 4.04,
-      "headline": {
-        "lines": [
-          {
-            "text": "WHERE FREE STOPS",
-            "kind": "headline",
-            "at": 0.2
-          }
-        ],
-        "y": 0.74
-      },
-      "durationSec": 2.22,
-      "zoomDir": "none"
-    },
-    {
-      "type": "stage",
-      "set": "light",
-      "layout": "full",
-      "elements": [
+      "eyebrow": "September 2026",
+      "headline": "5 AI tools that are still [[free]]",
+      "blocks": [
         {
-          "id": "logo",
-          "kind": "image",
-          "x": 0.5,
-          "y": 0.26,
-          "w": 0.34,
-          "h": 0.28,
-          "src": "assets/logos/gemini.svg",
-          "label": "the Gemini logo"
-        },
-        {
-          "id": "card",
-          "kind": "card",
-          "x": 0.5,
-          "y": 0.62,
-          "w": 0.78,
-          "title": "Google AI Studio",
-          "lines": [
-            "Gemini's models, in a browser"
-          ],
-          "tone": "accent"
-        },
-        {
-          "id": "next",
-          "kind": "text",
-          "x": 0.5,
-          "y": 0.8,
-          "w": 0.9,
-          "size": 0.9,
-          "text": "Gemini Notebook"
+          "id": "g",
+          "kind": "logos",
+          "items": [
+            {
+              "logo": "assets/logos/gemini.svg",
+              "name": "AI Studio",
+              "tile": "dark"
+            },
+            {
+              "logo": "assets/logos/notebooklm.svg",
+              "name": "Gemini Notebook",
+              "tile": "light"
+            },
+            {
+              "logo": "assets/logos/elevenlabs.svg",
+              "name": "ElevenLabs",
+              "tile": "light"
+            },
+            {
+              "logo": "assets/logos/suno.svg",
+              "name": "Suno",
+              "tile": "light"
+            },
+            {
+              "logo": "assets/logos/github-copilot.svg",
+              "name": "GitHub Copilot",
+              "tile": "light"
+            }
+          ]
         }
       ],
       "moves": [
         {
-          "do": "arrive",
-          "target": "logo",
-          "on": "Google AI Studio",
-          "dir": "pop",
+          "do": "show",
+          "target": "g",
+          "on": "September",
           "at": 0.0
-        },
-        {
-          "do": "arrive",
-          "target": "card",
-          "on": "Google AI Studio",
-          "dir": "up",
-          "at": 0.0
-        },
-        {
-          "do": "fill",
-          "target": "card",
-          "on": "free in every region",
-          "at": 1.48
-        },
-        {
-          "do": "stamp",
-          "target": "card",
-          "on": "Gemini's models",
-          "text": "FREE",
-          "at": 3.9
-        },
-        {
-          "do": "dim",
-          "target": "card",
-          "on": "Gemini Notebook",
-          "at": 5.86
-        },
-        {
-          "do": "dim",
-          "target": "logo",
-          "on": "Gemini Notebook",
-          "at": 5.86
-        },
-        {
-          "do": "arrive",
-          "target": "next",
-          "on": "Gemini Notebook",
-          "dir": "up",
-          "at": 5.86
         }
       ],
-      "credit": "Google",
+      "series": "5 AI tools, still free",
+      "type": "slide",
       "hideCaptions": true,
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",
           "at": 0.0,
           "vol": 0.582
-        },
-        {
-          "src": "sfx-action/paper-slide.mp3",
-          "at": 0.0,
-          "vol": 0.266
         }
       ],
-      "durationSec": 7.08,
+      "durationSec": 4.14
+    },
+    {
+      "index": "1 / 5",
+      "eyebrow": "#1 \u00b7 Google AI Studio",
+      "headline": "Gemini's models, [[free]] in a browser",
+      "blocks": [
+        {
+          "id": "h",
+          "kind": "hero",
+          "side": {
+            "logo": "assets/logos/gemini.svg",
+            "name": "Google AI Studio",
+            "price": "Free",
+            "tone": "free",
+            "note": "in every region it's offered",
+            "tile": "dark"
+          }
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Google's own pricing page: usage is free of charge in all available regions."
+        },
+        {
+          "id": "tips",
+          "kind": "tips",
+          "best": "Trying Gemini's models in a browser",
+          "watch": "The Gemini API's free tier was tightened in 2026"
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "h",
+          "on": "Google AI Studio is",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "free in every",
+          "at": 1.48
+        },
+        {
+          "do": "show",
+          "target": "tips",
+          "on": "offered",
+          "at": 2.98
+        }
+      ],
+      "series": "5 AI tools, still free",
+      "type": "slide",
+      "hideCaptions": true,
+      "durationSec": 5.86,
       "assetId": "logo-gemini",
       "claimId": "logo-gemini",
       "covers": "Google AI Studio is",
       "sourceUrl": "https://svgl.app"
     },
     {
-      "type": "sourceread",
-      "src": "assets/five-free-ai-tools/src-notebook-limits.png",
-      "srcWidth": 1080,
-      "srcHeight": 1480,
-      "backdrop": "cream",
-      "credit": "Google",
-      "durationSec": 7.04,
-      "lines": [
+      "index": "2 / 5",
+      "eyebrow": "#2 \u00b7 Gemini Notebook",
+      "headline": "The one you knew as [[NotebookLM]]",
+      "blocks": [
         {
-          "at": 0.5,
-          "x": 92,
-          "y": 630,
-          "w": 880,
-          "h": 90
+          "id": "h",
+          "kind": "hero",
+          "side": {
+            "logo": "assets/logos/notebooklm.svg",
+            "name": "Gemini Notebook",
+            "price": "Free",
+            "tone": "free",
+            "note": "Standard tier",
+            "tile": "light"
+          }
         },
         {
-          "at": 6.64,
-          "x": 92,
-          "y": 840,
-          "w": 880,
-          "h": 110
-        }
-      ],
-      "follow": true,
-      "captionBottom": 544,
-      "assetId": "src-notebook-limits",
-      "claimId": "src-notebook-limits",
-      "covers": "the one you knew",
-      "sourceUrl": "https://support.google.com/gemininotebook/answer/16213268",
-      "captionTheme": "dark"
-    },
-    {
-      "type": "stage",
-      "set": "dark",
-      "layout": "full",
-      "elements": [
-        {
-          "id": "old",
-          "kind": "card",
-          "x": 0.5,
-          "y": 0.24,
-          "w": 0.8,
-          "title": "Once a day"
-        },
-        {
-          "id": "new",
-          "kind": "card",
-          "x": 0.5,
-          "y": 0.52,
-          "w": 0.8,
-          "title": "Every 5 hours",
-          "tone": "accent"
-        },
-        {
-          "id": "note",
-          "kind": "text",
-          "x": 0.5,
-          "y": 0.8,
-          "w": 0.86,
-          "size": 0.62,
-          "text": "since September 2"
-        }
-      ],
-      "moves": [
-        {
-          "do": "arrive",
-          "target": "old",
-          "on": "those limits refresh",
-          "dir": "left",
-          "at": 0.0
-        },
-        {
-          "do": "arrive",
-          "target": "new",
-          "on": "every five hours",
-          "dir": "right",
-          "at": 0.98
-        },
-        {
-          "do": "connect",
-          "from": "old",
-          "to": "new",
-          "on": "every five hours",
-          "arrow": true,
-          "weight": 1.3,
-          "at": 0.98
-        },
-        {
-          "do": "strike",
-          "target": "old",
-          "on": "not once a day",
-          "at": 2.3
-        },
-        {
-          "do": "arrive",
-          "target": "note",
-          "on": "a heavy morning",
-          "dir": "up",
-          "at": 3.62
-        }
-      ],
-      "credit": "Google",
-      "hideCaptions": true,
-      "sfx": [
-        {
-          "src": "sfx-action/paper-quick.mp3",
-          "at": 0.56,
-          "vol": 0.309
-        }
-      ],
-      "durationSec": 5.94
-    },
-    {
-      "type": "stage",
-      "set": "brand",
-      "layout": "full",
-      "elements": [
-        {
-          "id": "name",
-          "kind": "card",
-          "x": 0.5,
-          "y": 0.2,
-          "w": 0.6,
-          "title": "ElevenLabs",
-          "tone": "dark"
-        },
-        {
-          "id": "n",
-          "kind": "number",
-          "x": 0.5,
-          "y": 0.56,
-          "w": 0.9,
-          "value": 10000,
-          "label": "credits a month, free",
-          "source": "ElevenLabs"
-        }
-      ],
-      "moves": [
-        {
-          "do": "arrive",
-          "target": "name",
-          "on": "11 labs",
-          "dir": "down",
-          "at": 0.0
-        },
-        {
-          "do": "arrive",
-          "target": "n",
-          "on": "10000",
-          "dir": "pop",
-          "at": 1.16
-        },
-        {
-          "do": "count",
-          "target": "n",
-          "on": "10000",
-          "at": 1.16
-        }
-      ],
-      "hideCaptions": true,
-      "sfx": [
-        {
-          "src": "sfx-action/tick.mp3",
-          "at": 0.79,
-          "vol": 1.0
-        },
-        {
-          "src": "sfx-action/lock.mp3",
-          "at": 2.26,
-          "vol": 0.26
-        }
-      ],
-      "durationSec": 3.1
-    },
-    {
-      "type": "stage",
-      "set": "brand",
-      "layout": "full",
-      "elements": [
-        {
-          "id": "a",
-          "kind": "card",
-          "x": 0.5,
-          "y": 0.2,
-          "w": 0.62,
-          "title": "Speech"
-        },
-        {
-          "id": "b",
-          "kind": "card",
-          "x": 0.5,
-          "y": 0.38,
-          "w": 0.62,
-          "title": "Effects"
-        },
-        {
-          "id": "c",
-          "kind": "card",
-          "x": 0.5,
-          "y": 0.56,
-          "w": 0.62,
-          "title": "Music"
-        },
-        {
-          "id": "t",
-          "kind": "text",
-          "x": 0.5,
-          "y": 0.8,
-          "w": 0.9,
-          "size": 0.78,
-          "text": "a few voiceovers, not a series"
-        }
-      ],
-      "moves": [
-        {
-          "do": "arrive",
-          "target": "a",
-          "on": "sound effects",
-          "dir": "up",
-          "at": 0.0
-        },
-        {
-          "do": "arrive",
-          "target": "b",
-          "on": "effects",
-          "dir": "up",
-          "at": 0.5
-        },
-        {
-          "do": "arrive",
-          "target": "c",
-          "on": "and music",
-          "dir": "up",
-          "at": 1.08
-        },
-        {
-          "do": "arrive",
-          "target": "t",
-          "on": "a few voiceovers",
-          "dir": "up",
-          "at": 2.24
-        },
-        {
-          "do": "highlight",
-          "target": "t",
-          "on": "not a series",
-          "at": 3.5
-        }
-      ],
-      "credit": "ElevenLabs",
-      "hideCaptions": true,
-      "sfx": [
-        {
-          "src": "sfx-action/marker.mp3",
-          "at": 3.5,
-          "vol": 0.417
-        }
-      ],
-      "durationSec": 4.98
-    },
-    {
-      "type": "stage",
-      "set": "brand",
-      "layout": "full",
-      "elements": [
-        {
-          "id": "paid",
-          "kind": "card",
-          "x": 0.5,
-          "y": 0.45,
-          "w": 0.64,
-          "title": "Voice cloning",
-          "price": "$6",
-          "priceTone": "cost",
-          "lines": [
-            "a month, Starter plan"
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Chats",
+              "v": "50 / day"
+            },
+            {
+              "k": "Audio overviews",
+              "v": "3 / day"
+            },
+            {
+              "k": "Video overviews",
+              "v": "3 / day"
+            }
           ]
         }
       ],
       "moves": [
         {
-          "do": "arrive",
-          "target": "paid",
-          "on": "Cloning",
-          "dir": "up",
+          "do": "show",
+          "target": "h",
+          "on": "Gemini Notebook the one",
           "at": 0.0
         },
         {
-          "do": "fill",
-          "target": "paid",
-          "on": "starts at 6",
-          "at": 0.42
-        }
-      ],
-      "credit": "ElevenLabs",
-      "hideCaptions": true,
-      "durationSec": 2.24
-    },
-    {
-      "type": "stage",
-      "set": "dark",
-      "layout": "full",
-      "elements": [
-        {
-          "id": "logo",
-          "kind": "image",
-          "x": 0.5,
-          "y": 0.2,
-          "w": 0.24,
-          "h": 0.22,
-          "src": "assets/logos/suno.svg",
-          "label": "the Suno logo"
+          "do": "show",
+          "target": "r",
+          "on": "knew as",
+          "at": 1.66
         },
         {
-          "id": "n",
-          "kind": "number",
-          "x": 0.5,
-          "y": 0.58,
-          "w": 0.9,
-          "value": 50,
-          "label": "credits a day, free",
-          "source": "Suno"
+          "do": "highlight",
+          "target": "r.0",
+          "on": "50 chats",
+          "at": 3.64
+        },
+        {
+          "do": "highlight",
+          "target": "r.1",
+          "on": "three audio",
+          "at": 4.96
+        }
+      ],
+      "series": "5 AI tools, still free",
+      "type": "slide",
+      "hideCaptions": true,
+      "durationSec": 6.72
+    },
+    {
+      "index": "2 / 5",
+      "eyebrow": "#2 \u00b7 Gemini Notebook",
+      "headline": "Since September 2, limits refresh every [[5 hours]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "name": "Before",
+            "price": "Once a day",
+            "note": "one daily limit"
+          },
+          "right": {
+            "name": "Now",
+            "price": "Every 5 hours",
+            "tone": "free",
+            "note": "limits refresh"
+          }
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "A heavy morning doesn't cost you the evening."
         }
       ],
       "moves": [
         {
-          "do": "arrive",
-          "target": "logo",
-          "on": "Suno",
-          "dir": "pop",
+          "do": "show",
+          "target": "s.left",
+          "on": "Since September",
           "at": 0.0
         },
         {
-          "do": "arrive",
-          "target": "n",
-          "on": "50 credits",
-          "dir": "pop",
-          "at": 0.74
+          "do": "show",
+          "target": "s.right",
+          "on": "refresh every",
+          "at": 2.06
         },
         {
-          "do": "count",
-          "target": "n",
-          "on": "50 credits",
-          "at": 0.74
+          "do": "strike",
+          "target": "s.left",
+          "on": "not once a day",
+          "at": 3.84
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "heavy morning",
+          "at": 5.32
         }
       ],
+      "series": "5 AI tools, still free",
+      "type": "slide",
       "hideCaptions": true,
       "sfx": [
         {
-          "src": "sfx-action/lock.mp3",
-          "at": 1.84,
-          "vol": 0.26
+          "src": "sfx-action/marker.mp3",
+          "at": 3.84,
+          "vol": 0.417
         }
       ],
-      "durationSec": 2.6,
+      "durationSec": 7.48
+    },
+    {
+      "index": "3 / 5",
+      "eyebrow": "#3 \u00b7 ElevenLabs",
+      "headline": "[[10,000]] free credits a month",
+      "blocks": [
+        {
+          "id": "h",
+          "kind": "hero",
+          "side": {
+            "logo": "assets/logos/elevenlabs.svg",
+            "name": "ElevenLabs Free",
+            "price": "10,000",
+            "tone": "free",
+            "note": "credits / month",
+            "tile": "light"
+          }
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Speech",
+              "v": "Included",
+              "tone": "free"
+            },
+            {
+              "k": "Sound effects",
+              "v": "Included",
+              "tone": "free"
+            },
+            {
+              "k": "Music",
+              "v": "Included",
+              "tone": "free"
+            },
+            {
+              "k": "Voice cloning",
+              "v": "$6 / month",
+              "tone": "cost"
+            }
+          ]
+        },
+        {
+          "id": "tips",
+          "kind": "tips",
+          "watch": "Enough for a few voiceovers, not a series"
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "h",
+          "on": "11 labs gives you",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "credits a month",
+          "at": 1.84
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "for speech",
+          "at": 2.56
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "sound effects",
+          "at": 3.1
+        },
+        {
+          "do": "show",
+          "target": "tips",
+          "on": "enough for a few",
+          "at": 4.86
+        },
+        {
+          "do": "show",
+          "target": "r.3",
+          "on": "not a series",
+          "at": 6.6
+        },
+        {
+          "do": "highlight",
+          "target": "r.3",
+          "on": "Cloning starts",
+          "at": 8.08
+        }
+      ],
+      "series": "5 AI tools, still free",
+      "type": "slide",
+      "hideCaptions": true,
+      "sfx": [
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 0.1,
+          "vol": 1.0
+        }
+      ],
+      "durationSec": 10.32
+    },
+    {
+      "index": "4 / 5",
+      "eyebrow": "#4 \u00b7 Suno",
+      "headline": "[[50]] free credits a day for music",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "logo": "assets/logos/suno.svg",
+            "name": "Free",
+            "price": "50",
+            "tone": "free",
+            "note": "credits / day",
+            "tile": "light"
+          },
+          "right": {
+            "name": "Pro",
+            "price": "$8",
+            "tone": "cost",
+            "note": "/ month"
+          }
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Commercial rights",
+              "v": "Not on Free",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.left",
+          "on": "Suno gives 50",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "for music",
+          "at": 1.78
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "but the free plan",
+          "at": 2.6
+        },
+        {
+          "do": "strike",
+          "target": "r.0",
+          "on": "commercial rights",
+          "at": 4.08
+        }
+      ],
+      "series": "5 AI tools, still free",
+      "type": "slide",
+      "hideCaptions": true,
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 4.08,
+          "vol": 0.417
+        }
+      ],
+      "durationSec": 7.2,
       "assetId": "logo-suno",
       "claimId": "logo-suno",
       "covers": "Suno gives 50 credits",
       "sourceUrl": "https://svgl.app"
     },
     {
-      "type": "stage",
-      "set": "dark",
-      "layout": "full",
-      "elements": [
+      "index": "5 / 5",
+      "eyebrow": "#5 \u00b7 GitHub Copilot",
+      "headline": "[[2,000]] completions a month, no card",
+      "blocks": [
         {
-          "id": "rights",
-          "kind": "card",
-          "x": 0.5,
-          "y": 0.42,
-          "w": 0.86,
-          "title": "Commercial rights",
-          "lines": [
-            "on the free plan"
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "logo": "assets/logos/github-copilot.svg",
+            "name": "Copilot Free",
+            "price": "2,000",
+            "tone": "free",
+            "note": "completions / month",
+            "tile": "light"
+          },
+          "right": {
+            "name": "Copilot Pro",
+            "price": "$10",
+            "tone": "cost",
+            "note": "/ month"
+          }
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Credit card",
+              "v": "Not needed",
+              "tone": "free"
+            }
           ]
+        },
+        {
+          "id": "tips",
+          "kind": "tips",
+          "watch": "Free is auto model selection only"
         }
       ],
       "moves": [
         {
-          "do": "arrive",
-          "target": "rights",
-          "on": "the free plan",
-          "dir": "up",
-          "at": 0.22
-        },
-        {
-          "do": "strike",
-          "target": "rights",
-          "on": "no commercial rights",
-          "at": 1.24
-        }
-      ],
-      "credit": "Suno",
-      "hideCaptions": true,
-      "durationSec": 3.06
-    },
-    {
-      "type": "stage",
-      "set": "dark",
-      "layout": "full",
-      "elements": [
-        {
-          "id": "pro",
-          "kind": "card",
-          "x": 0.5,
-          "y": 0.45,
-          "w": 0.6,
-          "title": "Suno Pro",
-          "price": "$8",
-          "priceTone": "cost",
-          "lines": [
-            "a month"
-          ]
-        }
-      ],
-      "moves": [
-        {
-          "do": "arrive",
-          "target": "pro",
-          "on": "Pro is 8",
-          "dir": "up",
-          "at": 0.0
-        },
-        {
-          "do": "fill",
-          "target": "pro",
-          "on": "is 8",
-          "at": 0.28
-        }
-      ],
-      "credit": "Suno",
-      "hideCaptions": true,
-      "durationSec": 1.54
-    },
-    {
-      "type": "stage",
-      "set": "light",
-      "layout": "full",
-      "elements": [
-        {
-          "id": "logo",
-          "kind": "image",
-          "x": 0.5,
-          "y": 0.18,
-          "w": 0.26,
-          "h": 0.2,
-          "src": "assets/logos/github-copilot.svg",
-          "label": "the GitHub Copilot logo"
-        },
-        {
-          "id": "n",
-          "kind": "number",
-          "x": 0.5,
-          "y": 0.54,
-          "w": 0.9,
-          "value": 2000,
-          "label": "completions a month, free",
-          "source": "GitHub"
-        }
-      ],
-      "moves": [
-        {
-          "do": "arrive",
-          "target": "logo",
-          "on": "github copilots",
-          "dir": "pop",
+          "do": "show",
+          "target": "s.left",
+          "on": "GitHub Copilot's free",
           "at": 0.16
         },
         {
-          "do": "arrive",
-          "target": "n",
-          "on": "2000",
-          "dir": "pop",
-          "at": 1.88
+          "do": "show",
+          "target": "tips",
+          "on": "free plan is",
+          "at": 1.14
         },
         {
-          "do": "count",
-          "target": "n",
-          "on": "2000",
-          "at": 1.88
+          "do": "show",
+          "target": "r.0",
+          "on": "completions a month",
+          "at": 2.58
         },
         {
-          "do": "stamp",
-          "target": "n",
+          "do": "highlight",
+          "target": "r.0",
           "on": "no card",
-          "text": "NO CARD",
+          "at": 3.84
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "no card",
           "at": 3.84
         }
       ],
+      "series": "5 AI tools, still free",
+      "type": "slide",
       "hideCaptions": true,
-      "sfx": [
-        {
-          "src": "sfx-action/lock.mp3",
-          "at": 2.98,
-          "vol": 0.26
-        }
-      ],
-      "durationSec": 4.78,
+      "durationSec": 5.82,
       "assetId": "logo-github-copilot",
       "claimId": "logo-github-copilot",
       "covers": "And GitHub Copilot's free",
       "sourceUrl": "https://svgl.app"
     },
     {
-      "type": "stage",
-      "set": "light",
-      "layout": "full",
-      "credit": "GitHub",
-      "hideCaptions": true,
-      "elements": [
+      "eyebrow": "GitHub Copilot's free plan, 2026",
+      "headline": "These ceilings [[move]]",
+      "blocks": [
         {
-          "id": "pro",
-          "kind": "card",
-          "x": 0.5,
-          "y": 0.45,
-          "w": 0.62,
-          "title": "Copilot Pro",
-          "price": "$10",
-          "priceTone": "cost",
-          "lines": [
-            "a month"
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "April",
+              "v": "Sign-ups paused"
+            },
+            {
+              "k": "June 1",
+              "v": "Usage-based billing"
+            },
+            {
+              "k": "June 24",
+              "v": "Auto model only"
+            },
+            {
+              "k": "Before you rely on one",
+              "v": "Check first",
+              "tone": "free"
+            }
           ]
         }
       ],
       "moves": [
         {
-          "do": "arrive",
-          "target": "pro",
-          "on": "Pro is 10",
-          "dir": "up",
-          "at": 0.0
+          "do": "show",
+          "target": "r.0",
+          "on": "changed more",
+          "at": 2.24
         },
         {
-          "do": "fill",
-          "target": "pro",
-          "on": "is 10",
-          "at": 0.22
-        }
-      ],
-      "durationSec": 1.04
-    },
-    {
-      "type": "stage",
-      "set": "dark",
-      "layout": "full",
-      "elements": [
+          "do": "show",
+          "target": "r.1",
+          "on": "more than once",
+          "at": 2.52
+        },
         {
-          "id": "t",
-          "kind": "text",
-          "x": 0.5,
-          "y": 0.42,
-          "w": 0.9,
-          "size": 1.7,
-          "text": "These ceilings move"
-        }
-      ],
-      "moves": [
+          "do": "show",
+          "target": "r.2",
+          "on": "this year",
+          "at": 3.34
+        },
         {
-          "do": "arrive",
-          "target": "t",
-          "on": "these ceilings move",
-          "dir": "pop",
-          "at": 0.16
+          "do": "show",
+          "target": "r.3",
+          "on": "look it up",
+          "at": 4.3
         },
         {
           "do": "highlight",
-          "target": "t",
-          "on": "move",
-          "at": 0.88
+          "target": "r.3",
+          "on": "look it up",
+          "at": 4.3
         }
       ],
-      "hideCaptions": true,
-      "durationSec": 1.7
-    },
-    {
-      "type": "stage",
-      "set": "dark",
-      "layout": "full",
-      "elements": [
-        {
-          "id": "apr",
-          "kind": "card",
-          "x": 0.5,
-          "y": 0.2,
-          "w": 0.8,
-          "title": "April",
-          "lines": [
-            "sign-ups paused, limits tightened"
-          ],
-          "size": 0.85
-        },
-        {
-          "id": "jun1",
-          "kind": "card",
-          "x": 0.5,
-          "y": 0.48,
-          "w": 0.8,
-          "title": "June 1",
-          "lines": [
-            "usage-based billing"
-          ],
-          "size": 0.85
-        },
-        {
-          "id": "jun24",
-          "kind": "card",
-          "x": 0.5,
-          "y": 0.76,
-          "w": 0.8,
-          "title": "June 24",
-          "lines": [
-            "model choice removed"
-          ],
-          "size": 0.85
-        }
-      ],
-      "moves": [
-        {
-          "do": "arrive",
-          "target": "apr",
-          "on": "Copilot's changed",
-          "dir": "left",
-          "at": 0.0
-        },
-        {
-          "do": "arrive",
-          "target": "jun1",
-          "on": "more than once",
-          "dir": "left",
-          "at": 0.82
-        },
-        {
-          "do": "arrive",
-          "target": "jun24",
-          "on": "this year",
-          "dir": "left",
-          "at": 1.64
-        },
-        {
-          "do": "stamp",
-          "target": "jun24",
-          "on": "look it up first",
-          "text": "CHECK FIRST",
-          "at": 2.6
-        }
-      ],
-      "credit": "heise, Roboin",
+      "series": "5 AI tools, still free",
+      "type": "slide",
       "hideCaptions": true,
       "sfx": [
         {
-          "src": "sfx-action/paper-slide.mp3",
-          "at": 0.0,
-          "vol": 0.266
+          "src": "sfx-action/lock.mp3",
+          "at": 4.3,
+          "vol": 0.26
         }
       ],
-      "durationSec": 3.88
+      "durationSec": 5.58
     },
     {
       "type": "footage",
@@ -1807,178 +1607,6 @@
       {
         "t": 0.0,
         "vol": 0.055
-      },
-      {
-        "t": 3.44,
-        "vol": 0.055
-      },
-      {
-        "t": 3.78,
-        "vol": 0.15
-      },
-      {
-        "t": 3.86,
-        "vol": 0.15
-      },
-      {
-        "t": 4.04,
-        "vol": 0.055
-      },
-      {
-        "t": 9.6,
-        "vol": 0.055
-      },
-      {
-        "t": 9.94,
-        "vol": 0.15
-      },
-      {
-        "t": 9.98,
-        "vol": 0.15
-      },
-      {
-        "t": 10.16,
-        "vol": 0.055
-      },
-      {
-        "t": 14.88,
-        "vol": 0.055
-      },
-      {
-        "t": 15.22,
-        "vol": 0.15
-      },
-      {
-        "t": 15.4,
-        "vol": 0.055
-      },
-      {
-        "t": 25.78,
-        "vol": 0.055
-      },
-      {
-        "t": 26.12,
-        "vol": 0.15
-      },
-      {
-        "t": 26.32,
-        "vol": 0.055
-      },
-      {
-        "t": 33.52,
-        "vol": 0.055
-      },
-      {
-        "t": 33.86,
-        "vol": 0.15
-      },
-      {
-        "t": 34.22,
-        "vol": 0.15
-      },
-      {
-        "t": 34.4,
-        "vol": 0.055
-      },
-      {
-        "t": 35.68,
-        "vol": 0.055
-      },
-      {
-        "t": 36.02,
-        "vol": 0.15
-      },
-      {
-        "t": 36.46,
-        "vol": 0.15
-      },
-      {
-        "t": 36.64,
-        "vol": 0.055
-      },
-      {
-        "t": 41.5,
-        "vol": 0.055
-      },
-      {
-        "t": 41.84,
-        "vol": 0.15
-      },
-      {
-        "t": 42.12,
-        "vol": 0.15
-      },
-      {
-        "t": 42.3,
-        "vol": 0.055
-      },
-      {
-        "t": 43.36,
-        "vol": 0.055
-      },
-      {
-        "t": 43.66,
-        "vol": 0.15
-      },
-      {
-        "t": 43.7,
-        "vol": 0.15
-      },
-      {
-        "t": 43.84,
-        "vol": 0.055
-      },
-      {
-        "t": 48.02,
-        "vol": 0.055
-      },
-      {
-        "t": 48.36,
-        "vol": 0.15
-      },
-      {
-        "t": 48.44,
-        "vol": 0.15
-      },
-      {
-        "t": 48.62,
-        "vol": 0.055
-      },
-      {
-        "t": 50.86,
-        "vol": 0.055
-      },
-      {
-        "t": 51.18,
-        "vol": 0.15
-      },
-      {
-        "t": 51.2,
-        "vol": 0.15
-      },
-      {
-        "t": 51.36,
-        "vol": 0.055
-      },
-      {
-        "t": 54.7,
-        "vol": 0.055
-      },
-      {
-        "t": 55.04,
-        "vol": 0.15
-      },
-      {
-        "t": 55.06,
-        "vol": 0.15
-      },
-      {
-        "t": 55.24,
-        "vol": 0.055
-      },
-      {
-        "t": 57.661,
-        "vol": 0.15
       },
       {
         "t": 58.32,

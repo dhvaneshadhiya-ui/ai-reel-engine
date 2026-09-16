@@ -13,6 +13,7 @@ import { FootageScene } from "./components/FootageScene";
 import { ReceiptScene } from "./components/ReceiptScene";
 import { CounterScene } from "./components/CounterScene";
 import { Stage } from "./components/Stage";
+import { Slide } from "./components/Slide";
 import { SourceRead } from "./components/SourceRead";
 import { TypeCard } from "./components/TypeCard";
 import { SplitScene } from "./components/SplitScene";
@@ -78,7 +79,7 @@ import type { BeatSheet, Scene } from "./types";
 // the scene is already making, not add to it.
 const MOVES_ITSELF = new Set([
   "footage", "receipt", "sourceread", "annotatezoom",
-  "deviceframe", "terminal", "chart", "split", "stage",
+  "deviceframe", "terminal", "chart", "split", "stage", "slide",
 ]);
 
 const IdleMotion: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -122,6 +123,8 @@ const SceneBody: React.FC<{ scene: Scene }> = ({ scene }) => {
       return <CounterScene scene={scene} />;
     case "stage":
       return <Stage scene={scene} />;
+    case "slide":
+      return <Slide scene={scene} />;
     case "receipt":
       return <ReceiptScene scene={scene} />;
     case "sourceread":
@@ -323,7 +326,7 @@ export const Reel: React.FC<{ beats: BeatSheet }> = ({ beats }) => {
             <CreditPolicyProvider
               firstFor={creditOwners}
               sceneIndex={i}
-              suppressed={Boolean(beats.noCredits)}
+              suppressed={!beats.showCredits}
             >
               <PunchIn enter={i > 0 ? beats.scenes[i - 1].exit : undefined} exit={scene.exit}>
                 <SceneSwitch scene={scene} />

@@ -210,6 +210,11 @@ breaks all of it and reads brilliantly is a good script.
 
 ## 2c. Credits on screen (user decision 2026-08-19)
 
+**SUPERSEDED IN PART 2026-09-16: credits are drawn only when the user asks**
+("I don't want you to use source (credit) across the videos until unless I
+ask to"). The sheet opts in with `showCredits: true`; G14 runs only then.
+The once-per-source and short-label rules below still apply when they are on.
+
 **Once per source, short label.** The first scene to use a source draws its
 credit; later scenes from the same source draw nothing. The drawn label stops at
 the first em dash: `Unbox Therapy — dummy unit` renders as `Source: Unbox
