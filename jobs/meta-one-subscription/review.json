@@ -1,0 +1,11 @@
+{
+  "script_sha256": "36fac39ae779688f472b6af29df9670ba7304510c68809781e3f3627a5d7a876",
+  "structure_sha256": "9506342f4d3b06ce51a60d9f657b68650e358a5d112b9c884f75d563b4e5d475",
+  "findings": [
+    "  NO OPEN LOOP \u2014 sentence 3 promises something ('First, Instagram Plus and Facebook Plus cost thr') and nothing later returns to it. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-09-16T05:17:19+00:00"
+}

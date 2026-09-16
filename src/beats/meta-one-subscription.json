@@ -1,0 +1,1533 @@
+{
+  "id": "meta-one-subscription",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/meta-one-subscription/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "Meta One",
+    "WhatsApp",
+    "four hundred ninety-nine",
+    "no ads, no games, no gimmicks"
+  ],
+  "scenes": [
+    {
+      "type": "footage",
+      "src": "assets/meta-one-subscription/avatar-master.mp4",
+      "durationSec": 5.24,
+      "from": 0.0,
+      "focusX": 0.5
+    },
+    {
+      "type": "receipt",
+      "src": "assets/meta-one-subscription/ig-fb-plus-pricing.png",
+      "srcWidth": 987,
+      "srcHeight": 1758,
+      "backdrop": "cream",
+      "covers": "Instagram Plus and Facebook Plus cost $3.99 a month",
+      "creditOnScreen": true,
+      "credit": "Meta",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 560,
+          "w": 987,
+          "h": 280
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.02
+        }
+      ],
+      "captionBottom": 550,
+      "durationSec": 3.46,
+      "assetId": "ig-fb-plus-pricing",
+      "claimId": "ig-fb-plus-pricing",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/meta-one-subscription/whatsapp-plus-pricing.png",
+      "srcWidth": 987,
+      "srcHeight": 1758,
+      "backdrop": "cream",
+      "covers": "WhatsApp Plus runs $2.99",
+      "creditOnScreen": true,
+      "credit": "Meta",
+      "highlights": [
+        {
+          "at": 0.15,
+          "x": 290,
+          "y": 560,
+          "w": 400,
+          "h": 280
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.02
+        }
+      ],
+      "captionBottom": 550,
+      "durationSec": 2.32,
+      "assetId": "whatsapp-plus-pricing",
+      "claimId": "whatsapp-plus-pricing",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/meta-one-subscription/core-premium-pricing.png",
+      "srcWidth": 990,
+      "srcHeight": 1758,
+      "backdrop": "cream",
+      "covers": "Core is $7.99, and Premium is $19.99",
+      "creditOnScreen": true,
+      "credit": "Meta",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 560,
+          "w": 990,
+          "h": 220
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.02
+        }
+      ],
+      "captionBottom": 550,
+      "durationSec": 4.24,
+      "assetId": "core-premium-pricing",
+      "claimId": "core-premium-pricing",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-one-subscription/avatar-master.mp4",
+      "durationSec": 3.74,
+      "from": 15.26,
+      "focusX": 0.5
+    },
+    {
+      "type": "receipt",
+      "src": "assets/meta-one-subscription/essential-advanced-pricing.png",
+      "srcWidth": 987,
+      "srcHeight": 1758,
+      "backdrop": "cream",
+      "covers": "business pages climb even higher",
+      "creditOnScreen": true,
+      "credit": "Meta",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 560,
+          "w": 987,
+          "h": 250
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "vol": 0.543,
+          "at": 0.02
+        }
+      ],
+      "captionBottom": 550,
+      "durationSec": 5.02,
+      "assetId": "essential-advanced-pricing",
+      "claimId": "essential-advanced-pricing",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-one-subscription/avatar-master.mp4",
+      "durationSec": 2.92,
+      "from": 24.02,
+      "focusX": 0.5
+    },
+    {
+      "type": "receipt",
+      "src": "assets/meta-one-subscription/cnbc-scaleai-headline.png",
+      "srcWidth": 954,
+      "srcHeight": 1695,
+      "backdrop": "cream",
+      "covers": "$14.3 billion into Scale AI",
+      "creditOnScreen": true,
+      "credit": "CNBC / Jonathan Vanian",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 280,
+          "w": 954,
+          "h": 380
+        },
+        {
+          "at": 1.3,
+          "x": 0,
+          "y": 1180,
+          "w": 954,
+          "h": 340
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.02
+        }
+      ],
+      "keepReceipt": true,
+      "captionBottom": 550,
+      "durationSec": 3.66,
+      "assetId": "cnbc-scaleai-headline",
+      "claimId": "cnbc-scaleai-headline",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-one-subscription/avatar-master.mp4",
+      "durationSec": 10.94,
+      "from": 30.6,
+      "focusX": 0.5
+    },
+    {
+      "type": "receipt",
+      "src": "assets/meta-one-subscription/fortune-note-quote.png",
+      "srcWidth": 984,
+      "srcHeight": 570,
+      "backdrop": "cream",
+      "covers": "no ads, no games, no gimmicks",
+      "creditOnScreen": true,
+      "credit": "Fortune, citing Sequoia's Jim Goetz",
+      "allowSmallReceipt": true,
+      "allowSmallReceiptReason": "the sourced quote is one short paragraph; no taller capture exists for this specific quote without padding in unrelated article text",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 0,
+          "w": 984,
+          "h": 570
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "vol": 0.556,
+          "at": 0.1
+        }
+      ],
+      "captionBottom": 550,
+      "durationSec": 6.34,
+      "assetId": "fortune-note-quote",
+      "claimId": "fortune-note-quote",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-one-subscription/avatar-master.mp4",
+      "durationSec": 1.5,
+      "from": 47.88,
+      "focusX": 0.5
+    },
+    {
+      "type": "receipt",
+      "src": "assets/meta-one-subscription/fortune-whatsapp-ads-headline.png",
+      "srcWidth": 984,
+      "srcHeight": 1749,
+      "backdrop": "cream",
+      "covers": "WhatsApp broke that promise and started running ads",
+      "creditOnScreen": true,
+      "credit": "Fortune / Marco Quiroz-Gutierrez",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 0,
+          "y": 580,
+          "w": 984,
+          "h": 440
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.02
+        }
+      ],
+      "captionBottom": 550,
+      "durationSec": 3.08,
+      "assetId": "fortune-whatsapp-ads-headline",
+      "claimId": "fortune-whatsapp-ads-headline",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/meta-one-subscription/avatar-master.mp4",
+      "durationSec": 9.195,
+      "from": 52.46,
+      "focusX": 0.5
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.64,
+      "text": "The three biggest",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "The"
+        },
+        {
+          "t": 0.24,
+          "text": "three"
+        },
+        {
+          "t": 0.42,
+          "text": "biggest"
+        }
+      ]
+    },
+    {
+      "start": 0.64,
+      "end": 1.22,
+      "text": "apps on your",
+      "words": [
+        {
+          "t": 0.64,
+          "text": "apps"
+        },
+        {
+          "t": 0.9,
+          "text": "on"
+        },
+        {
+          "t": 1.1,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 1.22,
+      "end": 1.96,
+      "text": "phone just put",
+      "words": [
+        {
+          "t": 1.22,
+          "text": "phone"
+        },
+        {
+          "t": 1.46,
+          "text": "just"
+        },
+        {
+          "t": 1.74,
+          "text": "put"
+        }
+      ]
+    },
+    {
+      "start": 1.96,
+      "end": 2.36,
+      "text": "out a price",
+      "words": [
+        {
+          "t": 1.96,
+          "text": "out"
+        },
+        {
+          "t": 2.08,
+          "text": "a"
+        },
+        {
+          "t": 2.16,
+          "text": "price"
+        }
+      ]
+    },
+    {
+      "start": 2.36,
+      "end": 3.22,
+      "text": "list. It's called",
+      "words": [
+        {
+          "t": 2.36,
+          "text": "list."
+        },
+        {
+          "t": 2.98,
+          "text": "It's"
+        },
+        {
+          "t": 3.08,
+          "text": "called"
+        }
+      ]
+    },
+    {
+      "start": 3.22,
+      "end": 4.08,
+      "text": "Meta One Live",
+      "words": [
+        {
+          "t": 3.22,
+          "text": "Meta"
+        },
+        {
+          "t": 3.46,
+          "text": "One"
+        },
+        {
+          "t": 4.08,
+          "text": "Live"
+        }
+      ]
+    },
+    {
+      "start": 4.08,
+      "end": 4.94,
+      "text": "everywhere this week.",
+      "words": [
+        {
+          "t": 4.08,
+          "text": "everywhere"
+        },
+        {
+          "t": 4.5,
+          "text": "this"
+        },
+        {
+          "t": 4.72,
+          "text": "week."
+        }
+      ]
+    },
+    {
+      "start": 5.24,
+      "end": 6.44,
+      "text": "First, Instagram Plus",
+      "words": [
+        {
+          "t": 5.24,
+          "text": "First,"
+        },
+        {
+          "t": 5.78,
+          "text": "Instagram"
+        },
+        {
+          "t": 6.06,
+          "text": "Plus"
+        }
+      ]
+    },
+    {
+      "start": 6.44,
+      "end": 7.4,
+      "text": "and Facebook Plus",
+      "words": [
+        {
+          "t": 6.44,
+          "text": "and"
+        },
+        {
+          "t": 6.68,
+          "text": "Facebook"
+        },
+        {
+          "t": 6.96,
+          "text": "Plus"
+        }
+      ]
+    },
+    {
+      "start": 7.4,
+      "end": 8.48,
+      "text": "cost $3.99 a",
+      "words": [
+        {
+          "t": 7.4,
+          "text": "cost"
+        },
+        {
+          "t": 7.68,
+          "text": "$3.99"
+        },
+        {
+          "t": 8.24,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 8.48,
+      "end": 9.38,
+      "text": "month and WhatsApp",
+      "words": [
+        {
+          "t": 8.48,
+          "text": "month"
+        },
+        {
+          "t": 8.7,
+          "text": "and"
+        },
+        {
+          "t": 9.0,
+          "text": "WhatsApp"
+        }
+      ]
+    },
+    {
+      "start": 9.38,
+      "end": 10.52,
+      "text": "Plus runs $2.99",
+      "words": [
+        {
+          "t": 9.38,
+          "text": "Plus"
+        },
+        {
+          "t": 9.8,
+          "text": "runs"
+        },
+        {
+          "t": 10.02,
+          "text": "$2.99"
+        }
+      ]
+    },
+    {
+      "start": 11.02,
+      "end": 11.6,
+      "text": "Then there's Meta",
+      "words": [
+        {
+          "t": 11.02,
+          "text": "Then"
+        },
+        {
+          "t": 11.2,
+          "text": "there's"
+        },
+        {
+          "t": 11.38,
+          "text": "Meta"
+        }
+      ]
+    },
+    {
+      "start": 11.6,
+      "end": 12.7,
+      "text": "AI itself. Core",
+      "words": [
+        {
+          "t": 11.6,
+          "text": "AI"
+        },
+        {
+          "t": 11.82,
+          "text": "itself."
+        },
+        {
+          "t": 12.52,
+          "text": "Core"
+        }
+      ]
+    },
+    {
+      "start": 12.7,
+      "end": 13.88,
+      "text": "is $7.99 and",
+      "words": [
+        {
+          "t": 12.7,
+          "text": "is"
+        },
+        {
+          "t": 12.94,
+          "text": "$7.99"
+        },
+        {
+          "t": 13.38,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 13.88,
+      "end": 15.26,
+      "text": "premium is $19.99",
+      "words": [
+        {
+          "t": 13.88,
+          "text": "premium"
+        },
+        {
+          "t": 14.22,
+          "text": "is"
+        },
+        {
+          "t": 14.52,
+          "text": "$19.99"
+        }
+      ]
+    },
+    {
+      "start": 15.26,
+      "end": 16.52,
+      "text": "for more generation",
+      "words": [
+        {
+          "t": 15.26,
+          "text": "for"
+        },
+        {
+          "t": 15.72,
+          "text": "more"
+        },
+        {
+          "t": 15.96,
+          "text": "generation"
+        }
+      ]
+    },
+    {
+      "start": 16.52,
+      "end": 17.68,
+      "text": "and longer reasoning",
+      "words": [
+        {
+          "t": 16.52,
+          "text": "and"
+        },
+        {
+          "t": 16.9,
+          "text": "longer"
+        },
+        {
+          "t": 17.24,
+          "text": "reasoning"
+        }
+      ]
+    },
+    {
+      "start": 17.68,
+      "end": 18.6,
+      "text": "on hard questions.",
+      "words": [
+        {
+          "t": 17.68,
+          "text": "on"
+        },
+        {
+          "t": 17.92,
+          "text": "hard"
+        },
+        {
+          "t": 18.16,
+          "text": "questions."
+        }
+      ]
+    },
+    {
+      "start": 19.0,
+      "end": 19.44,
+      "text": "Not to mention",
+      "words": [
+        {
+          "t": 19.0,
+          "text": "Not"
+        },
+        {
+          "t": 19.08,
+          "text": "to"
+        },
+        {
+          "t": 19.24,
+          "text": "mention"
+        }
+      ]
+    },
+    {
+      "start": 19.44,
+      "end": 20.5,
+      "text": "business pages climb",
+      "words": [
+        {
+          "t": 19.44,
+          "text": "business"
+        },
+        {
+          "t": 19.78,
+          "text": "pages"
+        },
+        {
+          "t": 20.16,
+          "text": "climb"
+        }
+      ]
+    },
+    {
+      "start": 20.5,
+      "end": 21.92,
+      "text": "even higher. Max",
+      "words": [
+        {
+          "t": 20.5,
+          "text": "even"
+        },
+        {
+          "t": 20.86,
+          "text": "higher."
+        },
+        {
+          "t": 21.74,
+          "text": "Max"
+        }
+      ]
+    },
+    {
+      "start": 21.92,
+      "end": 23.58,
+      "text": "hits $499 a",
+      "words": [
+        {
+          "t": 21.92,
+          "text": "hits"
+        },
+        {
+          "t": 22.22,
+          "text": "$499"
+        },
+        {
+          "t": 22.96,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 23.58,
+      "end": 24.5,
+      "text": "month. Here's why.",
+      "words": [
+        {
+          "t": 23.58,
+          "text": "month."
+        },
+        {
+          "t": 24.02,
+          "text": "Here's"
+        },
+        {
+          "t": 24.32,
+          "text": "why."
+        }
+      ]
+    },
+    {
+      "start": 24.82,
+      "end": 25.22,
+      "text": "This kind of",
+      "words": [
+        {
+          "t": 24.82,
+          "text": "This"
+        },
+        {
+          "t": 24.96,
+          "text": "kind"
+        },
+        {
+          "t": 25.12,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 25.22,
+      "end": 25.98,
+      "text": "AI is expensive",
+      "words": [
+        {
+          "t": 25.22,
+          "text": "AI"
+        },
+        {
+          "t": 25.38,
+          "text": "is"
+        },
+        {
+          "t": 25.6,
+          "text": "expensive"
+        }
+      ]
+    },
+    {
+      "start": 25.98,
+      "end": 26.94,
+      "text": "to run. Meta",
+      "words": [
+        {
+          "t": 25.98,
+          "text": "to"
+        },
+        {
+          "t": 26.2,
+          "text": "run."
+        },
+        {
+          "t": 26.76,
+          "text": "Meta"
+        }
+      ]
+    },
+    {
+      "start": 26.94,
+      "end": 28.42,
+      "text": "poured $14.3 billion",
+      "words": [
+        {
+          "t": 26.94,
+          "text": "poured"
+        },
+        {
+          "t": 27.16,
+          "text": "$14.3"
+        },
+        {
+          "t": 28.08,
+          "text": "billion"
+        }
+      ]
+    },
+    {
+      "start": 28.42,
+      "end": 29.78,
+      "text": "into scale AI",
+      "words": [
+        {
+          "t": 28.42,
+          "text": "into"
+        },
+        {
+          "t": 29.08,
+          "text": "scale"
+        },
+        {
+          "t": 29.46,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 29.78,
+      "end": 30.94,
+      "text": "chasing compute and",
+      "words": [
+        {
+          "t": 29.78,
+          "text": "chasing"
+        },
+        {
+          "t": 30.2,
+          "text": "compute"
+        },
+        {
+          "t": 30.6,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 30.94,
+      "end": 31.42,
+      "text": "it wants its",
+      "words": [
+        {
+          "t": 30.94,
+          "text": "it"
+        },
+        {
+          "t": 31.06,
+          "text": "wants"
+        },
+        {
+          "t": 31.26,
+          "text": "its"
+        }
+      ]
+    },
+    {
+      "start": 31.42,
+      "end": 32.34,
+      "text": "heaviest users to",
+      "words": [
+        {
+          "t": 31.42,
+          "text": "heaviest"
+        },
+        {
+          "t": 31.8,
+          "text": "users"
+        },
+        {
+          "t": 32.14,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 32.34,
+      "end": 32.94,
+      "text": "help cover the",
+      "words": [
+        {
+          "t": 32.34,
+          "text": "help"
+        },
+        {
+          "t": 32.56,
+          "text": "cover"
+        },
+        {
+          "t": 32.78,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 32.94,
+      "end": 34.06,
+      "text": "bill. Now, Meta",
+      "words": [
+        {
+          "t": 32.94,
+          "text": "bill."
+        },
+        {
+          "t": 33.42,
+          "text": "Now,"
+        },
+        {
+          "t": 33.86,
+          "text": "Meta"
+        }
+      ]
+    },
+    {
+      "start": 34.06,
+      "end": 34.64,
+      "text": "says the free",
+      "words": [
+        {
+          "t": 34.06,
+          "text": "says"
+        },
+        {
+          "t": 34.24,
+          "text": "the"
+        },
+        {
+          "t": 34.44,
+          "text": "free"
+        }
+      ]
+    },
+    {
+      "start": 34.64,
+      "end": 35.58,
+      "text": "version isn't going",
+      "words": [
+        {
+          "t": 34.64,
+          "text": "version"
+        },
+        {
+          "t": 35.0,
+          "text": "isn't"
+        },
+        {
+          "t": 35.4,
+          "text": "going"
+        }
+      ]
+    },
+    {
+      "start": 35.58,
+      "end": 36.6,
+      "text": "anywhere. This is",
+      "words": [
+        {
+          "t": 35.58,
+          "text": "anywhere."
+        },
+        {
+          "t": 36.32,
+          "text": "This"
+        },
+        {
+          "t": 36.48,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 36.6,
+      "end": 37.52,
+      "text": "all extra, not",
+      "words": [
+        {
+          "t": 36.6,
+          "text": "all"
+        },
+        {
+          "t": 36.74,
+          "text": "extra,"
+        },
+        {
+          "t": 37.42,
+          "text": "not"
+        }
+      ]
+    },
+    {
+      "start": 37.52,
+      "end": 38.6,
+      "text": "a replacement. But",
+      "words": [
+        {
+          "t": 37.52,
+          "text": "a"
+        },
+        {
+          "t": 37.62,
+          "text": "replacement."
+        },
+        {
+          "t": 38.4,
+          "text": "But"
+        }
+      ]
+    },
+    {
+      "start": 38.6,
+      "end": 38.92,
+      "text": "look at the",
+      "words": [
+        {
+          "t": 38.6,
+          "text": "look"
+        },
+        {
+          "t": 38.74,
+          "text": "at"
+        },
+        {
+          "t": 38.84,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 38.92,
+      "end": 39.7,
+      "text": "cheapest app on",
+      "words": [
+        {
+          "t": 38.92,
+          "text": "cheapest"
+        },
+        {
+          "t": 39.22,
+          "text": "app"
+        },
+        {
+          "t": 39.54,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 39.7,
+      "end": 40.46,
+      "text": "that whole list.",
+      "words": [
+        {
+          "t": 39.7,
+          "text": "that"
+        },
+        {
+          "t": 39.82,
+          "text": "whole"
+        },
+        {
+          "t": 40.06,
+          "text": "list."
+        }
+      ]
+    },
+    {
+      "start": 40.68,
+      "end": 41.68,
+      "text": "It's WhatsApp. This",
+      "words": [
+        {
+          "t": 40.68,
+          "text": "It's"
+        },
+        {
+          "t": 40.84,
+          "text": "WhatsApp."
+        },
+        {
+          "t": 41.54,
+          "text": "This"
+        }
+      ]
+    },
+    {
+      "start": 41.68,
+      "end": 42.1,
+      "text": "is the same",
+      "words": [
+        {
+          "t": 41.68,
+          "text": "is"
+        },
+        {
+          "t": 41.8,
+          "text": "the"
+        },
+        {
+          "t": 41.9,
+          "text": "same"
+        }
+      ]
+    },
+    {
+      "start": 42.1,
+      "end": 43.14,
+      "text": "WhatsApp whose founders",
+      "words": [
+        {
+          "t": 42.1,
+          "text": "WhatsApp"
+        },
+        {
+          "t": 42.52,
+          "text": "whose"
+        },
+        {
+          "t": 42.76,
+          "text": "founders"
+        }
+      ]
+    },
+    {
+      "start": 43.14,
+      "end": 43.96,
+      "text": "built the company",
+      "words": [
+        {
+          "t": 43.14,
+          "text": "built"
+        },
+        {
+          "t": 43.5,
+          "text": "the"
+        },
+        {
+          "t": 43.62,
+          "text": "company"
+        }
+      ]
+    },
+    {
+      "start": 43.96,
+      "end": 45.04,
+      "text": "on one promise.",
+      "words": [
+        {
+          "t": 43.96,
+          "text": "on"
+        },
+        {
+          "t": 44.24,
+          "text": "one"
+        },
+        {
+          "t": 44.56,
+          "text": "promise."
+        }
+      ]
+    },
+    {
+      "start": 45.44,
+      "end": 46.38,
+      "text": "No ads, no",
+      "words": [
+        {
+          "t": 45.44,
+          "text": "No"
+        },
+        {
+          "t": 45.58,
+          "text": "ads,"
+        },
+        {
+          "t": 46.22,
+          "text": "no"
+        }
+      ]
+    },
+    {
+      "start": 46.38,
+      "end": 47.62,
+      "text": "games, no gimmicks.",
+      "words": [
+        {
+          "t": 46.38,
+          "text": "games,"
+        },
+        {
+          "t": 47.04,
+          "text": "no"
+        },
+        {
+          "t": 47.18,
+          "text": "gimmicks."
+        }
+      ]
+    },
+    {
+      "start": 47.88,
+      "end": 48.3,
+      "text": "They kept the",
+      "words": [
+        {
+          "t": 47.88,
+          "text": "They"
+        },
+        {
+          "t": 47.98,
+          "text": "kept"
+        },
+        {
+          "t": 48.16,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 48.3,
+      "end": 48.78,
+      "text": "note on their",
+      "words": [
+        {
+          "t": 48.3,
+          "text": "note"
+        },
+        {
+          "t": 48.48,
+          "text": "on"
+        },
+        {
+          "t": 48.64,
+          "text": "their"
+        }
+      ]
+    },
+    {
+      "start": 48.78,
+      "end": 49.82,
+      "text": "desk. Last year,",
+      "words": [
+        {
+          "t": 48.78,
+          "text": "desk."
+        },
+        {
+          "t": 49.38,
+          "text": "Last"
+        },
+        {
+          "t": 49.54,
+          "text": "year,"
+        }
+      ]
+    },
+    {
+      "start": 49.98,
+      "end": 50.76,
+      "text": "WhatsApp broke that",
+      "words": [
+        {
+          "t": 49.98,
+          "text": "WhatsApp"
+        },
+        {
+          "t": 50.22,
+          "text": "broke"
+        },
+        {
+          "t": 50.56,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 50.76,
+      "end": 51.58,
+      "text": "promise and started",
+      "words": [
+        {
+          "t": 50.76,
+          "text": "promise"
+        },
+        {
+          "t": 51.06,
+          "text": "and"
+        },
+        {
+          "t": 51.26,
+          "text": "started"
+        }
+      ]
+    },
+    {
+      "start": 51.58,
+      "end": 52.8,
+      "text": "running ads. This",
+      "words": [
+        {
+          "t": 51.58,
+          "text": "running"
+        },
+        {
+          "t": 51.84,
+          "text": "ads."
+        },
+        {
+          "t": 52.46,
+          "text": "This"
+        }
+      ]
+    },
+    {
+      "start": 52.8,
+      "end": 53.58,
+      "text": "week, it's charging",
+      "words": [
+        {
+          "t": 52.8,
+          "text": "week,"
+        },
+        {
+          "t": 53.16,
+          "text": "it's"
+        },
+        {
+          "t": 53.28,
+          "text": "charging"
+        }
+      ]
+    },
+    {
+      "start": 53.58,
+      "end": 54.5,
+      "text": "you directly too.",
+      "words": [
+        {
+          "t": 53.58,
+          "text": "you"
+        },
+        {
+          "t": 53.78,
+          "text": "directly"
+        },
+        {
+          "t": 54.12,
+          "text": "too."
+        }
+      ]
+    },
+    {
+      "start": 54.78,
+      "end": 55.68,
+      "text": "Simply put, free",
+      "words": [
+        {
+          "t": 54.78,
+          "text": "Simply"
+        },
+        {
+          "t": 54.98,
+          "text": "put,"
+        },
+        {
+          "t": 55.56,
+          "text": "free"
+        }
+      ]
+    },
+    {
+      "start": 55.68,
+      "end": 56.56,
+      "text": "was never permanent.",
+      "words": [
+        {
+          "t": 55.68,
+          "text": "was"
+        },
+        {
+          "t": 55.96,
+          "text": "never"
+        },
+        {
+          "t": 56.16,
+          "text": "permanent."
+        }
+      ]
+    },
+    {
+      "start": 56.86,
+      "end": 57.38,
+      "text": "It was only",
+      "words": [
+        {
+          "t": 56.86,
+          "text": "It"
+        },
+        {
+          "t": 56.92,
+          "text": "was"
+        },
+        {
+          "t": 57.08,
+          "text": "only"
+        }
+      ]
+    },
+    {
+      "start": 57.38,
+      "end": 58.5,
+      "text": "phase one. Comment",
+      "words": [
+        {
+          "t": 57.38,
+          "text": "phase"
+        },
+        {
+          "t": 57.72,
+          "text": "one."
+        },
+        {
+          "t": 58.32,
+          "text": "Comment"
+        }
+      ]
+    },
+    {
+      "start": 58.5,
+      "end": 59.2,
+      "text": "Meta and I'll",
+      "words": [
+        {
+          "t": 58.5,
+          "text": "Meta"
+        },
+        {
+          "t": 58.86,
+          "text": "and"
+        },
+        {
+          "t": 59.02,
+          "text": "I'll"
+        }
+      ]
+    },
+    {
+      "start": 59.2,
+      "end": 59.88,
+      "text": "break down which",
+      "words": [
+        {
+          "t": 59.2,
+          "text": "break"
+        },
+        {
+          "t": 59.36,
+          "text": "down"
+        },
+        {
+          "t": 59.56,
+          "text": "which"
+        }
+      ]
+    },
+    {
+      "start": 59.88,
+      "end": 60.7,
+      "text": "tier is actually",
+      "words": [
+        {
+          "t": 59.88,
+          "text": "tier"
+        },
+        {
+          "t": 60.16,
+          "text": "is"
+        },
+        {
+          "t": 60.36,
+          "text": "actually"
+        }
+      ]
+    },
+    {
+      "start": 60.7,
+      "end": 61.52,
+      "text": "worth paying for.",
+      "words": [
+        {
+          "t": 60.7,
+          "text": "worth"
+        },
+        {
+          "t": 60.96,
+          "text": "paying"
+        },
+        {
+          "t": 61.24,
+          "text": "for."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "format": "news",
+  "script": "The three biggest apps on your phone just put out a price list.\n\nIt's called Meta One, live everywhere this week.\n\nFirst, Instagram Plus and Facebook Plus cost three ninety-nine a month, and WhatsApp Plus runs two ninety-nine.\n\nThen there's Meta AI itself: Core is seven ninety-nine, and Premium is nineteen ninety-nine, for more generation and longer reasoning on hard questions.\n\nNot to mention, business pages climb even higher: Max hits four hundred ninety-nine dollars a month.\n\nHere's why: this kind of AI is expensive to run. Meta poured fourteen point three billion dollars into Scale AI chasing compute, and it wants its heaviest users to help cover the bill.\n\nNow, Meta says the free version isn't going anywhere. This is all extra, not a replacement.\n\nBut look at the cheapest app on that whole list: it's WhatsApp.\n\nThis is the same WhatsApp whose founders built the company on one promise: no ads, no games, no gimmicks. They kept the note on their desk.\n\nLast year, WhatsApp broke that promise and started running ads. This week, it's charging you directly too.\n\nSimply put, free was never permanent. It was only phase one.\n\nComment META and I'll break down which tier's actually worth paying for.",
+  "approval": {
+    "sha256": "36fac39ae779688f472b6af29df9670ba7304510c68809781e3f3627a5d7a876",
+    "approvedAt": "2026-09-16T05:20:52+00:00",
+    "words": 204,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

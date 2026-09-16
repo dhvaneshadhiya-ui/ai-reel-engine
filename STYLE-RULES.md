@@ -7692,3 +7692,100 @@ highlight-driven zoom to hide content the card doesn't need to show. A
 receipt card is allowed to show less of the page than was captured; it is
 not allowed to show a truncated slice of something that would have
 continued off-screen.
+
+## 2026-09-16 — meta-one-subscription: two treatments logged, one gate crash fixed
+
+**Raw note (crash).** `reel_gates.py` raised `AttributeError: 'str' object
+has no attribute 'get'` mid-check on a completely ordinary manifest — every
+asset had `"capture": "mobile"`, exactly what G61's own advice message
+(2026-09-08) tells you to write. Renders as a crash, not a gate finding, so
+nothing about it says "your manifest is wrong."
+
+**Root cause.** `capture` is one field name serving two unrelated
+conventions from two different dates. The older one (feeding G41/G42's
+tier-and-provenance loop) is `capture.mjs`'s sidecar shape, a DICT:
+`{mobile, tier, viewport, desktopReason}`. G61, added later to catch a
+narrower case (a portrait desktop capture, which passes G29 but still puts
+desktop-sized type on a phone), reads the same key but expects a plain
+STRING — `"mobile"` / `"desktop"` / `"handmade"` — and says so in its own
+fix message. Nothing reconciled the two when G61 shipped. It stayed
+invisible because the existing G61 self-test never gives a SCENE an
+`assetId` (assetId-less is the shape the compiler actually emits for
+sourcereads), so the G41 loop — keyed on `assetId` — never ran against
+those fixtures. Coverage existed for "G61 fires" and "G61 stays quiet"; none
+existed for "a real manifest, shaped the way G61 tells you to shape it,
+survives the OTHER gate that reads the same field."
+
+**Distilled rule.** When two gates read the same manifest/scene key, a
+self-test for each in isolation is not enough — add one that runs the
+combination an author will actually produce by following ONE gate's advice,
+and assert the other gate doesn't crash on it. Fixed here by making the
+G41/G42 reader tolerate a non-dict `capture` (treat it as "no sidecar
+detail," which is true), and a regression case added to `test_gates.py`
+that builds exactly that manifest shape.
+
+**Raw note (pacing).** The ElevenLabs v3 read for this script came back at
+3.31 w/s against the 2.35–2.75 band `vo_external.py` checks — 61.7s of
+audio for 204 words that this voice normally delivers in 74–87s. The tool's
+own advice is "regenerate at a different speed, don't time-stretch," but
+there is no speed parameter on this call, and `vo_tagged.py`'s docstring
+already records that the one other lever tried (ellipsis pace marks) was
+measured and rejected on 2026-09-02: same script, same voice, same model,
+pace marks in vs out moved nothing (47.60s → 46.48s, slightly FASTER, not
+slower). That finding is a script-time fact, not a render-time one — it
+should have been checked at read-generation before spending credits a
+second time.
+
+**Distilled rule.** Before regenerating a fast/slow ElevenLabs take, re-read
+`vo_tagged.py`'s pace section first: if the read is already this repo's only
+known lever (pace marks) or a straightforward parameter (there is none), a
+second generation of the *same words* is very likely to reproduce the same
+pace, since what actually governs it is sentence length decided at script
+time. Spend the regenerate only when the total runtime actually falls
+outside the format's band (60–80s for `news`); a fast w/s reading that still
+lands inside the runtime band is a rhythm observation, not a defect worth a
+second ~1,270-credit spend.
+
+**Raw note (duplicate frames).** The first render failed `lint_frames.py`
+with 6 blocking `[DUPLICATE]` flags, all consecutive facecam-to-facecam
+scene pairs — two right at the hook, four in the closing CTA run. Every
+pair was genuinely one continuous slice of the same avatar take with no
+receipt, graphic, or zoom change between them; the shot plan had simply
+drawn a scene boundary at every sentence end regardless of whether anything
+on screen actually changed there.
+
+**Root cause.** `FootageScene` defaults `zoomDir` to `"in"`, but the zoom
+resets to 1.0 at the START of every scene — so two adjacent facecam scenes
+of the same person mid-sentence look nearly identical at the cut point
+regardless of the default Ken Burns motion, because both restart from the
+same base framing. A scene boundary with no visual change behind it is not
+a cut, it is bookkeeping pretending to be one.
+
+**Distilled rule.** When two adjacent shot-plan entries are both plain
+facecam with no manifest asset, merge them into one shot (delete the
+in-between `start_phrase` boundary) rather than leaving two same-looking
+scenes back to back — this is what `lint_frames.py`'s `[DUPLICATE]` flag is
+actually for, and it is right more often than it's a false positive. The
+merged scene's `durationSec` will trip the (advisory) G04 "held too long"
+note; that trade is correct — an honest 9-11s single hold beats two fake
+cuts the viewer's eye catches as a stutter. This reel merged 20 shots down
+to 13 this way and cleared every DUPLICATE flag; the honesty-beat-into-turn
+pair ("This is all extra, not a replacement." → "But look at the cheapest
+app...") and the four-line CTA run ("This week, it's charging..." through
+the comment-keyword ask) were exactly the stretches with nothing new to
+show, and forcing a fake cut there would have been worse than admitting it's
+one shot.
+
+**Treatment used, log for next reel:** `receipt` ×6 (two official Meta
+in-app pricing-card screenshots reused across three price beats, one CNBC
+headline+key-point pair via `sourceread`→`keepReceipt` override, one
+Fortune headline, one short Fortune quote paragraph under
+`allowSmallReceipt`), facecam ×7 covering hook/name-it, two connective
+beats, the honesty-beat-into-turn, and the closing charging→payoff→CTA run.
+No specsheet/statcard MG — every number had a real screenshot behind it, so
+building an invented card would have been the weaker receipt, not a
+stronger one. Facecam landed at 54% of runtime (news band is 10-20%,
+advisory only) — a deliberate choice for a myth-bust angle that leans on
+direct-address commentary between proof beats, not a defect; noted here so
+the NEXT reel with a similar analytical/turn structure doesn't have to
+re-derive whether that's acceptable.

@@ -1541,6 +1541,40 @@ expect_manifest(
      "banned_assets": ["clip-banned"]},
     "G42", "a fallback-tier source", want_text="fallback")
 
+# `capture` IS OVERLOADED, AND THE TWO SHAPES COLLIDE (found 2026-09-16).
+# This block reads capture.mjs's sidecar convention — a DICT, {mobile, tier,
+# viewport, desktopReason} — off the manifest asset. G61 (below) reads the
+# SAME field but in ITS OWN convention, a plain STRING ("mobile"/"desktop"/
+# "handmade"), and G61's own advice message tells the author to write exactly
+# that string onto the manifest asset. A scene with an assetId matching that
+# asset then hits this block with a string where a dict was assumed, and
+# `cap.get("tier")` raised AttributeError — a real crash, not a gate finding.
+# It stayed invisible because the existing G61 self-test below never gives a
+# SCENE an assetId (assetId-less is the shape the compiler emits for G61's own
+# purposes), so this block's per-asset loop never ran on those fixtures.
+try:
+    _adv2 = check_beats(
+        copy.deepcopy(BASE), vo_end=vo_end_of(BASE),
+        manifest={"assets": [{"id": "clip-b", "tier": "official",
+                               "capture": "mobile"},
+                              {"id": "clip-banned"}],
+                  "banned_assets": ["clip-banned"]},
+        vo_words=VO_WORDS)
+    _hits2 = [a for a in _adv2 if "G41" in a or "G42" in a]
+except AttributeError as _e:
+    print(f"  FAIL G41/G42 crashed on a manifest asset with a STRING "
+          f"`capture` (G61's own documented shape): {_e}")
+    raise SystemExit(1)
+except GateError as _e:
+    _hits2 = [a for a in (list(_e.advice) + [str(_e)])
+              if "G41" in str(a) or "G42" in str(a)]
+if _hits2:
+    print(f"  FAIL G41/G42 fired on a STRING `capture` value it cannot "
+          f"parse as a sidecar dict: {_hits2[0][:90]}")
+    raise SystemExit(1)
+_counted("G41/G42 silent — a manifest `capture` string (G61's shape) does "
+         "not crash or misfire the sidecar-dict reader")
+
 
 
 # --- G54: a wordcascade off its field contract renders nothing --------------

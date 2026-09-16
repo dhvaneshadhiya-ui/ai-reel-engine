@@ -2518,6 +2518,17 @@ def check_beats(beats: dict, vo_end: float | None = None,
         for aid in dict.fromkeys(used):
             a = by_id.get(aid) or {}
             cap = a.get("capture") or {}
+            # `capture` is overloaded: capture.mjs's sidecar convention (read
+            # here) is a DICT ({mobile, tier, viewport, desktopReason}), but
+            # G61's manifest-level convention (2026-09-08) is a plain STRING
+            # ("mobile"/"desktop"/"handmade") — and G61's own advice message
+            # tells the author to add exactly that string. Following it
+            # crashed this block with AttributeError, since a string has no
+            # .get(). A string capture value carries no sidecar detail, so
+            # treat it as "no structured capture info" here rather than
+            # guessing its shape.
+            if not isinstance(cap, dict):
+                cap = {}
             tier = a.get("tier") or cap.get("tier")
             if tier:
                 tiers[tier] = tiers.get(tier, 0) + 1
