@@ -217,6 +217,13 @@ silently disabled the frame checks for weeks.
   one. Only the topic is required to start. Blocks are chosen per topic — the
   look is one family, the layout is never a template.
   Reference build: jobs/five-free-ai-tools.
+  **Avatar credits: generate ONLY the seconds the face is on screen.** The
+  voice is ONE ElevenLabs track for the whole reel; HeyGen is called once per
+  presenter slice (hook circle, CTA circle), each driven by that exact VO
+  slice (`create_video_from_avatar` + uploaded audio asset). Never a full-length
+  master for this format — five-free-ai-tools cost 10 credits (6s + 3.5s) where
+  a face-led master of the same script costs ~50-60. The "one continuous
+  master" note in config.json applies to face-led reels only.
 - **Capture web sources on MOBILE.** `tools/capture.mjs` defaults to it
   (1080x2340). A desktop grab fills 42% of a 9:16 frame with unreadable text.
   `--desktop` is the exception, not the default. Gate G29.
