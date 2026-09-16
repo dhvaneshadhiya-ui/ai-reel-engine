@@ -843,7 +843,7 @@ def run() -> int:
                    "this one runs on your own server and costs nothing")
     sheet = {"scenes": [
         {"type": "footage", "durationSec": 2.0},
-        {"type": "stage", "durationSec": 4.0, "moves": [
+        {"type": "stage", "durationSec": 8.0, "moves": [
             {"do": "fill", "on": "runs on your own server"},
             {"do": "stamp", "on": "costs nothing"}]},
     ]}
@@ -854,6 +854,22 @@ def run() -> int:
     ok("the resolved second is measured from the scene, not the reel",
        moves[0]["at"] == 2.8)
     ok("a later move resolves later", moves[1]["at"] > moves[0]["at"])
+    same = {"scenes": [
+        {"type": "footage", "durationSec": 2.0},
+        {"type": "stage", "durationSec": 6.0, "moves": [
+            {"do": "count", "on": "costs nothing"},
+            {"do": "arrive", "on": "costs nothing"},
+            {"do": "fill", "on": "runs on your own server"}]},
+    ]}
+    left = csp.resolve_stage_timings(same, words)
+    sm = same["scenes"][1]["moves"]
+    ok("two moves may share a phrase, and moves need not be in spoken order",
+       not left and sm[0]["at"] == sm[1]["at"] and sm[2]["at"] < sm[0]["at"])
+    late = {"scenes": [{"type": "stage", "durationSec": 1.0,
+                        "moves": [{"do": "stamp", "on": "costs nothing"}]}]}
+    left = csp.resolve_stage_timings(late, words)
+    ok("words spoken after the scene has ended are reported, not timed past the cut",
+       len(left) == 1 and "after this scene ends" in left[0])
     bad = {"scenes": [{"type": "stage", "durationSec": 3.0,
                        "moves": [{"do": "fill", "on": "a line nobody ever says"}]}]}
     left = csp.resolve_stage_timings(bad, words)

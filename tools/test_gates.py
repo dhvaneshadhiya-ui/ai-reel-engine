@@ -1037,6 +1037,22 @@ if any("G67" in str(a) and "carrying every idea" in str(a) for a in _adv):
     raise SystemExit(1)
 _counted("G67 silent — a list genre may repeat its picture item after item")
 
+# A hand-written manifest may give `capture` as the string "mobile". The G41
+# check used to call .get() on it and crash, which reports nothing (2026-09-16).
+_s = copy.deepcopy(BASE)
+_s["scenes"][3]["assetId"] = "clip-b"
+_man = copy.deepcopy(MANIFEST)
+for _a in _man["assets"]:
+    _a["capture"] = "mobile"
+try:
+    check_beats(_s, vo_end=vo_end_of(_s), manifest=_man, vo_words=VO_WORDS)
+except GateError:
+    pass
+except (AttributeError, TypeError) as _e:
+    print(f"  FAIL a string capture record crashed the gates: {_e}")
+    raise SystemExit(1)
+_counted("G41 reads a shorthand capture record instead of crashing on it")
+
 # ── THE GUARD THAT WOULD HAVE CAUGHT ALL THREE OF TODAY'S BUGS ──────────────
 #
 # 2026-09-08 turned up three gates measuring the wrong thing, and every one of

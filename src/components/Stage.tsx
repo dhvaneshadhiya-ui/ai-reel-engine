@@ -150,8 +150,8 @@ const Head: React.FC<{ p: Pt[]; draw: number; color: string; size: number }> = (
 // card type scales with the card's width (first stills, 2026-09-15: a flat 44px
 // left a 600px card holding a whisper and the frame reading empty)
 const titlePx = (e: StageElement, aw: number) =>
-  Math.round(Math.min(100, Math.max(58, e.w * aw * 0.15)) * (e.size ?? 1));
-const linePx = (e: StageElement, aw: number) => Math.max(30, Math.round(titlePx(e, aw) * 0.52));
+  Math.round(Math.min(110, Math.max(72, e.w * aw * 0.16)) * (e.size ?? 1));
+const linePx = (e: StageElement, aw: number) => Math.max(38, Math.round(titlePx(e, aw) * 0.52));
 const padPx = (e: StageElement, aw: number) => Math.round(titlePx(e, aw) * 0.42);
 
 // rough height of an element, for anchoring lines to its edges
@@ -188,7 +188,9 @@ export const Stage: React.FC<{ scene: StageProps }> = ({ scene }) => {
 
   const split = scene.layout === "split";
   const AW = W;
-  const AH = split ? SEAM : FULL_H;
+  // no captions on this scene -> nothing to keep clear of but the platform's own
+  // account row (0.835 of 1920). The first real reel's stills sat in the top half.
+  const AH = split ? SEAM : (scene as { hideCaptions?: boolean }).hideCaptions ? 1600 : FULL_H;
   const set = scene.set ?? "light";
   const S = set === "dark"
     ? { bg: "radial-gradient(120% 90% at 50% 15%, #1E2433 0%, #10131B 65%, #07080C 100%)",
@@ -370,11 +372,11 @@ export const Stage: React.FC<{ scene: StageProps }> = ({ scene }) => {
         minimumFractionDigits: e.decimals ?? 0, maximumFractionDigits: e.decimals ?? 0 });
       body = (
         <div style={{ textAlign: "center" }}>
-          <div style={{ font: `800 150px/1 ${DISPLAY}`, fontVariantNumeric: "tabular-nums",
+          <div style={{ font: `800 190px/1 ${DISPLAY}`, fontVariantNumeric: "tabular-nums",
             color: S.dark ? theme.accentOnDark : theme.accentInk, transform: `scale(${1 + 0.08 * land})` }}>
             {`${e.prefix ?? ""}${fmt}${e.suffix ?? ""}`}
           </div>
-          {e.label ? <div style={{ font: `600 38px ${UI}`, color: S.ink, marginTop: 10 }}>{e.label}</div> : null}
+          {e.label ? <div style={{ font: `600 50px ${UI}`, color: S.ink, marginTop: 12 }}>{e.label}</div> : null}
         </div>
       );
     }
@@ -399,7 +401,7 @@ export const Stage: React.FC<{ scene: StageProps }> = ({ scene }) => {
         {sk > 0 ? (
           <svg viewBox="0 0 100 100" style={{
             position: "absolute", left: "50%", top: "50%", zIndex: 4, overflow: "visible",
-            width: Math.min(w, h) * 1.05, height: Math.min(w, h) * 1.05,
+            width: Math.min(w, h * 1.35), height: Math.min(w, h * 1.35),
             transform: `translate(-50%, -50%) scale(${1.6 - 0.6 * sk})`, opacity: Math.min(1, sk * 2),
             filter: "drop-shadow(0 10px 20px rgba(229,50,45,0.35))",
           }}>

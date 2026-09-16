@@ -1727,7 +1727,10 @@ def check_beats(beats: dict, vo_end: float | None = None,
     STAGE_KINDS = {"card", "image", "text", "number"}
     STAGE_VERBS = {"arrive", "exit", "dim", "focus", "highlight", "stamp",
                    "strike", "count", "connect", "fill"}
-    STAGE_STILL = (".png", ".jpg", ".jpeg", ".webp", ".avif")
+    # .svg included (2026-09-16): a stage image is an <Img>, and Chrome renders
+    # SVG in one — which is how brand logos reach a card without a rasteriser
+    # on the machine. The scene-level STILL_ONLY tables are separate.
+    STAGE_STILL = (".png", ".jpg", ".jpeg", ".webp", ".avif", ".svg")
     for i, sc in enumerate(scenes):
         if sc.get("type") != "stage":
             continue
@@ -2143,7 +2146,10 @@ def check_beats(beats: dict, vo_end: float | None = None,
                    "logoassemble", "brandhook", "logobeat", "osshook"},
         "comedic": None,
         # the thing on screen makes the sound — only where there IS a thing
-        "action": {"sourceread", "receipt", "annotatezoom", "counter", "statcard",
+        # `stage` added 2026-09-16: the animated scene is where things land,
+        # count and get marked — the action role's home, flagged by its own
+        # list on the first reel to use both
+        "action": {"stage", "sourceread", "receipt", "annotatezoom", "counter", "statcard",
                    "chart", "specsheet", "timeline", "typecard", "promptcard",
                    "terminal", "floatcard", "deviceframe", "xpost", "checklist",
                    "uidialog", "settingspane", "screenstep"},
@@ -2834,6 +2840,13 @@ def check_beats(beats: dict, vo_end: float | None = None,
         for aid in dict.fromkeys(used):
             a = by_id.get(aid) or {}
             cap = a.get("capture") or {}
+            # a hand-written manifest may say "capture": "mobile" — read the
+            # shorthand instead of crashing on it (2026-09-16: the gate died on
+            # `.get` of a string and reported nothing at all)
+            if isinstance(cap, str):
+                cap = {"mobile": cap.strip().lower() == "mobile"}
+            elif not isinstance(cap, dict):
+                cap = {}
             tier = a.get("tier") or cap.get("tier")
             if tier:
                 tiers[tier] = tiers.get(tier, 0) + 1

@@ -465,24 +465,37 @@ def resolve_stage_timings(beats: dict, words: list[dict[str, Any]]) -> list[str]
     your own server"} — which is the only timing that stays true when the
     voiceover is re-cut. Returns the moves it could not resolve; G65 blocks any
     that survive, because an unresolved move would land at 0 (2026-09-16).
+
+    Each move searches from ITS SCENE'S first word, not from wherever the last
+    move stopped: two moves may share a phrase (a card arrives AND its number
+    counts on "50 credits") and moves need not be listed in spoken order. The
+    first build of this carried one forward cursor through every move, and the
+    first real reel lost five moves to it the same day. A match spoken after the
+    scene has ended is reported, not silently timed past the cut.
     """
-    cursor = 0
-    at_t = 0.0
     unresolved: list[str] = []
+    at_t = 0.0
     for index, scene in enumerate(beats.get("scenes") or []):
+        dur = float(scene.get("durationSec") or 0)
+        first = next((k for k, w in enumerate(words) if float(w["start"]) >= at_t - 0.05), len(words))
         for move in (scene.get("moves") or []) if scene.get("type") == "stage" else []:
             phrase = str(move.get("on") or "").strip()
             if not phrase:
                 continue
+            label = f"scene {index:02d} move {move.get('do')}"
             try:
-                first, last = find_phrase(
-                    words, phrase, cursor, f"scene {index:02d} move {move.get('do')}")
+                hit, _ = find_phrase(words, phrase, first, label)
             except SystemExit as exc:      # find_phrase exits with its own detail
                 unresolved.append(f"scene {index:02d} `{move.get('do')}` on {phrase!r}: {exc}")
                 continue
-            cursor = last
-            move["at"] = max(0.0, round(float(words[first]["start"]) - at_t, 2))
-        at_t += float(scene.get("durationSec") or 0)
+            spoken = float(words[hit]["start"])
+            if dur and spoken >= at_t + dur:
+                unresolved.append(
+                    f"scene {index:02d} `{move.get('do')}` on {phrase!r}: first spoken at "
+                    f"{spoken:.2f}s, after this scene ends at {at_t + dur:.2f}s")
+                continue
+            move["at"] = max(0.0, round(spoken - at_t, 2))
+        at_t += dur
     return unresolved
 
 
@@ -1023,6 +1036,8 @@ def main() -> None:
         "height": 1920,
         "style": locked_style(engine),
         "audio": audio_rel,
+        # the animated treatment's presenter plan (2026-09-16); G06/G17 read it
+        **({"facePlan": plan["facePlan"]} if plan.get("facePlan") else {}),
         "captionStyle": locked_caption_style(engine),
         "emphasis": plan.get("emphasis", []),
         "scenes": scenes,
