@@ -206,10 +206,16 @@ silently disabled the frame checks for weeks.
   background swallows. **Trigger:** the user says "animated format" (or
   "carousel style" / "like the free AI tools reel"). Defaults unless they say
   otherwise: opens on a slide with the presenter in a corner circle, ends on
-  a CTA end card (`cta` slide: XL "Comment [[KEYWORD]]", what the DM delivers,
-  the items' logos; presenter in the circle), music on, no credits, no series label or page counter. Ask only what
-  is missing: topic, CTA keyword + what the DM delivers. Blocks are chosen per
-  topic — the look is one family, the layout is never a template.
+  a CTA end card (`cta` slide: the ask at XL size with its one action word on
+  the yellow pill, a line saying what the viewer gets, a supporting picture;
+  presenter in the circle), music on, no credits, no series label or page
+  counter. **The CTA is NOT always comment-for-a-DM** (user, 2026-09-16): pick
+  the ask the story earns — follow for part 2, save this for later, share with
+  someone who needs it, answer a question in the comments, link in bio, a
+  comment keyword with a DM (only then does giveaway.md exist), or no CTA at
+  all — and show it in the script for approval; use the user's if they name
+  one. Only the topic is required to start. Blocks are chosen per topic — the
+  look is one family, the layout is never a template.
   Reference build: jobs/five-free-ai-tools.
 - **Capture web sources on MOBILE.** `tools/capture.mjs` defaults to it
   (1080x2340). A desktop grab fills 42% of a 9:16 frame with unreadable text.

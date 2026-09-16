@@ -171,10 +171,13 @@ def main() -> None:
         engine / f"jobs/{slug}/brief.json",
         json.dumps(brief, indent=2, ensure_ascii=False) + "\n",
     )
-    write_new(
-        engine / f"jobs/{slug}/giveaway.md",
-        f"# {args.topic}\n\nResource promised for comment keyword **{keyword}**.\n",
-    )
+    # a DM file exists only for a comment-keyword CTA — most asks (follow, save,
+    # share, a question) promise no delivery (user, 2026-09-16)
+    if keyword:
+        write_new(
+            engine / f"jobs/{slug}/giveaway.md",
+            f"# {args.topic}\n\nResource promised for comment keyword **{keyword}**.\n",
+        )
     write_new(
         engine / f"public/assets/{slug}/manifest.json",
         json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
