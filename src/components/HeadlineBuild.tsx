@@ -210,6 +210,28 @@ export const HeadlineBuild: React.FC<{ spec: Headline }> = ({ spec }) => {
         )}
 
         {spec.lines.map((ln, i) => {
+          if (ln.kind === "pill") {
+            // THE SLIDE LOOK ON A FACE SCENE (2026-09-16). The carousel's own CTA
+            // card: dark rounded card, white Inter, one keyword on a yellow pill
+            // that pops a beat after the card lands.
+            const inP = interpolate(t, [ln.at, ln.at + 0.3], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+            const pop = interpolate(t, [ln.at + 0.25, ln.at + 0.5], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+            return (
+              <div key={i} style={{
+                opacity: inP, transform: `translateY(${(1 - inP) * 30}px)`,
+                background: "rgba(20,20,22,0.92)", borderRadius: 34, padding: "34px 44px",
+                font: "800 76px/1.15 Inter, -apple-system, sans-serif", color: "#FFFFFF", letterSpacing: -2,
+                boxShadow: "0 24px 60px rgba(0,0,0,0.45)", textAlign: "center",
+              }}>
+                {ln.text.split(/(\[\[[^\]]+\]\])/).filter(Boolean).map((part, k) =>
+                  part.startsWith("[[") ? (
+                    <span key={k} style={{ display: "inline-block", background: "#FFD60A", color: "#000",
+                      borderRadius: 20, padding: "0 20px", margin: "0 6px",
+                      transform: `scale(${0.75 + 0.25 * pop})`, opacity: 0.35 + 0.65 * pop }}>{part.slice(2, -2)}</span>
+                  ) : <span key={k}>{part}</span>)}
+              </div>
+            );
+          }
           // The entrance spring that used to live here is gone, not disabled:
           // it drove `opacity` and a 26px hop, and waterfall-entry.md rules out
           // both — binary opacity, and travel by weight on a power4.out whip

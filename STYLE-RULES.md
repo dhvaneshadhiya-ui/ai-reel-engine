@@ -8198,3 +8198,22 @@ What changed, and why each is now structural rather than remembered:
 Lesson for review: a 150px contact sheet is not a critic pass. Review at >=300px
 every 0.5s against the word timings, or the failures above stay invisible.
 Treatment history: slides (hero, swap, rows, tips, logo grid), presenter bookends.
+
+## 2026-09-16 (5) — five-free-ai-tools polish: 2, 4, 6, 7, 8, 9 of the review list
+
+Chosen by the user from the improvement list:
+- **Open on the picture, face in a circle.** The reel no longer opens on 2s of
+  presenter: frame 0 is the logo grid + headline, the presenter talks in a
+  300px corner circle (`slide.presenter`). G17, G38, G43 and validate_job now
+  count a slide presenter and a slide headline as the face and the words.
+- **A 3% push across every slide** so no frame is ever still.
+- **CTA card in the slide look** — headline line `kind: "pill"`: dark card, white
+  words, `[[keyword]]` on a yellow pill.
+- **The pill lands on its spoken word** (`{"do":"pill","target":"headline","on":…}`):
+  the words sit white until the voice reaches them.
+- **Slide timing measured, not borrowed.** The carousel's 11 slide videos, frame
+  differenced: first movement 0.27-0.33s; longest stretch with nothing new
+  1.27-1.67s (content), 2.93s (cover). G03 no longer judges a slide opening by
+  scene length; G04 judges a slide by its longest reveal gap (1.7s / 2.93s).
+- **A tick where a count lands**, added by the compiler. The carousel videos are
+  silent (no audio stream), so the level (0.25) is our judgement, not theirs.

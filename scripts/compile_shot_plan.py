@@ -1136,6 +1136,28 @@ def main() -> None:
         raise SystemExit("shot plan names words the voice never says:\n  "
                          + "\n  ".join(unresolved))
 
+    # A TICK WHERE A NUMBER STOPS COUNTING (2026-09-16). Slide.tsx rolls a bare
+    # number or price up over 0.9s from its `show`; the landing is the moment
+    # the number is read, so it gets a soft tick unless a cue already sits
+    # there. The carousel is silent — the level is our judgement, kept under
+    # the other action cues.
+    for scene in beats.get("scenes") or []:
+        if scene.get("type") != "slide":
+            continue
+        mv = {(m.get("do"), m.get("target")): m.get("at") for m in scene.get("moves") or []}
+        for b in scene.get("blocks") or []:
+            sides = [(b.get("side"), b["id"])] if b.get("kind") == "hero" else \
+                [(b.get("left"), f"{b['id']}.left"), (b.get("right"), f"{b['id']}.right")] if b.get("kind") == "swap" else []
+            for s, target in sides:
+                price = str((s or {}).get("price") or "")
+                if not re.fullmatch(r"\$?[0-9][0-9,]*(\.[0-9]+)?", price) or float(re.sub(r"[$,]", "", price)) == 0:
+                    continue
+                shown = mv.get(("show", target), mv.get(("show", b["id"]), 0.0)) or 0.0
+                land = round(shown + 0.9, 2)
+                cues = scene.setdefault("sfx", [])
+                if land < float(scene.get("durationSec") or 0) and not any(abs(float(c.get("at", 0)) - land) < 0.25 for c in cues):
+                    cues.append({"src": "sfx-action/tick.mp3", "at": land, "vol": 0.25})
+
     output.write_text(json.dumps(beats, indent=2, ensure_ascii=False) + "\n")
     print(f"compiled {len(scenes)} shots, {audio_end:.3f}s: {output}")
 

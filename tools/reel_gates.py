@@ -269,6 +269,23 @@ DEFAULT_FORMAT = "news"
 # everything" check is off for these; the across-reels check still applies.
 LIST_FORMATS = {"top5", "ai-tools"}
 
+# SLIDE TIMING — measured 2026-09-16 on the Carousel Playbook's own 11 slide
+# videos (saas-repos-video_1, 5.0s each, frame differencing at 30fps):
+#   first movement 0.27-0.33s on every slide;
+#   longest stretch with nothing new: 1.27-1.67s on the 10 content slides
+#   (always the settled tail), 2.93s on the cover.
+# A slide's hook and its dwell are judged by these, not by the news reel's
+# scene-length ceilings — a slide is one layout that keeps revealing.
+SLIDE_TIMING = {"first_change": 0.33, "static_max": 1.7, "cover_static_max": 2.93}
+
+
+def slide_reveals(sc: dict) -> list[float]:
+    """Seconds into a slide at which something new lands, plus its ends."""
+    words = len(re.sub(r"\[\[|\]\]", "", str(sc.get("headline") or "")).split())
+    times = {0.0, round(0.05 + 0.045 * max(0, words - 1) + 0.28, 2)}
+    times |= {float(m["at"]) for m in sc.get("moves") or [] if m.get("at") is not None}
+    return sorted(times | {float(sc.get("durationSec") or 0)})
+
 # ---------------------------------------------------------------- style names
 # Renamed 2026-08-16: style ids describe the STYLE, not its creator, so they
 # read like the format vocabulary (news / top5 / comparison).
@@ -952,8 +969,9 @@ def check_beats(beats: dict, vo_end: float | None = None,
             "buys room to argue past the measured band, not an exit from "
             "short form. Split the topic across two reels.")
 
-    # G03 — the hook may not hold
-    if scenes and scenes[0]["durationSec"] > HK_MAX:
+    # G03 — the hook may not hold. A slide opening is judged by when its first
+    # words land (SLIDE_TIMING, measured) — its headline starts at 0.05s.
+    if scenes and scenes[0]["type"] != "slide" and scenes[0]["durationSec"] > HK_MAX:
         errors.append(
             f"G03 hook held {scenes[0]['durationSec']:.2f}s > {HK_MAX}s "
             f"({scenes[0]['type']}) — Instagram retention rule 2026-07-31.")
@@ -961,6 +979,17 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # G04 — per-type held-layout ceilings
     fmt_dur_max = dur_max_for(fmt_name)
     for i, sc in enumerate(scenes):
+        if sc["type"] == "slide":
+            rv = slide_reveals(sc)
+            gap, where = max((b - a, a) for a, b in zip(rv, rv[1:]))
+            lim = SLIDE_TIMING["cover_static_max" if any(b.get("kind") == "logos" for b in sc.get("blocks") or [])
+                              else "static_max"]
+            if gap > lim:
+                errors.append(
+                    f"G04 scene {i:02d} (slide) shows nothing new for {gap:.2f}s from {where:.2f}s "
+                    f"> {lim}s — the carousel's own slides never hold longer (measured 2026-09-16). "
+                    "Land another block, row or pill on a word inside that stretch.")
+            continue
         cls = _dur_class(sc)
         lim = fmt_dur_max[cls]
         if sc["durationSec"] > lim:
@@ -1253,7 +1282,9 @@ def check_beats(beats: dict, vo_end: float | None = None,
     face_at = None
     t = 0.0
     for sc in scenes:
-        srcs = [str(sc.get(k) or "") for k in ("src", "bottomSrc")]
+        # a presenter inside a slide circle or a split stage is on screen too
+        srcs = [str(sc.get(k) or "") for k in ("src", "bottomSrc")] + \
+               [str((sc.get("presenter") or {}).get("src") or "")]
         if any("avatar-master" in v for v in srcs):
             face_at = t
             break
@@ -1934,9 +1965,12 @@ def check_beats(beats: dict, vo_end: float | None = None,
             bid = b.get("id")
             targets |= {bid, f"{bid}.left", f"{bid}.right", f"{bid}.best", f"{bid}.watch"}
             targets |= {f"{bid}.{k}" for k in range(len(b.get("rows") or []))}
+        targets.add("headline")
+        if sc.get("presenter") and not str((sc["presenter"] or {}).get("src") or "").lower().endswith((".mp4", ".mov", ".webm")):
+            errors.append(f"G65 scene {i:02d} slide presenter needs a video `src` — a still in the circle renders black.")
         for m in sc.get("moves") or []:
-            if m.get("do") not in ("show", "strike", "highlight"):
-                errors.append(f"G65 scene {i:02d} slide move {m.get('do')!r} is not show, strike or highlight.")
+            if m.get("do") not in ("show", "strike", "highlight", "pill"):
+                errors.append(f"G65 scene {i:02d} slide move {m.get('do')!r} is not show, strike, highlight or pill.")
             if m.get("at") is None:
                 errors.append(f"G65 scene {i:02d} slide `{m.get('do')}` on {m.get('target')!r} has no `at`"
                               + (" — recompile so its words become seconds." if m.get("on") else "."))
@@ -2721,7 +2755,9 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # bug, not the precedent worth protecting.
     if scenes:
         s0 = scenes[0]
-        if s0["type"] not in MOTION_TYPES and s0["type"] not in BUILDING_TYPES:
+        # a slide is moving from frame 0: its headline words land from 0.05s and
+        # its blocks reveal on the voice (SLIDE_TIMING, measured on the carousel)
+        if s0["type"] not in MOTION_TYPES and s0["type"] not in BUILDING_TYPES and s0["type"] != "slide":
             # G43, NOT G38 — split 2026-08-17. "Open on motion, never a logo
             # build" is going-viral's craft advice and it is good advice, but it
             # is TASTE: a short brand mark is a legitimate channel signature, and
@@ -2758,6 +2794,8 @@ def check_beats(beats: dict, vo_end: float | None = None,
             if isinstance(kin, dict):
                 bits.append(kin.get("text"))
             hl = sc.get("headline") or {}
+            if isinstance(hl, str):          # a slide's headline is its display type
+                bits.append(hl)
             if isinstance(hl, dict):
                 bits += [ln.get("text") for ln in (hl.get("lines") or [])
                          if isinstance(ln, dict)]

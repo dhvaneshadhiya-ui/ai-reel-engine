@@ -68,7 +68,9 @@ export interface Headline {
   lines: {
     text: string;
     /** label = small upright serif; headline = large bold serif; subtitle = italic serif */
-    kind: "label" | "headline" | "subtitle";
+    /** "pill": the slide look's CTA card — dark card, white words, [[keyword]]
+     *  on a yellow pill (2026-09-16, so face scenes match the slides) */
+    kind: "label" | "headline" | "subtitle" | "pill";
     /** seconds into the scene when this line lands */
     at: number;
     /** render this line in the brand accent colour */

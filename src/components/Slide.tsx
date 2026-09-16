@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Easing, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Easing, Img, OffthreadVideo, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 
 /**
  * SLIDE — the Carousel Playbook look, as a reel scene (2026-09-16).
@@ -50,7 +50,9 @@ export type SlideBlock =
   | { id: string; kind: "logos"; items: { logo: string; name: string; tile?: "light" | "dark" }[] };
 
 export interface SlideMove {
-  do: "show" | "strike" | "highlight";
+  /** pill: target "headline" — the yellow pill lands on the spoken word, not
+   *  with the headline (the words sit white until then) */
+  do: "show" | "strike" | "highlight" | "pill";
   target: string;
   at?: number;
   on?: string;
@@ -69,6 +71,9 @@ export interface SlideProps {
   headline: string;
   blocks: SlideBlock[];
   moves?: SlideMove[];
+  /** the presenter in a corner circle, talking — lets a reel OPEN on the
+   *  picture with the face still present (2026-09-16) */
+  presenter?: { src: string; from: number };
 }
 
 const FONT = "Inter, -apple-system, 'SF Pro Display', sans-serif";
@@ -120,8 +125,9 @@ const Strike: React.FC<{ p: number }> = ({ p }) =>
 
 export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, durationInFrames } = useVideoConfig();
   const t = frame / fps;
+  const dur = (scene as { durationSec?: number }).durationSec ?? durationInFrames / fps;
   const C = scene.theme === "light" ? LIGHT : DARK;
   const toneColor = (tone?: string) => (tone === "cost" ? C.red : tone === "free" ? C.blue : C.ink);
   const moves = scene.moves ?? [];
@@ -143,14 +149,17 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
       );
     });
     if (!pill) return <React.Fragment key={pi}>{nodes}</React.Fragment>;
-    // the pill lands WITH its first word — alone it read as an empty yellow bar
+    // the pill lands on its spoken word when a `pill` move names one; else WITH
+    // its first word — never before it (alone it read as an empty yellow bar)
     const w0 = wi - words.filter((w) => w.trim()).length;
-    const f0 = Math.round((0.05 + 0.045 * w0) * fps);
+    const pillAt = Math.max(0.05 + 0.045 * w0, at("pill", "headline") ?? 0);
+    const f0 = Math.round(pillAt * fps);
     const pp = frame < f0 ? 0 : spring({ frame: frame - f0, fps, config: { damping: 12, stiffness: 200 } });
+    const lit = Math.min(1, pp * 2);
     return (
-      <span key={pi} style={{ display: "inline-block", background: C.pill, color: "#000", borderRadius: 18,
-        padding: "0 18px", margin: "0 2px", opacity: Math.min(1, pp * 2),
-        transform: `scale(${0.7 + 0.3 * Math.min(1.05, pp)})` }}>{nodes}</span>
+      <span key={pi} style={{ display: "inline-block", borderRadius: 18, padding: "0 18px", margin: "0 2px",
+        background: `rgba(255,214,10,${lit})`, color: lit > 0.5 ? "#000" : C.ink,
+        transform: `scale(${1 + 0.12 * Math.sin(Math.PI * Math.min(1, pp))})` }}>{nodes}</span>
     );
   });
 
@@ -281,10 +290,23 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
     }
   };
 
+  // never a still frame: a 3% push across the slide (the carousel is silent
+  // and swiped; a reel is watched, so its pages keep moving)
+  const push = 1 + 0.03 * Math.min(1, t / Math.max(0.1, dur));
+  const pipIn = scene.presenter ? spring({ frame, fps, config: { damping: 14, stiffness: 160 } }) : 0;
+  const PIP = 300;
   return (
     <AbsoluteFill style={{ background: C.bg, fontFamily: FONT }}>
+      {scene.presenter ? (
+        <div style={{ position: "absolute", left: L + COL - PIP, top: 250, width: PIP, height: PIP, zIndex: 2,
+          borderRadius: "50%", overflow: "hidden", border: `6px solid ${C.pill}`,
+          boxShadow: "0 20px 50px rgba(0,0,0,0.5)", transform: `scale(${0.6 + 0.4 * Math.min(1.04, pipIn)})` }}>
+          <OffthreadVideo src={staticFile(scene.presenter.src)} muted startFrom={Math.round(scene.presenter.from * fps)}
+            style={{ width: "100%", height: "178%", objectFit: "cover", objectPosition: "50% 0%", marginTop: "-12%" }} />
+        </div>
+      ) : null}
       <div style={{ position: "absolute", left: L, top: scene.series || scene.index ? 200 : 250, width: COL, bottom: 330,
-        display: "flex", flexDirection: "column" }}>
+        display: "flex", flexDirection: "column", transform: `scale(${push})`, transformOrigin: "50% 30%" }}>
         {scene.series || scene.index ? (
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 40, font: `600 34px ${FONT}`, color: C.sub }}>
             <span>{scene.series ?? ""}</span>
@@ -292,9 +314,10 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
           </div>
         ) : null}
         {scene.eyebrow ? (
-          <div style={{ font: `600 38px ${FONT}`, color: C.blue }}>{scene.eyebrow}</div>
+          <div style={{ font: `600 38px ${FONT}`, color: C.blue, maxWidth: scene.presenter ? COL - PIP - 30 : undefined }}>{scene.eyebrow}</div>
         ) : null}
-        <div style={{ marginTop: 14, font: `800 84px/1.1 ${FONT}`, letterSpacing: -2.5, color: C.ink }}>{headline}</div>
+        <div style={{ marginTop: 14, font: `800 84px/1.1 ${FONT}`, letterSpacing: -2.5, color: C.ink,
+          maxWidth: scene.presenter ? COL - PIP - 30 : undefined }}>{headline}</div>
         <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: 28, marginTop: 36 }}>
           {scene.blocks.map(block)}
         </div>

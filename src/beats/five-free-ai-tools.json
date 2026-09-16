@@ -14,23 +14,6 @@
   ],
   "scenes": [
     {
-      "type": "footage",
-      "src": "assets/five-free-ai-tools/avatar-master-hook.mp4",
-      "from": 0.0,
-      "headline": {
-        "lines": [
-          {
-            "text": "STILL FREE",
-            "kind": "headline",
-            "at": 0.3
-          }
-        ],
-        "y": 0.74
-      },
-      "durationSec": 2.12,
-      "zoomDir": "none"
-    },
-    {
       "eyebrow": "September 2026",
       "headline": "5 AI tools that are still [[free]]",
       "blocks": [
@@ -64,26 +47,34 @@
               "tile": "light"
             }
           ]
+        },
+        {
+          "id": "q",
+          "kind": "text",
+          "text": "The question is where each free plan stops."
         }
       ],
       "moves": [
         {
+          "do": "pill",
+          "target": "headline",
+          "on": "still free",
+          "at": 1.16
+        },
+        {
           "do": "show",
-          "target": "g",
-          "on": "September",
-          "at": 0.0
+          "target": "q",
+          "on": "question is where",
+          "at": 4.18
         }
       ],
       "type": "slide",
       "hideCaptions": true,
-      "sfx": [
-        {
-          "src": "sfx/whoosh.MP3",
-          "at": 0.0,
-          "vol": 0.582
-        }
-      ],
-      "durationSec": 4.14
+      "presenter": {
+        "src": "assets/five-free-ai-tools/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "durationSec": 6.26
     },
     {
       "eyebrow": "#1 \u00b7 Google AI Studio",
@@ -127,10 +118,22 @@
           "at": 1.48
         },
         {
+          "do": "pill",
+          "target": "headline",
+          "on": "free in every",
+          "at": 1.48
+        },
+        {
           "do": "show",
-          "target": "tips",
+          "target": "tips.best",
           "on": "offered",
           "at": 2.98
+        },
+        {
+          "do": "show",
+          "target": "tips.watch",
+          "on": "in a browser",
+          "at": 4.66
         }
       ],
       "type": "slide",
@@ -200,6 +203,12 @@
           "target": "r.1",
           "on": "three audio",
           "at": 4.96
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "as Notebook",
+          "at": 1.82
         }
       ],
       "type": "slide",
@@ -255,6 +264,12 @@
           "target": "t",
           "on": "heavy morning",
           "at": 5.32
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "five hours",
+          "at": 2.96
         }
       ],
       "type": "slide",
@@ -358,18 +373,24 @@
           "target": "r.3",
           "on": "Cloning starts",
           "at": 8.08
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "gives you 10000",
+          "at": 0.68
         }
       ],
       "type": "slide",
       "hideCaptions": true,
+      "durationSec": 10.32,
       "sfx": [
         {
           "src": "sfx-action/tick.mp3",
-          "at": 0.1,
+          "at": 0.9,
           "vol": 1.0
         }
-      ],
-      "durationSec": 10.32
+      ]
     },
     {
       "eyebrow": "#4 \u00b7 Suno",
@@ -415,8 +436,8 @@
         {
           "do": "show",
           "target": "s.right",
-          "on": "for music",
-          "at": 1.78
+          "on": "Pro is 8",
+          "at": 5.66
         },
         {
           "do": "show",
@@ -429,6 +450,12 @@
           "target": "r.0",
           "on": "commercial rights",
           "at": 4.08
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "for music",
+          "at": 1.78
         }
       ],
       "type": "slide",
@@ -438,6 +465,16 @@
           "src": "sfx-action/marker.mp3",
           "at": 4.08,
           "vol": 0.417
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 0.9,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 6.56,
+          "vol": 1.0
         }
       ],
       "durationSec": 7.2,
@@ -515,6 +552,12 @@
           "target": "s.right",
           "on": "no card",
           "at": 3.84
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "plan is 2000",
+          "at": 1.32
         }
       ],
       "type": "slide",
@@ -523,7 +566,19 @@
       "assetId": "logo-github-copilot",
       "claimId": "logo-github-copilot",
       "covers": "And GitHub Copilot's free",
-      "sourceUrl": "https://svgl.app"
+      "sourceUrl": "https://svgl.app",
+      "sfx": [
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 1.06,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 4.74,
+          "vol": 1.0
+        }
+      ]
     },
     {
       "eyebrow": "GitHub Copilot's free plan, 2026",
@@ -583,6 +638,12 @@
           "target": "r.3",
           "on": "look it up",
           "at": 4.3
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "ceilings move",
+          "at": 0.44
         }
       ],
       "type": "slide",
@@ -604,12 +665,12 @@
       "headline": {
         "lines": [
           {
-            "text": "Comment TOOLS",
-            "kind": "headline",
-            "at": 0.4
+            "text": "Comment [[TOOLS]]",
+            "kind": "pill",
+            "at": 0.3
           }
         ],
-        "y": 0.74
+        "y": 0.72
       },
       "durationSec": 3.321,
       "zoomDir": "none"

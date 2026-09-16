@@ -1026,6 +1026,21 @@ try:
     if not (_h and _blk):
         print("  FAIL G65 let a slide move name a block that does not exist"); raise SystemExit(1)
     _counted("G65 blocks — a slide move naming nothing")
+
+    # G04 on slides uses the carousel's measured reveal rhythm, not scene length
+    _s = copy.deepcopy(BASE); _slide(_s, durationSec=5.0)
+    _h, _blk = _gate_hits(_s, ("G04 scene 05",))
+    if not (_h and "nothing new" in _h[0] and not _blk):
+        print(f"  FAIL G04 did not advise on a slide holding 4s with nothing new: {_h}"); raise SystemExit(1)
+    _counted("G04 advises — a slide that stops revealing for longer than the carousel ever does")
+    _s = copy.deepcopy(BASE); _slide(_s, durationSec=2.5,
+                                    moves=[{"do": "show", "target": "h", "at": 0.2},
+                                           {"do": "pill", "target": "headline", "at": 1.0},
+                                           {"do": "highlight", "target": "r.0", "at": 1.8}])
+    _h, _ = _gate_hits(_s, ("G04 scene 05", "G65"))
+    if _h:
+        print(f"  FAIL a slide revealing on the carousel's rhythm tripped a gate: {_h[0][:120]}"); raise SystemExit(1)
+    _counted("G04/G65 silent — a slide that keeps revealing, with a word-timed pill")
 finally:
     _black.unlink(missing_ok=True)
 

@@ -222,6 +222,9 @@ def main() -> None:
             or "avatar" in str(first.get("src", "")).lower()
             or "avatar" in str(first.get("bottomSrc", "")).lower()
         )
+        # a presenter in a slide's corner circle (or a split stage) is visible
+        # from frame 0 too (2026-09-16)
+        face_ok = face_ok or "avatar" in str((first.get("presenter") or {}).get("src", "")).lower()
         # A reel with NO presenter anywhere is a deliberate build (VO over
         # footage), not an opening that forgot the face. reel_gates already
         # treats facecam share as ADVICE (G06/G17); this blocked on it, so the
