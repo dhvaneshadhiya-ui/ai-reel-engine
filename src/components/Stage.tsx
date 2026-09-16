@@ -55,6 +55,9 @@ export interface StageElement {
   text?: string;
   /** text: 1 = 76px */
   size?: number;
+  /** card: the price line — priceTone "cost" reads red, "free" reads green */
+  price?: string;
+  priceTone?: "cost" | "free";
   value?: number;
   from?: number;
   prefix?: string;
@@ -66,7 +69,11 @@ export interface StageElement {
 }
 
 export type StageVerb =
-  | "arrive" | "exit" | "dim" | "focus" | "highlight" | "stamp" | "strike" | "count" | "connect";
+  | "arrive" | "exit" | "dim" | "focus" | "highlight" | "stamp" | "strike" | "count" | "connect"
+  /** the thing lands as grey placeholder bars and fills with its content here —
+   *  borrowed 2026-09-16 from the carousel playbook's slide videos, where the
+   *  shape lands first so nothing jumps and the words arrive on their own beat */
+  | "fill";
 
 export interface StageMove {
   do: StageVerb;
@@ -83,6 +90,8 @@ export interface StageMove {
   weight?: number;
   /** connect: how many pulses travel it */
   repeat?: number;
+  /** connect: an arrowhead at the `to` end — "this replaces that" */
+  arrow?: boolean;
 }
 
 export interface StageProps {
@@ -122,6 +131,16 @@ const bez = (p: Pt[], u: number): Pt => {
 const pathOf = (p: Pt[]) =>
   `M ${p[0].join(" ")} C ${p[1].join(" ")} ${p[2].join(" ")} ${p[3].join(" ")}`;
 
+// an arrowhead sitting on the line's own tangent, once the line has arrived
+const Head: React.FC<{ p: Pt[]; draw: number; color: string; size: number }> = ({ p, draw, color, size }) => {
+  if (draw < 0.98) return null;
+  const tip = p[3];
+  const back = bez(p, 0.94);
+  const a = Math.atan2(tip[1] - back[1], tip[0] - back[0]);
+  const pt = (ang: number) => `${tip[0] - Math.cos(a + ang) * size},${tip[1] - Math.sin(a + ang) * size}`;
+  return <polygon points={`${tip[0]},${tip[1]} ${pt(0.42)} ${pt(-0.42)}`} fill={color} />;
+};
+
 // card type scales with the card's width (first stills, 2026-09-15: a flat 44px
 // left a 600px card holding a whisper and the frame reading empty)
 const titlePx = (e: StageElement, aw: number) =>
@@ -133,7 +152,8 @@ const padPx = (e: StageElement, aw: number) => Math.round(titlePx(e, aw) * 0.42)
 const estH = (e: StageElement, aw: number) => {
   switch (e.kind) {
     case "card":
-      return 2 * padPx(e, aw) + (e.title ? titlePx(e, aw) * 1.1 : 0) + (e.lines?.length ?? 0) * linePx(e, aw) * 1.4;
+      return 2 * padPx(e, aw) + (e.title ? titlePx(e, aw) * 1.1 : 0)
+        + (e.price ? titlePx(e, aw) * 1.2 : 0) + (e.lines?.length ?? 0) * linePx(e, aw) * 1.4;
     case "image": return (e.h ?? e.w * 0.8) * aw;
     case "text": return (e.size ?? 1) * 76 * 1.1;
     default: return 160 + (e.label ? 52 : 0);
@@ -219,6 +239,7 @@ export const Stage: React.FC<{ scene: StageProps }> = ({ scene }) => {
         <g key={i}>
           <path d={d} pathLength={1} fill="none" stroke={S.wire} strokeWidth={4 * wgt}
             strokeLinecap="round" strokeDasharray="1 1" strokeDashoffset={1 - draw} />
+          {m.arrow ? <Head p={p} draw={draw} color={S.wire} size={18 + 10 * wgt} /> : null}
           {Array.from({ length: n }, (_, k) => {
             const u = ramp(t, m.at + 0.15 + k * 0.42, m.at + 0.7 + k * 0.42, Easing.inOut(Easing.quad));
             if (u <= 0 || u >= 1) return null;
@@ -245,6 +266,8 @@ export const Stage: React.FC<{ scene: StageProps }> = ({ scene }) => {
     if (ex >= 1) return null;
     const dimM = mine.find((m) => m.do === "dim");
     const dm = dimM ? ramp(t, dimM.at, dimM.at + 0.3) : 0;
+    const fillM = mine.find((m) => m.do === "fill");
+    const filled = fillM ? ramp(t, fillM.at, fillM.at + 0.28, Easing.out(Easing.quad)) : 1;
     const hlM = mine.find((m) => m.do === "highlight");
     const hl = hlM ? ramp(t, hlM.at, hlM.at + 0.45, Easing.out(Easing.quad)) : 0;
     const stM = mine.find((m) => m.do === "stamp");
@@ -265,8 +288,19 @@ export const Stage: React.FC<{ scene: StageProps }> = ({ scene }) => {
     const tone = e.tone ?? (S.dark ? "dark" : "light");
     const darkCard = tone === "dark" || (tone === "accent" && S.dark);
 
+    // PLACEHOLDER -> CONTENT: grey bars in the card's own shape until `fill`
+    const bar = (width: string, h: number, key: number) => (
+      <div key={key} style={{ width, height: h, borderRadius: h / 2, marginTop: key === 0 ? 0 : 14,
+        background: darkCard ? "rgba(255,255,255,0.09)" : "rgba(10,12,20,0.08)" }} />
+    );
+
     let body: React.ReactNode = null;
     if (e.kind === "card") {
+      const skeleton = [
+        ...(e.title ? [["62%", titlePx(e, AW) * 0.74] as const] : []),
+        ...(e.price ? [["44%", titlePx(e, AW) * 0.8] as const] : []),
+        ...(e.lines ?? []).map(() => ["84%", linePx(e, AW) * 0.9] as const),
+      ];
       body = (
         <div style={{
           background: darkCard ? "#15171C" : "rgba(255,255,255,0.95)", borderRadius: 30,
@@ -277,21 +311,41 @@ export const Stage: React.FC<{ scene: StageProps }> = ({ scene }) => {
             ? `0 0 ${26 + 34 * me}px ${theme.accent}77, 0 36px 70px rgba(10,12,20,0.30)`
             : "0 36px 70px rgba(10,12,20,0.22), 0 8px 18px rgba(10,12,20,0.12)",
         }}>
-          {e.title ? (
-            <div style={{ font: `700 ${titlePx(e, AW)}px/1.1 ${DISPLAY}`, color: darkCard ? "#F2F4F7" : "#16181D" }}>
-              <Marked text={e.title} p={hl} dark={darkCard} />
-            </div>
-          ) : null}
-          {(e.lines ?? []).map((l, i) => (
-            <div key={i} style={{ font: `500 ${linePx(e, AW)}px/1.35 ${UI}`, color: darkCard ? "#A3ABB9" : "#5B6270",
-              marginTop: i === 0 && e.title ? 10 : 4 }}>{l}</div>
-          ))}
+          {filled < 1 ? (
+            <div style={{ opacity: 1 - filled }}>{skeleton.map(([w, h], i) => bar(w, h, i))}</div>
+          ) : (
+            <>
+              {e.title ? (
+                <div style={{ font: `700 ${titlePx(e, AW)}px/1.1 ${DISPLAY}`, color: darkCard ? "#F2F4F7" : "#16181D" }}>
+                  <Marked text={e.title} p={hl} dark={darkCard} />
+                </div>
+              ) : null}
+              {e.price ? (
+                <div style={{
+                  font: `800 ${Math.round(titlePx(e, AW) * 1.05)}px/1.1 ${DISPLAY}`, marginTop: 10,
+                  fontVariantNumeric: "tabular-nums",
+                  color: e.priceTone === "free" ? "#22C55E"
+                    : e.priceTone === "cost" ? (darkCard ? "#FF6B6B" : "#D92D20")
+                      : (darkCard ? "#F2F4F7" : "#16181D"),
+                }}>{e.price}</div>
+              ) : null}
+              {(e.lines ?? []).map((l, i) => (
+                <div key={i} style={{ font: `500 ${linePx(e, AW)}px/1.35 ${UI}`, color: darkCard ? "#A3ABB9" : "#5B6270",
+                  marginTop: i === 0 && (e.title || e.price) ? 10 : 4 }}>{l}</div>
+              ))}
+            </>
+          )}
         </div>
       );
     } else if (e.kind === "image" && e.src) {
       body = (
-        <Img src={staticFile(e.src)} style={{ width: "100%", height: (e.h ?? e.w * 0.8) * AW,
-          objectFit: "contain", filter: "drop-shadow(0 30px 36px rgba(0,0,0,0.35))" }} />
+        filled < 1 ? (
+          <div style={{ width: "100%", height: (e.h ?? e.w * 0.8) * AW, borderRadius: 24, opacity: 1 - filled,
+            background: S.dark ? "rgba(255,255,255,0.08)" : "rgba(10,12,20,0.08)" }} />
+        ) : (
+          <Img src={staticFile(e.src)} style={{ width: "100%", height: (e.h ?? e.w * 0.8) * AW,
+            objectFit: "contain", filter: "drop-shadow(0 30px 36px rgba(0,0,0,0.35))" }} />
+        )
       );
     } else if (e.kind === "text") {
       body = (

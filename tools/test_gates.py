@@ -284,7 +284,8 @@ def _stage(s, **over):
                          "value": 58, "suffix": "%", "source": "TrendForce"}],
               moves=[{"do": "arrive", "target": "a", "at": 0.1},
                      {"do": "arrive", "target": "b", "at": 0.3},
-                     {"do": "connect", "from": "a", "to": "b", "at": 0.6},
+                     {"do": "connect", "from": "a", "to": "b", "at": 0.6, "arrow": True},
+                     {"do": "fill", "target": "a", "at": 0.5},
                      {"do": "count", "target": "n", "at": 0.9}])
     st.update(over)
     s["scenes"][5].clear()
@@ -1142,6 +1143,13 @@ CASES = [
      "G15", "a stage number with no source"),
     (lambda s: _stage(s, moves=[{"do": "arrive", "target": "a", "at": 4.0}]),
      "G66", "a stage move after its scene ends"),
+    (lambda s: _stage(s, elements=[{"id": "a", "kind": "card", "x": 0.3, "y": 0.4, "w": 0.3,
+                                    "title": "Zapier", "price": "$239.88", "priceTone": "cheap"}],
+                      moves=[]),
+     "G65", "a card price tone that is neither cost nor free"),
+    (lambda s: _stage(s, moves=[{"do": "arrive", "target": "a", "at": 0.6},
+                                {"do": "fill", "target": "a", "at": 0.2}]),
+     "G66", "a fill that lands before the card it fills"),
     (lambda s: _stage(s, moves=[{"do": "connect", "from": "a", "to": "b", "at": 0.1 * k} for k in range(6)]
                       + [{"do": "highlight", "target": "a", "at": 1.0}]),
      "G67", "one move carrying a whole reel's stages"),

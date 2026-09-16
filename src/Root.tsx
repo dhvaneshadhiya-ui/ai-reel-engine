@@ -6,10 +6,47 @@ import { InstaCTA } from "./InstaCTA";
 import { Thumbnail } from "./Thumbnail";
 import type { BeatSheet } from "./types";
 import labQualcommStage from "./lab/qualcomm-stage.json";
+import { Stage } from "./components/Stage";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      {/* LAB 2026-09-16: the two moves borrowed from the carousel playbook's slide
+          videos — a card that lands as a placeholder and fills, and a paid/free
+          swap with an arrowed connector. Numbers are the carousel's own. */}
+      <Composition
+        id="lab-stage-swap"
+        component={Stage}
+        durationInFrames={150}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          scene: {
+            set: "light" as const,
+            layout: "full" as const,
+            credit: "vendor pricing pages",
+            elements: [
+              { id: "paid", kind: "card" as const, x: 0.25, y: 0.40, w: 0.42,
+                title: "Zapier", price: "$239.88", priceTone: "cost" as const,
+                lines: ["per year, one seat"] },
+              { id: "free", kind: "card" as const, x: 0.75, y: 0.40, w: 0.42, tone: "accent" as const,
+                title: "n8n", price: "$0", priceTone: "free" as const, lines: ["self-hosted"] },
+              { id: "note", kind: "text" as const, x: 0.5, y: 0.72, w: 0.82, size: 0.72,
+                text: "Same jobs, your own server" },
+            ],
+            moves: [
+              { do: "arrive" as const, target: "paid", at: 0.0, dir: "left" as const },
+              { do: "arrive" as const, target: "free", at: 0.25, dir: "right" as const },
+              { do: "fill" as const, target: "paid", at: 0.8 },
+              { do: "connect" as const, from: "paid", to: "free", at: 1.2, arrow: true, weight: 1.5, repeat: 2 },
+              { do: "fill" as const, target: "free", at: 1.6 },
+              { do: "strike" as const, target: "paid", at: 2.6 },
+              { do: "arrive" as const, target: "note", at: 3.1, dir: "up" as const },
+            ],
+          },
+        }}
+      />
       {/* LAB 2026-09-15: qualcomm-chip-hike with three lines rebuilt as `stage`
           scenes — the test of the stage grammar. Not a publishable reel. */}
       <Composition

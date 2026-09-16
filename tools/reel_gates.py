@@ -1667,7 +1667,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # with no presenter video leaves 58% of the frame black.
     STAGE_KINDS = {"card", "image", "text", "number"}
     STAGE_VERBS = {"arrive", "exit", "dim", "focus", "highlight", "stamp",
-                   "strike", "count", "connect"}
+                   "strike", "count", "connect", "fill"}
     STAGE_STILL = (".png", ".jpg", ".jpeg", ".webp", ".avif")
     for i, sc in enumerate(scenes):
         if sc.get("type") != "stage":
@@ -1685,6 +1685,12 @@ def check_beats(beats: dict, vo_end: float | None = None,
             if kind == "image" and not str(e.get("src") or "").lower().endswith(STAGE_STILL):
                 errors.append(f"G65 scene {i:02d} stage image {eid!r} src {e.get('src')!r} is "
                               "not a still — an <Img> cannot play a video.")
+            if e.get("price") is not None and not isinstance(e.get("price"), str):
+                errors.append(f"G65 scene {i:02d} stage card {eid!r} `price` must be the text to "
+                              f"show (got {e.get('price')!r}) — the card prints it as written.")
+            if e.get("priceTone") not in (None, "cost", "free"):
+                errors.append(f"G65 scene {i:02d} stage card {eid!r} priceTone "
+                              f"{e.get('priceTone')!r} is not cost or free — it renders plain.")
             v = e.get("value")
             if kind == "number" and (not isinstance(v, (int, float)) or isinstance(v, bool)):
                 errors.append(f"G65 scene {i:02d} stage number {eid!r} value {v!r} is not a "
@@ -1714,6 +1720,19 @@ def check_beats(beats: dict, vo_end: float | None = None,
             if float(m.get("at") or 0) >= dur:
                 errors.append(f"G66 scene {i:02d} stage `{m.get('do')}` at {m.get('at')}s lands "
                               f"after the {dur}s scene ends — it never shows.")
+        by_id = {e.get("id"): e for e in sc.get("elements") or []}
+        for m in sc.get("moves") or []:
+            if m.get("do") != "fill":
+                continue
+            arr = next((a for a in sc.get("moves") or []
+                        if a.get("do") == "arrive" and a.get("target") == m.get("target")), None)
+            if arr and float(m.get("at") or 0) <= float(arr.get("at") or 0):
+                errors.append(f"G66 scene {i:02d} stage `fill` on {m.get('target')!r} at "
+                              f"{m.get('at')}s is not after its arrival at {arr.get('at')}s — the "
+                              "placeholder never shows, so the card just appears full.")
+            if by_id.get(m.get("target"), {}).get("kind") == "text":
+                errors.append(f"G66 scene {i:02d} stage `fill` on {m.get('target')!r} does nothing: "
+                              "a text element has no placeholder shape to land first.")
         for e in sc.get("elements") or []:
             x, y, w = (float(e.get(k) or 0) for k in ("x", "y", "w"))
             # 3% margin, not "on the stage": the camera leans in up to ~1.11x,

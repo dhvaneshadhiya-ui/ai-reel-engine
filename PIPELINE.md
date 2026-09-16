@@ -333,7 +333,15 @@ own; the sheet supplies one per line, from the topic's world:
   Placed as fractions of the stage: `x`, `y` = centre, `w` = width. Card type scales with `w`.
 - `moves`, each `at` seconds into the scene, on the spoken word: `arrive` (dir left | right |
   up | down | pop), `exit`, `dim`, `focus` (camera leans in), `highlight`, `stamp` (text),
-  `strike`, `count`, `connect` (from, to, weight, repeat — a line with pulses travelling it).
+  `strike`, `count`, `connect` (from, to, weight, repeat, `arrow` — a line with pulses
+  travelling it), `fill` (the thing lands as grey placeholder bars and fills with its content
+  here — from the carousel playbook's slide videos, 2026-09-16; put it AFTER that element's
+  `arrive`, and not on a `text`, which has no shape to hold).
+- A card may carry a `price` with a `priceTone`: `cost` reads red, `free` reads green. Two
+  cards, a `connect` with `arrow`, a `fill` on each and a `strike` on the dear one make the
+  paid-versus-free swap, which is any price story's picture — see composition
+  `lab-stage-swap`. It is a picture, not a template: G67 still advises if a later reel
+  repeats it exactly.
 - `set`: light | dark | brand. `layout`: full (clear of the caption band) | split (graphic in
   the top 42%, `presenter: {src, from}` below, optional `punch` words).
 Checks: G65 RENDER (no elements, unknown kind or verb, a move naming a missing element, a video

@@ -8085,3 +8085,30 @@ wrongly: seven files for two looks.
   path they were written with.
 
 `styles/` is now `editorial.md`, `editorial-script-playbook.md`, `utility.md`.
+
+## 2026-09-16 — two moves borrowed back from the carousel playbook
+
+Read the carousel playbook's own video output (`saas-repos-video_1`, 11 slides, 1080x1350,
+5.0s each, silent). Measured: every slide is frozen 63-82% of its runtime, in two bursts —
+headline and first card early, the rest at 2.5-3.5s, then nothing after ~4.2s. No camera move
+anywhere. The choreography is identical on all nine middle slides, and for a carousel that is
+right: swiping wants a rhythm. (The opposite of the reel rule — G67 flags a repeated picture
+across reels.)
+
+Two of its devices earn a place in `stage`, at the user's pick:
+
+1. **`fill` — placeholder to content.** The card lands as grey bars in its own shape, then the
+   words arrive on their beat. Nothing jumps, and the reveal can be timed to the sentence
+   rather than to the entrance. G66 advises a `fill` that lands before its `arrive` (the
+   placeholder never shows) or one on a `text` element (no shape to hold).
+2. **The paid-versus-free swap.** Not a new component: a card gained `price` + `priceTone`
+   (cost red, free green) and `connect` gained `arrow`. Two cards, an arrowed connector, a
+   fill on each and a strike on the dear one — the picture for any price story, and still
+   subject to G67 if a later reel repeats it exactly.
+
+Verified on `lab-stage-swap` (the carousel's own Zapier $239.88 -> n8n $0 numbers) through the
+whole beat order: placeholders, fill, arrowed connector, fill, strike, closing line.
+
+**Left for the carousel side, not done here:** its slides carry ~1.5s of dead tail each, the
+stitched preview MP4 in its §10 is missing from the delivery, and its §14 log has no entry for
+this carousel.
