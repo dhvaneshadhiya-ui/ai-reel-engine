@@ -7,6 +7,16 @@ import { Thumbnail } from "./Thumbnail";
 import type { BeatSheet } from "./types";
 import labQualcommStage from "./lab/qualcomm-stage.json";
 import { Stage } from "./components/Stage";
+import { Slide, type SlideProps } from "./components/Slide";
+import { FontFaces } from "./theme/fonts";
+
+// a single slide as a still: cover frames in the reel's own look (2026-09-16)
+const SlideStill: React.FC<{ scene: SlideProps }> = ({ scene }) => (
+  <>
+    <FontFaces />
+    <Slide scene={scene} />
+  </>
+);
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -120,6 +130,15 @@ export const RemotionRoot: React.FC = () => {
           defaultProps={{ beats }}
         />
       ))}
+      <Composition
+        id="slide-still"
+        component={SlideStill}
+        durationInFrames={60}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{ scene: { headline: "A [[slide]]", blocks: [] } as SlideProps }}
+      />
     </>
   );
 };

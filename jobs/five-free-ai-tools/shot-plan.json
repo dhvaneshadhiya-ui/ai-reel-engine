@@ -89,7 +89,6 @@
       "on": "September"
      }
     ],
-    "series": "5 AI tools, still free",
     "type": "slide",
     "hideCaptions": true,
     "sfx": [
@@ -113,7 +112,6 @@
    "tier": "official",
    "asset_id": "logo-gemini",
    "scene": {
-    "index": "1 / 5",
     "eyebrow": "#1 · Google AI Studio",
     "headline": "Gemini's models, [[free]] in a browser",
     "blocks": [
@@ -157,7 +155,6 @@
       "on": "offered"
      }
     ],
-    "series": "5 AI tools, still free",
     "type": "slide",
     "hideCaptions": true
    }
@@ -176,7 +173,6 @@
    "tier": "official",
    "asset_id": null,
    "scene": {
-    "index": "2 / 5",
     "eyebrow": "#2 · Gemini Notebook",
     "headline": "The one you knew as [[NotebookLM]]",
     "blocks": [
@@ -232,7 +228,6 @@
       "on": "three audio"
      }
     ],
-    "series": "5 AI tools, still free",
     "type": "slide",
     "hideCaptions": true
    }
@@ -251,7 +246,6 @@
    "tier": "official",
    "asset_id": null,
    "scene": {
-    "index": "2 / 5",
     "eyebrow": "#2 · Gemini Notebook",
     "headline": "Since September 2, limits refresh every [[5 hours]]",
     "blocks": [
@@ -298,7 +292,6 @@
       "on": "heavy morning"
      }
     ],
-    "series": "5 AI tools, still free",
     "type": "slide",
     "hideCaptions": true,
     "sfx": [
@@ -324,7 +317,6 @@
    "tier": "official",
    "asset_id": null,
    "scene": {
-    "index": "3 / 5",
     "eyebrow": "#3 · ElevenLabs",
     "headline": "[[10,000]] free credits a month",
     "blocks": [
@@ -408,7 +400,6 @@
       "on": "Cloning starts"
      }
     ],
-    "series": "5 AI tools, still free",
     "type": "slide",
     "hideCaptions": true,
     "sfx": [
@@ -434,7 +425,6 @@
    "tier": "official",
    "asset_id": "logo-suno",
    "scene": {
-    "index": "4 / 5",
     "eyebrow": "#4 · Suno",
     "headline": "[[50]] free credits a day for music",
     "blocks": [
@@ -489,7 +479,6 @@
       "on": "commercial rights"
      }
     ],
-    "series": "5 AI tools, still free",
     "type": "slide",
     "hideCaptions": true,
     "sfx": [
@@ -515,7 +504,6 @@
    "tier": "official",
    "asset_id": "logo-github-copilot",
    "scene": {
-    "index": "5 / 5",
     "eyebrow": "#5 · GitHub Copilot",
     "headline": "[[2,000]] completions a month, no card",
     "blocks": [
@@ -580,7 +568,6 @@
       "on": "no card"
      }
     ],
-    "series": "5 AI tools, still free",
     "type": "slide",
     "hideCaptions": true
    }
@@ -653,7 +640,6 @@
       "on": "look it up"
      }
     ],
-    "series": "5 AI tools, still free",
     "type": "slide",
     "hideCaptions": true,
     "sfx": [

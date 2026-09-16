@@ -8,8 +8,8 @@ import { AbsoluteFill, Easing, Img, interpolate, spring, staticFile, useCurrentF
  * user's review of five-free-ai-tools: "not even close to Carousel Playbook
  * style". What that look IS, measured on its frames:
  *   - pure black ground, Inter, everything left-aligned on one column
- *   - a top bar (series name left, "n / N" right) that never moves between
- *     slides, so a cut reads as turning a page
+ *   - (carousel pages only) a top bar: series name left, "n / N" right. Reels
+ *     leave it out — a reel is not paged (user, 2026-09-16)
  *   - a blue eyebrow ("#1 · Replaces Zapier") and a big bold white headline
  *     that arrives word by word, with at most one yellow pill word
  *   - the layout's shapes are on screen from the first frame and FILL with
@@ -57,8 +57,13 @@ export interface SlideMove {
 }
 
 export interface SlideProps {
-  series: string;
+  /** a running label + "n / N" top bar — carousel pages only. Reels leave both
+   *  out (user, 2026-09-16: "not required as it is reel (shorts) end of the day") */
+  series?: string;
   index?: string;
+  /** dark = the carousel's own look; light = the same family on a bright
+   *  ground (covers that must stand out in a dark feed) */
+  theme?: "dark" | "light";
   eyebrow?: string;
   /** [[word]] marks the one yellow pill */
   headline: string;
@@ -67,10 +72,14 @@ export interface SlideProps {
 }
 
 const FONT = "Inter, -apple-system, 'SF Pro Display', sans-serif";
-const C = {
+const DARK = {
   bg: "#000000", card: "#1B1B1E", line: "rgba(255,255,255,0.07)", ink: "#FFFFFF", sub: "#D1D1D6",
   muted: "#8E8E93", blue: "#4DA3FF", red: "#FF453A", amber: "#F5A524", pill: "#FFD60A",
   tileLight: "#E5E5EA", tileDark: "#2C2C30",
+};
+const LIGHT = {
+  ...DARK, bg: "#F2F2F7", card: "#FFFFFF", line: "rgba(0,0,0,0.08)", ink: "#0A0A0A", sub: "#3A3A3C",
+  muted: "#6E6E73", blue: "#0A6CFF", red: "#E5322D",
 };
 const L = 72;          // left margin, the carousel's own
 const COL = 916;       // column width: clears Instagram's right rail (0.85 of 1080)
@@ -79,7 +88,6 @@ const CL = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const ramp = (t: number, a: number, d = 0.3) =>
   interpolate(t, [a, a + d], [0, 1], { ...CL, easing: Easing.out(Easing.cubic) });
 
-const toneColor = (tone?: string) => (tone === "cost" ? C.red : tone === "free" ? C.blue : C.ink);
 
 /** "$239.88" / "10,000" -> counted up; anything else ("Every 5 hours") is shown
  *  as written — counting the 5 there once rendered "Every 4 hours" */
@@ -96,7 +104,7 @@ const counted = (price: string, p: number) => {
 const Tile: React.FC<{ src: string; tile?: "light" | "dark"; size: number }> = ({ src, tile, size }) => (
   <div style={{
     width: size, height: size, borderRadius: size * 0.24, flexShrink: 0,
-    background: tile === "light" ? C.tileLight : C.tileDark,
+    background: tile === "light" ? DARK.tileLight : DARK.tileDark,
     display: "flex", alignItems: "center", justifyContent: "center",
   }}>
     <Img src={staticFile(src)} style={{ width: size * 0.6, height: size * 0.6, objectFit: "contain" }} />
@@ -107,13 +115,15 @@ const Tile: React.FC<{ src: string; tile?: "light" | "dark"; size: number }> = (
 const Strike: React.FC<{ p: number }> = ({ p }) =>
   p > 0 ? (
     <div style={{ position: "absolute", left: -6, top: "54%", height: 6, borderRadius: 3,
-      width: `calc(${p * 100}% + 12px)`, background: C.red }} />
+      width: `calc(${p * 100}% + 12px)`, background: DARK.red }} />
   ) : null;
 
 export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
+  const C = scene.theme === "light" ? LIGHT : DARK;
+  const toneColor = (tone?: string) => (tone === "cost" ? C.red : tone === "free" ? C.blue : C.ink);
   const moves = scene.moves ?? [];
   const at = (d: string, target: string) => moves.find((m) => m.do === d && m.target === target)?.at;
   // shown from the start unless a `show` names it (or its parent block)
@@ -273,14 +283,16 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
 
   return (
     <AbsoluteFill style={{ background: C.bg, fontFamily: FONT }}>
-      <div style={{ position: "absolute", left: L, top: 200, width: COL, bottom: 330,
+      <div style={{ position: "absolute", left: L, top: scene.series || scene.index ? 200 : 250, width: COL, bottom: 330,
         display: "flex", flexDirection: "column" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", font: `600 34px ${FONT}`, color: C.sub }}>
-          <span>{scene.series}</span>
-          <span style={{ color: C.muted }}>{scene.index ?? ""}</span>
-        </div>
+        {scene.series || scene.index ? (
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 40, font: `600 34px ${FONT}`, color: C.sub }}>
+            <span>{scene.series ?? ""}</span>
+            <span style={{ color: C.muted }}>{scene.index ?? ""}</span>
+          </div>
+        ) : null}
         {scene.eyebrow ? (
-          <div style={{ marginTop: 40, font: `600 38px ${FONT}`, color: C.blue }}>{scene.eyebrow}</div>
+          <div style={{ font: `600 38px ${FONT}`, color: C.blue }}>{scene.eyebrow}</div>
         ) : null}
         <div style={{ marginTop: 14, font: `800 84px/1.1 ${FONT}`, letterSpacing: -2.5, color: C.ink }}>{headline}</div>
         <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: 28, marginTop: 36 }}>

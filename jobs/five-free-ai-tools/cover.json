@@ -1,6 +1,8 @@
 {
-  "at": 5.0,
+  "frame": "assets/five-free-ai-tools/cover-light-crop.png",
   "line1": "5 AI TOOLS",
   "line2": "STILL FREE",
-  "style": "editorial"
+  "style": "editorial",
+  "block": "#FFD60A",
+  "block_text": "#000000"
 }
