@@ -1090,8 +1090,10 @@ def check_beats(beats: dict, vo_end: float | None = None,
                             f"column holds {SPECSHEET_VALUE_MAX}.")
 
     # G06 — facecam share of runtime
+    # a presenter talking in a slide's corner circle is on screen too (2026-09-16)
     avatar_scenes = [s for s in scenes
-                     if "avatar-master" in str(s.get("src") or "")]
+                     if "avatar-master" in str(s.get("src") or "")
+                     or "avatar-master" in str((s.get("presenter") or {}).get("src") or "")]
     face = sum(s["durationSec"] for s in avatar_scenes)
     share = face / total if total else 0
     # FACE PLAN (2026-09-16). The band assumes the presenter carries the

@@ -205,8 +205,9 @@ silently disabled the frame checks for weeks.
   slice, never lip-synced onto footage of other words. G69 blocks a logo its
   background swallows. **Trigger:** the user says "animated format" (or
   "carousel style" / "like the free AI tools reel"). Defaults unless they say
-  otherwise: opens on a slide with the presenter in a corner circle, face CTA
-  close, music on, no credits, no series label or page counter. Ask only what
+  otherwise: opens on a slide with the presenter in a corner circle, ends on
+  a CTA end card (`cta` slide: XL "Comment [[KEYWORD]]", what the DM delivers,
+  the items' logos; presenter in the circle), music on, no credits, no series label or page counter. Ask only what
   is missing: topic, CTA keyword + what the DM delivers. Blocks are chosen per
   topic — the look is one family, the layout is never a template.
   Reference build: jobs/five-free-ai-tools.

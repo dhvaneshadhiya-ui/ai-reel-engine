@@ -1157,13 +1157,17 @@ def main() -> None:
                "sfx-action/marker.mp3": 0.4, "sfx/Click.MP3": 0.22, "sfx/Core.MP3": 0.35,
                "sfx/Magic Reveal.MP3": 0.25}
         scenes_ = beats.get("scenes") or []
-        slides = [k for k, sc in enumerate(scenes_) if sc.get("type") == "slide"]
+        slides = [k for k, sc in enumerate(scenes_) if sc.get("type") == "slide" and not sc.get("cta")]
+        slides = slides or [-1]
 
         def _cue(sc: dict, src: str, event: float) -> None:
             at_ = round(max(0.0, event - LEAD[src]), 2)
             cues = sc.setdefault("sfx", [])
+            # a page-change whoosh is a different gesture from what lands on the
+            # page, so it only needs 0.2s of room; two landing sounds need 0.35s
             if at_ < float(sc.get("durationSec") or 0) and not any(
-                    abs(float(c.get("at", 0)) - at_) < 0.35 for c in cues):
+                    abs(float(c.get("at", 0)) - at_) < (0.2 if "whoosh" in c.get("src", "") else 0.35)
+                    for c in cues):
                 cues.append({"src": src, "at": at_, "vol": VOL[src]})
 
         for k, sc in enumerate(scenes_):
@@ -1177,6 +1181,7 @@ def main() -> None:
                     if m["do"] == "strike":
                         _cue(sc, "sfx-action/marker.mp3", m["at"])
                     elif m["do"] == "pill":
+                        # the CTA keyword is the ask, a pop; the last content slide's pill is the turn, a hit
                         _cue(sc, "sfx/Core.MP3" if k == slides[-1] else "sfx/Pop.MP3", m["at"])
                     elif m["do"] == "highlight" and k == slides[-1]:
                         # only the closing highlight clicks: one on every row

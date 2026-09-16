@@ -8255,3 +8255,15 @@ before changing anything, last settled frame of each slide: content ended at
 - **Nothing important below ~82%.** lint_frames `[PLATFORM ZONE]` now BLOCKS a slide
   or stage whose content runs past 82% (Rule 1: the platform draws its UI there) and
   `[LOWER HALF EMPTY]` advises below 70%.
+
+## 2026-09-16 (8) — the CTA is a designed end card, not a caption over the face
+
+From the Carousel Playbook's reel: its CTA is a page — a poster-size "Comment" with
+the keyword on a yellow pill, one line saying what the DM delivers, and the icons of
+what they will get. Ours was a small pill card over the full-frame presenter. Now the
+last scene is a `cta` slide: `headlineSize: "xl"`, the keyword pill landing on the
+spoken keyword, the delivery line, the five logos, and the presenter talking in the
+corner circle — so the face bookends still hold, and the page fills to the 80% line
+(theirs stops near 40%). Engine: G06 counts a slide presenter as face time; the
+compiler's "turn" hit skips the CTA page (its keyword gets a pop); a whoosh and a
+landing sound may sit 0.2s apart.

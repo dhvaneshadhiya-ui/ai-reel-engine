@@ -658,20 +658,65 @@
    "tier": "official",
    "asset_id": null,
    "scene": {
-    "type": "footage",
-    "src": "assets/five-free-ai-tools/avatar-master-cta.mp4",
-    "from": 0.24,
+    "type": "slide",
     "cta": true,
-    "headline": {
-     "lines": [
-      {
-       "text": "Comment [[TOOLS]]",
-       "kind": "pill",
-       "at": 0.3
-      }
-     ],
-     "y": 0.72
-    }
+    "hideCaptions": true,
+    "headlineSize": "xl",
+    "headline": "Comment [[TOOLS]]",
+    "presenter": {
+     "src": "assets/five-free-ai-tools/avatar-master-cta.mp4",
+     "from": 0.24
+    },
+    "blocks": [
+     {
+      "id": "d",
+      "kind": "text",
+      "text": "and the five links land in your DMs."
+     },
+     {
+      "id": "g",
+      "kind": "logos",
+      "items": [
+       {
+        "logo": "assets/logos/gemini.svg",
+        "name": "AI Studio"
+       },
+       {
+        "logo": "assets/logos/notebooklm.svg",
+        "name": "Gemini Notebook"
+       },
+       {
+        "logo": "assets/logos/elevenlabs.svg",
+        "name": "ElevenLabs"
+       },
+       {
+        "logo": "assets/logos/suno.svg",
+        "name": "Suno"
+       },
+       {
+        "logo": "assets/logos/github-copilot.svg",
+        "name": "GitHub Copilot"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "tools and"
+     },
+     {
+      "do": "show",
+      "target": "d",
+      "on": "and the five"
+     },
+     {
+      "do": "show",
+      "target": "g",
+      "on": "five links"
+     }
+    ]
    }
   }
  ],

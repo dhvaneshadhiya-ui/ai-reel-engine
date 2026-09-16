@@ -69,6 +69,9 @@ export interface SlideProps {
   eyebrow?: string;
   /** [[word]] marks the one yellow pill */
   headline: string;
+  /** "xl": the end card's ask — "Comment [[KEYWORD]]" at poster size (2026-09-16,
+   *  after the Carousel Playbook's CTA page) */
+  headlineSize?: "xl";
   blocks: SlideBlock[];
   moves?: SlideMove[];
   /** the presenter in a corner circle, talking — lets a reel OPEN on the
@@ -327,7 +330,8 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         {scene.eyebrow ? (
           <div style={{ font: `600 38px ${FONT}`, color: C.blue, maxWidth: scene.presenter ? COL - PIP - 30 : undefined }}>{scene.eyebrow}</div>
         ) : null}
-        <div style={{ marginTop: 14, font: `800 84px/1.1 ${FONT}`, letterSpacing: -2.5, color: C.ink,
+        <div style={{ marginTop: 14, font: `800 ${scene.headlineSize === "xl" ? 128 : 84}px/1.08 ${FONT}`,
+          letterSpacing: scene.headlineSize === "xl" ? -4 : -2.5, color: C.ink,
           maxWidth: scene.presenter ? COL - PIP - 30 : undefined }}>{headline}</div>
         {/* FILL TO THE 80% LINE (user, 2026-09-16). Blocks start under the
             headline and the cards/rows grow into the page; centring them left a
