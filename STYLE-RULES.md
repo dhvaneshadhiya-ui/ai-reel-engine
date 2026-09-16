@@ -8239,3 +8239,19 @@ User review of (5):
    Every row highlight clicking gave 27 cues in 58s (one per 2.2s) — trimmed to 23.
    Also corrected: `tick` has a 0.37s lead and belongs to a count STARTING;
    `lock` is the count landing. G40 now accepts popup/impact/reveal on slides.
+
+## 2026-09-16 (7) — fill to the 80% line, never past it
+
+Lesson brought over from the Carousel Playbook's wallpaper reel (its own diagnosis:
+honouring SAFE_RECT's bottom 20% AND parking content above it pushed everything
+into the top ~60%; in a clean player the page looks unfinished). Measured on ours
+before changing anything, last settled frame of each slide: content ended at
+67-77% with a gap above it (blocks were centred), and the ElevenLabs slide ran to
+**90%** — under Instagram's caption. So the rule has two sides:
+- **Designed pages fill from the headline down to the 80% line.** Slide blocks start
+  under the headline; hero/swap cards grow into the page (never shrinking below
+  their own content), rows share what is left within readable bounds, logo tiles
+  are taller. After: every slide ends at 73-79%.
+- **Nothing important below ~82%.** lint_frames `[PLATFORM ZONE]` now BLOCKS a slide
+  or stage whose content runs past 82% (Rule 1: the platform draws its UI there) and
+  `[LOWER HALF EMPTY]` advises below 70%.

@@ -336,6 +336,40 @@ def main():
                 "reusing one shot reads as limited footage; give each beat "
                 "its own")
 
+    # FRAME FILL (user 2026-09-16). A designed page (slide, stage) must reach
+    # down to where the platform UI begins and stop there. SAFE_RECT says
+    # nothing important below 80% height (Instagram's username, caption and
+    # action rail; YouTube's title and channel row). Content that stops near
+    # 60% looks unfinished in a clean player; content below ~82% is covered on
+    # the phone — which is Rule 1, so it blocks. Measured on the settled last
+    # frame of each scene: the lowest row carrying visible type or marks.
+    if not from_stills and video.exists():
+        import subprocess as _sp
+        _t = 0.0
+        for i, sc in enumerate(scenes):
+            _end = _t + float(sc["durationSec"])
+            _t = _end
+            if sc.get("type") not in ("slide", "stage") or sc.get("layout") == "split":
+                continue
+            raw = _sp.run(["ffmpeg", "-v", "error", "-ss", f"{max(0.0, _end - 0.15):.2f}", "-i", str(video),
+                           "-frames:v", "1", "-vf", "scale=108:192,format=gray", "-f", "rawvideo", "-"],
+                          capture_output=True).stdout
+            if len(raw) != 108 * 192:
+                continue
+            px = list(raw)
+            ink = [y for y in range(192) if sum(1 for x in range(108) if px[y * 108 + x] > 34) > 2]
+            if not ink:
+                continue
+            bottom = max(ink) / 192
+            if bottom > 0.82:
+                flags.append(
+                    f"[PLATFORM ZONE] scene {i:02d} ({sc['type']}): content runs to {bottom:.0%} of the "
+                    "height — below 80% Instagram and YouTube draw their own UI over it")
+            elif bottom < 0.70:
+                flags.append(
+                    f"[LOWER HALF EMPTY] scene {i:02d} ({sc['type']}): content stops at {bottom:.0%} — "
+                    "let cards and rows run down to ~75-80% so the page does not look unfinished")
+
     # caption-overlap advisory: display-type scenes that force chips ON
     for i, s in enumerate(scenes):
         display = s["type"] in ("typecard", "wordcascade") or "kinetic" in s
@@ -348,7 +382,7 @@ def main():
     # Severity is DERIVED, never typed. See the verdict block below for why.
     from reel_gates import BLOCKING_RULES
     _GATE_OF = {"[PACING]": ("G03", "G04"), "[CLIP REUSE]": ("G07",)}
-    HARD_ALWAYS = ("[EDGE TEXT]", "[DUPLICATE]", "[HOOK DEAD SPACE]")
+    HARD_ALWAYS = ("[EDGE TEXT]", "[DUPLICATE]", "[HOOK DEAD SPACE]", "[PLATFORM ZONE]")
 
     def _is_hard(f: str) -> bool:
         if f.startswith(HARD_ALWAYS):

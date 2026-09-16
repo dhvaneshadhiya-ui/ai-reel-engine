@@ -172,7 +172,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
     const lit = glow && p > 0;
     return (
       <div style={{
-        flex: 1, background: C.card, borderRadius: 34, padding: "44px 30px", minHeight: 460,
+        flex: 1, background: C.card, borderRadius: 34, padding: "36px 30px",
         // NO EMPTY SHELLS (user, 2026-09-16): the card itself lands with its
         // content. Its space is held from frame 0, so nothing jumps when it does.
         opacity: p, transform: `translateY(${Math.round((1 - p) * 28)}px)`,
@@ -204,11 +204,11 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
   const block = (b: SlideBlock) => {
     switch (b.kind) {
       case "hero":
-        return <div key={b.id} style={{ display: "flex" }}>{side(b.side, b.id, b.side.tone === "free")}</div>;
+        return <div key={b.id} style={{ display: "flex", flex: "1 0 auto", maxHeight: 760 }}>{side(b.side, b.id, b.side.tone === "free")}</div>;
       case "swap": {
         const ar = ramp(t, shownAt(`${b.id}.right`) - 0.15, 0.25);
         return (
-          <div key={b.id} style={{ display: "flex", alignItems: "stretch", gap: 0 }}>
+          <div key={b.id} style={{ display: "flex", alignItems: "stretch", gap: 0, flex: "1 0 auto", maxHeight: 760 }}>
             {side(b.left, `${b.id}.left`, b.left.tone === "free")}
             <div style={{ width: 84, display: "flex", alignItems: "center", justifyContent: "center",
               font: `600 56px ${FONT}`, color: C.blue, opacity: ar, transform: `translateX(${(ar - 1) * 16}px)` }}>→</div>
@@ -218,7 +218,8 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
       }
       case "rows":
         return (
-          <div key={b.id} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+          <div key={b.id} style={{ display: "flex", flexDirection: "column", gap: 14,
+            flex: `${b.rows.length} 1 0`, minHeight: b.rows.length * 84, maxHeight: b.rows.length * 270 }}>
             {b.rows.map((r, i) => {
               const tg = `${b.id}.${i}`;
               const own = at("show", tg);
@@ -229,10 +230,10 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
               const sp = sk !== undefined ? ramp(t, sk, 0.35) : 0;
               return (
                 <div key={i} style={{
-                  display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24,
+                  display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, flex: "1 1 0",
                   opacity: p, transform: `translateY(${Math.round((1 - p) * 20)}px)`,
                   background: h > 0 ? `rgba(18,40,68,${h})` : C.card, borderRadius: 24,
-                  padding: b.rows.length <= 4 ? "36px 36px" : "26px 32px",
+                  padding: "0 36px",
                   border: `2px solid ${h > 0 ? `rgba(77,163,255,${h})` : C.line}`,
                 }}>
                   <div style={{ position: "relative", font: `600 ${b.rows.length <= 4 ? 44 : 38}px/1.2 ${FONT}`, color: C.ink }}>
@@ -276,12 +277,12 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
             {b.items.map((it, i) => {
               const p = ramp(t, base + 0.1 * i, 0.3);
               return (
-                <div key={i} style={{ width: (COL - 40) / 3, height: 320, background: C.card, borderRadius: 28,
+                <div key={i} style={{ width: (COL - 40) / 3, height: 390, background: C.card, borderRadius: 28,
                   border: `2px solid ${C.line}`, display: "flex", flexDirection: "column", alignItems: "center",
                   justifyContent: "center", opacity: p, transform: `translateY(${Math.round((1 - p) * 24)}px)` }}>
                   <div style={{ display: "flex",
                     flexDirection: "column", alignItems: "center" }}>
-                    <Tile src={it.logo} tile={it.tile} size={150} />
+                    <Tile src={it.logo} tile={it.tile} size={170} />
                     <div style={{ marginTop: 20, font: `600 34px/1.2 ${FONT}`, color: C.ink, textAlign: "center",
                       padding: "0 10px" }}>{it.name}</div>
                   </div>
@@ -315,7 +316,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
             style={{ width: "100%", height: "178%", objectFit: "cover", objectPosition: "50% 0%", marginTop: "-12%" }} />
         </div>
       ) : null}
-      <div style={{ position: "absolute", left: L, top: scene.series || scene.index ? 200 : 250, width: COL, bottom: 330,
+      <div style={{ position: "absolute", left: L, top: scene.series || scene.index ? 200 : 250, width: COL, bottom: 384,
         display: "flex", flexDirection: "column" }}>
         {scene.series || scene.index ? (
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 40, font: `600 34px ${FONT}`, color: C.sub }}>
@@ -328,7 +329,12 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         ) : null}
         <div style={{ marginTop: 14, font: `800 84px/1.1 ${FONT}`, letterSpacing: -2.5, color: C.ink,
           maxWidth: scene.presenter ? COL - PIP - 30 : undefined }}>{headline}</div>
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", gap: 28, marginTop: 36 }}>
+        {/* FILL TO THE 80% LINE (user, 2026-09-16). Blocks start under the
+            headline and the cards/rows grow into the page; centring them left a
+            gap above and an unfinished lower half, and a dense slide overflowed
+            to 90% — under Instagram's caption. lint_frames measures both. */}
+        <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", justifyContent: "flex-start",
+          gap: 28, marginTop: 44 }}>
           {scene.blocks.map(block)}
         </div>
       </div>
