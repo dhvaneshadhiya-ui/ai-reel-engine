@@ -458,6 +458,34 @@ def caption_words(
     return chunks
 
 
+def resolve_stage_timings(beats: dict, words: list[dict[str, Any]]) -> list[str]:
+    """Turn every stage move's `on: "<spoken words>"` into `at` seconds.
+
+    A plan may say WHEN a picture lands in words — {"do": "fill", "on": "runs on
+    your own server"} — which is the only timing that stays true when the
+    voiceover is re-cut. Returns the moves it could not resolve; G65 blocks any
+    that survive, because an unresolved move would land at 0 (2026-09-16).
+    """
+    cursor = 0
+    at_t = 0.0
+    unresolved: list[str] = []
+    for index, scene in enumerate(beats.get("scenes") or []):
+        for move in (scene.get("moves") or []) if scene.get("type") == "stage" else []:
+            phrase = str(move.get("on") or "").strip()
+            if not phrase:
+                continue
+            try:
+                first, last = find_phrase(
+                    words, phrase, cursor, f"scene {index:02d} move {move.get('do')}")
+            except SystemExit as exc:      # find_phrase exits with its own detail
+                unresolved.append(f"scene {index:02d} `{move.get('do')}` on {phrase!r}: {exc}")
+                continue
+            cursor = last
+            move["at"] = max(0.0, round(float(words[first]["start"]) - at_t, 2))
+        at_t += float(scene.get("durationSec") or 0)
+    return unresolved
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("slug")
@@ -1075,6 +1103,11 @@ def main() -> None:
                 "links, a derived music curve, or hand-tuned beats.\n"
                 "Re-run with --force if replacing it is what you meant."
             )
+
+    unresolved = resolve_stage_timings(beats, words)
+    if unresolved:
+        raise SystemExit("shot plan names words the voice never says:\n  "
+                         + "\n  ".join(unresolved))
 
     output.write_text(json.dumps(beats, indent=2, ensure_ascii=False) + "\n")
     print(f"compiled {len(scenes)} shots, {audio_end:.3f}s: {output}")

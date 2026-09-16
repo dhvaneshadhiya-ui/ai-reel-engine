@@ -214,6 +214,12 @@ anyone the last script was a list.
 Write `scripts/<slug>.md`: the spoken script **and** a beat table where every
 beat carries `visual: <manifest asset id>` or `visual: MG:<component + spec>`.
 A beat that resolves to neither is illegal — re-scout or rewrite the line.
+**The animated treatment (2026-09-16):** when the user asks for a list reel "in the
+animated format", set `facePlan: "bookends"`, build the body from `stage` scenes, and turn
+the music bed on (`tools/duck_music.py` derives the curve). The voice and the on-screen words
+deliberately differ — the voice argues, the card labels — so G68 checks every on-screen number
+against the script and the ledger. Full rules in AGENT.md.
+
 A line that EXPLAINS rather than proves may resolve to `visual: MG:stage <verb + thing>`
 (2026-09-15): write the picture in plain words from the topic's own world, and never the
 last reel's picture — AGENT.md and PIPELINE.md §8 have the grammar, G67 the repetition check.

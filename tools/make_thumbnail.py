@@ -62,36 +62,10 @@ MAX_CHARS_PER_LINE = 14
 FEED_DARK = (15, 15, 15)
 STANDOUT_MIN = 0.12
 
-_UNITS = ("zero one two three four five six seven eight nine ten eleven twelve "
-          "thirteen fourteen fifteen sixteen seventeen eighteen nineteen").split()
-_TENS = "twenty thirty forty fifty sixty seventy eighty ninety".split()
-
-
-def _spelled(n: int) -> str | None:
-    """Regex for how a script spells n (scripts write numbers as words for TTS)."""
-    if n < 20:
-        return _UNITS[n]
-    if n < 100:
-        t, u = divmod(n, 10)
-        return _TENS[t - 2] + (f"[- ]{_UNITS[u]}" if u else "")
-    return None
-
-
-def unsourced_in(texts: list, corpus: str) -> list[str]:
-    """Numbers on the cover that appear nowhere in the script or the ledger."""
-    flat = corpus.lower().replace(",", "")
-    bad = []
-    for t in texts:
-        for m in re.findall(r"\d[\d,.]*", t or ""):
-            raw = m.rstrip(".,")
-            d = raw.replace(",", "")
-            if re.search(rf"(?<![\d.]){re.escape(d)}(?!\d)", flat):
-                continue
-            w = _spelled(int(d)) if d.isdigit() else None
-            if w and re.search(rf"\b{w}\b", flat):
-                continue
-            bad.append(raw)
-    return bad
+# _spelled/unsourced_in moved to reel_gates 2026-09-16 — a number on a stage
+# card is the same claim as a number on a cover, and one copy cannot drift.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from reel_gates import unsourced_in  # noqa: E402
 
 
 def unsourced_numbers(slug: str, texts: list) -> list[str]:

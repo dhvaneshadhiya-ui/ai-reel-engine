@@ -325,6 +325,11 @@ CaptionChips (caption bar), CounterScene, InkMarks (shared hand-drawn marks)`.
   2+ lines, 2s+); G64 advises a hand-built sheet that left it unset.
 - G63 (advice) flags a mark or lens that lands after its scene ends or off the image, and an unknown exit.
 
+**A move may be timed in WORDS (2026-09-16):** `{"do": "fill", "on": "runs on your own
+server"}`. `compile_shot_plan` finds the phrase in the voice track and writes `at` in
+seconds from the scene's start; G65 blocks a move still carrying `on` with no `at`, because
+an unresolved move lands at 0. Word timing is the only timing that survives a re-cut VO.
+
 **`stage` (2026-09-15) — graphics that act out the sentence.** It has no picture of its
 own; the sheet supplies one per line, from the topic's world:
 - `elements`: `card` (title, lines, tone light|dark|accent), `image` (a real still: product

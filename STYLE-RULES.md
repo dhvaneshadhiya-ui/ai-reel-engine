@@ -8112,3 +8112,32 @@ whole beat order: placeholders, fill, arrowed connector, fill, strike, closing l
 **Left for the carousel side, not done here:** its slides carry ~1.5s of dead tail each, the
 stitched preview MP4 in its §10 is missing from the delivery, and its §14 log has no entry for
 this carousel.
+
+## 2026-09-16 (2) — the animated treatment, and what the voice/screen split costs
+
+User directive: for list topics they will sometimes ask for a reel built in the animated
+format only, with a voiceover — "and I will tell you specifically when". Their calls:
+**presenter bookends (option B), music bed on**, and the point that matters most:
+
+> "voiceover and what is going to be on screen might not going to be the exact same"
+
+That is the right instinct and it is also the hole. The voice argues, the card labels; they
+agree without matching. Rule 3 survives that (it asks the scene to illustrate the line being
+spoken, not to transcribe it), but a figure can now reach the frame without ever being said.
+**G68** closes it: every number on a stage card must already be in the approved script or the
+claims ledger — RIGHTS-class, the same rule `make_thumbnail` has enforced on covers since
+2026-09-11. The helper moved into `reel_gates` so one copy serves both.
+
+Built with it:
+- `facePlan` on the sheet — `"bookends"` (face on the hook and the CTA) or `"none"`. G06's
+  face band and G17's five-second rule read it, so a faceless reel is declared rather than
+  drifted into. Without the declaration the band still bites.
+- **Stage moves may be timed in WORDS**: `{"do": "fill", "on": "runs on your own server"}`.
+  `compile_shot_plan` resolves the phrase against the voice track into seconds; G65 blocks a
+  move left unresolved. Seconds typed by hand die the moment a VO is re-cut; words do not.
+- **G67's within-reel check is off for `top5` and `ai-tools`.** Measured on the carousel's own
+  slide videos: repetition item after item IS the rhythm there. Across reels it still applies.
+
+Not done yet: the first real reel in this treatment. The mechanics are tested, the look is
+not proven end to end, and the treatment needs one topic through research -> script approval
+-> VO -> build before it is used on anything published.

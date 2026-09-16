@@ -589,6 +589,13 @@ export interface MusicBed {
 }
 
 export interface BeatSheet {
+  /**
+   * How the presenter is used (2026-09-16). Absent = the normal reel: the face
+   * carries the through-line. "bookends" = face on the hook and the CTA, an
+   * animated `stage` body between them. "none" = no presenter at all.
+   * G06/G17 read this; nothing else changes.
+   */
+  facePlan?: "bookends" | "none";
   id: string;
   fps: number;
   width: number;

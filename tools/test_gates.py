@@ -947,6 +947,96 @@ try:
 finally:
     _rg._recent_stage_signatures = _orig_recent
 
+# G68 — A NUMBER ON SCREEN IS A CLAIM (2026-09-16). In the animated treatment
+# the voice and the screen deliberately differ, so a figure can reach the frame
+# without ever being spoken. It must still be in the script or the ledger.
+_s = copy.deepcopy(BASE)
+_stage(_s, elements=[{"id": "a", "kind": "card", "x": 0.3, "y": 0.4, "w": 0.3,
+                      "title": "Zapier", "price": "$239.88", "priceTone": "cost"}],
+       moves=[{"do": "arrive", "target": "a", "at": 0.1}])
+try:
+    check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS,
+                sourced_text="n8n replaces it and is free to self-host.")
+    print("  FAIL G68 let an unsourced on-screen number through")
+    raise SystemExit(1)
+except GateError as _e:
+    if "G68" not in str(_e):
+        print(f"  FAIL G68 did not fire on an unsourced on-screen number; got:\n{_e}")
+        raise SystemExit(1)
+_fired.append(("G68", "an unsourced number on a stage card"))
+_counted("G68 blocks — a stage card showing a number the script never sourced")
+
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS,
+                       sourced_text="Zapier is $239.88 a year per seat; n8n is $0.")
+except GateError as _e:
+    _adv = list(_e.advice) + [str(_e)]
+if any("G68" in str(a) for a in _adv):
+    print("  FAIL G68 fired on a number the ledger carries")
+    raise SystemExit(1)
+_counted("G68 silent — the same number, once the ledger carries it")
+
+# FACE PLAN (2026-09-16): a reel may declare that the presenter only bookends it,
+# or is absent. Without the declaration the band still bites.
+def _thin_face(sheet, keep=1):
+    seen = 0
+    for k, sc in enumerate(sheet["scenes"]):
+        if "avatar-master" in str(sc.get("src") or ""):
+            seen += 1
+            if seen > keep:
+                sc["src"] = f"assets/x/clips/extra{k}.mp4"
+
+_s = copy.deepcopy(BASE)
+_thin_face(_s)
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS)
+except GateError as _e:
+    _adv = list(_e.advice) + [str(_e)]
+if not any("G06" in str(a) for a in _adv):
+    print("  FAIL G06 stayed quiet on a 4% facecam share with no facePlan")
+    raise SystemExit(1)
+_counted("G06 advises — a face-thin reel that never declared a face plan")
+
+_s["facePlan"] = "bookends"
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS)
+except GateError as _e:
+    _adv = list(_e.advice) + [str(_e)]
+if any("G06" in str(a) for a in _adv):
+    print(f"  FAIL G06 still bit a declared bookends reel: "
+          f"{[a for a in _adv if 'G06' in str(a)][0][:110]}")
+    raise SystemExit(1)
+_counted("G06 silent — the same reel, declared facePlan bookends")
+
+_s = copy.deepcopy(BASE)
+_thin_face(_s, keep=0)
+_s["facePlan"] = "none"
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS)
+except GateError as _e:
+    _adv = list(_e.advice) + [str(_e)]
+_hits = [a for a in _adv if any(g in str(a) for g in ("G06", "G17"))]
+if _hits:
+    print(f"  FAIL a declared faceless reel still drew {str(_hits[0])[:110]}")
+    raise SystemExit(1)
+_counted("G06/G17 silent — a declared faceless reel has no face to time")
+
+# G67's within-reel check is off for list genres, where repetition is the rhythm
+_s = copy.deepcopy(BASE)
+_s["format"] = "top5"
+_s["allowLong"] = True
+_s["allowLongReason"] = "fixture: the list-genre exemption needs the sheet as built"
+_stage(_s, moves=[{"do": "connect", "from": "a", "to": "b", "at": 0.1 * k} for k in range(6)]
+       + [{"do": "highlight", "target": "a", "at": 1.0}])
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS)
+except GateError as _e:
+    _adv = list(_e.advice) + [str(_e)]
+if any("G67" in str(a) and "carrying every idea" in str(a) for a in _adv):
+    print("  FAIL G67 called a list reel's repeated picture a template")
+    raise SystemExit(1)
+_counted("G67 silent — a list genre may repeat its picture item after item")
+
 # ── THE GUARD THAT WOULD HAVE CAUGHT ALL THREE OF TODAY'S BUGS ──────────────
 #
 # 2026-09-08 turned up three gates measuring the wrong thing, and every one of
@@ -1150,6 +1240,8 @@ CASES = [
     (lambda s: _stage(s, moves=[{"do": "arrive", "target": "a", "at": 0.6},
                                 {"do": "fill", "target": "a", "at": 0.2}]),
      "G66", "a fill that lands before the card it fills"),
+    (lambda s: _stage(s, moves=[{"do": "arrive", "target": "a", "on": "benchmark"}]),
+     "G65", "a stage move still naming words, never compiled into seconds"),
     (lambda s: _stage(s, moves=[{"do": "connect", "from": "a", "to": "b", "at": 0.1 * k} for k in range(6)]
                       + [{"do": "highlight", "target": "a", "at": 1.0}]),
      "G67", "one move carrying a whole reel's stages"),

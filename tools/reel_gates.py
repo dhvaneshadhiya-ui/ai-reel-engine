@@ -263,6 +263,12 @@ FORMATS: dict[str, dict] = {
 }
 DEFAULT_FORMAT = "news"
 
+# LIST GENRES: the pictures repeat on purpose — item, item, item — the way a
+# carousel's slides do, and that repetition IS the rhythm (2026-09-16, measured
+# on the carousel playbook's own slide videos). G67's within-reel "one verb for
+# everything" check is off for these; the across-reels check still applies.
+LIST_FORMATS = {"top5", "ai-tools"}
+
 # ---------------------------------------------------------------- style names
 # Renamed 2026-08-16: style ids describe the STYLE, not its creator, so they
 # read like the format vocabulary (news / top5 / comparison).
@@ -589,6 +595,7 @@ BLOCKING_RULES: dict[str, str] = {
     "G55": "RENDER an MG card off its component contract kills or blanks the render",
     "G56": "RENDER a scene whose list is absent or empty draws nothing",
     "G65": "RENDER a stage off its contract draws nothing or crashes",
+    "G68": "RIGHTS a number on screen must be in the script or the ledger",
     # G48 is RENDER, not framing taste: below 1 the layer stops covering the
     # canvas, and a focus outside 0..1 pushes past the slack `cover` gives it.
     # Both paint the black backdrop. G49 — the zoom/zoomDir compounding note —
@@ -721,6 +728,43 @@ def _recent_stage_signatures(slug: str | None, n: int = 5) -> dict:
     return out
 
 
+_UNITS = ("zero one two three four five six seven eight nine ten eleven twelve "
+          "thirteen fourteen fifteen sixteen seventeen eighteen nineteen").split()
+_TENS = "twenty thirty forty fifty sixty seventy eighty ninety".split()
+
+
+def _spelled(n: int) -> str | None:
+    """Regex for how a script spells n (scripts write numbers as words for TTS)."""
+    if n < 20:
+        return _UNITS[n]
+    if n < 100:
+        t, u = divmod(n, 10)
+        return _TENS[t - 2] + (f"[- ]{_UNITS[u]}" if u else "")
+    return None
+
+
+def unsourced_in(texts: list, corpus: str) -> list[str]:
+    """Numbers in `texts` that appear nowhere in the script or the ledger.
+
+    Lived in make_thumbnail.py from 2026-09-11, where a number on a COVER has
+    no room for its source. A number on a stage card is the same claim with the
+    same problem, so the helper moved here and both read it (2026-09-16).
+    """
+    flat = corpus.lower().replace(",", "")
+    bad = []
+    for t in texts:
+        for m in re.findall(r"\d[\d,.]*", str(t or "")):
+            raw = m.rstrip(".,")
+            d = raw.replace(",", "")
+            if re.search(rf"(?<![\d.]){re.escape(d)}(?!\d)", flat):
+                continue
+            w = _spelled(int(d)) if d.isdigit() else None
+            if w and re.search(rf"\b{w}\b", flat):
+                continue
+            bad.append(raw)
+    return bad
+
+
 def film_fits(sc: dict, frame_w: int = 1080, frame_h: int = 1920) -> bool:
     """Would SourceRead's `film` mode actually move this page? (2026-09-11)
 
@@ -743,7 +787,8 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 manifest: dict | None = None,
                 allow_short: bool = False,
                 clip_durations: dict[str, float] | None = None,
-                vo_words: list | None = None) -> list[str]:
+                vo_words: list | None = None,
+                sourced_text: str | None = None) -> list[str]:
     """Run every mechanical gate. Raises GateError listing ALL failures.
 
     Returns the list of non-blocking warnings.
@@ -949,10 +994,21 @@ def check_beats(beats: dict, vo_end: float | None = None,
                      if "avatar-master" in str(s.get("src") or "")]
     face = sum(s["durationSec"] for s in avatar_scenes)
     share = face / total if total else 0
-    if not (FC_MIN <= share <= FC_MAX):
+    # FACE PLAN (2026-09-16). The band assumes the presenter carries the
+    # through-line. A reel can say otherwise: "bookends" puts the face on the
+    # hook and the CTA with an animated body between, "none" drops it entirely.
+    # Declared on the sheet, so a faceless reel is a decision, not a drift.
+    face_plan = str(beats.get("facePlan") or "").lower()
+    fc_min, fc_max = FC_MIN, FC_MAX
+    if face_plan == "bookends":
+        fc_min = 0.03
+    elif face_plan == "none":
+        fc_min = 0.0
+    if not (fc_min <= share <= fc_max):
+        plan = f" with facePlan {face_plan!r}" if face_plan else ""
         errors.append(
             f"G06 facecam {share:.0%} of runtime, outside "
-            f"{FC_MIN:.0%}-{FC_MAX:.0%} for format {fmt_name!r}.")
+            f"{fc_min:.0%}-{fc_max:.0%} for format {fmt_name!r}{plan}.")
 
     # G07 — one source ASSET may carry only one beat
     #
@@ -1131,8 +1187,11 @@ def check_beats(beats: dict, vo_end: float | None = None,
             face_at = t
             break
         t += sc["durationSec"]
-    if face_at is None:
-        errors.append("G17 the presenter never appears.")
+    if face_plan == "none":
+        pass                      # a declared faceless reel has no face to time
+    elif face_at is None:
+        errors.append("G17 the presenter never appears. A reel that means to be "
+                      "faceless says so: facePlan \"none\" (or \"bookends\").")
     elif face_at > FACE_BY:
         errors.append(
             f"G17 presenter first appears at {face_at:.1f}s — must be on screen "
@@ -1701,6 +1760,12 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 errors.append(f"G65 scene {i:02d} stage move {verb!r} is not one of "
                               f"{', '.join(sorted(STAGE_VERBS))}.")
                 continue
+            if m.get("at") is None:
+                errors.append(
+                    f"G65 scene {i:02d} stage `{verb}` has no `at`"
+                    + (f" — it names the words {m.get('on')!r}, which "
+                       "compile_shot_plan turns into seconds; recompile the sheet."
+                       if m.get("on") else " — it would land at 0."))
             for ref in ((m.get("from"), m.get("to")) if verb == "connect" else (m.get("target"),)):
                 if ref not in ids:
                     errors.append(f"G65 scene {i:02d} stage `{verb}` names element {ref!r}, "
@@ -1752,11 +1817,33 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # something are counted.
     stage_verbs = [str(m.get("do")) for sc in scenes if sc.get("type") == "stage"
                    for m in (sc.get("moves") or []) if m.get("do") not in ("arrive", "exit")]
-    if len(stage_verbs) >= 6:
+    if len(stage_verbs) >= 6 and fmt_name not in LIST_FORMATS:
         top, n = Counter(stage_verbs).most_common(1)[0]
         if n / len(stage_verbs) > 0.5:
             errors.append(f"G67 {n} of {len(stage_verbs)} stage moves are `{top}` — one move "
                           "carrying every idea is a template, not a picture of each sentence.")
+    # G68 — A NUMBER ON SCREEN IS A CLAIM (2026-09-16). RIGHTS.
+    # In this treatment the voice and the screen deliberately differ: the voice
+    # argues, the card labels. That is the opening for a figure nobody ever
+    # said and nobody sourced. Same rule the cover tool has enforced since
+    # 2026-09-11 — every number must already be in the approved script or the
+    # claims ledger. Runs only where that text is available (the CLI loads it).
+    if sourced_text:
+        for i, sc in enumerate(scenes):
+            if sc.get("type") != "stage":
+                continue
+            texts = []
+            for e in sc.get("elements") or []:
+                texts += [e.get("title"), e.get("price"), e.get("text"), e.get("label")]
+                texts += list(e.get("lines") or [])
+            texts += [m.get("text") for m in (sc.get("moves") or [])]
+            bad = unsourced_in([t for t in texts if t], sourced_text)
+            if bad:
+                errors.append(
+                    f"G68 scene {i:02d} stage shows {', '.join(sorted(set(bad)))} — "
+                    "not in the approved script or the claims ledger. A number on "
+                    "screen is a claim, whether or not the voice says it.")
+
     mine = stage_signatures(beats)
     if mine:
         for other, sigs in _recent_stage_signatures(beats.get("id")).items():
@@ -3417,8 +3504,13 @@ def main() -> None:
         vo_words = [(w["word"], float(w["start"]), float(w["end"])) for w in ws]
 
     try:
+        sourced = "".join(
+            (ROOT / "jobs" / slug / f).read_text() + "\n"
+            for f in ("script.md", "research.md")
+            if (ROOT / "jobs" / slug / f).exists()) or None
         warnings = check_beats(beats, vo_end=vo_end, manifest=manifest,
-                               allow_short=allow_short, vo_words=vo_words)
+                               allow_short=allow_short, vo_words=vo_words,
+                               sourced_text=sourced)
     except GateError as e:
         print(f"GATES FAILED — {slug}\n{e}")
         sys.exit(1)

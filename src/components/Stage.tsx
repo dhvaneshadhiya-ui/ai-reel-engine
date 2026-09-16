@@ -79,6 +79,12 @@ export interface StageMove {
   do: StageVerb;
   /** seconds into the scene: land it on the spoken word */
   at: number;
+  /**
+   * ...or name the spoken words and let `compile_shot_plan` work out `at` from
+   * the voice track (2026-09-16). A hand-written sheet that still carries `on`
+   * with no `at` is blocked by G65 — the move would otherwise land at 0.
+   */
+  on?: string;
   target?: string;
   from?: string;
   to?: string;

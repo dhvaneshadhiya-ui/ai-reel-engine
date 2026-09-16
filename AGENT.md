@@ -649,6 +649,29 @@ marks on the spoken word, dim-the-rest and a magnifier on page reads, a desk til
 receipts, and `exit: push|whip` between scenes. Use them where the line earns it: one
 mark per beat, not a mark on every beat.
 
+**THE ANIMATED TREATMENT (user directive 2026-09-16).** For list topics — "5 best
+apps", "5 repos" — the user may ask for a reel built in the animated format ONLY. It is
+not a new style pack: it is three settings on an ordinary reel.
+
+- `facePlan: "bookends"` — the presenter opens and closes, the body is `stage` scenes.
+  (`"none"` is the faceless variant.) G06's face band and G17's five-second rule read it,
+  so a declared plan is a decision rather than a drift. **B — bookends — is the default the
+  user chose**: identity at the ends, animation where it actually helps.
+- **A music bed, on** (the user's call the same day), derived by `tools/duck_music.py`
+  from the word timings so it carves under the voice instead of guessing.
+- **The voice and the screen are NOT the same words.** The voice argues; the card labels.
+  They must agree, never match — Rule 3 asks that the scene illustrate the line being
+  spoken, not that the text be a transcript. Captions: a stage scene that carries its own
+  words sets `hideCaptions` (the renderer already auto-hides on a two-word overlap).
+- **Every number on screen must be in the approved script or the claims ledger** — G68,
+  RIGHTS-class, the same rule the cover tool has enforced since 2026-09-11. This is the
+  hole the voice/screen split opens, and it is the one that would ship an invented figure.
+- Repetition INSIDE a list reel is the rhythm, exactly as in the carousel: G67's
+  "one verb for everything" check is off for `top5` and `ai-tools`. Across reels it
+  still bites — a later reel may not reuse the same picture.
+- Proof still comes from real material: a card is a label, a screenshot is evidence.
+  Alternate them, or the reel proves nothing.
+
 **Graphics that act out the line — `stage` (2026-09-15).** User directive: *"different
 topic and you have to create different things in different ways from video to video."*
 Receipts and real footage PROVE a claim; a stage EXPLAINS one. Reach for it where a line

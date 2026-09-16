@@ -830,6 +830,38 @@ def run() -> int:
        and _pc.platform_errors("instagram", IG_OK) == [])
 
     # 8. check_script's own selftest — structure thresholds + AI tells.
+    print("\n  -- stage moves timed in words (compile_shot_plan) --")
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    import compile_shot_plan as csp  # noqa: E402
+
+    def _words(text: str, step: float = 0.4) -> list:
+        return [{"norm": w.lower().strip(".,"), "text": w,
+                 "start": round(i * step, 2), "end": round(i * step + step, 2)}
+                for i, w in enumerate(text.split())]
+
+    words = _words("nine repos replace three thousand dollars a year of software "
+                   "this one runs on your own server and costs nothing")
+    sheet = {"scenes": [
+        {"type": "footage", "durationSec": 2.0},
+        {"type": "stage", "durationSec": 4.0, "moves": [
+            {"do": "fill", "on": "runs on your own server"},
+            {"do": "stamp", "on": "costs nothing"}]},
+    ]}
+    left = csp.resolve_stage_timings(sheet, words)
+    moves = sheet["scenes"][1]["moves"]
+    ok("a move timed in words resolves to seconds from its scene start", not left)
+    # "runs" is word 12 of the fixture (0.4s each) = 4.8s, scene starts at 2.0s
+    ok("the resolved second is measured from the scene, not the reel",
+       moves[0]["at"] == 2.8)
+    ok("a later move resolves later", moves[1]["at"] > moves[0]["at"])
+    bad = {"scenes": [{"type": "stage", "durationSec": 3.0,
+                       "moves": [{"do": "fill", "on": "a line nobody ever says"}]}]}
+    left = csp.resolve_stage_timings(bad, words)
+    ok("words the voice never says are reported, not silently timed at 0",
+       len(left) == 1 and "fill" in left[0])
+    ok("and the move is left with no `at`, which G65 blocks",
+       "at" not in bad["scenes"][0]["moves"][0])
+
     print("\n  -- check_script selftest --")
     rc = check_script.selftest()
     ok("check_script selftest passes", rc == 0)
