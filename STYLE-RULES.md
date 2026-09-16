@@ -8217,3 +8217,25 @@ Chosen by the user from the improvement list:
   scene length; G04 judges a slide by its longest reveal gap (1.7s / 2.93s).
 - **A tick where a count lands**, added by the compiler. The carousel videos are
   silent (no audio stream), so the level (0.25) is our judgement, not theirs.
+
+## 2026-09-16 (6) — no empty shells, no shaking type, a sound per purpose
+
+User review of (5):
+1. **"Empty shells until content lands is bad UI/UX."** The carousel's placeholder
+   shapes were copied literally; in a reel they read as a page failing to load.
+   A slide block is now invisible until its `show` — card, row, tip and tile land
+   WITH their content. Their space is still reserved, so nothing jumps.
+2. **"Texts consistently shaking."** Measured before fixing: on a stretch with no
+   arrivals the headline's intensity centroid wobbled +/-0.3-0.5px frame to frame
+   (frame change 0.18-3.09). Cause: the 3% page push from (5), and HeadlineBuild's
+   1.2% breathing scale — a fractional scale redraws every glyph at a new
+   sub-pixel size each frame. Both removed; HeadlineBuild's drift rounds to whole
+   pixels; slide motion now lives in a background glow crossing the page. After:
+   frame change 0.002-0.018 on the same stretches.
+   **Rule: never animate a continuous scale on type.** Type moves only while it arrives.
+3. **Sound per purpose**, derived by compile_shot_plan from what each slide does:
+   page change = soft whoosh, keyword pill = pop, count lands = lock, strike =
+   marker, closing highlight = click, the turn ("move") = core hit, CTA card = pop.
+   Every row highlight clicking gave 27 cues in 58s (one per 2.2s) — trimmed to 23.
+   Also corrected: `tick` has a 0.37s lead and belongs to a count STARTING;
+   `lock` is the count landing. G40 now accepts popup/impact/reveal on slides.

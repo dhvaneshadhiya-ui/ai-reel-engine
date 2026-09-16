@@ -74,7 +74,14 @@
         "src": "assets/five-free-ai-tools/avatar-master-hook.mp4",
         "from": 0.0
       },
-      "durationSec": 6.26
+      "durationSec": 6.26,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.13,
+          "vol": 0.343
+        }
+      ]
     },
     {
       "eyebrow": "#1 \u00b7 Google AI Studio",
@@ -142,7 +149,19 @@
       "assetId": "logo-gemini",
       "claimId": "logo-gemini",
       "covers": "Google AI Studio is",
-      "sourceUrl": "https://svgl.app"
+      "sourceUrl": "https://svgl.app",
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.45,
+          "vol": 0.343
+        }
+      ]
     },
     {
       "eyebrow": "#2 \u00b7 Gemini Notebook",
@@ -213,7 +232,19 @@
       ],
       "type": "slide",
       "hideCaptions": true,
-      "durationSec": 6.72
+      "durationSec": 6.72,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.79,
+          "vol": 0.343
+        }
+      ]
     },
     {
       "eyebrow": "#2 \u00b7 Gemini Notebook",
@@ -274,14 +305,24 @@
       ],
       "type": "slide",
       "hideCaptions": true,
+      "durationSec": 7.48,
       "sfx": [
         {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
           "src": "sfx-action/marker.mp3",
-          "at": 3.84,
+          "at": 3.83,
           "vol": 0.417
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.93,
+          "vol": 0.343
         }
-      ],
-      "durationSec": 7.48
+      ]
     },
     {
       "eyebrow": "#3 \u00b7 ElevenLabs",
@@ -386,9 +427,14 @@
       "durationSec": 10.32,
       "sfx": [
         {
-          "src": "sfx-action/tick.mp3",
-          "at": 0.9,
-          "vol": 1.0
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.65,
+          "vol": 0.343
         }
       ]
     },
@@ -460,28 +506,38 @@
       ],
       "type": "slide",
       "hideCaptions": true,
-      "sfx": [
-        {
-          "src": "sfx-action/marker.mp3",
-          "at": 4.08,
-          "vol": 0.417
-        },
-        {
-          "src": "sfx-action/tick.mp3",
-          "at": 0.9,
-          "vol": 1.0
-        },
-        {
-          "src": "sfx-action/tick.mp3",
-          "at": 6.56,
-          "vol": 1.0
-        }
-      ],
       "durationSec": 7.2,
       "assetId": "logo-suno",
       "claimId": "logo-suno",
       "covers": "Suno gives 50 credits",
-      "sourceUrl": "https://svgl.app"
+      "sourceUrl": "https://svgl.app",
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 4.07,
+          "vol": 0.417
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.75,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 0.9,
+          "vol": 0.26
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 6.56,
+          "vol": 0.26
+        }
+      ]
     },
     {
       "eyebrow": "#5 \u00b7 GitHub Copilot",
@@ -569,14 +625,19 @@
       "sourceUrl": "https://svgl.app",
       "sfx": [
         {
-          "src": "sfx-action/tick.mp3",
-          "at": 1.06,
-          "vol": 1.0
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
         },
         {
-          "src": "sfx-action/tick.mp3",
+          "src": "sfx/Pop.MP3",
+          "at": 1.29,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lock.mp3",
           "at": 4.74,
-          "vol": 1.0
+          "vol": 0.26
         }
       ]
     },
@@ -648,14 +709,24 @@
       ],
       "type": "slide",
       "hideCaptions": true,
+      "durationSec": 5.58,
       "sfx": [
         {
-          "src": "sfx-action/lock.mp3",
-          "at": 4.3,
-          "vol": 0.26
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Click.MP3",
+          "at": 4.27,
+          "vol": 0.251
+        },
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.39,
+          "vol": 0.556
         }
-      ],
-      "durationSec": 5.58
+      ]
     },
     {
       "type": "footage",
@@ -673,7 +744,19 @@
         "y": 0.72
       },
       "durationSec": 3.321,
-      "zoomDir": "none"
+      "zoomDir": "none",
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.3,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.3,
+          "vol": 0.343
+        }
+      ]
     }
   ],
   "captions": [

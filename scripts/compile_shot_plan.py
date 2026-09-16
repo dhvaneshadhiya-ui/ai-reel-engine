@@ -1136,27 +1136,66 @@ def main() -> None:
         raise SystemExit("shot plan names words the voice never says:\n  "
                          + "\n  ".join(unresolved))
 
-    # A TICK WHERE A NUMBER STOPS COUNTING (2026-09-16). Slide.tsx rolls a bare
-    # number or price up over 0.9s from its `show`; the landing is the moment
-    # the number is read, so it gets a soft tick unless a cue already sits
-    # there. The carousel is silent — the level is our judgement, kept under
-    # the other action cues.
-    for scene in beats.get("scenes") or []:
-        if scene.get("type") != "slide":
-            continue
-        mv = {(m.get("do"), m.get("target")): m.get("at") for m in scene.get("moves") or []}
-        for b in scene.get("blocks") or []:
-            sides = [(b.get("side"), b["id"])] if b.get("kind") == "hero" else \
-                [(b.get("left"), f"{b['id']}.left"), (b.get("right"), f"{b['id']}.right")] if b.get("kind") == "swap" else []
-            for s, target in sides:
-                price = str((s or {}).get("price") or "")
-                if not re.fullmatch(r"\$?[0-9][0-9,]*(\.[0-9]+)?", price) or float(re.sub(r"[$,]", "", price)) == 0:
-                    continue
-                shown = mv.get(("show", target), mv.get(("show", b["id"]), 0.0)) or 0.0
-                land = round(shown + 0.9, 2)
-                cues = scene.setdefault("sfx", [])
-                if land < float(scene.get("durationSec") or 0) and not any(abs(float(c.get("at", 0)) - land) < 0.25 for c in cues):
-                    cues.append({"src": "sfx-action/tick.mp3", "at": land, "vol": 0.25})
+    # SLIDE SOUND, ONE SOUND PER PURPOSE (user 2026-09-16: "various sound effects
+    # ... at different places with different purposes"). Derived from what the
+    # slide DOES, so every animated reel gets it and nobody places cues by hand:
+    #   page change         soft whoosh          transition
+    #   keyword pill lands  pop                  popup
+    #   a count lands       lock                 action (snaps into place)
+    #   something struck    marker               action (pen down)
+    #   closing highlight   click                popup (last slide only)
+    #   the turn ("move")   core hit             impact — the last slide's pill
+    #   CTA keyword card    pop                  popup (an element entering)
+    # Cue `at` = event minus the file's measured lead (tools/sfx_library.py).
+    # A cue within 0.35s of another is skipped: two sounds on one beat blur.
+    # A plan may still add its own cues; `slideSfx: false` turns this off.
+    if plan.get("slideSfx", True):
+        LEAD = {"sfx/whoosh.MP3": 0.10, "sfx/Pop.MP3": 0.03, "sfx-action/lock.mp3": 0.0,
+                "sfx-action/marker.mp3": 0.01, "sfx/Click.MP3": 0.03, "sfx/Core.MP3": 0.05,
+                "sfx/Magic Reveal.MP3": 0.08}
+        VOL = {"sfx/whoosh.MP3": 0.18, "sfx/Pop.MP3": 0.3, "sfx-action/lock.mp3": 0.35,
+               "sfx-action/marker.mp3": 0.4, "sfx/Click.MP3": 0.22, "sfx/Core.MP3": 0.35,
+               "sfx/Magic Reveal.MP3": 0.25}
+        scenes_ = beats.get("scenes") or []
+        slides = [k for k, sc in enumerate(scenes_) if sc.get("type") == "slide"]
+
+        def _cue(sc: dict, src: str, event: float) -> None:
+            at_ = round(max(0.0, event - LEAD[src]), 2)
+            cues = sc.setdefault("sfx", [])
+            if at_ < float(sc.get("durationSec") or 0) and not any(
+                    abs(float(c.get("at", 0)) - at_) < 0.35 for c in cues):
+                cues.append({"src": src, "at": at_, "vol": VOL[src]})
+
+        for k, sc in enumerate(scenes_):
+            if sc.get("type") == "slide":
+                mv = {(m.get("do"), m.get("target")): m.get("at") for m in sc.get("moves") or []}
+                if k > 0:
+                    _cue(sc, "sfx/whoosh.MP3", 0.0)
+                for m in sc.get("moves") or []:
+                    if m.get("at") is None:
+                        continue
+                    if m["do"] == "strike":
+                        _cue(sc, "sfx-action/marker.mp3", m["at"])
+                    elif m["do"] == "pill":
+                        _cue(sc, "sfx/Core.MP3" if k == slides[-1] else "sfx/Pop.MP3", m["at"])
+                    elif m["do"] == "highlight" and k == slides[-1]:
+                        # only the closing highlight clicks: one on every row
+                        # highlight made 27 cues in 58s, a sound every 2.2s
+                        _cue(sc, "sfx/Click.MP3", m["at"])
+                for b in sc.get("blocks") or []:
+                    sides = [(b.get("side"), b["id"])] if b.get("kind") == "hero" else \
+                        [(b.get("left"), f"{b['id']}.left"), (b.get("right"), f"{b['id']}.right")] \
+                        if b.get("kind") == "swap" else []
+                    for s, target in sides:
+                        price = str((s or {}).get("price") or "")
+                        if re.fullmatch(r"\$?[0-9][0-9,]*(\.[0-9]+)?", price) and float(re.sub(r"[$,]", "", price)):
+                            shown = mv.get(("show", target), mv.get(("show", b["id"]), 0.0)) or 0.0
+                            _cue(sc, "sfx-action/lock.mp3", shown + 0.9)
+            elif sc.get("type") == "footage" and k > 0 and scenes_[k - 1].get("type") == "slide":
+                _cue(sc, "sfx/whoosh.MP3", 0.0)
+                for ln in (sc.get("headline") or {}).get("lines") or []:
+                    if ln.get("kind") == "pill" and "[[" in str(ln.get("text")):
+                        _cue(sc, "sfx/Pop.MP3", float(ln.get("at", 0)) + 0.25)
 
     output.write_text(json.dumps(beats, indent=2, ensure_ascii=False) + "\n")
     print(f"compiled {len(scenes)} shots, {audio_end:.3f}s: {output}")

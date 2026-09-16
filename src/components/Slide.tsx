@@ -173,12 +173,14 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
     return (
       <div style={{
         flex: 1, background: C.card, borderRadius: 34, padding: "44px 30px", minHeight: 460,
+        // NO EMPTY SHELLS (user, 2026-09-16): the card itself lands with its
+        // content. Its space is held from frame 0, so nothing jumps when it does.
+        opacity: p, transform: `translateY(${Math.round((1 - p) * 28)}px)`,
         border: `2px solid ${lit ? `rgba(77,163,255,${0.55 * p})` : C.line}`,
         backgroundImage: lit ? `radial-gradient(90% 70% at 50% 0%, rgba(29,95,170,${0.45 * p}) 0%, transparent 70%)` : undefined,
         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center",
       }}>
-        <div style={{ opacity: p * (1 - 0.35 * sp), transform: `translateY(${(1 - p) * 18}px)`,
-          display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <div style={{ opacity: 1 - 0.35 * sp, display: "flex", flexDirection: "column", alignItems: "center" }}>
           {s.logo ? <Tile src={s.logo} tile={s.tile} size={150} /> : null}
           <div style={{ position: "relative", marginTop: s.logo ? 26 : 0, font: `700 44px/1.15 ${FONT}`,
             color: sp > 0 ? C.muted : C.ink }}>
@@ -228,14 +230,15 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
               return (
                 <div key={i} style={{
                   display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24,
+                  opacity: p, transform: `translateY(${Math.round((1 - p) * 20)}px)`,
                   background: h > 0 ? `rgba(18,40,68,${h})` : C.card, borderRadius: 24,
                   padding: b.rows.length <= 4 ? "36px 36px" : "26px 32px",
                   border: `2px solid ${h > 0 ? `rgba(77,163,255,${h})` : C.line}`,
                 }}>
-                  <div style={{ opacity: p, position: "relative", font: `600 ${b.rows.length <= 4 ? 44 : 38}px/1.2 ${FONT}`, color: C.ink }}>
+                  <div style={{ position: "relative", font: `600 ${b.rows.length <= 4 ? 44 : 38}px/1.2 ${FONT}`, color: C.ink }}>
                     {r.k}<Strike p={sp} />
                   </div>
-                  <div style={{ opacity: p, font: `700 ${b.rows.length <= 4 ? 44 : 38}px/1.2 ${FONT}`, color: toneColor(r.tone), textAlign: "right" }}>{r.v}</div>
+                  <div style={{ font: `700 ${b.rows.length <= 4 ? 44 : 38}px/1.2 ${FONT}`, color: toneColor(r.tone), textAlign: "right" }}>{r.v}</div>
                 </div>
               );
             })}
@@ -252,9 +255,10 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         const card = (label: string, color: string, text: string, target: string) => {
           const p = ramp(t, shownAt(target));
           return (
-            <div style={{ flex: 1, background: C.card, borderRadius: 26, padding: "30px 32px", border: `2px solid ${C.line}` }}>
-              <div style={{ opacity: p, font: `700 28px ${FONT}`, letterSpacing: 2, color }}>{label}</div>
-              <div style={{ opacity: p, marginTop: 12, font: `500 36px/1.3 ${FONT}`, color: C.ink }}>{text}</div>
+            <div style={{ flex: 1, background: C.card, borderRadius: 26, padding: "30px 32px", border: `2px solid ${C.line}`,
+              opacity: p, transform: `translateY(${Math.round((1 - p) * 20)}px)` }}>
+              <div style={{ font: `700 28px ${FONT}`, letterSpacing: 2, color }}>{label}</div>
+              <div style={{ marginTop: 12, font: `500 36px/1.3 ${FONT}`, color: C.ink }}>{text}</div>
             </div>
           );
         };
@@ -274,8 +278,8 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
               return (
                 <div key={i} style={{ width: (COL - 40) / 3, height: 320, background: C.card, borderRadius: 28,
                   border: `2px solid ${C.line}`, display: "flex", flexDirection: "column", alignItems: "center",
-                  justifyContent: "center" }}>
-                  <div style={{ opacity: p, transform: `scale(${0.8 + 0.2 * p})`, display: "flex",
+                  justifyContent: "center", opacity: p, transform: `translateY(${Math.round((1 - p) * 24)}px)` }}>
+                  <div style={{ display: "flex",
                     flexDirection: "column", alignItems: "center" }}>
                     <Tile src={it.logo} tile={it.tile} size={150} />
                     <div style={{ marginTop: 20, font: `600 34px/1.2 ${FONT}`, color: C.ink, textAlign: "center",
@@ -290,13 +294,19 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
     }
   };
 
-  // never a still frame: a 3% push across the slide (the carousel is silent
-  // and swiped; a reel is watched, so its pages keep moving)
-  const push = 1 + 0.03 * Math.min(1, t / Math.max(0.1, dur));
+  // NEVER STILL, NEVER SHAKING (2026-09-16). A 3% push on the whole page was
+  // tried first and the user saw the text shake: a fractional scale redraws
+  // every glyph at a new sub-pixel size each frame (measured on the render: the
+  // headline's centroid wobbled +/-0.3-0.5px frame to frame instead of drifting
+  // one way). The motion lives in the GROUND instead — a soft glow crossing the
+  // page — and type only ever moves while it arrives.
+  const glowX = 25 + 50 * Math.min(1, t / Math.max(0.1, dur));
   const pipIn = scene.presenter ? spring({ frame, fps, config: { damping: 14, stiffness: 160 } }) : 0;
   const PIP = 300;
   return (
     <AbsoluteFill style={{ background: C.bg, fontFamily: FONT }}>
+      <AbsoluteFill style={{ background: `radial-gradient(60% 35% at ${glowX}% 42%, ${scene.theme === "light"
+        ? "rgba(10,108,255,0.06)" : "rgba(77,163,255,0.10)"} 0%, transparent 70%)` }} />
       {scene.presenter ? (
         <div style={{ position: "absolute", left: L + COL - PIP, top: 250, width: PIP, height: PIP, zIndex: 2,
           borderRadius: "50%", overflow: "hidden", border: `6px solid ${C.pill}`,
@@ -306,7 +316,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         </div>
       ) : null}
       <div style={{ position: "absolute", left: L, top: scene.series || scene.index ? 200 : 250, width: COL, bottom: 330,
-        display: "flex", flexDirection: "column", transform: `scale(${push})`, transformOrigin: "50% 30%" }}>
+        display: "flex", flexDirection: "column" }}>
         {scene.series || scene.index ? (
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 40, font: `600 34px ${FONT}`, color: C.sub }}>
             <span>{scene.series ?? ""}</span>

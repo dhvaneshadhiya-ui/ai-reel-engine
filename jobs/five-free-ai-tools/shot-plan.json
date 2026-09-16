@@ -295,14 +295,7 @@
      }
     ],
     "type": "slide",
-    "hideCaptions": true,
-    "sfx": [
-     {
-      "src": "sfx-action/marker.mp3",
-      "at": 3.84,
-      "vol": 0.4
-     }
-    ]
+    "hideCaptions": true
    }
   },
   {
@@ -485,14 +478,7 @@
      }
     ],
     "type": "slide",
-    "hideCaptions": true,
-    "sfx": [
-     {
-      "src": "sfx-action/marker.mp3",
-      "at": 4.08,
-      "vol": 0.4
-     }
-    ]
+    "hideCaptions": true
    }
   },
   {
@@ -656,14 +642,7 @@
      }
     ],
     "type": "slide",
-    "hideCaptions": true,
-    "sfx": [
-     {
-      "src": "sfx-action/lock.mp3",
-      "at": 4.3,
-      "vol": 0.35
-     }
-    ]
+    "hideCaptions": true
    }
   },
   {

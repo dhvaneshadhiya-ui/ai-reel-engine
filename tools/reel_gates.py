@@ -2307,14 +2307,15 @@ def check_beats(beats: dict, vo_end: float | None = None,
     ROLE_FIT_TYPES = {
         "transition": None,          # any scene — it rides the cut
         "shutter": None,
-        "popup": {"checklist", "specsheet", "chart", "timeline", "categorygrid",
+        # `slide` (2026-09-16): its pills, rows and cards are elements entering
+        "popup": {"slide", "checklist", "specsheet", "chart", "timeline", "categorygrid",
                   "toolstack", "carousel", "statcard", "settingspane",
                   "notifstack", "uidialog", "desktopmockup", "priceladder"},
         "suspense": None,            # position-checked below, not type-checked
-        "reveal": {"logoassemble", "brandhook", "logobeat", "wordcascade",
+        "reveal": {"slide", "logoassemble", "brandhook", "logobeat", "wordcascade",
                    "typecard", "floatcard", "deviceframe", "annotatezoom",
                    "designreveal", "strikeswap", "problemsolved"},
-        "impact": {"specsheet", "chart", "statcard", "receipt", "timeline",
+        "impact": {"slide", "specsheet", "chart", "statcard", "receipt", "timeline",
                    "wordcascade", "typecard", "annotatezoom", "priceladder",
                    # a brand mark or hook LANDING is a statement landing —
                    # all three shipped reels chose this independently
@@ -2350,7 +2351,11 @@ def check_beats(beats: dict, vo_end: float | None = None,
             role = entry["role"]
             role_counts[role] += 1
             allowed = ROLE_FIT_TYPES.get(role)
-            if allowed is not None and sc["type"] not in allowed:
+            # a pill CTA card is an element entering, whatever scene it sits on
+            _hl = sc.get("headline") if isinstance(sc.get("headline"), dict) else {}
+            _pill_card = any(isinstance(ln, dict) and ln.get("kind") == "pill"
+                             for ln in (_hl.get("lines") or []))
+            if allowed is not None and sc["type"] not in allowed and not (role == "popup" and _pill_card):
                 errors.append(
                     f"G40 scene {i:02d} ({sc['type']}) carries a {role!r} cue "
                     f"({src}) — {role} belongs on {ROLE_FITS[role]}. "

@@ -150,8 +150,12 @@ export const HeadlineBuild: React.FC<{ spec: Headline }> = ({ spec }) => {
 
   // Never frozen: a slow drift that continues for the whole scene. Small enough
   // to read as life rather than movement.
-  const drift = interpolate(t, [0, 6], [0, -10], { extrapolateRight: "clamp" });
-  const breathe = 1 + 0.012 * Math.sin(t * 0.9);
+  // whole pixels only: a sub-pixel translate redraws the glyphs a little differently every frame
+  const drift = Math.round(interpolate(t, [0, 6], [0, -10], { extrapolateRight: "clamp" }));
+  // No breathing scale (2026-09-16): a 1.2% sine on type redraws every glyph at
+  // a new sub-pixel size each frame, which reads as shaking text. The drift
+  // above moves the block; the letters keep their size.
+  const breathe = 1;
 
   const firstAt = Math.min(...spec.lines.map((l) => l.at));
   const scrim = interpolate(t, [firstAt, firstAt + 0.45], [0, 1], {
