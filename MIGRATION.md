@@ -632,6 +632,9 @@ lives outside the repo:
 | **PATH in `~/.zshenv`** | §3.4 — `.zshrc` is interactive-only, so agent-run commands never see it |
 | **ffmpeg-full, manim, deno, yt-dlp-ejs** | §2.1 / §3.2 |
 | **The HeyGen connector** | the Claude app's connector settings |
+| **The ElevenLabs connector** (the voice) | Claude app → Settings → Connectors → Add custom connector → `https://api.elevenlabs.io/v1/mcp`, sign in |
+| **Action sounds** (`public/sfx-action/`: marker, lock, tick… — licence forbids committing them) | `setup.sh` runs `tools/fetch_sfx.py`; the animated format's lock/marker cues need them |
+| **Claude's memory on this Mac** (`~/.claude/projects/…/memory/`) | nothing to copy: every standing preference the reels depend on (no credits, animated-format defaults, fill to 80%, no scaling type, native bookends) is written into CLAUDE.md / STYLE-RULES.md and enforced in code |
 | **`public/assets/`, `out/`, `_sources/`** | per-reel; see §1.3 |
 
 `doctor.py` names everything in that list except the skills and the connector.
