@@ -171,6 +171,7 @@ def die(msg: str) -> None:
 def find_master(slug: str) -> Path | None:
     """The finished render, else the avatar master, else nothing."""
     for cand in (
+        ROOT / "out" / f"{slug}-final.mp4",  # what render_job.py writes
         ROOT / "out" / f"{slug}.mp4",
         ROOT / "out" / slug / f"{slug}.mp4",
         ROOT / "public/assets" / slug / "avatar-master.mp4",

@@ -8141,3 +8141,26 @@ Built with it:
 Not done yet: the first real reel in this treatment. The mechanics are tested, the look is
 not proven end to end, and the treatment needs one topic through research -> script approval
 -> VO -> build before it is used on anything published.
+
+## 2026-09-16 (3) — five-free-ai-tools: the animated treatment, end to end
+
+The first reel through the treatment (research -> approval -> ElevenLabs VO -> HeyGen lip-sync
+bookends -> Stage scenes -> master). 58.6s, 16 scenes, face on 2 of them. What it taught:
+
+- **Whisper writes digits and brand splits** ("11 labs", "10000", "copilots"). Word-timed moves
+  must anchor on the TRANSCRIPT's tokens, and `caption_corrections` fix the display side.
+  `resolve_stage_timings` now searches per scene from that scene's first word, so two moves may
+  share a phrase and may be listed out of spoken order.
+- **HeyGen lip-sync refuses a silent source clip** and one whose length differs from the audio
+  by more than ~15%. Cut the bookend clip to the VO slice's length WITH that slice muxed in.
+- **A pivot line needs display size.** "These ceilings move" at size 1.05 read as a caption on
+  the contact sheet; at 1.7 it reads as the turn. Default text size is for supporting lines.
+- **Covers grab from a stage frame, not a sourceread** — a sourceread frame carries a caption
+  mid-word. `make_thumbnail` now finds `<slug>-final.mp4`, the file render_job actually writes.
+- Manifest items need `source_url` (validate_job refuses otherwise) — logos included (svgl).
+- One cue stayed MASKED (paper-slide under speech at 51.4s) even at vol 0.7: a texture cue under
+  a voice is not worth fighting; keep action sounds in pauses or on silent arrivals.
+
+Treatment history: stage (light/dark/brand sets per tool), one sourceread (Gemini Notebook's
+usage table), strike swap for the limits change, price cards for every paid step, a dated card
+stack for "these ceilings move". Next list reel: do not open on logo + card + FREE stamp again.

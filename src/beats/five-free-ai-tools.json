@@ -1,0 +1,2002 @@
+{
+  "id": "five-free-ai-tools",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "utility",
+  "audio": "assets/five-free-ai-tools/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "free",
+    "ceilings",
+    "TOOLS"
+  ],
+  "scenes": [
+    {
+      "type": "footage",
+      "src": "assets/five-free-ai-tools/avatar-master-hook.mp4",
+      "from": 0.0,
+      "headline": {
+        "lines": [
+          {
+            "text": "STILL FREE",
+            "kind": "headline",
+            "at": 0.3
+          }
+        ],
+        "y": 0.74
+      },
+      "durationSec": 4.04,
+      "zoomDir": "none"
+    },
+    {
+      "type": "footage",
+      "src": "assets/five-free-ai-tools/avatar-master-hook.mp4",
+      "from": 4.04,
+      "headline": {
+        "lines": [
+          {
+            "text": "WHERE FREE STOPS",
+            "kind": "headline",
+            "at": 0.2
+          }
+        ],
+        "y": 0.74
+      },
+      "durationSec": 2.22,
+      "zoomDir": "none"
+    },
+    {
+      "type": "stage",
+      "set": "light",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "logo",
+          "kind": "image",
+          "x": 0.5,
+          "y": 0.26,
+          "w": 0.34,
+          "h": 0.28,
+          "src": "assets/logos/gemini.svg",
+          "label": "the Gemini logo"
+        },
+        {
+          "id": "card",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.62,
+          "w": 0.78,
+          "title": "Google AI Studio",
+          "lines": [
+            "Gemini's models, in a browser"
+          ],
+          "tone": "accent"
+        },
+        {
+          "id": "next",
+          "kind": "text",
+          "x": 0.5,
+          "y": 0.8,
+          "w": 0.9,
+          "size": 0.9,
+          "text": "Gemini Notebook"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "logo",
+          "on": "Google AI Studio",
+          "dir": "pop",
+          "at": 0.0
+        },
+        {
+          "do": "arrive",
+          "target": "card",
+          "on": "Google AI Studio",
+          "dir": "up",
+          "at": 0.0
+        },
+        {
+          "do": "fill",
+          "target": "card",
+          "on": "free in every region",
+          "at": 1.48
+        },
+        {
+          "do": "stamp",
+          "target": "card",
+          "on": "Gemini's models",
+          "text": "FREE",
+          "at": 3.9
+        },
+        {
+          "do": "dim",
+          "target": "card",
+          "on": "Gemini Notebook",
+          "at": 5.86
+        },
+        {
+          "do": "dim",
+          "target": "logo",
+          "on": "Gemini Notebook",
+          "at": 5.86
+        },
+        {
+          "do": "arrive",
+          "target": "next",
+          "on": "Gemini Notebook",
+          "dir": "up",
+          "at": 5.86
+        }
+      ],
+      "credit": "Google",
+      "hideCaptions": true,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx-action/paper-slide.mp3",
+          "at": 0.0,
+          "vol": 0.266
+        }
+      ],
+      "durationSec": 7.08,
+      "assetId": "logo-gemini",
+      "claimId": "logo-gemini",
+      "covers": "Google AI Studio is",
+      "sourceUrl": "https://svgl.app"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/five-free-ai-tools/src-notebook-limits.png",
+      "srcWidth": 1080,
+      "srcHeight": 1480,
+      "backdrop": "cream",
+      "credit": "Google",
+      "durationSec": 7.04,
+      "lines": [
+        {
+          "at": 0.5,
+          "x": 92,
+          "y": 630,
+          "w": 880,
+          "h": 90
+        },
+        {
+          "at": 6.64,
+          "x": 92,
+          "y": 840,
+          "w": 880,
+          "h": 110
+        }
+      ],
+      "follow": true,
+      "captionBottom": 544,
+      "assetId": "src-notebook-limits",
+      "claimId": "src-notebook-limits",
+      "covers": "the one you knew",
+      "sourceUrl": "https://support.google.com/gemininotebook/answer/16213268",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "stage",
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "old",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.24,
+          "w": 0.8,
+          "title": "Once a day"
+        },
+        {
+          "id": "new",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.52,
+          "w": 0.8,
+          "title": "Every 5 hours",
+          "tone": "accent"
+        },
+        {
+          "id": "note",
+          "kind": "text",
+          "x": 0.5,
+          "y": 0.8,
+          "w": 0.86,
+          "size": 0.62,
+          "text": "since September 2"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "old",
+          "on": "those limits refresh",
+          "dir": "left",
+          "at": 0.0
+        },
+        {
+          "do": "arrive",
+          "target": "new",
+          "on": "every five hours",
+          "dir": "right",
+          "at": 0.98
+        },
+        {
+          "do": "connect",
+          "from": "old",
+          "to": "new",
+          "on": "every five hours",
+          "arrow": true,
+          "weight": 1.3,
+          "at": 0.98
+        },
+        {
+          "do": "strike",
+          "target": "old",
+          "on": "not once a day",
+          "at": 2.3
+        },
+        {
+          "do": "arrive",
+          "target": "note",
+          "on": "a heavy morning",
+          "dir": "up",
+          "at": 3.62
+        }
+      ],
+      "credit": "Google",
+      "hideCaptions": true,
+      "sfx": [
+        {
+          "src": "sfx-action/paper-quick.mp3",
+          "at": 0.56,
+          "vol": 0.309
+        }
+      ],
+      "durationSec": 5.94
+    },
+    {
+      "type": "stage",
+      "set": "brand",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "name",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.2,
+          "w": 0.6,
+          "title": "ElevenLabs",
+          "tone": "dark"
+        },
+        {
+          "id": "n",
+          "kind": "number",
+          "x": 0.5,
+          "y": 0.56,
+          "w": 0.9,
+          "value": 10000,
+          "label": "credits a month, free",
+          "source": "ElevenLabs"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "name",
+          "on": "11 labs",
+          "dir": "down",
+          "at": 0.0
+        },
+        {
+          "do": "arrive",
+          "target": "n",
+          "on": "10000",
+          "dir": "pop",
+          "at": 1.16
+        },
+        {
+          "do": "count",
+          "target": "n",
+          "on": "10000",
+          "at": 1.16
+        }
+      ],
+      "hideCaptions": true,
+      "sfx": [
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 0.79,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 2.26,
+          "vol": 0.26
+        }
+      ],
+      "durationSec": 3.1
+    },
+    {
+      "type": "stage",
+      "set": "brand",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "a",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.2,
+          "w": 0.62,
+          "title": "Speech"
+        },
+        {
+          "id": "b",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.38,
+          "w": 0.62,
+          "title": "Effects"
+        },
+        {
+          "id": "c",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.56,
+          "w": 0.62,
+          "title": "Music"
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "x": 0.5,
+          "y": 0.8,
+          "w": 0.9,
+          "size": 0.78,
+          "text": "a few voiceovers, not a series"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "a",
+          "on": "sound effects",
+          "dir": "up",
+          "at": 0.0
+        },
+        {
+          "do": "arrive",
+          "target": "b",
+          "on": "effects",
+          "dir": "up",
+          "at": 0.5
+        },
+        {
+          "do": "arrive",
+          "target": "c",
+          "on": "and music",
+          "dir": "up",
+          "at": 1.08
+        },
+        {
+          "do": "arrive",
+          "target": "t",
+          "on": "a few voiceovers",
+          "dir": "up",
+          "at": 2.24
+        },
+        {
+          "do": "highlight",
+          "target": "t",
+          "on": "not a series",
+          "at": 3.5
+        }
+      ],
+      "credit": "ElevenLabs",
+      "hideCaptions": true,
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 3.5,
+          "vol": 0.417
+        }
+      ],
+      "durationSec": 4.98
+    },
+    {
+      "type": "stage",
+      "set": "brand",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "paid",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.45,
+          "w": 0.64,
+          "title": "Voice cloning",
+          "price": "$6",
+          "priceTone": "cost",
+          "lines": [
+            "a month, Starter plan"
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "paid",
+          "on": "Cloning",
+          "dir": "up",
+          "at": 0.0
+        },
+        {
+          "do": "fill",
+          "target": "paid",
+          "on": "starts at 6",
+          "at": 0.42
+        }
+      ],
+      "credit": "ElevenLabs",
+      "hideCaptions": true,
+      "durationSec": 2.24
+    },
+    {
+      "type": "stage",
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "logo",
+          "kind": "image",
+          "x": 0.5,
+          "y": 0.2,
+          "w": 0.24,
+          "h": 0.22,
+          "src": "assets/logos/suno.svg",
+          "label": "the Suno logo"
+        },
+        {
+          "id": "n",
+          "kind": "number",
+          "x": 0.5,
+          "y": 0.58,
+          "w": 0.9,
+          "value": 50,
+          "label": "credits a day, free",
+          "source": "Suno"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "logo",
+          "on": "Suno",
+          "dir": "pop",
+          "at": 0.0
+        },
+        {
+          "do": "arrive",
+          "target": "n",
+          "on": "50 credits",
+          "dir": "pop",
+          "at": 0.74
+        },
+        {
+          "do": "count",
+          "target": "n",
+          "on": "50 credits",
+          "at": 0.74
+        }
+      ],
+      "hideCaptions": true,
+      "sfx": [
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 1.84,
+          "vol": 0.26
+        }
+      ],
+      "durationSec": 2.6,
+      "assetId": "logo-suno",
+      "claimId": "logo-suno",
+      "covers": "Suno gives 50 credits",
+      "sourceUrl": "https://svgl.app"
+    },
+    {
+      "type": "stage",
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "rights",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.42,
+          "w": 0.86,
+          "title": "Commercial rights",
+          "lines": [
+            "on the free plan"
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "rights",
+          "on": "the free plan",
+          "dir": "up",
+          "at": 0.22
+        },
+        {
+          "do": "strike",
+          "target": "rights",
+          "on": "no commercial rights",
+          "at": 1.24
+        }
+      ],
+      "credit": "Suno",
+      "hideCaptions": true,
+      "durationSec": 3.06
+    },
+    {
+      "type": "stage",
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "pro",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.45,
+          "w": 0.6,
+          "title": "Suno Pro",
+          "price": "$8",
+          "priceTone": "cost",
+          "lines": [
+            "a month"
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "pro",
+          "on": "Pro is 8",
+          "dir": "up",
+          "at": 0.0
+        },
+        {
+          "do": "fill",
+          "target": "pro",
+          "on": "is 8",
+          "at": 0.28
+        }
+      ],
+      "credit": "Suno",
+      "hideCaptions": true,
+      "durationSec": 1.54
+    },
+    {
+      "type": "stage",
+      "set": "light",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "logo",
+          "kind": "image",
+          "x": 0.5,
+          "y": 0.18,
+          "w": 0.26,
+          "h": 0.2,
+          "src": "assets/logos/github-copilot.svg",
+          "label": "the GitHub Copilot logo"
+        },
+        {
+          "id": "n",
+          "kind": "number",
+          "x": 0.5,
+          "y": 0.54,
+          "w": 0.9,
+          "value": 2000,
+          "label": "completions a month, free",
+          "source": "GitHub"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "logo",
+          "on": "github copilots",
+          "dir": "pop",
+          "at": 0.16
+        },
+        {
+          "do": "arrive",
+          "target": "n",
+          "on": "2000",
+          "dir": "pop",
+          "at": 1.88
+        },
+        {
+          "do": "count",
+          "target": "n",
+          "on": "2000",
+          "at": 1.88
+        },
+        {
+          "do": "stamp",
+          "target": "n",
+          "on": "no card",
+          "text": "NO CARD",
+          "at": 3.84
+        }
+      ],
+      "hideCaptions": true,
+      "sfx": [
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 2.98,
+          "vol": 0.26
+        }
+      ],
+      "durationSec": 4.78,
+      "assetId": "logo-github-copilot",
+      "claimId": "logo-github-copilot",
+      "covers": "And GitHub Copilot's free",
+      "sourceUrl": "https://svgl.app"
+    },
+    {
+      "type": "stage",
+      "set": "light",
+      "layout": "full",
+      "credit": "GitHub",
+      "hideCaptions": true,
+      "elements": [
+        {
+          "id": "pro",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.45,
+          "w": 0.62,
+          "title": "Copilot Pro",
+          "price": "$10",
+          "priceTone": "cost",
+          "lines": [
+            "a month"
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "pro",
+          "on": "Pro is 10",
+          "dir": "up",
+          "at": 0.0
+        },
+        {
+          "do": "fill",
+          "target": "pro",
+          "on": "is 10",
+          "at": 0.22
+        }
+      ],
+      "durationSec": 1.04
+    },
+    {
+      "type": "stage",
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "t",
+          "kind": "text",
+          "x": 0.5,
+          "y": 0.42,
+          "w": 0.9,
+          "size": 1.7,
+          "text": "These ceilings move"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "t",
+          "on": "these ceilings move",
+          "dir": "pop",
+          "at": 0.16
+        },
+        {
+          "do": "highlight",
+          "target": "t",
+          "on": "move",
+          "at": 0.88
+        }
+      ],
+      "hideCaptions": true,
+      "durationSec": 1.7
+    },
+    {
+      "type": "stage",
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "apr",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.2,
+          "w": 0.8,
+          "title": "April",
+          "lines": [
+            "sign-ups paused, limits tightened"
+          ],
+          "size": 0.85
+        },
+        {
+          "id": "jun1",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.48,
+          "w": 0.8,
+          "title": "June 1",
+          "lines": [
+            "usage-based billing"
+          ],
+          "size": 0.85
+        },
+        {
+          "id": "jun24",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.76,
+          "w": 0.8,
+          "title": "June 24",
+          "lines": [
+            "model choice removed"
+          ],
+          "size": 0.85
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "apr",
+          "on": "Copilot's changed",
+          "dir": "left",
+          "at": 0.0
+        },
+        {
+          "do": "arrive",
+          "target": "jun1",
+          "on": "more than once",
+          "dir": "left",
+          "at": 0.82
+        },
+        {
+          "do": "arrive",
+          "target": "jun24",
+          "on": "this year",
+          "dir": "left",
+          "at": 1.64
+        },
+        {
+          "do": "stamp",
+          "target": "jun24",
+          "on": "look it up first",
+          "text": "CHECK FIRST",
+          "at": 2.6
+        }
+      ],
+      "credit": "heise, Roboin",
+      "hideCaptions": true,
+      "sfx": [
+        {
+          "src": "sfx-action/paper-slide.mp3",
+          "at": 0.0,
+          "vol": 0.266
+        }
+      ],
+      "durationSec": 3.88
+    },
+    {
+      "type": "footage",
+      "src": "assets/five-free-ai-tools/avatar-master-cta.mp4",
+      "from": 0.24,
+      "cta": true,
+      "headline": {
+        "lines": [
+          {
+            "text": "Comment TOOLS",
+            "kind": "headline",
+            "at": 0.4
+          }
+        ],
+        "y": 0.74
+      },
+      "durationSec": 3.321,
+      "zoomDir": "none"
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.16,
+      "text": "Five AI tools",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Five"
+        },
+        {
+          "t": 0.38,
+          "text": "AI"
+        },
+        {
+          "t": 0.76,
+          "text": "tools"
+        }
+      ]
+    },
+    {
+      "start": 1.16,
+      "end": 2.12,
+      "text": "still free in",
+      "words": [
+        {
+          "t": 1.16,
+          "text": "still"
+        },
+        {
+          "t": 1.62,
+          "text": "free"
+        },
+        {
+          "t": 1.92,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 2.12,
+      "end": 4.18,
+      "text": "September, 2026. The",
+      "words": [
+        {
+          "t": 2.12,
+          "text": "September,"
+        },
+        {
+          "t": 2.74,
+          "text": "2026."
+        },
+        {
+          "t": 4.04,
+          "text": "The"
+        }
+      ]
+    },
+    {
+      "start": 4.18,
+      "end": 5.12,
+      "text": "question is where",
+      "words": [
+        {
+          "t": 4.18,
+          "text": "question"
+        },
+        {
+          "t": 4.5,
+          "text": "is"
+        },
+        {
+          "t": 4.84,
+          "text": "where"
+        }
+      ]
+    },
+    {
+      "start": 5.12,
+      "end": 6.62,
+      "text": "free stops. Google",
+      "words": [
+        {
+          "t": 5.12,
+          "text": "free"
+        },
+        {
+          "t": 5.48,
+          "text": "stops."
+        },
+        {
+          "t": 6.26,
+          "text": "Google"
+        }
+      ]
+    },
+    {
+      "start": 6.62,
+      "end": 7.74,
+      "text": "AI Studio is",
+      "words": [
+        {
+          "t": 6.62,
+          "text": "AI"
+        },
+        {
+          "t": 6.96,
+          "text": "Studio"
+        },
+        {
+          "t": 7.38,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 7.74,
+      "end": 8.6,
+      "text": "free in every",
+      "words": [
+        {
+          "t": 7.74,
+          "text": "free"
+        },
+        {
+          "t": 8.06,
+          "text": "in"
+        },
+        {
+          "t": 8.2,
+          "text": "every"
+        }
+      ]
+    },
+    {
+      "start": 8.6,
+      "end": 9.6,
+      "text": "region it's offered.",
+      "words": [
+        {
+          "t": 8.6,
+          "text": "region"
+        },
+        {
+          "t": 8.98,
+          "text": "it's"
+        },
+        {
+          "t": 9.24,
+          "text": "offered."
+        }
+      ]
+    },
+    {
+      "start": 10.16,
+      "end": 11.32,
+      "text": "Gemini's models in",
+      "words": [
+        {
+          "t": 10.16,
+          "text": "Gemini's"
+        },
+        {
+          "t": 10.62,
+          "text": "models"
+        },
+        {
+          "t": 10.92,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 11.32,
+      "end": 12.44,
+      "text": "a browser, Gemini",
+      "words": [
+        {
+          "t": 11.32,
+          "text": "a"
+        },
+        {
+          "t": 11.4,
+          "text": "browser,"
+        },
+        {
+          "t": 12.12,
+          "text": "Gemini"
+        }
+      ]
+    },
+    {
+      "start": 12.44,
+      "end": 13.62,
+      "text": "Notebook, the one",
+      "words": [
+        {
+          "t": 12.44,
+          "text": "Notebook,"
+        },
+        {
+          "t": 13.34,
+          "text": "the"
+        },
+        {
+          "t": 13.44,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 13.62,
+      "end": 14.16,
+      "text": "you knew as",
+      "words": [
+        {
+          "t": 13.62,
+          "text": "you"
+        },
+        {
+          "t": 13.78,
+          "text": "knew"
+        },
+        {
+          "t": 13.94,
+          "text": "as"
+        }
+      ]
+    },
+    {
+      "start": 14.16,
+      "end": 15.76,
+      "text": "NotebookLM gives you",
+      "words": [
+        {
+          "t": 14.16,
+          "text": "NotebookLM"
+        },
+        {
+          "t": 15.4,
+          "text": "gives"
+        },
+        {
+          "t": 15.58,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 15.76,
+      "end": 16.64,
+      "text": "50 chats a",
+      "words": [
+        {
+          "t": 15.76,
+          "text": "50"
+        },
+        {
+          "t": 16.06,
+          "text": "chats"
+        },
+        {
+          "t": 16.4,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 16.64,
+      "end": 17.4,
+      "text": "day and three",
+      "words": [
+        {
+          "t": 16.64,
+          "text": "day"
+        },
+        {
+          "t": 16.82,
+          "text": "and"
+        },
+        {
+          "t": 17.08,
+          "text": "three"
+        }
+      ]
+    },
+    {
+      "start": 17.4,
+      "end": 19.18,
+      "text": "audio overviews. Since",
+      "words": [
+        {
+          "t": 17.4,
+          "text": "audio"
+        },
+        {
+          "t": 17.8,
+          "text": "overviews."
+        },
+        {
+          "t": 18.84,
+          "text": "Since"
+        }
+      ]
+    },
+    {
+      "start": 19.18,
+      "end": 20.58,
+      "text": "September second, those",
+      "words": [
+        {
+          "t": 19.18,
+          "text": "September"
+        },
+        {
+          "t": 19.58,
+          "text": "second,"
+        },
+        {
+          "t": 20.38,
+          "text": "those"
+        }
+      ]
+    },
+    {
+      "start": 20.58,
+      "end": 21.8,
+      "text": "limits refresh every",
+      "words": [
+        {
+          "t": 20.58,
+          "text": "limits"
+        },
+        {
+          "t": 20.9,
+          "text": "refresh"
+        },
+        {
+          "t": 21.36,
+          "text": "every"
+        }
+      ]
+    },
+    {
+      "start": 21.8,
+      "end": 23.2,
+      "text": "5 hours not once",
+      "words": [
+        {
+          "t": 21.8,
+          "text": "5"
+        },
+        {
+          "t": 22.68,
+          "text": "hours"
+        },
+        {
+          "t": 22.86,
+          "text": "not"
+        },
+        {
+          "t": 22.86,
+          "text": "once"
+        }
+      ]
+    },
+    {
+      "start": 23.2,
+      "end": 24.0,
+      "text": "a day, so",
+      "words": [
+        {
+          "t": 23.2,
+          "text": "a"
+        },
+        {
+          "t": 23.36,
+          "text": "day,"
+        },
+        {
+          "t": 23.76,
+          "text": "so"
+        }
+      ]
+    },
+    {
+      "start": 24.0,
+      "end": 24.68,
+      "text": "a heavy morning",
+      "words": [
+        {
+          "t": 24.0,
+          "text": "a"
+        },
+        {
+          "t": 24.16,
+          "text": "heavy"
+        },
+        {
+          "t": 24.34,
+          "text": "morning"
+        }
+      ]
+    },
+    {
+      "start": 24.68,
+      "end": 25.52,
+      "text": "doesn't cost the",
+      "words": [
+        {
+          "t": 24.68,
+          "text": "doesn't"
+        },
+        {
+          "t": 25.06,
+          "text": "cost"
+        },
+        {
+          "t": 25.32,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 25.52,
+      "end": 27.28,
+      "text": "evening. ElevenLabs gives",
+      "words": [
+        {
+          "t": 25.52,
+          "text": "evening."
+        },
+        {
+          "t": 26.32,
+          "text": "ElevenLabs"
+        },
+        {
+          "t": 27.0,
+          "text": "gives"
+        }
+      ]
+    },
+    {
+      "start": 27.28,
+      "end": 28.44,
+      "text": "you 10,000 credits",
+      "words": [
+        {
+          "t": 27.28,
+          "text": "you"
+        },
+        {
+          "t": 27.48,
+          "text": "10,000"
+        },
+        {
+          "t": 28.16,
+          "text": "credits"
+        }
+      ]
+    },
+    {
+      "start": 28.44,
+      "end": 29.06,
+      "text": "a month for",
+      "words": [
+        {
+          "t": 28.44,
+          "text": "a"
+        },
+        {
+          "t": 28.72,
+          "text": "month"
+        },
+        {
+          "t": 28.88,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 29.06,
+      "end": 30.28,
+      "text": "speech, sound effects,",
+      "words": [
+        {
+          "t": 29.06,
+          "text": "speech,"
+        },
+        {
+          "t": 29.42,
+          "text": "sound"
+        },
+        {
+          "t": 29.92,
+          "text": "effects,"
+        }
+      ]
+    },
+    {
+      "start": 30.5,
+      "end": 31.44,
+      "text": "and music, enough",
+      "words": [
+        {
+          "t": 30.5,
+          "text": "and"
+        },
+        {
+          "t": 30.52,
+          "text": "music,"
+        },
+        {
+          "t": 31.18,
+          "text": "enough"
+        }
+      ]
+    },
+    {
+      "start": 31.44,
+      "end": 31.94,
+      "text": "for a few",
+      "words": [
+        {
+          "t": 31.44,
+          "text": "for"
+        },
+        {
+          "t": 31.66,
+          "text": "a"
+        },
+        {
+          "t": 31.8,
+          "text": "few"
+        }
+      ]
+    },
+    {
+      "start": 31.94,
+      "end": 33.26,
+      "text": "voiceovers, not a",
+      "words": [
+        {
+          "t": 31.94,
+          "text": "voiceovers,"
+        },
+        {
+          "t": 32.92,
+          "text": "not"
+        },
+        {
+          "t": 33.1,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 33.26,
+      "end": 35.14,
+      "text": "series. Cloning starts",
+      "words": [
+        {
+          "t": 33.26,
+          "text": "series."
+        },
+        {
+          "t": 34.4,
+          "text": "Cloning"
+        },
+        {
+          "t": 34.82,
+          "text": "starts"
+        }
+      ]
+    },
+    {
+      "start": 35.14,
+      "end": 37.16,
+      "text": "at $6. Suno",
+      "words": [
+        {
+          "t": 35.14,
+          "text": "at"
+        },
+        {
+          "t": 35.42,
+          "text": "$6."
+        },
+        {
+          "t": 36.64,
+          "text": "Suno"
+        }
+      ]
+    },
+    {
+      "start": 37.16,
+      "end": 38.06,
+      "text": "gives 50 credits",
+      "words": [
+        {
+          "t": 37.16,
+          "text": "gives"
+        },
+        {
+          "t": 37.38,
+          "text": "50"
+        },
+        {
+          "t": 37.78,
+          "text": "credits"
+        }
+      ]
+    },
+    {
+      "start": 38.06,
+      "end": 38.6,
+      "text": "a day for",
+      "words": [
+        {
+          "t": 38.06,
+          "text": "a"
+        },
+        {
+          "t": 38.32,
+          "text": "day"
+        },
+        {
+          "t": 38.42,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 38.6,
+      "end": 39.62,
+      "text": "music, but the",
+      "words": [
+        {
+          "t": 38.6,
+          "text": "music,"
+        },
+        {
+          "t": 39.24,
+          "text": "but"
+        },
+        {
+          "t": 39.46,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 39.62,
+      "end": 40.48,
+      "text": "free plan carries",
+      "words": [
+        {
+          "t": 39.62,
+          "text": "free"
+        },
+        {
+          "t": 39.82,
+          "text": "plan"
+        },
+        {
+          "t": 40.1,
+          "text": "carries"
+        }
+      ]
+    },
+    {
+      "start": 40.48,
+      "end": 41.5,
+      "text": "no commercial rights.",
+      "words": [
+        {
+          "t": 40.48,
+          "text": "no"
+        },
+        {
+          "t": 40.72,
+          "text": "commercial"
+        },
+        {
+          "t": 41.1,
+          "text": "rights."
+        }
+      ]
+    },
+    {
+      "start": 42.3,
+      "end": 43.36,
+      "text": "Pro is 8,",
+      "words": [
+        {
+          "t": 42.3,
+          "text": "Pro"
+        },
+        {
+          "t": 42.58,
+          "text": "is"
+        },
+        {
+          "t": 43.08,
+          "text": "8,"
+        }
+      ]
+    },
+    {
+      "start": 43.84,
+      "end": 44.98,
+      "text": "and GitHub Copilot's",
+      "words": [
+        {
+          "t": 43.84,
+          "text": "and"
+        },
+        {
+          "t": 44.0,
+          "text": "GitHub"
+        },
+        {
+          "t": 44.26,
+          "text": "Copilot's"
+        }
+      ]
+    },
+    {
+      "start": 44.98,
+      "end": 45.72,
+      "text": "free plan is",
+      "words": [
+        {
+          "t": 44.98,
+          "text": "free"
+        },
+        {
+          "t": 45.16,
+          "text": "plan"
+        },
+        {
+          "t": 45.48,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 45.72,
+      "end": 47.16,
+      "text": "2,000 completions a",
+      "words": [
+        {
+          "t": 45.72,
+          "text": "2,000"
+        },
+        {
+          "t": 46.42,
+          "text": "completions"
+        },
+        {
+          "t": 46.98,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 47.16,
+      "end": 48.02,
+      "text": "month, no card.",
+      "words": [
+        {
+          "t": 47.16,
+          "text": "month,"
+        },
+        {
+          "t": 47.68,
+          "text": "no"
+        },
+        {
+          "t": 47.78,
+          "text": "card."
+        }
+      ]
+    },
+    {
+      "start": 48.62,
+      "end": 49.3,
+      "text": "Pro is 10,",
+      "words": [
+        {
+          "t": 48.62,
+          "text": "Pro"
+        },
+        {
+          "t": 48.84,
+          "text": "is"
+        },
+        {
+          "t": 49.02,
+          "text": "10,"
+        }
+      ]
+    },
+    {
+      "start": 49.66,
+      "end": 50.54,
+      "text": "but these ceilings",
+      "words": [
+        {
+          "t": 49.66,
+          "text": "but"
+        },
+        {
+          "t": 49.82,
+          "text": "these"
+        },
+        {
+          "t": 50.1,
+          "text": "ceilings"
+        }
+      ]
+    },
+    {
+      "start": 50.54,
+      "end": 52.18,
+      "text": "move. Copilot's changed",
+      "words": [
+        {
+          "t": 50.54,
+          "text": "move."
+        },
+        {
+          "t": 51.36,
+          "text": "Copilot's"
+        },
+        {
+          "t": 51.9,
+          "text": "changed"
+        }
+      ]
+    },
+    {
+      "start": 52.18,
+      "end": 53.0,
+      "text": "more than once",
+      "words": [
+        {
+          "t": 52.18,
+          "text": "more"
+        },
+        {
+          "t": 52.54,
+          "text": "than"
+        },
+        {
+          "t": 52.74,
+          "text": "once"
+        }
+      ]
+    },
+    {
+      "start": 53.0,
+      "end": 53.96,
+      "text": "this year, so",
+      "words": [
+        {
+          "t": 53.0,
+          "text": "this"
+        },
+        {
+          "t": 53.24,
+          "text": "year,"
+        },
+        {
+          "t": 53.78,
+          "text": "so"
+        }
+      ]
+    },
+    {
+      "start": 53.96,
+      "end": 54.46,
+      "text": "look it up",
+      "words": [
+        {
+          "t": 53.96,
+          "text": "look"
+        },
+        {
+          "t": 54.16,
+          "text": "it"
+        },
+        {
+          "t": 54.28,
+          "text": "up"
+        }
+      ]
+    },
+    {
+      "start": 54.46,
+      "end": 55.86,
+      "text": "first. Comment tools",
+      "words": [
+        {
+          "t": 54.46,
+          "text": "first."
+        },
+        {
+          "t": 55.24,
+          "text": "Comment"
+        },
+        {
+          "t": 55.52,
+          "text": "tools"
+        }
+      ]
+    },
+    {
+      "start": 55.86,
+      "end": 56.62,
+      "text": "and the five",
+      "words": [
+        {
+          "t": 55.86,
+          "text": "and"
+        },
+        {
+          "t": 56.26,
+          "text": "the"
+        },
+        {
+          "t": 56.38,
+          "text": "five"
+        }
+      ]
+    },
+    {
+      "start": 56.62,
+      "end": 57.58,
+      "text": "links land in",
+      "words": [
+        {
+          "t": 56.62,
+          "text": "links"
+        },
+        {
+          "t": 56.94,
+          "text": "land"
+        },
+        {
+          "t": 57.3,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 57.58,
+      "end": 58.32,
+      "text": "your DMs.",
+      "words": [
+        {
+          "t": 57.58,
+          "text": "your"
+        },
+        {
+          "t": 57.7,
+          "text": "DMs."
+        }
+      ]
+    }
+  ],
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 3.44,
+        "vol": 0.055
+      },
+      {
+        "t": 3.78,
+        "vol": 0.15
+      },
+      {
+        "t": 3.86,
+        "vol": 0.15
+      },
+      {
+        "t": 4.04,
+        "vol": 0.055
+      },
+      {
+        "t": 9.6,
+        "vol": 0.055
+      },
+      {
+        "t": 9.94,
+        "vol": 0.15
+      },
+      {
+        "t": 9.98,
+        "vol": 0.15
+      },
+      {
+        "t": 10.16,
+        "vol": 0.055
+      },
+      {
+        "t": 14.88,
+        "vol": 0.055
+      },
+      {
+        "t": 15.22,
+        "vol": 0.15
+      },
+      {
+        "t": 15.4,
+        "vol": 0.055
+      },
+      {
+        "t": 25.78,
+        "vol": 0.055
+      },
+      {
+        "t": 26.12,
+        "vol": 0.15
+      },
+      {
+        "t": 26.32,
+        "vol": 0.055
+      },
+      {
+        "t": 33.52,
+        "vol": 0.055
+      },
+      {
+        "t": 33.86,
+        "vol": 0.15
+      },
+      {
+        "t": 34.22,
+        "vol": 0.15
+      },
+      {
+        "t": 34.4,
+        "vol": 0.055
+      },
+      {
+        "t": 35.68,
+        "vol": 0.055
+      },
+      {
+        "t": 36.02,
+        "vol": 0.15
+      },
+      {
+        "t": 36.46,
+        "vol": 0.15
+      },
+      {
+        "t": 36.64,
+        "vol": 0.055
+      },
+      {
+        "t": 41.5,
+        "vol": 0.055
+      },
+      {
+        "t": 41.84,
+        "vol": 0.15
+      },
+      {
+        "t": 42.12,
+        "vol": 0.15
+      },
+      {
+        "t": 42.3,
+        "vol": 0.055
+      },
+      {
+        "t": 43.36,
+        "vol": 0.055
+      },
+      {
+        "t": 43.66,
+        "vol": 0.15
+      },
+      {
+        "t": 43.7,
+        "vol": 0.15
+      },
+      {
+        "t": 43.84,
+        "vol": 0.055
+      },
+      {
+        "t": 48.02,
+        "vol": 0.055
+      },
+      {
+        "t": 48.36,
+        "vol": 0.15
+      },
+      {
+        "t": 48.44,
+        "vol": 0.15
+      },
+      {
+        "t": 48.62,
+        "vol": 0.055
+      },
+      {
+        "t": 50.86,
+        "vol": 0.055
+      },
+      {
+        "t": 51.18,
+        "vol": 0.15
+      },
+      {
+        "t": 51.2,
+        "vol": 0.15
+      },
+      {
+        "t": 51.36,
+        "vol": 0.055
+      },
+      {
+        "t": 54.7,
+        "vol": 0.055
+      },
+      {
+        "t": 55.04,
+        "vol": 0.15
+      },
+      {
+        "t": 55.06,
+        "vol": 0.15
+      },
+      {
+        "t": 55.24,
+        "vol": 0.055
+      },
+      {
+        "t": 57.661,
+        "vol": 0.15
+      },
+      {
+        "t": 58.32,
+        "vol": 0.055
+      },
+      {
+        "t": 58.561,
+        "vol": 0.02
+      }
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+  },
+  "format": "ai-tools",
+  "script": "Five AI tools still free in September 2026. The question is where free stops.\n\nGoogle AI Studio is free in every region it's offered: Gemini's models, in a browser.\n\nGemini Notebook, the one you knew as NotebookLM, gives you fifty chats a day and three audio overviews. Since September second, those limits refresh every five hours, not once a day, so a heavy morning doesn't cost the evening.\n\nElevenLabs gives you ten thousand credits a month for speech, sound effects and music, enough for a few voiceovers, not a series. Cloning starts at six dollars.\n\nSuno gives fifty credits a day for music, but the free plan carries no commercial rights. Pro is eight.\n\nAnd GitHub Copilot's free plan is two thousand completions a month, no card. Pro is ten.\n\nBut these ceilings move. Copilot's changed more than once this year, so look it up first.\n\nComment TOOLS and the five links land in your DMs.",
+  "approval": {
+    "sha256": "b2f08017d2655853bcea87221a465d401ae5523537baf4e557651356d4b51e6f",
+    "approvedAt": "2026-09-16T07:24:46+00:00",
+    "words": 156,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}
