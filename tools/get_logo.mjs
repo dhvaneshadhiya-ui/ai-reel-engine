@@ -23,14 +23,25 @@ const idx = args.includes("--index") ? Number(args[args.indexOf("--index") + 1])
 const dir = path.join(import.meta.dirname, "..", "public", "assets", "logos");
 fs.mkdirSync(dir, { recursive: true });
 
+// svgl first (official colour marks); simple-icons as the fallback (2026-09-16:
+// ElevenLabs and NotebookLM are not on svgl and were fetched by hand, which no
+// other machine would know to do). simple-icons marks are single-colour black —
+// the slide compiler measures that and puts them on a light tile.
 const res = await fetch(`https://api.svgl.app?search=${encodeURIComponent(q)}`);
-if (!res.ok) throw new Error(`svgl search failed: ${res.status}`);
-const hits = await res.json();
-if (!hits.length) throw new Error(`no svgl results for "${q}"`);
-console.log("matches:", hits.map((h, i) => `${i}:${h.title}`).slice(0, 6).join("  "));
-const hit = hits[idx];
-const route = typeof hit.route === "string" ? hit.route : hit.route.light;
-const svg = await (await fetch(route)).text();
+const hits = res.ok ? await res.json().catch(() => []) : [];
+let svg;
+if (Array.isArray(hits) && hits.length) {
+  console.log("matches:", hits.map((h, i) => `${i}:${h.title}`).slice(0, 6).join("  "));
+  const hit = hits[idx];
+  const route = typeof hit.route === "string" ? hit.route : hit.route.light;
+  svg = await (await fetch(route)).text();
+} else {
+  const slug = q.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const si = await fetch(`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${slug}.svg`);
+  if (!si.ok) throw new Error(`no logo for "${q}" on svgl or simple-icons (tried slug "${slug}")`);
+  console.log(`svgl has no "${q}"; using simple-icons/${slug}.svg`);
+  svg = await si.text();
+}
 
 const svgPath = path.join(dir, `${name}.svg`);
 fs.writeFileSync(svgPath, svg);
