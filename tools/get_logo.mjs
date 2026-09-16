@@ -29,18 +29,20 @@ fs.mkdirSync(dir, { recursive: true });
 // the slide compiler measures that and puts them on a light tile.
 const res = await fetch(`https://api.svgl.app?search=${encodeURIComponent(q)}`);
 const hits = res.ok ? await res.json().catch(() => []) : [];
-let svg;
+let svg, source, title;
 if (Array.isArray(hits) && hits.length) {
   console.log("matches:", hits.map((h, i) => `${i}:${h.title}`).slice(0, 6).join("  "));
   const hit = hits[idx];
   const route = typeof hit.route === "string" ? hit.route : hit.route.light;
   svg = await (await fetch(route)).text();
+  source = route; title = hit.title;
 } else {
   const slug = q.toLowerCase().replace(/[^a-z0-9]/g, "");
   const si = await fetch(`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${slug}.svg`);
   if (!si.ok) throw new Error(`no logo for "${q}" on svgl or simple-icons (tried slug "${slug}")`);
   console.log(`svgl has no "${q}"; using simple-icons/${slug}.svg`);
   svg = await si.text();
+  source = si.url; title = (svg.match(/<title>([^<]+)<\/title>/) || [])[1] ?? q;
 }
 
 const svgPath = path.join(dir, `${name}.svg`);
@@ -62,7 +64,7 @@ while ((m = re.exec(svg))) {
 }
 if (!paths.length) throw new Error("no <path> elements found — inspect the svg manually");
 
-const out = { viewBox, paths, source: route, title: hit.title };
+const out = { viewBox, paths, source, title };
 fs.writeFileSync(path.join(dir, `${name}.paths.json`), JSON.stringify(out, null, 2));
 console.log(`saved ${svgPath}`);
 console.log(`saved ${name}.paths.json — ${paths.length} paths, viewBox "${viewBox}"`);
