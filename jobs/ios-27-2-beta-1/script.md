@@ -1,0 +1,21 @@
+Apple just handed you its biggest app redesign in years, then said it isn't coming yet.
+
+That's iOS twenty seven point two, the beta Apple rushed out days after twenty seven shipped, skipping a whole number. Twenty seven point one goes only to the folding iPhone Duo.
+
+That skipped number hides something: a redesigned Health app that scores your Health Age, tests your fitness through the camera, and splits into Insights and Longevity tabs.
+
+And Apple's own words: it isn't even shipping with this update. You're testing next year's preview early.
+
+Still, testers reportedly found the personalized advice and lab ordering pieces switched off.
+
+Beyond Health, here's what's live. Siri's AI brain finally speaks more than English: French, Japanese, Korean, Portuguese, Spanish, all in this beta.
+
+And Group FaceTime shows both your cameras at once, front and back, live.
+
+Meanwhile, the Apple TV app gets real profiles on your phone.
+
+And CarPlay Ultra gets real themes now: wallpaper, gauges, color. The ambient lighting could reportedly match too, on supported cars.
+
+Then call someone whose anniversary you saved, and the Phone app reminds you before you say hello.
+
+So that Health app isn't really here yet, just previewed early. Everything else on this list already is.

@@ -8267,3 +8267,92 @@ corner circle — so the face bookends still hold, and the page fills to the 80%
 (theirs stops near 40%). Engine: G06 counts a slide presenter as face time; the
 compiler's "turn" hit skips the CTA page (its keyword gets a pop); a whoosh and a
 landing sound may sit 0.2s apart.
+
+## 2026-09-17 — ios-27-2-beta-1: spoken numbers vs. digit transcripts, and G59 is a crop problem
+
+**Raw note.** `compile_shot_plan.py` refused to resolve `start_phrase` anchors
+that spelled out a version number ("That's iOS twenty seven point two") the
+moment real ElevenLabs audio existed: whisper transcribes a spoken version
+number as digits ("27", ".2"), never as words, and the ".2"-merge rule glues
+them into one token ("272") that a spelled-out phrase can never match by
+normalized substring. **Root cause:** `plan_shots.py` writes anchors straight
+from `script.md`'s spelling before any real transcript exists, so a script
+that speaks a number in words (correctly, for TTS) sets a trap for the anchor
+that only springs after generation. **Rule:** after `ingest_avatar.py` writes
+the real `vo.json`, grep every `start_phrase` for spelled-out digits and
+re-anchor those shots to a nearby plain-word phrase instead (move the shot
+boundary a few words earlier or later — it costs nothing, the number's audio
+just plays inside the neighboring shot). Do this BEFORE the first
+`compile_shot_plan.py` run against real audio, not after it dies.
+
+**Same job, second transcript trap.** Whisper (base AND small, confirmed on a
+re-sliced probe) transcribed the spoken "Siri's AI brain" as "series AI
+brain" — not a mishear specific to one model size, so a real pronunciation
+ambiguity in the ElevenLabs read, not a whisper artifact. Because this
+pipeline's audio comes from an uploaded external file (`voice.mode:
+"external-mcp"`), HeyGen's `brandGlossaryId` cannot fix it — that glossary
+only touches audio HeyGen itself synthesizes. Fixed the DISPLAY only via
+`caption_corrections: {"series": "Siri's"}`, shipped anyway, and disclosed
+the audio ambiguity to the user rather than spending another ~1,335 credits
+on a re-read for one borderline-audible word. **Rule:** a brand-name mishear
+on external-voice audio is a caption_corrections fix, not a brandGlossaryId
+fix — the two only look interchangeable until you check which stage actually
+rendered the audio.
+
+**G59 (receipt fills too little of the frame) is a CROP problem, not a
+backdrop-color problem.** Four official device-render stills (Apple's own
+press images, fetched at full resolution) were all landscape (aspect 0.56)
+and G59 blocked every one. The fix was never `allowSmallReceipt` — it was
+either (a) crop tighter to isolate ONE portrait-shaped subject already in the
+frame (one phone out of three; the badge instead of badge+phone side by
+side), which needs no padding at all, or (b) when the whole frame is the
+subject (a single squarish app-icon badge, a call-screen banner), pad
+top/bottom with a color sampled from the image's own corner pixels (a flat
+fill, not a stretched/blurred strip — a stretched 15px strip resized to
+300px+ produces a visible hard-edged block, confirmed by eye on the first
+attempt). **Rule:** re-crop or pad-with-sampled-color before reaching for the
+opt-out; a receipt is blocked because the SOURCE is the wrong shape, and
+that is almost always fixable in two minutes with PIL.
+
+**A receipt on a single, already-legible subject does not need a
+`highlights` rect.** Added one anyway (a static square roughly centered on
+an app-icon badge already filling the card) and `lint_frames.py`'s
+`[EDGE TEXT]` flag fired on all three shots holding it — not because any
+text was cropped, but because the highlight rectangle's own hard edge read
+as "busy pixels at frame edge." Removing the highlight (leaving the receipt
+to size the whole image) cleared the flag entirely on re-render. **Rule:**
+`highlights` exists to point at one claim inside a busy document; a receipt
+whose entire frame already IS the claim renders cleaner with none.
+
+**`[DUPLICATE]` is a HARD gate (`lint_frames.py` `HARD_ALWAYS`), and it does
+not know "different content, same layout" from "identical frame."** Two
+consecutive `specsheet` cards with completely different titles and rows
+(Siri AI Languages, then Group FaceTime) still tripped `[DUPLICATE]`,
+because both are white-on-black cards with the same title/kicker/row
+geometry and the linter samples structural similarity, not text. Confirmed
+genuinely different by eye first (this is not a case for `--soft`). Fixed by
+giving the second beat a DIFFERENT COMPONENT FAMILY — `checklist` (green
+checkmarks, different layout entirely) instead of another `specsheet` — since
+this repo has no per-card accent-color knob to fake a difference within one
+component. **Rule:** when two adjacent MG cards are legitimately different
+but share a component, alternate components before reaching for `--soft`;
+`[DUPLICATE]` reads geometry, and geometry is exactly what a component
+choice controls. Separately: a genuine single-visual HOLD across several
+spoken clauses must compile as ONE scene, not one scene per clause with
+identical `asset_id`/highlight — `plan_shots.py` writes one shot per clause
+by design, so multi-clause holds on one asset need their extra shot-plan
+entries deleted (not just left pointing at the same image) before
+`compile_shot_plan.py` runs, or the sheet ships N back-to-back identical
+scenes and `[DUPLICATE]` fires on every consecutive pair.
+
+**A source's own hedge must survive into the ledger's TIER, not just its
+SPOKEN wording.** MacRumors' CarPlay Ultra coverage states the theme options
+(wallpaper/gauge/color) as fact but adds "Code suggests" — a code-string
+inference, not an observed feature — for the ambient-lighting-matching
+claim. Both were first ledgered as one `TIER: official` claim with a single
+hedged sentence; `research_check.py` correctly advised the sentence read
+unhedged even after adding "reportedly." Splitting it into two claims (one
+`official`, one `single`) made the hedge honest instead of decorative.
+**Rule:** when a source states part of a claim as fact and part as its own
+inference, that is two claims at two tiers, not one claim with a soft word
+added to the tail.
