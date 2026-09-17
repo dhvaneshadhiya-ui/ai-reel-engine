@@ -429,7 +429,9 @@ def check_research(slug: str, script_text: str | None,
                 "shape, so research.md needs '## FEATURES + HOW TO USE': every feature "
                 "the vendor documents (one '- ' line each, marked USED or CUT and why) "
                 "and the vendor's how-to steps. A script can only choose features "
-                "from a list somebody wrote down (2026-09-17, PairPods v1).")
+                "from a list somebody wrote down (2026-09-17, PairPods v1).\n"
+                "  SKILL CUE: run the `reel-research` skill — its product plan has the "
+                "feature and how-to subtopics built in.")
 
     if claims and len(domains) < 2 and "ONE-SOURCE-OK:" not in body:
         advice.append(

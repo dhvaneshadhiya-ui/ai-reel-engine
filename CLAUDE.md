@@ -229,6 +229,9 @@ silently disabled the frame checks for weeks.
   master for this format — five-free-ai-tools cost 10 credits (6s + 3.5s) where
   a face-led master of the same script costs ~50-60. The "one continuous
   master" note in config.json applies to face-led reels only.
+- **Research starts with the `reel-research` skill** (2026-09-17, adapted from
+  LangChain's MIT `web-research`): plan with required subtopics per format →
+  parallel research agents → ledger + feature/visual inventories + viewer questions.
 - **Capture web sources on MOBILE.** `tools/capture.mjs` defaults to it
   (1080x2340). A desktop grab fills 42% of a 9:16 frame with unreadable text.
   `--desktop` is the exception, not the default. Gate G29.
