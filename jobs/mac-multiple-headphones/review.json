@@ -1,0 +1,13 @@
+{
+  "script_sha256": "6c34230c52d5d16b14a12a9203092e0cef05994f4ef7c37ed20c857faf3828e9",
+  "structure_sha256": "09d4473bba7f66adfa85d0118a8ca01c1f1bb8fcf3fcb934d19c23db023f4fec",
+  "findings": [
+    "  BRIDGES 1/10 sentences (10%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  OPENING has no version, date or time anchor: 'One Mac, two pairs of AirPods, one movie.'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "CADENCE: 3 of 11 sentences are long. The short ones stop being punctuation.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-09-17T09:19:30+00:00"
+}

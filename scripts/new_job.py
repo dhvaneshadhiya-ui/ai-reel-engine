@@ -108,8 +108,7 @@ def main() -> None:
         raise SystemExit(f"news-reels engine not found: {engine}")
 
     keyword = re.sub(r"[^A-Z0-9]", "", args.cta_keyword.upper())
-    if not keyword:
-        keyword = re.sub(r"[^A-Z0-9]", "", slug.split("-")[0].upper())[:14] or "GUIDE"
+    # no keyword unless one is given: most CTAs are not comment-for-a-DM (2026-09-16)
 
     brief = {
         "slug": slug,
