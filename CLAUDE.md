@@ -496,7 +496,7 @@ a protocol layer that keeps its own records in a top-level `memory/` folder.
   ~0.2s per call, nothing blocked (renders, memory writes, HeyGen/ElevenLabs calls).
   They only ENFORCE (and can deny/block) when the project has a top-level `memory/`
   folder. **Never run its skills inside this repo** — that creates `memory/` and arms
-  its privacy/audit gates over our pipeline. Use it in a separate marketing project.
+  its privacy/audit gates over our pipeline. Use it in the separate marketing project, `~/iGeeksBlog Marketing` (created 2026-09-17).
 - Useful elsewhere, not in the reel pipeline: its SEO/GEO skills for igeeksblog.com.
 
 ### The `/marketing` plugin (installed 2026-08-27) — 50 skills, ONE adopted
