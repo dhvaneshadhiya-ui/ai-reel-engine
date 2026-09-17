@@ -8520,3 +8520,15 @@ music; make the best use of sound effects".
   of page whoosh / pill pop / strike marker / count lock. 30 cues in 63s, voice only.
 - lint_frames: dead space on a slide/stage is measured ABOVE the 80% line — the
   platform zone must stay empty, so counting it made two checks contradict.
+
+## 2026-09-17 (4) — the caption/content spec, measured
+
+User: "content to about 70% height, captions at about 75–78%, keep only the bottom
+20% clear — you must follow this." v3 had content at 66% and captions at 69-74%
+because the caption floor (500px) protected a credit lane that no longer exists
+by default. Now: the floor is credit-aware (credits off → 80% line + 20px),
+slides with captions end content at 1344px (70%), captions default to bottom 422.
+Measured on the PairPods render at every third spoken word: content 65-72%,
+caption ink 74-79%, 0 overlaps, 0 frames with ink below 80%. lint_frames runs the
+same measurement on every captioned slide/stage and BLOCKS an overlap or ink in
+the bottom 20% (negative-tested on a synthetic frame).

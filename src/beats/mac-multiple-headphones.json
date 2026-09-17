@@ -28,7 +28,7 @@
             "Your AirPods",
             "Friend's AirPods"
           ],
-          "h": 700
+          "h": 815
         },
         {
           "id": "sp",
@@ -54,9 +54,9 @@
         }
       ],
       "type": "slide",
-      "hideCaptions": false,
-      "captionBottom": 500,
       "durationSec": 8.64,
+      "hideCaptions": false,
+      "captionBottom": 422,
       "sfx": [
         {
           "src": "sfx/Pop.MP3",
@@ -90,7 +90,7 @@
           "height": 884,
           "id": "sc",
           "src": "assets/mac-multiple-headphones/ui/step-1.png",
-          "h": 540
+          "h": 610
         }
       ],
       "moves": [
@@ -177,9 +177,9 @@
         }
       ],
       "type": "slide",
-      "hideCaptions": false,
-      "captionBottom": 500,
       "durationSec": 13.88,
+      "hideCaptions": false,
+      "captionBottom": 422,
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",
@@ -238,7 +238,7 @@
           "height": 884,
           "id": "sc",
           "src": "assets/mac-multiple-headphones/ui/step-1.png",
-          "h": 730
+          "h": 800
         }
       ],
       "moves": [
@@ -312,9 +312,9 @@
         }
       ],
       "type": "slide",
-      "hideCaptions": false,
-      "captionBottom": 500,
       "durationSec": 12.42,
+      "hideCaptions": false,
+      "captionBottom": 422,
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",
@@ -358,7 +358,7 @@
           "height": 884,
           "id": "sc",
           "src": "assets/mac-multiple-headphones/ui/step-3.png",
-          "h": 520
+          "h": 540
         },
         {
           "id": "r",
@@ -409,9 +409,9 @@
         }
       ],
       "type": "slide",
-      "hideCaptions": false,
-      "captionBottom": 500,
       "durationSec": 5.7,
+      "hideCaptions": false,
+      "captionBottom": 422,
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",
@@ -496,9 +496,9 @@
         }
       ],
       "type": "slide",
-      "hideCaptions": false,
-      "captionBottom": 500,
       "durationSec": 7.42,
+      "hideCaptions": false,
+      "captionBottom": 422,
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",
@@ -528,7 +528,7 @@
             "Your AirPods",
             "A different model"
           ],
-          "h": 420
+          "h": 600
         },
         {
           "id": "tips",
@@ -564,9 +564,9 @@
         }
       ],
       "type": "slide",
-      "hideCaptions": false,
-      "captionBottom": 500,
       "durationSec": 7.42,
+      "hideCaptions": false,
+      "captionBottom": 422,
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",
@@ -638,9 +638,9 @@
         }
       ],
       "type": "slide",
-      "hideCaptions": false,
-      "captionBottom": 500,
       "durationSec": 5.38,
+      "hideCaptions": false,
+      "captionBottom": 422,
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",
@@ -682,8 +682,8 @@
         }
       ],
       "type": "slide",
-      "hideCaptions": true,
       "durationSec": 2.66,
+      "hideCaptions": true,
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",

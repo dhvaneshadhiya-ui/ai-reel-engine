@@ -217,6 +217,11 @@ silently disabled the frame checks for weeks.
   one. Only the topic is required to start. Blocks are chosen per topic — the
   look is one family, the layout is never a template.
   Reference build: jobs/five-free-ai-tools.
+  **Page layout (user spec, 2026-09-17 — binding):** captions ON for every slide
+  except an end card that spells its own words; content runs to ~70% height,
+  captions sit at 75-78% (captionBottom 422, credits off), only the bottom 20%
+  stays clear, and content never touches the caption. compile_shot_plan sets it;
+  lint_frames MEASURES it on the render ([CAPTION OVERLAP] / [PLATFORM ZONE] block).
   **Avatar credits: generate ONLY the seconds the face is on screen.** The
   voice is ONE ElevenLabs track for the whole reel; HeyGen is called once per
   presenter slice (hook circle, CTA circle), each driven by that exact VO

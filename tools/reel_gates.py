@@ -2975,7 +2975,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # the account row. 500 = platformSafeArea.captionFloorPx(1920). Both are
     # asserted in tools/test_gates.py so neither can drift from its source.
     PLATFORM_FLOOR = 317
-    CAPTION_FLOOR = 500
+    CAPTION_FLOOR = 500    # only while on-screen credits are drawn (showCredits)
     for i, sc in enumerate(scenes):
         cb = sc.get("captionBottom")
         if cb is None or sc.get("hideCaptions"):
@@ -2988,7 +2988,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 f"Instagram's own account row (measured y 0.835). The platform "
                 f"paints over this; the words cannot be read on either app. "
                 f"Raise it above {PLATFORM_FLOOR}, or drop the field.")
-        elif cb < CAPTION_FLOOR:
+        elif beats.get("showCredits") and cb < CAPTION_FLOOR:
             errors.append(
                 f"G46 scene {i:02d} sets captionBottom {cb} (y {y:.3f}) — clear "
                 f"of the platform, but inside our own credit lane (floor "

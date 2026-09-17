@@ -1569,8 +1569,8 @@ CASES = [
     # 422 is the credit's own baseline: clear of the platform, on our credit.
     # It must ADVISE, not block — asserted here because the first draft of G45
     # blocked it, which put 183px of our own taste behind an R1 badge.
-    (lambda s: s["scenes"][1].__setitem__("captionBottom", 422),
-     "G46", "a caption on the credit lane but clear of the platform"),
+    (lambda s: s.update(showCredits=True) or s["scenes"][1].__setitem__("captionBottom", 422),
+     "G46", "a caption on the credit lane (credits on) but clear of the platform"),
     # 2026-08-20 — focusY + zoom, added for camera-snap cuts. G48 is RENDER:
     # each of these paints the black backdrop rather than the picture, which is
     # why it blocks. One case per failing field, since they are separate reads.
@@ -1698,6 +1698,19 @@ if _hits:
     print(f"  FAIL credits fired on a reel that never asked for them: {_hits[0][:90]}")
     raise SystemExit(1)
 _counted("G14/G47 silent — credits are off unless the user asks")
+
+# With credits off there is no credit lane: captions at 75-78% (bottom 422) are
+# the user's layout (2026-09-17) and G46 stays silent.
+_s = copy.deepcopy(BASE)
+_s.pop("showCredits", None)
+_s["scenes"][1]["captionBottom"] = 422
+try:
+    _hits = [a for a in check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS) if "G46" in a or "G45" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G46" in str(a) or "G45" in str(a)]
+if _hits:
+    print(f"  FAIL G46 flagged captions at 78% with credits off: {_hits[0][:90]}"); raise SystemExit(1)
+_counted("G45/G46 silent — captions at 75-78% when credits are off")
 
 # G39 vs whisper mishears (2026-08-25): whisper is NOT ground truth for what
 # was said — G21 learned this at 100% false positives. When `covers` is

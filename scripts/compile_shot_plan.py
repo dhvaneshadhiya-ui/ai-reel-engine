@@ -1131,6 +1131,16 @@ def main() -> None:
                 if isinstance(s, dict) and s.get("logo") and not s.get("tile"):
                     s["tile"] = best_tile(s["logo"])
 
+    # SLIDE CAPTIONS (user, 2026-09-17): content to ~70%, captions at 75-78%,
+    # only the bottom 20% clear. Captions show on every slide except an end card
+    # that spells its own words; with credits off they sit at bottom 422.
+    for scene in beats.get("scenes") or []:
+        if scene.get("type") != "slide":
+            continue
+        scene.setdefault("hideCaptions", bool(scene.get("cta")))
+        if not scene["hideCaptions"] and not beats.get("showCredits"):
+            scene.setdefault("captionBottom", 422)
+
     unresolved = resolve_stage_timings(beats, words)
     if unresolved:
         raise SystemExit("shot plan names words the voice never says:\n  "

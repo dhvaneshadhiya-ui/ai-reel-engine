@@ -374,7 +374,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         // CAPTION BAND (user, 2026-09-17): a slide that shows captions stops its
         // content at ~69% so the chips sit alone at 72-77%, above the platform
         // zone. Without captions it fills to the 80% line as before.
-        bottom: (scene as { hideCaptions?: boolean }).hideCaptions === false ? 650 : 384,
+        bottom: (scene as { hideCaptions?: boolean }).hideCaptions === false ? 576 : 384,
         display: "flex", flexDirection: "column" }}>
         {scene.series || scene.index ? (
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 40, font: `600 34px ${FONT}`, color: C.sub }}>

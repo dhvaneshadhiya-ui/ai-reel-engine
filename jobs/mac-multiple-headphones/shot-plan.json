@@ -43,7 +43,7 @@
        "Your AirPods",
        "Friend's AirPods"
       ],
-      "h": 700
+      "h": 815
      },
      {
       "id": "sp",
@@ -66,9 +66,7 @@
       "on": "called Pair"
      }
     ],
-    "type": "slide",
-    "hideCaptions": false,
-    "captionBottom": 500
+    "type": "slide"
    }
   },
   {
@@ -104,7 +102,7 @@
       "height": 884,
       "id": "sc",
       "src": "assets/mac-multiple-headphones/ui/step-1.png",
-      "h": 540
+      "h": 610
      }
     ],
     "moves": [
@@ -180,9 +178,7 @@
       "on": "share audio on"
      }
     ],
-    "type": "slide",
-    "hideCaptions": false,
-    "captionBottom": 500
+    "type": "slide"
    }
   },
   {
@@ -208,7 +204,7 @@
       "height": 884,
       "id": "sc",
       "src": "assets/mac-multiple-headphones/ui/step-1.png",
-      "h": 730
+      "h": 800
      }
     ],
     "moves": [
@@ -274,9 +270,7 @@
       "ring": false
      }
     ],
-    "type": "slide",
-    "hideCaptions": false,
-    "captionBottom": 500
+    "type": "slide"
    }
   },
   {
@@ -302,7 +296,7 @@
       "height": 884,
       "id": "sc",
       "src": "assets/mac-multiple-headphones/ui/step-3.png",
-      "h": 520
+      "h": 540
      },
      {
       "id": "r",
@@ -348,9 +342,7 @@
       "on": "to reconnect"
      }
     ],
-    "type": "slide",
-    "hideCaptions": false,
-    "captionBottom": 500
+    "type": "slide"
    }
   },
   {
@@ -425,9 +417,7 @@
       "on": "volume keys"
      }
     ],
-    "type": "slide",
-    "hideCaptions": false,
-    "captionBottom": 500
+    "type": "slide"
    }
   },
   {
@@ -454,7 +444,7 @@
        "Your AirPods",
        "A different model"
       ],
-      "h": 420
+      "h": 600
      },
      {
       "id": "tips",
@@ -485,9 +475,7 @@
       "on": "sync isn't"
      }
     ],
-    "type": "slide",
-    "hideCaptions": false,
-    "captionBottom": 500
+    "type": "slide"
    }
   },
   {
@@ -549,9 +537,7 @@
       "on": "needs macOS"
      }
     ],
-    "type": "slide",
-    "hideCaptions": false,
-    "captionBottom": 500
+    "type": "slide"
    }
   },
   {
@@ -590,8 +576,7 @@
       "on": "pinned comment"
      }
     ],
-    "type": "slide",
-    "hideCaptions": true
+    "type": "slide"
    }
   }
  ],

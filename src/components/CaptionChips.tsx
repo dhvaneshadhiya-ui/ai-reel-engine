@@ -391,6 +391,8 @@ export const CaptionChips: React.FC<{
   emphasis?: string[];
   /** time-ranged bottom offsets so chips never cover a face */
   positions?: { start: number; end: number; bottom: number }[];
+  /** on-screen credits drawn? decides the caption floor (platformSafeArea) */
+  credits?: boolean;
   /** time ranges where chips are suppressed (display-type scenes own the text) */
   hidden?: { start: number; end: number }[];
   /** time ranges where the caption text theme is dark (ink on light fields) */
@@ -400,6 +402,7 @@ export const CaptionChips: React.FC<{
   mode = "sans",
   emphasis = [],
   positions = [],
+  credits = true,
   hidden = [],
   darkRanges = [],
 }) => {
@@ -426,7 +429,8 @@ export const CaptionChips: React.FC<{
   const bottomAt = (fallback: number) =>
     clampCaptionBottom(
       positions.find((p) => t >= p.start && t < p.end)?.bottom ?? fallback,
-      height
+      height,
+      credits
     );
 
   if (mode === "ink-circle") {

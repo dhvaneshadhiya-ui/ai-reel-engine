@@ -141,14 +141,15 @@ export const DevicesBlock: React.FC<{ b: DevicesBlockProps; moves: MoveLike[]; t
   const f = Math.max(1, Math.min(1.5, H / 560));
   const hubX = Math.round(190 * f), hubY = H / 2;
   const chipW = Math.round(400 * Math.min(f, 1.15)), chipH = Math.round(96 * f), chipX = boxW - chipW;
-  const gap = (H - n * chipH) / (n + 1);
+  // devices spread to the block's edges (a hook card must reach ~70%, 2026-09-17)
+  const gap = (H - n * chipH) / Math.max(1, n - 1 + 0.5);
   // a device with no `show` is connected from frame 0 (not fading in at 0.3s)
   const at = (i: number) => moves.find((m) => m.do === "show" && m.target === `${b.id}.${i}`)?.at ?? -1;
   return (
     <div style={{ position: "relative", width: boxW, height: H }}>
       <svg width={boxW} height={H} style={{ position: "absolute", left: 0, top: 0 }}>
         {b.items.map((_it, i) => {
-          const y = gap + i * (chipH + gap) + chipH / 2;
+          const y = gap / 4 + i * (chipH + gap) + chipH / 2;
           const p = ramp(t, at(i), 0.45);
           if (p <= 0) return null;
           const x0 = hubX + 130 * f + 12, dx = (chipX - x0) * 0.5;
@@ -174,7 +175,7 @@ export const DevicesBlock: React.FC<{ b: DevicesBlockProps; moves: MoveLike[]; t
         <div style={{ marginTop: 16, font: `700 ${Math.round(34 * f)}px ${FONT}`, color: C.ink }}>{b.hub}</div>
       </div>
       {b.items.map((it, i) => {
-        const y = gap + i * (chipH + gap);
+        const y = gap / 4 + i * (chipH + gap);
         const p = ramp(t, at(i) + 0.3, 0.3);
         return (
           <div key={i} style={{ position: "absolute", left: chipX, top: y, width: chipW, height: chipH, borderRadius: 24,
