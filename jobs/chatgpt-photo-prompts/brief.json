@@ -1,0 +1,28 @@
+{
+  "slug": "chatgpt-photo-prompts",
+  "topic": "ChatGPT Images 2.5 photo-editing prompts",
+  "details": "OpenAI shipped ChatGPT Images 2.5 (Sept 8 2026): better subject/face preservation from reference photos, more precise multi-turn edits, up to 50% faster. A viral prompt thread (Rachel Woods) gives copy-paste prompts people are using to turn selfies into photographer-style portraits. Reel = real feature + the actual prompts viewers can use.",
+  "subject": "ChatGPT Images 2.5 photo-editing prompts",
+  "audience": "Phone-first ChatGPT users who already know it can generate images and want to know how to get a photographer-quality result from their own selfie",
+  "platform": "both",
+  "goal": "comment",
+  "core_value": "Why ChatGPT's edits stopped drifting your face into a stranger, and the actual prompt wording people are using to get photographer-style portraits from it",
+  "desired_action": "Comment PROMPTS for all nine prompts",
+  "reveal_target": "none",
+  "cta_keyword": "PROMPTS",
+  "target_duration": "55s",
+  "tone": "Plain, specific, no hype. The prompts do the talking; no claim that OpenAI shipped a 'photographer mode' feature",
+  "source_policy": "official-preferred",
+  "footage_constraints": "ANIMATED TREATMENT: facePlan bookends (presenter on hook + CTA only, HeyGen digital twin driven by ElevenLabs VO slices), `slide`/`stage` motion graphics for the feature claim and mechanism beats (OpenAI logo, no captured screenshot -- X could not be captured headlessly, see STYLE-RULES), and `xpost` cards (real name/handle/verified badge) quoting Rachel Woods' three featured prompts verbatim-paraphrased, full text credited in giveaway.md.",
+  "credit_instructions": "internal",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "utility",
+  "target_seconds": 55,
+  "music": true,
+  "created_at": "2026-09-17T06:55:49.502213+00:00",
+  "status": "built"
+}

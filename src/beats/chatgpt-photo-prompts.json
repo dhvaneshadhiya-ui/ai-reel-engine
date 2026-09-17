@@ -1,0 +1,1707 @@
+{
+  "id": "chatgpt-photo-prompts",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "utility",
+  "audio": "assets/chatgpt-photo-prompts/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "face",
+    "viral",
+    "9",
+    "PROMPTS"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "hideCaptions": true,
+      "eyebrow": "ChatGPT Images 2.5",
+      "headline": "ChatGPT just learned to [[keep your face]]",
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "An edit that doesn't drift into someone else."
+        },
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "name": "Old AI edits",
+            "note": "a different-looking stranger",
+            "tone": "cost"
+          },
+          "right": {
+            "name": "Images 2.5",
+            "note": "the same face, edited",
+            "tone": "free"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "keep your",
+          "at": 1.66
+        },
+        {
+          "do": "show",
+          "target": "s",
+          "on": "just learned",
+          "at": 0.74
+        }
+      ],
+      "presenter": {
+        "src": "assets/chatgpt-photo-prompts/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "durationSec": 2.64,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.63,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "hideCaptions": true,
+      "eyebrow": "September 2026 \u00b7 OpenAI",
+      "headline": "Images 2.5: your face stays [[steady]]",
+      "blocks": [
+        {
+          "id": "h",
+          "kind": "hero",
+          "side": {
+            "logo": "assets/logos/openai.svg",
+            "name": "ChatGPT Images 2.5",
+            "note": "released Sept 8, 2026",
+            "tile": "light"
+          }
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Holds your face through an edit instead of drifting into someone else."
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "h",
+          "on": "rebuilt its image",
+          "at": 0.86
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "holds your face",
+          "at": 2.5
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "face steady",
+          "at": 2.88
+        }
+      ],
+      "durationSec": 4.08,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.85,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "hideCaptions": true,
+      "eyebrow": "September 2026 \u00b7 OpenAI",
+      "headline": "And [[follows]] a long instruction",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Face",
+              "v": "Stays steady",
+              "tone": "free"
+            },
+            {
+              "k": "Long instructions",
+              "v": "Don't break",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r",
+          "on": "follows a long",
+          "at": 0.38
+        },
+        {
+          "do": "highlight",
+          "target": "r.1",
+          "on": "without breaking",
+          "at": 1.6
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "follows a",
+          "at": 0.38
+        }
+      ],
+      "durationSec": 2.72,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.35,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "hideCaptions": true,
+      "eyebrow": "Going viral this week",
+      "headline": "[[9]] prompts, one instruction each",
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "The sentence you write decides the shot, not the photo you start with."
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "t",
+          "on": "prompts are going",
+          "at": 0.58
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "prompts are",
+          "at": 0.58
+        },
+        {
+          "do": "highlight",
+          "target": "t",
+          "on": "decides the shot",
+          "at": 2.64
+        }
+      ],
+      "durationSec": 3.8,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.55,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "stage",
+      "hideCaptions": true,
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "a",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.3,
+          "w": 0.72,
+          "title": "Your selfie",
+          "lines": [
+            "+ one prompt",
+            "typed in the chat"
+          ]
+        },
+        {
+          "id": "b",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.68,
+          "w": 0.72,
+          "title": "The shoot",
+          "lines": [
+            "ChatGPT builds it",
+            "camera, light, scene"
+          ],
+          "tone": "accent"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "a",
+          "on": "one in with",
+          "dir": "up",
+          "at": 0.22
+        },
+        {
+          "do": "connect",
+          "from": "a",
+          "to": "b",
+          "on": "with your selfie",
+          "arrow": true,
+          "at": 0.5
+        },
+        {
+          "do": "arrive",
+          "target": "b",
+          "on": "builds the shoot",
+          "dir": "up",
+          "at": 2.12
+        }
+      ],
+      "durationSec": 3.12
+    },
+    {
+      "type": "xpost",
+      "hideCaptions": true,
+      "name": "Rachel Woods",
+      "handle": "@TechWith_Rachel",
+      "verified": true,
+      "text": "DSLR PHOTOGRAPHER MODE: names a real camera, a location, and a **shallow depth of field**.",
+      "stat": "1 / 9",
+      "durationSec": 3.88
+    },
+    {
+      "type": "slide",
+      "hideCaptions": true,
+      "eyebrow": "DSLR Photographer Mode",
+      "headline": "Reads like a [[real portrait session]]",
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Not a filter."
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Camera",
+              "v": "Named"
+            },
+            {
+              "k": "Depth of field",
+              "v": "Named"
+            },
+            {
+              "k": "Identity",
+              "v": "Kept natural",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "real portrait",
+          "at": 1.1
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "not a filter",
+          "at": 2.28
+        },
+        {
+          "do": "show",
+          "target": "r",
+          "on": "reads like a",
+          "at": 0.56
+        }
+      ],
+      "durationSec": 3.1,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.07,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "xpost",
+      "hideCaptions": true,
+      "name": "Rachel Woods",
+      "handle": "@TechWith_Rachel",
+      "verified": true,
+      "text": "GOLDEN HOUR PHOTO SHOOT: same face, **warm light**, natural shadows.",
+      "stat": "2 / 9",
+      "durationSec": 3.3
+    },
+    {
+      "type": "slide",
+      "hideCaptions": true,
+      "headline": "The shot that needed [[an hour of sun]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "name": "Before",
+            "note": "a photographer + an hour of waiting"
+          },
+          "right": {
+            "name": "Now",
+            "note": "one prompt",
+            "tone": "free"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.left",
+          "on": "once needed a",
+          "at": 1.12
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "photographer and an",
+          "at": 1.82
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "hour of sun",
+          "at": 2.62
+        }
+      ],
+      "durationSec": 3.5,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.59,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "xpost",
+      "hideCaptions": true,
+      "name": "Rachel Woods",
+      "handle": "@TechWith_Rachel",
+      "verified": true,
+      "text": "RESTORING OLD PHOTOS: preserves your identity while **enhancing lighting, sharpness, and detail**.",
+      "stat": "3 / 9",
+      "durationSec": 2.12
+    },
+    {
+      "type": "stage",
+      "hideCaptions": true,
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "a",
+          "kind": "text",
+          "text": "Sharpen",
+          "x": 0.24,
+          "y": 0.32,
+          "w": 0.42,
+          "size": 1.3
+        },
+        {
+          "id": "b",
+          "kind": "text",
+          "text": "Relight",
+          "x": 0.76,
+          "y": 0.32,
+          "w": 0.42,
+          "size": 1.3
+        },
+        {
+          "id": "c",
+          "kind": "text",
+          "text": "Rebuild",
+          "x": 0.5,
+          "y": 0.48,
+          "w": 0.42,
+          "size": 1.3
+        },
+        {
+          "id": "d",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.7,
+          "w": 0.76,
+          "title": "Shot today",
+          "lines": [
+            "from an old scan",
+            "same face, sharper"
+          ],
+          "tone": "accent"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "a",
+          "on": "sharpen",
+          "dir": "up",
+          "at": 0.0
+        },
+        {
+          "do": "arrive",
+          "target": "b",
+          "on": "rebuild",
+          "dir": "up",
+          "at": 1.1
+        },
+        {
+          "do": "arrive",
+          "target": "c",
+          "on": "scan into",
+          "dir": "up",
+          "at": 1.48
+        },
+        {
+          "do": "arrive",
+          "target": "d",
+          "on": "into something",
+          "dir": "pop",
+          "at": 1.74
+        }
+      ],
+      "durationSec": 3.1
+    },
+    {
+      "type": "slide",
+      "hideCaptions": true,
+      "eyebrow": "Every one of the 9 prompts",
+      "headline": "The line that [[closes]] every prompt",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Face",
+              "v": "Kept natural",
+              "tone": "free"
+            },
+            {
+              "k": "Skin texture",
+              "v": "Kept natural",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r",
+          "on": "closes every prompt",
+          "at": 0.52
+        },
+        {
+          "do": "highlight",
+          "target": "r.0",
+          "on": "keep the face",
+          "at": 1.8
+        },
+        {
+          "do": "highlight",
+          "target": "r.1",
+          "on": "skin natural",
+          "at": 2.8
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "closes every",
+          "at": 0.52
+        }
+      ],
+      "durationSec": 3.66,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.49,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "hideCaptions": true,
+      "eyebrow": "Skip the rule and",
+      "headline": "Skip it: the [[plastic AI look]]",
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "The one everyone already spots."
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Face kept natural",
+              "v": "Reads real",
+              "tone": "free"
+            },
+            {
+              "k": "Face not kept",
+              "v": "Reads fake",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "plastic ai",
+          "at": 1.18
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "everyone already",
+          "at": 2.02
+        },
+        {
+          "do": "show",
+          "target": "r",
+          "on": "skip it",
+          "at": 0.0
+        }
+      ],
+      "durationSec": 3.5,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.15,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "hideCaptions": true,
+      "eyebrow": "The prompt library",
+      "headline": "There are [[9]] of these",
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "One instruction, nine different shoots."
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "are",
+          "at": 0.12
+        }
+      ],
+      "durationSec": 0.98,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "hideCaptions": true,
+      "cta": true,
+      "headlineSize": "xl",
+      "headline": "Comment [[PROMPTS]]",
+      "presenter": {
+        "src": "assets/chatgpt-photo-prompts/avatar-master-cta.mp4",
+        "from": 0.0
+      },
+      "blocks": [
+        {
+          "id": "d",
+          "kind": "text",
+          "text": "and all nine prompts are yours."
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "comment",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "d",
+          "on": "prompts and",
+          "at": 0.2
+        }
+      ],
+      "durationSec": 1.38,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.48,
+      "text": "ChatGPT just learned",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "ChatGPT"
+        },
+        {
+          "t": 0.74,
+          "text": "just"
+        },
+        {
+          "t": 1.1,
+          "text": "learned"
+        }
+      ]
+    },
+    {
+      "start": 1.48,
+      "end": 2.02,
+      "text": "to keep your",
+      "words": [
+        {
+          "t": 1.48,
+          "text": "to"
+        },
+        {
+          "t": 1.66,
+          "text": "keep"
+        },
+        {
+          "t": 1.8,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 2.02,
+      "end": 2.98,
+      "text": "face. This month,",
+      "words": [
+        {
+          "t": 2.02,
+          "text": "face."
+        },
+        {
+          "t": 2.64,
+          "text": "This"
+        },
+        {
+          "t": 2.76,
+          "text": "month,"
+        }
+      ]
+    },
+    {
+      "start": 3.14,
+      "end": 4.16,
+      "text": "OpenAI rebuilt its",
+      "words": [
+        {
+          "t": 3.14,
+          "text": "OpenAI"
+        },
+        {
+          "t": 3.5,
+          "text": "rebuilt"
+        },
+        {
+          "t": 3.86,
+          "text": "its"
+        }
+      ]
+    },
+    {
+      "start": 4.16,
+      "end": 5.14,
+      "text": "image editor. It",
+      "words": [
+        {
+          "t": 4.16,
+          "text": "image"
+        },
+        {
+          "t": 4.42,
+          "text": "editor."
+        },
+        {
+          "t": 5.04,
+          "text": "It"
+        }
+      ]
+    },
+    {
+      "start": 5.14,
+      "end": 5.72,
+      "text": "holds your face",
+      "words": [
+        {
+          "t": 5.14,
+          "text": "holds"
+        },
+        {
+          "t": 5.34,
+          "text": "your"
+        },
+        {
+          "t": 5.52,
+          "text": "face"
+        }
+      ]
+    },
+    {
+      "start": 5.72,
+      "end": 6.48,
+      "text": "steady through an",
+      "words": [
+        {
+          "t": 5.72,
+          "text": "steady"
+        },
+        {
+          "t": 6.06,
+          "text": "through"
+        },
+        {
+          "t": 6.32,
+          "text": "an"
+        }
+      ]
+    },
+    {
+      "start": 6.48,
+      "end": 7.1,
+      "text": "edit and it",
+      "words": [
+        {
+          "t": 6.48,
+          "text": "edit"
+        },
+        {
+          "t": 6.72,
+          "text": "and"
+        },
+        {
+          "t": 6.98,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 7.1,
+      "end": 7.76,
+      "text": "follows a long",
+      "words": [
+        {
+          "t": 7.1,
+          "text": "follows"
+        },
+        {
+          "t": 7.36,
+          "text": "a"
+        },
+        {
+          "t": 7.56,
+          "text": "long"
+        }
+      ]
+    },
+    {
+      "start": 7.76,
+      "end": 9.04,
+      "text": "instruction without breaking",
+      "words": [
+        {
+          "t": 7.76,
+          "text": "instruction"
+        },
+        {
+          "t": 8.32,
+          "text": "without"
+        },
+        {
+          "t": 8.62,
+          "text": "breaking"
+        }
+      ]
+    },
+    {
+      "start": 9.04,
+      "end": 9.76,
+      "text": "it. Here's why",
+      "words": [
+        {
+          "t": 9.04,
+          "text": "it."
+        },
+        {
+          "t": 9.44,
+          "text": "Here's"
+        },
+        {
+          "t": 9.66,
+          "text": "why"
+        }
+      ]
+    },
+    {
+      "start": 9.76,
+      "end": 10.48,
+      "text": "nine prompts are",
+      "words": [
+        {
+          "t": 9.76,
+          "text": "nine"
+        },
+        {
+          "t": 10.02,
+          "text": "prompts"
+        },
+        {
+          "t": 10.34,
+          "text": "are"
+        }
+      ]
+    },
+    {
+      "start": 10.48,
+      "end": 11.34,
+      "text": "going viral. The",
+      "words": [
+        {
+          "t": 10.48,
+          "text": "going"
+        },
+        {
+          "t": 10.66,
+          "text": "viral."
+        },
+        {
+          "t": 11.28,
+          "text": "The"
+        }
+      ]
+    },
+    {
+      "start": 11.34,
+      "end": 12.08,
+      "text": "sentence you write",
+      "words": [
+        {
+          "t": 11.34,
+          "text": "sentence"
+        },
+        {
+          "t": 11.62,
+          "text": "you"
+        },
+        {
+          "t": 11.86,
+          "text": "write"
+        }
+      ]
+    },
+    {
+      "start": 12.08,
+      "end": 12.96,
+      "text": "decides the shot.",
+      "words": [
+        {
+          "t": 12.08,
+          "text": "decides"
+        },
+        {
+          "t": 12.38,
+          "text": "the"
+        },
+        {
+          "t": 12.7,
+          "text": "shot."
+        }
+      ]
+    },
+    {
+      "start": 13.24,
+      "end": 13.74,
+      "text": "Paste one in",
+      "words": [
+        {
+          "t": 13.24,
+          "text": "Paste"
+        },
+        {
+          "t": 13.46,
+          "text": "one"
+        },
+        {
+          "t": 13.6,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 13.74,
+      "end": 14.4,
+      "text": "with your selfie",
+      "words": [
+        {
+          "t": 13.74,
+          "text": "with"
+        },
+        {
+          "t": 13.88,
+          "text": "your"
+        },
+        {
+          "t": 14.04,
+          "text": "selfie"
+        }
+      ]
+    },
+    {
+      "start": 14.4,
+      "end": 15.58,
+      "text": "and ChatGPT builds",
+      "words": [
+        {
+          "t": 14.4,
+          "text": "and"
+        },
+        {
+          "t": 14.66,
+          "text": "ChatGPT"
+        },
+        {
+          "t": 15.36,
+          "text": "builds"
+        }
+      ]
+    },
+    {
+      "start": 15.58,
+      "end": 16.74,
+      "text": "the shoot. DSLR",
+      "words": [
+        {
+          "t": 15.58,
+          "text": "the"
+        },
+        {
+          "t": 15.8,
+          "text": "shoot."
+        },
+        {
+          "t": 16.36,
+          "text": "DSLR"
+        }
+      ]
+    },
+    {
+      "start": 16.74,
+      "end": 17.8,
+      "text": "photographer mode names",
+      "words": [
+        {
+          "t": 16.74,
+          "text": "photographer"
+        },
+        {
+          "t": 17.18,
+          "text": "mode"
+        },
+        {
+          "t": 17.54,
+          "text": "names"
+        }
+      ]
+    },
+    {
+      "start": 17.8,
+      "end": 18.64,
+      "text": "a camera, a",
+      "words": [
+        {
+          "t": 17.8,
+          "text": "a"
+        },
+        {
+          "t": 18.0,
+          "text": "camera,"
+        },
+        {
+          "t": 18.64,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 18.64,
+      "end": 19.6,
+      "text": "location, a depth",
+      "words": [
+        {
+          "t": 18.64,
+          "text": "location,"
+        },
+        {
+          "t": 19.38,
+          "text": "a"
+        },
+        {
+          "t": 19.4,
+          "text": "depth"
+        }
+      ]
+    },
+    {
+      "start": 19.6,
+      "end": 20.5,
+      "text": "of field. Still,",
+      "words": [
+        {
+          "t": 19.6,
+          "text": "of"
+        },
+        {
+          "t": 19.76,
+          "text": "field."
+        },
+        {
+          "t": 20.24,
+          "text": "Still,"
+        }
+      ]
+    },
+    {
+      "start": 20.7,
+      "end": 21.2,
+      "text": "it reads like",
+      "words": [
+        {
+          "t": 20.7,
+          "text": "it"
+        },
+        {
+          "t": 20.8,
+          "text": "reads"
+        },
+        {
+          "t": 20.96,
+          "text": "like"
+        }
+      ]
+    },
+    {
+      "start": 21.2,
+      "end": 21.82,
+      "text": "a real portrait",
+      "words": [
+        {
+          "t": 21.2,
+          "text": "a"
+        },
+        {
+          "t": 21.34,
+          "text": "real"
+        },
+        {
+          "t": 21.48,
+          "text": "portrait"
+        }
+      ]
+    },
+    {
+      "start": 21.82,
+      "end": 22.74,
+      "text": "session, not a",
+      "words": [
+        {
+          "t": 21.82,
+          "text": "session,"
+        },
+        {
+          "t": 22.52,
+          "text": "not"
+        },
+        {
+          "t": 22.6,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 22.74,
+      "end": 23.76,
+      "text": "filter. Golden hour",
+      "words": [
+        {
+          "t": 22.74,
+          "text": "filter."
+        },
+        {
+          "t": 23.34,
+          "text": "Golden"
+        },
+        {
+          "t": 23.52,
+          "text": "hour"
+        }
+      ]
+    },
+    {
+      "start": 23.76,
+      "end": 24.8,
+      "text": "photo shoot, same",
+      "words": [
+        {
+          "t": 23.76,
+          "text": "photo"
+        },
+        {
+          "t": 23.98,
+          "text": "shoot,"
+        },
+        {
+          "t": 24.66,
+          "text": "same"
+        }
+      ]
+    },
+    {
+      "start": 24.8,
+      "end": 25.72,
+      "text": "face, warm light,",
+      "words": [
+        {
+          "t": 24.8,
+          "text": "face,"
+        },
+        {
+          "t": 25.38,
+          "text": "warm"
+        },
+        {
+          "t": 25.46,
+          "text": "light,"
+        }
+      ]
+    },
+    {
+      "start": 25.98,
+      "end": 27.26,
+      "text": "natural shadows. That's",
+      "words": [
+        {
+          "t": 25.98,
+          "text": "natural"
+        },
+        {
+          "t": 26.24,
+          "text": "shadows."
+        },
+        {
+          "t": 26.64,
+          "text": "That's"
+        }
+      ]
+    },
+    {
+      "start": 27.26,
+      "end": 27.76,
+      "text": "the shot that",
+      "words": [
+        {
+          "t": 27.26,
+          "text": "the"
+        },
+        {
+          "t": 27.36,
+          "text": "shot"
+        },
+        {
+          "t": 27.58,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 27.76,
+      "end": 28.46,
+      "text": "once needed a",
+      "words": [
+        {
+          "t": 27.76,
+          "text": "once"
+        },
+        {
+          "t": 28.0,
+          "text": "needed"
+        },
+        {
+          "t": 28.32,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 28.46,
+      "end": 29.26,
+      "text": "photographer and an",
+      "words": [
+        {
+          "t": 28.46,
+          "text": "photographer"
+        },
+        {
+          "t": 28.9,
+          "text": "and"
+        },
+        {
+          "t": 29.18,
+          "text": "an"
+        }
+      ]
+    },
+    {
+      "start": 29.26,
+      "end": 29.92,
+      "text": "hour of sun.",
+      "words": [
+        {
+          "t": 29.26,
+          "text": "hour"
+        },
+        {
+          "t": 29.48,
+          "text": "of"
+        },
+        {
+          "t": 29.64,
+          "text": "sun."
+        }
+      ]
+    },
+    {
+      "start": 30.14,
+      "end": 31.04,
+      "text": "Restoring old photos",
+      "words": [
+        {
+          "t": 30.14,
+          "text": "Restoring"
+        },
+        {
+          "t": 30.48,
+          "text": "old"
+        },
+        {
+          "t": 30.68,
+          "text": "photos"
+        }
+      ]
+    },
+    {
+      "start": 31.04,
+      "end": 31.86,
+      "text": "runs it backwards.",
+      "words": [
+        {
+          "t": 31.04,
+          "text": "runs"
+        },
+        {
+          "t": 31.28,
+          "text": "it"
+        },
+        {
+          "t": 31.48,
+          "text": "backwards."
+        }
+      ]
+    },
+    {
+      "start": 32.26,
+      "end": 33.58,
+      "text": "Sharpen, relight, rebuild",
+      "words": [
+        {
+          "t": 32.26,
+          "text": "Sharpen,"
+        },
+        {
+          "t": 32.78,
+          "text": "relight,"
+        },
+        {
+          "t": 33.36,
+          "text": "rebuild"
+        }
+      ]
+    },
+    {
+      "start": 33.58,
+      "end": 34.22,
+      "text": "a scan into",
+      "words": [
+        {
+          "t": 33.58,
+          "text": "a"
+        },
+        {
+          "t": 33.74,
+          "text": "scan"
+        },
+        {
+          "t": 34.0,
+          "text": "into"
+        }
+      ]
+    },
+    {
+      "start": 34.22,
+      "end": 35.44,
+      "text": "something shot today That",
+      "words": [
+        {
+          "t": 34.22,
+          "text": "something"
+        },
+        {
+          "t": 34.56,
+          "text": "shot"
+        },
+        {
+          "t": 35.36,
+          "text": "today"
+        },
+        {
+          "t": 35.36,
+          "text": "That"
+        }
+      ]
+    },
+    {
+      "start": 35.44,
+      "end": 36.18,
+      "text": "same line closes",
+      "words": [
+        {
+          "t": 35.44,
+          "text": "same"
+        },
+        {
+          "t": 35.66,
+          "text": "line"
+        },
+        {
+          "t": 35.88,
+          "text": "closes"
+        }
+      ]
+    },
+    {
+      "start": 36.18,
+      "end": 37.26,
+      "text": "every prompt. Keep",
+      "words": [
+        {
+          "t": 36.18,
+          "text": "every"
+        },
+        {
+          "t": 36.58,
+          "text": "prompt."
+        },
+        {
+          "t": 37.16,
+          "text": "Keep"
+        }
+      ]
+    },
+    {
+      "start": 37.26,
+      "end": 38.0,
+      "text": "the face, keep",
+      "words": [
+        {
+          "t": 37.26,
+          "text": "the"
+        },
+        {
+          "t": 37.42,
+          "text": "face,"
+        },
+        {
+          "t": 37.92,
+          "text": "keep"
+        }
+      ]
+    },
+    {
+      "start": 38.0,
+      "end": 38.72,
+      "text": "the skin natural.",
+      "words": [
+        {
+          "t": 38.0,
+          "text": "the"
+        },
+        {
+          "t": 38.16,
+          "text": "skin"
+        },
+        {
+          "t": 38.34,
+          "text": "natural."
+        }
+      ]
+    },
+    {
+      "start": 39.02,
+      "end": 39.56,
+      "text": "Skip it and",
+      "words": [
+        {
+          "t": 39.02,
+          "text": "Skip"
+        },
+        {
+          "t": 39.2,
+          "text": "it"
+        },
+        {
+          "t": 39.42,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 39.56,
+      "end": 40.1,
+      "text": "the result is",
+      "words": [
+        {
+          "t": 39.56,
+          "text": "the"
+        },
+        {
+          "t": 39.66,
+          "text": "result"
+        },
+        {
+          "t": 39.9,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 40.1,
+      "end": 40.8,
+      "text": "the plastic AI",
+      "words": [
+        {
+          "t": 40.1,
+          "text": "the"
+        },
+        {
+          "t": 40.2,
+          "text": "plastic"
+        },
+        {
+          "t": 40.56,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 40.8,
+      "end": 41.8,
+      "text": "look everyone already",
+      "words": [
+        {
+          "t": 40.8,
+          "text": "look"
+        },
+        {
+          "t": 41.04,
+          "text": "everyone"
+        },
+        {
+          "t": 41.42,
+          "text": "already"
+        }
+      ]
+    },
+    {
+      "start": 41.8,
+      "end": 42.74,
+      "text": "spots. There are",
+      "words": [
+        {
+          "t": 41.8,
+          "text": "spots."
+        },
+        {
+          "t": 42.52,
+          "text": "There"
+        },
+        {
+          "t": 42.64,
+          "text": "are"
+        }
+      ]
+    },
+    {
+      "start": 42.74,
+      "end": 43.32,
+      "text": "nine of these.",
+      "words": [
+        {
+          "t": 42.74,
+          "text": "nine"
+        },
+        {
+          "t": 42.94,
+          "text": "of"
+        },
+        {
+          "t": 43.08,
+          "text": "these."
+        }
+      ]
+    },
+    {
+      "start": 43.5,
+      "end": 44.26,
+      "text": "Comment prompts and",
+      "words": [
+        {
+          "t": 43.5,
+          "text": "Comment"
+        },
+        {
+          "t": 43.7,
+          "text": "prompts"
+        },
+        {
+          "t": 44.08,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 44.26,
+      "end": 44.64,
+      "text": "they're yours",
+      "words": [
+        {
+          "t": 44.26,
+          "text": "they're"
+        },
+        {
+          "t": 44.26,
+          "text": "yours"
+        }
+      ]
+    }
+  ],
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 44.64,
+        "vol": 0.055
+      },
+      {
+        "t": 44.88,
+        "vol": 0.02
+      }
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+  },
+  "format": "ai-tools",
+  "script": "ChatGPT just learned to keep your face.\n\nThis month OpenAI rebuilt its image editor: it holds your face steady through an edit, and it follows a long instruction without breaking it.\n\nHere's why nine prompts are going viral: the sentence you write decides the shot.\n\nPaste one in with your selfie, and ChatGPT builds the shoot.\n\nDSLR Photographer Mode names a camera, a location, a depth of field.\n\nStill, it reads like a real portrait session, not a filter.\n\nGolden Hour Photo Shoot: same face, warm light, natural shadows.\n\nThat's the shot that once needed a photographer and an hour of sun.\n\nRestoring Old Photos runs it backwards.\n\nSharpen, relight, rebuild a scan into something shot today.\n\nThat same line closes every prompt: keep the face, keep the skin natural.\n\nSkip it, and the result is the plastic AI look everyone already spots.\n\nThere are nine of these.\n\nComment PROMPTS and they're yours.",
+  "approval": {
+    "sha256": "32dc8da4b59e01b0e4ad3add78f67e612c57938dca9a95609f626cdbd867f630",
+    "approvedAt": "2026-09-17T07:05:51+00:00",
+    "words": 153,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

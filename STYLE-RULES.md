@@ -8356,3 +8356,82 @@ unhedged even after adding "reportedly." Splitting it into two claims (one
 **Rule:** when a source states part of a claim as fact and part as its own
 inference, that is two claims at two tiers, not one claim with a soft word
 added to the tail.
+
+## 2026-09-17 — chatgpt-photo-prompts: X cannot be captured headlessly, and phrase-anchors break on a mishearing whisper
+
+**RAW NOTE.** `tools/capture.mjs` returned a solid-white 1080x2340 PNG for an
+x.com status URL twice, at both 3.5s and 8s wait, tier `reliable`. The same
+URL rendered perfectly in the interactive browser pane (login-wall dismissed,
+full thread readable). Headless Playwright chromium is evidently served a
+blank shell by X where a normal browser session is not.
+**DISTILLED RULE.** Never spend a second attempt trying to headless-capture
+X/Twitter — go straight to the `xpost` scene type (`src/components/XPost.tsx`),
+which quotes the real name/handle/verified badge/text as a motion-graphic
+card. This is exactly the failure mode `xpost` exists to route around, and it
+sidesteps the bot-wall entirely while keeping the quote honestly credited.
+
+**RAW NOTE.** `plan_shots.py`'s anchor resolver failed on 7 of 15 shots for a
+script that read back clean to a human: `ChatGPT`, `OpenAI`, `nine` and
+`relight` all failed to resolve against the actual ElevenLabs read, because
+whisper heard "Chat GPT" / "open AI" (split into two tokens each), "9" (digit,
+not the word), and "re-light" (hyphen-merged by `compile_shot_plan.load_words`'s
+own hyphen-token rule). `normalise()` tokenizes the SCRIPT's contiguous word as
+one token but the split/digit/hyphenated whisper output as different tokens —
+a real mismatch, not a bug in the checker.
+**ROOT CAUSE, SECOND ORDER.** The first fix (skip forward to a safely-resolving
+phrase further into the clause, e.g. `"rebuilt its image editor"` instead of
+`"This month OpenAI rebuilt"`) resolves the anchor but silently DRIFTS the
+scene cut later than the sentence actually starts — the previous scene then
+holds through 1-2 seconds of the NEXT sentence's audio with the wrong visual
+on screen, which is a Rule 3 violation nobody's tooling catches (`resolvable()`
+only checks whether the phrase exists in the track, not where the previous
+scene's boundary lands).
+**DISTILLED RULE.** When an anchor phrase fails to resolve, do not skip past
+the problem word — replace it or use fewer words: (1) if whisper split a
+compound word into two tokens, anchor on words either side of the split, not
+across it (`"This month"` not `"This month OpenAI"`); (2) if whisper heard a
+digit for a number word (or vice versa), drop that one word from the anchor
+and keep the neighbours (`"There are"` not `"There are nine"`); (3) if whisper
+mis-heard a word entirely (`"Paste"` heard as `"Faced"`), anchor on the
+MISHEARD text itself — it is what is actually in the track — and fix the
+DISPLAY only via `caption_corrections`. In every case, keep the anchor as
+close to the clause's true first word as the transcript allows, so the
+previous scene's cutoff never bleeds into the next sentence's audio. Verify
+with a one-off `resolvable()` check across every shot before compiling, not
+just the shots `plan_shots.py --write` flagged the first time.
+
+**RAW NOTE.** The hook scene (`slide`, presenter avatar, headline + a `text`
+block) rendered as 75% flat black at both the auto-lint's 10% and 50% sample
+points — `[BLOCKS] [HOOK DEAD SPACE]` blocked the render. The `text` block was
+correctly wired with `{"do":"show","target":"t","on":"keep your face"}`, but
+that phrase resolved to 1.66s into a 2.64s scene — so the block was only ever
+on screen for the final third, and both lint samples landed before it.
+**DISTILLED RULE.** A block with no real reason to be withheld should carry NO
+`show` move at all — per `Slide.tsx`'s own contract, an unlisted block is
+visible from frame 0. Reserve a delayed `show` for content that is genuinely a
+reveal (a swap, a struck line, a number counting up); a plain supporting line
+should fill the frame immediately, especially in a hook or CTA scene short
+enough that "late" and "never seen" are the same thing.
+
+**RAW NOTE.** The CTA scene (1.38s: `"Comment PROMPTS and they're yours."`)
+originally carried a 3-row recap list (`DSLR Photographer Mode` / `Golden Hour
+Photo Shoot` / `Restoring Old Photos`) meant to remind the viewer what the nine
+prompts cover. The rendered frame showed exactly ONE row, alone in an
+otherwise-empty card — the scene ended before rows two and three could animate
+in, so the recap read as an unfinished list rather than a complete one.
+**DISTILLED RULE.** Before adding a multi-item reveal to a scene, check its
+`durationSec` against the item count: a `rows` list needs roughly 0.3-0.4s per
+row after its own `show` trigger to read as intentional, not truncated. A
+scene too short for that should carry a single complete line instead of a
+partial list — cut the content, not the polish pass.
+
+**RAW NOTE.** The ElevenLabs v3 read for this script (Dhvanesh voice) came
+back at 3.41 w/s against the measured 2.35-2.75 band — `vo_external.py` flagged
+it TOO FAST. Runtime (44.9s) still sat comfortably inside the `ai-tools` format
+band (40-60s).
+**DISTILLED RULE.** Corroborates the 2026-09-02 and 2026-09-08 entries: this
+voice reads fast on eleven_v3 regardless of pace marks, and a regeneration at
+~960 credits is not justified when the actual master duration already lands
+inside the format's runtime band. Check runtime against the FORMAT band before
+spending credits chasing the general wps figure — they are different gates
+measuring different things.

@@ -1,0 +1,18 @@
+{
+  "script_sha256": "32dc8da4b59e01b0e4ad3add78f67e612c57938dca9a95609f626cdbd867f630",
+  "structure_sha256": "dc3d92f6976d0516e30c89c659971c01337fd5168a27d6e2574b377db61984f8",
+  "findings": [
+    "CADENCE: only 1 sentence reaches 18 words (longest 24). The playbook asks for 'occasionally one long spec sentence' \u2014 with everything short, nothing reads as short. Nothing to push against.",
+    "NUMBERS: one every 4.7 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [
+    "claim 2 ('A set of prompts for turning an uploaded'): tier single but spoken UNHEDGED near \"Here's why nine prompts are going viral: the sentence you write decides the\". framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source.",
+    "claim 3 ('One of the nine prompts, \"DSLR Photograp'): tier single but spoken UNHEDGED near 'DSLR Photographer Mode names a camera, a location, a depth of field.'. framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source.",
+    "claim 4 ('Another of the nine, \"Golden Hour Photo '): tier single but spoken UNHEDGED near 'Golden Hour Photo Shoot: same face, warm light, natural shadows.'. framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source.",
+    "claim 5 ('A third, \"Restoring Old Photos,\" instruc'): tier single but spoken UNHEDGED near 'Restoring Old Photos runs it backwards.'. framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source.",
+    "claim 6 (\"All nine of Rachel Woods' prompts share \"): tier single but spoken UNHEDGED near 'That same line closes every prompt: keep the face, keep the skin natural.'. framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source."
+  ],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-09-17T07:04:06+00:00"
+}
