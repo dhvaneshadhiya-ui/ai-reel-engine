@@ -137,10 +137,13 @@ export interface DevicesBlockProps { id: string; kind: "devices"; hub: string; i
 export const DevicesBlock: React.FC<{ b: DevicesBlockProps; moves: MoveLike[]; t: number; boxW: number; C: Pal }> = ({ b, moves, t, boxW, C }) => {
   const H = b.h ?? 620;
   const n = b.items.length;
-  const hubX = 190, hubY = H / 2;
-  const chipW = 400, chipH = 96, chipX = boxW - chipW;
+  // the diagram grows with its box, so a tall hook card is filled, not dotted
+  const f = Math.max(1, Math.min(1.5, H / 560));
+  const hubX = Math.round(190 * f), hubY = H / 2;
+  const chipW = Math.round(400 * Math.min(f, 1.15)), chipH = Math.round(96 * f), chipX = boxW - chipW;
   const gap = (H - n * chipH) / (n + 1);
-  const at = (i: number) => moves.find((m) => m.do === "show" && m.target === `${b.id}.${i}`)?.at ?? 0;
+  // a device with no `show` is connected from frame 0 (not fading in at 0.3s)
+  const at = (i: number) => moves.find((m) => m.do === "show" && m.target === `${b.id}.${i}`)?.at ?? -1;
   return (
     <div style={{ position: "relative", width: boxW, height: H }}>
       <svg width={boxW} height={H} style={{ position: "absolute", left: 0, top: 0 }}>
@@ -148,7 +151,8 @@ export const DevicesBlock: React.FC<{ b: DevicesBlockProps; moves: MoveLike[]; t
           const y = gap + i * (chipH + gap) + chipH / 2;
           const p = ramp(t, at(i), 0.45);
           if (p <= 0) return null;
-          const d = `M ${hubX + 130} ${hubY} C ${hubX + 300} ${hubY}, ${chipX - 170} ${y}, ${chipX} ${y}`;
+          const x0 = hubX + 130 * f + 12, dx = (chipX - x0) * 0.5;
+          const d = `M ${x0} ${hubY} C ${x0 + dx} ${hubY}, ${chipX - dx} ${y}, ${chipX} ${y}`;
           // one pulse per 1.2s after the line lands: the audio is flowing
           const phase = t > at(i) + 0.45 ? ((t - at(i) - 0.45) / 1.2) % 1 : -1;
           return (
@@ -164,10 +168,10 @@ export const DevicesBlock: React.FC<{ b: DevicesBlockProps; moves: MoveLike[]; t
         })}
       </svg>
       {/* the Mac: a laptop drawn in two shapes */}
-      <div style={{ position: "absolute", left: hubX - 130, top: hubY - 110, width: 260, textAlign: "center" }}>
-        <div style={{ margin: "0 auto", width: 220, height: 140, borderRadius: 16, border: `8px solid ${C.sub}`, background: "#101014" }} />
-        <div style={{ margin: "0 auto", width: 260, height: 18, borderRadius: "0 0 14px 14px", background: C.sub }} />
-        <div style={{ marginTop: 16, font: `700 34px ${FONT}`, color: C.ink }}>{b.hub}</div>
+      <div style={{ position: "absolute", left: hubX - 130 * f, top: hubY - 110 * f, width: 260 * f, textAlign: "center" }}>
+        <div style={{ margin: "0 auto", width: 220 * f, height: 140 * f, borderRadius: 16, border: `${Math.round(8 * f)}px solid ${C.sub}`, background: "#101014" }} />
+        <div style={{ margin: "0 auto", width: 260 * f, height: 18 * f, borderRadius: "0 0 14px 14px", background: C.sub }} />
+        <div style={{ marginTop: 16, font: `700 ${Math.round(34 * f)}px ${FONT}`, color: C.ink }}>{b.hub}</div>
       </div>
       {b.items.map((it, i) => {
         const y = gap + i * (chipH + gap);
@@ -176,7 +180,7 @@ export const DevicesBlock: React.FC<{ b: DevicesBlockProps; moves: MoveLike[]; t
           <div key={i} style={{ position: "absolute", left: chipX, top: y, width: chipW, height: chipH, borderRadius: 24,
             background: C.card, border: `2px solid ${p > 0 ? `rgba(77,163,255,${0.6 * p})` : C.line}`, opacity: p,
             transform: `translateX(${Math.round((1 - p) * 30)}px)`, display: "flex", alignItems: "center", padding: "0 26px",
-            font: `700 36px ${FONT}`, color: C.ink }}>{it}</div>
+            font: `700 ${Math.round(36 * f)}px ${FONT}`, color: C.ink }}>{it}</div>
         );
       })}
     </div>

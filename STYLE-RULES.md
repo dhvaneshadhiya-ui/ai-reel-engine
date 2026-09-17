@@ -8504,3 +8504,19 @@ product better. Both were true.
 Treatment: devices pulse (hook), steps + screen states (how-to), screen zooms on
 slider / battery+kHz / crown (features), screen zoom on Reconnect + rows, swap with
 strike (Apple), waves + tips (caveat), hero + rows, XL end card over the showcase shot.
+
+## 2026-09-17 (3) — PairPods v3: captions on slides, product spotlight, no music
+
+User review: "Why didn't you add the caption? Make sure it doesn't overlap", "PairPods
+doesn't grab the attention when the avatar talks about it", "remove the background
+music; make the best use of sound effects".
+- **Captions on animated slides by default** (hideCaptions false, captionBottom 500 —
+  the renderer's floor). A slide with captions stops its content at 1270px (66%) so
+  the chips sit alone at ~69-74%; the end card, which spells its own words, hides them.
+- **`spotlight` block** (overlay): the product icon lands at 300px with a burst ring,
+  glow and dim backdrop on the spoken name. Devices diagram scales with its box.
+- **Motion sounds derived by the compiler:** focus → lens-zoom, state → click,
+  steps → tick, device → pop, spotlight → magic reveal, drift → rising whoosh, on top
+  of page whoosh / pill pop / strike marker / count lock. 30 cues in 63s, voice only.
+- lint_frames: dead space on a slide/stage is measured ABOVE the 80% line — the
+  platform zone must stay empty, so counting it made two checks contradict.

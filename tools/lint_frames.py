@@ -256,6 +256,13 @@ def main():
                     "priceladder"}
         frac = dead_space_frac(img)
         limit = 0.70 if typ in DESIGNED else 0.30
+        # A designed PAGE (slide/stage) must keep the bottom 20% clear — that is
+        # Instagram's and YouTube's UI zone, and [PLATFORM ZONE] blocks content
+        # there. Counting that band as "dead space" made the two checks demand
+        # opposite things (PairPods hook, 2026-09-17). Measure it above 80%.
+        if typ in ("slide", "stage"):
+            w0, h0 = img.size
+            frac = dead_space_frac(img.crop((0, 0, w0, int(h0 * 0.8))))
         if i == 0:
             limit = 0.55          # the hook may never read as an empty field
         if frac > limit:

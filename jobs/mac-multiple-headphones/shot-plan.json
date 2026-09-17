@@ -1,6 +1,6 @@
 {
  "format": "howto",
- "music": true,
+ "music": false,
  "facePlan": "bookends",
  "audio": "assets/mac-multiple-headphones/vo.mp3",
  "emphasis": [
@@ -29,7 +29,7 @@
    "asset_id": null,
    "scene": {
     "eyebrow": "Mac tip",
-    "headline": "One Mac, [[two]] pairs of headphones",
+    "headline": "One Mac, [[two]] headphones",
     "presenter": {
      "src": "assets/mac-multiple-headphones/avatar-master-hook.mp4",
      "from": 0.0
@@ -43,12 +43,15 @@
        "Your AirPods",
        "Friend's AirPods"
       ],
-      "h": 720
+      "h": 700
      },
      {
-      "id": "t",
-      "kind": "text",
-      "text": "PairPods: a free menu bar app that shares one Mac's audio."
+      "id": "sp",
+      "kind": "spotlight",
+      "logo": "assets/logos/pairpods-icon.png",
+      "name": "PairPods",
+      "overlay": true,
+      "note": "free menu bar app"
      }
     ],
     "moves": [
@@ -59,12 +62,13 @@
      },
      {
       "do": "show",
-      "target": "d.1",
-      "on": "pairs of headphones"
+      "target": "sp",
+      "on": "called Pair"
      }
     ],
     "type": "slide",
-    "hideCaptions": true
+    "hideCaptions": false,
+    "captionBottom": 500
    }
   },
   {
@@ -100,7 +104,7 @@
       "height": 884,
       "id": "sc",
       "src": "assets/mac-multiple-headphones/ui/step-1.png",
-      "h": 760
+      "h": 540
      }
     ],
     "moves": [
@@ -177,7 +181,8 @@
      }
     ],
     "type": "slide",
-    "hideCaptions": true
+    "hideCaptions": false,
+    "captionBottom": 500
    }
   },
   {
@@ -203,7 +208,7 @@
       "height": 884,
       "id": "sc",
       "src": "assets/mac-multiple-headphones/ui/step-1.png",
-      "h": 900
+      "h": 730
      }
     ],
     "moves": [
@@ -270,7 +275,8 @@
      }
     ],
     "type": "slide",
-    "hideCaptions": true
+    "hideCaptions": false,
+    "captionBottom": 500
    }
   },
   {
@@ -296,7 +302,7 @@
       "height": 884,
       "id": "sc",
       "src": "assets/mac-multiple-headphones/ui/step-3.png",
-      "h": 620
+      "h": 520
      },
      {
       "id": "r",
@@ -343,7 +349,8 @@
      }
     ],
     "type": "slide",
-    "hideCaptions": true
+    "hideCaptions": false,
+    "captionBottom": 500
    }
   },
   {
@@ -419,7 +426,8 @@
      }
     ],
     "type": "slide",
-    "hideCaptions": true
+    "hideCaptions": false,
+    "captionBottom": 500
    }
   },
   {
@@ -478,7 +486,8 @@
      }
     ],
     "type": "slide",
-    "hideCaptions": true
+    "hideCaptions": false,
+    "captionBottom": 500
    }
   },
   {
@@ -541,7 +550,8 @@
      }
     ],
     "type": "slide",
-    "hideCaptions": true
+    "hideCaptions": false,
+    "captionBottom": 500
    }
   },
   {
@@ -584,5 +594,6 @@
     "hideCaptions": true
    }
   }
- ]
+ ],
+ "noMusicReason": "user, 2026-09-17: remove the background music, make the best use of sound effects"
 }

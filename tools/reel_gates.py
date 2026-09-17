@@ -1955,7 +1955,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
                     "screen is a claim, whether or not the voice says it.")
 
     # G65 (slide) — the carousel-look slide off its contract draws nothing.
-    SLIDE_BLOCKS = {"hero", "swap", "rows", "text", "tips", "logos", "screen", "steps", "devices", "waves"}
+    SLIDE_BLOCKS = {"hero", "swap", "rows", "text", "tips", "logos", "screen", "steps", "devices", "waves", "spotlight"}
     for i, sc in enumerate(scenes):
         if sc.get("type") != "slide":
             continue
@@ -1997,6 +1997,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 for s in [b.get("side"), b.get("left"), b.get("right")] + list(b.get("items") or []):
                     if isinstance(s, dict):
                         texts += [s.get("name"), s.get("price"), s.get("note")]
+                texts += [b.get("name"), b.get("note")]
                 texts += [b.get("text"), b.get("best"), b.get("watch"), b.get("hub")]
                 texts += [x for x in (b.get("steps") or []) + (b.get("labels") or []) + [y for y in (b.get("items") or []) if isinstance(y, str)]]
                 texts += [x for r in b.get("rows") or [] for x in (r.get("k"), r.get("v"))]

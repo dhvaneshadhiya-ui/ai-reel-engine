@@ -50,7 +50,8 @@ export type SlideBlock =
   | { id: string; kind: "text"; text: string }
   | { id: string; kind: "tips"; best?: string; watch?: string }
   | { id: string; kind: "logos"; items: { logo: string; name: string; tile?: "light" | "dark" }[] }
-  | ScreenBlockProps | StepsBlockProps | DevicesBlockProps | WavesBlockProps;
+  | ScreenBlockProps | StepsBlockProps | DevicesBlockProps | WavesBlockProps
+  | { id: string; kind: "spotlight"; logo: string; name: string; note?: string; overlay?: boolean };
 
 export interface SlideMove {
   /** pill: target "headline" — the yellow pill lands on the spoken word, not
@@ -289,6 +290,38 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         return <StepsBlock key={b.id} b={b} moves={moves} t={t} C={C} />;
       case "devices":
         return <DevicesBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} />;
+      case "spotlight": {
+        // THE PRODUCT REVEAL (2026-09-17: "PairPods doesn't grab the attention
+        // when the avatar talks about it"). The icon lands big with a burst
+        // ring and a glow on the spoken name; the name sits under it. One
+        // arrival, then still — the burst is a shape, never a scale on type.
+        const a = shownAt(b.id);
+        const k = t < a ? 0 : spring({ frame: frame - Math.round(a * fps), fps, config: { damping: 11, stiffness: 170, mass: 0.8 } });
+        const burst = interpolate(t, [a, a + 0.8], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
+        const size = 300;
+        return (
+          <div key={b.id} style={b.overlay
+            ? { position: "absolute", left: 0, right: 0, top: 0, bottom: 0, zIndex: 5, display: "flex", flexDirection: "column",
+                alignItems: "center", justifyContent: "center", background: `rgba(0,0,0,${0.82 * Math.min(1, k * 2)})`,
+                opacity: t < a ? 0 : 1 }
+            : { position: "relative", display: "flex", flexDirection: "column", alignItems: "center",
+                padding: "26px 0", opacity: Math.min(1, k * 2) }}>
+            {burst > 0 && burst < 1 ? (
+              <div style={{ position: "absolute", top: b.overlay ? "calc(50% - 60px)" : 26 + size / 2, left: "50%", width: size * (1 + 1.2 * burst),
+                height: size * (1 + 1.2 * burst), borderRadius: "50%", border: `6px solid ${C.pill}`, opacity: 1 - burst,
+                transform: "translate(-50%, -50%)" }} />
+            ) : null}
+            <div style={{ width: size, height: size, borderRadius: size * 0.23, overflow: "hidden",
+              boxShadow: `0 0 ${Math.round(90 * Math.min(1, k))}px rgba(255,214,10,0.45), 0 30px 60px rgba(0,0,0,0.5)`,
+              transform: `scale(${0.4 + 0.6 * k})` }}>
+              <Img src={staticFile(b.logo)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
+            <div style={{ marginTop: 26, font: `800 76px/1.05 ${FONT}`, letterSpacing: -2, color: C.ink,
+              opacity: ramp(t, a + 0.25, 0.3) }}>{b.name}</div>
+            {b.note ? <div style={{ marginTop: 10, font: `600 38px ${FONT}`, color: C.blue, opacity: ramp(t, a + 0.45, 0.3) }}>{b.note}</div> : null}
+          </div>
+        );
+      }
       case "waves":
         return <WavesBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
       case "logos": {
@@ -337,7 +370,11 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
             style={{ width: "100%", height: "178%", objectFit: "cover", objectPosition: "50% 0%", marginTop: "-12%" }} />
         </div>
       ) : null}
-      <div style={{ position: "absolute", left: L, top: scene.series || scene.index ? 200 : 250, width: COL, bottom: 384,
+      <div style={{ position: "absolute", left: L, top: scene.series || scene.index ? 200 : 250, width: COL,
+        // CAPTION BAND (user, 2026-09-17): a slide that shows captions stops its
+        // content at ~69% so the chips sit alone at 72-77%, above the platform
+        // zone. Without captions it fills to the 80% line as before.
+        bottom: (scene as { hideCaptions?: boolean }).hideCaptions === false ? 650 : 384,
         display: "flex", flexDirection: "column" }}>
         {scene.series || scene.index ? (
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 40, font: `600 34px ${FONT}`, color: C.sub }}>
@@ -362,7 +399,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
             headline and the cards/rows grow into the page; centring them left a
             gap above and an unfinished lower half, and a dense slide overflowed
             to 90% — under Instagram's caption. lint_frames measures both. */}
-        <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", justifyContent: "flex-start",
+        <div style={{ position: "relative", flex: 1, minHeight: 0, display: "flex", flexDirection: "column", justifyContent: "flex-start",
           gap: 28, marginTop: 44 }}>
           {scene.blocks.map(block)}
         </div>

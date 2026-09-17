@@ -1152,10 +1152,12 @@ def main() -> None:
     if plan.get("slideSfx", True):
         LEAD = {"sfx/whoosh.MP3": 0.10, "sfx/Pop.MP3": 0.03, "sfx-action/lock.mp3": 0.0,
                 "sfx-action/marker.mp3": 0.01, "sfx/Click.MP3": 0.03, "sfx/Core.MP3": 0.05,
-                "sfx/Magic Reveal.MP3": 0.08}
+                "sfx/Magic Reveal.MP3": 0.08, "sfx-action/lens-zoom.mp3": 0.40,
+                "sfx-action/tick.mp3": 0.37, "sfx2/whooshes-01.mp3": 0.12, "sfx/Camera Shutter.MP3": 0.05}
         VOL = {"sfx/whoosh.MP3": 0.18, "sfx/Pop.MP3": 0.3, "sfx-action/lock.mp3": 0.35,
                "sfx-action/marker.mp3": 0.4, "sfx/Click.MP3": 0.22, "sfx/Core.MP3": 0.35,
-               "sfx/Magic Reveal.MP3": 0.25}
+               "sfx/Magic Reveal.MP3": 0.3, "sfx-action/lens-zoom.mp3": 0.9,
+               "sfx-action/tick.mp3": 0.5, "sfx2/whooshes-01.mp3": 0.2, "sfx/Camera Shutter.MP3": 0.3}
         scenes_ = beats.get("scenes") or []
         slides = [k for k, sc in enumerate(scenes_) if sc.get("type") == "slide" and not sc.get("cta")]
         slides = slides or [-1]
@@ -1183,6 +1185,21 @@ def main() -> None:
                     elif m["do"] == "pill":
                         # the CTA keyword is the ask, a pop; the last content slide's pill is the turn, a hit
                         _cue(sc, "sfx/Core.MP3" if k == slides[-1] else "sfx/Pop.MP3", m["at"])
+                    # motion blocks (2026-09-17): the thing on screen makes its sound
+                    elif m["do"] == "focus":
+                        _cue(sc, "sfx-action/lens-zoom.mp3", m["at"])          # the camera moves in
+                    elif m["do"] == "state":
+                        _cue(sc, "sfx/Click.MP3", m["at"] + 0.1)               # the app changes state
+                    elif m["do"] == "drift":
+                        _cue(sc, "sfx2/whooshes-01.mp3", m["at"])              # the waves come apart
+                    elif m["do"] == "show" and any(bb.get("id") == m["target"] and bb.get("kind") == "spotlight"
+                                                   for bb in sc.get("blocks") or []):
+                        _cue(sc, "sfx/Magic Reveal.MP3", m["at"])              # the product reveal
+                    elif m["do"] == "show" and "." in m["target"] and any(
+                            bb.get("id") == m["target"].split(".")[0] and bb.get("kind") in ("steps", "devices")
+                            for bb in sc.get("blocks") or []):
+                        _cue(sc, "sfx-action/tick.mp3" if any(bb.get("kind") == "steps" and bb.get("id") == m["target"].split(".")[0]
+                                                             for bb in sc.get("blocks") or []) else "sfx/Pop.MP3", m["at"])
                     elif m["do"] == "highlight" and k == slides[-1]:
                         # only the closing highlight clicks: one on every row
                         # highlight made 27 cues in 58s, a sound every 2.2s

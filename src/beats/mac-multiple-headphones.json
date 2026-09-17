@@ -14,7 +14,7 @@
   "scenes": [
     {
       "eyebrow": "Mac tip",
-      "headline": "One Mac, [[two]] pairs of headphones",
+      "headline": "One Mac, [[two]] headphones",
       "presenter": {
         "src": "assets/mac-multiple-headphones/avatar-master-hook.mp4",
         "from": 0.0
@@ -28,12 +28,15 @@
             "Your AirPods",
             "Friend's AirPods"
           ],
-          "h": 720
+          "h": 700
         },
         {
-          "id": "t",
-          "kind": "text",
-          "text": "PairPods: a free menu bar app that shares one Mac's audio."
+          "id": "sp",
+          "kind": "spotlight",
+          "logo": "assets/logos/pairpods-icon.png",
+          "name": "PairPods",
+          "overlay": true,
+          "note": "free menu bar app"
         }
       ],
       "moves": [
@@ -45,19 +48,25 @@
         },
         {
           "do": "show",
-          "target": "d.1",
-          "on": "pairs of headphones",
-          "at": 1.94
+          "target": "sp",
+          "on": "called Pair",
+          "at": 5.14
         }
       ],
       "type": "slide",
-      "hideCaptions": true,
+      "hideCaptions": false,
+      "captionBottom": 500,
       "durationSec": 8.64,
       "sfx": [
         {
           "src": "sfx/Pop.MP3",
           "at": 1.67,
           "vol": 0.343
+        },
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 5.06,
+          "vol": 1.0
         }
       ]
     },
@@ -81,7 +90,7 @@
           "height": 884,
           "id": "sc",
           "src": "assets/mac-multiple-headphones/ui/step-1.png",
-          "h": 760
+          "h": 540
         }
       ],
       "moves": [
@@ -168,13 +177,49 @@
         }
       ],
       "type": "slide",
-      "hideCaptions": true,
+      "hideCaptions": false,
+      "captionBottom": 500,
       "durationSec": 13.88,
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",
           "at": 0.0,
           "vol": 0.582
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 0.31,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 2.63,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 4.95,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Click.MP3",
+          "at": 5.93,
+          "vol": 0.251
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 6.61,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Click.MP3",
+          "at": 7.63,
+          "vol": 0.251
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 9.6,
+          "vol": 1.0
         },
         {
           "src": "sfx/Pop.MP3",
@@ -193,7 +238,7 @@
           "height": 884,
           "id": "sc",
           "src": "assets/mac-multiple-headphones/ui/step-1.png",
-          "h": 900
+          "h": 730
         }
       ],
       "moves": [
@@ -267,7 +312,8 @@
         }
       ],
       "type": "slide",
-      "hideCaptions": true,
+      "hideCaptions": false,
+      "captionBottom": 500,
       "durationSec": 12.42,
       "sfx": [
         {
@@ -276,9 +322,29 @@
           "vol": 0.582
         },
         {
-          "src": "sfx/Pop.MP3",
-          "at": 2.01,
-          "vol": 0.343
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 1.84,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Click.MP3",
+          "at": 4.29,
+          "vol": 0.251
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 6.96,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 8.94,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 10.7,
+          "vol": 1.0
         }
       ]
     },
@@ -292,7 +358,7 @@
           "height": 884,
           "id": "sc",
           "src": "assets/mac-multiple-headphones/ui/step-3.png",
-          "h": 620
+          "h": 520
         },
         {
           "id": "r",
@@ -343,13 +409,19 @@
         }
       ],
       "type": "slide",
-      "hideCaptions": true,
+      "hideCaptions": false,
+      "captionBottom": 500,
       "durationSec": 5.7,
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",
           "at": 0.0,
           "vol": 0.582
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 0.22,
+          "vol": 1.0
         },
         {
           "src": "sfx/Pop.MP3",
@@ -424,7 +496,8 @@
         }
       ],
       "type": "slide",
-      "hideCaptions": true,
+      "hideCaptions": false,
+      "captionBottom": 500,
       "durationSec": 7.42,
       "sfx": [
         {
@@ -491,7 +564,8 @@
         }
       ],
       "type": "slide",
-      "hideCaptions": true,
+      "hideCaptions": false,
+      "captionBottom": 500,
       "durationSec": 7.42,
       "sfx": [
         {
@@ -503,6 +577,11 @@
           "src": "sfx/Pop.MP3",
           "at": 1.37,
           "vol": 0.343
+        },
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "at": 2.58,
+          "vol": 0.543
         }
       ]
     },
@@ -559,7 +638,8 @@
         }
       ],
       "type": "slide",
-      "hideCaptions": true,
+      "hideCaptions": false,
+      "captionBottom": 500,
       "durationSec": 5.38,
       "sfx": [
         {
@@ -1692,33 +1772,8 @@
       ]
     }
   ],
-  "music": {
-    "src": "music/bed-02.mp3",
-    "from": 0,
-    "points": [
-      {
-        "t": 0.0,
-        "vol": 0.055
-      },
-      {
-        "t": 62.14,
-        "vol": 0.055
-      },
-      {
-        "t": 62.48,
-        "vol": 0.15
-      },
-      {
-        "t": 62.62,
-        "vol": 0.15
-      },
-      {
-        "t": 63.52,
-        "vol": 0.02
-      }
-    ],
-    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
-  },
+  "noMusic": true,
+  "noMusicReason": "user, 2026-09-17: remove the background music, make the best use of sound effects",
   "format": "howto",
   "script": "Your Mac can play one movie to two pairs of headphones at the same time. It takes a free app called PairPods, and it beats Apple's own way.\n\nFirst, connect every pair in Bluetooth settings. Then open PairPods from the menu bar, tick the devices you want, and flip Share Audio on. AirPods, Sony headphones, Samsung Buds, even a Bluetooth speaker.\n\nOnce it's on, each device gets its own volume slider, so your friend can listen louder than you. You also see every pair's battery and sample rate, and the crown sets the master device the others sync to.\n\nAnd if a pair drops out, PairPods waits five, ten or thirty seconds for it to reconnect.\n\nCompare Apple's route, a Multi-Output Device in Audio MIDI Setup. It works, but it takes away your volume keys.\n\nOne catch: sync isn't guaranteed, and different models can sound slightly off-pitch, so matching pairs work best.\n\nPairPods is free, open source and needs macOS 13.5 or later. The link is in the pinned comment.",
   "approval": {
