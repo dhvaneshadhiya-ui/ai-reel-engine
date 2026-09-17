@@ -13,7 +13,7 @@
   "target_duration": "55s",
   "tone": "Plain, specific, no hype. The prompts do the talking; no claim that OpenAI shipped a 'photographer mode' feature",
   "source_policy": "official-preferred",
-  "footage_constraints": "ANIMATED TREATMENT: facePlan bookends (presenter on hook + CTA only, HeyGen digital twin driven by ElevenLabs VO slices), `slide`/`stage` motion graphics for the feature claim and mechanism beats (OpenAI logo, no captured screenshot -- X could not be captured headlessly, see STYLE-RULES), and `xpost` cards (real name/handle/verified badge) quoting Rachel Woods' three featured prompts verbatim-paraphrased, full text credited in giveaway.md.",
+  "footage_constraints": "ANIMATED TREATMENT: facePlan bookends (presenter on hook + CTA only, HeyGen digital twin driven by ElevenLabs VO slices), `slide`/`stage` motion graphics throughout -- no captured screenshots (X could not be captured headlessly, see STYLE-RULES 2026-09-17). The three featured prompts (DSLR Photographer Mode, Golden Hour Photo Shoot, Restoring Old Photos) are shown as plain full-text cards with the FULL VERBATIM prompt (user directive 2026-09-17: use the complete prompt text, no Twitter/X-styled card) -- eyebrow line credits Rachel Woods, @TechWith_Rachel, in plain text, no X logo or verified-badge chrome.",
   "credit_instructions": "internal",
   "deliverables": [
     "script",

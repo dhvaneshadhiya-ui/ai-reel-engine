@@ -8435,3 +8435,25 @@ voice reads fast on eleven_v3 regardless of pace marks, and a regeneration at
 inside the format's runtime band. Check runtime against the FORMAT band before
 spending credits chasing the general wps figure — they are different gates
 measuring different things.
+
+## 2026-09-17 — chatgpt-photo-prompts: user rejected the xpost card, asked for the full prompt text instead
+
+**RAW NOTE.** After first delivery, the user pasted all nine prompts back verbatim
+and said: "Use above content in video and remove the twitter image." Two asks in
+one line: (1) the on-screen cards should carry the FULL prompt text, not a
+paraphrased summary; (2) the `xpost` scene type's tweet-chrome (the "𝕏" glyph and
+the blue Twitter-style verified checkmark, both hardcoded in `XPost.tsx`) had to go.
+**FIX.** Swapped the three `xpost` scenes (DSLR Photographer Mode, Golden Hour
+Photo Shoot, Restoring Old Photos) for plain `slide` scenes: eyebrow line credits
+"Rachel Woods, @TechWith_Rachel" in ordinary text (no logo, no badge), headline
+carries the spoken words with a pill, and a `text` block holds the prompt's FULL
+verbatim wording (up to ~90 words). Rendered clean, no overflow, no frame-lint
+flags — the dense body text also fixed several DEAD SPACE advisories on those
+three scenes for free.
+**DISTILLED RULE.** `xpost` is for a short, credited PULL-QUOTE (a tweet's actual
+text, read as a tweet). It is the wrong component whenever the reel's job is to
+hand the viewer a full, literal, reusable block of text (a prompt, a recipe, a
+config snippet) — use a plain `slide` `text` block instead, which has no assumed
+source platform and no UI chrome to match or mismatch. Don't default to `xpost`
+just because the source happens to be a tweet; ask whether the SHAPE of what's
+being shown is "a quote" or "a document."
