@@ -1,13 +1,14 @@
 {
-  "script_sha256": "6c34230c52d5d16b14a12a9203092e0cef05994f4ef7c37ed20c857faf3828e9",
-  "structure_sha256": "09d4473bba7f66adfa85d0118a8ca01c1f1bb8fcf3fcb934d19c23db023f4fec",
+  "script_sha256": "6590f1976a38a29aacecd2593d7aff6fd03e118612c5c33f581c8f45ecfe07f8",
+  "structure_sha256": "5d7b415750b6050ec8eb88a190691064cbfefb3321b79f3a6b3b5f52d7dada87",
   "findings": [
-    "  BRIDGES 1/10 sentences (10%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
-    "  OPENING has no version, date or time anchor: 'One Mac, two pairs of AirPods, one movie.'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
-    "CADENCE: 3 of 11 sentences are long. The short ones stop being punctuation.",
+    "  BRIDGES 2/12 sentences (17%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  WHAT WITHOUT SO WHAT 1/1 spec sentences never say what the number does for the viewer. \"2nm chip\" is information; \"faster without draining the battery\" is relevance. (framework S7)",
+    "  NO OPEN LOOP \u2014 nothing in the opening third points forward. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "  OPENING has no version, date or time anchor: 'Your Mac can play one movie to two pairs of headphones at the sa'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
     "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
   ],
   "research_advice": [],
-  "beatPlanShots": 0,
-  "proposedAt": "2026-09-17T09:19:30+00:00"
+  "beatPlanShots": 6,
+  "proposedAt": "2026-09-17T09:58:01+00:00"
 }

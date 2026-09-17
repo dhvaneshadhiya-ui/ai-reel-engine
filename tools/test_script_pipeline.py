@@ -754,6 +754,26 @@ def run() -> int:
                 _fp += 1
     ok("no false refusals across every shipped script", _fp == 0)
 
+    # 7b2. A product/tutorial reel must record the product's full feature list
+    # and how-to (2026-09-17, PairPods v1 under-researched the app itself).
+    import shutil as _sh, re as _re
+    _src = Path(__file__).resolve().parent.parent / "jobs/mac-multiple-headphones"
+    with tempfile.TemporaryDirectory() as _td:
+        _job = Path(_td) / "jobs" / "fx"
+        _job.mkdir(parents=True)
+        _sh.copy(_src / "structure.md", _job / "structure.md")
+        _full = (_src / "research.md").read_text()
+        (_job / "research.md").write_text(_full)
+        _e, _ = _rc.check_research("fx", None, root=Path(_td))
+        ok("a product reel WITH a feature inventory passes", not any("FEATURE INVENTORY" in x for x in _e))
+        _cut = _re.sub(r"## FEATURES.*?(?=\n## )", "", _full, flags=_re.S)
+        (_job / "research.md").write_text(_cut)
+        _e, _ = _rc.check_research("fx", None, root=Path(_td))
+        ok("a product reel WITHOUT a feature inventory is refused", any("FEATURE INVENTORY" in x for x in _e))
+        (_job / "structure.md").write_text("## SHAPE (S17)\n\nNews: the ruling and what it changes.\n")
+        _e, _ = _rc.check_research("fx", None, root=Path(_td))
+        ok("a news reel does not need a feature inventory", not any("FEATURE INVENTORY" in x for x in _e))
+
     # 7c. ANGLE FINDINGS MUST BE PROMOTED, not buried among style notes.
     #
     # claude-fable-5-1's script produced "the first 'you' arrives 78% of the

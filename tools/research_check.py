@@ -407,6 +407,30 @@ def check_research(slug: str, script_text: str | None,
             "testing in public. Two independent DOMAINS can still be one "
             "independent LOOK.")
 
+    # A PRODUCT REEL NEEDS THE PRODUCT (user, 2026-09-17). The first PairPods
+    # script researched Apple's workaround thoroughly and the app thinly — four
+    # facts, no how-to, no auto-reconnect, no master device — and the user
+    # noted a search engine's AI summary knew the product better. The ledger
+    # held every claim the script made; it just never asked what the thing
+    # DOES. When structure.md declares a tutorial / product / app / tool /
+    # list shape, the ledger must carry the vendor's full feature list and
+    # how-to, each marked USED or CUT with why.
+    sp = root / "jobs" / slug / "structure.md"
+    shape = ""
+    if sp.exists():
+        sm = re.search(r"## SHAPE[^\n]*\n(.*?)(?=\n## |\Z)", sp.read_text(), re.S)
+        shape = sm.group(1) if sm else ""
+    if re.search(r"\b(tutorial|product|app|apps|tool|tools|how-?to|list|review)\b", shape, re.I):
+        fm = re.search(r"## FEATURES[^\n]*\n(.*?)(?=\n## |\Z)", body, re.S)
+        bullets = re.findall(r"^\s*-\s+\S.*$", fm.group(1), re.M) if fm else []
+        if len(bullets) < 3 or not re.search(r"\bhow to\b", (fm.group(0) if fm else ""), re.I):
+            errors.append(
+                "NO FEATURE INVENTORY. structure.md declares a product/tutorial/list "
+                "shape, so research.md needs '## FEATURES + HOW TO USE': every feature "
+                "the vendor documents (one '- ' line each, marked USED or CUT and why) "
+                "and the vendor's how-to steps. A script can only choose features "
+                "from a list somebody wrote down (2026-09-17, PairPods v1).")
+
     if claims and len(domains) < 2 and "ONE-SOURCE-OK:" not in body:
         advice.append(
             f"only {len(domains)} source domain(s) across the whole ledger "
