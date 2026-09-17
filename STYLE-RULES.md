@@ -8267,3 +8267,193 @@ corner circle — so the face bookends still hold, and the page fills to the 80%
 (theirs stops near 40%). Engine: G06 counts a slide presenter as face time; the
 compiler's "turn" hit skips the CTA page (its keyword gets a pop); a whoosh and a
 landing sound may sit 0.2s apart.
+
+## 2026-09-17 — ios-27-2-beta-1: spoken numbers vs. digit transcripts, and G59 is a crop problem
+
+**Raw note.** `compile_shot_plan.py` refused to resolve `start_phrase` anchors
+that spelled out a version number ("That's iOS twenty seven point two") the
+moment real ElevenLabs audio existed: whisper transcribes a spoken version
+number as digits ("27", ".2"), never as words, and the ".2"-merge rule glues
+them into one token ("272") that a spelled-out phrase can never match by
+normalized substring. **Root cause:** `plan_shots.py` writes anchors straight
+from `script.md`'s spelling before any real transcript exists, so a script
+that speaks a number in words (correctly, for TTS) sets a trap for the anchor
+that only springs after generation. **Rule:** after `ingest_avatar.py` writes
+the real `vo.json`, grep every `start_phrase` for spelled-out digits and
+re-anchor those shots to a nearby plain-word phrase instead (move the shot
+boundary a few words earlier or later — it costs nothing, the number's audio
+just plays inside the neighboring shot). Do this BEFORE the first
+`compile_shot_plan.py` run against real audio, not after it dies.
+
+**Same job, second transcript trap.** Whisper (base AND small, confirmed on a
+re-sliced probe) transcribed the spoken "Siri's AI brain" as "series AI
+brain" — not a mishear specific to one model size, so a real pronunciation
+ambiguity in the ElevenLabs read, not a whisper artifact. Because this
+pipeline's audio comes from an uploaded external file (`voice.mode:
+"external-mcp"`), HeyGen's `brandGlossaryId` cannot fix it — that glossary
+only touches audio HeyGen itself synthesizes. Fixed the DISPLAY only via
+`caption_corrections: {"series": "Siri's"}`, shipped anyway, and disclosed
+the audio ambiguity to the user rather than spending another ~1,335 credits
+on a re-read for one borderline-audible word. **Rule:** a brand-name mishear
+on external-voice audio is a caption_corrections fix, not a brandGlossaryId
+fix — the two only look interchangeable until you check which stage actually
+rendered the audio.
+
+**G59 (receipt fills too little of the frame) is a CROP problem, not a
+backdrop-color problem.** Four official device-render stills (Apple's own
+press images, fetched at full resolution) were all landscape (aspect 0.56)
+and G59 blocked every one. The fix was never `allowSmallReceipt` — it was
+either (a) crop tighter to isolate ONE portrait-shaped subject already in the
+frame (one phone out of three; the badge instead of badge+phone side by
+side), which needs no padding at all, or (b) when the whole frame is the
+subject (a single squarish app-icon badge, a call-screen banner), pad
+top/bottom with a color sampled from the image's own corner pixels (a flat
+fill, not a stretched/blurred strip — a stretched 15px strip resized to
+300px+ produces a visible hard-edged block, confirmed by eye on the first
+attempt). **Rule:** re-crop or pad-with-sampled-color before reaching for the
+opt-out; a receipt is blocked because the SOURCE is the wrong shape, and
+that is almost always fixable in two minutes with PIL.
+
+**A receipt on a single, already-legible subject does not need a
+`highlights` rect.** Added one anyway (a static square roughly centered on
+an app-icon badge already filling the card) and `lint_frames.py`'s
+`[EDGE TEXT]` flag fired on all three shots holding it — not because any
+text was cropped, but because the highlight rectangle's own hard edge read
+as "busy pixels at frame edge." Removing the highlight (leaving the receipt
+to size the whole image) cleared the flag entirely on re-render. **Rule:**
+`highlights` exists to point at one claim inside a busy document; a receipt
+whose entire frame already IS the claim renders cleaner with none.
+
+**`[DUPLICATE]` is a HARD gate (`lint_frames.py` `HARD_ALWAYS`), and it does
+not know "different content, same layout" from "identical frame."** Two
+consecutive `specsheet` cards with completely different titles and rows
+(Siri AI Languages, then Group FaceTime) still tripped `[DUPLICATE]`,
+because both are white-on-black cards with the same title/kicker/row
+geometry and the linter samples structural similarity, not text. Confirmed
+genuinely different by eye first (this is not a case for `--soft`). Fixed by
+giving the second beat a DIFFERENT COMPONENT FAMILY — `checklist` (green
+checkmarks, different layout entirely) instead of another `specsheet` — since
+this repo has no per-card accent-color knob to fake a difference within one
+component. **Rule:** when two adjacent MG cards are legitimately different
+but share a component, alternate components before reaching for `--soft`;
+`[DUPLICATE]` reads geometry, and geometry is exactly what a component
+choice controls. Separately: a genuine single-visual HOLD across several
+spoken clauses must compile as ONE scene, not one scene per clause with
+identical `asset_id`/highlight — `plan_shots.py` writes one shot per clause
+by design, so multi-clause holds on one asset need their extra shot-plan
+entries deleted (not just left pointing at the same image) before
+`compile_shot_plan.py` runs, or the sheet ships N back-to-back identical
+scenes and `[DUPLICATE]` fires on every consecutive pair.
+
+**A source's own hedge must survive into the ledger's TIER, not just its
+SPOKEN wording.** MacRumors' CarPlay Ultra coverage states the theme options
+(wallpaper/gauge/color) as fact but adds "Code suggests" — a code-string
+inference, not an observed feature — for the ambient-lighting-matching
+claim. Both were first ledgered as one `TIER: official` claim with a single
+hedged sentence; `research_check.py` correctly advised the sentence read
+unhedged even after adding "reportedly." Splitting it into two claims (one
+`official`, one `single`) made the hedge honest instead of decorative.
+**Rule:** when a source states part of a claim as fact and part as its own
+inference, that is two claims at two tiers, not one claim with a soft word
+added to the tail.
+
+## 2026-09-17 — chatgpt-photo-prompts: X cannot be captured headlessly, and phrase-anchors break on a mishearing whisper
+
+**RAW NOTE.** `tools/capture.mjs` returned a solid-white 1080x2340 PNG for an
+x.com status URL twice, at both 3.5s and 8s wait, tier `reliable`. The same
+URL rendered perfectly in the interactive browser pane (login-wall dismissed,
+full thread readable). Headless Playwright chromium is evidently served a
+blank shell by X where a normal browser session is not.
+**DISTILLED RULE.** Never spend a second attempt trying to headless-capture
+X/Twitter — go straight to the `xpost` scene type (`src/components/XPost.tsx`),
+which quotes the real name/handle/verified badge/text as a motion-graphic
+card. This is exactly the failure mode `xpost` exists to route around, and it
+sidesteps the bot-wall entirely while keeping the quote honestly credited.
+
+**RAW NOTE.** `plan_shots.py`'s anchor resolver failed on 7 of 15 shots for a
+script that read back clean to a human: `ChatGPT`, `OpenAI`, `nine` and
+`relight` all failed to resolve against the actual ElevenLabs read, because
+whisper heard "Chat GPT" / "open AI" (split into two tokens each), "9" (digit,
+not the word), and "re-light" (hyphen-merged by `compile_shot_plan.load_words`'s
+own hyphen-token rule). `normalise()` tokenizes the SCRIPT's contiguous word as
+one token but the split/digit/hyphenated whisper output as different tokens —
+a real mismatch, not a bug in the checker.
+**ROOT CAUSE, SECOND ORDER.** The first fix (skip forward to a safely-resolving
+phrase further into the clause, e.g. `"rebuilt its image editor"` instead of
+`"This month OpenAI rebuilt"`) resolves the anchor but silently DRIFTS the
+scene cut later than the sentence actually starts — the previous scene then
+holds through 1-2 seconds of the NEXT sentence's audio with the wrong visual
+on screen, which is a Rule 3 violation nobody's tooling catches (`resolvable()`
+only checks whether the phrase exists in the track, not where the previous
+scene's boundary lands).
+**DISTILLED RULE.** When an anchor phrase fails to resolve, do not skip past
+the problem word — replace it or use fewer words: (1) if whisper split a
+compound word into two tokens, anchor on words either side of the split, not
+across it (`"This month"` not `"This month OpenAI"`); (2) if whisper heard a
+digit for a number word (or vice versa), drop that one word from the anchor
+and keep the neighbours (`"There are"` not `"There are nine"`); (3) if whisper
+mis-heard a word entirely (`"Paste"` heard as `"Faced"`), anchor on the
+MISHEARD text itself — it is what is actually in the track — and fix the
+DISPLAY only via `caption_corrections`. In every case, keep the anchor as
+close to the clause's true first word as the transcript allows, so the
+previous scene's cutoff never bleeds into the next sentence's audio. Verify
+with a one-off `resolvable()` check across every shot before compiling, not
+just the shots `plan_shots.py --write` flagged the first time.
+
+**RAW NOTE.** The hook scene (`slide`, presenter avatar, headline + a `text`
+block) rendered as 75% flat black at both the auto-lint's 10% and 50% sample
+points — `[BLOCKS] [HOOK DEAD SPACE]` blocked the render. The `text` block was
+correctly wired with `{"do":"show","target":"t","on":"keep your face"}`, but
+that phrase resolved to 1.66s into a 2.64s scene — so the block was only ever
+on screen for the final third, and both lint samples landed before it.
+**DISTILLED RULE.** A block with no real reason to be withheld should carry NO
+`show` move at all — per `Slide.tsx`'s own contract, an unlisted block is
+visible from frame 0. Reserve a delayed `show` for content that is genuinely a
+reveal (a swap, a struck line, a number counting up); a plain supporting line
+should fill the frame immediately, especially in a hook or CTA scene short
+enough that "late" and "never seen" are the same thing.
+
+**RAW NOTE.** The CTA scene (1.38s: `"Comment PROMPTS and they're yours."`)
+originally carried a 3-row recap list (`DSLR Photographer Mode` / `Golden Hour
+Photo Shoot` / `Restoring Old Photos`) meant to remind the viewer what the nine
+prompts cover. The rendered frame showed exactly ONE row, alone in an
+otherwise-empty card — the scene ended before rows two and three could animate
+in, so the recap read as an unfinished list rather than a complete one.
+**DISTILLED RULE.** Before adding a multi-item reveal to a scene, check its
+`durationSec` against the item count: a `rows` list needs roughly 0.3-0.4s per
+row after its own `show` trigger to read as intentional, not truncated. A
+scene too short for that should carry a single complete line instead of a
+partial list — cut the content, not the polish pass.
+
+**RAW NOTE.** The ElevenLabs v3 read for this script (Dhvanesh voice) came
+back at 3.41 w/s against the measured 2.35-2.75 band — `vo_external.py` flagged
+it TOO FAST. Runtime (44.9s) still sat comfortably inside the `ai-tools` format
+band (40-60s).
+**DISTILLED RULE.** Corroborates the 2026-09-02 and 2026-09-08 entries: this
+voice reads fast on eleven_v3 regardless of pace marks, and a regeneration at
+~960 credits is not justified when the actual master duration already lands
+inside the format's runtime band. Check runtime against the FORMAT band before
+spending credits chasing the general wps figure — they are different gates
+measuring different things.
+
+## 2026-09-17 — chatgpt-photo-prompts: user rejected the xpost card, asked for the full prompt text instead
+
+**RAW NOTE.** After first delivery, the user pasted all nine prompts back verbatim
+and said: "Use above content in video and remove the twitter image." Two asks in
+one line: (1) the on-screen cards should carry the FULL prompt text, not a
+paraphrased summary; (2) the `xpost` scene type's tweet-chrome (the "𝕏" glyph and
+the blue Twitter-style verified checkmark, both hardcoded in `XPost.tsx`) had to go.
+**FIX.** Swapped the three `xpost` scenes (DSLR Photographer Mode, Golden Hour
+Photo Shoot, Restoring Old Photos) for plain `slide` scenes: eyebrow line credits
+"Rachel Woods, @TechWith_Rachel" in ordinary text (no logo, no badge), headline
+carries the spoken words with a pill, and a `text` block holds the prompt's FULL
+verbatim wording (up to ~90 words). Rendered clean, no overflow, no frame-lint
+flags — the dense body text also fixed several DEAD SPACE advisories on those
+three scenes for free.
+**DISTILLED RULE.** `xpost` is for a short, credited PULL-QUOTE (a tweet's actual
+text, read as a tweet). It is the wrong component whenever the reel's job is to
+hand the viewer a full, literal, reusable block of text (a prompt, a recipe, a
+config snippet) — use a plain `slide` `text` block instead, which has no assumed
+source platform and no UI chrome to match or mismatch. Don't default to `xpost`
+just because the source happens to be a tweet; ask whether the SHAPE of what's
+being shown is "a quote" or "a document."

@@ -1,0 +1,443 @@
+{
+ "shots": [
+  {
+   "start_phrase": "Apple just handed you",
+   "line": "Apple just handed you its biggest app redesign in years",
+   "needs": [
+    "Apple",
+    "handed",
+    "biggest",
+    "redesign",
+    "years"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "none",
+    "focusX": "$FOCUS_FULL"
+   }
+  },
+  {
+   "start_phrase": "That's iOS",
+   "line": "That's iOS twenty seven point two",
+   "needs": [
+    "twenty",
+    "seven",
+    "point"
+   ],
+   "tier": "reliable",
+   "asset_id": "hero-beta-seed",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/ios-27-2-beta-1/hero-beta-seed.jpg",
+    "srcWidth": 1175,
+    "srcHeight": 1725,
+    "backdrop": "cream",
+    "credit": "MacRumors",
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "vol": 0.32,
+      "at": 0.05
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "That skipped number hides",
+   "line": "That skipped number hides something: a redesigned Health app that scores your Health Age",
+   "needs": [
+    "skipped",
+    "number",
+    "hides",
+    "something",
+    "redesigned",
+    "Health"
+   ],
+   "tier": "official",
+   "asset_id": "health-app-insights",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/ios-27-2-beta-1/health-app-insights.jpg",
+    "srcWidth": 540,
+    "srcHeight": 1125,
+    "backdrop": "cream",
+    "highlights": [
+     {
+      "at": 0.15,
+      "x": 30,
+      "y": 950,
+      "w": 480,
+      "h": 130
+     }
+    ],
+    "credit": "Apple",
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "vol": 0.32,
+      "at": 0.05
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "And Apple's own words:",
+   "line": "And Apple's own words: it isn't even shipping with this update.",
+   "needs": [
+    "Apple",
+    "words",
+    "even",
+    "shipping",
+    "update"
+   ],
+   "tier": "reliable",
+   "asset_id": "receipt-health-combined",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/ios-27-2-beta-1/receipt-health-combined.png",
+    "srcWidth": 1080,
+    "srcHeight": 2880,
+    "backdrop": "cream",
+    "highlights": [
+     {
+      "at": 0.1,
+      "x": 40,
+      "y": 2590,
+      "w": 1000,
+      "h": 260
+     }
+    ],
+    "credit": "MacRumors",
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "vol": 0.34,
+      "at": 0.03
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Still, testers reportedly found",
+   "line": "Still, testers reportedly found the personalized advice and lab ordering pieces switched off.",
+   "needs": [
+    "Still",
+    "testers",
+    "reportedly",
+    "found",
+    "personalized",
+    "advice"
+   ],
+   "tier": "single",
+   "asset_id": "receipt-health-combined",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/ios-27-2-beta-1/receipt-health-combined.png",
+    "srcWidth": 1080,
+    "srcHeight": 2880,
+    "backdrop": "cream",
+    "highlights": [
+     {
+      "at": 0.1,
+      "x": 40,
+      "y": 20,
+      "w": 1000,
+      "h": 240
+     }
+    ],
+    "credit": "MacRumors"
+   }
+  },
+  {
+   "start_phrase": "Beyond Health, here's what's",
+   "line": "Beyond Health, here's what's live.",
+   "needs": [
+    "Beyond",
+    "Health",
+    "live"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "none",
+    "focusX": "$FOCUS_FULL",
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "vol": 0.45,
+      "at": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "AI brain finally",
+   "line": "Siri's AI brain finally speaks more than English: French",
+   "needs": [
+    "Siri",
+    "brain",
+    "finally",
+    "speaks",
+    "English",
+    "French"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "specsheet",
+    "title": "SIRI AI LANGUAGES",
+    "kicker": "New in this beta",
+    "rows": [
+     {
+      "label": "French",
+      "value": "Added"
+     },
+     {
+      "label": "Japanese",
+      "value": "Added"
+     },
+     {
+      "label": "Korean",
+      "value": "Added",
+      "accent": true
+     }
+    ],
+    "footnote": "Apple's iOS 27.2 beta, per MacRumors",
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "vol": 0.34,
+      "at": 0.15
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Japanese, Korean, Portuguese, Spanish,",
+   "line": "Japanese, Korean, Portuguese, Spanish, all in this beta.",
+   "needs": [
+    "Japanese",
+    "Korean",
+    "Portuguese",
+    "Spanish",
+    "beta"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "specsheet",
+    "title": "SIRI AI LANGUAGES",
+    "kicker": "New in this beta",
+    "rows": [
+     {
+      "label": "Portuguese",
+      "value": "Added"
+     },
+     {
+      "label": "Spanish",
+      "value": "Added",
+      "accent": true
+     }
+    ],
+    "footnote": "Apple's iOS 27.2 beta, per MacRumors"
+   }
+  },
+  {
+   "start_phrase": "And Group FaceTime shows",
+   "line": "And Group FaceTime shows both your cameras at once, front and back, live.",
+   "needs": [
+    "Group",
+    "FaceTime",
+    "shows",
+    "both",
+    "cameras",
+    "once"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "checklist",
+    "headline": "Group FaceTime, Dual Capture",
+    "rows": [
+     {
+      "label": "Front camera live",
+      "state": "done"
+     },
+     {
+      "label": "Rear camera live, same time",
+      "state": "done"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "vol": 0.34,
+      "at": 0.15
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Meanwhile, the Apple TV",
+   "line": "Meanwhile, the Apple TV app gets real profiles on your phone.",
+   "needs": [
+    "Meanwhile",
+    "Apple",
+    "gets",
+    "real",
+    "profiles",
+    "phone"
+   ],
+   "tier": "official",
+   "asset_id": "tv-app-profiles",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/ios-27-2-beta-1/tv-app-profiles.jpg",
+    "srcWidth": 820,
+    "srcHeight": 1125,
+    "backdrop": "cream",
+    "credit": "Apple",
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "vol": 0.32,
+      "at": 0.05
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "And CarPlay Ultra gets",
+   "line": "And CarPlay Ultra gets real themes now: wallpaper, gauges, color.",
+   "needs": [
+    "CarPlay",
+    "Ultra",
+    "gets",
+    "real",
+    "themes",
+    "wallpaper"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "specsheet",
+    "title": "CARPLAY ULTRA",
+    "kicker": "New themes",
+    "rows": [
+     {
+      "label": "Wallpaper",
+      "value": "Selectable"
+     },
+     {
+      "label": "Gauge style",
+      "value": "Selectable"
+     },
+     {
+      "label": "Color",
+      "value": "Selectable",
+      "accent": true
+     }
+    ],
+    "footnote": "Apple's iOS 27.2 beta, per MacRumors"
+   }
+  },
+  {
+   "start_phrase": "The ambient lighting could",
+   "line": "The ambient lighting could reportedly match too, on supported cars.",
+   "needs": [
+    "ambient",
+    "lighting",
+    "could",
+    "reportedly",
+    "match",
+    "supported"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "specsheet",
+    "title": "CARPLAY ULTRA",
+    "kicker": "Unconfirmed",
+    "rows": [
+     {
+      "label": "Ambient light",
+      "value": "Unclear yet",
+      "accent": true
+     }
+    ],
+    "footnote": "Code suggests only -- not yet confirmed, per MacRumors"
+   }
+  },
+  {
+   "start_phrase": "Then call someone whose",
+   "line": "Then call someone whose anniversary you saved",
+   "needs": [
+    "call",
+    "someone",
+    "whose",
+    "anniversary",
+    "saved"
+   ],
+   "tier": "official",
+   "asset_id": "anniversary-alert",
+   "scene": {
+    "type": "receipt",
+    "src": "assets/ios-27-2-beta-1/anniversary-alert.jpg",
+    "srcWidth": 1400,
+    "srcHeight": 1908,
+    "backdrop": "cream",
+    "highlights": [
+     {
+      "at": 0.15,
+      "x": 370,
+      "y": 610,
+      "w": 660,
+      "h": 160
+     }
+    ],
+    "credit": "Apple",
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "vol": 0.32,
+      "at": 0.05
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "So that Health app",
+   "line": "So that Health app isn't really here yet, just previewed early.",
+   "needs": [
+    "Health",
+    "really",
+    "previewed",
+    "early"
+   ],
+   "tier": null,
+   "asset_id": null,
+   "scene": {
+    "type": "footage",
+    "src": "$AVATAR",
+    "zoomDir": "none",
+    "focusX": "$FOCUS_FULL"
+   }
+  }
+ ],
+ "emphasis": [
+  "biggest app redesign",
+  "isn't even shipping",
+  "Health Age",
+  "iPhone Duo",
+  "anniversary"
+ ],
+ "caption_corrections": {
+  "series": "Siri's",
+  "duo": "Duo"
+ }
+}

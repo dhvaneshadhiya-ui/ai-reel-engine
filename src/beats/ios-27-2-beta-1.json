@@ -1,0 +1,1570 @@
+{
+  "id": "ios-27-2-beta-1",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/ios-27-2-beta-1/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "biggest app redesign",
+    "isn't even shipping",
+    "Health Age",
+    "iPhone Duo",
+    "anniversary"
+  ],
+  "scenes": [
+    {
+      "type": "footage",
+      "src": "assets/ios-27-2-beta-1/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "durationSec": 5.3,
+      "from": 0.0
+    },
+    {
+      "type": "receipt",
+      "src": "assets/ios-27-2-beta-1/hero-beta-seed.jpg",
+      "srcWidth": 1175,
+      "srcHeight": 1725,
+      "backdrop": "cream",
+      "credit": "MacRumors",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.05
+        }
+      ],
+      "durationSec": 9.62,
+      "captionBottom": 620,
+      "assetId": "hero-beta-seed",
+      "claimId": "hero-beta-seed",
+      "covers": "That's iOS"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/ios-27-2-beta-1/health-app-insights.jpg",
+      "srcWidth": 540,
+      "srcHeight": 1125,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.15,
+          "x": 30,
+          "y": 950,
+          "w": 480,
+          "h": 130
+        }
+      ],
+      "credit": "Apple",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.05
+        }
+      ],
+      "durationSec": 9.02,
+      "captionBottom": 384,
+      "assetId": "health-app-insights",
+      "claimId": "health-app-insights",
+      "covers": "That skipped number hides"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/ios-27-2-beta-1/receipt-health-combined.png",
+      "srcWidth": 1080,
+      "srcHeight": 2880,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.1,
+          "x": 40,
+          "y": 2590,
+          "w": 1000,
+          "h": 260
+        }
+      ],
+      "credit": "MacRumors",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.34,
+          "at": 0.03
+        }
+      ],
+      "durationSec": 5.24,
+      "captionBottom": 384,
+      "assetId": "receipt-health-combined",
+      "claimId": "receipt-health-combined",
+      "covers": "And Apple's own words:",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/ios-27-2-beta-1/receipt-health-combined.png",
+      "srcWidth": 1080,
+      "srcHeight": 2880,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.1,
+          "x": 40,
+          "y": 20,
+          "w": 1000,
+          "h": 240
+        }
+      ],
+      "credit": "MacRumors",
+      "durationSec": 5.02,
+      "captionBottom": 384,
+      "assetId": "receipt-health-combined",
+      "claimId": "receipt-health-combined",
+      "covers": "Still, testers reportedly found",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/ios-27-2-beta-1/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.1
+        }
+      ],
+      "durationSec": 2.34,
+      "from": 34.2
+    },
+    {
+      "type": "specsheet",
+      "title": "SIRI AI LANGUAGES",
+      "kicker": "New in this beta",
+      "rows": [
+        {
+          "label": "French",
+          "value": "Added"
+        },
+        {
+          "label": "Japanese",
+          "value": "Added"
+        },
+        {
+          "label": "Korean",
+          "value": "Added",
+          "accent": true
+        }
+      ],
+      "footnote": "Apple's iOS 27.2 beta, per MacRumors",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.34,
+          "at": 0.15
+        }
+      ],
+      "durationSec": 3.34
+    },
+    {
+      "type": "specsheet",
+      "title": "SIRI AI LANGUAGES",
+      "kicker": "New in this beta",
+      "rows": [
+        {
+          "label": "Portuguese",
+          "value": "Added"
+        },
+        {
+          "label": "Spanish",
+          "value": "Added",
+          "accent": true
+        }
+      ],
+      "footnote": "Apple's iOS 27.2 beta, per MacRumors",
+      "durationSec": 3.44
+    },
+    {
+      "type": "checklist",
+      "headline": "Group FaceTime, Dual Capture",
+      "rows": [
+        {
+          "label": "Front camera live",
+          "state": "done"
+        },
+        {
+          "label": "Rear camera live, same time",
+          "state": "done"
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.34,
+          "at": 0.15
+        }
+      ],
+      "durationSec": 4.38
+    },
+    {
+      "type": "receipt",
+      "src": "assets/ios-27-2-beta-1/tv-app-profiles.jpg",
+      "srcWidth": 820,
+      "srcHeight": 1125,
+      "backdrop": "cream",
+      "credit": "Apple",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.05
+        }
+      ],
+      "durationSec": 3.36,
+      "captionBottom": 620,
+      "assetId": "tv-app-profiles",
+      "claimId": "tv-app-profiles",
+      "covers": "Meanwhile, the Apple TV"
+    },
+    {
+      "type": "specsheet",
+      "title": "CARPLAY ULTRA",
+      "kicker": "New themes",
+      "rows": [
+        {
+          "label": "Wallpaper",
+          "value": "Selectable"
+        },
+        {
+          "label": "Gauge style",
+          "value": "Selectable"
+        },
+        {
+          "label": "Color",
+          "value": "Selectable",
+          "accent": true
+        }
+      ],
+      "footnote": "Apple's iOS 27.2 beta, per MacRumors",
+      "durationSec": 3.7
+    },
+    {
+      "type": "specsheet",
+      "title": "CARPLAY ULTRA",
+      "kicker": "Unconfirmed",
+      "rows": [
+        {
+          "label": "Ambient light",
+          "value": "Unclear yet",
+          "accent": true
+        }
+      ],
+      "footnote": "Code suggests only -- not yet confirmed, per MacRumors",
+      "durationSec": 4.04
+    },
+    {
+      "type": "receipt",
+      "src": "assets/ios-27-2-beta-1/anniversary-alert.jpg",
+      "srcWidth": 1400,
+      "srcHeight": 1908,
+      "backdrop": "cream",
+      "highlights": [
+        {
+          "at": 0.15,
+          "x": 370,
+          "y": 610,
+          "w": 660,
+          "h": 160
+        }
+      ],
+      "credit": "Apple",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.05
+        }
+      ],
+      "durationSec": 4.82,
+      "captionBottom": 485,
+      "assetId": "anniversary-alert",
+      "claimId": "anniversary-alert",
+      "covers": "Then call someone whose"
+    },
+    {
+      "type": "footage",
+      "src": "assets/ios-27-2-beta-1/avatar-master.mp4",
+      "zoomDir": "none",
+      "focusX": 0.5,
+      "durationSec": 5.566,
+      "from": 63.62
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.02,
+      "text": "Apple just handed",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Apple"
+        },
+        {
+          "t": 0.42,
+          "text": "just"
+        },
+        {
+          "t": 0.66,
+          "text": "handed"
+        }
+      ]
+    },
+    {
+      "start": 1.02,
+      "end": 1.86,
+      "text": "you its biggest",
+      "words": [
+        {
+          "t": 1.02,
+          "text": "you"
+        },
+        {
+          "t": 1.26,
+          "text": "its"
+        },
+        {
+          "t": 1.52,
+          "text": "biggest"
+        }
+      ]
+    },
+    {
+      "start": 1.86,
+      "end": 2.9,
+      "text": "app redesign in",
+      "words": [
+        {
+          "t": 1.86,
+          "text": "app"
+        },
+        {
+          "t": 2.16,
+          "text": "redesign"
+        },
+        {
+          "t": 2.44,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 2.9,
+      "end": 4.04,
+      "text": "years, then said",
+      "words": [
+        {
+          "t": 2.9,
+          "text": "years,"
+        },
+        {
+          "t": 3.54,
+          "text": "then"
+        },
+        {
+          "t": 3.7,
+          "text": "said"
+        }
+      ]
+    },
+    {
+      "start": 4.04,
+      "end": 4.7,
+      "text": "it isn't coming",
+      "words": [
+        {
+          "t": 4.04,
+          "text": "it"
+        },
+        {
+          "t": 4.24,
+          "text": "isn't"
+        },
+        {
+          "t": 4.5,
+          "text": "coming"
+        }
+      ]
+    },
+    {
+      "start": 4.7,
+      "end": 5.78,
+      "text": "yet. That's iOS",
+      "words": [
+        {
+          "t": 4.7,
+          "text": "yet."
+        },
+        {
+          "t": 5.3,
+          "text": "That's"
+        },
+        {
+          "t": 5.58,
+          "text": "iOS"
+        }
+      ]
+    },
+    {
+      "start": 5.78,
+      "end": 7.58,
+      "text": "27.2 The beta",
+      "words": [
+        {
+          "t": 5.78,
+          "text": "27.2"
+        },
+        {
+          "t": 7.18,
+          "text": "The"
+        },
+        {
+          "t": 7.24,
+          "text": "beta"
+        }
+      ]
+    },
+    {
+      "start": 7.58,
+      "end": 8.58,
+      "text": "Apple rushed out",
+      "words": [
+        {
+          "t": 7.58,
+          "text": "Apple"
+        },
+        {
+          "t": 7.98,
+          "text": "rushed"
+        },
+        {
+          "t": 8.36,
+          "text": "out"
+        }
+      ]
+    },
+    {
+      "start": 8.58,
+      "end": 9.7,
+      "text": "days after 27",
+      "words": [
+        {
+          "t": 8.58,
+          "text": "days"
+        },
+        {
+          "t": 8.92,
+          "text": "after"
+        },
+        {
+          "t": 9.28,
+          "text": "27"
+        }
+      ]
+    },
+    {
+      "start": 9.7,
+      "end": 10.94,
+      "text": "shipped, skipping a",
+      "words": [
+        {
+          "t": 9.7,
+          "text": "shipped,"
+        },
+        {
+          "t": 10.44,
+          "text": "skipping"
+        },
+        {
+          "t": 10.66,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 10.94,
+      "end": 12.62,
+      "text": "whole number. 27.1",
+      "words": [
+        {
+          "t": 10.94,
+          "text": "whole"
+        },
+        {
+          "t": 11.1,
+          "text": "number."
+        },
+        {
+          "t": 11.7,
+          "text": "27.1"
+        }
+      ]
+    },
+    {
+      "start": 12.62,
+      "end": 13.48,
+      "text": "goes only to",
+      "words": [
+        {
+          "t": 12.62,
+          "text": "goes"
+        },
+        {
+          "t": 12.88,
+          "text": "only"
+        },
+        {
+          "t": 13.32,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 13.48,
+      "end": 14.32,
+      "text": "the folding iPhone",
+      "words": [
+        {
+          "t": 13.48,
+          "text": "the"
+        },
+        {
+          "t": 13.6,
+          "text": "folding"
+        },
+        {
+          "t": 13.96,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 14.32,
+      "end": 15.34,
+      "text": "Duo That skipped",
+      "words": [
+        {
+          "t": 14.32,
+          "text": "Duo"
+        },
+        {
+          "t": 14.92,
+          "text": "That"
+        },
+        {
+          "t": 15.06,
+          "text": "skipped"
+        }
+      ]
+    },
+    {
+      "start": 15.34,
+      "end": 16.44,
+      "text": "number hides something.",
+      "words": [
+        {
+          "t": 15.34,
+          "text": "number"
+        },
+        {
+          "t": 15.72,
+          "text": "hides"
+        },
+        {
+          "t": 16.0,
+          "text": "something."
+        }
+      ]
+    },
+    {
+      "start": 16.66,
+      "end": 17.54,
+      "text": "A redesigned health",
+      "words": [
+        {
+          "t": 16.66,
+          "text": "A"
+        },
+        {
+          "t": 16.78,
+          "text": "redesigned"
+        },
+        {
+          "t": 17.26,
+          "text": "health"
+        }
+      ]
+    },
+    {
+      "start": 17.54,
+      "end": 18.28,
+      "text": "app that scores",
+      "words": [
+        {
+          "t": 17.54,
+          "text": "app"
+        },
+        {
+          "t": 17.72,
+          "text": "that"
+        },
+        {
+          "t": 18.0,
+          "text": "scores"
+        }
+      ]
+    },
+    {
+      "start": 18.28,
+      "end": 19.18,
+      "text": "your health age,",
+      "words": [
+        {
+          "t": 18.28,
+          "text": "your"
+        },
+        {
+          "t": 18.54,
+          "text": "health"
+        },
+        {
+          "t": 18.84,
+          "text": "age,"
+        }
+      ]
+    },
+    {
+      "start": 19.36,
+      "end": 20.12,
+      "text": "tests your fitness",
+      "words": [
+        {
+          "t": 19.36,
+          "text": "tests"
+        },
+        {
+          "t": 19.52,
+          "text": "your"
+        },
+        {
+          "t": 19.8,
+          "text": "fitness"
+        }
+      ]
+    },
+    {
+      "start": 20.12,
+      "end": 20.86,
+      "text": "through the camera,",
+      "words": [
+        {
+          "t": 20.12,
+          "text": "through"
+        },
+        {
+          "t": 20.42,
+          "text": "the"
+        },
+        {
+          "t": 20.58,
+          "text": "camera,"
+        }
+      ]
+    },
+    {
+      "start": 21.16,
+      "end": 21.96,
+      "text": "and splits into",
+      "words": [
+        {
+          "t": 21.16,
+          "text": "and"
+        },
+        {
+          "t": 21.24,
+          "text": "splits"
+        },
+        {
+          "t": 21.54,
+          "text": "into"
+        }
+      ]
+    },
+    {
+      "start": 21.96,
+      "end": 23.06,
+      "text": "insights and longevity",
+      "words": [
+        {
+          "t": 21.96,
+          "text": "insights"
+        },
+        {
+          "t": 22.38,
+          "text": "and"
+        },
+        {
+          "t": 22.76,
+          "text": "longevity"
+        }
+      ]
+    },
+    {
+      "start": 23.06,
+      "end": 24.48,
+      "text": "tabs. And Apple's",
+      "words": [
+        {
+          "t": 23.06,
+          "text": "tabs."
+        },
+        {
+          "t": 23.94,
+          "text": "And"
+        },
+        {
+          "t": 24.04,
+          "text": "Apple's"
+        }
+      ]
+    },
+    {
+      "start": 24.48,
+      "end": 25.38,
+      "text": "own words, it",
+      "words": [
+        {
+          "t": 24.48,
+          "text": "own"
+        },
+        {
+          "t": 24.66,
+          "text": "words,"
+        },
+        {
+          "t": 25.32,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 25.38,
+      "end": 26.06,
+      "text": "isn't even shipping",
+      "words": [
+        {
+          "t": 25.38,
+          "text": "isn't"
+        },
+        {
+          "t": 25.64,
+          "text": "even"
+        },
+        {
+          "t": 25.78,
+          "text": "shipping"
+        }
+      ]
+    },
+    {
+      "start": 26.06,
+      "end": 26.76,
+      "text": "with this update.",
+      "words": [
+        {
+          "t": 26.06,
+          "text": "with"
+        },
+        {
+          "t": 26.3,
+          "text": "this"
+        },
+        {
+          "t": 26.44,
+          "text": "update."
+        }
+      ]
+    },
+    {
+      "start": 26.76,
+      "end": 27.74,
+      "text": "You're testing next",
+      "words": [
+        {
+          "t": 26.76,
+          "text": "You're"
+        },
+        {
+          "t": 27.16,
+          "text": "testing"
+        },
+        {
+          "t": 27.46,
+          "text": "next"
+        }
+      ]
+    },
+    {
+      "start": 27.74,
+      "end": 28.9,
+      "text": "year's preview early.",
+      "words": [
+        {
+          "t": 27.74,
+          "text": "year's"
+        },
+        {
+          "t": 28.16,
+          "text": "preview"
+        },
+        {
+          "t": 28.4,
+          "text": "early."
+        }
+      ]
+    },
+    {
+      "start": 29.18,
+      "end": 30.32,
+      "text": "Still, testers reportedly",
+      "words": [
+        {
+          "t": 29.18,
+          "text": "Still,"
+        },
+        {
+          "t": 29.62,
+          "text": "testers"
+        },
+        {
+          "t": 29.94,
+          "text": "reportedly"
+        }
+      ]
+    },
+    {
+      "start": 30.32,
+      "end": 31.46,
+      "text": "found the personalized",
+      "words": [
+        {
+          "t": 30.32,
+          "text": "found"
+        },
+        {
+          "t": 30.76,
+          "text": "the"
+        },
+        {
+          "t": 30.96,
+          "text": "personalized"
+        }
+      ]
+    },
+    {
+      "start": 31.46,
+      "end": 32.52,
+      "text": "advice and lab",
+      "words": [
+        {
+          "t": 31.46,
+          "text": "advice"
+        },
+        {
+          "t": 31.9,
+          "text": "and"
+        },
+        {
+          "t": 32.32,
+          "text": "lab"
+        }
+      ]
+    },
+    {
+      "start": 32.52,
+      "end": 33.64,
+      "text": "ordering pieces switched",
+      "words": [
+        {
+          "t": 32.52,
+          "text": "ordering"
+        },
+        {
+          "t": 32.82,
+          "text": "pieces"
+        },
+        {
+          "t": 33.18,
+          "text": "switched"
+        }
+      ]
+    },
+    {
+      "start": 33.64,
+      "end": 34.86,
+      "text": "off. Beyond health,",
+      "words": [
+        {
+          "t": 33.64,
+          "text": "off."
+        },
+        {
+          "t": 34.2,
+          "text": "Beyond"
+        },
+        {
+          "t": 34.42,
+          "text": "health,"
+        }
+      ]
+    },
+    {
+      "start": 35.04,
+      "end": 35.84,
+      "text": "here's what's live.",
+      "words": [
+        {
+          "t": 35.04,
+          "text": "here's"
+        },
+        {
+          "t": 35.34,
+          "text": "what's"
+        },
+        {
+          "t": 35.64,
+          "text": "live."
+        }
+      ]
+    },
+    {
+      "start": 36.34,
+      "end": 37.2,
+      "text": "Siri's AI brain",
+      "words": [
+        {
+          "t": 36.34,
+          "text": "Siri's"
+        },
+        {
+          "t": 36.54,
+          "text": "AI"
+        },
+        {
+          "t": 36.88,
+          "text": "brain"
+        }
+      ]
+    },
+    {
+      "start": 37.2,
+      "end": 38.4,
+      "text": "finally speaks more",
+      "words": [
+        {
+          "t": 37.2,
+          "text": "finally"
+        },
+        {
+          "t": 37.68,
+          "text": "speaks"
+        },
+        {
+          "t": 38.0,
+          "text": "more"
+        }
+      ]
+    },
+    {
+      "start": 38.4,
+      "end": 39.48,
+      "text": "than English. French,",
+      "words": [
+        {
+          "t": 38.4,
+          "text": "than"
+        },
+        {
+          "t": 38.54,
+          "text": "English."
+        },
+        {
+          "t": 39.34,
+          "text": "French,"
+        }
+      ]
+    },
+    {
+      "start": 39.88,
+      "end": 41.28,
+      "text": "Japanese, Korean, Portuguese,",
+      "words": [
+        {
+          "t": 39.88,
+          "text": "Japanese,"
+        },
+        {
+          "t": 40.56,
+          "text": "Korean,"
+        },
+        {
+          "t": 41.04,
+          "text": "Portuguese,"
+        }
+      ]
+    },
+    {
+      "start": 41.64,
+      "end": 42.58,
+      "text": "Spanish, all in",
+      "words": [
+        {
+          "t": 41.64,
+          "text": "Spanish,"
+        },
+        {
+          "t": 42.2,
+          "text": "all"
+        },
+        {
+          "t": 42.36,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 42.58,
+      "end": 43.4,
+      "text": "this beta. And",
+      "words": [
+        {
+          "t": 42.58,
+          "text": "this"
+        },
+        {
+          "t": 42.78,
+          "text": "beta."
+        },
+        {
+          "t": 43.32,
+          "text": "And"
+        }
+      ]
+    },
+    {
+      "start": 43.4,
+      "end": 44.42,
+      "text": "group facetime shows",
+      "words": [
+        {
+          "t": 43.4,
+          "text": "group"
+        },
+        {
+          "t": 43.62,
+          "text": "facetime"
+        },
+        {
+          "t": 44.08,
+          "text": "shows"
+        }
+      ]
+    },
+    {
+      "start": 44.42,
+      "end": 45.3,
+      "text": "both your cameras",
+      "words": [
+        {
+          "t": 44.42,
+          "text": "both"
+        },
+        {
+          "t": 44.78,
+          "text": "your"
+        },
+        {
+          "t": 45.0,
+          "text": "cameras"
+        }
+      ]
+    },
+    {
+      "start": 45.3,
+      "end": 46.34,
+      "text": "at once. Front",
+      "words": [
+        {
+          "t": 45.3,
+          "text": "at"
+        },
+        {
+          "t": 45.54,
+          "text": "once."
+        },
+        {
+          "t": 46.18,
+          "text": "Front"
+        }
+      ]
+    },
+    {
+      "start": 46.34,
+      "end": 47.24,
+      "text": "and back live.",
+      "words": [
+        {
+          "t": 46.34,
+          "text": "and"
+        },
+        {
+          "t": 46.5,
+          "text": "back"
+        },
+        {
+          "t": 46.72,
+          "text": "live."
+        }
+      ]
+    },
+    {
+      "start": 47.7,
+      "end": 48.64,
+      "text": "Meanwhile, the Apple",
+      "words": [
+        {
+          "t": 47.7,
+          "text": "Meanwhile,"
+        },
+        {
+          "t": 48.3,
+          "text": "the"
+        },
+        {
+          "t": 48.4,
+          "text": "Apple"
+        }
+      ]
+    },
+    {
+      "start": 48.64,
+      "end": 49.44,
+      "text": "TV app gets",
+      "words": [
+        {
+          "t": 48.64,
+          "text": "TV"
+        },
+        {
+          "t": 48.92,
+          "text": "app"
+        },
+        {
+          "t": 49.2,
+          "text": "gets"
+        }
+      ]
+    },
+    {
+      "start": 49.44,
+      "end": 50.42,
+      "text": "real profiles on",
+      "words": [
+        {
+          "t": 49.44,
+          "text": "real"
+        },
+        {
+          "t": 49.76,
+          "text": "profiles"
+        },
+        {
+          "t": 50.18,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 50.42,
+      "end": 51.16,
+      "text": "your phone. And",
+      "words": [
+        {
+          "t": 50.42,
+          "text": "your"
+        },
+        {
+          "t": 50.56,
+          "text": "phone."
+        },
+        {
+          "t": 51.06,
+          "text": "And"
+        }
+      ]
+    },
+    {
+      "start": 51.16,
+      "end": 52.16,
+      "text": "CarPlay Ultra gets",
+      "words": [
+        {
+          "t": 51.16,
+          "text": "CarPlay"
+        },
+        {
+          "t": 51.56,
+          "text": "Ultra"
+        },
+        {
+          "t": 51.88,
+          "text": "gets"
+        }
+      ]
+    },
+    {
+      "start": 52.16,
+      "end": 53.1,
+      "text": "real themes now.",
+      "words": [
+        {
+          "t": 52.16,
+          "text": "real"
+        },
+        {
+          "t": 52.46,
+          "text": "themes"
+        },
+        {
+          "t": 52.8,
+          "text": "now."
+        }
+      ]
+    },
+    {
+      "start": 53.4,
+      "end": 54.76,
+      "text": "Wallpaper gauges color.",
+      "words": [
+        {
+          "t": 53.4,
+          "text": "Wallpaper"
+        },
+        {
+          "t": 53.74,
+          "text": "gauges"
+        },
+        {
+          "t": 54.34,
+          "text": "color."
+        }
+      ]
+    },
+    {
+      "start": 54.76,
+      "end": 55.92,
+      "text": "The ambient lighting",
+      "words": [
+        {
+          "t": 54.76,
+          "text": "The"
+        },
+        {
+          "t": 55.18,
+          "text": "ambient"
+        },
+        {
+          "t": 55.54,
+          "text": "lighting"
+        }
+      ]
+    },
+    {
+      "start": 55.92,
+      "end": 56.96,
+      "text": "could reportedly match",
+      "words": [
+        {
+          "t": 55.92,
+          "text": "could"
+        },
+        {
+          "t": 56.12,
+          "text": "reportedly"
+        },
+        {
+          "t": 56.54,
+          "text": "match"
+        }
+      ]
+    },
+    {
+      "start": 56.96,
+      "end": 57.92,
+      "text": "to on supported",
+      "words": [
+        {
+          "t": 56.96,
+          "text": "to"
+        },
+        {
+          "t": 57.24,
+          "text": "on"
+        },
+        {
+          "t": 57.54,
+          "text": "supported"
+        }
+      ]
+    },
+    {
+      "start": 57.92,
+      "end": 59.14,
+      "text": "cars. Then call",
+      "words": [
+        {
+          "t": 57.92,
+          "text": "cars."
+        },
+        {
+          "t": 58.8,
+          "text": "Then"
+        },
+        {
+          "t": 58.9,
+          "text": "call"
+        }
+      ]
+    },
+    {
+      "start": 59.14,
+      "end": 60.32,
+      "text": "someone whose anniversary",
+      "words": [
+        {
+          "t": 59.14,
+          "text": "someone"
+        },
+        {
+          "t": 59.52,
+          "text": "whose"
+        },
+        {
+          "t": 59.82,
+          "text": "anniversary"
+        }
+      ]
+    },
+    {
+      "start": 60.32,
+      "end": 61.22,
+      "text": "you saved. And",
+      "words": [
+        {
+          "t": 60.32,
+          "text": "you"
+        },
+        {
+          "t": 60.54,
+          "text": "saved."
+        },
+        {
+          "t": 61.16,
+          "text": "And"
+        }
+      ]
+    },
+    {
+      "start": 61.22,
+      "end": 61.84,
+      "text": "the phone app",
+      "words": [
+        {
+          "t": 61.22,
+          "text": "the"
+        },
+        {
+          "t": 61.34,
+          "text": "phone"
+        },
+        {
+          "t": 61.6,
+          "text": "app"
+        }
+      ]
+    },
+    {
+      "start": 61.84,
+      "end": 62.66,
+      "text": "reminds you before",
+      "words": [
+        {
+          "t": 61.84,
+          "text": "reminds"
+        },
+        {
+          "t": 62.1,
+          "text": "you"
+        },
+        {
+          "t": 62.38,
+          "text": "before"
+        }
+      ]
+    },
+    {
+      "start": 62.66,
+      "end": 63.4,
+      "text": "you say hello.",
+      "words": [
+        {
+          "t": 62.66,
+          "text": "you"
+        },
+        {
+          "t": 62.86,
+          "text": "say"
+        },
+        {
+          "t": 63.06,
+          "text": "hello."
+        }
+      ]
+    },
+    {
+      "start": 63.62,
+      "end": 64.18,
+      "text": "So that health",
+      "words": [
+        {
+          "t": 63.62,
+          "text": "So"
+        },
+        {
+          "t": 63.7,
+          "text": "that"
+        },
+        {
+          "t": 63.88,
+          "text": "health"
+        }
+      ]
+    },
+    {
+      "start": 64.18,
+      "end": 64.94,
+      "text": "app isn't really",
+      "words": [
+        {
+          "t": 64.18,
+          "text": "app"
+        },
+        {
+          "t": 64.4,
+          "text": "isn't"
+        },
+        {
+          "t": 64.74,
+          "text": "really"
+        }
+      ]
+    },
+    {
+      "start": 64.94,
+      "end": 65.94,
+      "text": "here yet. Just",
+      "words": [
+        {
+          "t": 64.94,
+          "text": "here"
+        },
+        {
+          "t": 65.24,
+          "text": "yet."
+        },
+        {
+          "t": 65.82,
+          "text": "Just"
+        }
+      ]
+    },
+    {
+      "start": 65.94,
+      "end": 67.38,
+      "text": "previewed early. Everything",
+      "words": [
+        {
+          "t": 65.94,
+          "text": "previewed"
+        },
+        {
+          "t": 66.56,
+          "text": "early."
+        },
+        {
+          "t": 67.06,
+          "text": "Everything"
+        }
+      ]
+    },
+    {
+      "start": 67.38,
+      "end": 67.9,
+      "text": "else on this",
+      "words": [
+        {
+          "t": 67.38,
+          "text": "else"
+        },
+        {
+          "t": 67.62,
+          "text": "on"
+        },
+        {
+          "t": 67.74,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 67.9,
+      "end": 68.98,
+      "text": "list already is.",
+      "words": [
+        {
+          "t": 67.9,
+          "text": "list"
+        },
+        {
+          "t": 68.16,
+          "text": "already"
+        },
+        {
+          "t": 68.6,
+          "text": "is."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "script": "Apple just handed you its biggest app redesign in years, then said it isn't coming yet.\n\nThat's iOS twenty seven point two, the beta Apple rushed out days after twenty seven shipped, skipping a whole number. Twenty seven point one goes only to the folding iPhone Duo.\n\nThat skipped number hides something: a redesigned Health app that scores your Health Age, tests your fitness through the camera, and splits into Insights and Longevity tabs.\n\nAnd Apple's own words: it isn't even shipping with this update. You're testing next year's preview early.\n\nStill, testers reportedly found the personalized advice and lab ordering pieces switched off.\n\nBeyond Health, here's what's live. Siri's AI brain finally speaks more than English: French, Japanese, Korean, Portuguese, Spanish, all in this beta.\n\nAnd Group FaceTime shows both your cameras at once, front and back, live.\n\nMeanwhile, the Apple TV app gets real profiles on your phone.\n\nAnd CarPlay Ultra gets real themes now: wallpaper, gauges, color. The ambient lighting could reportedly match too, on supported cars.\n\nThen call someone whose anniversary you saved, and the Phone app reminds you before you say hello.\n\nSo that Health app isn't really here yet, just previewed early. Everything else on this list already is.",
+  "approval": {
+    "sha256": "4a6168c70f3179df2cf9f6163d3d6dadd1870e5658e8ea8cec6b6d3228f50430",
+    "approvedAt": "2026-09-17T05:36:11+00:00",
+    "words": 205,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}
