@@ -481,6 +481,24 @@ triggers on "make me a video"/"Remotion"/"HeyGen"/"AI avatar". If either
 loads for a reel request, STOP and use `news-reel` instead — the generic
 skills will happily skip every gate in this repo.
 
+### The aaron-marketing plugin (installed by the user 2026-09-17) — 120 skills, advisory only
+
+Read in full before ruling (github.com/aaron-he-zhu/aaron-marketing-skills, v20.1.0).
+A marketing "operating system": SEO/GEO, social, email, ads, influencer, launch, and
+a protocol layer that keeps its own records in a top-level `memory/` folder.
+- **No hijack directives** in any SKILL.md (scanned all 120).
+- **Overlaps with our work — `news-reel` and the carousel skills still own it:**
+  `short-video-scripter` (reel scripts), `social-creative-builder` ("spec the carousel
+  slides"), `launch-asset-packager`, `content-amplifier`, `social-pulse-monitor`, and the
+  `/social` command. reel_precedence.py names them. Its ideas already adopted: the
+  confirmation beat and AI-disclosure line (STYLE-RULES 2026-09-17 (5)).
+- **It installs HOOKS on every Write/Edit/Bash/MCP call, in every project.** Dry-run here:
+  ~0.2s per call, nothing blocked (renders, memory writes, HeyGen/ElevenLabs calls).
+  They only ENFORCE (and can deny/block) when the project has a top-level `memory/`
+  folder. **Never run its skills inside this repo** — that creates `memory/` and arms
+  its privacy/audit gates over our pipeline. Use it in a separate marketing project.
+- Useful elsewhere, not in the reel pipeline: its SEO/GEO skills for igeeksblog.com.
+
 ### The `/marketing` plugin (installed 2026-08-27) — 50 skills, ONE adopted
 
 Read before ruling, per the standing rule. **We are a PUBLISHER making reels,
