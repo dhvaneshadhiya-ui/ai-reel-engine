@@ -587,7 +587,7 @@ re-check both global paths.
 
 ### GLOBAL skills (2026-08-17) — outside the repo, at the user's call
 
-Five skills live in `~/.agents/skills/`, symlinked into `~/.claude/skills/`.
+Six skills live in `~/.agents/skills/`, symlinked into `~/.claude/skills/`.
 They are the ONLY things on this machine outside the repo. Each was READ before
 installing and none is a router: none claims to be a default or a mandatory
 entry point, so none can contend with `news-reel` for a reel request the way the
@@ -598,6 +598,7 @@ entry point, so none can contend with `news-reel` for a reel request the way the
 | `find-skills` | discovering/installing other skills (`npx skills find`) | vercel-labs/skills |
 | `humanizer` | making an approved-shape script read like a person wrote it | blader/humanizer (35.9k★) |
 | `fact-check-workflow` | verifying a claim BEFORE it becomes a beat with a receipt | jamditis/claude-skills-journalism |
+| `source-verification` | SIFT: trace each claim (and every AI/listicle summary) to its ORIGINAL source; verified / supported-with-limits / unresolved / contradicted | jamditis/claude-skills-journalism |
 | `youtube-seo` | YouTube title / description / tags — the one packaging gap | kostja94/marketing-skills |
 | `ffmpeg-ytdlp` | measured ffmpeg/ffprobe/yt-dlp recipes + the macOS arch trap | LOCAL — `skills-global/` |
 

@@ -26,6 +26,7 @@ SKILLS=(
   "vercel-labs/skills@find-skills"                        # discover/install other skills
   "blader/humanizer@humanizer"                            # make an approved-shape script read human
   "jamditis/claude-skills-journalism@fact-check-workflow" # verify a claim before it becomes a beat
+  "jamditis/claude-skills-journalism@source-verification" # SIFT: trace a claim to its original source (2026-09-17)
   "kostja94/marketing-skills@youtube-seo"                 # YouTube title / description / tags
   # thumbnail-design REMOVED 2026-08-22 — user directive: no more YouTube
   # thumbnails. doctor reads this list, so the count updates itself.
