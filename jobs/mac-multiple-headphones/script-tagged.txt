@@ -1,21 +1,25 @@
-[curious] One Mac, two pairs of AirPods, one movie.
+[curious] Your Mac can play one movie to two pairs of headphones at the same time.
 
-But pick headphones in your Mac's sound settings and only one pair plays.
+It takes a free app called PairPods, and it beats Apple's own way.
 
-[calm] Apple does have a fix, buried in Audio MIDI Setup: a Multi-Output Device that plays to both.
+[calm] First, connect every pair in Bluetooth settings.
 
-[curious] The catch is that your Mac's volume keys stop working, so you set each pair's volume by hand.
+[curious] Then open PairPods from the menu bar, tick the devices you want, and flip Share Audio on.
 
-PairPods skips all that.
+AirPods, Sony headphones, Samsung Buds, even a Bluetooth speaker.
 
-[surprised] It does the same job with one toggle in the menu bar, and it's free and open source.
+Once it's on, each device gets its own volume slider, so your friend can listen louder than you.
 
-Each pair gets its own volume and battery level.
+[surprised] You also see every pair's battery and sample rate, and the crown sets the master device the others sync to.
 
-[calm] It works with AirPods, Sony headphones and Samsung Buds, even a Bluetooth speaker, on macOS 13.5 or later.
+And if a pair drops out, PairPods waits five, ten or thirty seconds for it to reconnect.
 
-One thing to know before you share: sync isn't guaranteed.
+[calm] Compare Apple's route, a Multi-Output Device in Audio MIDI Setup.
 
-[calm] Mix two different models and one can sound slightly off-pitch, so matching pairs work best.
+It works, but it takes away your volume keys.
 
-The download link is in the pinned comment.
+One catch: sync isn't guaranteed, and different models can sound slightly off-pitch, so matching pairs work best.
+
+[excited] PairPods is free, open source and needs macOS 13.5 or later.
+
+The link is in the pinned comment.

@@ -8481,3 +8481,26 @@ What this reel taught the engine:
 Credits: HeyGen ~13 (8.3s hook + 3.4s CTA + unused 2.2s), ElevenLabs 3 takes.
 Treatment: hero + rows (problem), hero + rows with strike (built-in catch), swap with
 strike (built-in → PairPods), 7-row capability list, swap + text (caveat), XL end card.
+
+## 2026-09-17 (2) — PairPods v2: feature-led, real-UI motion
+
+User review of v1: "Followed almost same design and layout. Hardly any animation. We
+hardly talk any features about the app", and a search engine's AI summary knew the
+product better. Both were true.
+- **Research:** research_check now REFUSES a product/tutorial/list reel whose ledger
+  has no `## FEATURES + HOW TO USE` inventory (every vendor feature marked USED/CUT,
+  plus the vendor's steps). The AI summary was checked against its own citations:
+  HomePod support and "remembers device combinations" appear in no source text
+  (HomePod only in the developer's screenshots) — neither was claimed.
+- **Motion:** new slide blocks in src/components/SlideBlocks.tsx —
+  `screen` (a real published screenshot as a camera subject: `focus` zooms to a
+  rect with a drawn ring, `state` crossfades between the vendor's real app states;
+  zoom capped at 2.4x fit with 1.5x context, edges clamped — a first pass fit a 60px
+  crown to the box and blurred it), `steps` (how-to strip lit on each word),
+  `devices` (Mac → device lines with travelling pulses), `waves` (two waveforms that
+  drift apart for a sync caveat). Motion is on bitmaps and shapes, never scale on type.
+- VO again read ~3.0 w/s across two takes; commas got 0.3s, sentences 0.7s,
+  paragraphs 0.9s of inserted silence → 62.3s, 2.73 w/s.
+Treatment: devices pulse (hook), steps + screen states (how-to), screen zooms on
+slider / battery+kHz / crown (features), screen zoom on Reconnect + rows, swap with
+strike (Apple), waves + tips (caveat), hero + rows, XL end card over the showcase shot.

@@ -1,5 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Easing, Img, OffthreadVideo, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { DevicesBlock, ScreenBlock, StepsBlock, WavesBlock } from "./SlideBlocks";
+import type { DevicesBlockProps, ScreenBlockProps, StepsBlockProps, WavesBlockProps } from "./SlideBlocks";
 
 /**
  * SLIDE — the Carousel Playbook look, as a reel scene (2026-09-16).
@@ -47,15 +49,22 @@ export type SlideBlock =
   | { id: string; kind: "rows"; rows: { k: string; v: string; tone?: "cost" | "free" | "plain" }[] }
   | { id: string; kind: "text"; text: string }
   | { id: string; kind: "tips"; best?: string; watch?: string }
-  | { id: string; kind: "logos"; items: { logo: string; name: string; tile?: "light" | "dark" }[] };
+  | { id: string; kind: "logos"; items: { logo: string; name: string; tile?: "light" | "dark" }[] }
+  | ScreenBlockProps | StepsBlockProps | DevicesBlockProps | WavesBlockProps;
 
 export interface SlideMove {
   /** pill: target "headline" — the yellow pill lands on the spoken word, not
    *  with the headline (the words sit white until then) */
-  do: "show" | "strike" | "highlight" | "pill";
+  do: "show" | "strike" | "highlight" | "pill" | "focus" | "state" | "drift";
   target: string;
   at?: number;
   on?: string;
+  /** focus: the region of a screen block to move the camera to, source px [x, y, w, h] */
+  rect?: [number, number, number, number];
+  /** focus: draw the ring (default true) */
+  ring?: boolean;
+  /** state: the published screenshot to crossfade to */
+  src?: string;
 }
 
 export interface SlideProps {
@@ -274,6 +283,14 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
           </div>
         );
       }
+      case "screen":
+        return <ScreenBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
+      case "steps":
+        return <StepsBlock key={b.id} b={b} moves={moves} t={t} C={C} />;
+      case "devices":
+        return <DevicesBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} />;
+      case "waves":
+        return <WavesBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
       case "logos": {
         const base = shownAt(b.id);
         return (

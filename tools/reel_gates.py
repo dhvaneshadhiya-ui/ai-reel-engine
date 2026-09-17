@@ -1955,7 +1955,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
                     "screen is a claim, whether or not the voice says it.")
 
     # G65 (slide) — the carousel-look slide off its contract draws nothing.
-    SLIDE_BLOCKS = {"hero", "swap", "rows", "text", "tips", "logos"}
+    SLIDE_BLOCKS = {"hero", "swap", "rows", "text", "tips", "logos", "screen", "steps", "devices", "waves"}
     for i, sc in enumerate(scenes):
         if sc.get("type") != "slide":
             continue
@@ -1969,13 +1969,17 @@ def check_beats(beats: dict, vo_end: float | None = None,
                               f"is not one of {', '.join(sorted(SLIDE_BLOCKS))} — it draws nothing.")
             bid = b.get("id")
             targets |= {bid, f"{bid}.left", f"{bid}.right", f"{bid}.best", f"{bid}.watch"}
-            targets |= {f"{bid}.{k}" for k in range(len(b.get("rows") or []))}
+            targets |= {f"{bid}.{k}" for k in range(max(len(b.get("rows") or []), len(b.get("steps") or []), len(b.get("items") or [])))}
+            if b.get("kind") == "screen" and not str(b.get("src") or "").lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
+                errors.append(f"G65 scene {i:02d} slide screen {bid!r} needs a still `src` — an <Img> cannot show {b.get('src')!r}.")
         targets.add("headline")
         if sc.get("presenter") and not str((sc["presenter"] or {}).get("src") or "").lower().endswith((".mp4", ".mov", ".webm")):
             errors.append(f"G65 scene {i:02d} slide presenter needs a video `src` — a still in the circle renders black.")
         for m in sc.get("moves") or []:
-            if m.get("do") not in ("show", "strike", "highlight", "pill"):
-                errors.append(f"G65 scene {i:02d} slide move {m.get('do')!r} is not show, strike, highlight or pill.")
+            if m.get("do") not in ("show", "strike", "highlight", "pill", "focus", "state", "drift"):
+                errors.append(f"G65 scene {i:02d} slide move {m.get('do')!r} is not show, strike, highlight, pill, focus, state or drift.")
+            if m.get("do") == "focus" and not (isinstance(m.get("rect"), list) and len(m["rect"]) == 4):
+                errors.append(f"G65 scene {i:02d} slide `focus` needs `rect` [x, y, w, h] in source px — the camera has nowhere to go.")
             if m.get("at") is None:
                 errors.append(f"G65 scene {i:02d} slide `{m.get('do')}` on {m.get('target')!r} has no `at`"
                               + (" — recompile so its words become seconds." if m.get("on") else "."))
@@ -1993,7 +1997,8 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 for s in [b.get("side"), b.get("left"), b.get("right")] + list(b.get("items") or []):
                     if isinstance(s, dict):
                         texts += [s.get("name"), s.get("price"), s.get("note")]
-                texts += [b.get("text"), b.get("best"), b.get("watch")]
+                texts += [b.get("text"), b.get("best"), b.get("watch"), b.get("hub")]
+                texts += [x for x in (b.get("steps") or []) + (b.get("labels") or []) + [y for y in (b.get("items") or []) if isinstance(y, str)]]
                 texts += [x for r in b.get("rows") or [] for x in (r.get("k"), r.get("v"))]
             bad = unsourced_in([str(t).replace("[[", "").replace("]]", "") for t in texts if t], sourced_text)
             if bad:

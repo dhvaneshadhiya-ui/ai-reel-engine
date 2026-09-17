@@ -14,16 +14,16 @@ recommended band is **3-5** on both.
 
 ## instagram
 
-CAPTION: Two pairs of headphones, one Mac, one movie. macOS plays to one pair at a time, and Apple's built-in fix (a Multi-Output Device in Audio MIDI Setup) turns off your volume keys. PairPods does it with one toggle in the menu bar, with volume for each pair. It's free and open source, and needs macOS 13.5 or later. Sync isn't guaranteed, so matching headphones work best. The download link is in the pinned comment.
+CAPTION: Two pairs of headphones, one Mac, one movie. PairPods is a free menu bar app that shares your Mac's audio: pair your headphones in Bluetooth settings, tick the ones you want and turn on Share Audio. Each pair gets its own volume slider, you see battery and sample rate, a crown picks the master device, and it waits 5, 10 or 30 seconds for a pair that drops out. Apple's Multi-Output Device works too, but your volume keys stop working. Sync isn't guaranteed, so matching headphones work best. Needs macOS 13.5 or later. The download link is in the pinned comment.
 FIRST COMMENT: PairPods, free and open source: https://pairpods.app · Which headphones are you pairing? #macos #mactips #airpods #macbook #apple
-ALT TEXT: Animated explainer showing why a Mac plays sound to only one pair of headphones, Apple's Audio MIDI Setup workaround and its volume-key catch, and the free PairPods app sharing audio to AirPods, Sony and Samsung headphones, with the presenter introducing it and pointing to the pinned comment.
+ALT TEXT: Animated explainer of the free PairPods Mac app: a Mac connecting to two pairs of AirPods, the four setup steps beside the real PairPods menu, zooms on each device's volume slider, battery, sample rate, master crown and reconnect timer, Apple's Multi-Output Device with its volume-key catch, drifting sound waves for the sync caveat, and the presenter pointing to the pinned comment.
 
 ## youtube
 
 TITLE: Play Your Mac's Audio on Two Headphones at Once (Free App)
-CAPTION: macOS plays sound to one pair of headphones at a time. Apple's own fix is a Multi-Output Device in Audio MIDI Setup, but your volume keys stop working with it. PairPods, a free and open-source menu bar app, shares audio to two or more Bluetooth devices with one toggle and gives each pair its own volume. Requires macOS 13.5 or later. Sync isn't guaranteed; matching headphones work best. Download: https://pairpods.app (also in the pinned comment).
+CAPTION: PairPods is a free, open-source menu bar app that plays your Mac's audio on two or more Bluetooth headphones or speakers at once. How to use it: pair the devices in Bluetooth settings, open PairPods from the menu bar, tick the devices and turn on Share Audio. Each device gets its own volume slider, battery and sample rate readout, a crown to set the master device, and an auto-reconnect wait of 5, 10 or 30 seconds. Apple's Multi-Output Device in Audio MIDI Setup also works, but it disables your volume keys. Sync isn't guaranteed; matching headphones work best. Requires macOS 13.5 or later. Download: https://pairpods.app (also in the pinned comment).
 HASHTAGS: #macos #mactips #shorts
-ALT TEXT: Animated explainer showing why a Mac plays sound to only one pair of headphones, Apple's Audio MIDI Setup workaround and its volume-key catch, and the free PairPods app sharing audio to AirPods, Sony and Samsung headphones, with the presenter introducing it and pointing to the pinned comment.
+ALT TEXT: Animated explainer of the free PairPods Mac app: a Mac connecting to two pairs of AirPods, the four setup steps beside the real PairPods menu, zooms on each device's volume slider, battery, sample rate, master crown and reconnect timer, Apple's Multi-Output Device with its volume-key catch, drifting sound waves for the sync caveat, and the presenter pointing to the pinned comment.
 
 ## pinned comment (both platforms — post it, then pin it)
 
