@@ -10,9 +10,9 @@ out of the description.
 
 ## instagram
 
-CAPTION: ChatGPT's image editor just stopped drifting your face into someone else's. That's why a set of photographer-style prompts is going viral this week.
+CAPTION: ChatGPT just stopped editing your face into a stranger's. That's why 9 prompts for photographer-style portraits are going viral right now.
 FIRST COMMENT: Want all 9 prompts? Comment PROMPTS and they're yours. #ChatGPT #AIPhotoEditing #ChatGPTPrompts #AITools #ImageEditing
-ALT TEXT: Vertical video: a presenter explains that ChatGPT Images 2.5 keeps your face steady through an edit, then shows three viral prompts (DSLR Photographer Mode, Golden Hour Photo Shoot, Restoring Old Photos) credited to Rachel Woods on X, ending with a comment-PROMPTS call to action.
+ALT TEXT: Vertical video: a presenter explains that ChatGPT Images 2.5 keeps your face steady through an edit, then shows three viral prompts (DSLR Photographer Mode, Golden Hour Photo Shoot, Restoring Old Photos) as full text cards, ending with a comment-PROMPTS call to action.
 
 ## youtube
 
