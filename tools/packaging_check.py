@@ -65,6 +65,11 @@ LIMITS = {
 }
 
 
+# The caption line must say the presenter's video/voice is AI-made, in words.
+AI_LINE = re.compile(r"\bAI\b[^.]{0,60}\b(voice|avatar|presenter|face|video)|\b(voice|avatar|presenter|face|video)\b[^.]{0,60}\bAI\b", re.I)
+AI_LINE_TEXT = "The presenter's face and voice in this video are AI-generated."
+
+
 def parse(text: str) -> dict[str, dict[str, str]]:
     blocks: dict[str, dict[str, str]] = {}
     cur = None
@@ -190,6 +195,26 @@ def platform_errors(plat: str, fields: dict[str, str]) -> list[str]:
         errors.append(
             f"{plat}: title {len(fields['TITLE'])} chars, "
             f"max {lim['title']}.")
+
+    # AI DISCLOSURE (user decision 2026-09-17: platform label AND caption line).
+    # Every reel here uses the presenter's AI digital twin and a cloned voice —
+    # realistic synthetic media, which Instagram ("AI info" label) and YouTube
+    # ("altered or synthetic content") both ask creators to disclose. The field
+    # names the setting to switch on; the caption carries a plain line too.
+    if plat in ("instagram", "youtube"):
+        label_field = "AI LABEL" if plat == "instagram" else "ALTERED CONTENT"
+        want = "on" if plat == "instagram" else "yes"
+        val = fields.get(label_field, "").strip().lower()
+        if not val.startswith(want):
+            errors.append(
+                f"{plat}: {label_field} must be '{want}'. The presenter's face and voice are "
+                "AI-generated; turn on the platform's disclosure "
+                + ("(Advanced settings → Add AI label)." if plat == "instagram"
+                   else "(YouTube Studio → Altered content → Yes)."))
+        if cap and not AI_LINE.search(cap):
+            errors.append(
+                f"{plat}: the CAPTION has no AI disclosure line. Add one plain sentence, e.g. "
+                f"\"{AI_LINE_TEXT}\"")
 
     # accessibility — the one genuinely good idea taken from the skill we
     # did not install

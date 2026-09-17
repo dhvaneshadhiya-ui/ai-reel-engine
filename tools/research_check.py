@@ -184,6 +184,11 @@ def parse_ledger(body: str) -> list[dict]:
             cur["spoken"] = line[7:].strip().strip('"“”')
         elif cur is not None and line.startswith("SRC:"):
             cur["srcs"].append(line[4:].strip())
+        elif cur is not None and line.startswith("SURPRISE:"):
+            try:
+                cur["surprise"] = int(re.findall(r"\d+", line)[0])
+            except IndexError:
+                pass
         elif cur is not None and line.startswith("VIA:"):
             cur.setdefault("vias", []).append(line[4:].strip())
     return claims
@@ -432,6 +437,23 @@ def check_research(slug: str, script_text: str | None,
                 "from a list somebody wrote down (2026-09-17, PairPods v1).\n"
                 "  SKILL CUE: run the `reel-research` skill — its product plan has the "
                 "feature and how-to subtopics built in.")
+
+    # SURPRISE SCORE (2026-09-17, from short-form scriptwriting practice): rate
+    # each claim 1-100 for "how many viewers would NOT already know this?". The
+    # most surprising claim should be spoken early, where retention is decided,
+    # not saved for the last third. Advice: ordering stays a story decision.
+    scored = [c for c in claims if c.get("surprise") is not None]
+    if claims and not scored:
+        advice.append("no SURPRISE scores in the ledger — add 'SURPRISE: <1-100>' per claim "
+                      "(how many viewers would NOT know this) so the strongest fact can lead.")
+    elif scored and script_norm:
+        top = max(scored, key=lambda c: c["surprise"])
+        sp = _norm(top.get("spoken") or "")
+        pos = script_norm.find(sp) if sp else -1
+        if pos > 0 and pos / max(1, len(script_norm)) > 0.6:
+            advice.append(f"the most surprising claim (SURPRISE {top['surprise']}: "
+                          f"{top['claim'][:60]!r}) is spoken in the last 40% of the script — "
+                          "consider leading with it.")
 
     if claims and len(domains) < 2 and "ONE-SOURCE-OK:" not in body:
         advice.append(

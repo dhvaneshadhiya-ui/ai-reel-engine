@@ -232,6 +232,12 @@ silently disabled the frame checks for weeks.
 - **Research starts with the `reel-research` skill** (2026-09-17, adapted from
   LangChain's MIT `web-research`): plan with required subtopics per format →
   parallel research agents → ledger + feature/visual inventories + viewer questions.
+- **Script & packaging rules (user, 2026-09-17):** structure.md carries a CONFIRMATION
+  BEAT (2-5s proof on screen; G70) and 3+ VIEWER QUESTIONS answered by script words
+  (propose refuses otherwise); ledger claims carry SURPRISE 1-100. **AI disclosure on
+  every post:** Instagram `AI LABEL: on` + YouTube `ALTERED CONTENT: yes` AND a caption
+  line ("The presenter's face and voice in this video are AI-generated.") —
+  packaging_check refuses without them.
 - **Capture web sources on MOBILE.** `tools/capture.mjs` defaults to it
   (1080x2340). A desktop grab fills 42% of a 9:16 frame with unreadable text.
   `--desktop` is the exception, not the default. Gate G29.

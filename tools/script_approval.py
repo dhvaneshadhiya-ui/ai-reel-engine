@@ -154,6 +154,54 @@ def structure_problems(slug: str) -> list[str]:
         out.append("unfilled <placeholders>")
     if not any(s in body.lower() for s in SHAPES):
         out.append("no S17 shape named")
+    # 2026-09-17 (user): a CONFIRMATION BEAT and VIEWER QUESTIONS are part of
+    # the structure. Jobs created before then are grandfathered.
+    if _job_created(slug) >= "2026-09-17":
+        cb = re.search(r"## CONFIRMATION BEAT[^\n]*\n(.*?)(?=\n## |\Z)", body, re.S)
+        if not cb or len(cb.group(1).strip()) < 20:
+            out.append("no CONFIRMATION BEAT (what the viewer sees at 2-5s that proves the hook)")
+        vq = re.search(r"## VIEWER QUESTIONS[^\n]*\n(.*?)(?=\n## |\Z)", body, re.S)
+        qs = re.findall(r"^\s*-\s*Q:", vq.group(1), re.M) if vq else []
+        if len(qs) < 3:
+            out.append("fewer than 3 VIEWER QUESTIONS ('- Q: ... A: \"script words\"')")
+    return out
+
+
+def _job_created(slug: str) -> str:
+    try:
+        return str(json.loads(paths(slug)[2].with_name("brief.json").read_text()).get("created_at", ""))[:10]
+    except (OSError, ValueError):
+        return ""
+
+
+def viewer_question_problems(slug: str, spoken: str) -> list[str]:
+    """Each viewer question must be ANSWERED by words the script actually says,
+    or marked NOT ANSWERED with a reason. Adapted 2026-09-17 from the 'value
+    loop' / viewer-first idea in short-form scripting skills — the PairPods v1
+    script never answered 'what does it do' or 'how do I set it up'."""
+    st_p = paths(slug)[2].with_name("structure.md")
+    if not st_p.exists() or _job_created(slug) < "2026-09-17":
+        return []
+    vq = re.search(r"## VIEWER QUESTIONS[^\n]*\n(.*?)(?=\n## |\Z)", st_p.read_text(), re.S)
+    if not vq:
+        return []
+    norm = lambda s: re.sub(r"[^a-z0-9 ]", "", s.lower())
+    said = " ".join(norm(spoken).split())
+    out = []
+    for line in re.findall(r"^\s*-\s*Q:.*$", vq.group(1), re.M):
+        m = re.search(r"A:\s*(.*)$", line)
+        if not m:
+            out.append(f"no answer given: {line.strip()[:80]}")
+            continue
+        ans = m.group(1).strip()
+        if ans.upper().startswith("NOT ANSWERED"):
+            if len(ans) < 20:
+                out.append(f"NOT ANSWERED needs a reason: {line.strip()[:80]}")
+            continue
+        quote = re.search(r'"([^"]+)"', ans)
+        q = " ".join(norm(quote.group(1) if quote else ans).split())
+        if not q or q not in said:
+            out.append(f"answer is not words the script says: {ans[:80]}")
     return out
 
 
@@ -188,11 +236,14 @@ def require_structure(slug: str) -> Path:
             f"  {st_p} has unfilled <placeholders>.\n"
             "  Decide the shape, the promise and the loop before drafting —\n"
             "  that is the writing, not paperwork around it.")
-    if probs:
+    if "no S17 shape named" in probs:
         sys.exit(
             f"STRUCTURE NAMES NO SHAPE — {slug}\n"
             f"  {st_p} must name one of framework S17's shapes:\n"
             f"  {', '.join(SHAPES)}.")
+    if probs:
+        sys.exit(f"STRUCTURE INCOMPLETE — {slug}\n  " + "\n  ".join(probs) +
+                 f"\n  Add the missing sections to {st_p} before drafting.")
     return st_p
 
 
@@ -419,6 +470,11 @@ def cmd_propose(slug: str) -> None:
     # try/except too: a precondition an unrelated ImportError can skip is not
     # a precondition.
     require_humanized(slug, spoken)
+    _vq = viewer_question_problems(slug, spoken)
+    if _vq:
+        sys.exit("VIEWER QUESTIONS NOT ANSWERED — " + slug + "\n  " + "\n  ".join(_vq) +
+                 "\n  Each question in structure.md must be answered by words the script says,"
+                 "\n  or marked NOT ANSWERED — <why>.")
 
     findings: list[str] | None = None
     try:

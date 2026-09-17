@@ -69,8 +69,12 @@ Read every findings file, then write:
   source supports), `## SEARCHED` (dated, the four questions), `INDEPENDENT-CHECK:`.
 - `jobs/<slug>/research/visuals.md` — every official visual asset found, URL, what it
   shows, and which beat it could prove.
-- `jobs/<slug>/research/viewer-questions.md` — the 3–5 questions a viewer would ask
-  about this topic. The script must answer each one or say why not.
+- `## VIEWER QUESTIONS` in `jobs/<slug>/structure.md` — the 3–5 questions a viewer would
+  ask, each as `- Q: ... A: "<script words>"` (or `A: NOT ANSWERED — why`); propose
+  refuses an answer the script does not actually say.
+- `SURPRISE: <1-100>` on every claim — how many viewers would NOT already know it.
+- `## CONFIRMATION BEAT (2-5s)` in structure.md — what the viewer SEES right after the
+  hook that proves it (from visuals.md). G70 advises when nothing on screen does.
 
 Then run `python3 tools/research_check.py <slug>` and the source check
 (`source-verification` if installed, else `fact-check-workflow`) on anything

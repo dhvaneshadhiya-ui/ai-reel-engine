@@ -8532,3 +8532,20 @@ Measured on the PairPods render at every third spoken word: content 65-72%,
 caption ink 74-79%, 0 overlaps, 0 frames with ink below 80%. lint_frames runs the
 same measurement on every captioned slide/stage and BLOCKS an overlap or ink in
 the bottom 20% (negative-tested on a synthetic frame).
+
+## 2026-09-17 (5) — script-writing skills reviewed; three ideas built in
+
+Searched the skills registry for script writing (reels/shorts/TikTok scripts, hooks,
+storytelling, voiceover). None installed: short-video-scripter (aaron-he-zhu) depends on
+its own memory/registry system; reels-scripting (charlie947) needs Apify + Gemini keys;
+copywriting-hooks is for articles; voiceover-direction is for human talent. Built in:
+1. **Confirmation beat** — structure.md `## CONFIRMATION BEAT (2-5s)`; G70 advises when
+   no scene at 2-5s shows proof (product/screen/document/number). five-free-ai-tools
+   would have been flagged (logo grid only).
+2. **Viewer questions + surprise score** — structure.md `## VIEWER QUESTIONS` (3+,
+   each answered by words the script says, or NOT ANSWERED with a reason; propose
+   refuses); ledger `SURPRISE: 1-100`, advice when the most surprising claim sits in the
+   last 40%. Grandfathered for jobs created before 2026-09-17.
+3. **AI disclosure** (user: platform label AND caption line) — every reel uses the AI
+   digital twin and cloned voice. packaging_check requires Instagram `AI LABEL: on`,
+   YouTube `ALTERED CONTENT: yes`, and a caption sentence naming the AI presenter/voice.

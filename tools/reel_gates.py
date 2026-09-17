@@ -2949,6 +2949,36 @@ def check_beats(beats: dict, vo_end: float | None = None,
             "G47 showCredits is on but no scene carries a `credit` — the "
             "requested on-screen credits would draw nothing.")
 
+    # G70 — THE CONFIRMATION BEAT (2026-09-17). ADVICE.
+    # Right after the hook (2-5s) the viewer should SEE proof that the promise is
+    # real — the product working, the document, the screen — not only hear it.
+    # From the retention-gate model in short-form scripting practice ("the beat
+    # most drafts skip"); advice, because a strong spoken reveal can carry it.
+    PROOF_TYPES = {"sourceread", "receipt", "annotatezoom", "deviceframe", "xpost", "screenstep",
+                   "floatcard", "split", "comparesplit", "hcompare", "statcard", "chart", "counter"}
+    def _is_proof(sc: dict) -> bool:
+        t_ = sc.get("type")
+        if t_ == "footage":
+            return "avatar-master" not in str(sc.get("src") or "")
+        if t_ in PROOF_TYPES:
+            return True
+        if t_ == "slide":
+            return any(b.get("kind") in ("screen", "devices", "spotlight") for b in sc.get("blocks") or [])
+        if t_ == "stage":
+            return any(e.get("kind") in ("image", "number") for e in sc.get("elements") or [])
+        return False
+    _t = 0.0
+    _window = []
+    for sc in scenes:
+        s0, s1 = _t, _t + float(sc.get("durationSec") or 0)
+        if s0 < 5.0 and s1 > 2.0:
+            _window.append(sc)
+        _t = s1
+    if scenes and not any(_is_proof(sc) for sc in _window):
+        errors.append(
+            "G70 nothing on screen at 2-5s proves the hook — show the product doing it, the "
+            "document or the number (the confirmation beat), not only the presenter or type.")
+
     # G45 (RULE 1, blocking) + G46 (craft, advice) — WHERE A CAPTION MAY SIT.
     #
     # SPLIT 2026-08-18, the day after G45 was written, because as first written
