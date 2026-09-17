@@ -15,3 +15,7 @@ Judgement calls recorded, not questions:
 - Defaults applied: opens on a slide with the presenter in a corner circle, ends
   on a CTA end card ("link in the pinned comment") with the presenter circle,
   music on, no on-screen credits.
+
+## ANSWERS (user, 2026-09-17)
+1. Not sponsored — no disclosure needed.
+2. Keep the Apple built-in option.

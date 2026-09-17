@@ -1041,6 +1041,22 @@ try:
     if _h:
         print(f"  FAIL a slide revealing on the carousel's rhythm tripped a gate: {_h[0][:120]}"); raise SystemExit(1)
     _counted("G04/G65 silent — a slide that keeps revealing, with a word-timed pill")
+
+    # G01: a CTA end-card slide may hold ~2s past the last word to be read
+    _s = copy.deepcopy(BASE)
+    _last = len(_s["scenes"]) - 1
+    _slide_scene = dict(type="slide", cta=True, durationSec=_s["scenes"][_last]["durationSec"], covers="benchmark",
+                        headline="Link in the [[pinned comment]]",
+                        blocks=[{"id": "t", "kind": "text", "text": "Free download"}], moves=[])
+    _s["scenes"][_last] = _slide_scene
+    try:
+        _adv = check_beats(_s, vo_end=vo_end_of(_s) - 1.5, manifest=MANIFEST, vo_words=VO_WORDS)
+        _h = [a for a in _adv if "G01" in a]
+    except GateError as _e:
+        _h = [a for a in (list(_e.advice) + [str(_e)]) if "G01" in str(a)]
+    if _h:
+        print(f"  FAIL G01 froze a CTA end card held 1.5s to be read: {_h[0][:100]}"); raise SystemExit(1)
+    _counted("G01 silent — a CTA end-card slide may hold past the last word")
 finally:
     _black.unlink(missing_ok=True)
 

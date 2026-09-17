@@ -8457,3 +8457,27 @@ config snippet) — use a plain `slide` `text` block instead, which has no assum
 source platform and no UI chrome to match or mismatch. Don't default to `xpost`
 just because the source happens to be a tweet; ask whether the SHAPE of what's
 being shown is "a quote" or "a document."
+
+## 2026-09-17 — mac-multiple-headphones (PairPods): second animated-format reel
+
+Pinned-comment CTA, not sponsored (user), Apple's built-in route kept on purpose.
+What this reel taught the engine:
+- **The VO came back fast.** Take 1: 3.09 w/s overall, 3.72 within words (five-free:
+  3.34). Two calmer-tagged takes converged near 3.0 / 3.6, so a fourth was not bought.
+  Sentence-end silences were lengthened to 0.55s (0.7s at paragraph breaks) on take B
+  — inserted silence, no stretching, no pitch change — landing 51.1s, 2.70 w/s.
+- **End cards need a readable hold.** A 1.9s end card was too short; 1.2s of tail
+  silence was added and the CTA face clip regenerated from the longer slice (the first
+  CTA clip, ~2 credits, went unused). G01 now allows a `cta` slide the same 2.5s tail
+  as other code-drawn end cards.
+- **XL ask beside the presenter circle broke into four lines** ("Link in / the /
+  pinned / comment"). With a presenter, the XL headline now sits below the circle at
+  full width (112px) and logo tiles shrink on that card so it stays above 80%.
+- **[HOOK DEAD SPACE] blocked** the first render: rows that land on later words leave
+  the opening frame 57% empty. The hook page shows its blocks from frame 0 and uses
+  highlights for the spoken beats.
+- new_job no longer invents a CTA keyword / DM file; validate_job only wants
+  giveaway.md for a keyword CTA.
+Credits: HeyGen ~13 (8.3s hook + 3.4s CTA + unused 2.2s), ElevenLabs 3 takes.
+Treatment: hero + rows (problem), hero + rows with strike (built-in catch), swap with
+strike (built-in → PairPods), 7-row capability list, swap + text (caveat), XL end card.

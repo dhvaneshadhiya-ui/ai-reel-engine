@@ -928,7 +928,10 @@ def check_beats(beats: dict, vo_end: float | None = None,
         ANIMATED_TAIL = {"commentcta", "typecard", "endquestion", "logobeat",
                          "specsheet", "statcard", "wordcascade", "checklist"}
         last_type = str(scenes[-1].get("type", "")) if scenes else ""
-        tail_max = 2.5 if last_type in ANIMATED_TAIL else TAIL_MAX
+        # a slide CTA end card (2026-09-17) is the same kind of scene: it keeps
+        # moving (glow, presenter circle) and needs a beat to be read
+        _cta_slide = last_type == "slide" and bool(scenes[-1].get("cta"))
+        tail_max = 2.5 if (last_type in ANIMATED_TAIL or _cta_slide) else TAIL_MAX
         reel_end = vo_end + tail_max
         if total > reel_end + 0.01:
             errors.append(

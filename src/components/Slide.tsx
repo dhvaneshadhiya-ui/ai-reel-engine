@@ -132,6 +132,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
   const t = frame / fps;
   const dur = (scene as { durationSec?: number }).durationSec ?? durationInFrames / fps;
   const C = scene.theme === "light" ? LIGHT : DARK;
+  const xl = scene.headlineSize === "xl";
   const toneColor = (tone?: string) => (tone === "cost" ? C.red : tone === "free" ? C.blue : C.ink);
   const moves = scene.moves ?? [];
   const at = (d: string, target: string) => moves.find((m) => m.do === d && m.target === target)?.at;
@@ -280,12 +281,12 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
             {b.items.map((it, i) => {
               const p = ramp(t, base + 0.1 * i, 0.3);
               return (
-                <div key={i} style={{ width: (COL - 40) / 3, height: 390, background: C.card, borderRadius: 28,
+                <div key={i} style={{ width: (COL - 40) / 3, height: xl && scene.presenter ? 300 : 390, background: C.card, borderRadius: 28,
                   border: `2px solid ${C.line}`, display: "flex", flexDirection: "column", alignItems: "center",
                   justifyContent: "center", opacity: p, transform: `translateY(${Math.round((1 - p) * 24)}px)` }}>
                   <div style={{ display: "flex",
                     flexDirection: "column", alignItems: "center" }}>
-                    <Tile src={it.logo} tile={it.tile} size={170} />
+                    <Tile src={it.logo} tile={it.tile} size={xl && scene.presenter ? 130 : 170} />
                     <div style={{ marginTop: 20, font: `600 34px/1.2 ${FONT}`, color: C.ink, textAlign: "center",
                       padding: "0 10px" }}>{it.name}</div>
                   </div>
@@ -327,12 +328,19 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
             <span style={{ color: C.muted }}>{scene.index ?? ""}</span>
           </div>
         ) : null}
-        {scene.eyebrow ? (
-          <div style={{ font: `600 38px ${FONT}`, color: C.blue, maxWidth: scene.presenter ? COL - PIP - 30 : undefined }}>{scene.eyebrow}</div>
+        {/* An XL end-card ask beside the presenter circle broke into four ragged
+            lines ("Link in / the / pinned / comment", 2026-09-17). With a
+            presenter, the XL headline starts BELOW the circle at full width;
+            the eyebrow keeps the space beside it. */}
+        {scene.eyebrow || (xl && scene.presenter) ? (
+          <div style={{ font: `600 38px ${FONT}`, color: C.blue, maxWidth: scene.presenter ? COL - PIP - 30 : undefined,
+            minHeight: xl && scene.presenter ? PIP : undefined, display: "flex", alignItems: xl && scene.presenter ? "center" : undefined }}>
+            {scene.eyebrow ?? ""}
+          </div>
         ) : null}
-        <div style={{ marginTop: 14, font: `800 ${scene.headlineSize === "xl" ? 128 : 84}px/1.08 ${FONT}`,
-          letterSpacing: scene.headlineSize === "xl" ? -4 : -2.5, color: C.ink,
-          maxWidth: scene.presenter ? COL - PIP - 30 : undefined }}>{headline}</div>
+        <div style={{ marginTop: 14, font: `800 ${xl ? 112 : 84}px/1.08 ${FONT}`,
+          letterSpacing: xl ? -3.5 : -2.5, color: C.ink,
+          maxWidth: scene.presenter && !xl ? COL - PIP - 30 : undefined }}>{headline}</div>
         {/* FILL TO THE 80% LINE (user, 2026-09-16). Blocks start under the
             headline and the cards/rows grow into the page; centring them left a
             gap above and an unfinished lower half, and a dense slide overflowed
