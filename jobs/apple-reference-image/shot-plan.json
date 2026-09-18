@@ -59,31 +59,26 @@
         "iPhone"
       ],
       "tier": "official",
-      "asset_id": "receipt-iphone18pro-product",
+      "asset_id": "reference-image-compare-panels",
       "scene": {
         "type": "receipt",
-        "src": "assets/apple-reference-image/iphone18pro-product.png",
-        "srcWidth": 1080,
-        "srcHeight": 1970,
+        "src": "assets/apple-reference-image/reference-image-compare-panels.jpg",
+        "srcWidth": 780,
+        "srcHeight": 438,
         "backdrop": "black",
         "credit": "Apple",
         "highlights": [
           {
             "at": 0.2,
-            "x": 190,
-            "y": 240,
-            "w": 700,
-            "h": 260
-          },
-          {
-            "at": 1.6,
-            "x": 300,
-            "y": 700,
-            "w": 480,
-            "h": 900
+            "x": 10,
+            "y": 10,
+            "w": 760,
+            "h": 418
           }
         ],
         "captionBottom": 520,
+        "allowSmallReceipt": true,
+        "allowSmallReceiptReason": "Apple's own official 3-panel UI graphic (badge -> compare -> cropped photo) is landscape by construction -- it shows all three iPhone screens side by side to make its point. Cropping to a single phone would fit 9:16 better but would destroy the exact thing that makes this asset worth using: the reveal that the reference image shows a person the published photo crops out.",
         "sfx": [
           {
             "src": "sfx/Camera Shutter.MP3",
