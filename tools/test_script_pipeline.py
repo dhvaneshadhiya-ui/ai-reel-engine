@@ -754,6 +754,52 @@ def run() -> int:
                 _fp += 1
     ok("no false refusals across every shipped script", _fp == 0)
 
+    # 7b2. A product/tutorial reel must record the product's full feature list
+    # and how-to (2026-09-17, PairPods v1 under-researched the app itself).
+    import shutil as _sh, re as _re
+    _src = Path(__file__).resolve().parent.parent / "jobs/mac-multiple-headphones"
+    with tempfile.TemporaryDirectory() as _td:
+        _job = Path(_td) / "jobs" / "fx"
+        _job.mkdir(parents=True)
+        _sh.copy(_src / "structure.md", _job / "structure.md")
+        _full = (_src / "research.md").read_text()
+        (_job / "research.md").write_text(_full)
+        _e, _ = _rc.check_research("fx", None, root=Path(_td))
+        ok("a product reel WITH a feature inventory passes", not any("FEATURE INVENTORY" in x for x in _e))
+        _cut = _re.sub(r"## FEATURES.*?(?=\n## )", "", _full, flags=_re.S)
+        (_job / "research.md").write_text(_cut)
+        _e, _ = _rc.check_research("fx", None, root=Path(_td))
+        ok("a product reel WITHOUT a feature inventory is refused", any("FEATURE INVENTORY" in x for x in _e))
+        (_job / "structure.md").write_text("## SHAPE (S17)\n\nNews: the ruling and what it changes.\n")
+        _e, _ = _rc.check_research("fx", None, root=Path(_td))
+        ok("a news reel does not need a feature inventory", not any("FEATURE INVENTORY" in x for x in _e))
+
+    # 7b3. Viewer questions must be answered by words the script says (2026-09-17)
+    import script_approval as _sa
+    with tempfile.TemporaryDirectory() as _td2:
+        _root = Path(_td2)
+        _j = _root / "jobs" / "vq"
+        _j.mkdir(parents=True)
+        (_j / "brief.json").write_text('{"created_at": "2026-09-18T00:00:00Z"}')
+        (_j / "structure.md").write_text(
+            "## SHAPE (S17)\n\nTutorial.\n\n## CONFIRMATION BEAT (2-5s)\n\nThe real menu flips Share Audio on.\n\n"
+            "## VIEWER QUESTIONS\n\n- Q: what is it? A: \"a free app called PairPods\"\n"
+            "- Q: how do I set it up? A: \"flip Share Audio on\"\n- Q: does it cost? A: NOT ANSWERED — price is in the pinned comment\n")
+        _orig = _sa.paths
+        _sa.paths = lambda slug: (None, None, _j / "script.md")
+        try:
+            _said = "It takes a free app called PairPods. Then flip Share Audio on."
+            ok("viewer questions answered by the script pass", _sa.viewer_question_problems("vq", _said) == [])
+            ok("an answer the script never says is refused",
+               bool(_sa.viewer_question_problems("vq", "It takes an app. Turn it on.")))
+            ok("a structure with confirmation beat + 3 questions has no structure problems",
+               _sa.structure_problems("vq") == [])
+            (_j / "structure.md").write_text("## SHAPE (S17)\n\nTutorial.\n")
+            ok("a new job without CONFIRMATION BEAT / VIEWER QUESTIONS is incomplete",
+               len(_sa.structure_problems("vq")) == 2)
+        finally:
+            _sa.paths = _orig
+
     # 7c. ANGLE FINDINGS MUST BE PROMOTED, not buried among style notes.
     #
     # claude-fable-5-1's script produced "the first 'you' arrives 78% of the
@@ -798,11 +844,21 @@ def run() -> int:
     # because a homeless `HASHTAGS:` line sat directly under `CAPTION:` and
     # read like part of it. These run the rules instead of grepping for them.
     print("\n  -- hashtags land where they are posted --")
-    IG_OK = {"CAPTION": "The one line that does the work.",
+    _AI = " The presenter's face and voice in this video are AI-generated."
+    IG_OK = {"CAPTION": "The one line that does the work." + _AI,
              "FIRST COMMENT": "Would you? #WhatsApp #Meta #Privacy",
-             "ALT TEXT": "A presenter beside the article."}
-    YT_OK = {"TITLE": "A title", "CAPTION": "The description.",
-             "HASHTAGS": "#WhatsApp #Meta #Privacy", "ALT TEXT": "As above."}
+             "ALT TEXT": "A presenter beside the article.", "AI LABEL": "on"}
+    YT_OK = {"TITLE": "A title", "CAPTION": "The description." + _AI,
+             "HASHTAGS": "#WhatsApp #Meta #Privacy", "ALT TEXT": "As above.",
+             "ALTERED CONTENT": "yes"}
+    # AI disclosure (user decision 2026-09-17): platform label AND caption line
+    ok("instagram refuses a post without the AI label switched on",
+       any("AI LABEL" in e for e in _pc.platform_errors("instagram", {**IG_OK, "AI LABEL": ""})))
+    ok("youtube refuses a post without Altered content = yes",
+       any("ALTERED CONTENT" in e for e in _pc.platform_errors("youtube", {**YT_OK, "ALTERED CONTENT": "no"})))
+    ok("a caption with no AI disclosure line is refused",
+       any("AI disclosure" in e for e in _pc.platform_errors(
+           "instagram", {**IG_OK, "CAPTION": "The one line that does the work."})))
     ok("a clean instagram block passes",
        _pc.platform_errors("instagram", IG_OK) == [])
     ok("a clean youtube block passes",

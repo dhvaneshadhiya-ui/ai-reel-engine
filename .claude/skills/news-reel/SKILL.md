@@ -86,6 +86,10 @@ Three times a weak first draft reached the user while the framework sat unread
 is optional. The order below is now enforced: `propose` refuses to run without
 step 2's artifact, and `approve` refuses without a fresh `propose`.
 
+0. **Run the `reel-research` skill first** (2026-09-17): a written plan with required
+   subtopics per format, parallel research agents, then the ledger, visual inventory
+   and viewer questions below. Research that stops when the angle feels settled is
+   the failure it exists for.
 1. **Research first, and it leaves a LEDGER.** Fill `jobs/<slug>/research.md`
    (scaffolded by `new_job.py`) as you research, not after: every load-bearing
    claim gets a TIER (official/multi/single/disputed), a SRC url you actually

@@ -131,6 +131,14 @@ def main() -> None:
         "manifest": public / f"assets/{base}/manifest.json",
         "beats": engine / f"src/beats/{slug}.json",
     }
+    # a DM file is only owed by a comment-keyword CTA (user, 2026-09-16: the CTA
+    # is not always comment-for-a-DM — pinned comment, follow, save...)
+    try:
+        _kw = str(json.loads(required["brief"].read_text()).get("cta_keyword", "")).strip()
+    except (OSError, ValueError):
+        _kw = ""
+    if not _kw:
+        required.pop("giveaway")
     for label, path in required.items():
         if not path.exists():
             errors.append(f"missing {label}: {path}")
@@ -302,7 +310,7 @@ def main() -> None:
     keyword = str(brief.get("cta_keyword", ""))
     if keyword and keyword.lower() not in script_text.lower():
         errors.append(f"CTA keyword {keyword!r} is missing from the final script")
-    if required["giveaway"].stat().st_size < 80:
+    if "giveaway" in required and required["giveaway"].stat().st_size < 80:
         errors.append("giveaway resource is still a placeholder")
 
     print(f"job: {slug}")

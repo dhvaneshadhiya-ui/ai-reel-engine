@@ -1,0 +1,584 @@
+{
+ "format": "howto",
+ "music": false,
+ "facePlan": "bookends",
+ "audio": "assets/mac-multiple-headphones/vo.mp3",
+ "emphasis": [
+  "PairPods",
+  "free"
+ ],
+ "caption_corrections": {
+  "pair pods": "PairPods",
+  "root": "route",
+  "sourced": "source",
+  "audio midi setup": "Audio MIDI Setup"
+ },
+ "shots": [
+  {
+   "start_phrase": "Your Mac can play",
+   "line": "Your Mac can play one movie to two pairs of headphones at the same time. It takes a free app called PairPods, and it beats Apple's own way.",
+   "needs": [
+    "Mac",
+    "movie",
+    "two",
+    "headphones",
+    "free",
+    "PairPods"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "eyebrow": "Mac tip",
+    "headline": "One Mac, [[two]] headphones",
+    "presenter": {
+     "src": "assets/mac-multiple-headphones/avatar-master-hook.mp4",
+     "from": 0.0
+    },
+    "blocks": [
+     {
+      "id": "d",
+      "kind": "devices",
+      "hub": "Your Mac",
+      "items": [
+       "Your AirPods",
+       "Friend's AirPods"
+      ],
+      "h": 815
+     },
+     {
+      "id": "sp",
+      "kind": "spotlight",
+      "logo": "assets/logos/pairpods-icon.png",
+      "name": "PairPods",
+      "overlay": true,
+      "note": "free menu bar app"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "two pairs"
+     },
+     {
+      "do": "show",
+      "target": "sp",
+      "on": "called Pair"
+     }
+    ],
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "First, connect every",
+   "line": "First, connect every pair in Bluetooth settings. Then open PairPods from the menu bar, tick the devices you want, and flip Share Audio on. AirPods, Sony headphones, Samsung Buds, even a Bluetooth speaker.",
+   "needs": [
+    "Bluetooth",
+    "menu",
+    "tick",
+    "Share",
+    "Sony",
+    "speaker"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "eyebrow": "How to use it",
+    "headline": "[[Share]] audio in a few clicks",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "steps",
+      "steps": [
+       "Pair in Bluetooth",
+       "Open the menu bar icon",
+       "Tick devices",
+       "Share Audio on"
+      ]
+     },
+     {
+      "kind": "screen",
+      "width": 540,
+      "height": 884,
+      "id": "sc",
+      "src": "assets/mac-multiple-headphones/ui/step-1.png",
+      "h": 610
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "s.0",
+      "on": "connect every pair"
+     },
+     {
+      "do": "show",
+      "target": "s.1",
+      "on": "then open"
+     },
+     {
+      "do": "show",
+      "target": "s.2",
+      "on": "tick the devices"
+     },
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "tick the devices",
+      "rect": [
+       14,
+       132,
+       290,
+       360
+      ]
+     },
+     {
+      "do": "state",
+      "target": "sc",
+      "on": "you want",
+      "src": "assets/mac-multiple-headphones/ui/step-2.png"
+     },
+     {
+      "do": "show",
+      "target": "s.3",
+      "on": "flip share"
+     },
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "flip share",
+      "rect": [
+       300,
+       0,
+       240,
+       90
+      ]
+     },
+     {
+      "do": "state",
+      "target": "sc",
+      "on": "audio on",
+      "src": "assets/mac-multiple-headphones/ui/step-3.png"
+     },
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "Sony headphones",
+      "rect": [
+       0,
+       0,
+       540,
+       600
+      ],
+      "ring": false
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "share audio on"
+     }
+    ],
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "Once it's on,",
+   "line": "Once it's on, each device gets its own volume slider, so your friend can listen louder than you. You also see every pair's battery and sample rate, and the crown sets the master device the others sync to.",
+   "needs": [
+    "volume",
+    "slider",
+    "louder",
+    "battery",
+    "crown",
+    "master"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "eyebrow": "Per device",
+    "headline": "Each pair, its [[own]] volume",
+    "blocks": [
+     {
+      "kind": "screen",
+      "width": 540,
+      "height": 884,
+      "id": "sc",
+      "src": "assets/mac-multiple-headphones/ui/step-1.png",
+      "h": 800
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "sc",
+      "on": "once it's on"
+     },
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "own volume",
+      "rect": [
+       14,
+       180,
+       512,
+       250
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "its own"
+     },
+     {
+      "do": "state",
+      "target": "sc",
+      "on": "listen louder",
+      "src": "assets/mac-multiple-headphones/ui/step-2.png"
+     },
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "battery and sample",
+      "rect": [
+       18,
+       180,
+       235,
+       44
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "the crown",
+      "rect": [
+       60,
+       292,
+       60,
+       44
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "others sync",
+      "rect": [
+       14,
+       132,
+       512,
+       300
+      ],
+      "ring": false
+     }
+    ],
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "And if a pair",
+   "line": "And if a pair drops out, PairPods waits five, ten or thirty seconds for it to reconnect.",
+   "needs": [
+    "drops",
+    "waits",
+    "five",
+    "ten",
+    "thirty",
+    "reconnect"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "eyebrow": "Auto-reconnect",
+    "headline": "A pair drops out? It [[waits]]",
+    "blocks": [
+     {
+      "kind": "screen",
+      "width": 540,
+      "height": 884,
+      "id": "sc",
+      "src": "assets/mac-multiple-headphones/ui/step-3.png",
+      "h": 540
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Wait for it",
+        "v": "5, 10 or 30 seconds",
+        "tone": "free"
+       },
+       {
+        "k": "Or",
+        "v": "Off"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "drops out",
+      "rect": [
+       14,
+       608,
+       512,
+       70
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Pods waits"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "10 or 30"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "to reconnect"
+     }
+    ],
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "Compare Apple's",
+   "line": "Compare Apple's route, a Multi-Output Device in Audio MIDI Setup. It works, but it takes away your volume keys.",
+   "needs": [
+    "Compare",
+    "Apple's",
+    "Device",
+    "Audio",
+    "volume",
+    "keys"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "eyebrow": "Apple's built-in route",
+    "headline": "It works, minus your [[volume keys]]",
+    "blocks": [
+     {
+      "id": "w",
+      "kind": "swap",
+      "left": {
+       "name": "Multi-Output Device",
+       "price": "Built in",
+       "note": "Audio MIDI Setup"
+      },
+      "right": {
+       "logo": "assets/logos/pairpods-icon.png",
+       "name": "PairPods",
+       "price": "Sliders",
+       "tone": "free",
+       "note": "per device"
+      }
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Volume keys",
+        "v": "Don't work",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "w.left",
+      "on": "compare"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "it works"
+     },
+     {
+      "do": "strike",
+      "target": "r.0",
+      "on": "takes away"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "volume keys"
+     },
+     {
+      "do": "show",
+      "target": "w.right",
+      "on": "volume keys"
+     }
+    ],
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "One catch",
+   "line": "One catch: sync isn't guaranteed, and different models can sound slightly off-pitch, so matching pairs work best.",
+   "needs": [
+    "catch",
+    "sync",
+    "guaranteed",
+    "different",
+    "models",
+    "matching"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "eyebrow": "One catch",
+    "headline": "Sync isn't [[guaranteed]]",
+    "blocks": [
+     {
+      "id": "w",
+      "kind": "waves",
+      "labels": [
+       "Your AirPods",
+       "A different model"
+      ],
+      "h": 600
+     },
+     {
+      "id": "tips",
+      "kind": "tips",
+      "watch": "Different models can sound slightly off-pitch",
+      "best": "Matching pairs"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "isn't guaranteed"
+     },
+     {
+      "do": "drift",
+      "target": "w",
+      "on": "different models"
+     },
+     {
+      "do": "show",
+      "target": "tips.watch",
+      "on": "one catch"
+     },
+     {
+      "do": "show",
+      "target": "tips.best",
+      "on": "sync isn't"
+     }
+    ],
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "Pair Pods is free",
+   "line": "PairPods is free, open source and needs macOS 13.5 or later.",
+   "needs": [
+    "free",
+    "open",
+    "macOS",
+    "later"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "eyebrow": "PairPods",
+    "headline": "Free and [[open source]]",
+    "blocks": [
+     {
+      "id": "h",
+      "kind": "hero",
+      "side": {
+       "logo": "assets/logos/pairpods-icon.png",
+       "name": "PairPods",
+       "price": "Free",
+       "tone": "free",
+       "note": "menu bar app"
+      }
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Licence",
+        "v": "MIT, open source",
+        "tone": "free"
+       },
+       {
+        "k": "Needs",
+        "v": "macOS 13.5 or later"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "open sourced"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "open sourced"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "needs macOS"
+     }
+    ],
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "The link is in",
+   "line": "The link is in the pinned comment.",
+   "needs": [
+    "link",
+    "pinned",
+    "comment"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "cta": true,
+    "headlineSize": "xl",
+    "eyebrow": "Get PairPods",
+    "headline": "Link in the [[pinned comment]]",
+    "presenter": {
+     "src": "assets/mac-multiple-headphones/avatar-master-cta.mp4",
+     "from": 0.26
+    },
+    "blocks": [
+     {
+      "kind": "screen",
+      "id": "sc",
+      "width": 1320,
+      "height": 824,
+      "src": "assets/mac-multiple-headphones/ui/showcase.png",
+      "h": 520
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "pinned comment"
+     }
+    ],
+    "type": "slide"
+   }
+  }
+ ],
+ "noMusicReason": "user, 2026-09-17: remove the background music, make the best use of sound effects"
+}

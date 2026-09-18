@@ -256,6 +256,13 @@ def main():
                     "priceladder"}
         frac = dead_space_frac(img)
         limit = 0.70 if typ in DESIGNED else 0.30
+        # A designed PAGE (slide/stage) must keep the bottom 20% clear — that is
+        # Instagram's and YouTube's UI zone, and [PLATFORM ZONE] blocks content
+        # there. Counting that band as "dead space" made the two checks demand
+        # opposite things (PairPods hook, 2026-09-17). Measure it above 80%.
+        if typ in ("slide", "stage"):
+            w0, h0 = img.size
+            frac = dead_space_frac(img.crop((0, 0, w0, int(h0 * 0.8))))
         if i == 0:
             limit = 0.55          # the hook may never read as an empty field
         if frac > limit:
@@ -361,14 +368,51 @@ def main():
             if not ink:
                 continue
             bottom = max(ink) / 192
+            captioned = sc.get("hideCaptions") is False
             if bottom > 0.82:
                 flags.append(
                     f"[PLATFORM ZONE] scene {i:02d} ({sc['type']}): content runs to {bottom:.0%} of the "
                     "height — below 80% Instagram and YouTube draw their own UI over it")
-            elif bottom < 0.70:
+            elif bottom < (0.62 if captioned else 0.70):
                 flags.append(
                     f"[LOWER HALF EMPTY] scene {i:02d} ({sc['type']}): content stops at {bottom:.0%} — "
-                    "let cards and rows run down to ~75-80% so the page does not look unfinished")
+                    + ("with captions, let content run down to ~70% (captions sit at 75-78%)" if captioned
+                       else "let cards and rows run down to ~75-80% so the page does not look unfinished"))
+            # CAPTION BAND (user spec, 2026-09-17): content to ~70%, captions at
+            # 75-78%, only the bottom 20% clear, and the two never touch. Sampled
+            # on a spoken word so the caption is on screen: the lowest ink cluster
+            # is the caption, the one above it is the page.
+            if captioned:
+                words_path = ROOT / f"public/assets/{slug}/vo.json"
+                try:
+                    _vo = json.loads(words_path.read_text())
+                    _w = _vo.get("words") or [x for s in _vo.get("segments", []) for x in s.get("words", [])]
+                except (OSError, ValueError):
+                    _w = []
+                _s0 = _end - float(sc["durationSec"])
+                for _x in [x for x in _w if _s0 + 0.4 < float(x["start"]) < _end - 0.3][::3]:
+                    raw = _sp.run(["ffmpeg", "-v", "error", "-ss", f"{float(_x['start']) + 0.15:.2f}", "-i", str(video),
+                                   "-frames:v", "1", "-vf", "scale=270:480,format=gray", "-f", "rawvideo", "-"],
+                                  capture_output=True).stdout
+                    if len(raw) != 270 * 480:
+                        continue
+                    rows = [y for y in range(480) if sum(1 for x in range(270) if raw[y * 270 + x] > 60) > 2]
+                    if not rows:
+                        continue
+                    clusters, st, pv = [], rows[0], rows[0]
+                    for r in rows[1:]:
+                        if r - pv > 6:
+                            clusters.append((st, pv)); st = r
+                        pv = r
+                    clusters.append((st, pv))
+                    if clusters[-1][1] / 480 > 0.80:
+                        flags.append(f"[PLATFORM ZONE] scene {i:02d} ({sc['type']}): caption runs to "
+                                     f"{clusters[-1][1] / 480:.0%} at {float(_x['start']):.1f}s — the bottom 20% must stay clear")
+                        break
+                    if len(clusters) < 2:
+                        flags.append(f"[CAPTION OVERLAP] scene {i:02d} ({sc['type']}): the caption merges with the page at "
+                                     f"{float(_x['start']):.1f}s — content must stop above the caption band (~70%)")
+                        break
 
     # caption-overlap advisory: display-type scenes that force chips ON
     for i, s in enumerate(scenes):
@@ -382,7 +426,7 @@ def main():
     # Severity is DERIVED, never typed. See the verdict block below for why.
     from reel_gates import BLOCKING_RULES
     _GATE_OF = {"[PACING]": ("G03", "G04"), "[CLIP REUSE]": ("G07",)}
-    HARD_ALWAYS = ("[EDGE TEXT]", "[DUPLICATE]", "[HOOK DEAD SPACE]", "[PLATFORM ZONE]")
+    HARD_ALWAYS = ("[EDGE TEXT]", "[DUPLICATE]", "[HOOK DEAD SPACE]", "[PLATFORM ZONE]", "[CAPTION OVERLAP]")
 
     def _is_hard(f: str) -> bool:
         if f.startswith(HARD_ALWAYS):

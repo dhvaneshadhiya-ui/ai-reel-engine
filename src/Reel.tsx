@@ -359,6 +359,7 @@ export const Reel: React.FC<{ beats: BeatSheet }> = ({ beats }) => {
         captions={beats.captions}
         mode={beats.captionStyle}
         emphasis={beats.emphasis}
+        credits={Boolean(beats.showCredits)}
         positions={(() => {
           const out: { start: number; end: number; bottom: number }[] = [];
           let c = 0;

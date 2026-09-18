@@ -26,12 +26,13 @@ import sheet22 from "./beats/iphone18-colors-nomusic.json";
 import sheet23 from "./beats/iphone18-colors.json";
 import sheet24 from "./beats/iphone18-split.json";
 import sheet25 from "./beats/mac-mini-m6-m5pro.json";
-import sheet26 from "./beats/made-by-google-26.json";
-import sheet27 from "./beats/qualcomm-chip-hike.json";
-import sheet28 from "./beats/seedance-25.json";
-import sheet29 from "./beats/september-preview-nomusic.json";
-import sheet30 from "./beats/september-preview.json";
-import sheet31 from "./beats/whatsapp-agents.json";
+import sheet26 from "./beats/mac-multiple-headphones.json";
+import sheet27 from "./beats/made-by-google-26.json";
+import sheet28 from "./beats/qualcomm-chip-hike.json";
+import sheet29 from "./beats/seedance-25.json";
+import sheet30 from "./beats/september-preview-nomusic.json";
+import sheet31 from "./beats/september-preview.json";
+import sheet32 from "./beats/whatsapp-agents.json";
 
 export const beatSheets = [
   sheet0,
@@ -66,4 +67,5 @@ export const beatSheets = [
   sheet29,
   sheet30,
   sheet31,
+  sheet32,
 ] as unknown as BeatSheet[];

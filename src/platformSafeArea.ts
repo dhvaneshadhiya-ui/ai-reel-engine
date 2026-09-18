@@ -151,5 +151,18 @@ export const captionFloorPx = (frameH: number): number =>
  * top of Instagram's account row) is not composition, it is a frame the author
  * could not see. Seven scenes of iphone-fold-ultra carried exactly that.
  */
-export const clampCaptionBottom = (bottom: number, frameH: number): number =>
-  Math.max(bottom, captionFloorPx(frameH));
+export const clampCaptionBottom = (bottom: number, frameH: number, credits = true): number =>
+  Math.max(bottom, credits ? captionFloorPx(frameH) : NO_CREDIT_CAPTION_FLOOR(frameH));
+
+/**
+ * With on-screen credits OFF (the default since 2026-09-16) there is no credit
+ * lane to keep clear, only the platform's own bottom 20% (SAFE_RECT.y1 = 0.80).
+ * The caption's lowest edge may sit on that line plus 20px of air, which puts
+ * the chips at ~75-78% — the user's layout (2026-09-17): content to ~70%,
+ * captions 75-78%, only the bottom 20% clear.
+ */
+export const NO_CREDIT_CAPTION_FLOOR = (frameH: number): number =>
+  Math.round(frameH * (1 - SAFE_RECT.y1)) + 20;
+
+/** Where captions sit on a designed slide/stage page when credits are off. */
+export const SLIDE_CAPTION_BOTTOM = 422;

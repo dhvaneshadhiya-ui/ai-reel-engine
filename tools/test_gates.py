@@ -1041,6 +1041,22 @@ try:
     if _h:
         print(f"  FAIL a slide revealing on the carousel's rhythm tripped a gate: {_h[0][:120]}"); raise SystemExit(1)
     _counted("G04/G65 silent — a slide that keeps revealing, with a word-timed pill")
+
+    # G01: a CTA end-card slide may hold ~2s past the last word to be read
+    _s = copy.deepcopy(BASE)
+    _last = len(_s["scenes"]) - 1
+    _slide_scene = dict(type="slide", cta=True, durationSec=_s["scenes"][_last]["durationSec"], covers="benchmark",
+                        headline="Link in the [[pinned comment]]",
+                        blocks=[{"id": "t", "kind": "text", "text": "Free download"}], moves=[])
+    _s["scenes"][_last] = _slide_scene
+    try:
+        _adv = check_beats(_s, vo_end=vo_end_of(_s) - 1.5, manifest=MANIFEST, vo_words=VO_WORDS)
+        _h = [a for a in _adv if "G01" in a]
+    except GateError as _e:
+        _h = [a for a in (list(_e.advice) + [str(_e)]) if "G01" in str(a)]
+    if _h:
+        print(f"  FAIL G01 froze a CTA end card held 1.5s to be read: {_h[0][:100]}"); raise SystemExit(1)
+    _counted("G01 silent — a CTA end-card slide may hold past the last word")
 finally:
     _black.unlink(missing_ok=True)
 
@@ -1553,8 +1569,8 @@ CASES = [
     # 422 is the credit's own baseline: clear of the platform, on our credit.
     # It must ADVISE, not block — asserted here because the first draft of G45
     # blocked it, which put 183px of our own taste behind an R1 badge.
-    (lambda s: s["scenes"][1].__setitem__("captionBottom", 422),
-     "G46", "a caption on the credit lane but clear of the platform"),
+    (lambda s: s.update(showCredits=True) or s["scenes"][1].__setitem__("captionBottom", 422),
+     "G46", "a caption on the credit lane (credits on) but clear of the platform"),
     # 2026-08-20 — focusY + zoom, added for camera-snap cuts. G48 is RENDER:
     # each of these paints the black backdrop rather than the picture, which is
     # why it blocks. One case per failing field, since they are separate reads.
@@ -1603,6 +1619,11 @@ CASES.append((lambda s: s["scenes"].__setitem__(0, {
                   "unit": "stars", "durationSec": 2.0,
                   "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.582}]}),
               "G51", "a statcard with no rows (invented stat/unit shape)"))
+
+# G70: 2-5s shows only the presenter and type — no proof of the hook.
+CASES.append((lambda s: (s["scenes"][1].update(type="typecard", kinetic={"text": "BIG CLAIM"}),
+                         s["scenes"][2].update(src="assets/x/avatar-master-169.mp4")),
+              "G70", "nothing at 2-5s proves the hook"))
 
 for mutate, gate, label in CASES:
     expect_fail(mutate, gate, label)
@@ -1682,6 +1703,19 @@ if _hits:
     print(f"  FAIL credits fired on a reel that never asked for them: {_hits[0][:90]}")
     raise SystemExit(1)
 _counted("G14/G47 silent — credits are off unless the user asks")
+
+# With credits off there is no credit lane: captions at 75-78% (bottom 422) are
+# the user's layout (2026-09-17) and G46 stays silent.
+_s = copy.deepcopy(BASE)
+_s.pop("showCredits", None)
+_s["scenes"][1]["captionBottom"] = 422
+try:
+    _hits = [a for a in check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS) if "G46" in a or "G45" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G46" in str(a) or "G45" in str(a)]
+if _hits:
+    print(f"  FAIL G46 flagged captions at 78% with credits off: {_hits[0][:90]}"); raise SystemExit(1)
+_counted("G45/G46 silent — captions at 75-78% when credits are off")
 
 # G39 vs whisper mishears (2026-08-25): whisper is NOT ground truth for what
 # was said — G21 learned this at 100% false positives. When `covers` is

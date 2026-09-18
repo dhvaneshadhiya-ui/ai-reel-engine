@@ -108,8 +108,7 @@ def main() -> None:
         raise SystemExit(f"news-reels engine not found: {engine}")
 
     keyword = re.sub(r"[^A-Z0-9]", "", args.cta_keyword.upper())
-    if not keyword:
-        keyword = re.sub(r"[^A-Z0-9]", "", slug.split("-")[0].upper())[:14] or "GUIDE"
+    # no keyword unless one is given: most CTAs are not comment-for-a-DM (2026-09-16)
 
     brief = {
         "slug": slug,
@@ -202,7 +201,7 @@ def main() -> None:
             "## CLAIMS\n\n"
             "- CLAIM: <the load-bearing claim, in your words>\n"
             "  TIER: <official|multi|single|disputed>\n"
-            "  SPOKEN: \"<the exact script words that carry it>\"\n"
+            "  SPOKEN: \"<the exact script words that carry it>\"\n  SURPRISE: <1-100: how many viewers would NOT already know this>\n"
             "  SRC: <https://...>\n"
             "  VIA: <the ULTIMATE source the SRC cites — leaker, agency, own\n"
             "       testing; one line per independent origin, or delete>\n\n"
@@ -261,6 +260,12 @@ def main() -> None:
             "Paid off: <where, and how the ending returns to it per S18>\n\n"
             "## WHAT -> WHY -> SO WHAT (S7)\n\n"
             "<the translation that turns the headline fact into viewer meaning>\n\n"
+            "## CONFIRMATION BEAT (2-5s)\n\n"
+            "<right after the hook: what the viewer SEES that proves the promise\n"
+            " is real — the product doing it, the document, the number on screen>\n\n"
+            "## VIEWER QUESTIONS\n\n"
+            "<3-5 questions a viewer would ask, each answered by the script:\n"
+            " - Q: ...  A: \"<the script words that answer it>\"  (or A: NOT ANSWERED — why)>\n\n"
             "## WHAT WAS CUT (S11, S21)\n\n"
             "<facts left out, each with why — momentum beats density>\n\n"
             "## SOURCES\n\n"
@@ -295,13 +300,16 @@ def main() -> None:
             "FIRST COMMENT: <posted as its own comment: the question, then the\n"
             " 3-5 hashtags at the end>\n"
             "ALT TEXT: <one line describing the video for people who cannot\n"
-            " see it>\n\n"
+            " see it>\n"
+            "AI LABEL: on  (Advanced settings → Add AI label; the CAPTION also\n"
+            " carries: The presenter's face and voice in this video are AI-generated.)\n\n"
             "## youtube\n\n"
             "TITLE: <under 100 chars>\n"
             "CAPTION: <the description. No hashtags in this field.>\n"
             "HASHTAGS: <3-5, appended to the description; the first three show\n"
             " above the title>\n"
             "ALT TEXT: <as above>\n"
+            "ALTERED CONTENT: yes  (YouTube Studio → Altered content → Yes)\n"
         ),
     )
     (engine / f"_sources/assets/{slug}").mkdir(parents=True, exist_ok=True)

@@ -8458,6 +8458,98 @@ source platform and no UI chrome to match or mismatch. Don't default to `xpost`
 just because the source happens to be a tweet; ask whether the SHAPE of what's
 being shown is "a quote" or "a document."
 
+## 2026-09-17 — mac-multiple-headphones (PairPods): second animated-format reel
+
+Pinned-comment CTA, not sponsored (user), Apple's built-in route kept on purpose.
+What this reel taught the engine:
+- **The VO came back fast.** Take 1: 3.09 w/s overall, 3.72 within words (five-free:
+  3.34). Two calmer-tagged takes converged near 3.0 / 3.6, so a fourth was not bought.
+  Sentence-end silences were lengthened to 0.55s (0.7s at paragraph breaks) on take B
+  — inserted silence, no stretching, no pitch change — landing 51.1s, 2.70 w/s.
+- **End cards need a readable hold.** A 1.9s end card was too short; 1.2s of tail
+  silence was added and the CTA face clip regenerated from the longer slice (the first
+  CTA clip, ~2 credits, went unused). G01 now allows a `cta` slide the same 2.5s tail
+  as other code-drawn end cards.
+- **XL ask beside the presenter circle broke into four lines** ("Link in / the /
+  pinned / comment"). With a presenter, the XL headline now sits below the circle at
+  full width (112px) and logo tiles shrink on that card so it stays above 80%.
+- **[HOOK DEAD SPACE] blocked** the first render: rows that land on later words leave
+  the opening frame 57% empty. The hook page shows its blocks from frame 0 and uses
+  highlights for the spoken beats.
+- new_job no longer invents a CTA keyword / DM file; validate_job only wants
+  giveaway.md for a keyword CTA.
+Credits: HeyGen ~13 (8.3s hook + 3.4s CTA + unused 2.2s), ElevenLabs 3 takes.
+Treatment: hero + rows (problem), hero + rows with strike (built-in catch), swap with
+strike (built-in → PairPods), 7-row capability list, swap + text (caveat), XL end card.
+
+## 2026-09-17 (2) — PairPods v2: feature-led, real-UI motion
+
+User review of v1: "Followed almost same design and layout. Hardly any animation. We
+hardly talk any features about the app", and a search engine's AI summary knew the
+product better. Both were true.
+- **Research:** research_check now REFUSES a product/tutorial/list reel whose ledger
+  has no `## FEATURES + HOW TO USE` inventory (every vendor feature marked USED/CUT,
+  plus the vendor's steps). The AI summary was checked against its own citations:
+  HomePod support and "remembers device combinations" appear in no source text
+  (HomePod only in the developer's screenshots) — neither was claimed.
+- **Motion:** new slide blocks in src/components/SlideBlocks.tsx —
+  `screen` (a real published screenshot as a camera subject: `focus` zooms to a
+  rect with a drawn ring, `state` crossfades between the vendor's real app states;
+  zoom capped at 2.4x fit with 1.5x context, edges clamped — a first pass fit a 60px
+  crown to the box and blurred it), `steps` (how-to strip lit on each word),
+  `devices` (Mac → device lines with travelling pulses), `waves` (two waveforms that
+  drift apart for a sync caveat). Motion is on bitmaps and shapes, never scale on type.
+- VO again read ~3.0 w/s across two takes; commas got 0.3s, sentences 0.7s,
+  paragraphs 0.9s of inserted silence → 62.3s, 2.73 w/s.
+Treatment: devices pulse (hook), steps + screen states (how-to), screen zooms on
+slider / battery+kHz / crown (features), screen zoom on Reconnect + rows, swap with
+strike (Apple), waves + tips (caveat), hero + rows, XL end card over the showcase shot.
+
+## 2026-09-17 (3) — PairPods v3: captions on slides, product spotlight, no music
+
+User review: "Why didn't you add the caption? Make sure it doesn't overlap", "PairPods
+doesn't grab the attention when the avatar talks about it", "remove the background
+music; make the best use of sound effects".
+- **Captions on animated slides by default** (hideCaptions false, captionBottom 500 —
+  the renderer's floor). A slide with captions stops its content at 1270px (66%) so
+  the chips sit alone at ~69-74%; the end card, which spells its own words, hides them.
+- **`spotlight` block** (overlay): the product icon lands at 300px with a burst ring,
+  glow and dim backdrop on the spoken name. Devices diagram scales with its box.
+- **Motion sounds derived by the compiler:** focus → lens-zoom, state → click,
+  steps → tick, device → pop, spotlight → magic reveal, drift → rising whoosh, on top
+  of page whoosh / pill pop / strike marker / count lock. 30 cues in 63s, voice only.
+- lint_frames: dead space on a slide/stage is measured ABOVE the 80% line — the
+  platform zone must stay empty, so counting it made two checks contradict.
+
+## 2026-09-17 (4) — the caption/content spec, measured
+
+User: "content to about 70% height, captions at about 75–78%, keep only the bottom
+20% clear — you must follow this." v3 had content at 66% and captions at 69-74%
+because the caption floor (500px) protected a credit lane that no longer exists
+by default. Now: the floor is credit-aware (credits off → 80% line + 20px),
+slides with captions end content at 1344px (70%), captions default to bottom 422.
+Measured on the PairPods render at every third spoken word: content 65-72%,
+caption ink 74-79%, 0 overlaps, 0 frames with ink below 80%. lint_frames runs the
+same measurement on every captioned slide/stage and BLOCKS an overlap or ink in
+the bottom 20% (negative-tested on a synthetic frame).
+
+## 2026-09-17 (5) — script-writing skills reviewed; three ideas built in
+
+Searched the skills registry for script writing (reels/shorts/TikTok scripts, hooks,
+storytelling, voiceover). None installed: short-video-scripter (aaron-he-zhu) depends on
+its own memory/registry system; reels-scripting (charlie947) needs Apify + Gemini keys;
+copywriting-hooks is for articles; voiceover-direction is for human talent. Built in:
+1. **Confirmation beat** — structure.md `## CONFIRMATION BEAT (2-5s)`; G70 advises when
+   no scene at 2-5s shows proof (product/screen/document/number). five-free-ai-tools
+   would have been flagged (logo grid only).
+2. **Viewer questions + surprise score** — structure.md `## VIEWER QUESTIONS` (3+,
+   each answered by words the script says, or NOT ANSWERED with a reason; propose
+   refuses); ledger `SURPRISE: 1-100`, advice when the most surprising claim sits in the
+   last 40%. Grandfathered for jobs created before 2026-09-17.
+3. **AI disclosure** (user: platform label AND caption line) — every reel uses the AI
+   digital twin and cloned voice. packaging_check requires Instagram `AI LABEL: on`,
+   YouTube `ALTERED CONTENT: yes`, and a caption sentence naming the AI presenter/voice.
+
 ## 2026-09-18 — apple-reference-image: five production-stage findings on a mechanism-heavy explainer
 
 **RAW NOTE 1 — ElevenLabs v3 phonetic collisions are real and cheap to catch

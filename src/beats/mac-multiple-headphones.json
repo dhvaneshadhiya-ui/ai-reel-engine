@@ -1,0 +1,1785 @@
+{
+  "id": "mac-multiple-headphones",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/mac-multiple-headphones/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "PairPods",
+    "free"
+  ],
+  "scenes": [
+    {
+      "eyebrow": "Mac tip",
+      "headline": "One Mac, [[two]] headphones",
+      "presenter": {
+        "src": "assets/mac-multiple-headphones/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "blocks": [
+        {
+          "id": "d",
+          "kind": "devices",
+          "hub": "Your Mac",
+          "items": [
+            "Your AirPods",
+            "Friend's AirPods"
+          ],
+          "h": 815
+        },
+        {
+          "id": "sp",
+          "kind": "spotlight",
+          "logo": "assets/logos/pairpods-icon.png",
+          "name": "PairPods",
+          "overlay": true,
+          "note": "free menu bar app"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "two pairs",
+          "at": 1.7
+        },
+        {
+          "do": "show",
+          "target": "sp",
+          "on": "called Pair",
+          "at": 5.14
+        }
+      ],
+      "type": "slide",
+      "durationSec": 8.64,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.67,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 5.06,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "eyebrow": "How to use it",
+      "headline": "[[Share]] audio in a few clicks",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "steps",
+          "steps": [
+            "Pair in Bluetooth",
+            "Open the menu bar icon",
+            "Tick devices",
+            "Share Audio on"
+          ]
+        },
+        {
+          "kind": "screen",
+          "width": 540,
+          "height": 884,
+          "id": "sc",
+          "src": "assets/mac-multiple-headphones/ui/step-1.png",
+          "h": 610
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.0",
+          "on": "connect every pair",
+          "at": 0.68
+        },
+        {
+          "do": "show",
+          "target": "s.1",
+          "on": "then open",
+          "at": 3.0
+        },
+        {
+          "do": "show",
+          "target": "s.2",
+          "on": "tick the devices",
+          "at": 5.32
+        },
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "tick the devices",
+          "rect": [
+            14,
+            132,
+            290,
+            360
+          ],
+          "at": 5.32
+        },
+        {
+          "do": "state",
+          "target": "sc",
+          "on": "you want",
+          "src": "assets/mac-multiple-headphones/ui/step-2.png",
+          "at": 5.86
+        },
+        {
+          "do": "show",
+          "target": "s.3",
+          "on": "flip share",
+          "at": 6.98
+        },
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "flip share",
+          "rect": [
+            300,
+            0,
+            240,
+            90
+          ],
+          "at": 6.98
+        },
+        {
+          "do": "state",
+          "target": "sc",
+          "on": "audio on",
+          "src": "assets/mac-multiple-headphones/ui/step-3.png",
+          "at": 7.56
+        },
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "Sony headphones",
+          "rect": [
+            0,
+            0,
+            540,
+            600
+          ],
+          "ring": false,
+          "at": 10.0
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "share audio on",
+          "at": 7.22
+        }
+      ],
+      "type": "slide",
+      "durationSec": 13.88,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 0.31,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 2.63,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 4.95,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Click.MP3",
+          "at": 5.93,
+          "vol": 0.251
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 6.61,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Click.MP3",
+          "at": 7.63,
+          "vol": 0.251
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 9.6,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 7.19,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "eyebrow": "Per device",
+      "headline": "Each pair, its [[own]] volume",
+      "blocks": [
+        {
+          "kind": "screen",
+          "width": 540,
+          "height": 884,
+          "id": "sc",
+          "src": "assets/mac-multiple-headphones/ui/step-1.png",
+          "h": 800
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "sc",
+          "on": "once it's on",
+          "at": 0.0
+        },
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "own volume",
+          "rect": [
+            14,
+            180,
+            512,
+            250
+          ],
+          "at": 2.24
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "its own",
+          "at": 2.04
+        },
+        {
+          "do": "state",
+          "target": "sc",
+          "on": "listen louder",
+          "src": "assets/mac-multiple-headphones/ui/step-2.png",
+          "at": 4.22
+        },
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "battery and sample",
+          "rect": [
+            18,
+            180,
+            235,
+            44
+          ],
+          "at": 7.36
+        },
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "the crown",
+          "rect": [
+            60,
+            292,
+            60,
+            44
+          ],
+          "at": 9.34
+        },
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "others sync",
+          "rect": [
+            14,
+            132,
+            512,
+            300
+          ],
+          "ring": false,
+          "at": 11.1
+        }
+      ],
+      "type": "slide",
+      "durationSec": 12.42,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 1.84,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Click.MP3",
+          "at": 4.29,
+          "vol": 0.251
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 6.96,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 8.94,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 10.7,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "eyebrow": "Auto-reconnect",
+      "headline": "A pair drops out? It [[waits]]",
+      "blocks": [
+        {
+          "kind": "screen",
+          "width": 540,
+          "height": 884,
+          "id": "sc",
+          "src": "assets/mac-multiple-headphones/ui/step-3.png",
+          "h": 540
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Wait for it",
+              "v": "5, 10 or 30 seconds",
+              "tone": "free"
+            },
+            {
+              "k": "Or",
+              "v": "Off"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "drops out",
+          "rect": [
+            14,
+            608,
+            512,
+            70
+          ],
+          "at": 0.62
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Pods waits",
+          "at": 1.7
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "10 or 30",
+          "at": 2.9
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "to reconnect",
+          "at": 4.7
+        }
+      ],
+      "type": "slide",
+      "durationSec": 5.7,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 0.22,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.67,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "eyebrow": "Apple's built-in route",
+      "headline": "It works, minus your [[volume keys]]",
+      "blocks": [
+        {
+          "id": "w",
+          "kind": "swap",
+          "left": {
+            "name": "Multi-Output Device",
+            "price": "Built in",
+            "note": "Audio MIDI Setup"
+          },
+          "right": {
+            "logo": "assets/logos/pairpods-icon.png",
+            "name": "PairPods",
+            "price": "Sliders",
+            "tone": "free",
+            "note": "per device",
+            "tile": "dark"
+          }
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Volume keys",
+              "v": "Don't work",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "w.left",
+          "on": "compare",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "it works",
+          "at": 4.46
+        },
+        {
+          "do": "strike",
+          "target": "r.0",
+          "on": "takes away",
+          "at": 5.58
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "volume keys",
+          "at": 6.18
+        },
+        {
+          "do": "show",
+          "target": "w.right",
+          "on": "volume keys",
+          "at": 6.18
+        }
+      ],
+      "type": "slide",
+      "durationSec": 7.42,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 5.57,
+          "vol": 0.417
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 6.15,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "eyebrow": "One catch",
+      "headline": "Sync isn't [[guaranteed]]",
+      "blocks": [
+        {
+          "id": "w",
+          "kind": "waves",
+          "labels": [
+            "Your AirPods",
+            "A different model"
+          ],
+          "h": 600
+        },
+        {
+          "id": "tips",
+          "kind": "tips",
+          "watch": "Different models can sound slightly off-pitch",
+          "best": "Matching pairs"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "isn't guaranteed",
+          "at": 1.4
+        },
+        {
+          "do": "drift",
+          "target": "w",
+          "on": "different models",
+          "at": 2.7
+        },
+        {
+          "do": "show",
+          "target": "tips.watch",
+          "on": "one catch",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "tips.best",
+          "on": "sync isn't",
+          "at": 1.24
+        }
+      ],
+      "type": "slide",
+      "durationSec": 7.42,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.37,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "at": 2.58,
+          "vol": 0.543
+        }
+      ]
+    },
+    {
+      "eyebrow": "PairPods",
+      "headline": "Free and [[open source]]",
+      "blocks": [
+        {
+          "id": "h",
+          "kind": "hero",
+          "side": {
+            "logo": "assets/logos/pairpods-icon.png",
+            "name": "PairPods",
+            "price": "Free",
+            "tone": "free",
+            "note": "menu bar app",
+            "tile": "dark"
+          }
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Licence",
+              "v": "MIT, open source",
+              "tone": "free"
+            },
+            {
+              "k": "Needs",
+              "v": "macOS 13.5 or later"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "open sourced",
+          "at": 1.28
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "open sourced",
+          "at": 1.28
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "needs macOS",
+          "at": 2.18
+        }
+      ],
+      "type": "slide",
+      "durationSec": 5.38,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Core.MP3",
+          "at": 1.23,
+          "vol": 0.556
+        }
+      ]
+    },
+    {
+      "cta": true,
+      "headlineSize": "xl",
+      "eyebrow": "Get PairPods",
+      "headline": "Link in the [[pinned comment]]",
+      "presenter": {
+        "src": "assets/mac-multiple-headphones/avatar-master-cta.mp4",
+        "from": 0.26
+      },
+      "blocks": [
+        {
+          "kind": "screen",
+          "id": "sc",
+          "width": 1320,
+          "height": 824,
+          "src": "assets/mac-multiple-headphones/ui/showcase.png",
+          "h": 520
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "pinned comment",
+          "at": 0.76
+        }
+      ],
+      "type": "slide",
+      "durationSec": 2.66,
+      "hideCaptions": true,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.73,
+          "vol": 0.343
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.7,
+      "text": "Your Mac can",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Your"
+        },
+        {
+          "t": 0.22,
+          "text": "Mac"
+        },
+        {
+          "t": 0.44,
+          "text": "can"
+        }
+      ]
+    },
+    {
+      "start": 0.7,
+      "end": 1.52,
+      "text": "play one movie",
+      "words": [
+        {
+          "t": 0.7,
+          "text": "play"
+        },
+        {
+          "t": 0.94,
+          "text": "one"
+        },
+        {
+          "t": 1.22,
+          "text": "movie"
+        }
+      ]
+    },
+    {
+      "start": 1.52,
+      "end": 2.12,
+      "text": "to two pairs",
+      "words": [
+        {
+          "t": 1.52,
+          "text": "to"
+        },
+        {
+          "t": 1.7,
+          "text": "two"
+        },
+        {
+          "t": 1.94,
+          "text": "pairs"
+        }
+      ]
+    },
+    {
+      "start": 2.12,
+      "end": 2.9,
+      "text": "of headphones at",
+      "words": [
+        {
+          "t": 2.12,
+          "text": "of"
+        },
+        {
+          "t": 2.26,
+          "text": "headphones"
+        },
+        {
+          "t": 2.64,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 2.9,
+      "end": 3.52,
+      "text": "the same time.",
+      "words": [
+        {
+          "t": 2.9,
+          "text": "the"
+        },
+        {
+          "t": 3.0,
+          "text": "same"
+        },
+        {
+          "t": 3.22,
+          "text": "time."
+        }
+      ]
+    },
+    {
+      "start": 4.16,
+      "end": 4.68,
+      "text": "It takes a",
+      "words": [
+        {
+          "t": 4.16,
+          "text": "It"
+        },
+        {
+          "t": 4.34,
+          "text": "takes"
+        },
+        {
+          "t": 4.52,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 4.68,
+      "end": 5.4,
+      "text": "free app called",
+      "words": [
+        {
+          "t": 4.68,
+          "text": "free"
+        },
+        {
+          "t": 4.84,
+          "text": "app"
+        },
+        {
+          "t": 5.14,
+          "text": "called"
+        }
+      ]
+    },
+    {
+      "start": 5.4,
+      "end": 6.56,
+      "text": "PairPods and it",
+      "words": [
+        {
+          "t": 5.4,
+          "text": "PairPods"
+        },
+        {
+          "t": 6.22,
+          "text": "and"
+        },
+        {
+          "t": 6.4,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 6.56,
+      "end": 7.56,
+      "text": "beats Apple's own",
+      "words": [
+        {
+          "t": 6.56,
+          "text": "beats"
+        },
+        {
+          "t": 6.76,
+          "text": "Apple's"
+        },
+        {
+          "t": 7.34,
+          "text": "own"
+        }
+      ]
+    },
+    {
+      "start": 7.56,
+      "end": 9.52,
+      "text": "way. First, connect",
+      "words": [
+        {
+          "t": 7.56,
+          "text": "way."
+        },
+        {
+          "t": 8.64,
+          "text": "First,"
+        },
+        {
+          "t": 9.32,
+          "text": "connect"
+        }
+      ]
+    },
+    {
+      "start": 9.52,
+      "end": 10.34,
+      "text": "every pair in",
+      "words": [
+        {
+          "t": 9.52,
+          "text": "every"
+        },
+        {
+          "t": 9.78,
+          "text": "pair"
+        },
+        {
+          "t": 10.08,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 10.34,
+      "end": 11.78,
+      "text": "Bluetooth settings. Then",
+      "words": [
+        {
+          "t": 10.34,
+          "text": "Bluetooth"
+        },
+        {
+          "t": 10.6,
+          "text": "settings."
+        },
+        {
+          "t": 11.64,
+          "text": "Then"
+        }
+      ]
+    },
+    {
+      "start": 11.78,
+      "end": 12.9,
+      "text": "open PairPods from",
+      "words": [
+        {
+          "t": 11.78,
+          "text": "open"
+        },
+        {
+          "t": 12.04,
+          "text": "PairPods"
+        },
+        {
+          "t": 12.78,
+          "text": "from"
+        }
+      ]
+    },
+    {
+      "start": 12.9,
+      "end": 13.56,
+      "text": "the menu bar,",
+      "words": [
+        {
+          "t": 12.9,
+          "text": "the"
+        },
+        {
+          "t": 13.02,
+          "text": "menu"
+        },
+        {
+          "t": 13.22,
+          "text": "bar,"
+        }
+      ]
+    },
+    {
+      "start": 13.96,
+      "end": 14.5,
+      "text": "tick the devices",
+      "words": [
+        {
+          "t": 13.96,
+          "text": "tick"
+        },
+        {
+          "t": 14.06,
+          "text": "the"
+        },
+        {
+          "t": 14.2,
+          "text": "devices"
+        }
+      ]
+    },
+    {
+      "start": 14.5,
+      "end": 15.62,
+      "text": "you want and",
+      "words": [
+        {
+          "t": 14.5,
+          "text": "you"
+        },
+        {
+          "t": 14.74,
+          "text": "want"
+        },
+        {
+          "t": 15.08,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 15.62,
+      "end": 16.52,
+      "text": "flip share audio",
+      "words": [
+        {
+          "t": 15.62,
+          "text": "flip"
+        },
+        {
+          "t": 15.86,
+          "text": "share"
+        },
+        {
+          "t": 16.2,
+          "text": "audio"
+        }
+      ]
+    },
+    {
+      "start": 16.52,
+      "end": 18.92,
+      "text": "on. AirPods, Sony",
+      "words": [
+        {
+          "t": 16.52,
+          "text": "on."
+        },
+        {
+          "t": 17.58,
+          "text": "AirPods,"
+        },
+        {
+          "t": 18.64,
+          "text": "Sony"
+        }
+      ]
+    },
+    {
+      "start": 18.92,
+      "end": 20.6,
+      "text": "headphones, Samsung Buds,",
+      "words": [
+        {
+          "t": 18.92,
+          "text": "headphones,"
+        },
+        {
+          "t": 19.8,
+          "text": "Samsung"
+        },
+        {
+          "t": 20.0,
+          "text": "Buds,"
+        }
+      ]
+    },
+    {
+      "start": 20.88,
+      "end": 21.4,
+      "text": "even a Bluetooth",
+      "words": [
+        {
+          "t": 20.88,
+          "text": "even"
+        },
+        {
+          "t": 21.06,
+          "text": "a"
+        },
+        {
+          "t": 21.22,
+          "text": "Bluetooth"
+        }
+      ]
+    },
+    {
+      "start": 21.4,
+      "end": 23.28,
+      "text": "speaker. Once it's",
+      "words": [
+        {
+          "t": 21.4,
+          "text": "speaker."
+        },
+        {
+          "t": 22.52,
+          "text": "Once"
+        },
+        {
+          "t": 23.0,
+          "text": "it's"
+        }
+      ]
+    },
+    {
+      "start": 23.28,
+      "end": 24.28,
+      "text": "on, each device",
+      "words": [
+        {
+          "t": 23.28,
+          "text": "on,"
+        },
+        {
+          "t": 23.74,
+          "text": "each"
+        },
+        {
+          "t": 23.96,
+          "text": "device"
+        }
+      ]
+    },
+    {
+      "start": 24.28,
+      "end": 25.02,
+      "text": "gets its own",
+      "words": [
+        {
+          "t": 24.28,
+          "text": "gets"
+        },
+        {
+          "t": 24.56,
+          "text": "its"
+        },
+        {
+          "t": 24.76,
+          "text": "own"
+        }
+      ]
+    },
+    {
+      "start": 25.02,
+      "end": 26.2,
+      "text": "volume slider so",
+      "words": [
+        {
+          "t": 25.02,
+          "text": "volume"
+        },
+        {
+          "t": 25.34,
+          "text": "slider"
+        },
+        {
+          "t": 25.7,
+          "text": "so"
+        }
+      ]
+    },
+    {
+      "start": 26.2,
+      "end": 26.74,
+      "text": "your friend can",
+      "words": [
+        {
+          "t": 26.2,
+          "text": "your"
+        },
+        {
+          "t": 26.34,
+          "text": "friend"
+        },
+        {
+          "t": 26.56,
+          "text": "can"
+        }
+      ]
+    },
+    {
+      "start": 26.74,
+      "end": 27.52,
+      "text": "listen louder than",
+      "words": [
+        {
+          "t": 26.74,
+          "text": "listen"
+        },
+        {
+          "t": 26.96,
+          "text": "louder"
+        },
+        {
+          "t": 27.3,
+          "text": "than"
+        }
+      ]
+    },
+    {
+      "start": 27.52,
+      "end": 28.96,
+      "text": "you. You also",
+      "words": [
+        {
+          "t": 27.52,
+          "text": "you."
+        },
+        {
+          "t": 28.42,
+          "text": "You"
+        },
+        {
+          "t": 28.72,
+          "text": "also"
+        }
+      ]
+    },
+    {
+      "start": 28.96,
+      "end": 29.88,
+      "text": "see every pair's",
+      "words": [
+        {
+          "t": 28.96,
+          "text": "see"
+        },
+        {
+          "t": 29.24,
+          "text": "every"
+        },
+        {
+          "t": 29.52,
+          "text": "pair's"
+        }
+      ]
+    },
+    {
+      "start": 29.88,
+      "end": 30.84,
+      "text": "battery and sample",
+      "words": [
+        {
+          "t": 29.88,
+          "text": "battery"
+        },
+        {
+          "t": 30.2,
+          "text": "and"
+        },
+        {
+          "t": 30.5,
+          "text": "sample"
+        }
+      ]
+    },
+    {
+      "start": 30.84,
+      "end": 31.98,
+      "text": "rate and the",
+      "words": [
+        {
+          "t": 30.84,
+          "text": "rate"
+        },
+        {
+          "t": 31.14,
+          "text": "and"
+        },
+        {
+          "t": 31.86,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 31.98,
+      "end": 32.68,
+      "text": "crown sets the",
+      "words": [
+        {
+          "t": 31.98,
+          "text": "crown"
+        },
+        {
+          "t": 32.2,
+          "text": "sets"
+        },
+        {
+          "t": 32.46,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 32.68,
+      "end": 33.62,
+      "text": "master device the",
+      "words": [
+        {
+          "t": 32.68,
+          "text": "master"
+        },
+        {
+          "t": 33.0,
+          "text": "device"
+        },
+        {
+          "t": 33.38,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 33.62,
+      "end": 34.44,
+      "text": "others sync to.",
+      "words": [
+        {
+          "t": 33.62,
+          "text": "others"
+        },
+        {
+          "t": 33.88,
+          "text": "sync"
+        },
+        {
+          "t": 34.18,
+          "text": "to."
+        }
+      ]
+    },
+    {
+      "start": 34.94,
+      "end": 35.4,
+      "text": "And if a",
+      "words": [
+        {
+          "t": 34.94,
+          "text": "And"
+        },
+        {
+          "t": 35.18,
+          "text": "if"
+        },
+        {
+          "t": 35.3,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 35.4,
+      "end": 36.18,
+      "text": "pair drops out,",
+      "words": [
+        {
+          "t": 35.4,
+          "text": "pair"
+        },
+        {
+          "t": 35.56,
+          "text": "drops"
+        },
+        {
+          "t": 35.82,
+          "text": "out,"
+        }
+      ]
+    },
+    {
+      "start": 36.5,
+      "end": 37.6,
+      "text": "PairPods waits 5,",
+      "words": [
+        {
+          "t": 36.5,
+          "text": "PairPods"
+        },
+        {
+          "t": 36.94,
+          "text": "waits"
+        },
+        {
+          "t": 37.14,
+          "text": "5,"
+        }
+      ]
+    },
+    {
+      "start": 37.84,
+      "end": 38.86,
+      "text": "10 or 30",
+      "words": [
+        {
+          "t": 37.84,
+          "text": "10"
+        },
+        {
+          "t": 38.1,
+          "text": "or"
+        },
+        {
+          "t": 38.56,
+          "text": "30"
+        }
+      ]
+    },
+    {
+      "start": 38.86,
+      "end": 39.64,
+      "text": "seconds for it",
+      "words": [
+        {
+          "t": 38.86,
+          "text": "seconds"
+        },
+        {
+          "t": 39.22,
+          "text": "for"
+        },
+        {
+          "t": 39.52,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 39.64,
+      "end": 41.14,
+      "text": "to reconnect. Compare",
+      "words": [
+        {
+          "t": 39.64,
+          "text": "to"
+        },
+        {
+          "t": 39.76,
+          "text": "reconnect."
+        },
+        {
+          "t": 40.64,
+          "text": "Compare"
+        }
+      ]
+    },
+    {
+      "start": 41.14,
+      "end": 42.34,
+      "text": "Apple's route, a",
+      "words": [
+        {
+          "t": 41.14,
+          "text": "Apple's"
+        },
+        {
+          "t": 41.68,
+          "text": "route,"
+        },
+        {
+          "t": 42.16,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 42.34,
+      "end": 43.56,
+      "text": "multi-output device in",
+      "words": [
+        {
+          "t": 42.34,
+          "text": "multi-output"
+        },
+        {
+          "t": 42.92,
+          "text": "device"
+        },
+        {
+          "t": 43.28,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 43.56,
+      "end": 45.62,
+      "text": "Audio MIDI Setup It works",
+      "words": [
+        {
+          "t": 43.56,
+          "text": "Audio"
+        },
+        {
+          "t": 45.1,
+          "text": "MIDI"
+        },
+        {
+          "t": 45.3,
+          "text": "Setup"
+        },
+        {
+          "t": 45.3,
+          "text": "It"
+        },
+        {
+          "t": 45.3,
+          "text": "works"
+        }
+      ]
+    },
+    {
+      "start": 45.62,
+      "end": 46.38,
+      "text": "but it takes",
+      "words": [
+        {
+          "t": 45.62,
+          "text": "but"
+        },
+        {
+          "t": 46.06,
+          "text": "it"
+        },
+        {
+          "t": 46.22,
+          "text": "takes"
+        }
+      ]
+    },
+    {
+      "start": 46.38,
+      "end": 47.06,
+      "text": "away your volume",
+      "words": [
+        {
+          "t": 46.38,
+          "text": "away"
+        },
+        {
+          "t": 46.66,
+          "text": "your"
+        },
+        {
+          "t": 46.82,
+          "text": "volume"
+        }
+      ]
+    },
+    {
+      "start": 47.06,
+      "end": 48.8,
+      "text": "keys. One catch,",
+      "words": [
+        {
+          "t": 47.06,
+          "text": "keys."
+        },
+        {
+          "t": 48.06,
+          "text": "One"
+        },
+        {
+          "t": 48.52,
+          "text": "catch,"
+        }
+      ]
+    },
+    {
+      "start": 49.3,
+      "end": 50.3,
+      "text": "sync isn't guaranteed",
+      "words": [
+        {
+          "t": 49.3,
+          "text": "sync"
+        },
+        {
+          "t": 49.46,
+          "text": "isn't"
+        },
+        {
+          "t": 49.88,
+          "text": "guaranteed"
+        }
+      ]
+    },
+    {
+      "start": 50.3,
+      "end": 51.38,
+      "text": "and different models",
+      "words": [
+        {
+          "t": 50.3,
+          "text": "and"
+        },
+        {
+          "t": 50.76,
+          "text": "different"
+        },
+        {
+          "t": 51.0,
+          "text": "models"
+        }
+      ]
+    },
+    {
+      "start": 51.38,
+      "end": 52.3,
+      "text": "can sound slightly",
+      "words": [
+        {
+          "t": 51.38,
+          "text": "can"
+        },
+        {
+          "t": 51.6,
+          "text": "sound"
+        },
+        {
+          "t": 51.9,
+          "text": "slightly"
+        }
+      ]
+    },
+    {
+      "start": 52.3,
+      "end": 53.72,
+      "text": "off-pitch so matching",
+      "words": [
+        {
+          "t": 52.3,
+          "text": "off-pitch"
+        },
+        {
+          "t": 52.88,
+          "text": "so"
+        },
+        {
+          "t": 53.4,
+          "text": "matching"
+        }
+      ]
+    },
+    {
+      "start": 53.72,
+      "end": 54.74,
+      "text": "pairs work best.",
+      "words": [
+        {
+          "t": 53.72,
+          "text": "pairs"
+        },
+        {
+          "t": 54.04,
+          "text": "work"
+        },
+        {
+          "t": 54.36,
+          "text": "best."
+        }
+      ]
+    },
+    {
+      "start": 55.48,
+      "end": 56.46,
+      "text": "PairPods is free,",
+      "words": [
+        {
+          "t": 55.48,
+          "text": "PairPods"
+        },
+        {
+          "t": 56.1,
+          "text": "is"
+        },
+        {
+          "t": 56.16,
+          "text": "free,"
+        }
+      ]
+    },
+    {
+      "start": 56.76,
+      "end": 57.66,
+      "text": "open source and",
+      "words": [
+        {
+          "t": 56.76,
+          "text": "open"
+        },
+        {
+          "t": 56.98,
+          "text": "source"
+        },
+        {
+          "t": 57.48,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 57.66,
+      "end": 59.48,
+      "text": "needs macOS 13.5",
+      "words": [
+        {
+          "t": 57.66,
+          "text": "needs"
+        },
+        {
+          "t": 57.9,
+          "text": "macOS"
+        },
+        {
+          "t": 58.44,
+          "text": "13.5"
+        }
+      ]
+    },
+    {
+      "start": 59.48,
+      "end": 60.96,
+      "text": "or later. The",
+      "words": [
+        {
+          "t": 59.48,
+          "text": "or"
+        },
+        {
+          "t": 59.72,
+          "text": "later."
+        },
+        {
+          "t": 60.86,
+          "text": "The"
+        }
+      ]
+    },
+    {
+      "start": 60.96,
+      "end": 61.54,
+      "text": "link is in",
+      "words": [
+        {
+          "t": 60.96,
+          "text": "link"
+        },
+        {
+          "t": 61.18,
+          "text": "is"
+        },
+        {
+          "t": 61.44,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 61.54,
+      "end": 62.14,
+      "text": "the pinned comment.",
+      "words": [
+        {
+          "t": 61.54,
+          "text": "the"
+        },
+        {
+          "t": 61.62,
+          "text": "pinned"
+        },
+        {
+          "t": 61.84,
+          "text": "comment."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "user, 2026-09-17: remove the background music, make the best use of sound effects",
+  "format": "howto",
+  "script": "Your Mac can play one movie to two pairs of headphones at the same time. It takes a free app called PairPods, and it beats Apple's own way.\n\nFirst, connect every pair in Bluetooth settings. Then open PairPods from the menu bar, tick the devices you want, and flip Share Audio on. AirPods, Sony headphones, Samsung Buds, even a Bluetooth speaker.\n\nOnce it's on, each device gets its own volume slider, so your friend can listen louder than you. You also see every pair's battery and sample rate, and the crown sets the master device the others sync to.\n\nAnd if a pair drops out, PairPods waits five, ten or thirty seconds for it to reconnect.\n\nCompare Apple's route, a Multi-Output Device in Audio MIDI Setup. It works, but it takes away your volume keys.\n\nOne catch: sync isn't guaranteed, and different models can sound slightly off-pitch, so matching pairs work best.\n\nPairPods is free, open source and needs macOS 13.5 or later. The link is in the pinned comment.",
+  "approval": {
+    "sha256": "6590f1976a38a29aacecd2593d7aff6fd03e118612c5c33f581c8f45ecfe07f8",
+    "approvedAt": "2026-09-17T10:02:46+00:00",
+    "words": 170,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

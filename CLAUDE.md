@@ -217,6 +217,11 @@ silently disabled the frame checks for weeks.
   one. Only the topic is required to start. Blocks are chosen per topic — the
   look is one family, the layout is never a template.
   Reference build: jobs/five-free-ai-tools.
+  **Page layout (user spec, 2026-09-17 — binding):** captions ON for every slide
+  except an end card that spells its own words; content runs to ~70% height,
+  captions sit at 75-78% (captionBottom 422, credits off), only the bottom 20%
+  stays clear, and content never touches the caption. compile_shot_plan sets it;
+  lint_frames MEASURES it on the render ([CAPTION OVERLAP] / [PLATFORM ZONE] block).
   **Avatar credits: generate ONLY the seconds the face is on screen.** The
   voice is ONE ElevenLabs track for the whole reel; HeyGen is called once per
   presenter slice (hook circle, CTA circle), each driven by that exact VO
@@ -224,6 +229,15 @@ silently disabled the frame checks for weeks.
   master for this format — five-free-ai-tools cost 10 credits (6s + 3.5s) where
   a face-led master of the same script costs ~50-60. The "one continuous
   master" note in config.json applies to face-led reels only.
+- **Research starts with the `reel-research` skill** (2026-09-17, adapted from
+  LangChain's MIT `web-research`): plan with required subtopics per format →
+  parallel research agents → ledger + feature/visual inventories + viewer questions.
+- **Script & packaging rules (user, 2026-09-17):** structure.md carries a CONFIRMATION
+  BEAT (2-5s proof on screen; G70) and 3+ VIEWER QUESTIONS answered by script words
+  (propose refuses otherwise); ledger claims carry SURPRISE 1-100. **AI disclosure on
+  every post:** Instagram `AI LABEL: on` + YouTube `ALTERED CONTENT: yes` AND a caption
+  line ("The presenter's face and voice in this video are AI-generated.") —
+  packaging_check refuses without them.
 - **Capture web sources on MOBILE.** `tools/capture.mjs` defaults to it
   (1080x2340). A desktop grab fills 42% of a 9:16 frame with unreadable text.
   `--desktop` is the exception, not the default. Gate G29.
@@ -467,6 +481,24 @@ triggers on "make me a video"/"Remotion"/"HeyGen"/"AI avatar". If either
 loads for a reel request, STOP and use `news-reel` instead — the generic
 skills will happily skip every gate in this repo.
 
+### The aaron-marketing plugin (installed by the user 2026-09-17) — 120 skills, advisory only
+
+Read in full before ruling (github.com/aaron-he-zhu/aaron-marketing-skills, v20.1.0).
+A marketing "operating system": SEO/GEO, social, email, ads, influencer, launch, and
+a protocol layer that keeps its own records in a top-level `memory/` folder.
+- **No hijack directives** in any SKILL.md (scanned all 120).
+- **Overlaps with our work — `news-reel` and the carousel skills still own it:**
+  `short-video-scripter` (reel scripts), `social-creative-builder` ("spec the carousel
+  slides"), `launch-asset-packager`, `content-amplifier`, `social-pulse-monitor`, and the
+  `/social` command. reel_precedence.py names them. Its ideas already adopted: the
+  confirmation beat and AI-disclosure line (STYLE-RULES 2026-09-17 (5)).
+- **It installs HOOKS on every Write/Edit/Bash/MCP call, in every project.** Dry-run here:
+  ~0.2s per call, nothing blocked (renders, memory writes, HeyGen/ElevenLabs calls).
+  They only ENFORCE (and can deny/block) when the project has a top-level `memory/`
+  folder. **Never run its skills inside this repo** — that creates `memory/` and arms
+  its privacy/audit gates over our pipeline. Use it in the separate marketing project, `~/iGeeksBlog Marketing` (created 2026-09-17).
+- Useful elsewhere, not in the reel pipeline: its SEO/GEO skills for igeeksblog.com.
+
 ### The `/marketing` plugin (installed 2026-08-27) — 50 skills, ONE adopted
 
 Read before ruling, per the standing rule. **We are a PUBLISHER making reels,
@@ -579,7 +611,7 @@ re-check both global paths.
 
 ### GLOBAL skills (2026-08-17) — outside the repo, at the user's call
 
-Five skills live in `~/.agents/skills/`, symlinked into `~/.claude/skills/`.
+Six skills live in `~/.agents/skills/`, symlinked into `~/.claude/skills/`.
 They are the ONLY things on this machine outside the repo. Each was READ before
 installing and none is a router: none claims to be a default or a mandatory
 entry point, so none can contend with `news-reel` for a reel request the way the
@@ -590,6 +622,7 @@ entry point, so none can contend with `news-reel` for a reel request the way the
 | `find-skills` | discovering/installing other skills (`npx skills find`) | vercel-labs/skills |
 | `humanizer` | making an approved-shape script read like a person wrote it | blader/humanizer (35.9k★) |
 | `fact-check-workflow` | verifying a claim BEFORE it becomes a beat with a receipt | jamditis/claude-skills-journalism |
+| `source-verification` | SIFT: trace each claim (and every AI/listicle summary) to its ORIGINAL source; verified / supported-with-limits / unresolved / contradicted | jamditis/claude-skills-journalism |
 | `youtube-seo` | YouTube title / description / tags — the one packaging gap | kostja94/marketing-skills |
 | `ffmpeg-ytdlp` | measured ffmpeg/ffprobe/yt-dlp recipes + the macOS arch trap | LOCAL — `skills-global/` |
 

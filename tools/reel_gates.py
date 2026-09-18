@@ -928,7 +928,10 @@ def check_beats(beats: dict, vo_end: float | None = None,
         ANIMATED_TAIL = {"commentcta", "typecard", "endquestion", "logobeat",
                          "specsheet", "statcard", "wordcascade", "checklist"}
         last_type = str(scenes[-1].get("type", "")) if scenes else ""
-        tail_max = 2.5 if last_type in ANIMATED_TAIL else TAIL_MAX
+        # a slide CTA end card (2026-09-17) is the same kind of scene: it keeps
+        # moving (glow, presenter circle) and needs a beat to be read
+        _cta_slide = last_type == "slide" and bool(scenes[-1].get("cta"))
+        tail_max = 2.5 if (last_type in ANIMATED_TAIL or _cta_slide) else TAIL_MAX
         reel_end = vo_end + tail_max
         if total > reel_end + 0.01:
             errors.append(
@@ -1952,7 +1955,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
                     "screen is a claim, whether or not the voice says it.")
 
     # G65 (slide) — the carousel-look slide off its contract draws nothing.
-    SLIDE_BLOCKS = {"hero", "swap", "rows", "text", "tips", "logos"}
+    SLIDE_BLOCKS = {"hero", "swap", "rows", "text", "tips", "logos", "screen", "steps", "devices", "waves", "spotlight"}
     for i, sc in enumerate(scenes):
         if sc.get("type") != "slide":
             continue
@@ -1966,13 +1969,17 @@ def check_beats(beats: dict, vo_end: float | None = None,
                               f"is not one of {', '.join(sorted(SLIDE_BLOCKS))} — it draws nothing.")
             bid = b.get("id")
             targets |= {bid, f"{bid}.left", f"{bid}.right", f"{bid}.best", f"{bid}.watch"}
-            targets |= {f"{bid}.{k}" for k in range(len(b.get("rows") or []))}
+            targets |= {f"{bid}.{k}" for k in range(max(len(b.get("rows") or []), len(b.get("steps") or []), len(b.get("items") or [])))}
+            if b.get("kind") == "screen" and not str(b.get("src") or "").lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
+                errors.append(f"G65 scene {i:02d} slide screen {bid!r} needs a still `src` — an <Img> cannot show {b.get('src')!r}.")
         targets.add("headline")
         if sc.get("presenter") and not str((sc["presenter"] or {}).get("src") or "").lower().endswith((".mp4", ".mov", ".webm")):
             errors.append(f"G65 scene {i:02d} slide presenter needs a video `src` — a still in the circle renders black.")
         for m in sc.get("moves") or []:
-            if m.get("do") not in ("show", "strike", "highlight", "pill"):
-                errors.append(f"G65 scene {i:02d} slide move {m.get('do')!r} is not show, strike, highlight or pill.")
+            if m.get("do") not in ("show", "strike", "highlight", "pill", "focus", "state", "drift"):
+                errors.append(f"G65 scene {i:02d} slide move {m.get('do')!r} is not show, strike, highlight, pill, focus, state or drift.")
+            if m.get("do") == "focus" and not (isinstance(m.get("rect"), list) and len(m["rect"]) == 4):
+                errors.append(f"G65 scene {i:02d} slide `focus` needs `rect` [x, y, w, h] in source px — the camera has nowhere to go.")
             if m.get("at") is None:
                 errors.append(f"G65 scene {i:02d} slide `{m.get('do')}` on {m.get('target')!r} has no `at`"
                               + (" — recompile so its words become seconds." if m.get("on") else "."))
@@ -1990,7 +1997,9 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 for s in [b.get("side"), b.get("left"), b.get("right")] + list(b.get("items") or []):
                     if isinstance(s, dict):
                         texts += [s.get("name"), s.get("price"), s.get("note")]
-                texts += [b.get("text"), b.get("best"), b.get("watch")]
+                texts += [b.get("name"), b.get("note")]
+                texts += [b.get("text"), b.get("best"), b.get("watch"), b.get("hub")]
+                texts += [x for x in (b.get("steps") or []) + (b.get("labels") or []) + [y for y in (b.get("items") or []) if isinstance(y, str)]]
                 texts += [x for r in b.get("rows") or [] for x in (r.get("k"), r.get("v"))]
             bad = unsourced_in([str(t).replace("[[", "").replace("]]", "") for t in texts if t], sourced_text)
             if bad:
@@ -2940,6 +2949,36 @@ def check_beats(beats: dict, vo_end: float | None = None,
             "G47 showCredits is on but no scene carries a `credit` — the "
             "requested on-screen credits would draw nothing.")
 
+    # G70 — THE CONFIRMATION BEAT (2026-09-17). ADVICE.
+    # Right after the hook (2-5s) the viewer should SEE proof that the promise is
+    # real — the product working, the document, the screen — not only hear it.
+    # From the retention-gate model in short-form scripting practice ("the beat
+    # most drafts skip"); advice, because a strong spoken reveal can carry it.
+    PROOF_TYPES = {"sourceread", "receipt", "annotatezoom", "deviceframe", "xpost", "screenstep",
+                   "floatcard", "split", "comparesplit", "hcompare", "statcard", "chart", "counter"}
+    def _is_proof(sc: dict) -> bool:
+        t_ = sc.get("type")
+        if t_ == "footage":
+            return "avatar-master" not in str(sc.get("src") or "")
+        if t_ in PROOF_TYPES:
+            return True
+        if t_ == "slide":
+            return any(b.get("kind") in ("screen", "devices", "spotlight") for b in sc.get("blocks") or [])
+        if t_ == "stage":
+            return any(e.get("kind") in ("image", "number") for e in sc.get("elements") or [])
+        return False
+    _t = 0.0
+    _window = []
+    for sc in scenes:
+        s0, s1 = _t, _t + float(sc.get("durationSec") or 0)
+        if s0 < 5.0 and s1 > 2.0:
+            _window.append(sc)
+        _t = s1
+    if scenes and not any(_is_proof(sc) for sc in _window):
+        errors.append(
+            "G70 nothing on screen at 2-5s proves the hook — show the product doing it, the "
+            "document or the number (the confirmation beat), not only the presenter or type.")
+
     # G45 (RULE 1, blocking) + G46 (craft, advice) — WHERE A CAPTION MAY SIT.
     #
     # SPLIT 2026-08-18, the day after G45 was written, because as first written
@@ -2966,7 +3005,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # the account row. 500 = platformSafeArea.captionFloorPx(1920). Both are
     # asserted in tools/test_gates.py so neither can drift from its source.
     PLATFORM_FLOOR = 317
-    CAPTION_FLOOR = 500
+    CAPTION_FLOOR = 500    # only while on-screen credits are drawn (showCredits)
     for i, sc in enumerate(scenes):
         cb = sc.get("captionBottom")
         if cb is None or sc.get("hideCaptions"):
@@ -2979,7 +3018,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 f"Instagram's own account row (measured y 0.835). The platform "
                 f"paints over this; the words cannot be read on either app. "
                 f"Raise it above {PLATFORM_FLOOR}, or drop the field.")
-        elif cb < CAPTION_FLOOR:
+        elif beats.get("showCredits") and cb < CAPTION_FLOOR:
             errors.append(
                 f"G46 scene {i:02d} sets captionBottom {cb} (y {y:.3f}) — clear "
                 f"of the platform, but inside our own credit lane (floor "
