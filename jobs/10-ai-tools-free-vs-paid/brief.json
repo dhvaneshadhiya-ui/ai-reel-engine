@@ -1,0 +1,30 @@
+{
+  "slug": "10-ai-tools-free-vs-paid",
+  "topic": "10 AI tools: what you get free vs what paid unlocks",
+  "details": "Ten popular AI tools across different categories (chat, image, video, code, writing, music, voice, presentations, notetaking, design). For each: what the free tier actually gives you, what the paid tier costs and unlocks. Animated Carousel Playbook look, presenter bookends only. Inspired by (not copied from) an Instagram carousel post about paid-to-free tool swaps -- ours instead shows each tool's own free vs paid tiers, verified against official pricing pages.",
+  "subject": "10 AI tools: what you get free vs what paid unlocks",
+  "audience": "Phone-first tech watchers who already use one or two AI tools free and assume the paid tier is just 'more of the same' rather than a specific, nameable unlock",
+  "platform": "both",
+  "goal": "engagement",
+  "core_value": "For ten real tools across different jobs, exactly what free gives you and exactly what the paid price buys on top of it",
+  "desired_action": "Comment TOOLS for all 10 links",
+  "reveal_target": "none",
+  "cta_keyword": "TOOLS",
+  "target_duration": "100s",
+  "tone": "Plain, specific, no hype. Numbers and named features do the talking; no ranking, no 'game changer', no claim that a free tool replaces a paid one",
+  "source_policy": "official-preferred",
+  "footage_constraints": "ANIMATED TREATMENT: facePlan bookends -- presenter on the hook and the CTA only. Body is `slide` scenes, Carousel Playbook look, `swap` blocks (free card vs paid card) per tool. Music bed on. Each tool's logo comes from its own site/press kit.",
+  "credit_instructions": "internal",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "utility",
+  "target_seconds": 100,
+  "allowLong": true,
+  "allowLongReason": "10 tools, each needing a free line + a paid line + a price, cannot fit the 5-tool ai-tools band (40-60s) without becoming a name-only list. Length buys completeness of the promise, not padding -- five-free-ai-tools covered 5 tools in ~55s at the same density.",
+  "music": true,
+  "created_at": "2026-09-18T09:53:10.830400+00:00",
+  "status": "initialized"
+}

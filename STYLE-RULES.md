@@ -8628,3 +8628,92 @@ the tie — drop the statistic and replace it with a claim that already has
 real, named, independently-corroborated backing (here: the C2PA-adopters'
 actual names, Leica/Sony/Nikon/Pixel, which were independently confirmed
 across two outlets).
+
+## 2026-09-18 (2) — 10-ai-tools-free-vs-paid: whisper collapses spelled-out numbers to digits, and a `logos` grid was never sized past 6 items
+
+**RAW NOTE 1 — a phrase-anchor or move `on` field written from the SCRIPT's
+spelled-out words fails silently against whisper's own transcript, because
+whisper renders compound number words as digits.** `start_phrase: "Leonardo
+gives a"` and moves like `"on": "Twelve dollars a month"` refused to
+resolve — not because of a mishearing, but because whisper transcribed "a
+hundred fifty" as `150`, "four hundred" as `400`, and every spelled-out
+dollar amount ("twenty dollars", "eighteen dollars", "eight dollars") as
+`$20`/`$18`/`$8`. Ten shots each carrying 2-4 anchor phrases meant this
+surfaced repeatedly, in two waves: first as hard `start_phrase` refusals
+(compile exits 1 immediately, one at a time), then — once those cleared —
+as a single batched list of every unresolved `on` move across the whole
+plan (compiler collects all of them before exiting, so fix the whole list
+at once, not one rerun per move). **DISTILLED RULE.** Never write a
+phrase-anchor or move `on` field containing a spelled-out number, a
+dollar amount, or "a hundred/thousand X" — whisper will have collapsed it
+to digits and the literal text will never match. Anchor on the words
+immediately BEFORE or AFTER the number instead (a word that survives
+verbatim), and keep the anchor CONTIGUOUS with what whisper actually heard
+— you cannot bridge across a collapsed number by naming words on both
+sides of it, only one side. Rehearse the whole plan (`compile_shot_plan.py`
+without `--force`, or accept the first pass's full error list) before
+assuming one fix is the only fix.
+
+**RAW NOTE 2 — G68 (a number on screen must be in the script or ledger)
+flags a bare "$0" price and a numbered "#N ·" eyebrow just as readily as a
+real claim, because it has no concept of "obviously free" or "just a list
+index."** Every swap-card free side written as `price: "$0"` failed G68
+across seven shots, since nobody ever SAYS "zero dollars" and the ledger
+never writes the digit either; a `"#7 · Descript"` eyebrow failed for the
+same reason on the one position whose digit (7) never happened to appear
+elsewhere in the script or ledger (1-6, 8, 9 and 10 all incidentally
+matched via a spelled number word or a ledger digit already present, which
+made the bug look shot-specific until traced). **DISTILLED RULE.** Don't
+give a swap card's free side a `"$0"` price when its `name` already reads
+"Free" — the digit is redundant and unsourceable; either drop `price`
+entirely or put the tier's actual defining number there (limits/day,
+uses/month) if the script already speaks it as a word. And don't number a
+list's eyebrows ("#1 · X", "#2 · Y" ...) unless the reel is genuinely
+ranked — this repo's own "no ranking" convention (RULES.md, and this
+reel's own structure.md) already argues against it, and G68 turns the
+ranking digit into a sourcing problem on top.
+
+**RAW NOTE 3 — the `logos` block's tile size was measured once, on 5
+items, and silently breaks the platform safe floor at 10.** `five-free-ai-
+tools` fit five 390px-tall tiles in two rows comfortably above the 80%
+line. This reel's ten-tool hook and CTA wrapped the same fixed tile size
+into four rows and ran straight through it (95% and 94% of frame height —
+[PLATFORM ZONE], a blocking flag). **DISTILLED RULE.** `Slide.tsx`'s
+`logos` block now sizes itself down (168px tiles, 12px gap, 80px logos)
+once `items.length > 6` — safe for the 5-item case this component was
+built for, and now safe up to at least 10. Still worth a second look
+before assuming any fixed-size grid component scales past whatever item
+count it was last measured against; and a redundant repeat of the SAME
+10-item grid at both the hook and the CTA compounded the problem for no
+narrative reason — the CTA doesn't need to re-prove the tool list the hook
+already showed, so it was cut there rather than shrunk further.
+
+**RAW NOTE 4 — `lint_frames.py`'s DUPLICATE check compares adjacent
+MID-FRAME hashes, and a swap-card layout with no `rows` block is sparse
+enough that two adjacent such shots read as visually identical regardless
+of their actual numbers/text.** Ten consecutive tool shots shared one
+template; the only ADJACENT pair that both happened to lack an extra
+`rows` line (Leonardo -> Gamma) tripped the perceptual-hash distance
+threshold, even after their right-card reveal timing was fixed to land at
+a sane point in the shot (see RAW NOTE 5) — a-hash is dominated by layout
+structure, not glyph content. **DISTILLED RULE.** In a list format built
+from one repeated card template, give every shot at least one point of
+structural variation from its neighbors (a `rows` line, a different block
+count) — don't rely on the numbers/logo alone to make adjacent beats read
+as different. If two adjacent beats in the plan share the exact same
+block set, that is the pair to check first.
+
+**RAW NOTE 5 — a swap card's paid ("right") side showing late in its own
+shot is both a pacing problem and a DUPLICATE-detector trap.** Anchoring
+the right-card reveal to a late-occurring phrase (e.g. "starting around
+eight dollars", the very end of Gamma's line) meant the comparison wasn't
+even ON SCREEN yet at the shot's own midpoint — measured across all ten
+tool shots, ratios of right-card-reveal-time / shot-duration ranged from
+42% to 79%, and the two above ~75% were also the ones the lint sheet
+happened to sample mid-frame with only the free side showing.
+**DISTILLED RULE.** Anchor a swap card's paid-side reveal to the words
+that start describing the paid tier (the price, or the sentence's second
+clause), not to a distinguishing detail buried deep in that clause — aim
+for the reveal to land under ~50% of the shot's duration so the full
+comparison is on screen for the majority of the beat, which is also what
+the viewer is there to see.
