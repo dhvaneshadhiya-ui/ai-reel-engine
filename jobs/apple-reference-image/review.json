@@ -1,0 +1,13 @@
+{
+  "script_sha256": "c5599d575ae99aad1832269ced1084aa23f543469aa469a798517165359733f4",
+  "structure_sha256": "90f791b2f5365d181a196a5bb43d92935df82791b3d37115a775f57a14b6c235",
+  "findings": [
+    "  BRIDGES 4/14 sentences (29%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  WHAT WITHOUT SO WHAT 1/1 spec sentences never say what the number does for the viewer. \"2nm chip\" is information; \"faster without draining the battery\" is relevance. (framework S7)",
+    "NUMBERS: one every 7.5 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 20,
+  "proposedAt": "2026-09-18T06:49:37+00:00"
+}

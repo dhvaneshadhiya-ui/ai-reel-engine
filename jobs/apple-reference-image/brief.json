@@ -1,0 +1,28 @@
+{
+  "slug": "apple-reference-image",
+  "topic": "Apple Explains How Its New iPhone 18 Photo Verification Actually Works",
+  "details": "",
+  "subject": "Apple Explains How Its New iPhone 18 Photo Verification Actually Works",
+  "audience": "<who should care, and what they already know>",
+  "platform": "both",
+  "goal": "<awareness|education|engagement|follow|comment|conversion>",
+  "core_value": "<what the viewer learns, feels, sees or can do>",
+  "desired_action": "<if any>",
+  "reveal_target": "none",
+  "cta_keyword": "APPLE",
+  "target_duration": "70s",
+  "tone": "<voice, personality, boundaries>",
+  "source_policy": "official-preferred",
+  "footage_constraints": "<assets, permissions, presenter, recordings>",
+  "credit_instructions": "internal",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 70,
+  "music": false,
+  "created_at": "2026-09-18T06:16:34.757378+00:00",
+  "status": "initialized"
+}

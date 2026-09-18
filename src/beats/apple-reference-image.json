@@ -1,0 +1,1945 @@
+{
+  "id": "apple-reference-image",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/apple-reference-image/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "AI fake",
+    "Apple Reference Image",
+    "instant",
+    "quantum computers",
+    "before",
+    "switched off",
+    "staged"
+  ],
+  "scenes": [
+    {
+      "type": "footage",
+      "src": "assets/apple-reference-image/avatar-master.mp4",
+      "zoomDir": "in",
+      "durationSec": 3.42,
+      "from": 0.0,
+      "focusX": 0.5
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-reference-image/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 5.48,
+      "from": 3.42,
+      "focusX": 0.5
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/apple-reference-image/iphone18pro-product.png",
+      "srcWidth": 1080,
+      "srcHeight": 1970,
+      "backdrop": "black",
+      "credit": "Apple",
+      "captionBottom": 520,
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 0.05,
+          "vol": 0.32
+        }
+      ],
+      "durationSec": 3.8,
+      "lines": [
+        {
+          "at": 0.5,
+          "x": 190,
+          "y": 240,
+          "w": 700,
+          "h": 260
+        },
+        {
+          "at": 3.4,
+          "x": 300,
+          "y": 700,
+          "w": 480,
+          "h": 900
+        }
+      ],
+      "follow": true,
+      "film": true,
+      "assetId": "receipt-iphone18pro-product",
+      "claimId": "receipt-iphone18pro-product",
+      "covers": "It's called Apple Reference",
+      "sourceUrl": "https://www.apple.com/iphone-18-pro/"
+    },
+    {
+      "type": "stage",
+      "hideCaptions": false,
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "sensor",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.38,
+          "w": 0.6,
+          "title": "Sensor",
+          "lines": [
+            "light hits it"
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "sensor",
+          "on": "the sensor signs",
+          "dir": "up",
+          "at": 0.0
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 0.1,
+          "vol": 0.417
+        }
+      ],
+      "durationSec": 2.82
+    },
+    {
+      "type": "stage",
+      "hideCaptions": true,
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "sensor",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.38,
+          "w": 0.6,
+          "title": "Sensor",
+          "lines": [
+            "light hits it"
+          ]
+        },
+        {
+          "id": "signed",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.65,
+          "w": 0.5,
+          "title": "Signed \u2713",
+          "lines": [
+            "before software touches it"
+          ],
+          "tone": "accent"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "signed",
+          "on": "before anything else",
+          "dir": "up",
+          "at": 0.0
+        }
+      ],
+      "durationSec": 2.3
+    },
+    {
+      "type": "stage",
+      "hideCaptions": true,
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "signed",
+          "kind": "card",
+          "x": 0.27,
+          "y": 0.45,
+          "w": 0.42,
+          "title": "Signed file",
+          "lines": [
+            "from the sensor"
+          ]
+        },
+        {
+          "id": "pcc",
+          "kind": "card",
+          "x": 0.73,
+          "y": 0.45,
+          "w": 0.42,
+          "title": "Private Cloud Compute",
+          "lines": [
+            "checks it"
+          ],
+          "tone": "accent"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "signed",
+          "on": "file goes",
+          "dir": "left",
+          "at": 0.0
+        },
+        {
+          "do": "connect",
+          "from": "signed",
+          "to": "pcc",
+          "on": "private cloud compute",
+          "arrow": true,
+          "at": 1.2
+        },
+        {
+          "do": "arrive",
+          "target": "pcc",
+          "on": "private cloud compute",
+          "dir": "right",
+          "at": 1.2
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 0.1,
+          "vol": 1.0
+        }
+      ],
+      "durationSec": 2.48
+    },
+    {
+      "type": "stage",
+      "hideCaptions": true,
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "pcc",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.26,
+          "w": 0.7,
+          "title": "Private Cloud Compute",
+          "lines": [
+            "checks + processes"
+          ]
+        },
+        {
+          "id": "final",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.56,
+          "w": 0.6,
+          "title": "Signed photo",
+          "lines": [
+            "encrypted"
+          ],
+          "tone": "accent"
+        },
+        {
+          "id": "quantum",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.82,
+          "w": 0.5,
+          "title": "Quantum-resistant",
+          "lines": [
+            "signature"
+          ],
+          "tone": "accent"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "final",
+          "on": "signs the final photo",
+          "dir": "up",
+          "at": 0.86
+        },
+        {
+          "do": "arrive",
+          "target": "quantum",
+          "on": "survive quantum computers",
+          "dir": "up",
+          "at": 3.52
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 3.8,
+          "vol": 0.26
+        }
+      ],
+      "durationSec": 5.24
+    },
+    {
+      "type": "checklist",
+      "headline": "NOT INCLUDED",
+      "rows": [
+        {
+          "label": "Your name",
+          "state": "q"
+        },
+        {
+          "label": "Your location",
+          "state": "q"
+        }
+      ],
+      "durationSec": 2.0
+    },
+    {
+      "type": "checklist",
+      "headline": "INCLUDED",
+      "rows": [
+        {
+          "label": "Sensor proof",
+          "state": "done"
+        },
+        {
+          "label": "Revocable if compromised",
+          "state": "done"
+        }
+      ],
+      "footnote": "Source: security.apple.com, Sept 15 2026",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.15,
+          "vol": 0.343
+        }
+      ],
+      "durationSec": 6.88
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-reference-image/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 1.38,
+      "from": 34.42,
+      "focusX": 0.5
+    },
+    {
+      "type": "categorygrid",
+      "headline": "ALREADY USE C2PA",
+      "cards": [
+        {
+          "label": "Leica"
+        },
+        {
+          "label": "Sony"
+        },
+        {
+          "label": "Nikon"
+        },
+        {
+          "label": "Google Pixel"
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.15,
+          "vol": 0.343
+        }
+      ],
+      "durationSec": 3.92
+    },
+    {
+      "type": "stage",
+      "hideCaptions": true,
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "c2pa",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.35,
+          "w": 0.75,
+          "title": "C2PA",
+          "lines": [
+            "signs AFTER processing"
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "c2pa",
+          "on": "already been processed",
+          "dir": "up",
+          "at": 1.28
+        }
+      ],
+      "durationSec": 2.62
+    },
+    {
+      "type": "stage",
+      "hideCaptions": true,
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "c2pa",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.35,
+          "w": 0.75,
+          "title": "C2PA",
+          "lines": [
+            "signs AFTER processing"
+          ]
+        },
+        {
+          "id": "apple",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.68,
+          "w": 0.75,
+          "title": "Apple",
+          "lines": [
+            "signs BEFORE software runs"
+          ],
+          "tone": "accent"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "apple",
+          "on": "signs it before",
+          "dir": "up",
+          "at": 0.24
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 0.1,
+          "vol": 0.417
+        }
+      ],
+      "durationSec": 2.76
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-reference-image/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 2.94,
+      "from": 45.1,
+      "focusX": 0.5
+    },
+    {
+      "type": "checklist",
+      "headline": "OFF BY DEFAULT",
+      "rows": [
+        {
+          "label": "Photojournalists",
+          "state": "done"
+        },
+        {
+          "label": "Courtrooms",
+          "state": "done"
+        },
+        {
+          "label": "Your everyday shot",
+          "state": "q"
+        }
+      ],
+      "durationSec": 5.06
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-reference-image/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 1.62,
+      "from": 53.1,
+      "focusX": 0.5
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-reference-image/squaredtech-critique.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "black",
+      "credit": "SquaredTech",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 15,
+          "y": 440,
+          "w": 1050,
+          "h": 500
+        }
+      ],
+      "captionBottom": 520,
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 0.05,
+          "vol": 0.32
+        }
+      ],
+      "durationSec": 2.48,
+      "assetId": "receipt-squaredtech-critique",
+      "claimId": "receipt-squaredtech-critique",
+      "covers": "points out it can't",
+      "sourceUrl": "https://www.squaredtech.co/apples-iphone-18-pro-camera-security-claim-needs-proof",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-reference-image/squaredtech-critique.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "backdrop": "black",
+      "highlights": [
+        {
+          "at": 0.05,
+          "x": 15,
+          "y": 850,
+          "w": 1050,
+          "h": 90
+        }
+      ],
+      "captionBottom": 520,
+      "durationSec": 1.86,
+      "assetId": "receipt-squaredtech-critique",
+      "claimId": "receipt-squaredtech-critique",
+      "covers": "only that the pixels",
+      "sourceUrl": "https://www.squaredtech.co/apples-iphone-18-pro-camera-security-claim-needs-proof",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "stage",
+      "hideCaptions": true,
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "sensor",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.45,
+          "w": 0.6,
+          "title": "Sensor",
+          "lines": [
+            "signed \u2713"
+          ],
+          "tone": "accent"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "sensor",
+          "on": "starts at the sensor",
+          "dir": "up",
+          "at": 0.62
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 0.3,
+          "vol": 0.26
+        }
+      ],
+      "durationSec": 3.72
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-reference-image/avatar-master.mp4",
+      "zoomDir": "none",
+      "durationSec": 3.355,
+      "from": 62.78,
+      "focusX": 0.5
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.86,
+      "text": "You just can't",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "You"
+        },
+        {
+          "t": 0.28,
+          "text": "just"
+        },
+        {
+          "t": 0.52,
+          "text": "can't"
+        }
+      ]
+    },
+    {
+      "start": 0.86,
+      "end": 1.48,
+      "text": "tell a photo",
+      "words": [
+        {
+          "t": 0.86,
+          "text": "tell"
+        },
+        {
+          "t": 1.06,
+          "text": "a"
+        },
+        {
+          "t": 1.24,
+          "text": "photo"
+        }
+      ]
+    },
+    {
+      "start": 1.48,
+      "end": 2.14,
+      "text": "from an AI",
+      "words": [
+        {
+          "t": 1.48,
+          "text": "from"
+        },
+        {
+          "t": 1.76,
+          "text": "an"
+        },
+        {
+          "t": 1.9,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 2.14,
+      "end": 3.6,
+      "text": "fake anymore. But",
+      "words": [
+        {
+          "t": 2.14,
+          "text": "fake"
+        },
+        {
+          "t": 2.52,
+          "text": "anymore."
+        },
+        {
+          "t": 3.42,
+          "text": "But"
+        }
+      ]
+    },
+    {
+      "start": 3.6,
+      "end": 4.46,
+      "text": "here's what's actually",
+      "words": [
+        {
+          "t": 3.6,
+          "text": "here's"
+        },
+        {
+          "t": 3.9,
+          "text": "what's"
+        },
+        {
+          "t": 4.1,
+          "text": "actually"
+        }
+      ]
+    },
+    {
+      "start": 4.46,
+      "end": 5.48,
+      "text": "new. The proof",
+      "words": [
+        {
+          "t": 4.46,
+          "text": "new."
+        },
+        {
+          "t": 5.12,
+          "text": "The"
+        },
+        {
+          "t": 5.24,
+          "text": "proof"
+        }
+      ]
+    },
+    {
+      "start": 5.48,
+      "end": 6.56,
+      "text": "now starts before",
+      "words": [
+        {
+          "t": 5.48,
+          "text": "now"
+        },
+        {
+          "t": 5.78,
+          "text": "starts"
+        },
+        {
+          "t": 6.24,
+          "text": "before"
+        }
+      ]
+    },
+    {
+      "start": 6.56,
+      "end": 7.36,
+      "text": "your phone even",
+      "words": [
+        {
+          "t": 6.56,
+          "text": "your"
+        },
+        {
+          "t": 6.78,
+          "text": "phone"
+        },
+        {
+          "t": 7.06,
+          "text": "even"
+        }
+      ]
+    },
+    {
+      "start": 7.36,
+      "end": 8.34,
+      "text": "finishes taking the",
+      "words": [
+        {
+          "t": 7.36,
+          "text": "finishes"
+        },
+        {
+          "t": 7.76,
+          "text": "taking"
+        },
+        {
+          "t": 8.14,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 8.34,
+      "end": 9.3,
+      "text": "picture. It's called",
+      "words": [
+        {
+          "t": 8.34,
+          "text": "picture."
+        },
+        {
+          "t": 8.9,
+          "text": "It's"
+        },
+        {
+          "t": 9.12,
+          "text": "called"
+        }
+      ]
+    },
+    {
+      "start": 9.3,
+      "end": 10.44,
+      "text": "Apple Reference Image,",
+      "words": [
+        {
+          "t": 9.3,
+          "text": "Apple"
+        },
+        {
+          "t": 9.74,
+          "text": "Reference"
+        },
+        {
+          "t": 10.1,
+          "text": "Image,"
+        }
+      ]
+    },
+    {
+      "start": 10.74,
+      "end": 11.3,
+      "text": "live on the",
+      "words": [
+        {
+          "t": 10.74,
+          "text": "live"
+        },
+        {
+          "t": 10.96,
+          "text": "on"
+        },
+        {
+          "t": 11.2,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 11.3,
+      "end": 12.42,
+      "text": "iPhone 18 Pro.",
+      "words": [
+        {
+          "t": 11.3,
+          "text": "iPhone"
+        },
+        {
+          "t": 11.64,
+          "text": "18"
+        },
+        {
+          "t": 12.06,
+          "text": "Pro."
+        }
+      ]
+    },
+    {
+      "start": 12.7,
+      "end": 13.4,
+      "text": "The sensor signs",
+      "words": [
+        {
+          "t": 12.7,
+          "text": "The"
+        },
+        {
+          "t": 12.8,
+          "text": "sensor"
+        },
+        {
+          "t": 13.06,
+          "text": "signs"
+        }
+      ]
+    },
+    {
+      "start": 13.4,
+      "end": 14.28,
+      "text": "the pixels the",
+      "words": [
+        {
+          "t": 13.4,
+          "text": "the"
+        },
+        {
+          "t": 13.68,
+          "text": "pixels"
+        },
+        {
+          "t": 14.02,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 14.28,
+      "end": 15.18,
+      "text": "instant light hits",
+      "words": [
+        {
+          "t": 14.28,
+          "text": "instant"
+        },
+        {
+          "t": 14.58,
+          "text": "light"
+        },
+        {
+          "t": 14.9,
+          "text": "hits"
+        }
+      ]
+    },
+    {
+      "start": 15.18,
+      "end": 16.12,
+      "text": "it, before anything",
+      "words": [
+        {
+          "t": 15.18,
+          "text": "it,"
+        },
+        {
+          "t": 15.52,
+          "text": "before"
+        },
+        {
+          "t": 15.78,
+          "text": "anything"
+        }
+      ]
+    },
+    {
+      "start": 16.12,
+      "end": 16.94,
+      "text": "else can touch",
+      "words": [
+        {
+          "t": 16.12,
+          "text": "else"
+        },
+        {
+          "t": 16.48,
+          "text": "can"
+        },
+        {
+          "t": 16.66,
+          "text": "touch"
+        }
+      ]
+    },
+    {
+      "start": 16.94,
+      "end": 17.82,
+      "text": "them. That sign",
+      "words": [
+        {
+          "t": 16.94,
+          "text": "them."
+        },
+        {
+          "t": 17.4,
+          "text": "That"
+        },
+        {
+          "t": 17.54,
+          "text": "sign"
+        }
+      ]
+    },
+    {
+      "start": 17.82,
+      "end": 18.6,
+      "text": "file goes to",
+      "words": [
+        {
+          "t": 17.82,
+          "text": "file"
+        },
+        {
+          "t": 18.14,
+          "text": "goes"
+        },
+        {
+          "t": 18.4,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 18.6,
+      "end": 19.62,
+      "text": "Apple's private cloud",
+      "words": [
+        {
+          "t": 18.6,
+          "text": "Apple's"
+        },
+        {
+          "t": 19.02,
+          "text": "private"
+        },
+        {
+          "t": 19.3,
+          "text": "cloud"
+        }
+      ]
+    },
+    {
+      "start": 19.62,
+      "end": 20.74,
+      "text": "compute, which checks",
+      "words": [
+        {
+          "t": 19.62,
+          "text": "compute,"
+        },
+        {
+          "t": 20.3,
+          "text": "which"
+        },
+        {
+          "t": 20.46,
+          "text": "checks"
+        }
+      ]
+    },
+    {
+      "start": 20.74,
+      "end": 21.46,
+      "text": "it and signs",
+      "words": [
+        {
+          "t": 20.74,
+          "text": "it"
+        },
+        {
+          "t": 20.98,
+          "text": "and"
+        },
+        {
+          "t": 21.16,
+          "text": "signs"
+        }
+      ]
+    },
+    {
+      "start": 21.46,
+      "end": 22.26,
+      "text": "the final photo",
+      "words": [
+        {
+          "t": 21.46,
+          "text": "the"
+        },
+        {
+          "t": 21.66,
+          "text": "final"
+        },
+        {
+          "t": 21.92,
+          "text": "photo"
+        }
+      ]
+    },
+    {
+      "start": 22.26,
+      "end": 23.38,
+      "text": "with encryption strong",
+      "words": [
+        {
+          "t": 22.26,
+          "text": "with"
+        },
+        {
+          "t": 22.52,
+          "text": "encryption"
+        },
+        {
+          "t": 22.9,
+          "text": "strong"
+        }
+      ]
+    },
+    {
+      "start": 23.38,
+      "end": 24.18,
+      "text": "enough to survive",
+      "words": [
+        {
+          "t": 23.38,
+          "text": "enough"
+        },
+        {
+          "t": 23.66,
+          "text": "to"
+        },
+        {
+          "t": 23.82,
+          "text": "survive"
+        }
+      ]
+    },
+    {
+      "start": 24.18,
+      "end": 25.7,
+      "text": "quantum computers. It",
+      "words": [
+        {
+          "t": 24.18,
+          "text": "quantum"
+        },
+        {
+          "t": 24.62,
+          "text": "computers."
+        },
+        {
+          "t": 25.54,
+          "text": "It"
+        }
+      ]
+    },
+    {
+      "start": 25.7,
+      "end": 26.38,
+      "text": "doesn't carry your",
+      "words": [
+        {
+          "t": 25.7,
+          "text": "doesn't"
+        },
+        {
+          "t": 25.98,
+          "text": "carry"
+        },
+        {
+          "t": 26.18,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 26.38,
+      "end": 27.1,
+      "text": "name or your",
+      "words": [
+        {
+          "t": 26.38,
+          "text": "name"
+        },
+        {
+          "t": 26.68,
+          "text": "or"
+        },
+        {
+          "t": 26.96,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 27.1,
+      "end": 28.34,
+      "text": "location, only proof",
+      "words": [
+        {
+          "t": 27.1,
+          "text": "location,"
+        },
+        {
+          "t": 27.54,
+          "text": "only"
+        },
+        {
+          "t": 28.02,
+          "text": "proof"
+        }
+      ]
+    },
+    {
+      "start": 28.34,
+      "end": 28.94,
+      "text": "that an Apple",
+      "words": [
+        {
+          "t": 28.34,
+          "text": "that"
+        },
+        {
+          "t": 28.58,
+          "text": "an"
+        },
+        {
+          "t": 28.7,
+          "text": "Apple"
+        }
+      ]
+    },
+    {
+      "start": 28.94,
+      "end": 30.08,
+      "text": "sensor captured those",
+      "words": [
+        {
+          "t": 28.94,
+          "text": "sensor"
+        },
+        {
+          "t": 29.3,
+          "text": "captured"
+        },
+        {
+          "t": 29.8,
+          "text": "those"
+        }
+      ]
+    },
+    {
+      "start": 30.08,
+      "end": 31.5,
+      "text": "exact pixels. One",
+      "words": [
+        {
+          "t": 30.08,
+          "text": "exact"
+        },
+        {
+          "t": 30.5,
+          "text": "pixels."
+        },
+        {
+          "t": 31.3,
+          "text": "One"
+        }
+      ]
+    },
+    {
+      "start": 31.5,
+      "end": 32.4,
+      "text": "Apple can revoke",
+      "words": [
+        {
+          "t": 31.5,
+          "text": "Apple"
+        },
+        {
+          "t": 31.78,
+          "text": "can"
+        },
+        {
+          "t": 32.0,
+          "text": "revoke"
+        }
+      ]
+    },
+    {
+      "start": 32.4,
+      "end": 33.1,
+      "text": "if that sensor",
+      "words": [
+        {
+          "t": 32.4,
+          "text": "if"
+        },
+        {
+          "t": 32.58,
+          "text": "that"
+        },
+        {
+          "t": 32.76,
+          "text": "sensor"
+        }
+      ]
+    },
+    {
+      "start": 33.1,
+      "end": 33.96,
+      "text": "is ever compromised.",
+      "words": [
+        {
+          "t": 33.1,
+          "text": "is"
+        },
+        {
+          "t": 33.3,
+          "text": "ever"
+        },
+        {
+          "t": 33.48,
+          "text": "compromised."
+        }
+      ]
+    },
+    {
+      "start": 34.42,
+      "end": 35.1,
+      "text": "Here's why that",
+      "words": [
+        {
+          "t": 34.42,
+          "text": "Here's"
+        },
+        {
+          "t": 34.76,
+          "text": "why"
+        },
+        {
+          "t": 34.9,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 35.1,
+      "end": 36.56,
+      "text": "matters. Leica, Sony,",
+      "words": [
+        {
+          "t": 35.1,
+          "text": "matters."
+        },
+        {
+          "t": 35.8,
+          "text": "Leica,"
+        },
+        {
+          "t": 36.4,
+          "text": "Sony,"
+        }
+      ]
+    },
+    {
+      "start": 36.84,
+      "end": 37.8,
+      "text": "Nikon and Google's",
+      "words": [
+        {
+          "t": 36.84,
+          "text": "Nikon"
+        },
+        {
+          "t": 37.18,
+          "text": "and"
+        },
+        {
+          "t": 37.36,
+          "text": "Google's"
+        }
+      ]
+    },
+    {
+      "start": 37.8,
+      "end": 38.58,
+      "text": "pixel use the",
+      "words": [
+        {
+          "t": 37.8,
+          "text": "pixel"
+        },
+        {
+          "t": 38.02,
+          "text": "use"
+        },
+        {
+          "t": 38.38,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 38.58,
+      "end": 39.8,
+      "text": "existing standard. It",
+      "words": [
+        {
+          "t": 38.58,
+          "text": "existing"
+        },
+        {
+          "t": 38.98,
+          "text": "standard."
+        },
+        {
+          "t": 39.72,
+          "text": "It"
+        }
+      ]
+    },
+    {
+      "start": 39.8,
+      "end": 40.46,
+      "text": "signs a photo",
+      "words": [
+        {
+          "t": 39.8,
+          "text": "signs"
+        },
+        {
+          "t": 40.02,
+          "text": "a"
+        },
+        {
+          "t": 40.22,
+          "text": "photo"
+        }
+      ]
+    },
+    {
+      "start": 40.46,
+      "end": 41.24,
+      "text": "after it's already",
+      "words": [
+        {
+          "t": 40.46,
+          "text": "after"
+        },
+        {
+          "t": 40.78,
+          "text": "it's"
+        },
+        {
+          "t": 41.0,
+          "text": "already"
+        }
+      ]
+    },
+    {
+      "start": 41.24,
+      "end": 42.58,
+      "text": "been processed. Apple",
+      "words": [
+        {
+          "t": 41.24,
+          "text": "been"
+        },
+        {
+          "t": 41.48,
+          "text": "processed."
+        },
+        {
+          "t": 42.34,
+          "text": "Apple"
+        }
+      ]
+    },
+    {
+      "start": 42.58,
+      "end": 43.26,
+      "text": "signs it before",
+      "words": [
+        {
+          "t": 42.58,
+          "text": "signs"
+        },
+        {
+          "t": 42.88,
+          "text": "it"
+        },
+        {
+          "t": 43.06,
+          "text": "before"
+        }
+      ]
+    },
+    {
+      "start": 43.26,
+      "end": 44.38,
+      "text": "any software touches",
+      "words": [
+        {
+          "t": 43.26,
+          "text": "any"
+        },
+        {
+          "t": 43.58,
+          "text": "software"
+        },
+        {
+          "t": 44.04,
+          "text": "touches"
+        }
+      ]
+    },
+    {
+      "start": 44.38,
+      "end": 44.98,
+      "text": "it at all,",
+      "words": [
+        {
+          "t": 44.38,
+          "text": "it"
+        },
+        {
+          "t": 44.6,
+          "text": "at"
+        },
+        {
+          "t": 44.72,
+          "text": "all,"
+        }
+      ]
+    },
+    {
+      "start": 45.1,
+      "end": 45.66,
+      "text": "so there's no",
+      "words": [
+        {
+          "t": 45.1,
+          "text": "so"
+        },
+        {
+          "t": 45.26,
+          "text": "there's"
+        },
+        {
+          "t": 45.5,
+          "text": "no"
+        }
+      ]
+    },
+    {
+      "start": 45.66,
+      "end": 46.34,
+      "text": "window for a",
+      "words": [
+        {
+          "t": 45.66,
+          "text": "window"
+        },
+        {
+          "t": 45.98,
+          "text": "for"
+        },
+        {
+          "t": 46.2,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 46.34,
+      "end": 46.84,
+      "text": "fake to get",
+      "words": [
+        {
+          "t": 46.34,
+          "text": "fake"
+        },
+        {
+          "t": 46.54,
+          "text": "to"
+        },
+        {
+          "t": 46.68,
+          "text": "get"
+        }
+      ]
+    },
+    {
+      "start": 46.84,
+      "end": 47.64,
+      "text": "swapped in first.",
+      "words": [
+        {
+          "t": 46.84,
+          "text": "swapped"
+        },
+        {
+          "t": 47.12,
+          "text": "in"
+        },
+        {
+          "t": 47.38,
+          "text": "first."
+        }
+      ]
+    },
+    {
+      "start": 48.04,
+      "end": 48.88,
+      "text": "Anyways, it comes",
+      "words": [
+        {
+          "t": 48.04,
+          "text": "Anyways,"
+        },
+        {
+          "t": 48.6,
+          "text": "it"
+        },
+        {
+          "t": 48.68,
+          "text": "comes"
+        }
+      ]
+    },
+    {
+      "start": 48.88,
+      "end": 49.94,
+      "text": "switched off, built",
+      "words": [
+        {
+          "t": 48.88,
+          "text": "switched"
+        },
+        {
+          "t": 49.2,
+          "text": "off,"
+        },
+        {
+          "t": 49.78,
+          "text": "built"
+        }
+      ]
+    },
+    {
+      "start": 49.94,
+      "end": 50.9,
+      "text": "for photo journalists",
+      "words": [
+        {
+          "t": 49.94,
+          "text": "for"
+        },
+        {
+          "t": 50.16,
+          "text": "photo"
+        },
+        {
+          "t": 50.42,
+          "text": "journalists"
+        }
+      ]
+    },
+    {
+      "start": 50.9,
+      "end": 52.02,
+      "text": "and courtrooms, not",
+      "words": [
+        {
+          "t": 50.9,
+          "text": "and"
+        },
+        {
+          "t": 51.12,
+          "text": "courtrooms,"
+        },
+        {
+          "t": 51.88,
+          "text": "not"
+        }
+      ]
+    },
+    {
+      "start": 52.02,
+      "end": 52.86,
+      "text": "your everyday shot.",
+      "words": [
+        {
+          "t": 52.02,
+          "text": "your"
+        },
+        {
+          "t": 52.2,
+          "text": "everyday"
+        },
+        {
+          "t": 52.5,
+          "text": "shot."
+        }
+      ]
+    },
+    {
+      "start": 53.1,
+      "end": 53.5,
+      "text": "And it's not",
+      "words": [
+        {
+          "t": 53.1,
+          "text": "And"
+        },
+        {
+          "t": 53.22,
+          "text": "it's"
+        },
+        {
+          "t": 53.38,
+          "text": "not"
+        }
+      ]
+    },
+    {
+      "start": 53.5,
+      "end": 55.06,
+      "text": "perfect. SquareTech points",
+      "words": [
+        {
+          "t": 53.5,
+          "text": "perfect."
+        },
+        {
+          "t": 54.28,
+          "text": "SquareTech"
+        },
+        {
+          "t": 54.72,
+          "text": "points"
+        }
+      ]
+    },
+    {
+      "start": 55.06,
+      "end": 55.84,
+      "text": "out it can't",
+      "words": [
+        {
+          "t": 55.06,
+          "text": "out"
+        },
+        {
+          "t": 55.3,
+          "text": "it"
+        },
+        {
+          "t": 55.54,
+          "text": "can't"
+        }
+      ]
+    },
+    {
+      "start": 55.84,
+      "end": 56.26,
+      "text": "tell you the",
+      "words": [
+        {
+          "t": 55.84,
+          "text": "tell"
+        },
+        {
+          "t": 56.0,
+          "text": "you"
+        },
+        {
+          "t": 56.12,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 56.26,
+      "end": 57.2,
+      "text": "photo wasn't staged,",
+      "words": [
+        {
+          "t": 56.26,
+          "text": "photo"
+        },
+        {
+          "t": 56.52,
+          "text": "wasn't"
+        },
+        {
+          "t": 56.9,
+          "text": "staged,"
+        }
+      ]
+    },
+    {
+      "start": 57.2,
+      "end": 58.02,
+      "text": "only that the",
+      "words": [
+        {
+          "t": 57.2,
+          "text": "only"
+        },
+        {
+          "t": 57.68,
+          "text": "that"
+        },
+        {
+          "t": 57.9,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 58.02,
+      "end": 59.16,
+      "text": "pixels weren't. The",
+      "words": [
+        {
+          "t": 58.02,
+          "text": "pixels"
+        },
+        {
+          "t": 58.32,
+          "text": "weren't."
+        },
+        {
+          "t": 59.06,
+          "text": "The"
+        }
+      ]
+    },
+    {
+      "start": 59.16,
+      "end": 60.04,
+      "text": "proof still starts",
+      "words": [
+        {
+          "t": 59.16,
+          "text": "proof"
+        },
+        {
+          "t": 59.38,
+          "text": "still"
+        },
+        {
+          "t": 59.68,
+          "text": "starts"
+        }
+      ]
+    },
+    {
+      "start": 60.04,
+      "end": 60.68,
+      "text": "at the sensor,",
+      "words": [
+        {
+          "t": 60.04,
+          "text": "at"
+        },
+        {
+          "t": 60.26,
+          "text": "the"
+        },
+        {
+          "t": 60.36,
+          "text": "sensor,"
+        }
+      ]
+    },
+    {
+      "start": 60.96,
+      "end": 61.48,
+      "text": "not in an",
+      "words": [
+        {
+          "t": 60.96,
+          "text": "not"
+        },
+        {
+          "t": 61.14,
+          "text": "in"
+        },
+        {
+          "t": 61.34,
+          "text": "an"
+        }
+      ]
+    },
+    {
+      "start": 61.48,
+      "end": 62.24,
+      "text": "app after the",
+      "words": [
+        {
+          "t": 61.48,
+          "text": "app"
+        },
+        {
+          "t": 61.74,
+          "text": "after"
+        },
+        {
+          "t": 62.08,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 62.24,
+      "end": 63.14,
+      "text": "fact. Does knowing",
+      "words": [
+        {
+          "t": 62.24,
+          "text": "fact."
+        },
+        {
+          "t": 62.78,
+          "text": "Does"
+        },
+        {
+          "t": 62.9,
+          "text": "knowing"
+        }
+      ]
+    },
+    {
+      "start": 63.14,
+      "end": 63.9,
+      "text": "the camera itself",
+      "words": [
+        {
+          "t": 63.14,
+          "text": "the"
+        },
+        {
+          "t": 63.3,
+          "text": "camera"
+        },
+        {
+          "t": 63.64,
+          "text": "itself"
+        }
+      ]
+    },
+    {
+      "start": 63.9,
+      "end": 64.74,
+      "text": "signed it change",
+      "words": [
+        {
+          "t": 63.9,
+          "text": "signed"
+        },
+        {
+          "t": 64.34,
+          "text": "it"
+        },
+        {
+          "t": 64.5,
+          "text": "change"
+        }
+      ]
+    },
+    {
+      "start": 64.74,
+      "end": 65.3,
+      "text": "how much you",
+      "words": [
+        {
+          "t": 64.74,
+          "text": "how"
+        },
+        {
+          "t": 65.0,
+          "text": "much"
+        },
+        {
+          "t": 65.2,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 65.3,
+      "end": 65.96,
+      "text": "trust the photo?",
+      "words": [
+        {
+          "t": 65.3,
+          "text": "trust"
+        },
+        {
+          "t": 65.54,
+          "text": "the"
+        },
+        {
+          "t": 65.7,
+          "text": "photo?"
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "format": "news",
+  "script": "You just can't tell a photo from an AI fake anymore. But here's what's actually new: the proof now starts before your phone even finishes taking the picture.\n\nIt's called Apple Reference Image, live on the iPhone 18 Pro.\n\nThe sensor signs the pixels the instant light hits it, before anything else can touch them. That signed file goes to Apple's Private Cloud Compute, which checks it and signs the final photo with encryption strong enough to survive quantum computers. It doesn't carry your name or your location, only proof that an Apple sensor captured those exact pixels, one Apple can revoke if that sensor is ever compromised.\n\nHere's why that matters. Leica, Sony, Nikon, and Google's Pixel use the existing standard. It signs a photo after it's already been processed. Apple signs it before any software touches it at all, so there's no window for a fake to get swapped in first.\n\nAnyways, it comes switched off, built for photojournalists and courtrooms, not your everyday shot. And it's not perfect. SquaredTech points out it can't tell you the photo wasn't staged, only that the pixels weren't.\n\nThe proof still starts at the sensor, not in an app after the fact.\n\nDoes knowing the camera itself signed it change how much you trust the photo?",
+  "approval": {
+    "sha256": "c5599d575ae99aad1832269ced1084aa23f543469aa469a798517165359733f4",
+    "approvedAt": "2026-09-18T06:49:43+00:00",
+    "words": 215,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

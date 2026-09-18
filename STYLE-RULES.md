@@ -8457,3 +8457,82 @@ config snippet) — use a plain `slide` `text` block instead, which has no assum
 source platform and no UI chrome to match or mismatch. Don't default to `xpost`
 just because the source happens to be a tweet; ask whether the SHAPE of what's
 being shown is "a quote" or "a document."
+
+## 2026-09-18 — apple-reference-image: five production-stage findings on a mechanism-heavy explainer
+
+**RAW NOTE 1 — ElevenLabs v3 phonetic collisions are real and cheap to catch
+before the full master.** The approved line "this one ships switched off"
+rendered as audible mush — whisper `small` (not `base`) transcribed it as
+"this ones ship switched off" twice independently. A ~80-credit probe of the
+single sentence confirmed the collision (the "ps sw" consonant cluster), and
+a reworded probe ("it comes switched off") transcribed clean on the first
+try. **DISTILLED RULE.** When a whisper `small` transcript reads as
+grammatically odd around a consonant cluster ("X ships switched", "signed
+file" -> "sign file"), don't assume it's a transcription artifact and don't
+regenerate the full ~1,300-credit master to check — probe just that sentence
+(~4s, ~80 credits) first, both as-written and reworded. If a word collision
+survives the reword-and-reprobe (or the original phrasing is confirmed
+clean), only then commit to the full regenerate.
+
+**RAW NOTE 2 — `hcompare` cannot host a video in `topSrc`/`bottomSrc`; G35
+blocks it, correctly.** Two beats meant to be a simple "C2PA signs AFTER /
+Apple signs BEFORE" timing contrast were built as `hcompare` scenes pointing
+`topSrc`/`bottomSrc` at the avatar master video, because no still frame of
+either concept existed. G35 blocked both (`<Img>` cannot decode an mp4, the
+slot renders black). **DISTILLED RULE.** `hcompare`/`comparesplit`/`split`
+are for comparing two pieces of MEDIA (real stills or clips). A purely
+CONCEPTUAL before/after ("standard X does A, we do B") with no visual media
+on either side belongs in `stage` — two cards, one arriving after the other,
+no video slot to misuse. Reach for `stage` by default when the "comparison"
+is actually two facts, not two pictures.
+
+**RAW NOTE 3 — receipt highlight boxes need real margin from the text they
+frame, or EDGE TEXT fires.** A highlight box drawn flush against a headline's
+own left/right bounds (`x`/`w` matched to where the text visually started
+and ended in the source screenshot) passed everything except
+`lint_frames.py`'s EDGE TEXT check, which reads it as a mid-word crop.
+**DISTILLED RULE.** When sizing a receipt `highlights` rect, don't fit it to
+the text's own bounding box — pad it generously (30-40px minimum at this
+capture resolution) on every side. The box should have visible breathing
+room to the headline in the still, not just avoid literally overlapping it.
+
+**RAW NOTE 4 — two adjacent beats holding the SAME image at the SAME crop
+reads as a stutter, even across a real cut.** Two consecutive clauses of one
+sentence ("SquaredTech points out it can't tell you the photo wasn't
+staged" / "only that the pixels weren't") were built as two `receipt` beats
+on the identical source image with near-identical highlight boxes.
+`lint_frames.py`'s DUPLICATE check (frame-hash distance between adjacent
+mid-frames) caught it and blocked the render. **DISTILLED RULE.** Two beats
+on the same document asset for two clauses of one sentence is fine (G07
+explicitly allows "reading the source" as opposed to reuse-from-running-out),
+but each beat needs a DIFFERENT crop/zoom — e.g. wide on the headline, then
+punch in tighter on the byline/date — so the cut reads as continued reading,
+not a frozen repeat. Check adjacent-beat frame-hash distance mentally before
+compiling: if two beats would show literally the same pixels, change one.
+
+**RAW NOTE 5 — G40 restricts SFX roles to specific scene TYPES; `popup` /
+`reveal` / `impact` are not valid on `stage`.** Cards arriving in a `stage`
+mechanism sequence got tagged with `popup` (element entering) and `reveal`
+(payoff) cues by analogy to what they visually do — both failed G40, because
+those roles' `ROLE_FIT_TYPES` allowlist is `slide`/`checklist`/`categorygrid`/
+etc. and does not include `stage`. **DISTILLED RULE.** For a `stage` scene,
+the only fitting SFX role is `action` (the `sfx-action/` cues: marker, lock,
+tick, paper-slide, paper-quick, lens-zoom) — chosen for what the CARD itself
+is doing ("signs" -> marker.mp3 for an ink-mark feel, a badge locking in ->
+lock.mp3, a pipeline step -> tick.mp3), never for the generic UI-entrance
+feeling a `popup`/`reveal` cue would otherwise fit. Check `python3
+tools/sfx_library.py`'s role table against the scene TYPE, not just the
+visual metaphor, before assigning a cue.
+
+**RAW NOTE 6 (research, not build) — an unverifiable statistic is worth
+dropping even after it's already in a draft.** An early script draft cited
+"500 companies" on C2PA from a single opinion-piece source; an independent
+search for corroboration turned up an unrelated, differently-sourced
+"6,000+ members" figure instead, with neither traceable to a primary C2PA
+count page. **DISTILLED RULE.** When a number can't be independently
+corroborated and the FIRST independent search for it surfaces a materially
+different number, don't average, hedge, or hunt for a third source to break
+the tie — drop the statistic and replace it with a claim that already has
+real, named, independently-corroborated backing (here: the C2PA-adopters'
+actual names, Leica/Sony/Nikon/Pixel, which were independently confirmed
+across two outlets).
