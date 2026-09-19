@@ -328,18 +328,25 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         return <WavesBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
       case "logos": {
         const base = shownAt(b.id);
+        // MORE THAN 6 ITEMS NEEDS A SMALLER GRID (2026-09-18) — the fixed
+        // 390px tile was sized for five-free-ai-tools' 5 logos (2 rows) and
+        // runs a 10-item grid (4 rows) straight through the platform safe
+        // floor. Compact below the size that was ever measured to fit.
+        const compact = b.items.length > 6;
+        const tileH = compact ? 168 : (xl && scene.presenter ? 300 : 390);
+        const logoSize = compact ? 80 : (xl && scene.presenter ? 130 : 170);
         return (
-          <div key={b.id} style={{ display: "flex", flexWrap: "wrap", gap: 20, justifyContent: "center" }}>
+          <div key={b.id} style={{ display: "flex", flexWrap: "wrap", gap: compact ? 12 : 20, justifyContent: "center" }}>
             {b.items.map((it, i) => {
               const p = ramp(t, base + 0.1 * i, 0.3);
               return (
-                <div key={i} style={{ width: (COL - 40) / 3, height: xl && scene.presenter ? 300 : 390, background: C.card, borderRadius: 28,
+                <div key={i} style={{ width: compact ? (COL - 28) / 3 : (COL - 40) / 3, height: tileH, background: C.card, borderRadius: compact ? 20 : 28,
                   border: `2px solid ${C.line}`, display: "flex", flexDirection: "column", alignItems: "center",
                   justifyContent: "center", opacity: p, transform: `translateY(${Math.round((1 - p) * 24)}px)` }}>
                   <div style={{ display: "flex",
                     flexDirection: "column", alignItems: "center" }}>
-                    <Tile src={it.logo} tile={it.tile} size={xl && scene.presenter ? 130 : 170} />
-                    <div style={{ marginTop: 20, font: `600 34px/1.2 ${FONT}`, color: C.ink, textAlign: "center",
+                    <Tile src={it.logo} tile={it.tile} size={logoSize} />
+                    <div style={{ marginTop: compact ? 10 : 20, font: `600 ${compact ? 22 : 34}px/1.2 ${FONT}`, color: C.ink, textAlign: "center",
                       padding: "0 10px" }}>{it.name}</div>
                   </div>
                 </div>

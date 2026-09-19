@@ -1,0 +1,3024 @@
+{
+  "id": "10-ai-tools-free-vs-paid",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "utility",
+  "audio": "assets/10-ai-tools-free-vs-paid/vo.mp3",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "free",
+    "trial",
+    "TOOLS"
+  ],
+  "scenes": [
+    {
+      "eyebrow": "September 2026",
+      "headline": "Ten AI tools call themselves [[free]]",
+      "blocks": [
+        {
+          "id": "g",
+          "kind": "logos",
+          "items": [
+            {
+              "logo": "assets/logos/openai.svg",
+              "name": "ChatGPT",
+              "tile": "light"
+            },
+            {
+              "logo": "assets/logos/anthropic.svg",
+              "name": "Claude",
+              "tile": "light"
+            },
+            {
+              "logo": "assets/logos/perplexity.svg",
+              "name": "Perplexity",
+              "tile": "light"
+            },
+            {
+              "logo": "assets/logos/canva.svg",
+              "name": "Canva",
+              "tile": "dark"
+            },
+            {
+              "logo": "assets/logos/notion.svg",
+              "name": "Notion",
+              "tile": "dark"
+            },
+            {
+              "logo": "assets/logos/runway.svg",
+              "name": "Runway",
+              "tile": "light"
+            },
+            {
+              "logo": "assets/logos/descript.png",
+              "name": "Descript",
+              "tile": "light"
+            },
+            {
+              "logo": "assets/logos/cursor.svg",
+              "name": "Cursor",
+              "tile": "light"
+            },
+            {
+              "logo": "assets/logos/leonardo.png",
+              "name": "Leonardo.Ai",
+              "tile": "light"
+            },
+            {
+              "logo": "assets/logos/gamma.png",
+              "name": "Gamma",
+              "tile": "dark"
+            }
+          ]
+        },
+        {
+          "id": "q",
+          "kind": "text",
+          "text": "They don't all mean it the same way."
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "g",
+          "on": "AI tools all call",
+          "at": 2.1
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "call themselves free",
+          "at": 3.24
+        },
+        {
+          "do": "show",
+          "target": "q",
+          "on": "don't all mean",
+          "at": 4.74
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": true,
+      "presenter": {
+        "src": "assets/10-ai-tools-free-vs-paid/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "durationSec": 6.48,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 3.21,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "eyebrow": "The catch",
+      "headline": "A [[plan]], or a trial wearing a better word",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "name": "A real plan",
+            "price": "Renews",
+            "tone": "free",
+            "note": "you could live on"
+          },
+          "right": {
+            "name": "A trial",
+            "price": "Once",
+            "tone": "cost",
+            "note": "spend it and it's gone"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.left",
+          "on": "a plan you could",
+          "at": 1.44
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "hand you a trial",
+          "at": 3.8
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "a plan you could",
+          "at": 1.44
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": true,
+      "durationSec": 6.58,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.41,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "eyebrow": "ChatGPT",
+      "headline": "Free chats, no cap, but no [[GPT-6 Astra]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "logo": "assets/logos/openai.svg",
+            "name": "Free",
+            "price": "No cap",
+            "tone": "free",
+            "note": "no message cap",
+            "tile": "light"
+          },
+          "right": {
+            "name": "Plus",
+            "price": "$20",
+            "tone": "cost",
+            "note": "GPT-6 Astra + more"
+          }
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Image & voice",
+              "v": "Deeper on Plus",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.left",
+          "on": "free plan now chats",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "Plus",
+          "at": 4.14
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "no cap",
+          "at": 1.44
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "can't touch",
+          "at": 2.18
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": true,
+      "durationSec": 8.1,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.41,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 5.04,
+          "vol": 0.26
+        }
+      ]
+    },
+    {
+      "eyebrow": "Claude",
+      "headline": "Free skips [[Opus]] and Fable entirely",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "logo": "assets/logos/anthropic.svg",
+            "name": "Free",
+            "price": "",
+            "tone": "free",
+            "note": "Sonnet + Haiku only",
+            "tile": "light"
+          },
+          "right": {
+            "name": "Pro",
+            "price": "$20",
+            "tone": "cost",
+            "note": "Opus + Fable + Code"
+          }
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Usage",
+              "v": "5x on Pro",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.left",
+          "on": "free plan skips Opus",
+          "at": 0.36
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "Pro",
+          "at": 4.46
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "entirely",
+          "at": 3.48
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "multiplies your usage by five",
+          "at": 8.0
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": true,
+      "durationSec": 10.14,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 3.45,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 5.36,
+          "vol": 0.26
+        }
+      ]
+    },
+    {
+      "eyebrow": "Perplexity",
+      "headline": "Unlimited search, [[3]] Pro searches a day",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "logo": "assets/logos/perplexity.svg",
+            "name": "Free",
+            "price": "3/day",
+            "tone": "free",
+            "note": "3 Pro searches/day",
+            "tile": "light"
+          },
+          "right": {
+            "name": "Pro",
+            "price": "$20",
+            "tone": "cost",
+            "note": "10x the limits"
+          }
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Deep research",
+              "v": "1/month free",
+              "tone": "plain"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.left",
+          "on": "basic search is practically",
+          "at": 0.7
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "month",
+          "at": 6.18
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "unlimited free",
+          "at": 2.1
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "three Pro searches a day",
+          "at": 3.44
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": true,
+      "durationSec": 10.08,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.07,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 7.08,
+          "vol": 0.26
+        }
+      ]
+    },
+    {
+      "eyebrow": "Canva",
+      "headline": "[[20]] AI uses a month, shared across every tool",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "logo": "assets/logos/canva.svg",
+            "name": "Free",
+            "price": "20/mo",
+            "tone": "free",
+            "note": "20 AI uses/month",
+            "tile": "dark"
+          },
+          "right": {
+            "name": "Pro",
+            "price": "$18",
+            "tone": "cost",
+            "note": "unlimited + 200 premium"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.left",
+          "on": "free tier gives",
+          "at": 0.48
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "Pro",
+          "at": 4.94
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "shared across every tool",
+          "at": 2.98
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": true,
+      "durationSec": 10.42,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.95,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 5.84,
+          "vol": 0.26
+        }
+      ]
+    },
+    {
+      "eyebrow": "Notion AI",
+      "headline": "The workspace is free, the [[agent]] isn't",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "logo": "assets/logos/notion.svg",
+            "name": "Free",
+            "price": "",
+            "tone": "free",
+            "note": "just a taste of AI",
+            "tile": "dark"
+          },
+          "right": {
+            "name": "Business",
+            "price": "$20",
+            "tone": "cost",
+            "note": "the agent that finishes work"
+          }
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Billed",
+              "v": "Per seat / month",
+              "tone": "plain"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.left",
+          "on": "itself stays free forever",
+          "at": 0.42
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "business",
+          "at": 4.1
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "just a taste",
+          "at": 3.12
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "agent that finishes work",
+          "at": 6.42
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": true,
+      "durationSec": 8.34,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 3.09,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 5.0,
+          "vol": 0.26
+        }
+      ]
+    },
+    {
+      "eyebrow": "Runway",
+      "headline": "[[125]] credits, once, then gone",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "logo": "assets/logos/runway.svg",
+            "name": "Free",
+            "price": "125",
+            "tone": "free",
+            "note": "credits, one time",
+            "tile": "light"
+          },
+          "right": {
+            "name": "Standard",
+            "price": "$12",
+            "tone": "cost",
+            "note": "625 credits/month, refills"
+          }
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "~5s of video",
+              "v": "Free, once",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.left",
+          "on": "free credits are",
+          "at": 0.48
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "then gone",
+          "at": 4.36
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "once",
+          "at": 1.98
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "about five seconds of video",
+          "at": 2.8
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": true,
+      "durationSec": 8.1,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.95,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 1.38,
+          "vol": 0.26
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 5.26,
+          "vol": 0.26
+        }
+      ]
+    },
+    {
+      "eyebrow": "Descript",
+      "headline": "Minutes renew, [[AI credits]] don't",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "logo": "assets/logos/descript.png",
+            "name": "Free",
+            "price": "",
+            "tone": "free",
+            "note": "60 min/mo, 100 credits once",
+            "tile": "light"
+          },
+          "right": {
+            "name": "Hobbyist",
+            "price": "$16",
+            "tone": "cost",
+            "note": "credits refill, no watermark"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.left",
+          "on": "free minutes renew monthly",
+          "at": 0.5
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "a month gets",
+          "at": 4.4
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "AI credits don't",
+          "at": 2.56
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": true,
+      "durationSec": 7.96,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.53,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 5.3,
+          "vol": 0.26
+        }
+      ]
+    },
+    {
+      "eyebrow": "Cursor",
+      "headline": "Free Hobby, no card, [[Pro]] unlocks frontier models",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "logo": "assets/logos/cursor.svg",
+            "name": "Free (Hobby)",
+            "price": "",
+            "tone": "free",
+            "note": "limited AI requests",
+            "tile": "light"
+          },
+          "right": {
+            "name": "Pro",
+            "price": "$20",
+            "tone": "cost",
+            "note": "frontier models, higher limits"
+          }
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Billing",
+              "v": "Changed twice in 2026",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.left",
+          "on": "free Hobby plan gives",
+          "at": 0.46
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "Pro",
+          "at": 4.36
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "no card required",
+          "at": 2.76
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "reportedly changed billing twice",
+          "at": 7.96
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": true,
+      "durationSec": 10.46,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.73,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 5.26,
+          "vol": 0.26
+        }
+      ]
+    },
+    {
+      "eyebrow": "Leonardo.Ai",
+      "headline": "[[150]] tokens a day, public only",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "logo": "assets/logos/leonardo.png",
+            "name": "Free",
+            "price": "150",
+            "tone": "free",
+            "note": "tokens/day, public",
+            "tile": "light"
+          },
+          "right": {
+            "name": "Essential",
+            "price": "$12",
+            "tone": "cost",
+            "note": "private, 50x the tokens"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.left",
+          "on": "gives",
+          "at": 0.2
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "only",
+          "at": 2.84
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "public only",
+          "at": 2.4
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": true,
+      "durationSec": 7.04,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.37,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 1.1,
+          "vol": 0.26
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 3.74,
+          "vol": 0.26
+        }
+      ]
+    },
+    {
+      "eyebrow": "Gamma",
+      "headline": "[[400]] credits once, then you're paying",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "logo": "assets/logos/gamma.png",
+            "name": "Free",
+            "price": "400",
+            "tone": "free",
+            "note": "credits, once, 10 slides/prompt",
+            "tile": "dark"
+          },
+          "right": {
+            "name": "Plus",
+            "price": "~$8",
+            "tone": "cost",
+            "note": "credits renew, no branding"
+          }
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Branding",
+              "v": "Removed on Plus",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.left",
+          "on": "hands",
+          "at": 0.4
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "Paid removes",
+          "at": 4.64
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "capped at",
+          "at": 2.86
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "Paid removes",
+          "at": 4.64
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": true,
+      "durationSec": 9.7,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.83,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 1.3,
+          "vol": 0.26
+        }
+      ]
+    },
+    {
+      "eyebrow": "So",
+      "headline": "A [[plan]], or a trial wearing a better word",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "swap",
+          "left": {
+            "name": "A real plan",
+            "price": "Renews",
+            "tone": "free",
+            "note": "still there next month"
+          },
+          "right": {
+            "name": "A trial",
+            "price": "Once",
+            "tone": "cost",
+            "note": "wearing a better word"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.left",
+          "on": "ask whether it's a plan",
+          "at": 4.26
+        },
+        {
+          "do": "show",
+          "target": "s.right",
+          "on": "a trial wearing",
+          "at": 5.66
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "a plan",
+          "at": 5.0
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": true,
+      "durationSec": 7.22,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Core.MP3",
+          "at": 4.95,
+          "vol": 0.556
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "hideCaptions": true,
+      "headlineSize": "xl",
+      "headline": "Comment [[TOOLS]]",
+      "presenter": {
+        "src": "assets/10-ai-tools-free-vs-paid/avatar-master-cta.mp4",
+        "from": 0.0
+      },
+      "blocks": [
+        {
+          "id": "d",
+          "kind": "text",
+          "text": "and you'll get all ten links in your DMs."
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Comment TOOLS",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "d",
+          "on": "you'll get all ten",
+          "at": 0.98
+        }
+      ],
+      "durationSec": 3.3,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.56,
+      "text": "In September 2026,",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "In"
+        },
+        {
+          "t": 0.26,
+          "text": "September"
+        },
+        {
+          "t": 0.62,
+          "text": "2026,"
+        }
+      ]
+    },
+    {
+      "start": 1.9,
+      "end": 2.84,
+      "text": "10 AI tools",
+      "words": [
+        {
+          "t": 1.9,
+          "text": "10"
+        },
+        {
+          "t": 2.1,
+          "text": "AI"
+        },
+        {
+          "t": 2.44,
+          "text": "tools"
+        }
+      ]
+    },
+    {
+      "start": 2.84,
+      "end": 3.86,
+      "text": "all call themselves",
+      "words": [
+        {
+          "t": 2.84,
+          "text": "all"
+        },
+        {
+          "t": 3.24,
+          "text": "call"
+        },
+        {
+          "t": 3.5,
+          "text": "themselves"
+        }
+      ]
+    },
+    {
+      "start": 3.86,
+      "end": 5.0,
+      "text": "free. They don't",
+      "words": [
+        {
+          "t": 3.86,
+          "text": "free."
+        },
+        {
+          "t": 4.64,
+          "text": "They"
+        },
+        {
+          "t": 4.74,
+          "text": "don't"
+        }
+      ]
+    },
+    {
+      "start": 5.0,
+      "end": 5.54,
+      "text": "all mean it",
+      "words": [
+        {
+          "t": 5.0,
+          "text": "all"
+        },
+        {
+          "t": 5.22,
+          "text": "mean"
+        },
+        {
+          "t": 5.42,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 5.54,
+      "end": 6.2,
+      "text": "the same way.",
+      "words": [
+        {
+          "t": 5.54,
+          "text": "the"
+        },
+        {
+          "t": 5.66,
+          "text": "same"
+        },
+        {
+          "t": 5.94,
+          "text": "way."
+        }
+      ]
+    },
+    {
+      "start": 6.48,
+      "end": 7.58,
+      "text": "The catch. Some",
+      "words": [
+        {
+          "t": 6.48,
+          "text": "The"
+        },
+        {
+          "t": 6.58,
+          "text": "catch."
+        },
+        {
+          "t": 7.28,
+          "text": "Some"
+        }
+      ]
+    },
+    {
+      "start": 7.58,
+      "end": 8.0,
+      "text": "give you a",
+      "words": [
+        {
+          "t": 7.58,
+          "text": "give"
+        },
+        {
+          "t": 7.76,
+          "text": "you"
+        },
+        {
+          "t": 7.92,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 8.0,
+      "end": 8.58,
+      "text": "plan you could",
+      "words": [
+        {
+          "t": 8.0,
+          "text": "plan"
+        },
+        {
+          "t": 8.26,
+          "text": "you"
+        },
+        {
+          "t": 8.46,
+          "text": "could"
+        }
+      ]
+    },
+    {
+      "start": 8.58,
+      "end": 9.44,
+      "text": "actually live on",
+      "words": [
+        {
+          "t": 8.58,
+          "text": "actually"
+        },
+        {
+          "t": 8.9,
+          "text": "live"
+        },
+        {
+          "t": 9.18,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 9.44,
+      "end": 10.28,
+      "text": "and some just",
+      "words": [
+        {
+          "t": 9.44,
+          "text": "and"
+        },
+        {
+          "t": 9.76,
+          "text": "some"
+        },
+        {
+          "t": 10.04,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 10.28,
+      "end": 10.74,
+      "text": "hand you a",
+      "words": [
+        {
+          "t": 10.28,
+          "text": "hand"
+        },
+        {
+          "t": 10.54,
+          "text": "you"
+        },
+        {
+          "t": 10.66,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 10.74,
+      "end": 11.48,
+      "text": "trial and call",
+      "words": [
+        {
+          "t": 10.74,
+          "text": "trial"
+        },
+        {
+          "t": 11.06,
+          "text": "and"
+        },
+        {
+          "t": 11.26,
+          "text": "call"
+        }
+      ]
+    },
+    {
+      "start": 11.48,
+      "end": 13.06,
+      "text": "it free. ChatGPT's",
+      "words": [
+        {
+          "t": 11.48,
+          "text": "it"
+        },
+        {
+          "t": 11.64,
+          "text": "free."
+        },
+        {
+          "t": 12.5,
+          "text": "ChatGPT's"
+        }
+      ]
+    },
+    {
+      "start": 13.06,
+      "end": 13.92,
+      "text": "free plan now",
+      "words": [
+        {
+          "t": 13.06,
+          "text": "free"
+        },
+        {
+          "t": 13.26,
+          "text": "plan"
+        },
+        {
+          "t": 13.66,
+          "text": "now"
+        }
+      ]
+    },
+    {
+      "start": 13.92,
+      "end": 14.68,
+      "text": "chats with no",
+      "words": [
+        {
+          "t": 13.92,
+          "text": "chats"
+        },
+        {
+          "t": 14.26,
+          "text": "with"
+        },
+        {
+          "t": 14.5,
+          "text": "no"
+        }
+      ]
+    },
+    {
+      "start": 14.68,
+      "end": 15.66,
+      "text": "cap but can't",
+      "words": [
+        {
+          "t": 14.68,
+          "text": "cap"
+        },
+        {
+          "t": 14.96,
+          "text": "but"
+        },
+        {
+          "t": 15.24,
+          "text": "can't"
+        }
+      ]
+    },
+    {
+      "start": 15.66,
+      "end": 16.98,
+      "text": "touch GPT-6 astra.",
+      "words": [
+        {
+          "t": 15.66,
+          "text": "touch"
+        },
+        {
+          "t": 15.78,
+          "text": "GPT-6"
+        },
+        {
+          "t": 16.4,
+          "text": "astra."
+        }
+      ]
+    },
+    {
+      "start": 17.2,
+      "end": 18.74,
+      "text": "Plus $20 unlocks",
+      "words": [
+        {
+          "t": 17.2,
+          "text": "Plus"
+        },
+        {
+          "t": 17.4,
+          "text": "$20"
+        },
+        {
+          "t": 17.78,
+          "text": "unlocks"
+        }
+      ]
+    },
+    {
+      "start": 18.74,
+      "end": 19.68,
+      "text": "it plus real",
+      "words": [
+        {
+          "t": 18.74,
+          "text": "it"
+        },
+        {
+          "t": 18.98,
+          "text": "plus"
+        },
+        {
+          "t": 19.32,
+          "text": "real"
+        }
+      ]
+    },
+    {
+      "start": 19.68,
+      "end": 20.68,
+      "text": "image and voice.",
+      "words": [
+        {
+          "t": 19.68,
+          "text": "image"
+        },
+        {
+          "t": 20.08,
+          "text": "and"
+        },
+        {
+          "t": 20.36,
+          "text": "voice."
+        }
+      ]
+    },
+    {
+      "start": 21.16,
+      "end": 22.08,
+      "text": "Claude's free plan",
+      "words": [
+        {
+          "t": 21.16,
+          "text": "Claude's"
+        },
+        {
+          "t": 21.52,
+          "text": "free"
+        },
+        {
+          "t": 21.72,
+          "text": "plan"
+        }
+      ]
+    },
+    {
+      "start": 22.08,
+      "end": 23.22,
+      "text": "skips opus and",
+      "words": [
+        {
+          "t": 22.08,
+          "text": "skips"
+        },
+        {
+          "t": 22.5,
+          "text": "opus"
+        },
+        {
+          "t": 22.96,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 23.22,
+      "end": 24.24,
+      "text": "fable its newest",
+      "words": [
+        {
+          "t": 23.22,
+          "text": "fable"
+        },
+        {
+          "t": 23.6,
+          "text": "its"
+        },
+        {
+          "t": 23.9,
+          "text": "newest"
+        }
+      ]
+    },
+    {
+      "start": 24.24,
+      "end": 25.8,
+      "text": "model entirely. Pro",
+      "words": [
+        {
+          "t": 24.24,
+          "text": "model"
+        },
+        {
+          "t": 24.64,
+          "text": "entirely."
+        },
+        {
+          "t": 25.62,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 25.8,
+      "end": 27.56,
+      "text": "$20 unlocks both",
+      "words": [
+        {
+          "t": 25.8,
+          "text": "$20"
+        },
+        {
+          "t": 26.32,
+          "text": "unlocks"
+        },
+        {
+          "t": 27.24,
+          "text": "both"
+        }
+      ]
+    },
+    {
+      "start": 27.56,
+      "end": 28.86,
+      "text": "adds Claude code",
+      "words": [
+        {
+          "t": 27.56,
+          "text": "adds"
+        },
+        {
+          "t": 28.12,
+          "text": "Claude"
+        },
+        {
+          "t": 28.58,
+          "text": "code"
+        }
+      ]
+    },
+    {
+      "start": 28.86,
+      "end": 29.92,
+      "text": "and multiplies your",
+      "words": [
+        {
+          "t": 28.86,
+          "text": "and"
+        },
+        {
+          "t": 29.16,
+          "text": "multiplies"
+        },
+        {
+          "t": 29.76,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 29.92,
+      "end": 31.04,
+      "text": "usage by five.",
+      "words": [
+        {
+          "t": 29.92,
+          "text": "usage"
+        },
+        {
+          "t": 30.24,
+          "text": "by"
+        },
+        {
+          "t": 30.56,
+          "text": "five."
+        }
+      ]
+    },
+    {
+      "start": 31.3,
+      "end": 32.74,
+      "text": "Perplexity's basic search",
+      "words": [
+        {
+          "t": 31.3,
+          "text": "Perplexity's"
+        },
+        {
+          "t": 32.0,
+          "text": "basic"
+        },
+        {
+          "t": 32.26,
+          "text": "search"
+        }
+      ]
+    },
+    {
+      "start": 32.74,
+      "end": 33.8,
+      "text": "is practically unlimited",
+      "words": [
+        {
+          "t": 32.74,
+          "text": "is"
+        },
+        {
+          "t": 32.96,
+          "text": "practically"
+        },
+        {
+          "t": 33.4,
+          "text": "unlimited"
+        }
+      ]
+    },
+    {
+      "start": 33.8,
+      "end": 34.98,
+      "text": "free but three",
+      "words": [
+        {
+          "t": 33.8,
+          "text": "free"
+        },
+        {
+          "t": 34.34,
+          "text": "but"
+        },
+        {
+          "t": 34.74,
+          "text": "three"
+        }
+      ]
+    },
+    {
+      "start": 34.98,
+      "end": 35.82,
+      "text": "pro searches a",
+      "words": [
+        {
+          "t": 34.98,
+          "text": "pro"
+        },
+        {
+          "t": 35.22,
+          "text": "searches"
+        },
+        {
+          "t": 35.58,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 35.82,
+      "end": 36.74,
+      "text": "day, one deep",
+      "words": [
+        {
+          "t": 35.82,
+          "text": "day,"
+        },
+        {
+          "t": 36.28,
+          "text": "one"
+        },
+        {
+          "t": 36.48,
+          "text": "deep"
+        }
+      ]
+    },
+    {
+      "start": 36.74,
+      "end": 37.7,
+      "text": "research a month.",
+      "words": [
+        {
+          "t": 36.74,
+          "text": "research"
+        },
+        {
+          "t": 37.16,
+          "text": "a"
+        },
+        {
+          "t": 37.48,
+          "text": "month."
+        }
+      ]
+    },
+    {
+      "start": 38.06,
+      "end": 39.62,
+      "text": "Pro $20 raises",
+      "words": [
+        {
+          "t": 38.06,
+          "text": "Pro"
+        },
+        {
+          "t": 38.3,
+          "text": "$20"
+        },
+        {
+          "t": 38.8,
+          "text": "raises"
+        }
+      ]
+    },
+    {
+      "start": 39.62,
+      "end": 41.06,
+      "text": "every limit tenfold.",
+      "words": [
+        {
+          "t": 39.62,
+          "text": "every"
+        },
+        {
+          "t": 40.1,
+          "text": "limit"
+        },
+        {
+          "t": 40.42,
+          "text": "tenfold."
+        }
+      ]
+    },
+    {
+      "start": 41.38,
+      "end": 42.32,
+      "text": "Canva's free tier",
+      "words": [
+        {
+          "t": 41.38,
+          "text": "Canva's"
+        },
+        {
+          "t": 41.86,
+          "text": "free"
+        },
+        {
+          "t": 42.08,
+          "text": "tier"
+        }
+      ]
+    },
+    {
+      "start": 42.32,
+      "end": 43.5,
+      "text": "gives 20 AI",
+      "words": [
+        {
+          "t": 42.32,
+          "text": "gives"
+        },
+        {
+          "t": 42.76,
+          "text": "20"
+        },
+        {
+          "t": 43.18,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 43.5,
+      "end": 44.36,
+      "text": "uses a month",
+      "words": [
+        {
+          "t": 43.5,
+          "text": "uses"
+        },
+        {
+          "t": 43.86,
+          "text": "a"
+        },
+        {
+          "t": 44.08,
+          "text": "month"
+        }
+      ]
+    },
+    {
+      "start": 44.36,
+      "end": 45.66,
+      "text": "shared across every",
+      "words": [
+        {
+          "t": 44.36,
+          "text": "shared"
+        },
+        {
+          "t": 44.86,
+          "text": "across"
+        },
+        {
+          "t": 45.22,
+          "text": "every"
+        }
+      ]
+    },
+    {
+      "start": 45.66,
+      "end": 47.14,
+      "text": "tool. Pro $18",
+      "words": [
+        {
+          "t": 45.66,
+          "text": "tool."
+        },
+        {
+          "t": 46.32,
+          "text": "Pro"
+        },
+        {
+          "t": 46.58,
+          "text": "$18"
+        }
+      ]
+    },
+    {
+      "start": 47.14,
+      "end": 48.38,
+      "text": "makes the basic",
+      "words": [
+        {
+          "t": 47.14,
+          "text": "makes"
+        },
+        {
+          "t": 47.92,
+          "text": "the"
+        },
+        {
+          "t": 48.14,
+          "text": "basic"
+        }
+      ]
+    },
+    {
+      "start": 48.38,
+      "end": 49.66,
+      "text": "tools unlimited and",
+      "words": [
+        {
+          "t": 48.38,
+          "text": "tools"
+        },
+        {
+          "t": 48.74,
+          "text": "unlimited"
+        },
+        {
+          "t": 49.12,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 49.66,
+      "end": 50.84,
+      "text": "adds 200 premium",
+      "words": [
+        {
+          "t": 49.66,
+          "text": "adds"
+        },
+        {
+          "t": 49.94,
+          "text": "200"
+        },
+        {
+          "t": 50.42,
+          "text": "premium"
+        }
+      ]
+    },
+    {
+      "start": 50.84,
+      "end": 52.58,
+      "text": "uses. Notion itself",
+      "words": [
+        {
+          "t": 50.84,
+          "text": "uses."
+        },
+        {
+          "t": 51.8,
+          "text": "Notion"
+        },
+        {
+          "t": 52.22,
+          "text": "itself"
+        }
+      ]
+    },
+    {
+      "start": 52.58,
+      "end": 53.66,
+      "text": "stays free forever",
+      "words": [
+        {
+          "t": 52.58,
+          "text": "stays"
+        },
+        {
+          "t": 52.92,
+          "text": "free"
+        },
+        {
+          "t": 53.24,
+          "text": "forever"
+        }
+      ]
+    },
+    {
+      "start": 53.66,
+      "end": 54.52,
+      "text": "but its AI",
+      "words": [
+        {
+          "t": 53.66,
+          "text": "but"
+        },
+        {
+          "t": 54.1,
+          "text": "its"
+        },
+        {
+          "t": 54.28,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 54.52,
+      "end": 55.34,
+      "text": "is just a",
+      "words": [
+        {
+          "t": 54.52,
+          "text": "is"
+        },
+        {
+          "t": 54.92,
+          "text": "just"
+        },
+        {
+          "t": 55.16,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 55.34,
+      "end": 56.38,
+      "text": "taste until business",
+      "words": [
+        {
+          "t": 55.34,
+          "text": "taste"
+        },
+        {
+          "t": 55.62,
+          "text": "until"
+        },
+        {
+          "t": 55.9,
+          "text": "business"
+        }
+      ]
+    },
+    {
+      "start": 56.38,
+      "end": 57.74,
+      "text": "$20 a seat",
+      "words": [
+        {
+          "t": 56.38,
+          "text": "$20"
+        },
+        {
+          "t": 56.96,
+          "text": "a"
+        },
+        {
+          "t": 57.48,
+          "text": "seat"
+        }
+      ]
+    },
+    {
+      "start": 57.74,
+      "end": 58.5,
+      "text": "for the agent",
+      "words": [
+        {
+          "t": 57.74,
+          "text": "for"
+        },
+        {
+          "t": 58.06,
+          "text": "the"
+        },
+        {
+          "t": 58.22,
+          "text": "agent"
+        }
+      ]
+    },
+    {
+      "start": 58.5,
+      "end": 59.44,
+      "text": "that finishes work",
+      "words": [
+        {
+          "t": 58.5,
+          "text": "that"
+        },
+        {
+          "t": 58.7,
+          "text": "finishes"
+        },
+        {
+          "t": 59.02,
+          "text": "work"
+        }
+      ]
+    },
+    {
+      "start": 59.44,
+      "end": 60.62,
+      "text": "for you. Runway's",
+      "words": [
+        {
+          "t": 59.44,
+          "text": "for"
+        },
+        {
+          "t": 59.66,
+          "text": "you."
+        },
+        {
+          "t": 60.14,
+          "text": "Runway's"
+        }
+      ]
+    },
+    {
+      "start": 60.62,
+      "end": 61.5,
+      "text": "free credits are",
+      "words": [
+        {
+          "t": 60.62,
+          "text": "free"
+        },
+        {
+          "t": 60.84,
+          "text": "credits"
+        },
+        {
+          "t": 61.26,
+          "text": "are"
+        }
+      ]
+    },
+    {
+      "start": 61.5,
+      "end": 63.38,
+      "text": "125 once about",
+      "words": [
+        {
+          "t": 61.5,
+          "text": "125"
+        },
+        {
+          "t": 62.12,
+          "text": "once"
+        },
+        {
+          "t": 62.94,
+          "text": "about"
+        }
+      ]
+    },
+    {
+      "start": 63.38,
+      "end": 64.5,
+      "text": "5 seconds of video",
+      "words": [
+        {
+          "t": 63.38,
+          "text": "5"
+        },
+        {
+          "t": 64.02,
+          "text": "seconds"
+        },
+        {
+          "t": 64.2,
+          "text": "of"
+        },
+        {
+          "t": 64.2,
+          "text": "video"
+        }
+      ]
+    },
+    {
+      "start": 64.5,
+      "end": 65.82,
+      "text": "then gone. $12",
+      "words": [
+        {
+          "t": 64.5,
+          "text": "then"
+        },
+        {
+          "t": 64.92,
+          "text": "gone."
+        },
+        {
+          "t": 65.6,
+          "text": "$12"
+        }
+      ]
+    },
+    {
+      "start": 65.82,
+      "end": 66.74,
+      "text": "a month buys",
+      "words": [
+        {
+          "t": 65.82,
+          "text": "a"
+        },
+        {
+          "t": 66.2,
+          "text": "month"
+        },
+        {
+          "t": 66.42,
+          "text": "buys"
+        }
+      ]
+    },
+    {
+      "start": 66.74,
+      "end": 67.84,
+      "text": "credits that refill.",
+      "words": [
+        {
+          "t": 66.74,
+          "text": "credits"
+        },
+        {
+          "t": 67.2,
+          "text": "that"
+        },
+        {
+          "t": 67.5,
+          "text": "refill."
+        }
+      ]
+    },
+    {
+      "start": 68.24,
+      "end": 69.26,
+      "text": "Descripts free minutes",
+      "words": [
+        {
+          "t": 68.24,
+          "text": "Descripts"
+        },
+        {
+          "t": 68.74,
+          "text": "free"
+        },
+        {
+          "t": 68.9,
+          "text": "minutes"
+        }
+      ]
+    },
+    {
+      "start": 69.26,
+      "end": 70.38,
+      "text": "renew monthly but",
+      "words": [
+        {
+          "t": 69.26,
+          "text": "renew"
+        },
+        {
+          "t": 69.54,
+          "text": "monthly"
+        },
+        {
+          "t": 69.98,
+          "text": "but"
+        }
+      ]
+    },
+    {
+      "start": 70.38,
+      "end": 71.08,
+      "text": "its 100 AI",
+      "words": [
+        {
+          "t": 70.38,
+          "text": "its"
+        },
+        {
+          "t": 70.56,
+          "text": "100"
+        },
+        {
+          "t": 70.8,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 71.08,
+      "end": 72.64,
+      "text": "credits don't. $16",
+      "words": [
+        {
+          "t": 71.08,
+          "text": "credits"
+        },
+        {
+          "t": 71.5,
+          "text": "don't."
+        },
+        {
+          "t": 72.26,
+          "text": "$16"
+        }
+      ]
+    },
+    {
+      "start": 72.64,
+      "end": 73.58,
+      "text": "a month gets",
+      "words": [
+        {
+          "t": 72.64,
+          "text": "a"
+        },
+        {
+          "t": 73.04,
+          "text": "month"
+        },
+        {
+          "t": 73.26,
+          "text": "gets"
+        }
+      ]
+    },
+    {
+      "start": 73.58,
+      "end": 74.5,
+      "text": "credits that refill",
+      "words": [
+        {
+          "t": 73.58,
+          "text": "credits"
+        },
+        {
+          "t": 73.92,
+          "text": "that"
+        },
+        {
+          "t": 74.2,
+          "text": "refill"
+        }
+      ]
+    },
+    {
+      "start": 74.5,
+      "end": 75.38,
+      "text": "and drops the",
+      "words": [
+        {
+          "t": 74.5,
+          "text": "and"
+        },
+        {
+          "t": 74.88,
+          "text": "drops"
+        },
+        {
+          "t": 75.16,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 75.38,
+      "end": 76.86,
+      "text": "watermark. Cursor's free",
+      "words": [
+        {
+          "t": 75.38,
+          "text": "watermark."
+        },
+        {
+          "t": 76.2,
+          "text": "Cursor's"
+        },
+        {
+          "t": 76.66,
+          "text": "free"
+        }
+      ]
+    },
+    {
+      "start": 76.86,
+      "end": 77.8,
+      "text": "hobby plan gives",
+      "words": [
+        {
+          "t": 76.86,
+          "text": "hobby"
+        },
+        {
+          "t": 77.14,
+          "text": "plan"
+        },
+        {
+          "t": 77.52,
+          "text": "gives"
+        }
+      ]
+    },
+    {
+      "start": 77.8,
+      "end": 78.96,
+      "text": "limited AI requests",
+      "words": [
+        {
+          "t": 77.8,
+          "text": "limited"
+        },
+        {
+          "t": 78.14,
+          "text": "AI"
+        },
+        {
+          "t": 78.44,
+          "text": "requests"
+        }
+      ]
+    },
+    {
+      "start": 78.96,
+      "end": 80.26,
+      "text": "no card required.",
+      "words": [
+        {
+          "t": 78.96,
+          "text": "no"
+        },
+        {
+          "t": 79.48,
+          "text": "card"
+        },
+        {
+          "t": 79.76,
+          "text": "required."
+        }
+      ]
+    },
+    {
+      "start": 80.56,
+      "end": 82.26,
+      "text": "Pro $20 unlocks",
+      "words": [
+        {
+          "t": 80.56,
+          "text": "Pro"
+        },
+        {
+          "t": 80.74,
+          "text": "$20"
+        },
+        {
+          "t": 81.26,
+          "text": "unlocks"
+        }
+      ]
+    },
+    {
+      "start": 82.26,
+      "end": 83.58,
+      "text": "frontier models though",
+      "words": [
+        {
+          "t": 82.26,
+          "text": "frontier"
+        },
+        {
+          "t": 82.72,
+          "text": "models"
+        },
+        {
+          "t": 83.26,
+          "text": "though"
+        }
+      ]
+    },
+    {
+      "start": 83.58,
+      "end": 85.06,
+      "text": "Cursor's reportedly changed",
+      "words": [
+        {
+          "t": 83.58,
+          "text": "Cursor's"
+        },
+        {
+          "t": 84.16,
+          "text": "reportedly"
+        },
+        {
+          "t": 84.46,
+          "text": "changed"
+        }
+      ]
+    },
+    {
+      "start": 85.06,
+      "end": 86.04,
+      "text": "billing twice this",
+      "words": [
+        {
+          "t": 85.06,
+          "text": "billing"
+        },
+        {
+          "t": 85.36,
+          "text": "twice"
+        },
+        {
+          "t": 85.72,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 86.04,
+      "end": 87.32,
+      "text": "year. Leonardo gives",
+      "words": [
+        {
+          "t": 86.04,
+          "text": "year."
+        },
+        {
+          "t": 86.66,
+          "text": "Leonardo"
+        },
+        {
+          "t": 86.86,
+          "text": "gives"
+        }
+      ]
+    },
+    {
+      "start": 87.32,
+      "end": 88.66,
+      "text": "150 tokens a",
+      "words": [
+        {
+          "t": 87.32,
+          "text": "150"
+        },
+        {
+          "t": 87.88,
+          "text": "tokens"
+        },
+        {
+          "t": 88.4,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 88.66,
+      "end": 89.5,
+      "text": "day free public",
+      "words": [
+        {
+          "t": 88.66,
+          "text": "day"
+        },
+        {
+          "t": 88.78,
+          "text": "free"
+        },
+        {
+          "t": 89.06,
+          "text": "public"
+        }
+      ]
+    },
+    {
+      "start": 89.5,
+      "end": 90.86,
+      "text": "only. $12 a",
+      "words": [
+        {
+          "t": 89.5,
+          "text": "only."
+        },
+        {
+          "t": 90.2,
+          "text": "$12"
+        },
+        {
+          "t": 90.42,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 90.86,
+      "end": 91.54,
+      "text": "month makes it",
+      "words": [
+        {
+          "t": 90.86,
+          "text": "month"
+        },
+        {
+          "t": 91.08,
+          "text": "makes"
+        },
+        {
+          "t": 91.38,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 91.54,
+      "end": 92.64,
+      "text": "private and multiplies",
+      "words": [
+        {
+          "t": 91.54,
+          "text": "private"
+        },
+        {
+          "t": 91.84,
+          "text": "and"
+        },
+        {
+          "t": 92.12,
+          "text": "multiplies"
+        }
+      ]
+    },
+    {
+      "start": 92.64,
+      "end": 93.46,
+      "text": "that by 50.",
+      "words": [
+        {
+          "t": 92.64,
+          "text": "that"
+        },
+        {
+          "t": 92.88,
+          "text": "by"
+        },
+        {
+          "t": 93.06,
+          "text": "50."
+        }
+      ]
+    },
+    {
+      "start": 93.7,
+      "end": 94.78,
+      "text": "Gamma hands 400",
+      "words": [
+        {
+          "t": 93.7,
+          "text": "Gamma"
+        },
+        {
+          "t": 94.1,
+          "text": "hands"
+        },
+        {
+          "t": 94.38,
+          "text": "400"
+        }
+      ]
+    },
+    {
+      "start": 94.78,
+      "end": 96.06,
+      "text": "credits once at",
+      "words": [
+        {
+          "t": 94.78,
+          "text": "credits"
+        },
+        {
+          "t": 95.26,
+          "text": "once"
+        },
+        {
+          "t": 95.7,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 96.06,
+      "end": 97.0,
+      "text": "sign up capped",
+      "words": [
+        {
+          "t": 96.06,
+          "text": "sign"
+        },
+        {
+          "t": 96.34,
+          "text": "up"
+        },
+        {
+          "t": 96.56,
+          "text": "capped"
+        }
+      ]
+    },
+    {
+      "start": 97.0,
+      "end": 97.68,
+      "text": "at 10 slides",
+      "words": [
+        {
+          "t": 97.0,
+          "text": "at"
+        },
+        {
+          "t": 97.14,
+          "text": "10"
+        },
+        {
+          "t": 97.34,
+          "text": "slides"
+        }
+      ]
+    },
+    {
+      "start": 97.68,
+      "end": 98.68,
+      "text": "a prompt. Paid",
+      "words": [
+        {
+          "t": 97.68,
+          "text": "a"
+        },
+        {
+          "t": 97.86,
+          "text": "prompt."
+        },
+        {
+          "t": 98.34,
+          "text": "Paid"
+        }
+      ]
+    },
+    {
+      "start": 98.68,
+      "end": 99.54,
+      "text": "removes the branding",
+      "words": [
+        {
+          "t": 98.68,
+          "text": "removes"
+        },
+        {
+          "t": 99.02,
+          "text": "the"
+        },
+        {
+          "t": 99.2,
+          "text": "branding"
+        }
+      ]
+    },
+    {
+      "start": 99.54,
+      "end": 100.86,
+      "text": "credits renew monthly",
+      "words": [
+        {
+          "t": 99.54,
+          "text": "credits"
+        },
+        {
+          "t": 100.08,
+          "text": "renew"
+        },
+        {
+          "t": 100.42,
+          "text": "monthly"
+        }
+      ]
+    },
+    {
+      "start": 100.86,
+      "end": 102.32,
+      "text": "reportedly starting around",
+      "words": [
+        {
+          "t": 100.86,
+          "text": "reportedly"
+        },
+        {
+          "t": 101.38,
+          "text": "starting"
+        },
+        {
+          "t": 102.0,
+          "text": "around"
+        }
+      ]
+    },
+    {
+      "start": 102.32,
+      "end": 103.7,
+      "text": "$8. So the",
+      "words": [
+        {
+          "t": 102.32,
+          "text": "$8."
+        },
+        {
+          "t": 103.4,
+          "text": "So"
+        },
+        {
+          "t": 103.58,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 103.7,
+      "end": 104.46,
+      "text": "next time something",
+      "words": [
+        {
+          "t": 103.7,
+          "text": "next"
+        },
+        {
+          "t": 103.88,
+          "text": "time"
+        },
+        {
+          "t": 104.14,
+          "text": "something"
+        }
+      ]
+    },
+    {
+      "start": 104.46,
+      "end": 105.62,
+      "text": "says free remember",
+      "words": [
+        {
+          "t": 104.46,
+          "text": "says"
+        },
+        {
+          "t": 104.74,
+          "text": "free"
+        },
+        {
+          "t": 105.12,
+          "text": "remember"
+        }
+      ]
+    },
+    {
+      "start": 105.62,
+      "end": 106.52,
+      "text": "they don't all",
+      "words": [
+        {
+          "t": 105.62,
+          "text": "they"
+        },
+        {
+          "t": 106.08,
+          "text": "don't"
+        },
+        {
+          "t": 106.36,
+          "text": "all"
+        }
+      ]
+    },
+    {
+      "start": 106.52,
+      "end": 106.98,
+      "text": "mean it the",
+      "words": [
+        {
+          "t": 106.52,
+          "text": "mean"
+        },
+        {
+          "t": 106.74,
+          "text": "it"
+        },
+        {
+          "t": 106.86,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 106.98,
+      "end": 107.92,
+      "text": "same way. Ask",
+      "words": [
+        {
+          "t": 106.98,
+          "text": "same"
+        },
+        {
+          "t": 107.24,
+          "text": "way."
+        },
+        {
+          "t": 107.66,
+          "text": "Ask"
+        }
+      ]
+    },
+    {
+      "start": 107.92,
+      "end": 108.46,
+      "text": "whether it's a",
+      "words": [
+        {
+          "t": 107.92,
+          "text": "whether"
+        },
+        {
+          "t": 108.18,
+          "text": "it's"
+        },
+        {
+          "t": 108.4,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 108.46,
+      "end": 109.16,
+      "text": "plan or a",
+      "words": [
+        {
+          "t": 108.46,
+          "text": "plan"
+        },
+        {
+          "t": 108.74,
+          "text": "or"
+        },
+        {
+          "t": 109.06,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 109.16,
+      "end": 109.96,
+      "text": "trial wearing a",
+      "words": [
+        {
+          "t": 109.16,
+          "text": "trial"
+        },
+        {
+          "t": 109.46,
+          "text": "wearing"
+        },
+        {
+          "t": 109.76,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 109.96,
+      "end": 110.92,
+      "text": "better word. Comment",
+      "words": [
+        {
+          "t": 109.96,
+          "text": "better"
+        },
+        {
+          "t": 110.12,
+          "text": "word."
+        },
+        {
+          "t": 110.62,
+          "text": "Comment"
+        }
+      ]
+    },
+    {
+      "start": 110.92,
+      "end": 111.74,
+      "text": "tools and you'll",
+      "words": [
+        {
+          "t": 110.92,
+          "text": "tools"
+        },
+        {
+          "t": 111.26,
+          "text": "and"
+        },
+        {
+          "t": 111.6,
+          "text": "you'll"
+        }
+      ]
+    },
+    {
+      "start": 111.74,
+      "end": 112.38,
+      "text": "get all ten",
+      "words": [
+        {
+          "t": 111.74,
+          "text": "get"
+        },
+        {
+          "t": 111.88,
+          "text": "all"
+        },
+        {
+          "t": 112.16,
+          "text": "ten"
+        }
+      ]
+    },
+    {
+      "start": 112.38,
+      "end": 113.06,
+      "text": "links in your",
+      "words": [
+        {
+          "t": 112.38,
+          "text": "links"
+        },
+        {
+          "t": 112.72,
+          "text": "in"
+        },
+        {
+          "t": 112.96,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 113.06,
+      "end": 113.7,
+      "text": "DMs.",
+      "words": [
+        {
+          "t": 113.06,
+          "text": "DMs."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "format": "ai-tools",
+  "script": "In September 2026, ten AI tools all call themselves free. They don't all mean it the same way.\n\nThe catch: some give you a plan you could actually live on, and some just hand you a trial and call it free.\n\nChatGPT's free plan now chats with no cap, but can't touch GPT-6 Astra. Plus, twenty dollars, unlocks it, plus real image and voice.\n\nClaude's free plan skips Opus and Fable, its newest model, entirely. Pro, twenty dollars, unlocks both, adds Claude Code, and multiplies your usage by five.\n\nPerplexity's basic search is practically unlimited free, but three Pro searches a day, one deep research a month. Pro, twenty dollars, raises every limit tenfold.\n\nCanva's free tier gives twenty AI uses a month, shared across every tool. Pro, eighteen dollars, makes the basic tools unlimited and adds two hundred premium uses.\n\nNotion itself stays free forever, but its AI is just a taste until Business, twenty dollars a seat, for the agent that finishes work for you.\n\nRunway's free credits are a hundred twenty-five, once, about five seconds of video, then gone. Twelve dollars a month buys credits that refill.\n\nDescript's free minutes renew monthly, but its hundred AI credits don't. Sixteen dollars a month gets credits that refill and drops the watermark.\n\nCursor's free Hobby plan gives limited AI requests, no card required. Pro, twenty dollars, unlocks frontier models, though Cursor's reportedly changed billing twice this year.\n\nLeonardo gives a hundred fifty tokens a day free, public only. Twelve dollars a month makes it private and multiplies that by fifty.\n\nGamma hands four hundred credits once, at signup, capped at ten slides a prompt. Paid removes the branding, credits renew monthly, reportedly starting around eight dollars.\n\nSo the next time something says free, remember: they don't all mean it the same way. Ask whether it's a plan, or a trial wearing a better word.\n\nComment TOOLS and you'll get all ten links in your DMs.",
+  "approval": {
+    "sha256": "3c73f4a4d52c914c8bdf5f3fa105b5e1fa527abf110f97316a61a3e2c454f117",
+    "approvedAt": "2026-09-18T10:26:32+00:00",
+    "words": 326,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

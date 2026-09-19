@@ -1,0 +1,960 @@
+{
+  "emphasis": [
+    "free",
+    "trial",
+    "TOOLS"
+  ],
+  "caption_corrections": {
+    "chatgpd's": "ChatGPT's",
+    "gpd6": "GPT-6",
+    "gpd-6": "GPT-6",
+    "five seconds": "5 seconds"
+  },
+  "format": "ai-tools",
+  "audio": "assets/10-ai-tools-free-vs-paid/vo.mp3",
+  "shots": [
+    {
+      "start_phrase": "In September 2026",
+      "line": "In September 2026, ten AI tools all call themselves free. They don't all mean it the same way.",
+      "needs": [
+        "September",
+        "2026",
+        "tools",
+        "call",
+        "themselves",
+        "free",
+        "mean",
+        "same"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "eyebrow": "September 2026",
+        "headline": "Ten AI tools call themselves [[free]]",
+        "blocks": [
+          {
+            "id": "g",
+            "kind": "logos",
+            "items": [
+              {
+                "logo": "assets/logos/openai.svg",
+                "name": "ChatGPT"
+              },
+              {
+                "logo": "assets/logos/anthropic.svg",
+                "name": "Claude"
+              },
+              {
+                "logo": "assets/logos/perplexity.svg",
+                "name": "Perplexity"
+              },
+              {
+                "logo": "assets/logos/canva.svg",
+                "name": "Canva"
+              },
+              {
+                "logo": "assets/logos/notion.svg",
+                "name": "Notion"
+              },
+              {
+                "logo": "assets/logos/runway.svg",
+                "name": "Runway"
+              },
+              {
+                "logo": "assets/logos/descript.png",
+                "name": "Descript"
+              },
+              {
+                "logo": "assets/logos/cursor.svg",
+                "name": "Cursor"
+              },
+              {
+                "logo": "assets/logos/leonardo.png",
+                "name": "Leonardo.Ai"
+              },
+              {
+                "logo": "assets/logos/gamma.png",
+                "name": "Gamma"
+              }
+            ]
+          },
+          {
+            "id": "q",
+            "kind": "text",
+            "text": "They don't all mean it the same way."
+          }
+        ],
+        "moves": [
+          {
+            "do": "show",
+            "target": "g",
+            "on": "AI tools all call"
+          },
+          {
+            "do": "pill",
+            "target": "headline",
+            "on": "call themselves free"
+          },
+          {
+            "do": "show",
+            "target": "q",
+            "on": "don't all mean"
+          }
+        ],
+        "type": "slide",
+        "hideCaptions": true,
+        "presenter": {
+          "src": "assets/10-ai-tools-free-vs-paid/avatar-master-hook.mp4",
+          "from": 0.0
+        }
+      }
+    },
+    {
+      "start_phrase": "The catch: some",
+      "line": "The catch: some give you a plan you could actually live on, and some just hand you a trial and call it free.",
+      "needs": [
+        "catch",
+        "plan",
+        "live",
+        "trial",
+        "call",
+        "free"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "eyebrow": "The catch",
+        "headline": "A [[plan]], or a trial wearing a better word",
+        "blocks": [
+          {
+            "id": "s",
+            "kind": "swap",
+            "left": {
+              "name": "A real plan",
+              "price": "Renews",
+              "tone": "free",
+              "note": "you could live on"
+            },
+            "right": {
+              "name": "A trial",
+              "price": "Once",
+              "tone": "cost",
+              "note": "spend it and it's gone"
+            }
+          }
+        ],
+        "moves": [
+          {
+            "do": "show",
+            "target": "s.left",
+            "on": "a plan you could"
+          },
+          {
+            "do": "show",
+            "target": "s.right",
+            "on": "hand you a trial"
+          },
+          {
+            "do": "pill",
+            "target": "headline",
+            "on": "a plan you could"
+          }
+        ],
+        "type": "slide",
+        "hideCaptions": true
+      }
+    },
+    {
+      "start_phrase": "free plan now chats",
+      "line": "ChatGPT's free plan now chats with no cap, but can't touch GPT-6 Astra. Plus, twenty dollars, unlocks it, plus real image and voice.",
+      "needs": [
+        "free",
+        "plan",
+        "now",
+        "chats",
+        "Plus,",
+        "twenty",
+        "dollars",
+        "no"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "eyebrow": "ChatGPT",
+        "headline": "Free chats, no cap, but no [[GPT-6 Astra]]",
+        "blocks": [
+          {
+            "id": "s",
+            "kind": "swap",
+            "left": {
+              "logo": "assets/logos/openai.svg",
+              "name": "Free",
+              "price": "No cap",
+              "tone": "free",
+              "note": "no message cap"
+            },
+            "right": {
+              "name": "Plus",
+              "price": "$20",
+              "tone": "cost",
+              "note": "GPT-6 Astra + more"
+            }
+          },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              {
+                "k": "Image & voice",
+                "v": "Deeper on Plus",
+                "tone": "cost"
+              }
+            ]
+          }
+        ],
+        "moves": [
+          {
+            "do": "show",
+            "target": "s.left",
+            "on": "free plan now chats"
+          },
+          {
+            "do": "show",
+            "target": "s.right",
+            "on": "Plus"
+          },
+          {
+            "do": "pill",
+            "target": "headline",
+            "on": "no cap"
+          },
+          {
+            "do": "show",
+            "target": "r.0",
+            "on": "can't touch"
+          }
+        ],
+        "type": "slide",
+        "hideCaptions": true
+      }
+    },
+    {
+      "start_phrase": "Claude's free plan skips",
+      "line": "Claude's free plan skips Opus and Fable, its newest model, entirely. Pro, twenty dollars, unlocks both, adds Claude Code, and multiplies your usage by five.",
+      "needs": [
+        "free",
+        "plan",
+        "skips",
+        "Opus",
+        "Pro,",
+        "twenty",
+        "dollars",
+        "entirely"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "eyebrow": "Claude",
+        "headline": "Free skips [[Opus]] and Fable entirely",
+        "blocks": [
+          {
+            "id": "s",
+            "kind": "swap",
+            "left": {
+              "logo": "assets/logos/anthropic.svg",
+              "name": "Free",
+              "price": "",
+              "tone": "free",
+              "note": "Sonnet + Haiku only"
+            },
+            "right": {
+              "name": "Pro",
+              "price": "$20",
+              "tone": "cost",
+              "note": "Opus + Fable + Code"
+            }
+          },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              {
+                "k": "Usage",
+                "v": "5x on Pro",
+                "tone": "cost"
+              }
+            ]
+          }
+        ],
+        "moves": [
+          {
+            "do": "show",
+            "target": "s.left",
+            "on": "free plan skips Opus"
+          },
+          {
+            "do": "show",
+            "target": "s.right",
+            "on": "Pro"
+          },
+          {
+            "do": "pill",
+            "target": "headline",
+            "on": "entirely"
+          },
+          {
+            "do": "show",
+            "target": "r.0",
+            "on": "multiplies your usage by five"
+          }
+        ],
+        "type": "slide",
+        "hideCaptions": true
+      }
+    },
+    {
+      "start_phrase": "Perplexity's basic search",
+      "line": "Perplexity's basic search is practically unlimited free, but three Pro searches a day, one deep research a month. Pro, twenty dollars, raises every limit tenfold.",
+      "needs": [
+        "basic",
+        "search",
+        "is",
+        "practically",
+        "Pro,",
+        "twenty",
+        "dollars",
+        "unlimited"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "eyebrow": "Perplexity",
+        "headline": "Unlimited search, [[3]] Pro searches a day",
+        "blocks": [
+          {
+            "id": "s",
+            "kind": "swap",
+            "left": {
+              "logo": "assets/logos/perplexity.svg",
+              "name": "Free",
+              "price": "3/day",
+              "tone": "free",
+              "note": "3 Pro searches/day"
+            },
+            "right": {
+              "name": "Pro",
+              "price": "$20",
+              "tone": "cost",
+              "note": "10x the limits"
+            }
+          },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              {
+                "k": "Deep research",
+                "v": "1/month free",
+                "tone": "plain"
+              }
+            ]
+          }
+        ],
+        "moves": [
+          {
+            "do": "show",
+            "target": "s.left",
+            "on": "basic search is practically"
+          },
+          {
+            "do": "show",
+            "target": "s.right",
+            "on": "month"
+          },
+          {
+            "do": "pill",
+            "target": "headline",
+            "on": "unlimited free"
+          },
+          {
+            "do": "show",
+            "target": "r.0",
+            "on": "three Pro searches a day"
+          }
+        ],
+        "type": "slide",
+        "hideCaptions": true
+      }
+    },
+    {
+      "start_phrase": "Canva's free tier",
+      "line": "Canva's free tier gives twenty AI uses a month, shared across every tool. Pro, eighteen dollars, makes the basic tools unlimited and adds two hundred premium uses.",
+      "needs": [
+        "free",
+        "tier",
+        "gives",
+        "twenty",
+        "Pro,",
+        "eighteen",
+        "dollars",
+        "shared"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "eyebrow": "Canva",
+        "headline": "[[20]] AI uses a month, shared across every tool",
+        "blocks": [
+          {
+            "id": "s",
+            "kind": "swap",
+            "left": {
+              "logo": "assets/logos/canva.svg",
+              "name": "Free",
+              "price": "20/mo",
+              "tone": "free",
+              "note": "20 AI uses/month"
+            },
+            "right": {
+              "name": "Pro",
+              "price": "$18",
+              "tone": "cost",
+              "note": "unlimited + 200 premium"
+            }
+          }
+        ],
+        "moves": [
+          {
+            "do": "show",
+            "target": "s.left",
+            "on": "free tier gives"
+          },
+          {
+            "do": "show",
+            "target": "s.right",
+            "on": "Pro"
+          },
+          {
+            "do": "pill",
+            "target": "headline",
+            "on": "shared across every tool"
+          }
+        ],
+        "type": "slide",
+        "hideCaptions": true
+      }
+    },
+    {
+      "start_phrase": "Notion itself stays",
+      "line": "Notion itself stays free forever, but its AI is just a taste until Business, twenty dollars a seat, for the agent that finishes work for you.",
+      "needs": [
+        "itself",
+        "stays",
+        "free",
+        "forever",
+        "Business,",
+        "twenty",
+        "dollars",
+        "just"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "eyebrow": "Notion AI",
+        "headline": "The workspace is free, the [[agent]] isn't",
+        "blocks": [
+          {
+            "id": "s",
+            "kind": "swap",
+            "left": {
+              "logo": "assets/logos/notion.svg",
+              "name": "Free",
+              "price": "",
+              "tone": "free",
+              "note": "just a taste of AI"
+            },
+            "right": {
+              "name": "Business",
+              "price": "$20",
+              "tone": "cost",
+              "note": "the agent that finishes work"
+            }
+          },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              {
+                "k": "Billed",
+                "v": "Per seat / month",
+                "tone": "plain"
+              }
+            ]
+          }
+        ],
+        "moves": [
+          {
+            "do": "show",
+            "target": "s.left",
+            "on": "itself stays free forever"
+          },
+          {
+            "do": "show",
+            "target": "s.right",
+            "on": "business"
+          },
+          {
+            "do": "pill",
+            "target": "headline",
+            "on": "just a taste"
+          },
+          {
+            "do": "show",
+            "target": "r.0",
+            "on": "agent that finishes work"
+          }
+        ],
+        "type": "slide",
+        "hideCaptions": true
+      }
+    },
+    {
+      "start_phrase": "Runway's free credits",
+      "line": "Runway's free credits are a hundred twenty-five, once, about five seconds of video, then gone. Twelve dollars a month buys credits that refill.",
+      "needs": [
+        "free",
+        "credits",
+        "are",
+        "a",
+        "Twelve",
+        "dollars",
+        "a",
+        "month"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "eyebrow": "Runway",
+        "headline": "[[125]] credits, once, then gone",
+        "blocks": [
+          {
+            "id": "s",
+            "kind": "swap",
+            "left": {
+              "logo": "assets/logos/runway.svg",
+              "name": "Free",
+              "price": "125",
+              "tone": "free",
+              "note": "credits, one time"
+            },
+            "right": {
+              "name": "Standard",
+              "price": "$12",
+              "tone": "cost",
+              "note": "625 credits/month, refills"
+            }
+          },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              {
+                "k": "~5s of video",
+                "v": "Free, once",
+                "tone": "cost"
+              }
+            ]
+          }
+        ],
+        "moves": [
+          {
+            "do": "show",
+            "target": "s.left",
+            "on": "free credits are"
+          },
+          {
+            "do": "show",
+            "target": "s.right",
+            "on": "then gone"
+          },
+          {
+            "do": "pill",
+            "target": "headline",
+            "on": "once"
+          },
+          {
+            "do": "show",
+            "target": "r.0",
+            "on": "about five seconds of video"
+          }
+        ],
+        "type": "slide",
+        "hideCaptions": true
+      }
+    },
+    {
+      "start_phrase": "Descript's free minutes",
+      "line": "Descript's free minutes renew monthly, but its hundred AI credits don't. Sixteen dollars a month gets credits that refill and drops the watermark.",
+      "needs": [
+        "free",
+        "minutes",
+        "renew",
+        "monthly",
+        "Sixteen",
+        "dollars",
+        "a",
+        "month"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "eyebrow": "Descript",
+        "headline": "Minutes renew, [[AI credits]] don't",
+        "blocks": [
+          {
+            "id": "s",
+            "kind": "swap",
+            "left": {
+              "logo": "assets/logos/descript.png",
+              "name": "Free",
+              "price": "",
+              "tone": "free",
+              "note": "60 min/mo, 100 credits once"
+            },
+            "right": {
+              "name": "Hobbyist",
+              "price": "$16",
+              "tone": "cost",
+              "note": "credits refill, no watermark"
+            }
+          }
+        ],
+        "moves": [
+          {
+            "do": "show",
+            "target": "s.left",
+            "on": "free minutes renew monthly"
+          },
+          {
+            "do": "show",
+            "target": "s.right",
+            "on": "a month gets"
+          },
+          {
+            "do": "pill",
+            "target": "headline",
+            "on": "AI credits don't"
+          }
+        ],
+        "type": "slide",
+        "hideCaptions": true
+      }
+    },
+    {
+      "start_phrase": "Cursor's free Hobby",
+      "line": "Cursor's free Hobby plan gives limited AI requests, no card required. Pro, twenty dollars, unlocks frontier models, though Cursor's reportedly changed billing twice this year.",
+      "needs": [
+        "free",
+        "Hobby",
+        "plan",
+        "gives",
+        "Pro,",
+        "twenty",
+        "dollars",
+        "no"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "eyebrow": "Cursor",
+        "headline": "Free Hobby, no card, [[Pro]] unlocks frontier models",
+        "blocks": [
+          {
+            "id": "s",
+            "kind": "swap",
+            "left": {
+              "logo": "assets/logos/cursor.svg",
+              "name": "Free (Hobby)",
+              "price": "",
+              "tone": "free",
+              "note": "limited AI requests"
+            },
+            "right": {
+              "name": "Pro",
+              "price": "$20",
+              "tone": "cost",
+              "note": "frontier models, higher limits"
+            }
+          },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              {
+                "k": "Billing",
+                "v": "Changed twice in 2026",
+                "tone": "cost"
+              }
+            ]
+          }
+        ],
+        "moves": [
+          {
+            "do": "show",
+            "target": "s.left",
+            "on": "free Hobby plan gives"
+          },
+          {
+            "do": "show",
+            "target": "s.right",
+            "on": "Pro"
+          },
+          {
+            "do": "pill",
+            "target": "headline",
+            "on": "no card required"
+          },
+          {
+            "do": "show",
+            "target": "r.0",
+            "on": "reportedly changed billing twice"
+          }
+        ],
+        "type": "slide",
+        "hideCaptions": true
+      }
+    },
+    {
+      "start_phrase": "Leonardo gives",
+      "line": "Leonardo gives a hundred fifty tokens a day free, public only. Twelve dollars a month makes it private and multiplies that by fifty.",
+      "needs": [
+        "gives",
+        "a",
+        "hundred",
+        "fifty",
+        "Twelve",
+        "dollars",
+        "a",
+        "month"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "eyebrow": "Leonardo.Ai",
+        "headline": "[[150]] tokens a day, public only",
+        "blocks": [
+          {
+            "id": "s",
+            "kind": "swap",
+            "left": {
+              "logo": "assets/logos/leonardo.png",
+              "name": "Free",
+              "price": "150",
+              "tone": "free",
+              "note": "tokens/day, public"
+            },
+            "right": {
+              "name": "Essential",
+              "price": "$12",
+              "tone": "cost",
+              "note": "private, 50x the tokens"
+            }
+          }
+        ],
+        "moves": [
+          {
+            "do": "show",
+            "target": "s.left",
+            "on": "gives"
+          },
+          {
+            "do": "show",
+            "target": "s.right",
+            "on": "only"
+          },
+          {
+            "do": "pill",
+            "target": "headline",
+            "on": "public only"
+          }
+        ],
+        "type": "slide",
+        "hideCaptions": true
+      }
+    },
+    {
+      "start_phrase": "Gamma hands",
+      "line": "Gamma hands four hundred credits once, at signup, capped at ten slides a prompt. Paid removes the branding, credits renew monthly, reportedly starting around eight dollars.",
+      "needs": [
+        "hands",
+        "four",
+        "hundred",
+        "credits",
+        "starting",
+        "around",
+        "eight",
+        "dollars"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "eyebrow": "Gamma",
+        "headline": "[[400]] credits once, then you're paying",
+        "blocks": [
+          {
+            "id": "s",
+            "kind": "swap",
+            "left": {
+              "logo": "assets/logos/gamma.png",
+              "name": "Free",
+              "price": "400",
+              "tone": "free",
+              "note": "credits, once, 10 slides/prompt"
+            },
+            "right": {
+              "name": "Plus",
+              "price": "~$8",
+              "tone": "cost",
+              "note": "credits renew, no branding"
+            }
+          },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              {
+                "k": "Branding",
+                "v": "Removed on Plus",
+                "tone": "cost"
+              }
+            ]
+          }
+        ],
+        "moves": [
+          {
+            "do": "show",
+            "target": "s.left",
+            "on": "hands"
+          },
+          {
+            "do": "show",
+            "target": "s.right",
+            "on": "Paid removes"
+          },
+          {
+            "do": "pill",
+            "target": "headline",
+            "on": "capped at"
+          },
+          {
+            "do": "show",
+            "target": "r.0",
+            "on": "Paid removes"
+          }
+        ],
+        "type": "slide",
+        "hideCaptions": true
+      }
+    },
+    {
+      "start_phrase": "So the next",
+      "line": "So the next time something says free, remember: they don't all mean it the same way. Ask whether it's a plan, or a trial wearing a better word.",
+      "needs": [
+        "next",
+        "time",
+        "free",
+        "remember",
+        "mean",
+        "same",
+        "plan",
+        "trial"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "eyebrow": "So",
+        "headline": "A [[plan]], or a trial wearing a better word",
+        "blocks": [
+          {
+            "id": "s",
+            "kind": "swap",
+            "left": {
+              "name": "A real plan",
+              "price": "Renews",
+              "tone": "free",
+              "note": "still there next month"
+            },
+            "right": {
+              "name": "A trial",
+              "price": "Once",
+              "tone": "cost",
+              "note": "wearing a better word"
+            }
+          }
+        ],
+        "moves": [
+          {
+            "do": "show",
+            "target": "s.left",
+            "on": "ask whether it's a plan"
+          },
+          {
+            "do": "show",
+            "target": "s.right",
+            "on": "a trial wearing"
+          },
+          {
+            "do": "pill",
+            "target": "headline",
+            "on": "a plan"
+          }
+        ],
+        "type": "slide",
+        "hideCaptions": true
+      }
+    },
+    {
+      "start_phrase": "Comment TOOLS and",
+      "line": "Comment TOOLS and you'll get all ten links in your DMs.",
+      "needs": [
+        "Comment",
+        "TOOLS",
+        "ten",
+        "links",
+        "DMs"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "slide",
+        "cta": true,
+        "hideCaptions": true,
+        "headlineSize": "xl",
+        "headline": "Comment [[TOOLS]]",
+        "presenter": {
+          "src": "assets/10-ai-tools-free-vs-paid/avatar-master-cta.mp4",
+          "from": 0.0
+        },
+        "blocks": [
+          {
+            "id": "d",
+            "kind": "text",
+            "text": "and you'll get all ten links in your DMs."
+          }
+        ],
+        "moves": [
+          {
+            "do": "pill",
+            "target": "headline",
+            "on": "Comment TOOLS"
+          },
+          {
+            "do": "show",
+            "target": "d",
+            "on": "you'll get all ten"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "script_sha256": "3c73f4a4d52c914c8bdf5f3fa105b5e1fa527abf110f97316a61a3e2c454f117",
+  "structure_sha256": "4f783f9d1eba462e973dc055126852d93a035be52b423f3c67b9c82de6a79ea0",
+  "findings": [
+    "  BRIDGES 1/24 sentences (4%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  WHAT WITHOUT SO WHAT 1/1 spec sentences never say what the number does for the viewer. \"2nm chip\" is information; \"faster without draining the battery\" is relevance. (framework S7)",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 14,
+  "proposedAt": "2026-09-18T10:16:35+00:00"
+}

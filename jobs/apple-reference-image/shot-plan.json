@@ -1,0 +1,757 @@
+{
+  "emphasis": [
+    "AI fake",
+    "Apple Reference Image",
+    "instant",
+    "quantum computers",
+    "before",
+    "switched off",
+    "staged"
+  ],
+  "caption_corrections": {},
+  "format": "news",
+  "shots": [
+    {
+      "start_phrase": "You just can't tell",
+      "line": "You just can't tell a photo from an AI fake anymore.",
+      "needs": [
+        "tell",
+        "photo",
+        "fake",
+        "anymore"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-reference-image/avatar-master.mp4",
+        "zoomDir": "in"
+      }
+    },
+    {
+      "start_phrase": "But here's what's actually",
+      "line": "But here's what's actually new: the proof now starts before your phone even finishes taking the picture.",
+      "needs": [
+        "actually",
+        "proof",
+        "starts",
+        "before",
+        "phone",
+        "even"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-reference-image/avatar-master.mp4",
+        "zoomDir": "none"
+      }
+    },
+    {
+      "start_phrase": "It's called Apple Reference",
+      "line": "It's called Apple Reference Image, live on the iPhone 18 Pro.",
+      "needs": [
+        "called",
+        "Apple",
+        "Reference",
+        "Image",
+        "live",
+        "iPhone"
+      ],
+      "tier": "official",
+      "asset_id": "reference-image-compare-panels",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-reference-image/reference-image-compare-panels.jpg",
+        "srcWidth": 780,
+        "srcHeight": 438,
+        "backdrop": "black",
+        "credit": "Apple",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 10,
+            "y": 10,
+            "w": 760,
+            "h": 418
+          }
+        ],
+        "captionBottom": 520,
+        "allowSmallReceipt": true,
+        "allowSmallReceiptReason": "Apple's own official 3-panel UI graphic (badge -> compare -> cropped photo) is landscape by construction -- it shows all three iPhone screens side by side to make its point. Cropping to a single phone would fit 9:16 better but would destroy the exact thing that makes this asset worth using: the reveal that the reference image shows a person the published photo crops out.",
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "at": 0.05,
+            "vol": 0.16
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "The sensor signs the",
+      "line": "The sensor signs the pixels the instant light hits it",
+      "needs": [
+        "sensor",
+        "signs",
+        "pixels",
+        "instant",
+        "light",
+        "hits"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "stage",
+        "hideCaptions": false,
+        "set": "dark",
+        "layout": "full",
+        "elements": [
+          {
+            "id": "sensor",
+            "kind": "card",
+            "x": 0.5,
+            "y": 0.38,
+            "w": 0.6,
+            "title": "Sensor",
+            "lines": [
+              "light hits it"
+            ]
+          }
+        ],
+        "moves": [
+          {
+            "do": "arrive",
+            "target": "sensor",
+            "on": "the sensor signs",
+            "dir": "up"
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx-action/marker.mp3",
+            "at": 0.1,
+            "vol": 0.16
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "before anything else can",
+      "line": "before anything else can touch them.",
+      "needs": [
+        "before",
+        "anything",
+        "else",
+        "touch",
+        "them"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "stage",
+        "hideCaptions": true,
+        "set": "dark",
+        "layout": "full",
+        "elements": [
+          {
+            "id": "sensor",
+            "kind": "card",
+            "x": 0.5,
+            "y": 0.38,
+            "w": 0.6,
+            "title": "Sensor",
+            "lines": [
+              "light hits it"
+            ]
+          },
+          {
+            "id": "signed",
+            "kind": "card",
+            "x": 0.5,
+            "y": 0.65,
+            "w": 0.5,
+            "title": "Signed \u2713",
+            "lines": [
+              "before software touches it"
+            ],
+            "tone": "accent"
+          }
+        ],
+        "moves": [
+          {
+            "do": "arrive",
+            "target": "signed",
+            "on": "before anything else",
+            "dir": "up"
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "file goes to Apple's",
+      "line": "That signed file goes to Apple's Private Cloud Compute",
+      "needs": [
+        "signed",
+        "file",
+        "goes",
+        "Apple",
+        "Private",
+        "Cloud"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "stage",
+        "hideCaptions": true,
+        "set": "dark",
+        "layout": "full",
+        "elements": [
+          {
+            "id": "signed",
+            "kind": "card",
+            "x": 0.27,
+            "y": 0.45,
+            "w": 0.42,
+            "title": "Signed file",
+            "lines": [
+              "from the sensor"
+            ]
+          },
+          {
+            "id": "pcc",
+            "kind": "card",
+            "x": 0.73,
+            "y": 0.45,
+            "w": 0.42,
+            "title": "Private Cloud Compute",
+            "lines": [
+              "checks it"
+            ],
+            "tone": "accent"
+          }
+        ],
+        "moves": [
+          {
+            "do": "arrive",
+            "target": "signed",
+            "on": "file goes",
+            "dir": "left"
+          },
+          {
+            "do": "connect",
+            "from": "signed",
+            "to": "pcc",
+            "on": "private cloud compute",
+            "arrow": true
+          },
+          {
+            "do": "arrive",
+            "target": "pcc",
+            "on": "private cloud compute",
+            "dir": "right"
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx-action/tick.mp3",
+            "at": 0.1,
+            "vol": 0.14
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "which checks it and",
+      "line": "which checks it and signs the final photo with encryption strong enough to survive quantum computers.",
+      "needs": [
+        "which",
+        "checks",
+        "signs",
+        "final",
+        "photo",
+        "encryption"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "stage",
+        "hideCaptions": true,
+        "set": "dark",
+        "layout": "full",
+        "elements": [
+          {
+            "id": "pcc",
+            "kind": "card",
+            "x": 0.5,
+            "y": 0.26,
+            "w": 0.7,
+            "title": "Private Cloud Compute",
+            "lines": [
+              "checks + processes"
+            ]
+          },
+          {
+            "id": "final",
+            "kind": "card",
+            "x": 0.5,
+            "y": 0.56,
+            "w": 0.6,
+            "title": "Signed photo",
+            "lines": [
+              "encrypted"
+            ],
+            "tone": "accent"
+          },
+          {
+            "id": "quantum",
+            "kind": "card",
+            "x": 0.5,
+            "y": 0.82,
+            "w": 0.5,
+            "title": "Quantum-resistant",
+            "lines": [
+              "signature"
+            ],
+            "tone": "accent"
+          }
+        ],
+        "moves": [
+          {
+            "do": "arrive",
+            "target": "final",
+            "on": "signs the final photo",
+            "dir": "up"
+          },
+          {
+            "do": "arrive",
+            "target": "quantum",
+            "on": "survive quantum computers",
+            "dir": "up"
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx-action/lock.mp3",
+            "at": 3.8,
+            "vol": 0.18
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "It doesn't carry your",
+      "line": "It doesn't carry your name or your location",
+      "needs": [
+        "doesn",
+        "carry",
+        "name",
+        "location"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "checklist",
+        "headline": "NOT INCLUDED",
+        "rows": [
+          {
+            "label": "Your name",
+            "state": "q"
+          },
+          {
+            "label": "Your location",
+            "state": "q"
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "only proof that an",
+      "line": "only proof that an Apple sensor captured those exact pixels, one Apple can revoke if that sensor is ever compromised.",
+      "needs": [
+        "only",
+        "proof",
+        "Apple",
+        "sensor",
+        "captured",
+        "exact"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "checklist",
+        "headline": "INCLUDED",
+        "rows": [
+          {
+            "label": "Sensor proof",
+            "state": "done"
+          },
+          {
+            "label": "Revocable if compromised",
+            "state": "done"
+          }
+        ],
+        "footnote": "Source: security.apple.com, Sept 15 2026",
+        "sfx": [
+          {
+            "src": "sfx/Pop.MP3",
+            "at": 0.15,
+            "vol": 0.16
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Here's why that matters.",
+      "line": "Here's why that matters.",
+      "needs": [
+        "matters"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-reference-image/avatar-master.mp4",
+        "zoomDir": "none"
+      }
+    },
+    {
+      "start_phrase": "Leica, Sony, Nikon, and",
+      "line": "Leica, Sony, Nikon, and Google's Pixel use the existing standard.",
+      "needs": [
+        "Leica",
+        "Sony",
+        "Nikon",
+        "Google",
+        "Pixel",
+        "existing"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "categorygrid",
+        "headline": "ALREADY USE C2PA",
+        "cards": [
+          {
+            "label": "Leica"
+          },
+          {
+            "label": "Sony"
+          },
+          {
+            "label": "Nikon"
+          },
+          {
+            "label": "Google Pixel"
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx/Pop.MP3",
+            "at": 0.15,
+            "vol": 0.16
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "It signs a photo",
+      "line": "It signs a photo after it's already been processed.",
+      "needs": [
+        "signs",
+        "photo",
+        "after",
+        "already",
+        "been",
+        "processed"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "stage",
+        "hideCaptions": true,
+        "set": "dark",
+        "layout": "full",
+        "elements": [
+          {
+            "id": "c2pa",
+            "kind": "card",
+            "x": 0.5,
+            "y": 0.35,
+            "w": 0.75,
+            "title": "C2PA",
+            "lines": [
+              "signs AFTER processing"
+            ]
+          }
+        ],
+        "moves": [
+          {
+            "do": "arrive",
+            "target": "c2pa",
+            "on": "already been processed",
+            "dir": "up"
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Apple signs it before",
+      "line": "Apple signs it before any software touches it at all",
+      "needs": [
+        "Apple",
+        "signs",
+        "before",
+        "software",
+        "touches"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "stage",
+        "hideCaptions": true,
+        "set": "dark",
+        "layout": "full",
+        "elements": [
+          {
+            "id": "c2pa",
+            "kind": "card",
+            "x": 0.5,
+            "y": 0.35,
+            "w": 0.75,
+            "title": "C2PA",
+            "lines": [
+              "signs AFTER processing"
+            ]
+          },
+          {
+            "id": "apple",
+            "kind": "card",
+            "x": 0.5,
+            "y": 0.68,
+            "w": 0.75,
+            "title": "Apple",
+            "lines": [
+              "signs BEFORE software runs"
+            ],
+            "tone": "accent"
+          }
+        ],
+        "moves": [
+          {
+            "do": "arrive",
+            "target": "apple",
+            "on": "signs it before",
+            "dir": "up"
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx-action/marker.mp3",
+            "at": 0.1,
+            "vol": 0.2
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "so there's no window",
+      "line": "so there's no window for a fake to get swapped in first.",
+      "needs": [
+        "window",
+        "fake",
+        "swapped",
+        "first",
+        "Anyways"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-reference-image/avatar-master.mp4",
+        "zoomDir": "none"
+      }
+    },
+    {
+      "start_phrase": "Anyways, it comes switched",
+      "line": "Anyways, it comes switched off, built for photojournalists and courtrooms, not your everyday shot.",
+      "needs": [
+        "comes",
+        "switched",
+        "built",
+        "photojournalists",
+        "courtrooms",
+        "everyday"
+      ],
+      "tier": "multi",
+      "asset_id": null,
+      "scene": {
+        "type": "checklist",
+        "headline": "OFF BY DEFAULT",
+        "rows": [
+          {
+            "label": "Photojournalists",
+            "state": "done"
+          },
+          {
+            "label": "Courtrooms",
+            "state": "done"
+          },
+          {
+            "label": "Your everyday shot",
+            "state": "q"
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "And it's not perfect.",
+      "line": "And it's not perfect.",
+      "needs": [
+        "perfect"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-reference-image/avatar-master.mp4",
+        "zoomDir": "none"
+      }
+    },
+    {
+      "start_phrase": "points out it can't",
+      "line": "SquaredTech points out it can't tell you the photo wasn't staged",
+      "needs": [
+        "SquaredTech",
+        "points",
+        "tell",
+        "photo",
+        "wasn",
+        "staged"
+      ],
+      "tier": "official",
+      "asset_id": "receipt-squaredtech-critique",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-reference-image/squaredtech-critique.png",
+        "srcWidth": 1080,
+        "srcHeight": 2340,
+        "backdrop": "black",
+        "credit": "SquaredTech",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 15,
+            "y": 440,
+            "w": 1050,
+            "h": 500
+          }
+        ],
+        "captionBottom": 520,
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "at": 0.05,
+            "vol": 0.16
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "only that the pixels",
+      "line": "only that the pixels weren't.",
+      "needs": [
+        "only",
+        "pixels",
+        "weren"
+      ],
+      "tier": "official",
+      "asset_id": "receipt-squaredtech-critique",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-reference-image/squaredtech-critique.png",
+        "srcWidth": 1080,
+        "srcHeight": 2340,
+        "backdrop": "black",
+        "highlights": [
+          {
+            "at": 0.05,
+            "x": 15,
+            "y": 850,
+            "w": 1050,
+            "h": 90
+          }
+        ],
+        "captionBottom": 520
+      }
+    },
+    {
+      "start_phrase": "The proof still starts",
+      "line": "The proof still starts at the sensor, not in an app after the fact.",
+      "needs": [
+        "proof",
+        "still",
+        "starts",
+        "sensor",
+        "after",
+        "fact"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "stage",
+        "hideCaptions": true,
+        "set": "dark",
+        "layout": "full",
+        "elements": [
+          {
+            "id": "sensor",
+            "kind": "card",
+            "x": 0.5,
+            "y": 0.45,
+            "w": 0.6,
+            "title": "Sensor",
+            "lines": [
+              "signed \u2713"
+            ],
+            "tone": "accent"
+          }
+        ],
+        "moves": [
+          {
+            "do": "arrive",
+            "target": "sensor",
+            "on": "starts at the sensor",
+            "dir": "up"
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx-action/lock.mp3",
+            "at": 0.3,
+            "vol": 0.15
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Does knowing the camera",
+      "line": "Does knowing the camera itself signed it change how much you trust the photo?",
+      "needs": [
+        "Does",
+        "knowing",
+        "camera",
+        "itself",
+        "signed",
+        "change"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-reference-image/avatar-master.mp4",
+        "zoomDir": "none"
+      }
+    }
+  ]
+}
