@@ -15,25 +15,26 @@ import sheet11 from "./beats/five-free-ai-tools.json";
 import sheet12 from "./beats/grok-bot.json";
 import sheet13 from "./beats/ios-27-2-beta-1.json";
 import sheet14 from "./beats/ios-27-beta-8.json";
-import sheet15 from "./beats/ios27-beta7.json";
-import sheet16 from "./beats/ios27-tiers-nomusic.json";
-import sheet17 from "./beats/ios27-tiers.json";
-import sheet18 from "./beats/iphone-18-pro-nomusic.json";
-import sheet19 from "./beats/iphone-18-pro.json";
-import sheet20 from "./beats/iphone-fold-ultra-nomusic.json";
-import sheet21 from "./beats/iphone-fold-ultra.json";
-import sheet22 from "./beats/iphone-third-interface.json";
-import sheet23 from "./beats/iphone18-colors-nomusic.json";
-import sheet24 from "./beats/iphone18-colors.json";
-import sheet25 from "./beats/iphone18-split.json";
-import sheet26 from "./beats/mac-mini-m6-m5pro.json";
-import sheet27 from "./beats/mac-multiple-headphones.json";
-import sheet28 from "./beats/made-by-google-26.json";
-import sheet29 from "./beats/qualcomm-chip-hike.json";
-import sheet30 from "./beats/seedance-25.json";
-import sheet31 from "./beats/september-preview-nomusic.json";
-import sheet32 from "./beats/september-preview.json";
-import sheet33 from "./beats/whatsapp-agents.json";
+import sheet15 from "./beats/ios27-battery-drain.json";
+import sheet16 from "./beats/ios27-beta7.json";
+import sheet17 from "./beats/ios27-tiers-nomusic.json";
+import sheet18 from "./beats/ios27-tiers.json";
+import sheet19 from "./beats/iphone-18-pro-nomusic.json";
+import sheet20 from "./beats/iphone-18-pro.json";
+import sheet21 from "./beats/iphone-fold-ultra-nomusic.json";
+import sheet22 from "./beats/iphone-fold-ultra.json";
+import sheet23 from "./beats/iphone-third-interface.json";
+import sheet24 from "./beats/iphone18-colors-nomusic.json";
+import sheet25 from "./beats/iphone18-colors.json";
+import sheet26 from "./beats/iphone18-split.json";
+import sheet27 from "./beats/mac-mini-m6-m5pro.json";
+import sheet28 from "./beats/mac-multiple-headphones.json";
+import sheet29 from "./beats/made-by-google-26.json";
+import sheet30 from "./beats/qualcomm-chip-hike.json";
+import sheet31 from "./beats/seedance-25.json";
+import sheet32 from "./beats/september-preview-nomusic.json";
+import sheet33 from "./beats/september-preview.json";
+import sheet34 from "./beats/whatsapp-agents.json";
 
 export const beatSheets = [
   sheet0,
@@ -70,4 +71,5 @@ export const beatSheets = [
   sheet31,
   sheet32,
   sheet33,
+  sheet34,
 ] as unknown as BeatSheet[];
