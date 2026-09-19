@@ -473,6 +473,20 @@ def dur_max_for(fmt: str) -> dict[str, float]:
     return {**DUR_MAX, **((FORMATS.get(fmt) or {}).get("dur_max") or {})}
 TAIL_MAX = 0.45
 FACE_BY = 5.0        # user rule 2026-08-12: presenter on screen by 5s
+
+
+def _has_face(scene: dict) -> bool:
+    """Is the presenter on screen in this scene?
+
+    2026-09-19: this used to test whether a filename contained "avatar-master",
+    so ios27-battery-drain — whose bookend clips are cut per slice and named
+    avatar-hook.mp4 / avatar-cta.mp4 — reported "facecam 0%" and "the presenter
+    never appears" with the face plainly in the corner circle of three pages.
+    A `presenter` block IS a face, whatever the file is called; footage of the
+    avatar still counts by name, since those scenes carry no presenter field."""
+    if scene.get("presenter"):
+        return True
+    return any("avatar-master" in str(scene.get(k) or "") for k in ("src", "bottomSrc"))
 DATA_MIN = 2.0       # a card carrying a claim must outlast the claim                            # 2026-08-03 oss-alt tail-trim rule
 
 # HeadlineBuild.tsx renders these at fixed sizes with NO auto-fit, so an
@@ -1094,9 +1108,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
 
     # G06 — facecam share of runtime
     # a presenter talking in a slide's corner circle is on screen too (2026-09-16)
-    avatar_scenes = [s for s in scenes
-                     if "avatar-master" in str(s.get("src") or "")
-                     or "avatar-master" in str((s.get("presenter") or {}).get("src") or "")]
+    avatar_scenes = [s for s in scenes if _has_face(s)]
     face = sum(s["durationSec"] for s in avatar_scenes)
     share = face / total if total else 0
     # FACE PLAN (2026-09-16). The band assumes the presenter carries the
@@ -1288,9 +1300,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
     t = 0.0
     for sc in scenes:
         # a presenter inside a slide circle or a split stage is on screen too
-        srcs = [str(sc.get(k) or "") for k in ("src", "bottomSrc")] + \
-               [str((sc.get("presenter") or {}).get("src") or "")]
-        if any("avatar-master" in v for v in srcs):
+        if _has_face(sc):
             face_at = t
             break
         t += sc["durationSec"]

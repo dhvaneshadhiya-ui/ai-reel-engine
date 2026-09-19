@@ -1,0 +1,500 @@
+{
+ "format": "news",
+ "music": false,
+ "facePlan": "bookends",
+ "audio": "assets/ios27-battery-drain/vo.mp3",
+ "emphasis": [
+  "iOS 27",
+  "few days",
+  "no and no",
+  "three days"
+ ],
+ "caption_corrections": {
+  "i o s": "iOS",
+  "ios 27": "iOS 27",
+  "ios 26": "iOS 26",
+  "ios 18": "iOS 18",
+  "federighi": "Federighi",
+  "seventy two": "seventy-two",
+  "battery is dropping": "battery's dropping",
+  "that's screen": "that screen",
+  "settings": "Settings",
+  "battery": "Battery",
+  "four days": "4 days",
+  "three days": "3 days"
+ },
+ "shots": [
+  {
+   "start_phrase": "Your battery",
+   "tier": "official",
+   "asset_id": null,
+   "line": "Your battery's dropping fast since iOS 27.",
+   "needs": [
+    "battery falling",
+    "iOS 27"
+   ],
+   "scene": {
+    "type": "slide",
+    "eyebrow": "After the update",
+    "headline": "Dropping fast since [[iOS 27]]",
+    "presenter": {
+     "src": "assets/ios27-battery-drain/avatar-hook.mp4",
+     "from": 0.0
+    },
+    "blocks": [
+     {
+      "id": "g",
+      "kind": "gauge",
+      "from": 84,
+      "to": 52,
+      "secs": 3.0,
+      "note": "SINCE THE UPDATE",
+      "label": "same day, same usage",
+      "h": 900
+     }
+    ],
+    "moves": [
+     {
+      "do": "drain",
+      "target": "g",
+      "at": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "The phone isn't broken",
+   "tier": "official",
+   "asset_id": "apple-drain-para",
+   "line": "The phone isn't broken, it's busy, and one screen tells you if that's all. Apple's own support page says so. After an update, tasks keep running in the background, and they hit battery life and heat.",
+   "needs": [
+    "not broken",
+    "busy",
+    "Apple's page",
+    "background tasks",
+    "battery and heat"
+   ],
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Apple's own words",
+    "headline": "Not broken. [[Busy]].",
+    "presenter": {
+     "src": "assets/ios27-battery-drain/avatar-hook.mp4",
+     "from": 3.3
+    },
+    "blocks": [
+     {
+      "id": "sc",
+      "kind": "screen",
+      "src": "assets/ios27-battery-drain/apple-drain-para.png",
+      "width": 1170,
+      "height": 1992,
+      "h": 850
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "it's busy"
+     },
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "support page says",
+      "rect": [
+       40,
+       120,
+       1090,
+       430
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "tasks keep running",
+      "rect": [
+       40,
+       420,
+       1090,
+       640
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "And it names",
+   "tier": "official",
+   "asset_id": null,
+   "line": "And it names them. Your phone is indexing your stuff for search, downloading new assets, and updating apps.",
+   "needs": [
+    "indexing",
+    "downloading assets",
+    "updating apps"
+   ],
+   "scene": {
+    "type": "slide",
+    "eyebrow": "What it's doing",
+    "headline": "Three jobs, [[running now]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "steps",
+      "steps": [
+       "Indexing your stuff for search",
+       "Downloading new assets",
+       "Updating your apps"
+      ],
+      "h": 800
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "names them"
+     },
+     {
+      "do": "show",
+      "target": "s.0",
+      "on": "indexing your stuff"
+     },
+     {
+      "do": "show",
+      "target": "s.1",
+      "on": "downloading new"
+     },
+     {
+      "do": "show",
+      "target": "s.2",
+      "on": "updating apps"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "What that page",
+   "tier": "official",
+   "asset_id": "apple-drain-para",
+   "line": "What that page never gives you is a deadline. Not four days, not seventy-two hours. Apple's actual words are, wait a few days, then check again. So every confident number you've read came from somewhere other than Apple.",
+   "needs": [
+    "no deadline",
+    "four days struck",
+    "72 hours struck",
+    "wait a few days"
+   ],
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The missing number",
+    "headline": "Apple never starts a [[clock]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "\u201cAbout 4 days\u201d",
+        "v": "not Apple",
+        "tone": "cost"
+       },
+       {
+        "k": "\u201c72 hours\u201d",
+        "v": "not Apple",
+        "tone": "cost"
+       },
+       {
+        "k": "\u201cWait a few days\u201d",
+        "v": "Apple",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "is a deadline"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "Not four days"
+     },
+     {
+      "do": "strike",
+      "target": "r.0",
+      "on": "not 72"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "72 hours"
+     },
+     {
+      "do": "strike",
+      "target": "r.1",
+      "on": "Apple's actual"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "wait a few days"
+     },
+     {
+      "do": "highlight",
+      "target": "r.2",
+      "on": "then check again"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "If this feels",
+   "tier": "multi",
+   "asset_id": null,
+   "line": "If this feels familiar, that's because it is. Same week last September, iOS 26 drained batteries and got the same sentence from Apple. The year before, iOS 18.",
+   "needs": [
+    "2024",
+    "2025",
+    "2026",
+    "same story"
+   ],
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Every September",
+    "headline": "Third year, [[same story]]",
+    "blocks": [
+     {
+      "id": "y",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Sept 2024",
+        "v": "iOS 18",
+        "tone": "plain"
+       },
+       {
+        "k": "Sept 2025",
+        "v": "iOS 26",
+        "tone": "plain"
+       },
+       {
+        "k": "Sept 2026",
+        "v": "iOS 27",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "y.0",
+      "on": "feels familiar"
+     },
+     {
+      "do": "show",
+      "target": "y.1",
+      "on": "last September"
+     },
+     {
+      "do": "highlight",
+      "target": "y.1",
+      "on": "iOS 26 drained"
+     },
+     {
+      "do": "show",
+      "target": "y.2",
+      "on": "The year before"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "same sentence"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "So, that's screen",
+   "tier": "official",
+   "asset_id": "apple-insight",
+   "line": "So, that screen. Open Settings, then Battery. If a note says a recent update is still finishing in the background, that's your answer.",
+   "needs": [
+    "Settings",
+    "Battery",
+    "Ongoing iOS Update note"
+   ],
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Check this first",
+    "headline": "Settings, then [[Battery]]",
+    "blocks": [
+     {
+      "id": "sc",
+      "kind": "screen",
+      "src": "assets/ios27-battery-drain/apple-insight.png",
+      "width": 1170,
+      "height": 1992,
+      "h": 880
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "then Battery"
+     },
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "a recent update",
+      "rect": [
+       40,
+       250,
+       1090,
+       520
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "What won't help",
+   "tier": "single",
+   "asset_id": "federighi-para",
+   "line": "What won't help is swiping away all your apps. Apple's software chief was once asked if he force quits apps to save battery, and he said, no and no.",
+   "needs": [
+    "swiping apps away",
+    "Federighi quote"
+   ],
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The habit that does nothing",
+    "headline": "Swiping apps away: [[no and no]]",
+    "blocks": [
+     {
+      "id": "sc",
+      "kind": "screen",
+      "src": "assets/ios27-battery-drain/federighi-para.png",
+      "width": 1170,
+      "height": 1992,
+      "h": 870
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "force quits apps",
+      "rect": [
+       300,
+       180,
+       820,
+       420
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "no and no"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Your battery health",
+   "tier": "official",
+   "asset_id": "apple-cycles",
+   "line": "Your battery health is fine too, because maximum capacity is measured across hundreds of charge cycles, and one rough week can't move it.",
+   "needs": [
+    "maximum capacity",
+    "charge cycles"
+   ],
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Battery health",
+    "headline": "Measured in [[charge cycles]]",
+    "blocks": [
+     {
+      "id": "g",
+      "kind": "gauge",
+      "from": 100,
+      "label": "maximum capacity doesn't move in a week",
+      "h": 470
+     },
+     {
+      "id": "sc",
+      "kind": "screen",
+      "src": "assets/ios27-battery-drain/apple-cycles.png",
+      "width": 1170,
+      "height": 1992,
+      "h": 430
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "charge cycles"
+     },
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "hundreds of charge",
+      "rect": [
+       40,
+       300,
+       1090,
+       460
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "So check that screen",
+   "tier": "official",
+   "asset_id": null,
+   "cta": true,
+   "line": "So check that screen in three days, then tell me in the comments which iPhone you're on.",
+   "needs": [
+    "three days",
+    "comment ask",
+    "which iPhone"
+   ],
+   "scene": {
+    "type": "slide",
+    "cta": true,
+    "eyebrow": "Nobody has measured this",
+    "headlineSize": "xl",
+    "headline": "[[Which iPhone]] are you on?",
+    "presenter": {
+     "src": "assets/ios27-battery-drain/avatar-cta.mp4",
+     "from": 0.0
+    },
+    "blocks": [
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Check Battery again in three days, then tell me in the comments how long yours took to settle."
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "tell me in the comments"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "in three days"
+     }
+    ]
+   }
+  }
+ ]
+}

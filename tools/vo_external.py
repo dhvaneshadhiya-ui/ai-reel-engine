@@ -102,6 +102,13 @@ def prepare(slug: str, src: Path) -> int:
             print("             Regenerate at a different speed rather than "
                   "time-stretching:\n             stretching audio moves "
                   "pitch and undoes the reason for using this read.")
+            if verdict == "TOO FAST":
+                # A fast read is usually a read with short gaps, not fast words
+                # (three reels running, 2026-09-19). Padding the silences keeps
+                # the take and its pitch; buying another take is the fallback.
+                want = words / ((WPS_MIN + WPS_MAX) / 2)
+                print(f"             Or keep this read and lengthen its PAUSES:\n"
+                      f"               python3 tools/vo_pad.py {slug} --target {want:.0f}")
     else:
         print(f"\n  pace       no {script_p.relative_to(ROOT)} to compare against")
 

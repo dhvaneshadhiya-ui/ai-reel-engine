@@ -107,23 +107,28 @@ export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: 
 };
 
 // ----------------------------------------------------------------- steps ----
-export interface StepsBlockProps { id: string; kind: "steps"; steps: string[] }
+export interface StepsBlockProps { id: string; kind: "steps"; steps: string[]; h?: number }
 
 export const StepsBlock: React.FC<{ b: StepsBlockProps; moves: MoveLike[]; t: number; C: Pal }> = ({ b, moves, t, C }) => {
   const at = (i: number) => moves.find((m) => m.do === "show" && m.target === `${b.id}.${i}`)?.at ?? 0;
   const lastShown = b.steps.reduce((acc, _s, i) => (t >= at(i) ? i : acc), -1);
+  // `h` given: the strip is the page, so the cards grow to fill it (the
+  // ios27 "three jobs" page left 72% of the frame flat without this).
+  const tall = (b.h ?? 0) > 360;
   return (
-    <div style={{ display: "flex", gap: 12 }}>
+    <div style={{ display: "flex", gap: 12, height: b.h, alignItems: "stretch" }}>
       {b.steps.map((s, i) => {
         const p = ramp(t, at(i), 0.3);
         const live = i === lastShown;
         return (
-          <div key={i} style={{ flex: 1, background: live ? "rgba(18,40,68,1)" : C.card, borderRadius: 22, padding: "20px 16px",
-            border: `2px solid ${live ? C.blue : C.line}`, opacity: 0.25 + 0.75 * p, minHeight: 150 }}>
+          <div key={i} style={{ flex: 1, background: live ? "rgba(18,40,68,1)" : C.card, borderRadius: 22,
+            padding: tall ? "34px 26px" : "20px 16px", display: "flex", flexDirection: "column",
+            justifyContent: tall ? "center" : "flex-start", gap: tall ? 10 : 0,
+            border: `2px solid ${live ? C.blue : C.line}`, opacity: 0.25 + 0.75 * p, minHeight: tall ? undefined : 150 }}>
             <div style={{ width: 52, height: 52, borderRadius: 26, background: p > 0.5 ? C.blue : "transparent",
               border: `3px solid ${C.blue}`, display: "flex", alignItems: "center", justifyContent: "center",
               font: `800 28px ${FONT}`, color: p > 0.5 ? "#fff" : C.blue }}>{i + 1}</div>
-            <div style={{ marginTop: 14, font: `700 30px/1.2 ${FONT}`, color: C.ink }}>{s}</div>
+            <div style={{ marginTop: tall ? 26 : 14, font: `700 ${tall ? 40 : 30}px/1.22 ${FONT}`, color: C.ink }}>{s}</div>
           </div>
         );
       })}

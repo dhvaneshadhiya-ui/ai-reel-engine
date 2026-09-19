@@ -1,0 +1,17 @@
+Your battery's dropping fast since iOS 27. The phone isn't broken, it's busy, and one screen tells you if that's all.
+
+Apple's own support page says so. After an update, tasks keep running in the background, and they hit battery life and heat.
+
+And it names them. Your phone is indexing your stuff for search, downloading new assets, and updating apps.
+
+What that page never gives you is a deadline. Not four days, not seventy-two hours. Apple's actual words are, wait a few days, then check again. So every confident number you've read came from somewhere other than Apple.
+
+If this feels familiar, that's because it is. Same week last September, iOS 26 drained batteries and got the same sentence from Apple. The year before, iOS 18.
+
+So, that screen. Open Settings, then Battery. If a note says a recent update is still finishing in the background, that's your answer.
+
+What won't help is swiping away all your apps. Apple's software chief was once asked if he force quits apps to save battery, and he said, no and no.
+
+Your battery health is fine too, because maximum capacity is measured across hundreds of charge cycles, and one rough week can't move it.
+
+So check that screen in three days, then tell me in the comments which iPhone you're on.
