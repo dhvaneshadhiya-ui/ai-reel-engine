@@ -1955,7 +1955,8 @@ def check_beats(beats: dict, vo_end: float | None = None,
                     "screen is a claim, whether or not the voice says it.")
 
     # G65 (slide) — the carousel-look slide off its contract draws nothing.
-    SLIDE_BLOCKS = {"hero", "swap", "rows", "text", "tips", "logos", "screen", "steps", "devices", "waves", "spotlight"}
+    SLIDE_BLOCKS = {"hero", "swap", "rows", "text", "tips", "logos", "screen", "steps", "devices", "waves",
+                    "spotlight", "gauge"}
     for i, sc in enumerate(scenes):
         if sc.get("type") != "slide":
             continue
@@ -1970,14 +1971,17 @@ def check_beats(beats: dict, vo_end: float | None = None,
             bid = b.get("id")
             targets |= {bid, f"{bid}.left", f"{bid}.right", f"{bid}.best", f"{bid}.watch"}
             targets |= {f"{bid}.{k}" for k in range(max(len(b.get("rows") or []), len(b.get("steps") or []), len(b.get("items") or [])))}
+            if b.get("kind") == "gauge" and not isinstance(b.get("from"), (int, float)):
+                errors.append(f"G65 scene {i:02d} slide gauge {bid!r} needs a numeric `from` percent — it draws an empty cell.")
             if b.get("kind") == "screen" and not str(b.get("src") or "").lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
                 errors.append(f"G65 scene {i:02d} slide screen {bid!r} needs a still `src` — an <Img> cannot show {b.get('src')!r}.")
         targets.add("headline")
         if sc.get("presenter") and not str((sc["presenter"] or {}).get("src") or "").lower().endswith((".mp4", ".mov", ".webm")):
             errors.append(f"G65 scene {i:02d} slide presenter needs a video `src` — a still in the circle renders black.")
         for m in sc.get("moves") or []:
-            if m.get("do") not in ("show", "strike", "highlight", "pill", "focus", "state", "drift"):
-                errors.append(f"G65 scene {i:02d} slide move {m.get('do')!r} is not show, strike, highlight, pill, focus, state or drift.")
+            if m.get("do") not in ("show", "strike", "highlight", "pill", "focus", "state", "drift", "drain"):
+                errors.append(f"G65 scene {i:02d} slide move {m.get('do')!r} is not show, strike, highlight, "
+                              "pill, focus, state, drift or drain.")
             if m.get("do") == "focus" and not (isinstance(m.get("rect"), list) and len(m["rect"]) == 4):
                 errors.append(f"G65 scene {i:02d} slide `focus` needs `rect` [x, y, w, h] in source px — the camera has nowhere to go.")
             if m.get("at") is None:

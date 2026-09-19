@@ -26,6 +26,7 @@ the builder, not the approver.
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -188,6 +189,46 @@ _VERB_WORDS = {
 }
 
 
+def _slide_words(scene: dict) -> str:
+    """A slide in the viewer's terms (2026-09-19). The animated format puts
+    every reel through `slide`, and this printed "a slide scene" for all of
+    them — an approval nobody could read, which is the exact failure the beat
+    plan exists to prevent (2026-08-21)."""
+    head = re.sub(r"\[\[(.*?)\]\]", r"\1", str(scene.get("headline") or "")).strip()
+    bits = []
+    for b in scene.get("blocks") or []:
+        k = b.get("kind")
+        if k == "gauge":
+            to = b.get("to")
+            bits.append(f"a battery draining from {b.get('from')}% to {to}%" if to is not None and to != b.get("from")
+                        else f"a battery sitting at {b.get('from')}%")
+        elif k == "screen":
+            bits.append(f"the page itself ({str(b.get('src') or '').split('/')[-1]}), zooming to the line")
+        elif k == "steps":
+            bits.append("a strip lighting up: " + ", ".join(f"“{s}”" for s in (b.get("steps") or [])))
+        elif k == "rows":
+            bits.append("rows: " + ", ".join(f"“{r.get('k')} — {r.get('v')}”" for r in (b.get("rows") or [])))
+        elif k == "tips":
+            bits.append("two cards: " + ", ".join(f"“{x}”" for x in (b.get("best"), b.get("watch")) if x))
+        elif k in ("hero", "swap"):
+            names = [s.get("name") for s in (b.get("side"), b.get("left"), b.get("right")) if isinstance(s, dict)]
+            bits.append(("a swap: " if k == "swap" else "a card: ") + ", ".join(f"“{n}”" for n in names if n))
+        elif k == "spotlight":
+            bits.append(f"“{b.get('name')}” landing big")
+        elif k == "logos":
+            bits.append("logos: " + ", ".join(str(i.get("name")) for i in (b.get("items") or [])))
+        elif k == "devices":
+            bits.append(f"{b.get('hub')} linked to " + ", ".join(str(i) for i in (b.get("items") or [])))
+        elif k == "waves":
+            bits.append("two waveforms")
+        elif k == "text":
+            bits.append(f"a line: “{b.get('text')}”")
+    who = " with the presenter in the corner" if scene.get("presenter") else ""
+    strikes = [m.get("target") for m in scene.get("moves") or [] if m.get("do") == "strike"]
+    struck = f", and {len(strikes)} of them get crossed out" if strikes else ""
+    return f"a page headed “{head}”{who}: " + "; ".join(bits) + struck
+
+
 def _stage_words(scene: dict) -> str:
     def name(e):
         if not e:
@@ -242,6 +283,8 @@ def describe(scene: dict, shows: dict, seen: set | None = None) -> str:
     t = scene.get("type", "?")
     if t == "stage":
         return _stage_words(scene)
+    if t == "slide":
+        return _slide_words(scene)
     tpl = PLAIN.get(t)
     if tpl is None:
         extras = _texts(scene, 3)
