@@ -364,6 +364,18 @@ Re-encodes with metadata stripped — **the ElevenLabs download as-is is REFUSED
 by the upload** ("Stored file type not supported: application/octet-stream")
 even though it is a valid mp3 — and checks the pace against the measured band.
 
+**3b. If the read came back TOO FAST, pad the pauses — do not stretch.**
+
+```bash
+python3 tools/vo_pad.py <slug> --target <seconds>
+```
+
+Grows the silent runs in proportion to hit the target runtime and leaves every
+syllable untouched; time-stretching would move the pitch. Built 2026-09-19 after
+five-free, PairPods and ios27-battery-drain each needed the same hand-rolled
+ffmpeg session. `vo_external.py` prints the exact command when the pace is over
+band. Re-transcribe after padding — the word timings all move.
+
 **4. Upload and lip-sync.** `create_asset_upload` → PUT the bytes with the
 returned headers unchanged → `complete_asset_upload` →
 `create_video_from_avatar` with **`audioAssetId`**, never `script`/`voiceId`

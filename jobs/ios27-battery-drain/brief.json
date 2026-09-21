@@ -1,0 +1,28 @@
+{
+  "slug": "ios27-battery-drain",
+  "topic": "Battery draining fast after the iOS 27 update \u2014 why it happens and what to do",
+  "details": "Refs: https://9to5mac.com/2026/09/15/battery-draining-faster-after-updating-to-ios-27-dont-panic/ and Instagram reel https://www.instagram.com/p/DdZL8B4CHqc/ . Animated slide format (Carousel Playbook look), no on-screen credits, avatar only where needed.",
+  "subject": "Battery draining fast after the iOS 27 update \u2014 why it happens and what to do",
+  "audience": "iPhone owners who just updated to iOS 27 and are watching the battery drop faster than yesterday. They know how to open Settings; they do not know what the phone is doing in the background.",
+  "platform": "both",
+  "goal": "education",
+  "core_value": "Stop the panic, explain what the phone is actually doing after an update, give the one screen that tells them whether it is settling or a real problem, and the day to act on.",
+  "desired_action": "Check Settings > Battery before doing anything drastic; come back if it has not settled.",
+  "reveal_target": "none",
+  "cta_keyword": "",
+  "target_duration": "72s",
+  "tone": "Calm, specific, reporting. No outrage, no 'Apple did it again'. The reassurance has to be earned with evidence, and any real bug gets said plainly.",
+  "source_policy": "official-preferred",
+  "footage_constraints": "Animated slide format (Carousel Playbook look), motion blocks per topic, NO on-screen source credits, avatar only where the face earns the seconds. Our own iPhone captures for any Settings screen, mobile view.",
+  "credit_instructions": "internal",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 72,
+  "music": false,
+  "created_at": "2026-09-19T06:10:20.559382+00:00",
+  "status": "researching"
+}

@@ -1,0 +1,1993 @@
+{
+  "id": "ios27-battery-drain",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/ios27-battery-drain/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "iOS 27",
+    "few days",
+    "no and no",
+    "three days"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "eyebrow": "After the update",
+      "headline": "Dropping fast since [[iOS 27]]",
+      "presenter": {
+        "src": "assets/ios27-battery-drain/avatar-hook.mp4",
+        "from": 0.0
+      },
+      "blocks": [
+        {
+          "id": "g",
+          "kind": "gauge",
+          "from": 84,
+          "to": 52,
+          "secs": 3.0,
+          "note": "SINCE THE UPDATE",
+          "label": "same day, same usage",
+          "h": 900
+        }
+      ],
+      "moves": [
+        {
+          "do": "drain",
+          "target": "g",
+          "at": 0.0
+        }
+      ],
+      "durationSec": 3.84,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Apple's own words",
+      "headline": "Not broken. [[Busy]].",
+      "presenter": {
+        "src": "assets/ios27-battery-drain/avatar-hook.mp4",
+        "from": 3.3
+      },
+      "blocks": [
+        {
+          "id": "sc",
+          "kind": "screen",
+          "src": "assets/ios27-battery-drain/apple-drain-para.png",
+          "width": 1170,
+          "height": 1992,
+          "h": 850
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "it's busy",
+          "at": 1.68
+        },
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "support page says",
+          "rect": [
+            40,
+            120,
+            1090,
+            430
+          ],
+          "at": 5.38
+        },
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "tasks keep running",
+          "rect": [
+            40,
+            420,
+            1090,
+            640
+          ],
+          "at": 8.4
+        }
+      ],
+      "durationSec": 12.14,
+      "assetId": "apple-drain-para",
+      "claimId": "apple-drain-para",
+      "covers": "The phone isn't broken",
+      "sourceUrl": "https://support.apple.com/en-us/120745",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.65,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 4.98,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 8.0,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "What it's doing",
+      "headline": "Three jobs, [[running now]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "steps",
+          "steps": [
+            "Indexing your stuff for search",
+            "Downloading new assets",
+            "Updating your apps"
+          ],
+          "h": 800
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "names them",
+          "at": 0.66
+        },
+        {
+          "do": "show",
+          "target": "s.0",
+          "on": "indexing your stuff",
+          "at": 3.02
+        },
+        {
+          "do": "show",
+          "target": "s.1",
+          "on": "downloading new",
+          "at": 4.78
+        },
+        {
+          "do": "show",
+          "target": "s.2",
+          "on": "updating apps",
+          "at": 6.18
+        }
+      ],
+      "durationSec": 7.8,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.63,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 2.65,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 4.41,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 5.81,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The missing number",
+      "headline": "Apple never starts a [[clock]]",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "\u201cAbout 4 days\u201d",
+              "v": "not Apple",
+              "tone": "cost"
+            },
+            {
+              "k": "\u201c72 hours\u201d",
+              "v": "not Apple",
+              "tone": "cost"
+            },
+            {
+              "k": "\u201cWait a few days\u201d",
+              "v": "Apple",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "is a deadline",
+          "at": 1.4
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "Not four days",
+          "at": 2.9
+        },
+        {
+          "do": "strike",
+          "target": "r.0",
+          "on": "not 72",
+          "at": 4.22
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "72 hours",
+          "at": 4.32
+        },
+        {
+          "do": "strike",
+          "target": "r.1",
+          "on": "Apple's actual",
+          "at": 5.88
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "wait a few days",
+          "at": 7.6
+        },
+        {
+          "do": "highlight",
+          "target": "r.2",
+          "on": "then check again",
+          "at": 8.38
+        }
+      ],
+      "durationSec": 13.8,
+      "assetId": "apple-drain-para",
+      "claimId": "apple-drain-para",
+      "covers": "What that page",
+      "sourceUrl": "https://support.apple.com/en-us/120745",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.37,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 4.21,
+          "vol": 0.417
+        },
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 5.87,
+          "vol": 0.417
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Every September",
+      "headline": "Third year, [[same story]]",
+      "blocks": [
+        {
+          "id": "y",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Sept 2024",
+              "v": "iOS 18",
+              "tone": "plain"
+            },
+            {
+              "k": "Sept 2025",
+              "v": "iOS 26",
+              "tone": "plain"
+            },
+            {
+              "k": "Sept 2026",
+              "v": "iOS 27",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "y.0",
+          "on": "feels familiar",
+          "at": 0.36
+        },
+        {
+          "do": "show",
+          "target": "y.1",
+          "on": "last September",
+          "at": 3.68
+        },
+        {
+          "do": "highlight",
+          "target": "y.1",
+          "on": "iOS 26 drained",
+          "at": 4.78
+        },
+        {
+          "do": "show",
+          "target": "y.2",
+          "on": "The year before",
+          "at": 9.28
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "same sentence",
+          "at": 7.16
+        }
+      ],
+      "durationSec": 12.06,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 7.13,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Check this first",
+      "headline": "Settings, then [[Battery]]",
+      "blocks": [
+        {
+          "id": "sc",
+          "kind": "screen",
+          "src": "assets/ios27-battery-drain/apple-insight.png",
+          "width": 1170,
+          "height": 1992,
+          "h": 880
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "then Battery",
+          "at": 2.64
+        },
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "a recent update",
+          "rect": [
+            40,
+            250,
+            1090,
+            520
+          ],
+          "at": 4.74
+        }
+      ],
+      "durationSec": 9.28,
+      "assetId": "apple-insight",
+      "claimId": "apple-insight",
+      "covers": "So, that's screen",
+      "sourceUrl": "https://support.apple.com/en-us/120745",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.61,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 4.34,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The habit that does nothing",
+      "headline": "Swiping apps away: [[no and no]]",
+      "blocks": [
+        {
+          "id": "sc",
+          "kind": "screen",
+          "src": "assets/ios27-battery-drain/federighi-para.png",
+          "width": 1170,
+          "height": 1992,
+          "h": 870
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "force quits apps",
+          "rect": [
+            300,
+            180,
+            820,
+            420
+          ],
+          "at": 5.64
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "no and no",
+          "at": 8.0
+        }
+      ],
+      "durationSec": 9.78,
+      "assetId": "federighi-para",
+      "claimId": "federighi-para",
+      "covers": "What won't help",
+      "sourceUrl": "https://daringfireball.net/2017/07/you_should_not_force_quit_apps",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 5.24,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 7.97,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Battery health",
+      "headline": "Measured in [[charge cycles]]",
+      "blocks": [
+        {
+          "id": "g",
+          "kind": "gauge",
+          "from": 100,
+          "label": "maximum capacity doesn't move in a week",
+          "h": 470
+        },
+        {
+          "id": "sc",
+          "kind": "screen",
+          "src": "assets/ios27-battery-drain/apple-cycles.png",
+          "width": 1170,
+          "height": 1992,
+          "h": 430
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "charge cycles",
+          "at": 4.44
+        },
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "hundreds of charge",
+          "rect": [
+            40,
+            300,
+            1090,
+            460
+          ],
+          "at": 3.74
+        }
+      ],
+      "durationSec": 8.0,
+      "assetId": "apple-cycles",
+      "claimId": "apple-cycles",
+      "covers": "Your battery health",
+      "sourceUrl": "https://support.apple.com/en-us/101575",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Core.MP3",
+          "at": 4.39,
+          "vol": 0.556
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 3.34,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "eyebrow": "Nobody has measured this",
+      "headlineSize": "xl",
+      "headline": "[[Which iPhone]] are you on?",
+      "presenter": {
+        "src": "assets/ios27-battery-drain/avatar-cta.mp4",
+        "from": 0.0
+      },
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Check Battery again in three days, then tell me in the comments how long yours took to settle."
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "tell me in the comments",
+          "at": 1.74
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "in three days",
+          "at": 0.76
+        }
+      ],
+      "durationSec": 3.8,
+      "hideCaptions": true,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.71,
+          "vol": 0.343
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.42,
+      "text": "Your battery's dropping fast",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Your"
+        },
+        {
+          "t": 0.2,
+          "text": "battery's"
+        },
+        {
+          "t": 0.9,
+          "text": "dropping"
+        },
+        {
+          "t": 0.9,
+          "text": "fast"
+        }
+      ]
+    },
+    {
+      "start": 1.42,
+      "end": 4.4,
+      "text": "since iOS 27 The",
+      "words": [
+        {
+          "t": 1.42,
+          "text": "since"
+        },
+        {
+          "t": 1.86,
+          "text": "iOS"
+        },
+        {
+          "t": 3.84,
+          "text": "27"
+        },
+        {
+          "t": 3.84,
+          "text": "The"
+        }
+      ]
+    },
+    {
+      "start": 4.4,
+      "end": 5.18,
+      "text": "phone isn't broken,",
+      "words": [
+        {
+          "t": 4.4,
+          "text": "phone"
+        },
+        {
+          "t": 4.62,
+          "text": "isn't"
+        },
+        {
+          "t": 4.84,
+          "text": "broken,"
+        }
+      ]
+    },
+    {
+      "start": 5.52,
+      "end": 6.28,
+      "text": "it's busy, and",
+      "words": [
+        {
+          "t": 5.52,
+          "text": "it's"
+        },
+        {
+          "t": 5.64,
+          "text": "busy,"
+        },
+        {
+          "t": 6.12,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 6.28,
+      "end": 7.06,
+      "text": "one screen tells",
+      "words": [
+        {
+          "t": 6.28,
+          "text": "one"
+        },
+        {
+          "t": 6.48,
+          "text": "screen"
+        },
+        {
+          "t": 6.76,
+          "text": "tells"
+        }
+      ]
+    },
+    {
+      "start": 7.06,
+      "end": 7.7,
+      "text": "you if that's",
+      "words": [
+        {
+          "t": 7.06,
+          "text": "you"
+        },
+        {
+          "t": 7.24,
+          "text": "if"
+        },
+        {
+          "t": 7.34,
+          "text": "that's"
+        }
+      ]
+    },
+    {
+      "start": 7.7,
+      "end": 9.22,
+      "text": "all. Apple's own",
+      "words": [
+        {
+          "t": 7.7,
+          "text": "all."
+        },
+        {
+          "t": 8.52,
+          "text": "Apple's"
+        },
+        {
+          "t": 9.02,
+          "text": "own"
+        }
+      ]
+    },
+    {
+      "start": 9.22,
+      "end": 10.1,
+      "text": "support page says",
+      "words": [
+        {
+          "t": 9.22,
+          "text": "support"
+        },
+        {
+          "t": 9.46,
+          "text": "page"
+        },
+        {
+          "t": 9.8,
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "start": 10.1,
+      "end": 11.76,
+      "text": "so. After an",
+      "words": [
+        {
+          "t": 10.1,
+          "text": "so."
+        },
+        {
+          "t": 11.24,
+          "text": "After"
+        },
+        {
+          "t": 11.58,
+          "text": "an"
+        }
+      ]
+    },
+    {
+      "start": 11.76,
+      "end": 12.84,
+      "text": "update, tasks keep",
+      "words": [
+        {
+          "t": 11.76,
+          "text": "update,"
+        },
+        {
+          "t": 12.24,
+          "text": "tasks"
+        },
+        {
+          "t": 12.5,
+          "text": "keep"
+        }
+      ]
+    },
+    {
+      "start": 12.84,
+      "end": 13.32,
+      "text": "running in the",
+      "words": [
+        {
+          "t": 12.84,
+          "text": "running"
+        },
+        {
+          "t": 13.08,
+          "text": "in"
+        },
+        {
+          "t": 13.24,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 13.32,
+      "end": 14.14,
+      "text": "background and they",
+      "words": [
+        {
+          "t": 13.32,
+          "text": "background"
+        },
+        {
+          "t": 13.66,
+          "text": "and"
+        },
+        {
+          "t": 14.02,
+          "text": "they"
+        }
+      ]
+    },
+    {
+      "start": 14.14,
+      "end": 14.94,
+      "text": "hit Battery life",
+      "words": [
+        {
+          "t": 14.14,
+          "text": "hit"
+        },
+        {
+          "t": 14.34,
+          "text": "Battery"
+        },
+        {
+          "t": 14.66,
+          "text": "life"
+        }
+      ]
+    },
+    {
+      "start": 14.94,
+      "end": 16.52,
+      "text": "and heat, and",
+      "words": [
+        {
+          "t": 14.94,
+          "text": "and"
+        },
+        {
+          "t": 15.2,
+          "text": "heat,"
+        },
+        {
+          "t": 15.98,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 16.52,
+      "end": 17.18,
+      "text": "it names them.",
+      "words": [
+        {
+          "t": 16.52,
+          "text": "it"
+        },
+        {
+          "t": 16.64,
+          "text": "names"
+        },
+        {
+          "t": 16.92,
+          "text": "them."
+        }
+      ]
+    },
+    {
+      "start": 18.36,
+      "end": 19.0,
+      "text": "Your phone is",
+      "words": [
+        {
+          "t": 18.36,
+          "text": "Your"
+        },
+        {
+          "t": 18.62,
+          "text": "phone"
+        },
+        {
+          "t": 18.88,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 19.0,
+      "end": 19.86,
+      "text": "indexing your stuff",
+      "words": [
+        {
+          "t": 19.0,
+          "text": "indexing"
+        },
+        {
+          "t": 19.46,
+          "text": "your"
+        },
+        {
+          "t": 19.6,
+          "text": "stuff"
+        }
+      ]
+    },
+    {
+      "start": 19.86,
+      "end": 21.06,
+      "text": "for search, downloading",
+      "words": [
+        {
+          "t": 19.86,
+          "text": "for"
+        },
+        {
+          "t": 20.1,
+          "text": "search,"
+        },
+        {
+          "t": 20.76,
+          "text": "downloading"
+        }
+      ]
+    },
+    {
+      "start": 21.06,
+      "end": 22.16,
+      "text": "new assets and",
+      "words": [
+        {
+          "t": 21.06,
+          "text": "new"
+        },
+        {
+          "t": 21.38,
+          "text": "assets"
+        },
+        {
+          "t": 21.76,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 22.16,
+      "end": 24.02,
+      "text": "updating apps. What",
+      "words": [
+        {
+          "t": 22.16,
+          "text": "updating"
+        },
+        {
+          "t": 22.56,
+          "text": "apps."
+        },
+        {
+          "t": 23.78,
+          "text": "What"
+        }
+      ]
+    },
+    {
+      "start": 24.02,
+      "end": 24.7,
+      "text": "that page never",
+      "words": [
+        {
+          "t": 24.02,
+          "text": "that"
+        },
+        {
+          "t": 24.2,
+          "text": "page"
+        },
+        {
+          "t": 24.48,
+          "text": "never"
+        }
+      ]
+    },
+    {
+      "start": 24.7,
+      "end": 25.32,
+      "text": "gives you is",
+      "words": [
+        {
+          "t": 24.7,
+          "text": "gives"
+        },
+        {
+          "t": 24.96,
+          "text": "you"
+        },
+        {
+          "t": 25.18,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 25.32,
+      "end": 27.28,
+      "text": "a deadline, not",
+      "words": [
+        {
+          "t": 25.32,
+          "text": "a"
+        },
+        {
+          "t": 25.42,
+          "text": "deadline,"
+        },
+        {
+          "t": 26.68,
+          "text": "not"
+        }
+      ]
+    },
+    {
+      "start": 27.28,
+      "end": 28.52,
+      "text": "4 days not 72",
+      "words": [
+        {
+          "t": 27.28,
+          "text": "4"
+        },
+        {
+          "t": 28.0,
+          "text": "days"
+        },
+        {
+          "t": 28.1,
+          "text": "not"
+        },
+        {
+          "t": 28.1,
+          "text": "72"
+        }
+      ]
+    },
+    {
+      "start": 28.52,
+      "end": 30.46,
+      "text": "hours. Apple's actual",
+      "words": [
+        {
+          "t": 28.52,
+          "text": "hours."
+        },
+        {
+          "t": 29.66,
+          "text": "Apple's"
+        },
+        {
+          "t": 30.22,
+          "text": "actual"
+        }
+      ]
+    },
+    {
+      "start": 30.46,
+      "end": 31.42,
+      "text": "words are, wait",
+      "words": [
+        {
+          "t": 30.46,
+          "text": "words"
+        },
+        {
+          "t": 30.78,
+          "text": "are,"
+        },
+        {
+          "t": 31.38,
+          "text": "wait"
+        }
+      ]
+    },
+    {
+      "start": 31.42,
+      "end": 31.92,
+      "text": "a few days,",
+      "words": [
+        {
+          "t": 31.42,
+          "text": "a"
+        },
+        {
+          "t": 31.58,
+          "text": "few"
+        },
+        {
+          "t": 31.68,
+          "text": "days,"
+        }
+      ]
+    },
+    {
+      "start": 32.16,
+      "end": 32.8,
+      "text": "then check again.",
+      "words": [
+        {
+          "t": 32.16,
+          "text": "then"
+        },
+        {
+          "t": 32.26,
+          "text": "check"
+        },
+        {
+          "t": 32.52,
+          "text": "again."
+        }
+      ]
+    },
+    {
+      "start": 33.66,
+      "end": 34.86,
+      "text": "So every confident",
+      "words": [
+        {
+          "t": 33.66,
+          "text": "So"
+        },
+        {
+          "t": 34.22,
+          "text": "every"
+        },
+        {
+          "t": 34.46,
+          "text": "confident"
+        }
+      ]
+    },
+    {
+      "start": 34.86,
+      "end": 35.66,
+      "text": "number you've read",
+      "words": [
+        {
+          "t": 34.86,
+          "text": "number"
+        },
+        {
+          "t": 35.2,
+          "text": "you've"
+        },
+        {
+          "t": 35.5,
+          "text": "read"
+        }
+      ]
+    },
+    {
+      "start": 35.66,
+      "end": 36.58,
+      "text": "came from somewhere",
+      "words": [
+        {
+          "t": 35.66,
+          "text": "came"
+        },
+        {
+          "t": 35.96,
+          "text": "from"
+        },
+        {
+          "t": 36.16,
+          "text": "somewhere"
+        }
+      ]
+    },
+    {
+      "start": 36.58,
+      "end": 37.36,
+      "text": "other than Apple.",
+      "words": [
+        {
+          "t": 36.58,
+          "text": "other"
+        },
+        {
+          "t": 36.88,
+          "text": "than"
+        },
+        {
+          "t": 37.08,
+          "text": "Apple."
+        }
+      ]
+    },
+    {
+      "start": 37.58,
+      "end": 38.2,
+      "text": "If this feels",
+      "words": [
+        {
+          "t": 37.58,
+          "text": "If"
+        },
+        {
+          "t": 37.72,
+          "text": "this"
+        },
+        {
+          "t": 37.94,
+          "text": "feels"
+        }
+      ]
+    },
+    {
+      "start": 38.2,
+      "end": 39.22,
+      "text": "familiar, that's because",
+      "words": [
+        {
+          "t": 38.2,
+          "text": "familiar,"
+        },
+        {
+          "t": 38.8,
+          "text": "that's"
+        },
+        {
+          "t": 38.98,
+          "text": "because"
+        }
+      ]
+    },
+    {
+      "start": 39.22,
+      "end": 41.02,
+      "text": "it is. Same",
+      "words": [
+        {
+          "t": 39.22,
+          "text": "it"
+        },
+        {
+          "t": 39.5,
+          "text": "is."
+        },
+        {
+          "t": 40.74,
+          "text": "Same"
+        }
+      ]
+    },
+    {
+      "start": 41.02,
+      "end": 42.02,
+      "text": "week last September,",
+      "words": [
+        {
+          "t": 41.02,
+          "text": "week"
+        },
+        {
+          "t": 41.26,
+          "text": "last"
+        },
+        {
+          "t": 41.56,
+          "text": "September,"
+        }
+      ]
+    },
+    {
+      "start": 42.36,
+      "end": 44.02,
+      "text": "iOS 26 drained batteries",
+      "words": [
+        {
+          "t": 42.36,
+          "text": "iOS"
+        },
+        {
+          "t": 43.24,
+          "text": "26"
+        },
+        {
+          "t": 43.6,
+          "text": "drained"
+        },
+        {
+          "t": 43.6,
+          "text": "batteries"
+        }
+      ]
+    },
+    {
+      "start": 44.02,
+      "end": 44.74,
+      "text": "and got the",
+      "words": [
+        {
+          "t": 44.02,
+          "text": "and"
+        },
+        {
+          "t": 44.4,
+          "text": "got"
+        },
+        {
+          "t": 44.58,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 44.74,
+      "end": 45.66,
+      "text": "same sentence from",
+      "words": [
+        {
+          "t": 44.74,
+          "text": "same"
+        },
+        {
+          "t": 45.0,
+          "text": "sentence"
+        },
+        {
+          "t": 45.34,
+          "text": "from"
+        }
+      ]
+    },
+    {
+      "start": 45.66,
+      "end": 47.16,
+      "text": "Apple. The year",
+      "words": [
+        {
+          "t": 45.66,
+          "text": "Apple."
+        },
+        {
+          "t": 46.86,
+          "text": "The"
+        },
+        {
+          "t": 46.96,
+          "text": "year"
+        }
+      ]
+    },
+    {
+      "start": 47.16,
+      "end": 49.92,
+      "text": "before, iOS 18 So,",
+      "words": [
+        {
+          "t": 47.16,
+          "text": "before,"
+        },
+        {
+          "t": 47.86,
+          "text": "iOS"
+        },
+        {
+          "t": 49.64,
+          "text": "18"
+        },
+        {
+          "t": 49.64,
+          "text": "So,"
+        }
+      ]
+    },
+    {
+      "start": 50.22,
+      "end": 51.96,
+      "text": "that screen Open Settings,",
+      "words": [
+        {
+          "t": 50.22,
+          "text": "that"
+        },
+        {
+          "t": 51.38,
+          "text": "screen"
+        },
+        {
+          "t": 51.64,
+          "text": "Open"
+        },
+        {
+          "t": 51.64,
+          "text": "Settings,"
+        }
+      ]
+    },
+    {
+      "start": 52.28,
+      "end": 53.78,
+      "text": "then Battery If",
+      "words": [
+        {
+          "t": 52.28,
+          "text": "then"
+        },
+        {
+          "t": 52.36,
+          "text": "Battery"
+        },
+        {
+          "t": 53.6,
+          "text": "If"
+        }
+      ]
+    },
+    {
+      "start": 53.78,
+      "end": 54.38,
+      "text": "a note says",
+      "words": [
+        {
+          "t": 53.78,
+          "text": "a"
+        },
+        {
+          "t": 53.9,
+          "text": "note"
+        },
+        {
+          "t": 54.08,
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "start": 54.38,
+      "end": 55.26,
+      "text": "a recent update",
+      "words": [
+        {
+          "t": 54.38,
+          "text": "a"
+        },
+        {
+          "t": 54.66,
+          "text": "recent"
+        },
+        {
+          "t": 54.86,
+          "text": "update"
+        }
+      ]
+    },
+    {
+      "start": 55.26,
+      "end": 56.0,
+      "text": "is still finishing",
+      "words": [
+        {
+          "t": 55.26,
+          "text": "is"
+        },
+        {
+          "t": 55.52,
+          "text": "still"
+        },
+        {
+          "t": 55.72,
+          "text": "finishing"
+        }
+      ]
+    },
+    {
+      "start": 56.0,
+      "end": 56.68,
+      "text": "in the background,",
+      "words": [
+        {
+          "t": 56.0,
+          "text": "in"
+        },
+        {
+          "t": 56.22,
+          "text": "the"
+        },
+        {
+          "t": 56.3,
+          "text": "background,"
+        }
+      ]
+    },
+    {
+      "start": 57.36,
+      "end": 58.32,
+      "text": "that's your answer.",
+      "words": [
+        {
+          "t": 57.36,
+          "text": "that's"
+        },
+        {
+          "t": 57.9,
+          "text": "your"
+        },
+        {
+          "t": 58.02,
+          "text": "answer."
+        }
+      ]
+    },
+    {
+      "start": 58.92,
+      "end": 59.94,
+      "text": "What won't help",
+      "words": [
+        {
+          "t": 58.92,
+          "text": "What"
+        },
+        {
+          "t": 59.44,
+          "text": "won't"
+        },
+        {
+          "t": 59.72,
+          "text": "help"
+        }
+      ]
+    },
+    {
+      "start": 59.94,
+      "end": 60.74,
+      "text": "is swiping away",
+      "words": [
+        {
+          "t": 59.94,
+          "text": "is"
+        },
+        {
+          "t": 60.16,
+          "text": "swiping"
+        },
+        {
+          "t": 60.48,
+          "text": "away"
+        }
+      ]
+    },
+    {
+      "start": 60.74,
+      "end": 61.52,
+      "text": "all your apps.",
+      "words": [
+        {
+          "t": 60.74,
+          "text": "all"
+        },
+        {
+          "t": 61.04,
+          "text": "your"
+        },
+        {
+          "t": 61.22,
+          "text": "apps."
+        }
+      ]
+    },
+    {
+      "start": 62.26,
+      "end": 63.26,
+      "text": "Apple's software chief",
+      "words": [
+        {
+          "t": 62.26,
+          "text": "Apple's"
+        },
+        {
+          "t": 62.68,
+          "text": "software"
+        },
+        {
+          "t": 63.02,
+          "text": "chief"
+        }
+      ]
+    },
+    {
+      "start": 63.26,
+      "end": 64.2,
+      "text": "was once asked",
+      "words": [
+        {
+          "t": 63.26,
+          "text": "was"
+        },
+        {
+          "t": 63.54,
+          "text": "once"
+        },
+        {
+          "t": 63.76,
+          "text": "asked"
+        }
+      ]
+    },
+    {
+      "start": 64.2,
+      "end": 64.84,
+      "text": "if he force",
+      "words": [
+        {
+          "t": 64.2,
+          "text": "if"
+        },
+        {
+          "t": 64.46,
+          "text": "he"
+        },
+        {
+          "t": 64.56,
+          "text": "force"
+        }
+      ]
+    },
+    {
+      "start": 64.84,
+      "end": 65.66,
+      "text": "quits apps to",
+      "words": [
+        {
+          "t": 64.84,
+          "text": "quits"
+        },
+        {
+          "t": 65.16,
+          "text": "apps"
+        },
+        {
+          "t": 65.46,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 65.66,
+      "end": 66.56,
+      "text": "save Battery and",
+      "words": [
+        {
+          "t": 65.66,
+          "text": "save"
+        },
+        {
+          "t": 65.88,
+          "text": "Battery"
+        },
+        {
+          "t": 66.24,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 66.56,
+      "end": 67.36,
+      "text": "he said no",
+      "words": [
+        {
+          "t": 66.56,
+          "text": "he"
+        },
+        {
+          "t": 66.68,
+          "text": "said"
+        },
+        {
+          "t": 66.92,
+          "text": "no"
+        }
+      ]
+    },
+    {
+      "start": 67.36,
+      "end": 68.86,
+      "text": "and no. Your",
+      "words": [
+        {
+          "t": 67.36,
+          "text": "and"
+        },
+        {
+          "t": 67.62,
+          "text": "no."
+        },
+        {
+          "t": 68.7,
+          "text": "Your"
+        }
+      ]
+    },
+    {
+      "start": 68.86,
+      "end": 69.6,
+      "text": "Battery health is",
+      "words": [
+        {
+          "t": 68.86,
+          "text": "Battery"
+        },
+        {
+          "t": 69.14,
+          "text": "health"
+        },
+        {
+          "t": 69.44,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 69.6,
+      "end": 70.52,
+      "text": "fine too, because",
+      "words": [
+        {
+          "t": 69.6,
+          "text": "fine"
+        },
+        {
+          "t": 69.88,
+          "text": "too,"
+        },
+        {
+          "t": 70.34,
+          "text": "because"
+        }
+      ]
+    },
+    {
+      "start": 70.52,
+      "end": 71.86,
+      "text": "maximum capacity is",
+      "words": [
+        {
+          "t": 70.52,
+          "text": "maximum"
+        },
+        {
+          "t": 70.98,
+          "text": "capacity"
+        },
+        {
+          "t": 71.52,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 71.86,
+      "end": 72.92,
+      "text": "measured across hundreds",
+      "words": [
+        {
+          "t": 71.86,
+          "text": "measured"
+        },
+        {
+          "t": 72.16,
+          "text": "across"
+        },
+        {
+          "t": 72.44,
+          "text": "hundreds"
+        }
+      ]
+    },
+    {
+      "start": 72.92,
+      "end": 73.86,
+      "text": "of charge cycles",
+      "words": [
+        {
+          "t": 72.92,
+          "text": "of"
+        },
+        {
+          "t": 73.14,
+          "text": "charge"
+        },
+        {
+          "t": 73.4,
+          "text": "cycles"
+        }
+      ]
+    },
+    {
+      "start": 73.86,
+      "end": 74.78,
+      "text": "and one rough",
+      "words": [
+        {
+          "t": 73.86,
+          "text": "and"
+        },
+        {
+          "t": 74.24,
+          "text": "one"
+        },
+        {
+          "t": 74.46,
+          "text": "rough"
+        }
+      ]
+    },
+    {
+      "start": 74.78,
+      "end": 76.3,
+      "text": "week can't move",
+      "words": [
+        {
+          "t": 74.78,
+          "text": "week"
+        },
+        {
+          "t": 75.06,
+          "text": "can't"
+        },
+        {
+          "t": 76.1,
+          "text": "move"
+        }
+      ]
+    },
+    {
+      "start": 76.3,
+      "end": 77.0,
+      "text": "it. So check",
+      "words": [
+        {
+          "t": 76.3,
+          "text": "it."
+        },
+        {
+          "t": 76.7,
+          "text": "So"
+        },
+        {
+          "t": 76.8,
+          "text": "check"
+        }
+      ]
+    },
+    {
+      "start": 77.0,
+      "end": 77.64,
+      "text": "that screen in",
+      "words": [
+        {
+          "t": 77.0,
+          "text": "that"
+        },
+        {
+          "t": 77.2,
+          "text": "screen"
+        },
+        {
+          "t": 77.46,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 77.64,
+      "end": 78.64,
+      "text": "3 days then tell",
+      "words": [
+        {
+          "t": 77.64,
+          "text": "3"
+        },
+        {
+          "t": 78.34,
+          "text": "days"
+        },
+        {
+          "t": 78.44,
+          "text": "then"
+        },
+        {
+          "t": 78.44,
+          "text": "tell"
+        }
+      ]
+    },
+    {
+      "start": 78.64,
+      "end": 78.92,
+      "text": "me in the",
+      "words": [
+        {
+          "t": 78.64,
+          "text": "me"
+        },
+        {
+          "t": 78.76,
+          "text": "in"
+        },
+        {
+          "t": 78.84,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 78.92,
+      "end": 79.92,
+      "text": "comments which iPhone",
+      "words": [
+        {
+          "t": 78.92,
+          "text": "comments"
+        },
+        {
+          "t": 79.24,
+          "text": "which"
+        },
+        {
+          "t": 79.52,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 79.92,
+      "end": 80.36,
+      "text": "you're on.",
+      "words": [
+        {
+          "t": 79.92,
+          "text": "you're"
+        },
+        {
+          "t": 80.2,
+          "text": "on."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "format": "news",
+  "script": "Your battery's dropping fast since iOS 27. The phone isn't broken, it's busy, and one screen tells you if that's all.\n\nApple's own support page says so. After an update, tasks keep running in the background, and they hit battery life and heat.\n\nAnd it names them. Your phone is indexing your stuff for search, downloading new assets, and updating apps.\n\nWhat that page never gives you is a deadline. Not four days, not seventy-two hours. Apple's actual words are, wait a few days, then check again. So every confident number you've read came from somewhere other than Apple.\n\nIf this feels familiar, that's because it is. Same week last September, iOS 26 drained batteries and got the same sentence from Apple. The year before, iOS 18.\n\nSo, that screen. Open Settings, then Battery. If a note says a recent update is still finishing in the background, that's your answer.\n\nWhat won't help is swiping away all your apps. Apple's software chief was once asked if he force quits apps to save battery, and he said, no and no.\n\nYour battery health is fine too, because maximum capacity is measured across hundreds of charge cycles, and one rough week can't move it.\n\nSo check that screen in three days, then tell me in the comments which iPhone you're on.",
+  "approval": {
+    "sha256": "10114076f41dc25f01727fa8178a46d472ff943dcbaa947674b5def3053c1ab3",
+    "approvedAt": "2026-09-19T06:54:41+00:00",
+    "words": 219,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

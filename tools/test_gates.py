@@ -1620,6 +1620,13 @@ CASES.append((lambda s: s["scenes"].__setitem__(0, {
                   "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.582}]}),
               "G51", "a statcard with no rows (invented stat/unit shape)"))
 
+# G65: a gauge block with no `from` percent draws an empty battery.
+CASES.append((lambda s: s["scenes"].append(
+    {"type": "slide", "durationSec": 2.0, "headline": "Still draining",
+     "blocks": [{"id": "g", "kind": "gauge", "label": "after the update"}],
+     "moves": [{"do": "drain", "target": "g", "at": 0.4}]}),
+    "G65", "slide gauge with no from percent"))
+
 # G70: 2-5s shows only the presenter and type — no proof of the hook.
 CASES.append((lambda s: (s["scenes"][1].update(type="typecard", kinetic={"text": "BIG CLAIM"}),
                          s["scenes"][2].update(src="assets/x/avatar-master-169.mp4")),

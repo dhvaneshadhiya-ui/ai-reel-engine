@@ -107,23 +107,28 @@ export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: 
 };
 
 // ----------------------------------------------------------------- steps ----
-export interface StepsBlockProps { id: string; kind: "steps"; steps: string[] }
+export interface StepsBlockProps { id: string; kind: "steps"; steps: string[]; h?: number }
 
 export const StepsBlock: React.FC<{ b: StepsBlockProps; moves: MoveLike[]; t: number; C: Pal }> = ({ b, moves, t, C }) => {
   const at = (i: number) => moves.find((m) => m.do === "show" && m.target === `${b.id}.${i}`)?.at ?? 0;
   const lastShown = b.steps.reduce((acc, _s, i) => (t >= at(i) ? i : acc), -1);
+  // `h` given: the strip is the page, so the cards grow to fill it (the
+  // ios27 "three jobs" page left 72% of the frame flat without this).
+  const tall = (b.h ?? 0) > 360;
   return (
-    <div style={{ display: "flex", gap: 12 }}>
+    <div style={{ display: "flex", gap: 12, height: b.h, alignItems: "stretch" }}>
       {b.steps.map((s, i) => {
         const p = ramp(t, at(i), 0.3);
         const live = i === lastShown;
         return (
-          <div key={i} style={{ flex: 1, background: live ? "rgba(18,40,68,1)" : C.card, borderRadius: 22, padding: "20px 16px",
-            border: `2px solid ${live ? C.blue : C.line}`, opacity: 0.25 + 0.75 * p, minHeight: 150 }}>
+          <div key={i} style={{ flex: 1, background: live ? "rgba(18,40,68,1)" : C.card, borderRadius: 22,
+            padding: tall ? "34px 26px" : "20px 16px", display: "flex", flexDirection: "column",
+            justifyContent: tall ? "center" : "flex-start", gap: tall ? 10 : 0,
+            border: `2px solid ${live ? C.blue : C.line}`, opacity: 0.25 + 0.75 * p, minHeight: tall ? undefined : 150 }}>
             <div style={{ width: 52, height: 52, borderRadius: 26, background: p > 0.5 ? C.blue : "transparent",
               border: `3px solid ${C.blue}`, display: "flex", alignItems: "center", justifyContent: "center",
               font: `800 28px ${FONT}`, color: p > 0.5 ? "#fff" : C.blue }}>{i + 1}</div>
-            <div style={{ marginTop: 14, font: `700 30px/1.2 ${FONT}`, color: C.ink }}>{s}</div>
+            <div style={{ marginTop: tall ? 26 : 14, font: `700 ${tall ? 40 : 30}px/1.22 ${FONT}`, color: C.ink }}>{s}</div>
           </div>
         );
       })}
@@ -217,6 +222,59 @@ export const WavesBlock: React.FC<{ b: WavesBlockProps; moves: MoveLike[]; t: nu
         <span style={{ color: C.blue }}>● {b.labels[0]}</span>
         <span style={{ color: C.amber }}>● {b.labels[1]}</span>
       </div>
+    </div>
+  );
+};
+
+/** GAUGE — a battery that actually drains (ios27-battery-drain, 2026-09-19).
+ *  The topic IS a battery, and no existing block draws one: rows, hero and
+ *  spotlight can all say "78%", none of them can show it falling. The fill and
+ *  the number move together on a `drain` move (word-anchored like every other
+ *  move); with no drain move it holds at `from`, which is how the healthy
+ *  battery beat uses it. Motion is on the shape and the tabular digits, never a
+ *  scale on type (2026-09-16 shake rule). */
+export interface GaugeBlockProps {
+  id: string; kind: "gauge";
+  /** percent at rest, and where a `drain` move takes it */
+  from: number; to?: number;
+  label?: string; note?: string; h?: number;
+  /** seconds the drain takes (default 2.2) */
+  secs?: number;
+}
+
+export const GaugeBlock: React.FC<{ b: GaugeBlockProps; moves: MoveLike[]; t: number; boxW: number; C: Pal; shown: number }> = ({ b, moves, t, boxW, C, shown }) => {
+  const H = b.h ?? 420;
+  const drainAt = moves.find((m) => m.do === "drain" && m.target === b.id)?.at;
+  const to = b.to ?? b.from;
+  const pct = drainAt === undefined ? b.from
+    : interpolate(t, [drainAt, drainAt + (b.secs ?? 2.2)], [b.from, to], { ...CL, easing: ease });
+  // the cell: a rounded body plus the nub, drawn to the box, never an emoji
+  const padX = 52, bodyW = boxW - padX * 2 - 26, bodyH = Math.round(H * 0.46);
+  const bodyY = Math.round(H * 0.20);
+  const fillW = Math.max(6, Math.round((bodyW - 20) * (pct / 100)));
+  const low = pct <= 35;
+  const fill = low ? C.amber : C.blue;
+  // a low battery breathes; a healthy one sits still (idle motion, 2% max)
+  const pulse = low ? 0.9 + Math.sin(t * 5.2) * 0.1 : 1;
+  return (
+    <div style={{ position: "relative", width: boxW, height: H, opacity: shown }}>
+      <svg width={boxW} height={H} style={{ position: "absolute", left: 0, top: 0 }}>
+        <rect x={padX} y={bodyY} width={bodyW} height={bodyH} rx={34} fill={C.card} stroke={C.line} strokeWidth={6} />
+        <rect x={padX + bodyW + 8} y={bodyY + bodyH * 0.32} width={20} height={bodyH * 0.36} rx={8} fill={C.line} />
+        <rect x={padX + 10} y={bodyY + 10} width={fillW} height={bodyH - 20} rx={26} fill={fill} opacity={pulse} />
+      </svg>
+      <div style={{ position: "absolute", left: 0, right: 0, top: bodyY + bodyH + 26, textAlign: "center",
+        font: `800 96px/1 ${FONT}`, letterSpacing: -3, fontVariantNumeric: "tabular-nums", color: fill }}>
+        {Math.round(pct)}%
+      </div>
+      {b.label ? (
+        <div style={{ position: "absolute", left: 0, right: 0, top: bodyY + bodyH + 140, textAlign: "center",
+          font: `600 38px/1.25 ${FONT}`, color: C.sub }}>{b.label}</div>
+      ) : null}
+      {b.note ? (
+        <div style={{ position: "absolute", left: 0, right: 0, top: bodyY - 68, textAlign: "center",
+          font: `700 30px ${FONT}`, letterSpacing: 2, color: C.muted }}>{b.note}</div>
+      ) : null}
     </div>
   );
 };

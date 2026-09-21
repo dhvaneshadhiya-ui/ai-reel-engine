@@ -473,6 +473,20 @@ def dur_max_for(fmt: str) -> dict[str, float]:
     return {**DUR_MAX, **((FORMATS.get(fmt) or {}).get("dur_max") or {})}
 TAIL_MAX = 0.45
 FACE_BY = 5.0        # user rule 2026-08-12: presenter on screen by 5s
+
+
+def _has_face(scene: dict) -> bool:
+    """Is the presenter on screen in this scene?
+
+    2026-09-19: this used to test whether a filename contained "avatar-master",
+    so ios27-battery-drain — whose bookend clips are cut per slice and named
+    avatar-hook.mp4 / avatar-cta.mp4 — reported "facecam 0%" and "the presenter
+    never appears" with the face plainly in the corner circle of three pages.
+    A `presenter` block IS a face, whatever the file is called; footage of the
+    avatar still counts by name, since those scenes carry no presenter field."""
+    if scene.get("presenter"):
+        return True
+    return any("avatar-master" in str(scene.get(k) or "") for k in ("src", "bottomSrc"))
 DATA_MIN = 2.0       # a card carrying a claim must outlast the claim                            # 2026-08-03 oss-alt tail-trim rule
 
 # HeadlineBuild.tsx renders these at fixed sizes with NO auto-fit, so an
@@ -1094,9 +1108,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
 
     # G06 — facecam share of runtime
     # a presenter talking in a slide's corner circle is on screen too (2026-09-16)
-    avatar_scenes = [s for s in scenes
-                     if "avatar-master" in str(s.get("src") or "")
-                     or "avatar-master" in str((s.get("presenter") or {}).get("src") or "")]
+    avatar_scenes = [s for s in scenes if _has_face(s)]
     face = sum(s["durationSec"] for s in avatar_scenes)
     share = face / total if total else 0
     # FACE PLAN (2026-09-16). The band assumes the presenter carries the
@@ -1288,9 +1300,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
     t = 0.0
     for sc in scenes:
         # a presenter inside a slide circle or a split stage is on screen too
-        srcs = [str(sc.get(k) or "") for k in ("src", "bottomSrc")] + \
-               [str((sc.get("presenter") or {}).get("src") or "")]
-        if any("avatar-master" in v for v in srcs):
+        if _has_face(sc):
             face_at = t
             break
         t += sc["durationSec"]
@@ -1955,7 +1965,8 @@ def check_beats(beats: dict, vo_end: float | None = None,
                     "screen is a claim, whether or not the voice says it.")
 
     # G65 (slide) — the carousel-look slide off its contract draws nothing.
-    SLIDE_BLOCKS = {"hero", "swap", "rows", "text", "tips", "logos", "screen", "steps", "devices", "waves", "spotlight"}
+    SLIDE_BLOCKS = {"hero", "swap", "rows", "text", "tips", "logos", "screen", "steps", "devices", "waves",
+                    "spotlight", "gauge"}
     for i, sc in enumerate(scenes):
         if sc.get("type") != "slide":
             continue
@@ -1970,14 +1981,17 @@ def check_beats(beats: dict, vo_end: float | None = None,
             bid = b.get("id")
             targets |= {bid, f"{bid}.left", f"{bid}.right", f"{bid}.best", f"{bid}.watch"}
             targets |= {f"{bid}.{k}" for k in range(max(len(b.get("rows") or []), len(b.get("steps") or []), len(b.get("items") or [])))}
+            if b.get("kind") == "gauge" and not isinstance(b.get("from"), (int, float)):
+                errors.append(f"G65 scene {i:02d} slide gauge {bid!r} needs a numeric `from` percent — it draws an empty cell.")
             if b.get("kind") == "screen" and not str(b.get("src") or "").lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
                 errors.append(f"G65 scene {i:02d} slide screen {bid!r} needs a still `src` — an <Img> cannot show {b.get('src')!r}.")
         targets.add("headline")
         if sc.get("presenter") and not str((sc["presenter"] or {}).get("src") or "").lower().endswith((".mp4", ".mov", ".webm")):
             errors.append(f"G65 scene {i:02d} slide presenter needs a video `src` — a still in the circle renders black.")
         for m in sc.get("moves") or []:
-            if m.get("do") not in ("show", "strike", "highlight", "pill", "focus", "state", "drift"):
-                errors.append(f"G65 scene {i:02d} slide move {m.get('do')!r} is not show, strike, highlight, pill, focus, state or drift.")
+            if m.get("do") not in ("show", "strike", "highlight", "pill", "focus", "state", "drift", "drain"):
+                errors.append(f"G65 scene {i:02d} slide move {m.get('do')!r} is not show, strike, highlight, "
+                              "pill, focus, state, drift or drain.")
             if m.get("do") == "focus" and not (isinstance(m.get("rect"), list) and len(m["rect"]) == 4):
                 errors.append(f"G65 scene {i:02d} slide `focus` needs `rect` [x, y, w, h] in source px — the camera has nowhere to go.")
             if m.get("at") is None:

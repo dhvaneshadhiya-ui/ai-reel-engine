@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Easing, Img, OffthreadVideo, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { DevicesBlock, ScreenBlock, StepsBlock, WavesBlock } from "./SlideBlocks";
-import type { DevicesBlockProps, ScreenBlockProps, StepsBlockProps, WavesBlockProps } from "./SlideBlocks";
+import { DevicesBlock, GaugeBlock, ScreenBlock, StepsBlock, WavesBlock } from "./SlideBlocks";
+import type { DevicesBlockProps, GaugeBlockProps, ScreenBlockProps, StepsBlockProps, WavesBlockProps } from "./SlideBlocks";
 
 /**
  * SLIDE — the Carousel Playbook look, as a reel scene (2026-09-16).
@@ -50,13 +50,13 @@ export type SlideBlock =
   | { id: string; kind: "text"; text: string }
   | { id: string; kind: "tips"; best?: string; watch?: string }
   | { id: string; kind: "logos"; items: { logo: string; name: string; tile?: "light" | "dark" }[] }
-  | ScreenBlockProps | StepsBlockProps | DevicesBlockProps | WavesBlockProps
+  | ScreenBlockProps | StepsBlockProps | DevicesBlockProps | WavesBlockProps | GaugeBlockProps
   | { id: string; kind: "spotlight"; logo: string; name: string; note?: string; overlay?: boolean };
 
 export interface SlideMove {
   /** pill: target "headline" — the yellow pill lands on the spoken word, not
    *  with the headline (the words sit white until then) */
-  do: "show" | "strike" | "highlight" | "pill" | "focus" | "state" | "drift";
+  do: "show" | "strike" | "highlight" | "pill" | "focus" | "state" | "drift" | "drain";
   target: string;
   at?: number;
   on?: string;
@@ -322,6 +322,8 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
           </div>
         );
       }
+      case "gauge":
+        return <GaugeBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
       case "waves":
         return <WavesBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
       case "logos": {

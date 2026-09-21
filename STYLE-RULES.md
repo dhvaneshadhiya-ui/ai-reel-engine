@@ -8717,3 +8717,34 @@ clause), not to a distinguishing detail buried deep in that clause — aim
 for the reveal to land under ~50% of the shot's duration so the full
 comparison is on screen for the majority of the beat, which is also what
 the viewer is there to see.
+
+## 2026-09-19 — ios27-battery-drain: the reel whose story was an ABSENCE
+
+News/explainer on post-iOS-27 battery drain, from a 9to5Mac ref. Four parallel research
+agents (reel-research skill, first real run) found the reference article's own
+explanation was unsourced inference, and that the checkable story was what Apple has
+NOT published: no duration, no statement, no iOS 27 build after 27.0, and no
+measurement by anyone. The reel claims no magnitude at all.
+- **`gauge` block** (new): a battery whose fill and tabular percentage drain on a
+  word-anchored `drain` move. The topic IS a battery and no existing block could draw
+  one. G65 learned the kind and the move; a gauge with no `from` fails the suite.
+- **G70 caught its own author.** The first cut put the Apple page at 8.5s, so nothing
+  proved the hook at 2-5s. The hook split in two: gauge alone (0-3.8s), then Apple's
+  page with the presenter still in the circle (3.8-8.5s).
+- **G06/G17 were matching a FILENAME** ("avatar-master") and reported "facecam 0%" with
+  the face in three corner circles, because this reel's bookends are named
+  avatar-hook / avatar-cta. A `presenter` block IS a face; `_has_face()` now decides.
+- **`vo_pad.py`** (new): the ElevenLabs read came back 3.27 w/s. Third reel in a row, so
+  the hand-rolled ffmpeg session became a tool — silent runs grow in proportion to a
+  target runtime, words untouched, pitch unmoved. 66.9s -> 80.5s, 2.72 w/s.
+- **The linter caught a real duplicate**: two consecutive pages of the same Apple
+  screenshot. They merged into one page whose camera moves between two lines.
+- **beat_plan could not describe a slide** ("a slide scene" x9). It now reads the blocks,
+  which is the difference between an approval the user can read and one they cannot.
+- No iOS 27 Settings screenshot exists anywhere (Apple's own Battery image is named
+  ios-26-iphone-16-pro-...), no simulator on this machine has a Battery pane, and a
+  drawn iOS screen would be a fabricated receipt. The receipts are Apple's support pages.
+Treatment: draining gauge (hook), Apple page with two camera moves, three tall step
+cards, two struck rows vs one kept row, three-year stack, page zoom on the update note,
+Federighi quote page, gauge at 100% beside the cycle ratings, comment-ask end card.
+Credits: HeyGen ~12 (8.5s hook + 3.8s CTA), ElevenLabs 1 take.
