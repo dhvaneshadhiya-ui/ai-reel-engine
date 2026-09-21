@@ -8748,3 +8748,51 @@ Treatment: draining gauge (hook), Apple page with two camera moves, three tall s
 cards, two struck rows vs one kept row, three-year stack, page zoom on the update note,
 Federighi quote page, gauge at 100% beside the cycle ratings, comment-ask end card.
 Credits: HeyGen ~12 (8.5s hook + 3.8s CTA), ElevenLabs 1 take.
+
+## 2026-09-21 — iphone-18-battery-prepare-to-ship: "That's X to Y" reads as past tense, and no punctuation trick fixes it
+
+**RAW NOTE.** The approved script's second sentence, "That's Prepare to
+Ship: a setting that exists on no other iPhone," came back from the
+ElevenLabs v3 read (Dhvanesh voice) as "That's **prepared** to ship" —
+past tense, not the feature's actual name. Confirmed independently by
+whisper `base` AND `small` on the full take, then re-confirmed on an
+isolated 2-3s probe, so this was the audio, not a transcriber quirk
+(RULES.md section 11's own standard for telling the two apart).
+
+Four respellings were probed, all preserving the exact approved words,
+before finding one that worked:
+
+| variant | result |
+|---|---|
+| `Prepare-to-Ship` (hyphenated) | still "prepared to ship" |
+| `"Prepare to Ship"` (quoted) | still "prepared to ship" |
+| `PREPARE TO SHIP` (all caps) | still "prepared to ship" |
+| `It's called Prepare to Ship,` (reworded) | **correct**, both whisper models |
+
+**ROOT CAUSE.** The construction `That's ___ to Ship` reads as a
+past-participle idiom ("that's prepared to [verb]" = "that's ready to
+[verb]") regardless of hyphenation, quoting, or emphasis — none of those
+change the model's syntactic parse, only its prosody. Only removing the
+ambiguous verb-phrase shape fixed it.
+
+**DISTILLED RULE.** `tools/vo_tagged.py`'s `PRONOUNCE` dict (the DRAM ->
+D-RAM precedent) only covers letter-preserving respellings, and its own
+self-test enforces that constraint — it is the wrong tool for a syntactic
+misreading like this one, because the fix requires different words, not
+different punctuation on the same words. When a probe shows the mispronunciation
+survives every punctuation/case variant of the SAME words, stop trying
+respellings and test a reworded DELIVERY sentence instead. Apply the fix
+by hand-editing `jobs/<slug>/script-tagged.txt` directly (never
+`script.md` — the approved narration stays hashed and unchanged; G53
+tolerates a one-sentence wording swap inside a 150+ word script, since it
+checks whole-transcript similarity against a 0.70 floor, not per-sentence
+equality). Before generating a full-length take of any script naming a
+compound feature/product/setting for the first time in a "That's ___"
+construction, consider probing that one sentence alone first (a 3-5s
+probe costs ~65-70 credits here vs. ~1,100 for the full 52s read) —
+cheap insurance against paying for a full mispronounced take twice, which
+is exactly what happened this run: first VO (1,091.89 credits) generated,
+caught the error via whisper before touching HeyGen, second VO
+(1,096.89 credits) plus three tiny probes (~200 credits) fixed it. The
+full avatar render was NOT wasted from this — it was only regenerated
+once, from the corrected audio.
