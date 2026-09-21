@@ -8796,3 +8796,45 @@ caught the error via whisper before touching HeyGen, second VO
 (1,096.89 credits) plus three tiny probes (~200 credits) fixed it. The
 full avatar render was NOT wasted from this — it was only regenerated
 once, from the corrected audio.
+
+**SECOND LESSON, SAME REEL — a specsheet that only swaps one text value
+between shots reads as a duplicate frame, even when the number is real.**
+The first full render blocked frame-lint's DUPLICATE check on 4 pairs
+(shots 07-10 and 11-12): six consecutive `specsheet` scenes shared one
+title ("16-inch MacBook Pro"), one row ("Battery"), and only a "?"
+placeholder resolving to a real value between neighbors. The perceptual
+hash is dominated by layout (title position, empty black bands, box
+position), not the one changed glyph — this is the same failure as RAW
+NOTE 4 above (a repeated card template), just with a specsheet instead of
+a swap card. **DISTILLED RULE.** Give consecutive specsheet-building
+shots real STRUCTURAL deltas, not just value reveals: an absent column
+appearing, a column count changing, a second row arriving, or (for the
+payoff shot specifically) the title itself changing to the punch line
+with the strongest row accented — never end a comparison sequence on
+"still the same card, one more number." The fix here: shot 07 titles-only
+(no columns), 08 adds a TOTAL column, 09 adds a CELLS column, 10 narrows
+to a single PER-CELL column (a genuine layout change, not an animated
+half-state — an animated second row that hadn't finished entering by the
+lint's sample point created a NEW duplicate against shot 11, so prefer an
+instant structural change over a mid-flight animation when two shots are
+this close together), 11 shows the real two-row iPhone/MacBook table, 12
+swaps the title to "The entire reason." and accents the iPhone row. Full
+re-render passed frame-lint clean on this path.
+
+Treatment: `annotatezoom` (crop:true, tight focus) hook on an official
+product photo bookending into the same tight crop at the close, `receipt`
+confirmation beat on Apple's own real screenshot, `statcard` for the 20Wh
+reveal, `stage` battery-drain/refill graphic (deliberately reused twice —
+once at the factory, once for the viewer's own future shipment — matching
+the script's own "it shows up twice" callback), a 6-beat `specsheet`
+comparison building to an accented payoff row, `checklist` for the four
+shipping triggers, and a closing `statcard` for the 80%/14-day cap.
+Credits: ElevenLabs ~2,190 across two full 52s takes plus ~200 in
+pronunciation probes (the first full take was discarded for the
+mispronunciation above); HeyGen 2 avatar renders (~52s audio-driven each,
+though the avatar's own video was never shown on screen in the final
+cut — only its audio track fed the master, since this reel's beat sheet
+is 100% b-roll/motion-graphics with no visible presenter beat; a
+cheaper path next time a reel's plan has no avatar-visible beat is to
+skip the HeyGen video-generation step entirely and use the ElevenLabs
+audio file directly as the master audio track).
