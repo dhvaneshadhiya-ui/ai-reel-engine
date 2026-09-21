@@ -1,0 +1,782 @@
+{
+  "emphasis": [
+    "Prepare to Ship",
+    "twenty watt-hours",
+    "one cell",
+    "MacBook Pro",
+    "80 percent"
+  ],
+  "caption_corrections": {
+    "prepared to ship": "Prepare to Ship",
+    "two weeks": "2 weeks"
+  },
+  "format": "news",
+  "shots": [
+    {
+      "start_phrase": "Your brand-new iPhone 18",
+      "line": "Your brand-new iPhone 18 Pro Max already had its battery drained once",
+      "needs": [
+        "brand-new",
+        "iPhone",
+        "18",
+        "already",
+        "battery",
+        "drained"
+      ],
+      "tier": "official",
+      "asset_id": "hero-burgundy",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/iphone-18-battery-prepare-to-ship/hero-burgundy.jpg",
+        "srcWidth": 1440,
+        "srcHeight": 760,
+        "bg": "black",
+        "focus": {
+          "x": 700,
+          "y": 50,
+          "w": 510,
+          "h": 700
+        },
+        "credit": "Apple",
+        "crop": true
+      }
+    },
+    {
+      "start_phrase": "before you ever touched",
+      "line": "before you ever touched it.",
+      "needs": [
+        "before",
+        "ever",
+        "touched"
+      ],
+      "tier": "official",
+      "asset_id": "hero-burgundy",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/iphone-18-battery-prepare-to-ship/hero-burgundy.jpg",
+        "srcWidth": 1440,
+        "srcHeight": 760,
+        "bg": "black",
+        "focus": {
+          "x": 760,
+          "y": 70,
+          "w": 340,
+          "h": 360
+        },
+        "credit": "Apple",
+        "crop": true
+      }
+    },
+    {
+      "start_phrase": "It's called Prepare to Ship",
+      "line": "That's Prepare to Ship: a setting that exists on no other iPhone.",
+      "needs": [
+        "Prepare",
+        "Ship",
+        "setting",
+        "exists",
+        "other",
+        "iPhone"
+      ],
+      "tier": "official",
+      "asset_id": "prepare-to-ship-menu",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/iphone-18-battery-prepare-to-ship/prepare-to-ship-screen.png",
+        "srcWidth": 640,
+        "srcHeight": 1326,
+        "backdrop": "black",
+        "credit": "Apple",
+        "highlights": [
+          {
+            "at": 0.2,
+            "x": 40,
+            "y": 838,
+            "w": 560,
+            "h": 92
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx/Camera Shutter.MP3",
+            "at": 0.05,
+            "vol": 0.32
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Here's why: this phone's",
+      "line": "Here's why: this phone's battery crossed a number no iPhone has ever crossed before",
+      "needs": [
+        "phone",
+        "battery",
+        "crossed",
+        "number",
+        "iPhone",
+        "ever"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "statcard",
+        "title": "iPhone 18 Pro Max",
+        "titleRight": "battery",
+        "rows": [
+          {
+            "label": "Single cell",
+            "value": "?",
+            "pct": 0.05
+          }
+        ],
+        "bg": "black",
+        "footnote": "Source: Apple \u2014 support.apple.com/en-us/127848",
+        "covers": "crossed a number"
+      }
+    },
+    {
+      "start_phrase": "20 watt hours, all in",
+      "line": "twenty watt-hours, all in one cell.",
+      "needs": [
+        "twenty",
+        "watt-hours",
+        "cell"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "statcard",
+        "title": "iPhone 18 Pro Max",
+        "titleRight": "battery",
+        "rows": [
+          {
+            "label": "Single cell",
+            "value": "20 Wh",
+            "pct": 1.0,
+            "color": "#e0524a"
+          }
+        ],
+        "bg": "black",
+        "footnote": "Source: Apple \u2014 support.apple.com/en-us/127848",
+        "covers": "twenty watt-hours"
+      }
+    },
+    {
+      "start_phrase": "So every unit gets",
+      "line": "So every unit gets discharged at the factory, then capped, until it's activated.",
+      "needs": [
+        "every",
+        "unit",
+        "gets",
+        "discharged",
+        "factory",
+        "capped"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "stage",
+        "set": "dark",
+        "layout": "full",
+        "elements": [
+          {
+            "id": "unit",
+            "kind": "card",
+            "x": 0.5,
+            "y": 0.2,
+            "w": 0.62,
+            "title": "Every unit",
+            "lines": [
+              "at the factory"
+            ]
+          },
+          {
+            "id": "charge",
+            "kind": "number",
+            "x": 0.5,
+            "y": 0.54,
+            "w": 0.5,
+            "value": 16,
+            "from": 100,
+            "suffix": "%",
+            "label": "Battery charge",
+            "source": "Apple \u2014 support.apple.com/en-us/127848"
+          },
+          {
+            "id": "cap",
+            "kind": "card",
+            "x": 0.5,
+            "y": 0.86,
+            "w": 0.66,
+            "title": "Capped",
+            "lines": [
+              "stays below 20 Wh"
+            ],
+            "tone": "accent"
+          }
+        ],
+        "moves": [
+          {
+            "do": "arrive",
+            "target": "unit",
+            "on": "every unit",
+            "dir": "up"
+          },
+          {
+            "do": "arrive",
+            "target": "charge",
+            "on": "discharged",
+            "dir": "pop"
+          },
+          {
+            "do": "count",
+            "target": "charge",
+            "on": "at the factory"
+          },
+          {
+            "do": "arrive",
+            "target": "cap",
+            "on": "then capped",
+            "dir": "up"
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx-action/tick.mp3",
+            "at": 0.3,
+            "vol": 0.5
+          }
+        ],
+        "covers": "discharged at the factory"
+      }
+    },
+    {
+      "start_phrase": "Turn it on, and",
+      "line": "Turn it on, and the limit lifts, full battery, like you'd expect.",
+      "needs": [
+        "Turn",
+        "limit",
+        "lifts",
+        "full",
+        "battery",
+        "like"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "stage",
+        "set": "dark",
+        "layout": "full",
+        "elements": [
+          {
+            "id": "cap",
+            "kind": "card",
+            "x": 0.5,
+            "y": 0.26,
+            "w": 0.62,
+            "title": "20 Wh cap",
+            "lines": [
+              "lifted"
+            ],
+            "tone": "accent"
+          },
+          {
+            "id": "charge",
+            "kind": "number",
+            "x": 0.5,
+            "y": 0.62,
+            "w": 0.5,
+            "value": 100,
+            "from": 16,
+            "suffix": "%",
+            "label": "Battery charge",
+            "source": "Apple \u2014 support.apple.com/en-us/127848"
+          }
+        ],
+        "moves": [
+          {
+            "do": "strike",
+            "target": "cap",
+            "on": "limit lifts"
+          },
+          {
+            "do": "count",
+            "target": "charge",
+            "on": "full battery"
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx-action/lock.mp3",
+            "at": 0.2,
+            "vol": 0.4
+          }
+        ],
+        "covers": "the limit lifts"
+      }
+    },
+    {
+      "start_phrase": "Compare that to Apple's",
+      "line": "Compare that to Apple's own 16-inch MacBook Pro",
+      "needs": [
+        "Compare",
+        "Apple",
+        "16-inch",
+        "MacBook"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "kicker": "for comparison",
+        "title": "16-inch MacBook Pro",
+        "rows": [
+          {
+            "label": "Battery pack",
+            "value": "?"
+          }
+        ],
+        "footnote": "MacRumors \u2014 Apple's own 99.9Wh MacBook Pro spec; cell count as reported",
+        "covers": "16-inch MacBook Pro"
+      }
+    },
+    {
+      "start_phrase": "which holds even more",
+      "line": "which holds even more power and never needs this.",
+      "needs": [
+        "which",
+        "holds",
+        "even",
+        "power",
+        "never",
+        "needs"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "kicker": "for comparison",
+        "title": "16-inch MacBook Pro",
+        "columns": [
+          "TOTAL"
+        ],
+        "rows": [
+          {
+            "label": "Battery pack",
+            "value": "99.9 Wh"
+          }
+        ],
+        "footnote": "MacRumors \u2014 Apple's own 99.9Wh MacBook Pro spec; cell count as reported",
+        "covers": "never needs this"
+      }
+    },
+    {
+      "start_phrase": "It reportedly spreads the",
+      "line": "It reportedly spreads the same total across several smaller cells",
+      "needs": [
+        "reportedly",
+        "spreads",
+        "same",
+        "total",
+        "across",
+        "several"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "kicker": "for comparison",
+        "title": "16-inch MacBook Pro",
+        "columns": [
+          "CELLS",
+          "TOTAL"
+        ],
+        "rows": [
+          {
+            "label": "Cells",
+            "values": [
+              "5-6 cells",
+              "99.9 Wh"
+            ]
+          }
+        ],
+        "footnote": "MacRumors \u2014 Apple's own 99.9Wh MacBook Pro spec; cell count as reported",
+        "covers": "smaller cells",
+        "sfx": [
+          {
+            "src": "sfx-action/marker.mp3",
+            "at": 0.1,
+            "vol": 0.4
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "each one under that",
+      "line": "each one under that line.",
+      "needs": [
+        "each",
+        "under",
+        "line"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "kicker": "for comparison",
+        "title": "16-inch MacBook Pro",
+        "columns": [
+          "PER CELL"
+        ],
+        "rows": [
+          {
+            "label": "Cells",
+            "value": "< 20 Wh"
+          }
+        ],
+        "footnote": "MacRumors \u2014 Apple's own 99.9Wh MacBook Pro spec; cell count as reported",
+        "covers": "under that line"
+      }
+    },
+    {
+      "start_phrase": "One phone, one cell.",
+      "line": "One phone, one cell.",
+      "needs": [
+        "phone",
+        "cell"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "kicker": "for comparison",
+        "title": "16-inch MacBook Pro",
+        "columns": [
+          "CELLS",
+          "TOTAL"
+        ],
+        "rows": [
+          {
+            "label": "MacBook",
+            "values": [
+              "each < 20 Wh",
+              "99.9 Wh"
+            ]
+          },
+          {
+            "label": "iPhone 18",
+            "values": [
+              "1 cell",
+              "over 20 Wh"
+            ]
+          }
+        ],
+        "footnote": "MacRumors \u2014 Apple's own 99.9Wh MacBook Pro spec; cell count as reported",
+        "covers": "One phone, one cell"
+      }
+    },
+    {
+      "start_phrase": "That's the entire reason.",
+      "line": "That's the entire reason.",
+      "needs": [
+        "entire",
+        "reason"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "specsheet",
+        "title": "The entire reason.",
+        "columns": [
+          "CELLS",
+          "TOTAL"
+        ],
+        "rows": [
+          {
+            "label": "MacBook",
+            "values": [
+              "each < 20 Wh",
+              "99.9 Wh"
+            ]
+          },
+          {
+            "label": "iPhone 18",
+            "values": [
+              "1 cell",
+              "over 20 Wh"
+            ],
+            "accent": true
+          }
+        ],
+        "footnote": "MacRumors \u2014 Apple's own 99.9Wh MacBook Pro spec; cell count as reported",
+        "covers": "entire reason",
+        "sfx": [
+          {
+            "src": "sfx/Click.MP3",
+            "at": 0.1,
+            "vol": 0.25
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Ship this phone again",
+      "line": "Ship this phone again",
+      "needs": [
+        "Ship",
+        "phone",
+        "again"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "checklist",
+        "headline": "TRIGGERS PREPARE TO SHIP",
+        "rows": [
+          {
+            "label": "Repair",
+            "state": "q"
+          }
+        ],
+        "covers": "Ship this phone again"
+      }
+    },
+    {
+      "start_phrase": "for repair, trade-in, resale,",
+      "line": "for repair, trade-in, resale, or as a gift, and it happens all over.",
+      "needs": [
+        "repair",
+        "trade-in",
+        "resale",
+        "gift",
+        "happens",
+        "over"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "checklist",
+        "headline": "TRIGGERS PREPARE TO SHIP",
+        "rows": [
+          {
+            "label": "Repair",
+            "state": "done"
+          },
+          {
+            "label": "Trade-in",
+            "state": "done"
+          },
+          {
+            "label": "Resale",
+            "state": "done"
+          },
+          {
+            "label": "Gift",
+            "state": "done"
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx/Pop.MP3",
+            "at": 0.15,
+            "vol": 0.3
+          }
+        ],
+        "covers": "repair, trade-in, resale"
+      }
+    },
+    {
+      "start_phrase": "The battery discharges under",
+      "line": "The battery discharges under that ceiling, running warm while it does.",
+      "needs": [
+        "battery",
+        "discharges",
+        "under",
+        "ceiling",
+        "running",
+        "warm"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "stage",
+        "set": "dark",
+        "layout": "full",
+        "elements": [
+          {
+            "id": "cap",
+            "kind": "card",
+            "x": 0.5,
+            "y": 0.2,
+            "w": 0.62,
+            "title": "Every reship",
+            "lines": [
+              "discharges again"
+            ]
+          },
+          {
+            "id": "charge",
+            "kind": "number",
+            "x": 0.5,
+            "y": 0.52,
+            "w": 0.5,
+            "value": 16,
+            "from": 100,
+            "suffix": "%",
+            "label": "Battery charge",
+            "source": "Apple \u2014 support.apple.com/en-us/127848"
+          },
+          {
+            "id": "heat",
+            "kind": "text",
+            "x": 0.5,
+            "y": 0.82,
+            "w": 0.6,
+            "text": "running warm",
+            "size": 0.9
+          }
+        ],
+        "moves": [
+          {
+            "do": "arrive",
+            "target": "cap",
+            "on": "battery discharges",
+            "dir": "up"
+          },
+          {
+            "do": "count",
+            "target": "charge",
+            "on": "under that ceiling"
+          },
+          {
+            "do": "arrive",
+            "target": "heat",
+            "on": "running warm",
+            "dir": "pop"
+          },
+          {
+            "do": "highlight",
+            "target": "heat",
+            "on": "while it does"
+          }
+        ],
+        "sfx": [
+          {
+            "src": "sfx-action/tick.mp3",
+            "at": 0.3,
+            "vol": 0.5
+          }
+        ],
+        "covers": "running warm"
+      }
+    },
+    {
+      "start_phrase": "But send it in",
+      "line": "But send it in for repair",
+      "needs": [
+        "send",
+        "repair"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "statcard",
+        "title": "Repair / trade-in / return",
+        "rows": [
+          {
+            "label": "Charge cap",
+            "value": "?",
+            "pct": 0.05
+          }
+        ],
+        "bg": "black",
+        "footnote": "Source: Apple \u2014 support.apple.com/en-us/127848",
+        "covers": "send it in for repair"
+      }
+    },
+    {
+      "start_phrase": "trade-in, or return, and",
+      "line": "trade-in, or return, and your charge gets capped at 80 percent for two weeks after.",
+      "needs": [
+        "trade-in",
+        "return",
+        "charge",
+        "gets",
+        "capped",
+        "80"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "statcard",
+        "title": "Repair / trade-in / return",
+        "titleRight": "14 days",
+        "rows": [
+          {
+            "label": "Charge cap",
+            "value": "80%",
+            "pct": 0.8,
+            "color": "#e0524a"
+          }
+        ],
+        "bg": "black",
+        "footnote": "Source: Apple \u2014 support.apple.com/en-us/127848",
+        "covers": "capped at 80 percent"
+      }
+    },
+    {
+      "start_phrase": "Remember that line: it",
+      "line": "Remember that line: it shows up twice",
+      "needs": [
+        "Remember",
+        "line",
+        "shows",
+        "twice"
+      ],
+      "tier": "official",
+      "asset_id": "hero-burgundy",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/iphone-18-battery-prepare-to-ship/hero-burgundy.jpg",
+        "srcWidth": 1440,
+        "srcHeight": 760,
+        "bg": "black",
+        "focus": {
+          "x": 760,
+          "y": 70,
+          "w": 340,
+          "h": 360
+        },
+        "credit": "Apple",
+        "crop": true
+      }
+    },
+    {
+      "start_phrase": "once at the factory,",
+      "line": "once at the factory, once at your door.",
+      "needs": [
+        "once",
+        "factory",
+        "door"
+      ],
+      "tier": "official",
+      "asset_id": "hero-burgundy",
+      "scene": {
+        "type": "annotatezoom",
+        "src": "assets/iphone-18-battery-prepare-to-ship/hero-burgundy.jpg",
+        "srcWidth": 1440,
+        "srcHeight": 760,
+        "bg": "black",
+        "focus": {
+          "x": 700,
+          "y": 50,
+          "w": 510,
+          "h": 700
+        },
+        "credit": "Apple",
+        "crop": true
+      }
+    }
+  ],
+  "facePlan": "none"
+}

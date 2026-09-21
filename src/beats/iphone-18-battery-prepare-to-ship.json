@@ -1,0 +1,1753 @@
+{
+  "id": "iphone-18-battery-prepare-to-ship",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/iphone-18-battery-prepare-to-ship/avatar-master.mp4",
+  "facePlan": "none",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "Prepare to Ship",
+    "twenty watt-hours",
+    "one cell",
+    "MacBook Pro",
+    "80 percent"
+  ],
+  "scenes": [
+    {
+      "type": "annotatezoom",
+      "src": "assets/iphone-18-battery-prepare-to-ship/hero-burgundy.jpg",
+      "srcWidth": 1440,
+      "srcHeight": 760,
+      "bg": "black",
+      "focus": {
+        "x": 700,
+        "y": 50,
+        "w": 510,
+        "h": 700
+      },
+      "credit": "Apple",
+      "crop": true,
+      "durationSec": 4.08,
+      "assetId": "hero-burgundy",
+      "claimId": "hero-burgundy",
+      "covers": "Your brand-new iPhone 18"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/iphone-18-battery-prepare-to-ship/hero-burgundy.jpg",
+      "srcWidth": 1440,
+      "srcHeight": 760,
+      "bg": "black",
+      "focus": {
+        "x": 760,
+        "y": 70,
+        "w": 340,
+        "h": 360
+      },
+      "credit": "Apple",
+      "crop": true,
+      "durationSec": 1.64,
+      "assetId": "hero-burgundy",
+      "claimId": "hero-burgundy",
+      "covers": "before you ever touched"
+    },
+    {
+      "type": "receipt",
+      "src": "assets/iphone-18-battery-prepare-to-ship/prepare-to-ship-screen.png",
+      "srcWidth": 640,
+      "srcHeight": 1326,
+      "backdrop": "black",
+      "credit": "Apple",
+      "highlights": [
+        {
+          "at": 0.2,
+          "x": 40,
+          "y": 838,
+          "w": 560,
+          "h": 92
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 0.05,
+          "vol": 0.32
+        }
+      ],
+      "durationSec": 3.64,
+      "captionBottom": 384,
+      "assetId": "prepare-to-ship-menu",
+      "claimId": "prepare-to-ship-menu",
+      "covers": "It's called Prepare to Ship",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "statcard",
+      "title": "iPhone 18 Pro Max",
+      "titleRight": "battery",
+      "rows": [
+        {
+          "label": "Single cell",
+          "value": "?",
+          "pct": 0.05
+        }
+      ],
+      "bg": "black",
+      "footnote": "Source: Apple \u2014 support.apple.com/en-us/127848",
+      "covers": "crossed a number",
+      "durationSec": 4.28
+    },
+    {
+      "type": "statcard",
+      "title": "iPhone 18 Pro Max",
+      "titleRight": "battery",
+      "rows": [
+        {
+          "label": "Single cell",
+          "value": "20 Wh",
+          "pct": 1.0,
+          "color": "#e0524a"
+        }
+      ],
+      "bg": "black",
+      "footnote": "Source: Apple \u2014 support.apple.com/en-us/127848",
+      "covers": "twenty watt-hours",
+      "durationSec": 2.12
+    },
+    {
+      "type": "stage",
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "unit",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.2,
+          "w": 0.62,
+          "title": "Every unit",
+          "lines": [
+            "at the factory"
+          ]
+        },
+        {
+          "id": "charge",
+          "kind": "number",
+          "x": 0.5,
+          "y": 0.54,
+          "w": 0.5,
+          "value": 16,
+          "from": 100,
+          "suffix": "%",
+          "label": "Battery charge",
+          "source": "Apple \u2014 support.apple.com/en-us/127848"
+        },
+        {
+          "id": "cap",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.86,
+          "w": 0.66,
+          "title": "Capped",
+          "lines": [
+            "stays below 20 Wh"
+          ],
+          "tone": "accent"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "unit",
+          "on": "every unit",
+          "dir": "up",
+          "at": 0.08
+        },
+        {
+          "do": "arrive",
+          "target": "charge",
+          "on": "discharged",
+          "dir": "pop",
+          "at": 0.82
+        },
+        {
+          "do": "count",
+          "target": "charge",
+          "on": "at the factory",
+          "at": 1.26
+        },
+        {
+          "do": "arrive",
+          "target": "cap",
+          "on": "then capped",
+          "dir": "up",
+          "at": 1.92
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 0.3,
+          "vol": 1.0
+        }
+      ],
+      "covers": "discharged at the factory",
+      "durationSec": 3.98
+    },
+    {
+      "type": "stage",
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "cap",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.26,
+          "w": 0.62,
+          "title": "20 Wh cap",
+          "lines": [
+            "lifted"
+          ],
+          "tone": "accent"
+        },
+        {
+          "id": "charge",
+          "kind": "number",
+          "x": 0.5,
+          "y": 0.62,
+          "w": 0.5,
+          "value": 100,
+          "from": 16,
+          "suffix": "%",
+          "label": "Battery charge",
+          "source": "Apple \u2014 support.apple.com/en-us/127848"
+        }
+      ],
+      "moves": [
+        {
+          "do": "strike",
+          "target": "cap",
+          "on": "limit lifts",
+          "at": 0.84
+        },
+        {
+          "do": "count",
+          "target": "charge",
+          "on": "full battery",
+          "at": 1.7
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/lock.mp3",
+          "at": 0.2,
+          "vol": 0.26
+        }
+      ],
+      "covers": "the limit lifts",
+      "durationSec": 3.36
+    },
+    {
+      "type": "specsheet",
+      "kicker": "for comparison",
+      "title": "16-inch MacBook Pro",
+      "rows": [
+        {
+          "label": "Battery pack",
+          "value": "?"
+        }
+      ],
+      "footnote": "MacRumors \u2014 Apple's own 99.9Wh MacBook Pro spec; cell count as reported",
+      "covers": "16-inch MacBook Pro",
+      "durationSec": 2.54
+    },
+    {
+      "type": "specsheet",
+      "kicker": "for comparison",
+      "title": "16-inch MacBook Pro",
+      "columns": [
+        "TOTAL"
+      ],
+      "rows": [
+        {
+          "label": "Battery pack",
+          "value": "99.9 Wh"
+        }
+      ],
+      "footnote": "MacRumors \u2014 Apple's own 99.9Wh MacBook Pro spec; cell count as reported",
+      "covers": "never needs this",
+      "durationSec": 2.28
+    },
+    {
+      "type": "specsheet",
+      "kicker": "for comparison",
+      "title": "16-inch MacBook Pro",
+      "columns": [
+        "CELLS",
+        "TOTAL"
+      ],
+      "rows": [
+        {
+          "label": "Cells",
+          "values": [
+            "5-6 cells",
+            "99.9 Wh"
+          ]
+        }
+      ],
+      "footnote": "MacRumors \u2014 Apple's own 99.9Wh MacBook Pro spec; cell count as reported",
+      "covers": "smaller cells",
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 0.1,
+          "vol": 0.417
+        }
+      ],
+      "durationSec": 3.68
+    },
+    {
+      "type": "specsheet",
+      "kicker": "for comparison",
+      "title": "16-inch MacBook Pro",
+      "columns": [
+        "PER CELL"
+      ],
+      "rows": [
+        {
+          "label": "Cells",
+          "value": "< 20 Wh"
+        }
+      ],
+      "footnote": "MacRumors \u2014 Apple's own 99.9Wh MacBook Pro spec; cell count as reported",
+      "covers": "under that line",
+      "durationSec": 1.4
+    },
+    {
+      "type": "specsheet",
+      "kicker": "for comparison",
+      "title": "16-inch MacBook Pro",
+      "columns": [
+        "CELLS",
+        "TOTAL"
+      ],
+      "rows": [
+        {
+          "label": "MacBook",
+          "values": [
+            "each < 20 Wh",
+            "99.9 Wh"
+          ]
+        },
+        {
+          "label": "iPhone 18",
+          "values": [
+            "1 cell",
+            "over 20 Wh"
+          ]
+        }
+      ],
+      "footnote": "MacRumors \u2014 Apple's own 99.9Wh MacBook Pro spec; cell count as reported",
+      "covers": "One phone, one cell",
+      "durationSec": 1.44
+    },
+    {
+      "type": "specsheet",
+      "title": "The entire reason.",
+      "columns": [
+        "CELLS",
+        "TOTAL"
+      ],
+      "rows": [
+        {
+          "label": "MacBook",
+          "values": [
+            "each < 20 Wh",
+            "99.9 Wh"
+          ]
+        },
+        {
+          "label": "iPhone 18",
+          "values": [
+            "1 cell",
+            "over 20 Wh"
+          ],
+          "accent": true
+        }
+      ],
+      "footnote": "MacRumors \u2014 Apple's own 99.9Wh MacBook Pro spec; cell count as reported",
+      "covers": "entire reason",
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "at": 0.1,
+          "vol": 0.25
+        }
+      ],
+      "durationSec": 1.22
+    },
+    {
+      "type": "checklist",
+      "headline": "TRIGGERS PREPARE TO SHIP",
+      "rows": [
+        {
+          "label": "Repair",
+          "state": "q"
+        }
+      ],
+      "covers": "Ship this phone again",
+      "durationSec": 0.8
+    },
+    {
+      "type": "checklist",
+      "headline": "TRIGGERS PREPARE TO SHIP",
+      "rows": [
+        {
+          "label": "Repair",
+          "state": "done"
+        },
+        {
+          "label": "Trade-in",
+          "state": "done"
+        },
+        {
+          "label": "Resale",
+          "state": "done"
+        },
+        {
+          "label": "Gift",
+          "state": "done"
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.15,
+          "vol": 0.343
+        }
+      ],
+      "covers": "repair, trade-in, resale",
+      "durationSec": 3.72
+    },
+    {
+      "type": "stage",
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "cap",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.2,
+          "w": 0.62,
+          "title": "Every reship",
+          "lines": [
+            "discharges again"
+          ]
+        },
+        {
+          "id": "charge",
+          "kind": "number",
+          "x": 0.5,
+          "y": 0.52,
+          "w": 0.5,
+          "value": 16,
+          "from": 100,
+          "suffix": "%",
+          "label": "Battery charge",
+          "source": "Apple \u2014 support.apple.com/en-us/127848"
+        },
+        {
+          "id": "heat",
+          "kind": "text",
+          "x": 0.5,
+          "y": 0.82,
+          "w": 0.6,
+          "text": "running warm",
+          "size": 0.9
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "cap",
+          "on": "battery discharges",
+          "dir": "up",
+          "at": 0.06
+        },
+        {
+          "do": "count",
+          "target": "charge",
+          "on": "under that ceiling",
+          "at": 0.92
+        },
+        {
+          "do": "arrive",
+          "target": "heat",
+          "on": "running warm",
+          "dir": "pop",
+          "at": 1.98
+        },
+        {
+          "do": "highlight",
+          "target": "heat",
+          "on": "while it does",
+          "at": 2.42
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 0.3,
+          "vol": 1.0
+        }
+      ],
+      "covers": "running warm",
+      "durationSec": 3.38
+    },
+    {
+      "type": "statcard",
+      "title": "Repair / trade-in / return",
+      "rows": [
+        {
+          "label": "Charge cap",
+          "value": "?",
+          "pct": 0.05
+        }
+      ],
+      "bg": "black",
+      "footnote": "Source: Apple \u2014 support.apple.com/en-us/127848",
+      "covers": "send it in for repair",
+      "durationSec": 1.26
+    },
+    {
+      "type": "statcard",
+      "title": "Repair / trade-in / return",
+      "titleRight": "14 days",
+      "rows": [
+        {
+          "label": "Charge cap",
+          "value": "80%",
+          "pct": 0.8,
+          "color": "#e0524a"
+        }
+      ],
+      "bg": "black",
+      "footnote": "Source: Apple \u2014 support.apple.com/en-us/127848",
+      "covers": "capped at 80 percent",
+      "durationSec": 4.18
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/iphone-18-battery-prepare-to-ship/hero-burgundy.jpg",
+      "srcWidth": 1440,
+      "srcHeight": 760,
+      "bg": "black",
+      "focus": {
+        "x": 760,
+        "y": 70,
+        "w": 340,
+        "h": 360
+      },
+      "credit": "Apple",
+      "crop": true,
+      "durationSec": 2.0,
+      "assetId": "hero-burgundy",
+      "claimId": "hero-burgundy",
+      "covers": "Remember that line: it"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/iphone-18-battery-prepare-to-ship/hero-burgundy.jpg",
+      "srcWidth": 1440,
+      "srcHeight": 760,
+      "bg": "black",
+      "focus": {
+        "x": 700,
+        "y": 50,
+        "w": 510,
+        "h": 700
+      },
+      "credit": "Apple",
+      "crop": true,
+      "durationSec": 1.776,
+      "assetId": "hero-burgundy",
+      "claimId": "hero-burgundy",
+      "covers": "once at the factory,"
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.78,
+      "text": "Your brand new",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Your"
+        },
+        {
+          "t": 0.28,
+          "text": "brand"
+        },
+        {
+          "t": 0.54,
+          "text": "new"
+        }
+      ]
+    },
+    {
+      "start": 0.78,
+      "end": 1.9,
+      "text": "iPhone 18 Pro",
+      "words": [
+        {
+          "t": 0.78,
+          "text": "iPhone"
+        },
+        {
+          "t": 1.12,
+          "text": "18"
+        },
+        {
+          "t": 1.58,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 1.9,
+      "end": 2.86,
+      "text": "Max already had",
+      "words": [
+        {
+          "t": 1.9,
+          "text": "Max"
+        },
+        {
+          "t": 2.1,
+          "text": "already"
+        },
+        {
+          "t": 2.58,
+          "text": "had"
+        }
+      ]
+    },
+    {
+      "start": 2.86,
+      "end": 3.74,
+      "text": "its battery drained",
+      "words": [
+        {
+          "t": 2.86,
+          "text": "its"
+        },
+        {
+          "t": 3.08,
+          "text": "battery"
+        },
+        {
+          "t": 3.38,
+          "text": "drained"
+        }
+      ]
+    },
+    {
+      "start": 3.74,
+      "end": 4.76,
+      "text": "once before you",
+      "words": [
+        {
+          "t": 3.74,
+          "text": "once"
+        },
+        {
+          "t": 4.08,
+          "text": "before"
+        },
+        {
+          "t": 4.56,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 4.76,
+      "end": 5.56,
+      "text": "ever touched it.",
+      "words": [
+        {
+          "t": 4.76,
+          "text": "ever"
+        },
+        {
+          "t": 5.0,
+          "text": "touched"
+        },
+        {
+          "t": 5.3,
+          "text": "it."
+        }
+      ]
+    },
+    {
+      "start": 5.72,
+      "end": 6.38,
+      "text": "It's called Prepare",
+      "words": [
+        {
+          "t": 5.72,
+          "text": "It's"
+        },
+        {
+          "t": 5.88,
+          "text": "called"
+        },
+        {
+          "t": 6.02,
+          "text": "Prepare"
+        }
+      ]
+    },
+    {
+      "start": 6.38,
+      "end": 7.2,
+      "text": "to Ship, a",
+      "words": [
+        {
+          "t": 6.38,
+          "text": "to"
+        },
+        {
+          "t": 6.62,
+          "text": "Ship,"
+        },
+        {
+          "t": 7.12,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 7.2,
+      "end": 7.96,
+      "text": "setting that exists",
+      "words": [
+        {
+          "t": 7.2,
+          "text": "setting"
+        },
+        {
+          "t": 7.46,
+          "text": "that"
+        },
+        {
+          "t": 7.66,
+          "text": "exists"
+        }
+      ]
+    },
+    {
+      "start": 7.96,
+      "end": 8.72,
+      "text": "on no other",
+      "words": [
+        {
+          "t": 7.96,
+          "text": "on"
+        },
+        {
+          "t": 8.22,
+          "text": "no"
+        },
+        {
+          "t": 8.42,
+          "text": "other"
+        }
+      ]
+    },
+    {
+      "start": 8.72,
+      "end": 9.86,
+      "text": "iPhone. Here's why.",
+      "words": [
+        {
+          "t": 8.72,
+          "text": "iPhone."
+        },
+        {
+          "t": 9.36,
+          "text": "Here's"
+        },
+        {
+          "t": 9.66,
+          "text": "why."
+        }
+      ]
+    },
+    {
+      "start": 10.04,
+      "end": 10.82,
+      "text": "This phone's battery",
+      "words": [
+        {
+          "t": 10.04,
+          "text": "This"
+        },
+        {
+          "t": 10.16,
+          "text": "phone's"
+        },
+        {
+          "t": 10.5,
+          "text": "battery"
+        }
+      ]
+    },
+    {
+      "start": 10.82,
+      "end": 11.58,
+      "text": "crossed a number",
+      "words": [
+        {
+          "t": 10.82,
+          "text": "crossed"
+        },
+        {
+          "t": 11.14,
+          "text": "a"
+        },
+        {
+          "t": 11.32,
+          "text": "number"
+        }
+      ]
+    },
+    {
+      "start": 11.58,
+      "end": 12.46,
+      "text": "no iPhone has",
+      "words": [
+        {
+          "t": 11.58,
+          "text": "no"
+        },
+        {
+          "t": 11.78,
+          "text": "iPhone"
+        },
+        {
+          "t": 12.2,
+          "text": "has"
+        }
+      ]
+    },
+    {
+      "start": 12.46,
+      "end": 13.44,
+      "text": "ever crossed before.",
+      "words": [
+        {
+          "t": 12.46,
+          "text": "ever"
+        },
+        {
+          "t": 12.7,
+          "text": "crossed"
+        },
+        {
+          "t": 12.96,
+          "text": "before."
+        }
+      ]
+    },
+    {
+      "start": 13.64,
+      "end": 14.52,
+      "text": "20 watt hours",
+      "words": [
+        {
+          "t": 13.64,
+          "text": "20"
+        },
+        {
+          "t": 13.9,
+          "text": "watt"
+        },
+        {
+          "t": 14.12,
+          "text": "hours"
+        }
+      ]
+    },
+    {
+      "start": 14.52,
+      "end": 15.2,
+      "text": "all in one",
+      "words": [
+        {
+          "t": 14.52,
+          "text": "all"
+        },
+        {
+          "t": 14.84,
+          "text": "in"
+        },
+        {
+          "t": 15.0,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 15.2,
+      "end": 16.1,
+      "text": "cell. So every",
+      "words": [
+        {
+          "t": 15.2,
+          "text": "cell."
+        },
+        {
+          "t": 15.76,
+          "text": "So"
+        },
+        {
+          "t": 15.84,
+          "text": "every"
+        }
+      ]
+    },
+    {
+      "start": 16.1,
+      "end": 17.02,
+      "text": "unit gets discharged",
+      "words": [
+        {
+          "t": 16.1,
+          "text": "unit"
+        },
+        {
+          "t": 16.36,
+          "text": "gets"
+        },
+        {
+          "t": 16.58,
+          "text": "discharged"
+        }
+      ]
+    },
+    {
+      "start": 17.02,
+      "end": 17.68,
+      "text": "at the factory",
+      "words": [
+        {
+          "t": 17.02,
+          "text": "at"
+        },
+        {
+          "t": 17.22,
+          "text": "the"
+        },
+        {
+          "t": 17.36,
+          "text": "factory"
+        }
+      ]
+    },
+    {
+      "start": 17.68,
+      "end": 18.78,
+      "text": "then capped until",
+      "words": [
+        {
+          "t": 17.68,
+          "text": "then"
+        },
+        {
+          "t": 18.0,
+          "text": "capped"
+        },
+        {
+          "t": 18.44,
+          "text": "until"
+        }
+      ]
+    },
+    {
+      "start": 18.78,
+      "end": 19.84,
+      "text": "it's activated. Turn",
+      "words": [
+        {
+          "t": 18.78,
+          "text": "it's"
+        },
+        {
+          "t": 18.98,
+          "text": "activated."
+        },
+        {
+          "t": 19.74,
+          "text": "Turn"
+        }
+      ]
+    },
+    {
+      "start": 19.84,
+      "end": 20.46,
+      "text": "it on and",
+      "words": [
+        {
+          "t": 19.84,
+          "text": "it"
+        },
+        {
+          "t": 20.02,
+          "text": "on"
+        },
+        {
+          "t": 20.18,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 20.46,
+      "end": 21.12,
+      "text": "the limit lifts.",
+      "words": [
+        {
+          "t": 20.46,
+          "text": "the"
+        },
+        {
+          "t": 20.58,
+          "text": "limit"
+        },
+        {
+          "t": 20.78,
+          "text": "lifts."
+        }
+      ]
+    },
+    {
+      "start": 21.44,
+      "end": 22.26,
+      "text": "Full battery like",
+      "words": [
+        {
+          "t": 21.44,
+          "text": "Full"
+        },
+        {
+          "t": 21.56,
+          "text": "battery"
+        },
+        {
+          "t": 21.96,
+          "text": "like"
+        }
+      ]
+    },
+    {
+      "start": 22.26,
+      "end": 23.34,
+      "text": "you'd expect. Compare",
+      "words": [
+        {
+          "t": 22.26,
+          "text": "you'd"
+        },
+        {
+          "t": 22.5,
+          "text": "expect."
+        },
+        {
+          "t": 23.1,
+          "text": "Compare"
+        }
+      ]
+    },
+    {
+      "start": 23.34,
+      "end": 24.18,
+      "text": "that to Apple's",
+      "words": [
+        {
+          "t": 23.34,
+          "text": "that"
+        },
+        {
+          "t": 23.56,
+          "text": "to"
+        },
+        {
+          "t": 23.74,
+          "text": "Apple's"
+        }
+      ]
+    },
+    {
+      "start": 24.18,
+      "end": 24.98,
+      "text": "own 16 inch",
+      "words": [
+        {
+          "t": 24.18,
+          "text": "own"
+        },
+        {
+          "t": 24.32,
+          "text": "16"
+        },
+        {
+          "t": 24.68,
+          "text": "inch"
+        }
+      ]
+    },
+    {
+      "start": 24.98,
+      "end": 25.96,
+      "text": "MacBook Pro which",
+      "words": [
+        {
+          "t": 24.98,
+          "text": "MacBook"
+        },
+        {
+          "t": 25.28,
+          "text": "Pro"
+        },
+        {
+          "t": 25.64,
+          "text": "which"
+        }
+      ]
+    },
+    {
+      "start": 25.96,
+      "end": 26.66,
+      "text": "holds even more",
+      "words": [
+        {
+          "t": 25.96,
+          "text": "holds"
+        },
+        {
+          "t": 26.16,
+          "text": "even"
+        },
+        {
+          "t": 26.46,
+          "text": "more"
+        }
+      ]
+    },
+    {
+      "start": 26.66,
+      "end": 27.42,
+      "text": "power and never",
+      "words": [
+        {
+          "t": 26.66,
+          "text": "power"
+        },
+        {
+          "t": 26.98,
+          "text": "and"
+        },
+        {
+          "t": 27.2,
+          "text": "never"
+        }
+      ]
+    },
+    {
+      "start": 27.42,
+      "end": 28.34,
+      "text": "needs this. It",
+      "words": [
+        {
+          "t": 27.42,
+          "text": "needs"
+        },
+        {
+          "t": 27.62,
+          "text": "this."
+        },
+        {
+          "t": 27.92,
+          "text": "It"
+        }
+      ]
+    },
+    {
+      "start": 28.34,
+      "end": 29.36,
+      "text": "reportedly spreads the",
+      "words": [
+        {
+          "t": 28.34,
+          "text": "reportedly"
+        },
+        {
+          "t": 28.72,
+          "text": "spreads"
+        },
+        {
+          "t": 29.12,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 29.36,
+      "end": 30.24,
+      "text": "same total across",
+      "words": [
+        {
+          "t": 29.36,
+          "text": "same"
+        },
+        {
+          "t": 29.6,
+          "text": "total"
+        },
+        {
+          "t": 29.92,
+          "text": "across"
+        }
+      ]
+    },
+    {
+      "start": 30.24,
+      "end": 31.4,
+      "text": "several smaller cells,",
+      "words": [
+        {
+          "t": 30.24,
+          "text": "several"
+        },
+        {
+          "t": 30.62,
+          "text": "smaller"
+        },
+        {
+          "t": 31.06,
+          "text": "cells,"
+        }
+      ]
+    },
+    {
+      "start": 31.6,
+      "end": 32.28,
+      "text": "each one under",
+      "words": [
+        {
+          "t": 31.6,
+          "text": "each"
+        },
+        {
+          "t": 31.8,
+          "text": "one"
+        },
+        {
+          "t": 31.96,
+          "text": "under"
+        }
+      ]
+    },
+    {
+      "start": 32.28,
+      "end": 33.12,
+      "text": "that line. One",
+      "words": [
+        {
+          "t": 32.28,
+          "text": "that"
+        },
+        {
+          "t": 32.46,
+          "text": "line."
+        },
+        {
+          "t": 33.0,
+          "text": "One"
+        }
+      ]
+    },
+    {
+      "start": 33.12,
+      "end": 34.16,
+      "text": "phone, one cell.",
+      "words": [
+        {
+          "t": 33.12,
+          "text": "phone,"
+        },
+        {
+          "t": 33.7,
+          "text": "one"
+        },
+        {
+          "t": 33.86,
+          "text": "cell."
+        }
+      ]
+    },
+    {
+      "start": 34.44,
+      "end": 35.02,
+      "text": "That's the entire",
+      "words": [
+        {
+          "t": 34.44,
+          "text": "That's"
+        },
+        {
+          "t": 34.6,
+          "text": "the"
+        },
+        {
+          "t": 34.7,
+          "text": "entire"
+        }
+      ]
+    },
+    {
+      "start": 35.02,
+      "end": 36.02,
+      "text": "reason. Ship this",
+      "words": [
+        {
+          "t": 35.02,
+          "text": "reason."
+        },
+        {
+          "t": 35.66,
+          "text": "Ship"
+        },
+        {
+          "t": 35.82,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 36.02,
+      "end": 36.72,
+      "text": "phone again for",
+      "words": [
+        {
+          "t": 36.02,
+          "text": "phone"
+        },
+        {
+          "t": 36.18,
+          "text": "again"
+        },
+        {
+          "t": 36.46,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 36.72,
+      "end": 37.62,
+      "text": "repair, trade in,",
+      "words": [
+        {
+          "t": 36.72,
+          "text": "repair,"
+        },
+        {
+          "t": 37.28,
+          "text": "trade"
+        },
+        {
+          "t": 37.46,
+          "text": "in,"
+        }
+      ]
+    },
+    {
+      "start": 37.72,
+      "end": 38.42,
+      "text": "resale or as",
+      "words": [
+        {
+          "t": 37.72,
+          "text": "resale"
+        },
+        {
+          "t": 38.04,
+          "text": "or"
+        },
+        {
+          "t": 38.26,
+          "text": "as"
+        }
+      ]
+    },
+    {
+      "start": 38.42,
+      "end": 39.02,
+      "text": "a gift and",
+      "words": [
+        {
+          "t": 38.42,
+          "text": "a"
+        },
+        {
+          "t": 38.52,
+          "text": "gift"
+        },
+        {
+          "t": 38.72,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 39.02,
+      "end": 39.7,
+      "text": "it happens all",
+      "words": [
+        {
+          "t": 39.02,
+          "text": "it"
+        },
+        {
+          "t": 39.12,
+          "text": "happens"
+        },
+        {
+          "t": 39.42,
+          "text": "all"
+        }
+      ]
+    },
+    {
+      "start": 39.7,
+      "end": 40.58,
+      "text": "over. The battery",
+      "words": [
+        {
+          "t": 39.7,
+          "text": "over."
+        },
+        {
+          "t": 40.18,
+          "text": "The"
+        },
+        {
+          "t": 40.24,
+          "text": "battery"
+        }
+      ]
+    },
+    {
+      "start": 40.58,
+      "end": 41.56,
+      "text": "discharges under that",
+      "words": [
+        {
+          "t": 40.58,
+          "text": "discharges"
+        },
+        {
+          "t": 41.1,
+          "text": "under"
+        },
+        {
+          "t": 41.4,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 41.56,
+      "end": 42.6,
+      "text": "ceiling, running warm",
+      "words": [
+        {
+          "t": 41.56,
+          "text": "ceiling,"
+        },
+        {
+          "t": 42.16,
+          "text": "running"
+        },
+        {
+          "t": 42.34,
+          "text": "warm"
+        }
+      ]
+    },
+    {
+      "start": 42.6,
+      "end": 43.16,
+      "text": "while it does.",
+      "words": [
+        {
+          "t": 42.6,
+          "text": "while"
+        },
+        {
+          "t": 42.86,
+          "text": "it"
+        },
+        {
+          "t": 42.98,
+          "text": "does."
+        }
+      ]
+    },
+    {
+      "start": 43.56,
+      "end": 43.98,
+      "text": "But send it",
+      "words": [
+        {
+          "t": 43.56,
+          "text": "But"
+        },
+        {
+          "t": 43.62,
+          "text": "send"
+        },
+        {
+          "t": 43.82,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 43.98,
+      "end": 44.58,
+      "text": "in for repair,",
+      "words": [
+        {
+          "t": 43.98,
+          "text": "in"
+        },
+        {
+          "t": 44.1,
+          "text": "for"
+        },
+        {
+          "t": 44.26,
+          "text": "repair,"
+        }
+      ]
+    },
+    {
+      "start": 44.82,
+      "end": 45.28,
+      "text": "trade in or",
+      "words": [
+        {
+          "t": 44.82,
+          "text": "trade"
+        },
+        {
+          "t": 44.94,
+          "text": "in"
+        },
+        {
+          "t": 45.12,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 45.28,
+      "end": 46.04,
+      "text": "return and your",
+      "words": [
+        {
+          "t": 45.28,
+          "text": "return"
+        },
+        {
+          "t": 45.58,
+          "text": "and"
+        },
+        {
+          "t": 45.92,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 46.04,
+      "end": 46.94,
+      "text": "charge gets capped",
+      "words": [
+        {
+          "t": 46.04,
+          "text": "charge"
+        },
+        {
+          "t": 46.34,
+          "text": "gets"
+        },
+        {
+          "t": 46.54,
+          "text": "capped"
+        }
+      ]
+    },
+    {
+      "start": 46.94,
+      "end": 47.92,
+      "text": "at 80% for",
+      "words": [
+        {
+          "t": 46.94,
+          "text": "at"
+        },
+        {
+          "t": 47.04,
+          "text": "80%"
+        },
+        {
+          "t": 47.66,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 47.92,
+      "end": 49.22,
+      "text": "2 weeks after. Remember",
+      "words": [
+        {
+          "t": 47.92,
+          "text": "2"
+        },
+        {
+          "t": 48.3,
+          "text": "weeks"
+        },
+        {
+          "t": 49.0,
+          "text": "after."
+        },
+        {
+          "t": 49.0,
+          "text": "Remember"
+        }
+      ]
+    },
+    {
+      "start": 49.22,
+      "end": 50.0,
+      "text": "that line, it",
+      "words": [
+        {
+          "t": 49.22,
+          "text": "that"
+        },
+        {
+          "t": 49.5,
+          "text": "line,"
+        },
+        {
+          "t": 49.92,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 50.0,
+      "end": 50.78,
+      "text": "shows up twice.",
+      "words": [
+        {
+          "t": 50.0,
+          "text": "shows"
+        },
+        {
+          "t": 50.2,
+          "text": "up"
+        },
+        {
+          "t": 50.42,
+          "text": "twice."
+        }
+      ]
+    },
+    {
+      "start": 51.0,
+      "end": 51.4,
+      "text": "Once at the",
+      "words": [
+        {
+          "t": 51.0,
+          "text": "Once"
+        },
+        {
+          "t": 51.14,
+          "text": "at"
+        },
+        {
+          "t": 51.3,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 51.4,
+      "end": 52.26,
+      "text": "factory, once at",
+      "words": [
+        {
+          "t": 51.4,
+          "text": "factory,"
+        },
+        {
+          "t": 51.98,
+          "text": "once"
+        },
+        {
+          "t": 52.1,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 52.26,
+      "end": 52.62,
+      "text": "your door.",
+      "words": [
+        {
+          "t": 52.26,
+          "text": "your"
+        },
+        {
+          "t": 52.42,
+          "text": "door."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "format": "news",
+  "script": "Your brand-new iPhone 18 Pro Max already had its battery drained once, before you ever touched it.\nThat's Prepare to Ship: a setting that exists on no other iPhone.\nHere's why: this phone's battery crossed a number no iPhone has ever crossed before, twenty watt-hours, all in one cell.\nSo every unit gets discharged at the factory, then capped, until it's activated.\nTurn it on, and the limit lifts, full battery, like you'd expect.\nCompare that to Apple's own 16-inch MacBook Pro, which holds even more power and never needs this.\nIt reportedly spreads the same total across several smaller cells, each one under that line.\nOne phone, one cell. That's the entire reason.\nShip this phone again, for repair, trade-in, resale, or as a gift, and it happens all over.\nThe battery discharges under that ceiling, running warm while it does.\nBut send it in for repair, trade-in, or return, and your charge gets capped at 80 percent for two weeks after.\nRemember that line: it shows up twice, once at the factory, once at your door.",
+  "approval": {
+    "sha256": "6eef80a986f0a9d80e73ff9c05fe3b4af870c14ad756d67dbc8923705e8ae68a",
+    "approvedAt": "2026-09-21T07:53:30+00:00",
+    "words": 178,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}
