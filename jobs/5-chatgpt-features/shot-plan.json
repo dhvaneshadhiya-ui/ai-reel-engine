@@ -11,13 +11,12 @@
   "audio": "assets/5-chatgpt-features/vo.mp3",
   "shots": [
     {
-      "start_phrase": "In September 2026",
-      "line": "In September 2026, over one hundred fifty million people talk to ChatGPT out loud every week.",
-      "needs": ["September", "150", "million", "people", "talk", "ChatGPT"],
+      "start_phrase": "Over",
+      "line": "Over one hundred fifty million people talk to ChatGPT out loud every week.",
+      "needs": ["Over", "150", "million", "people", "talk", "ChatGPT"],
       "tier": "official",
       "asset_id": "logo-openai",
       "scene": {
-        "eyebrow": "September 2026",
         "headline": "Over [[150 million]] people talk to ChatGPT out loud every week",
         "blocks": [
           {
@@ -87,7 +86,7 @@
       }
     },
     {
-      "start_phrase": "Tasks are hands",
+      "start_phrase": "Tasks are hands-off",
       "line": "Tasks are hands-off too: run one-time or recurring, up to three active on free accounts. Paid plans get hourly scheduling and can watch things like Gmail for you.",
       "needs": ["Tasks", "hands", "off", "recurring", "three", "active", "free", "Gmail"],
       "tier": "official",
@@ -118,7 +117,7 @@
           }
         ],
         "moves": [
-          { "do": "show", "target": "h", "on": "Tasks are hands" },
+          { "do": "show", "target": "h", "on": "Tasks are hands-off" },
           { "do": "pill", "target": "headline", "on": "hands off" },
           { "do": "show", "target": "r", "on": "three active" },
           { "do": "highlight", "target": "r.1", "on": "free accounts" },

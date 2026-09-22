@@ -6,7 +6,7 @@ Claims ledger + search log. Product/list reel (5 ChatGPT features), format `ai-t
 
 - CLAIM: Each week, more than 150 million people talk to ChatGPT using Voice or Dictation.
   TIER: official
-  SPOKEN: "In September 2026, over one hundred fifty million people talk to ChatGPT out loud every week."
+  SPOKEN: "Over one hundred fifty million people talk to ChatGPT out loud every week."
   SRC: https://openai.com/index/introducing-gpt-live/
   VIA: OpenAI's own "Introducing GPT-Live" blog post, July 8, 2026 ("Each week, more than 150 million people talk to ChatGPT using features like Voice and Dictation.")
   SURPRISE: 78
