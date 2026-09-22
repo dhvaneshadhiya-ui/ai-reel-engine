@@ -1,0 +1,12 @@
+{
+  "script_sha256": "b1b2992704693e774fba832e7d7767d90474e6aee5ccf5b1d2a4838bbc593064",
+  "structure_sha256": "5776c68e97819febd5074449bbb96928c63c631a19a12c3dd1eb47639ee49632",
+  "findings": [
+    "  BRIDGES 1/12 sentences (8%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "CADENCE: only 1 sentence reaches 18 words (longest 18). The playbook asks for 'occasionally one long spec sentence' \u2014 with everything short, nothing reads as short. Nothing to push against.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-09-21T12:40:32+00:00"
+}

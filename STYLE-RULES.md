@@ -8838,3 +8838,81 @@ is 100% b-roll/motion-graphics with no visible presenter beat; a
 cheaper path next time a reel's plan has no avatar-visible beat is to
 skip the HeyGen video-generation step entirely and use the ElevenLabs
 audio file directly as the master audio track).
+
+## 2026-09-22 — 5-chatgpt-features: animated treatment, second full run
+
+Second reel through the animated (Carousel Playbook) treatment after
+five-free-ai-tools. 58.0s, 7 scenes (2 presenter bookends + 5 `slide` cards),
+G31 -14.5 LUFS, frame-lint clean, sfx_audibility 9/9 AUDIBLE. What it added:
+
+- **A confirmation beat can be a `spotlight` block, not just a `screen`.**
+  G70 (2-5s proof) rejected a bare `hero` card on the hook -- only `screen`,
+  `devices` or `spotlight` blocks count as proof for a `slide` scene (see
+  `_is_proof` in reel_gates.py). The hook here had no product screenshot to
+  show (the claim is a raw stat, not a UI feature), so a `spotlight` block
+  (the vendor mark with a burst-ring reveal) satisfied G70 honestly -- it is
+  still a "product reveal," just not a screenshot. Worth remembering for any
+  hook whose proof is a NUMBER rather than a UI action.
+- **A real screenshot beats a generated card, even when it needs cropping.**
+  Two official OpenAI Help Center screenshots (Memory's "Sources" panel,
+  Projects' sidebar) were used as real evidence via the `screen` block's
+  `focus` move (camera zooms into the exact detail on its spoken word -- the
+  "You love Mexican food" memory line, the "New project" entry). The Projects
+  source was a desktop capture (3324x986); per the mobile-capture policy for
+  a necessary desktop source, it was cropped to the sidebar column only
+  (397x986) rather than fit whole -- "crop and move, never fit whole" applies
+  to a still image pulled from a doc page, not only to live `tools/capture.mjs`
+  captures. The other 3 of 5 items (Voice, Tasks, Data analysis) had no
+  screenshot available anywhere (their help pages are text + embedded video
+  demos, no static UI images) -- those stayed honest labeled cards (the
+  vendor's own mark + a sourced number), never a fabricated screenshot.
+- **G24's CTA-type list doesn't know the animated format's `cta` marker.**
+  G24 checks for a `commentcta`/`endquestion`/`instacta` scene type OR
+  `scene.get("cta")` truthy -- the second branch exists exactly for a `slide`
+  CTA, so `"cta": true` on the closing scene satisfies it. Worth naming
+  explicitly here since the shot-plan template doesn't show it.
+- **A CTA slide needs its recap content shown from t=0, not near the cut.**
+  First pass anchored the CTA's summary rows on "run without you" -- the very
+  last two words of the reel -- so the rows barely rendered before the video
+  ended (dead space measured 67% by frame-lint). Moving the `show` move to
+  the CTA's opening phrase dropped it to 32%. A closing recap is read AFTER
+  the ask lands, not synced to the ask's own last word.
+- **`compile_shot_plan.py` auto-inserts SFX; hand-trim the OUTPUT, not the
+  input.** Every `slide` scene gets an automatic transition whoosh (k>0) and
+  a Pop/Core on its pill move, with no lever in shot-plan.json to suppress
+  either -- 7 scenes with 2-5 moves each produced 16 cues, over the ai-tools
+  6-9 band. Fix: let it compile once, then hand-edit `src/beats/<slug>.json`
+  directly (trim count, keep >=4 distinct files for G33) -- safe because
+  `compile_shot_plan.py` rebuilds `scenes` fresh from shot-plan.json's INPUT
+  every run and never reads its own prior output, so a later shot-plan.json
+  edit (recompile) wipes the hand-trim and it must be re-applied once, last,
+  after all shot-plan.json changes are done.
+- **Whisper digit/word mismatches break `start_phrase`/move `on` anchors
+  silently at PLAN time, not compile time.** The script spells numbers as
+  words for the TTS ("one hundred fifty million", "twenty-five"); whisper's
+  transcript writes them as digits ("150", "25"). `plan_shots.py`'s own
+  auto-anchor picker chose the spelled-out words and failed to resolve two
+  shots before a single line was hand-written. Anchors (`start_phrase` and
+  every move's `on`) must be chosen against the ACTUAL whisper transcript
+  text, never the approved script's spelling -- the compound-split matcher
+  (`_match_at`) fixes "chatgpt" vs "chat gpt" and "openai" vs "open ai"
+  automatically, but has no notion that "150" and "one hundred fifty" are
+  the same claim.
+- **G37's `len(pts) < 8` assumes exactly 4 points per speech run**, and
+  `duck_music.py` legitimately produced 7 points for 2 runs here (a boundary
+  merge where the first run starts at or near t=0 removes a leading point).
+  Treated as an accepted edge case rather than hand-padding a derived curve
+  to hit a round number -- the curve came from `duck_music.py`, unedited, and
+  is real; forcing an 8th point would have reintroduced exactly the
+  hand-typed-timing problem G37 exists to catch.
+
+Treatment: `spotlight` (hook logo reveal) + `hero` cards with a countable
+`price` field (Voice/Tasks/Data analysis -- "3" rolls up on entry) + `screen`
+blocks with a `focus` zoom (Memory/Projects, real screenshots) + a closing
+`rows` recap card (all 5 menu paths, shown from scene start so it has the
+whole CTA to read). Cover: a cropped mid-zoom Memory-scene frame (no
+presenter face, per the 2026-09-11 cover default), dark-feed contrast 18%.
+Credits: ElevenLabs one 58s take (~933 credits) covering the whole VO, HeyGen
+2 native `create_video_from_avatar` clips driven by uploaded VO slices
+(hook 6.02s, CTA 3.53s) -- no full-length avatar master generated, per the
+animated format's per-slice-only rule.
