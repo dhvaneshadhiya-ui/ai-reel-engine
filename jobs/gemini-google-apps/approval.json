@@ -1,0 +1,6 @@
+{
+  "sha256": "f305ba5bbaf6bf26aa4d27dec937a67f689f8d8f80eab8bc3658877c3e1c53a5",
+  "approvedAt": "2026-09-22T10:30:47+00:00",
+  "words": 171,
+  "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+}

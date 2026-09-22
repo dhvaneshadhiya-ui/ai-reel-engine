@@ -1,0 +1,212 @@
+{
+  "emphasis": ["free", "paid", "spring", "hands-off"],
+  "caption_corrections": {},
+  "music": true,
+  "facePlan": "bookends",
+  "format": "ai-tools",
+  "audio": "assets/gemini-google-apps/vo.mp3",
+  "shots": [
+    {
+      "start_phrase": "Right now, five",
+      "line": "Right now, five Gemini features are sitting inside apps you already have open, and most people have never touched the button.",
+      "needs": ["five", "Gemini", "features", "sitting", "inside", "apps", "already", "open", "touched", "button"],
+      "tier": "official",
+      "asset_id": "logo-gemini",
+      "scene": {
+        "headline": "5 Gemini Features [[Already Have]]",
+        "blocks": [
+          {
+            "id": "lg",
+            "kind": "logos",
+            "items": [
+              { "logo": "assets/logos/gmail.svg", "name": "Gmail", "tile": "light" },
+              { "logo": "assets/logos/google-docs.svg", "name": "Docs", "tile": "light" },
+              { "logo": "assets/logos/google-sheets.svg", "name": "Sheets", "tile": "light" },
+              { "logo": "assets/logos/google-drive.svg", "name": "Drive", "tile": "light" },
+              { "logo": "assets/logos/google-meet.svg", "name": "Meet", "tile": "light" }
+            ]
+          },
+          { "id": "q", "kind": "text", "text": "Most people have never touched the button." }
+        ],
+        "moves": [
+          { "do": "pill", "target": "headline", "on": "already have" },
+          { "do": "show", "target": "lg", "on": "apps you already have open" },
+          { "do": "show", "target": "q", "on": "never touched" }
+        ],
+        "type": "slide",
+        "hideCaptions": true,
+        "presenter": { "src": "assets/gemini-google-apps/avatar-master-hook.mp4", "from": 0.0 }
+      }
+    },
+    {
+      "start_phrase": "In Gmail, open",
+      "line": "In Gmail, open Gemini on any email and tap Summarize this email to shrink the whole thread into a short summary. That one's free, even on a personal account.",
+      "needs": ["Gmail", "open", "Gemini", "email", "Summarize", "thread", "short", "summary", "free", "personal", "account"],
+      "tier": "official",
+      "asset_id": "screen-gmail",
+      "scene": {
+        "eyebrow": "#1 · Gmail",
+        "headline": "[[Summarize]] Any Email",
+        "blocks": [
+          { "id": "scr", "kind": "screen", "width": 895, "height": 559, "src": "assets/gemini-google-apps/gmail-summarize.png", "h": 760 },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              { "k": "Access", "v": "Free", "tone": "free" },
+              { "k": "Menu", "v": "Gemini panel" }
+            ]
+          }
+        ],
+        "moves": [
+          { "do": "pill", "target": "headline", "on": "Summarize" },
+          { "do": "focus", "target": "scr", "on": "tap Summarize this email", "rect": [520, 40, 375, 320] },
+          { "do": "show", "target": "r", "on": "That one's free" },
+          { "do": "highlight", "target": "r.0", "on": "personal account" }
+        ],
+        "type": "slide"
+      }
+    },
+    {
+      "start_phrase": "Docs does something",
+      "line": "Docs does something similar: ask Gemini to summarize the page you're on, and it answers in bullets, with the sources it used.",
+      "needs": ["Docs", "similar", "summarize", "page", "bullets", "sources", "used"],
+      "tier": "official",
+      "asset_id": "screen-docs",
+      "scene": {
+        "eyebrow": "#2 · Docs",
+        "headline": "Summarizes [[With Sources]]",
+        "blocks": [
+          { "id": "scr", "kind": "screen", "width": 895, "height": 559, "src": "assets/gemini-google-apps/docs-summarize.png", "h": 760 },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              { "k": "Access", "v": "Paid plan", "tone": "cost" },
+              { "k": "Menu", "v": "Ask Gemini panel" }
+            ]
+          }
+        ],
+        "moves": [
+          { "do": "show", "target": "scr", "on": "does something similar" },
+          { "do": "pill", "target": "headline", "on": "sources" },
+          { "do": "focus", "target": "scr", "on": "summarize the page", "rect": [660, 60, 235, 370] },
+          { "do": "show", "target": "r", "on": "it used" }
+        ],
+        "type": "slide"
+      }
+    },
+    {
+      "start_phrase": "Sheets goes further",
+      "line": "Sheets goes further: ask Gemini to chart your data, and it pulls from every tab, not just the one you're on.",
+      "needs": ["Sheets", "further", "chart", "data", "pulls", "every", "tab"],
+      "tier": "official",
+      "asset_id": "screen-sheets",
+      "scene": {
+        "eyebrow": "#3 · Sheets",
+        "headline": "Charts [[Every Tab]]",
+        "blocks": [
+          { "id": "scr", "kind": "screen", "width": 895, "height": 575, "src": "assets/gemini-google-apps/sheets-chart.png", "h": 760 },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              { "k": "Access", "v": "Paid plan", "tone": "cost" },
+              { "k": "Sources", "v": "3 tabs" }
+            ]
+          }
+        ],
+        "moves": [
+          { "do": "show", "target": "scr", "on": "goes further" },
+          { "do": "pill", "target": "headline", "on": "every tab" },
+          { "do": "focus", "target": "scr", "on": "chart your data", "rect": [580, 40, 315, 290] },
+          { "do": "show", "target": "r", "on": "not just the one" }
+        ],
+        "type": "slide"
+      }
+    },
+    {
+      "start_phrase": "Drive can now",
+      "line": "Drive can now pick sources across Drive, Gmail, and Chat, then answer questions using all of them. Google only finished rolling that out this spring.",
+      "needs": ["Drive", "pick", "sources", "across", "Gmail", "Chat", "answer", "questions", "Google", "spring"],
+      "tier": "official",
+      "asset_id": "screen-drive",
+      "scene": {
+        "eyebrow": "#4 · Drive",
+        "headline": "[[New]] This Spring",
+        "blocks": [
+          { "id": "scr", "kind": "screen", "width": 2048, "height": 1199, "src": "assets/gemini-google-apps/drive-ask-gemini.png", "h": 760 },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              { "k": "Access", "v": "Paid plan", "tone": "cost" },
+              { "k": "Sources", "v": "Drive, Gmail, Chat" }
+            ]
+          }
+        ],
+        "moves": [
+          { "do": "show", "target": "scr", "on": "pick sources across" },
+          { "do": "pill", "target": "headline", "on": "this spring" },
+          { "do": "show", "target": "r", "on": "answer questions" }
+        ],
+        "type": "slide"
+      }
+    },
+    {
+      "start_phrase": "And Meet takes",
+      "line": "And Meet takes it hands-off too: click one button, and Gemini takes the notes for the whole call, worth a skim since it could get a detail wrong.",
+      "needs": ["Meet", "hands-off", "click", "button", "notes", "whole", "call", "skim", "detail", "wrong"],
+      "tier": "official",
+      "asset_id": "screen-meet",
+      "scene": {
+        "eyebrow": "#5 · Meet",
+        "headline": "[[Hands-Off]] Notes",
+        "blocks": [
+          { "id": "scr", "kind": "screen", "width": 895, "height": 563, "src": "assets/gemini-google-apps/meet-take-notes.png", "h": 760 },
+          { "id": "t", "kind": "text", "text": "An independent review caught a wrong detail -- skim it" }
+        ],
+        "moves": [
+          { "do": "pill", "target": "headline", "on": "hands-off" },
+          { "do": "focus", "target": "scr", "on": "click one button", "rect": [660, 40, 235, 260] },
+          { "do": "show", "target": "t", "on": "worth a skim" }
+        ],
+        "type": "slide"
+      }
+    },
+    {
+      "start_phrase": "Only Gmail's is",
+      "line": "Only Gmail's is free. Everything else here needs a paid Google AI or Workspace plan. Find the button, then decide if it's worth the plan.",
+      "needs": ["Only", "Gmail", "free", "Everything", "paid", "Google", "Workspace", "plan", "Find", "button", "decide", "worth"],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "headline": "[[Only One]] Is Free",
+        "headlineSize": "xl",
+        "blocks": [
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              { "k": "Gmail", "v": "Free", "tone": "free" },
+              { "k": "Docs", "v": "Paid", "tone": "cost" },
+              { "k": "Sheets", "v": "Paid", "tone": "cost" },
+              { "k": "Drive", "v": "Paid", "tone": "cost" },
+              { "k": "Meet", "v": "Paid", "tone": "cost" }
+            ]
+          },
+          { "id": "t", "kind": "text", "text": "Find the button. Then decide if it's worth the plan." }
+        ],
+        "moves": [
+          { "do": "pill", "target": "headline", "on": "Only" },
+          { "do": "show", "target": "r", "on": "Only Gmail's is free" },
+          { "do": "show", "target": "t", "on": "Find the button" }
+        ],
+        "type": "slide",
+        "cta": true,
+        "hideCaptions": true,
+        "presenter": { "src": "assets/gemini-google-apps/avatar-master-cta.mp4", "from": 0.0 }
+      }
+    }
+  ]
+}

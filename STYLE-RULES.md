@@ -8916,3 +8916,65 @@ Credits: ElevenLabs one 58s take (~933 credits) covering the whole VO, HeyGen
 2 native `create_video_from_avatar` clips driven by uploaded VO slices
 (hook 6.02s, CTA 3.53s) -- no full-length avatar master generated, per the
 animated format's per-slice-only rule.
+
+## 2026-09-22 — gemini-google-apps: a hero screenshot proves the PAGE, not the LINE
+
+**Raw note.** Research found one official Google Help Center demo image per
+feature page and treated "there's a screenshot on this page" as proof enough
+to script Docs' Refine toolbar and Sheets' formula-generation/Fix flow. Both
+lines were written, ledgered, and approved before anyone opened the live
+pages and scrolled to those specific sections.
+
+**Root cause.** A Help Center page can carry ONE animated demo GIF that
+covers only its first-listed sub-feature (Docs: Ask-Gemini summarization;
+Sheets: table creation, cycling into a chart demo) while every OTHER
+sub-feature on the same page -- including the one actually being narrated --
+is documented in click-by-click TEXT with zero illustration. `research/
+visuals.md` recorded "hero image found, URL X" per FEATURE PAGE, which reads
+as "this feature has a picture" when it only ever meant "this PAGE has a
+picture, of whichever sub-feature its one GIF happens to demonstrate."
+Caught late: after the script was approved and the VO/HeyGen credits for the
+old wording would have been spent, by loading each live page in the browser,
+searching for the narrated sub-feature's own heading (`find("Fix formula")`,
+`find("Refine")`), and checking whether an `<img>` actually sits under it --
+Sheets had 0 images over 100px anywhere except the one table/chart GIF;
+"Refine" and "Fix formula errors" are text-only `<li>` steps on both pages.
+
+**Distilled rule.** A "hero image found" note in `research/visuals.md` is a
+PAGE-level fact, not a per-feature one. Before a script line is written
+against it, open the live page and confirm an `<img>` exists specifically
+under THAT sub-feature's own heading -- run `document.images` filtered to
+`naturalWidth > 100` in the browser and read each `alt` text, don't trust
+the page's single largest embed to represent every claim the page could
+support. When it doesn't exist, either swap the line to the sub-feature the
+page's own demo actually completes on screen (used here: Docs moved from
+Refine to summarize-with-Sources, Sheets from formula/Fix to multi-tab
+chart generation -- both real, sourced, ledgered, just not the original
+pick) or capture the feature independently. Cheaper to catch at the
+research pass than after approval: this repo's gates (G27, the humanizer
+hash) exist to make a post-approval rewrite cost a re-propose/re-approve
+cycle on purpose, and it did, here.
+
+**Second, smaller catch, same session: the COVER needs the honesty check
+too, not just the narration.** `make_thumbnail.py --line2 "ALREADY FREE"`
+rendered without any tool objecting -- the checker validates that on-screen
+NUMBERS trace to the ledger, not that a claim's LOGIC holds, and "5 features
+already free" is a plain overclaim when the ledger says 4 of 5 are paid.
+Caught only because the rendered cover was read by eye before shipping, the
+same discipline AGENT.md already prescribes for every frame of the reel
+itself. Fixed to "5 FEATURES / 1 IS FREE" -- the honest twist, and a
+stronger hook than the overclaim it replaced. Nothing currently checks a
+cover's word-level claims the way `research_check.py` checks a script's;
+worth a future gate, noted rather than built here.
+
+Treatment: `logos` block (5 Google-app marks, hook) + five `screen` blocks
+with a `focus` zoom onto each official Help Center screenshot, all captured
+as still frames from Google's own embedded demo GIFs (`ffmpeg -vf select`
+frame-picked to the moment each demo completes, not frame 0) + a closing
+`rows` recap card naming free/paid per app, shown from scene start. Cover: a
+cropped Gmail-scene frame (no presenter face, per the 2026-09-11 default),
+dark-feed contrast 18%. Credits: ElevenLabs one 67s take covering the whole
+VO (padded from a 49.8s raw read via `vo_pad.py`, never time-stretched),
+HeyGen 2 native `create_video_from_avatar` clips driven by uploaded VO
+slices (hook 7.16s, CTA 9.68s) -- no full-length avatar master generated,
+per the animated format's per-slice-only rule.
