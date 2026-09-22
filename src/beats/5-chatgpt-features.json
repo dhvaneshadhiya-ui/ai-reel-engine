@@ -14,33 +14,38 @@
   ],
   "scenes": [
     {
-      "headline": "Over [[150 million]] people talk to ChatGPT out loud every week",
+      "headline": "5 ChatGPT Features You're Probably [[Not Using]]",
       "blocks": [
         {
           "id": "sp",
           "kind": "spotlight",
           "logo": "assets/logos/openai.svg",
-          "name": "ChatGPT",
-          "note": "150M people talk to it, every week"
+          "name": "ChatGPT"
         },
         {
           "id": "q",
           "kind": "text",
-          "text": "That's Voice and Dictation, combined"
+          "text": "150M people talk to it, out loud, every week"
         }
       ],
       "moves": [
         {
           "do": "pill",
           "target": "headline",
-          "on": "150 million",
-          "at": 0.32
+          "on": "not using",
+          "at": 1.96
+        },
+        {
+          "do": "show",
+          "target": "sp",
+          "on": "chatgpt features",
+          "at": 0.26
         },
         {
           "do": "show",
           "target": "q",
-          "on": "out loud every week",
-          "at": 3.18
+          "on": "150 million",
+          "at": 3.72
         }
       ],
       "type": "slide",
@@ -49,15 +54,20 @@
         "src": "assets/5-chatgpt-features/avatar-master-hook.mp4",
         "from": 0.0
       },
-      "durationSec": 5.04,
+      "durationSec": 8.44,
       "assetId": "logo-openai",
       "claimId": "logo-openai",
-      "covers": "Over",
+      "covers": "Five",
       "sourceUrl": "https://openai.com",
       "sfx": [
         {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 0.18,
+          "vol": 1.0
+        },
+        {
           "src": "sfx/Pop.MP3",
-          "at": 0.29,
+          "at": 1.93,
           "vol": 0.343
         }
       ]
@@ -98,35 +108,35 @@
           "do": "show",
           "target": "h",
           "on": "stick around",
-          "at": 1.14
+          "at": 1.12
         },
         {
           "do": "show",
           "target": "r",
           "on": "other four live",
-          "at": 2.5
+          "at": 2.56
         },
         {
           "do": "highlight",
           "target": "r.0",
           "on": "this July",
-          "at": 5.46
+          "at": 5.28
         },
         {
           "do": "pill",
           "target": "headline",
           "on": "full duplex",
-          "at": 6.58
+          "at": 6.26
         },
         {
           "do": "highlight",
           "target": "r.1",
           "on": "talking at once",
-          "at": 8.58
+          "at": 8.26
         }
       ],
       "type": "slide",
-      "durationSec": 10.12,
+      "durationSec": 9.74,
       "assetId": "logo-openai",
       "claimId": "logo-openai",
       "covers": "If that's not you",
@@ -135,13 +145,8 @@
       "captionBottom": 422,
       "sfx": [
         {
-          "src": "sfx/whoosh.MP3",
-          "at": 0.0,
-          "vol": 0.582
-        },
-        {
           "src": "sfx/Pop.MP3",
-          "at": 6.55,
+          "at": 6.23,
           "vol": 0.343
         }
       ]
@@ -188,29 +193,29 @@
           "do": "pill",
           "target": "headline",
           "on": "hands off",
-          "at": 0.6
+          "at": 0.48
         },
         {
           "do": "show",
           "target": "r",
           "on": "three active",
-          "at": 3.68
+          "at": 4.08
         },
         {
           "do": "highlight",
           "target": "r.1",
           "on": "free accounts",
-          "at": 4.68
+          "at": 4.92
         },
         {
           "do": "highlight",
           "target": "r.0",
           "on": "watch things",
-          "at": 8.2
+          "at": 8.32
         }
       ],
       "type": "slide",
-      "durationSec": 10.46,
+      "durationSec": 10.38,
       "assetId": "logo-openai",
       "claimId": "logo-openai",
       "covers": "Tasks are hands-off",
@@ -220,7 +225,7 @@
       "sfx": [
         {
           "src": "sfx/Pop.MP3",
-          "at": 0.57,
+          "at": 0.45,
           "vol": 0.343
         }
       ]
@@ -248,7 +253,7 @@
           "do": "pill",
           "target": "headline",
           "on": "wait to be asked",
-          "at": 0.6
+          "at": 0.8
         },
         {
           "do": "focus",
@@ -260,17 +265,17 @@
             750,
             150
           ],
-          "at": 2.0
+          "at": 2.4
         },
         {
           "do": "show",
           "target": "t",
           "on": "this June",
-          "at": 4.6
+          "at": 4.82
         }
       ],
       "type": "slide",
-      "durationSec": 8.04,
+      "durationSec": 8.26,
       "assetId": "screen-memory",
       "claimId": "screen-memory",
       "covers": "Memory doesn't wait",
@@ -280,7 +285,7 @@
       "sfx": [
         {
           "src": "sfx-action/lens-zoom.mp3",
-          "at": 1.6,
+          "at": 2.0,
           "vol": 1.0
         }
       ]
@@ -327,7 +332,7 @@
           "do": "pill",
           "target": "headline",
           "on": "automatically",
-          "at": 1.22
+          "at": 1.1
         },
         {
           "do": "show",
@@ -339,17 +344,17 @@
           "do": "highlight",
           "target": "r.1",
           "on": "a chart",
-          "at": 4.7
+          "at": 4.68
         },
         {
           "do": "highlight",
           "target": "r.0",
           "on": "three uploads",
-          "at": 7.34
+          "at": 7.3
         }
       ],
       "type": "slide",
-      "durationSec": 8.34,
+      "durationSec": 8.32,
       "assetId": "logo-openai",
       "claimId": "logo-openai",
       "covers": "Data analysis works",
@@ -359,7 +364,7 @@
       "sfx": [
         {
           "src": "sfx/Pop.MP3",
-          "at": 1.19,
+          "at": 1.07,
           "vol": 0.343
         }
       ]
@@ -396,7 +401,7 @@
           "do": "pill",
           "target": "headline",
           "on": "pulls it together",
-          "at": 0.98
+          "at": 0.88
         },
         {
           "do": "focus",
@@ -408,29 +413,29 @@
             397,
             100
           ],
-          "at": 4.2
+          "at": 4.26
         },
         {
           "do": "show",
           "target": "r",
           "on": "Free gets five",
-          "at": 8.48
+          "at": 8.74
         },
         {
           "do": "highlight",
           "target": "r.0",
           "on": "five files",
-          "at": 9.04
+          "at": 9.32
         },
         {
           "do": "highlight",
           "target": "r.1",
           "on": "plus 25",
-          "at": 9.86
+          "at": 10.2
         }
       ],
       "type": "slide",
-      "durationSec": 11.06,
+      "durationSec": 11.44,
       "assetId": "screen-projects",
       "claimId": "screen-projects",
       "covers": "And projects pulls",
@@ -445,7 +450,7 @@
         },
         {
           "src": "sfx/Core.MP3",
-          "at": 0.93,
+          "at": 0.83,
           "vol": 0.556
         }
       ]
@@ -503,7 +508,7 @@
           "do": "show",
           "target": "t",
           "on": "open settings",
-          "at": 1.7
+          "at": 1.1
         }
       ],
       "type": "slide",
@@ -513,7 +518,7 @@
         "src": "assets/5-chatgpt-features/avatar-master-cta.mp4",
         "from": 0.0
       },
-      "durationSec": 3.94,
+      "durationSec": 3.42,
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",
@@ -526,912 +531,961 @@
   "captions": [
     {
       "start": 0.0,
-      "end": 1.44,
-      "text": "Over 150 million",
+      "end": 1.14,
+      "text": "five ChatGPT features",
       "words": [
         {
           "t": 0.0,
-          "text": "Over"
-        },
-        {
-          "t": 0.32,
-          "text": "150"
-        },
-        {
-          "t": 1.08,
-          "text": "million"
-        }
-      ]
-    },
-    {
-      "start": 1.44,
-      "end": 2.42,
-      "text": "people talk to",
-      "words": [
-        {
-          "t": 1.44,
-          "text": "people"
-        },
-        {
-          "t": 1.8,
-          "text": "talk"
-        },
-        {
-          "t": 2.24,
-          "text": "to"
-        }
-      ]
-    },
-    {
-      "start": 2.42,
-      "end": 3.74,
-      "text": "ChatGPT out loud",
-      "words": [
-        {
-          "t": 2.42,
-          "text": "ChatGPT"
-        },
-        {
-          "t": 3.18,
-          "text": "out"
-        },
-        {
-          "t": 3.44,
-          "text": "loud"
-        }
-      ]
-    },
-    {
-      "start": 3.74,
-      "end": 5.16,
-      "text": "every week. If",
-      "words": [
-        {
-          "t": 3.74,
-          "text": "every"
-        },
-        {
-          "t": 4.2,
-          "text": "week."
-        },
-        {
-          "t": 5.04,
-          "text": "If"
-        }
-      ]
-    },
-    {
-      "start": 5.16,
-      "end": 5.86,
-      "text": "that's not you,",
-      "words": [
-        {
-          "t": 5.16,
-          "text": "that's"
-        },
-        {
-          "t": 5.46,
-          "text": "not"
-        },
-        {
-          "t": 5.58,
-          "text": "you,"
-        }
-      ]
-    },
-    {
-      "start": 6.18,
-      "end": 7.54,
-      "text": "stick around. The",
-      "words": [
-        {
-          "t": 6.18,
-          "text": "stick"
-        },
-        {
-          "t": 6.44,
-          "text": "around."
-        },
-        {
-          "t": 7.44,
-          "text": "The"
-        }
-      ]
-    },
-    {
-      "start": 7.54,
-      "end": 8.3,
-      "text": "other four live",
-      "words": [
-        {
-          "t": 7.54,
-          "text": "other"
-        },
-        {
-          "t": 7.76,
-          "text": "four"
-        },
-        {
-          "t": 8.02,
-          "text": "live"
-        }
-      ]
-    },
-    {
-      "start": 8.3,
-      "end": 9.06,
-      "text": "in settings too.",
-      "words": [
-        {
-          "t": 8.3,
-          "text": "in"
-        },
-        {
-          "t": 8.42,
-          "text": "settings"
-        },
-        {
-          "t": 8.64,
-          "text": "too."
-        }
-      ]
-    },
-    {
-      "start": 9.6,
-      "end": 10.5,
-      "text": "Voice got rebuilt",
-      "words": [
-        {
-          "t": 9.6,
-          "text": "Voice"
-        },
-        {
-          "t": 9.88,
-          "text": "got"
-        },
-        {
-          "t": 10.14,
-          "text": "rebuilt"
-        }
-      ]
-    },
-    {
-      "start": 10.5,
-      "end": 11.62,
-      "text": "this July into",
-      "words": [
-        {
-          "t": 10.5,
-          "text": "this"
-        },
-        {
-          "t": 10.9,
-          "text": "July"
-        },
-        {
-          "t": 11.3,
-          "text": "into"
-        }
-      ]
-    },
-    {
-      "start": 11.62,
-      "end": 13.28,
-      "text": "full duplex, listening",
-      "words": [
-        {
-          "t": 11.62,
-          "text": "full"
-        },
-        {
-          "t": 11.92,
-          "text": "duplex,"
-        },
-        {
-          "t": 12.86,
-          "text": "listening"
-        }
-      ]
-    },
-    {
-      "start": 13.28,
-      "end": 14.2,
-      "text": "and talking at",
-      "words": [
-        {
-          "t": 13.28,
-          "text": "and"
-        },
-        {
-          "t": 13.62,
-          "text": "talking"
-        },
-        {
-          "t": 13.94,
-          "text": "at"
-        }
-      ]
-    },
-    {
-      "start": 14.2,
-      "end": 15.76,
-      "text": "once. Tasks are",
-      "words": [
-        {
-          "t": 14.2,
-          "text": "once."
-        },
-        {
-          "t": 15.16,
-          "text": "Tasks"
-        },
-        {
-          "t": 15.48,
-          "text": "are"
-        }
-      ]
-    },
-    {
-      "start": 15.76,
-      "end": 17.24,
-      "text": "hands-off too. Run",
-      "words": [
-        {
-          "t": 15.76,
-          "text": "hands-off"
-        },
-        {
-          "t": 16.22,
-          "text": "too."
-        },
-        {
-          "t": 17.04,
-          "text": "Run"
-        }
-      ]
-    },
-    {
-      "start": 17.24,
-      "end": 18.02,
-      "text": "one time or",
-      "words": [
-        {
-          "t": 17.24,
-          "text": "one"
-        },
-        {
-          "t": 17.5,
-          "text": "time"
-        },
-        {
-          "t": 17.8,
-          "text": "or"
-        }
-      ]
-    },
-    {
-      "start": 18.02,
-      "end": 18.84,
-      "text": "recurring up to",
-      "words": [
-        {
-          "t": 18.02,
-          "text": "recurring"
-        },
-        {
-          "t": 18.4,
-          "text": "up"
-        },
-        {
-          "t": 18.7,
-          "text": "to"
-        }
-      ]
-    },
-    {
-      "start": 18.84,
-      "end": 19.84,
-      "text": "three active on",
-      "words": [
-        {
-          "t": 18.84,
-          "text": "three"
-        },
-        {
-          "t": 19.12,
-          "text": "active"
-        },
-        {
-          "t": 19.58,
-          "text": "on"
-        }
-      ]
-    },
-    {
-      "start": 19.84,
-      "end": 21.42,
-      "text": "free accounts. Paid",
-      "words": [
-        {
-          "t": 19.84,
-          "text": "free"
-        },
-        {
-          "t": 20.06,
-          "text": "accounts."
-        },
-        {
-          "t": 21.06,
-          "text": "Paid"
-        }
-      ]
-    },
-    {
-      "start": 21.42,
-      "end": 22.34,
-      "text": "plans get hourly",
-      "words": [
-        {
-          "t": 21.42,
-          "text": "plans"
-        },
-        {
-          "t": 21.7,
-          "text": "get"
-        },
-        {
-          "t": 21.96,
-          "text": "hourly"
-        }
-      ]
-    },
-    {
-      "start": 22.34,
-      "end": 23.36,
-      "text": "scheduling and can",
-      "words": [
-        {
-          "t": 22.34,
-          "text": "scheduling"
-        },
-        {
-          "t": 22.8,
-          "text": "and"
-        },
-        {
-          "t": 23.22,
-          "text": "can"
-        }
-      ]
-    },
-    {
-      "start": 23.36,
-      "end": 24.28,
-      "text": "watch things like",
-      "words": [
-        {
-          "t": 23.36,
-          "text": "watch"
-        },
-        {
-          "t": 23.66,
-          "text": "things"
-        },
-        {
-          "t": 24.02,
-          "text": "like"
-        }
-      ]
-    },
-    {
-      "start": 24.28,
-      "end": 25.1,
-      "text": "Gmail for you.",
-      "words": [
-        {
-          "t": 24.28,
-          "text": "Gmail"
-        },
-        {
-          "t": 24.58,
-          "text": "for"
-        },
-        {
-          "t": 24.9,
-          "text": "you."
-        }
-      ]
-    },
-    {
-      "start": 25.62,
-      "end": 26.4,
-      "text": "Memory doesn't wait",
-      "words": [
-        {
-          "t": 25.62,
-          "text": "Memory"
-        },
-        {
-          "t": 25.84,
-          "text": "doesn't"
-        },
-        {
-          "t": 26.22,
-          "text": "wait"
-        }
-      ]
-    },
-    {
-      "start": 26.4,
-      "end": 27.06,
-      "text": "to be asked.",
-      "words": [
-        {
-          "t": 26.4,
-          "text": "to"
-        },
-        {
-          "t": 26.56,
-          "text": "be"
-        },
-        {
-          "t": 26.68,
-          "text": "asked."
-        }
-      ]
-    },
-    {
-      "start": 27.06,
-      "end": 28.38,
-      "text": "It remembers you",
-      "words": [
-        {
-          "t": 27.06,
-          "text": "It"
-        },
-        {
-          "t": 27.62,
-          "text": "remembers"
-        },
-        {
-          "t": 27.98,
-          "text": "you"
-        }
-      ]
-    },
-    {
-      "start": 28.38,
-      "end": 29.48,
-      "text": "across every chat.",
-      "words": [
-        {
-          "t": 28.38,
-          "text": "across"
-        },
-        {
-          "t": 28.68,
-          "text": "every"
-        },
-        {
-          "t": 29.12,
-          "text": "chat."
-        }
-      ]
-    },
-    {
-      "start": 30.1,
-      "end": 30.84,
-      "text": "And this June,",
-      "words": [
-        {
-          "t": 30.1,
-          "text": "And"
-        },
-        {
-          "t": 30.22,
-          "text": "this"
-        },
-        {
-          "t": 30.46,
-          "text": "June,"
-        }
-      ]
-    },
-    {
-      "start": 31.0,
-      "end": 32.0,
-      "text": "OpenAI opened it",
-      "words": [
-        {
-          "t": 31.0,
-          "text": "OpenAI"
-        },
-        {
-          "t": 31.36,
-          "text": "opened"
-        },
-        {
-          "t": 31.78,
-          "text": "it"
-        }
-      ]
-    },
-    {
-      "start": 32.0,
-      "end": 32.78,
-      "text": "to free accounts",
-      "words": [
-        {
-          "t": 32.0,
-          "text": "to"
-        },
-        {
-          "t": 32.16,
-          "text": "free"
-        },
-        {
-          "t": 32.4,
-          "text": "accounts"
-        }
-      ]
-    },
-    {
-      "start": 32.78,
-      "end": 33.94,
-      "text": "as well. Data",
-      "words": [
-        {
-          "t": 32.78,
-          "text": "as"
-        },
-        {
-          "t": 33.0,
-          "text": "well."
-        },
-        {
-          "t": 33.66,
-          "text": "Data"
-        }
-      ]
-    },
-    {
-      "start": 33.94,
-      "end": 35.64,
-      "text": "analysis works automatically.",
-      "words": [
-        {
-          "t": 33.94,
-          "text": "analysis"
-        },
-        {
-          "t": 34.46,
-          "text": "works"
-        },
-        {
-          "t": 34.88,
-          "text": "automatically."
-        }
-      ]
-    },
-    {
-      "start": 36.16,
-      "end": 36.7,
-      "text": "Drop in a",
-      "words": [
-        {
-          "t": 36.16,
-          "text": "Drop"
-        },
-        {
-          "t": 36.44,
-          "text": "in"
-        },
-        {
-          "t": 36.6,
-          "text": "a"
-        }
-      ]
-    },
-    {
-      "start": 36.7,
-      "end": 38.14,
-      "text": "spreadsheet, get code,",
-      "words": [
-        {
-          "t": 36.7,
-          "text": "spreadsheet,"
-        },
-        {
-          "t": 37.62,
-          "text": "get"
-        },
-        {
-          "t": 37.8,
-          "text": "code,"
-        }
-      ]
-    },
-    {
-      "start": 38.36,
-      "end": 39.24,
-      "text": "a chart and",
-      "words": [
-        {
-          "t": 38.36,
-          "text": "a"
-        },
-        {
-          "t": 38.48,
-          "text": "chart"
-        },
-        {
-          "t": 38.74,
-          "text": "and"
-        }
-      ]
-    },
-    {
-      "start": 39.24,
-      "end": 41.0,
-      "text": "answers. Free gets",
-      "words": [
-        {
-          "t": 39.24,
-          "text": "answers."
-        },
-        {
-          "t": 40.32,
-          "text": "Free"
-        },
-        {
-          "t": 40.58,
-          "text": "gets"
-        }
-      ]
-    },
-    {
-      "start": 41.0,
-      "end": 41.82,
-      "text": "three uploads a",
-      "words": [
-        {
-          "t": 41.0,
-          "text": "three"
-        },
-        {
-          "t": 41.28,
-          "text": "uploads"
-        },
-        {
-          "t": 41.64,
-          "text": "a"
-        }
-      ]
-    },
-    {
-      "start": 41.82,
-      "end": 42.98,
-      "text": "day and projects",
-      "words": [
-        {
-          "t": 41.82,
-          "text": "day"
-        },
-        {
-          "t": 42.0,
-          "text": "and"
-        },
-        {
-          "t": 42.58,
-          "text": "projects"
-        }
-      ]
-    },
-    {
-      "start": 42.98,
-      "end": 43.84,
-      "text": "pulls it together.",
-      "words": [
-        {
-          "t": 42.98,
-          "text": "pulls"
-        },
-        {
-          "t": 43.34,
-          "text": "it"
-        },
-        {
-          "t": 43.52,
-          "text": "together."
-        }
-      ]
-    },
-    {
-      "start": 44.42,
-      "end": 45.78,
-      "text": "Chats, files and",
-      "words": [
-        {
-          "t": 44.42,
-          "text": "Chats,"
-        },
-        {
-          "t": 45.06,
-          "text": "files"
-        },
-        {
-          "t": 45.48,
-          "text": "and"
-        }
-      ]
-    },
-    {
-      "start": 45.78,
-      "end": 46.88,
-      "text": "instructions in one",
-      "words": [
-        {
-          "t": 45.78,
-          "text": "instructions"
-        },
-        {
-          "t": 46.2,
-          "text": "in"
-        },
-        {
-          "t": 46.66,
-          "text": "one"
-        }
-      ]
-    },
-    {
-      "start": 46.88,
-      "end": 48.68,
-      "text": "space. So ChatGPT",
-      "words": [
-        {
-          "t": 46.88,
-          "text": "space."
-        },
-        {
-          "t": 47.52,
-          "text": "So"
-        },
-        {
-          "t": 47.82,
-          "text": "ChatGPT"
-        }
-      ]
-    },
-    {
-      "start": 48.68,
-      "end": 49.7,
-      "text": "stops starting from",
-      "words": [
-        {
-          "t": 48.68,
-          "text": "stops"
-        },
-        {
-          "t": 49.0,
-          "text": "starting"
-        },
-        {
-          "t": 49.44,
-          "text": "from"
-        }
-      ]
-    },
-    {
-      "start": 49.7,
-      "end": 51.04,
-      "text": "zero. Free gets",
-      "words": [
-        {
-          "t": 49.7,
-          "text": "zero."
-        },
-        {
-          "t": 50.48,
-          "text": "Free"
-        },
-        {
-          "t": 50.76,
-          "text": "gets"
-        }
-      ]
-    },
-    {
-      "start": 51.04,
-      "end": 52.46,
-      "text": "five files plus",
-      "words": [
-        {
-          "t": 51.04,
           "text": "five"
         },
         {
-          "t": 51.34,
-          "text": "files"
+          "t": 0.26,
+          "text": "ChatGPT"
         },
         {
-          "t": 51.86,
-          "text": "plus"
+          "t": 0.84,
+          "text": "features"
         }
       ]
     },
     {
-      "start": 52.46,
-      "end": 54.42,
-      "text": "25. Save this,",
+      "start": 1.14,
+      "end": 2.18,
+      "text": "you're probably not",
       "words": [
         {
-          "t": 52.46,
-          "text": "25."
+          "t": 1.14,
+          "text": "you're"
         },
         {
-          "t": 53.06,
-          "text": "Save"
+          "t": 1.62,
+          "text": "probably"
         },
         {
-          "t": 54.1,
-          "text": "this,"
+          "t": 1.96,
+          "text": "not"
         }
       ]
     },
     {
-      "start": 54.7,
-      "end": 55.4,
-      "text": "then open settings",
+      "start": 2.18,
+      "end": 4.36,
+      "text": "using. Over 150",
       "words": [
         {
-          "t": 54.7,
-          "text": "then"
+          "t": 2.18,
+          "text": "using."
         },
         {
-          "t": 54.76,
-          "text": "open"
+          "t": 3.12,
+          "text": "Over"
         },
         {
-          "t": 55.02,
+          "t": 3.72,
+          "text": "150"
+        }
+      ]
+    },
+    {
+      "start": 4.36,
+      "end": 5.44,
+      "text": "million people talk",
+      "words": [
+        {
+          "t": 4.36,
+          "text": "million"
+        },
+        {
+          "t": 4.68,
+          "text": "people"
+        },
+        {
+          "t": 5.06,
+          "text": "talk"
+        }
+      ]
+    },
+    {
+      "start": 5.44,
+      "end": 6.5,
+      "text": "to ChatGPT out",
+      "words": [
+        {
+          "t": 5.44,
+          "text": "to"
+        },
+        {
+          "t": 5.62,
+          "text": "ChatGPT"
+        },
+        {
+          "t": 6.26,
+          "text": "out"
+        }
+      ]
+    },
+    {
+      "start": 6.5,
+      "end": 7.94,
+      "text": "loud every week.",
+      "words": [
+        {
+          "t": 6.5,
+          "text": "loud"
+        },
+        {
+          "t": 6.8,
+          "text": "every"
+        },
+        {
+          "t": 7.6,
+          "text": "week."
+        }
+      ]
+    },
+    {
+      "start": 8.44,
+      "end": 9.04,
+      "text": "If that's not",
+      "words": [
+        {
+          "t": 8.44,
+          "text": "If"
+        },
+        {
+          "t": 8.6,
+          "text": "that's"
+        },
+        {
+          "t": 8.92,
+          "text": "not"
+        }
+      ]
+    },
+    {
+      "start": 9.04,
+      "end": 10.08,
+      "text": "you, stick around.",
+      "words": [
+        {
+          "t": 9.04,
+          "text": "you,"
+        },
+        {
+          "t": 9.56,
+          "text": "stick"
+        },
+        {
+          "t": 9.76,
+          "text": "around."
+        }
+      ]
+    },
+    {
+      "start": 10.92,
+      "end": 11.38,
+      "text": "The other four",
+      "words": [
+        {
+          "t": 10.92,
+          "text": "The"
+        },
+        {
+          "t": 11.0,
+          "text": "other"
+        },
+        {
+          "t": 11.18,
+          "text": "four"
+        }
+      ]
+    },
+    {
+      "start": 11.38,
+      "end": 12.08,
+      "text": "live in settings",
+      "words": [
+        {
+          "t": 11.38,
+          "text": "live"
+        },
+        {
+          "t": 11.66,
+          "text": "in"
+        },
+        {
+          "t": 11.88,
           "text": "settings"
         }
       ]
     },
     {
-      "start": 55.4,
-      "end": 56.12,
-      "text": "and let them",
+      "start": 12.08,
+      "end": 13.42,
+      "text": "too. Voice got",
       "words": [
         {
-          "t": 55.4,
-          "text": "and"
+          "t": 12.08,
+          "text": "too."
         },
         {
-          "t": 55.78,
-          "text": "let"
+          "t": 13.04,
+          "text": "Voice"
         },
         {
-          "t": 55.94,
-          "text": "them"
+          "t": 13.22,
+          "text": "got"
         }
       ]
     },
     {
-      "start": 56.12,
-      "end": 56.94,
-      "text": "run without you.",
+      "start": 13.42,
+      "end": 14.38,
+      "text": "rebuilt this July",
       "words": [
         {
-          "t": 56.12,
+          "t": 13.42,
+          "text": "rebuilt"
+        },
+        {
+          "t": 13.72,
+          "text": "this"
+        },
+        {
+          "t": 14.04,
+          "text": "July"
+        }
+      ]
+    },
+    {
+      "start": 14.38,
+      "end": 15.44,
+      "text": "into full duplex,",
+      "words": [
+        {
+          "t": 14.38,
+          "text": "into"
+        },
+        {
+          "t": 14.7,
+          "text": "full"
+        },
+        {
+          "t": 15.02,
+          "text": "duplex,"
+        }
+      ]
+    },
+    {
+      "start": 16.0,
+      "end": 16.96,
+      "text": "listening and talking",
+      "words": [
+        {
+          "t": 16.0,
+          "text": "listening"
+        },
+        {
+          "t": 16.4,
+          "text": "and"
+        },
+        {
+          "t": 16.7,
+          "text": "talking"
+        }
+      ]
+    },
+    {
+      "start": 16.96,
+      "end": 18.5,
+      "text": "at once. Tasks",
+      "words": [
+        {
+          "t": 16.96,
+          "text": "at"
+        },
+        {
+          "t": 17.18,
+          "text": "once."
+        },
+        {
+          "t": 18.18,
+          "text": "Tasks"
+        }
+      ]
+    },
+    {
+      "start": 18.5,
+      "end": 19.34,
+      "text": "are hands-off too.",
+      "words": [
+        {
+          "t": 18.5,
+          "text": "are"
+        },
+        {
+          "t": 18.66,
+          "text": "hands-off"
+        },
+        {
+          "t": 19.06,
+          "text": "too."
+        }
+      ]
+    },
+    {
+      "start": 19.96,
+      "end": 20.7,
+      "text": "Run one time",
+      "words": [
+        {
+          "t": 19.96,
+          "text": "Run"
+        },
+        {
+          "t": 20.14,
+          "text": "one"
+        },
+        {
+          "t": 20.4,
+          "text": "time"
+        }
+      ]
+    },
+    {
+      "start": 20.7,
+      "end": 22.14,
+      "text": "or recurring, up",
+      "words": [
+        {
+          "t": 20.7,
+          "text": "or"
+        },
+        {
+          "t": 20.92,
+          "text": "recurring,"
+        },
+        {
+          "t": 22.02,
+          "text": "up"
+        }
+      ]
+    },
+    {
+      "start": 22.14,
+      "end": 22.92,
+      "text": "to three active",
+      "words": [
+        {
+          "t": 22.14,
+          "text": "to"
+        },
+        {
+          "t": 22.26,
+          "text": "three"
+        },
+        {
+          "t": 22.54,
+          "text": "active"
+        }
+      ]
+    },
+    {
+      "start": 22.92,
+      "end": 23.72,
+      "text": "on free accounts.",
+      "words": [
+        {
+          "t": 22.92,
+          "text": "on"
+        },
+        {
+          "t": 23.1,
+          "text": "free"
+        },
+        {
+          "t": 23.32,
+          "text": "accounts."
+        }
+      ]
+    },
+    {
+      "start": 24.4,
+      "end": 25.24,
+      "text": "Paid plans get",
+      "words": [
+        {
+          "t": 24.4,
+          "text": "Paid"
+        },
+        {
+          "t": 24.72,
+          "text": "plans"
+        },
+        {
+          "t": 25.0,
+          "text": "get"
+        }
+      ]
+    },
+    {
+      "start": 25.24,
+      "end": 26.34,
+      "text": "hourly scheduling and",
+      "words": [
+        {
+          "t": 25.24,
+          "text": "hourly"
+        },
+        {
+          "t": 25.58,
+          "text": "scheduling"
+        },
+        {
+          "t": 25.9,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 26.34,
+      "end": 27.02,
+      "text": "can watch things",
+      "words": [
+        {
+          "t": 26.34,
+          "text": "can"
+        },
+        {
+          "t": 26.5,
+          "text": "watch"
+        },
+        {
+          "t": 26.76,
+          "text": "things"
+        }
+      ]
+    },
+    {
+      "start": 27.02,
+      "end": 27.84,
+      "text": "like Gmail for",
+      "words": [
+        {
+          "t": 27.02,
+          "text": "like"
+        },
+        {
+          "t": 27.26,
+          "text": "Gmail"
+        },
+        {
+          "t": 27.52,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 27.84,
+      "end": 29.36,
+      "text": "you. Memory doesn't",
+      "words": [
+        {
+          "t": 27.84,
+          "text": "you."
+        },
+        {
+          "t": 28.56,
+          "text": "Memory"
+        },
+        {
+          "t": 28.88,
+          "text": "doesn't"
+        }
+      ]
+    },
+    {
+      "start": 29.36,
+      "end": 29.82,
+      "text": "wait to be",
+      "words": [
+        {
+          "t": 29.36,
+          "text": "wait"
+        },
+        {
+          "t": 29.54,
+          "text": "to"
+        },
+        {
+          "t": 29.68,
+          "text": "be"
+        }
+      ]
+    },
+    {
+      "start": 29.82,
+      "end": 31.26,
+      "text": "asked. It remembers",
+      "words": [
+        {
+          "t": 29.82,
+          "text": "asked."
+        },
+        {
+          "t": 30.84,
+          "text": "It"
+        },
+        {
+          "t": 30.96,
+          "text": "remembers"
+        }
+      ]
+    },
+    {
+      "start": 31.26,
+      "end": 32.28,
+      "text": "you across every",
+      "words": [
+        {
+          "t": 31.26,
+          "text": "you"
+        },
+        {
+          "t": 31.54,
+          "text": "across"
+        },
+        {
+          "t": 31.82,
+          "text": "every"
+        }
+      ]
+    },
+    {
+      "start": 32.28,
+      "end": 33.58,
+      "text": "chat. And this",
+      "words": [
+        {
+          "t": 32.28,
+          "text": "chat."
+        },
+        {
+          "t": 33.22,
+          "text": "And"
+        },
+        {
+          "t": 33.38,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 33.58,
+      "end": 34.8,
+      "text": "June, OpenAI opened",
+      "words": [
+        {
+          "t": 33.58,
+          "text": "June,"
+        },
+        {
+          "t": 34.02,
+          "text": "OpenAI"
+        },
+        {
+          "t": 34.38,
+          "text": "opened"
+        }
+      ]
+    },
+    {
+      "start": 34.8,
+      "end": 35.42,
+      "text": "it to free",
+      "words": [
+        {
+          "t": 34.8,
+          "text": "it"
+        },
+        {
+          "t": 35.0,
+          "text": "to"
+        },
+        {
+          "t": 35.18,
+          "text": "free"
+        }
+      ]
+    },
+    {
+      "start": 35.42,
+      "end": 36.24,
+      "text": "accounts as well.",
+      "words": [
+        {
+          "t": 35.42,
+          "text": "accounts"
+        },
+        {
+          "t": 35.76,
+          "text": "as"
+        },
+        {
+          "t": 35.96,
+          "text": "well."
+        }
+      ]
+    },
+    {
+      "start": 36.82,
+      "end": 37.92,
+      "text": "Data analysis works",
+      "words": [
+        {
+          "t": 36.82,
+          "text": "Data"
+        },
+        {
+          "t": 37.04,
+          "text": "analysis"
+        },
+        {
+          "t": 37.5,
+          "text": "works"
+        }
+      ]
+    },
+    {
+      "start": 37.92,
+      "end": 39.64,
+      "text": "automatically. Drop in",
+      "words": [
+        {
+          "t": 37.92,
+          "text": "automatically."
+        },
+        {
+          "t": 39.24,
+          "text": "Drop"
+        },
+        {
+          "t": 39.48,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 39.64,
+      "end": 40.96,
+      "text": "a spreadsheet, get",
+      "words": [
+        {
+          "t": 39.64,
+          "text": "a"
+        },
+        {
+          "t": 39.74,
+          "text": "spreadsheet,"
+        },
+        {
+          "t": 40.78,
+          "text": "get"
+        }
+      ]
+    },
+    {
+      "start": 40.96,
+      "end": 41.84,
+      "text": "code, a chart",
+      "words": [
+        {
+          "t": 40.96,
+          "text": "code,"
+        },
+        {
+          "t": 41.5,
+          "text": "a"
+        },
+        {
+          "t": 41.58,
+          "text": "chart"
+        }
+      ]
+    },
+    {
+      "start": 41.84,
+      "end": 43.88,
+      "text": "and answers. Free",
+      "words": [
+        {
+          "t": 41.84,
+          "text": "and"
+        },
+        {
+          "t": 42.12,
+          "text": "answers."
+        },
+        {
+          "t": 43.64,
+          "text": "Free"
+        }
+      ]
+    },
+    {
+      "start": 43.88,
+      "end": 44.74,
+      "text": "gets three uploads",
+      "words": [
+        {
+          "t": 43.88,
+          "text": "gets"
+        },
+        {
+          "t": 44.12,
+          "text": "three"
+        },
+        {
+          "t": 44.4,
+          "text": "uploads"
+        }
+      ]
+    },
+    {
+      "start": 44.74,
+      "end": 45.68,
+      "text": "a day and",
+      "words": [
+        {
+          "t": 44.74,
+          "text": "a"
+        },
+        {
+          "t": 44.96,
+          "text": "day"
+        },
+        {
+          "t": 45.14,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 45.68,
+      "end": 46.5,
+      "text": "projects pulls it",
+      "words": [
+        {
+          "t": 45.68,
+          "text": "projects"
+        },
+        {
+          "t": 46.02,
+          "text": "pulls"
+        },
+        {
+          "t": 46.34,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 46.5,
+      "end": 48.72,
+      "text": "together. Chats, files",
+      "words": [
+        {
+          "t": 46.5,
+          "text": "together."
+        },
+        {
+          "t": 47.52,
+          "text": "Chats,"
+        },
+        {
+          "t": 48.34,
+          "text": "files"
+        }
+      ]
+    },
+    {
+      "start": 48.72,
+      "end": 49.82,
+      "text": "and instructions in",
+      "words": [
+        {
+          "t": 48.72,
+          "text": "and"
+        },
+        {
+          "t": 48.98,
+          "text": "instructions"
+        },
+        {
+          "t": 49.4,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 49.82,
+      "end": 51.38,
+      "text": "one space. So",
+      "words": [
+        {
+          "t": 49.82,
+          "text": "one"
+        },
+        {
+          "t": 50.04,
+          "text": "space."
+        },
+        {
+          "t": 51.18,
+          "text": "So"
+        }
+      ]
+    },
+    {
+      "start": 51.38,
+      "end": 52.8,
+      "text": "ChatGPT stops starting",
+      "words": [
+        {
+          "t": 51.38,
+          "text": "ChatGPT"
+        },
+        {
+          "t": 52.08,
+          "text": "stops"
+        },
+        {
+          "t": 52.34,
+          "text": "starting"
+        }
+      ]
+    },
+    {
+      "start": 52.8,
+      "end": 54.2,
+      "text": "from zero. Free",
+      "words": [
+        {
+          "t": 52.8,
+          "text": "from"
+        },
+        {
+          "t": 53.04,
+          "text": "zero."
+        },
+        {
+          "t": 53.88,
+          "text": "Free"
+        }
+      ]
+    },
+    {
+      "start": 54.2,
+      "end": 55.16,
+      "text": "gets five files,",
+      "words": [
+        {
+          "t": 54.2,
+          "text": "gets"
+        },
+        {
+          "t": 54.46,
+          "text": "five"
+        },
+        {
+          "t": 54.74,
+          "text": "files,"
+        }
+      ]
+    },
+    {
+      "start": 55.34,
+      "end": 57.1,
+      "text": "plus 25. Save",
+      "words": [
+        {
+          "t": 55.34,
+          "text": "plus"
+        },
+        {
+          "t": 55.54,
+          "text": "25."
+        },
+        {
+          "t": 56.58,
+          "text": "Save"
+        }
+      ]
+    },
+    {
+      "start": 57.1,
+      "end": 57.94,
+      "text": "this, then open",
+      "words": [
+        {
+          "t": 57.1,
+          "text": "this,"
+        },
+        {
+          "t": 57.62,
+          "text": "then"
+        },
+        {
+          "t": 57.68,
+          "text": "open"
+        }
+      ]
+    },
+    {
+      "start": 57.94,
+      "end": 58.84,
+      "text": "settings and let",
+      "words": [
+        {
+          "t": 57.94,
+          "text": "settings"
+        },
+        {
+          "t": 58.32,
+          "text": "and"
+        },
+        {
+          "t": 58.66,
+          "text": "let"
+        }
+      ]
+    },
+    {
+      "start": 58.84,
+      "end": 59.52,
+      "text": "them run without",
+      "words": [
+        {
+          "t": 58.84,
+          "text": "them"
+        },
+        {
+          "t": 59.02,
           "text": "run"
         },
         {
-          "t": 56.34,
+          "t": 59.24,
           "text": "without"
-        },
+        }
+      ]
+    },
+    {
+      "start": 59.52,
+      "end": 59.84,
+      "text": "you.",
+      "words": [
         {
-          "t": 56.62,
+          "t": 59.52,
           "text": "you."
         }
       ]
@@ -1446,22 +1500,38 @@
         "vol": 0.055
       },
       {
-        "t": 56.94,
+        "t": 42.54,
         "vol": 0.055
       },
       {
-        "t": 57.0,
+        "t": 42.88,
+        "vol": 0.15
+      },
+      {
+        "t": 43.46,
+        "vol": 0.15
+      },
+      {
+        "t": 43.64,
+        "vol": 0.055
+      },
+      {
+        "t": 59.84,
+        "vol": 0.055
+      },
+      {
+        "t": 60.0,
         "vol": 0.02
       }
     ],
     "derivedFrom": "vo.json word timings (tools/duck_music.py)"
   },
   "format": "ai-tools",
-  "script": "Over one hundred fifty million people talk to ChatGPT out loud every week.\n\nIf that's not you, stick around. The other four live in Settings too. Voice got rebuilt this July into full duplex: listening and talking at once.\n\nTasks are hands-off too: run one-time or recurring, up to three active on free accounts. Paid plans get hourly scheduling and can watch things like Gmail for you.\n\nMemory doesn't wait to be asked. It remembers you across every chat, and this June OpenAI opened it to free accounts as well.\n\nData analysis works automatically: drop in a spreadsheet, get code, a chart, and answers. Free gets three uploads a day.\n\nAnd Projects pulls it together, chats, files, and instructions in one space, so ChatGPT stops starting from zero. Free gets five files, Plus twenty-five.\n\nSave this, then open Settings, and let them run without you.",
+  "script": "Five ChatGPT features you're probably not using. Over one hundred fifty million people talk to ChatGPT out loud every week.\n\nIf that's not you, stick around. The other four live in Settings too. Voice got rebuilt this July into full duplex: listening and talking at once.\n\nTasks are hands-off too: run one-time or recurring, up to three active on free accounts. Paid plans get hourly scheduling and can watch things like Gmail for you.\n\nMemory doesn't wait to be asked. It remembers you across every chat, and this June OpenAI opened it to free accounts as well.\n\nData analysis works automatically: drop in a spreadsheet, get code, a chart, and answers. Free gets three uploads a day.\n\nAnd Projects pulls it together, chats, files, and instructions in one space, so ChatGPT stops starting from zero. Free gets five files, Plus twenty-five.\n\nSave this, then open Settings, and let them run without you.",
   "approval": {
-    "sha256": "96563bc663103a3314fa1aadce9dfe44696f357f9fe8aa375a53818a9bb7be7d",
-    "approvedAt": "2026-09-22T05:50:36+00:00",
-    "words": 145,
+    "sha256": "37ce875b0c45d2e795ac21982d46e4e75b82ba228e04f5ac4964d10b03202e75",
+    "approvedAt": "2026-09-22T06:07:15+00:00",
+    "words": 152,
     "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
   }
 }

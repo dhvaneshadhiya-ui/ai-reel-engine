@@ -1,8 +1,10 @@
-[curious] Over one hundred fifty million people talk to ChatGPT out loud every week.
+[curious] Five ChatGPT features you're probably not using.
 
-If that's not you, stick around.
+Over one hundred fifty million people talk to ChatGPT out loud every week.
 
-[calm] The other four live in Settings too.
+[calm] If that's not you, stick around.
+
+The other four live in Settings too.
 
 [curious] Voice got rebuilt this July into full duplex: listening and talking at once.
 
@@ -12,14 +14,14 @@ Paid plans get hourly scheduling and can watch things like Gmail for you.
 
 [surprised] Memory doesn't wait to be asked.
 
-It remembers you across every chat, and this June OpenAI opened it to free accounts as well.
+[calm] It remembers you across every chat, and this June OpenAI opened it to free accounts as well.
 
-[calm] Data analysis works automatically: drop in a spreadsheet, get code, a chart, and answers.
+Data analysis works automatically: drop in a spreadsheet, get code, a chart, and answers.
 
 Free gets three uploads a day.
 
-And Projects pulls it together, chats, files, and instructions in one space, so ChatGPT stops starting from zero.
+[excited] And Projects pulls it together, chats, files, and instructions in one space, so ChatGPT stops starting from zero.
 
-[excited] Free gets five files, Plus twenty-five.
+Free gets five files, Plus twenty-five.
 
 Save this, then open Settings, and let them run without you.

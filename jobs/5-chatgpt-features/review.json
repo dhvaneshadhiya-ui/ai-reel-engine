@@ -1,13 +1,13 @@
 {
-  "script_sha256": "96563bc663103a3314fa1aadce9dfe44696f357f9fe8aa375a53818a9bb7be7d",
+  "script_sha256": "37ce875b0c45d2e795ac21982d46e4e75b82ba228e04f5ac4964d10b03202e75",
   "structure_sha256": "5776c68e97819febd5074449bbb96928c63c631a19a12c3dd1eb47639ee49632",
   "findings": [
-    "  BRIDGES 1/12 sentences (8%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
-    "  OPENING has no version, date or time anchor: 'Over one hundred fifty million people talk to ChatGPT out loud e'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "  BRIDGES 1/13 sentences (8%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  OPENING has no version, date or time anchor: \"Five ChatGPT features you're probably not using.\". A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
     "CADENCE: only 1 sentence reaches 18 words (longest 18). The playbook asks for 'occasionally one long spec sentence' \u2014 with everything short, nothing reads as short. Nothing to push against.",
     "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
   ],
   "research_advice": [],
   "beatPlanShots": 7,
-  "proposedAt": "2026-09-22T05:50:30+00:00"
+  "proposedAt": "2026-09-22T06:07:15+00:00"
 }

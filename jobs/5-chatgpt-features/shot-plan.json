@@ -11,30 +11,30 @@
   "audio": "assets/5-chatgpt-features/vo.mp3",
   "shots": [
     {
-      "start_phrase": "Over",
-      "line": "Over one hundred fifty million people talk to ChatGPT out loud every week.",
-      "needs": ["Over", "150", "million", "people", "talk", "ChatGPT"],
+      "start_phrase": "Five",
+      "line": "Five ChatGPT features you're probably not using. Over one hundred fifty million people talk to ChatGPT out loud every week.",
+      "needs": ["Five", "ChatGPT", "features", "probably", "not", "using", "150", "million"],
       "tier": "official",
       "asset_id": "logo-openai",
       "scene": {
-        "headline": "Over [[150 million]] people talk to ChatGPT out loud every week",
+        "headline": "5 ChatGPT Features You're Probably [[Not Using]]",
         "blocks": [
           {
             "id": "sp",
             "kind": "spotlight",
             "logo": "assets/logos/openai.svg",
-            "name": "ChatGPT",
-            "note": "150M people talk to it, every week"
+            "name": "ChatGPT"
           },
           {
             "id": "q",
             "kind": "text",
-            "text": "That's Voice and Dictation, combined"
+            "text": "150M people talk to it, out loud, every week"
           }
         ],
         "moves": [
-          { "do": "pill", "target": "headline", "on": "150 million" },
-          { "do": "show", "target": "q", "on": "out loud every week" }
+          { "do": "pill", "target": "headline", "on": "not using" },
+          { "do": "show", "target": "sp", "on": "chatgpt features" },
+          { "do": "show", "target": "q", "on": "150 million" }
         ],
         "type": "slide",
         "hideCaptions": true,

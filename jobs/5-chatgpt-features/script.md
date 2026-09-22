@@ -1,4 +1,4 @@
-Over one hundred fifty million people talk to ChatGPT out loud every week.
+Five ChatGPT features you're probably not using. Over one hundred fifty million people talk to ChatGPT out loud every week.
 
 If that's not you, stick around. The other four live in Settings too. Voice got rebuilt this July into full duplex: listening and talking at once.
 
