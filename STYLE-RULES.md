@@ -8978,3 +8978,72 @@ VO (padded from a 49.8s raw read via `vo_pad.py`, never time-stretched),
 HeyGen 2 native `create_video_from_avatar` clips driven by uploaded VO
 slices (hook 7.16s, CTA 9.68s) -- no full-length avatar master generated,
 per the animated format's per-slice-only rule.
+
+## 2026-09-23 -- apple-screenless-tracker: single-source stories, whisper's
+## spelling of proper nouns, and stage images on a light background
+
+**Raw note.** Three separate frictions on one build, all caught before they
+became a gate failure, worth recording so the next single-source news reel
+does not rediscover each by hand.
+
+**(1) A four-domain ledger can still be a one-source story.** Research
+turned up SRC urls on macrumors.com, 9to5mac.com, techcrunch.com and
+theglobeandmail.com -- four distinct domains, which every existing check
+treats as plenty. A dedicated independent-confirmation pass (required by
+`reel-research`'s news subtopics) found that every domain but the Globe and
+Mail one was syndicating a SINGLE Bloomberg/Gurman exclusive; the Globe and
+Mail piece was reporting on a genuinely separate event (Oura's own IPO
+filing), not corroborating the Apple story. So the ledger tiered every
+project-specific claim `single` (never `multi`, despite four SRC domains)
+and hedged each one in the script ("Bloomberg's Mark Gurman reports...",
+"Gurman says...") rather than letting domain-count imply confirmation that
+didn't exist. **Distilled rule:** domain count is not source count; run the
+independent-confirmation subtopic on every news reel and record an
+INDEPENDENT-CHECK line even when SRCs look plural, because a VIA that all
+resolves to one origin is one source wearing four bylines.
+
+**(2) Whisper spells proper nouns the way they SOUND, and shot anchors need
+that exact spelling, not the correct one.** `plan_shots.py` resolves a
+`start_phrase` by literal substring match against the vo.json word list. The
+approved script says "Cue's" and "Oura"; ElevenLabs' read is phonetically
+correct but whisper (both `base` and `small`) transcribed it as "Q's" and,
+inconsistently, "aura" in one place and "ORA" in another. Four of 22 anchors
+failed to resolve on the first pass for exactly this reason -- not a bad
+read, a spelling mismatch between the approved text and whisper's ear.
+**Distilled rule:** when an anchor fails to resolve, read the actual
+vo.json words before assuming the take is bad -- a name that sounds like
+another word (Cue/Q, Oura/aura) will get whisper's spelling, and the fix is
+to write the `start_phrase` in THAT spelling while adding the correct one to
+`caption_corrections` so the burned-in captions still read right. Never
+re-record over a spelling artifact.
+
+**(3) A `stage` element with a real photo needs `set: "dark"`, not
+`"light"`, or G69 blocks it.** Two two-up portrait/product beats (Tim
+Cook + Eddy Cue headshots; Whoop + Oura product photos) were built on
+`set: "light"` by default and G69 (RENDER, logo-contrast) failed all three
+images at ~1.1-1.2:1 contrast -- real photography on off-white Apple.com /
+product-page backgrounds sits almost flush against a light stage panel.
+Switching both scenes to `set: "dark"` cleared the gate at zero cost to the
+content. **Distilled rule:** any `stage` element that is a photograph
+(not a designed card or icon) defaults to `set: "dark"`; reserve `"light"`
+for text/number/card-only stages.
+
+Treatment: single continuous ElevenLabs v3 take (216 words, tagged by
+`vo_tagged.py`, one register override by hand -- the honesty beat was
+auto-tagged `[excited]` by position and corrected to `[calm]`), padded
+73.8s -> 85.0s via `vo_pad.py` (2.93 -> 2.54 w/s, never time-stretched;
+`allowLong` set with a written reason since 85s pokes 5s past the news
+format's 80s default). HeyGen digital twin (`f55b0b7c`, avatar_v) generated
+NATIVE 9:16 1080x1920 from the uploaded VO (no split/16:9 master this time --
+full-frame facecam throughout). Visuals: two headline receipts (MacRumors,
+9to5Mac) as the confirmation beat and device description, Apple's own Sept 9
+Newsroom release reused for the mechanism turn, a Globe and Mail receipt for
+the Oura IPO figure, two `stage` two-up beats (Whoop+Oura product photos;
+Cook+Cue official headshots), one `stage` number card (Whoop's $10B,
+sourced), and facecam for the mechanism/honesty/CTA beats (63% of runtime --
+outside the 10-20% news band, flagged ADVICE, not cut back: this is a
+talking-head explainer format leaning on the presenter for the turn and the
+honesty beat, not a screenshot-heavy walkthrough). No mockup or render of
+Apple's actual (unannounced) device was used anywhere -- every "screenless
+band" visual is Whoop's real shipping product or 9to5Mac's own generic
+stock photo, never presented as Apple's prototype.

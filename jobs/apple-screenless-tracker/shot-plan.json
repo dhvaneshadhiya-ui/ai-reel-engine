@@ -1,0 +1,592 @@
+{
+  "format": "news",
+  "allowLong": true,
+  "allowLongReason": "ElevenLabs' natural read at 216 words came back at 2.93 w/s, faster than the 2.35-2.75 band, so vo_pad.py grew only the silences (never the words) to land the read at a natural pace. That padding takes the master to 85s, 5s past the 80s news default. The words were approved at 216 (already the top of the format's word budget) precisely because every sentence carries a distinct claim; correcting the read's pace was preferred over cutting a claim to force the runtime down.",
+  "shots": [
+    {
+      "start_phrase": "On September 9th, Apple",
+      "line": "On September 9th, Apple finally gave the Watch an all-day heart sensor., Thirteen days later",
+      "needs": [
+        "September",
+        "9th",
+        "Apple",
+        "finally",
+        "gave",
+        "Watch"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+        "zoomDir": "in",
+        "captionBottom": 980,
+        "zoom": 1.0,
+        "focusX": 0.46
+      }
+    },
+    {
+      "start_phrase": "Bloomberg's Mark Gurman reports",
+      "line": "Bloomberg's Mark Gurman reports Apple is testing a completely different device, one with no screen at all., Except",
+      "needs": [
+        "Bloomberg",
+        "Mark",
+        "Gurman",
+        "reports",
+        "Apple",
+        "testing"
+      ],
+      "tier": "reliable",
+      "asset_id": "receipt-macrumors",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-screenless-tracker/macrumors-receipt.png",
+        "srcWidth": 1080,
+        "srcHeight": 1550,
+        "backdrop": "black",
+        "highlights": [
+          {
+            "at": 0.15,
+            "x": 20,
+            "y": 520,
+            "w": 1040,
+            "h": 400
+          }
+        ],
+        "captionBottom": 520
+      }
+    },
+    {
+      "start_phrase": "the catch is this:",
+      "line": "the catch is this: if the Watch just got better, why build something else?",
+      "needs": [
+        "catch",
+        "Watch",
+        "better",
+        "build",
+        "something",
+        "else"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+        "zoomDir": "out",
+        "captionBottom": 980,
+        "zoom": 1.09,
+        "focusX": 0.52
+      }
+    },
+    {
+      "start_phrase": "It's reportedly a thin",
+      "line": "It's reportedly a thin fabric band with a sensor module on your wrist.",
+      "needs": [
+        "reportedly",
+        "thin",
+        "fabric",
+        "band",
+        "sensor",
+        "module"
+      ],
+      "tier": "reliable",
+      "asset_id": "receipt-9to5mac",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-screenless-tracker/9to5mac-receipt.png",
+        "srcWidth": 1080,
+        "srcHeight": 1900,
+        "backdrop": "black",
+        "highlights": [
+          {
+            "at": 0.15,
+            "x": 20,
+            "y": 520,
+            "w": 1040,
+            "h": 720
+          }
+        ],
+        "captionBottom": 520
+      }
+    },
+    {
+      "start_phrase": "No display.",
+      "line": "No display.",
+      "needs": [
+        "display"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+        "zoomDir": "in",
+        "captionBottom": 980,
+        "zoom": 1.0,
+        "focusX": 0.46
+      }
+    },
+    {
+      "start_phrase": "No notifications., Just heart",
+      "line": "No notifications., Just heart rate",
+      "needs": [
+        "notifications",
+        "heart",
+        "rate"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+        "zoomDir": "out",
+        "captionBottom": 980,
+        "zoom": 1.09,
+        "focusX": 0.52
+      }
+    },
+    {
+      "start_phrase": "recovery, and sleep, the",
+      "line": "recovery, and sleep, the same three things Whoop and Oura already track.",
+      "needs": [
+        "recovery",
+        "sleep",
+        "same",
+        "three",
+        "things",
+        "Whoop"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "stage",
+        "hideCaptions": false,
+        "set": "dark",
+        "layout": "full",
+        "elements": [
+          {
+            "id": "whoop",
+            "kind": "image",
+            "x": 0.27,
+            "y": 0.4,
+            "w": 0.42,
+            "h": 0.3,
+            "src": "assets/apple-screenless-tracker/whoop-bands.png",
+            "label": "Whoop"
+          },
+          {
+            "id": "oura",
+            "kind": "image",
+            "x": 0.73,
+            "y": 0.4,
+            "w": 0.42,
+            "h": 0.3,
+            "src": "assets/apple-screenless-tracker/oura-ring.png",
+            "label": "Oura"
+          }
+        ],
+        "moves": [
+          {
+            "do": "arrive",
+            "target": "whoop",
+            "at": 0.05,
+            "dir": "left"
+          },
+          {
+            "do": "arrive",
+            "target": "oura",
+            "at": 0.3,
+            "dir": "right"
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Gurman says Tim Cook",
+      "line": "Gurman says Tim Cook and Eddy Cue are both behind it.",
+      "needs": [
+        "Gurman",
+        "says",
+        "Cook",
+        "Eddy",
+        "both",
+        "behind"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "stage",
+        "hideCaptions": false,
+        "set": "brand",
+        "layout": "full",
+        "elements": [
+          {
+            "id": "cook",
+            "kind": "image",
+            "x": 0.27,
+            "y": 0.38,
+            "w": 0.42,
+            "h": 0.32,
+            "src": "assets/apple-screenless-tracker/tim-cook.png",
+            "label": "Tim Cook"
+          },
+          {
+            "id": "cue",
+            "kind": "image",
+            "x": 0.73,
+            "y": 0.38,
+            "w": 0.42,
+            "h": 0.32,
+            "src": "assets/apple-screenless-tracker/eddy-cue.png",
+            "label": "Eddy Cue"
+          }
+        ],
+        "moves": [
+          {
+            "do": "arrive",
+            "target": "cook",
+            "at": 0.05,
+            "dir": "left"
+          },
+          {
+            "do": "arrive",
+            "target": "cue",
+            "at": 0.3,
+            "dir": "right"
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Q's run Apple's health",
+      "line": "Cue's run Apple's health team since last October",
+      "needs": [
+        "Apple",
+        "health",
+        "team",
+        "since",
+        "last",
+        "October"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+        "zoomDir": "in",
+        "captionBottom": 980,
+        "zoom": 1.0,
+        "focusX": 0.46
+      }
+    },
+    {
+      "start_phrase": "reportedly pushing for something",
+      "line": "reportedly pushing for something simpler than the Watch.",
+      "needs": [
+        "reportedly",
+        "pushing",
+        "something",
+        "simpler",
+        "Watch"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+        "zoomDir": "out",
+        "captionBottom": 980,
+        "zoom": 1.09,
+        "focusX": 0.52
+      }
+    },
+    {
+      "start_phrase": "But that sensor gap",
+      "line": "But that sensor gap was already closed in September.",
+      "needs": [
+        "sensor",
+        "already",
+        "closed",
+        "September"
+      ],
+      "tier": "official",
+      "asset_id": "apple-watch-official",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-screenless-tracker/apple-watch-official.png",
+        "srcWidth": 1080,
+        "srcHeight": 1990,
+        "backdrop": "black",
+        "highlights": [
+          {
+            "at": 0.15,
+            "x": 20,
+            "y": 900,
+            "w": 1040,
+            "h": 500
+          }
+        ],
+        "captionBottom": 520
+      }
+    },
+    {
+      "start_phrase": "That's not the catch.,",
+      "line": "That's not the catch., Simply put",
+      "needs": [
+        "catch",
+        "Simply"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+        "zoomDir": "in",
+        "captionBottom": 980,
+        "zoom": 1.0,
+        "focusX": 0.46
+      }
+    },
+    {
+      "start_phrase": "some people don't want",
+      "line": "some people don't want a screen on their wrist at all, they just want the numbers.",
+      "needs": [
+        "some",
+        "people",
+        "want",
+        "screen",
+        "wrist",
+        "numbers"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+        "zoomDir": "out",
+        "captionBottom": 980,
+        "zoom": 1.09,
+        "focusX": 0.52
+      }
+    },
+    {
+      "start_phrase": "And whoop and aura",
+      "line": "And Whoop and Oura built entire businesses on exactly that.",
+      "needs": [
+        "Whoop",
+        "Oura",
+        "built",
+        "entire",
+        "businesses",
+        "exactly"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+        "zoomDir": "in",
+        "captionBottom": 980,
+        "zoom": 1.0,
+        "focusX": 0.46
+      }
+    },
+    {
+      "start_phrase": "ORA just filed to",
+      "line": "Oura just filed to go public at a sixteen billion dollar valuation.",
+      "needs": [
+        "Oura",
+        "filed",
+        "public",
+        "sixteen",
+        "billion",
+        "dollar"
+      ],
+      "tier": "reliable",
+      "asset_id": "receipt-oura-ipo",
+      "scene": {
+        "type": "receipt",
+        "src": "assets/apple-screenless-tracker/oura-ipo-receipt.png",
+        "srcWidth": 1080,
+        "srcHeight": 1250,
+        "backdrop": "black",
+        "highlights": [
+          {
+            "at": 0.15,
+            "x": 20,
+            "y": 400,
+            "w": 1040,
+            "h": 500
+          }
+        ],
+        "captionBottom": 520
+      }
+    },
+    {
+      "start_phrase": "Whoop's reportedly worth",
+      "line": "Whoop's reportedly worth ten billion too.",
+      "needs": [
+        "Whoop",
+        "reportedly",
+        "worth",
+        "billion"
+      ],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "type": "stage",
+        "hideCaptions": false,
+        "set": "dark",
+        "layout": "full",
+        "elements": [
+          {
+            "id": "whoopval",
+            "kind": "number",
+            "x": 0.5,
+            "y": 0.5,
+            "w": 0.6,
+            "value": 10,
+            "from": 0,
+            "prefix": "$",
+            "suffix": "B",
+            "label": "Whoop's valuation",
+            "source": "TechCrunch, Sept 22 2026"
+          }
+        ],
+        "moves": [
+          {
+            "do": "arrive",
+            "target": "whoopval",
+            "dir": "up",
+            "at": 0.0
+          },
+          {
+            "do": "count",
+            "target": "whoopval",
+            "dir": "up",
+            "at": 0.15
+          }
+        ]
+      }
+    },
+    {
+      "start_phrase": "Still, Apple hasn't approved",
+      "line": "Still, Apple hasn't approved any of this.",
+      "needs": [
+        "Still",
+        "Apple",
+        "hasn",
+        "approved"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+        "zoomDir": "in",
+        "captionBottom": 980,
+        "zoom": 1.0,
+        "focusX": 0.46
+      }
+    },
+    {
+      "start_phrase": "Gurman says it's a",
+      "line": "Gurman says it's a technology investigation: prototypes, not a product.",
+      "needs": [
+        "Gurman",
+        "says",
+        "technology",
+        "investigation",
+        "prototypes",
+        "product"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+        "zoomDir": "out",
+        "captionBottom": 980,
+        "zoom": 1.09,
+        "focusX": 0.52
+      }
+    },
+    {
+      "start_phrase": "It's not landing before",
+      "line": "It's not landing before 2028, if it lands at all.",
+      "needs": [
+        "landing",
+        "before",
+        "2028",
+        "lands"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+        "zoomDir": "in",
+        "captionBottom": 980,
+        "zoom": 1.0,
+        "focusX": 0.46
+      }
+    },
+    {
+      "start_phrase": "So which is it:",
+      "line": "So which is it: is your wrist better off with a screen",
+      "needs": [
+        "which",
+        "wrist",
+        "better",
+        "screen"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+        "zoomDir": "out",
+        "captionBottom": 980,
+        "zoom": 1.09,
+        "focusX": 0.52
+      }
+    },
+    {
+      "start_phrase": "or with none at",
+      "line": "or with none at all?",
+      "needs": [
+        "none"
+      ],
+      "tier": null,
+      "asset_id": null,
+      "scene": {
+        "type": "footage",
+        "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+        "zoomDir": "in",
+        "captionBottom": 980,
+        "zoom": 1.0,
+        "focusX": 0.46
+      }
+    }
+  ],
+  "emphasis": [
+    "no screen at all",
+    "Tim Cook",
+    "Eddy Cue",
+    "already closed",
+    "sixteen billion dollar",
+    "ten billion",
+    "not before 2028"
+  ],
+  "caption_corrections": {
+    "aura": "Oura",
+    "Aura": "Oura",
+    "ORA": "Oura",
+    "Ora": "Oura",
+    "Eddie Q": "Eddy Cue",
+    "Eddie Cue": "Eddy Cue",
+    "Q's": "Cue's",
+    "themes": "team",
+    "hot sensor": "heart sensor"
+  }
+}

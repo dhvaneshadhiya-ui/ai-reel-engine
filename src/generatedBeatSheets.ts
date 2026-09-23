@@ -6,38 +6,39 @@ import sheet2 from "./beats/airpods-camera.json";
 import sheet3 from "./beats/apple-pay-india.json";
 import sheet4 from "./beats/apple-pencil-iphone-ultra.json";
 import sheet5 from "./beats/apple-reference-image.json";
-import sheet6 from "./beats/apple-surprise-and-shine.json";
-import sheet7 from "./beats/chatgpt-photo-prompts.json";
-import sheet8 from "./beats/chatgpt-stickers.json";
-import sheet9 from "./beats/claude-eating-tokens.json";
-import sheet10 from "./beats/claude-fable-5-1.json";
-import sheet11 from "./beats/claude-memory-everywhere.json";
-import sheet12 from "./beats/five-free-ai-tools.json";
-import sheet13 from "./beats/gemini-google-apps.json";
-import sheet14 from "./beats/grok-bot.json";
-import sheet15 from "./beats/ios-27-2-beta-1.json";
-import sheet16 from "./beats/ios-27-beta-8.json";
-import sheet17 from "./beats/ios27-battery-drain.json";
-import sheet18 from "./beats/ios27-beta7.json";
-import sheet19 from "./beats/ios27-tiers-nomusic.json";
-import sheet20 from "./beats/ios27-tiers.json";
-import sheet21 from "./beats/iphone-18-battery-prepare-to-ship.json";
-import sheet22 from "./beats/iphone-18-pro-nomusic.json";
-import sheet23 from "./beats/iphone-18-pro.json";
-import sheet24 from "./beats/iphone-fold-ultra-nomusic.json";
-import sheet25 from "./beats/iphone-fold-ultra.json";
-import sheet26 from "./beats/iphone-third-interface.json";
-import sheet27 from "./beats/iphone18-colors-nomusic.json";
-import sheet28 from "./beats/iphone18-colors.json";
-import sheet29 from "./beats/iphone18-split.json";
-import sheet30 from "./beats/mac-mini-m6-m5pro.json";
-import sheet31 from "./beats/mac-multiple-headphones.json";
-import sheet32 from "./beats/made-by-google-26.json";
-import sheet33 from "./beats/qualcomm-chip-hike.json";
-import sheet34 from "./beats/seedance-25.json";
-import sheet35 from "./beats/september-preview-nomusic.json";
-import sheet36 from "./beats/september-preview.json";
-import sheet37 from "./beats/whatsapp-agents.json";
+import sheet6 from "./beats/apple-screenless-tracker.json";
+import sheet7 from "./beats/apple-surprise-and-shine.json";
+import sheet8 from "./beats/chatgpt-photo-prompts.json";
+import sheet9 from "./beats/chatgpt-stickers.json";
+import sheet10 from "./beats/claude-eating-tokens.json";
+import sheet11 from "./beats/claude-fable-5-1.json";
+import sheet12 from "./beats/claude-memory-everywhere.json";
+import sheet13 from "./beats/five-free-ai-tools.json";
+import sheet14 from "./beats/gemini-google-apps.json";
+import sheet15 from "./beats/grok-bot.json";
+import sheet16 from "./beats/ios-27-2-beta-1.json";
+import sheet17 from "./beats/ios-27-beta-8.json";
+import sheet18 from "./beats/ios27-battery-drain.json";
+import sheet19 from "./beats/ios27-beta7.json";
+import sheet20 from "./beats/ios27-tiers-nomusic.json";
+import sheet21 from "./beats/ios27-tiers.json";
+import sheet22 from "./beats/iphone-18-battery-prepare-to-ship.json";
+import sheet23 from "./beats/iphone-18-pro-nomusic.json";
+import sheet24 from "./beats/iphone-18-pro.json";
+import sheet25 from "./beats/iphone-fold-ultra-nomusic.json";
+import sheet26 from "./beats/iphone-fold-ultra.json";
+import sheet27 from "./beats/iphone-third-interface.json";
+import sheet28 from "./beats/iphone18-colors-nomusic.json";
+import sheet29 from "./beats/iphone18-colors.json";
+import sheet30 from "./beats/iphone18-split.json";
+import sheet31 from "./beats/mac-mini-m6-m5pro.json";
+import sheet32 from "./beats/mac-multiple-headphones.json";
+import sheet33 from "./beats/made-by-google-26.json";
+import sheet34 from "./beats/qualcomm-chip-hike.json";
+import sheet35 from "./beats/seedance-25.json";
+import sheet36 from "./beats/september-preview-nomusic.json";
+import sheet37 from "./beats/september-preview.json";
+import sheet38 from "./beats/whatsapp-agents.json";
 
 export const beatSheets = [
   sheet0,
@@ -78,4 +79,5 @@ export const beatSheets = [
   sheet35,
   sheet36,
   sheet37,
+  sheet38,
 ] as unknown as BeatSheet[];
