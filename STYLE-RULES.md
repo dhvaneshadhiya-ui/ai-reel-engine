@@ -9047,3 +9047,45 @@ honesty beat, not a screenshot-heavy walkthrough). No mockup or render of
 Apple's actual (unannounced) device was used anywhere -- every "screenless
 band" visual is Whoop's real shipping product or 9to5Mac's own generic
 stock photo, never presented as Apple's prototype.
+
+## 2026-09-23 — five-free-ai-presentation-tools: a PNG's tRNS key turned black transparent, and screen boxes that letterbox
+
+Third animated-format list reel (after five-free-ai-tools and 5-chatgpt-features).
+60.6s, 9 `slide` scenes (hook + promise with the presenter circle, five tools, stack, save CTA),
+G31 -14.4 LUFS, frame-lint clean after two fixes, sfx_audibility 9/9 AUDIBLE.
+
+**RAW NOTE 1.** Microsoft's Designer "after" slide crossfaded onto the "before" slide and its
+black left panel rendered as see-through — the bullet list ghosted through it with a garbled
+"Key Dates". The PNG was palette-mode with a `tRNS` key of (0,0,0); `Image.convert('RGB').save()`
+kept `info['transparency']`, so the RGB file still declared pure black transparent. PIL's
+getpixel said (0,0,0) and the file looked black everywhere except in the browser.
+**DISTILLED RULE.** When re-saving a vendor PNG, rebuild it from raw bytes
+(`Image.frombytes('RGB', im.size, im.convert('RGB').tobytes())`) or check
+`'transparency' in im.info` — a `state` crossfade is exactly where a keyed colour shows,
+because a second image sits underneath it.
+
+**RAW NOTE 2.** First render: every 16:9 vendor screenshot sat letterboxed in its `screen`
+box and content ended at ~55% of the frame (DEAD SPACE 56% on one slide). Two separate causes.
+(a) The box takes the column width (~915px); a 16:9 image fitted to it is ~515px tall whatever
+`h` says. (b) A `focus` rect WIDER than boxW/(fit*1.5) makes the camera zoom OUT (the 1.5x
+context factor), so a "wide establishing" focus shrank the image further.
+**DISTILLED RULE.** Crop each still to its subject at the box's own aspect (boxW/h) before
+placing it, then size `h` so the slide's content runs to ~70%. Keep every focus rect narrower
+than boxW/(fit*1.5) of the source — wider than that is a zoom-out, not a push-in.
+
+**RAW NOTE 3.** A `tips` card placed last on a tall slide sat exactly in the caption band
+(72-82%); the next build's extra `rows` line did the same and lint_frames' [PLATFORM ZONE]
+blocked it. Fix was fewer blocks, not smaller type: the Claude slide went from hero + screen +
+tips to screen + three rows.
+
+**RAW NOTE 4.** Whisper hears "Claude" as "Cloud" (again). Captions fixed via
+caption_corrections; a move anchored on "Free Claude" failed to compile and must be written as
+"cloud makes them" — anchors are transcript words, not script words.
+
+Credits: ElevenLabs 1 take (~1,037 credits, 51.6s, padded to 59.0s with vo_pad + 1.6s end-card
+tail); HeyGen 2 native clips (7.6s hook + 3.9s CTA).
+Treatment: Gamma's own demo prompt with two push-ins (hook), five-logo promise card, Gamma deck
+gallery + three ceiling rows, Anthropic's settings-toggle image + rows, Pitch's agent panel
+zoomed to its own "too wordy" chip, Microsoft's before/after crossfade (bullets → timeline) with
+the vendor's own menu path, Napkin funnel in a deck, Claude→Gamma swap over Gamma's Import
+option, XL "Save" end card with the five logos.

@@ -1,7 +1,646 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
-  "format": "ai-tools",
-  "shots": [],
-  "music": true
+ "emphasis": [
+  "free",
+  "PowerPoint",
+  "Save"
+ ],
+ "caption_corrections": {
+  "cloud": "Claude",
+  "Cloud": "Claude",
+  "design deck": "designed deck",
+  "sign up": "signup",
+  "one drive": "OneDrive",
+  "gamma": "Gamma",
+  "pitch": "Pitch",
+  "napkin": "Napkin",
+  "designer": "Designer"
+ },
+ "format": "ai-tools",
+ "shots": [
+  {
+   "start_phrase": "five AI tools that",
+   "line": "Five AI tools that do the slow parts of a presentation, free, right now.",
+   "tier": "official",
+   "asset_id": "screen-gamma-prompt",
+   "scene": {
+    "headline": "5 Free AI Tools for [[Faster Slides]]",
+    "blocks": [
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 1413,
+      "height": 1080,
+      "src": "assets/five-free-ai-presentation-tools/gamma-prompt.png",
+      "h": 760
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "free right now"
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "slow parts",
+      "rect": [
+       240,
+       560,
+       940,
+       300
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "of a presentation",
+      "rect": [
+       400,
+       720,
+       560,
+       150
+      ]
+     }
+    ],
+    "presenter": {
+     "src": "assets/five-free-ai-presentation-tools/avatar-master-hook.mp4",
+     "from": 0.0
+    },
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "Each free plan just",
+   "line": "Each free plan just stops somewhere different.",
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "headline": "Free Stops [[Somewhere Different]]",
+    "blocks": [
+     {
+      "id": "lg",
+      "kind": "logos",
+      "items": [
+       {
+        "logo": "assets/logos/gamma.png",
+        "name": "Gamma"
+       },
+       {
+        "logo": "assets/logos/claude.svg",
+        "name": "Claude"
+       },
+       {
+        "logo": "assets/logos/pitch.svg",
+        "name": "Pitch"
+       },
+       {
+        "logo": "assets/logos/powerpoint.svg",
+        "name": "Designer"
+       },
+       {
+        "logo": "assets/logos/napkin-mark.svg",
+        "name": "Napkin"
+       }
+      ]
+     },
+     {
+      "id": "q",
+      "kind": "text",
+      "text": "Where does each free plan stop?"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "somewhere different"
+     }
+    ],
+    "presenter": {
+     "src": "assets/five-free-ai-presentation-tools/avatar-master-hook.mp4",
+     "from": 5.36
+    },
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "Gamma builds a whole",
+   "line": "Gamma builds a whole designed deck from one prompt. Free is four hundred credits at signup that never top up, ten slides per prompt, and a Gamma badge on exports.",
+   "tier": "official",
+   "asset_id": "screen-gamma-decks",
+   "scene": {
+    "eyebrow": "Gamma",
+    "headline": "One Prompt, [[Whole Deck]]",
+    "blocks": [
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 1230,
+      "height": 755,
+      "src": "assets/five-free-ai-presentation-tools/gamma-decks.png",
+      "h": 560
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "AI credits",
+        "v": "400, once"
+       },
+       {
+        "k": "Per prompt",
+        "v": "10 slides"
+       },
+       {
+        "k": "Exports",
+        "v": "Gamma badge",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "deck from one prompt",
+      "rect": [
+       40,
+       100,
+       800,
+       300
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "one prompt",
+      "rect": [
+       50,
+       110,
+       215,
+       190
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "whole design deck"
+     },
+     {
+      "do": "show",
+      "target": "r",
+      "on": "credits at sign"
+     },
+     {
+      "do": "highlight",
+      "target": "r.0",
+      "on": "never top up"
+     },
+     {
+      "do": "highlight",
+      "target": "r.1",
+      "on": "slides per prompt"
+     },
+     {
+      "do": "highlight",
+      "target": "r.2",
+      "on": "badge on exports"
+     }
+    ],
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "Got notes instead",
+   "line": "Got notes instead? Free Claude makes them into a real PowerPoint file. Turn on file creation in settings, and expect it to eat your limit faster.",
+   "tier": "official",
+   "asset_id": "screen-claude-toggle",
+   "scene": {
+    "eyebrow": "Claude",
+    "headline": "Notes Into a Real [[PowerPoint File]]",
+    "blocks": [
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 2500,
+      "height": 880,
+      "src": "assets/five-free-ai-presentation-tools/claude-toggle.png",
+      "h": 440
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Claude plan",
+        "v": "Free",
+        "tone": "free"
+       },
+       {
+        "k": "Makes",
+        "v": "PowerPoint (.pptx)"
+       },
+       {
+        "k": "Usage",
+        "v": "Faster than chat",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "highlight",
+      "target": "r.0",
+      "on": "cloud makes them"
+     },
+     {
+      "do": "highlight",
+      "target": "r.1",
+      "on": "real PowerPoint file"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "real PowerPoint file"
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "file creation in settings",
+      "rect": [
+       1500,
+       250,
+       900,
+       420
+      ]
+     },
+     {
+      "do": "highlight",
+      "target": "r.2",
+      "on": "eat your limit"
+     }
+    ],
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "Then pitch fixes the",
+   "line": "Then Pitch fixes the deck by chat: tell it a slide is too wordy. Free is a hundred credits that never renew, and PowerPoint export costs extra.",
+   "tier": "official",
+   "asset_id": "screen-pitch-agent",
+   "scene": {
+    "eyebrow": "Pitch",
+    "headline": "Fix the Deck [[by Chat]]",
+    "blocks": [
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 1500,
+      "height": 1020,
+      "src": "assets/five-free-ai-presentation-tools/pitch-agent.png",
+      "h": 620
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "AI credits",
+        "v": "100, never renew"
+       },
+       {
+        "k": "PowerPoint export",
+        "v": "Paid",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "by chat"
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "too wordy",
+      "rect": [
+       1000,
+       590,
+       290,
+       60
+      ]
+     },
+     {
+      "do": "show",
+      "target": "r",
+      "on": "credits that never renew"
+     },
+     {
+      "do": "highlight",
+      "target": "r.1",
+      "on": "costs extra"
+     },
+     {
+      "do": "highlight",
+      "target": "r.0",
+      "on": "never renew"
+     }
+    ],
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "Already in PowerPoint",
+   "line": "Already in PowerPoint? On the web, Designer turns a bullet list into a timeline, free for everyone. Keep the file in OneDrive.",
+   "tier": "official",
+   "asset_id": "screen-designer",
+   "scene": {
+    "eyebrow": "PowerPoint Designer",
+    "headline": "Bullets Into a [[Timeline]]",
+    "blocks": [
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 1600,
+      "height": 902,
+      "src": "assets/five-free-ai-presentation-tools/designer-bullets.png",
+      "h": 520
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "PowerPoint on the web",
+        "v": "Free",
+        "tone": "free"
+       },
+       {
+        "k": "Needs",
+        "v": "File in OneDrive"
+       }
+      ]
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Design tab \u2192 Design Suggestions"
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "On the web",
+      "rect": [
+       40,
+       340,
+       820,
+       440
+      ]
+     },
+     {
+      "do": "state",
+      "target": "scr",
+      "on": "into a timeline",
+      "src": "assets/five-free-ai-presentation-tools/designer-timeline.png"
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "into a timeline",
+      "rect": [
+       0,
+       0,
+       1600,
+       902
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "into a timeline"
+     },
+     {
+      "do": "show",
+      "target": "r",
+      "on": "free for everyone"
+     },
+     {
+      "do": "highlight",
+      "target": "r.1",
+      "on": "Keep the file"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "Already in PowerPoint"
+     }
+    ],
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "And for diagrams",
+   "line": "And for diagrams, Napkin draws a paragraph as one: five hundred credits a week, with its logo on every export.",
+   "tier": "official",
+   "asset_id": "screen-napkin-diagram",
+   "scene": {
+    "eyebrow": "Napkin",
+    "headline": "A Paragraph Into a [[Diagram]]",
+    "blocks": [
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 1120,
+      "height": 781,
+      "src": "assets/five-free-ai-presentation-tools/napkin-diagram.png",
+      "h": 640
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "AI credits",
+        "v": "500 / week"
+       },
+       {
+        "k": "Exports",
+        "v": "Napkin logo",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "paragraph as one"
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "paragraph as one",
+      "rect": [
+       500,
+       280,
+       420,
+       400
+      ]
+     },
+     {
+      "do": "show",
+      "target": "r",
+      "on": "credits a week"
+     },
+     {
+      "do": "highlight",
+      "target": "r.1",
+      "on": "logo on every export"
+     }
+    ],
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "So stack them",
+   "line": "So stack them: draft in Claude, import the file into Gamma, and spend credits only on the slides that matter.",
+   "tier": "official",
+   "asset_id": "screen-gamma-import",
+   "scene": {
+    "headline": "[[Stack]] Them",
+    "blocks": [
+     {
+      "id": "sw",
+      "kind": "swap",
+      "left": {
+       "logo": "assets/logos/claude.svg",
+       "name": "Claude",
+       "price": "Draft",
+       "tone": "plain",
+       "note": "your notes as a .pptx"
+      },
+      "right": {
+       "logo": "assets/logos/gamma.png",
+       "name": "Gamma",
+       "price": "Import",
+       "tone": "free",
+       "note": "design what matters"
+      }
+     },
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 1800,
+      "height": 825,
+      "src": "assets/five-free-ai-presentation-tools/gamma-import.png",
+      "h": 420
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Spend credits only on the slides that matter."
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "stack them"
+     },
+     {
+      "do": "show",
+      "target": "sw.right",
+      "on": "import the file"
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "import the file",
+      "rect": [
+       1140,
+       250,
+       560,
+       610
+      ]
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "spend credits"
+     }
+    ],
+    "type": "slide"
+   }
+  },
+  {
+   "start_phrase": "Save this for",
+   "line": "Save this for the night before your next deck.",
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "headline": "[[Save]] This",
+    "headlineSize": "xl",
+    "cta": true,
+    "hideCaptions": true,
+    "blocks": [
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "For the night before your next deck."
+     },
+     {
+      "id": "lg",
+      "kind": "logos",
+      "items": [
+       {
+        "logo": "assets/logos/gamma.png",
+        "name": "Gamma"
+       },
+       {
+        "logo": "assets/logos/claude.svg",
+        "name": "Claude"
+       },
+       {
+        "logo": "assets/logos/pitch.svg",
+        "name": "Pitch"
+       },
+       {
+        "logo": "assets/logos/powerpoint.svg",
+        "name": "Designer"
+       },
+       {
+        "logo": "assets/logos/napkin-mark.svg",
+        "name": "Napkin"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Save this"
+     }
+    ],
+    "presenter": {
+     "src": "assets/five-free-ai-presentation-tools/avatar-master-cta.mp4",
+     "from": 0.26
+    },
+    "type": "slide"
+   }
+  }
+ ],
+ "music": true,
+ "facePlan": "bookends",
+ "audio": "assets/five-free-ai-presentation-tools/vo.mp3"
 }
