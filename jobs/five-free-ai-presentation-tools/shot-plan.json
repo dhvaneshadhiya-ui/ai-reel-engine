@@ -13,17 +13,19 @@
   "gamma": "Gamma",
   "pitch": "Pitch",
   "napkin": "Napkin",
-  "designer": "Designer"
+  "designer": "Designer",
+  "clod": "Claude",
+  "Clod": "Claude"
  },
  "format": "ai-tools",
  "shots": [
   {
-   "start_phrase": "five AI tools that",
-   "line": "Five AI tools that do the slow parts of a presentation, free, right now.",
+   "start_phrase": "Five free AI tools",
+   "line": "Five free AI tools for making presentations faster.",
    "tier": "official",
    "asset_id": "screen-gamma-prompt",
    "scene": {
-    "headline": "5 Free AI Tools for [[Faster Slides]]",
+    "headline": "5 Free AI Tools for Making [[Presentations Faster]]",
     "blocks": [
      {
       "id": "scr",
@@ -31,19 +33,14 @@
       "width": 1413,
       "height": 1080,
       "src": "assets/five-free-ai-presentation-tools/gamma-prompt.png",
-      "h": 760
+      "h": 620
      }
     ],
     "moves": [
      {
-      "do": "pill",
-      "target": "headline",
-      "on": "free right now"
-     },
-     {
       "do": "focus",
       "target": "scr",
-      "on": "slow parts",
+      "on": "tools for making",
       "rect": [
        240,
        560,
@@ -52,9 +49,14 @@
       ]
      },
      {
+      "do": "pill",
+      "target": "headline",
+      "on": "presentations faster"
+     },
+     {
       "do": "focus",
       "target": "scr",
-      "on": "of a presentation",
+      "on": "faster",
       "rect": [
        400,
        720,
@@ -67,7 +69,8 @@
      "src": "assets/five-free-ai-presentation-tools/avatar-master-hook.mp4",
      "from": 0.0
     },
-    "type": "slide"
+    "type": "slide",
+    "hideCaptions": true
    }
   },
   {
@@ -103,11 +106,6 @@
         "name": "Napkin"
        }
       ]
-     },
-     {
-      "id": "q",
-      "kind": "text",
-      "text": "Where does each free plan stop?"
      }
     ],
     "moves": [
@@ -119,7 +117,7 @@
     ],
     "presenter": {
      "src": "assets/five-free-ai-presentation-tools/avatar-master-hook.mp4",
-     "from": 5.36
+     "from": 3.7
     },
     "type": "slide"
    }
@@ -255,7 +253,7 @@
      {
       "do": "highlight",
       "target": "r.0",
-      "on": "cloud makes them"
+      "on": "makes them into"
      },
      {
       "do": "highlight",

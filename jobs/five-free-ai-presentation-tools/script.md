@@ -1,4 +1,4 @@
-Five AI tools that do the slow parts of a presentation, free, right now. Each free plan just stops somewhere different.
+Five free AI tools for making presentations faster. Each free plan just stops somewhere different.
 
 Gamma builds a whole designed deck from one prompt. Free is four hundred credits at signup that never top up, ten slides per prompt, and a Gamma badge on exports.
 
