@@ -1,0 +1,794 @@
+{
+ "emphasis": [
+  "slop",
+  "only you",
+  "free",
+  "shot list",
+  "Save"
+ ],
+ "caption_corrections": {
+  "chat GPT": "ChatGPT",
+  "GenZ": "Gen-Z",
+  "everyone starts": "every one starts",
+  "short list": "shot list",
+  "project,": "Project,",
+  "projects": "Projects",
+  "30 -second": "thirty-second",
+  "mass -produced": "mass-produced"
+ },
+ "format": "ai-tools",
+ "shots": [
+  {
+   "start_phrase": "Stop asking chat",
+   "line": "Stop asking ChatGPT for a viral script.",
+   "tier": "official",
+   "asset_id": "screen-chatgpt",
+   "scene": {
+    "type": "slide",
+    "headline": "Stop Asking for a [[Viral Script]]",
+    "blocks": [
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 1080,
+      "height": 760,
+      "src": "assets/chatgpt-creator-prompts/chatgpt-prompt-box.png",
+      "h": 620
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "asking",
+      "rect": [
+       30,
+       270,
+       1020,
+       200
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "viral script"
+     }
+    ],
+    "presenter": {
+     "src": "assets/chatgpt-creator-prompts/avatar-master-hook.mp4",
+     "from": 0.0
+    },
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 1.71,
+      "vol": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "You get slop",
+   "line": "You get slop, and half of Gen Z say they've unfollowed someone over it.",
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Sprout Social survey, 2026",
+    "headline": "Half of Gen Z [[Unfollowed]] Over AI Slop",
+    "blocks": [
+     {
+      "id": "h",
+      "kind": "hero",
+      "side": {
+       "name": "Gen Z",
+       "price": "50%",
+       "tone": "cost",
+       "note": "unfollowed, muted or blocked an account over AI slop"
+      }
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Their own answers, not a reach study."
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "h",
+      "on": "half of"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "unfollowed"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "someone over it"
+     }
+    ],
+    "presenter": {
+     "src": "assets/chatgpt-creator-prompts/avatar-master-hook.mp4",
+     "from": 2.62
+    },
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 0.83,
+      "vol": 0.35
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Five prompts that",
+   "line": "Five prompts that do work, and every one starts with something only you have.",
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "headline": "Start With [[Only You Have]]",
+    "blocks": [
+     {
+      "id": "st",
+      "kind": "steps",
+      "steps": [
+       "Your voice",
+       "Ideas",
+       "Hooks",
+       "Script",
+       "Repurpose"
+      ],
+      "h": 420
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "st.0",
+      "on": "Five prompts"
+     },
+     {
+      "do": "show",
+      "target": "st.1",
+      "on": "do work"
+     },
+     {
+      "do": "show",
+      "target": "st.2",
+      "on": "starts"
+     },
+     {
+      "do": "show",
+      "target": "st.3",
+      "on": "something"
+     },
+     {
+      "do": "show",
+      "target": "st.4",
+      "on": "only you"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "only you have"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.18
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Even OpenAI's own",
+   "line": "Even OpenAI's own prompts leave a gap that says paste details.",
+   "tier": "official",
+   "asset_id": "screen-openai-paste",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "OpenAI's own prompt pack",
+    "headline": "A Gap That Says [[Paste Details]]",
+    "blocks": [
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 1380,
+      "height": 282,
+      "src": "assets/chatgpt-creator-prompts/openai-paste-row.png",
+      "h": 360
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Every official prompt has a slot for YOUR material."
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "prompts leave",
+      "rect": [
+       330,
+       20,
+       1000,
+       240
+      ],
+      "ring": false
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "leave a gap"
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "paste details",
+      "rect": [
+       1040,
+       80,
+       280,
+       65
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "paste details"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx-action/marker.mp3",
+      "at": 2.93,
+      "vol": 0.4
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "First, make a",
+   "line": "First, make a Project, drop in your three best scripts, and tell it to write like those. Free accounts get Projects too.",
+   "tier": "official",
+   "asset_id": "screen-openai-projects",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "1 \u00b7 Your voice",
+    "headline": "Set Your Voice [[Once]]",
+    "blocks": [
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 1080,
+      "height": 1100,
+      "src": "assets/chatgpt-creator-prompts/openai-projects.png",
+      "h": 440
+     },
+     {
+      "id": "st",
+      "kind": "steps",
+      "steps": [
+       "New Project",
+       "Add your 3 best scripts",
+       "\u201cWrite like these\u201d"
+      ]
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Free ChatGPT",
+        "v": "Projects, 5 files each",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "make a project",
+      "rect": [
+       80,
+       390,
+       920,
+       180
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "First"
+     },
+     {
+      "do": "show",
+      "target": "st.0",
+      "on": "make a project"
+     },
+     {
+      "do": "show",
+      "target": "st.1",
+      "on": "three best"
+     },
+     {
+      "do": "show",
+      "target": "st.2",
+      "on": "write like"
+     },
+     {
+      "do": "show",
+      "target": "r",
+      "on": "Free accounts"
+     },
+     {
+      "do": "highlight",
+      "target": "r.0",
+      "on": "projects too"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 4.69,
+      "vol": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Then ask what",
+   "line": "Then ask what your audience wants to know about your topic, and name them.",
+   "tier": "reliable",
+   "asset_id": "screen-descript-ideas",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "2 \u00b7 Ideas",
+    "headline": "Name [[Your Audience]]",
+    "blocks": [
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 1080,
+      "height": 482,
+      "src": "assets/chatgpt-creator-prompts/descript-ideas.png",
+      "h": 420
+     },
+     {
+      "id": "tp",
+      "kind": "tips",
+      "best": "Say exactly who: \u201cfirst-time iPhone buyers\u201d",
+      "watch": "\u201cEveryone\u201d gets you generic"
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "ask what",
+      "rect": [
+       90,
+       215,
+       900,
+       140
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "your topic",
+      "rect": [
+       140,
+       215,
+       850,
+       140
+      ],
+      "ring": false
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "your audience"
+     },
+     {
+      "do": "show",
+      "target": "tp",
+      "on": "name them"
+     }
+    ],
+    "sfx": []
+   }
+  },
+  {
+   "start_phrase": "Paste your transcript",
+   "line": "Paste your transcript and ask for five hooks, each in a different tone.",
+   "tier": "reliable",
+   "asset_id": "screen-descript-hooks",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "3 \u00b7 Hooks",
+    "headline": "Five Hooks, [[Five Tones]]",
+    "blocks": [
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 1080,
+      "height": 1204,
+      "src": "assets/chatgpt-creator-prompts/descript-hooks.png",
+      "h": 480
+     },
+     {
+      "id": "scr2",
+      "kind": "screen",
+      "width": 1380,
+      "height": 222,
+      "src": "assets/chatgpt-creator-prompts/openai-hooks-row.png",
+      "h": 200
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "Paste your transcript",
+      "rect": [
+       380,
+       505,
+       570,
+       80
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "five hooks",
+      "rect": [
+       140,
+       430,
+       820,
+       440
+      ],
+      "ring": false
+     },
+     {
+      "do": "show",
+      "target": "scr2",
+      "on": "each in"
+     },
+     {
+      "do": "focus",
+      "target": "scr2",
+      "on": "different tone",
+      "rect": [
+       740,
+       140,
+       320,
+       65
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "different tone"
+     }
+    ],
+    "sfx": []
+   }
+  },
+  {
+   "start_phrase": "Ask for a",
+   "line": "Ask for a thirty-second script with narration left and visuals right, so you get a shot list.",
+   "tier": "reliable",
+   "asset_id": "screen-descript-script",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "4 \u00b7 Script",
+    "headline": "Get a [[Shot List]]",
+    "blocks": [
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 1080,
+      "height": 1010,
+      "src": "assets/chatgpt-creator-prompts/descript-script.png",
+      "h": 440
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "NARRATION",
+        "v": "VISUALS"
+       },
+       {
+        "k": "\u201cStop asking ChatGPT\u2026\u201d",
+        "v": "ChatGPT screen"
+       },
+       {
+        "k": "\u201cHalf of Gen Z\u2026\u201d",
+        "v": "50% card"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "script with",
+      "rect": [
+       140,
+       640,
+       820,
+       230
+      ]
+     },
+     {
+      "do": "show",
+      "target": "r",
+      "on": "narration left"
+     },
+     {
+      "do": "highlight",
+      "target": "r.0",
+      "on": "visuals right"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "you get"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 4.37,
+      "vol": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "To repurpose",
+   "line": "To repurpose, paste a long video's transcript, not the link, and ask for three moments that stand alone as clips.",
+   "tier": "reliable",
+   "asset_id": "screen-sprout",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "5 \u00b7 Repurpose",
+    "headline": "Transcript In, [[Clips]] Out",
+    "blocks": [
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 1080,
+      "height": 900,
+      "src": "assets/chatgpt-creator-prompts/sprout-pullquotes.png",
+      "h": 480
+     },
+     {
+      "id": "tp",
+      "kind": "tips",
+      "best": "Paste the transcript",
+      "watch": "Not the YouTube link"
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "repurpose",
+      "rect": [
+       60,
+       340,
+       960,
+       390
+      ],
+      "ring": false
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "long videos",
+      "rect": [
+       60,
+       420,
+       960,
+       160
+      ]
+     },
+     {
+      "do": "show",
+      "target": "tp",
+      "on": "not the link"
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "three moments",
+      "rect": [
+       60,
+       340,
+       960,
+       390
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "as clips"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 3.21,
+      "vol": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Leave your material",
+   "line": "Leave your material out and you're back to slop. YouTube won't pay for mass-produced AI videos without your own insight.",
+   "tier": "official",
+   "asset_id": "screen-yt-policy",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "YouTube monetization policy",
+    "headline": "Or You're [[Back to Slop]]",
+    "blocks": [
+     {
+      "id": "scr",
+      "kind": "screen",
+      "width": 1080,
+      "height": 1000,
+      "src": "assets/chatgpt-creator-prompts/yt-policy.png",
+      "h": 560
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Generic AI templates",
+        "v": "Not monetized",
+        "tone": "cost"
+       },
+       {
+        "k": "Your own insight",
+        "v": "The difference",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "back to slop"
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "YouTube",
+      "rect": [
+       150,
+       380,
+       830,
+       420
+      ]
+     },
+     {
+      "do": "show",
+      "target": "r",
+      "on": "won't pay"
+     },
+     {
+      "do": "highlight",
+      "target": "r.0",
+      "on": "massproduced"
+     },
+     {
+      "do": "focus",
+      "target": "scr",
+      "on": "without",
+      "rect": [
+       150,
+       560,
+       830,
+       230
+      ],
+      "ring": false
+     },
+     {
+      "do": "highlight",
+      "target": "r.1",
+      "on": "own insight"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 1.25,
+      "vol": 0.35
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Save it for",
+   "line": "Save it for the next time you open ChatGPT.",
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "headline": "[[Save]] This",
+    "headlineSize": "xl",
+    "cta": true,
+    "hideCaptions": true,
+    "blocks": [
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Five prompts for the next time you open ChatGPT."
+     },
+     {
+      "id": "st",
+      "kind": "steps",
+      "steps": [
+       "Voice",
+       "Ideas",
+       "Hooks",
+       "Script",
+       "Repurpose"
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Save"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "next time"
+     },
+     {
+      "do": "show",
+      "target": "st",
+      "on": "open"
+     }
+    ],
+    "presenter": {
+     "src": "assets/chatgpt-creator-prompts/avatar-master-cta.mp4",
+     "from": 0.0
+    },
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.18
+     }
+    ]
+   }
+  }
+ ],
+ "music": true,
+ "facePlan": "bookends",
+ "audio": "assets/chatgpt-creator-prompts/vo.mp3",
+ "slideSfx": false
+}
