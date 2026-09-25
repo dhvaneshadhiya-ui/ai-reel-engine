@@ -129,6 +129,33 @@ A 560s longform sheet now passes with three advisories, all correct: no measured
 SFX band, no presenter declared, and (before the window moved) the short-form
 proof rule. Nothing blocks.
 
+## The 16:9 layout pass, 2026-09-25
+
+- **The sheet decides the frame.** `compile_shot_plan` writes 1920x1080 for a
+  longform plan; `Root.tsx` already registered each composition at the size its
+  sheet declares, so nothing else had to change to get a landscape render.
+- **`Slide` reads its geometry from `useVideoConfig`** instead of two constants
+  measured against a 1080-wide frame (margin 72, column 916 — the column that
+  clears Instagram's right rail, which describes nothing at 1920 wide). Landscape
+  gets a 5.2% margin, an 89.6% column, a 0.68 scale on the big type only (a
+  headline that is 4.4% of a 1920-tall frame is 7.8% of a 1080-tall one), a 210px
+  presenter circle and an 8.5% bottom margin for YouTube's own controls. Portrait
+  keeps every measured number exactly.
+- **The column yields to the presenter.** In portrait the headline reserves space
+  beside the circle; in landscape the blocks start level with it, so the column
+  gives up the circle's width rather than running underneath it.
+- **A phone shot hugs its source.** A 1170x1992 screenshot stretched into a 16:9
+  column sat in a bordered card between two dead panels; it now takes the width it
+  actually uses and centres, which is what the references do with a phone recording.
+
+**A regression the stills caught:** the first version of that hug tested the BOX
+("wider than tall"), and a portrait page's column is 916x760 — also wider than tall.
+Every shipped reel's screen card silently shrank from 653px to 317px. The test is the
+FRAME, and the fix was verified by measuring both stills, not by looking at one.
+
+Checked with `slide-still-wide`, a 1920x1080 still composition added for exactly this
+— a page can be judged without rendering nine minutes of it.
+
 ## What this format still needs from the engine
 
 - A per-format runtime ceiling (G02 is a flat 180s today).

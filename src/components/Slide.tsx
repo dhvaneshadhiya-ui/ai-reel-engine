@@ -99,8 +99,26 @@ const LIGHT = {
   ...DARK, bg: "#F2F2F7", card: "#FFFFFF", line: "rgba(0,0,0,0.08)", ink: "#0A0A0A", sub: "#3A3A3C",
   muted: "#6E6E73", blue: "#0A6CFF", red: "#E5322D",
 };
-const L = 72;          // left margin, the carousel's own
-const COL = 916;       // column width: clears Instagram's right rail (0.85 of 1080)
+// LAYOUT IS FRAME-DERIVED (2026-09-25). These were 72 and 916 — the carousel's
+// own margin and a column that clears Instagram's right rail on a 1080 frame.
+// The longform format renders 1920x1080, where those numbers describe nothing,
+// so the page reads its geometry back from useVideoConfig instead. Portrait
+// keeps the measured values exactly.
+const geom = (W: number, H: number) => {
+  const wide = W > H;
+  return {
+    wide,
+    L: wide ? Math.round(W * 0.052) : 72,
+    COL: wide ? Math.round(W * 0.896) : 916,
+    // A headline that is 4.4% of a 1920-tall frame becomes 7.8% of a 1080-tall
+    // one. Big type scales with the SHORT edge; block body text does not, because
+    // at 1920 wide it is already proportionally small.
+    S: wide ? 0.68 : 1,
+    PIP: wide ? 210 : 300,
+    TOP: wide ? Math.round(H * 0.075) : null,
+    BOTTOM: wide ? Math.round(H * 0.085) : null,
+  };
+};
 const CL = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 const ramp = (t: number, a: number, d = 0.3) =>
@@ -138,7 +156,12 @@ const Strike: React.FC<{ p: number }> = ({ p }) =>
 
 export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
   const frame = useCurrentFrame();
-  const { fps, durationInFrames } = useVideoConfig();
+  const { fps, durationInFrames, width: FW, height: FH } = useVideoConfig();
+  const { wide, L, COL: FULL, S, PIP, TOP, BOTTOM } = geom(FW, FH);
+  // Landscape blocks start level with the presenter circle, so the column gives
+  // up the circle's width rather than running underneath it.
+  const COL = wide && scene.presenter ? FULL - PIP - 40 : FULL;
+  const px = (n: number) => Math.round(n * S);
   const t = frame / fps;
   const dur = (scene as { durationSec?: number }).durationSec ?? durationInFrames / fps;
   const C = scene.theme === "light" ? LIGHT : DARK;
@@ -285,7 +308,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         );
       }
       case "screen":
-        return <ScreenBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
+        return <ScreenBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} wide={wide} />;
       case "steps":
         return <StepsBlock key={b.id} b={b} moves={moves} t={t} C={C} />;
       case "devices":
@@ -366,27 +389,28 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
   // page — and type only ever moves while it arrives.
   const glowX = 25 + 50 * Math.min(1, t / Math.max(0.1, dur));
   const pipIn = scene.presenter ? spring({ frame, fps, config: { damping: 14, stiffness: 160 } }) : 0;
-  const PIP = 300;
   return (
     <AbsoluteFill style={{ background: C.bg, fontFamily: FONT }}>
       <AbsoluteFill style={{ background: `radial-gradient(60% 35% at ${glowX}% 42%, ${scene.theme === "light"
         ? "rgba(10,108,255,0.06)" : "rgba(77,163,255,0.10)"} 0%, transparent 70%)` }} />
       {scene.presenter ? (
-        <div style={{ position: "absolute", left: L + COL - PIP, top: 250, width: PIP, height: PIP, zIndex: 2,
+        <div style={{ position: "absolute", left: L + FULL - PIP, top: TOP ?? 250, width: PIP, height: PIP, zIndex: 2,
           borderRadius: "50%", overflow: "hidden", border: `6px solid ${C.pill}`,
           boxShadow: "0 20px 50px rgba(0,0,0,0.5)", transform: `scale(${0.6 + 0.4 * Math.min(1.04, pipIn)})` }}>
           <OffthreadVideo src={staticFile(scene.presenter.src)} muted startFrom={Math.round(scene.presenter.from * fps)}
             style={{ width: "100%", height: "178%", objectFit: "cover", objectPosition: "50% 0%", marginTop: "-12%" }} />
         </div>
       ) : null}
-      <div style={{ position: "absolute", left: L, top: scene.series || scene.index ? 200 : 250, width: COL,
+      <div style={{ position: "absolute", left: L, top: TOP ?? (scene.series || scene.index ? 200 : 250), width: COL,
         // CAPTION BAND (user, 2026-09-17): a slide that shows captions stops its
         // content at ~69% so the chips sit alone at 72-77%, above the platform
         // zone. Without captions it fills to the 80% line as before.
-        bottom: (scene as { hideCaptions?: boolean }).hideCaptions === false ? 576 : 384,
+        // Landscape has no Instagram caption band to clear — YouTube's own
+        // controls sit in the bottom ~8%, which BOTTOM keeps clear.
+        bottom: BOTTOM ?? ((scene as { hideCaptions?: boolean }).hideCaptions === false ? 576 : 384),
         display: "flex", flexDirection: "column" }}>
         {scene.series || scene.index ? (
-          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 40, font: `600 34px ${FONT}`, color: C.sub }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: px(40), font: `600 ${px(34)}px ${FONT}`, color: C.sub }}>
             <span>{scene.series ?? ""}</span>
             <span style={{ color: C.muted }}>{scene.index ?? ""}</span>
           </div>
@@ -396,20 +420,20 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
             presenter, the XL headline starts BELOW the circle at full width;
             the eyebrow keeps the space beside it. */}
         {scene.eyebrow || (xl && scene.presenter) ? (
-          <div style={{ font: `600 38px ${FONT}`, color: C.blue, maxWidth: scene.presenter ? COL - PIP - 30 : undefined,
+          <div style={{ font: `600 ${px(38)}px ${FONT}`, color: C.blue, maxWidth: scene.presenter ? COL - PIP - 30 : undefined,
             minHeight: xl && scene.presenter ? PIP : undefined, display: "flex", alignItems: xl && scene.presenter ? "center" : undefined }}>
             {scene.eyebrow ?? ""}
           </div>
         ) : null}
-        <div style={{ marginTop: 14, font: `800 ${xl ? 112 : 84}px/1.08 ${FONT}`,
-          letterSpacing: xl ? -3.5 : -2.5, color: C.ink,
+        <div style={{ marginTop: px(14), font: `800 ${px(xl ? 112 : 84)}px/1.08 ${FONT}`,
+          letterSpacing: xl ? -3.5 * S : -2.5 * S, color: C.ink,
           maxWidth: scene.presenter && !xl ? COL - PIP - 30 : undefined }}>{headline}</div>
         {/* FILL TO THE 80% LINE (user, 2026-09-16). Blocks start under the
             headline and the cards/rows grow into the page; centring them left a
             gap above and an unfinished lower half, and a dense slide overflowed
             to 90% — under Instagram's caption. lint_frames measures both. */}
         <div style={{ position: "relative", flex: 1, minHeight: 0, display: "flex", flexDirection: "column", justifyContent: "flex-start",
-          gap: 28, marginTop: 44 }}>
+          gap: px(28), marginTop: px(44) }}>
           {scene.blocks.map(block)}
         </div>
       </div>

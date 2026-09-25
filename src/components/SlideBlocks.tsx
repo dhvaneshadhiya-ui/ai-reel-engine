@@ -50,8 +50,18 @@ export interface ScreenBlockProps {
   h?: number;
 }
 
-export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: number; boxW: number; C: Pal; shown: number }> = ({ b, moves, t, boxW, C, shown }) => {
+export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: number; boxW: number; C: Pal; shown: number; wide?: boolean }> = ({ b, moves, t, boxW: fullW, C, shown, wide }) => {
   const boxH = b.h ?? 720;
+  // A PHONE SHOT IN A LANDSCAPE PAGE HUGS ITS SOURCE (2026-09-25). Stretched to
+  // a 16:9 column, a 1170x1992 screenshot sat in the middle of a bordered card
+  // with two dead panels beside it. The references put the phone recording in a
+  // phone-shaped panel on the page background, so the card takes the width the
+  // source actually uses and centres itself.
+  // The test is the FRAME, not the box: a portrait page's column is already
+  // 916x760, which is "wider than tall" and briefly made every reel's screen
+  // card shrink (caught in a still, 2026-09-25).
+  const hug = Boolean(wide) && b.height / b.width > 1.2;
+  const boxW = hug ? Math.round(Math.min(fullW, (boxH * b.width) / b.height)) : fullW;
   const mine = moves.filter((m) => m.target === b.id && m.at !== undefined).sort((a, z) => (a.at! - z.at!));
   // camera: every focus is a rect in source px; before the first, the whole image
   const whole: [number, number, number, number] = [0, 0, b.width, b.height];
@@ -88,6 +98,7 @@ export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: 
   const draw = ringRect ? ramp(t, ringAt, 0.45) : 0;
   return (
     <div style={{ position: "relative", width: boxW, height: boxH, borderRadius: 30, overflow: "hidden",
+      alignSelf: hug ? "center" : undefined,
       background: C.card, border: `2px solid ${C.line}`, opacity: shown, transform: `translateY(${Math.round((1 - shown) * 24)}px)`, flexShrink: 0 }}>
       <div style={{ position: "absolute", left: 0, top: 0, width: b.width, height: b.height, transformOrigin: "0 0",
         transform: `translate(${cam.x}px, ${cam.y}px) scale(${cam.s})` }}>

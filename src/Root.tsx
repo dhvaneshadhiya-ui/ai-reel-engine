@@ -139,6 +139,17 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         defaultProps={{ scene: { headline: "A [[slide]]", blocks: [] } as SlideProps }}
       />
+      {/* The same page at 1920x1080, for checking the longform layout without
+          rendering nine minutes of it (2026-09-25). */}
+      <Composition
+        id="slide-still-wide"
+        component={SlideStill}
+        durationInFrames={60}
+        fps={30}
+        width={1920}
+        height={1080}
+        defaultProps={{ scene: { headline: "A [[slide]]", blocks: [] } as SlideProps }}
+      />
     </>
   );
 };

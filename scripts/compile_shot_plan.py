@@ -1032,8 +1032,11 @@ def main() -> None:
     beats = {
         "id": slug,
         "fps": 30,
-        "width": 1080,
-        "height": 1920,
+        # LANDSCAPE for longform (2026-09-25). Root.tsx already registers each
+        # sheet at the size the sheet declares, so the format decides the frame
+        # and every component reads it back from useVideoConfig.
+        **({"width": 1920, "height": 1080} if (plan.get("format") == "longform")
+           else {"width": 1080, "height": 1920}),
         "style": locked_style(engine),
         "audio": audio_rel,
         # the animated treatment's presenter plan (2026-09-16); G06/G17 read it
