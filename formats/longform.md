@@ -2,7 +2,7 @@
 
 **Status: NUMBERS PARTLY MEASURED, NOT YET A PROFILE.** Teardown run 2026-09-25 on
 four references (`tools/measure_video.py`, scene detection at 0.15, YouTube caption
-tracks, publisher chapter lists, contact sheets read by eye at 1 frame / 10s).
+tracks, publisher chapter lists, contact sheets read by eye at 1 frame / 10s, presenter share via Apple Vision).
 Do not copy these into `FORMATS` until the gap named at the bottom is closed.
 
 ## How to run it again
@@ -18,12 +18,12 @@ contact sheet read by eye, because no tool here measures those.
 
 ## What was measured
 
-| reference | runtime | hard cuts | s/cut p50 | p75 | longest hold | w/s | chapters | chapter p50 | face share (read) |
+| reference | runtime | hard cuts | s/cut p50 | p75 | longest hold | w/s | chapters | chapter p50 | face share (measured) |
 |---|---|---|---|---|---|---|---|---|---|
-| Brandon Butch, iOS 27 first 12 things | 723s | 34 | 15.3s | 30.3s | 81.6s | 3.89 | 20 | 26s | ~0% |
-| ThioJoe, Hidden new features in iOS 27 | 503s | 22 | 7.5s | 30.7s | 88.2s | 3.64 | 25 | 18s | **~12%** |
-| Hayls World, iOS 27 everything new | 501s | 93 | 4.2s | 7.2s | 20.6s | 3.00 | 0 | — | ~60% |
-| Apple Explained, Apple's trade-in program | 529s | 180 | 2.6s | 3.6s | 14.3s | 3.45 | 0 | — | ~60% |
+| Brandon Butch, iOS 27 first 12 things | 723s | 34 | 15.3s | 30.3s | 81.6s | 3.89 | 20 | 26s | 6% |
+| ThioJoe, Hidden new features in iOS 27 | 503s | 22 | 7.5s | 30.7s | 88.2s | 3.64 | 25 | 18s | **12%** |
+| Hayls World, iOS 27 everything new | 501s | 93 | 4.2s | 7.2s | 20.6s | 3.00 | 0 | — | 68% |
+| Apple Explained, Apple's trade-in program | 529s | 180 | 2.6s | 3.6s | 14.3s | 3.45 | 0 | — | 62% |
 
 Pooled median: runtime 516s, shot p50 5.9s, shot p75 18.8s, 3.55 w/s.
 
