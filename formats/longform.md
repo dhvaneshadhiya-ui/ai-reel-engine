@@ -5,6 +5,17 @@ four references (`tools/measure_video.py`, scene detection at 0.15, YouTube capt
 tracks, publisher chapter lists, contact sheets read by eye at 1 frame / 10s).
 Do not copy these into `FORMATS` until the gap named at the bottom is closed.
 
+## How to run it again
+
+```bash
+python3 tools/measure_video.py <file.mp4> [more.mp4 ...] [--threshold 0.15]
+```
+
+Downloads first (`yt-dlp -f "bv*[height<=480]..." --write-auto-subs --write-info-json`),
+into `_sources/_teardown-longform/`. The tool prints cut rhythm, speech rate and
+chapter lengths per video plus a pooled median; face share and layout come from a
+contact sheet read by eye, because no tool here measures those.
+
 ## What was measured
 
 | reference | runtime | hard cuts | s/cut p50 | p75 | longest hold | w/s | chapters | chapter p50 | face share (read) |
