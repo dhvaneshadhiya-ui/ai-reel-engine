@@ -551,6 +551,23 @@ Fix, re-render, re-verify. Only then deliver.
 
 ---
 
+### ADDING A FORMAT — measure the references first (G23)
+
+A new genre's numbers come from a teardown, never from an impression of one:
+
+```bash
+# download 3-5 references into _sources/_teardown-<name>/ first, then
+python3 tools/measure_video.py <file.mp4> [more.mp4 ...] [--threshold 0.15]
+```
+
+It prints cut rhythm (p50/p75/longest), speech rate from the caption track, and
+chapter lengths from the publisher's own chapter list, plus a pooled median.
+**Face share and layout are NOT measured by it** — build a contact sheet
+(`fps=1/10,tile=10x8`) and read the frames. On 2026-09-25 that step overturned
+three of four style calls that had been made from metadata alone, which is the
+whole argument for reading frames before writing a profile
+(`formats/longform.md`).
+
 ### STEP 6 — Cover (Reels + Shorts) — EVERY REEL (user directive, 2026-09-11)
 
 **Every reel gets a cover.** Dropped 2026-08-22, skipped by default from
