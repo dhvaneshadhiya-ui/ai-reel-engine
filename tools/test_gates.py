@@ -1646,6 +1646,14 @@ def _longform(total_s: float, page: float = 8.0) -> dict:
     return s
 
 
+# G65: a clip block handed a STILL renders one frame instead of a recording.
+CASES.append((lambda s: s["scenes"].append(
+    {"type": "slide", "durationSec": 2.0, "headline": "The flow",
+     "blocks": [{"id": "c", "kind": "clip", "src": "assets/x/ui/step-1.png",
+                 "width": 1206, "height": 2622}],
+     "moves": [{"do": "show", "target": "c", "at": 0.3}]}),
+    "G65", "slide clip given a still"))
+
 # G65: a gauge block with no `from` percent draws an empty battery.
 CASES.append((lambda s: s["scenes"].append(
     {"type": "slide", "durationSec": 2.0, "headline": "Still draining",

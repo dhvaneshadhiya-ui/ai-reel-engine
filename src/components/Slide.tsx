@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Easing, Img, OffthreadVideo, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { DevicesBlock, GaugeBlock, ScreenBlock, StepsBlock, WavesBlock } from "./SlideBlocks";
-import type { DevicesBlockProps, GaugeBlockProps, ScreenBlockProps, StepsBlockProps, WavesBlockProps } from "./SlideBlocks";
+import { ClipBlock, DevicesBlock, GaugeBlock, ScreenBlock, StepsBlock, WavesBlock } from "./SlideBlocks";
+import type { ClipBlockProps, DevicesBlockProps, GaugeBlockProps, ScreenBlockProps, StepsBlockProps, WavesBlockProps } from "./SlideBlocks";
 
 /**
  * SLIDE — the Carousel Playbook look, as a reel scene (2026-09-16).
@@ -50,7 +50,7 @@ export type SlideBlock =
   | { id: string; kind: "text"; text: string }
   | { id: string; kind: "tips"; best?: string; watch?: string }
   | { id: string; kind: "logos"; items: { logo: string; name: string; tile?: "light" | "dark" }[] }
-  | ScreenBlockProps | StepsBlockProps | DevicesBlockProps | WavesBlockProps | GaugeBlockProps
+  | ScreenBlockProps | StepsBlockProps | DevicesBlockProps | WavesBlockProps | GaugeBlockProps | ClipBlockProps
   | { id: string; kind: "spotlight"; logo: string; name: string; note?: string; overlay?: boolean };
 
 export interface SlideMove {
@@ -345,6 +345,8 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
           </div>
         );
       }
+      case "clip":
+        return <ClipBlock key={b.id} b={b} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} fps={fps} wide={wide} />;
       case "gauge":
         return <GaugeBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
       case "waves":

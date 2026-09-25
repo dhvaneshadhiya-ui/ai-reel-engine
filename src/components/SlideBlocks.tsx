@@ -1,5 +1,5 @@
 import React from "react";
-import { Easing, Img, interpolate, staticFile } from "remotion";
+import { Easing, Img, OffthreadVideo, interpolate, staticFile } from "remotion";
 
 /**
  * MOTION BLOCKS FOR SLIDES (2026-09-17).
@@ -286,6 +286,32 @@ export const GaugeBlock: React.FC<{ b: GaugeBlockProps; moves: MoveLike[]; t: nu
         <div style={{ position: "absolute", left: 0, right: 0, top: bodyY - 68, textAlign: "center",
           font: `700 30px ${FONT}`, letterSpacing: 2, color: C.muted }}>{b.note}</div>
       ) : null}
+    </div>
+  );
+};
+
+/** CLIP — a screen RECORDING inside a page (ios27-battery-longform, 2026-09-25).
+ *  `screen` takes a still and moves a camera over it; the longform format's core
+ *  asset is a real recording of a phone doing the thing, which an <Img> cannot
+ *  decode (G35 blocks that on purpose). Same hug rule as ScreenBlock: a portrait
+ *  recording in a landscape page takes the width it uses and centres, instead of
+ *  sitting in a bordered card between two dead panels. */
+export interface ClipBlockProps {
+  id: string; kind: "clip"; src: string; width: number; height: number;
+  h?: number; from?: number;
+}
+
+export const ClipBlock: React.FC<{ b: ClipBlockProps; t: number; boxW: number; C: Pal; shown: number; fps: number; wide?: boolean }>
+  = ({ b, boxW: fullW, C, shown, fps, wide }) => {
+  const boxH = b.h ?? 720;
+  const hug = Boolean(wide) && b.height / b.width > 1.2;
+  const boxW = hug ? Math.round(Math.min(fullW, (boxH * b.width) / b.height)) : fullW;
+  return (
+    <div style={{ position: "relative", width: boxW, height: boxH, borderRadius: 30, overflow: "hidden",
+      alignSelf: hug ? "center" : undefined, background: C.card, border: `2px solid ${C.line}`,
+      opacity: shown, transform: `translateY(${Math.round((1 - shown) * 24)}px)`, flexShrink: 0 }}>
+      <OffthreadVideo src={staticFile(b.src)} muted startFrom={Math.round((b.from ?? 0) * fps)}
+        style={{ width: "100%", height: "100%", objectFit: "contain" }} />
     </div>
   );
 };

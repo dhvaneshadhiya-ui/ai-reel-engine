@@ -202,6 +202,8 @@ def _slide_words(scene: dict) -> str:
             to = b.get("to")
             bits.append(f"a battery draining from {b.get('from')}% to {to}%" if to is not None and to != b.get("from")
                         else f"a battery sitting at {b.get('from')}%")
+        elif k == "clip":
+            bits.append(f"a screen recording playing ({str(b.get('src') or '').split('/')[-1]})")
         elif k == "screen":
             bits.append(f"the page itself ({str(b.get('src') or '').split('/')[-1]}), zooming to the line")
         elif k == "steps":
