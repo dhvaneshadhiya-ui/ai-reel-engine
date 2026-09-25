@@ -156,6 +156,27 @@ FRAME, and the fix was verified by measuring both stills, not by looking at one.
 Checked with `slide-still-wide`, a 1920x1080 still composition added for exactly this
 — a page can be judged without rendering nine minutes of it.
 
+## The device frame, 2026-09-25
+
+Phone UI is drawn inside a phone: `clip` and `screen` blocks take `device: true`
+and render a bezel, a rounded screen, and a drop shadow around the capture. The
+bezel is drawn at render time rather than baked into the recording, so one capture
+serves any layout, and the camera works inside the screen (its box shrinks by the
+bezel). **A captured web page is a document and stays in the plain card** — the
+phone body means "this is the phone's own interface", and it should keep meaning
+that.
+
+Two bugs the stills caught, both fixed: a focus rect wider than it is tall zoomed
+the image out BELOW its resting fit, which inside a bezel showed black bars (a
+focus now never renders smaller than the whole-image fit); and the first Settings
+still was captured mid-launch, so it was a blank white screen — the still now comes
+from a frame of the recording itself.
+
+**Captures of a live state are perishable.** The "Optimising Search and Siri" row
+was gone from the simulator within the hour, because the indexing it reports had
+finished. That is the behaviour the script describes, and it means a capture of a
+transient state has to be taken while it exists, not planned for later.
+
 ## What this format still needs from the engine
 
 - A per-format runtime ceiling (G02 is a flat 180s today).
