@@ -207,6 +207,32 @@ on-screen line is the subject of that beat ("Optimising Search and Siri", "Tip 4
 the pilot's "Chapter 1 · What's happening" eyebrows were a deck habit, not this format
 (user, 2026-09-25). Eyebrows now carry the subject.
 
+## Two writing skills, installed 2026-09-25
+
+Both read in full first; both advise on words only and disclaim the build.
+
+- **`youtube-scriptwriting`** (cdeistopened/skill-stack) — long-form structure, and the
+  only skill in the sweep that splits the cadence by format: rehooks every 30-60s in
+  short form, **every 2-3 minutes in long form**. Its "shock score" (rate each fact
+  1-100 on how many viewers would not know it) is the same mechanic as this repo's
+  `SURPRISE` ledger field, arrived at independently.
+- **`technical-video-script`** (samber/developer-relations-skills) — screencast rigor,
+  and the best epistemics found in the ecosystem: every number traceable, Sourced and
+  Baseline split apart, the study's own limitations quoted, and a warning that the
+  widely repeated engagement table is a secondary rendering of a boxplot. That is G23
+  discipline arriving from outside the repo.
+
+Four of its rules are now applied to the pilot and belong to the format:
+
+1. **Segments ARE the chapters**, titled as the viewer would search ("Why closing your
+   apps does not help"), never as parts ("Chapter 3").
+2. **The audio-only pass**: read the narration with the screen off, and rewrite every
+   sentence that stops meaning something. Two soft deictics died this way.
+3. **The 30-second window**: the promise lands at ~27s of an 80-word opening.
+4. **The cut list is decided before recording** — 3 of 12 pages carry a `cut` field in
+   shot-plan.json, in the order they go if the runtime overruns. Criterion 6 of its
+   pass threshold, and the one it says people skip.
+
 ## What this format still needs from the engine
 
 - A per-format runtime ceiling (G02 is a flat 180s today).

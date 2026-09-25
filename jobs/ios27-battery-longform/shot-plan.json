@@ -20,7 +20,7 @@
    "start_phrase": "Your iPhone's battery",
    "tier": "official",
    "asset_id": null,
-   "line": "Your iPhone's battery has been dropping faster since you updated to iOS 27, and the internet has a lot of very confident answers about why. I spent this week going through what Apple has actually published about it, and almost none of those answers are in there. So in the next few minutes I'll show you what the phone is really doing to your battery after an update, the one screen that tells you whether it's that or something genuinely wrong, and the popular fix that Apple's own software chief says does nothing at all.",
+   "line": "Your iPhone's battery has been dropping faster since you updated to iOS 27, and the internet has a lot of confident answers about why. I spent this week reading what Apple actually published, and almost none of those answers are in it. So I'll show you what your phone is really doing after an update, the one screen that tells you whether it's that or something genuinely wrong, and the popular fix that Apple's own software chief says does nothing.",
    "needs": [
     "battery falling",
     "the promise"
@@ -58,7 +58,8 @@
       "on": "really doing to your battery"
      }
     ]
-   }
+   },
+   "cut": "core"
   },
   {
    "start_phrase": "Start with what Apple says",
@@ -96,7 +97,8 @@
       ]
      }
     ]
-   }
+   },
+   "cut": "core"
   },
   {
    "start_phrase": "Apple does name the work",
@@ -145,13 +147,14 @@
       "on": "updating your apps"
      }
     ]
-   }
+   },
+   "cut": "core"
   },
   {
    "start_phrase": "Except that on iOS 27",
    "tier": "official",
    "asset_id": "sim-optimising",
-   "line": "Except that on iOS 27, there is somewhere you can see it. If your phone is still working through that list, open Settings and look just above General, and you'll find a row that isn't normally there at all: Optimising Search and Siri. That isn't a setting you can change, it's a status, and it's your phone telling you it hasn't finished yet.",
+   "line": "Except that on iOS 27, there is somewhere you can see it. If your phone is still working through that list, open Settings and look just above General, and you'll find a row that isn't normally there at all: Optimising Search and Siri. Optimising Search and Siri isn't a setting you can change, it's a status, and it's your phone telling you it hasn't finished yet.",
    "needs": [
     "the row, live"
    ],
@@ -183,13 +186,14 @@
       "on": "Optimising Search and Siri"
      }
     ]
-   }
+   },
+   "cut": "core"
   },
   {
-   "start_phrase": "I recorded that in Apple's",
+   "start_phrase": "I recorded that row",
    "tier": "single",
    "asset_id": "sim-settings",
-   "line": "I recorded that in Apple's own iOS 27 simulator, and within the hour, once the indexing finished, the row was simply gone, which is the clearest evidence you'll get that this work ends.",
+   "line": "I recorded that row in Apple's own iOS 27 simulator, and within the hour, once the indexing finished, the row was simply gone, which is the clearest evidence you'll get that this work ends.",
    "needs": [
     "the row, then gone"
    ],
@@ -233,7 +237,8 @@
       "on": "this work ends"
      }
     ]
-   }
+   },
+   "cut": "cuttable \u2014 a first-hand aside; the claim survives without it"
   },
   {
    "start_phrase": "That brings up the question",
@@ -303,7 +308,8 @@
       "on": "few days"
      }
     ]
-   }
+   },
+   "cut": "core"
   },
   {
    "start_phrase": "Everyone else has been",
@@ -346,7 +352,8 @@
       ]
      }
     ]
-   }
+   },
+   "cut": "core"
   },
   {
    "start_phrase": "And if this feels familiar",
@@ -411,13 +418,14 @@
       "on": "third September in a row"
      }
     ]
-   }
+   },
+   "cut": "cuttable \u2014 the strongest context beat, but context, not the promise"
   },
   {
-   "start_phrase": "So here's the screen",
+   "start_phrase": "So, the screen I promised",
    "tier": "official",
    "asset_id": "apple-insight",
-   "line": "So here's the screen I promised you. Open Settings, then Battery, and look near the top for a note saying that a recent software update is finishing in the background. If that note is there, you have your answer: it's the update, it isn't your battery, and you can close the forum tabs.",
+   "line": "So, the screen I promised you. Open Settings, then Battery, and look near the top for a note saying that a recent software update is finishing in the background. If that note is there, you have your answer: it's the update, it isn't your battery, and you can close the forum tabs.",
    "needs": [
     "the Battery note"
    ],
@@ -454,7 +462,8 @@
       ]
      }
     ]
-   }
+   },
+   "cut": "core"
   },
   {
    "start_phrase": "What won't help",
@@ -497,7 +506,8 @@
       "on": "no and no"
      }
     ]
-   }
+   },
+   "cut": "core"
   },
   {
    "start_phrase": "Your battery health is fine",
@@ -547,7 +557,8 @@
       ]
      }
     ]
-   }
+   },
+   "cut": "cuttable \u2014 reassurance the Battery screen already implies"
   },
   {
    "start_phrase": "So check that one screen",
@@ -589,7 +600,8 @@
       "on": "drop your iPhone model"
      }
     ]
-   }
+   },
+   "cut": "core"
   }
  ]
 }

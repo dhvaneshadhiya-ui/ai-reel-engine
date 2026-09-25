@@ -33,7 +33,20 @@ Apple's support page, captured on mobile, decelerating onto "certain tasks relat
 to the update continue in the background and might affect battery life and thermal
 performance" — the claim is Apple's, in Apple's words, before any of our graphics.
 
-## CHAPTERS
+## CHAPTERS — titled as the viewer would search, not as parts
+
+Segment boundaries decided here ARE the chapters (technical-video-script). Timecodes
+fill in after the render; the titles do not change.
+
+- 00:00  Why your battery drops after an iOS 27 update
+- ~0:35  What the update is doing in the background
+- ~1:15  The iOS 27 row that shows it is still working
+- ~1:55  How long it lasts, and the numbers nobody can trace
+- ~2:45  The Battery screen that tells you which it is
+- ~3:15  Why closing your apps does not help
+- ~3:50  Whether your battery health is affected
+
+## OLD CHAPTER NOTES
 
 1. **What's happening** (~0:12-1:05) — Apple's page, then the phone admitting it:
    the iOS 27 "Optimising Search and Siri" row, captured live from the simulator.
@@ -67,6 +80,24 @@ and escalate only if the update note is gone and the drain is not.
   screen is described in Apple's words, never faked.
 - Low Power Mode and Adaptive Power paths: they differ by model (the user's own iPhone
   has no Power Mode row), and this cut does not need them.
+
+## THE CUT LIST, DECIDED BEFORE RECORDING
+
+Three of twelve pages are marked cuttable in shot-plan.json, in this order if the
+runtime overruns: the simulator aside (the row disappearing), the three-Septembers
+context beat, and the battery-health reassurance. Cutting all three still delivers
+the promise. Decided now so nobody has to decide it at edit time
+(technical-video-script, criterion 6 — "the one people skip").
+
+## THE PASSES THIS SCRIPT HAS BEEN THROUGH
+
+- **Audio-only pass.** Read with the screen off: no sentence depends on the picture.
+  Two soft deictics were rewritten ("that isn't a setting" -> "Optimising Search and
+  Siri isn't a setting"; "I recorded that" -> "I recorded that row").
+- **The 30-second window.** The promise lands at ~27s of an 80-word opening.
+- **Register, measured.** 19.0 words/sentence, 24% over 25 words, "you" 4.4/100 —
+  inside the band measured across five in-format references (16-18, 14-20%, 4-6).
+- **Humanizer**, whole script, recorded.
 
 ## PILOT NOTE
 
