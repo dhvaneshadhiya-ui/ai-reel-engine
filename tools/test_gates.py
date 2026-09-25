@@ -1620,6 +1620,32 @@ CASES.append((lambda s: s["scenes"].__setitem__(0, {
                   "sfx": [{"src": "sfx/whoosh.MP3", "vol": 0.582}]}),
               "G51", "a statcard with no rows (invented stat/unit shape)"))
 
+# LONGFORM (2026-09-25) — the profile that moved four rules at once: a 900s
+# ceiling instead of 180, a 10s cold open instead of a 2s hook, pacing measured
+# as "something changed" instead of cuts, and no SFX count band at all because
+# none was measured. Each of those needs its own failing case, and the ceiling
+# needs a NEGATIVE one too: a gate that still blocks at 180s would make the
+# format unusable while every positive test still passed.
+def _longform(total_s: float, page: float = 8.0) -> dict:
+    s = copy.deepcopy(BASE)
+    s["format"] = "longform"
+    s["scenes"] = []
+    t = 0.0
+    i = 0
+    while t < total_s:
+        d = min(page, total_s - t)
+        s["scenes"].append({
+            "type": "slide", "durationSec": round(d, 2),
+            "headline": f"Step {i + 1}",
+            "blocks": [{"id": "r", "kind": "rows", "rows": [{"k": "a", "v": "b"}]}],
+            "moves": [{"do": "show", "target": "r.0", "at": 0.2},
+                      {"do": "highlight", "target": "r.0", "at": min(4.0, d - 0.5)}],
+        })
+        t += d
+        i += 1
+    return s
+
+
 # G65: a gauge block with no `from` percent draws an empty battery.
 CASES.append((lambda s: s["scenes"].append(
     {"type": "slide", "durationSec": 2.0, "headline": "Still draining",
@@ -1631,6 +1657,23 @@ CASES.append((lambda s: s["scenes"].append(
 CASES.append((lambda s: (s["scenes"][1].update(type="typecard", kinetic={"text": "BIG CLAIM"}),
                          s["scenes"][2].update(src="assets/x/avatar-master-169.mp4")),
               "G70", "nothing at 2-5s proves the hook"))
+
+# G02: past the longform ceiling (900s), allowLong or not.
+CASES.append((lambda s: s.update(_longform(960.0), allowLong=True,
+                                 allowLongReason="a long one"),
+              "G02", "longform over its own 900s ceiling"))
+# G04: a longform page that shows nothing new for longer than the measured 8s.
+CASES.append((lambda s: s.update(_longform(520.0), scenes=[
+    {"type": "slide", "durationSec": 520.0 / 40, "headline": "One",
+     "blocks": [{"id": "r", "kind": "rows", "rows": [{"k": "a", "v": "b"}]}],
+     "moves": [{"do": "show", "target": "r.0", "at": 0.2}]}] * 40),
+              "G04", "longform page static past change_max"))
+# G04: a longform page held past the longest hold measured in the references.
+CASES.append((lambda s: s.update(_longform(600.0, page=75.0)),
+              "G04", "longform page held past hold_max"))
+# G08: the format declares no measured SFX band and must SAY so.
+CASES.append((lambda s: s.update(_longform(560.0)),
+              "G08", "longform has no measured SFX count band"))
 
 for mutate, gate, label in CASES:
     expect_fail(mutate, gate, label)
@@ -1652,6 +1695,43 @@ if _hits:
     print(f"  FAIL G09 fired on a declared music-free reel: {_hits[0][:90]}")
     raise SystemExit(1)
 _counted("G09 silent — noMusic:true needs no reason (music is optional)")
+
+# G02 NEGATIVE CASE (2026-09-25). The whole point of the longform profile is
+# that a nine-minute cut is legal. If the 180s ceiling still bound, every
+# positive case above would still pass while the format stayed unusable.
+_s = _longform(560.0)
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS)
+    _hits = [a for a in _adv if "G02" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G02" in str(a)]
+if _hits:
+    print(f"  FAIL G02 fired on a 560s longform cut, inside its own band: {_hits[0][:110]}")
+    raise SystemExit(1)
+_counted("G02 silent — 560s is inside the longform band, 180s ceiling does not apply")
+
+# G70 NEGATIVE CASE (2026-09-25). The proof window travels with the format: a
+# longform cut whose first screen lands at 12s is inside its own 4-20s window,
+# and must not be told it failed a rule measured on 80-second reels.
+_s = _longform(560.0)
+_s["scenes"][0] = {"type": "slide", "durationSec": 12.0, "headline": "Cold open",
+                   "blocks": [{"id": "r", "kind": "rows", "rows": [{"k": "a", "v": "b"}]}],
+                   "moves": [{"do": "show", "target": "r.0", "at": 0.2},
+                             {"do": "highlight", "target": "r.0", "at": 6.0}]}
+_s["scenes"][1] = {"type": "slide", "durationSec": 8.0, "headline": "The screen",
+                   "blocks": [{"id": "sc", "kind": "screen", "src": "assets/x/ui/step-1.png",
+                               "width": 1170, "height": 1992, "h": 700}],
+                   "moves": [{"do": "focus", "target": "sc", "at": 0.6,
+                              "rect": [0, 0, 1170, 900]}]}
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS)
+    _hits = [a for a in _adv if "G70" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G70" in str(a)]
+if _hits:
+    print(f"  FAIL G70 fired on a longform cut proving itself at 12s: {_hits[0][:110]}")
+    raise SystemExit(1)
+_counted("G70 silent — longform proof at 12s is inside its own 4-20s window")
 
 # G38 NEGATIVE CASE (2026-09-08). RULES.md 0(4): "A gate with no negative test
 # will eventually block good work." G38's RULE is that the hook carries words on

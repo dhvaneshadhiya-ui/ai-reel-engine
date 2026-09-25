@@ -151,6 +151,45 @@ FORMATS: dict[str, dict] = {
                     "measured separately for this format — measure it on the "
                     "first top5 reel and tighten this if it disagrees.",
     },
+    "longform": {
+        # LANDSCAPE YOUTUBE EXPLAINER — voice-led, the screen carries the story,
+        # presenter at the bookends. 5-reference teardown 2026-09-25, every
+        # number measured on this machine with tools/measure_video.py (scene
+        # detection 0.15, caption tracks, publisher chapter lists) and presenter
+        # share with Apple Vision. References (in _sources/_teardown-longform,
+        # gitignored): ThioJoe iOS 27 503s / MacMost passwords 696s / MacMost
+        # Split View 658s / Kevin Stratvert Google Flow 554s / ScreenCastsONLINE
+        # DockDoor 550s. Full working: formats/longform.md.
+        "runtime": (500.0, 700.0),      # measured 503-696, median 554
+        "ceiling": 900.0,               # 15 min: past the references, not past sense
+        # The cold open states the question and the strongest item lands by ~0:10.
+        # Not a 2s hook: nobody in this format cuts that fast at the top.
+        "hook_max": 10.0,
+        "face": (0.0, 0.19),            # measured 0-19%, median 12. 0 is legitimate:
+                                        # the 0% screencast beats its channel by 37x
+        # NOT MEASURED. The count band is a short-form rule (6-9 cues over 60-80s)
+        # and cannot be rescaled by arithmetic to nine minutes — sound density in
+        # these references was never measured, so this format asserts no number.
+        # G08 says so out loud rather than inventing one.
+        "sfx": None,
+        "sfx_peak": -12.0,              # INHERITED from news, unmeasured here
+        "requires_cta": False,
+        # Pacing is NOT a cut rule here. Hard cuts ran 16-74 across five videos of
+        # the same length, because the motion happens inside the screen recording:
+        # the calm references hold one screen 13-16s while the cursor works.
+        "change_max": 8.0,              # p50 of the three busiest: 2.5 / 4.2 / 7.5
+        "hold_max": 60.0,               # p75 10.4-54.0; the 231s screencast hold is
+                                        # the outer edge, not a target
+        "wps": (2.9, 3.2),              # references 3.02-3.64; the band sits low on
+                                        # purpose — our voice is a flat clone
+        "landscape": True,              # 1920x1080, not 1080x1920
+        # The cold open runs to ~10s here, so proof arrives later than it does in
+        # an 80s reel — but it still arrives before the first chapter ends.
+        "proof_window": (4.0, 20.0),
+        "_derived": "formats/longform.md — 5-reference teardown 2026-09-25, "
+                    "frame-verified before measurement. sfx count and sfx_peak "
+                    "are NOT measured for this format.",
+    },
     "howto": {
         # TASK TUTORIALS — teaching the viewer to DO something on their phone.
         # 7-reel teardown 2026-09-02; every number below was measured on this
@@ -917,7 +956,8 @@ def check_beats(beats: dict, vo_end: float | None = None,
     RT_MIN, RT_MAX = prof["runtime"]
     HK_MAX = prof["hook_max"]
     FC_MIN, FC_MAX = prof["face"]
-    SX_MIN, SX_MAX = prof["sfx"]
+    SX_MIN, SX_MAX = prof["sfx"] or (None, None)
+    CEILING = prof.get("ceiling", RUNTIME_CEILING)
     SFX_TARGET = prof["sfx_peak"]
     total = round(sum(s["durationSec"] for s in scenes), 2)
     # StatCard.tsx counts its row stagger in FRAMES, not seconds, so G20
@@ -979,12 +1019,12 @@ def check_beats(beats: dict, vo_end: float | None = None,
     # The ceiling binds even with allowLong, and even with --allow-short:
     # allowLong is permission to argue past the measured band, not permission
     # to leave short form. Nothing enforced this before 2026-08-16.
-    if total > RUNTIME_CEILING:
+    if total > CEILING:
         errors.append(
-            f"G02 runtime {total:.1f}s over the {RUNTIME_CEILING:.0f}s hard "
+            f"G02 runtime {total:.1f}s over the {CEILING:.0f}s hard "
             f"ceiling (format {fmt_name!r}). allowLong cannot pass this — it "
-            "buys room to argue past the measured band, not an exit from "
-            "short form. Split the topic across two reels.")
+            "buys room to argue past the measured band, not an exit from the "
+            "format. Split the topic in two.")
 
     # G03 — the hook may not hold. A slide opening is judged by when its first
     # words land (SLIDE_TIMING, measured) — its headline starts at 0.05s.
@@ -995,10 +1035,27 @@ def check_beats(beats: dict, vo_end: float | None = None,
 
     # G04 — per-type held-layout ceilings
     fmt_dur_max = dur_max_for(fmt_name)
+    change_max = prof.get("change_max")
+    hold_max = prof.get("hold_max")
     for i, sc in enumerate(scenes):
         if sc["type"] == "slide":
             rv = slide_reveals(sc)
             gap, where = max((b - a, a) for a, b in zip(rv, rv[1:]))
+            if change_max is not None:
+                # A long-form page is allowed to sit while the screen inside it
+                # works, so the rule is "something changed", measured against the
+                # format's own number, and the whole page still has a ceiling.
+                if gap > change_max:
+                    errors.append(
+                        f"G04 scene {i:02d} (slide) shows nothing new for {gap:.2f}s from "
+                        f"{where:.2f}s > {change_max}s — in {fmt_name!r} something on screen "
+                        "changes every 4-8s (measured 2026-09-25), even without a cut.")
+                if hold_max is not None and sc["durationSec"] > hold_max:
+                    errors.append(
+                        f"G04 scene {i:02d} (slide) holds {sc['durationSec']:.0f}s > "
+                        f"{hold_max:.0f}s — past the longest hold measured in the "
+                        "references, outside a deliberate demo.")
+                continue
             lim = SLIDE_TIMING["cover_static_max" if any(b.get("kind") == "logos" for b in sc.get("blocks") or [])
                               else "static_max"]
             if gap > lim:
@@ -1192,7 +1249,14 @@ def check_beats(beats: dict, vo_end: float | None = None,
 
     # G08 — sound design: sparse, and never louder than the band
     cues = [c for s in scenes for c in (s.get("sfx") or [])]
-    if not (SX_MIN <= len(cues) <= SX_MAX):
+    if SX_MIN is None:
+        # The format declares no count band because none was measured for it.
+        # A rescaled short-form number would look like evidence and be none.
+        errors.append(
+            f"G08 {len(cues)} SFX cues — format {fmt_name!r} has no measured count "
+            "band, so nothing is being checked here. Judge density by ear, and "
+            "measure it on the references if it starts to matter.")
+    elif not (SX_MIN <= len(cues) <= SX_MAX):
         errors.append(
             f"G08 {len(cues)} SFX cues, outside {SX_MIN}-{SX_MAX} — ordinary "
             "cuts stay silent (rule 2026-07-22).")
@@ -2981,17 +3045,19 @@ def check_beats(beats: dict, vo_end: float | None = None,
         if t_ == "stage":
             return any(e.get("kind") in ("image", "number") for e in sc.get("elements") or [])
         return False
+    _w0, _w1 = prof.get("proof_window", (2.0, 5.0))
     _t = 0.0
     _window = []
     for sc in scenes:
         s0, s1 = _t, _t + float(sc.get("durationSec") or 0)
-        if s0 < 5.0 and s1 > 2.0:
+        if s0 < _w1 and s1 > _w0:
             _window.append(sc)
         _t = s1
     if scenes and not any(_is_proof(sc) for sc in _window):
         errors.append(
-            "G70 nothing on screen at 2-5s proves the hook — show the product doing it, the "
-            "document or the number (the confirmation beat), not only the presenter or type.")
+            f"G70 nothing on screen at {_w0:.0f}-{_w1:.0f}s proves the hook — show the product "
+            "doing it, the document or the number (the confirmation beat), not only the "
+            "presenter or type.")
 
     # G45 (RULE 1, blocking) + G46 (craft, advice) — WHERE A CAPTION MAY SIT.
     #
@@ -3656,7 +3722,7 @@ def print_formats() -> None:
     for name, pr in FORMATS.items():
         rt = f"{pr['runtime'][0]:.0f}-{pr['runtime'][1]:.0f}s"
         fc = f"{pr['face'][0]:.0%}-{pr['face'][1]:.0%}"
-        sx = f"{pr['sfx'][0]}-{pr['sfx'][1]}"
+        sx = f"{pr['sfx'][0]}-{pr['sfx'][1]}" if pr["sfx"] else "n/m"
         sv = f"{pr['sfx_peak']:.1f} dBFS"
         print(f"{name.ljust(w)}  {rt:<9}  {pr['hook_max']:.1f}s   {fc:<7}  "
               f"{sx:<4}  {sv:<11}  "

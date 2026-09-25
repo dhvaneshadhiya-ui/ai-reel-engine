@@ -1,6 +1,8 @@
 # Format: longform (landscape YouTube explainer)
 
-**Status: MEASURED on five in-format references. Ready to wire into `FORMATS`.**
+**Status: MEASURED on five in-format references, and WIRED into `FORMATS`
+(2026-09-25).** Print the live numbers with `python3 tools/reel_gates.py --formats`;
+this file is the working, not the source of truth.
 Teardown run 2026-09-25, first on four candidates picked from metadata (three of
 which turned out to be the wrong form) and then on five that were frame-verified
 first. Measured (`tools/measure_video.py`, scene detection at 0.15, YouTube caption
@@ -110,7 +112,24 @@ overhead hands holding a phone.
 **Rule for the next format: verify the form on frames before the reference list is
 written down, not after.**
 
-## What this format needs from the engine
+## Wired into the gates, 2026-09-25
+
+- **G02** reads a per-format `ceiling` (longform 900s) instead of the global 180s
+  wall. A negative test asserts a 560s cut passes, because every positive test
+  would still have passed with the format unusable.
+- **G03** takes the 10s cold open from the profile's `hook_max`.
+- **G04** switches to "something changed": `change_max` 8.0s and `hold_max` 60.0s,
+  instead of the cut-derived short-form ceilings.
+- **G06** takes the 0-19% face band.
+- **G08** asserts NOTHING and says so — the 6-9 count is a 60-80s rule and was not
+  re-measured for nine minutes. A rescaled number would read as evidence.
+- **G70** takes a `proof_window` of 4-20s instead of 2-5s.
+
+A 560s longform sheet now passes with three advisories, all correct: no measured
+SFX band, no presenter declared, and (before the window moved) the short-form
+proof rule. Nothing blocks.
+
+## What this format still needs from the engine
 
 - A per-format runtime ceiling (G02 is a flat 180s today).
 - A 16:9 layout pass on the handful of scene types this format actually uses.
