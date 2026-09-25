@@ -1,9 +1,11 @@
 # Format: longform (landscape YouTube explainer)
 
-**Status: NUMBERS PARTLY MEASURED, NOT YET A PROFILE.** Teardown run 2026-09-25 on
-four references (`tools/measure_video.py`, scene detection at 0.15, YouTube caption
+**Status: MEASURED on five in-format references. Ready to wire into `FORMATS`.**
+Teardown run 2026-09-25, first on four candidates picked from metadata (three of
+which turned out to be the wrong form) and then on five that were frame-verified
+first. Measured (`tools/measure_video.py`, scene detection at 0.15, YouTube caption
 tracks, publisher chapter lists, contact sheets read by eye at 1 frame / 10s, presenter share via Apple Vision).
-Do not copy these into `FORMATS` until the gap named at the bottom is closed.
+Every number below came from a file on this machine, not from an impression.
 
 ## How to run it again
 
@@ -13,10 +15,38 @@ python3 tools/measure_video.py <file.mp4> [more.mp4 ...] [--threshold 0.15]
 
 Downloads first (`yt-dlp -f "bv*[height<=480]..." --write-auto-subs --write-info-json`),
 into `_sources/_teardown-longform/`. The tool prints cut rhythm, speech rate and
-chapter lengths per video plus a pooled median; face share and layout come from a
-contact sheet read by eye, because no tool here measures those.
+chapter lengths per video plus a pooled median. `--faces` measures presenter share
+with Apple's Vision framework (a face at least 10% of frame height, one frame every
+10s), so that number is measured too; layout still has to be read off a contact sheet
+(`fps=1/10,tile=10x8`).
 
-## What was measured
+## What was measured — IN-FORMAT references (voice-led, screen-carried)
+
+Face share is measured with Apple Vision; every one of these sits at or under 19%.
+
+| reference | runtime | hard cuts | s/cut p50 | p75 | longest hold | w/s | chapters | chapter p50 | face |
+|---|---|---|---|---|---|---|---|---|---|
+| ThioJoe, hidden iOS 27 features | 503s | 22 | 7.5s | 30.7s | 88s | 3.64 | 25 | 18s | 12% |
+| MacMost, 10 password app tips | 696s | 36 | 16.1s | 23.7s | 80s | 3.09 | 12 | 46s | 19% |
+| MacMost, 10 Split View tips | 658s | 74 | 4.2s | 14.9s | 43s | 3.02 | 13 | 43s | 6% |
+| Kevin Stratvert, Google Flow | 554s | 72 | 2.5s | 10.4s | 77s | 3.44 | 8 | 48s | 13% |
+| ScreenCastsONLINE, DockDoor | 550s | 16 | 13.4s | 54.0s | 231s | 3.22 | 0 | — | 0% |
+
+**Spread:** runtime 503-696s (median 554) · shot p50 2.5-16.1s (median 7.5) ·
+p75 10.4-54.0s (median 23.7) · 3.02-3.64 w/s (median 3.22) · face 0-19% (median 12).
+
+Two of the five are the same channel in the same series, which is the point: MacMost
+repeats this form, and the numbers hold across both (face 19% and 6%, w/s 3.09 and
+3.02). The channel also runs a SECOND format — its "N new features in macOS" videos
+cut to a full-frame talking head between items — so the form is a property of the
+series, not the channel.
+
+## The earlier candidates — kept as the contrast
+
+These were picked from metadata and mostly are NOT this format. They stay here because
+they are what the bands are being held against.
+
+### Out-of-format, measured anyway
 
 | reference | runtime | hard cuts | s/cut p50 | p75 | longest hold | w/s | chapters | chapter p50 | face share (measured) |
 |---|---|---|---|---|---|---|---|---|---|
@@ -46,25 +76,39 @@ Pooled median: runtime 516s, shot p50 5.9s, shot p75 18.8s, 3.55 w/s.
    w/s where our measured reel band is 2.35-2.75. A long-form read at reel pace would
    run noticeably slow.
 
-## Draft bands (hold until the gap closes)
+## The profile, derived
 
-- **Runtime** 480-660s (8-11 min); the four references cluster 501-723s.
-- **Speech** 2.9-3.2 w/s. Below the references deliberately: our voice is a clone with
-  measured-flat delivery, and speed cannot substitute for expression.
-- **Beat / chapter** 18-30s, 12-25 chapters, published as timestamps.
-- **Face share** 8-15%: open, close, and a short cutaway roughly every 90s (ThioJoe).
-- **On-screen change** every 4-8s (references' shot p50 4.2-7.5s), longest single
-  hold <= 30s (p75 ~30s on both screen-carried references).
-- **Cold open** states the question in the first two sentences; the strongest item
-  lands by ~0:10 (Butch's chapter list puts it there, and it is his best video of the
-  year by 9.6x his median).
+- **Runtime 500-700s** (8:20-11:40), default target **555s (~9:15)** — the measured
+  median. Every in-format reference sits inside this.
+- **Speech 2.9-3.2 w/s.** References run 3.02-3.64 (median 3.22); our reels run
+  2.35-2.75. The band sits at the bottom of the references on purpose: our voice is a
+  clone with measured-flat delivery, and pace cannot stand in for expression.
+- **Chapter every 20-50s**, 8-25 of them, published as timestamps. ThioJoe is the dense
+  end (25 chapters, 18s each), Stratvert the loose end (8 chapters, 48s).
+- **Face 8-15%**, and never more than 19%. Open, close, and a short cutaway roughly
+  every 90s. One reference (a pure screencast) carries 0% and still over-performs its
+  channel by 37x, so the face is optional in this format — the voice is not.
+- **Something changes on screen every 4-8s** (p50 of the three busiest references:
+  2.5, 4.2, 7.5). This is NOT a cut rule: the two calmest references hold a single
+  screen for 13-16s at a time while the cursor works inside it. Hard cuts range 16 to
+  74 per video for the same runtime.
+- **Longest single hold <= 60s**, except a deliberate demo. The pure screencast holds
+  one screen for 231s, which is the format's outer edge and not a target.
+- **Narration is continuous.** At 10s resolution every reference speaks in every
+  bucket — none leaves a ten-second hole. (Caveat: that resolution cannot see the
+  sentence-level pauses our own reels rely on.)
 
-## The gap
+## What the gap taught (closed 2026-09-25)
 
-One in-format reference is not a teardown. Two or three more screen-carried,
-low-face, landscape explainers must be measured the same way before these bands go
-into `FORMATS` — that is the G23 discipline, and today's session is the reason it
-exists: the metadata-based style calls were wrong three times out of four.
+The first four references were chosen from titles, descriptions and chapter lists.
+Reading the frames overturned three of the four style calls. The second sweep verified
+the form on sampled frames BEFORE the shortlist was handed over, and all five survived
+measurement. Six further candidates were rejected on frames first, among them a 9to5Mac
+video whose presenter is on screen for its whole runtime and a MacRumors video shot as
+overhead hands holding a phone.
+
+**Rule for the next format: verify the form on frames before the reference list is
+written down, not after.**
 
 ## What this format needs from the engine
 
