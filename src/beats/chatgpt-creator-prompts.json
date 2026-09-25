@@ -1,0 +1,1883 @@
+{
+  "id": "chatgpt-creator-prompts",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "utility",
+  "audio": "assets/chatgpt-creator-prompts/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "slop",
+    "only you",
+    "free",
+    "shot list",
+    "Save"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "headline": "Stop Asking for a [[Viral Script]]",
+      "blocks": [
+        {
+          "id": "scr",
+          "kind": "screen",
+          "width": 1080,
+          "height": 760,
+          "src": "assets/chatgpt-creator-prompts/chatgpt-prompt-box.png",
+          "h": 780
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "asking",
+          "rect": [
+            30,
+            270,
+            1020,
+            200
+          ],
+          "at": 0.3
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "viral script",
+          "at": 1.74
+        }
+      ],
+      "presenter": {
+        "src": "assets/chatgpt-creator-prompts/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.71,
+          "vol": 0.343
+        }
+      ],
+      "captionBottom": 440,
+      "durationSec": 2.62,
+      "assetId": "screen-chatgpt",
+      "claimId": "screen-chatgpt",
+      "covers": "Stop asking chat",
+      "sourceUrl": "https://chatgpt.com/",
+      "hideCaptions": false
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Sprout Social survey, 2026",
+      "headline": "Half of Gen Z [[Unfollowed]] Over AI Slop",
+      "blocks": [
+        {
+          "id": "h",
+          "kind": "hero",
+          "side": {
+            "name": "Gen Z",
+            "price": "50%",
+            "tone": "cost",
+            "note": "unfollowed, muted or blocked an account over AI slop"
+          }
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Their own answers, not a reach study."
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "h",
+          "on": "half of",
+          "at": 0.88
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "unfollowed",
+          "at": 2.18
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "someone over it",
+          "at": 2.74
+        }
+      ],
+      "presenter": {
+        "src": "assets/chatgpt-creator-prompts/avatar-master-hook.mp4",
+        "from": 2.62
+      },
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.83,
+          "vol": 0.556
+        }
+      ],
+      "captionBottom": 440,
+      "durationSec": 4.08,
+      "hideCaptions": false
+    },
+    {
+      "type": "slide",
+      "headline": "Start With [[Only You Have]]",
+      "blocks": [
+        {
+          "id": "st",
+          "kind": "steps",
+          "steps": [
+            "Your voice",
+            "Ideas",
+            "Hooks",
+            "Script",
+            "Repurpose"
+          ],
+          "h": 700
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "st.0",
+          "on": "Five prompts",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "st.1",
+          "on": "do work",
+          "at": 0.76
+        },
+        {
+          "do": "show",
+          "target": "st.2",
+          "on": "starts",
+          "at": 2.18
+        },
+        {
+          "do": "show",
+          "target": "st.3",
+          "on": "something",
+          "at": 2.84
+        },
+        {
+          "do": "show",
+          "target": "st.4",
+          "on": "only you",
+          "at": 3.12
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "only you have",
+          "at": 3.12
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ],
+      "captionBottom": 440,
+      "durationSec": 4.46,
+      "hideCaptions": false
+    },
+    {
+      "type": "slide",
+      "eyebrow": "OpenAI's own prompt pack",
+      "headline": "A Gap That Says [[Paste Details]]",
+      "blocks": [
+        {
+          "id": "scr",
+          "kind": "screen",
+          "width": 1060,
+          "height": 282,
+          "src": "assets/chatgpt-creator-prompts/openai-paste-cell.png",
+          "h": 420
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Every official prompt has a slot for YOUR material."
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "own prompts",
+          "rect": [
+            300,
+            70,
+            560,
+            75
+          ],
+          "ring": false,
+          "at": 0.9
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "leave a gap",
+          "at": 1.48
+        },
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "paste details",
+          "rect": [
+            720,
+            80,
+            280,
+            65
+          ],
+          "at": 2.94
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "paste details",
+          "at": 2.94
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 2.93,
+          "vol": 0.417
+        }
+      ],
+      "captionBottom": 440,
+      "durationSec": 4.6,
+      "assetId": "screen-openai-paste",
+      "claimId": "screen-openai-paste",
+      "covers": "Even OpenAI's own",
+      "sourceUrl": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-marketing",
+      "hideCaptions": false
+    },
+    {
+      "type": "slide",
+      "eyebrow": "1 \u00b7 Your voice",
+      "headline": "Set Your Voice [[Once]]",
+      "blocks": [
+        {
+          "id": "scr",
+          "kind": "screen",
+          "width": 1080,
+          "height": 1100,
+          "src": "assets/chatgpt-creator-prompts/openai-projects.png",
+          "h": 600
+        },
+        {
+          "id": "st",
+          "kind": "steps",
+          "steps": [
+            "New Project",
+            "Add your 3 best scripts",
+            "\u201cWrite like these\u201d"
+          ]
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Free ChatGPT",
+              "v": "Projects, 5 files each",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "make a project",
+          "rect": [
+            80,
+            390,
+            920,
+            180
+          ],
+          "at": 0.5
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "First",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "st.0",
+          "on": "make a project",
+          "at": 0.5
+        },
+        {
+          "do": "show",
+          "target": "st.1",
+          "on": "three best",
+          "at": 1.78
+        },
+        {
+          "do": "show",
+          "target": "st.2",
+          "on": "write like",
+          "at": 3.42
+        },
+        {
+          "do": "show",
+          "target": "r",
+          "on": "Free accounts",
+          "at": 4.72
+        },
+        {
+          "do": "highlight",
+          "target": "r.0",
+          "on": "projects too",
+          "at": 5.46
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 4.69,
+          "vol": 0.343
+        }
+      ],
+      "captionBottom": 440,
+      "durationSec": 6.72,
+      "assetId": "screen-openai-projects",
+      "claimId": "screen-openai-projects",
+      "covers": "First, make a",
+      "sourceUrl": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/projects",
+      "hideCaptions": false
+    },
+    {
+      "type": "slide",
+      "eyebrow": "2 \u00b7 Ideas",
+      "headline": "Name [[Your Audience]]",
+      "blocks": [
+        {
+          "id": "sw",
+          "kind": "swap",
+          "left": {
+            "name": "Vague",
+            "price": "\u201cEveryone\u201d",
+            "tone": "cost",
+            "note": "gets you generic ideas"
+          },
+          "right": {
+            "name": "Named",
+            "price": "\u201cNew iPhone owners\u201d",
+            "tone": "free",
+            "note": "gets you their questions"
+          }
+        },
+        {
+          "id": "scr",
+          "kind": "screen",
+          "width": 1080,
+          "height": 482,
+          "src": "assets/chatgpt-creator-prompts/descript-ideas.png",
+          "h": 460
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "ask what",
+          "rect": [
+            90,
+            215,
+            900,
+            140
+          ],
+          "at": 0.18
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "your audience",
+          "at": 0.64
+        },
+        {
+          "do": "show",
+          "target": "sw.left",
+          "on": "your topic",
+          "at": 1.96
+        },
+        {
+          "do": "show",
+          "target": "sw.right",
+          "on": "name them",
+          "at": 2.82
+        },
+        {
+          "do": "strike",
+          "target": "sw.left",
+          "on": "name them",
+          "at": 2.82
+        }
+      ],
+      "sfx": [],
+      "captionBottom": 440,
+      "durationSec": 3.36,
+      "assetId": "screen-descript-ideas",
+      "claimId": "screen-descript-ideas",
+      "covers": "Then ask what",
+      "sourceUrl": "https://www.descript.com/blog/article/100-chatgpt-prompts-for-creators-speed-up-your-workflow-with-ai",
+      "hideCaptions": false
+    },
+    {
+      "type": "slide",
+      "eyebrow": "3 \u00b7 Hooks",
+      "headline": "Five Hooks, [[Five Tones]]",
+      "blocks": [
+        {
+          "id": "scr",
+          "kind": "screen",
+          "width": 1080,
+          "height": 1204,
+          "src": "assets/chatgpt-creator-prompts/descript-hooks.png",
+          "h": 500
+        },
+        {
+          "id": "scr2",
+          "kind": "screen",
+          "width": 1060,
+          "height": 222,
+          "src": "assets/chatgpt-creator-prompts/openai-hooks-cell.png",
+          "h": 240
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "Paste your transcript",
+          "rect": [
+            380,
+            505,
+            570,
+            80
+          ],
+          "at": 0.0
+        },
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "five hooks",
+          "rect": [
+            140,
+            430,
+            820,
+            440
+          ],
+          "ring": false,
+          "at": 1.86
+        },
+        {
+          "do": "show",
+          "target": "scr2",
+          "on": "each in",
+          "at": 2.86
+        },
+        {
+          "do": "focus",
+          "target": "scr2",
+          "on": "different tone",
+          "rect": [
+            420,
+            140,
+            320,
+            65
+          ],
+          "at": 3.58
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "different tone",
+          "at": 3.58
+        }
+      ],
+      "sfx": [],
+      "captionBottom": 440,
+      "durationSec": 4.78,
+      "assetId": "screen-descript-hooks",
+      "claimId": "screen-descript-hooks",
+      "covers": "Paste your transcript",
+      "sourceUrl": "https://www.descript.com/blog/article/100-chatgpt-prompts-for-creators-speed-up-your-workflow-with-ai",
+      "hideCaptions": false
+    },
+    {
+      "type": "slide",
+      "eyebrow": "4 \u00b7 Script",
+      "headline": "Get a [[Shot List]]",
+      "blocks": [
+        {
+          "id": "scr",
+          "kind": "screen",
+          "width": 1080,
+          "height": 1010,
+          "src": "assets/chatgpt-creator-prompts/descript-script.png",
+          "h": 440
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "NARRATION",
+              "v": "VISUALS"
+            },
+            {
+              "k": "\u201cStop asking ChatGPT\u2026\u201d",
+              "v": "ChatGPT screen"
+            },
+            {
+              "k": "\u201cHalf of Gen Z\u2026\u201d",
+              "v": "50% card"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "script with",
+          "rect": [
+            140,
+            640,
+            820,
+            230
+          ],
+          "at": 1.06
+        },
+        {
+          "do": "show",
+          "target": "r",
+          "on": "narration left",
+          "at": 1.56
+        },
+        {
+          "do": "highlight",
+          "target": "r.0",
+          "on": "visuals right",
+          "at": 2.98
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "you get",
+          "at": 4.4
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 4.37,
+          "vol": 0.343
+        }
+      ],
+      "captionBottom": 440,
+      "durationSec": 5.92,
+      "assetId": "screen-descript-script",
+      "claimId": "screen-descript-script",
+      "covers": "Ask for a",
+      "sourceUrl": "https://www.descript.com/blog/article/100-chatgpt-prompts-for-creators-speed-up-your-workflow-with-ai",
+      "hideCaptions": false
+    },
+    {
+      "type": "slide",
+      "eyebrow": "5 \u00b7 Repurpose",
+      "headline": "Transcript In, [[Clips]] Out",
+      "blocks": [
+        {
+          "id": "scr",
+          "kind": "screen",
+          "width": 1080,
+          "height": 900,
+          "src": "assets/chatgpt-creator-prompts/sprout-pullquotes.png",
+          "h": 640
+        },
+        {
+          "id": "tp",
+          "kind": "tips",
+          "best": "Paste the transcript",
+          "watch": "Not the YouTube link"
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "repurpose",
+          "rect": [
+            60,
+            340,
+            960,
+            390
+          ],
+          "ring": false,
+          "at": 0.14
+        },
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "long videos",
+          "rect": [
+            60,
+            420,
+            960,
+            160
+          ],
+          "at": 1.98
+        },
+        {
+          "do": "show",
+          "target": "tp",
+          "on": "not the link",
+          "at": 3.24
+        },
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "three moments",
+          "rect": [
+            60,
+            340,
+            960,
+            390
+          ],
+          "at": 4.56
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "as clips",
+          "at": 6.08
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 3.21,
+          "vol": 0.343
+        }
+      ],
+      "captionBottom": 440,
+      "durationSec": 7.46,
+      "assetId": "screen-sprout",
+      "claimId": "screen-sprout",
+      "covers": "To repurpose",
+      "sourceUrl": "https://sproutsocial.com/insights/ai-prompt/",
+      "hideCaptions": false
+    },
+    {
+      "type": "slide",
+      "eyebrow": "YouTube monetization policy",
+      "headline": "Or You're [[Back to Slop]]",
+      "blocks": [
+        {
+          "id": "scr",
+          "kind": "screen",
+          "width": 1080,
+          "height": 1000,
+          "src": "assets/chatgpt-creator-prompts/yt-policy.png",
+          "h": 560
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Generic AI templates",
+              "v": "Not monetized",
+              "tone": "cost"
+            },
+            {
+              "k": "Your own insight",
+              "v": "The difference",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "back to slop",
+          "at": 1.3
+        },
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "YouTube",
+          "rect": [
+            150,
+            380,
+            830,
+            420
+          ],
+          "at": 2.44
+        },
+        {
+          "do": "show",
+          "target": "r",
+          "on": "won't pay",
+          "at": 2.8
+        },
+        {
+          "do": "highlight",
+          "target": "r.0",
+          "on": "massproduced",
+          "at": 3.52
+        },
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "without",
+          "rect": [
+            150,
+            560,
+            830,
+            230
+          ],
+          "ring": false,
+          "at": 4.92
+        },
+        {
+          "do": "highlight",
+          "target": "r.1",
+          "on": "own insight",
+          "at": 5.54
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 1.25,
+          "vol": 0.556
+        }
+      ],
+      "captionBottom": 440,
+      "durationSec": 6.78,
+      "assetId": "screen-yt-policy",
+      "claimId": "screen-yt-policy",
+      "covers": "Leave your material",
+      "sourceUrl": "https://support.google.com/youtube/answer/1311392?hl=en",
+      "hideCaptions": false
+    },
+    {
+      "type": "slide",
+      "headline": "[[Save]] This",
+      "headlineSize": "xl",
+      "cta": true,
+      "hideCaptions": true,
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Five prompts for the next time you open ChatGPT."
+        },
+        {
+          "id": "st",
+          "kind": "steps",
+          "steps": [
+            "Voice",
+            "Ideas",
+            "Hooks",
+            "Script",
+            "Repurpose"
+          ],
+          "h": 480
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Save",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "next time",
+          "at": 0.6
+        },
+        {
+          "do": "show",
+          "target": "st",
+          "on": "open",
+          "at": 1.14
+        }
+      ],
+      "presenter": {
+        "src": "assets/chatgpt-creator-prompts/avatar-master-cta.mp4",
+        "from": 0.0
+      },
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ],
+      "durationSec": 2.22
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.4,
+      "text": "Stop asking ChatGPT",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Stop"
+        },
+        {
+          "t": 0.3,
+          "text": "asking"
+        },
+        {
+          "t": 0.7,
+          "text": "ChatGPT"
+        }
+      ]
+    },
+    {
+      "start": 1.4,
+      "end": 1.96,
+      "text": "for a viral",
+      "words": [
+        {
+          "t": 1.4,
+          "text": "for"
+        },
+        {
+          "t": 1.62,
+          "text": "a"
+        },
+        {
+          "t": 1.74,
+          "text": "viral"
+        }
+      ]
+    },
+    {
+      "start": 1.96,
+      "end": 2.86,
+      "text": "script. You get",
+      "words": [
+        {
+          "t": 1.96,
+          "text": "script."
+        },
+        {
+          "t": 2.62,
+          "text": "You"
+        },
+        {
+          "t": 2.7,
+          "text": "get"
+        }
+      ]
+    },
+    {
+      "start": 2.86,
+      "end": 3.8,
+      "text": "slop and half",
+      "words": [
+        {
+          "t": 2.86,
+          "text": "slop"
+        },
+        {
+          "t": 3.14,
+          "text": "and"
+        },
+        {
+          "t": 3.5,
+          "text": "half"
+        }
+      ]
+    },
+    {
+      "start": 3.8,
+      "end": 4.54,
+      "text": "of Gen-Z say",
+      "words": [
+        {
+          "t": 3.8,
+          "text": "of"
+        },
+        {
+          "t": 3.92,
+          "text": "Gen-Z"
+        },
+        {
+          "t": 4.28,
+          "text": "say"
+        }
+      ]
+    },
+    {
+      "start": 4.54,
+      "end": 5.6,
+      "text": "they've unfollowed someone",
+      "words": [
+        {
+          "t": 4.54,
+          "text": "they've"
+        },
+        {
+          "t": 4.8,
+          "text": "unfollowed"
+        },
+        {
+          "t": 5.36,
+          "text": "someone"
+        }
+      ]
+    },
+    {
+      "start": 5.6,
+      "end": 6.94,
+      "text": "over it. Five",
+      "words": [
+        {
+          "t": 5.6,
+          "text": "over"
+        },
+        {
+          "t": 5.9,
+          "text": "it."
+        },
+        {
+          "t": 6.7,
+          "text": "Five"
+        }
+      ]
+    },
+    {
+      "start": 6.94,
+      "end": 7.64,
+      "text": "prompts that do",
+      "words": [
+        {
+          "t": 6.94,
+          "text": "prompts"
+        },
+        {
+          "t": 7.22,
+          "text": "that"
+        },
+        {
+          "t": 7.46,
+          "text": "do"
+        }
+      ]
+    },
+    {
+      "start": 7.64,
+      "end": 9.26,
+      "text": "work and every one starts",
+      "words": [
+        {
+          "t": 7.64,
+          "text": "work"
+        },
+        {
+          "t": 7.96,
+          "text": "and"
+        },
+        {
+          "t": 8.62,
+          "text": "every"
+        },
+        {
+          "t": 8.62,
+          "text": "one"
+        },
+        {
+          "t": 8.62,
+          "text": "starts"
+        }
+      ]
+    },
+    {
+      "start": 9.26,
+      "end": 10.2,
+      "text": "with something only",
+      "words": [
+        {
+          "t": 9.26,
+          "text": "with"
+        },
+        {
+          "t": 9.54,
+          "text": "something"
+        },
+        {
+          "t": 9.82,
+          "text": "only"
+        }
+      ]
+    },
+    {
+      "start": 10.2,
+      "end": 11.38,
+      "text": "you have. Even",
+      "words": [
+        {
+          "t": 10.2,
+          "text": "you"
+        },
+        {
+          "t": 10.4,
+          "text": "have."
+        },
+        {
+          "t": 11.16,
+          "text": "Even"
+        }
+      ]
+    },
+    {
+      "start": 11.38,
+      "end": 12.64,
+      "text": "OpenAI's own prompts",
+      "words": [
+        {
+          "t": 11.38,
+          "text": "OpenAI's"
+        },
+        {
+          "t": 12.06,
+          "text": "own"
+        },
+        {
+          "t": 12.24,
+          "text": "prompts"
+        }
+      ]
+    },
+    {
+      "start": 12.64,
+      "end": 13.22,
+      "text": "leave a gap",
+      "words": [
+        {
+          "t": 12.64,
+          "text": "leave"
+        },
+        {
+          "t": 12.9,
+          "text": "a"
+        },
+        {
+          "t": 13.04,
+          "text": "gap"
+        }
+      ]
+    },
+    {
+      "start": 13.22,
+      "end": 14.38,
+      "text": "that says, paste",
+      "words": [
+        {
+          "t": 13.22,
+          "text": "that"
+        },
+        {
+          "t": 13.44,
+          "text": "says,"
+        },
+        {
+          "t": 14.1,
+          "text": "paste"
+        }
+      ]
+    },
+    {
+      "start": 14.38,
+      "end": 16.36,
+      "text": "details. First, make",
+      "words": [
+        {
+          "t": 14.38,
+          "text": "details."
+        },
+        {
+          "t": 15.76,
+          "text": "First,"
+        },
+        {
+          "t": 16.26,
+          "text": "make"
+        }
+      ]
+    },
+    {
+      "start": 16.36,
+      "end": 17.24,
+      "text": "a Project,, drop",
+      "words": [
+        {
+          "t": 16.36,
+          "text": "a"
+        },
+        {
+          "t": 16.5,
+          "text": "Project,,"
+        },
+        {
+          "t": 17.1,
+          "text": "drop"
+        }
+      ]
+    },
+    {
+      "start": 17.24,
+      "end": 17.78,
+      "text": "in your three",
+      "words": [
+        {
+          "t": 17.24,
+          "text": "in"
+        },
+        {
+          "t": 17.42,
+          "text": "your"
+        },
+        {
+          "t": 17.54,
+          "text": "three"
+        }
+      ]
+    },
+    {
+      "start": 17.78,
+      "end": 18.78,
+      "text": "best scripts and",
+      "words": [
+        {
+          "t": 17.78,
+          "text": "best"
+        },
+        {
+          "t": 18.02,
+          "text": "scripts"
+        },
+        {
+          "t": 18.34,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 18.78,
+      "end": 19.18,
+      "text": "tell it to",
+      "words": [
+        {
+          "t": 18.78,
+          "text": "tell"
+        },
+        {
+          "t": 18.98,
+          "text": "it"
+        },
+        {
+          "t": 19.08,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 19.18,
+      "end": 19.82,
+      "text": "write like those.",
+      "words": [
+        {
+          "t": 19.18,
+          "text": "write"
+        },
+        {
+          "t": 19.34,
+          "text": "like"
+        },
+        {
+          "t": 19.58,
+          "text": "those."
+        }
+      ]
+    },
+    {
+      "start": 20.48,
+      "end": 21.22,
+      "text": "Free accounts get",
+      "words": [
+        {
+          "t": 20.48,
+          "text": "Free"
+        },
+        {
+          "t": 20.7,
+          "text": "accounts"
+        },
+        {
+          "t": 20.94,
+          "text": "get"
+        }
+      ]
+    },
+    {
+      "start": 21.22,
+      "end": 22.66,
+      "text": "Projects too. Then",
+      "words": [
+        {
+          "t": 21.22,
+          "text": "Projects"
+        },
+        {
+          "t": 21.6,
+          "text": "too."
+        },
+        {
+          "t": 22.48,
+          "text": "Then"
+        }
+      ]
+    },
+    {
+      "start": 22.66,
+      "end": 23.26,
+      "text": "ask what your",
+      "words": [
+        {
+          "t": 22.66,
+          "text": "ask"
+        },
+        {
+          "t": 22.92,
+          "text": "what"
+        },
+        {
+          "t": 23.12,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 23.26,
+      "end": 24.08,
+      "text": "audience wants to",
+      "words": [
+        {
+          "t": 23.26,
+          "text": "audience"
+        },
+        {
+          "t": 23.56,
+          "text": "wants"
+        },
+        {
+          "t": 23.88,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 24.08,
+      "end": 24.64,
+      "text": "know about your",
+      "words": [
+        {
+          "t": 24.08,
+          "text": "know"
+        },
+        {
+          "t": 24.24,
+          "text": "about"
+        },
+        {
+          "t": 24.44,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 24.64,
+      "end": 25.56,
+      "text": "topic and name",
+      "words": [
+        {
+          "t": 24.64,
+          "text": "topic"
+        },
+        {
+          "t": 24.98,
+          "text": "and"
+        },
+        {
+          "t": 25.3,
+          "text": "name"
+        }
+      ]
+    },
+    {
+      "start": 25.56,
+      "end": 26.7,
+      "text": "them. Paste your",
+      "words": [
+        {
+          "t": 25.56,
+          "text": "them."
+        },
+        {
+          "t": 25.84,
+          "text": "Paste"
+        },
+        {
+          "t": 26.48,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 26.7,
+      "end": 27.54,
+      "text": "transcript and ask",
+      "words": [
+        {
+          "t": 26.7,
+          "text": "transcript"
+        },
+        {
+          "t": 27.02,
+          "text": "and"
+        },
+        {
+          "t": 27.28,
+          "text": "ask"
+        }
+      ]
+    },
+    {
+      "start": 27.54,
+      "end": 28.3,
+      "text": "for five hooks,",
+      "words": [
+        {
+          "t": 27.54,
+          "text": "for"
+        },
+        {
+          "t": 27.7,
+          "text": "five"
+        },
+        {
+          "t": 27.96,
+          "text": "hooks,"
+        }
+      ]
+    },
+    {
+      "start": 28.7,
+      "end": 29.42,
+      "text": "each in a",
+      "words": [
+        {
+          "t": 28.7,
+          "text": "each"
+        },
+        {
+          "t": 29.1,
+          "text": "in"
+        },
+        {
+          "t": 29.32,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 29.42,
+      "end": 30.84,
+      "text": "different tone. Ask",
+      "words": [
+        {
+          "t": 29.42,
+          "text": "different"
+        },
+        {
+          "t": 29.66,
+          "text": "tone."
+        },
+        {
+          "t": 30.62,
+          "text": "Ask"
+        }
+      ]
+    },
+    {
+      "start": 30.84,
+      "end": 31.68,
+      "text": "for a thirty-second",
+      "words": [
+        {
+          "t": 30.84,
+          "text": "for"
+        },
+        {
+          "t": 31.02,
+          "text": "a"
+        },
+        {
+          "t": 31.12,
+          "text": "thirty-second"
+        }
+      ]
+    },
+    {
+      "start": 31.68,
+      "end": 32.56,
+      "text": "script with narration",
+      "words": [
+        {
+          "t": 31.68,
+          "text": "script"
+        },
+        {
+          "t": 31.94,
+          "text": "with"
+        },
+        {
+          "t": 32.18,
+          "text": "narration"
+        }
+      ]
+    },
+    {
+      "start": 32.56,
+      "end": 33.92,
+      "text": "left and visuals",
+      "words": [
+        {
+          "t": 32.56,
+          "text": "left"
+        },
+        {
+          "t": 32.9,
+          "text": "and"
+        },
+        {
+          "t": 33.6,
+          "text": "visuals"
+        }
+      ]
+    },
+    {
+      "start": 33.92,
+      "end": 35.14,
+      "text": "right, so you",
+      "words": [
+        {
+          "t": 33.92,
+          "text": "right,"
+        },
+        {
+          "t": 34.6,
+          "text": "so"
+        },
+        {
+          "t": 35.02,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 35.14,
+      "end": 35.98,
+      "text": "get a shot list",
+      "words": [
+        {
+          "t": 35.14,
+          "text": "get"
+        },
+        {
+          "t": 35.28,
+          "text": "a"
+        },
+        {
+          "t": 35.38,
+          "text": "shot"
+        },
+        {
+          "t": 35.38,
+          "text": "list"
+        }
+      ]
+    },
+    {
+      "start": 36.54,
+      "end": 38.34,
+      "text": "To repurpose, paste",
+      "words": [
+        {
+          "t": 36.54,
+          "text": "To"
+        },
+        {
+          "t": 36.68,
+          "text": "repurpose,"
+        },
+        {
+          "t": 38.0,
+          "text": "paste"
+        }
+      ]
+    },
+    {
+      "start": 38.34,
+      "end": 39.16,
+      "text": "a long video's",
+      "words": [
+        {
+          "t": 38.34,
+          "text": "a"
+        },
+        {
+          "t": 38.52,
+          "text": "long"
+        },
+        {
+          "t": 38.68,
+          "text": "video's"
+        }
+      ]
+    },
+    {
+      "start": 39.16,
+      "end": 40.1,
+      "text": "transcript, not the",
+      "words": [
+        {
+          "t": 39.16,
+          "text": "transcript,"
+        },
+        {
+          "t": 39.78,
+          "text": "not"
+        },
+        {
+          "t": 39.92,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 40.1,
+      "end": 40.92,
+      "text": "link, and ask",
+      "words": [
+        {
+          "t": 40.1,
+          "text": "link,"
+        },
+        {
+          "t": 40.56,
+          "text": "and"
+        },
+        {
+          "t": 40.64,
+          "text": "ask"
+        }
+      ]
+    },
+    {
+      "start": 40.92,
+      "end": 41.7,
+      "text": "for three moments",
+      "words": [
+        {
+          "t": 40.92,
+          "text": "for"
+        },
+        {
+          "t": 41.1,
+          "text": "three"
+        },
+        {
+          "t": 41.34,
+          "text": "moments"
+        }
+      ]
+    },
+    {
+      "start": 41.7,
+      "end": 42.62,
+      "text": "that stand alone",
+      "words": [
+        {
+          "t": 41.7,
+          "text": "that"
+        },
+        {
+          "t": 42.0,
+          "text": "stand"
+        },
+        {
+          "t": 42.34,
+          "text": "alone"
+        }
+      ]
+    },
+    {
+      "start": 42.62,
+      "end": 44.22,
+      "text": "as clips. Leave",
+      "words": [
+        {
+          "t": 42.62,
+          "text": "as"
+        },
+        {
+          "t": 42.96,
+          "text": "clips."
+        },
+        {
+          "t": 44.0,
+          "text": "Leave"
+        }
+      ]
+    },
+    {
+      "start": 44.22,
+      "end": 44.96,
+      "text": "your material out",
+      "words": [
+        {
+          "t": 44.22,
+          "text": "your"
+        },
+        {
+          "t": 44.36,
+          "text": "material"
+        },
+        {
+          "t": 44.66,
+          "text": "out"
+        }
+      ]
+    },
+    {
+      "start": 44.96,
+      "end": 45.44,
+      "text": "and you're back",
+      "words": [
+        {
+          "t": 44.96,
+          "text": "and"
+        },
+        {
+          "t": 45.18,
+          "text": "you're"
+        },
+        {
+          "t": 45.3,
+          "text": "back"
+        }
+      ]
+    },
+    {
+      "start": 45.44,
+      "end": 46.8,
+      "text": "to slop. YouTube",
+      "words": [
+        {
+          "t": 45.44,
+          "text": "to"
+        },
+        {
+          "t": 45.62,
+          "text": "slop."
+        },
+        {
+          "t": 46.44,
+          "text": "YouTube"
+        }
+      ]
+    },
+    {
+      "start": 46.8,
+      "end": 47.52,
+      "text": "won't pay for",
+      "words": [
+        {
+          "t": 46.8,
+          "text": "won't"
+        },
+        {
+          "t": 47.16,
+          "text": "pay"
+        },
+        {
+          "t": 47.36,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 47.52,
+      "end": 48.92,
+      "text": "mass-produced AI videos",
+      "words": [
+        {
+          "t": 47.52,
+          "text": "mass-produced"
+        },
+        {
+          "t": 48.28,
+          "text": "AI"
+        },
+        {
+          "t": 48.48,
+          "text": "videos"
+        }
+      ]
+    },
+    {
+      "start": 48.92,
+      "end": 49.74,
+      "text": "without your own",
+      "words": [
+        {
+          "t": 48.92,
+          "text": "without"
+        },
+        {
+          "t": 49.28,
+          "text": "your"
+        },
+        {
+          "t": 49.54,
+          "text": "own"
+        }
+      ]
+    },
+    {
+      "start": 49.74,
+      "end": 51.14,
+      "text": "insight. Save it",
+      "words": [
+        {
+          "t": 49.74,
+          "text": "insight."
+        },
+        {
+          "t": 50.78,
+          "text": "Save"
+        },
+        {
+          "t": 50.98,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 51.14,
+      "end": 51.56,
+      "text": "for the next",
+      "words": [
+        {
+          "t": 51.14,
+          "text": "for"
+        },
+        {
+          "t": 51.28,
+          "text": "the"
+        },
+        {
+          "t": 51.38,
+          "text": "next"
+        }
+      ]
+    },
+    {
+      "start": 51.56,
+      "end": 52.18,
+      "text": "time you open",
+      "words": [
+        {
+          "t": 51.56,
+          "text": "time"
+        },
+        {
+          "t": 51.78,
+          "text": "you"
+        },
+        {
+          "t": 51.92,
+          "text": "open"
+        }
+      ]
+    },
+    {
+      "start": 52.18,
+      "end": 52.9,
+      "text": "ChatGPT",
+      "words": [
+        {
+          "t": 52.18,
+          "text": "ChatGPT"
+        }
+      ]
+    }
+  ],
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 52.9,
+        "vol": 0.055
+      },
+      {
+        "t": 53.0,
+        "vol": 0.02
+      }
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+  },
+  "format": "ai-tools",
+  "script": "Stop asking ChatGPT for a viral script. You get slop, and half of Gen Z say they've unfollowed someone over it.\n\nFive prompts that do work, and every one starts with something only you have. Even OpenAI's own prompts leave a gap that says paste details.\n\nFirst, make a Project, drop in your three best scripts, and tell it to write like those. Free accounts get Projects too.\n\nThen ask what your audience wants to know about your topic, and name them.\n\nPaste your transcript and ask for five hooks, each in a different tone.\n\nAsk for a thirty-second script with narration left and visuals right, so you get a shot list.\n\nTo repurpose, paste a long video's transcript, not the link, and ask for three moments that stand alone as clips.\n\nLeave your material out and you're back to slop. YouTube won't pay for mass-produced AI videos without your own insight.\n\nSave it for the next time you open ChatGPT.",
+  "approval": {
+    "sha256": "f8c9e3c0b62b9712fc638dfbc63b60338a2246f24030f2bd5e7c58c4ca229e84",
+    "approvedAt": "2026-09-24T07:49:27+00:00",
+    "words": 161,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

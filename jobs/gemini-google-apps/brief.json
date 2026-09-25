@@ -1,0 +1,28 @@
+{
+  "slug": "gemini-google-apps",
+  "topic": "Gemini features that work inside Google's own apps",
+  "details": "Animated/carousel-format reel covering Gemini AI integrations across Gmail, Docs, Sheets, Drive, Photos, etc. — features most users have never turned on.",
+  "subject": "Gemini features that work inside Google's own apps",
+  "audience": "Everyday Gmail/Docs/Sheets/Drive users who've heard of Gemini but never noticed it's already built into the apps they use daily",
+  "platform": "both",
+  "goal": "education",
+  "core_value": "Exactly where real, currently-live Gemini features sit inside Gmail, Docs, Sheets and Drive, what each does differently, and whether the viewer already has access",
+  "desired_action": "Save the reel, then open one of these apps and try the feature",
+  "reveal_target": "none",
+  "cta_keyword": "",
+  "target_duration": "55s",
+  "tone": "Plain, specific, no hype — numbers do the talking, same register as five-free-ai-tools and 5-chatgpt-features",
+  "source_policy": "official-preferred",
+  "footage_constraints": "ANIMATED TREATMENT: facePlan bookends (presenter on hook + CTA only), stage scenes for each Google-app feature, music bed on. Official Google Workspace/Gemini Help Center screenshots and product-page stills as proof wherever they exist.",
+  "credit_instructions": "internal",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "utility",
+  "target_seconds": 55,
+  "music": true,
+  "created_at": "2026-09-22T09:52:36.217398+00:00",
+  "status": "initialized"
+}

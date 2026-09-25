@@ -1,0 +1,28 @@
+{
+  "slug": "5-chatgpt-features",
+  "topic": "5 ChatGPT features you're probably not using",
+  "details": "ANIMATED TREATMENT: presenter bookends (hook + CTA), animated stage scenes for each of the five features. Music bed on. Audience: everyday ChatGPT users who only use the chat box and don't know about deeper features (memory, custom instructions, projects, voice mode, canvas, scheduled tasks, etc). Narrow to 5 real, currently-live, verifiable features with correct current names/UI.",
+  "subject": "5 ChatGPT features you're probably not using",
+  "audience": "Everyday ChatGPT users who only use the chat box and have never opened Settings or tried Voice, Tasks, Memory, Projects or file uploads",
+  "platform": "both",
+  "goal": "education",
+  "core_value": "Exactly where five real, currently-live ChatGPT features live in the menus, what each does differently, and whether the viewer already has access",
+  "desired_action": "Save the reel, then open ChatGPT Settings and turn the features on",
+  "reveal_target": "none",
+  "cta_keyword": "",
+  "target_duration": "55s",
+  "tone": "Plain, specific, no hype — numbers do the talking, same register as five-free-ai-tools",
+  "source_policy": "official-preferred",
+  "footage_constraints": "ANIMATED TREATMENT: facePlan bookends (presenter on hook + CTA only), five `slide` stage scenes for Voice/Tasks/Memory/Data analysis/Projects, music bed on. Two real OpenAI Help Center screenshots (Memory, Projects) used as proof; Voice/Tasks/Data analysis carry the OpenAI mark on a labeled card since no screenshot exists for them.",
+  "credit_instructions": "internal",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "utility",
+  "target_seconds": 55,
+  "music": true,
+  "created_at": "2026-09-21T11:29:42.012493+00:00",
+  "status": "initialized"
+}

@@ -1,0 +1,14 @@
+{
+  "script_sha256": "a74f19466143ad008e4f00050e14c7f9f2f1a9ee55cca35e56d7f8d8eb1208d8",
+  "structure_sha256": "c404e05688de1ac979c3fac24a680cbd8cb35e6b56d2ae92da125016b54b5303",
+  "findings": [
+    "  BRIDGES 3/14 sentences (21%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  OPENING has no version, date or time anchor: 'Five free AI tools for making presentations faster.'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "SECOND PERSON: the first 'you' arrives 40% of the way in. Until then the viewer is watching something happen to other people. Move one 'you' into the opening.",
+    "HOUSE TIC: 'four hundred credits' \u2014 already used in 1 other script(s) (10-ai-tools-free-vs-paid). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 9,
+  "proposedAt": "2026-09-23T11:55:49+00:00"
+}

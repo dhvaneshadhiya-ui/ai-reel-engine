@@ -1,0 +1,762 @@
+{
+ "format": "howto",
+ "music": false,
+ "noMusicReason": "how-to: every step is a spoken UI label; the voice carries it and a bed competes with it (same call as the last howto, mac-multiple-headphones)",
+ "facePlan": "bookends",
+ "audio": "assets/siri-ai-ios27/vo.mp3",
+ "emphasis": [
+  "Siri",
+  "Continue",
+  "waitlist",
+  "English",
+  "EU",
+  "days",
+  "Send"
+ ],
+ "caption_corrections": {
+  "friends": "friend",
+  "dynamic island": "Dynamic Island",
+  "settings": "Settings",
+  "continue": "Continue"
+ },
+ "shots": [
+  {
+   "start_phrase": "You updated to iOS 27",
+   "line": "You updated to iOS 27 and Siri still sounds like it did last year.",
+   "needs": [
+    "iOS",
+    "27",
+    "Siri",
+    "last year"
+   ],
+   "tier": "official",
+   "asset_id": "avatar-hook",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "iOS 27 how-to",
+    "headline": "Turn on [[Siri AI]]",
+    "presenter": {
+     "src": "assets/siri-ai-ios27/avatar-master-hook.mp4",
+     "from": 0.0
+    },
+    "blocks": [
+     {
+      "id": "sc",
+      "kind": "screen",
+      "width": 760,
+      "height": 930,
+      "src": "assets/siri-ai-ios27/support-settings-siri.png",
+      "h": 900
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Siri still"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 2.19,
+      "vol": 0.343
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "That's because Siri AI",
+   "line": "That's because Siri AI stays off until you ask for it.",
+   "needs": [
+    "Siri AI",
+    "off",
+    "ask"
+   ],
+   "tier": "official",
+   "asset_id": "support-settings-siri",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Settings \u203a Siri",
+    "headline": "It stays [[off]] until you ask",
+    "blocks": [
+     {
+      "id": "sc",
+      "kind": "screen",
+      "width": 760,
+      "height": 930,
+      "src": "assets/siri-ai-ios27/support-settings-siri.png",
+      "h": 1000
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "stays off"
+     },
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "until you ask",
+      "rect": [
+       110,
+       610,
+       540,
+       150
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Don't see that button",
+   "line": "Don't see that button? It comes down to three things, and I'll get to them.",
+   "needs": [
+    "button",
+    "three",
+    "things"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "No button?",
+    "headline": "It's one of [[three]] things",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "First",
+        "v": "?"
+       },
+       {
+        "k": "Second",
+        "v": "?"
+       },
+       {
+        "k": "Third",
+        "v": "?"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "that button"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "comes down"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "three things"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "three things"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 1.9,
+      "vol": 0.343
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Open settings,",
+   "line": "Open Settings,",
+   "needs": [
+    "Settings"
+   ],
+   "tier": "official",
+   "asset_id": "apple-howto",
+   "scene": {
+    "type": "screenstep",
+    "src": "assets/siri-ai-ios27/apple-howto-916.mp4",
+    "srcWidth": 1080,
+    "srcHeight": 1920,
+    "from": 1.4,
+    "marks": [],
+    "credit": "Apple Support"
+   }
+  },
+  {
+   "start_phrase": "scroll down and tap",
+   "line": "scroll down and tap Siri.",
+   "needs": [
+    "scroll",
+    "Siri"
+   ],
+   "tier": "official",
+   "asset_id": "apple-zoom",
+   "scene": {
+    "type": "screenstep",
+    "src": "assets/siri-ai-ios27/apple-zoom-916.mp4",
+    "srcWidth": 1080,
+    "srcHeight": 1920,
+    "from": 0.1,
+    "marks": [
+     {
+      "kind": "box",
+      "at": 0.6,
+      "x": 120,
+      "y": 500,
+      "w": 870,
+      "h": 75
+     }
+    ],
+    "credit": "Apple Support",
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "at": 1.55,
+      "vol": 0.5
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "At the top tap",
+   "line": "At the top, tap Try Siri AI, Beta.",
+   "needs": [
+    "top",
+    "Try Siri AI",
+    "Beta"
+   ],
+   "tier": "official",
+   "asset_id": "apple-zoom",
+   "scene": {
+    "type": "screenstep",
+    "src": "assets/siri-ai-ios27/apple-zoom-916.mp4",
+    "srcWidth": 1080,
+    "srcHeight": 1920,
+    "from": 3.3,
+    "marks": [
+     {
+      "kind": "circle",
+      "at": 0.8,
+      "x": 100,
+      "y": 850,
+      "w": 890,
+      "h": 115
+     }
+    ],
+    "credit": "Apple Support",
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "at": 1.85,
+      "vol": 0.5
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "then continue and",
+   "line": "Then Continue,",
+   "needs": [
+    "Continue"
+   ],
+   "tier": "official",
+   "asset_id": "apple-howto",
+   "scene": {
+    "type": "screenstep",
+    "src": "assets/siri-ai-ios27/apple-howto-916.mp4",
+    "srcWidth": 1080,
+    "srcHeight": 1920,
+    "from": 14.6,
+    "marks": [
+     {
+      "kind": "box",
+      "at": 0.2,
+      "x": 240,
+      "y": 1610,
+      "w": 600,
+      "h": 95
+     }
+    ],
+    "credit": "Apple Support",
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "at": 0.8,
+      "vol": 0.5
+     }
+    ],
+    "captionBottom": 1450
+   }
+  },
+  {
+   "start_phrase": "continue again on",
+   "line": "and Continue again on the privacy screen.",
+   "needs": [
+    "Continue",
+    "privacy"
+   ],
+   "tier": "official",
+   "asset_id": "apple-howto",
+   "scene": {
+    "type": "screenstep",
+    "src": "assets/siri-ai-ios27/apple-howto-916.mp4",
+    "srcWidth": 1080,
+    "srcHeight": 1920,
+    "from": 23.9,
+    "marks": [
+     {
+      "kind": "box",
+      "at": 0.6,
+      "x": 240,
+      "y": 1450,
+      "w": 600,
+      "h": 95
+     }
+    ],
+    "credit": "Apple Support",
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "at": 1.05,
+      "vol": 0.5
+     }
+    ],
+    "captionBottom": 1450
+   }
+  },
+  {
+   "start_phrase": "Depending on your iPhone",
+   "line": "Depending on your iPhone, you'll then pick a voice and set its pace. Keep following the prompts.",
+   "needs": [
+    "voice",
+    "pace",
+    "prompts"
+   ],
+   "tier": "official",
+   "asset_id": "apple-howto",
+   "scene": {
+    "type": "screenstep",
+    "src": "assets/siri-ai-ios27/apple-howto-916.mp4",
+    "srcWidth": 1080,
+    "srcHeight": 1920,
+    "from": 26.0,
+    "marks": [
+     {
+      "kind": "box",
+      "at": 2.7,
+      "x": 230,
+      "y": 1215,
+      "w": 620,
+      "h": 80
+     }
+    ],
+    "credit": "Apple Support",
+    "captionBottom": 1450
+   }
+  },
+  {
+   "start_phrase": "After that,",
+   "line": "After that, you might land on a waitlist.",
+   "needs": [
+    "waitlist"
+   ],
+   "tier": "official",
+   "asset_id": "apple-howto",
+   "scene": {
+    "type": "screenstep",
+    "src": "assets/siri-ai-ios27/apple-howto-916.mp4",
+    "srcWidth": 1080,
+    "srcHeight": 1920,
+    "from": 43.0,
+    "marks": [],
+    "credit": "Apple Support"
+   }
+  },
+  {
+   "start_phrase": "When your turn comes,",
+   "line": "When your turn comes, the Siri app installs itself.",
+   "needs": [
+    "Siri app",
+    "installs"
+   ],
+   "tier": "official",
+   "asset_id": "apple-howto",
+   "scene": {
+    "type": "screenstep",
+    "src": "assets/siri-ai-ios27/apple-howto-916.mp4",
+    "srcWidth": 1080,
+    "srcHeight": 1920,
+    "from": 64.5,
+    "marks": [],
+    "credit": "Apple Support",
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "at": 0.9,
+      "vol": 0.45
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Now those three things.",
+   "line": "Now, those three things. First, you need an iPhone 15 Pro or newer, not just any phone that runs iOS 27.",
+   "needs": [
+    "15 Pro",
+    "newer",
+    "iOS 27"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "First: your iPhone",
+    "headline": "iPhone [[15 Pro]] or newer",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "iPhone 15 Pro, 15 Pro Max",
+        "v": "Yes",
+        "tone": "free"
+       },
+       {
+        "k": "iPhone 16 and later",
+        "v": "Yes",
+        "tone": "free"
+       },
+       {
+        "k": "iPhone Air",
+        "v": "Yes",
+        "tone": "free"
+       },
+       {
+        "k": "Older iPhones on iOS 27",
+        "v": "No",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "15 Pro"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "15 Pro"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "or newer"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "or newer"
+     },
+     {
+      "do": "show",
+      "target": "r.3",
+      "on": "not just any"
+     },
+     {
+      "do": "highlight",
+      "target": "r.3",
+      "on": "runs iOS"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.582
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Second,",
+   "line": "Second, your iPhone language and Siri language have to match, and for now that means English.",
+   "needs": [
+    "language",
+    "match",
+    "English"
+   ],
+   "tier": "official",
+   "asset_id": "support-settings-siri",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Second: language",
+    "headline": "Both languages must [[match]]",
+    "blocks": [
+     {
+      "id": "sc",
+      "kind": "screen",
+      "width": 760,
+      "height": 930,
+      "src": "assets/siri-ai-ios27/support-settings-siri.png",
+      "h": 640
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "iPhone language",
+        "v": "English"
+       },
+       {
+        "k": "Siri language",
+        "v": "English"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "Siri language",
+      "rect": [
+       110,
+       860,
+       540,
+       70
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "have to match"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "your iPhone language"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "Siri language"
+     },
+     {
+      "do": "highlight",
+      "target": "r.1",
+      "on": "means English"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Third,",
+   "line": "Third, Siri AI isn't available in the EU or mainland China yet.",
+   "needs": [
+    "EU",
+    "China",
+    "yet"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Third: where you are",
+    "headline": "Not in the [[EU]] or China yet",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "EU (iPhone)",
+        "v": "Not yet",
+        "tone": "cost"
+       },
+       {
+        "k": "Mainland China",
+        "v": "Not yet",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "Siri AI isn't"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "available in"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "the EU"
+     },
+     {
+      "do": "highlight",
+      "target": "r.0",
+      "on": "the EU"
+     },
+     {
+      "do": "highlight",
+      "target": "r.1",
+      "on": "mainland China"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "When it's ready,",
+   "line": "When it's ready, swipe down on the Dynamic Island and type, or just talk.",
+   "needs": [
+    "swipe",
+    "Dynamic Island",
+    "type",
+    "talk"
+   ],
+   "tier": "official",
+   "asset_id": "apple-howto",
+   "scene": {
+    "type": "screenstep",
+    "src": "assets/siri-ai-ios27/apple-howto-916.mp4",
+    "srcWidth": 1080,
+    "srcHeight": 1920,
+    "from": 93.9,
+    "marks": [],
+    "credit": "Apple Support",
+    "focus": {
+     "x": 0,
+     "y": 0,
+     "w": 1080,
+     "h": 1920
+    }
+   }
+  },
+  {
+   "start_phrase": "Apple also says",
+   "line": "Apple also says it can take days to finish indexing your phone, so answers about your own stuff may be patchy at first.",
+   "needs": [
+    "days",
+    "indexing",
+    "patchy"
+   ],
+   "tier": "official",
+   "asset_id": "support-settings-siri-ai-beta",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Once it's on",
+    "headline": "Indexing can take [[days]]",
+    "blocks": [
+     {
+      "id": "sc",
+      "kind": "screen",
+      "width": 760,
+      "height": 930,
+      "src": "assets/siri-ai-ios27/support-settings-siri-ai-beta.png",
+      "h": 760
+     },
+     {
+      "id": "tips",
+      "kind": "tips",
+      "watch": "Answers about your own stuff may be patchy at first"
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "sc",
+      "on": "Apple also",
+      "rect": [
+       110,
+       300,
+       540,
+       330
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "take days"
+     },
+     {
+      "do": "show",
+      "target": "tips",
+      "on": "so answers"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Send this to the",
+   "line": "Send this to the friend still waiting on new Siri.",
+   "needs": [
+    "Send",
+    "friend",
+    "waiting"
+   ],
+   "tier": "official",
+   "asset_id": "avatar-cta",
+   "scene": {
+    "type": "slide",
+    "cta": true,
+    "headlineSize": "xl",
+    "eyebrow": "Share it",
+    "headline": "[[Send]] this to a friend",
+    "presenter": {
+     "src": "assets/siri-ai-ios27/avatar-master-cta.mp4",
+     "from": 0.3
+    },
+    "blocks": [
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "The one still waiting on new Siri"
+     },
+     {
+      "id": "sc",
+      "kind": "screen",
+      "width": 1306,
+      "height": 1829,
+      "src": "assets/siri-ai-ios27/newsroom-siri-app.jpg",
+      "h": 620
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Send this"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.582
+     }
+    ]
+   }
+  }
+ ],
+ "slideSfx": false
+}

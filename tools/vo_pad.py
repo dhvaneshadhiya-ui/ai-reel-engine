@@ -141,7 +141,7 @@ if __name__ == "__main__":
         raise SystemExit(__doc__)
     slug = args[0]
     target = float(args[args.index("--target") + 1]) if "--target" in args else 0.0
-    src = Path(args[args.index("--in") + 1]) if "--in" in args else None
+    src = Path(args[args.index("--in") + 1]).resolve() if "--in" in args else None
     if not target:
         raise SystemExit("  --target <seconds> is required: say how long the read should run.")
     raise SystemExit(run(slug, target, src))

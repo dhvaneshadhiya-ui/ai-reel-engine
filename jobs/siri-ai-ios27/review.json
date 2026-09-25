@@ -1,0 +1,15 @@
+{
+  "script_sha256": "eff3aea85d61515300989e13858333145a4ea16fbd38132c8c1d7ab7f1851fde",
+  "structure_sha256": "24db84fd8112e3fe3e8ee0094b0be4b8b4cef88b5e754b0e2600fe132968fcb6",
+  "findings": [
+    "  BRIDGES 3/17 sentences (18%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "CADENCE: only 1 sentence reaches 18 words (longest 23). The playbook asks for 'occasionally one long spec sentence' \u2014 with everything short, nothing reads as short. Nothing to push against.",
+    "NUMBERS: one every 3.6 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [
+    "the most surprising claim (SURPRISE 85: 'After enabling, the device indexes content locally; Apple sa') is spoken in the last 40% of the script \u2014 consider leading with it."
+  ],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-09-25T09:09:43+00:00"
+}

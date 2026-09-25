@@ -1,0 +1,28 @@
+{
+  "slug": "apple-screenless-tracker",
+  "topic": "Apple is developing a screenless, Whoop-style fitness tracker",
+  "details": "Bloomberg report (Sept 22, 2026): Apple is building prototypes of a screenless fitness/health tracker - thin fabric band + sensor computing module, no display - to rival Whoop and Oura. Backed by Eddy Cue and Tim Cook but no green light yet; if approved, likely not before 2028.",
+  "subject": "Apple is developing a screenless, Whoop-style fitness tracker",
+  "audience": "<who should care, and what they already know>",
+  "platform": "both",
+  "goal": "<awareness|education|engagement|follow|comment|conversion>",
+  "core_value": "<what the viewer learns, feels, sees or can do>",
+  "desired_action": "<if any>",
+  "reveal_target": "none",
+  "cta_keyword": "",
+  "target_duration": "70s",
+  "tone": "<voice, personality, boundaries>",
+  "source_policy": "none",
+  "footage_constraints": "<assets, permissions, presenter, recordings>",
+  "credit_instructions": "internal",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 70,
+  "music": false,
+  "created_at": "2026-09-23T05:14:27.016312+00:00",
+  "status": "initialized"
+}

@@ -1,0 +1,1838 @@
+{
+ "id": "five-free-ai-presentation-tools",
+ "fps": 30,
+ "width": 1080,
+ "height": 1920,
+ "style": "utility",
+ "audio": "assets/five-free-ai-presentation-tools/vo.mp3",
+ "facePlan": "bookends",
+ "captionStyle": "word-reveal",
+ "emphasis": [
+  "free",
+  "PowerPoint",
+  "Save"
+ ],
+ "scenes": [
+  {
+   "headline": "5 Free AI Tools for Making [[Presentations Faster]]",
+   "blocks": [
+    {
+     "id": "scr",
+     "kind": "screen",
+     "width": 1413,
+     "height": 1080,
+     "src": "assets/five-free-ai-presentation-tools/gamma-prompt.png",
+     "h": 620
+    }
+   ],
+   "moves": [
+    {
+     "do": "focus",
+     "target": "scr",
+     "on": "tools for making",
+     "rect": [
+      240,
+      560,
+      940,
+      300
+     ],
+     "at": 0.92
+    },
+    {
+     "do": "pill",
+     "target": "headline",
+     "on": "presentations faster",
+     "at": 1.9
+    },
+    {
+     "do": "focus",
+     "target": "scr",
+     "on": "faster",
+     "rect": [
+      400,
+      720,
+      560,
+      150
+     ],
+     "at": 2.42
+    }
+   ],
+   "presenter": {
+    "src": "assets/five-free-ai-presentation-tools/avatar-master-hook.mp4",
+    "from": 0.0
+   },
+   "type": "slide",
+   "hideCaptions": true,
+   "durationSec": 3.7,
+   "assetId": "screen-gamma-prompt",
+   "claimId": "screen-gamma-prompt",
+   "covers": "Five free AI tools",
+   "sfx": [
+    {
+     "src": "sfx-action/lens-zoom.mp3",
+     "at": 0.52,
+     "vol": 1.0
+    }
+   ]
+  },
+  {
+   "headline": "Free Stops [[Somewhere Different]]",
+   "blocks": [
+    {
+     "id": "lg",
+     "kind": "logos",
+     "items": [
+      {
+       "logo": "assets/logos/gamma.png",
+       "name": "Gamma",
+       "tile": "dark"
+      },
+      {
+       "logo": "assets/logos/claude.svg",
+       "name": "Claude",
+       "tile": "dark"
+      },
+      {
+       "logo": "assets/logos/pitch.svg",
+       "name": "Pitch",
+       "tile": "light"
+      },
+      {
+       "logo": "assets/logos/powerpoint.svg",
+       "name": "Designer",
+       "tile": "light"
+      },
+      {
+       "logo": "assets/logos/napkin-mark.svg",
+       "name": "Napkin",
+       "tile": "light"
+      }
+     ]
+    }
+   ],
+   "moves": [
+    {
+     "do": "pill",
+     "target": "headline",
+     "on": "somewhere different",
+     "at": 1.32
+    }
+   ],
+   "presenter": {
+    "src": "assets/five-free-ai-presentation-tools/avatar-master-hook.mp4",
+    "from": 3.7
+   },
+   "type": "slide",
+   "durationSec": 2.46,
+   "hideCaptions": false,
+   "captionBottom": 422,
+   "sfx": [
+    {
+     "src": "sfx/Pop.MP3",
+     "at": 1.29,
+     "vol": 0.343
+    }
+   ]
+  },
+  {
+   "eyebrow": "Gamma",
+   "headline": "One Prompt, [[Whole Deck]]",
+   "blocks": [
+    {
+     "id": "scr",
+     "kind": "screen",
+     "width": 1230,
+     "height": 755,
+     "src": "assets/five-free-ai-presentation-tools/gamma-decks.png",
+     "h": 560
+    },
+    {
+     "id": "r",
+     "kind": "rows",
+     "rows": [
+      {
+       "k": "AI credits",
+       "v": "400, once"
+      },
+      {
+       "k": "Per prompt",
+       "v": "10 slides"
+      },
+      {
+       "k": "Exports",
+       "v": "Gamma badge",
+       "tone": "cost"
+      }
+     ]
+    }
+   ],
+   "moves": [
+    {
+     "do": "focus",
+     "target": "scr",
+     "on": "deck from one prompt",
+     "rect": [
+      40,
+      100,
+      800,
+      300
+     ],
+     "at": 1.18
+    },
+    {
+     "do": "focus",
+     "target": "scr",
+     "on": "one prompt",
+     "rect": [
+      50,
+      110,
+      215,
+      190
+     ],
+     "at": 1.74
+    },
+    {
+     "do": "pill",
+     "target": "headline",
+     "on": "whole design deck",
+     "at": 0.6
+    },
+    {
+     "do": "show",
+     "target": "r",
+     "on": "credits at sign",
+     "at": 4.2
+    },
+    {
+     "do": "highlight",
+     "target": "r.0",
+     "on": "never top up",
+     "at": 5.56
+    },
+    {
+     "do": "highlight",
+     "target": "r.1",
+     "on": "slides per prompt",
+     "at": 7.18
+    },
+    {
+     "do": "highlight",
+     "target": "r.2",
+     "on": "badge on exports",
+     "at": 8.7
+    }
+   ],
+   "type": "slide",
+   "durationSec": 10.44,
+   "assetId": "screen-gamma-decks",
+   "claimId": "screen-gamma-decks",
+   "covers": "Gamma builds a whole",
+   "hideCaptions": false,
+   "captionBottom": 422,
+   "sfx": [
+    {
+     "src": "sfx/whoosh.MP3",
+     "at": 0.0,
+     "vol": 0.582
+    }
+   ]
+  },
+  {
+   "eyebrow": "Claude",
+   "headline": "Notes Into a Real [[PowerPoint File]]",
+   "blocks": [
+    {
+     "id": "scr",
+     "kind": "screen",
+     "width": 2500,
+     "height": 880,
+     "src": "assets/five-free-ai-presentation-tools/claude-toggle.png",
+     "h": 440
+    },
+    {
+     "id": "r",
+     "kind": "rows",
+     "rows": [
+      {
+       "k": "Claude plan",
+       "v": "Free",
+       "tone": "free"
+      },
+      {
+       "k": "Makes",
+       "v": "PowerPoint (.pptx)"
+      },
+      {
+       "k": "Usage",
+       "v": "Faster than chat",
+       "tone": "cost"
+      }
+     ]
+    }
+   ],
+   "moves": [
+    {
+     "do": "highlight",
+     "target": "r.0",
+     "on": "makes them into",
+     "at": 2.28
+    },
+    {
+     "do": "highlight",
+     "target": "r.1",
+     "on": "real PowerPoint file",
+     "at": 3.18
+    },
+    {
+     "do": "pill",
+     "target": "headline",
+     "on": "real PowerPoint file",
+     "at": 3.18
+    },
+    {
+     "do": "focus",
+     "target": "scr",
+     "on": "file creation in settings",
+     "rect": [
+      1500,
+      250,
+      900,
+      420
+     ],
+     "at": 5.12
+    },
+    {
+     "do": "highlight",
+     "target": "r.2",
+     "on": "eat your limit",
+     "at": 7.3
+    }
+   ],
+   "type": "slide",
+   "durationSec": 9.08,
+   "assetId": "screen-claude-toggle",
+   "claimId": "screen-claude-toggle",
+   "covers": "Got notes instead",
+   "hideCaptions": false,
+   "captionBottom": 422,
+   "sfx": [
+    {
+     "src": "sfx-action/lens-zoom.mp3",
+     "at": 4.72,
+     "vol": 1.0
+    }
+   ]
+  },
+  {
+   "eyebrow": "Pitch",
+   "headline": "Fix the Deck [[by Chat]]",
+   "blocks": [
+    {
+     "id": "scr",
+     "kind": "screen",
+     "width": 1500,
+     "height": 1020,
+     "src": "assets/five-free-ai-presentation-tools/pitch-agent.png",
+     "h": 620
+    },
+    {
+     "id": "r",
+     "kind": "rows",
+     "rows": [
+      {
+       "k": "AI credits",
+       "v": "100, never renew"
+      },
+      {
+       "k": "PowerPoint export",
+       "v": "Paid",
+       "tone": "cost"
+      }
+     ]
+    }
+   ],
+   "moves": [
+    {
+     "do": "pill",
+     "target": "headline",
+     "on": "by chat",
+     "at": 1.34
+    },
+    {
+     "do": "focus",
+     "target": "scr",
+     "on": "too wordy",
+     "rect": [
+      1000,
+      590,
+      290,
+      60
+     ],
+     "at": 3.4
+    },
+    {
+     "do": "show",
+     "target": "r",
+     "on": "credits that never renew",
+     "at": 5.22
+    },
+    {
+     "do": "highlight",
+     "target": "r.1",
+     "on": "costs extra",
+     "at": 7.68
+    },
+    {
+     "do": "highlight",
+     "target": "r.0",
+     "on": "never renew",
+     "at": 5.88
+    }
+   ],
+   "type": "slide",
+   "durationSec": 9.16,
+   "assetId": "screen-pitch-agent",
+   "claimId": "screen-pitch-agent",
+   "covers": "Then pitch fixes the",
+   "hideCaptions": false,
+   "captionBottom": 422,
+   "sfx": [
+    {
+     "src": "sfx/whoosh.MP3",
+     "at": 0.0,
+     "vol": 0.582
+    },
+    {
+     "src": "sfx-action/lens-zoom.mp3",
+     "at": 3.0,
+     "vol": 1.0
+    }
+   ]
+  },
+  {
+   "eyebrow": "PowerPoint Designer",
+   "headline": "Bullets Into a [[Timeline]]",
+   "blocks": [
+    {
+     "id": "scr",
+     "kind": "screen",
+     "width": 1600,
+     "height": 902,
+     "src": "assets/five-free-ai-presentation-tools/designer-bullets.png",
+     "h": 520
+    },
+    {
+     "id": "r",
+     "kind": "rows",
+     "rows": [
+      {
+       "k": "PowerPoint on the web",
+       "v": "Free",
+       "tone": "free"
+      },
+      {
+       "k": "Needs",
+       "v": "File in OneDrive"
+      }
+     ]
+    },
+    {
+     "id": "t",
+     "kind": "text",
+     "text": "Design tab \u2192 Design Suggestions"
+    }
+   ],
+   "moves": [
+    {
+     "do": "focus",
+     "target": "scr",
+     "on": "On the web",
+     "rect": [
+      40,
+      340,
+      820,
+      440
+     ],
+     "at": 1.64
+    },
+    {
+     "do": "state",
+     "target": "scr",
+     "on": "into a timeline",
+     "src": "assets/five-free-ai-presentation-tools/designer-timeline.png",
+     "at": 3.4
+    },
+    {
+     "do": "focus",
+     "target": "scr",
+     "on": "into a timeline",
+     "rect": [
+      0,
+      0,
+      1600,
+      902
+     ],
+     "at": 3.4
+    },
+    {
+     "do": "pill",
+     "target": "headline",
+     "on": "into a timeline",
+     "at": 3.4
+    },
+    {
+     "do": "show",
+     "target": "r",
+     "on": "free for everyone",
+     "at": 4.76
+    },
+    {
+     "do": "highlight",
+     "target": "r.1",
+     "on": "Keep the file",
+     "at": 6.1
+    },
+    {
+     "do": "show",
+     "target": "t",
+     "on": "Already in PowerPoint",
+     "at": 0.0
+    }
+   ],
+   "type": "slide",
+   "durationSec": 8.04,
+   "assetId": "screen-designer",
+   "claimId": "screen-designer",
+   "covers": "Already in PowerPoint",
+   "hideCaptions": false,
+   "captionBottom": 422,
+   "sfx": [
+    {
+     "src": "sfx/Click.MP3",
+     "at": 3.47,
+     "vol": 0.251
+    }
+   ]
+  },
+  {
+   "eyebrow": "Napkin",
+   "headline": "A Paragraph Into a [[Diagram]]",
+   "blocks": [
+    {
+     "id": "scr",
+     "kind": "screen",
+     "width": 1120,
+     "height": 781,
+     "src": "assets/five-free-ai-presentation-tools/napkin-diagram.png",
+     "h": 640
+    },
+    {
+     "id": "r",
+     "kind": "rows",
+     "rows": [
+      {
+       "k": "AI credits",
+       "v": "500 / week"
+      },
+      {
+       "k": "Exports",
+       "v": "Napkin logo",
+       "tone": "cost"
+      }
+     ]
+    }
+   ],
+   "moves": [
+    {
+     "do": "pill",
+     "target": "headline",
+     "on": "paragraph as one",
+     "at": 1.68
+    },
+    {
+     "do": "focus",
+     "target": "scr",
+     "on": "paragraph as one",
+     "rect": [
+      500,
+      280,
+      420,
+      400
+     ],
+     "at": 1.68
+    },
+    {
+     "do": "show",
+     "target": "r",
+     "on": "credits a week",
+     "at": 3.62
+    },
+    {
+     "do": "highlight",
+     "target": "r.1",
+     "on": "logo on every export",
+     "at": 4.94
+    }
+   ],
+   "type": "slide",
+   "durationSec": 6.48,
+   "assetId": "screen-napkin-diagram",
+   "claimId": "screen-napkin-diagram",
+   "covers": "And for diagrams",
+   "hideCaptions": false,
+   "captionBottom": 422,
+   "sfx": []
+  },
+  {
+   "headline": "[[Stack]] Them",
+   "blocks": [
+    {
+     "id": "sw",
+     "kind": "swap",
+     "left": {
+      "logo": "assets/logos/claude.svg",
+      "name": "Claude",
+      "price": "Draft",
+      "tone": "plain",
+      "note": "your notes as a .pptx",
+      "tile": "dark"
+     },
+     "right": {
+      "logo": "assets/logos/gamma.png",
+      "name": "Gamma",
+      "price": "Import",
+      "tone": "free",
+      "note": "design what matters",
+      "tile": "dark"
+     }
+    },
+    {
+     "id": "scr",
+     "kind": "screen",
+     "width": 1800,
+     "height": 825,
+     "src": "assets/five-free-ai-presentation-tools/gamma-import.png",
+     "h": 420
+    },
+    {
+     "id": "t",
+     "kind": "text",
+     "text": "Spend credits only on the slides that matter."
+    }
+   ],
+   "moves": [
+    {
+     "do": "pill",
+     "target": "headline",
+     "on": "stack them",
+     "at": 0.08
+    },
+    {
+     "do": "show",
+     "target": "sw.right",
+     "on": "import the file",
+     "at": 1.78
+    },
+    {
+     "do": "focus",
+     "target": "scr",
+     "on": "import the file",
+     "rect": [
+      1140,
+      250,
+      560,
+      610
+     ],
+     "at": 1.78
+    },
+    {
+     "do": "show",
+     "target": "t",
+     "on": "spend credits",
+     "at": 3.3
+    }
+   ],
+   "type": "slide",
+   "durationSec": 5.98,
+   "assetId": "screen-gamma-import",
+   "claimId": "screen-gamma-import",
+   "covers": "So stack them",
+   "hideCaptions": false,
+   "captionBottom": 422,
+   "sfx": [
+    {
+     "src": "sfx/whoosh.MP3",
+     "at": 0.0,
+     "vol": 0.582
+    }
+   ]
+  },
+  {
+   "headline": "[[Save]] This",
+   "headlineSize": "xl",
+   "cta": true,
+   "hideCaptions": true,
+   "blocks": [
+    {
+     "id": "t",
+     "kind": "text",
+     "text": "For the night before your next deck."
+    },
+    {
+     "id": "lg",
+     "kind": "logos",
+     "items": [
+      {
+       "logo": "assets/logos/gamma.png",
+       "name": "Gamma",
+       "tile": "dark"
+      },
+      {
+       "logo": "assets/logos/claude.svg",
+       "name": "Claude",
+       "tile": "dark"
+      },
+      {
+       "logo": "assets/logos/pitch.svg",
+       "name": "Pitch",
+       "tile": "light"
+      },
+      {
+       "logo": "assets/logos/powerpoint.svg",
+       "name": "Designer",
+       "tile": "light"
+      },
+      {
+       "logo": "assets/logos/napkin-mark.svg",
+       "name": "Napkin",
+       "tile": "light"
+      }
+     ]
+    }
+   ],
+   "moves": [
+    {
+     "do": "pill",
+     "target": "headline",
+     "on": "Save this",
+     "at": 0.0
+    }
+   ],
+   "presenter": {
+    "src": "assets/five-free-ai-presentation-tools/avatar-master-cta.mp4",
+    "from": 0.26
+   },
+   "type": "slide",
+   "durationSec": 3.67,
+   "sfx": [
+    {
+     "src": "sfx/Pop.MP3",
+     "at": 0.05,
+     "vol": 0.343
+    }
+   ]
+  }
+ ],
+ "captions": [
+  {
+   "start": 0.0,
+   "end": 0.92,
+   "text": "Five free AI",
+   "words": [
+    {
+     "t": 0.0,
+     "text": "Five"
+    },
+    {
+     "t": 0.3,
+     "text": "free"
+    },
+    {
+     "t": 0.66,
+     "text": "AI"
+    }
+   ]
+  },
+  {
+   "start": 0.92,
+   "end": 1.9,
+   "text": "tools for making",
+   "words": [
+    {
+     "t": 0.92,
+     "text": "tools"
+    },
+    {
+     "t": 1.28,
+     "text": "for"
+    },
+    {
+     "t": 1.6,
+     "text": "making"
+    }
+   ]
+  },
+  {
+   "start": 1.9,
+   "end": 3.92,
+   "text": "presentations faster. Each",
+   "words": [
+    {
+     "t": 1.9,
+     "text": "presentations"
+    },
+    {
+     "t": 2.42,
+     "text": "faster."
+    },
+    {
+     "t": 3.7,
+     "text": "Each"
+    }
+   ]
+  },
+  {
+   "start": 3.92,
+   "end": 4.68,
+   "text": "free plan just",
+   "words": [
+    {
+     "t": 3.92,
+     "text": "free"
+    },
+    {
+     "t": 4.16,
+     "text": "plan"
+    },
+    {
+     "t": 4.46,
+     "text": "just"
+    }
+   ]
+  },
+  {
+   "start": 4.68,
+   "end": 5.8,
+   "text": "stops somewhere different.",
+   "words": [
+    {
+     "t": 4.68,
+     "text": "stops"
+    },
+    {
+     "t": 5.02,
+     "text": "somewhere"
+    },
+    {
+     "t": 5.42,
+     "text": "different."
+    }
+   ]
+  },
+  {
+   "start": 6.16,
+   "end": 6.76,
+   "text": "Gamma builds a",
+   "words": [
+    {
+     "t": 6.16,
+     "text": "Gamma"
+    },
+    {
+     "t": 6.4,
+     "text": "builds"
+    },
+    {
+     "t": 6.62,
+     "text": "a"
+    }
+   ]
+  },
+  {
+   "start": 6.76,
+   "end": 7.9,
+   "text": "whole designed deck from",
+   "words": [
+    {
+     "t": 6.76,
+     "text": "whole"
+    },
+    {
+     "t": 7.0,
+     "text": "designed"
+    },
+    {
+     "t": 7.64,
+     "text": "deck"
+    },
+    {
+     "t": 7.64,
+     "text": "from"
+    }
+   ]
+  },
+  {
+   "start": 7.9,
+   "end": 9.8,
+   "text": "one prompt. Free",
+   "words": [
+    {
+     "t": 7.9,
+     "text": "one"
+    },
+    {
+     "t": 8.12,
+     "text": "prompt."
+    },
+    {
+     "t": 9.58,
+     "text": "Free"
+    }
+   ]
+  },
+  {
+   "start": 9.8,
+   "end": 10.82,
+   "text": "is 400 credits",
+   "words": [
+    {
+     "t": 9.8,
+     "text": "is"
+    },
+    {
+     "t": 9.98,
+     "text": "400"
+    },
+    {
+     "t": 10.36,
+     "text": "credits"
+    }
+   ]
+  },
+  {
+   "start": 10.82,
+   "end": 11.72,
+   "text": "at signup that",
+   "words": [
+    {
+     "t": 10.82,
+     "text": "at"
+    },
+    {
+     "t": 11.1,
+     "text": "signup"
+    },
+    {
+     "t": 11.5,
+     "text": "that"
+    }
+   ]
+  },
+  {
+   "start": 11.72,
+   "end": 12.52,
+   "text": "never top up.",
+   "words": [
+    {
+     "t": 11.72,
+     "text": "never"
+    },
+    {
+     "t": 12.0,
+     "text": "top"
+    },
+    {
+     "t": 12.26,
+     "text": "up."
+    }
+   ]
+  },
+  {
+   "start": 13.08,
+   "end": 13.92,
+   "text": "10 slides per",
+   "words": [
+    {
+     "t": 13.08,
+     "text": "10"
+    },
+    {
+     "t": 13.34,
+     "text": "slides"
+    },
+    {
+     "t": 13.62,
+     "text": "per"
+    }
+   ]
+  },
+  {
+   "start": 13.92,
+   "end": 14.62,
+   "text": "prompt and a",
+   "words": [
+    {
+     "t": 13.92,
+     "text": "prompt"
+    },
+    {
+     "t": 14.28,
+     "text": "and"
+    },
+    {
+     "t": 14.52,
+     "text": "a"
+    }
+   ]
+  },
+  {
+   "start": 14.62,
+   "end": 15.42,
+   "text": "Gamma badge on",
+   "words": [
+    {
+     "t": 14.62,
+     "text": "Gamma"
+    },
+    {
+     "t": 14.86,
+     "text": "badge"
+    },
+    {
+     "t": 15.24,
+     "text": "on"
+    }
+   ]
+  },
+  {
+   "start": 15.42,
+   "end": 17.12,
+   "text": "exports. Got notes",
+   "words": [
+    {
+     "t": 15.42,
+     "text": "exports."
+    },
+    {
+     "t": 16.6,
+     "text": "Got"
+    },
+    {
+     "t": 16.82,
+     "text": "notes"
+    }
+   ]
+  },
+  {
+   "start": 17.12,
+   "end": 18.88,
+   "text": "instead. Free Claude",
+   "words": [
+    {
+     "t": 17.12,
+     "text": "instead."
+    },
+    {
+     "t": 18.32,
+     "text": "Free"
+    },
+    {
+     "t": 18.62,
+     "text": "Claude"
+    }
+   ]
+  },
+  {
+   "start": 18.88,
+   "end": 19.64,
+   "text": "makes them into",
+   "words": [
+    {
+     "t": 18.88,
+     "text": "makes"
+    },
+    {
+     "t": 19.18,
+     "text": "them"
+    },
+    {
+     "t": 19.38,
+     "text": "into"
+    }
+   ]
+  },
+  {
+   "start": 19.64,
+   "end": 20.36,
+   "text": "a real PowerPoint",
+   "words": [
+    {
+     "t": 19.64,
+     "text": "a"
+    },
+    {
+     "t": 19.78,
+     "text": "real"
+    },
+    {
+     "t": 19.98,
+     "text": "PowerPoint"
+    }
+   ]
+  },
+  {
+   "start": 20.36,
+   "end": 21.72,
+   "text": "file. Turn on",
+   "words": [
+    {
+     "t": 20.36,
+     "text": "file."
+    },
+    {
+     "t": 21.4,
+     "text": "Turn"
+    },
+    {
+     "t": 21.56,
+     "text": "on"
+    }
+   ]
+  },
+  {
+   "start": 21.72,
+   "end": 22.64,
+   "text": "file creation in",
+   "words": [
+    {
+     "t": 21.72,
+     "text": "file"
+    },
+    {
+     "t": 21.96,
+     "text": "creation"
+    },
+    {
+     "t": 22.34,
+     "text": "in"
+    }
+   ]
+  },
+  {
+   "start": 22.64,
+   "end": 23.54,
+   "text": "settings and expect",
+   "words": [
+    {
+     "t": 22.64,
+     "text": "settings"
+    },
+    {
+     "t": 22.92,
+     "text": "and"
+    },
+    {
+     "t": 23.26,
+     "text": "expect"
+    }
+   ]
+  },
+  {
+   "start": 23.54,
+   "end": 24.1,
+   "text": "it to eat",
+   "words": [
+    {
+     "t": 23.54,
+     "text": "it"
+    },
+    {
+     "t": 23.78,
+     "text": "to"
+    },
+    {
+     "t": 23.9,
+     "text": "eat"
+    }
+   ]
+  },
+  {
+   "start": 24.1,
+   "end": 25.0,
+   "text": "your limit faster.",
+   "words": [
+    {
+     "t": 24.1,
+     "text": "your"
+    },
+    {
+     "t": 24.26,
+     "text": "limit"
+    },
+    {
+     "t": 24.48,
+     "text": "faster."
+    }
+   ]
+  },
+  {
+   "start": 25.68,
+   "end": 26.58,
+   "text": "Then Pitch fixes",
+   "words": [
+    {
+     "t": 25.68,
+     "text": "Then"
+    },
+    {
+     "t": 25.96,
+     "text": "Pitch"
+    },
+    {
+     "t": 26.22,
+     "text": "fixes"
+    }
+   ]
+  },
+  {
+   "start": 26.58,
+   "end": 27.22,
+   "text": "the deck by",
+   "words": [
+    {
+     "t": 26.58,
+     "text": "the"
+    },
+    {
+     "t": 26.82,
+     "text": "deck"
+    },
+    {
+     "t": 27.02,
+     "text": "by"
+    }
+   ]
+  },
+  {
+   "start": 27.22,
+   "end": 28.46,
+   "text": "chat. Tell it",
+   "words": [
+    {
+     "t": 27.22,
+     "text": "chat."
+    },
+    {
+     "t": 28.16,
+     "text": "Tell"
+    },
+    {
+     "t": 28.32,
+     "text": "it"
+    }
+   ]
+  },
+  {
+   "start": 28.46,
+   "end": 29.08,
+   "text": "a slide is",
+   "words": [
+    {
+     "t": 28.46,
+     "text": "a"
+    },
+    {
+     "t": 28.6,
+     "text": "slide"
+    },
+    {
+     "t": 28.84,
+     "text": "is"
+    }
+   ]
+  },
+  {
+   "start": 29.08,
+   "end": 30.42,
+   "text": "too wordy. Free",
+   "words": [
+    {
+     "t": 29.08,
+     "text": "too"
+    },
+    {
+     "t": 29.24,
+     "text": "wordy."
+    },
+    {
+     "t": 30.16,
+     "text": "Free"
+    }
+   ]
+  },
+  {
+   "start": 30.42,
+   "end": 31.28,
+   "text": "is 100 credits",
+   "words": [
+    {
+     "t": 30.42,
+     "text": "is"
+    },
+    {
+     "t": 30.6,
+     "text": "100"
+    },
+    {
+     "t": 30.9,
+     "text": "credits"
+    }
+   ]
+  },
+  {
+   "start": 31.28,
+   "end": 32.14,
+   "text": "that never renew",
+   "words": [
+    {
+     "t": 31.28,
+     "text": "that"
+    },
+    {
+     "t": 31.56,
+     "text": "never"
+    },
+    {
+     "t": 31.82,
+     "text": "renew"
+    }
+   ]
+  },
+  {
+   "start": 32.14,
+   "end": 33.36,
+   "text": "and PowerPoint export",
+   "words": [
+    {
+     "t": 32.14,
+     "text": "and"
+    },
+    {
+     "t": 32.4,
+     "text": "PowerPoint"
+    },
+    {
+     "t": 32.76,
+     "text": "export"
+    }
+   ]
+  },
+  {
+   "start": 33.36,
+   "end": 35.16,
+   "text": "costs extra. Already",
+   "words": [
+    {
+     "t": 33.36,
+     "text": "costs"
+    },
+    {
+     "t": 33.74,
+     "text": "extra."
+    },
+    {
+     "t": 34.84,
+     "text": "Already"
+    }
+   ]
+  },
+  {
+   "start": 35.16,
+   "end": 36.58,
+   "text": "in PowerPoint? On",
+   "words": [
+    {
+     "t": 35.16,
+     "text": "in"
+    },
+    {
+     "t": 35.34,
+     "text": "PowerPoint?"
+    },
+    {
+     "t": 36.48,
+     "text": "On"
+    }
+   ]
+  },
+  {
+   "start": 36.58,
+   "end": 37.22,
+   "text": "the web, Designer",
+   "words": [
+    {
+     "t": 36.58,
+     "text": "the"
+    },
+    {
+     "t": 36.7,
+     "text": "web,"
+    },
+    {
+     "t": 36.94,
+     "text": "Designer"
+    }
+   ]
+  },
+  {
+   "start": 37.22,
+   "end": 37.9,
+   "text": "turns a bullet",
+   "words": [
+    {
+     "t": 37.22,
+     "text": "turns"
+    },
+    {
+     "t": 37.58,
+     "text": "a"
+    },
+    {
+     "t": 37.76,
+     "text": "bullet"
+    }
+   ]
+  },
+  {
+   "start": 37.9,
+   "end": 38.6,
+   "text": "list into a",
+   "words": [
+    {
+     "t": 37.9,
+     "text": "list"
+    },
+    {
+     "t": 38.24,
+     "text": "into"
+    },
+    {
+     "t": 38.46,
+     "text": "a"
+    }
+   ]
+  },
+  {
+   "start": 38.6,
+   "end": 40.1,
+   "text": "timeline, free for",
+   "words": [
+    {
+     "t": 38.6,
+     "text": "timeline,"
+    },
+    {
+     "t": 39.6,
+     "text": "free"
+    },
+    {
+     "t": 39.86,
+     "text": "for"
+    }
+   ]
+  },
+  {
+   "start": 40.1,
+   "end": 41.36,
+   "text": "everyone. Keep the",
+   "words": [
+    {
+     "t": 40.1,
+     "text": "everyone."
+    },
+    {
+     "t": 40.94,
+     "text": "Keep"
+    },
+    {
+     "t": 41.2,
+     "text": "the"
+    }
+   ]
+  },
+  {
+   "start": 41.36,
+   "end": 42.26,
+   "text": "file in OneDrive",
+   "words": [
+    {
+     "t": 41.36,
+     "text": "file"
+    },
+    {
+     "t": 41.62,
+     "text": "in"
+    },
+    {
+     "t": 41.78,
+     "text": "OneDrive"
+    }
+   ]
+  },
+  {
+   "start": 42.88,
+   "end": 43.46,
+   "text": "And for diagrams,",
+   "words": [
+    {
+     "t": 42.88,
+     "text": "And"
+    },
+    {
+     "t": 42.98,
+     "text": "for"
+    },
+    {
+     "t": 43.12,
+     "text": "diagrams,"
+    }
+   ]
+  },
+  {
+   "start": 43.82,
+   "end": 44.56,
+   "text": "Napkin draws a",
+   "words": [
+    {
+     "t": 43.82,
+     "text": "Napkin"
+    },
+    {
+     "t": 44.14,
+     "text": "draws"
+    },
+    {
+     "t": 44.38,
+     "text": "a"
+    }
+   ]
+  },
+  {
+   "start": 44.56,
+   "end": 45.54,
+   "text": "paragraph as one.",
+   "words": [
+    {
+     "t": 44.56,
+     "text": "paragraph"
+    },
+    {
+     "t": 44.9,
+     "text": "as"
+    },
+    {
+     "t": 45.28,
+     "text": "one."
+    }
+   ]
+  },
+  {
+   "start": 46.16,
+   "end": 47.2,
+   "text": "500 credits a",
+   "words": [
+    {
+     "t": 46.16,
+     "text": "500"
+    },
+    {
+     "t": 46.5,
+     "text": "credits"
+    },
+    {
+     "t": 46.96,
+     "text": "a"
+    }
+   ]
+  },
+  {
+   "start": 47.2,
+   "end": 47.82,
+   "text": "week with its",
+   "words": [
+    {
+     "t": 47.2,
+     "text": "week"
+    },
+    {
+     "t": 47.36,
+     "text": "with"
+    },
+    {
+     "t": 47.64,
+     "text": "its"
+    }
+   ]
+  },
+  {
+   "start": 47.82,
+   "end": 48.62,
+   "text": "logo on every",
+   "words": [
+    {
+     "t": 47.82,
+     "text": "logo"
+    },
+    {
+     "t": 48.1,
+     "text": "on"
+    },
+    {
+     "t": 48.36,
+     "text": "every"
+    }
+   ]
+  },
+  {
+   "start": 48.62,
+   "end": 49.68,
+   "text": "export. So stack",
+   "words": [
+    {
+     "t": 48.62,
+     "text": "export."
+    },
+    {
+     "t": 49.36,
+     "text": "So"
+    },
+    {
+     "t": 49.44,
+     "text": "stack"
+    }
+   ]
+  },
+  {
+   "start": 49.68,
+   "end": 50.6,
+   "text": "them. Draft in",
+   "words": [
+    {
+     "t": 49.68,
+     "text": "them."
+    },
+    {
+     "t": 50.24,
+     "text": "Draft"
+    },
+    {
+     "t": 50.4,
+     "text": "in"
+    }
+   ]
+  },
+  {
+   "start": 50.6,
+   "end": 51.56,
+   "text": "Claude, import the",
+   "words": [
+    {
+     "t": 50.6,
+     "text": "Claude,"
+    },
+    {
+     "t": 51.14,
+     "text": "import"
+    },
+    {
+     "t": 51.38,
+     "text": "the"
+    }
+   ]
+  },
+  {
+   "start": 51.56,
+   "end": 52.32,
+   "text": "file into Gamma",
+   "words": [
+    {
+     "t": 51.56,
+     "text": "file"
+    },
+    {
+     "t": 51.82,
+     "text": "into"
+    },
+    {
+     "t": 52.06,
+     "text": "Gamma"
+    }
+   ]
+  },
+  {
+   "start": 52.32,
+   "end": 53.34,
+   "text": "and spend credits",
+   "words": [
+    {
+     "t": 52.32,
+     "text": "and"
+    },
+    {
+     "t": 52.66,
+     "text": "spend"
+    },
+    {
+     "t": 52.88,
+     "text": "credits"
+    }
+   ]
+  },
+  {
+   "start": 53.34,
+   "end": 53.94,
+   "text": "only on the",
+   "words": [
+    {
+     "t": 53.34,
+     "text": "only"
+    },
+    {
+     "t": 53.68,
+     "text": "on"
+    },
+    {
+     "t": 53.84,
+     "text": "the"
+    }
+   ]
+  },
+  {
+   "start": 53.94,
+   "end": 54.78,
+   "text": "slides that matter.",
+   "words": [
+    {
+     "t": 53.94,
+     "text": "slides"
+    },
+    {
+     "t": 54.24,
+     "text": "that"
+    },
+    {
+     "t": 54.48,
+     "text": "matter."
+    }
+   ]
+  },
+  {
+   "start": 55.34,
+   "end": 56.0,
+   "text": "Save this for",
+   "words": [
+    {
+     "t": 55.34,
+     "text": "Save"
+    },
+    {
+     "t": 55.62,
+     "text": "this"
+    },
+    {
+     "t": 55.82,
+     "text": "for"
+    }
+   ]
+  },
+  {
+   "start": 56.0,
+   "end": 56.6,
+   "text": "the night before",
+   "words": [
+    {
+     "t": 56.0,
+     "text": "the"
+    },
+    {
+     "t": 56.12,
+     "text": "night"
+    },
+    {
+     "t": 56.32,
+     "text": "before"
+    }
+   ]
+  },
+  {
+   "start": 56.6,
+   "end": 57.3,
+   "text": "your next deck.",
+   "words": [
+    {
+     "t": 56.6,
+     "text": "your"
+    },
+    {
+     "t": 56.8,
+     "text": "next"
+    },
+    {
+     "t": 57.06,
+     "text": "deck."
+    }
+   ]
+  }
+ ],
+ "music": {
+  "src": "music/bed-02.mp3",
+  "from": 0,
+  "points": [
+   {
+    "t": 0.0,
+    "vol": 0.055
+   },
+   {
+    "t": 8.52,
+    "vol": 0.055
+   },
+   {
+    "t": 8.86,
+    "vol": 0.15
+   },
+   {
+    "t": 9.4,
+    "vol": 0.15
+   },
+   {
+    "t": 9.58,
+    "vol": 0.055
+   },
+   {
+    "t": 57.3,
+    "vol": 0.055
+   },
+   {
+    "t": 57.64,
+    "vol": 0.15
+   },
+   {
+    "t": 58.11,
+    "vol": 0.15
+   },
+   {
+    "t": 59.01,
+    "vol": 0.02
+   }
+  ],
+  "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+ },
+ "format": "ai-tools",
+ "script": "Five free AI tools for making presentations faster. Each free plan just stops somewhere different.\n\nGamma builds a whole designed deck from one prompt. Free is four hundred credits at signup that never top up, ten slides per prompt, and a Gamma badge on exports.\n\nGot notes instead? Free Claude makes them into a real PowerPoint file. Turn on file creation in settings, and expect it to eat your limit faster.\n\nThen Pitch fixes the deck by chat: tell it a slide is too wordy. Free is a hundred credits that never renew, and PowerPoint export costs extra.\n\nAlready in PowerPoint? On the web, Designer turns a bullet list into a timeline, free for everyone. Keep the file in OneDrive.\n\nAnd for diagrams, Napkin draws a paragraph as one: five hundred credits a week, with its logo on every export.\n\nSo stack them: draft in Claude, import the file into Gamma, and spend credits only on the slides that matter.\n\nSave this for the night before your next deck.",
+ "approval": {
+  "sha256": "a74f19466143ad008e4f00050e14c7f9f2f1a9ee55cca35e56d7f8d8eb1208d8",
+  "approvedAt": "2026-09-23T12:02:54+00:00",
+  "words": 169,
+  "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+ }
+}

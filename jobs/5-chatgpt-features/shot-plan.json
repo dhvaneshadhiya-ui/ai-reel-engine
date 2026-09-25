@@ -1,0 +1,281 @@
+{
+  "emphasis": ["free", "automatically", "Settings"],
+  "caption_corrections": {
+    "chat gpt": "ChatGPT",
+    "open ai": "OpenAI",
+    "hands off": "hands-off"
+  },
+  "music": true,
+  "facePlan": "bookends",
+  "format": "ai-tools",
+  "audio": "assets/5-chatgpt-features/vo.mp3",
+  "shots": [
+    {
+      "start_phrase": "Five",
+      "line": "Five ChatGPT features you're probably not using. Over one hundred fifty million people talk to ChatGPT out loud every week.",
+      "needs": ["Five", "ChatGPT", "features", "probably", "not", "using", "150", "million"],
+      "tier": "official",
+      "asset_id": "logo-openai",
+      "scene": {
+        "headline": "5 ChatGPT Features You're Probably [[Not Using]]",
+        "blocks": [
+          {
+            "id": "sp",
+            "kind": "spotlight",
+            "logo": "assets/logos/openai.svg",
+            "name": "ChatGPT"
+          },
+          {
+            "id": "q",
+            "kind": "text",
+            "text": "150M people talk to it, out loud, every week"
+          }
+        ],
+        "moves": [
+          { "do": "pill", "target": "headline", "on": "not using" },
+          { "do": "show", "target": "sp", "on": "chatgpt features" },
+          { "do": "show", "target": "q", "on": "150 million" }
+        ],
+        "type": "slide",
+        "hideCaptions": true,
+        "presenter": {
+          "src": "assets/5-chatgpt-features/avatar-master-hook.mp4",
+          "from": 0.0
+        }
+      }
+    },
+    {
+      "start_phrase": "If that's not you",
+      "line": "If that's not you, stick around. The other four live in Settings too. Voice got rebuilt this July into full duplex: listening and talking at once.",
+      "needs": ["stick", "around", "other", "four", "Settings", "Voice", "rebuilt", "July", "duplex"],
+      "tier": "official",
+      "asset_id": "logo-openai",
+      "scene": {
+        "eyebrow": "#1 · Voice",
+        "headline": "Rebuilt into [[full duplex]]",
+        "blocks": [
+          {
+            "id": "h",
+            "kind": "hero",
+            "side": {
+              "logo": "assets/logos/openai.svg",
+              "tile": "light",
+              "name": "Voice",
+              "price": "Live",
+              "tone": "free",
+              "note": "listens and talks at once"
+            }
+          },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              { "k": "Rebuilt", "v": "July 2026" },
+              { "k": "Menu", "v": "Settings › Voice" }
+            ]
+          }
+        ],
+        "moves": [
+          { "do": "show", "target": "h", "on": "stick around" },
+          { "do": "show", "target": "r", "on": "other four live" },
+          { "do": "highlight", "target": "r.0", "on": "this July" },
+          { "do": "pill", "target": "headline", "on": "full duplex" },
+          { "do": "highlight", "target": "r.1", "on": "talking at once" }
+        ],
+        "type": "slide"
+      }
+    },
+    {
+      "start_phrase": "Tasks are hands-off",
+      "line": "Tasks are hands-off too: run one-time or recurring, up to three active on free accounts. Paid plans get hourly scheduling and can watch things like Gmail for you.",
+      "needs": ["Tasks", "hands", "off", "recurring", "three", "active", "free", "Gmail"],
+      "tier": "official",
+      "asset_id": "logo-openai",
+      "scene": {
+        "eyebrow": "#2 · Tasks",
+        "headline": "Runs [[hands-off]]",
+        "blocks": [
+          {
+            "id": "h",
+            "kind": "hero",
+            "side": {
+              "logo": "assets/logos/openai.svg",
+              "tile": "light",
+              "name": "active tasks free",
+              "price": "3",
+              "tone": "free",
+              "note": "one-time or recurring"
+            }
+          },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              { "k": "Gmail / Slack watch", "v": "Paid plans" },
+              { "k": "Menu", "v": "Scheduled" }
+            ]
+          }
+        ],
+        "moves": [
+          { "do": "show", "target": "h", "on": "Tasks are hands-off" },
+          { "do": "pill", "target": "headline", "on": "hands off" },
+          { "do": "show", "target": "r", "on": "three active" },
+          { "do": "highlight", "target": "r.1", "on": "free accounts" },
+          { "do": "highlight", "target": "r.0", "on": "watch things" }
+        ],
+        "type": "slide"
+      }
+    },
+    {
+      "start_phrase": "Memory doesn't wait",
+      "line": "Memory doesn't wait to be asked. It remembers you across every chat, and this June OpenAI opened it to free accounts as well.",
+      "needs": ["Memory", "wait", "asked", "remembers", "June", "OpenAI", "free"],
+      "tier": "official",
+      "asset_id": "screen-memory",
+      "scene": {
+        "eyebrow": "#3 · Memory",
+        "headline": "Doesn't [[wait to be asked]]",
+        "blocks": [
+          {
+            "id": "scr",
+            "kind": "screen",
+            "width": 1176,
+            "height": 2096,
+            "src": "assets/5-chatgpt-features/memory-sources.png",
+            "h": 760
+          },
+          {
+            "id": "t",
+            "kind": "text",
+            "text": "Rebuilt in June 2026 — now on Free too"
+          }
+        ],
+        "moves": [
+          { "do": "pill", "target": "headline", "on": "wait to be asked" },
+          { "do": "focus", "target": "scr", "on": "remembers you", "rect": [200, 1150, 750, 150] },
+          { "do": "show", "target": "t", "on": "this June" }
+        ],
+        "type": "slide"
+      }
+    },
+    {
+      "start_phrase": "Data analysis works",
+      "line": "Data analysis works automatically: drop in a spreadsheet, get code, a chart, and answers. Free gets three uploads a day.",
+      "needs": ["Data", "analysis", "automatically", "spreadsheet", "code", "chart", "Free", "three", "uploads"],
+      "tier": "official",
+      "asset_id": "logo-openai",
+      "scene": {
+        "eyebrow": "#4 · Data analysis",
+        "headline": "Works [[automatically]]",
+        "blocks": [
+          {
+            "id": "h",
+            "kind": "hero",
+            "side": {
+              "logo": "assets/logos/openai.svg",
+              "tile": "light",
+              "name": "uploads a day, free",
+              "price": "3",
+              "tone": "free",
+              "note": "auto on upload, no toggle"
+            }
+          },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              { "k": "Trigger", "v": "Automatic" },
+              { "k": "Output", "v": "Code + chart" }
+            ]
+          }
+        ],
+        "moves": [
+          { "do": "show", "target": "h", "on": "Data analysis works" },
+          { "do": "pill", "target": "headline", "on": "automatically" },
+          { "do": "show", "target": "r", "on": "get code" },
+          { "do": "highlight", "target": "r.1", "on": "a chart" },
+          { "do": "highlight", "target": "r.0", "on": "three uploads" }
+        ],
+        "type": "slide"
+      }
+    },
+    {
+      "start_phrase": "And projects pulls",
+      "line": "And Projects pulls it together, chats, files, and instructions in one space, so ChatGPT stops starting from zero. Free gets five files, Plus twenty-five.",
+      "needs": ["Projects", "pulls", "together", "chats", "files", "instructions", "Free", "five", "Plus", "25"],
+      "tier": "official",
+      "asset_id": "screen-projects",
+      "scene": {
+        "eyebrow": "#5 · Projects",
+        "headline": "[[Pulls it together]]",
+        "blocks": [
+          {
+            "id": "scr",
+            "kind": "screen",
+            "width": 397,
+            "height": 986,
+            "src": "assets/5-chatgpt-features/projects-sidebar.png",
+            "h": 620
+          },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              { "k": "Free", "v": "5 files" },
+              { "k": "Plus", "v": "25 files" }
+            ]
+          }
+        ],
+        "moves": [
+          { "do": "pill", "target": "headline", "on": "pulls it together" },
+          { "do": "focus", "target": "scr", "on": "in one space", "rect": [0, 60, 397, 100] },
+          { "do": "show", "target": "r", "on": "Free gets five" },
+          { "do": "highlight", "target": "r.0", "on": "five files" },
+          { "do": "highlight", "target": "r.1", "on": "plus 25" }
+        ],
+        "type": "slide"
+      }
+    },
+    {
+      "start_phrase": "Save this then",
+      "line": "Save this, then open Settings, and let them run without you.",
+      "needs": ["Save", "open", "Settings", "run", "without", "you"],
+      "tier": "official",
+      "asset_id": null,
+      "scene": {
+        "headline": "[[Save]] this",
+        "headlineSize": "xl",
+        "blocks": [
+          {
+            "id": "t",
+            "kind": "text",
+            "text": "Then open Settings and let them run without you"
+          },
+          {
+            "id": "r",
+            "kind": "rows",
+            "rows": [
+              { "k": "Voice", "v": "Live" },
+              { "k": "Tasks", "v": "Scheduled" },
+              { "k": "Memory", "v": "Personalization" },
+              { "k": "Data analysis", "v": "Upload a file" },
+              { "k": "Projects", "v": "New project" }
+            ]
+          }
+        ],
+        "moves": [
+          { "do": "pill", "target": "headline", "on": "Save this" },
+          { "do": "show", "target": "r", "on": "Save this" },
+          { "do": "show", "target": "t", "on": "open settings" }
+        ],
+        "type": "slide",
+        "cta": true,
+        "hideCaptions": true,
+        "presenter": {
+          "src": "assets/5-chatgpt-features/avatar-master-cta.mp4",
+          "from": 0.0
+        }
+      }
+    }
+  ]
+}

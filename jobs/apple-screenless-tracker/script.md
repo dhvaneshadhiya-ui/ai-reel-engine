@@ -1,0 +1,13 @@
+On September 9th, Apple finally gave the Watch an all-day heart sensor. Thirteen days later, Bloomberg's Mark Gurman reports Apple is testing a completely different device, one with no screen at all. Except, the catch is this: if the Watch just got better, why build something else?
+
+It's reportedly a thin fabric band with a sensor module on your wrist. No display. No notifications. Just heart rate, recovery, and sleep, the same three things Whoop and Oura already track.
+
+Gurman says Tim Cook and Eddy Cue are both behind it. Cue's run Apple's health team since last October, reportedly pushing for something simpler than the Watch.
+
+But that sensor gap was already closed in September. That's not the catch. Simply put, some people don't want a screen on their wrist at all, they just want the numbers. And Whoop and Oura built entire businesses on exactly that.
+
+And there's real money on that bet. Oura just filed to go public at a sixteen billion dollar valuation. Whoop's reportedly worth ten billion too.
+
+Still, Apple hasn't approved any of this. Gurman says it's a technology investigation: prototypes, not a product. It's not landing before 2028, if it lands at all.
+
+So which is it: is your wrist better off with a screen, or with none at all?

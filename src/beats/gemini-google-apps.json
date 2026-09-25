@@ -1,0 +1,1693 @@
+{
+  "id": "gemini-google-apps",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "utility",
+  "audio": "assets/gemini-google-apps/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "free",
+    "paid",
+    "spring",
+    "hands-off"
+  ],
+  "scenes": [
+    {
+      "headline": "5 Gemini Features [[Already Have]]",
+      "blocks": [
+        {
+          "id": "lg",
+          "kind": "logos",
+          "items": [
+            {
+              "logo": "assets/logos/gmail.svg",
+              "name": "Gmail",
+              "tile": "light"
+            },
+            {
+              "logo": "assets/logos/google-docs.svg",
+              "name": "Docs",
+              "tile": "light"
+            },
+            {
+              "logo": "assets/logos/google-sheets.svg",
+              "name": "Sheets",
+              "tile": "light"
+            },
+            {
+              "logo": "assets/logos/google-drive.svg",
+              "name": "Drive",
+              "tile": "light"
+            },
+            {
+              "logo": "assets/logos/google-meet.svg",
+              "name": "Meet",
+              "tile": "light"
+            }
+          ]
+        },
+        {
+          "id": "q",
+          "kind": "text",
+          "text": "Most people have never touched the button."
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "already have",
+          "at": 3.08
+        },
+        {
+          "do": "show",
+          "target": "lg",
+          "on": "apps you already have open",
+          "at": 2.54
+        },
+        {
+          "do": "show",
+          "target": "q",
+          "on": "never touched",
+          "at": 6.04
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": true,
+      "presenter": {
+        "src": "assets/gemini-google-apps/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "durationSec": 8.58,
+      "assetId": "logo-gemini",
+      "claimId": "logo-gemini",
+      "covers": "Right now, five",
+      "sourceUrl": "https://gemini.google.com",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 3.05,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "eyebrow": "#1 \u00b7 Gmail",
+      "headline": "[[Summarize]] Any Email",
+      "blocks": [
+        {
+          "id": "scr",
+          "kind": "screen",
+          "width": 895,
+          "height": 559,
+          "src": "assets/gemini-google-apps/gmail-summarize.png",
+          "h": 760
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Access",
+              "v": "Free",
+              "tone": "free"
+            },
+            {
+              "k": "Menu",
+              "v": "Gemini panel"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Summarize",
+          "at": 3.26
+        },
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "tap Summarize this email",
+          "rect": [
+            520,
+            40,
+            375,
+            320
+          ],
+          "at": 2.96
+        },
+        {
+          "do": "show",
+          "target": "r",
+          "on": "That one's free",
+          "at": 8.64
+        },
+        {
+          "do": "highlight",
+          "target": "r.0",
+          "on": "personal account",
+          "at": 10.02
+        }
+      ],
+      "type": "slide",
+      "durationSec": 12.08,
+      "assetId": "screen-gmail",
+      "claimId": "screen-gmail",
+      "covers": "In Gmail, open",
+      "sourceUrl": "https://support.google.com/mail/answer/14199860",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 3.23,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 2.56,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "eyebrow": "#2 \u00b7 Docs",
+      "headline": "Summarizes [[With Sources]]",
+      "blocks": [
+        {
+          "id": "scr",
+          "kind": "screen",
+          "width": 895,
+          "height": 559,
+          "src": "assets/gemini-google-apps/docs-summarize.png",
+          "h": 760
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Access",
+              "v": "Paid plan",
+              "tone": "cost"
+            },
+            {
+              "k": "Menu",
+              "v": "Ask Gemini panel"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "scr",
+          "on": "does something similar",
+          "at": 0.52
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "sources",
+          "at": 6.12
+        },
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "summarize the page",
+          "rect": [
+            660,
+            60,
+            235,
+            370
+          ],
+          "at": 3.08
+        },
+        {
+          "do": "show",
+          "target": "r",
+          "on": "it used",
+          "at": 6.46
+        }
+      ],
+      "type": "slide",
+      "durationSec": 7.98,
+      "assetId": "screen-docs",
+      "claimId": "screen-docs",
+      "covers": "Docs does something",
+      "sourceUrl": "https://support.google.com/docs/answer/14206696",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 6.09,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 2.68,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "eyebrow": "#3 \u00b7 Sheets",
+      "headline": "Charts [[Every Tab]]",
+      "blocks": [
+        {
+          "id": "scr",
+          "kind": "screen",
+          "width": 895,
+          "height": 575,
+          "src": "assets/gemini-google-apps/sheets-chart.png",
+          "h": 760
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Access",
+              "v": "Paid plan",
+              "tone": "cost"
+            },
+            {
+              "k": "Sources",
+              "v": "3 tabs"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "scr",
+          "on": "goes further",
+          "at": 0.52
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "every tab",
+          "at": 4.62
+        },
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "chart your data",
+          "rect": [
+            580,
+            40,
+            315,
+            290
+          ],
+          "at": 2.98
+        },
+        {
+          "do": "show",
+          "target": "r",
+          "on": "not just the one",
+          "at": 5.54
+        }
+      ],
+      "type": "slide",
+      "durationSec": 8.26,
+      "assetId": "screen-sheets",
+      "claimId": "screen-sheets",
+      "covers": "Sheets goes further",
+      "sourceUrl": "https://support.google.com/docs/answer/14356410",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 4.59,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 2.58,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "eyebrow": "#4 \u00b7 Drive",
+      "headline": "[[New]] This Spring",
+      "blocks": [
+        {
+          "id": "scr",
+          "kind": "screen",
+          "width": 2048,
+          "height": 1199,
+          "src": "assets/gemini-google-apps/drive-ask-gemini.png",
+          "h": 760
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Access",
+              "v": "Paid plan",
+              "tone": "cost"
+            },
+            {
+              "k": "Sources",
+              "v": "Drive, Gmail, Chat"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "scr",
+          "on": "pick sources across",
+          "at": 0.82
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "this spring",
+          "at": 8.78
+        },
+        {
+          "do": "show",
+          "target": "r",
+          "on": "answer questions",
+          "at": 4.28
+        }
+      ],
+      "type": "slide",
+      "durationSec": 10.42,
+      "assetId": "screen-drive",
+      "claimId": "screen-drive",
+      "covers": "Drive can now",
+      "sourceUrl": "https://workspaceupdates.googleblog.com/2026/04/ask-gemini-in-drive-now-generally-available.html",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 8.75,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "eyebrow": "#5 \u00b7 Meet",
+      "headline": "[[Hands-Off]] Notes",
+      "blocks": [
+        {
+          "id": "scr",
+          "kind": "screen",
+          "width": 895,
+          "height": 563,
+          "src": "assets/gemini-google-apps/meet-take-notes.png",
+          "h": 760
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "An independent review caught a wrong detail -- skim it"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "hands-off",
+          "at": 1.22
+        },
+        {
+          "do": "focus",
+          "target": "scr",
+          "on": "click one button",
+          "rect": [
+            660,
+            40,
+            235,
+            260
+          ],
+          "at": 2.52
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "worth a skim",
+          "at": 6.42
+        }
+      ],
+      "type": "slide",
+      "durationSec": 10.02,
+      "assetId": "screen-meet",
+      "claimId": "screen-meet",
+      "covers": "And Meet takes",
+      "sourceUrl": "https://support.google.com/meet/answer/14754931",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Core.MP3",
+          "at": 1.17,
+          "vol": 0.556
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 2.12,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "headline": "[[Only One]] Is Free",
+      "headlineSize": "xl",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Gmail",
+              "v": "Free",
+              "tone": "free"
+            },
+            {
+              "k": "Docs",
+              "v": "Paid",
+              "tone": "cost"
+            },
+            {
+              "k": "Sheets",
+              "v": "Paid",
+              "tone": "cost"
+            },
+            {
+              "k": "Drive",
+              "v": "Paid",
+              "tone": "cost"
+            },
+            {
+              "k": "Meet",
+              "v": "Paid",
+              "tone": "cost"
+            }
+          ]
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Find the button. Then decide if it's worth the plan."
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Only",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "r",
+          "on": "Only Gmail's is free",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "Find the button",
+          "at": 6.94
+        }
+      ],
+      "type": "slide",
+      "cta": true,
+      "hideCaptions": true,
+      "presenter": {
+        "src": "assets/gemini-google-apps/avatar-master-cta.mp4",
+        "from": 0.0
+      },
+      "durationSec": 9.66,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.92,
+      "text": "Right now, five",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Right"
+        },
+        {
+          "t": 0.28,
+          "text": "now,"
+        },
+        {
+          "t": 0.7,
+          "text": "five"
+        }
+      ]
+    },
+    {
+      "start": 0.92,
+      "end": 1.92,
+      "text": "Gemini features are",
+      "words": [
+        {
+          "t": 0.92,
+          "text": "Gemini"
+        },
+        {
+          "t": 1.26,
+          "text": "features"
+        },
+        {
+          "t": 1.64,
+          "text": "are"
+        }
+      ]
+    },
+    {
+      "start": 1.92,
+      "end": 2.88,
+      "text": "sitting inside apps",
+      "words": [
+        {
+          "t": 1.92,
+          "text": "sitting"
+        },
+        {
+          "t": 2.12,
+          "text": "inside"
+        },
+        {
+          "t": 2.54,
+          "text": "apps"
+        }
+      ]
+    },
+    {
+      "start": 2.88,
+      "end": 3.84,
+      "text": "you already have",
+      "words": [
+        {
+          "t": 2.88,
+          "text": "you"
+        },
+        {
+          "t": 3.08,
+          "text": "already"
+        },
+        {
+          "t": 3.54,
+          "text": "have"
+        }
+      ]
+    },
+    {
+      "start": 3.84,
+      "end": 5.46,
+      "text": "open and most",
+      "words": [
+        {
+          "t": 3.84,
+          "text": "open"
+        },
+        {
+          "t": 4.2,
+          "text": "and"
+        },
+        {
+          "t": 4.44,
+          "text": "most"
+        }
+      ]
+    },
+    {
+      "start": 5.46,
+      "end": 6.34,
+      "text": "people have never",
+      "words": [
+        {
+          "t": 5.46,
+          "text": "people"
+        },
+        {
+          "t": 5.76,
+          "text": "have"
+        },
+        {
+          "t": 6.04,
+          "text": "never"
+        }
+      ]
+    },
+    {
+      "start": 6.34,
+      "end": 7.06,
+      "text": "touched the button.",
+      "words": [
+        {
+          "t": 6.34,
+          "text": "touched"
+        },
+        {
+          "t": 6.64,
+          "text": "the"
+        },
+        {
+          "t": 6.78,
+          "text": "button."
+        }
+      ]
+    },
+    {
+      "start": 8.58,
+      "end": 9.98,
+      "text": "In Gmail, open",
+      "words": [
+        {
+          "t": 8.58,
+          "text": "In"
+        },
+        {
+          "t": 9.18,
+          "text": "Gmail,"
+        },
+        {
+          "t": 9.78,
+          "text": "open"
+        }
+      ]
+    },
+    {
+      "start": 9.98,
+      "end": 10.92,
+      "text": "Gemini on any",
+      "words": [
+        {
+          "t": 9.98,
+          "text": "Gemini"
+        },
+        {
+          "t": 10.4,
+          "text": "on"
+        },
+        {
+          "t": 10.64,
+          "text": "any"
+        }
+      ]
+    },
+    {
+      "start": 10.92,
+      "end": 11.84,
+      "text": "email and tap",
+      "words": [
+        {
+          "t": 10.92,
+          "text": "email"
+        },
+        {
+          "t": 11.22,
+          "text": "and"
+        },
+        {
+          "t": 11.54,
+          "text": "tap"
+        }
+      ]
+    },
+    {
+      "start": 11.84,
+      "end": 13.02,
+      "text": "summarize this email",
+      "words": [
+        {
+          "t": 11.84,
+          "text": "summarize"
+        },
+        {
+          "t": 12.26,
+          "text": "this"
+        },
+        {
+          "t": 12.62,
+          "text": "email"
+        }
+      ]
+    },
+    {
+      "start": 13.02,
+      "end": 13.76,
+      "text": "to shrink the",
+      "words": [
+        {
+          "t": 13.02,
+          "text": "to"
+        },
+        {
+          "t": 13.26,
+          "text": "shrink"
+        },
+        {
+          "t": 13.56,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 13.76,
+      "end": 14.58,
+      "text": "whole thread into",
+      "words": [
+        {
+          "t": 13.76,
+          "text": "whole"
+        },
+        {
+          "t": 13.96,
+          "text": "thread"
+        },
+        {
+          "t": 14.28,
+          "text": "into"
+        }
+      ]
+    },
+    {
+      "start": 14.58,
+      "end": 15.4,
+      "text": "a short summary.",
+      "words": [
+        {
+          "t": 14.58,
+          "text": "a"
+        },
+        {
+          "t": 14.76,
+          "text": "short"
+        },
+        {
+          "t": 15.0,
+          "text": "summary."
+        }
+      ]
+    },
+    {
+      "start": 17.22,
+      "end": 18.04,
+      "text": "That one's free,",
+      "words": [
+        {
+          "t": 17.22,
+          "text": "That"
+        },
+        {
+          "t": 17.48,
+          "text": "one's"
+        },
+        {
+          "t": 17.78,
+          "text": "free,"
+        }
+      ]
+    },
+    {
+      "start": 18.1,
+      "end": 18.6,
+      "text": "even on a",
+      "words": [
+        {
+          "t": 18.1,
+          "text": "even"
+        },
+        {
+          "t": 18.32,
+          "text": "on"
+        },
+        {
+          "t": 18.5,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 18.6,
+      "end": 21.18,
+      "text": "personal account. Docs",
+      "words": [
+        {
+          "t": 18.6,
+          "text": "personal"
+        },
+        {
+          "t": 18.84,
+          "text": "account."
+        },
+        {
+          "t": 20.66,
+          "text": "Docs"
+        }
+      ]
+    },
+    {
+      "start": 21.18,
+      "end": 21.98,
+      "text": "does something similar.",
+      "words": [
+        {
+          "t": 21.18,
+          "text": "does"
+        },
+        {
+          "t": 21.24,
+          "text": "something"
+        },
+        {
+          "t": 21.56,
+          "text": "similar."
+        }
+      ]
+    },
+    {
+      "start": 22.9,
+      "end": 23.74,
+      "text": "Ask Gemini to",
+      "words": [
+        {
+          "t": 22.9,
+          "text": "Ask"
+        },
+        {
+          "t": 23.14,
+          "text": "Gemini"
+        },
+        {
+          "t": 23.5,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 23.74,
+      "end": 24.52,
+      "text": "summarize the page",
+      "words": [
+        {
+          "t": 23.74,
+          "text": "summarize"
+        },
+        {
+          "t": 24.06,
+          "text": "the"
+        },
+        {
+          "t": 24.32,
+          "text": "page"
+        }
+      ]
+    },
+    {
+      "start": 24.52,
+      "end": 25.24,
+      "text": "you're on and",
+      "words": [
+        {
+          "t": 24.52,
+          "text": "you're"
+        },
+        {
+          "t": 24.76,
+          "text": "on"
+        },
+        {
+          "t": 24.98,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 25.24,
+      "end": 25.88,
+      "text": "it answers in",
+      "words": [
+        {
+          "t": 25.24,
+          "text": "it"
+        },
+        {
+          "t": 25.36,
+          "text": "answers"
+        },
+        {
+          "t": 25.68,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 25.88,
+      "end": 26.78,
+      "text": "bullets with the",
+      "words": [
+        {
+          "t": 25.88,
+          "text": "bullets"
+        },
+        {
+          "t": 26.12,
+          "text": "with"
+        },
+        {
+          "t": 26.64,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 26.78,
+      "end": 27.72,
+      "text": "sources it used.",
+      "words": [
+        {
+          "t": 26.78,
+          "text": "sources"
+        },
+        {
+          "t": 27.12,
+          "text": "it"
+        },
+        {
+          "t": 27.38,
+          "text": "used."
+        }
+      ]
+    },
+    {
+      "start": 28.64,
+      "end": 29.8,
+      "text": "Sheets goes further.",
+      "words": [
+        {
+          "t": 28.64,
+          "text": "Sheets"
+        },
+        {
+          "t": 29.16,
+          "text": "goes"
+        },
+        {
+          "t": 29.34,
+          "text": "further."
+        }
+      ]
+    },
+    {
+      "start": 30.82,
+      "end": 31.62,
+      "text": "Ask Gemini to",
+      "words": [
+        {
+          "t": 30.82,
+          "text": "Ask"
+        },
+        {
+          "t": 31.06,
+          "text": "Gemini"
+        },
+        {
+          "t": 31.4,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 31.62,
+      "end": 32.34,
+      "text": "chart your data",
+      "words": [
+        {
+          "t": 31.62,
+          "text": "chart"
+        },
+        {
+          "t": 31.9,
+          "text": "your"
+        },
+        {
+          "t": 32.08,
+          "text": "data"
+        }
+      ]
+    },
+    {
+      "start": 32.34,
+      "end": 33.02,
+      "text": "and it pulls",
+      "words": [
+        {
+          "t": 32.34,
+          "text": "and"
+        },
+        {
+          "t": 32.66,
+          "text": "it"
+        },
+        {
+          "t": 32.8,
+          "text": "pulls"
+        }
+      ]
+    },
+    {
+      "start": 33.02,
+      "end": 33.98,
+      "text": "from every tab,",
+      "words": [
+        {
+          "t": 33.02,
+          "text": "from"
+        },
+        {
+          "t": 33.26,
+          "text": "every"
+        },
+        {
+          "t": 33.62,
+          "text": "tab,"
+        }
+      ]
+    },
+    {
+      "start": 34.18,
+      "end": 34.66,
+      "text": "not just the",
+      "words": [
+        {
+          "t": 34.18,
+          "text": "not"
+        },
+        {
+          "t": 34.28,
+          "text": "just"
+        },
+        {
+          "t": 34.48,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 34.66,
+      "end": 35.22,
+      "text": "one you're on.",
+      "words": [
+        {
+          "t": 34.66,
+          "text": "one"
+        },
+        {
+          "t": 34.84,
+          "text": "you're"
+        },
+        {
+          "t": 35.04,
+          "text": "on."
+        }
+      ]
+    },
+    {
+      "start": 36.9,
+      "end": 37.72,
+      "text": "Drive can now",
+      "words": [
+        {
+          "t": 36.9,
+          "text": "Drive"
+        },
+        {
+          "t": 37.32,
+          "text": "can"
+        },
+        {
+          "t": 37.54,
+          "text": "now"
+        }
+      ]
+    },
+    {
+      "start": 37.72,
+      "end": 38.52,
+      "text": "pick sources across",
+      "words": [
+        {
+          "t": 37.72,
+          "text": "pick"
+        },
+        {
+          "t": 37.88,
+          "text": "sources"
+        },
+        {
+          "t": 38.26,
+          "text": "across"
+        }
+      ]
+    },
+    {
+      "start": 38.52,
+      "end": 39.72,
+      "text": "Drive, Gmail, and",
+      "words": [
+        {
+          "t": 38.52,
+          "text": "Drive,"
+        },
+        {
+          "t": 39.2,
+          "text": "Gmail,"
+        },
+        {
+          "t": 39.62,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 39.72,
+      "end": 41.44,
+      "text": "Chat. Then answer",
+      "words": [
+        {
+          "t": 39.72,
+          "text": "Chat."
+        },
+        {
+          "t": 40.82,
+          "text": "Then"
+        },
+        {
+          "t": 41.18,
+          "text": "answer"
+        }
+      ]
+    },
+    {
+      "start": 41.44,
+      "end": 42.5,
+      "text": "questions using all",
+      "words": [
+        {
+          "t": 41.44,
+          "text": "questions"
+        },
+        {
+          "t": 41.86,
+          "text": "using"
+        },
+        {
+          "t": 42.2,
+          "text": "all"
+        }
+      ]
+    },
+    {
+      "start": 42.5,
+      "end": 44.32,
+      "text": "of them. Google",
+      "words": [
+        {
+          "t": 42.5,
+          "text": "of"
+        },
+        {
+          "t": 42.6,
+          "text": "them."
+        },
+        {
+          "t": 43.92,
+          "text": "Google"
+        }
+      ]
+    },
+    {
+      "start": 44.32,
+      "end": 45.26,
+      "text": "only finished rolling",
+      "words": [
+        {
+          "t": 44.32,
+          "text": "only"
+        },
+        {
+          "t": 44.66,
+          "text": "finished"
+        },
+        {
+          "t": 45.02,
+          "text": "rolling"
+        }
+      ]
+    },
+    {
+      "start": 45.26,
+      "end": 45.9,
+      "text": "that out this",
+      "words": [
+        {
+          "t": 45.26,
+          "text": "that"
+        },
+        {
+          "t": 45.46,
+          "text": "out"
+        },
+        {
+          "t": 45.68,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 45.9,
+      "end": 48.06,
+      "text": "spring and Meet",
+      "words": [
+        {
+          "t": 45.9,
+          "text": "spring"
+        },
+        {
+          "t": 47.32,
+          "text": "and"
+        },
+        {
+          "t": 47.84,
+          "text": "Meet"
+        }
+      ]
+    },
+    {
+      "start": 48.06,
+      "end": 48.76,
+      "text": "takes it hands",
+      "words": [
+        {
+          "t": 48.06,
+          "text": "takes"
+        },
+        {
+          "t": 48.38,
+          "text": "it"
+        },
+        {
+          "t": 48.54,
+          "text": "hands"
+        }
+      ]
+    },
+    {
+      "start": 48.76,
+      "end": 50.14,
+      "text": "off too. Click",
+      "words": [
+        {
+          "t": 48.76,
+          "text": "off"
+        },
+        {
+          "t": 48.96,
+          "text": "too."
+        },
+        {
+          "t": 49.84,
+          "text": "Click"
+        }
+      ]
+    },
+    {
+      "start": 50.14,
+      "end": 51.02,
+      "text": "one button and",
+      "words": [
+        {
+          "t": 50.14,
+          "text": "one"
+        },
+        {
+          "t": 50.4,
+          "text": "button"
+        },
+        {
+          "t": 50.68,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 51.02,
+      "end": 51.86,
+      "text": "Gemini takes the",
+      "words": [
+        {
+          "t": 51.02,
+          "text": "Gemini"
+        },
+        {
+          "t": 51.38,
+          "text": "takes"
+        },
+        {
+          "t": 51.68,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 51.86,
+      "end": 52.42,
+      "text": "notes for the",
+      "words": [
+        {
+          "t": 51.86,
+          "text": "notes"
+        },
+        {
+          "t": 52.1,
+          "text": "for"
+        },
+        {
+          "t": 52.32,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 52.42,
+      "end": 54.0,
+      "text": "whole call. Worth",
+      "words": [
+        {
+          "t": 52.42,
+          "text": "whole"
+        },
+        {
+          "t": 52.68,
+          "text": "call."
+        },
+        {
+          "t": 53.74,
+          "text": "Worth"
+        }
+      ]
+    },
+    {
+      "start": 54.0,
+      "end": 54.7,
+      "text": "a skim since",
+      "words": [
+        {
+          "t": 54.0,
+          "text": "a"
+        },
+        {
+          "t": 54.16,
+          "text": "skim"
+        },
+        {
+          "t": 54.44,
+          "text": "since"
+        }
+      ]
+    },
+    {
+      "start": 54.7,
+      "end": 55.18,
+      "text": "it could get",
+      "words": [
+        {
+          "t": 54.7,
+          "text": "it"
+        },
+        {
+          "t": 54.88,
+          "text": "could"
+        },
+        {
+          "t": 55.0,
+          "text": "get"
+        }
+      ]
+    },
+    {
+      "start": 55.18,
+      "end": 55.9,
+      "text": "a detail wrong.",
+      "words": [
+        {
+          "t": 55.18,
+          "text": "a"
+        },
+        {
+          "t": 55.26,
+          "text": "detail"
+        },
+        {
+          "t": 55.52,
+          "text": "wrong."
+        }
+      ]
+    },
+    {
+      "start": 57.34,
+      "end": 58.44,
+      "text": "Only Gmail's is",
+      "words": [
+        {
+          "t": 57.34,
+          "text": "Only"
+        },
+        {
+          "t": 57.74,
+          "text": "Gmail's"
+        },
+        {
+          "t": 58.32,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 58.44,
+      "end": 60.52,
+      "text": "free. Everything else",
+      "words": [
+        {
+          "t": 58.44,
+          "text": "free."
+        },
+        {
+          "t": 59.94,
+          "text": "Everything"
+        },
+        {
+          "t": 60.28,
+          "text": "else"
+        }
+      ]
+    },
+    {
+      "start": 60.52,
+      "end": 61.1,
+      "text": "here needs a",
+      "words": [
+        {
+          "t": 60.52,
+          "text": "here"
+        },
+        {
+          "t": 60.74,
+          "text": "needs"
+        },
+        {
+          "t": 60.96,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 61.1,
+      "end": 61.94,
+      "text": "paid Google AI",
+      "words": [
+        {
+          "t": 61.1,
+          "text": "paid"
+        },
+        {
+          "t": 61.34,
+          "text": "Google"
+        },
+        {
+          "t": 61.62,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 61.94,
+      "end": 63.06,
+      "text": "or workspace plan.",
+      "words": [
+        {
+          "t": 61.94,
+          "text": "or"
+        },
+        {
+          "t": 62.28,
+          "text": "workspace"
+        },
+        {
+          "t": 62.6,
+          "text": "plan."
+        }
+      ]
+    },
+    {
+      "start": 64.28,
+      "end": 65.24,
+      "text": "Find the button",
+      "words": [
+        {
+          "t": 64.28,
+          "text": "Find"
+        },
+        {
+          "t": 64.8,
+          "text": "the"
+        },
+        {
+          "t": 64.96,
+          "text": "button"
+        }
+      ]
+    },
+    {
+      "start": 65.24,
+      "end": 66.12,
+      "text": "then decide if",
+      "words": [
+        {
+          "t": 65.24,
+          "text": "then"
+        },
+        {
+          "t": 65.56,
+          "text": "decide"
+        },
+        {
+          "t": 65.92,
+          "text": "if"
+        }
+      ]
+    },
+    {
+      "start": 66.12,
+      "end": 66.6,
+      "text": "it's worth the",
+      "words": [
+        {
+          "t": 66.12,
+          "text": "it's"
+        },
+        {
+          "t": 66.28,
+          "text": "worth"
+        },
+        {
+          "t": 66.46,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 66.6,
+      "end": 66.82,
+      "text": "plan.",
+      "words": [
+        {
+          "t": 66.6,
+          "text": "plan."
+        }
+      ]
+    }
+  ],
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": [
+      {
+        "t": 0,
+        "vol": 0.11
+      },
+      {
+        "t": 66.199841,
+        "vol": 0.11
+      },
+      {
+        "t": 67.0,
+        "vol": 0.0
+      }
+    ]
+  },
+  "format": "ai-tools",
+  "script": "Right now, five Gemini features are sitting inside apps you already have open, and most people have never touched the button.\n\nIn Gmail, open Gemini on any email and tap Summarize this email to shrink the whole thread into a short summary. That one's free, even on a personal account.\n\nDocs does something similar: ask Gemini to summarize the page you're on, and it answers in bullets, with the sources it used.\n\nSheets goes further: ask Gemini to chart your data, and it pulls from every tab, not just the one you're on.\n\nDrive can now pick sources across Drive, Gmail, and Chat, then answer questions using all of them. Google only finished rolling that out this spring.\n\nAnd Meet takes it hands-off too: click one button, and Gemini takes the notes for the whole call, worth a skim since it could get a detail wrong.\n\nOnly Gmail's is free. Everything else here needs a paid Google AI or Workspace plan. Find the button, then decide if it's worth the plan.",
+  "approval": {
+    "sha256": "f305ba5bbaf6bf26aa4d27dec937a67f689f8d8f80eab8bc3658877c3e1c53a5",
+    "approvedAt": "2026-09-22T10:30:47+00:00",
+    "words": 171,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

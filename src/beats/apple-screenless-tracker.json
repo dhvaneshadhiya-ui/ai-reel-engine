@@ -1,0 +1,1751 @@
+{
+  "id": "apple-screenless-tracker",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/apple-screenless-tracker/avatar-master.mp4",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "no screen at all",
+    "Tim Cook",
+    "Eddy Cue",
+    "already closed",
+    "sixteen billion dollar",
+    "ten billion",
+    "not before 2028"
+  ],
+  "scenes": [
+    {
+      "type": "footage",
+      "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+      "zoomDir": "in",
+      "captionBottom": 980,
+      "zoom": 1.0,
+      "focusX": 0.46,
+      "durationSec": 6.34,
+      "from": 0.0
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-screenless-tracker/macrumors-receipt.png",
+      "srcWidth": 1080,
+      "srcHeight": 1550,
+      "backdrop": "black",
+      "highlights": [
+        {
+          "at": 0.15,
+          "x": 20,
+          "y": 520,
+          "w": 1040,
+          "h": 400
+        }
+      ],
+      "captionBottom": 520,
+      "durationSec": 7.24,
+      "assetId": "receipt-macrumors",
+      "claimId": "receipt-macrumors",
+      "covers": "Bloomberg's Mark Gurman reports",
+      "sourceUrl": "https://www.macrumors.com/2026/09/22/apple-screenless-fitness-band/"
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+      "zoomDir": "out",
+      "captionBottom": 980,
+      "zoom": 1.09,
+      "focusX": 0.52,
+      "durationSec": 5.8,
+      "from": 13.58
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-screenless-tracker/9to5mac-receipt.png",
+      "srcWidth": 1080,
+      "srcHeight": 1900,
+      "backdrop": "black",
+      "highlights": [
+        {
+          "at": 0.15,
+          "x": 20,
+          "y": 520,
+          "w": 1040,
+          "h": 720
+        }
+      ],
+      "captionBottom": 520,
+      "durationSec": 4.16,
+      "assetId": "receipt-9to5mac",
+      "claimId": "receipt-9to5mac",
+      "covers": "It's reportedly a thin",
+      "sourceUrl": "https://9to5mac.com/2026/09/22/apple-working-on-whoop-style-screenless-fitness-tracker-per-report/",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+      "zoomDir": "in",
+      "captionBottom": 980,
+      "zoom": 1.0,
+      "focusX": 0.46,
+      "durationSec": 1.08,
+      "from": 23.54
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+      "zoomDir": "out",
+      "captionBottom": 980,
+      "zoom": 1.09,
+      "focusX": 0.52,
+      "durationSec": 2.98,
+      "from": 24.62
+    },
+    {
+      "type": "stage",
+      "hideCaptions": false,
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "whoop",
+          "kind": "image",
+          "x": 0.27,
+          "y": 0.4,
+          "w": 0.42,
+          "h": 0.3,
+          "src": "assets/apple-screenless-tracker/whoop-bands.png",
+          "label": "Whoop"
+        },
+        {
+          "id": "oura",
+          "kind": "image",
+          "x": 0.73,
+          "y": 0.4,
+          "w": 0.42,
+          "h": 0.3,
+          "src": "assets/apple-screenless-tracker/oura-ring.png",
+          "label": "Oura"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "whoop",
+          "at": 0.05,
+          "dir": "left"
+        },
+        {
+          "do": "arrive",
+          "target": "oura",
+          "at": 0.3,
+          "dir": "right"
+        }
+      ],
+      "durationSec": 5.06
+    },
+    {
+      "type": "stage",
+      "hideCaptions": false,
+      "set": "brand",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "cook",
+          "kind": "image",
+          "x": 0.27,
+          "y": 0.38,
+          "w": 0.42,
+          "h": 0.32,
+          "src": "assets/apple-screenless-tracker/tim-cook.png",
+          "label": "Tim Cook"
+        },
+        {
+          "id": "cue",
+          "kind": "image",
+          "x": 0.73,
+          "y": 0.38,
+          "w": 0.42,
+          "h": 0.32,
+          "src": "assets/apple-screenless-tracker/eddy-cue.png",
+          "label": "Eddy Cue"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "cook",
+          "at": 0.05,
+          "dir": "left"
+        },
+        {
+          "do": "arrive",
+          "target": "cue",
+          "at": 0.3,
+          "dir": "right"
+        }
+      ],
+      "durationSec": 3.78
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+      "zoomDir": "in",
+      "captionBottom": 980,
+      "zoom": 1.0,
+      "focusX": 0.46,
+      "durationSec": 3.3,
+      "from": 36.44
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+      "zoomDir": "out",
+      "captionBottom": 980,
+      "zoom": 1.09,
+      "focusX": 0.52,
+      "durationSec": 3.22,
+      "from": 39.74
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-screenless-tracker/apple-watch-official.png",
+      "srcWidth": 1080,
+      "srcHeight": 1990,
+      "backdrop": "black",
+      "highlights": [
+        {
+          "at": 0.15,
+          "x": 20,
+          "y": 900,
+          "w": 1040,
+          "h": 500
+        }
+      ],
+      "captionBottom": 520,
+      "durationSec": 3.52,
+      "assetId": "apple-watch-official",
+      "claimId": "apple-watch-official",
+      "covers": "But that sensor gap",
+      "sourceUrl": "https://www.apple.com/newsroom/2026/09/introducing-apple-watch-series-12-with-the-all-new-health-sensing-system/",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+      "zoomDir": "in",
+      "captionBottom": 980,
+      "zoom": 1.0,
+      "focusX": 0.46,
+      "durationSec": 2.46,
+      "from": 46.48
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+      "zoomDir": "out",
+      "captionBottom": 980,
+      "zoom": 1.09,
+      "focusX": 0.52,
+      "durationSec": 5.16,
+      "from": 48.94
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+      "zoomDir": "in",
+      "captionBottom": 980,
+      "zoom": 1.0,
+      "focusX": 0.46,
+      "durationSec": 6.52,
+      "from": 54.1
+    },
+    {
+      "type": "receipt",
+      "src": "assets/apple-screenless-tracker/oura-ipo-receipt.png",
+      "srcWidth": 1080,
+      "srcHeight": 1250,
+      "backdrop": "black",
+      "highlights": [
+        {
+          "at": 0.15,
+          "x": 20,
+          "y": 400,
+          "w": 1040,
+          "h": 500
+        }
+      ],
+      "captionBottom": 520,
+      "durationSec": 4.52,
+      "assetId": "receipt-oura-ipo",
+      "claimId": "receipt-oura-ipo",
+      "covers": "ORA just filed to",
+      "sourceUrl": "https://www.theglobeandmail.com/investing/article-smart-ring-maker-oura-targets-1562-billion-valuation-in-us-ipo/",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "stage",
+      "hideCaptions": false,
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "whoopval",
+          "kind": "number",
+          "x": 0.5,
+          "y": 0.5,
+          "w": 0.6,
+          "value": 10,
+          "from": 0,
+          "prefix": "$",
+          "suffix": "B",
+          "label": "Whoop's valuation",
+          "source": "TechCrunch, Sept 22 2026"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "target": "whoopval",
+          "dir": "up",
+          "at": 0.0
+        },
+        {
+          "do": "count",
+          "target": "whoopval",
+          "dir": "up",
+          "at": 0.15
+        }
+      ],
+      "durationSec": 2.8
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+      "zoomDir": "in",
+      "captionBottom": 980,
+      "zoom": 1.0,
+      "focusX": 0.46,
+      "durationSec": 3.02,
+      "from": 67.94
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+      "zoomDir": "out",
+      "captionBottom": 980,
+      "zoom": 1.09,
+      "focusX": 0.52,
+      "durationSec": 5.18,
+      "from": 70.96
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+      "zoomDir": "in",
+      "captionBottom": 980,
+      "zoom": 1.0,
+      "focusX": 0.46,
+      "durationSec": 4.22,
+      "from": 76.14
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+      "zoomDir": "out",
+      "captionBottom": 980,
+      "zoom": 1.09,
+      "focusX": 0.52,
+      "durationSec": 3.0,
+      "from": 80.36
+    },
+    {
+      "type": "footage",
+      "src": "assets/apple-screenless-tracker/avatar-master.mp4",
+      "zoomDir": "in",
+      "captionBottom": 980,
+      "zoom": 1.0,
+      "focusX": 0.46,
+      "durationSec": 1.624,
+      "from": 83.36
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.32,
+      "text": "On September 9th,",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "On"
+        },
+        {
+          "t": 0.28,
+          "text": "September"
+        },
+        {
+          "t": 0.5,
+          "text": "9th,"
+        }
+      ]
+    },
+    {
+      "start": 1.32,
+      "end": 2.46,
+      "text": "Apple finally gave",
+      "words": [
+        {
+          "t": 1.32,
+          "text": "Apple"
+        },
+        {
+          "t": 1.5,
+          "text": "finally"
+        },
+        {
+          "t": 2.18,
+          "text": "gave"
+        }
+      ]
+    },
+    {
+      "start": 2.46,
+      "end": 3.12,
+      "text": "the watch an",
+      "words": [
+        {
+          "t": 2.46,
+          "text": "the"
+        },
+        {
+          "t": 2.6,
+          "text": "watch"
+        },
+        {
+          "t": 2.88,
+          "text": "an"
+        }
+      ]
+    },
+    {
+      "start": 3.12,
+      "end": 4.28,
+      "text": "all-day heart sensor.",
+      "words": [
+        {
+          "t": 3.12,
+          "text": "all-day"
+        },
+        {
+          "t": 3.68,
+          "text": "heart"
+        },
+        {
+          "t": 3.96,
+          "text": "sensor."
+        }
+      ]
+    },
+    {
+      "start": 4.98,
+      "end": 5.92,
+      "text": "13 days later,",
+      "words": [
+        {
+          "t": 4.98,
+          "text": "13"
+        },
+        {
+          "t": 5.28,
+          "text": "days"
+        },
+        {
+          "t": 5.54,
+          "text": "later,"
+        }
+      ]
+    },
+    {
+      "start": 6.34,
+      "end": 7.44,
+      "text": "Bloomberg's Mark Gurman",
+      "words": [
+        {
+          "t": 6.34,
+          "text": "Bloomberg's"
+        },
+        {
+          "t": 6.86,
+          "text": "Mark"
+        },
+        {
+          "t": 7.08,
+          "text": "Gurman"
+        }
+      ]
+    },
+    {
+      "start": 7.44,
+      "end": 8.54,
+      "text": "reports Apple is",
+      "words": [
+        {
+          "t": 7.44,
+          "text": "reports"
+        },
+        {
+          "t": 7.86,
+          "text": "Apple"
+        },
+        {
+          "t": 8.32,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 8.54,
+      "end": 9.74,
+      "text": "testing a completely",
+      "words": [
+        {
+          "t": 8.54,
+          "text": "testing"
+        },
+        {
+          "t": 8.86,
+          "text": "a"
+        },
+        {
+          "t": 9.14,
+          "text": "completely"
+        }
+      ]
+    },
+    {
+      "start": 9.74,
+      "end": 11.46,
+      "text": "different device, one",
+      "words": [
+        {
+          "t": 9.74,
+          "text": "different"
+        },
+        {
+          "t": 10.18,
+          "text": "device,"
+        },
+        {
+          "t": 11.12,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 11.46,
+      "end": 12.24,
+      "text": "with no screen",
+      "words": [
+        {
+          "t": 11.46,
+          "text": "with"
+        },
+        {
+          "t": 11.7,
+          "text": "no"
+        },
+        {
+          "t": 11.92,
+          "text": "screen"
+        }
+      ]
+    },
+    {
+      "start": 12.24,
+      "end": 13.58,
+      "text": "at all. Except",
+      "words": [
+        {
+          "t": 12.24,
+          "text": "at"
+        },
+        {
+          "t": 12.54,
+          "text": "all."
+        },
+        {
+          "t": 13.2,
+          "text": "Except"
+        }
+      ]
+    },
+    {
+      "start": 13.58,
+      "end": 14.44,
+      "text": "the catch is",
+      "words": [
+        {
+          "t": 13.58,
+          "text": "the"
+        },
+        {
+          "t": 14.0,
+          "text": "catch"
+        },
+        {
+          "t": 14.26,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 14.44,
+      "end": 15.78,
+      "text": "this, if the",
+      "words": [
+        {
+          "t": 14.44,
+          "text": "this,"
+        },
+        {
+          "t": 15.46,
+          "text": "if"
+        },
+        {
+          "t": 15.62,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 15.78,
+      "end": 16.64,
+      "text": "watch just got",
+      "words": [
+        {
+          "t": 15.78,
+          "text": "watch"
+        },
+        {
+          "t": 16.12,
+          "text": "just"
+        },
+        {
+          "t": 16.44,
+          "text": "got"
+        }
+      ]
+    },
+    {
+      "start": 16.64,
+      "end": 18.16,
+      "text": "better, why build",
+      "words": [
+        {
+          "t": 16.64,
+          "text": "better,"
+        },
+        {
+          "t": 17.6,
+          "text": "why"
+        },
+        {
+          "t": 17.94,
+          "text": "build"
+        }
+      ]
+    },
+    {
+      "start": 18.16,
+      "end": 19.62,
+      "text": "something else? It's",
+      "words": [
+        {
+          "t": 18.16,
+          "text": "something"
+        },
+        {
+          "t": 18.42,
+          "text": "else?"
+        },
+        {
+          "t": 19.38,
+          "text": "It's"
+        }
+      ]
+    },
+    {
+      "start": 19.62,
+      "end": 20.66,
+      "text": "reportedly a thin",
+      "words": [
+        {
+          "t": 19.62,
+          "text": "reportedly"
+        },
+        {
+          "t": 19.98,
+          "text": "a"
+        },
+        {
+          "t": 20.4,
+          "text": "thin"
+        }
+      ]
+    },
+    {
+      "start": 20.66,
+      "end": 21.52,
+      "text": "fabric band with",
+      "words": [
+        {
+          "t": 20.66,
+          "text": "fabric"
+        },
+        {
+          "t": 20.94,
+          "text": "band"
+        },
+        {
+          "t": 21.36,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 21.52,
+      "end": 22.32,
+      "text": "a sensor module",
+      "words": [
+        {
+          "t": 21.52,
+          "text": "a"
+        },
+        {
+          "t": 21.66,
+          "text": "sensor"
+        },
+        {
+          "t": 21.92,
+          "text": "module"
+        }
+      ]
+    },
+    {
+      "start": 22.32,
+      "end": 23.12,
+      "text": "on your wrist.",
+      "words": [
+        {
+          "t": 22.32,
+          "text": "on"
+        },
+        {
+          "t": 22.66,
+          "text": "your"
+        },
+        {
+          "t": 22.78,
+          "text": "wrist."
+        }
+      ]
+    },
+    {
+      "start": 23.54,
+      "end": 24.92,
+      "text": "No display, no",
+      "words": [
+        {
+          "t": 23.54,
+          "text": "No"
+        },
+        {
+          "t": 23.78,
+          "text": "display,"
+        },
+        {
+          "t": 24.62,
+          "text": "no"
+        }
+      ]
+    },
+    {
+      "start": 24.92,
+      "end": 27.14,
+      "text": "notifications. Just heart",
+      "words": [
+        {
+          "t": 24.92,
+          "text": "notifications."
+        },
+        {
+          "t": 26.24,
+          "text": "Just"
+        },
+        {
+          "t": 26.74,
+          "text": "heart"
+        }
+      ]
+    },
+    {
+      "start": 27.14,
+      "end": 28.24,
+      "text": "rate, recovery, and",
+      "words": [
+        {
+          "t": 27.14,
+          "text": "rate,"
+        },
+        {
+          "t": 27.6,
+          "text": "recovery,"
+        },
+        {
+          "t": 28.18,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 28.24,
+      "end": 29.68,
+      "text": "sleep. The same",
+      "words": [
+        {
+          "t": 28.24,
+          "text": "sleep."
+        },
+        {
+          "t": 29.26,
+          "text": "The"
+        },
+        {
+          "t": 29.38,
+          "text": "same"
+        }
+      ]
+    },
+    {
+      "start": 29.68,
+      "end": 30.76,
+      "text": "three things whoop",
+      "words": [
+        {
+          "t": 29.68,
+          "text": "three"
+        },
+        {
+          "t": 29.9,
+          "text": "things"
+        },
+        {
+          "t": 30.3,
+          "text": "whoop"
+        }
+      ]
+    },
+    {
+      "start": 30.76,
+      "end": 31.7,
+      "text": "and Oura already",
+      "words": [
+        {
+          "t": 30.76,
+          "text": "and"
+        },
+        {
+          "t": 30.84,
+          "text": "Oura"
+        },
+        {
+          "t": 31.14,
+          "text": "already"
+        }
+      ]
+    },
+    {
+      "start": 31.7,
+      "end": 33.42,
+      "text": "track. Gurman says",
+      "words": [
+        {
+          "t": 31.7,
+          "text": "track."
+        },
+        {
+          "t": 32.66,
+          "text": "Gurman"
+        },
+        {
+          "t": 33.08,
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "start": 33.42,
+      "end": 34.2,
+      "text": "Tim Cook and",
+      "words": [
+        {
+          "t": 33.42,
+          "text": "Tim"
+        },
+        {
+          "t": 33.76,
+          "text": "Cook"
+        },
+        {
+          "t": 33.98,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 34.2,
+      "end": 35.12,
+      "text": "Eddy Cue are both",
+      "words": [
+        {
+          "t": 34.2,
+          "text": "Eddy"
+        },
+        {
+          "t": 34.62,
+          "text": "Cue"
+        },
+        {
+          "t": 34.88,
+          "text": "are"
+        },
+        {
+          "t": 34.88,
+          "text": "both"
+        }
+      ]
+    },
+    {
+      "start": 35.12,
+      "end": 36.98,
+      "text": "behind it. Cue's",
+      "words": [
+        {
+          "t": 35.12,
+          "text": "behind"
+        },
+        {
+          "t": 35.48,
+          "text": "it."
+        },
+        {
+          "t": 36.44,
+          "text": "Cue's"
+        }
+      ]
+    },
+    {
+      "start": 36.98,
+      "end": 37.9,
+      "text": "run Apple's health",
+      "words": [
+        {
+          "t": 36.98,
+          "text": "run"
+        },
+        {
+          "t": 37.2,
+          "text": "Apple's"
+        },
+        {
+          "t": 37.72,
+          "text": "health"
+        }
+      ]
+    },
+    {
+      "start": 37.9,
+      "end": 38.74,
+      "text": "team since last",
+      "words": [
+        {
+          "t": 37.9,
+          "text": "team"
+        },
+        {
+          "t": 38.22,
+          "text": "since"
+        },
+        {
+          "t": 38.46,
+          "text": "last"
+        }
+      ]
+    },
+    {
+      "start": 38.74,
+      "end": 40.62,
+      "text": "October, reportedly pushing",
+      "words": [
+        {
+          "t": 38.74,
+          "text": "October,"
+        },
+        {
+          "t": 39.74,
+          "text": "reportedly"
+        },
+        {
+          "t": 40.22,
+          "text": "pushing"
+        }
+      ]
+    },
+    {
+      "start": 40.62,
+      "end": 41.6,
+      "text": "for something simpler",
+      "words": [
+        {
+          "t": 40.62,
+          "text": "for"
+        },
+        {
+          "t": 40.9,
+          "text": "something"
+        },
+        {
+          "t": 41.16,
+          "text": "simpler"
+        }
+      ]
+    },
+    {
+      "start": 41.6,
+      "end": 42.34,
+      "text": "than the watch.",
+      "words": [
+        {
+          "t": 41.6,
+          "text": "than"
+        },
+        {
+          "t": 41.9,
+          "text": "the"
+        },
+        {
+          "t": 42.02,
+          "text": "watch."
+        }
+      ]
+    },
+    {
+      "start": 42.96,
+      "end": 43.8,
+      "text": "But that sensor",
+      "words": [
+        {
+          "t": 42.96,
+          "text": "But"
+        },
+        {
+          "t": 43.26,
+          "text": "that"
+        },
+        {
+          "t": 43.54,
+          "text": "sensor"
+        }
+      ]
+    },
+    {
+      "start": 43.8,
+      "end": 44.8,
+      "text": "gap was already",
+      "words": [
+        {
+          "t": 43.8,
+          "text": "gap"
+        },
+        {
+          "t": 44.1,
+          "text": "was"
+        },
+        {
+          "t": 44.36,
+          "text": "already"
+        }
+      ]
+    },
+    {
+      "start": 44.8,
+      "end": 45.68,
+      "text": "closed in September.",
+      "words": [
+        {
+          "t": 44.8,
+          "text": "closed"
+        },
+        {
+          "t": 45.2,
+          "text": "in"
+        },
+        {
+          "t": 45.42,
+          "text": "September."
+        }
+      ]
+    },
+    {
+      "start": 46.48,
+      "end": 47.16,
+      "text": "That's not the",
+      "words": [
+        {
+          "t": 46.48,
+          "text": "That's"
+        },
+        {
+          "t": 46.9,
+          "text": "not"
+        },
+        {
+          "t": 47.02,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 47.16,
+      "end": 48.76,
+      "text": "catch. Simply put,",
+      "words": [
+        {
+          "t": 47.16,
+          "text": "catch."
+        },
+        {
+          "t": 48.0,
+          "text": "Simply"
+        },
+        {
+          "t": 48.48,
+          "text": "put,"
+        }
+      ]
+    },
+    {
+      "start": 48.94,
+      "end": 49.96,
+      "text": "some people don't",
+      "words": [
+        {
+          "t": 48.94,
+          "text": "some"
+        },
+        {
+          "t": 49.1,
+          "text": "people"
+        },
+        {
+          "t": 49.44,
+          "text": "don't"
+        }
+      ]
+    },
+    {
+      "start": 49.96,
+      "end": 50.56,
+      "text": "want a screen",
+      "words": [
+        {
+          "t": 49.96,
+          "text": "want"
+        },
+        {
+          "t": 50.16,
+          "text": "a"
+        },
+        {
+          "t": 50.28,
+          "text": "screen"
+        }
+      ]
+    },
+    {
+      "start": 50.56,
+      "end": 51.2,
+      "text": "on their wrist",
+      "words": [
+        {
+          "t": 50.56,
+          "text": "on"
+        },
+        {
+          "t": 50.74,
+          "text": "their"
+        },
+        {
+          "t": 50.9,
+          "text": "wrist"
+        }
+      ]
+    },
+    {
+      "start": 51.2,
+      "end": 52.26,
+      "text": "at all. They",
+      "words": [
+        {
+          "t": 51.2,
+          "text": "at"
+        },
+        {
+          "t": 51.42,
+          "text": "all."
+        },
+        {
+          "t": 52.16,
+          "text": "They"
+        }
+      ]
+    },
+    {
+      "start": 52.26,
+      "end": 52.96,
+      "text": "just want the",
+      "words": [
+        {
+          "t": 52.26,
+          "text": "just"
+        },
+        {
+          "t": 52.62,
+          "text": "want"
+        },
+        {
+          "t": 52.86,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 52.96,
+      "end": 54.54,
+      "text": "numbers. And whoop",
+      "words": [
+        {
+          "t": 52.96,
+          "text": "numbers."
+        },
+        {
+          "t": 54.1,
+          "text": "And"
+        },
+        {
+          "t": 54.22,
+          "text": "whoop"
+        }
+      ]
+    },
+    {
+      "start": 54.54,
+      "end": 55.3,
+      "text": "and Oura built",
+      "words": [
+        {
+          "t": 54.54,
+          "text": "and"
+        },
+        {
+          "t": 54.66,
+          "text": "Oura"
+        },
+        {
+          "t": 54.92,
+          "text": "built"
+        }
+      ]
+    },
+    {
+      "start": 55.3,
+      "end": 56.66,
+      "text": "entire businesses on",
+      "words": [
+        {
+          "t": 55.3,
+          "text": "entire"
+        },
+        {
+          "t": 55.86,
+          "text": "businesses"
+        },
+        {
+          "t": 56.28,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 56.66,
+      "end": 58.42,
+      "text": "exactly that. And",
+      "words": [
+        {
+          "t": 56.66,
+          "text": "exactly"
+        },
+        {
+          "t": 57.16,
+          "text": "that."
+        },
+        {
+          "t": 58.2,
+          "text": "And"
+        }
+      ]
+    },
+    {
+      "start": 58.42,
+      "end": 59.26,
+      "text": "there's real money",
+      "words": [
+        {
+          "t": 58.42,
+          "text": "there's"
+        },
+        {
+          "t": 58.66,
+          "text": "real"
+        },
+        {
+          "t": 58.94,
+          "text": "money"
+        }
+      ]
+    },
+    {
+      "start": 59.26,
+      "end": 59.96,
+      "text": "on that bet.",
+      "words": [
+        {
+          "t": 59.26,
+          "text": "on"
+        },
+        {
+          "t": 59.52,
+          "text": "that"
+        },
+        {
+          "t": 59.7,
+          "text": "bet."
+        }
+      ]
+    },
+    {
+      "start": 60.62,
+      "end": 61.62,
+      "text": "Oura just filed",
+      "words": [
+        {
+          "t": 60.62,
+          "text": "Oura"
+        },
+        {
+          "t": 61.1,
+          "text": "just"
+        },
+        {
+          "t": 61.34,
+          "text": "filed"
+        }
+      ]
+    },
+    {
+      "start": 61.62,
+      "end": 62.26,
+      "text": "to go public",
+      "words": [
+        {
+          "t": 61.62,
+          "text": "to"
+        },
+        {
+          "t": 61.78,
+          "text": "go"
+        },
+        {
+          "t": 61.88,
+          "text": "public"
+        }
+      ]
+    },
+    {
+      "start": 62.26,
+      "end": 63.04,
+      "text": "at a $16",
+      "words": [
+        {
+          "t": 62.26,
+          "text": "at"
+        },
+        {
+          "t": 62.5,
+          "text": "a"
+        },
+        {
+          "t": 62.6,
+          "text": "$16"
+        }
+      ]
+    },
+    {
+      "start": 63.04,
+      "end": 65.62,
+      "text": "billion valuation. Whoop's",
+      "words": [
+        {
+          "t": 63.04,
+          "text": "billion"
+        },
+        {
+          "t": 63.42,
+          "text": "valuation."
+        },
+        {
+          "t": 65.14,
+          "text": "Whoop's"
+        }
+      ]
+    },
+    {
+      "start": 65.62,
+      "end": 66.78,
+      "text": "reportedly worth $10",
+      "words": [
+        {
+          "t": 65.62,
+          "text": "reportedly"
+        },
+        {
+          "t": 66.0,
+          "text": "worth"
+        },
+        {
+          "t": 66.4,
+          "text": "$10"
+        }
+      ]
+    },
+    {
+      "start": 66.78,
+      "end": 68.24,
+      "text": "billion too. Still,",
+      "words": [
+        {
+          "t": 66.78,
+          "text": "billion"
+        },
+        {
+          "t": 67.04,
+          "text": "too."
+        },
+        {
+          "t": 67.94,
+          "text": "Still,"
+        }
+      ]
+    },
+    {
+      "start": 68.48,
+      "end": 69.48,
+      "text": "Apple hasn't approved",
+      "words": [
+        {
+          "t": 68.48,
+          "text": "Apple"
+        },
+        {
+          "t": 68.7,
+          "text": "hasn't"
+        },
+        {
+          "t": 69.12,
+          "text": "approved"
+        }
+      ]
+    },
+    {
+      "start": 69.48,
+      "end": 70.32,
+      "text": "any of this.",
+      "words": [
+        {
+          "t": 69.48,
+          "text": "any"
+        },
+        {
+          "t": 69.82,
+          "text": "of"
+        },
+        {
+          "t": 70.0,
+          "text": "this."
+        }
+      ]
+    },
+    {
+      "start": 70.96,
+      "end": 71.84,
+      "text": "Gurman says it's",
+      "words": [
+        {
+          "t": 70.96,
+          "text": "Gurman"
+        },
+        {
+          "t": 71.22,
+          "text": "says"
+        },
+        {
+          "t": 71.56,
+          "text": "it's"
+        }
+      ]
+    },
+    {
+      "start": 71.84,
+      "end": 73.16,
+      "text": "a technology investigation.",
+      "words": [
+        {
+          "t": 71.84,
+          "text": "a"
+        },
+        {
+          "t": 71.92,
+          "text": "technology"
+        },
+        {
+          "t": 72.44,
+          "text": "investigation."
+        }
+      ]
+    },
+    {
+      "start": 73.9,
+      "end": 75.06,
+      "text": "Prototypes, not a",
+      "words": [
+        {
+          "t": 73.9,
+          "text": "Prototypes,"
+        },
+        {
+          "t": 74.8,
+          "text": "not"
+        },
+        {
+          "t": 74.92,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 75.06,
+      "end": 76.58,
+      "text": "product. It's not",
+      "words": [
+        {
+          "t": 75.06,
+          "text": "product."
+        },
+        {
+          "t": 76.14,
+          "text": "It's"
+        },
+        {
+          "t": 76.36,
+          "text": "not"
+        }
+      ]
+    },
+    {
+      "start": 76.58,
+      "end": 78.18,
+      "text": "landing before 2028",
+      "words": [
+        {
+          "t": 76.58,
+          "text": "landing"
+        },
+        {
+          "t": 76.98,
+          "text": "before"
+        },
+        {
+          "t": 77.3,
+          "text": "2028"
+        }
+      ]
+    },
+    {
+      "start": 78.18,
+      "end": 79.24,
+      "text": "if it lands",
+      "words": [
+        {
+          "t": 78.18,
+          "text": "if"
+        },
+        {
+          "t": 78.82,
+          "text": "it"
+        },
+        {
+          "t": 78.92,
+          "text": "lands"
+        }
+      ]
+    },
+    {
+      "start": 79.24,
+      "end": 80.56,
+      "text": "at all. So",
+      "words": [
+        {
+          "t": 79.24,
+          "text": "at"
+        },
+        {
+          "t": 79.48,
+          "text": "all."
+        },
+        {
+          "t": 80.36,
+          "text": "So"
+        }
+      ]
+    },
+    {
+      "start": 80.56,
+      "end": 81.16,
+      "text": "which is it?",
+      "words": [
+        {
+          "t": 80.56,
+          "text": "which"
+        },
+        {
+          "t": 80.78,
+          "text": "is"
+        },
+        {
+          "t": 80.96,
+          "text": "it?"
+        }
+      ]
+    },
+    {
+      "start": 81.66,
+      "end": 82.32,
+      "text": "Is your wrist",
+      "words": [
+        {
+          "t": 81.66,
+          "text": "Is"
+        },
+        {
+          "t": 81.8,
+          "text": "your"
+        },
+        {
+          "t": 82.02,
+          "text": "wrist"
+        }
+      ]
+    },
+    {
+      "start": 82.32,
+      "end": 82.96,
+      "text": "better off with",
+      "words": [
+        {
+          "t": 82.32,
+          "text": "better"
+        },
+        {
+          "t": 82.54,
+          "text": "off"
+        },
+        {
+          "t": 82.82,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 82.96,
+      "end": 83.98,
+      "text": "a screen or",
+      "words": [
+        {
+          "t": 82.96,
+          "text": "a"
+        },
+        {
+          "t": 83.06,
+          "text": "screen"
+        },
+        {
+          "t": 83.36,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 83.98,
+      "end": 84.7,
+      "text": "with none at",
+      "words": [
+        {
+          "t": 83.98,
+          "text": "with"
+        },
+        {
+          "t": 84.1,
+          "text": "none"
+        },
+        {
+          "t": 84.4,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 84.7,
+      "end": 84.88,
+      "text": "all?",
+      "words": [
+        {
+          "t": 84.7,
+          "text": "all?"
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "format": "news",
+  "allowLong": true,
+  "allowLongReason": "ElevenLabs' natural read at 216 words came back at 2.93 w/s, faster than the 2.35-2.75 band, so vo_pad.py grew only the silences (never the words) to land the read at a natural pace. That padding takes the master to 85s, 5s past the 80s news default. The words were approved at 216 (already the top of the format's word budget) precisely because every sentence carries a distinct claim; correcting the read's pace was preferred over cutting a claim to force the runtime down.",
+  "script": "On September 9th, Apple finally gave the Watch an all-day heart sensor. Thirteen days later, Bloomberg's Mark Gurman reports Apple is testing a completely different device, one with no screen at all. Except, the catch is this: if the Watch just got better, why build something else?\n\nIt's reportedly a thin fabric band with a sensor module on your wrist. No display. No notifications. Just heart rate, recovery, and sleep, the same three things Whoop and Oura already track.\n\nGurman says Tim Cook and Eddy Cue are both behind it. Cue's run Apple's health team since last October, reportedly pushing for something simpler than the Watch.\n\nBut that sensor gap was already closed in September. That's not the catch. Simply put, some people don't want a screen on their wrist at all, they just want the numbers. And Whoop and Oura built entire businesses on exactly that.\n\nAnd there's real money on that bet. Oura just filed to go public at a sixteen billion dollar valuation. Whoop's reportedly worth ten billion too.\n\nStill, Apple hasn't approved any of this. Gurman says it's a technology investigation: prototypes, not a product. It's not landing before 2028, if it lands at all.\n\nSo which is it: is your wrist better off with a screen, or with none at all?",
+  "approval": {
+    "sha256": "fb4d689db146b8f5eb61c41091abfb9b4fb40dda1e2307994378623389852168",
+    "approvedAt": "2026-09-23T05:29:57+00:00",
+    "words": 216,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}
