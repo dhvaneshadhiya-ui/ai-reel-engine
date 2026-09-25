@@ -1,0 +1,1936 @@
+{
+  "id": "siri-ai-ios27",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/siri-ai-ios27/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "Siri",
+    "Continue",
+    "waitlist",
+    "English",
+    "EU",
+    "days",
+    "Send"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "eyebrow": "iOS 27 how-to",
+      "headline": "Turn on [[Siri AI]]",
+      "presenter": {
+        "src": "assets/siri-ai-ios27/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "blocks": [
+        {
+          "id": "sc",
+          "kind": "screen",
+          "width": 760,
+          "height": 930,
+          "src": "assets/siri-ai-ios27/support-settings-siri.png",
+          "h": 900
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Siri still",
+          "at": 2.22
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.19,
+          "vol": 0.343
+        }
+      ],
+      "durationSec": 4.84,
+      "assetId": "avatar-hook",
+      "claimId": "avatar-hook",
+      "covers": "You updated to iOS 27",
+      "sourceUrl": "https://app.heygen.com/videos/b2ecb7d8d56880c2d6996135f804d114",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Settings \u203a Siri",
+      "headline": "It stays [[off]] until you ask",
+      "blocks": [
+        {
+          "id": "sc",
+          "kind": "screen",
+          "width": 760,
+          "height": 930,
+          "src": "assets/siri-ai-ios27/support-settings-siri.png",
+          "h": 1000
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "stays off",
+          "at": 1.46
+        },
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "until you ask",
+          "rect": [
+            110,
+            610,
+            540,
+            150
+          ],
+          "at": 2.38
+        }
+      ],
+      "durationSec": 4.86,
+      "assetId": "support-settings-siri",
+      "claimId": "support-settings-siri",
+      "covers": "That's because Siri AI",
+      "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/ios/ios-27-iphone-17-pro-settings-siri.png",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "No button?",
+      "headline": "It's one of [[three]] things",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "First",
+              "v": "?"
+            },
+            {
+              "k": "Second",
+              "v": "?"
+            },
+            {
+              "k": "Third",
+              "v": "?"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "that button",
+          "at": 0.62
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "comes down",
+          "at": 2.02
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "three things",
+          "at": 2.54
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "three things",
+          "at": 2.54
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.9,
+          "vol": 0.343
+        }
+      ],
+      "durationSec": 4.66,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "screenstep",
+      "src": "assets/siri-ai-ios27/apple-howto-916.mp4",
+      "srcWidth": 1080,
+      "srcHeight": 1920,
+      "from": 1.4,
+      "marks": [],
+      "credit": "Apple Support",
+      "durationSec": 1.22,
+      "assetId": "apple-howto",
+      "claimId": "apple-howto",
+      "covers": "Open settings,",
+      "sourceUrl": "https://www.youtube.com/watch?v=-kduVTOdI6s"
+    },
+    {
+      "type": "screenstep",
+      "src": "assets/siri-ai-ios27/apple-zoom-916.mp4",
+      "srcWidth": 1080,
+      "srcHeight": 1920,
+      "from": 0.1,
+      "marks": [
+        {
+          "kind": "box",
+          "at": 0.6,
+          "x": 120,
+          "y": 500,
+          "w": 870,
+          "h": 75
+        }
+      ],
+      "credit": "Apple Support",
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "at": 1.55,
+          "vol": 0.251
+        }
+      ],
+      "durationSec": 2.0,
+      "assetId": "apple-zoom",
+      "claimId": "apple-zoom",
+      "covers": "scroll down and tap",
+      "sourceUrl": "https://www.youtube.com/watch?v=-kduVTOdI6s"
+    },
+    {
+      "type": "screenstep",
+      "src": "assets/siri-ai-ios27/apple-zoom-916.mp4",
+      "srcWidth": 1080,
+      "srcHeight": 1920,
+      "from": 3.3,
+      "marks": [
+        {
+          "kind": "circle",
+          "at": 0.8,
+          "x": 100,
+          "y": 850,
+          "w": 890,
+          "h": 115
+        }
+      ],
+      "credit": "Apple Support",
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "at": 1.85,
+          "vol": 0.251
+        }
+      ],
+      "durationSec": 2.68,
+      "assetId": "apple-zoom",
+      "claimId": "apple-zoom",
+      "covers": "At the top tap",
+      "sourceUrl": "https://www.youtube.com/watch?v=-kduVTOdI6s"
+    },
+    {
+      "type": "screenstep",
+      "src": "assets/siri-ai-ios27/apple-howto-916.mp4",
+      "srcWidth": 1080,
+      "srcHeight": 1920,
+      "from": 14.6,
+      "marks": [
+        {
+          "kind": "box",
+          "at": 0.2,
+          "x": 240,
+          "y": 1610,
+          "w": 600,
+          "h": 95
+        }
+      ],
+      "credit": "Apple Support",
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "at": 0.8,
+          "vol": 0.251
+        }
+      ],
+      "captionBottom": 1450,
+      "durationSec": 1.04,
+      "assetId": "apple-howto",
+      "claimId": "apple-howto",
+      "covers": "then continue and",
+      "sourceUrl": "https://www.youtube.com/watch?v=-kduVTOdI6s"
+    },
+    {
+      "type": "screenstep",
+      "src": "assets/siri-ai-ios27/apple-howto-916.mp4",
+      "srcWidth": 1080,
+      "srcHeight": 1920,
+      "from": 23.9,
+      "marks": [
+        {
+          "kind": "box",
+          "at": 0.6,
+          "x": 240,
+          "y": 1450,
+          "w": 600,
+          "h": 95
+        }
+      ],
+      "credit": "Apple Support",
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "at": 1.05,
+          "vol": 0.251
+        }
+      ],
+      "captionBottom": 1450,
+      "durationSec": 2.2,
+      "assetId": "apple-howto",
+      "claimId": "apple-howto",
+      "covers": "continue again on",
+      "sourceUrl": "https://www.youtube.com/watch?v=-kduVTOdI6s"
+    },
+    {
+      "type": "screenstep",
+      "src": "assets/siri-ai-ios27/apple-howto-916.mp4",
+      "srcWidth": 1080,
+      "srcHeight": 1920,
+      "from": 26.0,
+      "marks": [
+        {
+          "kind": "box",
+          "at": 2.7,
+          "x": 230,
+          "y": 1215,
+          "w": 620,
+          "h": 80
+        }
+      ],
+      "credit": "Apple Support",
+      "captionBottom": 1450,
+      "durationSec": 5.48,
+      "assetId": "apple-howto",
+      "claimId": "apple-howto",
+      "covers": "Depending on your iPhone",
+      "sourceUrl": "https://www.youtube.com/watch?v=-kduVTOdI6s"
+    },
+    {
+      "type": "screenstep",
+      "src": "assets/siri-ai-ios27/apple-howto-916.mp4",
+      "srcWidth": 1080,
+      "srcHeight": 1920,
+      "from": 43.0,
+      "marks": [],
+      "credit": "Apple Support",
+      "durationSec": 2.76,
+      "assetId": "apple-howto",
+      "claimId": "apple-howto",
+      "covers": "After that,",
+      "sourceUrl": "https://www.youtube.com/watch?v=-kduVTOdI6s"
+    },
+    {
+      "type": "screenstep",
+      "src": "assets/siri-ai-ios27/apple-howto-916.mp4",
+      "srcWidth": 1080,
+      "srcHeight": 1920,
+      "from": 64.5,
+      "marks": [],
+      "credit": "Apple Support",
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 0.9,
+          "vol": 1.0
+        }
+      ],
+      "durationSec": 3.58,
+      "assetId": "apple-howto",
+      "claimId": "apple-howto",
+      "covers": "When your turn comes,",
+      "sourceUrl": "https://www.youtube.com/watch?v=-kduVTOdI6s"
+    },
+    {
+      "type": "slide",
+      "eyebrow": "First: your iPhone",
+      "headline": "iPhone [[15 Pro]] or newer",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "iPhone 15 Pro, 15 Pro Max",
+              "v": "Yes",
+              "tone": "free"
+            },
+            {
+              "k": "iPhone 16 and later",
+              "v": "Yes",
+              "tone": "free"
+            },
+            {
+              "k": "iPhone Air",
+              "v": "Yes",
+              "tone": "free"
+            },
+            {
+              "k": "Older iPhones on iOS 27",
+              "v": "No",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "15 Pro",
+          "at": 2.86
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "15 Pro",
+          "at": 2.86
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "or newer",
+          "at": 3.68
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "or newer",
+          "at": 3.68
+        },
+        {
+          "do": "show",
+          "target": "r.3",
+          "on": "not just any",
+          "at": 4.76
+        },
+        {
+          "do": "highlight",
+          "target": "r.3",
+          "on": "runs iOS",
+          "at": 5.76
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ],
+      "durationSec": 7.96,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Second: language",
+      "headline": "Both languages must [[match]]",
+      "blocks": [
+        {
+          "id": "sc",
+          "kind": "screen",
+          "width": 760,
+          "height": 930,
+          "src": "assets/siri-ai-ios27/support-settings-siri.png",
+          "h": 640
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "iPhone language",
+              "v": "English"
+            },
+            {
+              "k": "Siri language",
+              "v": "English"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "Siri language",
+          "rect": [
+            110,
+            860,
+            540,
+            70
+          ],
+          "at": 1.72
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "have to match",
+          "at": 2.38
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "your iPhone language",
+          "at": 0.68
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "Siri language",
+          "at": 1.72
+        },
+        {
+          "do": "highlight",
+          "target": "r.1",
+          "on": "means English",
+          "at": 3.82
+        }
+      ],
+      "durationSec": 5.28,
+      "assetId": "support-settings-siri",
+      "claimId": "support-settings-siri",
+      "covers": "Second,",
+      "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/ios/ios-27-iphone-17-pro-settings-siri.png",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Third: where you are",
+      "headline": "Not in the [[EU]] or China yet",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "EU (iPhone)",
+              "v": "Not yet",
+              "tone": "cost"
+            },
+            {
+              "k": "Mainland China",
+              "v": "Not yet",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "Siri AI isn't",
+          "at": 1.24
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "available in",
+          "at": 2.16
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "the EU",
+          "at": 2.8
+        },
+        {
+          "do": "highlight",
+          "target": "r.0",
+          "on": "the EU",
+          "at": 2.8
+        },
+        {
+          "do": "highlight",
+          "target": "r.1",
+          "on": "mainland China",
+          "at": 3.5
+        }
+      ],
+      "durationSec": 5.38,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "screenstep",
+      "src": "assets/siri-ai-ios27/apple-howto-916.mp4",
+      "srcWidth": 1080,
+      "srcHeight": 1920,
+      "from": 93.9,
+      "marks": [],
+      "credit": "Apple Support",
+      "focus": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1920
+      },
+      "durationSec": 4.94,
+      "assetId": "apple-howto",
+      "claimId": "apple-howto",
+      "covers": "When it's ready,",
+      "sourceUrl": "https://www.youtube.com/watch?v=-kduVTOdI6s"
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Once it's on",
+      "headline": "Indexing can take [[days]]",
+      "blocks": [
+        {
+          "id": "sc",
+          "kind": "screen",
+          "width": 760,
+          "height": 930,
+          "src": "assets/siri-ai-ios27/support-settings-siri-ai-beta.png",
+          "h": 760
+        },
+        {
+          "id": "tips",
+          "kind": "tips",
+          "watch": "Answers about your own stuff may be patchy at first"
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "sc",
+          "on": "Apple also",
+          "rect": [
+            110,
+            300,
+            540,
+            330
+          ],
+          "at": 0.0
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "take days",
+          "at": 1.3
+        },
+        {
+          "do": "show",
+          "target": "tips",
+          "on": "so answers",
+          "at": 3.48
+        }
+      ],
+      "durationSec": 6.52,
+      "assetId": "support-settings-siri-ai-beta",
+      "claimId": "support-settings-siri-ai-beta",
+      "covers": "Apple also says",
+      "sourceUrl": "https://cdsassets.apple.com/live/7WUAS350/images/ios/ios-27-iphone-17-pro-settings-siri-ai-beta.png",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "headlineSize": "xl",
+      "eyebrow": "Share it",
+      "headline": "[[Send]] this to a friend",
+      "presenter": {
+        "src": "assets/siri-ai-ios27/avatar-master-cta.mp4",
+        "from": 0.3
+      },
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "The one still waiting on new Siri"
+        },
+        {
+          "id": "sc",
+          "kind": "screen",
+          "width": 1306,
+          "height": 1829,
+          "src": "assets/siri-ai-ios27/newsroom-siri-app.jpg",
+          "h": 620
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Send this",
+          "at": 0.0
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ],
+      "durationSec": 2.6,
+      "assetId": "avatar-cta",
+      "claimId": "avatar-cta",
+      "covers": "Send this to the",
+      "sourceUrl": "https://app.heygen.com/videos/783dc0416d4f84e4d11198fe951a9874",
+      "hideCaptions": true
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.9,
+      "text": "You updated to",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "You"
+        },
+        {
+          "t": 0.24,
+          "text": "updated"
+        },
+        {
+          "t": 0.64,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 0.9,
+      "end": 2.22,
+      "text": "iOS 27 and",
+      "words": [
+        {
+          "t": 0.9,
+          "text": "iOS"
+        },
+        {
+          "t": 1.08,
+          "text": "27"
+        },
+        {
+          "t": 1.86,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 2.22,
+      "end": 3.12,
+      "text": "Siri still sounds",
+      "words": [
+        {
+          "t": 2.22,
+          "text": "Siri"
+        },
+        {
+          "t": 2.5,
+          "text": "still"
+        },
+        {
+          "t": 2.82,
+          "text": "sounds"
+        }
+      ]
+    },
+    {
+      "start": 3.12,
+      "end": 3.58,
+      "text": "like it did",
+      "words": [
+        {
+          "t": 3.12,
+          "text": "like"
+        },
+        {
+          "t": 3.34,
+          "text": "it"
+        },
+        {
+          "t": 3.48,
+          "text": "did"
+        }
+      ]
+    },
+    {
+      "start": 3.58,
+      "end": 5.4,
+      "text": "last year. That's",
+      "words": [
+        {
+          "t": 3.58,
+          "text": "last"
+        },
+        {
+          "t": 3.84,
+          "text": "year."
+        },
+        {
+          "t": 4.84,
+          "text": "That's"
+        }
+      ]
+    },
+    {
+      "start": 5.4,
+      "end": 6.3,
+      "text": "because Siri AI",
+      "words": [
+        {
+          "t": 5.4,
+          "text": "because"
+        },
+        {
+          "t": 5.58,
+          "text": "Siri"
+        },
+        {
+          "t": 5.98,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 6.3,
+      "end": 7.92,
+      "text": "stays off until",
+      "words": [
+        {
+          "t": 6.3,
+          "text": "stays"
+        },
+        {
+          "t": 6.72,
+          "text": "off"
+        },
+        {
+          "t": 7.22,
+          "text": "until"
+        }
+      ]
+    },
+    {
+      "start": 7.92,
+      "end": 8.52,
+      "text": "you ask for",
+      "words": [
+        {
+          "t": 7.92,
+          "text": "you"
+        },
+        {
+          "t": 8.1,
+          "text": "ask"
+        },
+        {
+          "t": 8.34,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 8.52,
+      "end": 10.32,
+      "text": "it. Don't see",
+      "words": [
+        {
+          "t": 8.52,
+          "text": "it."
+        },
+        {
+          "t": 9.7,
+          "text": "Don't"
+        },
+        {
+          "t": 10.2,
+          "text": "see"
+        }
+      ]
+    },
+    {
+      "start": 10.32,
+      "end": 11.72,
+      "text": "that button. It",
+      "words": [
+        {
+          "t": 10.32,
+          "text": "that"
+        },
+        {
+          "t": 10.5,
+          "text": "button."
+        },
+        {
+          "t": 11.54,
+          "text": "It"
+        }
+      ]
+    },
+    {
+      "start": 11.72,
+      "end": 12.24,
+      "text": "comes down to",
+      "words": [
+        {
+          "t": 11.72,
+          "text": "comes"
+        },
+        {
+          "t": 11.92,
+          "text": "down"
+        },
+        {
+          "t": 12.12,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 12.24,
+      "end": 13.0,
+      "text": "three things and",
+      "words": [
+        {
+          "t": 12.24,
+          "text": "three"
+        },
+        {
+          "t": 12.46,
+          "text": "things"
+        },
+        {
+          "t": 12.78,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 13.0,
+      "end": 13.44,
+      "text": "I'll get to",
+      "words": [
+        {
+          "t": 13.0,
+          "text": "I'll"
+        },
+        {
+          "t": 13.16,
+          "text": "get"
+        },
+        {
+          "t": 13.28,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 13.44,
+      "end": 15.18,
+      "text": "them. Open Settings,",
+      "words": [
+        {
+          "t": 13.44,
+          "text": "them."
+        },
+        {
+          "t": 14.36,
+          "text": "Open"
+        },
+        {
+          "t": 14.88,
+          "text": "Settings,"
+        }
+      ]
+    },
+    {
+      "start": 15.58,
+      "end": 16.2,
+      "text": "scroll down and",
+      "words": [
+        {
+          "t": 15.58,
+          "text": "scroll"
+        },
+        {
+          "t": 15.72,
+          "text": "down"
+        },
+        {
+          "t": 16.0,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 16.2,
+      "end": 17.7,
+      "text": "tap Siri. At",
+      "words": [
+        {
+          "t": 16.2,
+          "text": "tap"
+        },
+        {
+          "t": 16.44,
+          "text": "Siri."
+        },
+        {
+          "t": 17.58,
+          "text": "At"
+        }
+      ]
+    },
+    {
+      "start": 17.7,
+      "end": 18.34,
+      "text": "the top tap,",
+      "words": [
+        {
+          "t": 17.7,
+          "text": "the"
+        },
+        {
+          "t": 17.78,
+          "text": "top"
+        },
+        {
+          "t": 18.02,
+          "text": "tap,"
+        }
+      ]
+    },
+    {
+      "start": 18.4,
+      "end": 19.26,
+      "text": "try Siri AI",
+      "words": [
+        {
+          "t": 18.4,
+          "text": "try"
+        },
+        {
+          "t": 18.56,
+          "text": "Siri"
+        },
+        {
+          "t": 18.88,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 19.26,
+      "end": 21.02,
+      "text": "beta, then Continue",
+      "words": [
+        {
+          "t": 19.26,
+          "text": "beta,"
+        },
+        {
+          "t": 20.26,
+          "text": "then"
+        },
+        {
+          "t": 20.62,
+          "text": "Continue"
+        }
+      ]
+    },
+    {
+      "start": 21.02,
+      "end": 21.92,
+      "text": "and Continue again",
+      "words": [
+        {
+          "t": 21.02,
+          "text": "and"
+        },
+        {
+          "t": 21.3,
+          "text": "Continue"
+        },
+        {
+          "t": 21.62,
+          "text": "again"
+        }
+      ]
+    },
+    {
+      "start": 21.92,
+      "end": 22.52,
+      "text": "on the privacy",
+      "words": [
+        {
+          "t": 21.92,
+          "text": "on"
+        },
+        {
+          "t": 22.14,
+          "text": "the"
+        },
+        {
+          "t": 22.22,
+          "text": "privacy"
+        }
+      ]
+    },
+    {
+      "start": 22.52,
+      "end": 24.12,
+      "text": "screen. Depending on",
+      "words": [
+        {
+          "t": 22.52,
+          "text": "screen."
+        },
+        {
+          "t": 23.5,
+          "text": "Depending"
+        },
+        {
+          "t": 23.9,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 24.12,
+      "end": 24.98,
+      "text": "your iPhone, you'll",
+      "words": [
+        {
+          "t": 24.12,
+          "text": "your"
+        },
+        {
+          "t": 24.24,
+          "text": "iPhone,"
+        },
+        {
+          "t": 24.86,
+          "text": "you'll"
+        }
+      ]
+    },
+    {
+      "start": 24.98,
+      "end": 25.44,
+      "text": "then pick a",
+      "words": [
+        {
+          "t": 24.98,
+          "text": "then"
+        },
+        {
+          "t": 25.14,
+          "text": "pick"
+        },
+        {
+          "t": 25.32,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 25.44,
+      "end": 26.18,
+      "text": "voice and set",
+      "words": [
+        {
+          "t": 25.44,
+          "text": "voice"
+        },
+        {
+          "t": 25.7,
+          "text": "and"
+        },
+        {
+          "t": 25.98,
+          "text": "set"
+        }
+      ]
+    },
+    {
+      "start": 26.18,
+      "end": 27.54,
+      "text": "its pace, keep",
+      "words": [
+        {
+          "t": 26.18,
+          "text": "its"
+        },
+        {
+          "t": 26.32,
+          "text": "pace,"
+        },
+        {
+          "t": 27.2,
+          "text": "keep"
+        }
+      ]
+    },
+    {
+      "start": 27.54,
+      "end": 28.44,
+      "text": "following the prompts.",
+      "words": [
+        {
+          "t": 27.54,
+          "text": "following"
+        },
+        {
+          "t": 27.84,
+          "text": "the"
+        },
+        {
+          "t": 28.06,
+          "text": "prompts."
+        }
+      ]
+    },
+    {
+      "start": 28.98,
+      "end": 29.94,
+      "text": "After that, you",
+      "words": [
+        {
+          "t": 28.98,
+          "text": "After"
+        },
+        {
+          "t": 29.5,
+          "text": "that,"
+        },
+        {
+          "t": 29.86,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 29.94,
+      "end": 30.5,
+      "text": "might land on",
+      "words": [
+        {
+          "t": 29.94,
+          "text": "might"
+        },
+        {
+          "t": 30.12,
+          "text": "land"
+        },
+        {
+          "t": 30.38,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 30.5,
+      "end": 31.9,
+      "text": "a waitlist. When",
+      "words": [
+        {
+          "t": 30.5,
+          "text": "a"
+        },
+        {
+          "t": 30.62,
+          "text": "waitlist."
+        },
+        {
+          "t": 31.74,
+          "text": "When"
+        }
+      ]
+    },
+    {
+      "start": 31.9,
+      "end": 32.58,
+      "text": "your turn comes,",
+      "words": [
+        {
+          "t": 31.9,
+          "text": "your"
+        },
+        {
+          "t": 32.04,
+          "text": "turn"
+        },
+        {
+          "t": 32.22,
+          "text": "comes,"
+        }
+      ]
+    },
+    {
+      "start": 32.76,
+      "end": 33.34,
+      "text": "the Siri app",
+      "words": [
+        {
+          "t": 32.76,
+          "text": "the"
+        },
+        {
+          "t": 32.86,
+          "text": "Siri"
+        },
+        {
+          "t": 33.04,
+          "text": "app"
+        }
+      ]
+    },
+    {
+      "start": 33.34,
+      "end": 35.48,
+      "text": "installs itself. Now",
+      "words": [
+        {
+          "t": 33.34,
+          "text": "installs"
+        },
+        {
+          "t": 33.84,
+          "text": "itself."
+        },
+        {
+          "t": 35.32,
+          "text": "Now"
+        }
+      ]
+    },
+    {
+      "start": 35.48,
+      "end": 36.28,
+      "text": "those three things.",
+      "words": [
+        {
+          "t": 35.48,
+          "text": "those"
+        },
+        {
+          "t": 35.74,
+          "text": "three"
+        },
+        {
+          "t": 35.94,
+          "text": "things."
+        }
+      ]
+    },
+    {
+      "start": 37.02,
+      "end": 37.78,
+      "text": "First, you need",
+      "words": [
+        {
+          "t": 37.02,
+          "text": "First,"
+        },
+        {
+          "t": 37.56,
+          "text": "you"
+        },
+        {
+          "t": 37.64,
+          "text": "need"
+        }
+      ]
+    },
+    {
+      "start": 37.78,
+      "end": 38.64,
+      "text": "an iPhone 15",
+      "words": [
+        {
+          "t": 37.78,
+          "text": "an"
+        },
+        {
+          "t": 37.9,
+          "text": "iPhone"
+        },
+        {
+          "t": 38.18,
+          "text": "15"
+        }
+      ]
+    },
+    {
+      "start": 38.64,
+      "end": 39.4,
+      "text": "Pro or newer,",
+      "words": [
+        {
+          "t": 38.64,
+          "text": "Pro"
+        },
+        {
+          "t": 39.0,
+          "text": "or"
+        },
+        {
+          "t": 39.2,
+          "text": "newer,"
+        }
+      ]
+    },
+    {
+      "start": 40.08,
+      "end": 40.66,
+      "text": "not just any",
+      "words": [
+        {
+          "t": 40.08,
+          "text": "not"
+        },
+        {
+          "t": 40.22,
+          "text": "just"
+        },
+        {
+          "t": 40.42,
+          "text": "any"
+        }
+      ]
+    },
+    {
+      "start": 40.66,
+      "end": 41.3,
+      "text": "phone that runs",
+      "words": [
+        {
+          "t": 40.66,
+          "text": "phone"
+        },
+        {
+          "t": 40.92,
+          "text": "that"
+        },
+        {
+          "t": 41.08,
+          "text": "runs"
+        }
+      ]
+    },
+    {
+      "start": 41.3,
+      "end": 43.8,
+      "text": "iOS 27. Second,",
+      "words": [
+        {
+          "t": 41.3,
+          "text": "iOS"
+        },
+        {
+          "t": 41.64,
+          "text": "27."
+        },
+        {
+          "t": 43.28,
+          "text": "Second,"
+        }
+      ]
+    },
+    {
+      "start": 43.96,
+      "end": 44.76,
+      "text": "your iPhone language",
+      "words": [
+        {
+          "t": 43.96,
+          "text": "your"
+        },
+        {
+          "t": 44.02,
+          "text": "iPhone"
+        },
+        {
+          "t": 44.36,
+          "text": "language"
+        }
+      ]
+    },
+    {
+      "start": 44.76,
+      "end": 45.66,
+      "text": "and Siri language",
+      "words": [
+        {
+          "t": 44.76,
+          "text": "and"
+        },
+        {
+          "t": 45.0,
+          "text": "Siri"
+        },
+        {
+          "t": 45.24,
+          "text": "language"
+        }
+      ]
+    },
+    {
+      "start": 45.66,
+      "end": 46.32,
+      "text": "have to match",
+      "words": [
+        {
+          "t": 45.66,
+          "text": "have"
+        },
+        {
+          "t": 45.9,
+          "text": "to"
+        },
+        {
+          "t": 46.04,
+          "text": "match"
+        }
+      ]
+    },
+    {
+      "start": 46.32,
+      "end": 46.92,
+      "text": "and for now",
+      "words": [
+        {
+          "t": 46.32,
+          "text": "and"
+        },
+        {
+          "t": 46.6,
+          "text": "for"
+        },
+        {
+          "t": 46.74,
+          "text": "now"
+        }
+      ]
+    },
+    {
+      "start": 46.92,
+      "end": 47.62,
+      "text": "that means English.",
+      "words": [
+        {
+          "t": 46.92,
+          "text": "that"
+        },
+        {
+          "t": 47.1,
+          "text": "means"
+        },
+        {
+          "t": 47.32,
+          "text": "English."
+        }
+      ]
+    },
+    {
+      "start": 48.56,
+      "end": 50.24,
+      "text": "Third, Siri AI",
+      "words": [
+        {
+          "t": 48.56,
+          "text": "Third,"
+        },
+        {
+          "t": 49.8,
+          "text": "Siri"
+        },
+        {
+          "t": 49.96,
+          "text": "AI"
+        }
+      ]
+    },
+    {
+      "start": 50.24,
+      "end": 51.36,
+      "text": "isn't available in",
+      "words": [
+        {
+          "t": 50.24,
+          "text": "isn't"
+        },
+        {
+          "t": 50.72,
+          "text": "available"
+        },
+        {
+          "t": 51.02,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 51.36,
+      "end": 52.06,
+      "text": "the EU or",
+      "words": [
+        {
+          "t": 51.36,
+          "text": "the"
+        },
+        {
+          "t": 51.46,
+          "text": "EU"
+        },
+        {
+          "t": 51.76,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 52.06,
+      "end": 53.1,
+      "text": "mainland China yet.",
+      "words": [
+        {
+          "t": 52.06,
+          "text": "mainland"
+        },
+        {
+          "t": 52.32,
+          "text": "China"
+        },
+        {
+          "t": 52.84,
+          "text": "yet."
+        }
+      ]
+    },
+    {
+      "start": 53.94,
+      "end": 54.64,
+      "text": "When it's ready,",
+      "words": [
+        {
+          "t": 53.94,
+          "text": "When"
+        },
+        {
+          "t": 54.28,
+          "text": "it's"
+        },
+        {
+          "t": 54.46,
+          "text": "ready,"
+        }
+      ]
+    },
+    {
+      "start": 54.74,
+      "end": 55.4,
+      "text": "swipe down on",
+      "words": [
+        {
+          "t": 54.74,
+          "text": "swipe"
+        },
+        {
+          "t": 54.9,
+          "text": "down"
+        },
+        {
+          "t": 55.22,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 55.4,
+      "end": 56.4,
+      "text": "the Dynamic Island and",
+      "words": [
+        {
+          "t": 55.4,
+          "text": "the"
+        },
+        {
+          "t": 55.5,
+          "text": "Dynamic"
+        },
+        {
+          "t": 56.18,
+          "text": "Island"
+        },
+        {
+          "t": 56.18,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 56.4,
+      "end": 57.88,
+      "text": "type or just",
+      "words": [
+        {
+          "t": 56.4,
+          "text": "type"
+        },
+        {
+          "t": 57.43,
+          "text": "or"
+        },
+        {
+          "t": 57.7,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 57.88,
+      "end": 59.6,
+      "text": "talk. Apple also",
+      "words": [
+        {
+          "t": 57.88,
+          "text": "talk."
+        },
+        {
+          "t": 58.88,
+          "text": "Apple"
+        },
+        {
+          "t": 59.28,
+          "text": "also"
+        }
+      ]
+    },
+    {
+      "start": 59.6,
+      "end": 60.18,
+      "text": "says it can",
+      "words": [
+        {
+          "t": 59.6,
+          "text": "says"
+        },
+        {
+          "t": 59.86,
+          "text": "it"
+        },
+        {
+          "t": 60.04,
+          "text": "can"
+        }
+      ]
+    },
+    {
+      "start": 60.18,
+      "end": 60.82,
+      "text": "take days to",
+      "words": [
+        {
+          "t": 60.18,
+          "text": "take"
+        },
+        {
+          "t": 60.36,
+          "text": "days"
+        },
+        {
+          "t": 60.64,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 60.82,
+      "end": 61.76,
+      "text": "finish indexing your",
+      "words": [
+        {
+          "t": 60.82,
+          "text": "finish"
+        },
+        {
+          "t": 61.1,
+          "text": "indexing"
+        },
+        {
+          "t": 61.66,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 61.76,
+      "end": 62.68,
+      "text": "phone. So answers",
+      "words": [
+        {
+          "t": 61.76,
+          "text": "phone."
+        },
+        {
+          "t": 62.36,
+          "text": "So"
+        },
+        {
+          "t": 62.38,
+          "text": "answers"
+        }
+      ]
+    },
+    {
+      "start": 62.68,
+      "end": 63.34,
+      "text": "about your own",
+      "words": [
+        {
+          "t": 62.68,
+          "text": "about"
+        },
+        {
+          "t": 63.0,
+          "text": "your"
+        },
+        {
+          "t": 63.16,
+          "text": "own"
+        }
+      ]
+    },
+    {
+      "start": 63.34,
+      "end": 64.0,
+      "text": "stuff may be",
+      "words": [
+        {
+          "t": 63.34,
+          "text": "stuff"
+        },
+        {
+          "t": 63.62,
+          "text": "may"
+        },
+        {
+          "t": 63.9,
+          "text": "be"
+        }
+      ]
+    },
+    {
+      "start": 64.0,
+      "end": 64.78,
+      "text": "patchy at first.",
+      "words": [
+        {
+          "t": 64.0,
+          "text": "patchy"
+        },
+        {
+          "t": 64.4,
+          "text": "at"
+        },
+        {
+          "t": 64.5,
+          "text": "first."
+        }
+      ]
+    },
+    {
+      "start": 65.4,
+      "end": 66.16,
+      "text": "Send this to",
+      "words": [
+        {
+          "t": 65.4,
+          "text": "Send"
+        },
+        {
+          "t": 65.8,
+          "text": "this"
+        },
+        {
+          "t": 66.02,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 66.16,
+      "end": 66.82,
+      "text": "the friend still",
+      "words": [
+        {
+          "t": 66.16,
+          "text": "the"
+        },
+        {
+          "t": 66.26,
+          "text": "friend"
+        },
+        {
+          "t": 66.56,
+          "text": "still"
+        }
+      ]
+    },
+    {
+      "start": 66.82,
+      "end": 67.5,
+      "text": "waiting on new",
+      "words": [
+        {
+          "t": 66.82,
+          "text": "waiting"
+        },
+        {
+          "t": 67.08,
+          "text": "on"
+        },
+        {
+          "t": 67.3,
+          "text": "new"
+        }
+      ]
+    },
+    {
+      "start": 67.5,
+      "end": 67.78,
+      "text": "Siri.",
+      "words": [
+        {
+          "t": 67.5,
+          "text": "Siri."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "how-to: every step is a spoken UI label; the voice carries it and a bed competes with it (same call as the last howto, mac-multiple-headphones)",
+  "format": "howto",
+  "script": "You updated to iOS 27 and Siri still sounds like it did last year. That's because Siri AI stays off until you ask for it. Don't see that button? It comes down to three things, and I'll get to them.\n\nOpen Settings, scroll down and tap Siri. At the top, tap Try Siri AI, Beta. Then Continue, and Continue again on the privacy screen.\nDepending on your iPhone, you'll then pick a voice and set its pace. Keep following the prompts.\n\nAfter that, you might land on a waitlist. When your turn comes, the Siri app installs itself.\n\nNow, those three things. First, you need an iPhone 15 Pro or newer, not just any phone that runs iOS 27. Second, your iPhone language and Siri language have to match, and for now that means English. Third, Siri AI isn't available in the EU or mainland China yet.\n\nWhen it's ready, swipe down on the Dynamic Island and type, or just talk.\nApple also says it can take days to finish indexing your phone, so answers about your own stuff may be patchy at first.\n\nSend this to the friend still waiting on new Siri.",
+  "approval": {
+    "sha256": "eff3aea85d61515300989e13858333145a4ea16fbd38132c8c1d7ab7f1851fde",
+    "approvedAt": "2026-09-25T09:24:58+00:00",
+    "words": 194,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

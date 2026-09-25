@@ -9120,3 +9120,45 @@ Treatment history: slides built from publishers' own prompt pages (OpenAI Academ
 Descript, Sprout), a 50% hero stat card, a 5-step roadmap strip, a vague-vs-named swap,
 a NARRATION/VISUALS rows block (the reel's own shot list), a policy-page receipt with a
 cost/free row pair. Next prompt/tool reel: do not open on a logged-out app screen + stat card.
+
+## 2026-09-25 — siri-ai-ios27: a how-to built from the vendor's own walkthrough video
+
+**Raw note.** Tutorial on turning Siri AI on (Settings > Siri > Try Siri AI (Beta)).
+Research found Apple's own support video ("How to get Siri AI", youtube -kduVTOdI6s)
+showing every setup screen on a rendered iPhone, narrated with the exact labels. That
+became the body; Apple's two support screenshots (before / after with the BETA orb)
+carry the "stays off" and "indexing" beats. First reel to use `screenstep`.
+
+- **Read the labels off the vendor's FRAMES, not the articles.** Our own site's
+  how-to said "Try New Siri"; Apple's screens say "Try Siri AI (Beta)", and the intro
+  screen's "Siri with Apple Intelligence" title explains where that wording came from.
+  One full-res frame grid settled a disagreement six outlets could not.
+- **A vendor walkthrough that centres the phone crops to 9:16 in one pass**
+  (crop 608x1080 at x=656 -> 1080x1920). Its CLOSE-UP segments do not: they lose the
+  left margin. Cut those separately with a wider crop padded to 1920 (black matches dark UI).
+- **screenstep zooms to its marks.** On a source that already zooms in (Apple's Dynamic
+  Island swipe), a mark in source px lands on empty space and the extra zoom turns the
+  frame to mush. For a shot that moves on its own: no marks, focus = whole frame.
+- **Captions on screen-UI shots must clear the control being tapped.** Default caption
+  height put "on the privacy" INSIDE the Continue button. `captionBottom: 1450` lifts
+  them to the top of the frame for shots whose target sits low. Lint did not flag it;
+  the contact sheet did.
+- **Slide rows timed to a word that lands after mid-scene leave the card empty in the
+  mid frame** (the "three things" and EU/China cards). Show rows on the first words of
+  the line; save the pill/highlight for the key word.
+- **Taps get the sound, cards don't.** Auto slide SFX put 16 cues on cards and none on
+  the four real taps. `slideSfx: false` + 9 hand-placed (click on each tap, reveal on
+  the Siri orb); sfx_audibility 9/9 audible. G40 calls a click on a screenstep 'popup'
+  (advice) — the library has no 'tap' action cue yet; one would fit this genre.
+- ElevenLabs v3 read ran 3.52 w/s; padded pauses to 68s (2.85). `vo_pad --in` crashed
+  on a relative path after writing — fixed (`.resolve()`).
+- **Topic overlap caught late:** jobs/siri-ai-ios-27-requirements (2026-09-15) already
+  covered the four eligibility gates. This reel is the activation steps; its 15s blocker
+  section overlaps that one. Search `git log --all -- 'jobs/*<topic>*'` BEFORE new_job.
+- Pre-launch claim in ios27-tiers (full Siri AI = 17 Pro/Air only) is superseded by
+  Apple's shipped list (15 Pro and later); flagged to the user.
+
+Treatment history: vendor walkthrough in `screenstep` with drawn boxes/circles on each
+tap, before/after support screenshots in slide `screen` blocks with focus rects, a
+withheld "First/Second/Third ?" rows card paid off by three requirement cards, orb cover.
+Next how-to: do not open on presenter circle + settings screenshot again.
