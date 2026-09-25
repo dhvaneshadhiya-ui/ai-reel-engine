@@ -238,6 +238,22 @@ silently disabled the frame checks for weeks.
   every post:** Instagram `AI LABEL: on` + YouTube `ALTERED CONTENT: yes` AND a caption
   line ("The presenter's face and voice in this video are AI-generated.") —
   packaging_check refuses without them.
+- **The iOS SIMULATOR is a source now (2026-09-25).** Xcode is installed on this
+  machine with an **iOS 27.0 runtime** (iPhone 18 Pro / 18 Pro Max / 17e).
+  `xcrun simctl` gives authentic Apple-rendered iOS UI with no device and no
+  credits: `io <udid> screenshot out.png`, `io <udid> recordVideo --codec h264
+  out.mp4` (measured 1206x2622 native, h264), `ui <udid> appearance dark|light`,
+  `openurl <udid> App-prefs:` for a Settings deep link. The MCP panel
+  (`mcp__Claude_Code_iOS_Simulator__control`) drives taps and swipes.
+  **What it CAN show:** Settings flows (General, Accessibility, Appearance,
+  Camera, Home Screen, Search, Siri, StandBy, Screen Time, Privacy, iCloud, Apps),
+  stock apps, light/dark, any deep link, and a real screen RECORDING of a tap
+  flow — which is motion we previously faked with stills.
+  **What it CANNOT:** Battery, Cellular and Wi-Fi panes (no such hardware),
+  App Store, real user data, Apple Intelligence. Verified 2026-09-25.
+  **Honesty rule:** it is genuine iOS 27 UI, so it may illustrate the OS — never
+  narrate it as "my iPhone", and never let it stand in for a screen it cannot
+  show. Rule 3 still decides.
 - **Capture web sources on MOBILE.** `tools/capture.mjs` defaults to it
   (1080x2340). A desktop grab fills 42% of a 9:16 frame with unreadable text.
   `--desktop` is the exception, not the default. Gate G29.

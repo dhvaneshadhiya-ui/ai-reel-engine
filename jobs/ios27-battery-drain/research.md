@@ -124,6 +124,17 @@ Found in the coverage, deliberately NOT said in this reel:
   Apple's words, and we have no iOS 27 device to capture — so no iPhone UI is shown as
   a receipt. The receipts are Apple's own support pages.
 
+## FIELD NOTE (2026-09-25) — the banner is CONFIRMED, after the fact
+
+The visuals scout could not confirm the reported iOS 27 "Optimizing Search and Siri"
+banner in Apple's words, so the reel never claimed it. With Xcode installed
+2026-09-24, the iOS 27.0 simulator shows it directly: **"Optimising Search and Siri"**
+sits as its own row at the top of Settings, above General, on a freshly booted
+iPhone 18 Pro (British spelling on a UK-region device). It is real, and it is
+capturable from now on. The shipped reel is unaffected — it claimed less, not wrong.
+The simulator has NO Battery pane, so the Settings > Battery Insight still cannot be
+shown that way.
+
 ## FIELD NOTE (user, 2026-09-19)
 
 Apple's 120745 describes Settings > Battery > **Power Mode** > Low Power Mode as the
