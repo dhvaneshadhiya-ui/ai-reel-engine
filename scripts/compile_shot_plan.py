@@ -1041,6 +1041,8 @@ def main() -> None:
         "audio": audio_rel,
         # the animated treatment's presenter plan (2026-09-16); G06/G17 read it
         **({"facePlan": plan["facePlan"]} if plan.get("facePlan") else {}),
+        # longform TYPE (fix / howto / explainer) picks the runtime band G02 reads
+        **({"type": plan["type"]} if plan.get("type") else {}),
         "captionStyle": locked_caption_style(engine),
         "emphasis": plan.get("emphasis", []),
         "scenes": scenes,

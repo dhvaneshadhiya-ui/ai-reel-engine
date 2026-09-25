@@ -9,6 +9,22 @@ first. Measured (`tools/measure_video.py`, scene detection at 0.15, YouTube capt
 tracks, publisher chapter lists, contact sheets read by eye at 1 frame / 10s, presenter share via Apple Vision).
 Every number below came from a file on this machine, not from an impression.
 
+## Who owns the writing rules
+
+**The Carousel Playbook's `igb-youtube-script` is the authority for long-form SCRIPTS**
+(user, 2026-09-25): packaging before a word of script, the type split (Fix 4-7 min,
+How-to 4-6, Explainer 8-11), the fix structure (result in 0-5s, first step by 20s, a
+named second value, an escalation ladder), chapters as searches and never on screen,
+2.6 w/s planning, the SIM / IPHONE / GFX shot list, a need-based avatar, and a cut list
+decided before recording. This file holds the MEASURED numbers the playbook cites.
+
+Wired to match it: `type_runtime` gives each type its own G02 band, and the profile's
+`wps` is the playbook's 2.35-2.75 rather than the references' 3.0-3.6.
+
+**One place the two systems disagree, left for the user:** the playbook says "the system
+never asks for approvals"; this engine's script approval (G27) is a code gate that
+refuses to build unapproved words. Until the user decides otherwise, G27 stands.
+
 ## How to run it again
 
 ```bash

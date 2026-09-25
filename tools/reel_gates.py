@@ -160,7 +160,12 @@ FORMATS: dict[str, dict] = {
         # gitignored): ThioJoe iOS 27 503s / MacMost passwords 696s / MacMost
         # Split View 658s / Kevin Stratvert Google Flow 554s / ScreenCastsONLINE
         # DockDoor 550s. Full working: formats/longform.md.
-        "runtime": (500.0, 700.0),      # measured 503-696, median 554
+        "runtime": (500.0, 700.0),      # measured 503-696, median 554 (EXPLAINER)
+        # igb-youtube-script (the user's Carousel Playbook, 2026-09-25) splits long
+        # form by TYPE, and a fix video held to the explainer band is told it is too
+        # short for being exactly as long as it should be.
+        "type_runtime": {"fix": (240.0, 420.0), "howto": (240.0, 360.0),
+                         "explainer": (480.0, 660.0)},
         "ceiling": 900.0,               # 15 min: past the references, not past sense
         # The cold open states the question and the strongest item lands by ~0:10.
         # Not a 2s hook: nobody in this format cuts that fast at the top.
@@ -180,8 +185,10 @@ FORMATS: dict[str, dict] = {
         "change_max": 8.0,              # p50 of the three busiest: 2.5 / 4.2 / 7.5
         "hold_max": 60.0,               # p75 10.4-54.0; the 231s screencast hold is
                                         # the outer edge, not a target
-        "wps": (2.9, 3.2),              # references 3.02-3.64; the band sits low on
-                                        # purpose — our voice is a flat clone
+        # The references speak at 3.02-3.64, but the Carousel Playbook plans the
+        # clone at 2.6 (its own measured 2.35-2.75 on Reels) — the user's call, and
+        # the right one for a voice whose flatness speed cannot hide.
+        "wps": (2.35, 2.75),
         "landscape": True,              # 1920x1080, not 1080x1920
         # The cold open runs to ~10s here, so proof arrives later than it does in
         # an 80s reel — but it still arrives before the first chapter ends.
@@ -953,7 +960,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
             "because its pacing read is an estimate and G23 exists to stop "
             "guessed bands.")
         prof = FORMATS[DEFAULT_FORMAT]
-    RT_MIN, RT_MAX = prof["runtime"]
+    RT_MIN, RT_MAX = (prof.get("type_runtime") or {}).get(beats.get("type"), prof["runtime"])
     HK_MAX = prof["hook_max"]
     FC_MIN, FC_MAX = prof["face"]
     SX_MIN, SX_MAX = prof["sfx"] or (None, None)

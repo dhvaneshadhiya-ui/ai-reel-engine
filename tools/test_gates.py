@@ -1718,6 +1718,21 @@ if _hits:
     raise SystemExit(1)
 _counted("G02 silent — 560s is inside the longform band, 180s ceiling does not apply")
 
+# G02 NEGATIVE CASE (2026-09-25, playbook). A longform FIX video is 4-7 minutes by
+# the user's igb-youtube-script. Held to the explainer's 500s floor, a 300s fix
+# was told it was too short for being exactly the right length.
+_s = _longform(300.0)
+_s["type"] = "fix"
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS)
+    _hits = [a for a in _adv if "G02" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G02" in str(a)]
+if _hits:
+    print(f"  FAIL G02 fired on a 300s longform fix, inside its 240-420s band: {_hits[0][:100]}")
+    raise SystemExit(1)
+_counted("G02 silent — a 300s longform FIX sits inside its own type band")
+
 # G70 NEGATIVE CASE (2026-09-25). The proof window travels with the format: a
 # longform cut whose first screen lands at 12s is inside its own 4-20s window,
 # and must not be told it failed a rule measured on 80-second reels.
