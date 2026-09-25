@@ -9089,3 +9089,34 @@ gallery + three ceiling rows, Anthropic's settings-toggle image + rows, Pitch's 
 zoomed to its own "too wordy" chip, Microsoft's before/after crossfade (bullets → timeline) with
 the vendor's own menu path, Napkin funnel in a deck, Claude→Gamma swap over Gamma's Import
 option, XL "Save" end card with the five logos.
+
+## 2026-09-25 — chatgpt-creator-prompts: animated reel, research through render
+
+53.0s, 11 slides, presenter on 2 (hook 6.3s + CTA 2.4s). What it taught:
+
+- **A zoom rect wider than the column zooms OUT.** `focus` scales to min(box / (rect * 1.5),
+  fit * 2.4), so a 1000px-wide rect on a 916px column rendered SMALLER than the unfocused
+  image and the OpenAI prompt stayed unreadable. Raw note: "focus fired, nothing grew".
+  Rule: a focus that is meant to be read must be <= ~600px wide in source pixels.
+- **Some official pages clip their own text on every viewport.** OpenAI Academy's prompt
+  table sits in a 549px scroll box around a 789px table, desktop and mobile alike. The honest
+  capture is a <tr> element screenshot with only the overflow clip removed (words, font,
+  layout untouched), recorded in research/visuals.md.
+- **Whisper cannot settle "shot" vs "short" in this voice.** medium hears "short list" even
+  primed; two ElevenLabs re-takes (~238 credits) heard the same. Word duration (0.24s, ~"not"
+  + "sh") fits the short vowel. Kept the read, caption-corrected, flagged to the user.
+  Rule: measure the vowel before paying for re-takes on a near-homophone.
+- **G34 splits on any Unicode space.** "Gen Z" -> "Gen Z" still trips the orphan-letter
+  gate; "Gen-Z" is one token.
+- **Auto slide SFX over-fires on screen-heavy reels** (36 cues in 53s: a lens-zoom on every
+  focus). `slideSfx: false` + 9 hand-placed cues by role; sfx_audibility 9/9 audible.
+- **HeyGen plan state is not stable.** The account fell to Free overnight: 1080p refused
+  (RESOLUTION_NOT_ALLOWED), then the Avatar IV monthly limit. Check get_current_user before
+  generating presenter slices.
+- The ElevenLabs v3 read ran 3.42 w/s; padded pauses to 53s (3.04) rather than the 63s the
+  tool suggested, keeping the list's genre pace.
+
+Treatment history: slides built from publishers' own prompt pages (OpenAI Academy rows,
+Descript, Sprout), a 50% hero stat card, a 5-step roadmap strip, a vague-vs-named swap,
+a NARRATION/VISUALS rows block (the reel's own shot list), a policy-page receipt with a
+cost/free row pair. Next prompt/tool reel: do not open on a logged-out app screen + stat card.

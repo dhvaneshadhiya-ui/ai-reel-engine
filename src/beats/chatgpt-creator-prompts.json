@@ -25,7 +25,7 @@
           "width": 1080,
           "height": 760,
           "src": "assets/chatgpt-creator-prompts/chatgpt-prompt-box.png",
-          "h": 620
+          "h": 780
         }
       ],
       "moves": [
@@ -59,13 +59,13 @@
           "vol": 0.343
         }
       ],
+      "captionBottom": 440,
       "durationSec": 2.62,
       "assetId": "screen-chatgpt",
       "claimId": "screen-chatgpt",
       "covers": "Stop asking chat",
       "sourceUrl": "https://chatgpt.com/",
-      "hideCaptions": false,
-      "captionBottom": 422
+      "hideCaptions": false
     },
     {
       "type": "slide",
@@ -119,9 +119,9 @@
           "vol": 0.556
         }
       ],
+      "captionBottom": 440,
       "durationSec": 4.08,
-      "hideCaptions": false,
-      "captionBottom": 422
+      "hideCaptions": false
     },
     {
       "type": "slide",
@@ -137,7 +137,7 @@
             "Script",
             "Repurpose"
           ],
-          "h": 420
+          "h": 700
         }
       ],
       "moves": [
@@ -185,9 +185,9 @@
           "vol": 0.582
         }
       ],
+      "captionBottom": 440,
       "durationSec": 4.46,
-      "hideCaptions": false,
-      "captionBottom": 422
+      "hideCaptions": false
     },
     {
       "type": "slide",
@@ -197,10 +197,10 @@
         {
           "id": "scr",
           "kind": "screen",
-          "width": 1380,
+          "width": 1060,
           "height": 282,
-          "src": "assets/chatgpt-creator-prompts/openai-paste-row.png",
-          "h": 360
+          "src": "assets/chatgpt-creator-prompts/openai-paste-cell.png",
+          "h": 420
         },
         {
           "id": "t",
@@ -212,15 +212,15 @@
         {
           "do": "focus",
           "target": "scr",
-          "on": "prompts leave",
+          "on": "own prompts",
           "rect": [
-            330,
-            20,
-            1000,
-            240
+            300,
+            70,
+            560,
+            75
           ],
           "ring": false,
-          "at": 1.08
+          "at": 0.9
         },
         {
           "do": "show",
@@ -233,7 +233,7 @@
           "target": "scr",
           "on": "paste details",
           "rect": [
-            1040,
+            720,
             80,
             280,
             65
@@ -254,13 +254,13 @@
           "vol": 0.417
         }
       ],
+      "captionBottom": 440,
       "durationSec": 4.6,
       "assetId": "screen-openai-paste",
       "claimId": "screen-openai-paste",
       "covers": "Even OpenAI's own",
       "sourceUrl": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/use-cases-marketing",
-      "hideCaptions": false,
-      "captionBottom": 422
+      "hideCaptions": false
     },
     {
       "type": "slide",
@@ -273,7 +273,7 @@
           "width": 1080,
           "height": 1100,
           "src": "assets/chatgpt-creator-prompts/openai-projects.png",
-          "h": 440
+          "h": 600
         },
         {
           "id": "st",
@@ -353,13 +353,13 @@
           "vol": 0.343
         }
       ],
+      "captionBottom": 440,
       "durationSec": 6.72,
       "assetId": "screen-openai-projects",
       "claimId": "screen-openai-projects",
       "covers": "First, make a",
       "sourceUrl": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/projects",
-      "hideCaptions": false,
-      "captionBottom": 422
+      "hideCaptions": false
     },
     {
       "type": "slide",
@@ -367,18 +367,28 @@
       "headline": "Name [[Your Audience]]",
       "blocks": [
         {
+          "id": "sw",
+          "kind": "swap",
+          "left": {
+            "name": "Vague",
+            "price": "\u201cEveryone\u201d",
+            "tone": "cost",
+            "note": "gets you generic ideas"
+          },
+          "right": {
+            "name": "Named",
+            "price": "\u201cNew iPhone owners\u201d",
+            "tone": "free",
+            "note": "gets you their questions"
+          }
+        },
+        {
           "id": "scr",
           "kind": "screen",
           "width": 1080,
           "height": 482,
           "src": "assets/chatgpt-creator-prompts/descript-ideas.png",
-          "h": 420
-        },
-        {
-          "id": "tp",
-          "kind": "tips",
-          "best": "Say exactly who: \u201cfirst-time iPhone buyers\u201d",
-          "watch": "\u201cEveryone\u201d gets you generic"
+          "h": 460
         }
       ],
       "moves": [
@@ -395,19 +405,6 @@
           "at": 0.18
         },
         {
-          "do": "focus",
-          "target": "scr",
-          "on": "your topic",
-          "rect": [
-            140,
-            215,
-            850,
-            140
-          ],
-          "ring": false,
-          "at": 1.96
-        },
-        {
           "do": "pill",
           "target": "headline",
           "on": "your audience",
@@ -415,19 +412,31 @@
         },
         {
           "do": "show",
-          "target": "tp",
+          "target": "sw.left",
+          "on": "your topic",
+          "at": 1.96
+        },
+        {
+          "do": "show",
+          "target": "sw.right",
+          "on": "name them",
+          "at": 2.82
+        },
+        {
+          "do": "strike",
+          "target": "sw.left",
           "on": "name them",
           "at": 2.82
         }
       ],
       "sfx": [],
+      "captionBottom": 440,
       "durationSec": 3.36,
       "assetId": "screen-descript-ideas",
       "claimId": "screen-descript-ideas",
       "covers": "Then ask what",
       "sourceUrl": "https://www.descript.com/blog/article/100-chatgpt-prompts-for-creators-speed-up-your-workflow-with-ai",
-      "hideCaptions": false,
-      "captionBottom": 422
+      "hideCaptions": false
     },
     {
       "type": "slide",
@@ -440,15 +449,15 @@
           "width": 1080,
           "height": 1204,
           "src": "assets/chatgpt-creator-prompts/descript-hooks.png",
-          "h": 480
+          "h": 500
         },
         {
           "id": "scr2",
           "kind": "screen",
-          "width": 1380,
+          "width": 1060,
           "height": 222,
-          "src": "assets/chatgpt-creator-prompts/openai-hooks-row.png",
-          "h": 200
+          "src": "assets/chatgpt-creator-prompts/openai-hooks-cell.png",
+          "h": 240
         }
       ],
       "moves": [
@@ -488,7 +497,7 @@
           "target": "scr2",
           "on": "different tone",
           "rect": [
-            740,
+            420,
             140,
             320,
             65
@@ -503,13 +512,13 @@
         }
       ],
       "sfx": [],
+      "captionBottom": 440,
       "durationSec": 4.78,
       "assetId": "screen-descript-hooks",
       "claimId": "screen-descript-hooks",
       "covers": "Paste your transcript",
       "sourceUrl": "https://www.descript.com/blog/article/100-chatgpt-prompts-for-creators-speed-up-your-workflow-with-ai",
-      "hideCaptions": false,
-      "captionBottom": 422
+      "hideCaptions": false
     },
     {
       "type": "slide",
@@ -582,13 +591,13 @@
           "vol": 0.343
         }
       ],
+      "captionBottom": 440,
       "durationSec": 5.92,
       "assetId": "screen-descript-script",
       "claimId": "screen-descript-script",
       "covers": "Ask for a",
       "sourceUrl": "https://www.descript.com/blog/article/100-chatgpt-prompts-for-creators-speed-up-your-workflow-with-ai",
-      "hideCaptions": false,
-      "captionBottom": 422
+      "hideCaptions": false
     },
     {
       "type": "slide",
@@ -601,7 +610,7 @@
           "width": 1080,
           "height": 900,
           "src": "assets/chatgpt-creator-prompts/sprout-pullquotes.png",
-          "h": 480
+          "h": 640
         },
         {
           "id": "tp",
@@ -668,13 +677,13 @@
           "vol": 0.343
         }
       ],
+      "captionBottom": 440,
       "durationSec": 7.46,
       "assetId": "screen-sprout",
       "claimId": "screen-sprout",
       "covers": "To repurpose",
       "sourceUrl": "https://sproutsocial.com/insights/ai-prompt/",
-      "hideCaptions": false,
-      "captionBottom": 422
+      "hideCaptions": false
     },
     {
       "type": "slide",
@@ -764,13 +773,13 @@
           "vol": 0.556
         }
       ],
+      "captionBottom": 440,
       "durationSec": 6.78,
       "assetId": "screen-yt-policy",
       "claimId": "screen-yt-policy",
       "covers": "Leave your material",
       "sourceUrl": "https://support.google.com/youtube/answer/1311392?hl=en",
-      "hideCaptions": false,
-      "captionBottom": 422
+      "hideCaptions": false
     },
     {
       "type": "slide",
@@ -793,7 +802,8 @@
             "Hooks",
             "Script",
             "Repurpose"
-          ]
+          ],
+          "h": 480
         }
       ],
       "moves": [
