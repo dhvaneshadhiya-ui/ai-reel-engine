@@ -562,6 +562,11 @@ python3 tools/measure_video.py <file.mp4> [more.mp4 ...] [--threshold 0.15]
 
 It prints cut rhythm (p50/p75/longest), speech rate from the caption track, and
 chapter lengths from the publisher's own chapter list, plus a pooled median.
+**Then measure how they are WRITTEN, which is the half that got skipped the first
+time:** `python3 tools/measure_script_style.py <file.en.vtt ...> [--open]` reports
+sentence length, long-sentence share, you/I density and the turn words, and takes
+`jobs/<slug>/script.md` too, so a draft can be held against the references instead
+of against taste.
 **Face share and layout are NOT measured by it** — build a contact sheet
 (`fps=1/10,tile=10x8`) and read the frames. On 2026-09-25 that step overturned
 three of four style calls that had been made from metadata alone, which is the

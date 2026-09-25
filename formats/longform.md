@@ -177,6 +177,36 @@ was gone from the simulator within the hour, because the indexing it reports had
 finished. That is the behaviour the script describes, and it means a capture of a
 transient state has to be taken while it exists, not planned for later.
 
+## How the references are WRITTEN (measured 2026-09-25, second pass)
+
+The first teardown measured pacing and face share and never read the prose, so the
+first pilot script was a reel script stretched: deck-style "Chapter 1" labels on
+screen and sentences a third shorter than the format uses. `tools/measure_script_style.py`
+reads the caption tracks (and our own `script.md`) and measures the writing:
+
+| reference | words/sentence | over 25 words | "you" /100 | "I" /100 |
+|---|---|---|---|---|
+| ThioJoe | 18.1 | 20% | 5.6 | 1.9 |
+| MacMost (passwords) | 16.3 | 14% | 5.9 | 1.7 |
+| MacMost (split view) | 17.4 | 18% | 4.7 | 1.8 |
+| Kevin Stratvert | 13.2 | 5% | 2.3 | 4.4 |
+| ScreenCastsONLINE | 17.7 | 15% | 4.0 | 3.7 |
+
+**Sentences run 16-18 words with a fifth of them over 25** — long, connected clauses
+carried by and / so / now / if / but, not the clipped staccato a 60-second reel uses.
+Our first longform draft measured 13.2 and 7%: reel prose in a long-form runtime.
+
+**The opening has one shape in all three that use a presenter.** Subject and promise
+in the first two sentences, then scope (what this does and does not cover), then the
+name, then straight into the first item by ~0:30. ThioJoe: "I do not want to focus on
+the big headline features... instead... I'm Theo Joe, and let's get into it." Stratvert:
+"By the end of this video, you will know how to... I'm Kevin, and let's get started."
+
+**NOBODY LABELS A CHAPTER ON SCREEN.** Chapters exist as description timestamps. The
+on-screen line is the subject of that beat ("Optimising Search and Siri", "Tip 4"), and
+the pilot's "Chapter 1 · What's happening" eyebrows were a deck habit, not this format
+(user, 2026-09-25). Eyebrows now carry the subject.
+
 ## What this format still needs from the engine
 
 - A per-format runtime ceiling (G02 is a flat 180s today).

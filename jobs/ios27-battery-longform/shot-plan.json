@@ -17,17 +17,17 @@
  },
  "shots": [
   {
-   "start_phrase": "If your battery",
+   "start_phrase": "Your iPhone's battery",
    "tier": "official",
    "asset_id": null,
-   "line": "If your battery has been falling off a cliff since you updated to iOS 27, you're not imagining it. Before you book a battery replacement, there's one screen that tells you whether this is the update or something actually wrong with your phone. I'll show you that screen, what the phone is doing to your battery in the meantime, and the one popular fix that does nothing at all.",
+   "line": "Your iPhone's battery has been dropping faster since you updated to iOS 27, and the internet has a lot of very confident answers about why. I spent this week going through what Apple has actually published about it, and almost none of those answers are in there. So in the next few minutes I'll show you what the phone is really doing to your battery after an update, the one screen that tells you whether it's that or something genuinely wrong, and the popular fix that Apple's own software chief says does nothing at all.",
    "needs": [
     "battery falling",
-    "promise of one screen"
+    "the promise"
    ],
    "scene": {
     "type": "slide",
-    "eyebrow": "iOS 27",
+    "eyebrow": "iOS 27, a week in",
     "headline": "Not broken. [[Busy]].",
     "hideCaptions": true,
     "presenter": {
@@ -40,7 +40,7 @@
       "kind": "gauge",
       "from": 84,
       "to": 46,
-      "secs": 9.0,
+      "secs": 12.0,
       "note": "SINCE THE UPDATE",
       "label": "same phone, same day",
       "h": 620
@@ -55,24 +55,23 @@
      {
       "do": "pill",
       "target": "headline",
-      "on": "one screen that tells"
+      "on": "really doing to your battery"
      }
     ]
    }
   },
   {
-   "start_phrase": "Start with what's happening",
+   "start_phrase": "Start with what Apple says",
    "tier": "official",
    "asset_id": "apple-drain-para",
-   "line": "Start with what's happening. Apple's own support page says that after an update, certain tasks keep running in the background, and those tasks affect battery life and thermal performance. The phone isn't broken. It's busy.",
+   "line": "Start with what Apple says, because it's the one part of this story that isn't guesswork. On its support page about a battery draining too quickly, Apple writes that even though you can use your device immediately after an update, certain tasks related to the update keep running in the background, and that those tasks can affect battery life and thermal performance. So your phone isn't broken, it's busy, and if it has been running warm as well, that's the same thing showing up in a different way.",
    "needs": [
-    "Apple's support page",
-    "background tasks"
+    "Apple's support page"
    ],
    "scene": {
     "type": "slide",
-    "eyebrow": "Chapter 1 \u00b7 What's happening",
-    "headline": "Apple wrote it down",
+    "eyebrow": "Apple's own words",
+    "headline": "It's written down",
     "hideCaptions": true,
     "blocks": [
      {
@@ -81,36 +80,36 @@
       "src": "assets/ios27-battery-longform/ui/apple-drain-para.png",
       "width": 1170,
       "height": 1992,
-      "h": 820
+      "h": 840
      }
     ],
     "moves": [
      {
       "do": "focus",
       "target": "sc",
-      "on": "certain tasks keep running",
+      "on": "certain tasks related",
       "rect": [
        40,
        420,
        1090,
-       640
+       620
       ]
      }
     ]
    }
   },
   {
-   "start_phrase": "And Apple names the work",
+   "start_phrase": "Apple does name the work",
    "tier": "official",
    "asset_id": null,
-   "line": "And Apple names the work. It's indexing your files for search, downloading new assets, and updating your apps.",
+   "line": "Apple does name the work, too. Your phone is indexing your files so that search can find them, downloading new assets, and updating your apps, and none of that is visible while you're using it. Which is exactly why your battery seems to be draining for no reason: the reason is real, it's just happening somewhere you can't see.",
    "needs": [
     "the three jobs"
    ],
    "scene": {
     "type": "slide",
-    "eyebrow": "Chapter 1 \u00b7 What's happening",
-    "headline": "Three jobs, [[running now]]",
+    "eyebrow": "What it's doing",
+    "headline": "Three jobs, [[out of sight]]",
     "hideCaptions": true,
     "blocks": [
      {
@@ -128,7 +127,7 @@
      {
       "do": "pill",
       "target": "headline",
-      "on": "names the work"
+      "on": "none of that is visible"
      },
      {
       "do": "show",
@@ -138,7 +137,7 @@
      {
       "do": "show",
       "target": "s.1",
-      "on": "downloading new"
+      "on": "downloading new assets"
      },
      {
       "do": "show",
@@ -149,16 +148,16 @@
    }
   },
   {
-   "start_phrase": "On a phone that just",
+   "start_phrase": "Except that on iOS 27",
    "tier": "official",
    "asset_id": "sim-optimising",
-   "line": "On a phone that just updated to iOS 27, that work is visible. Open Settings, and above General there's a row that isn't normally there at all: Optimising Search and Siri.",
+   "line": "Except that on iOS 27, there is somewhere you can see it. If your phone is still working through that list, open Settings and look just above General, and you'll find a row that isn't normally there at all: Optimising Search and Siri. That isn't a setting you can change, it's a status, and it's your phone telling you it hasn't finished yet.",
    "needs": [
-    "the Settings row, moving"
+    "the row, live"
    ],
    "scene": {
     "type": "slide",
-    "eyebrow": "Chapter 1 \u00b7 What's happening",
+    "eyebrow": "iOS 27 only",
     "headline": "The phone [[says so itself]]",
     "hideCaptions": true,
     "blocks": [
@@ -168,7 +167,7 @@
       "src": "assets/ios27-battery-longform/ui/optimising-row.mp4",
       "width": 1206,
       "height": 2622,
-      "h": 860,
+      "h": 880,
       "device": true
      }
     ],
@@ -176,28 +175,28 @@
      {
       "do": "show",
       "target": "c",
-      "on": "Open Settings"
+      "on": "open Settings"
      },
      {
       "do": "pill",
       "target": "headline",
-      "on": "Optimising Search"
+      "on": "Optimising Search and Siri"
      }
     ]
    }
   },
   {
-   "start_phrase": "That's your phone telling",
-   "tier": "official",
+   "start_phrase": "I recorded that in Apple's",
+   "tier": "single",
    "asset_id": "sim-settings",
-   "line": "That's your phone telling you it's still rebuilding, in Apple's own words, on Apple's own screen.",
+   "line": "I recorded that in Apple's own iOS 27 simulator, and within the hour, once the indexing finished, the row was simply gone, which is the clearest evidence you'll get that this work ends.",
    "needs": [
-    "the row, held and framed"
+    "the row, then gone"
    ],
    "scene": {
     "type": "slide",
-    "eyebrow": "Chapter 1 \u00b7 What's happening",
-    "headline": "Above General, [[only while it works]]",
+    "eyebrow": "One hour later",
+    "headline": "Then it [[disappears]]",
     "hideCaptions": true,
     "blocks": [
      {
@@ -206,7 +205,7 @@
       "src": "assets/ios27-battery-longform/ui/optimising-row-still.png",
       "width": 1206,
       "height": 2622,
-      "h": 860,
+      "h": 880,
       "device": true
      }
     ],
@@ -214,7 +213,7 @@
      {
       "do": "focus",
       "target": "sc",
-      "on": "still rebuilding",
+      "on": "within the hour",
       "rect": [
        60,
        880,
@@ -223,25 +222,30 @@
       ]
      },
      {
+      "do": "state",
+      "target": "sc",
+      "on": "simply gone",
+      "src": "assets/ios27-battery-longform/ui/settings-after-still.png"
+     },
+     {
       "do": "pill",
       "target": "headline",
-      "on": "Apple's own screen"
+      "on": "this work ends"
      }
     ]
    }
   },
   {
-   "start_phrase": "The drain is real",
+   "start_phrase": "That brings up the question",
    "tier": "official",
    "asset_id": null,
-   "line": "The drain is real, then, and the cause is documented. Which leaves the question everyone actually wants answered: how long does it last. Apple, though, never gives you a deadline. Not four days, not seventy-two hours, no hour count anywhere on that page. Its actual words are, wait a few days, then check again.",
+   "line": "That brings up the question everyone actually wants answered, which is how long it lasts. Apple's answer is one sentence, and there is no number anywhere in it. If you notice that your battery life has decreased after updating your device, it says, wait a few days and then check again. Not four days. Not seventy-two hours. A few days.",
    "needs": [
-    "no deadline",
-    "wait a few days"
+    "no number"
    ],
    "scene": {
     "type": "slide",
-    "eyebrow": "Chapter 2 \u00b7 How long",
+    "eyebrow": "The missing number",
     "headline": "Apple never starts a [[clock]]",
     "hideCaptions": true,
     "blocks": [
@@ -260,7 +264,7 @@
         "tone": "cost"
        },
        {
-        "k": "\u201cWait a few days\u201d",
+        "k": "\u201cA few days\u201d",
         "v": "Apple",
         "tone": "free"
        }
@@ -271,7 +275,7 @@
      {
       "do": "pill",
       "target": "headline",
-      "on": "never gives you a deadline"
+      "on": "no number anywhere"
      },
      {
       "do": "show",
@@ -281,7 +285,7 @@
      {
       "do": "strike",
       "target": "r.0",
-      "on": "not seventy-two"
+      "on": "Not seventy-two"
      },
      {
       "do": "show",
@@ -291,33 +295,27 @@
      {
       "do": "strike",
       "target": "r.1",
-      "on": "no hour count"
+      "on": "A few days"
      },
      {
       "do": "show",
       "target": "r.2",
-      "on": "wait a few days"
-     },
-     {
-      "do": "highlight",
-      "target": "r.2",
-      "on": "then check again"
+      "on": "few days"
      }
     ]
    }
   },
   {
-   "start_phrase": "Apple's silence",
+   "start_phrase": "Everyone else has been",
    "tier": "multi",
    "asset_id": "macobserver-para",
-   "line": "Apple's silence, though, has been filled in by everyone else, and they have been very specific. Three to five days. About four days. Twenty-four to forty-eight hours. None of those came from Apple. Most trace back to nothing you can follow. One of the few outlets that went looking for a figure wrote that every confident number circulating that week came from somewhere other than Apple.",
+   "line": "Everyone else has been far more specific. Three to five days. About four days. Twenty-four to forty-eight hours. I tried tracing those back, and they don't lead anywhere: no test, no measurement, no Apple page behind any of them. One of the few outlets that went looking said it plainly, that every confident number circulating that week came from somewhere other than Apple.",
    "needs": [
-    "the untraceable numbers",
-    "the audit quote"
+    "untraceable numbers"
    ],
    "scene": {
     "type": "slide",
-    "eyebrow": "Chapter 2 \u00b7 How long",
+    "eyebrow": "Where the numbers came from",
     "headline": "Very specific. [[From nowhere]].",
     "hideCaptions": true,
     "blocks": [
@@ -327,14 +325,14 @@
       "src": "assets/ios27-battery-longform/ui/macobserver-para.png",
       "width": 1170,
       "height": 1992,
-      "h": 800
+      "h": 820
      }
     ],
     "moves": [
      {
       "do": "pill",
       "target": "headline",
-      "on": "None of those came from Apple"
+      "on": "don't lead anywhere"
      },
      {
       "do": "focus",
@@ -351,17 +349,17 @@
    }
   },
   {
-   "start_phrase": "And if the whole thing",
+   "start_phrase": "And if this feels familiar",
    "tier": "multi",
    "asset_id": null,
-   "line": "And if the whole thing feels familiar, it should. Same week last September, iOS 26 drained batteries and got the same sentence from Apple. The year before that, iOS 18. This is the third September in a row.",
+   "line": "And if this feels familiar, it should, because it runs on a schedule. Same week last September, iOS 26 drained batteries and got that same sentence from Apple. The year before that, iOS 18. You are watching the third September in a row of it.",
    "needs": [
     "three Septembers"
    ],
    "scene": {
     "type": "slide",
-    "eyebrow": "Chapter 2 \u00b7 How long",
-    "headline": "Third September, [[same story]]",
+    "eyebrow": "Every September",
+    "headline": "Third year, [[same story]]",
     "hideCaptions": true,
     "blocks": [
      {
@@ -390,12 +388,12 @@
      {
       "do": "show",
       "target": "y.0",
-      "on": "feels familiar"
+      "on": "runs on a schedule"
      },
      {
       "do": "show",
       "target": "y.1",
-      "on": "last September"
+      "on": "Same week last September"
      },
      {
       "do": "highlight",
@@ -410,22 +408,22 @@
      {
       "do": "pill",
       "target": "headline",
-      "on": "third September"
+      "on": "third September in a row"
      }
     ]
    }
   },
   {
-   "start_phrase": "Which brings me",
+   "start_phrase": "So here's the screen",
    "tier": "official",
    "asset_id": "apple-insight",
-   "line": "Which brings me to what actually helps, and the screen I promised you. Open Settings, then Battery. If you see a note saying a recent software update is finishing in the background, that's your answer. It's the update, it isn't your battery, and you can stop reading forum threads about it.",
+   "line": "So here's the screen I promised you. Open Settings, then Battery, and look near the top for a note saying that a recent software update is finishing in the background. If that note is there, you have your answer: it's the update, it isn't your battery, and you can close the forum tabs.",
    "needs": [
     "the Battery note"
    ],
    "scene": {
     "type": "slide",
-    "eyebrow": "Chapter 3 \u00b7 What helps",
+    "eyebrow": "The screen to check",
     "headline": "Settings, then [[Battery]]",
     "hideCaptions": true,
     "blocks": [
@@ -435,7 +433,7 @@
       "src": "assets/ios27-battery-longform/ui/apple-insight.png",
       "width": 1170,
       "height": 1992,
-      "h": 820
+      "h": 840
      }
     ],
     "moves": [
@@ -459,16 +457,16 @@
    }
   },
   {
-   "start_phrase": "Second, what doesn't help",
+   "start_phrase": "What won't help",
    "tier": "single",
    "asset_id": "federighi-para",
-   "line": "Second, what doesn't help: swiping away all your apps. Back in 2017, a customer emailed Apple's software chief to ask whether he force quits apps, and whether doing it preserves battery life. His reply, published by Daring Fireball, was two words: no and no. iOS freezes apps you're not using. Killing them means the phone has to load them from scratch next time, which costs more power, not less.",
+   "line": "What won't help is the thing most people try first, which is swiping every app out of the switcher. Back in 2017, a customer emailed Apple's software chief to ask whether he force quits apps, and whether doing it preserves battery life, and his reply, published by Daring Fireball, was two words: no and no. iOS freezes the apps you aren't using, so killing them just means the phone has to load them again from scratch, which costs more power rather than less.",
    "needs": [
-    "the Federighi reply"
+    "the reply"
    ],
    "scene": {
     "type": "slide",
-    "eyebrow": "Chapter 3 \u00b7 What helps",
+    "eyebrow": "The habit that doesn't help",
     "headline": "Swiping apps away: [[no and no]]",
     "hideCaptions": true,
     "blocks": [
@@ -478,7 +476,7 @@
       "src": "assets/ios27-battery-longform/ui/federighi-para.png",
       "width": 1170,
       "height": 1992,
-      "h": 800
+      "h": 820
      }
     ],
     "moves": [
@@ -502,17 +500,17 @@
    }
   },
   {
-   "start_phrase": "And your battery health",
+   "start_phrase": "Your battery health is fine",
    "tier": "official",
    "asset_id": "apple-cycles",
-   "line": "And your battery health is fine. Maximum capacity is a chemical measure, counted in full charge cycles: Apple rates an iPhone 14 or earlier to keep eighty percent of its capacity after five hundred full cycles, and an iPhone 15 or later after a thousand. One rough week cannot move a number defined like that.",
+   "line": "Your battery health is fine as well, and you can settle that one with arithmetic. Maximum capacity is counted in full charge cycles: Apple rates an iPhone 14 or earlier to keep eighty percent of its capacity after five hundred of them, and an iPhone 15 or later after a thousand. One rough week cannot move a number defined across hundreds of cycles.",
    "needs": [
     "cycle ratings"
    ],
    "scene": {
     "type": "slide",
-    "eyebrow": "Chapter 3 \u00b7 What helps",
-    "headline": "Measured in [[charge cycles]]",
+    "eyebrow": "Battery health",
+    "headline": "Counted in [[charge cycles]]",
     "hideCaptions": true,
     "blocks": [
      {
@@ -520,7 +518,7 @@
       "kind": "gauge",
       "from": 100,
       "label": "maximum capacity doesn't move in a week",
-      "h": 380
+      "h": 360
      },
      {
       "id": "sc",
@@ -528,19 +526,19 @@
       "src": "assets/ios27-battery-longform/ui/apple-cycles.png",
       "width": 1170,
       "height": 1992,
-      "h": 420
+      "h": 440
      }
     ],
     "moves": [
      {
       "do": "pill",
       "target": "headline",
-      "on": "charge cycles"
+      "on": "full charge cycles"
      },
      {
       "do": "focus",
       "target": "sc",
-      "on": "five hundred full cycles",
+      "on": "five hundred of them",
       "rect": [
        40,
        300,
@@ -552,14 +550,14 @@
    }
   },
   {
-   "start_phrase": "Check that screen",
+   "start_phrase": "So check that one screen",
    "tier": "official",
    "asset_id": null,
    "cta": true,
-   "line": "Check that screen, leave your apps alone, and look again in three days. If the update note is gone and the battery is still draining, that's when something is genuinely wrong and worth taking further. If you're in the middle of this right now, drop your iPhone model below, and how many days it took to settle. When I went looking for anyone who had actually measured this drain, in September 2026, I found no benchmark, no screen-on-time test, and no figure from any outlet. That absence is half the problem.",
+   "line": "So check that one screen, leave the app switcher alone, and look again in three days. If the update note has gone and the battery is still draining, that's the point where it's worth taking further. And if you're in the middle of this, drop your iPhone model in the comments with how many days yours took to settle, because when I went looking for anyone who had measured this drain, in September 2026, I couldn't find a single benchmark or screen-on-time test from any outlet. That absence is half the problem.",
    "needs": [
-    "the three-day re-check",
-    "the comment ask"
+    "the re-check",
+    "the ask"
    ],
    "scene": {
     "type": "slide",
