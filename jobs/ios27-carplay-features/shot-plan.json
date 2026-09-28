@@ -1,6 +1,756 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
-  "format": "top5",
-  "shots": []
+ "format": "top5",
+ "music": false,
+ "noMusicReason": "list of on-screen car UI; the voice carries every label and a bed competes with it (standing no-music default)",
+ "facePlan": "none",
+ "audio": "assets/ios27-carplay-features/vo.mp3",
+ "slideSfx": false,
+ "allowLong": true,
+ "allowLongReason": "five items plus the one that does not work yet; each item carries its how/needs line, which is the value \u2014 cutting to 48s drops a how-to or a requirement",
+ "emphasis": [
+  "five",
+  "14",
+  "Drag",
+  "Siri",
+  "15 Pro",
+  "dependable",
+  "parked",
+  "none",
+  "Share"
+ ],
+ "caption_corrections": {
+  "way wallpapers": "wave wallpapers",
+  "liquid glass": "Liquid Glass",
+  "car maker": "carmaker",
+  "audio book": "audiobook",
+  "settings": "Settings",
+  "under wallpaper": "under Wallpaper"
+ },
+ "shots": [
+  {
+   "start_phrase": "iOS 27 gave CarPlay",
+   "line": "iOS 27 gave CarPlay five new features.",
+   "asset_id": "cp-wallpaper-a",
+   "tier": "reliable",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "iOS 27 \u00b7 CarPlay",
+    "headline": "[[5]] new CarPlay features",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-carplay-features/cp-wallpaper-a.mp4",
+      "width": 1100,
+      "height": 550,
+      "h": 540,
+      "from": 0,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "five new"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 1.63,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Four work in your",
+   "line": "Four work in your car today. One, no car on the road can use yet.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The catch",
+    "headline": "One needs your [[carmaker]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Four",
+        "v": "Work in your car today",
+        "tone": "free"
+       },
+       {
+        "k": "One",
+        "v": "No car can use it yet",
+        "tone": "cost"
+       }
+      ]
+     },
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-carplay-features/cp-wallpaper-a.mp4",
+      "width": 1100,
+      "height": 550,
+      "h": 400,
+      "from": 3.3,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "Four work"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "One, no car"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "use yet"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 1.55,
+      "vol": 0.35
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "First, the look",
+   "line": "First, the look: fourteen new wave wallpapers matching iOS 27,",
+   "asset_id": "cp-wallpaper-a",
+   "tier": "reliable",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "1 \u00b7 The look",
+    "headline": "[[14]] new wave wallpapers",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-carplay-features/cp-wallpaper-a.mp4",
+      "width": 1100,
+      "height": 550,
+      "h": 560,
+      "from": 6.0,
+      "device": false
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Matching iOS 27"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "14 new"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "matching iOS"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx2/whooshes-01.mp3",
+      "at": 0.0,
+      "vol": 0.2
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "and app icons redrawn",
+   "line": "and app icons redrawn in Liquid Glass.",
+   "asset_id": "cp-wallpaper-light",
+   "tier": "reliable",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "1 \u00b7 The look",
+    "headline": "Icons redrawn in [[Liquid Glass]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-carplay-features/cp-wallpaper-light.mp4",
+      "width": 1100,
+      "height": 550,
+      "h": 560,
+      "from": 9.0,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "liquid glass"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Pick one in CarPlay's",
+   "line": "Pick one in CarPlay's own Settings, under Wallpaper.",
+   "asset_id": "cp-wallpaper-a",
+   "tier": "reliable",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "On the car's screen",
+    "headline": "Settings \u203a [[Wallpaper]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-carplay-features/cp-wallpaper-a.mp4",
+      "width": 1100,
+      "height": 550,
+      "h": 560,
+      "from": 2.6,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "under wallpaper"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Second, you can finally",
+   "line": "Second, you can finally drag the progress bar",
+   "asset_id": "cp-scrub",
+   "tier": "reliable",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "2 \u00b7 Now Playing",
+    "headline": "[[Drag]] to any point",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-carplay-features/cp-scrub.mp4",
+      "width": 1200,
+      "height": 800,
+      "h": 640,
+      "from": 0.6,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "drag the"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "at": 0.5,
+      "vol": 0.22
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "to any point in",
+   "line": "to any point in a podcast or audiobook, instead of tapping skip.",
+   "asset_id": "cp-scrub",
+   "tier": "reliable",
+   "needs": [],
+   "scene": {
+    "type": "slide",
+    "eyebrow": "2 \u00b7 Now Playing",
+    "headline": "Not just tapping [[skip]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-carplay-features/cp-scrub.mp4",
+      "width": 1200,
+      "height": 800,
+      "h": 640,
+      "from": 3.4,
+      "device": false
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Podcasts and audiobooks too"
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "t",
+      "on": "podcast or"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "tapping skip"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Third, Siri AI rides",
+   "line": "Third, Siri AI rides along.",
+   "asset_id": "cp-siri-keynote",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "3 \u00b7 Siri",
+    "headline": "[[Siri AI]] in the car",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-carplay-features/cp-siri-keynote.mp4",
+      "width": 1260,
+      "height": 630,
+      "h": 460,
+      "from": 0.0,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Siri AI"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "at": 0.9,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Ask it which trailhead",
+   "line": "Ask it which trailhead your friend suggested, then keep talking.",
+   "asset_id": "cp-siri-convos",
+   "tier": "reliable",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "3 \u00b7 Siri",
+    "headline": "Ask, then [[keep talking]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-carplay-features/cp-siri-convos.mp4",
+      "width": 900,
+      "height": 600,
+      "h": 610,
+      "from": 1.4,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "keep talking"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "It needs an iPhone",
+   "line": "It needs an iPhone 15 Pro or later, and there may be a waitlist.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "3 \u00b7 Siri \u00b7 the fine print",
+    "headline": "iPhone [[15 Pro]] or later",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Needs",
+        "v": "iPhone 15 Pro or later",
+        "tone": "plain"
+       },
+       {
+        "k": "Access",
+        "v": "There may be a waitlist",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "It needs"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "15 Pro"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "may be"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 2.45,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Fourth, Apple says wireless",
+   "line": "Fourth, Apple says wireless CarPlay is more dependable now,",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "stage",
+    "set": "dark",
+    "layout": "full",
+    "hideCaptions": false,
+    "elements": [
+     {
+      "id": "eyebrow",
+      "kind": "text",
+      "text": "4 \u00b7 The connection",
+      "x": 0.5,
+      "y": 0.12,
+      "w": 0.8,
+      "size": 0.45
+     },
+     {
+      "id": "phone",
+      "kind": "card",
+      "title": "iPhone",
+      "lines": [
+       "iOS 27"
+      ],
+      "tone": "dark",
+      "x": 0.24,
+      "y": 0.38,
+      "w": 0.34
+     },
+     {
+      "id": "car",
+      "kind": "card",
+      "title": "CarPlay",
+      "lines": [
+       "Wireless"
+      ],
+      "tone": "accent",
+      "x": 0.76,
+      "y": 0.38,
+      "w": 0.34
+     },
+     {
+      "id": "claim",
+      "kind": "text",
+      "text": "More dependable",
+      "x": 0.5,
+      "y": 0.62,
+      "w": 0.8,
+      "size": 0.9
+     }
+    ],
+    "moves": [
+     {
+      "do": "arrive",
+      "target": "eyebrow",
+      "on": "Fourth",
+      "dir": "pop"
+     },
+     {
+      "do": "arrive",
+      "target": "phone",
+      "on": "Apple says",
+      "dir": "left"
+     },
+     {
+      "do": "arrive",
+      "target": "car",
+      "on": "wireless",
+      "dir": "right"
+     },
+     {
+      "do": "connect",
+      "from": "phone",
+      "to": "car",
+      "on": "CarPlay is",
+      "repeat": true,
+      "arrow": true
+     },
+     {
+      "do": "arrive",
+      "target": "claim",
+      "on": "dependable",
+      "dir": "pop"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx-action/lock.mp3",
+      "at": 2.58,
+      "vol": 0.35
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "with sharper GPS heading",
+   "line": "with sharper GPS heading, so the map knows which way you're facing.",
+   "asset_id": "cp-siri-keynote",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "4 \u00b7 The connection",
+    "headline": "Sharper [[GPS heading]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-carplay-features/cp-siri-keynote.mp4",
+      "width": 1260,
+      "height": 630,
+      "h": 460,
+      "from": 0.0,
+      "device": false
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "The map knows which way you're facing"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "GPS heading"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "map knows"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Which leaves number five",
+   "line": "Which leaves number five, the one I warned you about:",
+   "asset_id": "cp-video-tab",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "5 \u00b7 The one you can't use",
+    "headline": "[[Video]] apps in CarPlay",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-carplay-features/cp-video-tab.mp4",
+      "width": 1316,
+      "height": 740,
+      "h": 520,
+      "from": 4.0,
+      "device": false
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "The one no car can use yet"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "number five"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "warned you"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Video apps only while",
+   "line": "video apps, only while you're parked.",
+   "asset_id": "cp-video-play",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "5 \u00b7 Video",
+    "headline": "Only when [[parked]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-carplay-features/cp-video-play.mp4",
+      "width": 1316,
+      "height": 740,
+      "h": 520,
+      "from": 1.0,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "parked"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Your car maker has",
+   "line": "Your carmaker has to enable it, and so far none has said it will.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "5 \u00b7 Video \u00b7 the catch",
+    "headline": "Carmakers signed up: [[none]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Who turns it on",
+        "v": "Your carmaker",
+        "tone": "plain"
+       },
+       {
+        "k": "Said they will",
+        "v": "None so far",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "car maker"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "so far"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "none has"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx2/impact-boom.mp3",
+      "at": 2.36,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Share this with whoever",
+   "line": "Share this with whoever does the driving.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "cta": true,
+    "headlineSize": "xl",
+    "eyebrow": "Share it",
+    "headline": "[[Share]] this with your driver",
+    "blocks": [
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Four to try today, one to stop looking for"
+     },
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-carplay-features/cp-wallpaper-light.mp4",
+      "width": 1100,
+      "height": 550,
+      "h": 420,
+      "from": 10.5,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Share this"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.18
+     }
+    ]
+   },
+   "needs": []
+  }
+ ],
+ "facePlanReason": "HeyGen account on Free: Avatar IV/V monthly limit reached, Avatar III output is watermarked (2026-09-28). Faceless until a clean presenter can be rendered."
 }

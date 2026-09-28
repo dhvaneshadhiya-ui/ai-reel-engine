@@ -9162,3 +9162,37 @@ Treatment history: vendor walkthrough in `screenstep` with drawn boxes/circles o
 tap, before/after support screenshots in slide `screen` blocks with focus rects, a
 withheld "First/Second/Third ?" rows card paid off by three requirement cards, orb cover.
 Next how-to: do not open on presenter circle + settings screenshot again.
+
+## 2026-09-28 — ios27-carplay-features: a top5 list built on real car screens, faceless
+
+53.2s, 16 slides, no presenter (see raw note 3), 9 hand-placed SFX (9/9 heard).
+
+- **RAW NOTE 1 — the round-ups were wrong about their headline feature.** Most iOS 27
+  CarPlay lists (and one MacRumors piece) lead with "widgets from any app". iDownloadBlog
+  documented third-party CarPlay widgets in iOS 26, MacRumors' own iOS 27 guide lists no
+  widget change, and Apple's WWDC26 session 212 calls them existing. Rule: for "new in
+  version N" lists, check the item against the N-1 how-to articles before it takes a slot.
+  The honest version became the angle: "four work today, one no car can use yet."
+- **RAW NOTE 2 — ElevenLabs v3 said "fourteen" so it reads as "forty".** Whisper small AND
+  medium (primed) both heard "Forty". A one-sentence re-take (~111 credits vs ~920 for the
+  whole read) was spliced at mid-pause cut points with a -2.2 dB match; both models then
+  heard "14". Rule: whisper every number in the VO before anything else is built on it;
+  splice a sentence rather than regenerate the read.
+- **RAW NOTE 3 — HeyGen Free: 1080p refused, then Avatar IV/V monthly limit, and
+  `avatar_iii` renders but WATERMARKED** ("HeyGen" tiled over face and body). Shipped
+  faceless (`facePlan: none`, reason recorded). Rule: on Free, do not spend time on
+  avatar_iii — check get_current_user and tell the user before the build, not after.
+- **Car screens are 3.5:1.** Fitted whole in a slide column they are ~265px tall. Crop each
+  clip to its action (the scrub bar + finger, the wallpaper grid, the Siri card) at 1.5-2.2:1
+  and let the slide `clip` block carry it. Apple's CarPlay Simulator demo crops clean of the
+  window chrome at 1316x740+302+104.
+- **Stage `stamp` does not hide the text before its word** — "More dependable" sat on screen
+  before it was said. Use `arrive` (dir pop) for a word that must land on the voice.
+- **packaging_check reads one line per field.** A multi-line caption silently drops every
+  line after the first (the AI disclosure line went missing). Keep each field on one line.
+- Caption CTA must be the video's CTA: the first draft said "Save" under a "Share" video.
+
+Treatment history: real-car creator footage (zollotech, AppleInsider) in cropped clip cards,
+Apple keynote + WWDC session demo for Siri and video, a four/one rows split as the promise,
+a phone→CarPlay connect stage for an unfilmable claim, a "who turns it on / said they will"
+rows card as the payoff. Next CarPlay/car reel: do not open on the wallpaper home screen again.
