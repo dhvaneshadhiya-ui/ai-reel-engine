@@ -1,0 +1,28 @@
+{
+  "slug": "ios27-battery-longform",
+  "topic": "iOS 27 battery drain, the long version: what the phone is actually doing after an update, how long it lasts, and what helps",
+  "details": "PILOT for the longform format (landscape 1920x1080, voice-led, screen-carried). Reuses the verified ledger from jobs/ios27-battery-drain plus NEW iOS 27 simulator captures. Deliberately short (3-4 chapters, ~3 min) to measure render time per minute and hear the voice at length before committing to a full 9-minute cut.",
+  "subject": "iOS 27 battery drain, the long version: what the phone is actually doing after an update, how long it lasts, and what helps",
+  "audience": "iPhone owners a few days into iOS 27, watching the battery fall and deciding whether to panic. They will sit through nine minutes on YouTube that they would never sit through on Reels.",
+  "platform": "both",
+  "goal": "education",
+  "core_value": "The one screen that separates 'the update is still working' from 'something is wrong', plus what the phone is doing and which popular fix is worthless.",
+  "desired_action": "Check Settings > Battery before doing anything drastic; report back in the comments.",
+  "reveal_target": "none",
+  "cta_keyword": "",
+  "target_duration": "540s",
+  "tone": "Calm, specific, reporting. Chapters, not a list. The reassurance is earned with Apple's own words, never asserted.",
+  "source_policy": "official-preferred",
+  "footage_constraints": "Landscape 1920x1080. Voice-led, screen-carried: iOS 27 SIMULATOR captures (authentic Apple UI, never narrated as 'my phone'), Apple support pages captured on mobile, our own graphics. Presenter at the open and close only.",
+  "credit_instructions": "internal",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 540,
+  "music": false,
+  "created_at": "2026-09-25T13:25:40.606889+00:00",
+  "status": "pilot \u2014 deliberately ~3 min to measure render time per minute and hear the voice at length before a full 9-minute cut"
+}

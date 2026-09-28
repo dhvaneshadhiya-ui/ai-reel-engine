@@ -1,5 +1,5 @@
 import React from "react";
-import { Easing, Img, interpolate, staticFile } from "remotion";
+import { Easing, Img, OffthreadVideo, interpolate, staticFile } from "remotion";
 
 /**
  * MOTION BLOCKS FOR SLIDES (2026-09-17).
@@ -40,6 +40,8 @@ const FONT = "Inter, -apple-system, 'SF Pro Display', sans-serif";
 
 // ---------------------------------------------------------------- screen ----
 export interface ScreenBlockProps {
+  /** draw the phone body around it — for phone UI, never for a captured web page */
+  device?: boolean;
   id: string;
   kind: "screen";
   /** source image size in px (every state shares it) */
@@ -50,8 +52,22 @@ export interface ScreenBlockProps {
   h?: number;
 }
 
-export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: number; boxW: number; C: Pal; shown: number }> = ({ b, moves, t, boxW, C, shown }) => {
+export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: number; boxW: number; C: Pal; shown: number; wide?: boolean }> = ({ b, moves, t, boxW: fullW, C, shown, wide }) => {
   const boxH = b.h ?? 720;
+  // A PHONE SHOT IN A LANDSCAPE PAGE HUGS ITS SOURCE (2026-09-25). Stretched to
+  // a 16:9 column, a 1170x1992 screenshot sat in the middle of a bordered card
+  // with two dead panels beside it. The references put the phone recording in a
+  // phone-shaped panel on the page background, so the card takes the width the
+  // source actually uses and centres itself.
+  // The test is the FRAME, not the box: a portrait page's column is already
+  // 916x760, which is "wider than tall" and briefly made every reel's screen
+  // card shrink (caught in a still, 2026-09-25).
+  const hug = Boolean(wide) && b.height / b.width > 1.2;
+  const device = Boolean(b.device);
+  const bezel = device ? Math.max(10, Math.round(boxH * 0.022)) : 0;
+  const fitW = Math.round(((boxH - bezel * 2) * b.width) / b.height);
+  const boxW = device ? Math.min(fullW, fitW + bezel * 2)
+    : hug ? Math.round(Math.min(fullW, (boxH * b.width) / b.height)) : fullW;
   const mine = moves.filter((m) => m.target === b.id && m.at !== undefined).sort((a, z) => (a.at! - z.at!));
   // camera: every focus is a rect in source px; before the first, the whole image
   const whole: [number, number, number, number] = [0, 0, b.width, b.height];
@@ -59,15 +75,18 @@ export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: 
   // A focus keeps CONTEXT around its target and never zooms past 2.4x the
   // whole-image fit: fitting a 60px crown to the box made it a blur and pushed
   // the ring outside the view as stray lines (first PairPods v2 stills).
-  const fit = Math.min(boxW / b.width, boxH / b.height);
+  const innerW = boxW - bezel * 2, innerH = boxH - bezel * 2;
+  const fit = Math.min(innerW / b.width, innerH / b.height);
   const camFor = (r: [number, number, number, number]) => {
     const whole = r[2] >= b.width && r[3] >= b.height;
-    const s = whole ? fit : Math.min(boxW / (r[2] * 1.5), boxH / (r[3] * 1.5), fit * 2.4);
+    // never SMALLER than resting: a wide rect used to zoom the image out below
+    // its own fit, which inside a device frame left black bars in the bezel.
+    const s = whole ? fit : Math.max(fit, Math.min(innerW / (r[2] * 1.5), innerH / (r[3] * 1.5), fit * 2.4));
     const cx = r[0] + r[2] / 2, cy = r[1] + r[3] / 2;
     // keep the image edge from drifting inside the box when zoomed in
-    const x = Math.min(0, Math.max(boxW - b.width * s, boxW / 2 - cx * s));
-    const y = Math.min(0, Math.max(boxH - b.height * s, boxH / 2 - cy * s));
-    return { s, x: b.width * s < boxW ? (boxW - b.width * s) / 2 : x, y: b.height * s < boxH ? (boxH - b.height * s) / 2 : y };
+    const x = Math.min(0, Math.max(innerW - b.width * s, innerW / 2 - cx * s));
+    const y = Math.min(0, Math.max(innerH - b.height * s, innerH / 2 - cy * s));
+    return { s, x: b.width * s < innerW ? (innerW - b.width * s) / 2 : x, y: b.height * s < innerH ? (innerH - b.height * s) / 2 : y };
   };
   let cam = camFor(whole);
   let prevRect = whole;
@@ -87,8 +106,15 @@ export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: 
   const layers = [{ src: b.src, o: 1 }, ...states.map((s) => ({ src: s.src!, o: ramp(t, s.at!, 0.35) }))];
   const draw = ringRect ? ramp(t, ringAt, 0.45) : 0;
   return (
-    <div style={{ position: "relative", width: boxW, height: boxH, borderRadius: 30, overflow: "hidden",
-      background: C.card, border: `2px solid ${C.line}`, opacity: shown, transform: `translateY(${Math.round((1 - shown) * 24)}px)`, flexShrink: 0 }}>
+    <div style={{ position: "relative", width: boxW, height: boxH,
+      borderRadius: device ? Math.round(boxH * 0.062) : 30, overflow: "hidden",
+      alignSelf: hug || device ? "center" : undefined, padding: bezel, boxSizing: "border-box",
+      background: device ? "#0A0A0C" : C.card,
+      border: device ? "2px solid rgba(255,255,255,0.14)" : `2px solid ${C.line}`,
+      boxShadow: device ? "0 30px 70px rgba(0,0,0,0.55)" : undefined,
+      opacity: shown, transform: `translateY(${Math.round((1 - shown) * 24)}px)`, flexShrink: 0 }}>
+      <div style={{ position: "absolute", left: bezel, top: bezel, width: innerW, height: innerH,
+        borderRadius: device ? Math.max(0, Math.round(boxH * 0.062) - bezel) : 0, overflow: "hidden", background: "#000" }}>
       <div style={{ position: "absolute", left: 0, top: 0, width: b.width, height: b.height, transformOrigin: "0 0",
         transform: `translate(${cam.x}px, ${cam.y}px) scale(${cam.s})` }}>
         {layers.map((l, i) => (
@@ -101,6 +127,7 @@ export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: 
               strokeLinecap="round" />
           </svg>
         ) : null}
+      </div>
       </div>
     </div>
   );
@@ -275,6 +302,51 @@ export const GaugeBlock: React.FC<{ b: GaugeBlockProps; moves: MoveLike[]; t: nu
         <div style={{ position: "absolute", left: 0, right: 0, top: bodyY - 68, textAlign: "center",
           font: `700 30px ${FONT}`, letterSpacing: 2, color: C.muted }}>{b.note}</div>
       ) : null}
+    </div>
+  );
+};
+
+/** CLIP — a screen RECORDING inside a page (ios27-battery-longform, 2026-09-25).
+ *  `screen` takes a still and moves a camera over it; the longform format's core
+ *  asset is a real recording of a phone doing the thing, which an <Img> cannot
+ *  decode (G35 blocks that on purpose). Same hug rule as ScreenBlock: a portrait
+ *  recording in a landscape page takes the width it uses and centres, instead of
+ *  sitting in a bordered card between two dead panels. */
+export interface ClipBlockProps {
+  id: string; kind: "clip"; src: string; width: number; height: number;
+  h?: number; from?: number;
+  /** draw the phone body around it (default true for a portrait source) */
+  device?: boolean;
+}
+
+export const ClipBlock: React.FC<{ b: ClipBlockProps; t: number; boxW: number; C: Pal; shown: number; fps: number; wide?: boolean }>
+  = ({ b, boxW: fullW, C, shown, fps, wide }) => {
+  const boxH = b.h ?? 720;
+  const portrait = b.height / b.width > 1.2;
+  const hug = Boolean(wide) && portrait;
+  // THE PHONE BODY (2026-09-25). A simulator recording is a screen with nothing
+  // around it, so on a page it read as a rounded panel rather than a phone. The
+  // references float the recording in a device; the bezel is drawn here rather
+  // than baked into the capture, so one recording serves any layout.
+  const device = b.device ?? portrait;
+  const bezel = device ? Math.max(10, Math.round(boxH * 0.022)) : 0;
+  const screenH = boxH - bezel * 2;
+  const screenW = Math.round((screenH * b.width) / b.height);
+  const boxW = hug || device ? Math.min(fullW, screenW + bezel * 2) : fullW;
+  const radius = device ? Math.round(boxH * 0.062) : 30;
+  return (
+    <div style={{ position: "relative", width: boxW, height: boxH, borderRadius: radius,
+      alignSelf: hug || device ? "center" : undefined, flexShrink: 0,
+      background: device ? "#0A0A0C" : C.card,
+      padding: bezel, boxSizing: "border-box",
+      border: device ? "2px solid rgba(255,255,255,0.14)" : `2px solid ${C.line}`,
+      boxShadow: device ? "0 30px 70px rgba(0,0,0,0.55)" : undefined,
+      opacity: shown, transform: `translateY(${Math.round((1 - shown) * 24)}px)` }}>
+      <div style={{ width: "100%", height: "100%", borderRadius: Math.max(0, radius - bezel),
+        overflow: "hidden", background: "#000" }}>
+        <OffthreadVideo src={staticFile(b.src)} muted startFrom={Math.round((b.from ?? 0) * fps)}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      </div>
     </div>
   );
 };

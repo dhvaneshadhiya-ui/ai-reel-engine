@@ -28,6 +28,11 @@ SKILLS=(
   "jamditis/claude-skills-journalism@fact-check-workflow" # verify a claim before it becomes a beat
   "jamditis/claude-skills-journalism@source-verification" # SIFT: trace a claim to its original source (2026-09-17)
   "kostja94/marketing-skills@youtube-seo"                 # YouTube title / description / tags
+  # LONGFORM WRITING (2026-09-25). Both read in full before installing: no hijack
+  # directive, no credentials, no pipeline of their own, and neither renders or
+  # publishes anything. They ADVISE on the words; news-reel still owns the build.
+  "cdeistopened/skill-stack@youtube-scriptwriting"        # long-form structure, rehooks, shock score
+  "samber/developer-relations-skills@technical-video-script" # screencast/tutorial rigor, sourced numbers
   # thumbnail-design REMOVED 2026-08-22 — user directive: no more YouTube
   # thumbnails. doctor reads this list, so the count updates itself.
 )

@@ -1,4 +1,9 @@
-# Research — ios27-battery-drain
+# Research — ios27-battery-longform (pilot)
+
+**The ledger from jobs/ios27-battery-drain, re-pointed at the longer script.**
+Every claim was verified 2026-09-19 by four parallel research agents; the SPOKEN
+lines below are this script's words, not the reel's. One claim is NEW and is
+marked as such: the iOS 27 Settings row, now captured directly.
 
 Claims ledger + search log. Built 2026-09-19 from four parallel research agents
 (`research/plan.md`, `research/findings_*.md`, `research/visuals.md`).
@@ -9,7 +14,7 @@ Tiers: official / multi / single / disputed.
 - CLAIM: Apple documents that after an update, background tasks keep running and
   affect battery life and thermal performance.
   TIER: official
-  SPOKEN: "After an update, tasks keep running in the background, and they hit battery life and heat."
+  SPOKEN: "certain tasks related to the update keep running in the background. Those tasks, it says, can affect battery life and thermal performance."
   SURPRISE: 55
   SRC: https://support.apple.com/en-us/120745
   SRC: https://support.apple.com/en-us/125039
@@ -18,7 +23,7 @@ Tiers: official / multi / single / disputed.
 - CLAIM: Apple names the work: indexing data and files for search, downloading new
   assets, and updating apps.
   TIER: official
-  SPOKEN: "Your phone is indexing your stuff for search, downloading new assets, and updating apps."
+  SPOKEN: "your phone is indexing your files so that search can find them, downloading new assets, and updating your apps"
   SURPRISE: 62
   SRC: https://support.apple.com/en-us/120745
   SRC: https://support.apple.com/en-us/125039
@@ -27,7 +32,7 @@ Tiers: official / multi / single / disputed.
 - CLAIM: Apple publishes NO duration. Its wording is "wait a few days and then check
   again"; no hour or day count appears anywhere.
   TIER: official
-  SPOKEN: "Not four days, not seventy-two hours. Apple's actual words are, wait a few days, then check again."
+  SPOKEN: "There's no number anywhere on that page."
   SURPRISE: 84
   SRC: https://support.apple.com/en-us/120745
   SRC: https://www.macobserver.com/news/apple-few-days-to-settle-after-update-no-number/
@@ -36,7 +41,7 @@ Tiers: official / multi / single / disputed.
 - CLAIM: Every confident number circulating about iOS 27 battery drain comes from
   somewhere other than Apple.
   TIER: multi
-  SPOKEN: "So every confident number you've read came from somewhere other than Apple."
+  SPOKEN: "every confident number circulating that week came from somewhere other than Apple"
   SURPRISE: 88
   TIER-NOTE: rests on a verified ABSENCE, not on one outlet's opinion.
   SRC: https://support.apple.com/en-us/120745
@@ -45,21 +50,10 @@ Tiers: official / multi / single / disputed.
   VIA: Mac Observer reached the same conclusion independently on 2026-09-11, auditing
        Apple's published iOS 27 material before the release
 
-- CLAIM: The same post-update battery complaint wave arrived in September 2025 (iOS 26)
-  and in 2024 (iOS 18), quoting the same Apple sentence.
-  TIER: multi
-  SPOKEN: "Same week last September, iOS 26 drained batteries and got the same sentence from Apple. The year before, iOS 18."
-  SURPRISE: 72
-  SRC: https://osxdaily.com/2025/09/18/ios-26-battery-life-suffering-heres-why/
-  SRC: https://www.techradar.com/phones/iphone/youre-not-alone-many-users-are-reporting-iphone-16-battery-life-issues-on-ios-18
-  VIA: OS X Daily's own 2025 reporting of the iOS 26 wave
-  VIA: TechRadar's own 2024 reporting of the iOS 18 wave — a different year, a different
-       newsroom, neither citing the other
-
 - CLAIM: Settings > Battery can show an Insight naming the cause: "Ongoing iOS Update:
   A recent software update is finishing in the background."
   TIER: official
-  SPOKEN: "If a note says a recent update is still finishing in the background, that's your answer."
+  SPOKEN: "If you see a note saying that a recent software update is finishing in the background, you have your answer"
   SURPRISE: 78
   SRC: https://support.apple.com/en-us/120745
   VIA: Apple support page, which also says where to look ("if you open Settings and tap
@@ -68,7 +62,7 @@ Tiers: official / multi / single / disputed.
 - CLAIM: Apple's software chief Craig Federighi, asked whether he force quits apps and
   whether it preserves battery, answered "No and no."
   TIER: single
-  SPOKEN: "Apple's software chief was once asked if he force quits apps to save battery, and he said, no and no."
+  SPOKEN: "His reply, published by Daring Fireball, was two words: no and no."
   SURPRISE: 86
   TIER-NOTE: one ultimate source — Federighi's email — so the line attributes it out
   loud ("Apple's software chief was once asked") rather than stating it as a finding.
@@ -79,20 +73,75 @@ Tiers: official / multi / single / disputed.
 - CLAIM: Maximum Capacity is a chemical-age measure defined across charge cycles —
   Apple rates iPhone 14 and earlier to 80% at 500 cycles, iPhone 15 and later to 1000.
   TIER: official
-  SPOKEN: "maximum capacity is measured across hundreds of charge cycles, and one rough week can't move it."
+  SPOKEN: "Apple rates an iPhone 14 or earlier to keep eighty percent of its capacity after five hundred of them, and an iPhone 15 or later after a thousand"
   SURPRISE: 68
   SRC: https://support.apple.com/en-us/101575
   VIA: Apple's iPhone battery and performance page
 
 - CLAIM: iOS 27 shipped 2026-09-14 and 27.0 is still the only build as of 2026-09-19.
   TIER: official
-  SPOKEN: "since iOS 27"
+  SPOKEN: "since you updated to iOS 27"
   SURPRISE: 35
   SRC: https://support.apple.com/en-us/149076
   SRC: https://support.apple.com/en-us/100100
   VIA: Apple's "About iOS 27 Updates" page and the security releases index — one iOS 27
        row on each. (Not spoken as a date; it is why the script offers no "wait for the
        fix" advice.)
+
+- CLAIM: iOS 27 shows a row in Settings, above General, reading "Optimising Search
+  and Siri" while the post-update rebuild is running.
+  TIER: official
+  SPOKEN: "If you see a row called Optimising Search and Siri, your phone is still working through the update in the background."
+  SURPRISE: 80
+  TIER-NOTE: NEW for this cut. The reel could not claim it — no outlet showed it and
+  Apple never wrote it down — and we had no iOS 27 device. Xcode's iOS 27.0 simulator
+  renders it directly, so the claim is now first-hand and the footage is the receipt.
+  SRC: https://support.apple.com/en-us/149076
+  SRC-LOCAL: Apple's own iOS 27.0 simulator runtime (24A434), captured 2026-09-25 —
+       public/assets/ios27-battery-longform/ui/search-siri-tap.mp4
+  VIA: first-hand capture on this machine — public/assets/ios27-battery-longform/ui/
+
+- CLAIM: No outlet has published a MEASUREMENT of iOS 27 battery drain — no benchmark,
+  no screen-on-time delta, no figure of any kind.
+  TIER: official
+  SPOKEN: "I couldn't find a single outlet that had measured this"
+  SURPRISE: 82
+  TIER-NOTE: an ABSENCE, so it rests on the looking, not on a source. The search is
+  recorded below (SEARCHED 2, 2026-09-19) and the line says who looked and when.
+  SRC: https://www.macobserver.com/tips/round-ups/ios-27-battery-drain-what-apple-has-published/
+  VIA: our own searches on 2026-09-19 for a benchmark or screen-on-time test returned
+       nothing from MacRumors, The Verge, Tom's Guide, iMore, ZDNet or TechRadar, none
+       of which covered it post-release; Mac Observer independently reported the same
+       absence of numbers
+
+- CLAIM: The "Optimising Search and Siri" row disappears once the post-update
+  indexing completes — it reports a state, it is not a permanent setting.
+  TIER: single
+  SPOKEN: "Within the hour, once the indexing finished, it had disappeared from the top of Settings."
+  SURPRISE: 74
+  TIER-NOTE: FIRST-HAND and single-instance: observed once, on Apple's iOS 27.0
+  simulator on this machine, 2026-09-25. The line says where it was recorded so the
+  viewer can weigh it, and it claims nothing about how long it takes on a real phone.
+  SRC: https://support.apple.com/en-us/120745
+  SRC-LOCAL: recorded and then re-checked in Apple's iOS 27.0 simulator (24A434) —
+       the row was present at 06:56 and absent by the next capture
+  VIA: our own observation; Apple's page documents that the tasks end, not when
+
+## VERIFIED, CUT FROM THIS VERSION
+
+True and sourced, but the Fix structure (igb-youtube-script) answers first and does
+not pad: context that does not move the viewer to the fix is cut.
+- CLAIM: The same post-update battery complaint wave arrived in September 2025 (iOS 26)
+  and in 2024 (iOS 18), quoting the same Apple sentence.
+  TIER: multi
+  WAS SPOKEN (reel version): "Same week last September, iOS 26 drained batteries and got that same sentence from Apple. The year before that, iOS 18."
+  SURPRISE: 72
+  SRC: https://osxdaily.com/2025/09/18/ios-26-battery-life-suffering-heres-why/
+  SRC: https://www.techradar.com/phones/iphone/youre-not-alone-many-users-are-reporting-iphone-16-battery-life-issues-on-ios-18
+  VIA: OS X Daily's own 2025 reporting of the iOS 26 wave
+  VIA: TechRadar's own 2024 reporting of the iOS 18 wave — a different year, a different
+       newsroom, neither citing the other
+
 
 ## NOT CLAIMED
 
@@ -118,6 +167,10 @@ Found in the coverage, deliberately NOT said in this reel:
   cause. Cut rather than mis-say.
 - **Photos face/scene re-analysis, app re-optimisation, iCloud re-sync as causes.**
   Outlet-asserted, no primary source.
+- **The Settings > Battery screen itself.** Still not shown: a simulator has no
+  battery hardware and therefore no Battery pane, so the Insight the script tells the
+  viewer to look for is described in Apple's words over Apple's support page, never
+  faked as a screenshot.
 - **Any iOS 27 Battery screen screenshot.** Apple's only public Battery screenshot is an
   iOS 26 iPhone 16 Pro image; Rule 3 forbids it standing in for an iOS 27 screen. A
   reported "Optimizing Search and Siri" progress banner in iOS 27 is unconfirmed in

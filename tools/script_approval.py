@@ -384,7 +384,14 @@ def cmd_propose(slug: str) -> None:
             if _v:
                 fmt = _v
                 break
-    band_lo, band_hi = FORMATS.get(fmt, FORMATS["news"])["runtime"]
+    _prof = FORMATS.get(fmt, FORMATS["news"])
+    # a longform plan declares its TYPE (fix / howto / explainer), and each type has
+    # its own band in the Carousel Playbook — the same lookup G02 does at build time
+    try:
+        _type = json.loads((ROOT / "jobs" / slug / "shot-plan.json").read_text()).get("type")
+    except Exception:                                          # noqa: BLE001
+        _type = None
+    band_lo, band_hi = (_prof.get("type_runtime") or {}).get(_type, _prof["runtime"])
     # A REEL MAY RUN AT ITS OWN SPEED, AND THEN THIS BAND IS FOR THE WRONG VOICE.
     # WPS_MIN/MAX were measured at the locked 1.05. A reel with a per-reel speed
     # override delivers at a different rate — 1.20 measured 3.48 wps here, not
