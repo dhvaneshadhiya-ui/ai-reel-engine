@@ -1,0 +1,1938 @@
+{
+  "id": "chatgpt-plugins",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "utility",
+  "audio": "assets/chatgpt-plugins/vo.mp3",
+  "facePlan": "none",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "scam",
+    "Plugin",
+    "five",
+    "Canva",
+    "Adobe",
+    "Spotify",
+    "Gmail",
+    "Malwarebytes",
+    "free",
+    "Install",
+    "save"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "eyebrow": "ChatGPT plugins are back",
+      "headline": "Is this text a [[scam]]?",
+      "blocks": [
+        {
+          "id": "m",
+          "kind": "screen",
+          "src": "assets/chatgpt-plugins/mb-phone.png",
+          "width": 706,
+          "height": 805,
+          "device": false,
+          "h": 880
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "scam",
+          "at": 5.28
+        },
+        {
+          "do": "focus",
+          "target": "m",
+          "on": "again",
+          "rect": [
+            0,
+            0,
+            706,
+            805
+          ],
+          "ring": false,
+          "at": 2.26
+        },
+        {
+          "do": "focus",
+          "target": "m",
+          "on": "fifth one",
+          "rect": [
+            20,
+            120,
+            500,
+            200
+          ],
+          "at": 3.08
+        },
+        {
+          "do": "focus",
+          "target": "m",
+          "on": "tap the link",
+          "rect": [
+            20,
+            560,
+            666,
+            160
+          ],
+          "at": 6.54
+        },
+        {
+          "do": "focus",
+          "target": "m",
+          "on": "tell you",
+          "rect": [
+            20,
+            210,
+            666,
+            300
+          ],
+          "ring": false,
+          "at": 4.12
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.3,
+          "vol": 0.556
+        }
+      ],
+      "durationSec": 7.56,
+      "assetId": "mb-phone",
+      "claimId": "mb-phone",
+      "covers": "ChatGPT has plugins again,",
+      "sourceUrl": "https://chatgpt.com/plugins/plugin_asdk_app_6943d1778c8c81918f4c9ddf4849ca41",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Since July",
+      "headline": "The [[Plugin Directory]]",
+      "blocks": [
+        {
+          "id": "d",
+          "kind": "screen",
+          "src": "assets/chatgpt-plugins/directory-crop.png",
+          "width": 1080,
+          "height": 1220,
+          "device": false,
+          "h": 960
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Plugin",
+          "at": 2.06
+        },
+        {
+          "do": "focus",
+          "target": "d",
+          "on": "app store",
+          "rect": [
+            20,
+            40,
+            1040,
+            330
+          ],
+          "at": 1.06
+        },
+        {
+          "do": "focus",
+          "target": "d",
+          "on": "directory",
+          "rect": [
+            0,
+            0,
+            1080,
+            1220
+          ],
+          "ring": false,
+          "at": 2.3
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "at": 0.0,
+          "vol": 0.543
+        }
+      ],
+      "durationSec": 2.66,
+      "assetId": "directory-crop",
+      "claimId": "directory-crop",
+      "covers": "OpenAI turned its app",
+      "sourceUrl": "https://chatgpt.com/plugins",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Worth installing",
+      "headline": "[[5]] plugins to try",
+      "blocks": [
+        {
+          "id": "g",
+          "kind": "logos",
+          "items": [
+            {
+              "logo": "assets/chatgpt-plugins/icon-canva.png",
+              "name": "Canva",
+              "tile": "dark"
+            },
+            {
+              "logo": "assets/chatgpt-plugins/icon-adobe.png",
+              "name": "Adobe",
+              "tile": "dark"
+            },
+            {
+              "logo": "assets/chatgpt-plugins/icon-spotify.png",
+              "name": "Spotify",
+              "tile": "dark"
+            },
+            {
+              "logo": "assets/chatgpt-plugins/icon-gmail.png",
+              "name": "Gmail",
+              "tile": "dark"
+            },
+            {
+              "logo": "assets/chatgpt-plugins/icon-malwarebytes.png",
+              "name": "Malwarebytes",
+              "tile": "dark"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "five",
+          "at": 0.78
+        },
+        {
+          "do": "show",
+          "target": "g",
+          "on": "worth",
+          "at": 1.46
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.4,
+          "vol": 0.343
+        }
+      ],
+      "durationSec": 3.82,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "1 of 5 \u00b7 Canva",
+      "headline": "A brief becomes [[posts]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "screen",
+          "src": "assets/chatgpt-plugins/card-canva-1.png",
+          "width": 706,
+          "height": 580,
+          "device": false,
+          "h": 700
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "becomes",
+          "at": 1.8
+        },
+        {
+          "do": "state",
+          "target": "c",
+          "on": "a deck",
+          "src": "assets/chatgpt-plugins/card-canva-2.png",
+          "at": 4.2
+        },
+        {
+          "do": "focus",
+          "target": "c",
+          "on": "flyer",
+          "rect": [
+            0,
+            0,
+            706,
+            420
+          ],
+          "ring": false,
+          "at": 3.44
+        }
+      ],
+      "durationSec": 6.12,
+      "assetId": "card-canva",
+      "claimId": "card-canva",
+      "covers": "Canva: paste a brief,",
+      "sourceUrl": "https://chatgpt.com/plugins/plugin_connector_68df33b1a2d081918778431a9cfca8ba",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "2 of 5",
+      "headline": "Number [[two]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "spotlight",
+          "logo": "assets/chatgpt-plugins/icon-adobe.png",
+          "name": "Adobe"
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Design, combine, and edit"
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s",
+          "on": "Adobe",
+          "at": 0.7
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Two",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "Adobe",
+          "at": 0.7
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 0.1,
+          "vol": 1.0
+        }
+      ],
+      "durationSec": 1.52,
+      "assetId": "icon-adobe",
+      "claimId": "icon-adobe",
+      "covers": "Two, Adobe.",
+      "sourceUrl": "https://chatgpt.com/plugins/plugin_asdk_app_69312da8e4dc81919370cb86fd172b6c",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Adobe's own listing",
+      "headline": "It used to be [[Photoshop]]",
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "screen",
+          "src": "assets/chatgpt-plugins/adobe-text.png",
+          "width": 1080,
+          "height": 360,
+          "device": false,
+          "h": 420
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "t",
+          "on": "used",
+          "at": 0.12
+        },
+        {
+          "do": "focus",
+          "target": "t",
+          "on": "Photoshop",
+          "rect": [
+            30,
+            40,
+            1020,
+            140
+          ],
+          "at": 0.8
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Photoshop",
+          "at": 0.8
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 0.9,
+          "vol": 0.417
+        }
+      ],
+      "durationSec": 1.78,
+      "assetId": "adobe-text",
+      "claimId": "adobe-text",
+      "covers": "It used to be",
+      "sourceUrl": "https://chatgpt.com/plugins/plugin_asdk_app_69312da8e4dc81919370cb86fd172b6c",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "2 of 5 \u00b7 Adobe",
+      "headline": "Photos in bulk, video to [[Reel]]",
+      "blocks": [
+        {
+          "id": "a",
+          "kind": "screen",
+          "src": "assets/chatgpt-plugins/adobe-batch.png",
+          "width": 706,
+          "height": 840,
+          "device": false,
+          "h": 860
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "a",
+          "on": "now",
+          "at": 0.2
+        },
+        {
+          "do": "focus",
+          "target": "a",
+          "on": "batch",
+          "rect": [
+            0,
+            0,
+            706,
+            700
+          ],
+          "ring": false,
+          "at": 1.18
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Reel",
+          "at": 4.08
+        },
+        {
+          "do": "state",
+          "target": "a",
+          "on": "sideways",
+          "src": "assets/chatgpt-plugins/adobe-video.png",
+          "at": 2.78
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "at": 0.2,
+          "vol": 0.251
+        }
+      ],
+      "durationSec": 6.98,
+      "assetId": "adobe-batch",
+      "claimId": "adobe-batch",
+      "covers": "but now it edits",
+      "sourceUrl": "https://chatgpt.com/plugins/plugin_asdk_app_69312da8e4dc81919370cb86fd172b6c",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "3 of 5 \u00b7 Spotify",
+      "headline": "Music, right in the [[chat]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/chatgpt-plugins/card-spotify-2.png",
+          "width": 706,
+          "height": 860,
+          "device": false,
+          "h": 900
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "music",
+          "rect": [
+            0,
+            0,
+            706,
+            300
+          ],
+          "at": 1.16
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "chat",
+          "at": 3.82
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "songs",
+          "rect": [
+            0,
+            280,
+            706,
+            580
+          ],
+          "ring": false,
+          "at": 2.34
+        }
+      ],
+      "durationSec": 5.6,
+      "assetId": "card-spotify",
+      "claimId": "card-spotify",
+      "covers": "Spotify: ask for music",
+      "sourceUrl": "https://chatgpt.com/plugins/plugin_asdk_app_68de829bf7648191acd70a907364c67c",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "4 of 5 \u00b7 Gmail",
+      "headline": "[[Gmail]] sums it up, drafts the reply",
+      "blocks": [
+        {
+          "id": "g",
+          "kind": "screen",
+          "src": "assets/chatgpt-plugins/gmail-pills.png",
+          "width": 960,
+          "height": 890,
+          "device": false,
+          "h": 600
+        },
+        {
+          "id": "k",
+          "kind": "text",
+          "text": "You just check it"
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "g",
+          "on": "sums",
+          "rect": [
+            0,
+            20,
+            960,
+            420
+          ],
+          "at": 0.66
+        },
+        {
+          "do": "focus",
+          "target": "g",
+          "on": "drafts",
+          "rect": [
+            0,
+            460,
+            960,
+            400
+          ],
+          "at": 2.06
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Gmail",
+          "at": 0.0
+        },
+        {
+          "do": "focus",
+          "target": "g",
+          "on": "check",
+          "rect": [
+            0,
+            0,
+            960,
+            890
+          ],
+          "ring": false,
+          "at": 3.96
+        },
+        {
+          "do": "show",
+          "target": "k",
+          "on": "sums",
+          "at": 0.66
+        }
+      ],
+      "durationSec": 5.0,
+      "assetId": "gmail-pills",
+      "claimId": "gmail-pills",
+      "covers": "Gmail, which sums up",
+      "sourceUrl": "https://chatgpt.com/plugins/plugin_connector_1p_95d39881713c8191931482a62d6edff9",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "5 of 5",
+      "headline": "And number [[five]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "spotlight",
+          "logo": "assets/chatgpt-plugins/icon-malwarebytes.png",
+          "name": "Malwarebytes"
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Paste what you're unsure about"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "five",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "s",
+          "on": "Malwarebytes",
+          "at": 1.5
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "Paste",
+          "at": 2.52
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 0.1,
+          "vol": 1.0
+        }
+      ],
+      "durationSec": 3.54,
+      "assetId": "icon-malwarebytes",
+      "claimId": "icon-malwarebytes",
+      "covers": "five, Malwarebytes. Paste",
+      "sourceUrl": "https://chatgpt.com/plugins/plugin_asdk_app_6943d1778c8c81918f4c9ddf4849ca41",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "5 of 5 \u00b7 Malwarebytes",
+      "headline": "Check it [[before]] you tap",
+      "blocks": [
+        {
+          "id": "m",
+          "kind": "screen",
+          "src": "assets/chatgpt-plugins/mb-link.png",
+          "width": 706,
+          "height": 805,
+          "device": false,
+          "h": 880
+        }
+      ],
+      "moves": [
+        {
+          "do": "state",
+          "target": "m",
+          "on": "number",
+          "src": "assets/chatgpt-plugins/mb-phone.png",
+          "at": 0.0
+        },
+        {
+          "do": "focus",
+          "target": "m",
+          "on": "email",
+          "rect": [
+            20,
+            300,
+            666,
+            300
+          ],
+          "ring": false,
+          "at": 0.56
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "risk",
+          "at": 2.64
+        },
+        {
+          "do": "focus",
+          "target": "m",
+          "on": "risk",
+          "rect": [
+            20,
+            120,
+            666,
+            190
+          ],
+          "at": 2.64
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 1.2,
+          "vol": 0.556
+        }
+      ],
+      "durationSec": 4.76,
+      "assetId": "mb-link",
+      "claimId": "mb-link",
+      "covers": "number or email you're",
+      "sourceUrl": "https://chatgpt.com/plugins/plugin_asdk_app_6943d1778c8c81918f4c9ddf4849ca41",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Malwarebytes in ChatGPT",
+      "headline": "It's [[free]]",
+      "headlineSize": "xl",
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "No Malwarebytes account needed"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "free",
+          "at": 0.22
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "It's",
+          "at": 0.0
+        }
+      ],
+      "durationSec": 0.72,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "How to add one",
+      "headline": "Plugins \u2192 [[Install]]",
+      "blocks": [
+        {
+          "id": "p",
+          "kind": "screen",
+          "src": "assets/chatgpt-plugins/mb-install.png",
+          "width": 1080,
+          "height": 1250,
+          "device": false,
+          "h": 960
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "p",
+          "on": "open",
+          "rect": [
+            0,
+            0,
+            1080,
+            700
+          ],
+          "ring": false,
+          "at": 0.8
+        },
+        {
+          "do": "focus",
+          "target": "p",
+          "on": "Install",
+          "rect": [
+            670,
+            430,
+            390,
+            160
+          ],
+          "at": 2.64
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Install",
+          "at": 2.64
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx2/mouse-click-01.mp3",
+          "at": 1.6,
+          "vol": 0.468
+        }
+      ],
+      "durationSec": 3.44,
+      "assetId": "mb-install",
+      "claimId": "mb-install",
+      "covers": "To add one, open",
+      "sourceUrl": "https://chatgpt.com/plugins/plugin_asdk_app_6943d1778c8c81918f4c9ddf4849ca41",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "headlineSize": "xl",
+      "headline": "[[Save]] this",
+      "blocks": [
+        {
+          "id": "d",
+          "kind": "text",
+          "text": "for the next strange text you get"
+        },
+        {
+          "id": "g",
+          "kind": "logos",
+          "items": [
+            {
+              "logo": "assets/chatgpt-plugins/icon-canva.png",
+              "name": "Canva",
+              "tile": "dark"
+            },
+            {
+              "logo": "assets/chatgpt-plugins/icon-adobe.png",
+              "name": "Adobe",
+              "tile": "dark"
+            },
+            {
+              "logo": "assets/chatgpt-plugins/icon-spotify.png",
+              "name": "Spotify",
+              "tile": "dark"
+            },
+            {
+              "logo": "assets/chatgpt-plugins/icon-gmail.png",
+              "name": "Gmail",
+              "tile": "dark"
+            },
+            {
+              "logo": "assets/chatgpt-plugins/icon-malwarebytes.png",
+              "name": "Malwarebytes",
+              "tile": "dark"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "save",
+          "at": 0.46
+        },
+        {
+          "do": "show",
+          "target": "d",
+          "on": "this",
+          "at": 0.78
+        },
+        {
+          "do": "show",
+          "target": "g",
+          "on": "save",
+          "at": 0.46
+        }
+      ],
+      "durationSec": 3.5,
+      "hideCaptions": true
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.7,
+      "text": "Since July, ChatGPT",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Since"
+        },
+        {
+          "t": 0.3,
+          "text": "July,"
+        },
+        {
+          "t": 1.02,
+          "text": "ChatGPT"
+        }
+      ]
+    },
+    {
+      "start": 1.7,
+      "end": 2.66,
+      "text": "has plugins again",
+      "words": [
+        {
+          "t": 1.7,
+          "text": "has"
+        },
+        {
+          "t": 1.96,
+          "text": "plugins"
+        },
+        {
+          "t": 2.26,
+          "text": "again"
+        }
+      ]
+    },
+    {
+      "start": 2.66,
+      "end": 3.3,
+      "text": "and the fifth",
+      "words": [
+        {
+          "t": 2.66,
+          "text": "and"
+        },
+        {
+          "t": 2.96,
+          "text": "the"
+        },
+        {
+          "t": 3.08,
+          "text": "fifth"
+        }
+      ]
+    },
+    {
+      "start": 3.3,
+      "end": 4.12,
+      "text": "one here can",
+      "words": [
+        {
+          "t": 3.3,
+          "text": "one"
+        },
+        {
+          "t": 3.6,
+          "text": "here"
+        },
+        {
+          "t": 3.86,
+          "text": "can"
+        }
+      ]
+    },
+    {
+      "start": 4.12,
+      "end": 4.62,
+      "text": "tell you if",
+      "words": [
+        {
+          "t": 4.12,
+          "text": "tell"
+        },
+        {
+          "t": 4.38,
+          "text": "you"
+        },
+        {
+          "t": 4.52,
+          "text": "if"
+        }
+      ]
+    },
+    {
+      "start": 4.62,
+      "end": 5.12,
+      "text": "a text is",
+      "words": [
+        {
+          "t": 4.62,
+          "text": "a"
+        },
+        {
+          "t": 4.72,
+          "text": "text"
+        },
+        {
+          "t": 4.92,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 5.12,
+      "end": 6.3,
+      "text": "a scam before",
+      "words": [
+        {
+          "t": 5.12,
+          "text": "a"
+        },
+        {
+          "t": 5.28,
+          "text": "scam"
+        },
+        {
+          "t": 5.5,
+          "text": "before"
+        }
+      ]
+    },
+    {
+      "start": 6.3,
+      "end": 6.92,
+      "text": "you tap the",
+      "words": [
+        {
+          "t": 6.3,
+          "text": "you"
+        },
+        {
+          "t": 6.54,
+          "text": "tap"
+        },
+        {
+          "t": 6.76,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 6.92,
+      "end": 8.42,
+      "text": "link. OpenAI turned",
+      "words": [
+        {
+          "t": 6.92,
+          "text": "link."
+        },
+        {
+          "t": 7.56,
+          "text": "OpenAI"
+        },
+        {
+          "t": 8.04,
+          "text": "turned"
+        }
+      ]
+    },
+    {
+      "start": 8.42,
+      "end": 9.16,
+      "text": "its app store",
+      "words": [
+        {
+          "t": 8.42,
+          "text": "its"
+        },
+        {
+          "t": 8.62,
+          "text": "app"
+        },
+        {
+          "t": 8.84,
+          "text": "store"
+        }
+      ]
+    },
+    {
+      "start": 9.16,
+      "end": 10.22,
+      "text": "into a Plugin Directory",
+      "words": [
+        {
+          "t": 9.16,
+          "text": "into"
+        },
+        {
+          "t": 9.46,
+          "text": "a"
+        },
+        {
+          "t": 9.62,
+          "text": "Plugin"
+        },
+        {
+          "t": 9.62,
+          "text": "Directory"
+        }
+      ]
+    },
+    {
+      "start": 10.22,
+      "end": 11.32,
+      "text": "and these five",
+      "words": [
+        {
+          "t": 10.22,
+          "text": "and"
+        },
+        {
+          "t": 10.72,
+          "text": "these"
+        },
+        {
+          "t": 11.0,
+          "text": "five"
+        }
+      ]
+    },
+    {
+      "start": 11.32,
+      "end": 12.52,
+      "text": "are worth installing.",
+      "words": [
+        {
+          "t": 11.32,
+          "text": "are"
+        },
+        {
+          "t": 11.68,
+          "text": "worth"
+        },
+        {
+          "t": 11.96,
+          "text": "installing."
+        }
+      ]
+    },
+    {
+      "start": 13.22,
+      "end": 15.06,
+      "text": "One, Canva. Paste",
+      "words": [
+        {
+          "t": 13.22,
+          "text": "One,"
+        },
+        {
+          "t": 14.04,
+          "text": "Canva."
+        },
+        {
+          "t": 14.9,
+          "text": "Paste"
+        }
+      ]
+    },
+    {
+      "start": 15.06,
+      "end": 15.74,
+      "text": "a brief and",
+      "words": [
+        {
+          "t": 15.06,
+          "text": "a"
+        },
+        {
+          "t": 15.26,
+          "text": "brief"
+        },
+        {
+          "t": 15.44,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 15.74,
+      "end": 16.64,
+      "text": "it becomes social",
+      "words": [
+        {
+          "t": 15.74,
+          "text": "it"
+        },
+        {
+          "t": 15.84,
+          "text": "becomes"
+        },
+        {
+          "t": 16.14,
+          "text": "social"
+        }
+      ]
+    },
+    {
+      "start": 16.64,
+      "end": 18.0,
+      "text": "posts, a flyer,",
+      "words": [
+        {
+          "t": 16.64,
+          "text": "posts,"
+        },
+        {
+          "t": 17.42,
+          "text": "a"
+        },
+        {
+          "t": 17.48,
+          "text": "flyer,"
+        }
+      ]
+    },
+    {
+      "start": 18.12,
+      "end": 18.52,
+      "text": "or a deck",
+      "words": [
+        {
+          "t": 18.12,
+          "text": "or"
+        },
+        {
+          "t": 18.24,
+          "text": "a"
+        },
+        {
+          "t": 18.38,
+          "text": "deck"
+        }
+      ]
+    },
+    {
+      "start": 18.52,
+      "end": 19.14,
+      "text": "you can keep",
+      "words": [
+        {
+          "t": 18.52,
+          "text": "you"
+        },
+        {
+          "t": 18.82,
+          "text": "can"
+        },
+        {
+          "t": 18.96,
+          "text": "keep"
+        }
+      ]
+    },
+    {
+      "start": 19.14,
+      "end": 20.98,
+      "text": "editing. Two, Adobe.",
+      "words": [
+        {
+          "t": 19.14,
+          "text": "editing."
+        },
+        {
+          "t": 20.16,
+          "text": "Two,"
+        },
+        {
+          "t": 20.86,
+          "text": "Adobe."
+        }
+      ]
+    },
+    {
+      "start": 21.68,
+      "end": 22.14,
+      "text": "It used to",
+      "words": [
+        {
+          "t": 21.68,
+          "text": "It"
+        },
+        {
+          "t": 21.8,
+          "text": "used"
+        },
+        {
+          "t": 22.0,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 22.14,
+      "end": 22.88,
+      "text": "be just Photoshop,",
+      "words": [
+        {
+          "t": 22.14,
+          "text": "be"
+        },
+        {
+          "t": 22.24,
+          "text": "just"
+        },
+        {
+          "t": 22.48,
+          "text": "Photoshop,"
+        }
+      ]
+    },
+    {
+      "start": 23.46,
+      "end": 24.08,
+      "text": "but now it",
+      "words": [
+        {
+          "t": 23.46,
+          "text": "but"
+        },
+        {
+          "t": 23.66,
+          "text": "now"
+        },
+        {
+          "t": 23.9,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 24.08,
+      "end": 24.84,
+      "text": "edits a batch",
+      "words": [
+        {
+          "t": 24.08,
+          "text": "edits"
+        },
+        {
+          "t": 24.38,
+          "text": "a"
+        },
+        {
+          "t": 24.64,
+          "text": "batch"
+        }
+      ]
+    },
+    {
+      "start": 24.84,
+      "end": 25.66,
+      "text": "of photos and",
+      "words": [
+        {
+          "t": 24.84,
+          "text": "of"
+        },
+        {
+          "t": 25.0,
+          "text": "photos"
+        },
+        {
+          "t": 25.34,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 25.66,
+      "end": 26.52,
+      "text": "turns a sideways",
+      "words": [
+        {
+          "t": 25.66,
+          "text": "turns"
+        },
+        {
+          "t": 25.94,
+          "text": "a"
+        },
+        {
+          "t": 26.24,
+          "text": "sideways"
+        }
+      ]
+    },
+    {
+      "start": 26.52,
+      "end": 27.54,
+      "text": "video into a",
+      "words": [
+        {
+          "t": 26.52,
+          "text": "video"
+        },
+        {
+          "t": 27.06,
+          "text": "into"
+        },
+        {
+          "t": 27.34,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 27.54,
+      "end": 28.32,
+      "text": "Reel even as",
+      "words": [
+        {
+          "t": 27.54,
+          "text": "Reel"
+        },
+        {
+          "t": 27.76,
+          "text": "even"
+        },
+        {
+          "t": 28.14,
+          "text": "as"
+        }
+      ]
+    },
+    {
+      "start": 28.32,
+      "end": 29.72,
+      "text": "a guest. Three,",
+      "words": [
+        {
+          "t": 28.32,
+          "text": "a"
+        },
+        {
+          "t": 28.46,
+          "text": "guest."
+        },
+        {
+          "t": 29.54,
+          "text": "Three,"
+        }
+      ]
+    },
+    {
+      "start": 30.44,
+      "end": 31.6,
+      "text": "Spotify. Ask for",
+      "words": [
+        {
+          "t": 30.44,
+          "text": "Spotify."
+        },
+        {
+          "t": 31.12,
+          "text": "Ask"
+        },
+        {
+          "t": 31.38,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 31.6,
+      "end": 32.2,
+      "text": "music for a",
+      "words": [
+        {
+          "t": 31.6,
+          "text": "music"
+        },
+        {
+          "t": 31.84,
+          "text": "for"
+        },
+        {
+          "t": 32.08,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 32.2,
+      "end": 32.78,
+      "text": "run and the",
+      "words": [
+        {
+          "t": 32.2,
+          "text": "run"
+        },
+        {
+          "t": 32.42,
+          "text": "and"
+        },
+        {
+          "t": 32.66,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 32.78,
+      "end": 33.66,
+      "text": "songs show up",
+      "words": [
+        {
+          "t": 32.78,
+          "text": "songs"
+        },
+        {
+          "t": 33.12,
+          "text": "show"
+        },
+        {
+          "t": 33.48,
+          "text": "up"
+        }
+      ]
+    },
+    {
+      "start": 33.66,
+      "end": 34.26,
+      "text": "right in the",
+      "words": [
+        {
+          "t": 33.66,
+          "text": "right"
+        },
+        {
+          "t": 34.0,
+          "text": "in"
+        },
+        {
+          "t": 34.16,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 34.26,
+      "end": 36.2,
+      "text": "chat. Four, Gmail,",
+      "words": [
+        {
+          "t": 34.26,
+          "text": "chat."
+        },
+        {
+          "t": 35.16,
+          "text": "Four,"
+        },
+        {
+          "t": 36.04,
+          "text": "Gmail,"
+        }
+      ]
+    },
+    {
+      "start": 36.6,
+      "end": 37.14,
+      "text": "which sums up",
+      "words": [
+        {
+          "t": 36.6,
+          "text": "which"
+        },
+        {
+          "t": 36.7,
+          "text": "sums"
+        },
+        {
+          "t": 36.94,
+          "text": "up"
+        }
+      ]
+    },
+    {
+      "start": 37.14,
+      "end": 37.82,
+      "text": "a long thread",
+      "words": [
+        {
+          "t": 37.14,
+          "text": "a"
+        },
+        {
+          "t": 37.3,
+          "text": "long"
+        },
+        {
+          "t": 37.5,
+          "text": "thread"
+        }
+      ]
+    },
+    {
+      "start": 37.82,
+      "end": 38.56,
+      "text": "and drafts the",
+      "words": [
+        {
+          "t": 37.82,
+          "text": "and"
+        },
+        {
+          "t": 38.1,
+          "text": "drafts"
+        },
+        {
+          "t": 38.48,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 38.56,
+      "end": 39.4,
+      "text": "reply so all",
+      "words": [
+        {
+          "t": 38.56,
+          "text": "reply"
+        },
+        {
+          "t": 38.86,
+          "text": "so"
+        },
+        {
+          "t": 39.18,
+          "text": "all"
+        }
+      ]
+    },
+    {
+      "start": 39.4,
+      "end": 40.0,
+      "text": "you do is",
+      "words": [
+        {
+          "t": 39.4,
+          "text": "you"
+        },
+        {
+          "t": 39.56,
+          "text": "do"
+        },
+        {
+          "t": 39.72,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 40.0,
+      "end": 41.56,
+      "text": "check it. five,",
+      "words": [
+        {
+          "t": 40.0,
+          "text": "check"
+        },
+        {
+          "t": 40.22,
+          "text": "it."
+        },
+        {
+          "t": 41.04,
+          "text": "five,"
+        }
+      ]
+    },
+    {
+      "start": 42.54,
+      "end": 43.98,
+      "text": "Malwarebytes. Paste the",
+      "words": [
+        {
+          "t": 42.54,
+          "text": "Malwarebytes."
+        },
+        {
+          "t": 43.56,
+          "text": "Paste"
+        },
+        {
+          "t": 43.76,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 43.98,
+      "end": 45.14,
+      "text": "link, number, or",
+      "words": [
+        {
+          "t": 43.98,
+          "text": "link,"
+        },
+        {
+          "t": 44.58,
+          "text": "number,"
+        },
+        {
+          "t": 45.12,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 45.14,
+      "end": 45.8,
+      "text": "email you're not",
+      "words": [
+        {
+          "t": 45.14,
+          "text": "email"
+        },
+        {
+          "t": 45.4,
+          "text": "you're"
+        },
+        {
+          "t": 45.7,
+          "text": "not"
+        }
+      ]
+    },
+    {
+      "start": 45.8,
+      "end": 46.64,
+      "text": "sure about and",
+      "words": [
+        {
+          "t": 45.8,
+          "text": "sure"
+        },
+        {
+          "t": 46.04,
+          "text": "about"
+        },
+        {
+          "t": 46.36,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 46.64,
+      "end": 47.22,
+      "text": "it rates the",
+      "words": [
+        {
+          "t": 46.64,
+          "text": "it"
+        },
+        {
+          "t": 46.76,
+          "text": "rates"
+        },
+        {
+          "t": 47.02,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 47.22,
+      "end": 48.06,
+      "text": "risk before you",
+      "words": [
+        {
+          "t": 47.22,
+          "text": "risk"
+        },
+        {
+          "t": 47.5,
+          "text": "before"
+        },
+        {
+          "t": 47.88,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 48.06,
+      "end": 48.78,
+      "text": "click or call.",
+      "words": [
+        {
+          "t": 48.06,
+          "text": "click"
+        },
+        {
+          "t": 48.26,
+          "text": "or"
+        },
+        {
+          "t": 48.52,
+          "text": "call."
+        }
+      ]
+    },
+    {
+      "start": 49.34,
+      "end": 50.16,
+      "text": "It's free. To",
+      "words": [
+        {
+          "t": 49.34,
+          "text": "It's"
+        },
+        {
+          "t": 49.56,
+          "text": "free."
+        },
+        {
+          "t": 50.06,
+          "text": "To"
+        }
+      ]
+    },
+    {
+      "start": 50.16,
+      "end": 51.34,
+      "text": "add one, open Plugins",
+      "words": [
+        {
+          "t": 50.16,
+          "text": "add"
+        },
+        {
+          "t": 50.38,
+          "text": "one,"
+        },
+        {
+          "t": 50.86,
+          "text": "open"
+        },
+        {
+          "t": 50.86,
+          "text": "Plugins"
+        }
+      ]
+    },
+    {
+      "start": 51.34,
+      "end": 52.46,
+      "text": "in ChatGPT and",
+      "words": [
+        {
+          "t": 51.34,
+          "text": "in"
+        },
+        {
+          "t": 51.56,
+          "text": "ChatGPT"
+        },
+        {
+          "t": 52.24,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 52.46,
+      "end": 53.96,
+      "text": "tap Install. Then",
+      "words": [
+        {
+          "t": 52.46,
+          "text": "tap"
+        },
+        {
+          "t": 52.7,
+          "text": "Install."
+        },
+        {
+          "t": 53.5,
+          "text": "Then"
+        }
+      ]
+    },
+    {
+      "start": 53.96,
+      "end": 54.82,
+      "text": "save this before",
+      "words": [
+        {
+          "t": 53.96,
+          "text": "save"
+        },
+        {
+          "t": 54.28,
+          "text": "this"
+        },
+        {
+          "t": 54.5,
+          "text": "before"
+        }
+      ]
+    },
+    {
+      "start": 54.82,
+      "end": 55.8,
+      "text": "the next strange",
+      "words": [
+        {
+          "t": 54.82,
+          "text": "the"
+        },
+        {
+          "t": 55.04,
+          "text": "next"
+        },
+        {
+          "t": 55.28,
+          "text": "strange"
+        }
+      ]
+    },
+    {
+      "start": 55.8,
+      "end": 56.6,
+      "text": "text lands.",
+      "words": [
+        {
+          "t": 55.8,
+          "text": "text"
+        },
+        {
+          "t": 56.14,
+          "text": "lands."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "a list read over OpenAI's own listing pages; the voice carries every label (standing no-music default)",
+  "format": "ai-tools",
+  "script": "Since July, ChatGPT has plugins again, and the fifth one here can tell you if a text is a scam before you tap the link.\n\nOpenAI turned its app store into a Plugin Directory, and these five are worth installing.\n\nOne, Canva: paste a brief, and it becomes social posts, a flyer, or a deck you can keep editing.\n\nTwo, Adobe. It used to be just Photoshop, but now it edits a batch of photos and turns a sideways video into a Reel, even as a guest.\n\nThree, Spotify: ask for music for a run, and the songs show up right in the chat.\n\nFour, Gmail, which sums up a long thread and drafts the reply, so all you do is check it.\n\nAnd five, Malwarebytes. Paste the link, number or email you're not sure about, and it rates the risk before you click or call. It's free.\n\nTo add one, open Plugins in ChatGPT and tap Install. Then save this before the next strange text lands.",
+  "approval": {
+    "sha256": "a0e805b68ab32fd64eebb93eeb9f66e7520c6f5aec09a9e2ae70e90dd49d5947",
+    "approvedAt": "2026-09-29T09:03:49+00:00",
+    "words": 167,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

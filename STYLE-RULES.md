@@ -9225,3 +9225,36 @@ Treatment history: Apple release-notes page with a focus box per bullet (three t
 fix), security-table receipt, iPhone 18 Pro hero, Apple's Control Center illustration under a
 two-sided swap, rows for the Face ID sequence and the Settings path. Next point-release reel:
 do not open on the notes page again; open on the device or the symptom.
+
+## 2026-09-29 — chatgpt-plugins: a top-5 built entirely from OpenAI's public Plugin Directory
+
+57.0s, 14 slides, no presenter (HeyGen Free), 9 SFX (9/9 heard), -14.5 LUFS. Format ai-tools.
+
+- **RAW NOTE 1 — "plugins" means something new.** The 2023 plugins closed April 2024; on
+  2026-07-09 OpenAI renamed apps to plugins (Plugin Directory). Research had to establish
+  the current meaning before picking five, or the reel would have described a dead product.
+- **RAW NOTE 2 — chatgpt.com/plugins renders logged-out.** Every listing page
+  (chatgpt.com/plugins/<plugin_id>, ids scraped from the directory's anchors; slugs like
+  /plugins/gmail do NOT resolve) carries the vendor's demo carousel as plain <img> at 706px.
+  Pulled at native size they are clean, official, phone-shaped proof of each plugin at work.
+  help.openai.com and chatgpt.com/pricing 403 to WebFetch AND curl; Playwright mobile loads them.
+- **RAW NOTE 3 — ElevenLabs v3 slurred "ChatGPT" into "Chan-GPT"** in this take (whisper
+  base, small AND medium all heard "Chanjee PT"/"enchant gpt"; the same voice read it
+  cleanly in 5-chatgpt-features). Fix: re-read ONLY the two affected sentences with the
+  word spelled "Chat G-P-T" (199 credits, vs ~916 for a full take), level-match the pickup
+  (-1.9 dB), splice at sentence pauses, then vo_pad. Rule: when a brand name is the
+  subject, whisper-check it in the first take before anything else is built.
+- **RAW NOTE 4 — a tall page capture in a `screen` block HUGS** (height/width > 1.2) into a
+  narrow column and its text becomes unreadable; crop to the region the line names so the
+  aspect is <= 1.2 and it fills the column.
+- **RAW NOTE 5 — [DUPLICATE] is an average hash.** Two different light cards centred under a
+  headline read as identical; change the LAYOUT (shorter screen + a type line), not the image.
+- A `text` block under an 860px screen lands in the caption band; the lint did not catch it,
+  the contact sheet did.
+
+Treatment history: Malwarebytes HIGH RISK card as the hook + confirmation beat, directory
+crop with focus, five-icon logos grid (promise and end card), spotlight icon reveals for #2
+and #5, vendor demo cards with state crossfades (Canva posts→deck, Adobe batch→video,
+Malwarebytes link→phone), listing-text highlight for "used to be Photoshop", Install button
+zoom. Next plugin/app list: do not open on a result card again; open on the thing the viewer
+is holding (a text, a photo) and cut to the plugin.
