@@ -33,3 +33,7 @@ PINNED COMMENT: Which one are you trying first, and which plugin should be on th
 ALT TEXT: OpenAI's ChatGPT Plugin Directory and the official listing pages for Canva, Adobe, Spotify, Gmail and Malwarebytes, showing each plugin's demo: social post designs, a photo batch and a video, a playlist in the chat, Gmail prompt examples, and a phone number flagged high risk.
 THUMBNAIL: if Studio offers a custom Shorts thumbnail, use out/thumbnails/chatgpt-plugins-vertical.png; otherwise pick the frame at 0:01
 ALTERED CONTENT: yes  (YouTube Studio → Altered content → Yes)
+CATEGORY: Science & Technology
+AUDIENCE: No, it's not made for kids
+LANGUAGE: English (video language and title/description language)
+PLAYLIST: AI Tools (or your existing ChatGPT playlist)
