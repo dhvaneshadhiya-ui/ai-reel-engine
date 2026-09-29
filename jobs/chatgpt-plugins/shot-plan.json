@@ -16,180 +16,27 @@
   "plugin directory": "Plugin Directory",
   "reel": "Reel",
   "open plugins": "open Plugins",
-  "install.": "Install."
+  "must have": "must-have",
+  "tap install": "tap Install"
  },
  "format": "ai-tools",
  "shots": [
   {
-   "start_phrase": "ChatGPT has plugins again,",
-   "line": "ChatGPT has plugins again, and the fifth one here can tell you if a text is a scam before you tap the link.",
+   "start_phrase": "Five must-have ChatGPT plugins",
+   "line": "Five must-have ChatGPT plugins you should install now.",
    "needs": [
+    "Five",
+    "must-have",
     "ChatGPT",
     "plugins",
-    "again",
-    "fifth",
-    "tell",
-    "text"
-   ],
-   "tier": "official",
-   "asset_id": "mb-phone",
-   "scene": {
-    "type": "slide",
-    "eyebrow": "ChatGPT plugins are back",
-    "headline": "Is this text a [[scam]]?",
-    "blocks": [
-     {
-      "id": "m",
-      "kind": "screen",
-      "src": "assets/chatgpt-plugins/mb-phone.png",
-      "width": 706,
-      "height": 805,
-      "device": false,
-      "h": 880
-     }
-    ],
-    "moves": [
-     {
-      "do": "pill",
-      "target": "headline",
-      "on": "scam"
-     },
-     {
-      "do": "focus",
-      "target": "m",
-      "on": "again",
-      "rect": [
-       0,
-       0,
-       706,
-       805
-      ],
-      "ring": false
-     },
-     {
-      "do": "focus",
-      "target": "m",
-      "on": "fifth one",
-      "rect": [
-       20,
-       120,
-       500,
-       200
-      ]
-     },
-     {
-      "do": "focus",
-      "target": "m",
-      "on": "tap the link",
-      "rect": [
-       20,
-       560,
-       666,
-       160
-      ]
-     },
-     {
-      "do": "focus",
-      "target": "m",
-      "on": "tell you",
-      "rect": [
-       20,
-       210,
-       666,
-       300
-      ],
-      "ring": false
-     }
-    ],
-    "sfx": [
-     {
-      "src": "sfx/Core.MP3",
-      "at": 0.3,
-      "vol": 0.3
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "OpenAI turned its app",
-   "line": "OpenAI turned its app store into a Plugin Directory",
-   "needs": [
-    "OpenAI",
-    "turned",
-    "store",
-    "Plugin",
-    "Directory"
-   ],
-   "tier": "official",
-   "asset_id": "directory-crop",
-   "scene": {
-    "type": "slide",
-    "eyebrow": "Since July",
-    "headline": "The [[Plugin Directory]]",
-    "blocks": [
-     {
-      "id": "d",
-      "kind": "screen",
-      "src": "assets/chatgpt-plugins/directory-crop.png",
-      "width": 1080,
-      "height": 1220,
-      "device": false,
-      "h": 960
-     }
-    ],
-    "moves": [
-     {
-      "do": "pill",
-      "target": "headline",
-      "on": "Plugin"
-     },
-     {
-      "do": "focus",
-      "target": "d",
-      "on": "app store",
-      "rect": [
-       20,
-       40,
-       1040,
-       330
-      ]
-     },
-     {
-      "do": "focus",
-      "target": "d",
-      "on": "directory",
-      "rect": [
-       0,
-       0,
-       1080,
-       1220
-      ],
-      "ring": false
-     }
-    ],
-    "sfx": [
-     {
-      "src": "sfx2/whooshes-01.mp3",
-      "at": 0.0,
-      "vol": 0.2
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "and these five are",
-   "line": "and these five are worth installing., One",
-   "needs": [
-    "five",
-    "worth",
-    "installing"
+    "install"
    ],
    "tier": "official",
    "asset_id": null,
    "scene": {
     "type": "slide",
-    "eyebrow": "Worth installing",
-    "headline": "[[5]] plugins to try",
+    "eyebrow": "Install these now",
+    "headline": "[[5]] must-have ChatGPT plugins",
     "blocks": [
      {
       "id": "g",
@@ -220,21 +67,165 @@
     ],
     "moves": [
      {
-      "do": "pill",
-      "target": "headline",
-      "on": "five"
-     },
-     {
       "do": "show",
       "target": "g",
-      "on": "worth"
+      "on": "Five"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "must-have"
      }
     ],
     "sfx": [
      {
-      "src": "sfx/Pop.MP3",
-      "at": 0.4,
-      "vol": 0.28
+      "src": "sfx/Core.MP3",
+      "at": 0.2,
+      "vol": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Plugins came back in",
+   "line": "Plugins came back in July, and the fifth one here can tell you if a text is a scam before you tap the link.",
+   "needs": [
+    "ChatGPT",
+    "plugins",
+    "again",
+    "fifth",
+    "tell",
+    "text"
+   ],
+   "tier": "official",
+   "asset_id": "mb-phone",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "#5 on this list",
+    "headline": "Is this text a [[scam]]?",
+    "blocks": [
+     {
+      "id": "m",
+      "kind": "screen",
+      "src": "assets/chatgpt-plugins/mb-phone.png",
+      "width": 706,
+      "height": 805,
+      "device": false,
+      "h": 880
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "m",
+      "on": "fifth one",
+      "rect": [
+       20,
+       120,
+       500,
+       200
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "scam"
+     },
+     {
+      "do": "focus",
+      "target": "m",
+      "on": "tell you",
+      "rect": [
+       20,
+       210,
+       666,
+       300
+      ],
+      "ring": false
+     },
+     {
+      "do": "focus",
+      "target": "m",
+      "on": "tap the link",
+      "rect": [
+       20,
+       560,
+       666,
+       160
+      ]
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx2/whooshes-01.mp3",
+      "at": 0.0,
+      "vol": 0.2
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "OpenAI turned its app",
+   "line": "OpenAI turned its app store into a Plugin Directory.",
+   "needs": [
+    "OpenAI",
+    "turned",
+    "store",
+    "Plugin",
+    "Directory"
+   ],
+   "tier": "official",
+   "asset_id": "directory-crop",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Since July",
+    "headline": "The [[Plugin Directory]]",
+    "blocks": [
+     {
+      "id": "d",
+      "kind": "screen",
+      "src": "assets/chatgpt-plugins/directory-crop.png",
+      "width": 1080,
+      "height": 1220,
+      "device": false,
+      "h": 960
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "d",
+      "on": "app store",
+      "rect": [
+       20,
+       40,
+       1040,
+       330
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Plugin"
+     },
+     {
+      "do": "focus",
+      "target": "d",
+      "on": "Directory",
+      "rect": [
+       0,
+       0,
+       1080,
+       1220
+      ],
+      "ring": false
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.18
      }
     ]
    }

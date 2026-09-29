@@ -1,6 +1,8 @@
-Since July, ChatGPT has plugins again, and the fifth one here can tell you if a text is a scam before you tap the link.
+Five must-have ChatGPT plugins you should install now.
 
-OpenAI turned its app store into a Plugin Directory, and these five are worth installing.
+Plugins came back in July, and the fifth one here can tell you if a text is a scam before you tap the link.
+
+OpenAI turned its app store into a Plugin Directory.
 
 One, Canva: paste a brief, and it becomes social posts, a flyer, or a deck you can keep editing.
 

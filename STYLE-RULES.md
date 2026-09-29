@@ -9258,3 +9258,10 @@ and #5, vendor demo cards with state crossfades (Canva posts→deck, Adobe batch
 Malwarebytes link→phone), listing-text highlight for "used to be Photoshop", Install button
 zoom. Next plugin/app list: do not open on a result card again; open on the thing the viewer
 is holding (a text, a photo) and cut to the plugin.
+- **Revision same day (user): open on "5 Must have ChatGPT Plugins You Should Install now".**
+  Only the first three sentences were re-read (240 credits) and spliced at the pause before
+  "One, Canva"; "these five are worth installing" was cut as redundant, and "Since July,
+  ChatGPT has plugins again" became "Plugins came back in July" to avoid two ChatGPTs in a
+  row. The five-icon grid moved from beat 3 to frame 0. A caption_correction keyed on
+  "install." also rewrote the new "install now" into "Install. now." — key corrections on
+  a two-word phrase ("tap install"), never on one common word.

@@ -21,6 +21,8 @@ the viewer a reason to stay through four picks.
 
 ## PROMISE (S2)
 
+Spoken first, per the user (2026-09-29): "Five must-have ChatGPT plugins you should install now."
+
 Five ChatGPT plugins worth installing, what each one does in one line, and
 how to add one.
 
@@ -50,7 +52,7 @@ happening before the list starts.
 
 ## VIEWER QUESTIONS
 
-- Q: Wait, didn't ChatGPT plugins shut down?  A: "Since July, ChatGPT has plugins again"
+- Q: Wait, didn't ChatGPT plugins shut down?  A: "Plugins came back in July"
 - Q: Can it really spot a scam?  A: "Paste the link, number or email you're not sure about, and it rates the risk before you click or call."
 - Q: Does it cost anything?  A: "It's free."
 - Q: Do I need an Adobe account?  A: "even as a guest"

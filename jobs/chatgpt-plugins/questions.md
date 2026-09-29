@@ -19,21 +19,16 @@
    caption).
 6. MUSIC: off (voice + light SFX), the standing default.
 
-## BEAT PLAN — what you HEAR / what you SEE
+## REVISION 2026-09-29 (user: "Start the intro like 5 Must have ChatGPT Plugins You Should Install now")
 
-All screens are OpenAI's own Plugin Directory pages, captured in MOBILE view.
+Only the first three sentences change. Everything after "One, Canva" is the approved,
+already-recorded take.
+
+## BEAT PLAN — what you HEAR / what you SEE (changed rows only)
 
 | # | HEAR | SEE |
 |---|------|-----|
-| 1 | "Since July, ChatGPT has plugins again," | Big "Plugins" title from OpenAI's directory page, the plugin icons rising in behind it |
-| 2 | "and the fifth one here can tell you if a text is a scam before you tap the link." | Malwarebytes' demo: "Got a PayPal invoice for $823. Should I call…?" and the number flagged HIGH RISK (confirmation beat; a "#5" tag in the corner) |
-| 3 | "OpenAI turned its app store into a Plugin Directory, and these five are worth installing." | The directory itself, scrolling through Popular and New & Noteworthy; five icons pulled out into a row |
-| 4 | "One, Canva: paste a brief, and it becomes social posts, a flyer, or a deck you can keep editing." | Canva's listing: "Create some social media posts based on our October campaign brief", then the burger-promo post designs it made |
-| 5 | "Two, Adobe. It used to be just Photoshop," | Adobe's listing text zoomed and highlighted: "Previously available as Photoshop" |
-| 6 | "but now it edits a batch of photos and turns a sideways video into a Reel, even as a guest." | Adobe's demo: "turn my video into a short highlight reel" and the video card with Open in Adobe; "Get started as a guest" line highlighted |
-| 7 | "Three, Spotify: ask for music for a run, and the songs show up right in the chat." | OpenAI's Spotify page: "give me the latest songs…" and the playlist cards appearing in the chat; the listing's line "Want music to power your next run" highlighted |
-| 8 | "Four, Gmail, which sums up a long thread and drafts the reply, so all you do is check it." | Gmail's listing: the "@Gmail Summarize the last 5 messages" and "@Gmail Draft a polite, firm reply" cards, one at a time |
-| 9 | "And five, Malwarebytes. Paste the link, number or email you're not sure about," | Back to Malwarebytes' demo: the prompt, the three example checks (number, domain, short link) |
-| 10 | "and it rates the risk before you click or call. It's free." | The HIGH RISK badge and "Report as Suspicious" zoomed in; "Free" pill |
-| 11 | "To add one, open Plugins in ChatGPT and tap Install." | A listing header with the "Install plugin" button pressed |
-| 12 | "Then save this before the next strange text lands." | End card: SAVE on the yellow pill, "the next strange text" line, the five icons |
+| 1 | "Five must-have ChatGPT plugins you should install now." | Headline "5 must-have ChatGPT plugins" with the five real icons landing one by one (Canva, Adobe, Spotify, Gmail, Malwarebytes) |
+| 2 | "Plugins came back in July, and the fifth one here can tell you if a text is a scam before you tap the link." | Malwarebytes' demo card: the phone number flagged HIGH RISK |
+| 3 | "OpenAI turned its app store into a Plugin Directory." | OpenAI's Plugins page, zoom on the title |
+| 4+ | unchanged | unchanged (the old "5 plugins to try" icon grid moves up to row 1) |

@@ -1,14 +1,12 @@
 {
-  "script_sha256": "a0e805b68ab32fd64eebb93eeb9f66e7520c6f5aec09a9e2ae70e90dd49d5947",
-  "structure_sha256": "1b5222124795353e1f10270c96d471918ff8ed51895e3780529f5bae52de524d",
+  "script_sha256": "69e54b4f1158da1721292d1178917488496e92af2de2710661a7b0ef34a6457d",
+  "structure_sha256": "b76d968354e6a62e9120f573180589f8c6e09617a4351e44778f08f03313a73c",
   "findings": [
-    "  BRIDGES 2/11 sentences (18%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
-    "  NO OPEN LOOP \u2014 nothing in the opening third points forward. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
-    "  OPENING has no version, date or time anchor: 'Since July, ChatGPT has plugins again, and the fifth one here ca'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
-    "CADENCE: 5 of 12 sentences are long. The short ones stop being punctuation.",
+    "  BRIDGES 2/12 sentences (17%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "CADENCE: 5 of 13 sentences are long. The short ones stop being punctuation.",
     "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
   ],
   "research_advice": [],
-  "beatPlanShots": 0,
-  "proposedAt": "2026-09-29T09:01:45+00:00"
+  "beatPlanShots": 14,
+  "proposedAt": "2026-09-29T09:31:54+00:00"
 }

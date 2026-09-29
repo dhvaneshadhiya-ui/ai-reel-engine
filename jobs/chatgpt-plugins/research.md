@@ -25,7 +25,7 @@ viewer, not an OpenAI ranking (OpenAI publishes none). Each pick must be
 
 - CLAIM: ChatGPT has plugins again: on 2026-07-09 OpenAI replaced the App Directory with a Plugin Directory (existing app connections unaffected). The 2023 plugins had closed in April 2024.
   TIER: multi
-  SPOKEN: "Since July, ChatGPT has plugins again"
+  SPOKEN: "Plugins came back in July"
   SURPRISE: 70
   SRC: https://www.taskade.com/blog/chatgpt-plugins
   VIA: Taskade ("replacing the App Directory with the Plugin Directory. Existing app connections are unaffected.")
@@ -91,6 +91,13 @@ viewer, not an OpenAI ranking (OpenAI publishes none). Each pick must be
   VIA: OpenAI docs ("Search or browse for a plugin, then open its details. Select the plus button to install")
   SRC: https://helpx.adobe.com/creative-cloud/apps/integration-with-other-apps/adobe-connectors/adobe-for-chatgpt.html
   VIA: Adobe ("select Plugins from the left sidebar ... select Install plugin")
+
+- CLAIM: Our five picks are worth installing now (editorial framing requested by the user 2026-09-29: "5 Must have ChatGPT Plugins You Should Install now"); all five are live in the Plugin Directory today.
+  TIER: official
+  SPOKEN: "Five must-have ChatGPT plugins you should install now."
+  SURPRISE: 30
+  SRC: https://chatgpt.com/plugins
+  VIA: OpenAI's live directory lists Canva, Adobe, Spotify, Gmail, Malwarebytes (captured 2026-09-29); "must-have" is our opinion, not an OpenAI ranking
 
 ## FEATURES + HOW TO USE
 
