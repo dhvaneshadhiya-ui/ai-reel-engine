@@ -9196,3 +9196,32 @@ Treatment history: real-car creator footage (zollotech, AppleInsider) in cropped
 Apple keynote + WWDC session demo for Siri and video, a four/one rows split as the promise,
 a phone→CarPlay connect stage for an unfilmable claim, a "who turns it on / said they will"
 rows card as the payoff. Next CarPlay/car reel: do not open on the wallpaper home screen again.
+
+## 2026-09-29 — ios-27-0-1: a three-line point release, faceless, built on Apple's own pages
+
+56.0s, 13 slides, no presenter (HeyGen still Free, checked before scripting), 9 SFX (9/9 heard),
+-14.4 LUFS. Format top5 with allowLong (three fixes + "should you update").
+
+- **RAW NOTE 1 — a point release has no features, so the story is WHO it hits.** Apple's notes
+  are three equal bullets; two are iPhone 18 Pro only, one is every iPhone. Withholding the
+  every-iPhone one ("The third could hit yours") gave a three-line changelog an open loop, and
+  the security table (no published CVEs) answered the only question a viewer really has:
+  update now or whenever. Rule: for x.0.1 releases, sort the fixes by device and end on
+  Apple's security row.
+- **RAW NOTE 2 — the Mac this ran on has no Xcode.** CLAUDE.md (2026-09-25) says the iOS 27
+  simulator is a source; `xcrun simctl` was absent here (`xcode-select -p` =
+  CommandLineTools). Check `xcrun simctl list` before planning a recording, per machine.
+  Apple's iPhone User Guide (support.apple.com/guide/iphone, "Select version: iOS 27") has
+  official device illustrations (Control Center) and gesture text that stand in well.
+- **RAW NOTE 3 — ElevenLabs v3 read 164 words at 3.39 w/s (48.4s).** vo_pad to 56s (2.93 w/s),
+  whisper small heard every number right (27.0.1, 2x, 18 Pro). ~938 credits for one take.
+- **`steps` blocks with long labels render as three tiny boxes** in a portrait slide; `rows`
+  carries the same sequence at readable size. Use steps only for 1-2 word labels.
+- **An apple.com hero captured on mobile carries a region banner and a tagline** above the
+  product; crop below both (the first render showed a half-cut "Pro further.").
+- The chatterbox rehearsal (STEP 1.5) was skipped: chatterbox not installed on this machine.
+
+Treatment history: Apple release-notes page with a focus box per bullet (three times, one per
+fix), security-table receipt, iPhone 18 Pro hero, Apple's Control Center illustration under a
+two-sided swap, rows for the Face ID sequence and the Settings path. Next point-release reel:
+do not open on the notes page again; open on the device or the symptom.
