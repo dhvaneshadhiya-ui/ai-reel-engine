@@ -9163,6 +9163,145 @@ tap, before/after support screenshots in slide `screen` blocks with focus rects,
 withheld "First/Second/Third ?" rows card paid off by three requirement cards, orb cover.
 Next how-to: do not open on presenter circle + settings screenshot again.
 
+## 2026-09-28 — ios27-carplay-features: a top5 list built on real car screens, faceless
+
+53.2s, 16 slides, no presenter (see raw note 3), 9 hand-placed SFX (9/9 heard).
+
+- **RAW NOTE 1 — the round-ups were wrong about their headline feature.** Most iOS 27
+  CarPlay lists (and one MacRumors piece) lead with "widgets from any app". iDownloadBlog
+  documented third-party CarPlay widgets in iOS 26, MacRumors' own iOS 27 guide lists no
+  widget change, and Apple's WWDC26 session 212 calls them existing. Rule: for "new in
+  version N" lists, check the item against the N-1 how-to articles before it takes a slot.
+  The honest version became the angle: "four work today, one no car can use yet."
+- **RAW NOTE 2 — ElevenLabs v3 said "fourteen" so it reads as "forty".** Whisper small AND
+  medium (primed) both heard "Forty". A one-sentence re-take (~111 credits vs ~920 for the
+  whole read) was spliced at mid-pause cut points with a -2.2 dB match; both models then
+  heard "14". Rule: whisper every number in the VO before anything else is built on it;
+  splice a sentence rather than regenerate the read.
+- **RAW NOTE 3 — HeyGen Free: 1080p refused, then Avatar IV/V monthly limit, and
+  `avatar_iii` renders but WATERMARKED** ("HeyGen" tiled over face and body). Shipped
+  faceless (`facePlan: none`, reason recorded). Rule: on Free, do not spend time on
+  avatar_iii — check get_current_user and tell the user before the build, not after.
+- **Car screens are 3.5:1.** Fitted whole in a slide column they are ~265px tall. Crop each
+  clip to its action (the scrub bar + finger, the wallpaper grid, the Siri card) at 1.5-2.2:1
+  and let the slide `clip` block carry it. Apple's CarPlay Simulator demo crops clean of the
+  window chrome at 1316x740+302+104.
+- **Stage `stamp` does not hide the text before its word** — "More dependable" sat on screen
+  before it was said. Use `arrive` (dir pop) for a word that must land on the voice.
+- **packaging_check reads one line per field.** A multi-line caption silently drops every
+  line after the first (the AI disclosure line went missing). Keep each field on one line.
+- Caption CTA must be the video's CTA: the first draft said "Save" under a "Share" video.
+
+Treatment history: real-car creator footage (zollotech, AppleInsider) in cropped clip cards,
+Apple keynote + WWDC session demo for Siri and video, a four/one rows split as the promise,
+a phone→CarPlay connect stage for an unfilmable claim, a "who turns it on / said they will"
+rows card as the payoff. Next CarPlay/car reel: do not open on the wallpaper home screen again.
+
+## 2026-09-29 — ios-27-0-1: a three-line point release, faceless, built on Apple's own pages
+
+56.0s, 13 slides, no presenter (HeyGen still Free, checked before scripting), 9 SFX (9/9 heard),
+-14.4 LUFS. Format top5 with allowLong (three fixes + "should you update").
+
+- **RAW NOTE 1 — a point release has no features, so the story is WHO it hits.** Apple's notes
+  are three equal bullets; two are iPhone 18 Pro only, one is every iPhone. Withholding the
+  every-iPhone one ("The third could hit yours") gave a three-line changelog an open loop, and
+  the security table (no published CVEs) answered the only question a viewer really has:
+  update now or whenever. Rule: for x.0.1 releases, sort the fixes by device and end on
+  Apple's security row.
+- **RAW NOTE 2 — the Mac this ran on has no Xcode.** CLAUDE.md (2026-09-25) says the iOS 27
+  simulator is a source; `xcrun simctl` was absent here (`xcode-select -p` =
+  CommandLineTools). Check `xcrun simctl list` before planning a recording, per machine.
+  Apple's iPhone User Guide (support.apple.com/guide/iphone, "Select version: iOS 27") has
+  official device illustrations (Control Center) and gesture text that stand in well.
+- **RAW NOTE 3 — ElevenLabs v3 read 164 words at 3.39 w/s (48.4s).** vo_pad to 56s (2.93 w/s),
+  whisper small heard every number right (27.0.1, 2x, 18 Pro). ~938 credits for one take.
+- **`steps` blocks with long labels render as three tiny boxes** in a portrait slide; `rows`
+  carries the same sequence at readable size. Use steps only for 1-2 word labels.
+- **An apple.com hero captured on mobile carries a region banner and a tagline** above the
+  product; crop below both (the first render showed a half-cut "Pro further.").
+- The chatterbox rehearsal (STEP 1.5) was skipped: chatterbox not installed on this machine.
+
+Treatment history: Apple release-notes page with a focus box per bullet (three times, one per
+fix), security-table receipt, iPhone 18 Pro hero, Apple's Control Center illustration under a
+two-sided swap, rows for the Face ID sequence and the Settings path. Next point-release reel:
+do not open on the notes page again; open on the device or the symptom.
+
+## 2026-09-29 — chatgpt-plugins: a top-5 built entirely from OpenAI's public Plugin Directory
+
+57.0s, 14 slides, no presenter (HeyGen Free), 9 SFX (9/9 heard), -14.5 LUFS. Format ai-tools.
+
+- **RAW NOTE 1 — "plugins" means something new.** The 2023 plugins closed April 2024; on
+  2026-07-09 OpenAI renamed apps to plugins (Plugin Directory). Research had to establish
+  the current meaning before picking five, or the reel would have described a dead product.
+- **RAW NOTE 2 — chatgpt.com/plugins renders logged-out.** Every listing page
+  (chatgpt.com/plugins/<plugin_id>, ids scraped from the directory's anchors; slugs like
+  /plugins/gmail do NOT resolve) carries the vendor's demo carousel as plain <img> at 706px.
+  Pulled at native size they are clean, official, phone-shaped proof of each plugin at work.
+  help.openai.com and chatgpt.com/pricing 403 to WebFetch AND curl; Playwright mobile loads them.
+- **RAW NOTE 3 — ElevenLabs v3 slurred "ChatGPT" into "Chan-GPT"** in this take (whisper
+  base, small AND medium all heard "Chanjee PT"/"enchant gpt"; the same voice read it
+  cleanly in 5-chatgpt-features). Fix: re-read ONLY the two affected sentences with the
+  word spelled "Chat G-P-T" (199 credits, vs ~916 for a full take), level-match the pickup
+  (-1.9 dB), splice at sentence pauses, then vo_pad. Rule: when a brand name is the
+  subject, whisper-check it in the first take before anything else is built.
+- **RAW NOTE 4 — a tall page capture in a `screen` block HUGS** (height/width > 1.2) into a
+  narrow column and its text becomes unreadable; crop to the region the line names so the
+  aspect is <= 1.2 and it fills the column.
+- **RAW NOTE 5 — [DUPLICATE] is an average hash.** Two different light cards centred under a
+  headline read as identical; change the LAYOUT (shorter screen + a type line), not the image.
+- A `text` block under an 860px screen lands in the caption band; the lint did not catch it,
+  the contact sheet did.
+
+Treatment history: Malwarebytes HIGH RISK card as the hook + confirmation beat, directory
+crop with focus, five-icon logos grid (promise and end card), spotlight icon reveals for #2
+and #5, vendor demo cards with state crossfades (Canva posts→deck, Adobe batch→video,
+Malwarebytes link→phone), listing-text highlight for "used to be Photoshop", Install button
+zoom. Next plugin/app list: do not open on a result card again; open on the thing the viewer
+is holding (a text, a photo) and cut to the plugin.
+- **Revision same day (user): open on "5 Must have ChatGPT Plugins You Should Install now".**
+  Only the first three sentences were re-read (240 credits) and spliced at the pause before
+  "One, Canva"; "these five are worth installing" was cut as redundant, and "Since July,
+  ChatGPT has plugins again" became "Plugins came back in July" to avoid two ChatGPTs in a
+  row. The five-icon grid moved from beat 3 to frame 0. A caption_correction keyed on
+  "install." also rewrote the new "install now" into "Install. now." — key corrections on
+  a two-word phrase ("tap install"), never on one common word.
+
+## 2026-09-30 — apple-pay-axis-bank: a launch-day news reel whose value is the fine print, faceless
+
+75.0s, 16 slides, no presenter (HeyGen still Free, checked before scripting), 9 SFX (8 heard,
+1 masked: paper-slide at 0.3 under the RBI line), -14.5 LUFS. Format news.
+
+- **RAW NOTE 1 — the headline everyone repeats is not the story.** "Apple Pay is in India" is the
+  news; the useful part is who it works for (Axis credit on Visa/Mastercard only), what it does
+  not (debit, RuPay, UPI, HDFC/ICICI/SBI Card) and that the shop's terminal must be enabled.
+  Axis's own FAQ carried the one practical fix nobody reported: Tap and Pay must be on under
+  Manage Usage Limits. Rule: on a launch, read the partner bank's/vendor's FAQ, not just the
+  press release — the gotcha lives there.
+- **RAW NOTE 2 — Apple's own release contradicts itself** ("thousands" vs "millions" of
+  merchants) and Axis's statement (via Business Standard) says payments come "over the next few
+  weeks" against Apple's "Starting today". Said neither count, hedged the counter instead.
+- **RAW NOTE 3 — subagents cannot Write report files here** (harness: "return findings as
+  text"). The main session saved all four findings files. Put the findings in the reply, then save.
+- **RAW NOTE 4 — Apple newsroom press images carry "cannot be altered or modified".** Shown whole
+  (scaled only) in a screen block, and the COVER used the apple.com/in hero instead, since a
+  cover crops.
+- **RBI's notification page truncates text on mobile and is 2214px of tiny type on desktop;**
+  rbi.org.in then timed out on a narrow re-capture. A title strip was unreadable at 916px, so
+  the receipt became an attributed text line. Rule: a regulator's page rarely survives 9:16 —
+  quote its words with the circular number instead of pretending a screenshot is legible.
+- **Move anchors resolve against the RAW whisper words** ("rupe", "chroma", "10r"), not
+  caption_corrections. Anchor on a neighbouring word. whisper medium (unprimed) heard "XR"
+  correctly where small heard "10R" — check a slice before blaming the read.
+- ElevenLabs v3 read 218 words at 3.22 w/s (67.7s, ~1,200 credits); vo_pad to 75s (2.91 w/s).
+- Two side-by-side 464x500 phone screens are tiny in the column; stacked vertically (464x1000)
+  they fill it and a focus can walk top -> bottom.
+
+Treatment history: Apple's India press image placed whole as the hook, Apple newsroom mobile
+paragraph with a focus box on the Axis line (confirmation beat), Axis's own setup screens
+stacked, apple.com/in Face ID + transactions screens in a device frame, rows for "not yet"
+lists, a counter 1 / counter 2 swap for terminal acceptance, Axis FAQ "In Stores" card with a
+focus box. Next payments/bank reel: do not open on a press image of a card at Done again.
+
 ## 2026-09-30 — a pointer to our own content needs the published URL (ios27-settings-longform)
 
 - **What happened:** the long-form close said "the next video walks through every iOS 27

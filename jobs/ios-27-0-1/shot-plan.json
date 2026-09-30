@@ -1,0 +1,709 @@
+{
+ "emphasis": [
+  "27.0.1",
+  "three",
+  "18 Pro",
+  "restarted",
+  "software",
+  "2x",
+  "small",
+  "together",
+  "touch",
+  "security",
+  "today",
+  "Software Update",
+  "Send"
+ ],
+ "caption_corrections": {
+  "27 .0 .1": "27.0.1",
+  "passwords": "Passwords",
+  "notification center": "Notification Center",
+  "control center": "Control Center",
+  "settings, general software update": "Settings, General, Software Update"
+ },
+ "format": "top5",
+ "shots": [
+  {
+   "start_phrase": "Apple just shipped iOS",
+   "line": "Apple just shipped iOS twenty seven point oh point one, the first update to iOS 27.",
+   "asset_id": "apple-notes-2701",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Out now",
+    "headline": "iOS [[27.0.1]] is here",
+    "blocks": [
+     {
+      "id": "n",
+      "kind": "screen",
+      "src": "assets/ios-27-0-1/apple-notes-2701.png",
+      "width": 1080,
+      "height": 1420,
+      "device": false,
+      "h": 900
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "shipped"
+     },
+     {
+      "do": "focus",
+      "target": "n",
+      "on": "first update",
+      "rect": [
+       0,
+       0,
+       1080,
+       420
+      ],
+      "ring": false
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 0.6,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "It fixes three bugs.",
+   "line": "It fixes three bugs. Two only hit one iPhone. The third could hit yours.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Three fixes",
+    "headline": "[[3]] fixes. One could be yours",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "iPhone 18 Pro",
+        "v": "Fix 1",
+        "tone": "plain"
+       },
+       {
+        "k": "iPhone 18 Pro",
+        "v": "Fix 2",
+        "tone": "plain"
+       },
+       {
+        "k": "Every iPhone",
+        "v": "Fix 3 \u00b7 could hit yours",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "three bugs"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "Two only"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "one iPhone"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "The third"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 2.9,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "The first two belong",
+   "line": "The first two belong to the iPhone 18 Pro and Pro Max.",
+   "asset_id": "apple-18pro-hero",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Fixes 1 and 2",
+    "headline": "iPhone [[18 Pro]] and Pro Max",
+    "blocks": [
+     {
+      "id": "h",
+      "kind": "screen",
+      "src": "assets/ios-27-0-1/apple-18pro-hero.png",
+      "width": 1080,
+      "height": 1080,
+      "device": false,
+      "h": 900
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "18 Pro"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx2/whooshes-01.mp3",
+      "at": 0.0,
+      "vol": 0.2
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "When Face ID failed",
+   "line": "When Face ID failed inside an app like Passwords, some of them froze and restarted.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Fix 1 \u00b7 Face ID",
+    "headline": "Face ID fails, iPhone [[restarts]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Face ID",
+        "v": "Fails in an app like Passwords",
+        "tone": "plain"
+       },
+       {
+        "k": "Screen",
+        "v": "Freezes",
+        "tone": "plain"
+       },
+       {
+        "k": "iPhone",
+        "v": "Restarts",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "s.0",
+      "on": "Face ID failed"
+     },
+     {
+      "do": "show",
+      "target": "s.1",
+      "on": "froze"
+     },
+     {
+      "do": "show",
+      "target": "s.2",
+      "on": "restarted"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "restarted"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "at": 0.3,
+      "vol": 0.22
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "That was a software",
+   "line": "That was a software bug, so you don't need a new phone.",
+   "asset_id": "apple-notes-2701",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Fixed in 27.0.1",
+    "headline": "A [[software]] bug. Keep your phone",
+    "blocks": [
+     {
+      "id": "n",
+      "kind": "screen",
+      "src": "assets/ios-27-0-1/apple-notes-2701.png",
+      "width": 1080,
+      "height": 1420,
+      "device": false,
+      "h": 820
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "n",
+      "at": 0.1,
+      "rect": [
+       0,
+       440,
+       1080,
+       260
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "software"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "The second is in",
+   "line": "The second is in the camera: some 2x photos, shot at the widest aperture in certain light, came out with a color glitch.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Fix 2 \u00b7 Camera",
+    "headline": "A [[color glitch]] in 2x photos",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Zoom",
+        "v": "2x",
+        "tone": "plain"
+       },
+       {
+        "k": "Aperture",
+        "v": "f/1.48, the widest",
+        "tone": "plain"
+       },
+       {
+        "k": "Light",
+        "v": "Certain conditions",
+        "tone": "plain"
+       }
+      ]
+     },
+     {
+      "id": "h",
+      "kind": "screen",
+      "src": "assets/ios-27-0-1/apple-18pro-hero.png",
+      "width": 1080,
+      "height": 1080,
+      "device": false,
+      "h": 480
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "2x photos"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "widest aperture"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "certain light"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "color glitch"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx2/whooshes-01.mp3",
+      "at": 0.0,
+      "vol": 0.2
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Apple says only a",
+   "line": "Apple says only a small number of phones had it.",
+   "asset_id": "apple-notes-2701",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Apple's words",
+    "headline": "Only a [[small number]] of phones",
+    "blocks": [
+     {
+      "id": "n",
+      "kind": "screen",
+      "src": "assets/ios-27-0-1/apple-notes-2701.png",
+      "width": 1080,
+      "height": 1420,
+      "device": false,
+      "h": 820
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "n",
+      "at": 0.1,
+      "rect": [
+       0,
+       720,
+       1080,
+       360
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "small number"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Which leaves the one",
+   "line": "Which leaves the one for everyone: pull down Notification Center and Control Center together",
+   "asset_id": "apple-cc-phone",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Fix 3 \u00b7 Every iPhone",
+    "headline": "Both panels, [[together]]",
+    "blocks": [
+     {
+      "id": "w",
+      "kind": "swap",
+      "left": {
+       "name": "Notification Center",
+       "note": "Swipe down, top-left",
+       "tone": "plain"
+      },
+      "right": {
+       "name": "Control Center",
+       "note": "Swipe down, top-right",
+       "tone": "plain"
+      }
+     },
+     {
+      "id": "c",
+      "kind": "screen",
+      "src": "assets/ios-27-0-1/apple-cc-phone.png",
+      "width": 560,
+      "height": 1130,
+      "device": false,
+      "h": 560
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "w.left",
+      "on": "Notification"
+     },
+     {
+      "do": "show",
+      "target": "w.right",
+      "on": "Control Center"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "together"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "at": 0.5,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "and your screen could",
+   "line": "and your screen could stop responding to touch.",
+   "asset_id": "apple-notes-2701",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Fixed in 27.0.1",
+    "headline": "Touch [[stops responding]]",
+    "blocks": [
+     {
+      "id": "n",
+      "kind": "screen",
+      "src": "assets/ios-27-0-1/apple-notes-2701.png",
+      "width": 1080,
+      "height": 1420,
+      "device": false,
+      "h": 820
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "n",
+      "at": 0.1,
+      "rect": [
+       0,
+       1110,
+       1080,
+       300
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "stop responding"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Should you update?",
+   "line": "Should you update? Apple lists no security fixes, so there's no rush.",
+   "asset_id": "apple-security-2701",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Should you update?",
+    "headline": "[[No]] security fixes listed",
+    "blocks": [
+     {
+      "id": "x",
+      "kind": "screen",
+      "src": "assets/ios-27-0-1/apple-security-2701.png",
+      "width": 700,
+      "height": 660,
+      "device": false,
+      "h": 700
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "no security"
+     },
+     {
+      "do": "focus",
+      "target": "x",
+      "on": "no security",
+      "rect": [
+       30,
+       500,
+       640,
+       140
+      ]
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 1.4,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "On an 18 Pro,",
+   "line": "On an 18 Pro, though, do it today. Everyone else, whenever it suits you.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Who should hurry",
+    "headline": "18 Pro? Update [[today]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "iPhone 18 Pro",
+        "v": "Today",
+        "tone": "cost"
+       },
+       {
+        "k": "Everyone else",
+        "v": "Whenever it suits you",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "18 Pro"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "today"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "Everyone else"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "It's in Settings, General,",
+   "line": "It's in Settings, General, Software Update.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Where",
+    "headline": "[[Software Update]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Open",
+        "v": "Settings",
+        "tone": "plain"
+       },
+       {
+        "k": "Tap",
+        "v": "General",
+        "tone": "plain"
+       },
+       {
+        "k": "Tap",
+        "v": "Software Update",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "s.0",
+      "on": "Settings"
+     },
+     {
+      "do": "show",
+      "target": "s.1",
+      "on": "General"
+     },
+     {
+      "do": "show",
+      "target": "s.2",
+      "on": "Software Update"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Software Update"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "at": 1.6,
+      "vol": 0.22
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Know an 18 Pro",
+   "line": "Know an 18 Pro owner? Send them this.",
+   "asset_id": "apple-18pro-hero",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "cta": true,
+    "headlineSize": "xl",
+    "eyebrow": "Share it",
+    "headline": "[[Send]] this to an 18 Pro owner",
+    "blocks": [
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Their Face ID fix is one update away"
+     },
+     {
+      "id": "h",
+      "kind": "screen",
+      "src": "assets/ios-27-0-1/apple-18pro-hero.png",
+      "width": 1080,
+      "height": 1080,
+      "device": false,
+      "h": 520
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Send them"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.18
+     }
+    ]
+   },
+   "needs": []
+  }
+ ],
+ "music": false,
+ "noMusicReason": "an update explainer read over Apple's own pages; the voice carries every label and a bed competes with it (standing no-music default)",
+ "facePlan": "none",
+ "facePlanReason": "HeyGen account on the Free plan (checked 2026-09-29): avatar output is watermarked. Faceless until a clean presenter can be rendered; user approved faceless.",
+ "audio": "assets/ios-27-0-1/vo.mp3",
+ "slideSfx": false,
+ "allowLong": true,
+ "allowLongReason": "three fixes plus the 'should you update' answer and where to find it; that answer is the value, and cutting to 48s drops it"
+}

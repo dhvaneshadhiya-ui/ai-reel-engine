@@ -1,0 +1,28 @@
+{
+  "slug": "apple-pay-axis-bank",
+  "topic": "Apple Pay now available in India with Axis Bank cards",
+  "details": "",
+  "subject": "Apple Pay now available in India with Axis Bank cards",
+  "audience": "Indian iPhone owners who have heard 'Apple Pay is finally in India' and want to know if it works for them; Axis Bank credit card holders",
+  "platform": "both",
+  "goal": "education",
+  "core_value": "whether Apple Pay works for you in India today, how to set it up, and what still does not work",
+  "desired_action": "comment whether the card machine took it",
+  "reveal_target": "none",
+  "cta_keyword": "",
+  "target_duration": "70s",
+  "tone": "calm, useful, reporting; no hype",
+  "source_policy": "official-preferred",
+  "footage_constraints": "faceless (HeyGen Free plan: avatars watermarked); Apple Newsroom India image placed whole (editorial licence, no alteration); apple.com/in/apple-pay phone screens; Axis Bank setup screens; mobile captures of Apple newsroom + Axis page; no simulator on this Mac",
+  "credit_instructions": "internal",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 70,
+  "music": false,
+  "created_at": "2026-09-30T04:55:49.806651+00:00",
+  "status": "initialized"
+}

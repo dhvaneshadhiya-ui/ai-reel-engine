@@ -1,0 +1,18 @@
+{
+  "script_sha256": "19369c95c6dbe892d1f3484186f5d81eb95846f387d5a94b08e8fb3c2fbe4e0a",
+  "structure_sha256": "2b4089851f362678abd8ae7ba747ae379ab5c9f19c7075e4d91e0cc12aace28e",
+  "findings": [
+    "  BRIDGES 2/16 sentences (12%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  WHAT WITHOUT SO WHAT 4/5 spec sentences never say what the number does for the viewer. \"2nm chip\" is information; \"faster without draining the battery\" is relevance. (framework S7)",
+    "HOUSE TIC: 'ios twenty seven point' \u2014 already used in 1 other script(s) (ios-27-2-beta-1). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HOUSE TIC: \"so there's no\" \u2014 already used in 1 other script(s) (apple-reference-image). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HOUSE TIC: 'to the iphone' \u2014 already used in 1 other script(s) (iphone18-split). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HOUSE TIC: 'is in the' \u2014 already used in 1 other script(s) (mac-multiple-headphones). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [
+    "the most surprising claim (SURPRISE 70: 'Opening Notification Center and Control Center simultaneousl') is spoken in the last 40% of the script \u2014 consider leading with it."
+  ],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-09-29T05:16:03+00:00"
+}

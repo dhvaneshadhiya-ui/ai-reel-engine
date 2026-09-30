@@ -1,0 +1,1725 @@
+{
+  "id": "ios-27-0-1",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "utility",
+  "audio": "assets/ios-27-0-1/vo.mp3",
+  "facePlan": "none",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "27.0.1",
+    "three",
+    "18 Pro",
+    "restarted",
+    "software",
+    "2x",
+    "small",
+    "together",
+    "touch",
+    "security",
+    "today",
+    "Software Update",
+    "Send"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "eyebrow": "Out now",
+      "headline": "iOS [[27.0.1]] is here",
+      "blocks": [
+        {
+          "id": "n",
+          "kind": "screen",
+          "src": "assets/ios-27-0-1/apple-notes-2701.png",
+          "width": 1080,
+          "height": 1420,
+          "device": false,
+          "h": 900
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "shipped",
+          "at": 0.64
+        },
+        {
+          "do": "focus",
+          "target": "n",
+          "on": "first update",
+          "rect": [
+            0,
+            0,
+            1080,
+            420
+          ],
+          "ring": false,
+          "at": 3.9
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.6,
+          "vol": 0.182
+        }
+      ],
+      "durationSec": 6.42,
+      "assetId": "apple-notes-2701",
+      "claimId": "apple-notes-2701",
+      "covers": "Apple just shipped iOS",
+      "sourceUrl": "https://support.apple.com/en-us/149076",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Three fixes",
+      "headline": "[[3]] fixes. One could be yours",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "iPhone 18 Pro",
+              "v": "Fix 1",
+              "tone": "plain"
+            },
+            {
+              "k": "iPhone 18 Pro",
+              "v": "Fix 2",
+              "tone": "plain"
+            },
+            {
+              "k": "Every iPhone",
+              "v": "Fix 3 \u00b7 could hit yours",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "three bugs",
+          "at": 0.5
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "Two only",
+          "at": 1.96
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "one iPhone",
+          "at": 2.74
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "The third",
+          "at": 4.22
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 2.9,
+          "vol": 0.295
+        }
+      ],
+      "durationSec": 5.8,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Fixes 1 and 2",
+      "headline": "iPhone [[18 Pro]] and Pro Max",
+      "blocks": [
+        {
+          "id": "h",
+          "kind": "screen",
+          "src": "assets/ios-27-0-1/apple-18pro-hero.png",
+          "width": 1080,
+          "height": 1080,
+          "device": false,
+          "h": 900
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "18 Pro",
+          "at": 1.4
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "at": 0.0,
+          "vol": 0.288
+        }
+      ],
+      "durationSec": 3.64,
+      "assetId": "apple-18pro-hero",
+      "claimId": "apple-18pro-hero",
+      "covers": "The first two belong",
+      "sourceUrl": "https://www.apple.com/iphone-18-pro/",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Fix 1 \u00b7 Face ID",
+      "headline": "Face ID fails, iPhone [[restarts]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Face ID",
+              "v": "Fails in an app like Passwords",
+              "tone": "plain"
+            },
+            {
+              "k": "Screen",
+              "v": "Freezes",
+              "tone": "plain"
+            },
+            {
+              "k": "iPhone",
+              "v": "Restarts",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.0",
+          "on": "Face ID failed",
+          "at": 0.2
+        },
+        {
+          "do": "show",
+          "target": "s.1",
+          "on": "froze",
+          "at": 3.78
+        },
+        {
+          "do": "show",
+          "target": "s.2",
+          "on": "restarted",
+          "at": 4.36
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "restarted",
+          "at": 4.36
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "at": 0.3,
+          "vol": 0.133
+        }
+      ],
+      "durationSec": 5.26,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Fixed in 27.0.1",
+      "headline": "A [[software]] bug. Keep your phone",
+      "blocks": [
+        {
+          "id": "n",
+          "kind": "screen",
+          "src": "assets/ios-27-0-1/apple-notes-2701.png",
+          "width": 1080,
+          "height": 1420,
+          "device": false,
+          "h": 820
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "n",
+          "at": 0.1,
+          "rect": [
+            0,
+            440,
+            1080,
+            260
+          ]
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "software",
+          "at": 0.38
+        }
+      ],
+      "durationSec": 3.16,
+      "assetId": "apple-notes-2701",
+      "claimId": "apple-notes-2701",
+      "covers": "That was a software",
+      "sourceUrl": "https://support.apple.com/en-us/149076",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Fix 2 \u00b7 Camera",
+      "headline": "A [[color glitch]] in 2x photos",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Zoom",
+              "v": "2x",
+              "tone": "plain"
+            },
+            {
+              "k": "Aperture",
+              "v": "f/1.48, the widest",
+              "tone": "plain"
+            },
+            {
+              "k": "Light",
+              "v": "Certain conditions",
+              "tone": "plain"
+            }
+          ]
+        },
+        {
+          "id": "h",
+          "kind": "screen",
+          "src": "assets/ios-27-0-1/apple-18pro-hero.png",
+          "width": 1080,
+          "height": 1080,
+          "device": false,
+          "h": 480
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "2x photos",
+          "at": 1.56
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "widest aperture",
+          "at": 3.4
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "certain light",
+          "at": 4.42
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "color glitch",
+          "at": 6.52
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "at": 0.0,
+          "vol": 0.288
+        }
+      ],
+      "durationSec": 7.76,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Apple's words",
+      "headline": "Only a [[small number]] of phones",
+      "blocks": [
+        {
+          "id": "n",
+          "kind": "screen",
+          "src": "assets/ios-27-0-1/apple-notes-2701.png",
+          "width": 1080,
+          "height": 1420,
+          "device": false,
+          "h": 820
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "n",
+          "at": 0.1,
+          "rect": [
+            0,
+            720,
+            1080,
+            360
+          ]
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "small number",
+          "at": 0.94
+        }
+      ],
+      "durationSec": 3.0,
+      "assetId": "apple-notes-2701",
+      "claimId": "apple-notes-2701",
+      "covers": "Apple says only a",
+      "sourceUrl": "https://support.apple.com/en-us/149076",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Fix 3 \u00b7 Every iPhone",
+      "headline": "Both panels, [[together]]",
+      "blocks": [
+        {
+          "id": "w",
+          "kind": "swap",
+          "left": {
+            "name": "Notification Center",
+            "note": "Swipe down, top-left",
+            "tone": "plain"
+          },
+          "right": {
+            "name": "Control Center",
+            "note": "Swipe down, top-right",
+            "tone": "plain"
+          }
+        },
+        {
+          "id": "c",
+          "kind": "screen",
+          "src": "assets/ios-27-0-1/apple-cc-phone.png",
+          "width": 560,
+          "height": 1130,
+          "device": false,
+          "h": 560
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "w.left",
+          "on": "Notification",
+          "at": 2.66
+        },
+        {
+          "do": "show",
+          "target": "w.right",
+          "on": "Control Center",
+          "at": 3.84
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "together",
+          "at": 4.58
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 0.5,
+          "vol": 0.556
+        }
+      ],
+      "durationSec": 4.92,
+      "assetId": "apple-cc-phone",
+      "claimId": "apple-cc-phone",
+      "covers": "Which leaves the one",
+      "sourceUrl": "https://support.apple.com/guide/iphone/use-and-customize-control-center-iph59095ec58/ios",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Fixed in 27.0.1",
+      "headline": "Touch [[stops responding]]",
+      "blocks": [
+        {
+          "id": "n",
+          "kind": "screen",
+          "src": "assets/ios-27-0-1/apple-notes-2701.png",
+          "width": 1080,
+          "height": 1420,
+          "device": false,
+          "h": 820
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "n",
+          "at": 0.1,
+          "rect": [
+            0,
+            1110,
+            1080,
+            300
+          ]
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "stop responding",
+          "at": 1.16
+        }
+      ],
+      "durationSec": 3.06,
+      "assetId": "apple-notes-2701",
+      "claimId": "apple-notes-2701",
+      "covers": "and your screen could",
+      "sourceUrl": "https://support.apple.com/en-us/149076",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Should you update?",
+      "headline": "[[No]] security fixes listed",
+      "blocks": [
+        {
+          "id": "x",
+          "kind": "screen",
+          "src": "assets/ios-27-0-1/apple-security-2701.png",
+          "width": 700,
+          "height": 660,
+          "device": false,
+          "h": 700
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "no security",
+          "at": 1.72
+        },
+        {
+          "do": "focus",
+          "target": "x",
+          "on": "no security",
+          "rect": [
+            30,
+            500,
+            640,
+            140
+          ],
+          "at": 1.72
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.4,
+          "vol": 0.182
+        }
+      ],
+      "durationSec": 4.58,
+      "assetId": "apple-security-2701",
+      "claimId": "apple-security-2701",
+      "covers": "Should you update?",
+      "sourceUrl": "https://support.apple.com/en-us/100100",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Who should hurry",
+      "headline": "18 Pro? Update [[today]]",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "iPhone 18 Pro",
+              "v": "Today",
+              "tone": "cost"
+            },
+            {
+              "k": "Everyone else",
+              "v": "Whenever it suits you",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "18 Pro",
+          "at": 0.3
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "today",
+          "at": 1.42
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "Everyone else",
+          "at": 1.88
+        }
+      ],
+      "durationSec": 3.56,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Where",
+      "headline": "[[Software Update]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Open",
+              "v": "Settings",
+              "tone": "plain"
+            },
+            {
+              "k": "Tap",
+              "v": "General",
+              "tone": "plain"
+            },
+            {
+              "k": "Tap",
+              "v": "Software Update",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s.0",
+          "on": "Settings",
+          "at": 0.3
+        },
+        {
+          "do": "show",
+          "target": "s.1",
+          "on": "General",
+          "at": 0.5
+        },
+        {
+          "do": "show",
+          "target": "s.2",
+          "on": "Software Update",
+          "at": 0.98
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Software Update",
+          "at": 0.98
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "at": 1.6,
+          "vol": 0.133
+        }
+      ],
+      "durationSec": 2.5,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "headlineSize": "xl",
+      "eyebrow": "Share it",
+      "headline": "[[Send]] this to an 18 Pro owner",
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Their Face ID fix is one update away"
+        },
+        {
+          "id": "h",
+          "kind": "screen",
+          "src": "assets/ios-27-0-1/apple-18pro-hero.png",
+          "width": 1080,
+          "height": 1080,
+          "device": false,
+          "h": 520
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Send them",
+          "at": 1.62
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.309
+        }
+      ],
+      "durationSec": 2.34,
+      "assetId": "apple-18pro-hero",
+      "claimId": "apple-18pro-hero",
+      "covers": "Know an 18 Pro",
+      "sourceUrl": "https://www.apple.com/iphone-18-pro/",
+      "hideCaptions": true
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.98,
+      "text": "Apple just shipped",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Apple"
+        },
+        {
+          "t": 0.38,
+          "text": "just"
+        },
+        {
+          "t": 0.64,
+          "text": "shipped"
+        }
+      ]
+    },
+    {
+      "start": 0.98,
+      "end": 3.9,
+      "text": "iOS 27.0.1 the",
+      "words": [
+        {
+          "t": 0.98,
+          "text": "iOS"
+        },
+        {
+          "t": 1.28,
+          "text": "27.0.1"
+        },
+        {
+          "t": 3.22,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 3.9,
+      "end": 4.76,
+      "text": "first update to",
+      "words": [
+        {
+          "t": 3.9,
+          "text": "first"
+        },
+        {
+          "t": 4.16,
+          "text": "update"
+        },
+        {
+          "t": 4.58,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 4.76,
+      "end": 6.66,
+      "text": "iOS 27. It",
+      "words": [
+        {
+          "t": 4.76,
+          "text": "iOS"
+        },
+        {
+          "t": 5.06,
+          "text": "27."
+        },
+        {
+          "t": 6.42,
+          "text": "It"
+        }
+      ]
+    },
+    {
+      "start": 6.66,
+      "end": 7.62,
+      "text": "fixes three bugs,",
+      "words": [
+        {
+          "t": 6.66,
+          "text": "fixes"
+        },
+        {
+          "t": 6.92,
+          "text": "three"
+        },
+        {
+          "t": 7.28,
+          "text": "bugs,"
+        }
+      ]
+    },
+    {
+      "start": 8.38,
+      "end": 9.16,
+      "text": "two only hit",
+      "words": [
+        {
+          "t": 8.38,
+          "text": "two"
+        },
+        {
+          "t": 8.56,
+          "text": "only"
+        },
+        {
+          "t": 8.9,
+          "text": "hit"
+        }
+      ]
+    },
+    {
+      "start": 9.16,
+      "end": 10.76,
+      "text": "one iPhone, the",
+      "words": [
+        {
+          "t": 9.16,
+          "text": "one"
+        },
+        {
+          "t": 9.46,
+          "text": "iPhone,"
+        },
+        {
+          "t": 10.64,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 10.76,
+      "end": 11.5,
+      "text": "third could hit",
+      "words": [
+        {
+          "t": 10.76,
+          "text": "third"
+        },
+        {
+          "t": 11.08,
+          "text": "could"
+        },
+        {
+          "t": 11.26,
+          "text": "hit"
+        }
+      ]
+    },
+    {
+      "start": 11.5,
+      "end": 12.54,
+      "text": "yours, the first",
+      "words": [
+        {
+          "t": 11.5,
+          "text": "yours,"
+        },
+        {
+          "t": 12.22,
+          "text": "the"
+        },
+        {
+          "t": 12.3,
+          "text": "first"
+        }
+      ]
+    },
+    {
+      "start": 12.54,
+      "end": 13.18,
+      "text": "two belong to",
+      "words": [
+        {
+          "t": 12.54,
+          "text": "two"
+        },
+        {
+          "t": 12.72,
+          "text": "belong"
+        },
+        {
+          "t": 12.98,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 13.18,
+      "end": 13.96,
+      "text": "the iPhone 18",
+      "words": [
+        {
+          "t": 13.18,
+          "text": "the"
+        },
+        {
+          "t": 13.3,
+          "text": "iPhone"
+        },
+        {
+          "t": 13.62,
+          "text": "18"
+        }
+      ]
+    },
+    {
+      "start": 13.96,
+      "end": 14.8,
+      "text": "Pro and Pro",
+      "words": [
+        {
+          "t": 13.96,
+          "text": "Pro"
+        },
+        {
+          "t": 14.34,
+          "text": "and"
+        },
+        {
+          "t": 14.58,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 14.8,
+      "end": 16.34,
+      "text": "Max. When Face",
+      "words": [
+        {
+          "t": 14.8,
+          "text": "Max."
+        },
+        {
+          "t": 15.86,
+          "text": "When"
+        },
+        {
+          "t": 16.06,
+          "text": "Face"
+        }
+      ]
+    },
+    {
+      "start": 16.34,
+      "end": 17.32,
+      "text": "ID failed inside",
+      "words": [
+        {
+          "t": 16.34,
+          "text": "ID"
+        },
+        {
+          "t": 16.6,
+          "text": "failed"
+        },
+        {
+          "t": 17.02,
+          "text": "inside"
+        }
+      ]
+    },
+    {
+      "start": 17.32,
+      "end": 17.88,
+      "text": "an app like",
+      "words": [
+        {
+          "t": 17.32,
+          "text": "an"
+        },
+        {
+          "t": 17.56,
+          "text": "app"
+        },
+        {
+          "t": 17.72,
+          "text": "like"
+        }
+      ]
+    },
+    {
+      "start": 17.88,
+      "end": 19.5,
+      "text": "Passwords, some of",
+      "words": [
+        {
+          "t": 17.88,
+          "text": "Passwords,"
+        },
+        {
+          "t": 19.04,
+          "text": "some"
+        },
+        {
+          "t": 19.38,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 19.5,
+      "end": 20.22,
+      "text": "them froze and",
+      "words": [
+        {
+          "t": 19.5,
+          "text": "them"
+        },
+        {
+          "t": 19.64,
+          "text": "froze"
+        },
+        {
+          "t": 19.98,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 20.22,
+      "end": 21.38,
+      "text": "restarted, that was",
+      "words": [
+        {
+          "t": 20.22,
+          "text": "restarted,"
+        },
+        {
+          "t": 21.12,
+          "text": "that"
+        },
+        {
+          "t": 21.24,
+          "text": "was"
+        }
+      ]
+    },
+    {
+      "start": 21.38,
+      "end": 22.16,
+      "text": "a software bug",
+      "words": [
+        {
+          "t": 21.38,
+          "text": "a"
+        },
+        {
+          "t": 21.5,
+          "text": "software"
+        },
+        {
+          "t": 21.82,
+          "text": "bug"
+        }
+      ]
+    },
+    {
+      "start": 22.16,
+      "end": 22.7,
+      "text": "so you don't",
+      "words": [
+        {
+          "t": 22.16,
+          "text": "so"
+        },
+        {
+          "t": 22.4,
+          "text": "you"
+        },
+        {
+          "t": 22.54,
+          "text": "don't"
+        }
+      ]
+    },
+    {
+      "start": 22.7,
+      "end": 23.2,
+      "text": "need a new",
+      "words": [
+        {
+          "t": 22.7,
+          "text": "need"
+        },
+        {
+          "t": 22.94,
+          "text": "a"
+        },
+        {
+          "t": 23.08,
+          "text": "new"
+        }
+      ]
+    },
+    {
+      "start": 23.2,
+      "end": 24.72,
+      "text": "phone. The second",
+      "words": [
+        {
+          "t": 23.2,
+          "text": "phone."
+        },
+        {
+          "t": 24.28,
+          "text": "The"
+        },
+        {
+          "t": 24.46,
+          "text": "second"
+        }
+      ]
+    },
+    {
+      "start": 24.72,
+      "end": 25.16,
+      "text": "is in the",
+      "words": [
+        {
+          "t": 24.72,
+          "text": "is"
+        },
+        {
+          "t": 24.96,
+          "text": "in"
+        },
+        {
+          "t": 25.06,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 25.16,
+      "end": 26.36,
+      "text": "camera, some 2x",
+      "words": [
+        {
+          "t": 25.16,
+          "text": "camera,"
+        },
+        {
+          "t": 25.46,
+          "text": "some"
+        },
+        {
+          "t": 25.84,
+          "text": "2x"
+        }
+      ]
+    },
+    {
+      "start": 26.36,
+      "end": 27.58,
+      "text": "photos, shot at",
+      "words": [
+        {
+          "t": 26.36,
+          "text": "photos,"
+        },
+        {
+          "t": 27.18,
+          "text": "shot"
+        },
+        {
+          "t": 27.36,
+          "text": "at"
+        }
+      ]
+    },
+    {
+      "start": 27.58,
+      "end": 28.34,
+      "text": "the widest aperture",
+      "words": [
+        {
+          "t": 27.58,
+          "text": "the"
+        },
+        {
+          "t": 27.68,
+          "text": "widest"
+        },
+        {
+          "t": 28.04,
+          "text": "aperture"
+        }
+      ]
+    },
+    {
+      "start": 28.34,
+      "end": 29.24,
+      "text": "in certain light,",
+      "words": [
+        {
+          "t": 28.34,
+          "text": "in"
+        },
+        {
+          "t": 28.7,
+          "text": "certain"
+        },
+        {
+          "t": 28.9,
+          "text": "light,"
+        }
+      ]
+    },
+    {
+      "start": 29.98,
+      "end": 30.68,
+      "text": "came out with",
+      "words": [
+        {
+          "t": 29.98,
+          "text": "came"
+        },
+        {
+          "t": 30.26,
+          "text": "out"
+        },
+        {
+          "t": 30.48,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 30.68,
+      "end": 31.38,
+      "text": "a color glitch.",
+      "words": [
+        {
+          "t": 30.68,
+          "text": "a"
+        },
+        {
+          "t": 30.8,
+          "text": "color"
+        },
+        {
+          "t": 31.02,
+          "text": "glitch."
+        }
+      ]
+    },
+    {
+      "start": 32.04,
+      "end": 32.84,
+      "text": "Apple says only",
+      "words": [
+        {
+          "t": 32.04,
+          "text": "Apple"
+        },
+        {
+          "t": 32.3,
+          "text": "says"
+        },
+        {
+          "t": 32.54,
+          "text": "only"
+        }
+      ]
+    },
+    {
+      "start": 32.84,
+      "end": 33.52,
+      "text": "a small number",
+      "words": [
+        {
+          "t": 32.84,
+          "text": "a"
+        },
+        {
+          "t": 32.98,
+          "text": "small"
+        },
+        {
+          "t": 33.24,
+          "text": "number"
+        }
+      ]
+    },
+    {
+      "start": 33.52,
+      "end": 34.22,
+      "text": "of phones had",
+      "words": [
+        {
+          "t": 33.52,
+          "text": "of"
+        },
+        {
+          "t": 33.66,
+          "text": "phones"
+        },
+        {
+          "t": 33.94,
+          "text": "had"
+        }
+      ]
+    },
+    {
+      "start": 34.22,
+      "end": 35.48,
+      "text": "it, which leaves",
+      "words": [
+        {
+          "t": 34.22,
+          "text": "it,"
+        },
+        {
+          "t": 35.04,
+          "text": "which"
+        },
+        {
+          "t": 35.26,
+          "text": "leaves"
+        }
+      ]
+    },
+    {
+      "start": 35.48,
+      "end": 36.06,
+      "text": "the one for",
+      "words": [
+        {
+          "t": 35.48,
+          "text": "the"
+        },
+        {
+          "t": 35.66,
+          "text": "one"
+        },
+        {
+          "t": 35.86,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 36.06,
+      "end": 37.7,
+      "text": "everyone. Pull down",
+      "words": [
+        {
+          "t": 36.06,
+          "text": "everyone."
+        },
+        {
+          "t": 37.26,
+          "text": "Pull"
+        },
+        {
+          "t": 37.5,
+          "text": "down"
+        }
+      ]
+    },
+    {
+      "start": 37.7,
+      "end": 39.62,
+      "text": "Notification Center and Control Center",
+      "words": [
+        {
+          "t": 37.7,
+          "text": "Notification"
+        },
+        {
+          "t": 38.68,
+          "text": "Center"
+        },
+        {
+          "t": 38.88,
+          "text": "and"
+        },
+        {
+          "t": 38.88,
+          "text": "Control"
+        },
+        {
+          "t": 38.88,
+          "text": "Center"
+        }
+      ]
+    },
+    {
+      "start": 39.62,
+      "end": 40.54,
+      "text": "together and your",
+      "words": [
+        {
+          "t": 39.62,
+          "text": "together"
+        },
+        {
+          "t": 39.96,
+          "text": "and"
+        },
+        {
+          "t": 40.44,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 40.54,
+      "end": 41.4,
+      "text": "screen could stop",
+      "words": [
+        {
+          "t": 40.54,
+          "text": "screen"
+        },
+        {
+          "t": 40.9,
+          "text": "could"
+        },
+        {
+          "t": 41.12,
+          "text": "stop"
+        }
+      ]
+    },
+    {
+      "start": 41.4,
+      "end": 42.5,
+      "text": "responding to touch.",
+      "words": [
+        {
+          "t": 41.4,
+          "text": "responding"
+        },
+        {
+          "t": 41.92,
+          "text": "to"
+        },
+        {
+          "t": 42.12,
+          "text": "touch."
+        }
+      ]
+    },
+    {
+      "start": 43.02,
+      "end": 43.88,
+      "text": "Should you update,",
+      "words": [
+        {
+          "t": 43.02,
+          "text": "Should"
+        },
+        {
+          "t": 43.4,
+          "text": "you"
+        },
+        {
+          "t": 43.54,
+          "text": "update,"
+        }
+      ]
+    },
+    {
+      "start": 44.16,
+      "end": 45.02,
+      "text": "Apple lists no",
+      "words": [
+        {
+          "t": 44.16,
+          "text": "Apple"
+        },
+        {
+          "t": 44.38,
+          "text": "lists"
+        },
+        {
+          "t": 44.74,
+          "text": "no"
+        }
+      ]
+    },
+    {
+      "start": 45.02,
+      "end": 46.24,
+      "text": "security fixes, so",
+      "words": [
+        {
+          "t": 45.02,
+          "text": "security"
+        },
+        {
+          "t": 45.42,
+          "text": "fixes,"
+        },
+        {
+          "t": 46.12,
+          "text": "so"
+        }
+      ]
+    },
+    {
+      "start": 46.24,
+      "end": 46.9,
+      "text": "there's no rush.",
+      "words": [
+        {
+          "t": 46.24,
+          "text": "there's"
+        },
+        {
+          "t": 46.46,
+          "text": "no"
+        },
+        {
+          "t": 46.6,
+          "text": "rush."
+        }
+      ]
+    },
+    {
+      "start": 47.6,
+      "end": 48.08,
+      "text": "On an 18",
+      "words": [
+        {
+          "t": 47.6,
+          "text": "On"
+        },
+        {
+          "t": 47.8,
+          "text": "an"
+        },
+        {
+          "t": 47.9,
+          "text": "18"
+        }
+      ]
+    },
+    {
+      "start": 48.08,
+      "end": 48.9,
+      "text": "Pro though, do",
+      "words": [
+        {
+          "t": 48.08,
+          "text": "Pro"
+        },
+        {
+          "t": 48.44,
+          "text": "though,"
+        },
+        {
+          "t": 48.8,
+          "text": "do"
+        }
+      ]
+    },
+    {
+      "start": 48.9,
+      "end": 49.7,
+      "text": "it today, everyone",
+      "words": [
+        {
+          "t": 48.9,
+          "text": "it"
+        },
+        {
+          "t": 49.02,
+          "text": "today,"
+        },
+        {
+          "t": 49.48,
+          "text": "everyone"
+        }
+      ]
+    },
+    {
+      "start": 49.7,
+      "end": 50.52,
+      "text": "else whenever it",
+      "words": [
+        {
+          "t": 49.7,
+          "text": "else"
+        },
+        {
+          "t": 50.04,
+          "text": "whenever"
+        },
+        {
+          "t": 50.22,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 50.52,
+      "end": 51.32,
+      "text": "suits you, it's",
+      "words": [
+        {
+          "t": 50.52,
+          "text": "suits"
+        },
+        {
+          "t": 50.74,
+          "text": "you,"
+        },
+        {
+          "t": 51.16,
+          "text": "it's"
+        }
+      ]
+    },
+    {
+      "start": 51.32,
+      "end": 54.16,
+      "text": "in Settings, General, Software Update Know",
+      "words": [
+        {
+          "t": 51.32,
+          "text": "in"
+        },
+        {
+          "t": 51.46,
+          "text": "Settings,"
+        },
+        {
+          "t": 53.66,
+          "text": "General,"
+        },
+        {
+          "t": 53.66,
+          "text": "Software"
+        },
+        {
+          "t": 53.66,
+          "text": "Update"
+        },
+        {
+          "t": 53.66,
+          "text": "Know"
+        }
+      ]
+    },
+    {
+      "start": 54.16,
+      "end": 54.78,
+      "text": "an 18 Pro",
+      "words": [
+        {
+          "t": 54.16,
+          "text": "an"
+        },
+        {
+          "t": 54.28,
+          "text": "18"
+        },
+        {
+          "t": 54.48,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 54.78,
+      "end": 55.6,
+      "text": "owner, send them",
+      "words": [
+        {
+          "t": 54.78,
+          "text": "owner,"
+        },
+        {
+          "t": 55.28,
+          "text": "send"
+        },
+        {
+          "t": 55.44,
+          "text": "them"
+        }
+      ]
+    },
+    {
+      "start": 55.6,
+      "end": 55.78,
+      "text": "this.",
+      "words": [
+        {
+          "t": 55.6,
+          "text": "this."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "an update explainer read over Apple's own pages; the voice carries every label and a bed competes with it (standing no-music default)",
+  "format": "top5",
+  "allowLong": true,
+  "allowLongReason": "three fixes plus the 'should you update' answer and where to find it; that answer is the value, and cutting to 48s drops it",
+  "script": "Apple just shipped iOS twenty seven point oh point one, the first update to iOS 27. It fixes three bugs. Two only hit one iPhone. The third could hit yours.\n\nThe first two belong to the iPhone 18 Pro and Pro Max. When Face ID failed inside an app like Passwords, some of them froze and restarted. That was a software bug, so you don't need a new phone.\n\nThe second is in the camera: some 2x photos, shot at the widest aperture in certain light, came out with a color glitch. Apple says only a small number of phones had it.\n\nWhich leaves the one for everyone: pull down Notification Center and Control Center together, and your screen could stop responding to touch.\n\nShould you update? Apple lists no security fixes, so there's no rush. On an 18 Pro, though, do it today. Everyone else, whenever it suits you. It's in Settings, General, Software Update.\n\nKnow an 18 Pro owner? Send them this.",
+  "approval": {
+    "sha256": "19369c95c6dbe892d1f3484186f5d81eb95846f387d5a94b08e8fb3c2fbe4e0a",
+    "approvedAt": "2026-09-29T05:17:15+00:00",
+    "words": 164,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

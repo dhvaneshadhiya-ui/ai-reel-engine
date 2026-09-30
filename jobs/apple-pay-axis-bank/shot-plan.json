@@ -1,0 +1,931 @@
+{
+ "emphasis": [
+  "live",
+  "one bank's",
+  "Axis",
+  "once",
+  "skip",
+  "two checks",
+  "count",
+  "aren't in",
+  "Croma",
+  "switched on",
+  "Tap and Pay",
+  "XR",
+  "machine"
+ ],
+ "caption_corrections": {
+  "AXIS": "Axis",
+  "RUPE": "RuPay",
+  "Chroma": "Croma",
+  "10R": "XR",
+  "fingerprints can": "fingerprint scan",
+  "Double click": "Double-click",
+  "face ID": "Face ID",
+  "wallet": "Wallet",
+  "tap and pay": "Tap and Pay",
+  "SBI card": "SBI Card",
+  "they are still": "they're still"
+ },
+ "format": "news",
+ "music": false,
+ "noMusicReason": "a how-it-works explainer read over Apple's and Axis Bank's own pages; the voice carries every label (standing no-music default)",
+ "facePlan": "none",
+ "facePlanReason": "HeyGen account on the Free plan (checked 2026-09-30): avatar output is watermarked. Faceless, as in the last three reels; user approved the faceless plan.",
+ "audio": "assets/apple-pay-axis-bank/vo.mp3",
+ "slideSfx": false,
+ "shots": [
+  {
+   "start_phrase": "Apple Pay just went",
+   "line": "Apple Pay just went live in India, almost twelve years after it launched in the US.",
+   "asset_id": "apple-launch",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "US 2014 \u00b7 India 2026",
+    "headline": "Apple Pay is [[live]] in India",
+    "blocks": [
+     {
+      "id": "l",
+      "kind": "screen",
+      "src": "assets/apple-pay-axis-bank/apple-launch.jpg",
+      "width": 1200,
+      "height": 1500,
+      "device": false,
+      "h": 860
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "live"
+     },
+     {
+      "do": "focus",
+      "target": "l",
+      "on": "12 years",
+      "rect": [
+       120,
+       250,
+       600,
+       560
+      ],
+      "ring": false
+     },
+     {
+      "do": "focus",
+      "target": "l",
+      "on": "in the US",
+      "rect": [
+       0,
+       0,
+       1200,
+       1500
+      ],
+      "ring": false
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx2/whooshes-01.mp3",
+      "at": 0.0,
+      "vol": 0.2
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "But right now",
+   "line": "But right now, it only works with one bank's cards, and not at every shop.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The fine print",
+    "headline": "[[One]] bank. Not every shop",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Banks",
+        "v": "Only one, for now",
+        "tone": "cost"
+       },
+       {
+        "k": "Shops",
+        "v": "Not every counter",
+        "tone": "cost"
+       }
+      ]
+     },
+     {
+      "id": "h",
+      "kind": "screen",
+      "src": "assets/apple-pay-axis-bank/apple-hand.png",
+      "width": 1140,
+      "height": 960,
+      "device": false,
+      "h": 560
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "one bank's"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "one bank's"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "every shop"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 0.9,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "That bank is",
+   "line": "That bank is Axis. Got an Axis credit card, Visa or Mastercard?",
+   "asset_id": "newsroom-axis",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Apple Newsroom \u00b7 30 Sep 2026",
+    "headline": "[[Axis Bank]] credit cards",
+    "blocks": [
+     {
+      "id": "n",
+      "kind": "screen",
+      "src": "assets/apple-pay-axis-bank/newsroom-axis.png",
+      "width": 1080,
+      "height": 1150,
+      "device": false,
+      "h": 820
+     },
+     {
+      "id": "c",
+      "kind": "text",
+      "text": "Visa or Mastercard \u00b7 credit cards only"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Axis"
+     },
+     {
+      "do": "focus",
+      "target": "n",
+      "on": "Axis",
+      "rect": [
+       0,
+       620,
+       1080,
+       260
+      ]
+     },
+     {
+      "do": "show",
+      "target": "c",
+      "on": "Visa"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "at": 0.2,
+      "vol": 0.28
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Add it to",
+   "line": "Add it to Wallet from the Axis app or the plus button.",
+   "asset_id": "axis-setup",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Setup \u00b7 Axis Bank's own screens",
+    "headline": "Axis app, or Wallet [[+]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-pay-axis-bank/axis-setup.png",
+      "width": 464,
+      "height": 1000,
+      "device": false,
+      "h": 1000
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "Axis app",
+      "rect": [
+       0,
+       0,
+       464,
+       500
+      ],
+      "ring": false
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "plus button",
+      "rect": [
+       0,
+       500,
+       464,
+       500
+      ],
+      "ring": false
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "plus"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "The bank checks",
+   "line": "The bank checks it once, by OTP or in its app.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Verification",
+    "headline": "Checked [[once]], at setup",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "When",
+        "v": "Once, when you add the card",
+        "tone": "plain"
+       },
+       {
+        "k": "How",
+        "v": "SMS OTP or the Axis app",
+        "tone": "plain"
+       }
+      ]
+     },
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-pay-axis-bank/axis-setup.png",
+      "width": 464,
+      "height": 1000,
+      "device": false,
+      "h": 620
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "once"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "once"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "OTP"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "From then on",
+   "line": "From then on, you skip the OTP.",
+   "asset_id": "apple-faceid",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "At the counter",
+    "headline": "[[No OTP]] at checkout",
+    "blocks": [
+     {
+      "id": "f",
+      "kind": "screen",
+      "src": "assets/apple-pay-axis-bank/apple-faceid.jpg",
+      "width": 608,
+      "height": 1252,
+      "device": true,
+      "h": 1000
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "skip"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 0.6,
+      "vol": 0.28
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Double click the",
+   "line": "Double-click the side button, Face ID, and hold it near the card machine.",
+   "asset_id": "apple-hand",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "How you pay",
+    "headline": "Double-click, Face ID, [[hold]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "1",
+        "v": "Double-click the side button",
+        "tone": "plain"
+       },
+       {
+        "k": "2",
+        "v": "Face ID",
+        "tone": "plain"
+       },
+       {
+        "k": "3",
+        "v": "Hold it near the card machine",
+        "tone": "free"
+       }
+      ]
+     },
+     {
+      "id": "h",
+      "kind": "screen",
+      "src": "assets/apple-pay-axis-bank/apple-hand.png",
+      "width": 1140,
+      "height": 960,
+      "device": false,
+      "h": 520
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "side button"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "face ID"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "hold it"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "hold it"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "That's new for",
+   "line": "That's new for India: card payments here need two checks, and for years the second was an SMS OTP.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The rule behind it",
+    "headline": "[[Two]] checks per payment",
+    "blocks": [
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Reserve Bank of India \u00b7 Authentication Directions, 2025 (RBI/2025-26/79)"
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Check 1",
+        "v": "Your card or phone",
+        "tone": "plain"
+       },
+       {
+        "k": "Check 2",
+        "v": "Usually an SMS OTP",
+        "tone": "cost"
+       }
+      ]
+     },
+     {
+      "id": "q",
+      "kind": "text",
+      "text": "RBI: the ecosystem \"primarily adopted SMS-based OTP\""
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "two checks"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "two checks"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "SMS OTP"
+     },
+     {
+      "do": "show",
+      "target": "q",
+      "on": "SMS OTP"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx-action/paper-slide.mp3",
+      "at": 0.0,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Since April",
+   "line": "Since April, an RBI rule lets your phone's own face or fingerprint scan count.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "RBI Directions, 2025 \u00b7 in force April 2026",
+    "headline": "Your face [[counts]] now",
+    "blocks": [
+     {
+      "id": "w",
+      "kind": "swap",
+      "left": {
+       "name": "SMS OTP",
+       "note": "The usual second check",
+       "tone": "cost"
+      },
+      "right": {
+       "name": "Face or fingerprint",
+       "note": "\"biometrics (device native...)\"",
+       "tone": "free"
+      }
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Reserve Bank of India \u00b7 Authentication Directions, 2025 (RBI/2025-26/79)"
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "w.left",
+      "on": "RBI rule"
+     },
+     {
+      "do": "strike",
+      "target": "w.left",
+      "on": "face"
+     },
+     {
+      "do": "show",
+      "target": "w.right",
+      "on": "face"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "count"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "at": 1.6,
+      "vol": 0.25
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Everyone else waits",
+   "line": "Everyone else waits: Axis debit cards don't work, and neither do RuPay or UPI.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Not yet",
+    "headline": "Everyone else [[waits]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Axis debit cards",
+        "v": "Not yet",
+        "tone": "cost"
+       },
+       {
+        "k": "RuPay",
+        "v": "Not yet",
+        "tone": "cost"
+       },
+       {
+        "k": "UPI",
+        "v": "Not yet",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "waits"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "debit"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "neither do"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "UPI"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.18
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "HDFC, ICICI and",
+   "line": "HDFC, ICICI and SBI Card aren't in, and reports say they're still negotiating.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Not at launch",
+    "headline": "HDFC, ICICI, SBI Card: [[not in]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "HDFC Bank",
+        "v": "Not at launch",
+        "tone": "cost"
+       },
+       {
+        "k": "ICICI Bank",
+        "v": "Not at launch",
+        "tone": "cost"
+       },
+       {
+        "k": "SBI Card",
+        "v": "Not at launch",
+        "tone": "cost"
+       }
+      ]
+     },
+     {
+      "id": "q",
+      "kind": "text",
+      "text": "Reportedly still negotiating with Apple"
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "HDFC"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "ICICI"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "SBI"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "aren't in"
+     },
+     {
+      "do": "show",
+      "target": "q",
+      "on": "reports"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Now those shops",
+   "line": "Now, those shops. Zomato, Blinkit and Croma are on Apple's list,",
+   "asset_id": "apple-txns",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Apple's list",
+    "headline": "Zomato, Blinkit, [[Croma]]",
+    "blocks": [
+     {
+      "id": "x",
+      "kind": "screen",
+      "src": "assets/apple-pay-axis-bank/apple-txns.jpg",
+      "width": 608,
+      "height": 1252,
+      "device": true,
+      "h": 1000
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "x",
+      "on": "Zomato",
+      "rect": [
+       20,
+       600,
+       568,
+       120
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "are on"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "But each counter's",
+   "line": "but each counter's machine has to be switched on for it, so one might take it while the next won't.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The catch at the counter",
+    "headline": "The machine must be [[switched on]]",
+    "blocks": [
+     {
+      "id": "w",
+      "kind": "swap",
+      "left": {
+       "name": "Counter 1",
+       "note": "Enabled: Done",
+       "tone": "free"
+      },
+      "right": {
+       "name": "Counter 2",
+       "note": "Not enabled: nothing",
+       "tone": "cost"
+      }
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "switched on"
+     },
+     {
+      "do": "show",
+      "target": "w.left",
+      "on": "one might"
+     },
+     {
+      "do": "show",
+      "target": "w.right",
+      "on": "the next"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 0.3,
+      "vol": 0.28
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "If yours fails",
+   "line": "If yours fails, turn on Tap and Pay under usage limits in the Axis app.",
+   "asset_id": "axis-instore",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Axis Bank's own fix",
+    "headline": "Turn on [[Tap and Pay]]",
+    "blocks": [
+     {
+      "id": "i",
+      "kind": "screen",
+      "src": "assets/apple-pay-axis-bank/axis-instore.png",
+      "width": 1104,
+      "height": 1250,
+      "device": false,
+      "h": 1000
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "i",
+      "on": "Tap and Pay",
+      "rect": [
+       40,
+       60,
+       1024,
+       300
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Tap and Pay"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx-action/marker.mp3",
+      "at": 1.4,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Any iPhone",
+   "line": "Any iPhone XR or newer on iOS 18 works, and your rewards still count.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Do you qualify?",
+    "headline": "[[iPhone XR]] or newer",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "iPhone",
+        "v": "XR or newer",
+        "tone": "plain"
+       },
+       {
+        "k": "Software",
+        "v": "iOS 18 or later",
+        "tone": "plain"
+       },
+       {
+        "k": "Card rewards",
+        "v": "Still earned",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "Any iPhone"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "or newer"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "iOS 18"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "rewards"
+     }
+    ]
+   },
+   "needs": []
+  },
+  {
+   "start_phrase": "Paid with it",
+   "line": "Paid with it yet? Tell us below if the machine took it.",
+   "asset_id": "apple-hand",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "cta": true,
+    "headlineSize": "xl",
+    "eyebrow": "Tell us",
+    "headline": "[[Comment]]: did it work?",
+    "blocks": [
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Which shop's machine took your Axis card?"
+     },
+     {
+      "id": "h",
+      "kind": "screen",
+      "src": "assets/apple-pay-axis-bank/apple-hand.png",
+      "width": 1140,
+      "height": 960,
+      "device": false,
+      "h": 520
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Tell us"
+     }
+    ]
+   },
+   "needs": []
+  }
+ ]
+}

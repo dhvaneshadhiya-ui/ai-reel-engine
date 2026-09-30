@@ -1,0 +1,905 @@
+{
+ "emphasis": [
+  "scam",
+  "Plugin",
+  "five",
+  "Canva",
+  "Adobe",
+  "Spotify",
+  "Gmail",
+  "Malwarebytes",
+  "free",
+  "Install",
+  "save"
+ ],
+ "caption_corrections": {
+  "plugin directory": "Plugin Directory",
+  "reel": "Reel",
+  "open plugins": "open Plugins",
+  "must have": "must-have",
+  "tap install": "tap Install"
+ },
+ "format": "ai-tools",
+ "shots": [
+  {
+   "start_phrase": "Five must-have ChatGPT plugins",
+   "line": "Five must-have ChatGPT plugins you should install now.",
+   "needs": [
+    "Five",
+    "must-have",
+    "ChatGPT",
+    "plugins",
+    "install"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Install these now",
+    "headline": "[[5]] must-have ChatGPT plugins",
+    "blocks": [
+     {
+      "id": "g",
+      "kind": "logos",
+      "items": [
+       {
+        "logo": "assets/chatgpt-plugins/icon-canva.png",
+        "name": "Canva"
+       },
+       {
+        "logo": "assets/chatgpt-plugins/icon-adobe.png",
+        "name": "Adobe"
+       },
+       {
+        "logo": "assets/chatgpt-plugins/icon-spotify.png",
+        "name": "Spotify"
+       },
+       {
+        "logo": "assets/chatgpt-plugins/icon-gmail.png",
+        "name": "Gmail"
+       },
+       {
+        "logo": "assets/chatgpt-plugins/icon-malwarebytes.png",
+        "name": "Malwarebytes"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "g",
+      "on": "Five"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "must-have"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 0.2,
+      "vol": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Plugins came back in",
+   "line": "Plugins came back in July, and the fifth one here can tell you if a text is a scam before you tap the link.",
+   "needs": [
+    "ChatGPT",
+    "plugins",
+    "again",
+    "fifth",
+    "tell",
+    "text"
+   ],
+   "tier": "official",
+   "asset_id": "mb-phone",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "#5 on this list",
+    "headline": "Is this text a [[scam]]?",
+    "blocks": [
+     {
+      "id": "m",
+      "kind": "screen",
+      "src": "assets/chatgpt-plugins/mb-phone.png",
+      "width": 706,
+      "height": 805,
+      "device": false,
+      "h": 880
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "m",
+      "on": "fifth one",
+      "rect": [
+       20,
+       120,
+       500,
+       200
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "scam"
+     },
+     {
+      "do": "focus",
+      "target": "m",
+      "on": "tell you",
+      "rect": [
+       20,
+       210,
+       666,
+       300
+      ],
+      "ring": false
+     },
+     {
+      "do": "focus",
+      "target": "m",
+      "on": "tap the link",
+      "rect": [
+       20,
+       560,
+       666,
+       160
+      ]
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx2/whooshes-01.mp3",
+      "at": 0.0,
+      "vol": 0.2
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "OpenAI turned its app",
+   "line": "OpenAI turned its app store into a Plugin Directory.",
+   "needs": [
+    "OpenAI",
+    "turned",
+    "store",
+    "Plugin",
+    "Directory"
+   ],
+   "tier": "official",
+   "asset_id": "directory-crop",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Since July",
+    "headline": "The [[Plugin Directory]]",
+    "blocks": [
+     {
+      "id": "d",
+      "kind": "screen",
+      "src": "assets/chatgpt-plugins/directory-crop.png",
+      "width": 1080,
+      "height": 1220,
+      "device": false,
+      "h": 960
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "d",
+      "on": "app store",
+      "rect": [
+       20,
+       40,
+       1040,
+       330
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Plugin"
+     },
+     {
+      "do": "focus",
+      "target": "d",
+      "on": "Directory",
+      "rect": [
+       0,
+       0,
+       1080,
+       1220
+      ],
+      "ring": false
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.18
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Canva: paste a brief,",
+   "line": "Canva: paste a brief, and it becomes social posts, a flyer, or a deck you can keep editing.",
+   "needs": [
+    "Canva",
+    "paste",
+    "brief",
+    "becomes",
+    "social",
+    "posts"
+   ],
+   "tier": "official",
+   "asset_id": "card-canva",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "1 of 5 \u00b7 Canva",
+    "headline": "A brief becomes [[posts]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "screen",
+      "src": "assets/chatgpt-plugins/card-canva-1.png",
+      "width": 706,
+      "height": 580,
+      "device": false,
+      "h": 700
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "becomes"
+     },
+     {
+      "do": "state",
+      "target": "c",
+      "on": "a deck",
+      "src": "assets/chatgpt-plugins/card-canva-2.png"
+     },
+     {
+      "do": "focus",
+      "target": "c",
+      "on": "flyer",
+      "rect": [
+       0,
+       0,
+       706,
+       420
+      ],
+      "ring": false
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Two, Adobe.",
+   "line": "Two, Adobe.",
+   "needs": [
+    "Adobe"
+   ],
+   "tier": "official",
+   "asset_id": "icon-adobe",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "2 of 5",
+    "headline": "Number [[two]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "spotlight",
+      "logo": "assets/chatgpt-plugins/icon-adobe.png",
+      "name": "Adobe"
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Design, combine, and edit"
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "s",
+      "on": "Adobe"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Two"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "Adobe"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "at": 0.1,
+      "vol": 0.26
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "It used to be",
+   "line": "It used to be just Photoshop",
+   "needs": [
+    "used",
+    "Photoshop"
+   ],
+   "tier": "official",
+   "asset_id": "adobe-text",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Adobe's own listing",
+    "headline": "It used to be [[Photoshop]]",
+    "blocks": [
+     {
+      "id": "t",
+      "kind": "screen",
+      "src": "assets/chatgpt-plugins/adobe-text.png",
+      "width": 1080,
+      "height": 360,
+      "device": false,
+      "h": 420
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "t",
+      "on": "used"
+     },
+     {
+      "do": "focus",
+      "target": "t",
+      "on": "Photoshop",
+      "rect": [
+       30,
+       40,
+       1020,
+       140
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Photoshop"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx-action/marker.mp3",
+      "at": 0.9,
+      "vol": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "but now it edits",
+   "line": "but now it edits a batch of photos and turns a sideways video into a Reel, even as a guest., Three",
+   "needs": [
+    "edits",
+    "batch",
+    "photos",
+    "turns",
+    "sideways",
+    "video"
+   ],
+   "tier": "official",
+   "asset_id": "adobe-batch",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "2 of 5 \u00b7 Adobe",
+    "headline": "Photos in bulk, video to [[Reel]]",
+    "blocks": [
+     {
+      "id": "a",
+      "kind": "screen",
+      "src": "assets/chatgpt-plugins/adobe-batch.png",
+      "width": 706,
+      "height": 840,
+      "device": false,
+      "h": 860
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "a",
+      "on": "now"
+     },
+     {
+      "do": "focus",
+      "target": "a",
+      "on": "batch",
+      "rect": [
+       0,
+       0,
+       706,
+       700
+      ],
+      "ring": false
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Reel"
+     },
+     {
+      "do": "state",
+      "target": "a",
+      "on": "sideways",
+      "src": "assets/chatgpt-plugins/adobe-video.png"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "at": 0.2,
+      "vol": 0.22
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Spotify: ask for music",
+   "line": "Spotify: ask for music for a run, and the songs show up right in the chat., Four",
+   "needs": [
+    "Spotify",
+    "music",
+    "songs",
+    "show",
+    "right",
+    "chat"
+   ],
+   "tier": "official",
+   "asset_id": "card-spotify",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "3 of 5 \u00b7 Spotify",
+    "headline": "Music, right in the [[chat]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/chatgpt-plugins/card-spotify-2.png",
+      "width": 706,
+      "height": 860,
+      "device": false,
+      "h": 900
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "music",
+      "rect": [
+       0,
+       0,
+       706,
+       300
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "chat"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "songs",
+      "rect": [
+       0,
+       280,
+       706,
+       580
+      ],
+      "ring": false
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Gmail, which sums up",
+   "line": "Gmail, which sums up a long thread and drafts the reply, so all you do is check it.",
+   "needs": [
+    "Gmail",
+    "which",
+    "sums",
+    "long",
+    "thread",
+    "drafts"
+   ],
+   "tier": "official",
+   "asset_id": "gmail-pills",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "4 of 5 \u00b7 Gmail",
+    "headline": "[[Gmail]] sums it up, drafts the reply",
+    "blocks": [
+     {
+      "id": "g",
+      "kind": "screen",
+      "src": "assets/chatgpt-plugins/gmail-pills.png",
+      "width": 960,
+      "height": 890,
+      "device": false,
+      "h": 600
+     },
+     {
+      "id": "k",
+      "kind": "text",
+      "text": "You just check it"
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "g",
+      "on": "sums",
+      "rect": [
+       0,
+       20,
+       960,
+       420
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "g",
+      "on": "drafts",
+      "rect": [
+       0,
+       460,
+       960,
+       400
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Gmail"
+     },
+     {
+      "do": "focus",
+      "target": "g",
+      "on": "check",
+      "rect": [
+       0,
+       0,
+       960,
+       890
+      ],
+      "ring": false
+     },
+     {
+      "do": "show",
+      "target": "k",
+      "on": "sums"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "five, Malwarebytes. Paste",
+   "line": "And five, Malwarebytes., Paste the link",
+   "needs": [
+    "five",
+    "Malwarebytes",
+    "Paste",
+    "link"
+   ],
+   "tier": "official",
+   "asset_id": "icon-malwarebytes",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "5 of 5",
+    "headline": "And number [[five]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "spotlight",
+      "logo": "assets/chatgpt-plugins/icon-malwarebytes.png",
+      "name": "Malwarebytes"
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Paste what you're unsure about"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "five"
+     },
+     {
+      "do": "show",
+      "target": "s",
+      "on": "Malwarebytes"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "Paste"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "at": 0.1,
+      "vol": 0.28
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "number or email you're",
+   "line": "number or email you're not sure about, and it rates the risk before you click or call.",
+   "needs": [
+    "number",
+    "email",
+    "sure",
+    "rates",
+    "risk",
+    "before"
+   ],
+   "tier": "official",
+   "asset_id": "mb-link",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "5 of 5 \u00b7 Malwarebytes",
+    "headline": "Check it [[before]] you tap",
+    "blocks": [
+     {
+      "id": "m",
+      "kind": "screen",
+      "src": "assets/chatgpt-plugins/mb-link.png",
+      "width": 706,
+      "height": 805,
+      "device": false,
+      "h": 880
+     }
+    ],
+    "moves": [
+     {
+      "do": "state",
+      "target": "m",
+      "on": "number",
+      "src": "assets/chatgpt-plugins/mb-phone.png"
+     },
+     {
+      "do": "focus",
+      "target": "m",
+      "on": "email",
+      "rect": [
+       20,
+       300,
+       666,
+       300
+      ],
+      "ring": false
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "risk"
+     },
+     {
+      "do": "focus",
+      "target": "m",
+      "on": "risk",
+      "rect": [
+       20,
+       120,
+       666,
+       190
+      ]
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 1.2,
+      "vol": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "It's free.",
+   "line": "It's free.",
+   "needs": [
+    "free"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Malwarebytes in ChatGPT",
+    "headline": "It's [[free]]",
+    "headlineSize": "xl",
+    "blocks": [
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "No Malwarebytes account needed"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "free"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "It's"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "To add one, open",
+   "line": "To add one, open Plugins in ChatGPT and tap Install.",
+   "needs": [
+    "open",
+    "Plugins",
+    "ChatGPT",
+    "Install"
+   ],
+   "tier": "official",
+   "asset_id": "mb-install",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "How to add one",
+    "headline": "Plugins \u2192 [[Install]]",
+    "blocks": [
+     {
+      "id": "p",
+      "kind": "screen",
+      "src": "assets/chatgpt-plugins/mb-install.png",
+      "width": 1080,
+      "height": 1250,
+      "device": false,
+      "h": 960
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "p",
+      "on": "open",
+      "rect": [
+       0,
+       0,
+       1080,
+       700
+      ],
+      "ring": false
+     },
+     {
+      "do": "focus",
+      "target": "p",
+      "on": "Install",
+      "rect": [
+       670,
+       430,
+       390,
+       160
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Install"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx2/mouse-click-01.mp3",
+      "at": 1.6,
+      "vol": 0.24
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Then save this before",
+   "line": "Then save this before the next strange text lands.",
+   "needs": [
+    "save",
+    "before",
+    "next",
+    "text",
+    "lands"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "cta": true,
+    "headlineSize": "xl",
+    "headline": "[[Save]] this",
+    "blocks": [
+     {
+      "id": "d",
+      "kind": "text",
+      "text": "for the next strange text you get"
+     },
+     {
+      "id": "g",
+      "kind": "logos",
+      "items": [
+       {
+        "logo": "assets/chatgpt-plugins/icon-canva.png",
+        "name": "Canva"
+       },
+       {
+        "logo": "assets/chatgpt-plugins/icon-adobe.png",
+        "name": "Adobe"
+       },
+       {
+        "logo": "assets/chatgpt-plugins/icon-spotify.png",
+        "name": "Spotify"
+       },
+       {
+        "logo": "assets/chatgpt-plugins/icon-gmail.png",
+        "name": "Gmail"
+       },
+       {
+        "logo": "assets/chatgpt-plugins/icon-malwarebytes.png",
+        "name": "Malwarebytes"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "save"
+     },
+     {
+      "do": "show",
+      "target": "d",
+      "on": "this"
+     },
+     {
+      "do": "show",
+      "target": "g",
+      "on": "save"
+     }
+    ]
+   }
+  }
+ ],
+ "music": false,
+ "noMusicReason": "a list read over OpenAI's own listing pages; the voice carries every label (standing no-music default)",
+ "facePlan": "none",
+ "facePlanReason": "HeyGen account on the Free plan: avatar output is watermarked. Faceless, as on the last two reels; user approved the plan that said so.",
+ "audio": "assets/chatgpt-plugins/vo.mp3",
+ "slideSfx": false
+}

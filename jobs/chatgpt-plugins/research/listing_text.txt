@@ -1,0 +1,212 @@
+
+=== gmail https://chatgpt.com/plugins/plugin_connector_1p_95d39881713c8191931482a62d6edff9
+‹
+Plugins
+Log in
+Gmail
+Read and manage Gmail
+Install plugin
+@Gmail Summarize the last 5 messages in [subject line] and capture decisions, open questions, and what I should follow up on next
+→
+@Gmail Draft a polite, firm reply to our auditor's latest email, with a short bullet list of exactly what we'll provide
+→
+@Gmail Turn my latest customer escalation thread into an action tracker with owners, deadlines, and an email reference for each item
+→
+Use Gmail to summarize inbox activity, draft replies, and organize email threads through the connected Gmail app.
+Information
+Capabilities
+Interactive, Write
+Developer
+OpenAI
+Category
+Communication
+Website
+Version
+0.1.10
+Privacy Policy
+Terms of Service
+When connected to Gmail, ChatGPT may share relevant chats and memories with this app to help provide context for your requests. Gmail’s use of this data is subject to their terms and privacy policy. If you have Memory enabled, data from the app may be used to proactively provide helpful information or suggestions. ChatGPT always respects your training data preferences, including for data from connected apps. Use of apps may come with elevated risk. You can manage your preferences or disconnect from apps anytime in your settings. Learn more
+Note on Google apps: This plugin may contain one or more Google apps, as listed above. Any data synced from these apps may be used to provide you with relevant and personalized information. We do not train generalized models on this data or derivations of it, except those submitted in feedback or included in ChatGPT’s response. You can delete your conversations, which will also delete any app data used in those conversations. Learn more
+
+=== adobe https://chatgpt.com/plugins/plugin_asdk_app_69312da8e4dc81919370cb86fd172b6c
+‹
+Plugins
+Log in
+Adobe
+Design, combine, and edit
+Install plugin
+turn my video into a short highlight reel
+resize these photos for my social media platforms
+find a template for a promotional flyer
+Adobe unlocks more ways to create and get work done from the conversation. Previously available as Photoshop, the Adobe connector now brings creativity and productivity capabilities across Creative Cloud and Acrobat. Describe what you want to make or change, and Adobe can help turn ideas, images, videos, and documents into polished outputs — from editing photos and creating PDFs to designing social assets, resizing videos, searching Creative Cloud assets, and generating data-driven documents.
+Key capabilities:
+* Retouch portraits or edit photos in bulk: Drop in photos and describe the look you want — adjust color, lighting, and tone; remove distractions and generate new elements; apply Lightroom presets; remove backgrounds; blur, crop, resize, and expand images.
+* Design from template: Start from an Express template, update text and colors, and then animate for social media or convert to PDF.
+* Refine video for any platform: Upload a horizontal clip and ask to reformat it for YouTube Shorts, Instagram Reels, or any platform. You can also stitch clips into a single sequence.
+* Search and organize creative work: Describe what you're looking for and surface assets from your Creative Cloud library — by subject, style, mood, or content — without browsing folders.
+* Work with PDFs and documents: Create and convert polished PDFs and documents.
+* Create data-driven documents: Describe your output and provide your data — the connector turns raw data or content into formatted, shareable PDFs, including badges, cards, catalogs, and more.
+You can get started as a guest, and sign in with your Adobe account for more capabilities and tools, Creative Cloud storage, and saved work across sessions.
+App
+Adobe
+Skills
+Batch edit photos
+Create mockups
+Create social variations
+Design from template
+Fonts
+Retouch portraits
+Edit quick cut
+Information
+Developer
+Adobe Inc
+Category
+Creativity
+Website
+Version
+9.0.0
+Privacy Policy
+Terms of Service
+When connected to Adobe, ChatGPT may share relevant chats and memories with this app to help provide context for your requests. Adobe’s use of this data is subject to their terms and privacy policy. If you have Memory enabled, data from the app may be used to proactively provide helpful information or suggestions. ChatGPT always respects your training data preferences, including for data from connected apps. Use of apps may come with elevated risk. 
+
+=== canva https://chatgpt.com/plugins/plugin_connector_68df33b1a2d081918778431a9cfca8ba
+‹
+Plugins
+Log in
+Canva
+Create, review, edit designs
+Install plugin
+Create some social media posts based on our October campaign brief
+Use these latest investor meeting notes to make a Q1 2026 pitch deck
+Can you resize this poster as an Instagram post for my online store?
+Bring your Canva design workflow into Codex and create, refine, and review designs through natural conversation.
+What Canva can do:
+Create designs: Turn a brief, outline, or draft copy into a presentation, doc, poster, flyer, social post, resume, and more.
+Generate images: Create photos, illustrations, icons, and graphics from a prompt, or restyle an image you already have.
+Remove backgrounds: Lift the subject out of an image onto a transparent background. Upload files: Bring attachments and files from your chat into Canva to use in your designs.
+Resize for social media: Adapt a design for Facebook, Instagram, and LinkedIn in one step.
+Bulk create: Generate multiple designs from spreadsheet data using a brand template.
+Edit designs: Update text, media, and formatting, or reposition and resize elements.
+Get design feedback: Receive structured feedback on visual hierarchy, layout, readability, consistency, and accessibility.
+Implement feedback: Review comment threads and apply clear, actionable changes. Brand check: Check colors, fonts, logo usage, and copy against your Brand Kit.
+Once installed, describe what you want in plain language or invoke Canva directly with @Canva.
+Try prompts like:
+@Canva, create a pitch deck from this outline.
+@Canva, make an Instagram post announcing our Friday sale.
+@Canva, generate an illustration of a lighthouse at dawn.
+@Canva, remove the background from this photo.
+@Canva, upload this PDF and turn it into a presentation.
+@Canva, resize this design for social media.
+@Canva, create designs from this spreadsheet using my brand template.
+@Canva, update the headline in this design.
+@Canva, implement the feedback in the comment threads.
+@Canva, check this design against my Brand Kit.
+Requirements: Connect your Canva account to use the plugin. Bulk Create requires an eligible Canva Enterprise plan. Design and image generation use Canva AI credits.
+Want to take a more hands-on approach? Instantly open your design in Canva's powerful editor for the final touches.
+App
+Canva
+Skills
+canva-brand-check
+canva-branded-presentation
+canva-bulk-create
+canva-translate-design
+canva-edit-design
+canva-design-feedback
+canva-implement-feedback
+canva-resize-for-social-media
+Information
+Developer
+Canva Pty Ltd.
+Category
+Creativity
+Website
+Version
+16.0.0
+Privacy Policy
+Terms of Servi
+
+=== spotify https://chatgpt.com/plugins/plugin_asdk_app_68de829bf7648191acd70a907364c67c
+‹
+Plugins
+Log in
+Spotify
+Music and podcasts for you
+Install plugin
+Recommend episodes with best film pics for the awards
+Create a running mix with my favorite 160 and 80 bpm tracks
+Recommend some laid back playlists for my road trip
+Explore a new way to discover music, podcasts and audiobooks, with recommendations picked just for you.
+Want music to power your next run, study session, or party? Just ask and Spotify will drop the right songs, artists or playlists into your conversation.
+With Spotify in ChatGPT you can:
+Ask for songs, artists, genres, or playlists and play them in Spotify.
+Find podcasts and audiobooks that match your interests.
+Spotify Premium listeners can describe a vibe and get a playlist made to match.
+Get recommendations based on your history right in your chat.
+App
+Spotify
+Information
+Developer
+Spotify
+Category
+Entertainment
+Website
+Version
+4.1.0
+Privacy Policy
+Terms of Service
+When connected to Spotify, ChatGPT may share relevant chats and memories with this app to help provide context for your requests. Spotify’s use of this data is subject to their terms and privacy policy. If you have Memory enabled, data from the app may be used to proactively provide helpful information or suggestions. ChatGPT always respects your training data preferences, including for data from connected apps. Use of apps may come with elevated risk. You can manage your preferences or disconnect from apps anytime in your settings. Learn more
+
+=== malwarebytes https://chatgpt.com/plugins/plugin_asdk_app_6943d1778c8c81918f4c9ddf4849ca41
+‹
+Plugins
+Log in
+Malwarebytes
+Verify links, domains, phones.
+Install plugin
+@Malwarebytes Got a PayPal invoice for US$823. Should I call +33536490102?
+@Malwarebytes verify this suspicious domain: https://flhsmv.govbt.bond
+@Malwarebytes Check this link with promo offer https://bit.ly/4oW0
+Protect yourself from phishing and scams by verifying links, domains, emails, and phone numbers before you click, call, or reply. Get instant reputation insights, ownership details, and risk levels for unknown numbers, suspicious emails, shortened URLs, and unfamiliar links - right inside ChatGPT.
+App
+Malwarebytes
+Information
+Developer
+Malwarebytes Inc.
+Category
+Security
+Website
+Version
+1.0.0
+Privacy Policy
+Terms of Service
+When connected to Malwarebytes, ChatGPT may share relevant chats and memories with this app to help provide context for your requests. Malwarebytes’s use of this data is subject to their terms and privacy policy. If you have Memory enabled, data from the app may be used to proactively provide helpful information or suggestions. ChatGPT always respects your training data preferences, including for data from connected apps. Use of apps may come with elevated risk. You can manage your preferences or disconnect from apps anytime in your settings. Learn more
+
+=== health https://chatgpt.com/plugins/plugin_connector_1p_e569f8b8dfd08191903c9bd2cd7da9ac
+‹
+Plugins
+Log in
+Health
+Explore your health data in ChatGPT
+Install plugin
+@Health Summarize my health history.
+→
+@Health Help me understand my most recent lab results.
+→
+@Health What sleep patterns stand out recently?
+→
+Connect supported medical records and Apple Health data to ground ChatGPT conversations in your health information, understand results in context, and follow changes in labs, sleep, and activity over time.
+Skill
+Health
+Information
+Capabilities
+Interactive, Read
+Developer
+OpenAI
+Category
+Healthcare
+Website
+Version
+0.1.6
+Privacy Policy
+Terms of Service
+When connected to Health, ChatGPT may share relevant chats and memories with this app to help provide context for your requests. Health’s use of this data is subject to their terms and privacy policy. If you have Memory enabled, data from the app may be used to proactively provide helpful information or suggestions. ChatGPT always respects your training data preferences, including for data from connected apps. Use of apps may come with elevated risk. You can manage your preferences or disconnect from apps anytime in your settings. Learn more

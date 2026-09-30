@@ -1,0 +1,28 @@
+{
+  "slug": "ios-27-0-1",
+  "topic": "iOS 27.0.1 Released - What's New?",
+  "details": "",
+  "subject": "iOS 27.0.1 Released - What's New?",
+  "audience": "iPhone owners on iOS 27 who just saw the 27.0.1 update; iPhone 18 Pro owners who hit the Face ID restart",
+  "platform": "both",
+  "goal": "education",
+  "core_value": "what 27.0.1 fixes, which fix affects your iPhone, and whether to update now",
+  "desired_action": "share with an iPhone 18 Pro owner",
+  "reveal_target": "none",
+  "cta_keyword": "",
+  "target_duration": "38s",
+  "tone": "calm, useful, reporting; no hype, no alarm",
+  "source_policy": "official-preferred",
+  "footage_constraints": "faceless (HeyGen Free plan: avatars watermarked); Apple Support pages captured on mobile; iOS 27 simulator recordings for UI; Apple iPhone 18 Pro product imagery",
+  "credit_instructions": "internal",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 38,
+  "music": false,
+  "created_at": "2026-09-29T05:12:10.645835+00:00",
+  "status": "initialized"
+}
