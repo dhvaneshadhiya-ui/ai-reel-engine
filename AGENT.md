@@ -565,6 +565,16 @@ was tried first and silently dropped whole navigation pushes (2026-09-30).
 A tap the simulator dropped shows as a clip with no change: check the last frame
 before moving on.
 
+### Long-form captions — an SRT for YouTube, not burned in
+
+```bash
+python3 tools/make_srt.py <slug>      # -> out/<slug>.srt
+```
+
+The words come from the approved script and the times from whisper's vo.json.
+Whisper's own text heard "worth" as "word" and wrote "eleven" as "11", so it is
+never the caption text.
+
 ---
 
 ### ADDING A FORMAT — measure the references first (G23)
