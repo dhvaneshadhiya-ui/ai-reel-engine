@@ -33,3 +33,7 @@ PINNED COMMENT: Paid with Apple Pay at a shop yet? Tell us which store's machine
 ALT TEXT: Apple's India launch image of an iPhone and Apple Watch showing an Axis Bank card with a Done tick, Apple's newsroom page, Axis Bank's setup screens and FAQ, and text cards listing what works and what does not yet.
 THUMBNAIL: if Studio offers a custom Shorts thumbnail, use out/thumbnails/apple-pay-axis-bank-vertical.png; otherwise pick the frame at 0:01
 ALTERED CONTENT: yes  (YouTube Studio → Altered content → Yes)
+CATEGORY: Science & Technology
+AUDIENCE: No, it's not made for kids
+LANGUAGE: English (video language and title/description language)
+PLAYLIST: Apple News (or your existing Apple / iPhone playlist)
