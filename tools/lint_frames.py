@@ -260,7 +260,7 @@ def main():
         # Instagram's and YouTube's UI zone, and [PLATFORM ZONE] blocks content
         # there. Counting that band as "dead space" made the two checks demand
         # opposite things (PairPods hook, 2026-09-17). Measure it above 80%.
-        if typ in ("slide", "stage"):
+        if typ in ("slide", "stage") and img.size[1] > img.size[0]:
             w0, h0 = img.size
             frac = dead_space_frac(img.crop((0, 0, w0, int(h0 * 0.8))))
         if i == 0:
@@ -350,7 +350,12 @@ def main():
     # 60% looks unfinished in a clean player; content below ~82% is covered on
     # the phone — which is Rule 1, so it blocks. Measured on the settled last
     # frame of each scene: the lowest row carrying visible type or marks.
-    if not from_stills and video.exists():
+    # A 16:9 long-form video has no app UI painted over its lower fifth: the
+    # YouTube player's controls hide while it plays. The rule is Rule 1's 9:16
+    # overlay, so it is not applied to a landscape sheet (2026-09-30, first
+    # long-form render, which it flagged on 30 of 32 scenes).
+    landscape = int(beats.get("width", 1080)) > int(beats.get("height", 1920))
+    if not from_stills and video.exists() and not landscape:
         import subprocess as _sp
         _t = 0.0
         for i, sc in enumerate(scenes):
