@@ -1,0 +1,15 @@
+{
+  "script_sha256": "413b4e4353de36aaa270ab05e1c273345b6745a742f743f2284786c2ac76a11b",
+  "structure_sha256": "f337fe51b9fb5407c1a1dfc07708f85456e8563303451863c6a3525f1379f883",
+  "findings": [
+    "  BRIDGES 4/17 sentences (24%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  NO OPEN LOOP \u2014 nothing in the opening third points forward. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "NUMBERS: one every 3.6 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [
+    "the most surprising claim (SURPRISE 85: 'For in-store use, Axis says \"Tap and Pay\" must be enabled in') is spoken in the last 40% of the script \u2014 consider leading with it."
+  ],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-09-30T05:07:39+00:00"
+}
