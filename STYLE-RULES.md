@@ -9324,3 +9324,27 @@ focus box. Next payments/bank reel: do not open on a press image of a card at Do
 - **Also fixed in the same script:** lines that narrated the video's own structure ("the
   next four…", "two of the last four…"). igb-youtube-script §3 forbids them; no checker
   measures that yet, so it's an [EYE] rule.
+
+## 2026-09-30 — first long-form render: the loupe, landscape validation, two account limits (ios27-settings-longform)
+
+- **A portrait phone in a 16:9 frame can't be read.** Settings text rendered at about
+  16px with dead space either side, and a focus on a full-width row can't zoom past fit.
+  `ScreenBlock` now draws a **loupe** in a wide frame: the focused rect, magnified, beside
+  the phone. It turns on for any portrait source in a wide frame that has a focus, so
+  phone captures and mobile web captures both get it. Rects must be MEASURED, not
+  estimated: the first draft framed "Share iPhone Analytics" on a line about Improve Siri.
+- **`validate_job.py` hardcoded 1080x1920**, so no landscape format could render. It now
+  reads the size from the FORMATS profile's `landscape` flag.
+- **A clip block holds nothing past its end.** Keep each clip no longer than its scene
+  (speed up scroll-and-tap recordings, split a clip across sentences), and use stills with
+  `state` moves for the before/after.
+- **ElevenLabs connector speech was down** (creative_generate_speech errors on every model,
+  voice and estimate, other connector calls fine). The VO was made on elevenlabs.io in the
+  user's browser session: two parts under 5,000 chars, pasted as a ClipboardEvent into the
+  tiptap editor, because typed keys fired page shortcuts. The web UI makes TWO takes per
+  click; take 1 was used.
+- **HeyGen is on the free plan now**: 1080p is refused (RESOLUTION_NOT_ALLOWED) and so is
+  any avatar_v render (AVATAR_IV_VIDEO_GENERATION_DURATION_LIMIT_REACHED). The presenter
+  close is pending until the plan changes.
+- `vo_external` printed a `vo_pad` command without `--in`, which pointed at a file that
+  doesn't exist yet. Fixed.

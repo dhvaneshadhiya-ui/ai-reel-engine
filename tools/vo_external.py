@@ -108,7 +108,7 @@ def prepare(slug: str, src: Path) -> int:
                 # the take and its pitch; buying another take is the fallback.
                 want = words / ((WPS_MIN + WPS_MAX) / 2)
                 print(f"             Or keep this read and lengthen its PAUSES:\n"
-                      f"               python3 tools/vo_pad.py {slug} --target {want:.0f}")
+                      f"               python3 tools/vo_pad.py {slug} --in {dst.relative_to(ROOT)} --target {want:.0f}")
     else:
         print(f"\n  pace       no {script_p.relative_to(ROOT)} to compare against")
 

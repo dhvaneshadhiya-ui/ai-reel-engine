@@ -162,7 +162,13 @@ def main() -> None:
                       f"styles/ — known: {known}")
     if beats.get("id") != slug:
         errors.append(f"beat id must equal slug {slug!r}")
-    for key, expected in (("fps", 30), ("width", 1080), ("height", 1920)):
+    # A landscape format (longform, 2026-09-25) is 1920x1080; everything else
+    # is the 9:16 reel. The profile says which, so no second list to drift.
+    sys.path.insert(0, str(DEFAULT_ENGINE / "tools"))
+    from reel_gates import FORMATS
+    wide = FORMATS.get(beats.get("format") or "news", {}).get("landscape")
+    size = (("width", 1920), ("height", 1080)) if wide else (("width", 1080), ("height", 1920))
+    for key, expected in (("fps", 30),) + size:
         if beats.get(key) != expected:
             errors.append(f"{key} must be {expected}")
     # Locked caption style lives in config.json (user rule 2026-07-30;

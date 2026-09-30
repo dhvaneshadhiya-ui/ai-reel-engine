@@ -92,11 +92,15 @@ export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: 
   let prevRect = whole;
   let ringRect: [number, number, number, number] | null = null;
   let ringAt = 0;
+  // loupe rect: glides from the previous focus to the current one
+  let loupe: [number, number, number, number] | null = null;
   for (const f of focuses) {
     if (t < f.at!) break;
     const from = camFor(prevRect), to = camFor(f.rect!);
     const k = interpolate(t, [f.at!, f.at! + 0.7], [0, 1], { ...CL, easing: ease });
     cam = { s: from.s + (to.s - from.s) * k, x: from.x + (to.x - from.x) * k, y: from.y + (to.y - from.y) * k };
+    const lf = loupe ?? f.rect!;
+    loupe = [0, 1, 2, 3].map((i) => lf[i] + (f.rect![i] - lf[i]) * k) as [number, number, number, number];
     prevRect = f.rect!;
     ringRect = f.ring === false ? null : f.rect!;
     ringAt = f.at! + 0.6;
@@ -105,7 +109,7 @@ export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: 
   const states = mine.filter((m) => m.do === "state" && m.src);
   const layers = [{ src: b.src, o: 1 }, ...states.map((s) => ({ src: s.src!, o: ramp(t, s.at!, 0.35) }))];
   const draw = ringRect ? ramp(t, ringAt, 0.45) : 0;
-  return (
+  const phone = (
     <div style={{ position: "relative", width: boxW, height: boxH,
       borderRadius: device ? Math.round(boxH * 0.062) : 30, overflow: "hidden",
       alignSelf: hug || device ? "center" : undefined, padding: bezel, boxSizing: "border-box",
@@ -128,6 +132,35 @@ export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: 
           </svg>
         ) : null}
       </div>
+      </div>
+    </div>
+  );
+  // THE LOUPE (2026-09-30, ios27-settings-longform). A portrait phone in a 16:9
+  // frame renders Settings text at ~16px with two dead panels beside it, and a
+  // focus cannot zoom a full-width row past fit. So in a wide frame the focused
+  // rect is also shown magnified in the space beside the phone: the words the
+  // voice names become readable, and the phone keeps the context.
+  const useLoupe = hug && focuses.length > 0;
+  if (!useLoupe) return phone;
+  const room = fullW - boxW - 80;
+  const lr = loupe ?? focuses[0].rect!;
+  const pad = 24;
+  const rw = lr[2] + pad * 2, rh = lr[3] + pad * 2;
+  const LW = Math.min(room, 900), LHmax = boxH * 0.72;
+  const ls = Math.min(LW / rw, LHmax / rh);
+  const lo = loupe ? ramp(t, focuses[0].at!, 0.45) : 0;
+  return (
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 80, width: fullW, flexShrink: 0 }}>
+      {phone}
+      <div style={{ width: rw * ls, height: rh * ls, borderRadius: 28, overflow: "hidden", position: "relative",
+        background: "#fff", boxShadow: "0 24px 60px rgba(0,0,0,0.5)", border: `3px solid ${C.pill}`,
+        opacity: lo * shown, transform: `scale(${0.96 + 0.04 * lo})`, flexShrink: 0 }}>
+        <div style={{ position: "absolute", left: 0, top: 0, width: b.width, height: b.height, transformOrigin: "0 0",
+          transform: `translate(${-(lr[0] - pad) * ls}px, ${-(lr[1] - pad) * ls}px) scale(${ls})` }}>
+          {layers.map((l, i) => (
+            <Img key={i} src={staticFile(l.src)} style={{ position: "absolute", left: 0, top: 0, width: b.width, height: b.height, opacity: l.o }} />
+          ))}
+        </div>
       </div>
     </div>
   );
