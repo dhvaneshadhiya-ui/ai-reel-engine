@@ -241,7 +241,7 @@ const Wide: React.FC<InnerProps> = ({
               fontWeight: 800,
               letterSpacing: 2,
               color: "rgba(255,255,255,0.72)",
-              textTransform: "uppercase",
+              // brand keeps its own casing: "iOS 27" upper-cased reads "IOS 27"
               marginBottom: 18,
             }}
           >
