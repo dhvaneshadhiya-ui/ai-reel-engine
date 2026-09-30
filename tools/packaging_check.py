@@ -216,6 +216,24 @@ def platform_errors(plat: str, fields: dict[str, str]) -> list[str]:
                 f"{plat}: the CAPTION has no AI disclosure line. Add one plain sentence, e.g. "
                 f"\"{AI_LINE_TEXT}\"")
 
+    # SELF-REFERENCE (2026-09-30): a caption pointing at "our other video"
+    # must carry that video's published URL in the same field. Same rule as
+    # research_check's, which is where the regex lives.
+    from research_check import SELF_REF, LINK_REF, OWN_URL
+    has_link = any("http" in v for v in fields.values())
+    for fname in ("CAPTION", "FIRST COMMENT"):
+        txt = fields.get(fname, "")
+        if LINK_REF.search(txt) and not has_link:
+            errors.append(f"{plat}: {fname} points at a link "
+                          f"({LINK_REF.search(txt).group(0)!r}) but no field "
+                          "on this platform carries one.")
+        if SELF_REF.search(txt) and not OWN_URL.search(txt):
+            errors.append(
+                f"{plat}: {fname} points at our own content "
+                f"({SELF_REF.search(txt).group(0)!r}) with no published URL. "
+                "Paste the real link, or cut the line. A planned video is not "
+                "a video.")
+
     # accessibility — the one genuinely good idea taken from the skill we
     # did not install
     if not fields.get("ALT TEXT"):

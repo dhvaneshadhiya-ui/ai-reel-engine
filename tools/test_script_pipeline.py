@@ -754,6 +754,29 @@ def run() -> int:
                 _fp += 1
     ok("no false refusals across every shipped script", _fp == 0)
 
+    # 7b1. SELF-REFERENCE (2026-09-30). ios27-settings-longform closed on
+    # "the next video walks through every iOS 27 privacy setting" off an
+    # unproduced script in a job folder. A pointer to our own content needs
+    # the published URL; a pointer to a link needs the packaging to carry it.
+    print("\n  -- self-reference --")
+    _line = ("If you want to go further on privacy, the next video walks "
+             "through every iOS 27 privacy setting, starting where this one began.")
+    ok("catches the exact line that was written", bool(_rc.self_references(_line)))
+    ok("catches 'watch our iOS 27 privacy settings video'",
+       bool(_rc.SELF_REF.search("watch our iOS 27 privacy settings video")))
+    ok("catches 'on this channel'", bool(_rc.self_references("I covered it on this channel.")))
+    ok("a pinned-comment pointer is a LINK reference, not a content claim",
+       bool(_rc.LINK_REF.search("The link is in the pinned comment."))
+       and not _rc.SELF_REF.search("The link is in the pinned comment."))
+    for _clean in ("The next four change what you see.",
+                   "Apple's own privacy page says so.",
+                   "Your screenshots go back to a small thumbnail."):
+        ok(f"not a self-reference: {_clean[:30]!r}", not _rc.self_references(_clean))
+    ok("OWN_URL accepts a published YouTube link",
+       bool(_rc.OWN_URL.match("https://www.youtube.com/watch?v=abc123")))
+    ok("OWN_URL rejects a job-folder path",
+       not _rc.OWN_URL.match("jobs/ios27-privacy-settings/script.md"))
+
     # 7b2. A product/tutorial reel must record the product's full feature list
     # and how-to (2026-09-17, PairPods v1 under-researched the app itself).
     import shutil as _sh, re as _re

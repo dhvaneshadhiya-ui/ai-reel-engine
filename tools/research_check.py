@@ -141,6 +141,36 @@ HEDGE_CONTEXT = re.compile(
     r"claims?|says?|according to|until)\b", re.I)
 
 
+# SELF-REFERENCE (2026-09-30). ios27-settings-longform closed on "the next
+# video walks through every iOS 27 privacy setting". No such video existed:
+# the agent read an unproduced script in a local job folder and narrated the
+# plan as a published fact. Every other check starts from a claim about the
+# world; a sentence about OUR OWN channel had no rule, so it passed them all.
+# A pointer to our content is a claim like any other, and its source is the
+# published URL. No URL, no line.
+SELF_REF = re.compile(
+    r"\b(?:(?:next|last|previous|earlier|other|another|separate|full|longer|"
+    r"follow-up) (?:video|reel|short|episode)s?"
+    r"|(?:our|my) (?:[\w'-]+ ){0,4}"
+    r"(?:video|reel|short|channel|guide|article|post|playlist)s?"
+    r"|this channel"
+    r"|i(?:'ve| have)? (?:already )?(?:made|covered|did|shot|posted) "
+    r"(?:a|another|that) (?:video|reel))\b", re.I)
+# "the link is in the pinned comment" points at something the PACKAGING
+# supplies, so it is satisfied by a URL in packaging.md rather than a
+# published video (mac-multiple-headphones, the one shipped case).
+LINK_REF = re.compile(r"\b(?:link (?:is )?in (?:the |my |our )?"
+                      r"(?:bio|description)|pinned comment)\b", re.I)
+OWN_URL = re.compile(r"https?://(?:www\.)?(?:youtube\.com|youtu\.be|"
+                     r"instagram\.com|igeeksblog\.com)/\S+", re.I)
+
+
+def self_references(script_text: str) -> list[str]:
+    """Sentences that point the viewer at our own content."""
+    return [t for t in _sentences(script_text)
+            if SELF_REF.search(t) or LINK_REF.search(t)]
+
+
 def _sentences(script_text: str) -> list[str]:
     return [" ".join(x.split())
             for x in re.split(r"(?<=[.!?])\s+", script_text) if x.strip()]
@@ -332,6 +362,28 @@ def check_research(slug: str, script_text: str | None,
                 "already testing in public. Record it as a CLAIM with the "
                 "search that establishes it, or cut the line."
             )
+
+        # A POINTER TO OUR OWN CONTENT MUST NAME THE PUBLISHED THING.
+        own = [(_norm(c["spoken"] or ""), c["srcs"]) for c in claims
+               if c["spoken"]]
+        pkg = p.with_name("packaging.md")
+        pkg_has_link = pkg.exists() and "http" in pkg.read_text()
+        for sent in self_references(script_text or ""):
+            n = _norm(sent)
+            if not SELF_REF.search(sent) and pkg_has_link:
+                continue                  # a link the packaging supplies
+            if any(sp and sp in n and any(OWN_URL.match(u) for u in srcs)
+                   for sp, srcs in own):
+                continue
+            errors.append(
+                f"UNVERIFIED SELF-REFERENCE: {sent!r}\n"
+                "  This points the viewer at our own content (a video, the "
+                "channel, a link, a pinned comment). Ledger it as a CLAIM "
+                "whose SRC is the PUBLISHED url (youtube.com, youtu.be, "
+                "instagram.com or igeeksblog.com), or cut the line.\n"
+                "  ios27-settings-longform promised 'the next video walks "
+                "through every iOS 27 privacy setting' off an unproduced "
+                "script in a job folder. A plan is not a video.")
 
         for sent in superlative_claims(script_text or ""):
             n = _norm(sent)

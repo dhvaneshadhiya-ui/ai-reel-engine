@@ -9162,3 +9162,26 @@ Treatment history: vendor walkthrough in `screenstep` with drawn boxes/circles o
 tap, before/after support screenshots in slide `screen` blocks with focus rects, a
 withheld "First/Second/Third ?" rows card paid off by three requirement cards, orb cover.
 Next how-to: do not open on presenter circle + settings screenshot again.
+
+## 2026-09-30 — a pointer to our own content needs the published URL (ios27-settings-longform)
+
+- **What happened:** the long-form close said "the next video walks through every iOS 27
+  privacy setting". No such video exists. The agent read an unproduced script in
+  `~/Carousels/jobs/ios27-privacy-settings`, whose notes named this video as its follow-up,
+  and narrated the plan as a published fact. The user caught it at approval. vidIQ shows
+  the channel's newest long-form is from 2024.
+- **Why nothing caught it:** every ledger rule starts from a claim about the world. A
+  sentence about OUR OWN channel had no rule, so it passed research_check, check_script,
+  the humanizer and propose.
+- **Now a gate:**
+  - `research_check` REFUSES a script sentence that points at our videos or channel unless
+    a CLAIM covers it with a published youtube / instagram / igeeksblog URL.
+  - A "link in the pinned comment / bio" line passes only when packaging.md carries the link.
+  - `packaging_check` applies the same rule to CAPTION and FIRST COMMENT.
+  - Self-tests are in `test_script_pipeline.py` §7b1.
+- **The skill's close rule** ("point to one specific next video") now reads, for this repo:
+  a PUBLISHED video, checked on the channel. If there isn't one, close without a pointer
+  and use "Best for viewer" on the end screen.
+- **Also fixed in the same script:** lines that narrated the video's own structure ("the
+  next four…", "two of the last four…"). igb-youtube-script §3 forbids them; no checker
+  measures that yet, so it's an [EYE] rule.
