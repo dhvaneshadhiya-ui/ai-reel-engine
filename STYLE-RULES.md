@@ -9265,3 +9265,39 @@ is holding (a text, a photo) and cut to the plugin.
   row. The five-icon grid moved from beat 3 to frame 0. A caption_correction keyed on
   "install." also rewrote the new "install now" into "Install. now." — key corrections on
   a two-word phrase ("tap install"), never on one common word.
+
+## 2026-09-30 — apple-pay-axis-bank: a launch-day news reel whose value is the fine print, faceless
+
+75.0s, 16 slides, no presenter (HeyGen still Free, checked before scripting), 9 SFX (8 heard,
+1 masked: paper-slide at 0.3 under the RBI line), -14.5 LUFS. Format news.
+
+- **RAW NOTE 1 — the headline everyone repeats is not the story.** "Apple Pay is in India" is the
+  news; the useful part is who it works for (Axis credit on Visa/Mastercard only), what it does
+  not (debit, RuPay, UPI, HDFC/ICICI/SBI Card) and that the shop's terminal must be enabled.
+  Axis's own FAQ carried the one practical fix nobody reported: Tap and Pay must be on under
+  Manage Usage Limits. Rule: on a launch, read the partner bank's/vendor's FAQ, not just the
+  press release — the gotcha lives there.
+- **RAW NOTE 2 — Apple's own release contradicts itself** ("thousands" vs "millions" of
+  merchants) and Axis's statement (via Business Standard) says payments come "over the next few
+  weeks" against Apple's "Starting today". Said neither count, hedged the counter instead.
+- **RAW NOTE 3 — subagents cannot Write report files here** (harness: "return findings as
+  text"). The main session saved all four findings files. Put the findings in the reply, then save.
+- **RAW NOTE 4 — Apple newsroom press images carry "cannot be altered or modified".** Shown whole
+  (scaled only) in a screen block, and the COVER used the apple.com/in hero instead, since a
+  cover crops.
+- **RBI's notification page truncates text on mobile and is 2214px of tiny type on desktop;**
+  rbi.org.in then timed out on a narrow re-capture. A title strip was unreadable at 916px, so
+  the receipt became an attributed text line. Rule: a regulator's page rarely survives 9:16 —
+  quote its words with the circular number instead of pretending a screenshot is legible.
+- **Move anchors resolve against the RAW whisper words** ("rupe", "chroma", "10r"), not
+  caption_corrections. Anchor on a neighbouring word. whisper medium (unprimed) heard "XR"
+  correctly where small heard "10R" — check a slice before blaming the read.
+- ElevenLabs v3 read 218 words at 3.22 w/s (67.7s, ~1,200 credits); vo_pad to 75s (2.91 w/s).
+- Two side-by-side 464x500 phone screens are tiny in the column; stacked vertically (464x1000)
+  they fill it and a focus can walk top -> bottom.
+
+Treatment history: Apple's India press image placed whole as the hook, Apple newsroom mobile
+paragraph with a focus box on the Axis line (confirmation beat), Axis's own setup screens
+stacked, apple.com/in Face ID + transactions screens in a device frame, rows for "not yet"
+lists, a counter 1 / counter 2 swap for terminal acceptance, Axis FAQ "In Stores" card with a
+focus box. Next payments/bank reel: do not open on a press image of a card at Done again.

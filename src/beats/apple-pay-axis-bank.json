@@ -1,0 +1,2316 @@
+{
+  "id": "apple-pay-axis-bank",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/apple-pay-axis-bank/vo.mp3",
+  "facePlan": "none",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "live",
+    "one bank's",
+    "Axis",
+    "once",
+    "skip",
+    "two checks",
+    "count",
+    "aren't in",
+    "Croma",
+    "switched on",
+    "Tap and Pay",
+    "XR",
+    "machine"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "eyebrow": "US 2014 \u00b7 India 2026",
+      "headline": "Apple Pay is [[live]] in India",
+      "blocks": [
+        {
+          "id": "l",
+          "kind": "screen",
+          "src": "assets/apple-pay-axis-bank/apple-launch.jpg",
+          "width": 1200,
+          "height": 1500,
+          "device": false,
+          "h": 860
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "live",
+          "at": 1.04
+        },
+        {
+          "do": "focus",
+          "target": "l",
+          "on": "12 years",
+          "rect": [
+            120,
+            250,
+            600,
+            560
+          ],
+          "ring": false,
+          "at": 2.62
+        },
+        {
+          "do": "focus",
+          "target": "l",
+          "on": "in the US",
+          "rect": [
+            0,
+            0,
+            1200,
+            1500
+          ],
+          "ring": false,
+          "at": 4.04
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx2/whooshes-01.mp3",
+          "at": 0.0,
+          "vol": 0.543
+        }
+      ],
+      "durationSec": 5.3,
+      "assetId": "apple-launch",
+      "claimId": "apple-launch",
+      "covers": "Apple Pay just went",
+      "sourceUrl": "https://www.apple.com/in/newsroom/2026/09/apple-pay-launches-in-india/",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The fine print",
+      "headline": "[[One]] bank. Not every shop",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Banks",
+              "v": "Only one, for now",
+              "tone": "cost"
+            },
+            {
+              "k": "Shops",
+              "v": "Not every counter",
+              "tone": "cost"
+            }
+          ]
+        },
+        {
+          "id": "h",
+          "kind": "screen",
+          "src": "assets/apple-pay-axis-bank/apple-hand.png",
+          "width": 1140,
+          "height": 960,
+          "device": false,
+          "h": 560
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "one bank's",
+          "at": 1.64
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "one bank's",
+          "at": 1.64
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "every shop",
+          "at": 3.32
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.9,
+          "vol": 0.343
+        }
+      ],
+      "durationSec": 4.62,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Apple Newsroom \u00b7 30 Sep 2026",
+      "headline": "[[Axis Bank]] credit cards",
+      "blocks": [
+        {
+          "id": "n",
+          "kind": "screen",
+          "src": "assets/apple-pay-axis-bank/newsroom-axis.png",
+          "width": 1080,
+          "height": 1150,
+          "device": false,
+          "h": 820
+        },
+        {
+          "id": "c",
+          "kind": "text",
+          "text": "Visa or Mastercard \u00b7 credit cards only"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Axis",
+          "at": 0.68
+        },
+        {
+          "do": "focus",
+          "target": "n",
+          "on": "Axis",
+          "rect": [
+            0,
+            620,
+            1080,
+            260
+          ],
+          "at": 0.68
+        },
+        {
+          "do": "show",
+          "target": "c",
+          "on": "Visa",
+          "at": 3.18
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 0.2,
+          "vol": 1.0
+        }
+      ],
+      "durationSec": 4.92,
+      "assetId": "newsroom-axis",
+      "claimId": "newsroom-axis",
+      "covers": "That bank is",
+      "sourceUrl": "https://www.apple.com/in/newsroom/2026/09/apple-pay-launches-in-india/",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Setup \u00b7 Axis Bank's own screens",
+      "headline": "Axis app, or Wallet [[+]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-pay-axis-bank/axis-setup.png",
+          "width": 464,
+          "height": 1000,
+          "device": false,
+          "h": 1000
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "Axis app",
+          "rect": [
+            0,
+            0,
+            464,
+            500
+          ],
+          "ring": false,
+          "at": 1.1
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "plus button",
+          "rect": [
+            0,
+            500,
+            464,
+            500
+          ],
+          "ring": false,
+          "at": 2.26
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "plus",
+          "at": 2.26
+        }
+      ],
+      "durationSec": 3.42,
+      "assetId": "axis-setup",
+      "claimId": "axis-setup",
+      "covers": "Add it to",
+      "sourceUrl": "https://www.axis.bank.in/payments/payment-methods/apple-pay",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Verification",
+      "headline": "Checked [[once]], at setup",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "When",
+              "v": "Once, when you add the card",
+              "tone": "plain"
+            },
+            {
+              "k": "How",
+              "v": "SMS OTP or the Axis app",
+              "tone": "plain"
+            }
+          ]
+        },
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-pay-axis-bank/axis-setup.png",
+          "width": 464,
+          "height": 1000,
+          "device": false,
+          "h": 620
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "once",
+          "at": 0.74
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "once",
+          "at": 0.74
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "OTP",
+          "at": 1.36
+        }
+      ],
+      "durationSec": 3.4,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "At the counter",
+      "headline": "[[No OTP]] at checkout",
+      "blocks": [
+        {
+          "id": "f",
+          "kind": "screen",
+          "src": "assets/apple-pay-axis-bank/apple-faceid.jpg",
+          "width": 608,
+          "height": 1252,
+          "device": true,
+          "h": 1000
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "skip",
+          "at": 0.86
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.6,
+          "vol": 0.556
+        }
+      ],
+      "durationSec": 2.32,
+      "assetId": "apple-faceid",
+      "claimId": "apple-faceid",
+      "covers": "From then on",
+      "sourceUrl": "https://www.apple.com/in/apple-pay/",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "How you pay",
+      "headline": "Double-click, Face ID, [[hold]]",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "1",
+              "v": "Double-click the side button",
+              "tone": "plain"
+            },
+            {
+              "k": "2",
+              "v": "Face ID",
+              "tone": "plain"
+            },
+            {
+              "k": "3",
+              "v": "Hold it near the card machine",
+              "tone": "free"
+            }
+          ]
+        },
+        {
+          "id": "h",
+          "kind": "screen",
+          "src": "assets/apple-pay-axis-bank/apple-hand.png",
+          "width": 1140,
+          "height": 960,
+          "device": false,
+          "h": 520
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "side button",
+          "at": 0.6
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "face ID",
+          "at": 1.66
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "hold it",
+          "at": 2.54
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "hold it",
+          "at": 2.54
+        }
+      ],
+      "durationSec": 4.38,
+      "assetId": "apple-hand",
+      "claimId": "apple-hand",
+      "covers": "Double click the",
+      "sourceUrl": "https://www.apple.com/in/apple-pay/",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The rule behind it",
+      "headline": "[[Two]] checks per payment",
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Reserve Bank of India \u00b7 Authentication Directions, 2025 (RBI/2025-26/79)"
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Check 1",
+              "v": "Your card or phone",
+              "tone": "plain"
+            },
+            {
+              "k": "Check 2",
+              "v": "Usually an SMS OTP",
+              "tone": "cost"
+            }
+          ]
+        },
+        {
+          "id": "q",
+          "kind": "text",
+          "text": "RBI: the ecosystem \"primarily adopted SMS-based OTP\""
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "two checks",
+          "at": 2.58
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "two checks",
+          "at": 2.58
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "SMS OTP",
+          "at": 4.96
+        },
+        {
+          "do": "show",
+          "target": "q",
+          "on": "SMS OTP",
+          "at": 4.96
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/paper-slide.mp3",
+          "at": 0.0,
+          "vol": 0.266
+        }
+      ],
+      "durationSec": 6.34,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "RBI Directions, 2025 \u00b7 in force April 2026",
+      "headline": "Your face [[counts]] now",
+      "blocks": [
+        {
+          "id": "w",
+          "kind": "swap",
+          "left": {
+            "name": "SMS OTP",
+            "note": "The usual second check",
+            "tone": "cost"
+          },
+          "right": {
+            "name": "Face or fingerprint",
+            "note": "\"biometrics (device native...)\"",
+            "tone": "free"
+          }
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Reserve Bank of India \u00b7 Authentication Directions, 2025 (RBI/2025-26/79)"
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "w.left",
+          "on": "RBI rule",
+          "at": 0.96
+        },
+        {
+          "do": "strike",
+          "target": "w.left",
+          "on": "face",
+          "at": 2.74
+        },
+        {
+          "do": "show",
+          "target": "w.right",
+          "on": "face",
+          "at": 2.74
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "count",
+          "at": 4.12
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 1.6,
+          "vol": 1.0
+        }
+      ],
+      "durationSec": 5.22,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Not yet",
+      "headline": "Everyone else [[waits]]",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Axis debit cards",
+              "v": "Not yet",
+              "tone": "cost"
+            },
+            {
+              "k": "RuPay",
+              "v": "Not yet",
+              "tone": "cost"
+            },
+            {
+              "k": "UPI",
+              "v": "Not yet",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "waits",
+          "at": 0.6
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "debit",
+          "at": 1.88
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "neither do",
+          "at": 3.4
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "UPI",
+          "at": 4.56
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ],
+      "durationSec": 5.52,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Not at launch",
+      "headline": "HDFC, ICICI, SBI Card: [[not in]]",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "HDFC Bank",
+              "v": "Not at launch",
+              "tone": "cost"
+            },
+            {
+              "k": "ICICI Bank",
+              "v": "Not at launch",
+              "tone": "cost"
+            },
+            {
+              "k": "SBI Card",
+              "v": "Not at launch",
+              "tone": "cost"
+            }
+          ]
+        },
+        {
+          "id": "q",
+          "kind": "text",
+          "text": "Reportedly still negotiating with Apple"
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "HDFC",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "ICICI",
+          "at": 1.04
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "SBI",
+          "at": 2.18
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "aren't in",
+          "at": 2.92
+        },
+        {
+          "do": "show",
+          "target": "q",
+          "on": "reports",
+          "at": 3.82
+        }
+      ],
+      "durationSec": 6.08,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Apple's list",
+      "headline": "Zomato, Blinkit, [[Croma]]",
+      "blocks": [
+        {
+          "id": "x",
+          "kind": "screen",
+          "src": "assets/apple-pay-axis-bank/apple-txns.jpg",
+          "width": 608,
+          "height": 1252,
+          "device": true,
+          "h": 1000
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "x",
+          "on": "Zomato",
+          "rect": [
+            20,
+            600,
+            568,
+            120
+          ],
+          "at": 1.34
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "are on",
+          "at": 2.98
+        }
+      ],
+      "durationSec": 4.26,
+      "assetId": "apple-txns",
+      "claimId": "apple-txns",
+      "covers": "Now those shops",
+      "sourceUrl": "https://www.apple.com/in/apple-pay/",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The catch at the counter",
+      "headline": "The machine must be [[switched on]]",
+      "blocks": [
+        {
+          "id": "w",
+          "kind": "swap",
+          "left": {
+            "name": "Counter 1",
+            "note": "Enabled: Done",
+            "tone": "free"
+          },
+          "right": {
+            "name": "Counter 2",
+            "note": "Not enabled: nothing",
+            "tone": "cost"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "switched on",
+          "at": 2.12
+        },
+        {
+          "do": "show",
+          "target": "w.left",
+          "on": "one might",
+          "at": 3.6
+        },
+        {
+          "do": "show",
+          "target": "w.right",
+          "on": "the next",
+          "at": 4.64
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.3,
+          "vol": 0.556
+        }
+      ],
+      "durationSec": 6.12,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Axis Bank's own fix",
+      "headline": "Turn on [[Tap and Pay]]",
+      "blocks": [
+        {
+          "id": "i",
+          "kind": "screen",
+          "src": "assets/apple-pay-axis-bank/axis-instore.png",
+          "width": 1104,
+          "height": 1250,
+          "device": false,
+          "h": 1000
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "i",
+          "on": "Tap and Pay",
+          "rect": [
+            40,
+            60,
+            1024,
+            300
+          ],
+          "at": 1.34
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Tap and Pay",
+          "at": 1.34
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 1.4,
+          "vol": 0.417
+        }
+      ],
+      "durationSec": 4.46,
+      "assetId": "axis-instore",
+      "claimId": "axis-instore",
+      "covers": "If yours fails",
+      "sourceUrl": "https://www.axis.bank.in/payments/payment-methods/apple-pay",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Do you qualify?",
+      "headline": "[[iPhone XR]] or newer",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "iPhone",
+              "v": "XR or newer",
+              "tone": "plain"
+            },
+            {
+              "k": "Software",
+              "v": "iOS 18 or later",
+              "tone": "plain"
+            },
+            {
+              "k": "Card rewards",
+              "v": "Still earned",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "Any iPhone",
+          "at": 0.0
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "or newer",
+          "at": 1.24
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "iOS 18",
+          "at": 2.14
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "rewards",
+          "at": 3.8
+        }
+      ],
+      "durationSec": 5.4,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "headlineSize": "xl",
+      "eyebrow": "Tell us",
+      "headline": "[[Comment]]: did it work?",
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Which shop's machine took your Axis card?"
+        },
+        {
+          "id": "h",
+          "kind": "screen",
+          "src": "assets/apple-pay-axis-bank/apple-hand.png",
+          "width": 1140,
+          "height": 960,
+          "device": false,
+          "h": 520
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Tell us",
+          "at": 1.34
+        }
+      ],
+      "durationSec": 3.24,
+      "assetId": "apple-hand",
+      "claimId": "apple-hand",
+      "covers": "Paid with it",
+      "sourceUrl": "https://www.apple.com/in/apple-pay/",
+      "hideCaptions": true
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.82,
+      "text": "Apple Pay just",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Apple"
+        },
+        {
+          "t": 0.34,
+          "text": "Pay"
+        },
+        {
+          "t": 0.58,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 0.82,
+      "end": 1.48,
+      "text": "went live in",
+      "words": [
+        {
+          "t": 0.82,
+          "text": "went"
+        },
+        {
+          "t": 1.04,
+          "text": "live"
+        },
+        {
+          "t": 1.3,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 1.48,
+      "end": 3.02,
+      "text": "India, almost 12",
+      "words": [
+        {
+          "t": 1.48,
+          "text": "India,"
+        },
+        {
+          "t": 2.34,
+          "text": "almost"
+        },
+        {
+          "t": 2.62,
+          "text": "12"
+        }
+      ]
+    },
+    {
+      "start": 3.02,
+      "end": 3.76,
+      "text": "years after it",
+      "words": [
+        {
+          "t": 3.02,
+          "text": "years"
+        },
+        {
+          "t": 3.32,
+          "text": "after"
+        },
+        {
+          "t": 3.62,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 3.76,
+      "end": 4.34,
+      "text": "launched in the",
+      "words": [
+        {
+          "t": 3.76,
+          "text": "launched"
+        },
+        {
+          "t": 4.04,
+          "text": "in"
+        },
+        {
+          "t": 4.24,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 4.34,
+      "end": 5.6,
+      "text": "US. But right",
+      "words": [
+        {
+          "t": 4.34,
+          "text": "US."
+        },
+        {
+          "t": 5.3,
+          "text": "But"
+        },
+        {
+          "t": 5.4,
+          "text": "right"
+        }
+      ]
+    },
+    {
+      "start": 5.6,
+      "end": 6.44,
+      "text": "now, it only",
+      "words": [
+        {
+          "t": 5.6,
+          "text": "now,"
+        },
+        {
+          "t": 6.16,
+          "text": "it"
+        },
+        {
+          "t": 6.22,
+          "text": "only"
+        }
+      ]
+    },
+    {
+      "start": 6.44,
+      "end": 7.16,
+      "text": "works with one",
+      "words": [
+        {
+          "t": 6.44,
+          "text": "works"
+        },
+        {
+          "t": 6.74,
+          "text": "with"
+        },
+        {
+          "t": 6.94,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 7.16,
+      "end": 8.24,
+      "text": "bank's cards and",
+      "words": [
+        {
+          "t": 7.16,
+          "text": "bank's"
+        },
+        {
+          "t": 7.58,
+          "text": "cards"
+        },
+        {
+          "t": 7.86,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 8.24,
+      "end": 8.84,
+      "text": "not at every",
+      "words": [
+        {
+          "t": 8.24,
+          "text": "not"
+        },
+        {
+          "t": 8.46,
+          "text": "at"
+        },
+        {
+          "t": 8.62,
+          "text": "every"
+        }
+      ]
+    },
+    {
+      "start": 8.84,
+      "end": 10.38,
+      "text": "shop. That bank",
+      "words": [
+        {
+          "t": 8.84,
+          "text": "shop."
+        },
+        {
+          "t": 9.92,
+          "text": "That"
+        },
+        {
+          "t": 10.06,
+          "text": "bank"
+        }
+      ]
+    },
+    {
+      "start": 10.38,
+      "end": 11.88,
+      "text": "is Axis Got",
+      "words": [
+        {
+          "t": 10.38,
+          "text": "is"
+        },
+        {
+          "t": 10.6,
+          "text": "Axis"
+        },
+        {
+          "t": 11.64,
+          "text": "Got"
+        }
+      ]
+    },
+    {
+      "start": 11.88,
+      "end": 12.56,
+      "text": "an Axis credit",
+      "words": [
+        {
+          "t": 11.88,
+          "text": "an"
+        },
+        {
+          "t": 12.04,
+          "text": "Axis"
+        },
+        {
+          "t": 12.32,
+          "text": "credit"
+        }
+      ]
+    },
+    {
+      "start": 12.56,
+      "end": 13.7,
+      "text": "card, Visa or",
+      "words": [
+        {
+          "t": 12.56,
+          "text": "card,"
+        },
+        {
+          "t": 13.1,
+          "text": "Visa"
+        },
+        {
+          "t": 13.32,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 13.7,
+      "end": 15.2,
+      "text": "Mastercard. Add it",
+      "words": [
+        {
+          "t": 13.7,
+          "text": "Mastercard."
+        },
+        {
+          "t": 14.84,
+          "text": "Add"
+        },
+        {
+          "t": 15.08,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 15.2,
+      "end": 15.8,
+      "text": "to Wallet from",
+      "words": [
+        {
+          "t": 15.2,
+          "text": "to"
+        },
+        {
+          "t": 15.32,
+          "text": "Wallet"
+        },
+        {
+          "t": 15.56,
+          "text": "from"
+        }
+      ]
+    },
+    {
+      "start": 15.8,
+      "end": 16.58,
+      "text": "the Axis app",
+      "words": [
+        {
+          "t": 15.8,
+          "text": "the"
+        },
+        {
+          "t": 15.94,
+          "text": "Axis"
+        },
+        {
+          "t": 16.3,
+          "text": "app"
+        }
+      ]
+    },
+    {
+      "start": 16.58,
+      "end": 17.32,
+      "text": "or the plus",
+      "words": [
+        {
+          "t": 16.58,
+          "text": "or"
+        },
+        {
+          "t": 17.0,
+          "text": "the"
+        },
+        {
+          "t": 17.1,
+          "text": "plus"
+        }
+      ]
+    },
+    {
+      "start": 17.32,
+      "end": 18.58,
+      "text": "button. The bank",
+      "words": [
+        {
+          "t": 17.32,
+          "text": "button."
+        },
+        {
+          "t": 18.26,
+          "text": "The"
+        },
+        {
+          "t": 18.34,
+          "text": "bank"
+        }
+      ]
+    },
+    {
+      "start": 18.58,
+      "end": 19.28,
+      "text": "checks it once",
+      "words": [
+        {
+          "t": 18.58,
+          "text": "checks"
+        },
+        {
+          "t": 18.8,
+          "text": "it"
+        },
+        {
+          "t": 19.0,
+          "text": "once"
+        }
+      ]
+    },
+    {
+      "start": 19.28,
+      "end": 20.44,
+      "text": "by OTP or",
+      "words": [
+        {
+          "t": 19.28,
+          "text": "by"
+        },
+        {
+          "t": 19.62,
+          "text": "OTP"
+        },
+        {
+          "t": 20.02,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 20.44,
+      "end": 21.02,
+      "text": "in its app.",
+      "words": [
+        {
+          "t": 20.44,
+          "text": "in"
+        },
+        {
+          "t": 20.58,
+          "text": "its"
+        },
+        {
+          "t": 20.74,
+          "text": "app."
+        }
+      ]
+    },
+    {
+      "start": 21.66,
+      "end": 22.32,
+      "text": "From then on,",
+      "words": [
+        {
+          "t": 21.66,
+          "text": "From"
+        },
+        {
+          "t": 21.84,
+          "text": "then"
+        },
+        {
+          "t": 22.06,
+          "text": "on,"
+        }
+      ]
+    },
+    {
+      "start": 22.48,
+      "end": 22.96,
+      "text": "you skip the",
+      "words": [
+        {
+          "t": 22.48,
+          "text": "you"
+        },
+        {
+          "t": 22.52,
+          "text": "skip"
+        },
+        {
+          "t": 22.76,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 22.96,
+      "end": 24.58,
+      "text": "OTP. Double-click the",
+      "words": [
+        {
+          "t": 22.96,
+          "text": "OTP."
+        },
+        {
+          "t": 23.98,
+          "text": "Double-click"
+        },
+        {
+          "t": 24.4,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 24.58,
+      "end": 26.16,
+      "text": "side button, Face ID",
+      "words": [
+        {
+          "t": 24.58,
+          "text": "side"
+        },
+        {
+          "t": 24.82,
+          "text": "button,"
+        },
+        {
+          "t": 25.64,
+          "text": "Face"
+        },
+        {
+          "t": 25.64,
+          "text": "ID"
+        }
+      ]
+    },
+    {
+      "start": 26.16,
+      "end": 26.9,
+      "text": "and hold it",
+      "words": [
+        {
+          "t": 26.16,
+          "text": "and"
+        },
+        {
+          "t": 26.52,
+          "text": "hold"
+        },
+        {
+          "t": 26.78,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 26.9,
+      "end": 27.44,
+      "text": "near the card",
+      "words": [
+        {
+          "t": 26.9,
+          "text": "near"
+        },
+        {
+          "t": 27.06,
+          "text": "the"
+        },
+        {
+          "t": 27.22,
+          "text": "card"
+        }
+      ]
+    },
+    {
+      "start": 27.44,
+      "end": 28.9,
+      "text": "machine. That's new",
+      "words": [
+        {
+          "t": 27.44,
+          "text": "machine."
+        },
+        {
+          "t": 28.36,
+          "text": "That's"
+        },
+        {
+          "t": 28.74,
+          "text": "new"
+        }
+      ]
+    },
+    {
+      "start": 28.9,
+      "end": 30.12,
+      "text": "for India. Card",
+      "words": [
+        {
+          "t": 28.9,
+          "text": "for"
+        },
+        {
+          "t": 29.1,
+          "text": "India."
+        },
+        {
+          "t": 29.8,
+          "text": "Card"
+        }
+      ]
+    },
+    {
+      "start": 30.12,
+      "end": 30.94,
+      "text": "payments here need",
+      "words": [
+        {
+          "t": 30.12,
+          "text": "payments"
+        },
+        {
+          "t": 30.38,
+          "text": "here"
+        },
+        {
+          "t": 30.72,
+          "text": "need"
+        }
+      ]
+    },
+    {
+      "start": 30.94,
+      "end": 31.88,
+      "text": "two checks and",
+      "words": [
+        {
+          "t": 30.94,
+          "text": "two"
+        },
+        {
+          "t": 31.22,
+          "text": "checks"
+        },
+        {
+          "t": 31.54,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 31.88,
+      "end": 32.64,
+      "text": "for years the",
+      "words": [
+        {
+          "t": 31.88,
+          "text": "for"
+        },
+        {
+          "t": 32.06,
+          "text": "years"
+        },
+        {
+          "t": 32.42,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 32.64,
+      "end": 33.32,
+      "text": "second was an",
+      "words": [
+        {
+          "t": 32.64,
+          "text": "second"
+        },
+        {
+          "t": 32.96,
+          "text": "was"
+        },
+        {
+          "t": 33.18,
+          "text": "an"
+        }
+      ]
+    },
+    {
+      "start": 33.32,
+      "end": 34.88,
+      "text": "SMS OTP. Since",
+      "words": [
+        {
+          "t": 33.32,
+          "text": "SMS"
+        },
+        {
+          "t": 33.5,
+          "text": "OTP."
+        },
+        {
+          "t": 34.7,
+          "text": "Since"
+        }
+      ]
+    },
+    {
+      "start": 34.88,
+      "end": 36.02,
+      "text": "April, an RBI",
+      "words": [
+        {
+          "t": 34.88,
+          "text": "April,"
+        },
+        {
+          "t": 35.6,
+          "text": "an"
+        },
+        {
+          "t": 35.66,
+          "text": "RBI"
+        }
+      ]
+    },
+    {
+      "start": 36.02,
+      "end": 36.78,
+      "text": "rule lets your",
+      "words": [
+        {
+          "t": 36.02,
+          "text": "rule"
+        },
+        {
+          "t": 36.32,
+          "text": "lets"
+        },
+        {
+          "t": 36.58,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 36.78,
+      "end": 37.78,
+      "text": "phone's own face",
+      "words": [
+        {
+          "t": 36.78,
+          "text": "phone's"
+        },
+        {
+          "t": 37.26,
+          "text": "own"
+        },
+        {
+          "t": 37.44,
+          "text": "face"
+        }
+      ]
+    },
+    {
+      "start": 37.78,
+      "end": 39.24,
+      "text": "or fingerprint scan count.",
+      "words": [
+        {
+          "t": 37.78,
+          "text": "or"
+        },
+        {
+          "t": 38.06,
+          "text": "fingerprint"
+        },
+        {
+          "t": 38.82,
+          "text": "scan"
+        },
+        {
+          "t": 38.82,
+          "text": "count."
+        }
+      ]
+    },
+    {
+      "start": 39.92,
+      "end": 40.86,
+      "text": "Everyone else waits.",
+      "words": [
+        {
+          "t": 39.92,
+          "text": "Everyone"
+        },
+        {
+          "t": 40.18,
+          "text": "else"
+        },
+        {
+          "t": 40.52,
+          "text": "waits."
+        }
+      ]
+    },
+    {
+      "start": 41.4,
+      "end": 42.36,
+      "text": "Axis debit cards",
+      "words": [
+        {
+          "t": 41.4,
+          "text": "Axis"
+        },
+        {
+          "t": 41.8,
+          "text": "debit"
+        },
+        {
+          "t": 42.0,
+          "text": "cards"
+        }
+      ]
+    },
+    {
+      "start": 42.36,
+      "end": 43.32,
+      "text": "don't work and",
+      "words": [
+        {
+          "t": 42.36,
+          "text": "don't"
+        },
+        {
+          "t": 42.72,
+          "text": "work"
+        },
+        {
+          "t": 43.02,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 43.32,
+      "end": 44.18,
+      "text": "neither do RuPay",
+      "words": [
+        {
+          "t": 43.32,
+          "text": "neither"
+        },
+        {
+          "t": 43.58,
+          "text": "do"
+        },
+        {
+          "t": 43.82,
+          "text": "RuPay"
+        }
+      ]
+    },
+    {
+      "start": 44.18,
+      "end": 46.08,
+      "text": "or UPI. HDFC,",
+      "words": [
+        {
+          "t": 44.18,
+          "text": "or"
+        },
+        {
+          "t": 44.48,
+          "text": "UPI."
+        },
+        {
+          "t": 45.44,
+          "text": "HDFC,"
+        }
+      ]
+    },
+    {
+      "start": 46.48,
+      "end": 48.36,
+      "text": "ICICI and SBI Card",
+      "words": [
+        {
+          "t": 46.48,
+          "text": "ICICI"
+        },
+        {
+          "t": 47.36,
+          "text": "and"
+        },
+        {
+          "t": 47.62,
+          "text": "SBI"
+        },
+        {
+          "t": 47.62,
+          "text": "Card"
+        }
+      ]
+    },
+    {
+      "start": 48.36,
+      "end": 49.26,
+      "text": "aren't in and",
+      "words": [
+        {
+          "t": 48.36,
+          "text": "aren't"
+        },
+        {
+          "t": 48.8,
+          "text": "in"
+        },
+        {
+          "t": 48.96,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 49.26,
+      "end": 50.3,
+      "text": "reports say they're still",
+      "words": [
+        {
+          "t": 49.26,
+          "text": "reports"
+        },
+        {
+          "t": 49.58,
+          "text": "say"
+        },
+        {
+          "t": 49.9,
+          "text": "they're"
+        },
+        {
+          "t": 49.9,
+          "text": "still"
+        }
+      ]
+    },
+    {
+      "start": 50.3,
+      "end": 51.92,
+      "text": "negotiating. Now those",
+      "words": [
+        {
+          "t": 50.3,
+          "text": "negotiating."
+        },
+        {
+          "t": 51.52,
+          "text": "Now"
+        },
+        {
+          "t": 51.7,
+          "text": "those"
+        }
+      ]
+    },
+    {
+      "start": 51.92,
+      "end": 53.94,
+      "text": "shops, Zomato, Blinkit",
+      "words": [
+        {
+          "t": 51.92,
+          "text": "shops,"
+        },
+        {
+          "t": 52.86,
+          "text": "Zomato,"
+        },
+        {
+          "t": 53.54,
+          "text": "Blinkit"
+        }
+      ]
+    },
+    {
+      "start": 53.94,
+      "end": 54.88,
+      "text": "and Croma are",
+      "words": [
+        {
+          "t": 53.94,
+          "text": "and"
+        },
+        {
+          "t": 54.12,
+          "text": "Croma"
+        },
+        {
+          "t": 54.5,
+          "text": "are"
+        }
+      ]
+    },
+    {
+      "start": 54.88,
+      "end": 55.78,
+      "text": "on Apple's list.",
+      "words": [
+        {
+          "t": 54.88,
+          "text": "on"
+        },
+        {
+          "t": 55.02,
+          "text": "Apple's"
+        },
+        {
+          "t": 55.42,
+          "text": "list."
+        }
+      ]
+    },
+    {
+      "start": 55.78,
+      "end": 57.06,
+      "text": "But each counter's",
+      "words": [
+        {
+          "t": 55.78,
+          "text": "But"
+        },
+        {
+          "t": 56.2,
+          "text": "each"
+        },
+        {
+          "t": 56.54,
+          "text": "counter's"
+        }
+      ]
+    },
+    {
+      "start": 57.06,
+      "end": 57.78,
+      "text": "machine has to",
+      "words": [
+        {
+          "t": 57.06,
+          "text": "machine"
+        },
+        {
+          "t": 57.42,
+          "text": "has"
+        },
+        {
+          "t": 57.66,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 57.78,
+      "end": 58.44,
+      "text": "be switched on",
+      "words": [
+        {
+          "t": 57.78,
+          "text": "be"
+        },
+        {
+          "t": 57.9,
+          "text": "switched"
+        },
+        {
+          "t": 58.18,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 58.44,
+      "end": 59.38,
+      "text": "for it, so",
+      "words": [
+        {
+          "t": 58.44,
+          "text": "for"
+        },
+        {
+          "t": 58.7,
+          "text": "it,"
+        },
+        {
+          "t": 59.0,
+          "text": "so"
+        }
+      ]
+    },
+    {
+      "start": 59.38,
+      "end": 60.06,
+      "text": "one might take",
+      "words": [
+        {
+          "t": 59.38,
+          "text": "one"
+        },
+        {
+          "t": 59.6,
+          "text": "might"
+        },
+        {
+          "t": 59.8,
+          "text": "take"
+        }
+      ]
+    },
+    {
+      "start": 60.06,
+      "end": 60.58,
+      "text": "it while the",
+      "words": [
+        {
+          "t": 60.06,
+          "text": "it"
+        },
+        {
+          "t": 60.26,
+          "text": "while"
+        },
+        {
+          "t": 60.42,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 60.58,
+      "end": 62.0,
+      "text": "next won't. If",
+      "words": [
+        {
+          "t": 60.58,
+          "text": "next"
+        },
+        {
+          "t": 60.8,
+          "text": "won't."
+        },
+        {
+          "t": 61.9,
+          "text": "If"
+        }
+      ]
+    },
+    {
+      "start": 62.0,
+      "end": 63.06,
+      "text": "yours fails, turn",
+      "words": [
+        {
+          "t": 62.0,
+          "text": "yours"
+        },
+        {
+          "t": 62.24,
+          "text": "fails,"
+        },
+        {
+          "t": 62.94,
+          "text": "turn"
+        }
+      ]
+    },
+    {
+      "start": 63.06,
+      "end": 64.18,
+      "text": "on Tap and Pay under",
+      "words": [
+        {
+          "t": 63.06,
+          "text": "on"
+        },
+        {
+          "t": 63.24,
+          "text": "Tap"
+        },
+        {
+          "t": 63.88,
+          "text": "and"
+        },
+        {
+          "t": 63.88,
+          "text": "Pay"
+        },
+        {
+          "t": 63.88,
+          "text": "under"
+        }
+      ]
+    },
+    {
+      "start": 64.18,
+      "end": 65.2,
+      "text": "usage limits in",
+      "words": [
+        {
+          "t": 64.18,
+          "text": "usage"
+        },
+        {
+          "t": 64.54,
+          "text": "limits"
+        },
+        {
+          "t": 64.94,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 65.2,
+      "end": 65.9,
+      "text": "the Axis app.",
+      "words": [
+        {
+          "t": 65.2,
+          "text": "the"
+        },
+        {
+          "t": 65.3,
+          "text": "Axis"
+        },
+        {
+          "t": 65.68,
+          "text": "app."
+        }
+      ]
+    },
+    {
+      "start": 66.36,
+      "end": 67.6,
+      "text": "Any iPhone XR",
+      "words": [
+        {
+          "t": 66.36,
+          "text": "Any"
+        },
+        {
+          "t": 66.56,
+          "text": "iPhone"
+        },
+        {
+          "t": 66.94,
+          "text": "XR"
+        }
+      ]
+    },
+    {
+      "start": 67.6,
+      "end": 68.5,
+      "text": "or newer on",
+      "words": [
+        {
+          "t": 67.6,
+          "text": "or"
+        },
+        {
+          "t": 67.84,
+          "text": "newer"
+        },
+        {
+          "t": 68.1,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 68.5,
+      "end": 69.68,
+      "text": "iOS 18 works",
+      "words": [
+        {
+          "t": 68.5,
+          "text": "iOS"
+        },
+        {
+          "t": 68.8,
+          "text": "18"
+        },
+        {
+          "t": 69.3,
+          "text": "works"
+        }
+      ]
+    },
+    {
+      "start": 69.68,
+      "end": 70.52,
+      "text": "and your rewards",
+      "words": [
+        {
+          "t": 69.68,
+          "text": "and"
+        },
+        {
+          "t": 70.04,
+          "text": "your"
+        },
+        {
+          "t": 70.16,
+          "text": "rewards"
+        }
+      ]
+    },
+    {
+      "start": 70.52,
+      "end": 72.08,
+      "text": "still count. Paid",
+      "words": [
+        {
+          "t": 70.52,
+          "text": "still"
+        },
+        {
+          "t": 70.84,
+          "text": "count."
+        },
+        {
+          "t": 71.76,
+          "text": "Paid"
+        }
+      ]
+    },
+    {
+      "start": 72.08,
+      "end": 72.6,
+      "text": "with it yet,",
+      "words": [
+        {
+          "t": 72.08,
+          "text": "with"
+        },
+        {
+          "t": 72.22,
+          "text": "it"
+        },
+        {
+          "t": 72.4,
+          "text": "yet,"
+        }
+      ]
+    },
+    {
+      "start": 73.1,
+      "end": 73.64,
+      "text": "tell us below",
+      "words": [
+        {
+          "t": 73.1,
+          "text": "tell"
+        },
+        {
+          "t": 73.26,
+          "text": "us"
+        },
+        {
+          "t": 73.42,
+          "text": "below"
+        }
+      ]
+    },
+    {
+      "start": 73.64,
+      "end": 74.2,
+      "text": "if the machine",
+      "words": [
+        {
+          "t": 73.64,
+          "text": "if"
+        },
+        {
+          "t": 73.82,
+          "text": "the"
+        },
+        {
+          "t": 73.92,
+          "text": "machine"
+        }
+      ]
+    },
+    {
+      "start": 74.2,
+      "end": 74.64,
+      "text": "took it.",
+      "words": [
+        {
+          "t": 74.2,
+          "text": "took"
+        },
+        {
+          "t": 74.46,
+          "text": "it."
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "a how-it-works explainer read over Apple's and Axis Bank's own pages; the voice carries every label (standing no-music default)",
+  "format": "news",
+  "script": "Apple Pay just went live in India, almost twelve years after it launched in the US. But right now, it only works with one bank's cards, and not at every shop.\n\nThat bank is Axis. Got an Axis credit card, Visa or Mastercard? Add it to Wallet from the Axis app or the plus button. The bank checks it once, by OTP or in its app.\n\nFrom then on, you skip the OTP. Double-click the side button, Face ID, and hold it near the card machine.\n\nThat's new for India: card payments here need two checks, and for years the second was an SMS OTP. Since April, an RBI rule lets your phone's own face or fingerprint scan count.\n\nEveryone else waits: Axis debit cards don't work, and neither do RuPay or UPI. HDFC, ICICI and SBI Card aren't in, and reports say they're still negotiating.\n\nNow, those shops. Zomato, Blinkit and Croma are on Apple's list, but each counter's machine has to be switched on for it, so one might take it while the next won't. If yours fails, turn on Tap and Pay under usage limits in the Axis app.\n\nAny iPhone XR or newer on iOS 18 works, and your rewards still count.\n\nPaid with it yet? Tell us below if the machine took it.",
+  "approval": {
+    "sha256": "413b4e4353de36aaa270ab05e1c273345b6745a742f743f2284786c2ac76a11b",
+    "approvedAt": "2026-09-30T05:11:05+00:00",
+    "words": 218,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}
