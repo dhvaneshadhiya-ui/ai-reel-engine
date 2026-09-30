@@ -549,6 +549,22 @@ viewer**. The linter catches geometry; only you catch meaning:
 
 Fix, re-render, re-verify. Only then deliver.
 
+### Simulator screen recordings — record, then tighten
+
+`xcrun simctl io <udid> recordVideo --codec h264 out.mp4` while driving taps
+through the simulator panel. Each tap lags a second or more, so a 15-second path
+records as a minute of mostly still screen. Cut the waits, not the steps:
+
+```bash
+python3 tools/sim_tighten.py raw.mp4 public/assets/<slug>/ui/<clip>.mp4 [--hold 0.8]
+```
+
+It converts to constant frame rate first, because simctl writes no frames while
+the screen is still. Then it caps each still stretch at `--hold` seconds. mpdecimate
+was tried first and silently dropped whole navigation pushes (2026-09-30).
+A tap the simulator dropped shows as a clip with no change: check the last frame
+before moving on.
+
 ---
 
 ### ADDING A FORMAT — measure the references first (G23)
