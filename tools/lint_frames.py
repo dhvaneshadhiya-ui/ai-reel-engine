@@ -276,8 +276,21 @@ def main():
                 f"[EDGE TEXT] scene {i:02d} ({typ}): busy pixels at frame "
                 "edge — screenshot likely cropped mid-word")
     hashes = {i: ahash(img) for i, img in imgs.items()}
+
+    def _mad(a, b):
+        from PIL import ImageChops, ImageStat
+        A = a.convert("L").resize((96, 54)); B = b.convert("L").resize((96, 54))
+        return ImageStat.Stat(ImageChops.difference(A, B)).mean[0]
+
     for i in sorted(hashes)[1:]:
         if i - 1 in hashes and hash_dist(hashes[i - 1], hashes[i]) < 0.08:
+            # LANDSCAPE (2026-09-30): the 16x16 average hash reads every 16:9
+            # split page (phone left, dark cards right) as the same frame; it
+            # flagged 24 of 54 pairs whose pixels differ by 5-30 levels. A real
+            # repeat measured 0.89. Landscape needs the pixels to agree too.
+            a_img, b_img = imgs[i - 1], imgs[i]
+            if a_img.size[0] > a_img.size[1] and _mad(a_img, b_img) >= 3.0:
+                continue
             a, b = scenes[i - 1]["type"], scenes[i]["type"]
             flags.append(
                 f"[DUPLICATE] scenes {i-1:02d}({a}) → {i:02d}({b}) look "
