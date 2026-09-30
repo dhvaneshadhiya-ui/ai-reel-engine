@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Easing, Img, OffthreadVideo, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { ClipBlock, DevicesBlock, GaugeBlock, ScreenBlock, StepsBlock, WavesBlock } from "./SlideBlocks";
-import type { ClipBlockProps, DevicesBlockProps, GaugeBlockProps, ScreenBlockProps, StepsBlockProps, WavesBlockProps } from "./SlideBlocks";
+import { ClipBlock, DevicesBlock, GaugeBlock, LevelsBlock, ScreenBlock, StepsBlock, WavesBlock } from "./SlideBlocks";
+import type { ClipBlockProps, DevicesBlockProps, GaugeBlockProps, LevelsBlockProps, ScreenBlockProps, StepsBlockProps, WavesBlockProps } from "./SlideBlocks";
 
 /**
  * SLIDE — the Carousel Playbook look, as a reel scene (2026-09-16).
@@ -50,7 +50,7 @@ export type SlideBlock =
   | { id: string; kind: "text"; text: string }
   | { id: string; kind: "tips"; best?: string; watch?: string }
   | { id: string; kind: "logos"; items: { logo: string; name: string; tile?: "light" | "dark" }[] }
-  | ScreenBlockProps | StepsBlockProps | DevicesBlockProps | WavesBlockProps | GaugeBlockProps | ClipBlockProps
+  | ScreenBlockProps | StepsBlockProps | DevicesBlockProps | WavesBlockProps | GaugeBlockProps | ClipBlockProps | LevelsBlockProps
   | { id: string; kind: "spotlight"; logo: string; name: string; note?: string; overlay?: boolean };
 
 export interface SlideMove {
@@ -157,10 +157,24 @@ const Strike: React.FC<{ p: number }> = ({ p }) =>
 export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames, width: FW, height: FH } = useVideoConfig();
-  const { wide, L, COL: FULL, S, PIP, TOP, BOTTOM } = geom(FW, FH);
+  const g = geom(FW, FH);
+  const { wide, L, COL: FULL, S, PIP, TOP } = g;
+  // captions on a landscape page sit on the bottom band, so content stops above it
+  const BOTTOM = wide && (scene as { hideCaptions?: boolean }).hideCaptions === false ? Math.round(FH * 0.13) : g.BOTTOM;
   // Landscape blocks start level with the presenter circle, so the column gives
   // up the circle's width rather than running underneath it.
-  const COL = wide && scene.presenter ? FULL - PIP - 40 : FULL;
+  // THE 16:9 SPLIT (2026-09-30, ios27-settings-longform review: "static and
+  // boring"). A landscape page with a phone AND other blocks puts the phone in
+  // a full-height left column and the headline + motion graphics in the right,
+  // the way the references pair a device with an explanation. A lone phone
+  // keeps the loupe beside it instead.
+  const isPhone = (b: SlideBlock) => (b.kind === "screen" || b.kind === "clip")
+    && Boolean((b as { device?: unknown }).device) && (b as { height: number }).height / (b as { width: number }).width > 1.2;
+  const phoneBlock = wide ? scene.blocks.find(isPhone) : undefined;
+  const split = Boolean(phoneBlock) && scene.blocks.length > 1;
+  const LEFT_W = split ? Math.round(FW * 0.3) : 0;
+  const GAP = split ? Math.round(FW * 0.04) : 0;
+  const COL = split ? FULL - LEFT_W - GAP : wide && scene.presenter ? FULL - PIP - 40 : FULL;
   const px = (n: number) => Math.round(n * S);
   const t = frame / fps;
   const dur = (scene as { durationSec?: number }).durationSec ?? durationInFrames / fps;
@@ -201,7 +215,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
   });
 
   // ---- a card side: tile, name, big line, note ----
-  const side = (s: SlideSide, target: string, glow: boolean) => {
+  const side = (s: SlideSide, target: string, glow: boolean, big = false) => {
     const p = ramp(t, shownAt(target));
     const sk = at("strike", target);
     const sp = sk !== undefined ? ramp(t, sk, 0.35) : 0;
@@ -225,7 +239,9 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
             <Strike p={sp} />
           </div>
           {s.price ? (
-            <div style={{ position: "relative", marginTop: 8, font: `800 ${s.price.length > 8 ? 62 : 88}px/1.08 ${FONT}`,
+            // a lone HERO in a wide frame is the page's poster number: at 88px
+            // in a 1000px column it read as a caption (2026-09-30 hook review)
+            <div style={{ position: "relative", marginTop: 8, font: `800 ${big ? (s.price.length > 4 ? 170 : 260) : s.price.length > 8 ? 62 : 88}px/1.02 ${FONT}`,
               letterSpacing: -2, fontVariantNumeric: "tabular-nums", color: toneColor(s.tone) }}>
               {price}
               {/* a plain big line is the thing being retired ("Once a day"): strike it too */}
@@ -241,7 +257,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
   const block = (b: SlideBlock) => {
     switch (b.kind) {
       case "hero":
-        return <div key={b.id} style={{ display: "flex", flex: "1 0 auto", maxHeight: 760 }}>{side(b.side, b.id, b.side.tone === "free")}</div>;
+        return <div key={b.id} style={{ display: "flex", flex: "1 0 auto", maxHeight: 760 }}>{side(b.side, b.id, b.side.tone === "free", wide)}</div>;
       case "swap": {
         const ar = ramp(t, shownAt(`${b.id}.right`) - 0.15, 0.25);
         return (
@@ -349,6 +365,8 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         return <ClipBlock key={b.id} b={b} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} fps={fps} wide={wide} />;
       case "gauge":
         return <GaugeBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
+      case "levels":
+        return <LevelsBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
       case "waves":
         return <WavesBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
       case "logos": {
@@ -403,7 +421,15 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
             style={{ width: "100%", height: "178%", objectFit: "cover", objectPosition: "50% 0%", marginTop: "-12%" }} />
         </div>
       ) : null}
-      <div style={{ position: "absolute", left: L, top: TOP ?? (scene.series || scene.index ? 200 : 250), width: COL,
+      {split && phoneBlock ? (
+        <div style={{ position: "absolute", left: L, top: TOP ?? 0, bottom: BOTTOM ?? 0, width: LEFT_W,
+          display: "flex", alignItems: "center", justifyContent: "center" }}>
+          {phoneBlock.kind === "screen"
+            ? <ScreenBlock b={phoneBlock} moves={moves} t={t} boxW={LEFT_W} C={C} shown={ramp(t, shownAt(phoneBlock.id))} wide={false} />
+            : <ClipBlock b={phoneBlock as ClipBlockProps} t={t} boxW={LEFT_W} C={C} shown={ramp(t, shownAt(phoneBlock.id))} fps={fps} wide={false} />}
+        </div>
+      ) : null}
+      <div style={{ position: "absolute", left: L + LEFT_W + GAP, top: TOP ?? (scene.series || scene.index ? 200 : 250), width: COL,
         // CAPTION BAND (user, 2026-09-17): a slide that shows captions stops its
         // content at ~69% so the chips sit alone at 72-77%, above the platform
         // zone. Without captions it fills to the 80% line as before.
@@ -436,7 +462,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
             to 90% — under Instagram's caption. lint_frames measures both. */}
         <div style={{ position: "relative", flex: 1, minHeight: 0, display: "flex", flexDirection: "column", justifyContent: "flex-start",
           gap: px(28), marginTop: px(44) }}>
-          {scene.blocks.map(block)}
+          {scene.blocks.filter((b) => !(split && b === phoneBlock)).map(block)}
         </div>
       </div>
     </AbsoluteFill>

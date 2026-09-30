@@ -2037,7 +2037,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
 
     # G65 (slide) — the carousel-look slide off its contract draws nothing.
     SLIDE_BLOCKS = {"hero", "swap", "rows", "text", "tips", "logos", "screen", "steps", "devices", "waves",
-                    "spotlight", "gauge", "clip"}
+                    "spotlight", "gauge", "clip", "levels"}
     for i, sc in enumerate(scenes):
         if sc.get("type") != "slide":
             continue
@@ -2055,6 +2055,9 @@ def check_beats(beats: dict, vo_end: float | None = None,
             if b.get("kind") == "clip" and not str(b.get("src") or "").lower().endswith((".mp4", ".mov", ".webm")):
                 errors.append(f"G65 scene {i:02d} slide clip {bid!r} needs a video `src` — a still in a "
                               f"clip slot renders one frame, not a recording ({b.get('src')!r}).")
+            if b.get("kind") == "levels" and (not b.get("items") or not all(
+                    isinstance(it.get("from"), (int, float)) for it in b["items"])):
+                errors.append(f"G65 scene {i:02d} slide levels {bid!r} needs items, each with a numeric `from` — it draws empty bars.")
             if b.get("kind") == "gauge" and not isinstance(b.get("from"), (int, float)):
                 errors.append(f"G65 scene {i:02d} slide gauge {bid!r} needs a numeric `from` percent — it draws an empty cell.")
             if b.get("kind") == "screen" and not str(b.get("src") or "").lower().endswith((".png", ".jpg", ".jpeg", ".webp")):

@@ -38,10 +38,37 @@ const ease = Easing.inOut(Easing.cubic);
 const ramp = (t: number, a: number, d = 0.3) => interpolate(t, [a, a + d], [0, 1], { ...CL, easing: Easing.out(Easing.cubic) });
 const FONT = "Inter, -apple-system, 'SF Pro Display', sans-serif";
 
+// --------------------------------------------------------------- bezels ----
+// REAL DEVICE FRAMES (2026-09-30). The drawn black bezel read as "a rounded
+// panel", not an iPhone (ios27-settings-longform review). Apple's own bezels
+// (developer.apple.com/design/resources) are licensed for marketing use but not
+// for redistribution, so the PNG lives in the git-ignored public/assets/_bezels
+// and each machine fetches it. screen = [x, y, w, h] of the opening in bezel px;
+// the iPhone 17 Pro opening is exactly the simulator's 1206x2622.
+export const BEZELS: Record<string, { src: string; w: number; h: number; screen: [number, number, number, number] }> = {
+  "iphone-17-pro": { src: "assets/_bezels/iphone-17-pro.png", w: 1350, h: 2760, screen: [72, 69, 1206, 2622] },
+};
+
+const RealPhone: React.FC<{ spec: (typeof BEZELS)[string]; boxH: number; shown: number; children: React.ReactNode }>
+  = ({ spec, boxH, shown, children }) => {
+  const k = boxH / spec.h;
+  const [sx, sy, sw, sh] = spec.screen.map((v) => v * k);
+  return (
+    <div style={{ position: "relative", width: Math.round(spec.w * k), height: boxH, alignSelf: "center", flexShrink: 0,
+      opacity: shown, transform: `translateY(${Math.round((1 - shown) * 24)}px)`,
+      filter: "drop-shadow(0 30px 45px rgba(0,0,0,0.55))" }}>
+      <div style={{ position: "absolute", left: sx, top: sy, width: sw, height: sh, overflow: "hidden",
+        borderRadius: sw * 0.14, background: "#000" }}>{children}</div>
+      <Img src={staticFile(spec.src)} style={{ position: "absolute", left: 0, top: 0, width: spec.w * k, height: boxH }} />
+    </div>
+  );
+};
+
 // ---------------------------------------------------------------- screen ----
 export interface ScreenBlockProps {
-  /** draw the phone body around it — for phone UI, never for a captured web page */
-  device?: boolean;
+  /** draw the phone body around it — true for the drawn frame, or a BEZELS key
+   *  ("iphone-17-pro") for Apple's real one. Never for a captured web page. */
+  device?: boolean | string;
   id: string;
   kind: "screen";
   /** source image size in px (every state shares it) */
@@ -63,10 +90,12 @@ export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: 
   // 916x760, which is "wider than tall" and briefly made every reel's screen
   // card shrink (caught in a still, 2026-09-25).
   const hug = Boolean(wide) && b.height / b.width > 1.2;
-  const device = Boolean(b.device);
+  const real = typeof b.device === "string" ? BEZELS[b.device] : undefined;
+  const device = Boolean(b.device) && !real;
   const bezel = device ? Math.max(10, Math.round(boxH * 0.022)) : 0;
   const fitW = Math.round(((boxH - bezel * 2) * b.width) / b.height);
-  const boxW = device ? Math.min(fullW, fitW + bezel * 2)
+  const boxW = real ? Math.round((real.w * boxH) / real.h)
+    : device ? Math.min(fullW, fitW + bezel * 2)
     : hug ? Math.round(Math.min(fullW, (boxH * b.width) / b.height)) : fullW;
   const mine = moves.filter((m) => m.target === b.id && m.at !== undefined).sort((a, z) => (a.at! - z.at!));
   // camera: every focus is a rect in source px; before the first, the whole image
@@ -75,7 +104,8 @@ export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: 
   // A focus keeps CONTEXT around its target and never zooms past 2.4x the
   // whole-image fit: fitting a 60px crown to the box made it a blur and pushed
   // the ring outside the view as stray lines (first PairPods v2 stills).
-  const innerW = boxW - bezel * 2, innerH = boxH - bezel * 2;
+  const innerW = real ? (real.screen[2] * boxH) / real.h : boxW - bezel * 2;
+  const innerH = real ? (real.screen[3] * boxH) / real.h : boxH - bezel * 2;
   const fit = Math.min(innerW / b.width, innerH / b.height);
   const camFor = (r: [number, number, number, number]) => {
     const whole = r[2] >= b.width && r[3] >= b.height;
@@ -109,7 +139,22 @@ export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: 
   const states = mine.filter((m) => m.do === "state" && m.src);
   const layers = [{ src: b.src, o: 1 }, ...states.map((s) => ({ src: s.src!, o: ramp(t, s.at!, 0.35) }))];
   const draw = ringRect ? ramp(t, ringAt, 0.45) : 0;
-  const phone = (
+  const camera = (
+      <div style={{ position: "absolute", left: 0, top: 0, width: b.width, height: b.height, transformOrigin: "0 0",
+        transform: `translate(${cam.x}px, ${cam.y}px) scale(${cam.s})` }}>
+        {layers.map((l, i) => (
+          <Img key={i} src={staticFile(l.src)} style={{ position: "absolute", left: 0, top: 0, width: b.width, height: b.height, opacity: l.o }} />
+        ))}
+        {ringRect && draw > 0 ? (
+          <svg width={b.width} height={b.height} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
+            <rect x={ringRect[0] - 10} y={ringRect[1] - 8} width={ringRect[2] + 20} height={ringRect[3] + 16} rx={18}
+              fill="none" stroke={C.pill} strokeWidth={6 / cam.s} pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - draw}
+              strokeLinecap="round" />
+          </svg>
+        ) : null}
+      </div>
+  );
+  const phone = real ? <RealPhone spec={real} boxH={boxH} shown={shown}>{camera}</RealPhone> : (
     <div style={{ position: "relative", width: boxW, height: boxH,
       borderRadius: device ? Math.round(boxH * 0.062) : 30, overflow: "hidden",
       alignSelf: hug || device ? "center" : undefined, padding: bezel, boxSizing: "border-box",
@@ -189,6 +234,46 @@ export const StepsBlock: React.FC<{ b: StepsBlockProps; moves: MoveLike[]; t: nu
               border: `3px solid ${C.blue}`, display: "flex", alignItems: "center", justifyContent: "center",
               font: `800 28px ${FONT}`, color: p > 0.5 ? "#fff" : C.blue }}>{i + 1}</div>
             <div style={{ marginTop: tall ? 26 : 14, font: `700 ${tall ? 40 : 30}px/1.22 ${FONT}`, color: C.ink }}>{s}</div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+// ---------------------------------------------------------------- levels ----
+// VOLUME / LEVEL METERS (2026-09-30, ios27-settings-longform: the alarm that
+// follows the ringer). Labelled horizontal bars; each bar animates from its
+// `from` to its `to` on a `drain` move naming "<id>.<i>" (or the whole block).
+export interface LevelsBlockProps {
+  id: string; kind: "levels";
+  items: { label: string; from: number; to?: number; tone?: "cost" | "free" }[];
+  h?: number; secs?: number;
+}
+
+export const LevelsBlock: React.FC<{ b: LevelsBlockProps; moves: MoveLike[]; t: number; boxW: number; C: Pal; shown: number }>
+  = ({ b, moves, t, boxW, C, shown }) => {
+  const H = b.h ?? 360;
+  const rowH = Math.min(150, (H - 20 * (b.items.length - 1)) / b.items.length);
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 20, width: boxW, opacity: shown }}>
+      {b.items.map((it, i) => {
+        const at = moves.find((m) => m.do === "drain" && (m.target === `${b.id}.${i}` || m.target === b.id))?.at;
+        const v = at === undefined ? it.from
+          : interpolate(t, [at, at + (b.secs ?? 1.4)], [it.from, it.to ?? it.from], { ...CL, easing: ease });
+        const col = it.tone === "cost" ? C.red : C.blue;
+        return (
+          <div key={i} style={{ height: rowH, background: C.card, borderRadius: 26, border: `2px solid ${C.line}`,
+            display: "flex", alignItems: "center", gap: 28, padding: "0 32px" }}>
+            <div style={{ width: 200, font: `600 38px ${FONT}`, color: C.ink }}>{it.label}</div>
+            <div style={{ flex: 1, height: 18, borderRadius: 9, background: "rgba(255,255,255,0.12)", position: "relative" }}>
+              <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: `${v}%`, borderRadius: 9, background: col }} />
+              <div style={{ position: "absolute", top: -13, left: `calc(${v}% - 22px)`, width: 44, height: 44, borderRadius: 22,
+                background: "#fff", boxShadow: "0 2px 10px rgba(0,0,0,0.45)" }} />
+            </div>
+            <div style={{ width: 110, textAlign: "right", font: `700 38px ${FONT}`, color: col, fontVariantNumeric: "tabular-nums" }}>
+              {Math.round(v)}%
+            </div>
           </div>
         );
       })}
@@ -348,8 +433,9 @@ export const GaugeBlock: React.FC<{ b: GaugeBlockProps; moves: MoveLike[]; t: nu
 export interface ClipBlockProps {
   id: string; kind: "clip"; src: string; width: number; height: number;
   h?: number; from?: number;
-  /** draw the phone body around it (default true for a portrait source) */
-  device?: boolean;
+  /** draw the phone body around it (default true for a portrait source), or a
+   *  BEZELS key for Apple's real frame */
+  device?: boolean | string;
 }
 
 export const ClipBlock: React.FC<{ b: ClipBlockProps; t: number; boxW: number; C: Pal; shown: number; fps: number; wide?: boolean }>
@@ -361,6 +447,15 @@ export const ClipBlock: React.FC<{ b: ClipBlockProps; t: number; boxW: number; C
   // around it, so on a page it read as a rounded panel rather than a phone. The
   // references float the recording in a device; the bezel is drawn here rather
   // than baked into the capture, so one recording serves any layout.
+  const real = typeof b.device === "string" ? BEZELS[b.device] : undefined;
+  if (real) {
+    return (
+      <RealPhone spec={real} boxH={boxH} shown={shown}>
+        <OffthreadVideo src={staticFile(b.src)} muted startFrom={Math.round((b.from ?? 0) * fps)}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      </RealPhone>
+    );
+  }
   const device = b.device ?? portrait;
   const bezel = device ? Math.max(10, Math.round(boxH * 0.022)) : 0;
   const screenH = boxH - bezel * 2;
