@@ -372,8 +372,10 @@ def _apply_phrases(text: str, phrase_fixes: dict[str, str]) -> str:
     key match any non-alphanumeric run in the text.
     """
     for key, value in phrase_fixes.items():
-        pattern = r"[^A-Za-z0-9]+".join(
-            re.escape(part) for part in key.split())
+        # WORD BOUNDARIES (2026-09-30): "your screens" matched inside "your
+        # screenshots" and printed "screen'shots" in a rendered caption.
+        pattern = r"\b" + r"[^A-Za-z0-9]+".join(
+            re.escape(part) for part in key.split()) + r"\b"
         text = re.sub(pattern, value, text, flags=re.IGNORECASE)
     return text
 
