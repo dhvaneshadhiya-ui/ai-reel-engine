@@ -177,7 +177,6 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
   const COL = split ? FULL - LEFT_W - GAP : wide && scene.presenter ? FULL - PIP - 40 : FULL;
   const px = (n: number) => Math.round(n * S);
   const t = frame / fps;
-  const enter = (a: number) => arrive(t, a, fps);
   const dur = (scene as { durationSec?: number }).durationSec ?? durationInFrames / fps;
   const C = scene.theme === "light" ? LIGHT : DARK;
   const xl = scene.headlineSize === "xl";
@@ -186,6 +185,15 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
   const at = (d: string, target: string) => moves.find((m) => m.do === d && m.target === target)?.at;
   // shown from the start unless a `show` names it (or its parent block)
   const shownAt = (target: string) => at("show", target) ?? at("show", target.split(".")[0]) ?? 0;
+  // NO BLACK AT THE CUT (2026-10-02). Everything used to ramp in from opacity 0,
+  // including what is on the page from its first word, so every cut dipped to
+  // near-black for ~0.3s (ios27-settings-longform: luma 17-60 fell to 2-13 at
+  // all 55 cuts). The student kit names the same defect: a render that "flashes
+  // black". What is there from the start is there on frame 0; only a `show`
+  // move arrives. A phone that carries over a cut now simply stays put.
+  // What lands LATER, on a spoken word, arrives on a spring (motion-reel rule:
+  // no fade-ins, 2026-10-02) instead of ramping up from opacity 0.
+  const land = (a: number) => (a <= 0 ? 1 : arrive(t, a, fps));
 
   // ---- headline: words rise in, 45ms apart; [[x]] becomes the pill ----
   const parts = scene.headline.split(/(\[\[[^\]]+\]\])/).filter(Boolean);
@@ -195,7 +203,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
     const words = (pill ? part.slice(2, -2) : part).split(/(\s+)/);
     const nodes = words.map((w, k) => {
       if (!w.trim()) return <span key={k}>{w}</span>;
-      const p = enter(0.05 + 0.045 * wi++);
+      const p = arrive(t, 0.05 + 0.045 * wi++, fps);
       return (
         <span key={k} style={{ display: "inline-block", ...rise(p, 26) }}>{w}</span>
       );
@@ -217,7 +225,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
 
   // ---- a card side: tile, name, big line, note ----
   const side = (s: SlideSide, target: string, glow: boolean, big = false) => {
-    const p = enter(shownAt(target));
+    const p = land(shownAt(target));
     const sk = at("strike", target);
     const sp = sk !== undefined ? ramp(t, sk, 0.35) : 0;
     const price = s.price ? (/^\$?0$/.test(s.price) ? s.price : counted(s.price, ramp(t, shownAt(target), 0.9))) : "";
@@ -260,7 +268,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
       case "hero":
         return <div key={b.id} style={{ display: "flex", flex: "1 0 auto", maxHeight: 760 }}>{side(b.side, b.id, b.side.tone === "free", wide)}</div>;
       case "swap": {
-        const ar = ramp(t, shownAt(`${b.id}.right`) - 0.15, 0.25);
+        const ar = shownAt(`${b.id}.right`) <= 0 ? 1 : ramp(t, shownAt(`${b.id}.right`) - 0.15, 0.25);
         return (
           <div key={b.id} style={{ display: "flex", alignItems: "stretch", gap: 0, flex: "1 0 auto", maxHeight: 760 }}>
             {side(b.left, `${b.id}.left`, b.left.tone === "free")}
@@ -277,7 +285,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
             {b.rows.map((r, i) => {
               const tg = `${b.id}.${i}`;
               const own = at("show", tg);
-              const p = enter(own ?? shownAt(b.id) + (at("show", b.id) !== undefined ? 0.12 * i : 0));
+              const p = land(own ?? shownAt(b.id) + (at("show", b.id) !== undefined ? 0.12 * i : 0));
               const hl = at("highlight", tg);
               const h = hl !== undefined ? ramp(t, hl, 0.3) : 0;
               const sk = at("strike", tg);
@@ -300,7 +308,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
           </div>
         );
       case "text": {
-        const p = enter(shownAt(b.id));
+        const p = land(shownAt(b.id));
         return (
           <div key={b.id} style={{ ...rise(p, 14),
             font: `500 42px/1.35 ${FONT}`, color: C.sub }}>{b.text}</div>
@@ -308,7 +316,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
       }
       case "tips": {
         const card = (label: string, color: string, text: string, target: string) => {
-          const p = enter(shownAt(target));
+          const p = land(shownAt(target));
           return (
             <div style={{ flex: 1, background: C.card, borderRadius: 26, padding: "30px 32px", border: `2px solid ${C.line}`,
               ...rise(p, 20) }}>
@@ -325,7 +333,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         );
       }
       case "screen":
-        return <ScreenBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={enter(shownAt(b.id))} wide={wide} />;
+        return <ScreenBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} wide={wide} />;
       case "steps":
         return <StepsBlock key={b.id} b={b} moves={moves} t={t} C={C} />;
       case "devices":
@@ -363,13 +371,13 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         );
       }
       case "clip":
-        return <ClipBlock key={b.id} b={b} t={t} boxW={COL} C={C} shown={enter(shownAt(b.id))} fps={fps} wide={wide} />;
+        return <ClipBlock key={b.id} b={b} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} fps={fps} wide={wide} />;
       case "gauge":
-        return <GaugeBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={enter(shownAt(b.id))} />;
+        return <GaugeBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} />;
       case "levels":
-        return <LevelsBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={enter(shownAt(b.id))} />;
+        return <LevelsBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} />;
       case "waves":
-        return <WavesBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={enter(shownAt(b.id))} />;
+        return <WavesBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} />;
       case "logos": {
         const base = shownAt(b.id);
         // MORE THAN 6 ITEMS NEEDS A SMALLER GRID (2026-09-18) — the fixed
@@ -382,7 +390,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         return (
           <div key={b.id} style={{ display: "flex", flexWrap: "wrap", gap: compact ? 12 : 20, justifyContent: "center" }}>
             {b.items.map((it, i) => {
-              const p = enter(base + 0.1 * i);
+              const p = base <= 0 ? 1 : land(base + 0.1 * i);
               return (
                 <div key={i} style={{ width: compact ? (COL - 28) / 3 : (COL - 40) / 3, height: tileH, background: C.card, borderRadius: compact ? 20 : 28,
                   border: `2px solid ${C.line}`, display: "flex", flexDirection: "column", alignItems: "center",
@@ -426,8 +434,8 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         <div style={{ position: "absolute", left: L, top: TOP ?? 0, bottom: BOTTOM ?? 0, width: LEFT_W,
           display: "flex", alignItems: "center", justifyContent: "center" }}>
           {phoneBlock.kind === "screen"
-            ? <ScreenBlock b={phoneBlock} moves={moves} t={t} boxW={LEFT_W} C={C} shown={enter(shownAt(phoneBlock.id))} wide={false} />
-            : <ClipBlock b={phoneBlock as ClipBlockProps} t={t} boxW={LEFT_W} C={C} shown={enter(shownAt(phoneBlock.id))} fps={fps} wide={false} />}
+            ? <ScreenBlock b={phoneBlock} moves={moves} t={t} boxW={LEFT_W} C={C} shown={land(shownAt(phoneBlock.id))} wide={false} />
+            : <ClipBlock b={phoneBlock as ClipBlockProps} t={t} boxW={LEFT_W} C={C} shown={land(shownAt(phoneBlock.id))} fps={fps} wide={false} />}
         </div>
       ) : null}
       <div style={{ position: "absolute", left: L + LEFT_W + GAP, top: TOP ?? (scene.series || scene.index ? 200 : 250), width: COL,

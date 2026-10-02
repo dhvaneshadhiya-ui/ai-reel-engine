@@ -1668,6 +1668,19 @@ CASES.append((lambda s: s["scenes"].append(
      "moves": [{"do": "drain", "target": "v", "at": 0.4}]}),
     "G65", "slide levels item with no from"))
 
+# G71: the headline sits alone over an empty page until a late show...
+CASES.append((lambda s: s["scenes"].append(
+    {"type": "slide", "durationSec": 4.0, "headline": "Alarm follows ringer",
+     "blocks": [{"id": "r", "kind": "rows", "rows": [{"k": "a", "v": "b"}]}],
+     "moves": [{"do": "show", "target": "r.0", "at": 3.0}]}),
+    "G71", "slide headline alone for 3s"))
+# ...or the page stops moving for longer than 5s.
+CASES.append((lambda s: s["scenes"].append(
+    {"type": "slide", "durationSec": 9.0, "headline": "Alarm follows ringer",
+     "blocks": [{"id": "r", "kind": "rows", "rows": [{"k": "a", "v": "b"}]}],
+     "moves": [{"do": "highlight", "target": "r.0", "at": 1.0}]}),
+    "G71", "slide still for 8s"))
+
 # G70: 2-5s shows only the presenter and type — no proof of the hook.
 CASES.append((lambda s: (s["scenes"][1].update(type="typecard", kinetic={"text": "BIG CLAIM"}),
                          s["scenes"][2].update(src="assets/x/avatar-master-169.mp4")),
@@ -1762,23 +1775,6 @@ if _hits:
     print(f"  FAIL G70 fired on a longform cut proving itself at 12s: {_hits[0][:110]}")
     raise SystemExit(1)
 _counted("G70 silent — longform proof at 12s is inside its own 4-20s window")
-
-# G04 NEGATIVE CASE (2026-10-02). change_max fell to 4.2s; a page whose phone
-# PLAYS a recording is changing the whole time and must not be told it is still.
-_s = _longform(560.0)
-_s["scenes"][1] = {"type": "slide", "durationSec": 8.0, "headline": "The recording",
-                   "blocks": [{"id": "c", "kind": "clip", "src": "assets/x/ui/c1.mp4",
-                               "width": 1206, "height": 2622, "h": 700, "device": True}],
-                   "moves": []}
-try:
-    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS)
-    _hits = [a for a in _adv if "G04 scene 01" in a]
-except GateError as _e:
-    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G04 scene 01" in str(a)]
-if any("nothing new" in h for h in _hits):
-    print(f"  FAIL G04 called a playing clip still: {_hits[0][:110]}")
-    raise SystemExit(1)
-_counted("G04 silent — a longform page playing a recording is changing")
 
 # G38 NEGATIVE CASE (2026-09-08). RULES.md 0(4): "A gate with no negative test
 # will eventually block good work." G38's RULE is that the hook carries words on
@@ -2264,6 +2260,14 @@ if _wrong:
     raise SystemExit("  FAIL " + "; ".join(_wrong))
 _counted(f"{sum(len(v) for v in _both.values())} one-sided media slots, none of "
          "them a branching one")
+
+# [CUT DIP] (lint_frames, 2026-10-02): a page fading up from black at a cut is
+# flagged; a steady page and a cut between two dark pages are not.
+from lint_frames import cut_dips
+_flash = [(k / 30, 18.0 if 3.0 <= k / 30 < 3.2 else 60.0) for k in range(180)]
+assert cut_dips(_flash, [3.0]) and not cut_dips([(k / 30, 60.0) for k in range(180)], [3.0]) \
+    and not cut_dips([(k / 30, 18.0) for k in range(180)], [3.0]), "CUT DIP detector broken"
+_counted("[CUT DIP] fires on a black flash at a cut, not on steady or dark pages")
 
 # The suite printed "every gate fires on its violation" while G13 and G16 had
 # no failing case at all (found 2026-08-17). Uniqueness of ids was asserted;

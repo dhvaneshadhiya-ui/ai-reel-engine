@@ -9374,6 +9374,128 @@ as if it were the long-form standard. It wasn't.
   - labelled redraws only where the simulator can't show the screen
 - The VO pace went from 2.6 w/s (padded) to 3.0 w/s.
 
+## 2026-10-02 (N) — iphone-third-interface re-cut as motion; what the old cut got wrong
+
+Asked to make the reel again "showing what an incredible motion designer you
+are". The script, the VO and the approval were left untouched — the words were
+never the problem, and G27 kept them honest. This was a visuals-only rebuild,
+so it cost no credits and needed no re-approval.
+
+**What the shipped cut actually did wrong**, read back off its own contact
+sheet rather than from memory:
+
+- It **stated its idea and never drew it**. "Your Mac has a third input
+  device" played over a static desk. The line has a picture — two inputs you
+  already have, and an empty third place — and the reel never drew it.
+- **Five identical floatcards in a row.** Same card, same blur, same label
+  slot, five times. That is a template, and "graphics vary per topic" exists
+  to stop exactly that.
+- **No move landed on a word.** Nothing in 35 seconds was timed to the voice;
+  every handover was a hard cut.
+
+**The re-cut**: lines that EXPLAIN became `stage` scenes that act them out —
+three input slots, two struck with hand-drawn marks on "Not the keyboard" /
+"Not the trackpad", the third filling with the phone; the phone connected to
+the Mac with pulses travelling the link; the Wi-Fi caveat as that same link
+rather than a table. Lines that PROVE kept the official demo footage, which
+was always the evidence and was never what was wrong. Every move is timed off
+vo.json word onsets.
+
+### Three things the build taught, each caught by a check rather than by eye
+
+- **A continuous picture must be ONE scene.** Splitting the opening in two so
+  the cards could persist produced two consecutive identical layouts, and
+  [DUPLICATE] blocked it — correctly. The cut was invisible because there was
+  no cut. Merged into one 4.4s stage with the moves spread across it.
+- **`hideCaptions` changes the stage height** (Stage.tsx `AH`: 1300 with
+  captions, 1600 without). Laying a stage out for 1300 and then hiding the
+  captions puts every element in the top half; the linter read 45-83% dead
+  space on five stages. Position stages against the height they will actually
+  render at.
+- **`fill` holds a grey placeholder until its move lands.** With `arrive` at
+  0.10 and `fill` at 1.46 the hero image sat as an empty grey box for 1.36s
+  and read as a missing asset. The gap is a beat, not a wait — 0.1-0.2s.
+
+**Distilled rule: a line that can be drawn should not be narrated over a
+holding shot.** The test is whether the picture would still carry the idea
+with the sound off; a desk under "a third input device" does not.
+
+### Treatments used (do not repeat for the same kind of information)
+- claim-with-an-absence: three slots, two struck with marker, the third filled
+- "X becomes Y for Z": two stills stacked, `connect` with arrow + travelling pulses
+- a requirement that is a RELATIONSHIP: the same vertical link, labelled, not a spec table
+- payoff: the opening picture returns with its empty place filled (loop closed)
+## 2026-10-02 — ios27-accessibility-features: a top5 built from a May preview, checked against what shipped
+
+56.0s, 16 slides, presenter bookends (HeyGen back on Pro: 1,926 credits; ~10 used, 6.0s + 2.8s
+slices), 9 SFX (9/9 heard after one swap), -14.5 LUFS. Format top5 with allowLong.
+
+- **RAW NOTE 1 — the reference article was a preview, written four months before the release.**
+  BGR (2026-05-20) listed seven features off Apple's 2026-05-19 release. Checked against Apple's
+  iOS 27 release notes and User Guide: Name Recognition shipped in iOS 26 (only its languages are
+  new), the FaceTime interpreter API first appeared in the 27.2 developer beta, the Sony Access
+  controller has no post-release confirmation, and BGR's "flash" alert is a notification. Rule:
+  when the user's reference predates the release, every item is re-verified against the SHIPPING
+  docs (release notes + User Guide), never against the announcement it was written from.
+- **RAW NOTE 2 — the requirement became the open loop.** All five run on Apple Intelligence
+  (iPhone 15 Pro or later) and two are English-only in a few countries. Said once, at the end, as
+  "the catch" promised in sentence two, instead of a caveat after every item.
+- **RAW NOTE 3 — framework_check F5 reads "then follow up" as a CTA** (`follow` is in its ASK
+  regex). Reworded the line rather than widening the gate for one reel; if it recurs, exclude
+  "follow up" in framework_check with a self-test case.
+- **RAW NOTE 4 — a `focus` rect taller than the box fit does not zoom.** camFor() scales by
+  rect*1.5; a whole-phone rect (660x1240 in a 1960x1307 image, box 820px) resolved to the resting
+  fit, so the "frame-0 push-in" did nothing. Use a rect about half the box height.
+- **RAW NOTE 5 — whisper's word boundary sat 0.5s early on the CTA** ("Know" at 52.86, real onset
+  53.4 by silencedetect). Cut presenter slices at silencedetect pauses, not at whisper times, and
+  tpad the conformed clip so its first spoken frame lands on the scene's audio.
+- **RAW NOTE 6 — Apple's media-kit notice ("cannot be altered") constrains the COVER more than the
+  reel.** In the reel a camera push over the whole image reads as display; a cover crop is an
+  edit. Cover used the whole image scaled on a dark canvas: honest, but the subject is small.
+- sfx: paper-quick under speech MASKED again (second reel); Camera Shutter on a still's state
+  change is audible. Prefer shutter for a page/still swap under the voice.
+- ElevenLabs v3: 163 words at 3.28 w/s (49.7s, ~959 credits), vo_pad to 56s; whisper small heard
+  every product name and number right.
+
+Treatment history: Apple's Magnifier press image as frame-0 hook with a camera walk (chip → bill →
+$83.89 answer → Ask button → "When is this due?"), five numbered rows as the promise, five "?" rows
+for the withheld catch, a before/after swap with a strike for Voice Control, Apple's Voice Control
+demo clip whole, two trims of Apple's VoiceOver film, a before→after state crossfade for
+Accessibility Reader, a focus on the generated subtitle, rows for the requirement and the
+English-only countries. Next accessibility/feature-list reel: do not open on a press image of a
+bill again; open on a real device recording if a simulator is available on that machine.
+
+- **Revision same day (user): Accessibility Reader out, Name Recognition in as #4.** Name Recognition
+  shipped in iOS 26 and needs no Apple Intelligence, so the swap changed two other lines: "five new
+  features" became "five accessibility upgrades", and the catch now covers four of five (the payoff
+  names Name Recognition as the one that works on any iPhone with iOS 27). Three sentences re-read
+  (369 credits vs ~959 full) and spliced into the PADDED master at mid-pause cut points (-0.4 dB
+  match), so the hook region stayed byte-identical and the hook presenter clip kept its lip-sync;
+  the CTA clip was re-aligned (presenter.from 0.14) from silencedetect. Apple's feature-availability
+  page captured mobile with `--selector "#accessibility-name-recognition"` (1080x5085), cropped to two
+  1080x1100 panels; back-to-back they tripped [DUPLICATE] until the second got a rows block over a
+  shorter crop. Caption trap: a correction "The catch," -> "The catch?" rendered "catch??" (the
+  script already supplies the "?"); key on the phrase instead ("catch, name recognition").
+
+## 2026-10-02 — hyperframes-student-kit: its rules, not its pipeline
+
+The user proposed nateherkai/hyperframes-student-kit as "the skill we need for reels and long-form".
+Read in full before ruling (all 15 SKILL.md, CLAUDE.md, licence, setup). It edits FILMED talking-head
+footage (transcribe, cut silences, cut mistakes); it has no TTS, avatar, script approval or claims
+ledger, its 406 cards are 1920x1080 only, AIS-branded drafts, and three of its skills
+(`make-a-video`, `website-to-hyperframes`, a second `hyperframes`) would contend with `news-reel`.
+User's call: adopt the rules, keep a reference copy at `~/hyperframes-student-kit` (outside the repo,
+skills NOT installed). What it named that we measured on ios27-settings-longform v2:
+- every page faded up from opacity 0, so 42 of 54 cuts dipped to black (its Law 11, "flashes
+  black"). Fixed at the root in Slide.tsx (`land`): start-of-page content is there on frame 0.
+  lint_frames now measures luma at every cut: [CUT DIP] blocks.
+- ~12 pages were a headline over an empty column or held still 5-9s (its validate-plan flags any
+  visual gap over 2.2s; "Static = death"). G71 advises at 2.2s first-land / 5s still.
+- 54 whooshes in 6 minutes, most on cuts where the phone never moved. A phone on both sides of a
+  cut is one world continuing: compile_shot_plan no longer whooshes it (54 -> 19).
+Rejected: its ad pacing (scenes 1-2s, an element every 0.3-0.6s — its own CLAUDE.md says to let
+educational speech breathe), chrome-gradient text (its own showreel skill says it renders invisible).
+
 ## 2026-10-02 — four motion-reel studio rules, taken into the engine
 
 The user asked why we don't use the motion-reel plugin. It was read in full first. Like
@@ -9381,13 +9503,16 @@ HyperFrames, it's a whole parallel pipeline: a 60 fps canvas film with its own s
 mix and sign-off, and it knows none of our gates. So it doesn't build reels. Four of its
 rules matched exactly what was wrong with ios27-settings-longform v2, and those came in:
 
-- **No fade-ins.** An element ARRIVES on a spring with a touch of overshoot, solid within
-  ~3 frames (`arrive` / `rise` in SlideBlocks.tsx). Anything due at the top of a page
-  starts 0.1s into its move, so a cut lands on motion. Measured on v2 at three cuts, the
-  first frame after the cut went from luma 2-16 to 48-50, the scene's full level.
-- **Something new every ~4s on long-form.** G04's `change_max` went from 8.0 to 4.2, the
-  middle of the three measured references (2.5 / 4.2 / 7.5); 8.0 was the loosest. A slide
-  playing a clip is exempt because the recording is the change. It's still ADVICE.
+- **No fade-ins.** Merged with the student-kit entry above, which landed the same day:
+  what is on a page from its first word is there on frame 0 (`land`), and what lands
+  LATER, on a spoken word, ARRIVES on a spring with a touch of overshoot, solid within
+  ~3 frames (`arrive` / `rise` in SlideBlocks.tsx), instead of ramping up from opacity 0.
+  Headline words arrive too; the first starts 0.1s into its move so the cut lands on
+  motion. Measured on v2 before the merge: the first frame after a cut went from luma
+  2-16 to 48-50.
+- **Something new every few seconds.** Already G71 (5s, clip pages exempt), from the
+  student kit. A 4.2s G04 bound was written here too, then dropped in the merge so the
+  same gap is not reported twice.
 - **The mix breathes.** `thin_sfx` in compile_shot_plan makes a compiler-placed pop/tick
   yield within 0.6s of a stronger cue and a page whoosh within 1.5s. Impacts never yield.
   v2: 148 cues → 111, of which whooshes 54 → 23.
@@ -9398,4 +9523,4 @@ rules matched exactly what was wrong with ios27-settings-longform v2, and those 
 
 Not taken: its "never invent screens". Our labelled redraws stay, because Rule 3 and the
 illustration label already cover honesty. The 0:32 page of v2 that opens on 5s of bare
-background is a PLAN defect, and the critique catches it; the engine can't.
+background is a PLAN defect: G71 and the critique flag it, and the engine can't fix it.

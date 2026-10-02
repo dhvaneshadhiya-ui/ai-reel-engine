@@ -30,6 +30,7 @@ that was never read (see STYLE-RULES 2026-08-11). A safety net you cannot
 tell is switched off is worse than none.
 """
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -127,6 +128,38 @@ def edge_text_score(img):
         var = sum((p - mean) ** 2 for p in px) / len(px)
         score = max(score, var ** 0.5)
     return score
+
+
+def luma_track(video) -> list[tuple[float, float]]:
+    """(seconds, mean luma 0-255) for every frame, read at 48px wide."""
+    out = subprocess.run(
+        ["ffmpeg", "-v", "error", "-i", str(video), "-vf",
+         "scale=48:-2,signalstats,metadata=print:key=lavfi.signalstats.YAVG:file=-",
+         "-f", "null", "-"], capture_output=True, text=True).stdout
+    ts = [float(x) for x in re.findall(r"pts_time:([\d.]+)", out)]
+    ys = [float(x) for x in re.findall(r"YAVG=([\d.]+)", out)]
+    return list(zip(ts, ys))
+
+
+def cut_dips(track, cuts) -> list[tuple[int, float, float, float]]:
+    """Cuts where the first 0.3s falls below half the brightness on BOTH sides.
+
+    A page that fades up from black reads as a flash at every cut; a hard cut
+    between two dark pages does not dip, because there is nothing to fall from.
+    Luma is measured above video black (16)."""
+    def med(a, b):
+        v = sorted(y - 16 for t, y in track if a <= t < b)
+        return v[len(v) // 2] if v else None
+    hits = []
+    for k, c in enumerate(cuts):
+        before, after = med(c - 1.0, c - 0.05), med(c + 0.5, c + 1.5)
+        dip = min((y - 16 for t, y in track if c <= t < c + 0.3), default=None)
+        # a dark page (App Library, luma ~9 above black) has nothing to flash from
+        if None in (before, after, dip) or min(before, after) < 12:
+            continue
+        if dip < 0.5 * min(before, after):
+            hits.append((k, before, dip, after))
+    return hits
 
 
 def check_css_animation() -> list[str]:
@@ -440,11 +473,23 @@ def main():
                 f"[DOUBLE TEXT?] scene {i:02d} ({s['type']}) has display type "
                 "but hideCaptions:false — verify chips don't duplicate it")
 
+    # [CUT DIP] — a page that fades up from black flashes at every cut
+    # (2026-10-02; the student kit's Law 11 is the same render defect).
+    if not from_stills:
+        cuts, c = [], 0.0
+        for s in scenes[:-1]:
+            c += s["durationSec"]
+            cuts.append(c)
+        for k, before, dip, after in cut_dips(luma_track(video), cuts):
+            flags.append(f"[CUT DIP] cut {k:02d}→{k + 1:02d} @{cuts[k]:.1f}s: brightness falls to "
+                         f"{dip:.0f} between {before:.0f} and {after:.0f} — the page fades up from black. "
+                         "Content on the page from its first word must be there on frame 0.")
+
     # -- 3. report -----------------------------------------------------------
     # Severity is DERIVED, never typed. See the verdict block below for why.
     from reel_gates import BLOCKING_RULES
     _GATE_OF = {"[PACING]": ("G03", "G04"), "[CLIP REUSE]": ("G07",)}
-    HARD_ALWAYS = ("[EDGE TEXT]", "[DUPLICATE]", "[HOOK DEAD SPACE]", "[PLATFORM ZONE]", "[CAPTION OVERLAP]")
+    HARD_ALWAYS = ("[EDGE TEXT]", "[DUPLICATE]", "[CUT DIP]", "[HOOK DEAD SPACE]", "[PLATFORM ZONE]", "[CAPTION OVERLAP]")
 
     def _is_hard(f: str) -> bool:
         if f.startswith(HARD_ALWAYS):

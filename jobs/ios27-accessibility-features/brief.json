@@ -1,0 +1,28 @@
+{
+  "slug": "ios27-accessibility-features",
+  "topic": "5 cool new iOS 27 accessibility features",
+  "details": "Ref: BGR https://www.bgr.com/2177707/cool-new-ios-27-accessibility-features-look-forward-to-fall/ (May 2026 preview; iOS 27 shipped 2026-09-14)",
+  "subject": "5 cool new iOS 27 accessibility features",
+  "audience": "<who should care, and what they already know>",
+  "platform": "both",
+  "goal": "<awareness|education|engagement|follow|comment|conversion>",
+  "core_value": "<what the viewer learns, feels, sees or can do>",
+  "desired_action": "<if any>",
+  "reveal_target": "none",
+  "cta_keyword": "",
+  "target_duration": "48s",
+  "tone": "<voice, personality, boundaries>",
+  "source_policy": "official-preferred",
+  "footage_constraints": "<assets, permissions, presenter, recordings>",
+  "credit_instructions": "internal",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 48,
+  "music": false,
+  "created_at": "2026-10-02T08:46:19.666501+00:00",
+  "status": "initialized"
+}
