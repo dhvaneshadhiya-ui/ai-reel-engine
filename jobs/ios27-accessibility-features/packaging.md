@@ -12,22 +12,24 @@ Instagram's hashtag maximum is **5** (past that it ignores all of
 them, official since Aug 2025); YouTube's cap is 15 and the
 recommended band is **3-5** on both.
 
+Video: out/ios27-accessibility-features-final.mp4 (56s, 1080x1920)
+Cover: out/thumbnails/ios27-accessibility-features-vertical.png
+
 ## instagram
 
-CAPTION: <the caption box. First line does the work — it is the
- only line shown before 'more'. No hashtags.>
-FIRST COMMENT: <posted as its own comment: the question, then the
- 3-5 hashtags at the end>
-ALT TEXT: <one line describing the video for people who cannot
- see it>
-AI LABEL: on  (Advanced settings → Add AI label; the CAPTION also
- carries: The presenter's face and voice in this video are AI-generated.)
+CAPTION: In iOS 27 your iPhone can read you the total on a bill. Magnifier now answers questions about what the camera sees (tap Ask, then ask a follow-up). Voice Control takes plain words like "tap the orange folder" instead of exact button names. VoiceOver describes photos in detail and answers questions about them. Accessibility Reader cleans up a cluttered page, then summarizes or translates it. And videos with no captions now get subtitles on their own, made on the phone. The catch: all five run on Apple Intelligence, so they need an iPhone 15 Pro or later, and Voice Control and the subtitles are English-only, in the US and Canada (Voice Control also in the UK and Australia). Pass it on to someone they would help. The presenter's face and voice in this video are AI-generated.
+FIRST COMMENT: Which one are you turning on first? #iOS27 #Accessibility #iPhone #AppleIntelligence #iPhoneTips
+ALT TEXT: Apple's own images of five iOS 27 accessibility features: Magnifier reading the total on an energy bill, Voice Control opening a folder in Files, VoiceOver describing a photo, Accessibility Reader cleaning up an article, and generated subtitles on a video, with a presenter in a small circle at the start and end.
+COVER: upload out/thumbnails/ios27-accessibility-features-vertical.png (Edit cover → Add from camera roll), then compare it with out/thumbnails/ios27-accessibility-features-grid.png
+AI LABEL: on  (Advanced settings → Add AI label; the CAPTION also carries the AI line)
 
 ## youtube
 
-TITLE: <under 100 chars>
-CAPTION: <the description. No hashtags in this field.>
-HASHTAGS: <3-5, appended to the description; the first three show
- above the title>
-ALT TEXT: <as above>
+TITLE: 5 New iOS 27 Accessibility Features Worth Turning On (and the Catch)
+CAPTION: Five new accessibility features in iOS 27, and the one catch that covers all of them. 1) Magnifier: point it at a bill and tap Ask, and it reads you the total; ask a follow-up like when it's due. 2) Voice Control: describe what you want in your own words, like "tap the orange folder" (Settings > Accessibility > Voice Control). 3) VoiceOver: detailed photo descriptions and questions about them (Settings > Accessibility > VoiceOver > VoiceOver Recognition). 4) Accessibility Reader: cleans up a cluttered page, then summarizes or translates it (Settings > Accessibility > Read & Speak > Accessibility Reader). 5) Generated subtitles for videos with no captions, made on the device (Settings > Accessibility > Subtitles & Captioning). The catch: all five run on Apple Intelligence, so you need an iPhone 15 Pro or later. Voice Control's new mode is English-only in the US, Canada, UK and Australia; generated subtitles are English-only in the US and Canada. Images and demo footage: Apple. The presenter's face and voice in this video are AI-generated.
+HASHTAGS: #iOS27 #Accessibility #iPhone #Shorts
+TAGS: ios 27, ios 27 accessibility, ios 27 features, accessibility features iphone, magnifier iphone, voice control iphone, voiceover, accessibility reader, generated subtitles, apple intelligence, iphone 15 pro, iphone tips, ios 27 hidden features, iphone accessibility settings, apple accessibility
+PINNED COMMENT: Which one are you turning on first? And does your iPhone have Apple Intelligence?
+ALT TEXT: Apple's own images of five iOS 27 accessibility features: Magnifier reading the total on an energy bill, Voice Control opening a folder in Files, VoiceOver describing a photo, Accessibility Reader cleaning up an article, and generated subtitles on a video, with a presenter in a small circle at the start and end.
+THUMBNAIL: if Studio offers a custom Shorts thumbnail, use out/thumbnails/ios27-accessibility-features-vertical.png; otherwise pick the frame at 0:01
 ALTERED CONTENT: yes  (YouTube Studio → Altered content → Yes)

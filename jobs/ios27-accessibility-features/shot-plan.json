@@ -1,6 +1,966 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
-  "format": "top5",
-  "shots": []
+ "format": "top5",
+ "facePlan": "bookends",
+ "music": false,
+ "noMusicReason": "standing no-music default; the voice carries every label",
+ "audio": "assets/ios27-accessibility-features/vo.mp3",
+ "allowLong": true,
+ "allowLongReason": "five items plus the catch (the iPhone 15 Pro requirement and English-only limits); cutting to 48s drops the requirement, the most useful line",
+ "emphasis": [
+  "total",
+  "five",
+  "catch",
+  "Ask",
+  "memorize",
+  "orange",
+  "detail",
+  "cluttered",
+  "subtitles",
+  "15 Pro",
+  "English",
+  "Pass"
+ ],
+ "caption_corrections": {
+  "applies to everyone": "applies to every one",
+  "is magnifier": "is Magnifier",
+  "Voice control": "Voice Control",
+  "voice control": "Voice Control",
+  "Voiceover describes": "VoiceOver describes",
+  "Accessibility reader": "Accessibility Reader",
+  "Apple intelligence": "Apple Intelligence",
+  "English only": "English-only",
+  "2. Voice": "Two, Voice",
+  "3. VoiceOver": "Three, VoiceOver",
+  "3. Voiceover": "Three, VoiceOver",
+  "4. Accessibility": "Four, Accessibility",
+  "5. Videos": "Five, videos"
+ },
+ "shots": [
+  {
+   "start_phrase": "In iOS 27 point",
+   "line": "In iOS 27, point your iPhone at a bill, ask how much it is, and it reads you the total.",
+   "asset_id": "mag-bill",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "New in iOS 27",
+    "headline": "It reads you the [[total]]",
+    "presenter": {
+     "src": "assets/ios27-accessibility-features/avatar-hook.mp4",
+     "from": 0.0
+    },
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/ios27-accessibility-features/mag-bill.jpg",
+      "width": 1960,
+      "height": 1307,
+      "h": 820
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "at": 0.0,
+      "rect": [
+       330,
+       40,
+       660,
+       700
+      ],
+      "ring": false
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "at a bill",
+      "rect": [
+       380,
+       270,
+       560,
+       520
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "ask how much",
+      "rect": [
+       380,
+       120,
+       560,
+       560
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "reads you the",
+      "rect": [
+       1040,
+       400,
+       520,
+       420
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "the total"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "at": 4.68,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": [
+    "point",
+    "iPhone",
+    "reads",
+    "total"
+   ]
+  },
+  {
+   "start_phrase": "That's one of five",
+   "line": "That's one of five new accessibility features worth turning on,",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "iOS 27 · Accessibility",
+    "headline": "[[5]] worth turning on",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "1",
+        "v": "Magnifier answers questions",
+        "tone": "plain"
+       },
+       {
+        "k": "2",
+        "v": "Voice Control, in your words",
+        "tone": "plain"
+       },
+       {
+        "k": "3",
+        "v": "VoiceOver describes photos",
+        "tone": "plain"
+       },
+       {
+        "k": "4",
+        "v": "A smarter Accessibility Reader",
+        "tone": "plain"
+       },
+       {
+        "k": "5",
+        "v": "Subtitles on their own",
+        "tone": "plain"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "five new"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "five new"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "new accessibility"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "accessibility features"
+     },
+     {
+      "do": "show",
+      "target": "r.3",
+      "on": "features worth"
+     },
+     {
+      "do": "show",
+      "target": "r.4",
+      "on": "worth turning"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 0.72,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": [
+    "That's",
+    "accessibility",
+    "features",
+    "worth",
+    "turning"
+   ]
+  },
+  {
+   "start_phrase": "and there's a catch",
+   "line": "and there's a catch that applies to every one.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Before you try them",
+    "headline": "One [[catch]] covers all 5",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Magnifier",
+        "v": "?",
+        "tone": "cost"
+       },
+       {
+        "k": "Voice Control",
+        "v": "?",
+        "tone": "cost"
+       },
+       {
+        "k": "VoiceOver",
+        "v": "?",
+        "tone": "cost"
+       },
+       {
+        "k": "Reader",
+        "v": "?",
+        "tone": "cost"
+       },
+       {
+        "k": "Subtitles",
+        "v": "?",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "a catch"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "a catch"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "catch that"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "that applies"
+     },
+     {
+      "do": "show",
+      "target": "r.3",
+      "on": "applies to"
+     },
+     {
+      "do": "show",
+      "target": "r.4",
+      "on": "to everyone"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 0.75,
+      "vol": 0.35
+     }
+    ]
+   },
+   "needs": [
+    "there's",
+    "catch",
+    "applies",
+    "every"
+   ]
+  },
+  {
+   "start_phrase": "That first one is",
+   "line": "That first one is Magnifier.",
+   "asset_id": "mag-bill",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "1 · Magnifier",
+    "headline": "Tap [[Ask]] in Magnifier",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/ios27-accessibility-features/mag-bill.jpg",
+      "width": 1960,
+      "height": 1307,
+      "h": 820
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "is magnifier",
+      "rect": [
+       380,
+       880,
+       560,
+       360
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "is magnifier"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx-action/lens-zoom.mp3",
+      "at": 0.28,
+      "vol": 0.8
+     }
+    ]
+   },
+   "needs": [
+    "first",
+    "Magnifier"
+   ]
+  },
+  {
+   "start_phrase": "Tap Ask and you",
+   "line": "Tap Ask, and you can ask a second question, like when the bill is due.",
+   "asset_id": "mag-bill",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "1 · Magnifier",
+    "headline": "Then ask a [[second]] question",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/ios27-accessibility-features/mag-bill.jpg",
+      "width": 1960,
+      "height": 1307,
+      "h": 820
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "tap ask",
+      "rect": [
+       1040,
+       170,
+       520,
+       340
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "when the bill",
+      "rect": [
+       1040,
+       800,
+       520,
+       380
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "second question"
+     }
+    ]
+   },
+   "needs": [
+    "second",
+    "question"
+   ]
+  },
+  {
+   "start_phrase": "2 Voice control stops",
+   "line": "Two, Voice Control stops making you memorize button names.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "2 · Voice Control",
+    "headline": "No more memorizing [[names]]",
+    "blocks": [
+     {
+      "id": "w",
+      "kind": "swap",
+      "left": {
+       "name": "Before",
+       "price": "Exact label",
+       "tone": "cost",
+       "note": "or the number on screen"
+      },
+      "right": {
+       "name": "iOS 27",
+       "price": "Your words",
+       "tone": "free",
+       "note": "name, color or position"
+      }
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "w.left",
+      "on": "2 voice control"
+     },
+     {
+      "do": "strike",
+      "target": "w.left",
+      "on": "button names"
+     },
+     {
+      "do": "show",
+      "target": "w.right",
+      "on": "button names"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "button names"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx-action/marker.mp3",
+      "at": 2.5,
+      "vol": 0.35
+     }
+    ]
+   },
+   "needs": [
+    "Voice",
+    "Control",
+    "stops",
+    "making",
+    "memorize"
+   ]
+  },
+  {
+   "start_phrase": "Say tap the orange",
+   "line": "Say \"tap the orange folder,\" and it opens.",
+   "asset_id": "vc-folder",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "2 · Voice Control",
+    "headline": "“Tap the [[orange folder]]”",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-accessibility-features/vc-folder.mp4",
+      "width": 1080,
+      "height": 1080,
+      "h": 860,
+      "from": 0.5,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "orange folder"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "at": 0.32,
+      "vol": 0.22
+     }
+    ]
+   },
+   "needs": [
+    "orange",
+    "folder",
+    "opens"
+   ]
+  },
+  {
+   "start_phrase": "3 Voiceover describes a",
+   "line": "Three, VoiceOver describes a photo in detail",
+   "asset_id": "vo-describe",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "3 · VoiceOver",
+    "headline": "Describes a photo in [[detail]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-accessibility-features/vo-describe.mp4",
+      "width": 1920,
+      "height": 1080,
+      "h": 600,
+      "from": 0.0,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "in detail"
+     }
+    ]
+   },
+   "needs": [
+    "Three",
+    "VoiceOver",
+    "describes",
+    "photo",
+    "detail"
+   ]
+  },
+  {
+   "start_phrase": "and answers questions about",
+   "line": "and answers questions about what's in it.",
+   "asset_id": "vo-ask",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "3 · VoiceOver",
+    "headline": "And answers [[questions]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios27-accessibility-features/vo-ask.mp4",
+      "width": 1920,
+      "height": 1080,
+      "h": 600,
+      "from": 0.0,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "answers questions"
+     }
+    ]
+   },
+   "needs": [
+    "answers",
+    "questions",
+    "about",
+    "what's"
+   ]
+  },
+  {
+   "start_phrase": "4 Accessibility reader cleans",
+   "line": "Four, Accessibility Reader cleans up a cluttered page,",
+   "asset_id": "reader-before",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "4 · Accessibility Reader",
+    "headline": "A [[cluttered]] page...",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/ios27-accessibility-features/reader-before.jpg",
+      "width": 1960,
+      "height": 1102,
+      "h": 620
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "cluttered page"
+     },
+     {
+      "do": "state",
+      "target": "s",
+      "on": "cleans up",
+      "src": "assets/ios27-accessibility-features/reader-after.jpg"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "at": 1.41,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": [
+    "Accessibility",
+    "Reader",
+    "cleans",
+    "cluttered"
+   ]
+  },
+  {
+   "start_phrase": "then summarizes or translates",
+   "line": "then summarizes or translates it.",
+   "asset_id": "reader-after",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "4 · Accessibility Reader",
+    "headline": "[[Summarize]] or translate it",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/ios27-accessibility-features/reader-after.jpg",
+      "width": 1960,
+      "height": 1102,
+      "h": 620
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "then summarizes",
+      "rect": [
+       560,
+       250,
+       820,
+       240
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "summarizes"
+     }
+    ]
+   },
+   "needs": [
+    "summarizes",
+    "translates"
+   ]
+  },
+  {
+   "start_phrase": "5 Videos with no",
+   "line": "Five, videos with no captions now get subtitles on their own,",
+   "asset_id": "subtitles",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "5 · Subtitles",
+    "headline": "Videos caption [[themselves]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/ios27-accessibility-features/subtitles.jpg",
+      "width": 1306,
+      "height": 1633,
+      "h": 860
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "get subtitles",
+      "rect": [
+       250,
+       1100,
+       800,
+       420
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "their own"
+     }
+    ]
+   },
+   "needs": [
+    "videos",
+    "captions",
+    "subtitles",
+    "their"
+   ]
+  },
+  {
+   "start_phrase": "even clips you shot",
+   "line": "even clips you shot, made right on the phone.",
+   "asset_id": "subtitles",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "5 · Subtitles",
+    "headline": "Made [[on the phone]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Works on",
+        "v": "Clips you shot",
+        "tone": "free"
+       },
+       {
+        "k": "Made",
+        "v": "On the device itself",
+        "tone": "free"
+       }
+      ]
+     },
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/ios27-accessibility-features/subtitles.jpg",
+      "width": 1306,
+      "height": 1633,
+      "h": 520
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "even clips"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "made right"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "the phone"
+     }
+    ]
+   },
+   "needs": [
+    "clips",
+    "right",
+    "phone"
+   ]
+  },
+  {
+   "start_phrase": "The catch All five",
+   "line": "The catch? All five run on Apple Intelligence, so you need an iPhone 15 Pro or later.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The catch",
+    "headline": "All 5 need [[iPhone 15 Pro]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Runs on",
+        "v": "Apple Intelligence",
+        "tone": "plain"
+       },
+       {
+        "k": "Needs",
+        "v": "iPhone 15 Pro or later",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "all five run"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "you need"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "15 pro"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx2/impact-boom.mp3",
+      "at": 3.0,
+      "vol": 0.3
+     }
+    ]
+   },
+   "needs": [
+    "catch",
+    "Apple",
+    "Intelligence",
+    "iPhone",
+    "later"
+   ]
+  },
+  {
+   "start_phrase": "And voice control and",
+   "line": "And Voice Control and the subtitles are English-only, in places like the US and Canada.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "And for two of them",
+    "headline": "[[English]] only, in a few places",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Voice Control",
+        "v": "US · Canada · UK · Australia",
+        "tone": "plain"
+       },
+       {
+        "k": "Subtitles",
+        "v": "US · Canada",
+        "tone": "plain"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "voice control"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "the subtitles"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "english only"
+     },
+     {
+      "do": "highlight",
+      "target": "r.0",
+      "on": "places like"
+     },
+     {
+      "do": "highlight",
+      "target": "r.1",
+      "on": "and canada"
+     }
+    ]
+   },
+   "needs": [
+    "Voice",
+    "Control",
+    "subtitles",
+    "English-only",
+    "places"
+   ]
+  },
+  {
+   "start_phrase": "Know someone this would",
+   "line": "Know someone this would help? Pass it on.",
+   "asset_id": null,
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "cta": true,
+    "hideCaptions": true,
+    "headlineSize": "xl",
+    "headline": "Pass it [[on]]",
+    "presenter": {
+     "src": "assets/ios27-accessibility-features/avatar-cta.mp4",
+     "from": 0.0
+    },
+    "blocks": [
+     {
+      "id": "d",
+      "kind": "text",
+      "text": "to someone these 5 features would help."
+     },
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/ios27-accessibility-features/mag-bill.jpg",
+      "width": 1960,
+      "height": 1307,
+      "h": 460
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "d",
+      "on": "know someone"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "pass it"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.18
+     }
+    ]
+   },
+   "needs": [
+    "someone",
+    "would"
+   ]
+  }
+ ],
+ "slideSfx": false
 }
