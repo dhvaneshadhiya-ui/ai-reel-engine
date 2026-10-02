@@ -9374,6 +9374,57 @@ as if it were the long-form standard. It wasn't.
   - labelled redraws only where the simulator can't show the screen
 - The VO pace went from 2.6 w/s (padded) to 3.0 w/s.
 
+## 2026-10-02 (N) — iphone-third-interface re-cut as motion; what the old cut got wrong
+
+Asked to make the reel again "showing what an incredible motion designer you
+are". The script, the VO and the approval were left untouched — the words were
+never the problem, and G27 kept them honest. This was a visuals-only rebuild,
+so it cost no credits and needed no re-approval.
+
+**What the shipped cut actually did wrong**, read back off its own contact
+sheet rather than from memory:
+
+- It **stated its idea and never drew it**. "Your Mac has a third input
+  device" played over a static desk. The line has a picture — two inputs you
+  already have, and an empty third place — and the reel never drew it.
+- **Five identical floatcards in a row.** Same card, same blur, same label
+  slot, five times. That is a template, and "graphics vary per topic" exists
+  to stop exactly that.
+- **No move landed on a word.** Nothing in 35 seconds was timed to the voice;
+  every handover was a hard cut.
+
+**The re-cut**: lines that EXPLAIN became `stage` scenes that act them out —
+three input slots, two struck with hand-drawn marks on "Not the keyboard" /
+"Not the trackpad", the third filling with the phone; the phone connected to
+the Mac with pulses travelling the link; the Wi-Fi caveat as that same link
+rather than a table. Lines that PROVE kept the official demo footage, which
+was always the evidence and was never what was wrong. Every move is timed off
+vo.json word onsets.
+
+### Three things the build taught, each caught by a check rather than by eye
+
+- **A continuous picture must be ONE scene.** Splitting the opening in two so
+  the cards could persist produced two consecutive identical layouts, and
+  [DUPLICATE] blocked it — correctly. The cut was invisible because there was
+  no cut. Merged into one 4.4s stage with the moves spread across it.
+- **`hideCaptions` changes the stage height** (Stage.tsx `AH`: 1300 with
+  captions, 1600 without). Laying a stage out for 1300 and then hiding the
+  captions puts every element in the top half; the linter read 45-83% dead
+  space on five stages. Position stages against the height they will actually
+  render at.
+- **`fill` holds a grey placeholder until its move lands.** With `arrive` at
+  0.10 and `fill` at 1.46 the hero image sat as an empty grey box for 1.36s
+  and read as a missing asset. The gap is a beat, not a wait — 0.1-0.2s.
+
+**Distilled rule: a line that can be drawn should not be narrated over a
+holding shot.** The test is whether the picture would still carry the idea
+with the sound off; a desk under "a third input device" does not.
+
+### Treatments used (do not repeat for the same kind of information)
+- claim-with-an-absence: three slots, two struck with marker, the third filled
+- "X becomes Y for Z": two stills stacked, `connect` with arrow + travelling pulses
+- a requirement that is a RELATIONSHIP: the same vertical link, labelled, not a spec table
+- payoff: the opening picture returns with its empty place filled (loop closed)
 ## 2026-10-02 — ios27-accessibility-features: a top5 built from a May preview, checked against what shipped
 
 56.0s, 16 slides, presenter bookends (HeyGen back on Pro: 1,926 credits; ~10 used, 6.0s + 2.8s
