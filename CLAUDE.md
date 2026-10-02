@@ -565,6 +565,15 @@ triggering under a second name (`marketing-skills:video`,
 `marketing-skills:*` explicitly, because a rule that names `social` does not
 obviously cover `marketing-skills:social` at 2am.
 
+### motion-reel plugin (read 2026-10-02) — its RULES are in the engine, it never builds a reel
+
+A complete parallel pipeline: a 60 fps canvas film, its own synthesized score and mix,
+its own sign-off. It is clean (MIT, no keys, no hijack directive), but it knows none
+of our gates, so it may at most produce a single scene asset, like HyperFrames below.
+Four of its studio rules were adopted instead (STYLE-RULES 2026-10-02): no fade-ins
+(spring arrivals), G04 long-form change every 4.2s, the mix breathes (`thin_sfx`), and
+the critique pass (`tools/critique.py`, required by prepublish).
+
 ### HyperFrames (installed 2026-08-16) — a SCENE SOURCE, never the reel
 
 **MEASURED 2026-09-02: it has produced ZERO assets in 23 reels.** No manifest

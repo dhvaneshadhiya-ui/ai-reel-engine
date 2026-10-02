@@ -678,6 +678,21 @@ def run() -> int:
        csp._apply_phrases("see it works", {"see use it": "x"})
        == "see it works")
 
+    # THE MIX BREATHES (2026-10-02): a cut that already lands a sound loses its
+    # whoosh, an impact never yields, and a clear cut keeps its whoosh.
+    w = lambda at: {"src": "sfx/whoosh.MP3", "at": at}
+    pop = lambda at: {"src": "sfx/Pop.MP3", "at": at}
+    hit = lambda at: {"src": "sfx/Core.MP3", "at": at}
+    a_ = {"durationSec": 2, "sfx": [w(0), pop(0.3)]}
+    b_ = {"durationSec": 3, "sfx": [w(0), hit(0.2), pop(1.5)]}
+    c_ = {"durationSec": 3, "sfx": [w(0)]}
+    csp.thin_sfx([a_, b_, c_], [(sc, x) for sc in (a_, b_, c_) for x in sc["sfx"]])
+    ok("thin_sfx drops a whoosh stacked on a landing, keeps impacts and a clear cut",
+       [[x["src"].split("/")[-1] for x in sc["sfx"]] for sc in (a_, b_, c_)]
+       == [["Pop.MP3"], ["Core.MP3", "Pop.MP3"], ["whoosh.MP3"]])
+    import critique
+    ok("critique READY needs 8+ on every axis at round 3 or later", critique.demo() == 0)
+
     # 7b. TWO GUARDS, ONE GUARANTEE, SAME BYTES (2026-09-01).
     #
     # script_approval.py hashes only the SPOKEN lines — read_script() strips

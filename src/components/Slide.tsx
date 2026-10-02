@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill, Easing, Img, OffthreadVideo, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { ClipBlock, DevicesBlock, GaugeBlock, LevelsBlock, ScreenBlock, StepsBlock, WavesBlock } from "./SlideBlocks";
+import { arrive, rise, ClipBlock, DevicesBlock, GaugeBlock, LevelsBlock, ScreenBlock, StepsBlock, WavesBlock } from "./SlideBlocks";
 import type { ClipBlockProps, DevicesBlockProps, GaugeBlockProps, LevelsBlockProps, ScreenBlockProps, StepsBlockProps, WavesBlockProps } from "./SlideBlocks";
 
 /**
@@ -177,6 +177,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
   const COL = split ? FULL - LEFT_W - GAP : wide && scene.presenter ? FULL - PIP - 40 : FULL;
   const px = (n: number) => Math.round(n * S);
   const t = frame / fps;
+  const enter = (a: number) => arrive(t, a, fps);
   const dur = (scene as { durationSec?: number }).durationSec ?? durationInFrames / fps;
   const C = scene.theme === "light" ? LIGHT : DARK;
   const xl = scene.headlineSize === "xl";
@@ -194,9 +195,9 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
     const words = (pill ? part.slice(2, -2) : part).split(/(\s+)/);
     const nodes = words.map((w, k) => {
       if (!w.trim()) return <span key={k}>{w}</span>;
-      const p = ramp(t, 0.05 + 0.045 * wi++, 0.28);
+      const p = enter(0.05 + 0.045 * wi++);
       return (
-        <span key={k} style={{ display: "inline-block", opacity: p, transform: `translateY(${(1 - p) * 26}px)` }}>{w}</span>
+        <span key={k} style={{ display: "inline-block", ...rise(p, 26) }}>{w}</span>
       );
     });
     if (!pill) return <React.Fragment key={pi}>{nodes}</React.Fragment>;
@@ -216,7 +217,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
 
   // ---- a card side: tile, name, big line, note ----
   const side = (s: SlideSide, target: string, glow: boolean, big = false) => {
-    const p = ramp(t, shownAt(target));
+    const p = enter(shownAt(target));
     const sk = at("strike", target);
     const sp = sk !== undefined ? ramp(t, sk, 0.35) : 0;
     const price = s.price ? (/^\$?0$/.test(s.price) ? s.price : counted(s.price, ramp(t, shownAt(target), 0.9))) : "";
@@ -226,7 +227,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         flex: 1, background: C.card, borderRadius: 34, padding: "36px 30px",
         // NO EMPTY SHELLS (user, 2026-09-16): the card itself lands with its
         // content. Its space is held from frame 0, so nothing jumps when it does.
-        opacity: p, transform: `translateY(${Math.round((1 - p) * 28)}px)`,
+        ...rise(p, 28),
         border: `2px solid ${lit ? `rgba(77,163,255,${0.55 * p})` : C.line}`,
         backgroundImage: lit ? `radial-gradient(90% 70% at 50% 0%, rgba(29,95,170,${0.45 * p}) 0%, transparent 70%)` : undefined,
         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center",
@@ -276,7 +277,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
             {b.rows.map((r, i) => {
               const tg = `${b.id}.${i}`;
               const own = at("show", tg);
-              const p = ramp(t, own ?? shownAt(b.id) + (at("show", b.id) !== undefined ? 0.12 * i : 0));
+              const p = enter(own ?? shownAt(b.id) + (at("show", b.id) !== undefined ? 0.12 * i : 0));
               const hl = at("highlight", tg);
               const h = hl !== undefined ? ramp(t, hl, 0.3) : 0;
               const sk = at("strike", tg);
@@ -284,7 +285,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
               return (
                 <div key={i} style={{
                   display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, flex: "1 1 0",
-                  opacity: p, transform: `translateY(${Math.round((1 - p) * 20)}px)`,
+                  ...rise(p, 20),
                   background: h > 0 ? `rgba(18,40,68,${h})` : C.card, borderRadius: 24,
                   padding: "0 36px",
                   border: `2px solid ${h > 0 ? `rgba(77,163,255,${h})` : C.line}`,
@@ -299,18 +300,18 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
           </div>
         );
       case "text": {
-        const p = ramp(t, shownAt(b.id));
+        const p = enter(shownAt(b.id));
         return (
-          <div key={b.id} style={{ opacity: p, transform: `translateY(${(1 - p) * 14}px)`,
+          <div key={b.id} style={{ ...rise(p, 14),
             font: `500 42px/1.35 ${FONT}`, color: C.sub }}>{b.text}</div>
         );
       }
       case "tips": {
         const card = (label: string, color: string, text: string, target: string) => {
-          const p = ramp(t, shownAt(target));
+          const p = enter(shownAt(target));
           return (
             <div style={{ flex: 1, background: C.card, borderRadius: 26, padding: "30px 32px", border: `2px solid ${C.line}`,
-              opacity: p, transform: `translateY(${Math.round((1 - p) * 20)}px)` }}>
+              ...rise(p, 20) }}>
               <div style={{ font: `700 28px ${FONT}`, letterSpacing: 2, color }}>{label}</div>
               <div style={{ marginTop: 12, font: `500 36px/1.3 ${FONT}`, color: C.ink }}>{text}</div>
             </div>
@@ -324,7 +325,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         );
       }
       case "screen":
-        return <ScreenBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} wide={wide} />;
+        return <ScreenBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={enter(shownAt(b.id))} wide={wide} />;
       case "steps":
         return <StepsBlock key={b.id} b={b} moves={moves} t={t} C={C} />;
       case "devices":
@@ -362,13 +363,13 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         );
       }
       case "clip":
-        return <ClipBlock key={b.id} b={b} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} fps={fps} wide={wide} />;
+        return <ClipBlock key={b.id} b={b} t={t} boxW={COL} C={C} shown={enter(shownAt(b.id))} fps={fps} wide={wide} />;
       case "gauge":
-        return <GaugeBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
+        return <GaugeBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={enter(shownAt(b.id))} />;
       case "levels":
-        return <LevelsBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
+        return <LevelsBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={enter(shownAt(b.id))} />;
       case "waves":
-        return <WavesBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
+        return <WavesBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={enter(shownAt(b.id))} />;
       case "logos": {
         const base = shownAt(b.id);
         // MORE THAN 6 ITEMS NEEDS A SMALLER GRID (2026-09-18) — the fixed
@@ -381,11 +382,11 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         return (
           <div key={b.id} style={{ display: "flex", flexWrap: "wrap", gap: compact ? 12 : 20, justifyContent: "center" }}>
             {b.items.map((it, i) => {
-              const p = ramp(t, base + 0.1 * i, 0.3);
+              const p = enter(base + 0.1 * i);
               return (
                 <div key={i} style={{ width: compact ? (COL - 28) / 3 : (COL - 40) / 3, height: tileH, background: C.card, borderRadius: compact ? 20 : 28,
                   border: `2px solid ${C.line}`, display: "flex", flexDirection: "column", alignItems: "center",
-                  justifyContent: "center", opacity: p, transform: `translateY(${Math.round((1 - p) * 24)}px)` }}>
+                  justifyContent: "center", ...rise(p, 24) }}>
                   <div style={{ display: "flex",
                     flexDirection: "column", alignItems: "center" }}>
                     <Tile src={it.logo} tile={it.tile} size={logoSize} />
@@ -425,8 +426,8 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         <div style={{ position: "absolute", left: L, top: TOP ?? 0, bottom: BOTTOM ?? 0, width: LEFT_W,
           display: "flex", alignItems: "center", justifyContent: "center" }}>
           {phoneBlock.kind === "screen"
-            ? <ScreenBlock b={phoneBlock} moves={moves} t={t} boxW={LEFT_W} C={C} shown={ramp(t, shownAt(phoneBlock.id))} wide={false} />
-            : <ClipBlock b={phoneBlock as ClipBlockProps} t={t} boxW={LEFT_W} C={C} shown={ramp(t, shownAt(phoneBlock.id))} fps={fps} wide={false} />}
+            ? <ScreenBlock b={phoneBlock} moves={moves} t={t} boxW={LEFT_W} C={C} shown={enter(shownAt(phoneBlock.id))} wide={false} />
+            : <ClipBlock b={phoneBlock as ClipBlockProps} t={t} boxW={LEFT_W} C={C} shown={enter(shownAt(phoneBlock.id))} fps={fps} wide={false} />}
         </div>
       ) : null}
       <div style={{ position: "absolute", left: L + LEFT_W + GAP, top: TOP ?? (scene.series || scene.index ? 200 : 250), width: COL,

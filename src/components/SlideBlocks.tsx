@@ -1,5 +1,5 @@
 import React from "react";
-import { Easing, Img, OffthreadVideo, interpolate, staticFile } from "remotion";
+import { Easing, Img, OffthreadVideo, interpolate, spring, staticFile } from "remotion";
 
 /**
  * MOTION BLOCKS FOR SLIDES (2026-09-17).
@@ -38,6 +38,20 @@ const ease = Easing.inOut(Easing.cubic);
 const ramp = (t: number, a: number, d = 0.3) => interpolate(t, [a, a + d], [0, 1], { ...CL, easing: Easing.out(Easing.cubic) });
 const FONT = "Inter, -apple-system, 'SF Pro Display', sans-serif";
 
+// NO FADE-INS (2026-10-02, adopted from the motion-reel plugin's studio rules:
+// "everything fading in" is the signature of template video). A 0.3s opacity
+// ramp from zero left every cut on an empty dark frame for 1-2 frames
+// (measured on ios27-settings-longform v2: luma ~3 at each cut). Now an
+// element ARRIVES: a spring that travels and overshoots a touch, solid within
+// ~3 frames. Anything due at the very top of a page starts 0.1s into its move,
+// so the cut lands on motion, never on an empty frame.
+export const arrive = (t: number, a: number, fps: number) => {
+  const f = Math.round((t - (a <= 0.05 ? -0.1 : a)) * fps);
+  return f < 0 ? 0 : spring({ frame: f, fps, config: { damping: 13, stiffness: 190, mass: 0.9 } });
+};
+/** the style of an arriving element: travel with weight, opacity only as a 3-frame snap */
+export const rise = (p: number, d = 24) => ({ opacity: Math.min(1, p * 4), transform: `translateY(${Math.round((1 - p) * d * 1.8)}px)` });
+
 // --------------------------------------------------------------- bezels ----
 // REAL DEVICE FRAMES (2026-09-30). The drawn black bezel read as "a rounded
 // panel", not an iPhone (ios27-settings-longform review). Apple's own bezels
@@ -55,7 +69,7 @@ const RealPhone: React.FC<{ spec: (typeof BEZELS)[string]; boxH: number; shown: 
   const [sx, sy, sw, sh] = spec.screen.map((v) => v * k);
   return (
     <div style={{ position: "relative", width: Math.round(spec.w * k), height: boxH, alignSelf: "center", flexShrink: 0,
-      opacity: shown, transform: `translateY(${Math.round((1 - shown) * 24)}px)`,
+      ...rise(shown),
       filter: "drop-shadow(0 30px 45px rgba(0,0,0,0.55))" }}>
       <div style={{ position: "absolute", left: sx, top: sy, width: sw, height: sh, overflow: "hidden",
         borderRadius: sw * 0.14, background: "#000" }}>{children}</div>
@@ -161,7 +175,7 @@ export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: 
       background: device ? "#0A0A0C" : C.card,
       border: device ? "2px solid rgba(255,255,255,0.14)" : `2px solid ${C.line}`,
       boxShadow: device ? "0 30px 70px rgba(0,0,0,0.55)" : undefined,
-      opacity: shown, transform: `translateY(${Math.round((1 - shown) * 24)}px)`, flexShrink: 0 }}>
+      ...rise(shown), flexShrink: 0 }}>
       <div style={{ position: "absolute", left: bezel, top: bezel, width: innerW, height: innerH,
         borderRadius: device ? Math.max(0, Math.round(boxH * 0.062) - bezel) : 0, overflow: "hidden", background: "#000" }}>
       <div style={{ position: "absolute", left: 0, top: 0, width: b.width, height: b.height, transformOrigin: "0 0",
@@ -256,7 +270,7 @@ export const LevelsBlock: React.FC<{ b: LevelsBlockProps; moves: MoveLike[]; t: 
   const H = b.h ?? 360;
   const rowH = Math.min(150, (H - 20 * (b.items.length - 1)) / b.items.length);
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 20, width: boxW, opacity: shown }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 20, width: boxW, ...rise(shown) }}>
       {b.items.map((it, i) => {
         const at = moves.find((m) => m.do === "drain" && (m.target === `${b.id}.${i}` || m.target === b.id))?.at;
         const v = at === undefined ? it.from
@@ -357,7 +371,7 @@ export const WavesBlock: React.FC<{ b: WavesBlockProps; moves: MoveLike[]; t: nu
   const yMid = H / 2 + 10;
   return (
     <div style={{ position: "relative", width: boxW, height: H, borderRadius: 30, background: C.card, border: `2px solid ${C.line}`,
-      overflow: "hidden", opacity: shown }}>
+      overflow: "hidden", ...rise(shown) }}>
       <svg width={boxW} height={H} style={{ position: "absolute", left: 0, top: 0 }}>
         <path d={path(move, 3, yMid)} fill="none" stroke={C.blue} strokeWidth={8} strokeLinecap="round" />
         <path d={path(move + drift * 1.9, 3 + drift * 0.55, yMid)} fill="none" stroke={C.amber} strokeWidth={8}
@@ -402,7 +416,7 @@ export const GaugeBlock: React.FC<{ b: GaugeBlockProps; moves: MoveLike[]; t: nu
   // a low battery breathes; a healthy one sits still (idle motion, 2% max)
   const pulse = low ? 0.9 + Math.sin(t * 5.2) * 0.1 : 1;
   return (
-    <div style={{ position: "relative", width: boxW, height: H, opacity: shown }}>
+    <div style={{ position: "relative", width: boxW, height: H, ...rise(shown) }}>
       <svg width={boxW} height={H} style={{ position: "absolute", left: 0, top: 0 }}>
         <rect x={padX} y={bodyY} width={bodyW} height={bodyH} rx={34} fill={C.card} stroke={C.line} strokeWidth={6} />
         <rect x={padX + bodyW + 8} y={bodyY + bodyH * 0.32} width={20} height={bodyH * 0.36} rx={8} fill={C.line} />
@@ -469,7 +483,7 @@ export const ClipBlock: React.FC<{ b: ClipBlockProps; t: number; boxW: number; C
       padding: bezel, boxSizing: "border-box",
       border: device ? "2px solid rgba(255,255,255,0.14)" : `2px solid ${C.line}`,
       boxShadow: device ? "0 30px 70px rgba(0,0,0,0.55)" : undefined,
-      opacity: shown, transform: `translateY(${Math.round((1 - shown) * 24)}px)` }}>
+      ...rise(shown) }}>
       <div style={{ width: "100%", height: "100%", borderRadius: Math.max(0, radius - bezel),
         overflow: "hidden", background: "#000" }}>
         <OffthreadVideo src={staticFile(b.src)} muted startFrom={Math.round((b.from ?? 0) * fps)}

@@ -182,7 +182,11 @@ FORMATS: dict[str, dict] = {
         # Pacing is NOT a cut rule here. Hard cuts ran 16-74 across five videos of
         # the same length, because the motion happens inside the screen recording:
         # the calm references hold one screen 13-16s while the cursor works.
-        "change_max": 8.0,              # p50 of the three busiest: 2.5 / 4.2 / 7.5
+        # 2026-10-02: was 8.0 (the loosest of the three). The user rejected a cut
+        # that sat at that edge as "slow... nothing moving on the screen", and
+        # the motion-reel plugin's studio rule ("no gap longer than 4 s") agrees
+        # with the MIDDLE reference, so the bound is the middle reference now.
+        "change_max": 4.2,              # p50 of the three busiest: 2.5 / 4.2 / 7.5
         "hold_max": 60.0,               # p75 10.4-54.0; the 231s screencast hold is
                                         # the outer edge, not a target
         # The references speak at 3.02-3.64, but the Carousel Playbook plans the
@@ -1052,7 +1056,9 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 # A long-form page is allowed to sit while the screen inside it
                 # works, so the rule is "something changed", measured against the
                 # format's own number, and the whole page still has a ceiling.
-                if gap > change_max:
+                # a playing clip IS the change — the screen working is what the
+                # references hold on — so only a page of stills is measured
+                if gap > change_max and not any(b.get("kind") == "clip" for b in sc.get("blocks") or []):
                     errors.append(
                         f"G04 scene {i:02d} (slide) shows nothing new for {gap:.2f}s from "
                         f"{where:.2f}s > {change_max}s — in {fmt_name!r} something on screen "

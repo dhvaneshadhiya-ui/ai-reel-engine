@@ -1763,6 +1763,23 @@ if _hits:
     raise SystemExit(1)
 _counted("G70 silent — longform proof at 12s is inside its own 4-20s window")
 
+# G04 NEGATIVE CASE (2026-10-02). change_max fell to 4.2s; a page whose phone
+# PLAYS a recording is changing the whole time and must not be told it is still.
+_s = _longform(560.0)
+_s["scenes"][1] = {"type": "slide", "durationSec": 8.0, "headline": "The recording",
+                   "blocks": [{"id": "c", "kind": "clip", "src": "assets/x/ui/c1.mp4",
+                               "width": 1206, "height": 2622, "h": 700, "device": True}],
+                   "moves": []}
+try:
+    _adv = check_beats(_s, vo_end=vo_end_of(_s), manifest=MANIFEST, vo_words=VO_WORDS)
+    _hits = [a for a in _adv if "G04 scene 01" in a]
+except GateError as _e:
+    _hits = [a for a in (list(_e.advice) + [str(_e)]) if "G04 scene 01" in str(a)]
+if any("nothing new" in h for h in _hits):
+    print(f"  FAIL G04 called a playing clip still: {_hits[0][:110]}")
+    raise SystemExit(1)
+_counted("G04 silent — a longform page playing a recording is changing")
+
 # G38 NEGATIVE CASE (2026-09-08). RULES.md 0(4): "A gate with no negative test
 # will eventually block good work." G38's RULE is that the hook carries words on
 # mute. Its CHECK was `hideCaptions is true`, which is only a proxy for that

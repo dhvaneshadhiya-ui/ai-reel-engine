@@ -9373,3 +9373,29 @@ as if it were the long-form standard. It wasn't.
   - the App Library
   - labelled redraws only where the simulator can't show the screen
 - The VO pace went from 2.6 w/s (padded) to 3.0 w/s.
+
+## 2026-10-02 — four motion-reel studio rules, taken into the engine
+
+The user asked why we don't use the motion-reel plugin. It was read in full first. Like
+HyperFrames, it's a whole parallel pipeline: a 60 fps canvas film with its own score,
+mix and sign-off, and it knows none of our gates. So it doesn't build reels. Four of its
+rules matched exactly what was wrong with ios27-settings-longform v2, and those came in:
+
+- **No fade-ins.** An element ARRIVES on a spring with a touch of overshoot, solid within
+  ~3 frames (`arrive` / `rise` in SlideBlocks.tsx). Anything due at the top of a page
+  starts 0.1s into its move, so a cut lands on motion. Measured on v2 at three cuts, the
+  first frame after the cut went from luma 2-16 to 48-50, the scene's full level.
+- **Something new every ~4s on long-form.** G04's `change_max` went from 8.0 to 4.2, the
+  middle of the three measured references (2.5 / 4.2 / 7.5); 8.0 was the loosest. A slide
+  playing a clip is exempt because the recording is the change. It's still ADVICE.
+- **The mix breathes.** `thin_sfx` in compile_shot_plan makes a compiler-placed pop/tick
+  yield within 0.6s of a stronger cue and a page whoosh within 1.5s. Impacts never yield.
+  v2: 148 cues → 111, of which whooshes 54 → 23.
+- **The critique pass.** `tools/critique.py` builds a phone-size sheet and the measured
+  gaps, then prints a brief. The brief scores six axes 1-10, names the worst three with a
+  concrete fix each, and gives a verdict. READY needs 8+ everywhere at round 3 or later,
+  and prepublish refuses without it.
+
+Not taken: its "never invent screens". Our labelled redraws stay, because Rule 3 and the
+illustration label already cover honesty. The 0:32 page of v2 that opens on 5s of bare
+background is a PLAN defect, and the critique catches it; the engine can't.
