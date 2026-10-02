@@ -9,17 +9,17 @@
   "captionStyle": "word-reveal",
   "emphasis": [
     "total",
-    "five",
     "catch",
     "Ask",
     "memorize",
     "orange",
     "detail",
-    "cluttered",
     "subtitles",
     "15 Pro",
     "English",
-    "Pass"
+    "Pass",
+    "Hindi",
+    "50"
   ],
   "scenes": [
     {
@@ -63,7 +63,7 @@
             560,
             520
           ],
-          "at": 2.58
+          "at": 2.56
         },
         {
           "do": "focus",
@@ -93,7 +93,7 @@
           "do": "pill",
           "target": "headline",
           "on": "the total",
-          "at": 5.18
+          "at": 5.16
         }
       ],
       "sfx": [
@@ -103,7 +103,7 @@
           "vol": 0.556
         }
       ],
-      "durationSec": 6.16,
+      "durationSec": 6.2,
       "assetId": "mag-bill",
       "claimId": "mag-bill",
       "covers": "In iOS 27 point",
@@ -136,7 +136,7 @@
             },
             {
               "k": "4",
-              "v": "A smarter Accessibility Reader",
+              "v": "Name Recognition, 50+ languages",
               "tone": "plain"
             },
             {
@@ -151,38 +151,38 @@
         {
           "do": "pill",
           "target": "headline",
-          "on": "five new",
-          "at": 0.48
+          "on": "five accessibility",
+          "at": 0.58
         },
         {
           "do": "show",
           "target": "r.0",
-          "on": "five new",
-          "at": 0.48
+          "on": "five accessibility",
+          "at": 0.58
         },
         {
           "do": "show",
           "target": "r.1",
-          "on": "new accessibility",
-          "at": 0.76
+          "on": "accessibility upgrades",
+          "at": 0.9
         },
         {
           "do": "show",
           "target": "r.2",
-          "on": "accessibility features",
-          "at": 1.0
+          "on": "upgrades worth",
+          "at": 1.5
         },
         {
           "do": "show",
           "target": "r.3",
-          "on": "features worth",
-          "at": 1.48
+          "on": "worth turning",
+          "at": 2.08
         },
         {
           "do": "show",
           "target": "r.4",
-          "on": "worth turning",
-          "at": 2.22
+          "on": "turning on",
+          "at": 2.5
         }
       ],
       "sfx": [
@@ -192,14 +192,14 @@
           "vol": 0.182
         }
       ],
-      "durationSec": 3.44,
+      "durationSec": 3.38,
       "hideCaptions": false,
       "captionBottom": 422
     },
     {
       "type": "slide",
       "eyebrow": "Before you try them",
-      "headline": "One [[catch]] covers all 5",
+      "headline": "A [[catch]] for 4 of them",
       "blocks": [
         {
           "id": "r",
@@ -221,11 +221,6 @@
               "tone": "cost"
             },
             {
-              "k": "Reader",
-              "v": "?",
-              "tone": "cost"
-            },
-            {
               "k": "Subtitles",
               "v": "?",
               "tone": "cost"
@@ -238,37 +233,31 @@
           "do": "pill",
           "target": "headline",
           "on": "a catch",
-          "at": 0.7
+          "at": 1.18
         },
         {
           "do": "show",
           "target": "r.0",
-          "on": "a catch",
-          "at": 0.7
+          "on": "four of",
+          "at": 0.18
         },
         {
           "do": "show",
           "target": "r.1",
-          "on": "catch that",
-          "at": 0.8
+          "on": "of them",
+          "at": 0.44
         },
         {
           "do": "show",
           "target": "r.2",
-          "on": "that applies",
-          "at": 1.1
+          "on": "come with",
+          "at": 0.72
         },
         {
           "do": "show",
           "target": "r.3",
-          "on": "applies to",
-          "at": 1.36
-        },
-        {
-          "do": "show",
-          "target": "r.4",
-          "on": "to everyone",
-          "at": 1.74
+          "on": "a catch",
+          "at": 1.18
         }
       ],
       "sfx": [
@@ -278,7 +267,7 @@
           "vol": 0.295
         }
       ],
-      "durationSec": 3.2,
+      "durationSec": 2.04,
       "hideCaptions": false,
       "captionBottom": 422
     },
@@ -307,13 +296,13 @@
             560,
             360
           ],
-          "at": 0.68
+          "at": 0.66
         },
         {
           "do": "pill",
           "target": "headline",
           "on": "is magnifier",
-          "at": 0.68
+          "at": 0.66
         }
       ],
       "sfx": [
@@ -323,7 +312,7 @@
           "vol": 0.933
         }
       ],
-      "durationSec": 2.22,
+      "durationSec": 2.2,
       "assetId": "mag-bill",
       "claimId": "mag-bill",
       "covers": "That first one is",
@@ -367,7 +356,7 @@
             520,
             380
           ],
-          "at": 2.32
+          "at": 2.34
         },
         {
           "do": "pill",
@@ -409,26 +398,26 @@
         {
           "do": "show",
           "target": "w.left",
-          "on": "2 voice control",
+          "on": "two voice control",
           "at": 0.0
         },
         {
           "do": "strike",
           "target": "w.left",
           "on": "button names",
-          "at": 2.5
+          "at": 2.52
         },
         {
           "do": "show",
           "target": "w.right",
           "on": "button names",
-          "at": 2.5
+          "at": 2.52
         },
         {
           "do": "pill",
           "target": "headline",
           "on": "button names",
-          "at": 2.5
+          "at": 2.52
         }
       ],
       "sfx": [
@@ -438,7 +427,7 @@
           "vol": 0.221
         }
       ],
-      "durationSec": 3.86,
+      "durationSec": 3.88,
       "hideCaptions": false,
       "captionBottom": 422
     },
@@ -463,7 +452,7 @@
           "do": "pill",
           "target": "headline",
           "on": "orange folder",
-          "at": 0.82
+          "at": 0.8
         }
       ],
       "sfx": [
@@ -473,7 +462,7 @@
           "vol": 0.133
         }
       ],
-      "durationSec": 2.96,
+      "durationSec": 2.72,
       "assetId": "vc-folder",
       "claimId": "vc-folder",
       "covers": "Say tap the orange",
@@ -501,13 +490,13 @@
           "do": "pill",
           "target": "headline",
           "on": "in detail",
-          "at": 2.22
+          "at": 2.44
         }
       ],
-      "durationSec": 2.76,
+      "durationSec": 3.0,
       "assetId": "vo-describe",
       "claimId": "vo-describe",
-      "covers": "3 Voiceover describes a",
+      "covers": "Three voiceover describes a",
       "hideCaptions": false,
       "captionBottom": 422
     },
@@ -532,10 +521,10 @@
           "do": "pill",
           "target": "headline",
           "on": "answers questions",
-          "at": 0.32
+          "at": 0.3
         }
       ],
-      "durationSec": 2.48,
+      "durationSec": 2.76,
       "assetId": "vo-ask",
       "claimId": "vo-ask",
       "covers": "and answers questions about",
@@ -544,85 +533,149 @@
     },
     {
       "type": "slide",
-      "eyebrow": "4 \u00b7 Accessibility Reader",
-      "headline": "A [[cluttered]] page...",
+      "eyebrow": "4 \u00b7 Name Recognition",
+      "headline": "It hears your [[name]]",
       "blocks": [
         {
           "id": "s",
           "kind": "screen",
-          "src": "assets/ios27-accessibility-features/reader-before.jpg",
-          "width": 1960,
-          "height": 1102,
-          "h": 620
-        }
-      ],
-      "moves": [
-        {
-          "do": "pill",
-          "target": "headline",
-          "on": "cluttered page",
-          "at": 2.16
-        },
-        {
-          "do": "state",
-          "target": "s",
-          "on": "cleans up",
-          "src": "assets/ios27-accessibility-features/reader-after.jpg",
-          "at": 1.46
-        }
-      ],
-      "sfx": [
-        {
-          "src": "sfx/Camera Shutter.MP3",
-          "at": 1.41,
-          "vol": 0.17
-        }
-      ],
-      "durationSec": 3.1,
-      "assetId": "reader-before",
-      "claimId": "reader-before",
-      "covers": "4 Accessibility reader cleans",
-      "hideCaptions": false,
-      "captionBottom": 422
-    },
-    {
-      "type": "slide",
-      "eyebrow": "4 \u00b7 Accessibility Reader",
-      "headline": "[[Summarize]] or translate it",
-      "blocks": [
-        {
-          "id": "s",
-          "kind": "screen",
-          "src": "assets/ios27-accessibility-features/reader-after.jpg",
-          "width": 1960,
-          "height": 1102,
-          "h": 620
+          "src": "assets/ios27-accessibility-features/nr-notification.png",
+          "width": 496,
+          "height": 1016,
+          "h": 860
         }
       ],
       "moves": [
         {
           "do": "focus",
           "target": "s",
-          "on": "then summarizes",
+          "on": "someone says",
           "rect": [
-            560,
-            250,
-            820,
-            240
+            30,
+            80,
+            440,
+            120
+          ],
+          "at": 2.08
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "your name",
+          "at": 2.64
+        }
+      ],
+      "durationSec": 3.38,
+      "assetId": "nr-notification",
+      "claimId": "nr-notification",
+      "covers": "Four name recognition alerts",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "4 \u00b7 Name Recognition",
+      "headline": "Now in [[50+]] languages",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios27-accessibility-features/nr-langs-a.png",
+          "width": 1080,
+          "height": 1100,
+          "h": 760
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "more than",
+          "rect": [
+            40,
+            120,
+            1000,
+            300
+          ],
+          "ring": false,
+          "at": 1.0
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "50 languages",
+          "at": 1.38
+        }
+      ],
+      "durationSec": 2.44,
+      "assetId": "nr-langs-a",
+      "claimId": "nr-langs-a",
+      "covers": "and it now works",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "4 \u00b7 Name Recognition",
+      "headline": "Including [[Hindi]]",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Hindi",
+              "v": "India",
+              "tone": "free"
+            }
+          ]
+        },
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios27-accessibility-features/nr-langs-b.png",
+          "width": 1080,
+          "height": 1100,
+          "h": 520
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "including hindi",
+          "rect": [
+            40,
+            450,
+            420,
+            110
           ],
           "at": 0.0
         },
         {
           "do": "pill",
           "target": "headline",
-          "on": "summarizes",
-          "at": 0.06
+          "on": "hindi",
+          "at": 0.4
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "including hindi",
+          "at": 0.0
         }
       ],
-      "durationSec": 2.2,
-      "assetId": "reader-after",
-      "claimId": "reader-after",
-      "covers": "then summarizes or translates",
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 0.45,
+          "vol": 0.221
+        }
+      ],
+      "durationSec": 1.38,
+      "assetId": "nr-langs-b",
+      "claimId": "nr-langs-b",
+      "covers": "including Hindi",
       "hideCaptions": false,
       "captionBottom": 422
     },
@@ -651,19 +704,19 @@
             800,
             420
           ],
-          "at": 2.18
+          "at": 2.08
         },
         {
           "do": "pill",
           "target": "headline",
           "on": "their own",
-          "at": 3.06
+          "at": 2.98
         }
       ],
-      "durationSec": 3.66,
+      "durationSec": 3.52,
       "assetId": "subtitles",
       "claimId": "subtitles",
-      "covers": "5 Videos with no",
+      "covers": "Five videos with no",
       "hideCaptions": false,
       "captionBottom": 422
     },
@@ -708,16 +761,16 @@
           "do": "show",
           "target": "r.1",
           "on": "made right",
-          "at": 0.96
+          "at": 1.04
         },
         {
           "do": "pill",
           "target": "headline",
           "on": "the phone",
-          "at": 2.04
+          "at": 2.08
         }
       ],
-      "durationSec": 2.96,
+      "durationSec": 2.98,
       "assetId": "subtitles",
       "claimId": "subtitles",
       "covers": "even clips you shot",
@@ -727,14 +780,19 @@
     {
       "type": "slide",
       "eyebrow": "The catch",
-      "headline": "All 5 need [[iPhone 15 Pro]]",
+      "headline": "4 need an [[iPhone 15 Pro]]",
       "blocks": [
         {
           "id": "r",
           "kind": "rows",
           "rows": [
             {
-              "k": "Runs on",
+              "k": "Name Recognition",
+              "v": "Any iPhone with iOS 27",
+              "tone": "free"
+            },
+            {
+              "k": "The other 4",
               "v": "Apple Intelligence",
               "tone": "plain"
             },
@@ -750,30 +808,36 @@
         {
           "do": "show",
           "target": "r.0",
-          "on": "all five run",
-          "at": 1.02
+          "on": "name recognition works",
+          "at": 0.86
         },
         {
           "do": "show",
           "target": "r.1",
+          "on": "the rest",
+          "at": 4.38
+        },
+        {
+          "do": "show",
+          "target": "r.2",
           "on": "you need",
-          "at": 2.92
+          "at": 6.42
         },
         {
           "do": "pill",
           "target": "headline",
           "on": "15 pro",
-          "at": 3.54
+          "at": 7.12
         }
       ],
       "sfx": [
         {
           "src": "sfx2/impact-boom.mp3",
-          "at": 3.0,
+          "at": 6.5,
           "vol": 0.24
         }
       ],
-      "durationSec": 5.44,
+      "durationSec": 9.26,
       "hideCaptions": false,
       "captionBottom": 422
     },
@@ -804,25 +868,25 @@
           "do": "show",
           "target": "r.0",
           "on": "voice control",
-          "at": 0.16
+          "at": 0.14
         },
         {
           "do": "show",
           "target": "r.1",
           "on": "the subtitles",
-          "at": 0.96
+          "at": 0.94
         },
         {
           "do": "pill",
           "target": "headline",
           "on": "english only",
-          "at": 1.78
+          "at": 1.76
         },
         {
           "do": "highlight",
           "target": "r.0",
           "on": "places like",
-          "at": 3.06
+          "at": 3.02
         },
         {
           "do": "highlight",
@@ -831,7 +895,7 @@
           "at": 3.9
         }
       ],
-      "durationSec": 4.6,
+      "durationSec": 5.06,
       "hideCaptions": false,
       "captionBottom": 422
     },
@@ -843,7 +907,7 @@
       "headline": "Pass it [[on]]",
       "presenter": {
         "src": "assets/ios27-accessibility-features/avatar-cta.mp4",
-        "from": 0.0
+        "from": 0.14
       },
       "blocks": [
         {
@@ -864,14 +928,14 @@
         {
           "do": "show",
           "target": "d",
-          "on": "know someone",
+          "on": "no someone",
           "at": 0.0
         },
         {
           "do": "pill",
           "target": "headline",
           "on": "pass it",
-          "at": 1.92
+          "at": 1.26
         }
       ],
       "sfx": [
@@ -881,13 +945,13 @@
           "vol": 0.309
         }
       ],
-      "durationSec": 3.14
+      "durationSec": 2.66
     }
   ],
   "captions": [
     {
       "start": 0.0,
-      "end": 1.3,
+      "end": 1.28,
       "text": "In iOS 27,",
       "words": [
         {
@@ -905,12 +969,12 @@
       ]
     },
     {
-      "start": 1.58,
-      "end": 2.58,
+      "start": 1.6,
+      "end": 2.56,
       "text": "point your iPhone",
       "words": [
         {
-          "t": 1.58,
+          "t": 1.6,
           "text": "point"
         },
         {
@@ -924,12 +988,12 @@
       ]
     },
     {
-      "start": 2.58,
+      "start": 2.56,
       "end": 3.04,
       "text": "at a bill,",
       "words": [
         {
-          "t": 2.58,
+          "t": 2.56,
           "text": "at"
         },
         {
@@ -937,7 +1001,7 @@
           "text": "a"
         },
         {
-          "t": 2.86,
+          "t": 2.84,
           "text": "bill,"
         }
       ]
@@ -982,7 +1046,7 @@
     },
     {
       "start": 4.62,
-      "end": 5.18,
+      "end": 5.16,
       "text": "it reads you",
       "words": [
         {
@@ -1000,12 +1064,12 @@
       ]
     },
     {
-      "start": 5.18,
-      "end": 6.38,
+      "start": 5.16,
+      "end": 6.5,
       "text": "the total. That's",
       "words": [
         {
-          "t": 5.18,
+          "t": 5.16,
           "text": "the"
         },
         {
@@ -1013,883 +1077,985 @@
           "text": "total."
         },
         {
-          "t": 6.16,
+          "t": 6.2,
           "text": "That's"
         }
       ]
     },
     {
-      "start": 6.38,
-      "end": 6.92,
+      "start": 6.5,
+      "end": 7.1,
       "text": "one of five",
       "words": [
         {
-          "t": 6.38,
+          "t": 6.5,
           "text": "one"
         },
         {
-          "t": 6.52,
+          "t": 6.66,
           "text": "of"
         },
         {
-          "t": 6.64,
+          "t": 6.78,
           "text": "five"
         }
       ]
     },
     {
-      "start": 6.92,
-      "end": 8.38,
-      "text": "new accessibility features",
+      "start": 7.1,
+      "end": 8.7,
+      "text": "accessibility upgrades worth",
       "words": [
         {
-          "t": 6.92,
-          "text": "new"
-        },
-        {
-          "t": 7.16,
+          "t": 7.1,
           "text": "accessibility"
         },
         {
-          "t": 7.64,
-          "text": "features"
+          "t": 7.7,
+          "text": "upgrades"
+        },
+        {
+          "t": 8.28,
+          "text": "worth"
         }
       ]
     },
     {
-      "start": 8.38,
-      "end": 9.4,
-      "text": "worth turning on,",
+      "start": 8.7,
+      "end": 9.76,
+      "text": "turning on, and",
       "words": [
         {
-          "t": 8.38,
-          "text": "worth"
-        },
-        {
-          "t": 8.74,
+          "t": 8.7,
           "text": "turning"
         },
         {
-          "t": 9.08,
+          "t": 9.06,
           "text": "on,"
+        },
+        {
+          "t": 9.58,
+          "text": "and"
         }
       ]
     },
     {
-      "start": 9.6,
-      "end": 10.4,
-      "text": "and there's a",
+      "start": 9.76,
+      "end": 10.3,
+      "text": "four of them",
       "words": [
         {
-          "t": 9.6,
-          "text": "and"
+          "t": 9.76,
+          "text": "four"
         },
         {
-          "t": 10.1,
-          "text": "there's"
+          "t": 10.02,
+          "text": "of"
         },
+        {
+          "t": 10.12,
+          "text": "them"
+        }
+      ]
+    },
+    {
+      "start": 10.3,
+      "end": 10.88,
+      "text": "come with a",
+      "words": [
         {
           "t": 10.3,
+          "text": "come"
+        },
+        {
+          "t": 10.56,
+          "text": "with"
+        },
+        {
+          "t": 10.76,
           "text": "a"
         }
       ]
     },
     {
-      "start": 10.4,
-      "end": 12.06,
-      "text": "catch that applies to every one",
+      "start": 10.88,
+      "end": 12.02,
+      "text": "catch. That first",
       "words": [
         {
-          "t": 10.4,
-          "text": "catch"
+          "t": 10.88,
+          "text": "catch."
         },
         {
-          "t": 10.7,
-          "text": "that"
-        },
-        {
-          "t": 10.96,
-          "text": "applies"
-        },
-        {
-          "t": 10.96,
-          "text": "to"
-        },
-        {
-          "t": 10.96,
-          "text": "every"
-        },
-        {
-          "t": 10.96,
-          "text": "one"
-        }
-      ]
-    },
-    {
-      "start": 12.8,
-      "end": 13.48,
-      "text": "That first one",
-      "words": [
-        {
-          "t": 12.8,
+          "t": 11.62,
           "text": "That"
         },
         {
-          "t": 12.94,
+          "t": 11.76,
           "text": "first"
-        },
-        {
-          "t": 13.2,
-          "text": "one"
         }
       ]
     },
     {
-      "start": 13.48,
-      "end": 15.5,
-      "text": "is Magnifier Tap Ask",
+      "start": 12.02,
+      "end": 13.96,
+      "text": "one is Magnifier Tap",
       "words": [
         {
-          "t": 13.48,
+          "t": 12.02,
+          "text": "one"
+        },
+        {
+          "t": 12.28,
           "text": "is"
         },
         {
-          "t": 15.02,
+          "t": 13.82,
           "text": "Magnifier"
         },
         {
-          "t": 15.12,
+          "t": 13.82,
           "text": "Tap"
-        },
-        {
-          "t": 15.12,
-          "text": "Ask"
         }
       ]
     },
     {
-      "start": 15.5,
-      "end": 16.0,
-      "text": "and you can",
+      "start": 13.96,
+      "end": 14.7,
+      "text": "Ask, and you",
       "words": [
         {
-          "t": 15.5,
+          "t": 13.96,
+          "text": "Ask,"
+        },
+        {
+          "t": 14.48,
           "text": "and"
         },
         {
-          "t": 15.78,
+          "t": 14.6,
           "text": "you"
-        },
-        {
-          "t": 15.88,
-          "text": "can"
         }
       ]
     },
     {
-      "start": 16.0,
-      "end": 16.58,
-      "text": "ask a second",
+      "start": 14.7,
+      "end": 15.18,
+      "text": "can ask a",
       "words": [
         {
-          "t": 16.0,
+          "t": 14.7,
+          "text": "can"
+        },
+        {
+          "t": 14.82,
           "text": "ask"
         },
         {
-          "t": 16.24,
+          "t": 15.04,
           "text": "a"
-        },
-        {
-          "t": 16.38,
-          "text": "second"
         }
       ]
     },
     {
-      "start": 16.58,
-      "end": 17.52,
-      "text": "question like when",
+      "start": 15.18,
+      "end": 16.16,
+      "text": "second question like",
       "words": [
         {
-          "t": 16.58,
+          "t": 15.18,
+          "text": "second"
+        },
+        {
+          "t": 15.4,
           "text": "question"
         },
         {
-          "t": 17.02,
+          "t": 15.82,
           "text": "like"
+        }
+      ]
+    },
+    {
+      "start": 16.16,
+      "end": 16.64,
+      "text": "when the bill",
+      "words": [
+        {
+          "t": 16.16,
+          "text": "when"
         },
         {
-          "t": 17.34,
+          "t": 16.34,
+          "text": "the"
+        },
+        {
+          "t": 16.44,
+          "text": "bill"
+        }
+      ]
+    },
+    {
+      "start": 16.64,
+      "end": 17.78,
+      "text": "is due. Two,",
+      "words": [
+        {
+          "t": 16.64,
+          "text": "is"
+        },
+        {
+          "t": 16.8,
+          "text": "due."
+        },
+        {
+          "t": 17.64,
+          "text": "Two,"
+        }
+      ]
+    },
+    {
+      "start": 18.54,
+      "end": 19.64,
+      "text": "Voice Control stops making",
+      "words": [
+        {
+          "t": 18.54,
+          "text": "Voice"
+        },
+        {
+          "t": 18.86,
+          "text": "Control"
+        },
+        {
+          "t": 19.22,
+          "text": "stops"
+        },
+        {
+          "t": 19.22,
+          "text": "making"
+        }
+      ]
+    },
+    {
+      "start": 19.64,
+      "end": 20.6,
+      "text": "you memorize button",
+      "words": [
+        {
+          "t": 19.64,
+          "text": "you"
+        },
+        {
+          "t": 19.86,
+          "text": "memorize"
+        },
+        {
+          "t": 20.16,
+          "text": "button"
+        }
+      ]
+    },
+    {
+      "start": 20.6,
+      "end": 22.1,
+      "text": "names. Say tap",
+      "words": [
+        {
+          "t": 20.6,
+          "text": "names."
+        },
+        {
+          "t": 21.52,
+          "text": "Say"
+        },
+        {
+          "t": 21.82,
+          "text": "tap"
+        }
+      ]
+    },
+    {
+      "start": 22.1,
+      "end": 22.98,
+      "text": "the orange folder",
+      "words": [
+        {
+          "t": 22.1,
+          "text": "the"
+        },
+        {
+          "t": 22.32,
+          "text": "orange"
+        },
+        {
+          "t": 22.54,
+          "text": "folder"
+        }
+      ]
+    },
+    {
+      "start": 22.98,
+      "end": 23.66,
+      "text": "and it opens.",
+      "words": [
+        {
+          "t": 22.98,
+          "text": "and"
+        },
+        {
+          "t": 23.32,
+          "text": "it"
+        },
+        {
+          "t": 23.44,
+          "text": "opens."
+        }
+      ]
+    },
+    {
+      "start": 24.24,
+      "end": 26.46,
+      "text": "Three, VoiceOver describes a",
+      "words": [
+        {
+          "t": 24.24,
+          "text": "Three,"
+        },
+        {
+          "t": 25.4,
+          "text": "VoiceOver"
+        },
+        {
+          "t": 26.16,
+          "text": "describes"
+        },
+        {
+          "t": 26.16,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 26.46,
+      "end": 27.24,
+      "text": "photo in detail",
+      "words": [
+        {
+          "t": 26.46,
+          "text": "photo"
+        },
+        {
+          "t": 26.68,
+          "text": "in"
+        },
+        {
+          "t": 26.9,
+          "text": "detail"
+        }
+      ]
+    },
+    {
+      "start": 27.24,
+      "end": 28.32,
+      "text": "and answers questions",
+      "words": [
+        {
+          "t": 27.24,
+          "text": "and"
+        },
+        {
+          "t": 27.54,
+          "text": "answers"
+        },
+        {
+          "t": 27.86,
+          "text": "questions"
+        }
+      ]
+    },
+    {
+      "start": 28.32,
+      "end": 29.12,
+      "text": "about what's in",
+      "words": [
+        {
+          "t": 28.32,
+          "text": "about"
+        },
+        {
+          "t": 28.64,
+          "text": "what's"
+        },
+        {
+          "t": 28.98,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 29.12,
+      "end": 31.14,
+      "text": "it. Four, Name Recognition",
+      "words": [
+        {
+          "t": 29.12,
+          "text": "it."
+        },
+        {
+          "t": 30.0,
+          "text": "Four,"
+        },
+        {
+          "t": 30.48,
+          "text": "Name"
+        },
+        {
+          "t": 30.48,
+          "text": "Recognition"
+        }
+      ]
+    },
+    {
+      "start": 31.14,
+      "end": 32.08,
+      "text": "alerts you when",
+      "words": [
+        {
+          "t": 31.14,
+          "text": "alerts"
+        },
+        {
+          "t": 31.64,
+          "text": "you"
+        },
+        {
+          "t": 31.92,
           "text": "when"
         }
       ]
     },
     {
-      "start": 17.52,
-      "end": 17.98,
-      "text": "the bill is",
+      "start": 32.08,
+      "end": 32.86,
+      "text": "someone says your",
       "words": [
         {
-          "t": 17.52,
-          "text": "the"
+          "t": 32.08,
+          "text": "someone"
         },
         {
-          "t": 17.64,
-          "text": "bill"
+          "t": 32.38,
+          "text": "says"
         },
         {
-          "t": 17.82,
-          "text": "is"
+          "t": 32.64,
+          "text": "your"
         }
       ]
     },
     {
-      "start": 17.98,
-      "end": 20.06,
-      "text": "due. Two, Voice Control",
+      "start": 32.86,
+      "end": 33.62,
+      "text": "name, and it",
       "words": [
         {
-          "t": 17.98,
-          "text": "due."
+          "t": 32.86,
+          "text": "name,"
         },
         {
-          "t": 18.84,
-          "text": "Two,"
-        },
-        {
-          "t": 19.74,
-          "text": "Voice"
-        },
-        {
-          "t": 19.74,
-          "text": "Control"
-        }
-      ]
-    },
-    {
-      "start": 20.06,
-      "end": 21.06,
-      "text": "stops making you",
-      "words": [
-        {
-          "t": 20.06,
-          "text": "stops"
-        },
-        {
-          "t": 20.4,
-          "text": "making"
-        },
-        {
-          "t": 20.82,
-          "text": "you"
-        }
-      ]
-    },
-    {
-      "start": 21.06,
-      "end": 22.18,
-      "text": "memorize button names.",
-      "words": [
-        {
-          "t": 21.06,
-          "text": "memorize"
-        },
-        {
-          "t": 21.34,
-          "text": "button"
-        },
-        {
-          "t": 21.78,
-          "text": "names."
-        }
-      ]
-    },
-    {
-      "start": 22.7,
-      "end": 23.52,
-      "text": "Say tap the",
-      "words": [
-        {
-          "t": 22.7,
-          "text": "Say"
-        },
-        {
-          "t": 23.02,
-          "text": "tap"
-        },
-        {
-          "t": 23.3,
-          "text": "the"
-        }
-      ]
-    },
-    {
-      "start": 23.52,
-      "end": 24.52,
-      "text": "orange folder and",
-      "words": [
-        {
-          "t": 23.52,
-          "text": "orange"
-        },
-        {
-          "t": 23.74,
-          "text": "folder"
-        },
-        {
-          "t": 24.18,
+          "t": 33.38,
           "text": "and"
-        }
-      ]
-    },
-    {
-      "start": 24.52,
-      "end": 25.94,
-      "text": "it opens. 3.",
-      "words": [
+        },
         {
-          "t": 24.52,
+          "t": 33.48,
           "text": "it"
-        },
-        {
-          "t": 24.62,
-          "text": "opens."
-        },
-        {
-          "t": 25.66,
-          "text": "3."
         }
       ]
     },
     {
-      "start": 26.78,
-      "end": 27.88,
-      "text": "VoiceOver describes a photo",
+      "start": 33.62,
+      "end": 34.38,
+      "text": "now works in",
       "words": [
         {
-          "t": 26.78,
-          "text": "VoiceOver"
-        },
-        {
-          "t": 27.32,
-          "text": "describes"
-        },
-        {
-          "t": 27.66,
-          "text": "a"
-        },
-        {
-          "t": 27.66,
-          "text": "photo"
-        }
-      ]
-    },
-    {
-      "start": 27.88,
-      "end": 28.74,
-      "text": "in detail and",
-      "words": [
-        {
-          "t": 27.88,
-          "text": "in"
-        },
-        {
-          "t": 28.08,
-          "text": "detail"
-        },
-        {
-          "t": 28.42,
-          "text": "and"
-        }
-      ]
-    },
-    {
-      "start": 28.74,
-      "end": 29.82,
-      "text": "answers questions about",
-      "words": [
-        {
-          "t": 28.74,
-          "text": "answers"
-        },
-        {
-          "t": 29.06,
-          "text": "questions"
-        },
-        {
-          "t": 29.5,
-          "text": "about"
-        }
-      ]
-    },
-    {
-      "start": 29.82,
-      "end": 30.5,
-      "text": "what's in it.",
-      "words": [
-        {
-          "t": 29.82,
-          "text": "what's"
-        },
-        {
-          "t": 30.16,
-          "text": "in"
-        },
-        {
-          "t": 30.3,
-          "text": "it."
-        }
-      ]
-    },
-    {
-      "start": 30.9,
-      "end": 32.74,
-      "text": "Four, Accessibility Reader cleans",
-      "words": [
-        {
-          "t": 30.9,
-          "text": "Four,"
-        },
-        {
-          "t": 31.56,
-          "text": "Accessibility"
-        },
-        {
-          "t": 32.36,
-          "text": "Reader"
-        },
-        {
-          "t": 32.36,
-          "text": "cleans"
-        }
-      ]
-    },
-    {
-      "start": 32.74,
-      "end": 33.46,
-      "text": "up a cluttered",
-      "words": [
-        {
-          "t": 32.74,
-          "text": "up"
-        },
-        {
-          "t": 32.96,
-          "text": "a"
-        },
-        {
-          "t": 33.06,
-          "text": "cluttered"
-        }
-      ]
-    },
-    {
-      "start": 33.46,
-      "end": 34.64,
-      "text": "page, then summarizes",
-      "words": [
-        {
-          "t": 33.46,
-          "text": "page,"
-        },
-        {
-          "t": 34.0,
-          "text": "then"
-        },
-        {
-          "t": 34.06,
-          "text": "summarizes"
-        }
-      ]
-    },
-    {
-      "start": 34.64,
-      "end": 35.7,
-      "text": "or translates it.",
-      "words": [
-        {
-          "t": 34.64,
-          "text": "or"
-        },
-        {
-          "t": 34.96,
-          "text": "translates"
-        },
-        {
-          "t": 35.34,
-          "text": "it."
-        }
-      ]
-    },
-    {
-      "start": 36.2,
-      "end": 37.66,
-      "text": "Five, videos with no",
-      "words": [
-        {
-          "t": 36.2,
-          "text": "Five,"
-        },
-        {
-          "t": 37.22,
-          "text": "videos"
-        },
-        {
-          "t": 37.5,
-          "text": "with"
-        },
-        {
-          "t": 37.5,
-          "text": "no"
-        }
-      ]
-    },
-    {
-      "start": 37.66,
-      "end": 38.58,
-      "text": "captions now get",
-      "words": [
-        {
-          "t": 37.66,
-          "text": "captions"
-        },
-        {
-          "t": 37.96,
+          "t": 33.62,
           "text": "now"
         },
         {
-          "t": 38.38,
-          "text": "get"
+          "t": 33.82,
+          "text": "works"
+        },
+        {
+          "t": 34.18,
+          "text": "in"
         }
       ]
     },
     {
-      "start": 38.58,
-      "end": 39.4,
-      "text": "subtitles on their",
+      "start": 34.38,
+      "end": 35.06,
+      "text": "more than 50",
       "words": [
         {
-          "t": 38.58,
+          "t": 34.38,
+          "text": "more"
+        },
+        {
+          "t": 34.6,
+          "text": "than"
+        },
+        {
+          "t": 34.76,
+          "text": "50"
+        }
+      ]
+    },
+    {
+      "start": 35.06,
+      "end": 36.56,
+      "text": "languages, including Hindi.",
+      "words": [
+        {
+          "t": 35.06,
+          "text": "languages,"
+        },
+        {
+          "t": 35.82,
+          "text": "including"
+        },
+        {
+          "t": 36.22,
+          "text": "Hindi."
+        }
+      ]
+    },
+    {
+      "start": 37.2,
+      "end": 38.4,
+      "text": "Five, videos with",
+      "words": [
+        {
+          "t": 37.2,
+          "text": "Five,"
+        },
+        {
+          "t": 37.9,
+          "text": "videos"
+        },
+        {
+          "t": 38.12,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 38.4,
+      "end": 39.28,
+      "text": "no captions now",
+      "words": [
+        {
+          "t": 38.4,
+          "text": "no"
+        },
+        {
+          "t": 38.56,
+          "text": "captions"
+        },
+        {
+          "t": 38.9,
+          "text": "now"
+        }
+      ]
+    },
+    {
+      "start": 39.28,
+      "end": 40.18,
+      "text": "get subtitles on",
+      "words": [
+        {
+          "t": 39.28,
+          "text": "get"
+        },
+        {
+          "t": 39.48,
           "text": "subtitles"
         },
         {
-          "t": 38.86,
+          "t": 39.8,
           "text": "on"
-        },
-        {
-          "t": 39.26,
-          "text": "their"
         }
       ]
     },
     {
-      "start": 39.4,
-      "end": 40.3,
-      "text": "own, even clips",
+      "start": 40.18,
+      "end": 40.94,
+      "text": "their own, even",
       "words": [
         {
-          "t": 39.4,
+          "t": 40.18,
+          "text": "their"
+        },
+        {
+          "t": 40.3,
           "text": "own,"
         },
         {
-          "t": 39.86,
+          "t": 40.72,
           "text": "even"
-        },
-        {
-          "t": 40.02,
-          "text": "clips"
         }
       ]
     },
     {
-      "start": 40.3,
-      "end": 41.48,
-      "text": "you shot made",
+      "start": 40.94,
+      "end": 41.76,
+      "text": "clips you shot",
       "words": [
         {
-          "t": 40.3,
+          "t": 40.94,
+          "text": "clips"
+        },
+        {
+          "t": 41.2,
           "text": "you"
         },
         {
-          "t": 40.52,
+          "t": 41.44,
           "text": "shot"
-        },
-        {
-          "t": 40.82,
-          "text": "made"
         }
       ]
     },
     {
-      "start": 41.48,
-      "end": 41.98,
-      "text": "right on the",
+      "start": 41.76,
+      "end": 42.8,
+      "text": "made right on",
       "words": [
         {
-          "t": 41.48,
+          "t": 41.76,
+          "text": "made"
+        },
+        {
+          "t": 42.4,
           "text": "right"
         },
         {
-          "t": 41.72,
+          "t": 42.62,
           "text": "on"
-        },
-        {
-          "t": 41.9,
-          "text": "the"
         }
       ]
     },
     {
-      "start": 41.98,
-      "end": 43.2,
-      "text": "phone. The catch?",
+      "start": 42.8,
+      "end": 43.88,
+      "text": "the phone. The",
       "words": [
         {
-          "t": 41.98,
+          "t": 42.8,
+          "text": "the"
+        },
+        {
+          "t": 42.88,
           "text": "phone."
         },
         {
-          "t": 42.82,
+          "t": 43.7,
           "text": "The"
-        },
+        }
+      ]
+    },
+    {
+      "start": 43.88,
+      "end": 45.76,
+      "text": "catch? Name Recognition works on",
+      "words": [
         {
-          "t": 42.98,
+          "t": 43.88,
           "text": "catch?"
-        }
-      ]
-    },
-    {
-      "start": 43.84,
-      "end": 44.48,
-      "text": "All five run",
-      "words": [
-        {
-          "t": 43.84,
-          "text": "All"
         },
         {
-          "t": 44.0,
-          "text": "five"
+          "t": 45.1,
+          "text": "Name"
         },
         {
-          "t": 44.24,
-          "text": "run"
-        }
-      ]
-    },
-    {
-      "start": 44.48,
-      "end": 45.74,
-      "text": "on Apple Intelligence so",
-      "words": [
+          "t": 45.48,
+          "text": "Recognition"
+        },
         {
-          "t": 44.48,
+          "t": 45.48,
+          "text": "works"
+        },
+        {
+          "t": 45.48,
           "text": "on"
-        },
-        {
-          "t": 44.62,
-          "text": "Apple"
-        },
-        {
-          "t": 45.62,
-          "text": "Intelligence"
-        },
-        {
-          "t": 45.62,
-          "text": "so"
         }
       ]
     },
     {
-      "start": 45.74,
-      "end": 46.12,
-      "text": "you need an",
+      "start": 45.76,
+      "end": 46.72,
+      "text": "any iPhone with",
       "words": [
         {
-          "t": 45.74,
-          "text": "you"
+          "t": 45.76,
+          "text": "any"
         },
         {
-          "t": 45.86,
-          "text": "need"
-        },
-        {
-          "t": 46.0,
-          "text": "an"
-        }
-      ]
-    },
-    {
-      "start": 46.12,
-      "end": 47.16,
-      "text": "iPhone 15 Pro",
-      "words": [
-        {
-          "t": 46.12,
+          "t": 46.06,
           "text": "iPhone"
         },
         {
-          "t": 46.36,
+          "t": 46.5,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 46.72,
+      "end": 48.18,
+      "text": "iOS 27. The",
+      "words": [
+        {
+          "t": 46.72,
+          "text": "iOS"
+        },
+        {
+          "t": 47.02,
+          "text": "27."
+        },
+        {
+          "t": 48.08,
+          "text": "The"
+        }
+      ]
+    },
+    {
+      "start": 48.18,
+      "end": 48.84,
+      "text": "rest run on",
+      "words": [
+        {
+          "t": 48.18,
+          "text": "rest"
+        },
+        {
+          "t": 48.4,
+          "text": "run"
+        },
+        {
+          "t": 48.64,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 48.84,
+      "end": 50.26,
+      "text": "Apple Intelligence so you",
+      "words": [
+        {
+          "t": 48.84,
+          "text": "Apple"
+        },
+        {
+          "t": 49.96,
+          "text": "Intelligence"
+        },
+        {
+          "t": 50.12,
+          "text": "so"
+        },
+        {
+          "t": 50.12,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 50.26,
+      "end": 50.82,
+      "text": "need an iPhone",
+      "words": [
+        {
+          "t": 50.26,
+          "text": "need"
+        },
+        {
+          "t": 50.42,
+          "text": "an"
+        },
+        {
+          "t": 50.56,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 50.82,
+      "end": 52.02,
+      "text": "15 Pro or",
+      "words": [
+        {
+          "t": 50.82,
           "text": "15"
         },
         {
-          "t": 46.84,
+          "t": 51.32,
           "text": "Pro"
+        },
+        {
+          "t": 51.72,
+          "text": "or"
         }
       ]
     },
     {
-      "start": 47.16,
-      "end": 48.42,
-      "text": "or later. And",
+      "start": 52.02,
+      "end": 53.66,
+      "text": "later. And Voice Control",
       "words": [
         {
-          "t": 47.16,
-          "text": "or"
-        },
-        {
-          "t": 47.4,
+          "t": 52.02,
           "text": "later."
         },
         {
-          "t": 48.26,
+          "t": 52.96,
           "text": "And"
-        }
-      ]
-    },
-    {
-      "start": 48.42,
-      "end": 49.32,
-      "text": "Voice Control and the",
-      "words": [
+        },
         {
-          "t": 48.42,
+          "t": 53.1,
           "text": "Voice"
         },
         {
-          "t": 49.0,
+          "t": 53.1,
           "text": "Control"
-        },
-        {
-          "t": 49.22,
-          "text": "and"
-        },
-        {
-          "t": 49.22,
-          "text": "the"
         }
       ]
     },
     {
-      "start": 49.32,
-      "end": 50.7,
-      "text": "subtitles are English-only",
+      "start": 53.66,
+      "end": 54.42,
+      "text": "and the subtitles",
       "words": [
         {
-          "t": 49.32,
-          "text": "subtitles"
+          "t": 53.66,
+          "text": "and"
         },
         {
-          "t": 49.7,
+          "t": 53.9,
+          "text": "the"
+        },
+        {
+          "t": 54.0,
+          "text": "subtitles"
+        }
+      ]
+    },
+    {
+      "start": 54.42,
+      "end": 55.98,
+      "text": "are English-only in",
+      "words": [
+        {
+          "t": 54.42,
           "text": "are"
         },
         {
-          "t": 50.04,
+          "t": 54.72,
           "text": "English-only"
+        },
+        {
+          "t": 55.38,
+          "text": "in"
         }
       ]
     },
     {
-      "start": 50.7,
-      "end": 51.82,
-      "text": "in places like",
+      "start": 55.98,
+      "end": 56.62,
+      "text": "places like the",
       "words": [
         {
-          "t": 50.7,
-          "text": "in"
-        },
-        {
-          "t": 51.32,
+          "t": 55.98,
           "text": "places"
         },
         {
-          "t": 51.54,
+          "t": 56.22,
           "text": "like"
+        },
+        {
+          "t": 56.48,
+          "text": "the"
         }
       ]
     },
     {
-      "start": 51.82,
-      "end": 52.5,
-      "text": "the US and",
+      "start": 56.62,
+      "end": 57.54,
+      "text": "US and Canada.",
       "words": [
         {
-          "t": 51.82,
-          "text": "the"
-        },
-        {
-          "t": 51.94,
+          "t": 56.62,
           "text": "US"
         },
         {
-          "t": 52.16,
+          "t": 56.86,
           "text": "and"
+        },
+        {
+          "t": 57.18,
+          "text": "Canada."
         }
       ]
     },
     {
-      "start": 52.5,
-      "end": 53.76,
-      "text": "Canada. Know someone",
+      "start": 58.02,
+      "end": 58.8,
+      "text": "Know someone this would",
       "words": [
         {
-          "t": 52.5,
-          "text": "Canada."
-        },
-        {
-          "t": 52.86,
+          "t": 58.02,
           "text": "Know"
         },
         {
-          "t": 53.5,
+          "t": 58.42,
           "text": "someone"
-        }
-      ]
-    },
-    {
-      "start": 53.76,
-      "end": 54.36,
-      "text": "this would help?",
-      "words": [
+        },
         {
-          "t": 53.76,
+          "t": 58.64,
           "text": "this"
         },
         {
-          "t": 53.96,
+          "t": 58.64,
           "text": "would"
-        },
-        {
-          "t": 54.12,
-          "text": "help?"
         }
       ]
     },
     {
-      "start": 54.78,
-      "end": 55.54,
-      "text": "Pass it on.",
+      "start": 58.8,
+      "end": 60.08,
+      "text": "help, pass it",
       "words": [
         {
-          "t": 54.78,
-          "text": "Pass"
+          "t": 58.8,
+          "text": "help,"
         },
         {
-          "t": 55.22,
+          "t": 59.28,
+          "text": "pass"
+        },
+        {
+          "t": 59.9,
           "text": "it"
-        },
+        }
+      ]
+    },
+    {
+      "start": 60.08,
+      "end": 60.22,
+      "text": "on.",
+      "words": [
         {
-          "t": 55.4,
+          "t": 60.08,
           "text": "on."
         }
       ]
@@ -1900,11 +2066,11 @@
   "format": "top5",
   "allowLong": true,
   "allowLongReason": "five items plus the catch (the iPhone 15 Pro requirement and English-only limits); cutting to 48s drops the requirement, the most useful line",
-  "script": "In iOS 27, point your iPhone at a bill, ask how much it is, and it reads you the total. That's one of five new accessibility features worth turning on, and there's a catch that applies to every one.\n\nThat first one is Magnifier. Tap Ask, and you can ask a second question, like when the bill is due.\n\nTwo, Voice Control stops making you memorize button names. Say \"tap the orange folder,\" and it opens.\n\nThree, VoiceOver describes a photo in detail and answers questions about what's in it.\n\nFour, Accessibility Reader cleans up a cluttered page, then summarizes or translates it.\n\nFive, videos with no captions now get subtitles on their own, even clips you shot, made right on the phone.\n\nThe catch? All five run on Apple Intelligence, so you need an iPhone 15 Pro or later. And Voice Control and the subtitles are English-only, in places like the US and Canada.\n\nKnow someone this would help? Pass it on.",
+  "script": "In iOS 27, point your iPhone at a bill, ask how much it is, and it reads you the total. That's one of five accessibility upgrades worth turning on, and four of them come with a catch.\n\nThat first one is Magnifier. Tap Ask, and you can ask a second question, like when the bill is due.\n\nTwo, Voice Control stops making you memorize button names. Say \"tap the orange folder,\" and it opens.\n\nThree, VoiceOver describes a photo in detail and answers questions about what's in it.\n\nFour, Name Recognition alerts you when someone says your name, and it now works in more than 50 languages, including Hindi.\n\nFive, videos with no captions now get subtitles on their own, even clips you shot, made right on the phone.\n\nThe catch? Name Recognition works on any iPhone with iOS 27. The rest run on Apple Intelligence, so you need an iPhone 15 Pro or later. And Voice Control and the subtitles are English-only, in places like the US and Canada.\n\nKnow someone this would help? Pass it on.",
   "approval": {
-    "sha256": "2147d7c4a870ad7565257f06503fc48d8fd0eabbf6e53a365c6d9ae42358b6ab",
-    "approvedAt": "2026-10-02T09:05:34+00:00",
-    "words": 163,
+    "sha256": "794bc951fc215996bf7a60911ba2e95ba3fe8604465bb6e21bceb8e7ab96ab43",
+    "approvedAt": "2026-10-02T09:46:58+00:00",
+    "words": 178,
     "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
   }
 }

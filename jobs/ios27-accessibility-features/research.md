@@ -24,7 +24,7 @@ apple.com/accessibility). apple.com/ios/ios-27/ returned 404 on 2026-10-02.
 - CLAIM: These are iOS 27 features (shipped 2026-09-14), five of the accessibility additions Apple announced 2026-05-19.
   TIER: official
   SPOKEN: "In iOS 27"
-  SPOKEN: "one of five new accessibility features worth turning on"
+  SPOKEN: "one of five accessibility upgrades worth turning on"
   SURPRISE: 40
   SRC: https://support.apple.com/en-us/149076
   VIA: Apple "About iOS 27 Updates", Accessibility section under the iOS 27 heading
@@ -60,14 +60,25 @@ apple.com/accessibility). apple.com/ios/ios-27/ returned 404 on 2026-10-02.
   SRC: https://www.apple.com/newsroom/2026/05/apple-unveils-new-accessibility-features-and-updates-with-apple-intelligence/
   VIA: Apple Newsroom: Image Explorer "more detailed descriptions of images systemwide"
 
-- CLAIM: Accessibility Reader (new in iOS 26) gets cleanup/formatting, summaries and translation in iOS 27.
+- CLAIM: Name Recognition notifies you when your name is detected; in iOS 27 it works in more than 50 languages (54 language-regions on Apple's list, including Hindi (India)). It existed in iOS 26 — this is an expansion, spoken as "now works in", never as new.
   TIER: official
-  SPOKEN: "Accessibility Reader cleans up a cluttered page, then summarizes or translates it."
-  SURPRISE: 55
-  SRC: https://support.apple.com/en-us/149076
-  VIA: Apple release notes: "better text cleanup and formatting, images and tables, on-demand summaries, and translation"
-  SRC: https://support.apple.com/guide/iphone/read-listen-text-apps-accessibility-reader-iph406a46ab8/ios
-  VIA: Apple guide: "format content for easier reading, summarize text, and translate text"
+  SPOKEN: "Name Recognition alerts you when someone says your name, and it now works in more than 50 languages, including Hindi."
+  SURPRISE: 70
+  SRC: https://www.apple.com/newsroom/2026/05/apple-unveils-new-accessibility-features-and-updates-with-apple-intelligence/
+  VIA: Apple Newsroom: "can notify users who are deaf or hard of hearing if someone says their name"; "works across more than 50 languages globally"
+  SRC: https://www.apple.com/ios/feature-availability/
+  VIA: Apple feature-availability, "Accessibility: Name Recognition": 54 entries incl. Hindi (India)
+  SRC: https://support.apple.com/guide/iphone/use-name-recognition-iphb865d79be/ios
+  VIA: Apple guide: "continuously listen for your name and notify you"; "available on iOS 26 and later"
+
+- CLAIM: Name Recognition needs no Apple Intelligence: it works on any iPhone running iOS 26 or later, so any iPhone with iOS 27.
+  TIER: official
+  SPOKEN: "Name Recognition works on any iPhone with iOS 27."
+  SURPRISE: 50
+  SRC: https://support.apple.com/guide/iphone/use-name-recognition-iphb865d79be/ios
+  VIA: Apple guide: "Name Recognition is available on iOS 26 and later." (no Apple Intelligence note, unlike the other four)
+  SRC: https://www.apple.com/newsroom/2026/05/apple-unveils-new-accessibility-features-and-updates-with-apple-intelligence/
+  VIA: Apple Newsroom lists it under Additional Updates, outside the Apple Intelligence features
 
 - CLAIM: Videos without captions get generated subtitles automatically (shown when muted), including clips recorded on iPhone; generated privately with on-device speech recognition.
   TIER: official
@@ -80,9 +91,10 @@ apple.com/accessibility). apple.com/ios/ios-27/ returned 404 on 2026-10-02.
   SRC: https://www.idownloadblog.com/2026/09/08/turn-off-automatic-subtitles-ios-mac/
   VIA: iDownloadBlog's own use after release (Automatic Subtitles toggles)
 
-- CLAIM: All five need an Apple Intelligence iPhone: iPhone 15 Pro / 15 Pro Max or any iPhone 16 or later.
+- CLAIM: Magnifier, Voice Control, VoiceOver and generated subtitles need an Apple Intelligence iPhone: iPhone 15 Pro / 15 Pro Max or any iPhone 16 or later.
   TIER: official
-  SPOKEN: "All five run on Apple Intelligence, so you need an iPhone 15 Pro or later."
+  SPOKEN: "The rest run on Apple Intelligence, so you need an iPhone 15 Pro or later."
+  SPOKEN: "four of them come with a catch"
   SURPRISE: 60
   SRC: https://support.apple.com/en-us/149076
   VIA: Apple release notes: Accessibility under "Apple Intelligence across apps (All iPhone 16 models and later, iPhone 15 Pro, iPhone 15 Pro Max)"
@@ -107,12 +119,12 @@ Guide, iOS 27), detail in research/findings_*.md.
 - Ask Magnifier (Apple Intelligence) — USED (#1 + hook). Open Magnifier, tap Ask, pick "What is this?" or type/speak a question; follow up in the Ask sheet. Settings: Magnifier gear > Ask Magnifier.
 - Voice Control Flexible Item Names — USED (#2). Settings > Accessibility > Voice Control > Set Up Voice Control (Wi-Fi for a one-time download); Flexible Item Names is on by default. English, US/CA/UK/AU.
 - VoiceOver Image Explorer / Ask About Image / Intelligent Image Description — USED (#3). Settings > Accessibility > VoiceOver > VoiceOver Recognition; select an image, swipe down for options, double-tap.
-- Accessibility Reader cleanup, summaries, translation — USED (#4). Settings > Accessibility > Read & Speak > Accessibility Reader; open via Accessibility Shortcut (triple-click side button), Control Center or the share menu; tap Summarize; translate from the menu.
+- Accessibility Reader cleanup, summaries, translation — CUT (user, 2026-10-02: swapped for Name Recognition). Was Settings > Accessibility > Read & Speak > Accessibility Reader; open via Accessibility Shortcut (triple-click side button), Control Center or the share menu; tap Summarize; translate from the menu.
 - Generated subtitles — USED (#5). On automatically when muted; Settings > Accessibility > Subtitles & Captioning > Automatic Subtitles (iDownloadBlog path); per video in the playback menu. English, US/CA.
 - Live Recognition Ask + follow-ups — CUT as its own item: folded into VoiceOver (#3); a second VoiceOver item splits one idea.
 - Action button ask (VoiceOver/Magnifier) — CUT: disputed (GeeksModo: options never appeared).
 - Magnifier high-contrast interface + spoken "zoom in" — CUT: not in Apple's iOS 27 Magnifier guide.
-- Name Recognition 50+ languages — CUT: available since iOS 26 (expansion, not new).
+- Name Recognition 50+ languages — USED (#4, user's pick 2026-10-02). Spoken as an expansion ("now works in"), since it shipped in iOS 26. Settings > Accessibility > Sound & Name Recognition > Name Recognition > Set Up Name Recognition; Control Center toggle; record how your name is said.
 - FaceTime interpreter API — CUT: iOS 27.2 developer beta, developer-only.
 - Sony Access controller — CUT: no post-release confirmation.
 - Larger Text on Apple TV, Vision Pro wheelchair control, Hikawa grips — CUT: not iPhone features.
@@ -121,7 +133,7 @@ Guide, iOS 27), detail in research/findings_*.md.
 
 - Action button shortcut for VoiceOver/Magnifier: Apple notes claim it; GeeksModo (2026-09-13) says the options "haven't appeared". Disputed → not said, not shown.
 - Magnifier high-contrast interface and spoken "zoom in"/"turn on flashlight": Newsroom + release notes only, absent from both iOS 27 Magnifier guide pages → not said.
-- Name Recognition: NOT new (Apple: "available on iOS 26 and later"); iOS 27 widens it to 50+ languages (54 entries incl. Hindi). BGR's "flash" alert is unsupported — Apple documents a notification only.
+- Name Recognition as NEW in iOS 27 (it shipped in iOS 26; only the 50+ languages are iOS 27), and BGR's "flash" alert (Apple documents a notification only).
 - FaceTime sign-language interpreter API: not in 27.0 (iOS 27.2 developer beta 1, Mac Observer VIA MacRumors), developer API, no app has adopted it.
 - Sony Access controller support: press release only, no post-release confirmation.
 - Accessibility Reader handling "scientific articles" / "multi-column" and translation that keeps "formatting, fonts, and colors": preview (Newsroom) wording only, not in shipping docs → not said.

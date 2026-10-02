@@ -8,17 +8,17 @@
  "allowLongReason": "five items plus the catch (the iPhone 15 Pro requirement and English-only limits); cutting to 48s drops the requirement, the most useful line",
  "emphasis": [
   "total",
-  "five",
   "catch",
   "Ask",
   "memorize",
   "orange",
   "detail",
-  "cluttered",
   "subtitles",
   "15 Pro",
   "English",
-  "Pass"
+  "Pass",
+  "Hindi",
+  "50"
  ],
  "caption_corrections": {
   "applies to everyone": "applies to every one",
@@ -26,14 +26,12 @@
   "Voice control": "Voice Control",
   "voice control": "Voice Control",
   "Voiceover describes": "VoiceOver describes",
-  "Accessibility reader": "Accessibility Reader",
   "Apple intelligence": "Apple Intelligence",
   "English only": "English-only",
-  "2. Voice": "Two, Voice",
-  "3. VoiceOver": "Three, VoiceOver",
-  "3. Voiceover": "Three, VoiceOver",
-  "4. Accessibility": "Four, Accessibility",
-  "5. Videos": "Five, videos"
+  "name recognition": "Name Recognition",
+  "No someone": "Know someone",
+  "voiceover describes": "VoiceOver describes",
+  "catch, name recognition": "catch? Name Recognition"
  },
  "shots": [
   {
@@ -128,7 +126,7 @@
   },
   {
    "start_phrase": "That's one of five",
-   "line": "That's one of five new accessibility features worth turning on,",
+   "line": "That's one of five accessibility upgrades worth turning on,",
    "asset_id": null,
    "tier": "official",
    "scene": {
@@ -157,7 +155,7 @@
        },
        {
         "k": "4",
-        "v": "A smarter Accessibility Reader",
+        "v": "Name Recognition, 50+ languages",
         "tone": "plain"
        },
        {
@@ -172,32 +170,32 @@
      {
       "do": "pill",
       "target": "headline",
-      "on": "five new"
+      "on": "five accessibility"
      },
      {
       "do": "show",
       "target": "r.0",
-      "on": "five new"
+      "on": "five accessibility"
      },
      {
       "do": "show",
       "target": "r.1",
-      "on": "new accessibility"
+      "on": "accessibility upgrades"
      },
      {
       "do": "show",
       "target": "r.2",
-      "on": "accessibility features"
+      "on": "upgrades worth"
      },
      {
       "do": "show",
       "target": "r.3",
-      "on": "features worth"
+      "on": "worth turning"
      },
      {
       "do": "show",
       "target": "r.4",
-      "on": "worth turning"
+      "on": "turning on"
      }
     ],
     "sfx": [
@@ -211,20 +209,20 @@
    "needs": [
     "That's",
     "accessibility",
-    "features",
+    "upgrades",
     "worth",
     "turning"
    ]
   },
   {
-   "start_phrase": "and there's a catch",
-   "line": "and there's a catch that applies to every one.",
+   "start_phrase": "and four of them",
+   "line": "and four of them come with a catch.",
    "asset_id": null,
    "tier": "official",
    "scene": {
     "type": "slide",
     "eyebrow": "Before you try them",
-    "headline": "One [[catch]] covers all 5",
+    "headline": "A [[catch]] for 4 of them",
     "blocks": [
      {
       "id": "r",
@@ -246,11 +244,6 @@
         "tone": "cost"
        },
        {
-        "k": "Reader",
-        "v": "?",
-        "tone": "cost"
-       },
-       {
         "k": "Subtitles",
         "v": "?",
         "tone": "cost"
@@ -267,27 +260,22 @@
      {
       "do": "show",
       "target": "r.0",
-      "on": "a catch"
+      "on": "four of"
      },
      {
       "do": "show",
       "target": "r.1",
-      "on": "catch that"
+      "on": "of them"
      },
      {
       "do": "show",
       "target": "r.2",
-      "on": "that applies"
+      "on": "come with"
      },
      {
       "do": "show",
       "target": "r.3",
-      "on": "applies to"
-     },
-     {
-      "do": "show",
-      "target": "r.4",
-      "on": "to everyone"
+      "on": "a catch"
      }
     ],
     "sfx": [
@@ -299,10 +287,7 @@
     ]
    },
    "needs": [
-    "there's",
-    "catch",
-    "applies",
-    "every"
+    "catch"
    ]
   },
   {
@@ -410,7 +395,7 @@
    ]
   },
   {
-   "start_phrase": "2 Voice control stops",
+   "start_phrase": "Two voice control stops",
    "line": "Two, Voice Control stops making you memorize button names.",
    "asset_id": null,
    "tier": "official",
@@ -440,7 +425,7 @@
      {
       "do": "show",
       "target": "w.left",
-      "on": "2 voice control"
+      "on": "two voice control"
      },
      {
       "do": "strike",
@@ -517,7 +502,7 @@
    ]
   },
   {
-   "start_phrase": "3 Voiceover describes a",
+   "start_phrase": "Three voiceover describes a",
    "line": "Three, VoiceOver describes a photo in detail",
    "asset_id": "vo-describe",
    "tier": "official",
@@ -590,97 +575,161 @@
    ]
   },
   {
-   "start_phrase": "4 Accessibility reader cleans",
-   "line": "Four, Accessibility Reader cleans up a cluttered page,",
-   "asset_id": "reader-before",
+   "start_phrase": "Four name recognition alerts",
+   "line": "Four, Name Recognition alerts you when someone says your name,",
+   "asset_id": "nr-notification",
    "tier": "official",
    "scene": {
     "type": "slide",
-    "eyebrow": "4 · Accessibility Reader",
-    "headline": "A [[cluttered]] page...",
+    "eyebrow": "4 · Name Recognition",
+    "headline": "It hears your [[name]]",
     "blocks": [
      {
       "id": "s",
       "kind": "screen",
-      "src": "assets/ios27-accessibility-features/reader-before.jpg",
-      "width": 1960,
-      "height": 1102,
-      "h": 620
-     }
-    ],
-    "moves": [
-     {
-      "do": "pill",
-      "target": "headline",
-      "on": "cluttered page"
-     },
-     {
-      "do": "state",
-      "target": "s",
-      "on": "cleans up",
-      "src": "assets/ios27-accessibility-features/reader-after.jpg"
-     }
-    ],
-    "sfx": [
-     {
-      "src": "sfx/Camera Shutter.MP3",
-      "at": 1.41,
-      "vol": 0.3
-     }
-    ]
-   },
-   "needs": [
-    "Accessibility",
-    "Reader",
-    "cleans",
-    "cluttered"
-   ]
-  },
-  {
-   "start_phrase": "then summarizes or translates",
-   "line": "then summarizes or translates it.",
-   "asset_id": "reader-after",
-   "tier": "official",
-   "scene": {
-    "type": "slide",
-    "eyebrow": "4 · Accessibility Reader",
-    "headline": "[[Summarize]] or translate it",
-    "blocks": [
-     {
-      "id": "s",
-      "kind": "screen",
-      "src": "assets/ios27-accessibility-features/reader-after.jpg",
-      "width": 1960,
-      "height": 1102,
-      "h": 620
+      "src": "assets/ios27-accessibility-features/nr-notification.png",
+      "width": 496,
+      "height": 1016,
+      "h": 860
      }
     ],
     "moves": [
      {
       "do": "focus",
       "target": "s",
-      "on": "then summarizes",
+      "on": "someone says",
       "rect": [
-       560,
-       250,
-       820,
-       240
+       30,
+       80,
+       440,
+       120
       ]
      },
      {
       "do": "pill",
       "target": "headline",
-      "on": "summarizes"
+      "on": "your name"
      }
     ]
    },
    "needs": [
-    "summarizes",
-    "translates"
+    "Recognition",
+    "alerts",
+    "someone"
    ]
   },
   {
-   "start_phrase": "5 Videos with no",
+   "start_phrase": "and it now works",
+   "line": "and it now works in more than 50 languages,",
+   "asset_id": "nr-langs-a",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "4 · Name Recognition",
+    "headline": "Now in [[50+]] languages",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/ios27-accessibility-features/nr-langs-a.png",
+      "width": 1080,
+      "height": 1100,
+      "h": 760
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "more than",
+      "rect": [
+       40,
+       120,
+       1000,
+       300
+      ],
+      "ring": false
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "50 languages"
+     }
+    ]
+   },
+   "needs": [
+    "works",
+    "languages"
+   ]
+  },
+  {
+   "start_phrase": "including Hindi",
+   "line": "including Hindi.",
+   "asset_id": "nr-langs-b",
+   "tier": "official",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "4 · Name Recognition",
+    "headline": "Including [[Hindi]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Hindi",
+        "v": "India",
+        "tone": "free"
+       }
+      ]
+     },
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/ios27-accessibility-features/nr-langs-b.png",
+      "width": 1080,
+      "height": 1100,
+      "h": 520
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "including hindi",
+      "rect": [
+       40,
+       450,
+       420,
+       110
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "hindi"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "including hindi"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx-action/marker.mp3",
+      "at": 0.45,
+      "vol": 0.35
+     }
+    ]
+   },
+   "needs": [
+    "including",
+    "Hindi"
+   ]
+  },
+  {
+   "start_phrase": "Five videos with no",
    "line": "Five, videos with no captions now get subtitles on their own,",
    "asset_id": "subtitles",
    "tier": "official",
@@ -784,21 +833,26 @@
    ]
   },
   {
-   "start_phrase": "The catch All five",
-   "line": "The catch? All five run on Apple Intelligence, so you need an iPhone 15 Pro or later.",
+   "start_phrase": "The catch name recognition",
+   "line": "The catch? Name Recognition works on any iPhone with iOS 27. The rest run on Apple Intelligence, so you need an iPhone 15 Pro or later.",
    "asset_id": null,
    "tier": "official",
    "scene": {
     "type": "slide",
     "eyebrow": "The catch",
-    "headline": "All 5 need [[iPhone 15 Pro]]",
+    "headline": "4 need an [[iPhone 15 Pro]]",
     "blocks": [
      {
       "id": "r",
       "kind": "rows",
       "rows": [
        {
-        "k": "Runs on",
+        "k": "Name Recognition",
+        "v": "Any iPhone with iOS 27",
+        "tone": "free"
+       },
+       {
+        "k": "The other 4",
         "v": "Apple Intelligence",
         "tone": "plain"
        },
@@ -814,11 +868,16 @@
      {
       "do": "show",
       "target": "r.0",
-      "on": "all five run"
+      "on": "name recognition works"
      },
      {
       "do": "show",
       "target": "r.1",
+      "on": "the rest"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
       "on": "you need"
      },
      {
@@ -830,17 +889,17 @@
     "sfx": [
      {
       "src": "sfx2/impact-boom.mp3",
-      "at": 3.0,
+      "at": 6.5,
       "vol": 0.3
      }
     ]
    },
    "needs": [
     "catch",
-    "Apple",
-    "Intelligence",
+    "Recognition",
+    "works",
     "iPhone",
-    "later"
+    "Apple"
    ]
   },
   {
@@ -907,7 +966,7 @@
    ]
   },
   {
-   "start_phrase": "Know someone this would",
+   "start_phrase": "No someone this would",
    "line": "Know someone this would help? Pass it on.",
    "asset_id": null,
    "tier": "official",
@@ -919,7 +978,7 @@
     "headline": "Pass it [[on]]",
     "presenter": {
      "src": "assets/ios27-accessibility-features/avatar-cta.mp4",
-     "from": 0.0
+     "from": 0.14
     },
     "blocks": [
      {
@@ -940,7 +999,7 @@
      {
       "do": "show",
       "target": "d",
-      "on": "know someone"
+      "on": "no someone"
      },
      {
       "do": "pill",

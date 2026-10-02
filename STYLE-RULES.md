@@ -9413,3 +9413,14 @@ demo clip whole, two trims of Apple's VoiceOver film, a before→after state cro
 Accessibility Reader, a focus on the generated subtitle, rows for the requirement and the
 English-only countries. Next accessibility/feature-list reel: do not open on a press image of a
 bill again; open on a real device recording if a simulator is available on that machine.
+- **Revision same day (user): Accessibility Reader out, Name Recognition in as #4.** Name Recognition
+  shipped in iOS 26 and needs no Apple Intelligence, so the swap changed two other lines: "five new
+  features" became "five accessibility upgrades", and the catch now covers four of five (the payoff
+  names Name Recognition as the one that works on any iPhone with iOS 27). Three sentences re-read
+  (369 credits vs ~959 full) and spliced into the PADDED master at mid-pause cut points (-0.4 dB
+  match), so the hook region stayed byte-identical and the hook presenter clip kept its lip-sync;
+  the CTA clip was re-aligned (presenter.from 0.14) from silencedetect. Apple's feature-availability
+  page captured mobile with `--selector "#accessibility-name-recognition"` (1080x5085), cropped to two
+  1080x1100 panels; back-to-back they tripped [DUPLICATE] until the second got a rows block over a
+  shorter crop. Caption trap: a correction "The catch," -> "The catch?" rendered "catch??" (the
+  script already supplies the "?"); key on the phrase instead ("catch, name recognition").
