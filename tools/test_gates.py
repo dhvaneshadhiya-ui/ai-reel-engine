@@ -1661,6 +1661,13 @@ CASES.append((lambda s: s["scenes"].append(
      "moves": [{"do": "drain", "target": "g", "at": 0.4}]}),
     "G65", "slide gauge with no from percent"))
 
+# G65: a levels block with no numeric `from` per item draws empty bars.
+CASES.append((lambda s: s["scenes"].append(
+    {"type": "slide", "durationSec": 2.0, "headline": "Alarm follows ringer",
+     "blocks": [{"id": "v", "kind": "levels", "items": [{"label": "Ringer"}]}],
+     "moves": [{"do": "drain", "target": "v", "at": 0.4}]}),
+    "G65", "slide levels item with no from"))
+
 # G70: 2-5s shows only the presenter and type — no proof of the hook.
 CASES.append((lambda s: (s["scenes"][1].update(type="typecard", kinetic={"text": "BIG CLAIM"}),
                          s["scenes"][2].update(src="assets/x/avatar-master-169.mp4")),

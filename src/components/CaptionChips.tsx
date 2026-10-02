@@ -407,7 +407,7 @@ export const CaptionChips: React.FC<{
   darkRanges = [],
 }) => {
   const frame = useCurrentFrame();
-  const { fps, height } = useVideoConfig();
+  const { fps, height, width } = useVideoConfig();
   const theme = useTheme();
   const t = frame / fps;
 
@@ -426,12 +426,18 @@ export const CaptionChips: React.FC<{
   const ACCENT = brightGround ? theme.accentInk : theme.accentOnDark;
   // Authors raise captions to clear a face; nothing may sink one into the
   // credit lane or Instagram's account row. See platformSafeArea.
-  const bottomAt = (fallback: number) =>
-    clampCaptionBottom(
-      positions.find((p) => t >= p.start && t < p.end)?.bottom ?? fallback,
-      height,
-      credits
-    );
+  // LANDSCAPE (2026-09-30): a 16:9 YouTube video has no app overlay on its
+  // lower fifth — only the player's control bar, ~6% of the height, and it
+  // hides during playback. The 9:16 floor put long-form captions three-quarters
+  // down, on top of the content; landscape sits them on the bottom band.
+  const landscape = width > height;
+  const bottomAt = (fallback: number) => {
+    const asked = positions.find((p) => t >= p.start && t < p.end)?.bottom;
+    // per-scene offsets are 9:16 values (SLIDE_CAPTION_BOTTOM 422 = 22% of a
+    // 1920 frame), so landscape ignores them: the band is the bottom 5%.
+    if (landscape) return Math.round(height * 0.05);
+    return clampCaptionBottom(asked ?? fallback, height, credits);
+  };
 
   if (mode === "ink-circle") {
     return (

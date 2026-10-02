@@ -9348,3 +9348,28 @@ focus box. Next payments/bank reel: do not open on a press image of a card at Do
   close is pending until the plan changes.
 - `vo_external` printed a `vo_pad` command without `--in`, which pointed at a file that
   doesn't exist yet. Fixed.
+
+## 2026-09-30 (later) — long-form uses the animated-format grammar (user review of ios27-settings-longform v1)
+
+The user rejected v1 as static and boring. There was no real iPhone mockup, the first
+frame didn't open the topic, captions were off, the VO was padded into dead air, there
+was almost no motion graphics and no presenter, and nothing showed what each setting
+actually does. v1 had followed the pilot's sketch (hideCaptions everywhere, music off)
+as if it were the long-form standard. It wasn't.
+
+- **Apple's real bezel.** `device: "iphone-17-pro"` on a screen or clip block draws Apple's
+  bezel PNG around the capture, whose 1206x2622 opening is exactly the simulator's screen.
+  The PNG is not redistributable, so it lives in the git-ignored public/assets/_bezels.
+- **The 16:9 split.** A wide slide with a phone plus other blocks puts the phone in a
+  full-height left column and the headline and motion graphics on the right.
+- **`levels` block.** Labelled meters that move on `drain`. It carries the ringer-vs-alarm
+  and calls-vs-clicks demonstrations.
+- **Landscape captions** sit on the bottom 5% band. The 9:16 per-scene offsets (422 px) put
+  them mid-frame, so landscape ignores them. Content stops at 87% when captions are on.
+- **Hero numbers are poster-size** in a wide frame (260px). At 88px, "11" read as a caption.
+- **Show what the setting does.** Real before/afters from the simulator:
+  - Zoom to Fill on/off, on a real tall photo in Photos
+  - Liquid Glass Clear vs Tinted, on the Home Screen
+  - the App Library
+  - labelled redraws only where the simulator can't show the screen
+- The VO pace went from 2.6 w/s (padded) to 3.0 w/s.

@@ -260,7 +260,7 @@ def main():
         # Instagram's and YouTube's UI zone, and [PLATFORM ZONE] blocks content
         # there. Counting that band as "dead space" made the two checks demand
         # opposite things (PairPods hook, 2026-09-17). Measure it above 80%.
-        if typ in ("slide", "stage"):
+        if typ in ("slide", "stage") and img.size[1] > img.size[0]:
             w0, h0 = img.size
             frac = dead_space_frac(img.crop((0, 0, w0, int(h0 * 0.8))))
         if i == 0:
@@ -276,8 +276,21 @@ def main():
                 f"[EDGE TEXT] scene {i:02d} ({typ}): busy pixels at frame "
                 "edge — screenshot likely cropped mid-word")
     hashes = {i: ahash(img) for i, img in imgs.items()}
+
+    def _mad(a, b):
+        from PIL import ImageChops, ImageStat
+        A = a.convert("L").resize((96, 54)); B = b.convert("L").resize((96, 54))
+        return ImageStat.Stat(ImageChops.difference(A, B)).mean[0]
+
     for i in sorted(hashes)[1:]:
         if i - 1 in hashes and hash_dist(hashes[i - 1], hashes[i]) < 0.08:
+            # LANDSCAPE (2026-09-30): the 16x16 average hash reads every 16:9
+            # split page (phone left, dark cards right) as the same frame; it
+            # flagged 24 of 54 pairs whose pixels differ by 5-30 levels. A real
+            # repeat measured 0.89. Landscape needs the pixels to agree too.
+            a_img, b_img = imgs[i - 1], imgs[i]
+            if a_img.size[0] > a_img.size[1] and _mad(a_img, b_img) >= 3.0:
+                continue
             a, b = scenes[i - 1]["type"], scenes[i]["type"]
             flags.append(
                 f"[DUPLICATE] scenes {i-1:02d}({a}) → {i:02d}({b}) look "
@@ -350,7 +363,12 @@ def main():
     # 60% looks unfinished in a clean player; content below ~82% is covered on
     # the phone — which is Rule 1, so it blocks. Measured on the settled last
     # frame of each scene: the lowest row carrying visible type or marks.
-    if not from_stills and video.exists():
+    # A 16:9 long-form video has no app UI painted over its lower fifth: the
+    # YouTube player's controls hide while it plays. The rule is Rule 1's 9:16
+    # overlay, so it is not applied to a landscape sheet (2026-09-30, first
+    # long-form render, which it flagged on 30 of 32 scenes).
+    landscape = int(beats.get("width", 1080)) > int(beats.get("height", 1920))
+    if not from_stills and video.exists() and not landscape:
         import subprocess as _sp
         _t = 0.0
         for i, sc in enumerate(scenes):

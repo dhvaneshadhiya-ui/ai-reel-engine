@@ -73,15 +73,27 @@ AI_LINE_TEXT = "The presenter's face and voice in this video are AI-generated."
 def parse(text: str) -> dict[str, dict[str, str]]:
     blocks: dict[str, dict[str, str]] = {}
     cur = None
+    last = None
     for line in text.splitlines():
-        h = re.match(r"^\s*#{1,3}\s*([A-Za-z/ ]+)\s*$", line)
-        if h:
-            cur = h.group(1).strip().lower().replace("/", "")
-            blocks[cur] = {}
+        if line.lstrip().startswith("#"):
+            h = re.match(r"^\s*#{1,3}\s*([A-Za-z/ ]+)\s*$", line)
+            if h:
+                cur = h.group(1).strip().lower().replace("/", "")
+                blocks[cur] = {}
+            last = None
             continue
         f = re.match(r"^\s*([A-Z][A-Z ]+):\s*(.*)$", line)
         if f and cur:
-            blocks[cur][f.group(1).strip().upper()] = f.group(2).strip()
+            last = f.group(1).strip().upper()
+            blocks[cur][last] = f.group(2).strip()
+            continue
+        # A YouTube description is paragraphs plus a chapter list; everything up
+        # to the next FIELD: or heading is part of what gets pasted (2026-09-30).
+        if last and cur:
+            blocks[cur][last] += "\n" + line
+    for fields in blocks.values():
+        for k in fields:
+            fields[k] = fields[k].strip()
     return blocks
 
 
