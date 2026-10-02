@@ -9425,3 +9425,42 @@ with the sound off; a desk under "a third input device" does not.
 - "X becomes Y for Z": two stills stacked, `connect` with arrow + travelling pulses
 - a requirement that is a RELATIONSHIP: the same vertical link, labelled, not a spec table
 - payoff: the opening picture returns with its empty place filled (loop closed)
+## 2026-10-02 — ios27-accessibility-features: a top5 built from a May preview, checked against what shipped
+
+56.0s, 16 slides, presenter bookends (HeyGen back on Pro: 1,926 credits; ~10 used, 6.0s + 2.8s
+slices), 9 SFX (9/9 heard after one swap), -14.5 LUFS. Format top5 with allowLong.
+
+- **RAW NOTE 1 — the reference article was a preview, written four months before the release.**
+  BGR (2026-05-20) listed seven features off Apple's 2026-05-19 release. Checked against Apple's
+  iOS 27 release notes and User Guide: Name Recognition shipped in iOS 26 (only its languages are
+  new), the FaceTime interpreter API first appeared in the 27.2 developer beta, the Sony Access
+  controller has no post-release confirmation, and BGR's "flash" alert is a notification. Rule:
+  when the user's reference predates the release, every item is re-verified against the SHIPPING
+  docs (release notes + User Guide), never against the announcement it was written from.
+- **RAW NOTE 2 — the requirement became the open loop.** All five run on Apple Intelligence
+  (iPhone 15 Pro or later) and two are English-only in a few countries. Said once, at the end, as
+  "the catch" promised in sentence two, instead of a caveat after every item.
+- **RAW NOTE 3 — framework_check F5 reads "then follow up" as a CTA** (`follow` is in its ASK
+  regex). Reworded the line rather than widening the gate for one reel; if it recurs, exclude
+  "follow up" in framework_check with a self-test case.
+- **RAW NOTE 4 — a `focus` rect taller than the box fit does not zoom.** camFor() scales by
+  rect*1.5; a whole-phone rect (660x1240 in a 1960x1307 image, box 820px) resolved to the resting
+  fit, so the "frame-0 push-in" did nothing. Use a rect about half the box height.
+- **RAW NOTE 5 — whisper's word boundary sat 0.5s early on the CTA** ("Know" at 52.86, real onset
+  53.4 by silencedetect). Cut presenter slices at silencedetect pauses, not at whisper times, and
+  tpad the conformed clip so its first spoken frame lands on the scene's audio.
+- **RAW NOTE 6 — Apple's media-kit notice ("cannot be altered") constrains the COVER more than the
+  reel.** In the reel a camera push over the whole image reads as display; a cover crop is an
+  edit. Cover used the whole image scaled on a dark canvas: honest, but the subject is small.
+- sfx: paper-quick under speech MASKED again (second reel); Camera Shutter on a still's state
+  change is audible. Prefer shutter for a page/still swap under the voice.
+- ElevenLabs v3: 163 words at 3.28 w/s (49.7s, ~959 credits), vo_pad to 56s; whisper small heard
+  every product name and number right.
+
+Treatment history: Apple's Magnifier press image as frame-0 hook with a camera walk (chip → bill →
+$83.89 answer → Ask button → "When is this due?"), five numbered rows as the promise, five "?" rows
+for the withheld catch, a before/after swap with a strike for Voice Control, Apple's Voice Control
+demo clip whole, two trims of Apple's VoiceOver film, a before→after state crossfade for
+Accessibility Reader, a focus on the generated subtitle, rows for the requirement and the
+English-only countries. Next accessibility/feature-list reel: do not open on a press image of a
+bill again; open on a real device recording if a simulator is available on that machine.
