@@ -8,33 +8,35 @@ Written BEFORE the first sentence. Framework:
 An iPhone owner who skips Accessibility settings because they assume it is
 "not for them" discovers that iOS 27 put some of its most useful Apple
 Intelligence tricks there (a phone that reads a bill's total, voice commands
-in plain words, auto subtitles), which matters because they can try them
-tonight, as long as their iPhone is a 15 Pro or newer.
+in plain words, auto subtitles), plus one that works on any iPhone in 50+
+languages, which matters because they can try them tonight, and know which
+ones need a 15 Pro or newer.
 
 ## SHAPE (S17)
 
 List with a withheld catch. Open on the most concrete demo (Magnifier reading
 a bill total) so frame 0 is the payoff, then number it as #1 and run the other
-four in order of how many people meet them: voice, photos, reading, video. The
-catch (the iPhone 15 Pro requirement, plus English-only for two) is promised up
-front and paid at the end, so a list of five equals has a reason to keep going.
+four in order of how many people meet them: voice, photos, your name, video. The
+catch (four need an iPhone 15 Pro, two are English-only; Name Recognition is the
+exception that runs anywhere) is promised up front and paid at the end, so a list of five equals has a reason to keep going.
 
 ## PROMISE (S2)
 
-Five new accessibility features in iOS 27 worth turning on, and the one catch
-that covers all of them.
+Five iOS 27 accessibility upgrades worth turning on, and the catch that
+covers four of them.
 
 ## OPEN LOOP (S10)
 
-Planted: sentence 2, "and there's a catch that applies to every one."
-Paid off: "The catch? All five run on Apple Intelligence, so you need an iPhone 15 Pro or later." Then the
+Planted: sentence 2, "and four of them come with a catch."
+Paid off: "The catch? Name Recognition works on any iPhone with iOS 27. The rest run on Apple Intelligence, so you need an iPhone 15 Pro or later." Then the
 narrower catch for two of them (English only, a few countries), then the CTA.
 
 ## WHAT -> WHY -> SO WHAT (S7)
 
 WHAT: iOS 27 adds Ask Magnifier, natural-language Voice Control, VoiceOver
-image Q&A, a smarter Accessibility Reader and generated subtitles.
-WHY: all five run on Apple Intelligence, which is why they need a 15 Pro or later.
+image Q&A and generated subtitles, and widens Name Recognition to 50+ languages.
+WHY: four run on Apple Intelligence, which is why they need a 15 Pro or later;
+Name Recognition does not.
 SO WHAT: on an eligible iPhone they are ready to try now; on an older one,
 none of them will appear, so don't go looking.
 
@@ -46,7 +48,8 @@ sees the hook happen before item two is named.
 
 ## VIEWER QUESTIONS
 
-- Q: Will this work on my iPhone?  A: "you need an iPhone 15 Pro or later"
+- Q: Will this work on my iPhone?  A: "Name Recognition works on any iPhone with iOS 27. The rest run on Apple Intelligence, so you need an iPhone 15 Pro or later."
+- Q: Does it work in Hindi?  A: "it now works in more than 50 languages, including Hindi"
 - Q: Where is the bill feature?  A: "That first one is Magnifier. Tap Ask"
 - Q: Do I have to learn Voice Control commands?  A: "Voice Control stops making you memorize button names."
 - Q: Why are subtitles showing up on my videos?  A: "videos with no captions now get subtitles on their own"
@@ -54,7 +57,7 @@ sees the hook happen before item two is named.
 
 ## WHAT WAS CUT (S11, S21)
 
-- Name Recognition: on BGR's list as new, but Apple says it has been available since iOS 26; iOS 27 only widens it to 50+ languages. Not new, so not in the five (see questions.md: it is the one item that works on ANY iPhone and in Hindi).
+- Accessibility Reader (cleanup, summaries, translation): cut at the user's call 2026-10-02 for Name Recognition. Name Recognition is spoken as an expansion ("now works in"), since it shipped in iOS 26.
 - FaceTime sign-language interpreter API: not in iOS 27.0 (first seen in the 27.2 developer beta), developer-only, no app uses it.
 - Sony Access controller: press-release claim only, no post-release confirmation.
 - Action button shortcut for Live Recognition/Magnifier: disputed (one hands-on says the option never appeared).
