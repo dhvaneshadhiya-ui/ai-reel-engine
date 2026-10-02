@@ -1189,10 +1189,18 @@ def main() -> None:
                     for c in cues):
                 cues.append({"src": src, "at": at_, "vol": VOL[src]})
 
+        def _phone(sc: dict):
+            return next((bb.get("src") for bb in sc.get("blocks") or []
+                         if bb.get("kind") in ("screen", "clip") and bb.get("device")), None)
+
         for k, sc in enumerate(scenes_):
             if sc.get("type") == "slide":
                 mv = {(m.get("do"), m.get("target")): m.get("at") for m in sc.get("moves") or []}
-                if k > 0:
+                # a phone on both sides of the cut is one world continuing — the
+                # device stays put and only its screen changes — so nothing
+                # whooshes (ios27-settings-longform had 54 whooshes in 6 minutes,
+                # 2026-10-02)
+                if k > 0 and not (_phone(sc) and _phone(scenes_[k - 1])):
                     _cue(sc, "sfx/whoosh.MP3", 0.0)
                 for m in sc.get("moves") or []:
                     if m.get("at") is None:
