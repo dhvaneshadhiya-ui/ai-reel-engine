@@ -2078,6 +2078,32 @@ def check_beats(beats: dict, vo_end: float | None = None,
                 errors.append(f"G65 scene {i:02d} slide `{m.get('do')}` names {m.get('target')!r}, "
                               "which is not a block or part of one — the move never shows.")
 
+    # G71 — A PAGE THAT WAITS, OR STOPS (2026-10-02). ADVICE.
+    # From nateherkai/hyperframes-student-kit (validate-plan flags any visual gap
+    # over 2.2s; MOTION_PHILOSOPHY: "Static = death"), measured against our own
+    # ios27-settings-longform v2, where ~15 pages showed a headline over an empty
+    # column until a late `show`. Two numbers, both taste, so both advise:
+    # the first block lands within 2.2s, and nothing new happens for no more
+    # than 5s (our own "change something every 3-5s") unless a clip is playing.
+    for i, sc in enumerate(scenes):
+        if sc.get("type") != "slide" or not sc.get("blocks"):
+            continue
+        d = float(sc.get("durationSec") or 0)
+        mv = [m for m in sc.get("moves") or [] if isinstance(m.get("at"), (int, float))]
+        lands = [min([m["at"] for m in mv if m.get("do") == "show"
+                      and str(m.get("target")).split(".")[0] == b.get("id")] or [0.0])
+                 for b in sc["blocks"]]
+        if min(lands) > 2.2:
+            errors.append(f"G71 scene {i:02d} slide shows its headline alone for {min(lands):.1f}s before "
+                          "any block lands — bring the first block in on the page's first words.")
+        if any(b.get("kind") == "clip" for b in sc["blocks"]):
+            continue
+        ev = sorted({0.0, d, *lands, *(m["at"] for m in mv)})
+        gap, a = max((b - a, a) for a, b in zip(ev, ev[1:]))
+        if gap > 5.0:
+            errors.append(f"G71 scene {i:02d} slide holds still for {gap:.1f}s from {a:.1f}s — "
+                          "add a move (focus, highlight, state) on a word inside that stretch.")
+
     # G68 (slide) — every number a slide prints is a claim, same as a stage card.
     if sourced_text:
         for i, sc in enumerate(scenes):

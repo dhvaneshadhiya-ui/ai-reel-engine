@@ -830,6 +830,16 @@ Reddit/community trend discovery. The file is something else:
 
 `content-calendar` is plausible LATER, once output is weekly. Not installed.
 
+**`hyperframes-student-kit` — REVIEWED 2026-10-02, REFERENCE COPY ONLY, skills NOT installed.**
+(github.com/nateherkai/hyperframes-student-kit, read in full.) A clean kit (MIT + a
+commercial-use permission, no global writes, no posting) for editing FILMED talking-head
+footage — no TTS, avatar, approval or ledger, so it cannot build our reels. Its
+`make-a-video` ("make a video") and `website-to-hyperframes` (any pasted URL) would contend
+with `news-reel`. The user chose to adopt its RULES (G71, [CUT DIP], the no-whoosh phone
+continuity — STYLE-RULES 2026-10-02) and keep the repo at `~/hyperframes-student-kit` as
+design reference: its 406 cards are 1920x1080-only, AIS-branded drafts, so redraw an idea
+in our blocks, never paste a card.
+
 **`video-talkcraft` — REVIEWED 2026-09-11, DO NOT INSTALL; ideas only.**
 (github.com/Vincentwei1021/video-talkcraft — SKILL.md, licence and scripts read
 in full, not just the README.) A complete, careful Remotion pipeline for

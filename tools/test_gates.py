@@ -1668,6 +1668,19 @@ CASES.append((lambda s: s["scenes"].append(
      "moves": [{"do": "drain", "target": "v", "at": 0.4}]}),
     "G65", "slide levels item with no from"))
 
+# G71: the headline sits alone over an empty page until a late show...
+CASES.append((lambda s: s["scenes"].append(
+    {"type": "slide", "durationSec": 4.0, "headline": "Alarm follows ringer",
+     "blocks": [{"id": "r", "kind": "rows", "rows": [{"k": "a", "v": "b"}]}],
+     "moves": [{"do": "show", "target": "r.0", "at": 3.0}]}),
+    "G71", "slide headline alone for 3s"))
+# ...or the page stops moving for longer than 5s.
+CASES.append((lambda s: s["scenes"].append(
+    {"type": "slide", "durationSec": 9.0, "headline": "Alarm follows ringer",
+     "blocks": [{"id": "r", "kind": "rows", "rows": [{"k": "a", "v": "b"}]}],
+     "moves": [{"do": "highlight", "target": "r.0", "at": 1.0}]}),
+    "G71", "slide still for 8s"))
+
 # G70: 2-5s shows only the presenter and type — no proof of the hook.
 CASES.append((lambda s: (s["scenes"][1].update(type="typecard", kinetic={"text": "BIG CLAIM"}),
                          s["scenes"][2].update(src="assets/x/avatar-master-169.mp4")),
@@ -2247,6 +2260,14 @@ if _wrong:
     raise SystemExit("  FAIL " + "; ".join(_wrong))
 _counted(f"{sum(len(v) for v in _both.values())} one-sided media slots, none of "
          "them a branching one")
+
+# [CUT DIP] (lint_frames, 2026-10-02): a page fading up from black at a cut is
+# flagged; a steady page and a cut between two dark pages are not.
+from lint_frames import cut_dips
+_flash = [(k / 30, 18.0 if 3.0 <= k / 30 < 3.2 else 60.0) for k in range(180)]
+assert cut_dips(_flash, [3.0]) and not cut_dips([(k / 30, 60.0) for k in range(180)], [3.0]) \
+    and not cut_dips([(k / 30, 18.0) for k in range(180)], [3.0]), "CUT DIP detector broken"
+_counted("[CUT DIP] fires on a black flash at a cut, not on steady or dark pages")
 
 # The suite printed "every gate fires on its violation" while G13 and G16 had
 # no failing case at all (found 2026-08-17). Uniqueness of ids was asserted;

@@ -185,6 +185,13 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
   const at = (d: string, target: string) => moves.find((m) => m.do === d && m.target === target)?.at;
   // shown from the start unless a `show` names it (or its parent block)
   const shownAt = (target: string) => at("show", target) ?? at("show", target.split(".")[0]) ?? 0;
+  // NO BLACK AT THE CUT (2026-10-02). Everything used to ramp in from opacity 0,
+  // including what is on the page from its first word, so every cut dipped to
+  // near-black for ~0.3s (ios27-settings-longform: luma 17-60 fell to 2-13 at
+  // all 55 cuts). The student kit names the same defect: a render that "flashes
+  // black". What is there from the start is there on frame 0; only a `show`
+  // move arrives. A phone that carries over a cut now simply stays put.
+  const land = (a: number, d?: number) => (a <= 0 ? 1 : ramp(t, a, d));
 
   // ---- headline: words rise in, 45ms apart; [[x]] becomes the pill ----
   const parts = scene.headline.split(/(\[\[[^\]]+\]\])/).filter(Boolean);
@@ -216,7 +223,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
 
   // ---- a card side: tile, name, big line, note ----
   const side = (s: SlideSide, target: string, glow: boolean, big = false) => {
-    const p = ramp(t, shownAt(target));
+    const p = land(shownAt(target));
     const sk = at("strike", target);
     const sp = sk !== undefined ? ramp(t, sk, 0.35) : 0;
     const price = s.price ? (/^\$?0$/.test(s.price) ? s.price : counted(s.price, ramp(t, shownAt(target), 0.9))) : "";
@@ -259,7 +266,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
       case "hero":
         return <div key={b.id} style={{ display: "flex", flex: "1 0 auto", maxHeight: 760 }}>{side(b.side, b.id, b.side.tone === "free", wide)}</div>;
       case "swap": {
-        const ar = ramp(t, shownAt(`${b.id}.right`) - 0.15, 0.25);
+        const ar = shownAt(`${b.id}.right`) <= 0 ? 1 : ramp(t, shownAt(`${b.id}.right`) - 0.15, 0.25);
         return (
           <div key={b.id} style={{ display: "flex", alignItems: "stretch", gap: 0, flex: "1 0 auto", maxHeight: 760 }}>
             {side(b.left, `${b.id}.left`, b.left.tone === "free")}
@@ -276,7 +283,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
             {b.rows.map((r, i) => {
               const tg = `${b.id}.${i}`;
               const own = at("show", tg);
-              const p = ramp(t, own ?? shownAt(b.id) + (at("show", b.id) !== undefined ? 0.12 * i : 0));
+              const p = land(own ?? shownAt(b.id) + (at("show", b.id) !== undefined ? 0.12 * i : 0));
               const hl = at("highlight", tg);
               const h = hl !== undefined ? ramp(t, hl, 0.3) : 0;
               const sk = at("strike", tg);
@@ -299,7 +306,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
           </div>
         );
       case "text": {
-        const p = ramp(t, shownAt(b.id));
+        const p = land(shownAt(b.id));
         return (
           <div key={b.id} style={{ opacity: p, transform: `translateY(${(1 - p) * 14}px)`,
             font: `500 42px/1.35 ${FONT}`, color: C.sub }}>{b.text}</div>
@@ -307,7 +314,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
       }
       case "tips": {
         const card = (label: string, color: string, text: string, target: string) => {
-          const p = ramp(t, shownAt(target));
+          const p = land(shownAt(target));
           return (
             <div style={{ flex: 1, background: C.card, borderRadius: 26, padding: "30px 32px", border: `2px solid ${C.line}`,
               opacity: p, transform: `translateY(${Math.round((1 - p) * 20)}px)` }}>
@@ -324,7 +331,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         );
       }
       case "screen":
-        return <ScreenBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} wide={wide} />;
+        return <ScreenBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} wide={wide} />;
       case "steps":
         return <StepsBlock key={b.id} b={b} moves={moves} t={t} C={C} />;
       case "devices":
@@ -362,13 +369,13 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         );
       }
       case "clip":
-        return <ClipBlock key={b.id} b={b} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} fps={fps} wide={wide} />;
+        return <ClipBlock key={b.id} b={b} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} fps={fps} wide={wide} />;
       case "gauge":
-        return <GaugeBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
+        return <GaugeBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} />;
       case "levels":
-        return <LevelsBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
+        return <LevelsBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} />;
       case "waves":
-        return <WavesBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={ramp(t, shownAt(b.id))} />;
+        return <WavesBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} />;
       case "logos": {
         const base = shownAt(b.id);
         // MORE THAN 6 ITEMS NEEDS A SMALLER GRID (2026-09-18) — the fixed
@@ -381,7 +388,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         return (
           <div key={b.id} style={{ display: "flex", flexWrap: "wrap", gap: compact ? 12 : 20, justifyContent: "center" }}>
             {b.items.map((it, i) => {
-              const p = ramp(t, base + 0.1 * i, 0.3);
+              const p = base <= 0 ? 1 : ramp(t, base + 0.1 * i, 0.3);
               return (
                 <div key={i} style={{ width: compact ? (COL - 28) / 3 : (COL - 40) / 3, height: tileH, background: C.card, borderRadius: compact ? 20 : 28,
                   border: `2px solid ${C.line}`, display: "flex", flexDirection: "column", alignItems: "center",
@@ -425,8 +432,8 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         <div style={{ position: "absolute", left: L, top: TOP ?? 0, bottom: BOTTOM ?? 0, width: LEFT_W,
           display: "flex", alignItems: "center", justifyContent: "center" }}>
           {phoneBlock.kind === "screen"
-            ? <ScreenBlock b={phoneBlock} moves={moves} t={t} boxW={LEFT_W} C={C} shown={ramp(t, shownAt(phoneBlock.id))} wide={false} />
-            : <ClipBlock b={phoneBlock as ClipBlockProps} t={t} boxW={LEFT_W} C={C} shown={ramp(t, shownAt(phoneBlock.id))} fps={fps} wide={false} />}
+            ? <ScreenBlock b={phoneBlock} moves={moves} t={t} boxW={LEFT_W} C={C} shown={land(shownAt(phoneBlock.id))} wide={false} />
+            : <ClipBlock b={phoneBlock as ClipBlockProps} t={t} boxW={LEFT_W} C={C} shown={land(shownAt(phoneBlock.id))} fps={fps} wide={false} />}
         </div>
       ) : null}
       <div style={{ position: "absolute", left: L + LEFT_W + GAP, top: TOP ?? (scene.series || scene.index ? 200 : 250), width: COL,

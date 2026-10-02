@@ -9464,3 +9464,22 @@ demo clip whole, two trims of Apple's VoiceOver film, a before→after state cro
 Accessibility Reader, a focus on the generated subtitle, rows for the requirement and the
 English-only countries. Next accessibility/feature-list reel: do not open on a press image of a
 bill again; open on a real device recording if a simulator is available on that machine.
+
+## 2026-10-02 — hyperframes-student-kit: its rules, not its pipeline
+
+The user proposed nateherkai/hyperframes-student-kit as "the skill we need for reels and long-form".
+Read in full before ruling (all 15 SKILL.md, CLAUDE.md, licence, setup). It edits FILMED talking-head
+footage (transcribe, cut silences, cut mistakes); it has no TTS, avatar, script approval or claims
+ledger, its 406 cards are 1920x1080 only, AIS-branded drafts, and three of its skills
+(`make-a-video`, `website-to-hyperframes`, a second `hyperframes`) would contend with `news-reel`.
+User's call: adopt the rules, keep a reference copy at `~/hyperframes-student-kit` (outside the repo,
+skills NOT installed). What it named that we measured on ios27-settings-longform v2:
+- every page faded up from opacity 0, so 42 of 54 cuts dipped to black (its Law 11, "flashes
+  black"). Fixed at the root in Slide.tsx (`land`): start-of-page content is there on frame 0.
+  lint_frames now measures luma at every cut: [CUT DIP] blocks.
+- ~12 pages were a headline over an empty column or held still 5-9s (its validate-plan flags any
+  visual gap over 2.2s; "Static = death"). G71 advises at 2.2s first-land / 5s still.
+- 54 whooshes in 6 minutes, most on cuts where the phone never moved. A phone on both sides of a
+  cut is one world continuing: compile_shot_plan no longer whooshes it (54 -> 19).
+Rejected: its ad pacing (scenes 1-2s, an element every 0.3-0.6s — its own CLAUDE.md says to let
+educational speech breathe), chrome-gradient text (its own showreel skill says it renders invisible).

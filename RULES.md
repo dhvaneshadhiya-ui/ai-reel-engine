@@ -306,6 +306,14 @@ and a lot of it turns out true.
   lands on the words saying the number. [EYE]
 - A region carries only as many visuals as it has time for; never emit a
   sub-0.6s beat — it reads as a glitch, not a cut. [EYE]
+- **A slide page is never a headline over an empty column, and never still.**
+  First block lands within 2.2s; something new lands at least every 5s unless
+  a clip is playing. [GATE:G71, advice]
+- **No black at a cut.** What is on a page from its first word is on frame 0;
+  only a `show` move arrives. A dip to black at a cut blocks. [LINT:CUT DIP]
+- **One world, not a slideshow.** A phone on both sides of a cut stays put and
+  only its screen changes, with no whoosh. One element at full brightness at a
+  time. [EYE] (from hyperframes-student-kit, 2026-10-02)
 
 ## 5. Composition
 
