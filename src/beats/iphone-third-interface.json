@@ -3,135 +3,9 @@
   "fps": 30,
   "width": 1080,
   "height": 1920,
-  "style": "editorial",
+  "style": "utility",
   "audio": "assets/iphone-third-interface/vo-master.m4a",
-  "music": {
-    "src": "music/bed-02.mp3",
-    "from": 0,
-    "points": [
-      {
-        "t": 0.0,
-        "vol": 0.15
-      },
-      {
-        "t": 0.099,
-        "vol": 0.055
-      },
-      {
-        "t": 1.659,
-        "vol": 0.055
-      },
-      {
-        "t": 1.999,
-        "vol": 0.15
-      },
-      {
-        "t": 2.06,
-        "vol": 0.15
-      },
-      {
-        "t": 2.24,
-        "vol": 0.055
-      },
-      {
-        "t": 3.939,
-        "vol": 0.055
-      },
-      {
-        "t": 4.26,
-        "vol": 0.15
-      },
-      {
-        "t": 4.44,
-        "vol": 0.055
-      },
-      {
-        "t": 5.879,
-        "vol": 0.055
-      },
-      {
-        "t": 6.179,
-        "vol": 0.15
-      },
-      {
-        "t": 6.219,
-        "vol": 0.15
-      },
-      {
-        "t": 6.359,
-        "vol": 0.055
-      },
-      {
-        "t": 12.799,
-        "vol": 0.055
-      },
-      {
-        "t": 13.079,
-        "vol": 0.15
-      },
-      {
-        "t": 13.139,
-        "vol": 0.15
-      },
-      {
-        "t": 13.259,
-        "vol": 0.055
-      },
-      {
-        "t": 14.939,
-        "vol": 0.055
-      },
-      {
-        "t": 15.259,
-        "vol": 0.15
-      },
-      {
-        "t": 15.439,
-        "vol": 0.055
-      },
-      {
-        "t": 28.0,
-        "vol": 0.055
-      },
-      {
-        "t": 28.339,
-        "vol": 0.15
-      },
-      {
-        "t": 28.519,
-        "vol": 0.055
-      },
-      {
-        "t": 31.119,
-        "vol": 0.055
-      },
-      {
-        "t": 31.459,
-        "vol": 0.15
-      },
-      {
-        "t": 31.519,
-        "vol": 0.15
-      },
-      {
-        "t": 31.699,
-        "vol": 0.055
-      },
-      {
-        "t": 34.54,
-        "vol": 0.15
-      },
-      {
-        "t": 35.219,
-        "vol": 0.055
-      },
-      {
-        "t": 35.44,
-        "vol": 0.02
-      }
-    ],
-    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
-  },
+  "facePlan": "none",
   "captionStyle": "chip-lg",
   "emphasis": [
     "third",
@@ -145,88 +19,215 @@
   ],
   "scenes": [
     {
-      "type": "footage",
-      "src": "assets/iphone-third-interface/apps-wide.mp4",
-      "zoomDir": "none",
-      "focusX": 0.3244,
-      "headline": {
-        "lines": [
-          {
-            "text": "YOUR MAC HAS",
-            "kind": "label",
-            "at": 0.05
-          },
-          {
-            "text": "A THIRD",
-            "kind": "headline",
-            "at": 0.28
-          },
-          {
-            "text": "INPUT DEVICE",
-            "kind": "headline",
-            "at": 0.55
-          }
-        ],
-        "y": 0.13,
-        "theme": "dark"
-      },
-      "sfx": [
+      "type": "stage",
+      "set": "dark",
+      "layout": "full",
+      "elements": [
         {
-          "src": "sfx/Camera Shutter.MP3",
-          "at": 0.04,
-          "vol": 0.32
+          "id": "kb",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.2,
+          "w": 0.86,
+          "title": "KEYBOARD",
+          "tone": "dark"
+        },
+        {
+          "id": "tp",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.47,
+          "w": 0.86,
+          "title": "TRACKPAD",
+          "tone": "dark"
+        },
+        {
+          "id": "slot",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.76,
+          "w": 0.86,
+          "title": "?",
+          "tone": "accent",
+          "lines": [
+            "the third one"
+          ]
         }
       ],
-      "zoom": 1.5,
-      "durationSec": 2.24,
-      "assetId": "apps-wide",
-      "claimId": "apps-wide",
-      "covers": "Your Mac has",
-      "sourceUrl": "https://choclift.com/",
-      "credit": "official product video, choclift.com (recorded only \u2014 not drawn)"
-    },
-    {
-      "type": "footage",
-      "src": "assets/iphone-third-interface/gest-hand.mp4",
-      "zoomDir": "none",
-      "focusX": 0.4122,
-      "durationSec": 2.2,
-      "assetId": "gest-hand",
-      "claimId": "gest-hand",
-      "covers": "Not the keyboard",
-      "sourceUrl": "https://choclift.com/",
-      "credit": "official product video, choclift.com (recorded only \u2014 not drawn)"
-    },
-    {
-      "type": "footage",
-      "src": "assets/iphone-third-interface/apps-hand.mp4",
-      "zoomDir": "in",
-      "focusX": 0.5,
+      "moves": [
+        {
+          "do": "arrive",
+          "at": 0.62,
+          "target": "slot",
+          "dir": "pop"
+        },
+        {
+          "do": "strike",
+          "at": 2.2,
+          "target": "kb"
+        },
+        {
+          "do": "strike",
+          "at": 3.44,
+          "target": "tp"
+        },
+        {
+          "do": "highlight",
+          "at": 4.0,
+          "target": "slot"
+        }
+      ],
       "sfx": [
         {
           "src": "sfx/Pop.MP3",
-          "at": 0.05,
-          "vol": 0.343
+          "at": 0.62,
+          "vol": 0.182
+        },
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 2.2,
+          "vol": 0.221
+        },
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 3.44,
+          "vol": 0.221
         }
       ],
-      "durationSec": 1.919,
-      "assetId": "apps-hand",
-      "claimId": "apps-hand",
-      "covers": "The one",
-      "sourceUrl": "https://choclift.com/",
-      "credit": "official product video, choclift.com (recorded only \u2014 not drawn)"
+      "exit": "push",
+      "durationSec": 4.44
     },
     {
-      "type": "footage",
-      "src": "assets/iphone-third-interface/apps-panel.mp4",
-      "zoomDir": "in",
-      "focusX": 0.5,
-      "durationSec": 3.26,
-      "assetId": "apps-panel",
-      "claimId": "apps-panel",
-      "covers": "This app turns",
-      "sourceUrl": "https://choclift.com/",
-      "credit": "official product video, choclift.com (recorded only \u2014 not drawn)"
+      "type": "stage",
+      "set": "dark",
+      "layout": "full",
+      "hideCaptions": true,
+      "elements": [
+        {
+          "id": "ph",
+          "kind": "image",
+          "x": 0.5,
+          "y": 0.44,
+          "w": 0.92,
+          "h": 0.74,
+          "src": "assets/iphone-third-interface/still-phone.png",
+          "label": "iPhone on the desk"
+        },
+        {
+          "id": "lbl",
+          "kind": "text",
+          "x": 0.5,
+          "y": 0.9,
+          "w": 0.94,
+          "text": "IN YOUR HAND",
+          "size": 0.82
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "at": 0.1,
+          "target": "ph",
+          "dir": "pop"
+        },
+        {
+          "do": "arrive",
+          "at": 0.56,
+          "target": "lbl",
+          "dir": "up"
+        },
+        {
+          "do": "focus",
+          "at": 1.05,
+          "target": "ph"
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 0.1,
+          "vol": 0.295
+        }
+      ],
+      "durationSec": 1.919
+    },
+    {
+      "type": "stage",
+      "set": "dark",
+      "layout": "full",
+      "hideCaptions": true,
+      "elements": [
+        {
+          "id": "grid",
+          "kind": "image",
+          "x": 0.5,
+          "y": 0.27,
+          "w": 0.94,
+          "h": 0.58,
+          "src": "assets/iphone-third-interface/still-grid.png",
+          "label": "the app's grid on the iPhone"
+        },
+        {
+          "id": "mac",
+          "kind": "image",
+          "x": 0.5,
+          "y": 0.66,
+          "w": 0.74,
+          "h": 0.46,
+          "src": "assets/iphone-third-interface/still-mac.png",
+          "label": "the Mac it drives"
+        },
+        {
+          "id": "cap",
+          "kind": "text",
+          "x": 0.5,
+          "y": 0.9,
+          "w": 0.92,
+          "text": "A CONTROL PANEL FOR YOUR MAC",
+          "size": 0.6
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "at": 0.1,
+          "target": "grid",
+          "dir": "up"
+        },
+        {
+          "do": "arrive",
+          "at": 0.34,
+          "target": "mac",
+          "dir": "down"
+        },
+        {
+          "do": "fill",
+          "at": 0.2,
+          "target": "grid"
+        },
+        {
+          "do": "connect",
+          "at": 1.12,
+          "from": "grid",
+          "to": "mac",
+          "arrow": true,
+          "repeat": 3
+        },
+        {
+          "do": "arrive",
+          "at": 2.3,
+          "target": "cap",
+          "dir": "up"
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "at": 1.46,
+          "vol": 0.133
+        }
+      ],
+      "durationSec": 3.26
     },
     {
       "type": "floatcard",
@@ -242,13 +243,7 @@
         ],
         "y": 0.13
       },
-      "sfx": [
-        {
-          "src": "sfx/Click.MP3",
-          "at": 0.1,
-          "vol": 0.251
-        }
-      ],
+      "exit": "push",
       "durationSec": 2.48,
       "assetId": "apps-demo",
       "claimId": "apps-demo",
@@ -273,11 +268,12 @@
           0.95
         ]
       },
+      "exit": "whip",
       "sfx": [
         {
           "src": "sfx/Click.MP3",
           "at": 0.95,
-          "vol": 0.251
+          "vol": 0.133
         }
       ],
       "durationSec": 3.34,
@@ -301,13 +297,7 @@
         ],
         "y": 0.13
       },
-      "sfx": [
-        {
-          "src": "sfx/Click.MP3",
-          "at": 0.1,
-          "vol": 0.251
-        }
-      ],
+      "exit": "push",
       "durationSec": 3.401,
       "assetId": "web-demo",
       "claimId": "web-demo",
@@ -329,6 +319,7 @@
         ],
         "y": 0.13
       },
+      "exit": "whip",
       "durationSec": 2.979,
       "assetId": "rec-demo",
       "claimId": "rec-demo",
@@ -354,7 +345,7 @@
         {
           "src": "sfx/whoosh.MP3",
           "at": 0.1,
-          "vol": 0.582
+          "vol": 0.309
         }
       ],
       "durationSec": 2.24,
@@ -365,25 +356,87 @@
       "credit": "official product video, choclift.com (recorded only \u2014 not drawn)"
     },
     {
-      "type": "specsheet",
-      "title": "WHAT IT TAKES",
-      "kicker": "BEFORE YOU TRY IT",
-      "rows": [
+      "type": "stage",
+      "set": "dark",
+      "layout": "full",
+      "hideCaptions": true,
+      "elements": [
         {
-          "label": "On the iPhone",
-          "value": "the app"
+          "id": "ph2",
+          "kind": "image",
+          "x": 0.5,
+          "y": 0.2,
+          "w": 0.74,
+          "h": 0.48,
+          "src": "assets/iphone-third-interface/still-phone.png",
+          "label": "iPhone"
         },
         {
-          "label": "On the Mac",
-          "value": "a companion app",
-          "accent": true
+          "id": "mac2",
+          "kind": "image",
+          "x": 0.5,
+          "y": 0.56,
+          "w": 0.74,
+          "h": 0.46,
+          "src": "assets/iphone-third-interface/still-mac.png",
+          "label": "Mac"
         },
         {
-          "label": "Both devices",
-          "value": "same Wi-Fi"
+          "id": "wifi",
+          "kind": "text",
+          "x": 0.5,
+          "y": 0.78,
+          "w": 0.94,
+          "text": "SAME WI-FI",
+          "size": 0.72
+        },
+        {
+          "id": "note",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.9,
+          "w": 0.88,
+          "tone": "dark",
+          "title": "ON THE MAC",
+          "lines": [
+            "a companion app"
+          ]
         }
       ],
-      "footnote": "every action runs locally on the Mac",
+      "moves": [
+        {
+          "do": "arrive",
+          "at": 0.08,
+          "target": "ph2",
+          "dir": "left"
+        },
+        {
+          "do": "arrive",
+          "at": 0.08,
+          "target": "mac2",
+          "dir": "right"
+        },
+        {
+          "do": "arrive",
+          "at": 0.56,
+          "target": "note",
+          "dir": "up"
+        },
+        {
+          "do": "connect",
+          "at": 2.22,
+          "from": "ph2",
+          "to": "mac2",
+          "repeat": 4,
+          "weight": 3
+        },
+        {
+          "do": "arrive",
+          "at": 2.3,
+          "target": "wifi",
+          "dir": "pop"
+        }
+      ],
       "durationSec": 3.14
     },
     {
@@ -405,6 +458,7 @@
       "zoomDir": "none",
       "focusX": 0.4415,
       "zoom": 1.6,
+      "exit": "push",
       "durationSec": 1.44,
       "assetId": "rec-mac",
       "claimId": "rec-mac",
@@ -413,40 +467,72 @@
       "credit": "official product video, choclift.com (recorded only \u2014 not drawn)"
     },
     {
-      "type": "footage",
-      "src": "assets/iphone-third-interface/apps-wide.mp4",
-      "zoomDir": "none",
-      "focusX": 0.2659,
-      "headline": {
-        "lines": [
-          {
-            "text": "A THIRD",
-            "kind": "label",
-            "at": 0.08
-          },
-          {
-            "text": "INTERFACE",
-            "kind": "headline",
-            "at": 0.3
-          }
-        ],
-        "y": 0.15,
-        "theme": "dark"
-      },
+      "type": "stage",
+      "set": "dark",
+      "layout": "full",
+      "elements": [
+        {
+          "id": "kb2",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.15,
+          "w": 0.86,
+          "title": "KEYBOARD",
+          "tone": "dark"
+        },
+        {
+          "id": "tp2",
+          "kind": "card",
+          "x": 0.5,
+          "y": 0.38,
+          "w": 0.86,
+          "title": "TRACKPAD",
+          "tone": "dark"
+        },
+        {
+          "id": "ph3",
+          "kind": "image",
+          "x": 0.5,
+          "y": 0.72,
+          "w": 0.88,
+          "h": 0.5,
+          "src": "assets/iphone-third-interface/still-phone.png",
+          "label": "the third interface"
+        }
+      ],
+      "moves": [
+        {
+          "do": "arrive",
+          "at": 0.0,
+          "target": "kb2",
+          "dir": "left"
+        },
+        {
+          "do": "arrive",
+          "at": 0.06,
+          "target": "tp2",
+          "dir": "left"
+        },
+        {
+          "do": "arrive",
+          "at": 0.5,
+          "target": "ph3",
+          "dir": "pop"
+        },
+        {
+          "do": "highlight",
+          "at": 1.05,
+          "target": "ph3"
+        }
+      ],
       "sfx": [
         {
           "src": "sfx/Core.MP3",
-          "at": 0.08,
-          "vol": 0.556
+          "at": 0.5,
+          "vol": 0.295
         }
       ],
-      "zoom": 1.55,
-      "durationSec": 1.74,
-      "assetId": "apps-wide",
-      "claimId": "apps-wide",
-      "covers": "live right beside",
-      "sourceUrl": "https://choclift.com/",
-      "credit": "official product video, choclift.com (recorded only \u2014 not drawn)"
+      "durationSec": 1.74
     },
     {
       "type": "commentcta",
@@ -469,218 +555,801 @@
     {
       "start": 0.099,
       "end": 0.559,
-      "text": "Your Mac has"
+      "text": "Your Mac has",
+      "words": [
+        {
+          "t": 0.099,
+          "text": "Your"
+        },
+        {
+          "t": 0.199,
+          "text": "Mac"
+        },
+        {
+          "t": 0.459,
+          "text": "has"
+        }
+      ]
     },
     {
       "start": 0.599,
       "end": 1.24,
-      "text": "a third input"
+      "text": "a third input",
+      "words": [
+        {
+          "t": 0.599,
+          "text": "a"
+        },
+        {
+          "t": 0.719,
+          "text": "third"
+        },
+        {
+          "t": 1.039,
+          "text": "input"
+        }
+      ]
     },
     {
       "start": 1.299,
       "end": 2.439,
-      "text": "device. Not the"
+      "text": "device. Not the",
+      "words": [
+        {
+          "t": 1.299,
+          "text": "device."
+        },
+        {
+          "t": 2.24,
+          "text": "Not"
+        },
+        {
+          "t": 2.399,
+          "text": "the"
+        }
+      ]
     },
     {
       "start": 2.519,
       "end": 3.419,
-      "text": "keyboard. Not the"
+      "text": "keyboard. Not the",
+      "words": [
+        {
+          "t": 2.519,
+          "text": "keyboard."
+        },
+        {
+          "t": 3.199,
+          "text": "Not"
+        },
+        {
+          "t": 3.359,
+          "text": "the"
+        }
+      ]
     },
     {
       "start": 3.48,
       "end": 4.679,
-      "text": "trackpad. The one"
+      "text": "trackpad. The one",
+      "words": [
+        {
+          "t": 3.48,
+          "text": "trackpad."
+        },
+        {
+          "t": 4.44,
+          "text": "The"
+        },
+        {
+          "t": 4.579,
+          "text": "one"
+        }
+      ]
     },
     {
       "start": 4.739,
       "end": 5.42,
-      "text": "that's already in"
+      "text": "that's already in",
+      "words": [
+        {
+          "t": 4.739,
+          "text": "that's"
+        },
+        {
+          "t": 5.0,
+          "text": "already"
+        },
+        {
+          "t": 5.359,
+          "text": "in"
+        }
+      ]
     },
     {
       "start": 5.48,
       "end": 6.48,
-      "text": "your hand. This"
+      "text": "your hand. This",
+      "words": [
+        {
+          "t": 5.48,
+          "text": "your"
+        },
+        {
+          "t": 5.619,
+          "text": "hand."
+        },
+        {
+          "t": 6.359,
+          "text": "This"
+        }
+      ]
     },
     {
       "start": 6.539,
       "end": 7.059,
-      "text": "app turns your"
+      "text": "app turns your",
+      "words": [
+        {
+          "t": 6.539,
+          "text": "app"
+        },
+        {
+          "t": 6.759,
+          "text": "turns"
+        },
+        {
+          "t": 7.0,
+          "text": "your"
+        }
+      ]
     },
     {
       "start": 7.159,
       "end": 7.719,
-      "text": "iPhone into a"
+      "text": "iPhone into a",
+      "words": [
+        {
+          "t": 7.159,
+          "text": "iPhone"
+        },
+        {
+          "t": 7.48,
+          "text": "into"
+        },
+        {
+          "t": 7.699,
+          "text": "a"
+        }
+      ]
     },
     {
       "start": 7.819,
       "end": 8.8,
-      "text": "custom control panel"
+      "text": "custom control panel",
+      "words": [
+        {
+          "t": 7.819,
+          "text": "custom"
+        },
+        {
+          "t": 8.159,
+          "text": "control"
+        },
+        {
+          "t": 8.539,
+          "text": "panel"
+        }
+      ]
     },
     {
       "start": 8.859,
       "end": 9.38,
-      "text": "for your Mac."
+      "text": "for your Mac.",
+      "words": [
+        {
+          "t": 8.859,
+          "text": "for"
+        },
+        {
+          "t": 9.0,
+          "text": "your"
+        },
+        {
+          "t": 9.159,
+          "text": "Mac."
+        }
+      ]
     },
     {
       "start": 9.619,
       "end": 10.28,
-      "text": "Tap once to"
+      "text": "Tap once to",
+      "words": [
+        {
+          "t": 9.619,
+          "text": "Tap"
+        },
+        {
+          "t": 9.939,
+          "text": "once"
+        },
+        {
+          "t": 10.179,
+          "text": "to"
+        }
+      ]
     },
     {
       "start": 10.34,
       "end": 10.859,
-      "text": "open the apps"
+      "text": "open the apps",
+      "words": [
+        {
+          "t": 10.34,
+          "text": "open"
+        },
+        {
+          "t": 10.559,
+          "text": "the"
+        },
+        {
+          "t": 10.699,
+          "text": "apps"
+        }
+      ]
     },
     {
       "start": 10.92,
       "end": 11.46,
-      "text": "you use every"
+      "text": "you use every",
+      "words": [
+        {
+          "t": 10.92,
+          "text": "you"
+        },
+        {
+          "t": 11.099,
+          "text": "use"
+        },
+        {
+          "t": 11.319,
+          "text": "every"
+        }
+      ]
     },
     {
       "start": 11.539,
       "end": 12.279,
-      "text": "day. Add a"
+      "text": "day. Add a",
+      "words": [
+        {
+          "t": 11.539,
+          "text": "day."
+        },
+        {
+          "t": 12.099,
+          "text": "Add"
+        },
+        {
+          "t": 12.259,
+          "text": "a"
+        }
+      ]
     },
     {
       "start": 12.38,
       "end": 13.46,
-      "text": "shortcut, and a"
+      "text": "shortcut, and a",
+      "words": [
+        {
+          "t": 12.38,
+          "text": "shortcut,"
+        },
+        {
+          "t": 13.259,
+          "text": "and"
+        },
+        {
+          "t": 13.42,
+          "text": "a"
+        }
+      ]
     },
     {
       "start": 13.5,
       "end": 14.4,
-      "text": "whole workflow becomes"
+      "text": "whole workflow becomes",
+      "words": [
+        {
+          "t": 13.5,
+          "text": "whole"
+        },
+        {
+          "t": 13.739,
+          "text": "workflow"
+        },
+        {
+          "t": 14.099,
+          "text": "becomes"
+        }
+      ]
     },
     {
       "start": 14.5,
       "end": 15.599,
-      "text": "one button. Save"
+      "text": "one button. Save",
+      "words": [
+        {
+          "t": 14.5,
+          "text": "one"
+        },
+        {
+          "t": 14.679,
+          "text": "button."
+        },
+        {
+          "t": 15.439,
+          "text": "Save"
+        }
+      ]
     },
     {
       "start": 15.639,
       "end": 16.1,
-      "text": "the sites you"
+      "text": "the sites you",
+      "words": [
+        {
+          "t": 15.639,
+          "text": "the"
+        },
+        {
+          "t": 15.779,
+          "text": "sites"
+        },
+        {
+          "t": 16.039,
+          "text": "you"
+        }
+      ]
     },
     {
       "start": 16.159,
       "end": 17.36,
-      "text": "always open, and"
+      "text": "always open, and",
+      "words": [
+        {
+          "t": 16.159,
+          "text": "always"
+        },
+        {
+          "t": 16.559,
+          "text": "open,"
+        },
+        {
+          "t": 17.239,
+          "text": "and"
+        }
+      ]
     },
     {
       "start": 17.459,
       "end": 18.04,
-      "text": "launch them from"
+      "text": "launch them from",
+      "words": [
+        {
+          "t": 17.459,
+          "text": "launch"
+        },
+        {
+          "t": 17.739,
+          "text": "them"
+        },
+        {
+          "t": 17.92,
+          "text": "from"
+        }
+      ]
     },
     {
       "start": 18.059,
       "end": 18.779,
-      "text": "the same grid."
+      "text": "the same grid.",
+      "words": [
+        {
+          "t": 18.059,
+          "text": "the"
+        },
+        {
+          "t": 18.199,
+          "text": "same"
+        },
+        {
+          "t": 18.44,
+          "text": "grid."
+        }
+      ]
     },
     {
       "start": 18.84,
       "end": 19.439,
-      "text": "Scroll back through"
+      "text": "Scroll back through",
+      "words": [
+        {
+          "t": 18.84,
+          "text": "Scroll"
+        },
+        {
+          "t": 19.119,
+          "text": "back"
+        },
+        {
+          "t": 19.299,
+          "text": "through"
+        }
+      ]
     },
     {
       "start": 19.5,
       "end": 20.1,
-      "text": "everything you had"
+      "text": "everything you had",
+      "words": [
+        {
+          "t": 19.5,
+          "text": "everything"
+        },
+        {
+          "t": 19.859,
+          "text": "you"
+        },
+        {
+          "t": 20.0,
+          "text": "had"
+        }
+      ]
     },
     {
       "start": 20.18,
       "end": 21.18,
-      "text": "open, and jump"
+      "text": "open, and jump",
+      "words": [
+        {
+          "t": 20.18,
+          "text": "open,"
+        },
+        {
+          "t": 20.84,
+          "text": "and"
+        },
+        {
+          "t": 21.039,
+          "text": "jump"
+        }
+      ]
     },
     {
       "start": 21.219,
       "end": 21.68,
-      "text": "straight to it."
+      "text": "straight to it.",
+      "words": [
+        {
+          "t": 21.219,
+          "text": "straight"
+        },
+        {
+          "t": 21.459,
+          "text": "to"
+        },
+        {
+          "t": 21.579,
+          "text": "it."
+        }
+      ]
     },
     {
       "start": 21.819,
       "end": 22.219,
-      "text": "You can even"
+      "text": "You can even",
+      "words": [
+        {
+          "t": 21.819,
+          "text": "You"
+        },
+        {
+          "t": 21.899,
+          "text": "can"
+        },
+        {
+          "t": 22.039,
+          "text": "even"
+        }
+      ]
     },
     {
       "start": 22.239,
       "end": 23.1,
-      "text": "control windows with"
+      "text": "control windows with",
+      "words": [
+        {
+          "t": 22.239,
+          "text": "control"
+        },
+        {
+          "t": 22.619,
+          "text": "windows"
+        },
+        {
+          "t": 23.0,
+          "text": "with"
+        }
+      ]
     },
     {
       "start": 23.199,
       "end": 24.44,
-      "text": "gestures. It needs"
+      "text": "gestures. It needs",
+      "words": [
+        {
+          "t": 23.199,
+          "text": "gestures."
+        },
+        {
+          "t": 24.059,
+          "text": "It"
+        },
+        {
+          "t": 24.26,
+          "text": "needs"
+        }
+      ]
     },
     {
       "start": 24.459,
       "end": 25.139,
-      "text": "a companion app"
+      "text": "a companion app",
+      "words": [
+        {
+          "t": 24.459,
+          "text": "a"
+        },
+        {
+          "t": 24.539,
+          "text": "companion"
+        },
+        {
+          "t": 25.019,
+          "text": "app"
+        }
+      ]
     },
     {
       "start": 25.199,
       "end": 25.92,
-      "text": "on your Mac"
+      "text": "on your Mac",
+      "words": [
+        {
+          "t": 25.199,
+          "text": "on"
+        },
+        {
+          "t": 25.299,
+          "text": "your"
+        },
+        {
+          "t": 25.42,
+          "text": "Mac"
+        }
+      ]
     },
     {
       "start": 25.979,
       "end": 26.42,
-      "text": "and the same"
+      "text": "and the same",
+      "words": [
+        {
+          "t": 25.979,
+          "text": "and"
+        },
+        {
+          "t": 26.159,
+          "text": "the"
+        },
+        {
+          "t": 26.279,
+          "text": "same"
+        }
+      ]
     },
     {
       "start": 26.479,
-      "end": 27.299,
-      "text": "Wi-Fi But"
+      "end": 27.5,
+      "text": "Wi-Fi But once",
+      "words": [
+        {
+          "t": 26.479,
+          "text": "Wi-Fi"
+        },
+        {
+          "t": 27.199,
+          "text": "But"
+        },
+        {
+          "t": 27.359,
+          "text": "once"
+        }
+      ]
     },
     {
-      "start": 27.359,
-      "end": 27.84,
-      "text": "once it's set"
+      "start": 27.519,
+      "end": 28.0,
+      "text": "it's set up,",
+      "words": [
+        {
+          "t": 27.519,
+          "text": "it's"
+        },
+        {
+          "t": 27.699,
+          "text": "set"
+        },
+        {
+          "t": 27.899,
+          "text": "up,"
+        }
+      ]
     },
     {
-      "start": 27.899,
+      "start": 28.519,
       "end": 29.379,
-      "text": "up, your most"
+      "text": "your most used",
+      "words": [
+        {
+          "t": 28.519,
+          "text": "your"
+        },
+        {
+          "t": 28.719,
+          "text": "most"
+        },
+        {
+          "t": 28.719,
+          "text": "used"
+        }
+      ]
     },
     {
-      "start": 28.719,
-      "end": 30.099,
-      "text": "used actions live"
+      "start": 29.459,
+      "end": 30.319,
+      "text": "actions live right",
+      "words": [
+        {
+          "t": 29.459,
+          "text": "actions"
+        },
+        {
+          "t": 29.959,
+          "text": "live"
+        },
+        {
+          "t": 30.159,
+          "text": "right"
+        }
+      ]
     },
     {
-      "start": 30.159,
-      "end": 30.739,
-      "text": "right beside your"
+      "start": 30.34,
+      "end": 31.119,
+      "text": "beside your keyboard.",
+      "words": [
+        {
+          "t": 30.34,
+          "text": "beside"
+        },
+        {
+          "t": 30.639,
+          "text": "your"
+        },
+        {
+          "t": 30.799,
+          "text": "keyboard."
+        }
+      ]
     },
     {
-      "start": 30.799,
-      "end": 31.959,
-      "text": "keyboard. Want the"
+      "start": 31.699,
+      "end": 32.199,
+      "text": "Want the app?",
+      "words": [
+        {
+          "t": 31.699,
+          "text": "Want"
+        },
+        {
+          "t": 31.88,
+          "text": "the"
+        },
+        {
+          "t": 32.039,
+          "text": "app?"
+        }
+      ]
     },
     {
-      "start": 32.039,
-      "end": 33.079,
-      "text": "app? Comment APP"
+      "start": 32.479,
+      "end": 33.399,
+      "text": "Comment APP and",
+      "words": [
+        {
+          "t": 32.479,
+          "text": "Comment"
+        },
+        {
+          "t": 32.939,
+          "text": "APP"
+        },
+        {
+          "t": 33.199,
+          "text": "and"
+        }
+      ]
     },
     {
-      "start": 33.199,
-      "end": 34.039,
-      "text": "and we'll send"
+      "start": 33.439,
+      "end": 34.119,
+      "text": "we'll send the",
+      "words": [
+        {
+          "t": 33.439,
+          "text": "we'll"
+        },
+        {
+          "t": 33.82,
+          "text": "send"
+        },
+        {
+          "t": 34.06,
+          "text": "the"
+        }
+      ]
     },
     {
-      "start": 34.06,
-      "end": 34.699,
-      "text": "the exact one"
+      "start": 34.219,
+      "end": 34.819,
+      "text": "exact one in",
+      "words": [
+        {
+          "t": 34.219,
+          "text": "exact"
+        },
+        {
+          "t": 34.56,
+          "text": "one"
+        },
+        {
+          "t": 34.719,
+          "text": "in"
+        }
+      ]
     },
     {
-      "start": 34.719,
+      "start": 34.84,
       "end": 35.219,
-      "text": "in your DM."
+      "text": "your DM.",
+      "words": [
+        {
+          "t": 34.84,
+          "text": "your"
+        },
+        {
+          "t": 34.999,
+          "text": "DM."
+        }
+      ]
     }
   ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
   "format": "top5",
-  "noCredits": {
-    "reason": "User directive 2026-08-22: a clean product-discovery reel with no on-screen credits, URLs or citations. Every frame is the developer's own product video; per-scene credit strings stay recorded here, only the DRAWING is suppressed. The brand restriction also forbids the product name on screen, and the credit string carries it."
-  },
   "captionStyleReason": "User feedback 2026-08-22: match the caption style to the topic. The locked word-reveal renders small italic serif, which read as documentary over a warm app-discovery reel. chip-lg is bold white SF Pro on a dark pill \u2014 the treatment the reference reel the user sent uses, and legible on mute at thumbnail size.",
   "script": "Your Mac has a third input device.\n\nNot the keyboard. Not the trackpad. The one that's already in your hand.\n\nThis app turns your iPhone into a custom control panel for your Mac.\n\nTap once to open the apps you use every day.\n\nAdd a shortcut, and a whole workflow becomes one button.\n\nSave the sites you always open, and launch them from the same grid.\n\nScroll back through everything you had open, and jump straight to it.\n\nYou can even control windows with gestures.\n\nIt needs a companion app on your Mac and the same Wi-Fi.\n\nBut once it's set up, your most-used actions live right beside your keyboard.\n\nWant the app? Comment APP and we'll send the exact one in your DM.",
   "approval": {

@@ -23,72 +23,141 @@
  "shots": [
   {
    "start_phrase": "Your Mac has",
-   "line": "Your Mac has a third input device.",
-   "asset_id": "apps-wide",
-   "tier": "official",
+   "line": "Your Mac has a third input device. Not the keyboard. Not the trackpad.",
+   "tier": "generated",
    "scene": {
-    "type": "footage",
-    "src": "assets/iphone-third-interface/apps-wide.mp4",
-    "zoomDir": "none",
-    "focusX": 0.3244,
-    "headline": {
-     "lines": [
-      {
-       "text": "YOUR MAC HAS",
-       "kind": "label",
-       "at": 0.05
-      },
-      {
-       "text": "A THIRD",
-       "kind": "headline",
-       "at": 0.28
-      },
-      {
-       "text": "INPUT DEVICE",
-       "kind": "headline",
-       "at": 0.55
-      }
-     ],
-     "y": 0.13,
-     "theme": "dark"
-    },
-    "sfx": [
+    "type": "stage",
+    "set": "dark",
+    "layout": "full",
+    "elements": [
      {
-      "src": "sfx/Camera Shutter.MP3",
-      "at": 0.04,
-      "vol": 0.09
+      "id": "kb",
+      "kind": "card",
+      "x": 0.5,
+      "y": 0.2,
+      "w": 0.86,
+      "title": "KEYBOARD",
+      "tone": "dark"
+     },
+     {
+      "id": "tp",
+      "kind": "card",
+      "x": 0.5,
+      "y": 0.47,
+      "w": 0.86,
+      "title": "TRACKPAD",
+      "tone": "dark"
+     },
+     {
+      "id": "slot",
+      "kind": "card",
+      "x": 0.5,
+      "y": 0.76,
+      "w": 0.86,
+      "title": "?",
+      "tone": "accent",
+      "lines": [
+       "the third one"
+      ]
      }
     ],
-    "zoom": 1.5
-   }
-  },
-  {
-   "start_phrase": "Not the keyboard",
-   "line": "Not the keyboard. Not the trackpad.",
-   "asset_id": "gest-hand",
-   "tier": "official",
-   "scene": {
-    "type": "footage",
-    "src": "assets/iphone-third-interface/gest-hand.mp4",
-    "zoomDir": "none",
-    "focusX": 0.4122
+    "moves": [
+     {
+      "do": "arrive",
+      "at": 0.62,
+      "target": "slot",
+      "dir": "pop"
+     },
+     {
+      "do": "strike",
+      "at": 2.2,
+      "target": "kb"
+     },
+     {
+      "do": "strike",
+      "at": 3.44,
+      "target": "tp"
+     },
+     {
+      "do": "highlight",
+      "at": 4.0,
+      "target": "slot"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 0.62,
+      "vol": 0.09
+     },
+     {
+      "src": "sfx-action/marker.mp3",
+      "at": 2.2,
+      "vol": 0.34
+     },
+     {
+      "src": "sfx-action/marker.mp3",
+      "at": 3.44,
+      "vol": 0.34
+     }
+    ],
+    "exit": "push"
    }
   },
   {
    "start_phrase": "The one",
    "line": "The one that's already in your hand.",
-   "asset_id": "apps-hand",
-   "tier": "official",
+   "tier": "generated",
    "scene": {
-    "type": "footage",
-    "src": "assets/iphone-third-interface/apps-hand.mp4",
-    "zoomDir": "in",
-    "focusX": 0.5,
+    "type": "stage",
+    "set": "dark",
+    "layout": "full",
+    "hideCaptions": true,
+    "elements": [
+     {
+      "id": "ph",
+      "kind": "image",
+      "x": 0.5,
+      "y": 0.44,
+      "w": 0.92,
+      "h": 0.74,
+      "src": "assets/iphone-third-interface/still-phone.png",
+      "label": "iPhone on the desk"
+     },
+     {
+      "id": "lbl",
+      "kind": "text",
+      "x": 0.5,
+      "y": 0.9,
+      "w": 0.94,
+      "text": "IN YOUR HAND",
+      "size": 0.82
+     }
+    ],
+    "moves": [
+     {
+      "do": "arrive",
+      "at": 0.1,
+      "target": "ph",
+      "dir": "pop"
+     },
+     {
+      "do": "arrive",
+      "at": 0.56,
+      "target": "lbl",
+      "dir": "up"
+     },
+     {
+      "do": "focus",
+      "at": 1.05,
+      "target": "ph"
+     }
+    ],
     "sfx": [
      {
-      "src": "sfx/Pop.MP3",
-      "at": 0.05,
-      "vol": 0.08
+      "src": "sfx/Core.MP3",
+      "at": 0.1,
+      "vol": 0.1
      }
     ]
    }
@@ -96,13 +165,83 @@
   {
    "start_phrase": "This app turns",
    "line": "This app turns your iPhone into a custom control panel for your Mac.",
-   "asset_id": "apps-panel",
-   "tier": "official",
+   "tier": "generated",
    "scene": {
-    "type": "footage",
-    "src": "assets/iphone-third-interface/apps-panel.mp4",
-    "zoomDir": "in",
-    "focusX": 0.5
+    "type": "stage",
+    "set": "dark",
+    "layout": "full",
+    "hideCaptions": true,
+    "elements": [
+     {
+      "id": "grid",
+      "kind": "image",
+      "x": 0.5,
+      "y": 0.27,
+      "w": 0.94,
+      "h": 0.58,
+      "src": "assets/iphone-third-interface/still-grid.png",
+      "label": "the app's grid on the iPhone"
+     },
+     {
+      "id": "mac",
+      "kind": "image",
+      "x": 0.5,
+      "y": 0.66,
+      "w": 0.74,
+      "h": 0.46,
+      "src": "assets/iphone-third-interface/still-mac.png",
+      "label": "the Mac it drives"
+     },
+     {
+      "id": "cap",
+      "kind": "text",
+      "x": 0.5,
+      "y": 0.9,
+      "w": 0.92,
+      "text": "A CONTROL PANEL FOR YOUR MAC",
+      "size": 0.6
+     }
+    ],
+    "moves": [
+     {
+      "do": "arrive",
+      "at": 0.1,
+      "target": "grid",
+      "dir": "up"
+     },
+     {
+      "do": "arrive",
+      "at": 0.34,
+      "target": "mac",
+      "dir": "down"
+     },
+     {
+      "do": "fill",
+      "at": 0.2,
+      "target": "grid"
+     },
+     {
+      "do": "connect",
+      "at": 1.12,
+      "from": "grid",
+      "to": "mac",
+      "arrow": true,
+      "repeat": 3
+     },
+     {
+      "do": "arrive",
+      "at": 2.3,
+      "target": "cap",
+      "dir": "up"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Click.MP3",
+      "at": 1.46,
+      "vol": 0.09
+     }
+    ]
    }
   },
   {
@@ -124,13 +263,7 @@
      ],
      "y": 0.13
     },
-    "sfx": [
-     {
-      "src": "sfx/Click.MP3",
-      "at": 0.35,
-      "vol": 0.09
-     }
-    ]
+    "exit": "push"
    }
   },
   {
@@ -152,6 +285,7 @@
      ],
      "y": 0.13
     },
+    "exit": "whip",
     "sfx": [
      {
       "src": "sfx/Click.MP3",
@@ -180,13 +314,7 @@
      ],
      "y": 0.13
     },
-    "sfx": [
-     {
-      "src": "sfx/Click.MP3",
-      "at": 0.3,
-      "vol": 0.09
-     }
-    ]
+    "exit": "push"
    }
   },
   {
@@ -207,7 +335,8 @@
       }
      ],
      "y": 0.13
-    }
+    },
+    "exit": "whip"
    }
   },
   {
@@ -243,25 +372,87 @@
    "line": "It needs a companion app on your Mac and the same Wi-Fi.",
    "tier": "generated",
    "scene": {
-    "type": "specsheet",
-    "title": "WHAT IT TAKES",
-    "kicker": "BEFORE YOU TRY IT",
-    "rows": [
+    "type": "stage",
+    "set": "dark",
+    "layout": "full",
+    "hideCaptions": true,
+    "elements": [
      {
-      "label": "On the iPhone",
-      "value": "the app"
+      "id": "ph2",
+      "kind": "image",
+      "x": 0.5,
+      "y": 0.2,
+      "w": 0.74,
+      "h": 0.48,
+      "src": "assets/iphone-third-interface/still-phone.png",
+      "label": "iPhone"
      },
      {
-      "label": "On the Mac",
-      "value": "a companion app",
-      "accent": true
+      "id": "mac2",
+      "kind": "image",
+      "x": 0.5,
+      "y": 0.56,
+      "w": 0.74,
+      "h": 0.46,
+      "src": "assets/iphone-third-interface/still-mac.png",
+      "label": "Mac"
      },
      {
-      "label": "Both devices",
-      "value": "same Wi-Fi"
+      "id": "wifi",
+      "kind": "text",
+      "x": 0.5,
+      "y": 0.78,
+      "w": 0.94,
+      "text": "SAME WI-FI",
+      "size": 0.72
+     },
+     {
+      "id": "note",
+      "kind": "card",
+      "x": 0.5,
+      "y": 0.9,
+      "w": 0.88,
+      "tone": "dark",
+      "title": "ON THE MAC",
+      "lines": [
+       "a companion app"
+      ]
      }
     ],
-    "footnote": "every action runs locally on the Mac"
+    "moves": [
+     {
+      "do": "arrive",
+      "at": 0.08,
+      "target": "ph2",
+      "dir": "left"
+     },
+     {
+      "do": "arrive",
+      "at": 0.08,
+      "target": "mac2",
+      "dir": "right"
+     },
+     {
+      "do": "arrive",
+      "at": 0.56,
+      "target": "note",
+      "dir": "up"
+     },
+     {
+      "do": "connect",
+      "at": 2.22,
+      "from": "ph2",
+      "to": "mac2",
+      "repeat": 4,
+      "weight": 3
+     },
+     {
+      "do": "arrive",
+      "at": 2.3,
+      "target": "wifi",
+      "dir": "pop"
+     }
+    ]
    }
   },
   {
@@ -287,43 +478,80 @@
     "src": "assets/iphone-third-interface/rec-mac.mp4",
     "zoomDir": "none",
     "focusX": 0.4415,
-    "zoom": 1.6
+    "zoom": 1.6,
+    "exit": "push"
    }
   },
   {
    "start_phrase": "live right beside",
    "line": "live right beside your keyboard.",
-   "asset_id": "apps-wide",
-   "tier": "official",
+   "tier": "generated",
    "scene": {
-    "type": "footage",
-    "src": "assets/iphone-third-interface/apps-wide.mp4",
-    "zoomDir": "none",
-    "focusX": 0.2659,
-    "headline": {
-     "lines": [
-      {
-       "text": "A THIRD",
-       "kind": "label",
-       "at": 0.08
-      },
-      {
-       "text": "INTERFACE",
-       "kind": "headline",
-       "at": 0.3
-      }
-     ],
-     "y": 0.15,
-     "theme": "dark"
-    },
+    "type": "stage",
+    "set": "dark",
+    "layout": "full",
+    "elements": [
+     {
+      "id": "kb2",
+      "kind": "card",
+      "x": 0.5,
+      "y": 0.15,
+      "w": 0.86,
+      "title": "KEYBOARD",
+      "tone": "dark"
+     },
+     {
+      "id": "tp2",
+      "kind": "card",
+      "x": 0.5,
+      "y": 0.38,
+      "w": 0.86,
+      "title": "TRACKPAD",
+      "tone": "dark"
+     },
+     {
+      "id": "ph3",
+      "kind": "image",
+      "x": 0.5,
+      "y": 0.72,
+      "w": 0.88,
+      "h": 0.5,
+      "src": "assets/iphone-third-interface/still-phone.png",
+      "label": "the third interface"
+     }
+    ],
+    "moves": [
+     {
+      "do": "arrive",
+      "at": 0.0,
+      "target": "kb2",
+      "dir": "left"
+     },
+     {
+      "do": "arrive",
+      "at": 0.06,
+      "target": "tp2",
+      "dir": "left"
+     },
+     {
+      "do": "arrive",
+      "at": 0.5,
+      "target": "ph3",
+      "dir": "pop"
+     },
+     {
+      "do": "highlight",
+      "at": 1.05,
+      "target": "ph3"
+     }
+    ],
     "sfx": [
      {
       "src": "sfx/Core.MP3",
-      "at": 0.1,
+      "at": 0.5,
       "vol": 0.1
      }
-    ],
-    "zoom": 1.55
+    ]
    }
   },
   {
@@ -346,5 +574,7 @@
  ],
  "measuredWps": 3.48,
  "_measuredWps_note": "MEASURED, not scaled: the 1.20 body take delivered 90 words in 25.84s = 3.48 wps. Raising speed also tightens the engine pauses, so the rate does not scale linearly with the speed number and must be taken from a real take.",
- "_framing_note": "User 2026-08-22: the first 10s and everything from 0:27 read as 'completely zoomed out'. Those were the full-bleed beats on wide establishing shots, where the iPhone — the whole subject — sat small in a corner. The floatcard demos between them were fine because the card IS the subject. Fixed by pushing in (scene `zoom` 1.45-1.60 with focusX on the phone) rather than by swapping footage, except beat 10, whose clip turned out to show only a Mac dock with no phone in it at all."
+ "_framing_note": "User 2026-08-22: the first 10s and everything from 0:27 read as 'completely zoomed out'. Those were the full-bleed beats on wide establishing shots, where the iPhone — the whole subject — sat small in a corner. The floatcard demos between them were fine because the card IS the subject. Fixed by pushing in (scene `zoom` 1.45-1.60 with focusX on the phone) rather than by swapping footage, except beat 10, whose clip turned out to show only a Mac dock with no phone in it at all.",
+ "_motion_note": "REBUILT AS MOTION 2026-10-02. The old cut stated its idea and never drew it: a static desk under 'a third input device', four phone close-ups in a row, then five identical floatcards — a template, which is the one thing the graphics rule forbids. Now the lines that EXPLAIN are stages that act them out (three input slots build, two get struck, the third fills with the phone; the phone connects to the Mac; the Wi-Fi link is a connect with pulses travelling it), and the lines that PROVE keep the official demo footage, which is the evidence and was never the problem. Every move is timed to its spoken word off vo.json. Script, VO and approval are untouched.",
+ "facePlan": "none"
 }
