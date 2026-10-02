@@ -128,6 +128,10 @@ silently disabled the frame checks for weeks.
 
 ## Read in this order
 
+**First, before any motion video: `brand-brief.md`** — the iGeeksBlog brand on one page
+(colours with where each is allowed, Inter, logo rules in `Brand Logo/`, voice, banned
+looks, how every video ends).
+
 0. **`frameworks/short-form-master.md`** — the production framework (user-
    supplied 2026-08-25). It is the STANDARD this repo builds to: one
    integrated team, curiosity without confusion, story engine before script,
