@@ -1,0 +1,13 @@
+{
+  "script_sha256": "2bba89e69e2edf40c70eb95b651cd76197c56dbdb2f99c51cc4184f176c35531",
+  "structure_sha256": "6260bf05c59b82dbb809af6de076ec226f0798100d532510d902a812bffcc920",
+  "findings": [
+    "  BRIDGES 3/12 sentences (25%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  OPENING has no version, date or time anchor: \"Hugging Face's free AI asks who you are, looks you up, then buil\". A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "HOUSE TIC: 'ask for a' \u2014 already used in 1 other script(s) (chatgpt-creator-prompts). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-10-05T12:01:33+00:00"
+}

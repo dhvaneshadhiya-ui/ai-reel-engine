@@ -1,0 +1,28 @@
+{
+  "slug": "ai-website-builder",
+  "topic": "DeepSite: the free open-source AI on Hugging Face that builds a website from one prompt in minutes",
+  "details": "Reference: youtube.com/shorts/lDQTPOEFnEU (Editminds Tech, 2025-09-04, DeepSite v2). Current truth: DeepSite v4 is migrating into HuggingChat (Make my website + Deploy to Space).",
+  "subject": "DeepSite: the free open-source AI on Hugging Face that builds a website from one prompt in minutes",
+  "audience": "iPhone/Mac owners and creators (largest market India) who have seen 'free AI builds your website' reels and want to know if it is real and how to do it",
+  "platform": "both",
+  "goal": "education",
+  "core_value": "where Hugging Face's free website builder lives now, the exact steps, and the free-credit catch the hype reels skip",
+  "desired_action": "save the reel for when they build their site",
+  "reveal_target": "none",
+  "cta_keyword": "",
+  "target_duration": "50s",
+  "tone": "reporter, plain spoken, no hype; honest about the catch",
+  "source_policy": "official-preferred",
+  "footage_constraints": "HuggingChat and DeepSite need a Hugging Face login, so no live generation recorded by the agent. Official promo (deepsite.hf.co/promo.mp4) + mobile captures of HF pages + chat-ui source. A user screen recording would upgrade the middle.",
+  "credit_instructions": "internal",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 50,
+  "music": true,
+  "created_at": "2026-10-05T11:48:45.241026+00:00",
+  "status": "initialized"
+}
