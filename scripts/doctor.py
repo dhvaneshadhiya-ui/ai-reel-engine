@@ -449,7 +449,10 @@ for _tool, _label in (("check_frame_contract", "frame contract"),
                       ("make_thumbnail", "cover checks"),
                       # 2026-09-11: renders an SFX-only and an everything-else
                       # stem and reads each cue against what is under it.
-                      ("sfx_audibility", "SFX audibility bands")):
+                      ("sfx_audibility", "SFX audibility bands"),
+                      # 2026-10-02: stale post-render stills mixed with fresh
+                      # preflight ones crashed the contact sheet.
+                      ("preflight_stills", "preflight stills reset")):
     try:
         r = subprocess.run(
             [sys.executable, str(ROOT / f"tools/{_tool}.py"), "--selftest"],

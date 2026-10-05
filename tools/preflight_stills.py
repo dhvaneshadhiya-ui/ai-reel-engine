@@ -48,7 +48,39 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 
+def reset_lint_dir(out: Path) -> None:
+    """Empty out/<slug>-lint/ of frames and sheets before writing new stills.
+
+    lint_frames --from-stills lints EVERY NN-type-phase.png it finds, and a
+    previous post-render lint leaves one per scene, extracted at 540px wide.
+    ios27-settings-longform, 2026-10-02: --types made ONE 1920x1080 still and
+    lint_frames picked up 39 stale 540x304 mids next to it. ffmpeg's concat
+    refused the mixed sizes and the preflight crashed. Had the sizes matched,
+    it would have linted the previous cut as if it were this one."""
+    out.mkdir(parents=True, exist_ok=True)
+    for old in [*out.glob("*.png"), *out.glob("lint-sheet-*.jpg")]:
+        old.unlink()
+
+
+def selftest() -> None:
+    import tempfile
+    with tempfile.TemporaryDirectory() as d:
+        out = Path(d) / "x-lint"
+        out.mkdir()
+        for name in ("00-slide-mid.png", "01-slide-start.png",
+                     "lint-sheet-0.jpg", "notes.txt"):
+            (out / name).write_bytes(b"stale")
+        reset_lint_dir(out)
+        left = sorted(p.name for p in out.iterdir())
+        assert left == ["notes.txt"], left
+        reset_lint_dir(Path(d) / "new-lint")        # creates a missing dir
+        assert (Path(d) / "new-lint").is_dir()
+    print("preflight_stills selftest: stale stills and sheets cleared")
+
+
 def main() -> None:
+    if "--selftest" in sys.argv:
+        return selftest()
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     if not args:
         sys.exit(__doc__.split("    python3")[0].strip())
@@ -78,7 +110,7 @@ def main() -> None:
         picks.append((i, s["type"], round(mid * fps)))
 
     out = ROOT / f"out/{slug}-lint"
-    out.mkdir(parents=True, exist_ok=True)
+    reset_lint_dir(out)
 
     print(f"\n  {len(picks)} still(s) from {len(scenes)} scenes "
           f"({'one per type' if '--types' in sys.argv else 'one per scene'})\n")

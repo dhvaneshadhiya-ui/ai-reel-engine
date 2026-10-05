@@ -547,6 +547,15 @@ viewer**. The linter catches geometry; only you catch meaning:
   attempts to answer this from the final mix could not beat their own control.
   Thresholds are borrowed from video-talkcraft, not yet calibrated on ours.
 
+**Then score it: the critique pass** (adopted 2026-10-02 from the motion-reel
+plugin). `python3 tools/critique.py <slug>` builds a one-frame-per-scene sheet
+at phone size, prints the longest gaps with nothing new and the sound density,
+and prints the brief: score hook / read / motion / variety / sync / match 1-10
+with evidence, name the worst three with a concrete fix each, append the round
+to `jobs/<slug>/critique.md`. READY needs every score at 8+ and round 3 or
+later; rounds 1-2 can be scored on `preflight_stills.py` frames so they cost no
+render. `prepublish.py` refuses a reel whose last round is not READY.
+
 Fix, re-render, re-verify. Only then deliver.
 
 ### Simulator screen recordings — record, then tighten

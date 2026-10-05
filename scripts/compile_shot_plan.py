@@ -361,6 +361,39 @@ def substitute(value: Any, tokens: dict[str, Any]) -> Any:
     return value
 
 
+# THE MIX BREATHES (2026-10-02, from the motion-reel plugin's critique: "every
+# accent has a sound, the mix breathes, not wall-to-wall SFX"). Per-scene
+# spacing let ios27-settings-longform v2 carry 148 cues in 370s — a whoosh on
+# all 54 cuts and a pop on 44 landings, one sound every 2.5s. Across the whole
+# reel, a cue now yields to a stronger one nearby: impacts and the thing on
+# screen making its sound always play; a pop/tick needs 0.6s clear of any kept
+# cue; a page whoosh needs 1.5s, so a cut that already lands a sound stays
+# quiet. Only the cues this compiler placed are thinned — a plan's own stay.
+SFX_RANK = {"sfx/whoosh.MP3": 2, "sfx/Pop.MP3": 1, "sfx-action/tick.mp3": 1}
+SFX_ROOM = {0: 0.0, 1: 0.6, 2: 1.5}
+
+
+def thin_sfx(scenes: list[dict], placed: list[tuple[dict, dict]]) -> int:
+    start, t = {}, 0.0
+    for sc in scenes:
+        start[id(sc)] = t
+        t += float(sc.get("durationSec") or 0)
+    mine = {id(c) for _, c in placed}
+    kept = [start[id(sc)] + float(c["at"]) for sc in scenes for c in sc.get("sfx") or [] if id(c) not in mine]
+    drop = set()
+    for sc, c in sorted(placed, key=lambda p: (SFX_RANK.get(p[1]["src"], 0), start[id(p[0])] + float(p[1]["at"]))):
+        a = start[id(sc)] + float(c["at"])
+        room = SFX_ROOM[SFX_RANK.get(c["src"], 0)]
+        if room and any(abs(a - k) < room for k in kept):
+            drop.add(id(c))
+        else:
+            kept.append(a)
+    for sc in scenes:
+        if sc.get("sfx"):
+            sc["sfx"] = [c for c in sc["sfx"] if id(c) not in drop]
+    return len(drop)
+
+
 def _apply_phrases(text: str, phrase_fixes: dict[str, str]) -> str:
     """Case-insensitive replacement of multi-word correction keys.
 
@@ -1179,6 +1212,8 @@ def main() -> None:
         slides = [k for k, sc in enumerate(scenes_) if sc.get("type") == "slide" and not sc.get("cta")]
         slides = slides or [-1]
 
+        placed: list[tuple[dict, dict]] = []   # (scene, cue) this pass added
+
         def _cue(sc: dict, src: str, event: float) -> None:
             at_ = round(max(0.0, event - LEAD[src]), 2)
             cues = sc.setdefault("sfx", [])
@@ -1188,6 +1223,7 @@ def main() -> None:
                     abs(float(c.get("at", 0)) - at_) < (0.2 if "whoosh" in c.get("src", "") else 0.35)
                     for c in cues):
                 cues.append({"src": src, "at": at_, "vol": VOL[src]})
+                placed.append((sc, cues[-1]))
 
         def _phone(sc: dict):
             return next((bb.get("src") for bb in sc.get("blocks") or []
@@ -1243,6 +1279,8 @@ def main() -> None:
                 for ln in (sc.get("headline") or {}).get("lines") or []:
                     if ln.get("kind") == "pill" and "[[" in str(ln.get("text")):
                         _cue(sc, "sfx/Pop.MP3", float(ln.get("at", 0)) + 0.25)
+
+        thin_sfx(scenes_, placed)
 
     output.write_text(json.dumps(beats, indent=2, ensure_ascii=False) + "\n")
     print(f"compiled {len(scenes)} shots, {audio_end:.3f}s: {output}")

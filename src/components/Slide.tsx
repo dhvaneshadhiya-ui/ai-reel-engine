@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill, Easing, Img, OffthreadVideo, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { ClipBlock, DevicesBlock, GaugeBlock, LevelsBlock, ScreenBlock, StepsBlock, WavesBlock } from "./SlideBlocks";
+import { arrive, rise, ClipBlock, DevicesBlock, GaugeBlock, LevelsBlock, ScreenBlock, StepsBlock, WavesBlock } from "./SlideBlocks";
 import type { ClipBlockProps, DevicesBlockProps, GaugeBlockProps, LevelsBlockProps, ScreenBlockProps, StepsBlockProps, WavesBlockProps } from "./SlideBlocks";
 
 /**
@@ -191,7 +191,9 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
   // all 55 cuts). The student kit names the same defect: a render that "flashes
   // black". What is there from the start is there on frame 0; only a `show`
   // move arrives. A phone that carries over a cut now simply stays put.
-  const land = (a: number, d?: number) => (a <= 0 ? 1 : ramp(t, a, d));
+  // What lands LATER, on a spoken word, arrives on a spring (motion-reel rule:
+  // no fade-ins, 2026-10-02) instead of ramping up from opacity 0.
+  const land = (a: number) => (a <= 0 ? 1 : arrive(t, a, fps));
 
   // ---- headline: words rise in, 45ms apart; [[x]] becomes the pill ----
   const parts = scene.headline.split(/(\[\[[^\]]+\]\])/).filter(Boolean);
@@ -201,9 +203,9 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
     const words = (pill ? part.slice(2, -2) : part).split(/(\s+)/);
     const nodes = words.map((w, k) => {
       if (!w.trim()) return <span key={k}>{w}</span>;
-      const p = ramp(t, 0.05 + 0.045 * wi++, 0.28);
+      const p = arrive(t, 0.05 + 0.045 * wi++, fps);
       return (
-        <span key={k} style={{ display: "inline-block", opacity: p, transform: `translateY(${(1 - p) * 26}px)` }}>{w}</span>
+        <span key={k} style={{ display: "inline-block", ...rise(p, 26) }}>{w}</span>
       );
     });
     if (!pill) return <React.Fragment key={pi}>{nodes}</React.Fragment>;
@@ -233,7 +235,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         flex: 1, background: C.card, borderRadius: 34, padding: "36px 30px",
         // NO EMPTY SHELLS (user, 2026-09-16): the card itself lands with its
         // content. Its space is held from frame 0, so nothing jumps when it does.
-        opacity: p, transform: `translateY(${Math.round((1 - p) * 28)}px)`,
+        ...rise(p, 28),
         border: `2px solid ${lit ? `rgba(77,163,255,${0.55 * p})` : C.line}`,
         backgroundImage: lit ? `radial-gradient(90% 70% at 50% 0%, rgba(29,95,170,${0.45 * p}) 0%, transparent 70%)` : undefined,
         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center",
@@ -291,7 +293,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
               return (
                 <div key={i} style={{
                   display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, flex: "1 1 0",
-                  opacity: p, transform: `translateY(${Math.round((1 - p) * 20)}px)`,
+                  ...rise(p, 20),
                   background: h > 0 ? `rgba(18,40,68,${h})` : C.card, borderRadius: 24,
                   padding: "0 36px",
                   border: `2px solid ${h > 0 ? `rgba(77,163,255,${h})` : C.line}`,
@@ -308,7 +310,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
       case "text": {
         const p = land(shownAt(b.id));
         return (
-          <div key={b.id} style={{ opacity: p, transform: `translateY(${(1 - p) * 14}px)`,
+          <div key={b.id} style={{ ...rise(p, 14),
             font: `500 42px/1.35 ${FONT}`, color: C.sub }}>{b.text}</div>
         );
       }
@@ -317,7 +319,7 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
           const p = land(shownAt(target));
           return (
             <div style={{ flex: 1, background: C.card, borderRadius: 26, padding: "30px 32px", border: `2px solid ${C.line}`,
-              opacity: p, transform: `translateY(${Math.round((1 - p) * 20)}px)` }}>
+              ...rise(p, 20) }}>
               <div style={{ font: `700 28px ${FONT}`, letterSpacing: 2, color }}>{label}</div>
               <div style={{ marginTop: 12, font: `500 36px/1.3 ${FONT}`, color: C.ink }}>{text}</div>
             </div>
@@ -388,11 +390,11 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         return (
           <div key={b.id} style={{ display: "flex", flexWrap: "wrap", gap: compact ? 12 : 20, justifyContent: "center" }}>
             {b.items.map((it, i) => {
-              const p = base <= 0 ? 1 : ramp(t, base + 0.1 * i, 0.3);
+              const p = base <= 0 ? 1 : land(base + 0.1 * i);
               return (
                 <div key={i} style={{ width: compact ? (COL - 28) / 3 : (COL - 40) / 3, height: tileH, background: C.card, borderRadius: compact ? 20 : 28,
                   border: `2px solid ${C.line}`, display: "flex", flexDirection: "column", alignItems: "center",
-                  justifyContent: "center", opacity: p, transform: `translateY(${Math.round((1 - p) * 24)}px)` }}>
+                  justifyContent: "center", ...rise(p, 24) }}>
                   <div style={{ display: "flex",
                     flexDirection: "column", alignItems: "center" }}>
                     <Tile src={it.logo} tile={it.tile} size={logoSize} />

@@ -128,6 +128,10 @@ silently disabled the frame checks for weeks.
 
 ## Read in this order
 
+**First, before any motion video: `brand-brief.md`** — the iGeeksBlog brand on one page
+(colours with where each is allowed, Inter, logo rules in `Brand Logo/`, voice, banned
+looks, how every video ends).
+
 0. **`frameworks/short-form-master.md`** — the production framework (user-
    supplied 2026-08-25). It is the STANDARD this repo builds to: one
    integrated team, curiosity without confusion, story engine before script,
@@ -564,6 +568,15 @@ triggering under a second name (`marketing-skills:video`,
 `marketing-skills:social`). `reel_precedence.py` was widened to name
 `marketing-skills:*` explicitly, because a rule that names `social` does not
 obviously cover `marketing-skills:social` at 2am.
+
+### motion-reel plugin (read 2026-10-02) — its RULES are in the engine, it never builds a reel
+
+A complete parallel pipeline: a 60 fps canvas film, its own synthesized score and mix,
+its own sign-off. It is clean (MIT, no keys, no hijack directive), but it knows none
+of our gates, so it may at most produce a single scene asset, like HyperFrames below.
+Four of its studio rules were adopted instead (STYLE-RULES 2026-10-02): no fade-ins
+(spring arrivals), something new every few seconds (already G71), the mix breathes (`thin_sfx`), and
+the critique pass (`tools/critique.py`, required by prepublish).
 
 ### HyperFrames (installed 2026-08-16) — a SCENE SOURCE, never the reel
 

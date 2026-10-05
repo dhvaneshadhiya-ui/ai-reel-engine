@@ -9495,3 +9495,32 @@ skills NOT installed). What it named that we measured on ios27-settings-longform
   cut is one world continuing: compile_shot_plan no longer whooshes it (54 -> 19).
 Rejected: its ad pacing (scenes 1-2s, an element every 0.3-0.6s — its own CLAUDE.md says to let
 educational speech breathe), chrome-gradient text (its own showreel skill says it renders invisible).
+
+## 2026-10-02 — four motion-reel studio rules, taken into the engine
+
+The user asked why we don't use the motion-reel plugin. It was read in full first. Like
+HyperFrames, it's a whole parallel pipeline: a 60 fps canvas film with its own score,
+mix and sign-off, and it knows none of our gates. So it doesn't build reels. Four of its
+rules matched exactly what was wrong with ios27-settings-longform v2, and those came in:
+
+- **No fade-ins.** Merged with the student-kit entry above, which landed the same day:
+  what is on a page from its first word is there on frame 0 (`land`), and what lands
+  LATER, on a spoken word, ARRIVES on a spring with a touch of overshoot, solid within
+  ~3 frames (`arrive` / `rise` in SlideBlocks.tsx), instead of ramping up from opacity 0.
+  Headline words arrive too; the first starts 0.1s into its move so the cut lands on
+  motion. Measured on v2 before the merge: the first frame after a cut went from luma
+  2-16 to 48-50.
+- **Something new every few seconds.** Already G71 (5s, clip pages exempt), from the
+  student kit. A 4.2s G04 bound was written here too, then dropped in the merge so the
+  same gap is not reported twice.
+- **The mix breathes.** `thin_sfx` in compile_shot_plan makes a compiler-placed pop/tick
+  yield within 0.6s of a stronger cue and a page whoosh within 1.5s. Impacts never yield.
+  v2: 148 cues → 111, of which whooshes 54 → 23.
+- **The critique pass.** `tools/critique.py` builds a phone-size sheet and the measured
+  gaps, then prints a brief. The brief scores six axes 1-10, names the worst three with a
+  concrete fix each, and gives a verdict. READY needs 8+ everywhere at round 3 or later,
+  and prepublish refuses without it.
+
+Not taken: its "never invent screens". Our labelled redraws stay, because Rule 3 and the
+illustration label already cover honesty. The 0:32 page of v2 that opens on 5s of bare
+background is a PLAN defect: G71 and the critique flag it, and the engine can't fix it.
