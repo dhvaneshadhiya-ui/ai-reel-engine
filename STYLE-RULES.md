@@ -9568,3 +9568,48 @@ Apple's Mac screenshot with rings on the field and "Check daily", Apple's catego
 Safari built" rows over the Recipe Keeper sheet, Apple's tab-topics animation square-cropped with a frozen
 tail under a Tabs -> Organize -> Automatically Create Topics steps strip, device rows for the requirement.
 Next Safari/settings reel: do not reuse the "?"-rows catch for a third reel running.
+
+## 2026-10-05 — ai-website-builder (HuggingChat "Make my website", animated format)
+
+52.0s, 16 slides, facePlan bookends (5.4s + 5.6s of face = 2 short HeyGen renders), music on,
+format ai-tools. Reference: Editminds Tech Short lDQTPOEFnEU (2025-09-04, "DeepSite v2, powered
+by DeepSeek, completely free"), used as a lead only. Every spoken claim traced to Hugging Face:
+DeepSite's own migration notice, huggingface/chat-ui source + PRs #2303/#2370, HF docs/pricing.
+
+- **RAW NOTE 1 — the reference was 13 months stale and its tool had MOVED.** DeepSite is v4
+  (default model Kimi K2.5, not DeepSeek; "click to edit any part" is not in v4's code) and its own
+  homepage modal says "DeepSite is moving to Hugging Face Chat". The modal is client-rendered: curl
+  of the HTML found no trace of it; only a real mobile capture did. Rule 2 (scout on mobile) is
+  what found the story. Distilled: when the reference is a tool reel older than ~6 months, open the
+  tool on mobile BEFORE researching the reference's claims.
+- **RAW NOTE 2 — the product's own code was the best primary source.** No press covered the
+  HuggingChat builder; `gh api repos/huggingface/chat-ui` commits + PR bodies gave dated, verbatim
+  feature descriptions (Artifacts 2026-06-10, Make my website 2026-06-12, Deploy to Space
+  2026-06-22). For open-source products, query the repo before the web.
+- **RAW NOTE 3 — the official promo was hiding in the page.** deepsite.hf.co embeds promo.mp4 (16s,
+  Remotion-made) inside the migration modal: the only official footage of the HuggingChat builder.
+  Found via `document.querySelectorAll('video')` in the browser pane. Both products need an HF login
+  the agent cannot perform, so this promo plus mobile captures carried every proof beat.
+- **RAW NOTE 4 — research subagents cannot write files** ("Subagents should return findings as
+  text"). All four returned their findings in the hand-back and the main session saved them. Write
+  reel-research prompts to ask for the findings as text from the start.
+- **RAW NOTE 5 — whisper small dropped two spoken words** ("while you watch" -> "while"), which
+  would have broken the anchor for that shot. Re-ran whisper medium on the whole VO: 157/157 words.
+  When the word count from whisper differs from the script's, re-transcribe before planning shots.
+- **RAW NOTE 6 — a held last frame can be blank.** promo-logos was extended with tpad clone, and the
+  last frame (2.9s) was mid-transition: an empty white box for 3s. The contact sheet caught it; the
+  linter did not. Check the frame a tpad clones before holding it.
+- **RAW NOTE 7 — a focus ring landed two lines low** on the forum post at the first rect; a remotion
+  still at the move's settle frame (not mid-ease) is the cheap check before a full re-render.
+- ElevenLabs v3: 157 words at 3.47 w/s (45.3s, ~891 credits), vo_pad to 52s (3.02 w/s) — not to the
+  suggested 62s, which would have doubled every pause. Judgement call, said out loud to the user.
+
+### Treatments used (do not repeat for the same kind of information)
+Presenter circle over an official promo clip on both hook slides (prompt typing -> finished site),
+the product's own migration notice on mobile with a focus walk (whole card -> "moving to Hugging Face
+Chat" -> ticks), a hero "Free" card + "the catch comes at the end" text as the planted loop, the live
+home page with the starter chip ringed, a four-step strip for what it asks, the vendor's own prompt
+quoted as a text card, one promo clip reused at three offsets (build / site / deploy), a GitHub PR
+title as proof of a feature, pricing-table row ring for the catch, a forum-post ring for the user
+report, the PRO card walked from price to "20x". Next tool reel: do not quote the vendor prompt as a
+bare text card again; show it in its own UI.

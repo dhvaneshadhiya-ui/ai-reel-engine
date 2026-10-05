@@ -1,0 +1,1935 @@
+{
+  "id": "ai-website-builder",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "utility",
+  "audio": "assets/ai-website-builder/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "free",
+    "catch",
+    "Save"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "eyebrow": "Hugging Face",
+      "headline": "A free AI that asks [[who you are]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/ai-website-builder/promo-prompt.mp4",
+          "width": 720,
+          "height": 200,
+          "h": 256,
+          "device": false
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "1",
+              "v": "Asks who you are",
+              "tone": "plain"
+            },
+            {
+              "k": "2",
+              "v": "Looks you up",
+              "tone": "plain"
+            },
+            {
+              "k": "3",
+              "v": "Builds your site",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "who you are",
+          "at": 1.96
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "asks",
+          "at": 1.52
+        }
+      ],
+      "presenter": {
+        "src": "assets/ai-website-builder/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "durationSec": 3.12,
+      "assetId": "promo-prompt",
+      "claimId": "promo-prompt",
+      "covers": "Hugging Face's free AI",
+      "sourceUrl": "https://deepsite.hf.co/promo.mp4",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Hugging Face",
+      "headline": "Then it builds [[your website]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/ai-website-builder/promo-site.mp4",
+          "width": 1440,
+          "height": 660,
+          "h": 520,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "builds your website",
+          "at": 1.22
+        }
+      ],
+      "presenter": {
+        "src": "assets/ai-website-builder/avatar-master-hook.mp4",
+        "from": 3.12
+      },
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 1.15,
+          "vol": 1.0
+        }
+      ],
+      "durationSec": 2.46,
+      "assetId": "promo-site",
+      "claimId": "promo-site",
+      "covers": "looks you up, then",
+      "sourceUrl": "https://deepsite.hf.co/promo.mp4",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "HuggingChat",
+      "headline": "DeepSite is [[moving in]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "width": 1080,
+          "height": 2340,
+          "src": "assets/ai-website-builder/deepsite-moving.png",
+          "h": 1000
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "at": 0,
+          "rect": [
+            40,
+            100,
+            1000,
+            1200
+          ],
+          "ring": false,
+          "instant": true
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "moving",
+          "rect": [
+            70,
+            280,
+            960,
+            220
+          ],
+          "at": 2.62
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "in here",
+          "rect": [
+            70,
+            1400,
+            960,
+            480
+          ],
+          "ring": false,
+          "at": 4.74
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "in here",
+          "at": 4.74
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "at": 1.75,
+          "vol": 0.32
+        }
+      ],
+      "durationSec": 5.76,
+      "assetId": "deepsite-moving",
+      "claimId": "deepsite-moving",
+      "covers": "It's called Hugging Chat",
+      "sourceUrl": "https://deepsite.hf.co/",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "HuggingChat",
+      "headline": "Free to start, with [[one catch]]",
+      "blocks": [
+        {
+          "id": "h",
+          "kind": "hero",
+          "side": {
+            "name": "HuggingChat",
+            "price": "Free",
+            "tone": "free",
+            "note": "with a Hugging Face account"
+          }
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "The catch comes at the end."
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "h",
+          "on": "free to start",
+          "at": 0.2
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "catch",
+          "at": 2.16
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "catch",
+          "at": 2.16
+        }
+      ],
+      "durationSec": 3.4,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Step 1",
+      "headline": "Tap [[Make my website]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "width": 1080,
+          "height": 2340,
+          "src": "assets/ai-website-builder/hfchat-home.png",
+          "h": 900
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "at": 0,
+          "rect": [
+            40,
+            1500,
+            1000,
+            520
+          ],
+          "ring": false,
+          "instant": true
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "make my website",
+          "rect": [
+            300,
+            1800,
+            480,
+            130
+          ],
+          "at": 0.52
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "make my website",
+          "at": 0.52
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx2/mouse-click-01.mp3",
+          "at": 0.55,
+          "vol": 0.468
+        }
+      ],
+      "durationSec": 2.08,
+      "assetId": "hfchat-home",
+      "claimId": "hfchat-home",
+      "covers": "Start with Make my",
+      "sourceUrl": "https://huggingface.co/chat/",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Step 2",
+      "headline": "Tell it [[who you are]]",
+      "blocks": [
+        {
+          "id": "st",
+          "kind": "steps",
+          "steps": [
+            "Your name",
+            "What you do",
+            "Your links",
+            "A style"
+          ],
+          "h": 640
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "st.0",
+          "on": "name",
+          "at": 0.52
+        },
+        {
+          "do": "show",
+          "target": "st.1",
+          "on": "what you do",
+          "at": 0.86
+        },
+        {
+          "do": "show",
+          "target": "st.2",
+          "on": "links",
+          "at": 1.84
+        },
+        {
+          "do": "show",
+          "target": "st.3",
+          "on": "style",
+          "at": 2.6
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "tell it",
+          "at": 0.0
+        }
+      ],
+      "durationSec": 3.52,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "HuggingChat's own prompt",
+      "headline": "It [[reads your links]]",
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "\u201cResearch me with your tools: fetch my links, or search the web for my name if I shared none.\u201d"
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "You share links",
+              "v": "It reads them",
+              "tone": "free"
+            },
+            {
+              "k": "You skip them",
+              "v": "It searches your name",
+              "tone": "plain"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "reads those links",
+          "at": 0.34
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "reads those links",
+          "at": 0.34
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "links",
+          "at": 0.98
+        }
+      ],
+      "durationSec": 1.32,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Step 3",
+      "headline": "Then it [[writes the page]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/ai-website-builder/promo-build.mp4",
+          "width": 1440,
+          "height": 780,
+          "h": 560,
+          "device": false,
+          "from": 2.4
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Live preview while it writes."
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "writes the whole page",
+          "at": 2.18
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "while you watch",
+          "at": 3.3
+        }
+      ],
+      "durationSec": 4.64,
+      "assetId": "promo-build",
+      "claimId": "promo-build",
+      "covers": "or searches your name",
+      "sourceUrl": "https://deepsite.hf.co/promo.mp4",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Hugging Face's code, June 2026",
+      "headline": "It edits [[only that part]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "width": 1080,
+          "height": 2340,
+          "src": "assets/ai-website-builder/pr-artifacts.png",
+          "h": 760
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Small change",
+              "v": "Edits that part",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "at": 0,
+          "rect": [
+            40,
+            450,
+            1000,
+            420
+          ],
+          "ring": false,
+          "instant": true
+        },
+        {
+          "do": "show",
+          "target": "r",
+          "on": "only that part",
+          "at": 1.5
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "only that part",
+          "at": 1.5
+        }
+      ],
+      "durationSec": 3.1,
+      "assetId": "pr-artifacts",
+      "claimId": "pr-artifacts",
+      "covers": "Ask for a change",
+      "sourceUrl": "https://github.com/huggingface/chat-ui/pull/2303",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Step 4",
+      "headline": "Happy with [[how it looks]]?",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/ai-website-builder/promo-site.mp4",
+          "width": 1440,
+          "height": 660,
+          "h": 520,
+          "device": false,
+          "from": 1.0
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "like it",
+          "at": 0.26
+        }
+      ],
+      "durationSec": 1.28,
+      "assetId": "promo-site",
+      "claimId": "promo-site",
+      "covers": "Once you like it",
+      "sourceUrl": "https://deepsite.hf.co/promo.mp4",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Deploy to Space",
+      "headline": "One tap, and it's [[online]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/ai-website-builder/promo-deploy.mp4",
+          "width": 1440,
+          "height": 700,
+          "h": 520,
+          "device": false
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Hosting",
+              "v": "Free Hugging Face Space",
+              "tone": "free"
+            },
+            {
+              "k": "Address",
+              "v": "Its own link",
+              "tone": "plain"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "puts it online",
+          "at": 0.36
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "own link",
+          "at": 3.6
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "online",
+          "at": 0.86
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx2/mouse-click-01.mp3",
+          "at": 1.0,
+          "vol": 0.468
+        }
+      ],
+      "durationSec": 4.7,
+      "assetId": "promo-deploy",
+      "claimId": "promo-deploy",
+      "covers": "one tap puts it",
+      "sourceUrl": "https://deepsite.hf.co/promo.mp4",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Hugging Face pricing",
+      "headline": "Free means [[$0.10]] a month",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "width": 1080,
+          "height": 1840,
+          "src": "assets/ai-website-builder/hf-credits-table.png",
+          "h": 900
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "at": 0,
+          "rect": [
+            40,
+            240,
+            1000,
+            720
+          ],
+          "ring": false,
+          "instant": true
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "free account",
+          "rect": [
+            40,
+            240,
+            1000,
+            720
+          ],
+          "ring": false,
+          "at": 0.96
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "10 cents",
+          "rect": [
+            40,
+            600,
+            1000,
+            370
+          ],
+          "at": 1.76
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "10 cents",
+          "at": 1.76
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 1.7,
+          "vol": 0.556
+        }
+      ],
+      "durationSec": 4.26,
+      "assetId": "hf-credits-table",
+      "claimId": "hf-credits-table",
+      "covers": "The catch a free",
+      "sourceUrl": "https://huggingface.co/docs/inference-providers/pricing",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Hugging Face forum, June 2026",
+      "headline": "Gone in [[two questions]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "width": 1080,
+          "height": 2340,
+          "src": "assets/ai-website-builder/forum-limits.png",
+          "h": 900
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "at": 0,
+          "rect": [
+            30,
+            820,
+            1020,
+            1000
+          ],
+          "ring": false,
+          "instant": true
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "two questions",
+          "rect": [
+            20,
+            1290,
+            1040,
+            140
+          ],
+          "at": 1.76
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "two questions",
+          "at": 1.76
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 1.76,
+          "vol": 0.417
+        }
+      ],
+      "durationSec": 3.18,
+      "assetId": "forum-limits",
+      "claimId": "forum-limits",
+      "covers": "One user says theirs",
+      "sourceUrl": "https://discuss.huggingface.co/t/the-free-hugging-chat-limits/176499",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Hugging Face PRO",
+      "headline": "Pro: [[$9]] a month",
+      "blocks": [
+        {
+          "id": "sw",
+          "kind": "swap",
+          "left": {
+            "name": "Free",
+            "price": "$0.10",
+            "tone": "cost",
+            "note": "AI credit a month"
+          },
+          "right": {
+            "name": "PRO",
+            "price": "$9",
+            "tone": "free",
+            "note": "a month, 20x the credit"
+          }
+        },
+        {
+          "id": "s",
+          "kind": "screen",
+          "width": 1080,
+          "height": 1700,
+          "src": "assets/ai-website-builder/hf-pro-card.png",
+          "h": 520
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "sw.left",
+          "on": "pro costs",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "sw.right",
+          "on": "9",
+          "at": 0.58
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "9",
+          "at": 0.58
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "at": 0,
+          "rect": [
+            40,
+            60,
+            1000,
+            520
+          ],
+          "ring": false,
+          "instant": true
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "20 times",
+          "rect": [
+            40,
+            900,
+            1000,
+            140
+          ],
+          "at": 2.38
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.55,
+          "vol": 0.343
+        }
+      ],
+      "durationSec": 3.92,
+      "assetId": "hf-pro-card",
+      "claimId": "hf-pro-card",
+      "covers": "Pro costs $9",
+      "sourceUrl": "https://huggingface.co/pricing",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The tip",
+      "headline": "Build it in [[one sitting]]",
+      "blocks": [
+        {
+          "id": "st",
+          "kind": "steps",
+          "steps": [
+            "Plan your changes",
+            "Build it in one go"
+          ],
+          "h": 420
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "st.0",
+          "on": "plan your changes",
+          "at": 0.2
+        },
+        {
+          "do": "show",
+          "target": "st.1",
+          "on": "one sitting",
+          "at": 1.8
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "one sitting",
+          "at": 1.8
+        }
+      ],
+      "presenter": {
+        "src": "assets/ai-website-builder/avatar-master-cta.mp4",
+        "from": 0.31
+      },
+      "durationSec": 2.88,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "headline": "[[Save]] This",
+      "headlineSize": "xl",
+      "cta": true,
+      "hideCaptions": true,
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Build your own site this weekend, on HuggingChat."
+        },
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/ai-website-builder/promo-site.mp4",
+          "width": 1440,
+          "height": 660,
+          "h": 420,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "save",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "build yours",
+          "at": 0.88
+        }
+      ],
+      "presenter": {
+        "src": "assets/ai-website-builder/avatar-master-cta.mp4",
+        "from": 3.19
+      },
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ],
+      "durationSec": 2.38
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.18,
+      "text": "Hugging Face's free",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Hugging"
+        },
+        {
+          "t": 0.52,
+          "text": "Face's"
+        },
+        {
+          "t": 0.94,
+          "text": "free"
+        }
+      ]
+    },
+    {
+      "start": 1.18,
+      "end": 2.3,
+      "text": "AI asks who",
+      "words": [
+        {
+          "t": 1.18,
+          "text": "AI"
+        },
+        {
+          "t": 1.52,
+          "text": "asks"
+        },
+        {
+          "t": 1.96,
+          "text": "who"
+        }
+      ]
+    },
+    {
+      "start": 2.3,
+      "end": 3.38,
+      "text": "you are, looks",
+      "words": [
+        {
+          "t": 2.3,
+          "text": "you"
+        },
+        {
+          "t": 2.54,
+          "text": "are,"
+        },
+        {
+          "t": 3.12,
+          "text": "looks"
+        }
+      ]
+    },
+    {
+      "start": 3.38,
+      "end": 4.34,
+      "text": "you up, then",
+      "words": [
+        {
+          "t": 3.38,
+          "text": "you"
+        },
+        {
+          "t": 3.64,
+          "text": "up,"
+        },
+        {
+          "t": 4.16,
+          "text": "then"
+        }
+      ]
+    },
+    {
+      "start": 4.34,
+      "end": 5.24,
+      "text": "builds your website.",
+      "words": [
+        {
+          "t": 4.34,
+          "text": "builds"
+        },
+        {
+          "t": 4.6,
+          "text": "your"
+        },
+        {
+          "t": 4.84,
+          "text": "website."
+        }
+      ]
+    },
+    {
+      "start": 5.58,
+      "end": 6.72,
+      "text": "It's called HuggingChat",
+      "words": [
+        {
+          "t": 5.58,
+          "text": "It's"
+        },
+        {
+          "t": 5.84,
+          "text": "called"
+        },
+        {
+          "t": 6.0,
+          "text": "HuggingChat"
+        }
+      ]
+    },
+    {
+      "start": 7.32,
+      "end": 7.9,
+      "text": "and Hugging Face",
+      "words": [
+        {
+          "t": 7.32,
+          "text": "and"
+        },
+        {
+          "t": 7.38,
+          "text": "Hugging"
+        },
+        {
+          "t": 7.68,
+          "text": "Face"
+        }
+      ]
+    },
+    {
+      "start": 7.9,
+      "end": 8.68,
+      "text": "is moving its",
+      "words": [
+        {
+          "t": 7.9,
+          "text": "is"
+        },
+        {
+          "t": 8.2,
+          "text": "moving"
+        },
+        {
+          "t": 8.4,
+          "text": "its"
+        }
+      ]
+    },
+    {
+      "start": 8.68,
+      "end": 10.32,
+      "text": "website builder DeepSite",
+      "words": [
+        {
+          "t": 8.68,
+          "text": "website"
+        },
+        {
+          "t": 9.12,
+          "text": "builder"
+        },
+        {
+          "t": 9.58,
+          "text": "DeepSite"
+        }
+      ]
+    },
+    {
+      "start": 10.32,
+      "end": 11.54,
+      "text": "in here. It's",
+      "words": [
+        {
+          "t": 10.32,
+          "text": "in"
+        },
+        {
+          "t": 10.66,
+          "text": "here."
+        },
+        {
+          "t": 11.34,
+          "text": "It's"
+        }
+      ]
+    },
+    {
+      "start": 11.54,
+      "end": 12.4,
+      "text": "free to start,",
+      "words": [
+        {
+          "t": 11.54,
+          "text": "free"
+        },
+        {
+          "t": 11.74,
+          "text": "to"
+        },
+        {
+          "t": 12.02,
+          "text": "start,"
+        }
+      ]
+    },
+    {
+      "start": 12.74,
+      "end": 13.24,
+      "text": "which is where",
+      "words": [
+        {
+          "t": 12.74,
+          "text": "which"
+        },
+        {
+          "t": 12.92,
+          "text": "is"
+        },
+        {
+          "t": 13.12,
+          "text": "where"
+        }
+      ]
+    },
+    {
+      "start": 13.24,
+      "end": 14.34,
+      "text": "The catch:: comes in.",
+      "words": [
+        {
+          "t": 13.24,
+          "text": "The"
+        },
+        {
+          "t": 13.64,
+          "text": "catch::"
+        },
+        {
+          "t": 13.94,
+          "text": "comes"
+        },
+        {
+          "t": 13.94,
+          "text": "in."
+        }
+      ]
+    },
+    {
+      "start": 14.74,
+      "end": 16.4,
+      "text": "Start with Make my website",
+      "words": [
+        {
+          "t": 14.74,
+          "text": "Start"
+        },
+        {
+          "t": 15.06,
+          "text": "with"
+        },
+        {
+          "t": 15.26,
+          "text": "Make"
+        },
+        {
+          "t": 15.26,
+          "text": "my"
+        },
+        {
+          "t": 15.26,
+          "text": "website"
+        }
+      ]
+    },
+    {
+      "start": 16.82,
+      "end": 17.34,
+      "text": "Tell it your",
+      "words": [
+        {
+          "t": 16.82,
+          "text": "Tell"
+        },
+        {
+          "t": 16.98,
+          "text": "it"
+        },
+        {
+          "t": 17.14,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 17.34,
+      "end": 18.06,
+      "text": "name, what you",
+      "words": [
+        {
+          "t": 17.34,
+          "text": "name,"
+        },
+        {
+          "t": 17.68,
+          "text": "what"
+        },
+        {
+          "t": 17.88,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 18.06,
+      "end": 18.96,
+      "text": "do, your links,",
+      "words": [
+        {
+          "t": 18.06,
+          "text": "do,"
+        },
+        {
+          "t": 18.46,
+          "text": "your"
+        },
+        {
+          "t": 18.66,
+          "text": "links,"
+        }
+      ]
+    },
+    {
+      "start": 19.0,
+      "end": 19.74,
+      "text": "and a style.",
+      "words": [
+        {
+          "t": 19.0,
+          "text": "and"
+        },
+        {
+          "t": 19.2,
+          "text": "a"
+        },
+        {
+          "t": 19.42,
+          "text": "style."
+        }
+      ]
+    },
+    {
+      "start": 20.34,
+      "end": 20.98,
+      "text": "Then it reads",
+      "words": [
+        {
+          "t": 20.34,
+          "text": "Then"
+        },
+        {
+          "t": 20.54,
+          "text": "it"
+        },
+        {
+          "t": 20.68,
+          "text": "reads"
+        }
+      ]
+    },
+    {
+      "start": 20.98,
+      "end": 22.02,
+      "text": "those links or",
+      "words": [
+        {
+          "t": 20.98,
+          "text": "those"
+        },
+        {
+          "t": 21.32,
+          "text": "links"
+        },
+        {
+          "t": 21.66,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 22.02,
+      "end": 22.78,
+      "text": "searches your name",
+      "words": [
+        {
+          "t": 22.02,
+          "text": "searches"
+        },
+        {
+          "t": 22.36,
+          "text": "your"
+        },
+        {
+          "t": 22.62,
+          "text": "name"
+        }
+      ]
+    },
+    {
+      "start": 22.78,
+      "end": 23.34,
+      "text": "if you skip",
+      "words": [
+        {
+          "t": 22.78,
+          "text": "if"
+        },
+        {
+          "t": 22.94,
+          "text": "you"
+        },
+        {
+          "t": 23.16,
+          "text": "skip"
+        }
+      ]
+    },
+    {
+      "start": 23.34,
+      "end": 24.14,
+      "text": "them and writes",
+      "words": [
+        {
+          "t": 23.34,
+          "text": "them"
+        },
+        {
+          "t": 23.64,
+          "text": "and"
+        },
+        {
+          "t": 23.84,
+          "text": "writes"
+        }
+      ]
+    },
+    {
+      "start": 24.14,
+      "end": 24.96,
+      "text": "the whole page",
+      "words": [
+        {
+          "t": 24.14,
+          "text": "the"
+        },
+        {
+          "t": 24.36,
+          "text": "whole"
+        },
+        {
+          "t": 24.56,
+          "text": "page"
+        }
+      ]
+    },
+    {
+      "start": 24.96,
+      "end": 25.82,
+      "text": "while you watch.",
+      "words": [
+        {
+          "t": 24.96,
+          "text": "while"
+        },
+        {
+          "t": 25.24,
+          "text": "you"
+        },
+        {
+          "t": 25.48,
+          "text": "watch."
+        }
+      ]
+    },
+    {
+      "start": 26.3,
+      "end": 26.9,
+      "text": "Ask for a",
+      "words": [
+        {
+          "t": 26.3,
+          "text": "Ask"
+        },
+        {
+          "t": 26.54,
+          "text": "for"
+        },
+        {
+          "t": 26.74,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 26.9,
+      "end": 28.16,
+      "text": "change and it edits only",
+      "words": [
+        {
+          "t": 26.9,
+          "text": "change"
+        },
+        {
+          "t": 27.18,
+          "text": "and"
+        },
+        {
+          "t": 27.42,
+          "text": "it"
+        },
+        {
+          "t": 27.42,
+          "text": "edits"
+        },
+        {
+          "t": 27.42,
+          "text": "only"
+        }
+      ]
+    },
+    {
+      "start": 28.16,
+      "end": 29.5,
+      "text": "that part. Once",
+      "words": [
+        {
+          "t": 28.16,
+          "text": "that"
+        },
+        {
+          "t": 28.46,
+          "text": "part."
+        },
+        {
+          "t": 29.4,
+          "text": "Once"
+        }
+      ]
+    },
+    {
+      "start": 29.5,
+      "end": 30.48,
+      "text": "you like it,",
+      "words": [
+        {
+          "t": 29.5,
+          "text": "you"
+        },
+        {
+          "t": 29.66,
+          "text": "like"
+        },
+        {
+          "t": 29.94,
+          "text": "it,"
+        }
+      ]
+    },
+    {
+      "start": 30.68,
+      "end": 31.54,
+      "text": "one tap puts it",
+      "words": [
+        {
+          "t": 30.68,
+          "text": "one"
+        },
+        {
+          "t": 31.04,
+          "text": "tap"
+        },
+        {
+          "t": 31.32,
+          "text": "puts"
+        },
+        {
+          "t": 31.32,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 31.54,
+      "end": 32.28,
+      "text": "online as a",
+      "words": [
+        {
+          "t": 31.54,
+          "text": "online"
+        },
+        {
+          "t": 31.84,
+          "text": "as"
+        },
+        {
+          "t": 32.1,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 32.28,
+      "end": 33.0,
+      "text": "free Hugging Face",
+      "words": [
+        {
+          "t": 32.28,
+          "text": "free"
+        },
+        {
+          "t": 32.44,
+          "text": "Hugging"
+        },
+        {
+          "t": 32.8,
+          "text": "Face"
+        }
+      ]
+    },
+    {
+      "start": 33.0,
+      "end": 34.28,
+      "text": "Space with its",
+      "words": [
+        {
+          "t": 33.0,
+          "text": "Space"
+        },
+        {
+          "t": 33.52,
+          "text": "with"
+        },
+        {
+          "t": 34.06,
+          "text": "its"
+        }
+      ]
+    },
+    {
+      "start": 34.28,
+      "end": 35.8,
+      "text": "own link. The catch::",
+      "words": [
+        {
+          "t": 34.28,
+          "text": "own"
+        },
+        {
+          "t": 34.48,
+          "text": "link."
+        },
+        {
+          "t": 35.38,
+          "text": "The"
+        },
+        {
+          "t": 35.38,
+          "text": "catch::"
+        }
+      ]
+    },
+    {
+      "start": 36.24,
+      "end": 36.84,
+      "text": "A free account",
+      "words": [
+        {
+          "t": 36.24,
+          "text": "A"
+        },
+        {
+          "t": 36.34,
+          "text": "free"
+        },
+        {
+          "t": 36.56,
+          "text": "account"
+        }
+      ]
+    },
+    {
+      "start": 36.84,
+      "end": 37.68,
+      "text": "gets 10 cents",
+      "words": [
+        {
+          "t": 36.84,
+          "text": "gets"
+        },
+        {
+          "t": 37.14,
+          "text": "10"
+        },
+        {
+          "t": 37.46,
+          "text": "cents"
+        }
+      ]
+    },
+    {
+      "start": 37.68,
+      "end": 38.48,
+      "text": "of AI credit",
+      "words": [
+        {
+          "t": 37.68,
+          "text": "of"
+        },
+        {
+          "t": 37.92,
+          "text": "AI"
+        },
+        {
+          "t": 38.16,
+          "text": "credit"
+        }
+      ]
+    },
+    {
+      "start": 38.48,
+      "end": 39.76,
+      "text": "a month. One",
+      "words": [
+        {
+          "t": 38.48,
+          "text": "a"
+        },
+        {
+          "t": 38.66,
+          "text": "month."
+        },
+        {
+          "t": 39.64,
+          "text": "One"
+        }
+      ]
+    },
+    {
+      "start": 39.76,
+      "end": 40.72,
+      "text": "user says theirs",
+      "words": [
+        {
+          "t": 39.76,
+          "text": "user"
+        },
+        {
+          "t": 40.02,
+          "text": "says"
+        },
+        {
+          "t": 40.46,
+          "text": "theirs"
+        }
+      ]
+    },
+    {
+      "start": 40.72,
+      "end": 41.4,
+      "text": "was gone in",
+      "words": [
+        {
+          "t": 40.72,
+          "text": "was"
+        },
+        {
+          "t": 41.02,
+          "text": "gone"
+        },
+        {
+          "t": 41.22,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 41.4,
+      "end": 42.96,
+      "text": "two questions. Pro",
+      "words": [
+        {
+          "t": 41.4,
+          "text": "two"
+        },
+        {
+          "t": 41.62,
+          "text": "questions."
+        },
+        {
+          "t": 42.82,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 42.96,
+      "end": 44.48,
+      "text": "costs $9 monthly",
+      "words": [
+        {
+          "t": 42.96,
+          "text": "costs"
+        },
+        {
+          "t": 43.4,
+          "text": "$9"
+        },
+        {
+          "t": 43.82,
+          "text": "monthly"
+        }
+      ]
+    },
+    {
+      "start": 44.48,
+      "end": 45.2,
+      "text": "and gives you",
+      "words": [
+        {
+          "t": 44.48,
+          "text": "and"
+        },
+        {
+          "t": 44.82,
+          "text": "gives"
+        },
+        {
+          "t": 44.96,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 45.2,
+      "end": 46.94,
+      "text": "20x that. So",
+      "words": [
+        {
+          "t": 45.2,
+          "text": "20x"
+        },
+        {
+          "t": 45.8,
+          "text": "that."
+        },
+        {
+          "t": 46.74,
+          "text": "So"
+        }
+      ]
+    },
+    {
+      "start": 46.94,
+      "end": 47.66,
+      "text": "plan your changes",
+      "words": [
+        {
+          "t": 46.94,
+          "text": "plan"
+        },
+        {
+          "t": 47.06,
+          "text": "your"
+        },
+        {
+          "t": 47.3,
+          "text": "changes"
+        }
+      ]
+    },
+    {
+      "start": 47.66,
+      "end": 48.38,
+      "text": "and build it",
+      "words": [
+        {
+          "t": 47.66,
+          "text": "and"
+        },
+        {
+          "t": 47.96,
+          "text": "build"
+        },
+        {
+          "t": 48.14,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 48.38,
+      "end": 49.06,
+      "text": "in one sitting.",
+      "words": [
+        {
+          "t": 48.38,
+          "text": "in"
+        },
+        {
+          "t": 48.54,
+          "text": "one"
+        },
+        {
+          "t": 48.7,
+          "text": "sitting."
+        }
+      ]
+    },
+    {
+      "start": 49.62,
+      "end": 50.5,
+      "text": "Save this and",
+      "words": [
+        {
+          "t": 49.62,
+          "text": "Save"
+        },
+        {
+          "t": 49.88,
+          "text": "this"
+        },
+        {
+          "t": 50.3,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 50.5,
+      "end": 51.26,
+      "text": "build yours this",
+      "words": [
+        {
+          "t": 50.5,
+          "text": "build"
+        },
+        {
+          "t": 50.74,
+          "text": "yours"
+        },
+        {
+          "t": 51.0,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 51.26,
+      "end": 51.62,
+      "text": "weekend.",
+      "words": [
+        {
+          "t": 51.26,
+          "text": "weekend."
+        }
+      ]
+    }
+  ],
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 51.62,
+        "vol": 0.055
+      },
+      {
+        "t": 51.96,
+        "vol": 0.15
+      },
+      {
+        "t": 52.0,
+        "vol": 0.02
+      }
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+  },
+  "format": "ai-tools",
+  "script": "Hugging Face's free AI asks who you are, looks you up, then builds your website.\n\nIt's called HuggingChat, and Hugging Face is moving its website builder, DeepSite, in here. It's free to start, which is where the catch comes in.\n\nStart with Make my website. Tell it your name, what you do, your links and a style.\n\nThen it reads those links, or searches your name if you skip them, and writes the whole page while you watch.\n\nAsk for a change and it edits only that part.\n\nOnce you like it, one tap puts it online as a free Hugging Face Space, with its own link.\n\nThe catch: a free account gets ten cents of AI credit a month. One user says theirs was gone in two questions. Pro costs nine dollars monthly and gives you twenty times that.\n\nSo plan your changes and build it in one sitting. Save this, and build yours this weekend.",
+  "approval": {
+    "sha256": "2bba89e69e2edf40c70eb95b651cd76197c56dbdb2f99c51cc4184f176c35531",
+    "approvedAt": "2026-10-05T12:08:49+00:00",
+    "words": 157,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

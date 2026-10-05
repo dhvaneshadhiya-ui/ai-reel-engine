@@ -1,7 +1,1007 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
-  "format": "ai-tools",
-  "shots": [],
-  "music": true
+ "emphasis": [
+  "free",
+  "catch",
+  "Save"
+ ],
+ "caption_corrections": {
+  "deepsight": "DeepSite",
+  "hugging chat": "HuggingChat",
+  "it is only": "it edits only",
+  "one tap": "one tap",
+  "space": "Space",
+  "make my website": "Make my website",
+  "the catch?": "The catch:",
+  "20 times": "20x"
+ },
+ "format": "ai-tools",
+ "shots": [
+  {
+   "start_phrase": "Hugging Face's free AI",
+   "line": "Hugging Face's free AI asks who you are",
+   "needs": [
+    "Hugging",
+    "Face",
+    "free",
+    "asks"
+   ],
+   "tier": "official",
+   "asset_id": "promo-prompt",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Hugging Face",
+    "headline": "A free AI that asks [[who you are]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ai-website-builder/promo-prompt.mp4",
+      "width": 720,
+      "height": 200,
+      "h": 256,
+      "device": false
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "1",
+        "v": "Asks who you are",
+        "tone": "plain"
+       },
+       {
+        "k": "2",
+        "v": "Looks you up",
+        "tone": "plain"
+       },
+       {
+        "k": "3",
+        "v": "Builds your site",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "who you are"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "asks"
+     }
+    ],
+    "presenter": {
+     "src": "assets/ai-website-builder/avatar-master-hook.mp4",
+     "from": 0.0
+    }
+   }
+  },
+  {
+   "start_phrase": "looks you up, then",
+   "line": "looks you up, then builds your website.",
+   "needs": [
+    "looks",
+    "builds",
+    "website"
+   ],
+   "tier": "official",
+   "asset_id": "promo-site",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Hugging Face",
+    "headline": "Then it builds [[your website]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ai-website-builder/promo-site.mp4",
+      "width": 1440,
+      "height": 660,
+      "h": 520,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "builds your website"
+     }
+    ],
+    "presenter": {
+     "src": "assets/ai-website-builder/avatar-master-hook.mp4",
+     "from": 3.12
+    },
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "at": 1.15,
+      "vol": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "It's called Hugging Chat",
+   "line": "It's called HuggingChat, and Hugging Face is moving its website builder, DeepSite, in here.",
+   "needs": [
+    "called",
+    "HuggingChat",
+    "Hugging",
+    "Face",
+    "moving",
+    "website"
+   ],
+   "tier": "official",
+   "asset_id": "deepsite-moving",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "HuggingChat",
+    "headline": "DeepSite is [[moving in]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "width": 1080,
+      "height": 2340,
+      "src": "assets/ai-website-builder/deepsite-moving.png",
+      "h": 1000
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "at": 0,
+      "rect": [
+       40,
+       100,
+       1000,
+       1200
+      ],
+      "ring": false,
+      "instant": true
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "moving",
+      "rect": [
+       70,
+       280,
+       960,
+       220
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "in here",
+      "rect": [
+       70,
+       1400,
+       960,
+       480
+      ],
+      "ring": false
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "in here"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.18
+     },
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "at": 1.75,
+      "vol": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "It's free to start",
+   "line": "It's free to start, which is where the catch comes in.",
+   "needs": [
+    "free",
+    "start",
+    "which",
+    "where",
+    "catch",
+    "comes"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "HuggingChat",
+    "headline": "Free to start, with [[one catch]]",
+    "blocks": [
+     {
+      "id": "h",
+      "kind": "hero",
+      "side": {
+       "name": "HuggingChat",
+       "price": "Free",
+       "tone": "free",
+       "note": "with a Hugging Face account"
+      }
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "The catch comes at the end."
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "h",
+      "on": "free to start"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "catch"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "catch"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Start with Make my",
+   "line": "Start with Make my website.",
+   "needs": [
+    "Start",
+    "Make",
+    "website"
+   ],
+   "tier": "official",
+   "asset_id": "hfchat-home",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Step 1",
+    "headline": "Tap [[Make my website]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "width": 1080,
+      "height": 2340,
+      "src": "assets/ai-website-builder/hfchat-home.png",
+      "h": 900
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "at": 0,
+      "rect": [
+       40,
+       1500,
+       1000,
+       520
+      ],
+      "ring": false,
+      "instant": true
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "make my website",
+      "rect": [
+       300,
+       1800,
+       480,
+       130
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "make my website"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx2/mouse-click-01.mp3",
+      "at": 0.55,
+      "vol": 0.35
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Tell it your name",
+   "line": "Tell it your name, what you do, your links and a style.",
+   "needs": [
+    "Tell",
+    "name",
+    "links",
+    "style"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Step 2",
+    "headline": "Tell it [[who you are]]",
+    "blocks": [
+     {
+      "id": "st",
+      "kind": "steps",
+      "steps": [
+       "Your name",
+       "What you do",
+       "Your links",
+       "A style"
+      ],
+      "h": 640
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "st.0",
+      "on": "name"
+     },
+     {
+      "do": "show",
+      "target": "st.1",
+      "on": "what you do"
+     },
+     {
+      "do": "show",
+      "target": "st.2",
+      "on": "links"
+     },
+     {
+      "do": "show",
+      "target": "st.3",
+      "on": "style"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "tell it"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Then it reads those",
+   "line": "Then it reads those links",
+   "needs": [
+    "reads",
+    "links"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "HuggingChat's own prompt",
+    "headline": "It [[reads your links]]",
+    "blocks": [
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "\u201cResearch me with your tools: fetch my links, or search the web for my name if I shared none.\u201d"
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "You share links",
+        "v": "It reads them",
+        "tone": "free"
+       },
+       {
+        "k": "You skip them",
+        "v": "It searches your name",
+        "tone": "plain"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "reads those links"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "reads those links"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "links"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "or searches your name",
+   "line": "or searches your name if you skip them, and writes the whole page while you watch.",
+   "needs": [
+    "searches",
+    "name",
+    "skip",
+    "them",
+    "writes",
+    "whole"
+   ],
+   "tier": "official",
+   "asset_id": "promo-build",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Step 3",
+    "headline": "Then it [[writes the page]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ai-website-builder/promo-build.mp4",
+      "width": 1440,
+      "height": 780,
+      "h": 560,
+      "device": false,
+      "from": 2.4
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Live preview while it writes."
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "writes the whole page"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "while you watch"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Ask for a change",
+   "line": "Ask for a change and it edits only that part.",
+   "needs": [
+    "change",
+    "edits",
+    "only",
+    "part"
+   ],
+   "tier": "official",
+   "asset_id": "pr-artifacts",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Hugging Face's code, June 2026",
+    "headline": "It edits [[only that part]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "width": 1080,
+      "height": 2340,
+      "src": "assets/ai-website-builder/pr-artifacts.png",
+      "h": 760
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Small change",
+        "v": "Edits that part",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "at": 0,
+      "rect": [
+       40,
+       450,
+       1000,
+       420
+      ],
+      "ring": false,
+      "instant": true
+     },
+     {
+      "do": "show",
+      "target": "r",
+      "on": "only that part"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "only that part"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Once you like it",
+   "line": "Once you like it",
+   "needs": [
+    "Once",
+    "like"
+   ],
+   "tier": "official",
+   "asset_id": "promo-site",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Step 4",
+    "headline": "Happy with [[how it looks]]?",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ai-website-builder/promo-site.mp4",
+      "width": 1440,
+      "height": 660,
+      "h": 520,
+      "device": false,
+      "from": 1.0
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "like it"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "one tap puts it",
+   "line": "one tap puts it online as a free Hugging Face Space, with its own link.",
+   "needs": [
+    "puts",
+    "online",
+    "free",
+    "Hugging",
+    "Face",
+    "Space"
+   ],
+   "tier": "official",
+   "asset_id": "promo-deploy",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Deploy to Space",
+    "headline": "One tap, and it's [[online]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ai-website-builder/promo-deploy.mp4",
+      "width": 1440,
+      "height": 700,
+      "h": 520,
+      "device": false
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Hosting",
+        "v": "Free Hugging Face Space",
+        "tone": "free"
+       },
+       {
+        "k": "Address",
+        "v": "Its own link",
+        "tone": "plain"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "puts it online"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "own link"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "online"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx2/mouse-click-01.mp3",
+      "at": 1.0,
+      "vol": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "The catch a free",
+   "line": "The catch: a free account gets ten cents of AI credit a month.",
+   "needs": [
+    "catch",
+    "free",
+    "account",
+    "gets",
+    "cents",
+    "credit"
+   ],
+   "tier": "official",
+   "asset_id": "hf-credits-table",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Hugging Face pricing",
+    "headline": "Free means [[$0.10]] a month",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "width": 1080,
+      "height": 1840,
+      "src": "assets/ai-website-builder/hf-credits-table.png",
+      "h": 900
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "at": 0,
+      "rect": [
+       40,
+       240,
+       1000,
+       720
+      ],
+      "ring": false,
+      "instant": true
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "free account",
+      "rect": [
+       40,
+       240,
+       1000,
+       720
+      ],
+      "ring": false
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "10 cents",
+      "rect": [
+       40,
+       600,
+       1000,
+       370
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "10 cents"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Core.MP3",
+      "at": 1.7,
+      "vol": 0.35
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "One user says theirs",
+   "line": "One user says theirs was gone in two questions.",
+   "needs": [
+    "user",
+    "says",
+    "theirs",
+    "gone",
+    "questions"
+   ],
+   "tier": "single",
+   "asset_id": "forum-limits",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Hugging Face forum, June 2026",
+    "headline": "Gone in [[two questions]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "width": 1080,
+      "height": 2340,
+      "src": "assets/ai-website-builder/forum-limits.png",
+      "h": 900
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "at": 0,
+      "rect": [
+       30,
+       820,
+       1020,
+       1000
+      ],
+      "ring": false,
+      "instant": true
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "two questions",
+      "rect": [
+       20,
+       1290,
+       1040,
+       140
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "two questions"
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx-action/marker.mp3",
+      "at": 1.76,
+      "vol": 0.4
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Pro costs $9",
+   "line": "Pro costs nine dollars monthly and gives you twenty times that.",
+   "needs": [
+    "costs",
+    "nine",
+    "dollars",
+    "monthly",
+    "gives",
+    "twenty"
+   ],
+   "tier": "official",
+   "asset_id": "hf-pro-card",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Hugging Face PRO",
+    "headline": "Pro: [[$9]] a month",
+    "blocks": [
+     {
+      "id": "sw",
+      "kind": "swap",
+      "left": {
+       "name": "Free",
+       "price": "$0.10",
+       "tone": "cost",
+       "note": "AI credit a month"
+      },
+      "right": {
+       "name": "PRO",
+       "price": "$9",
+       "tone": "free",
+       "note": "a month, 20x the credit"
+      }
+     },
+     {
+      "id": "s",
+      "kind": "screen",
+      "width": 1080,
+      "height": 1700,
+      "src": "assets/ai-website-builder/hf-pro-card.png",
+      "h": 520
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "sw.left",
+      "on": "pro costs"
+     },
+     {
+      "do": "show",
+      "target": "sw.right",
+      "on": "9"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "9"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "at": 0,
+      "rect": [
+       40,
+       60,
+       1000,
+       520
+      ],
+      "ring": false,
+      "instant": true
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "20 times",
+      "rect": [
+       40,
+       900,
+       1000,
+       140
+      ]
+     }
+    ],
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "at": 0.55,
+      "vol": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "So plan your changes",
+   "line": "So plan your changes and build it in one sitting.",
+   "needs": [
+    "plan",
+    "changes",
+    "build",
+    "sitting"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The tip",
+    "headline": "Build it in [[one sitting]]",
+    "blocks": [
+     {
+      "id": "st",
+      "kind": "steps",
+      "steps": [
+       "Plan your changes",
+       "Build it in one go"
+      ],
+      "h": 420
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "st.0",
+      "on": "plan your changes"
+     },
+     {
+      "do": "show",
+      "target": "st.1",
+      "on": "one sitting"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "one sitting"
+     }
+    ],
+    "presenter": {
+     "src": "assets/ai-website-builder/avatar-master-cta.mp4",
+     "from": 0.31
+    }
+   }
+  },
+  {
+   "start_phrase": "Save this and build",
+   "line": "Save this, and build yours this weekend.",
+   "needs": [
+    "Save",
+    "build",
+    "yours",
+    "weekend"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "headline": "[[Save]] This",
+    "headlineSize": "xl",
+    "cta": true,
+    "hideCaptions": true,
+    "blocks": [
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Build your own site this weekend, on HuggingChat."
+     },
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ai-website-builder/promo-site.mp4",
+      "width": 1440,
+      "height": 660,
+      "h": 420,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "save"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "build yours"
+     }
+    ],
+    "presenter": {
+     "src": "assets/ai-website-builder/avatar-master-cta.mp4",
+     "from": 3.19
+    },
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "at": 0.0,
+      "vol": 0.18
+     }
+    ]
+   }
+  }
+ ],
+ "music": true,
+ "facePlan": "bookends",
+ "audio": "assets/ai-website-builder/vo.mp3",
+ "slideSfx": false
 }
