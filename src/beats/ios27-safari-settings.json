@@ -1,0 +1,1922 @@
+{
+  "id": "ios27-safari-settings",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "utility",
+  "audio": "assets/ios27-safari-settings/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "refreshing",
+    "price",
+    "catch",
+    "Notify",
+    "daily",
+    "Describe",
+    "recipes",
+    "clutter",
+    "groups",
+    "Intelligence",
+    "15 Pro",
+    "track"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "eyebrow": "New in iOS 27 \u00b7 Safari",
+      "headline": "Stop [[refreshing]]",
+      "presenter": {
+        "src": "assets/ios27-safari-settings/avatar-hook.mp4",
+        "from": 0.0
+      },
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios27-safari-settings/nm-lock.jpg",
+          "width": 1960,
+          "height": 1102,
+          "h": 700
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "at": 0.0,
+          "rect": [
+            600,
+            40,
+            760,
+            1000
+          ],
+          "ring": false
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "stop refreshing",
+          "at": 0.0
+        }
+      ],
+      "durationSec": 1.88,
+      "assetId": "nm-lock",
+      "claimId": "nm-lock",
+      "covers": "Stop refreshing that product",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "New in iOS 27 \u00b7 Safari",
+      "headline": "Safari [[watches]] it for you",
+      "presenter": {
+        "src": "assets/ios27-safari-settings/avatar-hook.mp4",
+        "from": 1.88
+      },
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios27-safari-settings/nm-lock.jpg",
+          "width": 1960,
+          "height": 1102,
+          "h": 700
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "watch it",
+          "at": 2.36
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "tell you",
+          "rect": [
+            630,
+            620,
+            700,
+            160
+          ],
+          "at": 3.38
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "price drops",
+          "rect": [
+            740,
+            715,
+            520,
+            40
+          ],
+          "at": 3.92
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 2.6,
+          "vol": 0.556
+        }
+      ],
+      "durationSec": 5.34,
+      "assetId": "nm-lock",
+      "claimId": "nm-lock",
+      "covers": "because Safari in iOS",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "iOS 27 \u00b7 Safari",
+      "headline": "[[3]] worth switching on",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "1",
+              "v": "Notify Me",
+              "tone": "plain"
+            },
+            {
+              "k": "2",
+              "v": "Describe Extension",
+              "tone": "plain"
+            },
+            {
+              "k": "3",
+              "v": "Tab topics",
+              "tone": "plain"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "one of three",
+          "at": 0.74
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "setting one",
+          "at": 0.56
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "of three",
+          "at": 0.94
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "switching on",
+          "at": 1.54
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.3,
+          "vol": 0.182
+        }
+      ],
+      "durationSec": 2.2,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Before you try them",
+      "headline": "One [[catch]] for all 3",
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "It's the same for every one. More at the end."
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "t",
+          "on": "all three share",
+          "at": 0.28
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "same catch",
+          "at": 1.06
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 1.4,
+          "vol": 0.295
+        }
+      ],
+      "durationSec": 2.34,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "1 \u00b7 Notify Me",
+      "headline": "Setting one: [[Notify Me]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios27-safari-settings/page-menu.png",
+          "width": 490,
+          "height": 1008,
+          "h": 860
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "called notify",
+          "rect": [
+            180,
+            628,
+            262,
+            52
+          ],
+          "at": 0.56
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "notify me",
+          "at": 0.78
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "at": 0.6,
+          "vol": 0.133
+        }
+      ],
+      "durationSec": 1.5,
+      "assetId": "page-menu",
+      "claimId": "page-menu",
+      "covers": "It's called Notify Me.",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "1 \u00b7 Notify Me",
+      "headline": "Open the [[page menu]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios27-safari-settings/page-menu.png",
+          "width": 490,
+          "height": 1008,
+          "h": 860
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "at": 0.0,
+          "rect": [
+            160,
+            355,
+            290,
+            590
+          ],
+          "ring": false
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "the menu",
+          "at": 0.3
+        }
+      ],
+      "durationSec": 1.76,
+      "assetId": "page-menu",
+      "claimId": "page-menu",
+      "covers": "Tap the menu beside",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "1 \u00b7 Notify Me",
+      "headline": "Say what you're [[waiting for]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios27-safari-settings/nm-setup-dialog.jpg",
+          "width": 440,
+          "height": 620,
+          "h": 700
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Try: \u201cback in stock\u201d"
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "describe what",
+          "rect": [
+            45,
+            300,
+            350,
+            100
+          ],
+          "at": 1.4
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "waiting for",
+          "at": 2.2
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "back in",
+          "at": 4.66
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "waiting for",
+          "rect": [
+            45,
+            340,
+            350,
+            60
+          ],
+          "at": 2.2
+        }
+      ],
+      "durationSec": 5.66,
+      "assetId": "nm-setup-dialog",
+      "claimId": "nm-setup-dialog",
+      "covers": "tap Notify Me, and",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "1 \u00b7 Notify Me",
+      "headline": "Checks [[daily]] by default",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios27-safari-settings/nm-setup-dialog.jpg",
+          "width": 440,
+          "height": 620,
+          "h": 760
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "checks daily",
+          "rect": [
+            45,
+            400,
+            240,
+            36
+          ],
+          "at": 0.6
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "checks daily",
+          "at": 0.6
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "change the",
+          "rect": [
+            180,
+            400,
+            70,
+            36
+          ],
+          "at": 1.9
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 0.5,
+          "vol": 0.221
+        }
+      ],
+      "durationSec": 2.84,
+      "assetId": "nm-setup-dialog",
+      "claimId": "nm-setup-dialog",
+      "covers": "Safari checks daily unless",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "2 \u00b7 Describe Extension",
+      "headline": "Same menu, [[setting two]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios27-safari-settings/page-menu.png",
+          "width": 490,
+          "height": 1008,
+          "h": 860
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "describe extension",
+          "rect": [
+            180,
+            820,
+            262,
+            48
+          ],
+          "at": 3.28
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "same menu holds",
+          "at": 1.0
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "setting to",
+          "rect": [
+            180,
+            628,
+            262,
+            52
+          ],
+          "ring": false,
+          "at": 1.84
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/Click.MP3",
+          "at": 2.0,
+          "vol": 0.133
+        }
+      ],
+      "durationSec": 5.32,
+      "assetId": "page-menu",
+      "claimId": "page-menu",
+      "covers": "That same menu holds",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "2 \u00b7 Describe Extension",
+      "headline": "Describe it, Safari [[builds]] it",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios27-safari-settings/ext-options.png",
+          "width": 490,
+          "height": 1008,
+          "h": 860
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "describe what",
+          "rect": [
+            55,
+            820,
+            380,
+            60
+          ],
+          "at": 0.0
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "safari builds",
+          "rect": [
+            55,
+            345,
+            380,
+            460
+          ],
+          "ring": false,
+          "at": 2.06
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "builds the",
+          "at": 2.34
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "a site",
+          "rect": [
+            55,
+            345,
+            380,
+            110
+          ],
+          "at": 1.08
+        }
+      ],
+      "durationSec": 4.18,
+      "assetId": "ext-options",
+      "claimId": "ext-options",
+      "covers": "Describe what you want",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "2 \u00b7 Apple's example",
+      "headline": "A button that [[saves recipes]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios27-safari-settings/ext-recipe-dialog.jpg",
+          "width": 440,
+          "height": 732,
+          "h": 820
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "apple's example",
+          "rect": [
+            30,
+            170,
+            390,
+            60
+          ],
+          "at": 0.0
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "saves recipes",
+          "rect": [
+            30,
+            30,
+            390,
+            330
+          ],
+          "at": 1.82
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "saves recipes",
+          "at": 1.82
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx-action/paper-slide.mp3",
+          "at": 0.4,
+          "vol": 0.141
+        }
+      ],
+      "durationSec": 2.64,
+      "assetId": "ext-recipe-dialog",
+      "claimId": "ext-recipe-dialog",
+      "covers": "Apple's example adds a",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "3 \u00b7 Tab topics",
+      "headline": "Fixes tab [[clutter]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/ios27-safari-settings/tab-topics.mp4",
+          "width": 1000,
+          "height": 1000,
+          "h": 820,
+          "from": 0.0,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "clutter",
+          "at": 1.54
+        }
+      ],
+      "durationSec": 3.66,
+      "assetId": "tab-topics",
+      "claimId": "tab-topics",
+      "covers": "Setting three fixes",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "3 \u00b7 Tab topics",
+      "headline": "They [[sort themselves]]",
+      "blocks": [
+        {
+          "id": "st",
+          "kind": "steps",
+          "steps": [
+            "Tabs",
+            "Organize",
+            "Automatically Create Topics"
+          ]
+        },
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/ios27-safari-settings/tab-topics.mp4",
+          "width": 1000,
+          "height": 1000,
+          "h": 560,
+          "from": 1.6,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "st.0",
+          "on": "tap organize",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "st.1",
+          "on": "organize then",
+          "at": 0.34
+        },
+        {
+          "do": "show",
+          "target": "st.2",
+          "on": "create topics",
+          "at": 1.64
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "into groups",
+          "at": 3.9
+        },
+        {
+          "do": "highlight",
+          "target": "st.2",
+          "on": "sorts them",
+          "at": 3.24
+        }
+      ],
+      "durationSec": 5.16,
+      "assetId": "tab-topics",
+      "claimId": "tab-topics",
+      "covers": "tap Organize, then Automatically",
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Back to it",
+      "headline": "The [[catch]]",
+      "blocks": [
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Notify Me \u00b7 Describe Extension \u00b7 Tab topics"
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "t",
+          "at": 0.0
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "the catch",
+          "at": 0.72
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.309
+        }
+      ],
+      "durationSec": 1.16,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The catch",
+      "headline": "All 3 need [[Apple Intelligence]]",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Notify Me",
+              "v": "Apple Intelligence",
+              "tone": "cost"
+            },
+            {
+              "k": "Describe Extension",
+              "v": "Apple Intelligence",
+              "tone": "cost"
+            },
+            {
+              "k": "Tab topics",
+              "v": "Apple Intelligence",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "all three",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "run on",
+          "at": 0.66
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "apple intelligence",
+          "at": 0.98
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "apple intelligence",
+          "at": 0.98
+        }
+      ],
+      "durationSec": 1.74,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The catch",
+      "headline": "iPhone [[15 Pro]] or later",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "iPhone 15 Pro",
+              "v": "Works",
+              "tone": "free"
+            },
+            {
+              "k": "iPhone 15 Pro Max",
+              "v": "Works",
+              "tone": "free"
+            },
+            {
+              "k": "iPhone 16 and later",
+              "v": "Works",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "15 pro",
+          "at": 1.12
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "pro max",
+          "at": 3.1
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "16 and",
+          "at": 4.58
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "15 pro",
+          "at": 1.12
+        },
+        {
+          "do": "highlight",
+          "target": "r.2",
+          "on": "any iphone",
+          "at": 3.96
+        }
+      ],
+      "sfx": [
+        {
+          "src": "sfx2/impact-boom.mp3",
+          "at": 0.5,
+          "vol": 0.24
+        }
+      ],
+      "durationSec": 5.46,
+      "hideCaptions": false,
+      "captionBottom": 422
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "hideCaptions": true,
+      "headlineSize": "xl",
+      "headline": "Which page would you [[track]]?",
+      "presenter": {
+        "src": "assets/ios27-safari-settings/avatar-cta.mp4",
+        "from": 0.14
+      },
+      "blocks": [
+        {
+          "id": "d",
+          "kind": "text",
+          "text": "Drop it in the comments."
+        },
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios27-safari-settings/nm-lock.jpg",
+          "width": 1960,
+          "height": 1102,
+          "h": 420
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "track first",
+          "at": 1.54
+        },
+        {
+          "do": "show",
+          "target": "d",
+          "on": "track first",
+          "at": 1.54
+        }
+      ],
+      "durationSec": 2.24,
+      "assetId": "nm-lock",
+      "claimId": "nm-lock",
+      "covers": "Which page would you"
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "hideCaptions": true,
+      "headlineSize": "xl",
+      "headline": "Which page would you [[track]]?",
+      "presenter": {
+        "src": "assets/ios27-safari-settings/avatar-cta.mp4",
+        "from": 2.38
+      },
+      "blocks": [
+        {
+          "id": "d",
+          "kind": "text",
+          "text": "Drop it in the comments."
+        },
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios27-safari-settings/nm-lock.jpg",
+          "width": 1960,
+          "height": 1102,
+          "h": 420
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "d",
+          "at": 0.0
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "at": 0.0
+        }
+      ],
+      "durationSec": 0.92,
+      "assetId": "nm-lock",
+      "claimId": "nm-lock",
+      "covers": "Drop it below."
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.2,
+      "text": "Stop refreshing that",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Stop"
+        },
+        {
+          "t": 0.44,
+          "text": "refreshing"
+        },
+        {
+          "t": 0.92,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 1.2,
+      "end": 2.3,
+      "text": "product page because",
+      "words": [
+        {
+          "t": 1.2,
+          "text": "product"
+        },
+        {
+          "t": 1.48,
+          "text": "page"
+        },
+        {
+          "t": 1.88,
+          "text": "because"
+        }
+      ]
+    },
+    {
+      "start": 2.3,
+      "end": 3.22,
+      "text": "Safari in iOS",
+      "words": [
+        {
+          "t": 2.3,
+          "text": "Safari"
+        },
+        {
+          "t": 2.68,
+          "text": "in"
+        },
+        {
+          "t": 2.98,
+          "text": "iOS"
+        }
+      ]
+    },
+    {
+      "start": 3.22,
+      "end": 4.52,
+      "text": "27 will watch",
+      "words": [
+        {
+          "t": 3.22,
+          "text": "27"
+        },
+        {
+          "t": 3.96,
+          "text": "will"
+        },
+        {
+          "t": 4.24,
+          "text": "watch"
+        }
+      ]
+    },
+    {
+      "start": 4.52,
+      "end": 5.04,
+      "text": "it for you",
+      "words": [
+        {
+          "t": 4.52,
+          "text": "it"
+        },
+        {
+          "t": 4.64,
+          "text": "for"
+        },
+        {
+          "t": 4.8,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 5.04,
+      "end": 5.58,
+      "text": "and tell you",
+      "words": [
+        {
+          "t": 5.04,
+          "text": "and"
+        },
+        {
+          "t": 5.26,
+          "text": "tell"
+        },
+        {
+          "t": 5.46,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 5.58,
+      "end": 6.08,
+      "text": "when the price",
+      "words": [
+        {
+          "t": 5.58,
+          "text": "when"
+        },
+        {
+          "t": 5.72,
+          "text": "the"
+        },
+        {
+          "t": 5.8,
+          "text": "price"
+        }
+      ]
+    },
+    {
+      "start": 6.08,
+      "end": 7.96,
+      "text": "drops That's setting",
+      "words": [
+        {
+          "t": 6.08,
+          "text": "drops"
+        },
+        {
+          "t": 7.22,
+          "text": "That's"
+        },
+        {
+          "t": 7.78,
+          "text": "setting"
+        }
+      ]
+    },
+    {
+      "start": 7.96,
+      "end": 8.5,
+      "text": "one of three",
+      "words": [
+        {
+          "t": 7.96,
+          "text": "one"
+        },
+        {
+          "t": 8.16,
+          "text": "of"
+        },
+        {
+          "t": 8.26,
+          "text": "three"
+        }
+      ]
+    },
+    {
+      "start": 8.5,
+      "end": 9.7,
+      "text": "worth switching on and",
+      "words": [
+        {
+          "t": 8.5,
+          "text": "worth"
+        },
+        {
+          "t": 9.1,
+          "text": "switching"
+        },
+        {
+          "t": 9.42,
+          "text": "on"
+        },
+        {
+          "t": 9.42,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 9.7,
+      "end": 10.34,
+      "text": "all three share",
+      "words": [
+        {
+          "t": 9.7,
+          "text": "all"
+        },
+        {
+          "t": 9.86,
+          "text": "three"
+        },
+        {
+          "t": 10.06,
+          "text": "share"
+        }
+      ]
+    },
+    {
+      "start": 10.34,
+      "end": 11.06,
+      "text": "the same catch",
+      "words": [
+        {
+          "t": 10.34,
+          "text": "the"
+        },
+        {
+          "t": 10.48,
+          "text": "same"
+        },
+        {
+          "t": 10.7,
+          "text": "catch"
+        }
+      ]
+    },
+    {
+      "start": 11.76,
+      "end": 13.26,
+      "text": "It's called Notify Me",
+      "words": [
+        {
+          "t": 11.76,
+          "text": "It's"
+        },
+        {
+          "t": 12.32,
+          "text": "called"
+        },
+        {
+          "t": 12.54,
+          "text": "Notify"
+        },
+        {
+          "t": 12.54,
+          "text": "Me"
+        }
+      ]
+    },
+    {
+      "start": 13.26,
+      "end": 13.94,
+      "text": "tap the menu",
+      "words": [
+        {
+          "t": 13.26,
+          "text": "tap"
+        },
+        {
+          "t": 13.56,
+          "text": "the"
+        },
+        {
+          "t": 13.76,
+          "text": "menu"
+        }
+      ]
+    },
+    {
+      "start": 13.94,
+      "end": 14.74,
+      "text": "beside the address",
+      "words": [
+        {
+          "t": 13.94,
+          "text": "beside"
+        },
+        {
+          "t": 14.2,
+          "text": "the"
+        },
+        {
+          "t": 14.44,
+          "text": "address"
+        }
+      ]
+    },
+    {
+      "start": 14.74,
+      "end": 16.12,
+      "text": "bar tap Notify Me",
+      "words": [
+        {
+          "t": 14.74,
+          "text": "bar"
+        },
+        {
+          "t": 15.02,
+          "text": "tap"
+        },
+        {
+          "t": 15.44,
+          "text": "Notify"
+        },
+        {
+          "t": 15.44,
+          "text": "Me"
+        }
+      ]
+    },
+    {
+      "start": 16.12,
+      "end": 17.04,
+      "text": "and describe what",
+      "words": [
+        {
+          "t": 16.12,
+          "text": "and"
+        },
+        {
+          "t": 16.42,
+          "text": "describe"
+        },
+        {
+          "t": 16.76,
+          "text": "what"
+        }
+      ]
+    },
+    {
+      "start": 17.04,
+      "end": 17.78,
+      "text": "you're waiting for",
+      "words": [
+        {
+          "t": 17.04,
+          "text": "you're"
+        },
+        {
+          "t": 17.22,
+          "text": "waiting"
+        },
+        {
+          "t": 17.42,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 18.36,
+      "end": 21.28,
+      "text": "like \"\"back in stock.\".\" Safari",
+      "words": [
+        {
+          "t": 18.36,
+          "text": "like"
+        },
+        {
+          "t": 19.68,
+          "text": "\"\"back"
+        },
+        {
+          "t": 20.68,
+          "text": "in"
+        },
+        {
+          "t": 20.68,
+          "text": "stock.\".\""
+        },
+        {
+          "t": 20.68,
+          "text": "Safari"
+        }
+      ]
+    },
+    {
+      "start": 21.28,
+      "end": 22.36,
+      "text": "checks daily unless",
+      "words": [
+        {
+          "t": 21.28,
+          "text": "checks"
+        },
+        {
+          "t": 21.6,
+          "text": "daily"
+        },
+        {
+          "t": 21.96,
+          "text": "unless"
+        }
+      ]
+    },
+    {
+      "start": 22.36,
+      "end": 23.1,
+      "text": "you change the",
+      "words": [
+        {
+          "t": 22.36,
+          "text": "you"
+        },
+        {
+          "t": 22.58,
+          "text": "change"
+        },
+        {
+          "t": 22.9,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 23.1,
+      "end": 24.8,
+      "text": "schedule that same",
+      "words": [
+        {
+          "t": 23.1,
+          "text": "schedule"
+        },
+        {
+          "t": 23.52,
+          "text": "that"
+        },
+        {
+          "t": 24.52,
+          "text": "same"
+        }
+      ]
+    },
+    {
+      "start": 24.8,
+      "end": 27.36,
+      "text": "menu holds setting two, Describe",
+      "words": [
+        {
+          "t": 24.8,
+          "text": "menu"
+        },
+        {
+          "t": 25.04,
+          "text": "holds"
+        },
+        {
+          "t": 25.36,
+          "text": "setting"
+        },
+        {
+          "t": 25.36,
+          "text": "two,"
+        },
+        {
+          "t": 25.36,
+          "text": "Describe"
+        }
+      ]
+    },
+    {
+      "start": 27.36,
+      "end": 29.58,
+      "text": "extension Describe what",
+      "words": [
+        {
+          "t": 27.36,
+          "text": "extension"
+        },
+        {
+          "t": 28.84,
+          "text": "Describe"
+        },
+        {
+          "t": 29.4,
+          "text": "what"
+        }
+      ]
+    },
+    {
+      "start": 29.58,
+      "end": 30.04,
+      "text": "you want a",
+      "words": [
+        {
+          "t": 29.58,
+          "text": "you"
+        },
+        {
+          "t": 29.72,
+          "text": "want"
+        },
+        {
+          "t": 29.92,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 30.04,
+      "end": 30.66,
+      "text": "site to do",
+      "words": [
+        {
+          "t": 30.04,
+          "text": "site"
+        },
+        {
+          "t": 30.26,
+          "text": "to"
+        },
+        {
+          "t": 30.44,
+          "text": "do"
+        }
+      ]
+    },
+    {
+      "start": 30.66,
+      "end": 31.58,
+      "text": "and Safari builds",
+      "words": [
+        {
+          "t": 30.66,
+          "text": "and"
+        },
+        {
+          "t": 30.9,
+          "text": "Safari"
+        },
+        {
+          "t": 31.18,
+          "text": "builds"
+        }
+      ]
+    },
+    {
+      "start": 31.58,
+      "end": 33.58,
+      "text": "the extension Apple's",
+      "words": [
+        {
+          "t": 31.58,
+          "text": "the"
+        },
+        {
+          "t": 31.78,
+          "text": "extension"
+        },
+        {
+          "t": 33.02,
+          "text": "Apple's"
+        }
+      ]
+    },
+    {
+      "start": 33.58,
+      "end": 34.4,
+      "text": "example adds a",
+      "words": [
+        {
+          "t": 33.58,
+          "text": "example"
+        },
+        {
+          "t": 33.86,
+          "text": "adds"
+        },
+        {
+          "t": 34.3,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 34.4,
+      "end": 35.12,
+      "text": "button that saves",
+      "words": [
+        {
+          "t": 34.4,
+          "text": "button"
+        },
+        {
+          "t": 34.62,
+          "text": "that"
+        },
+        {
+          "t": 34.84,
+          "text": "saves"
+        }
+      ]
+    },
+    {
+      "start": 35.12,
+      "end": 36.54,
+      "text": "recipes setting three",
+      "words": [
+        {
+          "t": 35.12,
+          "text": "recipes"
+        },
+        {
+          "t": 35.66,
+          "text": "setting"
+        },
+        {
+          "t": 36.28,
+          "text": "three"
+        }
+      ]
+    },
+    {
+      "start": 36.54,
+      "end": 38.9,
+      "text": "fixes tab clutter In",
+      "words": [
+        {
+          "t": 36.54,
+          "text": "fixes"
+        },
+        {
+          "t": 36.86,
+          "text": "tab"
+        },
+        {
+          "t": 38.34,
+          "text": "clutter"
+        },
+        {
+          "t": 38.34,
+          "text": "In"
+        }
+      ]
+    },
+    {
+      "start": 38.9,
+      "end": 39.66,
+      "text": "your tabs tap",
+      "words": [
+        {
+          "t": 38.9,
+          "text": "your"
+        },
+        {
+          "t": 39.0,
+          "text": "tabs"
+        },
+        {
+          "t": 39.32,
+          "text": "tap"
+        }
+      ]
+    },
+    {
+      "start": 39.66,
+      "end": 41.8,
+      "text": "Organize then Automatically Create Topics",
+      "words": [
+        {
+          "t": 39.66,
+          "text": "Organize"
+        },
+        {
+          "t": 40.12,
+          "text": "then"
+        },
+        {
+          "t": 40.44,
+          "text": "Automatically"
+        },
+        {
+          "t": 40.44,
+          "text": "Create"
+        },
+        {
+          "t": 40.44,
+          "text": "Topics"
+        }
+      ]
+    },
+    {
+      "start": 41.8,
+      "end": 42.9,
+      "text": "and Safari sorts",
+      "words": [
+        {
+          "t": 41.8,
+          "text": "and"
+        },
+        {
+          "t": 42.24,
+          "text": "Safari"
+        },
+        {
+          "t": 42.56,
+          "text": "sorts"
+        }
+      ]
+    },
+    {
+      "start": 42.9,
+      "end": 43.9,
+      "text": "them into groups",
+      "words": [
+        {
+          "t": 42.9,
+          "text": "them"
+        },
+        {
+          "t": 43.22,
+          "text": "into"
+        },
+        {
+          "t": 43.5,
+          "text": "groups"
+        }
+      ]
+    },
+    {
+      "start": 44.48,
+      "end": 45.32,
+      "text": "Back to the",
+      "words": [
+        {
+          "t": 44.48,
+          "text": "Back"
+        },
+        {
+          "t": 45.04,
+          "text": "to"
+        },
+        {
+          "t": 45.2,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 45.32,
+      "end": 46.3,
+      "text": "catch all three",
+      "words": [
+        {
+          "t": 45.32,
+          "text": "catch"
+        },
+        {
+          "t": 45.64,
+          "text": "all"
+        },
+        {
+          "t": 46.06,
+          "text": "three"
+        }
+      ]
+    },
+    {
+      "start": 46.3,
+      "end": 47.38,
+      "text": "run on Apple Intelligence",
+      "words": [
+        {
+          "t": 46.3,
+          "text": "run"
+        },
+        {
+          "t": 46.5,
+          "text": "on"
+        },
+        {
+          "t": 46.62,
+          "text": "Apple"
+        },
+        {
+          "t": 46.62,
+          "text": "Intelligence"
+        }
+      ]
+    },
+    {
+      "start": 47.38,
+      "end": 48.22,
+      "text": "which means an",
+      "words": [
+        {
+          "t": 47.38,
+          "text": "which"
+        },
+        {
+          "t": 47.78,
+          "text": "means"
+        },
+        {
+          "t": 48.06,
+          "text": "an"
+        }
+      ]
+    },
+    {
+      "start": 48.22,
+      "end": 51.04,
+      "text": "iPhone 15 Pro 15 Pro Max",
+      "words": [
+        {
+          "t": 48.22,
+          "text": "iPhone"
+        },
+        {
+          "t": 48.5,
+          "text": "15"
+        },
+        {
+          "t": 50.08,
+          "text": "Pro"
+        },
+        {
+          "t": 50.08,
+          "text": "15"
+        },
+        {
+          "t": 50.08,
+          "text": "Pro"
+        },
+        {
+          "t": 50.08,
+          "text": "Max"
+        }
+      ]
+    },
+    {
+      "start": 51.04,
+      "end": 51.96,
+      "text": "or any iPhone",
+      "words": [
+        {
+          "t": 51.04,
+          "text": "or"
+        },
+        {
+          "t": 51.34,
+          "text": "any"
+        },
+        {
+          "t": 51.58,
+          "text": "iPhone"
+        }
+      ]
+    },
+    {
+      "start": 51.96,
+      "end": 52.84,
+      "text": "16 and up",
+      "words": [
+        {
+          "t": 51.96,
+          "text": "16"
+        },
+        {
+          "t": 52.42,
+          "text": "and"
+        },
+        {
+          "t": 52.64,
+          "text": "up"
+        }
+      ]
+    },
+    {
+      "start": 52.84,
+      "end": 54.28,
+      "text": "which page would",
+      "words": [
+        {
+          "t": 52.84,
+          "text": "which"
+        },
+        {
+          "t": 53.84,
+          "text": "page"
+        },
+        {
+          "t": 54.06,
+          "text": "would"
+        }
+      ]
+    },
+    {
+      "start": 54.28,
+      "end": 55.08,
+      "text": "you track first",
+      "words": [
+        {
+          "t": 54.28,
+          "text": "you"
+        },
+        {
+          "t": 54.38,
+          "text": "track"
+        },
+        {
+          "t": 54.62,
+          "text": "first"
+        }
+      ]
+    },
+    {
+      "start": 55.08,
+      "end": 55.86,
+      "text": "drop it below.?",
+      "words": [
+        {
+          "t": 55.08,
+          "text": "drop"
+        },
+        {
+          "t": 55.48,
+          "text": "it"
+        },
+        {
+          "t": 55.62,
+          "text": "below.?"
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "standing no-music default; the voice carries every label",
+  "format": "top5",
+  "allowLong": true,
+  "allowLongReason": "three settings, each with its tap path, plus the shared Apple Intelligence catch; cutting to 48s drops the device requirement, the line Tom's Guide left out",
+  "script": "Stop refreshing that product page, because Safari in iOS 27 will watch it for you and tell you when the price drops. That's setting one of three worth switching on, and all three share the same catch.\n\nIt's called Notify Me. Tap the menu beside the address bar, tap Notify Me, and describe what you're waiting for, like \"back in stock.\" Safari checks daily unless you change the schedule.\n\nThat same menu holds setting two, Describe Extension. Describe what you want a site to do, and Safari builds the extension. Apple's example adds a button that saves recipes.\n\nSetting three fixes tab clutter. In your tabs, tap Organize, then Automatically Create Topics, and Safari sorts them into groups.\n\nBack to the catch. All three run on Apple Intelligence, which means an iPhone 15 Pro, 15 Pro Max, or any iPhone 16 and up.\n\nWhich page would you track first? Drop it below.",
+  "approval": {
+    "sha256": "b0f1a8cbc60be26b3dc01053a2328e1db728d1cde9315ff91e64fbe0dc170277",
+    "approvedAt": "2026-10-05T06:49:46+00:00",
+    "words": 152,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}
