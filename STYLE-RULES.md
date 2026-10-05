@@ -9524,3 +9524,47 @@ rules matched exactly what was wrong with ios27-settings-longform v2, and those 
 Not taken: its "never invent screens". Our labelled redraws stay, because Rule 3 and the
 illustration label already cover honesty. The 0:32 page of v2 that opens on 5s of bare
 background is a PLAN defect: G71 and the critique flag it, and the engine can't fix it.
+
+## 2026-10-05 — ios27-safari-settings: three Safari settings, faceless after HeyGen stalled
+
+56.0s, 15 slides, faceless (facePlan none), 8 SFX (8/8 heard), -14.6 LUFS. Format top5 with allowLong.
+Reference: Tom's Guide (Kaycee Hill, 2026-09-16), used as a lead; every spoken claim traced to Apple
+(release notes 149076, iOS 27 User Guide, feature-availability, Newsroom 2026-06-08 / 2026-09-14).
+
+- **RAW NOTE 1 — the reference left out the one thing a viewer needs.** Tom's Guide never says the three
+  features are Apple Intelligence (iPhone 15 Pro / iPhone 16+). That gap became the open loop ("all three
+  share the same catch"), paid at the end. Two of its claims were dropped: its extension examples
+  (reading-time badge, grayscale) are not Apple's, and "local machine intelligence" has no Apple source.
+- **RAW NOTE 2 — HeyGen held both presenter slices (6.9s + 3.3s) at `pending` for 45+ minutes**, with
+  one 401 "token expired" on a status read. Not resubmitted (double charge). The user chose faceless;
+  dropping `presenter` from the two bookend slides was the whole change. Rule: kick the avatar slices
+  FIRST, before shot planning, so a stall is discovered while the build is still in progress.
+- **RAW NOTE 3 — a focus `at: 0` still eases in over 0.7s from the whole image**, so a portrait source
+  in a wide box opens with black bars: lint [CUT DIP] (luma 7-26). Added an opt-in `instant: true` on a
+  focus move (SlideBlocks.tsx) that lands at full zoom on frame 0. Opt-in so earlier reels re-render
+  unchanged.
+- **RAW NOTE 4 — [DUPLICATE] fires on two different white sheets back to back**, not only the same
+  image (category sheet -> Recipe Keeper; page menu -> Notify Me dialog). A rows card above the second
+  screen, or opening it on a text card, breaks the match.
+- **RAW NOTE 5 — framework_check F5 read "type what you're waiting for" as a CTA** (`type` is in its ASK
+  regex). Reworded to Apple's own verb, "describe". Second time a how-to verb tripped F5 (after
+  "follow up"); if it recurs, scope ASK to an imperative followed by a quoted keyword.
+- **RAW NOTE 6 — Xcode is NOT installed on this machine** (no simctl), although CLAUDE.md records the
+  iOS 27 simulator as a source as of 2026-09-25 — that was a different Mac. Check `xcrun simctl` before
+  planning a simulator capture.
+- **RAW NOTE 7 — a caption correction that adds quotes doubles them** when the script already quotes
+  the phrase (`like ""back`). Correct the words, never the punctuation the script carries.
+- sfx: paper-slide MASKED under speech for the third reel running; Camera Shutter on the same beat is
+  AUDIBLE (-13.4 vs -15.3 dB). Stop placing paper cues under the voice.
+- ElevenLabs v3: 152 words at 3.26 w/s (46.6s, ~931 credits), vo_pad to 56s; whisper small misheard
+  "worth"->"words", "two"->"to", "tab"->"tap" (caption corrections, timings kept).
+
+### Treatments used (do not repeat for the same kind of information)
+Apple's Notify Me Lock Screen image framed on the alert as frame 0 (instant focus, held across the cut),
+three numbered rows as the promise, three "?" rows for the withheld catch reused verbatim as the callback
+("Back to the catch") and answered with "Apple Intelligence" rows, Apple's User Guide page-menu art with
+a focus walk (Notify Me row -> whole menu -> Describe Extension row), the Notify Me dialog cropped out of
+Apple's Mac screenshot with rings on the field and "Check daily", Apple's category sheet, "Apple typed /
+Safari built" rows over the Recipe Keeper sheet, Apple's tab-topics animation square-cropped with a frozen
+tail under a Tabs -> Organize -> Automatically Create Topics steps strip, device rows for the requirement.
+Next Safari/settings reel: do not reuse the "?"-rows catch for a third reel running.

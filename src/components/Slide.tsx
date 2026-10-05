@@ -64,6 +64,8 @@ export interface SlideMove {
   rect?: [number, number, number, number];
   /** focus: draw the ring (default true) */
   ring?: boolean;
+  /** focus: land at full zoom on its first frame (see SlideBlocks MoveLike) */
+  instant?: boolean;
   /** state: the published screenshot to crossfade to */
   src?: string;
 }

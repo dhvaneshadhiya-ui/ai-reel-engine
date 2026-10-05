@@ -27,8 +27,8 @@
   "Apple intelligence": "Apple Intelligence",
   "15 pro max": "15 Pro Max",
   "15 pro": "15 Pro",
-  "Back in stock": "\"back in stock.\"",
-  "below?": "below."
+  "below?": "below.",
+  "Back in stock": "back in stock"
  },
  "format": "top5",
  "shots": [
@@ -47,10 +47,6 @@
     "type": "slide",
     "eyebrow": "New in iOS 27 · Safari",
     "headline": "Stop [[refreshing]]",
-    "presenter": {
-     "src": "assets/ios27-safari-settings/avatar-hook.mp4",
-     "from": 0.0
-    },
     "blocks": [
      {
       "id": "s",
@@ -58,7 +54,7 @@
       "src": "assets/ios27-safari-settings/nm-lock.jpg",
       "width": 1960,
       "height": 1102,
-      "h": 700
+      "h": 760
      }
     ],
     "moves": [
@@ -67,12 +63,13 @@
       "target": "s",
       "at": 0.0,
       "rect": [
+       620,
        600,
-       40,
-       760,
-       1000
+       720,
+       220
       ],
-      "ring": false
+      "ring": false,
+      "instant": true
      },
      {
       "do": "pill",
@@ -99,10 +96,6 @@
     "type": "slide",
     "eyebrow": "New in iOS 27 · Safari",
     "headline": "Safari [[watches]] it for you",
-    "presenter": {
-     "src": "assets/ios27-safari-settings/avatar-hook.mp4",
-     "from": 1.88
-    },
     "blocks": [
      {
       "id": "s",
@@ -110,10 +103,23 @@
       "src": "assets/ios27-safari-settings/nm-lock.jpg",
       "width": 1960,
       "height": 1102,
-      "h": 700
+      "h": 760
      }
     ],
     "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "at": 0.0,
+      "rect": [
+       620,
+       600,
+       720,
+       220
+      ],
+      "ring": false,
+      "instant": true
+     },
      {
       "do": "pill",
       "target": "headline",
@@ -237,16 +243,42 @@
     "headline": "One [[catch]] for all 3",
     "blocks": [
      {
-      "id": "t",
-      "kind": "text",
-      "text": "It's the same for every one. More at the end."
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Notify Me",
+        "v": "?",
+        "tone": "cost"
+       },
+       {
+        "k": "Describe Extension",
+        "v": "?",
+        "tone": "cost"
+       },
+       {
+        "k": "Tab topics",
+        "v": "?",
+        "tone": "cost"
+       }
+      ]
      }
     ],
     "moves": [
      {
       "do": "show",
-      "target": "t",
-      "on": "all three share"
+      "target": "r.0",
+      "on": "and all"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "three share"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "the same"
      },
      {
       "do": "pill",
@@ -265,17 +297,20 @@
   },
   {
    "start_phrase": "It's called Notify Me.",
-   "line": "It's called Notify Me.",
+   "line": "It's called Notify Me. Tap the menu beside the address bar",
    "needs": [
     "called",
-    "Notify"
+    "Notify",
+    "menu",
+    "beside",
+    "address"
    ],
    "tier": "official",
    "asset_id": "page-menu",
    "scene": {
     "type": "slide",
     "eyebrow": "1 · Notify Me",
-    "headline": "Setting one: [[Notify Me]]",
+    "headline": "[[Notify Me]] is in the page menu",
     "blocks": [
      {
       "id": "s",
@@ -301,7 +336,30 @@
      {
       "do": "pill",
       "target": "headline",
-      "on": "notify me"
+      "on": "called notify"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "the menu",
+      "rect": [
+       160,
+       355,
+       290,
+       590
+      ],
+      "ring": false
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "address bar",
+      "rect": [
+       180,
+       628,
+       262,
+       52
+      ]
      }
     ],
     "sfx": [
@@ -314,58 +372,16 @@
    }
   },
   {
-   "start_phrase": "Tap the menu beside",
-   "line": "Tap the menu beside the address bar",
-   "needs": [
-    "menu",
-    "beside",
-    "address"
-   ],
-   "tier": "official",
-   "asset_id": "page-menu",
-   "scene": {
-    "type": "slide",
-    "eyebrow": "1 · Notify Me",
-    "headline": "Open the [[page menu]]",
-    "blocks": [
-     {
-      "id": "s",
-      "kind": "screen",
-      "src": "assets/ios27-safari-settings/page-menu.png",
-      "width": 490,
-      "height": 1008,
-      "h": 860
-     }
-    ],
-    "moves": [
-     {
-      "do": "focus",
-      "target": "s",
-      "at": 0.0,
-      "rect": [
-       160,
-       355,
-       290,
-       590
-      ],
-      "ring": false
-     },
-     {
-      "do": "pill",
-      "target": "headline",
-      "on": "the menu"
-     }
-    ]
-   }
-  },
-  {
    "start_phrase": "tap Notify Me, and",
-   "line": "tap Notify Me, and describe what you're waiting for, like \"back in stock.\"",
+   "line": "tap Notify Me, and describe what you're waiting for, like \"back in stock.\" Safari checks daily unless you change the schedule.",
    "needs": [
     "Notify",
     "describe",
     "waiting",
-    "stock"
+    "stock",
+    "checks",
+    "daily",
+    "schedule"
    ],
    "tier": "official",
    "asset_id": "nm-setup-dialog",
@@ -375,29 +391,42 @@
     "headline": "Say what you're [[waiting for]]",
     "blocks": [
      {
+      "id": "t",
+      "kind": "text",
+      "text": "Try: “back in stock”"
+     },
+     {
       "id": "s",
       "kind": "screen",
       "src": "assets/ios27-safari-settings/nm-setup-dialog.jpg",
       "width": 440,
       "height": 620,
       "h": 700
-     },
-     {
-      "id": "t",
-      "kind": "text",
-      "text": "Try: “back in stock”"
      }
     ],
     "moves": [
      {
       "do": "focus",
       "target": "s",
-      "on": "describe what",
+      "at": 0.0,
       "rect": [
        45,
        300,
        350,
-       100
+       110
+      ],
+      "ring": false,
+      "instant": true
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "waiting for",
+      "rect": [
+       45,
+       340,
+       350,
+       60
       ]
      },
      {
@@ -413,45 +442,6 @@
      {
       "do": "focus",
       "target": "s",
-      "on": "waiting for",
-      "rect": [
-       45,
-       340,
-       350,
-       60
-      ]
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "Safari checks daily unless",
-   "line": "Safari checks daily unless you change the schedule.",
-   "needs": [
-    "checks",
-    "daily",
-    "schedule"
-   ],
-   "tier": "official",
-   "asset_id": "nm-setup-dialog",
-   "scene": {
-    "type": "slide",
-    "eyebrow": "1 · Notify Me",
-    "headline": "Checks [[daily]] by default",
-    "blocks": [
-     {
-      "id": "s",
-      "kind": "screen",
-      "src": "assets/ios27-safari-settings/nm-setup-dialog.jpg",
-      "width": 440,
-      "height": 620,
-      "h": 760
-     }
-    ],
-    "moves": [
-     {
-      "do": "focus",
-      "target": "s",
       "on": "checks daily",
       "rect": [
        45,
@@ -459,11 +449,6 @@
        240,
        36
       ]
-     },
-     {
-      "do": "pill",
-      "target": "headline",
-      "on": "checks daily"
      },
      {
       "do": "focus",
@@ -475,13 +460,6 @@
        70,
        36
       ]
-     }
-    ],
-    "sfx": [
-     {
-      "src": "sfx-action/marker.mp3",
-      "at": 0.5,
-      "vol": 0.35
      }
     ]
    }
@@ -505,15 +483,54 @@
     "headline": "Same menu, [[setting two]]",
     "blocks": [
      {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Setting 1",
+        "v": "Notify Me",
+        "tone": "plain"
+       },
+       {
+        "k": "Setting 2",
+        "v": "Describe Extension",
+        "tone": "free"
+       }
+      ]
+     },
+     {
       "id": "s",
       "kind": "screen",
       "src": "assets/ios27-safari-settings/page-menu.png",
       "width": 490,
       "height": 1008,
-      "h": 860
+      "h": 620
      }
     ],
     "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "at": 0.0,
+      "rect": [
+       180,
+       600,
+       262,
+       300
+      ],
+      "ring": false,
+      "instant": true
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "same menu holds"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "same menu holds"
+     },
      {
       "do": "focus",
       "target": "s",
@@ -524,23 +541,6 @@
        262,
        48
       ]
-     },
-     {
-      "do": "pill",
-      "target": "headline",
-      "on": "same menu holds"
-     },
-     {
-      "do": "focus",
-      "target": "s",
-      "on": "setting to",
-      "rect": [
-       180,
-       628,
-       262,
-       52
-      ],
-      "ring": false
      }
     ],
     "sfx": [
@@ -580,6 +580,19 @@
      }
     ],
     "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "at": 0.0,
+      "rect": [
+       55,
+       160,
+       380,
+       720
+      ],
+      "ring": false,
+      "instant": true
+     },
      {
       "do": "focus",
       "target": "s",
@@ -641,36 +654,53 @@
     "headline": "A button that [[saves recipes]]",
     "blocks": [
      {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Apple typed",
+        "v": "Save and track recipes",
+        "tone": "plain"
+       },
+       {
+        "k": "Safari built",
+        "v": "Recipe Keeper",
+        "tone": "free"
+       }
+      ]
+     },
+     {
       "id": "s",
       "kind": "screen",
       "src": "assets/ios27-safari-settings/ext-recipe-dialog.jpg",
       "width": 440,
       "height": 732,
-      "h": 820
+      "h": 620
      }
     ],
     "moves": [
      {
       "do": "focus",
       "target": "s",
-      "on": "apple's example",
-      "rect": [
-       30,
-       170,
-       390,
-       60
-      ]
-     },
-     {
-      "do": "focus",
-      "target": "s",
-      "on": "saves recipes",
+      "at": 0.0,
       "rect": [
        30,
        30,
        390,
        330
-      ]
+      ],
+      "ring": false,
+      "instant": true
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "apple's example"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "adds a button"
      },
      {
       "do": "pill",
@@ -680,7 +710,7 @@
     ],
     "sfx": [
      {
-      "src": "sfx-action/paper-slide.mp3",
+      "src": "sfx/Camera Shutter.MP3",
       "at": 0.4,
       "vol": 0.3
      }
@@ -806,17 +836,28 @@
     "headline": "The [[catch]]",
     "blocks": [
      {
-      "id": "t",
-      "kind": "text",
-      "text": "Notify Me · Describe Extension · Tab topics"
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Notify Me",
+        "v": "?",
+        "tone": "cost"
+       },
+       {
+        "k": "Describe Extension",
+        "v": "?",
+        "tone": "cost"
+       },
+       {
+        "k": "Tab topics",
+        "v": "?",
+        "tone": "cost"
+       }
+      ]
      }
     ],
     "moves": [
-     {
-      "do": "show",
-      "target": "t",
-      "at": 0.0
-     },
      {
       "do": "pill",
       "target": "headline",
@@ -970,58 +1011,12 @@
   },
   {
    "start_phrase": "Which page would you",
-   "line": "Which page would you track first?",
+   "line": "Which page would you track first? Drop it below.",
    "needs": [
     "Which",
     "page",
     "track",
-    "first"
-   ],
-   "tier": "official",
-   "asset_id": "nm-lock",
-   "scene": {
-    "type": "slide",
-    "cta": true,
-    "hideCaptions": true,
-    "headlineSize": "xl",
-    "headline": "Which page would you [[track]]?",
-    "presenter": {
-     "src": "assets/ios27-safari-settings/avatar-cta.mp4",
-     "from": 0.14
-    },
-    "blocks": [
-     {
-      "id": "d",
-      "kind": "text",
-      "text": "Drop it in the comments."
-     },
-     {
-      "id": "s",
-      "kind": "screen",
-      "src": "assets/ios27-safari-settings/nm-lock.jpg",
-      "width": 1960,
-      "height": 1102,
-      "h": 420
-     }
-    ],
-    "moves": [
-     {
-      "do": "pill",
-      "target": "headline",
-      "on": "track first"
-     },
-     {
-      "do": "show",
-      "target": "d",
-      "on": "track first"
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "Drop it below.",
-   "line": "Drop it below.",
-   "needs": [
+    "first",
     "Drop",
     "below"
    ],
@@ -1032,11 +1027,7 @@
     "cta": true,
     "hideCaptions": true,
     "headlineSize": "xl",
-    "headline": "Which page would you [[track]]?",
-    "presenter": {
-     "src": "assets/ios27-safari-settings/avatar-cta.mp4",
-     "from": 2.38
-    },
+    "headline": "Which page would you [[track?]]",
     "blocks": [
      {
       "id": "d",
@@ -1054,20 +1045,20 @@
     ],
     "moves": [
      {
-      "do": "show",
-      "target": "d",
-      "at": 0.0
-     },
-     {
       "do": "pill",
       "target": "headline",
-      "at": 0.0
+      "on": "track first"
+     },
+     {
+      "do": "show",
+      "target": "d",
+      "on": "track first"
      }
     ]
    }
   }
  ],
- "facePlan": "bookends",
+ "facePlan": "none",
  "music": false,
  "noMusicReason": "standing no-music default; the voice carries every label",
  "audio": "assets/ios27-safari-settings/vo.mp3",

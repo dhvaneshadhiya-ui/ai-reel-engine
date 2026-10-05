@@ -29,6 +29,10 @@ export interface MoveLike {
   rect?: [number, number, number, number];
   src?: string;
   ring?: boolean;
+  /** focus only: land at full zoom on its first frame instead of easing in
+   *  from the whole image. A portrait source opening whole in a wide box shows
+   *  black bars for ~0.3s, which lint reads as a [CUT DIP] (2026-10-05). */
+  instant?: boolean;
 }
 
 type Pal = { card: string; line: string; ink: string; sub: string; muted: string; blue: string; red: string; amber: string; pill: string };
@@ -141,7 +145,7 @@ export const ScreenBlock: React.FC<{ b: ScreenBlockProps; moves: MoveLike[]; t: 
   for (const f of focuses) {
     if (t < f.at!) break;
     const from = camFor(prevRect), to = camFor(f.rect!);
-    const k = interpolate(t, [f.at!, f.at! + 0.7], [0, 1], { ...CL, easing: ease });
+    const k = f.instant ? 1 : interpolate(t, [f.at!, f.at! + 0.7], [0, 1], { ...CL, easing: ease });
     cam = { s: from.s + (to.s - from.s) * k, x: from.x + (to.x - from.x) * k, y: from.y + (to.y - from.y) * k };
     const lf = loupe ?? f.rect!;
     loupe = [0, 1, 2, 3].map((i) => lf[i] + (f.rect![i] - lf[i]) * k) as [number, number, number, number];
