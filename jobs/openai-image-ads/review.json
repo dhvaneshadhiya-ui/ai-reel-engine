@@ -1,0 +1,15 @@
+{
+  "script_sha256": "35ecd8a3e8cafa457a4fcf31704e8a9ea91b8e4f0a7111db4c3aade24f808d01",
+  "structure_sha256": "3afd558131391d8d88e401d893850e774b9aa47696477e61e470c4b4a0917c15",
+  "findings": [
+    "  BRIDGES 4/14 sentences (29%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  NO OPEN LOOP \u2014 sentence 3 promises something (\"In OpenAI's own example, the image is sixty-two \") and nothing later returns to it. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "NUMBERS: one every 3.8 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [
+    "the most surprising claim (SURPRISE 90: 'Free users can switch to Ads-Free via Settings > Ads control') is spoken in the last 40% of the script \u2014 consider leading with it."
+  ],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-10-06T09:18:31+00:00"
+}

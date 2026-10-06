@@ -1,0 +1,29 @@
+{
+  "slug": "openai-image-ads",
+  "topic": "OpenAI launches visual ads that appear alongside image generation results",
+  "details": "Ref: https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/",
+  "subject": "OpenAI's new visual ad format in ChatGPT, tested during image generation",
+  "audience": "Free and Go ChatGPT users who make images; anyone wondering whether they'll see these ads",
+  "platform": "both",
+  "goal": "education",
+  "core_value": "where the new ad appears, who sees it, and why the free no-ads option costs you image generation",
+  "desired_action": "comment yes/no on paying to skip ads",
+  "reveal_target": "none",
+  "cta_keyword": "",
+  "target_duration": "70s",
+  "tone": "calm reporting; the twist is a documented fact, not outrage",
+  "source_policy": "official-preferred",
+  "footage_constraints": "no live ad exists yet (testing starts later in Oct). OpenAI's official hero mockup (Heirloom Grocery ad under a 62% loading image), mobile captures of OpenAI's announcement and help center (Ads-Free tradeoff), TechCrunch/BleepingComputer headlines. No simulator route: ChatGPT is not on the iOS Simulator.",
+  "credit_instructions": "off (default)",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 70,
+  "music": true,
+  "created_at": "2026-10-06T09:11:20.665548+00:00",
+  "status": "initialized",
+  "facePlan": "bookends"
+}
