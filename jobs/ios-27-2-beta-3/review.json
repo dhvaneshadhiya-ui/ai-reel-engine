@@ -1,0 +1,18 @@
+{
+  "script_sha256": "cb03f6e91a182b2bfbbee86aad7220d359dc5cdf879c1cc277071acc506d477a",
+  "structure_sha256": "9088bae8f8a9f7e4fa42225d964168b413ec2a99203ee2831be7e5ab990c8647",
+  "findings": [
+    "STAGE DIRECTION: 'So when do you get it?' \u2014 announces structure the picture is already showing. Deletable: the sentence after it stands up alone.",
+    "HOUSE TIC: 'ios twenty seven point two' \u2014 already used in 1 other script(s) (ios-27-2-beta-1). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HOUSE TIC: 'the side button' \u2014 already used in 1 other script(s) (apple-pay-axis-bank). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HOUSE TIC: 'on your phone' \u2014 already used in 1 other script(s) (ios-27-2-beta-1). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HOUSE TIC: 'it lands on' \u2014 already used in 1 other script(s) (qualcomm-chip-hike). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [
+    "claim 7 ('Messages shows a silenced icon on pinned'): tier single but spoken UNHEDGED near \"And one tester spotted a silenced icon on pinned chats you've muted in Messages.\". framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source.",
+    "claim 10 (\"iOS 27.2's public release is expected sh\"): tier single but spoken UNHEDGED near 'twenty seven point two probably follows soon after'. framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source."
+  ],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-10-06T04:59:33+00:00"
+}
