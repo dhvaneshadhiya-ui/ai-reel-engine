@@ -1,6 +1,645 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
-  "format": "news",
-  "shots": []
+ "emphasis": [
+  "Beta 3",
+  "battery",
+  "beta one",
+  "four",
+  "matches",
+  "Type to Siri",
+  "Private Cloud Compute",
+  "silenced",
+  "October",
+  "probably",
+  "Follow"
+ ],
+ "caption_corrections": {
+  "polished and": "polish, and",
+  "pin chats": "pinned chats",
+  "health app": "Health app",
+  "settings, battery": "Settings, Battery",
+  "accessibility Siri": "Accessibility, Siri",
+  "type to Siri": "Type to Siri",
+  "privacy and security": "Privacy and Security",
+  "Apple intelligence report": "Apple Intelligence Report",
+  "private cloud compute report": "Private Cloud Compute Report",
+  "messages": "Messages",
+  "foldable iPhone Duo": "foldable, iPhone Duo",
+  "Messages So": "Messages. So",
+  "messages so": "Messages. So"
+ },
+ "format": "news",
+ "music": true,
+ "facePlan": "bookends",
+ "audio": "assets/ios-27-2-beta-3/vo.mp3",
+ "allowLong": false,
+ "shots": [
+  {
+   "start_phrase": "Apple's third beta of",
+   "line": "Apple's third beta of iOS twenty seven point two just dropped, and the biggest change you'll notice is a battery icon.",
+   "tier": "multi",
+   "asset_id": "sw-update-b3",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Out now \u00b7 image: iClarified",
+    "headline": "iOS 27.2 [[Beta 3]] is here",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/ios-27-2-beta-3/sw-update-b3.png",
+      "width": 1080,
+      "height": 1260,
+      "device": false,
+      "h": 760
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Biggest change you'll see: the battery icon"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "third beta"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "just dropped",
+      "rect": [
+       0,
+       0,
+       1080,
+       300
+      ],
+      "ring": false
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "battery icon"
+     }
+    ],
+    "presenter": {
+     "src": "assets/ios-27-2-beta-3/avatar-master-hook.mp4",
+     "from": 0.0
+    },
+    "credit": "iClarified",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "That's a clue to",
+   "line": "That's a clue to when you'll get the update.",
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The clue",
+    "headline": "A hint at [[when]] you get it",
+    "blocks": [
+     {
+      "id": "p",
+      "kind": "steps",
+      "steps": [
+       "Beta 1",
+       "Beta 2",
+       "Beta 3",
+       "Everyone?"
+      ],
+      "h": 760
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "p.2",
+      "on": "clue"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "when"
+     },
+     {
+      "do": "show",
+      "target": "p.3",
+      "on": "update"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "The big features of",
+   "line": "The big features of twenty seven point two already landed in beta one: the new Health app, and Siri AI in five more languages.",
+   "tier": "official",
+   "asset_id": "health-insights-b1",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Beta 1 \u00b7 photo: MacRumors",
+    "headline": "The big stuff came in [[beta 1]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/ios-27-2-beta-3/health-insights-b1.png",
+      "width": 1080,
+      "height": 854,
+      "device": false,
+      "h": 540
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Health app",
+        "v": "Redesigned",
+        "tone": "plain"
+       },
+       {
+        "k": "Siri AI",
+        "v": "5 more languages",
+        "tone": "plain"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "beta one"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "Health"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "five more"
+     }
+    ],
+    "credit": "MacRumors",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "Beta three is",
+   "line": "Beta three is polish, and testers found four changes.",
+   "tier": "multi",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Beta 3",
+    "headline": "[[4]] small changes",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Battery icon",
+        "v": "Settings",
+        "tone": "plain"
+       },
+       {
+        "k": "Type to Siri",
+        "v": "Side button",
+        "tone": "plain"
+       },
+       {
+        "k": "Report renamed",
+        "v": "Privacy",
+        "tone": "plain"
+       },
+       {
+        "k": "Silenced icon",
+        "v": "Messages",
+        "tone": "plain"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "found"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "four"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "four"
+     },
+     {
+      "do": "show",
+      "target": "r.3",
+      "on": "changes"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Open Settings, Battery.",
+   "line": "Open Settings, Battery. The icon finally matches the new one in the corner of your screen.",
+   "tier": "multi",
+   "asset_id": "butch-battery",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Settings \u203a Battery \u00b7 video: Brandon Butch",
+    "headline": "The icon finally [[matches]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios-27-2-beta-3/butch-battery.mp4",
+      "width": 1080,
+      "height": 1080,
+      "device": false,
+      "h": 800
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "matches"
+     }
+    ],
+    "credit": "Brandon Butch",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "In Accessibility, Siri,",
+   "line": "In Accessibility, Siri, holding the side button can open Type to Siri again, so you type instead of talking.",
+   "tier": "multi",
+   "asset_id": "zollo-type-to-siri",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Accessibility \u203a Siri \u00b7 video: zollotech",
+    "headline": "Hold the side button to [[type]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios-27-2-beta-3/zollo-type-to-siri.mp4",
+      "width": 1058,
+      "height": 1080,
+      "device": false,
+      "h": 760
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "type instead"
+     }
+    ],
+    "credit": "zollotech",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "That's on select models.",
+   "line": "That's on select models.",
+   "tier": "multi",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Side button",
+    "headline": "On [[select models]]",
+    "blocks": [
+     {
+      "id": "p",
+      "kind": "steps",
+      "steps": [
+       "Hold for Voice",
+       "Hold to Type to Siri"
+      ],
+      "h": 620
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "p.1",
+      "on": "That's"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "select"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Under Privacy and Security,",
+   "line": "Under Privacy and Security, the Apple Intelligence Report is now called the Private Cloud Compute Report.",
+   "tier": "multi",
+   "asset_id": "butch-pcc",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Privacy & Security \u00b7 video: Brandon Butch",
+    "headline": "New name: [[Private Cloud Compute]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios-27-2-beta-3/butch-pcc.mp4",
+      "width": 1238,
+      "height": 1080,
+      "device": false,
+      "h": 560
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "private cloud"
+     }
+    ],
+    "credit": "Brandon Butch",
+    "creditOnScreen": true,
+    "captionBottom": 470
+   }
+  },
+  {
+   "start_phrase": "That's the name of",
+   "line": "That's the name of the Apple servers your bigger requests run on.",
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Private Cloud Compute",
+    "headline": "Apple's own [[servers]]",
+    "blocks": [
+     {
+      "id": "p",
+      "kind": "steps",
+      "steps": [
+       "Your request",
+       "Too big for the iPhone",
+       "Runs on Apple's servers"
+      ],
+      "h": 560
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Quick requests",
+        "v": "On your iPhone",
+        "tone": "plain"
+       },
+       {
+        "k": "Bigger requests",
+        "v": "Apple's servers",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "p.0",
+      "on": "name"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "servers"
+     },
+     {
+      "do": "show",
+      "target": "p.1",
+      "on": "servers"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "servers"
+     },
+     {
+      "do": "show",
+      "target": "p.2",
+      "on": "bigger"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "bigger"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "And one tester spotted",
+   "line": "And one tester spotted a silenced icon on pinned chats you've muted in Messages.",
+   "tier": "single",
+   "asset_id": "butch-messages",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Messages \u00b7 video: Brandon Butch",
+    "headline": "Muted pins get a [[silenced]] icon",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/ios-27-2-beta-3/butch-messages.mp4",
+      "width": 1080,
+      "height": 554,
+      "device": false,
+      "h": 720
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Spotted by one tester so far"
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "t",
+      "on": "one tester"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "silenced"
+     }
+    ],
+    "credit": "Brandon Butch",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "So when do you",
+   "line": "So when do you get it? Apple promised those five Siri languages in October.",
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Release",
+    "headline": "So [[when]] do you get it?",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Siri AI",
+        "v": "+5 languages",
+        "tone": "plain"
+       },
+       {
+        "k": "Apple's promise",
+        "v": "October",
+        "tone": "free"
+       }
+      ]
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "French, Japanese, Korean, Portuguese, Spanish"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "when"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "Siri languages"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "October"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Its foldable",
+   "line": "Its foldable, iPhone Duo, launches October twenty third, and twenty seven point two probably follows soon after.",
+   "tier": "single",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Release",
+    "headline": "27.2 [[probably]] follows",
+    "blocks": [
+     {
+      "id": "p",
+      "kind": "steps",
+      "steps": [
+       "October \u00b7 Siri languages",
+       "Oct 23 \u00b7 iPhone Duo",
+       "Soon after \u00b7 iOS 27.2, probably"
+      ],
+      "h": 640
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "No date from Apple yet"
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "p.1",
+      "on": "Duo"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "probably"
+     },
+     {
+      "do": "show",
+      "target": "p.2",
+      "on": "probably"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "soon after"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Waiting on Siri in",
+   "line": "Waiting on Siri in Spanish or Japanese? Follow, and you'll know the day it lands on your phone.",
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "cta": true,
+    "hideCaptions": true,
+    "headlineSize": "xl",
+    "headline": "[[Follow]]",
+    "blocks": [
+     {
+      "id": "q",
+      "kind": "text",
+      "text": "Waiting on Siri in Spanish or Japanese?"
+     },
+     {
+      "id": "d",
+      "kind": "text",
+      "text": "Know the day iOS 27.2 lands on your phone."
+     },
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/ios-27-2-beta-3/sw-update-b3.png",
+      "width": 1080,
+      "height": 1260,
+      "device": false,
+      "h": 620
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Follow"
+     },
+     {
+      "do": "show",
+      "target": "d",
+      "on": "know the day"
+     }
+    ],
+    "presenter": {
+     "src": "assets/ios-27-2-beta-3/avatar-master-cta.mp4",
+     "from": 0.28
+    }
+   }
+  }
+ ],
+ "showCredits": false
 }

@@ -9613,3 +9613,37 @@ quoted as a text card, one promo clip reused at three offsets (build / site / de
 title as proof of a feature, pricing-table row ring for the catch, a forum-post ring for the user
 report, the PRO card walked from price to "20x". Next tool reel: do not quote the vendor prompt as a
 bare text card again; show it in its own UI.
+
+## 2026-10-06 — ios-27-2-beta-3 (news, animated bookends, creator footage credited)
+
+- **RAW NOTE 1 — "beta 3" searches return the WRONG beta.** Most results for "iOS 27.2 beta 3" were
+  iOS 27.0 beta 3 (July, 24A5380h: Siri orb, 5G+Wi-Fi icons). And every beta-3 seed article opened by
+  re-listing beta-1 features (Health, Siri languages). ROOT CAUSE: point-release betas inherit the
+  release's feature list in coverage. RULE: for a beta-N reel, diff against beta N-1 explicitly; a
+  feature is "new in beta N" only if a hands-on shows beta N-1 without it.
+- **RAW NOTE 2 — the only proof was creator footage.** No outlet published a still of any beta-3
+  change, no simulator runs a beta. Brandon Butch and zollotech both showed beta 2 BESIDE beta 3 on
+  real iPhones, which is better proof than any still. User chose: clips, credited on screen.
+- **RAW NOTE 3 — showCredits fights the caption band.** With showCredits on, compile leaves captions
+  high (the credit strip owns 78%), and compile never injects `credit` into slide scenes. Captions sat
+  at 57% and collided with rows. FIX USED: showCredits false + `credit`/`creditOnScreen` per scene +
+  the credit written into the eyebrow ("Settings › Battery · video: Brandon Butch"). Captions back at
+  422. A tool-level fix (slides drawing their own credit chip above the caption band) is still owed.
+- **RAW NOTE 4 — a hook slice must run to the NEXT scene's start, not the last word.** Cut at 8.6s
+  (after "update.") but the next line starts at 8.98, so the presenter could not cover the second
+  hook scene. Slice to the next scene boundary.
+- **RAW NOTE 5 — yt-dlp --download-sections crawled** (15 min for one 38s clip, YouTube throttling
+  the ffmpeg stream). Downloading the whole video-only stream with -N 8 took under a minute. These
+  creator uploads are 1920x960 AV1, not 1080p; probe before computing crops.
+- **RAW NOTE 6 — slideSfx: false was copied from a precedent** and the critique caught 0 cues in 66s.
+  Animated slides derive their own sounds; leave slideSfx unset.
+- ElevenLabs v3: 193 words at 3.50 w/s (55.2s, ~1,178 credits), vo_pad to 66s (2.92 w/s), not the
+  suggested 76s. HeyGen: two bookend slices, 8.6s + 5.4s. Rehearsal skipped (chatterbox missing).
+
+### Treatments used (do not repeat for the same kind of information)
+Presenter circle over the real Software Update card with a title-row focus; a Beta 1 → Beta 2 → Beta 3
+→ "Everyone?" steps strip as the planted loop; a beta-1 recap card with a cropped outlet photo; a
+four-row "what changed" checklist; tester clips of beta 2 vs beta 3 side by side for each change,
+credited in the eyebrow; a Voice / Type to Siri two-step card; a request → too big → Apple's servers
+steps strip for Private Cloud Compute; a release timeline split across two cards. Next beta reel: do
+not open on the Software Update card again; open on the single most visible change.

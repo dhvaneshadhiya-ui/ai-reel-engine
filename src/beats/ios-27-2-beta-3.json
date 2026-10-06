@@ -1,0 +1,1961 @@
+{
+  "id": "ios-27-2-beta-3",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/ios-27-2-beta-3/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "Beta 3",
+    "battery",
+    "beta one",
+    "four",
+    "matches",
+    "Type to Siri",
+    "Private Cloud Compute",
+    "silenced",
+    "October",
+    "probably",
+    "Follow"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "eyebrow": "Out now \u00b7 image: iClarified",
+      "headline": "iOS 27.2 [[Beta 3]] is here",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios-27-2-beta-3/sw-update-b3.png",
+          "width": 1080,
+          "height": 1260,
+          "device": false,
+          "h": 760
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Biggest change you'll see: the battery icon"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "third beta",
+          "at": 0.44
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "just dropped",
+          "rect": [
+            0,
+            0,
+            1080,
+            300
+          ],
+          "ring": false,
+          "at": 2.62
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "battery icon",
+          "at": 5.08
+        }
+      ],
+      "presenter": {
+        "src": "assets/ios-27-2-beta-3/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "credit": "iClarified",
+      "creditOnScreen": true,
+      "durationSec": 6.24,
+      "assetId": "sw-update-b3",
+      "claimId": "sw-update-b3",
+      "covers": "Apple's third beta of",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.41,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 2.22,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The clue",
+      "headline": "A hint at [[when]] you get it",
+      "blocks": [
+        {
+          "id": "p",
+          "kind": "steps",
+          "steps": [
+            "Beta 1",
+            "Beta 2",
+            "Beta 3",
+            "Everyone?"
+          ],
+          "h": 760
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "p.2",
+          "on": "clue",
+          "at": 0.62
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "when",
+          "at": 0.98
+        },
+        {
+          "do": "show",
+          "target": "p.3",
+          "on": "update",
+          "at": 1.6
+        }
+      ],
+      "durationSec": 2.74,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 0.25,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.95,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Beta 1 \u00b7 photo: MacRumors",
+      "headline": "The big stuff came in [[beta 1]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios-27-2-beta-3/health-insights-b1.png",
+          "width": 1080,
+          "height": 854,
+          "device": false,
+          "h": 540
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Health app",
+              "v": "Redesigned",
+              "tone": "plain"
+            },
+            {
+              "k": "Siri AI",
+              "v": "5 more languages",
+              "tone": "plain"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "beta one",
+          "at": 2.9
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "Health",
+          "at": 4.56
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "five more",
+          "at": 6.58
+        }
+      ],
+      "credit": "MacRumors",
+      "creditOnScreen": true,
+      "durationSec": 8.56,
+      "assetId": "health-insights-b1",
+      "claimId": "health-insights-b1",
+      "covers": "The big features of",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.87,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Beta 3",
+      "headline": "[[4]] small changes",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Battery icon",
+              "v": "Settings",
+              "tone": "plain"
+            },
+            {
+              "k": "Type to Siri",
+              "v": "Side button",
+              "tone": "plain"
+            },
+            {
+              "k": "Report renamed",
+              "v": "Privacy",
+              "tone": "plain"
+            },
+            {
+              "k": "Silenced icon",
+              "v": "Messages",
+              "tone": "plain"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "found",
+          "at": 2.04
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "four",
+          "at": 2.34
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "four",
+          "at": 2.34
+        },
+        {
+          "do": "show",
+          "target": "r.3",
+          "on": "changes",
+          "at": 2.56
+        }
+      ],
+      "durationSec": 3.84,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.31,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Settings \u203a Battery \u00b7 video: Brandon Butch",
+      "headline": "The icon finally [[matches]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/ios-27-2-beta-3/butch-battery.mp4",
+          "width": 1080,
+          "height": 1080,
+          "device": false,
+          "h": 800
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "matches",
+          "at": 2.62
+        }
+      ],
+      "credit": "Brandon Butch",
+      "creditOnScreen": true,
+      "durationSec": 5.32,
+      "assetId": "butch-battery",
+      "claimId": "butch-battery",
+      "covers": "Open Settings, Battery.",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.59,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Accessibility \u203a Siri \u00b7 video: zollotech",
+      "headline": "Hold the side button to [[type]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/ios-27-2-beta-3/zollo-type-to-siri.mp4",
+          "width": 1058,
+          "height": 1080,
+          "device": false,
+          "h": 760
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "type instead",
+          "at": 5.36
+        }
+      ],
+      "credit": "zollotech",
+      "creditOnScreen": true,
+      "durationSec": 7.4,
+      "assetId": "zollo-type-to-siri",
+      "claimId": "zollo-type-to-siri",
+      "covers": "In Accessibility, Siri,",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 5.33,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Side button",
+      "headline": "On [[select models]]",
+      "blocks": [
+        {
+          "id": "p",
+          "kind": "steps",
+          "steps": [
+            "Hold for Voice",
+            "Hold to Type to Siri"
+          ],
+          "h": 620
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "p.1",
+          "on": "That's",
+          "at": 0.0
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "select",
+          "at": 0.38
+        }
+      ],
+      "durationSec": 1.8,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.35,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Privacy & Security \u00b7 video: Brandon Butch",
+      "headline": "New name: [[Private Cloud Compute]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/ios-27-2-beta-3/butch-pcc.mp4",
+          "width": 1238,
+          "height": 1080,
+          "device": false,
+          "h": 560
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "private cloud",
+          "at": 3.48
+        }
+      ],
+      "credit": "Brandon Butch",
+      "creditOnScreen": true,
+      "captionBottom": 470,
+      "durationSec": 5.6,
+      "assetId": "butch-pcc",
+      "claimId": "butch-pcc",
+      "covers": "Under Privacy and Security,",
+      "hideCaptions": false,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 3.45,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Private Cloud Compute",
+      "headline": "Apple's own [[servers]]",
+      "blocks": [
+        {
+          "id": "p",
+          "kind": "steps",
+          "steps": [
+            "Your request",
+            "Too big for the iPhone",
+            "Runs on Apple's servers"
+          ],
+          "h": 560
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Quick requests",
+              "v": "On your iPhone",
+              "tone": "plain"
+            },
+            {
+              "k": "Bigger requests",
+              "v": "Apple's servers",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "p.0",
+          "on": "name",
+          "at": 0.48
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "servers",
+          "at": 1.14
+        },
+        {
+          "do": "show",
+          "target": "p.1",
+          "on": "servers",
+          "at": 1.14
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "servers",
+          "at": 1.14
+        },
+        {
+          "do": "show",
+          "target": "p.2",
+          "on": "bigger",
+          "at": 1.8
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "bigger",
+          "at": 1.8
+        }
+      ],
+      "durationSec": 3.7,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.11,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Messages \u00b7 video: Brandon Butch",
+      "headline": "Muted pins get a [[silenced]] icon",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/ios-27-2-beta-3/butch-messages.mp4",
+          "width": 1080,
+          "height": 554,
+          "device": false,
+          "h": 720
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Spotted by one tester so far"
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "t",
+          "on": "one tester",
+          "at": 0.2
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "silenced",
+          "at": 1.3
+        }
+      ],
+      "credit": "Brandon Butch",
+      "creditOnScreen": true,
+      "durationSec": 4.72,
+      "assetId": "butch-messages",
+      "claimId": "butch-messages",
+      "covers": "And one tester spotted",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.27,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Release",
+      "headline": "So [[when]] do you get it?",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Siri AI",
+              "v": "+5 languages",
+              "tone": "plain"
+            },
+            {
+              "k": "Apple's promise",
+              "v": "October",
+              "tone": "free"
+            }
+          ]
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "French, Japanese, Korean, Portuguese, Spanish"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "when",
+          "at": 0.48
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "Siri languages",
+          "at": 3.06
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "October",
+          "at": 4.04
+        }
+      ],
+      "durationSec": 5.02,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.45,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Release",
+      "headline": "27.2 [[probably]] follows",
+      "blocks": [
+        {
+          "id": "p",
+          "kind": "steps",
+          "steps": [
+            "October \u00b7 Siri languages",
+            "Oct 23 \u00b7 iPhone Duo",
+            "Soon after \u00b7 iOS 27.2, probably"
+          ],
+          "h": 640
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "No date from Apple yet"
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "p.1",
+          "on": "Duo",
+          "at": 0.9
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "probably",
+          "at": 3.92
+        },
+        {
+          "do": "show",
+          "target": "p.2",
+          "on": "probably",
+          "at": 3.92
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "soon after",
+          "at": 4.68
+        }
+      ],
+      "durationSec": 5.98,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 0.53,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Core.MP3",
+          "at": 3.87,
+          "vol": 0.556
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "hideCaptions": true,
+      "headlineSize": "xl",
+      "headline": "[[Follow]]",
+      "blocks": [
+        {
+          "id": "q",
+          "kind": "text",
+          "text": "Waiting on Siri in Spanish or Japanese?"
+        },
+        {
+          "id": "d",
+          "kind": "text",
+          "text": "Know the day iOS 27.2 lands on your phone."
+        },
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/ios-27-2-beta-3/sw-update-b3.png",
+          "width": 1080,
+          "height": 1260,
+          "device": false,
+          "h": 620
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Follow",
+          "at": 2.62
+        },
+        {
+          "do": "show",
+          "target": "d",
+          "on": "know the day",
+          "at": 3.6
+        }
+      ],
+      "presenter": {
+        "src": "assets/ios-27-2-beta-3/avatar-master-cta.mp4",
+        "from": 0.28
+      },
+      "durationSec": 5.08,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.59,
+          "vol": 0.343
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.92,
+      "text": "Apple's third beta",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Apple's"
+        },
+        {
+          "t": 0.44,
+          "text": "third"
+        },
+        {
+          "t": 0.7,
+          "text": "beta"
+        }
+      ]
+    },
+    {
+      "start": 0.92,
+      "end": 2.62,
+      "text": "of iOS 27.2",
+      "words": [
+        {
+          "t": 0.92,
+          "text": "of"
+        },
+        {
+          "t": 1.24,
+          "text": "iOS"
+        },
+        {
+          "t": 1.56,
+          "text": "27.2"
+        }
+      ]
+    },
+    {
+      "start": 2.62,
+      "end": 3.5,
+      "text": "just dropped and",
+      "words": [
+        {
+          "t": 2.62,
+          "text": "just"
+        },
+        {
+          "t": 2.88,
+          "text": "dropped"
+        },
+        {
+          "t": 3.28,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 3.5,
+      "end": 4.1,
+      "text": "the biggest change",
+      "words": [
+        {
+          "t": 3.5,
+          "text": "the"
+        },
+        {
+          "t": 3.64,
+          "text": "biggest"
+        },
+        {
+          "t": 3.8,
+          "text": "change"
+        }
+      ]
+    },
+    {
+      "start": 4.1,
+      "end": 4.96,
+      "text": "you'll notice is",
+      "words": [
+        {
+          "t": 4.1,
+          "text": "you'll"
+        },
+        {
+          "t": 4.32,
+          "text": "notice"
+        },
+        {
+          "t": 4.62,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 4.96,
+      "end": 5.72,
+      "text": "a battery icon.",
+      "words": [
+        {
+          "t": 4.96,
+          "text": "a"
+        },
+        {
+          "t": 5.08,
+          "text": "battery"
+        },
+        {
+          "t": 5.3,
+          "text": "icon."
+        }
+      ]
+    },
+    {
+      "start": 6.24,
+      "end": 7.08,
+      "text": "That's a clue",
+      "words": [
+        {
+          "t": 6.24,
+          "text": "That's"
+        },
+        {
+          "t": 6.8,
+          "text": "a"
+        },
+        {
+          "t": 6.86,
+          "text": "clue"
+        }
+      ]
+    },
+    {
+      "start": 7.08,
+      "end": 7.56,
+      "text": "to when you'll",
+      "words": [
+        {
+          "t": 7.08,
+          "text": "to"
+        },
+        {
+          "t": 7.22,
+          "text": "when"
+        },
+        {
+          "t": 7.4,
+          "text": "you'll"
+        }
+      ]
+    },
+    {
+      "start": 7.56,
+      "end": 8.18,
+      "text": "get the update.",
+      "words": [
+        {
+          "t": 7.56,
+          "text": "get"
+        },
+        {
+          "t": 7.7,
+          "text": "the"
+        },
+        {
+          "t": 7.84,
+          "text": "update."
+        }
+      ]
+    },
+    {
+      "start": 8.98,
+      "end": 9.64,
+      "text": "The big features",
+      "words": [
+        {
+          "t": 8.98,
+          "text": "The"
+        },
+        {
+          "t": 9.14,
+          "text": "big"
+        },
+        {
+          "t": 9.3,
+          "text": "features"
+        }
+      ]
+    },
+    {
+      "start": 9.64,
+      "end": 11.22,
+      "text": "of 27.2 already",
+      "words": [
+        {
+          "t": 9.64,
+          "text": "of"
+        },
+        {
+          "t": 9.88,
+          "text": "27.2"
+        },
+        {
+          "t": 10.84,
+          "text": "already"
+        }
+      ]
+    },
+    {
+      "start": 11.22,
+      "end": 12.08,
+      "text": "landed in beta",
+      "words": [
+        {
+          "t": 11.22,
+          "text": "landed"
+        },
+        {
+          "t": 11.6,
+          "text": "in"
+        },
+        {
+          "t": 11.88,
+          "text": "beta"
+        }
+      ]
+    },
+    {
+      "start": 12.08,
+      "end": 13.54,
+      "text": "one. The new",
+      "words": [
+        {
+          "t": 12.08,
+          "text": "one."
+        },
+        {
+          "t": 13.28,
+          "text": "The"
+        },
+        {
+          "t": 13.38,
+          "text": "new"
+        }
+      ]
+    },
+    {
+      "start": 13.54,
+      "end": 14.94,
+      "text": "Health app and Siri",
+      "words": [
+        {
+          "t": 13.54,
+          "text": "Health"
+        },
+        {
+          "t": 14.1,
+          "text": "app"
+        },
+        {
+          "t": 14.66,
+          "text": "and"
+        },
+        {
+          "t": 14.66,
+          "text": "Siri"
+        }
+      ]
+    },
+    {
+      "start": 14.94,
+      "end": 15.8,
+      "text": "AI in five",
+      "words": [
+        {
+          "t": 14.94,
+          "text": "AI"
+        },
+        {
+          "t": 15.22,
+          "text": "in"
+        },
+        {
+          "t": 15.56,
+          "text": "five"
+        }
+      ]
+    },
+    {
+      "start": 15.8,
+      "end": 18.1,
+      "text": "more languages. Beta",
+      "words": [
+        {
+          "t": 15.8,
+          "text": "more"
+        },
+        {
+          "t": 16.0,
+          "text": "languages."
+        },
+        {
+          "t": 17.54,
+          "text": "Beta"
+        }
+      ]
+    },
+    {
+      "start": 18.1,
+      "end": 19.22,
+      "text": "three is polish, and",
+      "words": [
+        {
+          "t": 18.1,
+          "text": "three"
+        },
+        {
+          "t": 18.36,
+          "text": "is"
+        },
+        {
+          "t": 18.56,
+          "text": "polish,"
+        },
+        {
+          "t": 18.56,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 19.22,
+      "end": 20.1,
+      "text": "testers found four",
+      "words": [
+        {
+          "t": 19.22,
+          "text": "testers"
+        },
+        {
+          "t": 19.58,
+          "text": "found"
+        },
+        {
+          "t": 19.88,
+          "text": "four"
+        }
+      ]
+    },
+    {
+      "start": 20.1,
+      "end": 22.44,
+      "text": "changes. Open Settings, Battery",
+      "words": [
+        {
+          "t": 20.1,
+          "text": "changes."
+        },
+        {
+          "t": 21.38,
+          "text": "Open"
+        },
+        {
+          "t": 21.62,
+          "text": "Settings,"
+        },
+        {
+          "t": 21.62,
+          "text": "Battery"
+        }
+      ]
+    },
+    {
+      "start": 23.14,
+      "end": 24.0,
+      "text": "The icon finally",
+      "words": [
+        {
+          "t": 23.14,
+          "text": "The"
+        },
+        {
+          "t": 23.26,
+          "text": "icon"
+        },
+        {
+          "t": 23.56,
+          "text": "finally"
+        }
+      ]
+    },
+    {
+      "start": 24.0,
+      "end": 24.76,
+      "text": "matches the new",
+      "words": [
+        {
+          "t": 24.0,
+          "text": "matches"
+        },
+        {
+          "t": 24.36,
+          "text": "the"
+        },
+        {
+          "t": 24.58,
+          "text": "new"
+        }
+      ]
+    },
+    {
+      "start": 24.76,
+      "end": 25.22,
+      "text": "one in the",
+      "words": [
+        {
+          "t": 24.76,
+          "text": "one"
+        },
+        {
+          "t": 24.98,
+          "text": "in"
+        },
+        {
+          "t": 25.14,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 25.22,
+      "end": 25.84,
+      "text": "corner of your",
+      "words": [
+        {
+          "t": 25.22,
+          "text": "corner"
+        },
+        {
+          "t": 25.48,
+          "text": "of"
+        },
+        {
+          "t": 25.72,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 25.84,
+      "end": 28.0,
+      "text": "screen. In Accessibility, Siri",
+      "words": [
+        {
+          "t": 25.84,
+          "text": "screen."
+        },
+        {
+          "t": 26.7,
+          "text": "In"
+        },
+        {
+          "t": 27.12,
+          "text": "Accessibility,"
+        },
+        {
+          "t": 27.12,
+          "text": "Siri"
+        }
+      ]
+    },
+    {
+      "start": 28.34,
+      "end": 29.32,
+      "text": "holding the side",
+      "words": [
+        {
+          "t": 28.34,
+          "text": "holding"
+        },
+        {
+          "t": 28.92,
+          "text": "the"
+        },
+        {
+          "t": 29.1,
+          "text": "side"
+        }
+      ]
+    },
+    {
+      "start": 29.32,
+      "end": 30.12,
+      "text": "button can open",
+      "words": [
+        {
+          "t": 29.32,
+          "text": "button"
+        },
+        {
+          "t": 29.6,
+          "text": "can"
+        },
+        {
+          "t": 29.82,
+          "text": "open"
+        }
+      ]
+    },
+    {
+      "start": 30.12,
+      "end": 31.92,
+      "text": "Type to Siri again. So",
+      "words": [
+        {
+          "t": 30.12,
+          "text": "Type"
+        },
+        {
+          "t": 30.84,
+          "text": "to"
+        },
+        {
+          "t": 31.76,
+          "text": "Siri"
+        },
+        {
+          "t": 31.76,
+          "text": "again."
+        },
+        {
+          "t": 31.76,
+          "text": "So"
+        }
+      ]
+    },
+    {
+      "start": 31.92,
+      "end": 32.66,
+      "text": "you type instead",
+      "words": [
+        {
+          "t": 31.92,
+          "text": "you"
+        },
+        {
+          "t": 32.06,
+          "text": "type"
+        },
+        {
+          "t": 32.34,
+          "text": "instead"
+        }
+      ]
+    },
+    {
+      "start": 32.66,
+      "end": 34.4,
+      "text": "of talking. That's",
+      "words": [
+        {
+          "t": 32.66,
+          "text": "of"
+        },
+        {
+          "t": 32.82,
+          "text": "talking."
+        },
+        {
+          "t": 34.1,
+          "text": "That's"
+        }
+      ]
+    },
+    {
+      "start": 34.4,
+      "end": 35.14,
+      "text": "on select models.",
+      "words": [
+        {
+          "t": 34.4,
+          "text": "on"
+        },
+        {
+          "t": 34.48,
+          "text": "select"
+        },
+        {
+          "t": 34.7,
+          "text": "models."
+        }
+      ]
+    },
+    {
+      "start": 35.9,
+      "end": 37.42,
+      "text": "Under Privacy and Security the",
+      "words": [
+        {
+          "t": 35.9,
+          "text": "Under"
+        },
+        {
+          "t": 36.12,
+          "text": "Privacy"
+        },
+        {
+          "t": 37.36,
+          "text": "and"
+        },
+        {
+          "t": 37.36,
+          "text": "Security"
+        },
+        {
+          "t": 37.36,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 37.42,
+      "end": 38.9,
+      "text": "Apple Intelligence Report is now",
+      "words": [
+        {
+          "t": 37.42,
+          "text": "Apple"
+        },
+        {
+          "t": 38.44,
+          "text": "Intelligence"
+        },
+        {
+          "t": 38.7,
+          "text": "Report"
+        },
+        {
+          "t": 38.7,
+          "text": "is"
+        },
+        {
+          "t": 38.7,
+          "text": "now"
+        }
+      ]
+    },
+    {
+      "start": 38.9,
+      "end": 40.74,
+      "text": "called the Private Cloud Compute Report",
+      "words": [
+        {
+          "t": 38.9,
+          "text": "called"
+        },
+        {
+          "t": 39.2,
+          "text": "the"
+        },
+        {
+          "t": 39.38,
+          "text": "Private"
+        },
+        {
+          "t": 39.38,
+          "text": "Cloud"
+        },
+        {
+          "t": 39.38,
+          "text": "Compute"
+        },
+        {
+          "t": 39.38,
+          "text": "Report"
+        }
+      ]
+    },
+    {
+      "start": 41.5,
+      "end": 42.18,
+      "text": "That's the name",
+      "words": [
+        {
+          "t": 41.5,
+          "text": "That's"
+        },
+        {
+          "t": 41.88,
+          "text": "the"
+        },
+        {
+          "t": 41.98,
+          "text": "name"
+        }
+      ]
+    },
+    {
+      "start": 42.18,
+      "end": 42.64,
+      "text": "of the Apple",
+      "words": [
+        {
+          "t": 42.18,
+          "text": "of"
+        },
+        {
+          "t": 42.32,
+          "text": "the"
+        },
+        {
+          "t": 42.42,
+          "text": "Apple"
+        }
+      ]
+    },
+    {
+      "start": 42.64,
+      "end": 43.54,
+      "text": "servers your bigger",
+      "words": [
+        {
+          "t": 42.64,
+          "text": "servers"
+        },
+        {
+          "t": 43.04,
+          "text": "your"
+        },
+        {
+          "t": 43.3,
+          "text": "bigger"
+        }
+      ]
+    },
+    {
+      "start": 43.54,
+      "end": 44.54,
+      "text": "requests run on.",
+      "words": [
+        {
+          "t": 43.54,
+          "text": "requests"
+        },
+        {
+          "t": 43.96,
+          "text": "run"
+        },
+        {
+          "t": 44.28,
+          "text": "on."
+        }
+      ]
+    },
+    {
+      "start": 45.2,
+      "end": 45.82,
+      "text": "And one tester",
+      "words": [
+        {
+          "t": 45.2,
+          "text": "And"
+        },
+        {
+          "t": 45.4,
+          "text": "one"
+        },
+        {
+          "t": 45.58,
+          "text": "tester"
+        }
+      ]
+    },
+    {
+      "start": 45.82,
+      "end": 46.88,
+      "text": "spotted a silenced",
+      "words": [
+        {
+          "t": 45.82,
+          "text": "spotted"
+        },
+        {
+          "t": 46.26,
+          "text": "a"
+        },
+        {
+          "t": 46.5,
+          "text": "silenced"
+        }
+      ]
+    },
+    {
+      "start": 46.88,
+      "end": 48.04,
+      "text": "icon on pinned chats",
+      "words": [
+        {
+          "t": 46.88,
+          "text": "icon"
+        },
+        {
+          "t": 47.3,
+          "text": "on"
+        },
+        {
+          "t": 47.54,
+          "text": "pinned"
+        },
+        {
+          "t": 47.54,
+          "text": "chats"
+        }
+      ]
+    },
+    {
+      "start": 48.04,
+      "end": 48.84,
+      "text": "you've muted in",
+      "words": [
+        {
+          "t": 48.04,
+          "text": "you've"
+        },
+        {
+          "t": 48.36,
+          "text": "muted"
+        },
+        {
+          "t": 48.62,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 48.84,
+      "end": 50.68,
+      "text": "Messages. So when do",
+      "words": [
+        {
+          "t": 48.84,
+          "text": "Messages."
+        },
+        {
+          "t": 50.4,
+          "text": "So"
+        },
+        {
+          "t": 50.58,
+          "text": "when"
+        },
+        {
+          "t": 50.58,
+          "text": "do"
+        }
+      ]
+    },
+    {
+      "start": 50.68,
+      "end": 51.1,
+      "text": "you get it?",
+      "words": [
+        {
+          "t": 50.68,
+          "text": "you"
+        },
+        {
+          "t": 50.76,
+          "text": "get"
+        },
+        {
+          "t": 50.92,
+          "text": "it?"
+        }
+      ]
+    },
+    {
+      "start": 51.78,
+      "end": 52.68,
+      "text": "Apple promised those",
+      "words": [
+        {
+          "t": 51.78,
+          "text": "Apple"
+        },
+        {
+          "t": 52.08,
+          "text": "promised"
+        },
+        {
+          "t": 52.44,
+          "text": "those"
+        }
+      ]
+    },
+    {
+      "start": 52.68,
+      "end": 53.6,
+      "text": "five Siri languages",
+      "words": [
+        {
+          "t": 52.68,
+          "text": "five"
+        },
+        {
+          "t": 52.98,
+          "text": "Siri"
+        },
+        {
+          "t": 53.24,
+          "text": "languages"
+        }
+      ]
+    },
+    {
+      "start": 53.6,
+      "end": 55.06,
+      "text": "in October. Its",
+      "words": [
+        {
+          "t": 53.6,
+          "text": "in"
+        },
+        {
+          "t": 53.96,
+          "text": "October."
+        },
+        {
+          "t": 54.94,
+          "text": "Its"
+        }
+      ]
+    },
+    {
+      "start": 55.06,
+      "end": 56.94,
+      "text": "foldable, iPhone Duo launches October",
+      "words": [
+        {
+          "t": 55.06,
+          "text": "foldable,"
+        },
+        {
+          "t": 56.14,
+          "text": "iPhone"
+        },
+        {
+          "t": 56.56,
+          "text": "Duo"
+        },
+        {
+          "t": 56.56,
+          "text": "launches"
+        },
+        {
+          "t": 56.56,
+          "text": "October"
+        }
+      ]
+    },
+    {
+      "start": 56.94,
+      "end": 58.86,
+      "text": "23rd and 27.2",
+      "words": [
+        {
+          "t": 56.94,
+          "text": "23rd"
+        },
+        {
+          "t": 57.74,
+          "text": "and"
+        },
+        {
+          "t": 57.84,
+          "text": "27.2"
+        }
+      ]
+    },
+    {
+      "start": 58.86,
+      "end": 59.98,
+      "text": "probably follows soon",
+      "words": [
+        {
+          "t": 58.86,
+          "text": "probably"
+        },
+        {
+          "t": 59.2,
+          "text": "follows"
+        },
+        {
+          "t": 59.62,
+          "text": "soon"
+        }
+      ]
+    },
+    {
+      "start": 59.98,
+      "end": 61.4,
+      "text": "after. Waiting on",
+      "words": [
+        {
+          "t": 59.98,
+          "text": "after."
+        },
+        {
+          "t": 60.92,
+          "text": "Waiting"
+        },
+        {
+          "t": 61.2,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 61.4,
+      "end": 62.2,
+      "text": "Siri in Spanish",
+      "words": [
+        {
+          "t": 61.4,
+          "text": "Siri"
+        },
+        {
+          "t": 61.64,
+          "text": "in"
+        },
+        {
+          "t": 61.86,
+          "text": "Spanish"
+        }
+      ]
+    },
+    {
+      "start": 62.2,
+      "end": 64.04,
+      "text": "or Japanese? Follow",
+      "words": [
+        {
+          "t": 62.2,
+          "text": "or"
+        },
+        {
+          "t": 62.42,
+          "text": "Japanese?"
+        },
+        {
+          "t": 63.54,
+          "text": "Follow"
+        }
+      ]
+    },
+    {
+      "start": 64.04,
+      "end": 64.68,
+      "text": "and you'll know",
+      "words": [
+        {
+          "t": 64.04,
+          "text": "and"
+        },
+        {
+          "t": 64.34,
+          "text": "you'll"
+        },
+        {
+          "t": 64.52,
+          "text": "know"
+        }
+      ]
+    },
+    {
+      "start": 64.68,
+      "end": 65.12,
+      "text": "the day it",
+      "words": [
+        {
+          "t": 64.68,
+          "text": "the"
+        },
+        {
+          "t": 64.8,
+          "text": "day"
+        },
+        {
+          "t": 64.96,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 65.12,
+      "end": 65.6,
+      "text": "lands on your",
+      "words": [
+        {
+          "t": 65.12,
+          "text": "lands"
+        },
+        {
+          "t": 65.32,
+          "text": "on"
+        },
+        {
+          "t": 65.5,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 65.6,
+      "end": 65.86,
+      "text": "phone.",
+      "words": [
+        {
+          "t": 65.6,
+          "text": "phone."
+        }
+      ]
+    }
+  ],
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 16.42,
+        "vol": 0.055
+      },
+      {
+        "t": 16.76,
+        "vol": 0.15
+      },
+      {
+        "t": 17.36,
+        "vol": 0.15
+      },
+      {
+        "t": 17.54,
+        "vol": 0.055
+      },
+      {
+        "t": 33.08,
+        "vol": 0.055
+      },
+      {
+        "t": 33.42,
+        "vol": 0.15
+      },
+      {
+        "t": 33.92,
+        "vol": 0.15
+      },
+      {
+        "t": 34.1,
+        "vol": 0.055
+      },
+      {
+        "t": 65.86,
+        "vol": 0.055
+      },
+      {
+        "t": 66.0,
+        "vol": 0.02
+      }
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+  },
+  "format": "news",
+  "showCredits": false,
+  "allowLong": false,
+  "script": "Apple's third beta of iOS twenty seven point two just dropped, and the biggest change you'll notice is a battery icon. That's a clue to when you'll get the update.\n\nThe big features of twenty seven point two already landed in beta one: the new Health app, and Siri AI in five more languages. Beta three is polish, and testers found four changes.\n\nOpen Settings, Battery. The icon finally matches the new one in the corner of your screen.\n\nIn Accessibility, Siri, holding the side button can open Type to Siri again, so you type instead of talking. That's on select models.\n\nUnder Privacy and Security, the Apple Intelligence Report is now called the Private Cloud Compute Report. That's the name of the Apple servers your bigger requests run on.\n\nAnd one tester spotted a silenced icon on pinned chats you've muted in Messages.\n\nSo when do you get it? Apple promised those five Siri languages in October. Its foldable, iPhone Duo, launches October twenty third, and twenty seven point two probably follows soon after.\n\nWaiting on Siri in Spanish or Japanese? Follow, and you'll know the day it lands on your phone.",
+  "approval": {
+    "sha256": "cb03f6e91a182b2bfbbee86aad7220d359dc5cdf879c1cc277071acc506d477a",
+    "approvedAt": "2026-10-06T05:01:34+00:00",
+    "words": 193,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}
