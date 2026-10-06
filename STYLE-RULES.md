@@ -9647,3 +9647,35 @@ four-row "what changed" checklist; tester clips of beta 2 vs beta 3 side by side
 credited in the eyebrow; a Voice / Type to Siri two-step card; a request → too big → Apple's servers
 steps strip for Private Cloud Compute; a release timeline split across two cards. Next beta reel: do
 not open on the Software Update card again; open on the single most visible change.
+
+## 2026-10-06 — openai-image-ads (news, animated bookends, 64s)
+
+- **RAW NOTE 1 — openai.com and help.openai.com 403 to WebFetch, render fine in Playwright.**
+  The primary announcement was only readable by rendering it headless (mobile UA) and dumping
+  `article.innerText`. ROOT CAUSE: bot wall on plain fetchers. RULE: when an OpenAI page 403s,
+  render it with Playwright before falling back to outlet summaries; the twist of this reel
+  (Ads-Free on Free removes image generation) existed ONLY on the help page.
+- **RAW NOTE 2 — hiding `iframe` hid the help article itself.** A capture `--hide` list with
+  `iframe` and broad `[class*=cookie]` blanked help.openai.com's body. FIX USED: clip each passage
+  by its element (scrollIntoView, then a viewport clip) with no hiding; the fixed chat bubble sits
+  at the viewport bottom, below the clip. Find text-line gaps with a row scan before writing a
+  focus rect — a rect edge on a text line reads as a strike-through (round 1, scene 05).
+- **RAW NOTE 3 — whisper `small` spells ChatGPT "ChatGPD" and numbers as digits.** Anchors on
+  "ChatGPT", "sixty-two", "one point two" and "eighteen" failed to compile. FIX: display-only fix
+  of the word in vo.json (timings untouched) and anchor on neighbouring non-numeric words.
+- **RAW NOTE 4 — mockup focus rects must be the full image width.** Narrow rects zoomed a
+  portrait mockup until the ad card's words were sliced at the edges. Full-width rects give a ring
+  and a gentle push without cutting words.
+- **RAW NOTE 5 — the OpenAI mark is black.** `spotlight` draws the SVG as-is on a dark page; built
+  a white-tile version from the official paths (openai-tile-light.svg). A `tile` option on
+  spotlight is owed.
+- ElevenLabs v3: 172 words in 59.4s (2.89 w/s, ~1,013 credits), vo_pad to 64s. HeyGen: two bookend
+  slices, 8.2s + 4.1s on the digital twin, motion 9.41. Rehearsal skipped (chatterbox missing).
+
+### Treatments used (do not repeat for the same kind of information)
+Presenter circle over the vendor's own product mockup with a ring walk (loading badge -> ad card ->
+button); a logo spotlight over a reach/history rows card; a three-step "when/where/what" strip for a
+test's scope; a vendor paragraph read with line-measured rings; a help-page plans passage above a
+paid-vs-free swap card; a four-step settings path; a help-page "what you lose" passage; a two-row
+consequence card with the mockup returning as the payoff; XL question end card. Next ads/pricing
+reel: do not use the swap card for plans again; do not reuse a mockup across five scenes.

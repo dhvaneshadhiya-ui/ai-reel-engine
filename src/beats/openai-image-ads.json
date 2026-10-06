@@ -1,0 +1,1944 @@
+{
+  "id": "openai-image-ads",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/openai-image-ads/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "ad",
+    "62%",
+    "billion",
+    "pictures",
+    "later",
+    "labeled",
+    "no ads",
+    "Settings",
+    "image generation",
+    "with them",
+    "skip"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "eyebrow": "ChatGPT \u00b7 image: OpenAI",
+      "headline": "An [[ad]] while your image loads",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/openai-image-ads/mockup-phone-a.png",
+          "width": 840,
+          "height": 1070,
+          "device": false,
+          "h": 700
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Skipping it on Free costs you the picture"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "ads",
+          "at": 1.78
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "picture",
+          "rect": [
+            0,
+            40,
+            840,
+            420
+          ],
+          "at": 3.44
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "costs",
+          "rect": [
+            0,
+            230,
+            840,
+            560
+          ],
+          "at": 6.32
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "way out",
+          "at": 5.74
+        }
+      ],
+      "presenter": {
+        "src": "assets/openai-image-ads/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "durationSec": 8.3,
+      "assetId": "mockup-phone-a",
+      "claimId": "mockup-phone-a",
+      "covers": "OpenAI just announced",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.75,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 3.04,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 5.92,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "OpenAI's example",
+      "headline": "Image [[62%]] done. Ad right below",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/openai-image-ads/mockup-phone-a.png",
+          "width": 840,
+          "height": 1070,
+          "device": false,
+          "h": 760
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "image is",
+          "rect": [
+            0,
+            40,
+            840,
+            420
+          ],
+          "at": 1.7
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "done",
+          "at": 3.04
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "under it",
+          "rect": [
+            0,
+            230,
+            840,
+            560
+          ],
+          "at": 4.2
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "Learn",
+          "rect": [
+            0,
+            560,
+            840,
+            330
+          ],
+          "at": 7.2
+        }
+      ],
+      "captionBottom": 440,
+      "durationSec": 8.6,
+      "assetId": "mockup-phone-a",
+      "claimId": "mockup-phone-a",
+      "covers": "In OpenAI's own example",
+      "hideCaptions": false,
+      "sfx": [
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 1.3,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 3.01,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 3.8,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 6.8,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "ChatGPT ads so far",
+      "headline": "[[1.2 billion]] people a week",
+      "blocks": [
+        {
+          "id": "sp",
+          "kind": "spotlight",
+          "logo": "assets/openai-image-ads/openai-tile-light.svg",
+          "name": "ChatGPT"
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Weekly reach",
+              "v": "1.2 billion",
+              "tone": "plain"
+            },
+            {
+              "k": "Ads under answers",
+              "v": "Since February",
+              "tone": "cost"
+            },
+            {
+              "k": "Ads with pictures",
+              "v": "Next",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "week",
+          "at": 2.74
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "reaches",
+          "at": 0.58
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "answers",
+          "at": 4.42
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "February",
+          "at": 5.24
+        }
+      ],
+      "durationSec": 6.32,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.71,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The new format \u00b7 image: OpenAI",
+      "headline": "Ads become [[pictures]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/openai-image-ads/mockup-phone-b.png",
+          "width": 840,
+          "height": 1070,
+          "device": false,
+          "h": 880
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "pictures",
+          "at": 0.68
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "product",
+          "rect": [
+            0,
+            240,
+            840,
+            480
+          ],
+          "at": 1.76
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "use it",
+          "rect": [
+            0,
+            560,
+            840,
+            330
+          ],
+          "at": 3.02
+        }
+      ],
+      "durationSec": 3.8,
+      "assetId": "mockup-phone-b",
+      "claimId": "mockup-phone-b",
+      "covers": "Now they get pictures,",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.65,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 1.36,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 2.62,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The test",
+      "headline": "Starts [[later this month]]",
+      "blocks": [
+        {
+          "id": "p",
+          "kind": "steps",
+          "steps": [
+            "Later this month",
+            "US only",
+            "Image generation only"
+          ],
+          "h": 800
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "month",
+          "at": 1.26
+        },
+        {
+          "do": "show",
+          "target": "p.1",
+          "on": "US",
+          "at": 1.76
+        },
+        {
+          "do": "show",
+          "target": "p.2",
+          "on": "image generation",
+          "at": 2.54
+        }
+      ],
+      "durationSec": 4.6,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.23,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 2.17,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "OpenAI's announcement",
+      "headline": "OpenAI's [[promise]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/openai-image-ads/openai-post-initially.png",
+          "width": 1080,
+          "height": 880,
+          "device": false,
+          "h": 780
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "says",
+          "at": 0.4
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "labeled",
+          "rect": [
+            0,
+            205,
+            1080,
+            82
+          ],
+          "at": 1.66
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "separate",
+          "rect": [
+            0,
+            290,
+            1080,
+            85
+          ],
+          "at": 2.7
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "change",
+          "rect": [
+            0,
+            375,
+            1080,
+            250
+          ],
+          "at": 4.5
+        }
+      ],
+      "durationSec": 6.78,
+      "assetId": "openai-post-initially",
+      "claimId": "openai-post-initially",
+      "covers": "OpenAI says the ads",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.37,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 1.26,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 2.3,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 4.1,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Who sees them \u00b7 OpenAI help page",
+      "headline": "[[Free and Go]] get the ads",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/openai-image-ads/help-plans.png",
+          "width": 1080,
+          "height": 560,
+          "device": false,
+          "h": 340
+        },
+        {
+          "id": "w",
+          "kind": "swap",
+          "left": {
+            "name": "Plus, Pro, Business, Enterprise, Edu",
+            "price": "No ads",
+            "tone": "free"
+          },
+          "right": {
+            "name": "Free and Go",
+            "price": "Ads",
+            "tone": "cost",
+            "note": "Not under 18"
+          }
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "No ads on accounts under 18"
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "w.left",
+          "on": "Plus",
+          "at": 0.44
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "Business",
+          "rect": [
+            0,
+            255,
+            1080,
+            140
+          ],
+          "at": 2.0
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "no ads",
+          "rect": [
+            0,
+            255,
+            1080,
+            140
+          ],
+          "ring": false,
+          "at": 4.66
+        },
+        {
+          "do": "show",
+          "target": "w.right",
+          "on": "Free and Go",
+          "at": 5.64
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Free and Go",
+          "at": 5.64
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "under",
+          "at": 8.52
+        }
+      ],
+      "durationSec": 9.76,
+      "assetId": "help-plans",
+      "claimId": "help-plans",
+      "covers": "Paying for Plus, Pro,",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 1.6,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 4.26,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 5.61,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Ads off on Free",
+      "headline": "The [[way out]]",
+      "blocks": [
+        {
+          "id": "p",
+          "kind": "steps",
+          "steps": [
+            "Settings",
+            "Ads controls",
+            "Change plan",
+            "Reduce message limits"
+          ],
+          "h": 800
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "way out",
+          "at": 0.16
+        },
+        {
+          "do": "show",
+          "target": "p.1",
+          "on": "Ads controls",
+          "at": 1.72
+        },
+        {
+          "do": "show",
+          "target": "p.2",
+          "on": "controls",
+          "at": 2.18
+        },
+        {
+          "do": "show",
+          "target": "p.3",
+          "on": "controls",
+          "at": 2.18
+        }
+      ],
+      "durationSec": 3.32,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 1.35,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "OpenAI help page",
+      "headline": "No ads, no [[image generation]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/openai-image-ads/help-adsfree.png",
+          "width": 1080,
+          "height": 1130,
+          "device": false,
+          "h": 860
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "help page",
+          "rect": [
+            0,
+            50,
+            1080,
+            240
+          ],
+          "at": 0.9
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "messages",
+          "rect": [
+            0,
+            555,
+            1080,
+            290
+          ],
+          "at": 2.66
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "image generation",
+          "at": 3.58
+        }
+      ],
+      "durationSec": 5.02,
+      "assetId": "help-adsfree",
+      "claimId": "help-adsfree",
+      "covers": "But OpenAI's help page",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 0.5,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 2.26,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 3.55,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "On the Free plan",
+      "headline": "Free images come [[with ads]]",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Make images",
+              "v": "Ads included",
+              "tone": "cost"
+            },
+            {
+              "k": "Turn ads off",
+              "v": "No image generation",
+              "tone": "cost"
+            },
+            {
+              "k": "Plus or Pro",
+              "v": "No ads",
+              "tone": "free"
+            }
+          ]
+        },
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/openai-image-ads/mockup-phone-a.png",
+          "width": 840,
+          "height": 1070,
+          "device": false,
+          "h": 420
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "images",
+          "at": 0.76
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "Free",
+          "at": 1.32
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "ads come",
+          "at": 2.08
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "with them",
+          "at": 2.82
+        },
+        {
+          "do": "show",
+          "target": "s",
+          "on": "ads come",
+          "at": 2.08
+        }
+      ],
+      "durationSec": 3.74,
+      "assetId": "mockup-phone-a",
+      "claimId": "mockup-phone-a",
+      "covers": "So if you make",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Core.MP3",
+          "at": 2.03,
+          "vol": 0.556
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "hideCaptions": true,
+      "headlineSize": "xl",
+      "headline": "Pay to [[skip]] them?",
+      "blocks": [
+        {
+          "id": "q",
+          "kind": "text",
+          "text": "Answer yes or no in the comments"
+        },
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/openai-image-ads/mockup-phone-b.png",
+          "width": 840,
+          "height": 1070,
+          "device": false,
+          "h": 600
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "s",
+          "on": "pay",
+          "at": 0.34
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "skip",
+          "at": 0.68
+        },
+        {
+          "do": "show",
+          "target": "q",
+          "on": "Answer",
+          "at": 1.52
+        }
+      ],
+      "presenter": {
+        "src": "assets/openai-image-ads/avatar-master-cta.mp4",
+        "from": 0.34
+      },
+      "durationSec": 3.76,
+      "assetId": "mockup-phone-b",
+      "claimId": "mockup-phone-b",
+      "covers": "Would you pay to",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.65,
+          "vol": 0.343
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.24,
+      "text": "OpenAI just announced",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "OpenAI"
+        },
+        {
+          "t": 0.46,
+          "text": "just"
+        },
+        {
+          "t": 0.8,
+          "text": "announced"
+        }
+      ]
+    },
+    {
+      "start": 1.24,
+      "end": 2.5,
+      "text": "ChatGPT ads that",
+      "words": [
+        {
+          "t": 1.24,
+          "text": "ChatGPT"
+        },
+        {
+          "t": 1.78,
+          "text": "ads"
+        },
+        {
+          "t": 2.2,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 2.5,
+      "end": 3.26,
+      "text": "show up while",
+      "words": [
+        {
+          "t": 2.5,
+          "text": "show"
+        },
+        {
+          "t": 2.78,
+          "text": "up"
+        },
+        {
+          "t": 2.98,
+          "text": "while"
+        }
+      ]
+    },
+    {
+      "start": 3.26,
+      "end": 3.92,
+      "text": "your picture is",
+      "words": [
+        {
+          "t": 3.26,
+          "text": "your"
+        },
+        {
+          "t": 3.44,
+          "text": "picture"
+        },
+        {
+          "t": 3.68,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 3.92,
+      "end": 4.9,
+      "text": "still loading and",
+      "words": [
+        {
+          "t": 3.92,
+          "text": "still"
+        },
+        {
+          "t": 4.08,
+          "text": "loading"
+        },
+        {
+          "t": 4.34,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 4.9,
+      "end": 5.98,
+      "text": "On Free the way",
+      "words": [
+        {
+          "t": 4.9,
+          "text": "On"
+        },
+        {
+          "t": 5.72,
+          "text": "Free"
+        },
+        {
+          "t": 5.74,
+          "text": "the"
+        },
+        {
+          "t": 5.74,
+          "text": "way"
+        }
+      ]
+    },
+    {
+      "start": 5.98,
+      "end": 7.32,
+      "text": "out costs you",
+      "words": [
+        {
+          "t": 5.98,
+          "text": "out"
+        },
+        {
+          "t": 6.32,
+          "text": "costs"
+        },
+        {
+          "t": 7.02,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 7.32,
+      "end": 8.48,
+      "text": "the picture. In",
+      "words": [
+        {
+          "t": 7.32,
+          "text": "the"
+        },
+        {
+          "t": 7.48,
+          "text": "picture."
+        },
+        {
+          "t": 8.3,
+          "text": "In"
+        }
+      ]
+    },
+    {
+      "start": 8.48,
+      "end": 9.66,
+      "text": "OpenAI's own example,",
+      "words": [
+        {
+          "t": 8.48,
+          "text": "OpenAI's"
+        },
+        {
+          "t": 9.06,
+          "text": "own"
+        },
+        {
+          "t": 9.24,
+          "text": "example,"
+        }
+      ]
+    },
+    {
+      "start": 9.94,
+      "end": 10.58,
+      "text": "the image is",
+      "words": [
+        {
+          "t": 9.94,
+          "text": "the"
+        },
+        {
+          "t": 10.0,
+          "text": "image"
+        },
+        {
+          "t": 10.3,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 10.58,
+      "end": 12.5,
+      "text": "62% done and right",
+      "words": [
+        {
+          "t": 10.58,
+          "text": "62%"
+        },
+        {
+          "t": 11.7,
+          "text": "done"
+        },
+        {
+          "t": 12.2,
+          "text": "and"
+        },
+        {
+          "t": 12.2,
+          "text": "right"
+        }
+      ]
+    },
+    {
+      "start": 12.5,
+      "end": 13.22,
+      "text": "under it is",
+      "words": [
+        {
+          "t": 12.5,
+          "text": "under"
+        },
+        {
+          "t": 12.82,
+          "text": "it"
+        },
+        {
+          "t": 13.04,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 13.22,
+      "end": 14.08,
+      "text": "a grocery ad",
+      "words": [
+        {
+          "t": 13.22,
+          "text": "a"
+        },
+        {
+          "t": 13.36,
+          "text": "grocery"
+        },
+        {
+          "t": 13.64,
+          "text": "ad"
+        }
+      ]
+    },
+    {
+      "start": 14.08,
+      "end": 15.34,
+      "text": "with photos and",
+      "words": [
+        {
+          "t": 14.08,
+          "text": "with"
+        },
+        {
+          "t": 14.58,
+          "text": "photos"
+        },
+        {
+          "t": 14.94,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 15.34,
+      "end": 16.42,
+      "text": "a Learn more button.",
+      "words": [
+        {
+          "t": 15.34,
+          "text": "a"
+        },
+        {
+          "t": 15.5,
+          "text": "Learn"
+        },
+        {
+          "t": 16.0,
+          "text": "more"
+        },
+        {
+          "t": 16.0,
+          "text": "button."
+        }
+      ]
+    },
+    {
+      "start": 16.9,
+      "end": 18.82,
+      "text": "ChatGPT reaches 1.2",
+      "words": [
+        {
+          "t": 16.9,
+          "text": "ChatGPT"
+        },
+        {
+          "t": 17.48,
+          "text": "reaches"
+        },
+        {
+          "t": 17.94,
+          "text": "1.2"
+        }
+      ]
+    },
+    {
+      "start": 18.82,
+      "end": 19.64,
+      "text": "billion people a",
+      "words": [
+        {
+          "t": 18.82,
+          "text": "billion"
+        },
+        {
+          "t": 19.06,
+          "text": "people"
+        },
+        {
+          "t": 19.42,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 19.64,
+      "end": 20.4,
+      "text": "week and ads",
+      "words": [
+        {
+          "t": 19.64,
+          "text": "week"
+        },
+        {
+          "t": 19.8,
+          "text": "and"
+        },
+        {
+          "t": 20.1,
+          "text": "ads"
+        }
+      ]
+    },
+    {
+      "start": 20.4,
+      "end": 21.14,
+      "text": "have run under",
+      "words": [
+        {
+          "t": 20.4,
+          "text": "have"
+        },
+        {
+          "t": 20.6,
+          "text": "run"
+        },
+        {
+          "t": 20.82,
+          "text": "under"
+        }
+      ]
+    },
+    {
+      "start": 21.14,
+      "end": 22.14,
+      "text": "its answers since",
+      "words": [
+        {
+          "t": 21.14,
+          "text": "its"
+        },
+        {
+          "t": 21.32,
+          "text": "answers"
+        },
+        {
+          "t": 21.74,
+          "text": "since"
+        }
+      ]
+    },
+    {
+      "start": 22.14,
+      "end": 23.76,
+      "text": "February. Now they",
+      "words": [
+        {
+          "t": 22.14,
+          "text": "February."
+        },
+        {
+          "t": 23.22,
+          "text": "Now"
+        },
+        {
+          "t": 23.5,
+          "text": "they"
+        }
+      ]
+    },
+    {
+      "start": 23.76,
+      "end": 24.78,
+      "text": "get pictures showing",
+      "words": [
+        {
+          "t": 23.76,
+          "text": "get"
+        },
+        {
+          "t": 23.9,
+          "text": "pictures"
+        },
+        {
+          "t": 24.3,
+          "text": "showing"
+        }
+      ]
+    },
+    {
+      "start": 24.78,
+      "end": 25.64,
+      "text": "a product or",
+      "words": [
+        {
+          "t": 24.78,
+          "text": "a"
+        },
+        {
+          "t": 24.98,
+          "text": "product"
+        },
+        {
+          "t": 25.32,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 25.64,
+      "end": 26.46,
+      "text": "how you'd use",
+      "words": [
+        {
+          "t": 25.64,
+          "text": "how"
+        },
+        {
+          "t": 25.92,
+          "text": "you'd"
+        },
+        {
+          "t": 26.24,
+          "text": "use"
+        }
+      ]
+    },
+    {
+      "start": 26.46,
+      "end": 27.68,
+      "text": "it. Testing starts",
+      "words": [
+        {
+          "t": 26.46,
+          "text": "it."
+        },
+        {
+          "t": 27.02,
+          "text": "Testing"
+        },
+        {
+          "t": 27.28,
+          "text": "starts"
+        }
+      ]
+    },
+    {
+      "start": 27.68,
+      "end": 28.52,
+      "text": "later this month",
+      "words": [
+        {
+          "t": 27.68,
+          "text": "later"
+        },
+        {
+          "t": 28.04,
+          "text": "this"
+        },
+        {
+          "t": 28.28,
+          "text": "month"
+        }
+      ]
+    },
+    {
+      "start": 28.52,
+      "end": 29.04,
+      "text": "in the US",
+      "words": [
+        {
+          "t": 28.52,
+          "text": "in"
+        },
+        {
+          "t": 28.68,
+          "text": "the"
+        },
+        {
+          "t": 28.78,
+          "text": "US"
+        }
+      ]
+    },
+    {
+      "start": 29.04,
+      "end": 30.56,
+      "text": "during image generation",
+      "words": [
+        {
+          "t": 29.04,
+          "text": "during"
+        },
+        {
+          "t": 29.56,
+          "text": "image"
+        },
+        {
+          "t": 29.98,
+          "text": "generation"
+        }
+      ]
+    },
+    {
+      "start": 30.56,
+      "end": 32.42,
+      "text": "only. OpenAI says",
+      "words": [
+        {
+          "t": 30.56,
+          "text": "only."
+        },
+        {
+          "t": 31.62,
+          "text": "OpenAI"
+        },
+        {
+          "t": 32.02,
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "start": 32.42,
+      "end": 33.28,
+      "text": "the ads are",
+      "words": [
+        {
+          "t": 32.42,
+          "text": "the"
+        },
+        {
+          "t": 32.72,
+          "text": "ads"
+        },
+        {
+          "t": 33.06,
+          "text": "are"
+        }
+      ]
+    },
+    {
+      "start": 33.28,
+      "end": 34.76,
+      "text": "labeled, kept separate",
+      "words": [
+        {
+          "t": 33.28,
+          "text": "labeled,"
+        },
+        {
+          "t": 34.12,
+          "text": "kept"
+        },
+        {
+          "t": 34.32,
+          "text": "separate"
+        }
+      ]
+    },
+    {
+      "start": 34.76,
+      "end": 35.48,
+      "text": "from your image",
+      "words": [
+        {
+          "t": 34.76,
+          "text": "from"
+        },
+        {
+          "t": 35.02,
+          "text": "your"
+        },
+        {
+          "t": 35.16,
+          "text": "image"
+        }
+      ]
+    },
+    {
+      "start": 35.48,
+      "end": 36.54,
+      "text": "and don't change",
+      "words": [
+        {
+          "t": 35.48,
+          "text": "and"
+        },
+        {
+          "t": 35.78,
+          "text": "don't"
+        },
+        {
+          "t": 36.12,
+          "text": "change"
+        }
+      ]
+    },
+    {
+      "start": 36.54,
+      "end": 38.7,
+      "text": "ChatGPT's answers. Paying",
+      "words": [
+        {
+          "t": 36.54,
+          "text": "ChatGPT's"
+        },
+        {
+          "t": 37.36,
+          "text": "answers."
+        },
+        {
+          "t": 38.4,
+          "text": "Paying"
+        }
+      ]
+    },
+    {
+      "start": 38.7,
+      "end": 42.84,
+      "text": "for Plus, Pro, Business, Enterprise or Edu?? you",
+      "words": [
+        {
+          "t": 38.7,
+          "text": "for"
+        },
+        {
+          "t": 38.84,
+          "text": "Plus,"
+        },
+        {
+          "t": 42.66,
+          "text": "Pro,"
+        },
+        {
+          "t": 42.66,
+          "text": "Business,"
+        },
+        {
+          "t": 42.66,
+          "text": "Enterprise"
+        },
+        {
+          "t": 42.66,
+          "text": "or"
+        },
+        {
+          "t": 42.66,
+          "text": "Edu??"
+        },
+        {
+          "t": 42.66,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 42.84,
+      "end": 43.68,
+      "text": "get no ads.",
+      "words": [
+        {
+          "t": 42.84,
+          "text": "get"
+        },
+        {
+          "t": 43.06,
+          "text": "no"
+        },
+        {
+          "t": 43.3,
+          "text": "ads."
+        }
+      ]
+    },
+    {
+      "start": 44.04,
+      "end": 45.8,
+      "text": "Free and Go users do,",
+      "words": [
+        {
+          "t": 44.04,
+          "text": "Free"
+        },
+        {
+          "t": 45.0,
+          "text": "and"
+        },
+        {
+          "t": 45.42,
+          "text": "Go"
+        },
+        {
+          "t": 45.42,
+          "text": "users"
+        },
+        {
+          "t": 45.42,
+          "text": "do,"
+        }
+      ]
+    },
+    {
+      "start": 46.2,
+      "end": 46.92,
+      "text": "unless they are",
+      "words": [
+        {
+          "t": 46.2,
+          "text": "unless"
+        },
+        {
+          "t": 46.52,
+          "text": "they"
+        },
+        {
+          "t": 46.82,
+          "text": "are"
+        }
+      ]
+    },
+    {
+      "start": 46.92,
+      "end": 48.32,
+      "text": "under 18. The",
+      "words": [
+        {
+          "t": 46.92,
+          "text": "under"
+        },
+        {
+          "t": 47.18,
+          "text": "18."
+        },
+        {
+          "t": 48.16,
+          "text": "The"
+        }
+      ]
+    },
+    {
+      "start": 48.32,
+      "end": 48.96,
+      "text": "way out is",
+      "words": [
+        {
+          "t": 48.32,
+          "text": "way"
+        },
+        {
+          "t": 48.54,
+          "text": "out"
+        },
+        {
+          "t": 48.78,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 48.96,
+      "end": 51.68,
+      "text": "in Settings, under Ads controls But",
+      "words": [
+        {
+          "t": 48.96,
+          "text": "in"
+        },
+        {
+          "t": 49.04,
+          "text": "Settings,"
+        },
+        {
+          "t": 51.48,
+          "text": "under"
+        },
+        {
+          "t": 51.48,
+          "text": "Ads"
+        },
+        {
+          "t": 51.48,
+          "text": "controls"
+        },
+        {
+          "t": 51.48,
+          "text": "But"
+        }
+      ]
+    },
+    {
+      "start": 51.68,
+      "end": 52.82,
+      "text": "OpenAI's help page",
+      "words": [
+        {
+          "t": 51.68,
+          "text": "OpenAI's"
+        },
+        {
+          "t": 52.38,
+          "text": "help"
+        },
+        {
+          "t": 52.56,
+          "text": "page"
+        }
+      ]
+    },
+    {
+      "start": 52.82,
+      "end": 53.82,
+      "text": "says it costs",
+      "words": [
+        {
+          "t": 52.82,
+          "text": "says"
+        },
+        {
+          "t": 53.14,
+          "text": "it"
+        },
+        {
+          "t": 53.44,
+          "text": "costs"
+        }
+      ]
+    },
+    {
+      "start": 53.82,
+      "end": 55.06,
+      "text": "you messages and",
+      "words": [
+        {
+          "t": 53.82,
+          "text": "you"
+        },
+        {
+          "t": 54.14,
+          "text": "messages"
+        },
+        {
+          "t": 54.58,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 55.06,
+      "end": 56.74,
+      "text": "image generation. So",
+      "words": [
+        {
+          "t": 55.06,
+          "text": "image"
+        },
+        {
+          "t": 55.42,
+          "text": "generation."
+        },
+        {
+          "t": 56.5,
+          "text": "So"
+        }
+      ]
+    },
+    {
+      "start": 56.74,
+      "end": 57.26,
+      "text": "if you make",
+      "words": [
+        {
+          "t": 56.74,
+          "text": "if"
+        },
+        {
+          "t": 56.96,
+          "text": "you"
+        },
+        {
+          "t": 57.08,
+          "text": "make"
+        }
+      ]
+    },
+    {
+      "start": 57.26,
+      "end": 58.58,
+      "text": "images On Free the",
+      "words": [
+        {
+          "t": 57.26,
+          "text": "images"
+        },
+        {
+          "t": 57.6,
+          "text": "On"
+        },
+        {
+          "t": 58.48,
+          "text": "Free"
+        },
+        {
+          "t": 58.48,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 58.58,
+      "end": 59.54,
+      "text": "ads come with",
+      "words": [
+        {
+          "t": 58.58,
+          "text": "ads"
+        },
+        {
+          "t": 58.96,
+          "text": "come"
+        },
+        {
+          "t": 59.32,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 59.54,
+      "end": 60.58,
+      "text": "them. Would you",
+      "words": [
+        {
+          "t": 59.54,
+          "text": "them."
+        },
+        {
+          "t": 60.24,
+          "text": "Would"
+        },
+        {
+          "t": 60.44,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 60.58,
+      "end": 61.1,
+      "text": "pay to skip",
+      "words": [
+        {
+          "t": 60.58,
+          "text": "pay"
+        },
+        {
+          "t": 60.78,
+          "text": "to"
+        },
+        {
+          "t": 60.92,
+          "text": "skip"
+        }
+      ]
+    },
+    {
+      "start": 61.1,
+      "end": 62.58,
+      "text": "them? Answer yes",
+      "words": [
+        {
+          "t": 61.1,
+          "text": "them?"
+        },
+        {
+          "t": 61.76,
+          "text": "Answer"
+        },
+        {
+          "t": 62.1,
+          "text": "yes"
+        }
+      ]
+    },
+    {
+      "start": 62.58,
+      "end": 63.42,
+      "text": "or no below.",
+      "words": [
+        {
+          "t": 62.58,
+          "text": "or"
+        },
+        {
+          "t": 62.9,
+          "text": "no"
+        },
+        {
+          "t": 63.12,
+          "text": "below."
+        }
+      ]
+    }
+  ],
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 63.42,
+        "vol": 0.055
+      },
+      {
+        "t": 63.76,
+        "vol": 0.15
+      },
+      {
+        "t": 64.0,
+        "vol": 0.02
+      }
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+  },
+  "format": "news",
+  "showCredits": false,
+  "allowLong": false,
+  "script": "OpenAI just announced ChatGPT ads that show up while your picture is still loading. And on Free, the way out costs you the picture.\n\nIn OpenAI's own example, the image is sixty-two percent done, and right under it is a grocery ad, with photos and a Learn more button.\n\nChatGPT reaches one point two billion people a week, and ads have run under its answers since February. Now they get pictures, showing a product or how you'd use it.\n\nTesting starts later this month in the US, during image generation only. OpenAI says the ads are labeled, kept separate from your image, and don't change ChatGPT's answers.\n\nPaying for Plus, Pro, Business, Enterprise or Edu? You get no ads. Free and Go users do, unless they're under eighteen.\n\nThe way out is in Settings, under Ads controls. But OpenAI's help page says it costs you messages, and image generation. So if you make images on Free, the ads come with them.\n\nWould you pay to skip them? Answer yes or no below.",
+  "approval": {
+    "sha256": "35ecd8a3e8cafa457a4fcf31704e8a9ea91b8e4f0a7111db4c3aade24f808d01",
+    "approvedAt": "2026-10-06T09:20:58+00:00",
+    "words": 172,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

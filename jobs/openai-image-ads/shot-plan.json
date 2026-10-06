@@ -1,7 +1,681 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
-  "format": "news",
-  "shots": [],
-  "music": true
+ "emphasis": [
+  "ad",
+  "62%",
+  "billion",
+  "pictures",
+  "later",
+  "labeled",
+  "no ads",
+  "Settings",
+  "image generation",
+  "with them",
+  "skip"
+ ],
+ "caption_corrections": {
+  "ChatGPD": "ChatGPT",
+  "62% done": "62% done",
+  "on free": "on Free",
+  "On free": "On Free",
+  "plus, pro, business, enterprise or edu,": "Plus, Pro, Business, Enterprise or Edu?",
+  "free and go": "Free and Go",
+  "Free and go": "Free and Go",
+  "settings under ads controls": "Settings, under Ads controls",
+  "learn more": "Learn more"
+ },
+ "format": "news",
+ "shots": [
+  {
+   "start_phrase": "OpenAI just announced",
+   "line": "OpenAI just announced ChatGPT ads that show up while your picture is still loading. And on Free, the way out costs you the picture.",
+   "tier": "official",
+   "asset_id": "mockup-phone-a",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "ChatGPT · image: OpenAI",
+    "headline": "An [[ad]] while your image loads",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/openai-image-ads/mockup-phone-a.png",
+      "width": 840,
+      "height": 1070,
+      "device": false,
+      "h": 700
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Skipping it on Free costs you the picture"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "ads"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "picture",
+      "rect": [
+       0,
+       40,
+       840,
+       420
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "costs",
+      "rect": [
+       0,
+       230,
+       840,
+       560
+      ]
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "way out"
+     }
+    ],
+    "presenter": {
+     "src": "assets/openai-image-ads/avatar-master-hook.mp4",
+     "from": 0.0
+    }
+   }
+  },
+  {
+   "start_phrase": "In OpenAI's own example",
+   "line": "In OpenAI's own example, the image is sixty-two percent done, and right under it is a grocery ad, with photos and a Learn more button.",
+   "tier": "official",
+   "asset_id": "mockup-phone-a",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "OpenAI's example",
+    "headline": "Image [[62%]] done. Ad right below",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/openai-image-ads/mockup-phone-a.png",
+      "width": 840,
+      "height": 1070,
+      "device": false,
+      "h": 760
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "image is",
+      "rect": [
+       0,
+       40,
+       840,
+       420
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "done"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "under it",
+      "rect": [
+       0,
+       230,
+       840,
+       560
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "Learn",
+      "rect": [
+       0,
+       560,
+       840,
+       330
+      ]
+     }
+    ],
+    "captionBottom": 440
+   }
+  },
+  {
+   "start_phrase": "ChatGPT reaches",
+   "line": "ChatGPT reaches one point two billion people a week, and ads have run under its answers since February.",
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "ChatGPT ads so far",
+    "headline": "[[1.2 billion]] people a week",
+    "blocks": [
+     {
+      "id": "sp",
+      "kind": "spotlight",
+      "logo": "assets/openai-image-ads/openai-tile-light.svg",
+      "name": "ChatGPT"
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Weekly reach",
+        "v": "1.2 billion",
+        "tone": "plain"
+       },
+       {
+        "k": "Ads under answers",
+        "v": "Since February",
+        "tone": "cost"
+       },
+       {
+        "k": "Ads with pictures",
+        "v": "Next",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "week"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "reaches"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "answers"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "February"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Now they get pictures,",
+   "line": "Now they get pictures, showing a product or how you'd use it.",
+   "tier": "official",
+   "asset_id": "mockup-phone-b",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The new format · image: OpenAI",
+    "headline": "Ads become [[pictures]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/openai-image-ads/mockup-phone-b.png",
+      "width": 840,
+      "height": 1070,
+      "device": false,
+      "h": 880
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "pictures"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "product",
+      "rect": [
+       0,
+       240,
+       840,
+       480
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "use it",
+      "rect": [
+       0,
+       560,
+       840,
+       330
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Testing starts later this",
+   "line": "Testing starts later this month in the US, during image generation only.",
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The test",
+    "headline": "Starts [[later this month]]",
+    "blocks": [
+     {
+      "id": "p",
+      "kind": "steps",
+      "steps": [
+       "Later this month",
+       "US only",
+       "Image generation only"
+      ],
+      "h": 800
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "month"
+     },
+     {
+      "do": "show",
+      "target": "p.1",
+      "on": "US"
+     },
+     {
+      "do": "show",
+      "target": "p.2",
+      "on": "image generation"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "OpenAI says the ads",
+   "line": "OpenAI says the ads are labeled, kept separate from your image, and don't change ChatGPT's answers.",
+   "tier": "official",
+   "asset_id": "openai-post-initially",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "OpenAI's announcement",
+    "headline": "OpenAI's [[promise]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/openai-image-ads/openai-post-initially.png",
+      "width": 1080,
+      "height": 880,
+      "device": false,
+      "h": 780
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "says"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "labeled",
+      "rect": [
+       0,
+       205,
+       1080,
+       82
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "separate",
+      "rect": [
+       0,
+       290,
+       1080,
+       85
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "change",
+      "rect": [
+       0,
+       375,
+       1080,
+       250
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Paying for Plus, Pro,",
+   "line": "Paying for Plus, Pro, Business, Enterprise or Edu? You get no ads. Free and Go users do, unless they're under eighteen.",
+   "tier": "official",
+   "asset_id": "help-plans",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Who sees them · OpenAI help page",
+    "headline": "[[Free and Go]] get the ads",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/openai-image-ads/help-plans.png",
+      "width": 1080,
+      "height": 560,
+      "device": false,
+      "h": 340
+     },
+     {
+      "id": "w",
+      "kind": "swap",
+      "left": {
+       "name": "Plus, Pro, Business, Enterprise, Edu",
+       "price": "No ads",
+       "tone": "free"
+      },
+      "right": {
+       "name": "Free and Go",
+       "price": "Ads",
+       "tone": "cost",
+       "note": "Not under 18"
+      }
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "No ads on accounts under 18"
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "w.left",
+      "on": "Plus"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "Business",
+      "rect": [
+       0,
+       255,
+       1080,
+       140
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "no ads",
+      "rect": [
+       0,
+       255,
+       1080,
+       140
+      ],
+      "ring": false
+     },
+     {
+      "do": "show",
+      "target": "w.right",
+      "on": "Free and Go"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Free and Go"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "under"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "The way out is",
+   "line": "The way out is in Settings, under Ads controls.",
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Ads off on Free",
+    "headline": "The [[way out]]",
+    "blocks": [
+     {
+      "id": "p",
+      "kind": "steps",
+      "steps": [
+       "Settings",
+       "Ads controls",
+       "Change plan",
+       "Reduce message limits"
+      ],
+      "h": 800
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "way out"
+     },
+     {
+      "do": "show",
+      "target": "p.1",
+      "on": "Ads controls"
+     },
+     {
+      "do": "show",
+      "target": "p.2",
+      "on": "controls"
+     },
+     {
+      "do": "show",
+      "target": "p.3",
+      "on": "controls"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "But OpenAI's help page",
+   "line": "But OpenAI's help page says it costs you messages, and image generation.",
+   "tier": "official",
+   "asset_id": "help-adsfree",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "OpenAI help page",
+    "headline": "No ads, no [[image generation]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/openai-image-ads/help-adsfree.png",
+      "width": 1080,
+      "height": 1130,
+      "device": false,
+      "h": 860
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "help page",
+      "rect": [
+       0,
+       50,
+       1080,
+       240
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "messages",
+      "rect": [
+       0,
+       555,
+       1080,
+       290
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "image generation"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "So if you make",
+   "line": "So if you make images on Free, the ads come with them.",
+   "tier": "official",
+   "asset_id": "mockup-phone-a",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "On the Free plan",
+    "headline": "Free images come [[with ads]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Make images",
+        "v": "Ads included",
+        "tone": "cost"
+       },
+       {
+        "k": "Turn ads off",
+        "v": "No image generation",
+        "tone": "cost"
+       },
+       {
+        "k": "Plus or Pro",
+        "v": "No ads",
+        "tone": "free"
+       }
+      ]
+     },
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/openai-image-ads/mockup-phone-a.png",
+      "width": 840,
+      "height": 1070,
+      "device": false,
+      "h": 420
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "images"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "Free"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "ads come"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "with them"
+     },
+     {
+      "do": "show",
+      "target": "s",
+      "on": "ads come"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Would you pay to",
+   "line": "Would you pay to skip them? Answer yes or no below.",
+   "tier": "official",
+   "asset_id": "mockup-phone-b",
+   "scene": {
+    "type": "slide",
+    "cta": true,
+    "hideCaptions": true,
+    "headlineSize": "xl",
+    "headline": "Pay to [[skip]] them?",
+    "blocks": [
+     {
+      "id": "q",
+      "kind": "text",
+      "text": "Answer yes or no in the comments"
+     },
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/openai-image-ads/mockup-phone-b.png",
+      "width": 840,
+      "height": 1070,
+      "device": false,
+      "h": 600
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "s",
+      "on": "pay"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "skip"
+     },
+     {
+      "do": "show",
+      "target": "q",
+      "on": "Answer"
+     }
+    ],
+    "presenter": {
+     "src": "assets/openai-image-ads/avatar-master-cta.mp4",
+     "from": 0.34
+    }
+   }
+  }
+ ],
+ "music": true,
+ "facePlan": "bookends",
+ "audio": "assets/openai-image-ads/vo.mp3",
+ "allowLong": false,
+ "showCredits": false
 }

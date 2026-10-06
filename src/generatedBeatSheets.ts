@@ -44,12 +44,13 @@ import sheet40 from "./beats/iphone18-split.json";
 import sheet41 from "./beats/mac-mini-m6-m5pro.json";
 import sheet42 from "./beats/mac-multiple-headphones.json";
 import sheet43 from "./beats/made-by-google-26.json";
-import sheet44 from "./beats/qualcomm-chip-hike.json";
-import sheet45 from "./beats/seedance-25.json";
-import sheet46 from "./beats/september-preview-nomusic.json";
-import sheet47 from "./beats/september-preview.json";
-import sheet48 from "./beats/siri-ai-ios27.json";
-import sheet49 from "./beats/whatsapp-agents.json";
+import sheet44 from "./beats/openai-image-ads.json";
+import sheet45 from "./beats/qualcomm-chip-hike.json";
+import sheet46 from "./beats/seedance-25.json";
+import sheet47 from "./beats/september-preview-nomusic.json";
+import sheet48 from "./beats/september-preview.json";
+import sheet49 from "./beats/siri-ai-ios27.json";
+import sheet50 from "./beats/whatsapp-agents.json";
 
 export const beatSheets = [
   sheet0,
@@ -102,4 +103,5 @@ export const beatSheets = [
   sheet47,
   sheet48,
   sheet49,
+  sheet50,
 ] as unknown as BeatSheet[];
