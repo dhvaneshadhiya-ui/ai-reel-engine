@@ -1,0 +1,28 @@
+{
+  "slug": "carplay-youtube-free",
+  "topic": "Play YouTube videos on CarPlay for free with the CarTV app (screen mirroring)",
+  "details": "howto; animated bookends; user films the footage; free tier time-limited per cartv.app, Pro removes limit; CTA: app link in description or pinned comment https://apps.apple.com/us/app/cartv-m3u-iptv-player-cast/id6800211040; passenger/parked use only",
+  "subject": "Play YouTube videos on CarPlay for free with the CarTV app (screen mirroring)",
+  "audience": "<who should care, and what they already know>",
+  "platform": "both",
+  "goal": "<awareness|education|engagement|follow|comment|conversion>",
+  "core_value": "<what the viewer learns, feels, sees or can do>",
+  "desired_action": "<if any>",
+  "reveal_target": "none",
+  "cta_keyword": "",
+  "target_duration": "55s",
+  "tone": "<voice, personality, boundaries>",
+  "source_policy": "official-preferred",
+  "footage_constraints": "<assets, permissions, presenter, recordings>",
+  "credit_instructions": "internal",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 55,
+  "music": true,
+  "created_at": "2026-10-09T06:27:35.336889+00:00",
+  "status": "initialized"
+}
