@@ -54,6 +54,7 @@ A single or disputed claim must be SPOKEN hedged (framework S20).
   SRC: https://cartv.app/
   SRC: https://apps.apple.com/us/app/cartv-m3u-iptv-player-cast/id6800211040
   VIA: cartv.app Pro section ("Unlimited casting: Receive casts and mirror your screen with no time limit"); App Store IAP list
+  VIA: the app's own Pro screen, seen in the Gadget Gig demo: "Unlimited casting — Receive casts from other apps with no time limit" listed as a Pro feature
   VIA: App Store review, Sep 14 2026 ("40 free minutes") — a user report, NOT spoken; the exact minutes are not documented by the developer
 
 - CLAIM: Setup order: connect CarPlay, open CarTV on the car display, then tap the Cast to Car tab on the phone

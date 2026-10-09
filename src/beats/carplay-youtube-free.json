@@ -1,0 +1,2054 @@
+{
+  "id": "carplay-youtube-free",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/carplay-youtube-free/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "YouTube",
+    "free",
+    "dead end",
+    "CarTV",
+    "Close it",
+    "time limit",
+    "Cast to Car",
+    "big screen",
+    "any app",
+    "parked",
+    "driving",
+    "link"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "eyebrow": "CarPlay \u00b7 video: Gadget Gig",
+      "headline": "No [[YouTube]] app",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/carplay-youtube-free/gg-hero.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 800,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "YouTube",
+          "at": 0.0
+        }
+      ],
+      "presenter": {
+        "src": "assets/carplay-youtube-free/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 3.48,
+      "assetId": "gg-hero",
+      "claimId": "gg-hero",
+      "covers": "YouTube has no",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.0,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Image: CarTV",
+      "headline": "Your whole [[iPhone]] on the car screen",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/carplay-youtube-free/cartv-mirror.jpg",
+          "width": 1536,
+          "height": 1024,
+          "device": false,
+          "h": 560
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "To start",
+              "v": "Free app",
+              "tone": "free"
+            },
+            {
+              "k": "Adapter box",
+              "v": "Not needed",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "whole",
+          "at": 1.64
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "free",
+          "at": 0.74
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "adapter",
+          "at": 4.24
+        }
+      ],
+      "presenter": {
+        "src": "assets/carplay-youtube-free/avatar-master-hook.mp4",
+        "from": 3.48
+      },
+      "credit": "CarTV",
+      "creditOnScreen": true,
+      "durationSec": 6.02,
+      "assetId": "cartv-mirror",
+      "claimId": "cartv-mirror",
+      "covers": "But one free",
+      "sourceUrl": "https://cartv.app/",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.61,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "On the way \u00b7 video: Gadget Gig",
+      "headline": "One screen looks like a [[dead end]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/carplay-youtube-free/gg-paywall-still.png",
+          "width": 1080,
+          "height": 1350,
+          "device": false,
+          "h": 760
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "It isn't. Here's the way past it."
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "dead",
+          "at": 1.74
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "past",
+          "at": 3.98
+        }
+      ],
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 5.62,
+      "assetId": "gg-paywall-still",
+      "claimId": "gg-paywall-still",
+      "covers": "One screen on",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.71,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "App Store \u00b7 video: Gadget Gig",
+      "headline": "App Store: search [[CarTV]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/carplay-youtube-free/gg-appstore.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 900,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "search",
+          "at": 1.2
+        }
+      ],
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 2.24,
+      "assetId": "gg-appstore",
+      "claimId": "gg-appstore",
+      "covers": "Open the App",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.17,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "App Store \u00b7 video: Gadget Gig",
+      "headline": "[[Install]] this one",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/carplay-youtube-free/gg-install.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 780,
+          "device": false
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "CarTV - M3U IPTV Player & Cast"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Install",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "called",
+          "at": 0.62
+        }
+      ],
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 5.38,
+      "assetId": "gg-install",
+      "claimId": "gg-install",
+      "covers": "Install the one",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": []
+    },
+    {
+      "type": "slide",
+      "eyebrow": "First launch \u00b7 video: Gadget Gig",
+      "headline": "Swipe the [[intro]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/carplay-youtube-free/gg-intro.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 900,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "intro",
+          "at": 0.88
+        }
+      ],
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 2.38,
+      "assetId": "gg-intro",
+      "claimId": "gg-intro",
+      "covers": "Swipe through the",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.85,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "First launch \u00b7 video: Gadget Gig",
+      "headline": "Pro screen? [[Close it]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/carplay-youtube-free/gg-paywall.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 900,
+          "device": false,
+          "from": 4.2
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Close",
+          "at": 0.94
+        }
+      ],
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 2.36,
+      "assetId": "gg-paywall",
+      "claimId": "gg-paywall",
+      "covers": "the Pro",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.91,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "CarTV's Pro screen \u00b7 video: Gadget Gig",
+      "headline": "Free still [[works]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/carplay-youtube-free/gg-paywall-still.png",
+          "width": 1080,
+          "height": 1350,
+          "device": false,
+          "h": 640
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Free",
+              "v": "Works, time limit",
+              "tone": "free"
+            },
+            {
+              "k": "Pro",
+              "v": "No time limit",
+              "tone": "plain"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "free",
+          "at": 0.48
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "works",
+          "at": 1.2
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "time limit",
+          "rect": [
+            0,
+            680,
+            1080,
+            200
+          ],
+          "at": 3.32
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "Pro",
+          "at": 4.04
+        }
+      ],
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 5.62,
+      "assetId": "gg-paywall-still",
+      "claimId": "gg-paywall-still",
+      "covers": "The free version",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.17,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 2.92,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Car display \u00b7 video: Gadget Gig",
+      "headline": "Connect to [[CarPlay]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/carplay-youtube-free/gg-carplay-connect.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 900,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "CarPlay",
+          "at": 1.36
+        }
+      ],
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 1.78,
+      "assetId": "gg-carplay-connect",
+      "claimId": "gg-carplay-connect",
+      "covers": "Now connect your",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.33,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Car display \u00b7 video: Gadget Gig",
+      "headline": "Open [[CarTV]] on the car",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/carplay-youtube-free/gg-carplay-tap.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 900,
+          "device": false,
+          "from": 1.1
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "CarTV",
+          "at": 0.54
+        }
+      ],
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 2.24,
+      "assetId": "gg-carplay-tap",
+      "claimId": "gg-carplay-tap",
+      "covers": "and open CarTV",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.51,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "CarTV on iPhone \u00b7 video: Gadget Gig",
+      "headline": "Tap [[Cast to Car]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/carplay-youtube-free/gg-casttab.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 820,
+          "device": false
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "The tab at the bottom of the app"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Cast",
+          "at": 1.48
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "bottom",
+          "at": 2.6
+        }
+      ],
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 2.84,
+      "assetId": "gg-casttab",
+      "claimId": "gg-casttab",
+      "covers": "Then pick up",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.45,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "CarTV on iPhone \u00b7 video: Gadget Gig",
+      "headline": "Start [[mirroring]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/carplay-youtube-free/gg-castscreen.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 900,
+          "device": false,
+          "from": 2.2
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "mirroring",
+          "at": 0.6
+        }
+      ],
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 1.28,
+      "assetId": "gg-castscreen",
+      "claimId": "gg-castscreen",
+      "covers": "and start mirroring",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.57,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "iPhone \u00b7 video: Gadget Gig",
+      "headline": "Open [[YouTube]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/carplay-youtube-free/gg-youtube.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 900,
+          "device": false,
+          "from": 0.3
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "YouTube",
+          "at": 0.22
+        }
+      ],
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 0.78,
+      "assetId": "gg-youtube",
+      "claimId": "gg-youtube",
+      "covers": "Open YouTube,",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": []
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Car display \u00b7 video: Gadget Gig",
+      "headline": "On the [[big screen]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/carplay-youtube-free/gg-youtube.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 960,
+          "device": false,
+          "from": 3.2
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "big",
+          "at": 1.38
+        }
+      ],
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 2.12,
+      "assetId": "gg-youtube",
+      "claimId": "gg-youtube",
+      "covers": "play anything and",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.35,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Car display \u00b7 video: Gadget Gig",
+      "headline": "It mirrors the [[whole phone]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/carplay-youtube-free/gg-mirror-home.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 680,
+          "device": false
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Even apps with no Cast button"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "whole",
+          "at": 0.82
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "Even",
+          "at": 3.62
+        }
+      ],
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 5.62,
+      "assetId": "gg-mirror-home",
+      "claimId": "gg-mirror-home",
+      "covers": "Because it mirrors",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.79,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "CarTV: 'for passenger use only'",
+      "headline": "Passengers or [[parked]] only",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/carplay-youtube-free/gg-playing.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 700,
+          "device": false
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Never watch while driving."
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "parked",
+          "at": 1.66
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "Never",
+          "at": 2.2
+        }
+      ],
+      "credit": "Gadget Gig",
+      "creditOnScreen": true,
+      "durationSec": 3.5,
+      "assetId": "gg-playing",
+      "claimId": "gg-playing",
+      "covers": "This is for",
+      "sourceUrl": "https://www.youtube.com/shorts/JL8kOTJFS2w",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Core.MP3",
+          "at": 1.61,
+          "vol": 0.556
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "hideCaptions": true,
+      "headlineSize": "xl",
+      "headline": "App [[link]] below",
+      "blocks": [
+        {
+          "id": "d",
+          "kind": "text",
+          "text": "In the description and the pinned comment."
+        },
+        {
+          "id": "sp",
+          "kind": "spotlight",
+          "logo": "assets/carplay-youtube-free/cartv-icon.jpg",
+          "name": "CarTV",
+          "note": "M3U IPTV Player & Cast"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "link",
+          "at": 0.7
+        },
+        {
+          "do": "show",
+          "target": "d",
+          "on": "description",
+          "at": 1.16
+        }
+      ],
+      "presenter": {
+        "src": "assets/carplay-youtube-free/avatar-master-cta.mp4",
+        "from": 0.26
+      },
+      "durationSec": 2.74,
+      "assetId": "cartv-icon",
+      "claimId": "cartv-icon",
+      "covers": "You'll find the",
+      "sourceUrl": "https://apps.apple.com/us/app/cartv-m3u-iptv-player-cast/id6800211040",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.67,
+          "vol": 0.343
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.04,
+      "text": "YouTube has no",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "YouTube"
+        },
+        {
+          "t": 0.4,
+          "text": "has"
+        },
+        {
+          "t": 0.78,
+          "text": "no"
+        }
+      ]
+    },
+    {
+      "start": 1.04,
+      "end": 4.02,
+      "text": "CarPlay app. But",
+      "words": [
+        {
+          "t": 1.04,
+          "text": "CarPlay"
+        },
+        {
+          "t": 1.5,
+          "text": "app."
+        },
+        {
+          "t": 3.48,
+          "text": "But"
+        }
+      ]
+    },
+    {
+      "start": 4.02,
+      "end": 4.72,
+      "text": "one free app",
+      "words": [
+        {
+          "t": 4.02,
+          "text": "one"
+        },
+        {
+          "t": 4.22,
+          "text": "free"
+        },
+        {
+          "t": 4.44,
+          "text": "app"
+        }
+      ]
+    },
+    {
+      "start": 4.72,
+      "end": 5.34,
+      "text": "puts your whole",
+      "words": [
+        {
+          "t": 4.72,
+          "text": "puts"
+        },
+        {
+          "t": 4.92,
+          "text": "your"
+        },
+        {
+          "t": 5.12,
+          "text": "whole"
+        }
+      ]
+    },
+    {
+      "start": 5.34,
+      "end": 6.32,
+      "text": "iPhone screen on",
+      "words": [
+        {
+          "t": 5.34,
+          "text": "iPhone"
+        },
+        {
+          "t": 5.72,
+          "text": "screen"
+        },
+        {
+          "t": 6.04,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 6.32,
+      "end": 7.16,
+      "text": "your car's display",
+      "words": [
+        {
+          "t": 6.32,
+          "text": "your"
+        },
+        {
+          "t": 6.44,
+          "text": "car's"
+        },
+        {
+          "t": 6.8,
+          "text": "display"
+        }
+      ]
+    },
+    {
+      "start": 7.16,
+      "end": 8.0,
+      "text": "with no adapter",
+      "words": [
+        {
+          "t": 7.16,
+          "text": "with"
+        },
+        {
+          "t": 7.52,
+          "text": "no"
+        },
+        {
+          "t": 7.72,
+          "text": "adapter"
+        }
+      ]
+    },
+    {
+      "start": 8.0,
+      "end": 10.3,
+      "text": "box. One screen",
+      "words": [
+        {
+          "t": 8.0,
+          "text": "box."
+        },
+        {
+          "t": 9.5,
+          "text": "One"
+        },
+        {
+          "t": 10.04,
+          "text": "screen"
+        }
+      ]
+    },
+    {
+      "start": 10.3,
+      "end": 10.72,
+      "text": "on the way",
+      "words": [
+        {
+          "t": 10.3,
+          "text": "on"
+        },
+        {
+          "t": 10.48,
+          "text": "the"
+        },
+        {
+          "t": 10.58,
+          "text": "way"
+        }
+      ]
+    },
+    {
+      "start": 10.72,
+      "end": 11.24,
+      "text": "looks like a",
+      "words": [
+        {
+          "t": 10.72,
+          "text": "looks"
+        },
+        {
+          "t": 10.9,
+          "text": "like"
+        },
+        {
+          "t": 11.14,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 11.24,
+      "end": 13.22,
+      "text": "dead end. I'll",
+      "words": [
+        {
+          "t": 11.24,
+          "text": "dead"
+        },
+        {
+          "t": 11.36,
+          "text": "end."
+        },
+        {
+          "t": 12.74,
+          "text": "I'll"
+        }
+      ]
+    },
+    {
+      "start": 13.22,
+      "end": 13.76,
+      "text": "get you past",
+      "words": [
+        {
+          "t": 13.22,
+          "text": "get"
+        },
+        {
+          "t": 13.34,
+          "text": "you"
+        },
+        {
+          "t": 13.48,
+          "text": "past"
+        }
+      ]
+    },
+    {
+      "start": 13.76,
+      "end": 15.74,
+      "text": "it. Open the",
+      "words": [
+        {
+          "t": 13.76,
+          "text": "it."
+        },
+        {
+          "t": 15.12,
+          "text": "Open"
+        },
+        {
+          "t": 15.58,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 15.74,
+      "end": 16.32,
+      "text": "App Store and",
+      "words": [
+        {
+          "t": 15.74,
+          "text": "App"
+        },
+        {
+          "t": 15.9,
+          "text": "Store"
+        },
+        {
+          "t": 16.1,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 16.32,
+      "end": 17.62,
+      "text": "search CarTV. Install",
+      "words": [
+        {
+          "t": 16.32,
+          "text": "search"
+        },
+        {
+          "t": 16.54,
+          "text": "CarTV."
+        },
+        {
+          "t": 17.36,
+          "text": "Install"
+        }
+      ]
+    },
+    {
+      "start": 17.62,
+      "end": 18.26,
+      "text": "the one called",
+      "words": [
+        {
+          "t": 17.62,
+          "text": "the"
+        },
+        {
+          "t": 17.82,
+          "text": "one"
+        },
+        {
+          "t": 17.98,
+          "text": "called"
+        }
+      ]
+    },
+    {
+      "start": 18.26,
+      "end": 20.74,
+      "text": "CarTV, M3U IPTV Player",
+      "words": [
+        {
+          "t": 18.26,
+          "text": "CarTV,"
+        },
+        {
+          "t": 19.08,
+          "text": "M3U"
+        },
+        {
+          "t": 20.34,
+          "text": "IPTV"
+        },
+        {
+          "t": 20.34,
+          "text": "Player"
+        }
+      ]
+    },
+    {
+      "start": 20.74,
+      "end": 23.28,
+      "text": "and Cast. Swipe",
+      "words": [
+        {
+          "t": 20.74,
+          "text": "and"
+        },
+        {
+          "t": 20.96,
+          "text": "Cast."
+        },
+        {
+          "t": 22.74,
+          "text": "Swipe"
+        }
+      ]
+    },
+    {
+      "start": 23.28,
+      "end": 23.92,
+      "text": "through the intro",
+      "words": [
+        {
+          "t": 23.28,
+          "text": "through"
+        },
+        {
+          "t": 23.48,
+          "text": "the"
+        },
+        {
+          "t": 23.62,
+          "text": "intro"
+        }
+      ]
+    },
+    {
+      "start": 23.92,
+      "end": 24.52,
+      "text": "and here's that",
+      "words": [
+        {
+          "t": 23.92,
+          "text": "and"
+        },
+        {
+          "t": 24.12,
+          "text": "here's"
+        },
+        {
+          "t": 24.38,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 24.52,
+      "end": 25.84,
+      "text": "screen, the Pro paywall",
+      "words": [
+        {
+          "t": 24.52,
+          "text": "screen,"
+        },
+        {
+          "t": 25.12,
+          "text": "the"
+        },
+        {
+          "t": 25.16,
+          "text": "Pro"
+        },
+        {
+          "t": 25.16,
+          "text": "paywall"
+        }
+      ]
+    },
+    {
+      "start": 26.06,
+      "end": 27.96,
+      "text": "Close it. The",
+      "words": [
+        {
+          "t": 26.06,
+          "text": "Close"
+        },
+        {
+          "t": 26.22,
+          "text": "it."
+        },
+        {
+          "t": 27.48,
+          "text": "The"
+        }
+      ]
+    },
+    {
+      "start": 27.96,
+      "end": 28.68,
+      "text": "free version still",
+      "words": [
+        {
+          "t": 27.96,
+          "text": "free"
+        },
+        {
+          "t": 28.16,
+          "text": "version"
+        },
+        {
+          "t": 28.42,
+          "text": "still"
+        }
+      ]
+    },
+    {
+      "start": 28.68,
+      "end": 30.54,
+      "text": "works. It just",
+      "words": [
+        {
+          "t": 28.68,
+          "text": "works."
+        },
+        {
+          "t": 30.0,
+          "text": "It"
+        },
+        {
+          "t": 30.36,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 30.54,
+      "end": 31.0,
+      "text": "has a time",
+      "words": [
+        {
+          "t": 30.54,
+          "text": "has"
+        },
+        {
+          "t": 30.7,
+          "text": "a"
+        },
+        {
+          "t": 30.8,
+          "text": "time"
+        }
+      ]
+    },
+    {
+      "start": 31.0,
+      "end": 31.74,
+      "text": "limit which Pro",
+      "words": [
+        {
+          "t": 31.0,
+          "text": "limit"
+        },
+        {
+          "t": 31.26,
+          "text": "which"
+        },
+        {
+          "t": 31.52,
+          "text": "Pro"
+        }
+      ]
+    },
+    {
+      "start": 31.74,
+      "end": 33.72,
+      "text": "removes. Now connect",
+      "words": [
+        {
+          "t": 31.74,
+          "text": "removes."
+        },
+        {
+          "t": 33.1,
+          "text": "Now"
+        },
+        {
+          "t": 33.46,
+          "text": "connect"
+        }
+      ]
+    },
+    {
+      "start": 33.72,
+      "end": 34.46,
+      "text": "your iPhone to",
+      "words": [
+        {
+          "t": 33.72,
+          "text": "your"
+        },
+        {
+          "t": 33.92,
+          "text": "iPhone"
+        },
+        {
+          "t": 34.24,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 34.46,
+      "end": 35.42,
+      "text": "CarPlay and open",
+      "words": [
+        {
+          "t": 34.46,
+          "text": "CarPlay"
+        },
+        {
+          "t": 34.88,
+          "text": "and"
+        },
+        {
+          "t": 35.14,
+          "text": "open"
+        }
+      ]
+    },
+    {
+      "start": 35.42,
+      "end": 36.24,
+      "text": "CarTV on the",
+      "words": [
+        {
+          "t": 35.42,
+          "text": "CarTV"
+        },
+        {
+          "t": 35.94,
+          "text": "on"
+        },
+        {
+          "t": 36.14,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 36.24,
+      "end": 37.22,
+      "text": "car's display. Then",
+      "words": [
+        {
+          "t": 36.24,
+          "text": "car's"
+        },
+        {
+          "t": 36.52,
+          "text": "display."
+        },
+        {
+          "t": 37.12,
+          "text": "Then"
+        }
+      ]
+    },
+    {
+      "start": 37.22,
+      "end": 37.66,
+      "text": "pick up the",
+      "words": [
+        {
+          "t": 37.22,
+          "text": "pick"
+        },
+        {
+          "t": 37.4,
+          "text": "up"
+        },
+        {
+          "t": 37.54,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 37.66,
+      "end": 38.6,
+      "text": "iPhone, tap the",
+      "words": [
+        {
+          "t": 37.66,
+          "text": "iPhone,"
+        },
+        {
+          "t": 38.28,
+          "text": "tap"
+        },
+        {
+          "t": 38.4,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 38.6,
+      "end": 39.24,
+      "text": "Cast to Car",
+      "words": [
+        {
+          "t": 38.6,
+          "text": "Cast"
+        },
+        {
+          "t": 38.88,
+          "text": "to"
+        },
+        {
+          "t": 39.02,
+          "text": "Car"
+        }
+      ]
+    },
+    {
+      "start": 39.24,
+      "end": 39.72,
+      "text": "tab at the",
+      "words": [
+        {
+          "t": 39.24,
+          "text": "tab"
+        },
+        {
+          "t": 39.42,
+          "text": "at"
+        },
+        {
+          "t": 39.62,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 39.72,
+      "end": 40.56,
+      "text": "bottom and start",
+      "words": [
+        {
+          "t": 39.72,
+          "text": "bottom"
+        },
+        {
+          "t": 39.96,
+          "text": "and"
+        },
+        {
+          "t": 40.3,
+          "text": "start"
+        }
+      ]
+    },
+    {
+      "start": 40.56,
+      "end": 41.74,
+      "text": "mirroring. Open YouTube,",
+      "words": [
+        {
+          "t": 40.56,
+          "text": "mirroring."
+        },
+        {
+          "t": 41.24,
+          "text": "Open"
+        },
+        {
+          "t": 41.46,
+          "text": "YouTube,"
+        }
+      ]
+    },
+    {
+      "start": 42.02,
+      "end": 42.8,
+      "text": "play anything and",
+      "words": [
+        {
+          "t": 42.02,
+          "text": "play"
+        },
+        {
+          "t": 42.18,
+          "text": "anything"
+        },
+        {
+          "t": 42.46,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 42.8,
+      "end": 43.3,
+      "text": "it plays on",
+      "words": [
+        {
+          "t": 42.8,
+          "text": "it"
+        },
+        {
+          "t": 42.92,
+          "text": "plays"
+        },
+        {
+          "t": 43.12,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 43.3,
+      "end": 43.88,
+      "text": "the big screen.",
+      "words": [
+        {
+          "t": 43.3,
+          "text": "the"
+        },
+        {
+          "t": 43.4,
+          "text": "big"
+        },
+        {
+          "t": 43.56,
+          "text": "screen."
+        }
+      ]
+    },
+    {
+      "start": 44.14,
+      "end": 44.72,
+      "text": "Because it mirrors",
+      "words": [
+        {
+          "t": 44.14,
+          "text": "Because"
+        },
+        {
+          "t": 44.34,
+          "text": "it"
+        },
+        {
+          "t": 44.5,
+          "text": "mirrors"
+        }
+      ]
+    },
+    {
+      "start": 44.72,
+      "end": 45.44,
+      "text": "the whole phone,",
+      "words": [
+        {
+          "t": 44.72,
+          "text": "the"
+        },
+        {
+          "t": 44.96,
+          "text": "whole"
+        },
+        {
+          "t": 45.12,
+          "text": "phone,"
+        }
+      ]
+    },
+    {
+      "start": 45.6,
+      "end": 46.08,
+      "text": "it works with",
+      "words": [
+        {
+          "t": 45.6,
+          "text": "it"
+        },
+        {
+          "t": 45.66,
+          "text": "works"
+        },
+        {
+          "t": 45.86,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 46.08,
+      "end": 48.5,
+      "text": "any app. even ones",
+      "words": [
+        {
+          "t": 46.08,
+          "text": "any"
+        },
+        {
+          "t": 46.3,
+          "text": "app."
+        },
+        {
+          "t": 47.76,
+          "text": "even"
+        },
+        {
+          "t": 47.76,
+          "text": "ones"
+        }
+      ]
+    },
+    {
+      "start": 48.5,
+      "end": 49.48,
+      "text": "without a cast button",
+      "words": [
+        {
+          "t": 48.5,
+          "text": "without"
+        },
+        {
+          "t": 48.72,
+          "text": "a"
+        },
+        {
+          "t": 48.92,
+          "text": "cast"
+        },
+        {
+          "t": 48.92,
+          "text": "button"
+        }
+      ]
+    },
+    {
+      "start": 49.76,
+      "end": 50.12,
+      "text": "This is for",
+      "words": [
+        {
+          "t": 49.76,
+          "text": "This"
+        },
+        {
+          "t": 49.88,
+          "text": "is"
+        },
+        {
+          "t": 49.98,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 50.12,
+      "end": 51.1,
+      "text": "passengers or for",
+      "words": [
+        {
+          "t": 50.12,
+          "text": "passengers"
+        },
+        {
+          "t": 50.48,
+          "text": "or"
+        },
+        {
+          "t": 50.96,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 51.1,
+      "end": 51.66,
+      "text": "when you're parked.",
+      "words": [
+        {
+          "t": 51.1,
+          "text": "when"
+        },
+        {
+          "t": 51.28,
+          "text": "you're"
+        },
+        {
+          "t": 51.42,
+          "text": "parked."
+        }
+      ]
+    },
+    {
+      "start": 51.96,
+      "end": 52.62,
+      "text": "Never watch while",
+      "words": [
+        {
+          "t": 51.96,
+          "text": "Never"
+        },
+        {
+          "t": 52.1,
+          "text": "watch"
+        },
+        {
+          "t": 52.44,
+          "text": "while"
+        }
+      ]
+    },
+    {
+      "start": 52.62,
+      "end": 53.6,
+      "text": "driving. You'll find",
+      "words": [
+        {
+          "t": 52.62,
+          "text": "driving."
+        },
+        {
+          "t": 53.26,
+          "text": "You'll"
+        },
+        {
+          "t": 53.4,
+          "text": "find"
+        }
+      ]
+    },
+    {
+      "start": 53.6,
+      "end": 54.16,
+      "text": "the app link",
+      "words": [
+        {
+          "t": 53.6,
+          "text": "the"
+        },
+        {
+          "t": 53.76,
+          "text": "app"
+        },
+        {
+          "t": 53.96,
+          "text": "link"
+        }
+      ]
+    },
+    {
+      "start": 54.16,
+      "end": 54.84,
+      "text": "in the description",
+      "words": [
+        {
+          "t": 54.16,
+          "text": "in"
+        },
+        {
+          "t": 54.34,
+          "text": "the"
+        },
+        {
+          "t": 54.42,
+          "text": "description"
+        }
+      ]
+    },
+    {
+      "start": 54.84,
+      "end": 55.44,
+      "text": "and the pinned",
+      "words": [
+        {
+          "t": 54.84,
+          "text": "and"
+        },
+        {
+          "t": 55.14,
+          "text": "the"
+        },
+        {
+          "t": 55.26,
+          "text": "pinned"
+        }
+      ]
+    },
+    {
+      "start": 55.44,
+      "end": 55.74,
+      "text": "comment.",
+      "words": [
+        {
+          "t": 55.44,
+          "text": "comment."
+        }
+      ]
+    }
+  ],
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 1.84,
+        "vol": 0.055
+      },
+      {
+        "t": 2.18,
+        "vol": 0.15
+      },
+      {
+        "t": 3.3,
+        "vol": 0.15
+      },
+      {
+        "t": 3.48,
+        "vol": 0.055
+      },
+      {
+        "t": 8.44,
+        "vol": 0.055
+      },
+      {
+        "t": 8.78,
+        "vol": 0.15
+      },
+      {
+        "t": 9.32,
+        "vol": 0.15
+      },
+      {
+        "t": 9.5,
+        "vol": 0.055
+      },
+      {
+        "t": 11.66,
+        "vol": 0.055
+      },
+      {
+        "t": 12.0,
+        "vol": 0.15
+      },
+      {
+        "t": 12.56,
+        "vol": 0.15
+      },
+      {
+        "t": 12.74,
+        "vol": 0.055
+      },
+      {
+        "t": 13.96,
+        "vol": 0.055
+      },
+      {
+        "t": 14.3,
+        "vol": 0.15
+      },
+      {
+        "t": 14.94,
+        "vol": 0.15
+      },
+      {
+        "t": 15.12,
+        "vol": 0.055
+      },
+      {
+        "t": 21.32,
+        "vol": 0.055
+      },
+      {
+        "t": 21.66,
+        "vol": 0.15
+      },
+      {
+        "t": 22.56,
+        "vol": 0.15
+      },
+      {
+        "t": 22.74,
+        "vol": 0.055
+      },
+      {
+        "t": 26.48,
+        "vol": 0.055
+      },
+      {
+        "t": 26.82,
+        "vol": 0.15
+      },
+      {
+        "t": 27.3,
+        "vol": 0.15
+      },
+      {
+        "t": 27.48,
+        "vol": 0.055
+      },
+      {
+        "t": 28.98,
+        "vol": 0.055
+      },
+      {
+        "t": 29.32,
+        "vol": 0.15
+      },
+      {
+        "t": 29.82,
+        "vol": 0.15
+      },
+      {
+        "t": 30.0,
+        "vol": 0.055
+      },
+      {
+        "t": 46.64,
+        "vol": 0.055
+      },
+      {
+        "t": 46.98,
+        "vol": 0.15
+      },
+      {
+        "t": 47.58,
+        "vol": 0.15
+      },
+      {
+        "t": 47.76,
+        "vol": 0.055
+      },
+      {
+        "t": 55.74,
+        "vol": 0.055
+      },
+      {
+        "t": 56.0,
+        "vol": 0.02
+      }
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+  },
+  "format": "howto",
+  "showCredits": false,
+  "allowLong": false,
+  "script": "YouTube has no CarPlay app. But one free app puts your whole iPhone screen on your car's display, with no adapter box.\n\nOne screen on the way looks like a dead end. I'll get you past it.\n\nOpen the App Store and search CarTV. Install the one called CarTV, M3U IPTV Player and Cast.\n\nSwipe through the intro, and here's that screen: the Pro paywall. Close it. The free version still works. It just has a time limit, which Pro removes.\n\nNow connect your iPhone to CarPlay, and open CarTV on the car's display.\n\nThen pick up the iPhone, tap the Cast to Car tab at the bottom, and start mirroring.\n\nOpen YouTube, play anything, and it plays on the big screen. Because it mirrors the whole phone, it works with any app, even ones without a cast button.\n\nThis is for passengers, or for when you're parked. Never watch while driving.\n\nYou'll find the app link in the description and the pinned comment.",
+  "approval": {
+    "sha256": "cb9264e415af86d3f063d0546dca5ec6596e0c8653e520767f9ce72fcd5a98df",
+    "approvedAt": "2026-10-09T07:03:06+00:00",
+    "words": 164,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

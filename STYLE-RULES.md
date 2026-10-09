@@ -9719,3 +9719,38 @@ Next event-preview reel: do not open on an illustration again; do not reuse the 
   10.5s slice; the scene ran to 10.70s) and no gate checks it — hold the last frame (tpad clone).
   TRAP: with the presenter circle up, a three-word headline wraps to three lines and pushes media
   into the caption; the linter did not flag it, the stills did.
+
+## 2026-10-09 — carplay-youtube-free (howto, animated bookends, creator footage credited)
+
+- **RAW NOTE 1 — the user's "FREE" was a free TIER.** CarTV is free to download, but its own site
+  lists "Unlimited casting: mirror your screen with no time limit" as Pro, and the app's Pro screen
+  says the same. ROOT CAUSE: a reference creator saying "no subscription needed" is not evidence.
+  RULE: for any "for free" how-to, read the vendor's Pro/pricing page before scripting and say the
+  limit once, out loud, without a number the vendor does not publish (40 min was one reviewer).
+- **RAW NOTE 2 — the only proof was the reference creator's own demo.** The user first chose to film,
+  then chose the reference Short (Gadget Gig) with credit. Credit went in every eyebrow
+  ("App Store · video: Gadget Gig"), `credit`/`creditOnScreen` per scene, showCredits false (the
+  ios-27-2-beta-3 caption-band fix), plus a line in both captions with the source URL. Their
+  presenter segments, burned "CarTv"/"Cast To Car" overlays and red arrow were cut around.
+- **RAW NOTE 3 — creator Shorts are full of flash transitions.** Four cuts opened or closed on a
+  white/pink flash (29.6, 38.5, 47.6, 17.9s). Check the first AND last frame of every cut.
+- **RAW NOTE 4 — a 9:16 clip in a slide is a sliver.** 1080x1920 at h 880 is 500px wide. Cropped
+  every clip to 1080x1350 (4:5) around the action, and held the last frame (+2.5s tpad) so a step
+  can outlast its clip instead of failing "clip shorter than beat".
+- **RAW NOTE 5 — "Step 6" in an eyebrow tripped G68** (a number on screen not in script/ledger).
+  Label the location ("Car display", "First launch") instead of numbering steps.
+- **RAW NOTE 6 — the app's own paywall was the receipt for the time limit.** A ring on the Pro
+  screen's "Unlimited casting ... no time limit" row beat a generic Free/Pro swap card (round 1 had
+  the swap: empty first second, 62% dead space).
+- ElevenLabs v3: 164 words in 44.9s (3.65 w/s, ~955 credits), vo_pad to 56.0s (2.93 w/s), not the
+  suggested 64s. HeyGen: two bookend slices, 9.5s + 3.0s, digital twin, hands empty. Whisper
+  "small" heard "M3 UIP TV" and "even once" — display fixes in caption_corrections.
+
+### Treatments used (do not repeat for the same kind of information)
+Presenter circle over creator footage of the result (YouTube on the car screen, phone in hand) as
+frame 0; developer render with a two-row "Free app / Not needed" card for the hook promise; the
+paywall as the "dead end" open loop, paid off by the close tap; credited creator clips for every
+step, eyebrow = location; paywall-row ring + Free/Pro rows for the tier limit; mirrored home screen
+with an "Even apps with no Cast button" line; spotlight end card (app icon + listing name) beside
+the presenter. Next app how-to: do not open on the result-in-hand shot again; do not use the
+paywall-as-dead-end loop twice in a row.

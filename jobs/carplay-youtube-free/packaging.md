@@ -28,6 +28,8 @@ Passengers or parked only. Never watch while driving.
 
 App link is in the pinned comment.
 
+Demo footage: Gadget Gig on YouTube. Go watch their original.
+
 The presenter's face and voice in this video are AI-generated.
 FIRST COMMENT: CarTV on the App Store: https://apps.apple.com/us/app/cartv-m3u-iptv-player-cast/id6800211040 What would you put on the big screen first? #CarPlay #iPhoneTips #iOS #YouTube #CarTech
 ALT TEXT: An iPhone mirrored to a car's CarPlay display with the CarTV app, playing a YouTube video on the dashboard screen.
@@ -50,6 +52,8 @@ Get CarTV (App Store): https://apps.apple.com/us/app/cartv-m3u-iptv-player-cast/
 Mirroring needs no Wi-Fi. If CarTV is missing on the car screen: Settings > General > CarPlay > your car > Customize.
 
 For passengers, or when parked. Never watch while driving.
+
+Demo footage: Gadget Gig, https://www.youtube.com/shorts/JL8kOTJFS2w
 
 The presenter's face and voice in this video are AI-generated.
 HASHTAGS: #CarPlay #iPhoneTips #YouTube #iOS

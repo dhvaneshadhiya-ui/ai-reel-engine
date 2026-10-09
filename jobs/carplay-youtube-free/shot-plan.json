@@ -1,7 +1,696 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
-  "format": "howto",
-  "shots": [],
-  "music": true
+ "emphasis": [
+  "YouTube",
+  "free",
+  "dead end",
+  "CarTV",
+  "Close it",
+  "time limit",
+  "Cast to Car",
+  "big screen",
+  "any app",
+  "parked",
+  "driving",
+  "link"
+ ],
+ "caption_corrections": {
+  "M3 UIP TV": "M3U IPTV",
+  "Even once": "Even ones",
+  "even once": "even ones",
+  "Pro Paywall": "Pro paywall",
+  "Cast button": "cast button"
+ },
+ "format": "howto",
+ "music": true,
+ "facePlan": "bookends",
+ "audio": "assets/carplay-youtube-free/vo.mp3",
+ "allowLong": false,
+ "showCredits": false,
+ "shots": [
+  {
+   "start_phrase": "YouTube has no",
+   "line": "YouTube has no CarPlay app.",
+   "tier": "multi",
+   "asset_id": "gg-hero",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "CarPlay \u00b7 video: Gadget Gig",
+    "headline": "No [[YouTube]] app",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/carplay-youtube-free/gg-hero.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 800,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "YouTube"
+     }
+    ],
+    "presenter": {
+     "src": "assets/carplay-youtube-free/avatar-master-hook.mp4",
+     "from": 0.0
+    },
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "But one free",
+   "line": "But one free app puts your whole iPhone screen on your car's display, with no adapter box.",
+   "tier": "official",
+   "asset_id": "cartv-mirror",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Image: CarTV",
+    "headline": "Your whole [[iPhone]] on the car screen",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/carplay-youtube-free/cartv-mirror.jpg",
+      "width": 1536,
+      "height": 1024,
+      "device": false,
+      "h": 560
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "To start",
+        "v": "Free app",
+        "tone": "free"
+       },
+       {
+        "k": "Adapter box",
+        "v": "Not needed",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "whole"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "free"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "adapter"
+     }
+    ],
+    "presenter": {
+     "src": "assets/carplay-youtube-free/avatar-master-hook.mp4",
+     "from": 3.48
+    },
+    "credit": "CarTV",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "One screen on",
+   "line": "One screen on the way looks like a dead end. I'll get you past it.",
+   "tier": "single",
+   "asset_id": "gg-paywall-still",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "On the way \u00b7 video: Gadget Gig",
+    "headline": "One screen looks like a [[dead end]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/carplay-youtube-free/gg-paywall-still.png",
+      "width": 1080,
+      "height": 1350,
+      "device": false,
+      "h": 760
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "It isn't. Here's the way past it."
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "dead"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "past"
+     }
+    ],
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "Open the App",
+   "line": "Open the App Store and search CarTV.",
+   "tier": "official",
+   "asset_id": "gg-appstore",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "App Store \u00b7 video: Gadget Gig",
+    "headline": "App Store: search [[CarTV]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/carplay-youtube-free/gg-appstore.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 900,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "search"
+     }
+    ],
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "Install the one",
+   "line": "Install the one called CarTV, M3U IPTV Player and Cast.",
+   "tier": "official",
+   "asset_id": "gg-install",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "App Store \u00b7 video: Gadget Gig",
+    "headline": "[[Install]] this one",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/carplay-youtube-free/gg-install.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 780,
+      "device": false
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "CarTV - M3U IPTV Player & Cast"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Install"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "called"
+     }
+    ],
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "Swipe through the",
+   "line": "Swipe through the intro, and here's that screen:",
+   "tier": "single",
+   "asset_id": "gg-intro",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "First launch \u00b7 video: Gadget Gig",
+    "headline": "Swipe the [[intro]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/carplay-youtube-free/gg-intro.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 900,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "intro"
+     }
+    ],
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "the Pro",
+   "line": "the Pro paywall. Close it.",
+   "tier": "single",
+   "asset_id": "gg-paywall",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "First launch \u00b7 video: Gadget Gig",
+    "headline": "Pro screen? [[Close it]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/carplay-youtube-free/gg-paywall.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 900,
+      "device": false,
+      "from": 4.2
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Close"
+     }
+    ],
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "The free version",
+   "line": "The free version still works. It just has a time limit, which Pro removes.",
+   "tier": "official",
+   "asset_id": "gg-paywall-still",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "CarTV's Pro screen \u00b7 video: Gadget Gig",
+    "headline": "Free still [[works]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/carplay-youtube-free/gg-paywall-still.png",
+      "width": 1080,
+      "height": 1350,
+      "device": false,
+      "h": 640
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Free",
+        "v": "Works, time limit",
+        "tone": "free"
+       },
+       {
+        "k": "Pro",
+        "v": "No time limit",
+        "tone": "plain"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "free"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "works"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "time limit",
+      "rect": [
+       0,
+       680,
+       1080,
+       200
+      ]
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "Pro"
+     }
+    ],
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "Now connect your",
+   "line": "Now connect your iPhone to CarPlay,",
+   "tier": "official",
+   "asset_id": "gg-carplay-connect",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Car display \u00b7 video: Gadget Gig",
+    "headline": "Connect to [[CarPlay]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/carplay-youtube-free/gg-carplay-connect.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 900,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "CarPlay"
+     }
+    ],
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "and open CarTV",
+   "line": "and open CarTV on the car's display.",
+   "tier": "official",
+   "asset_id": "gg-carplay-tap",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Car display \u00b7 video: Gadget Gig",
+    "headline": "Open [[CarTV]] on the car",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/carplay-youtube-free/gg-carplay-tap.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 900,
+      "device": false,
+      "from": 1.1
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "CarTV"
+     }
+    ],
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "Then pick up",
+   "line": "Then pick up the iPhone, tap the Cast to Car tab at the bottom",
+   "tier": "official",
+   "asset_id": "gg-casttab",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "CarTV on iPhone \u00b7 video: Gadget Gig",
+    "headline": "Tap [[Cast to Car]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/carplay-youtube-free/gg-casttab.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 820,
+      "device": false
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "The tab at the bottom of the app"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Cast"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "bottom"
+     }
+    ],
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "and start mirroring",
+   "line": "and start mirroring.",
+   "tier": "official",
+   "asset_id": "gg-castscreen",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "CarTV on iPhone \u00b7 video: Gadget Gig",
+    "headline": "Start [[mirroring]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/carplay-youtube-free/gg-castscreen.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 900,
+      "device": false,
+      "from": 2.2
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "mirroring"
+     }
+    ],
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "Open YouTube,",
+   "line": "Open YouTube,",
+   "tier": "single",
+   "asset_id": "gg-youtube",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "iPhone \u00b7 video: Gadget Gig",
+    "headline": "Open [[YouTube]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/carplay-youtube-free/gg-youtube.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 900,
+      "device": false,
+      "from": 0.3
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "YouTube"
+     }
+    ],
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "play anything and",
+   "line": "play anything, and it plays on the big screen.",
+   "tier": "single",
+   "asset_id": "gg-youtube",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Car display \u00b7 video: Gadget Gig",
+    "headline": "On the [[big screen]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/carplay-youtube-free/gg-youtube.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 960,
+      "device": false,
+      "from": 3.2
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "big"
+     }
+    ],
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "Because it mirrors",
+   "line": "Because it mirrors the whole phone, it works with any app, even ones without a cast button.",
+   "tier": "official",
+   "asset_id": "gg-mirror-home",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Car display \u00b7 video: Gadget Gig",
+    "headline": "It mirrors the [[whole phone]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/carplay-youtube-free/gg-mirror-home.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 680,
+      "device": false
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Even apps with no Cast button"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "whole"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "Even"
+     }
+    ],
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "This is for",
+   "line": "This is for passengers, or for when you're parked. Never watch while driving.",
+   "tier": "official",
+   "asset_id": "gg-playing",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "CarTV: 'for passenger use only'",
+    "headline": "Passengers or [[parked]] only",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/carplay-youtube-free/gg-playing.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 700,
+      "device": false
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Never watch while driving."
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "parked"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "Never"
+     }
+    ],
+    "credit": "Gadget Gig",
+    "creditOnScreen": true
+   }
+  },
+  {
+   "start_phrase": "You'll find the",
+   "line": "You'll find the app link in the description and the pinned comment.",
+   "tier": "official",
+   "asset_id": "cartv-icon",
+   "scene": {
+    "type": "slide",
+    "cta": true,
+    "hideCaptions": true,
+    "headlineSize": "xl",
+    "headline": "App [[link]] below",
+    "blocks": [
+     {
+      "id": "d",
+      "kind": "text",
+      "text": "In the description and the pinned comment."
+     },
+     {
+      "id": "sp",
+      "kind": "spotlight",
+      "logo": "assets/carplay-youtube-free/cartv-icon.jpg",
+      "name": "CarTV",
+      "note": "M3U IPTV Player & Cast"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "link"
+     },
+     {
+      "do": "show",
+      "target": "d",
+      "on": "description"
+     }
+    ],
+    "presenter": {
+     "src": "assets/carplay-youtube-free/avatar-master-cta.mp4",
+     "from": 0.26
+    }
+   }
+  }
+ ]
 }
