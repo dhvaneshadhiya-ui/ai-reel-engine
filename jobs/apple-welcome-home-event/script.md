@@ -1,0 +1,15 @@
+Apple reportedly meant to put a smart home hub in your house back in twenty twenty-four. Siri wasn't ready, so the hub waited, and next Tuesday it finally shows up.
+
+Apple confirmed the date with a teaser: its old rainbow logo, stitched by hand, then two words. Welcome home. October thirteenth, nine a.m. Eastern, in New York.
+
+Apple hasn't named a single product. But Bloomberg's Mark Gurman, who reported the date first, says three are coming.
+
+He says the hub is a square screen, around six inches, on a speaker base that looks a lot like the old iMac G4. It runs your smart home, makes FaceTime calls, and can tell who's talking by voice or face.
+
+You might already own the other two. Apple TV 4K hasn't changed since twenty twenty-two, and HomePod mini since twenty twenty. Both reportedly get faster chips, and the mini adds pink and green.
+
+All three arrive together for the same reason the hub was late. Gurman says each one is built around Siri AI, the new Siri Apple showed in June.
+
+So if an Apple TV or a HomePod mini is sitting in your cart, hold off until Tuesday.
+
+Follow, and on Tuesday you'll see what Apple actually showed.
