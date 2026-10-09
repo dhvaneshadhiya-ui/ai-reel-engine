@@ -21,11 +21,3 @@ Evidence (phone sheet + stills of the final render): hook — frame 0 is the pre
 Remaining (not blocking): sc10 "mini" page narrow in its card; the hub is an illustration, which is the honest limit of an unannounced product.
 Checks failed: none (no empty page; end card holds 3.1s with a one-word ask, read twice).
 Verdict: READY
-
-## Round 4 (v2 cut: opens on the teaser, 65.9s — user 2026-10-09)
-| hook | read | motion | variety | sync | match | min |
-|  9   |  8   |   8    |    8    |  8   |   9   |  8  |
-Evidence (phone sheet + stills at 3.0s / 9.5s of the final render): hook — frame 0 is Apple's own teaser clip, hands stitching the rainbow logo, presenter in the circle, "Stitched by hand" pill on "hand"; the official hoop + Date/Time rows land by 7s. read — v2 first render had the caption on the teaser clip (sc0) and on the Time row (sc1) because the presenter circle wraps the headline; fixed (clip h 780, hoop h 500, two-line headline), stills confirm clear. motion — spring arrivals, clip moves on its own, focus moves on receipts. variety — 14 scenes, longest page 7.1s (hub specs with a focus move); the cut removed the timeline-callback scene, so the delay timeline appears once. sync — 22 cues, one every 3.0s, all audible. match — every sentence's proof is up while it is spoken; the hub is labelled as our illustration twice.
-Remaining (not blocking): "He says the hub" sits two sentences after Gurman is named (accepted at approval to reuse the recorded read).
-Checks failed: none (no empty page; end card 3.1s with a one-word ask).
-Verdict: READY

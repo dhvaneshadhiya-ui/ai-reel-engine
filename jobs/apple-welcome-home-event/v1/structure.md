@@ -25,8 +25,8 @@ October 13, and why it took this long.
 
 ## OPEN LOOP (S10)
 
-Planted: "Siri wasn't ready, so the hub waited."
-Paid off: "Gurman says each one is built around Siri AI, the new Siri Apple showed in June."
+Planted: hook, "Siri wasn't ready, so it waited."
+Paid off: "All three arrive together for the same reason the hub was late. Gurman says each one is built around Siri AI"
 
 ## WHAT -> WHY -> SO WHAT (S7)
 
@@ -39,10 +39,10 @@ about to buy one, wait until Tuesday.
 
 ## CONFIRMATION BEAT (2-5s)
 
-The hook IS the confirmation (v2, user 2026-10-09): Apple's own teaser
-(Greg Joswiak's post), hands stitching the rainbow logo, then the hoop
-reading "Welcome home. October 13" with Date/Time/Place. The viewer sees
-the official invite before any rumor is spoken.
+Right after the hook: Apple's own teaser (Greg Joswiak's post) — hands
+stitching the rainbow logo, ending on the embroidery hoop reading
+"Welcome home. October 13". The viewer sees the official invite before
+any rumor is spoken.
 
 ## VIEWER QUESTIONS
 
@@ -53,13 +53,6 @@ the official invite before any rumor is spoken.
 - Q: Should I buy an Apple TV now?  A: "hold off until Tuesday"
 
 ## WHAT WAS CUT (S11, S21)
-
-v2 (user: "start with the teaser, make it to the point"): cut "and next
-Tuesday it finally shows up" (the date is already said), "You might already
-own the other two", "All three arrive together for the same reason the hub
-was late" (the Siri line says it). Every remaining sentence is from the
-recorded read, so the voice is reused, not regenerated.
-
 
 - October 27 Mac/iPad launch: a different event; would split the story.
 - LG-built doorbell, lock, thermostat: "a few months" away, not Oct 13.

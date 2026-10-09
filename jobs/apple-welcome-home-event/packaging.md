@@ -11,7 +11,7 @@ out of the description.
 Instagram's hashtag maximum is **5**; YouTube's cap is 15 and the
 recommended band is **3-5** on both.
 
-Video: out/apple-welcome-home-event-final.mp4 (76s, 1080x1920)
+Video: out/apple-welcome-home-event-final.mp4 (66s, 1080x1920)
 Cover: out/thumbnails/apple-welcome-home-event-vertical.png
 
 ## instagram

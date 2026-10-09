@@ -1,13 +1,13 @@
 {
-  "script_sha256": "b1130a78df0c7ee80ea95711f6138497fd843649d59e48e5917d6f348be7a11a",
-  "structure_sha256": "4fc9ce8d1ec5cfa40d674b25b872f0a338a047bcc47985ccd29e991423601576",
+  "script_sha256": "2ceca1697a66b3ce499d0cc55827dd6ae9607eb79ca69cf8e4e84c0420eb86c5",
+  "structure_sha256": "1043ca63d1a8484a4b856443154ab667e0b8f3d1e693ced1b1820708c9cb5d6e",
   "findings": [
-    "  BRIDGES 2/15 sentences (13%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
-    "  NO OPEN LOOP \u2014 sentence 3 promises something ('Apple confirmed the date with a teaser: its old ') and nothing later returns to it. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
-    "  OPENING has no version, date or time anchor: 'Apple reportedly meant to put a smart home hub in your house bac'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "  BRIDGES 2/13 sentences (15%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  NO OPEN LOOP \u2014 sentence 1 promises something ('Apple confirmed the date with a teaser: its old ') and nothing later returns to it. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "  OPENING has no version, date or time anchor: 'Apple confirmed the date with a teaser: its old rainbow logo, st'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
     "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
   ],
   "research_advice": [],
-  "beatPlanShots": 0,
-  "proposedAt": "2026-10-09T04:49:22+00:00"
+  "beatPlanShots": 15,
+  "proposedAt": "2026-10-09T05:26:31+00:00"
 }

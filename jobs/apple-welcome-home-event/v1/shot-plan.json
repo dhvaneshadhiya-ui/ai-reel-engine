@@ -22,8 +22,7 @@
   "welcome home.": "Welcome home.",
   "words, welcome": "words. Welcome",
   "Eastern in": "Eastern, in",
-  "six inches": "6 inches",
-  "9am": "9 a.m."
+  "six inches": "6 inches"
  },
  "format": "news",
  "music": true,
@@ -33,13 +32,106 @@
  "showCredits": false,
  "shots": [
   {
+   "start_phrase": "Apple reportedly meant to",
+   "line": "Apple reportedly meant to put a smart home hub in your house back in twenty twenty-four.",
+   "tier": "multi",
+   "asset_id": "hub-tight",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Apple's home hub \u00b7 illustration",
+    "headline": "Planned for [[2024]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-welcome-home-event/hub-tight.png",
+      "width": 1132,
+      "height": 1518,
+      "device": false,
+      "h": 800
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Reportedly held back by Siri"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "2024"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "house"
+     }
+    ],
+    "presenter": {
+     "src": "assets/apple-welcome-home-event/avatar-master-hook.mp4",
+     "from": 0.0
+    }
+   }
+  },
+  {
+   "start_phrase": "Siri wasn't ready, so",
+   "line": "Siri wasn't ready, so the hub waited, and next Tuesday it finally shows up.",
+   "tier": "multi",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Reportedly",
+    "headline": "[[Siri]] wasn't ready",
+    "blocks": [
+     {
+      "id": "p",
+      "kind": "steps",
+      "steps": [
+       "2024: planned",
+       "Siri not ready",
+       "Waited",
+       "Tuesday, Oct 13"
+      ],
+      "h": 820
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Siri"
+     },
+     {
+      "do": "show",
+      "target": "p.1",
+      "on": "ready"
+     },
+     {
+      "do": "show",
+      "target": "p.2",
+      "on": "waited"
+     },
+     {
+      "do": "show",
+      "target": "p.3",
+      "on": "Tuesday"
+     }
+    ],
+    "presenter": {
+     "src": "assets/apple-welcome-home-event/avatar-master-hook.mp4",
+     "from": 5.44
+    }
+   }
+  },
+  {
    "start_phrase": "Apple confirmed the date",
    "line": "Apple confirmed the date with a teaser: its old rainbow logo, stitched by hand, then two words.",
    "tier": "official",
    "asset_id": "teaser-stitch",
    "scene": {
     "type": "slide",
-    "eyebrow": "Apple's teaser \u00b7 Oct 13",
+    "eyebrow": "Apple's teaser",
     "headline": "Stitched [[by hand]]",
     "blocks": [
      {
@@ -48,7 +140,7 @@
       "src": "assets/apple-welcome-home-event/teaser-stitch.mp4",
       "width": 1080,
       "height": 1080,
-      "h": 780,
+      "h": 900,
       "device": false
      }
     ],
@@ -58,11 +150,7 @@
       "target": "headline",
       "on": "hand"
      }
-    ],
-    "presenter": {
-     "src": "assets/apple-welcome-home-event/avatar-master-hook2.mp4",
-     "from": 0.0
-    }
+    ]
    }
   },
   {
@@ -82,7 +170,7 @@
       "width": 1080,
       "height": 1080,
       "device": false,
-      "h": 500
+      "h": 700
      },
      {
       "id": "r",
@@ -120,18 +208,14 @@
      {
       "do": "show",
       "target": "r.1",
-      "on": "9am"
+      "on": "9"
      },
      {
       "do": "show",
       "target": "r.2",
       "on": "York"
      }
-    ],
-    "presenter": {
-     "src": "assets/apple-welcome-home-event/avatar-master-hook2.mp4",
-     "from": 6.52
-    }
+    ]
    }
   },
   {
@@ -231,81 +315,6 @@
        1080,
        450
       ]
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "Apple reportedly meant to",
-   "line": "Apple reportedly meant to put a smart home hub in your house back in twenty twenty-four.",
-   "tier": "multi",
-   "asset_id": "hub-tight",
-   "scene": {
-    "type": "slide",
-    "eyebrow": "One: a home hub \u00b7 illustration",
-    "headline": "Planned for [[2024]]",
-    "blocks": [
-     {
-      "id": "s",
-      "kind": "screen",
-      "src": "assets/apple-welcome-home-event/hub-tight.png",
-      "width": 1132,
-      "height": 1518,
-      "device": false,
-      "h": 800
-     }
-    ],
-    "moves": [
-     {
-      "do": "pill",
-      "target": "headline",
-      "on": "2024"
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "Siri wasn't ready, so",
-   "line": "Siri wasn't ready, so the hub waited.",
-   "tier": "multi",
-   "asset_id": null,
-   "scene": {
-    "type": "slide",
-    "eyebrow": "Reportedly",
-    "headline": "[[Siri]] wasn't ready",
-    "blocks": [
-     {
-      "id": "p",
-      "kind": "steps",
-      "steps": [
-       "2024: planned",
-       "Siri not ready",
-       "Waited",
-       "Tuesday, Oct 13"
-      ],
-      "h": 820
-     }
-    ],
-    "moves": [
-     {
-      "do": "pill",
-      "target": "headline",
-      "on": "Siri"
-     },
-     {
-      "do": "show",
-      "target": "p.1",
-      "on": "ready"
-     },
-     {
-      "do": "show",
-      "target": "p.2",
-      "on": "hub"
-     },
-     {
-      "do": "show",
-      "target": "p.3",
-      "on": "waited"
      }
     ]
    }
@@ -421,8 +430,8 @@
    }
   },
   {
-   "start_phrase": "Apple TV 4K hasn't",
-   "line": "Apple TV 4K hasn't changed since twenty twenty-two,",
+   "start_phrase": "You might already own",
+   "line": "You might already own the other two. Apple TV 4K hasn't changed since twenty twenty-two,",
    "tier": "official",
    "asset_id": "appletv-2022",
    "scene": {
@@ -441,6 +450,17 @@
      }
     ],
     "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "Apple TV",
+      "rect": [
+       0,
+       0,
+       1080,
+       1000
+      ]
+     },
      {
       "do": "pill",
       "target": "headline",
@@ -600,6 +620,52 @@
    }
   },
   {
+   "start_phrase": "All three arrive together",
+   "line": "All three arrive together for the same reason the hub was late.",
+   "tier": "single",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Back to that delay",
+    "headline": "Late for [[one reason]]",
+    "blocks": [
+     {
+      "id": "p",
+      "kind": "steps",
+      "steps": [
+       "2024: planned",
+       "Siri not ready",
+       "Waited",
+       "Tuesday, Oct 13"
+      ],
+      "h": 820
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "p.1",
+      "on": "three"
+     },
+     {
+      "do": "show",
+      "target": "p.2",
+      "on": "together"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "reason"
+     },
+     {
+      "do": "show",
+      "target": "p.3",
+      "on": "late"
+     }
+    ]
+   }
+  },
+  {
    "start_phrase": "Gurman says each one",
    "line": "Gurman says each one is built around Siri AI, the new Siri Apple showed in June.",
    "tier": "single",
@@ -741,7 +807,7 @@
     ],
     "presenter": {
      "src": "assets/apple-welcome-home-event/avatar-master-cta.mp4",
-     "from": 0.42
+     "from": 0.4
     }
    }
   }

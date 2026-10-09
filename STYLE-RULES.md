@@ -9710,3 +9710,12 @@ frame over Date/Time/Place rows; an empty official events page as proof of "noth
 outlet paragraph read with focus rings; spec-page "Year introduced" receipts, the second paired with a
 two-row year card; three identical-value rows for "all built around X"; buy-today vs wait swap.
 Next event-preview reel: do not open on an illustration again; do not reuse the timeline-callback.
+- **v2 (user, same day): "start with the teaser, make it to the point".** Every kept sentence already
+  existed in the recorded read, so the VO was SPLICED from the padded master (cuts in silences,
+  8ms fades) — 0 ElevenLabs credits, 76.0s -> 65.9s; only the opening presenter slice was regenerated
+  (HeyGen, 10.5s). Whisper heard the spliced "waited." as a sentence end. RULE: when a revision only
+  reorders or cuts approved sentences, splice the existing read instead of regenerating.
+  TRAP: a regenerated presenter slice can end ~0.2s before its scene (HeyGen returned 10.476s for a
+  10.5s slice; the scene ran to 10.70s) and no gate checks it — hold the last frame (tpad clone).
+  TRAP: with the presenter circle up, a three-word headline wraps to three lines and pushes media
+  into the caption; the linter did not flag it, the stills did.
