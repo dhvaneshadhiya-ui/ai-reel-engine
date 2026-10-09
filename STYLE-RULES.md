@@ -9679,3 +9679,34 @@ test's scope; a vendor paragraph read with line-measured rings; a help-page plan
 paid-vs-free swap card; a four-step settings path; a help-page "what you lose" passage; a two-row
 consequence card with the mockup returning as the payoff; XL question end card. Next ads/pricing
 reel: do not use the swap card for plans again; do not reuse a mockup across five scenes.
+
+## 2026-10-09 — apple-welcome-home-event (Apple "Welcome home" Oct 13 launch, animated bookends)
+
+- **RAW NOTE 1 — the official teaser was the best asset, and yt-dlp got it where WebFetch could not.**
+  x.com returned 402 to WebFetch, so the research agents only had outlets' descriptions of Joswiak's
+  post; `yt-dlp -N 8` on the status URL downloaded the 16.7s 1080x1080 video in a second. Its last
+  frame (hoop: rainbow logo, "Welcome home.", "October 13") became the proof still, the CTA picture
+  and the cover. RULE: for an Apple event, pull the exec's teaser video before scouting anything else.
+- **RAW NOTE 2 — Apple's support "Tech Specs" pages are the receipt for "how old is this product".**
+  support.apple.com/111839 and /111914 show the device plus "Year introduced: 2022 / 2020" on one
+  mobile screen; the marketing pages (apple.com/apple-tv-4k) open on a game or a particle wordmark.
+- **RAW NOTE 3 — an unannounced product gets OUR drawing, labelled twice.** No image of the hub
+  exists; an SVG from Gurman's description, rendered by Playwright, carries "illustration" in the
+  eyebrow of both scenes that use it and a line in the caption. The `devices` block's hub glyph is
+  a laptop — it read as "Siri AI is a Mac". Do not use `devices` for a non-computer hub.
+- **RAW NOTE 4 — [CUT DIP] fires on a page that just gets narrower, not only a fade.** Two portrait
+  receipts back to back (h 880 then h 680) halved the luma; opening the second zoomed into its bright
+  top (`focus` instant, ring off) fixed it and broke the [DUPLICATE] flag in the same move.
+- **RAW NOTE 5 — move anchors resolve against whisper's digits.** "twenty twenty-four" / "nine" in the
+  plan failed to compile; anchor on "2024" / "9". Same lesson as openai-image-ads note 3.
+- ElevenLabs v3: 206 words in 62.8s (3.28 w/s, ~1,198 credits), vo_pad to 76.0s. HeyGen: two bookend
+  slices, 12.5s + 3.5s on the digital twin, hands empty throughout. Simulator unavailable today
+  (`xcrun simctl` not found — xcode-select points at the CLT).
+
+### Treatments used (do not repeat for the same kind of information)
+Presenter circle over a labelled product illustration; a four-step delay timeline that RETURNS later
+as the payoff of the hook's loop; the vendor's teaser clip as the confirmation beat; the teaser's last
+frame over Date/Time/Place rows; an empty official events page as proof of "nothing announced";
+outlet paragraph read with focus rings; spec-page "Year introduced" receipts, the second paired with a
+two-row year card; three identical-value rows for "all built around X"; buy-today vs wait swap.
+Next event-preview reel: do not open on an illustration again; do not reuse the timeline-callback.

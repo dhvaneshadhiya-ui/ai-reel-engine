@@ -1,7 +1,815 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
-  "format": "news",
-  "shots": [],
-  "music": true
+ "emphasis": [
+  "2024",
+  "Siri",
+  "by hand",
+  "Welcome home",
+  "single product",
+  "three",
+  "six inches",
+  "FaceTime",
+  "2022",
+  "2020",
+  "pink",
+  "Siri AI",
+  "hold off",
+  "Follow"
+ ],
+ "caption_corrections": {
+  "9 a .m.": "9 a.m.",
+  "a .m.": "a.m.",
+  "HomePod Mini": "HomePod mini",
+  "welcome home.": "Welcome home.",
+  "words, welcome": "words. Welcome",
+  "Eastern in": "Eastern, in",
+  "six inches": "6 inches"
+ },
+ "format": "news",
+ "music": true,
+ "facePlan": "bookends",
+ "audio": "assets/apple-welcome-home-event/vo.mp3",
+ "allowLong": false,
+ "showCredits": false,
+ "shots": [
+  {
+   "start_phrase": "Apple reportedly meant to",
+   "line": "Apple reportedly meant to put a smart home hub in your house back in twenty twenty-four.",
+   "tier": "multi",
+   "asset_id": "hub-tight",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Apple's home hub \u00b7 illustration",
+    "headline": "Planned for [[2024]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-welcome-home-event/hub-tight.png",
+      "width": 1132,
+      "height": 1518,
+      "device": false,
+      "h": 800
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Reportedly held back by Siri"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "2024"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "house"
+     }
+    ],
+    "presenter": {
+     "src": "assets/apple-welcome-home-event/avatar-master-hook.mp4",
+     "from": 0.0
+    }
+   }
+  },
+  {
+   "start_phrase": "Siri wasn't ready, so",
+   "line": "Siri wasn't ready, so the hub waited, and next Tuesday it finally shows up.",
+   "tier": "multi",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Reportedly",
+    "headline": "[[Siri]] wasn't ready",
+    "blocks": [
+     {
+      "id": "p",
+      "kind": "steps",
+      "steps": [
+       "2024: planned",
+       "Siri not ready",
+       "Waited",
+       "Tuesday, Oct 13"
+      ],
+      "h": 820
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Siri"
+     },
+     {
+      "do": "show",
+      "target": "p.1",
+      "on": "ready"
+     },
+     {
+      "do": "show",
+      "target": "p.2",
+      "on": "waited"
+     },
+     {
+      "do": "show",
+      "target": "p.3",
+      "on": "Tuesday"
+     }
+    ],
+    "presenter": {
+     "src": "assets/apple-welcome-home-event/avatar-master-hook.mp4",
+     "from": 5.44
+    }
+   }
+  },
+  {
+   "start_phrase": "Apple confirmed the date",
+   "line": "Apple confirmed the date with a teaser: its old rainbow logo, stitched by hand, then two words.",
+   "tier": "official",
+   "asset_id": "teaser-stitch",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Apple's teaser",
+    "headline": "Stitched [[by hand]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/apple-welcome-home-event/teaser-stitch.mp4",
+      "width": 1080,
+      "height": 1080,
+      "h": 900,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "hand"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Welcome home.",
+   "line": "Welcome home. October thirteenth, nine a.m. Eastern, in New York.",
+   "tier": "official",
+   "asset_id": "teaser-hoop",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Image: Apple",
+    "headline": "[[Welcome home]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-welcome-home-event/teaser-hoop.png",
+      "width": 1080,
+      "height": 1080,
+      "device": false,
+      "h": 700
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Date",
+        "v": "Tue, Oct 13",
+        "tone": "plain"
+       },
+       {
+        "k": "Time",
+        "v": "9 a.m. ET",
+        "tone": "plain"
+       },
+       {
+        "k": "Place",
+        "v": "New York",
+        "tone": "plain"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Welcome"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "October"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "9"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "York"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Apple hasn't named a",
+   "line": "Apple hasn't named a single product.",
+   "tier": "multi",
+   "asset_id": "apple-events",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "apple.com/apple-events, today",
+    "headline": "No products [[named]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-welcome-home-event/apple-events.png",
+      "width": 1080,
+      "height": 1935,
+      "device": false,
+      "h": 860
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "named"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "single",
+      "rect": [
+       0,
+       1230,
+       1080,
+       420
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "But Bloomberg's Mark Gurman,",
+   "line": "But Bloomberg's Mark Gurman, who reported the date first, says three are coming.",
+   "tier": "multi",
+   "asset_id": "macrumors-three",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Reported \u00b7 MacRumors",
+    "headline": "Gurman: [[three]] devices",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-welcome-home-event/macrumors-three.png",
+      "width": 1080,
+      "height": 950,
+      "device": false,
+      "h": 760
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "He reported Oct 13 on Sept 30"
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "reported",
+      "rect": [
+       0,
+       0,
+       1080,
+       460
+      ]
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "first"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "three"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "coming",
+      "rect": [
+       0,
+       480,
+       1080,
+       450
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "He says the hub",
+   "line": "He says the hub is a square screen, around six inches, on a speaker base that looks a lot like the old iMac G4.",
+   "tier": "single",
+   "asset_id": "hub-tight",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Illustration based on reports",
+    "headline": "A square screen, about [[6 inches]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-welcome-home-event/hub-tight.png",
+      "width": 1132,
+      "height": 1518,
+      "device": false,
+      "h": 820
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "On a speaker base, like the iMac G4"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "six inches"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "speaker",
+      "rect": [
+       0,
+       1000,
+       1132,
+       518
+      ]
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "iMac"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "It runs your smart",
+   "line": "It runs your smart home, makes FaceTime calls, and can tell who's talking by voice or face.",
+   "tier": "single",
+   "asset_id": "hub-tight",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Reportedly",
+    "headline": "What it [[does]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-welcome-home-event/hub-tight.png",
+      "width": 1132,
+      "height": 1518,
+      "device": false,
+      "h": 440
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Smart home",
+        "v": "Controls it",
+        "tone": "plain"
+       },
+       {
+        "k": "FaceTime",
+        "v": "Video calls",
+        "tone": "plain"
+       },
+       {
+        "k": "Who's talking",
+        "v": "Voice or face",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "runs"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "FaceTime"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "tell"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "You might already own",
+   "line": "You might already own the other two. Apple TV 4K hasn't changed since twenty twenty-two,",
+   "tier": "official",
+   "asset_id": "appletv-2022",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Apple's tech specs page",
+    "headline": "Apple TV 4K: [[2022]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-welcome-home-event/appletv-2022.png",
+      "width": 1080,
+      "height": 1710,
+      "device": false,
+      "h": 880
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "Apple TV",
+      "rect": [
+       0,
+       0,
+       1080,
+       1000
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "2022"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "since",
+      "rect": [
+       0,
+       1200,
+       1080,
+       520
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "and HomePod mini since",
+   "line": "and HomePod mini since twenty twenty.",
+   "tier": "official",
+   "asset_id": "homepod-2020",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Apple's tech specs page",
+    "headline": "HomePod mini: [[2020]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-welcome-home-event/homepod-2020.png",
+      "width": 1080,
+      "height": 1600,
+      "device": false,
+      "h": 680
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Apple TV 4K",
+        "v": "2022",
+        "tone": "plain"
+       },
+       {
+        "k": "HomePod mini",
+        "v": "2020",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "and",
+      "rect": [
+       0,
+       0,
+       1080,
+       620
+      ],
+      "ring": false,
+      "instant": true
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "since",
+      "rect": [
+       0,
+       1090,
+       1080,
+       520
+      ]
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "2020"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "2020"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Both reportedly get faster",
+   "line": "Both reportedly get faster chips, and the mini adds pink and green.",
+   "tier": "single",
+   "asset_id": "homepod-mini-page",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Reportedly \u00b7 image: Apple",
+    "headline": "Same look, [[faster chips]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-welcome-home-event/homepod-mini-page.png",
+      "width": 1080,
+      "height": 1640,
+      "device": false,
+      "h": 500
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Apple TV 4K",
+        "v": "Faster chip",
+        "tone": "plain"
+       },
+       {
+        "k": "HomePod mini",
+        "v": "Faster chip",
+        "tone": "plain"
+       },
+       {
+        "k": "New colours",
+        "v": "Pink, green",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "faster chips"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "Both"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "chips"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "pink"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "All three arrive together",
+   "line": "All three arrive together for the same reason the hub was late.",
+   "tier": "single",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Back to that delay",
+    "headline": "Late for [[one reason]]",
+    "blocks": [
+     {
+      "id": "p",
+      "kind": "steps",
+      "steps": [
+       "2024: planned",
+       "Siri not ready",
+       "Waited",
+       "Tuesday, Oct 13"
+      ],
+      "h": 820
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "p.1",
+      "on": "three"
+     },
+     {
+      "do": "show",
+      "target": "p.2",
+      "on": "together"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "reason"
+     },
+     {
+      "do": "show",
+      "target": "p.3",
+      "on": "late"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Gurman says each one",
+   "line": "Gurman says each one is built around Siri AI, the new Siri Apple showed in June.",
+   "tier": "single",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The reason",
+    "headline": "Built around [[Siri AI]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Home hub",
+        "v": "Siri AI",
+        "tone": "free"
+       },
+       {
+        "k": "Apple TV 4K",
+        "v": "Siri AI",
+        "tone": "free"
+       },
+       {
+        "k": "HomePod mini",
+        "v": "Siri AI",
+        "tone": "free"
+       }
+      ]
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "The new Siri, shown at WWDC in June"
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "each"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "built"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Siri AI"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "June"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "So if an Apple",
+   "line": "So if an Apple TV or a HomePod mini is sitting in your cart, hold off until Tuesday.",
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Buying one?",
+    "headline": "[[Hold off]] until Tuesday",
+    "blocks": [
+     {
+      "id": "w",
+      "kind": "swap",
+      "left": {
+       "name": "Buy today",
+       "price": "2022 / 2020 models",
+       "tone": "cost"
+      },
+      "right": {
+       "name": "Wait",
+       "price": "Oct 13",
+       "tone": "free",
+       "note": "New models expected"
+      }
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "hold off"
+     },
+     {
+      "do": "show",
+      "target": "w.right",
+      "on": "Tuesday"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Follow, and on Tuesday",
+   "line": "Follow, and on Tuesday you'll see what Apple actually showed.",
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "type": "slide",
+    "cta": true,
+    "hideCaptions": true,
+    "headlineSize": "xl",
+    "headline": "[[Follow]]",
+    "blocks": [
+     {
+      "id": "d",
+      "kind": "text",
+      "text": "See what Apple actually shows on Tuesday."
+     },
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-welcome-home-event/teaser-hoop.png",
+      "width": 1080,
+      "height": 1080,
+      "device": false,
+      "h": 620
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Follow"
+     },
+     {
+      "do": "show",
+      "target": "d",
+      "on": "see"
+     }
+    ],
+    "presenter": {
+     "src": "assets/apple-welcome-home-event/avatar-master-cta.mp4",
+     "from": 0.4
+    }
+   }
+  }
+ ]
 }

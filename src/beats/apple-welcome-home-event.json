@@ -1,0 +1,2349 @@
+{
+  "id": "apple-welcome-home-event",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/apple-welcome-home-event/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "2024",
+    "Siri",
+    "by hand",
+    "Welcome home",
+    "single product",
+    "three",
+    "six inches",
+    "FaceTime",
+    "2022",
+    "2020",
+    "pink",
+    "Siri AI",
+    "hold off",
+    "Follow"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "eyebrow": "Apple's home hub \u00b7 illustration",
+      "headline": "Planned for [[2024]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-welcome-home-event/hub-tight.png",
+          "width": 1132,
+          "height": 1518,
+          "device": false,
+          "h": 800
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Reportedly held back by Siri"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "2024",
+          "at": 3.84
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "house",
+          "at": 2.84
+        }
+      ],
+      "presenter": {
+        "src": "assets/apple-welcome-home-event/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "durationSec": 5.44,
+      "assetId": "hub-tight",
+      "claimId": "hub-tight",
+      "covers": "Apple reportedly meant to",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 3.81,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Reportedly",
+      "headline": "[[Siri]] wasn't ready",
+      "blocks": [
+        {
+          "id": "p",
+          "kind": "steps",
+          "steps": [
+            "2024: planned",
+            "Siri not ready",
+            "Waited",
+            "Tuesday, Oct 13"
+          ],
+          "h": 820
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Siri",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "p.1",
+          "on": "ready",
+          "at": 0.92
+        },
+        {
+          "do": "show",
+          "target": "p.2",
+          "on": "waited",
+          "at": 2.64
+        },
+        {
+          "do": "show",
+          "target": "p.3",
+          "on": "Tuesday",
+          "at": 4.24
+        }
+      ],
+      "presenter": {
+        "src": "assets/apple-welcome-home-event/avatar-master-hook.mp4",
+        "from": 5.44
+      },
+      "durationSec": 7.52,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 0.55,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 2.27,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 3.87,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Apple's teaser",
+      "headline": "Stitched [[by hand]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/apple-welcome-home-event/teaser-stitch.mp4",
+          "width": 1080,
+          "height": 1080,
+          "h": 900,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "hand",
+          "at": 4.32
+        }
+      ],
+      "durationSec": 6.38,
+      "assetId": "teaser-stitch",
+      "claimId": "teaser-stitch",
+      "covers": "Apple confirmed the date",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 4.29,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Image: Apple",
+      "headline": "[[Welcome home]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-welcome-home-event/teaser-hoop.png",
+          "width": 1080,
+          "height": 1080,
+          "device": false,
+          "h": 700
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Date",
+              "v": "Tue, Oct 13",
+              "tone": "plain"
+            },
+            {
+              "k": "Time",
+              "v": "9 a.m. ET",
+              "tone": "plain"
+            },
+            {
+              "k": "Place",
+              "v": "New York",
+              "tone": "plain"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Welcome",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "October",
+          "at": 0.8
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "9",
+          "at": 1.78
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "York",
+          "at": 3.1
+        }
+      ],
+      "durationSec": 4.06,
+      "assetId": "teaser-hoop",
+      "claimId": "teaser-hoop",
+      "covers": "Welcome home.",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "apple.com/apple-events, today",
+      "headline": "No products [[named]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-welcome-home-event/apple-events.png",
+          "width": 1080,
+          "height": 1935,
+          "device": false,
+          "h": 860
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "named",
+          "at": 0.66
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "single",
+          "rect": [
+            0,
+            1230,
+            1080,
+            420
+          ],
+          "at": 1.04
+        }
+      ],
+      "durationSec": 2.76,
+      "assetId": "apple-events",
+      "claimId": "apple-events",
+      "covers": "Apple hasn't named a",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.63,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Reported \u00b7 MacRumors",
+      "headline": "Gurman: [[three]] devices",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-welcome-home-event/macrumors-three.png",
+          "width": 1080,
+          "height": 950,
+          "device": false,
+          "h": 760
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "He reported Oct 13 on Sept 30"
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "reported",
+          "rect": [
+            0,
+            0,
+            1080,
+            460
+          ],
+          "at": 2.06
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "first",
+          "at": 2.76
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "three",
+          "at": 4.66
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "coming",
+          "rect": [
+            0,
+            480,
+            1080,
+            450
+          ],
+          "at": 5.16
+        }
+      ],
+      "durationSec": 6.38,
+      "assetId": "macrumors-three",
+      "claimId": "macrumors-three",
+      "covers": "But Bloomberg's Mark Gurman,",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 1.66,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 4.63,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Illustration based on reports",
+      "headline": "A square screen, about [[6 inches]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-welcome-home-event/hub-tight.png",
+          "width": 1132,
+          "height": 1518,
+          "device": false,
+          "h": 820
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "On a speaker base, like the iMac G4"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "six inches",
+          "at": 1.98
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "speaker",
+          "rect": [
+            0,
+            1000,
+            1132,
+            518
+          ],
+          "at": 3.12
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "iMac",
+          "at": 5.22
+        }
+      ],
+      "durationSec": 7.02,
+      "assetId": "hub-tight",
+      "claimId": "hub-tight",
+      "covers": "He says the hub",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.95,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 2.72,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Reportedly",
+      "headline": "What it [[does]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-welcome-home-event/hub-tight.png",
+          "width": 1132,
+          "height": 1518,
+          "device": false,
+          "h": 440
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Smart home",
+              "v": "Controls it",
+              "tone": "plain"
+            },
+            {
+              "k": "FaceTime",
+              "v": "Video calls",
+              "tone": "plain"
+            },
+            {
+              "k": "Who's talking",
+              "v": "Voice or face",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "runs",
+          "at": 0.14
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "FaceTime",
+          "at": 1.58
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "tell",
+          "at": 2.86
+        }
+      ],
+      "durationSec": 5.78,
+      "assetId": "hub-tight",
+      "claimId": "hub-tight",
+      "covers": "It runs your smart",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Apple's tech specs page",
+      "headline": "Apple TV 4K: [[2022]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-welcome-home-event/appletv-2022.png",
+          "width": 1080,
+          "height": 1710,
+          "device": false,
+          "h": 880
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "Apple TV",
+          "rect": [
+            0,
+            0,
+            1080,
+            1000
+          ],
+          "at": 2.18
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "2022",
+          "at": 4.24
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "since",
+          "rect": [
+            0,
+            1200,
+            1080,
+            520
+          ],
+          "at": 3.92
+        }
+      ],
+      "durationSec": 4.9,
+      "assetId": "appletv-2022",
+      "claimId": "appletv-2022",
+      "covers": "You might already own",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 1.78,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 4.21,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 3.52,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Apple's tech specs page",
+      "headline": "HomePod mini: [[2020]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-welcome-home-event/homepod-2020.png",
+          "width": 1080,
+          "height": 1600,
+          "device": false,
+          "h": 680
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Apple TV 4K",
+              "v": "2022",
+              "tone": "plain"
+            },
+            {
+              "k": "HomePod mini",
+              "v": "2020",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "and",
+          "rect": [
+            0,
+            0,
+            1080,
+            620
+          ],
+          "ring": false,
+          "instant": true,
+          "at": 0.0
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "since",
+          "rect": [
+            0,
+            1090,
+            1080,
+            520
+          ],
+          "at": 1.1
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "2020",
+          "at": 1.46
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "2020",
+          "at": 1.46
+        }
+      ],
+      "durationSec": 2.82,
+      "assetId": "homepod-2020",
+      "claimId": "homepod-2020",
+      "covers": "and HomePod mini since",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 0.7,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.43,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Reportedly \u00b7 image: Apple",
+      "headline": "Same look, [[faster chips]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-welcome-home-event/homepod-mini-page.png",
+          "width": 1080,
+          "height": 1640,
+          "device": false,
+          "h": 500
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Apple TV 4K",
+              "v": "Faster chip",
+              "tone": "plain"
+            },
+            {
+              "k": "HomePod mini",
+              "v": "Faster chip",
+              "tone": "plain"
+            },
+            {
+              "k": "New colours",
+              "v": "Pink, green",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "faster chips",
+          "at": 1.16
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "Both",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "chips",
+          "at": 1.56
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "pink",
+          "at": 2.86
+        }
+      ],
+      "durationSec": 4.64,
+      "assetId": "homepod-mini-page",
+      "claimId": "homepod-mini-page",
+      "covers": "Both reportedly get faster",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.13,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Back to that delay",
+      "headline": "Late for [[one reason]]",
+      "blocks": [
+        {
+          "id": "p",
+          "kind": "steps",
+          "steps": [
+            "2024: planned",
+            "Siri not ready",
+            "Waited",
+            "Tuesday, Oct 13"
+          ],
+          "h": 820
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "p.1",
+          "on": "three",
+          "at": 0.18
+        },
+        {
+          "do": "show",
+          "target": "p.2",
+          "on": "together",
+          "at": 0.64
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "reason",
+          "at": 1.68
+        },
+        {
+          "do": "show",
+          "target": "p.3",
+          "on": "late",
+          "at": 2.54
+        }
+      ],
+      "durationSec": 3.58,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx-action/tick.mp3",
+          "at": 0.27,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.65,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The reason",
+      "headline": "Built around [[Siri AI]]",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Home hub",
+              "v": "Siri AI",
+              "tone": "free"
+            },
+            {
+              "k": "Apple TV 4K",
+              "v": "Siri AI",
+              "tone": "free"
+            },
+            {
+              "k": "HomePod mini",
+              "v": "Siri AI",
+              "tone": "free"
+            }
+          ]
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "The new Siri, shown at WWDC in June"
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "each",
+          "at": 0.56
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "built",
+          "at": 1.38
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Siri AI",
+          "at": 1.96
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "June",
+          "at": 4.46
+        }
+      ],
+      "durationSec": 5.76,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.93,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Buying one?",
+      "headline": "[[Hold off]] until Tuesday",
+      "blocks": [
+        {
+          "id": "w",
+          "kind": "swap",
+          "left": {
+            "name": "Buy today",
+            "price": "2022 / 2020 models",
+            "tone": "cost"
+          },
+          "right": {
+            "name": "Wait",
+            "price": "Oct 13",
+            "tone": "free",
+            "note": "New models expected"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "hold off",
+          "at": 3.88
+        },
+        {
+          "do": "show",
+          "target": "w.right",
+          "on": "Tuesday",
+          "at": 4.62
+        }
+      ],
+      "durationSec": 5.86,
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Core.MP3",
+          "at": 3.83,
+          "vol": 0.556
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "hideCaptions": true,
+      "headlineSize": "xl",
+      "headline": "[[Follow]]",
+      "blocks": [
+        {
+          "id": "d",
+          "kind": "text",
+          "text": "See what Apple actually shows on Tuesday."
+        },
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-welcome-home-event/teaser-hoop.png",
+          "width": 1080,
+          "height": 1080,
+          "device": false,
+          "h": 620
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Follow",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "d",
+          "on": "see",
+          "at": 1.4
+        }
+      ],
+      "presenter": {
+        "src": "assets/apple-welcome-home-event/avatar-master-cta.mp4",
+        "from": 0.4
+      },
+      "durationSec": 3.1,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.22,
+      "text": "Apple reportedly meant",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Apple"
+        },
+        {
+          "t": 0.34,
+          "text": "reportedly"
+        },
+        {
+          "t": 0.82,
+          "text": "meant"
+        }
+      ]
+    },
+    {
+      "start": 1.22,
+      "end": 1.64,
+      "text": "to put a",
+      "words": [
+        {
+          "t": 1.22,
+          "text": "to"
+        },
+        {
+          "t": 1.4,
+          "text": "put"
+        },
+        {
+          "t": 1.5,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 1.64,
+      "end": 2.48,
+      "text": "smart home hub",
+      "words": [
+        {
+          "t": 1.64,
+          "text": "smart"
+        },
+        {
+          "t": 1.94,
+          "text": "home"
+        },
+        {
+          "t": 2.22,
+          "text": "hub"
+        }
+      ]
+    },
+    {
+      "start": 2.48,
+      "end": 3.24,
+      "text": "in your house",
+      "words": [
+        {
+          "t": 2.48,
+          "text": "in"
+        },
+        {
+          "t": 2.7,
+          "text": "your"
+        },
+        {
+          "t": 2.84,
+          "text": "house"
+        }
+      ]
+    },
+    {
+      "start": 3.24,
+      "end": 4.5,
+      "text": "back in 2024.",
+      "words": [
+        {
+          "t": 3.24,
+          "text": "back"
+        },
+        {
+          "t": 3.64,
+          "text": "in"
+        },
+        {
+          "t": 3.84,
+          "text": "2024."
+        }
+      ]
+    },
+    {
+      "start": 5.44,
+      "end": 6.66,
+      "text": "Siri wasn't ready,",
+      "words": [
+        {
+          "t": 5.44,
+          "text": "Siri"
+        },
+        {
+          "t": 5.94,
+          "text": "wasn't"
+        },
+        {
+          "t": 6.36,
+          "text": "ready,"
+        }
+      ]
+    },
+    {
+      "start": 6.94,
+      "end": 8.08,
+      "text": "so the hub",
+      "words": [
+        {
+          "t": 6.94,
+          "text": "so"
+        },
+        {
+          "t": 7.74,
+          "text": "the"
+        },
+        {
+          "t": 7.9,
+          "text": "hub"
+        }
+      ]
+    },
+    {
+      "start": 8.08,
+      "end": 9.68,
+      "text": "waited. And next",
+      "words": [
+        {
+          "t": 8.08,
+          "text": "waited."
+        },
+        {
+          "t": 9.26,
+          "text": "And"
+        },
+        {
+          "t": 9.42,
+          "text": "next"
+        }
+      ]
+    },
+    {
+      "start": 9.68,
+      "end": 11.4,
+      "text": "Tuesday, it finally",
+      "words": [
+        {
+          "t": 9.68,
+          "text": "Tuesday,"
+        },
+        {
+          "t": 10.28,
+          "text": "it"
+        },
+        {
+          "t": 10.34,
+          "text": "finally"
+        }
+      ]
+    },
+    {
+      "start": 11.4,
+      "end": 13.2,
+      "text": "shows up. Apple",
+      "words": [
+        {
+          "t": 11.4,
+          "text": "shows"
+        },
+        {
+          "t": 11.72,
+          "text": "up."
+        },
+        {
+          "t": 12.96,
+          "text": "Apple"
+        }
+      ]
+    },
+    {
+      "start": 13.2,
+      "end": 14.04,
+      "text": "confirmed the date",
+      "words": [
+        {
+          "t": 13.2,
+          "text": "confirmed"
+        },
+        {
+          "t": 13.56,
+          "text": "the"
+        },
+        {
+          "t": 13.84,
+          "text": "date"
+        }
+      ]
+    },
+    {
+      "start": 14.04,
+      "end": 14.56,
+      "text": "with a teaser,",
+      "words": [
+        {
+          "t": 14.04,
+          "text": "with"
+        },
+        {
+          "t": 14.2,
+          "text": "a"
+        },
+        {
+          "t": 14.32,
+          "text": "teaser,"
+        }
+      ]
+    },
+    {
+      "start": 15.34,
+      "end": 16.2,
+      "text": "its old rainbow",
+      "words": [
+        {
+          "t": 15.34,
+          "text": "its"
+        },
+        {
+          "t": 15.48,
+          "text": "old"
+        },
+        {
+          "t": 15.88,
+          "text": "rainbow"
+        }
+      ]
+    },
+    {
+      "start": 16.2,
+      "end": 17.28,
+      "text": "logo stitched by",
+      "words": [
+        {
+          "t": 16.2,
+          "text": "logo"
+        },
+        {
+          "t": 16.62,
+          "text": "stitched"
+        },
+        {
+          "t": 17.0,
+          "text": "by"
+        }
+      ]
+    },
+    {
+      "start": 17.28,
+      "end": 18.66,
+      "text": "hand, then two",
+      "words": [
+        {
+          "t": 17.28,
+          "text": "hand,"
+        },
+        {
+          "t": 18.24,
+          "text": "then"
+        },
+        {
+          "t": 18.42,
+          "text": "two"
+        }
+      ]
+    },
+    {
+      "start": 18.66,
+      "end": 20.38,
+      "text": "words. Welcome home.. October",
+      "words": [
+        {
+          "t": 18.66,
+          "text": "words."
+        },
+        {
+          "t": 19.5,
+          "text": "Welcome"
+        },
+        {
+          "t": 20.14,
+          "text": "home.."
+        },
+        {
+          "t": 20.14,
+          "text": "October"
+        }
+      ]
+    },
+    {
+      "start": 20.38,
+      "end": 21.6,
+      "text": "13th, 9 AM",
+      "words": [
+        {
+          "t": 20.38,
+          "text": "13th,"
+        },
+        {
+          "t": 21.12,
+          "text": "9"
+        },
+        {
+          "t": 21.28,
+          "text": "AM"
+        }
+      ]
+    },
+    {
+      "start": 21.82,
+      "end": 22.68,
+      "text": "Eastern, in New York.",
+      "words": [
+        {
+          "t": 21.82,
+          "text": "Eastern,"
+        },
+        {
+          "t": 22.28,
+          "text": "in"
+        },
+        {
+          "t": 22.44,
+          "text": "New"
+        },
+        {
+          "t": 22.44,
+          "text": "York."
+        }
+      ]
+    },
+    {
+      "start": 23.4,
+      "end": 24.32,
+      "text": "Apple hasn't named",
+      "words": [
+        {
+          "t": 23.4,
+          "text": "Apple"
+        },
+        {
+          "t": 23.7,
+          "text": "hasn't"
+        },
+        {
+          "t": 24.06,
+          "text": "named"
+        }
+      ]
+    },
+    {
+      "start": 24.32,
+      "end": 25.16,
+      "text": "a single product.",
+      "words": [
+        {
+          "t": 24.32,
+          "text": "a"
+        },
+        {
+          "t": 24.44,
+          "text": "single"
+        },
+        {
+          "t": 24.68,
+          "text": "product."
+        }
+      ]
+    },
+    {
+      "start": 26.16,
+      "end": 27.52,
+      "text": "But Bloomberg's Mark",
+      "words": [
+        {
+          "t": 26.16,
+          "text": "But"
+        },
+        {
+          "t": 26.72,
+          "text": "Bloomberg's"
+        },
+        {
+          "t": 27.28,
+          "text": "Mark"
+        }
+      ]
+    },
+    {
+      "start": 27.52,
+      "end": 28.56,
+      "text": "Gurman, who reported",
+      "words": [
+        {
+          "t": 27.52,
+          "text": "Gurman,"
+        },
+        {
+          "t": 28.1,
+          "text": "who"
+        },
+        {
+          "t": 28.22,
+          "text": "reported"
+        }
+      ]
+    },
+    {
+      "start": 28.56,
+      "end": 29.68,
+      "text": "the date first,",
+      "words": [
+        {
+          "t": 28.56,
+          "text": "the"
+        },
+        {
+          "t": 28.72,
+          "text": "date"
+        },
+        {
+          "t": 28.92,
+          "text": "first,"
+        }
+      ]
+    },
+    {
+      "start": 30.48,
+      "end": 31.32,
+      "text": "says three are",
+      "words": [
+        {
+          "t": 30.48,
+          "text": "says"
+        },
+        {
+          "t": 30.82,
+          "text": "three"
+        },
+        {
+          "t": 31.18,
+          "text": "are"
+        }
+      ]
+    },
+    {
+      "start": 31.32,
+      "end": 32.88,
+      "text": "coming. He says",
+      "words": [
+        {
+          "t": 31.32,
+          "text": "coming."
+        },
+        {
+          "t": 32.54,
+          "text": "He"
+        },
+        {
+          "t": 32.68,
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "start": 32.88,
+      "end": 33.36,
+      "text": "the hub is",
+      "words": [
+        {
+          "t": 32.88,
+          "text": "the"
+        },
+        {
+          "t": 33.04,
+          "text": "hub"
+        },
+        {
+          "t": 33.24,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 33.36,
+      "end": 34.16,
+      "text": "a square screen",
+      "words": [
+        {
+          "t": 33.36,
+          "text": "a"
+        },
+        {
+          "t": 33.5,
+          "text": "square"
+        },
+        {
+          "t": 33.72,
+          "text": "screen"
+        }
+      ]
+    },
+    {
+      "start": 34.16,
+      "end": 35.56,
+      "text": "around 6 inches on",
+      "words": [
+        {
+          "t": 34.16,
+          "text": "around"
+        },
+        {
+          "t": 34.52,
+          "text": "6"
+        },
+        {
+          "t": 35.18,
+          "text": "inches"
+        },
+        {
+          "t": 35.18,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 35.56,
+      "end": 36.24,
+      "text": "a speaker base",
+      "words": [
+        {
+          "t": 35.56,
+          "text": "a"
+        },
+        {
+          "t": 35.66,
+          "text": "speaker"
+        },
+        {
+          "t": 35.88,
+          "text": "base"
+        }
+      ]
+    },
+    {
+      "start": 36.24,
+      "end": 36.88,
+      "text": "that looks a",
+      "words": [
+        {
+          "t": 36.24,
+          "text": "that"
+        },
+        {
+          "t": 36.46,
+          "text": "looks"
+        },
+        {
+          "t": 36.68,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 36.88,
+      "end": 37.46,
+      "text": "lot like the",
+      "words": [
+        {
+          "t": 36.88,
+          "text": "lot"
+        },
+        {
+          "t": 37.08,
+          "text": "like"
+        },
+        {
+          "t": 37.32,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 37.46,
+      "end": 38.7,
+      "text": "old iMac G4.",
+      "words": [
+        {
+          "t": 37.46,
+          "text": "old"
+        },
+        {
+          "t": 37.76,
+          "text": "iMac"
+        },
+        {
+          "t": 38.14,
+          "text": "G4."
+        }
+      ]
+    },
+    {
+      "start": 39.56,
+      "end": 40.08,
+      "text": "It runs your",
+      "words": [
+        {
+          "t": 39.56,
+          "text": "It"
+        },
+        {
+          "t": 39.7,
+          "text": "runs"
+        },
+        {
+          "t": 39.92,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 40.08,
+      "end": 41.14,
+      "text": "smart home, makes",
+      "words": [
+        {
+          "t": 40.08,
+          "text": "smart"
+        },
+        {
+          "t": 40.32,
+          "text": "home,"
+        },
+        {
+          "t": 40.92,
+          "text": "makes"
+        }
+      ]
+    },
+    {
+      "start": 41.14,
+      "end": 42.28,
+      "text": "FaceTime calls and",
+      "words": [
+        {
+          "t": 41.14,
+          "text": "FaceTime"
+        },
+        {
+          "t": 41.58,
+          "text": "calls"
+        },
+        {
+          "t": 41.9,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 42.28,
+      "end": 43.04,
+      "text": "can tell who's",
+      "words": [
+        {
+          "t": 42.28,
+          "text": "can"
+        },
+        {
+          "t": 42.42,
+          "text": "tell"
+        },
+        {
+          "t": 42.68,
+          "text": "who's"
+        }
+      ]
+    },
+    {
+      "start": 43.04,
+      "end": 43.92,
+      "text": "talking by voice",
+      "words": [
+        {
+          "t": 43.04,
+          "text": "talking"
+        },
+        {
+          "t": 43.24,
+          "text": "by"
+        },
+        {
+          "t": 43.5,
+          "text": "voice"
+        }
+      ]
+    },
+    {
+      "start": 43.92,
+      "end": 45.5,
+      "text": "or face. You",
+      "words": [
+        {
+          "t": 43.92,
+          "text": "or"
+        },
+        {
+          "t": 44.18,
+          "text": "face."
+        },
+        {
+          "t": 45.34,
+          "text": "You"
+        }
+      ]
+    },
+    {
+      "start": 45.5,
+      "end": 46.3,
+      "text": "might already own",
+      "words": [
+        {
+          "t": 45.5,
+          "text": "might"
+        },
+        {
+          "t": 45.64,
+          "text": "already"
+        },
+        {
+          "t": 46.02,
+          "text": "own"
+        }
+      ]
+    },
+    {
+      "start": 46.3,
+      "end": 46.86,
+      "text": "the other two.",
+      "words": [
+        {
+          "t": 46.3,
+          "text": "the"
+        },
+        {
+          "t": 46.46,
+          "text": "other"
+        },
+        {
+          "t": 46.62,
+          "text": "two."
+        }
+      ]
+    },
+    {
+      "start": 47.52,
+      "end": 48.54,
+      "text": "Apple TV 4K",
+      "words": [
+        {
+          "t": 47.52,
+          "text": "Apple"
+        },
+        {
+          "t": 47.82,
+          "text": "TV"
+        },
+        {
+          "t": 48.06,
+          "text": "4K"
+        }
+      ]
+    },
+    {
+      "start": 48.54,
+      "end": 49.58,
+      "text": "hasn't changed since",
+      "words": [
+        {
+          "t": 48.54,
+          "text": "hasn't"
+        },
+        {
+          "t": 48.92,
+          "text": "changed"
+        },
+        {
+          "t": 49.26,
+          "text": "since"
+        }
+      ]
+    },
+    {
+      "start": 49.58,
+      "end": 51.34,
+      "text": "2022 and HomePod mini",
+      "words": [
+        {
+          "t": 49.58,
+          "text": "2022"
+        },
+        {
+          "t": 50.24,
+          "text": "and"
+        },
+        {
+          "t": 50.72,
+          "text": "HomePod"
+        },
+        {
+          "t": 50.72,
+          "text": "mini"
+        }
+      ]
+    },
+    {
+      "start": 51.34,
+      "end": 53.34,
+      "text": "since 2020. Both",
+      "words": [
+        {
+          "t": 51.34,
+          "text": "since"
+        },
+        {
+          "t": 51.7,
+          "text": "2020."
+        },
+        {
+          "t": 53.06,
+          "text": "Both"
+        }
+      ]
+    },
+    {
+      "start": 53.34,
+      "end": 54.62,
+      "text": "reportedly get faster",
+      "words": [
+        {
+          "t": 53.34,
+          "text": "reportedly"
+        },
+        {
+          "t": 53.9,
+          "text": "get"
+        },
+        {
+          "t": 54.22,
+          "text": "faster"
+        }
+      ]
+    },
+    {
+      "start": 54.62,
+      "end": 55.4,
+      "text": "chips and the",
+      "words": [
+        {
+          "t": 54.62,
+          "text": "chips"
+        },
+        {
+          "t": 54.94,
+          "text": "and"
+        },
+        {
+          "t": 55.28,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 55.4,
+      "end": 56.24,
+      "text": "mini adds pink",
+      "words": [
+        {
+          "t": 55.4,
+          "text": "mini"
+        },
+        {
+          "t": 55.58,
+          "text": "adds"
+        },
+        {
+          "t": 55.92,
+          "text": "pink"
+        }
+      ]
+    },
+    {
+      "start": 56.24,
+      "end": 57.88,
+      "text": "and green. All",
+      "words": [
+        {
+          "t": 56.24,
+          "text": "and"
+        },
+        {
+          "t": 56.46,
+          "text": "green."
+        },
+        {
+          "t": 57.7,
+          "text": "All"
+        }
+      ]
+    },
+    {
+      "start": 57.88,
+      "end": 58.7,
+      "text": "three arrive together",
+      "words": [
+        {
+          "t": 57.88,
+          "text": "three"
+        },
+        {
+          "t": 58.08,
+          "text": "arrive"
+        },
+        {
+          "t": 58.34,
+          "text": "together"
+        }
+      ]
+    },
+    {
+      "start": 58.7,
+      "end": 59.38,
+      "text": "for the same",
+      "words": [
+        {
+          "t": 58.7,
+          "text": "for"
+        },
+        {
+          "t": 58.98,
+          "text": "the"
+        },
+        {
+          "t": 59.08,
+          "text": "same"
+        }
+      ]
+    },
+    {
+      "start": 59.38,
+      "end": 60.06,
+      "text": "reason the hub",
+      "words": [
+        {
+          "t": 59.38,
+          "text": "reason"
+        },
+        {
+          "t": 59.72,
+          "text": "the"
+        },
+        {
+          "t": 59.9,
+          "text": "hub"
+        }
+      ]
+    },
+    {
+      "start": 60.06,
+      "end": 61.56,
+      "text": "was late. Gurman",
+      "words": [
+        {
+          "t": 60.06,
+          "text": "was"
+        },
+        {
+          "t": 60.24,
+          "text": "late."
+        },
+        {
+          "t": 61.28,
+          "text": "Gurman"
+        }
+      ]
+    },
+    {
+      "start": 61.56,
+      "end": 62.48,
+      "text": "says each one",
+      "words": [
+        {
+          "t": 61.56,
+          "text": "says"
+        },
+        {
+          "t": 61.84,
+          "text": "each"
+        },
+        {
+          "t": 62.24,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 62.48,
+      "end": 63.24,
+      "text": "is built around",
+      "words": [
+        {
+          "t": 62.48,
+          "text": "is"
+        },
+        {
+          "t": 62.66,
+          "text": "built"
+        },
+        {
+          "t": 62.92,
+          "text": "around"
+        }
+      ]
+    },
+    {
+      "start": 63.24,
+      "end": 64.36,
+      "text": "Siri AI, the",
+      "words": [
+        {
+          "t": 63.24,
+          "text": "Siri"
+        },
+        {
+          "t": 63.56,
+          "text": "AI,"
+        },
+        {
+          "t": 64.32,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 64.36,
+      "end": 65.26,
+      "text": "new Siri Apple",
+      "words": [
+        {
+          "t": 64.36,
+          "text": "new"
+        },
+        {
+          "t": 64.56,
+          "text": "Siri"
+        },
+        {
+          "t": 64.86,
+          "text": "Apple"
+        }
+      ]
+    },
+    {
+      "start": 65.26,
+      "end": 65.98,
+      "text": "showed in June.",
+      "words": [
+        {
+          "t": 65.26,
+          "text": "showed"
+        },
+        {
+          "t": 65.54,
+          "text": "in"
+        },
+        {
+          "t": 65.74,
+          "text": "June."
+        }
+      ]
+    },
+    {
+      "start": 67.04,
+      "end": 67.46,
+      "text": "So if an",
+      "words": [
+        {
+          "t": 67.04,
+          "text": "So"
+        },
+        {
+          "t": 67.18,
+          "text": "if"
+        },
+        {
+          "t": 67.34,
+          "text": "an"
+        }
+      ]
+    },
+    {
+      "start": 67.46,
+      "end": 68.32,
+      "text": "Apple TV or",
+      "words": [
+        {
+          "t": 67.46,
+          "text": "Apple"
+        },
+        {
+          "t": 67.68,
+          "text": "TV"
+        },
+        {
+          "t": 67.98,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 68.32,
+      "end": 69.26,
+      "text": "a HomePod mini is",
+      "words": [
+        {
+          "t": 68.32,
+          "text": "a"
+        },
+        {
+          "t": 68.42,
+          "text": "HomePod"
+        },
+        {
+          "t": 69.0,
+          "text": "mini"
+        },
+        {
+          "t": 69.0,
+          "text": "is"
+        }
+      ]
+    },
+    {
+      "start": 69.26,
+      "end": 69.76,
+      "text": "sitting in your",
+      "words": [
+        {
+          "t": 69.26,
+          "text": "sitting"
+        },
+        {
+          "t": 69.48,
+          "text": "in"
+        },
+        {
+          "t": 69.64,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 69.76,
+      "end": 71.38,
+      "text": "cart, hold off",
+      "words": [
+        {
+          "t": 69.76,
+          "text": "cart,"
+        },
+        {
+          "t": 70.92,
+          "text": "hold"
+        },
+        {
+          "t": 71.14,
+          "text": "off"
+        }
+      ]
+    },
+    {
+      "start": 71.38,
+      "end": 73.2,
+      "text": "until Tuesday. Follow",
+      "words": [
+        {
+          "t": 71.38,
+          "text": "until"
+        },
+        {
+          "t": 71.66,
+          "text": "Tuesday."
+        },
+        {
+          "t": 72.9,
+          "text": "Follow"
+        }
+      ]
+    },
+    {
+      "start": 73.2,
+      "end": 73.92,
+      "text": "and on Tuesday,",
+      "words": [
+        {
+          "t": 73.2,
+          "text": "and"
+        },
+        {
+          "t": 73.5,
+          "text": "on"
+        },
+        {
+          "t": 73.62,
+          "text": "Tuesday,"
+        }
+      ]
+    },
+    {
+      "start": 74.16,
+      "end": 74.68,
+      "text": "you'll see what",
+      "words": [
+        {
+          "t": 74.16,
+          "text": "you'll"
+        },
+        {
+          "t": 74.3,
+          "text": "see"
+        },
+        {
+          "t": 74.5,
+          "text": "what"
+        }
+      ]
+    },
+    {
+      "start": 74.68,
+      "end": 75.78,
+      "text": "Apple actually showed.",
+      "words": [
+        {
+          "t": 74.68,
+          "text": "Apple"
+        },
+        {
+          "t": 75.04,
+          "text": "actually"
+        },
+        {
+          "t": 75.4,
+          "text": "showed."
+        }
+      ]
+    }
+  ],
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 31.54,
+        "vol": 0.055
+      },
+      {
+        "t": 31.88,
+        "vol": 0.15
+      },
+      {
+        "t": 32.36,
+        "vol": 0.15
+      },
+      {
+        "t": 32.54,
+        "vol": 0.055
+      },
+      {
+        "t": 65.98,
+        "vol": 0.055
+      },
+      {
+        "t": 66.32,
+        "vol": 0.15
+      },
+      {
+        "t": 66.86,
+        "vol": 0.15
+      },
+      {
+        "t": 67.04,
+        "vol": 0.055
+      },
+      {
+        "t": 75.78,
+        "vol": 0.055
+      },
+      {
+        "t": 76.0,
+        "vol": 0.02
+      }
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+  },
+  "format": "news",
+  "showCredits": false,
+  "allowLong": false,
+  "script": "Apple reportedly meant to put a smart home hub in your house back in twenty twenty-four. Siri wasn't ready, so the hub waited, and next Tuesday it finally shows up.\n\nApple confirmed the date with a teaser: its old rainbow logo, stitched by hand, then two words. Welcome home. October thirteenth, nine a.m. Eastern, in New York.\n\nApple hasn't named a single product. But Bloomberg's Mark Gurman, who reported the date first, says three are coming.\n\nHe says the hub is a square screen, around six inches, on a speaker base that looks a lot like the old iMac G4. It runs your smart home, makes FaceTime calls, and can tell who's talking by voice or face.\n\nYou might already own the other two. Apple TV 4K hasn't changed since twenty twenty-two, and HomePod mini since twenty twenty. Both reportedly get faster chips, and the mini adds pink and green.\n\nAll three arrive together for the same reason the hub was late. Gurman says each one is built around Siri AI, the new Siri Apple showed in June.\n\nSo if an Apple TV or a HomePod mini is sitting in your cart, hold off until Tuesday.\n\nFollow, and on Tuesday you'll see what Apple actually showed.",
+  "approval": {
+    "sha256": "b1130a78df0c7ee80ea95711f6138497fd843649d59e48e5917d6f348be7a11a",
+    "approvedAt": "2026-10-09T04:53:20+00:00",
+    "words": 206,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}
