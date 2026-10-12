@@ -9754,3 +9754,35 @@ step, eyebrow = location; paywall-row ring + Free/Pro rows for the tier limit; m
 with an "Even apps with no Cast button" line; spotlight end card (app icon + listing name) beside
 the presenter. Next app how-to: do not open on the result-in-hand shot again; do not use the
 paywall-as-dead-end loop twice in a row.
+
+## 2026-10-12 — chatgpt-try-on (news, animated bookends, 62s)
+
+- **RAW NOTE 1 — the "global launch" was one outlet's word.** TechCrunch wrote "global launch"; OpenAI's
+  release note and help page name no regions or plans, and the only first-hand test was in Canada.
+  ROOT CAUSE: an outlet paraphrasing a briefing reads like a fact. RULE: a scope word (global, everyone,
+  free for all) needs the vendor's own page; otherwise it is cut, and the TechCrunch body text that says
+  it is cropped off the on-screen headline receipt.
+- **RAW NOTE 2 — the twist was in the vendor's own caveats.** "Doesn't guarantee fit or size" and "your
+  selfie is saved" both came from OpenAI's help page, not coverage. Same lesson as openai-image-ads note 1:
+  read help.openai.com (Playwright renders it; WebFetch 403s) before writing the angle.
+- **RAW NOTE 3 — a tall focus rect in a wide screen box barely zooms.** The box is landscape, so a
+  1208x1450 rect on a portrait phone is width-limited and the phone stays small. FIX: cut the rect to the
+  box's aspect (1208x845) — frame 0 then fills with the subject. RULE: focus rects on portrait phones match
+  the box aspect, not the region's.
+- **RAW NOTE 4 — the caption word-entry stagger tripped [PLATFORM ZONE] for one frame.** "wearing" slides
+  up from below and touched 80.6% at its first frame, settling at 77%. FIX: scene captionBottom 422 -> 445
+  on the presenter hook. Ring edges again ran through a text line ("14-day return") — re-cut into the gap.
+- **RAW NOTE 5 — caption_corrections keys with trailing punctuation double it** ("search," -> "Search,,",
+  "reference photos." -> "..")  while "store." -> "store?" and "images." -> "Images." work. Use bare-word keys.
+- ElevenLabs v3: 187 words in 54.3s (3.44 w/s, ~1,078 credits), vo_pad to 62.0s (3.02 w/s — padded to 62
+  not the suggested 73, which would have added 19s of silence). HeyGen: two bookend slices, 9.35s + 5.47s,
+  digital twin, hands empty. Rehearsal skipped (chatterbox missing, per doctor).
+
+### Treatments used (do not repeat for the same kind of information)
+Presenter circle over the vendor's RESULT image (the feature's output, not its button) as the hook; the
+selfie camera crossfading to the result on "picture"; the same result image returning under the loop's
+payoff question ("Does it fit"); vendor help-page paragraphs as receipts for both the feature and its
+caveat; a TechCrunch headline over date/where/made-with rows; a competitor's headline for "not first";
+settings path as three steps; Favorites sheet crossfading to the Library.
+Next feature-launch reel: do not open on the vendor's result still again; do not reuse the result-under-
+the-question callback.

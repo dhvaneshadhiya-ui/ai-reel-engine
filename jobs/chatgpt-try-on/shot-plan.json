@@ -1,7 +1,759 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
-  "format": "news",
-  "shots": [],
-  "music": true
+ "emphasis": [
+  "before",
+  "Try on",
+  "selfie",
+  "screenshot",
+  "October",
+  "Google",
+  "guarantee",
+  "size chart",
+  "saved",
+  "Reference photos",
+  "Favorites"
+ ],
+ "caption_corrections": {
+  "try-on button": "Try on button",
+  "images.": "Images.",
+  "store.": "store?",
+  "settings": "Settings",
+  "personalization": "Personalization",
+  "favorites": "Favorites",
+  "search": "Search",
+  "reference photos": "Reference photos",
+  "1st": "first"
+ },
+ "format": "news",
+ "music": true,
+ "facePlan": "bookends",
+ "audio": "assets/chatgpt-try-on/vo.mp3",
+ "allowLong": false,
+ "showCredits": false,
+ "shots": [
+  {
+   "start_phrase": "ChatGPT can now show",
+   "line": "ChatGPT can now show you wearing clothes you haven't bought yet. All it needs is one selfie. But it won't answer the question you'd ask right before paying.",
+   "asset_id": "phone-result",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "ChatGPT \u00b7 image: OpenAI",
+    "headline": "See it [[on you]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/chatgpt-try-on/phone-result.png",
+      "width": 1208,
+      "height": 2568,
+      "device": false,
+      "h": 640
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "One question it won't answer"
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "ChatGPT",
+      "rect": [
+       0,
+       330,
+       1208,
+       845
+      ],
+      "ring": false,
+      "instant": true
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "wearing"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "selfie",
+      "rect": [
+       0,
+       0,
+       1208,
+       845
+      ]
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "answer"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "paying",
+      "rect": [
+       0,
+       1660,
+       1208,
+       620
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "needs",
+      "rect": [
+       0,
+       0,
+       1208,
+       760
+      ]
+     }
+    ],
+    "presenter": {
+     "src": "assets/chatgpt-try-on/avatar-master-hook.mp4",
+     "from": 0
+    },
+    "captionBottom": 445
+   },
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Open a clothing or",
+   "line": "Open a clothing or accessory listing in ChatGPT and you'll find a new Try on button.",
+   "asset_id": "phone-listing",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "ChatGPT shopping \u00b7 image: OpenAI",
+    "headline": "A new [[Try on]] button",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/chatgpt-try-on/phone-listing.png",
+      "width": 1208,
+      "height": 2568,
+      "device": false,
+      "h": 860
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "listing",
+      "rect": [
+       0,
+       1400,
+       1208,
+       700
+      ],
+      "ring": false
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Try"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "button",
+      "rect": [
+       0,
+       2220,
+       1208,
+       320
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "ChatGPT",
+      "rect": [
+       0,
+       0,
+       1208,
+       1440
+      ],
+      "ring": false
+     }
+    ]
+   },
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Tap it, take or",
+   "line": "Tap it, take or upload a selfie, and ChatGPT makes a picture of you wearing it.",
+   "asset_id": "phone-selfie",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "How it works \u00b7 image: OpenAI",
+    "headline": "One [[selfie]] is enough",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/chatgpt-try-on/phone-selfie.png",
+      "width": 1200,
+      "height": 2568,
+      "device": false,
+      "h": 860
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "selfie"
+     },
+     {
+      "do": "state",
+      "target": "s",
+      "on": "picture",
+      "src": "assets/chatgpt-try-on/phone-result.png"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "upload",
+      "rect": [
+       0,
+       1060,
+       1200,
+       1060
+      ]
+     }
+    ]
+   },
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Spotted something in another",
+   "line": "Spotted something in another store? Upload a screenshot and ask ChatGPT to put it on you.",
+   "asset_id": "help-fit",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "OpenAI help page",
+    "headline": "Works with a [[screenshot]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/chatgpt-try-on/help-fit.png",
+      "width": 1080,
+      "height": 800,
+      "device": false,
+      "h": 640
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Upload it in a chat, ask for a try-on"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "screenshot"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "Upload",
+      "rect": [
+       0,
+       0,
+       1080,
+       330
+      ]
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "ask"
+     }
+    ]
+   },
+   "tier": "official"
+  },
+  {
+   "start_phrase": "OpenAI added it on",
+   "line": "OpenAI added it on October first, on mobile and web, and it's made with ChatGPT Images.",
+   "asset_id": "tc-headline",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The launch",
+    "headline": "Out since [[October 1]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/chatgpt-try-on/tc-headline.png",
+      "width": 1080,
+      "height": 720,
+      "device": false,
+      "h": 420
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Launched",
+        "v": "October 1, 2026",
+        "tone": "plain"
+       },
+       {
+        "k": "Where",
+        "v": "Mobile and web",
+        "tone": "free"
+       },
+       {
+        "k": "Made with",
+        "v": "ChatGPT Images",
+        "tone": "plain"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "October"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "October"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "mobile"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "made"
+     },
+     {
+      "do": "highlight",
+      "target": "r.2",
+      "on": "Images"
+     }
+    ]
+   },
+   "tier": "reliable"
+  },
+  {
+   "start_phrase": "Google already does this",
+   "line": "Google already does this in Search, so ChatGPT is catching up on shopping.",
+   "asset_id": "google-headline",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Not the first",
+    "headline": "Google got there [[first]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/chatgpt-try-on/google-headline.png",
+      "width": 1080,
+      "height": 780,
+      "device": false,
+      "h": 700
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "ChatGPT is catching up on shopping"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "already"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "catching"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "Search",
+      "rect": [
+       0,
+       150,
+       1080,
+       330
+      ]
+     }
+    ]
+   },
+   "tier": "reliable"
+  },
+  {
+   "start_phrase": "And that question is:",
+   "line": "And that question is: does it fit?",
+   "asset_id": "phone-result",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The question",
+    "headline": "Does it [[fit]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/chatgpt-try-on/phone-result.png",
+      "width": 1208,
+      "height": 2568,
+      "device": false,
+      "h": 860
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "And",
+      "rect": [
+       0,
+       0,
+       1208,
+       1440
+      ],
+      "ring": false,
+      "instant": true
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "question",
+      "rect": [
+       0,
+       620,
+       1208,
+       820
+      ],
+      "ring": false
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "fit"
+     }
+    ]
+   },
+   "tier": "official"
+  },
+  {
+   "start_phrase": "OpenAI says try-on doesn't",
+   "line": "OpenAI says try-on doesn't guarantee fit or size",
+   "asset_id": "help-fit",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "OpenAI help page",
+    "headline": "No fit or size [[guarantee]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/chatgpt-try-on/help-fit.png",
+      "width": 1080,
+      "height": 800,
+      "device": false,
+      "h": 640
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "says",
+      "rect": [
+       0,
+       345,
+       1080,
+       455
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "guarantee"
+     }
+    ]
+   },
+   "tier": "official"
+  },
+  {
+   "start_phrase": "so before you check",
+   "line": "so before you check out, you still need the size chart and the return policy.",
+   "asset_id": "phone-listing",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Before you check out",
+    "headline": "Check the [[return policy]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/chatgpt-try-on/phone-listing.png",
+      "width": 1208,
+      "height": 2568,
+      "device": false,
+      "h": 800
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "size chart",
+      "rect": [
+       0,
+       1680,
+       1208,
+       330
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "return",
+      "rect": [
+       0,
+       2040,
+       1208,
+       250
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "return",
+      "rect": [
+       0,
+       2040,
+       1208,
+       250
+      ]
+     }
+    ]
+   },
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Your selfie, meanwhile, is",
+   "line": "Your selfie, meanwhile, is saved for your next try-on.",
+   "asset_id": "help-photos",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "OpenAI help page",
+    "headline": "Your selfie is [[saved]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/chatgpt-try-on/help-photos.png",
+      "width": 1080,
+      "height": 1120,
+      "device": false,
+      "h": 760
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "saved"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "saved",
+      "rect": [
+       0,
+       150,
+       1080,
+       370
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "next",
+      "rect": [
+       0,
+       520,
+       1080,
+       560
+      ]
+     }
+    ]
+   },
+   "tier": "official"
+  },
+  {
+   "start_phrase": "To remove it, go",
+   "line": "To remove it, go to Settings, Personalization, Reference photos.",
+   "asset_id": "help-photos",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "To delete it",
+    "headline": "Where to [[remove]] it",
+    "blocks": [
+     {
+      "id": "p",
+      "kind": "steps",
+      "steps": [
+       "Settings",
+       "Personalization",
+       "Reference photos"
+      ],
+      "h": 760
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "remove"
+     },
+     {
+      "do": "show",
+      "target": "p.0",
+      "on": "Settings"
+     },
+     {
+      "do": "show",
+      "target": "p.1",
+      "on": "Personalization"
+     },
+     {
+      "do": "show",
+      "target": "p.2",
+      "on": "Reference"
+     }
+    ]
+   },
+   "tier": "official"
+  },
+  {
+   "start_phrase": "If you're not ready",
+   "line": "If you're not ready to buy yet, save the item to Favorites and come back to it later.",
+   "asset_id": "fav-addto",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Also new \u00b7 image: OpenAI",
+    "headline": "Save it to [[Favorites]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/chatgpt-try-on/fav-addto.png",
+      "width": 1204,
+      "height": 2496,
+      "device": false,
+      "h": 860
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "save",
+      "rect": [
+       0,
+       1150,
+       1204,
+       420
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Favorites"
+     },
+     {
+      "do": "state",
+      "target": "s",
+      "on": "come",
+      "src": "assets/chatgpt-try-on/fav-library.png"
+     }
+    ]
+   },
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Selfie or size chart",
+   "line": "Selfie or size chart: which one gets the final say on your next order? Comment below.",
+   "asset_id": "phone-result",
+   "scene": {
+    "type": "slide",
+    "cta": true,
+    "hideCaptions": true,
+    "headlineSize": "xl",
+    "headline": "Selfie or [[size chart]]?",
+    "blocks": [
+     {
+      "id": "q",
+      "kind": "text",
+      "text": "Tell us in the comments"
+     },
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/chatgpt-try-on/phone-result.png",
+      "width": 1208,
+      "height": 2568,
+      "device": false,
+      "h": 620
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "s",
+      "on": "Selfie"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "chart"
+     },
+     {
+      "do": "show",
+      "target": "q",
+      "on": "Comment"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "final",
+      "rect": [
+       0,
+       0,
+       1208,
+       1440
+      ],
+      "ring": false
+     }
+    ],
+    "presenter": {
+     "src": "assets/chatgpt-try-on/avatar-master-cta.mp4",
+     "from": 0.27
+    }
+   },
+   "tier": "official"
+  }
+ ]
 }
