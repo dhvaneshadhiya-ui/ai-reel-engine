@@ -1,0 +1,29 @@
+{
+  "slug": "chatgpt-try-on",
+  "topic": "ChatGPT adds virtual try-on: see clothes and accessories on yourself before you buy",
+  "details": "news; launched early Oct 2026 globally, mobile + web; Try On button in shopping results, upload selfie/full-body photo; uses ChatGPT Images; also Favorites; reference photos saved; AI preview can't confirm fit",
+  "subject": "ChatGPT adds virtual try-on: see clothes and accessories on yourself before you buy",
+  "audience": "online clothes shoppers and ChatGPT users who buy fashion on their phone",
+  "platform": "both",
+  "goal": "education",
+  "core_value": "how the new try-on works, and that it shows the look but not the fit, and saves your selfie",
+  "desired_action": "comment: would you trust a selfie over a size chart",
+  "reveal_target": "none",
+  "cta_keyword": "",
+  "target_duration": "64s",
+  "tone": "calm reporting; the catches are OpenAI's own words, not alarm",
+  "source_policy": "official-preferred",
+  "footage_constraints": "no official demo video. OpenAI official stills (try-on flow, Favorites) via TechCrunch; mobile captures of OpenAI help pages and TechCrunch. ChatGPT is not on the iOS Simulator. Optional: user's own screen recording of the feature.",
+  "credit_instructions": "off (default)",
+  "deliverables": [
+    "script",
+    "shot plan",
+    "packaging"
+  ],
+  "style": "editorial",
+  "target_seconds": 64,
+  "music": true,
+  "created_at": "2026-10-12T09:36:52.869548+00:00",
+  "status": "initialized",
+  "facePlan": "bookends"
+}

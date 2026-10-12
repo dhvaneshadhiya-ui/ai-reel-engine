@@ -1,0 +1,15 @@
+{
+  "script_sha256": "7784553a5ef25b67126784d4a57a9edfc753cf71281e1f6c7396b16cef726fa5",
+  "structure_sha256": "007170d6ba233cf176919076d10d03c3b244193d2ae02ce9b1ce2edd46dc0394",
+  "findings": [
+    "  BRIDGES 2/15 sentences (13%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  NO OPEN LOOP \u2014 nothing in the opening third points forward. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "NUMBERS: one every 8.0 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [
+    "the most surprising claim (SURPRISE 85: 'Your reference photo is saved for future try-ons; replace or') is spoken in the last 40% of the script \u2014 consider leading with it."
+  ],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-10-12T09:43:19+00:00"
+}
