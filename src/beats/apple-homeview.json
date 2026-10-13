@@ -1,0 +1,2082 @@
+{
+  "id": "apple-homeview",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/apple-homeview/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "HomeView",
+    "$299",
+    "A18",
+    "Siri AI",
+    "beta",
+    "front door",
+    "nine",
+    "FaceTime",
+    "App Store",
+    "November",
+    "EU",
+    "square",
+    "people"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "eyebrow": "Apple \u00b7 video: Apple",
+      "headline": "Apple's new [[smart display]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/apple-homeview/hv-photo.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 800,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "display",
+          "at": 2.14
+        }
+      ],
+      "presenter": {
+        "src": "assets/apple-homeview/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "durationSec": 5.32,
+      "assetId": "hv-photo",
+      "claimId": "hv-photo",
+      "covers": "Today Apple finally unveiled",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.11,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "HomeView \u00b7 image: Apple",
+      "headline": "HomeView: [[$299]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-homeview/homeview.jpg",
+          "width": 2520,
+          "height": 1224,
+          "device": false,
+          "h": 420
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Missing one thing almost every Apple screen has"
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "called",
+          "rect": [
+            0,
+            0,
+            2520,
+            1224
+          ],
+          "ring": false,
+          "at": 0.24
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "HomeView",
+          "rect": [
+            840,
+            0,
+            840,
+            1224
+          ],
+          "ring": false,
+          "at": 0.42
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "costs",
+          "at": 1.26
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "missing",
+          "at": 3.42
+        }
+      ],
+      "durationSec": 6.92,
+      "assetId": "homeview",
+      "claimId": "homeview",
+      "covers": "It's called HomeView",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.23,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Tabletop \u00b7 image: Apple",
+      "headline": "A [[7-inch]] square screen",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-homeview/entertainment_apps.jpg",
+          "width": 1732,
+          "height": 1212,
+          "device": false,
+          "h": 640
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "square",
+          "at": 1.34
+        },
+        {
+          "do": "state",
+          "target": "s",
+          "on": "wall",
+          "src": "assets/apple-homeview/hv-wall.jpg",
+          "at": 4.72
+        }
+      ],
+      "durationSec": 5.66,
+      "assetId": "entertainment_apps",
+      "claimId": "entertainment_apps",
+      "covers": "HomeView is a",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.31,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx/Click.MP3",
+          "at": 4.79,
+          "vol": 0.251
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Two versions \u00b7 Apple",
+      "headline": "Same [[price]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-homeview/hv-wall.jpg",
+          "width": 1260,
+          "height": 1224,
+          "device": false,
+          "h": 380
+        },
+        {
+          "id": "h",
+          "kind": "hero",
+          "side": {
+            "name": "Tabletop or wall-mounted",
+            "price": "$299",
+            "tone": "free",
+            "note": "Same price for both"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "cost",
+          "at": 0.88
+        }
+      ],
+      "durationSec": 2.34,
+      "assetId": "hv-wall",
+      "claimId": "hv-wall",
+      "covers": "and both versions cost",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.85,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Inside \u00b7 Apple",
+      "headline": "Runs on [[A18]]",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Chip",
+              "v": "A18",
+              "tone": "free"
+            },
+            {
+              "k": "Assistant",
+              "v": "Siri AI (beta)",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "runs",
+          "at": 0.18
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "A18",
+          "at": 0.64
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "which",
+          "at": 1.3
+        }
+      ],
+      "durationSec": 2.1,
+      "assetId": "homeview",
+      "claimId": "homeview",
+      "covers": "It runs on the",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.61,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Siri AI \u00b7 video: Apple",
+      "headline": "Siri AI, [[still in beta]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/apple-homeview/hv-siri.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 800,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "beta",
+          "at": 4.3
+        }
+      ],
+      "durationSec": 4.5,
+      "assetId": "hv-siri",
+      "claimId": "hv-siri",
+      "covers": "powers Siri AI",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 4.27,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Face recognition \u00b7 image: Apple",
+      "headline": "Knows [[6 people]] by face",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-homeview/hv-faces.jpg",
+          "width": 1760,
+          "height": 1224,
+          "device": false,
+          "h": 640
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "family",
+          "rect": [
+            1100,
+            0,
+            660,
+            700
+          ],
+          "ring": false,
+          "at": 1.6
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "people",
+          "at": 4.38
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "home",
+          "rect": [
+            80,
+            280,
+            1100,
+            944
+          ],
+          "at": 6.92
+        }
+      ],
+      "durationSec": 7.94,
+      "assetId": "hv-faces",
+      "claimId": "hv-faces",
+      "covers": "And it can tell",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 1.2,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 4.35,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 6.52,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Smart home \u00b7 image: Apple",
+      "headline": "Lock the [[front door]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-homeview/hv-wall.jpg",
+          "width": 1260,
+          "height": 1224,
+          "device": false,
+          "h": 780
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "door",
+          "at": 1.64
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "lock",
+          "rect": [
+            400,
+            700,
+            460,
+            360
+          ],
+          "at": 1.06
+        }
+      ],
+      "durationSec": 2.14,
+      "assetId": "hv-wall",
+      "claimId": "hv-wall",
+      "covers": "From there you can",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.61,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 0.66,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Home Camera \u00b7 video: Apple",
+      "headline": "Up to [[9]] camera feeds",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/apple-homeview/hv-door.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 800,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "camera",
+          "at": 0.64
+        }
+      ],
+      "durationSec": 1.6,
+      "assetId": "hv-door",
+      "claimId": "hv-door",
+      "covers": "watch up to",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.61,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "FaceTime \u00b7 video: Apple",
+      "headline": "[[Hands-free]] FaceTime",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/apple-homeview/hv-facetime.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 800,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "hands",
+          "at": 2.34
+        }
+      ],
+      "durationSec": 3.74,
+      "assetId": "hv-facetime",
+      "claimId": "hv-facetime",
+      "covers": "or take a FaceTime",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.31,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Apps \u00b7 Bloomberg, Engadget",
+      "headline": "No [[App Store]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-homeview/entertainment_apps.jpg",
+          "width": 1732,
+          "height": 1212,
+          "device": false,
+          "h": 440
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Apple's apps + some audio & video",
+              "v": "Yes",
+              "tone": "free"
+            },
+            {
+              "k": "App Store",
+              "v": "No",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "own",
+          "at": 3.52
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "Bloomberg",
+          "at": 5.68
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Store",
+          "at": 7.08
+        },
+        {
+          "do": "strike",
+          "target": "r.1",
+          "on": "Store",
+          "at": 7.08
+        }
+      ],
+      "durationSec": 7.3,
+      "assetId": "entertainment_apps",
+      "claimId": "entertainment_apps",
+      "covers": "What it can't do",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 7.05,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Availability \u00b7 Apple",
+      "headline": "Ships [[Nov 13]]",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Pre-orders",
+              "v": "Today",
+              "tone": "free"
+            },
+            {
+              "k": "Where",
+              "v": "US, UK, India, Canada, Australia",
+              "tone": "plain"
+            },
+            {
+              "k": "Ships",
+              "v": "Nov 13",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "with",
+          "at": 1.56
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "India",
+          "at": 4.2
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "ships",
+          "at": 6.42
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "November",
+          "at": 6.62
+        }
+      ],
+      "durationSec": 8.22,
+      "assetId": "homeview",
+      "claimId": "homeview",
+      "covers": "If that's fine with",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 6.59,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "EU \u00b7 Apple",
+      "headline": "Not in the [[EU]] yet",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/apple-homeview/homeview.jpg",
+          "width": 2520,
+          "height": 1224,
+          "device": false,
+          "h": 380
+        },
+        {
+          "id": "h",
+          "kind": "hero",
+          "side": {
+            "name": "European Union",
+            "price": "Not on sale",
+            "tone": "cost",
+            "note": "Siri AI isn't out there yet"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "EU",
+          "at": 3.6
+        }
+      ],
+      "durationSec": 4.9,
+      "assetId": "homeview",
+      "claimId": "homeview",
+      "covers": "Europe has to wait",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Core.MP3",
+          "at": 3.55,
+          "vol": 0.556
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "hideCaptions": true,
+      "headlineSize": "xl",
+      "headline": "No App Store. [[Would you]] buy it?",
+      "blocks": [
+        {
+          "id": "d",
+          "kind": "text",
+          "text": "Tell us in the comments."
+        },
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/apple-homeview/hv-photo.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 340,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "earn",
+          "at": 1.32
+        },
+        {
+          "do": "show",
+          "target": "d",
+          "on": "Comment",
+          "at": 2.6
+        }
+      ],
+      "presenter": {
+        "src": "assets/apple-homeview/avatar-master-cta.mp4",
+        "from": 0.18
+      },
+      "durationSec": 3.32,
+      "assetId": "hv-photo",
+      "claimId": "hv-photo",
+      "covers": "Would a screen with",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.29,
+          "vol": 0.343
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.28,
+      "text": "Today, Apple finally",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Today,"
+        },
+        {
+          "t": 0.56,
+          "text": "Apple"
+        },
+        {
+          "t": 0.8,
+          "text": "finally"
+        }
+      ]
+    },
+    {
+      "start": 1.28,
+      "end": 2.14,
+      "text": "unveiled the smart",
+      "words": [
+        {
+          "t": 1.28,
+          "text": "unveiled"
+        },
+        {
+          "t": 1.74,
+          "text": "the"
+        },
+        {
+          "t": 1.94,
+          "text": "smart"
+        }
+      ]
+    },
+    {
+      "start": 2.14,
+      "end": 3.16,
+      "text": "display it reportedly",
+      "words": [
+        {
+          "t": 2.14,
+          "text": "display"
+        },
+        {
+          "t": 2.56,
+          "text": "it"
+        },
+        {
+          "t": 2.78,
+          "text": "reportedly"
+        }
+      ]
+    },
+    {
+      "start": 3.16,
+      "end": 3.9,
+      "text": "held back for",
+      "words": [
+        {
+          "t": 3.16,
+          "text": "held"
+        },
+        {
+          "t": 3.5,
+          "text": "back"
+        },
+        {
+          "t": 3.7,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 3.9,
+      "end": 5.56,
+      "text": "two years. It's",
+      "words": [
+        {
+          "t": 3.9,
+          "text": "two"
+        },
+        {
+          "t": 4.08,
+          "text": "years."
+        },
+        {
+          "t": 5.32,
+          "text": "It's"
+        }
+      ]
+    },
+    {
+      "start": 5.56,
+      "end": 6.58,
+      "text": "called HomeView. It",
+      "words": [
+        {
+          "t": 5.56,
+          "text": "called"
+        },
+        {
+          "t": 5.74,
+          "text": "HomeView."
+        },
+        {
+          "t": 6.5,
+          "text": "It"
+        }
+      ]
+    },
+    {
+      "start": 6.58,
+      "end": 8.56,
+      "text": "costs $299 and",
+      "words": [
+        {
+          "t": 6.58,
+          "text": "costs"
+        },
+        {
+          "t": 6.84,
+          "text": "$299"
+        },
+        {
+          "t": 7.78,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 8.56,
+      "end": 9.3,
+      "text": "it's missing something",
+      "words": [
+        {
+          "t": 8.56,
+          "text": "it's"
+        },
+        {
+          "t": 8.74,
+          "text": "missing"
+        },
+        {
+          "t": 8.96,
+          "text": "something"
+        }
+      ]
+    },
+    {
+      "start": 9.3,
+      "end": 10.46,
+      "text": "almost every Apple",
+      "words": [
+        {
+          "t": 9.3,
+          "text": "almost"
+        },
+        {
+          "t": 9.68,
+          "text": "every"
+        },
+        {
+          "t": 10.1,
+          "text": "Apple"
+        }
+      ]
+    },
+    {
+      "start": 10.46,
+      "end": 12.8,
+      "text": "screen has. HomeView",
+      "words": [
+        {
+          "t": 10.46,
+          "text": "screen"
+        },
+        {
+          "t": 10.72,
+          "text": "has."
+        },
+        {
+          "t": 12.24,
+          "text": "HomeView"
+        }
+      ]
+    },
+    {
+      "start": 12.8,
+      "end": 13.58,
+      "text": "is a 7-inch",
+      "words": [
+        {
+          "t": 12.8,
+          "text": "is"
+        },
+        {
+          "t": 13.02,
+          "text": "a"
+        },
+        {
+          "t": 13.14,
+          "text": "7-inch"
+        }
+      ]
+    },
+    {
+      "start": 13.58,
+      "end": 14.52,
+      "text": "square display that",
+      "words": [
+        {
+          "t": 13.58,
+          "text": "square"
+        },
+        {
+          "t": 13.86,
+          "text": "display"
+        },
+        {
+          "t": 14.28,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 14.52,
+      "end": 15.1,
+      "text": "sits on its",
+      "words": [
+        {
+          "t": 14.52,
+          "text": "sits"
+        },
+        {
+          "t": 14.76,
+          "text": "on"
+        },
+        {
+          "t": 14.96,
+          "text": "its"
+        }
+      ]
+    },
+    {
+      "start": 15.1,
+      "end": 15.98,
+      "text": "own speaker or",
+      "words": [
+        {
+          "t": 15.1,
+          "text": "own"
+        },
+        {
+          "t": 15.3,
+          "text": "speaker"
+        },
+        {
+          "t": 15.66,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 15.98,
+      "end": 16.88,
+      "text": "mounts flat on",
+      "words": [
+        {
+          "t": 15.98,
+          "text": "mounts"
+        },
+        {
+          "t": 16.24,
+          "text": "flat"
+        },
+        {
+          "t": 16.6,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 16.88,
+      "end": 18.18,
+      "text": "a wall and",
+      "words": [
+        {
+          "t": 16.88,
+          "text": "a"
+        },
+        {
+          "t": 16.96,
+          "text": "wall"
+        },
+        {
+          "t": 17.9,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 18.18,
+      "end": 19.06,
+      "text": "both versions cost",
+      "words": [
+        {
+          "t": 18.18,
+          "text": "both"
+        },
+        {
+          "t": 18.42,
+          "text": "versions"
+        },
+        {
+          "t": 18.78,
+          "text": "cost"
+        }
+      ]
+    },
+    {
+      "start": 19.06,
+      "end": 20.42,
+      "text": "the same. It",
+      "words": [
+        {
+          "t": 19.06,
+          "text": "the"
+        },
+        {
+          "t": 19.3,
+          "text": "same."
+        },
+        {
+          "t": 20.24,
+          "text": "It"
+        }
+      ]
+    },
+    {
+      "start": 20.42,
+      "end": 20.88,
+      "text": "runs on the",
+      "words": [
+        {
+          "t": 20.42,
+          "text": "runs"
+        },
+        {
+          "t": 20.6,
+          "text": "on"
+        },
+        {
+          "t": 20.78,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 20.88,
+      "end": 22.34,
+      "text": "A18 chip which",
+      "words": [
+        {
+          "t": 20.88,
+          "text": "A18"
+        },
+        {
+          "t": 21.22,
+          "text": "chip"
+        },
+        {
+          "t": 21.54,
+          "text": "which"
+        }
+      ]
+    },
+    {
+      "start": 22.34,
+      "end": 23.28,
+      "text": "powers Siri AI,",
+      "words": [
+        {
+          "t": 22.34,
+          "text": "powers"
+        },
+        {
+          "t": 22.66,
+          "text": "Siri"
+        },
+        {
+          "t": 22.96,
+          "text": "AI,"
+        }
+      ]
+    },
+    {
+      "start": 23.78,
+      "end": 24.54,
+      "text": "Apple's rebuilt Siri.",
+      "words": [
+        {
+          "t": 23.78,
+          "text": "Apple's"
+        },
+        {
+          "t": 24.0,
+          "text": "rebuilt"
+        },
+        {
+          "t": 24.3,
+          "text": "Siri."
+        }
+      ]
+    },
+    {
+      "start": 25.06,
+      "end": 26.02,
+      "text": "And that Siri",
+      "words": [
+        {
+          "t": 25.06,
+          "text": "And"
+        },
+        {
+          "t": 25.54,
+          "text": "that"
+        },
+        {
+          "t": 25.74,
+          "text": "Siri"
+        }
+      ]
+    },
+    {
+      "start": 26.02,
+      "end": 26.64,
+      "text": "is still in",
+      "words": [
+        {
+          "t": 26.02,
+          "text": "is"
+        },
+        {
+          "t": 26.24,
+          "text": "still"
+        },
+        {
+          "t": 26.48,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 26.64,
+      "end": 27.96,
+      "text": "beta and it",
+      "words": [
+        {
+          "t": 26.64,
+          "text": "beta"
+        },
+        {
+          "t": 26.84,
+          "text": "and"
+        },
+        {
+          "t": 27.84,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 27.96,
+      "end": 28.44,
+      "text": "can tell your",
+      "words": [
+        {
+          "t": 27.96,
+          "text": "can"
+        },
+        {
+          "t": 28.1,
+          "text": "tell"
+        },
+        {
+          "t": 28.3,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 28.44,
+      "end": 30.16,
+      "text": "family apart. It",
+      "words": [
+        {
+          "t": 28.44,
+          "text": "family"
+        },
+        {
+          "t": 28.72,
+          "text": "apart."
+        },
+        {
+          "t": 29.68,
+          "text": "It"
+        }
+      ]
+    },
+    {
+      "start": 30.16,
+      "end": 30.98,
+      "text": "recognizes up to",
+      "words": [
+        {
+          "t": 30.16,
+          "text": "recognizes"
+        },
+        {
+          "t": 30.58,
+          "text": "up"
+        },
+        {
+          "t": 30.86,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 30.98,
+      "end": 31.72,
+      "text": "6 people by",
+      "words": [
+        {
+          "t": 30.98,
+          "text": "6"
+        },
+        {
+          "t": 31.22,
+          "text": "people"
+        },
+        {
+          "t": 31.52,
+          "text": "by"
+        }
+      ]
+    },
+    {
+      "start": 31.72,
+      "end": 32.64,
+      "text": "face and each",
+      "words": [
+        {
+          "t": 31.72,
+          "text": "face"
+        },
+        {
+          "t": 32.08,
+          "text": "and"
+        },
+        {
+          "t": 32.38,
+          "text": "each"
+        }
+      ]
+    },
+    {
+      "start": 32.64,
+      "end": 33.32,
+      "text": "of them gets",
+      "words": [
+        {
+          "t": 32.64,
+          "text": "of"
+        },
+        {
+          "t": 32.76,
+          "text": "them"
+        },
+        {
+          "t": 33.0,
+          "text": "gets"
+        }
+      ]
+    },
+    {
+      "start": 33.32,
+      "end": 33.96,
+      "text": "their own home",
+      "words": [
+        {
+          "t": 33.32,
+          "text": "their"
+        },
+        {
+          "t": 33.52,
+          "text": "own"
+        },
+        {
+          "t": 33.76,
+          "text": "home"
+        }
+      ]
+    },
+    {
+      "start": 33.96,
+      "end": 35.5,
+      "text": "screen. From there,",
+      "words": [
+        {
+          "t": 33.96,
+          "text": "screen."
+        },
+        {
+          "t": 34.78,
+          "text": "From"
+        },
+        {
+          "t": 35.26,
+          "text": "there,"
+        }
+      ]
+    },
+    {
+      "start": 35.66,
+      "end": 36.04,
+      "text": "you can lock",
+      "words": [
+        {
+          "t": 35.66,
+          "text": "you"
+        },
+        {
+          "t": 35.68,
+          "text": "can"
+        },
+        {
+          "t": 35.84,
+          "text": "lock"
+        }
+      ]
+    },
+    {
+      "start": 36.04,
+      "end": 36.68,
+      "text": "the front door,",
+      "words": [
+        {
+          "t": 36.04,
+          "text": "the"
+        },
+        {
+          "t": 36.2,
+          "text": "front"
+        },
+        {
+          "t": 36.42,
+          "text": "door,"
+        }
+      ]
+    },
+    {
+      "start": 36.92,
+      "end": 37.34,
+      "text": "watch up to",
+      "words": [
+        {
+          "t": 36.92,
+          "text": "watch"
+        },
+        {
+          "t": 37.06,
+          "text": "up"
+        },
+        {
+          "t": 37.2,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 37.34,
+      "end": 38.18,
+      "text": "9 camera feeds",
+      "words": [
+        {
+          "t": 37.34,
+          "text": "9"
+        },
+        {
+          "t": 37.56,
+          "text": "camera"
+        },
+        {
+          "t": 37.92,
+          "text": "feeds"
+        }
+      ]
+    },
+    {
+      "start": 38.18,
+      "end": 39.66,
+      "text": "together or take",
+      "words": [
+        {
+          "t": 38.18,
+          "text": "together"
+        },
+        {
+          "t": 38.52,
+          "text": "or"
+        },
+        {
+          "t": 39.46,
+          "text": "take"
+        }
+      ]
+    },
+    {
+      "start": 39.66,
+      "end": 40.5,
+      "text": "a FaceTime call",
+      "words": [
+        {
+          "t": 39.66,
+          "text": "a"
+        },
+        {
+          "t": 39.82,
+          "text": "FaceTime"
+        },
+        {
+          "t": 40.2,
+          "text": "call"
+        }
+      ]
+    },
+    {
+      "start": 40.5,
+      "end": 41.08,
+      "text": "while your hands",
+      "words": [
+        {
+          "t": 40.5,
+          "text": "while"
+        },
+        {
+          "t": 40.7,
+          "text": "your"
+        },
+        {
+          "t": 40.86,
+          "text": "hands"
+        }
+      ]
+    },
+    {
+      "start": 41.08,
+      "end": 42.52,
+      "text": "are full. What",
+      "words": [
+        {
+          "t": 41.08,
+          "text": "are"
+        },
+        {
+          "t": 41.22,
+          "text": "full."
+        },
+        {
+          "t": 42.26,
+          "text": "What"
+        }
+      ]
+    },
+    {
+      "start": 42.52,
+      "end": 43.1,
+      "text": "it can't do",
+      "words": [
+        {
+          "t": 42.52,
+          "text": "it"
+        },
+        {
+          "t": 42.64,
+          "text": "can't"
+        },
+        {
+          "t": 42.94,
+          "text": "do"
+        }
+      ]
+    },
+    {
+      "start": 43.1,
+      "end": 43.88,
+      "text": "is add apps.",
+      "words": [
+        {
+          "t": 43.1,
+          "text": "is"
+        },
+        {
+          "t": 43.34,
+          "text": "add"
+        },
+        {
+          "t": 43.6,
+          "text": "apps."
+        }
+      ]
+    },
+    {
+      "start": 44.82,
+      "end": 45.78,
+      "text": "You get Apple's",
+      "words": [
+        {
+          "t": 44.82,
+          "text": "You"
+        },
+        {
+          "t": 45.22,
+          "text": "get"
+        },
+        {
+          "t": 45.36,
+          "text": "Apple's"
+        }
+      ]
+    },
+    {
+      "start": 45.78,
+      "end": 46.42,
+      "text": "own apps and",
+      "words": [
+        {
+          "t": 45.78,
+          "text": "own"
+        },
+        {
+          "t": 45.92,
+          "text": "apps"
+        },
+        {
+          "t": 46.22,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 46.42,
+      "end": 47.08,
+      "text": "some audio and",
+      "words": [
+        {
+          "t": 46.42,
+          "text": "some"
+        },
+        {
+          "t": 46.58,
+          "text": "audio"
+        },
+        {
+          "t": 46.94,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 47.08,
+      "end": 47.94,
+      "text": "video apps but",
+      "words": [
+        {
+          "t": 47.08,
+          "text": "video"
+        },
+        {
+          "t": 47.26,
+          "text": "apps"
+        },
+        {
+          "t": 47.64,
+          "text": "but"
+        }
+      ]
+    },
+    {
+      "start": 47.94,
+      "end": 49.0,
+      "text": "Bloomberg reports there's",
+      "words": [
+        {
+          "t": 47.94,
+          "text": "Bloomberg"
+        },
+        {
+          "t": 48.22,
+          "text": "reports"
+        },
+        {
+          "t": 48.7,
+          "text": "there's"
+        }
+      ]
+    },
+    {
+      "start": 49.0,
+      "end": 49.56,
+      "text": "no App Store.",
+      "words": [
+        {
+          "t": 49.0,
+          "text": "no"
+        },
+        {
+          "t": 49.12,
+          "text": "App"
+        },
+        {
+          "t": 49.34,
+          "text": "Store."
+        }
+      ]
+    },
+    {
+      "start": 49.56,
+      "end": 51.12,
+      "text": "If that's fine",
+      "words": [
+        {
+          "t": 49.56,
+          "text": "If"
+        },
+        {
+          "t": 50.14,
+          "text": "that's"
+        },
+        {
+          "t": 50.94,
+          "text": "fine"
+        }
+      ]
+    },
+    {
+      "start": 51.12,
+      "end": 51.98,
+      "text": "with you, pre-orders",
+      "words": [
+        {
+          "t": 51.12,
+          "text": "with"
+        },
+        {
+          "t": 51.3,
+          "text": "you,"
+        },
+        {
+          "t": 51.64,
+          "text": "pre-orders"
+        }
+      ]
+    },
+    {
+      "start": 51.98,
+      "end": 52.76,
+      "text": "open today in",
+      "words": [
+        {
+          "t": 51.98,
+          "text": "open"
+        },
+        {
+          "t": 52.32,
+          "text": "today"
+        },
+        {
+          "t": 52.62,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 52.76,
+      "end": 53.56,
+      "text": "the US, UK,",
+      "words": [
+        {
+          "t": 52.76,
+          "text": "the"
+        },
+        {
+          "t": 52.86,
+          "text": "US,"
+        },
+        {
+          "t": 53.32,
+          "text": "UK,"
+        }
+      ]
+    },
+    {
+      "start": 53.76,
+      "end": 54.62,
+      "text": "India, Canada and",
+      "words": [
+        {
+          "t": 53.76,
+          "text": "India,"
+        },
+        {
+          "t": 54.18,
+          "text": "Canada"
+        },
+        {
+          "t": 54.36,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 54.62,
+      "end": 55.98,
+      "text": "Australia and it",
+      "words": [
+        {
+          "t": 54.62,
+          "text": "Australia"
+        },
+        {
+          "t": 55.42,
+          "text": "and"
+        },
+        {
+          "t": 55.86,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 55.98,
+      "end": 57.76,
+      "text": "ships November 13th.",
+      "words": [
+        {
+          "t": 55.98,
+          "text": "ships"
+        },
+        {
+          "t": 56.18,
+          "text": "November"
+        },
+        {
+          "t": 56.46,
+          "text": "13th."
+        }
+      ]
+    },
+    {
+      "start": 57.78,
+      "end": 58.6,
+      "text": "Europe has to",
+      "words": [
+        {
+          "t": 57.78,
+          "text": "Europe"
+        },
+        {
+          "t": 58.22,
+          "text": "has"
+        },
+        {
+          "t": 58.44,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 58.6,
+      "end": 60.2,
+      "text": "wait since Siri",
+      "words": [
+        {
+          "t": 58.6,
+          "text": "wait"
+        },
+        {
+          "t": 58.86,
+          "text": "since"
+        },
+        {
+          "t": 59.86,
+          "text": "Siri"
+        }
+      ]
+    },
+    {
+      "start": 60.2,
+      "end": 61.12,
+      "text": "AI isn't out",
+      "words": [
+        {
+          "t": 60.2,
+          "text": "AI"
+        },
+        {
+          "t": 60.46,
+          "text": "isn't"
+        },
+        {
+          "t": 60.98,
+          "text": "out"
+        }
+      ]
+    },
+    {
+      "start": 61.12,
+      "end": 61.6,
+      "text": "in the EU",
+      "words": [
+        {
+          "t": 61.12,
+          "text": "in"
+        },
+        {
+          "t": 61.3,
+          "text": "the"
+        },
+        {
+          "t": 61.38,
+          "text": "EU"
+        }
+      ]
+    },
+    {
+      "start": 61.6,
+      "end": 62.96,
+      "text": "yet. Would a",
+      "words": [
+        {
+          "t": 61.6,
+          "text": "yet."
+        },
+        {
+          "t": 62.68,
+          "text": "Would"
+        },
+        {
+          "t": 62.84,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 62.96,
+      "end": 63.58,
+      "text": "screen with no",
+      "words": [
+        {
+          "t": 62.96,
+          "text": "screen"
+        },
+        {
+          "t": 63.18,
+          "text": "with"
+        },
+        {
+          "t": 63.4,
+          "text": "no"
+        }
+      ]
+    },
+    {
+      "start": 63.58,
+      "end": 64.24,
+      "text": "App Store earn",
+      "words": [
+        {
+          "t": 63.58,
+          "text": "App"
+        },
+        {
+          "t": 63.8,
+          "text": "Store"
+        },
+        {
+          "t": 64.0,
+          "text": "earn"
+        }
+      ]
+    },
+    {
+      "start": 64.24,
+      "end": 64.7,
+      "text": "a spot in",
+      "words": [
+        {
+          "t": 64.24,
+          "text": "a"
+        },
+        {
+          "t": 64.34,
+          "text": "spot"
+        },
+        {
+          "t": 64.52,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 64.7,
+      "end": 65.48,
+      "text": "your kitchen? Comment",
+      "words": [
+        {
+          "t": 64.7,
+          "text": "your"
+        },
+        {
+          "t": 64.8,
+          "text": "kitchen?"
+        },
+        {
+          "t": 65.28,
+          "text": "Comment"
+        }
+      ]
+    },
+    {
+      "start": 65.48,
+      "end": 65.78,
+      "text": "below.",
+      "words": [
+        {
+          "t": 65.48,
+          "text": "below."
+        }
+      ]
+    }
+  ],
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 4.32,
+        "vol": 0.055
+      },
+      {
+        "t": 4.66,
+        "vol": 0.15
+      },
+      {
+        "t": 5.14,
+        "vol": 0.15
+      },
+      {
+        "t": 5.32,
+        "vol": 0.055
+      },
+      {
+        "t": 11.1,
+        "vol": 0.055
+      },
+      {
+        "t": 11.44,
+        "vol": 0.15
+      },
+      {
+        "t": 12.06,
+        "vol": 0.15
+      },
+      {
+        "t": 12.24,
+        "vol": 0.055
+      },
+      {
+        "t": 65.78,
+        "vol": 0.055
+      },
+      {
+        "t": 66.0,
+        "vol": 0.02
+      }
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+  },
+  "format": "news",
+  "showCredits": false,
+  "allowLong": false,
+  "script": "Today Apple finally unveiled the smart display it reportedly held back for two years. It's called HomeView, it costs two hundred ninety-nine dollars, and it's missing something almost every Apple screen has.\n\nHomeView is a seven-inch square display that sits on its own speaker or mounts flat on a wall, and both versions cost the same. It runs on the A18 chip, which powers Siri AI, Apple's rebuilt Siri, and that Siri is still in beta.\n\nAnd it can tell your family apart. It recognizes up to six people by face, and each of them gets their own home screen.\n\nFrom there you can lock the front door, watch up to nine camera feeds together, or take a FaceTime call while your hands are full.\n\nWhat it can't do is add apps. You get Apple's own apps and some audio and video apps, but Bloomberg reports there's no App Store.\n\nIf that's fine with you, pre-orders open today in the US, UK, India, Canada and Australia, and it ships November thirteenth. Europe has to wait, since Siri AI isn't out in the EU yet.\n\nWould a screen with no App Store earn a spot in your kitchen? Comment below.",
+  "approval": {
+    "sha256": "9dddf15b9ba7fcdd6c263d485645d8bbc9aa8b6146b1aa45cec4a6b26e6c9145",
+    "approvedAt": "2026-10-13T13:14:44+00:00",
+    "words": 199,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

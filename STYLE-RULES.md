@@ -9786,3 +9786,30 @@ caveat; a TechCrunch headline over date/where/made-with rows; a competitor's hea
 settings path as three steps; Favorites sheet crossfading to the Library.
 Next feature-launch reel: do not open on the vendor's result still again; do not reuse the result-under-
 the-question callback.
+
+## 2026-10-13 — apple-homeview (animated bookends, Apple film + product stills, same-day announcement)
+
+- **RAW NOTE 1 — a product page's own film is the best b-roll an announcement day has.** apple.com/homeview
+  served a 4K product film (HLS, yt-dlp grabs it) plus per-section animations and 2x stills. Scene-detect
+  (`select='gt(scene,0.25)'`) gave exact shot boundaries; the first cuts by eye each leaked the neighbouring
+  shot (door cam opened on people, Siri clip was mostly actors). RULE: cut film sub-clips on detected
+  boundaries, never on contact-sheet guesses.
+- **RAW NOTE 2 — Apple's device shots are 1.5-3s; beats are 2-7s.** ClipBlock does not loop, so a clip
+  shorter than its beat renders short. Slowed each clip (setpts 1.1-2.8x) to cover its beat; at 2.8x the
+  Siri card still reads as a slow push. Over ~3x, pick a different shot.
+- **RAW NOTE 3 — anchors and moves cannot name spelled-out numbers.** Whisper writes "$299", "7 -inch", "6",
+  "9"; `on: "ninety-nine"` / start phrase "watch up to nine" fail to resolve. RULE: anchor moves on the
+  neighbouring word ("costs", "square", "people").
+- **RAW NOTE 4 — two rows slides back-to-back is a [DUPLICATE] block**, and a hero card alone leaves a tall
+  empty box. FIX: hero for one, rows for the next, and a product still above any lone card.
+- ElevenLabs v3: 199 words in 54.8s (3.63 w/s, ~1,146 credits), vo_pad to 66.0s (3.02 w/s; the tool
+  suggested 78). HeyGen: two bookend slices, 12.0s + 3.5s, twin, avatar_v; presenter on scene 00 only
+  (keeping it over scene 01 pushed facecam to 24%). 19 SFX, all audible (sfx_audibility).
+
+### Treatments used (do not repeat for the same kind of information)
+Hook = presenter circle over the vendor's own film shot of the device on a counter; price as the headline
+pill over a three-device still; tabletop still crossfading to the wall model on "wall"; six avatars around a
+personal home screen for face recognition; a lock tile focus for "lock the front door"; door-camera and
+FaceTime film shots; App Store as a struck red row under an apps still; EU as a red "Not on sale" hero.
+Next hardware-announcement reel: do not open on a device-on-counter film shot again; do not use the struck
+"No" row for a missing feature.

@@ -1,0 +1,625 @@
+{
+ "emphasis": [
+  "HomeView",
+  "$299",
+  "A18",
+  "Siri AI",
+  "beta",
+  "front door",
+  "nine",
+  "FaceTime",
+  "App Store",
+  "November",
+  "EU",
+  "square",
+  "people"
+ ],
+ "caption_corrections": {
+  "Rebuilt": "rebuilt",
+  "pre -orders": "pre-orders",
+  "7 -inch": "7-inch"
+ },
+ "format": "news",
+ "shots": [
+  {
+   "start_phrase": "Today Apple finally unveiled",
+   "tier": "official",
+   "asset_id": "hv-photo",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Apple \u00b7 video: Apple",
+    "headline": "Apple's new [[smart display]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/apple-homeview/hv-photo.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 800,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "display"
+     }
+    ],
+    "presenter": {
+     "src": "assets/apple-homeview/avatar-master-hook.mp4",
+     "from": 0.0
+    }
+   },
+   "line": "Today Apple finally unveiled the smart display it reportedly held back for two years., It's called HomeView"
+  },
+  {
+   "start_phrase": "It's called HomeView",
+   "tier": "official",
+   "asset_id": "homeview",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "HomeView \u00b7 image: Apple",
+    "headline": "HomeView: [[$299]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-homeview/homeview.jpg",
+      "width": 2520,
+      "height": 1224,
+      "device": false,
+      "h": 420
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Missing one thing almost every Apple screen has"
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "called",
+      "rect": [
+       0,
+       0,
+       2520,
+       1224
+      ],
+      "ring": false
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "HomeView",
+      "rect": [
+       840,
+       0,
+       840,
+       1224
+      ],
+      "ring": false
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "costs"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "missing"
+     }
+    ]
+   },
+   "line": ""
+  },
+  {
+   "start_phrase": "HomeView is a",
+   "tier": "official",
+   "asset_id": "entertainment_apps",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Tabletop \u00b7 image: Apple",
+    "headline": "A [[7-inch]] square screen",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-homeview/entertainment_apps.jpg",
+      "width": 1732,
+      "height": 1212,
+      "device": false,
+      "h": 640
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "square"
+     },
+     {
+      "do": "state",
+      "target": "s",
+      "on": "wall",
+      "src": "assets/apple-homeview/hv-wall.jpg"
+     }
+    ]
+   },
+   "line": ""
+  },
+  {
+   "start_phrase": "and both versions cost",
+   "tier": "official",
+   "asset_id": "hv-wall",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Two versions \u00b7 Apple",
+    "headline": "Same [[price]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-homeview/hv-wall.jpg",
+      "width": 1260,
+      "height": 1224,
+      "device": false,
+      "h": 380
+     },
+     {
+      "id": "h",
+      "kind": "hero",
+      "side": {
+       "name": "Tabletop or wall-mounted",
+       "price": "$299",
+       "tone": "free",
+       "note": "Same price for both"
+      }
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "cost"
+     }
+    ]
+   },
+   "line": "and both versions cost the same."
+  },
+  {
+   "start_phrase": "It runs on the",
+   "tier": "official",
+   "asset_id": "homeview",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Inside \u00b7 Apple",
+    "headline": "Runs on [[A18]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Chip",
+        "v": "A18",
+        "tone": "free"
+       },
+       {
+        "k": "Assistant",
+        "v": "Siri AI (beta)",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "runs"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "A18"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "which"
+     }
+    ]
+   },
+   "line": "It runs on the A18 chip"
+  },
+  {
+   "start_phrase": "powers Siri AI",
+   "tier": "official",
+   "asset_id": "hv-siri",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Siri AI \u00b7 video: Apple",
+    "headline": "Siri AI, [[still in beta]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/apple-homeview/hv-siri.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 800,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "beta"
+     }
+    ]
+   },
+   "line": ""
+  },
+  {
+   "start_phrase": "And it can tell",
+   "tier": "official",
+   "asset_id": "hv-faces",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Face recognition \u00b7 image: Apple",
+    "headline": "Knows [[6 people]] by face",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-homeview/hv-faces.jpg",
+      "width": 1760,
+      "height": 1224,
+      "device": false,
+      "h": 640
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "family",
+      "rect": [
+       1100,
+       0,
+       660,
+       700
+      ],
+      "ring": false
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "people"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "home",
+      "rect": [
+       80,
+       280,
+       1100,
+       944
+      ]
+     }
+    ]
+   },
+   "line": "And it can tell your family apart."
+  },
+  {
+   "start_phrase": "From there you can",
+   "tier": "official",
+   "asset_id": "hv-wall",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Smart home \u00b7 image: Apple",
+    "headline": "Lock the [[front door]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-homeview/hv-wall.jpg",
+      "width": 1260,
+      "height": 1224,
+      "device": false,
+      "h": 780
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "door"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "lock",
+      "rect": [
+       400,
+       700,
+       460,
+       360
+      ]
+     }
+    ]
+   },
+   "line": "From there you can lock the front door"
+  },
+  {
+   "start_phrase": "watch up to",
+   "tier": "official",
+   "asset_id": "hv-door",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Home Camera \u00b7 video: Apple",
+    "headline": "Up to [[9]] camera feeds",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/apple-homeview/hv-door.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 800,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "camera"
+     }
+    ]
+   },
+   "line": ""
+  },
+  {
+   "start_phrase": "or take a FaceTime",
+   "tier": "official",
+   "asset_id": "hv-facetime",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "FaceTime \u00b7 video: Apple",
+    "headline": "[[Hands-free]] FaceTime",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/apple-homeview/hv-facetime.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 800,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "hands"
+     }
+    ]
+   },
+   "line": ""
+  },
+  {
+   "start_phrase": "What it can't do",
+   "tier": "multi",
+   "asset_id": "entertainment_apps",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Apps \u00b7 Bloomberg, Engadget",
+    "headline": "No [[App Store]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-homeview/entertainment_apps.jpg",
+      "width": 1732,
+      "height": 1212,
+      "device": false,
+      "h": 440
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Apple's apps + some audio & video",
+        "v": "Yes",
+        "tone": "free"
+       },
+       {
+        "k": "App Store",
+        "v": "No",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "own"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "Bloomberg"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Store"
+     },
+     {
+      "do": "strike",
+      "target": "r.1",
+      "on": "Store"
+     }
+    ]
+   },
+   "line": "What it can't do is add apps."
+  },
+  {
+   "start_phrase": "If that's fine with",
+   "tier": "official",
+   "asset_id": "homeview",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "Availability \u00b7 Apple",
+    "headline": "Ships [[Nov 13]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Pre-orders",
+        "v": "Today",
+        "tone": "free"
+       },
+       {
+        "k": "Where",
+        "v": "US, UK, India, Canada, Australia",
+        "tone": "plain"
+       },
+       {
+        "k": "Ships",
+        "v": "Nov 13",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "with"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "India"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "ships"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "November"
+     }
+    ]
+   },
+   "line": "If that's fine with you"
+  },
+  {
+   "start_phrase": "Europe has to wait",
+   "tier": "official",
+   "asset_id": "homeview",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "EU \u00b7 Apple",
+    "headline": "Not in the [[EU]] yet",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/apple-homeview/homeview.jpg",
+      "width": 2520,
+      "height": 1224,
+      "device": false,
+      "h": 380
+     },
+     {
+      "id": "h",
+      "kind": "hero",
+      "side": {
+       "name": "European Union",
+       "price": "Not on sale",
+       "tone": "cost",
+       "note": "Siri AI isn't out there yet"
+      }
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "EU"
+     }
+    ]
+   },
+   "line": ""
+  },
+  {
+   "start_phrase": "Would a screen with",
+   "tier": "official",
+   "asset_id": "hv-photo",
+   "scene": {
+    "type": "slide",
+    "cta": true,
+    "hideCaptions": true,
+    "headlineSize": "xl",
+    "headline": "No App Store. [[Would you]] buy it?",
+    "blocks": [
+     {
+      "id": "d",
+      "kind": "text",
+      "text": "Tell us in the comments."
+     },
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/apple-homeview/hv-photo.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 340,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "earn"
+     },
+     {
+      "do": "show",
+      "target": "d",
+      "on": "Comment"
+     }
+    ],
+    "presenter": {
+     "src": "assets/apple-homeview/avatar-master-cta.mp4",
+     "from": 0.18
+    }
+   },
+   "line": "Would a screen with no App Store earn a spot in your kitchen?"
+  }
+ ],
+ "music": true,
+ "facePlan": "bookends",
+ "audio": "assets/apple-homeview/vo.mp3",
+ "allowLong": false,
+ "showCredits": false
+}

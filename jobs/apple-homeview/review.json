@@ -1,0 +1,17 @@
+{
+  "script_sha256": "9dddf15b9ba7fcdd6c263d485645d8bbc9aa8b6146b1aa45cec4a6b26e6c9145",
+  "structure_sha256": "a7c80f080e658f4176dfcdfe5cf31928774397339cb84ec00e2a872f59d198a4",
+  "findings": [
+    "  BRIDGES 1/12 sentences (8%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "CADENCE: 6 of 13 sentences are long. The short ones stop being punctuation.",
+    "SECOND PERSON: the first 'you' arrives 40% of the way in. Until then the viewer is watching something happen to other people. Move one 'you' into the opening.",
+    "HOUSE TIC: 'it runs on' \u2014 already used in 2 other script(s) (grok-bot, made-by-google-26). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HOUSE TIC: 'on its own' \u2014 already used in 2 other script(s) (ios27-battery-longform, made-by-google-26). Say it a different way; a phrase the channel reuses stops being a hook and becomes a verbal habit.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [
+    "the most surprising claim (SURPRISE 70: 'No App Store on HomeView: Apple apps plus compatible third-p') is spoken in the last 40% of the script \u2014 consider leading with it."
+  ],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-10-13T13:13:40+00:00"
+}
