@@ -8,28 +8,27 @@
   "facePlan": "none",
   "captionStyle": "word-reveal",
   "emphasis": [
-    "Gemini 4 Argon",
     "Argon",
-    "Ultra",
+    "Slides",
     "3D",
-    "spin",
-    "cheapest",
-    "laundry",
-    "every one"
+    "robots",
+    "racing",
+    "storybooks",
+    "Ultra"
   ],
   "scenes": [
     {
       "type": "slide",
-      "eyebrow": "Google \u00b7 Gemini app",
-      "headline": "Google's most powerful [[Gemini]] yet",
+      "eyebrow": "Google \u00b7 video: Google",
+      "headline": "Gemini 4 Argon is [[here]]",
       "blocks": [
         {
           "id": "c",
           "kind": "clip",
-          "src": "assets/gemini-4-argon/arg-app-slow.mp4",
+          "src": "assets/gemini-4-argon/g-title.mp4",
           "width": 1080,
-          "height": 760,
-          "h": 760,
+          "height": 1440,
+          "h": 740,
           "device": false
         }
       ],
@@ -38,35 +37,36 @@
           "do": "pill",
           "target": "headline",
           "on": "powerful",
-          "at": 1.92
+          "at": 3.84
         }
       ],
-      "durationSec": 5.32,
-      "assetId": "arg-app-slow",
-      "claimId": "arg-app-slow",
-      "covers": "Google just put its",
+      "headlineSize": "xl",
+      "durationSec": 7.12,
+      "assetId": "g-title",
+      "claimId": "g-title",
+      "covers": "Google just dropped",
       "hideCaptions": false,
       "captionBottom": 422,
       "sfx": [
         {
           "src": "sfx/Pop.MP3",
-          "at": 1.89,
+          "at": 3.81,
           "vol": 0.343
         }
       ]
     },
     {
       "type": "slide",
-      "eyebrow": "Gemini 4 Argon \u00b7 video: @renzsadiwa",
-      "headline": "Already being [[pushed hard]]",
+      "eyebrow": "1 \u00b7 video: Google",
+      "headline": "Messy files \u2192 a [[Slides deck]]",
       "blocks": [
         {
           "id": "c",
           "kind": "clip",
-          "src": "assets/gemini-4-argon/arg-scripts-phone.mp4",
-          "width": 1080,
-          "height": 1090,
-          "h": 790,
+          "src": "assets/gemini-4-argon/g-slides.mp4",
+          "width": 900,
+          "height": 506,
+          "h": 640,
           "device": false
         }
       ],
@@ -74,20 +74,183 @@
         {
           "do": "pill",
           "target": "headline",
-          "on": "pushing",
-          "at": 1.34
+          "on": "Slides",
+          "at": 2.46
         }
       ],
-      "durationSec": 3.22,
-      "assetId": "arg-scripts-phone",
-      "claimId": "arg-scripts-phone",
-      "covers": "and people are already",
+      "durationSec": 3.44,
+      "assetId": "g-slides",
+      "claimId": "g-slides",
+      "covers": "It turns thousands",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.43,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "2 \u00b7 video: Google",
+      "headline": "Whole [[3D worlds]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/gemini-4-argon/g-world.mp4",
+          "width": 900,
+          "height": 506,
+          "h": 640,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "worlds",
+          "at": 1.12
+        }
+      ],
+      "durationSec": 3.08,
+      "assetId": "g-world",
+      "claimId": "g-world",
+      "covers": "It builds whole",
       "hideCaptions": false,
       "captionBottom": 422,
       "sfx": [
         {
           "src": "sfx/Pop.MP3",
-          "at": 1.31,
+          "at": 1.09,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "3 \u00b7 video: Google",
+      "headline": "Robots learn [[from video]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/gemini-4-argon/g-robot.mp4",
+          "width": 900,
+          "height": 506,
+          "h": 640,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "video",
+          "at": 2.6
+        }
+      ],
+      "durationSec": 3.2,
+      "assetId": "g-robot",
+      "claimId": "g-robot",
+      "covers": "It helps teach",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.57,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "4 \u00b7 video: Google",
+      "headline": "Your desk \u2192 a [[racing game]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/gemini-4-argon/g-game.mp4",
+          "width": 900,
+          "height": 506,
+          "h": 640,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "racing",
+          "at": 2.48
+        }
+      ],
+      "durationSec": 4.24,
+      "assetId": "g-game",
+      "claimId": "g-game",
+      "covers": "Snap a photo",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.45,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "5 \u00b7 video: Google",
+      "headline": "Papers \u2192 [[storybooks]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/gemini-4-argon/g-story.mp4",
+          "width": 900,
+          "height": 506,
+          "h": 640,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "storybooks",
+          "at": 2.66
+        }
+      ],
+      "durationSec": 3.7,
+      "assetId": "g-story",
+      "claimId": "g-story",
+      "covers": "And it turns dense",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.63,
           "vol": 0.343
         }
       ]
@@ -95,7 +258,7 @@
     {
       "type": "slide",
       "eyebrow": "Google \u00b7 Oct 13",
-      "headline": "[[Pro and Ultra]] get it today",
+      "headline": "[[Pro and Ultra]] get it now",
       "blocks": [
         {
           "id": "s",
@@ -105,175 +268,38 @@
           "height": 460,
           "device": false,
           "h": 440
-        },
-        {
-          "id": "t",
-          "kind": "text",
-          "text": "Here's what one user made with it"
         }
       ],
       "moves": [
-        {
-          "do": "pill",
-          "target": "headline",
-          "on": "Ultra",
-          "at": 2.72
-        },
-        {
-          "do": "show",
-          "target": "t",
-          "on": "Watch",
-          "at": 4.54
-        },
         {
           "do": "state",
           "target": "s",
-          "on": "Pro",
+          "on": "for",
           "src": "assets/gemini-4-argon/google-post-pro.png",
-          "at": 2.16
+          "at": 1.56
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "ultra",
+          "at": 2.32
         }
       ],
-      "durationSec": 6.28,
+      "durationSec": 4.1,
       "assetId": "google-post-head",
       "claimId": "google-post-head",
-      "covers": "It's Gemini 4",
+      "covers": "It's out now",
       "hideCaptions": false,
       "captionBottom": 422,
       "sfx": [
-        {
-          "src": "sfx/whoosh.MP3",
-          "at": 0.0,
-          "vol": 0.582
-        },
         {
           "src": "sfx/Click.MP3",
-          "at": 2.23,
+          "at": 1.63,
           "vol": 0.251
-        }
-      ]
-    },
-    {
-      "type": "slide",
-      "eyebrow": "Demo 1 \u00b7 video: @renzsadiwa",
-      "headline": "One prompt, a [[3D room]]",
-      "blocks": [
-        {
-          "id": "c",
-          "kind": "clip",
-          "src": "assets/gemini-4-argon/arg-3d.mp4",
-          "width": 1080,
-          "height": 920,
-          "h": 790,
-          "device": false
-        }
-      ],
-      "moves": [
-        {
-          "do": "pill",
-          "target": "headline",
-          "on": "spin",
-          "at": 5.34
-        }
-      ],
-      "durationSec": 7.62,
-      "assetId": "arg-3d",
-      "claimId": "arg-3d",
-      "covers": "First, he asked for",
-      "hideCaptions": false,
-      "captionBottom": 422,
-      "sfx": [
-        {
-          "src": "sfx/whoosh.MP3",
-          "at": 0.0,
-          "vol": 0.582
-        },
-        {
-          "src": "sfx/Pop.MP3",
-          "at": 5.31,
-          "vol": 0.343
-        }
-      ]
-    },
-    {
-      "type": "slide",
-      "eyebrow": "Demo 2 \u00b7 video: @renzsadiwa",
-      "headline": "Cheapest hours to [[do laundry]]",
-      "blocks": [
-        {
-          "id": "c",
-          "kind": "clip",
-          "src": "assets/gemini-4-argon/arg-chart.mp4",
-          "width": 1080,
-          "height": 800,
-          "h": 800,
-          "device": false
-        }
-      ],
-      "moves": [
-        {
-          "do": "pill",
-          "target": "headline",
-          "on": "cheapest",
-          "at": 3.2
-        }
-      ],
-      "durationSec": 5.38,
-      "assetId": "arg-chart",
-      "claimId": "arg-chart",
-      "covers": "Next, a chart of",
-      "hideCaptions": false,
-      "captionBottom": 422,
-      "sfx": [
-        {
-          "src": "sfx/whoosh.MP3",
-          "at": 0.0,
-          "vol": 0.582
-        },
-        {
-          "src": "sfx/Pop.MP3",
-          "at": 3.17,
-          "vol": 0.343
-        }
-      ]
-    },
-    {
-      "type": "slide",
-      "eyebrow": "Demo 3 \u00b7 video: @renzsadiwa",
-      "headline": "A shot list for [[every script]]",
-      "blocks": [
-        {
-          "id": "c",
-          "kind": "clip",
-          "src": "assets/gemini-4-argon/arg-scripts-list.mp4",
-          "width": 1080,
-          "height": 1090,
-          "h": 790,
-          "device": false
-        }
-      ],
-      "moves": [
-        {
-          "do": "pill",
-          "target": "headline",
-          "on": "planned",
-          "at": 1.98
-        }
-      ],
-      "durationSec": 3.7,
-      "assetId": "arg-scripts-list",
-      "claimId": "arg-scripts-list",
-      "covers": "Then",
-      "hideCaptions": false,
-      "captionBottom": 422,
-      "sfx": [
-        {
-          "src": "sfx/whoosh.MP3",
-          "at": 0.0,
-          "vol": 0.582
         },
         {
           "src": "sfx/Core.MP3",
-          "at": 1.93,
+          "at": 2.27,
           "vol": 0.556
         }
       ]
@@ -283,7 +309,7 @@
       "cta": true,
       "hideCaptions": true,
       "headlineSize": "xl",
-      "headline": "What would [[you ask]] it first?",
+      "headline": "Which would [[you try]] first?",
       "blocks": [
         {
           "id": "d",
@@ -293,9 +319,9 @@
         {
           "id": "c",
           "kind": "clip",
-          "src": "assets/gemini-4-argon/arg-3d-room.mp4",
-          "width": 1080,
-          "height": 760,
+          "src": "assets/gemini-4-argon/g-endgame.mp4",
+          "width": 900,
+          "height": 506,
           "h": 420,
           "device": false
         }
@@ -304,24 +330,24 @@
         {
           "do": "pill",
           "target": "headline",
-          "on": "ask",
-          "at": 0.4
+          "on": "try",
+          "at": 0.84
         },
         {
           "do": "show",
           "target": "d",
-          "on": "Comment",
-          "at": 1.74
+          "on": "first?",
+          "at": 1.04
         }
       ],
-      "durationSec": 3.48,
-      "assetId": "arg-3d-room",
-      "claimId": "arg-3d-room",
-      "covers": "What would you ask",
+      "durationSec": 3.12,
+      "assetId": "g-endgame",
+      "claimId": "g-endgame",
+      "covers": "Which would you",
       "sfx": [
         {
           "src": "sfx/Pop.MP3",
-          "at": 0.37,
+          "at": 0.81,
           "vol": 0.343
         }
       ]
@@ -330,632 +356,567 @@
   "captions": [
     {
       "start": 0.0,
-      "end": 0.94,
-      "text": "Google just put",
+      "end": 1.08,
+      "text": "Google just dropped",
       "words": [
         {
           "t": 0.0,
           "text": "Google"
         },
         {
-          "t": 0.32,
+          "t": 0.3,
           "text": "just"
         },
         {
-          "t": 0.64,
-          "text": "put"
+          "t": 0.68,
+          "text": "dropped"
         }
       ]
     },
     {
-      "start": 0.94,
-      "end": 2.48,
-      "text": "its most powerful",
+      "start": 1.08,
+      "end": 2.42,
+      "text": "Gemini 4 Argon",
       "words": [
         {
-          "t": 0.94,
+          "t": 1.08,
+          "text": "Gemini"
+        },
+        {
+          "t": 1.66,
+          "text": "4"
+        },
+        {
+          "t": 2.0,
+          "text": "Argon"
+        }
+      ]
+    },
+    {
+      "start": 3.08,
+      "end": 4.7,
+      "text": "its most powerful AI",
+      "words": [
+        {
+          "t": 3.08,
           "text": "its"
         },
         {
-          "t": 1.6,
+          "t": 3.84,
           "text": "most"
         },
         {
-          "t": 1.92,
+          "t": 4.34,
           "text": "powerful"
+        },
+        {
+          "t": 4.34,
+          "text": "AI"
         }
       ]
     },
     {
-      "start": 2.48,
-      "end": 4.04,
-      "text": "Gemini yet in",
+      "start": 4.7,
+      "end": 6.46,
+      "text": "yet. Here's what",
       "words": [
         {
-          "t": 2.48,
-          "text": "Gemini"
+          "t": 4.7,
+          "text": "yet."
         },
         {
-          "t": 2.92,
-          "text": "yet"
+          "t": 5.86,
+          "text": "Here's"
         },
         {
-          "t": 3.26,
+          "t": 6.34,
+          "text": "what"
+        }
+      ]
+    },
+    {
+      "start": 6.46,
+      "end": 6.94,
+      "text": "it can do.",
+      "words": [
+        {
+          "t": 6.46,
+          "text": "it"
+        },
+        {
+          "t": 6.58,
+          "text": "can"
+        },
+        {
+          "t": 6.74,
+          "text": "do."
+        }
+      ]
+    },
+    {
+      "start": 7.12,
+      "end": 8.04,
+      "text": "It turns thousands",
+      "words": [
+        {
+          "t": 7.12,
+          "text": "It"
+        },
+        {
+          "t": 7.24,
+          "text": "turns"
+        },
+        {
+          "t": 7.5,
+          "text": "thousands"
+        }
+      ]
+    },
+    {
+      "start": 8.04,
+      "end": 8.96,
+      "text": "of messy files",
+      "words": [
+        {
+          "t": 8.04,
+          "text": "of"
+        },
+        {
+          "t": 8.28,
+          "text": "messy"
+        },
+        {
+          "t": 8.54,
+          "text": "files"
+        }
+      ]
+    },
+    {
+      "start": 8.96,
+      "end": 9.58,
+      "text": "into a Google",
+      "words": [
+        {
+          "t": 8.96,
+          "text": "into"
+        },
+        {
+          "t": 9.26,
+          "text": "a"
+        },
+        {
+          "t": 9.42,
+          "text": "Google"
+        }
+      ]
+    },
+    {
+      "start": 9.58,
+      "end": 10.66,
+      "text": "Slides deck. It",
+      "words": [
+        {
+          "t": 9.58,
+          "text": "Slides"
+        },
+        {
+          "t": 10.04,
+          "text": "deck."
+        },
+        {
+          "t": 10.56,
+          "text": "It"
+        }
+      ]
+    },
+    {
+      "start": 10.66,
+      "end": 11.68,
+      "text": "builds whole 3D",
+      "words": [
+        {
+          "t": 10.66,
+          "text": "builds"
+        },
+        {
+          "t": 10.9,
+          "text": "whole"
+        },
+        {
+          "t": 11.2,
+          "text": "3D"
+        }
+      ]
+    },
+    {
+      "start": 11.68,
+      "end": 12.5,
+      "text": "worlds in Google",
+      "words": [
+        {
+          "t": 11.68,
+          "text": "worlds"
+        },
+        {
+          "t": 12.02,
           "text": "in"
+        },
+        {
+          "t": 12.28,
+          "text": "Google"
         }
       ]
     },
     {
-      "start": 4.04,
-      "end": 4.86,
-      "text": "the Gemini app,",
+      "start": 12.5,
+      "end": 13.72,
+      "text": "AI Studio. It",
       "words": [
         {
-          "t": 4.04,
-          "text": "the"
+          "t": 12.5,
+          "text": "AI"
         },
         {
-          "t": 4.14,
-          "text": "Gemini"
+          "t": 12.82,
+          "text": "Studio."
         },
         {
-          "t": 4.54,
-          "text": "app,"
+          "t": 13.64,
+          "text": "It"
         }
       ]
     },
     {
-      "start": 5.32,
-      "end": 6.22,
-      "text": "and people are",
+      "start": 13.72,
+      "end": 14.7,
+      "text": "helps teach robots",
       "words": [
         {
-          "t": 5.32,
+          "t": 13.72,
+          "text": "helps"
+        },
+        {
+          "t": 13.98,
+          "text": "teach"
+        },
+        {
+          "t": 14.24,
+          "text": "robots"
+        }
+      ]
+    },
+    {
+      "start": 14.7,
+      "end": 16.0,
+      "text": "physical skills just",
+      "words": [
+        {
+          "t": 14.7,
+          "text": "physical"
+        },
+        {
+          "t": 15.12,
+          "text": "skills"
+        },
+        {
+          "t": 15.68,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 16.0,
+      "end": 17.02,
+      "text": "from video. Snap",
+      "words": [
+        {
+          "t": 16.0,
+          "text": "from"
+        },
+        {
+          "t": 16.24,
+          "text": "video."
+        },
+        {
+          "t": 16.84,
+          "text": "Snap"
+        }
+      ]
+    },
+    {
+      "start": 17.02,
+      "end": 17.5,
+      "text": "a photo of",
+      "words": [
+        {
+          "t": 17.02,
+          "text": "a"
+        },
+        {
+          "t": 17.2,
+          "text": "photo"
+        },
+        {
+          "t": 17.34,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 17.5,
+      "end": 18.2,
+      "text": "your desk and",
+      "words": [
+        {
+          "t": 17.5,
+          "text": "your"
+        },
+        {
+          "t": 17.62,
+          "text": "desk"
+        },
+        {
+          "t": 17.94,
           "text": "and"
-        },
-        {
-          "t": 5.76,
-          "text": "people"
-        },
-        {
-          "t": 6.04,
-          "text": "are"
         }
       ]
     },
     {
-      "start": 6.22,
-      "end": 7.18,
-      "text": "already pushing it",
+      "start": 18.2,
+      "end": 18.7,
+      "text": "it turns it",
       "words": [
         {
-          "t": 6.22,
-          "text": "already"
+          "t": 18.2,
+          "text": "it"
         },
         {
-          "t": 6.66,
-          "text": "pushing"
+          "t": 18.34,
+          "text": "turns"
         },
         {
-          "t": 6.98,
+          "t": 18.54,
           "text": "it"
         }
       ]
     },
     {
-      "start": 7.18,
-      "end": 9.16,
-      "text": "hard. It's Gemini",
+      "start": 18.7,
+      "end": 19.32,
+      "text": "into a 3D",
       "words": [
         {
-          "t": 7.18,
-          "text": "hard."
+          "t": 18.7,
+          "text": "into"
         },
         {
-          "t": 8.54,
-          "text": "It's"
-        },
-        {
-          "t": 8.76,
-          "text": "Gemini"
-        }
-      ]
-    },
-    {
-      "start": 9.16,
-      "end": 10.34,
-      "text": "4 Argon, and",
-      "words": [
-        {
-          "t": 9.16,
-          "text": "4"
-        },
-        {
-          "t": 9.5,
-          "text": "Argon,"
-        },
-        {
-          "t": 10.22,
-          "text": "and"
-        }
-      ]
-    },
-    {
-      "start": 10.34,
-      "end": 10.7,
-      "text": "if you're on",
-      "words": [
-        {
-          "t": 10.34,
-          "text": "if"
-        },
-        {
-          "t": 10.44,
-          "text": "you're"
-        },
-        {
-          "t": 10.6,
-          "text": "on"
-        }
-      ]
-    },
-    {
-      "start": 10.7,
-      "end": 11.62,
-      "text": "Pro or Ultra,",
-      "words": [
-        {
-          "t": 10.7,
-          "text": "Pro"
-        },
-        {
-          "t": 11.0,
-          "text": "or"
-        },
-        {
-          "t": 11.26,
-          "text": "Ultra,"
-        }
-      ]
-    },
-    {
-      "start": 11.98,
-      "end": 12.76,
-      "text": "it's yours today.",
-      "words": [
-        {
-          "t": 11.98,
-          "text": "it's"
-        },
-        {
-          "t": 12.16,
-          "text": "yours"
-        },
-        {
-          "t": 12.38,
-          "text": "today."
-        }
-      ]
-    },
-    {
-      "start": 13.08,
-      "end": 13.76,
-      "text": "Watch what one",
-      "words": [
-        {
-          "t": 13.08,
-          "text": "Watch"
-        },
-        {
-          "t": 13.26,
-          "text": "what"
-        },
-        {
-          "t": 13.48,
-          "text": "one"
-        }
-      ]
-    },
-    {
-      "start": 13.76,
-      "end": 14.38,
-      "text": "user got out",
-      "words": [
-        {
-          "t": 13.76,
-          "text": "user"
-        },
-        {
-          "t": 13.96,
-          "text": "got"
-        },
-        {
-          "t": 14.18,
-          "text": "out"
-        }
-      ]
-    },
-    {
-      "start": 14.38,
-      "end": 15.04,
-      "text": "of it. First,",
-      "words": [
-        {
-          "t": 14.38,
-          "text": "of"
-        },
-        {
-          "t": 14.5,
-          "text": "it."
-        },
-        {
-          "t": 14.82,
-          "text": "First,"
-        }
-      ]
-    },
-    {
-      "start": 15.22,
-      "end": 15.66,
-      "text": "he asked for",
-      "words": [
-        {
-          "t": 15.22,
-          "text": "he"
-        },
-        {
-          "t": 15.26,
-          "text": "asked"
-        },
-        {
-          "t": 15.52,
-          "text": "for"
-        }
-      ]
-    },
-    {
-      "start": 15.66,
-      "end": 16.38,
-      "text": "a 3D floor",
-      "words": [
-        {
-          "t": 15.66,
+          "t": 18.86,
           "text": "a"
         },
         {
-          "t": 15.78,
+          "t": 18.98,
           "text": "3D"
-        },
-        {
-          "t": 16.12,
-          "text": "floor"
         }
       ]
     },
     {
-      "start": 16.38,
-      "end": 17.12,
-      "text": "plan of a",
-      "words": [
-        {
-          "t": 16.38,
-          "text": "plan"
-        },
-        {
-          "t": 16.74,
-          "text": "of"
-        },
-        {
-          "t": 17.02,
-          "text": "a"
-        }
-      ]
-    },
-    {
-      "start": 17.12,
-      "end": 18.56,
-      "text": "12\u00d715 foot living",
-      "words": [
-        {
-          "t": 17.12,
-          "text": "12\u00d715"
-        },
-        {
-          "t": 17.98,
-          "text": "foot"
-        },
-        {
-          "t": 18.28,
-          "text": "living"
-        }
-      ]
-    },
-    {
-      "start": 18.56,
-      "end": 19.54,
-      "text": "room. Argon built",
-      "words": [
-        {
-          "t": 18.56,
-          "text": "room."
-        },
-        {
-          "t": 19.0,
-          "text": "Argon"
-        },
-        {
-          "t": 19.4,
-          "text": "built"
-        }
-      ]
-    },
-    {
-      "start": 19.54,
+      "start": 19.32,
       "end": 20.02,
-      "text": "a room he",
+      "text": "racing game you",
       "words": [
         {
-          "t": 19.54,
-          "text": "a"
+          "t": 19.32,
+          "text": "racing"
         },
         {
-          "t": 19.7,
-          "text": "room"
+          "t": 19.6,
+          "text": "game"
         },
         {
-          "t": 19.88,
-          "text": "he"
+          "t": 19.92,
+          "text": "you"
         }
       ]
     },
     {
       "start": 20.02,
-      "end": 20.68,
-      "text": "could spin around,",
+      "end": 21.42,
+      "text": "can play. And",
       "words": [
         {
           "t": 20.02,
-          "text": "could"
+          "text": "can"
         },
         {
           "t": 20.16,
-          "text": "spin"
+          "text": "play."
         },
         {
-          "t": 20.4,
-          "text": "around,"
+          "t": 21.08,
+          "text": "And"
         }
       ]
     },
     {
-      "start": 20.96,
-      "end": 22.74,
-      "text": "lighting included. Next,",
+      "start": 21.42,
+      "end": 22.12,
+      "text": "it turns dense",
       "words": [
         {
-          "t": 20.96,
-          "text": "lighting"
+          "t": 21.42,
+          "text": "it"
         },
         {
-          "t": 21.22,
-          "text": "included."
+          "t": 21.56,
+          "text": "turns"
         },
         {
-          "t": 22.44,
-          "text": "Next,"
+          "t": 21.8,
+          "text": "dense"
         }
       ]
     },
     {
-      "start": 23.04,
-      "end": 23.56,
-      "text": "a chart of",
+      "start": 22.12,
+      "end": 23.26,
+      "text": "research papers into",
       "words": [
         {
-          "t": 23.04,
-          "text": "a"
+          "t": 22.12,
+          "text": "research"
         },
         {
-          "t": 23.14,
-          "text": "chart"
+          "t": 22.56,
+          "text": "papers"
         },
         {
-          "t": 23.36,
-          "text": "of"
+          "t": 22.96,
+          "text": "into"
         }
       ]
     },
     {
-      "start": 23.56,
-      "end": 24.8,
-      "text": "LA electricity prices.",
+      "start": 23.26,
+      "end": 25.02,
+      "text": "animated storybooks. It's",
       "words": [
         {
-          "t": 23.56,
-          "text": "LA"
+          "t": 23.26,
+          "text": "animated"
         },
         {
-          "t": 23.84,
-          "text": "electricity"
+          "t": 23.74,
+          "text": "storybooks."
         },
         {
-          "t": 24.26,
-          "text": "prices."
+          "t": 24.78,
+          "text": "It's"
         }
       ]
     },
     {
-      "start": 25.14,
-      "end": 25.64,
-      "text": "It found the",
+      "start": 25.02,
+      "end": 25.58,
+      "text": "out now in",
       "words": [
+        {
+          "t": 25.02,
+          "text": "out"
+        },
         {
           "t": 25.14,
-          "text": "It"
+          "text": "now"
         },
         {
-          "t": 25.26,
-          "text": "found"
-        },
-        {
-          "t": 25.5,
-          "text": "the"
+          "t": 25.4,
+          "text": "in"
         }
       ]
     },
     {
-      "start": 25.64,
-      "end": 26.46,
-      "text": "cheapest hours to",
+      "start": 25.58,
+      "end": 26.34,
+      "text": "the Gemini app",
       "words": [
         {
-          "t": 25.64,
-          "text": "cheapest"
-        },
-        {
-          "t": 25.92,
-          "text": "hours"
-        },
-        {
-          "t": 26.24,
-          "text": "to"
-        }
-      ]
-    },
-    {
-      "start": 26.46,
-      "end": 27.12,
-      "text": "run his laundry.",
-      "words": [
-        {
-          "t": 26.46,
-          "text": "run"
-        },
-        {
-          "t": 26.64,
-          "text": "his"
-        },
-        {
-          "t": 26.78,
-          "text": "laundry."
-        }
-      ]
-    },
-    {
-      "start": 27.82,
-      "end": 29.02,
-      "text": "Then, three video",
-      "words": [
-        {
-          "t": 27.82,
-          "text": "Then,"
-        },
-        {
-          "t": 28.22,
-          "text": "three"
-        },
-        {
-          "t": 28.68,
-          "text": "video"
-        }
-      ]
-    },
-    {
-      "start": 29.02,
-      "end": 30.12,
-      "text": "scripts. It planned",
-      "words": [
-        {
-          "t": 29.02,
-          "text": "scripts."
-        },
-        {
-          "t": 29.74,
-          "text": "It"
-        },
-        {
-          "t": 29.8,
-          "text": "planned"
-        }
-      ]
-    },
-    {
-      "start": 30.12,
-      "end": 30.8,
-      "text": "the shots for",
-      "words": [
-        {
-          "t": 30.12,
+          "t": 25.58,
           "text": "the"
         },
         {
-          "t": 30.3,
-          "text": "shots"
+          "t": 25.68,
+          "text": "Gemini"
         },
         {
-          "t": 30.58,
+          "t": 26.04,
+          "text": "app"
+        }
+      ]
+    },
+    {
+      "start": 26.34,
+      "end": 27.1,
+      "text": "for Pro and",
+      "words": [
+        {
+          "t": 26.34,
           "text": "for"
+        },
+        {
+          "t": 26.54,
+          "text": "Pro"
+        },
+        {
+          "t": 26.88,
+          "text": "and"
         }
       ]
     },
     {
-      "start": 30.8,
-      "end": 31.82,
-      "text": "every one. What would",
+      "start": 27.1,
+      "end": 29.42,
+      "text": "Ultra subscribers. Which",
       "words": [
         {
-          "t": 30.8,
-          "text": "every"
+          "t": 27.1,
+          "text": "Ultra"
         },
         {
-          "t": 31.52,
-          "text": "one."
+          "t": 27.42,
+          "text": "subscribers."
         },
         {
-          "t": 31.68,
-          "text": "What"
-        },
+          "t": 28.88,
+          "text": "Which"
+        }
+      ]
+    },
+    {
+      "start": 29.42,
+      "end": 29.92,
+      "text": "would you try",
+      "words": [
         {
-          "t": 31.68,
+          "t": 29.42,
           "text": "would"
-        }
-      ]
-    },
-    {
-      "start": 31.82,
-      "end": 32.26,
-      "text": "you ask it",
-      "words": [
+        },
         {
-          "t": 31.82,
+          "t": 29.62,
           "text": "you"
         },
         {
-          "t": 31.92,
-          "text": "ask"
-        },
-        {
-          "t": 32.12,
-          "text": "it"
+          "t": 29.72,
+          "text": "try"
         }
       ]
     },
     {
-      "start": 32.26,
-      "end": 33.8,
-      "text": "first? Comment below.",
+      "start": 29.92,
+      "end": 30.26,
+      "text": "first?",
       "words": [
         {
-          "t": 32.26,
+          "t": 29.92,
           "text": "first?"
-        },
-        {
-          "t": 33.26,
-          "text": "Comment"
-        },
-        {
-          "t": 33.5,
-          "text": "below."
         }
       ]
     }
@@ -969,31 +930,19 @@
         "vol": 0.055
       },
       {
-        "t": 7.48,
+        "t": 30.26,
         "vol": 0.055
       },
       {
-        "t": 7.82,
+        "t": 30.6,
         "vol": 0.15
       },
       {
-        "t": 8.36,
+        "t": 31.1,
         "vol": 0.15
       },
       {
-        "t": 8.54,
-        "vol": 0.055
-      },
-      {
-        "t": 33.8,
-        "vol": 0.055
-      },
-      {
-        "t": 34.14,
-        "vol": 0.15
-      },
-      {
-        "t": 35.0,
+        "t": 32.0,
         "vol": 0.02
       }
     ],
@@ -1002,11 +951,11 @@
   "format": "news",
   "showCredits": false,
   "allowLong": false,
-  "script": "Google just put its most powerful Gemini yet in the Gemini app, and people are already pushing it hard. It's Gemini 4 Argon, and if you're on Pro or Ultra, it's yours today. Watch what one user got out of it.\n\nFirst, he asked for a 3D floor plan of a twelve by fifteen foot living room. Argon built a room he could spin around, lighting included.\n\nNext, a chart of LA electricity prices. It found the cheapest hours to run his laundry.\n\nThen three video scripts. It planned the shots for every one.\n\nWhat would you ask it first? Comment below.",
+  "script": "Google just dropped Gemini 4 Argon, its most powerful AI yet. Here's what it can do.\n\nIt turns thousands of messy files into a Google Slides deck.\n\nIt builds whole 3D worlds in Google AI Studio.\n\nIt helps teach robots physical skills, just from video.\n\nSnap a photo of your desk, and it turns it into a 3D racing game you can play.\n\nAnd it turns dense research papers into animated storybooks.\n\nIt's out now in the Gemini app for Pro and Ultra subscribers. Which would you try first?",
   "approval": {
-    "sha256": "a311e73320df294c811fa70c3fe4ad46c15b4f986ae5941e89846c15602cfa3b",
-    "approvedAt": "2026-10-14T05:43:51+00:00",
-    "words": 102,
+    "sha256": "0a18ee2170d1e8d6d51ef309d06019ca430ff05a25bfdad4ff973ab560112bd0",
+    "approvedAt": "2026-10-14T06:38:34+00:00",
+    "words": 89,
     "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
   }
 }

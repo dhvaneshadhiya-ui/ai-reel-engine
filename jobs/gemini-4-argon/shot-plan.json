@@ -1,20 +1,19 @@
 {
  "emphasis": [
-  "Gemini 4 Argon",
   "Argon",
-  "Ultra",
+  "Slides",
   "3D",
-  "spin",
-  "cheapest",
-  "laundry",
-  "every one"
+  "robots",
+  "racing",
+  "storybooks",
+  "Ultra"
  ],
  "caption_corrections": {
-  "Argonne,": "Argon,",
-  "Argonne": "Argon",
-  "everyone.": "every one.",
-  "12x15": "12\u00d715",
-  "3": "three"
+  "Ardon.": "Argon.",
+  "Ardon": "Argon",
+  "It's most": "its most",
+  "pro": "Pro",
+  "ultra": "Ultra"
  },
  "format": "news",
  "music": true,
@@ -24,22 +23,22 @@
  "showCredits": false,
  "shots": [
   {
-   "start_phrase": "Google just put its",
+   "start_phrase": "Google just dropped",
    "tier": "official",
-   "asset_id": "arg-app-slow",
-   "line": "Google just put its most powerful Gemini yet in the Gemini app,",
+   "asset_id": "g-title",
+   "line": "Google just dropped Gemini 4 Argon, its most powerful AI yet. Here's what it can do.",
    "scene": {
     "type": "slide",
-    "eyebrow": "Google \u00b7 Gemini app",
-    "headline": "Google's most powerful [[Gemini]] yet",
+    "eyebrow": "Google \u00b7 video: Google",
+    "headline": "Gemini 4 Argon is [[here]]",
     "blocks": [
      {
       "id": "c",
       "kind": "clip",
-      "src": "assets/gemini-4-argon/arg-app-slow.mp4",
+      "src": "assets/gemini-4-argon/g-title.mp4",
       "width": 1080,
-      "height": 760,
-      "h": 760,
+      "height": 1440,
+      "h": 740,
       "device": false
      }
     ],
@@ -49,26 +48,27 @@
       "target": "headline",
       "on": "powerful"
      }
-    ]
+    ],
+    "headlineSize": "xl"
    }
   },
   {
-   "start_phrase": "and people are already",
-   "tier": "single",
-   "asset_id": "arg-scripts-phone",
-   "line": "and people are already pushing it hard.",
+   "start_phrase": "It turns thousands",
+   "tier": "official",
+   "asset_id": "g-slides",
+   "line": "It turns thousands of messy files into a Google Slides deck.",
    "scene": {
     "type": "slide",
-    "eyebrow": "Gemini 4 Argon \u00b7 video: @renzsadiwa",
-    "headline": "Already being [[pushed hard]]",
+    "eyebrow": "1 \u00b7 video: Google",
+    "headline": "Messy files \u2192 a [[Slides deck]]",
     "blocks": [
      {
       "id": "c",
       "kind": "clip",
-      "src": "assets/gemini-4-argon/arg-scripts-phone.mp4",
-      "width": 1080,
-      "height": 1090,
-      "h": 790,
+      "src": "assets/gemini-4-argon/g-slides.mp4",
+      "width": 900,
+      "height": 506,
+      "h": 640,
       "device": false
      }
     ],
@@ -76,20 +76,136 @@
      {
       "do": "pill",
       "target": "headline",
-      "on": "pushing"
+      "on": "Slides"
      }
     ]
    }
   },
   {
-   "start_phrase": "It's Gemini 4",
+   "start_phrase": "It builds whole",
+   "tier": "official",
+   "asset_id": "g-world",
+   "line": "It builds whole 3D worlds in Google AI Studio.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "2 \u00b7 video: Google",
+    "headline": "Whole [[3D worlds]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/gemini-4-argon/g-world.mp4",
+      "width": 900,
+      "height": 506,
+      "h": 640,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "worlds"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "It helps teach",
+   "tier": "official",
+   "asset_id": "g-robot",
+   "line": "It helps teach robots physical skills, just from video.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "3 \u00b7 video: Google",
+    "headline": "Robots learn [[from video]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/gemini-4-argon/g-robot.mp4",
+      "width": 900,
+      "height": 506,
+      "h": 640,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "video"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Snap a photo",
+   "tier": "official",
+   "asset_id": "g-game",
+   "line": "Snap a photo of your desk, and it turns it into a 3D racing game you can play.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "4 \u00b7 video: Google",
+    "headline": "Your desk \u2192 a [[racing game]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/gemini-4-argon/g-game.mp4",
+      "width": 900,
+      "height": 506,
+      "h": 640,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "racing"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "And it turns dense",
+   "tier": "official",
+   "asset_id": "g-story",
+   "line": "And it turns dense research papers into animated storybooks.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "5 \u00b7 video: Google",
+    "headline": "Papers \u2192 [[storybooks]]",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/gemini-4-argon/g-story.mp4",
+      "width": 900,
+      "height": 506,
+      "h": 640,
+      "device": false
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "storybooks"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "It's out now",
    "tier": "official",
    "asset_id": "google-post-head",
-   "line": "It's Gemini 4 Argon, and if you're on Pro or Ultra, it's yours today. Watch what one user got out of it.",
+   "line": "It's out now in the Gemini app for Pro and Ultra subscribers.",
    "scene": {
     "type": "slide",
     "eyebrow": "Google \u00b7 Oct 13",
-    "headline": "[[Pro and Ultra]] get it today",
+    "headline": "[[Pro and Ultra]] get it now",
     "blocks": [
      {
       "id": "s",
@@ -99,131 +215,34 @@
       "height": 460,
       "device": false,
       "h": 440
-     },
-     {
-      "id": "t",
-      "kind": "text",
-      "text": "Here's what one user made with it"
      }
     ],
     "moves": [
-     {
-      "do": "pill",
-      "target": "headline",
-      "on": "Ultra"
-     },
-     {
-      "do": "show",
-      "target": "t",
-      "on": "Watch"
-     },
      {
       "do": "state",
       "target": "s",
-      "on": "Pro",
+      "on": "for",
       "src": "assets/gemini-4-argon/google-post-pro.png"
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "First, he asked for",
-   "tier": "single",
-   "asset_id": "arg-3d",
-   "line": "First, he asked for a 3D floor plan of a twelve by fifteen foot living room. Argon built a room he could spin around, lighting included.",
-   "scene": {
-    "type": "slide",
-    "eyebrow": "Demo 1 \u00b7 video: @renzsadiwa",
-    "headline": "One prompt, a [[3D room]]",
-    "blocks": [
-     {
-      "id": "c",
-      "kind": "clip",
-      "src": "assets/gemini-4-argon/arg-3d.mp4",
-      "width": 1080,
-      "height": 920,
-      "h": 790,
-      "device": false
-     }
-    ],
-    "moves": [
+     },
      {
       "do": "pill",
       "target": "headline",
-      "on": "spin"
+      "on": "ultra"
      }
     ]
    }
   },
   {
-   "start_phrase": "Next, a chart of",
-   "tier": "single",
-   "asset_id": "arg-chart",
-   "line": "Next, a chart of LA electricity prices. It found the cheapest hours to run his laundry.",
-   "scene": {
-    "type": "slide",
-    "eyebrow": "Demo 2 \u00b7 video: @renzsadiwa",
-    "headline": "Cheapest hours to [[do laundry]]",
-    "blocks": [
-     {
-      "id": "c",
-      "kind": "clip",
-      "src": "assets/gemini-4-argon/arg-chart.mp4",
-      "width": 1080,
-      "height": 800,
-      "h": 800,
-      "device": false
-     }
-    ],
-    "moves": [
-     {
-      "do": "pill",
-      "target": "headline",
-      "on": "cheapest"
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "Then",
-   "tier": "single",
-   "asset_id": "arg-scripts-list",
-   "line": "Then three video scripts. It planned the shots for every one.",
-   "scene": {
-    "type": "slide",
-    "eyebrow": "Demo 3 \u00b7 video: @renzsadiwa",
-    "headline": "A shot list for [[every script]]",
-    "blocks": [
-     {
-      "id": "c",
-      "kind": "clip",
-      "src": "assets/gemini-4-argon/arg-scripts-list.mp4",
-      "width": 1080,
-      "height": 1090,
-      "h": 790,
-      "device": false
-     }
-    ],
-    "moves": [
-     {
-      "do": "pill",
-      "target": "headline",
-      "on": "planned"
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "What would you ask",
-   "tier": "single",
-   "asset_id": "arg-3d-room",
-   "line": "What would you ask it first? Comment below.",
+   "start_phrase": "Which would you",
+   "tier": "official",
+   "asset_id": "g-endgame",
+   "line": "Which would you try first?",
    "scene": {
     "type": "slide",
     "cta": true,
     "hideCaptions": true,
     "headlineSize": "xl",
-    "headline": "What would [[you ask]] it first?",
+    "headline": "Which would [[you try]] first?",
     "blocks": [
      {
       "id": "d",
@@ -233,9 +252,9 @@
      {
       "id": "c",
       "kind": "clip",
-      "src": "assets/gemini-4-argon/arg-3d-room.mp4",
-      "width": 1080,
-      "height": 760,
+      "src": "assets/gemini-4-argon/g-endgame.mp4",
+      "width": 900,
+      "height": 506,
       "h": 420,
       "device": false
      }
@@ -244,12 +263,12 @@
      {
       "do": "pill",
       "target": "headline",
-      "on": "ask"
+      "on": "try"
      },
      {
       "do": "show",
       "target": "d",
-      "on": "Comment"
+      "on": "first?"
      }
     ]
    }

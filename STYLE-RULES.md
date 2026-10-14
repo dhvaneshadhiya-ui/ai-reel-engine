@@ -9845,3 +9845,25 @@ Faceless slide reel over a creator's Gemini app recordings with "Demo N · video
 vendor's availability post as two crops (headline, then the access paragraph on "Pro"); chart demo ordered
 chart → question → answer; end card over the 3D result. Next AI-model reel: do not open on a phone-in-hand
 app shot again; do not reuse the "Demo 1/2/3" eyebrow ladder.
+
+### 2026-10-14 (later) — gemini-4-argon v3: "simple, to the point" after Google's own carousel
+
+- **RAW NOTE 7 — the vendor's own launch carousel is the best script AND the best b-roll.** Google's post
+  (instagram.com/p/DecN711mjpI) is seven slides: title, five capabilities (headline + one-line + demo clip),
+  availability. yt-dlp `-I 2:7` pulls each carousel video (1080x1440); the image slide fails, harmlessly.
+  The demo window sits at crop=900:506:90:410 on every slide; Google's baked headline is cropped out and ours
+  goes on top. RULE: for a model launch, look for the vendor's own social carousel before any creator footage;
+  it removes the licensing question and makes every capability line official tier.
+- **RAW NOTE 8 — "simple" meant one capability per sentence, the same subject, ~90 words.** User rejected both
+  a story-shaped v1 and a demo-narration v2 for this. Repeated "It turns…" openings were varied once
+  (humanizer §7), not removed: the list rhythm is the point.
+- **RAW NOTE 9 — whisper small hears "Argon" as "Ardon".** medium on the 3s slice heard "Argon" cleanly; fix
+  via caption_corrections, not a re-record.
+- **RAW NOTE 10 — lint [DUPLICATE] is a 16x16 average hash of mid-frames:** two slides with a light box on dark
+  in the same place read as one frame. Fix by changing the layout (headlineSize xl, different block height),
+  not by swapping footage. And "And it turns" matched "and it turns it into" — anchors must be unique phrases.
+- ElevenLabs v3: 89 words in 27.4s (~541 credits), vo_pad to 30.5s, +1.5s tail. 12 SFX audible. READY round 5.
+
+Treatments used: vendor title card as the hook block; numbered "N · video: Google" eyebrows with
+"input → output" headlines ("Messy files → a Slides deck"); vendor post as two crops for availability; end card
+over the racing game. Next model-launch reel: do not reuse the arrow headline pattern for every beat.
