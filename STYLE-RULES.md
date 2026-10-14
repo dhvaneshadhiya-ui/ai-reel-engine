@@ -9813,3 +9813,35 @@ personal home screen for face recognition; a lock tile focus for "lock the front
 FaceTime film shots; App Store as a struck red row under an apps still; EU as a red "Not on sale" hero.
 Next hardware-announcement reel: do not open on a device-on-counter film shot again; do not use the struck
 "No" row for a missing feature.
+
+## 2026-10-14 — gemini-4-argon (faceless voiceover, a creator's screen recordings, user's reference reel)
+
+- **RAW NOTE 1 — the user rejected a well-sourced script as "not good" and handed over a reference.**
+  v1 was a security-first news story (defenders first, Astra tie, Bloomberg coding report, API price): clean on
+  every checker, and still not what the user wanted for "here's what it can do". The reference
+  (instagram.com/reel/DecUb-FKNqA, 29s) was three demos in the app and nothing else. ROOT CAUSE: the
+  headline promise was "what it can do", and v1 answered "what Google says about it". RULE: when the
+  topic line is a capability promise, the picture has to SHOW the thing doing it, and the script follows the
+  demos. Ask for or find demo footage before writing a word.
+- **RAW NOTE 2 — "remove the face" = no presenter at all.** facePlan "none", VO only, slide scenes over the
+  recordings; zero HeyGen credits. The creator's own face in the reference is never shown either.
+- **RAW NOTE 3 — creator reels carry their edit inside the footage.** His clips open on 1-2 frame flashes and
+  a white flash decaying from 122 to 65 YAVG; lint_frames [CUT DIP] blocked it. RULE: measure
+  `signalstats` YAVG over the first frames of every borrowed clip and trim past any flash/fade.
+  His baked captions sit at y 940-1000 (split) and 1120-1180 (full-frame): crop above them.
+- **RAW NOTE 4 — a 1080x3400 page in a slide `screen` block cannot zoom to one paragraph** (the focus zoom
+  caps around 3x of the contain-fit, so a single line stayed a thin strip). RULE: cut the receipt into tight
+  crops and switch them with a `state` move on the spoken word.
+- **RAW NOTE 5 — a demo built from transitions and loading screens shows nothing.** The chart demo was rebuilt
+  in viewer order: the chart (his frame, held with a slow push), the question, then the answer.
+- **RAW NOTE 6 — single-source demo claims are attributed in the words** ("one user… he…"), and the presenter
+  never says "I" for someone else's demo. research_check still advises UNHEDGED on them; the evidence is the
+  recording on screen while the line is spoken.
+- ElevenLabs v3: 102 words in 29.7s (3.44 w/s, ~605 credits), vo_pad to 34.0s, +1.0s tail silence so the end
+  card holds 3.5s. 11 SFX, all audible. Critique READY at round 3.
+
+### Treatments used (do not repeat for the same kind of information)
+Faceless slide reel over a creator's Gemini app recordings with "Demo N · video: @creator" eyebrows; the
+vendor's availability post as two crops (headline, then the access paragraph on "Pro"); chart demo ordered
+chart → question → answer; end card over the 3D result. Next AI-model reel: do not open on a phone-in-hand
+app shot again; do not reuse the "Demo 1/2/3" eyebrow ladder.

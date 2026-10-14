@@ -1,0 +1,1012 @@
+{
+  "id": "gemini-4-argon",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/gemini-4-argon/vo.mp3",
+  "facePlan": "none",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "Gemini 4 Argon",
+    "Argon",
+    "Ultra",
+    "3D",
+    "spin",
+    "cheapest",
+    "laundry",
+    "every one"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "eyebrow": "Google \u00b7 Gemini app",
+      "headline": "Google's most powerful [[Gemini]] yet",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/gemini-4-argon/arg-app-slow.mp4",
+          "width": 1080,
+          "height": 760,
+          "h": 760,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "powerful",
+          "at": 1.92
+        }
+      ],
+      "durationSec": 5.32,
+      "assetId": "arg-app-slow",
+      "claimId": "arg-app-slow",
+      "covers": "Google just put its",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.89,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Gemini 4 Argon \u00b7 video: @renzsadiwa",
+      "headline": "Already being [[pushed hard]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/gemini-4-argon/arg-scripts-phone.mp4",
+          "width": 1080,
+          "height": 1090,
+          "h": 790,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "pushing",
+          "at": 1.34
+        }
+      ],
+      "durationSec": 3.22,
+      "assetId": "arg-scripts-phone",
+      "claimId": "arg-scripts-phone",
+      "covers": "and people are already",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.31,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Google \u00b7 Oct 13",
+      "headline": "[[Pro and Ultra]] get it today",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/gemini-4-argon/google-post-head.png",
+          "width": 1080,
+          "height": 460,
+          "device": false,
+          "h": 440
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Here's what one user made with it"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Ultra",
+          "at": 2.72
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "Watch",
+          "at": 4.54
+        },
+        {
+          "do": "state",
+          "target": "s",
+          "on": "Pro",
+          "src": "assets/gemini-4-argon/google-post-pro.png",
+          "at": 2.16
+        }
+      ],
+      "durationSec": 6.28,
+      "assetId": "google-post-head",
+      "claimId": "google-post-head",
+      "covers": "It's Gemini 4",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Click.MP3",
+          "at": 2.23,
+          "vol": 0.251
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Demo 1 \u00b7 video: @renzsadiwa",
+      "headline": "One prompt, a [[3D room]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/gemini-4-argon/arg-3d.mp4",
+          "width": 1080,
+          "height": 920,
+          "h": 790,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "spin",
+          "at": 5.34
+        }
+      ],
+      "durationSec": 7.62,
+      "assetId": "arg-3d",
+      "claimId": "arg-3d",
+      "covers": "First, he asked for",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 5.31,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Demo 2 \u00b7 video: @renzsadiwa",
+      "headline": "Cheapest hours to [[do laundry]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/gemini-4-argon/arg-chart.mp4",
+          "width": 1080,
+          "height": 800,
+          "h": 800,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "cheapest",
+          "at": 3.2
+        }
+      ],
+      "durationSec": 5.38,
+      "assetId": "arg-chart",
+      "claimId": "arg-chart",
+      "covers": "Next, a chart of",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 3.17,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "Demo 3 \u00b7 video: @renzsadiwa",
+      "headline": "A shot list for [[every script]]",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/gemini-4-argon/arg-scripts-list.mp4",
+          "width": 1080,
+          "height": 1090,
+          "h": 790,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "planned",
+          "at": 1.98
+        }
+      ],
+      "durationSec": 3.7,
+      "assetId": "arg-scripts-list",
+      "claimId": "arg-scripts-list",
+      "covers": "Then",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Core.MP3",
+          "at": 1.93,
+          "vol": 0.556
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "hideCaptions": true,
+      "headlineSize": "xl",
+      "headline": "What would [[you ask]] it first?",
+      "blocks": [
+        {
+          "id": "d",
+          "kind": "text",
+          "text": "Tell us in the comments."
+        },
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/gemini-4-argon/arg-3d-room.mp4",
+          "width": 1080,
+          "height": 760,
+          "h": 420,
+          "device": false
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "ask",
+          "at": 0.4
+        },
+        {
+          "do": "show",
+          "target": "d",
+          "on": "Comment",
+          "at": 1.74
+        }
+      ],
+      "durationSec": 3.48,
+      "assetId": "arg-3d-room",
+      "claimId": "arg-3d-room",
+      "covers": "What would you ask",
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.37,
+          "vol": 0.343
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.94,
+      "text": "Google just put",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Google"
+        },
+        {
+          "t": 0.32,
+          "text": "just"
+        },
+        {
+          "t": 0.64,
+          "text": "put"
+        }
+      ]
+    },
+    {
+      "start": 0.94,
+      "end": 2.48,
+      "text": "its most powerful",
+      "words": [
+        {
+          "t": 0.94,
+          "text": "its"
+        },
+        {
+          "t": 1.6,
+          "text": "most"
+        },
+        {
+          "t": 1.92,
+          "text": "powerful"
+        }
+      ]
+    },
+    {
+      "start": 2.48,
+      "end": 4.04,
+      "text": "Gemini yet in",
+      "words": [
+        {
+          "t": 2.48,
+          "text": "Gemini"
+        },
+        {
+          "t": 2.92,
+          "text": "yet"
+        },
+        {
+          "t": 3.26,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 4.04,
+      "end": 4.86,
+      "text": "the Gemini app,",
+      "words": [
+        {
+          "t": 4.04,
+          "text": "the"
+        },
+        {
+          "t": 4.14,
+          "text": "Gemini"
+        },
+        {
+          "t": 4.54,
+          "text": "app,"
+        }
+      ]
+    },
+    {
+      "start": 5.32,
+      "end": 6.22,
+      "text": "and people are",
+      "words": [
+        {
+          "t": 5.32,
+          "text": "and"
+        },
+        {
+          "t": 5.76,
+          "text": "people"
+        },
+        {
+          "t": 6.04,
+          "text": "are"
+        }
+      ]
+    },
+    {
+      "start": 6.22,
+      "end": 7.18,
+      "text": "already pushing it",
+      "words": [
+        {
+          "t": 6.22,
+          "text": "already"
+        },
+        {
+          "t": 6.66,
+          "text": "pushing"
+        },
+        {
+          "t": 6.98,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 7.18,
+      "end": 9.16,
+      "text": "hard. It's Gemini",
+      "words": [
+        {
+          "t": 7.18,
+          "text": "hard."
+        },
+        {
+          "t": 8.54,
+          "text": "It's"
+        },
+        {
+          "t": 8.76,
+          "text": "Gemini"
+        }
+      ]
+    },
+    {
+      "start": 9.16,
+      "end": 10.34,
+      "text": "4 Argon, and",
+      "words": [
+        {
+          "t": 9.16,
+          "text": "4"
+        },
+        {
+          "t": 9.5,
+          "text": "Argon,"
+        },
+        {
+          "t": 10.22,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 10.34,
+      "end": 10.7,
+      "text": "if you're on",
+      "words": [
+        {
+          "t": 10.34,
+          "text": "if"
+        },
+        {
+          "t": 10.44,
+          "text": "you're"
+        },
+        {
+          "t": 10.6,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 10.7,
+      "end": 11.62,
+      "text": "Pro or Ultra,",
+      "words": [
+        {
+          "t": 10.7,
+          "text": "Pro"
+        },
+        {
+          "t": 11.0,
+          "text": "or"
+        },
+        {
+          "t": 11.26,
+          "text": "Ultra,"
+        }
+      ]
+    },
+    {
+      "start": 11.98,
+      "end": 12.76,
+      "text": "it's yours today.",
+      "words": [
+        {
+          "t": 11.98,
+          "text": "it's"
+        },
+        {
+          "t": 12.16,
+          "text": "yours"
+        },
+        {
+          "t": 12.38,
+          "text": "today."
+        }
+      ]
+    },
+    {
+      "start": 13.08,
+      "end": 13.76,
+      "text": "Watch what one",
+      "words": [
+        {
+          "t": 13.08,
+          "text": "Watch"
+        },
+        {
+          "t": 13.26,
+          "text": "what"
+        },
+        {
+          "t": 13.48,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 13.76,
+      "end": 14.38,
+      "text": "user got out",
+      "words": [
+        {
+          "t": 13.76,
+          "text": "user"
+        },
+        {
+          "t": 13.96,
+          "text": "got"
+        },
+        {
+          "t": 14.18,
+          "text": "out"
+        }
+      ]
+    },
+    {
+      "start": 14.38,
+      "end": 15.04,
+      "text": "of it. First,",
+      "words": [
+        {
+          "t": 14.38,
+          "text": "of"
+        },
+        {
+          "t": 14.5,
+          "text": "it."
+        },
+        {
+          "t": 14.82,
+          "text": "First,"
+        }
+      ]
+    },
+    {
+      "start": 15.22,
+      "end": 15.66,
+      "text": "he asked for",
+      "words": [
+        {
+          "t": 15.22,
+          "text": "he"
+        },
+        {
+          "t": 15.26,
+          "text": "asked"
+        },
+        {
+          "t": 15.52,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 15.66,
+      "end": 16.38,
+      "text": "a 3D floor",
+      "words": [
+        {
+          "t": 15.66,
+          "text": "a"
+        },
+        {
+          "t": 15.78,
+          "text": "3D"
+        },
+        {
+          "t": 16.12,
+          "text": "floor"
+        }
+      ]
+    },
+    {
+      "start": 16.38,
+      "end": 17.12,
+      "text": "plan of a",
+      "words": [
+        {
+          "t": 16.38,
+          "text": "plan"
+        },
+        {
+          "t": 16.74,
+          "text": "of"
+        },
+        {
+          "t": 17.02,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 17.12,
+      "end": 18.56,
+      "text": "12\u00d715 foot living",
+      "words": [
+        {
+          "t": 17.12,
+          "text": "12\u00d715"
+        },
+        {
+          "t": 17.98,
+          "text": "foot"
+        },
+        {
+          "t": 18.28,
+          "text": "living"
+        }
+      ]
+    },
+    {
+      "start": 18.56,
+      "end": 19.54,
+      "text": "room. Argon built",
+      "words": [
+        {
+          "t": 18.56,
+          "text": "room."
+        },
+        {
+          "t": 19.0,
+          "text": "Argon"
+        },
+        {
+          "t": 19.4,
+          "text": "built"
+        }
+      ]
+    },
+    {
+      "start": 19.54,
+      "end": 20.02,
+      "text": "a room he",
+      "words": [
+        {
+          "t": 19.54,
+          "text": "a"
+        },
+        {
+          "t": 19.7,
+          "text": "room"
+        },
+        {
+          "t": 19.88,
+          "text": "he"
+        }
+      ]
+    },
+    {
+      "start": 20.02,
+      "end": 20.68,
+      "text": "could spin around,",
+      "words": [
+        {
+          "t": 20.02,
+          "text": "could"
+        },
+        {
+          "t": 20.16,
+          "text": "spin"
+        },
+        {
+          "t": 20.4,
+          "text": "around,"
+        }
+      ]
+    },
+    {
+      "start": 20.96,
+      "end": 22.74,
+      "text": "lighting included. Next,",
+      "words": [
+        {
+          "t": 20.96,
+          "text": "lighting"
+        },
+        {
+          "t": 21.22,
+          "text": "included."
+        },
+        {
+          "t": 22.44,
+          "text": "Next,"
+        }
+      ]
+    },
+    {
+      "start": 23.04,
+      "end": 23.56,
+      "text": "a chart of",
+      "words": [
+        {
+          "t": 23.04,
+          "text": "a"
+        },
+        {
+          "t": 23.14,
+          "text": "chart"
+        },
+        {
+          "t": 23.36,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 23.56,
+      "end": 24.8,
+      "text": "LA electricity prices.",
+      "words": [
+        {
+          "t": 23.56,
+          "text": "LA"
+        },
+        {
+          "t": 23.84,
+          "text": "electricity"
+        },
+        {
+          "t": 24.26,
+          "text": "prices."
+        }
+      ]
+    },
+    {
+      "start": 25.14,
+      "end": 25.64,
+      "text": "It found the",
+      "words": [
+        {
+          "t": 25.14,
+          "text": "It"
+        },
+        {
+          "t": 25.26,
+          "text": "found"
+        },
+        {
+          "t": 25.5,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 25.64,
+      "end": 26.46,
+      "text": "cheapest hours to",
+      "words": [
+        {
+          "t": 25.64,
+          "text": "cheapest"
+        },
+        {
+          "t": 25.92,
+          "text": "hours"
+        },
+        {
+          "t": 26.24,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 26.46,
+      "end": 27.12,
+      "text": "run his laundry.",
+      "words": [
+        {
+          "t": 26.46,
+          "text": "run"
+        },
+        {
+          "t": 26.64,
+          "text": "his"
+        },
+        {
+          "t": 26.78,
+          "text": "laundry."
+        }
+      ]
+    },
+    {
+      "start": 27.82,
+      "end": 29.02,
+      "text": "Then, three video",
+      "words": [
+        {
+          "t": 27.82,
+          "text": "Then,"
+        },
+        {
+          "t": 28.22,
+          "text": "three"
+        },
+        {
+          "t": 28.68,
+          "text": "video"
+        }
+      ]
+    },
+    {
+      "start": 29.02,
+      "end": 30.12,
+      "text": "scripts. It planned",
+      "words": [
+        {
+          "t": 29.02,
+          "text": "scripts."
+        },
+        {
+          "t": 29.74,
+          "text": "It"
+        },
+        {
+          "t": 29.8,
+          "text": "planned"
+        }
+      ]
+    },
+    {
+      "start": 30.12,
+      "end": 30.8,
+      "text": "the shots for",
+      "words": [
+        {
+          "t": 30.12,
+          "text": "the"
+        },
+        {
+          "t": 30.3,
+          "text": "shots"
+        },
+        {
+          "t": 30.58,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 30.8,
+      "end": 31.82,
+      "text": "every one. What would",
+      "words": [
+        {
+          "t": 30.8,
+          "text": "every"
+        },
+        {
+          "t": 31.52,
+          "text": "one."
+        },
+        {
+          "t": 31.68,
+          "text": "What"
+        },
+        {
+          "t": 31.68,
+          "text": "would"
+        }
+      ]
+    },
+    {
+      "start": 31.82,
+      "end": 32.26,
+      "text": "you ask it",
+      "words": [
+        {
+          "t": 31.82,
+          "text": "you"
+        },
+        {
+          "t": 31.92,
+          "text": "ask"
+        },
+        {
+          "t": 32.12,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 32.26,
+      "end": 33.8,
+      "text": "first? Comment below.",
+      "words": [
+        {
+          "t": 32.26,
+          "text": "first?"
+        },
+        {
+          "t": 33.26,
+          "text": "Comment"
+        },
+        {
+          "t": 33.5,
+          "text": "below."
+        }
+      ]
+    }
+  ],
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 7.48,
+        "vol": 0.055
+      },
+      {
+        "t": 7.82,
+        "vol": 0.15
+      },
+      {
+        "t": 8.36,
+        "vol": 0.15
+      },
+      {
+        "t": 8.54,
+        "vol": 0.055
+      },
+      {
+        "t": 33.8,
+        "vol": 0.055
+      },
+      {
+        "t": 34.14,
+        "vol": 0.15
+      },
+      {
+        "t": 35.0,
+        "vol": 0.02
+      }
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+  },
+  "format": "news",
+  "showCredits": false,
+  "allowLong": false,
+  "script": "Google just put its most powerful Gemini yet in the Gemini app, and people are already pushing it hard. It's Gemini 4 Argon, and if you're on Pro or Ultra, it's yours today. Watch what one user got out of it.\n\nFirst, he asked for a 3D floor plan of a twelve by fifteen foot living room. Argon built a room he could spin around, lighting included.\n\nNext, a chart of LA electricity prices. It found the cheapest hours to run his laundry.\n\nThen three video scripts. It planned the shots for every one.\n\nWhat would you ask it first? Comment below.",
+  "approval": {
+    "sha256": "a311e73320df294c811fa70c3fe4ad46c15b4f986ae5941e89846c15602cfa3b",
+    "approvedAt": "2026-10-14T05:43:51+00:00",
+    "words": 102,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}
