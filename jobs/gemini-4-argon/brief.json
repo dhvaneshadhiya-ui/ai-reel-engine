@@ -13,7 +13,7 @@
   "target_duration": "60s",
   "tone": "<voice, personality, boundaries>",
   "source_policy": "official-preferred",
-  "footage_constraints": "<assets, permissions, presenter, recordings>",
+  "footage_constraints": "NO presenter face (user 2026-10-14). Voiceover only. B-roll: Renz Sadiwa reel DecUb-FKNqA screen recordings, cropped to exclude his face and baked captions; Google Oct 13 post on mobile.",
   "credit_instructions": "internal",
   "deliverables": [
     "script",
