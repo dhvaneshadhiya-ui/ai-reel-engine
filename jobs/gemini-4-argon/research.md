@@ -8,85 +8,62 @@ post Oct 14, Fairwind Program page. Findings: research/findings_*.md.
 
 ## CLAIMS
 
-- CLAIM: Argon was announced Sep 30 and first went only to trusted cyber defenders (Fairwind Program); broad paid access came Oct 13 — about two weeks later
+- CLAIM: Gemini 4 Argon is Google's most powerful model yet, now in the Gemini app
   TIER: multi
-  SPOKEN: "Gemini 4 Argon, spent its first two weeks with cyber defenders only"
-  SURPRISE: 75
-  SRC: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/
+  SPOKEN: "Google just put its most powerful Gemini yet in the Gemini app"
+  SURPRISE: 40
   SRC: https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/
-  VIA: Google launch post Sep 30 (phased rollout "starting with" Fairwind defenders)
-  VIA: TechCrunch Sep 30 ("only being rolled out to a select group of the company's cyber partners")
+  SRC: https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/
+  VIA: Google (launch post calls it its flagship / "next era of frontier intelligence"), reported by TechCrunch as "its most powerful model yet"
+  VIA: Google Gemini app post Oct 13
 
-- CLAIM: Gemini 4 Argon is Google's flagship model, now in the Gemini app and AI Mode in Search for Google AI Pro and Ultra subscribers
+- CLAIM: Google AI Pro and Ultra subscribers can use Argon in the Gemini app now (from Oct 13)
   TIER: official
-  SPOKEN: "it's live in the Gemini app and AI Mode in Search for Google AI Pro and Ultra subscribers"
+  SPOKEN: "It's Gemini 4 Argon, and if you're on Pro or Ultra, it's yours today"
   SURPRISE: 45
   SRC: https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/
   SRC: https://www.engadget.com/2285023/google-gemini-4-argon-is-now-available-in-the-gemini-app-and-ai-mode-in-search/
   SRC: https://9to5google.com/2026/10/13/gemini-app-4-argon/
-  VIA: Google Gemini app post Oct 13 ("Google AI Pro and Ultra subscribers can now access Gemini 4 Argon")
-  VIA: 9to5Google Oct 13, own observation of the model picker showing "4 Argon"
+  VIA: Google ("Google AI Pro and Ultra subscribers can now access Gemini 4 Argon")
+  VIA: 9to5Google own observation of "4 Argon" in the model picker
 
-- CLAIM: Google says Argon can autonomously find, validate and patch software vulnerabilities
-  TIER: official
-  SPOKEN: "Google says Argon can find security holes, test them and patch them by itself"
-  SURPRISE: 65
-  SRC: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/
-  SRC: https://cloud.google.com/blog/products/ai-machine-learning/gemini-4-argon-available-on-google-cloud
-  VIA: Google launch post (autonomously find, validate, and patch critical vulnerabilities)
-  ONE-SOURCE-OK: a capability claim attributed to Google in the spoken words; no independent test exists yet.
-
-- CLAIM: The public version ships with cyber mitigations that block offensive tasks; an unguarded version goes only to vetted defenders
-  TIER: official
-  SPOKEN: "So defenders got the first look, and your version refuses to help with attacks"
-  SURPRISE: 60
-  SRC: https://cloud.google.com/blog/products/ai-machine-learning/gemini-4-argon-available-on-google-cloud
-  SRC: https://deepmind.google/fairwind-program/
-  VIA: Google Cloud post ("cyber mitigations that block offensive tasks such as pentesting and exploitation"; "without cyber guardrails to a select set of trusted defenders")
-  ONE-SOURCE-OK: Google is the authority on its own model's safeguards.
-
-- CLAIM: 1,048,576-token context window (input and output combined); input text, image, video, audio, PDF; output text only
-  TIER: official
-  SPOKEN: "It can read about a million tokens in one go, and it takes in text, images, video, audio and PDFs. But it only answers in text"
-  SURPRISE: 40
-  SRC: https://ai.google.dev/gemini-api/docs/models/gemini-4-argon
-  SRC: https://www.engadget.com/2285023/google-gemini-4-argon-is-now-available-in-the-gemini-app-and-ai-mode-in-search/
-  VIA: Gemini API model page (1,048,576 tokens, "unified input and output"; output: Text)
-  ONE-SOURCE-OK: the API spec page is the authoritative record of the model's limits.
-
-- CLAIM: On the Artificial Analysis Intelligence Index, Argon (53) ties OpenAI's GPT-6 Astra
-  TIER: multi
-  SPOKEN: "the independent Artificial Analysis index has it tied with OpenAI's GPT-6 Astra"
-  SURPRISE: 55
-  SRC: https://artificialanalysis.ai/models/gemini-4-argon
-  SRC: https://www.engadget.com/2285023/google-gemini-4-argon-is-now-available-in-the-gemini-app-and-ai-mode-in-search/
-  VIA: Artificial Analysis model page (score 53, #8 of 216)
-  VIA: Engadget, citing Artificial Analysis (matches GPT-6 Astra's score)
-
-- CLAIM: Bloomberg reported Google employees say Argon struggles with real-world coding despite benchmark scores; Google denies it
+- CLAIM: In the Gemini app with Argon (High), one prompt produced an interactive 3D floor plan of a 12x15 ft living room with lighting controls
   TIER: single
-  SPOKEN: "But Bloomberg reports some Google staff say it struggles with real coding work, which Google disputes"
-  SURPRISE: 80
-  SRC: https://www.androidheadlines.com/2026/10/google-gemini-4-argon-launch-benchmark-performance-debate.html
-  VIA: Bloomberg (paywalled), via Android Headlines Oct 1
-  ONE-SOURCE-OK: spoken attributed to Bloomberg and paired with Google's denial; Bloomberg original is paywalled.
-
-- CLAIM: API intro pricing $2 per 1M input tokens ($10 output) through Nov 30 2026, then $4 / $20
-  TIER: official
-  SPOKEN: "it's two dollars per million input tokens until November thirtieth. After that, the price doubles"
-  SURPRISE: 50
-  SRC: https://ai.google.dev/gemini-api/docs/pricing
+  SPOKEN: "he asked for a 3D floor plan of a twelve by fifteen foot living room. Argon built a room he could spin around, lighting included"
+  SURPRISE: 70
+  SRC: https://www.instagram.com/reel/DecUb-FKNqA/
   SRC: https://cloud.google.com/blog/products/ai-machine-learning/gemini-4-argon-available-on-google-cloud
-  VIA: Gemini API pricing page and Google Cloud post ("standard pricing of $4 per million input tokens and $20")
-  ONE-SOURCE-OK: Google sets its own prices.
+  VIA: Renz Sadiwa screen recording, Gemini app header "Argon High", prompt "Build an interactive 3D floor plan ... 12x15 foot space, plus simulating lighting" (ref 2.5-10.9s)
+  VIA: Google Cloud post ("spatial reasoning, mathematical precision and visual coding")
+  ONE-SOURCE-OK: the claim is the demo itself, shown on screen while it is spoken; Google states the capability class.
+
+- CLAIM: Given an LA electricity-price-by-hour chart, Argon recommended the cheapest hours to run laundry, dishwasher and charging
+  TIER: single
+  SPOKEN: "a chart of LA electricity prices. It found the cheapest hours to run his laundry"
+  SURPRISE: 60
+  SRC: https://www.instagram.com/reel/DecUb-FKNqA/
+  SRC: https://cloud.google.com/blog/products/ai-machine-learning/gemini-4-argon-available-on-google-cloud
+  VIA: Renz Sadiwa screen recording (prompt with electricity-price-by-hour chart; answer "Run your high-energy appliances and charging between 8:00 PM and 10:00 AM") (ref 12.5-18.4s)
+  VIA: Google Cloud post ("reads long documents that mix text, tables, charts and images")
+  ONE-SOURCE-OK: the demo is shown on screen while it is spoken.
+
+- CLAIM: Given three script PDFs, Argon built a shot list for each
+  TIER: single
+  SPOKEN: "Then three video scripts. It planned the shots for every one"
+  SURPRISE: 55
+  SRC: https://www.instagram.com/reel/DecUb-FKNqA/
+  SRC: https://ai.google.dev/gemini-api/docs/models/gemini-4-argon
+  VIA: Renz Sadiwa screen recording ("These are my next three scripts. Build a shot list for each one", 3 PDFs, table output) (ref 18.5-24.4s)
+  VIA: Gemini API model page (PDF input supported)
+  ONE-SOURCE-OK: the demo is shown on screen while it is spoken.
 
 ## FEATURES + HOW TO USE
 
 - Gemini app + AI Mode for Pro/Ultra — USED
 - API paid tier (AI Studio, Android Studio), Antigravity for Ultra — CUT (developer detail; price kept)
-- Vulnerability find/validate/patch; Fairwind unguarded version — USED
-- Default cyber mitigations block offensive tasks — USED
-- 1M context; multimodal in; text out — USED
+- Vulnerability find/validate/patch; Fairwind unguarded version — CUT (v2: demo-led reel per user reference)
+- Default cyber mitigations block offensive tasks — CUT (v2)
+- 1M context; multimodal in; text out — CUT (v2; PDF + chart input shown in demos)
 - Long decode up to ~1M output (default 65K) — CUT (needs caveat)
 - Computer use (Preview) — CUT (preview)
 - Benchmarks: DeepSWE 77.9%, LVBench 91.7%, AutomationBench 51.3% — CUT (Google's own numbers; independent AA tie used instead)

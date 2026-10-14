@@ -1,12 +1,15 @@
 {
-  "script_sha256": "8a6db43de5e8bf4ffb7bf1f76557b32613e800808ebcb0315b4d07e6cb32f9d0",
-  "structure_sha256": "3bbbe07e0aae519bd168a7dacbeb4a2e7cba644ee35148008b80d9c35625f07b",
+  "script_sha256": "a311e73320df294c811fa70c3fe4ad46c15b4f986ae5941e89846c15602cfa3b",
+  "structure_sha256": "5f91235416a374c8ee043163ca56510d3989cee00c7f45fb149542656b039b8d",
   "findings": [
+    "  BRIDGES 1/10 sentences (10%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  NO OPEN LOOP \u2014 nothing in the opening third points forward. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "CADENCE: only 1 sentence reaches 18 words (longest 19). The playbook asks for 'occasionally one long spec sentence' \u2014 with everything short, nothing reads as short. Nothing to push against.",
     "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
   ],
   "research_advice": [
-    "the most surprising claim (SURPRISE 80: 'Bloomberg reported Google employees say Argon struggles with') is spoken in the last 40% of the script \u2014 consider leading with it."
+    "claim 5 ('Given three script PDFs, Argon built a s'): tier single but spoken UNHEDGED near 'Then three video scripts. It planned the shots for every one'. framework S20: a rumor spoken as fact is the script lying about its own sourcing. Add 'reportedly'/'leaked'/attribution, or upgrade the tier with a second source."
   ],
   "beatPlanShots": 0,
-  "proposedAt": "2026-10-14T05:23:55+00:00"
+  "proposedAt": "2026-10-14T05:31:43+00:00"
 }
