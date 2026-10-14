@@ -8,54 +8,68 @@ post Oct 14, Fairwind Program page. Findings: research/findings_*.md.
 
 ## CLAIMS
 
-- CLAIM: Gemini 4 Argon is Google's most powerful model yet, now in the Gemini app
+- CLAIM: Google released Gemini 4 Argon, called its most powerful model yet
   TIER: multi
-  SPOKEN: "Google just put its most powerful Gemini yet in the Gemini app"
-  SURPRISE: 40
+  SPOKEN: "Google just dropped Gemini 4 Argon, its most powerful AI yet"
+  SURPRISE: 35
   SRC: https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/
-  SRC: https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/
-  VIA: Google (launch post calls it its flagship / "next era of frontier intelligence"), reported by TechCrunch as "its most powerful model yet"
-  VIA: Google Gemini app post Oct 13
+  SRC: https://www.instagram.com/p/DecN711mjpI/
+  VIA: Google (launch post; Instagram post 'our newest frontier model'), reported by TechCrunch as 'its most powerful model yet'
+  VIA: Google official Instagram post Oct 13 2026, slide 1
 
-- CLAIM: Google AI Pro and Ultra subscribers can use Argon in the Gemini app now (from Oct 13)
+- CLAIM: Argon can turn thousands of messy files into a Google Slides deck in the Gemini app
   TIER: official
-  SPOKEN: "It's Gemini 4 Argon, and if you're on Pro or Ultra, it's yours today"
+  SPOKEN: "It turns thousands of messy files into a Google Slides deck"
+  SURPRISE: 60
+  SRC: https://www.instagram.com/p/DecN711mjpI/
+  SRC: https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/
+  VIA: Google Instagram post slide 2 'Transform workflows: Turn thousands of messy files into a Google Slides deck in the Gemini app'
+  ONE-SOURCE-OK: Google's own official post shows the demo on screen while the line is spoken; the capability is Google's claim, demonstrated in Google's footage.
+
+- CLAIM: Argon builds complex 3D visualizations / new worlds in Google AI Studio
+  TIER: official
+  SPOKEN: "It builds whole 3D worlds in Google AI Studio"
+  SURPRISE: 55
+  SRC: https://www.instagram.com/p/DecN711mjpI/
+  SRC: https://cloud.google.com/blog/products/ai-machine-learning/gemini-4-argon-available-on-google-cloud
+  VIA: Google Instagram post slide 3 'Deliver complex 3D visualizations: Build new worlds in Google AI Studio'
+  ONE-SOURCE-OK: Google's own official post shows the demo on screen while the line is spoken; the capability is Google's claim, demonstrated in Google's footage.
+
+- CLAIM: Argon helps teach humanoid robots physical skills from raw video demonstrations
+  TIER: official
+  SPOKEN: "It helps teach robots physical skills, just from video"
+  SURPRISE: 75
+  SRC: https://www.instagram.com/p/DecN711mjpI/
+  SRC: https://www.youtube.com/watch?v=9PICEmtfpWU
+  VIA: Google Instagram post slide 4 'Speed up robotics development: Teach humanoid robots physical skills from raw video demonstrations'
+  VIA: Google DeepMind video 'Teaching a humanoid robot to play cornhole with Gemini 4 Argon' (Oct 13)
+
+- CLAIM: Argon turned photos of a desk into a playable 3D racing game using Google Antigravity
+  TIER: official
+  SPOKEN: "Snap a photo of your desk, and it turns it into a 3D racing game you can play"
+  SURPRISE: 80
+  SRC: https://www.instagram.com/p/DecN711mjpI/
+  VIA: Google Instagram post slide 5 'Create 3D games: Turn photos of your desk into a playable 3D racing game using Google Antigravity'
+  ONE-SOURCE-OK: Google's own official post shows the demo on screen while the line is spoken; the capability is Google's claim, demonstrated in Google's footage.
+
+- CLAIM: Argon turns dense research papers into animated storybooks in the Gemini app
+  TIER: official
+  SPOKEN: "it turns dense research papers into animated storybooks"
+  SURPRISE: 65
+  SRC: https://www.instagram.com/p/DecN711mjpI/
+  VIA: Google Instagram post slide 6 'Illustrate complex topics: Turn dense research papers into animated storybooks in the Gemini app'
+  ONE-SOURCE-OK: Google's own official post shows the demo on screen while the line is spoken; the capability is Google's claim, demonstrated in Google's footage.
+
+- CLAIM: Available now in the Gemini app for Google AI Pro and Ultra subscribers
+  TIER: official
+  SPOKEN: "It's out now in the Gemini app for Pro and Ultra subscribers"
   SURPRISE: 45
   SRC: https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/
+  SRC: https://www.instagram.com/p/DecN711mjpI/
   SRC: https://www.engadget.com/2285023/google-gemini-4-argon-is-now-available-in-the-gemini-app-and-ai-mode-in-search/
-  SRC: https://9to5google.com/2026/10/13/gemini-app-4-argon/
-  VIA: Google ("Google AI Pro and Ultra subscribers can now access Gemini 4 Argon")
-  VIA: 9to5Google own observation of "4 Argon" in the model picker
-
-- CLAIM: In the Gemini app with Argon (High), one prompt produced an interactive 3D floor plan of a 12x15 ft living room with lighting controls
-  TIER: single
-  SPOKEN: "he asked for a 3D floor plan of a twelve by fifteen foot living room. Argon built a room he could spin around, lighting included"
-  SURPRISE: 70
-  SRC: https://www.instagram.com/reel/DecUb-FKNqA/
-  SRC: https://cloud.google.com/blog/products/ai-machine-learning/gemini-4-argon-available-on-google-cloud
-  VIA: Renz Sadiwa screen recording, Gemini app header "Argon High", prompt "Build an interactive 3D floor plan ... 12x15 foot space, plus simulating lighting" (ref 2.5-10.9s)
-  VIA: Google Cloud post ("spatial reasoning, mathematical precision and visual coding")
-  ONE-SOURCE-OK: the claim is the demo itself, shown on screen while it is spoken; Google states the capability class.
-
-- CLAIM: Given an LA electricity-price-by-hour chart, Argon recommended the cheapest hours to run laundry, dishwasher and charging
-  TIER: single
-  SPOKEN: "a chart of LA electricity prices. It found the cheapest hours to run his laundry"
-  SURPRISE: 60
-  SRC: https://www.instagram.com/reel/DecUb-FKNqA/
-  SRC: https://cloud.google.com/blog/products/ai-machine-learning/gemini-4-argon-available-on-google-cloud
-  VIA: Renz Sadiwa screen recording (prompt with electricity-price-by-hour chart; answer "Run your high-energy appliances and charging between 8:00 PM and 10:00 AM") (ref 12.5-18.4s)
-  VIA: Google Cloud post ("reads long documents that mix text, tables, charts and images")
-  ONE-SOURCE-OK: the demo is shown on screen while it is spoken.
-
-- CLAIM: Given three script PDFs, Argon built a shot list for each
-  TIER: single
-  SPOKEN: "Then three video scripts. It planned the shots for every one"
-  SURPRISE: 55
-  SRC: https://www.instagram.com/reel/DecUb-FKNqA/
-  SRC: https://ai.google.dev/gemini-api/docs/models/gemini-4-argon
-  VIA: Renz Sadiwa screen recording ("These are my next three scripts. Build a shot list for each one", 3 PDFs, table output) (ref 18.5-24.4s)
-  VIA: Gemini API model page (PDF input supported)
-  ONE-SOURCE-OK: the demo is shown on screen while it is spoken.
+  VIA: Google Gemini app post Oct 13 ('Google AI Pro and Ultra subscribers can now access Gemini 4 Argon')
+  VIA: Google Instagram post slide 7 'Available now for Google AI Pro and Ultra subscribers in the Gemini app and AI Mode in Search'
+  VIA: Engadget Oct 13
 
 ## FEATURES + HOW TO USE
 

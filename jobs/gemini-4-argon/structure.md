@@ -5,49 +5,47 @@ Written BEFORE the first sentence. Framework:
 
 ## STORY ENGINE (framework §4A)
 
-A Gemini user who hears "Google's most powerful model yet" sees three real
-things it did for one person in the Gemini app, which matters because it is
-already in their app if they pay for Pro or Ultra.
+A viewer who hears "Google dropped a new model" gets five concrete things it
+can do, each shown in Google's own demo, then where to get it.
 
 ## SHAPE (S17)
 
-Discovery / demo list, modelled on the user's reference reel
-(instagram.com/reel/DecUb-FKNqA, 29s): presenter bottom half, the app
-recording top half, three demos in order. v1 (security / benchmarks / price)
-was rejected by the user on 2026-10-14 as "not good"; it is kept in
-research/script-v1-rejected.md.
+Product announcement as a capability list, modelled on Google's own launch
+carousel (instagram.com/p/DecN711mjpI): one line per capability, each line on
+Google's demo clip, then availability. The user asked for "simple, to the
+point" on 2026-10-14; v2 (one creator's demos) is in research/script-v2-demo-led.md.
 
 ## PROMISE (S2)
 
-What Gemini 4 Argon actually does when you use it, shown, not described.
+"Here's what it can do."
 
 ## OPEN LOOP (S10)
 
-Planted: "Watch what one user got out of it."
-Paid off: the three demos (First / Next / Then); the ending hands the same
-question to the viewer: "What would you ask it first?" (S18).
+Planted: "Here's what it can do."
+Paid off: five capabilities, each shown; the ending hands the choice to the
+viewer: "Which would you try first?" (S18).
 
 ## WHAT -> WHY -> SO WHAT (S7)
 
-WHAT: Gemini 4 Argon, Google's most powerful Gemini, in the app today.
-WHY: it can turn one prompt into a working 3D room, read a chart and act on
-it, and work across several documents at once.
-SO WHAT: if you are on Pro or Ultra, you can do the same today.
+WHAT: Gemini 4 Argon, Google's most powerful AI yet.
+WHY: it turns messy inputs (files, papers, a desk photo, raw video) into
+finished things (a deck, a storybook, a game, robot skills, 3D worlds).
+SO WHAT: it is in the Gemini app today for Pro and Ultra subscribers.
 
 ## CONFIRMATION BEAT (2-5s)
 
-Right after the hook: the Gemini app on a phone, then Google's Oct 13 post
-on mobile with "Google AI Pro and Ultra subscribers can now access Gemini 4
-Argon" highlighted, under "it's yours today".
+Right after the hook: Google's own "Gemini 4 Argon" title card (slide 1 of
+their post), then straight into the first demo.
 
 ## VIEWER QUESTIONS
 
-- Q: Can I use it?  A: "if you're on Pro or Ultra, it's yours today"
-- Q: What can it actually do?  A: "Argon built a room he could spin around, lighting included"
-- Q: Is it useful for everyday stuff?  A: "It found the cheapest hours to run his laundry"
-- Q: Can it handle several files at once?  A: "Then three video scripts. It planned the shots for every one"
+- Q: What can it do?  A: "It turns thousands of messy files into a Google Slides deck"
+- Q: Can it do anything fun?  A: "Snap a photo of your desk, and it turns it into a 3D racing game you can play"
+- Q: Can I use it?  A: "It's out now in the Gemini app for Pro and Ultra subscribers"
 
 ## WHAT WAS CUT (S11, S21)
+
+- v3: the creator demos of v2 (3D room, chart, shot lists), replaced by Google's own demos; no third-party footage needed.
 
 - v2: everything in v1 (security-first story, Astra tie, Bloomberg coding report, API price) — cut for the demo-led shape the user asked for.
 

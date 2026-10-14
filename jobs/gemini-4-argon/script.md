@@ -1,9 +1,13 @@
-Google just put its most powerful Gemini yet in the Gemini app, and people are already pushing it hard. It's Gemini 4 Argon, and if you're on Pro or Ultra, it's yours today. Watch what one user got out of it.
+Google just dropped Gemini 4 Argon, its most powerful AI yet. Here's what it can do.
 
-First, he asked for a 3D floor plan of a twelve by fifteen foot living room. Argon built a room he could spin around, lighting included.
+It turns thousands of messy files into a Google Slides deck.
 
-Next, a chart of LA electricity prices. It found the cheapest hours to run his laundry.
+It builds whole 3D worlds in Google AI Studio.
 
-Then three video scripts. It planned the shots for every one.
+It helps teach robots physical skills, just from video.
 
-What would you ask it first? Comment below.
+Snap a photo of your desk, and it turns it into a 3D racing game you can play.
+
+And it turns dense research papers into animated storybooks.
+
+It's out now in the Gemini app for Pro and Ultra subscribers. Which would you try first?
