@@ -1,6 +1,568 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
-  "format": "news",
-  "shots": []
+ "format": "news",
+ "facePlan": "face-led",
+ "showCredits": false,
+ "music": false,
+ "emphasis": [
+  "guest calling",
+  "catch",
+  "Calls tab",
+  "let them",
+  "remove",
+  "screen",
+  "phone number",
+  "32",
+  "computer",
+  "phone",
+  "Outlook"
+ ],
+ "caption_corrections": {
+  "calls tab": "Calls tab",
+  "Outlook Invites": "Outlook invites",
+  "32": "32"
+ },
+ "shots": [
+  {
+   "start_phrase": "You can now pull",
+   "asset_id": "hook-top",
+   "tier": "official",
+   "line": "You can now pull someone into a WhatsApp call who doesn't even have WhatsApp.",
+   "scene": {
+    "type": "split",
+    "topSrc": "assets/whatsapp-guest-calls/hook-top.mp4",
+    "bottomSrc": "assets/whatsapp-guest-calls/avatar-master.mp4",
+    "headline": {
+     "lines": [
+      {
+       "text": "NO ACCOUNT?",
+       "kind": "label",
+       "at": 0.15
+      },
+      {
+       "text": "JOIN ANYWAY",
+       "kind": "headline",
+       "at": 0.6
+      }
+     ],
+     "y": 0.07
+    },
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "vol": 0.5,
+      "at": 0.6
+     }
+    ],
+    "covers": "doesn't even have WhatsApp"
+   }
+  },
+  {
+   "start_phrase": "WhatsApp just launched it",
+   "asset_id": "header-guest-call",
+   "tier": "official",
+   "line": "WhatsApp just launched it as guest calling.",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/whatsapp-guest-calls/header-guest-call.png",
+    "srcWidth": 1920,
+    "srcHeight": 1080,
+    "focus": {
+     "x": 30,
+     "y": 180,
+     "w": 620,
+     "h": 360
+    },
+    "covers": "guest calling",
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "vol": 0.5,
+      "at": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "No account, no cost",
+   "asset_id": "blog-full",
+   "tier": "official",
+   "line": "No account, no cost, no time limit.",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/whatsapp-guest-calls/blog-full.png",
+    "srcWidth": 1182,
+    "srcHeight": 9033,
+    "lines": [
+     {
+      "at": 0.1,
+      "x": 95,
+      "y": 580,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 0.5,
+      "x": 95,
+      "y": 674,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 0.9,
+      "x": 95,
+      "y": 769,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 1.4,
+      "x": 95,
+      "y": 862,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 1.9,
+      "x": 95,
+      "y": 956,
+      "w": 1000,
+      "h": 72
+     }
+    ],
+    "covers": "No account, no cost, no time limit",
+    "follow": true,
+    "sfx": [
+     {
+      "src": "sfx-action/marker.mp3",
+      "vol": 0.6,
+      "at": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "But the catch sits",
+   "line": "But the catch sits on the guest's side, and it decides who this really helps. Hold on to that.",
+   "scene": {
+    "type": "footage",
+    "src": "assets/whatsapp-guest-calls/avatar-master.mp4",
+    "zoomDir": "in",
+    "focusX": 0.5,
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "vol": 0.5,
+      "at": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "To set one up",
+   "asset_id": "blog-full",
+   "tier": "official",
+   "line": "To set one up, open the Calls tab, tap the plus, and create a call link.",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/whatsapp-guest-calls/blog-full.png",
+    "srcWidth": 1182,
+    "srcHeight": 9033,
+    "lines": [
+     {
+      "at": 0.5,
+      "x": 95,
+      "y": 3155,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 1.4,
+      "x": 95,
+      "y": 3233,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 2.3,
+      "x": 95,
+      "y": 3311,
+      "w": 1000,
+      "h": 72
+     }
+    ],
+    "covers": "open the Calls tab, tap the plus, and create a call link",
+    "follow": true
+   }
+  },
+  {
+   "start_phrase": "Then send it to",
+   "asset_id": "header-guest-call",
+   "tier": "official",
+   "line": "Then send it to anyone.",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/whatsapp-guest-calls/header-guest-call.png",
+    "srcWidth": 1920,
+    "srcHeight": 1080,
+    "focus": {
+     "x": 1376,
+     "y": 420,
+     "w": 370,
+     "h": 180
+    },
+    "covers": "send it to anyone",
+    "sfx": [
+     {
+      "src": "sfx-action/lens-zoom.mp3",
+      "vol": 0.8,
+      "at": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "When they open it",
+   "asset_id": "blog-full",
+   "tier": "official",
+   "line": "When they open it, they type a name and wait. Nobody gets in until you let them.",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/whatsapp-guest-calls/blog-full.png",
+    "srcWidth": 1182,
+    "srcHeight": 9033,
+    "lines": [
+     {
+      "at": 0.3,
+      "x": 95,
+      "y": 2483,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 1.2,
+      "x": 95,
+      "y": 2561,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 2.1,
+      "x": 95,
+      "y": 2639,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 2.9,
+      "x": 95,
+      "y": 2717,
+      "w": 1000,
+      "h": 72
+     }
+    ],
+    "covers": "Nobody gets in until you let them",
+    "follow": true
+   }
+  },
+  {
+   "start_phrase": "You can also remove",
+   "asset_id": "header-guest-call",
+   "tier": "official",
+   "line": "You can also remove a guest at any point.",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/whatsapp-guest-calls/header-guest-call.png",
+    "srcWidth": 1920,
+    "srcHeight": 1080,
+    "focus": {
+     "x": 1376,
+     "y": 610,
+     "w": 370,
+     "h": 230
+    },
+    "covers": "remove a guest",
+    "sfx": [
+     {
+      "src": "sfx-action/lens-zoom.mp3",
+      "vol": 0.8,
+      "at": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Once inside, a guest",
+   "asset_id": "header-guest-call",
+   "tier": "official",
+   "line": "Once inside, a guest can share their screen, raise a hand, or react.",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/whatsapp-guest-calls/header-guest-call.png",
+    "srcWidth": 1920,
+    "srcHeight": 1080,
+    "focus": {
+     "x": 715,
+     "y": 950,
+     "w": 260,
+     "h": 64
+    },
+    "covers": "share their screen, raise a hand, or react"
+   }
+  },
+  {
+   "start_phrase": "But they can't see",
+   "asset_id": "blog-full",
+   "tier": "official",
+   "line": "But they can't see anyone's phone number, send messages, or add more people.",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/whatsapp-guest-calls/blog-full.png",
+    "srcWidth": 1182,
+    "srcHeight": 9033,
+    "lines": [
+     {
+      "at": 0.2,
+      "x": 95,
+      "y": 2795,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 0.9,
+      "x": 95,
+      "y": 2873,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 1.9,
+      "x": 95,
+      "y": 2951,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 2.8,
+      "x": 95,
+      "y": 3029,
+      "w": 1000,
+      "h": 72
+     }
+    ],
+    "covers": "can't see anyone's phone number, send messages, or add more people",
+    "follow": true,
+    "sfx": [
+     {
+      "src": "sfx-action/marker.mp3",
+      "vol": 0.7,
+      "at": 0.2
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "And the call itself",
+   "line": "And the call itself stays end-to-end encrypted, with room for up to 32 people.",
+   "scene": {
+    "type": "specsheet",
+    "title": "Guest calls",
+    "kicker": "WhatsApp \u00b7 14 Oct 2026",
+    "rows": [
+     {
+      "label": "Encryption",
+      "value": "End-to-end"
+     },
+     {
+      "label": "People per call",
+      "value": "Up to 32",
+      "accent": true
+     },
+     {
+      "label": "Cost",
+      "value": "Free"
+     },
+     {
+      "label": "Time limit",
+      "value": "None"
+     }
+    ],
+    "footnote": "Source: WhatsApp blog",
+    "sfx": [
+     {
+      "src": "sfx2/ground-impact-352053.mp3",
+      "vol": 0.4,
+      "at": 0.3
+     }
+    ],
+    "covers": "end-to-end encrypted, with room for up to 32 people"
+   }
+  },
+  {
+   "start_phrase": "About that catch",
+   "line": "About that catch.",
+   "scene": {
+    "type": "footage",
+    "src": "assets/whatsapp-guest-calls/avatar-master.mp4",
+    "zoomDir": "in",
+    "focusX": 0.5
+   }
+  },
+  {
+   "start_phrase": "WhatsApp's own steps say",
+   "asset_id": "blog-full",
+   "tier": "official",
+   "line": "WhatsApp's own steps say the guest opens the link on a computer.",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/whatsapp-guest-calls/blog-full.png",
+    "srcWidth": 1182,
+    "srcHeight": 9033,
+    "lines": [
+     {
+      "at": 0.3,
+      "x": 95,
+      "y": 3623,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 1.2,
+      "x": 95,
+      "y": 3701,
+      "w": 1000,
+      "h": 72
+     }
+    ],
+    "covers": "opens the link on a computer",
+    "follow": true
+   }
+  },
+  {
+   "start_phrase": "Not on their phone",
+   "line": "Not on their phone.",
+   "scene": {
+    "type": "typecard",
+    "kinetic": {
+     "text": "NOT ON A PHONE",
+     "style": "caps"
+    },
+    "bg": "black",
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "vol": 0.5,
+      "at": 0.0
+     }
+    ],
+    "covers": "Not on their phone"
+   }
+  },
+  {
+   "start_phrase": "That suits the client",
+   "asset_id": "header-guest-call",
+   "tier": "official",
+   "line": "That suits the client on a work laptop",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/whatsapp-guest-calls/header-guest-call.png",
+    "srcWidth": 1920,
+    "srcHeight": 1080,
+    "focus": {
+     "x": 843,
+     "y": 548,
+     "w": 520,
+     "h": 390
+    },
+    "covers": "the client on a work laptop"
+   }
+  },
+  {
+   "start_phrase": "or the relative at",
+   "asset_id": "header-guest-call",
+   "tier": "official",
+   "line": "or the relative at a desk who will never install the app.",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/whatsapp-guest-calls/header-guest-call.png",
+    "srcWidth": 1920,
+    "srcHeight": 1080,
+    "focus": {
+     "x": 320,
+     "y": 548,
+     "w": 518,
+     "h": 390
+    },
+    "covers": "the relative at a desk"
+   }
+  },
+  {
+   "start_phrase": "Later this year",
+   "asset_id": "blog-full",
+   "tier": "official",
+   "line": "Later this year, WhatsApp says these links will plug into Google Calendar and Outlook invites too.",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/whatsapp-guest-calls/blog-full.png",
+    "srcWidth": 1182,
+    "srcHeight": 9033,
+    "lines": [
+     {
+      "at": 0.2,
+      "x": 95,
+      "y": 4655,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 1.1,
+      "x": 95,
+      "y": 4733,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 2.0,
+      "x": 95,
+      "y": 4811,
+      "w": 1000,
+      "h": 72
+     },
+     {
+      "at": 2.8,
+      "x": 95,
+      "y": 4889,
+      "w": 1000,
+      "h": 72
+     }
+    ],
+    "covers": "Google Calendar and Outlook invites",
+    "follow": true
+   }
+  },
+  {
+   "start_phrase": "Who's the first person",
+   "line": "Who's the first person you'd send one to?",
+   "scene": {
+    "type": "footage",
+    "src": "assets/whatsapp-guest-calls/avatar-master.mp4",
+    "zoomDir": "in",
+    "focusX": 0.5,
+    "headline": {
+     "lines": [
+      {
+       "text": "TELL ME BELOW",
+       "kind": "label",
+       "at": 0.1
+      },
+      {
+       "text": "WHO GETS IT?",
+       "kind": "headline",
+       "at": 0.4
+      }
+     ],
+     "y": 0.45
+    }
+   }
+  }
+ ]
 }

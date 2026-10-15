@@ -9867,3 +9867,31 @@ app shot again; do not reuse the "Demo 1/2/3" eyebrow ladder.
 Treatments used: vendor title card as the hook block; numbered "N · video: Google" eyebrows with
 "input → output" headlines ("Messy files → a Slides deck"); vendor post as two crops for availability; end card
 over the racing game. Next model-launch reel: do not reuse the arrow headline pattern for every beat.
+
+## 2026-10-15 — whatsapp-guest-calls (news, face-led digital twin, one official still carries five beats)
+
+- **RAW NOTE 1 — one official launch image can be five shots.** WhatsApp shipped no video, only a 1920x1080
+  header PNG of a real browser guest call. Its regions each prove a different line: the "Guest Calling" label
+  (launch), the Invite panel ("even if they don't have WhatsApp") on "send it to anyone", the "In this call"
+  list with ⋮ menus on "remove a guest", the toolbar icons on "share their screen, raise a hand, or react",
+  and single video tiles on "the client on a work laptop" / "the relative at a desk". RULE: before reaching for
+  a graphic, ask what each REGION of the official still proves; annotatezoom with a tight focus per line.
+- **RAW NOTE 2 — annotatezoom on tiny UI needs a tight focus.** A 560x110 focus on the toolbar left the icons
+  ~20px on a phone; 260x64 made them legible. Size the focus to the element, not its surroundings.
+- **RAW NOTE 3 — `dimRest` misaligned on this capture.** The lit band drew below the highlighted lines and the
+  page went grey; reverted. Not investigated further; check the frame before trusting it on a new page.
+- **RAW NOTE 4 — never feed a prepared VO back into vo_external as its own input.** It re-encoded the file in
+  place and truncated it to 2.0s; recovered from the untouched ElevenLabs download. Keep the original download
+  and always prep FROM it.
+- **RAW NOTE 5 — vo_external suggested padding a 3.46 w/s read to 77s;** 67s (2.94 w/s, a previously approved
+  rate) was chosen instead — 20s of added silence would have dragged. The band suggestion is an upper bound.
+- **RAW NOTE 6 — a riser placed at the start of the setup sentence peaks 4s before its payoff** and measured
+  MASKED (sfx_audibility). Cut rather than moved. A riser belongs 1.5s before the reveal word, not on the
+  sentence before it.
+- ElevenLabs v3: 197 words in 56.9s (~1,098 credits), vo_pad to 67.0s. HeyGen avatar_v twin, 67s (~22 credits),
+  motion 7.44. 9 SFX. −14.8 LUFS. Critique READY at round 3.
+
+Treatments used: official launch still as a split-hook top panel with a slow push; blog headline highlighted
+as the confirmation beat; region-by-region annotatezoom of one UI image; specsheet for encrypted / 32 / free /
+no limit; black "NOT ON A PHONE" typecard as the catch payoff; facecam CTA question. Next app-feature reel: do
+not reuse the full-caps typecard for the catch, and do not open on the same split-with-browser layout.

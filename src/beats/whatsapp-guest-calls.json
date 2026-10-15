@@ -1,0 +1,1809 @@
+{
+  "id": "whatsapp-guest-calls",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/whatsapp-guest-calls/avatar-master.mp4",
+  "facePlan": "face-led",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "guest calling",
+    "catch",
+    "Calls tab",
+    "let them",
+    "remove",
+    "screen",
+    "phone number",
+    "32",
+    "computer",
+    "phone",
+    "Outlook"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "topSrc": "assets/whatsapp-guest-calls/hook-top.mp4",
+      "bottomSrc": "assets/whatsapp-guest-calls/avatar-master.mp4",
+      "headline": {
+        "lines": [
+          {
+            "text": "NO ACCOUNT?",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "JOIN ANYWAY",
+            "kind": "headline",
+            "at": 0.6
+          }
+        ],
+        "y": 0.07
+      },
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.6
+        }
+      ],
+      "covers": "doesn't even have WhatsApp",
+      "durationSec": 4.66,
+      "captionBottom": 1000,
+      "assetId": "hook-top",
+      "claimId": "hook-top",
+      "credit": "WhatsApp",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.5
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/whatsapp-guest-calls/header-guest-call.png",
+      "srcWidth": 1920,
+      "srcHeight": 1080,
+      "focus": {
+        "x": 30,
+        "y": 180,
+        "w": 620,
+        "h": 360
+      },
+      "covers": "guest calling",
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 3.02,
+      "assetId": "header-guest-call",
+      "claimId": "header-guest-call"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/whatsapp-guest-calls/blog-full.png",
+      "srcWidth": 1182,
+      "srcHeight": 9033,
+      "lines": [
+        {
+          "at": 0.1,
+          "x": 95,
+          "y": 580,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 0.5,
+          "x": 95,
+          "y": 674,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 0.9,
+          "x": 95,
+          "y": 769,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 1.4,
+          "x": 95,
+          "y": 862,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 1.9,
+          "x": 95,
+          "y": 956,
+          "w": 1000,
+          "h": 72
+        }
+      ],
+      "covers": "No account, no cost, no time limit",
+      "follow": true,
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "vol": 0.417,
+          "at": 0.1
+        }
+      ],
+      "durationSec": 4.06,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "blog-full",
+      "claimId": "blog-full",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/whatsapp-guest-calls/avatar-master.mp4",
+      "zoomDir": "in",
+      "focusX": 0.5,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 6.98,
+      "from": 11.74
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/whatsapp-guest-calls/blog-full.png",
+      "srcWidth": 1182,
+      "srcHeight": 9033,
+      "lines": [
+        {
+          "at": 0.5,
+          "x": 95,
+          "y": 3155,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 1.4,
+          "x": 95,
+          "y": 3233,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 2.3,
+          "x": 95,
+          "y": 3311,
+          "w": 1000,
+          "h": 72
+        }
+      ],
+      "covers": "open the Calls tab, tap the plus, and create a call link",
+      "follow": true,
+      "durationSec": 5.24,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "blog-full",
+      "claimId": "blog-full",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/whatsapp-guest-calls/header-guest-call.png",
+      "srcWidth": 1920,
+      "srcHeight": 1080,
+      "focus": {
+        "x": 1376,
+        "y": 420,
+        "w": 370,
+        "h": 180
+      },
+      "covers": "send it to anyone",
+      "sfx": [
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "vol": 1.0,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 1.92,
+      "assetId": "header-guest-call",
+      "claimId": "header-guest-call"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/whatsapp-guest-calls/blog-full.png",
+      "srcWidth": 1182,
+      "srcHeight": 9033,
+      "lines": [
+        {
+          "at": 0.3,
+          "x": 95,
+          "y": 2483,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 1.2,
+          "x": 95,
+          "y": 2561,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 2.1,
+          "x": 95,
+          "y": 2639,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 2.9,
+          "x": 95,
+          "y": 2717,
+          "w": 1000,
+          "h": 72
+        }
+      ],
+      "covers": "Nobody gets in until you let them",
+      "follow": true,
+      "durationSec": 4.84,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "blog-full",
+      "claimId": "blog-full",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/whatsapp-guest-calls/header-guest-call.png",
+      "srcWidth": 1920,
+      "srcHeight": 1080,
+      "focus": {
+        "x": 1376,
+        "y": 610,
+        "w": 370,
+        "h": 230
+      },
+      "covers": "remove a guest",
+      "sfx": [
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "vol": 1.0,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 2.5,
+      "assetId": "header-guest-call",
+      "claimId": "header-guest-call"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/whatsapp-guest-calls/header-guest-call.png",
+      "srcWidth": 1920,
+      "srcHeight": 1080,
+      "focus": {
+        "x": 715,
+        "y": 950,
+        "w": 260,
+        "h": 64
+      },
+      "covers": "share their screen, raise a hand, or react",
+      "durationSec": 4.4,
+      "assetId": "header-guest-call",
+      "claimId": "header-guest-call"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/whatsapp-guest-calls/blog-full.png",
+      "srcWidth": 1182,
+      "srcHeight": 9033,
+      "lines": [
+        {
+          "at": 0.2,
+          "x": 95,
+          "y": 2795,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 0.9,
+          "x": 95,
+          "y": 2873,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 1.9,
+          "x": 95,
+          "y": 2951,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 2.8,
+          "x": 95,
+          "y": 3029,
+          "w": 1000,
+          "h": 72
+        }
+      ],
+      "covers": "can't see anyone's phone number, send messages, or add more people",
+      "follow": true,
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "vol": 0.417,
+          "at": 0.2
+        }
+      ],
+      "durationSec": 4.36,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "blog-full",
+      "claimId": "blog-full",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "specsheet",
+      "title": "Guest calls",
+      "kicker": "WhatsApp \u00b7 14 Oct 2026",
+      "rows": [
+        {
+          "label": "Encryption",
+          "value": "End-to-end"
+        },
+        {
+          "label": "People per call",
+          "value": "Up to 32",
+          "accent": true
+        },
+        {
+          "label": "Cost",
+          "value": "Free"
+        },
+        {
+          "label": "Time limit",
+          "value": "None"
+        }
+      ],
+      "footnote": "Source: WhatsApp blog",
+      "sfx": [
+        {
+          "src": "sfx2/ground-impact-352053.mp3",
+          "vol": 0.394,
+          "at": 0.3
+        }
+      ],
+      "covers": "end-to-end encrypted, with room for up to 32 people",
+      "durationSec": 5.02
+    },
+    {
+      "type": "footage",
+      "src": "assets/whatsapp-guest-calls/avatar-master.mp4",
+      "zoomDir": "in",
+      "focusX": 0.5,
+      "durationSec": 1.46,
+      "from": 47.0
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/whatsapp-guest-calls/blog-full.png",
+      "srcWidth": 1182,
+      "srcHeight": 9033,
+      "lines": [
+        {
+          "at": 0.3,
+          "x": 95,
+          "y": 3623,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 1.2,
+          "x": 95,
+          "y": 3701,
+          "w": 1000,
+          "h": 72
+        }
+      ],
+      "covers": "opens the link on a computer",
+      "follow": true,
+      "durationSec": 3.94,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "blog-full",
+      "claimId": "blog-full",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "typecard",
+      "kinetic": {
+        "text": "NOT ON A PHONE",
+        "style": "caps"
+      },
+      "bg": "black",
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "vol": 1.0,
+          "at": 0.0
+        }
+      ],
+      "covers": "Not on their phone",
+      "durationSec": 1.42
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/whatsapp-guest-calls/header-guest-call.png",
+      "srcWidth": 1920,
+      "srcHeight": 1080,
+      "focus": {
+        "x": 843,
+        "y": 548,
+        "w": 520,
+        "h": 390
+      },
+      "covers": "the client on a work laptop",
+      "durationSec": 1.84,
+      "assetId": "header-guest-call",
+      "claimId": "header-guest-call"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/whatsapp-guest-calls/header-guest-call.png",
+      "srcWidth": 1920,
+      "srcHeight": 1080,
+      "focus": {
+        "x": 320,
+        "y": 548,
+        "w": 518,
+        "h": 390
+      },
+      "covers": "the relative at a desk",
+      "durationSec": 3.78,
+      "assetId": "header-guest-call",
+      "claimId": "header-guest-call"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/whatsapp-guest-calls/blog-full.png",
+      "srcWidth": 1182,
+      "srcHeight": 9033,
+      "lines": [
+        {
+          "at": 0.2,
+          "x": 95,
+          "y": 4655,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 1.1,
+          "x": 95,
+          "y": 4733,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 2.0,
+          "x": 95,
+          "y": 4811,
+          "w": 1000,
+          "h": 72
+        },
+        {
+          "at": 2.8,
+          "x": 95,
+          "y": 4889,
+          "w": 1000,
+          "h": 72
+        }
+      ],
+      "covers": "Google Calendar and Outlook invites",
+      "follow": true,
+      "durationSec": 5.68,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "blog-full",
+      "claimId": "blog-full",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/whatsapp-guest-calls/avatar-master.mp4",
+      "zoomDir": "in",
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "TELL ME BELOW",
+            "kind": "label",
+            "at": 0.1
+          },
+          {
+            "text": "WHO GETS IT?",
+            "kind": "headline",
+            "at": 0.4
+          }
+        ],
+        "y": 0.45
+      },
+      "durationSec": 1.864,
+      "from": 65.12
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.62,
+      "text": "You can now",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "You"
+        },
+        {
+          "t": 0.2,
+          "text": "can"
+        },
+        {
+          "t": 0.36,
+          "text": "now"
+        }
+      ]
+    },
+    {
+      "start": 0.62,
+      "end": 1.6,
+      "text": "pull someone into",
+      "words": [
+        {
+          "t": 0.62,
+          "text": "pull"
+        },
+        {
+          "t": 0.86,
+          "text": "someone"
+        },
+        {
+          "t": 1.22,
+          "text": "into"
+        }
+      ]
+    },
+    {
+      "start": 1.6,
+      "end": 2.44,
+      "text": "a WhatsApp call",
+      "words": [
+        {
+          "t": 1.6,
+          "text": "a"
+        },
+        {
+          "t": 1.76,
+          "text": "WhatsApp"
+        },
+        {
+          "t": 2.1,
+          "text": "call"
+        }
+      ]
+    },
+    {
+      "start": 2.44,
+      "end": 3.3,
+      "text": "who doesn't even",
+      "words": [
+        {
+          "t": 2.44,
+          "text": "who"
+        },
+        {
+          "t": 2.7,
+          "text": "doesn't"
+        },
+        {
+          "t": 3.08,
+          "text": "even"
+        }
+      ]
+    },
+    {
+      "start": 3.3,
+      "end": 5.04,
+      "text": "have WhatsApp. WhatsApp",
+      "words": [
+        {
+          "t": 3.3,
+          "text": "have"
+        },
+        {
+          "t": 3.52,
+          "text": "WhatsApp."
+        },
+        {
+          "t": 4.66,
+          "text": "WhatsApp"
+        }
+      ]
+    },
+    {
+      "start": 5.04,
+      "end": 5.94,
+      "text": "just launched it",
+      "words": [
+        {
+          "t": 5.04,
+          "text": "just"
+        },
+        {
+          "t": 5.34,
+          "text": "launched"
+        },
+        {
+          "t": 5.74,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 5.94,
+      "end": 6.92,
+      "text": "as guest calling.",
+      "words": [
+        {
+          "t": 5.94,
+          "text": "as"
+        },
+        {
+          "t": 6.18,
+          "text": "guest"
+        },
+        {
+          "t": 6.54,
+          "text": "calling."
+        }
+      ]
+    },
+    {
+      "start": 7.68,
+      "end": 9.18,
+      "text": "No account, no",
+      "words": [
+        {
+          "t": 7.68,
+          "text": "No"
+        },
+        {
+          "t": 7.9,
+          "text": "account,"
+        },
+        {
+          "t": 8.92,
+          "text": "no"
+        }
+      ]
+    },
+    {
+      "start": 9.18,
+      "end": 10.68,
+      "text": "cost, no time",
+      "words": [
+        {
+          "t": 9.18,
+          "text": "cost,"
+        },
+        {
+          "t": 10.18,
+          "text": "no"
+        },
+        {
+          "t": 10.4,
+          "text": "time"
+        }
+      ]
+    },
+    {
+      "start": 10.68,
+      "end": 12.1,
+      "text": "limit. But the",
+      "words": [
+        {
+          "t": 10.68,
+          "text": "limit."
+        },
+        {
+          "t": 11.74,
+          "text": "But"
+        },
+        {
+          "t": 12.0,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 12.1,
+      "end": 13.1,
+      "text": "catch sits on",
+      "words": [
+        {
+          "t": 12.1,
+          "text": "catch"
+        },
+        {
+          "t": 12.4,
+          "text": "sits"
+        },
+        {
+          "t": 12.84,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 13.1,
+      "end": 13.96,
+      "text": "the guest's side",
+      "words": [
+        {
+          "t": 13.1,
+          "text": "the"
+        },
+        {
+          "t": 13.2,
+          "text": "guest's"
+        },
+        {
+          "t": 13.66,
+          "text": "side"
+        }
+      ]
+    },
+    {
+      "start": 13.96,
+      "end": 15.04,
+      "text": "and it decides",
+      "words": [
+        {
+          "t": 13.96,
+          "text": "and"
+        },
+        {
+          "t": 14.54,
+          "text": "it"
+        },
+        {
+          "t": 14.66,
+          "text": "decides"
+        }
+      ]
+    },
+    {
+      "start": 15.04,
+      "end": 16.36,
+      "text": "who this really",
+      "words": [
+        {
+          "t": 15.04,
+          "text": "who"
+        },
+        {
+          "t": 15.88,
+          "text": "this"
+        },
+        {
+          "t": 16.1,
+          "text": "really"
+        }
+      ]
+    },
+    {
+      "start": 16.36,
+      "end": 17.72,
+      "text": "helps. Hold on",
+      "words": [
+        {
+          "t": 16.36,
+          "text": "helps."
+        },
+        {
+          "t": 17.32,
+          "text": "Hold"
+        },
+        {
+          "t": 17.58,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 17.72,
+      "end": 18.84,
+      "text": "to that. To",
+      "words": [
+        {
+          "t": 17.72,
+          "text": "to"
+        },
+        {
+          "t": 17.86,
+          "text": "that."
+        },
+        {
+          "t": 18.72,
+          "text": "To"
+        }
+      ]
+    },
+    {
+      "start": 18.84,
+      "end": 19.48,
+      "text": "set one up,",
+      "words": [
+        {
+          "t": 18.84,
+          "text": "set"
+        },
+        {
+          "t": 19.08,
+          "text": "one"
+        },
+        {
+          "t": 19.26,
+          "text": "up,"
+        }
+      ]
+    },
+    {
+      "start": 20.08,
+      "end": 20.98,
+      "text": "open the Calls tab",
+      "words": [
+        {
+          "t": 20.08,
+          "text": "open"
+        },
+        {
+          "t": 20.28,
+          "text": "the"
+        },
+        {
+          "t": 20.44,
+          "text": "Calls"
+        },
+        {
+          "t": 20.44,
+          "text": "tab"
+        }
+      ]
+    },
+    {
+      "start": 21.52,
+      "end": 22.14,
+      "text": "tap the plus",
+      "words": [
+        {
+          "t": 21.52,
+          "text": "tap"
+        },
+        {
+          "t": 21.74,
+          "text": "the"
+        },
+        {
+          "t": 21.9,
+          "text": "plus"
+        }
+      ]
+    },
+    {
+      "start": 22.14,
+      "end": 22.92,
+      "text": "and create a",
+      "words": [
+        {
+          "t": 22.14,
+          "text": "and"
+        },
+        {
+          "t": 22.52,
+          "text": "create"
+        },
+        {
+          "t": 22.8,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 22.92,
+      "end": 24.42,
+      "text": "call link. Then",
+      "words": [
+        {
+          "t": 22.92,
+          "text": "call"
+        },
+        {
+          "t": 23.12,
+          "text": "link."
+        },
+        {
+          "t": 23.96,
+          "text": "Then"
+        }
+      ]
+    },
+    {
+      "start": 24.42,
+      "end": 24.88,
+      "text": "send it to",
+      "words": [
+        {
+          "t": 24.42,
+          "text": "send"
+        },
+        {
+          "t": 24.66,
+          "text": "it"
+        },
+        {
+          "t": 24.78,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 24.88,
+      "end": 26.18,
+      "text": "anyone. When they",
+      "words": [
+        {
+          "t": 24.88,
+          "text": "anyone."
+        },
+        {
+          "t": 25.88,
+          "text": "When"
+        },
+        {
+          "t": 26.04,
+          "text": "they"
+        }
+      ]
+    },
+    {
+      "start": 26.18,
+      "end": 27.28,
+      "text": "open it, they",
+      "words": [
+        {
+          "t": 26.18,
+          "text": "open"
+        },
+        {
+          "t": 26.42,
+          "text": "it,"
+        },
+        {
+          "t": 27.12,
+          "text": "they"
+        }
+      ]
+    },
+    {
+      "start": 27.28,
+      "end": 27.86,
+      "text": "type a name",
+      "words": [
+        {
+          "t": 27.28,
+          "text": "type"
+        },
+        {
+          "t": 27.54,
+          "text": "a"
+        },
+        {
+          "t": 27.66,
+          "text": "name"
+        }
+      ]
+    },
+    {
+      "start": 27.86,
+      "end": 28.84,
+      "text": "and wait. Nobody",
+      "words": [
+        {
+          "t": 27.86,
+          "text": "and"
+        },
+        {
+          "t": 28.06,
+          "text": "wait."
+        },
+        {
+          "t": 28.6,
+          "text": "Nobody"
+        }
+      ]
+    },
+    {
+      "start": 28.84,
+      "end": 29.64,
+      "text": "gets in until",
+      "words": [
+        {
+          "t": 28.84,
+          "text": "gets"
+        },
+        {
+          "t": 29.12,
+          "text": "in"
+        },
+        {
+          "t": 29.38,
+          "text": "until"
+        }
+      ]
+    },
+    {
+      "start": 29.64,
+      "end": 30.2,
+      "text": "you let them.",
+      "words": [
+        {
+          "t": 29.64,
+          "text": "you"
+        },
+        {
+          "t": 29.8,
+          "text": "let"
+        },
+        {
+          "t": 29.98,
+          "text": "them."
+        }
+      ]
+    },
+    {
+      "start": 30.72,
+      "end": 31.2,
+      "text": "You can also",
+      "words": [
+        {
+          "t": 30.72,
+          "text": "You"
+        },
+        {
+          "t": 30.84,
+          "text": "can"
+        },
+        {
+          "t": 30.98,
+          "text": "also"
+        }
+      ]
+    },
+    {
+      "start": 31.2,
+      "end": 31.86,
+      "text": "remove a guest",
+      "words": [
+        {
+          "t": 31.2,
+          "text": "remove"
+        },
+        {
+          "t": 31.5,
+          "text": "a"
+        },
+        {
+          "t": 31.68,
+          "text": "guest"
+        }
+      ]
+    },
+    {
+      "start": 31.86,
+      "end": 32.58,
+      "text": "at any point.",
+      "words": [
+        {
+          "t": 31.86,
+          "text": "at"
+        },
+        {
+          "t": 32.12,
+          "text": "any"
+        },
+        {
+          "t": 32.28,
+          "text": "point."
+        }
+      ]
+    },
+    {
+      "start": 33.22,
+      "end": 34.26,
+      "text": "Once inside, a",
+      "words": [
+        {
+          "t": 33.22,
+          "text": "Once"
+        },
+        {
+          "t": 33.4,
+          "text": "inside,"
+        },
+        {
+          "t": 34.12,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 34.26,
+      "end": 34.88,
+      "text": "guest can share",
+      "words": [
+        {
+          "t": 34.26,
+          "text": "guest"
+        },
+        {
+          "t": 34.44,
+          "text": "can"
+        },
+        {
+          "t": 34.62,
+          "text": "share"
+        }
+      ]
+    },
+    {
+      "start": 34.88,
+      "end": 35.88,
+      "text": "their screen, raise",
+      "words": [
+        {
+          "t": 34.88,
+          "text": "their"
+        },
+        {
+          "t": 35.04,
+          "text": "screen,"
+        },
+        {
+          "t": 35.72,
+          "text": "raise"
+        }
+      ]
+    },
+    {
+      "start": 35.88,
+      "end": 36.98,
+      "text": "a hand or",
+      "words": [
+        {
+          "t": 35.88,
+          "text": "a"
+        },
+        {
+          "t": 36.02,
+          "text": "hand"
+        },
+        {
+          "t": 36.34,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 36.98,
+      "end": 38.16,
+      "text": "react. But they",
+      "words": [
+        {
+          "t": 36.98,
+          "text": "react."
+        },
+        {
+          "t": 37.62,
+          "text": "But"
+        },
+        {
+          "t": 38.02,
+          "text": "they"
+        }
+      ]
+    },
+    {
+      "start": 38.16,
+      "end": 39.06,
+      "text": "can't see anyone's",
+      "words": [
+        {
+          "t": 38.16,
+          "text": "can't"
+        },
+        {
+          "t": 38.52,
+          "text": "see"
+        },
+        {
+          "t": 38.62,
+          "text": "anyone's"
+        }
+      ]
+    },
+    {
+      "start": 39.06,
+      "end": 40.06,
+      "text": "phone number, send",
+      "words": [
+        {
+          "t": 39.06,
+          "text": "phone"
+        },
+        {
+          "t": 39.26,
+          "text": "number,"
+        },
+        {
+          "t": 39.9,
+          "text": "send"
+        }
+      ]
+    },
+    {
+      "start": 40.06,
+      "end": 41.24,
+      "text": "messages or add",
+      "words": [
+        {
+          "t": 40.06,
+          "text": "messages"
+        },
+        {
+          "t": 40.48,
+          "text": "or"
+        },
+        {
+          "t": 40.9,
+          "text": "add"
+        }
+      ]
+    },
+    {
+      "start": 41.24,
+      "end": 42.06,
+      "text": "more people. And",
+      "words": [
+        {
+          "t": 41.24,
+          "text": "more"
+        },
+        {
+          "t": 41.4,
+          "text": "people."
+        },
+        {
+          "t": 41.98,
+          "text": "And"
+        }
+      ]
+    },
+    {
+      "start": 42.06,
+      "end": 42.66,
+      "text": "the call itself",
+      "words": [
+        {
+          "t": 42.06,
+          "text": "the"
+        },
+        {
+          "t": 42.16,
+          "text": "call"
+        },
+        {
+          "t": 42.42,
+          "text": "itself"
+        }
+      ]
+    },
+    {
+      "start": 42.66,
+      "end": 43.6,
+      "text": "stays end to",
+      "words": [
+        {
+          "t": 42.66,
+          "text": "stays"
+        },
+        {
+          "t": 43.1,
+          "text": "end"
+        },
+        {
+          "t": 43.46,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 43.6,
+      "end": 44.92,
+      "text": "end encrypted with",
+      "words": [
+        {
+          "t": 43.6,
+          "text": "end"
+        },
+        {
+          "t": 43.76,
+          "text": "encrypted"
+        },
+        {
+          "t": 44.12,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 44.92,
+      "end": 45.48,
+      "text": "room for up",
+      "words": [
+        {
+          "t": 44.92,
+          "text": "room"
+        },
+        {
+          "t": 45.18,
+          "text": "for"
+        },
+        {
+          "t": 45.36,
+          "text": "up"
+        }
+      ]
+    },
+    {
+      "start": 45.48,
+      "end": 46.34,
+      "text": "to 32 people.",
+      "words": [
+        {
+          "t": 45.48,
+          "text": "to"
+        },
+        {
+          "t": 45.6,
+          "text": "32"
+        },
+        {
+          "t": 45.94,
+          "text": "people."
+        }
+      ]
+    },
+    {
+      "start": 47.0,
+      "end": 47.76,
+      "text": "About that catch,",
+      "words": [
+        {
+          "t": 47.0,
+          "text": "About"
+        },
+        {
+          "t": 47.2,
+          "text": "that"
+        },
+        {
+          "t": 47.44,
+          "text": "catch,"
+        }
+      ]
+    },
+    {
+      "start": 48.46,
+      "end": 49.42,
+      "text": "WhatsApp's own steps",
+      "words": [
+        {
+          "t": 48.46,
+          "text": "WhatsApp's"
+        },
+        {
+          "t": 48.92,
+          "text": "own"
+        },
+        {
+          "t": 49.14,
+          "text": "steps"
+        }
+      ]
+    },
+    {
+      "start": 49.42,
+      "end": 50.46,
+      "text": "say the guest",
+      "words": [
+        {
+          "t": 49.42,
+          "text": "say"
+        },
+        {
+          "t": 49.9,
+          "text": "the"
+        },
+        {
+          "t": 50.18,
+          "text": "guest"
+        }
+      ]
+    },
+    {
+      "start": 50.46,
+      "end": 51.28,
+      "text": "opens the link",
+      "words": [
+        {
+          "t": 50.46,
+          "text": "opens"
+        },
+        {
+          "t": 50.82,
+          "text": "the"
+        },
+        {
+          "t": 51.06,
+          "text": "link"
+        }
+      ]
+    },
+    {
+      "start": 51.28,
+      "end": 51.98,
+      "text": "on a computer,",
+      "words": [
+        {
+          "t": 51.28,
+          "text": "on"
+        },
+        {
+          "t": 51.52,
+          "text": "a"
+        },
+        {
+          "t": 51.6,
+          "text": "computer,"
+        }
+      ]
+    },
+    {
+      "start": 52.4,
+      "end": 53.02,
+      "text": "not on their",
+      "words": [
+        {
+          "t": 52.4,
+          "text": "not"
+        },
+        {
+          "t": 52.7,
+          "text": "on"
+        },
+        {
+          "t": 52.88,
+          "text": "their"
+        }
+      ]
+    },
+    {
+      "start": 53.02,
+      "end": 54.22,
+      "text": "phone. That suits",
+      "words": [
+        {
+          "t": 53.02,
+          "text": "phone."
+        },
+        {
+          "t": 53.82,
+          "text": "That"
+        },
+        {
+          "t": 54.02,
+          "text": "suits"
+        }
+      ]
+    },
+    {
+      "start": 54.22,
+      "end": 54.94,
+      "text": "the client on",
+      "words": [
+        {
+          "t": 54.22,
+          "text": "the"
+        },
+        {
+          "t": 54.42,
+          "text": "client"
+        },
+        {
+          "t": 54.76,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 54.94,
+      "end": 55.66,
+      "text": "a work laptop",
+      "words": [
+        {
+          "t": 54.94,
+          "text": "a"
+        },
+        {
+          "t": 55.04,
+          "text": "work"
+        },
+        {
+          "t": 55.24,
+          "text": "laptop"
+        }
+      ]
+    },
+    {
+      "start": 55.66,
+      "end": 56.96,
+      "text": "or the relative",
+      "words": [
+        {
+          "t": 55.66,
+          "text": "or"
+        },
+        {
+          "t": 56.52,
+          "text": "the"
+        },
+        {
+          "t": 56.64,
+          "text": "relative"
+        }
+      ]
+    },
+    {
+      "start": 56.96,
+      "end": 57.5,
+      "text": "at a desk",
+      "words": [
+        {
+          "t": 56.96,
+          "text": "at"
+        },
+        {
+          "t": 57.14,
+          "text": "a"
+        },
+        {
+          "t": 57.24,
+          "text": "desk"
+        }
+      ]
+    },
+    {
+      "start": 57.5,
+      "end": 58.06,
+      "text": "who will never",
+      "words": [
+        {
+          "t": 57.5,
+          "text": "who"
+        },
+        {
+          "t": 57.74,
+          "text": "will"
+        },
+        {
+          "t": 57.84,
+          "text": "never"
+        }
+      ]
+    },
+    {
+      "start": 58.06,
+      "end": 58.94,
+      "text": "install the app.",
+      "words": [
+        {
+          "t": 58.06,
+          "text": "install"
+        },
+        {
+          "t": 58.48,
+          "text": "the"
+        },
+        {
+          "t": 58.68,
+          "text": "app."
+        }
+      ]
+    },
+    {
+      "start": 59.44,
+      "end": 60.4,
+      "text": "Later this year,",
+      "words": [
+        {
+          "t": 59.44,
+          "text": "Later"
+        },
+        {
+          "t": 59.9,
+          "text": "this"
+        },
+        {
+          "t": 60.16,
+          "text": "year,"
+        }
+      ]
+    },
+    {
+      "start": 60.68,
+      "end": 61.54,
+      "text": "WhatsApp says these",
+      "words": [
+        {
+          "t": 60.68,
+          "text": "WhatsApp"
+        },
+        {
+          "t": 60.9,
+          "text": "says"
+        },
+        {
+          "t": 61.3,
+          "text": "these"
+        }
+      ]
+    },
+    {
+      "start": 61.54,
+      "end": 62.28,
+      "text": "links will plug",
+      "words": [
+        {
+          "t": 61.54,
+          "text": "links"
+        },
+        {
+          "t": 61.82,
+          "text": "will"
+        },
+        {
+          "t": 62.02,
+          "text": "plug"
+        }
+      ]
+    },
+    {
+      "start": 62.28,
+      "end": 63.24,
+      "text": "into Google Calendar",
+      "words": [
+        {
+          "t": 62.28,
+          "text": "into"
+        },
+        {
+          "t": 62.5,
+          "text": "Google"
+        },
+        {
+          "t": 62.78,
+          "text": "Calendar"
+        }
+      ]
+    },
+    {
+      "start": 63.24,
+      "end": 64.64,
+      "text": "and Outlook invites too.",
+      "words": [
+        {
+          "t": 63.24,
+          "text": "and"
+        },
+        {
+          "t": 63.52,
+          "text": "Outlook"
+        },
+        {
+          "t": 64.32,
+          "text": "invites"
+        },
+        {
+          "t": 64.32,
+          "text": "too."
+        }
+      ]
+    },
+    {
+      "start": 65.12,
+      "end": 65.68,
+      "text": "Who's the first",
+      "words": [
+        {
+          "t": 65.12,
+          "text": "Who's"
+        },
+        {
+          "t": 65.34,
+          "text": "the"
+        },
+        {
+          "t": 65.46,
+          "text": "first"
+        }
+      ]
+    },
+    {
+      "start": 65.68,
+      "end": 66.42,
+      "text": "person you'd send",
+      "words": [
+        {
+          "t": 65.68,
+          "text": "person"
+        },
+        {
+          "t": 66.02,
+          "text": "you'd"
+        },
+        {
+          "t": 66.24,
+          "text": "send"
+        }
+      ]
+    },
+    {
+      "start": 66.42,
+      "end": 66.84,
+      "text": "one to?",
+      "words": [
+        {
+          "t": 66.42,
+          "text": "one"
+        },
+        {
+          "t": 66.62,
+          "text": "to?"
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "format": "news",
+  "showCredits": false,
+  "script": "You can now pull someone into a WhatsApp call who doesn't even have WhatsApp.\n\nWhatsApp just launched it as guest calling. No account, no cost, no time limit.\n\nBut the catch sits on the guest's side, and it decides who this really helps. Hold on to that.\n\nTo set one up, open the Calls tab, tap the plus, and create a call link. Then send it to anyone.\n\nWhen they open it, they type a name and wait. Nobody gets in until you let them. You can also remove a guest at any point.\n\nOnce inside, a guest can share their screen, raise a hand, or react. But they can't see anyone's phone number, send messages, or add more people.\n\nAnd the call itself stays end-to-end encrypted, with room for up to 32 people.\n\nAbout that catch. WhatsApp's own steps say the guest opens the link on a computer. Not on their phone. That suits the client on a work laptop, or the relative at a desk who will never install the app.\n\nLater this year, WhatsApp says these links will plug into Google Calendar and Outlook invites too.\n\nWho's the first person you'd send one to?",
+  "approval": {
+    "sha256": "91be4ae281da96e0dfd6e6ab5e76f2f77fd4592d347451a4200bbdca254487e8",
+    "approvedAt": "2026-10-15T05:54:01+00:00",
+    "words": 197,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}
