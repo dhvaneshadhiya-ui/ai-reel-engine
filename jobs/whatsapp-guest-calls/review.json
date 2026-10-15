@@ -1,0 +1,16 @@
+{
+  "script_sha256": "91be4ae281da96e0dfd6e6ab5e76f2f77fd4592d347451a4200bbdca254487e8",
+  "structure_sha256": "13962d0feee092af6de919f811257bcea0b35e8f10c686fdcca075decd0fab5a",
+  "findings": [
+    "  BRIDGES 5/18 sentences (28%) connect to the one before. The approved iPhone 18 Pro script runs 53%; the weak generation of the same story ran 9%. A sentence that starts a new subject with no bridge reads as the next bullet, not the next beat. (framework S9, S22)",
+    "  WHAT WITHOUT SO WHAT 1/1 spec sentences never say what the number does for the viewer. \"2nm chip\" is information; \"faster without draining the battery\" is relevance. (framework S7)",
+    "CADENCE: only 1 sentence reaches 18 words (longest 20). The playbook asks for 'occasionally one long spec sentence' \u2014 with everything short, nothing reads as short. Nothing to push against.",
+    "NUMBERS: one every 6.3 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [
+    "the most surprising claim (SURPRISE 85: 'Guests open the link in a computer browser. Mobile browsers ') is spoken in the last 40% of the script \u2014 consider leading with it."
+  ],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-10-15T05:29:16+00:00"
+}
