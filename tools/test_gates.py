@@ -1668,6 +1668,20 @@ CASES.append((lambda s: s["scenes"].append(
      "moves": [{"do": "drain", "target": "v", "at": 0.4}]}),
     "G65", "slide levels item with no from"))
 
+# G65: a chat block with no bubbles draws an empty thread (iphone-blocked-signs).
+CASES.append((lambda s: s["scenes"].append(
+    {"type": "slide", "durationSec": 2.0, "headline": "Delivered?",
+     "blocks": [{"id": "m", "kind": "chat", "status": "Delivered"}],
+     "moves": [{"do": "stamp", "target": "m", "at": 0.4}]}),
+    "G65", "slide chat with no bubbles"))
+
+# G65: a call block with no ring count never says where the call went.
+CASES.append((lambda s: s["scenes"].append(
+    {"type": "slide", "durationSec": 2.0, "headline": "Count the rings",
+     "blocks": [{"id": "c", "kind": "call", "name": "Alex"}],
+     "moves": [{"do": "ring", "target": "c", "at": 0.4}]}),
+    "G65", "slide call with no rings or outcome"))
+
 # G71: the headline sits alone over an empty page until a late show...
 CASES.append((lambda s: s["scenes"].append(
     {"type": "slide", "durationSec": 4.0, "headline": "Alarm follows ringer",

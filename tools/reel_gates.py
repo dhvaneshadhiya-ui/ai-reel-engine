@@ -2037,7 +2037,7 @@ def check_beats(beats: dict, vo_end: float | None = None,
 
     # G65 (slide) — the carousel-look slide off its contract draws nothing.
     SLIDE_BLOCKS = {"hero", "swap", "rows", "text", "tips", "logos", "screen", "steps", "devices", "waves",
-                    "spotlight", "gauge", "clip", "levels"}
+                    "spotlight", "gauge", "clip", "levels", "chat", "call"}
     for i, sc in enumerate(scenes):
         if sc.get("type") != "slide":
             continue
@@ -2051,13 +2051,17 @@ def check_beats(beats: dict, vo_end: float | None = None,
                               f"is not one of {', '.join(sorted(SLIDE_BLOCKS))} — it draws nothing.")
             bid = b.get("id")
             targets |= {bid, f"{bid}.left", f"{bid}.right", f"{bid}.best", f"{bid}.watch"}
-            targets |= {f"{bid}.{k}" for k in range(max(len(b.get("rows") or []), len(b.get("steps") or []), len(b.get("items") or [])))}
+            targets |= {f"{bid}.{k}" for k in range(max(len(b.get("rows") or []), len(b.get("steps") or []), len(b.get("items") or []), len(b.get("tags") or [])))}
             if b.get("kind") == "clip" and not str(b.get("src") or "").lower().endswith((".mp4", ".mov", ".webm")):
                 errors.append(f"G65 scene {i:02d} slide clip {bid!r} needs a video `src` — a still in a "
                               f"clip slot renders one frame, not a recording ({b.get('src')!r}).")
             if b.get("kind") == "levels" and (not b.get("items") or not all(
                     isinstance(it.get("from"), (int, float)) for it in b["items"])):
                 errors.append(f"G65 scene {i:02d} slide levels {bid!r} needs items, each with a numeric `from` — it draws empty bars.")
+            if b.get("kind") == "chat" and not b.get("bubbles"):
+                errors.append(f"G65 scene {i:02d} slide chat {bid!r} needs `bubbles` — it draws an empty thread.")
+            if b.get("kind") == "call" and not (isinstance(b.get("rings"), int) and b.get("outcome")):
+                errors.append(f"G65 scene {i:02d} slide call {bid!r} needs an integer `rings` and an `outcome` — it never says where the call went.")
             if b.get("kind") == "gauge" and not isinstance(b.get("from"), (int, float)):
                 errors.append(f"G65 scene {i:02d} slide gauge {bid!r} needs a numeric `from` percent — it draws an empty cell.")
             if b.get("kind") == "screen" and not str(b.get("src") or "").lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
@@ -2066,9 +2070,10 @@ def check_beats(beats: dict, vo_end: float | None = None,
         if sc.get("presenter") and not str((sc["presenter"] or {}).get("src") or "").lower().endswith((".mp4", ".mov", ".webm")):
             errors.append(f"G65 scene {i:02d} slide presenter needs a video `src` — a still in the circle renders black.")
         for m in sc.get("moves") or []:
-            if m.get("do") not in ("show", "strike", "highlight", "pill", "focus", "state", "drift", "drain"):
+            if m.get("do") not in ("show", "strike", "highlight", "pill", "focus", "state", "drift", "drain",
+                                   "stamp", "turn", "ring"):
                 errors.append(f"G65 scene {i:02d} slide move {m.get('do')!r} is not show, strike, highlight, "
-                              "pill, focus, state, drift or drain.")
+                              "pill, focus, state, drift, drain, stamp, turn or ring.")
             if m.get("do") == "focus" and not (isinstance(m.get("rect"), list) and len(m["rect"]) == 4):
                 errors.append(f"G65 scene {i:02d} slide `focus` needs `rect` [x, y, w, h] in source px — the camera has nowhere to go.")
             if m.get("at") is None:

@@ -40,23 +40,24 @@ import sheet36 from "./beats/ios27-tiers.json";
 import sheet37 from "./beats/iphone-18-battery-prepare-to-ship.json";
 import sheet38 from "./beats/iphone-18-pro-nomusic.json";
 import sheet39 from "./beats/iphone-18-pro.json";
-import sheet40 from "./beats/iphone-fold-ultra-nomusic.json";
-import sheet41 from "./beats/iphone-fold-ultra.json";
-import sheet42 from "./beats/iphone-third-interface.json";
-import sheet43 from "./beats/iphone18-colors-nomusic.json";
-import sheet44 from "./beats/iphone18-colors.json";
-import sheet45 from "./beats/iphone18-split.json";
-import sheet46 from "./beats/mac-mini-m6-m5pro.json";
-import sheet47 from "./beats/mac-multiple-headphones.json";
-import sheet48 from "./beats/made-by-google-26.json";
-import sheet49 from "./beats/openai-image-ads.json";
-import sheet50 from "./beats/qualcomm-chip-hike.json";
-import sheet51 from "./beats/seedance-25.json";
-import sheet52 from "./beats/september-preview-nomusic.json";
-import sheet53 from "./beats/september-preview.json";
-import sheet54 from "./beats/siri-ai-ios27.json";
-import sheet55 from "./beats/whatsapp-agents.json";
-import sheet56 from "./beats/whatsapp-guest-calls.json";
+import sheet40 from "./beats/iphone-blocked-signs.json";
+import sheet41 from "./beats/iphone-fold-ultra-nomusic.json";
+import sheet42 from "./beats/iphone-fold-ultra.json";
+import sheet43 from "./beats/iphone-third-interface.json";
+import sheet44 from "./beats/iphone18-colors-nomusic.json";
+import sheet45 from "./beats/iphone18-colors.json";
+import sheet46 from "./beats/iphone18-split.json";
+import sheet47 from "./beats/mac-mini-m6-m5pro.json";
+import sheet48 from "./beats/mac-multiple-headphones.json";
+import sheet49 from "./beats/made-by-google-26.json";
+import sheet50 from "./beats/openai-image-ads.json";
+import sheet51 from "./beats/qualcomm-chip-hike.json";
+import sheet52 from "./beats/seedance-25.json";
+import sheet53 from "./beats/september-preview-nomusic.json";
+import sheet54 from "./beats/september-preview.json";
+import sheet55 from "./beats/siri-ai-ios27.json";
+import sheet56 from "./beats/whatsapp-agents.json";
+import sheet57 from "./beats/whatsapp-guest-calls.json";
 
 export const beatSheets = [
   sheet0,
@@ -116,4 +117,5 @@ export const beatSheets = [
   sheet54,
   sheet55,
   sheet56,
+  sheet57,
 ] as unknown as BeatSheet[];

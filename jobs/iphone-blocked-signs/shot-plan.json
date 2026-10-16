@@ -1,6 +1,650 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
-  "format": "howto",
-  "shots": []
+ "format": "howto",
+ "facePlan": "bookends",
+ "showCredits": false,
+ "music": true,
+ "audio": "assets/iphone-blocked-signs/vo.mp3",
+ "emphasis": [
+  "Delivered",
+  "silent",
+  "mislead",
+  "16.5",
+  "green",
+  "rings",
+  "voicemail",
+  "same",
+  "kindest"
+ ],
+ "caption_corrections": {
+  "Apple support page": "Apple's support page",
+  "delivered": "Delivered",
+  "focus": "Focus",
+  "silence unknown callers": "Silence Unknown Callers",
+  "messages.": "Messages."
+ },
+ "shots": [
+  {
+   "start_phrase": "That Delivered under your",
+   "line": "That \"Delivered\" under your last text? It doesn't mean they haven't blocked you.",
+   "needs": [
+    "Delivered",
+    "blocked"
+   ],
+   "tier": "multi",
+   "asset_id": null,
+   "scene": {
+    "eyebrow": "iPhone · Messages",
+    "headline": "[[Delivered]] doesn't mean you're fine",
+    "blocks": [
+     {
+      "id": "m",
+      "kind": "chat",
+      "bubbles": [
+       "Hey, you around?",
+       "Did I do something?"
+      ],
+      "status": "Delivered",
+      "h": 640
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Delivered under"
+     },
+     {
+      "do": "stamp",
+      "target": "m",
+      "on": "doesn't mean"
+     }
+    ],
+    "presenter": {
+     "src": "assets/iphone-blocked-signs/avatar-master-hook.mp4",
+     "from": 0.0
+    },
+    "type": "slide",
+    "hideCaptions": false
+   }
+  },
+  {
+   "start_phrase": "Blocking on iPhone is",
+   "line": "Blocking on iPhone is built to be silent. Apple's support page is blunt: you're never notified, and your texts just stop reaching them.",
+   "needs": [
+    "silent",
+    "Apple",
+    "notified",
+    "texts"
+   ],
+   "tier": "official",
+   "asset_id": "apple-para",
+   "scene": {
+    "eyebrow": "Apple Support",
+    "headline": "Built to be [[silent]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/iphone-blocked-signs/apple-para.png",
+      "width": 1080,
+      "height": 810,
+      "h": 700
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "silent"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "page is blunt",
+      "rect": [
+       60,
+       10,
+       980,
+       480
+      ],
+      "ring": false
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "never notified",
+      "rect": [
+       60,
+       320,
+       980,
+       190
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "texts just stop",
+      "rect": [
+       60,
+       180,
+       980,
+       150
+      ],
+      "ring": false
+     }
+    ],
+    "type": "slide",
+    "hideCaptions": false
+   }
+  },
+  {
+   "start_phrase": "Most of the clues",
+   "line": "Most of the clues people check will mislead you. One still holds up, and it isn't in Messages.",
+   "needs": [
+    "clues",
+    "mislead",
+    "holds"
+   ],
+   "tier": "multi",
+   "asset_id": null,
+   "scene": {
+    "eyebrow": "The usual signs",
+    "headline": "Most of these [[mislead]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "“Delivered” missing",
+        "v": "?"
+       },
+       {
+        "k": "Green bubble",
+        "v": "?"
+       },
+       {
+        "k": "How the call rings",
+        "v": "?"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r",
+      "on": "Most of the"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "mislead"
+     },
+     {
+      "do": "strike",
+      "target": "r.0",
+      "on": "mislead you"
+     },
+     {
+      "do": "strike",
+      "target": "r.1",
+      "on": "One still"
+     },
+     {
+      "do": "highlight",
+      "target": "r.2",
+      "on": "isn't in Messages"
+     }
+    ],
+    "type": "slide",
+    "hideCaptions": false
+   }
+  },
+  {
+   "start_phrase": "Start with Delivered Since",
+   "line": "Start with Delivered. Since iOS 16.5, guides report it can show up even when you're blocked. So by itself, it proves nothing.",
+   "needs": [
+    "Delivered",
+    "16.5",
+    "blocked",
+    "nothing"
+   ],
+   "tier": "multi",
+   "asset_id": "iphonelife-para",
+   "scene": {
+    "eyebrow": "iPhone Life · updated Sep 2026",
+    "headline": "Shows even when [[blocked]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/iphone-blocked-signs/iphonelife-para.png",
+      "width": 1080,
+      "height": 1350,
+      "h": 800
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "Start with Delivered",
+      "rect": [
+       120,
+       70,
+       910,
+       130
+      ]
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "Since iOS",
+      "rect": [
+       120,
+       850,
+       910,
+       450
+      ]
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "you're blocked"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "proves nothing",
+      "rect": [
+       120,
+       850,
+       910,
+       450
+      ],
+      "ring": false
+     }
+    ],
+    "type": "slide",
+    "hideCaptions": false
+   }
+  },
+  {
+   "start_phrase": "A green bubble doesn't",
+   "line": "A green bubble doesn't settle it either. It can just mean they turned off iMessage, or moved to Android.",
+   "needs": [
+    "green",
+    "bubble",
+    "iMessage",
+    "Android"
+   ],
+   "tier": "multi",
+   "asset_id": null,
+   "scene": {
+    "eyebrow": "Blue to green",
+    "headline": "Green doesn't [[settle]] it",
+    "blocks": [
+     {
+      "id": "m",
+      "kind": "chat",
+      "bubbles": [
+       "Are we still on for tonight?",
+       "Call me when you can"
+      ],
+      "status": "Sent as Text Message",
+      "tags": [
+       "iMessage off",
+       "Moved to Android"
+      ],
+      "h": 820
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "m",
+      "on": "A green bubble"
+     },
+     {
+      "do": "turn",
+      "target": "m",
+      "on": "green bubble"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "settle"
+     },
+     {
+      "do": "show",
+      "target": "m.0",
+      "on": "turned off"
+     },
+     {
+      "do": "show",
+      "target": "m.1",
+      "on": "moved to Android"
+     }
+    ],
+    "type": "slide",
+    "hideCaptions": false
+   }
+  },
+  {
+   "start_phrase": "Here's the clue that",
+   "line": "Here's the clue that holds up: a phone call. If it rings once, or not at all, and goes to voicemail every time, that points to a block. Two rings or more, and you're likely in the clear.",
+   "needs": [
+    "call",
+    "rings",
+    "voicemail",
+    "block",
+    "Two"
+   ],
+   "tier": "multi",
+   "asset_id": null,
+   "scene": {
+    "eyebrow": "The clue that holds up",
+    "headline": "Count the [[rings]]",
+    "blocks": [
+     {
+      "id": "a",
+      "kind": "call",
+      "name": "Them",
+      "rings": 1,
+      "outcome": "Voicemail",
+      "tone": "cost",
+      "h": 400
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Voicemail every time points to a block."
+     },
+     {
+      "id": "b",
+      "kind": "call",
+      "name": "Them",
+      "rings": 3,
+      "outcome": "Likely fine",
+      "tone": "free",
+      "secs": 0.6,
+      "h": 400
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "rings once"
+     },
+     {
+      "do": "ring",
+      "target": "a",
+      "on": "rings once"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "every time"
+     },
+     {
+      "do": "ring",
+      "target": "b",
+      "on": "Two rings"
+     }
+    ],
+    "type": "slide",
+    "hideCaptions": false
+   }
+  },
+  {
+   "start_phrase": "Even then a phone",
+   "line": "Even then, a phone that's off, a Focus, or Silence Unknown Callers can sound exactly the same.",
+   "needs": [
+    "phone",
+    "Focus",
+    "Silence",
+    "same"
+   ],
+   "tier": "multi",
+   "asset_id": null,
+   "scene": {
+    "eyebrow": "Same sound, no block",
+    "headline": "These sound the [[same]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Phone switched off",
+        "v": "Voicemail",
+        "tone": "cost"
+       },
+       {
+        "k": "A Focus is on",
+        "v": "Voicemail",
+        "tone": "cost"
+       },
+       {
+        "k": "Silence Unknown Callers",
+        "v": "Voicemail",
+        "tone": "cost"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "phone that's off"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "a Focus"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "Silence Unknown"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "exactly the same"
+     }
+    ],
+    "type": "slide",
+    "hideCaptions": false
+   }
+  },
+  {
+   "start_phrase": "And Apple says you",
+   "line": "And Apple says you can still leave a voicemail. They just won't get a notification.",
+   "needs": [
+    "Apple",
+    "voicemail",
+    "notification"
+   ],
+   "tier": "official",
+   "asset_id": "apple-para",
+   "scene": {
+    "eyebrow": "Apple Support",
+    "headline": "Your voicemail still [[lands]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/iphone-blocked-signs/apple-para.png",
+      "width": 1080,
+      "height": 810,
+      "h": 700
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "still leave",
+      "rect": [
+       60,
+       10,
+       980,
+       230
+      ],
+      "instant": true
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "leave a voicemail"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "won't get a notification",
+      "rect": [
+       60,
+       140,
+       980,
+       110
+      ]
+     }
+    ],
+    "type": "slide",
+    "hideCaptions": false
+   }
+  },
+  {
+   "start_phrase": "So when every clue",
+   "line": "So when every clue lines up, you probably know. And the kindest move is to stop calling.",
+   "needs": [
+    "clue",
+    "lines",
+    "kindest",
+    "calling"
+   ],
+   "tier": "multi",
+   "asset_id": null,
+   "scene": {
+    "eyebrow": "If it all lines up",
+    "headline": "Then give them [[space]]",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Rings once, or not at all",
+        "v": "✓",
+        "tone": "free"
+       },
+       {
+        "k": "Voicemail every time",
+        "v": "✓",
+        "tone": "free"
+       },
+       {
+        "k": "Texts go quiet",
+        "v": "✓",
+        "tone": "free"
+       }
+      ]
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "The kindest move is to stop calling."
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "every clue"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "lines up"
+     },
+     {
+      "do": "show",
+      "target": "r.2",
+      "on": "probably know"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "kindest move"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "stop calling"
+     }
+    ],
+    "type": "slide",
+    "hideCaptions": false
+   }
+  },
+  {
+   "start_phrase": "Pass this to anyone",
+   "line": "Pass this to anyone still staring at \"Delivered\".",
+   "needs": [
+    "Pass",
+    "anyone",
+    "Delivered"
+   ],
+   "tier": "official",
+   "asset_id": null,
+   "scene": {
+    "cta": true,
+    "hideCaptions": true,
+    "headlineSize": "xl",
+    "headline": "[[Pass]] this on",
+    "blocks": [
+     {
+      "id": "d",
+      "kind": "text",
+      "text": "To anyone still staring at “Delivered”."
+     },
+     {
+      "id": "m",
+      "kind": "chat",
+      "bubbles": [
+       "You around?"
+      ],
+      "status": "Delivered",
+      "h": 440
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Pass this"
+     },
+     {
+      "do": "show",
+      "target": "d",
+      "on": "anyone still"
+     },
+     {
+      "do": "stamp",
+      "target": "m",
+      "on": "staring at"
+     }
+    ],
+    "presenter": {
+     "src": "assets/iphone-blocked-signs/avatar-master-cta.mp4",
+     "from": 0.2
+    },
+    "type": "slide"
+   }
+  }
+ ]
 }

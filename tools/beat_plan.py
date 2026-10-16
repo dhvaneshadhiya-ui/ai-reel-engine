@@ -198,7 +198,12 @@ def _slide_words(scene: dict) -> str:
     bits = []
     for b in scene.get("blocks") or []:
         k = b.get("kind")
-        if k == "gauge":
+        if k == "chat":
+            bits.append("a message thread" + (f" marked “{b.get('status')}”" if b.get("status") else "")
+                        + ("" if not b.get("tags") else ", then tags: " + ", ".join(f"“{x}”" for x in b["tags"])))
+        elif k == "call":
+            bits.append(f"a call ringing {b.get('rings')} time(s), then “{b.get('outcome')}”")
+        elif k == "gauge":
             to = b.get("to")
             bits.append(f"a battery draining from {b.get('from')}% to {to}%" if to is not None and to != b.get("from")
                         else f"a battery sitting at {b.get('from')}%")

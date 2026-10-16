@@ -9895,3 +9895,30 @@ Treatments used: official launch still as a split-hook top panel with a slow pus
 as the confirmation beat; region-by-region annotatezoom of one UI image; specsheet for encrypted / 32 / free /
 no limit; black "NOT ON A PHONE" typecard as the catch payoff; facecam CTA question. Next app-feature reel: do
 not reuse the full-caps typecard for the catch, and do not open on the same split-with-browser layout.
+
+## 2026-10-16 — iphone-blocked-signs (howto, animated bookends)
+
+- **RAW NOTE 1 — when the subject cannot be recorded honestly, draw it AND say so.** The blocked side of
+  iMessage needs two phones and a real block; nothing on this machine can show it. Two new slide blocks
+  (`chat`: a thread whose status line is stamped and whose bubble turns green; `call`: a call that counts its
+  rings, then names where it went) carry it, each with an ILLUSTRATION label. ROOT: the critique's "a redraw
+  carries its illustration label" caught that the first cut had none. RULE: every drawn UI card is labelled on
+  the card itself, at a size legible on a phone (30px bold; 26px read as ~9px and was useless). G65 knows both
+  blocks; test_gates carries a failing case for each.
+- **RAW NOTE 2 — crop a receipt to the paragraph being read.** A 1080x2340 mobile capture in a 916x700 box
+  rendered as a thin unreadable column until each focus landed. Cropping to the 810-1350px paragraph made the
+  page readable at rest and the focus moves short. RULE: a screen block's source is the passage, not the page.
+- **RAW NOTE 3 — Xcode is not on this machine.** CLAUDE.md's Simulator note describes another Mac. Check
+  `xcrun simctl` before planning on Simulator screens; the Focus / Silence Unknown Callers beat became rows.
+- **RAW NOTE 4 — compile the shot plan before render_job.** render_job registers and gates the EXISTING beat
+  sheet; it does not recompile jobs/<slug>/shot-plan.json. One render went out on stale moves.
+- **RAW NOTE 5 — cover from the reel's hook frame failed (11% dark feed, presenter face, caption chip).**
+  Apple's own white blocking page as the frame scored 50%. A bright official receipt beats a dark slide frame.
+- ElevenLabs v3: 190 words in 55.1s (~1,122 credits), vo_pad to 66.0s (2.88 w/s, not the suggested 75s).
+  HeyGen twin slices 4.8s + 2.8s (~8 credits). 22 SFX, all audible. −14.4 LUFS. Critique READY at round 3.
+
+Treatments used: drawn iMessage thread with a stamped "Delivered" as the hook beside the presenter circle;
+Apple Support paragraph as the confirmation beat (and again for voicemail, different sentence ringed); struck
+rows for the misleading signs; iPhone Life FAQ receipt; blue-to-green bubble flip with cause tags; two call
+cards counting rings; voicemail rows for the look-alikes; checklist rows for the payoff; XL "Pass this on" end
+card. Next myth-busting reel: do not open on the chat block again, and do not use struck rows for the myths.

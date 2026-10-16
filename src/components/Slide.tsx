@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Easing, Img, OffthreadVideo, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
-import { arrive, rise, ClipBlock, DevicesBlock, GaugeBlock, LevelsBlock, ScreenBlock, StepsBlock, WavesBlock } from "./SlideBlocks";
-import type { ClipBlockProps, DevicesBlockProps, GaugeBlockProps, LevelsBlockProps, ScreenBlockProps, StepsBlockProps, WavesBlockProps } from "./SlideBlocks";
+import { arrive, rise, CallBlock, ChatBlock, ClipBlock, DevicesBlock, GaugeBlock, LevelsBlock, ScreenBlock, StepsBlock, WavesBlock } from "./SlideBlocks";
+import type { CallBlockProps, ChatBlockProps, ClipBlockProps, DevicesBlockProps, GaugeBlockProps, LevelsBlockProps, ScreenBlockProps, StepsBlockProps, WavesBlockProps } from "./SlideBlocks";
 
 /**
  * SLIDE — the Carousel Playbook look, as a reel scene (2026-09-16).
@@ -50,13 +50,13 @@ export type SlideBlock =
   | { id: string; kind: "text"; text: string }
   | { id: string; kind: "tips"; best?: string; watch?: string }
   | { id: string; kind: "logos"; items: { logo: string; name: string; tile?: "light" | "dark" }[] }
-  | ScreenBlockProps | StepsBlockProps | DevicesBlockProps | WavesBlockProps | GaugeBlockProps | ClipBlockProps | LevelsBlockProps
+  | ChatBlockProps | CallBlockProps | ScreenBlockProps | StepsBlockProps | DevicesBlockProps | WavesBlockProps | GaugeBlockProps | ClipBlockProps | LevelsBlockProps
   | { id: string; kind: "spotlight"; logo: string; name: string; note?: string; overlay?: boolean };
 
 export interface SlideMove {
   /** pill: target "headline" — the yellow pill lands on the spoken word, not
    *  with the headline (the words sit white until then) */
-  do: "show" | "strike" | "highlight" | "pill" | "focus" | "state" | "drift" | "drain";
+  do: "show" | "strike" | "highlight" | "pill" | "focus" | "state" | "drift" | "drain" | "stamp" | "turn" | "ring";
   target: string;
   at?: number;
   on?: string;
@@ -378,6 +378,10 @@ export const Slide: React.FC<{ scene: SlideProps }> = ({ scene }) => {
         return <GaugeBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} />;
       case "levels":
         return <LevelsBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} />;
+      case "chat":
+        return <ChatBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} fps={fps} />;
+      case "call":
+        return <CallBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} fps={fps} />;
       case "waves":
         return <WavesBlock key={b.id} b={b} moves={moves} t={t} boxW={COL} C={C} shown={land(shownAt(b.id))} />;
       case "logos": {

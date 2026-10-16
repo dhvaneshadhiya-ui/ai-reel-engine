@@ -1,0 +1,1950 @@
+{
+  "id": "iphone-blocked-signs",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/iphone-blocked-signs/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "Delivered",
+    "silent",
+    "mislead",
+    "16.5",
+    "green",
+    "rings",
+    "voicemail",
+    "same",
+    "kindest"
+  ],
+  "scenes": [
+    {
+      "eyebrow": "iPhone \u00b7 Messages",
+      "headline": "[[Delivered]] doesn't mean you're fine",
+      "blocks": [
+        {
+          "id": "m",
+          "kind": "chat",
+          "bubbles": [
+            "Hey, you around?",
+            "Did I do something?"
+          ],
+          "status": "Delivered",
+          "h": 640
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Delivered under",
+          "at": 0.2
+        },
+        {
+          "do": "stamp",
+          "target": "m",
+          "on": "doesn't mean",
+          "at": 2.72
+        }
+      ],
+      "presenter": {
+        "src": "assets/iphone-blocked-signs/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "type": "slide",
+      "hideCaptions": false,
+      "durationSec": 4.92,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.17,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "eyebrow": "Apple Support",
+      "headline": "Built to be [[silent]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/iphone-blocked-signs/apple-para.png",
+          "width": 1080,
+          "height": 810,
+          "h": 700
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "silent",
+          "at": 1.78
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "page is blunt",
+          "rect": [
+            60,
+            10,
+            980,
+            480
+          ],
+          "ring": false,
+          "at": 3.5
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "never notified",
+          "rect": [
+            60,
+            320,
+            980,
+            190
+          ],
+          "at": 5.34
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "texts just stop",
+          "rect": [
+            60,
+            180,
+            980,
+            150
+          ],
+          "ring": false,
+          "at": 6.5
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": false,
+      "durationSec": 8.8,
+      "assetId": "apple-para",
+      "claimId": "apple-para",
+      "covers": "Blocking on iPhone is",
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.75,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 3.1,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 4.94,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 6.1,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "eyebrow": "The usual signs",
+      "headline": "Most of these [[mislead]]",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "\u201cDelivered\u201d missing",
+              "v": "?"
+            },
+            {
+              "k": "Green bubble",
+              "v": "?"
+            },
+            {
+              "k": "How the call rings",
+              "v": "?"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r",
+          "on": "Most of the",
+          "at": 0.0
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "mislead",
+          "at": 1.62
+        },
+        {
+          "do": "strike",
+          "target": "r.0",
+          "on": "mislead you",
+          "at": 1.62
+        },
+        {
+          "do": "strike",
+          "target": "r.1",
+          "on": "One still",
+          "at": 2.82
+        },
+        {
+          "do": "highlight",
+          "target": "r.2",
+          "on": "isn't in Messages",
+          "at": 4.6
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": false,
+      "durationSec": 6.12,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.59,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/marker.mp3",
+          "at": 2.81,
+          "vol": 0.417
+        }
+      ]
+    },
+    {
+      "eyebrow": "iPhone Life \u00b7 updated Sep 2026",
+      "headline": "Shows even when [[blocked]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/iphone-blocked-signs/iphonelife-para.png",
+          "width": 1080,
+          "height": 1350,
+          "h": 800
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "Start with Delivered",
+          "rect": [
+            120,
+            70,
+            910,
+            130
+          ],
+          "at": 0.0
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "Since iOS",
+          "rect": [
+            120,
+            850,
+            910,
+            450
+          ],
+          "at": 1.68
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "you're blocked",
+          "at": 5.52
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "proves nothing",
+          "rect": [
+            120,
+            850,
+            910,
+            450
+          ],
+          "ring": false,
+          "at": 7.72
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": false,
+      "durationSec": 8.92,
+      "assetId": "iphonelife-para",
+      "claimId": "iphonelife-para",
+      "covers": "Start with Delivered Since",
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 1.28,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 5.49,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 7.32,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "eyebrow": "Blue to green",
+      "headline": "Green doesn't [[settle]] it",
+      "blocks": [
+        {
+          "id": "m",
+          "kind": "chat",
+          "bubbles": [
+            "Are we still on for tonight?",
+            "Call me when you can"
+          ],
+          "status": "Sent as Text Message",
+          "tags": [
+            "iMessage off",
+            "Moved to Android"
+          ],
+          "h": 820
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "m",
+          "on": "A green bubble",
+          "at": 0.0
+        },
+        {
+          "do": "turn",
+          "target": "m",
+          "on": "green bubble",
+          "at": 0.26
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "settle",
+          "at": 1.14
+        },
+        {
+          "do": "show",
+          "target": "m.0",
+          "on": "turned off",
+          "at": 3.44
+        },
+        {
+          "do": "show",
+          "target": "m.1",
+          "on": "moved to Android",
+          "at": 4.76
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": false,
+      "durationSec": 6.24,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.11,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "eyebrow": "The clue that holds up",
+      "headline": "Count the [[rings]]",
+      "blocks": [
+        {
+          "id": "a",
+          "kind": "call",
+          "name": "Them",
+          "rings": 1,
+          "outcome": "Voicemail",
+          "tone": "cost",
+          "h": 400
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Voicemail every time points to a block."
+        },
+        {
+          "id": "b",
+          "kind": "call",
+          "name": "Them",
+          "rings": 3,
+          "outcome": "Likely fine",
+          "tone": "free",
+          "secs": 0.6,
+          "h": 400
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "rings once",
+          "at": 3.46
+        },
+        {
+          "do": "ring",
+          "target": "a",
+          "on": "rings once",
+          "at": 3.46
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "every time",
+          "at": 6.12
+        },
+        {
+          "do": "ring",
+          "target": "b",
+          "on": "Two rings",
+          "at": 8.74
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": false,
+      "durationSec": 11.46,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 3.43,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "eyebrow": "Same sound, no block",
+      "headline": "These sound the [[same]]",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Phone switched off",
+              "v": "Voicemail",
+              "tone": "cost"
+            },
+            {
+              "k": "A Focus is on",
+              "v": "Voicemail",
+              "tone": "cost"
+            },
+            {
+              "k": "Silence Unknown Callers",
+              "v": "Voicemail",
+              "tone": "cost"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "phone that's off",
+          "at": 0.86
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "a Focus",
+          "at": 2.26
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "Silence Unknown",
+          "at": 3.22
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "exactly the same",
+          "at": 5.06
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": false,
+      "durationSec": 6.64,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 5.03,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "eyebrow": "Apple Support",
+      "headline": "Your voicemail still [[lands]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/iphone-blocked-signs/apple-para.png",
+          "width": 1080,
+          "height": 810,
+          "h": 700
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "still leave",
+          "rect": [
+            60,
+            10,
+            980,
+            230
+          ],
+          "instant": true,
+          "at": 1.08
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "leave a voicemail",
+          "at": 1.36
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "won't get a notification",
+          "rect": [
+            60,
+            140,
+            980,
+            110
+          ],
+          "at": 3.12
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": false,
+      "durationSec": 4.9,
+      "assetId": "apple-para",
+      "claimId": "apple-para",
+      "covers": "And Apple says you",
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 0.68,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.33,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 2.72,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "eyebrow": "If it all lines up",
+      "headline": "Then give them [[space]]",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Rings once, or not at all",
+              "v": "\u2713",
+              "tone": "free"
+            },
+            {
+              "k": "Voicemail every time",
+              "v": "\u2713",
+              "tone": "free"
+            },
+            {
+              "k": "Texts go quiet",
+              "v": "\u2713",
+              "tone": "free"
+            }
+          ]
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "The kindest move is to stop calling."
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "every clue",
+          "at": 0.48
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "lines up",
+          "at": 0.98
+        },
+        {
+          "do": "show",
+          "target": "r.2",
+          "on": "probably know",
+          "at": 1.72
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "kindest move",
+          "at": 3.14
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "stop calling",
+          "at": 4.16
+        }
+      ],
+      "type": "slide",
+      "hideCaptions": false,
+      "durationSec": 5.4,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Core.MP3",
+          "at": 4.11,
+          "vol": 0.556
+        }
+      ]
+    },
+    {
+      "cta": true,
+      "hideCaptions": true,
+      "headlineSize": "xl",
+      "headline": "[[Pass]] this on",
+      "blocks": [
+        {
+          "id": "d",
+          "kind": "text",
+          "text": "To anyone still staring at \u201cDelivered\u201d."
+        },
+        {
+          "id": "m",
+          "kind": "chat",
+          "bubbles": [
+            "You around?"
+          ],
+          "status": "Delivered",
+          "h": 440
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Pass this",
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "d",
+          "on": "anyone still",
+          "at": 0.7
+        },
+        {
+          "do": "stamp",
+          "target": "m",
+          "on": "staring at",
+          "at": 1.42
+        }
+      ],
+      "presenter": {
+        "src": "assets/iphone-blocked-signs/avatar-master-cta.mp4",
+        "from": 0.2
+      },
+      "type": "slide",
+      "durationSec": 2.6,
+      "sfx": []
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.16,
+      "text": "that Delivered under",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "that"
+        },
+        {
+          "t": 0.2,
+          "text": "Delivered"
+        },
+        {
+          "t": 0.6,
+          "text": "under"
+        }
+      ]
+    },
+    {
+      "start": 1.16,
+      "end": 2.08,
+      "text": "your last text,",
+      "words": [
+        {
+          "t": 1.16,
+          "text": "your"
+        },
+        {
+          "t": 1.34,
+          "text": "last"
+        },
+        {
+          "t": 1.64,
+          "text": "text,"
+        }
+      ]
+    },
+    {
+      "start": 2.62,
+      "end": 3.18,
+      "text": "it doesn't mean",
+      "words": [
+        {
+          "t": 2.62,
+          "text": "it"
+        },
+        {
+          "t": 2.72,
+          "text": "doesn't"
+        },
+        {
+          "t": 3.02,
+          "text": "mean"
+        }
+      ]
+    },
+    {
+      "start": 3.18,
+      "end": 3.88,
+      "text": "they haven't blocked",
+      "words": [
+        {
+          "t": 3.18,
+          "text": "they"
+        },
+        {
+          "t": 3.34,
+          "text": "haven't"
+        },
+        {
+          "t": 3.62,
+          "text": "blocked"
+        }
+      ]
+    },
+    {
+      "start": 3.88,
+      "end": 5.52,
+      "text": "you. Blocking on",
+      "words": [
+        {
+          "t": 3.88,
+          "text": "you."
+        },
+        {
+          "t": 4.92,
+          "text": "Blocking"
+        },
+        {
+          "t": 5.36,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 5.52,
+      "end": 6.42,
+      "text": "iPhone is built",
+      "words": [
+        {
+          "t": 5.52,
+          "text": "iPhone"
+        },
+        {
+          "t": 5.8,
+          "text": "is"
+        },
+        {
+          "t": 6.18,
+          "text": "built"
+        }
+      ]
+    },
+    {
+      "start": 6.42,
+      "end": 7.08,
+      "text": "to be silent.",
+      "words": [
+        {
+          "t": 6.42,
+          "text": "to"
+        },
+        {
+          "t": 6.6,
+          "text": "be"
+        },
+        {
+          "t": 6.7,
+          "text": "silent."
+        }
+      ]
+    },
+    {
+      "start": 7.78,
+      "end": 9.36,
+      "text": "Apple's support page is blunt.",
+      "words": [
+        {
+          "t": 7.78,
+          "text": "Apple's"
+        },
+        {
+          "t": 8.8,
+          "text": "support"
+        },
+        {
+          "t": 9.04,
+          "text": "page"
+        },
+        {
+          "t": 9.04,
+          "text": "is"
+        },
+        {
+          "t": 9.04,
+          "text": "blunt."
+        }
+      ]
+    },
+    {
+      "start": 10.1,
+      "end": 10.88,
+      "text": "You're never notified",
+      "words": [
+        {
+          "t": 10.1,
+          "text": "You're"
+        },
+        {
+          "t": 10.26,
+          "text": "never"
+        },
+        {
+          "t": 10.48,
+          "text": "notified"
+        }
+      ]
+    },
+    {
+      "start": 10.88,
+      "end": 11.72,
+      "text": "and your texts",
+      "words": [
+        {
+          "t": 10.88,
+          "text": "and"
+        },
+        {
+          "t": 11.3,
+          "text": "your"
+        },
+        {
+          "t": 11.42,
+          "text": "texts"
+        }
+      ]
+    },
+    {
+      "start": 11.72,
+      "end": 12.7,
+      "text": "just stop reaching",
+      "words": [
+        {
+          "t": 11.72,
+          "text": "just"
+        },
+        {
+          "t": 12.14,
+          "text": "stop"
+        },
+        {
+          "t": 12.46,
+          "text": "reaching"
+        }
+      ]
+    },
+    {
+      "start": 12.7,
+      "end": 14.1,
+      "text": "them. Most of",
+      "words": [
+        {
+          "t": 12.7,
+          "text": "them."
+        },
+        {
+          "t": 13.72,
+          "text": "Most"
+        },
+        {
+          "t": 13.94,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 14.1,
+      "end": 14.72,
+      "text": "the clues people",
+      "words": [
+        {
+          "t": 14.1,
+          "text": "the"
+        },
+        {
+          "t": 14.2,
+          "text": "clues"
+        },
+        {
+          "t": 14.42,
+          "text": "people"
+        }
+      ]
+    },
+    {
+      "start": 14.72,
+      "end": 15.84,
+      "text": "check will mislead",
+      "words": [
+        {
+          "t": 14.72,
+          "text": "check"
+        },
+        {
+          "t": 15.08,
+          "text": "will"
+        },
+        {
+          "t": 15.34,
+          "text": "mislead"
+        }
+      ]
+    },
+    {
+      "start": 15.84,
+      "end": 17.0,
+      "text": "you. One still",
+      "words": [
+        {
+          "t": 15.84,
+          "text": "you."
+        },
+        {
+          "t": 16.54,
+          "text": "One"
+        },
+        {
+          "t": 16.78,
+          "text": "still"
+        }
+      ]
+    },
+    {
+      "start": 17.0,
+      "end": 18.2,
+      "text": "holds up and",
+      "words": [
+        {
+          "t": 17.0,
+          "text": "holds"
+        },
+        {
+          "t": 17.32,
+          "text": "up"
+        },
+        {
+          "t": 17.6,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 18.2,
+      "end": 18.76,
+      "text": "it isn't in",
+      "words": [
+        {
+          "t": 18.2,
+          "text": "it"
+        },
+        {
+          "t": 18.32,
+          "text": "isn't"
+        },
+        {
+          "t": 18.66,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 18.76,
+      "end": 20.38,
+      "text": "Messages. Start with",
+      "words": [
+        {
+          "t": 18.76,
+          "text": "Messages."
+        },
+        {
+          "t": 19.84,
+          "text": "Start"
+        },
+        {
+          "t": 20.14,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 20.38,
+      "end": 22.08,
+      "text": "Delivered Since iOS",
+      "words": [
+        {
+          "t": 20.38,
+          "text": "Delivered"
+        },
+        {
+          "t": 21.52,
+          "text": "Since"
+        },
+        {
+          "t": 21.74,
+          "text": "iOS"
+        }
+      ]
+    },
+    {
+      "start": 22.08,
+      "end": 24.04,
+      "text": "16.5 guides report,",
+      "words": [
+        {
+          "t": 22.08,
+          "text": "16.5"
+        },
+        {
+          "t": 23.2,
+          "text": "guides"
+        },
+        {
+          "t": 23.66,
+          "text": "report,"
+        }
+      ]
+    },
+    {
+      "start": 24.24,
+      "end": 24.7,
+      "text": "it can show",
+      "words": [
+        {
+          "t": 24.24,
+          "text": "it"
+        },
+        {
+          "t": 24.28,
+          "text": "can"
+        },
+        {
+          "t": 24.44,
+          "text": "show"
+        }
+      ]
+    },
+    {
+      "start": 24.7,
+      "end": 25.36,
+      "text": "up even when",
+      "words": [
+        {
+          "t": 24.7,
+          "text": "up"
+        },
+        {
+          "t": 24.86,
+          "text": "even"
+        },
+        {
+          "t": 25.14,
+          "text": "when"
+        }
+      ]
+    },
+    {
+      "start": 25.36,
+      "end": 26.74,
+      "text": "you're blocked. So",
+      "words": [
+        {
+          "t": 25.36,
+          "text": "you're"
+        },
+        {
+          "t": 25.5,
+          "text": "blocked."
+        },
+        {
+          "t": 26.18,
+          "text": "So"
+        }
+      ]
+    },
+    {
+      "start": 26.74,
+      "end": 27.56,
+      "text": "by itself, it",
+      "words": [
+        {
+          "t": 26.74,
+          "text": "by"
+        },
+        {
+          "t": 26.88,
+          "text": "itself,"
+        },
+        {
+          "t": 27.44,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 27.56,
+      "end": 29.02,
+      "text": "proves nothing. A",
+      "words": [
+        {
+          "t": 27.56,
+          "text": "proves"
+        },
+        {
+          "t": 27.84,
+          "text": "nothing."
+        },
+        {
+          "t": 28.76,
+          "text": "A"
+        }
+      ]
+    },
+    {
+      "start": 29.02,
+      "end": 29.9,
+      "text": "green bubble doesn't",
+      "words": [
+        {
+          "t": 29.02,
+          "text": "green"
+        },
+        {
+          "t": 29.26,
+          "text": "bubble"
+        },
+        {
+          "t": 29.52,
+          "text": "doesn't"
+        }
+      ]
+    },
+    {
+      "start": 29.9,
+      "end": 30.62,
+      "text": "settle it either.",
+      "words": [
+        {
+          "t": 29.9,
+          "text": "settle"
+        },
+        {
+          "t": 30.16,
+          "text": "it"
+        },
+        {
+          "t": 30.32,
+          "text": "either."
+        }
+      ]
+    },
+    {
+      "start": 31.22,
+      "end": 31.72,
+      "text": "It can just",
+      "words": [
+        {
+          "t": 31.22,
+          "text": "It"
+        },
+        {
+          "t": 31.34,
+          "text": "can"
+        },
+        {
+          "t": 31.48,
+          "text": "just"
+        }
+      ]
+    },
+    {
+      "start": 31.72,
+      "end": 32.42,
+      "text": "mean they turned",
+      "words": [
+        {
+          "t": 31.72,
+          "text": "mean"
+        },
+        {
+          "t": 31.98,
+          "text": "they"
+        },
+        {
+          "t": 32.2,
+          "text": "turned"
+        }
+      ]
+    },
+    {
+      "start": 32.42,
+      "end": 33.52,
+      "text": "off iMessage or",
+      "words": [
+        {
+          "t": 32.42,
+          "text": "off"
+        },
+        {
+          "t": 32.62,
+          "text": "iMessage"
+        },
+        {
+          "t": 33.26,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 33.52,
+      "end": 34.22,
+      "text": "moved to Android.",
+      "words": [
+        {
+          "t": 33.52,
+          "text": "moved"
+        },
+        {
+          "t": 33.74,
+          "text": "to"
+        },
+        {
+          "t": 33.92,
+          "text": "Android."
+        }
+      ]
+    },
+    {
+      "start": 35.0,
+      "end": 35.62,
+      "text": "Here's the clue",
+      "words": [
+        {
+          "t": 35.0,
+          "text": "Here's"
+        },
+        {
+          "t": 35.34,
+          "text": "the"
+        },
+        {
+          "t": 35.44,
+          "text": "clue"
+        }
+      ]
+    },
+    {
+      "start": 35.62,
+      "end": 36.36,
+      "text": "that holds up.",
+      "words": [
+        {
+          "t": 35.62,
+          "text": "that"
+        },
+        {
+          "t": 35.82,
+          "text": "holds"
+        },
+        {
+          "t": 36.08,
+          "text": "up."
+        }
+      ]
+    },
+    {
+      "start": 37.0,
+      "end": 37.58,
+      "text": "A phone call.",
+      "words": [
+        {
+          "t": 37.0,
+          "text": "A"
+        },
+        {
+          "t": 37.1,
+          "text": "phone"
+        },
+        {
+          "t": 37.32,
+          "text": "call."
+        }
+      ]
+    },
+    {
+      "start": 38.24,
+      "end": 38.66,
+      "text": "If it rings",
+      "words": [
+        {
+          "t": 38.24,
+          "text": "If"
+        },
+        {
+          "t": 38.32,
+          "text": "it"
+        },
+        {
+          "t": 38.46,
+          "text": "rings"
+        }
+      ]
+    },
+    {
+      "start": 38.66,
+      "end": 39.56,
+      "text": "once or not",
+      "words": [
+        {
+          "t": 38.66,
+          "text": "once"
+        },
+        {
+          "t": 39.02,
+          "text": "or"
+        },
+        {
+          "t": 39.36,
+          "text": "not"
+        }
+      ]
+    },
+    {
+      "start": 39.56,
+      "end": 40.22,
+      "text": "at all and",
+      "words": [
+        {
+          "t": 39.56,
+          "text": "at"
+        },
+        {
+          "t": 39.72,
+          "text": "all"
+        },
+        {
+          "t": 39.96,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 40.22,
+      "end": 41.12,
+      "text": "goes to voicemail",
+      "words": [
+        {
+          "t": 40.22,
+          "text": "goes"
+        },
+        {
+          "t": 40.4,
+          "text": "to"
+        },
+        {
+          "t": 40.6,
+          "text": "voicemail"
+        }
+      ]
+    },
+    {
+      "start": 41.12,
+      "end": 42.12,
+      "text": "every time, that",
+      "words": [
+        {
+          "t": 41.12,
+          "text": "every"
+        },
+        {
+          "t": 41.4,
+          "text": "time,"
+        },
+        {
+          "t": 42.06,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 42.12,
+      "end": 42.74,
+      "text": "points to a",
+      "words": [
+        {
+          "t": 42.12,
+          "text": "points"
+        },
+        {
+          "t": 42.44,
+          "text": "to"
+        },
+        {
+          "t": 42.66,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 42.74,
+      "end": 44.12,
+      "text": "block. Two rings",
+      "words": [
+        {
+          "t": 42.74,
+          "text": "block."
+        },
+        {
+          "t": 43.74,
+          "text": "Two"
+        },
+        {
+          "t": 43.9,
+          "text": "rings"
+        }
+      ]
+    },
+    {
+      "start": 44.12,
+      "end": 44.78,
+      "text": "or more and",
+      "words": [
+        {
+          "t": 44.12,
+          "text": "or"
+        },
+        {
+          "t": 44.28,
+          "text": "more"
+        },
+        {
+          "t": 44.54,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 44.78,
+      "end": 45.38,
+      "text": "you're likely in",
+      "words": [
+        {
+          "t": 44.78,
+          "text": "you're"
+        },
+        {
+          "t": 44.94,
+          "text": "likely"
+        },
+        {
+          "t": 45.24,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 45.38,
+      "end": 46.72,
+      "text": "the clear. Even",
+      "words": [
+        {
+          "t": 45.38,
+          "text": "the"
+        },
+        {
+          "t": 45.48,
+          "text": "clear."
+        },
+        {
+          "t": 46.46,
+          "text": "Even"
+        }
+      ]
+    },
+    {
+      "start": 46.72,
+      "end": 47.52,
+      "text": "then, a phone",
+      "words": [
+        {
+          "t": 46.72,
+          "text": "then,"
+        },
+        {
+          "t": 47.24,
+          "text": "a"
+        },
+        {
+          "t": 47.32,
+          "text": "phone"
+        }
+      ]
+    },
+    {
+      "start": 47.52,
+      "end": 48.84,
+      "text": "that's off, a",
+      "words": [
+        {
+          "t": 47.52,
+          "text": "that's"
+        },
+        {
+          "t": 47.8,
+          "text": "off,"
+        },
+        {
+          "t": 48.72,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 48.84,
+      "end": 50.98,
+      "text": "Focus or Silence Unknown Callers",
+      "words": [
+        {
+          "t": 48.84,
+          "text": "Focus"
+        },
+        {
+          "t": 49.16,
+          "text": "or"
+        },
+        {
+          "t": 49.68,
+          "text": "Silence"
+        },
+        {
+          "t": 49.68,
+          "text": "Unknown"
+        },
+        {
+          "t": 49.68,
+          "text": "Callers"
+        }
+      ]
+    },
+    {
+      "start": 50.98,
+      "end": 52.0,
+      "text": "can sound exactly",
+      "words": [
+        {
+          "t": 50.98,
+          "text": "can"
+        },
+        {
+          "t": 51.18,
+          "text": "sound"
+        },
+        {
+          "t": 51.52,
+          "text": "exactly"
+        }
+      ]
+    },
+    {
+      "start": 52.0,
+      "end": 53.32,
+      "text": "the same. And",
+      "words": [
+        {
+          "t": 52.0,
+          "text": "the"
+        },
+        {
+          "t": 52.18,
+          "text": "same."
+        },
+        {
+          "t": 53.1,
+          "text": "And"
+        }
+      ]
+    },
+    {
+      "start": 53.32,
+      "end": 54.06,
+      "text": "Apple says you",
+      "words": [
+        {
+          "t": 53.32,
+          "text": "Apple"
+        },
+        {
+          "t": 53.58,
+          "text": "says"
+        },
+        {
+          "t": 53.84,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 54.06,
+      "end": 54.68,
+      "text": "can still leave",
+      "words": [
+        {
+          "t": 54.06,
+          "text": "can"
+        },
+        {
+          "t": 54.18,
+          "text": "still"
+        },
+        {
+          "t": 54.46,
+          "text": "leave"
+        }
+      ]
+    },
+    {
+      "start": 54.68,
+      "end": 56.02,
+      "text": "a voicemail. They",
+      "words": [
+        {
+          "t": 54.68,
+          "text": "a"
+        },
+        {
+          "t": 54.8,
+          "text": "voicemail."
+        },
+        {
+          "t": 55.86,
+          "text": "They"
+        }
+      ]
+    },
+    {
+      "start": 56.02,
+      "end": 56.66,
+      "text": "just won't get",
+      "words": [
+        {
+          "t": 56.02,
+          "text": "just"
+        },
+        {
+          "t": 56.22,
+          "text": "won't"
+        },
+        {
+          "t": 56.52,
+          "text": "get"
+        }
+      ]
+    },
+    {
+      "start": 56.66,
+      "end": 58.28,
+      "text": "a notification. So",
+      "words": [
+        {
+          "t": 56.66,
+          "text": "a"
+        },
+        {
+          "t": 56.78,
+          "text": "notification."
+        },
+        {
+          "t": 58.0,
+          "text": "So"
+        }
+      ]
+    },
+    {
+      "start": 58.28,
+      "end": 58.98,
+      "text": "when every clue",
+      "words": [
+        {
+          "t": 58.28,
+          "text": "when"
+        },
+        {
+          "t": 58.48,
+          "text": "every"
+        },
+        {
+          "t": 58.78,
+          "text": "clue"
+        }
+      ]
+    },
+    {
+      "start": 58.98,
+      "end": 59.72,
+      "text": "lines up, you",
+      "words": [
+        {
+          "t": 58.98,
+          "text": "lines"
+        },
+        {
+          "t": 59.26,
+          "text": "up,"
+        },
+        {
+          "t": 59.66,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 59.72,
+      "end": 61.04,
+      "text": "probably know. And",
+      "words": [
+        {
+          "t": 59.72,
+          "text": "probably"
+        },
+        {
+          "t": 60.04,
+          "text": "know."
+        },
+        {
+          "t": 60.98,
+          "text": "And"
+        }
+      ]
+    },
+    {
+      "start": 61.04,
+      "end": 61.78,
+      "text": "the kindest move",
+      "words": [
+        {
+          "t": 61.04,
+          "text": "the"
+        },
+        {
+          "t": 61.14,
+          "text": "kindest"
+        },
+        {
+          "t": 61.5,
+          "text": "move"
+        }
+      ]
+    },
+    {
+      "start": 61.78,
+      "end": 62.4,
+      "text": "is to stop",
+      "words": [
+        {
+          "t": 61.78,
+          "text": "is"
+        },
+        {
+          "t": 62.04,
+          "text": "to"
+        },
+        {
+          "t": 62.16,
+          "text": "stop"
+        }
+      ]
+    },
+    {
+      "start": 62.4,
+      "end": 63.94,
+      "text": "calling. Pass this",
+      "words": [
+        {
+          "t": 62.4,
+          "text": "calling."
+        },
+        {
+          "t": 63.4,
+          "text": "Pass"
+        },
+        {
+          "t": 63.7,
+          "text": "this"
+        }
+      ]
+    },
+    {
+      "start": 63.94,
+      "end": 64.82,
+      "text": "to anyone still",
+      "words": [
+        {
+          "t": 63.94,
+          "text": "to"
+        },
+        {
+          "t": 64.1,
+          "text": "anyone"
+        },
+        {
+          "t": 64.42,
+          "text": "still"
+        }
+      ]
+    },
+    {
+      "start": 64.82,
+      "end": 65.64,
+      "text": "staring at Delivered",
+      "words": [
+        {
+          "t": 64.82,
+          "text": "staring"
+        },
+        {
+          "t": 65.2,
+          "text": "at"
+        },
+        {
+          "t": 65.42,
+          "text": "Delivered"
+        }
+      ]
+    }
+  ],
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 65.64,
+        "vol": 0.055
+      },
+      {
+        "t": 65.98,
+        "vol": 0.02
+      }
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+  },
+  "format": "howto",
+  "showCredits": false,
+  "script": "That \"Delivered\" under your last text? It doesn't mean they haven't blocked you.\n\nBlocking on iPhone is built to be silent. Apple's support page is blunt: you're never notified, and your texts just stop reaching them. Most of the clues people check will mislead you. One still holds up, and it isn't in Messages.\n\nStart with Delivered. Since iOS 16.5, guides report it can show up even when you're blocked. So by itself, it proves nothing.\n\nA green bubble doesn't settle it either. It can just mean they turned off iMessage, or moved to Android.\n\nHere's the clue that holds up: a phone call. If it rings once, or not at all, and goes to voicemail every time, that points to a block. Two rings or more, and you're likely in the clear.\n\nEven then, a phone that's off, a Focus, or Silence Unknown Callers can sound exactly the same. And Apple says you can still leave a voicemail. They just won't get a notification.\n\nSo when every clue lines up, you probably know. And the kindest move is to stop calling.\n\nPass this to anyone still staring at \"Delivered\".",
+  "approval": {
+    "sha256": "ecc495ebd8ef4ea622f663d98f70a98c097667520c58acee204ea81a49b0b7d1",
+    "approvedAt": "2026-10-16T08:15:33+00:00",
+    "words": 190,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

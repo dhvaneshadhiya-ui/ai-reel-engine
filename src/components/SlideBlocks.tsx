@@ -496,3 +496,127 @@ export const ClipBlock: React.FC<{ b: ClipBlockProps; t: number; boxW: number; C
     </div>
   );
 };
+
+/** CHAT — a message thread whose status line is the subject (iphone-blocked-signs,
+ *  2026-10-16). The reel is about what "Delivered" and a green bubble do and do not
+ *  prove, and neither can be recorded honestly: the blocked side needs two phones
+ *  and someone blocking you. So the thread is drawn, plainly, as an illustration —
+ *  never a screenshot passed off as one. Moves:
+ *    stamp  target = id      a yellow ring and "?" land on the status line
+ *    turn   target = id      the last bubble turns from iMessage blue to SMS green
+ *    show   target = id.N    tag N lands under the thread (the innocent causes) */
+export interface ChatBlockProps {
+  id: string; kind: "chat";
+  bubbles: string[];
+  status?: string;
+  tags?: string[];
+  h?: number;
+}
+
+export const ChatBlock: React.FC<{ b: ChatBlockProps; moves: MoveLike[]; t: number; boxW: number; C: Pal; shown: number; fps: number }>
+  = ({ b, moves, t, boxW, C, shown, fps }) => {
+  const H = b.h ?? 620;
+  const at = (d: string, target: string) => moves.find((m) => m.do === d && m.target === target)?.at;
+  const stampAt = at("stamp", b.id);
+  const turnAt = at("turn", b.id);
+  const turn = turnAt === undefined ? 0 : interpolate(t, [turnAt, turnAt + 0.45], [0, 1], { ...CL, easing: ease });
+  const stamp = stampAt === undefined ? 0 : arrive(t, stampAt, fps);
+  const mix = (a: number[], z: number[], k: number) => `rgb(${a.map((v, i) => Math.round(v + (z[i] - v) * k)).join(",")})`;
+  const blue = [10, 132, 255], green = [48, 209, 88];
+  const n = b.bubbles.length;
+  const tags = b.tags ?? [];
+  return (
+    <div style={{ position: "relative", width: boxW, height: H, borderRadius: 34, background: C.card, border: `2px solid ${C.line}`,
+      padding: "40px 40px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "center", gap: 18, ...rise(shown) }}>
+      {/* A REDRAW CARRIES ITS LABEL (critique rule: real product only, or say so) */}
+      <div style={{ position: "absolute", left: 32, top: 24, font: `700 30px ${FONT}`, letterSpacing: 1.5, color: C.muted }}>ILLUSTRATION</div>
+      {b.bubbles.map((txt, i) => {
+        const last = i === n - 1;
+        return (
+          <div key={i} style={{ alignSelf: "flex-end", maxWidth: boxW * 0.8, padding: "26px 38px", borderRadius: 48,
+            borderBottomRightRadius: last ? 12 : 40,
+            background: last ? mix(blue, green, turn) : `rgb(${blue.join(",")})`,
+            font: `500 56px/1.25 ${FONT}`, color: "#fff" }}>{txt}</div>
+        );
+      })}
+      {b.status ? (
+        <div style={{ alignSelf: "flex-end", position: "relative", marginRight: 10, font: `600 42px ${FONT}`, color: C.sub }}>
+          {b.status}
+          {stamp > 0 ? (
+            <div style={{ position: "absolute", right: -16, top: -14, bottom: -14, left: -22, borderRadius: 24,
+              border: `5px solid ${C.pill}`, opacity: Math.min(1, stamp * 3), transform: `scale(${0.7 + 0.3 * stamp})` }}>
+              <div style={{ position: "absolute", right: -34, top: -40, width: 64, height: 64, borderRadius: 32, background: C.pill,
+                color: "#000", font: `900 44px/64px ${FONT}`, textAlign: "center" }}>?</div>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
+      {tags.length ? (
+        <div style={{ display: "flex", gap: 16, marginTop: 18, justifyContent: "flex-end" }}>
+          {tags.map((tg, i) => {
+            const a = at("show", `${b.id}.${i}`);
+            const p = a === undefined ? 1 : arrive(t, a, fps);
+            return (
+              <div key={i} style={{ padding: "16px 26px", borderRadius: 22, border: `2px solid ${C.line}`, background: "#26262A",
+                font: `700 42px ${FONT}`, color: C.ink, ...rise(p, 18) }}>{tg}</div>
+            );
+          })}
+        </div>
+      ) : null}
+    </div>
+  );
+};
+
+/** CALL — an outgoing call that counts its rings, then says where it went
+ *  (iphone-blocked-signs, 2026-10-16). The reel's one reliable clue is a ring
+ *  COUNT, and a count is motion: each ring pulses once on a `ring` move, the
+ *  counter ticks, and the outcome lands when the rings run out. With no `ring`
+ *  move it holds its outcome from the start. */
+export interface CallBlockProps {
+  id: string; kind: "call";
+  name: string;
+  rings: number;
+  outcome: string;
+  tone?: "cost" | "free";
+  /** seconds per ring (default 0.9) */
+  secs?: number;
+  h?: number;
+}
+
+export const CallBlock: React.FC<{ b: CallBlockProps; moves: MoveLike[]; t: number; boxW: number; C: Pal; shown: number; fps: number }>
+  = ({ b, moves, t, boxW, C, shown, fps }) => {
+  const H = b.h ?? 300;
+  const ringAt = moves.find((m) => m.do === "ring" && m.target === b.id)?.at;
+  const per = b.secs ?? 0.9;
+  const el = ringAt === undefined ? Infinity : t - ringAt;
+  const done = el >= b.rings * per;
+  const count = el < 0 ? 0 : Math.min(b.rings, Math.floor(el / per) + 1);
+  const phase = el >= 0 && !done ? (el % per) / per : -1;
+  const outP = !done ? 0 : ringAt === undefined ? 1 : arrive(t, ringAt + b.rings * per, fps);
+  const col = b.tone === "free" ? C.blue : C.red;
+  const R = Math.round(H * 0.3);
+  return (
+    <div style={{ position: "relative", width: boxW, height: H, borderRadius: 34, background: C.card, border: `2px solid ${done ? col : C.line}`,
+      display: "flex", alignItems: "center", gap: 40, padding: "0 44px", boxSizing: "border-box", ...rise(shown) }}>
+      <div style={{ position: "absolute", right: 32, top: 22, font: `700 28px ${FONT}`, letterSpacing: 1.5, color: C.muted }}>ILLUSTRATION</div>
+      <div style={{ position: "relative", width: R * 2, height: R * 2, flexShrink: 0 }}>
+        {phase >= 0 ? (
+          <div style={{ position: "absolute", left: R - R * (1 + phase * 0.7), top: R - R * (1 + phase * 0.7),
+            width: R * 2 * (1 + phase * 0.7), height: R * 2 * (1 + phase * 0.7), borderRadius: "50%",
+            border: `5px solid ${C.blue}`, opacity: 1 - phase }} />
+        ) : null}
+        <div style={{ position: "absolute", inset: 0, borderRadius: "50%", background: done ? col : "#30D158",
+          display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <svg width={R} height={R} viewBox="0 0 24 24"><path fill="#fff" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" /></svg>
+        </div>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        <div style={{ font: `700 ${Math.round(H * 0.15)}px/1.1 ${FONT}`, color: C.ink }}>{b.name}</div>
+        <div style={{ font: `600 ${Math.round(H * 0.12)}px ${FONT}`, color: C.sub, fontVariantNumeric: "tabular-nums" }}>
+          {done ? `${b.rings} ring${b.rings === 1 ? "" : "s"}` : count > 0 ? `Ringing… ${count}` : "Calling…"}
+        </div>
+        <div style={{ font: `800 ${Math.round(H * 0.17)}px ${FONT}`, color: col, ...rise(outP, 16) }}>{b.outcome}</div>
+      </div>
+    </div>
+  );
+};
