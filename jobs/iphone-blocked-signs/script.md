@@ -1,0 +1,15 @@
+That "Delivered" under your last text? It doesn't mean they haven't blocked you.
+
+Blocking on iPhone is built to be silent. Apple's support page is blunt: you're never notified, and your texts just stop reaching them. Most of the clues people check will mislead you. One still holds up, and it isn't in Messages.
+
+Start with Delivered. Since iOS 16.5, guides report it can show up even when you're blocked. So by itself, it proves nothing.
+
+A green bubble doesn't settle it either. It can just mean they turned off iMessage, or moved to Android.
+
+Here's the clue that holds up: a phone call. If it rings once, or not at all, and goes to voicemail every time, that points to a block. Two rings or more, and you're likely in the clear.
+
+Even then, a phone that's off, a Focus, or Silence Unknown Callers can sound exactly the same. And Apple says you can still leave a voicemail. They just won't get a notification.
+
+So when every clue lines up, you probably know. And the kindest move is to stop calling.
+
+Pass this to anyone still staring at "Delivered".

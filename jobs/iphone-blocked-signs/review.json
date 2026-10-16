@@ -1,0 +1,14 @@
+{
+  "script_sha256": "ecc495ebd8ef4ea622f663d98f70a98c097667520c58acee204ea81a49b0b7d1",
+  "structure_sha256": "a322c7c065bebbdf42ffe81e574a280672b13980e79ecd5d71d420517108e497",
+  "findings": [
+    "  NO OPEN LOOP \u2014 nothing in the opening third points forward. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "  OPENING has no version, date or time anchor: 'That \"Delivered\" under your last text?'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "CADENCE: only 1 sentence reaches 18 words (longest 19). The playbook asks for 'occasionally one long spec sentence' \u2014 with everything short, nothing reads as short. Nothing to push against.",
+    "NUMBERS: one every 6.7 sentences. The playbook asks for one every 2-3 \u2014 concrete numbers are what make a claim feel reported rather than asserted.",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-10-16T08:08:03+00:00"
+}
