@@ -1,11 +1,11 @@
-Eight sofa tabs open, and one question: which one fits my apartment?
+OpenAI's October 15th update to the ChatGPT Chrome extension hands ChatGPT every tab you have open. One switch decides what it does with them.
 
-Since OpenAI's October 15th update, ChatGPT can answer that by reading every Chrome tab you have open.
+Leave it on Chat, and ChatGPT just reads them. Shopping for a sofa with eight tabs open? Ask which one fits, and it compares every tab and picks a favorite.
 
-That's the test in OpenAI's demo video: it checks dimensions, materials and prices on each tab, and remembers you have two cats.
+Flip that switch to Work, the agent mode, and it acts inside those tabs instead: it can send messages, fill out forms, download files, and even group your tabs.
 
-So which one fits the apartment? It comes back with seven sofas and a clear favorite.
+Before it acts on a new website, it asks you first, by default.
 
-To use it, add OpenAI's ChatGPT extension to Chrome, type @Chrome, and ask. And OpenAI says it's available on every ChatGPT plan.
+To set it up, add the ChatGPT extension to Chrome, then mention @Chrome when you ask. According to OpenAI, the extension is available on every ChatGPT plan.
 
-Which tab pile would you hand it first?
+Which tab would you hand it first?
