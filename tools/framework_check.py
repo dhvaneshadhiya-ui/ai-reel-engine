@@ -152,7 +152,12 @@ def check(brief: dict, script: str, claims: list[dict],
     #   (c) what is promised must be deliverable — a reel that offers "the
     #       exact prompt" and has no prompt to send is a broken promise
     #       (§6: do not promise one thing and deliver another).
-    ASK = re.compile(r"\b(comment|dm|follow|drop a|type)\b", re.I)
+    # "type" is an ask only when something to type follows it (a quoted or
+    # capitalised keyword, or "below"/"in the comments"). As a bare verb it is
+    # usually the SUBJECT of the reel: "ChatGPT will now click, type and hit
+    # submit in your Chrome tabs" tripped F5 at sentence 1 (2026-10-19).
+    ASK = re.compile(r"\b(comment|dm|follow|drop a)\b|\btype\s+(?=[\"'\u201c]|(?-i:[A-Z]{2,})\b|"
+                     r"(?:\S+\s+)?(?:below|in the comments)\b)", re.I)
     sents = [x.strip() for x in re.split(r"(?<=[.!?])\s+", script) if x.strip()]
     if sents:
         asks = [i for i, x in enumerate(sents) if ASK.search(x)]
@@ -305,6 +310,14 @@ def selftest() -> int:
     f, _ = check({}, late, [], [])
     t("F5 silent when the ask follows the value",
       not any("F5" in x for x in f))
+    verb = ("ChatGPT will now click, type and hit submit in your tabs. "
+            + "Then some value. " * 8)
+    f, _ = check({}, verb, [], [])
+    t("F5 silent on 'type' used as a verb, not an ask",
+      not any("F5" in x for x in f))
+    early_t = ('Type "CLAUDE" below and I\'ll send it. ' + "Then some value. " * 8)
+    f, _ = check({}, early_t, [], [])
+    t("F5 still fires on an early 'type KEYWORD' ask", any("F5" in x for x in f))
     f, _ = check({"goal": "comment"}, "A story with no ask at all. " * 6, [], [])
     t("F5 fires on a conversion goal with no ask", any("F5" in x for x in f))
 

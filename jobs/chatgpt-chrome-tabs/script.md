@@ -1,0 +1,15 @@
+ChatGPT will now click, type and hit submit in your Chrome tabs, signed in as you. And one setting decides how much of that it does without asking.
+
+OpenAI shipped this on October 15th, in a Chrome extension with 7 million users. In a normal chat, ChatGPT reads across your open tabs. But in Work, its agent mode, it takes them over: sending messages, filling out forms, downloading files, even grouping your pile of tabs.
+
+Here's OpenAI's own demo. Someone asks it to submit a yoga receipt from their email. It finds the receipt, opens the expense site in its own tab group, asks one question, then fills in the form and submits it.
+
+And that works on sites you're already signed into, like Gmail, LinkedIn and Salesforce.
+
+Setup lives in the ChatGPT desktop app: open Settings, then Computer Use, and install the Chrome extension. Then type @Chrome in a Work chat.
+
+Now, that setting. By default, ChatGPT asks before it touches each new website. You can allow once, allow that one site, or allow all sites. OpenAI marks that last one as a risk, because then it stops asking.
+
+While it works, Chrome shows a bar with a cancel button, so you can stop it any time.
+
+Would you let it hit submit for you?

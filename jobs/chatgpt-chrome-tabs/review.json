@@ -1,0 +1,13 @@
+{
+  "script_sha256": "69ca396da95c39dfe5125039c81103f4d1e7df2d1e9c1782b96b89c245011f16",
+  "structure_sha256": "d4b9531fb920d406fc6f4b590284af03ec096a9ca1d654fddb65d9c6d59189ff",
+  "findings": [
+    "  NO OPEN LOOP \u2014 nothing in the opening third points forward. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [
+    "the most surprising claim (SURPRISE 85: 'Allow for all sites is marked Elevated Risk and removes the ') is spoken in the last 40% of the script \u2014 consider leading with it."
+  ],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-10-19T05:10:29+00:00"
+}
