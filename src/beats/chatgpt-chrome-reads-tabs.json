@@ -1,0 +1,992 @@
+{
+  "id": "chatgpt-chrome-reads-tabs",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/chatgpt-chrome-reads-tabs/vo.mp3",
+  "facePlan": "none",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "one question",
+    "every Chrome tab",
+    "demo",
+    "dimensions",
+    "two cats",
+    "fits",
+    "seven sofas",
+    "clear favorite",
+    "extension",
+    "@Chrome",
+    "every ChatGPT plan",
+    "first"
+  ],
+  "scenes": [
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/hook-tabs.mp4",
+      "covers": "one question: which one fits my apartment",
+      "headline": {
+        "lines": [
+          {
+            "text": "EIGHT SOFA TABS",
+            "kind": "headline",
+            "at": 0.0
+          },
+          {
+            "text": "ONE QUESTION",
+            "kind": "headline",
+            "at": 1.2
+          }
+        ],
+        "y": 0.24,
+        "theme": "dark"
+      },
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.343,
+          "at": 1.2
+        }
+      ],
+      "zoomDir": "none",
+      "durationSec": 4.88,
+      "assetId": "hook-tabs",
+      "claimId": "hook-tabs",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/sent.mp4",
+      "covers": "ChatGPT can answer that",
+      "sfx": [
+        {
+          "src": "sfx2/mouse-click-01.mp3",
+          "vol": 0.468,
+          "at": 2.4
+        }
+      ],
+      "zoomDir": "none",
+      "durationSec": 4.1,
+      "assetId": "sent",
+      "claimId": "sent",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/reading.mp4",
+      "covers": "reading every Chrome tab you have open",
+      "headline": {
+        "lines": [
+          {
+            "text": "\u201cI'LL LOOK THROUGH",
+            "kind": "headline",
+            "at": 0.1
+          },
+          {
+            "text": "THE SOFA TABS\u201d",
+            "kind": "headline",
+            "at": 0.4
+          }
+        ],
+        "y": 0.55,
+        "theme": "dark"
+      },
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.1
+        }
+      ],
+      "zoomDir": "none",
+      "durationSec": 2.34,
+      "assetId": "reading",
+      "claimId": "reading",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/wide.mp4",
+      "covers": "OpenAI's demo video",
+      "headline": {
+        "lines": [
+          {
+            "text": "OPENAI'S OWN DEMO",
+            "kind": "headline",
+            "at": 0.1
+          }
+        ],
+        "y": 0.73,
+        "theme": "dark"
+      },
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.1
+        }
+      ],
+      "zoomDir": "none",
+      "durationSec": 2.54,
+      "assetId": "wide",
+      "claimId": "wide",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/compare.mp4",
+      "covers": "checks dimensions, materials and prices on each tab, and remembers you have two cats",
+      "headline": {
+        "lines": [
+          {
+            "text": "DIMENSIONS \u00b7 MATERIALS \u00b7 PRICES",
+            "kind": "label",
+            "at": 0.2
+          },
+          {
+            "text": "+ TWO CATS",
+            "kind": "headline",
+            "at": 3.2
+          }
+        ],
+        "y": 0.55,
+        "theme": "dark"
+      },
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.343,
+          "at": 3.2
+        }
+      ],
+      "zoomDir": "none",
+      "durationSec": 5.06,
+      "assetId": "compare",
+      "claimId": "compare",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/bubble.mp4",
+      "covers": "which one fits the apartment",
+      "zoomDir": "none",
+      "durationSec": 1.72,
+      "assetId": "bubble",
+      "claimId": "bubble",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/answer.mp4",
+      "covers": "seven sofas and a clear favorite",
+      "headline": {
+        "lines": [
+          {
+            "text": "SEVEN SOFAS",
+            "kind": "label",
+            "at": 0.6
+          },
+          {
+            "text": "ONE CLEAR FAVORITE",
+            "kind": "headline",
+            "at": 1.4
+          }
+        ],
+        "y": 0.62,
+        "theme": "dark"
+      },
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "vol": 1.0,
+          "at": 0.6
+        }
+      ],
+      "zoomDir": "none",
+      "durationSec": 3.04,
+      "assetId": "answer",
+      "claimId": "answer",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/chatgpt-chrome-reads-tabs/cws-mobile.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "lines": [
+        {
+          "at": 0.3,
+          "x": 468,
+          "y": 222,
+          "w": 300,
+          "h": 75
+        },
+        {
+          "at": 1.6,
+          "x": 60,
+          "y": 780,
+          "w": 960,
+          "h": 120
+        }
+      ],
+      "covers": "add OpenAI's ChatGPT extension to Chrome",
+      "follow": true,
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.0
+        },
+        {
+          "src": "sfx-action/marker.mp3",
+          "vol": 0.417,
+          "at": 1.6
+        }
+      ],
+      "zoomDir": "none",
+      "durationSec": 3.48,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "cws-mobile",
+      "claimId": "cws-mobile",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/chip.mp4",
+      "covers": "type @Chrome, and ask",
+      "headline": {
+        "lines": [
+          {
+            "text": "TYPE @CHROME",
+            "kind": "headline",
+            "at": 0.1
+          }
+        ],
+        "y": 0.62,
+        "theme": "dark"
+      },
+      "sfx": [
+        {
+          "src": "sfx-action/typekey.mp3",
+          "vol": 0.26,
+          "at": 0.1
+        }
+      ],
+      "zoomDir": "none",
+      "durationSec": 1.6,
+      "assetId": "chip",
+      "claimId": "chip",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/wide.mp4",
+      "covers": "available on every ChatGPT plan",
+      "headline": {
+        "lines": [
+          {
+            "text": "PER OPENAI",
+            "kind": "label",
+            "at": 0.3
+          },
+          {
+            "text": "EVERY CHATGPT PLAN",
+            "kind": "headline",
+            "at": 1.0
+          }
+        ],
+        "y": 0.7,
+        "theme": "dark"
+      },
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.343,
+          "at": 1.0
+        }
+      ],
+      "zoomDir": "none",
+      "durationSec": 4.42,
+      "assetId": "wide",
+      "claimId": "wide",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/hook-tabs.mp4",
+      "covers": "Which tab pile would you hand it first",
+      "headline": {
+        "lines": [
+          {
+            "text": "TELL ME BELOW",
+            "kind": "label",
+            "at": 0.1
+          },
+          {
+            "text": "WHICH TABS FIRST?",
+            "kind": "headline",
+            "at": 0.4
+          }
+        ],
+        "y": 0.66,
+        "theme": "dark"
+      },
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.1
+        }
+      ],
+      "zoomDir": "none",
+      "durationSec": 1.82,
+      "assetId": "hook-tabs",
+      "claimId": "hook-tabs",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 0.96,
+      "text": "Eight sofa tabs",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "Eight"
+        },
+        {
+          "t": 0.36,
+          "text": "sofa"
+        },
+        {
+          "t": 0.66,
+          "text": "tabs"
+        }
+      ]
+    },
+    {
+      "start": 0.96,
+      "end": 1.96,
+      "text": "open and one",
+      "words": [
+        {
+          "t": 0.96,
+          "text": "open"
+        },
+        {
+          "t": 1.36,
+          "text": "and"
+        },
+        {
+          "t": 1.72,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 1.96,
+      "end": 3.28,
+      "text": "question. Which one",
+      "words": [
+        {
+          "t": 1.96,
+          "text": "question."
+        },
+        {
+          "t": 2.92,
+          "text": "Which"
+        },
+        {
+          "t": 3.06,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 3.28,
+      "end": 4.18,
+      "text": "fits my apartment?",
+      "words": [
+        {
+          "t": 3.28,
+          "text": "fits"
+        },
+        {
+          "t": 3.56,
+          "text": "my"
+        },
+        {
+          "t": 3.82,
+          "text": "apartment?"
+        }
+      ]
+    },
+    {
+      "start": 4.88,
+      "end": 6.08,
+      "text": "Since OpenAI's October",
+      "words": [
+        {
+          "t": 4.88,
+          "text": "Since"
+        },
+        {
+          "t": 5.06,
+          "text": "OpenAI's"
+        },
+        {
+          "t": 5.84,
+          "text": "October"
+        }
+      ]
+    },
+    {
+      "start": 6.08,
+      "end": 8.2,
+      "text": "15th update, ChatGPT",
+      "words": [
+        {
+          "t": 6.08,
+          "text": "15th"
+        },
+        {
+          "t": 6.82,
+          "text": "update,"
+        },
+        {
+          "t": 7.64,
+          "text": "ChatGPT"
+        }
+      ]
+    },
+    {
+      "start": 8.2,
+      "end": 8.98,
+      "text": "can answer that",
+      "words": [
+        {
+          "t": 8.2,
+          "text": "can"
+        },
+        {
+          "t": 8.42,
+          "text": "answer"
+        },
+        {
+          "t": 8.76,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 8.98,
+      "end": 9.72,
+      "text": "by reading every",
+      "words": [
+        {
+          "t": 8.98,
+          "text": "by"
+        },
+        {
+          "t": 9.14,
+          "text": "reading"
+        },
+        {
+          "t": 9.42,
+          "text": "every"
+        }
+      ]
+    },
+    {
+      "start": 9.72,
+      "end": 10.44,
+      "text": "Chrome tab you",
+      "words": [
+        {
+          "t": 9.72,
+          "text": "Chrome"
+        },
+        {
+          "t": 9.98,
+          "text": "tab"
+        },
+        {
+          "t": 10.26,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 10.44,
+      "end": 11.6,
+      "text": "have open. That's",
+      "words": [
+        {
+          "t": 10.44,
+          "text": "have"
+        },
+        {
+          "t": 10.58,
+          "text": "open."
+        },
+        {
+          "t": 11.32,
+          "text": "That's"
+        }
+      ]
+    },
+    {
+      "start": 11.6,
+      "end": 12.14,
+      "text": "the test in",
+      "words": [
+        {
+          "t": 11.6,
+          "text": "the"
+        },
+        {
+          "t": 11.74,
+          "text": "test"
+        },
+        {
+          "t": 11.98,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 12.14,
+      "end": 13.42,
+      "text": "OpenAI's demo video.",
+      "words": [
+        {
+          "t": 12.14,
+          "text": "OpenAI's"
+        },
+        {
+          "t": 12.82,
+          "text": "demo"
+        },
+        {
+          "t": 13.02,
+          "text": "video."
+        }
+      ]
+    },
+    {
+      "start": 13.86,
+      "end": 14.72,
+      "text": "It checks dimensions,",
+      "words": [
+        {
+          "t": 13.86,
+          "text": "It"
+        },
+        {
+          "t": 13.98,
+          "text": "checks"
+        },
+        {
+          "t": 14.22,
+          "text": "dimensions,"
+        }
+      ]
+    },
+    {
+      "start": 15.06,
+      "end": 16.0,
+      "text": "materials and prices",
+      "words": [
+        {
+          "t": 15.06,
+          "text": "materials"
+        },
+        {
+          "t": 15.32,
+          "text": "and"
+        },
+        {
+          "t": 15.68,
+          "text": "prices"
+        }
+      ]
+    },
+    {
+      "start": 16.0,
+      "end": 16.82,
+      "text": "on each tab",
+      "words": [
+        {
+          "t": 16.0,
+          "text": "on"
+        },
+        {
+          "t": 16.22,
+          "text": "each"
+        },
+        {
+          "t": 16.48,
+          "text": "tab"
+        }
+      ]
+    },
+    {
+      "start": 16.82,
+      "end": 17.66,
+      "text": "and remembers you",
+      "words": [
+        {
+          "t": 16.82,
+          "text": "and"
+        },
+        {
+          "t": 17.08,
+          "text": "remembers"
+        },
+        {
+          "t": 17.42,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 17.66,
+      "end": 18.56,
+      "text": "have two cats.",
+      "words": [
+        {
+          "t": 17.66,
+          "text": "have"
+        },
+        {
+          "t": 17.84,
+          "text": "two"
+        },
+        {
+          "t": 18.26,
+          "text": "cats."
+        }
+      ]
+    },
+    {
+      "start": 18.92,
+      "end": 19.34,
+      "text": "So which one",
+      "words": [
+        {
+          "t": 18.92,
+          "text": "So"
+        },
+        {
+          "t": 19.02,
+          "text": "which"
+        },
+        {
+          "t": 19.18,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 19.34,
+      "end": 20.1,
+      "text": "fits the apartment?",
+      "words": [
+        {
+          "t": 19.34,
+          "text": "fits"
+        },
+        {
+          "t": 19.56,
+          "text": "the"
+        },
+        {
+          "t": 19.72,
+          "text": "apartment?"
+        }
+      ]
+    },
+    {
+      "start": 20.64,
+      "end": 21.26,
+      "text": "It comes back",
+      "words": [
+        {
+          "t": 20.64,
+          "text": "It"
+        },
+        {
+          "t": 20.78,
+          "text": "comes"
+        },
+        {
+          "t": 20.98,
+          "text": "back"
+        }
+      ]
+    },
+    {
+      "start": 21.26,
+      "end": 22.3,
+      "text": "with seven sofas",
+      "words": [
+        {
+          "t": 21.26,
+          "text": "with"
+        },
+        {
+          "t": 21.46,
+          "text": "seven"
+        },
+        {
+          "t": 21.74,
+          "text": "sofas"
+        }
+      ]
+    },
+    {
+      "start": 22.3,
+      "end": 22.84,
+      "text": "and a clear",
+      "words": [
+        {
+          "t": 22.3,
+          "text": "and"
+        },
+        {
+          "t": 22.52,
+          "text": "a"
+        },
+        {
+          "t": 22.64,
+          "text": "clear"
+        }
+      ]
+    },
+    {
+      "start": 22.84,
+      "end": 24.1,
+      "text": "favorite. To use",
+      "words": [
+        {
+          "t": 22.84,
+          "text": "favorite."
+        },
+        {
+          "t": 23.68,
+          "text": "To"
+        },
+        {
+          "t": 23.86,
+          "text": "use"
+        }
+      ]
+    },
+    {
+      "start": 24.1,
+      "end": 25.18,
+      "text": "it, add OpenAI's",
+      "words": [
+        {
+          "t": 24.1,
+          "text": "it,"
+        },
+        {
+          "t": 24.36,
+          "text": "add"
+        },
+        {
+          "t": 24.5,
+          "text": "OpenAI's"
+        }
+      ]
+    },
+    {
+      "start": 25.18,
+      "end": 26.48,
+      "text": "ChatGPT extension to",
+      "words": [
+        {
+          "t": 25.18,
+          "text": "ChatGPT"
+        },
+        {
+          "t": 25.8,
+          "text": "extension"
+        },
+        {
+          "t": 26.18,
+          "text": "to"
+        }
+      ]
+    },
+    {
+      "start": 26.48,
+      "end": 28.04,
+      "text": "Chrome, type @Chrome",
+      "words": [
+        {
+          "t": 26.48,
+          "text": "Chrome,"
+        },
+        {
+          "t": 27.16,
+          "text": "type"
+        },
+        {
+          "t": 27.5,
+          "text": "@Chrome"
+        }
+      ]
+    },
+    {
+      "start": 28.04,
+      "end": 29.4,
+      "text": "and ask. And",
+      "words": [
+        {
+          "t": 28.04,
+          "text": "and"
+        },
+        {
+          "t": 28.38,
+          "text": "ask."
+        },
+        {
+          "t": 28.76,
+          "text": "And"
+        }
+      ]
+    },
+    {
+      "start": 29.4,
+      "end": 30.58,
+      "text": "OpenAI says it's",
+      "words": [
+        {
+          "t": 29.4,
+          "text": "OpenAI"
+        },
+        {
+          "t": 29.86,
+          "text": "says"
+        },
+        {
+          "t": 30.24,
+          "text": "it's"
+        }
+      ]
+    },
+    {
+      "start": 30.58,
+      "end": 31.54,
+      "text": "available on every",
+      "words": [
+        {
+          "t": 30.58,
+          "text": "available"
+        },
+        {
+          "t": 30.82,
+          "text": "on"
+        },
+        {
+          "t": 31.2,
+          "text": "every"
+        }
+      ]
+    },
+    {
+      "start": 31.54,
+      "end": 33.32,
+      "text": "ChatGPT plan. Which",
+      "words": [
+        {
+          "t": 31.54,
+          "text": "ChatGPT"
+        },
+        {
+          "t": 32.28,
+          "text": "plan."
+        },
+        {
+          "t": 33.18,
+          "text": "Which"
+        }
+      ]
+    },
+    {
+      "start": 33.32,
+      "end": 34.04,
+      "text": "tab pile would",
+      "words": [
+        {
+          "t": 33.32,
+          "text": "tab"
+        },
+        {
+          "t": 33.58,
+          "text": "pile"
+        },
+        {
+          "t": 33.84,
+          "text": "would"
+        }
+      ]
+    },
+    {
+      "start": 34.04,
+      "end": 34.42,
+      "text": "you hand it",
+      "words": [
+        {
+          "t": 34.04,
+          "text": "you"
+        },
+        {
+          "t": 34.14,
+          "text": "hand"
+        },
+        {
+          "t": 34.32,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 34.42,
+      "end": 34.68,
+      "text": "first?",
+      "words": [
+        {
+          "t": 34.42,
+          "text": "first?"
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "30s demo read; the voice and the UI sounds carry it (standing no-music default)",
+  "format": "news",
+  "showCredits": false,
+  "script": "Eight sofa tabs open, and one question: which one fits my apartment?\n\nSince OpenAI's October 15th update, ChatGPT can answer that by reading every Chrome tab you have open.\n\nThat's the test in OpenAI's demo video: it checks dimensions, materials and prices on each tab, and remembers you have two cats.\n\nSo which one fits the apartment? It comes back with seven sofas and a clear favorite.\n\nTo use it, add OpenAI's ChatGPT extension to Chrome, type @Chrome, and ask. And OpenAI says it's available on every ChatGPT plan.\n\nWhich tab pile would you hand it first?",
+  "approval": {
+    "sha256": "546c5c92c809f021440e02a912f44c1dc85fd754cb821842a392fcb095f59e40",
+    "approvedAt": "2026-10-19T06:33:09+00:00",
+    "words": 97,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

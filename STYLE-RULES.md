@@ -9952,3 +9952,29 @@ four clause-sized clips (prompt, found, tab group, question/yes, fill, submitted
 for signed-in sites, setup steps, the permission options and the "Elevated Risk" payoff; store art Cancel bar;
 facecam CTA question. Next AI-agent reel: do not reuse the flash-forward split hook or the docs "Elevated
 Risk" receipt as the payoff device.
+
+## 2026-10-19 — chatgpt-chrome-reads-tabs (news, faceless short, 35s)
+
+- **RAW NOTE 1 — a second reference on the same story is a FORMAT request, not a re-do.** The user sent a
+  28s faceless kinetic-text short on the same news an hour after our 78s face-led reel; asked, they chose a
+  separate short. RULE: when a reference repeats a finished topic, ask "new cut or replace?" before scripting.
+- **RAW NOTE 2 — ask for approval only after the script is ON SCREEN in chat.** The first approval box went out
+  with the script only in tool output; the user approved words they had not seen. Re-shown, re-approved.
+  RULE: the approval message itself carries the script and the HEAR/SEE beat plan, every time.
+- **RAW NOTE 3 — 4K exists when the 1080p link is all you were given.** api.fxtwitter.com lists every
+  variant of an X video; demo 1 had a 3840x2160 file. Even at 4K, a desktop chat column is ~1290px wide, so a
+  9:16 crop either cuts line ends or leaves text small. RULE: crop to the column width (1290x2160 + colour-
+  matched bands), never narrower, and carry the proof line in a quoted kinetic headline.
+- **RAW NOTE 4 — new_job.py's default target (90s) is outside the news band and it refuses <60s.** Scaffold
+  at 60 and set the real target in the brief.
+- **RAW NOTE 5 — an AI-cloned VOICE alone still needs the AI label.** packaging_check refused "AI LABEL: off";
+  the disclosure line becomes "The voice in this video is AI-generated." for faceless reels.
+- ElevenLabs v3: 97 words in 32.2s (~619 credits), vo_pad to 35.0s. No HeyGen. 11 SFX, one masked riser cut.
+  −14.4 LUFS. Critique READY at round 3.
+
+Treatments used: eased pan across the 8-tab strip into the typed question as the hook; quoted kinetic
+headlines over OpenAI's chat column ("I'LL LOOK THROUGH THE SOFA TABS", "DIMENSIONS · MATERIALS · PRICES",
+"+ TWO CATS", "SEVEN SOFAS / ONE CLEAR FAVORITE"); close-up of the question bubble for the payoff question;
+small whole-browser wide shot in a blue band for "OpenAI's demo" and the plan line; store mobile capture;
+@Chrome chip close-up; hook pan reused as the CTA callback. Next faceless demo short: do not reuse the
+quoted-headline-over-UI device for every beat.

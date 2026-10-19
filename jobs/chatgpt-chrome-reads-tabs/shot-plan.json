@@ -1,6 +1,364 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
-  "format": "news",
-  "shots": []
+ "format": "news",
+ "facePlan": "none",
+ "facePlanReason": "Faceless by the user's choice (2026-10-19), modelled on the reference short; OpenAI's demo carries every beat.",
+ "audio": "assets/chatgpt-chrome-reads-tabs/vo.mp3",
+ "showCredits": false,
+ "music": false,
+ "noMusicReason": "30s demo read; the voice and the UI sounds carry it (standing no-music default)",
+ "emphasis": [
+  "one question",
+  "every Chrome tab",
+  "demo",
+  "dimensions",
+  "two cats",
+  "fits",
+  "seven sofas",
+  "clear favorite",
+  "extension",
+  "@Chrome",
+  "every ChatGPT plan",
+  "first"
+ ],
+ "caption_corrections": {
+  "at Chrome": "@Chrome"
+ },
+ "shots": [
+  {
+   "start_phrase": "Eight sofa tabs open,",
+   "line": "Eight sofa tabs open, and one question: which one fits my apartment?",
+   "asset_id": "hook-tabs",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/hook-tabs.mp4",
+    "covers": "one question: which one fits my apartment",
+    "headline": {
+     "lines": [
+      {
+       "text": "EIGHT SOFA TABS",
+       "kind": "headline",
+       "at": 0.0
+      },
+      {
+       "text": "ONE QUESTION",
+       "kind": "headline",
+       "at": 1.2
+      }
+     ],
+     "y": 0.24
+    },
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "vol": 0.5,
+      "at": 1.2
+     }
+    ],
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "Since OpenAI's October 15th",
+   "line": "Since OpenAI's October 15th update, ChatGPT can answer that",
+   "asset_id": "sent",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/sent.mp4",
+    "covers": "ChatGPT can answer that",
+    "sfx": [
+     {
+      "src": "sfx2/mouse-click-01.mp3",
+      "vol": 0.6,
+      "at": 2.4
+     }
+    ],
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "by reading every Chrome",
+   "line": "by reading every Chrome tab you have open.",
+   "asset_id": "reading",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/reading.mp4",
+    "covers": "reading every Chrome tab you have open",
+    "headline": {
+     "lines": [
+      {
+       "text": "\u201cI'LL LOOK THROUGH",
+       "kind": "headline",
+       "at": 0.1
+      },
+      {
+       "text": "THE SOFA TABS\u201d",
+       "kind": "headline",
+       "at": 0.4
+      }
+     ],
+     "y": 0.55
+    },
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "vol": 0.45,
+      "at": 0.0
+     }
+    ],
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "That's the test in",
+   "line": "That's the test in OpenAI's demo video:",
+   "asset_id": "wide",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/wide.mp4",
+    "covers": "OpenAI's demo video",
+    "headline": {
+     "lines": [
+      {
+       "text": "OPENAI'S OWN DEMO",
+       "kind": "headline",
+       "at": 0.1
+      }
+     ],
+     "y": 0.73
+    },
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "vol": 0.45,
+      "at": 0.0
+     }
+    ],
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "it checks dimensions, materials",
+   "line": "it checks dimensions, materials and prices on each tab, and remembers you have two cats.",
+   "asset_id": "compare",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/compare.mp4",
+    "covers": "checks dimensions, materials and prices on each tab, and remembers you have two cats",
+    "headline": {
+     "lines": [
+      {
+       "text": "DIMENSIONS \u00b7 MATERIALS \u00b7 PRICES",
+       "kind": "label",
+       "at": 0.2
+      },
+      {
+       "text": "+ TWO CATS",
+       "kind": "headline",
+       "at": 3.2
+      }
+     ],
+     "y": 0.55
+    },
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "vol": 0.5,
+      "at": 3.2
+     }
+    ],
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "So which one fits",
+   "line": "So which one fits the apartment?",
+   "asset_id": "bubble",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/bubble.mp4",
+    "covers": "which one fits the apartment",
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "It comes back with",
+   "line": "It comes back with seven sofas and a clear favorite.",
+   "asset_id": "answer",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/answer.mp4",
+    "covers": "seven sofas and a clear favorite",
+    "headline": {
+     "lines": [
+      {
+       "text": "SEVEN SOFAS",
+       "kind": "label",
+       "at": 0.6
+      },
+      {
+       "text": "ONE CLEAR FAVORITE",
+       "kind": "headline",
+       "at": 1.4
+      }
+     ],
+     "y": 0.62
+    },
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "vol": 0.45,
+      "at": 0.6
+     }
+    ],
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "To use it, add",
+   "line": "To use it, add OpenAI's ChatGPT extension to Chrome,",
+   "asset_id": "cws-mobile",
+   "tier": "official",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/chatgpt-chrome-reads-tabs/cws-mobile.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "lines": [
+     {
+      "at": 0.3,
+      "x": 468,
+      "y": 222,
+      "w": 300,
+      "h": 75
+     },
+     {
+      "at": 1.6,
+      "x": 60,
+      "y": 780,
+      "w": 960,
+      "h": 120
+     }
+    ],
+    "covers": "add OpenAI's ChatGPT extension to Chrome",
+    "follow": true,
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "vol": 0.45,
+      "at": 0.0
+     },
+     {
+      "src": "sfx-action/marker.mp3",
+      "vol": 0.6,
+      "at": 1.6
+     }
+    ],
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "type @Chrome, and ask.",
+   "line": "type @Chrome, and ask.",
+   "asset_id": "chip",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/chip.mp4",
+    "covers": "type @Chrome, and ask",
+    "headline": {
+     "lines": [
+      {
+       "text": "TYPE @CHROME",
+       "kind": "headline",
+       "at": 0.1
+      }
+     ],
+     "y": 0.62
+    },
+    "sfx": [
+     {
+      "src": "sfx-action/typekey.mp3",
+      "vol": 0.5,
+      "at": 0.1
+     }
+    ],
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "And OpenAI says it's",
+   "line": "And OpenAI says it's available on every ChatGPT plan.",
+   "asset_id": "wide",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/wide.mp4",
+    "covers": "available on every ChatGPT plan",
+    "headline": {
+     "lines": [
+      {
+       "text": "PER OPENAI",
+       "kind": "label",
+       "at": 0.3
+      },
+      {
+       "text": "EVERY CHATGPT PLAN",
+       "kind": "headline",
+       "at": 1.0
+      }
+     ],
+     "y": 0.7
+    },
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "vol": 0.5,
+      "at": 1.0
+     }
+    ],
+    "zoomDir": "none"
+   }
+  },
+  {
+   "start_phrase": "Which tab pile would",
+   "line": "Which tab pile would you hand it first?",
+   "asset_id": "hook-tabs",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/hook-tabs.mp4",
+    "covers": "Which tab pile would you hand it first",
+    "headline": {
+     "lines": [
+      {
+       "text": "TELL ME BELOW",
+       "kind": "label",
+       "at": 0.1
+      },
+      {
+       "text": "WHICH TABS FIRST?",
+       "kind": "headline",
+       "at": 0.4
+      }
+     ],
+     "y": 0.66
+    },
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "vol": 0.45,
+      "at": 0.0
+     }
+    ],
+    "zoomDir": "none"
+   }
+  }
+ ]
 }
