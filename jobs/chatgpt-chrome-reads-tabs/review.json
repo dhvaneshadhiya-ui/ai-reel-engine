@@ -1,0 +1,12 @@
+{
+  "script_sha256": "546c5c92c809f021440e02a912f44c1dc85fd754cb821842a392fcb095f59e40",
+  "structure_sha256": "d6cb468e521d35145f6b956eab8b2b4f826a27d0d95063d781f34b2247d9d2c6",
+  "findings": [
+    "  NO OPEN LOOP \u2014 sentence 1 promises something ('Eight sofa tabs open, and one question: which on') and nothing later returns to it. Nothing promised early gets paid off later, so the ending summarises instead of arriving. The approved script plants one in sentence two (\"only matters when you have no signal\") and returns to it with \"Back to that signal.\" (framework S2, S10, S18)",
+    "  OPENING has no version, date or time anchor: 'Eight sofa tabs open, and one question: which one fits my apartm'. A hook without context is confusion \u2014 the viewer should know WHICH thing and WHEN before the claim lands. (framework S1, S16)",
+    "HUMANIZER: recorded for this draft. The checks above are the measurable half; the `humanizer` pass is the half that decides whether it sounds like a person."
+  ],
+  "research_advice": [],
+  "beatPlanShots": 0,
+  "proposedAt": "2026-10-19T06:26:42+00:00"
+}
