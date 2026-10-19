@@ -62,10 +62,16 @@ ALT TEXT: OpenAI's demo of ChatGPT in Chrome. A browser with eight sofa-shop tab
 ALTERED CONTENT: yes  (YouTube Studio → Altered content → Yes; the narration is an AI clone of the creator's voice)
 CATEGORY: Science & Technology
 AUDIENCE: No, it's not made for kids
-LANGUAGE: English
+LANGUAGE: English (video language and title/description language)
+PLAYLIST: AI Tools (or your existing ChatGPT playlist)
 THUMBNAIL: out/thumbnails/chatgpt-chrome-reads-tabs-vertical.png
 
 ---
+
+Alternate YouTube titles, for Test & Compare:
+
+  ChatGPT Just Read 8 Chrome Tabs at Once
+  Stop Comparing Tabs Yourself. ChatGPT Does It Now
 
 Posting notes
 
