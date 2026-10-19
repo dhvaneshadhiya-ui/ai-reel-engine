@@ -1,22 +1,22 @@
-# Critique — chatgpt-chrome-reads-tabs
+# Critique — chatgpt-chrome-reads-tabs (v2, rewritten around the update; v1 sofa-led cut superseded)
 
 ## Round 1
 | hook | read | motion | variety | sync | match | min |
-|  6   |  6   |   7    |    7    |  7   |   7   |  6  |
-Worst three: 1. [scene 00, 0-4.9s] "EIGHT SOFA TABS / ONE QUESTION" sits at y 0.52, on the input box where the question is being typed -> the hook covers its own proof -> FIX shot-plan headline y 0.52 -> 0.24, first line promoted to headline at 0.0s so frame 0 already carries big type.  2. [scene 09, 28.8-33.2s] "EVERY CHATGPT PLAN" printed over the busy top-three list -> unreadable on a phone -> FIX move the plan line onto the wide clip (blue band, y 0.70), wide re-cut 0:12.9-0:18.0 to cover 4.4s.  3. [scenes 09/10] top-three and compare-table back to back looked identical (frame-lint DUPLICATE, blocking) -> FIX CTA on the hook pan across the sofa tabs (a callback to the opening).
-Checks failed: captions/headlines touching content (scenes 00, 09).
+|  6   |  7   |   7    |    8    |  8   |   8   |  6  |
+Worst three: 1. [scene 00, 0-3.9s] "CHATGPT IN CHROME / OCT 15 UPDATE" at y 0.50 sits on the store's Add to Desktop button and screenshot -> the hook reads as clutter -> FIX headline y 0.50 -> 0.57, over the carousel art only.  2. [scene 07, 20.1-22.8s] the caption covers the request being typed in Work -> the proof the Work beat shows is hidden -> FIX captionBottom 340 (below the input box, above the 0.835 platform zone).  3. [scene 09, 25.0-28.3s] "MESSAGES · FORMS · DOWNLOADS" is a label-size line on a busy form -> unreadable on a phone -> FIX headline kind, text "MESSAGES · FORMS · FILES".
+Checks failed: captions touching content (scene 07).
 Verdict: ANOTHER ROUND
 
 ## Round 2
 | hook | read | motion | variety | sync | match | min |
-|  8   |  8   |   8    |    7    |  7   |   8   |  7  |
-Worst three: 1. [scene 05, 18.9-20.6s] the riser under "So which one fits the apartment?" measured MASKED (-33 dB peak under -18 dB voice) -> a cue nobody hears is clutter -> FIX cut it (STYLE-RULES 2026-10-16 note 6: cut, don't move).  2. [scene 03, 11.3-13.9s] "OPENAI'S OWN DEMO" is a small label over a quiet wide shot -> 2.5s with nothing to read -> FIX headline kind, y 0.73 in the band under the window.  3. [all footage] the 4K demo text is still small inside a 1290px column -> the proof lines are carried by quoted kinetic headlines ("I'LL LOOK THROUGH THE SOFA TABS", "DIMENSIONS · MATERIALS · PRICES", "SEVEN SOFAS / ONE CLEAR FAVORITE"); kept.
+|  7   |  8   |   8    |    8    |  8   |   8   |  7  |
+Worst three: 1. [scene 00] frame 0 is a store page with a static fit; the motion is the glide between highlighted lines and the headline build -> acceptable for a news open that names the update, as approved in the beat plan.  2. [cover] the first cover still said "8 SOFA TABS / ONE ANSWER" -> wrong story for v2 -> FIX cover rebuilt on the Chat | Work toggle, "CHAT OR WORK / IN YOUR TABS".  3. [scenes 01/14] the wide clip appears twice -> different moments and labels, 13 scenes apart; kept.
 Checks failed: none.
 Verdict: ANOTHER ROUND
 
 ## Round 3
 | hook | read | motion | variety | sync | match | min |
 |  8   |  8   |   8    |    8    |  8   |   8   |  8  |
-Worst three: 1. [footage scenes] OpenAI's UI text is small on a phone -> the spoken claim always has a big quoted line on screen; a tighter crop would cut the ends of every line.  2. [scenes 03/09] the wide clip appears twice -> different moments (blank, then the plan line inside it) and different labels, five scenes apart; kept.  3. [scene 10] the CTA returns to the hook pan -> deliberate callback for "which tab pile", new headline.
-Checks failed: none. No scene opens on bare background; one accent colour; 11 cues, none masked; end card 1.8s for "WHICH TABS FIRST?", readable twice.
+Worst three: 1. [footage scenes] OpenAI's UI text is small at phone size -> every spoken claim has a large on-screen line (ONE SWITCH, CHAT/READS YOUR TABS, WORK/ACTS IN YOUR TABS, MESSAGES · FORMS · FILES, + GROUPS YOUR TABS, MENTION @CHROME).  2. [scenes 04/15] the hook pan returns for the CTA -> deliberate callback to "tabs".  3. [scene 12] setup highlight sits mid-page under the caption band -> highlighted lines are above the caption; kept.
+Checks failed: none. 15 cues, all audible; one accent colour; end card 1.6s for "WHICH TAB FIRST?".
 Verdict: READY

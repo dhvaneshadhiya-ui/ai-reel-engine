@@ -9978,3 +9978,9 @@ headlines over OpenAI's chat column ("I'LL LOOK THROUGH THE SOFA TABS", "DIMENSI
 small whole-browser wide shot in a blue band for "OpenAI's demo" and the plan line; store mobile capture;
 @Chrome chip close-up; hook pan reused as the CTA callback. Next faceless demo short: do not reuse the
 quoted-headline-over-UI device for every beat.
+- **RAW NOTE 6 (v2, same day) — the demo is the example, never the subject.** v1 of this short was built
+  entirely on OpenAI's sofa demo; the user: "Sofa tabs is just example, the video must talk about the new
+  update." ROOT: the reference short's shape (one demo, start to finish) was copied along with its format.
+  RULE: a product-update reel is organised by WHAT CHANGED (here: one Chat/Work switch, read vs act, the
+  ask-first default, setup, plans); a vendor demo illustrates one clause and gets one or two shots. v2:
+  130 words, 46.5s, ~781 credits, 15 cues all audible, critique READY round 3, cover rebuilt on the toggle.
