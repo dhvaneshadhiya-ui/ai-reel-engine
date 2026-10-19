@@ -4,43 +4,54 @@ Claims ledger + search log. Sources reused from the same-day sibling job jobs/ch
 
 ## CLAIMS
 
-- CLAIM: OpenAI's 15 Oct 2026 update to the ChatGPT Chrome extension lets ChatGPT use your open Chrome tabs.
+- CLAIM: On 15 Oct 2026 OpenAI announced it is "bringing the power of computer use to anyone who uses Chrome".
   TIER: official
-  SPOKEN: "OpenAI's October 15th update to the ChatGPT Chrome extension hands ChatGPT every tab you have open"
-  SURPRISE: 55
-  SRC: https://x.com/ChatGPT/status/2110823738531037651
-  VIA: OpenAI's own announcement ("ChatGPT can now use your tabs in Chrome")
-  SRC: https://chromewebstore.google.com/detail/chatgpt/hehggadaopoacecdllhhajmbjkdcmajg
-  VIA: Chrome Web Store listing, version updated 15 Oct 2026
-
-- CLAIM: ChatGPT has a Chat / Work toggle; in Chat it looks across your open tabs, in Work it can control them.
-  TIER: official
-  SPOKEN: "Leave it on Chat, and ChatGPT just reads them"
+  SPOKEN: "On October 15th, OpenAI said it's bringing the power of computer use to anyone who uses Chrome"
   SURPRISE: 60
   SRC: https://x.com/ChatGPT/status/2110823738531037651
-  VIA: OpenAI's own announcement (Chat "can look across your open tabs and gather info"; Work "can control your Chrome tabs"); the Chat | Work toggle is visible in OpenAI's demo video 1 at 0:03
+  VIA: OpenAI's own announcement thread, post 1 (fetched via api.fxtwitter.com 2026-10-19)
+  SRC: https://www.ibtimes.com.au/openai-chatgpt-chrome-extension-computer-use-1876917
+  VIA: OpenAI thread
+
+- CLAIM: ChatGPT can now use your Chrome tabs: in Chat it looks across your open tabs and gathers info.
+  TIER: official
+  SPOKEN: "In Chat, it looks across every one, like the sofas you're shopping for"
+  SURPRISE: 55
+  SRC: https://x.com/ChatGPT/status/2110823738531037651
+  VIA: OpenAI thread post 1 ("If you're in Chat, it can look across your open tabs and gather info"); demo video 1 shows eight sofa tabs
   SRC: https://9to5google.com/2026/10/16/chatgpt-gets-deeper-google-chrome-integration-including-control-over-tabs/
   VIA: OpenAI X thread
 
-- CLAIM: OpenAI's demo: eight sofa tabs open, the user asks which fits their apartment, ChatGPT compares the tabs and answers with a clear favorite.
+- CLAIM: In Work, ChatGPT can control Chrome tabs: send messages, fill out forms, download files, and organize/group tabs.
   TIER: official
-  SPOKEN: "Ask which one fits, and it compares every tab and picks a favorite"
-  SURPRISE: 50
-  SRC: https://x.com/ChatGPT/status/2110823738531037651
-  VIA: OpenAI's own demo video 1 (4K), frames read 2026-10-19: 8 sofa tabs; "compare dimensions, materials, and prices"; "I found seven sofa options across your open tabs, and I already have a clear favorite."
-
-- CLAIM: In Work, ChatGPT can control Chrome tabs to send messages, fill out forms, download files, and organize/group tabs.
-  TIER: official
-  SPOKEN: "it can send messages, fill out forms, download files, and even group your tabs"
+  SPOKEN: "it can send messages, fill out forms, download files, and even group the pile you have open"
   SURPRISE: 70
+  SRC: https://x.com/ChatGPT/status/2110823738531037651
+  VIA: OpenAI thread post 1 ("sending messages, filling out forms, or downloading files"; "organize and group that pile of tabs you have open")
   SRC: https://ppc.land/chatgpt-gains-control-of-chrome-tabs-to-fill-forms-and-send-messages/
-  VIA: OpenAI @ChatGPT X thread ("sending messages, filling out forms, or downloading files"; "organize and group that pile of tabs")
+  VIA: OpenAI X thread
+
+- CLAIM: ChatGPT inside a Chrome tab (side panel) got the full ChatGPT: your entire ChatGPT history, Chat or Work side by side while you're on a site.
+  TIER: official
+  SPOKEN: "the ChatGPT side panel in Chrome got the full app: your entire chat history, with Chat or Work right beside the site you're on"
+  SURPRISE: 55
+  SRC: https://x.com/ChatGPT/status/2110823740309401654
+  VIA: OpenAI thread post 2 ("the full power of ChatGPT is now in your browser. Your entire ChatGPT history is right there ... side by side while you're on a site")
   SRC: https://9to5google.com/2026/10/16/chatgpt-gets-deeper-google-chrome-integration-including-control-over-tabs/
-  VIA: OpenAI @ChatGPT X thread
+  VIA: OpenAI X thread + demo video 2
+
+- CLAIM: Since 30 Jul 2026 the side panel (side chat) could already reference your open tabs; acting in tabs and the full app in the panel are new on 15 Oct.
+  TIER: official
+  SPOKEN: "Since July, that side panel could read your tabs"
+  SURPRISE: 65
+  SRC: https://x.com/ChatGPT/status/2082970812584432115
+  VIA: OpenAI's own 30 Jul 2026 post (side chat can "reference your open tabs")
+  SRC: https://digitaltrends.com/computing/chatgpts-chrome-extension-can-now-read-your-tabs-youtube-videos-and-highlighted-text
+  VIA: OpenAI July update (search snippet; page fetch returned empty — corroborated by TechRadar's July hands-on)
 
 - CLAIM: By default ChatGPT asks before it interacts with each new website.
   TIER: official
-  SPOKEN: "Before it acts on a new website, it asks you first, by default"
+  SPOKEN: "By default, it checks with you before it acts on a new website"
   SURPRISE: 65
   SRC: https://learn.chatgpt.com/docs/chrome-extension
   VIA: OpenAI's own documentation ("By default, ChatGPT asks before it interacts with each new website.")
@@ -49,16 +60,16 @@ Claims ledger + search log. Sources reused from the same-day sibling job jobs/ch
 
 - CLAIM: Setup: add the ChatGPT extension to Chrome and @-mention Chrome.
   TIER: official
-  SPOKEN: "add the ChatGPT extension to Chrome, then mention @Chrome when you ask"
+  SPOKEN: "add the ChatGPT extension to Chrome and mention @Chrome"
   SURPRISE: 45
   SRC: https://learn.chatgpt.com/docs/chrome-extension
-  VIA: OpenAI's own documentation (install the extension; select your browser with an @-mention)
+  VIA: OpenAI's own documentation
   SRC: https://chromewebstore.google.com/detail/chatgpt/hehggadaopoacecdllhhajmbjkdcmajg
   VIA: Chrome Web Store listing
 
-- CLAIM: OpenAI says the extension is available on all ChatGPT plans.
+- CLAIM: OpenAI says it is available on all ChatGPT plans.
   TIER: official
-  SPOKEN: "According to OpenAI, the extension is available on every ChatGPT plan"
+  SPOKEN: "OpenAI says it's available on every ChatGPT plan"
   SURPRISE: 50
   SRC: https://x.com/ChatGPT/status/2110825327811580209
   VIA: OpenAI's own post ("Available for all ChatGPT plans")
@@ -69,14 +80,15 @@ Claims ledger + search log. Sources reused from the same-day sibling job jobs/ch
 
 - Chat: look across open tabs and gather info — USED (the whole reel)
 - Work: control tabs (messages, forms, downloads, grouping) — USED (the second half of the switch)
-- Side chat panel, highlighted text, YouTube transcripts — CUT: shipped 30 Jul
+- Side panel gets the full ChatGPT (history, Chat/Work side by side) — USED (thread post 2)
+- Side chat reading tabs, highlighted text, YouTube transcripts — USED only as 'since July' context; transcripts CUT
 - Per-website permission prompts — USED for acting ("before it acts on a new website"); not claimed for reading
 - Works in Edge, Brave, Opera, Vivaldi — CUT: title is Chrome
 How to use: add the extension from the Chrome Web Store — USED; @-mention Chrome — USED; desktop app Settings > Computer Use — CUT (the demo itself runs at chatgpt.com in Chrome)
 
 ## NOT CLAIMED
 
-- That reading tabs is brand new: side chat could reference open tabs from 30 Jul 2026. The script says "can now ... reading across your open Chrome tabs" from Chat, which is what OpenAI announced on 15 Oct.
+- That reading tabs in the side panel is new (spoken as 'Since July'): side chat could reference open tabs from 30 Jul 2026. The script says "can now ... reading across your open Chrome tabs" from Chat, which is what OpenAI announced on 15 Oct.
 - How long it took (the demo label reads "Worked for 25s" and later "Worked for 37s"); not spoken.
 - That it de-duplicated the two Sven Ivory tabs (8 tabs, 7 sofas is shown; the reason is an inference).
 - Which plan gets Work tab control (disputed). The spoken plan line is scoped to "the extension" and attributed.

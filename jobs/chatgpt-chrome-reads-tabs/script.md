@@ -1,11 +1,13 @@
-OpenAI's October 15th update to the ChatGPT Chrome extension hands ChatGPT every tab you have open. One switch decides what it does with them.
+On October 15th, OpenAI said it's bringing the power of computer use to anyone who uses Chrome. If that sounds like something ChatGPT already did, you're half right.
 
-Leave it on Chat, and ChatGPT just reads them. Shopping for a sofa with eight tabs open? Ask which one fits, and it compares every tab and picks a favorite.
+First, ChatGPT now works with the tabs you have open. In Chat, it looks across every one, like the sofas you're shopping for. Switch to Work, and it controls those tabs: it can send messages, fill out forms, download files, and even group the pile you have open.
 
-Flip that switch to Work, the agent mode, and it acts inside those tabs instead: it can send messages, fill out forms, download files, and even group your tabs.
+Second, the ChatGPT side panel in Chrome got the full app: your entire chat history, with Chat or Work right beside the site you're on.
 
-Before it acts on a new website, it asks you first, by default.
+Now the half you already knew. Since July, that side panel could read your tabs. Acting inside them, and the full app in the panel, are what's new.
 
-To set it up, add the ChatGPT extension to Chrome, then mention @Chrome when you ask. According to OpenAI, the extension is available on every ChatGPT plan.
+By default, it checks with you before it acts on a new website.
+
+To try it, add the ChatGPT extension to Chrome and mention @Chrome. OpenAI says it's available on every ChatGPT plan.
 
 Which tab would you hand it first?
