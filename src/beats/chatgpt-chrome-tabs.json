@@ -1,0 +1,2076 @@
+{
+  "id": "chatgpt-chrome-tabs",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/chatgpt-chrome-tabs/avatar-master.mp4",
+  "facePlan": "face-led",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "submit",
+    "one setting",
+    "7 million",
+    "open tabs",
+    "takes them over",
+    "grouping",
+    "demo",
+    "yoga receipt",
+    "tab group",
+    "one question",
+    "submits",
+    "signed into",
+    "Computer Use",
+    "@Chrome",
+    "that setting",
+    "asks",
+    "all sites",
+    "risk",
+    "cancel",
+    "hit submit"
+  ],
+  "scenes": [
+    {
+      "type": "split",
+      "topSrc": "assets/chatgpt-chrome-tabs/hook-top.mp4",
+      "bottomSrc": "assets/chatgpt-chrome-tabs/avatar-master.mp4",
+      "headline": {
+        "lines": [
+          {
+            "text": "CHATGPT IN CHROME",
+            "kind": "label",
+            "at": 0.15
+          },
+          {
+            "text": "IT HITS SUBMIT",
+            "kind": "headline",
+            "at": 0.6
+          }
+        ],
+        "y": 0.41,
+        "theme": "dark",
+        "impacts": [
+          4.3
+        ]
+      },
+      "sfx": [
+        {
+          "src": "sfx2/mouse-click-01.mp3",
+          "vol": 0.468,
+          "at": 4.3
+        }
+      ],
+      "covers": "click, type and hit submit",
+      "durationSec": 6.56,
+      "captionBottom": 1000,
+      "assetId": "hook-top",
+      "claimId": "hook-top",
+      "credit": "OpenAI",
+      "bottomFrom": 0.0,
+      "bottomFocusX": 0.5,
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-tabs/avatar-master.mp4",
+      "zoomDir": "in",
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "ONE SETTING",
+            "kind": "label",
+            "at": 0.1
+          },
+          {
+            "text": "ASKS OR DOESN'T",
+            "kind": "headline",
+            "at": 0.5
+          }
+        ],
+        "y": 0.45
+      },
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.1
+        }
+      ],
+      "durationSec": 3.74,
+      "from": 6.56
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/chatgpt-chrome-tabs/cws-mobile.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "lines": [
+        {
+          "at": 0.3,
+          "x": 468,
+          "y": 222,
+          "w": 300,
+          "h": 75
+        },
+        {
+          "at": 3.3,
+          "x": 490,
+          "y": 650,
+          "w": 345,
+          "h": 70
+        }
+      ],
+      "covers": "Chrome extension with 7 million users",
+      "follow": true,
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.0
+        },
+        {
+          "src": "sfx-action/marker.mp3",
+          "vol": 0.417,
+          "at": 3.3
+        }
+      ],
+      "durationSec": 4.8,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "cws-mobile",
+      "claimId": "cws-mobile",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-tabs/chat-tabs.mp4",
+      "covers": "ChatGPT reads across your open tabs",
+      "durationSec": 4.84,
+      "assetId": "chat-tabs",
+      "claimId": "chat-tabs",
+      "credit": "OpenAI",
+      "zoomDir": "none",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/chatgpt-chrome-tabs/cws-shot-research.png",
+      "srcWidth": 1280,
+      "srcHeight": 800,
+      "focus": {
+        "x": 440,
+        "y": 365,
+        "w": 620,
+        "h": 420
+      },
+      "covers": "takes them over",
+      "sfx": [
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "vol": 1.0,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 6.24,
+      "assetId": "cws-shot-research",
+      "claimId": "cws-shot-research"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/chatgpt-chrome-tabs/cws-shot-research.png",
+      "srcWidth": 1280,
+      "srcHeight": 800,
+      "focus": {
+        "x": 220,
+        "y": 232,
+        "w": 470,
+        "h": 50
+      },
+      "covers": "grouping your pile of tabs",
+      "durationSec": 1.9,
+      "assetId": "cws-shot-research",
+      "claimId": "cws-shot-research"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-tabs/avatar-master.mp4",
+      "zoomDir": "in",
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "OPENAI'S OWN DEMO",
+            "kind": "label",
+            "at": 0.1
+          }
+        ],
+        "y": 0.45
+      },
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.1
+        }
+      ],
+      "durationSec": 1.5,
+      "from": 28.08
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-tabs/demo-prompt.mp4",
+      "covers": "submit a yoga receipt from their email",
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.0
+        }
+      ],
+      "captionBottom": 340,
+      "durationSec": 4.3,
+      "assetId": "demo-prompt",
+      "claimId": "demo-prompt",
+      "credit": "OpenAI",
+      "zoomDir": "none",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-tabs/demo-found.mp4",
+      "covers": "finds the receipt",
+      "durationSec": 1.38,
+      "assetId": "demo-found",
+      "claimId": "demo-found",
+      "credit": "OpenAI",
+      "zoomDir": "none",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-tabs/demo-tabgroup.mp4",
+      "covers": "opens the expense site in its own tab group",
+      "durationSec": 2.94,
+      "assetId": "demo-tabgroup",
+      "claimId": "demo-tabgroup",
+      "credit": "OpenAI",
+      "zoomDir": "none",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-tabs/demo-question.mp4",
+      "covers": "asks one question",
+      "durationSec": 1.82,
+      "assetId": "demo-question",
+      "claimId": "demo-question",
+      "credit": "OpenAI",
+      "zoomDir": "none",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-tabs/demo-fill.mp4",
+      "covers": "fills in the form",
+      "sfx": [
+        {
+          "src": "sfx-action/typekey.mp3",
+          "vol": 0.26,
+          "at": 0.1
+        }
+      ],
+      "durationSec": 1.06,
+      "assetId": "demo-fill",
+      "claimId": "demo-fill",
+      "credit": "OpenAI",
+      "zoomDir": "none",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-tabs/demo-submitted.mp4",
+      "covers": "submits it",
+      "sfx": [
+        {
+          "src": "sfx2/mouse-click-01.mp3",
+          "vol": 0.468,
+          "at": 0.35
+        }
+      ],
+      "durationSec": 1.16,
+      "assetId": "demo-submitted",
+      "claimId": "demo-submitted",
+      "credit": "OpenAI",
+      "zoomDir": "none",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/chatgpt-chrome-tabs/docs-mobile.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "lines": [
+        {
+          "at": 0.4,
+          "x": 97,
+          "y": 1030,
+          "w": 874,
+          "h": 52
+        },
+        {
+          "at": 1.2,
+          "x": 97,
+          "y": 1106,
+          "w": 874,
+          "h": 52
+        },
+        {
+          "at": 2.3,
+          "x": 97,
+          "y": 1182,
+          "w": 874,
+          "h": 52
+        },
+        {
+          "at": 2.9,
+          "x": 97,
+          "y": 1258,
+          "w": 874,
+          "h": 52
+        }
+      ],
+      "covers": "sites you're already signed into, like Gmail, LinkedIn and Salesforce",
+      "follow": true,
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.0
+        },
+        {
+          "src": "sfx-action/marker.mp3",
+          "vol": 0.417,
+          "at": 1.2
+        }
+      ],
+      "durationSec": 5.02,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "docs-mobile",
+      "claimId": "docs-mobile",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/chatgpt-chrome-tabs/docs-setup-mobile.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "lines": [
+        {
+          "at": 1.6,
+          "x": 97,
+          "y": 521,
+          "w": 874,
+          "h": 52
+        },
+        {
+          "at": 2.7,
+          "x": 97,
+          "y": 599,
+          "w": 874,
+          "h": 52
+        }
+      ],
+      "covers": "open Settings",
+      "follow": true,
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "vol": 0.417,
+          "at": 1.6
+        }
+      ],
+      "durationSec": 3.7,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "docs-setup-mobile",
+      "claimId": "docs-setup-mobile",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/chatgpt-chrome-tabs/docs-setup-mobile.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "lines": [
+        {
+          "at": 0.1,
+          "x": 97,
+          "y": 521,
+          "w": 874,
+          "h": 52
+        },
+        {
+          "at": 1.2,
+          "x": 193,
+          "y": 1106,
+          "w": 778,
+          "h": 52
+        },
+        {
+          "at": 1.8,
+          "x": 193,
+          "y": 1184,
+          "w": 778,
+          "h": 52
+        }
+      ],
+      "covers": "install the Chrome extension",
+      "follow": true,
+      "durationSec": 2.9,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "docs-setup-mobile",
+      "claimId": "docs-setup-mobile",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/chatgpt-chrome-tabs/docs-setup-mobile.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "lines": [
+        {
+          "at": 0.2,
+          "x": 193,
+          "y": 1568,
+          "w": 784,
+          "h": 52
+        },
+        {
+          "at": 0.9,
+          "x": 193,
+          "y": 1644,
+          "w": 784,
+          "h": 52
+        }
+      ],
+      "covers": "@Chrome in a Work chat",
+      "follow": true,
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "vol": 0.417,
+          "at": 0.2
+        }
+      ],
+      "durationSec": 2.48,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "docs-setup-mobile",
+      "claimId": "docs-setup-mobile",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-tabs/avatar-master.mp4",
+      "zoomDir": "in",
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "THAT SETTING",
+            "kind": "headline",
+            "at": 0.1
+          }
+        ],
+        "y": 0.45
+      },
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.1
+        }
+      ],
+      "durationSec": 1.06,
+      "from": 56.34
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/chatgpt-chrome-tabs/docs-access-mobile.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "lines": [
+        {
+          "at": 0.3,
+          "x": 97,
+          "y": 445,
+          "w": 734,
+          "h": 52
+        },
+        {
+          "at": 1.6,
+          "x": 97,
+          "y": 521,
+          "w": 734,
+          "h": 52
+        }
+      ],
+      "covers": "asks before it touches each new website",
+      "follow": true,
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.0
+        },
+        {
+          "src": "sfx-action/marker.mp3",
+          "vol": 0.417,
+          "at": 1.6
+        }
+      ],
+      "durationSec": 4.36,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "docs-access-mobile",
+      "claimId": "docs-access-mobile",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/chatgpt-chrome-tabs/docs-access-mobile.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "lines": [
+        {
+          "at": 0.15,
+          "x": 193,
+          "y": 1082,
+          "w": 731,
+          "h": 52
+        },
+        {
+          "at": 1.2,
+          "x": 193,
+          "y": 1234,
+          "w": 731,
+          "h": 52
+        },
+        {
+          "at": 2.6,
+          "x": 193,
+          "y": 1465,
+          "w": 731,
+          "h": 52
+        }
+      ],
+      "covers": "allow once, allow that one site, or allow all sites",
+      "follow": true,
+      "sfx": [
+        {
+          "src": "sfx-action/marker.mp3",
+          "vol": 0.417,
+          "at": 0.15
+        },
+        {
+          "src": "sfx-action/marker.mp3",
+          "vol": 0.417,
+          "at": 1.2
+        },
+        {
+          "src": "sfx-action/marker.mp3",
+          "vol": 0.417,
+          "at": 2.6
+        }
+      ],
+      "durationSec": 4.32,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "docs-access-mobile",
+      "claimId": "docs-access-mobile",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "sourceread",
+      "src": "assets/chatgpt-chrome-tabs/docs-allsites-mobile.png",
+      "srcWidth": 1080,
+      "srcHeight": 2340,
+      "lines": [
+        {
+          "at": 1.6,
+          "x": 97,
+          "y": 339,
+          "w": 751,
+          "h": 66
+        },
+        {
+          "at": 3.3,
+          "x": 97,
+          "y": 445,
+          "w": 874,
+          "h": 52
+        },
+        {
+          "at": 3.5,
+          "x": 97,
+          "y": 521,
+          "w": 874,
+          "h": 52
+        }
+      ],
+      "covers": "marks that last one as a risk, because then it stops asking",
+      "follow": true,
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "vol": 1.0,
+          "at": 1.6
+        }
+      ],
+      "durationSec": 6.1,
+      "captionBottom": 544,
+      "film": true,
+      "assetId": "docs-allsites-mobile",
+      "claimId": "docs-allsites-mobile",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "annotatezoom",
+      "src": "assets/chatgpt-chrome-tabs/cws-shot-cancel.png",
+      "srcWidth": 1280,
+      "srcHeight": 800,
+      "focus": {
+        "x": 340,
+        "y": 420,
+        "w": 800,
+        "h": 85
+      },
+      "covers": "a bar with a cancel button",
+      "sfx": [
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "vol": 1.0,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 3.86,
+      "assetId": "cws-shot-cancel",
+      "claimId": "cws-shot-cancel"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-tabs/avatar-master.mp4",
+      "zoomDir": "in",
+      "focusX": 0.5,
+      "headline": {
+        "lines": [
+          {
+            "text": "TELL ME BELOW",
+            "kind": "label",
+            "at": 0.1
+          },
+          {
+            "text": "WOULD YOU LET IT?",
+            "kind": "headline",
+            "at": 0.4
+          }
+        ],
+        "y": 0.45
+      },
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.1
+        }
+      ],
+      "covers": "Would you let it hit submit for you",
+      "durationSec": 1.816,
+      "from": 76.04
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.22,
+      "text": "ChatGPT will now",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "ChatGPT"
+        },
+        {
+          "t": 0.76,
+          "text": "will"
+        },
+        {
+          "t": 1.0,
+          "text": "now"
+        }
+      ]
+    },
+    {
+      "start": 1.22,
+      "end": 2.92,
+      "text": "click, type, and",
+      "words": [
+        {
+          "t": 1.22,
+          "text": "click,"
+        },
+        {
+          "t": 2.1,
+          "text": "type,"
+        },
+        {
+          "t": 2.9,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 2.92,
+      "end": 3.72,
+      "text": "hit submit in",
+      "words": [
+        {
+          "t": 2.92,
+          "text": "hit"
+        },
+        {
+          "t": 3.12,
+          "text": "submit"
+        },
+        {
+          "t": 3.5,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 3.72,
+      "end": 4.4,
+      "text": "your Chrome tabs,",
+      "words": [
+        {
+          "t": 3.72,
+          "text": "your"
+        },
+        {
+          "t": 3.84,
+          "text": "Chrome"
+        },
+        {
+          "t": 4.06,
+          "text": "tabs,"
+        }
+      ]
+    },
+    {
+      "start": 4.68,
+      "end": 5.48,
+      "text": "signed in as",
+      "words": [
+        {
+          "t": 4.68,
+          "text": "signed"
+        },
+        {
+          "t": 4.96,
+          "text": "in"
+        },
+        {
+          "t": 5.22,
+          "text": "as"
+        }
+      ]
+    },
+    {
+      "start": 5.48,
+      "end": 6.94,
+      "text": "you. And one",
+      "words": [
+        {
+          "t": 5.48,
+          "text": "you."
+        },
+        {
+          "t": 6.56,
+          "text": "And"
+        },
+        {
+          "t": 6.7,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 6.94,
+      "end": 8.0,
+      "text": "setting decides how",
+      "words": [
+        {
+          "t": 6.94,
+          "text": "setting"
+        },
+        {
+          "t": 7.24,
+          "text": "decides"
+        },
+        {
+          "t": 7.64,
+          "text": "how"
+        }
+      ]
+    },
+    {
+      "start": 8.0,
+      "end": 8.5,
+      "text": "much of that",
+      "words": [
+        {
+          "t": 8.0,
+          "text": "much"
+        },
+        {
+          "t": 8.2,
+          "text": "of"
+        },
+        {
+          "t": 8.32,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 8.5,
+      "end": 9.24,
+      "text": "it does without",
+      "words": [
+        {
+          "t": 8.5,
+          "text": "it"
+        },
+        {
+          "t": 8.68,
+          "text": "does"
+        },
+        {
+          "t": 8.92,
+          "text": "without"
+        }
+      ]
+    },
+    {
+      "start": 9.24,
+      "end": 11.02,
+      "text": "asking. OpenAI shipped",
+      "words": [
+        {
+          "t": 9.24,
+          "text": "asking."
+        },
+        {
+          "t": 10.3,
+          "text": "OpenAI"
+        },
+        {
+          "t": 10.66,
+          "text": "shipped"
+        }
+      ]
+    },
+    {
+      "start": 11.02,
+      "end": 11.62,
+      "text": "this on October",
+      "words": [
+        {
+          "t": 11.02,
+          "text": "this"
+        },
+        {
+          "t": 11.22,
+          "text": "on"
+        },
+        {
+          "t": 11.36,
+          "text": "October"
+        }
+      ]
+    },
+    {
+      "start": 11.62,
+      "end": 12.64,
+      "text": "15th in a",
+      "words": [
+        {
+          "t": 11.62,
+          "text": "15th"
+        },
+        {
+          "t": 12.36,
+          "text": "in"
+        },
+        {
+          "t": 12.54,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 12.64,
+      "end": 13.62,
+      "text": "Chrome extension with",
+      "words": [
+        {
+          "t": 12.64,
+          "text": "Chrome"
+        },
+        {
+          "t": 12.84,
+          "text": "extension"
+        },
+        {
+          "t": 13.32,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 13.62,
+      "end": 14.62,
+      "text": "7 million users.",
+      "words": [
+        {
+          "t": 13.62,
+          "text": "7"
+        },
+        {
+          "t": 13.9,
+          "text": "million"
+        },
+        {
+          "t": 14.18,
+          "text": "users."
+        }
+      ]
+    },
+    {
+      "start": 15.1,
+      "end": 15.5,
+      "text": "In a normal",
+      "words": [
+        {
+          "t": 15.1,
+          "text": "In"
+        },
+        {
+          "t": 15.2,
+          "text": "a"
+        },
+        {
+          "t": 15.28,
+          "text": "normal"
+        }
+      ]
+    },
+    {
+      "start": 15.5,
+      "end": 17.16,
+      "text": "chat, ChatGPT reads",
+      "words": [
+        {
+          "t": 15.5,
+          "text": "chat,"
+        },
+        {
+          "t": 16.24,
+          "text": "ChatGPT"
+        },
+        {
+          "t": 16.88,
+          "text": "reads"
+        }
+      ]
+    },
+    {
+      "start": 17.16,
+      "end": 17.98,
+      "text": "across your open",
+      "words": [
+        {
+          "t": 17.16,
+          "text": "across"
+        },
+        {
+          "t": 17.46,
+          "text": "your"
+        },
+        {
+          "t": 17.74,
+          "text": "open"
+        }
+      ]
+    },
+    {
+      "start": 17.98,
+      "end": 19.36,
+      "text": "tabs. But in",
+      "words": [
+        {
+          "t": 17.98,
+          "text": "tabs."
+        },
+        {
+          "t": 18.94,
+          "text": "But"
+        },
+        {
+          "t": 19.24,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 19.36,
+      "end": 20.34,
+      "text": "Work, its agent",
+      "words": [
+        {
+          "t": 19.36,
+          "text": "Work,"
+        },
+        {
+          "t": 19.94,
+          "text": "its"
+        },
+        {
+          "t": 20.06,
+          "text": "agent"
+        }
+      ]
+    },
+    {
+      "start": 20.34,
+      "end": 21.24,
+      "text": "mode, it takes",
+      "words": [
+        {
+          "t": 20.34,
+          "text": "mode,"
+        },
+        {
+          "t": 20.96,
+          "text": "it"
+        },
+        {
+          "t": 20.98,
+          "text": "takes"
+        }
+      ]
+    },
+    {
+      "start": 21.24,
+      "end": 22.66,
+      "text": "them over, sending",
+      "words": [
+        {
+          "t": 21.24,
+          "text": "them"
+        },
+        {
+          "t": 21.42,
+          "text": "over,"
+        },
+        {
+          "t": 22.42,
+          "text": "sending"
+        }
+      ]
+    },
+    {
+      "start": 22.66,
+      "end": 23.96,
+      "text": "messages, filling out",
+      "words": [
+        {
+          "t": 22.66,
+          "text": "messages,"
+        },
+        {
+          "t": 23.56,
+          "text": "filling"
+        },
+        {
+          "t": 23.74,
+          "text": "out"
+        }
+      ]
+    },
+    {
+      "start": 23.96,
+      "end": 25.56,
+      "text": "forms, downloading files,",
+      "words": [
+        {
+          "t": 23.96,
+          "text": "forms,"
+        },
+        {
+          "t": 24.7,
+          "text": "downloading"
+        },
+        {
+          "t": 25.02,
+          "text": "files,"
+        }
+      ]
+    },
+    {
+      "start": 26.18,
+      "end": 27.02,
+      "text": "even grouping your",
+      "words": [
+        {
+          "t": 26.18,
+          "text": "even"
+        },
+        {
+          "t": 26.48,
+          "text": "grouping"
+        },
+        {
+          "t": 26.82,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 27.02,
+      "end": 27.74,
+      "text": "pile of tabs.",
+      "words": [
+        {
+          "t": 27.02,
+          "text": "pile"
+        },
+        {
+          "t": 27.26,
+          "text": "of"
+        },
+        {
+          "t": 27.38,
+          "text": "tabs."
+        }
+      ]
+    },
+    {
+      "start": 28.08,
+      "end": 29.26,
+      "text": "Here's OpenAI's own",
+      "words": [
+        {
+          "t": 28.08,
+          "text": "Here's"
+        },
+        {
+          "t": 28.5,
+          "text": "OpenAI's"
+        },
+        {
+          "t": 29.1,
+          "text": "own"
+        }
+      ]
+    },
+    {
+      "start": 29.26,
+      "end": 30.78,
+      "text": "demo. Someone asks",
+      "words": [
+        {
+          "t": 29.26,
+          "text": "demo."
+        },
+        {
+          "t": 29.58,
+          "text": "Someone"
+        },
+        {
+          "t": 30.36,
+          "text": "asks"
+        }
+      ]
+    },
+    {
+      "start": 30.78,
+      "end": 31.44,
+      "text": "it to submit",
+      "words": [
+        {
+          "t": 30.78,
+          "text": "it"
+        },
+        {
+          "t": 31.0,
+          "text": "to"
+        },
+        {
+          "t": 31.12,
+          "text": "submit"
+        }
+      ]
+    },
+    {
+      "start": 31.44,
+      "end": 32.38,
+      "text": "a yoga receipt",
+      "words": [
+        {
+          "t": 31.44,
+          "text": "a"
+        },
+        {
+          "t": 31.66,
+          "text": "yoga"
+        },
+        {
+          "t": 31.92,
+          "text": "receipt"
+        }
+      ]
+    },
+    {
+      "start": 32.38,
+      "end": 33.08,
+      "text": "from their email.",
+      "words": [
+        {
+          "t": 32.38,
+          "text": "from"
+        },
+        {
+          "t": 32.62,
+          "text": "their"
+        },
+        {
+          "t": 32.8,
+          "text": "email."
+        }
+      ]
+    },
+    {
+      "start": 33.88,
+      "end": 34.56,
+      "text": "It finds the",
+      "words": [
+        {
+          "t": 33.88,
+          "text": "It"
+        },
+        {
+          "t": 34.04,
+          "text": "finds"
+        },
+        {
+          "t": 34.32,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 34.56,
+      "end": 35.78,
+      "text": "receipt, opens the",
+      "words": [
+        {
+          "t": 34.56,
+          "text": "receipt,"
+        },
+        {
+          "t": 35.26,
+          "text": "opens"
+        },
+        {
+          "t": 35.58,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 35.78,
+      "end": 36.7,
+      "text": "expense site in",
+      "words": [
+        {
+          "t": 35.78,
+          "text": "expense"
+        },
+        {
+          "t": 36.08,
+          "text": "site"
+        },
+        {
+          "t": 36.52,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 36.7,
+      "end": 37.32,
+      "text": "its own tab",
+      "words": [
+        {
+          "t": 36.7,
+          "text": "its"
+        },
+        {
+          "t": 36.84,
+          "text": "own"
+        },
+        {
+          "t": 37.08,
+          "text": "tab"
+        }
+      ]
+    },
+    {
+      "start": 37.32,
+      "end": 39.0,
+      "text": "group, asks one",
+      "words": [
+        {
+          "t": 37.32,
+          "text": "group,"
+        },
+        {
+          "t": 38.2,
+          "text": "asks"
+        },
+        {
+          "t": 38.68,
+          "text": "one"
+        }
+      ]
+    },
+    {
+      "start": 39.0,
+      "end": 40.52,
+      "text": "question, then fills",
+      "words": [
+        {
+          "t": 39.0,
+          "text": "question,"
+        },
+        {
+          "t": 40.02,
+          "text": "then"
+        },
+        {
+          "t": 40.24,
+          "text": "fills"
+        }
+      ]
+    },
+    {
+      "start": 40.52,
+      "end": 41.08,
+      "text": "in the form",
+      "words": [
+        {
+          "t": 40.52,
+          "text": "in"
+        },
+        {
+          "t": 40.7,
+          "text": "the"
+        },
+        {
+          "t": 40.8,
+          "text": "form"
+        }
+      ]
+    },
+    {
+      "start": 41.08,
+      "end": 41.96,
+      "text": "and submits it.",
+      "words": [
+        {
+          "t": 41.08,
+          "text": "and"
+        },
+        {
+          "t": 41.3,
+          "text": "submits"
+        },
+        {
+          "t": 41.7,
+          "text": "it."
+        }
+      ]
+    },
+    {
+      "start": 42.24,
+      "end": 42.74,
+      "text": "And that works",
+      "words": [
+        {
+          "t": 42.24,
+          "text": "And"
+        },
+        {
+          "t": 42.36,
+          "text": "that"
+        },
+        {
+          "t": 42.54,
+          "text": "works"
+        }
+      ]
+    },
+    {
+      "start": 42.74,
+      "end": 43.44,
+      "text": "on sites you're",
+      "words": [
+        {
+          "t": 42.74,
+          "text": "on"
+        },
+        {
+          "t": 42.94,
+          "text": "sites"
+        },
+        {
+          "t": 43.22,
+          "text": "you're"
+        }
+      ]
+    },
+    {
+      "start": 43.44,
+      "end": 44.36,
+      "text": "already signed into,",
+      "words": [
+        {
+          "t": 43.44,
+          "text": "already"
+        },
+        {
+          "t": 43.74,
+          "text": "signed"
+        },
+        {
+          "t": 44.04,
+          "text": "into,"
+        }
+      ]
+    },
+    {
+      "start": 44.68,
+      "end": 45.86,
+      "text": "like Gmail, LinkedIn,",
+      "words": [
+        {
+          "t": 44.68,
+          "text": "like"
+        },
+        {
+          "t": 44.84,
+          "text": "Gmail,"
+        },
+        {
+          "t": 45.6,
+          "text": "LinkedIn,"
+        }
+      ]
+    },
+    {
+      "start": 46.1,
+      "end": 47.66,
+      "text": "and Salesforce. Setup",
+      "words": [
+        {
+          "t": 46.1,
+          "text": "and"
+        },
+        {
+          "t": 46.22,
+          "text": "Salesforce."
+        },
+        {
+          "t": 47.26,
+          "text": "Setup"
+        }
+      ]
+    },
+    {
+      "start": 47.66,
+      "end": 48.2,
+      "text": "lives in the",
+      "words": [
+        {
+          "t": 47.66,
+          "text": "lives"
+        },
+        {
+          "t": 47.88,
+          "text": "in"
+        },
+        {
+          "t": 48.08,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 48.2,
+      "end": 49.68,
+      "text": "ChatGPT desktop app.",
+      "words": [
+        {
+          "t": 48.2,
+          "text": "ChatGPT"
+        },
+        {
+          "t": 48.88,
+          "text": "desktop"
+        },
+        {
+          "t": 49.2,
+          "text": "app."
+        }
+      ]
+    },
+    {
+      "start": 50.0,
+      "end": 51.14,
+      "text": "Open Settings, then",
+      "words": [
+        {
+          "t": 50.0,
+          "text": "Open"
+        },
+        {
+          "t": 50.24,
+          "text": "Settings,"
+        },
+        {
+          "t": 50.96,
+          "text": "then"
+        }
+      ]
+    },
+    {
+      "start": 51.14,
+      "end": 52.16,
+      "text": "Computer Use, and",
+      "words": [
+        {
+          "t": 51.14,
+          "text": "Computer"
+        },
+        {
+          "t": 51.44,
+          "text": "Use,"
+        },
+        {
+          "t": 51.88,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 52.16,
+      "end": 52.94,
+      "text": "install the Chrome",
+      "words": [
+        {
+          "t": 52.16,
+          "text": "install"
+        },
+        {
+          "t": 52.56,
+          "text": "the"
+        },
+        {
+          "t": 52.76,
+          "text": "Chrome"
+        }
+      ]
+    },
+    {
+      "start": 52.94,
+      "end": 54.4,
+      "text": "extension. Then type",
+      "words": [
+        {
+          "t": 52.94,
+          "text": "extension."
+        },
+        {
+          "t": 53.86,
+          "text": "Then"
+        },
+        {
+          "t": 54.1,
+          "text": "type"
+        }
+      ]
+    },
+    {
+      "start": 54.4,
+      "end": 55.32,
+      "text": "@Chrome in a",
+      "words": [
+        {
+          "t": 54.4,
+          "text": "@Chrome"
+        },
+        {
+          "t": 54.94,
+          "text": "in"
+        },
+        {
+          "t": 55.2,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 55.32,
+      "end": 56.62,
+      "text": "Work chat. Now,",
+      "words": [
+        {
+          "t": 55.32,
+          "text": "Work"
+        },
+        {
+          "t": 55.5,
+          "text": "chat."
+        },
+        {
+          "t": 56.34,
+          "text": "Now,"
+        }
+      ]
+    },
+    {
+      "start": 56.94,
+      "end": 57.76,
+      "text": "that setting. By",
+      "words": [
+        {
+          "t": 56.94,
+          "text": "that"
+        },
+        {
+          "t": 57.16,
+          "text": "setting."
+        },
+        {
+          "t": 57.4,
+          "text": "By"
+        }
+      ]
+    },
+    {
+      "start": 57.76,
+      "end": 59.32,
+      "text": "default, ChatGPT asks",
+      "words": [
+        {
+          "t": 57.76,
+          "text": "default,"
+        },
+        {
+          "t": 58.34,
+          "text": "ChatGPT"
+        },
+        {
+          "t": 59.0,
+          "text": "asks"
+        }
+      ]
+    },
+    {
+      "start": 59.32,
+      "end": 60.22,
+      "text": "before it touches",
+      "words": [
+        {
+          "t": 59.32,
+          "text": "before"
+        },
+        {
+          "t": 59.76,
+          "text": "it"
+        },
+        {
+          "t": 59.98,
+          "text": "touches"
+        }
+      ]
+    },
+    {
+      "start": 60.22,
+      "end": 61.38,
+      "text": "each new website.",
+      "words": [
+        {
+          "t": 60.22,
+          "text": "each"
+        },
+        {
+          "t": 60.58,
+          "text": "new"
+        },
+        {
+          "t": 60.96,
+          "text": "website."
+        }
+      ]
+    },
+    {
+      "start": 61.76,
+      "end": 62.14,
+      "text": "You can allow",
+      "words": [
+        {
+          "t": 61.76,
+          "text": "You"
+        },
+        {
+          "t": 61.78,
+          "text": "can"
+        },
+        {
+          "t": 61.92,
+          "text": "allow"
+        }
+      ]
+    },
+    {
+      "start": 62.14,
+      "end": 63.36,
+      "text": "once, allow that",
+      "words": [
+        {
+          "t": 62.14,
+          "text": "once,"
+        },
+        {
+          "t": 62.94,
+          "text": "allow"
+        },
+        {
+          "t": 63.14,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 63.36,
+      "end": 64.4,
+      "text": "one site or",
+      "words": [
+        {
+          "t": 63.36,
+          "text": "one"
+        },
+        {
+          "t": 63.56,
+          "text": "site"
+        },
+        {
+          "t": 63.9,
+          "text": "or"
+        }
+      ]
+    },
+    {
+      "start": 64.4,
+      "end": 65.6,
+      "text": "allow all sites.",
+      "words": [
+        {
+          "t": 64.4,
+          "text": "allow"
+        },
+        {
+          "t": 64.82,
+          "text": "all"
+        },
+        {
+          "t": 65.14,
+          "text": "sites."
+        }
+      ]
+    },
+    {
+      "start": 66.08,
+      "end": 67.2,
+      "text": "OpenAI marks that",
+      "words": [
+        {
+          "t": 66.08,
+          "text": "OpenAI"
+        },
+        {
+          "t": 66.5,
+          "text": "marks"
+        },
+        {
+          "t": 66.98,
+          "text": "that"
+        }
+      ]
+    },
+    {
+      "start": 67.2,
+      "end": 68.0,
+      "text": "last one as",
+      "words": [
+        {
+          "t": 67.2,
+          "text": "last"
+        },
+        {
+          "t": 67.52,
+          "text": "one"
+        },
+        {
+          "t": 67.78,
+          "text": "as"
+        }
+      ]
+    },
+    {
+      "start": 68.0,
+      "end": 68.92,
+      "text": "a risk because",
+      "words": [
+        {
+          "t": 68.0,
+          "text": "a"
+        },
+        {
+          "t": 68.1,
+          "text": "risk"
+        },
+        {
+          "t": 68.42,
+          "text": "because"
+        }
+      ]
+    },
+    {
+      "start": 68.92,
+      "end": 69.74,
+      "text": "then it stops",
+      "words": [
+        {
+          "t": 68.92,
+          "text": "then"
+        },
+        {
+          "t": 69.22,
+          "text": "it"
+        },
+        {
+          "t": 69.46,
+          "text": "stops"
+        }
+      ]
+    },
+    {
+      "start": 69.74,
+      "end": 71.58,
+      "text": "asking. While it",
+      "words": [
+        {
+          "t": 69.74,
+          "text": "asking."
+        },
+        {
+          "t": 71.3,
+          "text": "While"
+        },
+        {
+          "t": 71.42,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 71.58,
+      "end": 72.6,
+      "text": "works, Chrome shows",
+      "words": [
+        {
+          "t": 71.58,
+          "text": "works,"
+        },
+        {
+          "t": 72.18,
+          "text": "Chrome"
+        },
+        {
+          "t": 72.3,
+          "text": "shows"
+        }
+      ]
+    },
+    {
+      "start": 72.6,
+      "end": 73.2,
+      "text": "a bar with",
+      "words": [
+        {
+          "t": 72.6,
+          "text": "a"
+        },
+        {
+          "t": 72.78,
+          "text": "bar"
+        },
+        {
+          "t": 73.0,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 73.2,
+      "end": 74.0,
+      "text": "a cancel button",
+      "words": [
+        {
+          "t": 73.2,
+          "text": "a"
+        },
+        {
+          "t": 73.32,
+          "text": "cancel"
+        },
+        {
+          "t": 73.58,
+          "text": "button"
+        }
+      ]
+    },
+    {
+      "start": 74.0,
+      "end": 74.58,
+      "text": "so you can",
+      "words": [
+        {
+          "t": 74.0,
+          "text": "so"
+        },
+        {
+          "t": 74.3,
+          "text": "you"
+        },
+        {
+          "t": 74.44,
+          "text": "can"
+        }
+      ]
+    },
+    {
+      "start": 74.58,
+      "end": 75.28,
+      "text": "stop it any",
+      "words": [
+        {
+          "t": 74.58,
+          "text": "stop"
+        },
+        {
+          "t": 74.86,
+          "text": "it"
+        },
+        {
+          "t": 75.06,
+          "text": "any"
+        }
+      ]
+    },
+    {
+      "start": 75.28,
+      "end": 76.26,
+      "text": "time. Would you",
+      "words": [
+        {
+          "t": 75.28,
+          "text": "time."
+        },
+        {
+          "t": 76.04,
+          "text": "Would"
+        },
+        {
+          "t": 76.16,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 76.26,
+      "end": 76.68,
+      "text": "let it hit",
+      "words": [
+        {
+          "t": 76.26,
+          "text": "let"
+        },
+        {
+          "t": 76.44,
+          "text": "it"
+        },
+        {
+          "t": 76.56,
+          "text": "hit"
+        }
+      ]
+    },
+    {
+      "start": 76.68,
+      "end": 77.48,
+      "text": "submit for you?",
+      "words": [
+        {
+          "t": 76.68,
+          "text": "submit"
+        },
+        {
+          "t": 77.02,
+          "text": "for"
+        },
+        {
+          "t": 77.3,
+          "text": "you?"
+        }
+      ]
+    }
+  ],
+  "noMusic": true,
+  "noMusicReason": "Standing rule (2026-08-24 user directive): reels ship voice + SFX only, no music bed by default. Set plan[\"music\"] = true (or a full music object) to opt this reel back into a bed.",
+  "format": "news",
+  "showCredits": false,
+  "script": "ChatGPT will now click, type and hit submit in your Chrome tabs, signed in as you. And one setting decides how much of that it does without asking.\n\nOpenAI shipped this on October 15th, in a Chrome extension with 7 million users. In a normal chat, ChatGPT reads across your open tabs. But in Work, its agent mode, it takes them over: sending messages, filling out forms, downloading files, even grouping your pile of tabs.\n\nHere's OpenAI's own demo. Someone asks it to submit a yoga receipt from their email. It finds the receipt, opens the expense site in its own tab group, asks one question, then fills in the form and submits it.\n\nAnd that works on sites you're already signed into, like Gmail, LinkedIn and Salesforce.\n\nSetup lives in the ChatGPT desktop app: open Settings, then Computer Use, and install the Chrome extension. Then type @Chrome in a Work chat.\n\nNow, that setting. By default, ChatGPT asks before it touches each new website. You can allow once, allow that one site, or allow all sites. OpenAI marks that last one as a risk, because then it stops asking.\n\nWhile it works, Chrome shows a bar with a cancel button, so you can stop it any time.\n\nWould you let it hit submit for you?",
+  "approval": {
+    "sha256": "69ca396da95c39dfe5125039c81103f4d1e7df2d1e9c1782b96b89c245011f16",
+    "approvedAt": "2026-10-19T05:15:59+00:00",
+    "words": 216,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

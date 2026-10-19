@@ -1,6 +1,707 @@
 {
-  "emphasis": [],
-  "caption_corrections": {},
-  "format": "news",
-  "shots": []
+ "format": "news",
+ "facePlan": "face-led",
+ "showCredits": false,
+ "music": false,
+ "emphasis": [
+  "submit",
+  "one setting",
+  "7 million",
+  "open tabs",
+  "takes them over",
+  "grouping",
+  "demo",
+  "yoga receipt",
+  "tab group",
+  "one question",
+  "submits",
+  "signed into",
+  "Computer Use",
+  "@Chrome",
+  "that setting",
+  "asks",
+  "all sites",
+  "risk",
+  "cancel",
+  "hit submit"
+ ],
+ "caption_corrections": {
+  "that's setting": "that setting",
+  "Chat GPT": "ChatGPT",
+  "at Chrome": "@Chrome"
+ },
+ "shots": [
+  {
+   "start_phrase": "ChatGPT will now click",
+   "line": "ChatGPT will now click, type and hit submit in your Chrome tabs, signed in as you.",
+   "scene": {
+    "type": "split",
+    "topSrc": "assets/chatgpt-chrome-tabs/hook-top.mp4",
+    "bottomSrc": "assets/chatgpt-chrome-tabs/avatar-master.mp4",
+    "headline": {
+     "lines": [
+      {
+       "text": "CHATGPT IN CHROME",
+       "kind": "label",
+       "at": 0.15
+      },
+      {
+       "text": "IT HITS SUBMIT",
+       "kind": "headline",
+       "at": 0.6
+      }
+     ],
+     "y": 0.41
+    },
+    "sfx": [
+     {
+      "src": "sfx2/mouse-click-01.mp3",
+      "vol": 0.6,
+      "at": 4.3
+     }
+    ],
+    "covers": "click, type and hit submit"
+   },
+   "asset_id": "hook-top",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "And one setting decides",
+   "line": "And one setting decides how much of that it does without asking.",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-tabs/avatar-master.mp4",
+    "zoomDir": "in",
+    "focusX": 0.5,
+    "headline": {
+     "lines": [
+      {
+       "text": "ONE SETTING",
+       "kind": "label",
+       "at": 0.1
+      },
+      {
+       "text": "ASKS OR DOESN'T",
+       "kind": "headline",
+       "at": 0.5
+      }
+     ],
+     "y": 0.45
+    },
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "vol": 0.5,
+      "at": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "OpenAI shipped this on",
+   "line": "OpenAI shipped this on October 15th, in a Chrome extension with 7 million users.",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/chatgpt-chrome-tabs/cws-mobile.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "lines": [
+     {
+      "at": 0.3,
+      "x": 468,
+      "y": 222,
+      "w": 300,
+      "h": 75
+     },
+     {
+      "at": 3.3,
+      "x": 490,
+      "y": 650,
+      "w": 345,
+      "h": 70
+     }
+    ],
+    "covers": "Chrome extension with 7 million users",
+    "follow": true,
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "vol": 0.5,
+      "at": 0.0
+     },
+     {
+      "src": "sfx-action/marker.mp3",
+      "vol": 0.6,
+      "at": 3.3
+     }
+    ]
+   },
+   "asset_id": "cws-mobile",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "In a normal chat,",
+   "line": "In a normal chat, ChatGPT reads across your open tabs.",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-tabs/chat-tabs.mp4",
+    "covers": "ChatGPT reads across your open tabs"
+   },
+   "asset_id": "chat-tabs",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "its agent mode, it",
+   "line": "its agent mode, it takes them over: sending messages, filling out forms, downloading files,",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/chatgpt-chrome-tabs/cws-shot-research.png",
+    "srcWidth": 1280,
+    "srcHeight": 800,
+    "focus": {
+     "x": 440,
+     "y": 365,
+     "w": 620,
+     "h": 420
+    },
+    "covers": "takes them over",
+    "sfx": [
+     {
+      "src": "sfx-action/lens-zoom.mp3",
+      "vol": 0.8,
+      "at": 0.0
+     }
+    ]
+   },
+   "asset_id": "cws-shot-research",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "even grouping your pile",
+   "line": "even grouping your pile of tabs.",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/chatgpt-chrome-tabs/cws-shot-research.png",
+    "srcWidth": 1280,
+    "srcHeight": 800,
+    "focus": {
+     "x": 220,
+     "y": 232,
+     "w": 470,
+     "h": 50
+    },
+    "covers": "grouping your pile of tabs"
+   },
+   "asset_id": "cws-shot-research",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Here's OpenAI's own demo.",
+   "line": "Here's OpenAI's own demo.",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-tabs/avatar-master.mp4",
+    "zoomDir": "in",
+    "focusX": 0.5,
+    "headline": {
+     "lines": [
+      {
+       "text": "OPENAI'S OWN DEMO",
+       "kind": "label",
+       "at": 0.1
+      }
+     ],
+     "y": 0.45
+    },
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "vol": 0.5,
+      "at": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Someone asks it to",
+   "line": "Someone asks it to submit a yoga receipt from their email.",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-tabs/demo-prompt.mp4",
+    "covers": "submit a yoga receipt from their email",
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "vol": 0.45,
+      "at": 0.0
+     }
+    ],
+    "captionBottom": 340
+   },
+   "asset_id": "demo-prompt",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "It finds the receipt",
+   "line": "It finds the receipt,",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-tabs/demo-found.mp4",
+    "covers": "finds the receipt"
+   },
+   "asset_id": "demo-found",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "opens the expense site",
+   "line": "opens the expense site in its own tab group,",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-tabs/demo-tabgroup.mp4",
+    "covers": "opens the expense site in its own tab group"
+   },
+   "asset_id": "demo-tabgroup",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "asks one question",
+   "line": "asks one question,",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-tabs/demo-question.mp4",
+    "covers": "asks one question"
+   },
+   "asset_id": "demo-question",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "then fills in the",
+   "line": "then fills in the form",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-tabs/demo-fill.mp4",
+    "covers": "fills in the form",
+    "sfx": [
+     {
+      "src": "sfx-action/typekey.mp3",
+      "vol": 0.5,
+      "at": 0.1
+     }
+    ]
+   },
+   "asset_id": "demo-fill",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "and submits it",
+   "line": "and submits it.",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-tabs/demo-submitted.mp4",
+    "covers": "submits it",
+    "sfx": [
+     {
+      "src": "sfx2/mouse-click-01.mp3",
+      "vol": 0.6,
+      "at": 0.35
+     }
+    ]
+   },
+   "asset_id": "demo-submitted",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "And that works on",
+   "line": "And that works on sites you're already signed into, like Gmail, LinkedIn and Salesforce.",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/chatgpt-chrome-tabs/docs-mobile.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "lines": [
+     {
+      "at": 0.4,
+      "x": 97,
+      "y": 1030,
+      "w": 874,
+      "h": 52
+     },
+     {
+      "at": 1.2,
+      "x": 97,
+      "y": 1106,
+      "w": 874,
+      "h": 52
+     },
+     {
+      "at": 2.3,
+      "x": 97,
+      "y": 1182,
+      "w": 874,
+      "h": 52
+     },
+     {
+      "at": 2.9,
+      "x": 97,
+      "y": 1258,
+      "w": 874,
+      "h": 52
+     }
+    ],
+    "covers": "sites you're already signed into, like Gmail, LinkedIn and Salesforce",
+    "follow": true,
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "vol": 0.5,
+      "at": 0.0
+     },
+     {
+      "src": "sfx-action/marker.mp3",
+      "vol": 0.6,
+      "at": 1.2
+     }
+    ]
+   },
+   "asset_id": "docs-mobile",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Setup lives in the",
+   "line": "Setup lives in the ChatGPT desktop app: open Settings,",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/chatgpt-chrome-tabs/docs-setup-mobile.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "lines": [
+     {
+      "at": 1.6,
+      "x": 97,
+      "y": 521,
+      "w": 874,
+      "h": 52
+     },
+     {
+      "at": 2.7,
+      "x": 97,
+      "y": 599,
+      "w": 874,
+      "h": 52
+     }
+    ],
+    "covers": "open Settings",
+    "follow": true,
+    "sfx": [
+     {
+      "src": "sfx-action/marker.mp3",
+      "vol": 0.6,
+      "at": 1.6
+     }
+    ]
+   },
+   "asset_id": "docs-setup-mobile",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "then Computer Use, and",
+   "line": "then Computer Use, and install the Chrome extension.",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/chatgpt-chrome-tabs/docs-setup-mobile.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "lines": [
+     {
+      "at": 0.1,
+      "x": 97,
+      "y": 521,
+      "w": 874,
+      "h": 52
+     },
+     {
+      "at": 1.2,
+      "x": 193,
+      "y": 1106,
+      "w": 778,
+      "h": 52
+     },
+     {
+      "at": 1.8,
+      "x": 193,
+      "y": 1184,
+      "w": 778,
+      "h": 52
+     }
+    ],
+    "covers": "install the Chrome extension",
+    "follow": true
+   },
+   "asset_id": "docs-setup-mobile",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Then type @Chrome in",
+   "line": "Then type @Chrome in a Work chat.",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/chatgpt-chrome-tabs/docs-setup-mobile.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "lines": [
+     {
+      "at": 0.2,
+      "x": 193,
+      "y": 1568,
+      "w": 784,
+      "h": 52
+     },
+     {
+      "at": 0.9,
+      "x": 193,
+      "y": 1644,
+      "w": 784,
+      "h": 52
+     }
+    ],
+    "covers": "@Chrome in a Work chat",
+    "follow": true,
+    "sfx": [
+     {
+      "src": "sfx-action/marker.mp3",
+      "vol": 0.6,
+      "at": 0.2
+     }
+    ]
+   },
+   "asset_id": "docs-setup-mobile",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Now, that setting.",
+   "line": "Now, that setting.",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-tabs/avatar-master.mp4",
+    "zoomDir": "in",
+    "focusX": 0.5,
+    "headline": {
+     "lines": [
+      {
+       "text": "THAT SETTING",
+       "kind": "headline",
+       "at": 0.1
+      }
+     ],
+     "y": 0.45
+    },
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "vol": 0.5,
+      "at": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "By default, ChatGPT asks",
+   "line": "By default, ChatGPT asks before it touches each new website.",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/chatgpt-chrome-tabs/docs-access-mobile.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "lines": [
+     {
+      "at": 0.3,
+      "x": 97,
+      "y": 445,
+      "w": 734,
+      "h": 52
+     },
+     {
+      "at": 1.6,
+      "x": 97,
+      "y": 521,
+      "w": 734,
+      "h": 52
+     }
+    ],
+    "covers": "asks before it touches each new website",
+    "follow": true,
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "vol": 0.5,
+      "at": 0.0
+     },
+     {
+      "src": "sfx-action/marker.mp3",
+      "vol": 0.6,
+      "at": 1.6
+     }
+    ]
+   },
+   "asset_id": "docs-access-mobile",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "You can allow once,",
+   "line": "You can allow once, allow that one site, or allow all sites.",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/chatgpt-chrome-tabs/docs-access-mobile.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "lines": [
+     {
+      "at": 0.15,
+      "x": 193,
+      "y": 1082,
+      "w": 731,
+      "h": 52
+     },
+     {
+      "at": 1.2,
+      "x": 193,
+      "y": 1234,
+      "w": 731,
+      "h": 52
+     },
+     {
+      "at": 2.6,
+      "x": 193,
+      "y": 1465,
+      "w": 731,
+      "h": 52
+     }
+    ],
+    "covers": "allow once, allow that one site, or allow all sites",
+    "follow": true,
+    "sfx": [
+     {
+      "src": "sfx-action/marker.mp3",
+      "vol": 0.6,
+      "at": 0.15
+     },
+     {
+      "src": "sfx-action/marker.mp3",
+      "vol": 0.6,
+      "at": 1.2
+     },
+     {
+      "src": "sfx-action/marker.mp3",
+      "vol": 0.6,
+      "at": 2.6
+     }
+    ]
+   },
+   "asset_id": "docs-access-mobile",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "OpenAI marks that last",
+   "line": "OpenAI marks that last one as a risk, because then it stops asking. While it works,",
+   "scene": {
+    "type": "sourceread",
+    "src": "assets/chatgpt-chrome-tabs/docs-allsites-mobile.png",
+    "srcWidth": 1080,
+    "srcHeight": 2340,
+    "lines": [
+     {
+      "at": 1.6,
+      "x": 97,
+      "y": 339,
+      "w": 751,
+      "h": 66
+     },
+     {
+      "at": 3.3,
+      "x": 97,
+      "y": 445,
+      "w": 874,
+      "h": 52
+     },
+     {
+      "at": 3.5,
+      "x": 97,
+      "y": 521,
+      "w": 874,
+      "h": 52
+     }
+    ],
+    "covers": "marks that last one as a risk, because then it stops asking",
+    "follow": true,
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "vol": 0.45,
+      "at": 1.6
+     }
+    ]
+   },
+   "asset_id": "docs-allsites-mobile",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Chrome shows a bar",
+   "line": "Chrome shows a bar with a cancel button, so you can stop it any time.",
+   "scene": {
+    "type": "annotatezoom",
+    "src": "assets/chatgpt-chrome-tabs/cws-shot-cancel.png",
+    "srcWidth": 1280,
+    "srcHeight": 800,
+    "focus": {
+     "x": 340,
+     "y": 420,
+     "w": 800,
+     "h": 85
+    },
+    "covers": "a bar with a cancel button",
+    "sfx": [
+     {
+      "src": "sfx-action/lens-zoom.mp3",
+      "vol": 0.8,
+      "at": 0.0
+     }
+    ]
+   },
+   "asset_id": "cws-shot-cancel",
+   "tier": "official"
+  },
+  {
+   "start_phrase": "Would you let it",
+   "line": "Would you let it hit submit for you?",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-tabs/avatar-master.mp4",
+    "zoomDir": "in",
+    "focusX": 0.5,
+    "headline": {
+     "lines": [
+      {
+       "text": "TELL ME BELOW",
+       "kind": "label",
+       "at": 0.1
+      },
+      {
+       "text": "WOULD YOU LET IT?",
+       "kind": "headline",
+       "at": 0.4
+      }
+     ],
+     "y": 0.45
+    },
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "vol": 0.5,
+      "at": 0.0
+     }
+    ],
+    "covers": "Would you let it hit submit for you"
+   }
+  }
+ ]
 }

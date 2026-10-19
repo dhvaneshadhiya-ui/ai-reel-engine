@@ -126,7 +126,7 @@ How to use (vendor steps):
 
 - That tab READING is new on Oct 15: side chat could already reference open tabs from 2026-07-30 (x.com/ChatGPT/status/2082970812584432115; Digital Trends; TechRadar). The script calls out reading only as the Chat behaviour, and the news as control.
 - Which plans get Work tab control. OpenAI: "Available for all ChatGPT plans" (extension); PiunikaWeb: Work needs at least Plus; PPC Land: unclear. Disputed -> not spoken; caption line only, hedged.
-- Store rating (fetches read 1.9/5 and 2.4/5; most ratings predate the update). Not spoken, cropped out of the store shot.
+- Store rating (fetches read 1.9/5 and 2.4/5; most ratings predate the update). Not spoken; visible on the mobile store capture as the page shows it, not highlighted.
 - Any prompt-injection success rate (OpenAI published none; competitor figures are second-hand).
 - That it always asks before sending/submitting. It does not; approval is per website. "Stop before submitting" in OpenAI's examples is a user instruction.
 - Atlas shutdown dates (Unite.AI AI-written, unconfirmed at primary) — context only, not spoken.

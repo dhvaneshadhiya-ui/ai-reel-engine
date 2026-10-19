@@ -9922,3 +9922,33 @@ Apple Support paragraph as the confirmation beat (and again for voicemail, diffe
 rows for the misleading signs; iPhone Life FAQ receipt; blue-to-green bubble flip with cause tags; two call
 cards counting rings; voicemail rows for the look-alikes; checklist rows for the payoff; XL "Pass this on" end
 card. Next myth-busting reel: do not open on the chat block again, and do not use struck rows for the myths.
+
+## 2026-10-19 — chatgpt-chrome-tabs (news, face-led twin)
+
+- **RAW NOTE 1 — the reference link was a re-upload; the original was on X.** The user's YouTube link
+  (pObSgo6_jY8) is a third-party copy of OpenAI's 42s demo. The @ChatGPT thread carried it plus a second,
+  better demo (side panel submitting an expense end to end) at 4K. ROOT: a reference is a lead, not a source.
+  RULE: trace a linked clip to its original upload before cutting it; the original often has siblings.
+- **RAW NOTE 2 — "what's new" needs its own search.** Every Oct 15 write-up led with "ChatGPT can read your
+  tabs", but tab reading shipped 30 Jul. The news was CONTROL. RULE: for an update to an existing product,
+  search the feature's previous release notes before the angle is fixed.
+- **RAW NOTE 3 — two ASR models agreeing on a mishear is a re-read, not a whisper bug.** small and medium both
+  heard "risk" as "whisk" (p=0.16). One 15s passage was re-generated (~220 credits) and spliced at mid-silence
+  BEFORE the HeyGen render, so the lip-sync ran once. RULE: whisper the ElevenLabs read before uploading it.
+- **RAW NOTE 4 — framework_check F5 treated the verb "type" as a CTA.** "click, type and hit submit" in the
+  hook failed propose. Fixed: "type" counts only before a keyword/quote/"below"; self-test cases both ways.
+- **RAW NOTE 5 — annotatezoom over-zooms a thin focus.** A 575x75 focus on a 1280x800 store shot clipped the
+  Cancel button; 800x85 holds the whole bar. RULE: for a strip-shaped focus, pad the width ~30%.
+- **RAW NOTE 6 — word-reveal captions sit exactly where a chat input lives.** The typed request in the side
+  panel was covered; captionBottom 340 (~0.80, above the 0.835 platform zone) cleared it. RULE: on any
+  chat-UI footage, check the input box against the caption band.
+- ElevenLabs v3: 216 words in 72.9s (~1,273 credits) + 15s re-read (~220), vo_pad to 78.0s (2.77 w/s).
+  HeyGen avatar_v twin 77.9s, motion 12.31. 22 SFX, all audible. −14.4 LUFS. Critique READY at round 3.
+
+Treatments used: OpenAI demo form-fill -> "Expense submitted" as a split-hook top panel (flash-forward, re-shown
+in the demo); Chrome Web Store mobile capture for the 7M users; OpenAI demo 1 prompt + "seven sofa options
+across your open tabs" answer; store art annotatezoom for Work actions and tab groups; side-panel demo cut in
+four clause-sized clips (prompt, found, tab group, question/yes, fill, submitted); OpenAI docs mobile receipts
+for signed-in sites, setup steps, the permission options and the "Elevated Risk" payoff; store art Cancel bar;
+facecam CTA question. Next AI-agent reel: do not reuse the flash-forward split hook or the docs "Elevated
+Risk" receipt as the payoff device.
