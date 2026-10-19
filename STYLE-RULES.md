@@ -9984,3 +9984,10 @@ quoted-headline-over-UI device for every beat.
   RULE: a product-update reel is organised by WHAT CHANGED (here: one Chat/Work switch, read vs act, the
   ask-first default, setup, plans); a vendor demo illustrates one clause and gets one or two shots. v2:
   130 words, 46.5s, ~781 credits, 15 cues all audible, critique READY round 3, cover rebuilt on the toggle.
+- **RAW NOTE 7 (v3, same day) — when the user names the vendor's post as the script reference, follow its
+  STRUCTURE, and read its replies.** OpenAI's thread had two upgrades (tabs; full ChatGPT in the side panel)
+  — v2 had dropped the second as "July news". Its replies were dozens of "didn't it already do this?", which
+  became the open loop ("you're half right") and an honest payoff (side panel read tabs since July; acting and
+  the full app are new). Fetch threads with api.fxtwitter.com/2/conversation/<id> (x.com 402s). Held vendor
+  title cards over a blurred copy of themselves fill 9:16 without cropping the text. v3: 169 words, 61.0s,
+  ~997 credits, 18 cues audible, −14.8 LUFS, critique READY round 3.

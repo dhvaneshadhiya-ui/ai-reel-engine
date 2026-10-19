@@ -9,18 +9,22 @@
   "captionStyle": "word-reveal",
   "emphasis": [
     "October 15th",
-    "every tab",
-    "One switch",
+    "computer use",
+    "half right",
+    "tabs",
     "Chat",
-    "reads",
-    "eight tabs",
-    "favorite",
+    "every one",
     "Work",
-    "acts",
+    "controls",
     "messages",
     "forms",
     "group",
-    "asks you first",
+    "Second",
+    "full app",
+    "chat history",
+    "July",
+    "new",
+    "checks with you",
     "extension",
     "@Chrome",
     "every ChatGPT plan",
@@ -28,39 +32,78 @@
   ],
   "scenes": [
     {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/card-tabs.mp4",
+      "covers": "bringing the power of computer use to anyone who uses Chrome",
+      "zoomDir": "none",
+      "headline": {
+        "lines": [
+          {
+            "text": "OPENAI \u00b7 OCT 15",
+            "kind": "label",
+            "at": 0.0
+          },
+          {
+            "text": "COMPUTER USE",
+            "kind": "headline",
+            "at": 0.3
+          },
+          {
+            "text": "FOR CHROME",
+            "kind": "headline",
+            "at": 0.9
+          }
+        ],
+        "y": 0.22,
+        "theme": "dark"
+      },
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.343,
+          "at": 0.3
+        }
+      ],
+      "durationSec": 6.32,
+      "assetId": "card-tabs",
+      "claimId": "card-tabs",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    },
+    {
       "type": "sourceread",
       "src": "assets/chatgpt-chrome-reads-tabs/cws-mobile.png",
       "srcWidth": 1080,
       "srcHeight": 2340,
       "lines": [
         {
-          "at": 0.2,
+          "at": 0.3,
           "x": 468,
           "y": 222,
           "w": 300,
           "h": 75
         },
         {
-          "at": 1.6,
+          "at": 1.4,
           "x": 490,
           "y": 650,
           "w": 345,
           "h": 70
         }
       ],
-      "covers": "the ChatGPT Chrome extension",
+      "covers": "something ChatGPT already did, you're half right",
       "follow": true,
       "headline": {
         "lines": [
           {
-            "text": "CHATGPT IN CHROME",
+            "text": "ALREADY HAD THIS?",
             "kind": "label",
-            "at": 0.0
+            "at": 0.2
           },
           {
-            "text": "OCT 15 UPDATE",
+            "text": "HALF RIGHT",
             "kind": "headline",
-            "at": 0.3
+            "at": 2.6
           }
         ],
         "y": 0.57,
@@ -68,12 +111,17 @@
       },
       "sfx": [
         {
-          "src": "sfx-action/marker.mp3",
-          "vol": 0.417,
-          "at": 0.3
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.2
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "vol": 0.343,
+          "at": 2.6
         }
       ],
-      "durationSec": 3.88,
+      "durationSec": 4.58,
       "captionBottom": 544,
       "film": true,
       "assetId": "cws-mobile",
@@ -82,66 +130,42 @@
     },
     {
       "type": "footage",
-      "src": "assets/chatgpt-chrome-reads-tabs/wide.mp4",
-      "covers": "every tab you have open",
+      "src": "assets/chatgpt-chrome-reads-tabs/hook-tabs.mp4",
+      "covers": "works with the tabs you have open",
       "zoomDir": "none",
       "headline": {
         "lines": [
           {
-            "text": "EVERY TAB YOU HAVE OPEN",
+            "text": "1",
+            "kind": "label",
+            "at": 0.0
+          },
+          {
+            "text": "YOUR OPEN TABS",
             "kind": "headline",
-            "at": 0.1
+            "at": 0.3
           }
         ],
-        "y": 0.72,
+        "y": 0.24,
         "theme": "dark"
       },
       "sfx": [
         {
           "src": "sfx/whoosh.MP3",
           "vol": 0.582,
-          "at": 0.1
+          "at": 0.0
         }
       ],
-      "durationSec": 3.2,
-      "assetId": "wide",
-      "claimId": "wide",
+      "durationSec": 4.1,
+      "assetId": "hook-tabs",
+      "claimId": "hook-tabs",
       "credit": "OpenAI",
       "captionTheme": "dark"
     },
     {
       "type": "footage",
-      "src": "assets/chatgpt-chrome-reads-tabs/toggle.mp4",
-      "covers": "One switch",
-      "zoomDir": "none",
-      "headline": {
-        "lines": [
-          {
-            "text": "ONE SWITCH",
-            "kind": "headline",
-            "at": 0.2
-          }
-        ],
-        "y": 0.55,
-        "theme": "dark"
-      },
-      "sfx": [
-        {
-          "src": "sfx2/mouse-click-01.mp3",
-          "vol": 0.468,
-          "at": 0.2
-        }
-      ],
-      "durationSec": 2.78,
-      "assetId": "toggle",
-      "claimId": "toggle",
-      "credit": "OpenAI",
-      "captionTheme": "dark"
-    },
-    {
-      "type": "footage",
-      "src": "assets/chatgpt-chrome-reads-tabs/reading.mp4",
-      "covers": "Chat, and ChatGPT just reads them",
+      "src": "assets/chatgpt-chrome-reads-tabs/answer.mp4",
+      "covers": "In Chat, it looks across every one",
       "zoomDir": "none",
       "headline": {
         "lines": [
@@ -151,12 +175,12 @@
             "at": 0.1
           },
           {
-            "text": "READS YOUR TABS",
+            "text": "READS EVERY TAB",
             "kind": "headline",
             "at": 0.4
           }
         ],
-        "y": 0.55,
+        "y": 0.62,
         "theme": "dark"
       },
       "sfx": [
@@ -166,69 +190,7 @@
           "at": 0.4
         }
       ],
-      "durationSec": 3.66,
-      "assetId": "reading",
-      "claimId": "reading",
-      "credit": "OpenAI",
-      "captionTheme": "dark"
-    },
-    {
-      "type": "footage",
-      "src": "assets/chatgpt-chrome-reads-tabs/hook-tabs.mp4",
-      "covers": "a sofa with eight tabs open",
-      "zoomDir": "none",
-      "headline": {
-        "lines": [
-          {
-            "text": "EIGHT SOFA TABS",
-            "kind": "headline",
-            "at": 0.2
-          }
-        ],
-        "y": 0.24,
-        "theme": "dark"
-      },
-      "durationSec": 2.4,
-      "assetId": "hook-tabs",
-      "claimId": "hook-tabs",
-      "credit": "OpenAI",
-      "captionTheme": "dark"
-    },
-    {
-      "type": "footage",
-      "src": "assets/chatgpt-chrome-reads-tabs/bubble.mp4",
-      "covers": "Ask which one fits",
-      "zoomDir": "none",
-      "durationSec": 0.96,
-      "assetId": "bubble",
-      "claimId": "bubble",
-      "credit": "OpenAI",
-      "captionTheme": "dark"
-    },
-    {
-      "type": "footage",
-      "src": "assets/chatgpt-chrome-reads-tabs/answer.mp4",
-      "covers": "compares every tab and picks a favorite",
-      "zoomDir": "none",
-      "headline": {
-        "lines": [
-          {
-            "text": "ONE CLEAR FAVORITE",
-            "kind": "headline",
-            "at": 0.6
-          }
-        ],
-        "y": 0.62,
-        "theme": "dark"
-      },
-      "sfx": [
-        {
-          "src": "sfx/Magic Reveal.MP3",
-          "vol": 1.0,
-          "at": 0.6
-        }
-      ],
-      "durationSec": 3.18,
+      "durationSec": 4.74,
       "assetId": "answer",
       "claimId": "answer",
       "credit": "OpenAI",
@@ -237,8 +199,9 @@
     {
       "type": "footage",
       "src": "assets/chatgpt-chrome-reads-tabs/work-toggle.mp4",
-      "covers": "Flip that switch to Work",
+      "covers": "Switch to Work",
       "zoomDir": "none",
+      "captionBottom": 340,
       "headline": {
         "lines": [
           {
@@ -247,7 +210,7 @@
             "at": 0.1
           },
           {
-            "text": "ACTS IN YOUR TABS",
+            "text": "ACTS IN THEM",
             "kind": "headline",
             "at": 0.4
           }
@@ -262,21 +225,9 @@
           "at": 0.1
         }
       ],
-      "captionBottom": 340,
-      "durationSec": 2.7,
+      "durationSec": 2.78,
       "assetId": "work-toggle",
       "claimId": "work-toggle",
-      "credit": "OpenAI",
-      "captionTheme": "dark"
-    },
-    {
-      "type": "footage",
-      "src": "assets/chatgpt-chrome-reads-tabs/work-going.mp4",
-      "covers": "acts inside those tabs",
-      "zoomDir": "none",
-      "durationSec": 2.2,
-      "assetId": "work-going",
-      "claimId": "work-going",
       "credit": "OpenAI",
       "captionTheme": "dark"
     },
@@ -311,7 +262,7 @@
           "at": 1.9
         }
       ],
-      "durationSec": 3.38,
+      "durationSec": 3.4,
       "assetId": "work-form",
       "claimId": "work-form",
       "credit": "OpenAI",
@@ -320,7 +271,7 @@
     {
       "type": "footage",
       "src": "assets/chatgpt-chrome-reads-tabs/demo-tabgroup.mp4",
-      "covers": "group your tabs",
+      "covers": "group the pile you have open",
       "zoomDir": "none",
       "headline": {
         "lines": [
@@ -330,7 +281,7 @@
             "at": 0.1
           }
         ],
-        "y": 0.66,
+        "y": 0.42,
         "theme": "dark"
       },
       "sfx": [
@@ -340,9 +291,154 @@
           "at": 0.1
         }
       ],
-      "durationSec": 2.12,
+      "durationSec": 2.54,
       "assetId": "demo-tabgroup",
       "claimId": "demo-tabgroup",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/card-panel.mp4",
+      "covers": "the ChatGPT side panel in Chrome got the full app",
+      "zoomDir": "none",
+      "headline": {
+        "lines": [
+          {
+            "text": "2",
+            "kind": "label",
+            "at": 0.0
+          },
+          {
+            "text": "FULL CHATGPT",
+            "kind": "headline",
+            "at": 0.3
+          },
+          {
+            "text": "IN THE SIDE PANEL",
+            "kind": "headline",
+            "at": 0.8
+          }
+        ],
+        "y": 0.22,
+        "theme": "dark"
+      },
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "vol": 0.582,
+          "at": 0.0
+        }
+      ],
+      "durationSec": 4.18,
+      "assetId": "card-panel",
+      "claimId": "card-panel",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/side-by-side.mp4",
+      "covers": "Chat or Work right beside the site you're on",
+      "zoomDir": "none",
+      "headline": {
+        "lines": [
+          {
+            "text": "YOUR CHAT HISTORY",
+            "kind": "label",
+            "at": 0.1
+          },
+          {
+            "text": "BESIDE ANY SITE",
+            "kind": "headline",
+            "at": 0.6
+          }
+        ],
+        "y": 0.2,
+        "theme": "dark"
+      },
+      "durationSec": 5.02,
+      "assetId": "side-by-side",
+      "claimId": "side-by-side",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/card-july.mp4",
+      "covers": "Since July, that side panel could read your tabs",
+      "zoomDir": "none",
+      "headline": {
+        "lines": [
+          {
+            "text": "THE HALF YOU KNEW",
+            "kind": "label",
+            "at": 0.1
+          },
+          {
+            "text": "SINCE JULY:",
+            "kind": "headline",
+            "at": 2.0
+          },
+          {
+            "text": "IT COULD READ TABS",
+            "kind": "headline",
+            "at": 2.4
+          }
+        ],
+        "y": 0.22,
+        "theme": "dark"
+      },
+      "sfx": [
+        {
+          "src": "sfx/Camera Shutter.MP3",
+          "vol": 0.32,
+          "at": 0.1
+        }
+      ],
+      "durationSec": 5.16,
+      "assetId": "card-july",
+      "claimId": "card-july",
+      "credit": "OpenAI",
+      "captionTheme": "dark"
+    },
+    {
+      "type": "footage",
+      "src": "assets/chatgpt-chrome-reads-tabs/demo-prompt.mp4",
+      "covers": "Acting inside them",
+      "zoomDir": "none",
+      "captionBottom": 340,
+      "headline": {
+        "lines": [
+          {
+            "text": "WHAT'S NEW",
+            "kind": "label",
+            "at": 0.1
+          },
+          {
+            "text": "IT ACTS",
+            "kind": "headline",
+            "at": 0.4
+          },
+          {
+            "text": "+ THE FULL APP",
+            "kind": "headline",
+            "at": 1.6
+          }
+        ],
+        "y": 0.55,
+        "theme": "dark"
+      },
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "vol": 1.0,
+          "at": 0.4
+        }
+      ],
+      "durationSec": 4.0,
+      "assetId": "demo-prompt",
+      "claimId": "demo-prompt",
       "credit": "OpenAI",
       "captionTheme": "dark"
     },
@@ -353,21 +449,21 @@
       "srcHeight": 2340,
       "lines": [
         {
-          "at": 0.6,
+          "at": 0.4,
           "x": 97,
           "y": 445,
           "w": 734,
           "h": 52
         },
         {
-          "at": 1.8,
+          "at": 1.6,
           "x": 97,
           "y": 521,
           "w": 734,
           "h": 52
         }
       ],
-      "covers": "it asks you first, by default",
+      "covers": "checks with you before it acts on a new website",
       "follow": true,
       "sfx": [
         {
@@ -378,10 +474,10 @@
         {
           "src": "sfx-action/marker.mp3",
           "vol": 0.417,
-          "at": 0.6
+          "at": 0.4
         }
       ],
-      "durationSec": 4.36,
+      "durationSec": 3.92,
       "captionBottom": 544,
       "film": true,
       "assetId": "docs-access-mobile",
@@ -395,14 +491,14 @@
       "srcHeight": 2340,
       "lines": [
         {
-          "at": 0.8,
+          "at": 0.6,
           "x": 193,
           "y": 1106,
           "w": 778,
           "h": 52
         },
         {
-          "at": 1.5,
+          "at": 1.3,
           "x": 193,
           "y": 1184,
           "w": 778,
@@ -415,10 +511,10 @@
         {
           "src": "sfx-action/marker.mp3",
           "vol": 0.417,
-          "at": 0.8
+          "at": 0.6
         }
       ],
-      "durationSec": 2.9,
+      "durationSec": 2.76,
       "captionBottom": 544,
       "film": true,
       "assetId": "docs-setup-mobile",
@@ -435,7 +531,7 @@
           {
             "text": "MENTION @CHROME",
             "kind": "headline",
-            "at": 0.1
+            "at": 0.05
           }
         ],
         "y": 0.62,
@@ -445,10 +541,10 @@
         {
           "src": "sfx-action/typekey.mp3",
           "vol": 0.26,
-          "at": 0.1
+          "at": 0.05
         }
       ],
-      "durationSec": 2.54,
+      "durationSec": 1.26,
       "assetId": "chip",
       "claimId": "chip",
       "credit": "OpenAI",
@@ -482,7 +578,7 @@
           "at": 1.0
         }
       ],
-      "durationSec": 4.68,
+      "durationSec": 4.54,
       "assetId": "wide",
       "claimId": "wide",
       "credit": "OpenAI",
@@ -516,7 +612,7 @@
           "at": 0.1
         }
       ],
-      "durationSec": 1.56,
+      "durationSec": 1.7,
       "assetId": "hook-tabs",
       "claimId": "hook-tabs",
       "credit": "OpenAI",
@@ -526,828 +622,1075 @@
   "captions": [
     {
       "start": 0.0,
-      "end": 1.56,
-      "text": "OpenAI's October 15th",
+      "end": 1.26,
+      "text": "On October 15th,",
       "words": [
         {
           "t": 0.0,
-          "text": "OpenAI's"
+          "text": "On"
         },
         {
-          "t": 0.72,
+          "t": 0.18,
           "text": "October"
         },
         {
-          "t": 0.92,
-          "text": "15th"
+          "t": 0.44,
+          "text": "15th,"
         }
       ]
     },
     {
-      "start": 1.56,
-      "end": 2.14,
-      "text": "update to the",
+      "start": 1.26,
+      "end": 2.32,
+      "text": "OpenAI said it's",
       "words": [
         {
-          "t": 1.56,
-          "text": "update"
+          "t": 1.26,
+          "text": "OpenAI"
         },
         {
-          "t": 1.78,
+          "t": 1.64,
+          "text": "said"
+        },
+        {
+          "t": 2.02,
+          "text": "it's"
+        }
+      ]
+    },
+    {
+      "start": 2.32,
+      "end": 3.06,
+      "text": "bringing the power",
+      "words": [
+        {
+          "t": 2.32,
+          "text": "bringing"
+        },
+        {
+          "t": 2.54,
+          "text": "the"
+        },
+        {
+          "t": 2.8,
+          "text": "power"
+        }
+      ]
+    },
+    {
+      "start": 3.06,
+      "end": 3.96,
+      "text": "of computer use",
+      "words": [
+        {
+          "t": 3.06,
+          "text": "of"
+        },
+        {
+          "t": 3.24,
+          "text": "computer"
+        },
+        {
+          "t": 3.58,
+          "text": "use"
+        }
+      ]
+    },
+    {
+      "start": 3.96,
+      "end": 4.9,
+      "text": "to anyone who",
+      "words": [
+        {
+          "t": 3.96,
           "text": "to"
         },
         {
-          "t": 2.0,
+          "t": 4.18,
+          "text": "anyone"
+        },
+        {
+          "t": 4.58,
+          "text": "who"
+        }
+      ]
+    },
+    {
+      "start": 4.9,
+      "end": 6.46,
+      "text": "uses Chrome. If",
+      "words": [
+        {
+          "t": 4.9,
+          "text": "uses"
+        },
+        {
+          "t": 5.18,
+          "text": "Chrome."
+        },
+        {
+          "t": 6.32,
+          "text": "If"
+        }
+      ]
+    },
+    {
+      "start": 6.46,
+      "end": 7.12,
+      "text": "that sounds like",
+      "words": [
+        {
+          "t": 6.46,
+          "text": "that"
+        },
+        {
+          "t": 6.68,
+          "text": "sounds"
+        },
+        {
+          "t": 6.9,
+          "text": "like"
+        }
+      ]
+    },
+    {
+      "start": 7.12,
+      "end": 8.6,
+      "text": "something ChatGPT already",
+      "words": [
+        {
+          "t": 7.12,
+          "text": "something"
+        },
+        {
+          "t": 7.46,
+          "text": "ChatGPT"
+        },
+        {
+          "t": 8.22,
+          "text": "already"
+        }
+      ]
+    },
+    {
+      "start": 8.6,
+      "end": 9.96,
+      "text": "did, you're half",
+      "words": [
+        {
+          "t": 8.6,
+          "text": "did,"
+        },
+        {
+          "t": 9.44,
+          "text": "you're"
+        },
+        {
+          "t": 9.66,
+          "text": "half"
+        }
+      ]
+    },
+    {
+      "start": 9.96,
+      "end": 12.4,
+      "text": "right. First, ChatGPT",
+      "words": [
+        {
+          "t": 9.96,
+          "text": "right."
+        },
+        {
+          "t": 10.9,
+          "text": "First,"
+        },
+        {
+          "t": 11.78,
+          "text": "ChatGPT"
+        }
+      ]
+    },
+    {
+      "start": 12.4,
+      "end": 13.24,
+      "text": "now works with",
+      "words": [
+        {
+          "t": 12.4,
+          "text": "now"
+        },
+        {
+          "t": 12.68,
+          "text": "works"
+        },
+        {
+          "t": 13.02,
+          "text": "with"
+        }
+      ]
+    },
+    {
+      "start": 13.24,
+      "end": 13.86,
+      "text": "the tabs you",
+      "words": [
+        {
+          "t": 13.24,
+          "text": "the"
+        },
+        {
+          "t": 13.38,
+          "text": "tabs"
+        },
+        {
+          "t": 13.62,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 13.86,
+      "end": 15.16,
+      "text": "have open. In",
+      "words": [
+        {
+          "t": 13.86,
+          "text": "have"
+        },
+        {
+          "t": 14.06,
+          "text": "open."
+        },
+        {
+          "t": 15.0,
+          "text": "In"
+        }
+      ]
+    },
+    {
+      "start": 15.16,
+      "end": 15.9,
+      "text": "Chat, it looks",
+      "words": [
+        {
+          "t": 15.16,
+          "text": "Chat,"
+        },
+        {
+          "t": 15.64,
+          "text": "it"
+        },
+        {
+          "t": 15.72,
+          "text": "looks"
+        }
+      ]
+    },
+    {
+      "start": 15.9,
+      "end": 16.9,
+      "text": "across every one,",
+      "words": [
+        {
+          "t": 15.9,
+          "text": "across"
+        },
+        {
+          "t": 16.24,
+          "text": "every"
+        },
+        {
+          "t": 16.57,
+          "text": "one,"
+        }
+      ]
+    },
+    {
+      "start": 17.28,
+      "end": 18.2,
+      "text": "like the sofas",
+      "words": [
+        {
+          "t": 17.28,
+          "text": "like"
+        },
+        {
+          "t": 17.62,
+          "text": "the"
+        },
+        {
+          "t": 17.76,
+          "text": "sofas"
+        }
+      ]
+    },
+    {
+      "start": 18.2,
+      "end": 19.18,
+      "text": "you're shopping for.",
+      "words": [
+        {
+          "t": 18.2,
+          "text": "you're"
+        },
+        {
+          "t": 18.5,
+          "text": "shopping"
+        },
+        {
+          "t": 18.8,
+          "text": "for."
+        }
+      ]
+    },
+    {
+      "start": 19.74,
+      "end": 20.52,
+      "text": "Switch to Work",
+      "words": [
+        {
+          "t": 19.74,
+          "text": "Switch"
+        },
+        {
+          "t": 20.04,
+          "text": "to"
+        },
+        {
+          "t": 20.3,
+          "text": "Work"
+        }
+      ]
+    },
+    {
+      "start": 20.52,
+      "end": 21.32,
+      "text": "and it controls",
+      "words": [
+        {
+          "t": 20.52,
+          "text": "and"
+        },
+        {
+          "t": 20.78,
+          "text": "it"
+        },
+        {
+          "t": 20.88,
+          "text": "controls"
+        }
+      ]
+    },
+    {
+      "start": 21.32,
+      "end": 22.68,
+      "text": "those tabs. It",
+      "words": [
+        {
+          "t": 21.32,
+          "text": "those"
+        },
+        {
+          "t": 21.64,
+          "text": "tabs."
+        },
+        {
+          "t": 22.52,
+          "text": "It"
+        }
+      ]
+    },
+    {
+      "start": 22.68,
+      "end": 23.46,
+      "text": "can send messages,",
+      "words": [
+        {
+          "t": 22.68,
+          "text": "can"
+        },
+        {
+          "t": 22.8,
+          "text": "send"
+        },
+        {
+          "t": 23.04,
+          "text": "messages,"
+        }
+      ]
+    },
+    {
+      "start": 23.94,
+      "end": 24.68,
+      "text": "fill out forms,",
+      "words": [
+        {
+          "t": 23.94,
+          "text": "fill"
+        },
+        {
+          "t": 24.12,
+          "text": "out"
+        },
+        {
+          "t": 24.26,
+          "text": "forms,"
+        }
+      ]
+    },
+    {
+      "start": 24.94,
+      "end": 26.0,
+      "text": "download files, and",
+      "words": [
+        {
+          "t": 24.94,
+          "text": "download"
+        },
+        {
+          "t": 25.18,
+          "text": "files,"
+        },
+        {
+          "t": 25.92,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 26.0,
+      "end": 26.76,
+      "text": "even group the",
+      "words": [
+        {
+          "t": 26.0,
+          "text": "even"
+        },
+        {
+          "t": 26.3,
+          "text": "group"
+        },
+        {
+          "t": 26.56,
           "text": "the"
         }
       ]
     },
     {
-      "start": 2.14,
-      "end": 3.52,
-      "text": "ChatGPT Chrome extension,",
+      "start": 26.76,
+      "end": 27.5,
+      "text": "pile you have",
       "words": [
         {
-          "t": 2.14,
-          "text": "ChatGPT"
+          "t": 26.76,
+          "text": "pile"
         },
         {
-          "t": 2.76,
-          "text": "Chrome"
-        },
-        {
-          "t": 2.98,
-          "text": "extension,"
-        }
-      ]
-    },
-    {
-      "start": 3.88,
-      "end": 5.34,
-      "text": "hands ChatGPT every",
-      "words": [
-        {
-          "t": 3.88,
-          "text": "hands"
-        },
-        {
-          "t": 4.18,
-          "text": "ChatGPT"
-        },
-        {
-          "t": 5.02,
-          "text": "every"
-        }
-      ]
-    },
-    {
-      "start": 5.34,
-      "end": 6.02,
-      "text": "tab you have",
-      "words": [
-        {
-          "t": 5.34,
-          "text": "tab"
-        },
-        {
-          "t": 5.64,
+          "t": 27.02,
           "text": "you"
         },
         {
-          "t": 5.84,
+          "t": 27.26,
           "text": "have"
         }
       ]
     },
     {
-      "start": 6.02,
-      "end": 7.62,
-      "text": "open. One switch",
+      "start": 27.5,
+      "end": 29.16,
+      "text": "open. Second, the",
       "words": [
         {
-          "t": 6.02,
+          "t": 27.5,
           "text": "open."
         },
         {
-          "t": 7.08,
-          "text": "One"
+          "t": 28.46,
+          "text": "Second,"
         },
         {
-          "t": 7.42,
-          "text": "switch"
-        }
-      ]
-    },
-    {
-      "start": 7.62,
-      "end": 8.62,
-      "text": "decides what it",
-      "words": [
-        {
-          "t": 7.62,
-          "text": "decides"
-        },
-        {
-          "t": 8.12,
-          "text": "what"
-        },
-        {
-          "t": 8.5,
-          "text": "it"
-        }
-      ]
-    },
-    {
-      "start": 8.62,
-      "end": 9.2,
-      "text": "does with them.",
-      "words": [
-        {
-          "t": 8.62,
-          "text": "does"
-        },
-        {
-          "t": 8.8,
-          "text": "with"
-        },
-        {
-          "t": 9.0,
-          "text": "them."
-        }
-      ]
-    },
-    {
-      "start": 9.86,
-      "end": 10.28,
-      "text": "Leave it on",
-      "words": [
-        {
-          "t": 9.86,
-          "text": "Leave"
-        },
-        {
-          "t": 10.06,
-          "text": "it"
-        },
-        {
-          "t": 10.16,
-          "text": "on"
-        }
-      ]
-    },
-    {
-      "start": 10.28,
-      "end": 11.98,
-      "text": "Chat, and ChatGPT",
-      "words": [
-        {
-          "t": 10.28,
-          "text": "Chat,"
-        },
-        {
-          "t": 10.58,
-          "text": "and"
-        },
-        {
-          "t": 11.38,
-          "text": "ChatGPT"
-        }
-      ]
-    },
-    {
-      "start": 11.98,
-      "end": 12.76,
-      "text": "just reads them.",
-      "words": [
-        {
-          "t": 11.98,
-          "text": "just"
-        },
-        {
-          "t": 12.2,
-          "text": "reads"
-        },
-        {
-          "t": 12.44,
-          "text": "them."
-        }
-      ]
-    },
-    {
-      "start": 13.52,
-      "end": 14.04,
-      "text": "Shopping for a",
-      "words": [
-        {
-          "t": 13.52,
-          "text": "Shopping"
-        },
-        {
-          "t": 13.78,
-          "text": "for"
-        },
-        {
-          "t": 13.94,
-          "text": "a"
-        }
-      ]
-    },
-    {
-      "start": 14.04,
-      "end": 14.7,
-      "text": "sofa with eight",
-      "words": [
-        {
-          "t": 14.04,
-          "text": "sofa"
-        },
-        {
-          "t": 14.26,
-          "text": "with"
-        },
-        {
-          "t": 14.52,
-          "text": "eight"
-        }
-      ]
-    },
-    {
-      "start": 14.7,
-      "end": 16.22,
-      "text": "tabs open. Ask",
-      "words": [
-        {
-          "t": 14.7,
-          "text": "tabs"
-        },
-        {
-          "t": 14.96,
-          "text": "open."
-        },
-        {
-          "t": 15.92,
-          "text": "Ask"
-        }
-      ]
-    },
-    {
-      "start": 16.22,
-      "end": 16.88,
-      "text": "which one fits",
-      "words": [
-        {
-          "t": 16.22,
-          "text": "which"
-        },
-        {
-          "t": 16.42,
-          "text": "one"
-        },
-        {
-          "t": 16.62,
-          "text": "fits"
-        }
-      ]
-    },
-    {
-      "start": 16.88,
-      "end": 17.74,
-      "text": "and it compares",
-      "words": [
-        {
-          "t": 16.88,
-          "text": "and"
-        },
-        {
-          "t": 17.26,
-          "text": "it"
-        },
-        {
-          "t": 17.34,
-          "text": "compares"
-        }
-      ]
-    },
-    {
-      "start": 17.74,
-      "end": 18.6,
-      "text": "every tab and",
-      "words": [
-        {
-          "t": 17.74,
-          "text": "every"
-        },
-        {
-          "t": 18.14,
-          "text": "tab"
-        },
-        {
-          "t": 18.44,
-          "text": "and"
-        }
-      ]
-    },
-    {
-      "start": 18.6,
-      "end": 19.24,
-      "text": "picks a favorite.",
-      "words": [
-        {
-          "t": 18.6,
-          "text": "picks"
-        },
-        {
-          "t": 18.8,
-          "text": "a"
-        },
-        {
-          "t": 18.94,
-          "text": "favorite."
-        }
-      ]
-    },
-    {
-      "start": 20.06,
-      "end": 20.72,
-      "text": "Flip that switch",
-      "words": [
-        {
-          "t": 20.06,
-          "text": "Flip"
-        },
-        {
-          "t": 20.32,
-          "text": "that"
-        },
-        {
-          "t": 20.52,
-          "text": "switch"
-        }
-      ]
-    },
-    {
-      "start": 20.72,
-      "end": 21.9,
-      "text": "to Work, the",
-      "words": [
-        {
-          "t": 20.72,
-          "text": "to"
-        },
-        {
-          "t": 20.94,
-          "text": "Work,"
-        },
-        {
-          "t": 21.82,
+          "t": 29.1,
           "text": "the"
         }
       ]
     },
     {
-      "start": 21.9,
-      "end": 22.76,
-      "text": "agent mode and",
+      "start": 29.16,
+      "end": 30.42,
+      "text": "ChatGPT side panel",
       "words": [
         {
-          "t": 21.9,
-          "text": "agent"
+          "t": 29.16,
+          "text": "ChatGPT"
         },
         {
-          "t": 22.2,
-          "text": "mode"
+          "t": 29.82,
+          "text": "side"
         },
         {
-          "t": 22.52,
-          "text": "and"
+          "t": 30.08,
+          "text": "panel"
         }
       ]
     },
     {
-      "start": 22.76,
-      "end": 23.44,
-      "text": "it acts inside",
+      "start": 30.42,
+      "end": 31.36,
+      "text": "in Chrome got",
       "words": [
         {
-          "t": 22.76,
-          "text": "it"
+          "t": 30.42,
+          "text": "in"
         },
         {
-          "t": 22.88,
-          "text": "acts"
+          "t": 30.7,
+          "text": "Chrome"
         },
         {
-          "t": 23.14,
-          "text": "inside"
+          "t": 31.0,
+          "text": "got"
         }
       ]
     },
     {
-      "start": 23.44,
-      "end": 24.4,
-      "text": "those tabs instead.",
+      "start": 31.36,
+      "end": 32.12,
+      "text": "the full app.",
       "words": [
         {
-          "t": 23.44,
-          "text": "those"
+          "t": 31.36,
+          "text": "the"
         },
         {
-          "t": 23.68,
-          "text": "tabs"
+          "t": 31.54,
+          "text": "full"
         },
         {
-          "t": 24.0,
-          "text": "instead."
+          "t": 31.76,
+          "text": "app."
         }
       ]
     },
     {
-      "start": 24.96,
-      "end": 25.64,
-      "text": "It can send",
+      "start": 32.64,
+      "end": 33.58,
+      "text": "Your entire chat",
       "words": [
         {
-          "t": 24.96,
-          "text": "It"
+          "t": 32.64,
+          "text": "Your"
         },
         {
-          "t": 25.26,
-          "text": "can"
+          "t": 32.78,
+          "text": "entire"
         },
         {
-          "t": 25.42,
-          "text": "send"
+          "t": 33.26,
+          "text": "chat"
         }
       ]
     },
     {
-      "start": 25.64,
-      "end": 26.96,
-      "text": "messages, fill out",
+      "start": 33.58,
+      "end": 34.72,
+      "text": "history with Chat",
       "words": [
         {
-          "t": 25.64,
-          "text": "messages,"
+          "t": 33.58,
+          "text": "history"
         },
         {
-          "t": 26.42,
-          "text": "fill"
+          "t": 34.08,
+          "text": "with"
         },
         {
-          "t": 26.82,
-          "text": "out"
+          "t": 34.4,
+          "text": "Chat"
         }
       ]
     },
     {
-      "start": 26.96,
-      "end": 28.34,
-      "text": "forms, download files",
+      "start": 34.72,
+      "end": 35.72,
+      "text": "or Work right",
       "words": [
         {
-          "t": 26.96,
-          "text": "forms,"
+          "t": 34.72,
+          "text": "or"
         },
         {
-          "t": 27.64,
-          "text": "download"
+          "t": 35.08,
+          "text": "Work"
         },
         {
-          "t": 27.92,
-          "text": "files"
+          "t": 35.4,
+          "text": "right"
         }
       ]
     },
     {
-      "start": 28.34,
-      "end": 29.18,
-      "text": "and even group",
+      "start": 35.72,
+      "end": 36.52,
+      "text": "beside the site",
       "words": [
         {
-          "t": 28.34,
-          "text": "and"
+          "t": 35.72,
+          "text": "beside"
         },
         {
-          "t": 28.74,
-          "text": "even"
+          "t": 36.0,
+          "text": "the"
         },
         {
-          "t": 28.94,
-          "text": "group"
+          "t": 36.26,
+          "text": "site"
         }
       ]
     },
     {
-      "start": 29.18,
-      "end": 30.72,
-      "text": "your tabs. Before",
+      "start": 36.52,
+      "end": 37.86,
+      "text": "you're on. Now",
       "words": [
         {
-          "t": 29.18,
-          "text": "your"
+          "t": 36.52,
+          "text": "you're"
         },
         {
-          "t": 29.36,
-          "text": "tabs."
+          "t": 36.84,
+          "text": "on."
         },
         {
-          "t": 30.46,
-          "text": "Before"
+          "t": 37.66,
+          "text": "Now"
         }
       ]
     },
     {
-      "start": 30.72,
-      "end": 31.28,
-      "text": "it acts on",
+      "start": 37.86,
+      "end": 38.4,
+      "text": "the half you",
       "words": [
         {
-          "t": 30.72,
-          "text": "it"
+          "t": 37.86,
+          "text": "the"
         },
         {
-          "t": 30.92,
-          "text": "acts"
+          "t": 38.0,
+          "text": "half"
         },
         {
-          "t": 31.1,
-          "text": "on"
-        }
-      ]
-    },
-    {
-      "start": 31.28,
-      "end": 31.86,
-      "text": "a new website,",
-      "words": [
-        {
-          "t": 31.28,
-          "text": "a"
-        },
-        {
-          "t": 31.38,
-          "text": "new"
-        },
-        {
-          "t": 31.5,
-          "text": "website,"
-        }
-      ]
-    },
-    {
-      "start": 32.1,
-      "end": 32.7,
-      "text": "it asks you",
-      "words": [
-        {
-          "t": 32.1,
-          "text": "it"
-        },
-        {
-          "t": 32.2,
-          "text": "asks"
-        },
-        {
-          "t": 32.48,
+          "t": 38.22,
           "text": "you"
         }
       ]
     },
     {
-      "start": 32.7,
-      "end": 33.8,
-      "text": "first by default.",
+      "start": 38.4,
+      "end": 39.84,
+      "text": "already knew. Since",
       "words": [
         {
-          "t": 32.7,
-          "text": "first"
+          "t": 38.4,
+          "text": "already"
         },
         {
-          "t": 33.06,
-          "text": "by"
+          "t": 38.78,
+          "text": "knew."
         },
         {
-          "t": 33.44,
-          "text": "default."
+          "t": 39.62,
+          "text": "Since"
         }
       ]
     },
     {
-      "start": 34.82,
-      "end": 35.26,
-      "text": "To set it",
+      "start": 39.84,
+      "end": 40.88,
+      "text": "July, that side",
       "words": [
         {
-          "t": 34.82,
-          "text": "To"
+          "t": 39.84,
+          "text": "July,"
         },
         {
-          "t": 34.96,
-          "text": "set"
+          "t": 40.5,
+          "text": "that"
         },
         {
-          "t": 35.14,
+          "t": 40.58,
+          "text": "side"
+        }
+      ]
+    },
+    {
+      "start": 40.88,
+      "end": 41.74,
+      "text": "panel could read",
+      "words": [
+        {
+          "t": 40.88,
+          "text": "panel"
+        },
+        {
+          "t": 41.24,
+          "text": "could"
+        },
+        {
+          "t": 41.46,
+          "text": "read"
+        }
+      ]
+    },
+    {
+      "start": 41.74,
+      "end": 43.14,
+      "text": "your tabs. Acting",
+      "words": [
+        {
+          "t": 41.74,
+          "text": "your"
+        },
+        {
+          "t": 41.94,
+          "text": "tabs."
+        },
+        {
+          "t": 42.82,
+          "text": "Acting"
+        }
+      ]
+    },
+    {
+      "start": 43.14,
+      "end": 44.0,
+      "text": "inside them and",
+      "words": [
+        {
+          "t": 43.14,
+          "text": "inside"
+        },
+        {
+          "t": 43.46,
+          "text": "them"
+        },
+        {
+          "t": 43.78,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 44.0,
+      "end": 44.8,
+      "text": "the full app",
+      "words": [
+        {
+          "t": 44.0,
+          "text": "the"
+        },
+        {
+          "t": 44.12,
+          "text": "full"
+        },
+        {
+          "t": 44.52,
+          "text": "app"
+        }
+      ]
+    },
+    {
+      "start": 44.8,
+      "end": 45.38,
+      "text": "in the panel",
+      "words": [
+        {
+          "t": 44.8,
+          "text": "in"
+        },
+        {
+          "t": 44.96,
+          "text": "the"
+        },
+        {
+          "t": 45.06,
+          "text": "panel"
+        }
+      ]
+    },
+    {
+      "start": 45.38,
+      "end": 46.32,
+      "text": "are what's new.",
+      "words": [
+        {
+          "t": 45.38,
+          "text": "are"
+        },
+        {
+          "t": 45.72,
+          "text": "what's"
+        },
+        {
+          "t": 46.14,
+          "text": "new."
+        }
+      ]
+    },
+    {
+      "start": 46.82,
+      "end": 47.7,
+      "text": "By default, it",
+      "words": [
+        {
+          "t": 46.82,
+          "text": "By"
+        },
+        {
+          "t": 47.0,
+          "text": "default,"
+        },
+        {
+          "t": 47.58,
           "text": "it"
         }
       ]
     },
     {
-      "start": 35.26,
-      "end": 36.16,
-      "text": "up, add the",
+      "start": 47.7,
+      "end": 48.32,
+      "text": "checks with you",
       "words": [
         {
-          "t": 35.26,
-          "text": "up,"
+          "t": 47.7,
+          "text": "checks"
         },
         {
-          "t": 35.84,
+          "t": 47.9,
+          "text": "with"
+        },
+        {
+          "t": 48.14,
+          "text": "you"
+        }
+      ]
+    },
+    {
+      "start": 48.32,
+      "end": 49.14,
+      "text": "before it acts",
+      "words": [
+        {
+          "t": 48.32,
+          "text": "before"
+        },
+        {
+          "t": 48.62,
+          "text": "it"
+        },
+        {
+          "t": 48.84,
+          "text": "acts"
+        }
+      ]
+    },
+    {
+      "start": 49.14,
+      "end": 49.68,
+      "text": "on a new",
+      "words": [
+        {
+          "t": 49.14,
+          "text": "on"
+        },
+        {
+          "t": 49.42,
+          "text": "a"
+        },
+        {
+          "t": 49.54,
+          "text": "new"
+        }
+      ]
+    },
+    {
+      "start": 49.68,
+      "end": 51.22,
+      "text": "website. To try",
+      "words": [
+        {
+          "t": 49.68,
+          "text": "website."
+        },
+        {
+          "t": 50.74,
+          "text": "To"
+        },
+        {
+          "t": 50.96,
+          "text": "try"
+        }
+      ]
+    },
+    {
+      "start": 51.22,
+      "end": 51.82,
+      "text": "it, add the",
+      "words": [
+        {
+          "t": 51.22,
+          "text": "it,"
+        },
+        {
+          "t": 51.54,
           "text": "add"
         },
         {
-          "t": 36.0,
+          "t": 51.68,
           "text": "the"
         }
       ]
     },
     {
-      "start": 36.16,
-      "end": 37.4,
+      "start": 51.82,
+      "end": 53.2,
       "text": "ChatGPT extension to",
       "words": [
         {
-          "t": 36.16,
+          "t": 51.82,
           "text": "ChatGPT"
         },
         {
-          "t": 36.76,
+          "t": 52.48,
           "text": "extension"
         },
         {
-          "t": 37.1,
+          "t": 52.86,
           "text": "to"
         }
       ]
     },
     {
-      "start": 37.4,
-      "end": 38.36,
-      "text": "Chrome then mention",
+      "start": 53.2,
+      "end": 54.14,
+      "text": "Chrome and mention",
       "words": [
         {
-          "t": 37.4,
+          "t": 53.2,
           "text": "Chrome"
         },
         {
-          "t": 37.72,
-          "text": "then"
+          "t": 53.5,
+          "text": "and"
         },
         {
-          "t": 38.04,
+          "t": 53.8,
           "text": "mention"
         }
       ]
     },
     {
-      "start": 38.36,
-      "end": 39.2,
-      "text": "@Chrome when you",
+      "start": 54.14,
+      "end": 56.16,
+      "text": "@Chrome. OpenAI says",
       "words": [
         {
-          "t": 38.36,
-          "text": "@Chrome"
+          "t": 54.14,
+          "text": "@Chrome."
         },
         {
-          "t": 38.82,
-          "text": "when"
+          "t": 54.76,
+          "text": "OpenAI"
         },
         {
-          "t": 39.04,
-          "text": "you"
+          "t": 55.78,
+          "text": "says"
         }
       ]
     },
     {
-      "start": 39.2,
-      "end": 40.76,
-      "text": "ask. According to",
+      "start": 56.16,
+      "end": 57.16,
+      "text": "it's available on",
       "words": [
         {
-          "t": 39.2,
-          "text": "ask."
+          "t": 56.16,
+          "text": "it's"
         },
         {
-          "t": 40.26,
-          "text": "According"
-        },
-        {
-          "t": 40.56,
-          "text": "to"
-        }
-      ]
-    },
-    {
-      "start": 40.76,
-      "end": 41.92,
-      "text": "OpenAI, the extension",
-      "words": [
-        {
-          "t": 40.76,
-          "text": "OpenAI,"
-        },
-        {
-          "t": 41.54,
-          "text": "the"
-        },
-        {
-          "t": 41.58,
-          "text": "extension"
-        }
-      ]
-    },
-    {
-      "start": 41.92,
-      "end": 42.8,
-      "text": "is available on",
-      "words": [
-        {
-          "t": 41.92,
-          "text": "is"
-        },
-        {
-          "t": 42.18,
+          "t": 56.48,
           "text": "available"
         },
         {
-          "t": 42.46,
+          "t": 56.74,
           "text": "on"
         }
       ]
     },
     {
-      "start": 42.8,
-      "end": 44.16,
+      "start": 57.16,
+      "end": 58.7,
       "text": "every ChatGPT plan.",
       "words": [
         {
-          "t": 42.8,
+          "t": 57.16,
           "text": "every"
         },
         {
-          "t": 43.08,
+          "t": 57.52,
           "text": "ChatGPT"
         },
         {
-          "t": 43.86,
+          "t": 58.34,
           "text": "plan."
         }
       ]
     },
     {
-      "start": 44.94,
-      "end": 45.54,
+      "start": 59.3,
+      "end": 59.98,
       "text": "Which tab would",
       "words": [
         {
-          "t": 44.94,
+          "t": 59.3,
           "text": "Which"
         },
         {
-          "t": 45.12,
+          "t": 59.48,
           "text": "tab"
         },
         {
-          "t": 45.36,
+          "t": 59.76,
           "text": "would"
         }
       ]
     },
     {
-      "start": 45.54,
-      "end": 45.92,
+      "start": 59.98,
+      "end": 60.38,
       "text": "you hand it",
       "words": [
         {
-          "t": 45.54,
+          "t": 59.98,
           "text": "you"
         },
         {
-          "t": 45.64,
+          "t": 60.06,
           "text": "hand"
         },
         {
-          "t": 45.82,
+          "t": 60.28,
           "text": "it"
         }
       ]
     },
     {
-      "start": 45.92,
-      "end": 46.18,
+      "start": 60.38,
+      "end": 60.66,
       "text": "first?",
       "words": [
         {
-          "t": 45.92,
+          "t": 60.38,
           "text": "first?"
         }
       ]
@@ -1357,11 +1700,11 @@
   "noMusicReason": "update explainer read over OpenAI's own footage; the voice and UI sounds carry it (standing no-music default)",
   "format": "news",
   "showCredits": false,
-  "script": "OpenAI's October 15th update to the ChatGPT Chrome extension hands ChatGPT every tab you have open. One switch decides what it does with them.\n\nLeave it on Chat, and ChatGPT just reads them. Shopping for a sofa with eight tabs open? Ask which one fits, and it compares every tab and picks a favorite.\n\nFlip that switch to Work, the agent mode, and it acts inside those tabs instead: it can send messages, fill out forms, download files, and even group your tabs.\n\nBefore it acts on a new website, it asks you first, by default.\n\nTo set it up, add the ChatGPT extension to Chrome, then mention @Chrome when you ask. According to OpenAI, the extension is available on every ChatGPT plan.\n\nWhich tab would you hand it first?",
+  "script": "On October 15th, OpenAI said it's bringing the power of computer use to anyone who uses Chrome. If that sounds like something ChatGPT already did, you're half right.\n\nFirst, ChatGPT now works with the tabs you have open. In Chat, it looks across every one, like the sofas you're shopping for. Switch to Work, and it controls those tabs: it can send messages, fill out forms, download files, and even group the pile you have open.\n\nSecond, the ChatGPT side panel in Chrome got the full app: your entire chat history, with Chat or Work right beside the site you're on.\n\nNow the half you already knew. Since July, that side panel could read your tabs. Acting inside them, and the full app in the panel, are what's new.\n\nBy default, it checks with you before it acts on a new website.\n\nTo try it, add the ChatGPT extension to Chrome and mention @Chrome. OpenAI says it's available on every ChatGPT plan.\n\nWhich tab would you hand it first?",
   "approval": {
-    "sha256": "2ac36a55a30a1fdde9dc4e31369fe7b32d5f2188d38aaf870ac3814a219c622b",
-    "approvedAt": "2026-10-19T09:00:16+00:00",
-    "words": 130,
+    "sha256": "4a82483440f5766c30c4b1f8233c1bc36404c33dd90f37609a21e64c3f5244b5",
+    "approvedAt": "2026-10-19T09:31:37+00:00",
+    "words": 169,
     "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
   }
 }

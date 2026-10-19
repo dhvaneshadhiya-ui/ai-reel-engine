@@ -8,18 +8,22 @@
  "noMusicReason": "update explainer read over OpenAI's own footage; the voice and UI sounds carry it (standing no-music default)",
  "emphasis": [
   "October 15th",
-  "every tab",
-  "One switch",
+  "computer use",
+  "half right",
+  "tabs",
   "Chat",
-  "reads",
-  "eight tabs",
-  "favorite",
+  "every one",
   "Work",
-  "acts",
+  "controls",
   "messages",
   "forms",
   "group",
-  "asks you first",
+  "Second",
+  "full app",
+  "chat history",
+  "July",
+  "new",
+  "checks with you",
   "extension",
   "@Chrome",
   "every ChatGPT plan",
@@ -27,12 +31,51 @@
  ],
  "caption_corrections": {
   "at Chrome": "@Chrome",
-  "OpenAI is": "OpenAI's"
+  "everyone": "every one"
  },
  "shots": [
   {
-   "start_phrase": "OpenAI's October 15th update",
-   "line": "OpenAI's October 15th update to the ChatGPT Chrome extension",
+   "start_phrase": "On October 15th,",
+   "line": "On October 15th, OpenAI said it's bringing the power of computer use to anyone who uses Chrome.",
+   "asset_id": "card-tabs",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/card-tabs.mp4",
+    "covers": "bringing the power of computer use to anyone who uses Chrome",
+    "zoomDir": "none",
+    "headline": {
+     "lines": [
+      {
+       "text": "OPENAI \u00b7 OCT 15",
+       "kind": "label",
+       "at": 0.0
+      },
+      {
+       "text": "COMPUTER USE",
+       "kind": "headline",
+       "at": 0.3
+      },
+      {
+       "text": "FOR CHROME",
+       "kind": "headline",
+       "at": 0.9
+      }
+     ],
+     "y": 0.22
+    },
+    "sfx": [
+     {
+      "src": "sfx/Pop.MP3",
+      "vol": 0.5,
+      "at": 0.3
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "If that sounds like",
+   "line": "If that sounds like something ChatGPT already did, you're half right.",
    "asset_id": "cws-mobile",
    "tier": "official",
    "scene": {
@@ -42,65 +85,75 @@
     "srcHeight": 2340,
     "lines": [
      {
-      "at": 0.2,
+      "at": 0.3,
       "x": 468,
       "y": 222,
       "w": 300,
       "h": 75
      },
      {
-      "at": 1.6,
+      "at": 1.4,
       "x": 490,
       "y": 650,
       "w": 345,
       "h": 70
      }
     ],
-    "covers": "the ChatGPT Chrome extension",
+    "covers": "something ChatGPT already did, you're half right",
     "follow": true,
     "headline": {
      "lines": [
       {
-       "text": "CHATGPT IN CHROME",
+       "text": "ALREADY HAD THIS?",
        "kind": "label",
-       "at": 0.0
+       "at": 0.2
       },
       {
-       "text": "OCT 15 UPDATE",
+       "text": "HALF RIGHT",
        "kind": "headline",
-       "at": 0.3
+       "at": 2.6
       }
      ],
      "y": 0.57
     },
     "sfx": [
      {
-      "src": "sfx-action/marker.mp3",
-      "vol": 0.6,
-      "at": 0.2
+      "src": "sfx/Camera Shutter.MP3",
+      "vol": 0.45,
+      "at": 0.0
+     },
+     {
+      "src": "sfx/Pop.MP3",
+      "vol": 0.5,
+      "at": 2.6
      }
     ]
    }
   },
   {
-   "start_phrase": "hands ChatGPT every tab",
-   "line": "hands ChatGPT every tab you have open.",
-   "asset_id": "wide",
+   "start_phrase": "First, ChatGPT now works",
+   "line": "First, ChatGPT now works with the tabs you have open.",
+   "asset_id": "hook-tabs",
    "tier": "official",
    "scene": {
     "type": "footage",
-    "src": "assets/chatgpt-chrome-reads-tabs/wide.mp4",
-    "covers": "every tab you have open",
+    "src": "assets/chatgpt-chrome-reads-tabs/hook-tabs.mp4",
+    "covers": "works with the tabs you have open",
     "zoomDir": "none",
     "headline": {
      "lines": [
       {
-       "text": "EVERY TAB YOU HAVE OPEN",
+       "text": "1",
+       "kind": "label",
+       "at": 0.0
+      },
+      {
+       "text": "YOUR OPEN TABS",
        "kind": "headline",
-       "at": 0.1
+       "at": 0.3
       }
      ],
-     "y": 0.72
+     "y": 0.24
     },
     "sfx": [
      {
@@ -112,43 +165,14 @@
    }
   },
   {
-   "start_phrase": "One switch decides what",
-   "line": "One switch decides what it does with them.",
-   "asset_id": "toggle",
+   "start_phrase": "In Chat, it looks",
+   "line": "In Chat, it looks across every one, like the sofas you're shopping for.",
+   "asset_id": "answer",
    "tier": "official",
    "scene": {
     "type": "footage",
-    "src": "assets/chatgpt-chrome-reads-tabs/toggle.mp4",
-    "covers": "One switch",
-    "zoomDir": "none",
-    "headline": {
-     "lines": [
-      {
-       "text": "ONE SWITCH",
-       "kind": "headline",
-       "at": 0.2
-      }
-     ],
-     "y": 0.55
-    },
-    "sfx": [
-     {
-      "src": "sfx2/mouse-click-01.mp3",
-      "vol": 0.6,
-      "at": 0.2
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "Leave it on Chat,",
-   "line": "Leave it on Chat, and ChatGPT just reads them.",
-   "asset_id": "reading",
-   "tier": "official",
-   "scene": {
-    "type": "footage",
-    "src": "assets/chatgpt-chrome-reads-tabs/reading.mp4",
-    "covers": "Chat, and ChatGPT just reads them",
+    "src": "assets/chatgpt-chrome-reads-tabs/answer.mp4",
+    "covers": "In Chat, it looks across every one",
     "zoomDir": "none",
     "headline": {
      "lines": [
@@ -158,12 +182,12 @@
        "at": 0.1
       },
       {
-       "text": "READS YOUR TABS",
+       "text": "READS EVERY TAB",
        "kind": "headline",
        "at": 0.4
       }
      ],
-     "y": 0.55
+     "y": 0.62
     },
     "sfx": [
      {
@@ -175,78 +199,16 @@
    }
   },
   {
-   "start_phrase": "Shopping for a sofa",
-   "line": "Shopping for a sofa with eight tabs open?",
-   "asset_id": "hook-tabs",
-   "tier": "official",
-   "scene": {
-    "type": "footage",
-    "src": "assets/chatgpt-chrome-reads-tabs/hook-tabs.mp4",
-    "covers": "a sofa with eight tabs open",
-    "zoomDir": "none",
-    "headline": {
-     "lines": [
-      {
-       "text": "EIGHT SOFA TABS",
-       "kind": "headline",
-       "at": 0.2
-      }
-     ],
-     "y": 0.24
-    }
-   }
-  },
-  {
-   "start_phrase": "Ask which one fits",
-   "line": "Ask which one fits,",
-   "asset_id": "bubble",
-   "tier": "official",
-   "scene": {
-    "type": "footage",
-    "src": "assets/chatgpt-chrome-reads-tabs/bubble.mp4",
-    "covers": "Ask which one fits",
-    "zoomDir": "none"
-   }
-  },
-  {
-   "start_phrase": "and it compares every",
-   "line": "and it compares every tab and picks a favorite.",
-   "asset_id": "answer",
-   "tier": "official",
-   "scene": {
-    "type": "footage",
-    "src": "assets/chatgpt-chrome-reads-tabs/answer.mp4",
-    "covers": "compares every tab and picks a favorite",
-    "zoomDir": "none",
-    "headline": {
-     "lines": [
-      {
-       "text": "ONE CLEAR FAVORITE",
-       "kind": "headline",
-       "at": 0.6
-      }
-     ],
-     "y": 0.62
-    },
-    "sfx": [
-     {
-      "src": "sfx/Magic Reveal.MP3",
-      "vol": 0.45,
-      "at": 0.6
-     }
-    ]
-   }
-  },
-  {
-   "start_phrase": "Flip that switch to",
-   "line": "Flip that switch to Work, the agent mode,",
+   "start_phrase": "Switch to Work, and",
+   "line": "Switch to Work, and it controls those tabs:",
    "asset_id": "work-toggle",
    "tier": "official",
    "scene": {
     "type": "footage",
     "src": "assets/chatgpt-chrome-reads-tabs/work-toggle.mp4",
-    "covers": "Flip that switch to Work",
+    "covers": "Switch to Work",
     "zoomDir": "none",
+    "captionBottom": 340,
     "headline": {
      "lines": [
       {
@@ -255,7 +217,7 @@
        "at": 0.1
       },
       {
-       "text": "ACTS IN YOUR TABS",
+       "text": "ACTS IN THEM",
        "kind": "headline",
        "at": 0.4
       }
@@ -268,20 +230,7 @@
       "vol": 0.6,
       "at": 0.1
      }
-    ],
-    "captionBottom": 340
-   }
-  },
-  {
-   "start_phrase": "it acts inside those",
-   "line": "and it acts inside those tabs instead:",
-   "asset_id": "work-going",
-   "tier": "official",
-   "scene": {
-    "type": "footage",
-    "src": "assets/chatgpt-chrome-reads-tabs/work-going.mp4",
-    "covers": "acts inside those tabs",
-    "zoomDir": "none"
+    ]
    }
   },
   {
@@ -319,14 +268,14 @@
    }
   },
   {
-   "start_phrase": "and even group your",
-   "line": "and even group your tabs.",
+   "start_phrase": "and even group the",
+   "line": "and even group the pile you have open.",
    "asset_id": "demo-tabgroup",
    "tier": "official",
    "scene": {
     "type": "footage",
     "src": "assets/chatgpt-chrome-reads-tabs/demo-tabgroup.mp4",
-    "covers": "group your tabs",
+    "covers": "group the pile you have open",
     "zoomDir": "none",
     "headline": {
      "lines": [
@@ -336,7 +285,7 @@
        "at": 0.1
       }
      ],
-     "y": 0.66
+     "y": 0.42
     },
     "sfx": [
      {
@@ -348,8 +297,153 @@
    }
   },
   {
-   "start_phrase": "Before it acts on",
-   "line": "Before it acts on a new website, it asks you first, by default.",
+   "start_phrase": "Second, the ChatGPT side",
+   "line": "Second, the ChatGPT side panel in Chrome got the full app:",
+   "asset_id": "card-panel",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/card-panel.mp4",
+    "covers": "the ChatGPT side panel in Chrome got the full app",
+    "zoomDir": "none",
+    "headline": {
+     "lines": [
+      {
+       "text": "2",
+       "kind": "label",
+       "at": 0.0
+      },
+      {
+       "text": "FULL CHATGPT",
+       "kind": "headline",
+       "at": 0.3
+      },
+      {
+       "text": "IN THE SIDE PANEL",
+       "kind": "headline",
+       "at": 0.8
+      }
+     ],
+     "y": 0.22
+    },
+    "sfx": [
+     {
+      "src": "sfx/whoosh.MP3",
+      "vol": 0.45,
+      "at": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "your entire chat history,",
+   "line": "your entire chat history, with Chat or Work right beside the site you're on.",
+   "asset_id": "side-by-side",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/side-by-side.mp4",
+    "covers": "Chat or Work right beside the site you're on",
+    "zoomDir": "none",
+    "headline": {
+     "lines": [
+      {
+       "text": "YOUR CHAT HISTORY",
+       "kind": "label",
+       "at": 0.1
+      },
+      {
+       "text": "BESIDE ANY SITE",
+       "kind": "headline",
+       "at": 0.6
+      }
+     ],
+     "y": 0.2
+    }
+   }
+  },
+  {
+   "start_phrase": "Now the half you",
+   "line": "Now the half you already knew. Since July, that side panel could read your tabs.",
+   "asset_id": "card-july",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/card-july.mp4",
+    "covers": "Since July, that side panel could read your tabs",
+    "zoomDir": "none",
+    "headline": {
+     "lines": [
+      {
+       "text": "THE HALF YOU KNEW",
+       "kind": "label",
+       "at": 0.1
+      },
+      {
+       "text": "SINCE JULY:",
+       "kind": "headline",
+       "at": 2.0
+      },
+      {
+       "text": "IT COULD READ TABS",
+       "kind": "headline",
+       "at": 2.4
+      }
+     ],
+     "y": 0.22
+    },
+    "sfx": [
+     {
+      "src": "sfx/Camera Shutter.MP3",
+      "vol": 0.45,
+      "at": 0.0
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Acting inside them, and",
+   "line": "Acting inside them, and the full app in the panel, are what's new.",
+   "asset_id": "demo-prompt",
+   "tier": "official",
+   "scene": {
+    "type": "footage",
+    "src": "assets/chatgpt-chrome-reads-tabs/demo-prompt.mp4",
+    "covers": "Acting inside them",
+    "zoomDir": "none",
+    "captionBottom": 340,
+    "headline": {
+     "lines": [
+      {
+       "text": "WHAT'S NEW",
+       "kind": "label",
+       "at": 0.1
+      },
+      {
+       "text": "IT ACTS",
+       "kind": "headline",
+       "at": 0.4
+      },
+      {
+       "text": "+ THE FULL APP",
+       "kind": "headline",
+       "at": 1.6
+      }
+     ],
+     "y": 0.55
+    },
+    "sfx": [
+     {
+      "src": "sfx/Magic Reveal.MP3",
+      "vol": 0.45,
+      "at": 0.4
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "By default, it checks",
+   "line": "By default, it checks with you before it acts on a new website.",
    "asset_id": "docs-access-mobile",
    "tier": "official",
    "scene": {
@@ -359,21 +453,21 @@
     "srcHeight": 2340,
     "lines": [
      {
-      "at": 0.6,
+      "at": 0.4,
       "x": 97,
       "y": 445,
       "w": 734,
       "h": 52
      },
      {
-      "at": 1.8,
+      "at": 1.6,
       "x": 97,
       "y": 521,
       "w": 734,
       "h": 52
      }
     ],
-    "covers": "it asks you first, by default",
+    "covers": "checks with you before it acts on a new website",
     "follow": true,
     "sfx": [
      {
@@ -384,14 +478,14 @@
      {
       "src": "sfx-action/marker.mp3",
       "vol": 0.6,
-      "at": 0.6
+      "at": 0.4
      }
     ]
    }
   },
   {
-   "start_phrase": "To set it up,",
-   "line": "To set it up, add the ChatGPT extension to Chrome,",
+   "start_phrase": "To try it, add",
+   "line": "To try it, add the ChatGPT extension to Chrome",
    "asset_id": "docs-setup-mobile",
    "tier": "official",
    "scene": {
@@ -401,14 +495,14 @@
     "srcHeight": 2340,
     "lines": [
      {
-      "at": 0.8,
+      "at": 0.6,
       "x": 193,
       "y": 1106,
       "w": 778,
       "h": 52
      },
      {
-      "at": 1.5,
+      "at": 1.3,
       "x": 193,
       "y": 1184,
       "w": 778,
@@ -421,14 +515,14 @@
      {
       "src": "sfx-action/marker.mp3",
       "vol": 0.6,
-      "at": 0.8
+      "at": 0.6
      }
     ]
    }
   },
   {
-   "start_phrase": "then mention @Chrome when",
-   "line": "then mention @Chrome when you ask.",
+   "start_phrase": "and mention @Chrome.",
+   "line": "and mention @Chrome.",
    "asset_id": "chip",
    "tier": "official",
    "scene": {
@@ -441,7 +535,7 @@
       {
        "text": "MENTION @CHROME",
        "kind": "headline",
-       "at": 0.1
+       "at": 0.05
       }
      ],
      "y": 0.62
@@ -450,14 +544,14 @@
      {
       "src": "sfx-action/typekey.mp3",
       "vol": 0.5,
-      "at": 0.1
+      "at": 0.05
      }
     ]
    }
   },
   {
-   "start_phrase": "According to OpenAI, the",
-   "line": "According to OpenAI, the extension is available on every ChatGPT plan.",
+   "start_phrase": "OpenAI says it's available",
+   "line": "OpenAI says it's available on every ChatGPT plan.",
    "asset_id": "wide",
    "tier": "official",
    "scene": {

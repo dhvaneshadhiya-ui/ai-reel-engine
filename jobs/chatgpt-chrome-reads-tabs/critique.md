@@ -1,22 +1,22 @@
-# Critique — chatgpt-chrome-reads-tabs (v2, rewritten around the update; v1 sofa-led cut superseded)
+# Critique — chatgpt-chrome-reads-tabs (v3, follows OpenAI's 15 Oct thread; v1/v2 superseded)
 
 ## Round 1
 | hook | read | motion | variety | sync | match | min |
-|  6   |  7   |   7    |    8    |  8   |   8   |  6  |
-Worst three: 1. [scene 00, 0-3.9s] "CHATGPT IN CHROME / OCT 15 UPDATE" at y 0.50 sits on the store's Add to Desktop button and screenshot -> the hook reads as clutter -> FIX headline y 0.50 -> 0.57, over the carousel art only.  2. [scene 07, 20.1-22.8s] the caption covers the request being typed in Work -> the proof the Work beat shows is hidden -> FIX captionBottom 340 (below the input box, above the 0.835 platform zone).  3. [scene 09, 25.0-28.3s] "MESSAGES · FORMS · DOWNLOADS" is a label-size line on a busy form -> unreadable on a phone -> FIX headline kind, text "MESSAGES · FORMS · FILES".
-Checks failed: captions touching content (scene 07).
+|  8   |  7   |   8    |    8    |  8   |   8   |  7  |
+Worst three: 1. [scene 06, 25.9-28.5s] "+ GROUPS YOUR TABS" at y 0.66 shares the caption band -> caption and headline collide -> FIX headline y 0.42.  2. [scene 08, 32.6-37.7s] "YOUR CHAT HISTORY / BESIDE ANY SITE" at y 0.80 sits against the platform zone -> FIX y 0.20, in the blurred band above the square crop.  3. [scenes 00/07/09] three held title cards -> each is OpenAI's own card for a different claim (Oct 15 tabs, Oct 15 side panel, Jul 30) with its own big headline; kept.
+Checks failed: captions touching content (scene 06).
 Verdict: ANOTHER ROUND
 
 ## Round 2
 | hook | read | motion | variety | sync | match | min |
-|  7   |  8   |   8    |    8    |  8   |   8   |  7  |
-Worst three: 1. [scene 00] frame 0 is a store page with a static fit; the motion is the glide between highlighted lines and the headline build -> acceptable for a news open that names the update, as approved in the beat plan.  2. [cover] the first cover still said "8 SOFA TABS / ONE ANSWER" -> wrong story for v2 -> FIX cover rebuilt on the Chat | Work toggle, "CHAT OR WORK / IN YOUR TABS".  3. [scenes 01/14] the wide clip appears twice -> different moments and labels, 13 scenes apart; kept.
+|  8   |  8   |   8    |    8    |  8   |   8   |  8  |
+Worst three: 1. [scene 01] "ALREADY HAD THIS?" label sits on the store carousel art -> legible, and "HALF RIGHT" lands on the word; kept.  2. [scene 08] "your entire chat history" is not itself visible in the demo -> the scene shows the panel beside the site (the clause it covers); history carried by the label, attributed to OpenAI's thread in the ledger.  3. [scene 03] the sofa answer text is small at phone size -> "CHAT / READS EVERY TAB" carries it.
 Checks failed: none.
 Verdict: ANOTHER ROUND
 
 ## Round 3
 | hook | read | motion | variety | sync | match | min |
 |  8   |  8   |   8    |    8    |  8   |   8   |  8  |
-Worst three: 1. [footage scenes] OpenAI's UI text is small at phone size -> every spoken claim has a large on-screen line (ONE SWITCH, CHAT/READS YOUR TABS, WORK/ACTS IN YOUR TABS, MESSAGES · FORMS · FILES, + GROUPS YOUR TABS, MENTION @CHROME).  2. [scenes 04/15] the hook pan returns for the CTA -> deliberate callback to "tabs".  3. [scene 12] setup highlight sits mid-page under the caption band -> highlighted lines are above the caption; kept.
-Checks failed: none. 15 cues, all audible; one accent colour; end card 1.6s for "WHICH TAB FIRST?".
+Worst three: 1. [title cards] held stills under moving headlines -> each under 6s and each a new claim.  2. [scene 15 CTA] hook pan reused -> callback to "tabs".  3. [doc scenes] highlights above the caption band, covered body text not spoken.
+Checks failed: none. 18 cues, all audible; one accent colour; end card 1.7s.
 Verdict: READY
