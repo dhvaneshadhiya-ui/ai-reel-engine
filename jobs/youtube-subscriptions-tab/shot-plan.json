@@ -1,0 +1,862 @@
+{
+ "emphasis": [
+  "Subscriptions",
+  "nearly a decade",
+  "confirmed",
+  "Subs",
+  "upset",
+  "algorithm",
+  "reach",
+  "Live",
+  "Primetime",
+  "plus",
+  "three",
+  "eight",
+  "English",
+  "Home"
+ ],
+ "caption_corrections": {
+  "One tab showed": "One tap showed",
+  "subscriptions": "Subscriptions",
+  "subs": "Subs",
+  "home": "Home",
+  "music": "Music",
+  "prime time channel": "Primetime Channel"
+ },
+ "format": "news",
+ "music": true,
+ "facePlan": "bookends",
+ "audio": "assets/youtube-subscriptions-tab/vo.mp3",
+ "allowLong": false,
+ "showCredits": false,
+ "shots": [
+  {
+   "start_phrase": "YouTube just moved",
+   "asset_id": "old-bar",
+   "tier": "multi",
+   "line": "YouTube just moved your Subscriptions button, and some people are not happy about where it went.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "YouTube app \u00b7 the old layout",
+    "headline": "[[Subscriptions]] is moving",
+    "blocks": [
+     {
+      "id": "f",
+      "kind": "screen",
+      "src": "assets/youtube-subscriptions-tab/old-feed.png",
+      "width": 1280,
+      "height": 1500,
+      "device": false,
+      "h": 520
+     },
+     {
+      "id": "b",
+      "kind": "screen",
+      "src": "assets/youtube-subscriptions-tab/old-bar.png",
+      "width": 1280,
+      "height": 250,
+      "device": false,
+      "h": 300
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Not everyone is happy"
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "b",
+      "on": "YouTube",
+      "rect": [
+       700,
+       0,
+       440,
+       230
+      ],
+      "instant": true
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Subscriptions"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "happy"
+     },
+     {
+      "do": "focus",
+      "target": "b",
+      "on": "went",
+      "rect": [
+       0,
+       0,
+       1280,
+       250
+      ]
+     }
+    ],
+    "presenter": {
+     "src": "assets/youtube-subscriptions-tab/avatar-master-hook.mp4",
+     "from": 0.0
+    },
+    "asset_id": "old-bar"
+   }
+  },
+  {
+   "start_phrase": "For nearly a decade",
+   "asset_id": "old-bar",
+   "tier": "multi",
+   "line": "For nearly a decade it sat in the bottom bar.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "YouTube app \u00b7 bottom bar",
+    "headline": "In the bottom bar for [[nearly a decade]]",
+    "blocks": [
+     {
+      "id": "f",
+      "kind": "screen",
+      "src": "assets/youtube-subscriptions-tab/old-feed.png",
+      "width": 1280,
+      "height": 1500,
+      "device": false,
+      "h": 560
+     },
+     {
+      "id": "b",
+      "kind": "screen",
+      "src": "assets/youtube-subscriptions-tab/old-bar.png",
+      "width": 1280,
+      "height": 250,
+      "device": false,
+      "h": 300
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "b",
+      "on": "For",
+      "rect": [
+       0,
+       0,
+       1280,
+       250
+      ],
+      "instant": true
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "decade"
+     },
+     {
+      "do": "focus",
+      "target": "b",
+      "on": "bottom",
+      "rect": [
+       700,
+       0,
+       440,
+       230
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "YouTube confirmed this week",
+   "asset_id": "post-subs",
+   "tier": "official",
+   "line": "YouTube confirmed this week that, on Android and iPhone, it's leaving.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "TeamYouTube \u00b7 Community post",
+    "headline": "YouTube [[confirmed]] it",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/youtube-subscriptions-tab/post-subs.png",
+      "width": 1080,
+      "height": 1350,
+      "device": false,
+      "h": 760
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "On Android and iPhone"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "confirmed"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "week",
+      "rect": [
+       20,
+       420,
+       1040,
+       320
+      ],
+      "instant": true
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "Android"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "leaving",
+      "rect": [
+       20,
+       420,
+       700,
+       120
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "It's renamed subs",
+   "asset_id": "yt-topbar-subs",
+   "tier": "official",
+   "line": "It's renamed Subs, and it lives in the top bar on the Home tab, right after Home.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "YouTube's own demo",
+    "headline": "Now it's [[Subs]], up top",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/youtube-subscriptions-tab/yt-topbar-subs.mp4",
+      "width": 1080,
+      "height": 1350,
+      "h": 920,
+      "device": false
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Second, right after Home"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Subs"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "after"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Why would a button",
+   "asset_id": "new-topbar",
+   "tier": "single",
+   "line": "Why would a button move upset anyone? YouTube tested this in May, and people pushed back.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The new layout",
+    "headline": "Why would that [[upset]] anyone?",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/youtube-subscriptions-tab/new-topbar.jpg",
+      "width": 1344,
+      "height": 2992,
+      "device": false,
+      "h": 760
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "When YouTube tested it in May, people pushed back"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "upset"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "button",
+      "rect": [
+       0,
+       280,
+       1344,
+       1100
+      ],
+      "instant": true
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "tested"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "pushed",
+      "rect": [
+       160,
+       300,
+       560,
+       220
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "That bottom button was",
+   "asset_id": "old-bar",
+   "tier": "single",
+   "line": "That bottom button was how a lot of them skipped the algorithm: one tap showed only the channels they chose.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The old Subscriptions tab",
+    "headline": "A way past the [[algorithm]]",
+    "blocks": [
+     {
+      "id": "f",
+      "kind": "screen",
+      "src": "assets/youtube-subscriptions-tab/old-feed.png",
+      "width": 1280,
+      "height": 1500,
+      "device": false,
+      "h": 440
+     },
+     {
+      "id": "b",
+      "kind": "screen",
+      "src": "assets/youtube-subscriptions-tab/old-bar.png",
+      "width": 1280,
+      "height": 250,
+      "device": false,
+      "h": 360
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "One tap: only the channels you chose"
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "b",
+      "on": "That",
+      "rect": [
+       700,
+       0,
+       440,
+       230
+      ],
+      "instant": true
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "algorithm"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "showed"
+     },
+     {
+      "do": "focus",
+      "target": "b",
+      "on": "chose",
+      "rect": [
+       0,
+       0,
+       1280,
+       250
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Now it's a reach",
+   "asset_id": "new-topbar",
+   "tier": "official",
+   "line": "Now it's a reach up top, one tab over from the recommendations.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "The new top bar",
+    "headline": "Now it's a [[reach]] up top",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/youtube-subscriptions-tab/new-topbar.jpg",
+      "width": 1344,
+      "height": 2992,
+      "device": false,
+      "h": 760
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "One tab over from Home's recommendations"
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "Now",
+      "rect": [
+       160,
+       300,
+       560,
+       220
+      ],
+      "instant": true
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "reach"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "tab",
+      "rect": [
+       0,
+       280,
+       1344,
+       1100
+      ]
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "recommendations"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "The top bar gets",
+   "asset_id": "yt-topbar-feeds-wide",
+   "tier": "official",
+   "line": "The top bar gets busier, too. Live and Music get their own feeds.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "YouTube's own demo",
+    "headline": "[[Live]] and Music get feeds",
+    "blocks": [
+     {
+      "id": "c",
+      "kind": "clip",
+      "src": "assets/youtube-subscriptions-tab/yt-topbar-feeds-wide.mp4",
+      "width": 1080,
+      "height": 818,
+      "h": 760,
+      "device": false
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Each one a tap away in the top bar"
+     }
+    ],
+    "moves": [
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Live"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "busier"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Movies and TV shows",
+   "asset_id": "post-subs",
+   "tier": "official",
+   "line": "Movies and TV shows up only if you pay for something like a Primetime Channel.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "TeamYouTube \u00b7 Community post",
+    "headline": "Movies & TV: [[paid]] only",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/youtube-subscriptions-tab/post-subs.png",
+      "width": 1080,
+      "height": 1350,
+      "device": false,
+      "h": 760
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Shows up with active paid content"
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "Movies",
+      "rect": [
+       20,
+       0,
+       1040,
+       420
+      ],
+      "instant": true
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "pay"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "Primetime"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "There's also a new",
+   "asset_id": "yt-custom-feed-ui",
+   "tier": "official",
+   "line": "There's also a new plus sign up there.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "YouTube \u00b7 custom feeds",
+    "headline": "A new [[plus]] sign",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/youtube-subscriptions-tab/yt-custom-feed-ui.png",
+      "width": 1080,
+      "height": 910,
+      "device": false,
+      "h": 780
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "Top of the Home tab"
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "There's",
+      "rect": [
+       100,
+       90,
+       880,
+       130
+      ],
+      "instant": true
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "plus"
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "up"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Type a topic or",
+   "asset_id": "yt-custom-feed-ui",
+   "tier": "official",
+   "line": "Type a topic or a mood, like guided meditations under ten minutes, and YouTube builds a feed around it.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "YouTube \u00b7 custom feeds",
+    "headline": "Type it, get a [[feed]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/youtube-subscriptions-tab/yt-custom-feed-ui.png",
+      "width": 1080,
+      "height": 910,
+      "device": false,
+      "h": 780
+     },
+     {
+      "id": "t",
+      "kind": "text",
+      "text": "\"Guided meditations under ten minutes\""
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "Type",
+      "rect": [
+       240,
+       320,
+       620,
+       380
+      ],
+      "instant": true
+     },
+     {
+      "do": "show",
+      "target": "t",
+      "on": "guided"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "feed"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "builds",
+      "rect": [
+       0,
+       40,
+       1080,
+       800
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Free accounts can save",
+   "asset_id": "post-limits",
+   "tier": "official",
+   "line": "Free accounts can save three. Premium members get eight.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "TeamYouTube \u00b7 Community post",
+    "headline": "How many you can [[save]]",
+    "blocks": [
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/youtube-subscriptions-tab/post-limits.png",
+      "width": 1080,
+      "height": 1350,
+      "device": false,
+      "h": 620
+     },
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Free",
+        "v": "Three feeds",
+        "tone": "plain"
+       },
+       {
+        "k": "Premium",
+        "v": "Eight feeds",
+        "tone": "free"
+       }
+      ]
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "Free",
+      "rect": [
+       20,
+       360,
+       1040,
+       380
+      ],
+      "instant": true
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "three"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "save"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "Premium"
+     },
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "Premium",
+      "rect": [
+       20,
+       520,
+       1040,
+       220
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "Those custom feeds start",
+   "asset_id": "post-rollout",
+   "tier": "official",
+   "line": "Those custom feeds start in the US, in English. YouTube hasn't given a date for the new layout anywhere else.",
+   "scene": {
+    "type": "slide",
+    "eyebrow": "TeamYouTube \u00b7 Community post",
+    "headline": "[[US]], in English, first",
+    "blocks": [
+     {
+      "id": "r",
+      "kind": "rows",
+      "rows": [
+       {
+        "k": "Custom feeds",
+        "v": "US, English first",
+        "tone": "plain"
+       },
+       {
+        "k": "New layout",
+        "v": "No date given",
+        "tone": "plain"
+       }
+      ]
+     },
+     {
+      "id": "s",
+      "kind": "screen",
+      "src": "assets/youtube-subscriptions-tab/post-rollout.png",
+      "width": 1080,
+      "height": 1350,
+      "device": false,
+      "h": 600
+     }
+    ],
+    "moves": [
+     {
+      "do": "focus",
+      "target": "s",
+      "on": "start",
+      "rect": [
+       0,
+       340,
+       1080,
+       300
+      ],
+      "instant": true
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "US"
+     },
+     {
+      "do": "show",
+      "target": "r.0",
+      "on": "English"
+     },
+     {
+      "do": "show",
+      "target": "r.1",
+      "on": "date"
+     }
+    ]
+   }
+  },
+  {
+   "start_phrase": "So once your thumb",
+   "tier": "official",
+   "line": "So, once your thumb relearns it: will you still check Subs first, or just stay on Home?",
+   "scene": {
+    "type": "slide",
+    "cta": true,
+    "hideCaptions": true,
+    "headlineSize": "xl",
+    "headline": "[[Subs]] first, or Home?",
+    "blocks": [
+     {
+      "id": "d",
+      "kind": "text",
+      "text": "Tell me in the comments."
+     },
+     {
+      "id": "sp",
+      "kind": "spotlight",
+      "logo": "assets/logos/youtube.svg",
+      "name": "YouTube",
+      "note": "Subs moved to the top bar"
+     }
+    ],
+    "moves": [
+     {
+      "do": "show",
+      "target": "sp",
+      "on": "thumb"
+     },
+     {
+      "do": "pill",
+      "target": "headline",
+      "on": "Subs"
+     },
+     {
+      "do": "show",
+      "target": "d",
+      "on": "stay"
+     }
+    ],
+    "presenter": {
+     "src": "assets/youtube-subscriptions-tab/avatar-master-cta.mp4",
+     "from": 0.2
+    }
+   }
+  }
+ ]
+}

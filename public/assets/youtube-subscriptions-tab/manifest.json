@@ -1,0 +1,221 @@
+{
+ "slug": "youtube-subscriptions-tab",
+ "topic": "YouTube moves Subscriptions out of the mobile bottom bar; Subs joins the Home top bar",
+ "verified_facts": [
+  {
+   "fact": "Subs (formerly Subscriptions) feed moves to the top bar on the Home tab",
+   "source_url": "https://support.google.com/youtube/thread/474148940/new-ways-to-explore-youtube-from-your-home-page"
+  },
+  {
+   "fact": "Subscriptions was in the bottom bar for nearly a decade (2017); Android and iOS; Subs second after Home",
+   "source_url": "https://9to5google.com/2026/10/22/youtube-subscriptions-android-ios/"
+  },
+  {
+   "fact": "Live, Music, Movies & TV feeds; Movies & TV only with active paid content such as Primetime Channels",
+   "source_url": "https://support.google.com/youtube/thread/474148940/new-ways-to-explore-youtube-from-your-home-page"
+  },
+  {
+   "fact": "Custom feeds via +; up to 3 active (free), up to 8 (Premium); example 'guided meditations under 10 minutes'",
+   "source_url": "https://support.google.com/youtube/thread/474148940/new-ways-to-explore-youtube-from-your-home-page"
+  },
+  {
+   "fact": "Custom feeds rolling out in English to U.S. signed-in viewers; no date given for the navigation change",
+   "source_url": "https://support.google.com/youtube/thread/474148940/new-ways-to-explore-youtube-from-your-home-page"
+  },
+  {
+   "fact": "May 2026 test moved Subscriptions to the top; YouTube confirmed the experiment; users pushed back",
+   "source_url": "https://9to5google.com/2026/05/18/youtube-removes-subscription-tab-new-test-mobile/"
+  }
+ ],
+ "explicitly_NOT_claimed": [
+  "what fills the freed bottom-bar slot",
+  "the navigation drawer removal",
+  "an exact 2017 date on screen",
+  "that every user has the layout today"
+ ],
+ "assets": [
+  {
+   "id": "old-bottombar",
+   "kind": "still",
+   "tier": "multi",
+   "surface": "screen",
+   "file": "assets/youtube-subscriptions-tab/old-bottombar.jpg",
+   "source": "9to5Google 'old' screenshot, 22 Oct 2026",
+   "source_url": "https://9to5google.com/2026/10/22/youtube-subscriptions-android-ios/",
+   "shows": "The old YouTube app: bottom bar Home, Shorts, +, Subscriptions, You",
+   "quality": "native",
+   "credit": "9to5Google",
+   "crop": "full image; focus on bottom bar y~2600",
+   "width": 1280,
+   "height": 2856
+  },
+  {
+   "id": "new-topbar",
+   "kind": "still",
+   "tier": "multi",
+   "surface": "screen",
+   "file": "assets/youtube-subscriptions-tab/new-topbar.jpg",
+   "source": "9to5Google 'new' screenshot, 22 Oct 2026",
+   "source_url": "https://9to5google.com/2026/10/22/youtube-subscriptions-android-ios/",
+   "shows": "The new YouTube app: top bar + Home Subs Music Live More with Subs underlined red; bottom bar has no Subscriptions",
+   "quality": "native",
+   "credit": "9to5Google",
+   "crop": "full image; focus on top bar y~380",
+   "width": 1344,
+   "height": 2992
+  },
+  {
+   "id": "yt-topbar-subs",
+   "kind": "clip",
+   "tier": "official",
+   "surface": "world",
+   "file": "assets/youtube-subscriptions-tab/yt-topbar-subs.mp4",
+   "source": "@UpdatesFromYT demo clip 0.5-7.92s, conformed 30fps, last frame held +1s",
+   "source_url": "https://x.com/UpdatesFromYT/status/2113362200412979580",
+   "shows": "YouTube's mockup: the new top bar, Subs tapped and its channel row, then Movies & TV, Music, Live",
+   "quality": "native",
+   "credit": "YouTube",
+   "crop": "whole 4:5 frame",
+   "width": 1080,
+   "height": 1350
+  },
+  {
+   "id": "yt-topbar-feeds",
+   "kind": "clip",
+   "tier": "official",
+   "surface": "world",
+   "file": "assets/youtube-subscriptions-tab/yt-topbar-feeds.mp4",
+   "source": "@UpdatesFromYT demo clip 3.2-7.92s, conformed 30fps, last frame held +5s",
+   "source_url": "https://x.com/UpdatesFromYT/status/2113362200412979580",
+   "shows": "YouTube's mockup: top bar moves through Movies & TV, Music, Live feeds",
+   "quality": "native",
+   "credit": "YouTube",
+   "crop": "whole 4:5 frame",
+   "width": 1080,
+   "height": 1350
+  },
+  {
+   "id": "yt-custom-feed",
+   "kind": "still",
+   "tier": "official",
+   "surface": "screen",
+   "file": "assets/youtube-subscriptions-tab/yt-custom-feed.jpg",
+   "source": "@UpdatesFromYT still image",
+   "source_url": "https://x.com/UpdatesFromYT/status/2113362200412979580",
+   "shows": "YouTube's graphic: top bar + Home Subs Movies & TV Music; sheet 'Add a custom feed for any topic or mood' with 'Describe what you want to see' box",
+   "quality": "native",
+   "credit": "YouTube",
+   "crop": "whole image",
+   "width": 1080,
+   "height": 1350
+  },
+  {
+   "id": "post-subs",
+   "kind": "receipt",
+   "tier": "official",
+   "surface": "screen",
+   "file": "assets/youtube-subscriptions-tab/post-subs.png",
+   "source": "TeamYouTube Community post, mobile capture, crop y 8820",
+   "source_url": "https://support.google.com/youtube/thread/474148940/new-ways-to-explore-youtube-from-your-home-page",
+   "shows": "Post text: Movies & TV feed won't appear without paid content such as Primetime Channel; 'Subs (formerly Subscriptions): Your Subs feed is moving to the top bar on the Home tab'",
+   "quality": "native",
+   "credit": "YouTube",
+   "crop": "1080x1350 @ 0,8820 of 1080x24384",
+   "width": 1080,
+   "height": 1350,
+   "capture": "mobile"
+  },
+  {
+   "id": "post-limits",
+   "kind": "receipt",
+   "tier": "official",
+   "surface": "screen",
+   "file": "assets/youtube-subscriptions-tab/post-limits.png",
+   "source": "TeamYouTube Community post, mobile capture, crop y 5050",
+   "source_url": "https://support.google.com/youtube/thread/474148940/new-ways-to-explore-youtube-from-your-home-page",
+   "shows": "Post text: 'Save multiple feeds: ... save up to 3 active custom feeds, while YouTube Premium members can save up to 8'",
+   "quality": "native",
+   "credit": "YouTube",
+   "crop": "1080x1350 @ 0,5050 of 1080x24384",
+   "width": 1080,
+   "height": 1350,
+   "capture": "mobile"
+  },
+  {
+   "id": "post-rollout",
+   "kind": "receipt",
+   "tier": "official",
+   "surface": "screen",
+   "file": "assets/youtube-subscriptions-tab/post-rollout.png",
+   "source": "TeamYouTube Community post, mobile capture, crop y 5850",
+   "source_url": "https://support.google.com/youtube/thread/474148940/new-ways-to-explore-youtube-from-your-home-page",
+   "shows": "Post text: 'Custom feeds are currently rolling out on mobile and desktop in English to U.S. based, signed-in viewers...'",
+   "quality": "native",
+   "credit": "YouTube",
+   "crop": "1080x1350 @ 0,5850 of 1080x24384",
+   "width": 1080,
+   "height": 1350,
+   "capture": "mobile"
+  },
+  {
+   "id": "old-bar",
+   "kind": "still",
+   "tier": "multi",
+   "surface": "screen",
+   "file": "assets/youtube-subscriptions-tab/old-bar.png",
+   "source": "9to5Google 'old' screenshot, 22 Oct 2026",
+   "source_url": "https://9to5google.com/2026/10/22/youtube-subscriptions-android-ios/",
+   "shows": "Old bottom bar: Home, Shorts, +, Subscriptions, You",
+   "quality": "native",
+   "credit": "9to5Google",
+   "crop": "1280x250 @ 0,2606 of 1280x2856",
+   "width": 1280,
+   "height": 250
+  },
+  {
+   "id": "old-feed",
+   "kind": "still",
+   "tier": "multi",
+   "surface": "screen",
+   "file": "assets/youtube-subscriptions-tab/old-feed.png",
+   "source": "9to5Google 'old' screenshot, 22 Oct 2026",
+   "source_url": "https://9to5google.com/2026/10/22/youtube-subscriptions-android-ios/",
+   "shows": "Old app Home: YouTube Premium header, channel row, filter chips, a video",
+   "quality": "native",
+   "credit": "9to5Google",
+   "crop": "1280x1500 @ 0,220 of 1280x2856",
+   "width": 1280,
+   "height": 1500
+  },
+  {
+   "id": "yt-topbar-feeds-wide",
+   "kind": "clip",
+   "tier": "official",
+   "surface": "world",
+   "file": "assets/youtube-subscriptions-tab/yt-topbar-feeds-wide.mp4",
+   "source": "@UpdatesFromYT demo clip 3.2-7.92s, conformed 30fps, last frame held +5s",
+   "source_url": "https://x.com/UpdatesFromYT/status/2113362200412979580",
+   "shows": "YouTube's mockup: top bar moves through Movies & TV, Music, Live feeds",
+   "quality": "native",
+   "credit": "YouTube",
+   "crop": "600x454 @ 240,0 of the 1080x1350 clip, scaled to 1080x818 (phone top bar)",
+   "width": 1080,
+   "height": 818
+  },
+  {
+   "id": "yt-custom-feed-ui",
+   "kind": "still",
+   "tier": "official",
+   "surface": "screen",
+   "file": "assets/youtube-subscriptions-tab/yt-custom-feed-ui.png",
+   "source": "@UpdatesFromYT still image",
+   "source_url": "https://x.com/UpdatesFromYT/status/2113362200412979580",
+   "shows": "YouTube's graphic: top bar + Home Subs Movies & TV Music; sheet 'Add a custom feed for any topic or mood' with 'Describe what you want to see' box",
+   "quality": "native",
+   "credit": "YouTube",
+   "crop": "1080x910 @ 0,440 of 1080x1350 (title cropped out)",
+   "width": 1080,
+   "height": 910
+  }
+ ]
+}

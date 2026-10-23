@@ -60,6 +60,7 @@ import sheet56 from "./beats/september-preview.json";
 import sheet57 from "./beats/siri-ai-ios27.json";
 import sheet58 from "./beats/whatsapp-agents.json";
 import sheet59 from "./beats/whatsapp-guest-calls.json";
+import sheet60 from "./beats/youtube-subscriptions-tab.json";
 
 export const beatSheets = [
   sheet0,
@@ -122,4 +123,5 @@ export const beatSheets = [
   sheet57,
   sheet58,
   sheet59,
+  sheet60,
 ] as unknown as BeatSheet[];

@@ -1,0 +1,2415 @@
+{
+  "id": "youtube-subscriptions-tab",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": "editorial",
+  "audio": "assets/youtube-subscriptions-tab/vo.mp3",
+  "facePlan": "bookends",
+  "captionStyle": "word-reveal",
+  "emphasis": [
+    "Subscriptions",
+    "nearly a decade",
+    "confirmed",
+    "Subs",
+    "upset",
+    "algorithm",
+    "reach",
+    "Live",
+    "Primetime",
+    "plus",
+    "three",
+    "eight",
+    "English",
+    "Home"
+  ],
+  "scenes": [
+    {
+      "type": "slide",
+      "eyebrow": "YouTube app \u00b7 the old layout",
+      "headline": "[[Subscriptions]] is moving",
+      "blocks": [
+        {
+          "id": "f",
+          "kind": "screen",
+          "src": "assets/youtube-subscriptions-tab/old-feed.png",
+          "width": 1280,
+          "height": 1500,
+          "device": false,
+          "h": 520
+        },
+        {
+          "id": "b",
+          "kind": "screen",
+          "src": "assets/youtube-subscriptions-tab/old-bar.png",
+          "width": 1280,
+          "height": 250,
+          "device": false,
+          "h": 300
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Not everyone is happy"
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "b",
+          "on": "YouTube",
+          "rect": [
+            700,
+            0,
+            440,
+            230
+          ],
+          "instant": true,
+          "at": 0.0
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Subscriptions",
+          "at": 1.2
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "happy",
+          "at": 3.62
+        },
+        {
+          "do": "focus",
+          "target": "b",
+          "on": "went",
+          "rect": [
+            0,
+            0,
+            1280,
+            250
+          ],
+          "at": 4.68
+        }
+      ],
+      "presenter": {
+        "src": "assets/youtube-subscriptions-tab/avatar-master-hook.mp4",
+        "from": 0.0
+      },
+      "asset_id": "old-bar",
+      "durationSec": 5.48,
+      "assetId": "old-bar",
+      "claimId": "old-bar",
+      "covers": "YouTube just moved",
+      "sourceUrl": "https://9to5google.com/2026/10/22/youtube-subscriptions-android-ios/",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 0.0,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.17,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 4.28,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "YouTube app \u00b7 bottom bar",
+      "headline": "In the bottom bar for [[nearly a decade]]",
+      "blocks": [
+        {
+          "id": "f",
+          "kind": "screen",
+          "src": "assets/youtube-subscriptions-tab/old-feed.png",
+          "width": 1280,
+          "height": 1500,
+          "device": false,
+          "h": 560
+        },
+        {
+          "id": "b",
+          "kind": "screen",
+          "src": "assets/youtube-subscriptions-tab/old-bar.png",
+          "width": 1280,
+          "height": 250,
+          "device": false,
+          "h": 300
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "b",
+          "on": "For",
+          "rect": [
+            0,
+            0,
+            1280,
+            250
+          ],
+          "instant": true,
+          "at": 0.0
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "decade",
+          "at": 0.7
+        },
+        {
+          "do": "focus",
+          "target": "b",
+          "on": "bottom",
+          "rect": [
+            700,
+            0,
+            440,
+            230
+          ],
+          "at": 1.8
+        }
+      ],
+      "durationSec": 3.08,
+      "assetId": "old-bar",
+      "claimId": "old-bar",
+      "covers": "For nearly a decade",
+      "sourceUrl": "https://9to5google.com/2026/10/22/youtube-subscriptions-android-ios/",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.67,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 1.4,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "TeamYouTube \u00b7 Community post",
+      "headline": "YouTube [[confirmed]] it",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/youtube-subscriptions-tab/post-subs.png",
+          "width": 1080,
+          "height": 1350,
+          "device": false,
+          "h": 760
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "On Android and iPhone"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "confirmed",
+          "at": 0.32
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "week",
+          "rect": [
+            20,
+            420,
+            1040,
+            320
+          ],
+          "instant": true,
+          "at": 1.04
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "Android",
+          "at": 2.5
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "leaving",
+          "rect": [
+            20,
+            420,
+            700,
+            120
+          ],
+          "at": 3.84
+        }
+      ],
+      "durationSec": 4.98,
+      "assetId": "post-subs",
+      "claimId": "post-subs",
+      "covers": "YouTube confirmed this week",
+      "sourceUrl": "https://support.google.com/youtube/thread/474148940/new-ways-to-explore-youtube-from-your-home-page",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 0.64,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 3.44,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "YouTube's own demo",
+      "headline": "Now it's [[Subs]], up top",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/youtube-subscriptions-tab/yt-topbar-subs.mp4",
+          "width": 1080,
+          "height": 1350,
+          "h": 920,
+          "device": false
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Second, right after Home"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Subs",
+          "at": 0.46
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "after",
+          "at": 4.18
+        }
+      ],
+      "durationSec": 5.44,
+      "assetId": "yt-topbar-subs",
+      "claimId": "yt-topbar-subs",
+      "covers": "It's renamed subs",
+      "sourceUrl": "https://x.com/UpdatesFromYT/status/2113362200412979580",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.43,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The new layout",
+      "headline": "Why would that [[upset]] anyone?",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/youtube-subscriptions-tab/new-topbar.jpg",
+          "width": 1344,
+          "height": 2992,
+          "device": false,
+          "h": 760
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "When YouTube tested it in May, people pushed back"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "upset",
+          "at": 1.04
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "button",
+          "rect": [
+            0,
+            280,
+            1344,
+            1100
+          ],
+          "instant": true,
+          "at": 0.5
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "tested",
+          "at": 3.02
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "pushed",
+          "rect": [
+            160,
+            300,
+            560,
+            220
+          ],
+          "at": 4.54
+        }
+      ],
+      "durationSec": 5.86,
+      "assetId": "new-topbar",
+      "claimId": "new-topbar",
+      "covers": "Why would a button",
+      "sourceUrl": "https://9to5google.com/2026/10/22/youtube-subscriptions-android-ios/",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.01,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 4.14,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The old Subscriptions tab",
+      "headline": "A way past the [[algorithm]]",
+      "blocks": [
+        {
+          "id": "f",
+          "kind": "screen",
+          "src": "assets/youtube-subscriptions-tab/old-feed.png",
+          "width": 1280,
+          "height": 1500,
+          "device": false,
+          "h": 440
+        },
+        {
+          "id": "b",
+          "kind": "screen",
+          "src": "assets/youtube-subscriptions-tab/old-bar.png",
+          "width": 1280,
+          "height": 250,
+          "device": false,
+          "h": 360
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "One tap: only the channels you chose"
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "b",
+          "on": "That",
+          "rect": [
+            700,
+            0,
+            440,
+            230
+          ],
+          "instant": true,
+          "at": 0.0
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "algorithm",
+          "at": 2.2
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "showed",
+          "at": 3.88
+        },
+        {
+          "do": "focus",
+          "target": "b",
+          "on": "chose",
+          "rect": [
+            0,
+            0,
+            1280,
+            250
+          ],
+          "at": 5.4
+        }
+      ],
+      "durationSec": 6.56,
+      "assetId": "old-bar",
+      "claimId": "old-bar",
+      "covers": "That bottom button was",
+      "sourceUrl": "https://9to5google.com/2026/10/22/youtube-subscriptions-android-ios/",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.17,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 5.0,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "The new top bar",
+      "headline": "Now it's a [[reach]] up top",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/youtube-subscriptions-tab/new-topbar.jpg",
+          "width": 1344,
+          "height": 2992,
+          "device": false,
+          "h": 760
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "One tab over from Home's recommendations"
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "Now",
+          "rect": [
+            160,
+            300,
+            560,
+            220
+          ],
+          "instant": true,
+          "at": 0.0
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "reach",
+          "at": 0.46
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "tab",
+          "rect": [
+            0,
+            280,
+            1344,
+            1100
+          ],
+          "at": 2.34
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "recommendations",
+          "at": 3.22
+        }
+      ],
+      "durationSec": 4.82,
+      "assetId": "new-topbar",
+      "claimId": "new-topbar",
+      "covers": "Now it's a reach",
+      "sourceUrl": "https://9to5google.com/2026/10/22/youtube-subscriptions-android-ios/",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.43,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 1.94,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "YouTube's own demo",
+      "headline": "[[Live]] and Music get feeds",
+      "blocks": [
+        {
+          "id": "c",
+          "kind": "clip",
+          "src": "assets/youtube-subscriptions-tab/yt-topbar-feeds-wide.mp4",
+          "width": 1080,
+          "height": 818,
+          "h": 760,
+          "device": false
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Each one a tap away in the top bar"
+        }
+      ],
+      "moves": [
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Live",
+          "at": 2.2
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "busier",
+          "at": 1.22
+        }
+      ],
+      "durationSec": 4.3,
+      "assetId": "yt-topbar-feeds-wide",
+      "claimId": "yt-topbar-feeds-wide",
+      "covers": "The top bar gets",
+      "sourceUrl": "https://x.com/UpdatesFromYT/status/2113362200412979580",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 2.17,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "TeamYouTube \u00b7 Community post",
+      "headline": "Movies & TV: [[paid]] only",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/youtube-subscriptions-tab/post-subs.png",
+          "width": 1080,
+          "height": 1350,
+          "device": false,
+          "h": 760
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Shows up with active paid content"
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "Movies",
+          "rect": [
+            20,
+            0,
+            1040,
+            420
+          ],
+          "instant": true,
+          "at": 0.0
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "pay",
+          "at": 1.8
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "Primetime",
+          "at": 2.84
+        }
+      ],
+      "durationSec": 4.42,
+      "assetId": "post-subs",
+      "claimId": "post-subs",
+      "covers": "Movies and TV shows",
+      "sourceUrl": "https://support.google.com/youtube/thread/474148940/new-ways-to-explore-youtube-from-your-home-page",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 1.77,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "YouTube \u00b7 custom feeds",
+      "headline": "A new [[plus]] sign",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/youtube-subscriptions-tab/yt-custom-feed-ui.png",
+          "width": 1080,
+          "height": 910,
+          "device": false,
+          "h": 780
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "Top of the Home tab"
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "There's",
+          "rect": [
+            100,
+            90,
+            880,
+            130
+          ],
+          "instant": true,
+          "at": 0.0
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "plus",
+          "at": 0.8
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "up",
+          "at": 1.3
+        }
+      ],
+      "durationSec": 2.3,
+      "assetId": "yt-custom-feed-ui",
+      "claimId": "yt-custom-feed-ui",
+      "covers": "There's also a new",
+      "sourceUrl": "https://x.com/UpdatesFromYT/status/2113362200412979580",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.77,
+          "vol": 0.343
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "YouTube \u00b7 custom feeds",
+      "headline": "Type it, get a [[feed]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/youtube-subscriptions-tab/yt-custom-feed-ui.png",
+          "width": 1080,
+          "height": 910,
+          "device": false,
+          "h": 780
+        },
+        {
+          "id": "t",
+          "kind": "text",
+          "text": "\"Guided meditations under ten minutes\""
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "Type",
+          "rect": [
+            240,
+            320,
+            620,
+            380
+          ],
+          "instant": true,
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "t",
+          "on": "guided",
+          "at": 2.24
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "feed",
+          "at": 5.24
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "builds",
+          "rect": [
+            0,
+            40,
+            1080,
+            800
+          ],
+          "at": 4.66
+        }
+      ],
+      "durationSec": 6.56,
+      "assetId": "yt-custom-feed-ui",
+      "claimId": "yt-custom-feed-ui",
+      "covers": "Type a topic or",
+      "sourceUrl": "https://x.com/UpdatesFromYT/status/2113362200412979580",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/whoosh.MP3",
+          "at": 0.0,
+          "vol": 0.582
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 5.21,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 4.26,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "TeamYouTube \u00b7 Community post",
+      "headline": "How many you can [[save]]",
+      "blocks": [
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/youtube-subscriptions-tab/post-limits.png",
+          "width": 1080,
+          "height": 1350,
+          "device": false,
+          "h": 620
+        },
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Free",
+              "v": "Three feeds",
+              "tone": "plain"
+            },
+            {
+              "k": "Premium",
+              "v": "Eight feeds",
+              "tone": "free"
+            }
+          ]
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "Free",
+          "rect": [
+            20,
+            360,
+            1040,
+            380
+          ],
+          "instant": true,
+          "at": 0.0
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "three",
+          "at": 1.06
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "save",
+          "at": 0.8
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "Premium",
+          "at": 2.03
+        },
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "Premium",
+          "rect": [
+            20,
+            520,
+            1040,
+            220
+          ],
+          "at": 2.03
+        }
+      ],
+      "durationSec": 4.08,
+      "assetId": "post-limits",
+      "claimId": "post-limits",
+      "covers": "Free accounts can save",
+      "sourceUrl": "https://support.google.com/youtube/thread/474148940/new-ways-to-explore-youtube-from-your-home-page",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 0.77,
+          "vol": 0.343
+        },
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 1.63,
+          "vol": 1.0
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "eyebrow": "TeamYouTube \u00b7 Community post",
+      "headline": "[[US]], in English, first",
+      "blocks": [
+        {
+          "id": "r",
+          "kind": "rows",
+          "rows": [
+            {
+              "k": "Custom feeds",
+              "v": "US, English first",
+              "tone": "plain"
+            },
+            {
+              "k": "New layout",
+              "v": "No date given",
+              "tone": "plain"
+            }
+          ]
+        },
+        {
+          "id": "s",
+          "kind": "screen",
+          "src": "assets/youtube-subscriptions-tab/post-rollout.png",
+          "width": 1080,
+          "height": 1350,
+          "device": false,
+          "h": 600
+        }
+      ],
+      "moves": [
+        {
+          "do": "focus",
+          "target": "s",
+          "on": "start",
+          "rect": [
+            0,
+            340,
+            1080,
+            300
+          ],
+          "instant": true,
+          "at": 0.72
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "US",
+          "at": 1.38
+        },
+        {
+          "do": "show",
+          "target": "r.0",
+          "on": "English",
+          "at": 2.06
+        },
+        {
+          "do": "show",
+          "target": "r.1",
+          "on": "date",
+          "at": 4.22
+        }
+      ],
+      "durationSec": 6.72,
+      "assetId": "post-rollout",
+      "claimId": "post-rollout",
+      "covers": "Those custom feeds start",
+      "sourceUrl": "https://support.google.com/youtube/thread/474148940/new-ways-to-explore-youtube-from-your-home-page",
+      "hideCaptions": false,
+      "captionBottom": 422,
+      "sfx": [
+        {
+          "src": "sfx-action/lens-zoom.mp3",
+          "at": 0.32,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Core.MP3",
+          "at": 1.33,
+          "vol": 0.556
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "cta": true,
+      "hideCaptions": true,
+      "headlineSize": "xl",
+      "headline": "[[Subs]] first, or Home?",
+      "blocks": [
+        {
+          "id": "d",
+          "kind": "text",
+          "text": "Tell me in the comments."
+        },
+        {
+          "id": "sp",
+          "kind": "spotlight",
+          "logo": "assets/logos/youtube.svg",
+          "name": "YouTube",
+          "note": "Subs moved to the top bar"
+        }
+      ],
+      "moves": [
+        {
+          "do": "show",
+          "target": "sp",
+          "on": "thumb",
+          "at": 0.88
+        },
+        {
+          "do": "pill",
+          "target": "headline",
+          "on": "Subs",
+          "at": 3.52
+        },
+        {
+          "do": "show",
+          "target": "d",
+          "on": "stay",
+          "at": 4.72
+        }
+      ],
+      "presenter": {
+        "src": "assets/youtube-subscriptions-tab/avatar-master-cta.mp4",
+        "from": 0.2
+      },
+      "durationSec": 5.4,
+      "sfx": [
+        {
+          "src": "sfx/Magic Reveal.MP3",
+          "at": 0.8,
+          "vol": 1.0
+        },
+        {
+          "src": "sfx/Pop.MP3",
+          "at": 3.49,
+          "vol": 0.343
+        }
+      ]
+    }
+  ],
+  "captions": [
+    {
+      "start": 0.0,
+      "end": 1.06,
+      "text": "YouTube just moved",
+      "words": [
+        {
+          "t": 0.0,
+          "text": "YouTube"
+        },
+        {
+          "t": 0.28,
+          "text": "just"
+        },
+        {
+          "t": 0.72,
+          "text": "moved"
+        }
+      ]
+    },
+    {
+      "start": 1.06,
+      "end": 2.08,
+      "text": "your Subscriptions button,",
+      "words": [
+        {
+          "t": 1.06,
+          "text": "your"
+        },
+        {
+          "t": 1.2,
+          "text": "Subscriptions"
+        },
+        {
+          "t": 1.62,
+          "text": "button,"
+        }
+      ]
+    },
+    {
+      "start": 2.34,
+      "end": 3.0,
+      "text": "and some people",
+      "words": [
+        {
+          "t": 2.34,
+          "text": "and"
+        },
+        {
+          "t": 2.46,
+          "text": "some"
+        },
+        {
+          "t": 2.7,
+          "text": "people"
+        }
+      ]
+    },
+    {
+      "start": 3.0,
+      "end": 4.04,
+      "text": "are not happy",
+      "words": [
+        {
+          "t": 3.0,
+          "text": "are"
+        },
+        {
+          "t": 3.36,
+          "text": "not"
+        },
+        {
+          "t": 3.62,
+          "text": "happy"
+        }
+      ]
+    },
+    {
+      "start": 4.04,
+      "end": 4.68,
+      "text": "about where it",
+      "words": [
+        {
+          "t": 4.04,
+          "text": "about"
+        },
+        {
+          "t": 4.28,
+          "text": "where"
+        },
+        {
+          "t": 4.56,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 4.68,
+      "end": 5.94,
+      "text": "went. For nearly",
+      "words": [
+        {
+          "t": 4.68,
+          "text": "went."
+        },
+        {
+          "t": 5.48,
+          "text": "For"
+        },
+        {
+          "t": 5.74,
+          "text": "nearly"
+        }
+      ]
+    },
+    {
+      "start": 5.94,
+      "end": 6.8,
+      "text": "a decade, it",
+      "words": [
+        {
+          "t": 5.94,
+          "text": "a"
+        },
+        {
+          "t": 6.18,
+          "text": "decade,"
+        },
+        {
+          "t": 6.7,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 6.8,
+      "end": 7.28,
+      "text": "sat in the",
+      "words": [
+        {
+          "t": 6.8,
+          "text": "sat"
+        },
+        {
+          "t": 7.02,
+          "text": "in"
+        },
+        {
+          "t": 7.2,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 7.28,
+      "end": 8.88,
+      "text": "bottom bar. YouTube",
+      "words": [
+        {
+          "t": 7.28,
+          "text": "bottom"
+        },
+        {
+          "t": 7.5,
+          "text": "bar."
+        },
+        {
+          "t": 8.56,
+          "text": "YouTube"
+        }
+      ]
+    },
+    {
+      "start": 8.88,
+      "end": 9.86,
+      "text": "confirmed this week",
+      "words": [
+        {
+          "t": 8.88,
+          "text": "confirmed"
+        },
+        {
+          "t": 9.28,
+          "text": "this"
+        },
+        {
+          "t": 9.6,
+          "text": "week"
+        }
+      ]
+    },
+    {
+      "start": 9.86,
+      "end": 11.4,
+      "text": "that, on Android",
+      "words": [
+        {
+          "t": 9.86,
+          "text": "that,"
+        },
+        {
+          "t": 10.94,
+          "text": "on"
+        },
+        {
+          "t": 11.06,
+          "text": "Android"
+        }
+      ]
+    },
+    {
+      "start": 11.4,
+      "end": 12.4,
+      "text": "and iPhone, it's",
+      "words": [
+        {
+          "t": 11.4,
+          "text": "and"
+        },
+        {
+          "t": 11.6,
+          "text": "iPhone,"
+        },
+        {
+          "t": 12.28,
+          "text": "it's"
+        }
+      ]
+    },
+    {
+      "start": 12.4,
+      "end": 14.0,
+      "text": "leaving. It's renamed",
+      "words": [
+        {
+          "t": 12.4,
+          "text": "leaving."
+        },
+        {
+          "t": 13.54,
+          "text": "It's"
+        },
+        {
+          "t": 13.76,
+          "text": "renamed"
+        }
+      ]
+    },
+    {
+      "start": 14.0,
+      "end": 14.9,
+      "text": "Subs and it",
+      "words": [
+        {
+          "t": 14.0,
+          "text": "Subs"
+        },
+        {
+          "t": 14.4,
+          "text": "and"
+        },
+        {
+          "t": 14.8,
+          "text": "it"
+        }
+      ]
+    },
+    {
+      "start": 14.9,
+      "end": 15.36,
+      "text": "lives in the",
+      "words": [
+        {
+          "t": 14.9,
+          "text": "lives"
+        },
+        {
+          "t": 15.12,
+          "text": "in"
+        },
+        {
+          "t": 15.28,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 15.36,
+      "end": 16.1,
+      "text": "top bar on",
+      "words": [
+        {
+          "t": 15.36,
+          "text": "top"
+        },
+        {
+          "t": 15.58,
+          "text": "bar"
+        },
+        {
+          "t": 15.94,
+          "text": "on"
+        }
+      ]
+    },
+    {
+      "start": 16.1,
+      "end": 16.7,
+      "text": "the Home tab,",
+      "words": [
+        {
+          "t": 16.1,
+          "text": "the"
+        },
+        {
+          "t": 16.2,
+          "text": "Home"
+        },
+        {
+          "t": 16.4,
+          "text": "tab,"
+        }
+      ]
+    },
+    {
+      "start": 17.4,
+      "end": 18.32,
+      "text": "right after Home",
+      "words": [
+        {
+          "t": 17.4,
+          "text": "right"
+        },
+        {
+          "t": 17.72,
+          "text": "after"
+        },
+        {
+          "t": 18.0,
+          "text": "Home"
+        }
+      ]
+    },
+    {
+      "start": 18.98,
+      "end": 19.48,
+      "text": "Why would a",
+      "words": [
+        {
+          "t": 18.98,
+          "text": "Why"
+        },
+        {
+          "t": 19.22,
+          "text": "would"
+        },
+        {
+          "t": 19.38,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 19.48,
+      "end": 20.42,
+      "text": "button move upset",
+      "words": [
+        {
+          "t": 19.48,
+          "text": "button"
+        },
+        {
+          "t": 19.64,
+          "text": "move"
+        },
+        {
+          "t": 20.02,
+          "text": "upset"
+        }
+      ]
+    },
+    {
+      "start": 20.42,
+      "end": 22.36,
+      "text": "anyone? YouTube tested",
+      "words": [
+        {
+          "t": 20.42,
+          "text": "anyone?"
+        },
+        {
+          "t": 21.64,
+          "text": "YouTube"
+        },
+        {
+          "t": 22.0,
+          "text": "tested"
+        }
+      ]
+    },
+    {
+      "start": 22.36,
+      "end": 23.02,
+      "text": "this in May",
+      "words": [
+        {
+          "t": 22.36,
+          "text": "this"
+        },
+        {
+          "t": 22.62,
+          "text": "in"
+        },
+        {
+          "t": 22.8,
+          "text": "May"
+        }
+      ]
+    },
+    {
+      "start": 23.02,
+      "end": 23.84,
+      "text": "and people pushed",
+      "words": [
+        {
+          "t": 23.02,
+          "text": "and"
+        },
+        {
+          "t": 23.26,
+          "text": "people"
+        },
+        {
+          "t": 23.52,
+          "text": "pushed"
+        }
+      ]
+    },
+    {
+      "start": 23.84,
+      "end": 25.28,
+      "text": "back. That bottom",
+      "words": [
+        {
+          "t": 23.84,
+          "text": "back."
+        },
+        {
+          "t": 24.84,
+          "text": "That"
+        },
+        {
+          "t": 25.02,
+          "text": "bottom"
+        }
+      ]
+    },
+    {
+      "start": 25.28,
+      "end": 26.04,
+      "text": "button was how",
+      "words": [
+        {
+          "t": 25.28,
+          "text": "button"
+        },
+        {
+          "t": 25.64,
+          "text": "was"
+        },
+        {
+          "t": 25.86,
+          "text": "how"
+        }
+      ]
+    },
+    {
+      "start": 26.04,
+      "end": 26.42,
+      "text": "a lot of",
+      "words": [
+        {
+          "t": 26.04,
+          "text": "a"
+        },
+        {
+          "t": 26.18,
+          "text": "lot"
+        },
+        {
+          "t": 26.32,
+          "text": "of"
+        }
+      ]
+    },
+    {
+      "start": 26.42,
+      "end": 27.04,
+      "text": "them skipped the",
+      "words": [
+        {
+          "t": 26.42,
+          "text": "them"
+        },
+        {
+          "t": 26.56,
+          "text": "skipped"
+        },
+        {
+          "t": 26.84,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 27.04,
+      "end": 29.46,
+      "text": "algorithm. One tap showed only",
+      "words": [
+        {
+          "t": 27.04,
+          "text": "algorithm."
+        },
+        {
+          "t": 28.2,
+          "text": "One"
+        },
+        {
+          "t": 29.06,
+          "text": "tap"
+        },
+        {
+          "t": 29.06,
+          "text": "showed"
+        },
+        {
+          "t": 29.06,
+          "text": "only"
+        }
+      ]
+    },
+    {
+      "start": 29.46,
+      "end": 30.24,
+      "text": "the channels they",
+      "words": [
+        {
+          "t": 29.46,
+          "text": "the"
+        },
+        {
+          "t": 29.62,
+          "text": "channels"
+        },
+        {
+          "t": 29.98,
+          "text": "they"
+        }
+      ]
+    },
+    {
+      "start": 30.24,
+      "end": 31.8,
+      "text": "chose. Now it's",
+      "words": [
+        {
+          "t": 30.24,
+          "text": "chose."
+        },
+        {
+          "t": 31.4,
+          "text": "Now"
+        },
+        {
+          "t": 31.62,
+          "text": "it's"
+        }
+      ]
+    },
+    {
+      "start": 31.8,
+      "end": 32.2,
+      "text": "a reach up",
+      "words": [
+        {
+          "t": 31.8,
+          "text": "a"
+        },
+        {
+          "t": 31.86,
+          "text": "reach"
+        },
+        {
+          "t": 32.02,
+          "text": "up"
+        }
+      ]
+    },
+    {
+      "start": 32.2,
+      "end": 34.0,
+      "text": "top, one tab",
+      "words": [
+        {
+          "t": 32.2,
+          "text": "top,"
+        },
+        {
+          "t": 33.22,
+          "text": "one"
+        },
+        {
+          "t": 33.74,
+          "text": "tab"
+        }
+      ]
+    },
+    {
+      "start": 34.0,
+      "end": 34.62,
+      "text": "over from the",
+      "words": [
+        {
+          "t": 34.0,
+          "text": "over"
+        },
+        {
+          "t": 34.22,
+          "text": "from"
+        },
+        {
+          "t": 34.5,
+          "text": "the"
+        }
+      ]
+    },
+    {
+      "start": 34.62,
+      "end": 36.98,
+      "text": "recommendations. The top",
+      "words": [
+        {
+          "t": 34.62,
+          "text": "recommendations."
+        },
+        {
+          "t": 36.22,
+          "text": "The"
+        },
+        {
+          "t": 36.74,
+          "text": "top"
+        }
+      ]
+    },
+    {
+      "start": 36.98,
+      "end": 37.86,
+      "text": "bar gets busier",
+      "words": [
+        {
+          "t": 36.98,
+          "text": "bar"
+        },
+        {
+          "t": 37.18,
+          "text": "gets"
+        },
+        {
+          "t": 37.44,
+          "text": "busier"
+        }
+      ]
+    },
+    {
+      "start": 37.86,
+      "end": 38.78,
+      "text": "too. Live and",
+      "words": [
+        {
+          "t": 37.86,
+          "text": "too."
+        },
+        {
+          "t": 38.42,
+          "text": "Live"
+        },
+        {
+          "t": 38.58,
+          "text": "and"
+        }
+      ]
+    },
+    {
+      "start": 38.78,
+      "end": 39.52,
+      "text": "Music get their",
+      "words": [
+        {
+          "t": 38.78,
+          "text": "Music"
+        },
+        {
+          "t": 39.06,
+          "text": "get"
+        },
+        {
+          "t": 39.38,
+          "text": "their"
+        }
+      ]
+    },
+    {
+      "start": 39.52,
+      "end": 40.82,
+      "text": "own feeds. Movies",
+      "words": [
+        {
+          "t": 39.52,
+          "text": "own"
+        },
+        {
+          "t": 39.66,
+          "text": "feeds."
+        },
+        {
+          "t": 40.52,
+          "text": "Movies"
+        }
+      ]
+    },
+    {
+      "start": 40.82,
+      "end": 41.5,
+      "text": "and TV shows",
+      "words": [
+        {
+          "t": 40.82,
+          "text": "and"
+        },
+        {
+          "t": 40.98,
+          "text": "TV"
+        },
+        {
+          "t": 41.18,
+          "text": "shows"
+        }
+      ]
+    },
+    {
+      "start": 41.5,
+      "end": 42.22,
+      "text": "up only if",
+      "words": [
+        {
+          "t": 41.5,
+          "text": "up"
+        },
+        {
+          "t": 41.74,
+          "text": "only"
+        },
+        {
+          "t": 42.06,
+          "text": "if"
+        }
+      ]
+    },
+    {
+      "start": 42.22,
+      "end": 42.7,
+      "text": "you pay for",
+      "words": [
+        {
+          "t": 42.22,
+          "text": "you"
+        },
+        {
+          "t": 42.32,
+          "text": "pay"
+        },
+        {
+          "t": 42.52,
+          "text": "for"
+        }
+      ]
+    },
+    {
+      "start": 42.7,
+      "end": 43.36,
+      "text": "something like a",
+      "words": [
+        {
+          "t": 42.7,
+          "text": "something"
+        },
+        {
+          "t": 42.98,
+          "text": "like"
+        },
+        {
+          "t": 43.22,
+          "text": "a"
+        }
+      ]
+    },
+    {
+      "start": 43.36,
+      "end": 45.46,
+      "text": "Primetime Channel There's also",
+      "words": [
+        {
+          "t": 43.36,
+          "text": "Primetime"
+        },
+        {
+          "t": 44.94,
+          "text": "Channel"
+        },
+        {
+          "t": 45.22,
+          "text": "There's"
+        },
+        {
+          "t": 45.22,
+          "text": "also"
+        }
+      ]
+    },
+    {
+      "start": 45.46,
+      "end": 45.94,
+      "text": "a new plus",
+      "words": [
+        {
+          "t": 45.46,
+          "text": "a"
+        },
+        {
+          "t": 45.6,
+          "text": "new"
+        },
+        {
+          "t": 45.74,
+          "text": "plus"
+        }
+      ]
+    },
+    {
+      "start": 45.94,
+      "end": 46.66,
+      "text": "sign up there.",
+      "words": [
+        {
+          "t": 45.94,
+          "text": "sign"
+        },
+        {
+          "t": 46.24,
+          "text": "up"
+        },
+        {
+          "t": 46.38,
+          "text": "there."
+        }
+      ]
+    },
+    {
+      "start": 47.24,
+      "end": 47.8,
+      "text": "Type a topic",
+      "words": [
+        {
+          "t": 47.24,
+          "text": "Type"
+        },
+        {
+          "t": 47.44,
+          "text": "a"
+        },
+        {
+          "t": 47.56,
+          "text": "topic"
+        }
+      ]
+    },
+    {
+      "start": 47.8,
+      "end": 48.5,
+      "text": "or a mood,",
+      "words": [
+        {
+          "t": 47.8,
+          "text": "or"
+        },
+        {
+          "t": 48.1,
+          "text": "a"
+        },
+        {
+          "t": 48.2,
+          "text": "mood,"
+        }
+      ]
+    },
+    {
+      "start": 49.26,
+      "end": 50.34,
+      "text": "like guided meditations",
+      "words": [
+        {
+          "t": 49.26,
+          "text": "like"
+        },
+        {
+          "t": 49.48,
+          "text": "guided"
+        },
+        {
+          "t": 49.82,
+          "text": "meditations"
+        }
+      ]
+    },
+    {
+      "start": 50.34,
+      "end": 51.24,
+      "text": "under 10 minutes,",
+      "words": [
+        {
+          "t": 50.34,
+          "text": "under"
+        },
+        {
+          "t": 50.74,
+          "text": "10"
+        },
+        {
+          "t": 51.0,
+          "text": "minutes,"
+        }
+      ]
+    },
+    {
+      "start": 51.56,
+      "end": 52.34,
+      "text": "and YouTube builds",
+      "words": [
+        {
+          "t": 51.56,
+          "text": "and"
+        },
+        {
+          "t": 51.66,
+          "text": "YouTube"
+        },
+        {
+          "t": 51.9,
+          "text": "builds"
+        }
+      ]
+    },
+    {
+      "start": 52.34,
+      "end": 52.92,
+      "text": "a feed around",
+      "words": [
+        {
+          "t": 52.34,
+          "text": "a"
+        },
+        {
+          "t": 52.48,
+          "text": "feed"
+        },
+        {
+          "t": 52.64,
+          "text": "around"
+        }
+      ]
+    },
+    {
+      "start": 52.92,
+      "end": 54.34,
+      "text": "it. Free accounts",
+      "words": [
+        {
+          "t": 52.92,
+          "text": "it."
+        },
+        {
+          "t": 53.8,
+          "text": "Free"
+        },
+        {
+          "t": 53.98,
+          "text": "accounts"
+        }
+      ]
+    },
+    {
+      "start": 54.34,
+      "end": 55.18,
+      "text": "can save three.",
+      "words": [
+        {
+          "t": 54.34,
+          "text": "can"
+        },
+        {
+          "t": 54.6,
+          "text": "save"
+        },
+        {
+          "t": 54.86,
+          "text": "three."
+        }
+      ]
+    },
+    {
+      "start": 55.83,
+      "end": 56.78,
+      "text": "Premium members get",
+      "words": [
+        {
+          "t": 55.83,
+          "text": "Premium"
+        },
+        {
+          "t": 56.1,
+          "text": "members"
+        },
+        {
+          "t": 56.54,
+          "text": "get"
+        }
+      ]
+    },
+    {
+      "start": 56.78,
+      "end": 58.28,
+      "text": "eight. Those custom",
+      "words": [
+        {
+          "t": 56.78,
+          "text": "eight."
+        },
+        {
+          "t": 57.88,
+          "text": "Those"
+        },
+        {
+          "t": 57.98,
+          "text": "custom"
+        }
+      ]
+    },
+    {
+      "start": 58.28,
+      "end": 59.16,
+      "text": "feeds start in",
+      "words": [
+        {
+          "t": 58.28,
+          "text": "feeds"
+        },
+        {
+          "t": 58.6,
+          "text": "start"
+        },
+        {
+          "t": 58.98,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 59.16,
+      "end": 59.94,
+      "text": "the US in",
+      "words": [
+        {
+          "t": 59.16,
+          "text": "the"
+        },
+        {
+          "t": 59.26,
+          "text": "US"
+        },
+        {
+          "t": 59.5,
+          "text": "in"
+        }
+      ]
+    },
+    {
+      "start": 59.94,
+      "end": 61.8,
+      "text": "English. YouTube hasn't",
+      "words": [
+        {
+          "t": 59.94,
+          "text": "English."
+        },
+        {
+          "t": 60.88,
+          "text": "YouTube"
+        },
+        {
+          "t": 61.3,
+          "text": "hasn't"
+        }
+      ]
+    },
+    {
+      "start": 61.8,
+      "end": 62.32,
+      "text": "given a date",
+      "words": [
+        {
+          "t": 61.8,
+          "text": "given"
+        },
+        {
+          "t": 61.94,
+          "text": "a"
+        },
+        {
+          "t": 62.1,
+          "text": "date"
+        }
+      ]
+    },
+    {
+      "start": 62.32,
+      "end": 62.76,
+      "text": "for the new",
+      "words": [
+        {
+          "t": 62.32,
+          "text": "for"
+        },
+        {
+          "t": 62.5,
+          "text": "the"
+        },
+        {
+          "t": 62.6,
+          "text": "new"
+        }
+      ]
+    },
+    {
+      "start": 62.76,
+      "end": 63.92,
+      "text": "layout anywhere else.",
+      "words": [
+        {
+          "t": 62.76,
+          "text": "layout"
+        },
+        {
+          "t": 63.08,
+          "text": "anywhere"
+        },
+        {
+          "t": 63.46,
+          "text": "else."
+        }
+      ]
+    },
+    {
+      "start": 64.6,
+      "end": 65.48,
+      "text": "So once your",
+      "words": [
+        {
+          "t": 64.6,
+          "text": "So"
+        },
+        {
+          "t": 64.86,
+          "text": "once"
+        },
+        {
+          "t": 65.3,
+          "text": "your"
+        }
+      ]
+    },
+    {
+      "start": 65.48,
+      "end": 66.52,
+      "text": "thumb relearns it,",
+      "words": [
+        {
+          "t": 65.48,
+          "text": "thumb"
+        },
+        {
+          "t": 65.76,
+          "text": "relearns"
+        },
+        {
+          "t": 66.36,
+          "text": "it,"
+        }
+      ]
+    },
+    {
+      "start": 67.34,
+      "end": 67.84,
+      "text": "will you still",
+      "words": [
+        {
+          "t": 67.34,
+          "text": "will"
+        },
+        {
+          "t": 67.52,
+          "text": "you"
+        },
+        {
+          "t": 67.64,
+          "text": "still"
+        }
+      ]
+    },
+    {
+      "start": 67.84,
+      "end": 68.76,
+      "text": "check Subs first",
+      "words": [
+        {
+          "t": 67.84,
+          "text": "check"
+        },
+        {
+          "t": 68.12,
+          "text": "Subs"
+        },
+        {
+          "t": 68.32,
+          "text": "first"
+        }
+      ]
+    },
+    {
+      "start": 68.76,
+      "end": 69.5,
+      "text": "or just stay",
+      "words": [
+        {
+          "t": 68.76,
+          "text": "or"
+        },
+        {
+          "t": 69.1,
+          "text": "just"
+        },
+        {
+          "t": 69.32,
+          "text": "stay"
+        }
+      ]
+    },
+    {
+      "start": 69.5,
+      "end": 69.86,
+      "text": "on Home?",
+      "words": [
+        {
+          "t": 69.5,
+          "text": "on"
+        },
+        {
+          "t": 69.64,
+          "text": "Home?"
+        }
+      ]
+    }
+  ],
+  "music": {
+    "src": "music/bed-02.mp3",
+    "from": 0,
+    "points": [
+      {
+        "t": 0.0,
+        "vol": 0.055
+      },
+      {
+        "t": 35.14,
+        "vol": 0.055
+      },
+      {
+        "t": 35.48,
+        "vol": 0.15
+      },
+      {
+        "t": 36.04,
+        "vol": 0.15
+      },
+      {
+        "t": 36.22,
+        "vol": 0.055
+      },
+      {
+        "t": 69.86,
+        "vol": 0.055
+      },
+      {
+        "t": 70.0,
+        "vol": 0.02
+      }
+    ],
+    "derivedFrom": "vo.json word timings (tools/duck_music.py)"
+  },
+  "format": "news",
+  "showCredits": false,
+  "allowLong": false,
+  "script": "YouTube just moved your Subscriptions button, and some people are not happy about where it went.\n\nFor nearly a decade it sat in the bottom bar. YouTube confirmed this week that, on Android and iPhone, it's leaving. It's renamed Subs, and it lives in the top bar on the Home tab, right after Home.\n\nWhy would a button move upset anyone? YouTube tested this in May, and people pushed back. That bottom button was how a lot of them skipped the algorithm: one tap showed only the channels they chose. Now it's a reach up top, one tab over from the recommendations.\n\nThe top bar gets busier, too. Live and Music get their own feeds. Movies and TV shows up only if you pay for something like a Primetime Channel.\n\nThere's also a new plus sign up there. Type a topic or a mood, like guided meditations under ten minutes, and YouTube builds a feed around it. Free accounts can save three. Premium members get eight.\n\nThose custom feeds start in the US, in English. YouTube hasn't given a date for the new layout anywhere else.\n\nSo, once your thumb relearns it: will you still check Subs first, or just stay on Home?",
+  "approval": {
+    "sha256": "e8f29f5c205a879d6cb1367f122a422251d753e6d40ab1c7324a8c9691b61647",
+    "approvedAt": "2026-10-23T05:22:08+00:00",
+    "words": 203,
+    "_note": "Written only after the user approved the script in chat. Editing the script invalidates this \u2014 the hash stops matching and G27 blocks the build."
+  }
+}

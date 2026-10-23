@@ -9991,3 +9991,29 @@ quoted-headline-over-UI device for every beat.
   the full app are new). Fetch threads with api.fxtwitter.com/2/conversation/<id> (x.com 402s). Held vendor
   title cards over a blurred copy of themselves fill 9:16 without cropping the text. v3: 169 words, 61.0s,
   ~997 credits, 18 cues audible, −14.8 LUFS, critique READY round 3.
+
+## 2026-10-23 — youtube-subscriptions-tab (news, bookends, YouTube's own clip as b-roll)
+
+70.0s, 14 slides, presenter on 2 (hook 5.3s + close 5.6s, HeyGen avatar_v from VO slices, both done
+in ~2 min), ElevenLabs v3 203 words at 3.51 w/s (57.8s, ~1,174 credits) -> vo_pad to 70.0s. -14.5 LUFS,
+29/29 SFX heard. Primary sources: TeamYouTube Community post (captured mobile) + @UpdatesFromYT clip.
+
+- **RAW NOTE 1 — a press screenshot can carry a placeholder.** 9to5Google's "old" screenshot has a flat
+  green block over a third of the phone (their redaction). Shown whole, it owned frame 0 of the hook.
+  RULE: look at the WHOLE image at size before binding it; use honest separate crops (feed card + bar
+  strip), never a stitched "continuous" screen.
+- **RAW NOTE 2 — a 4:5 clip in a wide slide box is cover-cropped from the top.** ClipBlock (device:false)
+  fills full width x h, so at h 760 the phone's top bar (the words being said, "Live and Music") fell off
+  screen. Fix was an asset crop matched to the box aspect (600x454 around the top bar). RULE: when a
+  clip's subject is near its top or bottom edge, crop the asset to the box aspect; lint does not see it.
+- **RAW NOTE 3 — a full-width focus ring draws its lines through content** and a tight one on a 4:5 still
+  slices the source's own title at the edge. A rect narrower than the box resolves to fit (no zoom) and
+  just rings the region, which is what "point at the +" needed.
+- **RAW NOTE 4 — whisper small heard "tap" as "tab"**; medium on the 2.9s slice settled it. Anchors use
+  transcript tokens (`on: "showed"`, not `"tap"`), the display is fixed in caption_corrections.
+- First DUPLICATE block: two white post crops back to back (limits -> rollout). A rows card first on the
+  second page broke it, as the 2026-10 note predicted.
+
+Treatment history: old-feed card + bar strip with ring on the tab (hook), YouTube's own demo clip twice
+(Subs tap; top-bar feeds, cropped wide), Community-post receipts with rings, Free/Premium rows, rollout
+rows, YouTube spotlight end card. Next app-UI-change reel: do not open on the old-vs-new screenshot pair again.
